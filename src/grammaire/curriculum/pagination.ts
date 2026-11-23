@@ -7,6 +7,11 @@ import { grammarScenarioSlices } from './scenario-pages'
 function cost(item: MathItem): number {
   const q=item.grammar
   if (!q) return 0
+  // Descriptions keep contextual pairs, illustrations and open rubrics together.
+  if(/^gram-ex-f[45678]-/.test(q.unit.source.typeId)) {
+    if(q.unit.imageSupports?.length||q.unit.kind==='production'||q.unit.kind==='match'||q.unit.kind==='transform'&&q.unit.source.typeId!=='gram-ex-f7-curriculum-t')return 160
+    return 80
+  }
   // Contextual requests and two-situation associations need full corrections on A4.
   if(q.unit.source.typeId.startsWith('gram-ex-f3-'))return 160
   if(/^gram-ex-f[12]-/.test(q.unit.source.typeId)) {

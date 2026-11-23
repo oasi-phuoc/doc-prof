@@ -261,3 +261,17 @@ test('November 17 image additions are searchable WebP variants', () => {
     assert(indexed.keywords.includes(image.aliases[0]))
   }
 })
+
+
+test('immutable weather illustrations retain descriptive labels and search terms', () => {
+  const catalog = new Map(buildGalleryCatalog(process.cwd()).map(image => [image.src, image]))
+  const media = JSON.parse(readFileSync('docs/grammaire/implementation/decrire-media-manifest.json'))
+  assert.equal(media.images.length, 8)
+  for (const image of media.images) {
+    const entry = catalog.get(image.src)
+    assert.equal(entry.label, image.alt)
+    assert(entry.themes.includes('Temps et météo'))
+    assert(!/^[a-f0-9]{64}$/.test(entry.label))
+    assert.equal(createHash('sha256').update(readFileSync('public' + image.src)).digest('hex'), image.sha256)
+  }
+})

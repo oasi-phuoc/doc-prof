@@ -83,6 +83,9 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
       add(image.src, { labels: [image.alt], themes: ['Grammaire'], types: ['Illustration'] })
     }
   }
+  for (const image of read(root, 'docs/grammaire/implementation/decrire-media-manifest.json', {}).images ?? []) {
+    add(image.src, { labels: [image.alt], themes: ['Grammaire', 'Temps et météo'], types: ['Illustration'], keywords: [image.source?.path?.split('/').at(-1)?.replace(/\.webp$/, '')] })
+  }
   for(const image of read(root,'docs/gattegno/illustrations-generation-20261114.json',{}).images??[])add(image.path,{labels:[image.label],themes:['Gattegno','Style TCF validé',image.category==='pronom'?'Pronoms personnels':'Verbes d’action'],types:[image.category==='pronom'?'Personnage':'Action']})
   for (const image of read(root, 'src/tcf/content/ce-art.json')) add(image.src, { labels: [image.label], types: ['Document'] })
   for (const image of read(root, 'src/tcf/object-images.json')) add(image.image, { labels: [image.label], themes: [pretty(image.family ?? '')], types: ['Objet'], keywords: image.aliases })

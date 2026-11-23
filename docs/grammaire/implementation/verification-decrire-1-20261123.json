@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-23",
+  "timezone": "Europe/Zurich",
+  "baseCommit": "cb5e6b883",
+  "status": "passed_for_pilot_with_preexisting_download_limits",
+  "delivery": {
+    "theme": "Décrire",
+    "slice": "f4–f8 A1",
+    "themeOfferingsReviewed": 21,
+    "themeOfferingsPlanned": 63,
+    "activities": 16,
+    "banks": 16,
+    "offerings": 21,
+    "selectableUnits": 800,
+    "variants": 1050,
+    "authoredSourceRows": 250,
+    "illustratedSituations": 50,
+    "distinctImages": 8,
+    "associationGroups": 100,
+    "associationPairs": 200,
+    "openScenarios": 50,
+    "teacherApprovedUnits": 0
+  },
+  "checks": [
+    {
+      "command": "npm run test:grammar:decrire",
+      "status": "passed",
+      "coverage": "Possessive owner/name agreement, vowel and h cases; one accepted QCM key; predicative adjective forms and invariant spellings; canonical error spans; full contexts and private association targets; fictional first-person job models; retirement parity; isolated deterministic reconstruction."
+    },
+    {
+      "command": "node scripts/test-grammar-levels.cjs",
+      "status": "passed",
+      "variants": 14500
+    },
+    {
+      "command": "node scripts/test-grammar-contracts.cjs",
+      "status": "passed"
+    },
+    {
+      "command": "node scripts/test-grammar-questions.cjs",
+      "status": "passed",
+      "protectedFiles": 276
+    },
+    {
+      "command": "node scripts/test-grammar-demander.cjs",
+      "status": "passed",
+      "variants": 810
+    },
+    {
+      "command": "node scripts/test-grammar-temps.cjs",
+      "status": "passed",
+      "variants": 1420
+    },
+    {
+      "command": "node scripts/verify-grammar-pools.cjs",
+      "status": "passed",
+      "types": 144,
+      "positions": 16,
+      "seeds": 3
+    },
+    {
+      "command": "node tests/grammar/decrire-browser.mjs",
+      "status": "passed",
+      "offerings": 21,
+      "printedQuestionUnits": 2100,
+      "expectedAnswerFields": 2300,
+      "sheets": 1600,
+      "classroomLaunches": 21,
+      "errors": []
+    },
+    {
+      "command": "GRAMMAR_QA_SUBTHEMES=f8 node tests/grammar/decrire-browser.mjs",
+      "status": "passed",
+      "offerings": 4,
+      "printedQuestionUnits": 400,
+      "classroomLaunches": 4,
+      "note": "Targeted rerun after improving one architect role follow-up to “Pour quel bâtiment préparez-vous des plans ?”."
+    },
+    {
+      "command": "node tests/grammar/decrire-pdf.mjs",
+      "status": "passed",
+      "actualPdfPreviews": 4,
+      "visualReview": "Full A4 pages visually inspected: weather image/cue/options; corrected-dialogue response lines; two possessive contexts with lettered destinations; two-sentence production with four lines. No clipping observed."
+    },
+    {
+      "command": "node tests/grammar/decrire-interactions-browser.mjs",
+      "status": "passed",
+      "viewports": [
+        {
+          "width": 1366,
+          "height": 768,
+          "nativePointer": true,
+          "nativeTouch": false,
+          "keyboard": true,
+          "undo": true,
+          "axeViolations": 0,
+          "privateUntilReveal": true
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "nativePointer": false,
+          "nativeTouch": true,
+          "keyboard": true,
+          "undo": true,
+          "axeViolations": 0,
+          "privateUntilReveal": true
+        }
+      ]
+    },
+    {
+      "command": "node --test tests/gallery/catalog.test.mjs",
+      "status": "passed",
+      "tests": 15,
+      "existingEntriesUnchanged": 7967,
+      "addedImages": 8
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc -b && node node_modules/vite/bin/vite.js build --manifest",
+      "status": "passed",
+      "note": "Final production build refreshed after gallery labels and the architect follow-up changed."
+    },
+    {
+      "command": "npm run lint",
+      "status": "passed",
+      "note": "Existing warnings remain."
+    },
+    {
+      "command": "node scripts/interactive-secrets.mjs",
+      "status": "passed",
+      "changedFiles": 6433,
+      "findings": 0,
+      "note": "Initial synthetic-canary self-test failed transiently; unchanged scanner passed on retry. No detection rule or exact-value exception changed."
+    },
+    {
+      "command": "node scripts/interactive-budgets.mjs",
+      "status": "preexisting_limits_still_exceeded",
+      "competition": {
+        "gzip": 209175,
+        "maximumGzip": 204800
+      },
+      "game": {
+        "gzip": 3638005,
+        "maximumGzip": 3145728
+      },
+      "note": "Thresholds unchanged. Current full route measurements stored in game-budgets.json; bank splitting remains open."
+    }
+  ],
+  "retirement": {
+    "historicalWrittenBanksRemoved": [
+      "f4",
+      "f5",
+      "f6",
+      "f7",
+      "f8"
+    ],
+    "retiredNotionsTotal": 44,
+    "remainingWrittenBanks": 54,
+    "remainingRowsPreserved": true,
+    "coAndTheoriesPreserved": true,
+    "savedWorksheetCleanup": "deferred by owner; no remote fiche query or deletion",
+    "workerDeployment": false
+  },
+  "globalCoverage": {
+    "activities": 208,
+    "offerings": 280,
+    "units": 10710,
+    "variants": 14500,
+    "documents": 360,
+    "documentQuestions": 1400
+  },
+  "remaining": {
+    "theme": "f9 comparison; f12 adjective position; f13 superlative; f14 noun/verb comparisons; physical description: 42 offers.",
+    "validation": "Human pedagogical review, physical printing and ENI classroom acceptance pending."
+  },
+  "sources": [
+    {
+      "path": "scripts/build-grammar-decrire.py",
+      "sha256": "1bc138c96f0b4425c1a2c181d40f94d799acfe4f9d9105f4db31966f6c039969"
+    },
+    {
+      "path": "scripts/grammar_curriculum/decrire-f4-a1.tsv",
+      "sha256": "3ac29e6b0357d6adf0338f52af2f8fbe1a560c30d838cda839555df88143967a"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/f4.json",
+      "sha256": "7f77a96bbbe84b554bb64b383f9b6f75ea88b88a17bbebee9f575c4cae10ee48"
+    },
+    {
+      "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+      "sha256": "8c47e0c2888741544487a58ae27babeff392c14e728964db54256c83c9d7c46e"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/f5.json",
+      "sha256": "a16ce06146f0d245b15eb05463a12eff9959a0febba7938670d776f328753259"
+    },
+    {
+      "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+      "sha256": "9e5ad6662815428dce63872b820f2d052458861a79c431a50eeb9ca58148de33"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/f6.json",
+      "sha256": "bd05df4832325a1219506ba0dbe84c006c5ea58c377eb591f85798016cad2512"
+    },
+    {
+      "path": "scripts/grammar_curriculum/decrire-f7-a1.tsv",
+      "sha256": "6702165e1cae12d302ed2c58dd938c4ed033daf4400dc17d1ae97c449918ae62"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/f7.json",
+      "sha256": "2dd123690c021864c6a66431e551d9b4429f0185e511e2ba74c53c216c2c0a87"
+    },
+    {
+      "path": "scripts/grammar_curriculum/decrire-f8-a1.tsv",
+      "sha256": "9a22c59b37c86aa6c19ea1bbea5b9d23a91102e98b98d03841cc981bee26ef5a"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/f8.json",
+      "sha256": "29142f6b65fbe53ba24a1c9d0cbfaaac10ac0fb27ef75066b03d685a1f1cef41"
+    }
+  ]
+}

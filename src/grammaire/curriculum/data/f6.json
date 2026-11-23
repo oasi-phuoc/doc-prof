@@ -1,0 +1,3929 @@
+[
+  {
+    "schemaVersion": 1,
+    "revision": "decrire-2026-11-23-v1",
+    "activityId": "gram-ex-f6-qcm-verbe",
+    "subthemeId": "f6",
+    "topic": "gram-decrire",
+    "level": "A1",
+    "label": "Indiquer à qui cela appartient",
+    "objective": "Choisir un déterminant possessif selon le possesseur et le nom, sans confondre leur genre.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-23",
+      "humanReview": "pending",
+      "note": "Situations et variantes relues, modèles ouverts non exclusifs. Rôles fictifs ; validation enseignante en attente. Les situations sont réemployées entre les mécaniques, sans multiplier les histoires revendiquées."
+    },
+    "presentations": [
+      "choice",
+      "gap"
+    ],
+    "instructions": {
+      "choice": "Choisissez le déterminant possessif selon le rôle, le nom et son début.",
+      "gap": "Complétez avec le déterminant possessif adapté. Mettez une majuscule en début de phrase."
+    },
+    "units": [
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-sac-je",
+        "prompt": "___ sac est dans l’entrée.",
+        "answers": [
+          "Mon"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Dans ce rôle, vous parlez de votre propre sac en disant je. Nom : masculin singulier.",
+        "options": [
+          {
+            "id": "forme-7ae80cfb8e",
+            "text": "Mon"
+          },
+          {
+            "id": "forme-d87a2cde10",
+            "text": "Ma"
+          },
+          {
+            "id": "forme-22226b0574",
+            "text": "Mes"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Mon sac est dans l’entrée."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-cle-je",
+        "prompt": "___ clé est sur la table.",
+        "answers": [
+          "Ma"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez de votre propre clé dans ce rôle. Nom : féminin singulier.",
+        "options": [
+          {
+            "id": "forme-92ffd60584",
+            "text": "Ma"
+          },
+          {
+            "id": "forme-b2af193953",
+            "text": "Mon"
+          },
+          {
+            "id": "forme-7f8f592782",
+            "text": "Mes"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Ma clé est sur la table."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-livres-je",
+        "prompt": "___ livres sont prêts pour le cours.",
+        "answers": [
+          "Mes"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez de plusieurs livres à vous. Nom : masculin pluriel.",
+        "options": [
+          {
+            "id": "forme-e0293cd4cf",
+            "text": "Mes"
+          },
+          {
+            "id": "forme-b0932c6b01",
+            "text": "Mon"
+          },
+          {
+            "id": "forme-cdc94cc802",
+            "text": "Ma"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Mes livres sont prêts pour le cours."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-adresse-je",
+        "prompt": "___ adresse figure sur le formulaire.",
+        "answers": [
+          "Mon"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous donnez votre propre adresse fictive. Le nom adresse est féminin. Nom : féminin singulier.",
+        "options": [
+          {
+            "id": "forme-780b672410",
+            "text": "Mon"
+          },
+          {
+            "id": "forme-ee0c7b383a",
+            "text": "Ma"
+          },
+          {
+            "id": "forme-aa34906397",
+            "text": "Mes"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Mon adresse figure sur le formulaire."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-amie-je",
+        "prompt": "___ amie arrive à huit heures.",
+        "answers": [
+          "Mon"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez d’une amie à vous, sans dire que la personne vous appartient. Nom : féminin singulier.",
+        "options": [
+          {
+            "id": "forme-e2e82251dc",
+            "text": "Mon"
+          },
+          {
+            "id": "forme-605ab898d0",
+            "text": "Ma"
+          },
+          {
+            "id": "forme-1094b1cd17",
+            "text": "Mes"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Mon amie arrive à huit heures."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-chaussures-je",
+        "prompt": "___ chaussures sont dans le vestiaire.",
+        "answers": [
+          "Mes"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez de plusieurs chaussures à vous. Nom : féminin pluriel.",
+        "options": [
+          {
+            "id": "forme-3b3e7bf075",
+            "text": "Mes"
+          },
+          {
+            "id": "forme-edb0f804b1",
+            "text": "Mon"
+          },
+          {
+            "id": "forme-5cc599b0ac",
+            "text": "Ma"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Mes chaussures sont dans le vestiaire."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-telephone-je",
+        "prompt": "___ téléphone est en charge.",
+        "answers": [
+          "Mon"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Dans ce rôle, vous décrivez votre propre téléphone. Nom : masculin singulier.",
+        "options": [
+          {
+            "id": "forme-a888cd37ed",
+            "text": "Mon"
+          },
+          {
+            "id": "forme-6b4d7fb4f9",
+            "text": "Ma"
+          },
+          {
+            "id": "forme-9efecb5649",
+            "text": "Mes"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Mon téléphone est en charge."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-ecole-je",
+        "prompt": "___ école est près de la gare.",
+        "answers": [
+          "Mon"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez de l’école que vous fréquentez dans ce rôle fictif. Le nom école est féminin. Nom : féminin singulier.",
+        "options": [
+          {
+            "id": "forme-cea4408615",
+            "text": "Mon"
+          },
+          {
+            "id": "forme-2c0913d7d4",
+            "text": "Ma"
+          },
+          {
+            "id": "forme-266d2a2eb5",
+            "text": "Mes"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Mon école est près de la gare."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-photos-je",
+        "prompt": "___ photos sont dans le dossier.",
+        "answers": [
+          "Mes"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez de plusieurs photos à vous. Nom : féminin pluriel.",
+        "options": [
+          {
+            "id": "forme-8438f2af7d",
+            "text": "Mes"
+          },
+          {
+            "id": "forme-5e7c8d3828",
+            "text": "Mon"
+          },
+          {
+            "id": "forme-d2ca9bba9a",
+            "text": "Ma"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Mes photos sont dans le dossier."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-sac-tu",
+        "prompt": "___ sac est près de la porte.",
+        "answers": [
+          "Ton"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous vous adressez à un proche en disant tu et parlez de son sac. Nom : masculin singulier.",
+        "options": [
+          {
+            "id": "forme-0b4eab76ff",
+            "text": "Ton"
+          },
+          {
+            "id": "forme-b16371f4b7",
+            "text": "Ta"
+          },
+          {
+            "id": "forme-3a9eaa1e50",
+            "text": "Tes"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Ton sac est près de la porte."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-veste-tu",
+        "prompt": "___ veste est dans l’armoire.",
+        "answers": [
+          "Ta"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez à la personne qui possède la veste et vous la tutoyez. Nom : féminin singulier.",
+        "options": [
+          {
+            "id": "forme-0b202e4460",
+            "text": "Ta"
+          },
+          {
+            "id": "forme-886dc541cf",
+            "text": "Ton"
+          },
+          {
+            "id": "forme-bbe30cd4fd",
+            "text": "Tes"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Ta veste est dans l’armoire."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-cles-tu",
+        "prompt": "___ clés sont dans la boîte.",
+        "answers": [
+          "Tes"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez à la personne qui possède ces clés en disant tu. Nom : féminin pluriel.",
+        "options": [
+          {
+            "id": "forme-2740708aa3",
+            "text": "Tes"
+          },
+          {
+            "id": "forme-709b9fe536",
+            "text": "Ton"
+          },
+          {
+            "id": "forme-48aa3b5311",
+            "text": "Ta"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Tes clés sont dans la boîte."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-adresse-tu",
+        "prompt": "___ adresse est bien notée.",
+        "answers": [
+          "Ton"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous vous adressez à un proche en disant tu. Vous parlez de son adresse, un nom féminin. Nom : féminin singulier.",
+        "options": [
+          {
+            "id": "forme-97c0ad6844",
+            "text": "Ton"
+          },
+          {
+            "id": "forme-60c2a046f0",
+            "text": "Ta"
+          },
+          {
+            "id": "forme-1450cc8dd1",
+            "text": "Tes"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Ton adresse est bien notée."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-histoire-tu",
+        "prompt": "___ histoire est très courte.",
+        "answers": [
+          "Ton"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez à la personne qui raconte l’histoire et vous la tutoyez. Le h de histoire est muet. Nom : féminin singulier.",
+        "options": [
+          {
+            "id": "forme-4d18fb52b9",
+            "text": "Ton"
+          },
+          {
+            "id": "forme-aa351d6a50",
+            "text": "Ta"
+          },
+          {
+            "id": "forme-5a166bef51",
+            "text": "Tes"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Ton histoire est très courte."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-stylos-tu",
+        "prompt": "___ stylos écrivent en bleu.",
+        "answers": [
+          "Tes"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous dites tu à la personne qui possède les stylos. Nom : masculin pluriel.",
+        "options": [
+          {
+            "id": "forme-e226c8d2c6",
+            "text": "Tes"
+          },
+          {
+            "id": "forme-31472fc359",
+            "text": "Ton"
+          },
+          {
+            "id": "forme-5a5b052ab3",
+            "text": "Ta"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Tes stylos écrivent en bleu."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-ordinateur-tu",
+        "prompt": "___ ordinateur fonctionne bien.",
+        "answers": [
+          "Ton"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous vous adressez à la personne qui possède l’ordinateur en disant tu. Nom : masculin singulier.",
+        "options": [
+          {
+            "id": "forme-3aa975e493",
+            "text": "Ton"
+          },
+          {
+            "id": "forme-de3d087ae8",
+            "text": "Ta"
+          },
+          {
+            "id": "forme-54663813e0",
+            "text": "Tes"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Ton ordinateur fonctionne bien."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-chambre-tu",
+        "prompt": "___ chambre donne sur la cour.",
+        "answers": [
+          "Ta"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous dites tu à la personne dont vous décrivez la chambre. Nom : féminin singulier.",
+        "options": [
+          {
+            "id": "forme-b4c55593f1",
+            "text": "Ta"
+          },
+          {
+            "id": "forme-6aec21a90d",
+            "text": "Ton"
+          },
+          {
+            "id": "forme-25db7a2734",
+            "text": "Tes"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Ta chambre donne sur la cour."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-affaires-tu",
+        "prompt": "___ affaires sont sur le banc.",
+        "answers": [
+          "Tes"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez à un proche en disant tu et désignez plusieurs affaires à lui. Nom : féminin pluriel.",
+        "options": [
+          {
+            "id": "forme-327131b83f",
+            "text": "Tes"
+          },
+          {
+            "id": "forme-b6085a9323",
+            "text": "Ton"
+          },
+          {
+            "id": "forme-01ac6b9772",
+            "text": "Ta"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Tes affaires sont sur le banc."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-sac-nora",
+        "prompt": "___ sac est sous la chaise.",
+        "answers": [
+          "Son"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez de Nora à une autre personne. Le nom sac est masculin, même si Nora est une femme. Nom : masculin singulier.",
+        "options": [
+          {
+            "id": "forme-9c111a0a0f",
+            "text": "Son"
+          },
+          {
+            "id": "forme-e072523bc2",
+            "text": "Sa"
+          },
+          {
+            "id": "forme-96e51271d4",
+            "text": "Ses"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Son sac est sous la chaise."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-voiture-paul",
+        "prompt": "___ voiture est devant le centre.",
+        "answers": [
+          "Sa"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez de Paul à une autre personne. Le nom voiture est féminin, même si Paul est un homme. Nom : féminin singulier.",
+        "options": [
+          {
+            "id": "forme-98e6acfd9d",
+            "text": "Sa"
+          },
+          {
+            "id": "forme-d6d48022bc",
+            "text": "Son"
+          },
+          {
+            "id": "forme-2dfe66d573",
+            "text": "Ses"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Sa voiture est devant le centre."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-documents-lea",
+        "prompt": "___ documents sont prêts.",
+        "answers": [
+          "Ses"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez de Léa à quelqu’un d’autre et désignez plusieurs documents. Nom : masculin pluriel.",
+        "options": [
+          {
+            "id": "forme-7e2beb965f",
+            "text": "Ses"
+          },
+          {
+            "id": "forme-6d515c71ca",
+            "text": "Son"
+          },
+          {
+            "id": "forme-7f489ec678",
+            "text": "Sa"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Ses documents sont prêts."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-adresse-karim",
+        "prompt": "___ adresse figure sur l’enveloppe.",
+        "answers": [
+          "Son"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez de Karim à une autre personne. Le nom adresse est féminin. Nom : féminin singulier.",
+        "options": [
+          {
+            "id": "forme-26acab41d7",
+            "text": "Son"
+          },
+          {
+            "id": "forme-78bbfc6255",
+            "text": "Sa"
+          },
+          {
+            "id": "forme-6bccbccaa3",
+            "text": "Ses"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Son adresse figure sur l’enveloppe."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-histoire-nora",
+        "prompt": "___ histoire commence dans un jardin.",
+        "answers": [
+          "Son"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez de l’histoire racontée par Nora. Le h de histoire est muet. Nom : féminin singulier.",
+        "options": [
+          {
+            "id": "forme-1aeda41b6b",
+            "text": "Son"
+          },
+          {
+            "id": "forme-38dae01b89",
+            "text": "Sa"
+          },
+          {
+            "id": "forme-f8be0390bf",
+            "text": "Ses"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Son histoire commence dans un jardin."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-chaussures-hugo",
+        "prompt": "___ chaussures sont neuves.",
+        "answers": [
+          "Ses"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez de Hugo à une autre personne et désignez plusieurs chaussures. Nom : féminin pluriel.",
+        "options": [
+          {
+            "id": "forme-0581d9c91f",
+            "text": "Ses"
+          },
+          {
+            "id": "forme-a1126c66e0",
+            "text": "Son"
+          },
+          {
+            "id": "forme-971334ecfb",
+            "text": "Sa"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Ses chaussures sont neuves."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-telephone-samia",
+        "prompt": "___ téléphone est sur le bureau.",
+        "answers": [
+          "Son"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez du téléphone de Samia à quelqu’un d’autre. Nom : masculin singulier.",
+        "options": [
+          {
+            "id": "forme-c84f965293",
+            "text": "Son"
+          },
+          {
+            "id": "forme-de60279eaf",
+            "text": "Sa"
+          },
+          {
+            "id": "forme-13dd1609ce",
+            "text": "Ses"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Son téléphone est sur le bureau."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-haie-luc",
+        "prompt": "___ haie est près du portail.",
+        "answers": [
+          "Sa"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez de Luc à une autre personne. Le nom haie est féminin et son h est aspiré : la haie. Nom : féminin singulier.",
+        "options": [
+          {
+            "id": "forme-cab9d0622f",
+            "text": "Sa"
+          },
+          {
+            "id": "forme-e7ddbf4da4",
+            "text": "Son"
+          },
+          {
+            "id": "forme-d7fa5a2437",
+            "text": "Ses"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Sa haie est près du portail."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-outils-anna",
+        "prompt": "___ outils sont rangés.",
+        "answers": [
+          "Ses"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez d’Anna à une autre personne et désignez plusieurs outils. Nom : masculin pluriel.",
+        "options": [
+          {
+            "id": "forme-a57c58296c",
+            "text": "Ses"
+          },
+          {
+            "id": "forme-46fef40a47",
+            "text": "Son"
+          },
+          {
+            "id": "forme-91235fa50d",
+            "text": "Sa"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Ses outils sont rangés."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-local-nous",
+        "prompt": "___ local ferme à dix-huit heures.",
+        "answers": [
+          "Notre"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez au nom de votre groupe en disant nous. Nom : masculin singulier.",
+        "options": [
+          {
+            "id": "forme-043f670f3d",
+            "text": "Notre"
+          },
+          {
+            "id": "forme-0ecc4434a5",
+            "text": "Nos"
+          },
+          {
+            "id": "forme-2fb71dc7e9",
+            "text": "Leur"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Notre local ferme à dix-huit heures."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-classe-nous",
+        "prompt": "___ classe est au premier étage.",
+        "answers": [
+          "Notre"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez de la salle de votre groupe en disant nous. Nom : féminin singulier.",
+        "options": [
+          {
+            "id": "forme-283e00126f",
+            "text": "Notre"
+          },
+          {
+            "id": "forme-a002d2040e",
+            "text": "Nos"
+          },
+          {
+            "id": "forme-2de189ef0e",
+            "text": "Leur"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Notre classe est au premier étage."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-livres-nous",
+        "prompt": "___ livres sont sur l’étagère.",
+        "answers": [
+          "Nos"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez au nom d’un groupe qui possède plusieurs livres. Nom : masculin pluriel.",
+        "options": [
+          {
+            "id": "forme-74f68c71ea",
+            "text": "Nos"
+          },
+          {
+            "id": "forme-0a1b8ca3f9",
+            "text": "Notre"
+          },
+          {
+            "id": "forme-f0dffb9302",
+            "text": "Leur"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Nos livres sont sur l’étagère."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-activite-nous",
+        "prompt": "___ activité commence à neuf heures.",
+        "answers": [
+          "Notre"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous présentez l’activité de votre groupe en disant nous. Nom : féminin singulier.",
+        "options": [
+          {
+            "id": "forme-d2dbbb6af9",
+            "text": "Notre"
+          },
+          {
+            "id": "forme-927d144e4b",
+            "text": "Nos"
+          },
+          {
+            "id": "forme-9d1f9f8b96",
+            "text": "Leur"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Notre activité commence à neuf heures."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-cles-nous",
+        "prompt": "___ clés sont à l’accueil.",
+        "answers": [
+          "Nos"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez des clés de votre groupe en disant nous. Nom : féminin pluriel.",
+        "options": [
+          {
+            "id": "forme-9d83f1c63c",
+            "text": "Nos"
+          },
+          {
+            "id": "forme-0646d64097",
+            "text": "Notre"
+          },
+          {
+            "id": "forme-fb80b02c2f",
+            "text": "Leur"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Nos clés sont à l’accueil."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-horaires-nous",
+        "prompt": "___ horaires changent en été.",
+        "answers": [
+          "Nos"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous décrivez les horaires de votre groupe en disant nous. Nom : masculin pluriel.",
+        "options": [
+          {
+            "id": "forme-49cc0f5650",
+            "text": "Nos"
+          },
+          {
+            "id": "forme-51d2fe4ed5",
+            "text": "Notre"
+          },
+          {
+            "id": "forme-b19b9e2176",
+            "text": "Leur"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Nos horaires changent en été."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-ordinateur-nous",
+        "prompt": "___ ordinateur est disponible.",
+        "answers": [
+          "Notre"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez au nom d’un groupe qui partage un ordinateur. Nom : masculin singulier.",
+        "options": [
+          {
+            "id": "forme-97a623e601",
+            "text": "Notre"
+          },
+          {
+            "id": "forme-8af5c6c809",
+            "text": "Nos"
+          },
+          {
+            "id": "forme-26d5e56a46",
+            "text": "Leur"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Notre ordinateur est disponible."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-photos-nous",
+        "prompt": "___ photos montrent la sortie.",
+        "answers": [
+          "Nos"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous présentez les photos de votre groupe en disant nous. Nom : féminin pluriel.",
+        "options": [
+          {
+            "id": "forme-5d171da984",
+            "text": "Nos"
+          },
+          {
+            "id": "forme-4bdfeeea33",
+            "text": "Notre"
+          },
+          {
+            "id": "forme-2383059611",
+            "text": "Leur"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Nos photos montrent la sortie."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-salle-vous",
+        "prompt": "___ salle est prête.",
+        "answers": [
+          "Votre"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous vous adressez à tout un groupe en disant vous. Nom : féminin singulier.",
+        "options": [
+          {
+            "id": "forme-82c0700580",
+            "text": "Votre"
+          },
+          {
+            "id": "forme-91aa487dbf",
+            "text": "Vos"
+          },
+          {
+            "id": "forme-be400281c5",
+            "text": "Leur"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Votre salle est prête."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-billets-vous",
+        "prompt": "___ billets sont valables aujourd’hui.",
+        "answers": [
+          "Vos"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez à plusieurs voyageurs de leurs billets en disant vous. Nom : masculin pluriel.",
+        "options": [
+          {
+            "id": "forme-aa01b2efab",
+            "text": "Vos"
+          },
+          {
+            "id": "forme-534b968dc5",
+            "text": "Votre"
+          },
+          {
+            "id": "forme-08e7110686",
+            "text": "Leur"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Vos billets sont valables aujourd’hui."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-adresse-vous",
+        "prompt": "___ adresse est dans le dossier.",
+        "answers": [
+          "Votre"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous vouvoyez une personne et parlez de son adresse. Nom : féminin singulier.",
+        "options": [
+          {
+            "id": "forme-b5ffcae13e",
+            "text": "Votre"
+          },
+          {
+            "id": "forme-c5bb0f8e84",
+            "text": "Vos"
+          },
+          {
+            "id": "forme-4efe8b4e0c",
+            "text": "Leur"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Votre adresse est dans le dossier."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-telephone-vous",
+        "prompt": "___ téléphone sonne.",
+        "answers": [
+          "Votre"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous vouvoyez la personne qui possède le téléphone. Nom : masculin singulier.",
+        "options": [
+          {
+            "id": "forme-8e54d511e8",
+            "text": "Votre"
+          },
+          {
+            "id": "forme-3b1ed2e34f",
+            "text": "Vos"
+          },
+          {
+            "id": "forme-d62bf89c98",
+            "text": "Leur"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Votre téléphone sonne."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-affaires-vous",
+        "prompt": "___ affaires sont dans la consigne.",
+        "answers": [
+          "Vos"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous vous adressez à un groupe en disant vous et désignez ses affaires. Nom : féminin pluriel.",
+        "options": [
+          {
+            "id": "forme-bbd303f98d",
+            "text": "Vos"
+          },
+          {
+            "id": "forme-bb3fb061fc",
+            "text": "Votre"
+          },
+          {
+            "id": "forme-03c5912669",
+            "text": "Leur"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Vos affaires sont dans la consigne."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-ecole-vous",
+        "prompt": "___ école accueille les familles.",
+        "answers": [
+          "Votre"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez à plusieurs élèves de leur école en disant vous. Nom : féminin singulier.",
+        "options": [
+          {
+            "id": "forme-a6511c9593",
+            "text": "Votre"
+          },
+          {
+            "id": "forme-937e7afe81",
+            "text": "Vos"
+          },
+          {
+            "id": "forme-166f8cb4ec",
+            "text": "Leur"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Votre école accueille les familles."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-cle-vous",
+        "prompt": "___ clé ouvre cette porte.",
+        "answers": [
+          "Votre"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous vouvoyez la personne qui possède la clé. Nom : féminin singulier.",
+        "options": [
+          {
+            "id": "forme-89d6890441",
+            "text": "Votre"
+          },
+          {
+            "id": "forme-42c5b11648",
+            "text": "Vos"
+          },
+          {
+            "id": "forme-bb23349d65",
+            "text": "Leur"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Votre clé ouvre cette porte."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-documents-vous",
+        "prompt": "___ documents sont complets.",
+        "answers": [
+          "Vos"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez des documents d’un groupe en vous adressant à ses membres. Nom : masculin pluriel.",
+        "options": [
+          {
+            "id": "forme-4ffae23fbf",
+            "text": "Vos"
+          },
+          {
+            "id": "forme-ac4bbf722c",
+            "text": "Votre"
+          },
+          {
+            "id": "forme-27f9c149e4",
+            "text": "Leur"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Vos documents sont complets."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-local-ils",
+        "prompt": "___ local est au rez-de-chaussée.",
+        "answers": [
+          "Leur"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez de plusieurs bénévoles à quelqu’un d’autre. Les bénévoles partagent un seul local. Nom : masculin singulier.",
+        "options": [
+          {
+            "id": "forme-7190b38f41",
+            "text": "Leur"
+          },
+          {
+            "id": "forme-3e80f0fc2f",
+            "text": "Leurs"
+          },
+          {
+            "id": "forme-793c80829d",
+            "text": "Notre"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Leur local est au rez-de-chaussée."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-voiture-elles",
+        "prompt": "___ voiture est dans le garage.",
+        "answers": [
+          "Leur"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez de deux voisines à une autre personne. Elles partagent une seule voiture. Nom : féminin singulier.",
+        "options": [
+          {
+            "id": "forme-8e41a2fb97",
+            "text": "Leur"
+          },
+          {
+            "id": "forme-3ba6fd5be1",
+            "text": "Leurs"
+          },
+          {
+            "id": "forme-fdbdd74b78",
+            "text": "Notre"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Leur voiture est dans le garage."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-velos-ils",
+        "prompt": "___ vélos sont devant la maison.",
+        "answers": [
+          "Leurs"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez de deux amis à une autre personne. Il y a plusieurs vélos. Nom : masculin pluriel.",
+        "options": [
+          {
+            "id": "forme-df1108440f",
+            "text": "Leurs"
+          },
+          {
+            "id": "forme-d9b973d92f",
+            "text": "Leur"
+          },
+          {
+            "id": "forme-7bb9a8ef90",
+            "text": "Notre"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Leurs vélos sont devant la maison."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-classe-elles",
+        "prompt": "___ classe est au deuxième étage.",
+        "answers": [
+          "Leur"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez de plusieurs participantes à quelqu’un d’autre. Elles fréquentent une seule classe. Nom : féminin singulier.",
+        "options": [
+          {
+            "id": "forme-bfe84bbab6",
+            "text": "Leur"
+          },
+          {
+            "id": "forme-ac71826227",
+            "text": "Leurs"
+          },
+          {
+            "id": "forme-aafda4a755",
+            "text": "Notre"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Leur classe est au deuxième étage."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-cles-ils",
+        "prompt": "___ clés sont dans le tiroir.",
+        "answers": [
+          "Leurs"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez des clés de plusieurs voisins à une autre personne. Nom : féminin pluriel.",
+        "options": [
+          {
+            "id": "forme-3e3e219356",
+            "text": "Leurs"
+          },
+          {
+            "id": "forme-c8b9b1cbde",
+            "text": "Leur"
+          },
+          {
+            "id": "forme-59616e4c4a",
+            "text": "Notre"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Leurs clés sont dans le tiroir."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-affiches-elles",
+        "prompt": "___ affiches annoncent la fête.",
+        "answers": [
+          "Leurs"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez des affiches de plusieurs élèves à une autre personne. Nom : féminin pluriel.",
+        "options": [
+          {
+            "id": "forme-b447794a35",
+            "text": "Leurs"
+          },
+          {
+            "id": "forme-79707a4533",
+            "text": "Leur"
+          },
+          {
+            "id": "forme-43775711ec",
+            "text": "Notre"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Leurs affiches annoncent la fête."
+      },
+      {
+        "id": "gram-ex-f6-qcm-verbe-a1-jardin-ils",
+        "prompt": "___ jardin est derrière le centre.",
+        "answers": [
+          "Leur"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-qcm-verbe",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous parlez de plusieurs habitants à une autre personne. Ils partagent un seul jardin. Nom : masculin singulier.",
+        "options": [
+          {
+            "id": "forme-50c6e26c74",
+            "text": "Leur"
+          },
+          {
+            "id": "forme-8f67900f71",
+            "text": "Leurs"
+          },
+          {
+            "id": "forme-9bacda1c94",
+            "text": "Notre"
+          }
+        ],
+        "explanation": "Le possesseur fixe la famille du déterminant ; le nom fixe le genre et le nombre. Devant un nom féminin singulier commençant par une voyelle ou un h muet, on emploie mon, ton ou son. Phrase : Leur jardin est derrière le centre."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "decrire-2026-11-23-v1",
+    "activityId": "gram-ex-f6-curriculum-a",
+    "subthemeId": "f6",
+    "topic": "gram-decrire",
+    "level": "A1",
+    "label": "Associer",
+    "objective": "Choisir un déterminant possessif selon le possesseur et le nom, sans confondre leur genre.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-23",
+      "humanReview": "pending",
+      "note": "Situations et variantes relues, modèles ouverts non exclusifs. Rôles fictifs ; validation enseignante en attente. Les situations sont réemployées entre les mécaniques, sans multiplier les histoires revendiquées."
+    },
+    "presentations": [
+      "match"
+    ],
+    "instructions": {
+      "match": "Associez chaque phrase à son possessif selon les deux situations."
+    },
+    "units": [
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-sac-je",
+        "prompt": "Situation 1 : Dans ce rôle, vous parlez de votre propre sac en disant je. Nom : masculin singulier.\nSituation 2 : Vous parlez de plusieurs photos à vous. Nom : féminin pluriel.",
+        "answers": [
+          "Mon sac est dans l’entrée.\nMes photos sont dans le dossier."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "sac-je-p1",
+            "left": "___ sac est dans l’entrée.",
+            "right": "Mon",
+            "sourceId": "decrire-f6-a1:sac-je"
+          },
+          {
+            "id": "sac-je-p2",
+            "left": "___ photos sont dans le dossier.",
+            "right": "Mes",
+            "sourceId": "decrire-f6-a1:photos-je"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-cle-je",
+        "prompt": "Situation 1 : Vous parlez de votre propre clé dans ce rôle. Nom : féminin singulier.\nSituation 2 : Vous parlez de plusieurs photos à vous. Nom : féminin pluriel.",
+        "answers": [
+          "Ma clé est sur la table.\nMes photos sont dans le dossier."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "cle-je-p1",
+            "left": "___ clé est sur la table.",
+            "right": "Ma",
+            "sourceId": "decrire-f6-a1:cle-je"
+          },
+          {
+            "id": "cle-je-p2",
+            "left": "___ photos sont dans le dossier.",
+            "right": "Mes",
+            "sourceId": "decrire-f6-a1:photos-je"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-livres-je",
+        "prompt": "Situation 1 : Vous parlez de plusieurs livres à vous. Nom : masculin pluriel.\nSituation 2 : Vous vous adressez à un proche en disant tu et parlez de son sac. Nom : masculin singulier.",
+        "answers": [
+          "Mes livres sont prêts pour le cours.\nTon sac est près de la porte."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "livres-je-p1",
+            "left": "___ livres sont prêts pour le cours.",
+            "right": "Mes",
+            "sourceId": "decrire-f6-a1:livres-je"
+          },
+          {
+            "id": "livres-je-p2",
+            "left": "___ sac est près de la porte.",
+            "right": "Ton",
+            "sourceId": "decrire-f6-a1:sac-tu"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-adresse-je",
+        "prompt": "Situation 1 : Vous donnez votre propre adresse fictive. Le nom adresse est féminin. Nom : féminin singulier.\nSituation 2 : Vous parlez à la personne qui possède la veste et vous la tutoyez. Nom : féminin singulier.",
+        "answers": [
+          "Mon adresse figure sur le formulaire.\nTa veste est dans l’armoire."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "adresse-je-p1",
+            "left": "___ adresse figure sur le formulaire.",
+            "right": "Mon",
+            "sourceId": "decrire-f6-a1:adresse-je"
+          },
+          {
+            "id": "adresse-je-p2",
+            "left": "___ veste est dans l’armoire.",
+            "right": "Ta",
+            "sourceId": "decrire-f6-a1:veste-tu"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-amie-je",
+        "prompt": "Situation 1 : Vous parlez d’une amie à vous, sans dire que la personne vous appartient. Nom : féminin singulier.\nSituation 2 : Vous parlez à la personne qui possède ces clés en disant tu. Nom : féminin pluriel.",
+        "answers": [
+          "Mon amie arrive à huit heures.\nTes clés sont dans la boîte."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "amie-je-p1",
+            "left": "___ amie arrive à huit heures.",
+            "right": "Mon",
+            "sourceId": "decrire-f6-a1:amie-je"
+          },
+          {
+            "id": "amie-je-p2",
+            "left": "___ clés sont dans la boîte.",
+            "right": "Tes",
+            "sourceId": "decrire-f6-a1:cles-tu"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-chaussures-je",
+        "prompt": "Situation 1 : Vous parlez de plusieurs chaussures à vous. Nom : féminin pluriel.\nSituation 2 : Vous vous adressez à un proche en disant tu. Vous parlez de son adresse, un nom féminin. Nom : féminin singulier.",
+        "answers": [
+          "Mes chaussures sont dans le vestiaire.\nTon adresse est bien notée."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "chaussures-je-p1",
+            "left": "___ chaussures sont dans le vestiaire.",
+            "right": "Mes",
+            "sourceId": "decrire-f6-a1:chaussures-je"
+          },
+          {
+            "id": "chaussures-je-p2",
+            "left": "___ adresse est bien notée.",
+            "right": "Ton",
+            "sourceId": "decrire-f6-a1:adresse-tu"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-telephone-je",
+        "prompt": "Situation 1 : Dans ce rôle, vous décrivez votre propre téléphone. Nom : masculin singulier.\nSituation 2 : Vous parlez à la personne qui raconte l’histoire et vous la tutoyez. Le h de histoire est muet. Nom : féminin singulier.",
+        "answers": [
+          "Mon téléphone est en charge.\nTon histoire est très courte."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "telephone-je-p1",
+            "left": "___ téléphone est en charge.",
+            "right": "Mon",
+            "sourceId": "decrire-f6-a1:telephone-je"
+          },
+          {
+            "id": "telephone-je-p2",
+            "left": "___ histoire est très courte.",
+            "right": "Ton",
+            "sourceId": "decrire-f6-a1:histoire-tu"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-ecole-je",
+        "prompt": "Situation 1 : Vous parlez de l’école que vous fréquentez dans ce rôle fictif. Le nom école est féminin. Nom : féminin singulier.\nSituation 2 : Vous dites tu à la personne qui possède les stylos. Nom : masculin pluriel.",
+        "answers": [
+          "Mon école est près de la gare.\nTes stylos écrivent en bleu."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "ecole-je-p1",
+            "left": "___ école est près de la gare.",
+            "right": "Mon",
+            "sourceId": "decrire-f6-a1:ecole-je"
+          },
+          {
+            "id": "ecole-je-p2",
+            "left": "___ stylos écrivent en bleu.",
+            "right": "Tes",
+            "sourceId": "decrire-f6-a1:stylos-tu"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-photos-je",
+        "prompt": "Situation 1 : Vous parlez de plusieurs photos à vous. Nom : féminin pluriel.\nSituation 2 : Vous vous adressez à la personne qui possède l’ordinateur en disant tu. Nom : masculin singulier.",
+        "answers": [
+          "Mes photos sont dans le dossier.\nTon ordinateur fonctionne bien."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "photos-je-p1",
+            "left": "___ photos sont dans le dossier.",
+            "right": "Mes",
+            "sourceId": "decrire-f6-a1:photos-je"
+          },
+          {
+            "id": "photos-je-p2",
+            "left": "___ ordinateur fonctionne bien.",
+            "right": "Ton",
+            "sourceId": "decrire-f6-a1:ordinateur-tu"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-sac-tu",
+        "prompt": "Situation 1 : Vous vous adressez à un proche en disant tu et parlez de son sac. Nom : masculin singulier.\nSituation 2 : Vous dites tu à la personne dont vous décrivez la chambre. Nom : féminin singulier.",
+        "answers": [
+          "Ton sac est près de la porte.\nTa chambre donne sur la cour."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "sac-tu-p1",
+            "left": "___ sac est près de la porte.",
+            "right": "Ton",
+            "sourceId": "decrire-f6-a1:sac-tu"
+          },
+          {
+            "id": "sac-tu-p2",
+            "left": "___ chambre donne sur la cour.",
+            "right": "Ta",
+            "sourceId": "decrire-f6-a1:chambre-tu"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-veste-tu",
+        "prompt": "Situation 1 : Vous parlez à la personne qui possède la veste et vous la tutoyez. Nom : féminin singulier.\nSituation 2 : Vous parlez à un proche en disant tu et désignez plusieurs affaires à lui. Nom : féminin pluriel.",
+        "answers": [
+          "Ta veste est dans l’armoire.\nTes affaires sont sur le banc."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "veste-tu-p1",
+            "left": "___ veste est dans l’armoire.",
+            "right": "Ta",
+            "sourceId": "decrire-f6-a1:veste-tu"
+          },
+          {
+            "id": "veste-tu-p2",
+            "left": "___ affaires sont sur le banc.",
+            "right": "Tes",
+            "sourceId": "decrire-f6-a1:affaires-tu"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-cles-tu",
+        "prompt": "Situation 1 : Vous parlez à la personne qui possède ces clés en disant tu. Nom : féminin pluriel.\nSituation 2 : Vous parlez de Nora à une autre personne. Le nom sac est masculin, même si Nora est une femme. Nom : masculin singulier.",
+        "answers": [
+          "Tes clés sont dans la boîte.\nSon sac est sous la chaise."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "cles-tu-p1",
+            "left": "___ clés sont dans la boîte.",
+            "right": "Tes",
+            "sourceId": "decrire-f6-a1:cles-tu"
+          },
+          {
+            "id": "cles-tu-p2",
+            "left": "___ sac est sous la chaise.",
+            "right": "Son",
+            "sourceId": "decrire-f6-a1:sac-nora"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-adresse-tu",
+        "prompt": "Situation 1 : Vous vous adressez à un proche en disant tu. Vous parlez de son adresse, un nom féminin. Nom : féminin singulier.\nSituation 2 : Vous parlez de Paul à une autre personne. Le nom voiture est féminin, même si Paul est un homme. Nom : féminin singulier.",
+        "answers": [
+          "Ton adresse est bien notée.\nSa voiture est devant le centre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "adresse-tu-p1",
+            "left": "___ adresse est bien notée.",
+            "right": "Ton",
+            "sourceId": "decrire-f6-a1:adresse-tu"
+          },
+          {
+            "id": "adresse-tu-p2",
+            "left": "___ voiture est devant le centre.",
+            "right": "Sa",
+            "sourceId": "decrire-f6-a1:voiture-paul"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-histoire-tu",
+        "prompt": "Situation 1 : Vous parlez à la personne qui raconte l’histoire et vous la tutoyez. Le h de histoire est muet. Nom : féminin singulier.\nSituation 2 : Vous parlez de Léa à quelqu’un d’autre et désignez plusieurs documents. Nom : masculin pluriel.",
+        "answers": [
+          "Ton histoire est très courte.\nSes documents sont prêts."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "histoire-tu-p1",
+            "left": "___ histoire est très courte.",
+            "right": "Ton",
+            "sourceId": "decrire-f6-a1:histoire-tu"
+          },
+          {
+            "id": "histoire-tu-p2",
+            "left": "___ documents sont prêts.",
+            "right": "Ses",
+            "sourceId": "decrire-f6-a1:documents-lea"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-stylos-tu",
+        "prompt": "Situation 1 : Vous dites tu à la personne qui possède les stylos. Nom : masculin pluriel.\nSituation 2 : Vous parlez de Karim à une autre personne. Le nom adresse est féminin. Nom : féminin singulier.",
+        "answers": [
+          "Tes stylos écrivent en bleu.\nSon adresse figure sur l’enveloppe."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "stylos-tu-p1",
+            "left": "___ stylos écrivent en bleu.",
+            "right": "Tes",
+            "sourceId": "decrire-f6-a1:stylos-tu"
+          },
+          {
+            "id": "stylos-tu-p2",
+            "left": "___ adresse figure sur l’enveloppe.",
+            "right": "Son",
+            "sourceId": "decrire-f6-a1:adresse-karim"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-ordinateur-tu",
+        "prompt": "Situation 1 : Vous vous adressez à la personne qui possède l’ordinateur en disant tu. Nom : masculin singulier.\nSituation 2 : Vous parlez de l’histoire racontée par Nora. Le h de histoire est muet. Nom : féminin singulier.",
+        "answers": [
+          "Ton ordinateur fonctionne bien.\nSon histoire commence dans un jardin."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "ordinateur-tu-p1",
+            "left": "___ ordinateur fonctionne bien.",
+            "right": "Ton",
+            "sourceId": "decrire-f6-a1:ordinateur-tu"
+          },
+          {
+            "id": "ordinateur-tu-p2",
+            "left": "___ histoire commence dans un jardin.",
+            "right": "Son",
+            "sourceId": "decrire-f6-a1:histoire-nora"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-chambre-tu",
+        "prompt": "Situation 1 : Vous dites tu à la personne dont vous décrivez la chambre. Nom : féminin singulier.\nSituation 2 : Vous parlez de Hugo à une autre personne et désignez plusieurs chaussures. Nom : féminin pluriel.",
+        "answers": [
+          "Ta chambre donne sur la cour.\nSes chaussures sont neuves."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "chambre-tu-p1",
+            "left": "___ chambre donne sur la cour.",
+            "right": "Ta",
+            "sourceId": "decrire-f6-a1:chambre-tu"
+          },
+          {
+            "id": "chambre-tu-p2",
+            "left": "___ chaussures sont neuves.",
+            "right": "Ses",
+            "sourceId": "decrire-f6-a1:chaussures-hugo"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-affaires-tu",
+        "prompt": "Situation 1 : Vous parlez à un proche en disant tu et désignez plusieurs affaires à lui. Nom : féminin pluriel.\nSituation 2 : Vous parlez du téléphone de Samia à quelqu’un d’autre. Nom : masculin singulier.",
+        "answers": [
+          "Tes affaires sont sur le banc.\nSon téléphone est sur le bureau."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "affaires-tu-p1",
+            "left": "___ affaires sont sur le banc.",
+            "right": "Tes",
+            "sourceId": "decrire-f6-a1:affaires-tu"
+          },
+          {
+            "id": "affaires-tu-p2",
+            "left": "___ téléphone est sur le bureau.",
+            "right": "Son",
+            "sourceId": "decrire-f6-a1:telephone-samia"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-sac-nora",
+        "prompt": "Situation 1 : Vous parlez de Nora à une autre personne. Le nom sac est masculin, même si Nora est une femme. Nom : masculin singulier.\nSituation 2 : Vous parlez de Luc à une autre personne. Le nom haie est féminin et son h est aspiré : la haie. Nom : féminin singulier.",
+        "answers": [
+          "Son sac est sous la chaise.\nSa haie est près du portail."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "sac-nora-p1",
+            "left": "___ sac est sous la chaise.",
+            "right": "Son",
+            "sourceId": "decrire-f6-a1:sac-nora"
+          },
+          {
+            "id": "sac-nora-p2",
+            "left": "___ haie est près du portail.",
+            "right": "Sa",
+            "sourceId": "decrire-f6-a1:haie-luc"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-voiture-paul",
+        "prompt": "Situation 1 : Vous parlez de Paul à une autre personne. Le nom voiture est féminin, même si Paul est un homme. Nom : féminin singulier.\nSituation 2 : Vous parlez d’Anna à une autre personne et désignez plusieurs outils. Nom : masculin pluriel.",
+        "answers": [
+          "Sa voiture est devant le centre.\nSes outils sont rangés."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "voiture-paul-p1",
+            "left": "___ voiture est devant le centre.",
+            "right": "Sa",
+            "sourceId": "decrire-f6-a1:voiture-paul"
+          },
+          {
+            "id": "voiture-paul-p2",
+            "left": "___ outils sont rangés.",
+            "right": "Ses",
+            "sourceId": "decrire-f6-a1:outils-anna"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-documents-lea",
+        "prompt": "Situation 1 : Vous parlez de Léa à quelqu’un d’autre et désignez plusieurs documents. Nom : masculin pluriel.\nSituation 2 : Vous parlez au nom de votre groupe en disant nous. Nom : masculin singulier.",
+        "answers": [
+          "Ses documents sont prêts.\nNotre local ferme à dix-huit heures."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "documents-lea-p1",
+            "left": "___ documents sont prêts.",
+            "right": "Ses",
+            "sourceId": "decrire-f6-a1:documents-lea"
+          },
+          {
+            "id": "documents-lea-p2",
+            "left": "___ local ferme à dix-huit heures.",
+            "right": "Notre",
+            "sourceId": "decrire-f6-a1:local-nous"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-adresse-karim",
+        "prompt": "Situation 1 : Vous parlez de Karim à une autre personne. Le nom adresse est féminin. Nom : féminin singulier.\nSituation 2 : Vous parlez de la salle de votre groupe en disant nous. Nom : féminin singulier.",
+        "answers": [
+          "Son adresse figure sur l’enveloppe.\nNotre classe est au premier étage."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "adresse-karim-p1",
+            "left": "___ adresse figure sur l’enveloppe.",
+            "right": "Son",
+            "sourceId": "decrire-f6-a1:adresse-karim"
+          },
+          {
+            "id": "adresse-karim-p2",
+            "left": "___ classe est au premier étage.",
+            "right": "Notre",
+            "sourceId": "decrire-f6-a1:classe-nous"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-histoire-nora",
+        "prompt": "Situation 1 : Vous parlez de l’histoire racontée par Nora. Le h de histoire est muet. Nom : féminin singulier.\nSituation 2 : Vous parlez au nom d’un groupe qui possède plusieurs livres. Nom : masculin pluriel.",
+        "answers": [
+          "Son histoire commence dans un jardin.\nNos livres sont sur l’étagère."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "histoire-nora-p1",
+            "left": "___ histoire commence dans un jardin.",
+            "right": "Son",
+            "sourceId": "decrire-f6-a1:histoire-nora"
+          },
+          {
+            "id": "histoire-nora-p2",
+            "left": "___ livres sont sur l’étagère.",
+            "right": "Nos",
+            "sourceId": "decrire-f6-a1:livres-nous"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-chaussures-hugo",
+        "prompt": "Situation 1 : Vous parlez de Hugo à une autre personne et désignez plusieurs chaussures. Nom : féminin pluriel.\nSituation 2 : Vous présentez l’activité de votre groupe en disant nous. Nom : féminin singulier.",
+        "answers": [
+          "Ses chaussures sont neuves.\nNotre activité commence à neuf heures."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "chaussures-hugo-p1",
+            "left": "___ chaussures sont neuves.",
+            "right": "Ses",
+            "sourceId": "decrire-f6-a1:chaussures-hugo"
+          },
+          {
+            "id": "chaussures-hugo-p2",
+            "left": "___ activité commence à neuf heures.",
+            "right": "Notre",
+            "sourceId": "decrire-f6-a1:activite-nous"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-telephone-samia",
+        "prompt": "Situation 1 : Vous parlez du téléphone de Samia à quelqu’un d’autre. Nom : masculin singulier.\nSituation 2 : Vous parlez des clés de votre groupe en disant nous. Nom : féminin pluriel.",
+        "answers": [
+          "Son téléphone est sur le bureau.\nNos clés sont à l’accueil."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "telephone-samia-p1",
+            "left": "___ téléphone est sur le bureau.",
+            "right": "Son",
+            "sourceId": "decrire-f6-a1:telephone-samia"
+          },
+          {
+            "id": "telephone-samia-p2",
+            "left": "___ clés sont à l’accueil.",
+            "right": "Nos",
+            "sourceId": "decrire-f6-a1:cles-nous"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-haie-luc",
+        "prompt": "Situation 1 : Vous parlez de Luc à une autre personne. Le nom haie est féminin et son h est aspiré : la haie. Nom : féminin singulier.\nSituation 2 : Vous décrivez les horaires de votre groupe en disant nous. Nom : masculin pluriel.",
+        "answers": [
+          "Sa haie est près du portail.\nNos horaires changent en été."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "haie-luc-p1",
+            "left": "___ haie est près du portail.",
+            "right": "Sa",
+            "sourceId": "decrire-f6-a1:haie-luc"
+          },
+          {
+            "id": "haie-luc-p2",
+            "left": "___ horaires changent en été.",
+            "right": "Nos",
+            "sourceId": "decrire-f6-a1:horaires-nous"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-outils-anna",
+        "prompt": "Situation 1 : Vous parlez d’Anna à une autre personne et désignez plusieurs outils. Nom : masculin pluriel.\nSituation 2 : Vous parlez au nom d’un groupe qui partage un ordinateur. Nom : masculin singulier.",
+        "answers": [
+          "Ses outils sont rangés.\nNotre ordinateur est disponible."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "outils-anna-p1",
+            "left": "___ outils sont rangés.",
+            "right": "Ses",
+            "sourceId": "decrire-f6-a1:outils-anna"
+          },
+          {
+            "id": "outils-anna-p2",
+            "left": "___ ordinateur est disponible.",
+            "right": "Notre",
+            "sourceId": "decrire-f6-a1:ordinateur-nous"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-local-nous",
+        "prompt": "Situation 1 : Vous parlez au nom de votre groupe en disant nous. Nom : masculin singulier.\nSituation 2 : Vous présentez les photos de votre groupe en disant nous. Nom : féminin pluriel.",
+        "answers": [
+          "Notre local ferme à dix-huit heures.\nNos photos montrent la sortie."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "local-nous-p1",
+            "left": "___ local ferme à dix-huit heures.",
+            "right": "Notre",
+            "sourceId": "decrire-f6-a1:local-nous"
+          },
+          {
+            "id": "local-nous-p2",
+            "left": "___ photos montrent la sortie.",
+            "right": "Nos",
+            "sourceId": "decrire-f6-a1:photos-nous"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-classe-nous",
+        "prompt": "Situation 1 : Vous parlez de la salle de votre groupe en disant nous. Nom : féminin singulier.\nSituation 2 : Vous vous adressez à tout un groupe en disant vous. Nom : féminin singulier.",
+        "answers": [
+          "Notre classe est au premier étage.\nVotre salle est prête."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "classe-nous-p1",
+            "left": "___ classe est au premier étage.",
+            "right": "Notre",
+            "sourceId": "decrire-f6-a1:classe-nous"
+          },
+          {
+            "id": "classe-nous-p2",
+            "left": "___ salle est prête.",
+            "right": "Votre",
+            "sourceId": "decrire-f6-a1:salle-vous"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-livres-nous",
+        "prompt": "Situation 1 : Vous parlez au nom d’un groupe qui possède plusieurs livres. Nom : masculin pluriel.\nSituation 2 : Vous parlez à plusieurs voyageurs de leurs billets en disant vous. Nom : masculin pluriel.",
+        "answers": [
+          "Nos livres sont sur l’étagère.\nVos billets sont valables aujourd’hui."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "livres-nous-p1",
+            "left": "___ livres sont sur l’étagère.",
+            "right": "Nos",
+            "sourceId": "decrire-f6-a1:livres-nous"
+          },
+          {
+            "id": "livres-nous-p2",
+            "left": "___ billets sont valables aujourd’hui.",
+            "right": "Vos",
+            "sourceId": "decrire-f6-a1:billets-vous"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-activite-nous",
+        "prompt": "Situation 1 : Vous présentez l’activité de votre groupe en disant nous. Nom : féminin singulier.\nSituation 2 : Vous vouvoyez une personne et parlez de son adresse. Nom : féminin singulier.",
+        "answers": [
+          "Notre activité commence à neuf heures.\nVotre adresse est dans le dossier."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "activite-nous-p1",
+            "left": "___ activité commence à neuf heures.",
+            "right": "Notre",
+            "sourceId": "decrire-f6-a1:activite-nous"
+          },
+          {
+            "id": "activite-nous-p2",
+            "left": "___ adresse est dans le dossier.",
+            "right": "Votre",
+            "sourceId": "decrire-f6-a1:adresse-vous"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-cles-nous",
+        "prompt": "Situation 1 : Vous parlez des clés de votre groupe en disant nous. Nom : féminin pluriel.\nSituation 2 : Vous vouvoyez la personne qui possède le téléphone. Nom : masculin singulier.",
+        "answers": [
+          "Nos clés sont à l’accueil.\nVotre téléphone sonne."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "cles-nous-p1",
+            "left": "___ clés sont à l’accueil.",
+            "right": "Nos",
+            "sourceId": "decrire-f6-a1:cles-nous"
+          },
+          {
+            "id": "cles-nous-p2",
+            "left": "___ téléphone sonne.",
+            "right": "Votre",
+            "sourceId": "decrire-f6-a1:telephone-vous"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-horaires-nous",
+        "prompt": "Situation 1 : Vous décrivez les horaires de votre groupe en disant nous. Nom : masculin pluriel.\nSituation 2 : Vous vous adressez à un groupe en disant vous et désignez ses affaires. Nom : féminin pluriel.",
+        "answers": [
+          "Nos horaires changent en été.\nVos affaires sont dans la consigne."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "horaires-nous-p1",
+            "left": "___ horaires changent en été.",
+            "right": "Nos",
+            "sourceId": "decrire-f6-a1:horaires-nous"
+          },
+          {
+            "id": "horaires-nous-p2",
+            "left": "___ affaires sont dans la consigne.",
+            "right": "Vos",
+            "sourceId": "decrire-f6-a1:affaires-vous"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-ordinateur-nous",
+        "prompt": "Situation 1 : Vous parlez au nom d’un groupe qui partage un ordinateur. Nom : masculin singulier.\nSituation 2 : Vous parlez à plusieurs élèves de leur école en disant vous. Nom : féminin singulier.",
+        "answers": [
+          "Notre ordinateur est disponible.\nVotre école accueille les familles."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "ordinateur-nous-p1",
+            "left": "___ ordinateur est disponible.",
+            "right": "Notre",
+            "sourceId": "decrire-f6-a1:ordinateur-nous"
+          },
+          {
+            "id": "ordinateur-nous-p2",
+            "left": "___ école accueille les familles.",
+            "right": "Votre",
+            "sourceId": "decrire-f6-a1:ecole-vous"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-photos-nous",
+        "prompt": "Situation 1 : Vous présentez les photos de votre groupe en disant nous. Nom : féminin pluriel.\nSituation 2 : Vous vouvoyez la personne qui possède la clé. Nom : féminin singulier.",
+        "answers": [
+          "Nos photos montrent la sortie.\nVotre clé ouvre cette porte."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "photos-nous-p1",
+            "left": "___ photos montrent la sortie.",
+            "right": "Nos",
+            "sourceId": "decrire-f6-a1:photos-nous"
+          },
+          {
+            "id": "photos-nous-p2",
+            "left": "___ clé ouvre cette porte.",
+            "right": "Votre",
+            "sourceId": "decrire-f6-a1:cle-vous"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-salle-vous",
+        "prompt": "Situation 1 : Vous vous adressez à tout un groupe en disant vous. Nom : féminin singulier.\nSituation 2 : Vous parlez des documents d’un groupe en vous adressant à ses membres. Nom : masculin pluriel.",
+        "answers": [
+          "Votre salle est prête.\nVos documents sont complets."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "salle-vous-p1",
+            "left": "___ salle est prête.",
+            "right": "Votre",
+            "sourceId": "decrire-f6-a1:salle-vous"
+          },
+          {
+            "id": "salle-vous-p2",
+            "left": "___ documents sont complets.",
+            "right": "Vos",
+            "sourceId": "decrire-f6-a1:documents-vous"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-billets-vous",
+        "prompt": "Situation 1 : Vous parlez à plusieurs voyageurs de leurs billets en disant vous. Nom : masculin pluriel.\nSituation 2 : Vous parlez de plusieurs bénévoles à quelqu’un d’autre. Les bénévoles partagent un seul local. Nom : masculin singulier.",
+        "answers": [
+          "Vos billets sont valables aujourd’hui.\nLeur local est au rez-de-chaussée."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "billets-vous-p1",
+            "left": "___ billets sont valables aujourd’hui.",
+            "right": "Vos",
+            "sourceId": "decrire-f6-a1:billets-vous"
+          },
+          {
+            "id": "billets-vous-p2",
+            "left": "___ local est au rez-de-chaussée.",
+            "right": "Leur",
+            "sourceId": "decrire-f6-a1:local-ils"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-adresse-vous",
+        "prompt": "Situation 1 : Vous vouvoyez une personne et parlez de son adresse. Nom : féminin singulier.\nSituation 2 : Vous parlez de deux voisines à une autre personne. Elles partagent une seule voiture. Nom : féminin singulier.",
+        "answers": [
+          "Votre adresse est dans le dossier.\nLeur voiture est dans le garage."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "adresse-vous-p1",
+            "left": "___ adresse est dans le dossier.",
+            "right": "Votre",
+            "sourceId": "decrire-f6-a1:adresse-vous"
+          },
+          {
+            "id": "adresse-vous-p2",
+            "left": "___ voiture est dans le garage.",
+            "right": "Leur",
+            "sourceId": "decrire-f6-a1:voiture-elles"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-telephone-vous",
+        "prompt": "Situation 1 : Vous vouvoyez la personne qui possède le téléphone. Nom : masculin singulier.\nSituation 2 : Vous parlez de deux amis à une autre personne. Il y a plusieurs vélos. Nom : masculin pluriel.",
+        "answers": [
+          "Votre téléphone sonne.\nLeurs vélos sont devant la maison."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "telephone-vous-p1",
+            "left": "___ téléphone sonne.",
+            "right": "Votre",
+            "sourceId": "decrire-f6-a1:telephone-vous"
+          },
+          {
+            "id": "telephone-vous-p2",
+            "left": "___ vélos sont devant la maison.",
+            "right": "Leurs",
+            "sourceId": "decrire-f6-a1:velos-ils"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-affaires-vous",
+        "prompt": "Situation 1 : Vous vous adressez à un groupe en disant vous et désignez ses affaires. Nom : féminin pluriel.\nSituation 2 : Vous parlez de plusieurs participantes à quelqu’un d’autre. Elles fréquentent une seule classe. Nom : féminin singulier.",
+        "answers": [
+          "Vos affaires sont dans la consigne.\nLeur classe est au deuxième étage."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "affaires-vous-p1",
+            "left": "___ affaires sont dans la consigne.",
+            "right": "Vos",
+            "sourceId": "decrire-f6-a1:affaires-vous"
+          },
+          {
+            "id": "affaires-vous-p2",
+            "left": "___ classe est au deuxième étage.",
+            "right": "Leur",
+            "sourceId": "decrire-f6-a1:classe-elles"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-ecole-vous",
+        "prompt": "Situation 1 : Vous parlez à plusieurs élèves de leur école en disant vous. Nom : féminin singulier.\nSituation 2 : Vous parlez des clés de plusieurs voisins à une autre personne. Nom : féminin pluriel.",
+        "answers": [
+          "Votre école accueille les familles.\nLeurs clés sont dans le tiroir."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "ecole-vous-p1",
+            "left": "___ école accueille les familles.",
+            "right": "Votre",
+            "sourceId": "decrire-f6-a1:ecole-vous"
+          },
+          {
+            "id": "ecole-vous-p2",
+            "left": "___ clés sont dans le tiroir.",
+            "right": "Leurs",
+            "sourceId": "decrire-f6-a1:cles-ils"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-cle-vous",
+        "prompt": "Situation 1 : Vous vouvoyez la personne qui possède la clé. Nom : féminin singulier.\nSituation 2 : Vous parlez des affiches de plusieurs élèves à une autre personne. Nom : féminin pluriel.",
+        "answers": [
+          "Votre clé ouvre cette porte.\nLeurs affiches annoncent la fête."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "cle-vous-p1",
+            "left": "___ clé ouvre cette porte.",
+            "right": "Votre",
+            "sourceId": "decrire-f6-a1:cle-vous"
+          },
+          {
+            "id": "cle-vous-p2",
+            "left": "___ affiches annoncent la fête.",
+            "right": "Leurs",
+            "sourceId": "decrire-f6-a1:affiches-elles"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-documents-vous",
+        "prompt": "Situation 1 : Vous parlez des documents d’un groupe en vous adressant à ses membres. Nom : masculin pluriel.\nSituation 2 : Vous parlez de plusieurs habitants à une autre personne. Ils partagent un seul jardin. Nom : masculin singulier.",
+        "answers": [
+          "Vos documents sont complets.\nLeur jardin est derrière le centre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "documents-vous-p1",
+            "left": "___ documents sont complets.",
+            "right": "Vos",
+            "sourceId": "decrire-f6-a1:documents-vous"
+          },
+          {
+            "id": "documents-vous-p2",
+            "left": "___ jardin est derrière le centre.",
+            "right": "Leur",
+            "sourceId": "decrire-f6-a1:jardin-ils"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-local-ils",
+        "prompt": "Situation 1 : Vous parlez de plusieurs bénévoles à quelqu’un d’autre. Les bénévoles partagent un seul local. Nom : masculin singulier.\nSituation 2 : Dans ce rôle, vous parlez de votre propre sac en disant je. Nom : masculin singulier.",
+        "answers": [
+          "Leur local est au rez-de-chaussée.\nMon sac est dans l’entrée."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "local-ils-p1",
+            "left": "___ local est au rez-de-chaussée.",
+            "right": "Leur",
+            "sourceId": "decrire-f6-a1:local-ils"
+          },
+          {
+            "id": "local-ils-p2",
+            "left": "___ sac est dans l’entrée.",
+            "right": "Mon",
+            "sourceId": "decrire-f6-a1:sac-je"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-voiture-elles",
+        "prompt": "Situation 1 : Vous parlez de deux voisines à une autre personne. Elles partagent une seule voiture. Nom : féminin singulier.\nSituation 2 : Vous parlez de votre propre clé dans ce rôle. Nom : féminin singulier.",
+        "answers": [
+          "Leur voiture est dans le garage.\nMa clé est sur la table."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "voiture-elles-p1",
+            "left": "___ voiture est dans le garage.",
+            "right": "Leur",
+            "sourceId": "decrire-f6-a1:voiture-elles"
+          },
+          {
+            "id": "voiture-elles-p2",
+            "left": "___ clé est sur la table.",
+            "right": "Ma",
+            "sourceId": "decrire-f6-a1:cle-je"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-velos-ils",
+        "prompt": "Situation 1 : Vous parlez de deux amis à une autre personne. Il y a plusieurs vélos. Nom : masculin pluriel.\nSituation 2 : Vous parlez de plusieurs livres à vous. Nom : masculin pluriel.",
+        "answers": [
+          "Leurs vélos sont devant la maison.\nMes livres sont prêts pour le cours."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "velos-ils-p1",
+            "left": "___ vélos sont devant la maison.",
+            "right": "Leurs",
+            "sourceId": "decrire-f6-a1:velos-ils"
+          },
+          {
+            "id": "velos-ils-p2",
+            "left": "___ livres sont prêts pour le cours.",
+            "right": "Mes",
+            "sourceId": "decrire-f6-a1:livres-je"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-classe-elles",
+        "prompt": "Situation 1 : Vous parlez de plusieurs participantes à quelqu’un d’autre. Elles fréquentent une seule classe. Nom : féminin singulier.\nSituation 2 : Vous donnez votre propre adresse fictive. Le nom adresse est féminin. Nom : féminin singulier.",
+        "answers": [
+          "Leur classe est au deuxième étage.\nMon adresse figure sur le formulaire."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "classe-elles-p1",
+            "left": "___ classe est au deuxième étage.",
+            "right": "Leur",
+            "sourceId": "decrire-f6-a1:classe-elles"
+          },
+          {
+            "id": "classe-elles-p2",
+            "left": "___ adresse figure sur le formulaire.",
+            "right": "Mon",
+            "sourceId": "decrire-f6-a1:adresse-je"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-cles-ils",
+        "prompt": "Situation 1 : Vous parlez des clés de plusieurs voisins à une autre personne. Nom : féminin pluriel.\nSituation 2 : Vous parlez d’une amie à vous, sans dire que la personne vous appartient. Nom : féminin singulier.",
+        "answers": [
+          "Leurs clés sont dans le tiroir.\nMon amie arrive à huit heures."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "cles-ils-p1",
+            "left": "___ clés sont dans le tiroir.",
+            "right": "Leurs",
+            "sourceId": "decrire-f6-a1:cles-ils"
+          },
+          {
+            "id": "cles-ils-p2",
+            "left": "___ amie arrive à huit heures.",
+            "right": "Mon",
+            "sourceId": "decrire-f6-a1:amie-je"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-affiches-elles",
+        "prompt": "Situation 1 : Vous parlez des affiches de plusieurs élèves à une autre personne. Nom : féminin pluriel.\nSituation 2 : Vous parlez de plusieurs chaussures à vous. Nom : féminin pluriel.",
+        "answers": [
+          "Leurs affiches annoncent la fête.\nMes chaussures sont dans le vestiaire."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "affiches-elles-p1",
+            "left": "___ affiches annoncent la fête.",
+            "right": "Leurs",
+            "sourceId": "decrire-f6-a1:affiches-elles"
+          },
+          {
+            "id": "affiches-elles-p2",
+            "left": "___ chaussures sont dans le vestiaire.",
+            "right": "Mes",
+            "sourceId": "decrire-f6-a1:chaussures-je"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-a-a1-jardin-ils",
+        "prompt": "Situation 1 : Vous parlez de plusieurs habitants à une autre personne. Ils partagent un seul jardin. Nom : masculin singulier.\nSituation 2 : Dans ce rôle, vous décrivez votre propre téléphone. Nom : masculin singulier.",
+        "answers": [
+          "Leur jardin est derrière le centre.\nMon téléphone est en charge."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-a",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "jardin-ils-p1",
+            "left": "___ jardin est derrière le centre.",
+            "right": "Leur",
+            "sourceId": "decrire-f6-a1:jardin-ils"
+          },
+          {
+            "id": "jardin-ils-p2",
+            "left": "___ téléphone est en charge.",
+            "right": "Mon",
+            "sourceId": "decrire-f6-a1:telephone-je"
+          }
+        ],
+        "explanation": "Chaque phrase garde son possesseur et son nom. Associez les déterminants en tenant compte des deux situations."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "decrire-2026-11-23-v1",
+    "activityId": "gram-ex-f6-curriculum-t",
+    "subthemeId": "f6",
+    "topic": "gram-decrire",
+    "level": "A1",
+    "label": "Transformer une phrase",
+    "objective": "Choisir un déterminant possessif selon le possesseur et le nom, sans confondre leur genre.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-23",
+      "humanReview": "pending",
+      "note": "Situations et variantes relues, modèles ouverts non exclusifs. Rôles fictifs ; validation enseignante en attente. Les situations sont réemployées entre les mécaniques, sans multiplier les histoires revendiquées."
+    },
+    "presentations": [
+      "transform"
+    ],
+    "instructions": {
+      "transform": "Réunissez les informations avec un possessif sans changer le rôle ni les faits."
+    },
+    "units": [
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-sac-je",
+        "prompt": "Ce sac est à moi. Il est dans l’entrée.",
+        "answers": [
+          "Mon sac est dans l’entrée."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Dans ce rôle, vous parlez de votre propre sac en disant je. Nom : masculin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-cle-je",
+        "prompt": "Cette clé est à moi. Elle est sur la table.",
+        "answers": [
+          "Ma clé est sur la table."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez de votre propre clé dans ce rôle. Nom : féminin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-livres-je",
+        "prompt": "Ces livres sont à moi. Ils sont prêts pour le cours.",
+        "answers": [
+          "Mes livres sont prêts pour le cours."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez de plusieurs livres à vous. Nom : masculin pluriel.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-adresse-je",
+        "prompt": "Cette adresse est la mienne. Elle figure sur le formulaire.",
+        "answers": [
+          "Mon adresse figure sur le formulaire."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous donnez votre propre adresse fictive. Le nom adresse est féminin. Nom : féminin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-amie-je",
+        "prompt": "Une amie à moi vient au centre. Cette amie arrive à huit heures.",
+        "answers": [
+          "Mon amie arrive à huit heures."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez d’une amie à vous, sans dire que la personne vous appartient. Nom : féminin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-chaussures-je",
+        "prompt": "Ces chaussures sont à moi. Elles sont dans le vestiaire.",
+        "answers": [
+          "Mes chaussures sont dans le vestiaire."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez de plusieurs chaussures à vous. Nom : féminin pluriel.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-telephone-je",
+        "prompt": "Ce téléphone est à moi. Il est en charge.",
+        "answers": [
+          "Mon téléphone est en charge."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Dans ce rôle, vous décrivez votre propre téléphone. Nom : masculin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-ecole-je",
+        "prompt": "Cette école est celle où je vais. Elle est près de la gare.",
+        "answers": [
+          "Mon école est près de la gare."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez de l’école que vous fréquentez dans ce rôle fictif. Le nom école est féminin. Nom : féminin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-photos-je",
+        "prompt": "Ces photos sont à moi. Elles sont dans le dossier.",
+        "answers": [
+          "Mes photos sont dans le dossier."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez de plusieurs photos à vous. Nom : féminin pluriel.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-sac-tu",
+        "prompt": "Ce sac est à toi. Il est près de la porte.",
+        "answers": [
+          "Ton sac est près de la porte."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous vous adressez à un proche en disant tu et parlez de son sac. Nom : masculin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-veste-tu",
+        "prompt": "Cette veste est à toi. Elle est dans l’armoire.",
+        "answers": [
+          "Ta veste est dans l’armoire."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez à la personne qui possède la veste et vous la tutoyez. Nom : féminin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-cles-tu",
+        "prompt": "Ces clés sont à toi. Elles sont dans la boîte.",
+        "answers": [
+          "Tes clés sont dans la boîte."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez à la personne qui possède ces clés en disant tu. Nom : féminin pluriel.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-adresse-tu",
+        "prompt": "Cette adresse est la tienne. Elle est bien notée.",
+        "answers": [
+          "Ton adresse est bien notée."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous vous adressez à un proche en disant tu. Vous parlez de son adresse, un nom féminin. Nom : féminin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-histoire-tu",
+        "prompt": "Cette histoire est celle que tu racontes. Elle est très courte.",
+        "answers": [
+          "Ton histoire est très courte."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez à la personne qui raconte l’histoire et vous la tutoyez. Le h de histoire est muet. Nom : féminin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-stylos-tu",
+        "prompt": "Ces stylos sont à toi. Ils écrivent en bleu.",
+        "answers": [
+          "Tes stylos écrivent en bleu."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous dites tu à la personne qui possède les stylos. Nom : masculin pluriel.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-ordinateur-tu",
+        "prompt": "Cet ordinateur est à toi. Il fonctionne bien.",
+        "answers": [
+          "Ton ordinateur fonctionne bien."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous vous adressez à la personne qui possède l’ordinateur en disant tu. Nom : masculin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-chambre-tu",
+        "prompt": "Cette chambre est la tienne. Elle donne sur la cour.",
+        "answers": [
+          "Ta chambre donne sur la cour."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous dites tu à la personne dont vous décrivez la chambre. Nom : féminin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-affaires-tu",
+        "prompt": "Ces affaires sont à toi. Elles sont sur le banc.",
+        "answers": [
+          "Tes affaires sont sur le banc."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez à un proche en disant tu et désignez plusieurs affaires à lui. Nom : féminin pluriel.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-sac-nora",
+        "prompt": "Ce sac est à Nora. Il est sous la chaise.",
+        "answers": [
+          "Son sac est sous la chaise."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez de Nora à une autre personne. Le nom sac est masculin, même si Nora est une femme. Nom : masculin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-voiture-paul",
+        "prompt": "Cette voiture est à Paul. Elle est devant le centre.",
+        "answers": [
+          "Sa voiture est devant le centre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez de Paul à une autre personne. Le nom voiture est féminin, même si Paul est un homme. Nom : féminin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-documents-lea",
+        "prompt": "Ces documents sont à Léa. Ils sont prêts.",
+        "answers": [
+          "Ses documents sont prêts."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez de Léa à quelqu’un d’autre et désignez plusieurs documents. Nom : masculin pluriel.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-adresse-karim",
+        "prompt": "Cette adresse est celle de Karim. Elle figure sur l’enveloppe.",
+        "answers": [
+          "Son adresse figure sur l’enveloppe."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez de Karim à une autre personne. Le nom adresse est féminin. Nom : féminin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-histoire-nora",
+        "prompt": "Cette histoire est celle de Nora. Elle commence dans un jardin.",
+        "answers": [
+          "Son histoire commence dans un jardin."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez de l’histoire racontée par Nora. Le h de histoire est muet. Nom : féminin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-chaussures-hugo",
+        "prompt": "Ces chaussures sont à Hugo. Elles sont neuves.",
+        "answers": [
+          "Ses chaussures sont neuves."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez de Hugo à une autre personne et désignez plusieurs chaussures. Nom : féminin pluriel.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-telephone-samia",
+        "prompt": "Ce téléphone est à Samia. Il est sur le bureau.",
+        "answers": [
+          "Son téléphone est sur le bureau."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez du téléphone de Samia à quelqu’un d’autre. Nom : masculin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-haie-luc",
+        "prompt": "Cette haie est celle de Luc. Elle est près du portail.",
+        "answers": [
+          "Sa haie est près du portail."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez de Luc à une autre personne. Le nom haie est féminin et son h est aspiré : la haie. Nom : féminin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-outils-anna",
+        "prompt": "Ces outils sont à Anna. Ils sont rangés.",
+        "answers": [
+          "Ses outils sont rangés."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez d’Anna à une autre personne et désignez plusieurs outils. Nom : masculin pluriel.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-local-nous",
+        "prompt": "Ce local est celui de notre groupe. Il ferme à dix-huit heures.",
+        "answers": [
+          "Notre local ferme à dix-huit heures."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez au nom de votre groupe en disant nous. Nom : masculin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-classe-nous",
+        "prompt": "Cette classe est celle de notre groupe. Elle est au premier étage.",
+        "answers": [
+          "Notre classe est au premier étage."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez de la salle de votre groupe en disant nous. Nom : féminin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-livres-nous",
+        "prompt": "Ces livres sont à nous. Ils sont sur l’étagère.",
+        "answers": [
+          "Nos livres sont sur l’étagère."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez au nom d’un groupe qui possède plusieurs livres. Nom : masculin pluriel.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-activite-nous",
+        "prompt": "Cette activité est celle de notre groupe. Elle commence à neuf heures.",
+        "answers": [
+          "Notre activité commence à neuf heures."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous présentez l’activité de votre groupe en disant nous. Nom : féminin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-cles-nous",
+        "prompt": "Ces clés sont à nous. Elles sont à l’accueil.",
+        "answers": [
+          "Nos clés sont à l’accueil."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez des clés de votre groupe en disant nous. Nom : féminin pluriel.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-horaires-nous",
+        "prompt": "Ces horaires sont ceux de notre groupe. Ils changent en été.",
+        "answers": [
+          "Nos horaires changent en été."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous décrivez les horaires de votre groupe en disant nous. Nom : masculin pluriel.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-ordinateur-nous",
+        "prompt": "Cet ordinateur est à nous. Il est disponible.",
+        "answers": [
+          "Notre ordinateur est disponible."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez au nom d’un groupe qui partage un ordinateur. Nom : masculin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-photos-nous",
+        "prompt": "Ces photos sont à nous. Elles montrent la sortie.",
+        "answers": [
+          "Nos photos montrent la sortie."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous présentez les photos de votre groupe en disant nous. Nom : féminin pluriel.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-salle-vous",
+        "prompt": "Cette salle est celle de votre groupe. Elle est prête.",
+        "answers": [
+          "Votre salle est prête."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous vous adressez à tout un groupe en disant vous. Nom : féminin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-billets-vous",
+        "prompt": "Ces billets sont à vous. Ils sont valables aujourd’hui.",
+        "answers": [
+          "Vos billets sont valables aujourd’hui."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez à plusieurs voyageurs de leurs billets en disant vous. Nom : masculin pluriel.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-adresse-vous",
+        "prompt": "Cette adresse est la vôtre. Elle est dans le dossier.",
+        "answers": [
+          "Votre adresse est dans le dossier."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous vouvoyez une personne et parlez de son adresse. Nom : féminin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-telephone-vous",
+        "prompt": "Ce téléphone est à vous. Il sonne.",
+        "answers": [
+          "Votre téléphone sonne."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous vouvoyez la personne qui possède le téléphone. Nom : masculin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-affaires-vous",
+        "prompt": "Ces affaires sont à vous. Elles sont dans la consigne.",
+        "answers": [
+          "Vos affaires sont dans la consigne."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous vous adressez à un groupe en disant vous et désignez ses affaires. Nom : féminin pluriel.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-ecole-vous",
+        "prompt": "Cette école est celle où vous allez. Elle accueille les familles.",
+        "answers": [
+          "Votre école accueille les familles."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez à plusieurs élèves de leur école en disant vous. Nom : féminin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-cle-vous",
+        "prompt": "Cette clé est à vous. Elle ouvre cette porte.",
+        "answers": [
+          "Votre clé ouvre cette porte."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous vouvoyez la personne qui possède la clé. Nom : féminin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-documents-vous",
+        "prompt": "Ces documents sont à vous. Ils sont complets.",
+        "answers": [
+          "Vos documents sont complets."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez des documents d’un groupe en vous adressant à ses membres. Nom : masculin pluriel.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-local-ils",
+        "prompt": "Ce local est celui des bénévoles. Il est au rez-de-chaussée.",
+        "answers": [
+          "Leur local est au rez-de-chaussée."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez de plusieurs bénévoles à quelqu’un d’autre. Les bénévoles partagent un seul local. Nom : masculin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-voiture-elles",
+        "prompt": "Cette voiture est à deux voisines. Elle est dans le garage.",
+        "answers": [
+          "Leur voiture est dans le garage."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez de deux voisines à une autre personne. Elles partagent une seule voiture. Nom : féminin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-velos-ils",
+        "prompt": "Ces vélos sont à deux amis. Ils sont devant la maison.",
+        "answers": [
+          "Leurs vélos sont devant la maison."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez de deux amis à une autre personne. Il y a plusieurs vélos. Nom : masculin pluriel.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-classe-elles",
+        "prompt": "Cette classe est celle des participantes. Elle est au deuxième étage.",
+        "answers": [
+          "Leur classe est au deuxième étage."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez de plusieurs participantes à quelqu’un d’autre. Elles fréquentent une seule classe. Nom : féminin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-cles-ils",
+        "prompt": "Ces clés sont aux voisins. Elles sont dans le tiroir.",
+        "answers": [
+          "Leurs clés sont dans le tiroir."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez des clés de plusieurs voisins à une autre personne. Nom : féminin pluriel.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-affiches-elles",
+        "prompt": "Ces affiches sont celles des élèves. Elles annoncent la fête.",
+        "answers": [
+          "Leurs affiches annoncent la fête."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez des affiches de plusieurs élèves à une autre personne. Nom : féminin pluriel.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      },
+      {
+        "id": "gram-ex-f6-curriculum-t-a1-jardin-ils",
+        "prompt": "Ce jardin est celui des habitants. Il est derrière le centre.",
+        "answers": [
+          "Leur jardin est derrière le centre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f6-a1.tsv",
+          "typeId": "gram-ex-f6-curriculum-t",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous parlez de plusieurs habitants à une autre personne. Ils partagent un seul jardin. Nom : masculin singulier.",
+        "directive": "Réunissez les informations en une phrase avec un déterminant possessif adapté au rôle et au nom. Conservez le fait donné.",
+        "responseLines": 2,
+        "explanation": "Modèle possible. Pour une relation (amie, école, activité), le possessif n’indique pas la propriété d’une personne. Le genre du possesseur ne détermine pas mon/ma ou son/sa."
+      }
+    ]
+  }
+]

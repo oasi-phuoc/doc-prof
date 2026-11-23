@@ -105,5 +105,5 @@ export class GrammarCurriculumError extends Error {
 
 /** Associations that require their shared facts and remain one grouped activity in class. */
 export function isContextualGrammarMatch(typeId: string): boolean {
-  return ['gram-ex-famille-curriculum-a','gram-ex-e1-curriculum-a','gram-ex-e7-curriculum-a','gram-ex-e4-curriculum-a','gram-ex-f1-curriculum-a','gram-ex-f3-curriculum-a'].includes(typeId)
+  return ['gram-ex-famille-curriculum-a','gram-ex-e1-curriculum-a','gram-ex-e7-curriculum-a','gram-ex-e4-curriculum-a','gram-ex-f1-curriculum-a','gram-ex-f3-curriculum-a','gram-ex-f4-curriculum-a','gram-ex-f6-curriculum-a'].includes(typeId)
 }

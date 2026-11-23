@@ -1,0 +1,3829 @@
+[
+  {
+    "schemaVersion": 1,
+    "revision": "decrire-2026-11-23-v1",
+    "activityId": "gram-ex-f5-qcm-verbe",
+    "subthemeId": "f5",
+    "topic": "gram-decrire",
+    "level": "A1",
+    "label": "Identifier ou décrire",
+    "objective": "Identifier avec c’est, reprendre une personne ou une chose avec il est / elle est, annoncer une présence avec il y a.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-23",
+      "humanReview": "pending",
+      "note": "Situations et variantes relues, modèles ouverts non exclusifs. Rôles fictifs ; validation enseignante en attente. Les situations sont réemployées entre les mécaniques, sans multiplier les histoires revendiquées."
+    },
+    "presentations": [
+      "choice",
+      "gap"
+    ],
+    "instructions": {
+      "choice": "Choisissez selon la situation : c’est, il est, elle est ou il y a. Pour qualifier, la consigne demande ici un pronom personnel.",
+      "gap": "Complétez selon l’acte demandé avec c’est, il est, elle est ou il y a."
+    },
+    "units": [
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-voisin",
+        "prompt": "— Qui est-ce ? — ___ mon voisin.",
+        "answers": [
+          "C’est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous répondez à « Qui est-ce ? » pour identifier l’homme montré par votre partenaire.",
+        "options": [
+          {
+            "id": "forme-8255bc4f72",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-3585460714",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-93adad75e4",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-029c73a1f2",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : — Qui est-ce ? — C’est mon voisin."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-amie",
+        "prompt": "— Qui est-ce ? — ___ mon amie.",
+        "answers": [
+          "C’est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous répondez à « Qui est-ce ? » pour présenter une amie à votre groupe.",
+        "options": [
+          {
+            "id": "forme-db3d0a26df",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-6094439475",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-7f5d3efe5a",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-b375b5e974",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : — Qui est-ce ? — C’est mon amie."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-livre",
+        "prompt": "— Qu’est-ce que c’est ? — ___ un livre.",
+        "answers": [
+          "C’est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre partenaire demande ce qu’est l’objet montré. Vous nommez l’objet, sans annoncer sa présence dans un lieu.",
+        "options": [
+          {
+            "id": "forme-cee61b063a",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-3b2b1ebf92",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-8d27d93fbd",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-28b3e5b68c",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : — Qu’est-ce que c’est ? — C’est un livre."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-carte",
+        "prompt": "— Qu’est-ce que c’est ? — ___ ma carte de transport.",
+        "answers": [
+          "C’est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Une personne demande ce qu’est la carte que vous montrez. Vous l’identifiez.",
+        "options": [
+          {
+            "id": "forme-61941950de",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-b570f8079b",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-d76c261568",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-2ef71d7890",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : — Qu’est-ce que c’est ? — C’est ma carte de transport."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-formateur",
+        "prompt": "— Qui est-ce ? — ___ notre formateur.",
+        "answers": [
+          "C’est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous répondez à « Qui est-ce ? » au sujet de la personne qui vient d’entrer.",
+        "options": [
+          {
+            "id": "forme-86aa472750",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-e91c95f1ce",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-868d31c398",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-5b3f8005e9",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : — Qui est-ce ? — C’est notre formateur."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-bibliotheque",
+        "prompt": "— Qu’est-ce que c’est ? — ___ la bibliothèque du quartier.",
+        "answers": [
+          "C’est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre partenaire montre un bâtiment et demande ce que c’est. Vous l’identifiez.",
+        "options": [
+          {
+            "id": "forme-c6ea665b58",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-cecbdf4815",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-2bda79ea61",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-58aa55a044",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : — Qu’est-ce que c’est ? — C’est la bibliothèque du quartier."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-trousse",
+        "prompt": "— Qu’est-ce que c’est ? — ___ une trousse.",
+        "answers": [
+          "C’est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre partenaire demande le nom de l’objet sur la photo. Vous l’identifiez.",
+        "options": [
+          {
+            "id": "forme-690042dc48",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-56bfa560b0",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-c6b6d3411a",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-59aafd2fc7",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : — Qu’est-ce que c’est ? — C’est une trousse."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-secretariat",
+        "prompt": "— Qu’est-ce que c’est ? — ___ le secrétariat.",
+        "answers": [
+          "C’est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous montrez une porte. Votre partenaire demande ce que c’est ; vous identifiez le service.",
+        "options": [
+          {
+            "id": "forme-806394289f",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-9c3f90ff41",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-54d70920dc",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-473409f2c5",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : — Qu’est-ce que c’est ? — C’est le secrétariat."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-cle",
+        "prompt": "— Qu’est-ce que c’est ? — ___ la clé du local.",
+        "answers": [
+          "C’est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre partenaire demande ce qu’est le petit objet dans votre main. Vous le nommez.",
+        "options": [
+          {
+            "id": "forme-986b945e7d",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-95ee37311c",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-d4be7f345e",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-63e34fa83e",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : — Qu’est-ce que c’est ? — C’est la clé du local."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-soeur",
+        "prompt": "— Qui est-ce ? — ___ ma sœur.",
+        "answers": [
+          "C’est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous présentez une personne et répondez à « Qui est-ce ? ». Dans ce rôle fictif, il s’agit de votre sœur.",
+        "options": [
+          {
+            "id": "forme-e82aad61d3",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-17f405a7cc",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-52f703db81",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-50f4410e1b",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : — Qui est-ce ? — C’est ma sœur."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-permis",
+        "prompt": "— Qu’est-ce que c’est ? — ___ mon permis de conduire.",
+        "answers": [
+          "C’est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Une personne demande quel document vous montrez. Vous identifiez votre permis de conduire.",
+        "options": [
+          {
+            "id": "forme-2b5eeeea32",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-c838f36dc1",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-d7d1be55fc",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-7e4fe4d896",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : — Qu’est-ce que c’est ? — C’est mon permis de conduire."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-mairie",
+        "prompt": "— Quel est ce bâtiment ? — ___ la mairie.",
+        "answers": [
+          "C’est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous répondez à une question d’identification sur un bâtiment du plan.",
+        "options": [
+          {
+            "id": "forme-bad06fd0e0",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-cee0a3f5ca",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-7a2e1729b2",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-892fd579c5",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : — Quel est ce bâtiment ? — C’est la mairie."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-collegue",
+        "prompt": "— Qui est-ce ? — ___ une collègue du centre.",
+        "answers": [
+          "C’est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous répondez à « Qui est-ce ? » au sujet d’une collègue qui arrive au centre.",
+        "options": [
+          {
+            "id": "forme-c44d0145c0",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-eb0a7aca2d",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-92d6667e7d",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-ec0ab888c8",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : — Qui est-ce ? — C’est une collègue du centre."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-plan",
+        "prompt": "— Quel est ce document ? — ___ le plan du quartier.",
+        "answers": [
+          "C’est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre partenaire demande quel document se trouve dans vos mains. Vous l’identifiez.",
+        "options": [
+          {
+            "id": "forme-eddce22402",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-86e2118427",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-8227680cdc",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-08044b3a00",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : — Quel est ce document ? — C’est le plan du quartier."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-recu",
+        "prompt": "— Qu’est-ce que c’est ? — ___ le reçu du paiement.",
+        "answers": [
+          "C’est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Une personne demande ce que vous lui donnez. Vous identifiez le reçu du paiement.",
+        "options": [
+          {
+            "id": "forme-af2ee0e004",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-98f4daaeb7",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-db0ca82652",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-025bb55f0f",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : — Qu’est-ce que c’est ? — C’est le reçu du paiement."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-sac",
+        "prompt": "Mon sac ? ___ noir.",
+        "answers": [
+          "Il est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous venez de nommer un sac. Reprenez ce sac par un pronom personnel masculin et donnez sa couleur.",
+        "options": [
+          {
+            "id": "forme-6d17cf00ed",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-de3782133d",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-6ba8bf5b59",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-fea0fa67ad",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Mon sac ? Il est noir."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-veste",
+        "prompt": "Cette veste ? ___ neuve.",
+        "answers": [
+          "Elle est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous venez de nommer une veste. Reprenez ce vêtement par un pronom personnel féminin et indiquez son état.",
+        "options": [
+          {
+            "id": "forme-1548f44e20",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-b550bd41f9",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-233e487f7f",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-93c95b749b",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Cette veste ? Elle est neuve."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-bus",
+        "prompt": "Le bus ? ___ en retard.",
+        "answers": [
+          "Il est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Le bus vient d’être nommé. Reprenez-le par un pronom personnel et indiquez son retard.",
+        "options": [
+          {
+            "id": "forme-4ee2b02006",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-889246a899",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-d6899f2795",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-941e44eb77",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Le bus ? Il est en retard."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-voisine",
+        "prompt": "Ma voisine ? ___ médecin.",
+        "answers": [
+          "Elle est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre voisine vient d’être nommée. Reprenez cette personne par un pronom personnel et indiquez sa profession sans article.",
+        "options": [
+          {
+            "id": "forme-efb9b85a5d",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-c7fc2b0c35",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-177664b0a0",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-5dab106309",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Ma voisine ? Elle est médecin."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-frere",
+        "prompt": "Mon frère ? ___ boulanger.",
+        "answers": [
+          "Il est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre frère vient d’être nommé dans ce rôle fictif. Reprenez cette personne par un pronom personnel et indiquez son métier sans article.",
+        "options": [
+          {
+            "id": "forme-d6d5f802f0",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-9e4cf89c8e",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-297e552bdc",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-0133ba3d0f",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Mon frère ? Il est boulanger."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-chaise",
+        "prompt": "Cette chaise ? ___ libre.",
+        "answers": [
+          "Elle est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous venez de nommer une chaise. Reprenez-la par un pronom personnel et dites qu’elle est libre.",
+        "options": [
+          {
+            "id": "forme-a766920bcb",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-f769d4364b",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-7b155751a4",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-3c45728427",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Cette chaise ? Elle est libre."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-local",
+        "prompt": "Le local ? ___ fermé.",
+        "answers": [
+          "Il est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Le local vient d’être nommé. Reprenez-le par un pronom personnel et indiquez qu’il est fermé.",
+        "options": [
+          {
+            "id": "forme-bd1db51e70",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-f097836205",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-93f349ac9e",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-684bdd6d6f",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Le local ? Il est fermé."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-formation",
+        "prompt": "La formation ? ___ courte.",
+        "answers": [
+          "Elle est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "La formation vient d’être nommée. Reprenez-la par un pronom personnel et décrivez sa durée.",
+        "options": [
+          {
+            "id": "forme-4411aae4d9",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-afa340290f",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-1f1c724e45",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-aae9a4f126",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : La formation ? Elle est courte."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-train",
+        "prompt": "Ce train ? ___ complet.",
+        "answers": [
+          "Il est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous venez de parler du train. Reprenez-le par un pronom personnel et dites qu’il est complet.",
+        "options": [
+          {
+            "id": "forme-a8ecb63228",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-de12f4aad0",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-b6a47a48e4",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-b86efb140d",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Ce train ? Il est complet."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-porte",
+        "prompt": "La porte ? ___ ouverte.",
+        "answers": [
+          "Elle est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "La porte vient d’être nommée. Reprenez-la par un pronom personnel et indiquez son état.",
+        "options": [
+          {
+            "id": "forme-401c1bfba6",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-c956236158",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-6ad6087219",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-17c4e207a6",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : La porte ? Elle est ouverte."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-ami",
+        "prompt": "Mon ami ? ___ mécanicien.",
+        "answers": [
+          "Il est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Dans ce rôle fictif, votre ami vient d’être nommé. Reprenez cette personne par un pronom personnel et indiquez son métier sans article.",
+        "options": [
+          {
+            "id": "forme-f5a7943e1f",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-58c1bd8452",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-d14054c756",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-e78af26a50",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Mon ami ? Il est mécanicien."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-collegue-f",
+        "prompt": "Ma collègue ? ___ informaticienne.",
+        "answers": [
+          "Elle est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre collègue vient d’être nommée. Reprenez cette personne par un pronom personnel féminin et donnez son métier sans article.",
+        "options": [
+          {
+            "id": "forme-cf2445c254",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-2bf59d3986",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-f7159e0691",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-28572564de",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Ma collègue ? Elle est informaticienne."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-ordinateur",
+        "prompt": "Cet ordinateur ? ___ disponible.",
+        "answers": [
+          "Il est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous venez de nommer un ordinateur. Reprenez-le par un pronom personnel et dites qu’il est disponible.",
+        "options": [
+          {
+            "id": "forme-b9911d6898",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-cc7f3db6b0",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-e2c719e331",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-cf555fc56f",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Cet ordinateur ? Il est disponible."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-cle-rouge",
+        "prompt": "Cette clé ? ___ rouge.",
+        "answers": [
+          "Elle est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous venez de nommer une clé. Reprenez-la par un pronom personnel et donnez sa couleur.",
+        "options": [
+          {
+            "id": "forme-6a38afc3c0",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-7ada40b0b3",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-6bf2bb2454",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-c5610790f9",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Cette clé ? Elle est rouge."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-exercice",
+        "prompt": "Cet exercice ? ___ facile.",
+        "answers": [
+          "Il est"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "L’exercice vient d’être nommé. Reprenez-le par un pronom personnel et indiquez sa difficulté.",
+        "options": [
+          {
+            "id": "forme-f4986286a4",
+            "text": "Il est"
+          },
+          {
+            "id": "forme-ec62c4fae7",
+            "text": "C’est"
+          },
+          {
+            "id": "forme-fe4346b5ec",
+            "text": "Elle est"
+          },
+          {
+            "id": "forme-b802a6e223",
+            "text": "il y a"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Cet exercice ? Il est facile."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-cantine",
+        "prompt": "Dans le centre, ___ une cantine.",
+        "answers": [
+          "il y a"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous annoncez ce qui est présent dans le centre, sans identifier un objet montré.",
+        "options": [
+          {
+            "id": "forme-24a76b4025",
+            "text": "il y a"
+          },
+          {
+            "id": "forme-2a4ae1e211",
+            "text": "c’est"
+          },
+          {
+            "id": "forme-d301548135",
+            "text": "il est"
+          },
+          {
+            "id": "forme-94474a0a01",
+            "text": "elle est"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Dans le centre, il y a une cantine."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-chaises",
+        "prompt": "Autour de la table, ___ six chaises.",
+        "answers": [
+          "il y a"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous annoncez combien de chaises sont présentes autour de la table.",
+        "options": [
+          {
+            "id": "forme-2a29d794dc",
+            "text": "il y a"
+          },
+          {
+            "id": "forme-f425e69a03",
+            "text": "c’est"
+          },
+          {
+            "id": "forme-e276f6daaa",
+            "text": "il est"
+          },
+          {
+            "id": "forme-2b674fdc6f",
+            "text": "elle est"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Autour de la table, il y a six chaises."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-livres",
+        "prompt": "Sur le bureau, ___ trois livres.",
+        "answers": [
+          "il y a"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous annoncez la présence de trois livres sur le bureau.",
+        "options": [
+          {
+            "id": "forme-b984018ca6",
+            "text": "il y a"
+          },
+          {
+            "id": "forme-933045f716",
+            "text": "c’est"
+          },
+          {
+            "id": "forme-5b575e29db",
+            "text": "il est"
+          },
+          {
+            "id": "forme-8341c78ec7",
+            "text": "elle est"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Sur le bureau, il y a trois livres."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-ecole",
+        "prompt": "Dans le quartier, ___ une école.",
+        "answers": [
+          "il y a"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous indiquez un équipement présent dans le quartier, sans répondre à une question d’identification.",
+        "options": [
+          {
+            "id": "forme-6b30a1b848",
+            "text": "il y a"
+          },
+          {
+            "id": "forme-b25fe09155",
+            "text": "c’est"
+          },
+          {
+            "id": "forme-9851d55e05",
+            "text": "il est"
+          },
+          {
+            "id": "forme-99047f9b85",
+            "text": "elle est"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Dans le quartier, il y a une école."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-velos",
+        "prompt": "Devant le centre, ___ deux vélos.",
+        "answers": [
+          "il y a"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous dites combien de vélos se trouvent devant le centre.",
+        "options": [
+          {
+            "id": "forme-484aa5e55d",
+            "text": "il y a"
+          },
+          {
+            "id": "forme-d8d9747a3d",
+            "text": "c’est"
+          },
+          {
+            "id": "forme-bc568840dd",
+            "text": "il est"
+          },
+          {
+            "id": "forme-fa65956609",
+            "text": "elle est"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Devant le centre, il y a deux vélos."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-ascenseur",
+        "prompt": "Dans cet immeuble, ___ un ascenseur.",
+        "answers": [
+          "il y a"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous annoncez la présence d’un ascenseur dans l’immeuble.",
+        "options": [
+          {
+            "id": "forme-e4c7fbeca6",
+            "text": "il y a"
+          },
+          {
+            "id": "forme-f3026a2435",
+            "text": "c’est"
+          },
+          {
+            "id": "forme-0e3ca78768",
+            "text": "il est"
+          },
+          {
+            "id": "forme-495e4a137a",
+            "text": "elle est"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Dans cet immeuble, il y a un ascenseur."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-participants",
+        "prompt": "Dans la salle, ___ huit participants.",
+        "answers": [
+          "il y a"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous indiquez combien de personnes sont présentes dans la salle.",
+        "options": [
+          {
+            "id": "forme-b353936cce",
+            "text": "il y a"
+          },
+          {
+            "id": "forme-2a161bfde3",
+            "text": "c’est"
+          },
+          {
+            "id": "forme-2b70af5bc5",
+            "text": "il est"
+          },
+          {
+            "id": "forme-b50f7e0d97",
+            "text": "elle est"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Dans la salle, il y a huit participants."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-arbres",
+        "prompt": "Dans la cour, ___ quatre arbres.",
+        "answers": [
+          "il y a"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous annoncez le nombre d’arbres présents dans la cour.",
+        "options": [
+          {
+            "id": "forme-7060d24f92",
+            "text": "il y a"
+          },
+          {
+            "id": "forme-ab3e9d6ca3",
+            "text": "c’est"
+          },
+          {
+            "id": "forme-d82ba61020",
+            "text": "il est"
+          },
+          {
+            "id": "forme-6aad0b5e17",
+            "text": "elle est"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Dans la cour, il y a quatre arbres."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-boite",
+        "prompt": "Dans l’armoire, ___ une boîte.",
+        "answers": [
+          "il y a"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous annoncez la présence d’une boîte dans l’armoire.",
+        "options": [
+          {
+            "id": "forme-b069102c9b",
+            "text": "il y a"
+          },
+          {
+            "id": "forme-4b9422907d",
+            "text": "c’est"
+          },
+          {
+            "id": "forme-b71ca2cccc",
+            "text": "il est"
+          },
+          {
+            "id": "forme-2f0c3b5c3a",
+            "text": "elle est"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Dans l’armoire, il y a une boîte."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-fenetres",
+        "prompt": "Dans cette salle, ___ deux fenêtres.",
+        "answers": [
+          "il y a"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous indiquez combien de fenêtres se trouvent dans la salle.",
+        "options": [
+          {
+            "id": "forme-688e1a3168",
+            "text": "il y a"
+          },
+          {
+            "id": "forme-9b5ef1bd10",
+            "text": "c’est"
+          },
+          {
+            "id": "forme-135d3163d4",
+            "text": "il est"
+          },
+          {
+            "id": "forme-359543fde2",
+            "text": "elle est"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Dans cette salle, il y a deux fenêtres."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-photos",
+        "prompt": "Sur le mur, ___ plusieurs photos.",
+        "answers": [
+          "il y a"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous annoncez la présence de plusieurs photos sur le mur.",
+        "options": [
+          {
+            "id": "forme-6e25ed0e08",
+            "text": "il y a"
+          },
+          {
+            "id": "forme-f762619c8e",
+            "text": "c’est"
+          },
+          {
+            "id": "forme-f10c96c793",
+            "text": "il est"
+          },
+          {
+            "id": "forme-2c45404874",
+            "text": "elle est"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Sur le mur, il y a plusieurs photos."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-guichet",
+        "prompt": "À l’entrée de la gare, ___ un guichet.",
+        "answers": [
+          "il y a"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous annoncez la présence d’un guichet à l’entrée de la gare.",
+        "options": [
+          {
+            "id": "forme-676fce0d16",
+            "text": "il y a"
+          },
+          {
+            "id": "forme-4e441f654e",
+            "text": "c’est"
+          },
+          {
+            "id": "forme-11e3a60a8d",
+            "text": "il est"
+          },
+          {
+            "id": "forme-92bcb0f71e",
+            "text": "elle est"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : À l’entrée de la gare, il y a un guichet."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-places",
+        "prompt": "Dans ce train, ___ cinq places libres.",
+        "answers": [
+          "il y a"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous dites combien de places sont encore libres dans le train.",
+        "options": [
+          {
+            "id": "forme-6847d657d0",
+            "text": "il y a"
+          },
+          {
+            "id": "forme-a3ddc82e0f",
+            "text": "c’est"
+          },
+          {
+            "id": "forme-ee9221ceb5",
+            "text": "il est"
+          },
+          {
+            "id": "forme-846b3dc433",
+            "text": "elle est"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Dans ce train, il y a cinq places libres."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-parc",
+        "prompt": "Près de la bibliothèque, ___ un parc.",
+        "answers": [
+          "il y a"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous annoncez la présence d’un parc près de la bibliothèque.",
+        "options": [
+          {
+            "id": "forme-90095119f3",
+            "text": "il y a"
+          },
+          {
+            "id": "forme-67fc4cf739",
+            "text": "c’est"
+          },
+          {
+            "id": "forme-e80427bbb2",
+            "text": "il est"
+          },
+          {
+            "id": "forme-7193d7ead3",
+            "text": "elle est"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Près de la bibliothèque, il y a un parc."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-stylos",
+        "prompt": "Dans la trousse, ___ trois stylos.",
+        "answers": [
+          "il y a"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous annoncez le nombre de stylos présents dans la trousse.",
+        "options": [
+          {
+            "id": "forme-2c17e05cbf",
+            "text": "il y a"
+          },
+          {
+            "id": "forme-854ddd488a",
+            "text": "c’est"
+          },
+          {
+            "id": "forme-55c83bfee7",
+            "text": "il est"
+          },
+          {
+            "id": "forme-433e9c2b20",
+            "text": "elle est"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Dans la trousse, il y a trois stylos."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-appels",
+        "prompt": "Sur le téléphone, ___ deux messages.",
+        "answers": [
+          "il y a"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous signalez la présence de deux messages sur le téléphone.",
+        "options": [
+          {
+            "id": "forme-15d0893fa0",
+            "text": "il y a"
+          },
+          {
+            "id": "forme-ddc22b2c5a",
+            "text": "c’est"
+          },
+          {
+            "id": "forme-5b68a5f46c",
+            "text": "il est"
+          },
+          {
+            "id": "forme-ab5a9ea5d4",
+            "text": "elle est"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Sur le téléphone, il y a deux messages."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-ordinateurs",
+        "prompt": "À la bibliothèque, ___ quatre ordinateurs disponibles.",
+        "answers": [
+          "il y a"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous annoncez le nombre d’ordinateurs disponibles à la bibliothèque.",
+        "options": [
+          {
+            "id": "forme-06db9d0006",
+            "text": "il y a"
+          },
+          {
+            "id": "forme-f314e4a2b4",
+            "text": "c’est"
+          },
+          {
+            "id": "forme-5a7414433e",
+            "text": "il est"
+          },
+          {
+            "id": "forme-6ed00bceca",
+            "text": "elle est"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : À la bibliothèque, il y a quatre ordinateurs disponibles."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-bancs",
+        "prompt": "Devant le musée, ___ deux bancs.",
+        "answers": [
+          "il y a"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous dites combien de bancs sont présents devant le musée.",
+        "options": [
+          {
+            "id": "forme-7bbab50dbc",
+            "text": "il y a"
+          },
+          {
+            "id": "forme-884e5cbb8a",
+            "text": "c’est"
+          },
+          {
+            "id": "forme-4c7fd3ffa5",
+            "text": "il est"
+          },
+          {
+            "id": "forme-af06a373ab",
+            "text": "elle est"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Devant le musée, il y a deux bancs."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-magasin",
+        "prompt": "À côté de la gare, ___ un magasin.",
+        "answers": [
+          "il y a"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous signalez la présence d’un magasin à côté de la gare.",
+        "options": [
+          {
+            "id": "forme-b615700ac8",
+            "text": "il y a"
+          },
+          {
+            "id": "forme-13a07c53ef",
+            "text": "c’est"
+          },
+          {
+            "id": "forme-68ba0a9b68",
+            "text": "il est"
+          },
+          {
+            "id": "forme-a4a6dc987a",
+            "text": "elle est"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : À côté de la gare, il y a un magasin."
+      },
+      {
+        "id": "gram-ex-f5-qcm-verbe-a1-plantes",
+        "prompt": "Près de la fenêtre, ___ trois plantes.",
+        "answers": [
+          "il y a"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-qcm-verbe",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous annoncez le nombre de plantes présentes près de la fenêtre.",
+        "options": [
+          {
+            "id": "forme-397b7bea46",
+            "text": "il y a"
+          },
+          {
+            "id": "forme-0a1282c85b",
+            "text": "c’est"
+          },
+          {
+            "id": "forme-513870f0ec",
+            "text": "il est"
+          },
+          {
+            "id": "forme-6acb3e8963",
+            "text": "elle est"
+          }
+        ],
+        "explanation": "La consigne précise l’acte : identifier, reprendre par un pronom personnel ou annoncer une présence. Phrase : Près de la fenêtre, il y a trois plantes."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "decrire-2026-11-23-v1",
+    "activityId": "gram-ex-f5-curriculum-t",
+    "subthemeId": "f5",
+    "topic": "gram-decrire",
+    "level": "A1",
+    "label": "Transformer une phrase",
+    "objective": "Identifier avec c’est, reprendre une personne ou une chose avec il est / elle est, annoncer une présence avec il y a.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-23",
+      "humanReview": "pending",
+      "note": "Situations et variantes relues, modèles ouverts non exclusifs. Rôles fictifs ; validation enseignante en attente. Les situations sont réemployées entre les mécaniques, sans multiplier les histoires revendiquées."
+    },
+    "presentations": [
+      "transform"
+    ],
+    "instructions": {
+      "transform": "Reformulez les informations avec l’expression demandée dans chaque situation."
+    },
+    "units": [
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-voisin",
+        "prompt": "La personne que vous présentez est votre voisin.",
+        "answers": [
+          "C’est mon voisin."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous répondez à « Qui est-ce ? » pour identifier l’homme montré par votre partenaire.",
+        "directive": "Identifiez avec « c’est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-amie",
+        "prompt": "La personne que vous présentez est votre amie.",
+        "answers": [
+          "C’est mon amie."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous répondez à « Qui est-ce ? » pour présenter une amie à votre groupe.",
+        "directive": "Identifiez avec « c’est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-livre",
+        "prompt": "L’objet que vous montrez est un livre.",
+        "answers": [
+          "C’est un livre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Votre partenaire demande ce qu’est l’objet montré. Vous nommez l’objet, sans annoncer sa présence dans un lieu.",
+        "directive": "Identifiez avec « c’est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-carte",
+        "prompt": "L’objet montré est votre carte de transport.",
+        "answers": [
+          "C’est ma carte de transport."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Une personne demande ce qu’est la carte que vous montrez. Vous l’identifiez.",
+        "directive": "Identifiez avec « c’est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-formateur",
+        "prompt": "La personne qui vient d’entrer est le formateur de votre groupe.",
+        "answers": [
+          "C’est notre formateur."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous répondez à « Qui est-ce ? » au sujet de la personne qui vient d’entrer.",
+        "directive": "Identifiez avec « c’est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-bibliotheque",
+        "prompt": "Le bâtiment que vous présentez est la bibliothèque du quartier.",
+        "answers": [
+          "C’est la bibliothèque du quartier."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Votre partenaire montre un bâtiment et demande ce que c’est. Vous l’identifiez.",
+        "directive": "Identifiez avec « c’est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-trousse",
+        "prompt": "L’objet représenté sur la photo est une trousse.",
+        "answers": [
+          "C’est une trousse."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Votre partenaire demande le nom de l’objet sur la photo. Vous l’identifiez.",
+        "directive": "Identifiez avec « c’est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-secretariat",
+        "prompt": "Le service derrière la porte montrée est le secrétariat.",
+        "answers": [
+          "C’est le secrétariat."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous montrez une porte. Votre partenaire demande ce que c’est ; vous identifiez le service.",
+        "directive": "Identifiez avec « c’est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-cle",
+        "prompt": "Le petit objet présenté est la clé du local.",
+        "answers": [
+          "C’est la clé du local."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Votre partenaire demande ce qu’est le petit objet dans votre main. Vous le nommez.",
+        "directive": "Identifiez avec « c’est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-soeur",
+        "prompt": "La personne que vous présentez est votre sœur dans ce rôle fictif.",
+        "answers": [
+          "C’est ma sœur."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous présentez une personne et répondez à « Qui est-ce ? ». Dans ce rôle fictif, il s’agit de votre sœur.",
+        "directive": "Identifiez avec « c’est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-permis",
+        "prompt": "Le document que vous montrez est votre permis de conduire.",
+        "answers": [
+          "C’est mon permis de conduire."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Une personne demande quel document vous montrez. Vous identifiez votre permis de conduire.",
+        "directive": "Identifiez avec « c’est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-mairie",
+        "prompt": "Le bâtiment montré sur le plan est la mairie.",
+        "answers": [
+          "C’est la mairie."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous répondez à une question d’identification sur un bâtiment du plan.",
+        "directive": "Identifiez avec « c’est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-collegue",
+        "prompt": "La personne qui arrive est une collègue du centre.",
+        "answers": [
+          "C’est une collègue du centre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous répondez à « Qui est-ce ? » au sujet d’une collègue qui arrive au centre.",
+        "directive": "Identifiez avec « c’est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-plan",
+        "prompt": "Le document présenté est le plan du quartier.",
+        "answers": [
+          "C’est le plan du quartier."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Votre partenaire demande quel document se trouve dans vos mains. Vous l’identifiez.",
+        "directive": "Identifiez avec « c’est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-recu",
+        "prompt": "Le document que vous donnez est le reçu du paiement.",
+        "answers": [
+          "C’est le reçu du paiement."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Une personne demande ce que vous lui donnez. Vous identifiez le reçu du paiement.",
+        "directive": "Identifiez avec « c’est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-sac",
+        "prompt": "Le sac est noir. Reprenez le nom le sac par un pronom personnel.",
+        "answers": [
+          "Il est noir."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous venez de nommer un sac. Reprenez ce sac par un pronom personnel masculin et donnez sa couleur.",
+        "directive": "Reprenez le nom par un pronom personnel et indiquez sa caractéristique ou son métier avec « il est » ou « elle est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-veste",
+        "prompt": "La veste est neuve. Reprenez le nom la veste par un pronom personnel.",
+        "answers": [
+          "Elle est neuve."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous venez de nommer une veste. Reprenez ce vêtement par un pronom personnel féminin et indiquez son état.",
+        "directive": "Reprenez le nom par un pronom personnel et indiquez sa caractéristique ou son métier avec « il est » ou « elle est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-bus",
+        "prompt": "Le bus est en retard. Reprenez le nom le bus par un pronom personnel.",
+        "answers": [
+          "Il est en retard."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Le bus vient d’être nommé. Reprenez-le par un pronom personnel et indiquez son retard.",
+        "directive": "Reprenez le nom par un pronom personnel et indiquez sa caractéristique ou son métier avec « il est » ou « elle est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-voisine",
+        "prompt": "Votre voisine exerce le métier de médecin. Présentez son métier avec un pronom personnel.",
+        "answers": [
+          "Elle est médecin."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Votre voisine vient d’être nommée. Reprenez cette personne par un pronom personnel et indiquez sa profession sans article.",
+        "directive": "Reprenez le nom par un pronom personnel et indiquez sa caractéristique ou son métier avec « il est » ou « elle est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-frere",
+        "prompt": "Votre frère est boulanger. Reprenez le groupe mon frère par un pronom personnel.",
+        "answers": [
+          "Il est boulanger."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Votre frère vient d’être nommé dans ce rôle fictif. Reprenez cette personne par un pronom personnel et indiquez son métier sans article.",
+        "directive": "Reprenez le nom par un pronom personnel et indiquez sa caractéristique ou son métier avec « il est » ou « elle est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-chaise",
+        "prompt": "La chaise est libre. Reprenez ce nom par un pronom personnel.",
+        "answers": [
+          "Elle est libre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous venez de nommer une chaise. Reprenez-la par un pronom personnel et dites qu’elle est libre.",
+        "directive": "Reprenez le nom par un pronom personnel et indiquez sa caractéristique ou son métier avec « il est » ou « elle est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-local",
+        "prompt": "Le local est fermé. Reprenez ce nom par un pronom personnel.",
+        "answers": [
+          "Il est fermé."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Le local vient d’être nommé. Reprenez-le par un pronom personnel et indiquez qu’il est fermé.",
+        "directive": "Reprenez le nom par un pronom personnel et indiquez sa caractéristique ou son métier avec « il est » ou « elle est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-formation",
+        "prompt": "La formation est courte. Reprenez ce nom par un pronom personnel.",
+        "answers": [
+          "Elle est courte."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "La formation vient d’être nommée. Reprenez-la par un pronom personnel et décrivez sa durée.",
+        "directive": "Reprenez le nom par un pronom personnel et indiquez sa caractéristique ou son métier avec « il est » ou « elle est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-train",
+        "prompt": "Le train est complet. Reprenez ce nom par un pronom personnel.",
+        "answers": [
+          "Il est complet."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous venez de parler du train. Reprenez-le par un pronom personnel et dites qu’il est complet.",
+        "directive": "Reprenez le nom par un pronom personnel et indiquez sa caractéristique ou son métier avec « il est » ou « elle est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-porte",
+        "prompt": "La porte est ouverte. Reprenez ce nom par un pronom personnel.",
+        "answers": [
+          "Elle est ouverte."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "La porte vient d’être nommée. Reprenez-la par un pronom personnel et indiquez son état.",
+        "directive": "Reprenez le nom par un pronom personnel et indiquez sa caractéristique ou son métier avec « il est » ou « elle est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-ami",
+        "prompt": "Votre ami est mécanicien. Reprenez le groupe mon ami par un pronom personnel.",
+        "answers": [
+          "Il est mécanicien."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Dans ce rôle fictif, votre ami vient d’être nommé. Reprenez cette personne par un pronom personnel et indiquez son métier sans article.",
+        "directive": "Reprenez le nom par un pronom personnel et indiquez sa caractéristique ou son métier avec « il est » ou « elle est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-collegue-f",
+        "prompt": "Votre collègue est informaticienne. Reprenez ce groupe par un pronom personnel féminin.",
+        "answers": [
+          "Elle est informaticienne."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Votre collègue vient d’être nommée. Reprenez cette personne par un pronom personnel féminin et donnez son métier sans article.",
+        "directive": "Reprenez le nom par un pronom personnel et indiquez sa caractéristique ou son métier avec « il est » ou « elle est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-ordinateur",
+        "prompt": "L’ordinateur est disponible. Reprenez ce nom par un pronom personnel.",
+        "answers": [
+          "Il est disponible."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous venez de nommer un ordinateur. Reprenez-le par un pronom personnel et dites qu’il est disponible.",
+        "directive": "Reprenez le nom par un pronom personnel et indiquez sa caractéristique ou son métier avec « il est » ou « elle est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-cle-rouge",
+        "prompt": "La clé est rouge. Reprenez ce nom par un pronom personnel.",
+        "answers": [
+          "Elle est rouge."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous venez de nommer une clé. Reprenez-la par un pronom personnel et donnez sa couleur.",
+        "directive": "Reprenez le nom par un pronom personnel et indiquez sa caractéristique ou son métier avec « il est » ou « elle est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-exercice",
+        "prompt": "L’exercice est facile. Reprenez ce nom par un pronom personnel.",
+        "answers": [
+          "Il est facile."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "L’exercice vient d’être nommé. Reprenez-le par un pronom personnel et indiquez sa difficulté.",
+        "directive": "Reprenez le nom par un pronom personnel et indiquez sa caractéristique ou son métier avec « il est » ou « elle est ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-cantine",
+        "prompt": "Une cantine est présente dans le centre.",
+        "answers": [
+          "Dans le centre, il y a une cantine."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous annoncez ce qui est présent dans le centre, sans identifier un objet montré.",
+        "directive": "Annoncez la présence avec « il y a ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-chaises",
+        "prompt": "Six chaises se trouvent autour de la table.",
+        "answers": [
+          "Autour de la table, il y a six chaises."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous annoncez combien de chaises sont présentes autour de la table.",
+        "directive": "Annoncez la présence avec « il y a ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-livres",
+        "prompt": "Trois livres se trouvent sur le bureau.",
+        "answers": [
+          "Sur le bureau, il y a trois livres."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous annoncez la présence de trois livres sur le bureau.",
+        "directive": "Annoncez la présence avec « il y a ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-ecole",
+        "prompt": "Une école est présente dans le quartier.",
+        "answers": [
+          "Dans le quartier, il y a une école."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous indiquez un équipement présent dans le quartier, sans répondre à une question d’identification.",
+        "directive": "Annoncez la présence avec « il y a ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-velos",
+        "prompt": "Deux vélos se trouvent devant le centre.",
+        "answers": [
+          "Devant le centre, il y a deux vélos."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous dites combien de vélos se trouvent devant le centre.",
+        "directive": "Annoncez la présence avec « il y a ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-ascenseur",
+        "prompt": "Un ascenseur se trouve dans cet immeuble.",
+        "answers": [
+          "Dans cet immeuble, il y a un ascenseur."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous annoncez la présence d’un ascenseur dans l’immeuble.",
+        "directive": "Annoncez la présence avec « il y a ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-participants",
+        "prompt": "Huit participants sont présents dans la salle.",
+        "answers": [
+          "Dans la salle, il y a huit participants."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous indiquez combien de personnes sont présentes dans la salle.",
+        "directive": "Annoncez la présence avec « il y a ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-arbres",
+        "prompt": "Quatre arbres se trouvent dans la cour.",
+        "answers": [
+          "Dans la cour, il y a quatre arbres."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous annoncez le nombre d’arbres présents dans la cour.",
+        "directive": "Annoncez la présence avec « il y a ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-boite",
+        "prompt": "Une boîte se trouve dans l’armoire.",
+        "answers": [
+          "Dans l’armoire, il y a une boîte."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous annoncez la présence d’une boîte dans l’armoire.",
+        "directive": "Annoncez la présence avec « il y a ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-fenetres",
+        "prompt": "Deux fenêtres se trouvent dans la salle.",
+        "answers": [
+          "Dans cette salle, il y a deux fenêtres."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous indiquez combien de fenêtres se trouvent dans la salle.",
+        "directive": "Annoncez la présence avec « il y a ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-photos",
+        "prompt": "Plusieurs photos sont accrochées au mur.",
+        "answers": [
+          "Sur le mur, il y a plusieurs photos."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous annoncez la présence de plusieurs photos sur le mur.",
+        "directive": "Annoncez la présence avec « il y a ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-guichet",
+        "prompt": "Un guichet est présent à l’entrée de la gare.",
+        "answers": [
+          "À l’entrée de la gare, il y a un guichet."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous annoncez la présence d’un guichet à l’entrée de la gare.",
+        "directive": "Annoncez la présence avec « il y a ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-places",
+        "prompt": "Cinq places sont libres dans ce train.",
+        "answers": [
+          "Dans ce train, il y a cinq places libres."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous dites combien de places sont encore libres dans le train.",
+        "directive": "Annoncez la présence avec « il y a ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-parc",
+        "prompt": "Un parc se trouve près de la bibliothèque.",
+        "answers": [
+          "Près de la bibliothèque, il y a un parc."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous annoncez la présence d’un parc près de la bibliothèque.",
+        "directive": "Annoncez la présence avec « il y a ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-stylos",
+        "prompt": "Trois stylos se trouvent dans la trousse.",
+        "answers": [
+          "Dans la trousse, il y a trois stylos."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous annoncez le nombre de stylos présents dans la trousse.",
+        "directive": "Annoncez la présence avec « il y a ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-appels",
+        "prompt": "Deux messages sont présents sur le téléphone.",
+        "answers": [
+          "Sur le téléphone, il y a deux messages."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous signalez la présence de deux messages sur le téléphone.",
+        "directive": "Annoncez la présence avec « il y a ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-ordinateurs",
+        "prompt": "Quatre ordinateurs sont disponibles à la bibliothèque.",
+        "answers": [
+          "À la bibliothèque, il y a quatre ordinateurs disponibles."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous annoncez le nombre d’ordinateurs disponibles à la bibliothèque.",
+        "directive": "Annoncez la présence avec « il y a ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-bancs",
+        "prompt": "Deux bancs se trouvent devant le musée.",
+        "answers": [
+          "Devant le musée, il y a deux bancs."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous dites combien de bancs sont présents devant le musée.",
+        "directive": "Annoncez la présence avec « il y a ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-magasin",
+        "prompt": "Un magasin se trouve à côté de la gare.",
+        "answers": [
+          "À côté de la gare, il y a un magasin."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous signalez la présence d’un magasin à côté de la gare.",
+        "directive": "Annoncez la présence avec « il y a ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-t-a1-plantes",
+        "prompt": "Trois plantes sont placées près de la fenêtre.",
+        "answers": [
+          "Près de la fenêtre, il y a trois plantes."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-t",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "cue": "Vous annoncez le nombre de plantes présentes près de la fenêtre.",
+        "directive": "Annoncez la présence avec « il y a ». Écrivez une phrase en conservant les informations.",
+        "responseLines": 2,
+        "explanation": "Modèle possible pour l’acte demandé. « C’est » peut aussi servir à qualifier dans d’autres contextes ; ici la consigne impose un pronom personnel pour la reprise."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "decrire-2026-11-23-v1",
+    "activityId": "gram-ex-f5-curriculum-c",
+    "subthemeId": "f5",
+    "topic": "gram-decrire",
+    "level": "A1",
+    "label": "Corriger l’erreur",
+    "objective": "Identifier avec c’est, reprendre une personne ou une chose avec il est / elle est, annoncer une présence avec il y a.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-23",
+      "humanReview": "pending",
+      "note": "Situations et variantes relues, modèles ouverts non exclusifs. Rôles fictifs ; validation enseignante en attente. Les situations sont réemployées entre les mécaniques, sans multiplier les histoires revendiquées."
+    },
+    "presentations": [
+      "correct"
+    ],
+    "instructions": {
+      "correct": "Corrigez le groupe signalé et réécrivez la phrase ou le dialogue."
+    },
+    "units": [
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-voisin",
+        "prompt": "— Qui est-ce ? — Ce est mon voisin.",
+        "answers": [
+          "— Qui est-ce ? — C’est mon voisin."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous répondez à « Qui est-ce ? » pour identifier l’homme montré par votre partenaire.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 17,
+          "end": 23,
+          "text": "Ce est"
+        },
+        "explanation": "Écrivez c’est avec une apostrophe : ce s’élide devant est. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-amie",
+        "prompt": "— Qui est-ce ? — Ce est mon amie.",
+        "answers": [
+          "— Qui est-ce ? — C’est mon amie."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous répondez à « Qui est-ce ? » pour présenter une amie à votre groupe.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 17,
+          "end": 23,
+          "text": "Ce est"
+        },
+        "explanation": "Écrivez c’est avec une apostrophe : ce s’élide devant est. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-livre",
+        "prompt": "— Qu’est-ce que c’est ? — Ce est un livre.",
+        "answers": [
+          "— Qu’est-ce que c’est ? — C’est un livre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre partenaire demande ce qu’est l’objet montré. Vous nommez l’objet, sans annoncer sa présence dans un lieu.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 26,
+          "end": 32,
+          "text": "Ce est"
+        },
+        "explanation": "Écrivez c’est avec une apostrophe : ce s’élide devant est. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-carte",
+        "prompt": "— Qu’est-ce que c’est ? — Ce est ma carte de transport.",
+        "answers": [
+          "— Qu’est-ce que c’est ? — C’est ma carte de transport."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Une personne demande ce qu’est la carte que vous montrez. Vous l’identifiez.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 26,
+          "end": 32,
+          "text": "Ce est"
+        },
+        "explanation": "Écrivez c’est avec une apostrophe : ce s’élide devant est. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-formateur",
+        "prompt": "— Qui est-ce ? — Ce est notre formateur.",
+        "answers": [
+          "— Qui est-ce ? — C’est notre formateur."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous répondez à « Qui est-ce ? » au sujet de la personne qui vient d’entrer.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 17,
+          "end": 23,
+          "text": "Ce est"
+        },
+        "explanation": "Écrivez c’est avec une apostrophe : ce s’élide devant est. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-bibliotheque",
+        "prompt": "— Qu’est-ce que c’est ? — Ce est la bibliothèque du quartier.",
+        "answers": [
+          "— Qu’est-ce que c’est ? — C’est la bibliothèque du quartier."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre partenaire montre un bâtiment et demande ce que c’est. Vous l’identifiez.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 26,
+          "end": 32,
+          "text": "Ce est"
+        },
+        "explanation": "Écrivez c’est avec une apostrophe : ce s’élide devant est. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-trousse",
+        "prompt": "— Qu’est-ce que c’est ? — Ce est une trousse.",
+        "answers": [
+          "— Qu’est-ce que c’est ? — C’est une trousse."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre partenaire demande le nom de l’objet sur la photo. Vous l’identifiez.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 26,
+          "end": 32,
+          "text": "Ce est"
+        },
+        "explanation": "Écrivez c’est avec une apostrophe : ce s’élide devant est. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-secretariat",
+        "prompt": "— Qu’est-ce que c’est ? — Ce est le secrétariat.",
+        "answers": [
+          "— Qu’est-ce que c’est ? — C’est le secrétariat."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous montrez une porte. Votre partenaire demande ce que c’est ; vous identifiez le service.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 26,
+          "end": 32,
+          "text": "Ce est"
+        },
+        "explanation": "Écrivez c’est avec une apostrophe : ce s’élide devant est. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-cle",
+        "prompt": "— Qu’est-ce que c’est ? — Ce est la clé du local.",
+        "answers": [
+          "— Qu’est-ce que c’est ? — C’est la clé du local."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre partenaire demande ce qu’est le petit objet dans votre main. Vous le nommez.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 26,
+          "end": 32,
+          "text": "Ce est"
+        },
+        "explanation": "Écrivez c’est avec une apostrophe : ce s’élide devant est. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-soeur",
+        "prompt": "— Qui est-ce ? — Ce est ma sœur.",
+        "answers": [
+          "— Qui est-ce ? — C’est ma sœur."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous présentez une personne et répondez à « Qui est-ce ? ». Dans ce rôle fictif, il s’agit de votre sœur.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 17,
+          "end": 23,
+          "text": "Ce est"
+        },
+        "explanation": "Écrivez c’est avec une apostrophe : ce s’élide devant est. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-permis",
+        "prompt": "— Qu’est-ce que c’est ? — Ce est mon permis de conduire.",
+        "answers": [
+          "— Qu’est-ce que c’est ? — C’est mon permis de conduire."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Une personne demande quel document vous montrez. Vous identifiez votre permis de conduire.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 26,
+          "end": 32,
+          "text": "Ce est"
+        },
+        "explanation": "Écrivez c’est avec une apostrophe : ce s’élide devant est. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-mairie",
+        "prompt": "— Quel est ce bâtiment ? — Ce est la mairie.",
+        "answers": [
+          "— Quel est ce bâtiment ? — C’est la mairie."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous répondez à une question d’identification sur un bâtiment du plan.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 27,
+          "end": 33,
+          "text": "Ce est"
+        },
+        "explanation": "Écrivez c’est avec une apostrophe : ce s’élide devant est. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-collegue",
+        "prompt": "— Qui est-ce ? — Ce est une collègue du centre.",
+        "answers": [
+          "— Qui est-ce ? — C’est une collègue du centre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous répondez à « Qui est-ce ? » au sujet d’une collègue qui arrive au centre.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 17,
+          "end": 23,
+          "text": "Ce est"
+        },
+        "explanation": "Écrivez c’est avec une apostrophe : ce s’élide devant est. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-plan",
+        "prompt": "— Quel est ce document ? — Ce est le plan du quartier.",
+        "answers": [
+          "— Quel est ce document ? — C’est le plan du quartier."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre partenaire demande quel document se trouve dans vos mains. Vous l’identifiez.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 27,
+          "end": 33,
+          "text": "Ce est"
+        },
+        "explanation": "Écrivez c’est avec une apostrophe : ce s’élide devant est. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-recu",
+        "prompt": "— Qu’est-ce que c’est ? — Ce est le reçu du paiement.",
+        "answers": [
+          "— Qu’est-ce que c’est ? — C’est le reçu du paiement."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Une personne demande ce que vous lui donnez. Vous identifiez le reçu du paiement.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 26,
+          "end": 32,
+          "text": "Ce est"
+        },
+        "explanation": "Écrivez c’est avec une apostrophe : ce s’élide devant est. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-sac",
+        "prompt": "Mon sac ? Il sont noir.",
+        "answers": [
+          "Mon sac ? Il est noir."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous venez de nommer un sac. Reprenez ce sac par un pronom personnel masculin et donnez sa couleur.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 10,
+          "end": 17,
+          "text": "Il sont"
+        },
+        "explanation": "Avec il au singulier, la forme du verbe être est « est ». Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-veste",
+        "prompt": "Cette veste ? Elle sont neuve.",
+        "answers": [
+          "Cette veste ? Elle est neuve."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous venez de nommer une veste. Reprenez ce vêtement par un pronom personnel féminin et indiquez son état.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 14,
+          "end": 23,
+          "text": "Elle sont"
+        },
+        "explanation": "Avec elle au singulier, la forme du verbe être est « est ». Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-bus",
+        "prompt": "Le bus ? Il sont en retard.",
+        "answers": [
+          "Le bus ? Il est en retard."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Le bus vient d’être nommé. Reprenez-le par un pronom personnel et indiquez son retard.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 16,
+          "text": "Il sont"
+        },
+        "explanation": "Avec il au singulier, la forme du verbe être est « est ». Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-voisine",
+        "prompt": "Ma voisine ? Elle sont médecin.",
+        "answers": [
+          "Ma voisine ? Elle est médecin."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre voisine vient d’être nommée. Reprenez cette personne par un pronom personnel et indiquez sa profession sans article.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 13,
+          "end": 22,
+          "text": "Elle sont"
+        },
+        "explanation": "Avec elle au singulier, la forme du verbe être est « est ». Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-frere",
+        "prompt": "Mon frère ? Il sont boulanger.",
+        "answers": [
+          "Mon frère ? Il est boulanger."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre frère vient d’être nommé dans ce rôle fictif. Reprenez cette personne par un pronom personnel et indiquez son métier sans article.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 19,
+          "text": "Il sont"
+        },
+        "explanation": "Avec il au singulier, la forme du verbe être est « est ». Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-chaise",
+        "prompt": "Cette chaise ? Elle sont libre.",
+        "answers": [
+          "Cette chaise ? Elle est libre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous venez de nommer une chaise. Reprenez-la par un pronom personnel et dites qu’elle est libre.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 15,
+          "end": 24,
+          "text": "Elle sont"
+        },
+        "explanation": "Avec elle au singulier, la forme du verbe être est « est ». Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-local",
+        "prompt": "Le local ? Il sont fermé.",
+        "answers": [
+          "Le local ? Il est fermé."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Le local vient d’être nommé. Reprenez-le par un pronom personnel et indiquez qu’il est fermé.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 18,
+          "text": "Il sont"
+        },
+        "explanation": "Avec il au singulier, la forme du verbe être est « est ». Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-formation",
+        "prompt": "La formation ? Elle sont courte.",
+        "answers": [
+          "La formation ? Elle est courte."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "La formation vient d’être nommée. Reprenez-la par un pronom personnel et décrivez sa durée.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 15,
+          "end": 24,
+          "text": "Elle sont"
+        },
+        "explanation": "Avec elle au singulier, la forme du verbe être est « est ». Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-train",
+        "prompt": "Ce train ? Il sont complet.",
+        "answers": [
+          "Ce train ? Il est complet."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous venez de parler du train. Reprenez-le par un pronom personnel et dites qu’il est complet.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 18,
+          "text": "Il sont"
+        },
+        "explanation": "Avec il au singulier, la forme du verbe être est « est ». Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-porte",
+        "prompt": "La porte ? Elle sont ouverte.",
+        "answers": [
+          "La porte ? Elle est ouverte."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "La porte vient d’être nommée. Reprenez-la par un pronom personnel et indiquez son état.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 20,
+          "text": "Elle sont"
+        },
+        "explanation": "Avec elle au singulier, la forme du verbe être est « est ». Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-ami",
+        "prompt": "Mon ami ? Il sont mécanicien.",
+        "answers": [
+          "Mon ami ? Il est mécanicien."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Dans ce rôle fictif, votre ami vient d’être nommé. Reprenez cette personne par un pronom personnel et indiquez son métier sans article.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 10,
+          "end": 17,
+          "text": "Il sont"
+        },
+        "explanation": "Avec il au singulier, la forme du verbe être est « est ». Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-collegue-f",
+        "prompt": "Ma collègue ? Elle sont informaticienne.",
+        "answers": [
+          "Ma collègue ? Elle est informaticienne."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre collègue vient d’être nommée. Reprenez cette personne par un pronom personnel féminin et donnez son métier sans article.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 14,
+          "end": 23,
+          "text": "Elle sont"
+        },
+        "explanation": "Avec elle au singulier, la forme du verbe être est « est ». Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-ordinateur",
+        "prompt": "Cet ordinateur ? Il sont disponible.",
+        "answers": [
+          "Cet ordinateur ? Il est disponible."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous venez de nommer un ordinateur. Reprenez-le par un pronom personnel et dites qu’il est disponible.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 17,
+          "end": 24,
+          "text": "Il sont"
+        },
+        "explanation": "Avec il au singulier, la forme du verbe être est « est ». Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-cle-rouge",
+        "prompt": "Cette clé ? Elle sont rouge.",
+        "answers": [
+          "Cette clé ? Elle est rouge."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous venez de nommer une clé. Reprenez-la par un pronom personnel et donnez sa couleur.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 21,
+          "text": "Elle sont"
+        },
+        "explanation": "Avec elle au singulier, la forme du verbe être est « est ». Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-exercice",
+        "prompt": "Cet exercice ? Il sont facile.",
+        "answers": [
+          "Cet exercice ? Il est facile."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "L’exercice vient d’être nommé. Reprenez-le par un pronom personnel et indiquez sa difficulté.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 15,
+          "end": 22,
+          "text": "Il sont"
+        },
+        "explanation": "Avec il au singulier, la forme du verbe être est « est ». Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-cantine",
+        "prompt": "Dans le centre, il y as une cantine.",
+        "answers": [
+          "Dans le centre, il y a une cantine."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous annoncez ce qui est présent dans le centre, sans identifier un objet montré.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 16,
+          "end": 23,
+          "text": "il y as"
+        },
+        "explanation": "Dans il y a, a s’écrit sans s. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-chaises",
+        "prompt": "Autour de la table, il y as six chaises.",
+        "answers": [
+          "Autour de la table, il y a six chaises."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous annoncez combien de chaises sont présentes autour de la table.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 20,
+          "end": 27,
+          "text": "il y as"
+        },
+        "explanation": "Dans il y a, a s’écrit sans s. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-livres",
+        "prompt": "Sur le bureau, il y as trois livres.",
+        "answers": [
+          "Sur le bureau, il y a trois livres."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous annoncez la présence de trois livres sur le bureau.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 15,
+          "end": 22,
+          "text": "il y as"
+        },
+        "explanation": "Dans il y a, a s’écrit sans s. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-ecole",
+        "prompt": "Dans le quartier, il y as une école.",
+        "answers": [
+          "Dans le quartier, il y a une école."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous indiquez un équipement présent dans le quartier, sans répondre à une question d’identification.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 18,
+          "end": 25,
+          "text": "il y as"
+        },
+        "explanation": "Dans il y a, a s’écrit sans s. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-velos",
+        "prompt": "Devant le centre, il y as deux vélos.",
+        "answers": [
+          "Devant le centre, il y a deux vélos."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous dites combien de vélos se trouvent devant le centre.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 18,
+          "end": 25,
+          "text": "il y as"
+        },
+        "explanation": "Dans il y a, a s’écrit sans s. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-ascenseur",
+        "prompt": "Dans cet immeuble, il y as un ascenseur.",
+        "answers": [
+          "Dans cet immeuble, il y a un ascenseur."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous annoncez la présence d’un ascenseur dans l’immeuble.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 19,
+          "end": 26,
+          "text": "il y as"
+        },
+        "explanation": "Dans il y a, a s’écrit sans s. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-participants",
+        "prompt": "Dans la salle, il y as huit participants.",
+        "answers": [
+          "Dans la salle, il y a huit participants."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous indiquez combien de personnes sont présentes dans la salle.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 15,
+          "end": 22,
+          "text": "il y as"
+        },
+        "explanation": "Dans il y a, a s’écrit sans s. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-arbres",
+        "prompt": "Dans la cour, il y as quatre arbres.",
+        "answers": [
+          "Dans la cour, il y a quatre arbres."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous annoncez le nombre d’arbres présents dans la cour.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 14,
+          "end": 21,
+          "text": "il y as"
+        },
+        "explanation": "Dans il y a, a s’écrit sans s. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-boite",
+        "prompt": "Dans l’armoire, il y as une boîte.",
+        "answers": [
+          "Dans l’armoire, il y a une boîte."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous annoncez la présence d’une boîte dans l’armoire.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 16,
+          "end": 23,
+          "text": "il y as"
+        },
+        "explanation": "Dans il y a, a s’écrit sans s. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-fenetres",
+        "prompt": "Dans cette salle, il y as deux fenêtres.",
+        "answers": [
+          "Dans cette salle, il y a deux fenêtres."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous indiquez combien de fenêtres se trouvent dans la salle.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 18,
+          "end": 25,
+          "text": "il y as"
+        },
+        "explanation": "Dans il y a, a s’écrit sans s. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-photos",
+        "prompt": "Sur le mur, il y as plusieurs photos.",
+        "answers": [
+          "Sur le mur, il y a plusieurs photos."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous annoncez la présence de plusieurs photos sur le mur.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 19,
+          "text": "il y as"
+        },
+        "explanation": "Dans il y a, a s’écrit sans s. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-guichet",
+        "prompt": "À l’entrée de la gare, il y as un guichet.",
+        "answers": [
+          "À l’entrée de la gare, il y a un guichet."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous annoncez la présence d’un guichet à l’entrée de la gare.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 23,
+          "end": 30,
+          "text": "il y as"
+        },
+        "explanation": "Dans il y a, a s’écrit sans s. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-places",
+        "prompt": "Dans ce train, il y as cinq places libres.",
+        "answers": [
+          "Dans ce train, il y a cinq places libres."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous dites combien de places sont encore libres dans le train.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 15,
+          "end": 22,
+          "text": "il y as"
+        },
+        "explanation": "Dans il y a, a s’écrit sans s. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-parc",
+        "prompt": "Près de la bibliothèque, il y as un parc.",
+        "answers": [
+          "Près de la bibliothèque, il y a un parc."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous annoncez la présence d’un parc près de la bibliothèque.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 25,
+          "end": 32,
+          "text": "il y as"
+        },
+        "explanation": "Dans il y a, a s’écrit sans s. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-stylos",
+        "prompt": "Dans la trousse, il y as trois stylos.",
+        "answers": [
+          "Dans la trousse, il y a trois stylos."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous annoncez le nombre de stylos présents dans la trousse.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 17,
+          "end": 24,
+          "text": "il y as"
+        },
+        "explanation": "Dans il y a, a s’écrit sans s. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-appels",
+        "prompt": "Sur le téléphone, il y as deux messages.",
+        "answers": [
+          "Sur le téléphone, il y a deux messages."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous signalez la présence de deux messages sur le téléphone.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 18,
+          "end": 25,
+          "text": "il y as"
+        },
+        "explanation": "Dans il y a, a s’écrit sans s. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-ordinateurs",
+        "prompt": "À la bibliothèque, il y as quatre ordinateurs disponibles.",
+        "answers": [
+          "À la bibliothèque, il y a quatre ordinateurs disponibles."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous annoncez le nombre d’ordinateurs disponibles à la bibliothèque.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 19,
+          "end": 26,
+          "text": "il y as"
+        },
+        "explanation": "Dans il y a, a s’écrit sans s. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-bancs",
+        "prompt": "Devant le musée, il y as deux bancs.",
+        "answers": [
+          "Devant le musée, il y a deux bancs."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous dites combien de bancs sont présents devant le musée.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 17,
+          "end": 24,
+          "text": "il y as"
+        },
+        "explanation": "Dans il y a, a s’écrit sans s. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-magasin",
+        "prompt": "À côté de la gare, il y as un magasin.",
+        "answers": [
+          "À côté de la gare, il y a un magasin."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous signalez la présence d’un magasin à côté de la gare.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 19,
+          "end": 26,
+          "text": "il y as"
+        },
+        "explanation": "Dans il y a, a s’écrit sans s. Conservez les autres informations."
+      },
+      {
+        "id": "gram-ex-f5-curriculum-c-a1-plantes",
+        "prompt": "Près de la fenêtre, il y as trois plantes.",
+        "answers": [
+          "Près de la fenêtre, il y a trois plantes."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/decrire-f5-a1.tsv",
+          "typeId": "gram-ex-f5-curriculum-c",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous annoncez le nombre de plantes présentes près de la fenêtre.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 20,
+          "end": 27,
+          "text": "il y as"
+        },
+        "explanation": "Dans il y a, a s’écrit sans s. Conservez les autres informations."
+      }
+    ]
+  }
+]
