@@ -1,3 +1,4 @@
+import { grammarOrderHasSentenceFilters } from './types'
 import {isRetiredGrammarType} from './retirement'
 import { createRng, shuffle } from '@/math/rng'
 import type { ExerciseBlock, MathItem, PageConfig } from '@/math/types'
@@ -24,7 +25,7 @@ export function grammarSelectionCount(block: ExerciseBlock): number {
   return block.grammarPresentation==='document-set' ? block.grammarDocumentCount??0 : block.count
 }
 function eligible(bank: GrammarBank, block: ExerciseBlock): GrammarUnit[] {
-  if (block.grammarPresentation!=='order' || bank.units.every(u=>u.kind==='order'&&u.tokenUnit==='clause')) return bank.units
+  if (block.grammarPresentation!=='order' || !grammarOrderHasSentenceFilters(bank.units)) return bank.units
   const optional=['adjectif','adverbe','preposition','conjonction'] as const
   const units=bank.units.filter(u=>u.kind==='order' && !optional.some(category=>
     block.phraseCategories?.[category]===false && u.tokens.some(t=>t.category===category)))
@@ -70,7 +71,7 @@ export function generateGrammarSelection(block: ExerciseBlock, seed: number): Gr
     `Ces paramètres permettent ${pool.length} ${documents?'texte':'question'}${pool.length===1?'':'s'}. Réduisez le nombre ou modifiez explicitement les filtres.`)
   const rng=createRng(seed)
   let selected=shuffle(rng,pool).slice(0,count)
-  if (block.grammarPresentation==='order' && block.phrasePolarity==='mixed' && !pool.every(u=>u.kind==='order'&&u.tokenUnit==='clause')) {
+  if (block.grammarPresentation==='order' && block.phrasePolarity==='mixed' && grammarOrderHasSentenceFilters(pool)) {
     const isNegative=(u:GrammarUnit)=>u.kind==='order'&&u.tokens.some(t=>t.category==='negation')
     const a=shuffle(rng,pool.filter(u=>!isNegative(u))), n=shuffle(rng,pool.filter(isNegative))
     const negatives=Math.min(n.length,Math.ceil(block.count/2))

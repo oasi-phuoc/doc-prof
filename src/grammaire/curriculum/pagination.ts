@@ -7,6 +7,8 @@ import { grammarScenarioSlices } from './scenario-pages'
 function cost(item: MathItem): number {
   const q=item.grammar
   if (!q) return 0
+  // A2 order corrections retain the context and the full meaning explanation.
+  if(q.unit.source.typeId.startsWith('gram-ex-f12-'))return q.unit.kind==='correct'||q.unit.kind==='transform'||q.unit.kind==='order'&&q.unit.source.partition==='a2'?160:80
   // A2 compares multiple options and criteria; reserve a full A4 block.
   if(q.unit.source.typeId.startsWith('gram-ex-f9-'))return q.unit.kind==='completion'&&q.unit.source.partition==='a1'?80:160
   // Descriptions keep contextual pairs, illustrations and open rubrics together.

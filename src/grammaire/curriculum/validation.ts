@@ -41,6 +41,7 @@ export function validGrammarUnit(value: unknown): value is GrammarUnit {
     !['masculine','feminine'].includes(String(value.reference.gender))||!['singular','plural'].includes(String(value.reference.number)))) return false
   if (value.imageSupports!==undefined && (!Array.isArray(value.imageSupports)||!value.imageSupports.length||value.imageSupports.length>3||
     !value.imageSupports.every(validGrammarImage)||!unique(value.imageSupports.map(s=>s.id))||!unique(value.imageSupports.map(s=>s.src)))) return false
+  if(value.orderScope!==undefined&&(value.kind!=='order'||value.orderScope!=='noun-group'||value.tokenUnit!==undefined))return false
   if (value.tokenUnit!==undefined && (value.kind!=='order'||value.tokenUnit!=='clause')) return false
   if (value.kind==='scenario') return validGrammarScenario(value)
   if (value.kind==='personal-gap') return text(value.information)&&text(value.task)&&rubric(value.rubric)&&

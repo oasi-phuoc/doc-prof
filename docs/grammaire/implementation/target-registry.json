@@ -10688,7 +10688,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -10708,13 +10708,41 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/f12.json",
       "instructionsByPresentation": {
         "choice": "Choisissez la forme qui convient.",
         "gap": "Complétez avec la forme qui convient."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/f12.json",
+        "levels": [
+          "A1",
+          "A2"
+        ],
+        "reviewedActivityUnits": 100,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "choice",
+              "gap"
+            ],
+            "units": 50
+          },
+          {
+            "level": "A2",
+            "presentations": [
+              "choice",
+              "gap"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -19338,7 +19366,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -19356,12 +19384,38 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/f12.json",
       "instructionsByPresentation": {
         "order": "Remettez les mots dans l’ordre pour former une phrase correcte."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/f12.json",
+        "levels": [
+          "A1",
+          "A2"
+        ],
+        "reviewedActivityUnits": 100,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "order"
+            ],
+            "units": 50
+          },
+          {
+            "level": "A2",
+            "presentations": [
+              "order"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -19389,7 +19443,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -19403,12 +19457,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/f12.json",
       "instructionsByPresentation": {
         "correct": "Corrigez l’erreur et réécrivez la phrase entière."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/f12.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A2",
+            "presentations": [
+              "correct"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -19436,7 +19508,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -19450,12 +19522,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/f12.json",
       "instructionsByPresentation": {
         "transform": "Réécrivez la phrase en respectant l’indication."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/f12.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A2",
+            "presentations": [
+              "transform"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -32374,16 +32464,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Placer des adjectifs usuels avant/après le nom",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-f12-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "adjectifs-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f12.json"
     },
     {
       "offeringId": "gram-ex-f12-qcm-verbe@A1@gap",
@@ -32398,16 +32493,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Placer des adjectifs usuels avant/après le nom",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-f12-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "adjectifs-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f12.json"
     },
     {
       "offeringId": "gram-ex-f12-qcm-verbe@A2@choice",
@@ -32422,16 +32522,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Choisir la place selon le sens lorsque l'adjectif varie",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-f12-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "adjectifs-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f12.json"
     },
     {
       "offeringId": "gram-ex-f12-qcm-verbe@A2@gap",
@@ -32446,16 +32551,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Choisir la place selon le sens lorsque l'adjectif varie",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-f12-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "adjectifs-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f12.json"
     },
     {
       "offeringId": "gram-ex-f13-qcm-verbe@A1@choice",
@@ -38227,16 +38337,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Placer des adjectifs usuels avant/après le nom",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "adjectifs-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f12.json"
     },
     {
       "offeringId": "gram-ex-f12-curriculum-o@A2@order",
@@ -38251,16 +38366,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Choisir la place selon le sens lorsque l'adjectif varie",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "adjectifs-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f12.json"
     },
     {
       "offeringId": "gram-ex-f12-curriculum-c@A2@correct",
@@ -38275,16 +38395,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Choisir la place selon le sens lorsque l'adjectif varie",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "adjectifs-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f12.json"
     },
     {
       "offeringId": "gram-ex-f12-curriculum-t@A2@transform",
@@ -38299,16 +38424,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Choisir la place selon le sens lorsque l'adjectif varie",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "adjectifs-2026-11-23-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/f12.json"
     },
     {
       "offeringId": "gram-ex-f13-curriculum-t@A1@transform",
@@ -42147,11 +42277,11 @@
   "implementation": {
     "baselineCommit": "ff743145",
     "firstVerticalSlice": "etre A1",
-    "reviewedVariants": 15000,
+    "reviewedVariants": 15400,
     "teacherApprovedVariants": 0,
     "status": "pilot_preview",
-    "remaining": "Décrire : 31/63 offres en pilote. À poursuivre : Description physique, La place de l'adjectif, Le superlatif, Comparer un nom ou un verbe. Approbation enseignante, révisions et recette finale restent en attente.",
-    "reviewedActivityUnits": 11110,
+    "remaining": "Décrire : 39/63 offres en pilote. À poursuivre : Description physique, Le superlatif, Comparer un nom ou un verbe. Approbation enseignante, révisions et recette finale restent en attente.",
+    "reviewedActivityUnits": 11410,
     "deliveredSlices": [
       "etre A1",
       "er-particuliers A1/A2",
@@ -42184,22 +42314,23 @@
       "e2/e3/e4/e5 A1/A2 — thème Se situer dans le temps terminé",
       "f1/f2/f3 A1 — thème Demander et proposer terminé",
       "f4/f5/f6/f7/f8 A1 — Décrire, première tranche (21/63 offres)",
-      "f9 A1/A2 — comparaisons (10 offres)"
+      "f9 A1/A2 — comparaisons (10 offres)",
+      "f12 A1/A2 — place de l’adjectif (8 offres)"
     ],
-    "reviewedOfferings": 290,
+    "reviewedOfferings": 298,
     "lastUpdated": "2026-11-23",
-    "reviewedSelectableUnits": 11110,
+    "reviewedSelectableUnits": 11410,
     "reviewedDocuments": 360,
     "reviewedDocumentQuestions": 1400,
-    "reviewedActivities": 212,
+    "reviewedActivities": 216,
     "reviewedPilotNotions": 5,
-    "reviewedNotions": 45,
+    "reviewedNotions": 46,
     "technicalContracts": {
       "scenarios": "closed and open; prototypes excluded from all bank quotas",
       "images": "20 supports de présentation réemployés et un bébé historique restauré sous empreinte immuable. Aucun média généré. Les onze obligations I des autres notions restent à préparer.",
       "reference": "docs/grammaire/implementation/contrats-situations-images.md",
       "countedInBankCoverage": false
     },
-    "reviewedNotionLevelPairs": 55
+    "reviewedNotionLevelPairs": 57
   }
 }

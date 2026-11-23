@@ -1,3 +1,4 @@
+import { grammarOrderHasSentenceFilters } from '@/grammaire/curriculum/types'
 import { TcfCeFormatControl, TcfCeTextFontControl } from './TcfCeFormatControl'
 import { PhrasePolarityControl } from './PhrasePolarityControl'
 import {PhraseFormControls} from './PhraseFormControls'
@@ -159,7 +160,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
   } = p
   const grammarCoTheme = grammarCoThemeForType(activeBlock.exerciseType)
   const grammarOrderBank=activeBlock.grammarLevel?grammarBankFor(activeBlock.exerciseType,activeBlock.grammarLevel):undefined
-  const isGrammarOrder = isGrammaireDomain && activeBlock.grammarPresentation==='order' && !grammarOrderBank?.units.every(u=>u.kind==='order'&&u.tokenUnit==='clause')
+  const isGrammarOrder = isGrammaireDomain && activeBlock.grammarPresentation==='order' && (!grammarOrderBank||grammarOrderHasSentenceFilters(grammarOrderBank.units))
   const showPhraseParameters = (isPhraseDomain && !isPhraseChart) || isGrammarOrder
   const showGrammarCoLevel = grammarCoTheme && (activeBlock.exerciseType.endsWith('-co-theme') || hasGrammarCoTheme(grammarCoTheme.id))
   const grammarCoLevel = activeBlock.grammarCoLevel ?? (grammarCoTheme ? defaultGrammarCoLevel(grammarCoTheme.id) : 'A1')

@@ -1,0 +1,122 @@
+{
+  "date": "2026-11-23",
+  "baseCommit": "7f859fc38",
+  "status": "passed_for_pilot",
+  "delivery": {
+    "theme": "Décrire",
+    "notion": "f12 — place de l’adjectif",
+    "activities": 4,
+    "banks": 6,
+    "offerings": 8,
+    "units": 300,
+    "variants": 400,
+    "authoredSituations": 100,
+    "teacherApprovedUnits": 0,
+    "themeCoverage": "39/63"
+  },
+  "checks": {
+    "unit": "passed",
+    "isolatedRebuild": "passed",
+    "globalVariants": 15400,
+    "protectedFiles": 276,
+    "priorComparisonVariants": 500,
+    "pools": {
+      "types": 152,
+      "positions": 16,
+      "seeds": 3
+    },
+    "browser": {
+      "offerings": 8,
+      "printedQuestionUnits": 800,
+      "sheets": 550,
+      "classroomLaunches": 8,
+      "errors": []
+    },
+    "worstFirstPageBudget": "All pairs or single items checked against first-page capacity in student and correction layouts.",
+    "pdfPreviews": 5,
+    "nativeOrdering": {
+      "viewports": [
+        1366,
+        390
+      ],
+      "modes": [
+        "mouse",
+        "touch",
+        "tap",
+        "keyboard",
+        "undo"
+      ],
+      "axeViolations": 0
+    },
+    "typescript": "passed",
+    "productionBuild": "passed",
+    "lint": "passed with existing warnings",
+    "secretScan": {
+      "files": 6596,
+      "findings": 0
+    }
+  },
+  "retirement": {
+    "removed": "f12",
+    "totalRetired": 46,
+    "remainingWrittenBanks": 52,
+    "otherRegistryRowsPreserved": true,
+    "savedWorksheetCleanup": "deferred by owner; no API request or deployment"
+  },
+  "globalCoverage": {
+    "reviewedActivities": 216,
+    "reviewedOfferings": 298,
+    "reviewedSelectableUnits": 11410,
+    "reviewedVariants": 15400,
+    "reviewedDocuments": 360,
+    "reviewedDocumentQuestions": 1400
+  },
+  "limitations": [
+    "Teacher approval, physical printing and ENI classroom acceptance pending.",
+    "Previously exceeded route download limits remain open; gamemode work paused by owner.",
+    "24 remaining Décrire offerings: superlatives, noun/verb comparisons and physical description."
+  ],
+  "sourceSha256": [
+    {
+      "path": "scripts/build-grammar-adjectifs.py",
+      "sha256": "48dade701de5f8c4c004da6aeeadbac25b9a2572656e6f94c61269e97a49cb51"
+    },
+    {
+      "path": "scripts/grammar_curriculum/adjectifs-f12-a1.tsv",
+      "sha256": "640868676079c32f2cee2d9af4eb6f3f03cb66de537686c964beacac21f0b45f"
+    },
+    {
+      "path": "scripts/grammar_curriculum/adjectifs-f12-a2.tsv",
+      "sha256": "f4e7ac37bff18099bb401d3dfe8a1efb707c621f5cec839ab8b271bc40cad64b"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/f12.json",
+      "sha256": "1a401ce08ff1db1bca57ccd10cd42e6f338407af9bf471c37cbe6430289ee0c9"
+    },
+    {
+      "path": "src/grammaire/curriculum/types.ts",
+      "sha256": "39c609c7782b3bdc38c57c914c4cf766f01b4e44f6be93a15cc94b06541d3ffa"
+    },
+    {
+      "path": "src/grammaire/curriculum/validation.ts",
+      "sha256": "67bc89586fc7fb884f5166aebc136438b851d55b773fabe29f7e74b6868abb73"
+    },
+    {
+      "path": "src/grammaire/curriculum/generate.ts",
+      "sha256": "56559addf3ea88c969a341fa5fdd0e773a6a6510748b3cd87bc20bd471abad6f"
+    },
+    {
+      "path": "src/grammaire/curriculum/pagination.ts",
+      "sha256": "78cd372003449396a8845e041cb64f63bd7cfd5a388ed478576d812b31a5f5a4"
+    },
+    {
+      "path": "src/interactive/domain/source-adapters.ts",
+      "sha256": "64f9574cffa28f76c1324780d7779cf79818cea1b1e127ef1d4578e85671fa0c"
+    },
+    {
+      "path": "src/App.css",
+      "sha256": "96500f87aeeb94fb74e78b4023a4e5ea54af91fb17180fe089116935819c313e"
+    }
+  ],
+  "productionManifestSha256": "8ca6a1cb76ef68dff983c311fb80e5f5b7448720a5b345bbba2f976caae5659b"
+}

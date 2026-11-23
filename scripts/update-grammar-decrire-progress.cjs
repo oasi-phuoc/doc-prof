@@ -26,7 +26,9 @@ for(const id of new Set(scope.map(b=>b.activityId))){
 }
 const units=banks.flatMap(b=>b.units),docs=units.filter(u=>u.kind==='reading'),ids=new Set(banks.map(b=>b.activityId)),notion=b=>r.activities.find(a=>a.activityId===b.activityId).pedagogicalNotionId
 Object.assign(r.implementation,{lastUpdated:date,reviewedVariants:banks.reduce((n,b)=>n+b.presentations.reduce((s,p)=>s+(p==='document-set'?b.units.reduce((n,u)=>n+u.questions.length,0):b.units.length),0),0),reviewedActivityUnits:units.length,reviewedSelectableUnits:units.length,reviewedActivities:ids.size,reviewedDocuments:docs.length,reviewedDocumentQuestions:docs.reduce((n,u)=>n+u.questions.length,0),reviewedOfferings:banks.reduce((n,b)=>n+b.presentations.length,0),reviewedNotions:new Set(banks.map(notion)).size,reviewedNotionLevelPairs:new Set(banks.map(b=>notion(b)+'@'+b.level)).size,remaining:`Décrire : ${planned.filter(covered).length}/${planned.length} offres en pilote. À poursuivre : ${remainingNotions.join(", ")||"validation du thème"}. Approbation enseignante, révisions et recette finale restent en attente.`})
-r.implementation.deliveredSlices=[...new Set([...r.implementation.deliveredSlices,requested.length===1&&requested[0]==='f9'?'f9 A1/A2 — comparaisons (10 offres)':'f4/f5/f6/f7/f8 A1 — Décrire, première tranche (21/63 offres)'])]
+const slices={f9:'f9 A1/A2 — comparaisons (10 offres)',f12:'f12 A1/A2 — place de l’adjectif (8 offres)'}
+const slice=requested.length===1?(slices[requested[0]]??requested[0]+' — '+scope.reduce((n,b)=>n+b.presentations.length,0)+' offres'):'f4/f5/f6/f7/f8 A1 — Décrire, première tranche (21/63 offres)'
+r.implementation.deliveredSlices=[...new Set([...r.implementation.deliveredSlices,slice])]
 const manifest=JSON.parse(fs.readFileSync(path.join(root,'docs/grammaire/implementation/decrire-media-manifest.json')))
 for(const evidence of manifest.obligations){
  const image=r.imageObligations.find(i=>i.obligationId===evidence.obligationId)
