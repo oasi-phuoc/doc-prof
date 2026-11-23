@@ -1,0 +1,123 @@
+{
+  "date": "2026-11-23",
+  "baseline_commit": "3278e1af3c0dededfecddd422d89057413d75b62",
+  "review_register": "docs/tcf/delf-actif-20261113/revue-lot100-20261122.json",
+  "summary": {
+    "reviewed_trios": 100,
+    "added_trios": 100,
+    "new_images": 221,
+    "native_images": 203,
+    "procedural_clocks": 18,
+    "existing_distinct_images_reused": 51,
+    "new_image_usages": 246,
+    "reused_image_usages": 54
+  },
+  "checks": [
+    {
+      "command": "python scripts/check-delf-actif-lot100-20261122.py",
+      "status": "passed",
+      "result": "100 trios complets ; six banques comparées au commit de base en retirant seulement les 100 nouveaux formats image ; textes, sources, bonnes réponses et MP3 conservés."
+    },
+    {
+      "command": "python scripts/check_tcf_763_review.py",
+      "status": "passed",
+      "result": "763 décisions : 390 trios actifs, 112 textes et 261 à préparer, inchangés."
+    },
+    {
+      "command": "python scripts/check-delf-actif-images.py",
+      "status": "passed",
+      "result": "346 supports et 1663 questions ; 625 trios actifs, images et MP3 vérifiés."
+    },
+    {
+      "command": "python scripts/check-delf-actif-context-review.py",
+      "status": "passed",
+      "result": "1021 questions relues ; 41 corrections historiques, sources et réponses vérifiées."
+    },
+    {
+      "command": "node scripts/check-tcf-qcm-images.mjs",
+      "status": "passed",
+      "result": "2731 variantes ; 12 régressions de mélange vérifiées."
+    },
+    {
+      "command": "node scripts/check-tcf-bank.mjs",
+      "status": "passed",
+      "result": "1355 exercices ; 1371 entrées audio et pools vérifiés."
+    },
+    {
+      "command": "node scripts/check-tcf-object-pool.mjs",
+      "status": "passed",
+      "result": "211 concepts ; 134 pistes éligibles sur1371 ; 3 OUI/2 NON, exclusions et mélange vérifiés."
+    },
+    {
+      "command": "node scripts/check-tcf-association-images.mjs",
+      "status": "passed",
+      "result": "5 associations, 117 sources et80 leurres ; 600 tirages contrôlés."
+    },
+    {
+      "command": "node scripts/check-tcf-co-playlists.mjs",
+      "status": "passed",
+      "result": "5 formats CO : ordre des deux écoutes, pauses, annonces et fichiers vérifiés."
+    },
+    {
+      "command": "node --test --test-concurrency=1 --test-reporter=tap tests/gallery/catalog.test.mjs tests/audio-catalog/catalog.test.mjs",
+      "status": "passed",
+      "result": "22 tests réussis après classement en Action des deux nouvelles scènes de voiture."
+    },
+    {
+      "command": "npm run prebuild",
+      "status": "passed",
+      "result": "7829 images ; 9035 audios ; 6734 questions ;15453 variantes ;712 types de jeu, catalogue à jour."
+    }
+  ],
+  "final_gallery_audit": {
+    "total": 7829,
+    "visually_reviewed": 437,
+    "pending": 3838,
+    "not_started": 3554,
+    "by_collection": {
+      "TCF": 4275,
+      "Vocabulaire": 2226,
+      "Gattegno": 225,
+      "Grammaire": 33,
+      "Logique": 952,
+      "Jeux et interactif": 106,
+      "Identité visuelle": 12
+    }
+  },
+  "background_samples": {
+    "count": 116,
+    "reference_rgb": [
+      253,
+      242,
+      225
+    ],
+    "maximum_channel_delta_allowed": 3,
+    "all_passed": true
+  },
+  "clock_model": {
+    "common_hands": true,
+    "calculated_angles_verified": true,
+    "single_clocks": 10,
+    "paired_clocks": 8
+  },
+  "historical_pending": 261,
+  "delf_actif_active": 625,
+  "delf_actif_remaining": 121,
+  "delf_remaining_by_level": {
+    "A2": 1,
+    "B1": 120
+  },
+  "human_audio_listening_performed": false,
+  "browser": "docs/tcf/delf-actif-20261113/lot100-20261122-browser.json",
+  "gallery_browser": "docs/tcf/delf-actif-20261113/lot100-20261122-gallery-browser.json",
+  "browser_summary": {
+    "viewports": [
+      1440,
+      390
+    ],
+    "question_views": 46,
+    "image_views": 138,
+    "gallery_search_views": 8,
+    "errors": []
+  }
+}
