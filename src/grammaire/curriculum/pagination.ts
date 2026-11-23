@@ -7,6 +7,8 @@ import { grammarScenarioSlices } from './scenario-pages'
 function cost(item: MathItem): number {
   const q=item.grammar
   if (!q) return 0
+  // A2 compares multiple options and criteria; reserve a full A4 block.
+  if(q.unit.source.typeId.startsWith('gram-ex-f9-'))return q.unit.kind==='completion'&&q.unit.source.partition==='a1'?80:160
   // Descriptions keep contextual pairs, illustrations and open rubrics together.
   if(/^gram-ex-f[45678]-/.test(q.unit.source.typeId)) {
     if(q.unit.imageSupports?.length||q.unit.kind==='production'||q.unit.kind==='match'||q.unit.kind==='transform'&&q.unit.source.typeId!=='gram-ex-f7-curriculum-t')return 160

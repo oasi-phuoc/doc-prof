@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-23",
+  "timezone": "Europe/Zurich",
+  "baseCommit": "a99ea7b9f",
+  "status": "passed_for_pilot_with_preexisting_download_limits",
+  "delivery": {
+    "theme": "Décrire",
+    "notion": "f9 — La comparaison",
+    "levels": [
+      "A1",
+      "A2"
+    ],
+    "activities": 4,
+    "banks": 8,
+    "offerings": 10,
+    "selectableUnits": 400,
+    "variants": 500,
+    "authoredSourceRows": 100,
+    "teacherApprovedUnits": 0,
+    "themeOfferingsReviewed": 31,
+    "themeOfferingsPlanned": 63
+  },
+  "checks": [
+    {
+      "command": "npm run test:grammar:comparaison",
+      "status": "passed",
+      "coverage": "One QCM key; full gap models; meilleur agreement and pire/plus mauvais alternatives; decisions checked against source numbers and boundary conditions; distinct A1/A2 facts; private non-exclusive teacher models; retirement parity; isolated byte-identical reconstruction."
+    },
+    {
+      "command": "node scripts/test-grammar-levels.cjs",
+      "status": "passed",
+      "variants": 15000
+    },
+    {
+      "command": "node scripts/test-grammar-contracts.cjs",
+      "status": "passed"
+    },
+    {
+      "command": "node scripts/test-grammar-questions.cjs",
+      "status": "passed",
+      "protectedFiles": 276
+    },
+    {
+      "command": "node scripts/test-grammar-decrire.cjs",
+      "status": "passed",
+      "units": 800,
+      "variants": 1050
+    },
+    {
+      "command": "node scripts/verify-grammar-pools.cjs",
+      "status": "passed",
+      "types": 148,
+      "positions": 16,
+      "seeds": 3
+    },
+    {
+      "command": "node scripts/game-pool-catalog.mjs --check",
+      "status": "passed",
+      "types": 762
+    },
+    {
+      "command": "GRAMMAR_TEST_URL=http://127.0.0.1:5184 node tests/grammar/comparaison-browser.mjs",
+      "status": "passed",
+      "server": "Final production build served by Vite preview",
+      "offerings": 10,
+      "printedQuestionUnits": 1000,
+      "expectedAnswers": 1000,
+      "sheets": 900,
+      "classroomLaunches": 10,
+      "fullFirstPageHeaderBudget": "All 50 unit heights checked against the first-page budget for single-item sheets, separately for student and correction layouts.",
+      "gapMinimumWidthMm": {
+        "A1": 55,
+        "A2": 90
+      },
+      "errors": []
+    },
+    {
+      "command": "GRAMMAR_TEST_URL=http://127.0.0.1:5184 node tests/grammar/comparaison-pdf.mjs",
+      "status": "passed",
+      "actualPdfPreviews": 5,
+      "visualReview": "Actual A1/A2 QCM, A2 transformation, six-line A2 written response and 90 mm A2 gap PDF pages inspected: text, options, answer areas and footer fit."
+    },
+    {
+      "command": "GRAMMAR_TEST_URL=http://127.0.0.1:5184 node tests/grammar/comparaison-mobile-browser.mjs",
+      "status": "passed",
+      "cases": [
+        {
+          "activity": "gram-ex-f9-qcm-verbe",
+          "level": "A1",
+          "width": 1366,
+          "height": 768,
+          "longestContext": true,
+          "privateBeforeReveal": true,
+          "correctAfterReveal": true,
+          "axeViolations": 0,
+          "keyboardDocumentScroll": false
+        },
+        {
+          "activity": "gram-ex-f9-qcm-verbe",
+          "level": "A2",
+          "width": 390,
+          "height": 844,
+          "longestContext": true,
+          "privateBeforeReveal": true,
+          "correctAfterReveal": true,
+          "axeViolations": 0,
+          "keyboardDocumentScroll": true
+        },
+        {
+          "activity": "gram-ex-f9-curriculum-t",
+          "level": "A2",
+          "width": 1366,
+          "height": 768,
+          "longestContext": true,
+          "privateBeforeReveal": true,
+          "correctAfterReveal": true,
+          "axeViolations": 0,
+          "keyboardDocumentScroll": false
+        },
+        {
+          "activity": "gram-ex-f9-curriculum-e",
+          "level": "A2",
+          "width": 390,
+          "height": 844,
+          "longestContext": true,
+          "privateBeforeReveal": true,
+          "correctAfterReveal": true,
+          "axeViolations": 0,
+          "keyboardDocumentScroll": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc -b && node node_modules/vite/bin/vite.js build --manifest",
+      "status": "passed"
+    },
+    {
+      "command": "npm run lint",
+      "status": "passed",
+      "note": "Existing warnings remain."
+    },
+    {
+      "command": "node scripts/interactive-secrets.mjs",
+      "status": "passed",
+      "changedFiles": 6576,
+      "findings": 0
+    },
+    {
+      "command": "node scripts/interactive-budgets.mjs",
+      "status": "preexisting_limits_still_exceeded",
+      "competition": {
+        "gzip": 209208,
+        "maximumGzip": 204800
+      },
+      "game": {
+        "gzip": 3683803,
+        "maximumGzip": 3145728
+      },
+      "note": "Thresholds unchanged; complete current route measurements exported without suppressing the failing budget check."
+    }
+  ],
+  "retirement": {
+    "historicalWrittenBankRemoved": "f9",
+    "retiredNotionsTotal": 45,
+    "remainingWrittenBanks": 53,
+    "otherRowsPreserved": true,
+    "coAndTheoriesPreserved": true,
+    "savedWorksheetCleanup": "deferred by owner; no remote cleanup or deployment",
+    "workerDeployment": false
+  },
+  "globalCoverage": {
+    "activities": 212,
+    "offerings": 290,
+    "units": 11110,
+    "variants": 15000,
+    "documents": 360,
+    "documentQuestions": 1400
+  },
+  "limitations": [
+    "Human pedagogical approval, physical printing and ENI classroom acceptance pending.",
+    "The pool currently uses default A1 grammar settings. Select A2 in the generator and launch that selection to retain its level in class.",
+    "The remaining 32 Décrire offerings cover adjective position, superlatives, noun/verb comparisons and physical description."
+  ],
+  "sourceSha256": [
+    {
+      "path": "scripts/build-grammar-comparaison.py",
+      "sha256": "6df113e52ceff2ce66ce4de657e69ca3a362ab66a2301ddb12b8ec22f8173f44"
+    },
+    {
+      "path": "scripts/grammar_curriculum/comparaison-f9-a1.tsv",
+      "sha256": "02d14c90e124e373fe14d37f29f442e3a9d7755aba99bfcdd09062c0956a7b44"
+    },
+    {
+      "path": "scripts/grammar_curriculum/comparaison-f9-a2.tsv",
+      "sha256": "cc0c4a21f635564e470e51cabae082aa5bc99e9578f86faeab335d77e851c8ce"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/f9.json",
+      "sha256": "58c5aa9290ed3f14c27bdef96780efcddc3e07a9c29d74a6240df9e1e6ac534f"
+    },
+    {
+      "path": "src/interactive/domain/source-adapters.ts",
+      "sha256": "659f03cfa1c00ecd091458f0a756db0ce8070b3044de30a6c8078bbf43343d5b"
+    },
+    {
+      "path": "src/components/item-view/grammar.tsx",
+      "sha256": "7767113f1d702df08070438ae56312b75890be497d454a702fb9198cdf5ac645"
+    },
+    {
+      "path": "src/App.css",
+      "sha256": "6d6fb35c9393add3b807738c9d0d8e25dbf82384770558331e6112485f10f0da"
+    },
+    {
+      "path": "src/grammaire/curriculum/pagination.ts",
+      "sha256": "a3bcc96167854a38982ca5d1980a40e254aa0065b36c09dc191b8ff93164d430"
+    },
+    {
+      "path": "src/grammaire/curriculum/registry.ts",
+      "sha256": "cb069477f8f100ebec7e6043e801075d07bfdc5839e17c884ce4255995508b7b"
+    }
+  ],
+  "productionManifestSha256": "53a32ea0c4c93bd24383d8b44c945644f0a99f04cc76722e364c64980f139683"
+}

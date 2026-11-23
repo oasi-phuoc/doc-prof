@@ -15,7 +15,8 @@ export function GrammarQuestionView({ question:q, mode }: {question:GrammarQuest
   if (u.kind==='reading') return <GrammarReadingView question={q} mode={mode}/>
   if (u.kind==='production') return <GrammarProductionView unit={u} mode={mode}/>
   if (u.kind==='scenario') return <GrammarScenarioView question={q} mode={mode}/>
-  return <div className={`grammar-question${u.responseLines===2?' grammar-two-lines':''}`}>
+  const comparisonGap=u.kind==='completion'&&u.source.typeId==='gram-ex-f9-qcm-verbe'&&q.presentation==='gap'
+  return <div className={`grammar-question${u.responseLines===2?' grammar-two-lines':''}${comparisonGap?' grammar-comparison-gap'+(u.source.partition==='a2'?' grammar-comparison-gap-a2':''):''}`}>
     <GrammarImageSupports supports={u.imageSupports}/>
     {u.cue?<p className="grammar-cue">{u.cue}</p>:null}
     {u.kind==='completion'?<>

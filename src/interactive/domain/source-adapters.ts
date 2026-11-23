@@ -30,12 +30,14 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
   if (item.layout==='grammar') {
     if (!isGrammarQuestion(item.grammar)) return {items:[],issues:['Question grammaticale invalide : vérifiez la fiche source.']}
     const q=item.grammar, u=q.unit
-    const imageSupport={...(u.imageSupports?{grammarImages:u.imageSupports}:{}),...(u.countryGender?{grammarCountryGender:u.countryGender}:{})}
-    const models=u.kind==='completion'&&['gram-ex-c4-qcm-verbe','gram-ex-d1-qcm-verbe','gram-ex-d2-qcm-conj','gram-ex-d3-qcm-verbe','gram-ex-e1-qcm-verbe','gram-ex-e6-qcm-verbe','gram-ex-e7-qcm-verbe','gram-ex-e2-qcm-verbe','gram-ex-e3-qcm-verbe','gram-ex-e4-qcm-verbe','gram-ex-e5-qcm-verbe','gram-ex-f1-qcm-verbe','gram-ex-f2-qcm-conj','gram-ex-f3-qcm-verbe','gram-ex-f4-qcm-verbe','gram-ex-f5-qcm-verbe','gram-ex-f6-qcm-verbe','gram-ex-f7-qcm-verbe','gram-ex-f8-qcm-verbe'].includes(u.source.typeId)?u.answers.map(answer=>u.prompt.replace(/___(\s*)/,(_,space:string)=>answer+(answer.endsWith('’')?'':space))):u.answers
+    // Multi-option A2 comparisons keep their facts in the existing reading panel.
+    const descriptionContext=u.source.typeId.startsWith('gram-ex-f9-')&&u.source.partition==='a2'?(u.kind==='completion'?u.cue:u.kind==='production'||u.kind==='transform'?u.prompt:undefined):undefined
+    const imageSupport={...(descriptionContext?{context:descriptionContext}:{}),...(u.imageSupports?{grammarImages:u.imageSupports}:{}),...(u.countryGender?{grammarCountryGender:u.countryGender}:{})}
+    const models=u.kind==='completion'&&['gram-ex-c4-qcm-verbe','gram-ex-d1-qcm-verbe','gram-ex-d2-qcm-conj','gram-ex-d3-qcm-verbe','gram-ex-e1-qcm-verbe','gram-ex-e6-qcm-verbe','gram-ex-e7-qcm-verbe','gram-ex-e2-qcm-verbe','gram-ex-e3-qcm-verbe','gram-ex-e4-qcm-verbe','gram-ex-e5-qcm-verbe','gram-ex-f1-qcm-verbe','gram-ex-f2-qcm-conj','gram-ex-f3-qcm-verbe','gram-ex-f4-qcm-verbe','gram-ex-f5-qcm-verbe','gram-ex-f6-qcm-verbe','gram-ex-f7-qcm-verbe','gram-ex-f8-qcm-verbe','gram-ex-f9-qcm-verbe'].includes(u.source.typeId)?u.answers.map(answer=>u.prompt.replace(/___(\s*)/,(_,space:string)=>answer+(answer.endsWith('’')?'':space))):u.answers
     const model=models.join(' / ')+'\n'+u.explanation
     const rawPrompt=u.kind==='completion' && u.agreementHint?u.prompt.replace('___',`___ (${u.agreementHint})`):u.kind==='completion' && u.countryGender?u.prompt.replace('___',`___ (${u.countryGender}) `):
       u.kind==='completion' && u.givenVerb?u.prompt.replace('___',`___ (${u.givenVerb})`):u.prompt
-    const prompt=u.cue?u.cue+'\n'+rawPrompt:rawPrompt
+    const prompt=u.cue&&!descriptionContext?u.cue+'\n'+rawPrompt:rawPrompt
     if(u.kind==='personal-gap'||u.kind==='form')return {items:[{...imageSupport,part:0,
       prompt:u.kind==='personal-gap'?`${prompt} (${u.information})\n${u.task}`:`${u.prompt}\n${u.task}\n${u.fields.map(f=>`${f.label}${f.required?' *':''} : ___${f.hint?` (${f.hint})`:''}`).join('\n')}`,
       instruction:sourceInstruction,choices:[],mode:'oral',teacherLed:true,
@@ -61,7 +63,7 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
       const options=q.readingOptions![child.id]!,correct=options.find(o=>child.answers.includes(o.text))!
       return {items:[{...common,choices:options,correctId:correct.id,choiceOrderPolicy:'fixed'}],issues:[]}
     }
-    if (u.kind==='production') return {items:[{...imageSupport,part:0,prompt:`${u.prompt}\n${u.task}`,instruction:sourceInstruction,choices:[],mode:'oral',teacherLed:true,
+    if (u.kind==='production') return {items:[{...imageSupport,part:0,prompt:descriptionContext?u.task:`${u.prompt}\n${u.task}`,instruction:sourceInstruction,choices:[],mode:'oral',teacherLed:true,
       model:'Exemple de réponse — d’autres formulations sont possibles.\n'+model+'\nRepères enseignant :\n'+u.rubric.map(r=>'□ '+r.label).join('\n')}],issues:[]}
     if (u.kind==='completion' && q.presentation==='choice') {
       const correct=q.options!.find(option=>u.answers.includes(option.text))!
@@ -81,10 +83,10 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
       model:pair.left.replace('___',pair.right)})),issues:[]}
     if (u.kind==='order') return {items:[{...imageSupport,part:0,prompt:sourceInstruction+(u.cue?'\n'+u.cue:'')+(u.givenVerb?` (${u.givenVerb})`:''),instruction:u.tokenUnit==='clause'?'Déplacez une étape vers sa place, ou touchez une étape puis sa destination. Les flèches du clavier déplacent l’étape ciblée.':'Choisissez un mot puis sa place, ou utilisez les flèches du clavier.',
       choices:[],mode:'sequence',words:q.tokens!.map(t=>t.text),model,teacherLed:true}],issues:[]}
-    const instruction=u.kind==='transform'?(u.targetSubject?`Réécrivez avec le sujet « ${u.targetSubject} ».`:u.directive):sourceInstruction
+    const instruction=u.kind==='transform'?(u.targetSubject?`Réécrivez avec le sujet « ${u.targetSubject} ».`:u.directive??sourceInstruction):sourceInstruction
     // Oral stages display the prompt. The target subject must be visible there,
     // not only in the instruction used by the reading dialog.
-    const oralPrompt=u.kind==='transform'?`${prompt}\n${instruction}`:prompt
+    const oralPrompt=u.kind==='transform'?(descriptionContext?instruction:`${prompt}\n${instruction}`):prompt
     return {items:[{...imageSupport,part:0,prompt:oralPrompt,instruction:instruction+(u.givenVerb?` (${u.givenVerb})`:''),choices:[],mode:'oral',model,teacherLed:true}],issues:[]}
   }
   if (item.layout === 'listen-check') {
