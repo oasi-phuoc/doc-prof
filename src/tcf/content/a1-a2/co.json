@@ -47192,7 +47192,25 @@
           { "id": "c", "texte": "Trois" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Un" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Un" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf2-billets-1.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf2-billets-2.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf2-billets-3.png"
+              }
+            ]
+          }
         }
       }
     ]

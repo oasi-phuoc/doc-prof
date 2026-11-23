@@ -1,13 +1,13 @@
 # Revue des titres et mots-clés TCF — 23 novembre 2026
 
-Le registre actuel contient **4 377 images TCF**. Avant cette reprise, **566** avaient une revue des mots-clés et **3 811** attendaient cette revue. Le chiffre de **3 887** dans l’ancien README était périmé.
+**Terminée : 4 506 images TCF examinées, aucune en attente.** Le catalogue contient 8 104 images de toutes collections. Le [suivi JSON](suivi.json) et le [registre individuel](../audit-mots-cles-tcf-20261117.json) conservent les compteurs et empreintes actuels.
 
-**1 967 fichiers supplémentaires examinés**, dans 40 lots traçables ; **2 533 revues au total** et **1 844 fichiers TCF encore en attente**. Le [suivi JSON](suivi.json) et le [registre individuel](../audit-mots-cles-tcf-20261117.json) portent les compteurs actuels.
+Le périmètre initial réel comptait 4 377 images TCF : 566 déjà revues et **3 811 revues à effectuer**. L’ancien chiffre de 3 887 était périmé. Les 60 lots de cette reprise couvrent les 3 811 fichiers ; les **129 créations supplémentaires** de la reprise DELF ont reçu leur revue à la publication. Total : 566 + 3 811 + 129 = 4 506.
 
-Chaque lot conserve le chemin, l’empreinte du fichier examiné, l’ancienne empreinte d’audit, le titre retenu et les mots-clés. Les planches de contrôle ont été vues avant annotation. Les mots-clés sont saisis ou dérivés des titres examinés ; aucun statut n’est attribué à partir du seul nom de fichier ou d’un ancien prompt. La revue décrit aussi les originaux conservés, sans les réhabiliter comme images de remplacement lorsque leur style est refusé.
+Chaque lot conserve chemin, empreinte actuelle, ancienne empreinte d’audit, titre et mots-clés. Les planches ont été vues avant annotation. Les descriptions portent uniquement sur les sujets, gestes, objets et décors visibles ; elles n’intègrent pas les noms des personnages des audios, les questions ou les thèmes pédagogiques. Les termes médicaux ne prétendent pas diagnostiquer les personnages.
 
-Les 209 images récentes encore en attente parmi les fichiers des 21 derniers commits DELF Actif sont couvertes. Les fruits, légumes, animaux, métiers, actions, végétaux, maladies, objets du quotidien, plats et véhicules examinés ont des descriptions de leur contenu visible. Les signes médicaux restent décrits sans inventer de diagnostic. Exemple : le fichier nommé « mulet » montre un poisson, pas un équidé.
+Les originaux conservés restent décrits sans être approuvés comme remplacements lorsqu’un style a été refusé. Les images n’ont pas été retouchées par la revue des métadonnées. Le fichier nommé « mulet », par exemple, est décrit comme un poisson.
 
-Les [21 journaux DELF examinés et décisions de réemploi](../../tcf/delf-actif-20261113/reemploi-21-journaux-20261123.json) permettent sept réemplois supplémentaires pour le lot suspendu. La préparation compte **54 images existantes réemployées**, **43 trios prêts sur 100**, **129 images à finaliser** et **aucune activation**. Aucun pixel, MP3, texte de source ou bonne réponse n’a été changé.
+Les [21 derniers journaux DELF examinés](../../tcf/delf-actif-20261113/reemploi-21-journaux-20261123.json) ont permis sept réemplois supplémentaires. Le [deuxième lot de 100](../../tcf/delf-actif-20261113/lot2-100-20261123.md) est désormais entièrement activé : 231 images préparées et 54 images existantes réemployées, sans changement des sources ou MP3. Pas de nouvelle écoute humaine attestée.
 
-Les titres et mots-clés sont appliqués au catalogue par `npm run gallery:index`. La validation des métadonnées ne remplace pas un contrôle du style ou de la pertinence pédagogique d’un futur trio.
+`npm run gallery:index` applique les titres et mots-clés relus à la recherche. La revue des métadonnées ne remplace pas le contrôle pédagogique de chaque futur trio.

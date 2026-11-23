@@ -3,7 +3,7 @@
 La rubrique `/images` est accessible par l’icône image du menu supérieur. Elle partage l’accès du créateur de fiches, mais reste une page indépendante : elle ne génère aucune fiche.
 
 - Toutes les images du dépôt sont indexées, y compris les fichiers hors de `public`. Le nombre actuel est celui du catalogue généré ; il augmente avec les lots contrôlés. Les artefacts temporaires du dossier `work/` sont exclus.
-- Recherche sans distinction de casse, d’accents ou d’apostrophes typographiques, par mots, libellé, thème et nom de fichier ; filtre par type d’image combinable avec la recherche.
+- Recherche sans distinction de casse, d’accents ou d’apostrophes typographiques, dans les titres et mots-clés visuels ; filtre par type d’image combinable avec la recherche.
 - Les catalogues existants enrichissent les titres et thèmes. Les fichiers non catalogués restent accessibles. Les thèmes complémentaires et certains types sont déduits des noms et dossiers : ce classement peut être affiné sans modifier les images.
 - Aperçu agrandi et sélection conservée pendant les changements de filtres et de page.
 - Téléchargement individuel dans le format d’origine ; ZIP de sélection ou de tous les résultats du groupe filtré. Le ZIP conserve les dossiers pour éviter les collisions de noms.
@@ -25,7 +25,7 @@ Validation : `npm run test:gallery`, `npm run test:gallery:browser`, TypeScript 
 
 La [vérification du 16 novembre](verification-types-20261116.json) conserve les empreintes du catalogue, les neuf tests de données, les parcours navigateur en développement et en production, les quatre nouveaux types à 390 px et le contrôle des 184 fichiers dans la compilation.
 
-Le catalogue contient **7 975 images**, dont **4 377 images TCF**. L’audit individuel compte **2 533 revues visuelles**, **1 844 images TCF en attente** et 3 554 autres entrées au statut `not_started`. Le [suivi de la revue du 23 novembre](revue-mots-cles-tcf-20261123/README.md) détaille les lots contrôlés ; l’ancien chiffre de 3 887 était périmé. Le [registre des mots-clés](audit-mots-cles-tcf-20261117.json) conserve les empreintes, titres et mots-clés précédents et actuels. Les thèmes servent aux filtres et ne sont pas fusionnés avec la recherche textuelle.
+Le catalogue contient **8 104 images**, dont **4 506 images TCF**. Les **4 506 titres et listes de mots-clés TCF ont leur revue visuelle enregistrée** ; aucune image TCF ne reste en attente. Les 3 554 entrées d’autres collections au statut `not_started` restent hors de cette revue. Le [suivi du 23 novembre](revue-mots-cles-tcf-20261123/README.md) et le [registre individuel](audit-mots-cles-tcf-20261117.json) conservent lots, empreintes et descriptions. Les thèmes servent aux filtres et ne sont pas fusionnés avec la recherche textuelle.
 
 Le [lot d’objets du 16 novembre](objets-20261116.json) ajoute 58 illustrations : 20 objets scolaires, 18 meubles et 20 objets de la maison. Retrouvez-les sous **Objet**, avec les recherches **Objets scolaires**, **Meubles** et **Objets de la maison**, ou par leur nom. Chaque illustration possède son fichier individuel en grand format, dans le style TCF sur fond crème. Les tentatives incorrectes restent documentées et ne sont pas publiées. Pour enregistrer les seules créations contrôlées : `node scripts/register-gallery-complements.mjs docs/gallery/objets-20261116.json`, puis `npm run gallery:index`.
 

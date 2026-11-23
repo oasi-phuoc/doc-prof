@@ -115,7 +115,7 @@
     {
       "number": 2,
       "count": 100,
-      "status": "blocked_image_generation",
+      "status": "completed",
       "keys": [
         "tcf-delf-actif-a2-046-04-04#4",
         "tcf-delf-actif-b1-001-01#1",
@@ -218,7 +218,8 @@
         "tcf-delf-actif-b1-038-01-01#7",
         "tcf-delf-actif-b1-038-01-01#9"
       ],
-      "preparation_register": "docs/tcf/delf-actif-20261113/lot2-100-20261123-preparation.json"
+      "preparation_register": "docs/tcf/delf-actif-20261113/lot2-100-20261123-preparation.json",
+      "review_register": "docs/tcf/delf-actif-20261113/revue-lot2-100-20261123.json"
     },
     {
       "number": 3,
@@ -256,700 +257,700 @@
       "source_sha256": "5d4c6930f2abcff267c3425bd4874f1c7628f2602829547536f6409a1c21b69b",
       "semantic_sha256": "e15d3ceb47428fd5460ad8ff394c3b9e16f568e1065062c8e70b727afb7a74a0",
       "audio_sha256": "bda74552ff6699458ec9470a90a64b2b670435bf610a104a442e14e0ceab77b3",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-003-08#3",
       "source_sha256": "06ba2995c044d3cf236a00e3905402f502aca1e44a77297fbe391268b14e6db3",
       "semantic_sha256": "b3e3138c5ffee2bbb2fdc10c2d5d5947ed1b966ee650f94a5905ecb79b656517",
       "audio_sha256": "63b82bed399364040fb2fe3905bd09914a805f47ea23eb76596cf5e0b3eae1b5",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-005-01#2",
       "source_sha256": "2b70b0e1f20dd38f27a5e4536d3144d9e1b1e147e5fc5f92d057dc042b8dae45",
       "semantic_sha256": "e6b3ba8c7abe0525c48e7fac22ee554c0e7baaebb92ac2435a1a5b964c056df4",
       "audio_sha256": "f2702c5779ca5c9567ba2e40da6ae7e23d0603e60f72df80cd33758b443fb807",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-007-04#2",
       "source_sha256": "0d412628651e6231602e4b5658da4834076691bce184d1661554ea76ed465645",
       "semantic_sha256": "8b55c45d05d52004f743f9b0cb3567fd5c3ad66966a06b953f6b976f4bd91a53",
       "audio_sha256": "830d341542f88af67b9c44ee346500b9c9baaf45968e09bcabe4d9dac5ab6862",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-008-02#5",
       "source_sha256": "e0733a5d82737c9be1dd140771510b0a2056bb9062339324a12853cbf3b85652",
       "semantic_sha256": "5d0d25e785be3612feb2ec5cbb9a7528015daa80b17e8f274deffe83b7c6522c",
       "audio_sha256": "64ccb905f0c3f047c2075e05f0069458c4dce0bcd50c432b8105e0ffbbf25bdc",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-008-03#2",
       "source_sha256": "eab0f5bb608f2b5500598a3878f9ec978b7e4e2d0875a85a9779cbe577a7933d",
       "semantic_sha256": "47c09affb6d346a448aaee0c8219ac790ec041361cce1ac3884f62e319b5a626",
       "audio_sha256": "81e3f44f3840249342102fd4c220e2e2b647d9d599daed5dc56f6dd04c26854d",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-008-03#4",
       "source_sha256": "eab0f5bb608f2b5500598a3878f9ec978b7e4e2d0875a85a9779cbe577a7933d",
       "semantic_sha256": "4f427df5e19f5f0721cec7af83d39c1b294d6169bd83d3f2acddd45805bf303c",
       "audio_sha256": "81e3f44f3840249342102fd4c220e2e2b647d9d599daed5dc56f6dd04c26854d",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-008-04#3",
       "source_sha256": "6be4be95cc8133551e21b49924720da00c73a4a721ef207295888a0278a39486",
       "semantic_sha256": "7d3eb32588b31e8387693544132563c2c5dba3ad0ec46f21a0940b9b84b5c135",
       "audio_sha256": "96d06031d6cf9fe227a7a1b290b26650f97094cf30c13dbd98ce6583e197287b",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-008-04#4",
       "source_sha256": "6be4be95cc8133551e21b49924720da00c73a4a721ef207295888a0278a39486",
       "semantic_sha256": "ba6b9b541c5ef59060919af1f8979d51388d01bbe7d3fecba88f87a2f65c5669",
       "audio_sha256": "96d06031d6cf9fe227a7a1b290b26650f97094cf30c13dbd98ce6583e197287b",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-010-01#2",
       "source_sha256": "09e0d02b1aee275270d8ed5761ce0d47ad998d18ff73c202eba14932760c1b86",
       "semantic_sha256": "defa4b5e404cc694d7bc3638cbbd270bffc1df449cefa6fc9b3281d1f2ff519f",
       "audio_sha256": "58d4e6c266799f9209872458f2b964b08163a772237e01924a10f238c4cfa853",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-011-02#3",
       "source_sha256": "aa760ef637d72ad05c57aa62a5cf1832f5081c17479b6a5a5889e594d88b0cde",
       "semantic_sha256": "345e3e2b79e22d446ed734a6841e35aab094ee829fb6937f0cddd393efe89e58",
       "audio_sha256": "8ca01bd3ee8922ba374f9b6fcd74fb7d2f60dd76a8d184431dfff3eb59f0c063",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-017-01#3",
       "source_sha256": "4923eeeed31fd012ff7878e9a570b368176a1237e47926cb7463ad47fcd73be7",
       "semantic_sha256": "9b8d9048675079c7b13efec19706aef0d680821d1add0948af90dc7bf1098666",
       "audio_sha256": "3abb440fcf3ad4a8daa1238c0ded9ed8b5dbaa77d9b1a84c37ad075b7c1ebe23",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-019-01#2",
       "source_sha256": "a71e211ae2d97b68da1b3f592bb9a6009ff868497a2b471f4f6840976752ac0f",
       "semantic_sha256": "663806216c24bdc2df60711234d19649ff2b3a4f140be538436098f0f5765b6e",
       "audio_sha256": "6863dadb5bf6d58faf8d33c66cff1f81e27bdcdc4cfeb575651f05742cf2a144",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-019-01#3",
       "source_sha256": "a71e211ae2d97b68da1b3f592bb9a6009ff868497a2b471f4f6840976752ac0f",
       "semantic_sha256": "2663acc927d0c9543dd60ece6b06db8090c635d846038dc2f05535330f8a806d",
       "audio_sha256": "6863dadb5bf6d58faf8d33c66cff1f81e27bdcdc4cfeb575651f05742cf2a144",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-026#2",
       "source_sha256": "d8ac348f56de1be36e45005aaf9f24710352a3cabd76c884df33164dc6fe07ce",
       "semantic_sha256": "84ee37144d36620b84dfa1e244adea417515de13d7df4547c40ae3fccdfdddf9",
       "audio_sha256": "56cdf989988505117960a1f0a803d4d004122ae7759f956bf146bdcb81d8e557",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-030-02#2",
       "source_sha256": "26d1d4e37bfd4d815c0e6f503a4015d519d22e6366b9874cecabb69ceeaae3b1",
       "semantic_sha256": "9ad0fc58fd4651cbf40095926b6d4312e65b7a5af906971181651b55c6349945",
       "audio_sha256": "325e94315c92628eab363390234c2f9bfecd5ba6345181be9ae9190c275def60",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-030-02#3",
       "source_sha256": "26d1d4e37bfd4d815c0e6f503a4015d519d22e6366b9874cecabb69ceeaae3b1",
       "semantic_sha256": "f5e41fceeef55ff95d4610af01a8748e8d949dceb8624360bd77bf54be974b25",
       "audio_sha256": "325e94315c92628eab363390234c2f9bfecd5ba6345181be9ae9190c275def60",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-032-01#3",
       "source_sha256": "923fe5d8b4267f8da8a437f7d050fcd6efd1a48cb5c465567b711c478d2eabed",
       "semantic_sha256": "dd479dbff037e767d670c2a538829961bb11ca96b8cef3b94c6af9661aa2e8fd",
       "audio_sha256": "03634682b150c8a5ea1988e2760cce0aa1e8c0e3f3bd84c349858c24bfeffbce",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-033-01#1",
       "source_sha256": "509c1dce455e5fcce4295d9d2ef6d358d1c73cae305fbf547a62ae51de55e24b",
       "semantic_sha256": "4b0c7c284564e81a911cbea896c1622c306604742692abc1e1e89fcc2d153774",
       "audio_sha256": "f408e0c4775bebf0125bfb97593a02ba0773f2001f1681eea1f58008507135ec",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-033-02#2",
       "source_sha256": "cee909e1e52a290cd1c552cb64200741a3d1af8bacd7ab810a2149016514345e",
       "semantic_sha256": "ac4521bef1760f5dc633379d884abf2763c89b241dac0bae9197e0051924667a",
       "audio_sha256": "e7dfebca2e1fd2aa0f7689eac1314b94127aaece993bd1b04396c373dbf88a09",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-033-04#3",
       "source_sha256": "11c133827173d5c0b6ce666101e70cdd3976bc61e5f79f61b5799fe0597cf9ab",
       "semantic_sha256": "27ab4428f780f104e3139fe308d2e0c6f89ebba51d791f7feceb5abf13ceeb49",
       "audio_sha256": "d6ad22b441806709dff2ddb9c01b4a6ca96879fc0d2dec983733cd30d3202238",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-034-01#1",
       "source_sha256": "7172e60c77841bdc6c4a929bd282208ca267bf1bd2e86796cc6425f963894363",
       "semantic_sha256": "1696d0f21b38e51aa85b7f327114d153a4ebb6483d8136ddd1991cb20b9c4fa0",
       "audio_sha256": "a5cc0dc15059fe83e160ac052551d5503bec558d5a81da79c9490bc0ce5ab873",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-035-01#1",
       "source_sha256": "5c67d46f446893777a25fa3d759030d41bda2e4e2824eb8ff5cb044750b6ae06",
       "semantic_sha256": "a50c49bd7fd01b1bf01b0d4b756f6af5527bdc006dca116147f70db0ee0c6a83",
       "audio_sha256": "17e98e5d85f0eaa0731fd2d87b894623cb5a625fcfb48ca44bb5a50695fd6093",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-035-01#2",
       "source_sha256": "5c67d46f446893777a25fa3d759030d41bda2e4e2824eb8ff5cb044750b6ae06",
       "semantic_sha256": "189e94639261701428cc421283267de688b823453b397400226e0c280046d137",
       "audio_sha256": "17e98e5d85f0eaa0731fd2d87b894623cb5a625fcfb48ca44bb5a50695fd6093",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-036#7",
       "source_sha256": "7a5596a6a0cc8ad1333ae1d6f480ee378657ce8b9b2de1682b768c2e53bc465c",
       "semantic_sha256": "809f014d3576fd5372a18e0a782d71a3e88df7e7c24a2b15aa9e0cfaf7c2ec9d",
       "audio_sha256": "078b6e861fb60b030e8d8a1cda20979240b36056d75a45b2fac09e0a74029a61",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-036#8",
       "source_sha256": "7a5596a6a0cc8ad1333ae1d6f480ee378657ce8b9b2de1682b768c2e53bc465c",
       "semantic_sha256": "80bfd734ef5d8701b771fbb3f4e972356d2e0c39bf3de6f683c86660edf08d61",
       "audio_sha256": "078b6e861fb60b030e8d8a1cda20979240b36056d75a45b2fac09e0a74029a61",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-036#10",
       "source_sha256": "7a5596a6a0cc8ad1333ae1d6f480ee378657ce8b9b2de1682b768c2e53bc465c",
       "semantic_sha256": "914b84aaff0b96d0e221a58c9422362152db6f56a25586e83964a0ef6c11a985",
       "audio_sha256": "078b6e861fb60b030e8d8a1cda20979240b36056d75a45b2fac09e0a74029a61",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-037#7",
       "source_sha256": "873aebaa5191f55106b83dc2ed2d2551406016c8b42d6af4881ad748a4c891be",
       "semantic_sha256": "a7cdc9b97b4f3176a5bd61dc36e6cafe034eeefd2588c10a0f1a3e52757f30cf",
       "audio_sha256": "c0ada643d5862a74e3a2a0303d4b1901c7fe258c4be15f23d4a42ff78c334493",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-039#2",
       "source_sha256": "c31dd7253a28a1ad6b970ed4968a301910b40d6b6683983e33fb8a2689428e85",
       "semantic_sha256": "4ddc0676e769a4e240409b5bfa349e19a1fde332832bf3f8ef5296b900cff2e2",
       "audio_sha256": "d56be75331c7cde5962ca5870a91f5dd8775d6d27063f48680163c3df153884e",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-040-01#3",
       "source_sha256": "22c5328b283006f95e6d46934b467540b46b44fb94a5869b4e43a60a73c555fb",
       "semantic_sha256": "7ce712065b315307dee68a2b0d44387b8926ff0f4873eb8a6e0282284c8d5d37",
       "audio_sha256": "1cbd3e597b0662d895c0653b271646607f548f25acf36734673399dffb66be07",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-040-01#4",
       "source_sha256": "22c5328b283006f95e6d46934b467540b46b44fb94a5869b4e43a60a73c555fb",
       "semantic_sha256": "89a3ec6c9d6c007007e6df3544082aff3f5b938a4bd3aedfb17e8517942506f3",
       "audio_sha256": "1cbd3e597b0662d895c0653b271646607f548f25acf36734673399dffb66be07",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-041-01#1",
       "source_sha256": "5700afdeb3054e2cdd312d77ed7540dcd7bce68daa2e79c2d58e04692f7cd0bc",
       "semantic_sha256": "fbaa7c03bfbef6aea2116adae789f3122e440214fa85ddbc66f85896382c6530",
       "audio_sha256": "f939c5118b5f4e98a1f036913c9ceeb5a7b1e0c38bcfd7cb22fb49da7b676d40",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-042-01#2",
       "source_sha256": "4f32f2ef5489358c204f66f94ce1d9cb680508bcbe30ae4e37d97b512ee70f16",
       "semantic_sha256": "da643095e60aeb885b146a1a9981cda933b7d36c1c28d882fec6b95757286120",
       "audio_sha256": "33f3b3d7f5d84d1c2866818b3b1bb39d69bfa43b497b6076b508b3fd188fa73b",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-042-01#5",
       "source_sha256": "4f32f2ef5489358c204f66f94ce1d9cb680508bcbe30ae4e37d97b512ee70f16",
       "semantic_sha256": "35cc2f707771102e45c557fd517e32fb434be049f9d10f9206d9ad910023e8ea",
       "audio_sha256": "33f3b3d7f5d84d1c2866818b3b1bb39d69bfa43b497b6076b508b3fd188fa73b",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-042-01#6",
       "source_sha256": "4f32f2ef5489358c204f66f94ce1d9cb680508bcbe30ae4e37d97b512ee70f16",
       "semantic_sha256": "28e068b85417afa484be175321104460707e06e6dab5e254c3e748dd95fe4ece",
       "audio_sha256": "33f3b3d7f5d84d1c2866818b3b1bb39d69bfa43b497b6076b508b3fd188fa73b",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-042-01#7",
       "source_sha256": "4f32f2ef5489358c204f66f94ce1d9cb680508bcbe30ae4e37d97b512ee70f16",
       "semantic_sha256": "b46ec73a21de748d87bddde3aba2ff10938c1c0f1772f33cee9b5612fe54f4a7",
       "audio_sha256": "33f3b3d7f5d84d1c2866818b3b1bb39d69bfa43b497b6076b508b3fd188fa73b",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-042-01#10",
       "source_sha256": "4f32f2ef5489358c204f66f94ce1d9cb680508bcbe30ae4e37d97b512ee70f16",
       "semantic_sha256": "9e5b64dc71fc52e508c646f3a804d66b3de99a532cf183f5ebf71252c7b5c03c",
       "audio_sha256": "33f3b3d7f5d84d1c2866818b3b1bb39d69bfa43b497b6076b508b3fd188fa73b",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-043-01-02#1",
       "source_sha256": "5bbd263d0549d9ecdfa963147b44acc06b50a55ed7389ab9fabaec7ad14dea00",
       "semantic_sha256": "0887dcaf156123312472e4ab657e7a0fbddd28ce20507cfef1e5e40e19ccd8db",
       "audio_sha256": "7f356b53ef8bd22d0e62ff13a3d5f6f617e6e7981f6b1ba5a59e10b30f7051b9",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-043-01-04#3",
       "source_sha256": "b86edd9d86359b563b30f74dc2ac219672db4820c8a35fdeb44907e132293f09",
       "semantic_sha256": "6d0a3579e85013619c2d81ed4368f2d4c3eadb4b717750211168149c34f4f5c4",
       "audio_sha256": "f9678a836fd54d5b38366abf4061f3cba51f38cbb98adec4339fc12eab676cc1",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-043-01-05#1",
       "source_sha256": "433adc1c6d363844c30f862ef84dbecc5aaa2c55494baa57e9f4d2450f464dbe",
       "semantic_sha256": "61c7fdfcb2c02f574c161f215bb764821549e65426f8f601bce6c48f2731ba9f",
       "audio_sha256": "84935b8ada93b4924438ba6a5bfa4cf680fc43ee6bdd20c4af5d983aacd09550",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-043-01-06#1",
       "source_sha256": "a9a3ea2ff079d9ac1a690895f72b14aaab3e35484452cce914e0edf888c6f2d1",
       "semantic_sha256": "1f90fb3803cc83504bca9e8449c0b807438831536b12937347b172d72d5d9474",
       "audio_sha256": "6afb57e05a68be6021c18821d66df91eb4695f46e605f0584d7cce0fbcab5e19",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-043-03-01#9",
       "source_sha256": "0fa93ca945970cc5b96c2daebd90d592c1a4dcc4b5fa292f48b71154969c4839",
       "semantic_sha256": "85774c2f88f3ec1b5f77518a76e5a2cf0c2a904cfc53870e32d9bbbca6d3c3b7",
       "audio_sha256": "f06f96622a8c280b6e6408d83ca039d1b776267d39b179b72be3800b0d16b3b5",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-043-03-01#10",
       "source_sha256": "0fa93ca945970cc5b96c2daebd90d592c1a4dcc4b5fa292f48b71154969c4839",
       "semantic_sha256": "ecb8051a05dc750b47d9f6a885ff800d4cafbf3f899f5ac1eee7e7bfc583e353",
       "audio_sha256": "f06f96622a8c280b6e6408d83ca039d1b776267d39b179b72be3800b0d16b3b5",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-043-04-02#4",
       "source_sha256": "782f65bdb69ba902dc12fb3c5e107e3db2d9340517fb9f2282cd1c65b34e6aae",
       "semantic_sha256": "5d2048343b58981637c1c7f27fbf849b946f9e62b19261c281703b5b2c8ac2af",
       "audio_sha256": "0fa94e7082877e34d4b6ba35cd8027e0168c8f6ec469793444dd694fefffd485",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-043-04-04#4",
       "source_sha256": "69623f8b2e56032eb040301b0f0a79c05a4b3d9b129dd3fb89405121bd8451aa",
       "semantic_sha256": "05f817014950d7e39a70b822547c1066fa5351719020ee2b7e03bd368e2041d5",
       "audio_sha256": "61d52e24c4152a03565259909797326ceffb9c50b864ed49ef05778ec22707eb",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-044-01-01#1",
       "source_sha256": "a59d8649fe457b05a0bf369f22c02b28c9d13413321a11008d9b1ec38fcaaa31",
       "semantic_sha256": "ec813438f863dd9a73a2c016b6376d717ad68fcfd8b80ab4bebd13235fed47a8",
       "audio_sha256": "2dfc20848509432a656a1a6e9eac7763ed6d7e2105bfa6d01f5f79b273393686",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-044-01-01#3",
       "source_sha256": "a59d8649fe457b05a0bf369f22c02b28c9d13413321a11008d9b1ec38fcaaa31",
       "semantic_sha256": "efaa8195582e8f855ee03d627ab6f6b5116b2f600bf75f3b5d9af678a60a89e7",
       "audio_sha256": "2dfc20848509432a656a1a6e9eac7763ed6d7e2105bfa6d01f5f79b273393686",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-044-01-02#1",
       "source_sha256": "9b6198b9a6dcbf2c3b98056828968d76e20f772ada786f3a22f27095913a369c",
       "semantic_sha256": "3d5092e7df8bf4be57e546eb0891abd8d3eb53f24e6fb16c2ca0ac069f562717",
       "audio_sha256": "3d180f1040e107538078b3e71ab5cf1823c456b6b0b78589e9b2931d97f305d6",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-044-01-02#3",
       "source_sha256": "9b6198b9a6dcbf2c3b98056828968d76e20f772ada786f3a22f27095913a369c",
       "semantic_sha256": "fbe1d756f26352f5a410f9f9bdb781a5773c5b9fa52686a7ec0a3fddab7901c6",
       "audio_sha256": "3d180f1040e107538078b3e71ab5cf1823c456b6b0b78589e9b2931d97f305d6",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-044-01-02#4",
       "source_sha256": "9b6198b9a6dcbf2c3b98056828968d76e20f772ada786f3a22f27095913a369c",
       "semantic_sha256": "9f24ce3bce92935fa55302047966bf77550c2964407468632e6acf51d6e7dad7",
       "audio_sha256": "3d180f1040e107538078b3e71ab5cf1823c456b6b0b78589e9b2931d97f305d6",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-044-01-03#1",
       "source_sha256": "b8d0f07100bb8e2f23f2fe2f98df1ad4db372e661877ad8e4b0eeebbb7d0d0d9",
       "semantic_sha256": "eb0242de6f74744cd676240f0063f0d3826877953c49e3c3a066b23081a88b5c",
       "audio_sha256": "e7152c57c9b389a21b201c87f5526e3cebbbe1b7498e84182121e617e08a0a5c",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-044-01-04#1",
       "source_sha256": "e6d5738bf0eea5b9e68ee29854a32573d3f635f361bd58080d9f860e3aa2b3f7",
       "semantic_sha256": "69b40a220bf2d3d4e7f4a914626b272998f4548816deedb11eba3e473ce5dd6e",
       "audio_sha256": "6491f59aae32cf43b3dda204263fa939cfc92d34270258c2a5acbd79a069453b",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-044-01-04#3",
       "source_sha256": "e6d5738bf0eea5b9e68ee29854a32573d3f635f361bd58080d9f860e3aa2b3f7",
       "semantic_sha256": "2146af1b4dd6198d36834a36a66b053b4079d31de5fa05ed3439d01cca973ab4",
       "audio_sha256": "6491f59aae32cf43b3dda204263fa939cfc92d34270258c2a5acbd79a069453b",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-044-01-05#2",
       "source_sha256": "6c603cb1be699e3362b32fd83821cb4008ae595a663b93d79e56ae91570d2921",
       "semantic_sha256": "57887e26fc981dee078e7e8b9c37b4240bea8be7d7244d50b52b81bd9c63aada",
       "audio_sha256": "2d287df9b9b8313f787669da85979dabbbf2a01cd61ccced6a4be07a116433b4",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-044-01-05#3",
       "source_sha256": "6c603cb1be699e3362b32fd83821cb4008ae595a663b93d79e56ae91570d2921",
       "semantic_sha256": "3be4b6c7b6f93649d3c0e605678f3e8dcd6559891675fac8cfd61847a7354823",
       "audio_sha256": "2d287df9b9b8313f787669da85979dabbbf2a01cd61ccced6a4be07a116433b4",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-044-01-05#4",
       "source_sha256": "6c603cb1be699e3362b32fd83821cb4008ae595a663b93d79e56ae91570d2921",
       "semantic_sha256": "e298dff7015c29f2ae2ee233f0d0d9b6d948884115a82770385197b14c020c43",
       "audio_sha256": "2d287df9b9b8313f787669da85979dabbbf2a01cd61ccced6a4be07a116433b4",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-044-01-06#5",
       "source_sha256": "1de58eae10dccebfdf43e1f90eb9147ddc4411956ebd010984272d21af3f0b0b",
       "semantic_sha256": "029ec4a14a2c9b773f769191364293dd9f5e90ca8469e03cb1ff14f5cc3ec8a5",
       "audio_sha256": "03e9ee3c8b5e521e8df7cab5832a787828492349a9282cc0eb57dc722dd8db3c",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-044-02-01#3",
       "source_sha256": "fbc472513b14cd746555cb018b185f1348c918fd3f4998762654780eb5553d0a",
       "semantic_sha256": "71f8b3c7afea12b95efacaf454989ad8a056c57fc6157b2b42a3491077fb0b99",
       "audio_sha256": "9b8d77b2859c2df81a788151e220a73e51746651f8102216abb2b3bc5570e992",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-044-02-01#5",
       "source_sha256": "fbc472513b14cd746555cb018b185f1348c918fd3f4998762654780eb5553d0a",
       "semantic_sha256": "77298f596956039be9c031a9e155bcf6c664905aa04f5870b328d5f2d51f493e",
       "audio_sha256": "9b8d77b2859c2df81a788151e220a73e51746651f8102216abb2b3bc5570e992",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-044-03-01#3",
       "source_sha256": "2b7951d7d6bda5b9061e6bf72293f2368ab8d0228c320b512e2904eae307b9ed",
       "semantic_sha256": "9fbb6a037e0801a13c3bdf2e4e8c81d042834291a0e1ea49df3ef2114959aab7",
       "audio_sha256": "bbebb1f98b113c46963f1eaeeef7575b8f7dabcee47da5aaaf7787a9aef38477",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-044-03-01#4",
       "source_sha256": "2b7951d7d6bda5b9061e6bf72293f2368ab8d0228c320b512e2904eae307b9ed",
       "semantic_sha256": "181d72b019822f596d21a40d5b2480467cca38cad851df4fae7ba29ece11d60d",
       "audio_sha256": "bbebb1f98b113c46963f1eaeeef7575b8f7dabcee47da5aaaf7787a9aef38477",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-044-03-01#10",
       "source_sha256": "2b7951d7d6bda5b9061e6bf72293f2368ab8d0228c320b512e2904eae307b9ed",
       "semantic_sha256": "2cc086ea4477a17cf232b7552e2811d351804c78ed1f3dfdf65baf1bfb3fad36",
       "audio_sha256": "bbebb1f98b113c46963f1eaeeef7575b8f7dabcee47da5aaaf7787a9aef38477",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-044-04-01#2",
       "source_sha256": "99e8a1b8efd0ef022d563bc8c6f9e2643ec8f3ebf7034850b99d1b1ca9909ec9",
       "semantic_sha256": "ab3189c8d1cfc5d87290c3ae0fa2a9e5d9743a3c8f43dfc31ce69564cd13bebf",
       "audio_sha256": "693ea4a2ba9c7d94db5f8dd8a6d1ed900844f456b50ce5c4cad29ce76d17fdd8",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-044-04-01#4",
       "source_sha256": "99e8a1b8efd0ef022d563bc8c6f9e2643ec8f3ebf7034850b99d1b1ca9909ec9",
       "semantic_sha256": "1cf14bdaf56f341c773878e47ce96488eacbe4d42b6e1815fb41b75612003575",
       "audio_sha256": "693ea4a2ba9c7d94db5f8dd8a6d1ed900844f456b50ce5c4cad29ce76d17fdd8",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-044-04-02#1",
       "source_sha256": "743e5818a14aac9a1a69a8d123d1d7aa0e5d5d8d3933a879f9b73da7b4c9a0a9",
       "semantic_sha256": "8eb997c918b152403f59fe9548ea224f3217f2f7d83d6a427343d2e38e7a77f5",
       "audio_sha256": "e8d6a4d29dd90bb81224fec85858df87e453fa632cc5a1a14129b1bd8d2cb64b",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-044-04-03#3",
       "source_sha256": "72a2fa6047b2793b8c0b00b6a4490f1c016b69de498397c7d3852df1d7a7b9e5",
       "semantic_sha256": "1fdb593e3cbc98812f90f6b744a977e2a759718cb98b2118e089b2f67e9440d1",
       "audio_sha256": "ca13afa2c591e1f5661b6716c52d260d03e870e7d261d9f37151a506cecbaa7f",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-044-04-03#4",
       "source_sha256": "72a2fa6047b2793b8c0b00b6a4490f1c016b69de498397c7d3852df1d7a7b9e5",
       "semantic_sha256": "b1f39b7e0b9d1267f75f1f0065198c0773c1ee258d2ae6c5548623a3fa50c997",
       "audio_sha256": "ca13afa2c591e1f5661b6716c52d260d03e870e7d261d9f37151a506cecbaa7f",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-044-04-04#2",
       "source_sha256": "8cbfd81d91e36ce095b8204fcac14bf718e0206295e64032914505c2cf234632",
       "semantic_sha256": "e1df31264fef0a0c3f0a8069d9a979947f8a8e417bbf4bd79be81216c1603130",
       "audio_sha256": "7de69652af315400b816da6dbc53e437281e8c4686a03eaa759fe6dd073c0ba8",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-045-01-02#1",
       "source_sha256": "54982a7fe359cbbf3320ccc9397ffaa40562570ace020e123c5a7c6a55205212",
       "semantic_sha256": "801e30da89986cb22077518b03000f33b068681db5cdf6d9b280f956d567bfc9",
       "audio_sha256": "3ca452ffbc89e70886b0f390ff9557891b1ce3b01f10c00c48a23278bd675b22",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-045-01-02#3",
       "source_sha256": "54982a7fe359cbbf3320ccc9397ffaa40562570ace020e123c5a7c6a55205212",
       "semantic_sha256": "bee113009216ada3593f270db095aca0ccec67198e439de175e9d4d06b33fb10",
       "audio_sha256": "3ca452ffbc89e70886b0f390ff9557891b1ce3b01f10c00c48a23278bd675b22",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-045-01-02#4",
       "source_sha256": "54982a7fe359cbbf3320ccc9397ffaa40562570ace020e123c5a7c6a55205212",
       "semantic_sha256": "60ffc5a3316a6aec410174ef95c892de198220e81653145ec54b493f59f07436",
       "audio_sha256": "3ca452ffbc89e70886b0f390ff9557891b1ce3b01f10c00c48a23278bd675b22",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-045-01-04#4",
       "source_sha256": "5117fa7ecaa053e1185d436a70d9afc6ecba2238112092b50f4c13ba4c24a60c",
       "semantic_sha256": "e53ef95d07cb37dc9c89e3266d35c169012e33c988ea5a765944aa84b6f480fe",
       "audio_sha256": "5d5f524bc39aaefdcdfc41444534e39aab80e1787fc183b3807001ac03663efc",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-045-01-04#5",
       "source_sha256": "5117fa7ecaa053e1185d436a70d9afc6ecba2238112092b50f4c13ba4c24a60c",
       "semantic_sha256": "590aa2c8a3a34a3ef81b799c54c869a1ddc6cb6e559b7ae653ad5f52665ca51d",
       "audio_sha256": "5d5f524bc39aaefdcdfc41444534e39aab80e1787fc183b3807001ac03663efc",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-045-01-06#2",
       "source_sha256": "04a7c51b8513906e31eba551a1ba86d97728f7a859fb38f5c2f2c75a8d0b540a",
       "semantic_sha256": "dab1d86a8e89d062e497c72b16e3130f661eaf04cb5b5a7b8c8858ff243aac6b",
       "audio_sha256": "f75ecaac46e7f6d3328918f7a05cc64098b6776b996489de44d1861671daf6e6",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-045-01-06#4",
       "source_sha256": "04a7c51b8513906e31eba551a1ba86d97728f7a859fb38f5c2f2c75a8d0b540a",
       "semantic_sha256": "403cc390d2d44d48676bd8d958dcf23e21dc895367fac1bc76621a5c9f91aa33",
       "audio_sha256": "f75ecaac46e7f6d3328918f7a05cc64098b6776b996489de44d1861671daf6e6",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-045-02-01#2",
       "source_sha256": "0fb307c8873cb49de910c1bee0fe4f50e67c7bfc73c20bfce11eb5e3f71088dd",
       "semantic_sha256": "f6f1f044e586453c43b8f74b4bfd1016df0157783aabef19dd2681c825cf4c3e",
       "audio_sha256": "d0ea027fa885d7116c8350ce5fbcbf4bac72bfb102f90c0b8f119a6f5408ecd0",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-045-02-02#3",
       "source_sha256": "bb43a78ace78eba1e02401b393bc2906703c12f6fb918b253fdfa88565f67b82",
       "semantic_sha256": "ba8222763c81a6da0349dab89fcfd0ce762fee2569db531fe791cad0c5567fda",
       "audio_sha256": "69f6c43922ef4cc8614a93357d6dd896993c3d19e63a702b37b9af6e9b486a16",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-045-03-01#1",
       "source_sha256": "d05a85168a3da24412843e84741f4c976348974802a2b39ddb9d789eba3cdd47",
       "semantic_sha256": "4e0927610d34ca7eefb1a3bc0ec798cdc2504a207b2500ab77f63e34bc9ec3e7",
       "audio_sha256": "215e31a254ece0fbc7d793dcbe1b5793bb1f59bb83e07ba204f62c937f82a59c",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-045-04-01#1",
       "source_sha256": "8251869c25425c838dd0840624106c78adaccc9da3a2068e86422a0c5705b490",
       "semantic_sha256": "4fb3870b0b103c480c6be049ce4909825e1567086a3c92452599c527d8ba6ece",
       "audio_sha256": "96f4788a7d8c0778e53cc4132cd1e8c5e7bd475f90011f1fff05e9c30c67dd7c",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-045-04-02#1",
       "source_sha256": "167c6f88f695f6c5ae973d85affe7944fa812b34b9fc7ce76bdaecc065267210",
       "semantic_sha256": "4ea7b97e75b1f9fff791d9cc40f21858013ac0c7376c6828ecae8fc47797a633",
       "audio_sha256": "a71a93ee7d21e63d7c37e1cd3a5ded7038d495050e8c25ad4b1c3e1b8cdcac7a",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-045-04-02#3",
       "source_sha256": "167c6f88f695f6c5ae973d85affe7944fa812b34b9fc7ce76bdaecc065267210",
       "semantic_sha256": "d10a04c7824b78668d1c3d45a627593aeb59bb69e3106a9ce0169bec7fc6081f",
       "audio_sha256": "a71a93ee7d21e63d7c37e1cd3a5ded7038d495050e8c25ad4b1c3e1b8cdcac7a",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-046-01-01#1",
       "source_sha256": "54bc8d46affbfd91dccf7e45784fccc31b80df0317a319a670b0afba756c7b73",
       "semantic_sha256": "38b8457799d2c28e32df834f96ec6099aaef2fd5cc4a1ac1bb17a40933d5fa2a",
       "audio_sha256": "1d1ed66066584082b5ffb85def2d126b5367053e8f9fa1600bf233c32ad3f111",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-046-01-01#2",
       "source_sha256": "54bc8d46affbfd91dccf7e45784fccc31b80df0317a319a670b0afba756c7b73",
       "semantic_sha256": "a6ad93dfaa40161668f3226f2e0baaa74be4a7ca09e4f3ba8470083b9e3d8ba3",
       "audio_sha256": "1d1ed66066584082b5ffb85def2d126b5367053e8f9fa1600bf233c32ad3f111",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-046-01-01#3",
       "source_sha256": "54bc8d46affbfd91dccf7e45784fccc31b80df0317a319a670b0afba756c7b73",
       "semantic_sha256": "34478bc38bc5446658ed108a138dc0965134933bb2781b4a7a27c5d3003947fb",
       "audio_sha256": "1d1ed66066584082b5ffb85def2d126b5367053e8f9fa1600bf233c32ad3f111",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-046-01-01#4",
       "source_sha256": "54bc8d46affbfd91dccf7e45784fccc31b80df0317a319a670b0afba756c7b73",
       "semantic_sha256": "43fa3afeb6980a7fda145d3d3b74a70f29e0a64f8f70c8468141315711989146",
       "audio_sha256": "1d1ed66066584082b5ffb85def2d126b5367053e8f9fa1600bf233c32ad3f111",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-046-01-03#2",
       "source_sha256": "f6b650627737de60888c791a4ffbf2c6c2a11ab9026549086f75921c453e626e",
       "semantic_sha256": "dceb53b6202d591ddc813c8cfc62c82f67ec6ceda471de3369f8213bd035bd88",
       "audio_sha256": "c463d0d4e7d5e04227a265e835d1ff9ab9fef88a0c112b2fa034860f12f95284",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-046-01-03#3",
       "source_sha256": "f6b650627737de60888c791a4ffbf2c6c2a11ab9026549086f75921c453e626e",
       "semantic_sha256": "280a63dc9eecceacf47bdb97009b48c1beb4e887d28b74fb24f4f4acdcaa6070",
       "audio_sha256": "c463d0d4e7d5e04227a265e835d1ff9ab9fef88a0c112b2fa034860f12f95284",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-046-01-04#1",
       "source_sha256": "e2374941cd257d184bd8cc6e454c6bf1580905944f73d6047fdca49c677ef993",
       "semantic_sha256": "8ef4baa2081f5bf75b9a585d63761235cda95b1096204cdd256d0d949c3b5859",
       "audio_sha256": "1d0e26f9b60b91cc11460b122ceb654d60d22b2844eafe8cab7ef4796310f4ea",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-046-01-05#5",
       "source_sha256": "126b84c0b1cd033c8cecc4824177b8bf573ae808b3bbd35102a4b28ac0656738",
       "semantic_sha256": "c6cea6fd083fe6abd5ff1f6081e0b2667e5317d2c843fd7e9aa92158ec25cada",
       "audio_sha256": "d0dffca7cd0980b25966e7da59f73218df5e3ae9dac98c94d792b83e70fa5de8",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-046-01-06#2",
       "source_sha256": "29811d54a738ef95eebf52f95f50ebaf076b20d1d28b5d6b6a1672ed6b90df3c",
       "semantic_sha256": "2dad59842e9ca627cd997bfd1a63111d4c3e3fa47378e03bb5a253f232132faf",
       "audio_sha256": "c88502b5131348a4e22d39cf91ebee08c640b35f8cc02469334a3eb53ecd6123",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-046-01-06#3",
       "source_sha256": "29811d54a738ef95eebf52f95f50ebaf076b20d1d28b5d6b6a1672ed6b90df3c",
       "semantic_sha256": "b8d6a2a97b6b64b3048c460cfd7e29beac850708af4a67d913cf7afb0f4160cf",
       "audio_sha256": "c88502b5131348a4e22d39cf91ebee08c640b35f8cc02469334a3eb53ecd6123",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-046-02-01#2",
       "source_sha256": "0ab8fdb6118e586d5a4aa3e4db026c9d3912e5b3865bbafc71b073352d641912",
       "semantic_sha256": "99278a1e72ade829b944cd44aa8dd2fec7ed3091fbf61746a2a5e7cbabaf90bd",
       "audio_sha256": "8d3c438e021ebeb4f6999606a2d14eee270674736a68d005d5714ae8793c319f",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-046-02-01#3",
       "source_sha256": "0ab8fdb6118e586d5a4aa3e4db026c9d3912e5b3865bbafc71b073352d641912",
       "semantic_sha256": "3b1df31ce4727f5de6f10b9855d2f871e88c74ac71df562b778d9faabcc010ea",
       "audio_sha256": "8d3c438e021ebeb4f6999606a2d14eee270674736a68d005d5714ae8793c319f",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-046-02-01#4",
       "source_sha256": "0ab8fdb6118e586d5a4aa3e4db026c9d3912e5b3865bbafc71b073352d641912",
       "semantic_sha256": "e38ea966ad39dbdacd34724efae4210497732d2ad0275a66179f35a76045b127",
       "audio_sha256": "8d3c438e021ebeb4f6999606a2d14eee270674736a68d005d5714ae8793c319f",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-046-02-02#2",
       "source_sha256": "e51d07d342b2e50e5f7bd9c7c34cd6d27fe19f8ac4816bc1d26623cfde6186b4",
       "semantic_sha256": "d218f1e114be75e0751285d53b7d81fa48e5a8a725ac91dd905b6723df31b686",
       "audio_sha256": "dfcf61b83cc40df8306eadd8a3a583cfe2773f7d4fb888c9cce9b655cc1d4387",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-046-03-01#3",
       "source_sha256": "ebf3a5afe34c418321ef9c3f42f580ddef399c03a1b8018e3d174bf47836c46f",
       "semantic_sha256": "cb7472bf65b206574c4b30fc12f292960c6751b95f1362fb8f43aedf3b229a2a",
       "audio_sha256": "50d0573f95d93b3500e529d76ab42877b460b0a5e3f5b2442f751ea2e9500428",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-046-04-01#2",
       "source_sha256": "ecf859a42a26dbcd7a1308edc74707261e86a59293d052096751f4813fb83ad4",
       "semantic_sha256": "55d06cfd4de5bbc3a9dfa8e77c82dace700c5f1dd1c7a3eb1818e3e37a3086a9",
       "audio_sha256": "dc72d0785e8beb3833bad63b1d0308c1766d2d64ada84aeebc0ca66526021c61",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-046-04-03#2",
       "source_sha256": "fbc6e73c584af746cb934d5f6d97a9e1aa78fbaf80d7c484e6321f8459cfb8b3",
       "semantic_sha256": "2c52acfba704a6acb3d7fa3e9156e8196b51e1eaa464ae99ac56d5df502ac1a9",
       "audio_sha256": "d6384901ab4b5fb7ee603953ed316f61ae996acd3a06b91a5a8e581747566bc5",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-046-04-03#3",
       "source_sha256": "fbc6e73c584af746cb934d5f6d97a9e1aa78fbaf80d7c484e6321f8459cfb8b3",
       "semantic_sha256": "679c66d9bbd5f95a91ee700c1a845ba59908a1ca1ecb2156cfeee978a3009ae6",
       "audio_sha256": "d6384901ab4b5fb7ee603953ed316f61ae996acd3a06b91a5a8e581747566bc5",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     },
     {
       "key": "tcf-delf-actif-a2-046-04-04#3",
       "source_sha256": "2dd4ce0c28e71a2f52ae18daf21bf373e623a842610ab0649661d05525ea8799",
       "semantic_sha256": "5fc2b89574860e625b5f86835ef889227c1445f130b1b46cb87b473a59daef9c",
       "audio_sha256": "2d0ec84f7dd1054cdf4bfcb0439ac2a067747ce8fd7dfc87cbfe096916d671ab",
-      "status": "pending_visual_review"
+      "status": "active_reviewed_trio"
     }
   ],
   "preparation": {
@@ -2666,26 +2667,26 @@
   ],
   "completed_first_batch": "2026-11-23",
   "integration_baseline_commit": "3278e1af3c0dededfecddd422d89057413d75b62",
-  "remaining_candidates": 121,
-  "next_batch_number": 2,
+  "remaining_candidates": 21,
+  "next_batch_number": 3,
   "second_batch_preparation": {
     "target_trios": 100,
-    "prepared_trios": 43,
-    "unfinished_trios": 57,
-    "activated_trios": 0,
-    "published_images": 102,
-    "native_png": 94,
+    "prepared_trios": 100,
+    "unfinished_trios": 0,
+    "activated_trios": 100,
+    "published_images": 231,
+    "native_png": 223,
     "procedural_common_clocks": 8,
-    "existing_distinct_reuses": 47,
-    "planned_new_images": 238,
-    "images_still_to_finalize": 136,
-    "new_images_still_to_generate": 131,
-    "retakes_pending": 5,
-    "remaining_candidates_in_bank": 121
+    "existing_distinct_reuses": 54,
+    "planned_new_images": 231,
+    "images_still_to_finalize": 0,
+    "new_images_still_to_generate": 0,
+    "retakes_pending": 0,
+    "remaining_candidates_in_bank": 21
   },
   "second_batch_generation_limit": {
     "date": "2026-11-23",
-    "status": "blocked_by_image_generation_usage_limit",
+    "status": "resolved_batch_completed",
     "error_type": "usage_limit_reached",
     "http_status": 429,
     "resets_at_epoch": 1795458825,
@@ -2698,9 +2699,10 @@
       "qcm-delf2-montgolfiere",
       "qcm-delf2-vent-ouest"
     ],
-    "scope": "Image generation only; continue source/visual reviews, approved common clock rendering, documentation and repository preservation."
+    "scope": "Image generation only; continue source/visual reviews, approved common clock rendering, documentation and repository preservation.",
+    "resolved_at": "2026-11-23T22:09:27.701305+00:00"
   },
-  "completed_trios_in_requested_221": 100,
-  "current_batch_number": 2,
+  "completed_trios_in_requested_221": 200,
+  "current_batch_number": 3,
   "last_updated_date": "2026-11-23"
 }
