@@ -40,9 +40,21 @@ assert len(r['ready_trios'])==43
 for t in r['ready_trios']:
  assert t['status']=='prepared_not_activated' and t['visual_review'];q=current[t['key']][1];choices=t['preview_image_form']['choix'];assert [c['image'] for c in choices]==t['image_paths'];assert all(p in manifest and manifest[p]['status']=='visually_reviewed' for p in t['image_paths'])
  assert [(c['id'],bool(c.get('correct'))) for c in choices]==[(c['id'],bool(c.get('correct'))) for c in text_form(q)['choix']]
-assert len(r['remaining_asset_ids'])==136 and len(r['retakes'])==5 and r['summary']['activated_trios']==0
+assert len(r['remaining_asset_ids'])==129 and len(r['retakes'])==5 and r['summary']['activated_trios']==0
+reuse_review=read(ROOT/'docs/tcf/delf-actif-20261113/reemploi-21-journaux-20261123.json')
+assert len(reuse_review['retained_reuses'])==7 and len(r['existing_reuses'])==54
+for reuse in reuse_review['retained_reuses']:
+ assert reuse['replaced_pending_id'] not in r['remaining_asset_ids']
+ assert sha(resolve(reuse['path']))==reuse['sha256']==manifest[reuse['path']]['sha256']
+ for question in reuse['affected_questions']:
+  target=targets[question['key']];index=target['labels'].index(question['choice_label']);assert target['paths'][index]==reuse['path']
+planned_paths={path for target in targets.values() for path in target['paths']}
+expected_pending={Path(path).stem for path in planned_paths if '/qcm-delf2-' in path and path not in images}
+assert set(r['remaining_asset_ids'])==expected_pending
+assert r['summary']['images_still_to_finalize']==129 and r['summary']['new_images_still_to_generate']==124
+assert r['summary']['planned_new_images']==231 and r['summary']['existing_distinct_reuses']==54
 plan=read(ROOT/'docs/tcf/delf-actif-20261113/images-a-preparer.json');assert plan['summary']['statuses']['active_reviewed_trio']==625 and plan['summary']['statuses']['candidate_visual_review']==121
 hist='docs/tcf/revue-763-20261107.json';assert (ROOT/hist).read_bytes()==subprocess.check_output(['git','show',baseline+':'+hist],cwd=ROOT)
 for scope in ['public/lib/images','public/lib/audio']:
  changes=subprocess.check_output(['git','diff','--name-status',baseline,'--',scope],cwd=ROOT,text=True).splitlines();assert all(line.startswith('A\t') for line in changes),(scope,changes)
-print('102 catalogue images verified (94 native PNGs, 8 common clocks); 43 complete trios prepared, 0 activated; all 100 sources, six banks, MP3s and original images preserved; 136 images still to finalize.')
+print('102 catalogue images verified (94 native PNGs, 8 common clocks); 7 additional existing reuses verified; 43 complete trios prepared, 0 activated; all 100 sources, six banks, MP3s and original images preserved; 129 images still to finalize.')

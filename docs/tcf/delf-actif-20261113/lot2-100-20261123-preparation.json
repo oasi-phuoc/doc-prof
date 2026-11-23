@@ -17,10 +17,10 @@
     "published_images": 102,
     "native_png": 94,
     "procedural_common_clocks": 8,
-    "existing_distinct_reuses": 47,
-    "planned_new_images": 238,
-    "images_still_to_finalize": 136,
-    "new_images_still_to_generate": 131,
+    "existing_distinct_reuses": 54,
+    "planned_new_images": 231,
+    "images_still_to_finalize": 129,
+    "new_images_still_to_generate": 124,
     "retakes_pending": 5,
     "remaining_candidates_in_bank": 121
   },
@@ -8704,7 +8704,7 @@
       ],
       "paths": [
         "/lib/images/tcf/co/bg/ville.webp",
-        "/lib/images/tcf/qcm-audit/qcm-delf2-foret-isolee.png",
+        "/lib/images/tcf/qcm-audit/co306-foret-dessine.webp",
         "/lib/images/tcf/qcm-audit/qcm-delf2-ile-deserte.png"
       ],
       "status": "proposed_not_activated"
@@ -8735,7 +8735,7 @@
         "Allumer la télévision"
       ],
       "paths": [
-        "/lib/images/tcf/qcm-audit/qcm-delf2-eteindre-lumiere.png",
+        "/lib/images/tcf/qcm-audit/qcm-lot20d-eteindre-lumiere.png",
         "/lib/images/tcf/qcm-audit/qcm-delf2-ouvrir-robinets.png",
         "/lib/images/tcf/qcm-audit/qcm-delf2-allumer-television.png"
       ],
@@ -8783,7 +8783,7 @@
         "Une boisson alcoolisée"
       ],
       "paths": [
-        "/lib/images/tcf/qcm-audit/qcm-delf2-eau-minerale-gazeuse.png",
+        "/lib/images/tcf/qcm-audit/vocab-eau-gazeuse.webp",
         "/lib/images/tcf/qcm-audit/qcm-a2-soda-fond-ivoire.png",
         "/lib/images/tcf/qcm-audit/qcm-delf2-boisson-alcoolisee.png"
       ],
@@ -8943,7 +8943,7 @@
         "De préparer une exposition"
       ],
       "paths": [
-        "/lib/images/tcf/qcm-audit/qcm-delf2-reviser-controle.png",
+        "/lib/images/tcf/catalogue/actions/faire-ses-devoirs.webp",
         "/lib/images/tcf/qcm-audit/qcm-delf2-acheter-manuel.png",
         "/lib/images/tcf/qcm-audit/qcm-delf2-preparer-exposition.png"
       ],
@@ -8992,8 +8992,8 @@
       ],
       "paths": [
         "/lib/images/tcf/qcm-audit/qcm-delf2-selfie.png",
-        "/lib/images/tcf/qcm-audit/qcm-delf2-ecouter-radio.png",
-        "/lib/images/tcf/qcm-audit/qcm-delf2-lire-roman.png"
+        "/lib/images/tcf/qcm-audit/qcm-lot20e-allumer-appareil.png",
+        "/lib/images/tcf/catalogue/actions/lire-dans-un-fauteuil.webp"
       ],
       "status": "proposed_not_activated"
     },
@@ -9057,7 +9057,7 @@
       "paths": [
         "/lib/images/tcf/qcm-audit/qcm-delf2-blogueur.png",
         "/lib/images/tcf/qcm-audit/qcm-delf2-boulanger-fournil.png",
-        "/lib/images/tcf/qcm-audit/qcm-delf2-conducteur-train.png"
+        "/lib/images/tcf/catalogue/metiers/conducteur-de-train.webp"
       ],
       "status": "proposed_not_activated"
     },
@@ -9137,7 +9137,7 @@
       "paths": [
         "/lib/images/tcf/qcm-audit/qcm-delf2-manger-produits-marins.png",
         "/lib/images/tcf/qcm-audit/qcm-delf2-regarder-mer.png",
-        "/lib/images/tcf/qcm-audit/qcm-delf2-ecouter-radio.png"
+        "/lib/images/tcf/qcm-audit/qcm-lot20e-allumer-appareil.png"
       ],
       "status": "proposed_not_activated"
     },
@@ -15531,6 +15531,107 @@
       "sha256": "dda225ed44c8c987df7e157a20e600c4e5dee7aa7499a5305617ad1b775fffff",
       "status": "visually_reviewed",
       "review_note": "Réemploi examiné visuellement dans les choix prévus pour ce lot. Titre et mots-clés limités au contenu visible ; fichier original conservé."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/metiers/conducteur-de-train.webp",
+      "label": "Un conducteur de train devant les commandes de sa cabine",
+      "visual_keywords": [
+        "conducteur",
+        "train",
+        "commandes",
+        "cabine"
+      ],
+      "sha256": "0b2c884e678f7274526f965aaaea7f87279e99015eb18257da60118339ebd40b",
+      "status": "visually_reviewed",
+      "review_note": "Réemploi examiné visuellement et confronté à la question et à sa transcription. La cabine, les commandes et les voies ferrées visibles distinguent le conducteur de train des choix blogueur et boulanger."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-eteindre-lumiere.png",
+      "label": "Une personne appuie sur un interrupteur en quittant une pièce",
+      "visual_keywords": [
+        "interrupteur",
+        "lumière",
+        "lampe",
+        "main",
+        "porte",
+        "sortir",
+        "salon",
+        "éclairage"
+      ],
+      "sha256": "72771c890ba41a5b739c542a18b89173e2e406c53f055723816371d35e639b6e",
+      "status": "visually_reviewed",
+      "review_note": "Réemploi examiné visuellement et confronté à la question et à sa transcription. Personne sur le départ appuyant sur l’interrupteur, luminaire éteint ; geste demandé explicitement dans la transcription."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/co306-foret-dessine.webp",
+      "label": "Un sentier dans une forêt feuillue",
+      "visual_keywords": [
+        "sentier",
+        "forêt",
+        "feuillue"
+      ],
+      "sha256": "aeeed7ab78e592299cbba947a3b510d8e6f9077ce2eae9fa1b60f7057109b35f",
+      "status": "visually_reviewed",
+      "review_note": "Réemploi examiné visuellement et confronté à la question et à sa transcription. Sentier forestier sans habitation ni personne, distinct de la ville et de l’île ; aucune localisation précise attribuée."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/actions/lire-dans-un-fauteuil.webp",
+      "label": "Un homme lit un livre assis dans un fauteuil",
+      "visual_keywords": [
+        "homme",
+        "lit",
+        "livre",
+        "assis",
+        "fauteuil",
+        "lecture"
+      ],
+      "sha256": "3e520c9d1e970d9c6b37c41631d88affe2d45268f8247c126c6cd5674b8109b9",
+      "status": "visually_reviewed",
+      "review_note": "Réemploi examiné visuellement et confronté à la question et à sa transcription. Lecture d’un livre dans un fauteuil. Le genre du livre est porté par le texte du choix ; il n’est pas affirmé par le titre ni les mots-clés de l’image."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-allumer-appareil.png",
+      "label": "Une personne actionne le bouton d’une radio",
+      "visual_keywords": [
+        "radio",
+        "poste de radio",
+        "bouton",
+        "main",
+        "meuble",
+        "salon",
+        "écoute"
+      ],
+      "sha256": "f48b114573c34efbbd407f94bff885ce33a3b86b64cef89c27a0df5a0d730cff",
+      "status": "visually_reviewed",
+      "review_note": "Réemploi examiné visuellement et confronté à la question et à sa transcription. Personne utilisant une radio à domicile. Le personnage est une illustration générique de l’activité et non un portrait du locuteur. La main règle la radio ; la distinction écouter/allumer n’est pas utilisée comme opposition dans ces trios."
+    },
+    {
+      "path": "/lib/images/tcf/catalogue/actions/faire-ses-devoirs.webp",
+      "label": "Une femme écrit dans un cahier près de livres",
+      "visual_keywords": [
+        "femme",
+        "écrit",
+        "cahier",
+        "près",
+        "livres",
+        "lecture"
+      ],
+      "sha256": "a390b83744b566f5965958518e0ea6ce7b8c148fe5723b8e0e35c00908b2290f",
+      "status": "visually_reviewed",
+      "review_note": "Réemploi examiné visuellement et confronté à la question et à sa transcription. Personne travaillant dans un cahier près de livres. La transcription demande de réviser ; aucun examen ou résultat inventé dans les métadonnées."
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/vocab-eau-gazeuse.webp",
+      "label": "Un verre d’eau gazeuse avec des bulles",
+      "visual_keywords": [
+        "verre",
+        "eau",
+        "gazeuse",
+        "bulles"
+      ],
+      "sha256": "411211b9fbaa823eb903f65a7b560ad4688ef2e4f7e05a8905dd98d32db7b398",
+      "status": "visually_reviewed",
+      "review_note": "Réemploi examiné visuellement et confronté à la question et à sa transcription. Verre transparent avec bulles visibles, fond ivoire contrôlé (écart maximal de canal 1). La minéralisation est donnée par la transcription, sans être prétendument lisible sur l’image."
     }
   ],
   "background_review": [
@@ -22210,7 +22311,6 @@
     "qcm-delf2-chantier-ecole",
     "qcm-delf2-chantier-piscine",
     "qcm-delf2-chantier-sentier",
-    "qcm-delf2-conducteur-train",
     "qcm-delf2-conference-presse",
     "qcm-delf2-courrier-fax",
     "qcm-delf2-cours-aeroport",
@@ -22228,11 +22328,9 @@
     "qcm-delf2-duo-jardiner-cuisiner",
     "qcm-delf2-duo-medecin-ingenieur",
     "qcm-delf2-duo-tennis-ski",
-    "qcm-delf2-eau-minerale-gazeuse",
     "qcm-delf2-ecoute-agacement",
     "qcm-delf2-ecoute-curiosite",
     "qcm-delf2-ecoute-satisfaction",
-    "qcm-delf2-ecouter-radio",
     "qcm-delf2-ecran-casse",
     "qcm-delf2-eleves-examen-2",
     "qcm-delf2-eleves-examen-3",
@@ -22240,11 +22338,9 @@
     "qcm-delf2-emotion-surprise",
     "qcm-delf2-envoyer-cheque",
     "qcm-delf2-eteindre-chauffage",
-    "qcm-delf2-eteindre-lumiere",
     "qcm-delf2-fermer-robinet",
     "qcm-delf2-ferry",
     "qcm-delf2-feuilles-mortes",
-    "qcm-delf2-foret-isolee",
     "qcm-delf2-fraction-15-20",
     "qcm-delf2-fraction-2-20",
     "qcm-delf2-fraction-5-20",
@@ -22258,7 +22354,6 @@
     "qcm-delf2-imprimante-panne",
     "qcm-delf2-journal-sportif",
     "qcm-delf2-justice-tribunal",
-    "qcm-delf2-lire-roman",
     "qcm-delf2-localisation-cheveux",
     "qcm-delf2-localisation-ongles",
     "qcm-delf2-localisation-sous-peau",
@@ -22297,7 +22392,6 @@
     "qcm-delf2-restes-cartable",
     "qcm-delf2-restes-chaussure",
     "qcm-delf2-reunion-equipe-sportive",
-    "qcm-delf2-reviser-controle",
     "qcm-delf2-satellite",
     "qcm-delf2-schema-audition",
     "qcm-delf2-schema-coeur-poumons",
@@ -22480,7 +22574,14 @@
     "36": "Même téléviseur entier : documentaire scientifique et historique illustré par microscope et vestiges, reportage sportif auprès d’un athlète, émission culinaire avec préparation sur plan de travail et casserole posée sur la cuisinière. Les thèmes sont visibles sans titre écrit.",
     "41": "Stimulateur électrique implantable générique avec boîtier et deux fils terminés par des électrodes, prothèses dentaires et appareil auditif complet avec embout. Aucun modèle, site d’implantation ni patient réel ajouté.",
     "43": "Même cadran peint et modèle d’aiguilles pour un peu après onze heures avec lune, midi avec soleil haut, et six heures avec soleil levant. La source indique « peu après 23 heures » : la minute affichée est une illustration de cette approximation, pas une précision transcrite.",
-    "45": "Deux membres d’équipage à bord d’un yacht utilisant un extincteur et une couverture, passagers assis dans un train, équipe de télévision avec caméraman et journaliste. Les interlocuteurs ou groupes sont réellement visibles ; la scène d’extinction reste générique."
+    "45": "Deux membres d’équipage à bord d’un yacht utilisant un extincteur et une couverture, passagers assis dans un train, équipe de télévision avec caméraman et journaliste. Les interlocuteurs ou groupes sont réellement visibles ; la scène d’extinction reste générique.",
+    "89": "La cabine, les commandes et les voies ferrées visibles distinguent le conducteur de train des choix blogueur et boulanger.",
+    "69": "Personne sur le départ appuyant sur l’interrupteur, luminaire éteint ; geste demandé explicitement dans la transcription.",
+    "67": "Sentier forestier sans habitation ni personne, distinct de la ville et de l’île ; aucune localisation précise attribuée.",
+    "85": "Lecture d’un livre dans un fauteuil. Le genre du livre est porté par le texte du choix ; il n’est pas affirmé par le titre ni les mots-clés de l’image. Personne utilisant une radio à domicile. Le personnage est une illustration générique de l’activité et non un portrait du locuteur. La main règle la radio ; la distinction écouter/allumer n’est pas utilisée comme opposition dans ces trios.",
+    "94": "Personne utilisant une radio à domicile. Le personnage est une illustration générique de l’activité et non un portrait du locuteur. La main règle la radio ; la distinction écouter/allumer n’est pas utilisée comme opposition dans ces trios.",
+    "82": "Personne travaillant dans un cahier près de livres. La transcription demande de réviser ; aucun examen ou résultat inventé dans les métadonnées.",
+    "72": "Verre transparent avec bulles visibles, fond ivoire contrôlé (écart maximal de canal 1). La minéralisation est donnée par la transcription, sans être prétendument lisible sur l’image."
   },
   "label_overrides": {
     "qcm-delf2-billets-1": "Un billet de bateau entier à bord perforé",
@@ -22533,7 +22634,14 @@
     "/lib/images/tcf/qcm-audit/qcm-delf100-personnel-magasin.png": "Deux employés dans un magasin",
     "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp": "Un médecin",
     "/lib/images/tcf/qcm-audit/co834-soleil-ciel-degage.webp": "Un village sous un ciel ensoleillé",
-    "/lib/images/tcf/qcm-audit/co306-theatre-dessine.webp": "Des comédiens sur une scène de théâtre"
+    "/lib/images/tcf/qcm-audit/co306-theatre-dessine.webp": "Des comédiens sur une scène de théâtre",
+    "/lib/images/tcf/catalogue/metiers/conducteur-de-train.webp": "Un conducteur de train devant les commandes de sa cabine",
+    "/lib/images/tcf/qcm-audit/qcm-lot20d-eteindre-lumiere.png": "Une personne appuie sur un interrupteur en quittant une pièce",
+    "/lib/images/tcf/qcm-audit/co306-foret-dessine.webp": "Un sentier dans une forêt feuillue",
+    "/lib/images/tcf/catalogue/actions/lire-dans-un-fauteuil.webp": "Un homme lit un livre assis dans un fauteuil",
+    "/lib/images/tcf/qcm-audit/qcm-lot20e-allumer-appareil.png": "Une personne actionne le bouton d’une radio",
+    "/lib/images/tcf/catalogue/actions/faire-ses-devoirs.webp": "Une femme écrit dans un cahier près de livres",
+    "/lib/images/tcf/qcm-audit/vocab-eau-gazeuse.webp": "Un verre d’eau gazeuse avec des bulles"
   },
   "working_source_archive": [
     {
@@ -22627,5 +22735,10 @@
       "purpose": "Raw working source only; excluded from the image catalogue."
     }
   ],
-  "source_resolution": "Paths starting /lib/ resolve below public/ ; docs/ paths resolve below the repository. Raw working PNGs under docs/ are excluded from the catalogue."
+  "source_resolution": "Paths starting /lib/ resolve below public/ ; docs/ paths resolve below the repository. Raw working PNGs under docs/ are excluded from the catalogue.",
+  "reuse_review_20261123": {
+    "report": "docs/tcf/delf-actif-20261113/reemploi-21-journaux-20261123.json",
+    "new_distinct_reuses": 7,
+    "review_basis": "Fichiers actuels examinés visuellement ; questions, réponses et transcriptions relues. Pas de nouvelle écoute des MP3. Aucune activation ni changement du contenu des sources."
+  }
 }

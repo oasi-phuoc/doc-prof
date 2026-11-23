@@ -207,6 +207,7 @@ test('Gattegno keeps nominal clues after food and vehicle reclassification', () 
 test('school, household and furniture complements are reviewed, searchable and complete', () => {
   const manifest = JSON.parse(readFileSync('docs/gallery/objets-20261116.json', 'utf8'))
   const catalog = new Map(buildGalleryCatalog(process.cwd()).map(image => [image.src, image]))
+  const visualReviews = new Map(JSON.parse(readFileSync('docs/gallery/audit-mots-cles-tcf-20261117.json')).images.filter(image => image.status === 'visually_reviewed').map(image => [image.path, image]))
   assert.equal(manifest.images.length, 58)
   assert.equal(new Set(manifest.images.map(image => image.path)).size, 58)
   for (const image of manifest.images) {
@@ -216,7 +217,7 @@ test('school, household and furniture complements are reviewed, searchable and c
     assert.equal(createHash('sha256').update(readFileSync('public' + image.path)).digest('hex'), image.sha256)
     assert.equal(statSync('public' + image.path).size, image.bytes)
     assert.deepEqual(catalog.get(image.path).types, ['Objet'])
-    assert.equal(catalog.get(image.path).label, image.label)
+    assert.equal(catalog.get(image.path).label, visualReviews.get(image.path)?.visual_label ?? image.label)
     assert(catalog.get(image.path).themes.includes(image.subtype))
   }
   for (const subject of manifest.subjects) assert.equal(subject.status, 'visually_reviewed')

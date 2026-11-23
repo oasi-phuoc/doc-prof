@@ -1,0 +1,14 @@
+{
+  "reviewed_images": 1181,
+  "visually_reviewed_total": 1747,
+  "pending_tcf": 2630,
+  "gallery_images": 7967,
+  "checks": {
+    "metadata_current_pixels_and_ledger_sha256": "passed for all 1181 entries",
+    "gallery_catalog_tests": "14 passed, 0 failed; node tests/gallery/catalog.test.mjs",
+    "delf_preparation": "passed: 102 published assets, 54 existing reuses, 43 prepared trios, zero activated, 129 assets pending",
+    "sources_preserved": "Six banks byte-identical to packet baseline; all 100 source snapshots, MP3 hashes and original image preservation checks passed",
+    "git_diff_check": "passed"
+  },
+  "test_output_sha256": "67362285833b9fe86c6628de13cff9a19a8d7542c9e926f5bc74d388f35d91eb"
+}
