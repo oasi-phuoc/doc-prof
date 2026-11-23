@@ -8,6 +8,11 @@ Génère un rapport des images manquantes concrètes (pas Oui/Non / abstract).
 """
 from __future__ import annotations
 
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from audio_replacement.editorial_json import loads as editorial_json_loads
+
 import json
 import re
 import unicodedata
@@ -819,7 +824,7 @@ def main():
     BY_SLUG, BY_LABEL, BY_THEME = build_index()
     stats: Counter = Counter()
     for bank in sorted(BANKS):
-        data = json.loads(bank.read_text())
+        data = editorial_json_loads(bank.read_text())
         for ex in data:
             qs = ex.get("questions") or []
             ex["questions"] = [enrich_question(q, stats) for q in qs]

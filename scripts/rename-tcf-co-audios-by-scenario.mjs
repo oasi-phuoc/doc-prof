@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {parseEditorialJson} from '../src/tcf/editorial-json.mjs'
 /**
  * Renomme les audios CO TCF selon scénario + scène :
  *   /lib/audio/tcf/co/{scenario}/{scene-slug}[-n].mp3
@@ -62,7 +63,7 @@ const WORD_ACCENTS = {
 const GENERIC = new Set(['annonce', 'conversation', 'message', 'radio', 'objet', 'instruction'])
 
 function loadJson(path) {
-  return JSON.parse(readFileSync(path, 'utf8'))
+  return parseEditorialJson(readFileSync(path, 'utf8'))
 }
 
 function saveJson(path, data) {

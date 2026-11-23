@@ -1,3 +1,4 @@
+import {normalizeEditorialBank,parseEditorialJson} from '../src/tcf/editorial-json.mjs'
 import {createServer} from 'vite';
 import {fileURLToPath} from 'node:url';
 import {readFileSync,existsSync} from 'node:fs';
@@ -14,14 +15,14 @@ try {
  const {createRng}=await server.ssrLoadModule('/src/math/rng.ts');
  const {createElement:h}=await import('react');
  const {renderToStaticMarkup:render}=await import('react-dom/server');
- const exercises=JSON.parse(readFileSync(`${root}/src/tcf/content/a0-a1/ce.json`));
- const formats=JSON.parse(readFileSync(`${root}/src/tcf/content/ce-document-formats.json`));
+ const exercises=normalizeEditorialBank(parseEditorialJson(readFileSync(`${root}/src/tcf/content/a0-a1/ce.json`)));
+ const formats=parseEditorialJson(readFileSync(`${root}/src/tcf/content/ce-document-formats.json`));
  for (const artwork of CE_ARTWORKS) {
   const exercise=exercises.find(ex=>ex.id===artwork.id);
   assert(exercise,`${artwork.id}: exercice absent de la banque CE`);
   assert(ceArtFor(exercise),`${artwork.id}: image active périmée ou format incompatible`);
  }
- const plan=JSON.parse(readFileSync(`${root}/docs/tcf/ce-art-prompts.json`));
+ const plan=parseEditorialJson(readFileSync(`${root}/docs/tcf/ce-art-prompts.json`));
  const {WorksheetSheet}=await server.ssrLoadModule('/src/components/generator/WorksheetSheet.tsx');
  const {DEFAULT_INSTITUTIONAL}=await server.ssrLoadModule('/src/components/math/PrintDocumentChrome.tsx');
  const {isAssociationAnnonce}=await server.ssrLoadModule('/src/tcf/association-documents.ts');
@@ -134,7 +135,7 @@ try {
  console.log('PE : sélection malgré une ancienne liste pleine, numérotation dans le texte, répétitions et réinitialisation réversible vérifiées.');
  const {buildFicheRecipe,parseFicheRecipe}=await server.ssrLoadModule('/src/fiches/recipe.ts');
  const recipe=buildFicheRecipe({pages:[{...pages[0],tcfCeFormat:'image'}],seed:42,institutional:{},evalMode:false,pointsPerQuestion:1,libreMode:true,libreSnapshot:null,imageOverrides:{'/old.webp':'/lib/images/vocabulaire/transports/bus.webp','/local.webp':'data:image/png;base64,AA=='}});
- const parsed=parseFicheRecipe(JSON.parse(JSON.stringify(recipe)));
+ const parsed=parseFicheRecipe(parseEditorialJson(JSON.stringify(recipe)));
  assert.equal(parsed.pages[0].tcfCeFormat,'image');assert.deepEqual(parsed.imageOverrides,{'/old.webp':'/lib/images/vocabulaire/transports/bus.webp'});
  console.log('Sauvegarde : format CE et choix de banque conservés ; images temporaires exclues.');
  const {TcfItemView}=await server.ssrLoadModule('/src/components/tcf/TcfItemView.tsx');
@@ -151,7 +152,7 @@ try {
   }
  }
  console.log('Six mini-audios : les 6 lecteurs restent dans leur bandeau au corrigé en format Texte, Image et Phrase ; absents de la fiche élève.');
- const associations=['a0-a1','a1-a2'].flatMap(level=>JSON.parse(readFileSync(`${root}/src/tcf/content/${level}/co.json`))).filter(ex=>ex.type_exercice==='association_images');
+ const associations=['a0-a1','a1-a2'].flatMap(level=>parseEditorialJson(readFileSync(`${root}/src/tcf/content/${level}/co.json`))).filter(ex=>ex.type_exercice==='association_images');
  for(const ex of associations){
   const item=tcfExerciseItems(ex,createRng(42)).find(i=>i.tcf?.kind==='association');
   for(const situation of item.tcf.situations){

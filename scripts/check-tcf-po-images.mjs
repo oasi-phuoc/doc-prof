@@ -1,10 +1,11 @@
+import {parseEditorialJson} from '../src/tcf/editorial-json.mjs'
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
 import { existsSync, readFileSync, readdirSync } from 'node:fs'
 import { basename } from 'node:path'
 import { createServer } from 'vite'
 
-const manifest = JSON.parse(readFileSync('public/lib/images/tcf/po/illustrations-manifest.json', 'utf8'))
+const manifest = parseEditorialJson(readFileSync('public/lib/images/tcf/po/illustrations-manifest.json', 'utf8'))
 const byPath = new Map(manifest.images.map((image) => [image.path, image]))
 assert.equal(byPath.size, manifest.images.length, 'one final file per image')
 assert.equal(manifest.images.length, 407, '308 A1 images and 99 A2 images')
@@ -55,7 +56,7 @@ if (process.argv.includes('--style-complete')) {
 
 let exercises = 0
 for (const [level, folder, count] of [['a0-a1', 'a1', 76], ['a1-a2', 'a2', 99]]) {
-  const bank = JSON.parse(readFileSync(`src/tcf/content/${level}/po.json`, 'utf8'))
+  const bank = parseEditorialJson(readFileSync(`src/tcf/content/${level}/po.json`, 'utf8'))
   const illustrated = bank.filter((exercise) => exercise.type_exercice === 'image_interaction')
   assert.equal(illustrated.length, count)
   for (const exercise of illustrated) {

@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 """Contrôles reproductibles des banques CE/CO, sans prétendre vérifier le sens par code."""
 from __future__ import annotations
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from audio_replacement.editorial_json import loads as editorial_json_loads
+
 import argparse
 import json
 import re
@@ -18,18 +23,18 @@ def answer_key(text):
 
 def audit(baseline=None):
     errors=[];warnings=[];banks=[];tracks=defaultdict(list);ce_short=[];ids=set();pending_scenes=[]
-    durations=json.loads((ROOT/'src/tcf/content/audio-durations.json').read_text())
+    durations=editorial_json_loads((ROOT/'src/tcf/content/audio-durations.json').read_text())
     reviewed_path=ROOT/'src/tcf/content/co-reviewed-pools.json'
-    reviewed_pools=json.loads(reviewed_path.read_text()) if reviewed_path.exists() else {}
+    reviewed_pools=editorial_json_loads(reviewed_path.read_text()) if reviewed_path.exists() else {}
     original_total=0;added=removed=changed=0
     for level in LEVELS:
         for skill in ('ce','co'):
             path=ROOT/f'src/tcf/content/{level}/{skill}.json'
-            data=json.loads(path.read_text());nq=0;nimage=0
+            data=editorial_json_loads(path.read_text());nq=0;nimage=0
             before={}
             if baseline:
                 oldpath=baseline/f'{level}-{skill}.json'
-                before={e['id']:e for e in json.loads(oldpath.read_text())}
+                before={e['id']:e for e in editorial_json_loads(oldpath.read_text())}
                 original_total+=sum(len(e.get('questions',[])) for e in before.values())
                 if set(before)!={e['id'] for e in data}:errors.append({'bank':str(path.relative_to(ROOT)),'error':'La liste des supports a changé.'})
             for ex in data:

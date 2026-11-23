@@ -1,3 +1,4 @@
+import {normalizeEditorialBank,parseEditorialJson} from '../src/tcf/editorial-json.mjs'
 import { createServer } from 'vite'
 import { readFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
@@ -5,8 +6,8 @@ import { fileURLToPath } from 'node:url'
 import assert from 'node:assert/strict'
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..')
 const {chromium}=await import(process.argv[2]||'playwright')
-const bank=JSON.parse(readFileSync(resolve(root,'src/tcf/content/a0-a1/ce.json')))
-const art=JSON.parse(readFileSync(resolve(root,'src/tcf/content/ce-art.json')))[0]
+const bank=normalizeEditorialBank(parseEditorialJson(readFileSync(resolve(root,'src/tcf/content/a0-a1/ce.json'))))
+const art=parseEditorialJson(readFileSync(resolve(root,'src/tcf/content/ce-art.json')))[0]
 const ex=bank.find(ex=>ex.id===art.id)
 const config={domain:'tcf-csc',topic:'tcf-ce',exerciseType:'tcf-ce-ex-1',difficulty:'facile',count:1,columns:1,tcfExercise:ex,tcfCeFormat:'image'}
 const harness=`import React,{useState} from 'react';import{createRoot}from'react-dom/client';

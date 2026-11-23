@@ -1,3 +1,4 @@
+import { normalizeEditorialBank } from './editorial-json.mjs'
 import { TCF_NIVEAUX, tcfPosition, type TcfSlotMeta } from './catalog'
 import {
   tcfCeEntriesWithTag,
@@ -17,7 +18,8 @@ const FILES = import.meta.glob('./content/*/*.json', { eager: true, import: 'def
 
 function loadAll(): TcfExercise[] {
   const out: TcfExercise[] = []
-  for (const [path, raw] of Object.entries(FILES)) {
+  for (const [path, source] of Object.entries(FILES)) {
+    const raw = normalizeEditorialBank(source)
     const match = path.match(/\/(a0-a1|a1-a2|a2-b1)\/(ce|co|pe|po)\.json$/)
     const niveau = TCF_NIVEAUX.find((n) => n.dossier === match?.[1])?.id
     if (!match || !niveau) continue

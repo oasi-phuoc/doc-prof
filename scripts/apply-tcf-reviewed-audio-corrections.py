@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 """Apply an explicit, reversible audio/question patch after source and text checks."""
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from audio_replacement.editorial_json import loads as editorial_json_loads
+
 import argparse
 import hashlib
 import json
@@ -9,7 +14,7 @@ import shutil
 import unicodedata
 
 
-def read(path):return json.loads(Path(path).read_text())
+def read(path):return editorial_json_loads(Path(path).read_text())
 def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 def normal(text):return re.sub(r'[^a-z0-9]+',' ',''.join(c for c in unicodedata.normalize('NFD',text.lower()) if unicodedata.category(c)!='Mn')).strip()
 

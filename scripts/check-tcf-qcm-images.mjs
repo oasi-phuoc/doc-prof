@@ -1,3 +1,4 @@
+import {parseEditorialJson} from '../src/tcf/editorial-json.mjs'
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { createServer } from 'vite'
@@ -51,7 +52,7 @@ try {
   let bankVariants = 0
   let expectedBankVariants = 0
   for (const level of ['a0-a1', 'a1-a2', 'a2-b1']) for (const skill of ['ce', 'co']) {
-    const bank = JSON.parse(readFileSync(`src/tcf/content/${level}/${skill}.json`, 'utf8'))
+    const bank = parseEditorialJson(readFileSync(`src/tcf/content/${level}/${skill}.json`, 'utf8'))
     for (const exercise of bank) {
       expectedBankVariants += exercise.questions.filter((question) =>
         (question.type_reponse === 'qcm_texte' || question.formes?.qcm_texte) &&

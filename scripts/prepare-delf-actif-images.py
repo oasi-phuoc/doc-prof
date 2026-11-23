@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 """Track all new DELF Actif questions; propose reusable art without activating it."""
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from audio_replacement.editorial_json import loads as editorial_json_loads
+
 from collections import Counter,defaultdict
 import importlib.util
 import json
@@ -62,26 +67,26 @@ def classify(question,labels,visual):
 
 
 def main():
- visual=load_visual();manifest=checked_images(json.loads((ROOT/'docs/tcf/images-generees.json').read_text()))
+ visual=load_visual();manifest=checked_images(editorial_json_loads((ROOT/'docs/tcf/images-generees.json').read_text()))
  aliases=defaultdict(set)
  for path,row in manifest.items():
   if row.get('label'):aliases[normalise(row['label'])].add(path)
- for row in json.loads((ROOT/'scripts/tcf-qcm-image-registry.json').read_text()):
+ for row in editorial_json_loads((ROOT/'scripts/tcf-qcm-image-registry.json').read_text()):
   if row['path'] in manifest:
    for alias in row.get('aliases',[]):aliases[normalise(alias)].add(row['path'])
- installation=json.loads((DOCS/'installation.json').read_text())
- legacy_pending=json.loads((ROOT/'docs/tcf/revue-763-20261107.json').read_text())['artwork_pending_total']
+ installation=editorial_json_loads((DOCS/'installation.json').read_text())
+ legacy_pending=editorial_json_loads((ROOT/'docs/tcf/revue-763-20261107.json').read_text())['artwork_pending_total']
  installed={r['exercise_id']:r for r in installation['units']}
  existing={}
  p=DOCS/'images-a-preparer.json'
- if p.exists():existing={r['key']:r for r in json.loads(p.read_text())['questions']}
+ if p.exists():existing={r['key']:r for r in editorial_json_loads(p.read_text())['questions']}
  review_path=DOCS/'revue-contexte-20261114.json'
- review_data=json.loads(review_path.read_text()) if review_path.exists() else {}
+ review_data=editorial_json_loads(review_path.read_text()) if review_path.exists() else {}
  reviews={r['key']:r for r in review_data.get('questions',[]) if r.get('review_status')=='reviewed'}
  supports=[];questions=[];assets={}
  for folder in ['a0-a1','a1-a2','a2-b1']:
   bank=ROOT/f'src/tcf/content/{folder}/co.json'
-  for ex in json.loads(bank.read_text()):
+  for ex in editorial_json_loads(bank.read_text()):
    if ex['id'] not in installed:continue
    record=installed[ex['id']];source,audio=source_for(ex,{})
    supports.append(dict(exercise=ex['id'],level=ex['niveau'],title=ex.get('scene'),audio=audio,audio_sha256=record['audio_sha256'],source=source,source_sha256=digest(source)))

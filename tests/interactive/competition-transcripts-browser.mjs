@@ -1,3 +1,4 @@
+import {normalizeEditorialBank} from '../../src/tcf/editorial-json.mjs'
 import {gameControl} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
@@ -14,7 +15,7 @@ await vite.listen()
 const service=await serveCompetition(vite,{origin:base,teacherKey})
 const {demoRecipe}=await vite.ssrLoadModule('/src/interactive/demo.ts')
 const {defaultPage}=await vite.ssrLoadModule('/src/math/catalog.ts')
-const bank=JSON.parse(await readFile('src/tcf/content/a0-a1/co.json','utf8'))
+const bank=normalizeEditorialBank(JSON.parse(await readFile('src/tcf/content/a0-a1/co.json','utf8')))
 const candidates=bank.filter(ex=>ex.type_exercice==='complet'&&ex.support.audio&&typeof ex.support.transcription==='string'&&ex.support.transcription.trim()&&ex.questions.length>=2)
 const first=candidates[0],second=candidates.find(ex=>ex.support.audio!==first.support.audio),text=first.support.transcription.trim()
 const recipe={...demoRecipe(),libreMode:false,pages:[first,second].map((ex,index)=>({...defaultPage('tcf-csc'),topic:'tcf-co',exerciseType:'tcf-co-ex-3',count:1,tcfExercise:{...ex,questions:ex.questions.slice(0,index?1:2)},libreItems:undefined,extraBlocks:undefined}))}

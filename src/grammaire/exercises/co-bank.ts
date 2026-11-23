@@ -1,4 +1,5 @@
 import rawBank from './co-bank.json'
+import { normalizeEditorialBank } from '@/tcf/editorial-json.mjs'
 import { GRAMMAR_CO_THEMES, grammarCoThemeForType, type GrammarCoLevel, type GrammarCoThemeId } from './co-themes'
 import type { TcfCoComplet } from '@/tcf/types'
 
@@ -11,7 +12,7 @@ export type GrammarCoEntry = {
   source: { uploadId: string; filename: string; sha256: string; start: number; end: number }
   exercise: TcfCoComplet
 }
-export const GRAMMAR_CO_BANK = rawBank as GrammarCoEntry[]
+export const GRAMMAR_CO_BANK = normalizeEditorialBank(rawBank) as GrammarCoEntry[]
 export function grammarCoEntries(theme: GrammarCoThemeId, level: GrammarCoLevel, bank: readonly GrammarCoEntry[] = GRAMMAR_CO_BANK) {
   return bank.filter(entry=>{
     const audio=entry.exercise.support.audio||entry.exercise.support.audios?.[0]

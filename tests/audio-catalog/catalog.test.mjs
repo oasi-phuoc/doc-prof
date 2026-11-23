@@ -1,3 +1,4 @@
+import {normalizeEditorialBank} from '../../src/tcf/editorial-json.mjs'
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import {readFile,mkdtemp,mkdir,writeFile,rm} from 'node:fs/promises'
@@ -7,7 +8,7 @@ import path from 'node:path'
 import {createServer} from 'vite'
 import {buildAudioCatalog} from '../../scripts/audio-catalog.mjs'
 
-const root=process.cwd(),read=async file=>JSON.parse(await readFile(file,'utf8'))
+const root=process.cwd(),read=async file=>normalizeEditorialBank(JSON.parse(await readFile(file,'utf8')))
 const index=await read('src/audio-catalog/catalog.generated.json')
 const allDetails=Object.assign({},...await Promise.all(Object.values(index.details).map(ref=>read('public/'+ref.file))))
 await test('the committed catalogue reproduces all available audio files and every detail count without changing the banks',()=>{

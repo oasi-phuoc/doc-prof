@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 """Verify installed audio bytes, linked edits and grammar source preservation."""
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from editorial_json import loads as editorial_json_loads
+
 import hashlib
 import json
 from pathlib import Path
@@ -9,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 def read(path):
-    return json.loads(path.read_text())
+    return editorial_json_loads(path.read_text())
 
 
 def sha(path):

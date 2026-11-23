@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 """Retire exactly the 297 legacy files selected by the user and their dependent exercises."""
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from audio_replacement.editorial_json import loads as editorial_json_loads
+
 import argparse
 import datetime as dt
 import hashlib
@@ -8,7 +13,7 @@ from pathlib import Path
 import subprocess
 
 
-def read(path):return json.loads(Path(path).read_text())
+def read(path):return editorial_json_loads(Path(path).read_text())
 def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 def write(path,data):Path(path).write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
 

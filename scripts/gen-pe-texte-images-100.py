@@ -2,6 +2,11 @@
 """Génère / met à jour 100 exercices PE texte_images (ex. 11) dans a0-a1/pe.json."""
 from __future__ import annotations
 
+try:
+    from scripts.audio_replacement.editorial_json import load as editorial_json_load
+except ModuleNotFoundError:
+    from audio_replacement.editorial_json import load as editorial_json_load
+
 import json
 import re
 from pathlib import Path
@@ -1818,7 +1823,7 @@ def main() -> None:
     assert len(selected) == 100, f"Attendu 100, obtenu {len(selected)}"
 
     with PE_JSON.open(encoding="utf-8") as f:
-        bank = json.load(f)
+        bank = editorial_json_load(f)
 
     bank = [e for e in bank if e.get("type_exercice") != "texte_images"]
 

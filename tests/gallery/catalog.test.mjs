@@ -1,3 +1,4 @@
+import {normalizeEditorialBank} from '../../src/tcf/editorial-json.mjs'
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
 import { readFileSync, statSync } from 'node:fs'
@@ -106,7 +107,7 @@ test('visual search keywords exclude exercise prompts and audio transcriptions',
 
 test('CFR A2 situation scenes and a reviewed context reuse are searchable as scenarios', () => {
   const catalogue = new Map(buildGalleryCatalog(process.cwd()).map(image => [image.src, image]))
-  const exercises = JSON.parse(readFileSync('src/tcf/content/a1-a2/co.json'))
+  const exercises = normalizeEditorialBank(JSON.parse(readFileSync('src/tcf/content/a1-a2/co.json')))
   const scenes = exercises.filter(ex => ex.type_exercice === 'association_images').flatMap(ex => ex.situations)
   assert.equal(scenes.length, 12)
   for (const scene of scenes) {

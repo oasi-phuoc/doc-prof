@@ -8,6 +8,11 @@ remain in the source inventory.
 """
 from __future__ import annotations
 
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from editorial_json import loads as editorial_json_loads
+
 import argparse
 from array import array
 from collections import Counter
@@ -215,10 +220,10 @@ def best_occurrences(query, native):
 
 
 def prepare():
-    sources = {level: json.loads((WORK/f'{level}-sources.json').read_text())['sources'] for level in ['a1','a2','b1']}
+    sources = {level: editorial_json_loads((WORK/f'{level}-sources.json').read_text())['sources'] for level in ['a1','a2','b1']}
     prepared = []
-    corrections=json.loads((DOCS/'corrections-transcriptions.json').read_text())['units'] if (DOCS/'corrections-transcriptions.json').exists() else {}
-    boundaries=json.loads((DOCS/'relectures-bornes.json').read_text())['units'] if (DOCS/'relectures-bornes.json').exists() else {}
+    corrections=editorial_json_loads((DOCS/'corrections-transcriptions.json').read_text())['units'] if (DOCS/'corrections-transcriptions.json').exists() else {}
+    boundaries=editorial_json_loads((DOCS/'relectures-bornes.json').read_text())['units'] if (DOCS/'relectures-bornes.json').exists() else {}
     for level in sources:
         for u in pdf_units(level):
             if u['key'] in corrections:
@@ -239,7 +244,7 @@ def prepare():
             recognition_paths={'parakeet_tdt':WORK/f'{level}-asr'/(sid+'.json')}
             alignment=WORK/'french-alignment'/(sid+'.json')
             if alignment.exists():recognition_paths['whisper_fr_dtw']=alignment
-            recognitions={name:json.loads(path.read_text()) for name,path in recognition_paths.items()}
+            recognitions={name:editorial_json_loads(path.read_text()) for name,path in recognition_paths.items()}
             assert all(r['source_sha256']==source['sha256'] and r['status']=='transcribed' for r in recognitions.values())
             parts=[];previous_time=-1
             for part_index,spoken in enumerate(u['reference_parts']):
@@ -298,7 +303,7 @@ def editorial(level):
 
 
 def quote_report():
-    units={u['key']:u for u in json.loads((DOCS/'preparation.json').read_text())['units']}
+    units={u['key']:u for u in editorial_json_loads((DOCS/'preparation.json').read_text())['units']}
     errors=[];counts={}
     for level in ['a1','a2','b1']:
         items=editorial(level);counts[level]=dict(units=len(items),questions=sum(len(r['questions']) for r in items.values()))
@@ -334,7 +339,7 @@ def signal_bounds(source,segments):
 
 
 def cut(levels):
-    units=json.loads((DOCS/'preparation.json').read_text())['units'];directory=WORK/'cuts';directory.mkdir(exist_ok=True)
+    units=editorial_json_loads((DOCS/'preparation.json').read_text())['units'];directory=WORK/'cuts';directory.mkdir(exist_ok=True)
     reports=[]
     def one(u):
         if u['status']!='candidate' or u.get('parallel_reference_only'):
@@ -343,7 +348,7 @@ def cut(levels):
             return dict(key=u['key'],status='needs_french_alignment',source_id=u['source_id'])
         source=Path(u['source_file']);assert sha(source)==u['source_sha256']
         name=u['key'].replace(':','-');prior=WORK/'cut-reviews'/(name+'.json')
-        old=json.loads(prior.read_text()) if prior.exists() else None
+        old=editorial_json_loads(prior.read_text()) if prior.exists() else None
         if old and old['source_sha256']==u['source_sha256'] and [(s['start'],s['end']) for s in old['word_alignment']]==[(s['start'],s['end']) for s in u['segments']]:
             previous=Path(old['path'])
             if previous.exists() and old['sha256']==sha(previous):return old
@@ -363,7 +368,7 @@ def cut(levels):
             args=['ffmpeg','-nostdin','-v','error','-y','-i',str(source),'-filter_complex',';'.join(graph),'-map','[out]']
         args+=['-vn','-map_metadata','-1','-ar','44100','-ac','1','-c:a','libmp3lame','-q:a','2',str(dest)]
         subprocess.run(args,check=True,stdout=subprocess.DEVNULL,stderr=subprocess.PIPE)
-        probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_format','-show_streams','-of','json',str(dest)]))
+        probe=editorial_json_loads(subprocess.check_output(['ffprobe','-v','error','-show_format','-show_streams','-of','json',str(dest)]))
         stream=next(s for s in probe['streams'] if s['codec_type']=='audio');assert stream['codec_name']=='mp3' and stream['channels']==1 and stream['sample_rate']=='44100'
         subprocess.run(['ffmpeg','-nostdin','-v','error','-i',str(dest),'-f','null','-'],check=True,stdout=subprocess.DEVNULL,stderr=subprocess.PIPE)
         result=dict(key=u['key'],source_id=u['source_id'],source_sha256=u['source_sha256'],source_file=str(source),status='encoded_full_decode_passed_final_recognition_pending',path=str(dest),sha256=sha(dest),bytes=dest.stat().st_size,duration_seconds=float(probe['format']['duration']),plan_sha256=fingerprint,ranges=bounds,word_alignment=u['segments'],human_audio_listening_performed=False,encoding_command=args)
@@ -383,7 +388,7 @@ def cut(levels):
         if u.get('parallel_reference_only'):
             reports.append(dict(key=u['key'],status='not_cut',reason=u['parallel_reference_only']))
         elif previous.exists():
-            prior=json.loads(previous.read_text())
+            prior=editorial_json_loads(previous.read_text())
             assert prior['source_sha256']==u['source_sha256'],u['key']
             reports.append(prior)
         else:
@@ -416,7 +421,7 @@ def best_quote_match(reference, text):
 
 
 def evidence_report():
-    comparisons=json.loads((WORK/'final-comparisons.json').read_text())['units']
+    comparisons=editorial_json_loads((WORK/'final-comparisons.json').read_text())['units']
     ed={k:v for l in ['a1','a2','b1'] for k,v in editorial(l).items()};checks=[]
     for row in comparisons:
         if row['key'] not in ed:continue
@@ -472,13 +477,13 @@ def check_existing_exercise(existing, prepared):
 
 
 def install():
-    units=json.loads((DOCS/'preparation.json').read_text())['units']
-    cuts={r['key']:r for r in json.loads((WORK/'cuts-index.json').read_text())['units']}
-    approvals=json.loads((DOCS/'validation-finale.json').read_text())['units']
+    units=editorial_json_loads((DOCS/'preparation.json').read_text())['units']
+    cuts={r['key']:r for r in editorial_json_loads((WORK/'cuts-index.json').read_text())['units']}
+    approvals=editorial_json_loads((DOCS/'validation-finale.json').read_text())['units']
     ed={k:v for l in LEVELS for k,v in editorial(l).items()}
-    banks={level:json.loads((ROOT/f'src/tcf/content/{folder}/co.json').read_text()) for level,(folder,_) in LEVELS.items()}
-    durations=json.loads((ROOT/'src/tcf/content/audio-durations.json').read_text())
-    pools=json.loads((ROOT/'src/tcf/content/co-reviewed-pools.json').read_text())
+    banks={level:editorial_json_loads((ROOT/f'src/tcf/content/{folder}/co.json').read_text()) for level,(folder,_) in LEVELS.items()}
+    durations=editorial_json_loads((ROOT/'src/tcf/content/audio-durations.json').read_text())
+    pools=editorial_json_loads((ROOT/'src/tcf/content/co-reviewed-pools.json').read_text())
     plan=[]
     for unit in units:
         if unit.get('parallel_reference_only'):continue
@@ -509,12 +514,12 @@ def install():
 
 def recognition_report():
     """Mechanical comparison only; do not infer an editorial or human approval."""
-    units={u['key']:u for u in json.loads((DOCS/'preparation.json').read_text())['units']}
-    encoded=json.loads((WORK/'cuts-index.json').read_text())['units']
+    units={u['key']:u for u in editorial_json_loads((DOCS/'preparation.json').read_text())['units']}
+    encoded=editorial_json_loads((WORK/'cuts-index.json').read_text())['units']
     recognized={}
     for directory in ['final-parakeet','final-whisper']:
         for path in (WORK/directory).glob('*.json'):
-            record=json.loads(path.read_text())
+            record=editorial_json_loads(path.read_text())
             if record.get('status')=='transcribed' and record.get('source_sha256'):
                 recognized.setdefault(record['source_sha256'],[]).append((directory,path,record))
     report=[]

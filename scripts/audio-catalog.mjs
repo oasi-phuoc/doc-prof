@@ -1,3 +1,4 @@
+import { normalizeEditorialBank, parseEditorialJson } from '../src/tcf/editorial-json.mjs'
 import { readFileSync, readdirSync, statSync, existsSync, mkdirSync, writeFileSync } from 'node:fs'
 import { createHash } from 'node:crypto'
 import path from 'node:path'
@@ -6,7 +7,7 @@ import { fileURLToPath } from 'node:url'
 const norm=text=>String(text).normalize('NFD').replace(/\p{M}/gu,'').toLowerCase().trim()
 const slug=text=>norm(text).replace(/['’]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,96)
 const pretty=text=>text.replace(/[-_]+/g,' ').replace(/^./,c=>c.toUpperCase())
-const read=(root,file,fallback=[])=>existsSync(path.join(root,file))?JSON.parse(readFileSync(path.join(root,file),'utf8')):fallback
+const read=(root,file,fallback=[])=>existsSync(path.join(root,file))?normalizeEditorialBank(parseEditorialJson(readFileSync(path.join(root,file),'utf8'))):fallback
 const walk=(root,dir)=>existsSync(path.join(root,dir))?readdirSync(path.join(root,dir),{withFileTypes:true}).flatMap(entry=>entry.isDirectory()?walk(root,path.posix.join(dir,entry.name)):[path.posix.join(dir,entry.name)]):[]
 const unique=values=>[...new Set(values.filter(Boolean))]
 
@@ -84,7 +85,7 @@ export function buildAudioCatalog(root) {
  const vocab=path.join(root,'src/jeux/vocab-images.ts')
  if(existsSync(vocab)){
   const text=readFileSync(vocab,'utf8').split('export const VOCAB_IMAGE_THEMES')[1]
-  const themes=text?JSON.parse(text.slice(text.indexOf('['),text.lastIndexOf(']')+1).replace(/^\[\]\s*=\s*/,'')):[]
+  const themes=text?parseEditorialJson(text.slice(text.indexOf('['),text.lastIndexOf(']')+1).replace(/^\[\]\s*=\s*/,'')):[]
   const stems=read(root,'src/francais/soutien/audio-stem-index.json',{})
   for(const theme of themes)for(const word of theme.words){
    const candidate=word.src.replace('/images/','/audio/').replace(/\.[^.]+$/,'.mp3')

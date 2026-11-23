@@ -1,3 +1,4 @@
+import {parseEditorialJson} from '../src/tcf/editorial-json.mjs'
 /**
  * Ajoute la forme « Phrase » (lignes) à toutes les questions CE / CO qui n’en ont pas.
  * CE : 2 lignes ; CO : 1 ligne. reponse_modele dérivée du QCM texte correct si possible.
@@ -65,7 +66,7 @@ let questionsTouched = 0
 
 for (const file of walk(ROOT)) {
   const kind = file.endsWith('/ce.json') ? 'ce' : 'co'
-  const data = JSON.parse(readFileSync(file, 'utf8'))
+  const data = parseEditorialJson(readFileSync(file, 'utf8'))
   if (!Array.isArray(data)) continue
   let fileChanged = false
   for (const ex of data) {

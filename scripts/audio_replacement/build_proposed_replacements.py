@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 """Join lexical + waveform evidence to real prepared MP3s without promoting them."""
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from editorial_json import loads as editorial_json_loads
+
 import argparse
 import collections
 import copy
@@ -13,7 +18,7 @@ from tcf_audio_boundaries import sha256
 
 
 def read(path):
-    return json.loads(Path(path).read_text(encoding='utf-8'))
+    return editorial_json_loads(Path(path).read_text(encoding='utf-8'))
 
 
 def main():

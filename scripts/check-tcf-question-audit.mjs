@@ -1,8 +1,9 @@
+import {parseEditorialJson} from '../src/tcf/editorial-json.mjs'
 import assert from 'node:assert/strict'
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { createServer } from 'vite'
 
-const read = (path) => JSON.parse(readFileSync(path, 'utf8'))
+const read = (path) => parseEditorialJson(readFileSync(path, 'utf8'))
 const normalize = (text) => String(text).normalize('NFD').replace(/\p{M}/gu, '')
   .toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
 const levels = ['a0-a1', 'a1-a2', 'a2-b1']

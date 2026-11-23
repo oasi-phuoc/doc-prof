@@ -3,6 +3,11 @@
 
 This provides lexical evidence and seed intervals, never acoustically validated cuts.
 """
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from editorial_json import loads as editorial_json_loads
+
 import argparse
 import collections
 import datetime
@@ -59,7 +64,7 @@ def atomic_json(path, value):
 def current_index(repo=ROOT):
     indexed = {}
     for path in sorted((repo / 'src/tcf/content').glob('*/co.json')):
-        exercises = json.loads(path.read_text())
+        exercises = editorial_json_loads(path.read_text())
         for ei, exercise in enumerate(exercises):
             support = exercise.get('support', {})
             refs = support.get('audios') or [support.get('audio')]
@@ -154,15 +159,15 @@ def run(args):
                                   'summary': {'unique_urls': len(current), 'audio_uses': sum(len(x['uses']) for x in current),
                                               'shared_urls': [x['old_ref'] for x in current if len(x['uses']) > 1],
                                               'missing_files': [x['old_ref'] for x in current if not x['file_exists']]}})
-    current = json.loads(current_path.read_text())['dialogues']
-    catalogue = json.loads((WORK / 'source-catalogue.json').read_text())
+    current = editorial_json_loads(current_path.read_text())['dialogues']
+    catalogue = editorial_json_loads((WORK / 'source-catalogue.json').read_text())
     metadata = {x['source_id']: x for x in catalogue['sources']}
     docs = []
     for path in sorted(pathlib.Path(args.asr_dir).glob('*.json')):
         if path.name in ('index.json', 'batch-progress.json', 'batch-summary.json'):
             continue
         try:
-            doc = json.loads(path.read_text())
+            doc = editorial_json_loads(path.read_text())
         except (ValueError, OSError):
             continue
         if doc.get('status') not in ('transcribed','plan_matching_view') or not doc.get('words'):

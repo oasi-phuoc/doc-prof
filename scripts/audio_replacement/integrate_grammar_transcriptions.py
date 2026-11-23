@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 """Integrate explicitly reviewed A2 recognitions, preserving A1 and original audio."""
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from editorial_json import loads as editorial_json_loads
+
 import argparse
 import hashlib
 import json
@@ -9,7 +14,7 @@ from datetime import datetime, timezone
 
 
 def read(path):
-    return json.loads(Path(path).read_text())
+    return editorial_json_loads(Path(path).read_text())
 
 
 def write(path, data):

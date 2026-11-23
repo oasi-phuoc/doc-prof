@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 """Install only hash-bound, checked cuts; retain the existing production URLs."""
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from editorial_json import loads as editorial_json_loads
+
 import argparse
 import copy
 import hashlib
@@ -10,7 +15,7 @@ import subprocess
 
 
 def read(path):
-    return json.loads(Path(path).read_text())
+    return editorial_json_loads(Path(path).read_text())
 
 
 def write(path, value):

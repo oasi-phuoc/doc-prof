@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 """Prune retired question requests while retaining reusable illustrations and source receipts."""
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from audio_replacement.editorial_json import loads as editorial_json_loads
+
 import argparse
 import collections
 import json
@@ -11,7 +16,7 @@ import sys
 from tcf_replace_vocabulary_images import vocabulary_paths, preserve_object_audio_images
 
 
-def read(path):return json.loads(Path(path).read_text())
+def read(path):return editorial_json_loads(Path(path).read_text())
 def write(path,data):Path(path).write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
 
 

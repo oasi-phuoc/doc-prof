@@ -6,6 +6,11 @@ Support and object-bank replacements require explicit source mappings.
 """
 from __future__ import annotations
 
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from audio_replacement.editorial_json import loads as editorial_json_loads
+
 import argparse
 import collections
 import hashlib
@@ -21,7 +26,7 @@ from tcf_qcm_images import clock_time
 ROOT = Path(__file__).resolve().parents[1]
 PLAN = ROOT / 'docs/tcf/remplacement-images-vocabulaire.json'
 PREFIX = '/lib/images/vocabulaire/'
-PRESERVE_OBJECT_IMAGES = json.loads(PLAN.read_text())['policy'].get('preserve_csc_object_audio_images', True)
+PRESERVE_OBJECT_IMAGES = editorial_json_loads(PLAN.read_text())['policy'].get('preserve_csc_object_audio_images', True)
 BANKS = [ROOT / f'src/tcf/content/{level}/{skill}.json'
          for level in ('a0-a1', 'a1-a2', 'a2-b1') for skill in ('ce', 'co')]
 
@@ -114,9 +119,9 @@ def main():
     parser.add_argument('--report', type=Path, help='Write complete proposed trios for editorial review')
     parser.add_argument('--pending-report', type=Path, help='List incomplete trios and missing whole answer concepts')
     args = parser.parse_args()
-    plan = json.loads(PLAN.read_text())
-    manifest = json.loads((ROOT / 'docs/tcf/images-generees.json').read_text())
-    registry = json.loads((ROOT / 'scripts/tcf-qcm-image-registry.json').read_text())
+    plan = editorial_json_loads(PLAN.read_text())
+    manifest = editorial_json_loads((ROOT / 'docs/tcf/images-generees.json').read_text())
+    registry = editorial_json_loads((ROOT / 'scripts/tcf-qcm-image-registry.json').read_text())
     checked = checked_images(manifest)
     aliases = collections.defaultdict(set)
     for row in registry:
@@ -176,7 +181,7 @@ def main():
 
     changes, banks, pending = [], {}, []
     for bank in BANKS:
-        content = json.loads(bank.read_text())
+        content = editorial_json_loads(bank.read_text())
         dirty = False
         for exercise in content:
             if preserve_object_audio_images(exercise):

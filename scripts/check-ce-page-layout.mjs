@@ -1,3 +1,4 @@
+import {normalizeEditorialBank,parseEditorialJson} from '../src/tcf/editorial-json.mjs'
 import { createServer } from 'vite'
 import { createElement as h } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
@@ -14,8 +15,8 @@ try {
   const { CE_ARTWORKS } = await vite.ssrLoadModule('/src/tcf/ce-art.ts')
   const { WorksheetSheet } = await vite.ssrLoadModule('/src/components/generator/WorksheetSheet.tsx')
   const { DEFAULT_INSTITUTIONAL } = await vite.ssrLoadModule('/src/components/math/PrintDocumentChrome.tsx')
-  const bank = JSON.parse(readFileSync(resolve(root, 'src/tcf/content/a0-a1/ce.json')))
-  const artworks = JSON.parse(readFileSync(resolve(root, 'src/tcf/content/ce-art.json')))
+  const bank = normalizeEditorialBank(parseEditorialJson(readFileSync(resolve(root, 'src/tcf/content/a0-a1/ce.json'))))
+  const artworks = parseEditorialJson(readFileSync(resolve(root, 'src/tcf/content/ce-art.json')))
   const css = readFileSync(resolve(root, 'src/App.css'), 'utf8').replace(/@import[^;]+;/g, '')
   browser = await chromium.launch({ executablePath: '/usr/bin/chromium', args: ['--no-sandbox'] })
   const page = await browser.newPage({ viewport: { width: 1000, height: 1300 } })

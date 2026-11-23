@@ -9,6 +9,11 @@ Voir .claude/skills/decoupage-audio-co/SKILL.md
 """
 from __future__ import annotations
 
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from audio_replacement.editorial_json import loads as editorial_json_loads
+
 import argparse
 import json
 import math
@@ -1024,7 +1029,7 @@ def load_banks() -> dict[str, tuple[Path, list]]:
     """id -> (path, list of exercises)"""
     out = {}
     for p in sorted(CONTENT.glob("*/co.json")):
-        data = json.loads(p.read_text(encoding="utf-8"))
+        data = editorial_json_loads(p.read_text(encoding="utf-8"))
         for ex in data:
             out[ex["id"]] = (p, data)
     return out
@@ -1153,7 +1158,7 @@ def process_exercise(ex_id: str, dry_run: bool = False, keep_source: bool = Fals
 
         refs = [lib_ref(p) for p in out_paths]
         update_exercise(ex, refs, transcriptions)
-        fresh = json.loads(path.read_text(encoding="utf-8"))
+        fresh = editorial_json_loads(path.read_text(encoding="utf-8"))
         for i, item in enumerate(fresh):
             if item.get("id") == ex_id:
                 fresh[i] = ex
@@ -1173,7 +1178,7 @@ def process_exercise(ex_id: str, dry_run: bool = False, keep_source: bool = Fals
 def list_pending() -> list[str]:
     ids = []
     for p in sorted(CONTENT.glob("*/co.json")):
-        for ex in json.loads(p.read_text(encoding="utf-8")):
+        for ex in editorial_json_loads(p.read_text(encoding="utf-8")):
             if ex.get("type_exercice") != "complet":
                 continue
             if ex["support"].get("audios"):

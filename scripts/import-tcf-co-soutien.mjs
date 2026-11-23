@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {parseEditorialJson} from '../src/tcf/editorial-json.mjs'
 /**
  * Importe les CO du repo soutien-scolaire dans les banques TCF
  * (`src/tcf/content/{a0-a1,a1-a2,a2-b1}/co.json`).
@@ -48,7 +49,7 @@ const CONSIGNE =
 const LETTERS = 'abcdefghijklmnopqrstuvwxyz'
 
 function loadJson(path) {
-  return JSON.parse(readFileSync(path, 'utf8'))
+  return parseEditorialJson(readFileSync(path, 'utf8'))
 }
 
 function norm(s) {

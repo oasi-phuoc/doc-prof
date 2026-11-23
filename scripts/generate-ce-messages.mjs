@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {normalizeEditorialBank,parseEditorialJson} from '../src/tcf/editorial-json.mjs'
 import { createServer } from 'vite'
 import { createElement } from 'react'
 import { renderToStaticMarkup } from 'react-dom/server'
@@ -11,10 +12,10 @@ import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..')
 const { chromium }=await import(process.argv[2]||'playwright')
-const source=JSON.parse(readFileSync(resolve(root,'src/tcf/content/a0-a1/ce.json'),'utf8'))
-const choices=Object.entries(JSON.parse(readFileSync(resolve(root,'src/tcf/content/ce-document-formats.json'),'utf8'))).filter(([,format])=>format.engine==='document-render').map(([id,format])=>({id,...format}))
+const source=normalizeEditorialBank(parseEditorialJson(readFileSync(resolve(root,'src/tcf/content/a0-a1/ce.json'),'utf8')))
+const choices=Object.entries(parseEditorialJson(readFileSync(resolve(root,'src/tcf/content/ce-document-formats.json'),'utf8'))).filter(([,format])=>format.engine==='document-render').map(([id,format])=>({id,...format}))
 const catalogPath=resolve(root,'src/tcf/content/ce-art.json')
-let catalog=JSON.parse(readFileSync(catalogPath,'utf8'))
+let catalog=parseEditorialJson(readFileSync(catalogPath,'utf8'))
 const verify=process.argv.includes('--verify')
 const only=new Set(process.argv.slice(3).filter(arg=>!arg.startsWith('--')))
 const font=readFileSync(resolve(root,'scripts/assets/ce-font/URWGothic-Book.otf'))

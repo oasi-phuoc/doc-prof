@@ -1,12 +1,17 @@
 #!/usr/bin/env python3
 """Check current production bytes and the published 87-review evidence."""
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from audio_replacement.editorial_json import loads as editorial_json_loads
+
 import hashlib
 import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORTS = ROOT / 'docs/tcf/remplacement-audio'
-read = lambda path: json.loads(path.read_text())
+read = lambda path: editorial_json_loads(path.read_text())
 sha = lambda path: hashlib.sha256(path.read_bytes()).hexdigest()
 report = read(REPORTS / 'validation-87-20261111.json')
 assert report['summary']['target_references'] == 87

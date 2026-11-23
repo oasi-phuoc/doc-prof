@@ -1,0 +1,381 @@
+{
+  "date": "2026-11-23",
+  "baseCommit": "91f4e4eca7ee73b4e5ba289fe17c0252f650cab8",
+  "status": "passed_for_source_formatting_with_preexisting_game_download_limits",
+  "scope": "Editable CE/CO source layout; runtime text, object key order, track mapping, questions, models and answers retained.",
+  "files": 7,
+  "entries": 1607,
+  "textFragments": 11960,
+  "maximumTextLineWidth": 80,
+  "linesOver80": 0,
+  "checks": [
+    {
+      "command": "npm run test:comprehension:json",
+      "status": "passed",
+      "tests": 6,
+      "initialBanksCompared": 7
+    },
+    {
+      "command": "node scripts/check-tcf-bank.mjs",
+      "status": "passed",
+      "tcfExercises": 1355,
+      "indexedAudios": 1371
+    },
+    {
+      "command": "npm run test:audio-catalog",
+      "status": "passed",
+      "tests": 8,
+      "coverage": "All exact per-track transcripts, prepared question forms, catalogue counts and Word tables/images/keys."
+    },
+    {
+      "command": "node --test tests/gallery/catalog.test.mjs",
+      "status": "passed",
+      "tests": 14
+    },
+    {
+      "command": "python scripts/test_tcf_audio_replacement.py",
+      "status": "passed",
+      "tests": 16,
+      "scope": "Offline temporary fixtures and synthetic recordings only."
+    },
+    {
+      "command": "npm run test:grammar:questions",
+      "status": "passed",
+      "protectedFiles": 276,
+      "note": "Original CO semantic hashes retained; the co-bank adapter differs only by the authorised fragment reader."
+    },
+    {
+      "command": "npm run test:grammar:levels",
+      "status": "passed",
+      "variants": 11220
+    },
+    {
+      "command": "node scripts/verify-grammar-pools.cjs",
+      "status": "passed",
+      "types": 97,
+      "seeds": 3,
+      "positions": 16
+    },
+    {
+      "command": "node tests/interactive/editorial-json-browser.mjs",
+      "status": "passed",
+      "runtimeBankEquality": {
+        "ce": 339,
+        "co": 1016,
+        "grammarCo": 252,
+        "exact": true
+      },
+      "viewports": [
+        "390x844",
+        "1366x768"
+      ],
+      "coverage": "Exact visible transcript after reveal, privacy before reveal and after close, viewport bounds and zero Axe violations."
+    },
+    {
+      "command": "TypeScript + Vite production build",
+      "status": "passed"
+    },
+    {
+      "command": "npm run lint",
+      "status": "passed",
+      "existingWarningsRemain": true
+    }
+  ],
+  "galleryRefresh": {
+    "added": 26,
+    "existingEntriesChanged": 0,
+    "reason": "Previously committed immutable grammar illustrations missing from the generated image index.",
+    "evidence": "format-json-20261123-proofs/gallery-baseline.json"
+  },
+  "knownLimits": [
+    {
+      "check": "Global game download budgets",
+      "measurements": {
+        "competition": {
+          "gzip": 209087,
+          "maximumGzip": 204800
+        },
+        "game": {
+          "gzip": 3404359,
+          "maximumGzip": 3145728
+        }
+      },
+      "preexisting": true
+    },
+    {
+      "check": "Historical full transcripts-browser scenario",
+      "status": "outdated setup selectors in existing test",
+      "replacementCoverage": "Focused editorial-json browser regression checks the current settings dialog and exact text on mobile and desktop."
+    }
+  ],
+  "savedFiches": "Untouched; cleanup deferred at the owner’s request.",
+  "sourceFiles": [
+    {
+      "path": "scripts/add-tcf-lignes-forme.mjs",
+      "sha256": "866131808700330d2706662bb7bc93f14c2daabb4f24e1d111b6d14d3224c488"
+    },
+    {
+      "path": "scripts/add-tcf-qcm-texte-from-lignes.mjs",
+      "sha256": "a6a8404f4ab29a7d53e76d47de9a1f82b73c74253238e12e6645301b8e481000"
+    },
+    {
+      "path": "scripts/apply-tcf-co-overrides.mjs",
+      "sha256": "71485a55ed3b5396696c11eeb34537ab021684272ae2e0059146a4a538cfe2e6"
+    },
+    {
+      "path": "scripts/apply-tcf-reviewed-audio-corrections.py",
+      "sha256": "370594a2ac57d0d98f554d4146ac07ad16d61a04ec95841947b952469eda53a3"
+    },
+    {
+      "path": "scripts/apply_tcf_question_reviews.py",
+      "sha256": "be382405d7e48273f96b939cf60daaf82f2176918798634f71be6e19d6577183"
+    },
+    {
+      "path": "scripts/audio-catalog.mjs",
+      "sha256": "ccd60b1cb5003b02cf334cd5446e8a93629546275c6389a852708c16db4366e3"
+    },
+    {
+      "path": "scripts/audio_replacement/audit_question_coverage.py",
+      "sha256": "4222c90746d939afb416855462c110e71b269fd3487fdc5d675a938c2c759d2e"
+    },
+    {
+      "path": "scripts/audio_replacement/build_proposed_replacements.py",
+      "sha256": "12924c134c69dcb397bd717f9320288e915ce6c76d9ca3538d1350e0433c6a4e"
+    },
+    {
+      "path": "scripts/audio_replacement/build_reconciliation_report.py",
+      "sha256": "a5dc2145d90e49fa73b805a289ad83883318206356e11f63841139c81744b830"
+    },
+    {
+      "path": "scripts/audio_replacement/check_reviewed_batch.py",
+      "sha256": "4f0cd051c4452dbbfdda7bc90e4bbec2599e6df9e649f2389f9644b0ae203a92"
+    },
+    {
+      "path": "scripts/audio_replacement/delf_actif_import.py",
+      "sha256": "19543395ba394fb15f94926939fe3212c291129284d83986138d3ce48972c6e2"
+    },
+    {
+      "path": "scripts/audio_replacement/editorial_json.py",
+      "sha256": "09ea920d45b3f90338407b7b8ed22851fc94c51cc6a95b1a7fe9a0d7153cf91a"
+    },
+    {
+      "path": "scripts/audio_replacement/integrate_grammar_transcriptions.py",
+      "sha256": "759284dc565ea012b893f8ac0b09aa62f560ed754ea440f684bbb56f4d2723c3"
+    },
+    {
+      "path": "scripts/audio_replacement/match_sources.py",
+      "sha256": "3d83b0fbb05d13d051d52fdf8974fd4bf0e19ab0ee72d3f11bd53efe565b764e"
+    },
+    {
+      "path": "scripts/audio_replacement/switch_reviewed_candidates.py",
+      "sha256": "9edd97b85c3398f0a37fa7eb4901dfdec734ba5e9e01f024c0beabd5b3b939af"
+    },
+    {
+      "path": "scripts/audit-gallery-co-cfr-a2.py",
+      "sha256": "12b47d89fc51b95ceb31defcbf11e50ba08b8cb75ab21ce1cb79f0bee9bb1ef0"
+    },
+    {
+      "path": "scripts/audit-tcf-bank.py",
+      "sha256": "47182a20abfc9bc7748203ec4ea453bd22cd03fc4c14ecb97b9f9676ef410b53"
+    },
+    {
+      "path": "scripts/check-ce-page-layout.mjs",
+      "sha256": "59d352b4af56ecf0a6eca023579bb0624188d28dfb3a6f9314892e94b153ba2a"
+    },
+    {
+      "path": "scripts/check-ce-page-toggle.mjs",
+      "sha256": "b0d4f4c24b89b0ac638bbb84a61e4f9ed9b36fa2b6fd93814046f163325f9360"
+    },
+    {
+      "path": "scripts/check-tcf-bank.mjs",
+      "sha256": "74128182be4662190d018348e3cfb43ab13ed7b74027736ed851a4ef91c18a81"
+    },
+    {
+      "path": "scripts/check-tcf-final-review.py",
+      "sha256": "a77ac089fa015283a5cb9b89ae75768e23154a3b188635a443d730544c1a2b9d"
+    },
+    {
+      "path": "scripts/check-tcf-formats.mjs",
+      "sha256": "c959c6052baab54881b74ce62eb227faaf21b1acbcb2951ddc63d042ac387082"
+    },
+    {
+      "path": "scripts/check-tcf-po-images.mjs",
+      "sha256": "79ef73636d48fbfd9ddc638a9a519ed790d5faaf20f66ba5212b251c6f53b774"
+    },
+    {
+      "path": "scripts/check-tcf-qcm-images.mjs",
+      "sha256": "57f6156cc4b34e12f86afe327c4cc3ed0071ae57dbb011d15ee7911d05e8c87a"
+    },
+    {
+      "path": "scripts/check-tcf-question-audit.mjs",
+      "sha256": "418a4ee5c3309b30a30345dc49a2644438d4d965a1a3eae64f01b6aa4100a81b"
+    },
+    {
+      "path": "scripts/check-tcf-three-themes-images.mjs",
+      "sha256": "6b25ed80ae5c97da36a316582d6355024f9daa2eaa5f4dc76fd345548285c6d6"
+    },
+    {
+      "path": "scripts/co-cut-complet.py",
+      "sha256": "9729226c6620877cfb979040259d27a6a8baba55bde6e2186a3883a320e965a1"
+    },
+    {
+      "path": "scripts/fill-tcf-formes.py",
+      "sha256": "d70d9e3241997798b210b4114d8066be6aa98021872de6a1d8a082a925a3cc62"
+    },
+    {
+      "path": "scripts/format-comprehension-json.mjs",
+      "sha256": "58bb7d6553e4872d6b706c100964eb939a16a257c0d02c36f16c87678431c71d"
+    },
+    {
+      "path": "scripts/gattegno-loader.cjs",
+      "sha256": "8413d0269ea15f66491824b11cf52cd51f418a81ba4e7652cdbcdd978f74c08b"
+    },
+    {
+      "path": "scripts/gen-pe-texte-images-100.py",
+      "sha256": "898a8786c832a60915c0bf89f57b69d3584b3f3350f8ae65de4e2372ecce6936"
+    },
+    {
+      "path": "scripts/generate-ce-messages.mjs",
+      "sha256": "49fd8d8e95a404bc670068686bcd2cfe5438dbc13e742561c655ed52d2530e00"
+    },
+    {
+      "path": "scripts/image-gallery-catalog.mjs",
+      "sha256": "78225f0ccff4a83a19e5493f8f8e0ff22b872537f3a4130b0db4091b6077e7f7"
+    },
+    {
+      "path": "scripts/import-grammar-co-transcriptions.py",
+      "sha256": "860dc469e76868371ecdb7d3647881014874b6768a126582c2a815a8a0635471"
+    },
+    {
+      "path": "scripts/import-tcf-co-soutien.mjs",
+      "sha256": "8aaf68d0daec4452a6ef9e43022c53f5e1814fb4101a5bc677fee78c9e94c445"
+    },
+    {
+      "path": "scripts/localize-tcf-ce-switzerland.py",
+      "sha256": "6f9fdfd7c79e9368bcb5f108de473bd0adac462c05a56c24a830c65be2a89d8e"
+    },
+    {
+      "path": "scripts/prepare-delf-actif-images.py",
+      "sha256": "97f8794b92ed14ff80876278c038958f056e8043a0263d647e124f476da05c03"
+    },
+    {
+      "path": "scripts/refresh-tcf-image-scope.py",
+      "sha256": "e08807e230242f374f049ebc3f23aecd844858c2d7d23746d91cc23a9d96dd5a"
+    },
+    {
+      "path": "scripts/register-ce-art.py",
+      "sha256": "4f1815b9327510e34e0288e2bfe15012cebe62127dadb6931c07ab5e6ae7c48c"
+    },
+    {
+      "path": "scripts/rename-tcf-co-audios-by-scenario.mjs",
+      "sha256": "edea2ee08b3f54554ee3345c94c4f47e975335d31fde432eeeb443a849858fb8"
+    },
+    {
+      "path": "scripts/retire-unmatched-tcf-audios.py",
+      "sha256": "04cf69a8c65035a9f1a9a93e27155ba5959384f6bfb4e6b211854f543813e90c"
+    },
+    {
+      "path": "scripts/stage-tcf-po-image.py",
+      "sha256": "247a60d1bffe92e70bacc8317df62001c545233e7e917e2d1efc01d9dcd55273"
+    },
+    {
+      "path": "scripts/tcf_audio_replacement.py",
+      "sha256": "493d8f3c88b9bd91d171618aa6535456b2e8e1477b20279c25f5d5eb3b0d31fd"
+    },
+    {
+      "path": "scripts/tcf_context_audit.py",
+      "sha256": "19b50fa50c847212d8f019a1800963c99d33f9f7e3b4aaf0dd1df139d085570b"
+    },
+    {
+      "path": "scripts/tcf_qcm_images.py",
+      "sha256": "41201693dc6502d06cf7f619b4498491ba52bff6d046128bc81ad6be6387f5ca"
+    },
+    {
+      "path": "scripts/tcf_replace_vocabulary_images.py",
+      "sha256": "e0f2748c50c8bbdbd5108adc90fd3fb2c68ded4fa13cc844cbe3ed8bbbb4cf7e"
+    },
+    {
+      "path": "scripts/test-grammar-questions.cjs",
+      "sha256": "c5900bce3edfcc84c41e67e2cf53570817a7693a15ab8e6791450d7684f35f72"
+    },
+    {
+      "path": "src/gallery/catalog.generated.json",
+      "sha256": "dbbfeb14b7d57e687eab509f670096e9b414f88f1e86fa76f5d967ec295776a6"
+    },
+    {
+      "path": "src/grammaire/exercises/co-bank.json",
+      "sha256": "0a3406648e2bf862ef1352d8f7f122fcb264fc6e5df70bf4d260e0fcd14a7651"
+    },
+    {
+      "path": "src/grammaire/exercises/co-bank.ts",
+      "sha256": "739f37cf48286b6815c66d0b9e436fe5044c7e100f3e1b68516158a1b9a00b31"
+    },
+    {
+      "path": "src/tcf/content/a0-a1/ce.json",
+      "sha256": "62f531066e4829610eb6da208c43fc0b101b6f67c042581e03b3942f69f62574"
+    },
+    {
+      "path": "src/tcf/content/a0-a1/co.json",
+      "sha256": "bf6067fa4296916d7f8e6fd566684f93c7ae6976803b39ca24078e793a0b5190"
+    },
+    {
+      "path": "src/tcf/content/a1-a2/ce.json",
+      "sha256": "23560c8ae27ec204640b4e325191462528e5939840ea97eacb2a9f835c7d04fa"
+    },
+    {
+      "path": "src/tcf/content/a1-a2/co.json",
+      "sha256": "fb4db6def7ac7d7291184b8b31f9e52ab78b28c277726f20194352a84ca92e7b"
+    },
+    {
+      "path": "src/tcf/content/a2-b1/co.json",
+      "sha256": "f28b5f030321682cfe0f4dff61c304b7f673687298f745f89562f3aa11425b86"
+    },
+    {
+      "path": "src/tcf/editorial-json.d.mts",
+      "sha256": "f5da07badb74c6b722f0e13192cc41d228b2c6d3f2de40de1cbbb1cb490b850e"
+    },
+    {
+      "path": "src/tcf/editorial-json.mjs",
+      "sha256": "a0298964caa514c358b53ed0c81f374eaf1bfd9a4872e74608c590576392d99f"
+    },
+    {
+      "path": "src/tcf/loader.ts",
+      "sha256": "b9642037df17ae9d889a328285d237f83fdd3798994ef1024bd4b4f24c0dd581"
+    },
+    {
+      "path": "tests/audio-catalog/catalog.test.mjs",
+      "sha256": "4e577851f4a3365a06d21c361a283d253db0d8656b8a393154bcfa27fc8e0ffc"
+    },
+    {
+      "path": "tests/gallery/catalog.test.mjs",
+      "sha256": "c428c94c07a4ab0f7fa9b49492462511eb828044fcfbb3ff5d054b5347d14eb6"
+    },
+    {
+      "path": "tests/interactive/competition-transcripts-browser.mjs",
+      "sha256": "7ffaecd7095358010f3ded4e37bb97e4693e802ad4628664678c9ec60769f3f8"
+    },
+    {
+      "path": "tests/interactive/editorial-json-browser.mjs",
+      "sha256": "fd079120d0b60d4017f3a6b42f642cbdac563b6018ee8378233b196081ff112c"
+    },
+    {
+      "path": "tests/interactive/transcripts-browser.mjs",
+      "sha256": "b49b1acace868acca74be422195a950d4294229c995fabe4622833fc98c4dc1d"
+    },
+    {
+      "path": "tests/tcf-editorial-json.test.mjs",
+      "sha256": "4ad1723f2bf99486785d1c7d5c42bfc5bb5e20432e13d06dba6e99f7558165be"
+    }
+  ],
+  "integration": {
+    "upstreamCommit": "8657469bbab58b6aba088ea1828df138747ce96d",
+    "incomingCommits": 7,
+    "netChanges": "Two gallery documents; source banks and runtime code unchanged from the formatting baseline. Upstream decoration reverts preserved."
+  },
+  "secrets": {
+    "tool": "Gitleaks 8.30.1",
+    "status": "passed",
+    "findings": 0,
+    "changedFiles": 6100
+  }
+}

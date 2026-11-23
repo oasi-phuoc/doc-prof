@@ -1,4 +1,9 @@
 """Conserve une nouvelle image et publie les suites CSC uniquement lorsqu'elles sont complètes."""
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from audio_replacement.editorial_json import loads as editorial_json_loads
+
 import argparse
 from collections import Counter, defaultdict
 import hashlib
@@ -56,7 +61,7 @@ def publish(manifest):
     cfr = {row['exercise']: row for row in ready if row['level'] == 'a2'}
     if cfr:
         path = ROOT / 'src/tcf/content/a1-a2/po.json'
-        bank = json.loads(path.read_text())
+        bank = editorial_json_loads(path.read_text())
         for exercise in bank:
             if exercise['id'] not in cfr:
                 continue
@@ -82,7 +87,7 @@ def main():
     review.add_argument('keys', nargs='+')
     commands.add_parser('publish')
     args = parser.parse_args()
-    manifest = json.loads(MANIFEST.read_text())
+    manifest = editorial_json_loads(MANIFEST.read_text())
     by_key = {row['key']: row for row in manifest['images']}
     if args.command == 'publish':
         publish(manifest)

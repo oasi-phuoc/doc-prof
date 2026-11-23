@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 """Import reviewed, byte-bound grammar CO transcripts; preserve recordings and questions."""
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from audio_replacement.editorial_json import loads as editorial_json_loads
+
 import argparse
 import copy
 import datetime as dt
@@ -10,7 +15,7 @@ import re
 
 
 def read(path):
-    return json.loads(Path(path).read_text())
+    return editorial_json_loads(Path(path).read_text())
 
 
 def digest(path):

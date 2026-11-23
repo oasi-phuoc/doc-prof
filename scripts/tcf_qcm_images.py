@@ -1,5 +1,10 @@
 """Correspondances QCM exactes : aucune recherche de mot à l'intérieur d'une phrase."""
 from __future__ import annotations
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from audio_replacement.editorial_json import loads as editorial_json_loads
+
 import argparse
 import copy
 import json
@@ -20,7 +25,7 @@ def norm(text):
     text = text.replace('œ', 'oe').replace('’', "'").replace('-', ' ')
     return re.sub(r'\s+', ' ', text).strip(' .!?;:«»"')
 
-REGISTRY = json.loads(REGISTRY_PATH.read_text())
+REGISTRY = editorial_json_loads(REGISTRY_PATH.read_text())
 ALIASES = {norm(label): row['path'] for row in REGISTRY for label in row['aliases']}
 EXCLUDED = {'pays', 'presenter', 'nombres-mesures', 'temps-calendrier', 'heure-horloge', 'ville'}
 OBJECTS = {}
@@ -55,7 +60,7 @@ for label, relative in OBJECT_ALIASES.items():
     path=ROOT/'public/lib/images/vocabulaire'/f'{relative}.webp'
     if path.exists(): OBJECTS[norm(label)]='/'+str(path.relative_to(ROOT/'public'))
 
-VISUAL_OVERRIDES = json.loads(VISUAL_OVERRIDES_PATH.read_text()) if VISUAL_OVERRIDES_PATH.exists() else {'mappings': []}
+VISUAL_OVERRIDES = editorial_json_loads(VISUAL_OVERRIDES_PATH.read_text()) if VISUAL_OVERRIDES_PATH.exists() else {'mappings': []}
 VISUAL_MAPPINGS = {(norm(row['question']),norm(row['label'])): row.get('replacement')
                    for row in VISUAL_OVERRIDES['mappings']}
 VISUAL_REJECTED_IMAGES = set(VISUAL_OVERRIDES.get('rejected_images',[]))
@@ -233,7 +238,7 @@ def synchronize(q, image):
 def audit(apply=False):
     stats = Counter(); required = set(); unresolved = Counter(); details = []
     for bank in BANKS:
-        data = json.loads(bank.read_text())
+        data = editorial_json_loads(bank.read_text())
         for exercise in data:
             for index, q in enumerate(exercise.get('questions', [])):
                 stats['questions'] += 1

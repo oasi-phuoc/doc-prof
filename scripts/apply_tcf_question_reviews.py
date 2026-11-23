@@ -1,5 +1,10 @@
 """Applique uniquement des révisions relues dont les preuves existent dans le support."""
 from __future__ import annotations
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from audio_replacement.editorial_json import loads as editorial_json_loads
+
 import argparse
 import copy
 import json
@@ -79,7 +84,7 @@ def main():
     pending_writes = []
     for level in ('a0-a1', 'a1-a2', 'a2-b1'):
         path = ROOT / f'src/tcf/content/{level}/ce.json'
-        bank = json.loads(path.read_text())
+        bank = editorial_json_loads(path.read_text())
         changed = False
         for exercise in bank:
             rows = CE_REVIEWS.get(exercise['id'])
@@ -102,7 +107,7 @@ def main():
     pool_tags = {}
     for level in ('a0-a1', 'a1-a2', 'a2-b1'):
         path = ROOT / f'src/tcf/content/{level}/co.json'
-        bank = json.loads(path.read_text())
+        bank = editorial_json_loads(path.read_text())
         changed = False
         for exercise in bank:
             previous_exercise = copy.deepcopy(exercise)

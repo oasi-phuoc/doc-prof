@@ -3,6 +3,11 @@
 This writes catalogue preparation only. It never changes CO questions, audio tags
 or association answers, and never treats a text-search suggestion as an approved reuse.
 """
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from audio_replacement.editorial_json import loads as editorial_json_loads
+
 from collections import Counter, defaultdict
 import csv
 import hashlib
@@ -34,7 +39,7 @@ def terms(value):
 
 
 def load(path, default=None):
-    return json.loads(path.read_text()) if path.exists() else default
+    return editorial_json_loads(path.read_text()) if path.exists() else default
 
 
 def audit():

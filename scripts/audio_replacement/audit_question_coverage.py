@@ -4,6 +4,11 @@
 Lexical absence in an ASR draft is a review flag, never proof that an answer is
 wrong. This audit does not certify semantic correctness, listening or a migration.
 """
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from editorial_json import loads as editorial_json_loads
+
 import argparse
 import collections
 import datetime as dt
@@ -14,7 +19,7 @@ from match_sources import content_tokens
 
 
 def read(path):
-    return json.loads(Path(path).read_text())
+    return editorial_json_loads(Path(path).read_text())
 
 
 def choice_issues(question):

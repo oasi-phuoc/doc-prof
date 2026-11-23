@@ -6,6 +6,11 @@ files and backups, but never promotes/deletes them. Human evidence is not invent
 """
 from __future__ import annotations
 
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from audio_replacement.editorial_json import loads as editorial_json_loads
+
 import argparse
 import concurrent.futures
 import copy
@@ -55,7 +60,7 @@ def sha256(path):
 def read_json(path):
     def invalid(value):
         raise ReplacementError('Nombre JSON non fini : ' + value)
-    return json.loads(Path(path).read_text(encoding='utf-8'), parse_constant=invalid)
+    return editorial_json_loads(Path(path).read_text(encoding='utf-8'), parse_constant=invalid)
 
 
 def write_json(path, value):
@@ -127,7 +132,7 @@ def probe(path, decode=False):
         out = subprocess.run(['ffprobe', '-v', 'error', '-select_streams', 'a:0', '-show_entries',
                               'stream=codec_name,sample_rate,channels,duration:format=duration,format_name',
                               '-of', 'json', str(path)], capture_output=True, text=True, check=True, timeout=30)
-        data = json.loads(out.stdout)
+        data = editorial_json_loads(out.stdout)
         stream = data['streams'][0]
         seconds = float(stream.get('duration') or data['format']['duration'])
         require(math.isfinite(seconds) and seconds > 0, 'Durée audio invalide.')
@@ -448,7 +453,7 @@ def patch_export(value, replacements, expected_transcriptions=None):
             if 'recipe' in node:
                 require(isinstance(node.get('id'), str), 'Une ligne de recette exportée doit conserver son ID.')
                 raw = node['recipe']
-                recipe = json.loads(raw) if isinstance(raw, str) else raw
+                recipe = editorial_json_loads(raw) if isinstance(raw, str) else raw
                 require(isinstance(recipe, dict), 'Recette JSON exportée invalide.')
                 updated = remap_tree(recipe, replacements, '', conflicts, expected_transcriptions)
                 patches = deltas(recipe, updated)
@@ -618,7 +623,7 @@ def run(repo, work_dir, mapping_path=None, recipe_exports=(), db_evidence=None, 
         def collect(node):
             if isinstance(node, dict):
                 if 'recipe' in node and isinstance(node['recipe'], str):
-                    collect(json.loads(node['recipe']))
+                    collect(editorial_json_loads(node['recipe']))
                 for key, child in node.items():
                     if key != 'recipe' or not isinstance(child, str):
                         collect(child)

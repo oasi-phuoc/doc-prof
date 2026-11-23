@@ -1,3 +1,4 @@
+import {parseEditorialJson} from '../src/tcf/editorial-json.mjs'
 import { execFileSync } from 'node:child_process'
 import { existsSync, readFileSync, readdirSync, statSync, writeFileSync, mkdirSync } from 'node:fs'
 import path from 'node:path'
@@ -9,7 +10,7 @@ const IMAGE = /\.(?:png|jpe?g|webp|svg|gif|avif|bmp|ico)$/i
 const norm = text => String(text).normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/œ/g, 'oe').replace(/[’‘]/g, "'")
 const pretty = text => text.replace(/[-_]/g, ' ').replace(/^./, c => c.toUpperCase())
 const read = (root, file, fallback = []) => {
-  try { return JSON.parse(readFileSync(path.join(root, file), 'utf8')) } catch { return fallback }
+  try { return parseEditorialJson(readFileSync(path.join(root, file), 'utf8')) } catch { return fallback }
 }
 function walk(root, dir = '') {
   return readdirSync(path.join(root, dir), { withFileTypes: true }).flatMap(entry => {
@@ -61,7 +62,7 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
   if (existsSync(vocabFile)) {
     const text = readFileSync(vocabFile, 'utf8').split('export const VOCAB_IMAGE_THEMES')[1]
     if (text) {
-      const themes = JSON.parse(text.slice(text.indexOf('['), text.lastIndexOf(']') + 1).replace(/^\[\]\s*=\s*/, ''))
+      const themes = parseEditorialJson(text.slice(text.indexOf('['), text.lastIndexOf(']') + 1).replace(/^\[\]\s*=\s*/, ''))
       for (const theme of themes) for (const word of theme.words) add(word.src, { labels: [word.label], themes: [theme.label] })
     }
   }

@@ -52,7 +52,22 @@ const cases=[{pages:[oldPage]}, {pages:[{domain:'algèbre',exerciseType:'add'}],
 assert.deepEqual(cases.map(hasRetiredGrammarRecipe),[true,true,true,false,false,false,false,true])
 assert.equal(parseFicheRecipe({...input([oldPage])}),null);assert(!isRetiredGrammarType('gram-ex-famille-fam-co'))
 const protectedFiles=require('../docs/grammaire/implementation/audit-banques-historiques-20261122.json').protectedSha256
-for(const [p,hash] of Object.entries(protectedFiles))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(root+'/'+p)).digest('hex'),hash,p)
+// Source wrapping is explicitly requested by the owner; the decoded CO must still match.
+const editorialProof=require('../docs/tcf/format-json-ce-co-20261123.json')
+const {canonicalEditorialJson}=load(root+'/src/tcf/editorial-json.mjs')
+for(const [p,hash] of Object.entries(protectedFiles)){
+ const bytes=fs.readFileSync(root+'/'+p),actual=crypto.createHash('sha256').update(bytes).digest('hex')
+ if(actual===hash)continue
+ if(p==='src/grammaire/exercises/co-bank.ts'){
+  const before=bytes.toString().replace("import { normalizeEditorialBank } from '@/tcf/editorial-json.mjs'\n",'').replace('normalizeEditorialBank(rawBank) as GrammarCoEntry[]','rawBank as GrammarCoEntry[]')
+  assert.equal(crypto.createHash('sha256').update(before).digest('hex'),hash,p)
+  continue
+ }
+ const proof=editorialProof.files.find(row=>row.path===p)
+ assert(proof&&proof.contentPreserved&&proof.matchesInitialBaseline&&proof.beforeSha256===hash,p)
+ assert.equal(actual,proof.afterSha256,p)
+ assert.equal(crypto.createHash('sha256').update(canonicalEditorialJson(JSON.parse(bytes))).digest('hex'),proof.semanticSha256,p)
+}
 ;(async()=>{
  const rows=cases.map((recipe,i)=>({id:'fixture-'+i,recipe})),deleted=[]
  const request=async(path,method)=>method==='DELETE'?deleted.push(path):{fiches:rows}

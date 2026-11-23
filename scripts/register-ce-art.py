@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 """Intègre une image réellement générée, après contrôle visuel documenté."""
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from audio_replacement.editorial_json import loads as editorial_json_loads
+
 import argparse,hashlib,json,shutil,subprocess
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
-def read(path):return json.loads((ROOT/path).read_text())
+def read(path):return editorial_json_loads((ROOT/path).read_text())
 def save(path,value):(ROOT/path).write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n')
 def main():
  p=argparse.ArgumentParser();p.add_argument('--id',required=True);p.add_argument('--source',required=True);p.add_argument('--review',required=True);p.add_argument('--preserve-original',action='store_true',help='Register the generated PNG without conversion.');args=p.parse_args()

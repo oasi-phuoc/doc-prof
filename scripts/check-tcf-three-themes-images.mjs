@@ -1,9 +1,10 @@
+import {parseEditorialJson} from '../src/tcf/editorial-json.mjs'
 import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { createServer } from 'vite'
 
-const review = JSON.parse(readFileSync('docs/tcf/po-trois-themes-images-20261107.json', 'utf8'))
+const review = parseEditorialJson(readFileSync('docs/tcf/po-trois-themes-images-20261107.json', 'utf8'))
 const approved = new Map(review.images.map((r) => [r.after, r]))
 for (const row of review.images) {
   assert.equal(row.status, 'visually_reviewed_for_theme')
@@ -23,7 +24,7 @@ try {
   }
   const draws = new Set()
   for (const level of ['a0-a1', 'a1-a2']) {
-    const exercise = JSON.parse(readFileSync(`src/tcf/content/${level}/po.json`, 'utf8')).find((e) => e.type_exercice === 'trois_themes')
+    const exercise = parseEditorialJson(readFileSync(`src/tcf/content/${level}/po.json`, 'utf8')).find((e) => e.type_exercice === 'trois_themes')
     assert.equal(exercise.support.themes.length, 15)
     for (const theme of exercise.support.themes) {
       assert.ok(theme.images.length >= 4)

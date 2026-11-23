@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {parseEditorialJson} from '../src/tcf/editorial-json.mjs'
 /** Applique scripts/tcf-co-audio-overrides.json sur les banques CO. */
 import { readFileSync, writeFileSync, existsSync } from 'node:fs'
 import { join } from 'node:path'
@@ -12,12 +13,12 @@ if (!existsSync(OVERRIDES)) {
   process.exit(1)
 }
 
-const overrides = JSON.parse(readFileSync(OVERRIDES, 'utf8'))
+const overrides = parseEditorialJson(readFileSync(OVERRIDES, 'utf8'))
 let n = 0
 for (const level of LEVELS) {
   const path = join(ROOT, 'src/tcf/content', level, 'co.json')
   if (!existsSync(path)) continue
-  const data = JSON.parse(readFileSync(path, 'utf8'))
+  const data = parseEditorialJson(readFileSync(path, 'utf8'))
   let changed = false
   for (const ex of data) {
     const audio = ex?.support?.audio

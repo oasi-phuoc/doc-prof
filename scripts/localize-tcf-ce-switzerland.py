@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 """Localise la banque CE CSC et conserve un relevé des changements à relire."""
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from audio_replacement.editorial_json import loads as editorial_json_loads
+
 import copy,json,re
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
@@ -78,7 +83,7 @@ def repair_choices(ex):
  return changed
 
 def main():
- old=json.loads(BANK.read_text());data=transform(old)
+ old=editorial_json_loads(BANK.read_text());data=transform(old)
  # Le récit genevois remplace l’historique français et ses chiffres de participation.
  for e in data:
   if e['id']=='delf-a1-2022-ce-ex4-voisins':
@@ -100,7 +105,7 @@ def main():
  report_path=ROOT/'docs/tcf/ce-swiss-localization.json'
  # Un second passage ne doit pas effacer l’historique du premier.
  if report_path.exists():
-  previous=json.loads(report_path.read_text())['changedExercises']
+  previous=editorial_json_loads(report_path.read_text())['changedExercises']
   by_id={x['id']:x for x in previous}
   for row in report:
    if row['id'] in by_id:

@@ -111,7 +111,9 @@
     "test:grammar:activite": "node scripts/test-grammar-activite.cjs",
     "test:grammar:activite:browser": "node tests/grammar/activite-browser.mjs && node tests/grammar/activite-pdf.mjs",
     "test:grammar:espace": "node scripts/test-grammar-espace.cjs",
-    "test:grammar:espace:browser": "node tests/grammar/espace-browser.mjs && node tests/grammar/espace-pdf.mjs"
+    "test:grammar:espace:browser": "node tests/grammar/espace-browser.mjs && node tests/grammar/espace-pdf.mjs",
+    "format:comprehension": "node scripts/format-comprehension-json.mjs --write",
+    "test:comprehension:json": "node --test tests/tcf-editorial-json.test.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

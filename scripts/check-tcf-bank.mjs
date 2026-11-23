@@ -1,3 +1,4 @@
+import {parseEditorialJson} from '../src/tcf/editorial-json.mjs'
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { createServer } from 'vite'
@@ -15,7 +16,7 @@ try {
   const all = []
   for (const level of ['a0-a1', 'a1-a2', 'a2-b1']) {
     for (const skill of ['ce', 'co']) {
-      const rows = JSON.parse(readFileSync(`src/tcf/content/${level}/${skill}.json`, 'utf8'))
+      const rows = parseEditorialJson(readFileSync(`src/tcf/content/${level}/${skill}.json`, 'utf8'))
       for (const ex of rows) {
         assert.ok(isTcfExerciseShape(ex), ex.id)
         assert.deepEqual(validateTcfExercise(ex).errors, [], ex.id)
@@ -25,10 +26,10 @@ try {
   }
   assert.equal(tcfBankAllLevels('CE').length + tcfBankAllLevels('CO').length, all.length,
     'No corrected exercise may disappear when the application loads the bank')
-  const durations = JSON.parse(readFileSync('src/tcf/content/audio-durations.json', 'utf8'))
-  const reviewedPools = JSON.parse(readFileSync('src/tcf/content/co-reviewed-pools.json', 'utf8'))
+  const durations = parseEditorialJson(readFileSync('src/tcf/content/audio-durations.json', 'utf8'))
+  const reviewedPools = parseEditorialJson(readFileSync('src/tcf/content/co-reviewed-pools.json', 'utf8'))
   const audioEntries = tcfAudioEntries(all.filter(ex => ex.competence === 'CO'))
-  const aliases = JSON.parse(readFileSync('src/tcf/content/audio-replacements.json', 'utf8'))
+  const aliases = parseEditorialJson(readFileSync('src/tcf/content/audio-replacements.json', 'utf8'))
   for (const [oldPath, currentPath] of Object.entries(aliases)) {
     assert.equal(resolveTcfAudioReference(oldPath), currentPath)
     assert.ok(audioEntries.some(entry => entry.audio === currentPath && entry.questionPool?.length), currentPath)

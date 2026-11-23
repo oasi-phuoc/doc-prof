@@ -1,3 +1,4 @@
+import {parseEditorialJson} from '../src/tcf/editorial-json.mjs'
 /**
  * Pour les questions CE/CO qui n’ont que la forme Phrase (lignes) :
  * ajoute formes.qcm_texte avec la bonne réponse (= reponse_modele) + 2 distracteurs
@@ -269,7 +270,7 @@ let questions = 0
 let skipped = 0
 
 for (const file of walk(ROOT)) {
-  const data = JSON.parse(readFileSync(file, 'utf8'))
+  const data = parseEditorialJson(readFileSync(file, 'utf8'))
   if (!Array.isArray(data)) continue
   let changed = false
   for (const ex of data) {

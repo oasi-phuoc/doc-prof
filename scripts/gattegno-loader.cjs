@@ -9,7 +9,7 @@ function load(file) {
   if (!path.extname(file)) file = fs.existsSync(file + '.ts') ? file + '.ts' : fs.existsSync(file + '.tsx') ? file + '.tsx' : path.join(file,'index.ts')
   if (cache.has(file)) return cache.get(file).exports
   const module = { exports: {} }; cache.set(file, module)
-  if (file.endsWith('.json')) { module.exports=JSON.parse(fs.readFileSync(file,'utf8')); return module.exports }
+  if (file.endsWith('.json')) { const raw=JSON.parse(fs.readFileSync(file,'utf8')); module.exports=/\/src\/(?:tcf\/content\/[^/]+\/(?:ce|co)\.json|grammaire\/exercises\/co-bank\.json)$/.test(file)?load(path.join(root,'src/tcf/editorial-json.mjs')).normalizeEditorialBank(raw):raw; return module.exports }
   if (/\.(?:webp|svg|png|jpg)$/.test(file)) { module.exports=file; return file }
   const source = fs.readFileSync(file, 'utf8').replace(/import\.meta\.glob\('([^']+)',\s*\{[^}]*\}\)/g, (_match,pattern) => `require(${JSON.stringify('__eager_glob__:'+pattern)})`)
     .replace(/\bimport\.meta\.env\b/g, '__testViteEnv')

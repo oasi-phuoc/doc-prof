@@ -4,6 +4,11 @@ An earlier review is reused only for the same question, choices, correct answer,
 written model and source word sequence. Punctuation/case changes are harmless;
 changed words or numbers require a fresh review. This is not a new audio listen.
 """
+try:
+    from scripts.audio_replacement.editorial_json import loads as editorial_json_loads
+except ModuleNotFoundError:
+    from audio_replacement.editorial_json import loads as editorial_json_loads
+
 import argparse
 from collections import Counter, defaultdict
 import hashlib
@@ -58,18 +63,18 @@ def prepare():
     prior = {}
     for bank in BANKS:
         relative = str(bank.relative_to(ROOT))
-        old = json.loads(subprocess.check_output(['git', 'show', f'{REFERENCE}:{relative}'], cwd=ROOT, text=True))
+        old = editorial_json_loads(subprocess.check_output(['git', 'show', f'{REFERENCE}:{relative}'], cwd=ROOT, text=True))
         for exercise in old:
             for index, question in enumerate(exercise.get('questions', []), 1):
                 content, _ = source_for(exercise, question)
                 key = (digest(semantic_question(question)), digest(source_words(content)))
                 prior.setdefault(key, dict(bank=relative, exercise=exercise['id'], question=index))
-    priorities = set(json.loads((ROOT / 'docs/tcf/demande-audit-ce-co-20261106.json').read_text())['priority_examples'])
-    pending_audio = {r['ref']: r for r in json.loads((ROOT / 'docs/tcf/remplacement-audio/bascule-restant-20261105.json').read_text())['items']}
+    priorities = set(editorial_json_loads((ROOT / 'docs/tcf/demande-audit-ce-co-20261106.json').read_text())['priority_examples'])
+    pending_audio = {r['ref']: r for r in editorial_json_loads((ROOT / 'docs/tcf/remplacement-audio/bascule-restant-20261105.json').read_text())['items']}
     rows, sources, grouped = [], {}, defaultdict(list)
     for bank in BANKS:
         relative = str(bank.relative_to(ROOT))
-        for exercise in json.loads(bank.read_text()):
+        for exercise in editorial_json_loads(bank.read_text()):
             for index, question in enumerate(exercise.get('questions', []), 1):
                 content, audio = source_for(exercise, question)
                 source_id = digest(source_words(content))
@@ -114,7 +119,7 @@ def prepare():
 
 
 def mark_groups(numbers):
-    report = json.loads(REPORT.read_text())
+    report = editorial_json_loads(REPORT.read_text())
     approved = set()
     for group in report['fresh_review_groups']:
         if group['id'] in numbers:
@@ -143,7 +148,7 @@ def main():
     elif args.mark_groups:
         mark_groups(set(args.mark_groups))
     elif args.show_groups:
-        report = json.loads(REPORT.read_text())
+        report = editorial_json_loads(REPORT.read_text())
         for group in report['fresh_review_groups']:
             if group['id'] in args.show_groups:
                 print('\nGROUPE', group['id'], json.dumps(group['source'], ensure_ascii=False))
@@ -152,7 +157,7 @@ def main():
                           ' | '.join(('*' if c['correct'] else '') + str(c['text']) for c in q['semantic']['choices']),
                           'MODÈLE', q['semantic']['written_model'])
     else:
-        print(json.dumps(json.loads(REPORT.read_text())['summary'], ensure_ascii=False))
+        print(json.dumps(editorial_json_loads(REPORT.read_text())['summary'], ensure_ascii=False))
 
 
 if __name__ == '__main__':
