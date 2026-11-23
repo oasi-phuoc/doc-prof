@@ -190,7 +190,3 @@ Références destinées à comparer les styles et à guider les prochaines gén�
 - **Mots-clés par image** : nom du sujet, catégorie, éléments visibles, contexte ou usage, sans inventer des éléments absents.
 - **Styles distincts** : objet isolé sur fond clair, lieu/décor sans personnage, scénario contextualisé avec personnages, selon les consignes du dépôt.
 - **Images originales conservées** : toutes les références ci-dessus sont des liens vers les fichiers existants.
-
-## Lot complémentaire de décors (23 novembre 2026)
-
-Les 100 créations individuelles sont listées dans [le manifeste avec mots-clés](decors-20261123.json). Les 18 références ci-dessus restent inchangées et servent uniquement à comparer les familles d'images ; aucune image de référence n'est écrasée.
