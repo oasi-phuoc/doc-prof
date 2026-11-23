@@ -74,6 +74,12 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
       if (image.type === 'Objet') reviewedObjects.add(image.path)
     }
   }
+  // Décors individuels : le manifeste enrichit recherche, titres et filtres.
+  // Le lot est marqué « generated » : aucun contrôle visuel n'est présumé.
+  for (const image of read(root, 'docs/gallery/decors-20261123.json', {}).images ?? []) {
+    if (image.status !== 'generated' || image.type !== 'Lieu et décor') continue
+    add(image.path, { labels: [image.label], types: ['Lieu et décor'], themes: [image.category, 'Décors inédits 2026'], keywords: image.keywords })
+  }
   for (const image of read(root, 'public/lib/images/tcf/po/illustrations-manifest.json', {}).images ?? []) {
     add(image.path, { labels: [image.title && `${image.title} — scène ${image.step ?? ''}`], themes: [image.title], types: ['Scénario'], keywords: [image.action] })
   }

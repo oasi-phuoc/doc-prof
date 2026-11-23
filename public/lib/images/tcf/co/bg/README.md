@@ -20,3 +20,7 @@ node scripts/check-tcf-qcm-images.mjs
 ```
 
 Les banques modifiées sont `a0-a1/{ce,co}.json` (CSC) et `a1-a2/{ce,co}.json` (CFR). Les textes, supports audio/écrits et bonnes réponses sont conservés. Les identifiants et positions des choix restent synchronisés entre Texte et Image, y compris après mélange et dans les cadres multi-audios.
+
+## Lot de 100 décors du 23 novembre 2026
+
+Le sous-dossier [`decors-inédits-20261123/`](decors-inédits-20261123/) contient **100 illustrations SVG 1280 × 960**, chacune montrant un lieu sans personnage. Les scènes sont dessinées individuellement en vectoriel et leurs mots-clés sont dans [le manifeste](../../../../../../docs/gallery/decors-20261123.json). Les originaux WebP sont inchangés. Les nouveaux SVG ne sont pas étiquetés comme « contrôlés visuellement » ; ils doivent encore passer cette étape si un usage d'examen l'exige.
