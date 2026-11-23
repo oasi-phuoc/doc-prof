@@ -36,7 +36,7 @@ export const galleryImages: GalleryImage[] = [...data, ...additionalDecors].map(
     themes: decor ? ['Lieux et décors', decor.category] : image.themes,
     types: decor ? ['Lieu et décor'] : image.types,
     keywords: decor ? decor.keywords.join(' ') : image.keywords,
-    src: galleryAssetUrls[image.id] ?? `${import.meta.env.BASE_URL}${image.src.replace(/^\\//, '')}`,
+    src: galleryAssetUrls[image.id] ?? `${import.meta.env.BASE_URL}${image.src.replace(/^\//, '')}`,
   }
 })
 export function filterGallery(images: GalleryImage[], query: string, theme: string, type: string, collection: string) {
