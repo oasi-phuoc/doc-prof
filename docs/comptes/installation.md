@@ -43,6 +43,23 @@ Conserver les secrets existants `ACCESS_ADMIN`, `ACCESS_FULL` et `ACCESS_PARTIAL
 
 Ces secrets d’accès du Worker doivent correspondre aux mots de passe des accès existants du site : `ACCESS_ADMIN` à `VITE_ACCESS_ADMIN`, `ACCESS_FULL` à `VITE_ACCESS_FULL`, et `ACCESS_PARTIAL` à `VITE_ACCESS_PARTIAL`. Ils se règlent dans **Variables and Secrets**, de type **Secret**, sans en publier les valeurs. Le jeton de gestion `CLOUDFLARE_API_TOKEN` sert aux outils de déploiement ; ce n’est pas un mot de passe de l’application et il n’est pas requis dans les variables d’exécution du Worker.
 
+**Attention à la section choisie :** les **Build variables** sont disponibles pendant la construction et le déploiement ; elles ne deviennent pas automatiquement des secrets d’exécution. `ACCESS_ADMIN` doit être ajouté au Worker dans **Settings → Variables and Secrets**, en dehors de **Builds**. Sa présence dans la liste des variables du build ne suffit pas.
+
+### Contrôler la configuration du Worker
+
+Après un déploiement réussi, ouvrir `https://clairfle-fiches.phuoc-van.workers.dev/health`. Ce contrôle public ne renvoie que des indicateurs et vérifie les colonnes par des requêtes `SELECT … LIMIT 0`, sans lire de données personnelles ni modifier de fiches.
+
+| Indicateur de `checks` | Si la valeur est `false` |
+|---|---|
+| `adminAccessConfigured` | Le secret d’exécution `ACCESS_ADMIN` est absent ou vide sur ce Worker. |
+| `databaseBound` | La liaison D1 `DB` manque. |
+| `fichesSchemaReady` | La table des fiches ou une de ses colonnes nécessaires, dont `owner_id`, est indisponible. |
+| `accountsSchemaReady` | Les tables des comptes ou sessions, ou leurs colonnes nécessaires, sont indisponibles. |
+
+La réponse porte `service: "clairfle-fiches"`. Le statut HTTP est 200 quand tous les indicateurs sont vrais, 503 sinon ; une réponse 503 contenant ces indicateurs est donc un résultat de diagnostic exploitable. Une réponse 404 indique que cette version de l’API n’est pas encore déployée à l’adresse consultée. Ces indicateurs ne vérifient pas la valeur du mot de passe, l’historique des migrations ni une création effective de compte : après un contrôle positif, poursuivre les vérifications de connexion et de sauvegarde décrites ci-dessous.
+
+Lors d’une demande de gestion des comptes avec un mot de passe saisi, l’absence de `ACCESS_ADMIN` renvoie désormais une erreur de configuration explicite (503), au lieu de signaler un mauvais mot de passe. Un mot de passe incorrect reste refusé (401) ; aucune authentification n’est contournée.
+
 La migration `0002_personal_accounts.sql` crée les utilisateurs, sessions et propriétaires des fiches. La migration `0003_admin_accounts.sql` retire uniquement la table des anciens liens de confirmation ; utilisateurs, sessions et fiches sont conservés. La colonne historique `verified_at` indique désormais l’activation lors de la création par l’administrateur. Les anciens comptes en attente ne sont pas activés automatiquement.
 
 Après déploiement : créer deux comptes depuis l’admin, vérifier leur connexion sans e-mail, enregistrer une fiche avec chacun, puis contrôler que chacun retrouve uniquement ses propres fiches. Vérifier aussi l’attribution et le retrait d’un domaine supplémentaire.

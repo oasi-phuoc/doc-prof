@@ -103,6 +103,38 @@ function json(request: Request, status: number, body: unknown): Response {
   return new Response(JSON.stringify(body), { status, headers })
 }
 
+function adminAccessConfigured(env: Env): boolean {
+  return typeof env.ACCESS_ADMIN === 'string' && env.ACCESS_ADMIN.trim().length > 0
+}
+
+async function accountsHealth(request: Request, env: Env): Promise<Response> {
+  const checkQuery = async (sql: string): Promise<boolean> => {
+    if (!env.DB) return false
+    try {
+      await env.DB.prepare(sql).all()
+      return true
+    } catch {
+      return false
+    }
+  }
+  // LIMIT 0 vérifie les colonnes utilisées, sans lire de données personnelles.
+  const [fichesReady, usersReady, sessionsReady] = await Promise.all([
+    checkQuery('SELECT id, name, domains, recipe, created_at, updated_at, owner_id FROM fiches LIMIT 0'),
+    checkQuery('SELECT id, given_name, family_name, email, password_hash, password_salt, domains, account, verified_at, created_at, failed_logins, locked_until FROM users LIMIT 0'),
+    checkQuery('SELECT token_hash, user_id, expires_at FROM user_sessions LIMIT 0'),
+  ])
+  const checks = {
+    adminAccessConfigured: adminAccessConfigured(env),
+    databaseBound: Boolean(env.DB),
+    fichesSchemaReady: fichesReady,
+    accountsSchemaReady: usersReady && sessionsReady,
+  }
+  const ok = Object.values(checks).every(Boolean)
+  const response = json(request, ok ? 200 : 503, { ok, service: 'clairfle-fiches', checks })
+  response.headers.set('Cache-Control', 'no-store')
+  return response
+}
+
 function safeEqual(a: string, b: string): boolean {
   const left = new TextEncoder().encode(a)
   const right = new TextEncoder().encode(b)
@@ -274,6 +306,10 @@ export default {
       return json(request, 200, { ok: true })
     }
 
+    if (request.method === 'GET' && parts.length === 1 && parts[0] === 'health') {
+      return accountsHealth(request, env)
+    }
+
     if (parts[0] === 'auth') {
       try { return await handleAccounts(request, env, (status, body) => json(request, status, body)) }
       catch { return json(request, 503, { error: 'La gestion des comptes est indisponible. Réessayez plus tard.' }) }
@@ -287,7 +323,12 @@ export default {
     let user: Awaited<ReturnType<typeof personalUser>> = null
     try { user = await personalUser(token, env) } catch { return json(request, 503, { error: 'La synchronisation est indisponible.' }) }
     const account = user?.account ?? accountFromPassword(token, env)
-    if (!account) return json(request, 401, { error: 'Mot de passe refusé.' })
+    if (!account) {
+      if (parts[0] === 'users' && token && !token.startsWith('cfu_') && !adminAccessConfigured(env)) {
+        return json(request, 503, { error: 'L’accès administrateur n’est pas configuré sur le serveur. Ajoutez ACCESS_ADMIN comme secret du Worker dans Variables and Secrets, en dehors de la section Builds.' })
+      }
+      return json(request, 401, { error: 'Mot de passe refusé.' })
+    }
 
     try {
       if (parts[0] === 'users') {
