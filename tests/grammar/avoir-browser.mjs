@@ -22,7 +22,7 @@ try {
  await choose('Domaine','Grammaire');await choose('Thème','Conjuguer au présent');await choose('Sous-thème','Avoir')
  await choose('Type d’exercice','Conjuguer avoir')
  const level=page.getByLabel('Niveau de grammaire',{exact:true}).locator('.select-control-value')
- assert.equal(await level.textContent(),'Banque actuelle')
+ assert.equal(await level.textContent(),'A1 — pilote')
  for(const [suffix,presentation,label] of [
   ['qcm-conj','choice','Conjuguer avoir'],['qcm-conj','gap','Conjuguer avoir'],
   ['corriger-erreur','correct','Corriger l’erreur'],['ordre','order','Mots dans l’ordre'],

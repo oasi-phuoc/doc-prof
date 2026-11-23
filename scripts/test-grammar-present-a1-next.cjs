@@ -5,7 +5,7 @@ const {grammarEligibleCount,generateGrammarSelection:select}=load(root+'/src/gra
 const {buildFicheRecipe,parseFicheRecipe}=load(root+'/src/fiches/recipe.ts')
 const {convertRecipe}=load(root+'/src/interactive/domain/convert.ts')
 const {resolveGramSubthemeAll}=load(root+'/src/grammaire/exercises/catalog-exercises.ts')
-const {lessonForType}=load(root+'/src/grammaire/exercises/bank/index.ts')
+const {historicalLessonForType:lessonForType}=require('./grammar-legacy-fixture.cjs')
 const selected=banks.filter(b=>b.level==='A1'&&['modaux','pronominaux','a8','a9'].includes(b.subthemeId))
 assert.equal(selected.length,18)
 assert.equal(selected.reduce((n,b)=>n+b.presentations.length,0),22)

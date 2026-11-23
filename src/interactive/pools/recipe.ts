@@ -1,3 +1,4 @@
+import {defaultGrammarPilot} from '@/grammaire/curriculum/registry'
 import {defaultPage,exerciseTypeById} from '@/math/catalog'
 import type {InstitutionalHeader} from '@/components/math/PrintDocumentChrome'
 import {defaultThemeGameContent} from '@/jeux/bank'
@@ -14,7 +15,7 @@ export function poolRecipe(raw:PoolConfig,seed:number):FicheRecipe{
  const config=readPoolConfig(raw)
  if(!Number.isInteger(seed)||seed<0||seed>0xffffffff)throw new Error('La graine de partie est invalide.')
  const pages:PageConfig[]=config.entries.map(entry=>{const type=POOL_TYPE_BY_ID.get(entry.id)!,definition=exerciseTypeById[type.type];if(!definition)throw new Error('Cet exercice n’est plus disponible.')
-  return{...defaultPage(type.domain),topic:type.topic,exerciseType:type.type,track:definition.track,count:entry.count,difficulty:entry.difficulty,columns:definition.preferredColumns??2,extraBlocks:undefined,libreItems:undefined,...(type.domain==='jeux'?defaultThemeGameContent(type.type,'fruits'):{}),...(entry.range?{numberLibre:true,numberMin:entry.range.min,numberMax:entry.range.max,numberDecimals:entry.range.decimals}:{})}
+  return{...defaultPage(type.domain),topic:type.topic,exerciseType:type.type,track:definition.track,count:entry.count,difficulty:entry.difficulty,columns:definition.preferredColumns??2,extraBlocks:undefined,libreItems:undefined,...(type.domain==='jeux'?defaultThemeGameContent(type.type,'fruits'):{}),...(type.domain==='grammaire'?defaultGrammarPilot(type.type):{}),...(entry.range?{numberLibre:true,numberMin:entry.range.min,numberMax:entry.range.max,numberDecimals:entry.range.decimals}:{})}
  })
  return{version:1,pages,seed,institutional:{...EMPTY_CHROME},evalMode:false,pointsPerQuestion:1,libreMode:false,libreSnapshot:null}
 }

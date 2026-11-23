@@ -1,3 +1,4 @@
+import {isRetiredGrammarType} from '../curriculum/retirement'
 import type { ExerciseType } from '@/math/types'
 import { GRAMMAIRE_THEORY_DOCS } from '../theory'
 import { GRAM_EXERCISE_KINDS, gramKindById } from './kinds'
@@ -18,7 +19,7 @@ import { isQuestionReadingType } from './reading-types'
 import { OPEN_QUESTION_KIND_IDS } from './open-questions'
 import { QUEL_QUESTION_KIND_IDS } from './quel-questions'
 import { GRAMMAR_CO_THEMES, grammarCoTypeId } from './co-themes'
-import { GRAMMAR_NEW_PILOT_TYPES } from '../curriculum/registry'
+import { GRAMMAR_NEW_PILOT_TYPES, grammarBanksForType } from '../curriculum/registry'
 import { grammarCoSubthemes, hasGrammarCoTheme } from './co-bank'
 
 /** Sous-thèmes dérivés des fiches théorie (PDF / notions hors conjugaison listée). */
@@ -102,6 +103,7 @@ export function buildGrammairePracticeTypes(): ExerciseType[] {
       const id = gramExerciseTypeId(sub.id, kind.id)
       if (
         bankSize(id) <= 0 &&
+        !grammarBanksForType(id).length &&
         !isQuestionReadingType(id) &&
         !hasGrammarCommunication(sub.id, kind.id) &&
         !(sub.id === 'a1' && isQuiSuisJeKind(kind.id)) &&
@@ -136,7 +138,7 @@ export function buildGrammairePracticeTypes(): ExerciseType[] {
     if (familyWriting>=0) types.splice(familyWriting,0,importedType)
     else types.push(importedType)
   }
-  return [...types,...GRAMMAR_NEW_PILOT_TYPES]
+  return [...types,...GRAMMAR_NEW_PILOT_TYPES].filter(type=>!isRetiredGrammarType(type.id)||grammarBanksForType(type.id).length>0)
 }
 
 export function subthemesForTopicAll(topic: string) {
@@ -152,6 +154,8 @@ export function subthemesForTopicAll(topic: string) {
 export function resolveGramSubthemeAll(topic: string, exerciseType: string) {
   const list = subthemesForTopicAll(topic)
   if (!list.length) return undefined
+  const graded=grammarBanksForType(exerciseType)[0]
+  if(graded)return list.find(s=>s.id===graded.subthemeId)??ALL_GRAM_SUBTHEMES.find(s=>s.id===graded.subthemeId)
   const parsed = parseGramExerciseType(exerciseType)
   if (parsed) {
     return (

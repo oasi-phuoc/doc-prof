@@ -10,34 +10,9 @@ import {
 import { parseGramExerciseType } from './subthemes'
 import { bankForType, lessonForType } from './bank'
 import { gramItemsToTcfExercise, grammarExerciseItems } from './to-tcf'
-import { buildPresentOrder, isPresentSupplementSubtheme, presentOrderQuestionCap } from './present-supplement'
-import { buildQuestionReading, QUESTION_READING_CAP } from './question-reading'
-import { isQuestionReadingType } from './reading-types'
-import { tryBuildModalCommunication } from './modal-communication'
 import { isGrammaireExerciseType } from './types'
 import { buildImportedGrammarCo } from './co-generate'
 import { buildGrammarCommunication, communicationQuestionCap, isCommunicationKind } from './communication'
-import {
-  buildQuiSuisJeExercise,
-  buildQuiSuisJeOrdreItems,
-  isQuiSuisJeKind,
-  quiSuisJeBankCap,
-} from './qui-suis-je'
-import {
-  buildNationaliteExercise,
-  isNationaliteKind,
-  nationaliteBankCap,
-} from './nationalite'
-import {
-  buildProvenanceExercise,
-  isProvenanceKind,
-  provenanceBankCap,
-} from './provenance'
-import {
-  buildFamilleExercise,
-  isFamilleKind,
-  familleBankCap,
-} from './famille'
 
 /** Génère un bloc d’exercices grammaire (déterministe), rendu TCF. */
 export function tryGenerateGrammaireExerciseBlock(
@@ -54,65 +29,6 @@ export function tryGenerateGrammaireExerciseBlock(
   const rng = createRng(seed)
   const importedCo = buildImportedGrammarCo(config,rng)
   if (importedCo) return importedCo
-  if (parsed.subId === 'a1' && isQuiSuisJeKind(parsed.kindId) && !config.tcfExercise) {
-    if (parsed.kindId === 'ordre') {
-      return {
-        instruction: kind.instruction,
-        items: buildQuiSuisJeOrdreItems({ rng, count: Math.max(1, config.count) }),
-        bankQuestionCap: quiSuisJeBankCap(parsed.kindId),
-      }
-    }
-    const exercise = buildQuiSuisJeExercise({
-      kindId: parsed.kindId,
-      typeId,
-      rng,
-      count: Math.max(1, config.count),
-    })
-    return {
-      instruction: exercise.consigne?.trim() || kind.instruction,
-      items: grammarExerciseItems(exercise, rng, config.tcfFormModes),
-      bankQuestionCap: quiSuisJeBankCap(parsed.kindId),
-    }
-  }
-  if (parsed.subId === 'a3' && isNationaliteKind(parsed.kindId) && !config.tcfExercise) {
-    const exercise = buildNationaliteExercise({
-      kindId: parsed.kindId,
-      typeId,
-      rng,
-      count: Math.max(1, config.count),
-    })
-    return {
-      instruction: exercise.consigne?.trim() || kind.instruction,
-      items: grammarExerciseItems(exercise, rng, config.tcfFormModes),
-      bankQuestionCap: nationaliteBankCap(parsed.kindId),
-    }
-  }
-  if (parsed.subId === 'a6' && isProvenanceKind(parsed.kindId) && !config.tcfExercise) {
-    const exercise = buildProvenanceExercise({
-      kindId: parsed.kindId,
-      typeId,
-      rng,
-      count: Math.max(1, config.count),
-    })
-    return {
-      instruction: exercise.consigne?.trim() || kind.instruction,
-      items: grammarExerciseItems(exercise, rng, config.tcfFormModes),
-      bankQuestionCap: provenanceBankCap(parsed.kindId),
-    }
-  }
-  if (parsed.subId === 'famille' && isFamilleKind(parsed.kindId) && !config.tcfExercise) {
-    const exercise = buildFamilleExercise({
-      kindId: parsed.kindId,
-      typeId,
-      rng,
-      count: Math.max(1, config.count),
-    })
-    return {
-      instruction: exercise.consigne?.trim() || kind.instruction,
-      items: grammarExerciseItems(exercise, rng, config.tcfFormModes),
-      bankQuestionCap: familleBankCap(parsed.kindId),
-    }
-  }
   if (config.tcfExercise) {
     const ex = config.tcfExercise
     return {
@@ -120,33 +36,6 @@ export function tryGenerateGrammaireExerciseBlock(
       items: grammarExerciseItems(ex, rng, config.tcfFormModes),
       bankQuestionCap: Math.max(ex.questions.length, 1),
     }
-  }
-
-  if (parsed.subId === 'modaux') {
-    const modal = tryBuildModalCommunication({ kindId: parsed.kindId, typeId, rng, count: config.count, forms: config.tcfFormModes })
-    if (modal) return modal
-  }
-
-  if (isQuestionReadingType(typeId)) {
-    const exercise = buildQuestionReading({ typeId, rng, count: config.count })
-    return {
-      instruction: exercise.consigne ?? kind.instruction,
-      items: grammarExerciseItems(exercise, rng, config.tcfFormModes),
-      bankQuestionCap: QUESTION_READING_CAP,
-    }
-  }
-
-  const orderedItems = buildPresentOrder({
-    ...parsed,
-    count: config.count,
-    rng,
-    polarity: config.phrasePolarity,
-    categories: config.phraseCategories,
-  })
-  if (orderedItems) return {
-    instruction: lessonForType(typeId)?.instruction ?? kind.instruction,
-    items: orderedItems,
-    bankQuestionCap: presentOrderQuestionCap(typeId, config.phrasePolarity, config.phraseCategories),
   }
 
   if (isCommunicationKind(parsed.kindId)) {
@@ -185,7 +74,7 @@ export function tryGenerateGrammaireExerciseBlock(
 
   const lesson = lessonForType(typeId)
   let instruction = lesson?.instruction ?? kind.instruction
-  const keepVerbCue = isPresentSupplementSubtheme(parsed.subId) && !['etre', 'avoir', 'aller-destination'].includes(parsed.subId)
+  const keepVerbCue = false
   const singleVerb = !keepVerbCue && (parsed.kindId === 'qcm-conj' || parsed.kindId === 'fill-conj')
     ? uniqueSampleVerb(sampled)
     : null

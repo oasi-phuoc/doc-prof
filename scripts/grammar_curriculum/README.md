@@ -28,3 +28,11 @@ Après compilation, les contrôles dédiés sont `npm run test:grammar:presentat
 La clôture du thème du 22 novembre utilise `npm run test:grammar:family-completion`, son parcours `:browser` et `node scripts/update-grammar-family-progress.cjs --verified`. Ce dernier conserve les rapports datés précédents et écrit le CSV du 22 novembre. La reconstruction des quatre premières activités de famille reste indépendante et ne remplace pas les trois nouvelles banques.
 
 `npm run test:grammar:image-urls` contrôle le partage et la libération des URL d’images vérifiées. Les nouvelles banques CE acceptent deux à cinq questions par texte avec au moins 50 questions au total ; le lecteur de snapshots conserve la compatibilité avec les anciens questionnaires plus longs.
+
+## Questions et retrait de la branche remplacée — 22 novembre 2026
+
+`python3 scripts/build-grammar-questions-a1.py` écrit exclusivement `curriculum/data/c1.json`, `c2.json` et `c3.json`. Les sources corrigées sont `questions-a1-source.json` et `questions-a1-oral.tsv`. Les 22 activités donnent 24 présentations, 920 unités sélectionnables et 1 500 variantes. Les 60 documents sont utilisés dans six banques de lecture/écriture ; les 50 contextes oraux sont partagés entre trois tâches.
+
+Les anciennes banques des notions migrées sont supprimées du code applicatif, sur demande explicite du propriétaire. Le constructeur historique filtre `retired-subthemes.json` pour ne pas les recréer. Les compléments du présent et modaux ne doivent plus être reconstruits dans l’ancien dossier ; leur base courante est dans `curriculum/data/`. La reconstruction Famille lit seulement ses 40 supports utiles dans `family-a1-reading-sources.json`. Les tests de comparaison historique utilisent Git en lecture seule.
+
+Contrôles : `npm run test:grammar:questions`, `npm run test:grammar:questions:browser`, puis `node scripts/update-grammar-questions-progress.cjs --verified` une fois les preuves obtenues. Les fiches distantes n’ont pas encore pu être nettoyées à cause du blocage réseau 403 ; voir le [rapport de retrait](../../docs/grammaire/implementation/retrait-banques-20261122.md).

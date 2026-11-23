@@ -20,6 +20,10 @@ function sameChoices(value: unknown, source: Array<{id:string;text:string}>): bo
 export function validGrammarReadingQuestion(value: unknown, document: string): value is GrammarReadingQuestion {
   if (!record(value) || !text(value.id) || !text(value.prompt) || !strings(value.answers) || !text(value.explanation) ||
     !strings(value.evidence) || !value.evidence.every(quote=>document.includes(quote))) return false
+  if(value.writingTask!==undefined){
+    const task=value.writingTask
+    if(value.response!=='short'||!record(task)||!text(task.information)||!['closed','open','quel'].includes(String(task.form))||!rubric(task.rubric))return false
+  }
   if (value.response==='short') return value.options===undefined
   return value.response==='choice' && choices(value.options) &&
     (value.options as Array<{text:string}>).filter(c=>(value.answers as string[]).some(a=>key(a)===key(c.text))).length===1
@@ -56,6 +60,7 @@ export function validGrammarUnit(value: unknown): value is GrammarUnit {
     }
     return (value.answers as string[]).every(answer=>key(answer)!==key(value.prompt as string))
   }
+  if(value.directiveDisplay!==undefined && (value.kind!=='transform'||value.directiveDisplay!=='heading'||!text(value.directive)))return false
   if (value.kind==='transform') return (text(value.targetSubject) && value.directive===undefined ||
     text(value.directive) && value.targetSubject===undefined) && (value.answers as string[]).every(answer=>key(answer)!==key(value.prompt as string))
   if (value.kind==='order') return Array.isArray(value.tokens) && value.tokens.length>=2 && value.tokens.length<=32 &&

@@ -12,7 +12,6 @@ import { isNegativePhraseTheme, isPhraseThemeId } from '@/francais/phrase-themes
 import { phraseSelection } from '@/francais/phrase-options'
 import {newPictureSentence} from '@/francais/phrase-images'
 import {blockItemsForConfig} from './sheet-items'
-import { isPresentSupplementOrderType, presentOrderQuestionCap } from '@/grammaire/exercises/present-supplement'
 import {
   ACCESS_DOMAIN_OPTIONS,
 } from '@/access'
@@ -158,7 +157,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
     quadPool,
   } = p
   const grammarCoTheme = grammarCoThemeForType(activeBlock.exerciseType)
-  const isGrammarOrder = isGrammaireDomain && (isPresentSupplementOrderType(activeBlock.exerciseType) || activeBlock.grammarPresentation==='order')
+  const isGrammarOrder = isGrammaireDomain && activeBlock.grammarPresentation==='order'
   const showPhraseParameters = (isPhraseDomain && !isPhraseChart) || isGrammarOrder
   const showGrammarCoLevel = grammarCoTheme && (activeBlock.exerciseType.endsWith('-co-theme') || hasGrammarCoTheme(grammarCoTheme.id))
   const grammarCoLevel = activeBlock.grammarCoLevel ?? (grammarCoTheme ? defaultGrammarCoLevel(grammarCoTheme.id) : 'A1')
@@ -331,7 +330,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   onChange={phrasePolarity => {
                     if (activeBlock.grammarLevel && activeBlock.libreItems?.length && !window.confirm('Ces filtres remplaceront les modifications manuelles de cet exercice. Continuer ?')) return
                     const countCap = isGrammarOrder
-                      ? activeBlock.grammarLevel ? grammarEligibleCount({...activeBlock,phrasePolarity}) : presentOrderQuestionCap(activeBlock.exerciseType, phrasePolarity, activeBlock.phraseCategories)
+                      ? grammarEligibleCount({...activeBlock,phrasePolarity})
                       : activeBlock.count
                     updatePage({
                       ...clearLibreContentFreeze(),
@@ -352,7 +351,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                     const cap = isPhraseThemeId(activeBlock.topic)
                       ? phraseSelection(activeBlock.topic, activeBlock.verbGroup ?? 'er', phraseCategories).frames.length
                       : isGrammarOrder
-                        ? activeBlock.grammarLevel ? grammarEligibleCount({...activeBlock,phraseCategories}) : presentOrderQuestionCap(activeBlock.exerciseType, activeBlock.phrasePolarity ?? 'positive', phraseCategories)
+                        ? grammarEligibleCount({...activeBlock,phraseCategories})
                         : activeBlock.count
                     updatePage({
                       ...clearLibreContentFreeze(),

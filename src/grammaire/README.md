@@ -1,3 +1,7 @@
+# Base graduée et retrait des anciennes banques — 22 novembre 2026
+
+Les notions migrées utilisent désormais uniquement `curriculum/data/`, avec leurs niveaux A1/A2/B1 réellement disponibles. Les anciennes banques et les générateurs spécialisés remplacés ont été retirés à la demande du propriétaire. Les recettes historiques sans niveau de ces notions sont retirées ; les recettes graduées, théories, CO et notions non migrées restent utilisables. Les anciennes descriptions ci-dessous sont un historique technique et peuvent citer des fichiers supprimés. Voir [le suivi courant](../../docs/grammaire/implementation/README.md) et [le retrait des banques](../../docs/grammaire/implementation/retrait-banques-20261122.md).
+
 # Grammaire — théorie FALC (SCAI) + exercices
 
 Domaine dédié pour les **fiches de théorie** FALC et les **exercices** liés à chaque sous-thème.

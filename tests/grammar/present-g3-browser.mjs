@@ -26,7 +26,7 @@ try {
   await choose('Sous-thème',subLabel)
   await choose('Type d’exercice',qLabel)
   const level=page.getByLabel('Niveau de grammaire',{exact:true}).locator('.select-control-value')
-  assert.equal(await level.textContent(),'Banque actuelle')
+  assert.equal(await level.textContent(),'A1 — pilote')
   const offerings=[['choice',qLabel],['gap',qLabel],['correct','Corriger l’erreur'],['order','Mots dans l’ordre'],['transform','Transformer une phrase']]
   if(sub==='aller-destination')offerings.push(['open-oral','Dire où l’on va'])
   for(const [presentation,label] of offerings) {

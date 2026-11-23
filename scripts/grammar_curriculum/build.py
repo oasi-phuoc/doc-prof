@@ -29,13 +29,17 @@ for lesson in LESSONS+PROTECTED:
   if row.get('options'):
    assert len(row['options'])==len(set(row['options']))==3,row
    assert row['options'].count(row['answer'])==1,row
+retired=set(json.loads((ROOT/'src/grammaire/curriculum/retired-subthemes.json').read_text()))
+LESSONS[:]=[row for row in LESSONS if row['subId'] not in retired]
+PROTECTED[:]=[row for row in PROTECTED if row['subId'] not in retired]
+ALL[:]=[row for row in ALL if row['subId'] not in retired]
 bank=ROOT/'src/grammaire/exercises/bank'
 for filename,name,data in [('lessons-revised','GRAM_LESSONS_REVISED',LESSONS),('lessons-protected','GRAM_LESSONS_PROTECTED',PROTECTED)]:
  (bank/(filename+'.ts')).write_text("import type { GramLesson } from '../types'\n\n/** Généré par scripts/grammar_curriculum/build.py ; données éditoriales relues. */\nexport const "+name+': GramLesson[] = '+json.dumps(data,ensure_ascii=False,indent=2)+'\n')
 (ROOT/'src/grammaire/exercises/communication-data.json').write_text(json.dumps(ALL,ensure_ascii=False,indent=2)+'\n')
 # Theory is authored directly in src/grammaire/theory; preserve it when rebuilding exercises.
 report={
- 'theoryRewritten':0,'theoryProtected':113,'newPracticeBanks':104,'newPracticeItems':5200,
+ 'theoryRewritten':0,'theoryProtected':113,'newPracticeBanks':len(LESSONS),'newPracticeItems':sum(len(x['items']) for x in LESSONS),
  'protectedBanksCompleted':len(PROTECTED),'protectedBankItems':sum(len(x['items']) for x in PROTECTED),
  'communicativeThemes':len(ALL),'variantsPerCommunicationType':10,'newCommunicationTypes':3*len(ALL),
  'communicationVariants':3*sum(len(x['variants']) for x in ALL),'readingQuestions':sum(len(v['questions']) for x in ALL for v in x['variants']),

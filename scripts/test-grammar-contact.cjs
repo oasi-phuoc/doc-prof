@@ -6,7 +6,7 @@ const {resolveGramSubthemeAll}=load(root+'/src/grammaire/exercises/catalog-exerc
 const {typeChoicesForBlock}=load(root+'/src/components/generator/generator-derived.ts')
 const {buildFicheRecipe,parseFicheRecipe}=load(root+'/src/fiches/recipe.ts')
 const {convertRecipe}=load(root+'/src/interactive/domain/convert.ts')
-const {lessonForType}=load(root+'/src/grammaire/exercises/bank/index.ts')
+const {historicalLessonForType:lessonForType}=require('./grammar-legacy-fixture.cjs')
 const {buildPage}=load(root+'/src/math/generate.ts')
 const {splitGradedGrammarPages}=load(root+'/src/grammaire/curriculum/pagination.ts')
 const set=banks.filter(b=>b.topic==='gram-entrer-contact')

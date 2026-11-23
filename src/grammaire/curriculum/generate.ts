@@ -1,3 +1,4 @@
+import {isRetiredGrammarType} from './retirement'
 import { createRng, shuffle } from '@/math/rng'
 import type { ExerciseBlock, MathItem, PageConfig } from '@/math/types'
 import { grammarBankFor } from './registry'
@@ -84,6 +85,7 @@ export function generateGrammarSelection(block: ExerciseBlock, seed: number): Gr
 
 export function generateGradedGrammarBlock(config: PageConfig, seed: number): { instruction:string;items:MathItem[];bankQuestionCap:number } | null {
   if (config.domain!=='grammaire' || isProtectedGrammarCo(config.exerciseType)) return null
+  if(!hasGrammarSettings(config)&&isRetiredGrammarType(config.exerciseType))throw new GrammarCurriculumError('GRAMMAR_RETIRED_BANK','Cette ancienne fiche a été retirée. Créez une fiche avec la nouvelle banque A1, A2 ou B1.')
   if (!hasGrammarSettings(config) && !config.exerciseType.includes('-curriculum-')) return null
   const selection=generateGrammarSelection(config,seed)
   return {instruction:selection.instruction,items:grammarItems(selection),bankQuestionCap:grammarEligibleCount(config)||selection.questions.length}

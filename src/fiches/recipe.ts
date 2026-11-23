@@ -1,3 +1,4 @@
+import {hasRetiredGrammarRecipe} from '@/grammaire/curriculum/retirement'
 import type { InstitutionalHeader } from '@/components/math/PrintDocumentChrome'
 import { isSheetFontId, type SheetFontId } from '@/typography/font-ids'
 import type { SheetFormat } from '@/components/generator/sheet-format'
@@ -120,7 +121,7 @@ function migratePage(page: PageConfig): PageConfig {
 }
 
 export function parseFicheRecipe(value: unknown): FicheRecipe | null {
-  if (!isRecord(value) || value.version !== 1) return null
+  if (!isRecord(value) || value.version !== 1 || hasRetiredGrammarRecipe(value)) return null
   if (!Array.isArray(value.pages) || value.pages.length === 0 || value.pages.length > 60) return null
   if (!value.pages.every(isPage)) return null
   if (typeof value.seed !== 'number' || !Number.isFinite(value.seed)) return null

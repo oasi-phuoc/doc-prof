@@ -1,5 +1,7 @@
 # Implémentation du curriculum Grammaire — pilotes et extension A1
 
+**État courant — 22 novembre :** « Les questions » atteint 24/24 offres A1 en pilote. Les anciennes banques des 25 notions migrées sont supprimées à la demande du propriétaire ; les sauvegardes historiques sans niveau sont retirées. Les indications antérieures de conservation restent un historique. Voir [le bilan du thème](avancement-20261122-questions.md), [le retrait des banques](retrait-banques-20261122.md) et [les vérifications](verification-questions-20261122.json). Le nettoyage distant des fiches reste bloqué par le réseau 403 ; aucune suppression serveur n’est prétendue.
+
 **22 novembre 2026 — Se présenter terminé en pilote A1 : 40/40 offres.** Les trois dernières activités de famille ajoutent 150 unités et des associations manipulables par problèmes complets. Les nouvelles fiches de ce thème proposent directement A1 ; les recettes anciennes sans niveau gardent leur rendu. L’[audit des banques historiques](audit-banques-historiques-20261122.json) ne valide aucune suppression des anciennes données encore référencées. Voir le [bilan du thème](avancement-20261122.md).
 
 Lancement du 11 novembre 2026. Référence G0 : `ff743145ce6724a78cc898789c5aaf36a0004474`.

@@ -42,7 +42,7 @@ import {
   subthemesForTopicAll,
 } from '@/grammaire/exercises'
 import { GRAM_EXERCISE_KINDS } from '@/grammaire/exercises/kinds'
-import { GRAMMAR_NEW_PILOT_TYPES, grammarBanksForType } from '@/grammaire/curriculum/registry'
+import { GRAMMAR_NEW_PILOT_TYPES, GRAMMAR_PILOT_BANKS, grammarBanksForType } from '@/grammaire/curriculum/registry'
 import { COORD_LETTER_MAX, COORD_SHAPES } from '@/math/coord-reperage'
 import { TRANSFORM_MAX_POINTS } from '@/math/coord-transformations'
 import type { Domain, ExerciseBlock, WorksheetPage } from '@/math/types'
@@ -132,11 +132,14 @@ export function typeChoicesForBlock(
       return exerciseTypeById[id]
     }).filter((t): t is NonNullable<typeof t> => Boolean(t))
     const graded=GRAMMAR_NEW_PILOT_TYPES.filter(type=>grammarBanksForType(type.id).some(bank=>bank.subthemeId===sub.id))
+    if(['c1','c2','c3'].includes(sub.id)){
+      const ids=[...new Set(GRAMMAR_PILOT_BANKS.filter(b=>b.subthemeId===sub.id).map(b=>b.activityId))]
+      return [...theory,...ids.map(id=>exerciseTypeById[id]).filter((t):t is NonNullable<typeof t>=>Boolean(t))]
+    }
     const choices=[...theory, ...practice, ...graded]
     if(sub.id==='famille'){
-      // New reading tasks are merged into Photo de famille. An archived récit
-      // keeps its own selected type and generator while the writing stays last.
-      const available=choices.filter(t=>t.id!=='gram-ex-famille-fam-recit'||block.exerciseType===t.id)
+      // Family readings use Photo de famille; writing remains last.
+      const available=choices.filter(t=>t.id!=='gram-ex-famille-fam-recit')
       return [...available.filter(t=>t.id!=='gram-ex-famille-fam-pe'),...available.filter(t=>t.id==='gram-ex-famille-fam-pe')]
     }
     return choices

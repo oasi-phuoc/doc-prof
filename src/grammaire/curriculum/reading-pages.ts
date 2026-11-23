@@ -24,7 +24,7 @@ export function grammarReadingSlices(block:WorksheetBlock,sourceBlockIndex:numbe
     }
     questions.forEach((item,index)=>{
       const child=item.grammar?grammarReadingChild(item.grammar):undefined
-      const cost=child?.response==='choice'?65:50
+      const cost=child?.writingTask?100:child?.response==='choice'?65:50
       // Continuations have no exercise heading and retain the same font size.
       if (used+cost>(first?160:180) && pending.length) {push();offset=start+index}
       pending.push(item);used+=cost

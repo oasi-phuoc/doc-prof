@@ -1,0 +1,80 @@
+{
+  "date": "2026-11-22",
+  "authorization": "Suppression explicitement demandée par le propriétaire dans cette conversation.",
+  "retiredSubthemes": [
+    "etre",
+    "er-particuliers",
+    "imparfait-ou-pc",
+    "i4",
+    "k10",
+    "avoir",
+    "aller-destination",
+    "er",
+    "ir",
+    "re-oir",
+    "modaux",
+    "pronominaux",
+    "a8",
+    "a9",
+    "b1",
+    "b2",
+    "b3",
+    "a2",
+    "a6",
+    "a1",
+    "a3",
+    "famille",
+    "c1",
+    "c2",
+    "c3"
+  ],
+  "legacyRuntimeBanksRemoved": [
+    {
+      "file": "src/grammaire/exercises/bank/lessons-protected.ts",
+      "removedBanks": 7,
+      "removedItems": 350
+    },
+    {
+      "file": "src/grammaire/exercises/bank/lessons-revised.ts",
+      "removedBanks": 17,
+      "removedItems": 850
+    }
+  ],
+  "deletedFiles": [
+    "src/grammaire/exercises/question-transform-data.json",
+    "src/grammaire/exercises/question-response-data.json",
+    "src/grammaire/exercises/question-open-transform-data.json",
+    "src/grammaire/exercises/question-quel-data.json",
+    "src/grammaire/exercises/question-reading-data.json",
+    "src/grammaire/exercises/question-open-reading-data.json",
+    "src/grammaire/exercises/question-quel-reading-data.json",
+    "src/grammaire/exercises/question-reading.ts",
+    "src/grammaire/exercises/question-transforms.ts",
+    "src/grammaire/exercises/family-reading.ts",
+    "src/grammaire/exercises/family-reading-data.json",
+    "src/grammaire/exercises/family-message-data.json",
+    "src/grammaire/exercises/present-supplement.ts",
+    "src/grammaire/exercises/present-supplement-data.json",
+    "src/grammaire/exercises/modal-communication.ts",
+    "src/grammaire/exercises/modal-reading-data.json",
+    "src/grammaire/exercises/modal-production-data.json",
+    "scripts/build-modal-production.py",
+    "scripts/build-present-supplement.py",
+    "scripts/audit-grammar-legacy-usage.cjs"
+  ],
+  "remoteSavedFiches": {
+    "status": "blocked_network_403",
+    "deleted": 0,
+    "maintenanceSQL": "api/fiches/maintenance/purge-retired-grammar.sql",
+    "maintenanceCLI": "scripts/prune-retired-grammar-fiches.cjs"
+  },
+  "remainingLegacyNotions": "Les notions non migrées conservent leur base jusqu’à leur remplacement thème par thème.",
+  "remainingLegacyBanks": 73,
+  "retiredStillLoaded": 0,
+  "obsoleteCoAliasesRemoved": [
+    {
+      "type": "gram-ex-a3-nat-co",
+      "reason": "Ancienne activité Ali sans enregistrement disponible ; ne fait pas partie des CO importées actives."
+    }
+  ]
+}

@@ -31,7 +31,7 @@ try {
   if(process.env.GRAMMAR_A1_SUBTHEMES&&!process.env.GRAMMAR_A1_SUBTHEMES.split(',').includes(sub))continue
   await choose('Sous-thème',subLabel);await choose('Type d’exercice',qLabel)
   const level=page.getByLabel('Niveau de grammaire',{exact:true}).locator('.select-control-value')
-  assert.equal(await level.textContent(),'Banque actuelle')
+  assert.equal(await level.textContent(),'A1 — pilote')
   const offers=[['choice',qLabel],['gap',qLabel],['order','Mots dans l’ordre']]
   if(sub!=='a9')offers.push(['correct','Corriger l’erreur'])
   if(['pronominaux','a8'].includes(sub))offers.push(['transform','Transformer une phrase'])

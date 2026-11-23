@@ -37,6 +37,7 @@ type BaseUnit = {
 }
 export type GrammarReadingQuestion = {
   id: string; prompt: string; answers: string[]; explanation: string; evidence: string[]
+  writingTask?: {information:string;form:'closed'|'open'|'quel';rubric:GrammarCriterion[]}
   response: 'choice' | 'short'; options?: GrammarChoice[]
 }
 export type GrammarUnit = BaseUnit & (
@@ -44,7 +45,7 @@ export type GrammarUnit = BaseUnit & (
   | { kind: 'personal-gap'; information: string; task: string; rubric: GrammarCriterion[] }
   | { kind: 'form'; task: string; fields: GrammarFormField[]; rubric: GrammarCriterion[] }
   | { kind: 'correct'; error?: { segmentId: 'prompt'; start: number; end: number; text: string } }
-  | ({ kind: 'transform' } & ({ targetSubject: string; directive?: never } | { directive: string; targetSubject?: never }))
+  | ({ kind: 'transform'; directiveDisplay?: 'heading' } & ({ targetSubject: string; directive?: never } | { directive: string; targetSubject?: never }))
   | { kind: 'order'; tokens: Array<{ id: string; text: string; category: PhraseCategory }> }
   | { kind: 'match'; pairs: Array<{ id: string; left: string; right: string; sourceId: string }> }
   | { kind: 'reading'; genre: string; text: string; questions: GrammarReadingQuestion[]; supportLayout?: 'image-left' }

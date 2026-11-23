@@ -24,7 +24,7 @@ try {
  await choose('Sous-thème','Verbes en -er particuliers')
  await choose('Type d’exercice','Les formes particulières')
  const level=page.getByLabel('Niveau de grammaire',{exact:true}).locator('.select-control-value')
- assert.equal(await level.textContent(),'Banque actuelle')
+ assert.equal(await level.textContent(),'A1 — pilote')
  await choose('Niveau de grammaire','A1 — pilote')
  await page.getByRole('button',{name:'Lacune',exact:true}).click()
  await choose('Niveau de grammaire','A2 — pilote')

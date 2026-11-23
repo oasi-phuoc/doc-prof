@@ -53,7 +53,7 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
     if (u.kind==='reading') {
       const child=grammarReadingChild(q)
       if (!child) return {items:[],issues:[]}
-      const childModel=child.answers.join(' / ')+'\n'+child.explanation+'\n'+child.evidence.map(s=>`« ${s} »`).join('\n')
+      const childModel=(child.writingTask?'Modèle possible — d’autres formulations sont recevables.\n':'')+child.answers.join(' / ')+'\n'+child.explanation+'\n'+child.evidence.map(s=>`« ${s} »`).join('\n')+(child.writingTask?'\nRepères enseignant :\n'+child.writingTask.rubric.map(r=>'□ '+r.label).join('\n'):'')
       const common={...imageSupport,part:0,prompt:child.prompt,instruction:sourceInstruction,context:`${u.genre} — ${u.prompt}\n\n${u.text}`,documentId:u.id,model:childModel}
       if (child.response==='short') return {items:[{...common,choices:[],mode:'oral',teacherLed:true}],issues:[]}
       const options=q.readingOptions![child.id]!,correct=options.find(o=>child.answers.includes(o.text))!
@@ -77,7 +77,7 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
     if (u.kind==='match') return {items:u.pairs.map((pair,part)=>({...imageSupport,part,prompt:pair.left,
       instruction:'Une phrase à la fois : choisissez la forme qui convient.',choices:q.rightOptions!,wordBlank:sourceWordBlank(pair.left,q.rightOptions!),correctId:pair.id,choiceOrderPolicy:'fixed' as const,
       model:pair.left.replace('___',pair.right)})),issues:[]}
-    if (u.kind==='order') return {items:[{...imageSupport,part:0,prompt:sourceInstruction+(u.givenVerb?` (${u.givenVerb})`:''),instruction:'Choisissez un mot puis sa place, ou utilisez les flèches du clavier.',
+    if (u.kind==='order') return {items:[{...imageSupport,part:0,prompt:sourceInstruction+(u.cue?'\n'+u.cue:'')+(u.givenVerb?` (${u.givenVerb})`:''),instruction:'Choisissez un mot puis sa place, ou utilisez les flèches du clavier.',
       choices:[],mode:'sequence',words:q.tokens!.map(t=>t.text),model,teacherLed:true}],issues:[]}
     const instruction=u.kind==='transform'?(u.targetSubject?`Réécrivez avec le sujet « ${u.targetSubject} ».`:u.directive):sourceInstruction
     // Oral stages display the prompt. The target subject must be visible there,

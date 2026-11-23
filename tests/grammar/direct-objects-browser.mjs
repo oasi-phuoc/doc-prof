@@ -40,7 +40,7 @@ try {
  await choose('Domaine','Grammaire');await choose('Thème','Les pronoms');await choose('Sous-thème','Les pronoms COD')
  await choose('Type d’exercice','Remplacer le COD')
  const level=page.getByLabel('Niveau de grammaire',{exact:true}).locator('.select-control-value')
- assert.equal(await level.textContent(),'Banque actuelle')
+ assert.equal(await level.textContent(),'A2 — pilote')
  for(const [type,presentation,label] of [
   ['qcm-verbe','choice','Remplacer le COD'],['qcm-verbe','gap','Remplacer le COD'],
   ['curriculum-t','transform','Transformer une phrase'],['curriculum-c','correct','Corriger l’erreur'],

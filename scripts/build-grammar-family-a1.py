@@ -1,4 +1,4 @@
-"""Build four family pilots, preserving all legacy source banks and aliases."""
+"""Build four family pilots from the selected editorial sources."""
 import csv
 import hashlib
 import json
@@ -79,7 +79,7 @@ def baby_support():
 
 
 def adapted_readings(filename, legacy_file, kind):
-    legacy = {d['slug']: d for d in json.loads((ROOT / ('src/grammaire/exercises/'+legacy_file+'.json')).read_text())}
+    legacy = {d['slug']: d for d in json.loads((SOURCE / 'family-a1-reading-sources.json').read_text())[legacy_file]}
     rows = read_rows(filename, 2)
     assert len(rows) == 20
     overrides = {

@@ -6533,3 +6533,6 @@ textarea.pill-input,
 .account-create-fields input { min-width: 0; }
 .account-create-fields > p { grid-column: 1 / -1; margin: 0; }
 @media (max-width: 600px) { .account-create-fields { grid-template-columns: minmax(0, 1fr); } }
+
+/* Guided question-writing corrections retain the complete rubric on A4. */
+.grammar-reading-writing .grammar-rubric li { margin: 1mm 0; }

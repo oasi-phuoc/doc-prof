@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-22",
+  "timezone": "Europe/Zurich",
+  "baseCommit": "a67c622a7",
+  "status": "passed_for_questions_pilot_with_preexisting_global_failures_and_remote_cleanup_blocked",
+  "delivery": {
+    "theme": "Les questions",
+    "level": "A1",
+    "activities": 22,
+    "offerings": 24,
+    "selectableUnits": 920,
+    "variants": 1500,
+    "documentUsages": 120,
+    "sourceDocuments": 60,
+    "sharedOralContexts": 50,
+    "writingTargets": 300,
+    "teacherApprovedUnits": 0
+  },
+  "checks": [
+    {
+      "command": "npm run test:grammar:questions",
+      "status": "passed",
+      "scope": "Sources, target cues, four quel agreements, methods, role changes, private models, 276 protected files, API dry/apply and SQLite purge parity."
+    },
+    {
+      "command": "npm run test:grammar:levels",
+      "status": "passed",
+      "variants": 9100
+    },
+    {
+      "command": "Grammar regression scripts: present-g3, ir-re, present-a1-next, negation-a2, contact, presentation, presentation-extension, family-completion, contracts",
+      "status": "passed"
+    },
+    {
+      "command": "npm run test:grammar:questions:browser",
+      "status": "passed",
+      "offerings": 24,
+      "printedResponses": 3000,
+      "sheets": 2110,
+      "classroomLaunches": 22
+    },
+    {
+      "command": "node tests/grammar/questions-pdf.mjs",
+      "status": "passed",
+      "pdfPreviews": 4
+    },
+    {
+      "command": "npm run test:grammar:pools",
+      "status": "passed",
+      "types": 70,
+      "seeds": 3,
+      "positions": 16
+    },
+    {
+      "command": "TypeScript + Vite production build",
+      "status": "passed"
+    },
+    {
+      "command": "npm run lint",
+      "status": "passed",
+      "existingWarnings": true
+    },
+    {
+      "command": "Question bank and family source reconstruction",
+      "status": "passed",
+      "deterministicBytes": true
+    },
+    {
+      "command": "npm run check:interactive:budgets",
+      "status": "failed",
+      "preexisting": true,
+      "budgets": {
+        "competition": {
+          "before": 208863,
+          "after": 209045,
+          "maximumGzip": 204800
+        },
+        "game": {
+          "before": 3277542,
+          "after": 3251374,
+          "maximumGzip": 3145728
+        }
+      },
+      "comparisonReference": "Before values: recorded a67c622a7 build. After values: final grammar change integrated on 5841fe51d."
+    },
+    {
+      "command": "node --test tests/interactive/pools.test.mjs tests/interactive/word-sorting.test.mjs",
+      "status": "failed",
+      "passed": 14,
+      "failed": 1,
+      "reason": "Global catalogue check fails on the existing tcm-csc-ex17 entry (currently labelled 18 — Nommer les formes by the generator). Grammar pools are verified separately; all eight word-sorting tests pass.",
+      "reference": "questions-20261122-proofs/pool-preexisting-failure.json"
+    }
+  ],
+  "registryTotals": {
+    "activities": 134,
+    "offerings": 173,
+    "selectableUnits": 6710,
+    "variants": 9100,
+    "documentUsages": 260,
+    "documentQuestions": 1100
+  },
+  "retirement": {
+    "notions": 25,
+    "removedCoreBanks": 24,
+    "removedCoreItems": 1200,
+    "remainingUnmigratedLegacyBanks": 73,
+    "retiredBanksStillLoaded": 0,
+    "obsoleteAliActivityRemoved": true,
+    "sourceManifest": "retrait-banques-20261122.json",
+    "remoteSavedFiches": {
+      "status": "blocked_network_403",
+      "deleted": 0,
+      "sql": "api/fiches/maintenance/purge-retired-grammar.sql",
+      "cli": "scripts/prune-retired-grammar-fiches.cjs"
+    }
+  },
+  "secrets": {
+    "status": "passed",
+    "tool": "Gitleaks 8.30.1",
+    "findings": 0,
+    "changedFiles": 5646
+  },
+  "limitations": [
+    "All teacher approvals remain pending.",
+    "No physical ENI or printer test.",
+    "Full multi-theme browser suite not rerun after historical-bank retirement; its selectors follow the new default levels.",
+    "Remote saved fiches cannot yet be deleted from this environment because the connection to the API is blocked with network 403."
+  ],
+  "sourceFiles": [
+    {
+      "path": "scripts/build-grammar-questions-a1.py",
+      "sha256": "b793077808d44ab62d7b14f9b07ff30988bbe0d9f26e5f6a5e0a2c66d6172150"
+    },
+    {
+      "path": "scripts/grammar_curriculum/questions-a1-source.json",
+      "sha256": "5c4b2f60647c3571799c398d266885a28b56b68300575a7cc0f4228b951a0ae0"
+    },
+    {
+      "path": "scripts/grammar_curriculum/questions-a1-oral.tsv",
+      "sha256": "ca7e54a190f9225f7f9454ea57410a2a0b34a8234d8cb3e2fd68ce22c84eb92e"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/c1.json",
+      "sha256": "ac642b561979c5d19a05080a854ae782fc8886a0fcf36ef47fc7b4bf4c308e7b"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/c2.json",
+      "sha256": "0888cfd0a3a8508909626ac39a848fe65f133fee5943b97fed3348ca2e59e240"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/c3.json",
+      "sha256": "9f306aab38a99cd57efbac9fc7c6e0634ed061d2e0a351f46a63d0d4a92d1cb0"
+    },
+    {
+      "path": "src/grammaire/curriculum/registry.ts",
+      "sha256": "04ad1250399fabb52d3e841b89357120a3c6a1dff7eef58234315b3e66cf6455"
+    },
+    {
+      "path": "src/grammaire/curriculum/validation.ts",
+      "sha256": "2655fa30323fecf2ef8ba44047b0c789267186bdce7245f0b324d0383495bb2a"
+    },
+    {
+      "path": "src/grammaire/curriculum/types.ts",
+      "sha256": "379621c68b92927933af9a6615632491ded9e03714f512b9d27f7d745ea782ad"
+    },
+    {
+      "path": "src/grammaire/curriculum/retirement.ts",
+      "sha256": "54eceebe0e9cc068ac623163117a8d8a9b4d6300244d21c5f1ca60a1d37abb78"
+    },
+    {
+      "path": "src/grammaire/curriculum/retired-subthemes.json",
+      "sha256": "b0d33e529102ee6f26a50b6e97ec3fe2cc90b438433fb290c305e666fbbecbb4"
+    },
+    {
+      "path": "src/grammaire/curriculum/graded-activities.json",
+      "sha256": "2bab39f000032c341e7cf4d0de9e603a149fb5e3798b32ac3cab500c00769ca3"
+    },
+    {
+      "path": "src/grammaire/curriculum/pagination.ts",
+      "sha256": "04665f5dade1624bedcd89f1e727b66d952e04c1d9e7cd4db36d1c79b97f740c"
+    },
+    {
+      "path": "src/grammaire/curriculum/reading-pages.ts",
+      "sha256": "fdfc7e92fc7286fc42780ea52d18e3c9a0f09d3cb4ab0649bd94176a984691ad"
+    },
+    {
+      "path": "src/components/item-view/grammar.tsx",
+      "sha256": "9e921f5cef083989dffc9be633bf066773854ce42012e02b2d9719425e386feb"
+    },
+    {
+      "path": "src/components/item-view/grammar-reading.tsx",
+      "sha256": "6fd9a328cc09317a57246d06cafdfe788e9061fced22117b5495ccb5e887a1a0"
+    },
+    {
+      "path": "src/components/generator/generator-derived.ts",
+      "sha256": "1a2592670fe8a7a2f2ba477b1c456c8ac80ec2c4d21dfa9b4f21dad8aebc995c"
+    },
+    {
+      "path": "src/components/generator/DomainThemeTypeFields.tsx",
+      "sha256": "9402bc2afce9270cf2c822065dea313175222562a29ea455d1e9e00eb5028a18"
+    },
+    {
+      "path": "src/components/generator/GrammarLevelControl.tsx",
+      "sha256": "9be27c30d0326397993b59b22acfaddcb395eec87d579c9db8b54462f33771fc"
+    },
+    {
+      "path": "src/components/generator/page-helpers.ts",
+      "sha256": "66096ac615c2b5ae82a320bd53d46ea74446471c1a6d12968f0f07e90fe56768"
+    },
+    {
+      "path": "src/fiches/recipe.ts",
+      "sha256": "e531255b89a531d17930368e4cdbf2e56c53971fc3fd6ca4c43acea27caa17e0"
+    },
+    {
+      "path": "src/grammaire/exercises/catalog-exercises.ts",
+      "sha256": "db83d147182696aea2cb8ede061d042935dff18d64e58513fada7035be450a12"
+    },
+    {
+      "path": "src/grammaire/exercises/generate.ts",
+      "sha256": "b27b4672204f986e1fa409eab07fe0f1a2d09d0909b2a6f5c9b9867b6ce92915"
+    },
+    {
+      "path": "src/grammaire/exercises/bank/lessons-protected.ts",
+      "sha256": "65e3b164faa5c25798e02a8ac8b8f1c790e73403ede75c26089749abb4217253"
+    },
+    {
+      "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+      "sha256": "17853ea03035968b00c1184e583e2c5fd4c56a149f714eb8fbdf5c176845c038"
+    },
+    {
+      "path": "src/grammaire/exercises/communication-data.json",
+      "sha256": "2a1cfb24c711e87b03741414309541a4df698a8636a30691a1dfcfede7c4ef4c"
+    },
+    {
+      "path": "src/interactive/domain/source-adapters.ts",
+      "sha256": "fea9d367975a38d11d8aa35c7f4d60f5b203c653a6afe0888b9cb23332891cfc"
+    },
+    {
+      "path": "src/interactive/pools/config.ts",
+      "sha256": "65498859afbbcd6497b73201657fa8f53304c666f5f842d4e7f82871c8ddd51a"
+    },
+    {
+      "path": "src/interactive/pools/recipe.ts",
+      "sha256": "fec6ed37c2a32a0b4e1d2b3286628b623ea68177e63d9c79efdad9216d57f311"
+    },
+    {
+      "path": "src/interactive/pools/catalog.generated.json",
+      "sha256": "3ff0a22ac4ad28ef508ae9c2e66ef0d87da20eb5157d0c6395544cb4f832e283"
+    },
+    {
+      "path": "src/App.css",
+      "sha256": "63c65577fcb0f700ab64355fe86cb1e67a3021e88d776491f2b6191b77dfad19"
+    },
+    {
+      "path": "scripts/prune-retired-grammar-fiches.cjs",
+      "sha256": "4b7a55a2e04d380155a1c1f89d309b02873394391665924acaaad12d842e168d"
+    },
+    {
+      "path": "api/fiches/maintenance/purge-retired-grammar.sql",
+      "sha256": "a83433a6bd8c15291219bef35c5993d864d1a9b191dc528de644cd369d114d60"
+    },
+    {
+      "path": "scripts/test-grammar-questions.cjs",
+      "sha256": "4ec113927dfa007a6e171ec760e596f03944e19c02ff3c3f6545874564117ec8"
+    },
+    {
+      "path": "scripts/verify-grammar-pools.cjs",
+      "sha256": "5a3eaafd91bed9397c63e25b2f30d83e0b4127fc53bf4bc98916dec2bd58b738"
+    },
+    {
+      "path": "tests/grammar/questions-browser.mjs",
+      "sha256": "18dc06ee040f26dc4bd35530e4bfb6819ce4ec888725dfdd3745ab96ac45b196"
+    },
+    {
+      "path": "tests/grammar/questions-pdf.mjs",
+      "sha256": "96b70f3fd6d40920c0d35b5da5ca34ae44380a254e5c482cd1431284b8177ebe"
+    },
+    {
+      "path": "scripts/grammar_curriculum/family-a1-reading-sources.json",
+      "sha256": "0163b73b0547eda924fba29443d9659e896b38972077d9f9b674b2977cd753a6"
+    },
+    {
+      "path": "scripts/build-grammar-family-a1.py",
+      "sha256": "0a941aceb493b371c93f6be56f87f10ad2ff09d3422bfc439c6fbc577e11ddd3"
+    }
+  ],
+  "finalizedDate": "2026-11-23",
+  "integratedMainCommit": "5841fe51d2159a6dbe467dc6e9157944e4f908c5",
+  "integrationChecks": {
+    "date": "2026-11-23",
+    "typescript": "passed",
+    "productionBuild": "passed",
+    "questions": "passed",
+    "allGradedVariants": 9100,
+    "gradedPools": 70,
+    "sourceChange": "Incoming TCF and gallery changes preserved. Grammar production/rendering code unchanged apart from retirement comments."
+  }
+}

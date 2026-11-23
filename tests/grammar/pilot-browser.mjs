@@ -24,7 +24,7 @@ try {
  await choose('Sous-thème','Être')
  await choose('Type d’exercice','Conjuguer être')
  const level=page.getByLabel('Niveau de grammaire',{exact:true})
- assert.equal(await level.locator('.select-control-value').textContent(),'Banque actuelle')
+ assert.equal(await level.locator('.select-control-value').textContent(),'A1 — pilote')
  await choose('Niveau de grammaire','A1 — pilote')
  await page.locator('.a4-frame .grammar-choices').first().waitFor()
  await page.getByRole('button',{name:'Lacune',exact:true}).click()

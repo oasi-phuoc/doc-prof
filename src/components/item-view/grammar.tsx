@@ -32,7 +32,7 @@ export function GrammarQuestionView({ question:q, mode }: {question:GrammarQuest
       </div>
     </>:u.kind==='order'?<PhraseOrderBlock item={{layout:'phrase-order',tokens:q.tokens,answer:u.answers[0]!,responseAnswer:u.answers[0],responseVerb:u.givenVerb}} mode={mode}/>:<>
       <p><GrammarTextHints text={u.prompt}/></p>
-      {u.kind==='transform'?u.targetSubject?<p className="grammar-target-subject">Sujet à utiliser : <strong>{u.targetSubject}</strong></p>:<p className="grammar-transform-directive"><GrammarTextHints text={u.directive??''}/></p>:null}
+      {u.kind==='transform'&&u.directiveDisplay!=='heading'?u.targetSubject?<p className="grammar-target-subject">Sujet à utiliser : <strong>{u.targetSubject}</strong></p>:<p className="grammar-transform-directive"><GrammarTextHints text={u.directive??''}/></p>:null}
       <div className="grammar-written-response">
         <span className={`answer-line-field${corrected?' filled':''}`}>{corrected?u.answers.join(' / '):'\u00a0'}</span>
         <VerbHint verb={u.givenVerb}/>

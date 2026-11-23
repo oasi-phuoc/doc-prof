@@ -256,10 +256,10 @@ for(const u of grammarBanksForType('gram-ex-avoir-ordre')[0].units) {
  assert.equal(u.tokens.map(t=>t.text).join(' ').replace(/’ /g,'’')+'.',u.answers[0])
  assert(u.source.partition==='a1'&&!u.tokens.some(t=>t.category==='negation'))
 }
-// Missing new fields is the legacy route, never implicit A1.
+// Retired level-less recipes cannot fall back to a historical generator.
 const old={...base(),grammarLevel:undefined,grammarActivityId:undefined,grammarPresentation:undefined,grammarBankRevision:undefined,grammarPreview:undefined}
-assert.equal(generateGradedGrammarBlock(old,17),null)
-assert(!generate(old,17).items.some(item=>item.layout==='grammar'))
+assert.throws(()=>generateGradedGrammarBlock(old,17),e=>e.code==='GRAMMAR_RETIRED_BANK')
+assert.match(generate(old,17).items[0].prompt,/ancienne fiche.*retirée/)
 const oldRecipe=buildFicheRecipe(recipeInput([old]))
 assert.equal(oldRecipe.pages[0].grammarSnapshot,undefined)
 // New settings never leak from the main block into a legacy or CO extra block.
@@ -267,7 +267,8 @@ const mixed={...base(),extraBlocks:[{...old,topic:'gram-present'},{...old,exerci
 for(const extra of pageBlocks(mixed).slice(1)) {
  const single=pageAsConfig(mixed,extra)
  assert.equal(single.grammarLevel,undefined)
- assert.equal(generateGradedGrammarBlock(single,17),null)
+ if(isProtectedGrammarCo(single.exerciseType))assert.equal(generateGradedGrammarBlock(single,17),null)
+ else assert.throws(()=>generateGradedGrammarBlock(single,17),e=>e.code==='GRAMMAR_RETIRED_BANK')
 }
 const mixedReading={...read,grammarPageBreakAfterQuestionIds:[firstChild],extraBlocks:[old]}
 const legacyNeighbor=pageAsConfig(mixedReading,pageBlocks(mixedReading)[1])

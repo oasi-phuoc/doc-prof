@@ -31,7 +31,7 @@ try {
  ]) {
   await choose('Sous-thème',subLabel);await choose('Type d’exercice',qLabel)
   const level=page.getByLabel('Niveau de grammaire',{exact:true}).locator('.select-control-value')
-  assert.equal(await level.textContent(),'Banque actuelle')
+  assert.equal(await level.textContent(),'A1 — pilote')
   const offers=[]
   if(fillLabel)offers.push(['gap-only',fillLabel])
   offers.push(['choice',qLabel],['gap',qLabel])

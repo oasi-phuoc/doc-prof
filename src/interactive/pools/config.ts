@@ -1,8 +1,10 @@
+import {isRetiredGrammarType} from '@/grammaire/curriculum/retirement'
+import gradedActivities from '@/grammaire/curriculum/graded-activities.json'
 import catalog from './catalog.generated.json'
 import type {Difficulty,Domain} from '@/math/types'
 
 export type PoolType={id:string;domain:Domain;topic:string;type:string;label:string;context:string;complete:boolean;difficulty:Difficulty;numbers:boolean;levels?:Difficulty[];guided?:boolean;defaultCount?:number;maxCount?:number}
-export const POOL_TYPES=catalog.items as PoolType[]
+export const POOL_TYPES=(catalog.items as PoolType[]).filter(type=>type.domain!=='grammaire'||!isRetiredGrammarType(type.type)||gradedActivities.includes(type.type))
 export const POOL_TYPE_BY_ID=new Map(POOL_TYPES.map(type=>[type.id,type]))
 export type PoolEntry={id:string;count:number;difficulty:Difficulty;range?:{min:number;max:number;decimals:boolean}}
 export type PoolConfig={version:1;entries:PoolEntry[];shuffle:boolean}

@@ -29,7 +29,7 @@ try {
  await choose('Sous-thème','Le subjonctif (emplois principaux)')
  await choose('Type d’exercice','Employer le subjonctif')
  const level=page.getByLabel('Niveau de grammaire',{exact:true}).locator('.select-control-value')
- assert.equal(await level.textContent(),'Banque actuelle')
+ assert.equal(await level.textContent(),'B1 — pilote')
  for(const [type,presentation,label] of [
   ['qcm-conj','choice','Employer le subjonctif'],['qcm-conj','gap','Employer le subjonctif'],
   ['curriculum-t','transform','Transformer une phrase'],['curriculum-c','correct','Corriger l’erreur'],
