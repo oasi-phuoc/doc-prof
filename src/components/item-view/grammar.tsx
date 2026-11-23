@@ -1,5 +1,5 @@
 import type { PreviewMode } from '@/math/types'
-import type { GrammarQuestion } from '@/grammaire/curriculum/types'
+import { isContextualGrammarMatch, type GrammarQuestion } from '@/grammaire/curriculum/types'
 import { PhraseOrderBlock } from './phrase'
 import { GrammarReadingView } from './grammar-reading'
 import { GrammarProductionView } from './grammar-production'
@@ -25,10 +25,10 @@ export function GrammarQuestionView({ question:q, mode }: {question:GrammarQuest
       </ul>:null}
       {corrected&&u.answers.length>1?<p className="grammar-explanation">Autre forme acceptée : {u.answers.slice(1).join(' / ')}.</p>:null}
     </>:u.kind==='match'?<>
-      {u.source.typeId==='gram-ex-famille-curriculum-a'?<p className="grammar-profile-facts"><GrammarTextHints text={u.prompt}/></p>:null}
+      {isContextualGrammarMatch(u.source.typeId)?<p className="grammar-profile-facts"><GrammarTextHints text={u.prompt}/></p>:null}
       <div className="grammar-match-columns">
-        <ol>{u.pairs.map((pair,index)=><li key={pair.id}><Sentence text={pair.left} answer={corrected?pair.right:undefined}/>{corrected?<strong className="grammar-match-answer"> → {String.fromCharCode(65+(q.rightOptions?.findIndex(o=>o.id===pair.id)??0))}</strong>:<span className="grammar-match-slot" aria-label={`Réponse ${index+1}`}>___</span>}</li>)}</ol>
-        <ol type="A">{q.rightOptions?.map(o=><li key={o.id}>{o.text}</li>)}</ol>
+        <ol>{u.pairs.map((pair,index)=><li key={pair.id}><Sentence text={pair.left} answer={corrected?pair.right:undefined}/>{corrected?<strong className="grammar-match-answer"> → {String.fromCharCode(65+(q.rightOptions?.findIndex(o=>o.id===pair.id)??0))}</strong>:<span className="grammar-match-slot" aria-label={`Lettre de la réponse ${index+1}`}>→ ___</span>}</li>)}</ol>
+        <ol type="A">{q.rightOptions?.map((o,index)=><li key={o.id}><b className="grammar-match-option-letter">{String.fromCharCode(65+index)}.</b> {o.text}</li>)}</ol>
       </div>
     </>:u.kind==='order'?<PhraseOrderBlock item={{layout:'phrase-order',tokens:q.tokens,answer:u.answers[0]!,responseAnswer:u.answers[0],responseVerb:u.givenVerb}} mode={mode}/>:<>
       <p><GrammarTextHints text={u.prompt}/></p>

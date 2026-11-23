@@ -1,0 +1,4179 @@
+[
+  {
+    "schemaVersion": 1,
+    "revision": "espace-2026-11-23-v1",
+    "activityId": "gram-ex-e7-qcm-verbe",
+    "subthemeId": "e7",
+    "topic": "gram-espace",
+    "level": "A1",
+    "label": "Contracter à et de",
+    "objective": "Choisir au, aux, du, des et les formes à la, à l’, de la, de l’.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-23",
+      "humanReview": "pending",
+      "note": "Situations et corrections relues. Images internes réemployées ; modèles ouverts non exclusifs. Validation enseignante en attente."
+    },
+    "presentations": [
+      "choice",
+      "gap"
+    ],
+    "instructions": {
+      "choice": "Choisissez la forme de lieu correcte : au, aux, du, des, à la, à l’, de la ou de l’.",
+      "gap": "Complétez avec la forme de lieu correcte : au, aux, du, des, à la, à l’, de la ou de l’."
+    },
+    "units": [
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-musee",
+        "prompt": "Je vais ___ musée.",
+        "answers": [
+          "au"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous allez voir une exposition au musée, puis vous rentrez.",
+        "options": [
+          {
+            "id": "forme-066260cd6c",
+            "text": "au"
+          },
+          {
+            "id": "forme-09a4801f30",
+            "text": "aux"
+          },
+          {
+            "id": "forme-474bc943e2",
+            "text": "des"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Je vais au musée."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-parc",
+        "prompt": "Nous revenons ___ parc.",
+        "answers": [
+          "du"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous partez vous promener dans le parc, puis vous revenez.",
+        "options": [
+          {
+            "id": "forme-90d66c396c",
+            "text": "du"
+          },
+          {
+            "id": "forme-437b7ea652",
+            "text": "aux"
+          },
+          {
+            "id": "forme-126decb0db",
+            "text": "des"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Nous revenons du parc."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-marche",
+        "prompt": "Elle va ___ marché.",
+        "answers": [
+          "au"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous faites vos courses sur le marché du quartier.",
+        "options": [
+          {
+            "id": "forme-545631bce5",
+            "text": "au"
+          },
+          {
+            "id": "forme-9a95a40a26",
+            "text": "aux"
+          },
+          {
+            "id": "forme-67fcb519c8",
+            "text": "des"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Elle va au marché."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-cinema",
+        "prompt": "Ils sortent ___ cinéma.",
+        "answers": [
+          "du"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous prévoyez une séance de cinéma.",
+        "options": [
+          {
+            "id": "forme-6a44029a5a",
+            "text": "du"
+          },
+          {
+            "id": "forme-6e60df78a1",
+            "text": "aux"
+          },
+          {
+            "id": "forme-dfa6a0d3cb",
+            "text": "des"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Ils sortent du cinéma."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-stade",
+        "prompt": "Nous allons ___ stade.",
+        "answers": [
+          "au"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre équipe participe à une rencontre dans le stade.",
+        "options": [
+          {
+            "id": "forme-d8062e7a3e",
+            "text": "au"
+          },
+          {
+            "id": "forme-ef1d601b5c",
+            "text": "aux"
+          },
+          {
+            "id": "forme-dc70b01446",
+            "text": "des"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Nous allons au stade."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-restaurant",
+        "prompt": "Vous revenez ___ restaurant.",
+        "answers": [
+          "du"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre groupe réserve un repas au restaurant.",
+        "options": [
+          {
+            "id": "forme-1758457cdc",
+            "text": "du"
+          },
+          {
+            "id": "forme-f53112429e",
+            "text": "aux"
+          },
+          {
+            "id": "forme-5854293d29",
+            "text": "des"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Vous revenez du restaurant."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-bureau",
+        "prompt": "Il va ___ bureau.",
+        "answers": [
+          "au"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre collègue rejoint son bureau après une réunion.",
+        "options": [
+          {
+            "id": "forme-4eb5187811",
+            "text": "au"
+          },
+          {
+            "id": "forme-9f04167a43",
+            "text": "aux"
+          },
+          {
+            "id": "forme-654b9795d4",
+            "text": "des"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Il va au bureau."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-supermarche",
+        "prompt": "Je reviens ___ supermarché.",
+        "answers": [
+          "du"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous préparez un trajet pour acheter de la nourriture.",
+        "options": [
+          {
+            "id": "forme-eaf32ce1ae",
+            "text": "du"
+          },
+          {
+            "id": "forme-2386a1938f",
+            "text": "aux"
+          },
+          {
+            "id": "forme-8529b32b96",
+            "text": "des"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Je reviens du supermarché."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-port",
+        "prompt": "Elle va ___ port.",
+        "answers": [
+          "au"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre amie va voir les bateaux dans le port.",
+        "options": [
+          {
+            "id": "forme-b667732e79",
+            "text": "au"
+          },
+          {
+            "id": "forme-660a24eabe",
+            "text": "aux"
+          },
+          {
+            "id": "forme-1dda95ebc4",
+            "text": "des"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Elle va au port."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-jardin",
+        "prompt": "Tu reviens ___ jardin partagé.",
+        "answers": [
+          "du"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous rejoignez votre groupe dans le jardin partagé.",
+        "options": [
+          {
+            "id": "forme-e62f272443",
+            "text": "du"
+          },
+          {
+            "id": "forme-4bf2232deb",
+            "text": "aux"
+          },
+          {
+            "id": "forme-11190998ea",
+            "text": "des"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Tu reviens du jardin partagé."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-village",
+        "prompt": "Nous allons ___ village.",
+        "answers": [
+          "au"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre famille rend visite à des amis dans un village.",
+        "options": [
+          {
+            "id": "forme-9e6b2659cb",
+            "text": "au"
+          },
+          {
+            "id": "forme-0fbd093a7f",
+            "text": "aux"
+          },
+          {
+            "id": "forme-3096973293",
+            "text": "des"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Nous allons au village."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-centre",
+        "prompt": "Vous sortez ___ centre culturel.",
+        "answers": [
+          "du"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous participez à un atelier dans le centre culturel.",
+        "options": [
+          {
+            "id": "forme-f7fe32c286",
+            "text": "du"
+          },
+          {
+            "id": "forme-7ec01fb6a3",
+            "text": "aux"
+          },
+          {
+            "id": "forme-2c4faba5a8",
+            "text": "des"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Vous sortez du centre culturel."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-college",
+        "prompt": "Il va ___ collège.",
+        "answers": [
+          "au"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre frère rejoint son collège le matin.",
+        "options": [
+          {
+            "id": "forme-b7bf454f78",
+            "text": "au"
+          },
+          {
+            "id": "forme-5aeeca71fe",
+            "text": "aux"
+          },
+          {
+            "id": "forme-37124c9990",
+            "text": "des"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Il va au collège."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-lycee",
+        "prompt": "Elles sortent ___ lycée.",
+        "answers": [
+          "du"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Deux élèves se rendent dans leur lycée.",
+        "options": [
+          {
+            "id": "forme-5e1abbb4e7",
+            "text": "du"
+          },
+          {
+            "id": "forme-a93ddeef29",
+            "text": "aux"
+          },
+          {
+            "id": "forme-4b2bda1de7",
+            "text": "des"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Elles sortent du lycée."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-theatre",
+        "prompt": "Je vais ___ théâtre.",
+        "answers": [
+          "au"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous achetez des billets pour une pièce de théâtre.",
+        "options": [
+          {
+            "id": "forme-29ac06655b",
+            "text": "au"
+          },
+          {
+            "id": "forme-9c8e7b884b",
+            "text": "aux"
+          },
+          {
+            "id": "forme-e6fa85c3f7",
+            "text": "des"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Je vais au théâtre."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-zoo",
+        "prompt": "Nous revenons ___ zoo.",
+        "answers": [
+          "du"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre groupe visite le zoo pendant une sortie.",
+        "options": [
+          {
+            "id": "forme-baedc7172e",
+            "text": "du"
+          },
+          {
+            "id": "forme-48787a0f3b",
+            "text": "aux"
+          },
+          {
+            "id": "forme-9bf45e7160",
+            "text": "des"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Nous revenons du zoo."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-camping",
+        "prompt": "Tu vas ___ camping.",
+        "answers": [
+          "au"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous rejoignez votre emplacement dans un camping.",
+        "options": [
+          {
+            "id": "forme-b71f9605ca",
+            "text": "au"
+          },
+          {
+            "id": "forme-4b6a4aad08",
+            "text": "aux"
+          },
+          {
+            "id": "forme-66c56e59db",
+            "text": "des"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Tu vas au camping."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-commissariat",
+        "prompt": "Elle sort ___ commissariat.",
+        "answers": [
+          "du"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Une personne signale un objet perdu au commissariat.",
+        "options": [
+          {
+            "id": "forme-bac5762215",
+            "text": "du"
+          },
+          {
+            "id": "forme-612c079238",
+            "text": "aux"
+          },
+          {
+            "id": "forme-4db1a1e233",
+            "text": "des"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Elle sort du commissariat."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-salon",
+        "prompt": "Il va ___ salon de coiffure.",
+        "answers": [
+          "au"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre voisin se rend dans le salon de coiffure.",
+        "options": [
+          {
+            "id": "forme-2a4c0cfba0",
+            "text": "au"
+          },
+          {
+            "id": "forme-6aac8dd690",
+            "text": "aux"
+          },
+          {
+            "id": "forme-dc6be4d4ab",
+            "text": "des"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Il va au salon de coiffure."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-gymnase",
+        "prompt": "Vous sortez ___ gymnase.",
+        "answers": [
+          "du"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous participez à un entraînement dans le gymnase.",
+        "options": [
+          {
+            "id": "forme-ce8b0d9269",
+            "text": "du"
+          },
+          {
+            "id": "forme-af9aab24e3",
+            "text": "aux"
+          },
+          {
+            "id": "forme-86e61a12f3",
+            "text": "des"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Vous sortez du gymnase."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-toilettes",
+        "prompt": "Je vais ___ toilettes.",
+        "answers": [
+          "aux"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous indiquez où se trouvent les toilettes dans le bâtiment.",
+        "options": [
+          {
+            "id": "forme-7f49d3f3da",
+            "text": "aux"
+          },
+          {
+            "id": "forme-e5329d401f",
+            "text": "au"
+          },
+          {
+            "id": "forme-fdf691c2df",
+            "text": "du"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Je vais aux toilettes."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-bains",
+        "prompt": "Nous sortons ___ bains publics.",
+        "answers": [
+          "des"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Un groupe se rend dans les bains publics.",
+        "options": [
+          {
+            "id": "forme-222d872317",
+            "text": "des"
+          },
+          {
+            "id": "forme-e274626b98",
+            "text": "au"
+          },
+          {
+            "id": "forme-03f873b8bc",
+            "text": "du"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Nous sortons des bains publics."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-archives",
+        "prompt": "Elle va ___ archives municipales.",
+        "answers": [
+          "aux"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous cherchez un document dans les archives municipales.",
+        "options": [
+          {
+            "id": "forme-2f957dfb80",
+            "text": "aux"
+          },
+          {
+            "id": "forme-e71997444c",
+            "text": "au"
+          },
+          {
+            "id": "forme-3e7cb6746f",
+            "text": "du"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Elle va aux archives municipales."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-urgences",
+        "prompt": "Il sort ___ urgences.",
+        "answers": [
+          "des"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre voisin est accompagné au service des urgences.",
+        "options": [
+          {
+            "id": "forme-1e3cb79331",
+            "text": "des"
+          },
+          {
+            "id": "forme-89afc490bf",
+            "text": "au"
+          },
+          {
+            "id": "forme-98fa2691ab",
+            "text": "du"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Il sort des urgences."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-jardins",
+        "prompt": "Ils vont ___ jardins botaniques.",
+        "answers": [
+          "aux"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Des visiteurs découvrent les jardins botaniques.",
+        "options": [
+          {
+            "id": "forme-6b714960ea",
+            "text": "aux"
+          },
+          {
+            "id": "forme-7976f66903",
+            "text": "au"
+          },
+          {
+            "id": "forme-3f140442e8",
+            "text": "du"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Ils vont aux jardins botaniques."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-halles",
+        "prompt": "Nous revenons ___ halles.",
+        "answers": [
+          "des"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous allez acheter des produits dans les halles du marché.",
+        "options": [
+          {
+            "id": "forme-f38ed417c0",
+            "text": "des"
+          },
+          {
+            "id": "forme-2c87c08f27",
+            "text": "au"
+          },
+          {
+            "id": "forme-480e456656",
+            "text": "du"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Nous revenons des halles."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-ateliers",
+        "prompt": "Elles vont ___ ateliers municipaux.",
+        "answers": [
+          "aux"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Des élèves participent à des activités dans les ateliers municipaux.",
+        "options": [
+          {
+            "id": "forme-ee5f92f604",
+            "text": "aux"
+          },
+          {
+            "id": "forme-4f094bc1e1",
+            "text": "au"
+          },
+          {
+            "id": "forme-1754f4baab",
+            "text": "du"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Elles vont aux ateliers municipaux."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-pistes",
+        "prompt": "Vous revenez ___ pistes de ski.",
+        "answers": [
+          "des"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous rejoignez les pistes de ski depuis votre logement.",
+        "options": [
+          {
+            "id": "forme-5ce307c453",
+            "text": "des"
+          },
+          {
+            "id": "forme-8e10170290",
+            "text": "au"
+          },
+          {
+            "id": "forme-8b23eab290",
+            "text": "du"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Vous revenez des pistes de ski."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-galeries",
+        "prompt": "Ils vont ___ galeries du musée.",
+        "answers": [
+          "aux"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Un groupe visite les galeries du musée.",
+        "options": [
+          {
+            "id": "forme-5a31c2872d",
+            "text": "aux"
+          },
+          {
+            "id": "forme-0d369c4f42",
+            "text": "au"
+          },
+          {
+            "id": "forme-aca9cbeb7b",
+            "text": "du"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Ils vont aux galeries du musée."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-cuisines",
+        "prompt": "Tu sors ___ cuisines du centre.",
+        "answers": [
+          "des"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre équipe participe à un atelier dans les cuisines du centre.",
+        "options": [
+          {
+            "id": "forme-7d3492189d",
+            "text": "des"
+          },
+          {
+            "id": "forme-2310bef4c8",
+            "text": "au"
+          },
+          {
+            "id": "forme-b37014b894",
+            "text": "du"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Tu sors des cuisines du centre."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-poste",
+        "prompt": "Je vais ___ poste.",
+        "answers": [
+          "à la"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous devez envoyer un colis depuis la poste.",
+        "options": [
+          {
+            "id": "forme-6f410ae1ba",
+            "text": "à la"
+          },
+          {
+            "id": "forme-a18afb2f71",
+            "text": "au"
+          },
+          {
+            "id": "forme-eeacec2401",
+            "text": "aux"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Je vais à la poste."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-bibliotheque",
+        "prompt": "Nous sortons ___ bibliothèque.",
+        "answers": [
+          "de la"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous cherchez un livre dans la bibliothèque.",
+        "options": [
+          {
+            "id": "forme-1ef9f6ce94",
+            "text": "de la"
+          },
+          {
+            "id": "forme-53cc0e4831",
+            "text": "au"
+          },
+          {
+            "id": "forme-9b3b8bd1e8",
+            "text": "aux"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Nous sortons de la bibliothèque."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-gare",
+        "prompt": "Elle va ___ gare.",
+        "answers": [
+          "à la"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre partenaire prend un train à la gare.",
+        "options": [
+          {
+            "id": "forme-882f941161",
+            "text": "à la"
+          },
+          {
+            "id": "forme-e86e45e735",
+            "text": "au"
+          },
+          {
+            "id": "forme-5a4dafed44",
+            "text": "aux"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Elle va à la gare."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-piscine",
+        "prompt": "Il sort ___ piscine.",
+        "answers": [
+          "de la"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre fils participe à un cours dans la piscine.",
+        "options": [
+          {
+            "id": "forme-6fa556d6a5",
+            "text": "de la"
+          },
+          {
+            "id": "forme-ffca052f68",
+            "text": "au"
+          },
+          {
+            "id": "forme-81c3e06d13",
+            "text": "aux"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Il sort de la piscine."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-mairie",
+        "prompt": "Vous allez ___ mairie.",
+        "answers": [
+          "à la"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous avez un rendez-vous dans la mairie.",
+        "options": [
+          {
+            "id": "forme-79c93b3e2d",
+            "text": "à la"
+          },
+          {
+            "id": "forme-9e862f7984",
+            "text": "au"
+          },
+          {
+            "id": "forme-f7de6b0819",
+            "text": "aux"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Vous allez à la mairie."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-pharmacie",
+        "prompt": "Nous sortons ___ pharmacie.",
+        "answers": [
+          "de la"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre groupe doit acheter un médicament à la pharmacie.",
+        "options": [
+          {
+            "id": "forme-9bdb12c45a",
+            "text": "de la"
+          },
+          {
+            "id": "forme-504fef39be",
+            "text": "au"
+          },
+          {
+            "id": "forme-c2a99be68f",
+            "text": "aux"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Nous sortons de la pharmacie."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-boulangerie",
+        "prompt": "Tu vas ___ boulangerie.",
+        "answers": [
+          "à la"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous achetez du pain dans la boulangerie du quartier.",
+        "options": [
+          {
+            "id": "forme-b809ff7155",
+            "text": "à la"
+          },
+          {
+            "id": "forme-0a3105fa86",
+            "text": "au"
+          },
+          {
+            "id": "forme-a31f1ec4b3",
+            "text": "aux"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Tu vas à la boulangerie."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-maison",
+        "prompt": "Je repars ___ maison.",
+        "answers": [
+          "de la"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous rentrez dans votre maison après une promenade.",
+        "options": [
+          {
+            "id": "forme-05fe7bad9d",
+            "text": "de la"
+          },
+          {
+            "id": "forme-92b8ee4592",
+            "text": "au"
+          },
+          {
+            "id": "forme-53ba1b067a",
+            "text": "aux"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Je repars de la maison."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-banque",
+        "prompt": "Elle va ___ banque.",
+        "answers": [
+          "à la"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre voisine se rend dans la banque pour un rendez-vous.",
+        "options": [
+          {
+            "id": "forme-a941ca07df",
+            "text": "à la"
+          },
+          {
+            "id": "forme-1a406e5603",
+            "text": "au"
+          },
+          {
+            "id": "forme-9f08a02485",
+            "text": "aux"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Elle va à la banque."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-plage",
+        "prompt": "Ils reviennent ___ plage.",
+        "answers": [
+          "de la"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vos amis passent l’après-midi sur la plage.",
+        "options": [
+          {
+            "id": "forme-d60ff97753",
+            "text": "de la"
+          },
+          {
+            "id": "forme-8d3bbc916c",
+            "text": "au"
+          },
+          {
+            "id": "forme-f7ae27f22b",
+            "text": "aux"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Ils reviennent de la plage."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-ecole",
+        "prompt": "Ils vont ___école.",
+        "answers": [
+          "à l’"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Deux enfants rejoignent leur école le matin.",
+        "options": [
+          {
+            "id": "forme-b09a0bca32",
+            "text": "à l’"
+          },
+          {
+            "id": "forme-7fbe682ea3",
+            "text": "au"
+          },
+          {
+            "id": "forme-fe1ad7e5a8",
+            "text": "aux"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Ils vont à l’école."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-hopital",
+        "prompt": "Je sors ___hôpital.",
+        "answers": [
+          "de l’"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous accompagnez un proche à l’hôpital.",
+        "options": [
+          {
+            "id": "forme-aa84c16430",
+            "text": "de l’"
+          },
+          {
+            "id": "forme-9bdeb36f8b",
+            "text": "au"
+          },
+          {
+            "id": "forme-5b36d644e0",
+            "text": "aux"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Je sors de l’hôpital."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-aeroport",
+        "prompt": "Nous allons ___aéroport.",
+        "answers": [
+          "à l’"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre groupe prend l’avion à l’aéroport.",
+        "options": [
+          {
+            "id": "forme-d999615b19",
+            "text": "à l’"
+          },
+          {
+            "id": "forme-2ba720f746",
+            "text": "au"
+          },
+          {
+            "id": "forme-041be0ee22",
+            "text": "aux"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Nous allons à l’aéroport."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-hotel",
+        "prompt": "Vous sortez ___hôtel.",
+        "answers": [
+          "de l’"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous rejoignez votre chambre dans l’hôtel.",
+        "options": [
+          {
+            "id": "forme-b0e7cac622",
+            "text": "de l’"
+          },
+          {
+            "id": "forme-b9cc8664ef",
+            "text": "au"
+          },
+          {
+            "id": "forme-80946975f0",
+            "text": "aux"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Vous sortez de l’hôtel."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-office",
+        "prompt": "Elle va ___office de tourisme.",
+        "answers": [
+          "à l’"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre amie demande des informations à l’office de tourisme.",
+        "options": [
+          {
+            "id": "forme-aa9534072b",
+            "text": "à l’"
+          },
+          {
+            "id": "forme-c8fcf3c39b",
+            "text": "au"
+          },
+          {
+            "id": "forme-2e8f174344",
+            "text": "aux"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Elle va à l’office de tourisme."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-universite",
+        "prompt": "Il sort ___université.",
+        "answers": [
+          "de l’"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Un étudiant rejoint son université.",
+        "options": [
+          {
+            "id": "forme-17476bf2c5",
+            "text": "de l’"
+          },
+          {
+            "id": "forme-7d0a92c406",
+            "text": "au"
+          },
+          {
+            "id": "forme-a1fcdb42c7",
+            "text": "aux"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Il sort de l’université."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-epicerie",
+        "prompt": "Tu vas ___épicerie.",
+        "answers": [
+          "à l’"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous faites une petite course à l’épicerie.",
+        "options": [
+          {
+            "id": "forme-1c7fe0e56e",
+            "text": "à l’"
+          },
+          {
+            "id": "forme-fa252e2560",
+            "text": "au"
+          },
+          {
+            "id": "forme-515277a049",
+            "text": "aux"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Tu vas à l’épicerie."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-accueil",
+        "prompt": "Nous revenons ___accueil.",
+        "answers": [
+          "de l’"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre groupe doit se présenter à l’accueil du centre.",
+        "options": [
+          {
+            "id": "forme-8a0969f3b4",
+            "text": "de l’"
+          },
+          {
+            "id": "forme-3146b5735c",
+            "text": "au"
+          },
+          {
+            "id": "forme-bd630fe23e",
+            "text": "aux"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Nous revenons de l’accueil."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-atelier",
+        "prompt": "Je vais ___atelier de réparation.",
+        "answers": [
+          "à l’"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous participez à une séance dans l’atelier de réparation.",
+        "options": [
+          {
+            "id": "forme-1f340ead96",
+            "text": "à l’"
+          },
+          {
+            "id": "forme-b1fc4c0891",
+            "text": "au"
+          },
+          {
+            "id": "forme-c2f4271afa",
+            "text": "aux"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Je vais à l’atelier de réparation."
+      },
+      {
+        "id": "gram-ex-e7-qcm-verbe-a1-exposition",
+        "prompt": "Elles sortent ___exposition de photos.",
+        "answers": [
+          "de l’"
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-qcm-verbe",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vos amis visitent une exposition de photos.",
+        "options": [
+          {
+            "id": "forme-e513e9bb13",
+            "text": "de l’"
+          },
+          {
+            "id": "forme-accc640d1b",
+            "text": "au"
+          },
+          {
+            "id": "forme-d0d0d44ce1",
+            "text": "aux"
+          }
+        ],
+        "explanation": "À + le = au ; à + les = aux ; de + le = du ; de + les = des. À la, de la, à l’ et de l’ gardent leur forme. Phrase : Elles sortent de l’exposition de photos."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "espace-2026-11-23-v1",
+    "activityId": "gram-ex-e7-curriculum-a",
+    "subthemeId": "e7",
+    "topic": "gram-espace",
+    "level": "A1",
+    "label": "Associer",
+    "objective": "Choisir au, aux, du, des et les formes à la, à l’, de la, de l’.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-23",
+      "humanReview": "pending",
+      "note": "Situations et corrections relues. Images internes réemployées ; modèles ouverts non exclusifs. Validation enseignante en attente."
+    },
+    "presentations": [
+      "match"
+    ],
+    "instructions": {
+      "match": "Associez chaque phrase à la bonne forme de lieu. Les deux phrases concernent le même lieu, à l’aller ou au retour."
+    },
+    "units": [
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-musee",
+        "prompt": "Vous allez voir une exposition au musée, puis vous rentrez.",
+        "answers": [
+          "Je vais au musée.\nJe reviens du musée."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "musee-p1",
+            "left": "Je vais ___ musée.",
+            "right": "au",
+            "sourceId": "espace-e7-a1:musee"
+          },
+          {
+            "id": "musee-p2",
+            "left": "Je reviens ___ musée.",
+            "right": "du",
+            "sourceId": "espace-e7-a1:musee"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-parc",
+        "prompt": "Vous partez vous promener dans le parc, puis vous revenez.",
+        "answers": [
+          "Nous revenons du parc.\nNous allons au parc."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "parc-p1",
+            "left": "Nous revenons ___ parc.",
+            "right": "du",
+            "sourceId": "espace-e7-a1:parc"
+          },
+          {
+            "id": "parc-p2",
+            "left": "Nous allons ___ parc.",
+            "right": "au",
+            "sourceId": "espace-e7-a1:parc"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-marche",
+        "prompt": "Vous faites vos courses sur le marché du quartier.",
+        "answers": [
+          "Elle va au marché.\nElle revient du marché."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "marche-p1",
+            "left": "Elle va ___ marché.",
+            "right": "au",
+            "sourceId": "espace-e7-a1:marche"
+          },
+          {
+            "id": "marche-p2",
+            "left": "Elle revient ___ marché.",
+            "right": "du",
+            "sourceId": "espace-e7-a1:marche"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-cinema",
+        "prompt": "Vous prévoyez une séance de cinéma.",
+        "answers": [
+          "Ils sortent du cinéma.\nIls vont au cinéma."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "cinema-p1",
+            "left": "Ils sortent ___ cinéma.",
+            "right": "du",
+            "sourceId": "espace-e7-a1:cinema"
+          },
+          {
+            "id": "cinema-p2",
+            "left": "Ils vont ___ cinéma.",
+            "right": "au",
+            "sourceId": "espace-e7-a1:cinema"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-stade",
+        "prompt": "Votre équipe participe à une rencontre dans le stade.",
+        "answers": [
+          "Nous allons au stade.\nNous sortons du stade."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "stade-p1",
+            "left": "Nous allons ___ stade.",
+            "right": "au",
+            "sourceId": "espace-e7-a1:stade"
+          },
+          {
+            "id": "stade-p2",
+            "left": "Nous sortons ___ stade.",
+            "right": "du",
+            "sourceId": "espace-e7-a1:stade"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-restaurant",
+        "prompt": "Votre groupe réserve un repas au restaurant.",
+        "answers": [
+          "Vous revenez du restaurant.\nVous allez au restaurant."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "restaurant-p1",
+            "left": "Vous revenez ___ restaurant.",
+            "right": "du",
+            "sourceId": "espace-e7-a1:restaurant"
+          },
+          {
+            "id": "restaurant-p2",
+            "left": "Vous allez ___ restaurant.",
+            "right": "au",
+            "sourceId": "espace-e7-a1:restaurant"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-bureau",
+        "prompt": "Votre collègue rejoint son bureau après une réunion.",
+        "answers": [
+          "Il va au bureau.\nIl revient du bureau."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "bureau-p1",
+            "left": "Il va ___ bureau.",
+            "right": "au",
+            "sourceId": "espace-e7-a1:bureau"
+          },
+          {
+            "id": "bureau-p2",
+            "left": "Il revient ___ bureau.",
+            "right": "du",
+            "sourceId": "espace-e7-a1:bureau"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-supermarche",
+        "prompt": "Vous préparez un trajet pour acheter de la nourriture.",
+        "answers": [
+          "Je reviens du supermarché.\nJe vais au supermarché."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "supermarche-p1",
+            "left": "Je reviens ___ supermarché.",
+            "right": "du",
+            "sourceId": "espace-e7-a1:supermarche"
+          },
+          {
+            "id": "supermarche-p2",
+            "left": "Je vais ___ supermarché.",
+            "right": "au",
+            "sourceId": "espace-e7-a1:supermarche"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-port",
+        "prompt": "Votre amie va voir les bateaux dans le port.",
+        "answers": [
+          "Elle va au port.\nElle revient du port."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "port-p1",
+            "left": "Elle va ___ port.",
+            "right": "au",
+            "sourceId": "espace-e7-a1:port"
+          },
+          {
+            "id": "port-p2",
+            "left": "Elle revient ___ port.",
+            "right": "du",
+            "sourceId": "espace-e7-a1:port"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-jardin",
+        "prompt": "Vous rejoignez votre groupe dans le jardin partagé.",
+        "answers": [
+          "Tu reviens du jardin partagé.\nTu vas au jardin partagé."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "jardin-p1",
+            "left": "Tu reviens ___ jardin partagé.",
+            "right": "du",
+            "sourceId": "espace-e7-a1:jardin"
+          },
+          {
+            "id": "jardin-p2",
+            "left": "Tu vas ___ jardin partagé.",
+            "right": "au",
+            "sourceId": "espace-e7-a1:jardin"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-village",
+        "prompt": "Votre famille rend visite à des amis dans un village.",
+        "answers": [
+          "Nous allons au village.\nNous revenons du village."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "village-p1",
+            "left": "Nous allons ___ village.",
+            "right": "au",
+            "sourceId": "espace-e7-a1:village"
+          },
+          {
+            "id": "village-p2",
+            "left": "Nous revenons ___ village.",
+            "right": "du",
+            "sourceId": "espace-e7-a1:village"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-centre",
+        "prompt": "Vous participez à un atelier dans le centre culturel.",
+        "answers": [
+          "Vous sortez du centre culturel.\nVous allez au centre culturel."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "centre-p1",
+            "left": "Vous sortez ___ centre culturel.",
+            "right": "du",
+            "sourceId": "espace-e7-a1:centre"
+          },
+          {
+            "id": "centre-p2",
+            "left": "Vous allez ___ centre culturel.",
+            "right": "au",
+            "sourceId": "espace-e7-a1:centre"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-college",
+        "prompt": "Votre frère rejoint son collège le matin.",
+        "answers": [
+          "Il va au collège.\nIl revient du collège."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "college-p1",
+            "left": "Il va ___ collège.",
+            "right": "au",
+            "sourceId": "espace-e7-a1:college"
+          },
+          {
+            "id": "college-p2",
+            "left": "Il revient ___ collège.",
+            "right": "du",
+            "sourceId": "espace-e7-a1:college"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-lycee",
+        "prompt": "Deux élèves se rendent dans leur lycée.",
+        "answers": [
+          "Elles sortent du lycée.\nElles vont au lycée."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "lycee-p1",
+            "left": "Elles sortent ___ lycée.",
+            "right": "du",
+            "sourceId": "espace-e7-a1:lycee"
+          },
+          {
+            "id": "lycee-p2",
+            "left": "Elles vont ___ lycée.",
+            "right": "au",
+            "sourceId": "espace-e7-a1:lycee"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-theatre",
+        "prompt": "Vous achetez des billets pour une pièce de théâtre.",
+        "answers": [
+          "Je vais au théâtre.\nJe sors du théâtre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "theatre-p1",
+            "left": "Je vais ___ théâtre.",
+            "right": "au",
+            "sourceId": "espace-e7-a1:theatre"
+          },
+          {
+            "id": "theatre-p2",
+            "left": "Je sors ___ théâtre.",
+            "right": "du",
+            "sourceId": "espace-e7-a1:theatre"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-zoo",
+        "prompt": "Votre groupe visite le zoo pendant une sortie.",
+        "answers": [
+          "Nous revenons du zoo.\nNous allons au zoo."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "zoo-p1",
+            "left": "Nous revenons ___ zoo.",
+            "right": "du",
+            "sourceId": "espace-e7-a1:zoo"
+          },
+          {
+            "id": "zoo-p2",
+            "left": "Nous allons ___ zoo.",
+            "right": "au",
+            "sourceId": "espace-e7-a1:zoo"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-camping",
+        "prompt": "Vous rejoignez votre emplacement dans un camping.",
+        "answers": [
+          "Tu vas au camping.\nTu reviens du camping."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "camping-p1",
+            "left": "Tu vas ___ camping.",
+            "right": "au",
+            "sourceId": "espace-e7-a1:camping"
+          },
+          {
+            "id": "camping-p2",
+            "left": "Tu reviens ___ camping.",
+            "right": "du",
+            "sourceId": "espace-e7-a1:camping"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-commissariat",
+        "prompt": "Une personne signale un objet perdu au commissariat.",
+        "answers": [
+          "Elle sort du commissariat.\nElle va au commissariat."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "commissariat-p1",
+            "left": "Elle sort ___ commissariat.",
+            "right": "du",
+            "sourceId": "espace-e7-a1:commissariat"
+          },
+          {
+            "id": "commissariat-p2",
+            "left": "Elle va ___ commissariat.",
+            "right": "au",
+            "sourceId": "espace-e7-a1:commissariat"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-salon",
+        "prompt": "Votre voisin se rend dans le salon de coiffure.",
+        "answers": [
+          "Il va au salon de coiffure.\nIl sort du salon de coiffure."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "salon-p1",
+            "left": "Il va ___ salon de coiffure.",
+            "right": "au",
+            "sourceId": "espace-e7-a1:salon"
+          },
+          {
+            "id": "salon-p2",
+            "left": "Il sort ___ salon de coiffure.",
+            "right": "du",
+            "sourceId": "espace-e7-a1:salon"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-gymnase",
+        "prompt": "Vous participez à un entraînement dans le gymnase.",
+        "answers": [
+          "Vous sortez du gymnase.\nVous allez au gymnase."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "gymnase-p1",
+            "left": "Vous sortez ___ gymnase.",
+            "right": "du",
+            "sourceId": "espace-e7-a1:gymnase"
+          },
+          {
+            "id": "gymnase-p2",
+            "left": "Vous allez ___ gymnase.",
+            "right": "au",
+            "sourceId": "espace-e7-a1:gymnase"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-toilettes",
+        "prompt": "Vous indiquez où se trouvent les toilettes dans le bâtiment.",
+        "answers": [
+          "Je vais aux toilettes.\nJe reviens des toilettes."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "toilettes-p1",
+            "left": "Je vais ___ toilettes.",
+            "right": "aux",
+            "sourceId": "espace-e7-a1:toilettes"
+          },
+          {
+            "id": "toilettes-p2",
+            "left": "Je reviens ___ toilettes.",
+            "right": "des",
+            "sourceId": "espace-e7-a1:toilettes"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-bains",
+        "prompt": "Un groupe se rend dans les bains publics.",
+        "answers": [
+          "Nous sortons des bains publics.\nNous allons aux bains publics."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "bains-p1",
+            "left": "Nous sortons ___ bains publics.",
+            "right": "des",
+            "sourceId": "espace-e7-a1:bains"
+          },
+          {
+            "id": "bains-p2",
+            "left": "Nous allons ___ bains publics.",
+            "right": "aux",
+            "sourceId": "espace-e7-a1:bains"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-archives",
+        "prompt": "Vous cherchez un document dans les archives municipales.",
+        "answers": [
+          "Elle va aux archives municipales.\nElle revient des archives municipales."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "archives-p1",
+            "left": "Elle va ___ archives municipales.",
+            "right": "aux",
+            "sourceId": "espace-e7-a1:archives"
+          },
+          {
+            "id": "archives-p2",
+            "left": "Elle revient ___ archives municipales.",
+            "right": "des",
+            "sourceId": "espace-e7-a1:archives"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-urgences",
+        "prompt": "Votre voisin est accompagné au service des urgences.",
+        "answers": [
+          "Il sort des urgences.\nIl va aux urgences."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "urgences-p1",
+            "left": "Il sort ___ urgences.",
+            "right": "des",
+            "sourceId": "espace-e7-a1:urgences"
+          },
+          {
+            "id": "urgences-p2",
+            "left": "Il va ___ urgences.",
+            "right": "aux",
+            "sourceId": "espace-e7-a1:urgences"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-jardins",
+        "prompt": "Des visiteurs découvrent les jardins botaniques.",
+        "answers": [
+          "Ils vont aux jardins botaniques.\nIls reviennent des jardins botaniques."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "jardins-p1",
+            "left": "Ils vont ___ jardins botaniques.",
+            "right": "aux",
+            "sourceId": "espace-e7-a1:jardins"
+          },
+          {
+            "id": "jardins-p2",
+            "left": "Ils reviennent ___ jardins botaniques.",
+            "right": "des",
+            "sourceId": "espace-e7-a1:jardins"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-halles",
+        "prompt": "Vous allez acheter des produits dans les halles du marché.",
+        "answers": [
+          "Nous revenons des halles.\nNous allons aux halles."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "halles-p1",
+            "left": "Nous revenons ___ halles.",
+            "right": "des",
+            "sourceId": "espace-e7-a1:halles"
+          },
+          {
+            "id": "halles-p2",
+            "left": "Nous allons ___ halles.",
+            "right": "aux",
+            "sourceId": "espace-e7-a1:halles"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-ateliers",
+        "prompt": "Des élèves participent à des activités dans les ateliers municipaux.",
+        "answers": [
+          "Elles vont aux ateliers municipaux.\nElles sortent des ateliers municipaux."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "ateliers-p1",
+            "left": "Elles vont ___ ateliers municipaux.",
+            "right": "aux",
+            "sourceId": "espace-e7-a1:ateliers"
+          },
+          {
+            "id": "ateliers-p2",
+            "left": "Elles sortent ___ ateliers municipaux.",
+            "right": "des",
+            "sourceId": "espace-e7-a1:ateliers"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-pistes",
+        "prompt": "Vous rejoignez les pistes de ski depuis votre logement.",
+        "answers": [
+          "Vous revenez des pistes de ski.\nVous allez aux pistes de ski."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "pistes-p1",
+            "left": "Vous revenez ___ pistes de ski.",
+            "right": "des",
+            "sourceId": "espace-e7-a1:pistes"
+          },
+          {
+            "id": "pistes-p2",
+            "left": "Vous allez ___ pistes de ski.",
+            "right": "aux",
+            "sourceId": "espace-e7-a1:pistes"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-galeries",
+        "prompt": "Un groupe visite les galeries du musée.",
+        "answers": [
+          "Ils vont aux galeries du musée.\nIls sortent des galeries du musée."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "galeries-p1",
+            "left": "Ils vont ___ galeries du musée.",
+            "right": "aux",
+            "sourceId": "espace-e7-a1:galeries"
+          },
+          {
+            "id": "galeries-p2",
+            "left": "Ils sortent ___ galeries du musée.",
+            "right": "des",
+            "sourceId": "espace-e7-a1:galeries"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-cuisines",
+        "prompt": "Votre équipe participe à un atelier dans les cuisines du centre.",
+        "answers": [
+          "Tu sors des cuisines du centre.\nTu vas aux cuisines du centre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "cuisines-p1",
+            "left": "Tu sors ___ cuisines du centre.",
+            "right": "des",
+            "sourceId": "espace-e7-a1:cuisines"
+          },
+          {
+            "id": "cuisines-p2",
+            "left": "Tu vas ___ cuisines du centre.",
+            "right": "aux",
+            "sourceId": "espace-e7-a1:cuisines"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-poste",
+        "prompt": "Vous devez envoyer un colis depuis la poste.",
+        "answers": [
+          "Je vais à la poste.\nJe reviens de la poste."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "poste-p1",
+            "left": "Je vais ___ poste.",
+            "right": "à la",
+            "sourceId": "espace-e7-a1:poste"
+          },
+          {
+            "id": "poste-p2",
+            "left": "Je reviens ___ poste.",
+            "right": "de la",
+            "sourceId": "espace-e7-a1:poste"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-bibliotheque",
+        "prompt": "Vous cherchez un livre dans la bibliothèque.",
+        "answers": [
+          "Nous sortons de la bibliothèque.\nNous allons à la bibliothèque."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "bibliotheque-p1",
+            "left": "Nous sortons ___ bibliothèque.",
+            "right": "de la",
+            "sourceId": "espace-e7-a1:bibliotheque"
+          },
+          {
+            "id": "bibliotheque-p2",
+            "left": "Nous allons ___ bibliothèque.",
+            "right": "à la",
+            "sourceId": "espace-e7-a1:bibliotheque"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-gare",
+        "prompt": "Votre partenaire prend un train à la gare.",
+        "answers": [
+          "Elle va à la gare.\nElle revient de la gare."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "gare-p1",
+            "left": "Elle va ___ gare.",
+            "right": "à la",
+            "sourceId": "espace-e7-a1:gare"
+          },
+          {
+            "id": "gare-p2",
+            "left": "Elle revient ___ gare.",
+            "right": "de la",
+            "sourceId": "espace-e7-a1:gare"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-piscine",
+        "prompt": "Votre fils participe à un cours dans la piscine.",
+        "answers": [
+          "Il sort de la piscine.\nIl va à la piscine."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "piscine-p1",
+            "left": "Il sort ___ piscine.",
+            "right": "de la",
+            "sourceId": "espace-e7-a1:piscine"
+          },
+          {
+            "id": "piscine-p2",
+            "left": "Il va ___ piscine.",
+            "right": "à la",
+            "sourceId": "espace-e7-a1:piscine"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-mairie",
+        "prompt": "Vous avez un rendez-vous dans la mairie.",
+        "answers": [
+          "Vous allez à la mairie.\nVous sortez de la mairie."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "mairie-p1",
+            "left": "Vous allez ___ mairie.",
+            "right": "à la",
+            "sourceId": "espace-e7-a1:mairie"
+          },
+          {
+            "id": "mairie-p2",
+            "left": "Vous sortez ___ mairie.",
+            "right": "de la",
+            "sourceId": "espace-e7-a1:mairie"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-pharmacie",
+        "prompt": "Votre groupe doit acheter un médicament à la pharmacie.",
+        "answers": [
+          "Nous sortons de la pharmacie.\nNous allons à la pharmacie."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "pharmacie-p1",
+            "left": "Nous sortons ___ pharmacie.",
+            "right": "de la",
+            "sourceId": "espace-e7-a1:pharmacie"
+          },
+          {
+            "id": "pharmacie-p2",
+            "left": "Nous allons ___ pharmacie.",
+            "right": "à la",
+            "sourceId": "espace-e7-a1:pharmacie"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-boulangerie",
+        "prompt": "Vous achetez du pain dans la boulangerie du quartier.",
+        "answers": [
+          "Tu vas à la boulangerie.\nTu reviens de la boulangerie."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "boulangerie-p1",
+            "left": "Tu vas ___ boulangerie.",
+            "right": "à la",
+            "sourceId": "espace-e7-a1:boulangerie"
+          },
+          {
+            "id": "boulangerie-p2",
+            "left": "Tu reviens ___ boulangerie.",
+            "right": "de la",
+            "sourceId": "espace-e7-a1:boulangerie"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-maison",
+        "prompt": "Vous rentrez dans votre maison après une promenade.",
+        "answers": [
+          "Je repars de la maison.\nJe rentre à la maison."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "maison-p1",
+            "left": "Je repars ___ maison.",
+            "right": "de la",
+            "sourceId": "espace-e7-a1:maison"
+          },
+          {
+            "id": "maison-p2",
+            "left": "Je rentre ___ maison.",
+            "right": "à la",
+            "sourceId": "espace-e7-a1:maison"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-banque",
+        "prompt": "Votre voisine se rend dans la banque pour un rendez-vous.",
+        "answers": [
+          "Elle va à la banque.\nElle sort de la banque."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "banque-p1",
+            "left": "Elle va ___ banque.",
+            "right": "à la",
+            "sourceId": "espace-e7-a1:banque"
+          },
+          {
+            "id": "banque-p2",
+            "left": "Elle sort ___ banque.",
+            "right": "de la",
+            "sourceId": "espace-e7-a1:banque"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-plage",
+        "prompt": "Vos amis passent l’après-midi sur la plage.",
+        "answers": [
+          "Ils reviennent de la plage.\nIls vont à la plage."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "plage-p1",
+            "left": "Ils reviennent ___ plage.",
+            "right": "de la",
+            "sourceId": "espace-e7-a1:plage"
+          },
+          {
+            "id": "plage-p2",
+            "left": "Ils vont ___ plage.",
+            "right": "à la",
+            "sourceId": "espace-e7-a1:plage"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-ecole",
+        "prompt": "Deux enfants rejoignent leur école le matin.",
+        "answers": [
+          "Ils vont à l’école.\nIls sortent de l’école."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "ecole-p1",
+            "left": "Ils vont ___école.",
+            "right": "à l’",
+            "sourceId": "espace-e7-a1:ecole"
+          },
+          {
+            "id": "ecole-p2",
+            "left": "Ils sortent ___école.",
+            "right": "de l’",
+            "sourceId": "espace-e7-a1:ecole"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-hopital",
+        "prompt": "Vous accompagnez un proche à l’hôpital.",
+        "answers": [
+          "Je sors de l’hôpital.\nJe vais à l’hôpital."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "hopital-p1",
+            "left": "Je sors ___hôpital.",
+            "right": "de l’",
+            "sourceId": "espace-e7-a1:hopital"
+          },
+          {
+            "id": "hopital-p2",
+            "left": "Je vais ___hôpital.",
+            "right": "à l’",
+            "sourceId": "espace-e7-a1:hopital"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-aeroport",
+        "prompt": "Votre groupe prend l’avion à l’aéroport.",
+        "answers": [
+          "Nous allons à l’aéroport.\nNous revenons de l’aéroport."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "aeroport-p1",
+            "left": "Nous allons ___aéroport.",
+            "right": "à l’",
+            "sourceId": "espace-e7-a1:aeroport"
+          },
+          {
+            "id": "aeroport-p2",
+            "left": "Nous revenons ___aéroport.",
+            "right": "de l’",
+            "sourceId": "espace-e7-a1:aeroport"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-hotel",
+        "prompt": "Vous rejoignez votre chambre dans l’hôtel.",
+        "answers": [
+          "Vous sortez de l’hôtel.\nVous allez à l’hôtel."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "hotel-p1",
+            "left": "Vous sortez ___hôtel.",
+            "right": "de l’",
+            "sourceId": "espace-e7-a1:hotel"
+          },
+          {
+            "id": "hotel-p2",
+            "left": "Vous allez ___hôtel.",
+            "right": "à l’",
+            "sourceId": "espace-e7-a1:hotel"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-office",
+        "prompt": "Votre amie demande des informations à l’office de tourisme.",
+        "answers": [
+          "Elle va à l’office de tourisme.\nElle sort de l’office de tourisme."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "office-p1",
+            "left": "Elle va ___office de tourisme.",
+            "right": "à l’",
+            "sourceId": "espace-e7-a1:office"
+          },
+          {
+            "id": "office-p2",
+            "left": "Elle sort ___office de tourisme.",
+            "right": "de l’",
+            "sourceId": "espace-e7-a1:office"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-universite",
+        "prompt": "Un étudiant rejoint son université.",
+        "answers": [
+          "Il sort de l’université.\nIl va à l’université."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "universite-p1",
+            "left": "Il sort ___université.",
+            "right": "de l’",
+            "sourceId": "espace-e7-a1:universite"
+          },
+          {
+            "id": "universite-p2",
+            "left": "Il va ___université.",
+            "right": "à l’",
+            "sourceId": "espace-e7-a1:universite"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-epicerie",
+        "prompt": "Vous faites une petite course à l’épicerie.",
+        "answers": [
+          "Tu vas à l’épicerie.\nTu sors de l’épicerie."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "epicerie-p1",
+            "left": "Tu vas ___épicerie.",
+            "right": "à l’",
+            "sourceId": "espace-e7-a1:epicerie"
+          },
+          {
+            "id": "epicerie-p2",
+            "left": "Tu sors ___épicerie.",
+            "right": "de l’",
+            "sourceId": "espace-e7-a1:epicerie"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-accueil",
+        "prompt": "Votre groupe doit se présenter à l’accueil du centre.",
+        "answers": [
+          "Nous revenons de l’accueil.\nNous allons à l’accueil."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "accueil-p1",
+            "left": "Nous revenons ___accueil.",
+            "right": "de l’",
+            "sourceId": "espace-e7-a1:accueil"
+          },
+          {
+            "id": "accueil-p2",
+            "left": "Nous allons ___accueil.",
+            "right": "à l’",
+            "sourceId": "espace-e7-a1:accueil"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-atelier",
+        "prompt": "Vous participez à une séance dans l’atelier de réparation.",
+        "answers": [
+          "Je vais à l’atelier de réparation.\nJe sors de l’atelier de réparation."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "atelier-p1",
+            "left": "Je vais ___atelier de réparation.",
+            "right": "à l’",
+            "sourceId": "espace-e7-a1:atelier"
+          },
+          {
+            "id": "atelier-p2",
+            "left": "Je sors ___atelier de réparation.",
+            "right": "de l’",
+            "sourceId": "espace-e7-a1:atelier"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-a-a1-exposition",
+        "prompt": "Vos amis visitent une exposition de photos.",
+        "answers": [
+          "Elles sortent de l’exposition de photos.\nElles vont à l’exposition de photos."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-a",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "pairs": [
+          {
+            "id": "exposition-p1",
+            "left": "Elles sortent ___exposition de photos.",
+            "right": "de l’",
+            "sourceId": "espace-e7-a1:exposition"
+          },
+          {
+            "id": "exposition-p2",
+            "left": "Elles vont ___exposition de photos.",
+            "right": "à l’",
+            "sourceId": "espace-e7-a1:exposition"
+          }
+        ],
+        "explanation": "La première phrase et la seconde distinguent la destination et le point de départ. Respectez à/de, le genre, le nombre et l’élision."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "espace-2026-11-23-v1",
+    "activityId": "gram-ex-e7-curriculum-c",
+    "subthemeId": "e7",
+    "topic": "gram-espace",
+    "level": "A1",
+    "label": "Corriger l’erreur",
+    "objective": "Choisir au, aux, du, des et les formes à la, à l’, de la, de l’.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-23",
+      "humanReview": "pending",
+      "note": "Situations et corrections relues. Images internes réemployées ; modèles ouverts non exclusifs. Validation enseignante en attente."
+    },
+    "presentations": [
+      "correct"
+    ],
+    "instructions": {
+      "correct": "Corrigez le groupe de lieu, puis réécrivez la phrase entière avec la bonne forme."
+    },
+    "units": [
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-musee",
+        "prompt": "Je vais à le musée.",
+        "answers": [
+          "Je vais au musée."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous allez voir une exposition au musée, puis vous rentrez.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 12,
+          "text": "à le"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « au ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-parc",
+        "prompt": "Nous revenons de le parc.",
+        "answers": [
+          "Nous revenons du parc."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous partez vous promener dans le parc, puis vous revenez.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 14,
+          "end": 19,
+          "text": "de le"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « du ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-marche",
+        "prompt": "Elle va à le marché.",
+        "answers": [
+          "Elle va au marché."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous faites vos courses sur le marché du quartier.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 12,
+          "text": "à le"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « au ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-cinema",
+        "prompt": "Ils sortent de le cinéma.",
+        "answers": [
+          "Ils sortent du cinéma."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous prévoyez une séance de cinéma.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 17,
+          "text": "de le"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « du ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-stade",
+        "prompt": "Nous allons à le stade.",
+        "answers": [
+          "Nous allons au stade."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre équipe participe à une rencontre dans le stade.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 16,
+          "text": "à le"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « au ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-restaurant",
+        "prompt": "Vous revenez de le restaurant.",
+        "answers": [
+          "Vous revenez du restaurant."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre groupe réserve un repas au restaurant.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 13,
+          "end": 18,
+          "text": "de le"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « du ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-bureau",
+        "prompt": "Il va à le bureau.",
+        "answers": [
+          "Il va au bureau."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre collègue rejoint son bureau après une réunion.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 6,
+          "end": 10,
+          "text": "à le"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « au ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-supermarche",
+        "prompt": "Je reviens de le supermarché.",
+        "answers": [
+          "Je reviens du supermarché."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous préparez un trajet pour acheter de la nourriture.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 16,
+          "text": "de le"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « du ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-port",
+        "prompt": "Elle va à le port.",
+        "answers": [
+          "Elle va au port."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre amie va voir les bateaux dans le port.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 12,
+          "text": "à le"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « au ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-jardin",
+        "prompt": "Tu reviens de le jardin partagé.",
+        "answers": [
+          "Tu reviens du jardin partagé."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous rejoignez votre groupe dans le jardin partagé.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 16,
+          "text": "de le"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « du ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-village",
+        "prompt": "Nous allons à le village.",
+        "answers": [
+          "Nous allons au village."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre famille rend visite à des amis dans un village.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 16,
+          "text": "à le"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « au ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-centre",
+        "prompt": "Vous sortez de le centre culturel.",
+        "answers": [
+          "Vous sortez du centre culturel."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous participez à un atelier dans le centre culturel.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 17,
+          "text": "de le"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « du ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-college",
+        "prompt": "Il va à le collège.",
+        "answers": [
+          "Il va au collège."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre frère rejoint son collège le matin.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 6,
+          "end": 10,
+          "text": "à le"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « au ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-lycee",
+        "prompt": "Elles sortent de le lycée.",
+        "answers": [
+          "Elles sortent du lycée."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Deux élèves se rendent dans leur lycée.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 14,
+          "end": 19,
+          "text": "de le"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « du ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-theatre",
+        "prompt": "Je vais à le théâtre.",
+        "answers": [
+          "Je vais au théâtre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous achetez des billets pour une pièce de théâtre.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 12,
+          "text": "à le"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « au ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-zoo",
+        "prompt": "Nous revenons de le zoo.",
+        "answers": [
+          "Nous revenons du zoo."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre groupe visite le zoo pendant une sortie.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 14,
+          "end": 19,
+          "text": "de le"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « du ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-camping",
+        "prompt": "Tu vas à le camping.",
+        "answers": [
+          "Tu vas au camping."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous rejoignez votre emplacement dans un camping.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 7,
+          "end": 11,
+          "text": "à le"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « au ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-commissariat",
+        "prompt": "Elle sort de le commissariat.",
+        "answers": [
+          "Elle sort du commissariat."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Une personne signale un objet perdu au commissariat.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 10,
+          "end": 15,
+          "text": "de le"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « du ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-salon",
+        "prompt": "Il va à le salon de coiffure.",
+        "answers": [
+          "Il va au salon de coiffure."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre voisin se rend dans le salon de coiffure.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 6,
+          "end": 10,
+          "text": "à le"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « au ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-gymnase",
+        "prompt": "Vous sortez de le gymnase.",
+        "answers": [
+          "Vous sortez du gymnase."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous participez à un entraînement dans le gymnase.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 17,
+          "text": "de le"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « du ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-toilettes",
+        "prompt": "Je vais à les toilettes.",
+        "answers": [
+          "Je vais aux toilettes."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous indiquez où se trouvent les toilettes dans le bâtiment.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 13,
+          "text": "à les"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « aux ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-bains",
+        "prompt": "Nous sortons de les bains publics.",
+        "answers": [
+          "Nous sortons des bains publics."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Un groupe se rend dans les bains publics.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 13,
+          "end": 19,
+          "text": "de les"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « des ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-archives",
+        "prompt": "Elle va à les archives municipales.",
+        "answers": [
+          "Elle va aux archives municipales."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous cherchez un document dans les archives municipales.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 13,
+          "text": "à les"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « aux ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-urgences",
+        "prompt": "Il sort de les urgences.",
+        "answers": [
+          "Il sort des urgences."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre voisin est accompagné au service des urgences.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 14,
+          "text": "de les"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « des ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-jardins",
+        "prompt": "Ils vont à les jardins botaniques.",
+        "answers": [
+          "Ils vont aux jardins botaniques."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Des visiteurs découvrent les jardins botaniques.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 14,
+          "text": "à les"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « aux ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-halles",
+        "prompt": "Nous revenons de les halles.",
+        "answers": [
+          "Nous revenons des halles."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous allez acheter des produits dans les halles du marché.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 14,
+          "end": 20,
+          "text": "de les"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « des ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-ateliers",
+        "prompt": "Elles vont à les ateliers municipaux.",
+        "answers": [
+          "Elles vont aux ateliers municipaux."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Des élèves participent à des activités dans les ateliers municipaux.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 16,
+          "text": "à les"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « aux ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-pistes",
+        "prompt": "Vous revenez de les pistes de ski.",
+        "answers": [
+          "Vous revenez des pistes de ski."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous rejoignez les pistes de ski depuis votre logement.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 13,
+          "end": 19,
+          "text": "de les"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « des ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-galeries",
+        "prompt": "Ils vont à les galeries du musée.",
+        "answers": [
+          "Ils vont aux galeries du musée."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Un groupe visite les galeries du musée.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 14,
+          "text": "à les"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « aux ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-cuisines",
+        "prompt": "Tu sors de les cuisines du centre.",
+        "answers": [
+          "Tu sors des cuisines du centre."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre équipe participe à un atelier dans les cuisines du centre.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 14,
+          "text": "de les"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « des ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-poste",
+        "prompt": "Je vais au poste.",
+        "answers": [
+          "Je vais à la poste."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous devez envoyer un colis depuis la poste.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 10,
+          "text": "au"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « à la ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-bibliotheque",
+        "prompt": "Nous sortons du bibliothèque.",
+        "answers": [
+          "Nous sortons de la bibliothèque."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous cherchez un livre dans la bibliothèque.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 13,
+          "end": 15,
+          "text": "du"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « de la ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-gare",
+        "prompt": "Elle va au gare.",
+        "answers": [
+          "Elle va à la gare."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre partenaire prend un train à la gare.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 10,
+          "text": "au"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « à la ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-piscine",
+        "prompt": "Il sort du piscine.",
+        "answers": [
+          "Il sort de la piscine."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre fils participe à un cours dans la piscine.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 10,
+          "text": "du"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « de la ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-mairie",
+        "prompt": "Vous allez au mairie.",
+        "answers": [
+          "Vous allez à la mairie."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous avez un rendez-vous dans la mairie.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 13,
+          "text": "au"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « à la ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-pharmacie",
+        "prompt": "Nous sortons du pharmacie.",
+        "answers": [
+          "Nous sortons de la pharmacie."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre groupe doit acheter un médicament à la pharmacie.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 13,
+          "end": 15,
+          "text": "du"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « de la ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-boulangerie",
+        "prompt": "Tu vas au boulangerie.",
+        "answers": [
+          "Tu vas à la boulangerie."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous achetez du pain dans la boulangerie du quartier.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 7,
+          "end": 9,
+          "text": "au"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « à la ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-maison",
+        "prompt": "Je repars du maison.",
+        "answers": [
+          "Je repars de la maison."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous rentrez dans votre maison après une promenade.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 10,
+          "end": 12,
+          "text": "du"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « de la ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-banque",
+        "prompt": "Elle va au banque.",
+        "answers": [
+          "Elle va à la banque."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre voisine se rend dans la banque pour un rendez-vous.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 10,
+          "text": "au"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « à la ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-plage",
+        "prompt": "Ils reviennent du plage.",
+        "answers": [
+          "Ils reviennent de la plage."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vos amis passent l’après-midi sur la plage.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 15,
+          "end": 17,
+          "text": "du"
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « de la ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-ecole",
+        "prompt": "Ils vont à la école.",
+        "answers": [
+          "Ils vont à l’école."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Deux enfants rejoignent leur école le matin.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 14,
+          "text": "à la "
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « à l’ ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-hopital",
+        "prompt": "Je sors de la hôpital.",
+        "answers": [
+          "Je sors de l’hôpital."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous accompagnez un proche à l’hôpital.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 14,
+          "text": "de la "
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « de l’ ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-aeroport",
+        "prompt": "Nous allons au aéroport.",
+        "answers": [
+          "Nous allons à l’aéroport."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre groupe prend l’avion à l’aéroport.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 15,
+          "text": "au "
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « à l’ ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-hotel",
+        "prompt": "Vous sortez de la hôtel.",
+        "answers": [
+          "Vous sortez de l’hôtel."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous rejoignez votre chambre dans l’hôtel.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 18,
+          "text": "de la "
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « de l’ ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-office",
+        "prompt": "Elle va au office de tourisme.",
+        "answers": [
+          "Elle va à l’office de tourisme."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre amie demande des informations à l’office de tourisme.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 11,
+          "text": "au "
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « à l’ ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-universite",
+        "prompt": "Il sort de la université.",
+        "answers": [
+          "Il sort de l’université."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Un étudiant rejoint son université.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 14,
+          "text": "de la "
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « de l’ ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-epicerie",
+        "prompt": "Tu vas à la épicerie.",
+        "answers": [
+          "Tu vas à l’épicerie."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous faites une petite course à l’épicerie.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 7,
+          "end": 12,
+          "text": "à la "
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « à l’ ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-accueil",
+        "prompt": "Nous revenons de la accueil.",
+        "answers": [
+          "Nous revenons de l’accueil."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Votre groupe doit se présenter à l’accueil du centre.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 14,
+          "end": 20,
+          "text": "de la "
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « de l’ ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-atelier",
+        "prompt": "Je vais au atelier de réparation.",
+        "answers": [
+          "Je vais à l’atelier de réparation."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vous participez à une séance dans l’atelier de réparation.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 11,
+          "text": "au "
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « à l’ ». Gardez le verbe, le lieu et le sens de la phrase."
+      },
+      {
+        "id": "gram-ex-e7-curriculum-c-a1-exposition",
+        "prompt": "Elles sortent de la exposition de photos.",
+        "answers": [
+          "Elles sortent de l’exposition de photos."
+        ],
+        "source": {
+          "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+          "typeId": "gram-ex-e7-curriculum-c",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "cue": "Vos amis visitent une exposition de photos.",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 14,
+          "end": 20,
+          "text": "de la "
+        },
+        "explanation": "Corrigez uniquement le groupe de lieu : « de l’ ». Gardez le verbe, le lieu et le sens de la phrase."
+      }
+    ]
+  }
+]

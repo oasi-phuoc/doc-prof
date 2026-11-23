@@ -9,7 +9,7 @@ export function validGrammarImage(value: unknown): value is GrammarImageSupport 
     typeof v.src==='string' && new RegExp(`^/lib/images/grammaire/curriculum/sha256/${v.sha256}\\.(webp|png|jpg)$`).test(v.src) &&
     Number.isInteger(v.width)&&Number(v.width)>0&&Number.isInteger(v.height)&&Number(v.height)>0 &&
     !!source && typeof source==='object' && !Array.isArray(source) && text(source.path)&&
-    /^\/lib\/images\/[a-z0-9/_-]+\.(webp|png|jpg)$/.test(source.path) &&
+    /^\/lib\/images\/[\p{L}\p{M}0-9/_-]+\.(webp|png|jpg)$/u.test(source.path) &&
     text(source.manifest)&&/^(docs|public)\/[a-zA-Z0-9/_.-]+\.json$/.test(source.manifest)&&!source.manifest.includes('..') &&
     ['project-generated','permitted-reuse'].includes(String(source.rights))&&text(source.note)
 }

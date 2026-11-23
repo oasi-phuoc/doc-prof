@@ -8,6 +8,9 @@ function cost(item: MathItem): number {
   const q=item.grammar
   if (!q) return 0
   // A2 tonic references need the context, the target group and a full corrected sentence.
+  // Full contexts and alternative directions need one A4 block per transformation.
+  if(q.unit.source.typeId==='gram-ex-e6-curriculum-t')return 160
+  if(q.unit.source.typeId==='gram-ex-e7-curriculum-a')return 120
   if(q.unit.source.typeId.startsWith('gram-ex-d3-')&&q.unit.source.partition==='a2')return q.presentation==='transform'?160:80
   if(q.unit.source.typeId.startsWith('gram-ex-c4-')&&q.unit.kind!=='production')return q.presentation==='gap'?60:80
   if(q.unit.source.typeId==='gram-ex-c1-curriculum-complete'||q.unit.source.typeId==='gram-ex-c1-curriculum-o')return 80

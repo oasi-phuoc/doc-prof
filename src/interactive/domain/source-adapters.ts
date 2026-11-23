@@ -2,6 +2,7 @@ import type { MathItem } from '@/math/types'
 import { soutienAudioFor } from '@/francais/soutien/audio'
 import type { Choice, Question } from './types'
 import { hash } from './seeds'
+import { isContextualGrammarMatch } from '@/grammaire/curriculum/types'
 import { isGrammarQuestion } from '@/grammaire/curriculum/validation'
 import { grammarReadingChild } from '@/grammaire/curriculum/items'
 import { grammarScenarioChild, grammarScenarioContext } from '@/grammaire/curriculum/scenario'
@@ -30,7 +31,7 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
     if (!isGrammarQuestion(item.grammar)) return {items:[],issues:['Question grammaticale invalide : vérifiez la fiche source.']}
     const q=item.grammar, u=q.unit
     const imageSupport={...(u.imageSupports?{grammarImages:u.imageSupports}:{}),...(u.countryGender?{grammarCountryGender:u.countryGender}:{})}
-    const models=u.kind==='completion'&&['gram-ex-c4-qcm-verbe','gram-ex-d1-qcm-verbe','gram-ex-d2-qcm-conj','gram-ex-d3-qcm-verbe'].includes(u.source.typeId)?u.answers.map(answer=>u.prompt.replace(/___(\s*)/,(_,space:string)=>answer+(answer.endsWith('’')?'':space))):u.answers
+    const models=u.kind==='completion'&&['gram-ex-c4-qcm-verbe','gram-ex-d1-qcm-verbe','gram-ex-d2-qcm-conj','gram-ex-d3-qcm-verbe','gram-ex-e1-qcm-verbe','gram-ex-e6-qcm-verbe','gram-ex-e7-qcm-verbe'].includes(u.source.typeId)?u.answers.map(answer=>u.prompt.replace(/___(\s*)/,(_,space:string)=>answer+(answer.endsWith('’')?'':space))):u.answers
     const model=models.join(' / ')+'\n'+u.explanation
     const rawPrompt=u.kind==='completion' && u.agreementHint?u.prompt.replace('___',`___ (${u.agreementHint})`):u.kind==='completion' && u.countryGender?u.prompt.replace('___',`___ (${u.countryGender}) `):
       u.kind==='completion' && u.givenVerb?u.prompt.replace('___',`___ (${u.givenVerb})`):u.prompt
@@ -67,11 +68,11 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
       return {items:[{...imageSupport,part:0,prompt,instruction:'',choices:q.options!,wordBlank:sourceWordBlank(prompt,q.options!),correctId:correct.id,choiceOrderPolicy:'fixed',
         model:u.prompt.replace('___',correct.text)+'\n'+u.explanation}],issues:[]}
     }
-    if(u.kind==='match'&&exerciseType==='gram-ex-famille-curriculum-a'){
+    if(u.kind==='match'&&isContextualGrammarMatch(exerciseType)){
       const categoryId=(id:string)=>`relation-${hash(`${u.id}:${id}`)}`
       return {items:[{...imageSupport,part:0,
-      prompt:'Associez les personnes et les liens de parenté.',context:u.prompt,
-      instruction:'Glissez chaque prénom vers son lien de parenté, ou choisissez un prénom puis sa destination.',
+      prompt:exerciseType==='gram-ex-famille-curriculum-a'?'Associez les personnes et les liens de parenté.':sourceInstruction,context:u.prompt,
+      instruction:exerciseType==='gram-ex-famille-curriculum-a'?'Glissez chaque prénom vers son lien de parenté, ou choisissez un prénom puis sa destination.':'Glissez chaque phrase vers la forme qui convient, ou choisissez une phrase puis sa destination.',
       choices:[],mode:'sorting',teacherLed:true,
       wordSorting:{sentence:{tokens:u.pairs.map(pair=>pair.left),ending:''},categories:q.rightOptions!.map(option=>({id:categoryId(option.id),label:option.text}))},
       sortingTargets:u.pairs.map(pair=>categoryId(pair.id)),model}],issues:[]}}

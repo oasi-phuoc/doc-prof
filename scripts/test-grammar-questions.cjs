@@ -47,7 +47,8 @@ for(const form of ['Qui','Où','Quand','Comment','Pourquoi','Qu’est-ce','De qu
 const c3=banks.find(b=>b.activityId==='gram-ex-c3-curriculum-complete');assert.deepEqual([...new Set(c3.units.map(u=>u.answers[0].toLowerCase()))].sort(),['quel','quelle','quelles','quels'])
 const oldPage={domain:'grammaire',topic:'gram-questions',exerciseType:'gram-ex-c1-question-est-ce-que',count:3,columns:1,difficulty:'facile'}
 const fresh={...oldPage,...defaultGrammarPilot(oldPage.exerciseType)},co={...oldPage,exerciseType:'gram-ex-a1-co-theme'}
-const cases=[{pages:[oldPage]}, {pages:[{domain:'algèbre',exerciseType:'add'}],libreSnapshot:[oldPage]},{pages:[{...co,extraBlocks:[oldPage]}]}, {pages:[fresh]},{pages:[co]},{pages:[{...oldPage,exerciseType:'gram-ex-e1-qcm-verbe'}]}, {pages:[{...oldPage,domain:'algèbre'}]},{pages:[{...oldPage,exerciseType:'gram-ex-a3-nat-co'}]}]
+// A synthetic non-retired notion stays a negative control as real themes are migrated.
+const cases=[{pages:[oldPage]}, {pages:[{domain:'algèbre',exerciseType:'add'}],libreSnapshot:[oldPage]},{pages:[{...co,extraBlocks:[oldPage]}]}, {pages:[fresh]},{pages:[co]},{pages:[{...oldPage,exerciseType:'gram-ex-fixture-unmigrated-qcm-verbe'}]}, {pages:[{...oldPage,domain:'algèbre'}]},{pages:[{...oldPage,exerciseType:'gram-ex-a3-nat-co'}]}]
 assert.deepEqual(cases.map(hasRetiredGrammarRecipe),[true,true,true,false,false,false,false,true])
 assert.equal(parseFicheRecipe({...input([oldPage])}),null);assert(!isRetiredGrammarType('gram-ex-famille-fam-co'))
 const protectedFiles=require('../docs/grammaire/implementation/audit-banques-historiques-20261122.json').protectedSha256

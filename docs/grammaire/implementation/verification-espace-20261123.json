@@ -1,0 +1,287 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-23",
+  "timezone": "Europe/Zurich",
+  "baseCommit": "4491e5ff3",
+  "status": "passed_for_pilot_with_preexisting_global_game_limits_and_remote_cleanup_blocked",
+  "delivery": {
+    "theme": "Se situer dans l’espace",
+    "levels": [
+      "A1",
+      "A2"
+    ],
+    "activities": 12,
+    "banks": 14,
+    "offerings": 18,
+    "selectableUnits": 670,
+    "variants": 910,
+    "authoredSourceRows": 220,
+    "illustratedSituations": 150,
+    "distinctImages": 15,
+    "openScenarios": 50,
+    "documents": 20,
+    "documentQuestions": 60,
+    "groupedAssociationUnits": 100,
+    "associationPairs": 200,
+    "teacherApprovedUnits": 0
+  },
+  "checks": [
+    {
+      "command": "npm run test:grammar:espace",
+      "status": "passed",
+      "coverage": "Explicit spatial references, contractions/elisions, equivalent gaps with a single correct QCM choice, canonical error spans, grouped sorting/context/privacy, image integrity and Unicode source-path safety, reading evidence, app/D1 retirement parity."
+    },
+    {
+      "command": "npm run test:grammar:levels",
+      "status": "passed",
+      "variants": 11220
+    },
+    {
+      "command": "npm run test:grammar:contracts",
+      "status": "passed"
+    },
+    {
+      "command": "npm run test:grammar:questions",
+      "status": "passed"
+    },
+    {
+      "command": "npm run test:grammar:family-completion",
+      "status": "passed"
+    },
+    {
+      "command": "npm run test:grammar:activite",
+      "status": "passed"
+    },
+    {
+      "command": "npm run test:grammar:image-urls",
+      "status": "passed"
+    },
+    {
+      "command": "node tests/grammar/espace-browser.mjs",
+      "status": "passed",
+      "offerings": 18,
+      "printedQuestionUnits": 1820,
+      "expectedAnswers": 2020,
+      "metricNote": "Each matching unit has two expected answers; the matching group counts once as a selectable/rendered unit.",
+      "sheets": 1598,
+      "classroomLaunches": 18,
+      "errors": [],
+      "interactions": "Both association activities exercised by pointer drag and touch, with private target mappings."
+    },
+    {
+      "command": "node tests/grammar/espace-pdf.mjs",
+      "status": "passed",
+      "actualPdfPreviews": 4,
+      "visualReview": "Choice letters visible; diagrams match the tested relations; the error instruction does not claim an absent underline."
+    },
+    {
+      "command": "node tests/grammar/family-completion-browser.mjs",
+      "status": "passed",
+      "evidence": "espace-20261123-proofs/family-regression",
+      "offerings": 3,
+      "printedQuestionUnits": 300,
+      "classroomLaunches": 3,
+      "coverage": "Shared association renderer: A4 bounds, pointer/touch/keyboard, undo, replay and private reveal; historical proofs preserved."
+    },
+    {
+      "command": "node scripts/verify-grammar-pools.cjs",
+      "status": "passed",
+      "types": 97,
+      "seeds": 3,
+      "positions": 16
+    },
+    {
+      "command": "Compile space sources in isolated temporary directory",
+      "status": "passed",
+      "deterministicOutputs": 4
+    },
+    {
+      "command": "TypeScript + Vite production build",
+      "status": "passed"
+    },
+    {
+      "command": "npm run lint",
+      "status": "passed",
+      "existingWarningsRemain": true
+    }
+  ],
+  "registryTotals": {
+    "activities": 161,
+    "offerings": 215,
+    "selectableUnits": 8250,
+    "variants": 11220,
+    "documentUsages": 300,
+    "documentQuestions": 1220
+  },
+  "retirement": {
+    "notions": [
+      "e1",
+      "e6",
+      "e7"
+    ],
+    "removedLegacyBanks": 3,
+    "removedLegacyItems": 150,
+    "removedLegacyCommunicationGroups": 1,
+    "retiredNotionsTotal": 32,
+    "remainingUnmigratedLegacyBanks": 66,
+    "unmigratedBanks": "Parsed data unchanged from parent commit",
+    "remoteSavedFiches": {
+      "status": "not_deleted_network_403_and_no_session_admin_token",
+      "sql": "api/fiches/maintenance/purge-retired-grammar.sql",
+      "cli": "scripts/prune-retired-grammar-fiches.cjs"
+    },
+    "existingGradedRecipes": "preserved"
+  },
+  "knownPreexistingFailures": [
+    {
+      "check": "Global interactive download budgets",
+      "rerunThisSlice": true,
+      "measurements": {
+        "competition": {
+          "gzip": 209098,
+          "maximumGzip": 204800
+        },
+        "game": {
+          "gzip": 3383235,
+          "maximumGzip": 3145728
+        }
+      },
+      "reference": "verification-activite-20261123.json"
+    },
+    {
+      "check": "Global pool sample tcm-csc-ex17 (generator label 18 — Nommer les formes)",
+      "rerunThisSlice": false,
+      "reference": "questions-20261122-proofs/pool-preexisting-failure.json"
+    }
+  ],
+  "limitations": [
+    "Teacher approval remains pending.",
+    "No physical printer or ENI test.",
+    "The full multi-theme browser suite and the full global pool suite were not rerun.",
+    "No remote fiche deletion or Worker deployment."
+  ],
+  "sourceFiles": [
+    {
+      "path": "scripts/build-grammar-espace.py",
+      "sha256": "61fcdd29f5f543629f968b32c491b1da0624e00d68df4ecd5ad8e53c90c8a6a4"
+    },
+    {
+      "path": "scripts/grammar_curriculum/espace-e1-a1.tsv",
+      "sha256": "30ac8a7d33be2e7b7da15efc7a31712b568ed6ef0146e3f8af08edf0ba767def"
+    },
+    {
+      "path": "scripts/grammar_curriculum/espace-e6-a1.tsv",
+      "sha256": "f258d944406459836651f6ad56a1982e190292f9dcab3983719d0810fcb601ff"
+    },
+    {
+      "path": "scripts/grammar_curriculum/espace-e6-a2.tsv",
+      "sha256": "3895dce65b2a1f1b021bfdbd2739ddf783f3e90f1c49dae638e68034bee18f72"
+    },
+    {
+      "path": "scripts/grammar_curriculum/espace-e7-a1.tsv",
+      "sha256": "3de3c015bfcf863c791d9a719be6bda1307f6409d54bf752cb9ca86b920bbad6"
+    },
+    {
+      "path": "scripts/grammar_curriculum/espace-lectures-a1.tsv",
+      "sha256": "9a6732abe16004af7bb4ae9d09babdd6c831b0492843f31e699e76d0e01de17d"
+    },
+    {
+      "path": "scripts/test-grammar-espace.cjs",
+      "sha256": "9322505e628480ea3e5b99bbbbc45200db24855a135b3722cead9b2325c4fcd0"
+    },
+    {
+      "path": "scripts/test-grammar-levels.cjs",
+      "sha256": "c623963d657b7c90f6ca1a13bfa43462f6aaabe5e6c683c1cddef9c1fc11d113"
+    },
+    {
+      "path": "scripts/test-grammar-questions.cjs",
+      "sha256": "cbcbb9580baa05e790f1fb013a1bd78eef4a579001d564acd531574e6b3ae34d"
+    },
+    {
+      "path": "scripts/update-grammar-espace-progress.cjs",
+      "sha256": "07b761333b1bd19cd11190ecd880713f4e7a600a271e9f22d7393e3e9baa53cb"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/e1.json",
+      "sha256": "1ce8da8cdf08ea42ce3e0d6b8ec5f99427106fa478855ab38d709b9feacf8ba8"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/e6.json",
+      "sha256": "c4d1c0ee648b76b081f5273928611370ab0318cfc6d5f93227733ea8da44ffb5"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/e7.json",
+      "sha256": "3282986fbd98c8b4e53d664069c7fe3fa4d428f7feff05d81b676ce34f08a4c8"
+    },
+    {
+      "path": "src/grammaire/curriculum/types.ts",
+      "sha256": "f2c3673080df10e436cac674ec8627dfc74875dc4bb4745d85db4a9e9ed97d5e"
+    },
+    {
+      "path": "src/grammaire/curriculum/image-support.ts",
+      "sha256": "fc1c6e64ac4a8247875c7c92f9568541cbdca4094beecc2f620c71e6566ec32a"
+    },
+    {
+      "path": "src/grammaire/curriculum/registry.ts",
+      "sha256": "aa34dc6a787c34c7362b5d8fbcec077196403cbf9314ce9812a5e62170d7764e"
+    },
+    {
+      "path": "src/grammaire/curriculum/pagination.ts",
+      "sha256": "b57350731fd686a8e6180b64d21e3a8c8d3e93501e53c6c7796b1f138ef0ffc5"
+    },
+    {
+      "path": "src/grammaire/curriculum/retired-subthemes.json",
+      "sha256": "bae7a2fb4f9724f1c52a9b8b76e4416881709cc3b0c3c8122127d93d50230a47"
+    },
+    {
+      "path": "src/grammaire/curriculum/graded-activities.json",
+      "sha256": "7f432768054675db681234f0ef846480c9c31e4fbcdfad8420ad5f3cc9ef50f9"
+    },
+    {
+      "path": "src/grammaire/exercises/bank/lessons-revised.ts",
+      "sha256": "7b9a5a0d3f8b68aafcc663e6c512cdcbfc3140a16fb169c63db2a218c858aa25"
+    },
+    {
+      "path": "src/grammaire/exercises/communication-data.json",
+      "sha256": "59ef6c170add9ac6d2143a2d3c85a4e65e1f4373d8f472c03d072b1aa2097895"
+    },
+    {
+      "path": "src/grammaire/exercises/catalog-exercises.ts",
+      "sha256": "ed1f9ef8f15d7a418d57768048c6b6d4fe7edd33f3a0ebe901c2a1bcf9cd8ac1"
+    },
+    {
+      "path": "src/components/item-view/grammar.tsx",
+      "sha256": "409221c1704ecb9137b08c1dc39fc5980579446ae84e7fc8a895186ee465f433"
+    },
+    {
+      "path": "src/interactive/domain/source-adapters.ts",
+      "sha256": "769c046de1f54bae3b99a0386913a935646b097a1a16b565e26143f90247ea57"
+    },
+    {
+      "path": "src/interactive/pools/catalog.generated.json",
+      "sha256": "60948b682e1ceb1b82584ccbca5b156328e9d8d7c5cc9a2817f7723bc49176df"
+    },
+    {
+      "path": "api/fiches/maintenance/purge-retired-grammar.sql",
+      "sha256": "245060a1ed295b1aed0ad286d75d7462b57dd7082eaad54d14d2291f08255ebd"
+    },
+    {
+      "path": "tests/grammar/espace-browser.mjs",
+      "sha256": "66f1529bc942402cafa8390bc5455e6faf7bbe90a2dee2f98fbe67df0a7ff935"
+    },
+    {
+      "path": "tests/grammar/espace-pdf.mjs",
+      "sha256": "141257a71927b9fc576eefac123f873a87951a8be0d71025a4cc58870e1479c3"
+    },
+    {
+      "path": "docs/grammaire/implementation/espace-media-manifest.json",
+      "sha256": "3e4ef93758ab2c6a3f0e0ccebd46014f9f813bba10a9da9a443ad30a89cf73e9"
+    }
+  ],
+  "secrets": {
+    "status": "passed",
+    "tool": "Gitleaks 8.30.1",
+    "findings": 0,
+    "changedFiles": 6043
+  }
+}

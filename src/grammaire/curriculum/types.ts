@@ -102,3 +102,8 @@ export class GrammarCurriculumError extends Error {
   readonly code: string
   constructor(code: string, message: string) { super(message); this.code=code }
 }
+
+/** Associations that require their shared facts and remain one grouped activity in class. */
+export function isContextualGrammarMatch(typeId: string): boolean {
+  return ['gram-ex-famille-curriculum-a','gram-ex-e1-curriculum-a','gram-ex-e7-curriculum-a'].includes(typeId)
+}
