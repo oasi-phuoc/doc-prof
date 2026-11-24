@@ -1,5 +1,7 @@
 # Galerie d’images
 
+État du 24 novembre : **8 164 images indexées**, dont **4 556 TCF avec titres et mots-clés revus sur les pixels**, aucun fichier TCF en attente de cette revue. Le reliquat DELF ajoute 50 nouvelles images ; dix illustrations de grammaire déjà suivies dans le dépôt sont également intégrées par la reconstruction du catalogue. [Suivi TCF](../tcf/lots-images-20261124/README.md).
+
 La rubrique `/images` est accessible par l’icône image du menu supérieur. Elle partage l’accès du créateur de fiches, mais reste une page indépendante : elle ne génère aucune fiche.
 
 - Toutes les images du dépôt sont indexées, y compris les fichiers hors de `public`. Le nombre actuel est celui du catalogue généré ; il augmente avec les lots contrôlés. Les artefacts temporaires du dossier `work/` sont exclus.

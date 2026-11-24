@@ -8,12 +8,11 @@
     "supports": 346,
     "questions": 1663,
     "statuses": {
-      "active_reviewed_trio": 725,
+      "active_reviewed_trio": 746,
       "keep_text_calendar_or_duration": 139,
       "keep_text_contextual": 645,
       "keep_text_named_identity_or_code": 60,
-      "keep_text_amount": 73,
-      "candidate_visual_review": 21
+      "keep_text_amount": 73
     },
     "by_level": {
       "A0-A1": {
@@ -31,12 +30,11 @@
         "keep_text_amount": 24
       },
       "A2-B1": {
-        "active_reviewed_trio": 125,
+        "active_reviewed_trio": 146,
         "keep_text_contextual": 346,
         "keep_text_calendar_or_duration": 35,
         "keep_text_named_identity_or_code": 9,
-        "keep_text_amount": 12,
-        "candidate_visual_review": 21
+        "keep_text_amount": 12
       }
     },
     "candidate_distinct_assets": 1407,
@@ -115720,8 +115718,8 @@
       "semantic_sha256": "7a3e886fa884101f05aaccc8a41d0e71386e8f2d1b3ccb8a7885552e54098721",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-038-02-01.mp3",
       "audio_sha256": "3ac8a5437ed82891f583e36ebbc4a0aaa25b17f1da3b1428750fee1244713ac7",
-      "status": "candidate_visual_review",
-      "reason": "Correction appliquée du stem de moment vers situation pour comparer trois situations. Lire au lit le soir, au volant, pendant un examen : conserver le lit et le soir ensemble dans la bonne image.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -115748,8 +115746,24 @@
           "brief": "Représenter entièrement « Pendant un examen » pour « Dans quelle situation beaucoup de personnes lisent-elles pour s’endormir ? ». Vérifier la transcription du support tcf-delf-actif-b1-038-02-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Correction appliquée du stem de moment vers situation pour comparer trois situations. Lire au lit le soir, au volant, pendant un examen : conserver le lit et le soir ensemble dans la bonne image."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-lire-lit.png",
+          "sha256": "f1b3547be971ab41cad1c8328ce6ed01dabd6a1c4fca4db21de9e6b0b78e83d8"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-lire-volant.png",
+          "sha256": "045b65915714cedeac2d45fe9634bf4e1ac16e4c837885bf36c304ae25618376"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-lecture-examen.png",
+          "sha256": "fccbc655590fc34d72c7d61709e1f409a57e76a7c255c8ceb06cb10213d167fc"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -115767,6 +115781,10 @@
         "evidence_quote": "le soir dans notre lit",
         "semantic_sha256": "7a3e886fa884101f05aaccc8a41d0e71386e8f2d1b3ccb8a7885552e54098721",
         "note": "Correction appliquée du stem de moment vers situation pour comparer trois situations. Lire au lit le soir, au volant, pendant un examen : conserver le lit et le soir ensemble dans la bonne image."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lots-images-20261124/delf-final21-activation.json",
+        "note": "Le support décrit la lecture du soir au lit pour s’endormir. Même lecteur dans les trois scènes ; nuit et lit, volant de voiture arrêtée, puis salle d’examen sont distincts."
       }
     },
     {
@@ -116020,8 +116038,8 @@
       "semantic_sha256": "53383437b1d29166614a8ec7036bfeec58809af8bd6c2be15ef57a495ae10e79",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-038-03-01.mp3",
       "audio_sha256": "58162a2f3a6d51b79c75e0b6b2ebcdd0e51c0d46e58c5fc4f5c3d81eaa0e49a7",
-      "status": "candidate_visual_review",
-      "reason": "Conduite rapide avec compteur non chiffré et indices de vitesse cohérents, stationnement, ouverture des fenêtres : trois actions routières distinguables, sans inventer une vitesse limite.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -116048,8 +116066,24 @@
           "brief": "Représenter entièrement « L’ouverture des fenêtres » pour « Quel comportement est présenté comme une première cause de mortalité ? ». Vérifier la transcription du support tcf-delf-actif-b1-038-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Conduite rapide avec compteur non chiffré et indices de vitesse cohérents, stationnement, ouverture des fenêtres : trois actions routières distinguables, sans inventer une vitesse limite."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-conduite-vitesse.png",
+          "sha256": "9f2b7dc983ec1dd9c693edd32506f480d317b569654627c4ab7606a86e4290a4"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-stationnement.png",
+          "sha256": "3241161beb1241c5ddcc7467cb7043dbbbe43b67b44ddb4f60a20d72c4241b75"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-ouvrir-fenetre.png",
+          "sha256": "00213cd8b3434fb596d780b57b5d2c88b2642679831a78600fd4ec57ed5070a3"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -116067,6 +116101,10 @@
         "evidence_quote": "grisés par la vitesse",
         "semantic_sha256": "53383437b1d29166614a8ec7036bfeec58809af8bd6c2be15ef57a495ae10e79",
         "note": "Conduite rapide avec compteur non chiffré et indices de vitesse cohérents, stationnement, ouverture des fenêtres : trois actions routières distinguables, sans inventer une vitesse limite."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lots-images-20261124/delf-final21-activation.json",
+        "note": "Le support cite la vitesse comme cause de mortalité. Même voiture rouge et conductrice : déplacement rapide, place de stationnement, puis vitre ouverte. Les deux leurres ne montrent pas de vitesse."
       }
     },
     {
@@ -116080,8 +116118,8 @@
       "semantic_sha256": "888873f6a0659bd08ed40c51fc382e15b8122b80928c37d9a13bdeba02feee91",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-038-03-01.mp3",
       "audio_sha256": "58162a2f3a6d51b79c75e0b6b2ebcdd0e51c0d46e58c5fc4f5c3d81eaa0e49a7",
-      "status": "candidate_visual_review",
-      "reason": "Trois diagrammes comparatifs avec mêmes repères de vue : champ rétréci, vision nocturne améliorée, angles morts supprimés. Représenter chaque relation avant/après, pas un simple pare-brise.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -116108,8 +116146,24 @@
           "brief": "Représenter entièrement « Elle supprime les angles morts » pour « Quel effet la vitesse a-t-elle sur la vision ? ». Vérifier la transcription du support tcf-delf-actif-b1-038-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Trois diagrammes comparatifs avec mêmes repères de vue : champ rétréci, vision nocturne améliorée, angles morts supprimés. Représenter chaque relation avant/après, pas un simple pare-brise."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-vision-reduite.png",
+          "sha256": "3f2d9bac396c8ccab7694da4a86b2b2aea358a22f7ac4ae4794df55e0a333bea"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-vision-nocturne.png",
+          "sha256": "9b5ec22bd7d82075d774e308b86d6aec7171d974ee107b31b9d9120febe226a7"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-vision-sans-angles-morts.png",
+          "sha256": "fa4d4f5b1d5eb393da89356570969b7223f5c478328902f52f4c57008d43ef49"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -116127,6 +116181,10 @@
         "evidence_quote": "la réduction du champ de vision",
         "semantic_sha256": "888873f6a0659bd08ed40c51fc382e15b8122b80928c37d9a13bdeba02feee91",
         "note": "Trois diagrammes comparatifs avec mêmes repères de vue : champ rétréci, vision nocturne améliorée, angles morts supprimés. Représenter chaque relation avant/après, pas un simple pare-brise."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lots-images-20261124/delf-final21-activation.json",
+        "note": "Le support indique un champ de vision réduit. Les trois schémas conservent leur référence supérieure et représentent respectivement un cône inférieur étroit, une vision nocturne éclairée et un halo tout autour de la voiture. Les deux derniers illustrent des réponses fausses, sans affirmation scientifique ajoutée."
       }
     },
     {
@@ -116140,8 +116198,8 @@
       "semantic_sha256": "31e4c5f5eb3af44e3374be082d73f9a24548e21d8f35c941e28c1aa3c2c9c5fa",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-038-03-01.mp3",
       "audio_sha256": "58162a2f3a6d51b79c75e0b6b2ebcdd0e51c0d46e58c5fc4f5c3d81eaa0e49a7",
-      "status": "candidate_visual_review",
-      "reason": "Trois schémas de freinage à référence commune : distance augmentée, nulle, inchangée. Même échelle et mêmes points de départ, sans distance numérique ajoutée.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -116168,8 +116226,24 @@
           "brief": "Représenter entièrement « Elle reste toujours identique » pour « Que devient la distance nécessaire pour freiner ? ». Vérifier la transcription du support tcf-delf-actif-b1-038-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Trois schémas de freinage à référence commune : distance augmentée, nulle, inchangée. Même échelle et mêmes points de départ, sans distance numérique ajoutée."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-freinage-augmente.png",
+          "sha256": "ae42cf4b3b53331caeb4a086698bcedd3b443dc2e528a470218f3b17c326ba4d"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-freinage-zero.png",
+          "sha256": "0aabc70c8e577aec81d0d6591f2f87e5d7fd1151abe9386f24841285fc96e741"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-freinage-identique.png",
+          "sha256": "64702a3ebc34ad5436f0cbb8b4b62253840afa46858997ead92df48ecfb7e7ed"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -116187,6 +116261,10 @@
         "evidence_quote": "une distance plus importante pour freiner",
         "semantic_sha256": "31e4c5f5eb3af44e3374be082d73f9a24548e21d8f35c941e28c1aa3c2c9c5fa",
         "note": "Trois schémas de freinage à référence commune : distance augmentée, nulle, inchangée. Même échelle et mêmes points de départ, sans distance numérique ajoutée."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lots-images-20261124/delf-final21-activation.json",
+        "note": "Le support dit que la distance de freinage augmente. Même route, voiture, pédale et référence supérieure ; la distance inférieure est plus longue, nulle ou identique. Les trois états sont comparés visuellement."
       }
     },
     {
@@ -116200,8 +116278,8 @@
       "semantic_sha256": "decbc1c1b2ee9089033138b5e9a35cc0a7610cf0e027115b83ca1ea47a0083bf",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-038-03-01.mp3",
       "audio_sha256": "58162a2f3a6d51b79c75e0b6b2ebcdd0e51c0d46e58c5fc4f5c3d81eaa0e49a7",
-      "status": "candidate_visual_review",
-      "reason": "Téléphone, gilet de sécurité effectivement rangé et roue de secours : trois objets distincts, en conservant le rangement précisé du gilet.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -116235,8 +116313,24 @@
           "brief": "Représenter entièrement « La roue de secours » pour « Quel objet peut distraire le conducteur ? ». Vérifier la transcription du support tcf-delf-actif-b1-038-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Téléphone, gilet de sécurité effectivement rangé et roue de secours : trois objets distincts, en conservant le rangement précisé du gilet."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-telephone-message.png",
+          "sha256": "7dbd5f807f497e57f9d544b01c867d3169fdcb907dbf665a6ee74827c5643ecd"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-gilet-range.png",
+          "sha256": "f3732805f94d488209dcb39d192a8835d91d86519e109d3aa73b752400ee4d7b"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-roue-secours.png",
+          "sha256": "3cb6aeaa5fecfc8e2d6879fdb64c32121f38fd2bf365fe5a785c2aeae2787b86"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -116254,6 +116348,10 @@
         "evidence_quote": "distraire par leur téléphone",
         "semantic_sha256": "decbc1c1b2ee9089033138b5e9a35cc0a7610cf0e027115b83ca1ea47a0083bf",
         "note": "Téléphone, gilet de sécurité effectivement rangé et roue de secours : trois objets distincts, en conservant le rangement précisé du gilet."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lots-images-20261124/delf-final21-activation.json",
+        "note": "Le support cite le téléphone comme distraction. Trois objets entiers sur ivoire : téléphone avec bulle de message, gilet plié rangé dans sa pochette et roue de secours automobile avec jante."
       }
     },
     {
@@ -116320,8 +116418,8 @@
       "semantic_sha256": "24abbef1a636cff95dad7b5f9deea684512ef871e173fa0de54076d19d0fa7af",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-038-03-01.mp3",
       "audio_sha256": "58162a2f3a6d51b79c75e0b6b2ebcdd0e51c0d46e58c5fc4f5c3d81eaa0e49a7",
-      "status": "candidate_visual_review",
-      "reason": "Somnolence avec paupières lourdes et posture, faim avec indice alimentaire et état éveillé, bonne humeur éveillée : ne pas faire passer une simple grimace pour un trouble médical.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -116348,8 +116446,24 @@
           "brief": "Représenter entièrement « La bonne humeur » pour « Quel autre état dangereux est évoqué ? ». Vérifier la transcription du support tcf-delf-actif-b1-038-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Somnolence avec paupières lourdes et posture, faim avec indice alimentaire et état éveillé, bonne humeur éveillée : ne pas faire passer une simple grimace pour un trouble médical."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-somnolence.png",
+          "sha256": "e7a38cfabc5877e1ad0b7cf7b5f820ce908f54a69e83428c2365213dc51a58ee"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-faim.png",
+          "sha256": "697a66c33dafedb4f4e88089eac56759eec1a126bed951010e739fba17fdd487"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-bonne-humeur.png",
+          "sha256": "99f3e9fd02ef1fbeb208da508daee4c8ee69e7d3f9fc87c985d3304448a2c5d2"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -116367,6 +116481,10 @@
         "evidence_quote": "la fatigue et la somnolence",
         "semantic_sha256": "24abbef1a636cff95dad7b5f9deea684512ef871e173fa0de54076d19d0fa7af",
         "note": "Somnolence avec paupières lourdes et posture, faim avec indice alimentaire et état éveillé, bonne humeur éveillée : ne pas faire passer une simple grimace pour un trouble médical."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lots-images-20261124/delf-final21-activation.json",
+        "note": "Le support évoque fatigue et somnolence. Même homme, vêtement et habitacle ; bâillement et paupières baissées, faim avec main au ventre et pensée de pain, puis sourire éveillé. Aucun aliment effectivement consommé au volant."
       }
     },
     {
@@ -116553,8 +116671,8 @@
       "semantic_sha256": "9c2a2fa93e8294def57452129ba6e00a58ae367c171abc000da40b2a04e5bbff",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-039-01-01.mp3",
       "audio_sha256": "77dad5f05ec6735650b44cbf0d440581f37966d0a94d84dd0deff891008eaf6a",
-      "status": "candidate_visual_review",
-      "reason": "Correction appliquée pour préciser la surprise initiale d’Arthur et proposer trois noms de réseaux de même catégorie. Utiliser uniquement les logos officiels vérifiés Snapchat, Facebook et Instagram, sans logos générés approximatifs.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -116581,8 +116699,24 @@
           "brief": "Représenter entièrement « Instagram » pour « Quel réseau Arthur mentionne-t-il en premier ? ». Vérifier la transcription du support tcf-delf-actif-b1-039-01-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Correction appliquée pour préciser la surprise initiale d’Arthur et proposer trois noms de réseaux de même catégorie. Utiliser uniquement les logos officiels vérifiés Snapchat, Facebook et Instagram, sans logos générés approximatifs."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-application-snapchat.png",
+          "sha256": "3cb80a3a6c193115908482598d57cb39f33f228ed3cffe9f17e1ee3757cef411"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-application-facebook.png",
+          "sha256": "7dafd2938bb62349d458662fe09eb259db64efa18fb985488edf59b2a05c1c72"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf100-application-instagram.png",
+          "sha256": "53bf9d078e0022c3995e6611182ad68d46388d0fe1f87b800e8ff8b610b87371"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -116600,6 +116734,10 @@
         "evidence_quote": "Tu n’as pas de compte sur Snapchat",
         "semantic_sha256": "9c2a2fa93e8294def57452129ba6e00a58ae367c171abc000da40b2a04e5bbff",
         "note": "Correction appliquée pour préciser la surprise initiale d’Arthur et proposer trois noms de réseaux de même catégorie. Utiliser uniquement les logos officiels vérifiés Snapchat, Facebook et Instagram, sans logos générés approximatifs."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lots-images-20261124/delf-final21-activation.json",
+        "note": "Arthur mentionne Snapchat en premier. Les trois téléphones montrent les icônes respectives de Snapchat, Facebook et Instagram, sans messages ni autres indices de réponse."
       }
     },
     {
@@ -116846,8 +116984,8 @@
       "semantic_sha256": "d565bf1b89480a8524039378763ff493238bea1d2a5e1aca88ec0a803e6403d7",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-039-01-01.mp3",
       "audio_sha256": "77dad5f05ec6735650b44cbf0d440581f37966d0a94d84dd0deff891008eaf6a",
-      "status": "candidate_visual_review",
-      "reason": "Filtres est la fonction citée. Corrections appliquées des leurres factures/cartes routières vers zoom/retardateur pour trois fonctions photographiques ; chaque image doit montrer la transformation ou le déclenchement, sans texte tarifaire.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -116874,8 +117012,24 @@
           "brief": "Représenter entièrement « Le retardateur » pour « Quelle fonction utilise-t-il pour des photos originales ? ». Vérifier la transcription du support tcf-delf-actif-b1-039-01-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Filtres est la fonction citée. Corrections appliquées des leurres factures/cartes routières vers zoom/retardateur pour trois fonctions photographiques ; chaque image doit montrer la transformation ou le déclenchement, sans texte tarifaire."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-photo-filtres.png",
+          "sha256": "99db554a32197c868de54aa820e170c97ee3880f9d94fb51e5b28e9072559920"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-photo-zoom.png",
+          "sha256": "44e9e8044880069ae2549bd94c569bca4d152e6d81b6b7cca96a7b93506d543d"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-photo-retardateur.png",
+          "sha256": "a7e702688064a5c4c5fa81e8190df7afed9912a962a37866e5378511bbc74f59"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -116893,6 +117047,10 @@
         "evidence_quote": "On peut mettre des filtres sur les selfies",
         "semantic_sha256": "d565bf1b89480a8524039378763ff493238bea1d2a5e1aca88ec0a803e6403d7",
         "note": "Filtres est la fonction citée. Corrections appliquées des leurres factures/cartes routières vers zoom/retardateur pour trois fonctions photographiques ; chaque image doit montrer la transformation ou le déclenchement, sans texte tarifaire."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lots-images-20261124/delf-final21-activation.json",
+        "note": "Le support cite les filtres pour les photos originales. Même visage peint et téléphone ; filtre lapin, visage agrandi avec loupe, puis retardateur avec horloge. Le traitement photographique initial a été repris."
       }
     },
     {
@@ -117213,8 +117371,8 @@
       "semantic_sha256": "0cd449ae1fb3cbc92c645801ce8c953ed2ae236c5122417a6c62838e91f14e99",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-039-02-01.mp3",
       "audio_sha256": "ce7d73ad5529842b2f0b989cabe588029498a31d2139415b92107367aa3c06b1",
-      "status": "candidate_visual_review",
-      "reason": "Éducateur accompagnant un groupe de jeunes hors d’un cours magistral, médecin en consultation, ingénieur sur un projet technique ; vérifier que l’activité distingue bien éducateur et enseignant avant d’activer le trio.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -117248,8 +117406,24 @@
           "brief": "Représenter entièrement « Ingénieur » pour « Quel métier Monsieur Ribot exerce-t-il ? ». Vérifier la transcription du support tcf-delf-actif-b1-039-02-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Éducateur accompagnant un groupe de jeunes hors d’un cours magistral, médecin en consultation, ingénieur sur un projet technique ; vérifier que l’activité distingue bien éducateur et enseignant avant d’activer le trio."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-educateur.png",
+          "sha256": "15b7ebce21d518636c326c90cf054c674fac166c14ab9e6afbee106e106f5b26"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp",
+          "sha256": "bca4d8bb519046e3bd3c8a526d46621de86017ce9e0ebb65e0f59c4f5c378903"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-ingenieure.png",
+          "sha256": "aefad84b0886fb37c47ff387938baefefc4cf3852a9d59d458a7d88f3056e494"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -117267,6 +117441,10 @@
         "evidence_quote": "M. Ribot, éducateur à Lyon",
         "semantic_sha256": "0cd449ae1fb3cbc92c645801ce8c953ed2ae236c5122417a6c62838e91f14e99",
         "note": "Éducateur accompagnant un groupe de jeunes hors d’un cours magistral, médecin en consultation, ingénieur sur un projet technique ; vérifier que l’activité distingue bien éducateur et enseignant avant d’activer le trio."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lots-images-20261124/delf-final21-activation.json",
+        "note": "Monsieur Ribot se présente comme éducateur. Les images représentent les activités professionnelles : accompagnement éducatif de jeunes, auscultation médicale et plans structurels de pont. Elles ne prétendent pas représenter les identités des personnes du document."
       }
     },
     {
@@ -117926,8 +118104,8 @@
       "semantic_sha256": "7820029ef71c3feaa1b9604bbf0e99191a54d582f857b65eb3f095e177f2c8e5",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-039-03-01.mp3",
       "audio_sha256": "dd95b932a29d9e5169cb74441b4f499d835b846025383d4798529dd6201f14e2",
-      "status": "candidate_visual_review",
-      "reason": "Enfants patients dans un service hospitalier, élèves en voyage scolaire, enfants d’un club sportif : chaque cadre et activité doit établir le groupe, pas seulement l’âge des enfants.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -117954,8 +118132,24 @@
           "brief": "Représenter entièrement « Les enfants d’un club sportif seulement » pour « Quels enfants cette association aide-t-elle ? ». Vérifier la transcription du support tcf-delf-actif-b1-039-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Enfants patients dans un service hospitalier, élèves en voyage scolaire, enfants d’un club sportif : chaque cadre et activité doit établir le groupe, pas seulement l’âge des enfants."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-enfants-hopital.png",
+          "sha256": "ac8527c2a8d4d14d9dbff42ea1c632e5d644905c7fbeb3f54b95487ff04bfc7e"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-enfants-voyage.png",
+          "sha256": "ac60fb4a0d100e59f597fda8d5bb530998483ff6a4c21551ff748922de0cdc50"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-enfants-club-sport.png",
+          "sha256": "a3ae63a407b5f4f21bf012d49063ec45a16248b2f2a10942fb18b7f42139a630"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -117973,6 +118167,10 @@
         "evidence_quote": "les enfants hospitalisés",
         "semantic_sha256": "7820029ef71c3feaa1b9604bbf0e99191a54d582f857b65eb3f095e177f2c8e5",
         "note": "Enfants patients dans un service hospitalier, élèves en voyage scolaire, enfants d’un club sportif : chaque cadre et activité doit établir le groupe, pas seulement l’âge des enfants."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lots-images-20261124/delf-final21-activation.json",
+        "note": "L’association aide les enfants hospitalisés. Deux lits avec équipements hospitaliers, sortie collective au musée et entraînement de basket avec entraîneuse montrent trois publics et contextes distincts."
       }
     },
     {
@@ -117986,8 +118184,8 @@
       "semantic_sha256": "4c304fe451cd77a0bdeca43d161fcee7e0e9c26fd8da304e7a1c08311882fda1",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-039-03-01.mp3",
       "audio_sha256": "dd95b932a29d9e5169cb74441b4f499d835b846025383d4798529dd6201f14e2",
-      "status": "candidate_visual_review",
-      "reason": "Groupe de personnes âgées, touristes en visite, commerçants dans leurs boutiques : diversifier les personnes et distinguer une tranche d’âge d’un métier ou d’une activité, sans attribuer de statut de retraite.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -118021,8 +118219,24 @@
           "brief": "Représenter entièrement « Les commerçants » pour « Quel autre public accompagne-t-elle ? ». Vérifier la transcription du support tcf-delf-actif-b1-039-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Groupe de personnes âgées, touristes en visite, commerçants dans leurs boutiques : diversifier les personnes et distinguer une tranche d’âge d’un métier ou d’une activité, sans attribuer de statut de retraite."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-lot20-seniors.png",
+          "sha256": "f1e1552c8033f746f8511c1dfc5009abfd60e3389d7b9a4023694fdb00518f67"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-touristes.png",
+          "sha256": "c10a53d9b58693d9d78faa740f3bce434ff7fb245e37f7b4bfe811f263113e52"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-installation-marche.png",
+          "sha256": "c22e340a8bf85e2d251c03df35a358e3e6b5da0ccd4802070659a6ea78ae6330"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -118040,6 +118254,10 @@
         "evidence_quote": "et les personnes âgées",
         "semantic_sha256": "4c304fe451cd77a0bdeca43d161fcee7e0e9c26fd8da304e7a1c08311882fda1",
         "note": "Groupe de personnes âgées, touristes en visite, commerçants dans leurs boutiques : diversifier les personnes et distinguer une tranche d’âge d’un métier ou d’une activité, sans attribuer de statut de retraite."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lots-images-20261124/delf-final21-activation.json",
+        "note": "Le support cite aussi les personnes âgées. Groupe âgé au parc, touristes avec carte et appareil photo, puis commerçants installant leurs étals. Aucune parenté n’est déduite des personnages."
       }
     },
     {
@@ -118053,8 +118271,8 @@
       "semantic_sha256": "4484883f7f6bb8a7ff611d4930d33e8eb7ec3b576eb79f7ce962f711e9111f67",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-039-03-01.mp3",
       "audio_sha256": "dd95b932a29d9e5169cb74441b4f499d835b846025383d4798529dd6201f14e2",
-      "status": "candidate_visual_review",
-      "reason": "Écoute et distraction sont bien deux moyens d’aide. Correction appliquée du leurre ambigu examens vers examens médicaux, puis scènes complètes écoute/jeu, vente de billets, examen médical.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -118081,8 +118299,24 @@
           "brief": "Représenter entièrement « En leur faisant passer des examens médicaux » pour « Comment l’association peut-elle aider ces personnes ? ». Vérifier la transcription du support tcf-delf-actif-b1-039-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Écoute et distraction sont bien deux moyens d’aide. Correction appliquée du leurre ambigu examens vers examens médicaux, puis scènes complètes écoute/jeu, vente de billets, examen médical."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-ecouter-distraire.png",
+          "sha256": "b01d4060ceffc4d3d23afb9e392bdd39009fed107ec6ae8015cda4a8458015e8"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-vendre-billets.png",
+          "sha256": "f0b41b748d478599bc718176ffce0e25c29977fd950c21efa08e379de768f62a"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-examiner-patient.png",
+          "sha256": "1a3e6ffa41d3aa89180c696521fc88578ff8c17066d2fcba53ab4b70be6b96cd"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -118100,6 +118334,10 @@
         "evidence_quote": "en les écoutant, en les réconfortant ou en les distrayant",
         "semantic_sha256": "4484883f7f6bb8a7ff611d4930d33e8eb7ec3b576eb79f7ce962f711e9111f67",
         "note": "Écoute et distraction sont bien deux moyens d’aide. Correction appliquée du leurre ambigu examens vers examens médicaux, puis scènes complètes écoute/jeu, vente de billets, examen médical."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lots-images-20261124/delf-final21-activation.json",
+        "note": "Le support décrit écoute, réconfort et distraction. Même duo dans la même pièce : conversation avec jeu, vente de billets contre pièces, puis auscultation. Les deux dimensions écouter et distraire sont présentes dans le premier choix."
       }
     },
     {
@@ -119493,8 +119731,8 @@
       "semantic_sha256": "cd46ac1a0a5c9972f417c896e562e3538322d1688cd615a3fe0677eb1d9ed793",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-040-02-01.mp3",
       "audio_sha256": "2152effe785e5be2bd565b129e8820322892a58e4d787e09796ff957038f7f01",
-      "status": "candidate_visual_review",
-      "reason": "Montrer l’élève et deux pièces en coupe pour le téléphone dans l’autre pièce, le téléphone sur les fiches, puis dans une poche. Correction appliquée du troisième leurre sous l’oreiller pendant les cours pour supprimer la condition temporelle inutile.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -119521,8 +119759,24 @@
           "brief": "Représenter entièrement « Dans la poche de son pantalon » pour « Où est-il conseillé de laisser son téléphone ? ». Vérifier la transcription du support tcf-delf-actif-b1-040-02-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Montrer l’élève et deux pièces en coupe pour le téléphone dans l’autre pièce, le téléphone sur les fiches, puis dans une poche. Correction appliquée du troisième leurre sous l’oreiller pendant les cours pour supprimer la condition temporelle inutile."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-telephone-autre-piece.png",
+          "sha256": "314ca7c0801e7d622fc74e42ed54cf9ba631145dd62a2fc918f5ca9e23efc9ac"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-telephone-fiches.png",
+          "sha256": "e22db1752f5b749f1d4f77a51a913d3efba8a0d698c845831b76595af6eb79b5"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-telephone-poche.png",
+          "sha256": "1d89cb0d1fd82619440a3c654f264b5fd400151ee094d2edee4472849ea0fb53"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -119540,6 +119794,10 @@
         "evidence_quote": "dans une autre pièce",
         "semantic_sha256": "cd46ac1a0a5c9972f417c896e562e3538322d1688cd615a3fe0677eb1d9ed793",
         "note": "Montrer l’élève et deux pièces en coupe pour le téléphone dans l’autre pièce, le téléphone sur les fiches, puis dans une poche. Correction appliquée du troisième leurre sous l’oreiller pendant les cours pour supprimer la condition temporelle inutile."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lots-images-20261124/delf-final21-activation.json",
+        "note": "Le conseil est de laisser le téléphone dans une autre pièce. Même élève et bureau : appareil sur une console au-delà de la porte, sur la pile de fiches, puis dans la poche du pantalon. Une porte et une cloison séparent effectivement les pièces."
       }
     },
     {
@@ -119673,8 +119931,8 @@
       "semantic_sha256": "e6c16d7959d292c3d6b50ed9569a17470be8782dc4a3303a2af155feb10f868b",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-040-03-01.mp3",
       "audio_sha256": "494bb04de3aaae5573ac4012c4f53afceaaf3e6a2f2e799f287b8beaefcd74ed",
-      "status": "candidate_visual_review",
-      "reason": "Avalanche, étude de la faune marine, conception architecturale : trois domaines illustrés par phénomène ou activité, sans prétendre représenter une nationalité suisse par l’apparence.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -119701,8 +119959,24 @@
           "brief": "Représenter entièrement « L’architecture » pour « Quelle est la spécialité du Suisse dont les arguments sont contestés ? ». Vérifier la transcription du support tcf-delf-actif-b1-040-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Avalanche, étude de la faune marine, conception architecturale : trois domaines illustrés par phénomène ou activité, sans prétendre représenter une nationalité suisse par l’apparence."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-avalanche.png",
+          "sha256": "59ad40653e013c612f4f84018f5652b17c8f382c98db69fffb78690881ba1b80"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-biologie-marine.png",
+          "sha256": "b5aa5dbfb30073728985c599fb87fd7bb9192c32db9dc4e302d09e8f90447c77"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/catalogue/metiers/architecte.webp",
+          "sha256": "0f59ab12dc1d820fd9fe7b9641577b7b8e1259ebe97e1092f4333a8065075b99"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -119720,6 +119994,10 @@
         "evidence_quote": "Un spécialiste suisse des avalanches",
         "semantic_sha256": "e6c16d7959d292c3d6b50ed9569a17470be8782dc4a3303a2af155feb10f868b",
         "note": "Avalanche, étude de la faune marine, conception architecturale : trois domaines illustrés par phénomène ou activité, sans prétendre représenter une nationalité suisse par l’apparence."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lots-images-20261124/delf-final21-activation.json",
+        "note": "La spécialité citée du Suisse est l’étude des avalanches. Avalanche, laboratoire marin et activité d’architecture distinguent les trois domaines ; aucune nationalité ni identité n’est inférée de l’apparence."
       }
     },
     {
@@ -119733,8 +120011,8 @@
       "semantic_sha256": "40b5f3558f2892209df27e7e81a21e8b1d5ba915f6f1fdd6774c54c379c4b048",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-040-03-01.mp3",
       "audio_sha256": "494bb04de3aaae5573ac4012c4f53afceaaf3e6a2f2e799f287b8beaefcd74ed",
-      "status": "candidate_visual_review",
-      "reason": "Éruption, trafic automobile et fabrication de ciment : trois scènes précises ; utiliser une référence documentée de cimenterie, pas une usine générique tenue pour fabrication de ciment.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -119761,8 +120039,24 @@
           "brief": "Représenter entièrement « La fabrication du ciment » pour « Quel phénomène naturel cite ce spécialiste ? ». Vérifier la transcription du support tcf-delf-actif-b1-040-03-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Éruption, trafic automobile et fabrication de ciment : trois scènes précises ; utiliser une référence documentée de cimenterie, pas une usine générique tenue pour fabrication de ciment."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-a1-volcans.png",
+          "sha256": "689b768bec6ec1146975f514f5fcb7f1128fd62cb705ca043eac266325ac5346"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-trafic-automobile.png",
+          "sha256": "d31ec0ca24b89c6b6e18b28b1f9641c3237da111de77e76c5d042ee18f3a38bc"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-fabrication-ciment.png",
+          "sha256": "bced8774bcbf6c685227c562db3badf578adc1a9f36170c20244d2200304e55a"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -119780,6 +120074,10 @@
         "evidence_quote": "des éruptions volcaniques",
         "semantic_sha256": "40b5f3558f2892209df27e7e81a21e8b1d5ba915f6f1fdd6774c54c379c4b048",
         "note": "Éruption, trafic automobile et fabrication de ciment : trois scènes précises ; utiliser une référence documentée de cimenterie, pas une usine générique tenue pour fabrication de ciment."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lots-images-20261124/delf-final21-activation.json",
+        "note": "Le spécialiste cite les éruptions volcaniques dans un argument contesté par le document. Volcan en éruption, trafic urbain et chaîne de fabrication du ciment représentent les trois propositions, sans approuver cet argument climatique."
       }
     },
     {
@@ -120367,8 +120665,8 @@
       "semantic_sha256": "004e3b425f736955013be89e100d037a0f00831ce0be570d5dc531bdc8e2880d",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-041-01-01.mp3",
       "audio_sha256": "76579929f6885bf27861949584b50de2f4a354b11a315f483e59c547e0760019",
-      "status": "candidate_visual_review",
-      "reason": "Boîte de partage de livres avec dépôt et emprunt visibles, distributeur de boissons, casier de rangement pour vélo entier ; ne pas dessiner une simple boîte aux lettres fermée.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -120395,8 +120693,24 @@
           "brief": "Représenter entièrement « Des casiers pour les vélos » pour « Que veut installer la mairie ? ». Vérifier la transcription du support tcf-delf-actif-b1-041-01-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Boîte de partage de livres avec dépôt et emprunt visibles, distributeur de boissons, casier de rangement pour vélo entier ; ne pas dessiner une simple boîte aux lettres fermée."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-boite-livres.png",
+          "sha256": "2fe2c31186cc1501f178f5bf3b2bd0b3d83d4cf1b1a078c48e313d402bfe8539"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-distributeur-aliments-dessine.webp",
+          "sha256": "d1c0939280a2f8f1e5d46eed716b3fe9225141872fc8cd7d6d868018d6a8bc88"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-casiers-velos.png",
+          "sha256": "e90131c8bcfe85da58adb57421785ae9ed9bee931f3c0e9d3c0c68f31ec1d6e8"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -120414,6 +120728,10 @@
         "evidence_quote": "de grosses boîtes à lettre pour y récolter et distribuer les livres",
         "semantic_sha256": "004e3b425f736955013be89e100d037a0f00831ce0be570d5dc531bdc8e2880d",
         "note": "Boîte de partage de livres avec dépôt et emprunt visibles, distributeur de boissons, casier de rangement pour vélo entier ; ne pas dessiner une simple boîte aux lettres fermée."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lots-images-20261124/delf-final21-activation.json",
+        "note": "La mairie souhaite installer de grandes boîtes d’échange de livres. Livres déposés et repris dans une armoire publique, distributeur comportant des boissons, puis casier avec un vélo entier. Pas de confusion avec une petite boîte aux lettres ou un vestiaire."
       }
     },
     {
@@ -120480,8 +120798,8 @@
       "semantic_sha256": "922efbcc355e1618c65f42e27581aeea2db777ef9e010890a15ae30e8256fac3",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-041-01-01.mp3",
       "audio_sha256": "76579929f6885bf27861949584b50de2f4a354b11a315f483e59c547e0760019",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -120522,8 +120840,24 @@
           "brief": "Représenter entièrement « Un chalet » pour « Dans quel type de logement la dame habite-t-elle ? ». Vérifier la transcription du support tcf-delf-actif-b1-041-01-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/vocab-appartements.webp",
+          "sha256": "6b0b020886653da56f9073161c00d6f8ccdb48480e88a8722a74cf2c88489678"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/co306-ferme-isolee-dessine.webp",
+          "sha256": "45f162e054bc59b4af60bb0bd56d43d083351d7a50ec67bb238df967932f595e"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/co/bg/chalet.webp",
+          "sha256": "f275b32e4f31d8d619aab8cbf2823222dc6b1a297581beb930914d9f75b7daf9"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -120534,7 +120868,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/lots-images-20261124/delf-final21-activation.json",
+        "note": "La dame dit vivre en appartement. Immeuble d’appartements, ferme isolée et chalet illustrent les types de logement sans prétendre montrer son domicile réel."
+      }
     },
     {
       "key": "tcf-delf-actif-b1-041-01-01#6",
@@ -121020,8 +121358,8 @@
       "semantic_sha256": "21c74d66e06a430c9d7c9eaccd600e1d0dd2111b27569dc46a71b3bb19b628c4",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-041-02-01.mp3",
       "audio_sha256": "783e403b1fa7790b9a3aec3caf2ad80bdd822200fc83d31361517f24f3edbe68",
-      "status": "candidate_visual_review",
-      "reason": "Réfectoire scolaire avec service de repas collectif, piscine, salle de cinéma : trois locaux entiers, pas simplement une assiette, de l’eau ou un écran.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -121061,8 +121399,24 @@
           "brief": "Représenter entièrement « Une salle de cinéma » pour « Quel local devient ensuite obligatoire dans les nouvelles écoles ? ». Vérifier la transcription du support tcf-delf-actif-b1-041-02-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Réfectoire scolaire avec service de repas collectif, piscine, salle de cinéma : trois locaux entiers, pas simplement une assiette, de l’eau ou un écran."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-refectoire.png",
+          "sha256": "04f61ddd36405831cc64b05f6dcf9aeef539f4cdf17051915bc2b540126406ee"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-piscine-interieur.png",
+          "sha256": "e96c824b8dfc9d4d4f89a403af195fa2bf7fc9f19cd333bf225d9d17fefbebbd"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+          "sha256": "adc515d9fc36b54ddc69488999f2ccaf16f18ebfa441a2c1e481552e0b298303"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -121080,6 +121434,10 @@
         "evidence_quote": "construire un réfectoire dans toute nouvelle école",
         "semantic_sha256": "21c74d66e06a430c9d7c9eaccd600e1d0dd2111b27569dc46a71b3bb19b628c4",
         "note": "Réfectoire scolaire avec service de repas collectif, piscine, salle de cinéma : trois locaux entiers, pas simplement une assiette, de l’eau ou un écran."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lots-images-20261124/delf-final21-activation.json",
+        "note": "Le local devenu obligatoire est le réfectoire. Tables avec plateaux et service, bassin intérieur, puis salle de cinéma avec écran et spectateurs ; l’ensemble des lieux est visible."
       }
     },
     {
@@ -121153,8 +121511,8 @@
       "semantic_sha256": "e3b8ba1a14180c4d97e37adba6304d61fbc39b259bce3a1a96ecd55a0b5df762",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-041-02-01.mp3",
       "audio_sha256": "783e403b1fa7790b9a3aec3caf2ad80bdd822200fc83d31361517f24f3edbe68",
-      "status": "candidate_visual_review",
-      "reason": "Les trois réponses ont une représentation concrète proposée ; contexte et images doivent encore être relus individuellement.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -121181,8 +121539,24 @@
           "brief": "Représenter entièrement « Les règles des examens » pour « Quelles règles ont aussi été renforcées ? ». Vérifier la transcription du support tcf-delf-actif-b1-041-02-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-regles-hygiene.png",
+          "sha256": "9fa9ee318445313b6df0ac9c470d5dbecf22831875adda53bdb8cef29af32410"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-regles-stationnement.png",
+          "sha256": "22082faad66ef4f79e0b9a5afbea0bb569f75bb05b00c050caee6230eaf1c906"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-regles-examen.png",
+          "sha256": "bb899d67d8ba53ae2ac0ab284ebfbcd1d8a97b5c9b0515353d53615e092434f7"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -121193,7 +121567,11 @@
         "Pas de montant, date, jour ou mois. Les heures sont possibles sur des cadrans exacts et distincts.",
         "Personnages différents entre scènes : origines, genres, âges, morphologies et handicaps variés, sans clichés ni nationalité déduite du visage.",
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
-      ]
+      ],
+      "visual_review": {
+        "register": "docs/tcf/lots-images-20261124/delf-final21-activation.json",
+        "note": "Le support évoque le renforcement de l’hygiène. Lavage des mains et nettoyage du plan de travail, règles de stationnement, puis interdiction des téléphones à l’examen matérialisent les trois familles de règles."
+      }
     },
     {
       "key": "tcf-delf-actif-b1-041-02-01#7",
@@ -121206,8 +121584,8 @@
       "semantic_sha256": "6f295a31320fb0dd52165e50e99c28e62b63579446601b34de6b49668a6bac1d",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-041-02-01.mp3",
       "audio_sha256": "783e403b1fa7790b9a3aec3caf2ad80bdd822200fc83d31361517f24f3edbe68",
-      "status": "candidate_visual_review",
-      "reason": "Professionnels de nutrition élaborant un menu avec groupes alimentaires, vendeurs en magasin de téléphonie, organisateurs de voyages au travail sur un itinéraire ; activités précises, sans prix ni simple costume pour prouver le métier.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -121234,8 +121612,24 @@
           "brief": "Représenter entièrement « Les organisateurs de voyages » pour « Qui participe à l’élaboration des menus équilibrés ? ». Vérifier la transcription du support tcf-delf-actif-b1-041-02-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Professionnels de nutrition élaborant un menu avec groupes alimentaires, vendeurs en magasin de téléphonie, organisateurs de voyages au travail sur un itinéraire ; activités précises, sans prix ni simple costume pour prouver le métier."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-nutritionniste.png",
+          "sha256": "6569e81251236f93e82096cb20fc263464aabea149ad3ee0f118f2d107ac267b"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-vendeur-telephones.png",
+          "sha256": "4fa7be096ed98eee7adb8e630c8b1dd760be7167662ac9d8eed8b935a73ed0e4"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-organisateur-voyages.png",
+          "sha256": "af4634699c8875ce57f5b2699b66499ff784e64142cc1f3ca98637311b6fdc8b"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -121253,6 +121647,10 @@
         "evidence_quote": "des professionnels de la diététique et de la nutrition",
         "semantic_sha256": "6f295a31320fb0dd52165e50e99c28e62b63579446601b34de6b49668a6bac1d",
         "note": "Professionnels de nutrition élaborant un menu avec groupes alimentaires, vendeurs en magasin de téléphonie, organisateurs de voyages au travail sur un itinéraire ; activités précises, sans prix ni simple costume pour prouver le métier."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lots-images-20261124/delf-final21-activation.json",
+        "note": "Les menus équilibrés sont élaborés avec les professionnels de nutrition et de diététique. Consultation avec schéma alimentaire, vente de téléphones et conseil de voyage avec carte, brochure et bagage montrent trois activités professionnelles."
       }
     },
     {
@@ -121266,8 +121664,8 @@
       "semantic_sha256": "b305bf16d569c0dde7a7028eb09b4c9359b8b43d204e685f6f1196c04bf840c4",
       "audio": "/lib/audio/tcf/co/delf-actif-b1/b1-041-02-01.mp3",
       "audio_sha256": "783e403b1fa7790b9a3aec3caf2ad80bdd822200fc83d31361517f24f3edbe68",
-      "status": "candidate_visual_review",
-      "reason": "Les leurres uniquement sucré et sans légumes peuvent aussi être végétariens. Corrections appliquées vers menu à base de viande et menu à base de poisson, puis trois repas dont la composition entière rend les catégories exclusives.",
+      "status": "active_reviewed_trio",
+      "reason": "Trio complet relu et activé ; voir le registre de relecture visuelle lié à cette question.",
       "choices": [
         {
           "id": "a",
@@ -121301,8 +121699,24 @@
           "brief": "Représenter entièrement « Un menu à base de poisson » pour « Quel type de menu est prévu au moins une fois par semaine ? ». Vérifier la transcription du support tcf-delf-actif-b1-041-02-01 avant génération ; conserver quantité, couleur et relations exprimées, sans inventer de détail d’identité. Relecture du trio : Les leurres uniquement sucré et sans légumes peuvent aussi être végétariens. Corrections appliquées vers menu à base de viande et menu à base de poisson, puis trois repas dont la composition entière rend les catégories exclusives."
         }
       ],
-      "active_images": [],
-      "candidate_review_required": true,
+      "active_images": [
+        {
+          "id": "a",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-assiette-vegetarienne.png",
+          "sha256": "fb7f261c03cd25b722e41ab2ff95b045564f603b2c2cb2c5dd1015d17b542c92"
+        },
+        {
+          "id": "b",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-repas-chaud-complet.png",
+          "sha256": "00128d8e4e7c00d5c0d5bda461832eb82ae346d2b5e1cb58fe6a8ba3022c8997"
+        },
+        {
+          "id": "c",
+          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-assiette-poisson.png",
+          "sha256": "ab3124a1203ad07e61c37fe3bb0aec28b69bb03015f06f3b5a4f912661742adf"
+        }
+      ],
+      "candidate_review_required": false,
       "constraints": [
         "Relire la transcription et les trois réponses ; ne dessiner que les détails utiles effectivement décrits.",
         "Quand les trois réponses sont illustrables, réemployer les images adaptées et générer les manquantes ; intégrer le trio après contrôle visuel.",
@@ -121320,6 +121734,10 @@
         "evidence_quote": "un menu végétarien",
         "semantic_sha256": "b305bf16d569c0dde7a7028eb09b4c9359b8b43d204e685f6f1196c04bf840c4",
         "note": "Les leurres uniquement sucré et sans légumes peuvent aussi être végétariens. Corrections appliquées vers menu à base de viande et menu à base de poisson, puis trois repas dont la composition entière rend les catégories exclusives."
+      },
+      "visual_review": {
+        "register": "docs/tcf/lots-images-20261124/delf-final21-activation.json",
+        "note": "Le menu hebdomadaire cité est végétarien. Même assiette et couverts ; pois chiches, quinoa et légumes, puis poulet et riz, puis filet de poisson avec riz et citron. Pas de viande ou de poisson dans la première assiette."
       }
     },
     {

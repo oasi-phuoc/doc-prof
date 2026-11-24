@@ -224,7 +224,7 @@
     {
       "number": 3,
       "count": 21,
-      "status": "pending",
+      "status": "completed",
       "keys": [
         "tcf-delf-actif-b1-038-02-01#7",
         "tcf-delf-actif-b1-038-03-01#2",
@@ -247,7 +247,9 @@
         "tcf-delf-actif-b1-041-02-01#6",
         "tcf-delf-actif-b1-041-02-01#7",
         "tcf-delf-actif-b1-041-02-01#8"
-      ]
+      ],
+      "preparation_register": "docs/tcf/lots-images-20261124/delf-final21-preparation.json",
+      "review_register": "docs/tcf/lots-images-20261124/delf-final21-activation.json"
     }
   ],
   "historical_trios_pending": 261,
@@ -2667,8 +2669,8 @@
   ],
   "completed_first_batch": "2026-11-23",
   "integration_baseline_commit": "3278e1af3c0dededfecddd422d89057413d75b62",
-  "remaining_candidates": 21,
-  "next_batch_number": 3,
+  "remaining_candidates": 0,
+  "next_batch_number": null,
   "second_batch_preparation": {
     "target_trios": 100,
     "prepared_trios": 100,
@@ -2702,7 +2704,16 @@
     "scope": "Image generation only; continue source/visual reviews, approved common clock rendering, documentation and repository preservation.",
     "resolved_at": "2026-11-23T22:09:27.701305+00:00"
   },
-  "completed_trios_in_requested_221": 200,
-  "current_batch_number": 3,
-  "last_updated_date": "2026-11-23"
+  "completed_trios_in_requested_221": 221,
+  "current_batch_number": null,
+  "last_updated_date": "2026-11-24",
+  "third_batch_preparation": {
+    "target_trios": 21,
+    "activated_trios": 21,
+    "prepared_trios": 21,
+    "planned_new_images": 50,
+    "images_still_to_finalize": 0,
+    "published_images": 50,
+    "existing_distinct_reuses": 13
+  }
 }

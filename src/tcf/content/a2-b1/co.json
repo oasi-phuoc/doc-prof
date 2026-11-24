@@ -21067,7 +21067,25 @@
           { "id": "c", "texte": "Pendant un examen" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Le soir au lit" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Le soir au lit" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-lire-lit.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-lire-volant.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-lecture-examen.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -21181,7 +21199,25 @@
           { "id": "c", "texte": "L’ouverture des fenêtres" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "La vitesse" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "La vitesse" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-conduite-vitesse.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-stationnement.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-ouvrir-fenetre.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -21195,7 +21231,25 @@
           { "id": "c", "texte": "Elle supprime les angles morts" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Elle réduit le champ de vision" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Elle réduit le champ de vision" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-vision-reduite.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-vision-nocturne.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-vision-sans-angles-morts.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -21209,7 +21263,25 @@
           { "id": "c", "texte": "Elle reste toujours identique" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Elle augmente" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Elle augmente" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-freinage-augmente.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-freinage-zero.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-freinage-identique.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -21223,7 +21295,25 @@
           { "id": "c", "texte": "La roue de secours" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Le téléphone" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Le téléphone" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-telephone-message.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-gilet-range.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-roue-secours.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -21251,7 +21341,25 @@
           { "id": "c", "texte": "La bonne humeur" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "La somnolence" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "La somnolence" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-somnolence.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-faim.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-bonne-humeur.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -21351,7 +21459,25 @@
           { "id": "c", "texte": "Instagram" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Snapchat" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Snapchat" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-application-snapchat.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-application-facebook.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf100-application-instagram.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -21421,7 +21547,25 @@
           { "id": "c", "texte": "Le retardateur" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Les filtres" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Les filtres" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-photo-filtres.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-photo-zoom.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-photo-retardateur.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -21554,7 +21698,25 @@
           { "id": "c", "texte": "Ingénieur" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Éducateur" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Éducateur" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-educateur.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-ingenieure.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -21771,7 +21933,25 @@
           { "id": "c", "texte": "Les enfants d’un club sportif seulement" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Les enfants hospitalisés" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Les enfants hospitalisés" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-enfants-hopital.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-enfants-voyage.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-enfants-club-sport.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -21785,7 +21965,25 @@
           { "id": "c", "texte": "Les commerçants" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Les personnes âgées" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Les personnes âgées" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-a1-lot20-seniors.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-touristes.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf2-installation-marche.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -21799,7 +21997,25 @@
           { "id": "c", "texte": "En leur faisant passer des examens médicaux" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "En les écoutant et en les distrayant" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "En les écoutant et en les distrayant" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-ecouter-distraire.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-vendre-billets.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-examiner-patient.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -22221,7 +22437,25 @@
           { "id": "c", "texte": "Dans la poche de son pantalon" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Dans une autre pièce" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Dans une autre pièce" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-telephone-autre-piece.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-telephone-fiches.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-telephone-poche.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -22314,7 +22548,25 @@
           { "id": "c", "texte": "L’architecture" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Les avalanches" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Les avalanches" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-avalanche.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-biologie-marine.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/catalogue/metiers/architecte.webp"
+              }
+            ]
+          }
         }
       },
       {
@@ -22328,7 +22580,25 @@
           { "id": "c", "texte": "La fabrication du ciment" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Les éruptions volcaniques" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Les éruptions volcaniques" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-a1-volcans.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-trafic-automobile.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-fabrication-ciment.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -22515,7 +22785,25 @@
           { "id": "c", "texte": "Des casiers pour les vélos" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "De grosses boîtes pour échanger des livres" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "De grosses boîtes pour échanger des livres" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-boite-livres.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co306-distributeur-aliments-dessine.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-casiers-velos.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -22543,7 +22831,25 @@
           { "id": "c", "texte": "Un chalet" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Un appartement" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Un appartement" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/vocab-appartements.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co306-ferme-isolee-dessine.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/co/bg/chalet.webp"
+              }
+            ]
+          }
         }
       },
       {
@@ -22721,7 +23027,25 @@
           { "id": "c", "texte": "Une salle de cinéma" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Un réfectoire" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Un réfectoire" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-refectoire.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-piscine-interieur.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
+              }
+            ]
+          }
         }
       },
       {
@@ -22749,7 +23073,25 @@
           { "id": "c", "texte": "Les règles des examens" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Les règles d’hygiène" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Les règles d’hygiène" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-regles-hygiene.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-regles-stationnement.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-regles-examen.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -22763,7 +23105,25 @@
           { "id": "c", "texte": "Les organisateurs de voyages" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Des professionnels de la diététique et de la nutrition" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Des professionnels de la diététique et de la nutrition" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf2-nutritionniste.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-vendeur-telephones.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-organisateur-voyages.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -22777,7 +23137,25 @@
           { "id": "c", "texte": "Un menu à base de poisson" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Un menu végétarien" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Un menu végétarien" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-assiette-vegetarienne.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf2-repas-chaud-complet.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-delf21-assiette-poisson.png"
+              }
+            ]
+          }
         }
       },
       {
