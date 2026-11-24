@@ -1,6 +1,7 @@
 """Report live progress from the four resumable image packets."""
 import json
 from pathlib import Path
+import re
 
 ROOT = Path(__file__).resolve().parents[1]
 FOLDER = ROOT / 'docs/tcf/lots-images-20261124'
@@ -14,7 +15,7 @@ for entry in entries:
     entry.update(status=packet['status'], activated_trios=summary['activated_trios'],
         prepared_trios=summary['prepared_trios'], published_images=len(packet['published_images']),
         planned_trios=len(packet['planned_choices']),
-        images_still_to_finalize=len(packet.get('remaining_asset_ids', [])))
+        images_still_to_finalize=len(packet.get('remaining_asset_ids', [])) if packet['planned_choices'] else None)
     if packet.get('activation_register'):
         entry['activation_register'] = packet['activation_register']
     label = 'DELF — reliquat final' if entry is manifest['delf_final21'] else f"Historique — lot {entry['number']}"
@@ -42,4 +43,39 @@ Contrôles : `python3 scripts/check-tcf-image-batch-20261124.py <registre-activa
 Outils de reprise : `scripts/tcf-image-batch-jobs-20261124.py` sélectionne les générations dont la référence a été revue ; `scripts/publish-tcf-image-batch-20261124.py` publie uniquement une liste de revues visuelles explicites ; `scripts/activate-tcf-image-batch-20261124.py` active un lot entièrement prêt. Actualiser ce bilan avec `scripts/report-tcf-image-batches-20261124.py`.
 """
 (FOLDER / 'README.md').write_text(text)
+
+# Keep the current overview in sync without rewriting dated reports of old lots.
+audit = json.loads((ROOT / 'docs/gallery/audit-mots-cles-tcf-20261117.json').read_text())
+reviewed = sum(r['collection'] == 'TCF' and r['status'] == 'visually_reviewed' for r in audit['images'])
+gallery = len(json.loads((ROOT / 'src/gallery/catalog.generated.json').read_text()))
+fmt = lambda number: f'{number:,}'.replace(',', ' ')
+first = manifest['historical_batches'][0]
+progress = (f"Le premier lot dispose de {first['planned_trios']} briefs, de {first['published_images']} nouvelles images validées "
+            f"et de {first['prepared_trios']} trios prêts ; ses trios ne sont pas encore activés.")
+overview = ROOT / 'docs/tcf/avancement-cahier-des-charges-20261122.md'
+value = overview.read_text()
+value = re.sub(r'Le premier lot dispose de \d+ briefs, de \d+ nouvelles images validées et de \d+ trios prêts ; ses trios ne sont pas encore activés\.', progress, value)
+value = re.sub(r'Le catalogue compte [\d ]+ images ; les [\d ]+ titres', f'Le catalogue compte {fmt(gallery)} images ; les {fmt(reviewed)} titres', value)
+value = re.sub(r'\*\*Terminé : [\d ]+ fichiers relus, zéro en attente\*\*', f'**Terminé : {fmt(reviewed)} fichiers relus, zéro en attente**', value)
+value = value.replace('Les 50 nouvelles images du reliquat DELF ont leur revue visuelle et leurs mots-clés propres', 'Les créations DELF et historiques publiées ont leur revue visuelle et leurs mots-clés propres')
+overview.write_text(value)
+timeline = ROOT / 'docs/tcf/avancement-images.md'
+value = timeline.read_text()
+paragraphs = value.split('\n\n')
+for index, paragraph in enumerate(paragraphs):
+    if paragraph.startswith('**État du 24 novembre :'):
+        paragraph = re.sub(r'le premier dispose de \d+ briefs, de \d+ nouvelles images validées et de \d+ trios prêts, non activés\.',
+            f"le premier dispose de {first['planned_trios']} briefs, de {first['published_images']} nouvelles images validées et de {first['prepared_trios']} trios prêts, non activés.", paragraph)
+        paragraph = re.sub(r'Galerie : \*\*[\d ]+ images\*\*, dont \*\*[\d ]+ TCF', f'Galerie : **{fmt(gallery)} images**, dont **{fmt(reviewed)} TCF', paragraph)
+        paragraphs[index] = paragraph
+timeline.write_text('\n\n'.join(paragraphs))
+gallery_readme = ROOT / 'docs/gallery/README.md'
+value = gallery_readme.read_text()
+paragraphs = value.split('\n\n')
+for index, paragraph in enumerate(paragraphs):
+    if paragraph.startswith('État du 24 novembre :'):
+        paragraphs[index] = (f"État du 24 novembre : **{fmt(gallery)} images indexées**, dont **{fmt(reviewed)} TCF avec titres et mots-clés revus sur les pixels**, "
+            f"aucun fichier TCF en attente de cette revue. Le reliquat DELF ajoute 50 images et la préparation historique en ajoute {first['published_images']}. "
+            'Les originaux et les illustrations de grammaire reçues depuis restent conservés. [Suivi TCF](../tcf/lots-images-20261124/README.md).')
+gallery_readme.write_text('\n\n'.join(paragraphs))
 print(json.dumps(dict(delf_remaining=manifest['delf_remaining'], historical_remaining=manifest['historical_remaining'])))

@@ -5,7 +5,7 @@ Demande : terminer les **21 candidats DELF Actif**, puis les **261 trios histori
 | Lot | Cible | Activés | Prêts après revue comparative | Trios avec briefs | Nouvelles images publiées |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | [DELF — reliquat final](delf-final21-preparation.json) | 21 | 21 | 21 | 21 | 50 |
-| [Historique — lot 1](historique-lot01-preparation.json) | 100 | 0 | 0 | 20 | 0 |
+| [Historique — lot 1](historique-lot01-preparation.json) | 100 | 0 | 16 | 100 | 47 |
 | [Historique — lot 2](historique-lot02-preparation.json) | 100 | 0 | 0 | 0 | 0 |
 | [Historique — lot 3](historique-lot03-preparation.json) | 61 | 0 | 0 | 0 | 0 |
 
