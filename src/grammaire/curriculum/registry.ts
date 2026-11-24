@@ -42,6 +42,14 @@ import quantityComparisons from './data/f14.json'
 import physicalDescriptions from './data/description-physique.json'
 import politeAdvice from './data/f10.json'
 import imperatives from './data/f11.json'
+import past0 from './data/pc-idee.json'
+import past1 from './data/pc-avoir.json'
+import past2 from './data/pc-etre.json'
+import past3 from './data/imparfait.json'
+import past4 from './data/pqp.json'
+import past5 from './data/double-aux.json'
+import past6 from './data/pc-pronominaux.json'
+import past7 from './data/accord-pp.json'
 import foodg1 from './data/g1.json'
 import foodg2 from './data/g2.json'
 import foodg3 from './data/g3.json'
@@ -61,7 +69,7 @@ import { assertGrammarBank } from './validation'
 import { isProtectedGrammarCo, type GrammarBank, type GrammarLevel } from './types'
 
 /** Editorial pilot only; publication requires a recorded teacher review. */
-export const GRAMMAR_PILOT_BANKS = [...raw, ...specialEr, ...pastContrast, ...directObjects, ...subjunctive, ...have, ...go, ...regularEr, ...ir, ...reOir, ...modals, ...reflexive, ...simpleNegation, ...otherNegations, ...addressForms, ...greetings, ...politeness, ...subjectPronouns, ...origins, ...identities, ...nationalities, ...families, ...familyCompletion,...closedQuestions,...openQuestions,...quelQuestions,...exclamations,...activities,...tonicPronouns,...locations,...directions,...locationArticles,...moments,...durations,...frequencies,...chronology,...demonstratives,...requests,...acceptances,...decriref4,...decriref5,...decriref6,...decriref7,...decriref8,...comparisons,...adjectivePosition,...superlatives,...quantityComparisons,...physicalDescriptions,...politeAdvice,...imperatives,...foodg1,...foodg2,...foodg3,...foodg4,...foodg5,...foodg6,...activityDailyBanks(reflexive as GrammarBank[])] as GrammarBank[]
+export const GRAMMAR_PILOT_BANKS = [...raw, ...specialEr, ...pastContrast, ...directObjects, ...subjunctive, ...have, ...go, ...regularEr, ...ir, ...reOir, ...modals, ...reflexive, ...simpleNegation, ...otherNegations, ...addressForms, ...greetings, ...politeness, ...subjectPronouns, ...origins, ...identities, ...nationalities, ...families, ...familyCompletion,...closedQuestions,...openQuestions,...quelQuestions,...exclamations,...activities,...tonicPronouns,...locations,...directions,...locationArticles,...moments,...durations,...frequencies,...chronology,...demonstratives,...requests,...acceptances,...decriref4,...decriref5,...decriref6,...decriref7,...decriref8,...comparisons,...adjectivePosition,...superlatives,...quantityComparisons,...physicalDescriptions,...politeAdvice,...imperatives,...past0,...past1,...past2,...past3,...past4,...past5,...past6,...past7,...foodg1,...foodg2,...foodg3,...foodg4,...foodg5,...foodg6,...activityDailyBanks(reflexive as GrammarBank[])] as GrammarBank[]
 GRAMMAR_PILOT_BANKS.forEach(assertGrammarBank)
 
 export function grammarBanksForType(typeId: string): GrammarBank[] {
@@ -75,7 +83,7 @@ export function defaultGrammarPilot(typeId: string) {
   const bank=grammarBanksForType(typeId)[0]
   return bank ? {grammarActivityId:bank.activityId,grammarLevel:bank.level,
     grammarPresentation:bank.presentations[0]!,grammarBankRevision:bank.revision,grammarPreview:true,
-    ...(['gram-ex-e4-curriculum-o','gram-ex-f3-curriculum-o'].includes(typeId)?{phrasePolarity:'mixed' as const}:{}),
+    ...(['gram-ex-e4-curriculum-o','gram-ex-f3-curriculum-o','gram-ex-pc-pronominaux-curriculum-o'].includes(typeId)?{phrasePolarity:'mixed' as const}:{}),
     ...(bank.presentations.includes('document-set')?{grammarDocumentCount:1}:{})} : {}
 }
 

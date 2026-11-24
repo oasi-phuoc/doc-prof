@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-24",
+  "timezone": "Europe/Zurich",
+  "baseCommit": "024dd2fcf",
+  "status": "passed_for_pilot_human_approval_pending",
+  "scope": "Parler du passé only; gamemode development paused.",
+  "delivery": {
+    "newActivities": 29,
+    "newBanks": 32,
+    "newOfferings": 43,
+    "newSelectableUnits": 1570,
+    "newVariants": 2160,
+    "authoredSourceRows": 400,
+    "newReadingDocuments": 20,
+    "newDocumentWritingTargets": 60,
+    "completeThemeActivities": 34,
+    "completeThemeBanks": 37,
+    "completeThemeOfferings": 49,
+    "plannedThemeOfferings": 49,
+    "completeThemeUnits": 1790,
+    "completeThemeVariants": 2470,
+    "existingH8OfferingsPreserved": 6,
+    "teacherApprovedUnits": 0
+  },
+  "checks": {
+    "authoredContent": "passed: explicit roles, chronological anchors, construction and agreement references",
+    "canonicalErrorSpans": 250,
+    "isolatedDeterministicRebuild": "passed",
+    "globalVariants": 20940,
+    "positiveAndNegativeOrder": {
+      "positive": 25,
+      "negative": 25,
+      "mixed": 50
+    },
+    "protectedTheoryAndCoFiles": 276,
+    "previousAlimentsConseillerAndDecrireRegressions": "passed",
+    "browser": {
+      "server": "Vite preview of production build",
+      "offerings": 49,
+      "renderedQuestionUnits": 4940,
+      "renderedAnswerFields": 5040,
+      "sheets": 4510,
+      "horizontalOverflow": false,
+      "footerOverflow": false,
+      "worstFirstPageBudget": "Student/correction first-page header budgets checked for all unit heights; reading supports and child questions measured separately.",
+      "errors": []
+    },
+    "actualPdfPreviews": 18,
+    "pdfRasterWarnings": "Poppler Type 3 glyph bounding-box warnings; representative text, checkboxes, order tokens and page boundaries visually reviewed.",
+    "typescript": "passed",
+    "productionBuild": "passed",
+    "lint": "passed with existing warnings",
+    "existingGameCatalogBuildGate": "passed: unchanged 765 entries, no game feature added",
+    "secretScan": {
+      "tool": "Gitleaks 8.30.1",
+      "changedFiles": 7290,
+      "findings": 0,
+      "canarySelfTest": "passed",
+      "scope": "Commits depuis le jalon C0 et fichiers modifiés/non suivis actuels. Les secrets historiques préexistants et le bundle complet exigent encore la migration d’authentification F22 ; ce contrôle ne certifie pas leur absence."
+    }
+  },
+  "retirement": {
+    "removedWrittenSubthemes": [
+      "pc-idee",
+      "pc-avoir",
+      "pc-etre",
+      "imparfait",
+      "pqp",
+      "double-aux",
+      "pc-pronominaux",
+      "accord-pp"
+    ],
+    "totalRetiredNotions": 65,
+    "remainingWrittenBanks": 33,
+    "legacyCommunicationGroupsPreserved": 5,
+    "existingGradedH8Preserved": true,
+    "otherActivityAndOfferingRowsPreserved": true,
+    "savedWorksheetCleanup": "deferred by owner; no real fiche access or deletion",
+    "workerDeployment": false
+  },
+  "media": {
+    "generated": 0,
+    "modified": 0,
+    "newImageObligations": 0
+  },
+  "globalCoverage": {
+    "reviewedActivities": 286,
+    "reviewedOfferings": 408,
+    "reviewedSelectableUnits": 15490,
+    "reviewedVariants": 20940,
+    "reviewedDocuments": 440,
+    "reviewedDocumentQuestions": 1640
+  },
+  "sourceReuse": [
+    "h1 and h2 share fifty avoir situations.",
+    "h6 A2 forms the verbal group; B1 analyses and justifies the same fifty constructions.",
+    "h9 A2 reuses twenty-five avoir and twenty-five être situations.",
+    "Twenty original B1 question-writing documents are counted separately from their sixty targets."
+  ],
+  "limitations": [
+    "Human pedagogical approval, physical printing and ENI classroom acceptance pending.",
+    "Existing theory is protected; this delivery does not certify all historical theory wording.",
+    "Gamemode development and saved worksheet cleanup remain paused.",
+    "No next grammar theme started."
+  ],
+  "sourceSha256": [
+    {
+      "path": "scripts/build-grammar-passe.py",
+      "sha256": "e1df5e58aa8964577746df3437825d2605e9c5a769b53a393063bfcfc1ad9dce"
+    },
+    {
+      "path": "scripts/grammar_curriculum/passe-accord-pp-b1.tsv",
+      "sha256": "ca038c2cb2c3146033b99b00efd83cdc3e59cb1a00859544b6f28c311fc51d08"
+    },
+    {
+      "path": "scripts/grammar_curriculum/passe-double-aux.tsv",
+      "sha256": "70b7b3dd89fa0051300da1b16509766b116b873ea48422053f0863b3081ba30c"
+    },
+    {
+      "path": "scripts/grammar_curriculum/passe-imparfait-a2.tsv",
+      "sha256": "46cc82d1c18756838264afe3922b1121b2de0b3015a3eefae5c89a70e5a0cb7e"
+    },
+    {
+      "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+      "sha256": "c02edec9634b3130e56f37c4c1f434e01ff4285dd57f07302d33eae58167c359"
+    },
+    {
+      "path": "scripts/grammar_curriculum/passe-pc-etre-a1.tsv",
+      "sha256": "30a906e38e35c68403dc92187f9f6b9ee4fa039576ba74bd3e1d1cb0348e65b3"
+    },
+    {
+      "path": "scripts/grammar_curriculum/passe-pc-etre-a2.tsv",
+      "sha256": "dd3d1076d872f15629e0bb68dc5c5ad4740b73ef5d138b4b29f166e665bb58a7"
+    },
+    {
+      "path": "scripts/grammar_curriculum/passe-pc-pronominaux-a2.tsv",
+      "sha256": "41049f4bc88af249790fd008e1b9efc5f4392ea6bc929ae47cb7bec86052bb14"
+    },
+    {
+      "path": "scripts/grammar_curriculum/passe-pqp-b1.tsv",
+      "sha256": "c999744c44e8d0e9d65c1ace223294c09ed928e862bf3c0503535c602b58e8b2"
+    },
+    {
+      "path": "scripts/grammar_curriculum/passe-pqp-lectures-b1.json",
+      "sha256": "becfbdf0380c01879fca4c87e2346f2ddd34162b35ea0c288d7b54df324cc7fe"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/pc-idee.json",
+      "sha256": "3fbbf485e350d90a6bdf45a6eeefbfda70e5b928fd98b91fddacf6646df2d7fb"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/pc-avoir.json",
+      "sha256": "d3e9ae736bcfba0b5a69dc2a4cf79d459319b0a820cf8374d07b93d02d6ed299"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/pc-etre.json",
+      "sha256": "00c5fcc2c927e1e6df26d86b56bedba685f3e8938a89ab7444eff671c8941032"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/imparfait.json",
+      "sha256": "6cd28285fd355a7a00047167d11f4db48bef5a8ea563f0186bab0aee1a2353fa"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/pqp.json",
+      "sha256": "5754d3af8d94fe7da0ed604f7162caaf05935c8d2d15fb44e93f28e46befda7e"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/double-aux.json",
+      "sha256": "5189c2d75c87f040a1aa1187bff1269a9b0108576b51732b09454431852764c0"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/pc-pronominaux.json",
+      "sha256": "8e3a221b1837307cde8e3a4a636b470bc42eff2ce9ceb2623a4f1afab11e98bb"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/accord-pp.json",
+      "sha256": "6a6ae21db5184e25c1d5fb68e64b2926ec4e3426e39bf8003088cdd4cf450819"
+    },
+    {
+      "path": "src/grammaire/curriculum/registry.ts",
+      "sha256": "1a623402fc1cc3b101491cd24ad7ca2e26adba2790a6407e3e6c25c701f1b29e"
+    },
+    {
+      "path": "src/grammaire/curriculum/pagination.ts",
+      "sha256": "4ce3d2d093d2ea46423b075475c727070061a820807fac36011de1e374c94f7e"
+    },
+    {
+      "path": "src/components/item-view/grammar.tsx",
+      "sha256": "74d9b397620a66218ab492a1fa91084fd4111f82155a2a4986854117a5c8da25"
+    }
+  ],
+  "protectedSnapshotSha256": "f2ad9f4a28355cbe8d707ffd241d0a56dd41c8bbdc1cb49d7b1117a307db9b29",
+  "productionManifestSha256": "e9dd6af2f6451700225da2debd453c78f2b4ed6f3ea148e6b780df46c46be116"
+}

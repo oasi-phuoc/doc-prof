@@ -1,0 +1,5034 @@
+[
+  {
+    "schemaVersion": 1,
+    "revision": "passe-2026-11-24-v1",
+    "activityId": "gram-ex-pc-idee-qcm-verbe",
+    "subthemeId": "pc-idee",
+    "topic": "gram-passe",
+    "level": "A1",
+    "label": "Reconnaître une action achevée",
+    "objective": "Reconnaître le passé composé comme temps d’un événement achevé, puis construire une phrase.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Sources et variantes relues. Réemploi explicite des situations entre mécaniques et niveaux ; aucune approbation pédagogique humaine déclarée."
+    },
+    "presentations": [
+      "choice",
+      "gap"
+    ],
+    "instructions": {
+      "choice": "Choisissez la phrase qui raconte le fait au passé composé.",
+      "gap": "Réécrivez la phrase au passé composé."
+    },
+    "units": [
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-repas",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Je prépare le repas. » → ___.",
+        "cue": "Le repas est prêt : sa préparation est terminée. Racontez cette action au passé composé.",
+        "answers": [
+          "J’ai préparé le repas."
+        ],
+        "options": [
+          {
+            "id": "repas-choix-1",
+            "text": "J’ai préparé le repas."
+          },
+          {
+            "id": "repas-choix-2",
+            "text": "Je prépare le repas."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : J’ai préparé le repas."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-porte",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Tu fermes la porte. » → ___.",
+        "cue": "La porte est maintenant fermée. Racontez l’action accomplie.",
+        "answers": [
+          "Tu as fermé la porte."
+        ],
+        "options": [
+          {
+            "id": "porte-choix-1",
+            "text": "Tu as fermé la porte."
+          },
+          {
+            "id": "porte-choix-2",
+            "text": "Tu fermes la porte."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Tu as fermé la porte."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-billets",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Elle achète les billets. » → ___.",
+        "cue": "Les billets du spectacle sont déjà achetés. Racontez cet achat.",
+        "answers": [
+          "Elle a acheté les billets."
+        ],
+        "options": [
+          {
+            "id": "billets-choix-1",
+            "text": "Elle a acheté les billets."
+          },
+          {
+            "id": "billets-choix-2",
+            "text": "Elle achète les billets."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Elle a acheté les billets."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-bus",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Nous prenons le bus. » → ___.",
+        "cue": "Le trajet est terminé. Le groupe raconte son déplacement en bus.",
+        "answers": [
+          "Nous avons pris le bus."
+        ],
+        "options": [
+          {
+            "id": "bus-choix-1",
+            "text": "Nous avons pris le bus."
+          },
+          {
+            "id": "bus-choix-2",
+            "text": "Nous prenons le bus."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Nous avons pris le bus."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-message",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Vous envoyez le message. » → ___.",
+        "cue": "Le message a bien été reçu. Racontez son envoi au passé composé.",
+        "answers": [
+          "Vous avez envoyé le message."
+        ],
+        "options": [
+          {
+            "id": "message-choix-1",
+            "text": "Vous avez envoyé le message."
+          },
+          {
+            "id": "message-choix-2",
+            "text": "Vous envoyez le message."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Vous avez envoyé le message."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-match",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Ils jouent un match. » → ___.",
+        "cue": "Le match est fini. Les joueurs racontent leur activité.",
+        "answers": [
+          "Ils ont joué un match."
+        ],
+        "options": [
+          {
+            "id": "match-choix-1",
+            "text": "Ils ont joué un match."
+          },
+          {
+            "id": "match-choix-2",
+            "text": "Ils jouent un match."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Ils ont joué un match."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-dejeuner",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Je mange une soupe. » → ___.",
+        "cue": "Le déjeuner est terminé. La personne raconte ce repas.",
+        "answers": [
+          "J’ai mangé une soupe."
+        ],
+        "options": [
+          {
+            "id": "dejeuner-choix-1",
+            "text": "J’ai mangé une soupe."
+          },
+          {
+            "id": "dejeuner-choix-2",
+            "text": "Je mange une soupe."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : J’ai mangé une soupe."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-cle",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Tu trouves la clé. » → ___.",
+        "cue": "La clé perdue est retrouvée. Racontez cette découverte.",
+        "answers": [
+          "Tu as trouvé la clé."
+        ],
+        "options": [
+          {
+            "id": "cle-choix-1",
+            "text": "Tu as trouvé la clé."
+          },
+          {
+            "id": "cle-choix-2",
+            "text": "Tu trouves la clé."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Tu as trouvé la clé."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-film",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Elle voit un film. » → ___.",
+        "cue": "La séance de cinéma est finie. Racontez ce qu’elle a vu.",
+        "answers": [
+          "Elle a vu un film."
+        ],
+        "options": [
+          {
+            "id": "film-choix-1",
+            "text": "Elle a vu un film."
+          },
+          {
+            "id": "film-choix-2",
+            "text": "Elle voit un film."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Elle a vu un film."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-lettre",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Nous écrivons une lettre. » → ___.",
+        "cue": "La lettre est terminée. Racontez l’action d’écriture.",
+        "answers": [
+          "Nous avons écrit une lettre."
+        ],
+        "options": [
+          {
+            "id": "lettre-choix-1",
+            "text": "Nous avons écrit une lettre."
+          },
+          {
+            "id": "lettre-choix-2",
+            "text": "Nous écrivons une lettre."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Nous avons écrit une lettre."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-fenetre",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Vous ouvrez la fenêtre. » → ___.",
+        "cue": "La fenêtre est ouverte. Racontez l’action accomplie.",
+        "answers": [
+          "Vous avez ouvert la fenêtre."
+        ],
+        "options": [
+          {
+            "id": "fenetre-choix-1",
+            "text": "Vous avez ouvert la fenêtre."
+          },
+          {
+            "id": "fenetre-choix-2",
+            "text": "Vous ouvrez la fenêtre."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Vous avez ouvert la fenêtre."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-livre",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Ils lisent le livre. » → ___.",
+        "cue": "Les lecteurs ont fini le livre. Racontez cette lecture.",
+        "answers": [
+          "Ils ont lu le livre."
+        ],
+        "options": [
+          {
+            "id": "livre-choix-1",
+            "text": "Ils ont lu le livre."
+          },
+          {
+            "id": "livre-choix-2",
+            "text": "Ils lisent le livre."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Ils ont lu le livre."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-eau",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Je bois de l’eau. » → ___.",
+        "cue": "Le verre est vide. Racontez ce que vous avez bu.",
+        "answers": [
+          "J’ai bu de l’eau."
+        ],
+        "options": [
+          {
+            "id": "eau-choix-1",
+            "text": "J’ai bu de l’eau."
+          },
+          {
+            "id": "eau-choix-2",
+            "text": "Je bois de l’eau."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : J’ai bu de l’eau."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-travail",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Tu finis le travail. » → ___.",
+        "cue": "Le travail est terminé. Racontez cet achèvement.",
+        "answers": [
+          "Tu as fini le travail."
+        ],
+        "options": [
+          {
+            "id": "travail-choix-1",
+            "text": "Tu as fini le travail."
+          },
+          {
+            "id": "travail-choix-2",
+            "text": "Tu finis le travail."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Tu as fini le travail."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-dessert",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Elle choisit une tarte. » → ___.",
+        "cue": "Le choix du dessert est fait. Racontez ce choix.",
+        "answers": [
+          "Elle a choisi une tarte."
+        ],
+        "options": [
+          {
+            "id": "dessert-choix-1",
+            "text": "Elle a choisi une tarte."
+          },
+          {
+            "id": "dessert-choix-2",
+            "text": "Elle choisit une tarte."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Elle a choisi une tarte."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-exercice",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Nous faisons l’exercice. » → ___.",
+        "cue": "L’exercice est achevé. Le groupe raconte son travail.",
+        "answers": [
+          "Nous avons fait l’exercice."
+        ],
+        "options": [
+          {
+            "id": "exercice-choix-1",
+            "text": "Nous avons fait l’exercice."
+          },
+          {
+            "id": "exercice-choix-2",
+            "text": "Nous faisons l’exercice."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Nous avons fait l’exercice."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-consigne",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Vous comprenez la consigne. » → ___.",
+        "cue": "La consigne est comprise. Racontez ce résultat.",
+        "answers": [
+          "Vous avez compris la consigne."
+        ],
+        "options": [
+          {
+            "id": "consigne-choix-1",
+            "text": "Vous avez compris la consigne."
+          },
+          {
+            "id": "consigne-choix-2",
+            "text": "Vous comprenez la consigne."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Vous avez compris la consigne."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-vélos",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Ils réparent les vélos. » → ___.",
+        "cue": "Les vélos sont réparés. Les mécaniciens racontent leur travail.",
+        "answers": [
+          "Ils ont réparé les vélos."
+        ],
+        "options": [
+          {
+            "id": "vélos-choix-1",
+            "text": "Ils ont réparé les vélos."
+          },
+          {
+            "id": "vélos-choix-2",
+            "text": "Ils réparent les vélos."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Ils ont réparé les vélos."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-table",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Je nettoie la table. » → ___.",
+        "cue": "La table est propre. Racontez l’action de nettoyage.",
+        "answers": [
+          "J’ai nettoyé la table."
+        ],
+        "options": [
+          {
+            "id": "table-choix-1",
+            "text": "J’ai nettoyé la table."
+          },
+          {
+            "id": "table-choix-2",
+            "text": "Je nettoie la table."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : J’ai nettoyé la table."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-dessin",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Tu colories le dessin. » → ___.",
+        "cue": "Le dessin est colorié. Racontez l’activité terminée.",
+        "answers": [
+          "Tu as colorié le dessin."
+        ],
+        "options": [
+          {
+            "id": "dessin-choix-1",
+            "text": "Tu as colorié le dessin."
+          },
+          {
+            "id": "dessin-choix-2",
+            "text": "Tu colories le dessin."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Tu as colorié le dessin."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-musique",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Elle écoute une chanson. » → ___.",
+        "cue": "L’écoute de la chanson est terminée. Racontez cette écoute.",
+        "answers": [
+          "Elle a écouté une chanson."
+        ],
+        "options": [
+          {
+            "id": "musique-choix-1",
+            "text": "Elle a écouté une chanson."
+          },
+          {
+            "id": "musique-choix-2",
+            "text": "Elle écoute une chanson."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Elle a écouté une chanson."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-carte",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Nous regardons la carte. » → ___.",
+        "cue": "Le groupe a consulté une carte avant de partir. Racontez cette action.",
+        "answers": [
+          "Nous avons regardé la carte."
+        ],
+        "options": [
+          {
+            "id": "carte-choix-1",
+            "text": "Nous avons regardé la carte."
+          },
+          {
+            "id": "carte-choix-2",
+            "text": "Nous regardons la carte."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Nous avons regardé la carte."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-horaires",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Vous vérifiez les horaires. » → ___.",
+        "cue": "La vérification des horaires est terminée. Racontez-la.",
+        "answers": [
+          "Vous avez vérifié les horaires."
+        ],
+        "options": [
+          {
+            "id": "horaires-choix-1",
+            "text": "Vous avez vérifié les horaires."
+          },
+          {
+            "id": "horaires-choix-2",
+            "text": "Vous vérifiez les horaires."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Vous avez vérifié les horaires."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-colis",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Ils reçoivent le colis. » → ___.",
+        "cue": "Les destinataires ont leur colis. Racontez sa réception.",
+        "answers": [
+          "Ils ont reçu le colis."
+        ],
+        "options": [
+          {
+            "id": "colis-choix-1",
+            "text": "Ils ont reçu le colis."
+          },
+          {
+            "id": "colis-choix-2",
+            "text": "Ils reçoivent le colis."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Ils ont reçu le colis."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-prix",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Je paie les courses. » → ___.",
+        "cue": "L’achat est réglé. Racontez le paiement.",
+        "answers": [
+          "J’ai payé les courses."
+        ],
+        "options": [
+          {
+            "id": "prix-choix-1",
+            "text": "J’ai payé les courses."
+          },
+          {
+            "id": "prix-choix-2",
+            "text": "Je paie les courses."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : J’ai payé les courses."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-telephone",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Tu appelles le secrétariat. » → ___.",
+        "cue": "La conversation téléphonique est terminée. Racontez cet appel.",
+        "answers": [
+          "Tu as appelé le secrétariat."
+        ],
+        "options": [
+          {
+            "id": "telephone-choix-1",
+            "text": "Tu as appelé le secrétariat."
+          },
+          {
+            "id": "telephone-choix-2",
+            "text": "Tu appelles le secrétariat."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Tu as appelé le secrétariat."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-photo",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Elle prend une photo. » → ___.",
+        "cue": "La photo est enregistrée. Racontez la prise de vue.",
+        "answers": [
+          "Elle a pris une photo."
+        ],
+        "options": [
+          {
+            "id": "photo-choix-1",
+            "text": "Elle a pris une photo."
+          },
+          {
+            "id": "photo-choix-2",
+            "text": "Elle prend une photo."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Elle a pris une photo."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-musee",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Nous visitons le musée. » → ___.",
+        "cue": "La visite du musée est terminée. Racontez cette visite.",
+        "answers": [
+          "Nous avons visité le musée."
+        ],
+        "options": [
+          {
+            "id": "musee-choix-1",
+            "text": "Nous avons visité le musée."
+          },
+          {
+            "id": "musee-choix-2",
+            "text": "Nous visitons le musée."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Nous avons visité le musée."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-sacs",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Vous portez les sacs. » → ___.",
+        "cue": "Les sacs sont portés jusqu’au local. Racontez cette tâche accomplie.",
+        "answers": [
+          "Vous avez porté les sacs."
+        ],
+        "options": [
+          {
+            "id": "sacs-choix-1",
+            "text": "Vous avez porté les sacs."
+          },
+          {
+            "id": "sacs-choix-2",
+            "text": "Vous portez les sacs."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Vous avez porté les sacs."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-jardin",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Ils arrosent le jardin. » → ___.",
+        "cue": "L’arrosage est terminé. Les jardiniers racontent ce qu’ils ont fait.",
+        "answers": [
+          "Ils ont arrosé le jardin."
+        ],
+        "options": [
+          {
+            "id": "jardin-choix-1",
+            "text": "Ils ont arrosé le jardin."
+          },
+          {
+            "id": "jardin-choix-2",
+            "text": "Ils arrosent le jardin."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Ils ont arrosé le jardin."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-reponse",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Je réponds à la question. » → ___.",
+        "cue": "La réponse est donnée. Racontez l’action au passé composé.",
+        "answers": [
+          "J’ai répondu à la question."
+        ],
+        "options": [
+          {
+            "id": "reponse-choix-1",
+            "text": "J’ai répondu à la question."
+          },
+          {
+            "id": "reponse-choix-2",
+            "text": "Je réponds à la question."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : J’ai répondu à la question."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-perte",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Tu perds le ticket. » → ___.",
+        "cue": "Le ticket n’est plus dans la poche. Racontez sa perte.",
+        "answers": [
+          "Tu as perdu le ticket."
+        ],
+        "options": [
+          {
+            "id": "perte-choix-1",
+            "text": "Tu as perdu le ticket."
+          },
+          {
+            "id": "perte-choix-2",
+            "text": "Tu perds le ticket."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Tu as perdu le ticket."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-attente",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Elle attend dix minutes. » → ___.",
+        "cue": "L’attente est terminée : le rendez-vous a eu lieu. Racontez cette attente comme un épisode achevé.",
+        "answers": [
+          "Elle a attendu dix minutes."
+        ],
+        "options": [
+          {
+            "id": "attente-choix-1",
+            "text": "Elle a attendu dix minutes."
+          },
+          {
+            "id": "attente-choix-2",
+            "text": "Elle attend dix minutes."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Elle a attendu dix minutes."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-paquet",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Nous ouvrons le paquet. » → ___.",
+        "cue": "Le paquet est maintenant ouvert. Racontez cette ouverture.",
+        "answers": [
+          "Nous avons ouvert le paquet."
+        ],
+        "options": [
+          {
+            "id": "paquet-choix-1",
+            "text": "Nous avons ouvert le paquet."
+          },
+          {
+            "id": "paquet-choix-2",
+            "text": "Nous ouvrons le paquet."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Nous avons ouvert le paquet."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-liste",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Vous ajoutez une adresse. » → ___.",
+        "cue": "La liste est mise à jour. Racontez l’ajout effectué.",
+        "answers": [
+          "Vous avez ajouté une adresse."
+        ],
+        "options": [
+          {
+            "id": "liste-choix-1",
+            "text": "Vous avez ajouté une adresse."
+          },
+          {
+            "id": "liste-choix-2",
+            "text": "Vous ajoutez une adresse."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Vous avez ajouté une adresse."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-calcul",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Ils calculent le total. » → ___.",
+        "cue": "Le calcul est terminé. Racontez cette opération.",
+        "answers": [
+          "Ils ont calculé le total."
+        ],
+        "options": [
+          {
+            "id": "calcul-choix-1",
+            "text": "Ils ont calculé le total."
+          },
+          {
+            "id": "calcul-choix-2",
+            "text": "Ils calculent le total."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Ils ont calculé le total."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-promesse",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Je promets mon aide. » → ___.",
+        "cue": "La promesse a été formulée. Racontez ce qui a été promis.",
+        "answers": [
+          "J’ai promis mon aide."
+        ],
+        "options": [
+          {
+            "id": "promesse-choix-1",
+            "text": "J’ai promis mon aide."
+          },
+          {
+            "id": "promesse-choix-2",
+            "text": "Je promets mon aide."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : J’ai promis mon aide."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-places",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Tu réserves deux places. » → ___.",
+        "cue": "Les places du train sont réservées. Racontez cette réservation.",
+        "answers": [
+          "Tu as réservé deux places."
+        ],
+        "options": [
+          {
+            "id": "places-choix-1",
+            "text": "Tu as réservé deux places."
+          },
+          {
+            "id": "places-choix-2",
+            "text": "Tu réserves deux places."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Tu as réservé deux places."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-plan",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Elle dessine un plan. » → ___.",
+        "cue": "Le plan est terminé. Racontez l’action de dessin.",
+        "answers": [
+          "Elle a dessiné un plan."
+        ],
+        "options": [
+          {
+            "id": "plan-choix-1",
+            "text": "Elle a dessiné un plan."
+          },
+          {
+            "id": "plan-choix-2",
+            "text": "Elle dessine un plan."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Elle a dessiné un plan."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-pain",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Nous cuisons le pain. » → ___.",
+        "cue": "La cuisson du pain est terminée. Racontez cette préparation.",
+        "answers": [
+          "Nous avons cuit le pain."
+        ],
+        "options": [
+          {
+            "id": "pain-choix-1",
+            "text": "Nous avons cuit le pain."
+          },
+          {
+            "id": "pain-choix-2",
+            "text": "Nous cuisons le pain."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Nous avons cuit le pain."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-chaises",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Vous rangez les chaises. » → ___.",
+        "cue": "Les chaises sont déjà rangées. Racontez ce rangement.",
+        "answers": [
+          "Vous avez rangé les chaises."
+        ],
+        "options": [
+          {
+            "id": "chaises-choix-1",
+            "text": "Vous avez rangé les chaises."
+          },
+          {
+            "id": "chaises-choix-2",
+            "text": "Vous rangez les chaises."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Vous avez rangé les chaises."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-spectacle",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Ils applaudissent le spectacle. » → ___.",
+        "cue": "La représentation est terminée. Racontez la réaction du public.",
+        "answers": [
+          "Ils ont applaudi le spectacle."
+        ],
+        "options": [
+          {
+            "id": "spectacle-choix-1",
+            "text": "Ils ont applaudi le spectacle."
+          },
+          {
+            "id": "spectacle-choix-2",
+            "text": "Ils applaudissent le spectacle."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Ils ont applaudi le spectacle."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-adresse",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « J’apprends l’adresse. » → ___.",
+        "cue": "L’adresse est mémorisée. Racontez l’apprentissage terminé.",
+        "answers": [
+          "J’ai appris l’adresse."
+        ],
+        "options": [
+          {
+            "id": "adresse-choix-1",
+            "text": "J’ai appris l’adresse."
+          },
+          {
+            "id": "adresse-choix-2",
+            "text": "J’apprends l’adresse."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : J’ai appris l’adresse."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-papier",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Tu signes le document. » → ___.",
+        "cue": "Le document est déjà signé. Racontez cette signature.",
+        "answers": [
+          "Tu as signé le document."
+        ],
+        "options": [
+          {
+            "id": "papier-choix-1",
+            "text": "Tu as signé le document."
+          },
+          {
+            "id": "papier-choix-2",
+            "text": "Tu signes le document."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Tu as signé le document."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-solution",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Elle découvre la solution. » → ___.",
+        "cue": "La solution est trouvée. Racontez sa découverte.",
+        "answers": [
+          "Elle a découvert la solution."
+        ],
+        "options": [
+          {
+            "id": "solution-choix-1",
+            "text": "Elle a découvert la solution."
+          },
+          {
+            "id": "solution-choix-2",
+            "text": "Elle découvre la solution."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Elle a découvert la solution."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-choix",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Nous décidons ensemble. » → ___.",
+        "cue": "La décision est prise. Le groupe raconte son choix.",
+        "answers": [
+          "Nous avons décidé ensemble."
+        ],
+        "options": [
+          {
+            "id": "choix-choix-1",
+            "text": "Nous avons décidé ensemble."
+          },
+          {
+            "id": "choix-choix-2",
+            "text": "Nous décidons ensemble."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Nous avons décidé ensemble."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-voisin",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Vous parlez au voisin. » → ___.",
+        "cue": "La conversation avec le voisin est terminée. Racontez cet échange.",
+        "answers": [
+          "Vous avez parlé au voisin."
+        ],
+        "options": [
+          {
+            "id": "voisin-choix-1",
+            "text": "Vous avez parlé au voisin."
+          },
+          {
+            "id": "voisin-choix-2",
+            "text": "Vous parlez au voisin."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Vous avez parlé au voisin."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-ordinateur",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Ils redémarrent l’ordinateur. » → ___.",
+        "cue": "Le dépannage est terminé. Racontez la remise en marche.",
+        "answers": [
+          "Ils ont redémarré l’ordinateur."
+        ],
+        "options": [
+          {
+            "id": "ordinateur-choix-1",
+            "text": "Ils ont redémarré l’ordinateur."
+          },
+          {
+            "id": "ordinateur-choix-2",
+            "text": "Ils redémarrent l’ordinateur."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Ils ont redémarré l’ordinateur."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-couleur",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Je mélange les couleurs. » → ___.",
+        "cue": "Le mélange est terminé. Racontez l’activité de peinture.",
+        "answers": [
+          "J’ai mélangé les couleurs."
+        ],
+        "options": [
+          {
+            "id": "couleur-choix-1",
+            "text": "J’ai mélangé les couleurs."
+          },
+          {
+            "id": "couleur-choix-2",
+            "text": "Je mélange les couleurs."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : J’ai mélangé les couleurs."
+      },
+      {
+        "id": "gram-ex-pc-idee-qcm-verbe-a1-course",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-qcm-verbe",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Phrase de départ : « Tu cours cinq kilomètres. » → ___.",
+        "cue": "La course est terminée. Racontez cet effort accompli.",
+        "answers": [
+          "Tu as couru cinq kilomètres."
+        ],
+        "options": [
+          {
+            "id": "course-choix-1",
+            "text": "Tu as couru cinq kilomètres."
+          },
+          {
+            "id": "course-choix-2",
+            "text": "Tu cours cinq kilomètres."
+          }
+        ],
+        "explanation": "Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé. Modèle : Tu as couru cinq kilomètres."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "passe-2026-11-24-v1",
+    "activityId": "gram-ex-pc-idee-curriculum-a",
+    "subthemeId": "pc-idee",
+    "topic": "gram-passe",
+    "level": "A1",
+    "label": "Associer",
+    "objective": "Reconnaître le passé composé comme temps d’un événement achevé, puis construire une phrase.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Sources et variantes relues. Réemploi explicite des situations entre mécaniques et niveaux ; aucune approbation pédagogique humaine déclarée."
+    },
+    "presentations": [
+      "match"
+    ],
+    "instructions": {
+      "match": "Associez les situations aux phrases qui racontent les faits au passé composé."
+    },
+    "units": [
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-repas",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "repas-paire-1",
+            "left": "Le repas est prêt : sa préparation est terminée. Racontez cette action au passé composé.",
+            "right": "J’ai préparé le repas.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:repas"
+          },
+          {
+            "id": "repas-paire-2",
+            "left": "Les vélos sont réparés. Les mécaniciens racontent leur travail.",
+            "right": "Ils ont réparé les vélos.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:vélos"
+          }
+        ],
+        "answers": [
+          "J’ai préparé le repas.\nIls ont réparé les vélos."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-porte",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "porte-paire-1",
+            "left": "La porte est maintenant fermée. Racontez l’action accomplie.",
+            "right": "Tu as fermé la porte.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:porte"
+          },
+          {
+            "id": "porte-paire-2",
+            "left": "La table est propre. Racontez l’action de nettoyage.",
+            "right": "J’ai nettoyé la table.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:table"
+          }
+        ],
+        "answers": [
+          "Tu as fermé la porte.\nJ’ai nettoyé la table."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-billets",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "billets-paire-1",
+            "left": "Les billets du spectacle sont déjà achetés. Racontez cet achat.",
+            "right": "Elle a acheté les billets.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:billets"
+          },
+          {
+            "id": "billets-paire-2",
+            "left": "Le dessin est colorié. Racontez l’activité terminée.",
+            "right": "Tu as colorié le dessin.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:dessin"
+          }
+        ],
+        "answers": [
+          "Elle a acheté les billets.\nTu as colorié le dessin."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-bus",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "bus-paire-1",
+            "left": "Le trajet est terminé. Le groupe raconte son déplacement en bus.",
+            "right": "Nous avons pris le bus.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:bus"
+          },
+          {
+            "id": "bus-paire-2",
+            "left": "L’écoute de la chanson est terminée. Racontez cette écoute.",
+            "right": "Elle a écouté une chanson.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:musique"
+          }
+        ],
+        "answers": [
+          "Nous avons pris le bus.\nElle a écouté une chanson."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-message",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "message-paire-1",
+            "left": "Le message a bien été reçu. Racontez son envoi au passé composé.",
+            "right": "Vous avez envoyé le message.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:message"
+          },
+          {
+            "id": "message-paire-2",
+            "left": "Le groupe a consulté une carte avant de partir. Racontez cette action.",
+            "right": "Nous avons regardé la carte.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:carte"
+          }
+        ],
+        "answers": [
+          "Vous avez envoyé le message.\nNous avons regardé la carte."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-match",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "match-paire-1",
+            "left": "Le match est fini. Les joueurs racontent leur activité.",
+            "right": "Ils ont joué un match.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:match"
+          },
+          {
+            "id": "match-paire-2",
+            "left": "La vérification des horaires est terminée. Racontez-la.",
+            "right": "Vous avez vérifié les horaires.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:horaires"
+          }
+        ],
+        "answers": [
+          "Ils ont joué un match.\nVous avez vérifié les horaires."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-dejeuner",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "dejeuner-paire-1",
+            "left": "Le déjeuner est terminé. La personne raconte ce repas.",
+            "right": "J’ai mangé une soupe.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:dejeuner"
+          },
+          {
+            "id": "dejeuner-paire-2",
+            "left": "Les destinataires ont leur colis. Racontez sa réception.",
+            "right": "Ils ont reçu le colis.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:colis"
+          }
+        ],
+        "answers": [
+          "J’ai mangé une soupe.\nIls ont reçu le colis."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-cle",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "cle-paire-1",
+            "left": "La clé perdue est retrouvée. Racontez cette découverte.",
+            "right": "Tu as trouvé la clé.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:cle"
+          },
+          {
+            "id": "cle-paire-2",
+            "left": "L’achat est réglé. Racontez le paiement.",
+            "right": "J’ai payé les courses.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:prix"
+          }
+        ],
+        "answers": [
+          "Tu as trouvé la clé.\nJ’ai payé les courses."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-film",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "film-paire-1",
+            "left": "La séance de cinéma est finie. Racontez ce qu’elle a vu.",
+            "right": "Elle a vu un film.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:film"
+          },
+          {
+            "id": "film-paire-2",
+            "left": "La conversation téléphonique est terminée. Racontez cet appel.",
+            "right": "Tu as appelé le secrétariat.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:telephone"
+          }
+        ],
+        "answers": [
+          "Elle a vu un film.\nTu as appelé le secrétariat."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-lettre",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "lettre-paire-1",
+            "left": "La lettre est terminée. Racontez l’action d’écriture.",
+            "right": "Nous avons écrit une lettre.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:lettre"
+          },
+          {
+            "id": "lettre-paire-2",
+            "left": "La photo est enregistrée. Racontez la prise de vue.",
+            "right": "Elle a pris une photo.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:photo"
+          }
+        ],
+        "answers": [
+          "Nous avons écrit une lettre.\nElle a pris une photo."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-fenetre",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "fenetre-paire-1",
+            "left": "La fenêtre est ouverte. Racontez l’action accomplie.",
+            "right": "Vous avez ouvert la fenêtre.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:fenetre"
+          },
+          {
+            "id": "fenetre-paire-2",
+            "left": "La visite du musée est terminée. Racontez cette visite.",
+            "right": "Nous avons visité le musée.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:musee"
+          }
+        ],
+        "answers": [
+          "Vous avez ouvert la fenêtre.\nNous avons visité le musée."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-livre",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "livre-paire-1",
+            "left": "Les lecteurs ont fini le livre. Racontez cette lecture.",
+            "right": "Ils ont lu le livre.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:livre"
+          },
+          {
+            "id": "livre-paire-2",
+            "left": "Les sacs sont portés jusqu’au local. Racontez cette tâche accomplie.",
+            "right": "Vous avez porté les sacs.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:sacs"
+          }
+        ],
+        "answers": [
+          "Ils ont lu le livre.\nVous avez porté les sacs."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-eau",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "eau-paire-1",
+            "left": "Le verre est vide. Racontez ce que vous avez bu.",
+            "right": "J’ai bu de l’eau.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:eau"
+          },
+          {
+            "id": "eau-paire-2",
+            "left": "L’arrosage est terminé. Les jardiniers racontent ce qu’ils ont fait.",
+            "right": "Ils ont arrosé le jardin.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:jardin"
+          }
+        ],
+        "answers": [
+          "J’ai bu de l’eau.\nIls ont arrosé le jardin."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-travail",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "travail-paire-1",
+            "left": "Le travail est terminé. Racontez cet achèvement.",
+            "right": "Tu as fini le travail.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:travail"
+          },
+          {
+            "id": "travail-paire-2",
+            "left": "La réponse est donnée. Racontez l’action au passé composé.",
+            "right": "J’ai répondu à la question.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:reponse"
+          }
+        ],
+        "answers": [
+          "Tu as fini le travail.\nJ’ai répondu à la question."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-dessert",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "dessert-paire-1",
+            "left": "Le choix du dessert est fait. Racontez ce choix.",
+            "right": "Elle a choisi une tarte.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:dessert"
+          },
+          {
+            "id": "dessert-paire-2",
+            "left": "Le ticket n’est plus dans la poche. Racontez sa perte.",
+            "right": "Tu as perdu le ticket.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:perte"
+          }
+        ],
+        "answers": [
+          "Elle a choisi une tarte.\nTu as perdu le ticket."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-exercice",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "exercice-paire-1",
+            "left": "L’exercice est achevé. Le groupe raconte son travail.",
+            "right": "Nous avons fait l’exercice.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:exercice"
+          },
+          {
+            "id": "exercice-paire-2",
+            "left": "L’attente est terminée : le rendez-vous a eu lieu. Racontez cette attente comme un épisode achevé.",
+            "right": "Elle a attendu dix minutes.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:attente"
+          }
+        ],
+        "answers": [
+          "Nous avons fait l’exercice.\nElle a attendu dix minutes."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-consigne",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "consigne-paire-1",
+            "left": "La consigne est comprise. Racontez ce résultat.",
+            "right": "Vous avez compris la consigne.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:consigne"
+          },
+          {
+            "id": "consigne-paire-2",
+            "left": "Le paquet est maintenant ouvert. Racontez cette ouverture.",
+            "right": "Nous avons ouvert le paquet.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:paquet"
+          }
+        ],
+        "answers": [
+          "Vous avez compris la consigne.\nNous avons ouvert le paquet."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-vélos",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "vélos-paire-1",
+            "left": "Les vélos sont réparés. Les mécaniciens racontent leur travail.",
+            "right": "Ils ont réparé les vélos.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:vélos"
+          },
+          {
+            "id": "vélos-paire-2",
+            "left": "La liste est mise à jour. Racontez l’ajout effectué.",
+            "right": "Vous avez ajouté une adresse.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:liste"
+          }
+        ],
+        "answers": [
+          "Ils ont réparé les vélos.\nVous avez ajouté une adresse."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-table",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "table-paire-1",
+            "left": "La table est propre. Racontez l’action de nettoyage.",
+            "right": "J’ai nettoyé la table.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:table"
+          },
+          {
+            "id": "table-paire-2",
+            "left": "Le calcul est terminé. Racontez cette opération.",
+            "right": "Ils ont calculé le total.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:calcul"
+          }
+        ],
+        "answers": [
+          "J’ai nettoyé la table.\nIls ont calculé le total."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-dessin",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "dessin-paire-1",
+            "left": "Le dessin est colorié. Racontez l’activité terminée.",
+            "right": "Tu as colorié le dessin.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:dessin"
+          },
+          {
+            "id": "dessin-paire-2",
+            "left": "La promesse a été formulée. Racontez ce qui a été promis.",
+            "right": "J’ai promis mon aide.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:promesse"
+          }
+        ],
+        "answers": [
+          "Tu as colorié le dessin.\nJ’ai promis mon aide."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-musique",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "musique-paire-1",
+            "left": "L’écoute de la chanson est terminée. Racontez cette écoute.",
+            "right": "Elle a écouté une chanson.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:musique"
+          },
+          {
+            "id": "musique-paire-2",
+            "left": "Les places du train sont réservées. Racontez cette réservation.",
+            "right": "Tu as réservé deux places.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:places"
+          }
+        ],
+        "answers": [
+          "Elle a écouté une chanson.\nTu as réservé deux places."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-carte",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "carte-paire-1",
+            "left": "Le groupe a consulté une carte avant de partir. Racontez cette action.",
+            "right": "Nous avons regardé la carte.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:carte"
+          },
+          {
+            "id": "carte-paire-2",
+            "left": "Le plan est terminé. Racontez l’action de dessin.",
+            "right": "Elle a dessiné un plan.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:plan"
+          }
+        ],
+        "answers": [
+          "Nous avons regardé la carte.\nElle a dessiné un plan."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-horaires",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "horaires-paire-1",
+            "left": "La vérification des horaires est terminée. Racontez-la.",
+            "right": "Vous avez vérifié les horaires.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:horaires"
+          },
+          {
+            "id": "horaires-paire-2",
+            "left": "La cuisson du pain est terminée. Racontez cette préparation.",
+            "right": "Nous avons cuit le pain.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:pain"
+          }
+        ],
+        "answers": [
+          "Vous avez vérifié les horaires.\nNous avons cuit le pain."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-colis",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "colis-paire-1",
+            "left": "Les destinataires ont leur colis. Racontez sa réception.",
+            "right": "Ils ont reçu le colis.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:colis"
+          },
+          {
+            "id": "colis-paire-2",
+            "left": "Les chaises sont déjà rangées. Racontez ce rangement.",
+            "right": "Vous avez rangé les chaises.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:chaises"
+          }
+        ],
+        "answers": [
+          "Ils ont reçu le colis.\nVous avez rangé les chaises."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-prix",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "prix-paire-1",
+            "left": "L’achat est réglé. Racontez le paiement.",
+            "right": "J’ai payé les courses.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:prix"
+          },
+          {
+            "id": "prix-paire-2",
+            "left": "La représentation est terminée. Racontez la réaction du public.",
+            "right": "Ils ont applaudi le spectacle.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:spectacle"
+          }
+        ],
+        "answers": [
+          "J’ai payé les courses.\nIls ont applaudi le spectacle."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-telephone",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "telephone-paire-1",
+            "left": "La conversation téléphonique est terminée. Racontez cet appel.",
+            "right": "Tu as appelé le secrétariat.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:telephone"
+          },
+          {
+            "id": "telephone-paire-2",
+            "left": "L’adresse est mémorisée. Racontez l’apprentissage terminé.",
+            "right": "J’ai appris l’adresse.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:adresse"
+          }
+        ],
+        "answers": [
+          "Tu as appelé le secrétariat.\nJ’ai appris l’adresse."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-photo",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "photo-paire-1",
+            "left": "La photo est enregistrée. Racontez la prise de vue.",
+            "right": "Elle a pris une photo.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:photo"
+          },
+          {
+            "id": "photo-paire-2",
+            "left": "Le document est déjà signé. Racontez cette signature.",
+            "right": "Tu as signé le document.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:papier"
+          }
+        ],
+        "answers": [
+          "Elle a pris une photo.\nTu as signé le document."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-musee",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "musee-paire-1",
+            "left": "La visite du musée est terminée. Racontez cette visite.",
+            "right": "Nous avons visité le musée.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:musee"
+          },
+          {
+            "id": "musee-paire-2",
+            "left": "La solution est trouvée. Racontez sa découverte.",
+            "right": "Elle a découvert la solution.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:solution"
+          }
+        ],
+        "answers": [
+          "Nous avons visité le musée.\nElle a découvert la solution."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-sacs",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "sacs-paire-1",
+            "left": "Les sacs sont portés jusqu’au local. Racontez cette tâche accomplie.",
+            "right": "Vous avez porté les sacs.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:sacs"
+          },
+          {
+            "id": "sacs-paire-2",
+            "left": "La décision est prise. Le groupe raconte son choix.",
+            "right": "Nous avons décidé ensemble.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:choix"
+          }
+        ],
+        "answers": [
+          "Vous avez porté les sacs.\nNous avons décidé ensemble."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-jardin",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "jardin-paire-1",
+            "left": "L’arrosage est terminé. Les jardiniers racontent ce qu’ils ont fait.",
+            "right": "Ils ont arrosé le jardin.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:jardin"
+          },
+          {
+            "id": "jardin-paire-2",
+            "left": "La conversation avec le voisin est terminée. Racontez cet échange.",
+            "right": "Vous avez parlé au voisin.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:voisin"
+          }
+        ],
+        "answers": [
+          "Ils ont arrosé le jardin.\nVous avez parlé au voisin."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-reponse",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "reponse-paire-1",
+            "left": "La réponse est donnée. Racontez l’action au passé composé.",
+            "right": "J’ai répondu à la question.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:reponse"
+          },
+          {
+            "id": "reponse-paire-2",
+            "left": "Le dépannage est terminé. Racontez la remise en marche.",
+            "right": "Ils ont redémarré l’ordinateur.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:ordinateur"
+          }
+        ],
+        "answers": [
+          "J’ai répondu à la question.\nIls ont redémarré l’ordinateur."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-perte",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "perte-paire-1",
+            "left": "Le ticket n’est plus dans la poche. Racontez sa perte.",
+            "right": "Tu as perdu le ticket.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:perte"
+          },
+          {
+            "id": "perte-paire-2",
+            "left": "Le mélange est terminé. Racontez l’activité de peinture.",
+            "right": "J’ai mélangé les couleurs.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:couleur"
+          }
+        ],
+        "answers": [
+          "Tu as perdu le ticket.\nJ’ai mélangé les couleurs."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-attente",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "attente-paire-1",
+            "left": "L’attente est terminée : le rendez-vous a eu lieu. Racontez cette attente comme un épisode achevé.",
+            "right": "Elle a attendu dix minutes.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:attente"
+          },
+          {
+            "id": "attente-paire-2",
+            "left": "La course est terminée. Racontez cet effort accompli.",
+            "right": "Tu as couru cinq kilomètres.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:course"
+          }
+        ],
+        "answers": [
+          "Elle a attendu dix minutes.\nTu as couru cinq kilomètres."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-paquet",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "paquet-paire-1",
+            "left": "Le paquet est maintenant ouvert. Racontez cette ouverture.",
+            "right": "Nous avons ouvert le paquet.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:paquet"
+          },
+          {
+            "id": "paquet-paire-2",
+            "left": "Le repas est prêt : sa préparation est terminée. Racontez cette action au passé composé.",
+            "right": "J’ai préparé le repas.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:repas"
+          }
+        ],
+        "answers": [
+          "Nous avons ouvert le paquet.\nJ’ai préparé le repas."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-liste",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "liste-paire-1",
+            "left": "La liste est mise à jour. Racontez l’ajout effectué.",
+            "right": "Vous avez ajouté une adresse.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:liste"
+          },
+          {
+            "id": "liste-paire-2",
+            "left": "La porte est maintenant fermée. Racontez l’action accomplie.",
+            "right": "Tu as fermé la porte.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:porte"
+          }
+        ],
+        "answers": [
+          "Vous avez ajouté une adresse.\nTu as fermé la porte."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-calcul",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "calcul-paire-1",
+            "left": "Le calcul est terminé. Racontez cette opération.",
+            "right": "Ils ont calculé le total.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:calcul"
+          },
+          {
+            "id": "calcul-paire-2",
+            "left": "Les billets du spectacle sont déjà achetés. Racontez cet achat.",
+            "right": "Elle a acheté les billets.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:billets"
+          }
+        ],
+        "answers": [
+          "Ils ont calculé le total.\nElle a acheté les billets."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-promesse",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "promesse-paire-1",
+            "left": "La promesse a été formulée. Racontez ce qui a été promis.",
+            "right": "J’ai promis mon aide.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:promesse"
+          },
+          {
+            "id": "promesse-paire-2",
+            "left": "Le trajet est terminé. Le groupe raconte son déplacement en bus.",
+            "right": "Nous avons pris le bus.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:bus"
+          }
+        ],
+        "answers": [
+          "J’ai promis mon aide.\nNous avons pris le bus."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-places",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "places-paire-1",
+            "left": "Les places du train sont réservées. Racontez cette réservation.",
+            "right": "Tu as réservé deux places.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:places"
+          },
+          {
+            "id": "places-paire-2",
+            "left": "Le message a bien été reçu. Racontez son envoi au passé composé.",
+            "right": "Vous avez envoyé le message.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:message"
+          }
+        ],
+        "answers": [
+          "Tu as réservé deux places.\nVous avez envoyé le message."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-plan",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "plan-paire-1",
+            "left": "Le plan est terminé. Racontez l’action de dessin.",
+            "right": "Elle a dessiné un plan.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:plan"
+          },
+          {
+            "id": "plan-paire-2",
+            "left": "Le match est fini. Les joueurs racontent leur activité.",
+            "right": "Ils ont joué un match.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:match"
+          }
+        ],
+        "answers": [
+          "Elle a dessiné un plan.\nIls ont joué un match."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-pain",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "pain-paire-1",
+            "left": "La cuisson du pain est terminée. Racontez cette préparation.",
+            "right": "Nous avons cuit le pain.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:pain"
+          },
+          {
+            "id": "pain-paire-2",
+            "left": "Le déjeuner est terminé. La personne raconte ce repas.",
+            "right": "J’ai mangé une soupe.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:dejeuner"
+          }
+        ],
+        "answers": [
+          "Nous avons cuit le pain.\nJ’ai mangé une soupe."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-chaises",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "chaises-paire-1",
+            "left": "Les chaises sont déjà rangées. Racontez ce rangement.",
+            "right": "Vous avez rangé les chaises.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:chaises"
+          },
+          {
+            "id": "chaises-paire-2",
+            "left": "La clé perdue est retrouvée. Racontez cette découverte.",
+            "right": "Tu as trouvé la clé.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:cle"
+          }
+        ],
+        "answers": [
+          "Vous avez rangé les chaises.\nTu as trouvé la clé."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-spectacle",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "spectacle-paire-1",
+            "left": "La représentation est terminée. Racontez la réaction du public.",
+            "right": "Ils ont applaudi le spectacle.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:spectacle"
+          },
+          {
+            "id": "spectacle-paire-2",
+            "left": "La séance de cinéma est finie. Racontez ce qu’elle a vu.",
+            "right": "Elle a vu un film.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:film"
+          }
+        ],
+        "answers": [
+          "Ils ont applaudi le spectacle.\nElle a vu un film."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-adresse",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "adresse-paire-1",
+            "left": "L’adresse est mémorisée. Racontez l’apprentissage terminé.",
+            "right": "J’ai appris l’adresse.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:adresse"
+          },
+          {
+            "id": "adresse-paire-2",
+            "left": "La lettre est terminée. Racontez l’action d’écriture.",
+            "right": "Nous avons écrit une lettre.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:lettre"
+          }
+        ],
+        "answers": [
+          "J’ai appris l’adresse.\nNous avons écrit une lettre."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-papier",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "papier-paire-1",
+            "left": "Le document est déjà signé. Racontez cette signature.",
+            "right": "Tu as signé le document.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:papier"
+          },
+          {
+            "id": "papier-paire-2",
+            "left": "La fenêtre est ouverte. Racontez l’action accomplie.",
+            "right": "Vous avez ouvert la fenêtre.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:fenetre"
+          }
+        ],
+        "answers": [
+          "Tu as signé le document.\nVous avez ouvert la fenêtre."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-solution",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "solution-paire-1",
+            "left": "La solution est trouvée. Racontez sa découverte.",
+            "right": "Elle a découvert la solution.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:solution"
+          },
+          {
+            "id": "solution-paire-2",
+            "left": "Les lecteurs ont fini le livre. Racontez cette lecture.",
+            "right": "Ils ont lu le livre.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:livre"
+          }
+        ],
+        "answers": [
+          "Elle a découvert la solution.\nIls ont lu le livre."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-choix",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "choix-paire-1",
+            "left": "La décision est prise. Le groupe raconte son choix.",
+            "right": "Nous avons décidé ensemble.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:choix"
+          },
+          {
+            "id": "choix-paire-2",
+            "left": "Le verre est vide. Racontez ce que vous avez bu.",
+            "right": "J’ai bu de l’eau.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:eau"
+          }
+        ],
+        "answers": [
+          "Nous avons décidé ensemble.\nJ’ai bu de l’eau."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-voisin",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "voisin-paire-1",
+            "left": "La conversation avec le voisin est terminée. Racontez cet échange.",
+            "right": "Vous avez parlé au voisin.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:voisin"
+          },
+          {
+            "id": "voisin-paire-2",
+            "left": "Le travail est terminé. Racontez cet achèvement.",
+            "right": "Tu as fini le travail.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:travail"
+          }
+        ],
+        "answers": [
+          "Vous avez parlé au voisin.\nTu as fini le travail."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-ordinateur",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "ordinateur-paire-1",
+            "left": "Le dépannage est terminé. Racontez la remise en marche.",
+            "right": "Ils ont redémarré l’ordinateur.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:ordinateur"
+          },
+          {
+            "id": "ordinateur-paire-2",
+            "left": "Le choix du dessert est fait. Racontez ce choix.",
+            "right": "Elle a choisi une tarte.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:dessert"
+          }
+        ],
+        "answers": [
+          "Ils ont redémarré l’ordinateur.\nElle a choisi une tarte."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-couleur",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "couleur-paire-1",
+            "left": "Le mélange est terminé. Racontez l’activité de peinture.",
+            "right": "J’ai mélangé les couleurs.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:couleur"
+          },
+          {
+            "id": "couleur-paire-2",
+            "left": "L’exercice est achevé. Le groupe raconte son travail.",
+            "right": "Nous avons fait l’exercice.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:exercice"
+          }
+        ],
+        "answers": [
+          "J’ai mélangé les couleurs.\nNous avons fait l’exercice."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-a-a1-course",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-a",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "course-paire-1",
+            "left": "La course est terminée. Racontez cet effort accompli.",
+            "right": "Tu as couru cinq kilomètres.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:course"
+          },
+          {
+            "id": "course-paire-2",
+            "left": "La consigne est comprise. Racontez ce résultat.",
+            "right": "Vous avez compris la consigne.",
+            "sourceId": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv:consigne"
+          }
+        ],
+        "answers": [
+          "Tu as couru cinq kilomètres.\nVous avez compris la consigne."
+        ],
+        "explanation": "Chaque phrase au passé composé reprend la situation correspondante, sans changer les faits."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "passe-2026-11-24-v1",
+    "activityId": "gram-ex-pc-idee-curriculum-o",
+    "subthemeId": "pc-idee",
+    "topic": "gram-passe",
+    "level": "A1",
+    "label": "Mots dans l’ordre",
+    "objective": "Reconnaître le passé composé comme temps d’un événement achevé, puis construire une phrase.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Sources et variantes relues. Réemploi explicite des situations entre mécaniques et niveaux ; aucune approbation pédagogique humaine déclarée."
+    },
+    "presentations": [
+      "order"
+    ],
+    "instructions": {
+      "order": "Remettez toutes les étiquettes dans l’ordre pour construire la phrase au passé composé."
+    },
+    "units": [
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-repas",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "Le repas est prêt : sa préparation est terminée. Racontez cette action au passé composé.",
+        "answers": [
+          "J’ai préparé le repas."
+        ],
+        "tokens": [
+          {
+            "id": "repas-mot-1",
+            "text": "J’",
+            "category": "pronom"
+          },
+          {
+            "id": "repas-mot-2",
+            "text": "ai",
+            "category": "verbe"
+          },
+          {
+            "id": "repas-mot-3",
+            "text": "préparé",
+            "category": "verbe"
+          },
+          {
+            "id": "repas-mot-4",
+            "text": "le",
+            "category": "determinant"
+          },
+          {
+            "id": "repas-mot-5",
+            "text": "repas.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : J’ai préparé le repas. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-porte",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "La porte est maintenant fermée. Racontez l’action accomplie.",
+        "answers": [
+          "Tu as fermé la porte."
+        ],
+        "tokens": [
+          {
+            "id": "porte-mot-1",
+            "text": "Tu",
+            "category": "pronom"
+          },
+          {
+            "id": "porte-mot-2",
+            "text": "as",
+            "category": "verbe"
+          },
+          {
+            "id": "porte-mot-3",
+            "text": "fermé",
+            "category": "verbe"
+          },
+          {
+            "id": "porte-mot-4",
+            "text": "la",
+            "category": "determinant"
+          },
+          {
+            "id": "porte-mot-5",
+            "text": "porte.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Tu as fermé la porte. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-billets",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "Les billets du spectacle sont déjà achetés. Racontez cet achat.",
+        "answers": [
+          "Elle a acheté les billets."
+        ],
+        "tokens": [
+          {
+            "id": "billets-mot-1",
+            "text": "Elle",
+            "category": "pronom"
+          },
+          {
+            "id": "billets-mot-2",
+            "text": "a",
+            "category": "verbe"
+          },
+          {
+            "id": "billets-mot-3",
+            "text": "acheté",
+            "category": "verbe"
+          },
+          {
+            "id": "billets-mot-4",
+            "text": "les",
+            "category": "determinant"
+          },
+          {
+            "id": "billets-mot-5",
+            "text": "billets.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Elle a acheté les billets. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-bus",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "Le trajet est terminé. Le groupe raconte son déplacement en bus.",
+        "answers": [
+          "Nous avons pris le bus."
+        ],
+        "tokens": [
+          {
+            "id": "bus-mot-1",
+            "text": "Nous",
+            "category": "pronom"
+          },
+          {
+            "id": "bus-mot-2",
+            "text": "avons",
+            "category": "verbe"
+          },
+          {
+            "id": "bus-mot-3",
+            "text": "pris",
+            "category": "verbe"
+          },
+          {
+            "id": "bus-mot-4",
+            "text": "le",
+            "category": "determinant"
+          },
+          {
+            "id": "bus-mot-5",
+            "text": "bus.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Nous avons pris le bus. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-message",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "Le message a bien été reçu. Racontez son envoi au passé composé.",
+        "answers": [
+          "Vous avez envoyé le message."
+        ],
+        "tokens": [
+          {
+            "id": "message-mot-1",
+            "text": "Vous",
+            "category": "pronom"
+          },
+          {
+            "id": "message-mot-2",
+            "text": "avez",
+            "category": "verbe"
+          },
+          {
+            "id": "message-mot-3",
+            "text": "envoyé",
+            "category": "verbe"
+          },
+          {
+            "id": "message-mot-4",
+            "text": "le",
+            "category": "determinant"
+          },
+          {
+            "id": "message-mot-5",
+            "text": "message.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Vous avez envoyé le message. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-match",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "Le match est fini. Les joueurs racontent leur activité.",
+        "answers": [
+          "Ils ont joué un match."
+        ],
+        "tokens": [
+          {
+            "id": "match-mot-1",
+            "text": "Ils",
+            "category": "pronom"
+          },
+          {
+            "id": "match-mot-2",
+            "text": "ont",
+            "category": "verbe"
+          },
+          {
+            "id": "match-mot-3",
+            "text": "joué",
+            "category": "verbe"
+          },
+          {
+            "id": "match-mot-4",
+            "text": "un",
+            "category": "determinant"
+          },
+          {
+            "id": "match-mot-5",
+            "text": "match.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Ils ont joué un match. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-dejeuner",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "Le déjeuner est terminé. La personne raconte ce repas.",
+        "answers": [
+          "J’ai mangé une soupe."
+        ],
+        "tokens": [
+          {
+            "id": "dejeuner-mot-1",
+            "text": "J’",
+            "category": "pronom"
+          },
+          {
+            "id": "dejeuner-mot-2",
+            "text": "ai",
+            "category": "verbe"
+          },
+          {
+            "id": "dejeuner-mot-3",
+            "text": "mangé",
+            "category": "verbe"
+          },
+          {
+            "id": "dejeuner-mot-4",
+            "text": "une",
+            "category": "determinant"
+          },
+          {
+            "id": "dejeuner-mot-5",
+            "text": "soupe.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : J’ai mangé une soupe. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-cle",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "La clé perdue est retrouvée. Racontez cette découverte.",
+        "answers": [
+          "Tu as trouvé la clé."
+        ],
+        "tokens": [
+          {
+            "id": "cle-mot-1",
+            "text": "Tu",
+            "category": "pronom"
+          },
+          {
+            "id": "cle-mot-2",
+            "text": "as",
+            "category": "verbe"
+          },
+          {
+            "id": "cle-mot-3",
+            "text": "trouvé",
+            "category": "verbe"
+          },
+          {
+            "id": "cle-mot-4",
+            "text": "la",
+            "category": "determinant"
+          },
+          {
+            "id": "cle-mot-5",
+            "text": "clé.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Tu as trouvé la clé. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-film",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "La séance de cinéma est finie. Racontez ce qu’elle a vu.",
+        "answers": [
+          "Elle a vu un film."
+        ],
+        "tokens": [
+          {
+            "id": "film-mot-1",
+            "text": "Elle",
+            "category": "pronom"
+          },
+          {
+            "id": "film-mot-2",
+            "text": "a",
+            "category": "verbe"
+          },
+          {
+            "id": "film-mot-3",
+            "text": "vu",
+            "category": "verbe"
+          },
+          {
+            "id": "film-mot-4",
+            "text": "un",
+            "category": "determinant"
+          },
+          {
+            "id": "film-mot-5",
+            "text": "film.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Elle a vu un film. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-lettre",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "La lettre est terminée. Racontez l’action d’écriture.",
+        "answers": [
+          "Nous avons écrit une lettre."
+        ],
+        "tokens": [
+          {
+            "id": "lettre-mot-1",
+            "text": "Nous",
+            "category": "pronom"
+          },
+          {
+            "id": "lettre-mot-2",
+            "text": "avons",
+            "category": "verbe"
+          },
+          {
+            "id": "lettre-mot-3",
+            "text": "écrit",
+            "category": "verbe"
+          },
+          {
+            "id": "lettre-mot-4",
+            "text": "une",
+            "category": "determinant"
+          },
+          {
+            "id": "lettre-mot-5",
+            "text": "lettre.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Nous avons écrit une lettre. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-fenetre",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "La fenêtre est ouverte. Racontez l’action accomplie.",
+        "answers": [
+          "Vous avez ouvert la fenêtre."
+        ],
+        "tokens": [
+          {
+            "id": "fenetre-mot-1",
+            "text": "Vous",
+            "category": "pronom"
+          },
+          {
+            "id": "fenetre-mot-2",
+            "text": "avez",
+            "category": "verbe"
+          },
+          {
+            "id": "fenetre-mot-3",
+            "text": "ouvert",
+            "category": "verbe"
+          },
+          {
+            "id": "fenetre-mot-4",
+            "text": "la",
+            "category": "determinant"
+          },
+          {
+            "id": "fenetre-mot-5",
+            "text": "fenêtre.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Vous avez ouvert la fenêtre. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-livre",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "Les lecteurs ont fini le livre. Racontez cette lecture.",
+        "answers": [
+          "Ils ont lu le livre."
+        ],
+        "tokens": [
+          {
+            "id": "livre-mot-1",
+            "text": "Ils",
+            "category": "pronom"
+          },
+          {
+            "id": "livre-mot-2",
+            "text": "ont",
+            "category": "verbe"
+          },
+          {
+            "id": "livre-mot-3",
+            "text": "lu",
+            "category": "verbe"
+          },
+          {
+            "id": "livre-mot-4",
+            "text": "le",
+            "category": "determinant"
+          },
+          {
+            "id": "livre-mot-5",
+            "text": "livre.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Ils ont lu le livre. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-eau",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "Le verre est vide. Racontez ce que vous avez bu.",
+        "answers": [
+          "J’ai bu de l’eau."
+        ],
+        "tokens": [
+          {
+            "id": "eau-mot-1",
+            "text": "J’",
+            "category": "pronom"
+          },
+          {
+            "id": "eau-mot-2",
+            "text": "ai",
+            "category": "verbe"
+          },
+          {
+            "id": "eau-mot-3",
+            "text": "bu",
+            "category": "verbe"
+          },
+          {
+            "id": "eau-mot-4",
+            "text": "de",
+            "category": "preposition"
+          },
+          {
+            "id": "eau-mot-5",
+            "text": "l’",
+            "category": "determinant"
+          },
+          {
+            "id": "eau-mot-6",
+            "text": "eau.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : J’ai bu de l’eau. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-travail",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "Le travail est terminé. Racontez cet achèvement.",
+        "answers": [
+          "Tu as fini le travail."
+        ],
+        "tokens": [
+          {
+            "id": "travail-mot-1",
+            "text": "Tu",
+            "category": "pronom"
+          },
+          {
+            "id": "travail-mot-2",
+            "text": "as",
+            "category": "verbe"
+          },
+          {
+            "id": "travail-mot-3",
+            "text": "fini",
+            "category": "verbe"
+          },
+          {
+            "id": "travail-mot-4",
+            "text": "le",
+            "category": "determinant"
+          },
+          {
+            "id": "travail-mot-5",
+            "text": "travail.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Tu as fini le travail. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-dessert",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "Le choix du dessert est fait. Racontez ce choix.",
+        "answers": [
+          "Elle a choisi une tarte."
+        ],
+        "tokens": [
+          {
+            "id": "dessert-mot-1",
+            "text": "Elle",
+            "category": "pronom"
+          },
+          {
+            "id": "dessert-mot-2",
+            "text": "a",
+            "category": "verbe"
+          },
+          {
+            "id": "dessert-mot-3",
+            "text": "choisi",
+            "category": "verbe"
+          },
+          {
+            "id": "dessert-mot-4",
+            "text": "une",
+            "category": "determinant"
+          },
+          {
+            "id": "dessert-mot-5",
+            "text": "tarte.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Elle a choisi une tarte. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-exercice",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "L’exercice est achevé. Le groupe raconte son travail.",
+        "answers": [
+          "Nous avons fait l’exercice."
+        ],
+        "tokens": [
+          {
+            "id": "exercice-mot-1",
+            "text": "Nous",
+            "category": "pronom"
+          },
+          {
+            "id": "exercice-mot-2",
+            "text": "avons",
+            "category": "verbe"
+          },
+          {
+            "id": "exercice-mot-3",
+            "text": "fait",
+            "category": "verbe"
+          },
+          {
+            "id": "exercice-mot-4",
+            "text": "l’",
+            "category": "determinant"
+          },
+          {
+            "id": "exercice-mot-5",
+            "text": "exercice.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Nous avons fait l’exercice. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-consigne",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "La consigne est comprise. Racontez ce résultat.",
+        "answers": [
+          "Vous avez compris la consigne."
+        ],
+        "tokens": [
+          {
+            "id": "consigne-mot-1",
+            "text": "Vous",
+            "category": "pronom"
+          },
+          {
+            "id": "consigne-mot-2",
+            "text": "avez",
+            "category": "verbe"
+          },
+          {
+            "id": "consigne-mot-3",
+            "text": "compris",
+            "category": "verbe"
+          },
+          {
+            "id": "consigne-mot-4",
+            "text": "la",
+            "category": "determinant"
+          },
+          {
+            "id": "consigne-mot-5",
+            "text": "consigne.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Vous avez compris la consigne. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-vélos",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "Les vélos sont réparés. Les mécaniciens racontent leur travail.",
+        "answers": [
+          "Ils ont réparé les vélos."
+        ],
+        "tokens": [
+          {
+            "id": "vélos-mot-1",
+            "text": "Ils",
+            "category": "pronom"
+          },
+          {
+            "id": "vélos-mot-2",
+            "text": "ont",
+            "category": "verbe"
+          },
+          {
+            "id": "vélos-mot-3",
+            "text": "réparé",
+            "category": "verbe"
+          },
+          {
+            "id": "vélos-mot-4",
+            "text": "les",
+            "category": "determinant"
+          },
+          {
+            "id": "vélos-mot-5",
+            "text": "vélos.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Ils ont réparé les vélos. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-table",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "La table est propre. Racontez l’action de nettoyage.",
+        "answers": [
+          "J’ai nettoyé la table."
+        ],
+        "tokens": [
+          {
+            "id": "table-mot-1",
+            "text": "J’",
+            "category": "pronom"
+          },
+          {
+            "id": "table-mot-2",
+            "text": "ai",
+            "category": "verbe"
+          },
+          {
+            "id": "table-mot-3",
+            "text": "nettoyé",
+            "category": "verbe"
+          },
+          {
+            "id": "table-mot-4",
+            "text": "la",
+            "category": "determinant"
+          },
+          {
+            "id": "table-mot-5",
+            "text": "table.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : J’ai nettoyé la table. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-dessin",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "Le dessin est colorié. Racontez l’activité terminée.",
+        "answers": [
+          "Tu as colorié le dessin."
+        ],
+        "tokens": [
+          {
+            "id": "dessin-mot-1",
+            "text": "Tu",
+            "category": "pronom"
+          },
+          {
+            "id": "dessin-mot-2",
+            "text": "as",
+            "category": "verbe"
+          },
+          {
+            "id": "dessin-mot-3",
+            "text": "colorié",
+            "category": "verbe"
+          },
+          {
+            "id": "dessin-mot-4",
+            "text": "le",
+            "category": "determinant"
+          },
+          {
+            "id": "dessin-mot-5",
+            "text": "dessin.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Tu as colorié le dessin. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-musique",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "L’écoute de la chanson est terminée. Racontez cette écoute.",
+        "answers": [
+          "Elle a écouté une chanson."
+        ],
+        "tokens": [
+          {
+            "id": "musique-mot-1",
+            "text": "Elle",
+            "category": "pronom"
+          },
+          {
+            "id": "musique-mot-2",
+            "text": "a",
+            "category": "verbe"
+          },
+          {
+            "id": "musique-mot-3",
+            "text": "écouté",
+            "category": "verbe"
+          },
+          {
+            "id": "musique-mot-4",
+            "text": "une",
+            "category": "determinant"
+          },
+          {
+            "id": "musique-mot-5",
+            "text": "chanson.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Elle a écouté une chanson. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-carte",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "Le groupe a consulté une carte avant de partir. Racontez cette action.",
+        "answers": [
+          "Nous avons regardé la carte."
+        ],
+        "tokens": [
+          {
+            "id": "carte-mot-1",
+            "text": "Nous",
+            "category": "pronom"
+          },
+          {
+            "id": "carte-mot-2",
+            "text": "avons",
+            "category": "verbe"
+          },
+          {
+            "id": "carte-mot-3",
+            "text": "regardé",
+            "category": "verbe"
+          },
+          {
+            "id": "carte-mot-4",
+            "text": "la",
+            "category": "determinant"
+          },
+          {
+            "id": "carte-mot-5",
+            "text": "carte.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Nous avons regardé la carte. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-horaires",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "La vérification des horaires est terminée. Racontez-la.",
+        "answers": [
+          "Vous avez vérifié les horaires."
+        ],
+        "tokens": [
+          {
+            "id": "horaires-mot-1",
+            "text": "Vous",
+            "category": "pronom"
+          },
+          {
+            "id": "horaires-mot-2",
+            "text": "avez",
+            "category": "verbe"
+          },
+          {
+            "id": "horaires-mot-3",
+            "text": "vérifié",
+            "category": "verbe"
+          },
+          {
+            "id": "horaires-mot-4",
+            "text": "les",
+            "category": "determinant"
+          },
+          {
+            "id": "horaires-mot-5",
+            "text": "horaires.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Vous avez vérifié les horaires. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-colis",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "Les destinataires ont leur colis. Racontez sa réception.",
+        "answers": [
+          "Ils ont reçu le colis."
+        ],
+        "tokens": [
+          {
+            "id": "colis-mot-1",
+            "text": "Ils",
+            "category": "pronom"
+          },
+          {
+            "id": "colis-mot-2",
+            "text": "ont",
+            "category": "verbe"
+          },
+          {
+            "id": "colis-mot-3",
+            "text": "reçu",
+            "category": "verbe"
+          },
+          {
+            "id": "colis-mot-4",
+            "text": "le",
+            "category": "determinant"
+          },
+          {
+            "id": "colis-mot-5",
+            "text": "colis.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Ils ont reçu le colis. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-prix",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "L’achat est réglé. Racontez le paiement.",
+        "answers": [
+          "J’ai payé les courses."
+        ],
+        "tokens": [
+          {
+            "id": "prix-mot-1",
+            "text": "J’",
+            "category": "pronom"
+          },
+          {
+            "id": "prix-mot-2",
+            "text": "ai",
+            "category": "verbe"
+          },
+          {
+            "id": "prix-mot-3",
+            "text": "payé",
+            "category": "verbe"
+          },
+          {
+            "id": "prix-mot-4",
+            "text": "les",
+            "category": "determinant"
+          },
+          {
+            "id": "prix-mot-5",
+            "text": "courses.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : J’ai payé les courses. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-telephone",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "La conversation téléphonique est terminée. Racontez cet appel.",
+        "answers": [
+          "Tu as appelé le secrétariat."
+        ],
+        "tokens": [
+          {
+            "id": "telephone-mot-1",
+            "text": "Tu",
+            "category": "pronom"
+          },
+          {
+            "id": "telephone-mot-2",
+            "text": "as",
+            "category": "verbe"
+          },
+          {
+            "id": "telephone-mot-3",
+            "text": "appelé",
+            "category": "verbe"
+          },
+          {
+            "id": "telephone-mot-4",
+            "text": "le",
+            "category": "determinant"
+          },
+          {
+            "id": "telephone-mot-5",
+            "text": "secrétariat.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Tu as appelé le secrétariat. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-photo",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "La photo est enregistrée. Racontez la prise de vue.",
+        "answers": [
+          "Elle a pris une photo."
+        ],
+        "tokens": [
+          {
+            "id": "photo-mot-1",
+            "text": "Elle",
+            "category": "pronom"
+          },
+          {
+            "id": "photo-mot-2",
+            "text": "a",
+            "category": "verbe"
+          },
+          {
+            "id": "photo-mot-3",
+            "text": "pris",
+            "category": "verbe"
+          },
+          {
+            "id": "photo-mot-4",
+            "text": "une",
+            "category": "determinant"
+          },
+          {
+            "id": "photo-mot-5",
+            "text": "photo.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Elle a pris une photo. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-musee",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "La visite du musée est terminée. Racontez cette visite.",
+        "answers": [
+          "Nous avons visité le musée."
+        ],
+        "tokens": [
+          {
+            "id": "musee-mot-1",
+            "text": "Nous",
+            "category": "pronom"
+          },
+          {
+            "id": "musee-mot-2",
+            "text": "avons",
+            "category": "verbe"
+          },
+          {
+            "id": "musee-mot-3",
+            "text": "visité",
+            "category": "verbe"
+          },
+          {
+            "id": "musee-mot-4",
+            "text": "le",
+            "category": "determinant"
+          },
+          {
+            "id": "musee-mot-5",
+            "text": "musée.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Nous avons visité le musée. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-sacs",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "Les sacs sont portés jusqu’au local. Racontez cette tâche accomplie.",
+        "answers": [
+          "Vous avez porté les sacs."
+        ],
+        "tokens": [
+          {
+            "id": "sacs-mot-1",
+            "text": "Vous",
+            "category": "pronom"
+          },
+          {
+            "id": "sacs-mot-2",
+            "text": "avez",
+            "category": "verbe"
+          },
+          {
+            "id": "sacs-mot-3",
+            "text": "porté",
+            "category": "verbe"
+          },
+          {
+            "id": "sacs-mot-4",
+            "text": "les",
+            "category": "determinant"
+          },
+          {
+            "id": "sacs-mot-5",
+            "text": "sacs.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Vous avez porté les sacs. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-jardin",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "L’arrosage est terminé. Les jardiniers racontent ce qu’ils ont fait.",
+        "answers": [
+          "Ils ont arrosé le jardin."
+        ],
+        "tokens": [
+          {
+            "id": "jardin-mot-1",
+            "text": "Ils",
+            "category": "pronom"
+          },
+          {
+            "id": "jardin-mot-2",
+            "text": "ont",
+            "category": "verbe"
+          },
+          {
+            "id": "jardin-mot-3",
+            "text": "arrosé",
+            "category": "verbe"
+          },
+          {
+            "id": "jardin-mot-4",
+            "text": "le",
+            "category": "determinant"
+          },
+          {
+            "id": "jardin-mot-5",
+            "text": "jardin.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Ils ont arrosé le jardin. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-reponse",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "La réponse est donnée. Racontez l’action au passé composé.",
+        "answers": [
+          "J’ai répondu à la question."
+        ],
+        "tokens": [
+          {
+            "id": "reponse-mot-1",
+            "text": "J’",
+            "category": "pronom"
+          },
+          {
+            "id": "reponse-mot-2",
+            "text": "ai",
+            "category": "verbe"
+          },
+          {
+            "id": "reponse-mot-3",
+            "text": "répondu",
+            "category": "verbe"
+          },
+          {
+            "id": "reponse-mot-4",
+            "text": "à",
+            "category": "preposition"
+          },
+          {
+            "id": "reponse-mot-5",
+            "text": "la",
+            "category": "determinant"
+          },
+          {
+            "id": "reponse-mot-6",
+            "text": "question.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : J’ai répondu à la question. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-perte",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "Le ticket n’est plus dans la poche. Racontez sa perte.",
+        "answers": [
+          "Tu as perdu le ticket."
+        ],
+        "tokens": [
+          {
+            "id": "perte-mot-1",
+            "text": "Tu",
+            "category": "pronom"
+          },
+          {
+            "id": "perte-mot-2",
+            "text": "as",
+            "category": "verbe"
+          },
+          {
+            "id": "perte-mot-3",
+            "text": "perdu",
+            "category": "verbe"
+          },
+          {
+            "id": "perte-mot-4",
+            "text": "le",
+            "category": "determinant"
+          },
+          {
+            "id": "perte-mot-5",
+            "text": "ticket.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Tu as perdu le ticket. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-attente",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "L’attente est terminée : le rendez-vous a eu lieu. Racontez cette attente comme un épisode achevé.",
+        "answers": [
+          "Elle a attendu dix minutes."
+        ],
+        "tokens": [
+          {
+            "id": "attente-mot-1",
+            "text": "Elle",
+            "category": "pronom"
+          },
+          {
+            "id": "attente-mot-2",
+            "text": "a",
+            "category": "verbe"
+          },
+          {
+            "id": "attente-mot-3",
+            "text": "attendu",
+            "category": "verbe"
+          },
+          {
+            "id": "attente-mot-4",
+            "text": "dix",
+            "category": "determinant"
+          },
+          {
+            "id": "attente-mot-5",
+            "text": "minutes.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Elle a attendu dix minutes. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-paquet",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "Le paquet est maintenant ouvert. Racontez cette ouverture.",
+        "answers": [
+          "Nous avons ouvert le paquet."
+        ],
+        "tokens": [
+          {
+            "id": "paquet-mot-1",
+            "text": "Nous",
+            "category": "pronom"
+          },
+          {
+            "id": "paquet-mot-2",
+            "text": "avons",
+            "category": "verbe"
+          },
+          {
+            "id": "paquet-mot-3",
+            "text": "ouvert",
+            "category": "verbe"
+          },
+          {
+            "id": "paquet-mot-4",
+            "text": "le",
+            "category": "determinant"
+          },
+          {
+            "id": "paquet-mot-5",
+            "text": "paquet.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Nous avons ouvert le paquet. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-liste",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "La liste est mise à jour. Racontez l’ajout effectué.",
+        "answers": [
+          "Vous avez ajouté une adresse."
+        ],
+        "tokens": [
+          {
+            "id": "liste-mot-1",
+            "text": "Vous",
+            "category": "pronom"
+          },
+          {
+            "id": "liste-mot-2",
+            "text": "avez",
+            "category": "verbe"
+          },
+          {
+            "id": "liste-mot-3",
+            "text": "ajouté",
+            "category": "verbe"
+          },
+          {
+            "id": "liste-mot-4",
+            "text": "une",
+            "category": "determinant"
+          },
+          {
+            "id": "liste-mot-5",
+            "text": "adresse.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Vous avez ajouté une adresse. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-calcul",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "Le calcul est terminé. Racontez cette opération.",
+        "answers": [
+          "Ils ont calculé le total."
+        ],
+        "tokens": [
+          {
+            "id": "calcul-mot-1",
+            "text": "Ils",
+            "category": "pronom"
+          },
+          {
+            "id": "calcul-mot-2",
+            "text": "ont",
+            "category": "verbe"
+          },
+          {
+            "id": "calcul-mot-3",
+            "text": "calculé",
+            "category": "verbe"
+          },
+          {
+            "id": "calcul-mot-4",
+            "text": "le",
+            "category": "determinant"
+          },
+          {
+            "id": "calcul-mot-5",
+            "text": "total.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Ils ont calculé le total. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-promesse",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "La promesse a été formulée. Racontez ce qui a été promis.",
+        "answers": [
+          "J’ai promis mon aide."
+        ],
+        "tokens": [
+          {
+            "id": "promesse-mot-1",
+            "text": "J’",
+            "category": "pronom"
+          },
+          {
+            "id": "promesse-mot-2",
+            "text": "ai",
+            "category": "verbe"
+          },
+          {
+            "id": "promesse-mot-3",
+            "text": "promis",
+            "category": "verbe"
+          },
+          {
+            "id": "promesse-mot-4",
+            "text": "mon",
+            "category": "determinant"
+          },
+          {
+            "id": "promesse-mot-5",
+            "text": "aide.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : J’ai promis mon aide. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-places",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "Les places du train sont réservées. Racontez cette réservation.",
+        "answers": [
+          "Tu as réservé deux places."
+        ],
+        "tokens": [
+          {
+            "id": "places-mot-1",
+            "text": "Tu",
+            "category": "pronom"
+          },
+          {
+            "id": "places-mot-2",
+            "text": "as",
+            "category": "verbe"
+          },
+          {
+            "id": "places-mot-3",
+            "text": "réservé",
+            "category": "verbe"
+          },
+          {
+            "id": "places-mot-4",
+            "text": "deux",
+            "category": "determinant"
+          },
+          {
+            "id": "places-mot-5",
+            "text": "places.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Tu as réservé deux places. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-plan",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "Le plan est terminé. Racontez l’action de dessin.",
+        "answers": [
+          "Elle a dessiné un plan."
+        ],
+        "tokens": [
+          {
+            "id": "plan-mot-1",
+            "text": "Elle",
+            "category": "pronom"
+          },
+          {
+            "id": "plan-mot-2",
+            "text": "a",
+            "category": "verbe"
+          },
+          {
+            "id": "plan-mot-3",
+            "text": "dessiné",
+            "category": "verbe"
+          },
+          {
+            "id": "plan-mot-4",
+            "text": "un",
+            "category": "determinant"
+          },
+          {
+            "id": "plan-mot-5",
+            "text": "plan.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Elle a dessiné un plan. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-pain",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "La cuisson du pain est terminée. Racontez cette préparation.",
+        "answers": [
+          "Nous avons cuit le pain."
+        ],
+        "tokens": [
+          {
+            "id": "pain-mot-1",
+            "text": "Nous",
+            "category": "pronom"
+          },
+          {
+            "id": "pain-mot-2",
+            "text": "avons",
+            "category": "verbe"
+          },
+          {
+            "id": "pain-mot-3",
+            "text": "cuit",
+            "category": "verbe"
+          },
+          {
+            "id": "pain-mot-4",
+            "text": "le",
+            "category": "determinant"
+          },
+          {
+            "id": "pain-mot-5",
+            "text": "pain.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Nous avons cuit le pain. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-chaises",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "Les chaises sont déjà rangées. Racontez ce rangement.",
+        "answers": [
+          "Vous avez rangé les chaises."
+        ],
+        "tokens": [
+          {
+            "id": "chaises-mot-1",
+            "text": "Vous",
+            "category": "pronom"
+          },
+          {
+            "id": "chaises-mot-2",
+            "text": "avez",
+            "category": "verbe"
+          },
+          {
+            "id": "chaises-mot-3",
+            "text": "rangé",
+            "category": "verbe"
+          },
+          {
+            "id": "chaises-mot-4",
+            "text": "les",
+            "category": "determinant"
+          },
+          {
+            "id": "chaises-mot-5",
+            "text": "chaises.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Vous avez rangé les chaises. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-spectacle",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "La représentation est terminée. Racontez la réaction du public.",
+        "answers": [
+          "Ils ont applaudi le spectacle."
+        ],
+        "tokens": [
+          {
+            "id": "spectacle-mot-1",
+            "text": "Ils",
+            "category": "pronom"
+          },
+          {
+            "id": "spectacle-mot-2",
+            "text": "ont",
+            "category": "verbe"
+          },
+          {
+            "id": "spectacle-mot-3",
+            "text": "applaudi",
+            "category": "verbe"
+          },
+          {
+            "id": "spectacle-mot-4",
+            "text": "le",
+            "category": "determinant"
+          },
+          {
+            "id": "spectacle-mot-5",
+            "text": "spectacle.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Ils ont applaudi le spectacle. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-adresse",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "L’adresse est mémorisée. Racontez l’apprentissage terminé.",
+        "answers": [
+          "J’ai appris l’adresse."
+        ],
+        "tokens": [
+          {
+            "id": "adresse-mot-1",
+            "text": "J’",
+            "category": "pronom"
+          },
+          {
+            "id": "adresse-mot-2",
+            "text": "ai",
+            "category": "verbe"
+          },
+          {
+            "id": "adresse-mot-3",
+            "text": "appris",
+            "category": "verbe"
+          },
+          {
+            "id": "adresse-mot-4",
+            "text": "l’",
+            "category": "determinant"
+          },
+          {
+            "id": "adresse-mot-5",
+            "text": "adresse.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : J’ai appris l’adresse. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-papier",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "Le document est déjà signé. Racontez cette signature.",
+        "answers": [
+          "Tu as signé le document."
+        ],
+        "tokens": [
+          {
+            "id": "papier-mot-1",
+            "text": "Tu",
+            "category": "pronom"
+          },
+          {
+            "id": "papier-mot-2",
+            "text": "as",
+            "category": "verbe"
+          },
+          {
+            "id": "papier-mot-3",
+            "text": "signé",
+            "category": "verbe"
+          },
+          {
+            "id": "papier-mot-4",
+            "text": "le",
+            "category": "determinant"
+          },
+          {
+            "id": "papier-mot-5",
+            "text": "document.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Tu as signé le document. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-solution",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "La solution est trouvée. Racontez sa découverte.",
+        "answers": [
+          "Elle a découvert la solution."
+        ],
+        "tokens": [
+          {
+            "id": "solution-mot-1",
+            "text": "Elle",
+            "category": "pronom"
+          },
+          {
+            "id": "solution-mot-2",
+            "text": "a",
+            "category": "verbe"
+          },
+          {
+            "id": "solution-mot-3",
+            "text": "découvert",
+            "category": "verbe"
+          },
+          {
+            "id": "solution-mot-4",
+            "text": "la",
+            "category": "determinant"
+          },
+          {
+            "id": "solution-mot-5",
+            "text": "solution.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Elle a découvert la solution. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-choix",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "La décision est prise. Le groupe raconte son choix.",
+        "answers": [
+          "Nous avons décidé ensemble."
+        ],
+        "tokens": [
+          {
+            "id": "choix-mot-1",
+            "text": "Nous",
+            "category": "pronom"
+          },
+          {
+            "id": "choix-mot-2",
+            "text": "avons",
+            "category": "verbe"
+          },
+          {
+            "id": "choix-mot-3",
+            "text": "décidé",
+            "category": "verbe"
+          },
+          {
+            "id": "choix-mot-4",
+            "text": "ensemble.",
+            "category": "adverbe"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Nous avons décidé ensemble. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-voisin",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "La conversation avec le voisin est terminée. Racontez cet échange.",
+        "answers": [
+          "Vous avez parlé au voisin."
+        ],
+        "tokens": [
+          {
+            "id": "voisin-mot-1",
+            "text": "Vous",
+            "category": "pronom"
+          },
+          {
+            "id": "voisin-mot-2",
+            "text": "avez",
+            "category": "verbe"
+          },
+          {
+            "id": "voisin-mot-3",
+            "text": "parlé",
+            "category": "verbe"
+          },
+          {
+            "id": "voisin-mot-4",
+            "text": "au",
+            "category": "preposition"
+          },
+          {
+            "id": "voisin-mot-5",
+            "text": "voisin.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Vous avez parlé au voisin. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-ordinateur",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "Le dépannage est terminé. Racontez la remise en marche.",
+        "answers": [
+          "Ils ont redémarré l’ordinateur."
+        ],
+        "tokens": [
+          {
+            "id": "ordinateur-mot-1",
+            "text": "Ils",
+            "category": "pronom"
+          },
+          {
+            "id": "ordinateur-mot-2",
+            "text": "ont",
+            "category": "verbe"
+          },
+          {
+            "id": "ordinateur-mot-3",
+            "text": "redémarré",
+            "category": "verbe"
+          },
+          {
+            "id": "ordinateur-mot-4",
+            "text": "l’",
+            "category": "determinant"
+          },
+          {
+            "id": "ordinateur-mot-5",
+            "text": "ordinateur.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Ils ont redémarré l’ordinateur. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-couleur",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "Le mélange est terminé. Racontez l’activité de peinture.",
+        "answers": [
+          "J’ai mélangé les couleurs."
+        ],
+        "tokens": [
+          {
+            "id": "couleur-mot-1",
+            "text": "J’",
+            "category": "pronom"
+          },
+          {
+            "id": "couleur-mot-2",
+            "text": "ai",
+            "category": "verbe"
+          },
+          {
+            "id": "couleur-mot-3",
+            "text": "mélangé",
+            "category": "verbe"
+          },
+          {
+            "id": "couleur-mot-4",
+            "text": "les",
+            "category": "determinant"
+          },
+          {
+            "id": "couleur-mot-5",
+            "text": "couleurs.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : J’ai mélangé les couleurs. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      },
+      {
+        "id": "gram-ex-pc-idee-curriculum-o-a1-course",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-idee-curriculum-o",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "prompt": "Formez la phrase avec toutes les étiquettes.",
+        "cue": "La course est terminée. Racontez cet effort accompli.",
+        "answers": [
+          "Tu as couru cinq kilomètres."
+        ],
+        "tokens": [
+          {
+            "id": "course-mot-1",
+            "text": "Tu",
+            "category": "pronom"
+          },
+          {
+            "id": "course-mot-2",
+            "text": "as",
+            "category": "verbe"
+          },
+          {
+            "id": "course-mot-3",
+            "text": "couru",
+            "category": "verbe"
+          },
+          {
+            "id": "course-mot-4",
+            "text": "cinq",
+            "category": "determinant"
+          },
+          {
+            "id": "course-mot-5",
+            "text": "kilomètres.",
+            "category": "nom"
+          }
+        ],
+        "responseLines": 2,
+        "explanation": "Ordre possible : Tu as couru cinq kilomètres. Les autres ordres grammaticaux qui conservent tous les mots et les faits sont appréciés par l’enseignant. Le passé composé présente ici le fait comme un événement achevé : auxiliaire au présent et participe passé."
+      }
+    ]
+  }
+]

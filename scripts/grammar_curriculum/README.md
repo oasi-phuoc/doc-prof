@@ -44,3 +44,12 @@ Contrôles : `npm run test:grammar:questions`, `npm run test:grammar:questions:b
 Contrôles : `npm run test:grammar:exclamation` et `npm run test:grammar:exclamation:browser`. Après ces preuves, `node scripts/update-grammar-exclamation-progress.cjs --verified` actualise le registre, le CSV du 23 novembre et les types gradués disponibles. Les niveaux d’une activité partagée sont regroupés dans ses métadonnées, sans écraser A1 par A2.
 
 L’ancienne banque c4 est retirée. `node scripts/build-retired-grammar-sql.cjs` reconstruit la liste de notions dans la requête D1 depuis `retired-subthemes.json`. Le contrôle de pools écrit `current-pools-verification.json` ; `--evidence=docs/grammaire/implementation/exclamation-20261123-proofs/pools.json` conserve une preuve datée supplémentaire sans réécrire celle du thème précédent. La suppression distante reste soumise à l’accès effectif au serveur, bloqué 403 lors du dernier essai.
+
+
+### Parler du passé — 24 novembre 2026
+
+Les huit fichiers `passe-*.tsv` portent 400 situations relues. `passe-pqp-lectures-b1.json` contient vingt documents et soixante cibles de questionnement. `python3 scripts/build-grammar-passe.py` compile les huit nouvelles banques sans réécrire `imparfait-ou-pc.json`.
+
+Les sources sont réemployées explicitement : h1/h2 partagent les faits avec avoir ; h6 A2 forme le groupe verbal et B1 analyse la construction ; h9 A2 reprend des cas simples avec avoir/être. Les modèles d’écrit et de questions restent non exclusifs. La validation pédagogique humaine est en attente.
+
+`npm run test:grammar:passe` vérifie les variantes, recettes, filtres et intervalles de correction puis reconstruit les banques dans un répertoire isolé. `npm run test:grammar:passe:browser` utilise un aperçu de production sur le port 5188 et conserve les mesures et PDF dans `docs/grammaire/implementation/passe-20261124-proofs`.

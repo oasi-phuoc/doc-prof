@@ -1,0 +1,539 @@
+[
+  {
+    "id": "repas",
+    "title": "Avant le repas",
+    "genre": "Message",
+    "text": [
+      "Bonjour, les invités sont arrivés à midi. Mina avait préparé une soupe avant",
+      "leur arrivée. Le repas a eu lieu dans le jardin."
+    ],
+    "targets": [
+      {
+        "information": "Le plat préparé avant l’arrivée",
+        "model": "Qu’avait préparé Mina avant l’arrivée des invités ?",
+        "evidence": "une soupe"
+      },
+      {
+        "information": "L’heure d’arrivée",
+        "model": "À quelle heure les invités sont-ils arrivés ?",
+        "evidence": "à midi"
+      },
+      {
+        "information": "Le lieu du repas",
+        "model": "Où le repas a-t-il eu lieu ?",
+        "evidence": "dans le jardin"
+      }
+    ]
+  },
+  {
+    "id": "train",
+    "title": "Billet réservé",
+    "genre": "Courriel",
+    "text": [
+      "Bonjour, j’avais réservé mon billet lundi. Le prix a augmenté mardi. Je suis",
+      "ensuite parti pour Berne afin de suivre une formation."
+    ],
+    "targets": [
+      {
+        "information": "Le moment de la réservation",
+        "model": "Quand avais-tu réservé ton billet ?",
+        "evidence": "lundi"
+      },
+      {
+        "information": "La destination du voyage",
+        "model": "Pour quelle ville es-tu parti ?",
+        "evidence": "pour Berne"
+      },
+      {
+        "information": "Le but du voyage",
+        "model": "Pourquoi es-tu parti pour Berne ?",
+        "evidence": "suivre une formation"
+      }
+    ]
+  },
+  {
+    "id": "cle",
+    "title": "Accès au local",
+    "genre": "Note d’incident",
+    "text": [
+      "Le gardien n’a pas pu ouvrir le local à huit heures. Il avait perdu la clé",
+      "pendant son trajet à vélo. Une collègue a apporté un double à neuf heures."
+    ],
+    "targets": [
+      {
+        "information": "La cause de l’impossibilité d’ouvrir",
+        "model": "Pourquoi le gardien n’a-t-il pas pu ouvrir le local ?",
+        "evidence": "avait perdu la clé"
+      },
+      {
+        "information": "Le moyen de transport",
+        "model": "Comment le gardien s’était-il déplacé ?",
+        "evidence": "à vélo"
+      },
+      {
+        "information": "L’heure de l’arrivée du double",
+        "model": "À quelle heure la collègue a-t-elle apporté un double ?",
+        "evidence": "à neuf heures"
+      }
+    ]
+  },
+  {
+    "id": "stage",
+    "title": "Fin de formation",
+    "genre": "Bilan",
+    "text": [
+      "Avant le début du stage, notre groupe avait terminé la formation de",
+      "sécurité. Le stage a commencé jeudi dans un atelier de mécanique. Une",
+      "tutrice a accueilli les six participants."
+    ],
+    "targets": [
+      {
+        "information": "La formation terminée",
+        "model": "Quelle formation le groupe avait-il terminée avant le stage ?",
+        "evidence": "formation de sécurité"
+      },
+      {
+        "information": "Le jour de début",
+        "model": "Quel jour le stage a-t-il commencé ?",
+        "evidence": "jeudi"
+      },
+      {
+        "information": "Le nombre de participants",
+        "model": "Combien de participants la tutrice a-t-elle accueillis ?",
+        "evidence": "six participants"
+      }
+    ]
+  },
+  {
+    "id": "musee",
+    "title": "Une visite préparée",
+    "genre": "Compte rendu",
+    "text": [
+      "La classe a visité le musée vendredi. Les élèves avaient consulté le plan",
+      "avant la visite. Ils ont retrouvé leur guide à l’entrée principale, puis ont",
+      "découvert l’exposition sur les transports."
+    ],
+    "targets": [
+      {
+        "information": "Le document consulté",
+        "model": "Quel document les élèves avaient-ils consulté ?",
+        "evidence": "le plan"
+      },
+      {
+        "information": "Le point de rencontre",
+        "model": "Où les élèves ont-ils retrouvé leur guide ?",
+        "evidence": "à l’entrée principale"
+      },
+      {
+        "information": "Le thème de l’exposition",
+        "model": "Sur quoi portait l’exposition ?",
+        "evidence": "les transports"
+      }
+    ]
+  },
+  {
+    "id": "reunion",
+    "title": "Réunion à distance",
+    "genre": "Courriel",
+    "text": [
+      "Bonjour, nous avions rétabli la connexion avant la réunion. La",
+      "visioconférence a commencé à quatorze heures. La responsable a présenté le",
+      "nouveau calendrier et demandé une réponse avant vendredi."
+    ],
+    "targets": [
+      {
+        "information": "L’action déjà achevée",
+        "model": "Qu’aviez-vous fait avant la réunion ?",
+        "evidence": "rétabli la connexion"
+      },
+      {
+        "information": "L’heure de début",
+        "model": "À quelle heure la visioconférence a-t-elle commencé ?",
+        "evidence": "à quatorze heures"
+      },
+      {
+        "information": "La limite pour répondre",
+        "model": "Avant quel jour fallait-il répondre ?",
+        "evidence": "avant vendredi"
+      }
+    ]
+  },
+  {
+    "id": "affiche",
+    "title": "Changement d’horaire",
+    "genre": "Note d’organisation",
+    "text": [
+      "L’horaire avait changé avant l’impression des affiches. La séance a",
+      "finalement commencé à dix-neuf heures dans la salle bleue. Les bénévoles ont",
+      "prévenu le public par un message."
+    ],
+    "targets": [
+      {
+        "information": "L’événement antérieur à l’impression",
+        "model": "Qu’est-ce qui avait changé avant l’impression des affiches ?",
+        "evidence": "L’horaire avait changé"
+      },
+      {
+        "information": "La salle utilisée",
+        "model": "Dans quelle salle la séance a-t-elle eu lieu ?",
+        "evidence": "la salle bleue"
+      },
+      {
+        "information": "Le moyen d’informer",
+        "model": "Comment les bénévoles ont-ils prévenu le public ?",
+        "evidence": "par un message"
+      }
+    ]
+  },
+  {
+    "id": "velo",
+    "title": "Sortie du club",
+    "genre": "Journal de bord",
+    "text": [
+      "Samedi, le club a organisé une sortie de vingt kilomètres. Les mécaniciennes",
+      "avaient réparé les vélos la veille. Le groupe est parti de la place du",
+      "marché après le petit-déjeuner."
+    ],
+    "targets": [
+      {
+        "information": "Le travail effectué la veille",
+        "model": "Qu’avaient fait les mécaniciennes la veille ?",
+        "evidence": "réparé les vélos"
+      },
+      {
+        "information": "La distance de la sortie",
+        "model": "Quelle distance le club a-t-il parcourue ?",
+        "evidence": "vingt kilomètres"
+      },
+      {
+        "information": "Le lieu de départ",
+        "model": "D’où le groupe est-il parti ?",
+        "evidence": "la place du marché"
+      }
+    ]
+  },
+  {
+    "id": "bagages",
+    "title": "Arrivée à l’hôtel",
+    "genre": "Récit",
+    "text": [
+      "Quand les bagages ont été livrés, les voyageuses étaient déjà arrivées à",
+      "l’hôtel. Elles avaient quitté Lausanne en train. La réceptionniste leur a",
+      "proposé une boisson chaude dans le salon."
+    ],
+    "targets": [
+      {
+        "information": "Le lieu déjà rejoint",
+        "model": "Où les voyageuses étaient-elles déjà arrivées ?",
+        "evidence": "à l’hôtel"
+      },
+      {
+        "information": "La ville de provenance",
+        "model": "De quelle ville les voyageuses étaient-elles parties ?",
+        "evidence": "Lausanne"
+      },
+      {
+        "information": "La proposition faite à l’arrivée",
+        "model": "Qu’a proposé la réceptionniste ?",
+        "evidence": "une boisson chaude"
+      }
+    ]
+  },
+  {
+    "id": "outils",
+    "title": "Rangement de l’atelier",
+    "genre": "Compte rendu",
+    "text": [
+      "Les apprentis avaient nettoyé les outils avant de les ranger. Le rangement a",
+      "pris dix minutes. Ils ont ensuite fermé l’atelier et remis la clé à la",
+      "responsable."
+    ],
+    "targets": [
+      {
+        "information": "L’action avant le rangement",
+        "model": "Qu’avaient fait les apprentis avant de ranger les outils ?",
+        "evidence": "nettoyé les outils"
+      },
+      {
+        "information": "La durée du rangement",
+        "model": "Combien de temps le rangement a-t-il pris ?",
+        "evidence": "dix minutes"
+      },
+      {
+        "information": "La destinataire de la clé",
+        "model": "À qui les apprentis ont-ils remis la clé ?",
+        "evidence": "à la responsable"
+      }
+    ]
+  },
+  {
+    "id": "retard",
+    "title": "Un rendez-vous manqué",
+    "genre": "Message",
+    "text": [
+      "Bonjour, je suis arrivé au centre après dix heures. Le groupe était déjà",
+      "parti en excursion. J’avais noté un horaire incorrect. La personne de",
+      "l’accueil m’a donné le numéro de la guide."
+    ],
+    "targets": [
+      {
+        "information": "La cause du retard",
+        "model": "Pourquoi es-tu arrivé après le départ du groupe ?",
+        "evidence": "noté un horaire incorrect"
+      },
+      {
+        "information": "L’activité du groupe",
+        "model": "Pour quelle activité le groupe était-il parti ?",
+        "evidence": "en excursion"
+      },
+      {
+        "information": "L’information obtenue",
+        "model": "Quelle information la personne de l’accueil t’a-t-elle donnée ?",
+        "evidence": "le numéro de la guide"
+      }
+    ]
+  },
+  {
+    "id": "spectacle",
+    "title": "Avant l’ouverture des portes",
+    "genre": "Annonce rétrospective",
+    "text": [
+      "Le spectacle a eu lieu mardi au théâtre municipal. L’équipe technique avait",
+      "testé les micros avant l’ouverture des portes. Deux chanteuses ont commencé",
+      "la soirée et le public a applaudi longtemps."
+    ],
+    "targets": [
+      {
+        "information": "La vérification avant l’ouverture",
+        "model": "Qu’avait testé l’équipe technique avant l’ouverture des portes ?",
+        "evidence": "les micros"
+      },
+      {
+        "information": "Le lieu du spectacle",
+        "model": "Où le spectacle a-t-il eu lieu ?",
+        "evidence": "au théâtre municipal"
+      },
+      {
+        "information": "Les artistes du début de soirée",
+        "model": "Qui a commencé la soirée ?",
+        "evidence": "Deux chanteuses"
+      }
+    ]
+  },
+  {
+    "id": "courrier",
+    "title": "Un colis attendu",
+    "genre": "Courriel",
+    "text": [
+      "Bonjour, j’avais reçu l’avis de livraison lundi. Le colis est arrivé",
+      "mercredi au bureau. Comme il contenait des livres pour la classe, nous",
+      "l’avons ouvert avec les élèves après le cours."
+    ],
+    "targets": [
+      {
+        "information": "Le document reçu en premier",
+        "model": "Qu’avais-tu reçu lundi ?",
+        "evidence": "l’avis de livraison"
+      },
+      {
+        "information": "Le jour d’arrivée du colis",
+        "model": "Quand le colis est-il arrivé ?",
+        "evidence": "mercredi"
+      },
+      {
+        "information": "Le contenu du colis",
+        "model": "Que contenait le colis ?",
+        "evidence": "des livres pour la classe"
+      }
+    ]
+  },
+  {
+    "id": "travaux",
+    "title": "Réouverture du local",
+    "genre": "Compte rendu de chantier",
+    "text": [
+      "Les ouvriers avaient terminé les travaux avant la visite de contrôle. Le",
+      "local a rouvert jeudi matin. Une rampe permet maintenant d’accéder à",
+      "l’entrée et la salle dispose de douze tables."
+    ],
+    "targets": [
+      {
+        "information": "L’action achevée avant le contrôle",
+        "model": "Qu’avaient terminé les ouvriers avant la visite de contrôle ?",
+        "evidence": "les travaux"
+      },
+      {
+        "information": "Le moment de la réouverture",
+        "model": "Quand le local a-t-il rouvert ?",
+        "evidence": "jeudi matin"
+      },
+      {
+        "information": "Le nombre de tables",
+        "model": "Combien de tables la salle possède-t-elle ?",
+        "evidence": "douze tables"
+      }
+    ]
+  },
+  {
+    "id": "inscription",
+    "title": "Tournoi du samedi",
+    "genre": "Note de club",
+    "text": [
+      "Les joueuses s’étaient inscrites avant la clôture des inscriptions. Le",
+      "tournoi a eu lieu samedi dans le gymnase. Leur équipe a gagné deux",
+      "rencontres et a terminé la journée à la troisième place."
+    ],
+    "targets": [
+      {
+        "information": "La démarche déjà faite",
+        "model": "Quelle démarche les joueuses avaient-elles faite avant la clôture ?",
+        "evidence": "s’étaient inscrites"
+      },
+      {
+        "information": "Le lieu du tournoi",
+        "model": "Où le tournoi a-t-il eu lieu ?",
+        "evidence": "dans le gymnase"
+      },
+      {
+        "information": "Le classement de l’équipe",
+        "model": "À quelle place l’équipe a-t-elle terminé ?",
+        "evidence": "à la troisième place"
+      }
+    ]
+  },
+  {
+    "id": "meteo",
+    "title": "Retour avant l’orage",
+    "genre": "Récit de sortie",
+    "text": [
+      "Les marcheurs étaient revenus au refuge avant le début de l’orage. Ils",
+      "avaient suivi le sentier balisé. Le gardien leur a servi une soupe et a",
+      "annoncé que la pluie durerait toute la nuit."
+    ],
+    "targets": [
+      {
+        "information": "Le lieu atteint avant l’orage",
+        "model": "Où les marcheurs étaient-ils revenus avant l’orage ?",
+        "evidence": "au refuge"
+      },
+      {
+        "information": "Le chemin emprunté",
+        "model": "Quel chemin les marcheurs avaient-ils suivi ?",
+        "evidence": "le sentier balisé"
+      },
+      {
+        "information": "Le repas servi",
+        "model": "Qu’a servi le gardien ?",
+        "evidence": "une soupe"
+      }
+    ]
+  },
+  {
+    "id": "imprimante",
+    "title": "Une panne sans conséquence",
+    "genre": "Note technique",
+    "text": [
+      "Les collègues avaient imprimé les billets avant la panne de l’imprimante. Le",
+      "car est parti à sept heures devant l’école. Les billets ont été distribués",
+      "dans le car, par la professeure."
+    ],
+    "targets": [
+      {
+        "information": "L’action achevée avant la panne",
+        "model": "Qu’avaient imprimé les collègues avant la panne ?",
+        "evidence": "les billets"
+      },
+      {
+        "information": "L’heure de départ",
+        "model": "À quelle heure le car est-il parti ?",
+        "evidence": "à sept heures"
+      },
+      {
+        "information": "La personne chargée de distribuer",
+        "model": "Qui a distribué les billets ?",
+        "evidence": "la professeure"
+      }
+    ]
+  },
+  {
+    "id": "bibliotheque",
+    "title": "Préparation d’une exposition",
+    "genre": "Journal de projet",
+    "text": [
+      "La bibliothécaire avait choisi les ouvrages avant l’installation de",
+      "l’exposition. Les bénévoles ont installé quatre présentoirs dans le hall.",
+      "L’exposition portait sur les voyages et est restée ouverte une semaine."
+    ],
+    "targets": [
+      {
+        "information": "La sélection déjà faite",
+        "model": "Qu’avait choisi la bibliothécaire avant l’installation ?",
+        "evidence": "les ouvrages"
+      },
+      {
+        "information": "Le nombre de présentoirs",
+        "model": "Combien de présentoirs les bénévoles ont-ils installés ?",
+        "evidence": "quatre présentoirs"
+      },
+      {
+        "information": "La durée d’ouverture",
+        "model": "Combien de temps l’exposition est-elle restée ouverte ?",
+        "evidence": "une semaine"
+      }
+    ]
+  },
+  {
+    "id": "course",
+    "title": "Parcours sécurisé",
+    "genre": "Bilan d’événement",
+    "text": [
+      "Les organisatrices avaient vérifié le parcours avant l’arrivée des coureurs.",
+      "La course a débuté à neuf heures au bord du lac. À l’arrivée, les bénévoles",
+      "ont offert de l’eau et des fruits aux participants."
+    ],
+    "targets": [
+      {
+        "information": "La vérification préalable",
+        "model": "Qu’avaient vérifié les organisatrices avant l’arrivée des coureurs ?",
+        "evidence": "le parcours"
+      },
+      {
+        "information": "Le lieu du départ",
+        "model": "Où la course a-t-elle débuté ?",
+        "evidence": "au bord du lac"
+      },
+      {
+        "information": "Les produits offerts",
+        "model": "Qu’ont offert les bénévoles aux participants ?",
+        "evidence": "de l’eau et des fruits"
+      }
+    ]
+  },
+  {
+    "id": "atelier",
+    "title": "Matériel disponible",
+    "genre": "Message de fin de séance",
+    "text": [
+      "Bonjour, nous avions distribué le matériel avant le début du jeu. Les élèves",
+      "ont travaillé par groupes de trois. Chaque groupe a construit un petit pont",
+      "avec du papier, puis a expliqué sa méthode à la classe."
+    ],
+    "targets": [
+      {
+        "information": "La distribution antérieure",
+        "model": "Qu’aviez-vous distribué avant le début du jeu ?",
+        "evidence": "le matériel"
+      },
+      {
+        "information": "La taille des groupes",
+        "model": "Combien d’élèves chaque groupe réunissait-il ?",
+        "evidence": "trois"
+      },
+      {
+        "information": "L’objet construit",
+        "model": "Qu’a construit chaque groupe ?",
+        "evidence": "un petit pont"
+      }
+    ]
+  }
+]

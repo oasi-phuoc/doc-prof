@@ -1,0 +1,3679 @@
+[
+  {
+    "schemaVersion": 1,
+    "revision": "passe-2026-11-24-v1",
+    "activityId": "gram-ex-pc-avoir-qcm-conj",
+    "subthemeId": "pc-avoir",
+    "topic": "gram-passe",
+    "level": "A1",
+    "label": "Former le passé composé avec avoir",
+    "objective": "Former le passé composé avec avoir et un participe régulier ou fréquent.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Sources et variantes relues. Réemploi explicite des situations entre mécaniques et niveaux ; aucune approbation pédagogique humaine déclarée."
+    },
+    "presentations": [
+      "choice",
+      "gap"
+    ],
+    "instructions": {
+      "choice": "Choisissez le groupe verbal au passé composé selon la situation.",
+      "gap": "Écrivez le groupe verbal complet au passé composé, selon la situation."
+    },
+    "units": [
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-repas",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’___ le repas.",
+        "cue": "Le repas est prêt : sa préparation est terminée. Racontez cette action au passé composé.",
+        "answers": [
+          "ai préparé"
+        ],
+        "options": [
+          {
+            "id": "repas-choix-1",
+            "text": "ai préparé"
+          },
+          {
+            "id": "repas-choix-2",
+            "text": "ai préparer"
+          },
+          {
+            "id": "repas-choix-3",
+            "text": "a préparé"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai préparé le repas.",
+        "givenVerb": "préparer"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-porte",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ la porte.",
+        "cue": "La porte est maintenant fermée. Racontez l’action accomplie.",
+        "answers": [
+          "as fermé"
+        ],
+        "options": [
+          {
+            "id": "porte-choix-1",
+            "text": "as fermé"
+          },
+          {
+            "id": "porte-choix-2",
+            "text": "a fermé"
+          },
+          {
+            "id": "porte-choix-3",
+            "text": "as fermer"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as fermé la porte.",
+        "givenVerb": "fermer"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-billets",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Elle ___ les billets.",
+        "cue": "Les billets du spectacle sont déjà achetés. Racontez cet achat.",
+        "answers": [
+          "a acheté"
+        ],
+        "options": [
+          {
+            "id": "billets-choix-1",
+            "text": "a acheté"
+          },
+          {
+            "id": "billets-choix-2",
+            "text": "a acheter"
+          },
+          {
+            "id": "billets-choix-3",
+            "text": "as acheté"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Elle a acheté les billets.",
+        "givenVerb": "acheter"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-bus",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ le bus.",
+        "cue": "Le trajet est terminé. Le groupe raconte son déplacement en bus.",
+        "answers": [
+          "avons pris"
+        ],
+        "options": [
+          {
+            "id": "bus-choix-1",
+            "text": "avons pris"
+          },
+          {
+            "id": "bus-choix-2",
+            "text": "avons prendu"
+          },
+          {
+            "id": "bus-choix-3",
+            "text": "ont pris"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Nous avons pris le bus.",
+        "givenVerb": "prendre"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-message",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Vous ___ le message.",
+        "cue": "Le message a bien été reçu. Racontez son envoi au passé composé.",
+        "answers": [
+          "avez envoyé"
+        ],
+        "options": [
+          {
+            "id": "message-choix-1",
+            "text": "avez envoyé"
+          },
+          {
+            "id": "message-choix-2",
+            "text": "avez envoyer"
+          },
+          {
+            "id": "message-choix-3",
+            "text": "avons envoyé"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Vous avez envoyé le message.",
+        "givenVerb": "envoyer"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-match",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Ils ___ un match.",
+        "cue": "Le match est fini. Les joueurs racontent leur activité.",
+        "answers": [
+          "ont joué"
+        ],
+        "options": [
+          {
+            "id": "match-choix-1",
+            "text": "ont joué"
+          },
+          {
+            "id": "match-choix-2",
+            "text": "ont jouer"
+          },
+          {
+            "id": "match-choix-3",
+            "text": "a joué"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Ils ont joué un match.",
+        "givenVerb": "jouer"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-dejeuner",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’___ une soupe.",
+        "cue": "Le déjeuner est terminé. La personne raconte ce repas.",
+        "answers": [
+          "ai mangé"
+        ],
+        "options": [
+          {
+            "id": "dejeuner-choix-1",
+            "text": "ai mangé"
+          },
+          {
+            "id": "dejeuner-choix-2",
+            "text": "ai manger"
+          },
+          {
+            "id": "dejeuner-choix-3",
+            "text": "as mangé"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai mangé une soupe.",
+        "givenVerb": "manger"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-cle",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ la clé.",
+        "cue": "La clé perdue est retrouvée. Racontez cette découverte.",
+        "answers": [
+          "as trouvé"
+        ],
+        "options": [
+          {
+            "id": "cle-choix-1",
+            "text": "as trouvé"
+          },
+          {
+            "id": "cle-choix-2",
+            "text": "as trouver"
+          },
+          {
+            "id": "cle-choix-3",
+            "text": "a trouvé"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as trouvé la clé.",
+        "givenVerb": "trouver"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-film",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Elle ___ un film.",
+        "cue": "La séance de cinéma est finie. Racontez ce qu’elle a vu.",
+        "answers": [
+          "a vu"
+        ],
+        "options": [
+          {
+            "id": "film-choix-1",
+            "text": "a vu"
+          },
+          {
+            "id": "film-choix-2",
+            "text": "a voir"
+          },
+          {
+            "id": "film-choix-3",
+            "text": "a voyé"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Elle a vu un film.",
+        "givenVerb": "voir"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-lettre",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ une lettre.",
+        "cue": "La lettre est terminée. Racontez l’action d’écriture.",
+        "answers": [
+          "avons écrit"
+        ],
+        "options": [
+          {
+            "id": "lettre-choix-1",
+            "text": "avons écrit"
+          },
+          {
+            "id": "lettre-choix-2",
+            "text": "avons écrivé"
+          },
+          {
+            "id": "lettre-choix-3",
+            "text": "avez écrit"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Nous avons écrit une lettre.",
+        "givenVerb": "écrire"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-fenetre",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Vous ___ la fenêtre.",
+        "cue": "La fenêtre est ouverte. Racontez l’action accomplie.",
+        "answers": [
+          "avez ouvert"
+        ],
+        "options": [
+          {
+            "id": "fenetre-choix-1",
+            "text": "avez ouvert"
+          },
+          {
+            "id": "fenetre-choix-2",
+            "text": "avez ouvri"
+          },
+          {
+            "id": "fenetre-choix-3",
+            "text": "ont ouvert"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Vous avez ouvert la fenêtre.",
+        "givenVerb": "ouvrir"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-livre",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Ils ___ le livre.",
+        "cue": "Les lecteurs ont fini le livre. Racontez cette lecture.",
+        "answers": [
+          "ont lu"
+        ],
+        "options": [
+          {
+            "id": "livre-choix-1",
+            "text": "ont lu"
+          },
+          {
+            "id": "livre-choix-2",
+            "text": "ont lis"
+          },
+          {
+            "id": "livre-choix-3",
+            "text": "a lu"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Ils ont lu le livre.",
+        "givenVerb": "lire"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-eau",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’___ de l’eau.",
+        "cue": "Le verre est vide. Racontez ce que vous avez bu.",
+        "answers": [
+          "ai bu"
+        ],
+        "options": [
+          {
+            "id": "eau-choix-1",
+            "text": "ai bu"
+          },
+          {
+            "id": "eau-choix-2",
+            "text": "ai boivé"
+          },
+          {
+            "id": "eau-choix-3",
+            "text": "a bu"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai bu de l’eau.",
+        "givenVerb": "boire"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-travail",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ le travail.",
+        "cue": "Le travail est terminé. Racontez cet achèvement.",
+        "answers": [
+          "as fini"
+        ],
+        "options": [
+          {
+            "id": "travail-choix-1",
+            "text": "as fini"
+          },
+          {
+            "id": "travail-choix-2",
+            "text": "as finir"
+          },
+          {
+            "id": "travail-choix-3",
+            "text": "a fini"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as fini le travail.",
+        "givenVerb": "finir"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-dessert",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Elle ___ une tarte.",
+        "cue": "Le choix du dessert est fait. Racontez ce choix.",
+        "answers": [
+          "a choisi"
+        ],
+        "options": [
+          {
+            "id": "dessert-choix-1",
+            "text": "a choisi"
+          },
+          {
+            "id": "dessert-choix-2",
+            "text": "a choisir"
+          },
+          {
+            "id": "dessert-choix-3",
+            "text": "as choisi"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Elle a choisi une tarte.",
+        "givenVerb": "choisir"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-exercice",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ l’exercice.",
+        "cue": "L’exercice est achevé. Le groupe raconte son travail.",
+        "answers": [
+          "avons fait"
+        ],
+        "options": [
+          {
+            "id": "exercice-choix-1",
+            "text": "avons fait"
+          },
+          {
+            "id": "exercice-choix-2",
+            "text": "avons fais"
+          },
+          {
+            "id": "exercice-choix-3",
+            "text": "ont fait"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Nous avons fait l’exercice.",
+        "givenVerb": "faire"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-consigne",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Vous ___ la consigne.",
+        "cue": "La consigne est comprise. Racontez ce résultat.",
+        "answers": [
+          "avez compris"
+        ],
+        "options": [
+          {
+            "id": "consigne-choix-1",
+            "text": "avez compris"
+          },
+          {
+            "id": "consigne-choix-2",
+            "text": "avez comprendu"
+          },
+          {
+            "id": "consigne-choix-3",
+            "text": "avons compris"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Vous avez compris la consigne.",
+        "givenVerb": "comprendre"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-vélos",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Ils ___ les vélos.",
+        "cue": "Les vélos sont réparés. Les mécaniciens racontent leur travail.",
+        "answers": [
+          "ont réparé"
+        ],
+        "options": [
+          {
+            "id": "vélos-choix-1",
+            "text": "ont réparé"
+          },
+          {
+            "id": "vélos-choix-2",
+            "text": "ont réparer"
+          },
+          {
+            "id": "vélos-choix-3",
+            "text": "a réparé"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Ils ont réparé les vélos.",
+        "givenVerb": "réparer"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-table",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’___ la table.",
+        "cue": "La table est propre. Racontez l’action de nettoyage.",
+        "answers": [
+          "ai nettoyé"
+        ],
+        "options": [
+          {
+            "id": "table-choix-1",
+            "text": "ai nettoyé"
+          },
+          {
+            "id": "table-choix-2",
+            "text": "ai nettoyée"
+          },
+          {
+            "id": "table-choix-3",
+            "text": "a nettoyé"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai nettoyé la table.",
+        "givenVerb": "nettoyer"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-dessin",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ le dessin.",
+        "cue": "Le dessin est colorié. Racontez l’activité terminée.",
+        "answers": [
+          "as colorié"
+        ],
+        "options": [
+          {
+            "id": "dessin-choix-1",
+            "text": "as colorié"
+          },
+          {
+            "id": "dessin-choix-2",
+            "text": "as colorier"
+          },
+          {
+            "id": "dessin-choix-3",
+            "text": "a colorié"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as colorié le dessin.",
+        "givenVerb": "colorier"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-musique",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Elle ___ une chanson.",
+        "cue": "L’écoute de la chanson est terminée. Racontez cette écoute.",
+        "answers": [
+          "a écouté"
+        ],
+        "options": [
+          {
+            "id": "musique-choix-1",
+            "text": "a écouté"
+          },
+          {
+            "id": "musique-choix-2",
+            "text": "a écouter"
+          },
+          {
+            "id": "musique-choix-3",
+            "text": "as écouté"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Elle a écouté une chanson.",
+        "givenVerb": "écouter"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-carte",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ la carte.",
+        "cue": "Le groupe a consulté une carte avant de partir. Racontez cette action.",
+        "answers": [
+          "avons regardé"
+        ],
+        "options": [
+          {
+            "id": "carte-choix-1",
+            "text": "avons regardé"
+          },
+          {
+            "id": "carte-choix-2",
+            "text": "avons regarder"
+          },
+          {
+            "id": "carte-choix-3",
+            "text": "avez regardé"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Nous avons regardé la carte.",
+        "givenVerb": "regarder"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-horaires",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Vous ___ les horaires.",
+        "cue": "La vérification des horaires est terminée. Racontez-la.",
+        "answers": [
+          "avez vérifié"
+        ],
+        "options": [
+          {
+            "id": "horaires-choix-1",
+            "text": "avez vérifié"
+          },
+          {
+            "id": "horaires-choix-2",
+            "text": "avez vérifier"
+          },
+          {
+            "id": "horaires-choix-3",
+            "text": "ont vérifié"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Vous avez vérifié les horaires.",
+        "givenVerb": "vérifier"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-colis",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Ils ___ le colis.",
+        "cue": "Les destinataires ont leur colis. Racontez sa réception.",
+        "answers": [
+          "ont reçu"
+        ],
+        "options": [
+          {
+            "id": "colis-choix-1",
+            "text": "ont reçu"
+          },
+          {
+            "id": "colis-choix-2",
+            "text": "ont recevu"
+          },
+          {
+            "id": "colis-choix-3",
+            "text": "a reçu"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Ils ont reçu le colis.",
+        "givenVerb": "recevoir"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-prix",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’___ les courses.",
+        "cue": "L’achat est réglé. Racontez le paiement.",
+        "answers": [
+          "ai payé"
+        ],
+        "options": [
+          {
+            "id": "prix-choix-1",
+            "text": "ai payé"
+          },
+          {
+            "id": "prix-choix-2",
+            "text": "ai payer"
+          },
+          {
+            "id": "prix-choix-3",
+            "text": "as payé"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai payé les courses.",
+        "givenVerb": "payer"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-telephone",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ le secrétariat.",
+        "cue": "La conversation téléphonique est terminée. Racontez cet appel.",
+        "answers": [
+          "as appelé"
+        ],
+        "options": [
+          {
+            "id": "telephone-choix-1",
+            "text": "as appelé"
+          },
+          {
+            "id": "telephone-choix-2",
+            "text": "as appeler"
+          },
+          {
+            "id": "telephone-choix-3",
+            "text": "a appelé"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as appelé le secrétariat.",
+        "givenVerb": "appeler"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-photo",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Elle ___ une photo.",
+        "cue": "La photo est enregistrée. Racontez la prise de vue.",
+        "answers": [
+          "a pris"
+        ],
+        "options": [
+          {
+            "id": "photo-choix-1",
+            "text": "a pris"
+          },
+          {
+            "id": "photo-choix-2",
+            "text": "a prendu"
+          },
+          {
+            "id": "photo-choix-3",
+            "text": "as pris"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Elle a pris une photo.",
+        "givenVerb": "prendre"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-musee",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ le musée.",
+        "cue": "La visite du musée est terminée. Racontez cette visite.",
+        "answers": [
+          "avons visité"
+        ],
+        "options": [
+          {
+            "id": "musee-choix-1",
+            "text": "avons visité"
+          },
+          {
+            "id": "musee-choix-2",
+            "text": "avons visiter"
+          },
+          {
+            "id": "musee-choix-3",
+            "text": "ont visité"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Nous avons visité le musée.",
+        "givenVerb": "visiter"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-sacs",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Vous ___ les sacs.",
+        "cue": "Les sacs sont portés jusqu’au local. Racontez cette tâche accomplie.",
+        "answers": [
+          "avez porté"
+        ],
+        "options": [
+          {
+            "id": "sacs-choix-1",
+            "text": "avez porté"
+          },
+          {
+            "id": "sacs-choix-2",
+            "text": "avez porter"
+          },
+          {
+            "id": "sacs-choix-3",
+            "text": "avons porté"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Vous avez porté les sacs.",
+        "givenVerb": "porter"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-jardin",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Ils ___ le jardin.",
+        "cue": "L’arrosage est terminé. Les jardiniers racontent ce qu’ils ont fait.",
+        "answers": [
+          "ont arrosé"
+        ],
+        "options": [
+          {
+            "id": "jardin-choix-1",
+            "text": "ont arrosé"
+          },
+          {
+            "id": "jardin-choix-2",
+            "text": "ont arroser"
+          },
+          {
+            "id": "jardin-choix-3",
+            "text": "a arrosé"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Ils ont arrosé le jardin.",
+        "givenVerb": "arroser"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-reponse",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’___ à la question.",
+        "cue": "La réponse est donnée. Racontez l’action au passé composé.",
+        "answers": [
+          "ai répondu"
+        ],
+        "options": [
+          {
+            "id": "reponse-choix-1",
+            "text": "ai répondu"
+          },
+          {
+            "id": "reponse-choix-2",
+            "text": "ai répondé"
+          },
+          {
+            "id": "reponse-choix-3",
+            "text": "a répondu"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai répondu à la question.",
+        "givenVerb": "répondre"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-perte",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ le ticket.",
+        "cue": "Le ticket n’est plus dans la poche. Racontez sa perte.",
+        "answers": [
+          "as perdu"
+        ],
+        "options": [
+          {
+            "id": "perte-choix-1",
+            "text": "as perdu"
+          },
+          {
+            "id": "perte-choix-2",
+            "text": "as perdé"
+          },
+          {
+            "id": "perte-choix-3",
+            "text": "a perdu"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as perdu le ticket.",
+        "givenVerb": "perdre"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-attente",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Elle ___ dix minutes.",
+        "cue": "L’attente est terminée : le rendez-vous a eu lieu. Racontez cette attente comme un épisode achevé.",
+        "answers": [
+          "a attendu"
+        ],
+        "options": [
+          {
+            "id": "attente-choix-1",
+            "text": "a attendu"
+          },
+          {
+            "id": "attente-choix-2",
+            "text": "a attendé"
+          },
+          {
+            "id": "attente-choix-3",
+            "text": "as attendu"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Elle a attendu dix minutes.",
+        "givenVerb": "attendre"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-paquet",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ le paquet.",
+        "cue": "Le paquet est maintenant ouvert. Racontez cette ouverture.",
+        "answers": [
+          "avons ouvert"
+        ],
+        "options": [
+          {
+            "id": "paquet-choix-1",
+            "text": "avons ouvert"
+          },
+          {
+            "id": "paquet-choix-2",
+            "text": "avons ouvri"
+          },
+          {
+            "id": "paquet-choix-3",
+            "text": "avez ouvert"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Nous avons ouvert le paquet.",
+        "givenVerb": "ouvrir"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-liste",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Vous ___ une adresse.",
+        "cue": "La liste est mise à jour. Racontez l’ajout effectué.",
+        "answers": [
+          "avez ajouté"
+        ],
+        "options": [
+          {
+            "id": "liste-choix-1",
+            "text": "avez ajouté"
+          },
+          {
+            "id": "liste-choix-2",
+            "text": "avez ajouter"
+          },
+          {
+            "id": "liste-choix-3",
+            "text": "ont ajouté"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Vous avez ajouté une adresse.",
+        "givenVerb": "ajouter"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-calcul",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Ils ___ le total.",
+        "cue": "Le calcul est terminé. Racontez cette opération.",
+        "answers": [
+          "ont calculé"
+        ],
+        "options": [
+          {
+            "id": "calcul-choix-1",
+            "text": "ont calculé"
+          },
+          {
+            "id": "calcul-choix-2",
+            "text": "ont calculer"
+          },
+          {
+            "id": "calcul-choix-3",
+            "text": "a calculé"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Ils ont calculé le total.",
+        "givenVerb": "calculer"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-promesse",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’___ mon aide.",
+        "cue": "La promesse a été formulée. Racontez ce qui a été promis.",
+        "answers": [
+          "ai promis"
+        ],
+        "options": [
+          {
+            "id": "promesse-choix-1",
+            "text": "ai promis"
+          },
+          {
+            "id": "promesse-choix-2",
+            "text": "ai promettu"
+          },
+          {
+            "id": "promesse-choix-3",
+            "text": "a promis"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai promis mon aide.",
+        "givenVerb": "promettre"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-places",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ deux places.",
+        "cue": "Les places du train sont réservées. Racontez cette réservation.",
+        "answers": [
+          "as réservé"
+        ],
+        "options": [
+          {
+            "id": "places-choix-1",
+            "text": "as réservé"
+          },
+          {
+            "id": "places-choix-2",
+            "text": "as réserver"
+          },
+          {
+            "id": "places-choix-3",
+            "text": "a réservé"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as réservé deux places.",
+        "givenVerb": "réserver"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-plan",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Elle ___ un plan.",
+        "cue": "Le plan est terminé. Racontez l’action de dessin.",
+        "answers": [
+          "a dessiné"
+        ],
+        "options": [
+          {
+            "id": "plan-choix-1",
+            "text": "a dessiné"
+          },
+          {
+            "id": "plan-choix-2",
+            "text": "a dessiner"
+          },
+          {
+            "id": "plan-choix-3",
+            "text": "as dessiné"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Elle a dessiné un plan.",
+        "givenVerb": "dessiner"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-pain",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ le pain.",
+        "cue": "La cuisson du pain est terminée. Racontez cette préparation.",
+        "answers": [
+          "avons cuit"
+        ],
+        "options": [
+          {
+            "id": "pain-choix-1",
+            "text": "avons cuit"
+          },
+          {
+            "id": "pain-choix-2",
+            "text": "avons cuisé"
+          },
+          {
+            "id": "pain-choix-3",
+            "text": "ont cuit"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Nous avons cuit le pain.",
+        "givenVerb": "cuire"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-chaises",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Vous ___ les chaises.",
+        "cue": "Les chaises sont déjà rangées. Racontez ce rangement.",
+        "answers": [
+          "avez rangé"
+        ],
+        "options": [
+          {
+            "id": "chaises-choix-1",
+            "text": "avez rangé"
+          },
+          {
+            "id": "chaises-choix-2",
+            "text": "avez ranger"
+          },
+          {
+            "id": "chaises-choix-3",
+            "text": "avons rangé"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Vous avez rangé les chaises.",
+        "givenVerb": "ranger"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-spectacle",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Ils ___ le spectacle.",
+        "cue": "La représentation est terminée. Racontez la réaction du public.",
+        "answers": [
+          "ont applaudi"
+        ],
+        "options": [
+          {
+            "id": "spectacle-choix-1",
+            "text": "ont applaudi"
+          },
+          {
+            "id": "spectacle-choix-2",
+            "text": "ont applaudir"
+          },
+          {
+            "id": "spectacle-choix-3",
+            "text": "a applaudi"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Ils ont applaudi le spectacle.",
+        "givenVerb": "applaudir"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-adresse",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’___ l’adresse.",
+        "cue": "L’adresse est mémorisée. Racontez l’apprentissage terminé.",
+        "answers": [
+          "ai appris"
+        ],
+        "options": [
+          {
+            "id": "adresse-choix-1",
+            "text": "ai appris"
+          },
+          {
+            "id": "adresse-choix-2",
+            "text": "ai apprendu"
+          },
+          {
+            "id": "adresse-choix-3",
+            "text": "a appris"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai appris l’adresse.",
+        "givenVerb": "apprendre"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-papier",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ le document.",
+        "cue": "Le document est déjà signé. Racontez cette signature.",
+        "answers": [
+          "as signé"
+        ],
+        "options": [
+          {
+            "id": "papier-choix-1",
+            "text": "as signé"
+          },
+          {
+            "id": "papier-choix-2",
+            "text": "as signer"
+          },
+          {
+            "id": "papier-choix-3",
+            "text": "a signé"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as signé le document.",
+        "givenVerb": "signer"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-solution",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Elle ___ la solution.",
+        "cue": "La solution est trouvée. Racontez sa découverte.",
+        "answers": [
+          "a découvert"
+        ],
+        "options": [
+          {
+            "id": "solution-choix-1",
+            "text": "a découvert"
+          },
+          {
+            "id": "solution-choix-2",
+            "text": "a découvri"
+          },
+          {
+            "id": "solution-choix-3",
+            "text": "as découvert"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Elle a découvert la solution.",
+        "givenVerb": "découvrir"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-choix",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ ensemble.",
+        "cue": "La décision est prise. Le groupe raconte son choix.",
+        "answers": [
+          "avons décidé"
+        ],
+        "options": [
+          {
+            "id": "choix-choix-1",
+            "text": "avons décidé"
+          },
+          {
+            "id": "choix-choix-2",
+            "text": "avons décider"
+          },
+          {
+            "id": "choix-choix-3",
+            "text": "avez décidé"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Nous avons décidé ensemble.",
+        "givenVerb": "décider"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-voisin",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Vous ___ au voisin.",
+        "cue": "La conversation avec le voisin est terminée. Racontez cet échange.",
+        "answers": [
+          "avez parlé"
+        ],
+        "options": [
+          {
+            "id": "voisin-choix-1",
+            "text": "avez parlé"
+          },
+          {
+            "id": "voisin-choix-2",
+            "text": "avez parler"
+          },
+          {
+            "id": "voisin-choix-3",
+            "text": "ont parlé"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Vous avez parlé au voisin.",
+        "givenVerb": "parler"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-ordinateur",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Ils ___ l’ordinateur.",
+        "cue": "Le dépannage est terminé. Racontez la remise en marche.",
+        "answers": [
+          "ont redémarré"
+        ],
+        "options": [
+          {
+            "id": "ordinateur-choix-1",
+            "text": "ont redémarré"
+          },
+          {
+            "id": "ordinateur-choix-2",
+            "text": "ont redémarrer"
+          },
+          {
+            "id": "ordinateur-choix-3",
+            "text": "a redémarré"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Ils ont redémarré l’ordinateur.",
+        "givenVerb": "redémarrer"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-couleur",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’___ les couleurs.",
+        "cue": "Le mélange est terminé. Racontez l’activité de peinture.",
+        "answers": [
+          "ai mélangé"
+        ],
+        "options": [
+          {
+            "id": "couleur-choix-1",
+            "text": "ai mélangé"
+          },
+          {
+            "id": "couleur-choix-2",
+            "text": "ai mélanger"
+          },
+          {
+            "id": "couleur-choix-3",
+            "text": "a mélangé"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai mélangé les couleurs.",
+        "givenVerb": "mélanger"
+      },
+      {
+        "id": "gram-ex-pc-avoir-qcm-conj-a1-course",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-qcm-conj",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ cinq kilomètres.",
+        "cue": "La course est terminée. Racontez cet effort accompli.",
+        "answers": [
+          "as couru"
+        ],
+        "options": [
+          {
+            "id": "course-choix-1",
+            "text": "as couru"
+          },
+          {
+            "id": "course-choix-2",
+            "text": "as couri"
+          },
+          {
+            "id": "course-choix-3",
+            "text": "a couru"
+          }
+        ],
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as couru cinq kilomètres.",
+        "givenVerb": "courir"
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "passe-2026-11-24-v1",
+    "activityId": "gram-ex-pc-avoir-curriculum-t",
+    "subthemeId": "pc-avoir",
+    "topic": "gram-passe",
+    "level": "A1",
+    "label": "Transformer une phrase",
+    "objective": "Former le passé composé avec avoir et un participe régulier ou fréquent.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Sources et variantes relues. Réemploi explicite des situations entre mécaniques et niveaux ; aucune approbation pédagogique humaine déclarée."
+    },
+    "presentations": [
+      "transform"
+    ],
+    "instructions": {
+      "transform": "Réécrivez la phrase selon le temps, la construction et les faits demandés."
+    },
+    "units": [
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-repas",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je prépare le repas.",
+        "cue": "Le repas est prêt : sa préparation est terminée. Racontez cette action au passé composé.",
+        "answers": [
+          "J’ai préparé le repas."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai préparé le repas."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-porte",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Tu fermes la porte.",
+        "cue": "La porte est maintenant fermée. Racontez l’action accomplie.",
+        "answers": [
+          "Tu as fermé la porte."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as fermé la porte."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-billets",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Elle achète les billets.",
+        "cue": "Les billets du spectacle sont déjà achetés. Racontez cet achat.",
+        "answers": [
+          "Elle a acheté les billets."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Elle a acheté les billets."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-bus",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Nous prenons le bus.",
+        "cue": "Le trajet est terminé. Le groupe raconte son déplacement en bus.",
+        "answers": [
+          "Nous avons pris le bus."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Nous avons pris le bus."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-message",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Vous envoyez le message.",
+        "cue": "Le message a bien été reçu. Racontez son envoi au passé composé.",
+        "answers": [
+          "Vous avez envoyé le message."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Vous avez envoyé le message."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-match",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Ils jouent un match.",
+        "cue": "Le match est fini. Les joueurs racontent leur activité.",
+        "answers": [
+          "Ils ont joué un match."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Ils ont joué un match."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-dejeuner",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je mange une soupe.",
+        "cue": "Le déjeuner est terminé. La personne raconte ce repas.",
+        "answers": [
+          "J’ai mangé une soupe."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai mangé une soupe."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-cle",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Tu trouves la clé.",
+        "cue": "La clé perdue est retrouvée. Racontez cette découverte.",
+        "answers": [
+          "Tu as trouvé la clé."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as trouvé la clé."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-film",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Elle voit un film.",
+        "cue": "La séance de cinéma est finie. Racontez ce qu’elle a vu.",
+        "answers": [
+          "Elle a vu un film."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Elle a vu un film."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-lettre",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Nous écrivons une lettre.",
+        "cue": "La lettre est terminée. Racontez l’action d’écriture.",
+        "answers": [
+          "Nous avons écrit une lettre."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Nous avons écrit une lettre."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-fenetre",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Vous ouvrez la fenêtre.",
+        "cue": "La fenêtre est ouverte. Racontez l’action accomplie.",
+        "answers": [
+          "Vous avez ouvert la fenêtre."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Vous avez ouvert la fenêtre."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-livre",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Ils lisent le livre.",
+        "cue": "Les lecteurs ont fini le livre. Racontez cette lecture.",
+        "answers": [
+          "Ils ont lu le livre."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Ils ont lu le livre."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-eau",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je bois de l’eau.",
+        "cue": "Le verre est vide. Racontez ce que vous avez bu.",
+        "answers": [
+          "J’ai bu de l’eau."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai bu de l’eau."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-travail",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Tu finis le travail.",
+        "cue": "Le travail est terminé. Racontez cet achèvement.",
+        "answers": [
+          "Tu as fini le travail."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as fini le travail."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-dessert",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Elle choisit une tarte.",
+        "cue": "Le choix du dessert est fait. Racontez ce choix.",
+        "answers": [
+          "Elle a choisi une tarte."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Elle a choisi une tarte."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-exercice",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Nous faisons l’exercice.",
+        "cue": "L’exercice est achevé. Le groupe raconte son travail.",
+        "answers": [
+          "Nous avons fait l’exercice."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Nous avons fait l’exercice."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-consigne",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Vous comprenez la consigne.",
+        "cue": "La consigne est comprise. Racontez ce résultat.",
+        "answers": [
+          "Vous avez compris la consigne."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Vous avez compris la consigne."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-vélos",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Ils réparent les vélos.",
+        "cue": "Les vélos sont réparés. Les mécaniciens racontent leur travail.",
+        "answers": [
+          "Ils ont réparé les vélos."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Ils ont réparé les vélos."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-table",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je nettoie la table.",
+        "cue": "La table est propre. Racontez l’action de nettoyage.",
+        "answers": [
+          "J’ai nettoyé la table."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai nettoyé la table."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-dessin",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Tu colories le dessin.",
+        "cue": "Le dessin est colorié. Racontez l’activité terminée.",
+        "answers": [
+          "Tu as colorié le dessin."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as colorié le dessin."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-musique",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Elle écoute une chanson.",
+        "cue": "L’écoute de la chanson est terminée. Racontez cette écoute.",
+        "answers": [
+          "Elle a écouté une chanson."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Elle a écouté une chanson."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-carte",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Nous regardons la carte.",
+        "cue": "Le groupe a consulté une carte avant de partir. Racontez cette action.",
+        "answers": [
+          "Nous avons regardé la carte."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Nous avons regardé la carte."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-horaires",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Vous vérifiez les horaires.",
+        "cue": "La vérification des horaires est terminée. Racontez-la.",
+        "answers": [
+          "Vous avez vérifié les horaires."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Vous avez vérifié les horaires."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-colis",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Ils reçoivent le colis.",
+        "cue": "Les destinataires ont leur colis. Racontez sa réception.",
+        "answers": [
+          "Ils ont reçu le colis."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Ils ont reçu le colis."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-prix",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je paie les courses.",
+        "cue": "L’achat est réglé. Racontez le paiement.",
+        "answers": [
+          "J’ai payé les courses."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai payé les courses."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-telephone",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Tu appelles le secrétariat.",
+        "cue": "La conversation téléphonique est terminée. Racontez cet appel.",
+        "answers": [
+          "Tu as appelé le secrétariat."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as appelé le secrétariat."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-photo",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Elle prend une photo.",
+        "cue": "La photo est enregistrée. Racontez la prise de vue.",
+        "answers": [
+          "Elle a pris une photo."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Elle a pris une photo."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-musee",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Nous visitons le musée.",
+        "cue": "La visite du musée est terminée. Racontez cette visite.",
+        "answers": [
+          "Nous avons visité le musée."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Nous avons visité le musée."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-sacs",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Vous portez les sacs.",
+        "cue": "Les sacs sont portés jusqu’au local. Racontez cette tâche accomplie.",
+        "answers": [
+          "Vous avez porté les sacs."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Vous avez porté les sacs."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-jardin",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Ils arrosent le jardin.",
+        "cue": "L’arrosage est terminé. Les jardiniers racontent ce qu’ils ont fait.",
+        "answers": [
+          "Ils ont arrosé le jardin."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Ils ont arrosé le jardin."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-reponse",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je réponds à la question.",
+        "cue": "La réponse est donnée. Racontez l’action au passé composé.",
+        "answers": [
+          "J’ai répondu à la question."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai répondu à la question."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-perte",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Tu perds le ticket.",
+        "cue": "Le ticket n’est plus dans la poche. Racontez sa perte.",
+        "answers": [
+          "Tu as perdu le ticket."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as perdu le ticket."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-attente",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Elle attend dix minutes.",
+        "cue": "L’attente est terminée : le rendez-vous a eu lieu. Racontez cette attente comme un épisode achevé.",
+        "answers": [
+          "Elle a attendu dix minutes."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Elle a attendu dix minutes."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-paquet",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Nous ouvrons le paquet.",
+        "cue": "Le paquet est maintenant ouvert. Racontez cette ouverture.",
+        "answers": [
+          "Nous avons ouvert le paquet."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Nous avons ouvert le paquet."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-liste",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Vous ajoutez une adresse.",
+        "cue": "La liste est mise à jour. Racontez l’ajout effectué.",
+        "answers": [
+          "Vous avez ajouté une adresse."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Vous avez ajouté une adresse."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-calcul",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Ils calculent le total.",
+        "cue": "Le calcul est terminé. Racontez cette opération.",
+        "answers": [
+          "Ils ont calculé le total."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Ils ont calculé le total."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-promesse",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je promets mon aide.",
+        "cue": "La promesse a été formulée. Racontez ce qui a été promis.",
+        "answers": [
+          "J’ai promis mon aide."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai promis mon aide."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-places",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Tu réserves deux places.",
+        "cue": "Les places du train sont réservées. Racontez cette réservation.",
+        "answers": [
+          "Tu as réservé deux places."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as réservé deux places."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-plan",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Elle dessine un plan.",
+        "cue": "Le plan est terminé. Racontez l’action de dessin.",
+        "answers": [
+          "Elle a dessiné un plan."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Elle a dessiné un plan."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-pain",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Nous cuisons le pain.",
+        "cue": "La cuisson du pain est terminée. Racontez cette préparation.",
+        "answers": [
+          "Nous avons cuit le pain."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Nous avons cuit le pain."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-chaises",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Vous rangez les chaises.",
+        "cue": "Les chaises sont déjà rangées. Racontez ce rangement.",
+        "answers": [
+          "Vous avez rangé les chaises."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Vous avez rangé les chaises."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-spectacle",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Ils applaudissent le spectacle.",
+        "cue": "La représentation est terminée. Racontez la réaction du public.",
+        "answers": [
+          "Ils ont applaudi le spectacle."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Ils ont applaudi le spectacle."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-adresse",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "J’apprends l’adresse.",
+        "cue": "L’adresse est mémorisée. Racontez l’apprentissage terminé.",
+        "answers": [
+          "J’ai appris l’adresse."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai appris l’adresse."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-papier",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Tu signes le document.",
+        "cue": "Le document est déjà signé. Racontez cette signature.",
+        "answers": [
+          "Tu as signé le document."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as signé le document."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-solution",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Elle découvre la solution.",
+        "cue": "La solution est trouvée. Racontez sa découverte.",
+        "answers": [
+          "Elle a découvert la solution."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Elle a découvert la solution."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-choix",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Nous décidons ensemble.",
+        "cue": "La décision est prise. Le groupe raconte son choix.",
+        "answers": [
+          "Nous avons décidé ensemble."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Nous avons décidé ensemble."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-voisin",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Vous parlez au voisin.",
+        "cue": "La conversation avec le voisin est terminée. Racontez cet échange.",
+        "answers": [
+          "Vous avez parlé au voisin."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Vous avez parlé au voisin."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-ordinateur",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Ils redémarrent l’ordinateur.",
+        "cue": "Le dépannage est terminé. Racontez la remise en marche.",
+        "answers": [
+          "Ils ont redémarré l’ordinateur."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Ils ont redémarré l’ordinateur."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-couleur",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je mélange les couleurs.",
+        "cue": "Le mélange est terminé. Racontez l’activité de peinture.",
+        "answers": [
+          "J’ai mélangé les couleurs."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai mélangé les couleurs."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-t-a1-course",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-t",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Tu cours cinq kilomètres.",
+        "cue": "La course est terminée. Racontez cet effort accompli.",
+        "answers": [
+          "Tu as couru cinq kilomètres."
+        ],
+        "directive": "Racontez le fait au passé composé. Conservez les faits, la personne et la forme indiqués.",
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as couru cinq kilomètres."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "passe-2026-11-24-v1",
+    "activityId": "gram-ex-pc-avoir-curriculum-c",
+    "subthemeId": "pc-avoir",
+    "topic": "gram-passe",
+    "level": "A1",
+    "label": "Corriger l’erreur",
+    "objective": "Former le passé composé avec avoir et un participe régulier ou fréquent.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Sources et variantes relues. Réemploi explicite des situations entre mécaniques et niveaux ; aucune approbation pédagogique humaine déclarée."
+    },
+    "presentations": [
+      "correct"
+    ],
+    "instructions": {
+      "correct": "Corrigez le groupe verbal et réécrivez la phrase entière."
+    },
+    "units": [
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-repas",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "J’ai préparer le repas.",
+        "cue": "Le repas est prêt : sa préparation est terminée. Racontez cette action au passé composé.",
+        "answers": [
+          "J’ai préparé le repas."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 2,
+          "end": 13,
+          "text": "ai préparer"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai préparé le repas."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-porte",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Tu a fermé la porte.",
+        "cue": "La porte est maintenant fermée. Racontez l’action accomplie.",
+        "answers": [
+          "Tu as fermé la porte."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 10,
+          "text": "a fermé"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as fermé la porte."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-billets",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Elle a acheter les billets.",
+        "cue": "Les billets du spectacle sont déjà achetés. Racontez cet achat.",
+        "answers": [
+          "Elle a acheté les billets."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 14,
+          "text": "a acheter"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Elle a acheté les billets."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-bus",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Nous avons prendu le bus.",
+        "cue": "Le trajet est terminé. Le groupe raconte son déplacement en bus.",
+        "answers": [
+          "Nous avons pris le bus."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 17,
+          "text": "avons prendu"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Nous avons pris le bus."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-message",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Vous avez envoyer le message.",
+        "cue": "Le message a bien été reçu. Racontez son envoi au passé composé.",
+        "answers": [
+          "Vous avez envoyé le message."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 17,
+          "text": "avez envoyer"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Vous avez envoyé le message."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-match",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Ils ont jouer un match.",
+        "cue": "Le match est fini. Les joueurs racontent leur activité.",
+        "answers": [
+          "Ils ont joué un match."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 4,
+          "end": 13,
+          "text": "ont jouer"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Ils ont joué un match."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-dejeuner",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "J’ai manger une soupe.",
+        "cue": "Le déjeuner est terminé. La personne raconte ce repas.",
+        "answers": [
+          "J’ai mangé une soupe."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 2,
+          "end": 11,
+          "text": "ai manger"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai mangé une soupe."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-cle",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Tu as trouver la clé.",
+        "cue": "La clé perdue est retrouvée. Racontez cette découverte.",
+        "answers": [
+          "Tu as trouvé la clé."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 13,
+          "text": "as trouver"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as trouvé la clé."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-film",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Elle a voir un film.",
+        "cue": "La séance de cinéma est finie. Racontez ce qu’elle a vu.",
+        "answers": [
+          "Elle a vu un film."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 11,
+          "text": "a voir"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Elle a vu un film."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-lettre",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Nous avons écrivé une lettre.",
+        "cue": "La lettre est terminée. Racontez l’action d’écriture.",
+        "answers": [
+          "Nous avons écrit une lettre."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 17,
+          "text": "avons écrivé"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Nous avons écrit une lettre."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-fenetre",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Vous avez ouvri la fenêtre.",
+        "cue": "La fenêtre est ouverte. Racontez l’action accomplie.",
+        "answers": [
+          "Vous avez ouvert la fenêtre."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 15,
+          "text": "avez ouvri"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Vous avez ouvert la fenêtre."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-livre",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Ils ont lis le livre.",
+        "cue": "Les lecteurs ont fini le livre. Racontez cette lecture.",
+        "answers": [
+          "Ils ont lu le livre."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 4,
+          "end": 11,
+          "text": "ont lis"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Ils ont lu le livre."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-eau",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "J’ai boivé de l’eau.",
+        "cue": "Le verre est vide. Racontez ce que vous avez bu.",
+        "answers": [
+          "J’ai bu de l’eau."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 2,
+          "end": 10,
+          "text": "ai boivé"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai bu de l’eau."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-travail",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Tu as finir le travail.",
+        "cue": "Le travail est terminé. Racontez cet achèvement.",
+        "answers": [
+          "Tu as fini le travail."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 11,
+          "text": "as finir"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as fini le travail."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-dessert",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Elle a choisir une tarte.",
+        "cue": "Le choix du dessert est fait. Racontez ce choix.",
+        "answers": [
+          "Elle a choisi une tarte."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 14,
+          "text": "a choisir"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Elle a choisi une tarte."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-exercice",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Nous avons fais l’exercice.",
+        "cue": "L’exercice est achevé. Le groupe raconte son travail.",
+        "answers": [
+          "Nous avons fait l’exercice."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 15,
+          "text": "avons fais"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Nous avons fait l’exercice."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-consigne",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Vous avez comprendu la consigne.",
+        "cue": "La consigne est comprise. Racontez ce résultat.",
+        "answers": [
+          "Vous avez compris la consigne."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 19,
+          "text": "avez comprendu"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Vous avez compris la consigne."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-vélos",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Ils ont réparer les vélos.",
+        "cue": "Les vélos sont réparés. Les mécaniciens racontent leur travail.",
+        "answers": [
+          "Ils ont réparé les vélos."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 4,
+          "end": 15,
+          "text": "ont réparer"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Ils ont réparé les vélos."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-table",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "J’ai nettoyée la table.",
+        "cue": "La table est propre. Racontez l’action de nettoyage.",
+        "answers": [
+          "J’ai nettoyé la table."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 2,
+          "end": 13,
+          "text": "ai nettoyée"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai nettoyé la table."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-dessin",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Tu as colorier le dessin.",
+        "cue": "Le dessin est colorié. Racontez l’activité terminée.",
+        "answers": [
+          "Tu as colorié le dessin."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 14,
+          "text": "as colorier"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as colorié le dessin."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-musique",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Elle a écouter une chanson.",
+        "cue": "L’écoute de la chanson est terminée. Racontez cette écoute.",
+        "answers": [
+          "Elle a écouté une chanson."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 14,
+          "text": "a écouter"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Elle a écouté une chanson."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-carte",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Nous avons regarder la carte.",
+        "cue": "Le groupe a consulté une carte avant de partir. Racontez cette action.",
+        "answers": [
+          "Nous avons regardé la carte."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 19,
+          "text": "avons regarder"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Nous avons regardé la carte."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-horaires",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Vous avez vérifier les horaires.",
+        "cue": "La vérification des horaires est terminée. Racontez-la.",
+        "answers": [
+          "Vous avez vérifié les horaires."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 18,
+          "text": "avez vérifier"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Vous avez vérifié les horaires."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-colis",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Ils ont recevu le colis.",
+        "cue": "Les destinataires ont leur colis. Racontez sa réception.",
+        "answers": [
+          "Ils ont reçu le colis."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 4,
+          "end": 14,
+          "text": "ont recevu"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Ils ont reçu le colis."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-prix",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "J’ai payer les courses.",
+        "cue": "L’achat est réglé. Racontez le paiement.",
+        "answers": [
+          "J’ai payé les courses."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 2,
+          "end": 10,
+          "text": "ai payer"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai payé les courses."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-telephone",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Tu as appeler le secrétariat.",
+        "cue": "La conversation téléphonique est terminée. Racontez cet appel.",
+        "answers": [
+          "Tu as appelé le secrétariat."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 13,
+          "text": "as appeler"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as appelé le secrétariat."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-photo",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Elle a prendu une photo.",
+        "cue": "La photo est enregistrée. Racontez la prise de vue.",
+        "answers": [
+          "Elle a pris une photo."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 13,
+          "text": "a prendu"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Elle a pris une photo."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-musee",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Nous avons visiter le musée.",
+        "cue": "La visite du musée est terminée. Racontez cette visite.",
+        "answers": [
+          "Nous avons visité le musée."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 18,
+          "text": "avons visiter"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Nous avons visité le musée."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-sacs",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Vous avez porter les sacs.",
+        "cue": "Les sacs sont portés jusqu’au local. Racontez cette tâche accomplie.",
+        "answers": [
+          "Vous avez porté les sacs."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 16,
+          "text": "avez porter"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Vous avez porté les sacs."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-jardin",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Ils ont arroser le jardin.",
+        "cue": "L’arrosage est terminé. Les jardiniers racontent ce qu’ils ont fait.",
+        "answers": [
+          "Ils ont arrosé le jardin."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 4,
+          "end": 15,
+          "text": "ont arroser"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Ils ont arrosé le jardin."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-reponse",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "J’ai répondé à la question.",
+        "cue": "La réponse est donnée. Racontez l’action au passé composé.",
+        "answers": [
+          "J’ai répondu à la question."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 2,
+          "end": 12,
+          "text": "ai répondé"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai répondu à la question."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-perte",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Tu as perdé le ticket.",
+        "cue": "Le ticket n’est plus dans la poche. Racontez sa perte.",
+        "answers": [
+          "Tu as perdu le ticket."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 11,
+          "text": "as perdé"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as perdu le ticket."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-attente",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Elle a attendé dix minutes.",
+        "cue": "L’attente est terminée : le rendez-vous a eu lieu. Racontez cette attente comme un épisode achevé.",
+        "answers": [
+          "Elle a attendu dix minutes."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 14,
+          "text": "a attendé"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Elle a attendu dix minutes."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-paquet",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Nous avons ouvri le paquet.",
+        "cue": "Le paquet est maintenant ouvert. Racontez cette ouverture.",
+        "answers": [
+          "Nous avons ouvert le paquet."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 16,
+          "text": "avons ouvri"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Nous avons ouvert le paquet."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-liste",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Vous avez ajouter une adresse.",
+        "cue": "La liste est mise à jour. Racontez l’ajout effectué.",
+        "answers": [
+          "Vous avez ajouté une adresse."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 17,
+          "text": "avez ajouter"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Vous avez ajouté une adresse."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-calcul",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Ils ont calculer le total.",
+        "cue": "Le calcul est terminé. Racontez cette opération.",
+        "answers": [
+          "Ils ont calculé le total."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 4,
+          "end": 16,
+          "text": "ont calculer"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Ils ont calculé le total."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-promesse",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "J’ai promettu mon aide.",
+        "cue": "La promesse a été formulée. Racontez ce qui a été promis.",
+        "answers": [
+          "J’ai promis mon aide."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 2,
+          "end": 13,
+          "text": "ai promettu"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai promis mon aide."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-places",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Tu as réserver deux places.",
+        "cue": "Les places du train sont réservées. Racontez cette réservation.",
+        "answers": [
+          "Tu as réservé deux places."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 14,
+          "text": "as réserver"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as réservé deux places."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-plan",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Elle a dessiner un plan.",
+        "cue": "Le plan est terminé. Racontez l’action de dessin.",
+        "answers": [
+          "Elle a dessiné un plan."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 15,
+          "text": "a dessiner"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Elle a dessiné un plan."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-pain",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Nous avons cuisé le pain.",
+        "cue": "La cuisson du pain est terminée. Racontez cette préparation.",
+        "answers": [
+          "Nous avons cuit le pain."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 16,
+          "text": "avons cuisé"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Nous avons cuit le pain."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-chaises",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Vous avez ranger les chaises.",
+        "cue": "Les chaises sont déjà rangées. Racontez ce rangement.",
+        "answers": [
+          "Vous avez rangé les chaises."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 16,
+          "text": "avez ranger"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Vous avez rangé les chaises."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-spectacle",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Ils ont applaudir le spectacle.",
+        "cue": "La représentation est terminée. Racontez la réaction du public.",
+        "answers": [
+          "Ils ont applaudi le spectacle."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 4,
+          "end": 17,
+          "text": "ont applaudir"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Ils ont applaudi le spectacle."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-adresse",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "J’ai apprendu l’adresse.",
+        "cue": "L’adresse est mémorisée. Racontez l’apprentissage terminé.",
+        "answers": [
+          "J’ai appris l’adresse."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 2,
+          "end": 13,
+          "text": "ai apprendu"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai appris l’adresse."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-papier",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Tu as signer le document.",
+        "cue": "Le document est déjà signé. Racontez cette signature.",
+        "answers": [
+          "Tu as signé le document."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 12,
+          "text": "as signer"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as signé le document."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-solution",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Elle a découvri la solution.",
+        "cue": "La solution est trouvée. Racontez sa découverte.",
+        "answers": [
+          "Elle a découvert la solution."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 15,
+          "text": "a découvri"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Elle a découvert la solution."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-choix",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Nous avons décider ensemble.",
+        "cue": "La décision est prise. Le groupe raconte son choix.",
+        "answers": [
+          "Nous avons décidé ensemble."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 18,
+          "text": "avons décider"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Nous avons décidé ensemble."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-voisin",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Vous avez parler au voisin.",
+        "cue": "La conversation avec le voisin est terminée. Racontez cet échange.",
+        "answers": [
+          "Vous avez parlé au voisin."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 16,
+          "text": "avez parler"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Vous avez parlé au voisin."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-ordinateur",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Ils ont redémarrer l’ordinateur.",
+        "cue": "Le dépannage est terminé. Racontez la remise en marche.",
+        "answers": [
+          "Ils ont redémarré l’ordinateur."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 4,
+          "end": 18,
+          "text": "ont redémarrer"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Ils ont redémarré l’ordinateur."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-couleur",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "J’ai mélanger les couleurs.",
+        "cue": "Le mélange est terminé. Racontez l’activité de peinture.",
+        "answers": [
+          "J’ai mélangé les couleurs."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 2,
+          "end": 13,
+          "text": "ai mélanger"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : J’ai mélangé les couleurs."
+      },
+      {
+        "id": "gram-ex-pc-avoir-curriculum-c-a1-course",
+        "source": {
+          "path": "scripts/grammar_curriculum/passe-pc-avoir-a1.tsv",
+          "typeId": "gram-ex-pc-avoir-curriculum-c",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Tu as couri cinq kilomètres.",
+        "cue": "La course est terminée. Racontez cet effort accompli.",
+        "answers": [
+          "Tu as couru cinq kilomètres."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 11,
+          "text": "as couri"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir au présent + participe passé. Dans ces phrases, aucun COD ne précède : pas d’accord avec le sujet. Modèle : Tu as couru cinq kilomètres."
+      }
+    ]
+  }
+]

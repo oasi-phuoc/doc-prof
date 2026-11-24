@@ -1,6 +1,10 @@
-# Implémentation du curriculum Grammaire — pilotes et extension A1
+# Implémentation du curriculum Grammaire — pilotes A1, A2 et B1
 
-**État courant — 23 novembre :** « Demander et proposer » atteint 16/16 offres A1 en pilote : 13 activités, 620 unités et 810 réalisations. Les trois banques historiques sont retirées ; les fiches enregistrées restent pour plus tard. Voir [le bilan](avancement-20261123-demander.md), [la relecture](demander-a1-relecture.md) et [les contrôles](verification-demander-20261123.json). Prochain thème : Décrire.
+**État courant — 24 novembre :** « Parler du passé » atteint **49/49 offres en pilote**, avec 1 790 unités et 2 470 variantes. Cette livraison ajoute 43 formats, 400 lignes de situations et 20 documents de questionnement B1 ; les six formats existants restent préservés. La base globale compte 286 activités, 408 offres, 15 490 unités et 20 940 variantes. Voir [le bilan](avancement-20261124-passe.md), [la relecture](passe-a1-a2-b1-relecture.md) et [les vérifications](verification-passe-20261124.json). Relecture enseignante en attente. Prochain thème : Les pronoms. Le gamemode et le nettoyage des fiches enregistrées restent différés.
+
+**Étapes précédentes — 24 novembre :** [Parler des aliments](avancement-20261124-aliments.md), 27/27 offres ; [Conseiller quelqu’un](avancement-20261124-conseiller.md), 16/16 offres ; [Décrire](avancement-20261123-decrire-final.md), 63/63 offres. Les banques écrites remplacées sont retirées, sans suppression des fiches enregistrées.
+
+**Étape précédente — 23 novembre :** « Demander et proposer » atteint 16/16 offres A1 en pilote : 13 activités, 620 unités et 810 réalisations. Les trois banques historiques sont retirées ; les fiches enregistrées restent pour plus tard. Voir [le bilan](avancement-20261123-demander.md), [la relecture](demander-a1-relecture.md) et [les contrôles](verification-demander-20261123.json). Prochain thème : Décrire.
 
 **Étape précédente — 23 novembre :** « Se situer dans le temps » atteint 28/28 offres A1/A2 en pilote, avec 1 040 unités et 1 420 réalisations. Le thème comprend 40 documents et l’obligation IMG-e2-A1 couvre 50 situations illustrées. Les quatre banques historiques correspondantes sont supprimées. Le nettoyage des fiches enregistrées est différé par le propriétaire. Voir [le bilan](avancement-20261123-temps.md), [la relecture](temps-a1-a2-relecture.md) et [les contrôles](verification-temps-20261123.json). Prochaine tranche : Demander et proposer.
 
