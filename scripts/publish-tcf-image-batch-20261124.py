@@ -33,7 +33,8 @@ def refresh(packet, manifest):
     sources = {row['key']: row for row in packet['selected_questions']}
     ready = []
     for target in packet['planned_choices']:
-        if not all(path in manifest and manifest[path]['status'] == 'visually_reviewed' for path in target['paths']):
+        if not all(path in manifest and manifest[path]['status'] == 'visually_reviewed'
+                   and manifest[path].get('qcm_approval') != 'rejected_by_user' for path in target['paths']):
             continue
         note = packet['trio_review_notes'].get(str(target['index']))
         if not note:

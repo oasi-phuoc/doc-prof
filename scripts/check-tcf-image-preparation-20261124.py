@@ -47,6 +47,7 @@ def main():
         file = ROOT / 'public' / image.lstrip('/')
         assert sha(file) == row['sha256'] == manifest[image]['sha256'] == audit[image]['sha256']
         assert row['status'] == audit[image]['status'] == 'visually_reviewed'
+        assert row.get('qcm_approval') == manifest[image].get('qcm_approval')
         assert row['original_bytes_preserved'] and row['review_note']
         assert audit[image]['visual_label'] and audit[image]['visual_keywords']
         with Image.open(file) as art:
@@ -81,7 +82,9 @@ def main():
     assert recorded_ready == packet['ready_trios']
     assert packet['summary']['prepared_trios'] == len(recorded_ready)
     print(json.dumps(dict(source_bound_questions=len(checked), proposed_trios=len(packet['planned_choices']),
-        prepared_trios=len(recorded_ready), approved_new_images=len(published), pending_images=len(pending),
+        prepared_trios=len(recorded_ready), published_new_images=len(published),
+        published_images_rejected_by_user=sum(row.get('qcm_approval') == 'rejected_by_user' for row in published.values()),
+        pending_images=len(pending),
         activated_trios=0, human_audio_listening_performed=False), ensure_ascii=False))
 
 

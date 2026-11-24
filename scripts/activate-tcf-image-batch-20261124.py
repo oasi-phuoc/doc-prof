@@ -87,6 +87,7 @@ def main():
                     (c['id'], bool(c.get('correct'))) for c in text_form(question)['choix']]
                 for image in target['paths']:
                     assert manifest[image]['status'] == 'visually_reviewed'
+                    assert manifest[image].get('qcm_approval') != 'rejected_by_user', image
                     assert sha(ROOT / 'public' / image.lstrip('/')) == manifest[image]['sha256']
                 forms[key] = image_form
                 proofs.append(dict(key=key, bank=relative, level=exercise['niveau'], source=source,

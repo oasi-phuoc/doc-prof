@@ -17,7 +17,9 @@ Les deux files de création de trios sont distinctes : **261 trios historiques r
 
 **Le deuxième lot de 100 est terminé et activé.** 231 images préparées (223 PNG natifs, huit horloges) et 54 images existantes couvrent les 300 choix. La génération a repris après la réouverture du quota et a finalisé les 129 fichiers manquants. [Sources, images et preuves](delf-actif-20261113/lot2-100-20261123.md).
 
-**Le reliquat DELF de 21 trios est terminé et activé.** 50 nouveaux PNG natifs et 13 réutilisations couvrent les 63 choix ; sources, réponses et MP3 conservés. Les 261 historiques sont répartis en lots de 100, 100 et 61. Le premier lot dispose de 100 briefs, de 171 nouvelles images validées et de 57 trios prêts ; ses trios ne sont pas encore activés. [Suivi et preuves](lots-images-20261124/README.md).
+**Le reliquat DELF de 21 trios est terminé et activé.** 50 nouveaux PNG natifs et 13 réutilisations couvrent les 63 choix ; sources, réponses et MP3 conservés. Les 261 historiques sont répartis en lots de 100, 100 et 61. Le premier lot dispose de 100 briefs, de 171 nouvelles images publiées et de 56 trios prêts ; ses trios ne sont pas encore activés. [Suivi et preuves](lots-images-20261124/README.md).
+
+**Reprise prioritaire — question 39.** Les trois images du rayon frais « au fond », « à l’entrée » et « devant les caisses » sont écartées des choix prêts à la demande de l’utilisateur. Le magasin doit avoir un agencement naturel, des frigos intégrés aux rayons et une circulation dégagée. Les premières images restent dans la banque ; les trois nouvelles variantes sont à produire puis à revoir ensemble. [Consignes et chemins de remplacement](lots-images-20261124/reprise-question39.json).
 
 **Génération suspendue par le quota du service.** Réouverture annoncée le 24/11/2026 à 21 h 18, heure suisse. [Réponse du service et demandes concernées](lots-images-20261124/generation-blocker-20261124.json). Les revues déjà terminées sont conservées ; aucun lot incomplet n’est activé.
 
