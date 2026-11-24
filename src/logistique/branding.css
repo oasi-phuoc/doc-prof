@@ -1,7 +1,27 @@
 .brand-epca img{display:block;width:128px;height:38px;object-fit:contain}
 .logistique-brand-label{font-size:calc(13px * var(--app-font-scale,1));font-weight:600;color:var(--ink)}
+.logistique-catalog .field-group{gap:16px}
+.logistique-catalog h2,.logistique-type-group h3{margin:0;color:var(--ink)}
+.logistique-year,.logistique-catalog-count{margin:0;color:var(--muted);font-size:13px}
+.logistique-type-group{display:flex;flex-direction:column;gap:12px;padding:16px;border-top:1px solid var(--line,#dedede)}
+.logistique-type-list{display:flex;flex-direction:column;gap:8px;margin:0;padding:0;list-style:none}
+.logistique-type-list button{display:flex;width:100%;align-items:center;justify-content:space-between;gap:12px;padding:11px 12px;border:1px solid var(--line,#dedede);border-radius:8px;background:var(--surface,#fff);color:var(--ink);text-align:left;font:inherit}
+.logistique-type-list button:disabled{cursor:not-allowed;opacity:.64}
+.logistique-type-state{color:var(--muted);font-size:11px;font-weight:600;white-space:nowrap}
+.logistique-bank-status{margin:0;padding:11px 12px;border-left:3px solid #a5242a;background:color-mix(in srgb,#a5242a 7%,white);color:var(--ink);font-size:13px;line-height:1.5}
 .logistique-empty{min-height:320px;padding:clamp(24px,4vw,48px);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:12px}
 .logistique-empty h2{margin:0;color:var(--ink)}
-.logistique-empty p{margin:0;color:var(--muted);line-height:1.6}
+.logistique-empty p{max-width:58ch;margin:0;color:var(--muted);line-height:1.6}
+.logistique-empty-kicker{color:#a5242a;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.logistique-empty-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.logistique-empty-meta span{padding:6px 10px;border:1px solid var(--line,#dedede);border-radius:999px;color:var(--muted);font-size:12px}
+.logistique-document-tools{width:100%;display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:20px}
+.logistique-page-tabs,.logistique-structure-actions,.logistique-mode-toggle{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.logistique-page-tabs button,.logistique-mode-toggle button{min-height:38px;padding:8px 12px;border:1px solid var(--line,#dedede);border-radius:8px;background:var(--surface,#fff);color:var(--ink);font:inherit;cursor:pointer}
+.logistique-page-tabs button.active,.logistique-mode-toggle button.active{border-color:var(--purple);background:var(--lavender);color:var(--ink);font-weight:700}
+.logistique-mode-toggle{margin-left:auto}
+.logistique-current-structure{font-size:13px;font-weight:600;color:var(--muted)}
+.logistique-document-tools button:focus-visible{outline:3px solid color-mix(in srgb,var(--purple) 50%,transparent);outline-offset:2px}
+@media(max-width:600px){.logistique-document-tools{align-items:stretch}.logistique-mode-toggle{margin-left:0}.logistique-document-tools>div{width:100%}.logistique-structure-actions button{flex:1}}
 .doc-header.is-logistique .doc-logo-slot{width:140px;height:42px}
-@media(max-width:600px){.brand-epca img{width:104px;height:32px}.logistique-brand-label{font-size:12px;max-width:88px;line-height:1.3}.logistique-empty{min-height:240px}}
+@media(max-width:600px){.brand-epca img{width:104px;height:32px}.logistique-brand-label{font-size:12px;max-width:88px;line-height:1.3}.logistique-empty{min-height:240px}.logistique-type-group{padding:12px}.logistique-type-list button{align-items:flex-start;flex-direction:column;gap:4px}}

@@ -4,8 +4,8 @@ import epcaLogo from '@/assets/logos/epca.svg'
 export type LogistiqueDomain = 'logistique-cfc' | 'logistique-afp'
 
 export const LOGISTIQUE_DOMAIN_OPTIONS: readonly { id: LogistiqueDomain; label: string }[] = [
-  { id: 'logistique-afp', label: 'Logistique AFP' },
   { id: 'logistique-cfc', label: 'Logistique CFC' },
+  { id: 'logistique-afp', label: 'Logistique AFP' },
 ]
 
 export const EPCA_LOGO_SRC = epcaLogo
