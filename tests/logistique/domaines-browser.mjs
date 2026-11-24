@@ -26,14 +26,19 @@ try {
 
     for (const label of ['Logistique CFC', 'Logistique AFP']) {
       await chooseDomain(page, label)
-      await page.getByRole('heading', { name: label, exact: true }).waitFor()
-      await page.getByRole('button', { name: 'Paramètres', exact: true }).waitFor()
+      await page.getByRole('heading', { name: /^(CFC|AFP) ·/ }).waitFor()
       const logo = page.locator('.brand').getByRole('img', { name: 'EPCA', exact: true })
       await logo.waitFor()
       await page.waitForFunction(() => document.querySelector('.brand img')?.naturalWidth > 0)
       assert.equal(await page.locator('.worksheet-sheet').count(), 0, 'Aucune fiche précédente affichée ou imprimable en logistique')
       assert.equal(await page.getByRole('button', { name: 'Jouer cette fiche', exact: true }).count(), 0)
-      assert.match(await page.getByRole('status').textContent(), /cours et exercices ne sont pas encore ajoutés/)
+      assert.match(await page.getByRole('status').textContent(), /banques de contenus ne sont pas encore raccordées/)
+      assert.equal(await page.getByRole('button', { name: 'Théorie À importer' }).count(), 1)
+      await page.getByRole('button', { name: 'Mathématiques À importer' }).click()
+      await page.getByRole('heading', { name: 'Réglages · Mathématiques' }).waitFor()
+      assert.equal(await page.getByRole('spinbutton', { name: 'Nombre de problèmes' }).inputValue(), '6')
+      const expectedSubmodules = label.endsWith('CFC') ? '80' : '63'
+      assert.match(await page.locator('.logistique-catalog-count').textContent(), new RegExp(`${expectedSubmodules} sous-thèmes`))
       assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), `${label} déborde à ${width}px`)
       await page.screenshot({ path: `${output}/${width}-${label.endsWith('CFC') ? 'cfc' : 'afp'}.png`, fullPage: true })
     }
@@ -43,7 +48,7 @@ try {
     assert.equal(await page.locator('.worksheet-sheet').first().textContent(), original, 'Retour à la même fiche, sans tirage ni modification')
     assert.equal(await page.locator('.brand img[alt="EPCA"]').count(), 0)
     assert.equal((await page.locator('.brand').textContent()).trim(), 'ClairFLE')
-    reports.push({ width, domains: ['logistique-cfc', 'logistique-afp'], epcaLoaded: true, emptyDomains: true, worksheetPreserved: true, clairfleRestored: true, noOverflow: true })
+    reports.push({ width, domains: ['logistique-cfc', 'logistique-afp'], epcaLoaded: true, typeSettingsInteractive: true, worksheetPreserved: true, clairfleRestored: true, noOverflow: true })
     await context.close()
   }
   assert.deepEqual(errors, [])

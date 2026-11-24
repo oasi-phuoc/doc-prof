@@ -21,7 +21,8 @@ import { SaveFicheDialog } from '@/components/generator/SaveFicheDialog'
 import { TopbarTools } from '@/components/generator/TopbarTools'
 import { FooterSidePanel } from '@/components/generator/FooterSidePanel'
 import { Header } from '@/components/generator/Header'
-import { LogistiqueDomainEmpty, LogistiqueDomainSettings } from '@/logistique/DomainShell'
+import { LogistiqueDomainEmpty, LogistiqueDomainSettings, type LogistiqueSelection } from '@/logistique/DomainShell'
+import { logistiqueThemesForDomain } from '@/logistique/catalog'
 import { isLogistiqueDomain, logistiqueDomainLabel, worksheetDomainFor, type LogistiqueDomain } from '@/logistique/domains'
 import { LibreSidePanel } from '@/components/generator/LibreSidePanel'
 import { SettingsPanel } from '@/components/generator/SettingsPanel'
@@ -105,6 +106,17 @@ export function GeneratorPage({
     const requested = openedFiche?.recipe.pages[0]?.domain ?? preferredInitialDomain
     return isLogistiqueDomain(requested) ? requested : null
   })
+  const [logistiqueSelection, setLogistiqueSelection] = useState<LogistiqueSelection>({
+    themeId: '',
+    submoduleId: '',
+    type: 'theorie',
+  })
+  const logistiqueThemes = useMemo(
+    () => logistiqueDomain ? logistiqueThemesForDomain(logistiqueDomain) : [],
+    [logistiqueDomain],
+  )
+  const activeLogistiqueTheme = logistiqueThemes.find(theme => theme.id === logistiqueSelection.themeId) ?? logistiqueThemes[0]
+  const activeLogistiqueSubmodule = activeLogistiqueTheme?.submodules.find(module => module.id === logistiqueSelection.submoduleId) ?? activeLogistiqueTheme?.submodules[0]
   useEffect(() => {
     if (logistiqueDomain && !accountCanAccessDomain(accessAccount, logistiqueDomain)) setLogistiqueDomain(null)
   }, [accessAccount, logistiqueDomain])
@@ -508,6 +520,9 @@ export function GeneratorPage({
   function selectDomain(next: Domain) {
     if (!accountCanAccessDomain(accessAccount, next)) return
     if (isLogistiqueDomain(next)) {
+      if (next !== logistiqueDomain) {
+        setLogistiqueSelection({ themeId: '', submoduleId: '', type: 'theorie' })
+      }
       setLogistiqueDomain(next)
       return
     }
@@ -748,8 +763,8 @@ export function GeneratorPage({
         <div
           className={`workspace${!logistiqueDomain && libreMode ? ' has-libre-panel' : ''}${!logistiqueDomain && footerPanelOpen ? ' has-footer-panel' : ''}`}
         >
-          {logistiqueDomain ? <LogistiqueDomainSettings domain={logistiqueDomain} allowedDomains={allowedDomains} onDomainChange={selectDomain} /> : <SettingsPanel {...settingsPanelProps} />}
-          {logistiqueDomain ? <LogistiqueDomainEmpty domain={logistiqueDomain} /> : <WorksheetImageProvider enabled={libreMode} overrides={imageOverrides} onChange={setImageOverrides}>
+          {logistiqueDomain ? <LogistiqueDomainSettings domain={logistiqueDomain} allowedDomains={allowedDomains} onDomainChange={selectDomain} selection={logistiqueSelection} onSelectionChange={setLogistiqueSelection} /> : <SettingsPanel {...settingsPanelProps} />}
+          {logistiqueDomain ? <LogistiqueDomainEmpty domain={logistiqueDomain} selection={logistiqueSelection} theme={activeLogistiqueTheme} submodule={activeLogistiqueSubmodule} /> : <WorksheetImageProvider enabled={libreMode} overrides={imageOverrides} onChange={setImageOverrides}>
             <ResultPanel {...resultPanelProps} />
           </WorksheetImageProvider>}
           {logistiqueDomain || !libreMode ? null : (
