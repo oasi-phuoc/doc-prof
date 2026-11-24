@@ -7,6 +7,8 @@ import { grammarScenarioSlices } from './scenario-pages'
 function cost(item: MathItem): number {
   const q=item.grammar
   if (!q) return 0
+  // Full verbal groups, explicit time anchors and their corrections stay together.
+  if(/^gram-ex-j[123]-/.test(q.unit.source.typeId))return 160
   if(/^gram-ex-g[1-6]-/.test(q.unit.source.typeId))return q.unit.kind==='completion'&&!q.unit.imageSupports?.length&&!(q.unit.source.typeId==='gram-ex-g6-qcm-verbe'&&q.unit.source.partition==='a2')?80:160
   if(/^gram-ex-(?:pc-idee|pc-avoir|pc-etre|imparfait|pqp|double-aux|pc-pronominaux|accord-pp)-(?:qcm-|curriculum-)/.test(q.unit.source.typeId))return q.unit.kind==='completion'&&['gram-ex-pc-avoir-qcm-conj','gram-ex-imparfait-qcm-conj'].includes(q.unit.source.typeId)?80:160
   if(/^gram-ex-i[12356789]-/.test(q.unit.source.typeId))return q.unit.kind==='completion'&&!/^gram-ex-i[89]-/.test(q.unit.source.typeId)?80:160

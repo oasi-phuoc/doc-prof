@@ -1,0 +1,802 @@
+[
+  {
+    "id": "roman",
+    "sourceSituation": "roman",
+    "title": "Une pause à la bibliothèque",
+    "genre": "message",
+    "text": [
+      "Je suis à la bibliothèque. Je suis en train de lire un roman. Le chapitre",
+      "est long. Je prends une pause après ce chapitre."
+    ],
+    "questions": [
+      {
+        "prompt": "Où se trouve la personne ?",
+        "answer": "À la bibliothèque.",
+        "choices": [
+          "À la bibliothèque.",
+          "À la gare.",
+          "À la cantine."
+        ],
+        "evidence": "Je suis à la bibliothèque.",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel document lit-elle ?",
+        "answer": "Un roman.",
+        "choices": [
+          "Un roman.",
+          "Un journal.",
+          "Une lettre."
+        ],
+        "evidence": "lire un roman",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quand prend-elle une pause ?",
+        "answer": "Après ce chapitre.",
+        "evidence": "Je prends une pause après ce chapitre.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "journal",
+    "sourceSituation": "journal",
+    "title": "Dans le salon",
+    "genre": "message",
+    "text": [
+      "Tu es dans le salon. Tu es en train de lire le journal. Ton café est sur la",
+      "table. La fenêtre est ouverte."
+    ],
+    "questions": [
+      {
+        "prompt": "Où se passe la scène ?",
+        "answer": "Dans le salon.",
+        "choices": [
+          "Dans le salon.",
+          "Dans la classe.",
+          "Dans le jardin."
+        ],
+        "evidence": "Tu es dans le salon.",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel document lis-tu ?",
+        "answer": "Le journal.",
+        "choices": [
+          "Le journal.",
+          "Un roman.",
+          "Une recette."
+        ],
+        "evidence": "lire le journal",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où est le café ?",
+        "answer": "Sur la table.",
+        "evidence": "Ton café est sur la table.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "lettre",
+    "sourceSituation": "lettre",
+    "title": "Un courrier pour une amie",
+    "genre": "message",
+    "text": [
+      "Je suis en train d’écrire une lettre pour mon amie. La lettre n’est pas",
+      "terminée. L’enveloppe est posée près du cahier."
+    ],
+    "questions": [
+      {
+        "prompt": "Que fait la personne ?",
+        "answer": "Elle écrit une lettre.",
+        "choices": [
+          "Elle écrit une lettre.",
+          "Elle lit le journal.",
+          "Elle range le cahier."
+        ],
+        "evidence": "écrire une lettre",
+        "response": "choice"
+      },
+      {
+        "prompt": "Pour qui est la lettre ?",
+        "answer": "Pour son amie.",
+        "choices": [
+          "Pour son amie.",
+          "Pour son médecin.",
+          "Pour sa voisine."
+        ],
+        "evidence": "pour mon amie",
+        "response": "choice"
+      },
+      {
+        "prompt": "La lettre est-elle terminée ?",
+        "answer": "Non, pas encore.",
+        "evidence": "La lettre n’est pas terminée.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "notes",
+    "sourceSituation": "notes",
+    "title": "Pendant la visite",
+    "genre": "message",
+    "text": [
+      "Nous sommes en train d’écrire des notes pendant la visite du musée. Nous",
+      "utilisons un carnet. Le guide présente une peinture."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle activité est en cours ?",
+        "answer": "Écrire des notes.",
+        "choices": [
+          "Écrire des notes.",
+          "Lire une recette.",
+          "Ranger des livres."
+        ],
+        "evidence": "écrire des notes",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où se déroule la visite ?",
+        "answer": "Au musée.",
+        "choices": [
+          "Au musée.",
+          "À la piscine.",
+          "À la gare."
+        ],
+        "evidence": "la visite du musée",
+        "response": "choice"
+      },
+      {
+        "prompt": "Sur quel support écrivent les visiteurs ?",
+        "answer": "Dans un carnet.",
+        "evidence": "Nous utilisons un carnet.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "soupe",
+    "sourceSituation": "soupe",
+    "title": "Le déjeuner à la cantine",
+    "genre": "message",
+    "text": [
+      "Je suis en train de manger une soupe à la cantine. Le pain est dans une",
+      "petite assiette. Mon verre contient de l’eau."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel plat mange la personne ?",
+        "answer": "Une soupe.",
+        "choices": [
+          "Une soupe.",
+          "Une salade.",
+          "Un gâteau."
+        ],
+        "evidence": "manger une soupe",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où prend-elle son repas ?",
+        "answer": "À la cantine.",
+        "choices": [
+          "À la cantine.",
+          "Dans le train.",
+          "Au musée."
+        ],
+        "evidence": "à la cantine",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelle boisson y a-t-il dans le verre ?",
+        "answer": "De l’eau.",
+        "evidence": "Mon verre contient de l’eau.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "salade",
+    "sourceSituation": "salade",
+    "title": "Au milieu du déjeuner",
+    "genre": "message",
+    "text": [
+      "Elle est en train de manger une salade. Son déjeuner n’est pas fini. Une",
+      "pomme est posée à côté de l’assiette pour le dessert."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel plat mange-t-elle maintenant ?",
+        "answer": "Une salade.",
+        "choices": [
+          "Une salade.",
+          "Une soupe.",
+          "Une tarte."
+        ],
+        "evidence": "manger une salade",
+        "response": "choice"
+      },
+      {
+        "prompt": "Le déjeuner est-il terminé ?",
+        "answer": "Non.",
+        "choices": [
+          "Non.",
+          "Oui.",
+          "Il n’a pas commencé."
+        ],
+        "evidence": "Son déjeuner n’est pas fini.",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel fruit est prévu pour le dessert ?",
+        "answer": "Une pomme.",
+        "evidence": "Une pomme est posée à côté de l’assiette pour le dessert.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "plat",
+    "sourceSituation": "plat",
+    "title": "La préparation du repas",
+    "genre": "message",
+    "text": [
+      "Il est en train de cuisiner un plat de légumes. Il est dans la cuisine. La",
+      "table est déjà prête pour deux personnes."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle action est en cours ?",
+        "answer": "Cuisiner un plat.",
+        "choices": [
+          "Cuisiner un plat.",
+          "Laver la vaisselle.",
+          "Lire un roman."
+        ],
+        "evidence": "cuisiner un plat de légumes",
+        "response": "choice"
+      },
+      {
+        "prompt": "Dans quelle pièce est-il ?",
+        "answer": "Dans la cuisine.",
+        "choices": [
+          "Dans la cuisine.",
+          "Dans le salon.",
+          "Dans la chambre."
+        ],
+        "evidence": "Il est dans la cuisine.",
+        "response": "choice"
+      },
+      {
+        "prompt": "Pour combien de personnes la table est-elle prête ?",
+        "answer": "Pour deux personnes.",
+        "evidence": "La table est déjà prête pour deux personnes.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "repas-classe",
+    "sourceSituation": "repas-classe",
+    "title": "Le repas du groupe",
+    "genre": "message",
+    "text": [
+      "Nous sommes en train de cuisiner le repas de la classe. Les élèves ont",
+      "apporté des carottes. Le repas sera servi à midi."
+    ],
+    "questions": [
+      {
+        "prompt": "Que prépare le groupe ?",
+        "answer": "Le repas de la classe.",
+        "choices": [
+          "Le repas de la classe.",
+          "Une affiche.",
+          "Un spectacle."
+        ],
+        "evidence": "cuisiner le repas de la classe",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel légume les élèves ont-ils apporté ?",
+        "answer": "Des carottes.",
+        "choices": [
+          "Des carottes.",
+          "Des tomates.",
+          "Des pommes de terre."
+        ],
+        "evidence": "Les élèves ont apporté des carottes.",
+        "response": "choice"
+      },
+      {
+        "prompt": "À quelle heure le repas sera-t-il servi ?",
+        "answer": "À midi.",
+        "evidence": "Le repas sera servi à midi.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "piste",
+    "sourceSituation": "piste",
+    "title": "Une séance de course",
+    "genre": "message",
+    "text": [
+      "Je suis en train de courir sur la piste du stade. La séance dure vingt",
+      "minutes. Mon sac est près du banc."
+    ],
+    "questions": [
+      {
+        "prompt": "Où court la personne ?",
+        "answer": "Sur la piste du stade.",
+        "choices": [
+          "Sur la piste du stade.",
+          "Dans une salle de classe.",
+          "Dans la piscine."
+        ],
+        "evidence": "courir sur la piste du stade",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelle activité fait-elle ?",
+        "answer": "De la course.",
+        "choices": [
+          "De la course.",
+          "Du vélo.",
+          "De la natation."
+        ],
+        "evidence": "courir sur la piste",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où se trouve son sac ?",
+        "answer": "Près du banc.",
+        "evidence": "Mon sac est près du banc.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "parc-course",
+    "sourceSituation": "parc-course",
+    "title": "Dans le parc",
+    "genre": "message",
+    "text": [
+      "Tu es en train de courir dans le parc. Tu suis le chemin près du lac. Tu as",
+      "prévu de retrouver ton ami à la sortie."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle activité est en cours ?",
+        "answer": "Courir.",
+        "choices": [
+          "Courir.",
+          "Nager.",
+          "Dormir."
+        ],
+        "evidence": "en train de courir",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel chemin suis-tu ?",
+        "answer": "Celui près du lac.",
+        "choices": [
+          "Celui près du lac.",
+          "Celui près de l’école.",
+          "Celui près du musée."
+        ],
+        "evidence": "le chemin près du lac",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où retrouveras-tu ton ami ?",
+        "answer": "À la sortie.",
+        "evidence": "retrouver ton ami à la sortie",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "piscine",
+    "sourceSituation": "piscine",
+    "title": "Dans le bassin",
+    "genre": "message",
+    "text": [
+      "Elle est en train de nager à la piscine. Elle utilise le grand bassin. Le",
+      "petit bassin est réservé aux enfants."
+    ],
+    "questions": [
+      {
+        "prompt": "Que fait-elle ?",
+        "answer": "Elle nage.",
+        "choices": [
+          "Elle nage.",
+          "Elle court.",
+          "Elle cuisine."
+        ],
+        "evidence": "en train de nager",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel bassin utilise-t-elle ?",
+        "answer": "Le grand bassin.",
+        "choices": [
+          "Le grand bassin.",
+          "Le petit bassin.",
+          "Aucun bassin."
+        ],
+        "evidence": "Elle utilise le grand bassin.",
+        "response": "choice"
+      },
+      {
+        "prompt": "À qui le petit bassin est-il réservé ?",
+        "answer": "Aux enfants.",
+        "evidence": "Le petit bassin est réservé aux enfants.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "bassin",
+    "sourceSituation": "bassin",
+    "title": "Le cours de natation",
+    "genre": "message",
+    "text": [
+      "Nous sommes en train de nager dans le bassin pendant le cours. Le professeur",
+      "reste au bord. Les serviettes sont dans les sacs."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle activité le groupe fait-il ?",
+        "answer": "De la natation.",
+        "choices": [
+          "De la natation.",
+          "De la marche.",
+          "De la lecture."
+        ],
+        "evidence": "en train de nager",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où est le professeur ?",
+        "answer": "Au bord du bassin.",
+        "choices": [
+          "Au bord du bassin.",
+          "Dans les vestiaires.",
+          "À l’accueil."
+        ],
+        "evidence": "Le professeur reste au bord.",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où se trouvent les serviettes ?",
+        "answer": "Dans les sacs.",
+        "evidence": "Les serviettes sont dans les sacs.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "appel",
+    "sourceSituation": "appel",
+    "title": "Un appel au médecin",
+    "genre": "message",
+    "text": [
+      "Je suis en train de téléphoner au médecin pour un rendez-vous. Je suis assis",
+      "dans le salon. Mon carnet est ouvert sur mes genoux."
+    ],
+    "questions": [
+      {
+        "prompt": "À qui la personne téléphone-t-elle ?",
+        "answer": "Au médecin.",
+        "choices": [
+          "Au médecin.",
+          "Au guide.",
+          "Au boulanger."
+        ],
+        "evidence": "téléphoner au médecin",
+        "response": "choice"
+      },
+      {
+        "prompt": "Pourquoi appelle-t-elle ?",
+        "answer": "Pour un rendez-vous.",
+        "choices": [
+          "Pour un rendez-vous.",
+          "Pour acheter du pain.",
+          "Pour réserver un train."
+        ],
+        "evidence": "pour un rendez-vous",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où se trouve le carnet ?",
+        "answer": "Sur ses genoux.",
+        "evidence": "Mon carnet est ouvert sur mes genoux.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "appel-collegue",
+    "sourceSituation": "appel-collegue",
+    "title": "Au bureau",
+    "genre": "message",
+    "text": [
+      "Elle est en train de téléphoner à sa collègue depuis le bureau. Elle demande",
+      "l’heure de la réunion. Son ordinateur est éteint."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle action est en cours ?",
+        "answer": "Téléphoner.",
+        "choices": [
+          "Téléphoner.",
+          "Écrire une lettre.",
+          "Lire un roman."
+        ],
+        "evidence": "en train de téléphoner",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelle information demande-t-elle ?",
+        "answer": "L’heure de la réunion.",
+        "choices": [
+          "L’heure de la réunion.",
+          "Le prix du billet.",
+          "Le numéro du bus."
+        ],
+        "evidence": "Elle demande l’heure de la réunion.",
+        "response": "choice"
+      },
+      {
+        "prompt": "Dans quel lieu se trouve-t-elle ?",
+        "answer": "Au bureau.",
+        "evidence": "depuis le bureau",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "repos",
+    "sourceSituation": "repos",
+    "title": "Une pause à la maison",
+    "genre": "message",
+    "text": [
+      "Il est en train de dormir sur le canapé. Il se repose après le déjeuner. La",
+      "radio est éteinte pour garder le calme."
+    ],
+    "questions": [
+      {
+        "prompt": "Que fait-il maintenant ?",
+        "answer": "Il dort.",
+        "choices": [
+          "Il dort.",
+          "Il lit.",
+          "Il mange."
+        ],
+        "evidence": "en train de dormir",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où dort-il ?",
+        "answer": "Sur le canapé.",
+        "choices": [
+          "Sur le canapé.",
+          "Dans le train.",
+          "Sur un banc."
+        ],
+        "evidence": "sur le canapé",
+        "response": "choice"
+      },
+      {
+        "prompt": "Après quel repas se repose-t-il ?",
+        "answer": "Après le déjeuner.",
+        "evidence": "Il se repose après le déjeuner.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "sieste",
+    "sourceSituation": "sieste",
+    "title": "La chambre calme",
+    "genre": "message",
+    "text": [
+      "Elle est en train de dormir dans sa chambre. C’est sa sieste de",
+      "l’après-midi. Le rideau est fermé et la porte reste entrouverte."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle activité est en cours ?",
+        "answer": "Dormir.",
+        "choices": [
+          "Dormir.",
+          "Cuisiner.",
+          "Dessiner."
+        ],
+        "evidence": "en train de dormir",
+        "response": "choice"
+      },
+      {
+        "prompt": "À quel moment fait-elle sa sieste ?",
+        "answer": "L’après-midi.",
+        "choices": [
+          "L’après-midi.",
+          "Le matin.",
+          "À minuit."
+        ],
+        "evidence": "sa sieste de l’après-midi",
+        "response": "choice"
+      },
+      {
+        "prompt": "Comment est le rideau ?",
+        "answer": "Fermé.",
+        "evidence": "Le rideau est fermé",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "trajet-pied",
+    "sourceSituation": "trajet-pied",
+    "title": "Vers la gare",
+    "genre": "message",
+    "text": [
+      "Je suis en train de marcher vers la gare. Je porte un petit sac. Le train",
+      "part dans une heure : j’ai le temps."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle est la destination ?",
+        "answer": "La gare.",
+        "choices": [
+          "La gare.",
+          "La piscine.",
+          "La mairie."
+        ],
+        "evidence": "marcher vers la gare",
+        "response": "choice"
+      },
+      {
+        "prompt": "Comment la personne se déplace-t-elle ?",
+        "answer": "À pied.",
+        "choices": [
+          "À pied.",
+          "À vélo.",
+          "En bus."
+        ],
+        "evidence": "en train de marcher",
+        "response": "choice"
+      },
+      {
+        "prompt": "Dans combien de temps le train part-il ?",
+        "answer": "Dans une heure.",
+        "evidence": "Le train part dans une heure",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "sentier",
+    "sourceSituation": "sentier",
+    "title": "Sur le sentier",
+    "genre": "message",
+    "text": [
+      "Tu es en train de marcher sur un sentier. Tu portes des chaussures de",
+      "randonnée. Le village est visible au bout du chemin."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle action est en cours ?",
+        "answer": "Marcher.",
+        "choices": [
+          "Marcher.",
+          "Courir.",
+          "Nager."
+        ],
+        "evidence": "en train de marcher",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelles chaussures portes-tu ?",
+        "answer": "Des chaussures de randonnée.",
+        "choices": [
+          "Des chaussures de randonnée.",
+          "Des sandales.",
+          "Des chaussures de ski."
+        ],
+        "evidence": "des chaussures de randonnée",
+        "response": "choice"
+      },
+      {
+        "prompt": "Que voit-on au bout du chemin ?",
+        "answer": "Le village.",
+        "evidence": "Le village est visible au bout du chemin.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "velo-chemin",
+    "sourceSituation": "velo-chemin",
+    "title": "Une balade à vélo",
+    "genre": "message",
+    "text": [
+      "Il est en train de faire du vélo sur un chemin du parc. Il porte un casque",
+      "bleu. Son amie l’attend près de la fontaine."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel moyen de déplacement utilise-t-il ?",
+        "answer": "Un vélo.",
+        "choices": [
+          "Un vélo.",
+          "Un bus.",
+          "Un tram."
+        ],
+        "evidence": "faire du vélo",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où se trouve le chemin ?",
+        "answer": "Dans le parc.",
+        "choices": [
+          "Dans le parc.",
+          "Dans la gare.",
+          "Dans un bâtiment."
+        ],
+        "evidence": "un chemin du parc",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où son amie l’attend-elle ?",
+        "answer": "Près de la fontaine.",
+        "evidence": "Son amie l’attend près de la fontaine.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "velo-piste",
+    "sourceSituation": "velo-piste",
+    "title": "Sur la piste cyclable",
+    "genre": "message",
+    "text": [
+      "Nous sommes en train de faire du vélo sur la piste cyclable. Nous allons au",
+      "lac. Les vélos ont des paniers pour le pique-nique."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle activité le groupe fait-il ?",
+        "answer": "Du vélo.",
+        "choices": [
+          "Du vélo.",
+          "De la course.",
+          "De la natation."
+        ],
+        "evidence": "faire du vélo",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelle est la destination ?",
+        "answer": "Le lac.",
+        "choices": [
+          "Le lac.",
+          "Le musée.",
+          "La gare."
+        ],
+        "evidence": "Nous allons au lac.",
+        "response": "choice"
+      },
+      {
+        "prompt": "À quoi servent les paniers ?",
+        "answer": "À transporter le pique-nique.",
+        "evidence": "des paniers pour le pique-nique",
+        "response": "short"
+      }
+    ]
+  }
+]

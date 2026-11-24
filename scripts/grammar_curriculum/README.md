@@ -62,3 +62,12 @@ Les huit fichiers `pronoms-*.tsv` contiennent 400 situations relues. `pronoms-i9
 Les variantes réemploient les mêmes situations. Les lacunes avec dont donnent les deux faits et conservent l’ordre des mots restants. Les productions et questions ouvertes admettent les reformulations fidèles. Les reprises neutres concernées acceptent cela et ça. La validation pédagogique humaine est en attente.
 
 `npm run test:grammar:pronoms` vérifie réponses, référents, recettes, capacités et intervalles de correction, puis reconstruit les banques en isolation. `npm run test:grammar:pronoms:browser` attend un aperçu de production sur le port 5189 et écrit les preuves dans `docs/grammaire/implementation/pronoms-20261124-proofs`.
+
+
+### Parler d’une action — 24 novembre 2026
+
+Les cinq fichiers `action-*.tsv` contiennent 250 lignes sources. Les deux fichiers `action-j1-lectures-*.json` adaptent quarante situations en quarante documents de trois questions chacun. `action-j3-accord-sujet-a2.json` adapte dix situations de gérondif pour corriger le rattachement du sujet. Ces adaptations ne sont pas des histoires indépendantes supplémentaires.
+
+`python3 scripts/build-grammar-action.py` compile exclusivement `curriculum/data/j1.json`, `j2.json` et `j3.json`, avec 19 banques et 24 offres A1/A2. Il copie dix images du catalogue sans modification dans leur chemin SHA-256 et écrit `action-media-manifest.json`. Les illustrations montrent les actions ; les rôles et détails sont définis par le texte. Les JSON de lecture gardent les paragraphes en lignes courtes et les preuves littérales.
+
+`npm run test:grammar:action` vérifie réponses, repères, sujet commun, recettes, capacités, intervalles de correction et conservation des autres thèmes, puis reconstruit banques et manifeste en isolation. `npm run test:grammar:action:browser` attend un aperçu de production sur le port 5190 et écrit les mesures et PDF dans `docs/grammaire/implementation/action-20261124-proofs`. Après les contrôles, `node scripts/update-grammar-decrire-progress.cjs --theme=gram-action --subthemes=j1,j2,j3 --date=2026-11-24 --verified` actualise le registre et le CSV sans déclarer de validation enseignante.

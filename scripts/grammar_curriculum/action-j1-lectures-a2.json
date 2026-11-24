@@ -1,0 +1,804 @@
+[
+  {
+    "id": "lecture",
+    "sourceSituation": "lecture",
+    "title": "Un changement de lecture",
+    "genre": "note de situation",
+    "text": [
+      "D’habitude, vous lisez le journal le matin. Ce matin, vous êtes en train de",
+      "lire un roman à la maison. C’est un cadeau de votre amie."
+    ],
+    "questions": [
+      {
+        "prompt": "Que lisez-vous habituellement ?",
+        "answer": "Le journal.",
+        "choices": [
+          "Le journal.",
+          "Un roman.",
+          "Un plan."
+        ],
+        "evidence": "D’habitude, vous lisez le journal",
+        "response": "choice"
+      },
+      {
+        "prompt": "Que lisez-vous ce matin ?",
+        "answer": "Un roman.",
+        "choices": [
+          "Un roman.",
+          "Le journal.",
+          "Une recette."
+        ],
+        "evidence": "en train de lire un roman",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où se déroule la lecture ce matin ?",
+        "answer": "À la maison.",
+        "evidence": "à la maison",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "repas",
+    "sourceSituation": "repas",
+    "title": "Un déjeuner dehors",
+    "genre": "note de situation",
+    "text": [
+      "D’habitude, nous mangeons à la cantine. Aujourd’hui, nous sommes en train de",
+      "manger dans le parc. Nous avons apporté un pique-nique."
+    ],
+    "questions": [
+      {
+        "prompt": "Où le groupe mange-t-il habituellement ?",
+        "answer": "À la cantine.",
+        "choices": [
+          "À la cantine.",
+          "Dans le parc.",
+          "Au restaurant."
+        ],
+        "evidence": "D’habitude, nous mangeons à la cantine.",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où mange-t-il aujourd’hui ?",
+        "answer": "Dans le parc.",
+        "choices": [
+          "Dans le parc.",
+          "À la cantine.",
+          "À la maison."
+        ],
+        "evidence": "en train de manger dans le parc",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel repas le groupe a-t-il apporté ?",
+        "answer": "Un pique-nique.",
+        "evidence": "Nous avons apporté un pique-nique.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "ecriture",
+    "sourceSituation": "ecriture",
+    "title": "Une lettre à la place des courriels",
+    "genre": "note de situation",
+    "text": [
+      "D’habitude, j’écris des courriels. À cet instant, je suis en train d’écrire",
+      "une lettre pour ma grand-mère. L’enveloppe est prête."
+    ],
+    "questions": [
+      {
+        "prompt": "Que rédige habituellement la personne ?",
+        "answer": "Des courriels.",
+        "choices": [
+          "Des courriels.",
+          "Des lettres.",
+          "Des affiches."
+        ],
+        "evidence": "D’habitude, j’écris des courriels.",
+        "response": "choice"
+      },
+      {
+        "prompt": "Que rédige-t-elle maintenant ?",
+        "answer": "Une lettre.",
+        "choices": [
+          "Une lettre.",
+          "Un courriel.",
+          "Une liste."
+        ],
+        "evidence": "en train d’écrire une lettre",
+        "response": "choice"
+      },
+      {
+        "prompt": "Pour qui est la lettre ?",
+        "answer": "Pour sa grand-mère.",
+        "evidence": "pour ma grand-mère",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "marche",
+    "sourceSituation": "marche",
+    "title": "Vers la gare à pied",
+    "genre": "note de situation",
+    "text": [
+      "D’habitude, tu prends le bus. Aujourd’hui, tu es en train de marcher vers la",
+      "gare. Le soleil te donne envie de rester dehors."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel transport prends-tu habituellement ?",
+        "answer": "Le bus.",
+        "choices": [
+          "Le bus.",
+          "Le train.",
+          "Le tram."
+        ],
+        "evidence": "D’habitude, tu prends le bus.",
+        "response": "choice"
+      },
+      {
+        "prompt": "Comment te déplaces-tu aujourd’hui ?",
+        "answer": "À pied.",
+        "choices": [
+          "À pied.",
+          "En bus.",
+          "À vélo."
+        ],
+        "evidence": "en train de marcher",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelle est ta destination ?",
+        "answer": "La gare.",
+        "evidence": "vers la gare",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "boisson",
+    "sourceSituation": "boisson",
+    "title": "Une autre boisson",
+    "genre": "note de situation",
+    "text": [
+      "D’habitude, elle boit du thé pendant sa pause. En ce moment, elle est en",
+      "train de boire de l’eau. Elle est assise dans le jardin."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle est sa boisson habituelle ?",
+        "answer": "Le thé.",
+        "choices": [
+          "Le thé.",
+          "L’eau.",
+          "Le café."
+        ],
+        "evidence": "D’habitude, elle boit du thé",
+        "response": "choice"
+      },
+      {
+        "prompt": "Que boit-elle maintenant ?",
+        "answer": "De l’eau.",
+        "choices": [
+          "De l’eau.",
+          "Du thé.",
+          "Du jus."
+        ],
+        "evidence": "en train de boire de l’eau",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où est-elle assise ?",
+        "answer": "Dans le jardin.",
+        "evidence": "Elle est assise dans le jardin.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "dessin",
+    "sourceSituation": "dessin",
+    "title": "Un plan pour le projet",
+    "genre": "note de situation",
+    "text": [
+      "D’habitude, ils peignent des paysages. Aujourd’hui, ils sont en train de",
+      "dessiner un plan. Leur projet est de construire une petite bibliothèque."
+    ],
+    "questions": [
+      {
+        "prompt": "Que font-ils habituellement ?",
+        "answer": "Ils peignent des paysages.",
+        "choices": [
+          "Ils peignent des paysages.",
+          "Ils dessinent des plans.",
+          "Ils construisent des tables."
+        ],
+        "evidence": "D’habitude, ils peignent des paysages.",
+        "response": "choice"
+      },
+      {
+        "prompt": "Que font-ils aujourd’hui ?",
+        "answer": "Ils dessinent un plan.",
+        "choices": [
+          "Ils dessinent un plan.",
+          "Ils peignent un paysage.",
+          "Ils écrivent une lettre."
+        ],
+        "evidence": "en train de dessiner un plan",
+        "response": "choice"
+      },
+      {
+        "prompt": "Que veulent-ils construire ?",
+        "answer": "Une petite bibliothèque.",
+        "evidence": "construire une petite bibliothèque",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "telephone",
+    "sourceSituation": "telephone",
+    "title": "Un appel à la mairie",
+    "genre": "note de situation",
+    "text": [
+      "D’habitude, vous envoyez des messages. Cette fois, vous êtes en train de",
+      "téléphoner à la mairie. Vous demandez les horaires d’ouverture."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel moyen de communication utilisez-vous habituellement ?",
+        "answer": "Des messages.",
+        "choices": [
+          "Des messages.",
+          "Le téléphone.",
+          "Des lettres sur papier."
+        ],
+        "evidence": "D’habitude, vous envoyez des messages.",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel moyen utilisez-vous cette fois ?",
+        "answer": "Le téléphone.",
+        "choices": [
+          "Le téléphone.",
+          "Des messages.",
+          "Une affiche."
+        ],
+        "evidence": "en train de téléphoner",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelle information demandez-vous ?",
+        "answer": "Les horaires d’ouverture.",
+        "evidence": "Vous demandez les horaires d’ouverture.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "jardin",
+    "sourceSituation": "jardin",
+    "title": "Des fleurs nouvelles",
+    "genre": "note de situation",
+    "text": [
+      "D’habitude, j’arrose le jardin. À présent, je suis en train de planter des",
+      "fleurs. Les nouvelles plantes sont pour le bord de la terrasse."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle est l’activité habituelle ?",
+        "answer": "Arroser le jardin.",
+        "choices": [
+          "Arroser le jardin.",
+          "Planter des fleurs.",
+          "Peindre la terrasse."
+        ],
+        "evidence": "D’habitude, j’arrose le jardin.",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelle est l’activité actuelle ?",
+        "answer": "Planter des fleurs.",
+        "choices": [
+          "Planter des fleurs.",
+          "Arroser le jardin.",
+          "Couper un arbre."
+        ],
+        "evidence": "en train de planter des fleurs",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où seront les nouvelles plantes ?",
+        "answer": "Au bord de la terrasse.",
+        "evidence": "pour le bord de la terrasse",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "reunion",
+    "sourceSituation": "reunion",
+    "title": "Présenter le projet",
+    "genre": "note de situation",
+    "text": [
+      "D’habitude, nous écrivons un compte rendu. À cet instant, nous sommes en",
+      "train de présenter le projet. La présentation a lieu dans la grande salle."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel document le groupe écrit-il habituellement ?",
+        "answer": "Un compte rendu.",
+        "choices": [
+          "Un compte rendu.",
+          "Un roman.",
+          "Un menu."
+        ],
+        "evidence": "D’habitude, nous écrivons un compte rendu.",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelle activité fait-il maintenant ?",
+        "answer": "Présenter le projet.",
+        "choices": [
+          "Présenter le projet.",
+          "Écrire le compte rendu.",
+          "Visiter le musée."
+        ],
+        "evidence": "en train de présenter le projet",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où se déroule la présentation ?",
+        "answer": "Dans la grande salle.",
+        "evidence": "La présentation a lieu dans la grande salle.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "commande",
+    "sourceSituation": "commande",
+    "title": "Au restaurant",
+    "genre": "note de situation",
+    "text": [
+      "D’habitude, nous servons les repas. À présent, nous sommes en train de",
+      "vérifier la commande. Un groupe de dix personnes arrive ce soir."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle est la tâche habituelle ?",
+        "answer": "Servir les repas.",
+        "choices": [
+          "Servir les repas.",
+          "Vérifier les commandes.",
+          "Décorer la salle."
+        ],
+        "evidence": "D’habitude, nous servons les repas.",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelle est la tâche actuelle ?",
+        "answer": "Vérifier la commande.",
+        "choices": [
+          "Vérifier la commande.",
+          "Servir les repas.",
+          "Faire les courses."
+        ],
+        "evidence": "en train de vérifier la commande",
+        "response": "choice"
+      },
+      {
+        "prompt": "Combien de personnes sont attendues ce soir ?",
+        "answer": "Dix personnes.",
+        "evidence": "Un groupe de dix personnes arrive ce soir.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "hab-lecture",
+    "sourceSituation": "hab-lecture",
+    "title": "Un courrier exceptionnel",
+    "genre": "note de situation",
+    "text": [
+      "D’habitude, vous lisez le journal. En ce moment, vous êtes en train d’écrire",
+      "une lettre. Elle est destinée à une association du quartier."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle est l’activité habituelle ?",
+        "answer": "Lire le journal.",
+        "choices": [
+          "Lire le journal.",
+          "Écrire une lettre.",
+          "Dessiner une carte."
+        ],
+        "evidence": "D’habitude, vous lisez le journal.",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelle est l’activité actuelle ?",
+        "answer": "Écrire une lettre.",
+        "choices": [
+          "Écrire une lettre.",
+          "Lire le journal.",
+          "Lire un roman."
+        ],
+        "evidence": "en train d’écrire une lettre",
+        "response": "choice"
+      },
+      {
+        "prompt": "À qui la lettre est-elle destinée ?",
+        "answer": "À une association du quartier.",
+        "evidence": "Elle est destinée à une association du quartier.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "hab-transport",
+    "sourceSituation": "hab-transport",
+    "title": "Un trajet différent",
+    "genre": "note de situation",
+    "text": [
+      "D’habitude, tu prends le bus. Aujourd’hui, tu es en train de marcher vers",
+      "l’école. La rue principale est fermée aux voitures."
+    ],
+    "questions": [
+      {
+        "prompt": "Comment te déplaces-tu habituellement ?",
+        "answer": "En bus.",
+        "choices": [
+          "En bus.",
+          "À pied.",
+          "À vélo."
+        ],
+        "evidence": "D’habitude, tu prends le bus.",
+        "response": "choice"
+      },
+      {
+        "prompt": "Comment te déplaces-tu aujourd’hui ?",
+        "answer": "À pied.",
+        "choices": [
+          "À pied.",
+          "En bus.",
+          "En voiture."
+        ],
+        "evidence": "en train de marcher",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelle est ta destination ?",
+        "answer": "L’école.",
+        "evidence": "vers l’école",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "hab-peinture",
+    "sourceSituation": "hab-peinture",
+    "title": "Une sortie culturelle",
+    "genre": "note de situation",
+    "text": [
+      "D’habitude, ils peignent des paysages. Aujourd’hui, ils sont en train de",
+      "visiter une exposition de portraits. La visite se déroule au musée."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle activité font-ils habituellement ?",
+        "answer": "Peindre des paysages.",
+        "choices": [
+          "Peindre des paysages.",
+          "Visiter une exposition.",
+          "Photographier des ponts."
+        ],
+        "evidence": "D’habitude, ils peignent des paysages.",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelle activité font-ils aujourd’hui ?",
+        "answer": "Visiter une exposition.",
+        "choices": [
+          "Visiter une exposition.",
+          "Peindre un paysage.",
+          "Construire une étagère."
+        ],
+        "evidence": "en train de visiter une exposition",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel est le sujet de l’exposition ?",
+        "answer": "Les portraits.",
+        "evidence": "une exposition de portraits",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "hab-bureau",
+    "sourceSituation": "hab-bureau",
+    "title": "Le matériel de la salle",
+    "genre": "note de situation",
+    "text": [
+      "D’habitude, nous travaillons au bureau. En ce moment, nous sommes en train",
+      "d’organiser le matériel dans la salle de cours. Les crayons vont dans une",
+      "boîte verte."
+    ],
+    "questions": [
+      {
+        "prompt": "Où le groupe travaille-t-il habituellement ?",
+        "answer": "Au bureau.",
+        "choices": [
+          "Au bureau.",
+          "Dans le jardin.",
+          "Au restaurant."
+        ],
+        "evidence": "D’habitude, nous travaillons au bureau.",
+        "response": "choice"
+      },
+      {
+        "prompt": "Que fait-il maintenant ?",
+        "answer": "Il organise le matériel.",
+        "choices": [
+          "Il organise le matériel.",
+          "Il écrit un rapport.",
+          "Il range le jardin."
+        ],
+        "evidence": "en train d’organiser le matériel",
+        "response": "choice"
+      },
+      {
+        "prompt": "Dans quelle boîte vont les crayons ?",
+        "answer": "Dans une boîte verte.",
+        "evidence": "Les crayons vont dans une boîte verte.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "hab-messages",
+    "sourceSituation": "hab-messages",
+    "title": "Un rendez-vous à prendre",
+    "genre": "note de situation",
+    "text": [
+      "D’habitude, vous envoyez des messages. Cette fois, vous êtes en train de",
+      "téléphoner au médecin. Vous avez besoin d’un rendez-vous pour vendredi."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel moyen utilisez-vous habituellement ?",
+        "answer": "Des messages.",
+        "choices": [
+          "Des messages.",
+          "Le téléphone.",
+          "Une lettre sur papier."
+        ],
+        "evidence": "D’habitude, vous envoyez des messages.",
+        "response": "choice"
+      },
+      {
+        "prompt": "Qui appelez-vous cette fois ?",
+        "answer": "Le médecin.",
+        "choices": [
+          "Le médecin.",
+          "La mairie.",
+          "Un collègue."
+        ],
+        "evidence": "en train de téléphoner au médecin",
+        "response": "choice"
+      },
+      {
+        "prompt": "Pour quel jour souhaitez-vous le rendez-vous ?",
+        "answer": "Pour vendredi.",
+        "evidence": "un rendez-vous pour vendredi",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "hab-reparer",
+    "sourceSituation": "hab-reparer",
+    "title": "À l’atelier",
+    "genre": "note de situation",
+    "text": [
+      "D’habitude, ils réparent des vélos. Aujourd’hui, ils sont en train de",
+      "construire une étagère pour leurs outils. Ils travaillent dans l’atelier."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel est leur travail habituel ?",
+        "answer": "Réparer des vélos.",
+        "choices": [
+          "Réparer des vélos.",
+          "Construire des étagères.",
+          "Nettoyer des vitres."
+        ],
+        "evidence": "D’habitude, ils réparent des vélos.",
+        "response": "choice"
+      },
+      {
+        "prompt": "Que construisent-ils aujourd’hui ?",
+        "answer": "Une étagère.",
+        "choices": [
+          "Une étagère.",
+          "Un vélo.",
+          "Une table."
+        ],
+        "evidence": "en train de construire une étagère",
+        "response": "choice"
+      },
+      {
+        "prompt": "À quoi servira l’étagère ?",
+        "answer": "À ranger leurs outils.",
+        "evidence": "une étagère pour leurs outils",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "hab-arroser",
+    "sourceSituation": "hab-arroser",
+    "title": "Le jardin et les outils",
+    "genre": "note de situation",
+    "text": [
+      "D’habitude, nous arrosons les plantes. À cet instant, nous sommes en train",
+      "de nettoyer les outils. Nous les rangerons ensuite dans le cabanon."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle est l’activité habituelle ?",
+        "answer": "Arroser les plantes.",
+        "choices": [
+          "Arroser les plantes.",
+          "Nettoyer les outils.",
+          "Peindre le cabanon."
+        ],
+        "evidence": "D’habitude, nous arrosons les plantes.",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelle est l’activité actuelle ?",
+        "answer": "Nettoyer les outils.",
+        "choices": [
+          "Nettoyer les outils.",
+          "Arroser les plantes.",
+          "Planter des fleurs."
+        ],
+        "evidence": "en train de nettoyer les outils",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où seront rangés les outils ?",
+        "answer": "Dans le cabanon.",
+        "evidence": "Nous les rangerons ensuite dans le cabanon.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "hab-linge",
+    "sourceSituation": "hab-linge",
+    "title": "Une petite réparation",
+    "genre": "note de situation",
+    "text": [
+      "D’habitude, je plie le linge. En ce moment, je suis en train de coudre un",
+      "bouton sur ma chemise. Le bouton est bleu."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle est l’activité habituelle ?",
+        "answer": "Plier le linge.",
+        "choices": [
+          "Plier le linge.",
+          "Coudre un bouton.",
+          "Laver les vitres."
+        ],
+        "evidence": "D’habitude, je plie le linge.",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelle est l’activité actuelle ?",
+        "answer": "Coudre un bouton.",
+        "choices": [
+          "Coudre un bouton.",
+          "Plier le linge.",
+          "Repasser une chemise."
+        ],
+        "evidence": "en train de coudre un bouton",
+        "response": "choice"
+      },
+      {
+        "prompt": "De quelle couleur est le bouton ?",
+        "answer": "Bleu.",
+        "evidence": "Le bouton est bleu.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "hab-tram",
+    "sourceSituation": "hab-tram",
+    "title": "Chercher un chemin à pied",
+    "genre": "note de situation",
+    "text": [
+      "D’habitude, elle prend le tram. En ce moment, elle est en train de chercher",
+      "un itinéraire à pied pour rejoindre la gare. Elle utilise un plan du",
+      "quartier."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel transport prend-elle habituellement ?",
+        "answer": "Le tram.",
+        "choices": [
+          "Le tram.",
+          "Le bus.",
+          "Le train."
+        ],
+        "evidence": "D’habitude, elle prend le tram.",
+        "response": "choice"
+      },
+      {
+        "prompt": "Que cherche-t-elle maintenant ?",
+        "answer": "Un itinéraire à pied.",
+        "choices": [
+          "Un itinéraire à pied.",
+          "Un horaire de tram.",
+          "Un billet de train."
+        ],
+        "evidence": "en train de chercher un itinéraire à pied",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel support utilise-t-elle ?",
+        "answer": "Un plan du quartier.",
+        "evidence": "Elle utilise un plan du quartier.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "hab-groupe",
+    "sourceSituation": "hab-groupe",
+    "title": "Un test individuel",
+    "genre": "note de situation",
+    "text": [
+      "D’habitude, ils travaillent en groupe. Aujourd’hui, ils sont en train de",
+      "passer un test individuel. Chacun a une feuille et un stylo."
+    ],
+    "questions": [
+      {
+        "prompt": "Comment travaillent-ils habituellement ?",
+        "answer": "En groupe.",
+        "choices": [
+          "En groupe.",
+          "Seuls.",
+          "À deux uniquement."
+        ],
+        "evidence": "D’habitude, ils travaillent en groupe.",
+        "response": "choice"
+      },
+      {
+        "prompt": "Comment se déroule le test ?",
+        "answer": "Individuellement.",
+        "choices": [
+          "Individuellement.",
+          "En groupe.",
+          "En binôme."
+        ],
+        "evidence": "un test individuel",
+        "response": "choice"
+      },
+      {
+        "prompt": "De quel matériel chacun dispose-t-il ?",
+        "answer": "D’une feuille et d’un stylo.",
+        "evidence": "Chacun a une feuille et un stylo.",
+        "response": "short"
+      }
+    ]
+  }
+]

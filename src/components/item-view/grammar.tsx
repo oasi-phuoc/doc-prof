@@ -18,8 +18,9 @@ export function GrammarQuestionView({ question:q, mode }: {question:GrammarQuest
   const comparisonGap=u.kind==='completion'&&u.source.typeId==='gram-ex-f9-qcm-verbe'&&q.presentation==='gap'
   const pastGap=u.kind==='completion'&&q.presentation==='gap'&&/^gram-ex-(?:pc-idee|pc-avoir|pc-etre|imparfait|pqp|double-aux|pc-pronominaux|accord-pp)-qcm-/.test(u.source.typeId)
   const pronounGap=u.kind==='completion'&&q.presentation==='gap'&&/^gram-ex-i[12356789]-qcm-/.test(u.source.typeId)
+  const actionGap=u.kind==='completion'&&q.presentation==='gap'&&/^gram-ex-j[123]-qcm-/.test(u.source.typeId)
   const nounGap=u.kind==='completion'&&(['gram-ex-f12-qcm-verbe','gram-ex-f13-qcm-verbe','gram-ex-g4-qcm-verbe'].includes(u.source.typeId)||['gram-ex-f11-qcm-conj','gram-ex-g6-qcm-verbe'].includes(u.source.typeId)&&u.source.partition==='a2')&&q.presentation==='gap'
-  return <div className={`grammar-question${u.responseLines===2?' grammar-two-lines':''}${comparisonGap?' grammar-comparison-gap'+(u.source.partition==='a2'?' grammar-comparison-gap-a2':''):''}${nounGap||pastGap||pronounGap?' grammar-noun-group-gap':''}`}>
+  return <div className={`grammar-question${u.responseLines===2?' grammar-two-lines':''}${comparisonGap?' grammar-comparison-gap'+(u.source.partition==='a2'?' grammar-comparison-gap-a2':''):''}${nounGap||pastGap||pronounGap||actionGap?' grammar-noun-group-gap':''}`}>
     <GrammarImageSupports supports={u.imageSupports}/>
     {u.cue?<p className="grammar-cue">{u.cue}</p>:null}
     {u.kind==='completion'?<>

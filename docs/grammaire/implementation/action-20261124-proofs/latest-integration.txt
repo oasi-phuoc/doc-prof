@@ -1,0 +1,15 @@
+Updating ec312e03e..8bf99bd0f
+Fast-forward
+ docs/tcf/avancement-cahier-des-charges-20261122.md |   4 +-
+ docs/tcf/avancement-images.md                      |   2 +-
+ docs/tcf/images-generees.json                      |  12 +-
+ docs/tcf/lots-images-20261124/README.md            |   4 +-
+ .../historique-lot01-preparation.json              | 149 ++++++++++++++-------
+ docs/tcf/lots-images-20261124/lots.json            |  14 +-
+ .../lots-images-20261124/reprise-question39.json   |  27 ++++
+ scripts/activate-tcf-image-batch-20261124.py       |   1 +
+ scripts/check-tcf-image-preparation-20261124.py    |   5 +-
+ scripts/publish-tcf-image-batch-20261124.py        |   3 +-
+ scripts/report-tcf-image-batches-20261124.py       |  36 +++--
+ 11 files changed, 190 insertions(+), 67 deletions(-)
+ create mode 100644 docs/tcf/lots-images-20261124/reprise-question39.json

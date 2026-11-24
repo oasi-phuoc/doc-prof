@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-24",
+  "timezone": "Europe/Zurich",
+  "baseCommit": "ec312e03e",
+  "integratedMain": "8bf99bd0f",
+  "status": "passed_for_pilot_human_approval_pending",
+  "scope": "Parler d’une action only; gamemode development paused.",
+  "delivery": {
+    "activities": 13,
+    "banks": 19,
+    "completeThemeOfferings": 24,
+    "plannedThemeOfferings": 24,
+    "selectableUnits": 890,
+    "variants": 1220,
+    "authoredSourceRows": 250,
+    "readingDocuments": 40,
+    "documentQuestions": 120,
+    "sourceReuse": "Cases reused across mechanics; some j2 facts have current and past anchors. Forty reading adaptations and ten subject corrections are not additional independent stories.",
+    "subjectCorrectionAdaptations": 10,
+    "illustratedSituations": 50,
+    "distinctReusedImages": 10,
+    "newImmutableImageCopies": 10,
+    "teacherApprovedUnits": 0
+  },
+  "checks": {
+    "actionUnitAndIsolatedBuild": "passed",
+    "globalLevels": "passed",
+    "globalContracts": "passed",
+    "questionsRegression": "passed",
+    "pronomsRegression": "passed",
+    "passeRegression": "passed",
+    "alimentsRegression": "passed",
+    "canonicalErrorSpans": 50,
+    "gerundSubjectCorrections": 10,
+    "habitTargets": 25,
+    "currentProgressiveTargets": 25,
+    "recentPresentAnchorsA2": 25,
+    "recentPastAnchorsA2": 25,
+    "oralGerund": "The exact infinitive is explicitly given; the model includes the factual follow-up answer.",
+    "browser": {
+      "status": "passed",
+      "offerings": 24,
+      "printedStudentAndCorrectionResponseUnits": 2440,
+      "printedAnswerFields": 2440,
+      "a4Sheets": 2440,
+      "overflow": false,
+      "firstPageWorstCaseBudget": true,
+      "studentModelsHidden": true,
+      "imagesDecoded": true,
+      "javascriptErrors": []
+    },
+    "actualPdfPreviews": 18,
+    "pdfReview": "Rendered PDFs rasterized and inspected directly or on contact sheets, including targeted common-subject and past-anchor corrections.",
+    "typesAndProductionBuild": "passed",
+    "lint": "passed with the same warning set as the previous pronoun delivery",
+    "gamePoolCatalog": "765 existing types verified, no gamemode implementation added",
+    "secrets": "See action-20261124-proofs/secrets-results.json; no findings within its declared scope."
+  },
+  "preservation": {
+    "protectedTheoryAndCoFiles": 276,
+    "previousGradedBankFiles": 73,
+    "otherActivityAndOfferingRows": "unchanged",
+    "notionLevels": "unchanged",
+    "otherImageObligations": "unchanged",
+    "originalCatalogueImages": "byte-identical immutable copies; originals unchanged",
+    "upstreamTcfPathsPreserved": 11,
+    "legacyWrittenBanksRemoved": [
+      "j1",
+      "j2",
+      "j3"
+    ],
+    "remainingLegacyWrittenBanks": 22,
+    "legacyCommunicationRemoved": [
+      "j1"
+    ],
+    "remainingLegacyCommunicationGroups": 4,
+    "retiredNotions": 76,
+    "savedWorksheetsAccessed": false,
+    "savedWorksheetsDeleted": false,
+    "maintenanceSqlExecuted": false,
+    "workerDeployed": false,
+    "stashesPreserved": 3
+  },
+  "globalCoverage": {
+    "activities": 325,
+    "offerings": 466,
+    "selectableUnits": 17650,
+    "variants": 23870,
+    "documents": 500,
+    "documentQuestions": 1820
+  },
+  "evidenceDirectory": "docs/grammaire/implementation/action-20261124-proofs",
+  "humanReview": "pending",
+  "remaining": [
+    "Teacher approval",
+    "Physical print and classroom hardware checks"
+  ],
+  "nextTheme": "Parler de l’avenir; not started in this delivery"
+}
