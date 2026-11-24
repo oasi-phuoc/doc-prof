@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-24",
+  "timezone": "Europe/Zurich",
+  "baseCommit": "fdf02a865",
+  "status": "passed_for_pilot_human_approval_pending",
+  "scope": "Parler de l’avenir only; gamemode development paused.",
+  "delivery": {
+    "activities": 22,
+    "banks": 22,
+    "completeThemeOfferings": 27,
+    "plannedThemeOfferings": 27,
+    "selectableUnits": 1010,
+    "variants": 1380,
+    "authoredSourceRows": 250,
+    "readingDocuments": 60,
+    "documentQuestions": 180,
+    "sourceReuse": "Situations shared across mechanics; reading documents adapt source situations. Paired hypothesis targets are not counted as independent stories. Each oral/dialogue bank contains fifty distinct factual stimuli.",
+    "openDialogueSituations": 100,
+    "mediaGenerated": 0,
+    "teacherApprovedUnits": 0
+  },
+  "checks": {
+    "actionRegression": "passed",
+    "questionsRegression": "passed",
+    "pronomsRegression": "passed",
+    "passeRegression": "passed",
+    "alimentsRegression": "passed",
+    "globalLevels": "passed",
+    "globalContracts": "passed",
+    "futureUnitAndIsolatedBuild": "passed",
+    "canonicalErrorSpans": 50,
+    "nearAndSimpleComparisonTargets": {
+      "near": 25,
+      "simple": 25
+    },
+    "conditionalTargets": {
+      "condition": 25,
+      "result": 25
+    },
+    "anteriorAuxiliaries": {
+      "avoir": 30,
+      "etre": 20
+    },
+    "language": "Je/j’ elisions checked in all full models and both comparison alternatives; si elle/si elles remain unelided; orthographic alternatives accepted without duplicate correct QCM options.",
+    "browser": {
+      "status": "passed",
+      "offerings": 27,
+      "printedStudentAndCorrectionResponseUnits": 2760,
+      "printedAnswerFields": 2760,
+      "a4Sheets": 2760,
+      "overflow": false,
+      "firstPageWorstCaseBudget": true,
+      "studentModelsHidden": true,
+      "javascriptErrors": []
+    },
+    "actualPdfPreviews": 18,
+    "pdfReview": "Actual PDFs rasterized and visually inspected; current contact sheets preserve the checked views.",
+    "initialLayoutFindings": "Comparison oral correction and hypothetical dialogue were too tall for the first-page budget. Redundant explanations and role/task wording were shortened; both valid future models, facts and criteria remain. See initial-layout-review; final full-bank report passes.",
+    "typesAndProductionBuild": "passed",
+    "lint": "passed with no new warnings compared with the action delivery",
+    "gamePoolCatalog": "765 existing types verified; no gamemode development",
+    "secrets": "See avenir-20261124-proofs/secrets-results.json for scope and findings."
+  },
+  "preservation": {
+    "protectedTheoryAndCoFiles": 276,
+    "previousGradedBankFiles": 76,
+    "otherActivityAndOfferingRows": "unchanged",
+    "notionLevels": "unchanged",
+    "imageObligations": "unchanged",
+    "originalMedia": "unchanged",
+    "legacyWrittenBanksRemoved": [
+      "futur-proche",
+      "futur-simple",
+      "futur-proche-ou-simple",
+      "futur-anterieur",
+      "hypothese-futur"
+    ],
+    "remainingLegacyWrittenBanks": 17,
+    "legacyCommunicationRemoved": [
+      "futur-proche"
+    ],
+    "remainingLegacyCommunicationGroups": 3,
+    "retiredNotions": 81,
+    "savedWorksheetsAccessed": false,
+    "savedWorksheetsDeleted": false,
+    "maintenanceSqlExecuted": false,
+    "workerDeployed": false,
+    "stashesPreserved": 3
+  },
+  "globalCoverage": {
+    "activities": 347,
+    "offerings": 493,
+    "selectableUnits": 18660,
+    "variants": 25250,
+    "documents": 560,
+    "documentQuestions": 2000
+  },
+  "evidenceDirectory": "docs/grammaire/implementation/avenir-20261124-proofs",
+  "humanReview": "pending",
+  "remaining": [
+    "Teacher approval",
+    "Physical print and classroom hardware checks"
+  ],
+  "nextTheme": "Parler des faits divers; not started in this delivery"
+}

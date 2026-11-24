@@ -1,0 +1,805 @@
+[
+  {
+    "id": "dossier",
+    "sourceSituation": "dossier",
+    "title": "Préparer puis envoyer",
+    "genre": "note de situation",
+    "text": [
+      "Demain, quand j’aurai fini le dossier, je l’enverrai à la responsable.",
+      "Elle attend ce document pour préparer la réunion de vendredi."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle action sera achevée avant l’envoi ?",
+        "answer": "Finir le dossier.",
+        "choices": [
+          "Finir le dossier.",
+          "Recevoir une réponse.",
+          "Commencer la réunion."
+        ],
+        "evidence": "quand j’aurai fini le dossier",
+        "response": "choice"
+      },
+      {
+        "prompt": "Que fera ensuite la personne ?",
+        "answer": "Envoyer le dossier.",
+        "choices": [
+          "Envoyer le dossier.",
+          "Partir en voyage.",
+          "Ouvrir le local."
+        ],
+        "evidence": "je l’enverrai à la responsable",
+        "response": "choice"
+      },
+      {
+        "prompt": "Pour quel événement la responsable attend-elle le document ?",
+        "answer": "La réunion de vendredi.",
+        "evidence": "pour préparer la réunion de vendredi",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "repas",
+    "sourceSituation": "repas",
+    "title": "Le programme du soir",
+    "genre": "note de situation",
+    "text": [
+      "Ce soir, quand tu auras terminé le repas, tu sortiras avec tes amis. Vous",
+      "avez rendez-vous devant le cinéma à vingt heures."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle action précède la sortie ?",
+        "answer": "Terminer le repas.",
+        "choices": [
+          "Terminer le repas.",
+          "Voir le film.",
+          "Acheter un billet."
+        ],
+        "evidence": "quand tu auras terminé le repas",
+        "response": "choice"
+      },
+      {
+        "prompt": "Que feras-tu après le repas ?",
+        "answer": "Sortir avec mes amis.",
+        "choices": [
+          "Sortir avec mes amis.",
+          "Préparer le déjeuner.",
+          "Ranger le garage."
+        ],
+        "evidence": "tu sortiras avec tes amis",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où est le rendez-vous ?",
+        "answer": "Devant le cinéma.",
+        "evidence": "rendez-vous devant le cinéma",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "livre",
+    "sourceSituation": "livre",
+    "title": "Un livre à rendre",
+    "genre": "note de situation",
+    "text": [
+      "Vendredi, quand elle aura lu le livre, elle le rendra à la bibliothèque.",
+      "Elle a réservé un autre roman pour la semaine suivante."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle action sera achevée avant le retour du livre ?",
+        "answer": "Lire le livre.",
+        "choices": [
+          "Lire le livre.",
+          "Lire le prochain roman.",
+          "Quitter la bibliothèque."
+        ],
+        "evidence": "quand elle aura lu le livre",
+        "response": "choice"
+      },
+      {
+        "prompt": "Que fera-t-elle ensuite ?",
+        "answer": "Rendre le livre.",
+        "choices": [
+          "Rendre le livre.",
+          "Acheter le livre.",
+          "Écrire un résumé."
+        ],
+        "evidence": "elle le rendra à la bibliothèque",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel groupe est au futur antérieur ?",
+        "answer": "aura lu",
+        "evidence": "elle aura lu le livre",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "billets",
+    "sourceSituation": "billets",
+    "title": "La visite de samedi",
+    "genre": "note de situation",
+    "text": [
+      "Samedi, quand vous aurez acheté les billets, vous entrerez au musée.",
+      "L’exposition se trouve au premier étage. La visite durera deux heures."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle action précède l’entrée ?",
+        "answer": "Acheter les billets.",
+        "choices": [
+          "Acheter les billets.",
+          "Voir l’exposition.",
+          "Ranger le carnet."
+        ],
+        "evidence": "quand vous aurez acheté les billets",
+        "response": "choice"
+      },
+      {
+        "prompt": "Que ferez-vous ensuite ?",
+        "answer": "Entrer au musée.",
+        "choices": [
+          "Entrer au musée.",
+          "Quitter le musée.",
+          "Fermer la salle."
+        ],
+        "evidence": "vous entrerez au musée",
+        "response": "choice"
+      },
+      {
+        "prompt": "À quel étage se trouve l’exposition ?",
+        "answer": "Au premier étage.",
+        "evidence": "L’exposition se trouve au premier étage.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "lettre",
+    "sourceSituation": "lettre",
+    "title": "Le courrier de lundi",
+    "genre": "note de situation",
+    "text": [
+      "Lundi, quand ils auront écrit la lettre, ils la posteront. La lettre est",
+      "destinée à une association. La poste ouvre à neuf heures."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle action précède l’envoi ?",
+        "answer": "Écrire la lettre.",
+        "choices": [
+          "Écrire la lettre.",
+          "Recevoir une réponse.",
+          "Lire un roman."
+        ],
+        "evidence": "quand ils auront écrit la lettre",
+        "response": "choice"
+      },
+      {
+        "prompt": "Que feront-ils ensuite ?",
+        "answer": "Poster la lettre.",
+        "choices": [
+          "Poster la lettre.",
+          "Lire le journal.",
+          "Préparer le repas."
+        ],
+        "evidence": "ils la posteront",
+        "response": "choice"
+      },
+      {
+        "prompt": "À qui la lettre est-elle destinée ?",
+        "answer": "À une association.",
+        "evidence": "La lettre est destinée à une association.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "table",
+    "sourceSituation": "table",
+    "title": "Accueillir les invités",
+    "genre": "note de situation",
+    "text": [
+      "Dimanche, une fois qu’elles auront mis la table, elles accueilleront les",
+      "invités. Le repas commencera à midi dans le jardin."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle préparation sera achevée avant l’accueil ?",
+        "answer": "Mettre la table.",
+        "choices": [
+          "Mettre la table.",
+          "Laver la vaisselle.",
+          "Servir le dessert."
+        ],
+        "evidence": "une fois qu’elles auront mis la table",
+        "response": "choice"
+      },
+      {
+        "prompt": "Que feront-elles ensuite ?",
+        "answer": "Accueillir les invités.",
+        "choices": [
+          "Accueillir les invités.",
+          "Quitter la maison.",
+          "Acheter des fleurs."
+        ],
+        "evidence": "elles accueilleront les invités",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où aura lieu le repas ?",
+        "answer": "Dans le jardin.",
+        "evidence": "Le repas commencera à midi dans le jardin.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "exercice",
+    "sourceSituation": "exercice",
+    "title": "Comparer les réponses",
+    "genre": "note de situation",
+    "text": [
+      "Demain, quand nous aurons fait l’exercice, nous comparerons nos réponses",
+      "en classe. Chaque groupe aura une feuille pour noter les différences."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle action sera terminée en premier ?",
+        "answer": "Faire l’exercice.",
+        "choices": [
+          "Faire l’exercice.",
+          "Comparer les réponses.",
+          "Corriger les différences."
+        ],
+        "evidence": "quand nous aurons fait l’exercice",
+        "response": "choice"
+      },
+      {
+        "prompt": "Que fera ensuite le groupe ?",
+        "answer": "Comparer ses réponses.",
+        "choices": [
+          "Comparer ses réponses.",
+          "Fermer la classe.",
+          "Commencer une visite."
+        ],
+        "evidence": "nous comparerons nos réponses",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel support servira à noter les différences ?",
+        "answer": "Une feuille.",
+        "evidence": "une feuille pour noter les différences",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "photos",
+    "sourceSituation": "photos",
+    "title": "À la fin de la visite",
+    "genre": "note de situation",
+    "text": [
+      "Quand ils auront pris les photos du pont, ils rangeront l’appareil dans",
+      "son étui. Ils rejoindront ensuite le groupe près de la gare."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle action sera achevée avant le rangement ?",
+        "answer": "Prendre les photos.",
+        "choices": [
+          "Prendre les photos.",
+          "Retrouver le groupe.",
+          "Rentrer à la maison."
+        ],
+        "evidence": "Quand ils auront pris les photos",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel objet sera rangé ensuite ?",
+        "answer": "L’appareil.",
+        "choices": [
+          "L’appareil.",
+          "Le carnet.",
+          "Le manteau."
+        ],
+        "evidence": "ils rangeront l’appareil",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où rejoindront-ils le groupe ?",
+        "answer": "Près de la gare.",
+        "evidence": "le groupe près de la gare",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "valises",
+    "sourceSituation": "valises",
+    "title": "Avant de prendre le taxi",
+    "genre": "note de situation",
+    "text": [
+      "Demain matin, quand elles auront préparé les valises, elles appelleront un",
+      "taxi. Le taxi les conduira à la gare. Leur train part à onze heures."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle action sera achevée avant l’appel ?",
+        "answer": "Préparer les valises.",
+        "choices": [
+          "Préparer les valises.",
+          "Acheter les billets.",
+          "Prendre le train."
+        ],
+        "evidence": "quand elles auront préparé les valises",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel transport appelleront-elles ensuite ?",
+        "answer": "Un taxi.",
+        "choices": [
+          "Un taxi.",
+          "Un bus.",
+          "Un tram."
+        ],
+        "evidence": "elles appelleront un taxi",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où le taxi les conduira-t-il ?",
+        "answer": "À la gare.",
+        "evidence": "Le taxi les conduira à la gare.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "reponse",
+    "sourceSituation": "reponse",
+    "title": "Avant de quitter le bureau",
+    "genre": "note de situation",
+    "text": [
+      "Ce soir, quand ils auront répondu aux messages, ils quitteront le bureau.",
+      "Ils fermeront les fenêtres avant de partir."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle tâche sera achevée avant le départ ?",
+        "answer": "Répondre aux messages.",
+        "choices": [
+          "Répondre aux messages.",
+          "Prendre le repas.",
+          "Réserver un billet."
+        ],
+        "evidence": "quand ils auront répondu aux messages",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel lieu quitteront-ils ensuite ?",
+        "answer": "Le bureau.",
+        "choices": [
+          "Le bureau.",
+          "Le musée.",
+          "Le restaurant."
+        ],
+        "evidence": "ils quitteront le bureau",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel groupe est au futur antérieur ?",
+        "answer": "auront répondu",
+        "evidence": "ils auront répondu",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "arrivee-elle",
+    "sourceSituation": "arrivee-elle",
+    "title": "Un appel à l’arrivée",
+    "genre": "note de situation",
+    "text": [
+      "Demain, quand elle sera arrivée à la gare, elle appellera son amie. La",
+      "voyageuse porte un manteau bleu. Son amie l’attendra devant l’entrée."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel événement précède l’appel ?",
+        "answer": "L’arrivée à la gare.",
+        "choices": [
+          "L’arrivée à la gare.",
+          "Le départ du train.",
+          "La fin de la visite."
+        ],
+        "evidence": "quand elle sera arrivée à la gare",
+        "response": "choice"
+      },
+      {
+        "prompt": "Qui appellera-t-elle ensuite ?",
+        "answer": "Son amie.",
+        "choices": [
+          "Son amie.",
+          "Le médecin.",
+          "Le guide."
+        ],
+        "evidence": "elle appellera son amie",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel groupe est au futur antérieur ?",
+        "answer": "sera arrivée",
+        "evidence": "elle sera arrivée",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "entree-elles",
+    "sourceSituation": "entree-elles",
+    "title": "Le début du film",
+    "genre": "note de situation",
+    "text": [
+      "Les deux visiteuses sont des femmes. Quand elles seront entrées dans la",
+      "salle, le film commencera. Elles ont réservé des places au premier rang."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel événement précède le début du film ?",
+        "answer": "L’entrée des visiteuses.",
+        "choices": [
+          "L’entrée des visiteuses.",
+          "Le départ des visiteuses.",
+          "La fin du film."
+        ],
+        "evidence": "Quand elles seront entrées dans la salle",
+        "response": "choice"
+      },
+      {
+        "prompt": "Que se passera-t-il ensuite ?",
+        "answer": "Le film commencera.",
+        "choices": [
+          "Le film commencera.",
+          "La salle fermera.",
+          "Le repas sera servi."
+        ],
+        "evidence": "le film commencera",
+        "response": "choice"
+      },
+      {
+        "prompt": "À quel rang ont-elles réservé ?",
+        "answer": "Au premier rang.",
+        "evidence": "des places au premier rang",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "retour-je",
+    "sourceSituation": "retour-je",
+    "title": "Le retour de la voyageuse",
+    "genre": "note de situation",
+    "text": [
+      "Je suis une femme. Quand je serai rentrée chez moi, je préparerai le",
+      "dîner. J’ai prévu une soupe et du pain pour ce soir."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel événement précède la préparation ?",
+        "answer": "Le retour à la maison.",
+        "choices": [
+          "Le retour à la maison.",
+          "La fin du dîner.",
+          "Le départ en voyage."
+        ],
+        "evidence": "Quand je serai rentrée chez moi",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel repas sera préparé ensuite ?",
+        "answer": "Le dîner.",
+        "choices": [
+          "Le dîner.",
+          "Le petit-déjeuner.",
+          "Le goûter."
+        ],
+        "evidence": "je préparerai le dîner",
+        "response": "choice"
+      },
+      {
+        "prompt": "Pourquoi rentrée prend-il un e dans le texte ?",
+        "answer": "La personne qui parle est une femme.",
+        "evidence": "Je suis une femme.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "gare-nous",
+    "sourceSituation": "gare-nous",
+    "title": "L’arrivée de trois amies",
+    "genre": "note de situation",
+    "text": [
+      "Nous sommes trois femmes. Quand nous serons arrivées à la gare, nous",
+      "achèterons les billets pour Lyon. Le guichet se trouve à droite de",
+      "l’entrée."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel événement précède l’achat ?",
+        "answer": "L’arrivée à la gare.",
+        "choices": [
+          "L’arrivée à la gare.",
+          "Le départ du train.",
+          "La fin du séjour."
+        ],
+        "evidence": "Quand nous serons arrivées à la gare",
+        "response": "choice"
+      },
+      {
+        "prompt": "Que fera ensuite le groupe ?",
+        "answer": "Acheter les billets.",
+        "choices": [
+          "Acheter les billets.",
+          "Rendre les billets.",
+          "Fermer le guichet."
+        ],
+        "evidence": "nous achèterons les billets",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où se trouve le guichet ?",
+        "answer": "À droite de l’entrée.",
+        "evidence": "Le guichet se trouve à droite de l’entrée.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "venue-vous",
+    "sourceSituation": "venue-vous",
+    "title": "Un badge à recevoir",
+    "genre": "note de situation",
+    "text": [
+      "Vous êtes un seul homme. Quand vous serez venu à l’accueil, vous recevrez",
+      "votre badge. L’accueil ouvre à huit heures et se trouve au",
+      "rez-de-chaussée."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle action précède la réception du badge ?",
+        "answer": "Venir à l’accueil.",
+        "choices": [
+          "Venir à l’accueil.",
+          "Quitter le bâtiment.",
+          "Rendre le badge."
+        ],
+        "evidence": "Quand vous serez venu à l’accueil",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel objet recevrez-vous ensuite ?",
+        "answer": "Un badge.",
+        "choices": [
+          "Un badge.",
+          "Un livre.",
+          "Une clé."
+        ],
+        "evidence": "vous recevrez votre badge",
+        "response": "choice"
+      },
+      {
+        "prompt": "Pourquoi venu n’a-t-il pas de s ici ?",
+        "answer": "Vous désigne un seul homme.",
+        "evidence": "Vous êtes un seul homme.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "montee-elle",
+    "sourceSituation": "montee-elle",
+    "title": "Au premier étage",
+    "genre": "note de situation",
+    "text": [
+      "Elle est une femme. Quand elle sera montée au premier étage, elle frappera",
+      "à la porte du bureau. La responsable l’attendra à l’intérieur."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel déplacement précède le geste à la porte ?",
+        "answer": "Monter au premier étage.",
+        "choices": [
+          "Monter au premier étage.",
+          "Descendre au sous-sol.",
+          "Sortir du bâtiment."
+        ],
+        "evidence": "Quand elle sera montée au premier étage",
+        "response": "choice"
+      },
+      {
+        "prompt": "Que fera-t-elle ensuite ?",
+        "answer": "Frapper à la porte.",
+        "choices": [
+          "Frapper à la porte.",
+          "Ouvrir une fenêtre.",
+          "Téléphoner au médecin."
+        ],
+        "evidence": "elle frappera à la porte",
+        "response": "choice"
+      },
+      {
+        "prompt": "Qui l’attendra dans le bureau ?",
+        "answer": "La responsable.",
+        "evidence": "La responsable l’attendra à l’intérieur.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "installation-elles",
+    "sourceSituation": "installation-elles",
+    "title": "Avant le travail",
+    "genre": "note de situation",
+    "text": [
+      "Les deux collègues sont des femmes. Quand elles se seront installées,",
+      "elles commenceront à travailler. Leurs ordinateurs sont déjà sur les",
+      "bureaux."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle action précède le travail ?",
+        "answer": "S’installer.",
+        "choices": [
+          "S’installer.",
+          "Éteindre les ordinateurs.",
+          "Quitter le bureau."
+        ],
+        "evidence": "Quand elles se seront installées",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelle activité commencera ensuite ?",
+        "answer": "Le travail.",
+        "choices": [
+          "Le travail.",
+          "La promenade.",
+          "Le repas."
+        ],
+        "evidence": "elles commenceront à travailler",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où sont les ordinateurs ?",
+        "answer": "Sur les bureaux.",
+        "evidence": "Leurs ordinateurs sont déjà sur les bureaux.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "reveil-je",
+    "sourceSituation": "reveil-je",
+    "title": "Le programme du matin",
+    "genre": "note de situation",
+    "text": [
+      "Je suis un homme. Quand je me serai réveillé, je prendrai mon",
+      "petit-déjeuner. Je préparerai du thé et du pain avant de partir au cours."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel événement précède le repas ?",
+        "answer": "Le réveil.",
+        "choices": [
+          "Le réveil.",
+          "Le départ au cours.",
+          "La fin du cours."
+        ],
+        "evidence": "Quand je me serai réveillé",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel repas sera pris ensuite ?",
+        "answer": "Le petit-déjeuner.",
+        "choices": [
+          "Le petit-déjeuner.",
+          "Le déjeuner.",
+          "Le dîner."
+        ],
+        "evidence": "je prendrai mon petit-déjeuner",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel groupe est au futur antérieur ?",
+        "answer": "me serai réveillé",
+        "evidence": "je me serai réveillé",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "arrivee-vous",
+    "sourceSituation": "arrivee-vous",
+    "title": "Retrouver le guide",
+    "genre": "note de situation",
+    "text": [
+      "Vous êtes une seule femme. Quand vous serez arrivée au musée, vous",
+      "retrouverez le guide près de la caisse. La visite commencera à dix heures."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel événement précède la rencontre avec le guide ?",
+        "answer": "L’arrivée au musée.",
+        "choices": [
+          "L’arrivée au musée.",
+          "Le départ du musée.",
+          "La fin de la visite."
+        ],
+        "evidence": "Quand vous serez arrivée au musée",
+        "response": "choice"
+      },
+      {
+        "prompt": "Qui retrouverez-vous ensuite ?",
+        "answer": "Le guide.",
+        "choices": [
+          "Le guide.",
+          "Le médecin.",
+          "Le chauffeur."
+        ],
+        "evidence": "vous retrouverez le guide",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où sera le guide ?",
+        "answer": "Près de la caisse.",
+        "evidence": "le guide près de la caisse",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "entree-groupe",
+    "sourceSituation": "entree-groupe",
+    "title": "Le début du cours",
+    "genre": "note de situation",
+    "text": [
+      "Notre groupe est mixte. Quand nous serons entrés dans la salle, le cours",
+      "commencera. Chaque personne apportera son cahier et un stylo."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel événement précède le début du cours ?",
+        "answer": "L’entrée du groupe.",
+        "choices": [
+          "L’entrée du groupe.",
+          "La sortie du groupe.",
+          "La pause."
+        ],
+        "evidence": "Quand nous serons entrés dans la salle",
+        "response": "choice"
+      },
+      {
+        "prompt": "Que se passera-t-il ensuite ?",
+        "answer": "Le cours commencera.",
+        "choices": [
+          "Le cours commencera.",
+          "La salle fermera.",
+          "Le groupe partira."
+        ],
+        "evidence": "le cours commencera",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel matériel chaque personne apportera-t-elle ?",
+        "answer": "Son cahier et un stylo.",
+        "evidence": "Chaque personne apportera son cahier et un stylo.",
+        "response": "short"
+      }
+    ]
+  }
+]

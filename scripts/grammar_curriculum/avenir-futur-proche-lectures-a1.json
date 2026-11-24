@@ -1,0 +1,802 @@
+[
+  {
+    "id": "repas",
+    "sourceSituation": "repas",
+    "title": "Le dîner de ce soir",
+    "genre": "message",
+    "text": [
+      "Ce soir, je vais préparer une soupe. Les carottes sont déjà dans la",
+      "cuisine. Mon amie viendra dîner à dix-neuf heures."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel plat est prévu ?",
+        "answer": "Une soupe.",
+        "choices": [
+          "Une soupe.",
+          "Une salade.",
+          "Un gâteau."
+        ],
+        "evidence": "préparer une soupe",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quand la préparation est-elle prévue ?",
+        "answer": "Ce soir.",
+        "choices": [
+          "Ce soir.",
+          "Demain matin.",
+          "Dimanche."
+        ],
+        "evidence": "Ce soir",
+        "response": "choice"
+      },
+      {
+        "prompt": "À quelle heure viendra l’amie ?",
+        "answer": "À dix-neuf heures.",
+        "evidence": "Mon amie viendra dîner à dix-neuf heures.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "bus",
+    "sourceSituation": "bus",
+    "title": "Le trajet de demain",
+    "genre": "message",
+    "text": [
+      "Demain, tu vas prendre le bus pour aller à l’école. L’arrêt est devant la",
+      "poste. Ton cours commence à neuf heures."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel transport est prévu ?",
+        "answer": "Le bus.",
+        "choices": [
+          "Le bus.",
+          "Le train.",
+          "Le tram."
+        ],
+        "evidence": "prendre le bus",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelle est la destination ?",
+        "answer": "L’école.",
+        "choices": [
+          "L’école.",
+          "La mairie.",
+          "Le musée."
+        ],
+        "evidence": "pour aller à l’école",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où est l’arrêt ?",
+        "answer": "Devant la poste.",
+        "evidence": "L’arrêt est devant la poste.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "lettre",
+    "sourceSituation": "lettre",
+    "title": "Un courrier à préparer",
+    "genre": "message",
+    "text": [
+      "Cet après-midi, elle va écrire une lettre à son amie. Elle a acheté une",
+      "enveloppe bleue. Elle postera la lettre demain."
+    ],
+    "questions": [
+      {
+        "prompt": "Que va-t-elle écrire ?",
+        "answer": "Une lettre.",
+        "choices": [
+          "Une lettre.",
+          "Une recette.",
+          "Un programme."
+        ],
+        "evidence": "écrire une lettre",
+        "response": "choice"
+      },
+      {
+        "prompt": "À qui la lettre est-elle destinée ?",
+        "answer": "À son amie.",
+        "choices": [
+          "À son amie.",
+          "Au médecin.",
+          "À sa voisine."
+        ],
+        "evidence": "à son amie",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quand postera-t-elle la lettre ?",
+        "answer": "Demain.",
+        "evidence": "Elle postera la lettre demain.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "course",
+    "sourceSituation": "course",
+    "title": "Après le cours",
+    "genre": "message",
+    "text": [
+      "Après le cours, il va courir au parc. Il a mis ses chaussures de sport",
+      "dans son sac. Son ami l’attendra à l’entrée du parc."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle activité est prévue ?",
+        "answer": "Courir.",
+        "choices": [
+          "Courir.",
+          "Nager.",
+          "Faire du vélo."
+        ],
+        "evidence": "courir au parc",
+        "response": "choice"
+      },
+      {
+        "prompt": "À quel moment ira-t-il courir ?",
+        "answer": "Après le cours.",
+        "choices": [
+          "Après le cours.",
+          "Avant le cours.",
+          "Pendant le cours."
+        ],
+        "evidence": "Après le cours",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où son ami l’attendra-t-il ?",
+        "answer": "À l’entrée du parc.",
+        "evidence": "Son ami l’attendra à l’entrée du parc.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "bibliotheque",
+    "sourceSituation": "bibliotheque",
+    "title": "Une sortie du groupe",
+    "genre": "message",
+    "text": [
+      "Demain, nous allons aller à la bibliothèque. Nous allons chercher des",
+      "livres de cuisine. Le rendez-vous est à dix heures devant l’école."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel lieu le groupe visitera-t-il ?",
+        "answer": "La bibliothèque.",
+        "choices": [
+          "La bibliothèque.",
+          "Le cinéma.",
+          "Le marché."
+        ],
+        "evidence": "aller à la bibliothèque",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel type de livres cherche-t-il ?",
+        "answer": "Des livres de cuisine.",
+        "choices": [
+          "Des livres de cuisine.",
+          "Des romans.",
+          "Des guides de voyage."
+        ],
+        "evidence": "des livres de cuisine",
+        "response": "choice"
+      },
+      {
+        "prompt": "À quelle heure est le rendez-vous ?",
+        "answer": "À dix heures.",
+        "evidence": "Le rendez-vous est à dix heures",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "appel",
+    "sourceSituation": "appel",
+    "title": "Un appel à passer",
+    "genre": "message",
+    "text": [
+      "Dans cinq minutes, vous allez téléphoner au médecin. Vous voulez un",
+      "rendez-vous pour lundi. Votre carnet est ouvert pour noter l’heure."
+    ],
+    "questions": [
+      {
+        "prompt": "Qui allez-vous appeler ?",
+        "answer": "Le médecin.",
+        "choices": [
+          "Le médecin.",
+          "La mairie.",
+          "La bibliothèque."
+        ],
+        "evidence": "téléphoner au médecin",
+        "response": "choice"
+      },
+      {
+        "prompt": "Pour quel jour souhaitez-vous un rendez-vous ?",
+        "answer": "Lundi.",
+        "choices": [
+          "Lundi.",
+          "Mardi.",
+          "Vendredi."
+        ],
+        "evidence": "un rendez-vous pour lundi",
+        "response": "choice"
+      },
+      {
+        "prompt": "Pourquoi le carnet est-il ouvert ?",
+        "answer": "Pour noter l’heure.",
+        "evidence": "Votre carnet est ouvert pour noter l’heure.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "match",
+    "sourceSituation": "match",
+    "title": "La soirée de dimanche",
+    "genre": "message",
+    "text": [
+      "Ce soir, ils vont regarder le match chez leur voisin. Le match commence à",
+      "vingt heures. Ils apporteront des boissons."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle activité est prévue ?",
+        "answer": "Regarder le match.",
+        "choices": [
+          "Regarder le match.",
+          "Jouer au football.",
+          "Visiter le stade."
+        ],
+        "evidence": "regarder le match",
+        "response": "choice"
+      },
+      {
+        "prompt": "Chez qui se retrouveront-ils ?",
+        "answer": "Chez leur voisin.",
+        "choices": [
+          "Chez leur voisin.",
+          "Chez leurs parents.",
+          "Chez leur professeur."
+        ],
+        "evidence": "chez leur voisin",
+        "response": "choice"
+      },
+      {
+        "prompt": "À quelle heure commence le match ?",
+        "answer": "À vingt heures.",
+        "evidence": "Le match commence à vingt heures.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "visite",
+    "sourceSituation": "visite",
+    "title": "Au musée samedi",
+    "genre": "message",
+    "text": [
+      "Samedi, elles vont visiter le musée. Elles veulent voir les peintures du",
+      "premier étage. Elles ont réservé les billets en ligne."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel lieu vont-elles visiter ?",
+        "answer": "Le musée.",
+        "choices": [
+          "Le musée.",
+          "La mairie.",
+          "La gare."
+        ],
+        "evidence": "visiter le musée",
+        "response": "choice"
+      },
+      {
+        "prompt": "Que veulent-elles voir ?",
+        "answer": "Les peintures.",
+        "choices": [
+          "Les peintures.",
+          "Les trains.",
+          "Les animaux."
+        ],
+        "evidence": "voir les peintures",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où sont les peintures ?",
+        "answer": "Au premier étage.",
+        "evidence": "les peintures du premier étage",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "pain",
+    "sourceSituation": "pain",
+    "title": "Le prochain achat",
+    "genre": "message",
+    "text": [
+      "Je vais acheter du pain à la boulangerie. Je prendrai aussi deux",
+      "croissants. La boulangerie est près de la gare."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel achat la personne annonce-t-elle ?",
+        "answer": "Du pain.",
+        "choices": [
+          "Du pain.",
+          "Des fleurs.",
+          "Des livres."
+        ],
+        "evidence": "acheter du pain",
+        "response": "choice"
+      },
+      {
+        "prompt": "Dans quel commerce ira-t-elle ?",
+        "answer": "À la boulangerie.",
+        "choices": [
+          "À la boulangerie.",
+          "À la librairie.",
+          "À la pharmacie."
+        ],
+        "evidence": "à la boulangerie",
+        "response": "choice"
+      },
+      {
+        "prompt": "Combien de croissants prendra-t-elle ?",
+        "answer": "Deux.",
+        "evidence": "Je prendrai aussi deux croissants.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "chambre",
+    "sourceSituation": "chambre",
+    "title": "Avant le dîner",
+    "genre": "message",
+    "text": [
+      "Avant le dîner, tu vas ranger ta chambre. Les livres iront sur l’étagère.",
+      "Le sac restera près du bureau."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle tâche annonces-tu ?",
+        "answer": "Ranger la chambre.",
+        "choices": [
+          "Ranger la chambre.",
+          "Préparer le dîner.",
+          "Laver les assiettes."
+        ],
+        "evidence": "ranger ta chambre",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quand feras-tu cette tâche ?",
+        "answer": "Avant le dîner.",
+        "choices": [
+          "Avant le dîner.",
+          "Après le dîner.",
+          "Demain matin."
+        ],
+        "evidence": "Avant le dîner",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où iront les livres ?",
+        "answer": "Sur l’étagère.",
+        "evidence": "Les livres iront sur l’étagère.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "train",
+    "sourceSituation": "train",
+    "title": "Un voyage à Lyon",
+    "genre": "message",
+    "text": [
+      "Demain, elle va prendre le train pour Lyon. Son billet est dans son sac.",
+      "Elle retrouvera son frère à l’arrivée."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel transport prendra-t-elle ?",
+        "answer": "Le train.",
+        "choices": [
+          "Le train.",
+          "Le bus.",
+          "L’avion."
+        ],
+        "evidence": "prendre le train",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelle est sa destination ?",
+        "answer": "Lyon.",
+        "choices": [
+          "Lyon.",
+          "Paris.",
+          "Genève."
+        ],
+        "evidence": "pour Lyon",
+        "response": "choice"
+      },
+      {
+        "prompt": "Qui retrouvera-t-elle à l’arrivée ?",
+        "answer": "Son frère.",
+        "evidence": "Elle retrouvera son frère à l’arrivée.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "courses",
+    "sourceSituation": "courses",
+    "title": "Au marché ce matin",
+    "genre": "message",
+    "text": [
+      "Ce matin, nous allons faire les courses au marché. Nous avons besoin de",
+      "tomates et de pommes. Nous prendrons un panier."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle activité est prévue ?",
+        "answer": "Faire les courses.",
+        "choices": [
+          "Faire les courses.",
+          "Visiter un musée.",
+          "Ranger le garage."
+        ],
+        "evidence": "faire les courses",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel lieu est prévu ?",
+        "answer": "Le marché.",
+        "choices": [
+          "Le marché.",
+          "La gare.",
+          "Le stade."
+        ],
+        "evidence": "au marché",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel objet le groupe prendra-t-il ?",
+        "answer": "Un panier.",
+        "evidence": "Nous prendrons un panier.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "football",
+    "sourceSituation": "football",
+    "title": "Le programme de dimanche",
+    "genre": "message",
+    "text": [
+      "Dimanche, ils vont jouer au football au stade. Le rendez-vous est à quinze",
+      "heures. Après le match, ils rentreront à pied."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel sport pratiqueront-ils ?",
+        "answer": "Le football.",
+        "choices": [
+          "Le football.",
+          "La natation.",
+          "Le tennis."
+        ],
+        "evidence": "jouer au football",
+        "response": "choice"
+      },
+      {
+        "prompt": "Dans quel lieu joueront-ils ?",
+        "answer": "Au stade.",
+        "choices": [
+          "Au stade.",
+          "Au parc.",
+          "Dans la cour."
+        ],
+        "evidence": "au stade",
+        "response": "choice"
+      },
+      {
+        "prompt": "Comment rentreront-ils ?",
+        "answer": "À pied.",
+        "evidence": "ils rentreront à pied",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "natation",
+    "sourceSituation": "natation",
+    "title": "Après l’école",
+    "genre": "message",
+    "text": [
+      "Après l’école, elles vont nager à la piscine. Elles ont leurs serviettes",
+      "dans leurs sacs. Leur père les retrouvera à dix-sept heures."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle activité est prévue ?",
+        "answer": "Nager.",
+        "choices": [
+          "Nager.",
+          "Courir.",
+          "Lire."
+        ],
+        "evidence": "nager à la piscine",
+        "response": "choice"
+      },
+      {
+        "prompt": "À quel moment iront-elles ?",
+        "answer": "Après l’école.",
+        "choices": [
+          "Après l’école.",
+          "Avant l’école.",
+          "Dimanche matin."
+        ],
+        "evidence": "Après l’école",
+        "response": "choice"
+      },
+      {
+        "prompt": "À quelle heure leur père les retrouvera-t-il ?",
+        "answer": "À dix-sept heures.",
+        "evidence": "Leur père les retrouvera à dix-sept heures.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "inscription",
+    "sourceSituation": "inscription",
+    "title": "Un cours de français",
+    "genre": "message",
+    "text": [
+      "Cet après-midi, nous allons nous inscrire au cours de français.",
+      "L’inscription se fait à l’accueil. Nous avons nos cartes d’identité."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle démarche est prévue ?",
+        "answer": "Une inscription.",
+        "choices": [
+          "Une inscription.",
+          "Une réservation de train.",
+          "Un achat de livre."
+        ],
+        "evidence": "nous inscrire au cours",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel cours le groupe a-t-il choisi ?",
+        "answer": "Le français.",
+        "choices": [
+          "Le français.",
+          "Le dessin.",
+          "La natation."
+        ],
+        "evidence": "au cours de français",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où se fait l’inscription ?",
+        "answer": "À l’accueil.",
+        "evidence": "L’inscription se fait à l’accueil.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "reveil",
+    "sourceSituation": "reveil",
+    "title": "Le lever de demain",
+    "genre": "message",
+    "text": [
+      "Demain, tu vas te lever à sept heures pour le cours. Le bus passe à huit",
+      "heures. Ton sac est déjà prêt."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle action est prévue à sept heures ?",
+        "answer": "Se lever.",
+        "choices": [
+          "Se lever.",
+          "Prendre le bus.",
+          "Commencer le cours."
+        ],
+        "evidence": "te lever à sept heures",
+        "response": "choice"
+      },
+      {
+        "prompt": "Pourquoi te lèveras-tu ?",
+        "answer": "Pour le cours.",
+        "choices": [
+          "Pour le cours.",
+          "Pour une course.",
+          "Pour un concert."
+        ],
+        "evidence": "pour le cours",
+        "response": "choice"
+      },
+      {
+        "prompt": "À quelle heure passe le bus ?",
+        "answer": "À huit heures.",
+        "evidence": "Le bus passe à huit heures.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "affiche",
+    "sourceSituation": "affiche",
+    "title": "Préparer la fête",
+    "genre": "message",
+    "text": [
+      "Nous allons préparer une affiche pour la fête de l’école. Le papier est",
+      "sur la grande table. La fête aura lieu vendredi."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel support le groupe préparera-t-il ?",
+        "answer": "Une affiche.",
+        "choices": [
+          "Une affiche.",
+          "Un livre.",
+          "Une lettre."
+        ],
+        "evidence": "préparer une affiche",
+        "response": "choice"
+      },
+      {
+        "prompt": "Pour quel événement ?",
+        "answer": "La fête de l’école.",
+        "choices": [
+          "La fête de l’école.",
+          "Une course.",
+          "Un voyage."
+        ],
+        "evidence": "pour la fête de l’école",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel jour aura lieu la fête ?",
+        "answer": "Vendredi.",
+        "evidence": "La fête aura lieu vendredi.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "mairie",
+    "sourceSituation": "mairie",
+    "title": "Une démarche prévue",
+    "genre": "message",
+    "text": [
+      "Demain, elles vont demander un formulaire à la mairie. Elles iront à",
+      "l’accueil du premier étage. Le formulaire est gratuit."
+    ],
+    "questions": [
+      {
+        "prompt": "Que demanderont-elles ?",
+        "answer": "Un formulaire.",
+        "choices": [
+          "Un formulaire.",
+          "Un billet.",
+          "Un livre."
+        ],
+        "evidence": "demander un formulaire",
+        "response": "choice"
+      },
+      {
+        "prompt": "À quel service iront-elles ?",
+        "answer": "À la mairie.",
+        "choices": [
+          "À la mairie.",
+          "À la bibliothèque.",
+          "À la gare."
+        ],
+        "evidence": "à la mairie",
+        "response": "choice"
+      },
+      {
+        "prompt": "À quel étage se trouve l’accueil ?",
+        "answer": "Au premier étage.",
+        "evidence": "l’accueil du premier étage",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "valise",
+    "sourceSituation": "valise",
+    "title": "Préparer le voyage",
+    "genre": "message",
+    "text": [
+      "Ce soir, je vais préparer ma valise pour partir demain. Je prendrai un",
+      "manteau et deux livres. Le voyage durera trois jours."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel objet la personne préparera-t-elle ?",
+        "answer": "Sa valise.",
+        "choices": [
+          "Sa valise.",
+          "Son vélo.",
+          "Sa table."
+        ],
+        "evidence": "préparer ma valise",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quand partira-t-elle ?",
+        "answer": "Demain.",
+        "choices": [
+          "Demain.",
+          "Ce soir.",
+          "Dans un mois."
+        ],
+        "evidence": "pour partir demain",
+        "response": "choice"
+      },
+      {
+        "prompt": "Combien de temps durera le voyage ?",
+        "answer": "Trois jours.",
+        "evidence": "Le voyage durera trois jours.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "rencontre",
+    "sourceSituation": "rencontre",
+    "title": "Un rendez-vous à la gare",
+    "genre": "message",
+    "text": [
+      "À quinze heures, tu vas retrouver ton amie devant la gare. Vous irez",
+      "ensuite au café voisin. Elle portera un sac rouge."
+    ],
+    "questions": [
+      {
+        "prompt": "Qui retrouveras-tu ?",
+        "answer": "Ton amie.",
+        "choices": [
+          "Ton amie.",
+          "Ton médecin.",
+          "Ton professeur."
+        ],
+        "evidence": "retrouver ton amie",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où est le rendez-vous ?",
+        "answer": "Devant la gare.",
+        "choices": [
+          "Devant la gare.",
+          "Dans le train.",
+          "À la mairie."
+        ],
+        "evidence": "devant la gare",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où irez-vous ensuite ?",
+        "answer": "Au café voisin.",
+        "evidence": "Vous irez ensuite au café voisin.",
+        "response": "short"
+      }
+    ]
+  }
+]

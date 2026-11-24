@@ -71,3 +71,12 @@ Les cinq fichiers `action-*.tsv` contiennent 250 lignes sources. Les deux fichie
 `python3 scripts/build-grammar-action.py` compile exclusivement `curriculum/data/j1.json`, `j2.json` et `j3.json`, avec 19 banques et 24 offres A1/A2. Il copie dix images du catalogue sans modification dans leur chemin SHA-256 et écrit `action-media-manifest.json`. Les illustrations montrent les actions ; les rôles et détails sont définis par le texte. Les JSON de lecture gardent les paragraphes en lignes courtes et les preuves littérales.
 
 `npm run test:grammar:action` vérifie réponses, repères, sujet commun, recettes, capacités, intervalles de correction et conservation des autres thèmes, puis reconstruit banques et manifeste en isolation. `npm run test:grammar:action:browser` attend un aperçu de production sur le port 5190 et écrit les mesures et PDF dans `docs/grammaire/implementation/action-20261124-proofs`. Après les contrôles, `node scripts/update-grammar-decrire-progress.cjs --theme=gram-action --subthemes=j1,j2,j3 --date=2026-11-24 --verified` actualise le registre et le CSV sans déclarer de validation enseignante.
+
+
+### Parler de l’avenir — 24 novembre 2026
+
+Les cinq fichiers `avenir-*.tsv` contiennent 250 lignes sources partagées entre mécaniques. Les trois fichiers `avenir-*-lectures-*.json` adaptent soixante situations en soixante documents de trois questions de compréhension chacun. Ils ne représentent pas soixante histoires indépendantes supplémentaires.
+
+`python3 scripts/build-grammar-avenir.py` compile exclusivement les cinq banques graduées de futur proche, futur simple, comparaison des futurs, futur antérieur et hypothèse sur le futur : 22 banques et 27 offres. Les textes modifiables gardent des lignes courtes. Aucune génération ou modification de média. Les exercices fermés imposent la forme ; l’oral comparatif admet les deux futurs avec justification. Les modèles ouverts ne sont pas exclusifs.
+
+`npm run test:grammar:avenir` vérifie réponses, élisions, accords, chronologies, recettes, capacités et intervalles de correction, puis reconstruit les banques en isolation. `npm run test:grammar:avenir:browser` utilise un aperçu de production sur le port 5191 et conserve les mesures et PDF dans `docs/grammaire/implementation/avenir-20261124-proofs`. Après les preuves, `node scripts/update-grammar-decrire-progress.cjs --theme=gram-avenir --subthemes=futur-proche,futur-simple,futur-proche-ou-simple,futur-anterieur,hypothese-futur --date=2026-11-24 --verified` actualise le registre sans déclarer une approbation enseignante.

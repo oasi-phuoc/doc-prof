@@ -5403,7 +5403,7 @@
       "sourceDocumentCount": 10,
       "sourceQuestionTotal": 50,
       "currentGenerationQuestionCap": 5,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": 20,
       "selectionUnit": "document",
@@ -5417,12 +5417,30 @@
       },
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/futur-proche.json",
       "instructionsByPresentation": {
         "document-set": "Lisez le document et répondez aux questions."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/futur-proche.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 20,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "document-set"
+            ],
+            "units": 20
+          }
+        ]
       }
     },
     {
@@ -5455,7 +5473,7 @@
       "sourceDocumentCount": 10,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 1,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -5469,12 +5487,30 @@
       },
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/futur-proche.json",
       "instructionsByPresentation": {
         "open-written": "Écrivez une seule phrase adaptée à la situation."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/futur-proche.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "open-written"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -5507,7 +5543,7 @@
       "sourceDocumentCount": 10,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 1,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -5521,12 +5557,30 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/futur-proche.json",
       "instructionsByPresentation": {
         "open-oral": "Dites une seule phrase adaptée à la situation."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/futur-proche.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "open-oral"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -5559,7 +5613,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -5574,13 +5628,32 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/futur-proche.json",
       "instructionsByPresentation": {
         "choice": "Choisissez la forme qui convient.",
         "gap": "Complétez avec la forme qui convient."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/futur-proche.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "choice",
+              "gap"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -5613,7 +5686,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -5628,13 +5701,32 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/futur-simple.json",
       "instructionsByPresentation": {
         "choice": "Choisissez la forme qui convient.",
         "gap": "Complétez avec la forme qui convient."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/futur-simple.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A2",
+            "presentations": [
+              "choice",
+              "gap"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -5667,7 +5759,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -5682,13 +5774,32 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/futur-proche-ou-simple.json",
       "instructionsByPresentation": {
         "choice": "Choisissez la forme qui convient.",
         "gap": "Complétez avec la forme qui convient."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/futur-proche-ou-simple.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A2",
+            "presentations": [
+              "choice",
+              "gap"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -5721,7 +5832,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -5736,13 +5847,32 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/futur-anterieur.json",
       "instructionsByPresentation": {
         "choice": "Choisissez la forme qui convient.",
         "gap": "Complétez avec la forme qui convient."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/futur-anterieur.json",
+        "levels": [
+          "B1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "B1",
+            "presentations": [
+              "choice",
+              "gap"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -5775,7 +5905,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -5790,13 +5920,32 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/hypothese-futur.json",
       "instructionsByPresentation": {
         "choice": "Choisissez la forme qui convient.",
         "gap": "Complétez avec la forme qui convient."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/hypothese-futur.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A2",
+            "presentations": [
+              "choice",
+              "gap"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -25091,7 +25240,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -25105,12 +25254,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/futur-proche.json",
       "instructionsByPresentation": {
         "transform": "Réécrivez la phrase en respectant l’indication."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/futur-proche.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "transform"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -25138,7 +25305,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -25152,12 +25319,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/futur-proche.json",
       "instructionsByPresentation": {
         "scenario-set": "Préparez, puis jouez le dialogue de la situation proposée."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/futur-proche.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "scenario-set"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -25185,7 +25370,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -25199,12 +25384,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/futur-simple.json",
       "instructionsByPresentation": {
         "transform": "Réécrivez la phrase en respectant l’indication."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/futur-simple.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A2",
+            "presentations": [
+              "transform"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -25232,7 +25435,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -25246,12 +25449,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/futur-simple.json",
       "instructionsByPresentation": {
         "open-written": "Rédigez votre réponse dans la situation proposée."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/futur-simple.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A2",
+            "presentations": [
+              "open-written"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -25279,7 +25500,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -25293,12 +25514,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/futur-simple.json",
       "instructionsByPresentation": {
         "open-oral": "Exprimez-vous dans la situation proposée."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/futur-simple.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A2",
+            "presentations": [
+              "open-oral"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -25326,7 +25565,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -25340,12 +25579,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/futur-proche-ou-simple.json",
       "instructionsByPresentation": {
         "correct": "Corrigez l’erreur et réécrivez la phrase entière."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/futur-proche-ou-simple.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A2",
+            "presentations": [
+              "correct"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -25373,7 +25630,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": 20,
       "selectionUnit": "document",
@@ -25387,12 +25644,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/futur-proche-ou-simple.json",
       "instructionsByPresentation": {
         "document-set": "Lisez le texte et répondez aux questions."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/futur-proche-ou-simple.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 20,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A2",
+            "presentations": [
+              "document-set"
+            ],
+            "units": 20
+          }
+        ]
       }
     },
     {
@@ -25420,7 +25695,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -25434,12 +25709,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/futur-proche-ou-simple.json",
       "instructionsByPresentation": {
         "open-oral": "Exprimez-vous dans la situation proposée."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/futur-proche-ou-simple.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A2",
+            "presentations": [
+              "open-oral"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -25467,7 +25760,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -25481,12 +25774,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/futur-anterieur.json",
       "instructionsByPresentation": {
         "transform": "Réécrivez la phrase en respectant l’indication."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/futur-anterieur.json",
+        "levels": [
+          "B1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "B1",
+            "presentations": [
+              "transform"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -25514,7 +25825,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": 20,
       "selectionUnit": "document",
@@ -25528,12 +25839,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/futur-anterieur.json",
       "instructionsByPresentation": {
         "document-set": "Lisez le texte et répondez aux questions."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/futur-anterieur.json",
+        "levels": [
+          "B1"
+        ],
+        "reviewedActivityUnits": 20,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "B1",
+            "presentations": [
+              "document-set"
+            ],
+            "units": 20
+          }
+        ]
       }
     },
     {
@@ -25561,7 +25890,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -25575,12 +25904,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/futur-anterieur.json",
       "instructionsByPresentation": {
         "open-written": "Rédigez votre réponse dans la situation proposée."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/futur-anterieur.json",
+        "levels": [
+          "B1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "B1",
+            "presentations": [
+              "open-written"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -25608,7 +25955,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -25622,12 +25969,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/hypothese-futur.json",
       "instructionsByPresentation": {
         "transform": "Réécrivez la phrase en respectant l’indication."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/hypothese-futur.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A2",
+            "presentations": [
+              "transform"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -25655,7 +26020,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -25669,12 +26034,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/hypothese-futur.json",
       "instructionsByPresentation": {
         "scenario-set": "Préparez, puis jouez le dialogue de la situation proposée."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/hypothese-futur.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A2",
+            "presentations": [
+              "scenario-set"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -25702,7 +26085,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -25716,12 +26099,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/hypothese-futur.json",
       "instructionsByPresentation": {
         "open-oral": "Exprimez-vous dans la situation proposée."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/hypothese-futur.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A2",
+            "presentations": [
+              "open-oral"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -30996,16 +31397,21 @@
       "selectionUnit": "document",
       "targetMinimum": 50,
       "targetMinimumDocuments": 20,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Aller au présent + infinitif pour projet immédiat",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/communication.ts | src/grammaire/exercises/communication-data.json",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-futur-proche-communication-ce",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 20,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/futur-proche.json"
     },
     {
       "offeringId": "gram-ex-futur-proche-communication-pe@A1@open-written",
@@ -31020,16 +31426,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Aller au présent + infinitif pour projet immédiat",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/communication.ts | src/grammaire/exercises/communication-data.json",
       "sourceRawCount": 10,
       "existingTypeIds": "gram-ex-futur-proche-communication-pe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/futur-proche.json"
     },
     {
       "offeringId": "gram-ex-futur-proche-communication-po@A1@open-oral",
@@ -31044,16 +31455,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Aller au présent + infinitif pour projet immédiat",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/communication.ts | src/grammaire/exercises/communication-data.json",
       "sourceRawCount": 10,
       "existingTypeIds": "gram-ex-futur-proche-communication-po",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/futur-proche.json"
     },
     {
       "offeringId": "gram-ex-futur-proche-qcm-verbe@A1@choice",
@@ -31068,16 +31484,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Aller au présent + infinitif pour projet immédiat",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-futur-proche-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/futur-proche.json"
     },
     {
       "offeringId": "gram-ex-futur-proche-qcm-verbe@A1@gap",
@@ -31092,16 +31513,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Aller au présent + infinitif pour projet immédiat",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-futur-proche-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/futur-proche.json"
     },
     {
       "offeringId": "gram-ex-futur-simple-qcm-conj@A2@choice",
@@ -31116,16 +31542,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer et annoncer une action future en contexte",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-futur-simple-qcm-conj",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/futur-simple.json"
     },
     {
       "offeringId": "gram-ex-futur-simple-qcm-conj@A2@gap",
@@ -31140,16 +31571,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer et annoncer une action future en contexte",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-futur-simple-qcm-conj",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/futur-simple.json"
     },
     {
       "offeringId": "gram-ex-futur-proche-ou-simple-qcm-verbe@A2@choice",
@@ -31164,16 +31600,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Choisir en fonction de la situation et du contexte",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-futur-proche-ou-simple-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/futur-proche-ou-simple.json"
     },
     {
       "offeringId": "gram-ex-futur-proche-ou-simple-qcm-verbe@A2@gap",
@@ -31188,16 +31629,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Choisir en fonction de la situation et du contexte",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-futur-proche-ou-simple-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/futur-proche-ou-simple.json"
     },
     {
       "offeringId": "gram-ex-futur-anterieur-qcm-conj@B1@choice",
@@ -31212,16 +31658,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Situer une action accomplie avant une autre action future",
       "scopeReason": "initial_matrix_activity",
       "phase": "G5",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-futur-anterieur-qcm-conj",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/futur-anterieur.json"
     },
     {
       "offeringId": "gram-ex-futur-anterieur-qcm-conj@B1@gap",
@@ -31236,16 +31687,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Situer une action accomplie avant une autre action future",
       "scopeReason": "initial_matrix_activity",
       "phase": "G5",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-futur-anterieur-qcm-conj",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/futur-anterieur.json"
     },
     {
       "offeringId": "gram-ex-hypothese-futur-qcm-verbe@A2@choice",
@@ -31260,16 +31716,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Construire si + présent, futur dans une situation plausible",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-hypothese-futur-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/hypothese-futur.json"
     },
     {
       "offeringId": "gram-ex-hypothese-futur-qcm-verbe@A2@gap",
@@ -31284,16 +31745,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Construire si + présent, futur dans une situation plausible",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-hypothese-futur-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/hypothese-futur.json"
     },
     {
       "offeringId": "gram-ex-description-physique-communication-ce@A1@document-set",
@@ -43341,16 +43807,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Aller au présent + infinitif pour projet immédiat",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/futur-proche.json"
     },
     {
       "offeringId": "gram-ex-futur-proche-curriculum-s@A1@scenario-set",
@@ -43365,16 +43836,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Aller au présent + infinitif pour projet immédiat",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/futur-proche.json"
     },
     {
       "offeringId": "gram-ex-futur-simple-curriculum-t@A2@transform",
@@ -43389,16 +43865,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer et annoncer une action future en contexte",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/futur-simple.json"
     },
     {
       "offeringId": "gram-ex-futur-simple-curriculum-e@A2@open-written",
@@ -43413,16 +43894,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer et annoncer une action future en contexte",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/futur-simple.json"
     },
     {
       "offeringId": "gram-ex-futur-simple-curriculum-p@A2@open-oral",
@@ -43437,16 +43923,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Conjuguer et annoncer une action future en contexte",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/futur-simple.json"
     },
     {
       "offeringId": "gram-ex-futur-proche-ou-simple-curriculum-c@A2@correct",
@@ -43461,16 +43952,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Choisir en fonction de la situation et du contexte",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/futur-proche-ou-simple.json"
     },
     {
       "offeringId": "gram-ex-futur-proche-ou-simple-curriculum-d@A2@document-set",
@@ -43485,16 +43981,21 @@
       "selectionUnit": "document",
       "targetMinimum": 50,
       "targetMinimumDocuments": 20,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Choisir en fonction de la situation et du contexte",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 20,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/futur-proche-ou-simple.json"
     },
     {
       "offeringId": "gram-ex-futur-proche-ou-simple-curriculum-p@A2@open-oral",
@@ -43509,16 +44010,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Choisir en fonction de la situation et du contexte",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/futur-proche-ou-simple.json"
     },
     {
       "offeringId": "gram-ex-futur-anterieur-curriculum-t@B1@transform",
@@ -43533,16 +44039,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Situer une action accomplie avant une autre action future",
       "scopeReason": "missing_initial_family",
       "phase": "G5",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/futur-anterieur.json"
     },
     {
       "offeringId": "gram-ex-futur-anterieur-curriculum-d@B1@document-set",
@@ -43557,16 +44068,21 @@
       "selectionUnit": "document",
       "targetMinimum": 50,
       "targetMinimumDocuments": 20,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Situer une action accomplie avant une autre action future",
       "scopeReason": "missing_initial_family",
       "phase": "G5",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 20,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/futur-anterieur.json"
     },
     {
       "offeringId": "gram-ex-futur-anterieur-curriculum-e@B1@open-written",
@@ -43581,16 +44097,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Situer une action accomplie avant une autre action future",
       "scopeReason": "missing_initial_family",
       "phase": "G5",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/futur-anterieur.json"
     },
     {
       "offeringId": "gram-ex-hypothese-futur-curriculum-t@A2@transform",
@@ -43605,16 +44126,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Construire si + présent, futur dans une situation plausible",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/hypothese-futur.json"
     },
     {
       "offeringId": "gram-ex-hypothese-futur-curriculum-s@A2@scenario-set",
@@ -43629,16 +44155,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Construire si + présent, futur dans une situation plausible",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/hypothese-futur.json"
     },
     {
       "offeringId": "gram-ex-hypothese-futur-curriculum-p@A2@open-oral",
@@ -43653,16 +44184,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Construire si + présent, futur dans une situation plausible",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "avenir-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/hypothese-futur.json"
     },
     {
       "offeringId": "gram-ex-j6-curriculum-t@B1@transform",
@@ -45298,11 +45834,11 @@
   "implementation": {
     "baselineCommit": "ff743145",
     "firstVerticalSlice": "etre A1",
-    "reviewedVariants": 23870,
+    "reviewedVariants": 25250,
     "teacherApprovedVariants": 0,
     "status": "pilot_preview",
-    "remaining": "Parler d'une action : 24/24 offres en pilote. À poursuivre : validation du thème. Approbation enseignante, révisions et recette finale restent en attente.",
-    "reviewedActivityUnits": 17650,
+    "remaining": "Parler de l'avenir : 27/27 offres en pilote. À poursuivre : validation du thème. Approbation enseignante, révisions et recette finale restent en attente.",
+    "reviewedActivityUnits": 18660,
     "deliveredSlices": [
       "etre A1",
       "er-particuliers A1/A2",
@@ -45342,22 +45878,23 @@
       "g1/g2/g3/g4/g5/g6 — 27 offres",
       "pc-idee/pc-avoir/pc-etre/imparfait/pqp/double-aux/pc-pronominaux/accord-pp — 43 offres",
       "i1/i2/i3/i5/i6/i7/i8/i9 — 34 offres",
-      "j1/j2/j3 — 24 offres"
+      "j1/j2/j3 — 24 offres",
+      "futur-proche/futur-simple/futur-proche-ou-simple/futur-anterieur/hypothese-futur — 27 offres"
     ],
-    "reviewedOfferings": 466,
+    "reviewedOfferings": 493,
     "lastUpdated": "2026-11-24",
-    "reviewedSelectableUnits": 17650,
-    "reviewedDocuments": 500,
-    "reviewedDocumentQuestions": 1820,
-    "reviewedActivities": 325,
+    "reviewedSelectableUnits": 18660,
+    "reviewedDocuments": 560,
+    "reviewedDocumentQuestions": 2000,
+    "reviewedActivities": 347,
     "reviewedPilotNotions": 5,
-    "reviewedNotions": 76,
+    "reviewedNotions": 81,
     "technicalContracts": {
       "scenarios": "closed and open; prototypes excluded from all bank quotas",
       "images": "20 supports de présentation réemployés et un bébé historique restauré sous empreinte immuable. Aucun média généré. Les onze obligations I des autres notions restent à préparer.",
       "reference": "docs/grammaire/implementation/contrats-situations-images.md",
       "countedInBankCoverage": false
     },
-    "reviewedNotionLevelPairs": 96
+    "reviewedNotionLevelPairs": 101
   }
 }

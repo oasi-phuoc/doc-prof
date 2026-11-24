@@ -1,0 +1,802 @@
+[
+  {
+    "id": "depart",
+    "sourceSituation": "depart",
+    "title": "Une décision maintenant",
+    "genre": "note de situation",
+    "text": [
+      "Je prends mon manteau : je vais partir dans cinq minutes. Le rendez-vous",
+      "est devant la bibliothèque. Je retrouverai mon voisin."
+    ],
+    "questions": [
+      {
+        "prompt": "Que décide la personne ?",
+        "answer": "De partir.",
+        "choices": [
+          "De partir.",
+          "De rester.",
+          "De cuisiner."
+        ],
+        "evidence": "je vais partir",
+        "response": "choice"
+      },
+      {
+        "prompt": "Dans combien de temps partira-t-elle ?",
+        "answer": "Dans cinq minutes.",
+        "choices": [
+          "Dans cinq minutes.",
+          "Dans une heure.",
+          "Demain."
+        ],
+        "evidence": "dans cinq minutes",
+        "response": "choice"
+      },
+      {
+        "prompt": "Relevez le groupe au futur proche.",
+        "answer": "vais partir",
+        "evidence": "je vais partir",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "appel",
+    "sourceSituation": "appel",
+    "title": "Téléphoner à la mairie",
+    "genre": "note de situation",
+    "text": [
+      "Elle a son téléphone en main : elle va appeler la mairie. Elle veut",
+      "connaître les horaires. Elle les notera dans son carnet."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel service appellera-t-elle ?",
+        "answer": "La mairie.",
+        "choices": [
+          "La mairie.",
+          "La gare.",
+          "Le musée."
+        ],
+        "evidence": "appeler la mairie",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelle information cherche-t-elle ?",
+        "answer": "Les horaires.",
+        "choices": [
+          "Les horaires.",
+          "Le prix d’un livre.",
+          "Une adresse de restaurant."
+        ],
+        "evidence": "connaître les horaires",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel groupe annonce son intention au futur proche ?",
+        "answer": "va appeler",
+        "evidence": "elle va appeler",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "sortie",
+    "sourceSituation": "sortie",
+    "title": "Le choix du groupe",
+    "genre": "note de situation",
+    "text": [
+      "Nous venons de décider d’une sortie : nous allons aller au parc après le",
+      "cours. Nous emporterons un ballon. Le parc est près de l’école."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle sortie est décidée ?",
+        "answer": "Aller au parc.",
+        "choices": [
+          "Aller au parc.",
+          "Aller au cinéma.",
+          "Aller au musée."
+        ],
+        "evidence": "aller au parc",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quand la sortie est-elle prévue ?",
+        "answer": "Après le cours.",
+        "choices": [
+          "Après le cours.",
+          "Avant le cours.",
+          "Pendant la pause du matin."
+        ],
+        "evidence": "après le cours",
+        "response": "choice"
+      },
+      {
+        "prompt": "Qu’emportera le groupe ?",
+        "answer": "Un ballon.",
+        "evidence": "Nous emporterons un ballon.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "accueil",
+    "sourceSituation": "accueil",
+    "title": "Les visiteurs à la porte",
+    "genre": "note de situation",
+    "text": [
+      "Ils sont devant la porte : ils vont accueillir les visiteurs. La visite",
+      "concerne le jardin. Le guide arrivera à dix heures."
+    ],
+    "questions": [
+      {
+        "prompt": "Qui sera accueilli ?",
+        "answer": "Les visiteurs.",
+        "choices": [
+          "Les visiteurs.",
+          "Les livreurs.",
+          "Les élèves uniquement."
+        ],
+        "evidence": "accueillir les visiteurs",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel lieu les visiteurs découvriront-ils ?",
+        "answer": "Le jardin.",
+        "choices": [
+          "Le jardin.",
+          "La piscine.",
+          "La gare."
+        ],
+        "evidence": "La visite concerne le jardin.",
+        "response": "choice"
+      },
+      {
+        "prompt": "À quelle heure arrivera le guide ?",
+        "answer": "À dix heures.",
+        "evidence": "Le guide arrivera à dix heures.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "billet",
+    "sourceSituation": "billet",
+    "title": "Un billet choisi",
+    "genre": "note de situation",
+    "text": [
+      "Je vais acheter un billet pour Lyon. J’ai choisi le train de neuf heures.",
+      "Je prendrai une place près de la fenêtre."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel achat est annoncé ?",
+        "answer": "Un billet de train.",
+        "choices": [
+          "Un billet de train.",
+          "Un livre.",
+          "Un repas."
+        ],
+        "evidence": "acheter un billet pour Lyon",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelle destination est prévue ?",
+        "answer": "Lyon.",
+        "choices": [
+          "Lyon.",
+          "Paris.",
+          "Genève."
+        ],
+        "evidence": "pour Lyon",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelle place la personne choisira-t-elle ?",
+        "answer": "Près de la fenêtre.",
+        "evidence": "une place près de la fenêtre",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "recette",
+    "sourceSituation": "recette",
+    "title": "Le repas des invités",
+    "genre": "note de situation",
+    "text": [
+      "Elle va préparer une soupe pour les invités. Elle vient de choisir la",
+      "recette. Les invités arriveront ce soir à dix-neuf heures."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel plat préparera-t-elle ?",
+        "answer": "Une soupe.",
+        "choices": [
+          "Une soupe.",
+          "Un gâteau.",
+          "Une salade."
+        ],
+        "evidence": "préparer une soupe",
+        "response": "choice"
+      },
+      {
+        "prompt": "Pour qui est le repas ?",
+        "answer": "Les invités.",
+        "choices": [
+          "Les invités.",
+          "La classe.",
+          "Les voisins uniquement."
+        ],
+        "evidence": "pour les invités",
+        "response": "choice"
+      },
+      {
+        "prompt": "Relevez le groupe au futur proche.",
+        "answer": "va préparer",
+        "evidence": "Elle va préparer",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "notes",
+    "sourceSituation": "notes",
+    "title": "Des carnets prêts",
+    "genre": "note de situation",
+    "text": [
+      "Nos carnets sont ouverts : nous allons prendre des notes pendant la",
+      "visite. La visite commence au rez-de-chaussée. Elle durera une heure."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle activité est annoncée ?",
+        "answer": "Prendre des notes.",
+        "choices": [
+          "Prendre des notes.",
+          "Lire une lettre.",
+          "Préparer un repas."
+        ],
+        "evidence": "prendre des notes",
+        "response": "choice"
+      },
+      {
+        "prompt": "Pendant quel événement ?",
+        "answer": "La visite.",
+        "choices": [
+          "La visite.",
+          "La course.",
+          "Le dîner."
+        ],
+        "evidence": "pendant la visite",
+        "response": "choice"
+      },
+      {
+        "prompt": "Combien de temps durera la visite ?",
+        "answer": "Une heure.",
+        "evidence": "Elle durera une heure.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "message",
+    "sourceSituation": "message",
+    "title": "Le programme à envoyer",
+    "genre": "note de situation",
+    "text": [
+      "Elles viennent de décider d’un envoi : elles vont envoyer le programme aux",
+      "participants. Le document indique les horaires et les salles."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel document enverront-elles ?",
+        "answer": "Le programme.",
+        "choices": [
+          "Le programme.",
+          "La facture.",
+          "Le plan du métro."
+        ],
+        "evidence": "envoyer le programme",
+        "response": "choice"
+      },
+      {
+        "prompt": "Qui recevra le document ?",
+        "answer": "Les participants.",
+        "choices": [
+          "Les participants.",
+          "Les voisins.",
+          "Les clients du marché."
+        ],
+        "evidence": "aux participants",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelles informations le document indique-t-il ?",
+        "answer": "Les horaires et les salles.",
+        "evidence": "Le document indique les horaires et les salles.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "inscription",
+    "sourceSituation": "inscription",
+    "title": "Un atelier choisi",
+    "genre": "note de situation",
+    "text": [
+      "Nous allons nous inscrire à l’atelier de dessin. Nous venons de le",
+      "choisir. L’atelier a lieu le mercredi dans la salle bleue."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle démarche est annoncée ?",
+        "answer": "S’inscrire.",
+        "choices": [
+          "S’inscrire.",
+          "Annuler l’atelier.",
+          "Acheter un tableau."
+        ],
+        "evidence": "nous inscrire à l’atelier",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelle activité l’atelier propose-t-il ?",
+        "answer": "Le dessin.",
+        "choices": [
+          "Le dessin.",
+          "La cuisine.",
+          "La danse."
+        ],
+        "evidence": "l’atelier de dessin",
+        "response": "choice"
+      },
+      {
+        "prompt": "Dans quelle salle a lieu l’atelier ?",
+        "answer": "Dans la salle bleue.",
+        "evidence": "dans la salle bleue",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "repos",
+    "sourceSituation": "repos",
+    "title": "Une intention pour la fin de la marche",
+    "genre": "note de situation",
+    "text": [
+      "Je vais me reposer après la marche. Je viens de le décider. Mon amie",
+      "préparera le thé dans le salon."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle intention la personne annonce-t-elle ?",
+        "answer": "Se reposer.",
+        "choices": [
+          "Se reposer.",
+          "Repartir marcher.",
+          "Écrire un rapport."
+        ],
+        "evidence": "me reposer après la marche",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quand prendra-t-elle ce repos ?",
+        "answer": "Après la marche.",
+        "choices": [
+          "Après la marche.",
+          "Avant la marche.",
+          "Pendant le trajet aller."
+        ],
+        "evidence": "après la marche",
+        "response": "choice"
+      },
+      {
+        "prompt": "Qui préparera le thé ?",
+        "answer": "Son amie.",
+        "evidence": "Mon amie préparera le thé",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "promesse",
+    "sourceSituation": "promesse",
+    "title": "Un engagement pour samedi",
+    "genre": "note de situation",
+    "text": [
+      "Je te le promets : samedi, je t’aiderai à déménager. J’apporterai des",
+      "cartons. Nous commencerons à neuf heures."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel engagement est pris ?",
+        "answer": "Aider au déménagement.",
+        "choices": [
+          "Aider au déménagement.",
+          "Garder un enfant.",
+          "Réparer un vélo."
+        ],
+        "evidence": "je t’aiderai à déménager",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel jour l’aide est-elle promise ?",
+        "answer": "Samedi.",
+        "choices": [
+          "Samedi.",
+          "Vendredi.",
+          "Dimanche."
+        ],
+        "evidence": "samedi",
+        "response": "choice"
+      },
+      {
+        "prompt": "Relevez le verbe au futur simple qui exprime la promesse.",
+        "answer": "aiderai",
+        "evidence": "je t’aiderai",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "horaire",
+    "sourceSituation": "horaire",
+    "title": "Le départ de demain",
+    "genre": "note de situation",
+    "text": [
+      "Demain, tu partiras à huit heures. Ton train s’arrêtera à Lausanne. Tu",
+      "retrouveras ta sœur à la gare d’arrivée."
+    ],
+    "questions": [
+      {
+        "prompt": "À quelle heure partiras-tu ?",
+        "answer": "À huit heures.",
+        "choices": [
+          "À huit heures.",
+          "À neuf heures.",
+          "À dix heures."
+        ],
+        "evidence": "tu partiras à huit heures",
+        "response": "choice"
+      },
+      {
+        "prompt": "Dans quelle ville le train s’arrêtera-t-il ?",
+        "answer": "Lausanne.",
+        "choices": [
+          "Lausanne.",
+          "Paris.",
+          "Lyon."
+        ],
+        "evidence": "s’arrêtera à Lausanne",
+        "response": "choice"
+      },
+      {
+        "prompt": "Qui retrouveras-tu à l’arrivée ?",
+        "answer": "Ma sœur.",
+        "evidence": "Tu retrouveras ta sœur",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "programme",
+    "sourceSituation": "programme",
+    "title": "Une présentation prévue",
+    "genre": "note de situation",
+    "text": [
+      "La semaine prochaine, elle présentera son projet à la conférence. Sa",
+      "présentation durera quinze minutes. Le projet concerne un jardin partagé."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle intervention est annoncée ?",
+        "answer": "Présenter un projet.",
+        "choices": [
+          "Présenter un projet.",
+          "Lire un roman.",
+          "Jouer du piano."
+        ],
+        "evidence": "elle présentera son projet",
+        "response": "choice"
+      },
+      {
+        "prompt": "À quel événement participera-t-elle ?",
+        "answer": "Une conférence.",
+        "choices": [
+          "Une conférence.",
+          "Une fête.",
+          "Une course."
+        ],
+        "evidence": "à la conférence",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel est le sujet du projet ?",
+        "answer": "Un jardin partagé.",
+        "evidence": "Le projet concerne un jardin partagé.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "meteo",
+    "sourceSituation": "meteo",
+    "title": "La prévision régionale",
+    "genre": "note de situation",
+    "text": [
+      "Demain, il pleuvra dans la région. Le vent restera faible. Les",
+      "températures atteindront douze degrés l’après-midi."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle prévision est annoncée ?",
+        "answer": "De la pluie.",
+        "choices": [
+          "De la pluie.",
+          "De la neige.",
+          "Du soleil toute la journée."
+        ],
+        "evidence": "il pleuvra",
+        "response": "choice"
+      },
+      {
+        "prompt": "Pour quel jour est cette prévision ?",
+        "answer": "Demain.",
+        "choices": [
+          "Demain.",
+          "Aujourd’hui.",
+          "Hier."
+        ],
+        "evidence": "Demain",
+        "response": "choice"
+      },
+      {
+        "prompt": "Relevez le verbe au futur simple qui annonce la pluie.",
+        "answer": "pleuvra",
+        "evidence": "il pleuvra",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "vacances",
+    "sourceSituation": "vacances",
+    "title": "Un séjour annoncé",
+    "genre": "note de situation",
+    "text": [
+      "En juillet, nous passerons une semaine à Lyon. Nous logerons chez une",
+      "amie. Nous visiterons le musée des Beaux-Arts."
+    ],
+    "questions": [
+      {
+        "prompt": "Quelle ville est prévue ?",
+        "answer": "Lyon.",
+        "choices": [
+          "Lyon.",
+          "Paris.",
+          "Lausanne."
+        ],
+        "evidence": "une semaine à Lyon",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelle sera la durée du séjour ?",
+        "answer": "Une semaine.",
+        "choices": [
+          "Une semaine.",
+          "Trois jours.",
+          "Un mois."
+        ],
+        "evidence": "une semaine",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où le groupe logera-t-il ?",
+        "answer": "Chez une amie.",
+        "evidence": "Nous logerons chez une amie.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "livraison",
+    "sourceSituation": "livraison",
+    "title": "Un colis attendu",
+    "genre": "note de situation",
+    "text": [
+      "Lundi, vous recevrez le colis à votre domicile. Le livreur passera entre",
+      "neuf heures et midi. Le colis contient des livres."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel événement est annoncé pour lundi ?",
+        "answer": "La réception du colis.",
+        "choices": [
+          "La réception du colis.",
+          "Le départ du train.",
+          "L’ouverture du musée."
+        ],
+        "evidence": "vous recevrez le colis",
+        "response": "choice"
+      },
+      {
+        "prompt": "Où le colis sera-t-il livré ?",
+        "answer": "À votre domicile.",
+        "choices": [
+          "À votre domicile.",
+          "À la mairie.",
+          "À la bibliothèque."
+        ],
+        "evidence": "à votre domicile",
+        "response": "choice"
+      },
+      {
+        "prompt": "Que contient le colis ?",
+        "answer": "Des livres.",
+        "evidence": "Le colis contient des livres.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "invitation",
+    "sourceSituation": "invitation",
+    "title": "Une présence promise",
+    "genre": "note de situation",
+    "text": [
+      "Elles ont promis de venir : vendredi, elles viendront à la fête de",
+      "l’école. Elles apporteront un gâteau au chocolat."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel engagement est annoncé ?",
+        "answer": "Venir à la fête.",
+        "choices": [
+          "Venir à la fête.",
+          "Ranger le local.",
+          "Faire les courses."
+        ],
+        "evidence": "elles viendront à la fête",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quelle fête est concernée ?",
+        "answer": "La fête de l’école.",
+        "choices": [
+          "La fête de l’école.",
+          "Un anniversaire.",
+          "La fête du village."
+        ],
+        "evidence": "la fête de l’école",
+        "response": "choice"
+      },
+      {
+        "prompt": "Qu’apporteront-elles ?",
+        "answer": "Un gâteau au chocolat.",
+        "evidence": "Elles apporteront un gâteau au chocolat.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "dossier",
+    "sourceSituation": "dossier",
+    "title": "Un travail à finir",
+    "genre": "note de situation",
+    "text": [
+      "Je finirai le dossier avant midi, je m’y engage. Ensuite, je le",
+      "transmettrai à la responsable par courriel."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel engagement est annoncé ?",
+        "answer": "Finir le dossier.",
+        "choices": [
+          "Finir le dossier.",
+          "Commencer le dossier.",
+          "Annuler la réunion."
+        ],
+        "evidence": "Je finirai le dossier",
+        "response": "choice"
+      },
+      {
+        "prompt": "Avant quelle heure ?",
+        "answer": "Midi.",
+        "choices": [
+          "Midi.",
+          "Dix heures.",
+          "Dix-huit heures."
+        ],
+        "evidence": "avant midi",
+        "response": "choice"
+      },
+      {
+        "prompt": "Par quel moyen le dossier sera-t-il transmis ?",
+        "answer": "Par courriel.",
+        "evidence": "par courriel",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "formulaire",
+    "sourceSituation": "formulaire",
+    "title": "Une démarche administrative",
+    "genre": "note de situation",
+    "text": [
+      "Demain, vous enverrez le formulaire à la mairie. Vous joindrez une copie",
+      "de votre carte d’identité. L’accueil vous répondra vendredi."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel document sera envoyé ?",
+        "answer": "Le formulaire.",
+        "choices": [
+          "Le formulaire.",
+          "Une invitation.",
+          "Un menu."
+        ],
+        "evidence": "vous enverrez le formulaire",
+        "response": "choice"
+      },
+      {
+        "prompt": "À quel service ?",
+        "answer": "La mairie.",
+        "choices": [
+          "La mairie.",
+          "La gare.",
+          "Le musée."
+        ],
+        "evidence": "à la mairie",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel jour une réponse est-elle prévue ?",
+        "answer": "Vendredi.",
+        "evidence": "L’accueil vous répondra vendredi.",
+        "response": "short"
+      }
+    ]
+  },
+  {
+    "id": "retour",
+    "sourceSituation": "retour",
+    "title": "L’heure de retour",
+    "genre": "note de situation",
+    "text": [
+      "Je rentrerai à la maison avant vingt heures, je te le promets. Je prendrai",
+      "le bus de dix-neuf heures. Le trajet dure vingt minutes."
+    ],
+    "questions": [
+      {
+        "prompt": "Quel engagement est pris ?",
+        "answer": "Rentrer avant vingt heures.",
+        "choices": [
+          "Rentrer avant vingt heures.",
+          "Partir à vingt heures.",
+          "Rester au bureau."
+        ],
+        "evidence": "Je rentrerai à la maison avant vingt heures",
+        "response": "choice"
+      },
+      {
+        "prompt": "Quel transport est prévu ?",
+        "answer": "Le bus.",
+        "choices": [
+          "Le bus.",
+          "Le train.",
+          "Le tram."
+        ],
+        "evidence": "Je prendrai le bus",
+        "response": "choice"
+      },
+      {
+        "prompt": "Combien de temps dure le trajet ?",
+        "answer": "Vingt minutes.",
+        "evidence": "Le trajet dure vingt minutes.",
+        "response": "short"
+      }
+    ]
+  }
+]
