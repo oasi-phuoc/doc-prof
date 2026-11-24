@@ -1,4 +1,7 @@
 import { useMemo, useState } from 'react'
+import type { LogistiqueGenerationConfig, LogistiqueGenerationResult } from './types'
+import './branding.css'
+import { LogistiquePrintableDocument } from './PrintableDocument'
 import { ACCESS_DOMAIN_OPTIONS } from '@/access'
 import { SelectBox } from '@/components/generator/SelectBox'
 import type { Domain } from '@/math/types'
@@ -28,12 +31,13 @@ const DEFAULT_TYPE_SETTINGS: Record<LogistiqueType, TypeSettings> = {
   glossaire: { quantity: 1, difficulty: 'moyen', source: 'toutes', format: 'terme-definition', includeExamples: true, includeSupports: false },
 }
 
-export function LogistiqueDomainSettings({ domain, allowedDomains, onDomainChange, selection, onSelectionChange }: {
+export function LogistiqueDomainSettings({ domain, allowedDomains, onDomainChange, selection, onSelectionChange, onGenerate }: {
   domain: LogistiqueDomain
   allowedDomains: Domain[]
   onDomainChange: (domain: Domain) => void
   selection: LogistiqueSelection
   onSelectionChange: (selection: LogistiqueSelection) => void
+  onGenerate: (config: Omit<LogistiqueGenerationConfig, 'seed'>) => void
 }) {
   const themes = useMemo(() => logistiqueThemesForDomain(domain), [domain])
   const counts = useMemo(() => logistiqueCatalogCounts(domain), [domain])
@@ -88,7 +92,7 @@ export function LogistiqueDomainSettings({ domain, allowedDomains, onDomainChang
         </li>)}
       </ol>
       <p className="logistique-bank-status" id="logistique-bank-status" role="status">
-        Les banques de contenus ne sont pas encore raccordées. La génération reste désactivée jusqu’à la validation pédagogique.
+        Le moteur accepte uniquement des banques raccordées et des unités approuvées pour le diplôme choisi.
       </p>
       <p className="logistique-catalog-count">{counts.themes} thèmes · {counts.submodules} sous-thèmes référencés</p>
     </div>
@@ -146,29 +150,44 @@ export function LogistiqueDomainSettings({ domain, allowedDomains, onDomainChang
       {selection.type === 'verification' ? <label className="logistique-setting-check"><input type="checkbox" checked={activeSettings.includeSupports} onChange={event => updateSettings({ includeSupports: event.target.checked })} />Prévoir un espace de réponse</label> : null}
       {selection.type === 'situation' ? <label className="logistique-setting-check"><input type="checkbox" checked={activeSettings.includeSupports} onChange={event => updateSettings({ includeSupports: event.target.checked })} />Inclure les documents supports disponibles</label> : null}
       {selection.type === 'theorie' || selection.type === 'glossaire' ? <label className="logistique-setting-check"><input type="checkbox" checked={activeSettings.includeExamples} onChange={event => updateSettings({ includeExamples: event.target.checked })} />Inclure les exemples</label> : null}
-      <p className="logistique-count-note">Les options seront appliquées aux contenus disponibles après import et validation. Aucune question fictive n’est générée.</p>
+      <button className="button logistique-generate" type="button" disabled={!activeSubmodule} onClick={() => onGenerate({
+        domain,
+        submoduleId: activeSubmodule?.id ?? '',
+        type: selection.type,
+        quantity: hasQuantity ? activeSettings.quantity : undefined,
+        difficulty: selection.type === 'theorie' || selection.type === 'glossaire' ? 'toutes' : activeSettings.difficulty,
+        source: selection.type === 'glossaire' ? 'toutes' : activeSettings.source,
+      })}>Générer la fiche</button>
+      <p className="logistique-count-note">La génération utilise uniquement les unités approuvées pour ce diplôme. Aucune question fictive n’est créée.</p>
     </section>
   </aside>
 }
 
-export function LogistiqueDomainEmpty({ domain, selection, theme, submodule }: {
+export function LogistiqueDomainResult({ domain, selection, theme, submodule, result, mode, onModeChange, onPrint }: {
   domain: LogistiqueDomain
   selection: LogistiqueSelection
   theme?: LogistiqueTheme
   submodule?: LogistiqueSubmodule
+  result: LogistiqueGenerationResult | null
+  mode: 'student' | 'answers'
+  onModeChange: (mode: 'student' | 'answers') => void
+  onPrint: () => void
 }) {
   const type = LOGISTIQUE_TYPES.find((option) => option.id === selection.type) ?? LOGISTIQUE_TYPES[0]
+  const title = `${submodule?.label ?? logistiqueDomainLabel(domain)} · ${type.label}`
+
+  if (result?.status === 'ready') return <section className="result-panel logistique-result">
+    <div className="logistique-result-toolbar no-print"><div><p className="eyebrow">Aperçu imprimable</p><h2>{mode === 'student' ? 'Fiche élève' : 'Corrigé'}</h2><p>{result.snapshot.units.length} unité(s) tirée(s) sur {result.available} disponible(s).</p></div><div className="logistique-result-actions"><button className="button small" type="button" aria-pressed={mode === 'student'} onClick={() => onModeChange('student')}>Fiche élève</button>{result.snapshot.units.some(unit => unit.correction) ? <button className="button small" type="button" aria-pressed={mode === 'answers'} onClick={() => onModeChange('answers')}>Corrigé</button> : null}<button className="button small" type="button" onClick={onPrint}>Imprimer</button></div></div>
+    <LogistiquePrintableDocument snapshot={result.snapshot} title={title} mode={mode} />
+  </section>
 
   return <section className="result-panel logistique-empty no-print" aria-labelledby="logistique-domain-title">
     <div className="logistique-preview-card">
       <span className="logistique-preview-kicker">Fiche pédagogique imprimable</span>
       <h2 id="logistique-domain-title">{domain === 'logistique-cfc' ? 'CFC' : 'AFP'} · {submodule ? `${submodule.code} — ${submodule.label}` : logistiqueDomainLabel(domain)}</h2>
       <p>{theme ? `${theme.code} — ${theme.label} · ` : ''}{type.label}</p>
-      <p>La structure de la fiche est sélectionnée. Son aperçu élève et son corrigé apparaîtront ici dès que la banque correspondante sera importée et validée.</p>
-      <div className="logistique-preview-meta">
-        <span>{submodule ? `${submodule.year}${submodule.year === 1 ? 're' : 'e'} année` : 'Sous-thème à sélectionner'}</span>
-        <span>Génération indisponible · banque non validée</span>
-      </div>
+      <p>{result?.status === 'empty' ? result.reason === 'missing-bank' ? 'Aucune banque n’est encore raccordée à ce sous-thème. Importez et validez les unités pour activer le tirage.' : 'La banque existe, mais aucune unité n’est approuvée pour ce diplôme et ces filtres.' : result?.status === 'invalid' ? result.reason : 'Configurez la fiche, puis lancez le tirage pour afficher l’aperçu élève et le corrigé.'}</p>
+      <div className="logistique-preview-meta"><span>{submodule ? `${submodule.year}${submodule.year === 1 ? 're' : 'e'} année` : 'Sous-thème à sélectionner'}</span><span>{result?.status === 'empty' && result.reason === 'no-approved-units' ? 'Aucune unité approuvée' : 'Banque en attente de validation'}</span></div>
     </div>
   </section>
 }

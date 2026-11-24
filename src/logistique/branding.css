@@ -26,6 +26,33 @@
 .logistique-preview-meta span{padding:6px 10px;border:1px solid var(--line,#dedede);border-radius:999px;color:var(--muted);font-size:12px}
 .logistique-preview-kicker{color:#a5242a;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
 .logistique-catalog :focus-visible{outline:3px solid color-mix(in srgb,#a5242a 55%,transparent);outline-offset:2px}
+.logistique-generate{width:100%;margin-top:4px;background:#a5242a;box-shadow:none}
+.logistique-generate:hover{background:#831c21;box-shadow:none}
+.logistique-result{padding:clamp(14px,3vw,28px)}
+.logistique-result-toolbar{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-bottom:18px}
+.logistique-result-toolbar h2{margin:0 0 5px;color:var(--ink)}
+.logistique-result-toolbar p:not(.eyebrow){margin:0;color:var(--muted);font-size:13px}
+.logistique-result-actions{display:flex;flex-wrap:wrap;gap:8px}
+.logistique-result-actions .button[aria-pressed="true"]{background:#a5242a;color:white}
+.logistique-print-document{width:min(100%,210mm);min-height:180mm;margin:0 auto;padding:16mm;background:#fff;color:#202124;border:1px solid #e3e3e3;box-shadow:0 8px 28px #00000012;font-family:Arial,sans-serif;font-size:11pt;line-height:1.5}
+.logistique-print-header{padding-bottom:10mm;border-bottom:2px solid #a5242a}
+.logistique-print-header>p:first-child{margin:0;color:#a5242a;font-size:10pt;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.logistique-print-header h1{margin:4mm 0;font-size:19pt;line-height:1.2}
+.logistique-print-header>p{margin:0;color:#555}
+.logistique-student-fields{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:8mm;font-size:10pt}
+.logistique-print-item{position:relative;display:flex;flex-direction:column;gap:2mm;padding:8mm 0;border-bottom:1px solid #ddd;break-inside:avoid}
+.logistique-print-number{margin:0;color:#a5242a;font-size:12pt;font-weight:700}
+.logistique-doc-unit h3,.logistique-doc-support h4{margin:0 0 2mm;font-size:12pt}
+.logistique-doc-unit p{margin:2mm 0}
+.logistique-doc-text{white-space:pre-wrap}
+.logistique-doc-support{margin:4mm 0;padding:4mm;border:1px solid #aaa;background:#fafafa;break-inside:avoid}
+.logistique-answer-lines{min-height:calc(var(--answer-lines, 2) * 8mm);margin-top:3mm;background:repeating-linear-gradient(to bottom,transparent 0,transparent calc(8mm - 1px),#c8c8c8 calc(8mm - 1px),#c8c8c8 8mm)}
+.logistique-correction{margin-top:4mm;padding:4mm;border-left:3px solid #a5242a;background:#f8f5f5;break-inside:avoid}
+.logistique-correction h4{margin:0 0 2mm;color:#811c21}
+.logistique-correction p,.logistique-correction ul,.logistique-correction ol{margin:2mm 0}
+.logistique-no-correction{color:#666;font-style:italic}
+@media(max-width:700px){.logistique-result-toolbar{flex-direction:column}.logistique-result-actions{width:100%}.logistique-result-actions .button{flex:1}.logistique-print-document{padding:8mm;box-shadow:none}.logistique-student-fields{flex-direction:column;gap:5px}}
+@media print{@page{size:A4 portrait;margin:12mm}body *{visibility:hidden!important}.logistique-print-document,.logistique-print-document *{visibility:visible!important}.logistique-print-document{position:absolute;inset:0 auto auto 0;width:100%;min-height:0;margin:0;padding:0;border:0;box-shadow:none;font-size:10pt}.logistique-print-header{padding-bottom:6mm}.logistique-print-header h1{font-size:16pt}.logistique-print-item{padding:5mm 0}.logistique-doc-support,.logistique-correction{background:#fff}}
 .logistique-empty{min-height:320px;padding:clamp(24px,4vw,48px);display:flex;align-items:center;justify-content:center}
 @media(max-width:600px){.logistique-empty{min-height:240px;padding:16px}}
 .doc-header.is-logistique .doc-logo-slot{width:140px;height:42px}
