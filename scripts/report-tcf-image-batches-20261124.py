@@ -2,6 +2,7 @@
 import json
 from pathlib import Path
 import re
+from collections import Counter
 
 ROOT = Path(__file__).resolve().parents[1]
 FOLDER = ROOT / 'docs/tcf/lots-images-20261124'
@@ -20,21 +21,33 @@ for entry in entries:
         entry['activation_register'] = packet['activation_register']
     label = 'DELF — reliquat final' if entry is manifest['delf_final21'] else f"Historique — lot {entry['number']}"
     target = summary['target_trios']
-    rows.append(f"| [{label}]({Path(entry['packet']).name}) | {target} | {summary['activated_trios']} | {summary['prepared_trios']} | {len(packet['planned_choices'])} | {len(packet['published_images'])} |")
+    remaining_images = entry['images_still_to_finalize']
+    rows.append(f"| [{label}]({Path(entry['packet']).name}) | {target} | {summary['activated_trios']} | {summary['prepared_trios']} | {len(packet['planned_choices'])} | {len(packet['published_images'])} | {remaining_images if remaining_images is not None else 'À définir'} |")
 manifest['historical_remaining'] = sum(r['count'] - r['activated_trios'] for r in manifest['historical_batches'])
 manifest['delf_remaining'] = manifest['delf_final21']['count'] - manifest['delf_final21']['activated_trios']
+blocker = manifest.get('generation_blocker')
+blocker_paragraph = ''
+if blocker and blocker['status'] == 'usage_limit_reached':
+    from datetime import datetime
+    reset = datetime.fromisoformat(blocker['reset_at_europe_zurich'])
+    blocker_paragraph = (
+        '**Génération suspendue par le quota du service.** '
+        f"Réouverture annoncée le {reset:%d/%m/%Y} à {reset:%H h %M}, heure suisse. "
+        f"[Réponse du service et demandes concernées]({Path(blocker['register']).name}). "
+        'Les revues déjà terminées sont conservées ; aucun lot incomplet n’est activé.\n\n'
+    )
 manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
 text = """# Lots d’images TCF du 24 novembre 2026
 
 Demande : terminer les **21 candidats DELF Actif**, puis les **261 trios historiques** par lots de **100, 100 et 61**. Les fichiers restent séparés de ceux des lots anciens et gardent les sources, questions, corrigés et empreintes de départ.
 
-| Lot | Cible | Activés | Prêts après revue comparative | Trios avec briefs | Nouvelles images publiées |
-| --- | ---: | ---: | ---: | ---: | ---: |
+| Lot | Cible | Activés | Prêts après revue comparative | Trios avec briefs | Nouvelles images publiées | Images à finaliser |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
 """ + '\n'.join(rows) + f"""
 
 **Reste : {manifest['delf_remaining']} candidat DELF et {manifest['historical_remaining']} trios historiques.** Les briefs et les images publiées d’un lot incomplet ne sont pas comptés comme des trios activés.
 
-Les 21 derniers DELF sont illustrés par 50 nouveaux PNG natifs 1448 × 1086 et 13 images existantes réutilisées. Le catalogue et les métadonnées visuelles sont actualisés. Les objets ont un fond ivoire contrôlé par mesure ; les variantes relationnelles partagent leur sujet et leur cadrage. Les propositions trop photographiques ont été reprises et leurs sources conservées hors catalogue dans le dossier de preuves.
+{blocker_paragraph}Les 21 derniers DELF sont illustrés par 50 nouveaux PNG natifs 1448 × 1086 et 13 images existantes réutilisées. Le catalogue et les métadonnées visuelles sont actualisés. Les objets ont un fond ivoire contrôlé par mesure ; les variantes relationnelles partagent leur sujet et leur cadrage. Les propositions trop photographiques ont été reprises et leurs sources conservées hors catalogue dans le dossier de preuves.
 
 Chaque activation exige trois illustrations contrôlées et une note comparative liée à la source. Aucune nouvelle écoute humaine n’est déclarée : la relecture porte sur les transcriptions actives. Les fichiers MP3, les bonnes réponses, les textes et les fragments JSON éditoriaux restent inchangés.
 
@@ -50,11 +63,48 @@ reviewed = sum(r['collection'] == 'TCF' and r['status'] == 'visually_reviewed' f
 gallery = len(json.loads((ROOT / 'src/gallery/catalog.generated.json').read_text()))
 fmt = lambda number: f'{number:,}'.replace(',', ' ')
 first = manifest['historical_batches'][0]
-progress = (f"Le premier lot dispose de {first['planned_trios']} briefs, de {first['published_images']} nouvelles images validées "
+first_completed = first['activated_trios'] == first['count']
+progress = (f"Le premier lot est terminé : {first['activated_trios']} trios activés et {first['published_images']} images préparées."
+            if first_completed else
+            f"Le premier lot dispose de {first['planned_trios']} briefs, de {first['published_images']} nouvelles images validées "
             f"et de {first['prepared_trios']} trios prêts ; ses trios ne sont pas encore activés.")
+legacy = json.loads((ROOT / 'docs/tcf/revue-763-20261107.json').read_text())
+legacy_rows = legacy['questions']
+pending = [r for r in legacy_rows if r['status'].startswith('artwork_needed')]
+active = sum(r['status'] == 'active_reviewed_trio' for r in legacy_rows)
+retained = len(legacy_rows) - len(pending) - active
+assert len(pending) == manifest['historical_remaining'], 'Batch and historical ledgers disagree'
+levels = Counter(next(level for level in ['a0-a1', 'a1-a2', 'a2-b1'] if f'/{level}/' in r['bank']) for r in pending)
+categories = Counter(r['status'] for r in pending)
+phase = json.loads((ROOT / 'docs/tcf/extension-573-20261107.json').read_text())
+phase_keys = set(phase['question_keys'])
+phase_statuses = Counter(r['status'] for r in legacy_rows if r['key'] in phase_keys)
+phase_active = phase_statuses['active_reviewed_trio']
+phase_pending = sum(number for status, number in phase_statuses.items() if status.startswith('artwork_needed'))
+phase_retained = len(phase_keys) - phase_active - phase_pending
 overview = ROOT / 'docs/tcf/avancement-cahier-des-charges-20261122.md'
 value = overview.read_text()
-value = re.sub(r'Le premier lot dispose de \d+ briefs, de \d+ nouvelles images validées et de \d+ trios prêts ; ses trios ne sont pas encore activés\.', progress, value)
+value = re.sub(r'Le premier lot (?:dispose de \d+ briefs, de \d+ nouvelles images validées et de \d+ trios prêts ; ses trios ne sont pas encore activés|est terminé : \d+ trios activés et \d+ images préparées)\.', progress, value)
+blocker_prefix = '**Génération suspendue par le quota du service.**'
+paragraphs = [paragraph for paragraph in value.split('\n\n') if not paragraph.startswith(blocker_prefix)]
+if blocker_paragraph:
+    overview_blocker = blocker_paragraph.strip().replace(
+        f"]({Path(blocker['register']).name})", f"](lots-images-20261124/{Path(blocker['register']).name})")
+    position = next((index + 1 for index, paragraph in enumerate(paragraphs)
+                     if paragraph.startswith('**Le reliquat DELF de 21 trios')), len(paragraphs))
+    paragraphs.insert(position, overview_blocker)
+value = '\n\n'.join(paragraphs)
+detail = (f"{levels['a0-a1']} A1, {levels['a1-a2']} A2 et {levels['a2-b1']} B1 ; "
+          f"{categories['artwork_needed_contextual_locations']} scènes ou lieux contextuels, "
+          f"{categories['artwork_needed_whole_answer_concepts']} ensembles de concepts et "
+          f"{categories['artwork_needed_distinct_document_types']} familles de documents") if pending else 'Tous les trios demandés ont été activés après revue.'
+value = re.sub(r'^\| Trios historiques CE/CO \|.*$', f'| Trios historiques CE/CO | **{len(pending)} trios** | {detail} |', value, flags=re.M)
+value = re.sub(r'\*\*\d+ trios historiques restent à traiter au total\*\*', f'**{len(pending)} trios historiques restent à traiter au total**', value)
+value = re.sub(r'Le reliquat historique contient encore \d+ trios A1\.',
+    f"Le reliquat historique contient encore {levels['a0-a1']} trios A1." if levels['a0-a1'] else 'Les trios historiques A1 sont terminés.', value)
+value = re.sub(r'^- Historique :.*$',
+    f'- Historique : **{active} trios actifs**, {retained} questions conservées en texte, {len(pending)} trios à préparer. '
+    f'Le suivi initial de 573 compte {phase_active} actifs, {phase_retained} texte conservé et {phase_pending} à préparer.', value, flags=re.M)
 value = re.sub(r'Le catalogue compte [\d ]+ images ; les [\d ]+ titres', f'Le catalogue compte {fmt(gallery)} images ; les {fmt(reviewed)} titres', value)
 value = re.sub(r'\*\*Terminé : [\d ]+ fichiers relus, zéro en attente\*\*', f'**Terminé : {fmt(reviewed)} fichiers relus, zéro en attente**', value)
 value = value.replace('Les 50 nouvelles images du reliquat DELF ont leur revue visuelle et leurs mots-clés propres', 'Les créations DELF et historiques publiées ont leur revue visuelle et leurs mots-clés propres')
@@ -65,7 +115,9 @@ paragraphs = value.split('\n\n')
 for index, paragraph in enumerate(paragraphs):
     if paragraph.startswith('**État du 24 novembre :'):
         paragraph = re.sub(r'le premier dispose de \d+ briefs, de \d+ nouvelles images validées et de \d+ trios prêts, non activés\.',
+            f"le premier est terminé avec {first['activated_trios']} trios activés." if first_completed else
             f"le premier dispose de {first['planned_trios']} briefs, de {first['published_images']} nouvelles images validées et de {first['prepared_trios']} trios prêts, non activés.", paragraph)
+        paragraph = re.sub(r'Les \*\*\d+ historiques(?: restants)?\*\* sont suivis', f'Les **{len(pending)} historiques restants** sont suivis', paragraph)
         paragraph = re.sub(r'Galerie : \*\*[\d ]+ images\*\*, dont \*\*[\d ]+ TCF', f'Galerie : **{fmt(gallery)} images**, dont **{fmt(reviewed)} TCF', paragraph)
         paragraphs[index] = paragraph
 timeline.write_text('\n\n'.join(paragraphs))
