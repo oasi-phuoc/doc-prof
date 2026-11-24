@@ -1,0 +1,109 @@
+{
+  "date": "2026-11-24",
+  "timezone": "Europe/Zurich",
+  "baseCommit": "66f9b9f51",
+  "status": "passed",
+  "policy": "All selected grammar questions stay on the original exercise page; vertical overflow is allowed. Only explicit user cuts add pages.",
+  "unit": {
+    "status": "passed",
+    "offerings": 493,
+    "defaultSinglePage": true,
+    "manualCutsPreserveOrder": true,
+    "roundTrips": true,
+    "documentAndDialogueSupports": true,
+    "legacyQuestions": true,
+    "multipleBlocks": true
+  },
+  "browser": {
+    "status": "passed",
+    "results": [
+      {
+        "activity": "gram-ex-futur-proche-qcm-verbe",
+        "questions": 6,
+        "defaultSheets": 1,
+        "manualSheets": 2,
+        "undoSheets": 1,
+        "numberingPreserved": true,
+        "exceedsA4": true,
+        "readingSupportRepeated": false
+      },
+      {
+        "activity": "gram-ex-j1-qcm-verbe",
+        "questions": 6,
+        "defaultSheets": 1,
+        "manualSheets": 2,
+        "undoSheets": 1,
+        "numberingPreserved": true,
+        "exceedsA4": true,
+        "readingSupportRepeated": false
+      },
+      {
+        "activity": "gram-ex-futur-proche-curriculum-s",
+        "questions": 6,
+        "defaultSheets": 1,
+        "manualSheets": 2,
+        "undoSheets": 1,
+        "numberingPreserved": true,
+        "exceedsA4": true,
+        "readingSupportRepeated": false
+      },
+      {
+        "activity": "gram-ex-futur-proche-communication-ce",
+        "questions": 6,
+        "defaultSheets": 1,
+        "manualSheets": 2,
+        "undoSheets": 1,
+        "numberingPreserved": true,
+        "exceedsA4": true,
+        "readingSupportRepeated": true
+      },
+      {
+        "activity": "gram-ex-k1-qcm-verbe",
+        "questions": 6,
+        "defaultSheets": 1,
+        "manualSheets": 2,
+        "undoSheets": 1,
+        "numberingPreserved": true,
+        "exceedsA4": true,
+        "readingSupportRepeated": false
+      }
+    ],
+    "errors": []
+  },
+  "build": "passed",
+  "lint": "passed; no new warnings",
+  "otherRegressions": [
+    "grammar-levels",
+    "grammar-contracts",
+    "grammar-contact",
+    "grammar-negation-a2",
+    "grammar-present-g3",
+    "grammar-questions"
+  ],
+  "print": {
+    "pdfPages": 4,
+    "studentPages": 2,
+    "correctionPages": 2,
+    "editorButtonsHidden": true
+  },
+  "preserved": {
+    "questionContent": true,
+    "choicesAndSeed": true,
+    "questionNumbering": true,
+    "editableBlockReassembly": true,
+    "savedRecipes": true,
+    "banks": true,
+    "theory": true,
+    "media": true,
+    "gamemode": true
+  },
+  "existingAutoLayoutChecks": "Historical; active global browser command now verifies manual pagination.",
+  "evidenceDirectory": "docs/grammaire/implementation/pagination-manuelle-20261124-proofs",
+  "integratedMain": "767525134",
+  "integrationChecks": {
+    "logistiqueDomainTests": 3,
+    "status": "passed",
+    "postIntegrationBrowserCases": 5,
+    "postIntegrationBuild": "passed"
+  }
+}

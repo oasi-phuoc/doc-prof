@@ -1,3 +1,4 @@
+import { grammarPageBreakQuestionId } from '@/grammaire/curriculum/pagination'
 import { useEffect, type Dispatch, type SetStateAction } from 'react'
 import {
   clearLibreContentFreeze,
@@ -315,10 +316,10 @@ export function usePageConfig({
           return setPageBlock(page, targetBlock, { tcfQuestionPageBreakBefore: breaks.includes(questionModeIndex)
             ? breaks.filter(value => value !== questionModeIndex) : [...breaks, questionModeIndex].sort((a, b) => a - b) })
         }
-        const grammar=sheetBlock?.items[itemIndex]?.grammar,readingPart=grammar?.readingPart??grammar?.scenarioPart
-        if ((block.grammarPresentation==='document-set'||block.grammarPresentation==='scenario-set')&&readingPart?.kind==='question') {
+        const grammarItem=sheetBlock?.items[itemIndex],questionId=grammarItem?grammarPageBreakQuestionId(grammarItem):undefined
+        if (questionId) {
           const ids=block.grammarPageBreakAfterQuestionIds??[]
-          return setPageBlock(page,targetBlock,{grammarPageBreakAfterQuestionIds:ids.includes(readingPart.questionId)?ids.filter(id=>id!==readingPart.questionId):[...ids,readingPart.questionId]})
+          return setPageBlock(page,targetBlock,{grammarPageBreakAfterQuestionIds:ids.includes(questionId)?ids.filter(id=>id!==questionId):[...ids,questionId]})
         }
         const offset = sheetBlock?.itemOffset ?? 0
         // Saut avant la question = coupure après l’item précédent.

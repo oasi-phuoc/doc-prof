@@ -81,7 +81,7 @@
     "test:grammar:presentation-extension:browser": "node tests/grammar/presentation-extension-browser.mjs",
     "test:grammar:family-completion": "node scripts/test-grammar-family-completion.cjs",
     "test:grammar:family-completion:browser": "node tests/grammar/family-completion-browser.mjs",
-    "test:grammar:browser": "node tests/grammar/pilot-browser.mjs && node tests/grammar/er-particuliers-browser.mjs && node tests/grammar/past-contrast-browser.mjs && node tests/grammar/direct-objects-browser.mjs && node tests/grammar/subjunctive-browser.mjs && node tests/grammar/avoir-browser.mjs && node tests/grammar/present-g3-browser.mjs && node tests/grammar/ir-re-browser.mjs && node tests/grammar/present-a1-next-browser.mjs && node tests/grammar/negation-a2-browser.mjs && node tests/grammar/contact-browser.mjs && node tests/grammar/presentation-browser.mjs && node tests/grammar/presentation-extension-browser.mjs && node tests/grammar/family-completion-browser.mjs && node tests/grammar/questions-browser.mjs && node tests/grammar/questions-pdf.mjs && node tests/grammar/exclamation-browser.mjs && node tests/grammar/exclamation-pdf.mjs && node tests/grammar/activite-browser.mjs && node tests/grammar/activite-pdf.mjs && node tests/grammar/espace-browser.mjs && node tests/grammar/espace-pdf.mjs && node tests/grammar/temps-browser.mjs && node tests/grammar/temps-pdf.mjs && node tests/grammar/temps-order-browser.mjs && node tests/grammar/demander-browser.mjs && node tests/grammar/demander-pdf.mjs && node tests/grammar/demander-interactions-browser.mjs",
+    "test:grammar:browser": "node tests/grammar/pagination-browser.mjs",
     "audio:index": "node scripts/audio-catalog.mjs",
     "test:audio-catalog": "node --test tests/audio-catalog/catalog.test.mjs",
     "test:audio-catalog:browser": "node tests/audio-catalog/browser.mjs",
@@ -138,7 +138,10 @@
     "test:grammar:action": "node scripts/test-grammar-action.cjs && python3 scripts/test-grammar-action-build.py",
     "test:grammar:action:browser": "node tests/grammar/action-browser.mjs && node tests/grammar/action-pdf.mjs",
     "test:grammar:avenir": "node scripts/test-grammar-avenir.cjs && python3 scripts/test-grammar-avenir-build.py",
-    "test:grammar:avenir:browser": "node tests/grammar/avenir-browser.mjs && node tests/grammar/avenir-pdf.mjs"
+    "test:grammar:avenir:browser": "node tests/grammar/avenir-browser.mjs && node tests/grammar/avenir-pdf.mjs",
+    "test:grammar:browser:legacy-layout": "node tests/grammar/pilot-browser.mjs && node tests/grammar/er-particuliers-browser.mjs && node tests/grammar/past-contrast-browser.mjs && node tests/grammar/direct-objects-browser.mjs && node tests/grammar/subjunctive-browser.mjs && node tests/grammar/avoir-browser.mjs && node tests/grammar/present-g3-browser.mjs && node tests/grammar/ir-re-browser.mjs && node tests/grammar/present-a1-next-browser.mjs && node tests/grammar/negation-a2-browser.mjs && node tests/grammar/contact-browser.mjs && node tests/grammar/presentation-browser.mjs && node tests/grammar/presentation-extension-browser.mjs && node tests/grammar/family-completion-browser.mjs && node tests/grammar/questions-browser.mjs && node tests/grammar/questions-pdf.mjs && node tests/grammar/exclamation-browser.mjs && node tests/grammar/exclamation-pdf.mjs && node tests/grammar/activite-browser.mjs && node tests/grammar/activite-pdf.mjs && node tests/grammar/espace-browser.mjs && node tests/grammar/espace-pdf.mjs && node tests/grammar/temps-browser.mjs && node tests/grammar/temps-pdf.mjs && node tests/grammar/temps-order-browser.mjs && node tests/grammar/demander-browser.mjs && node tests/grammar/demander-pdf.mjs && node tests/grammar/demander-interactions-browser.mjs",
+    "test:grammar:pagination": "node scripts/test-grammar-pagination.cjs",
+    "test:grammar:pagination:browser": "node tests/grammar/pagination-browser.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

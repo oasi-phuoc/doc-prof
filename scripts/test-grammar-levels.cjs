@@ -66,12 +66,12 @@ for (const bank of banks) {
    }
   }
   const sheets=buildWorksheets([block],839)
-  assert(sheets.length>1)
+  assert.equal(sheets.length,1,'Question count never causes an automatic page break.')
   if(reading) {
    assert.deepEqual(sheets.flatMap(s=>s.items.filter(i=>i.grammar.readingPart.kind==='question').map(i=>i.grammar.readingPart.questionId)),selected.questions.flatMap(q=>q.unit.questions.map(c=>c.id)))
    assert(sheets.every(s=>s.items[0].grammar.readingPart.kind==='support'))
   } else assert.deepEqual(sheets.flatMap(s=>s.items.map(i=>i.grammar.id)),selected.questions.map(q=>q.id))
-  assert(sheets.every(s=>s.blocks[0].sourceBlockIndex===0))
+  assert(sheets.every(s=>(s.blocks[0].sourceBlockIndex??0)===0))
   const recipe=buildFicheRecipe(recipeInput([block]))
   assert(isGrammarSnapshot(recipe.pages[0].grammarSnapshot))
   const roundTrip=parseFicheRecipe(JSON.parse(JSON.stringify(recipe)))
@@ -138,7 +138,7 @@ assert.deepEqual(select({...read,count:9},839),readSelection,'The old question c
 assert.throws(()=>select({...read,grammarDocumentCount:21},839),e=>e.code==='GRAMMAR_CONFIG_INVALID')
 const plainPages=buildWorksheets([read],839)
 const splitTarget=plainPages.find(s=>s.items.filter(i=>i.grammar.readingPart.kind==='question').length>1)
-assert(splitTarget,'At least one continuation can hold two short questions.')
+assert(splitTarget,'The full exercise contains all document questions before a manual cut.')
 const firstChild=splitTarget.items.find(i=>i.grammar.readingPart.kind==='question').grammar.readingPart.questionId
 const withBreak={...read,grammarPageBreakAfterQuestionIds:[firstChild]}
 assert.deepEqual(select(withBreak,839),readSelection,'Page breaks never redraw content or options.')

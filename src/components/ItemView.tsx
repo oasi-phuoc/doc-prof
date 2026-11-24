@@ -92,6 +92,7 @@ export function ItemView({
   tcfPageBreakBefore,
   onToggleTcfPageBreak,
   theoryPageBreakAfter,
+  pageBreakAfterKind,
   onToggleTheoryPageBreakAfter,
   hideTcfFormIcons = false,
   formulaireLetterGrid = false,
@@ -129,6 +130,7 @@ export function ItemView({
   tcfPageBreakBefore?: boolean
   onToggleTcfPageBreak?: () => void
   /** Théorie : la section suivante commence sur une nouvelle page. */
+  pageBreakAfterKind?: 'question'
   theoryPageBreakAfter?: boolean
   onToggleTheoryPageBreakAfter?: () => void
   /** Masquer les icônes de forme en marge (ex. dual form sur le titre). */
@@ -192,10 +194,10 @@ export function ItemView({
   )
   const grammarPart=item.grammar?.readingPart??item.grammar?.scenarioPart
   const showTheoryPageChip = Boolean(
-    onToggleTheoryPageBreakAfter && (item.layout === 'theory' && item.theoryBlock?.kind === 'section' || item.layout==='grammar'&&grammarPart?.kind==='question'),
+    onToggleTheoryPageBreakAfter && (item.layout === 'theory' && item.theoryBlock?.kind === 'section' || pageBreakAfterKind==='question'),
   )
   const pageBreakChipLabel = showTheoryPageChip
-    ? item.layout==='grammar' ? theoryPageBreakAfter?'Annuler le saut de page après cette question':'Ajouter un saut de page après cette question' : theoryPageBreakAfter
+    ? pageBreakAfterKind==='question' ? theoryPageBreakAfter?'Annuler le saut de page après cette question':'Ajouter un saut de page après cette question' : theoryPageBreakAfter
       ? 'Annuler le saut de page après cette section'
       : 'Passer la section suivante sur une nouvelle page'
     : tcfPageBreakBefore

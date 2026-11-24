@@ -1,3 +1,4 @@
+import { grammarPageBreakQuestionId } from '@/grammaire/curriculum/pagination'
 import { Children, type CSSProperties, type HTMLAttributes, type ReactElement } from 'react'
 import './worksheet-typography.css'
 import { ExerciseFrame } from '@/components/math/ExerciseFrame'
@@ -506,9 +507,10 @@ export function WorksheetSheet({
                     item.layout === 'theory' &&
                     item.theoryBlock?.kind === 'section' &&
                     sourceIndex < theoryBreakCount - 1
-                  const readingPart=item.grammar?.readingPart??item.grammar?.scenarioPart
-                  const isGrammarPageBreakable=item.layout==='grammar'&&readingPart?.kind==='question'
-                  const theoryPageBreakAfter = isGrammarPageBreakable ? Boolean(block.grammarPageBreakAfterQuestionIds?.includes(readingPart.questionId)) : Boolean(
+                  const isGrammarPageBreakable=page.domain==='grammaire'&&block.exerciseType.startsWith('gram-ex-')&&(
+                    item.grammar?grammarPageBreakQuestionId(item)!==undefined:!item.hideItemNumber&&item.layout!=='theory'&&(item.layout!=='tcf'||item.tcf?.kind==='qcm'||item.tcf?.kind==='lignes'||item.tcf?.kind==='dialogue')
+                  )
+                  const theoryPageBreakAfter = isGrammarPageBreakable ? Boolean(item.grammar&&block.grammarPageBreakAfterQuestionIds?.includes(grammarPageBreakQuestionId(item)!)||!item.grammar&&(block.tcfPageBreakAfter?.[sourceIndex]??page.tcfPageBreakAfter?.[sourceIndex])) : Boolean(
                     block.tcfPageBreakAfter?.[sourceIndex] ??
                       page.tcfPageBreakAfter?.[sourceIndex] ??
                       item.theoryPageBreakAfter,
@@ -546,7 +548,7 @@ export function WorksheetSheet({
                       itemLabel={/^tcm-(?:csc|cfr)-ex0[12]$/.test(block.exerciseType)?String.fromCharCode(65+index+itemOffset):undefined}
                       seriesNumber={/^tcm-csc-ex16$/.test(block.exerciseType)||/^tcm-cfr-ex16$/.test(block.exerciseType)?index+itemOffset+1:undefined}
                       hideNumber={/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType)||/^tcm-cfr-ex(?:07|08|09|10|16)$/.test(block.exerciseType)}
-                      index={index + (/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType) ? block.itemOffset ?? 0 : 0)}
+                      index={index + (page.domain==='grammaire'||/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType) ? block.itemOffset ?? 0 : 0)}
                       algebraPadLeft={padLeft}
                       draftGrid={draftGrid}
                       stackGeo={/^tcm-cfr-ex2[2-6]$/.test(block.exerciseType) || block.exerciseType.includes('peri-aire')}
@@ -593,10 +595,11 @@ export function WorksheetSheet({
                           ? () => onToggleTcfPageBreak(index, blockIndex)
                           : undefined
                       }
+                      pageBreakAfterKind={isGrammarPageBreakable?'question':undefined}
                       theoryPageBreakAfter={isTheoryPageBreakable||isGrammarPageBreakable ? theoryPageBreakAfter : undefined}
                       onToggleTheoryPageBreakAfter={
                         interactiveTcfPageBreaks && (isTheoryPageBreakable||isGrammarPageBreakable) && onToggleTcfPageBreak
-                          ? () => onToggleTcfPageBreak(index + (isGrammarPageBreakable?0:1), blockIndex)
+                          ? () => onToggleTcfPageBreak(index + (item.grammar?0:1), blockIndex)
                           : undefined
                       }
                       formulaireLetterGrid={Boolean(block.formulaireLetterGrid)}

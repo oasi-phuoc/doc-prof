@@ -33,8 +33,7 @@ for (const sub of ['aller-destination','er']) {
   const short=structuredClone(full)
   short.blocks.forEach(b=>b.items.forEach(i=>{i.grammar.unit.explanation='Règle courte.'}))
   const withoutRules=splitGradedGrammarPages(short)
-  assert(withRules.length>withoutRules.length,'Long destination explanations reserve more correction space.')
-  assert.deepEqual(withRules.flatMap(p=>p.items.map(i=>i.grammar.id)),withoutRules.flatMap(p=>p.items.map(i=>i.grammar.id)),'Pagination preserves the frozen question sequence.')
+  assert.equal(withRules,null);assert.equal(withoutRules,null,'Long correction rules do not split the exercise.')
  }
  const correction = grammarBanksForType(prefix+'corriger-erreur')[0]
  for (let i=0;i<50;i++) {

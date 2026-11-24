@@ -250,7 +250,7 @@ export function ResultPanel({
         isTcf || (Boolean(isGrammaireExercise) && activeBlock.tcfExercise == null)
       }
       interactiveTcfPageBreaks={
-        isTcf ||
+        sheet.domain==='grammaire' || isTcf ||
         pageExerciseBlocks.some(
           (block) =>
             block.grammarPresentation==='document-set' || block.grammarPresentation==='scenario-set' ||
@@ -498,7 +498,7 @@ export function ResultPanel({
                           interactiveTcfOptions={
                             isTcf || (Boolean(isGrammaireExercise) && activeBlock.tcfExercise == null)
                           }
-                          interactiveTcfPageBreaks={isTcf || pageExerciseBlocks.some(block => block.grammarPresentation==='document-set'||block.grammarPresentation==='scenario-set'||isGrammarReadingType(block.exerciseType)||block.exerciseType==='tcm-cfr-ex28')}
+                          interactiveTcfPageBreaks={a5LeftSheet.domain==='grammaire'||a5RightSheet.domain==='grammaire'||isTcf || pageExerciseBlocks.some(block => block.grammarPresentation==='document-set'||block.grammarPresentation==='scenario-set'||isGrammarReadingType(block.exerciseType)||block.exerciseType==='tcm-cfr-ex28')}
                           onSelectTcfForm={selectTcfForm}
                           onSelectTcfFormForExercise={selectTcfFormForExercise}
                           onToggleFormulaireLetterGrid={toggleFormulaireLetterGrid}

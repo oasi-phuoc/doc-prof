@@ -1322,6 +1322,7 @@ html.is-margin-symmetric .print-only-sheets .worksheet-sheet.sheet-even .draft-g
   left:auto;right:calc(100% + 4px)
 }
 /* TCF : « Page » dans la marge droite (cette question et les suivantes → page suivante). */
+.a4-frame .exercise-item:has(> .tcf-page-chip){position:relative}
 .a4-frame .worksheet-sheet .draft-grid-chip-margin.tcf-page-chip{
   left:calc(100% + 2px);right:auto;
   /* Même diamètre que les icônes de format (22 px). Icône centrée dans le cercle. */
