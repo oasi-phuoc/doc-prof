@@ -1,0 +1,5156 @@
+[
+  {
+    "schemaVersion": 1,
+    "revision": "aliments-2026-11-24-v1",
+    "activityId": "gram-ex-g6-qcm-verbe",
+    "subthemeId": "g6",
+    "topic": "gram-aliments",
+    "level": "A1",
+    "label": "Partitif ou article contracté",
+    "objective": "Former les groupes de préposition et d’article selon leur contexte.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Sources, formes et contextes relus ; réemploi explicite entre mécaniques. Images existantes conservées sous empreinte immuable. Modèles ouverts non exclusifs ; approbation enseignante en attente."
+    },
+    "presentations": [
+      "choice",
+      "gap"
+    ],
+    "instructions": {
+      "choice": "Choisissez la forme qui réunit la préposition et l’article donnés.",
+      "gap": "Réunissez la préposition et l’article donnés, avec une contraction si nécessaire."
+    },
+    "units": [
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-marche",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je vais ___ marché.",
+        "cue": "Vous allez vers le marché déjà indiqué sur le plan. Groupe de départ : à + le.",
+        "answers": [
+          "au"
+        ],
+        "options": [
+          {
+            "id": "marche-choix-1",
+            "text": "au"
+          },
+          {
+            "id": "marche-choix-2",
+            "text": "à le"
+          },
+          {
+            "id": "marche-choix-3",
+            "text": "aux"
+          }
+        ],
+        "explanation": "Groupe attendu : à + le → au. Modèle : Je vais au marché."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-boulangerie",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je vais ___ boulangerie du quartier.",
+        "cue": "La boulangerie du quartier est votre destination. Groupe de départ : à + la.",
+        "answers": [
+          "à la"
+        ],
+        "options": [
+          {
+            "id": "boulangerie-choix-1",
+            "text": "à la"
+          },
+          {
+            "id": "boulangerie-choix-2",
+            "text": "au"
+          },
+          {
+            "id": "boulangerie-choix-3",
+            "text": "à le"
+          }
+        ],
+        "explanation": "Groupe attendu : à + la → à la. Il n’y a pas de contraction avec la ou l’. Modèle : Je vais à la boulangerie du quartier."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-epicerie",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je vais ___épicerie voisine.",
+        "cue": "L’épicerie voisine est ouverte et vous y allez. Groupe de départ : à + l’.",
+        "answers": [
+          "à l’"
+        ],
+        "options": [
+          {
+            "id": "epicerie-choix-1",
+            "text": "à l’"
+          },
+          {
+            "id": "epicerie-choix-2",
+            "text": "à le"
+          },
+          {
+            "id": "epicerie-choix-3",
+            "text": "au"
+          }
+        ],
+        "explanation": "Groupe attendu : à + l’ → à l’. Il n’y a pas de contraction avec la ou l’. Modèle : Je vais à l’épicerie voisine."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-commercants",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je parle ___ commerçants de cette rue.",
+        "cue": "Vous adressez une question aux commerçants de cette rue. Groupe de départ : à + les.",
+        "answers": [
+          "aux"
+        ],
+        "options": [
+          {
+            "id": "commercants-choix-1",
+            "text": "aux"
+          },
+          {
+            "id": "commercants-choix-2",
+            "text": "à les"
+          },
+          {
+            "id": "commercants-choix-3",
+            "text": "au"
+          }
+        ],
+        "explanation": "Groupe attendu : à + les → aux. Modèle : Je parle aux commerçants de cette rue."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-retour-marche",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je reviens ___ marché.",
+        "cue": "Vous revenez du marché où vous avez fait vos courses. Groupe de départ : de + le.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "retour-marche-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "retour-marche-choix-2",
+            "text": "de le"
+          },
+          {
+            "id": "retour-marche-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Groupe attendu : de + le → du. Modèle : Je reviens du marché."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-retour-boulangerie",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je sors ___ boulangerie.",
+        "cue": "Vous sortez de la boulangerie déjà connue. Groupe de départ : de + la.",
+        "answers": [
+          "de la"
+        ],
+        "options": [
+          {
+            "id": "retour-boulangerie-choix-1",
+            "text": "de la"
+          },
+          {
+            "id": "retour-boulangerie-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "retour-boulangerie-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Groupe attendu : de + la → de la. Il n’y a pas de contraction avec la ou l’. Modèle : Je sors de la boulangerie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-retour-epicerie",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je reviens ___épicerie du quartier.",
+        "cue": "Vous revenez de l’épicerie du quartier. Groupe de départ : de + l’.",
+        "answers": [
+          "de l’"
+        ],
+        "options": [
+          {
+            "id": "retour-epicerie-choix-1",
+            "text": "de l’"
+          },
+          {
+            "id": "retour-epicerie-choix-2",
+            "text": "de le"
+          },
+          {
+            "id": "retour-epicerie-choix-3",
+            "text": "du"
+          }
+        ],
+        "explanation": "Groupe attendu : de + l’ → de l’. Il n’y a pas de contraction avec la ou l’. Modèle : Je reviens de l’épicerie du quartier."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-prix-pommes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je vérifie le prix ___ pommes de cet étal.",
+        "cue": "Vous vérifiez le prix des pommes de cet étal précis. Groupe de départ : de + les.",
+        "answers": [
+          "des"
+        ],
+        "options": [
+          {
+            "id": "prix-pommes-choix-1",
+            "text": "des"
+          },
+          {
+            "id": "prix-pommes-choix-2",
+            "text": "de les"
+          },
+          {
+            "id": "prix-pommes-choix-3",
+            "text": "du"
+          }
+        ],
+        "explanation": "Groupe attendu : de + les → des. Modèle : Je vérifie le prix des pommes de cet étal."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-resto",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Nous allons ___ restaurant réservé.",
+        "cue": "Le restaurant réservé par le groupe est votre destination. Groupe de départ : à + le.",
+        "answers": [
+          "au"
+        ],
+        "options": [
+          {
+            "id": "resto-choix-1",
+            "text": "au"
+          },
+          {
+            "id": "resto-choix-2",
+            "text": "à le"
+          },
+          {
+            "id": "resto-choix-3",
+            "text": "aux"
+          }
+        ],
+        "explanation": "Groupe attendu : à + le → au. Modèle : Nous allons au restaurant réservé."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Nous mangeons ___ cantine de l’école.",
+        "cue": "Le repas est prévu dans la cantine de l’école. Groupe de départ : à + la.",
+        "answers": [
+          "à la"
+        ],
+        "options": [
+          {
+            "id": "cantine-choix-1",
+            "text": "à la"
+          },
+          {
+            "id": "cantine-choix-2",
+            "text": "au"
+          },
+          {
+            "id": "cantine-choix-3",
+            "text": "à le"
+          }
+        ],
+        "explanation": "Groupe attendu : à + la → à la. Il n’y a pas de contraction avec la ou l’. Modèle : Nous mangeons à la cantine de l’école."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-accueil",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je demande un renseignement ___accueil.",
+        "cue": "Vous demandez un renseignement à l’accueil du marché couvert. Groupe de départ : à + l’.",
+        "answers": [
+          "à l’"
+        ],
+        "options": [
+          {
+            "id": "accueil-choix-1",
+            "text": "à l’"
+          },
+          {
+            "id": "accueil-choix-2",
+            "text": "à le"
+          },
+          {
+            "id": "accueil-choix-3",
+            "text": "au"
+          }
+        ],
+        "explanation": "Groupe attendu : à + l’ → à l’. Il n’y a pas de contraction avec la ou l’. Modèle : Je demande un renseignement à l’accueil."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-invites",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je donne les menus ___ invités installés.",
+        "cue": "Vous donnez les menus aux invités déjà installés. Groupe de départ : à + les.",
+        "answers": [
+          "aux"
+        ],
+        "options": [
+          {
+            "id": "invites-choix-1",
+            "text": "aux"
+          },
+          {
+            "id": "invites-choix-2",
+            "text": "à les"
+          },
+          {
+            "id": "invites-choix-3",
+            "text": "au"
+          }
+        ],
+        "explanation": "Groupe attendu : à + les → aux. Modèle : Je donne les menus aux invités installés."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-menu-resto",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je regarde le menu ___ restaurant.",
+        "cue": "Vous consultez le menu du restaurant où vous êtes. Groupe de départ : de + le.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "menu-resto-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "menu-resto-choix-2",
+            "text": "de le"
+          },
+          {
+            "id": "menu-resto-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Groupe attendu : de + le → du. Modèle : Je regarde le menu du restaurant."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-porte-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’attends près de la porte ___ cantine.",
+        "cue": "Vous attendez près de la porte de la cantine connue. Groupe de départ : de + la.",
+        "answers": [
+          "de la"
+        ],
+        "options": [
+          {
+            "id": "porte-cantine-choix-1",
+            "text": "de la"
+          },
+          {
+            "id": "porte-cantine-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "porte-cantine-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Groupe attendu : de + la → de la. Il n’y a pas de contraction avec la ou l’. Modèle : J’attends près de la porte de la cantine."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-entree-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’attends devant l’entrée ___école.",
+        "cue": "Le rendez-vous est devant l’entrée de l’école du quartier. Groupe de départ : de + l’.",
+        "answers": [
+          "de l’"
+        ],
+        "options": [
+          {
+            "id": "entree-ecole-choix-1",
+            "text": "de l’"
+          },
+          {
+            "id": "entree-ecole-choix-2",
+            "text": "de le"
+          },
+          {
+            "id": "entree-ecole-choix-3",
+            "text": "du"
+          }
+        ],
+        "explanation": "Groupe attendu : de + l’ → de l’. Il n’y a pas de contraction avec la ou l’. Modèle : J’attends devant l’entrée de l’école."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-horaires-magasins",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je lis les horaires ___ magasins de ma rue.",
+        "cue": "Vous lisez les horaires des magasins de votre rue. Groupe de départ : de + les.",
+        "answers": [
+          "des"
+        ],
+        "options": [
+          {
+            "id": "horaires-magasins-choix-1",
+            "text": "des"
+          },
+          {
+            "id": "horaires-magasins-choix-2",
+            "text": "de les"
+          },
+          {
+            "id": "horaires-magasins-choix-3",
+            "text": "du"
+          }
+        ],
+        "explanation": "Groupe attendu : de + les → des. Modèle : Je lis les horaires des magasins de ma rue."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-boulanger",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je demande un pain ___ boulanger.",
+        "cue": "Vous demandez un pain au boulanger qui vous sert. Groupe de départ : à + le.",
+        "answers": [
+          "au"
+        ],
+        "options": [
+          {
+            "id": "boulanger-choix-1",
+            "text": "au"
+          },
+          {
+            "id": "boulanger-choix-2",
+            "text": "à le"
+          },
+          {
+            "id": "boulanger-choix-3",
+            "text": "aux"
+          }
+        ],
+        "explanation": "Groupe attendu : à + le → au. Modèle : Je demande un pain au boulanger."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-vendeuse",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je pose ma question ___ vendeuse.",
+        "cue": "Vous posez votre question à la vendeuse présente. Groupe de départ : à + la.",
+        "answers": [
+          "à la"
+        ],
+        "options": [
+          {
+            "id": "vendeuse-choix-1",
+            "text": "à la"
+          },
+          {
+            "id": "vendeuse-choix-2",
+            "text": "au"
+          },
+          {
+            "id": "vendeuse-choix-3",
+            "text": "à le"
+          }
+        ],
+        "explanation": "Groupe attendu : à + la → à la. Il n’y a pas de contraction avec la ou l’. Modèle : Je pose ma question à la vendeuse."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-employe",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je donne le ticket ___employé du comptoir.",
+        "cue": "Vous remettez le ticket à l’employé du comptoir. Groupe de départ : à + l’.",
+        "answers": [
+          "à l’"
+        ],
+        "options": [
+          {
+            "id": "employe-choix-1",
+            "text": "à l’"
+          },
+          {
+            "id": "employe-choix-2",
+            "text": "à le"
+          },
+          {
+            "id": "employe-choix-3",
+            "text": "au"
+          }
+        ],
+        "explanation": "Groupe attendu : à + l’ → à l’. Il n’y a pas de contraction avec la ou l’. Modèle : Je donne le ticket à l’employé du comptoir."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-clients",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je présente les produits ___ clients qui attendent.",
+        "cue": "Vous présentez les produits aux clients qui attendent. Groupe de départ : à + les.",
+        "answers": [
+          "aux"
+        ],
+        "options": [
+          {
+            "id": "clients-choix-1",
+            "text": "aux"
+          },
+          {
+            "id": "clients-choix-2",
+            "text": "à les"
+          },
+          {
+            "id": "clients-choix-3",
+            "text": "au"
+          }
+        ],
+        "explanation": "Groupe attendu : à + les → aux. Modèle : Je présente les produits aux clients qui attendent."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-panier",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je regarde le contenu ___ panier.",
+        "cue": "Vous regardez le contenu du panier posé devant vous. Groupe de départ : de + le.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "panier-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "panier-choix-2",
+            "text": "de le"
+          },
+          {
+            "id": "panier-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Groupe attendu : de + le → du. Modèle : Je regarde le contenu du panier."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-bouteille",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je vérifie le bouchon ___ bouteille ouverte.",
+        "cue": "Vous vérifiez le bouchon de la bouteille ouverte. Groupe de départ : de + la.",
+        "answers": [
+          "de la"
+        ],
+        "options": [
+          {
+            "id": "bouteille-choix-1",
+            "text": "de la"
+          },
+          {
+            "id": "bouteille-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "bouteille-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Groupe attendu : de + la → de la. Il n’y a pas de contraction avec la ou l’. Modèle : Je vérifie le bouchon de la bouteille ouverte."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-assiette",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’essuie le bord ___assiette utilisée.",
+        "cue": "Vous essuyez le bord de l’assiette déjà utilisée. Groupe de départ : de + l’.",
+        "answers": [
+          "de l’"
+        ],
+        "options": [
+          {
+            "id": "assiette-choix-1",
+            "text": "de l’"
+          },
+          {
+            "id": "assiette-choix-2",
+            "text": "de le"
+          },
+          {
+            "id": "assiette-choix-3",
+            "text": "du"
+          }
+        ],
+        "explanation": "Groupe attendu : de + l’ → de l’. Il n’y a pas de contraction avec la ou l’. Modèle : J’essuie le bord de l’assiette utilisée."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-verres",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je vérifie la propreté ___ verres de la table.",
+        "cue": "Vous vérifiez la propreté des verres de la table. Groupe de départ : de + les.",
+        "answers": [
+          "des"
+        ],
+        "options": [
+          {
+            "id": "verres-choix-1",
+            "text": "des"
+          },
+          {
+            "id": "verres-choix-2",
+            "text": "de les"
+          },
+          {
+            "id": "verres-choix-3",
+            "text": "du"
+          }
+        ],
+        "explanation": "Groupe attendu : de + les → des. Modèle : Je vérifie la propreté des verres de la table."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-cuisinier",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je transmets la commande ___ cuisinier.",
+        "cue": "Vous transmettez la commande au cuisinier présent. Groupe de départ : à + le.",
+        "answers": [
+          "au"
+        ],
+        "options": [
+          {
+            "id": "cuisinier-choix-1",
+            "text": "au"
+          },
+          {
+            "id": "cuisinier-choix-2",
+            "text": "à le"
+          },
+          {
+            "id": "cuisinier-choix-3",
+            "text": "aux"
+          }
+        ],
+        "explanation": "Groupe attendu : à + le → au. Modèle : Je transmets la commande au cuisinier."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-cuisiniere",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’apporte les ingrédients ___ cuisinière.",
+        "cue": "Vous apportez les ingrédients à la cuisinière de l’atelier. Groupe de départ : à + la.",
+        "answers": [
+          "à la"
+        ],
+        "options": [
+          {
+            "id": "cuisiniere-choix-1",
+            "text": "à la"
+          },
+          {
+            "id": "cuisiniere-choix-2",
+            "text": "au"
+          },
+          {
+            "id": "cuisiniere-choix-3",
+            "text": "à le"
+          }
+        ],
+        "explanation": "Groupe attendu : à + la → à la. Il n’y a pas de contraction avec la ou l’. Modèle : J’apporte les ingrédients à la cuisinière."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-atelier",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je participe ___atelier de cuisine.",
+        "cue": "Vous participez à l’atelier de cuisine annoncé. Groupe de départ : à + l’.",
+        "answers": [
+          "à l’"
+        ],
+        "options": [
+          {
+            "id": "atelier-choix-1",
+            "text": "à l’"
+          },
+          {
+            "id": "atelier-choix-2",
+            "text": "à le"
+          },
+          {
+            "id": "atelier-choix-3",
+            "text": "au"
+          }
+        ],
+        "explanation": "Groupe attendu : à + l’ → à l’. Il n’y a pas de contraction avec la ou l’. Modèle : Je participe à l’atelier de cuisine."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-participants",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je distribue les recettes ___ participants inscrits.",
+        "cue": "Vous distribuez les recettes aux participants inscrits. Groupe de départ : à + les.",
+        "answers": [
+          "aux"
+        ],
+        "options": [
+          {
+            "id": "participants-choix-1",
+            "text": "aux"
+          },
+          {
+            "id": "participants-choix-2",
+            "text": "à les"
+          },
+          {
+            "id": "participants-choix-3",
+            "text": "au"
+          }
+        ],
+        "explanation": "Groupe attendu : à + les → aux. Modèle : Je distribue les recettes aux participants inscrits."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-couvercle-pot",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je referme le couvercle ___ pot.",
+        "cue": "Vous refermez le couvercle du pot de confiture ouvert. Groupe de départ : de + le.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "couvercle-pot-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "couvercle-pot-choix-2",
+            "text": "de le"
+          },
+          {
+            "id": "couvercle-pot-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Groupe attendu : de + le → du. Modèle : Je referme le couvercle du pot."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-anse-tasse",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je tiens l’anse ___ tasse.",
+        "cue": "Vous tenez une tasse connue par son anse. Groupe de départ : de + la.",
+        "answers": [
+          "de la"
+        ],
+        "options": [
+          {
+            "id": "anse-tasse-choix-1",
+            "text": "de la"
+          },
+          {
+            "id": "anse-tasse-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "anse-tasse-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Groupe attendu : de + la → de la. Il n’y a pas de contraction avec la ou l’. Modèle : Je tiens l’anse de la tasse."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-odeur-huile",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je décris l’odeur ___huile utilisée.",
+        "cue": "Vous parlez de l’odeur de l’huile utilisée dans la recette. Groupe de départ : de + l’.",
+        "answers": [
+          "de l’"
+        ],
+        "options": [
+          {
+            "id": "odeur-huile-choix-1",
+            "text": "de l’"
+          },
+          {
+            "id": "odeur-huile-choix-2",
+            "text": "de le"
+          },
+          {
+            "id": "odeur-huile-choix-3",
+            "text": "du"
+          }
+        ],
+        "explanation": "Groupe attendu : de + l’ → de l’. Il n’y a pas de contraction avec la ou l’. Modèle : Je décris l’odeur de l’huile utilisée."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-couleur-tomates",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je regarde la couleur ___ tomates de ce panier.",
+        "cue": "Vous observez la couleur des tomates de ce panier. Groupe de départ : de + les.",
+        "answers": [
+          "des"
+        ],
+        "options": [
+          {
+            "id": "couleur-tomates-choix-1",
+            "text": "des"
+          },
+          {
+            "id": "couleur-tomates-choix-2",
+            "text": "de les"
+          },
+          {
+            "id": "couleur-tomates-choix-3",
+            "text": "du"
+          }
+        ],
+        "explanation": "Groupe attendu : de + les → des. Modèle : Je regarde la couleur des tomates de ce panier."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-service",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’écris ___ service de réservation.",
+        "cue": "Vous envoyez une question au service de réservation. Groupe de départ : à + le.",
+        "answers": [
+          "au"
+        ],
+        "options": [
+          {
+            "id": "service-choix-1",
+            "text": "au"
+          },
+          {
+            "id": "service-choix-2",
+            "text": "à le"
+          },
+          {
+            "id": "service-choix-3",
+            "text": "aux"
+          }
+        ],
+        "explanation": "Groupe attendu : à + le → au. Modèle : J’écris au service de réservation."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-reunion",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je participe ___ réunion sur le repas.",
+        "cue": "Vous participez à la réunion sur le repas du groupe. Groupe de départ : à + la.",
+        "answers": [
+          "à la"
+        ],
+        "options": [
+          {
+            "id": "reunion-choix-1",
+            "text": "à la"
+          },
+          {
+            "id": "reunion-choix-2",
+            "text": "au"
+          },
+          {
+            "id": "reunion-choix-3",
+            "text": "à le"
+          }
+        ],
+        "explanation": "Groupe attendu : à + la → à la. Il n’y a pas de contraction avec la ou l’. Modèle : Je participe à la réunion sur le repas."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-association",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’apporte les denrées ___association.",
+        "cue": "Vous apportez les denrées à l’association du quartier. Groupe de départ : à + l’.",
+        "answers": [
+          "à l’"
+        ],
+        "options": [
+          {
+            "id": "association-choix-1",
+            "text": "à l’"
+          },
+          {
+            "id": "association-choix-2",
+            "text": "à le"
+          },
+          {
+            "id": "association-choix-3",
+            "text": "au"
+          }
+        ],
+        "explanation": "Groupe attendu : à + l’ → à l’. Il n’y a pas de contraction avec la ou l’. Modèle : J’apporte les denrées à l’association."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-equipes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je communique les horaires ___ équipes de service.",
+        "cue": "Vous communiquez les horaires aux équipes de service. Groupe de départ : à + les.",
+        "answers": [
+          "aux"
+        ],
+        "options": [
+          {
+            "id": "equipes-choix-1",
+            "text": "aux"
+          },
+          {
+            "id": "equipes-choix-2",
+            "text": "à les"
+          },
+          {
+            "id": "equipes-choix-3",
+            "text": "au"
+          }
+        ],
+        "explanation": "Groupe attendu : à + les → aux. Modèle : Je communique les horaires aux équipes de service."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-responsable",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’attends la réponse ___ responsable.",
+        "cue": "Vous attendez la réponse du responsable déjà contacté. Groupe de départ : de + le.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "responsable-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "responsable-choix-2",
+            "text": "de le"
+          },
+          {
+            "id": "responsable-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Groupe attendu : de + le → du. Modèle : J’attends la réponse du responsable."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-recette",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je vérifie la dernière étape ___ recette.",
+        "cue": "Vous vérifiez la dernière étape de la recette choisie. Groupe de départ : de + la.",
+        "answers": [
+          "de la"
+        ],
+        "options": [
+          {
+            "id": "recette-choix-1",
+            "text": "de la"
+          },
+          {
+            "id": "recette-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "recette-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Groupe attendu : de + la → de la. Il n’y a pas de contraction avec la ou l’. Modèle : Je vérifie la dernière étape de la recette."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-ingredients",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je vérifie la liste ___ ingrédients prévus.",
+        "cue": "Vous vérifiez la liste des ingrédients prévus pour ce plat. Groupe de départ : de + les.",
+        "answers": [
+          "des"
+        ],
+        "options": [
+          {
+            "id": "ingredients-choix-1",
+            "text": "des"
+          },
+          {
+            "id": "ingredients-choix-2",
+            "text": "de les"
+          },
+          {
+            "id": "ingredients-choix-3",
+            "text": "du"
+          }
+        ],
+        "explanation": "Groupe attendu : de + les → des. Modèle : Je vérifie la liste des ingrédients prévus."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-eau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je mesure la température ___eau de cette carafe.",
+        "cue": "Vous mesurez la température de l’eau contenue dans cette carafe. Groupe de départ : de + l’.",
+        "answers": [
+          "de l’"
+        ],
+        "options": [
+          {
+            "id": "eau-choix-1",
+            "text": "de l’"
+          },
+          {
+            "id": "eau-choix-2",
+            "text": "de le"
+          },
+          {
+            "id": "eau-choix-3",
+            "text": "du"
+          }
+        ],
+        "explanation": "Groupe attendu : de + l’ → de l’. Il n’y a pas de contraction avec la ou l’. Modèle : Je mesure la température de l’eau de cette carafe."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-buffet",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je vais ___ buffet installé.",
+        "cue": "Vous vous dirigez vers le buffet installé dans la salle. Groupe de départ : à + le.",
+        "answers": [
+          "au"
+        ],
+        "options": [
+          {
+            "id": "buffet-choix-1",
+            "text": "au"
+          },
+          {
+            "id": "buffet-choix-2",
+            "text": "à le"
+          },
+          {
+            "id": "buffet-choix-3",
+            "text": "aux"
+          }
+        ],
+        "explanation": "Groupe attendu : à + le → au. Modèle : Je vais au buffet installé."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-table",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je vais ___ table réservée.",
+        "cue": "Vous rejoignez la table réservée au groupe. Groupe de départ : à + la.",
+        "answers": [
+          "à la"
+        ],
+        "options": [
+          {
+            "id": "table-choix-1",
+            "text": "à la"
+          },
+          {
+            "id": "table-choix-2",
+            "text": "au"
+          },
+          {
+            "id": "table-choix-3",
+            "text": "à le"
+          }
+        ],
+        "explanation": "Groupe attendu : à + la → à la. Il n’y a pas de contraction avec la ou l’. Modèle : Je vais à la table réservée."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-entree",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je retrouve le groupe ___entrée du restaurant.",
+        "cue": "Vous retrouvez le groupe à l’entrée du restaurant. Groupe de départ : à + l’.",
+        "answers": [
+          "à l’"
+        ],
+        "options": [
+          {
+            "id": "entree-choix-1",
+            "text": "à l’"
+          },
+          {
+            "id": "entree-choix-2",
+            "text": "à le"
+          },
+          {
+            "id": "entree-choix-3",
+            "text": "au"
+          }
+        ],
+        "explanation": "Groupe attendu : à + l’ → à l’. Il n’y a pas de contraction avec la ou l’. Modèle : Je retrouve le groupe à l’entrée du restaurant."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-amis",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je donne rendez-vous ___ amis invités.",
+        "cue": "Vous donnez rendez-vous aux amis déjà invités. Groupe de départ : à + les.",
+        "answers": [
+          "aux"
+        ],
+        "options": [
+          {
+            "id": "amis-choix-1",
+            "text": "aux"
+          },
+          {
+            "id": "amis-choix-2",
+            "text": "à les"
+          },
+          {
+            "id": "amis-choix-3",
+            "text": "au"
+          }
+        ],
+        "explanation": "Groupe attendu : à + les → aux. Modèle : Je donne rendez-vous aux amis invités."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-buffet-retour",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je reviens ___ buffet.",
+        "cue": "Vous revenez du buffet avec votre assiette. Groupe de départ : de + le.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "buffet-retour-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "buffet-retour-choix-2",
+            "text": "de le"
+          },
+          {
+            "id": "buffet-retour-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Groupe attendu : de + le → du. Modèle : Je reviens du buffet."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-table-retour",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je m’éloigne ___ table installée.",
+        "cue": "Vous vous éloignez de la table déjà installée. Groupe de départ : de + la.",
+        "answers": [
+          "de la"
+        ],
+        "options": [
+          {
+            "id": "table-retour-choix-1",
+            "text": "de la"
+          },
+          {
+            "id": "table-retour-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "table-retour-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Groupe attendu : de + la → de la. Il n’y a pas de contraction avec la ou l’. Modèle : Je m’éloigne de la table installée."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-hotel",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je parle du restaurant ___hôtel.",
+        "cue": "Vous parlez du restaurant de l’hôtel où le groupe loge. Groupe de départ : de + l’.",
+        "answers": [
+          "de l’"
+        ],
+        "options": [
+          {
+            "id": "hotel-choix-1",
+            "text": "de l’"
+          },
+          {
+            "id": "hotel-choix-2",
+            "text": "de le"
+          },
+          {
+            "id": "hotel-choix-3",
+            "text": "du"
+          }
+        ],
+        "explanation": "Groupe attendu : de + l’ → de l’. Il n’y a pas de contraction avec la ou l’. Modèle : Je parle du restaurant de l’hôtel."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-repas",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je compare les horaires ___ repas de cette semaine.",
+        "cue": "Vous comparez les horaires des repas de cette semaine. Groupe de départ : de + les.",
+        "answers": [
+          "des"
+        ],
+        "options": [
+          {
+            "id": "repas-choix-1",
+            "text": "des"
+          },
+          {
+            "id": "repas-choix-2",
+            "text": "de les"
+          },
+          {
+            "id": "repas-choix-3",
+            "text": "du"
+          }
+        ],
+        "explanation": "Groupe attendu : de + les → des. Modèle : Je compare les horaires des repas de cette semaine."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-haricot",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je parle ___ haricot montré.",
+        "cue": "Un haricot a été montré pour l’exercice. Vous parlez de ce haricot précis, dont le h est aspiré. Groupe de départ : de + le.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "haricot-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "haricot-choix-2",
+            "text": "de le"
+          },
+          {
+            "id": "haricot-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Groupe attendu : de + le → du. Modèle : Je parle du haricot montré."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a1-oeufs",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je vérifie la date ___ œufs achetés.",
+        "cue": "Vous vérifiez la date indiquée sur la boîte des œufs déjà achetés. Groupe de départ : de + les.",
+        "answers": [
+          "des"
+        ],
+        "options": [
+          {
+            "id": "oeufs-choix-1",
+            "text": "des"
+          },
+          {
+            "id": "oeufs-choix-2",
+            "text": "de les"
+          },
+          {
+            "id": "oeufs-choix-3",
+            "text": "du"
+          }
+        ],
+        "explanation": "Groupe attendu : de + les → des. Modèle : Je vérifie la date des œufs achetés."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "aliments-2026-11-24-v1",
+    "activityId": "gram-ex-g6-qcm-verbe",
+    "subthemeId": "g6",
+    "topic": "gram-aliments",
+    "level": "A2",
+    "label": "Partitif ou article contracté",
+    "objective": "Former les groupes de préposition et d’article selon leur contexte. En A2, distinguer du/des selon la référence et le rôle syntaxique.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Sources, formes et contextes relus ; réemploi explicite entre mécaniques. Images existantes conservées sous empreinte immuable. Modèles ouverts non exclusifs ; approbation enseignante en attente."
+    },
+    "presentations": [
+      "choice",
+      "gap"
+    ],
+    "instructions": {
+      "choice": "Dans chaque contexte, identifiez la nature de l’article ou du groupe indiqué.",
+      "gap": "Écrivez la nature du groupe indiqué : article partitif, contracté ou indéfini."
+    },
+    "units": [
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-pain-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 0,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je prends du pain. », le groupe « du » est ___.",
+        "cue": "Vous prenez une quantité de pain sans compter des pains entiers.",
+        "answers": [
+          "un article partitif"
+        ],
+        "options": [
+          {
+            "id": "pain-quantite-choix-1",
+            "text": "un article partitif"
+          },
+          {
+            "id": "pain-quantite-choix-2",
+            "text": "un article contracté"
+          },
+          {
+            "id": "pain-quantite-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-riz-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 1,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « J’ajoute du riz au plat. », le groupe « du » est ___.",
+        "cue": "Vous ajoutez une quantité de riz non mesurée au plat.",
+        "answers": [
+          "un article partitif"
+        ],
+        "options": [
+          {
+            "id": "riz-quantite-choix-1",
+            "text": "un article partitif"
+          },
+          {
+            "id": "riz-quantite-choix-2",
+            "text": "un article contracté"
+          },
+          {
+            "id": "riz-quantite-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-lait-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 2,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je verse du lait dans ma tasse. », le groupe « du » est ___.",
+        "cue": "Vous versez une quantité de lait dans votre tasse, sans mesure annoncée.",
+        "answers": [
+          "un article partitif"
+        ],
+        "options": [
+          {
+            "id": "lait-quantite-choix-1",
+            "text": "un article partitif"
+          },
+          {
+            "id": "lait-quantite-choix-2",
+            "text": "un article contracté"
+          },
+          {
+            "id": "lait-quantite-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-beurre-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 3,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je mets du beurre sur le pain. », le groupe « du » est ___.",
+        "cue": "La phrase exprime une quantité de beurre étalée sur le pain.",
+        "answers": [
+          "un article partitif"
+        ],
+        "options": [
+          {
+            "id": "beurre-quantite-choix-1",
+            "text": "un article partitif"
+          },
+          {
+            "id": "beurre-quantite-choix-2",
+            "text": "un article contracté"
+          },
+          {
+            "id": "beurre-quantite-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-fromage-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 4,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je voudrais du fromage. », le groupe « du » est ___.",
+        "cue": "Vous demandez une portion de fromage, et non un fromage entier.",
+        "answers": [
+          "un article partitif"
+        ],
+        "options": [
+          {
+            "id": "fromage-quantite-choix-1",
+            "text": "un article partitif"
+          },
+          {
+            "id": "fromage-quantite-choix-2",
+            "text": "un article contracté"
+          },
+          {
+            "id": "fromage-quantite-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-sucre-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 5,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « J’ajoute du sucre à la préparation. », le groupe « du » est ___.",
+        "cue": "Vous ajoutez une quantité de sucre sans compter des morceaux.",
+        "answers": [
+          "un article partitif"
+        ],
+        "options": [
+          {
+            "id": "sucre-quantite-choix-1",
+            "text": "un article partitif"
+          },
+          {
+            "id": "sucre-quantite-choix-2",
+            "text": "un article contracté"
+          },
+          {
+            "id": "sucre-quantite-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-miel-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 6,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je sers du miel. », le groupe « du » est ___.",
+        "cue": "Vous servez une quantité de miel pour les tartines.",
+        "answers": [
+          "un article partitif"
+        ],
+        "options": [
+          {
+            "id": "miel-quantite-choix-1",
+            "text": "un article partitif"
+          },
+          {
+            "id": "miel-quantite-choix-2",
+            "text": "un article contracté"
+          },
+          {
+            "id": "miel-quantite-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-chocolat-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 7,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je fais fondre du chocolat. », le groupe « du » est ___.",
+        "cue": "Vous faites fondre une quantité de chocolat sans annoncer de poids.",
+        "answers": [
+          "un article partitif"
+        ],
+        "options": [
+          {
+            "id": "chocolat-quantite-choix-1",
+            "text": "un article partitif"
+          },
+          {
+            "id": "chocolat-quantite-choix-2",
+            "text": "un article contracté"
+          },
+          {
+            "id": "chocolat-quantite-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-cafe-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 8,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je sers du café. », le groupe « du » est ___.",
+        "cue": "Vous servez une quantité de café, sans compter les tasses.",
+        "answers": [
+          "un article partitif"
+        ],
+        "options": [
+          {
+            "id": "cafe-quantite-choix-1",
+            "text": "un article partitif"
+          },
+          {
+            "id": "cafe-quantite-choix-2",
+            "text": "un article contracté"
+          },
+          {
+            "id": "cafe-quantite-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-the-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 9,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je verse du thé dans le récipient. », le groupe « du » est ___.",
+        "cue": "Vous versez une quantité de thé dans un récipient.",
+        "answers": [
+          "un article partitif"
+        ],
+        "options": [
+          {
+            "id": "the-quantite-choix-1",
+            "text": "un article partitif"
+          },
+          {
+            "id": "the-quantite-choix-2",
+            "text": "un article contracté"
+          },
+          {
+            "id": "the-quantite-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-jus-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 10,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je voudrais du jus. », le groupe « du » est ___.",
+        "cue": "Vous demandez une quantité de jus, sans préciser de volume.",
+        "answers": [
+          "un article partitif"
+        ],
+        "options": [
+          {
+            "id": "jus-quantite-choix-1",
+            "text": "un article partitif"
+          },
+          {
+            "id": "jus-quantite-choix-2",
+            "text": "un article contracté"
+          },
+          {
+            "id": "jus-quantite-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-vinaigre-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 11,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « J’utilise du vinaigre pour la sauce. », le groupe « du » est ___.",
+        "cue": "Vous utilisez une quantité de vinaigre pour la sauce.",
+        "answers": [
+          "un article partitif"
+        ],
+        "options": [
+          {
+            "id": "vinaigre-quantite-choix-1",
+            "text": "un article partitif"
+          },
+          {
+            "id": "vinaigre-quantite-choix-2",
+            "text": "un article contracté"
+          },
+          {
+            "id": "vinaigre-quantite-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-thon-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 12,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je mets du thon dans la salade. », le groupe « du » est ___.",
+        "cue": "Vous mettez une partie du thon disponible dans la salade.",
+        "answers": [
+          "un article partitif"
+        ],
+        "options": [
+          {
+            "id": "thon-quantite-choix-1",
+            "text": "un article partitif"
+          },
+          {
+            "id": "thon-quantite-choix-2",
+            "text": "un article contracté"
+          },
+          {
+            "id": "thon-quantite-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-saumon-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 13,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je sers du saumon. », le groupe « du » est ___.",
+        "cue": "Vous servez une portion de saumon déjà préparé.",
+        "answers": [
+          "un article partitif"
+        ],
+        "options": [
+          {
+            "id": "saumon-quantite-choix-1",
+            "text": "un article partitif"
+          },
+          {
+            "id": "saumon-quantite-choix-2",
+            "text": "un article contracté"
+          },
+          {
+            "id": "saumon-quantite-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-poulet-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 14,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « J’ajoute du poulet à l’assiette. », le groupe « du » est ___.",
+        "cue": "Vous ajoutez une portion de poulet découpé à l’assiette.",
+        "answers": [
+          "un article partitif"
+        ],
+        "options": [
+          {
+            "id": "poulet-quantite-choix-1",
+            "text": "un article partitif"
+          },
+          {
+            "id": "poulet-quantite-choix-2",
+            "text": "un article contracté"
+          },
+          {
+            "id": "poulet-quantite-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-pain-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 15,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je vérifie le prix du pain sur la table. », le groupe « du » est ___.",
+        "cue": "Un pain précis est posé sur la table. Vous parlez de son prix, avec de suivi de le.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "pain-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "pain-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "pain-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "du résulte de de + le et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-marche-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 16,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je reviens du marché visité ce matin. », le groupe « du » est ___.",
+        "cue": "Le marché visité ce matin est déjà connu. Vous indiquez votre provenance.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "marche-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "marche-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "marche-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "du résulte de de + le et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-restaurant-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 17,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je lis le menu du restaurant réservé. », le groupe « du » est ___.",
+        "cue": "Le restaurant réservé est connu. Vous lisez son menu.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "restaurant-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "restaurant-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "restaurant-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "du résulte de de + le et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-fromage-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 18,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je regarde le poids du fromage présenté. », le groupe « du » est ___.",
+        "cue": "Un fromage précis vient d’être présenté. Vous parlez de son poids.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "fromage-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "fromage-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "fromage-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "du résulte de de + le et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-riz-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 19,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je note le temps de cuisson du riz préparé. », le groupe « du » est ___.",
+        "cue": "Le riz déjà préparé est identifié. Vous évoquez son temps de cuisson.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "riz-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "riz-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "riz-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "du résulte de de + le et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-lait-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 20,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je vérifie la date du lait de cette bouteille. », le groupe « du » est ___.",
+        "cue": "Le lait de cette bouteille est identifié. Vous en vérifiez la date.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "lait-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "lait-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "lait-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "du résulte de de + le et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-gateau-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 21,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je décris la décoration du gâteau de l’anniversaire. », le groupe « du » est ___.",
+        "cue": "Le gâteau de l’anniversaire est connu. Vous décrivez sa décoration.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "gateau-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "gateau-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "gateau-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "du résulte de de + le et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-menu-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 22,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je regarde la première page du menu. », le groupe « du » est ___.",
+        "cue": "Le menu posé devant vous est identifié. Vous regardez sa première page.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "menu-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "menu-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "menu-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "du résulte de de + le et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-panier-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 23,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je regarde le contenu du panier placé à gauche. », le groupe « du » est ___.",
+        "cue": "Un panier de courses est placé à gauche. Vous observez son contenu.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "panier-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "panier-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "panier-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "du résulte de de + le et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-buffet-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 24,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je reviens du buffet de la salle. », le groupe « du » est ___.",
+        "cue": "Le buffet de la salle est connu. Vous revenez de cet endroit.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "buffet-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "buffet-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "buffet-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "du résulte de de + le et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-service-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 25,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « J’attends la réponse du service de réservation. », le groupe « du » est ___.",
+        "cue": "Le service de réservation a déjà été contacté. Vous attendez sa réponse.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "service-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "service-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "service-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "du résulte de de + le et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-cuisinier-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 26,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je parle des conseils du cuisinier de l’atelier. », le groupe « du » est ___.",
+        "cue": "Le cuisinier de l’atelier est identifié. Vous parlez de ses conseils.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "cuisinier-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "cuisinier-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "cuisinier-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "du résulte de de + le et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-pot-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 27,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je referme le couvercle du pot ouvert. », le groupe « du » est ___.",
+        "cue": "Un pot de confiture vient d’être ouvert. Vous refermez son couvercle.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "pot-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "pot-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "pot-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "du résulte de de + le et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-groupe-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 28,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je compte les membres du groupe attendu. », le groupe « du » est ___.",
+        "cue": "Le groupe attendu au repas est connu. Vous comptez ses membres.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "groupe-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "groupe-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "groupe-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "du résulte de de + le et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-repas-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 29,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je vérifie l’horaire du repas de demain. », le groupe « du » est ___.",
+        "cue": "Le repas prévu pour demain est déjà organisé. Vous vérifiez son horaire.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "repas-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "repas-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "repas-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "du résulte de de + le et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-pommes-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 30,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je regarde la couleur des pommes de ce panier. », le groupe « des » est ___.",
+        "cue": "Les pommes de ce panier précis sont connues. Vous observez leur couleur.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "pommes-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "pommes-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "pommes-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "des résulte de de + les et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-tomates-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 31,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je parle du prix des tomates déjà achetées. », le groupe « des » est ___.",
+        "cue": "Les tomates déjà achetées sont identifiées. Vous parlez de leur prix.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "tomates-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "tomates-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "tomates-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "des résulte de de + les et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-ingredients-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 32,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je consulte la liste des ingrédients de cette recette. », le groupe « des » est ___.",
+        "cue": "Les ingrédients de cette recette sont connus. Vous consultez leur liste.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "ingredients-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "ingredients-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "ingredients-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "des résulte de de + les et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-verres-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 33,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je vérifie la propreté des verres de cette table. », le groupe « des » est ___.",
+        "cue": "Les verres de cette table sont identifiés. Vous vérifiez leur propreté.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "verres-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "verres-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "verres-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "des résulte de de + les et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-invites-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 34,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je vérifie le nombre des invités du repas. », le groupe « des » est ___.",
+        "cue": "Les invités du repas ont été nommés. Vous vérifiez leur nombre.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "invites-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "invites-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "invites-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "des résulte de de + les et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-commandes-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 35,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je confirme l’heure de retrait des commandes du groupe. », le groupe « des » est ___.",
+        "cue": "Les commandes du groupe sont connues. Vous confirmez leur heure de retrait.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "commandes-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "commandes-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "commandes-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "des résulte de de + les et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-magasins-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 36,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je compare les horaires des magasins de cette rue. », le groupe « des » est ___.",
+        "cue": "Les magasins de cette rue sont identifiés. Vous comparez leurs horaires.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "magasins-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "magasins-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "magasins-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "des résulte de de + les et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-fruits-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 37,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je compare les couleurs des fruits de cette recette. », le groupe « des » est ___.",
+        "cue": "Les fruits destinés à cette recette sont connus. Vous comparez leurs couleurs.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "fruits-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "fruits-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "fruits-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "des résulte de de + les et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-assiettes-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 38,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je vérifie l’emplacement des assiettes du groupe. », le groupe « des » est ___.",
+        "cue": "Les assiettes du groupe sont identifiées. Vous vérifiez leur emplacement.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "assiettes-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "assiettes-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "assiettes-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "des résulte de de + les et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-produits-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 39,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je vérifie la disponibilité des produits de cette liste. », le groupe « des » est ___.",
+        "cue": "Les produits de cette liste sont identifiés. Vous vérifiez leur disponibilité.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "produits-reference-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "produits-reference-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "produits-reference-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "des résulte de de + les et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-pommes-indefinies",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 40,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « J’achète des pommes. », le groupe « des » est ___.",
+        "cue": "Vous achetez plusieurs pommes sans préciser lesquelles. Les fruits sont comptés comme des unités.",
+        "answers": [
+          "un article indéfini"
+        ],
+        "options": [
+          {
+            "id": "pommes-indefinies-choix-1",
+            "text": "un article indéfini"
+          },
+          {
+            "id": "pommes-indefinies-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "pommes-indefinies-choix-3",
+            "text": "un article contracté"
+          }
+        ],
+        "explanation": "Des présente ici plusieurs éléments comptables non identifiés : article indéfini pluriel."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-citrons-indefinis",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 41,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je prends des citrons. », le groupe « des » est ___.",
+        "cue": "Vous prenez plusieurs citrons entiers, sans les avoir désignés auparavant.",
+        "answers": [
+          "un article indéfini"
+        ],
+        "options": [
+          {
+            "id": "citrons-indefinis-choix-1",
+            "text": "un article indéfini"
+          },
+          {
+            "id": "citrons-indefinis-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "citrons-indefinis-choix-3",
+            "text": "un article contracté"
+          }
+        ],
+        "explanation": "Des présente ici plusieurs éléments comptables non identifiés : article indéfini pluriel."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-bols-indefinis",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 42,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je cherche des bols. », le groupe « des » est ___.",
+        "cue": "Vous cherchez plusieurs bols, sans désigner des bols déjà connus.",
+        "answers": [
+          "un article indéfini"
+        ],
+        "options": [
+          {
+            "id": "bols-indefinis-choix-1",
+            "text": "un article indéfini"
+          },
+          {
+            "id": "bols-indefinis-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "bols-indefinis-choix-3",
+            "text": "un article contracté"
+          }
+        ],
+        "explanation": "Des présente ici plusieurs éléments comptables non identifiés : article indéfini pluriel."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-recettes-indefinies",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 43,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je consulte des recettes. », le groupe « des » est ___.",
+        "cue": "Vous consultez plusieurs recettes, sans préciser un ensemble connu.",
+        "answers": [
+          "un article indéfini"
+        ],
+        "options": [
+          {
+            "id": "recettes-indefinies-choix-1",
+            "text": "un article indéfini"
+          },
+          {
+            "id": "recettes-indefinies-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "recettes-indefinies-choix-3",
+            "text": "un article contracté"
+          }
+        ],
+        "explanation": "Des présente ici plusieurs éléments comptables non identifiés : article indéfini pluriel."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-cartons-indefinis",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 44,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « J’apporte des cartons. », le groupe « des » est ___.",
+        "cue": "Vous apportez plusieurs cartons pour le transport, sans les désigner auparavant.",
+        "answers": [
+          "un article indéfini"
+        ],
+        "options": [
+          {
+            "id": "cartons-indefinis-choix-1",
+            "text": "un article indéfini"
+          },
+          {
+            "id": "cartons-indefinis-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "cartons-indefinis-choix-3",
+            "text": "un article contracté"
+          }
+        ],
+        "explanation": "Des présente ici plusieurs éléments comptables non identifiés : article indéfini pluriel."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-marche-destination",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 45,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je vais au marché indiqué. », le groupe « au » est ___.",
+        "cue": "Le marché indiqué est connu et constitue votre destination.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "marche-destination-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "marche-destination-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "marche-destination-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "au résulte de à + le et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-vendeur-destinataire",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 46,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « Je pose ma question au vendeur présent. », le groupe « au » est ___.",
+        "cue": "Le vendeur présent est connu. Vous lui adressez votre question.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "vendeur-destinataire-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "vendeur-destinataire-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "vendeur-destinataire-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "au résulte de à + le et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-clients-destinataires",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 47,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « J’apporte les menus aux clients installés. », le groupe « aux » est ___.",
+        "cue": "Les clients installés sont connus. Vous leur apportez les menus.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "clients-destinataires-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "clients-destinataires-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "clients-destinataires-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "aux résulte de à + les et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-participants-destinataires",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 48,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « J’explique la recette aux participants de l’atelier. », le groupe « aux » est ___.",
+        "cue": "Les participants de l’atelier sont connus. Vous leur expliquez la recette.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "participants-destinataires-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "participants-destinataires-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "participants-destinataires-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "aux résulte de à + les et reprend une référence définie."
+      },
+      {
+        "id": "gram-ex-g6-qcm-verbe-a2-amis-destinataires",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-qcm-verbe",
+          "position": 49,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dans « J’envoie le menu aux amis déjà invités. », le groupe « aux » est ___.",
+        "cue": "Les amis déjà invités sont identifiés. Vous leur envoyez le menu du repas.",
+        "answers": [
+          "un article contracté"
+        ],
+        "options": [
+          {
+            "id": "amis-destinataires-choix-1",
+            "text": "un article contracté"
+          },
+          {
+            "id": "amis-destinataires-choix-2",
+            "text": "un article partitif"
+          },
+          {
+            "id": "amis-destinataires-choix-3",
+            "text": "un article indéfini"
+          }
+        ],
+        "explanation": "aux résulte de à + les et reprend une référence définie."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "aliments-2026-11-24-v1",
+    "activityId": "gram-ex-g6-curriculum-t",
+    "subthemeId": "g6",
+    "topic": "gram-aliments",
+    "level": "A2",
+    "label": "Transformer une phrase",
+    "objective": "Former les groupes de préposition et d’article selon leur contexte. En A2, distinguer du/des selon la référence et le rôle syntaxique.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Sources, formes et contextes relus ; réemploi explicite entre mécaniques. Images existantes conservées sous empreinte immuable. Modèles ouverts non exclusifs ; approbation enseignante en attente."
+    },
+    "presentations": [
+      "transform"
+    ],
+    "instructions": {
+      "transform": "Reformulez selon l’indication, en conservant les faits."
+    },
+    "units": [
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-pain-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 0,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je prends une quantité non précisée de pain.",
+        "cue": "Vous prenez une quantité de pain sans compter des pains entiers.",
+        "answers": [
+          "Je prends du pain."
+        ],
+        "directive": "Reformulez avec un article partitif pour exprimer la quantité non mesurée.",
+        "responseLines": 2,
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : Je prends du pain."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-riz-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 1,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’ajoute une quantité non précisée de riz au plat.",
+        "cue": "Vous ajoutez une quantité de riz non mesurée au plat.",
+        "answers": [
+          "J’ajoute du riz au plat."
+        ],
+        "directive": "Reformulez avec un article partitif pour exprimer la quantité non mesurée.",
+        "responseLines": 2,
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : J’ajoute du riz au plat."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-lait-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 2,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je verse une quantité non précisée de lait dans ma tasse.",
+        "cue": "Vous versez une quantité de lait dans votre tasse, sans mesure annoncée.",
+        "answers": [
+          "Je verse du lait dans ma tasse."
+        ],
+        "directive": "Reformulez avec un article partitif pour exprimer la quantité non mesurée.",
+        "responseLines": 2,
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : Je verse du lait dans ma tasse."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-beurre-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 3,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je mets une quantité non précisée de beurre sur le pain.",
+        "cue": "La phrase exprime une quantité de beurre étalée sur le pain.",
+        "answers": [
+          "Je mets du beurre sur le pain."
+        ],
+        "directive": "Reformulez avec un article partitif pour exprimer la quantité non mesurée.",
+        "responseLines": 2,
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : Je mets du beurre sur le pain."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-fromage-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 4,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je voudrais une quantité non précisée de fromage.",
+        "cue": "Vous demandez une portion de fromage, et non un fromage entier.",
+        "answers": [
+          "Je voudrais du fromage."
+        ],
+        "directive": "Reformulez avec un article partitif pour exprimer la quantité non mesurée.",
+        "responseLines": 2,
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : Je voudrais du fromage."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-sucre-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 5,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’ajoute une quantité non précisée de sucre à la préparation.",
+        "cue": "Vous ajoutez une quantité de sucre sans compter des morceaux.",
+        "answers": [
+          "J’ajoute du sucre à la préparation."
+        ],
+        "directive": "Reformulez avec un article partitif pour exprimer la quantité non mesurée.",
+        "responseLines": 2,
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : J’ajoute du sucre à la préparation."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-miel-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 6,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je sers une quantité non précisée de miel.",
+        "cue": "Vous servez une quantité de miel pour les tartines.",
+        "answers": [
+          "Je sers du miel."
+        ],
+        "directive": "Reformulez avec un article partitif pour exprimer la quantité non mesurée.",
+        "responseLines": 2,
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : Je sers du miel."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-chocolat-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 7,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je fais fondre une quantité non précisée de chocolat.",
+        "cue": "Vous faites fondre une quantité de chocolat sans annoncer de poids.",
+        "answers": [
+          "Je fais fondre du chocolat."
+        ],
+        "directive": "Reformulez avec un article partitif pour exprimer la quantité non mesurée.",
+        "responseLines": 2,
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : Je fais fondre du chocolat."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-cafe-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 8,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je sers une quantité non précisée de café.",
+        "cue": "Vous servez une quantité de café, sans compter les tasses.",
+        "answers": [
+          "Je sers du café."
+        ],
+        "directive": "Reformulez avec un article partitif pour exprimer la quantité non mesurée.",
+        "responseLines": 2,
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : Je sers du café."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-the-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 9,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je verse une quantité non précisée de thé dans le récipient.",
+        "cue": "Vous versez une quantité de thé dans un récipient.",
+        "answers": [
+          "Je verse du thé dans le récipient."
+        ],
+        "directive": "Reformulez avec un article partitif pour exprimer la quantité non mesurée.",
+        "responseLines": 2,
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : Je verse du thé dans le récipient."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-jus-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 10,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je voudrais une quantité non précisée de jus.",
+        "cue": "Vous demandez une quantité de jus, sans préciser de volume.",
+        "answers": [
+          "Je voudrais du jus."
+        ],
+        "directive": "Reformulez avec un article partitif pour exprimer la quantité non mesurée.",
+        "responseLines": 2,
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : Je voudrais du jus."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-vinaigre-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 11,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’utilise une quantité non précisée de vinaigre pour la sauce.",
+        "cue": "Vous utilisez une quantité de vinaigre pour la sauce.",
+        "answers": [
+          "J’utilise du vinaigre pour la sauce."
+        ],
+        "directive": "Reformulez avec un article partitif pour exprimer la quantité non mesurée.",
+        "responseLines": 2,
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : J’utilise du vinaigre pour la sauce."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-thon-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 12,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je mets une quantité non précisée de thon dans la salade.",
+        "cue": "Vous mettez une partie du thon disponible dans la salade.",
+        "answers": [
+          "Je mets du thon dans la salade."
+        ],
+        "directive": "Reformulez avec un article partitif pour exprimer la quantité non mesurée.",
+        "responseLines": 2,
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : Je mets du thon dans la salade."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-saumon-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 13,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je sers une quantité non précisée de saumon.",
+        "cue": "Vous servez une portion de saumon déjà préparé.",
+        "answers": [
+          "Je sers du saumon."
+        ],
+        "directive": "Reformulez avec un article partitif pour exprimer la quantité non mesurée.",
+        "responseLines": 2,
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : Je sers du saumon."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-poulet-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 14,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’ajoute une quantité non précisée de poulet à l’assiette.",
+        "cue": "Vous ajoutez une portion de poulet découpé à l’assiette.",
+        "answers": [
+          "J’ajoute du poulet à l’assiette."
+        ],
+        "directive": "Reformulez avec un article partitif pour exprimer la quantité non mesurée.",
+        "responseLines": 2,
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : J’ajoute du poulet à l’assiette."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-pain-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 15,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je vérifie le prix de ce pain sur la table.",
+        "cue": "Un pain précis est posé sur la table. Vous parlez de son prix, avec de suivi de le.",
+        "answers": [
+          "Je vérifie le prix du pain sur la table."
+        ],
+        "directive": "Remplacez « de ce » par une forme avec l’article défini « le ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je vérifie le prix du pain sur la table."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-marche-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 16,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je reviens de ce marché visité ce matin.",
+        "cue": "Le marché visité ce matin est déjà connu. Vous indiquez votre provenance.",
+        "answers": [
+          "Je reviens du marché visité ce matin."
+        ],
+        "directive": "Remplacez « de ce » par une forme avec l’article défini « le ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je reviens du marché visité ce matin."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-restaurant-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 17,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je lis le menu de ce restaurant réservé.",
+        "cue": "Le restaurant réservé est connu. Vous lisez son menu.",
+        "answers": [
+          "Je lis le menu du restaurant réservé."
+        ],
+        "directive": "Remplacez « de ce » par une forme avec l’article défini « le ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je lis le menu du restaurant réservé."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-fromage-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 18,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je regarde le poids de ce fromage présenté.",
+        "cue": "Un fromage précis vient d’être présenté. Vous parlez de son poids.",
+        "answers": [
+          "Je regarde le poids du fromage présenté."
+        ],
+        "directive": "Remplacez « de ce » par une forme avec l’article défini « le ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je regarde le poids du fromage présenté."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-riz-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 19,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je note le temps de cuisson de ce riz préparé.",
+        "cue": "Le riz déjà préparé est identifié. Vous évoquez son temps de cuisson.",
+        "answers": [
+          "Je note le temps de cuisson du riz préparé."
+        ],
+        "directive": "Remplacez « de ce » par une forme avec l’article défini « le ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je note le temps de cuisson du riz préparé."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-lait-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 20,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je vérifie la date de ce lait de cette bouteille.",
+        "cue": "Le lait de cette bouteille est identifié. Vous en vérifiez la date.",
+        "answers": [
+          "Je vérifie la date du lait de cette bouteille."
+        ],
+        "directive": "Remplacez « de ce » par une forme avec l’article défini « le ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je vérifie la date du lait de cette bouteille."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-gateau-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 21,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je décris la décoration de ce gâteau de l’anniversaire.",
+        "cue": "Le gâteau de l’anniversaire est connu. Vous décrivez sa décoration.",
+        "answers": [
+          "Je décris la décoration du gâteau de l’anniversaire."
+        ],
+        "directive": "Remplacez « de ce » par une forme avec l’article défini « le ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je décris la décoration du gâteau de l’anniversaire."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-menu-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 22,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je regarde la première page de ce menu.",
+        "cue": "Le menu posé devant vous est identifié. Vous regardez sa première page.",
+        "answers": [
+          "Je regarde la première page du menu."
+        ],
+        "directive": "Remplacez « de ce » par une forme avec l’article défini « le ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je regarde la première page du menu."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-panier-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 23,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je regarde le contenu de ce panier placé à gauche.",
+        "cue": "Un panier de courses est placé à gauche. Vous observez son contenu.",
+        "answers": [
+          "Je regarde le contenu du panier placé à gauche."
+        ],
+        "directive": "Remplacez « de ce » par une forme avec l’article défini « le ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je regarde le contenu du panier placé à gauche."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-buffet-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 24,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je reviens de ce buffet de la salle.",
+        "cue": "Le buffet de la salle est connu. Vous revenez de cet endroit.",
+        "answers": [
+          "Je reviens du buffet de la salle."
+        ],
+        "directive": "Remplacez « de ce » par une forme avec l’article défini « le ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je reviens du buffet de la salle."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-service-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 25,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’attends la réponse de ce service de réservation.",
+        "cue": "Le service de réservation a déjà été contacté. Vous attendez sa réponse.",
+        "answers": [
+          "J’attends la réponse du service de réservation."
+        ],
+        "directive": "Remplacez « de ce » par une forme avec l’article défini « le ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : J’attends la réponse du service de réservation."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-cuisinier-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 26,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je parle des conseils de ce cuisinier de l’atelier.",
+        "cue": "Le cuisinier de l’atelier est identifié. Vous parlez de ses conseils.",
+        "answers": [
+          "Je parle des conseils du cuisinier de l’atelier."
+        ],
+        "directive": "Remplacez « de ce » par une forme avec l’article défini « le ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je parle des conseils du cuisinier de l’atelier."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-pot-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 27,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je referme le couvercle de ce pot ouvert.",
+        "cue": "Un pot de confiture vient d’être ouvert. Vous refermez son couvercle.",
+        "answers": [
+          "Je referme le couvercle du pot ouvert."
+        ],
+        "directive": "Remplacez « de ce » par une forme avec l’article défini « le ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je referme le couvercle du pot ouvert."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-groupe-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 28,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je compte les membres de ce groupe attendu.",
+        "cue": "Le groupe attendu au repas est connu. Vous comptez ses membres.",
+        "answers": [
+          "Je compte les membres du groupe attendu."
+        ],
+        "directive": "Remplacez « de ce » par une forme avec l’article défini « le ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je compte les membres du groupe attendu."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-repas-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 29,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je vérifie l’horaire de ce repas de demain.",
+        "cue": "Le repas prévu pour demain est déjà organisé. Vous vérifiez son horaire.",
+        "answers": [
+          "Je vérifie l’horaire du repas de demain."
+        ],
+        "directive": "Remplacez « de ce » par une forme avec l’article défini « le ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je vérifie l’horaire du repas de demain."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-pommes-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 30,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je regarde la couleur de ces pommes de ce panier.",
+        "cue": "Les pommes de ce panier précis sont connues. Vous observez leur couleur.",
+        "answers": [
+          "Je regarde la couleur des pommes de ce panier."
+        ],
+        "directive": "Remplacez « de ces » par une forme avec l’article défini « les ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "des résulte de de + les et reprend une référence définie. Modèle : Je regarde la couleur des pommes de ce panier."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-tomates-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 31,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je parle du prix de ces tomates déjà achetées.",
+        "cue": "Les tomates déjà achetées sont identifiées. Vous parlez de leur prix.",
+        "answers": [
+          "Je parle du prix des tomates déjà achetées."
+        ],
+        "directive": "Remplacez « de ces » par une forme avec l’article défini « les ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "des résulte de de + les et reprend une référence définie. Modèle : Je parle du prix des tomates déjà achetées."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-ingredients-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 32,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je consulte la liste de ces ingrédients de cette recette.",
+        "cue": "Les ingrédients de cette recette sont connus. Vous consultez leur liste.",
+        "answers": [
+          "Je consulte la liste des ingrédients de cette recette."
+        ],
+        "directive": "Remplacez « de ces » par une forme avec l’article défini « les ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "des résulte de de + les et reprend une référence définie. Modèle : Je consulte la liste des ingrédients de cette recette."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-verres-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 33,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je vérifie la propreté de ces verres de cette table.",
+        "cue": "Les verres de cette table sont identifiés. Vous vérifiez leur propreté.",
+        "answers": [
+          "Je vérifie la propreté des verres de cette table."
+        ],
+        "directive": "Remplacez « de ces » par une forme avec l’article défini « les ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "des résulte de de + les et reprend une référence définie. Modèle : Je vérifie la propreté des verres de cette table."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-invites-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 34,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je vérifie le nombre de ces invités du repas.",
+        "cue": "Les invités du repas ont été nommés. Vous vérifiez leur nombre.",
+        "answers": [
+          "Je vérifie le nombre des invités du repas."
+        ],
+        "directive": "Remplacez « de ces » par une forme avec l’article défini « les ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "des résulte de de + les et reprend une référence définie. Modèle : Je vérifie le nombre des invités du repas."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-commandes-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 35,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je confirme l’heure de retrait de ces commandes du groupe.",
+        "cue": "Les commandes du groupe sont connues. Vous confirmez leur heure de retrait.",
+        "answers": [
+          "Je confirme l’heure de retrait des commandes du groupe."
+        ],
+        "directive": "Remplacez « de ces » par une forme avec l’article défini « les ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "des résulte de de + les et reprend une référence définie. Modèle : Je confirme l’heure de retrait des commandes du groupe."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-magasins-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 36,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je compare les horaires de ces magasins de cette rue.",
+        "cue": "Les magasins de cette rue sont identifiés. Vous comparez leurs horaires.",
+        "answers": [
+          "Je compare les horaires des magasins de cette rue."
+        ],
+        "directive": "Remplacez « de ces » par une forme avec l’article défini « les ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "des résulte de de + les et reprend une référence définie. Modèle : Je compare les horaires des magasins de cette rue."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-fruits-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 37,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je compare les couleurs de ces fruits de cette recette.",
+        "cue": "Les fruits destinés à cette recette sont connus. Vous comparez leurs couleurs.",
+        "answers": [
+          "Je compare les couleurs des fruits de cette recette."
+        ],
+        "directive": "Remplacez « de ces » par une forme avec l’article défini « les ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "des résulte de de + les et reprend une référence définie. Modèle : Je compare les couleurs des fruits de cette recette."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-assiettes-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 38,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je vérifie l’emplacement de ces assiettes du groupe.",
+        "cue": "Les assiettes du groupe sont identifiées. Vous vérifiez leur emplacement.",
+        "answers": [
+          "Je vérifie l’emplacement des assiettes du groupe."
+        ],
+        "directive": "Remplacez « de ces » par une forme avec l’article défini « les ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "des résulte de de + les et reprend une référence définie. Modèle : Je vérifie l’emplacement des assiettes du groupe."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-produits-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 39,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je vérifie la disponibilité de ces produits de cette liste.",
+        "cue": "Les produits de cette liste sont identifiés. Vous vérifiez leur disponibilité.",
+        "answers": [
+          "Je vérifie la disponibilité des produits de cette liste."
+        ],
+        "directive": "Remplacez « de ces » par une forme avec l’article défini « les ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "des résulte de de + les et reprend une référence définie. Modèle : Je vérifie la disponibilité des produits de cette liste."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-pommes-indefinies",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 40,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’achète plus d’une pomme sans préciser lesquelles.",
+        "cue": "Vous achetez plusieurs pommes sans préciser lesquelles. Les fruits sont comptés comme des unités.",
+        "answers": [
+          "J’achète des pommes."
+        ],
+        "directive": "Reformulez avec des pour présenter plusieurs éléments non identifiés.",
+        "responseLines": 2,
+        "explanation": "Des présente ici plusieurs éléments comptables non identifiés : article indéfini pluriel. Modèle : J’achète des pommes."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-citrons-indefinis",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 41,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je prends plus d’un citron sans préciser lesquels.",
+        "cue": "Vous prenez plusieurs citrons entiers, sans les avoir désignés auparavant.",
+        "answers": [
+          "Je prends des citrons."
+        ],
+        "directive": "Reformulez avec des pour présenter plusieurs éléments non identifiés.",
+        "responseLines": 2,
+        "explanation": "Des présente ici plusieurs éléments comptables non identifiés : article indéfini pluriel. Modèle : Je prends des citrons."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-bols-indefinis",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 42,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je cherche plus d’un bol sans préciser lesquels.",
+        "cue": "Vous cherchez plusieurs bols, sans désigner des bols déjà connus.",
+        "answers": [
+          "Je cherche des bols."
+        ],
+        "directive": "Reformulez avec des pour présenter plusieurs éléments non identifiés.",
+        "responseLines": 2,
+        "explanation": "Des présente ici plusieurs éléments comptables non identifiés : article indéfini pluriel. Modèle : Je cherche des bols."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-recettes-indefinies",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 43,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je consulte plus d’une recette sans préciser lesquelles.",
+        "cue": "Vous consultez plusieurs recettes, sans préciser un ensemble connu.",
+        "answers": [
+          "Je consulte des recettes."
+        ],
+        "directive": "Reformulez avec des pour présenter plusieurs éléments non identifiés.",
+        "responseLines": 2,
+        "explanation": "Des présente ici plusieurs éléments comptables non identifiés : article indéfini pluriel. Modèle : Je consulte des recettes."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-cartons-indefinis",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 44,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’apporte plus d’un carton sans préciser lesquels.",
+        "cue": "Vous apportez plusieurs cartons pour le transport, sans les désigner auparavant.",
+        "answers": [
+          "J’apporte des cartons."
+        ],
+        "directive": "Reformulez avec des pour présenter plusieurs éléments non identifiés.",
+        "responseLines": 2,
+        "explanation": "Des présente ici plusieurs éléments comptables non identifiés : article indéfini pluriel. Modèle : J’apporte des cartons."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-marche-destination",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 45,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je vais à ce marché indiqué.",
+        "cue": "Le marché indiqué est connu et constitue votre destination.",
+        "answers": [
+          "Je vais au marché indiqué."
+        ],
+        "directive": "Remplacez « à ce » par une forme avec l’article défini « le ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "au résulte de à + le et reprend une référence définie. Modèle : Je vais au marché indiqué."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-vendeur-destinataire",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 46,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je pose ma question à ce vendeur présent.",
+        "cue": "Le vendeur présent est connu. Vous lui adressez votre question.",
+        "answers": [
+          "Je pose ma question au vendeur présent."
+        ],
+        "directive": "Remplacez « à ce » par une forme avec l’article défini « le ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "au résulte de à + le et reprend une référence définie. Modèle : Je pose ma question au vendeur présent."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-clients-destinataires",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 47,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’apporte les menus à ces clients installés.",
+        "cue": "Les clients installés sont connus. Vous leur apportez les menus.",
+        "answers": [
+          "J’apporte les menus aux clients installés."
+        ],
+        "directive": "Remplacez « à ces » par une forme avec l’article défini « les ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "aux résulte de à + les et reprend une référence définie. Modèle : J’apporte les menus aux clients installés."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-participants-destinataires",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 48,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’explique la recette à ces participants de l’atelier.",
+        "cue": "Les participants de l’atelier sont connus. Vous leur expliquez la recette.",
+        "answers": [
+          "J’explique la recette aux participants de l’atelier."
+        ],
+        "directive": "Remplacez « à ces » par une forme avec l’article défini « les ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "aux résulte de à + les et reprend une référence définie. Modèle : J’explique la recette aux participants de l’atelier."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-t-a2-amis-destinataires",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-t",
+          "position": 49,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’envoie le menu à ces amis déjà invités.",
+        "cue": "Les amis déjà invités sont identifiés. Vous leur envoyez le menu du repas.",
+        "answers": [
+          "J’envoie le menu aux amis déjà invités."
+        ],
+        "directive": "Remplacez « à ces » par une forme avec l’article défini « les ». Gardez le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "aux résulte de à + les et reprend une référence définie. Modèle : J’envoie le menu aux amis déjà invités."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "aliments-2026-11-24-v1",
+    "activityId": "gram-ex-g6-curriculum-c",
+    "subthemeId": "g6",
+    "topic": "gram-aliments",
+    "level": "A2",
+    "label": "Corriger l’erreur",
+    "objective": "Former les groupes de préposition et d’article selon leur contexte. En A2, distinguer du/des selon la référence et le rôle syntaxique.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Sources, formes et contextes relus ; réemploi explicite entre mécaniques. Images existantes conservées sous empreinte immuable. Modèles ouverts non exclusifs ; approbation enseignante en attente."
+    },
+    "presentations": [
+      "correct"
+    ],
+    "instructions": {
+      "correct": "Corrigez le groupe d’article et réécrivez la phrase entière."
+    },
+    "units": [
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-pain-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 0,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je prends de le pain.",
+        "cue": "Vous prenez une quantité de pain sans compter des pains entiers.",
+        "answers": [
+          "Je prends du pain."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 10,
+          "end": 15,
+          "text": "de le"
+        },
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : Je prends du pain."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-riz-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 1,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "J’ajoute de le riz au plat.",
+        "cue": "Vous ajoutez une quantité de riz non mesurée au plat.",
+        "answers": [
+          "J’ajoute du riz au plat."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 14,
+          "text": "de le"
+        },
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : J’ajoute du riz au plat."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-lait-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 2,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je verse de le lait dans ma tasse.",
+        "cue": "Vous versez une quantité de lait dans votre tasse, sans mesure annoncée.",
+        "answers": [
+          "Je verse du lait dans ma tasse."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 14,
+          "text": "de le"
+        },
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : Je verse du lait dans ma tasse."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-beurre-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 3,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je mets de le beurre sur le pain.",
+        "cue": "La phrase exprime une quantité de beurre étalée sur le pain.",
+        "answers": [
+          "Je mets du beurre sur le pain."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 13,
+          "text": "de le"
+        },
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : Je mets du beurre sur le pain."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-fromage-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 4,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je voudrais de le fromage.",
+        "cue": "Vous demandez une portion de fromage, et non un fromage entier.",
+        "answers": [
+          "Je voudrais du fromage."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 17,
+          "text": "de le"
+        },
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : Je voudrais du fromage."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-sucre-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 5,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "J’ajoute de le sucre à la préparation.",
+        "cue": "Vous ajoutez une quantité de sucre sans compter des morceaux.",
+        "answers": [
+          "J’ajoute du sucre à la préparation."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 14,
+          "text": "de le"
+        },
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : J’ajoute du sucre à la préparation."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-miel-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 6,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je sers de le miel.",
+        "cue": "Vous servez une quantité de miel pour les tartines.",
+        "answers": [
+          "Je sers du miel."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 13,
+          "text": "de le"
+        },
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : Je sers du miel."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-chocolat-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 7,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je fais fondre de le chocolat.",
+        "cue": "Vous faites fondre une quantité de chocolat sans annoncer de poids.",
+        "answers": [
+          "Je fais fondre du chocolat."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 15,
+          "end": 20,
+          "text": "de le"
+        },
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : Je fais fondre du chocolat."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-cafe-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 8,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je sers de le café.",
+        "cue": "Vous servez une quantité de café, sans compter les tasses.",
+        "answers": [
+          "Je sers du café."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 13,
+          "text": "de le"
+        },
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : Je sers du café."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-the-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 9,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je verse de le thé dans le récipient.",
+        "cue": "Vous versez une quantité de thé dans un récipient.",
+        "answers": [
+          "Je verse du thé dans le récipient."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 14,
+          "text": "de le"
+        },
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : Je verse du thé dans le récipient."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-jus-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 10,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je voudrais de le jus.",
+        "cue": "Vous demandez une quantité de jus, sans préciser de volume.",
+        "answers": [
+          "Je voudrais du jus."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 17,
+          "text": "de le"
+        },
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : Je voudrais du jus."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-vinaigre-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 11,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "J’utilise de le vinaigre pour la sauce.",
+        "cue": "Vous utilisez une quantité de vinaigre pour la sauce.",
+        "answers": [
+          "J’utilise du vinaigre pour la sauce."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 10,
+          "end": 15,
+          "text": "de le"
+        },
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : J’utilise du vinaigre pour la sauce."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-thon-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 12,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je mets de le thon dans la salade.",
+        "cue": "Vous mettez une partie du thon disponible dans la salade.",
+        "answers": [
+          "Je mets du thon dans la salade."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 13,
+          "text": "de le"
+        },
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : Je mets du thon dans la salade."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-saumon-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 13,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je sers de le saumon.",
+        "cue": "Vous servez une portion de saumon déjà préparé.",
+        "answers": [
+          "Je sers du saumon."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 13,
+          "text": "de le"
+        },
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : Je sers du saumon."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-poulet-quantite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 14,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "J’ajoute de le poulet à l’assiette.",
+        "cue": "Vous ajoutez une portion de poulet découpé à l’assiette.",
+        "answers": [
+          "J’ajoute du poulet à l’assiette."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 14,
+          "text": "de le"
+        },
+        "explanation": "Du indique ici une quantité de produit non mesurée ; ce n’est pas de + le. Modèle : J’ajoute du poulet à l’assiette."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-pain-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 15,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je vérifie le prix de le pain sur la table.",
+        "cue": "Un pain précis est posé sur la table. Vous parlez de son prix, avec de suivi de le.",
+        "answers": [
+          "Je vérifie le prix du pain sur la table."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 19,
+          "end": 24,
+          "text": "de le"
+        },
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je vérifie le prix du pain sur la table."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-marche-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 16,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je reviens de le marché visité ce matin.",
+        "cue": "Le marché visité ce matin est déjà connu. Vous indiquez votre provenance.",
+        "answers": [
+          "Je reviens du marché visité ce matin."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 16,
+          "text": "de le"
+        },
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je reviens du marché visité ce matin."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-restaurant-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 17,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je lis le menu de le restaurant réservé.",
+        "cue": "Le restaurant réservé est connu. Vous lisez son menu.",
+        "answers": [
+          "Je lis le menu du restaurant réservé."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 15,
+          "end": 20,
+          "text": "de le"
+        },
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je lis le menu du restaurant réservé."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-fromage-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 18,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je regarde le poids de le fromage présenté.",
+        "cue": "Un fromage précis vient d’être présenté. Vous parlez de son poids.",
+        "answers": [
+          "Je regarde le poids du fromage présenté."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 20,
+          "end": 25,
+          "text": "de le"
+        },
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je regarde le poids du fromage présenté."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-riz-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 19,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je note le temps de cuisson de le riz préparé.",
+        "cue": "Le riz déjà préparé est identifié. Vous évoquez son temps de cuisson.",
+        "answers": [
+          "Je note le temps de cuisson du riz préparé."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 28,
+          "end": 33,
+          "text": "de le"
+        },
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je note le temps de cuisson du riz préparé."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-lait-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 20,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je vérifie la date de le lait de cette bouteille.",
+        "cue": "Le lait de cette bouteille est identifié. Vous en vérifiez la date.",
+        "answers": [
+          "Je vérifie la date du lait de cette bouteille."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 19,
+          "end": 24,
+          "text": "de le"
+        },
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je vérifie la date du lait de cette bouteille."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-gateau-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 21,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je décris la décoration de le gâteau de l’anniversaire.",
+        "cue": "Le gâteau de l’anniversaire est connu. Vous décrivez sa décoration.",
+        "answers": [
+          "Je décris la décoration du gâteau de l’anniversaire."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 24,
+          "end": 29,
+          "text": "de le"
+        },
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je décris la décoration du gâteau de l’anniversaire."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-menu-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 22,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je regarde la première page de le menu.",
+        "cue": "Le menu posé devant vous est identifié. Vous regardez sa première page.",
+        "answers": [
+          "Je regarde la première page du menu."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 28,
+          "end": 33,
+          "text": "de le"
+        },
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je regarde la première page du menu."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-panier-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 23,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je regarde le contenu de le panier placé à gauche.",
+        "cue": "Un panier de courses est placé à gauche. Vous observez son contenu.",
+        "answers": [
+          "Je regarde le contenu du panier placé à gauche."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 22,
+          "end": 27,
+          "text": "de le"
+        },
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je regarde le contenu du panier placé à gauche."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-buffet-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 24,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je reviens de le buffet de la salle.",
+        "cue": "Le buffet de la salle est connu. Vous revenez de cet endroit.",
+        "answers": [
+          "Je reviens du buffet de la salle."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 16,
+          "text": "de le"
+        },
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je reviens du buffet de la salle."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-service-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 25,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "J’attends la réponse de le service de réservation.",
+        "cue": "Le service de réservation a déjà été contacté. Vous attendez sa réponse.",
+        "answers": [
+          "J’attends la réponse du service de réservation."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 21,
+          "end": 26,
+          "text": "de le"
+        },
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : J’attends la réponse du service de réservation."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-cuisinier-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 26,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je parle des conseils de le cuisinier de l’atelier.",
+        "cue": "Le cuisinier de l’atelier est identifié. Vous parlez de ses conseils.",
+        "answers": [
+          "Je parle des conseils du cuisinier de l’atelier."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 22,
+          "end": 27,
+          "text": "de le"
+        },
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je parle des conseils du cuisinier de l’atelier."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-pot-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 27,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je referme le couvercle de le pot ouvert.",
+        "cue": "Un pot de confiture vient d’être ouvert. Vous refermez son couvercle.",
+        "answers": [
+          "Je referme le couvercle du pot ouvert."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 24,
+          "end": 29,
+          "text": "de le"
+        },
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je referme le couvercle du pot ouvert."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-groupe-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 28,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je compte les membres de le groupe attendu.",
+        "cue": "Le groupe attendu au repas est connu. Vous comptez ses membres.",
+        "answers": [
+          "Je compte les membres du groupe attendu."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 22,
+          "end": 27,
+          "text": "de le"
+        },
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je compte les membres du groupe attendu."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-repas-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 29,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je vérifie l’horaire de le repas de demain.",
+        "cue": "Le repas prévu pour demain est déjà organisé. Vous vérifiez son horaire.",
+        "answers": [
+          "Je vérifie l’horaire du repas de demain."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 21,
+          "end": 26,
+          "text": "de le"
+        },
+        "explanation": "du résulte de de + le et reprend une référence définie. Modèle : Je vérifie l’horaire du repas de demain."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-pommes-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 30,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je regarde la couleur de les pommes de ce panier.",
+        "cue": "Les pommes de ce panier précis sont connues. Vous observez leur couleur.",
+        "answers": [
+          "Je regarde la couleur des pommes de ce panier."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 22,
+          "end": 28,
+          "text": "de les"
+        },
+        "explanation": "des résulte de de + les et reprend une référence définie. Modèle : Je regarde la couleur des pommes de ce panier."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-tomates-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 31,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je parle du prix de les tomates déjà achetées.",
+        "cue": "Les tomates déjà achetées sont identifiées. Vous parlez de leur prix.",
+        "answers": [
+          "Je parle du prix des tomates déjà achetées."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 17,
+          "end": 23,
+          "text": "de les"
+        },
+        "explanation": "des résulte de de + les et reprend une référence définie. Modèle : Je parle du prix des tomates déjà achetées."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-ingredients-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 32,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je consulte la liste de les ingrédients de cette recette.",
+        "cue": "Les ingrédients de cette recette sont connus. Vous consultez leur liste.",
+        "answers": [
+          "Je consulte la liste des ingrédients de cette recette."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 21,
+          "end": 27,
+          "text": "de les"
+        },
+        "explanation": "des résulte de de + les et reprend une référence définie. Modèle : Je consulte la liste des ingrédients de cette recette."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-verres-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 33,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je vérifie la propreté de les verres de cette table.",
+        "cue": "Les verres de cette table sont identifiés. Vous vérifiez leur propreté.",
+        "answers": [
+          "Je vérifie la propreté des verres de cette table."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 23,
+          "end": 29,
+          "text": "de les"
+        },
+        "explanation": "des résulte de de + les et reprend une référence définie. Modèle : Je vérifie la propreté des verres de cette table."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-invites-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 34,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je vérifie le nombre de les invités du repas.",
+        "cue": "Les invités du repas ont été nommés. Vous vérifiez leur nombre.",
+        "answers": [
+          "Je vérifie le nombre des invités du repas."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 21,
+          "end": 27,
+          "text": "de les"
+        },
+        "explanation": "des résulte de de + les et reprend une référence définie. Modèle : Je vérifie le nombre des invités du repas."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-commandes-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 35,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je confirme l’heure de retrait de les commandes du groupe.",
+        "cue": "Les commandes du groupe sont connues. Vous confirmez leur heure de retrait.",
+        "answers": [
+          "Je confirme l’heure de retrait des commandes du groupe."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 31,
+          "end": 37,
+          "text": "de les"
+        },
+        "explanation": "des résulte de de + les et reprend une référence définie. Modèle : Je confirme l’heure de retrait des commandes du groupe."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-magasins-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 36,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je compare les horaires de les magasins de cette rue.",
+        "cue": "Les magasins de cette rue sont identifiés. Vous comparez leurs horaires.",
+        "answers": [
+          "Je compare les horaires des magasins de cette rue."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 24,
+          "end": 30,
+          "text": "de les"
+        },
+        "explanation": "des résulte de de + les et reprend une référence définie. Modèle : Je compare les horaires des magasins de cette rue."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-fruits-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 37,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je compare les couleurs de les fruits de cette recette.",
+        "cue": "Les fruits destinés à cette recette sont connus. Vous comparez leurs couleurs.",
+        "answers": [
+          "Je compare les couleurs des fruits de cette recette."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 24,
+          "end": 30,
+          "text": "de les"
+        },
+        "explanation": "des résulte de de + les et reprend une référence définie. Modèle : Je compare les couleurs des fruits de cette recette."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-assiettes-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 38,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je vérifie l’emplacement de les assiettes du groupe.",
+        "cue": "Les assiettes du groupe sont identifiées. Vous vérifiez leur emplacement.",
+        "answers": [
+          "Je vérifie l’emplacement des assiettes du groupe."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 25,
+          "end": 31,
+          "text": "de les"
+        },
+        "explanation": "des résulte de de + les et reprend une référence définie. Modèle : Je vérifie l’emplacement des assiettes du groupe."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-produits-reference",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 39,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je vérifie la disponibilité de les produits de cette liste.",
+        "cue": "Les produits de cette liste sont identifiés. Vous vérifiez leur disponibilité.",
+        "answers": [
+          "Je vérifie la disponibilité des produits de cette liste."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 28,
+          "end": 34,
+          "text": "de les"
+        },
+        "explanation": "des résulte de de + les et reprend une référence définie. Modèle : Je vérifie la disponibilité des produits de cette liste."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-pommes-indefinies",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 40,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "J’achète de les pommes.",
+        "cue": "Vous achetez plusieurs pommes sans préciser lesquelles. Les fruits sont comptés comme des unités.",
+        "answers": [
+          "J’achète des pommes."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 15,
+          "text": "de les"
+        },
+        "explanation": "Des présente ici plusieurs éléments comptables non identifiés : article indéfini pluriel. Modèle : J’achète des pommes."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-citrons-indefinis",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 41,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je prends de les citrons.",
+        "cue": "Vous prenez plusieurs citrons entiers, sans les avoir désignés auparavant.",
+        "answers": [
+          "Je prends des citrons."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 10,
+          "end": 16,
+          "text": "de les"
+        },
+        "explanation": "Des présente ici plusieurs éléments comptables non identifiés : article indéfini pluriel. Modèle : Je prends des citrons."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-bols-indefinis",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 42,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je cherche de les bols.",
+        "cue": "Vous cherchez plusieurs bols, sans désigner des bols déjà connus.",
+        "answers": [
+          "Je cherche des bols."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 17,
+          "text": "de les"
+        },
+        "explanation": "Des présente ici plusieurs éléments comptables non identifiés : article indéfini pluriel. Modèle : Je cherche des bols."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-recettes-indefinies",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 43,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je consulte de les recettes.",
+        "cue": "Vous consultez plusieurs recettes, sans préciser un ensemble connu.",
+        "answers": [
+          "Je consulte des recettes."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 18,
+          "text": "de les"
+        },
+        "explanation": "Des présente ici plusieurs éléments comptables non identifiés : article indéfini pluriel. Modèle : Je consulte des recettes."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-cartons-indefinis",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 44,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "J’apporte de les cartons.",
+        "cue": "Vous apportez plusieurs cartons pour le transport, sans les désigner auparavant.",
+        "answers": [
+          "J’apporte des cartons."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 10,
+          "end": 16,
+          "text": "de les"
+        },
+        "explanation": "Des présente ici plusieurs éléments comptables non identifiés : article indéfini pluriel. Modèle : J’apporte des cartons."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-marche-destination",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 45,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je vais à le marché indiqué.",
+        "cue": "Le marché indiqué est connu et constitue votre destination.",
+        "answers": [
+          "Je vais au marché indiqué."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 12,
+          "text": "à le"
+        },
+        "explanation": "au résulte de à + le et reprend une référence définie. Modèle : Je vais au marché indiqué."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-vendeur-destinataire",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 46,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je pose ma question à le vendeur présent.",
+        "cue": "Le vendeur présent est connu. Vous lui adressez votre question.",
+        "answers": [
+          "Je pose ma question au vendeur présent."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 20,
+          "end": 24,
+          "text": "à le"
+        },
+        "explanation": "au résulte de à + le et reprend une référence définie. Modèle : Je pose ma question au vendeur présent."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-clients-destinataires",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 47,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "J’apporte les menus à les clients installés.",
+        "cue": "Les clients installés sont connus. Vous leur apportez les menus.",
+        "answers": [
+          "J’apporte les menus aux clients installés."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 20,
+          "end": 25,
+          "text": "à les"
+        },
+        "explanation": "aux résulte de à + les et reprend une référence définie. Modèle : J’apporte les menus aux clients installés."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-participants-destinataires",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 48,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "J’explique la recette à les participants de l’atelier.",
+        "cue": "Les participants de l’atelier sont connus. Vous leur expliquez la recette.",
+        "answers": [
+          "J’explique la recette aux participants de l’atelier."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 22,
+          "end": 27,
+          "text": "à les"
+        },
+        "explanation": "aux résulte de à + les et reprend une référence définie. Modèle : J’explique la recette aux participants de l’atelier."
+      },
+      {
+        "id": "gram-ex-g6-curriculum-c-a2-amis-destinataires",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+          "typeId": "gram-ex-g6-curriculum-c",
+          "position": 49,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "J’envoie le menu à les amis déjà invités.",
+        "cue": "Les amis déjà invités sont identifiés. Vous leur envoyez le menu du repas.",
+        "answers": [
+          "J’envoie le menu aux amis déjà invités."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 17,
+          "end": 22,
+          "text": "à les"
+        },
+        "explanation": "aux résulte de à + les et reprend une référence définie. Modèle : J’envoie le menu aux amis déjà invités."
+      }
+    ]
+  }
+]

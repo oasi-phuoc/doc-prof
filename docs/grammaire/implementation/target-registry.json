@@ -11395,7 +11395,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -11410,13 +11410,32 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/g1.json",
       "instructionsByPresentation": {
         "choice": "Choisissez la forme qui convient.",
         "gap": "Complétez avec la forme qui convient."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/g1.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "choice",
+              "gap"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -11449,7 +11468,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -11464,13 +11483,32 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/g2.json",
       "instructionsByPresentation": {
         "choice": "Choisissez la forme qui convient.",
         "gap": "Complétez avec la forme qui convient."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/g2.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "choice",
+              "gap"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -11503,7 +11541,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -11518,13 +11556,32 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/g3.json",
       "instructionsByPresentation": {
         "choice": "Choisissez la forme qui convient.",
         "gap": "Complétez avec la forme qui convient."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/g3.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "choice",
+              "gap"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -11557,7 +11614,7 @@
       "sourceDocumentCount": 10,
       "sourceQuestionTotal": 50,
       "currentGenerationQuestionCap": 5,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": 20,
       "selectionUnit": "document",
@@ -11571,12 +11628,30 @@
       },
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/g4.json",
       "instructionsByPresentation": {
         "document-set": "Lisez le document et répondez aux questions."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/g4.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 20,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "document-set"
+            ],
+            "units": 20
+          }
+        ]
       }
     },
     {
@@ -11609,7 +11684,7 @@
       "sourceDocumentCount": 10,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 1,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -11623,12 +11698,30 @@
       },
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/g4.json",
       "instructionsByPresentation": {
         "open-written": "Écrivez une seule phrase adaptée à la situation."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/g4.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "open-written"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -11661,7 +11754,7 @@
       "sourceDocumentCount": 10,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 1,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -11675,12 +11768,30 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/g4.json",
       "instructionsByPresentation": {
         "open-oral": "Dites une seule phrase adaptée à la situation."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/g4.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "open-oral"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -11713,7 +11824,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -11728,13 +11839,32 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/g4.json",
       "instructionsByPresentation": {
         "choice": "Choisissez la forme qui convient.",
         "gap": "Complétez avec la forme qui convient."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/g4.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "choice",
+              "gap"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -11767,7 +11897,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -11782,13 +11912,32 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/g5.json",
       "instructionsByPresentation": {
         "choice": "Choisissez la forme qui convient.",
         "gap": "Complétez avec la forme qui convient."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/g5.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A2",
+            "presentations": [
+              "choice",
+              "gap"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -11822,7 +11971,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": 50,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -11842,13 +11991,41 @@
       },
       "scopeReason": "initial_matrix_activity",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun compteur approuvé déduit du brut",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/g6.json",
       "instructionsByPresentation": {
         "choice": "Choisissez la forme qui convient.",
         "gap": "Complétez avec la forme qui convient."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/g6.json",
+        "levels": [
+          "A1",
+          "A2"
+        ],
+        "reviewedActivityUnits": 100,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "choice",
+              "gap"
+            ],
+            "units": 50
+          },
+          {
+            "level": "A2",
+            "presentations": [
+              "choice",
+              "gap"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -20609,7 +20786,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -20623,12 +20800,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/g1.json",
       "instructionsByPresentation": {
         "match": "Associez chaque élément à la proposition qui convient."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/g1.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "match"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -20656,7 +20851,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -20670,12 +20865,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/g2.json",
       "instructionsByPresentation": {
         "transform": "Réécrivez la phrase en respectant l’indication."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/g2.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "transform"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -20703,7 +20916,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -20717,12 +20930,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/g2.json",
       "instructionsByPresentation": {
         "correct": "Corrigez l’erreur et réécrivez la phrase entière."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/g2.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "correct"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -20750,7 +20981,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -20764,12 +20995,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/g3.json",
       "instructionsByPresentation": {
         "scenario-set": "Préparez, puis jouez le dialogue de la situation proposée."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/g3.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "scenario-set"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -20797,7 +21046,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -20811,12 +21060,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/g4.json",
       "instructionsByPresentation": {
         "match": "Associez chaque élément à la proposition qui convient."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/g4.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "match"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -20844,7 +21111,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "situation",
@@ -20858,12 +21125,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/g4.json",
       "instructionsByPresentation": {
         "scenario-set": "Préparez, puis jouez le dialogue de la situation proposée."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/g4.json",
+        "levels": [
+          "A1"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A1",
+            "presentations": [
+              "scenario-set"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -20891,7 +21176,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -20905,12 +21190,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/g5.json",
       "instructionsByPresentation": {
         "transform": "Réécrivez la phrase en respectant l’indication."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/g5.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A2",
+            "presentations": [
+              "transform"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -20938,7 +21241,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -20952,12 +21255,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/g5.json",
       "instructionsByPresentation": {
         "correct": "Corrigez l’erreur et réécrivez la phrase entière."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/g5.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A2",
+            "presentations": [
+              "correct"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -20985,7 +21306,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -20999,12 +21320,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/g6.json",
       "instructionsByPresentation": {
         "transform": "Réécrivez la phrase en respectant l’indication."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/g6.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A2",
+            "presentations": [
+              "transform"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -21032,7 +21371,7 @@
       "sourceDocumentCount": null,
       "sourceQuestionTotal": null,
       "currentGenerationQuestionCap": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "minimumQuestionsOrSituations": 50,
       "minimumDocuments": null,
       "selectionUnit": "question",
@@ -21046,12 +21385,30 @@
       },
       "scopeReason": "missing_initial_family",
       "quotaNote": "50 unités par activité/niveau/présentation ; aucun contenu créé par le présent registre",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false,
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
       "targetEditorialSourcePath": "src/grammaire/curriculum/data/g6.json",
       "instructionsByPresentation": {
         "correct": "Corrigez l’erreur et réécrivez la phrase entière."
+      },
+      "pilotPreview": {
+        "sourcePath": "src/grammaire/curriculum/data/g6.json",
+        "levels": [
+          "A2"
+        ],
+        "reviewedActivityUnits": 50,
+        "teacherApprovedUnits": 0,
+        "humanReview": "pending",
+        "byLevel": [
+          {
+            "level": "A2",
+            "presentations": [
+              "correct"
+            ],
+            "units": 50
+          }
+        ]
       }
     },
     {
@@ -33582,16 +33939,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Un/une/des dans des phrases simples sur des objets/aliments",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-g1-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g1.json"
     },
     {
       "offeringId": "gram-ex-g1-qcm-verbe@A1@gap",
@@ -33606,16 +33968,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Un/une/des dans des phrases simples sur des objets/aliments",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-g1-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g1.json"
     },
     {
       "offeringId": "gram-ex-g2-qcm-verbe@A1@choice",
@@ -33630,16 +33997,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Le/la/l'/les, connu ou général",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-g2-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g2.json"
     },
     {
       "offeringId": "gram-ex-g2-qcm-verbe@A1@gap",
@@ -33654,16 +34026,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Le/la/l'/les, connu ou général",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-g2-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g2.json"
     },
     {
       "offeringId": "gram-ex-g3-qcm-verbe@A1@choice",
@@ -33678,16 +34055,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Du/de la/de l' pour quantité non dénombrée",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-g3-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g3.json"
     },
     {
       "offeringId": "gram-ex-g3-qcm-verbe@A1@gap",
@@ -33702,16 +34084,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Du/de la/de l' pour quantité non dénombrée",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-g3-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g3.json"
     },
     {
       "offeringId": "gram-ex-g4-communication-ce@A1@document-set",
@@ -33726,16 +34113,21 @@
       "selectionUnit": "document",
       "targetMinimum": 50,
       "targetMinimumDocuments": 20,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Un kilo de, beaucoup de, un verre de dans des commandes simples",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/communication.ts | src/grammaire/exercises/communication-data.json",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-g4-communication-ce",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 20,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g4.json"
     },
     {
       "offeringId": "gram-ex-g4-communication-pe@A1@open-written",
@@ -33750,16 +34142,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Un kilo de, beaucoup de, un verre de dans des commandes simples",
       "scopeReason": "extension_to_preserve_uncovered_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/communication.ts | src/grammaire/exercises/communication-data.json",
       "sourceRawCount": 10,
       "existingTypeIds": "gram-ex-g4-communication-pe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g4.json"
     },
     {
       "offeringId": "gram-ex-g4-communication-po@A1@open-oral",
@@ -33774,16 +34171,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Un kilo de, beaucoup de, un verre de dans des commandes simples",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/communication.ts | src/grammaire/exercises/communication-data.json",
       "sourceRawCount": 10,
       "existingTypeIds": "gram-ex-g4-communication-po",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g4.json"
     },
     {
       "offeringId": "gram-ex-g4-qcm-verbe@A1@choice",
@@ -33798,16 +34200,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Un kilo de, beaucoup de, un verre de dans des commandes simples",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-g4-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g4.json"
     },
     {
       "offeringId": "gram-ex-g4-qcm-verbe@A1@gap",
@@ -33822,16 +34229,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Un kilo de, beaucoup de, un verre de dans des commandes simples",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-g4-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g4.json"
     },
     {
       "offeringId": "gram-ex-g5-qcm-verbe@A2@choice",
@@ -33846,16 +34258,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Quelques, plusieurs, certains, chaque, tout selon le contexte",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-g5-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g5.json"
     },
     {
       "offeringId": "gram-ex-g5-qcm-verbe@A2@gap",
@@ -33870,16 +34287,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Quelques, plusieurs, certains, chaque, tout selon le contexte",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-g5-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g5.json"
     },
     {
       "offeringId": "gram-ex-g6-qcm-verbe@A1@choice",
@@ -33894,16 +34316,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Choisir au/du/des, reconnaître contractions simples",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-g6-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g6.json"
     },
     {
       "offeringId": "gram-ex-g6-qcm-verbe@A1@gap",
@@ -33918,16 +34345,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Choisir au/du/des, reconnaître contractions simples",
       "scopeReason": "initial_matrix_activity",
       "phase": "G3",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-g6-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g6.json"
     },
     {
       "offeringId": "gram-ex-g6-qcm-verbe@A2@choice",
@@ -33942,16 +34374,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Distinguer contractions et partitifs dans le contexte",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-g6-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g6.json"
     },
     {
       "offeringId": "gram-ex-g6-qcm-verbe@A2@gap",
@@ -33966,16 +34403,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Distinguer contractions et partitifs dans le contexte",
       "scopeReason": "initial_matrix_activity",
       "phase": "G4",
       "sourceFiles": "src/grammaire/exercises/bank/index.ts",
       "sourceRawCount": 50,
       "existingTypeIds": "gram-ex-g6-qcm-verbe",
-      "editorialStatus": "not_audited",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g6.json"
     },
     {
       "offeringId": "gram-ex-i1-qcm-verbe@A2@choice",
@@ -39569,16 +40011,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Un/une/des dans des phrases simples sur des objets/aliments",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g1.json"
     },
     {
       "offeringId": "gram-ex-g2-curriculum-t@A1@transform",
@@ -39593,16 +40040,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Le/la/l'/les, connu ou général",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g2.json"
     },
     {
       "offeringId": "gram-ex-g2-curriculum-c@A1@correct",
@@ -39617,16 +40069,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Le/la/l'/les, connu ou général",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g2.json"
     },
     {
       "offeringId": "gram-ex-g3-curriculum-s@A1@scenario-set",
@@ -39641,16 +40098,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Du/de la/de l' pour quantité non dénombrée",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g3.json"
     },
     {
       "offeringId": "gram-ex-g4-curriculum-a@A1@match",
@@ -39665,16 +40127,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Un kilo de, beaucoup de, un verre de dans des commandes simples",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g4.json"
     },
     {
       "offeringId": "gram-ex-g4-curriculum-s@A1@scenario-set",
@@ -39689,16 +40156,21 @@
       "selectionUnit": "situation",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Un kilo de, beaucoup de, un verre de dans des commandes simples",
       "scopeReason": "missing_initial_family",
       "phase": "G3",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g4.json"
     },
     {
       "offeringId": "gram-ex-g5-curriculum-t@A2@transform",
@@ -39713,16 +40185,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Quelques, plusieurs, certains, chaque, tout selon le contexte",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g5.json"
     },
     {
       "offeringId": "gram-ex-g5-curriculum-c@A2@correct",
@@ -39737,16 +40214,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Quelques, plusieurs, certains, chaque, tout selon le contexte",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g5.json"
     },
     {
       "offeringId": "gram-ex-g6-curriculum-t@A2@transform",
@@ -39761,16 +40243,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Distinguer contractions et partitifs dans le contexte",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g6.json"
     },
     {
       "offeringId": "gram-ex-g6-curriculum-c@A2@correct",
@@ -39785,16 +40272,21 @@
       "selectionUnit": "question",
       "targetMinimum": 50,
       "targetMinimumDocuments": null,
-      "approvedDistinctCount": null,
+      "approvedDistinctCount": 0,
       "objective": "Distinguer contractions et partitifs dans le contexte",
       "scopeReason": "missing_initial_family",
       "phase": "G4",
       "sourceFiles": "",
       "sourceRawCount": null,
       "existingTypeIds": "",
-      "editorialStatus": "not_written",
-      "a4Ready": false,
-      "boardReady": false
+      "editorialStatus": "reviewed",
+      "a4Ready": true,
+      "boardReady": true,
+      "reviewedDistinctCount": 50,
+      "availability": "pilot_preview",
+      "humanReview": "pending",
+      "bankRevision": "aliments-2026-11-24-v1",
+      "editorialSourcePath": "src/grammaire/curriculum/data/g6.json"
     },
     {
       "offeringId": "gram-ex-pc-idee-curriculum-a@A1@match",
@@ -42881,12 +43373,16 @@
       "level": "A1",
       "hostActivityId": "gram-ex-g1-qcm-verbe",
       "targetIllustratedSituations": 50,
-      "approvedIllustratedSituations": null,
+      "approvedIllustratedSituations": 0,
       "additionalActivity": false,
       "additionalUnitQuota": false,
       "contextObjective": "Un/une/des dans des phrases simples sur des objets/aliments",
-      "mediaStatus": "à inventorier ; aucun média généré",
-      "note": "50 situations illustrées dans la banque hôte ; le nombre réel d’images distinctes est mesuré séparément"
+      "mediaStatus": "réemploi vérifié ; validation enseignante en attente",
+      "note": "50 situations illustrées dans la banque hôte ; le nombre réel d’images distinctes est mesuré séparément",
+      "reviewedIllustratedSituations": 50,
+      "distinctImages": 50,
+      "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+      "humanReview": "pending"
     },
     {
       "obligationId": "IMG-g3-A1",
@@ -42894,12 +43390,16 @@
       "level": "A1",
       "hostActivityId": "gram-ex-g3-qcm-verbe",
       "targetIllustratedSituations": 50,
-      "approvedIllustratedSituations": null,
+      "approvedIllustratedSituations": 0,
       "additionalActivity": false,
       "additionalUnitQuota": false,
       "contextObjective": "Du/de la/de l' pour quantité non dénombrée",
-      "mediaStatus": "à inventorier ; aucun média généré",
-      "note": "50 situations illustrées dans la banque hôte ; le nombre réel d’images distinctes est mesuré séparément"
+      "mediaStatus": "réemploi vérifié ; validation enseignante en attente",
+      "note": "50 situations illustrées dans la banque hôte ; le nombre réel d’images distinctes est mesuré séparément",
+      "reviewedIllustratedSituations": 50,
+      "distinctImages": 29,
+      "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+      "humanReview": "pending"
     },
     {
       "obligationId": "IMG-g4-A1",
@@ -42907,12 +43407,16 @@
       "level": "A1",
       "hostActivityId": "gram-ex-g4-qcm-verbe",
       "targetIllustratedSituations": 50,
-      "approvedIllustratedSituations": null,
+      "approvedIllustratedSituations": 0,
       "additionalActivity": false,
       "additionalUnitQuota": false,
       "contextObjective": "Un kilo de, beaucoup de, un verre de dans des commandes simples",
-      "mediaStatus": "à inventorier ; aucun média généré",
-      "note": "50 situations illustrées dans la banque hôte ; le nombre réel d’images distinctes est mesuré séparément"
+      "mediaStatus": "réemploi vérifié ; validation enseignante en attente",
+      "note": "50 situations illustrées dans la banque hôte ; le nombre réel d’images distinctes est mesuré séparément",
+      "reviewedIllustratedSituations": 50,
+      "distinctImages": 31,
+      "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+      "humanReview": "pending"
     },
     {
       "obligationId": "IMG-j1-A1",
@@ -42965,11 +43469,11 @@
   "implementation": {
     "baselineCommit": "ff743145",
     "firstVerticalSlice": "etre A1",
-    "reviewedVariants": 17420,
+    "reviewedVariants": 18780,
     "teacherApprovedVariants": 0,
     "status": "pilot_preview",
-    "remaining": "Conseiller quelqu'un : 16/16 offres en pilote. À poursuivre : validation du thème. Approbation enseignante, révisions et recette finale restent en attente.",
-    "reviewedActivityUnits": 12950,
+    "remaining": "Parler des aliments : 27/27 offres en pilote. À poursuivre : validation du thème. Approbation enseignante, révisions et recette finale restent en attente.",
+    "reviewedActivityUnits": 13920,
     "deliveredSlices": [
       "etre A1",
       "er-particuliers A1/A2",
@@ -43005,22 +43509,23 @@
       "f9 A1/A2 — comparaisons (10 offres)",
       "f12 A1/A2 — place de l’adjectif (8 offres)",
       "f13/f14/description-physique — 24 offres",
-      "f10/f11 — 16 offres"
+      "f10/f11 — 16 offres",
+      "g1/g2/g3/g4/g5/g6 — 27 offres"
     ],
-    "reviewedOfferings": 338,
+    "reviewedOfferings": 365,
     "lastUpdated": "2026-11-24",
-    "reviewedSelectableUnits": 12950,
-    "reviewedDocuments": 400,
-    "reviewedDocumentQuestions": 1520,
-    "reviewedActivities": 238,
+    "reviewedSelectableUnits": 13920,
+    "reviewedDocuments": 420,
+    "reviewedDocumentQuestions": 1580,
+    "reviewedActivities": 257,
     "reviewedPilotNotions": 5,
-    "reviewedNotions": 51,
+    "reviewedNotions": 57,
     "technicalContracts": {
       "scenarios": "closed and open; prototypes excluded from all bank quotas",
       "images": "20 supports de présentation réemployés et un bébé historique restauré sous empreinte immuable. Aucun média généré. Les onze obligations I des autres notions restent à préparer.",
       "reference": "docs/grammaire/implementation/contrats-situations-images.md",
       "countedInBankCoverage": false
     },
-    "reviewedNotionLevelPairs": 65
+    "reviewedNotionLevelPairs": 72
   }
 }

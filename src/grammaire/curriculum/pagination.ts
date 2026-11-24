@@ -7,6 +7,7 @@ import { grammarScenarioSlices } from './scenario-pages'
 function cost(item: MathItem): number {
   const q=item.grammar
   if (!q) return 0
+  if(/^gram-ex-g[1-6]-/.test(q.unit.source.typeId))return q.unit.kind==='completion'&&!q.unit.imageSupports?.length&&!(q.unit.source.typeId==='gram-ex-g6-qcm-verbe'&&q.unit.source.partition==='a2')?80:160
   // Advice roles, imperative cues and full corrections stay together on A4.
   if(/^gram-ex-f1[01]-/.test(q.unit.source.typeId))return 160
   // Three-candidate facts, decision criteria and illustrated portraits retain

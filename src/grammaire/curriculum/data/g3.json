@@ -1,0 +1,5104 @@
+[
+  {
+    "schemaVersion": 1,
+    "revision": "aliments-2026-11-24-v1",
+    "activityId": "gram-ex-g3-qcm-verbe",
+    "subthemeId": "g3",
+    "topic": "gram-aliments",
+    "level": "A1",
+    "label": "Choisir un partitif",
+    "objective": "Exprimer une quantité non dénombrée avec du, de la, de l’ et employer de/d’ dans la négation générale.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Sources, formes et contextes relus ; réemploi explicite entre mécaniques. Images existantes conservées sous empreinte immuable. Modèles ouverts non exclusifs ; approbation enseignante en attente."
+    },
+    "presentations": [
+      "choice",
+      "gap"
+    ],
+    "instructions": {
+      "choice": "Choisissez le partitif, ou de/d’ à la négation générale, selon la situation.",
+      "gap": "Complétez avec le partitif adapté, ou de/d’ à la négation générale."
+    },
+    "units": [
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-pain",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je voudrais ___ pain.",
+        "cue": "Au petit-déjeuner, vous voulez une quantité de pain sans compter les pains entiers.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "pain-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "pain-choix-2",
+            "text": "de la"
+          },
+          {
+            "id": "pain-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je voudrais du pain.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-pain",
+            "src": "/lib/images/grammaire/curriculum/sha256/baf6a51775fd279aebe05c0fccbc63d56d5a4021ddb145ad1c7cf6ef7adc4ce4.webp",
+            "sha256": "baf6a51775fd279aebe05c0fccbc63d56d5a4021ddb145ad1c7cf6ef7adc4ce4",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : pain. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/pain.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-riz",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’ajoute ___ riz.",
+        "cue": "Pour accompagner les légumes, vous ajoutez une quantité de riz non mesurée.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "riz-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "riz-choix-2",
+            "text": "de la"
+          },
+          {
+            "id": "riz-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : J’ajoute du riz.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-riz",
+            "src": "/lib/images/grammaire/curriculum/sha256/3e26e5c3f529306a80574661b1924012a2b9c5ad7f542335391fa51e7774ad27.webp",
+            "sha256": "3e26e5c3f529306a80574661b1924012a2b9c5ad7f542335391fa51e7774ad27",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : riz. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/riz.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-lait",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je voudrais ___ lait.",
+        "cue": "Vous préparez une boisson et souhaitez une quantité de lait, sans mesure précise.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "lait-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "lait-choix-2",
+            "text": "de la"
+          },
+          {
+            "id": "lait-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je voudrais du lait.",
+        "imageSupports": [
+          {
+            "id": "aliments-boissons-lait",
+            "src": "/lib/images/grammaire/curriculum/sha256/35d3f44442e38f02d5896804b4f20ff6c43bbc74d264a3a963e845efa01fdc09.webp",
+            "sha256": "35d3f44442e38f02d5896804b4f20ff6c43bbc74d264a3a963e845efa01fdc09",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : lait. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/boissons/lait.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-eau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je voudrais ___eau.",
+        "cue": "Vous demandez de l’eau à table sans préciser un nombre de verres.",
+        "answers": [
+          "de l’"
+        ],
+        "options": [
+          {
+            "id": "eau-choix-1",
+            "text": "de l’"
+          },
+          {
+            "id": "eau-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "eau-choix-3",
+            "text": "de la"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je voudrais de l’eau.",
+        "imageSupports": [
+          {
+            "id": "aliments-boissons-eau",
+            "src": "/lib/images/grammaire/curriculum/sha256/d4700070f233a4b11da1fef2d41d1f3a1c8dd12e7a5af8781857ab1b1b17086e.webp",
+            "sha256": "d4700070f233a4b11da1fef2d41d1f3a1c8dd12e7a5af8781857ab1b1b17086e",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : eau. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/boissons/eau.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-huile",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je verse ___huile dans la poêle.",
+        "cue": "Pour la cuisson, vous versez une quantité d’huile non mesurée.",
+        "answers": [
+          "de l’"
+        ],
+        "options": [
+          {
+            "id": "huile-choix-1",
+            "text": "de l’"
+          },
+          {
+            "id": "huile-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "huile-choix-3",
+            "text": "de la"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je verse de l’huile dans la poêle.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-huile",
+            "src": "/lib/images/grammaire/curriculum/sha256/330fd093fb072fc97f1f96b61d971c4c0d3ed76efb7838e99c49533e1ec812c2.webp",
+            "sha256": "330fd093fb072fc97f1f96b61d971c4c0d3ed76efb7838e99c49533e1ec812c2",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : huile. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/huile.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-beurre",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je prends ___ beurre pour ma tartine.",
+        "cue": "Vous préparez une tartine et prenez une partie du beurre disponible.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "beurre-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "beurre-choix-2",
+            "text": "de la"
+          },
+          {
+            "id": "beurre-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je prends du beurre pour ma tartine.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-beurre",
+            "src": "/lib/images/grammaire/curriculum/sha256/666e6ceee1c73a3dda20be5de4a32bc62ad6ea7f3e6cb0d0a1029de57c98ad7a.webp",
+            "sha256": "666e6ceee1c73a3dda20be5de4a32bc62ad6ea7f3e6cb0d0a1029de57c98ad7a",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : beurre. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/beurre.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-farine",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’ajoute ___ farine à la pâte.",
+        "cue": "Une pâte est en préparation. Vous ajoutez de la farine sans annoncer de poids.",
+        "answers": [
+          "de la"
+        ],
+        "options": [
+          {
+            "id": "farine-choix-1",
+            "text": "de la"
+          },
+          {
+            "id": "farine-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "farine-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : J’ajoute de la farine à la pâte.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-farine",
+            "src": "/lib/images/grammaire/curriculum/sha256/99a2f57bc539b8a431f8f7d50b96fb8c0ba336a233244bdcfd70df08d97304c8.webp",
+            "sha256": "99a2f57bc539b8a431f8f7d50b96fb8c0ba336a233244bdcfd70df08d97304c8",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : farine. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/farine.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-sucre",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Il me faut ___ sucre.",
+        "cue": "Vous préparez un dessert et demandez du sucre, sans nombre de morceaux.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "sucre-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "sucre-choix-2",
+            "text": "de la"
+          },
+          {
+            "id": "sucre-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Il me faut du sucre.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-sucre",
+            "src": "/lib/images/grammaire/curriculum/sha256/0ce37bef69e926e53ae5d9bf31477a24f09ae87c7a747df3994107da5017d225.webp",
+            "sha256": "0ce37bef69e926e53ae5d9bf31477a24f09ae87c7a747df3994107da5017d225",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : sucre. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/sucre.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-confiture",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je voudrais ___ confiture.",
+        "cue": "Au goûter, vous voulez étaler une quantité de confiture sur du pain.",
+        "answers": [
+          "de la"
+        ],
+        "options": [
+          {
+            "id": "confiture-choix-1",
+            "text": "de la"
+          },
+          {
+            "id": "confiture-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "confiture-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je voudrais de la confiture.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-confiture",
+            "src": "/lib/images/grammaire/curriculum/sha256/084cf0cd6ee1a412f274187d3b892bd9d8540cfcfbe1387919af5c3e995df2d8.webp",
+            "sha256": "084cf0cd6ee1a412f274187d3b892bd9d8540cfcfbe1387919af5c3e995df2d8",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : confiture. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/confiture.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-fromage",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je prends ___ fromage.",
+        "cue": "Au repas, vous prenez une portion de fromage et non un fromage entier.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "fromage-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "fromage-choix-2",
+            "text": "de la"
+          },
+          {
+            "id": "fromage-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je prends du fromage.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-fromage",
+            "src": "/lib/images/grammaire/curriculum/sha256/cf7da78dc92b05ba4f66cee97bc6ac3b39df874f9148ec06c5a4c88f59616c2d.webp",
+            "sha256": "cf7da78dc92b05ba4f66cee97bc6ac3b39df874f9148ec06c5a4c88f59616c2d",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : fromage. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/fromage.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-miel",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’ajoute ___ miel à ma boisson.",
+        "cue": "Vous souhaitez ajouter une quantité de miel à une boisson.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "miel-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "miel-choix-2",
+            "text": "de la"
+          },
+          {
+            "id": "miel-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : J’ajoute du miel à ma boisson.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-miel",
+            "src": "/lib/images/grammaire/curriculum/sha256/4b09f450339972452ce3f5a28d50a36dc19174a1d37ce7791584839a18e4be11.webp",
+            "sha256": "4b09f450339972452ce3f5a28d50a36dc19174a1d37ce7791584839a18e4be11",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : miel. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/miel.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-compote",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je prends ___ compote pour le goûter.",
+        "cue": "Pour le goûter, vous prenez une partie de la compote disponible.",
+        "answers": [
+          "de la"
+        ],
+        "options": [
+          {
+            "id": "compote-choix-1",
+            "text": "de la"
+          },
+          {
+            "id": "compote-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "compote-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je prends de la compote pour le goûter.",
+        "imageSupports": [
+          {
+            "id": "aliments-tcf-qcm-audit-audit-context-compote",
+            "src": "/lib/images/grammaire/curriculum/sha256/02c0b4cc82ea549fc77656ae7dfe259bb10f69a042daa334b424ab3d5cea04cc.webp",
+            "sha256": "02c0b4cc82ea549fc77656ae7dfe259bb10f69a042daa334b424ab3d5cea04cc",
+            "width": 1448,
+            "height": 1086,
+            "alt": "Illustration du produit : compote. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/tcf/qcm-audit/audit-context-compote.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-soupe",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je voudrais ___ soupe.",
+        "cue": "Vous commandez une quantité de soupe, sans préciser la taille du bol.",
+        "answers": [
+          "de la"
+        ],
+        "options": [
+          {
+            "id": "soupe-choix-1",
+            "text": "de la"
+          },
+          {
+            "id": "soupe-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "soupe-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je voudrais de la soupe.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-soupe",
+            "src": "/lib/images/grammaire/curriculum/sha256/e9bc147a0d7596c80e92459d00655af76871ba1f24fee044ae8538b2e2c3090c.webp",
+            "sha256": "e9bc147a0d7596c80e92459d00655af76871ba1f24fee044ae8538b2e2c3090c",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : soupe. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/soupe.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-viande",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’ajoute ___ viande au plat.",
+        "cue": "Dans ce rôle de cuisine, vous ajoutez une quantité de viande au plat.",
+        "answers": [
+          "de la"
+        ],
+        "options": [
+          {
+            "id": "viande-choix-1",
+            "text": "de la"
+          },
+          {
+            "id": "viande-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "viande-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : J’ajoute de la viande au plat.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-viande",
+            "src": "/lib/images/grammaire/curriculum/sha256/60bf320dfa39d56aefe455a5fb28962d0cce24f7e0d8cc59919df0f32a7479c6.webp",
+            "sha256": "60bf320dfa39d56aefe455a5fb28962d0cce24f7e0d8cc59919df0f32a7479c6",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : viande. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/viande.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-poisson",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je voudrais ___ poisson.",
+        "cue": "Vous demandez une portion de poisson et non un poisson entier.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "poisson-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "poisson-choix-2",
+            "text": "de la"
+          },
+          {
+            "id": "poisson-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je voudrais du poisson.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-poisson",
+            "src": "/lib/images/grammaire/curriculum/sha256/48d7746f37d02c42ebda0f34a7e7547279a0543cdf05f3e343554f6d632f97fa.webp",
+            "sha256": "48d7746f37d02c42ebda0f34a7e7547279a0543cdf05f3e343554f6d632f97fa",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : poisson. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/poisson.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-poulet",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je prends ___ poulet.",
+        "cue": "Au buffet, vous prenez une portion de poulet déjà découpé.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "poulet-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "poulet-choix-2",
+            "text": "de la"
+          },
+          {
+            "id": "poulet-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je prends du poulet.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-poulet",
+            "src": "/lib/images/grammaire/curriculum/sha256/75aa40a03c711e2f4f8accc5733e81af86652f79dac43fa4d9b868625d253cc2.webp",
+            "sha256": "75aa40a03c711e2f4f8accc5733e81af86652f79dac43fa4d9b868625d253cc2",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : poulet. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/poulet.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-chocolat",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je fais fondre ___ chocolat.",
+        "cue": "Pour le dessert, vous faites fondre une quantité de chocolat non pesée.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "chocolat-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "chocolat-choix-2",
+            "text": "de la"
+          },
+          {
+            "id": "chocolat-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je fais fondre du chocolat.",
+        "imageSupports": [
+          {
+            "id": "aliments-desserts-chocolat",
+            "src": "/lib/images/grammaire/curriculum/sha256/85feb268426b28f6b97e7d88112f14bc8d674bf3d719e0403b6e69f31ffc0fe0.webp",
+            "sha256": "85feb268426b28f6b97e7d88112f14bc8d674bf3d719e0403b6e69f31ffc0fe0",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : chocolat. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/desserts/chocolat.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-cafe",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je verse ___ café dans ma tasse.",
+        "cue": "Vous versez du café dans une tasse, sans annoncer de volume.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "cafe-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "cafe-choix-2",
+            "text": "de la"
+          },
+          {
+            "id": "cafe-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je verse du café dans ma tasse.",
+        "imageSupports": [
+          {
+            "id": "aliments-boissons-café",
+            "src": "/lib/images/grammaire/curriculum/sha256/c64a0b1f1c3773919d7e0feb611191d6aa504401ec0d05f4b3a120f132794518.webp",
+            "sha256": "c64a0b1f1c3773919d7e0feb611191d6aa504401ec0d05f4b3a120f132794518",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : café. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/boissons/café.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-the",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je voudrais ___ thé.",
+        "cue": "Vous demandez du thé comme boisson, sans compter les tasses.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "the-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "the-choix-2",
+            "text": "de la"
+          },
+          {
+            "id": "the-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je voudrais du thé.",
+        "imageSupports": [
+          {
+            "id": "aliments-boissons-thé",
+            "src": "/lib/images/grammaire/curriculum/sha256/70557dc30620ca2afe113107c5cee61b606813e096f07e65c3962156b579505d.webp",
+            "sha256": "70557dc30620ca2afe113107c5cee61b606813e096f07e65c3962156b579505d",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : thé. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/boissons/thé.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-limonade",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je sers ___ limonade.",
+        "cue": "Au goûter, vous servez une quantité de limonade aux invités.",
+        "answers": [
+          "de la"
+        ],
+        "options": [
+          {
+            "id": "limonade-choix-1",
+            "text": "de la"
+          },
+          {
+            "id": "limonade-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "limonade-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je sers de la limonade.",
+        "imageSupports": [
+          {
+            "id": "aliments-boissons-limonade",
+            "src": "/lib/images/grammaire/curriculum/sha256/cadda488e1e1ab66faa19827c1a52faa0afc3cd04edd30335633c30b391f5438.webp",
+            "sha256": "cadda488e1e1ab66faa19827c1a52faa0afc3cd04edd30335633c30b391f5438",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : limonade. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/boissons/limonade.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-tisane",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je verse ___ tisane dans ma tasse.",
+        "cue": "Une tisane est prête. Vous en versez une quantité dans votre tasse.",
+        "answers": [
+          "de la"
+        ],
+        "options": [
+          {
+            "id": "tisane-choix-1",
+            "text": "de la"
+          },
+          {
+            "id": "tisane-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "tisane-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je verse de la tisane dans ma tasse.",
+        "imageSupports": [
+          {
+            "id": "aliments-boissons-tisane",
+            "src": "/lib/images/grammaire/curriculum/sha256/6790c2e82f36b71fd478370a4741369c9fd79f333946d2d2b1fe7ce01f733b26.webp",
+            "sha256": "6790c2e82f36b71fd478370a4741369c9fd79f333946d2d2b1fe7ce01f733b26",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : tisane. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/boissons/tisane.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-jus",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je voudrais ___ jus.",
+        "cue": "Vous souhaitez boire du jus sans préciser de fruit ni de volume.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "jus-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "jus-choix-2",
+            "text": "de la"
+          },
+          {
+            "id": "jus-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je voudrais du jus.",
+        "imageSupports": [
+          {
+            "id": "aliments-boissons-jus",
+            "src": "/lib/images/grammaire/curriculum/sha256/31b9420c3f8d120e941239135e10ced768e474bd169549b1e470da6100980231.webp",
+            "sha256": "31b9420c3f8d120e941239135e10ced768e474bd169549b1e470da6100980231",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : jus. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/boissons/jus.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-vinaigre",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’ajoute ___ vinaigre à la sauce.",
+        "cue": "Vous préparez une sauce et ajoutez une quantité de vinaigre.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "vinaigre-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "vinaigre-choix-2",
+            "text": "de la"
+          },
+          {
+            "id": "vinaigre-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : J’ajoute du vinaigre à la sauce.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-vinaigre",
+            "src": "/lib/images/grammaire/curriculum/sha256/2f3cb9b130bf27b439120c88e992ef392703218af8e9c62e00e30369b89895ff.webp",
+            "sha256": "2f3cb9b130bf27b439120c88e992ef392703218af8e9c62e00e30369b89895ff",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : vinaigre. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/vinaigre.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-moutarde",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je voudrais ___ moutarde.",
+        "cue": "Vous demandez de la moutarde pour accompagner le repas, sans compter les pots.",
+        "answers": [
+          "de la"
+        ],
+        "options": [
+          {
+            "id": "moutarde-choix-1",
+            "text": "de la"
+          },
+          {
+            "id": "moutarde-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "moutarde-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je voudrais de la moutarde.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-moutarde",
+            "src": "/lib/images/grammaire/curriculum/sha256/ca336603afa255050894cd9a666e0b87fc954d47241387f8cdd9c6c0c274e305.webp",
+            "sha256": "ca336603afa255050894cd9a666e0b87fc954d47241387f8cdd9c6c0c274e305",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : moutarde. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/moutarde.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-mayonnaise",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’ajoute ___ mayonnaise.",
+        "cue": "Vous ajoutez une quantité de mayonnaise à une préparation.",
+        "answers": [
+          "de la"
+        ],
+        "options": [
+          {
+            "id": "mayonnaise-choix-1",
+            "text": "de la"
+          },
+          {
+            "id": "mayonnaise-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "mayonnaise-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : J’ajoute de la mayonnaise.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-mayonnaise",
+            "src": "/lib/images/grammaire/curriculum/sha256/d1801f41a89c06c72318658db79824046d81acfd72e6b45e5afd553f008b9701.webp",
+            "sha256": "d1801f41a89c06c72318658db79824046d81acfd72e6b45e5afd553f008b9701",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : mayonnaise. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/mayonnaise.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-ketchup",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je voudrais ___ ketchup.",
+        "cue": "Vous demandez un peu de sauce sans employer une expression de mesure dans la phrase.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "ketchup-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "ketchup-choix-2",
+            "text": "de la"
+          },
+          {
+            "id": "ketchup-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je voudrais du ketchup.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-ketchup",
+            "src": "/lib/images/grammaire/curriculum/sha256/ce7dad2f0fd77682412195ab7c8e74f13db96101b37a05b2af50bbf759638c3e.webp",
+            "sha256": "ce7dad2f0fd77682412195ab7c8e74f13db96101b37a05b2af50bbf759638c3e",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : ketchup. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/ketchup.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-thon",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’ajoute ___ thon à la salade.",
+        "cue": "Pour une salade composée, vous ajoutez une partie du thon disponible.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "thon-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "thon-choix-2",
+            "text": "de la"
+          },
+          {
+            "id": "thon-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : J’ajoute du thon à la salade.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-thon",
+            "src": "/lib/images/grammaire/curriculum/sha256/832d7756c55a64d60e768892bdedf63ce5954515dd23faeb76e7296b633543ab.webp",
+            "sha256": "832d7756c55a64d60e768892bdedf63ce5954515dd23faeb76e7296b633543ab",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : thon. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/thon.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-saumon",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je prends ___ saumon.",
+        "cue": "Au repas, vous prenez une portion de saumon déjà préparé.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "saumon-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "saumon-choix-2",
+            "text": "de la"
+          },
+          {
+            "id": "saumon-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je prends du saumon.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-saumon",
+            "src": "/lib/images/grammaire/curriculum/sha256/bf4edada495957d360f0ce1a0961c288953a9c32fe1be04fe0c454f5ac0a3fae.webp",
+            "sha256": "bf4edada495957d360f0ce1a0961c288953a9c32fe1be04fe0c454f5ac0a3fae",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : saumon. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/saumon.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-couscous",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je voudrais ___ couscous.",
+        "cue": "Vous demandez une portion de couscous, sans compter des assiettes entières.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "couscous-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "couscous-choix-2",
+            "text": "de la"
+          },
+          {
+            "id": "couscous-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je voudrais du couscous.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-couscous",
+            "src": "/lib/images/grammaire/curriculum/sha256/b16f6ae7ee2bf6693a7dfd5514499af5f3f6016e12db7c67e770841428b1ee9d.webp",
+            "sha256": "b16f6ae7ee2bf6693a7dfd5514499af5f3f6016e12db7c67e770841428b1ee9d",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : couscous. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/couscous.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-pain-partage",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’apporte ___ pain pour le groupe.",
+        "cue": "Pour partager un repas, vous apportez une quantité de pain coupé en tranches.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "pain-partage-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "pain-partage-choix-2",
+            "text": "de la"
+          },
+          {
+            "id": "pain-partage-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : J’apporte du pain pour le groupe.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-pain",
+            "src": "/lib/images/grammaire/curriculum/sha256/baf6a51775fd279aebe05c0fccbc63d56d5a4021ddb145ad1c7cf6ef7adc4ce4.webp",
+            "sha256": "baf6a51775fd279aebe05c0fccbc63d56d5a4021ddb145ad1c7cf6ef7adc4ce4",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : pain. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/pain.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-eau-recette",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’ajoute ___eau à la pâte.",
+        "cue": "La pâte est trop épaisse. Vous y ajoutez de l’eau sans préciser la mesure.",
+        "answers": [
+          "de l’"
+        ],
+        "options": [
+          {
+            "id": "eau-recette-choix-1",
+            "text": "de l’"
+          },
+          {
+            "id": "eau-recette-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "eau-recette-choix-3",
+            "text": "de la"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : J’ajoute de l’eau à la pâte.",
+        "imageSupports": [
+          {
+            "id": "aliments-boissons-eau",
+            "src": "/lib/images/grammaire/curriculum/sha256/d4700070f233a4b11da1fef2d41d1f3a1c8dd12e7a5af8781857ab1b1b17086e.webp",
+            "sha256": "d4700070f233a4b11da1fef2d41d1f3a1c8dd12e7a5af8781857ab1b1b17086e",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : eau. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/boissons/eau.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-huile-salade",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’utilise ___huile pour les légumes.",
+        "cue": "Pour assaisonner les légumes, vous utilisez une quantité d’huile.",
+        "answers": [
+          "de l’"
+        ],
+        "options": [
+          {
+            "id": "huile-salade-choix-1",
+            "text": "de l’"
+          },
+          {
+            "id": "huile-salade-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "huile-salade-choix-3",
+            "text": "de la"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : J’utilise de l’huile pour les légumes.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-huile",
+            "src": "/lib/images/grammaire/curriculum/sha256/330fd093fb072fc97f1f96b61d971c4c0d3ed76efb7838e99c49533e1ec812c2.webp",
+            "sha256": "330fd093fb072fc97f1f96b61d971c4c0d3ed76efb7838e99c49533e1ec812c2",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : huile. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/huile.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-farine-table",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je mets ___ farine sur la table.",
+        "cue": "Avant d’étaler une pâte, vous mettez de la farine sur la table.",
+        "answers": [
+          "de la"
+        ],
+        "options": [
+          {
+            "id": "farine-table-choix-1",
+            "text": "de la"
+          },
+          {
+            "id": "farine-table-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "farine-table-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je mets de la farine sur la table.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-farine",
+            "src": "/lib/images/grammaire/curriculum/sha256/99a2f57bc539b8a431f8f7d50b96fb8c0ba336a233244bdcfd70df08d97304c8.webp",
+            "sha256": "99a2f57bc539b8a431f8f7d50b96fb8c0ba336a233244bdcfd70df08d97304c8",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : farine. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/farine.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-beurre-poele",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je fais fondre ___ beurre dans la poêle.",
+        "cue": "Pour une cuisson, vous faites fondre une quantité de beurre dans la poêle.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "beurre-poele-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "beurre-poele-choix-2",
+            "text": "de la"
+          },
+          {
+            "id": "beurre-poele-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je fais fondre du beurre dans la poêle.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-beurre",
+            "src": "/lib/images/grammaire/curriculum/sha256/666e6ceee1c73a3dda20be5de4a32bc62ad6ea7f3e6cb0d0a1029de57c98ad7a.webp",
+            "sha256": "666e6ceee1c73a3dda20be5de4a32bc62ad6ea7f3e6cb0d0a1029de57c98ad7a",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : beurre. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/beurre.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-sucre-bocal",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je mets ___ sucre dans le bocal.",
+        "cue": "Vous remplissez un bocal avec du sucre, sans indiquer de poids.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "sucre-bocal-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "sucre-bocal-choix-2",
+            "text": "de la"
+          },
+          {
+            "id": "sucre-bocal-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je mets du sucre dans le bocal.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-sucre",
+            "src": "/lib/images/grammaire/curriculum/sha256/0ce37bef69e926e53ae5d9bf31477a24f09ae87c7a747df3994107da5017d225.webp",
+            "sha256": "0ce37bef69e926e53ae5d9bf31477a24f09ae87c7a747df3994107da5017d225",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : sucre. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/sucre.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-soupe-service",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je verse ___ soupe dans le bol.",
+        "cue": "Pendant le service du repas, vous versez une partie de la soupe dans un bol.",
+        "answers": [
+          "de la"
+        ],
+        "options": [
+          {
+            "id": "soupe-service-choix-1",
+            "text": "de la"
+          },
+          {
+            "id": "soupe-service-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "soupe-service-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je verse de la soupe dans le bol.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-soupe",
+            "src": "/lib/images/grammaire/curriculum/sha256/e9bc147a0d7596c80e92459d00655af76871ba1f24fee044ae8538b2e2c3090c.webp",
+            "sha256": "e9bc147a0d7596c80e92459d00655af76871ba1f24fee044ae8538b2e2c3090c",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : soupe. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/soupe.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-fromage-recette",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’ajoute ___ fromage râpé.",
+        "cue": "Pour terminer un plat, vous ajoutez une quantité de fromage râpé.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "fromage-recette-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "fromage-recette-choix-2",
+            "text": "de la"
+          },
+          {
+            "id": "fromage-recette-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : J’ajoute du fromage râpé.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-fromage",
+            "src": "/lib/images/grammaire/curriculum/sha256/cf7da78dc92b05ba4f66cee97bc6ac3b39df874f9148ec06c5a4c88f59616c2d.webp",
+            "sha256": "cf7da78dc92b05ba4f66cee97bc6ac3b39df874f9148ec06c5a4c88f59616c2d",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : fromage. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/fromage.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-compote-dessert",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je sers ___ compote au dessert.",
+        "cue": "Au dessert, vous servez une partie de la compote sans la mesurer.",
+        "answers": [
+          "de la"
+        ],
+        "options": [
+          {
+            "id": "compote-dessert-choix-1",
+            "text": "de la"
+          },
+          {
+            "id": "compote-dessert-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "compote-dessert-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je sers de la compote au dessert.",
+        "imageSupports": [
+          {
+            "id": "aliments-tcf-qcm-audit-audit-context-compote",
+            "src": "/lib/images/grammaire/curriculum/sha256/02c0b4cc82ea549fc77656ae7dfe259bb10f69a042daa334b424ab3d5cea04cc.webp",
+            "sha256": "02c0b4cc82ea549fc77656ae7dfe259bb10f69a042daa334b424ab3d5cea04cc",
+            "width": 1448,
+            "height": 1086,
+            "alt": "Illustration du produit : compote. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/tcf/qcm-audit/audit-context-compote.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-lait-pate",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je verse ___ lait dans la pâte.",
+        "cue": "Vous préparez une pâte à crêpes et versez une quantité de lait.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "lait-pate-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "lait-pate-choix-2",
+            "text": "de la"
+          },
+          {
+            "id": "lait-pate-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je verse du lait dans la pâte.",
+        "imageSupports": [
+          {
+            "id": "aliments-boissons-lait",
+            "src": "/lib/images/grammaire/curriculum/sha256/35d3f44442e38f02d5896804b4f20ff6c43bbc74d264a3a963e845efa01fdc09.webp",
+            "sha256": "35d3f44442e38f02d5896804b4f20ff6c43bbc74d264a3a963e845efa01fdc09",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : lait. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/boissons/lait.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-miel-tartine",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je mets ___ miel sur ma tartine.",
+        "cue": "Vous garnissez une tartine avec une partie du miel du pot.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "miel-tartine-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "miel-tartine-choix-2",
+            "text": "de la"
+          },
+          {
+            "id": "miel-tartine-choix-3",
+            "text": "de l’"
+          }
+        ],
+        "explanation": "La phrase exprime une quantité non dénombrée : partitif selon le genre et le début du nom. Modèle : Je mets du miel sur ma tartine.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-miel",
+            "src": "/lib/images/grammaire/curriculum/sha256/4b09f450339972452ce3f5a28d50a36dc19174a1d37ce7791584839a18e4be11.webp",
+            "sha256": "4b09f450339972452ce3f5a28d50a36dc19174a1d37ce7791584839a18e4be11",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : miel. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/miel.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-sans-lait",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je ne veux pas ___ lait.",
+        "cue": "Dans ce rôle, vous refusez le lait dans votre boisson. Négation générale, sans contraste avec un autre lait.",
+        "answers": [
+          "de"
+        ],
+        "options": [
+          {
+            "id": "sans-lait-choix-1",
+            "text": "de"
+          },
+          {
+            "id": "sans-lait-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "sans-lait-choix-3",
+            "text": "de la"
+          }
+        ],
+        "explanation": "À la négation générale de quantité, on emploie de/d’. Les contrastes et les phrases avec être ne sont pas visés ici. Modèle : Je ne veux pas de lait.",
+        "imageSupports": [
+          {
+            "id": "aliments-boissons-lait",
+            "src": "/lib/images/grammaire/curriculum/sha256/35d3f44442e38f02d5896804b4f20ff6c43bbc74d264a3a963e845efa01fdc09.webp",
+            "sha256": "35d3f44442e38f02d5896804b4f20ff6c43bbc74d264a3a963e845efa01fdc09",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : lait. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/boissons/lait.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-sans-sucre",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je ne prends pas ___ sucre.",
+        "cue": "Vous refusez tout ajout de sucre dans votre tasse. Négation générale de quantité.",
+        "answers": [
+          "de"
+        ],
+        "options": [
+          {
+            "id": "sans-sucre-choix-1",
+            "text": "de"
+          },
+          {
+            "id": "sans-sucre-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "sans-sucre-choix-3",
+            "text": "de la"
+          }
+        ],
+        "explanation": "À la négation générale de quantité, on emploie de/d’. Les contrastes et les phrases avec être ne sont pas visés ici. Modèle : Je ne prends pas de sucre.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-sucre",
+            "src": "/lib/images/grammaire/curriculum/sha256/0ce37bef69e926e53ae5d9bf31477a24f09ae87c7a747df3994107da5017d225.webp",
+            "sha256": "0ce37bef69e926e53ae5d9bf31477a24f09ae87c7a747df3994107da5017d225",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : sucre. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/sucre.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-sans-huile",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je n’ajoute pas ___huile.",
+        "cue": "La préparation de ce rôle se fait sans huile. Négation générale, sans opposer deux huiles.",
+        "answers": [
+          "d’"
+        ],
+        "options": [
+          {
+            "id": "sans-huile-choix-1",
+            "text": "d’"
+          },
+          {
+            "id": "sans-huile-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "sans-huile-choix-3",
+            "text": "de la"
+          }
+        ],
+        "explanation": "À la négation générale de quantité, on emploie de/d’. Les contrastes et les phrases avec être ne sont pas visés ici. Modèle : Je n’ajoute pas d’huile.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-huile",
+            "src": "/lib/images/grammaire/curriculum/sha256/330fd093fb072fc97f1f96b61d971c4c0d3ed76efb7838e99c49533e1ec812c2.webp",
+            "sha256": "330fd093fb072fc97f1f96b61d971c4c0d3ed76efb7838e99c49533e1ec812c2",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : huile. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/huile.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-sans-eau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je n’ajoute pas ___eau.",
+        "cue": "La sauce a déjà la consistance voulue. Vous n’ajoutez aucune quantité d’eau.",
+        "answers": [
+          "d’"
+        ],
+        "options": [
+          {
+            "id": "sans-eau-choix-1",
+            "text": "d’"
+          },
+          {
+            "id": "sans-eau-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "sans-eau-choix-3",
+            "text": "de la"
+          }
+        ],
+        "explanation": "À la négation générale de quantité, on emploie de/d’. Les contrastes et les phrases avec être ne sont pas visés ici. Modèle : Je n’ajoute pas d’eau.",
+        "imageSupports": [
+          {
+            "id": "aliments-boissons-eau",
+            "src": "/lib/images/grammaire/curriculum/sha256/d4700070f233a4b11da1fef2d41d1f3a1c8dd12e7a5af8781857ab1b1b17086e.webp",
+            "sha256": "d4700070f233a4b11da1fef2d41d1f3a1c8dd12e7a5af8781857ab1b1b17086e",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : eau. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/boissons/eau.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-sans-farine",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je n’utilise pas ___ farine.",
+        "cue": "Dans cette étape, aucune farine n’est nécessaire. Négation générale de quantité.",
+        "answers": [
+          "de"
+        ],
+        "options": [
+          {
+            "id": "sans-farine-choix-1",
+            "text": "de"
+          },
+          {
+            "id": "sans-farine-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "sans-farine-choix-3",
+            "text": "de la"
+          }
+        ],
+        "explanation": "À la négation générale de quantité, on emploie de/d’. Les contrastes et les phrases avec être ne sont pas visés ici. Modèle : Je n’utilise pas de farine.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-farine",
+            "src": "/lib/images/grammaire/curriculum/sha256/99a2f57bc539b8a431f8f7d50b96fb8c0ba336a233244bdcfd70df08d97304c8.webp",
+            "sha256": "99a2f57bc539b8a431f8f7d50b96fb8c0ba336a233244bdcfd70df08d97304c8",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : farine. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/farine.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-sans-beurre",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je ne mets pas ___ beurre sur ma tartine.",
+        "cue": "Dans ce rôle, vous préparez une tartine sans beurre. Négation générale de quantité.",
+        "answers": [
+          "de"
+        ],
+        "options": [
+          {
+            "id": "sans-beurre-choix-1",
+            "text": "de"
+          },
+          {
+            "id": "sans-beurre-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "sans-beurre-choix-3",
+            "text": "de la"
+          }
+        ],
+        "explanation": "À la négation générale de quantité, on emploie de/d’. Les contrastes et les phrases avec être ne sont pas visés ici. Modèle : Je ne mets pas de beurre sur ma tartine.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-beurre",
+            "src": "/lib/images/grammaire/curriculum/sha256/666e6ceee1c73a3dda20be5de4a32bc62ad6ea7f3e6cb0d0a1029de57c98ad7a.webp",
+            "sha256": "666e6ceee1c73a3dda20be5de4a32bc62ad6ea7f3e6cb0d0a1029de57c98ad7a",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : beurre. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/beurre.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-sans-vinaigre",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je n’ajoute pas ___ vinaigre.",
+        "cue": "La sauce de cette recette se prépare sans vinaigre. Vous refusez tout ajout de vinaigre.",
+        "answers": [
+          "de"
+        ],
+        "options": [
+          {
+            "id": "sans-vinaigre-choix-1",
+            "text": "de"
+          },
+          {
+            "id": "sans-vinaigre-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "sans-vinaigre-choix-3",
+            "text": "de la"
+          }
+        ],
+        "explanation": "À la négation générale de quantité, on emploie de/d’. Les contrastes et les phrases avec être ne sont pas visés ici. Modèle : Je n’ajoute pas de vinaigre.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-vinaigre",
+            "src": "/lib/images/grammaire/curriculum/sha256/2f3cb9b130bf27b439120c88e992ef392703218af8e9c62e00e30369b89895ff.webp",
+            "sha256": "2f3cb9b130bf27b439120c88e992ef392703218af8e9c62e00e30369b89895ff",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : vinaigre. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/vinaigre.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-sans-compote",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je ne prends pas ___ compote.",
+        "cue": "Dans ce rôle, vous ne prenez aucune compote au goûter. Négation générale.",
+        "answers": [
+          "de"
+        ],
+        "options": [
+          {
+            "id": "sans-compote-choix-1",
+            "text": "de"
+          },
+          {
+            "id": "sans-compote-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "sans-compote-choix-3",
+            "text": "de la"
+          }
+        ],
+        "explanation": "À la négation générale de quantité, on emploie de/d’. Les contrastes et les phrases avec être ne sont pas visés ici. Modèle : Je ne prends pas de compote.",
+        "imageSupports": [
+          {
+            "id": "aliments-tcf-qcm-audit-audit-context-compote",
+            "src": "/lib/images/grammaire/curriculum/sha256/02c0b4cc82ea549fc77656ae7dfe259bb10f69a042daa334b424ab3d5cea04cc.webp",
+            "sha256": "02c0b4cc82ea549fc77656ae7dfe259bb10f69a042daa334b424ab3d5cea04cc",
+            "width": 1448,
+            "height": 1086,
+            "alt": "Illustration du produit : compote. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/tcf/qcm-audit/audit-context-compote.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-sans-chocolat",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je n’utilise pas ___ chocolat.",
+        "cue": "Le dessert de votre rôle se prépare sans chocolat. Il ne s’agit pas de choisir un autre chocolat.",
+        "answers": [
+          "de"
+        ],
+        "options": [
+          {
+            "id": "sans-chocolat-choix-1",
+            "text": "de"
+          },
+          {
+            "id": "sans-chocolat-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "sans-chocolat-choix-3",
+            "text": "de la"
+          }
+        ],
+        "explanation": "À la négation générale de quantité, on emploie de/d’. Les contrastes et les phrases avec être ne sont pas visés ici. Modèle : Je n’utilise pas de chocolat.",
+        "imageSupports": [
+          {
+            "id": "aliments-desserts-chocolat",
+            "src": "/lib/images/grammaire/curriculum/sha256/85feb268426b28f6b97e7d88112f14bc8d674bf3d719e0403b6e69f31ffc0fe0.webp",
+            "sha256": "85feb268426b28f6b97e7d88112f14bc8d674bf3d719e0403b6e69f31ffc0fe0",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : chocolat. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/desserts/chocolat.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g3-qcm-verbe-a1-sans-confiture",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-qcm-verbe",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je ne prends pas ___ confiture.",
+        "cue": "Vous préparez une tartine sans aucune confiture. Négation générale, sans contraste.",
+        "answers": [
+          "de"
+        ],
+        "options": [
+          {
+            "id": "sans-confiture-choix-1",
+            "text": "de"
+          },
+          {
+            "id": "sans-confiture-choix-2",
+            "text": "du"
+          },
+          {
+            "id": "sans-confiture-choix-3",
+            "text": "de la"
+          }
+        ],
+        "explanation": "À la négation générale de quantité, on emploie de/d’. Les contrastes et les phrases avec être ne sont pas visés ici. Modèle : Je ne prends pas de confiture.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-confiture",
+            "src": "/lib/images/grammaire/curriculum/sha256/084cf0cd6ee1a412f274187d3b892bd9d8540cfcfbe1387919af5c3e995df2d8.webp",
+            "sha256": "084cf0cd6ee1a412f274187d3b892bd9d8540cfcfbe1387919af5c3e995df2d8",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : confiture. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/confiture.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "aliments-2026-11-24-v1",
+    "activityId": "gram-ex-g3-curriculum-s",
+    "subthemeId": "g3",
+    "topic": "gram-aliments",
+    "level": "A1",
+    "label": "Jouer une situation",
+    "objective": "Exprimer une quantité non dénombrée avec du, de la, de l’ et employer de/d’ dans la négation générale.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Sources, formes et contextes relus ; réemploi explicite entre mécaniques. Images existantes conservées sous empreinte immuable. Modèles ouverts non exclusifs ; approbation enseignante en attente."
+    },
+    "presentations": [
+      "scenario-set"
+    ],
+    "instructions": {
+      "scenario-set": "Jouez la demande ou le refus d’un produit, puis la relance à deux."
+    },
+    "units": [
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-pain",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Au petit-déjeuner, vous voulez une quantité de pain sans compter les pains entiers.",
+        "answers": [
+          "Personne A : Je voudrais du pain.\nPersonne B : Pour quel repas ?\nPersonne A : Pour le petit-déjeuner."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que voulez-vous manger ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Pour quel repas ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-riz",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Pour accompagner les légumes, vous ajoutez une quantité de riz non mesurée.",
+        "answers": [
+          "Personne A : J’ajoute du riz.\nPersonne B : Avec quoi le servir ?\nPersonne A : Avec les légumes."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qu’ajoutez-vous aux légumes ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Avec quoi le servir ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-lait",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Vous préparez une boisson et souhaitez une quantité de lait, sans mesure précise.",
+        "answers": [
+          "Personne A : Je voudrais du lait.\nPersonne B : Dans quoi l’ajouter ?\nPersonne A : Dans ma boisson."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que voulez-vous ajouter à votre boisson ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Dans quoi l’ajouter ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-eau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Vous demandez de l’eau à table sans préciser un nombre de verres.",
+        "answers": [
+          "Personne A : Je voudrais de l’eau.\nPersonne B : Pour qui ?\nPersonne A : Pour moi, s’il vous plaît."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que souhaitez-vous boire ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Pour qui ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-huile",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Pour la cuisson, vous versez une quantité d’huile non mesurée.",
+        "answers": [
+          "Personne A : Je verse de l’huile dans la poêle.\nPersonne B : Pour quelle étape ?\nPersonne A : Pour la cuisson."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que versez-vous dans la poêle ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Pour quelle étape ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-beurre",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Vous préparez une tartine et prenez une partie du beurre disponible.",
+        "answers": [
+          "Personne A : Je prends du beurre pour ma tartine.\nPersonne B : Sur quoi le mettre ?\nPersonne A : Sur ma tartine."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que prenez-vous pour votre tartine ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Sur quoi le mettre ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-farine",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Une pâte est en préparation. Vous ajoutez de la farine sans annoncer de poids.",
+        "answers": [
+          "Personne A : J’ajoute de la farine à la pâte.\nPersonne B : Faut-il donner un poids dans ce rôle ?\nPersonne A : Non, la quantité n’est pas mesurée."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que faut-il ajouter à la pâte ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Faut-il donner un poids dans ce rôle ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-sucre",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Vous préparez un dessert et demandez du sucre, sans nombre de morceaux.",
+        "answers": [
+          "Personne A : Il me faut du sucre.\nPersonne B : Pour quelle préparation ?\nPersonne A : Pour le dessert."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que faut-il pour le dessert ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Pour quelle préparation ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-confiture",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Au goûter, vous voulez étaler une quantité de confiture sur du pain.",
+        "answers": [
+          "Personne A : Je voudrais de la confiture.\nPersonne B : Pour quel moment ?\nPersonne A : Pour le goûter."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que souhaitez-vous sur le pain ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Pour quel moment ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-fromage",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Au repas, vous prenez une portion de fromage et non un fromage entier.",
+        "answers": [
+          "Personne A : Je prends du fromage.\nPersonne B : Un fromage entier ?\nPersonne A : Non, une portion seulement."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que prenez-vous après le plat ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Un fromage entier ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-miel",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Vous souhaitez ajouter une quantité de miel à une boisson.",
+        "answers": [
+          "Personne A : J’ajoute du miel à ma boisson.\nPersonne B : La quantité est-elle annoncée ?\nPersonne A : Non, je ne donne pas de mesure."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qu’ajoutez-vous à votre boisson ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "La quantité est-elle annoncée ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-compote",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Pour le goûter, vous prenez une partie de la compote disponible.",
+        "answers": [
+          "Personne A : Je prends de la compote pour le goûter.\nPersonne B : Pour quel moment ?\nPersonne A : Pour le goûter."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que prenez-vous pour le goûter ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Pour quel moment ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-soupe",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Vous commandez une quantité de soupe, sans préciser la taille du bol.",
+        "answers": [
+          "Personne A : Je voudrais de la soupe.\nPersonne B : En entrée ou en dessert ?\nPersonne A : En entrée."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que désirez-vous en entrée ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "En entrée ou en dessert ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-viande",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Dans ce rôle de cuisine, vous ajoutez une quantité de viande au plat.",
+        "answers": [
+          "Personne A : J’ajoute de la viande au plat.\nPersonne B : Dans quelle préparation ?\nPersonne A : Dans le plat en préparation."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qu’ajoutez-vous au plat ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Dans quelle préparation ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-poisson",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Vous demandez une portion de poisson et non un poisson entier.",
+        "answers": [
+          "Personne A : Je voudrais du poisson.\nPersonne B : Un poisson entier ?\nPersonne A : Non, une portion de poisson."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que souhaitez-vous manger ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Un poisson entier ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-poulet",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Au buffet, vous prenez une portion de poulet déjà découpé.",
+        "answers": [
+          "Personne A : Je prends du poulet.\nPersonne B : Le poulet est-il entier ?\nPersonne A : Non, il est déjà découpé."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que prenez-vous au buffet ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Le poulet est-il entier ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-chocolat",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Pour le dessert, vous faites fondre une quantité de chocolat non pesée.",
+        "answers": [
+          "Personne A : Je fais fondre du chocolat.\nPersonne B : Pour quelle préparation ?\nPersonne A : Pour le dessert."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que faites-vous fondre ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Pour quelle préparation ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-cafe",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Vous versez du café dans une tasse, sans annoncer de volume.",
+        "answers": [
+          "Personne A : Je verse du café dans ma tasse.\nPersonne B : La quantité est-elle mesurée ?\nPersonne A : Non, je ne précise pas de volume."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que versez-vous dans votre tasse ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "La quantité est-elle mesurée ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-the",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Vous demandez du thé comme boisson, sans compter les tasses.",
+        "answers": [
+          "Personne A : Je voudrais du thé.\nPersonne B : Comptez-vous les tasses dans cette phrase ?\nPersonne A : Non, je parle de la boisson."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que désirez-vous boire ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Comptez-vous les tasses dans cette phrase ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-limonade",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Au goûter, vous servez une quantité de limonade aux invités.",
+        "answers": [
+          "Personne A : Je sers de la limonade.\nPersonne B : À quel moment ?\nPersonne A : Au goûter."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que servez-vous aux invités ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "À quel moment ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-tisane",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Une tisane est prête. Vous en versez une quantité dans votre tasse.",
+        "answers": [
+          "Personne A : Je verse de la tisane dans ma tasse.\nPersonne B : La boisson est-elle prête ?\nPersonne A : Oui, la tisane est prête."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que versez-vous dans votre tasse ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "La boisson est-elle prête ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-jus",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Vous souhaitez boire du jus sans préciser de fruit ni de volume.",
+        "answers": [
+          "Personne A : Je voudrais du jus.\nPersonne B : Précisez-vous le volume ?\nPersonne A : Non, pas dans cette phrase."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que souhaitez-vous boire ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Précisez-vous le volume ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-vinaigre",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Vous préparez une sauce et ajoutez une quantité de vinaigre.",
+        "answers": [
+          "Personne A : J’ajoute du vinaigre à la sauce.\nPersonne B : Pour quelle préparation ?\nPersonne A : Pour la sauce."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qu’ajoutez-vous à la sauce ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Pour quelle préparation ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-moutarde",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Vous demandez de la moutarde pour accompagner le repas, sans compter les pots.",
+        "answers": [
+          "Personne A : Je voudrais de la moutarde.\nPersonne B : Demandez-vous un pot entier ?\nPersonne A : Non, une quantité seulement."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que souhaitez-vous comme accompagnement ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Demandez-vous un pot entier ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-mayonnaise",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Vous ajoutez une quantité de mayonnaise à une préparation.",
+        "answers": [
+          "Personne A : J’ajoute de la mayonnaise.\nPersonne B : Donnez-vous une mesure ?\nPersonne A : Non, la quantité reste non précisée."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qu’ajoutez-vous à la préparation ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Donnez-vous une mesure ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-ketchup",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Vous demandez un peu de sauce sans employer une expression de mesure dans la phrase.",
+        "answers": [
+          "Personne A : Je voudrais du ketchup.\nPersonne B : Une bouteille entière ?\nPersonne A : Non, une quantité seulement."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quelle sauce souhaitez-vous ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Une bouteille entière ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-thon",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Pour une salade composée, vous ajoutez une partie du thon disponible.",
+        "answers": [
+          "Personne A : J’ajoute du thon à la salade.\nPersonne B : Dans quel plat ?\nPersonne A : Dans une salade composée."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qu’ajoutez-vous à la salade ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Dans quel plat ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-saumon",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Au repas, vous prenez une portion de saumon déjà préparé.",
+        "answers": [
+          "Personne A : Je prends du saumon.\nPersonne B : Le poisson est-il préparé ?\nPersonne A : Oui, le saumon est prêt."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que prenez-vous comme poisson ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Le poisson est-il préparé ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-couscous",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Vous demandez une portion de couscous, sans compter des assiettes entières.",
+        "answers": [
+          "Personne A : Je voudrais du couscous.\nPersonne B : Demandez-vous plusieurs assiettes ?\nPersonne A : Non, une portion seulement."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que souhaitez-vous manger ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Demandez-vous plusieurs assiettes ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-pain-partage",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Pour partager un repas, vous apportez une quantité de pain coupé en tranches.",
+        "answers": [
+          "Personne A : J’apporte du pain pour le groupe.\nPersonne B : Comment est préparé le pain ?\nPersonne A : Il est coupé en tranches."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qu’apportez-vous pour le groupe ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Comment est préparé le pain ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-eau-recette",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "La pâte est trop épaisse. Vous y ajoutez de l’eau sans préciser la mesure.",
+        "answers": [
+          "Personne A : J’ajoute de l’eau à la pâte.\nPersonne B : Pourquoi ajouter de l’eau ?\nPersonne A : La pâte est trop épaisse."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qu’ajoutez-vous à la pâte ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Pourquoi ajouter de l’eau ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-huile-salade",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Pour assaisonner les légumes, vous utilisez une quantité d’huile.",
+        "answers": [
+          "Personne A : J’utilise de l’huile pour les légumes.\nPersonne B : Pour quelle étape ?\nPersonne A : Pour les assaisonner."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qu’utilisez-vous pour les légumes ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Pour quelle étape ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-farine-table",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Avant d’étaler une pâte, vous mettez de la farine sur la table.",
+        "answers": [
+          "Personne A : Je mets de la farine sur la table.\nPersonne B : Que faire ensuite ?\nPersonne A : Étaler la pâte."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que mettez-vous sur la table ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Que faire ensuite ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-beurre-poele",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Pour une cuisson, vous faites fondre une quantité de beurre dans la poêle.",
+        "answers": [
+          "Personne A : Je fais fondre du beurre dans la poêle.\nPersonne B : Pour quoi faire ?\nPersonne A : Pour la cuisson."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que faites-vous fondre dans la poêle ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Pour quoi faire ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-sucre-bocal",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Vous remplissez un bocal avec du sucre, sans indiquer de poids.",
+        "answers": [
+          "Personne A : Je mets du sucre dans le bocal.\nPersonne B : Donnez-vous un poids ?\nPersonne A : Non, pas dans cette phrase."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que mettez-vous dans le bocal ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Donnez-vous un poids ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-soupe-service",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Pendant le service du repas, vous versez une partie de la soupe dans un bol.",
+        "answers": [
+          "Personne A : Je verse de la soupe dans le bol.\nPersonne B : Est-ce toute la marmite ?\nPersonne A : Non, une partie de la soupe."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que versez-vous dans le bol ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Est-ce toute la marmite ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-fromage-recette",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Pour terminer un plat, vous ajoutez une quantité de fromage râpé.",
+        "answers": [
+          "Personne A : J’ajoute du fromage râpé.\nPersonne B : Sous quelle forme est le fromage ?\nPersonne A : Il est râpé."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que mettez-vous pour terminer le plat ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Sous quelle forme est le fromage ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-compote-dessert",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Au dessert, vous servez une partie de la compote sans la mesurer.",
+        "answers": [
+          "Personne A : Je sers de la compote au dessert.\nPersonne B : La quantité est-elle mesurée ?\nPersonne A : Non, je ne donne pas de mesure."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que servez-vous au dessert ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "La quantité est-elle mesurée ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-lait-pate",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Vous préparez une pâte à crêpes et versez une quantité de lait.",
+        "answers": [
+          "Personne A : Je verse du lait dans la pâte.\nPersonne B : Quelle pâte préparez-vous ?\nPersonne A : Une pâte à crêpes."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que versez-vous dans la pâte ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Quelle pâte préparez-vous ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-miel-tartine",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Vous garnissez une tartine avec une partie du miel du pot.",
+        "answers": [
+          "Personne A : Je mets du miel sur ma tartine.\nPersonne B : Utilisez-vous tout le pot ?\nPersonne A : Non, une partie du miel."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que mettez-vous sur votre tartine ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Utilisez-vous tout le pot ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-sans-lait",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Dans ce rôle, vous refusez le lait dans votre boisson. Négation générale, sans contraste avec un autre lait.",
+        "answers": [
+          "Personne A : Je ne veux pas de lait.\nPersonne B : Quelle est votre demande ?\nPersonne A : Une boisson sans lait."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Voulez-vous du lait dans votre boisson ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Quelle est votre demande ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-sans-sucre",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Vous refusez tout ajout de sucre dans votre tasse. Négation générale de quantité.",
+        "answers": [
+          "Personne A : Je ne prends pas de sucre.\nPersonne B : Dans quelle boisson ?\nPersonne A : Dans la boisson de ma tasse."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Prenez-vous du sucre ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Dans quelle boisson ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-sans-huile",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "La préparation de ce rôle se fait sans huile. Négation générale, sans opposer deux huiles.",
+        "answers": [
+          "Personne A : Je n’ajoute pas d’huile.\nPersonne B : La préparation contient-elle de l’huile ajoutée ?\nPersonne A : Non, elle se fait sans huile ajoutée."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Ajoutez-vous de l’huile ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "La préparation contient-elle de l’huile ajoutée ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-sans-eau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "La sauce a déjà la consistance voulue. Vous n’ajoutez aucune quantité d’eau.",
+        "answers": [
+          "Personne A : Je n’ajoute pas d’eau.\nPersonne B : Pourquoi ne pas en ajouter ?\nPersonne A : La consistance est déjà correcte."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Ajoutez-vous de l’eau à la sauce ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Pourquoi ne pas en ajouter ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-sans-farine",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Dans cette étape, aucune farine n’est nécessaire. Négation générale de quantité.",
+        "answers": [
+          "Personne A : Je n’utilise pas de farine.\nPersonne B : Pour quelle étape ?\nPersonne A : Pour l’étape en cours."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Utilisez-vous de la farine pour cette étape ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Pour quelle étape ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-sans-beurre",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Dans ce rôle, vous préparez une tartine sans beurre. Négation générale de quantité.",
+        "answers": [
+          "Personne A : Je ne mets pas de beurre sur ma tartine.\nPersonne B : Sur quoi ne pas en mettre ?\nPersonne A : Sur ma tartine."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Mettez-vous du beurre sur la tartine ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Sur quoi ne pas en mettre ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-sans-vinaigre",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "La sauce de cette recette se prépare sans vinaigre. Vous refusez tout ajout de vinaigre.",
+        "answers": [
+          "Personne A : Je n’ajoute pas de vinaigre.\nPersonne B : Pourquoi ne pas en ajouter ?\nPersonne A : La recette se prépare sans vinaigre."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Ajoutez-vous du vinaigre à la sauce ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Pourquoi ne pas en ajouter ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-sans-compote",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Dans ce rôle, vous ne prenez aucune compote au goûter. Négation générale.",
+        "answers": [
+          "Personne A : Je ne prends pas de compote.\nPersonne B : Pour quel moment ?\nPersonne A : Pour le goûter."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Prenez-vous de la compote ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Pour quel moment ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-sans-chocolat",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Le dessert de votre rôle se prépare sans chocolat. Il ne s’agit pas de choisir un autre chocolat.",
+        "answers": [
+          "Personne A : Je n’utilise pas de chocolat.\nPersonne B : Le refus porte-t-il sur un chocolat particulier ?\nPersonne A : Non, la préparation est sans chocolat."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Utilisez-vous du chocolat ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Le refus porte-t-il sur un chocolat particulier ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-g3-curriculum-s-a1-sans-confiture",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+          "typeId": "gram-ex-g3-curriculum-s",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Demander ou refuser un produit",
+        "situation": "Vous préparez une tartine sans aucune confiture. Négation générale, sans contraste.",
+        "answers": [
+          "Personne A : Je ne prends pas de confiture.\nPersonne B : Quelle tartine préparez-vous ?\nPersonne A : Une tartine sans confiture."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Exprimez le besoin ou l’information du rôle."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Prenez-vous de la confiture ?"
+          }
+        ],
+        "task": "Exprimez la quantité ou le refus selon la situation, répondez à la relance puis inversez les rôles.",
+        "followUps": [
+          "Quelle tartine préparez-vous ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Quantité ou refus conforme aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Partitif ou de/d’ adapté à la phrase."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les formulations respectant la consigne sont recevables."
+      }
+    ]
+  }
+]

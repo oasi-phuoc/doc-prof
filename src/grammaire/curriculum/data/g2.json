@@ -1,0 +1,3829 @@
+[
+  {
+    "schemaVersion": 1,
+    "revision": "aliments-2026-11-24-v1",
+    "activityId": "gram-ex-g2-qcm-verbe",
+    "subthemeId": "g2",
+    "topic": "gram-aliments",
+    "level": "A1",
+    "label": "Choisir le, la, l’ ou les",
+    "objective": "Employer le, la, l’ ou les pour une référence connue ou une catégorie générale ; respecter l’élision et le h aspiré.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Sources, formes et contextes relus ; réemploi explicite entre mécaniques. Images existantes conservées sous empreinte immuable. Modèles ouverts non exclusifs ; approbation enseignante en attente."
+    },
+    "presentations": [
+      "choice",
+      "gap"
+    ],
+    "instructions": {
+      "choice": "Choisissez l’article défini adapté au nom, à son début et à son nombre.",
+      "gap": "Complétez avec le, la, l’ ou les selon la situation."
+    },
+    "units": [
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-pain",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je coupe ___ pain sur la table.",
+        "cue": "Un pain vient d’être posé sur la table. Vous parlez de ce pain déjà connu. Nom : masculin singulier.",
+        "answers": [
+          "le"
+        ],
+        "options": [
+          {
+            "id": "pain-choix-1",
+            "text": "le"
+          },
+          {
+            "id": "pain-choix-2",
+            "text": "la"
+          },
+          {
+            "id": "pain-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "pain-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je coupe le pain sur la table."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-soupe",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je sers ___ soupe du repas.",
+        "cue": "Une soupe a été préparée pour le repas. Vous parlez de cette soupe précise. Nom : féminin singulier.",
+        "answers": [
+          "la"
+        ],
+        "options": [
+          {
+            "id": "soupe-choix-1",
+            "text": "la"
+          },
+          {
+            "id": "soupe-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "soupe-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "soupe-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je sers la soupe du repas."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-eau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je prends ___eau de la carafe.",
+        "cue": "Une carafe d’eau est prête dans le réfrigérateur. Vous parlez de cette eau. Nom : féminin singulier.",
+        "answers": [
+          "l’"
+        ],
+        "options": [
+          {
+            "id": "eau-choix-1",
+            "text": "l’"
+          },
+          {
+            "id": "eau-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "eau-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "eau-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je prends l’eau de la carafe."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-huile",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’ajoute ___huile de cette bouteille.",
+        "cue": "Une bouteille d’huile est ouverte pour la recette. Vous parlez de cette huile précise. Nom : féminin singulier.",
+        "answers": [
+          "l’"
+        ],
+        "options": [
+          {
+            "id": "huile-choix-1",
+            "text": "l’"
+          },
+          {
+            "id": "huile-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "huile-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "huile-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : J’ajoute l’huile de cette bouteille."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-riz",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je goûte ___ riz de mon assiette.",
+        "cue": "Le riz de votre assiette est prêt. Vous parlez de la portion déjà servie. Nom : masculin singulier.",
+        "answers": [
+          "le"
+        ],
+        "options": [
+          {
+            "id": "riz-choix-1",
+            "text": "le"
+          },
+          {
+            "id": "riz-choix-2",
+            "text": "la"
+          },
+          {
+            "id": "riz-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "riz-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je goûte le riz de mon assiette."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-pommes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je coupe ___ pommes de ce panier.",
+        "cue": "Des pommes viennent d’être lavées. Vous parlez de toutes les pommes de ce panier connu. Nom : féminin pluriel.",
+        "answers": [
+          "les"
+        ],
+        "options": [
+          {
+            "id": "pommes-choix-1",
+            "text": "les"
+          },
+          {
+            "id": "pommes-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "pommes-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "pommes-choix-4",
+            "text": "l’"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je coupe les pommes de ce panier."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-oeuf",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je casse ___œuf choisi pour la recette.",
+        "cue": "Un œuf a été choisi pour la recette. Vous parlez de cet œuf précis. Nom : masculin singulier.",
+        "answers": [
+          "l’"
+        ],
+        "options": [
+          {
+            "id": "oeuf-choix-1",
+            "text": "l’"
+          },
+          {
+            "id": "oeuf-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "oeuf-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "oeuf-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je casse l’œuf choisi pour la recette."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-oeufs",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je prends ___ œufs sur la table.",
+        "cue": "Les œufs nécessaires sont déjà sur la table. Vous reprenez ce groupe connu. Nom : masculin pluriel.",
+        "answers": [
+          "les"
+        ],
+        "options": [
+          {
+            "id": "oeufs-choix-1",
+            "text": "les"
+          },
+          {
+            "id": "oeufs-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "oeufs-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "oeufs-choix-4",
+            "text": "l’"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je prends les œufs sur la table."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-beurre",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je sors ___ beurre de la petite assiette.",
+        "cue": "Un morceau de beurre attend dans une petite assiette. Vous parlez de ce beurre. Nom : masculin singulier.",
+        "answers": [
+          "le"
+        ],
+        "options": [
+          {
+            "id": "beurre-choix-1",
+            "text": "le"
+          },
+          {
+            "id": "beurre-choix-2",
+            "text": "la"
+          },
+          {
+            "id": "beurre-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "beurre-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je sors le beurre de la petite assiette."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-confiture",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je goûte ___ confiture de ce pot.",
+        "cue": "Un pot de confiture est ouvert devant vous. Vous parlez de son contenu précis. Nom : féminin singulier.",
+        "answers": [
+          "la"
+        ],
+        "options": [
+          {
+            "id": "confiture-choix-1",
+            "text": "la"
+          },
+          {
+            "id": "confiture-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "confiture-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "confiture-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je goûte la confiture de ce pot."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-fromage",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je partage ___ fromage présenté au groupe.",
+        "cue": "Un fromage a été présenté au groupe. Vous le reprenez dans votre phrase. Nom : masculin singulier.",
+        "answers": [
+          "le"
+        ],
+        "options": [
+          {
+            "id": "fromage-choix-1",
+            "text": "le"
+          },
+          {
+            "id": "fromage-choix-2",
+            "text": "la"
+          },
+          {
+            "id": "fromage-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "fromage-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je partage le fromage présenté au groupe."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-farine",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je verse ___ farine déjà pesée.",
+        "cue": "La farine nécessaire à la recette a été pesée. Vous parlez de cette quantité connue. Nom : féminin singulier.",
+        "answers": [
+          "la"
+        ],
+        "options": [
+          {
+            "id": "farine-choix-1",
+            "text": "la"
+          },
+          {
+            "id": "farine-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "farine-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "farine-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je verse la farine déjà pesée."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-chocolat-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’aime ___ chocolat.",
+        "cue": "Vous exprimez un goût général pour le chocolat, sans demander une portion. Nom : masculin singulier.",
+        "answers": [
+          "le"
+        ],
+        "options": [
+          {
+            "id": "chocolat-general-choix-1",
+            "text": "le"
+          },
+          {
+            "id": "chocolat-general-choix-2",
+            "text": "la"
+          },
+          {
+            "id": "chocolat-general-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "chocolat-general-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : J’aime le chocolat."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-salade-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’aime ___ salade.",
+        "cue": "Vous parlez de votre goût pour la salade en général. Nom : féminin singulier.",
+        "answers": [
+          "la"
+        ],
+        "options": [
+          {
+            "id": "salade-general-choix-1",
+            "text": "la"
+          },
+          {
+            "id": "salade-general-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "salade-general-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "salade-general-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : J’aime la salade."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-legumes-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je préfère ___ légumes.",
+        "cue": "Vous donnez votre préférence pour la catégorie des légumes, sans désigner un lot. Nom : masculin pluriel.",
+        "answers": [
+          "les"
+        ],
+        "options": [
+          {
+            "id": "legumes-general-choix-1",
+            "text": "les"
+          },
+          {
+            "id": "legumes-general-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "legumes-general-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "legumes-general-choix-4",
+            "text": "l’"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je préfère les légumes."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-chocolat-negatif",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je n’aime pas ___ chocolat.",
+        "cue": "Dans ce rôle, vous n’aimez pas le chocolat en général. Ce n’est pas un refus de portion. Nom : masculin singulier.",
+        "answers": [
+          "le"
+        ],
+        "options": [
+          {
+            "id": "chocolat-negatif-choix-1",
+            "text": "le"
+          },
+          {
+            "id": "chocolat-negatif-choix-2",
+            "text": "la"
+          },
+          {
+            "id": "chocolat-negatif-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "chocolat-negatif-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je n’aime pas le chocolat."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-cafe-negatif",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je n’aime pas ___ café.",
+        "cue": "Vous dites votre goût général : dans ce rôle, vous n’aimez pas le café. Nom : masculin singulier.",
+        "answers": [
+          "le"
+        ],
+        "options": [
+          {
+            "id": "cafe-negatif-choix-1",
+            "text": "le"
+          },
+          {
+            "id": "cafe-negatif-choix-2",
+            "text": "la"
+          },
+          {
+            "id": "cafe-negatif-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "cafe-negatif-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je n’aime pas le café."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-orange",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je garde ___orange pour la personne qui arrive.",
+        "cue": "Une orange a été mise de côté pour la personne qui arrive. Vous parlez de ce fruit précis. Nom : féminin singulier.",
+        "answers": [
+          "l’"
+        ],
+        "options": [
+          {
+            "id": "orange-choix-1",
+            "text": "l’"
+          },
+          {
+            "id": "orange-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "orange-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "orange-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je garde l’orange pour la personne qui arrive."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-abricots",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je lave ___ abricots de cette corbeille.",
+        "cue": "Des abricots sont déjà dans une corbeille. Vous parlez de ceux de cette corbeille. Nom : masculin pluriel.",
+        "answers": [
+          "les"
+        ],
+        "options": [
+          {
+            "id": "abricots-choix-1",
+            "text": "les"
+          },
+          {
+            "id": "abricots-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "abricots-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "abricots-choix-4",
+            "text": "l’"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je lave les abricots de cette corbeille."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-ananas",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je découpe ___ananas choisi pour le dessert.",
+        "cue": "Un ananas a été choisi pour le dessert. Vous reprenez ce fruit connu. Nom : masculin singulier.",
+        "answers": [
+          "l’"
+        ],
+        "options": [
+          {
+            "id": "ananas-choix-1",
+            "text": "l’"
+          },
+          {
+            "id": "ananas-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "ananas-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "ananas-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je découpe l’ananas choisi pour le dessert."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-haricot",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je regarde ___ haricot isolé.",
+        "cue": "Un haricot est isolé pour une observation. Son h est aspiré : il n’y a pas d’élision. Nom : masculin singulier.",
+        "answers": [
+          "le"
+        ],
+        "options": [
+          {
+            "id": "haricot-choix-1",
+            "text": "le"
+          },
+          {
+            "id": "haricot-choix-2",
+            "text": "la"
+          },
+          {
+            "id": "haricot-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "haricot-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Le h de haricot est aspiré : pas d’élision. Modèle : Je regarde le haricot isolé."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-haricots",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je lave ___ haricots de ce récipient.",
+        "cue": "Les haricots de la recette sont dans un récipient connu. Nom : masculin pluriel.",
+        "answers": [
+          "les"
+        ],
+        "options": [
+          {
+            "id": "haricots-choix-1",
+            "text": "les"
+          },
+          {
+            "id": "haricots-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "haricots-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "haricots-choix-4",
+            "text": "l’"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Le h de haricot est aspiré : pas d’élision. Modèle : Je lave les haricots de ce récipient."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-yaourt",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je garde ___ yaourt réservé pour le goûter.",
+        "cue": "Un yaourt est réservé pour le goûter. Vous parlez de ce pot précis. Nom : masculin singulier.",
+        "answers": [
+          "le"
+        ],
+        "options": [
+          {
+            "id": "yaourt-choix-1",
+            "text": "le"
+          },
+          {
+            "id": "yaourt-choix-2",
+            "text": "la"
+          },
+          {
+            "id": "yaourt-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "yaourt-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je garde le yaourt réservé pour le goûter."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-yaourts",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je range ___ yaourts du sac.",
+        "cue": "Plusieurs yaourts se trouvent dans le sac du groupe. Vous parlez de ceux de ce sac. Nom : masculin pluriel.",
+        "answers": [
+          "les"
+        ],
+        "options": [
+          {
+            "id": "yaourts-choix-1",
+            "text": "les"
+          },
+          {
+            "id": "yaourts-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "yaourts-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "yaourts-choix-4",
+            "text": "l’"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je range les yaourts du sac."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-gateau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je coupe ___ gâteau de l’anniversaire.",
+        "cue": "Un gâteau a été préparé pour l’anniversaire. Vous parlez de ce gâteau connu. Nom : masculin singulier.",
+        "answers": [
+          "le"
+        ],
+        "options": [
+          {
+            "id": "gateau-choix-1",
+            "text": "le"
+          },
+          {
+            "id": "gateau-choix-2",
+            "text": "la"
+          },
+          {
+            "id": "gateau-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "gateau-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je coupe le gâteau de l’anniversaire."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-tarte",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je sers ___ tarte présentée au début du repas.",
+        "cue": "Une tarte a été présentée au début du repas. Vous parlez de cette tarte. Nom : féminin singulier.",
+        "answers": [
+          "la"
+        ],
+        "options": [
+          {
+            "id": "tarte-choix-1",
+            "text": "la"
+          },
+          {
+            "id": "tarte-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "tarte-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "tarte-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je sers la tarte présentée au début du repas."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-glace",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je prends ___ glace qui attend dans la cuisine.",
+        "cue": "Une glace a été préparée pour le dessert. Vous parlez de celle qui attend dans la cuisine. Nom : féminin singulier.",
+        "answers": [
+          "la"
+        ],
+        "options": [
+          {
+            "id": "glace-choix-1",
+            "text": "la"
+          },
+          {
+            "id": "glace-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "glace-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "glace-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je prends la glace qui attend dans la cuisine."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-fruits-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’aime ___ fruits.",
+        "cue": "Vous parlez de la catégorie des fruits en général, sans préciser de fruits particuliers. Nom : masculin pluriel.",
+        "answers": [
+          "les"
+        ],
+        "options": [
+          {
+            "id": "fruits-general-choix-1",
+            "text": "les"
+          },
+          {
+            "id": "fruits-general-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "fruits-general-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "fruits-general-choix-4",
+            "text": "l’"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : J’aime les fruits."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-poisson-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’aime ___ poisson.",
+        "cue": "Vous indiquez un goût général pour le poisson. Nom : masculin singulier.",
+        "answers": [
+          "le"
+        ],
+        "options": [
+          {
+            "id": "poisson-general-choix-1",
+            "text": "le"
+          },
+          {
+            "id": "poisson-general-choix-2",
+            "text": "la"
+          },
+          {
+            "id": "poisson-general-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "poisson-general-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : J’aime le poisson."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-viande-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je préfère ___ viande.",
+        "cue": "Dans ce rôle, vous exprimez votre goût général pour la viande. Nom : féminin singulier.",
+        "answers": [
+          "la"
+        ],
+        "options": [
+          {
+            "id": "viande-general-choix-1",
+            "text": "la"
+          },
+          {
+            "id": "viande-general-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "viande-general-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "viande-general-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je préfère la viande."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-assiette",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je prends ___assiette devant moi.",
+        "cue": "Une assiette propre est devant vous. Vous demandez cette assiette connue. Nom : féminin singulier.",
+        "answers": [
+          "l’"
+        ],
+        "options": [
+          {
+            "id": "assiette-choix-1",
+            "text": "l’"
+          },
+          {
+            "id": "assiette-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "assiette-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "assiette-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je prends l’assiette devant moi."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-assiettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je distribue ___ assiettes placées à droite.",
+        "cue": "Les assiettes nécessaires sont déjà placées à droite. Vous parlez de ce groupe connu. Nom : féminin pluriel.",
+        "answers": [
+          "les"
+        ],
+        "options": [
+          {
+            "id": "assiettes-choix-1",
+            "text": "les"
+          },
+          {
+            "id": "assiettes-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "assiettes-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "assiettes-choix-4",
+            "text": "l’"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je distribue les assiettes placées à droite."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-verre",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je remplis ___ verre à ma place.",
+        "cue": "Un verre a été posé à votre place. Vous reprenez ce verre précis. Nom : masculin singulier.",
+        "answers": [
+          "le"
+        ],
+        "options": [
+          {
+            "id": "verre-choix-1",
+            "text": "le"
+          },
+          {
+            "id": "verre-choix-2",
+            "text": "la"
+          },
+          {
+            "id": "verre-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "verre-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je remplis le verre à ma place."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-verres",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je porte ___ verres du plateau.",
+        "cue": "Des verres ont été lavés et se trouvent sur le plateau. Vous parlez de ceux du plateau. Nom : masculin pluriel.",
+        "answers": [
+          "les"
+        ],
+        "options": [
+          {
+            "id": "verres-choix-1",
+            "text": "les"
+          },
+          {
+            "id": "verres-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "verres-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "verres-choix-4",
+            "text": "l’"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je porte les verres du plateau."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-tasse",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je prends ___ tasse près de la théière.",
+        "cue": "Une tasse est prête près de la théière. Vous parlez de cette tasse. Nom : féminin singulier.",
+        "answers": [
+          "la"
+        ],
+        "options": [
+          {
+            "id": "tasse-choix-1",
+            "text": "la"
+          },
+          {
+            "id": "tasse-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "tasse-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "tasse-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je prends la tasse près de la théière."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-tasses",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je sors ___ tasses de ce placard.",
+        "cue": "Les tasses pour les invités sont rangées dans un placard indiqué. Nom : féminin pluriel.",
+        "answers": [
+          "les"
+        ],
+        "options": [
+          {
+            "id": "tasses-choix-1",
+            "text": "les"
+          },
+          {
+            "id": "tasses-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "tasses-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "tasses-choix-4",
+            "text": "l’"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je sors les tasses de ce placard."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-fourchette",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’ajoute ___ fourchette du plateau.",
+        "cue": "Une fourchette manque à une place. Celle qui est sur le plateau doit y être ajoutée. Nom : féminin singulier.",
+        "answers": [
+          "la"
+        ],
+        "options": [
+          {
+            "id": "fourchette-choix-1",
+            "text": "la"
+          },
+          {
+            "id": "fourchette-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "fourchette-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "fourchette-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : J’ajoute la fourchette du plateau."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-couteau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je range ___ couteau à pain montré au groupe.",
+        "cue": "Un couteau à pain a été montré au groupe. Vous le reprenez. Nom : masculin singulier.",
+        "answers": [
+          "le"
+        ],
+        "options": [
+          {
+            "id": "couteau-choix-1",
+            "text": "le"
+          },
+          {
+            "id": "couteau-choix-2",
+            "text": "la"
+          },
+          {
+            "id": "couteau-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "couteau-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je range le couteau à pain montré au groupe."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-ustensile",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je lave ___ustensile utilisé.",
+        "cue": "Un ustensile vient d’être utilisé. Vous parlez de cet ustensile connu. Nom : masculin singulier.",
+        "answers": [
+          "l’"
+        ],
+        "options": [
+          {
+            "id": "ustensile-choix-1",
+            "text": "l’"
+          },
+          {
+            "id": "ustensile-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "ustensile-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "ustensile-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je lave l’ustensile utilisé."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-ustensiles",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je range ___ ustensiles de l’atelier.",
+        "cue": "Les ustensiles de l’atelier doivent être rangés ensemble. Vous parlez de ce matériel connu. Nom : masculin pluriel.",
+        "answers": [
+          "les"
+        ],
+        "options": [
+          {
+            "id": "ustensiles-choix-1",
+            "text": "les"
+          },
+          {
+            "id": "ustensiles-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "ustensiles-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "ustensiles-choix-4",
+            "text": "l’"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je range les ustensiles de l’atelier."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-eponge",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je prends ___éponge près de l’évier.",
+        "cue": "Une éponge propre se trouve près de l’évier. Vous reprenez cette éponge. Nom : féminin singulier.",
+        "answers": [
+          "l’"
+        ],
+        "options": [
+          {
+            "id": "eponge-choix-1",
+            "text": "l’"
+          },
+          {
+            "id": "eponge-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "eponge-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "eponge-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je prends l’éponge près de l’évier."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-evier",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je nettoie ___évier de la cuisine.",
+        "cue": "L’évier de la cuisine a été utilisé. Vous parlez de celui de cette cuisine. Nom : masculin singulier.",
+        "answers": [
+          "l’"
+        ],
+        "options": [
+          {
+            "id": "evier-choix-1",
+            "text": "l’"
+          },
+          {
+            "id": "evier-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "evier-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "evier-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je nettoie l’évier de la cuisine."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-eau-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je préfère ___eau.",
+        "cue": "Vous parlez de l’eau en général, comme boisson que vous préférez. Nom : féminin singulier.",
+        "answers": [
+          "l’"
+        ],
+        "options": [
+          {
+            "id": "eau-general-choix-1",
+            "text": "l’"
+          },
+          {
+            "id": "eau-general-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "eau-general-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "eau-general-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je préfère l’eau."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-huile-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’aime ___huile d’olive.",
+        "cue": "Vous exprimez votre goût pour l’huile d’olive en général, sans demander une quantité. Nom : féminin singulier.",
+        "answers": [
+          "l’"
+        ],
+        "options": [
+          {
+            "id": "huile-general-choix-1",
+            "text": "l’"
+          },
+          {
+            "id": "huile-general-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "huile-general-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "huile-general-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : J’aime l’huile d’olive."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-epinards-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’aime ___ épinards.",
+        "cue": "Dans ce rôle, vous indiquez que vous aimez les épinards en général. Nom : masculin pluriel.",
+        "answers": [
+          "les"
+        ],
+        "options": [
+          {
+            "id": "epinards-general-choix-1",
+            "text": "les"
+          },
+          {
+            "id": "epinards-general-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "epinards-general-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "epinards-general-choix-4",
+            "text": "l’"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : J’aime les épinards."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-dessert",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je partage ___ dessert commandé pour la table.",
+        "cue": "Un dessert a été commandé pour la table. Vous reprenez ce dessert connu. Nom : masculin singulier.",
+        "answers": [
+          "le"
+        ],
+        "options": [
+          {
+            "id": "dessert-choix-1",
+            "text": "le"
+          },
+          {
+            "id": "dessert-choix-2",
+            "text": "la"
+          },
+          {
+            "id": "dessert-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "dessert-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je partage le dessert commandé pour la table."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-recette",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je relis ___ recette choisie pour l’atelier.",
+        "cue": "Une recette a été choisie pour l’atelier. Vous parlez de cette recette précise. Nom : féminin singulier.",
+        "answers": [
+          "la"
+        ],
+        "options": [
+          {
+            "id": "recette-choix-1",
+            "text": "la"
+          },
+          {
+            "id": "recette-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "recette-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "recette-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je relis la recette choisie pour l’atelier."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-ingredients",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je vérifie ___ ingrédients de cette recette.",
+        "cue": "Les ingrédients de la recette sont déjà préparés. Vous parlez de cet ensemble précis. Nom : masculin pluriel.",
+        "answers": [
+          "les"
+        ],
+        "options": [
+          {
+            "id": "ingredients-choix-1",
+            "text": "les"
+          },
+          {
+            "id": "ingredients-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "ingredients-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "ingredients-choix-4",
+            "text": "l’"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je vérifie les ingrédients de cette recette."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-menu",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je lis ___ menu devant moi.",
+        "cue": "Un menu est posé devant vous au restaurant. Vous reprenez ce document connu. Nom : masculin singulier.",
+        "answers": [
+          "le"
+        ],
+        "options": [
+          {
+            "id": "menu-choix-1",
+            "text": "le"
+          },
+          {
+            "id": "menu-choix-2",
+            "text": "la"
+          },
+          {
+            "id": "menu-choix-3",
+            "text": "l’"
+          },
+          {
+            "id": "menu-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je lis le menu devant moi."
+      },
+      {
+        "id": "gram-ex-g2-qcm-verbe-a1-addition",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-qcm-verbe",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je vérifie ___addition de notre table.",
+        "cue": "Une addition vient d’être apportée pour votre table. Vous parlez de celle-ci. Nom : féminin singulier.",
+        "answers": [
+          "l’"
+        ],
+        "options": [
+          {
+            "id": "addition-choix-1",
+            "text": "l’"
+          },
+          {
+            "id": "addition-choix-2",
+            "text": "le"
+          },
+          {
+            "id": "addition-choix-3",
+            "text": "la"
+          },
+          {
+            "id": "addition-choix-4",
+            "text": "les"
+          }
+        ],
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je vérifie l’addition de notre table."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "aliments-2026-11-24-v1",
+    "activityId": "gram-ex-g2-curriculum-t",
+    "subthemeId": "g2",
+    "topic": "gram-aliments",
+    "level": "A1",
+    "label": "Transformer une phrase",
+    "objective": "Employer le, la, l’ ou les pour une référence connue ou une catégorie générale ; respecter l’élision et le h aspiré.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Sources, formes et contextes relus ; réemploi explicite entre mécaniques. Images existantes conservées sous empreinte immuable. Modèles ouverts non exclusifs ; approbation enseignante en attente."
+    },
+    "presentations": [
+      "transform"
+    ],
+    "instructions": {
+      "transform": "Reformulez avec un article défini selon l’indication de chaque situation."
+    },
+    "units": [
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-pain",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je coupe ce pain sur la table.",
+        "cue": "Un pain vient d’être posé sur la table. Vous parlez de ce pain déjà connu. Nom : masculin singulier.",
+        "answers": [
+          "Je coupe le pain sur la table."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je coupe le pain sur la table."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-soupe",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je sers cette soupe du repas.",
+        "cue": "Une soupe a été préparée pour le repas. Vous parlez de cette soupe précise. Nom : féminin singulier.",
+        "answers": [
+          "Je sers la soupe du repas."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je sers la soupe du repas."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-eau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je prends cette eau de la carafe.",
+        "cue": "Une carafe d’eau est prête dans le réfrigérateur. Vous parlez de cette eau. Nom : féminin singulier.",
+        "answers": [
+          "Je prends l’eau de la carafe."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je prends l’eau de la carafe."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-huile",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "J’ajoute cette huile de cette bouteille.",
+        "cue": "Une bouteille d’huile est ouverte pour la recette. Vous parlez de cette huile précise. Nom : féminin singulier.",
+        "answers": [
+          "J’ajoute l’huile de cette bouteille."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : J’ajoute l’huile de cette bouteille."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-riz",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je goûte ce riz de mon assiette.",
+        "cue": "Le riz de votre assiette est prêt. Vous parlez de la portion déjà servie. Nom : masculin singulier.",
+        "answers": [
+          "Je goûte le riz de mon assiette."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je goûte le riz de mon assiette."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-pommes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je coupe ces pommes de ce panier.",
+        "cue": "Des pommes viennent d’être lavées. Vous parlez de toutes les pommes de ce panier connu. Nom : féminin pluriel.",
+        "answers": [
+          "Je coupe les pommes de ce panier."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je coupe les pommes de ce panier."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-oeuf",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je casse cet œuf choisi pour la recette.",
+        "cue": "Un œuf a été choisi pour la recette. Vous parlez de cet œuf précis. Nom : masculin singulier.",
+        "answers": [
+          "Je casse l’œuf choisi pour la recette."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je casse l’œuf choisi pour la recette."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-oeufs",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je prends ces œufs sur la table.",
+        "cue": "Les œufs nécessaires sont déjà sur la table. Vous reprenez ce groupe connu. Nom : masculin pluriel.",
+        "answers": [
+          "Je prends les œufs sur la table."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je prends les œufs sur la table."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-beurre",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je sors ce beurre de la petite assiette.",
+        "cue": "Un morceau de beurre attend dans une petite assiette. Vous parlez de ce beurre. Nom : masculin singulier.",
+        "answers": [
+          "Je sors le beurre de la petite assiette."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je sors le beurre de la petite assiette."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-confiture",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je goûte cette confiture de ce pot.",
+        "cue": "Un pot de confiture est ouvert devant vous. Vous parlez de son contenu précis. Nom : féminin singulier.",
+        "answers": [
+          "Je goûte la confiture de ce pot."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je goûte la confiture de ce pot."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-fromage",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je partage ce fromage présenté au groupe.",
+        "cue": "Un fromage a été présenté au groupe. Vous le reprenez dans votre phrase. Nom : masculin singulier.",
+        "answers": [
+          "Je partage le fromage présenté au groupe."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je partage le fromage présenté au groupe."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-farine",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je verse cette farine déjà pesée.",
+        "cue": "La farine nécessaire à la recette a été pesée. Vous parlez de cette quantité connue. Nom : féminin singulier.",
+        "answers": [
+          "Je verse la farine déjà pesée."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je verse la farine déjà pesée."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-chocolat-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "J’aime ce chocolat.",
+        "cue": "Vous exprimez un goût général pour le chocolat, sans demander une portion. Nom : masculin singulier.",
+        "answers": [
+          "J’aime le chocolat."
+        ],
+        "directive": "Remplacez le démonstratif par un article défini pour parler de la catégorie en général.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : J’aime le chocolat."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-salade-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "J’aime cette salade.",
+        "cue": "Vous parlez de votre goût pour la salade en général. Nom : féminin singulier.",
+        "answers": [
+          "J’aime la salade."
+        ],
+        "directive": "Remplacez le démonstratif par un article défini pour parler de la catégorie en général.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : J’aime la salade."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-legumes-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je préfère ces légumes.",
+        "cue": "Vous donnez votre préférence pour la catégorie des légumes, sans désigner un lot. Nom : masculin pluriel.",
+        "answers": [
+          "Je préfère les légumes."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je préfère les légumes."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-chocolat-negatif",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je n’aime pas ce chocolat.",
+        "cue": "Dans ce rôle, vous n’aimez pas le chocolat en général. Ce n’est pas un refus de portion. Nom : masculin singulier.",
+        "answers": [
+          "Je n’aime pas le chocolat."
+        ],
+        "directive": "Remplacez le démonstratif par un article défini pour parler de la catégorie en général.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je n’aime pas le chocolat."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-cafe-negatif",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je n’aime pas ce café.",
+        "cue": "Vous dites votre goût général : dans ce rôle, vous n’aimez pas le café. Nom : masculin singulier.",
+        "answers": [
+          "Je n’aime pas le café."
+        ],
+        "directive": "Remplacez le démonstratif par un article défini pour parler de la catégorie en général.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je n’aime pas le café."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-orange",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je garde cette orange pour la personne qui arrive.",
+        "cue": "Une orange a été mise de côté pour la personne qui arrive. Vous parlez de ce fruit précis. Nom : féminin singulier.",
+        "answers": [
+          "Je garde l’orange pour la personne qui arrive."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je garde l’orange pour la personne qui arrive."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-abricots",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je lave ces abricots de cette corbeille.",
+        "cue": "Des abricots sont déjà dans une corbeille. Vous parlez de ceux de cette corbeille. Nom : masculin pluriel.",
+        "answers": [
+          "Je lave les abricots de cette corbeille."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je lave les abricots de cette corbeille."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-ananas",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je découpe cet ananas choisi pour le dessert.",
+        "cue": "Un ananas a été choisi pour le dessert. Vous reprenez ce fruit connu. Nom : masculin singulier.",
+        "answers": [
+          "Je découpe l’ananas choisi pour le dessert."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je découpe l’ananas choisi pour le dessert."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-haricot",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je regarde ce haricot isolé.",
+        "cue": "Un haricot est isolé pour une observation. Son h est aspiré : il n’y a pas d’élision. Nom : masculin singulier.",
+        "answers": [
+          "Je regarde le haricot isolé."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Le h de haricot est aspiré : pas d’élision. Modèle : Je regarde le haricot isolé."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-haricots",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je lave ces haricots de ce récipient.",
+        "cue": "Les haricots de la recette sont dans un récipient connu. Nom : masculin pluriel.",
+        "answers": [
+          "Je lave les haricots de ce récipient."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Le h de haricot est aspiré : pas d’élision. Modèle : Je lave les haricots de ce récipient."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-yaourt",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je garde ce yaourt réservé pour le goûter.",
+        "cue": "Un yaourt est réservé pour le goûter. Vous parlez de ce pot précis. Nom : masculin singulier.",
+        "answers": [
+          "Je garde le yaourt réservé pour le goûter."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je garde le yaourt réservé pour le goûter."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-yaourts",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je range ces yaourts du sac.",
+        "cue": "Plusieurs yaourts se trouvent dans le sac du groupe. Vous parlez de ceux de ce sac. Nom : masculin pluriel.",
+        "answers": [
+          "Je range les yaourts du sac."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je range les yaourts du sac."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-gateau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je coupe ce gâteau de l’anniversaire.",
+        "cue": "Un gâteau a été préparé pour l’anniversaire. Vous parlez de ce gâteau connu. Nom : masculin singulier.",
+        "answers": [
+          "Je coupe le gâteau de l’anniversaire."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je coupe le gâteau de l’anniversaire."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-tarte",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je sers cette tarte présentée au début du repas.",
+        "cue": "Une tarte a été présentée au début du repas. Vous parlez de cette tarte. Nom : féminin singulier.",
+        "answers": [
+          "Je sers la tarte présentée au début du repas."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je sers la tarte présentée au début du repas."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-glace",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je prends cette glace qui attend dans la cuisine.",
+        "cue": "Une glace a été préparée pour le dessert. Vous parlez de celle qui attend dans la cuisine. Nom : féminin singulier.",
+        "answers": [
+          "Je prends la glace qui attend dans la cuisine."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je prends la glace qui attend dans la cuisine."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-fruits-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "J’aime ces fruits.",
+        "cue": "Vous parlez de la catégorie des fruits en général, sans préciser de fruits particuliers. Nom : masculin pluriel.",
+        "answers": [
+          "J’aime les fruits."
+        ],
+        "directive": "Remplacez le démonstratif par un article défini pour parler de la catégorie en général.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : J’aime les fruits."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-poisson-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "J’aime ce poisson.",
+        "cue": "Vous indiquez un goût général pour le poisson. Nom : masculin singulier.",
+        "answers": [
+          "J’aime le poisson."
+        ],
+        "directive": "Remplacez le démonstratif par un article défini pour parler de la catégorie en général.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : J’aime le poisson."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-viande-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je préfère cette viande.",
+        "cue": "Dans ce rôle, vous exprimez votre goût général pour la viande. Nom : féminin singulier.",
+        "answers": [
+          "Je préfère la viande."
+        ],
+        "directive": "Remplacez le démonstratif par un article défini pour parler de la catégorie en général.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je préfère la viande."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-assiette",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je prends cette assiette devant moi.",
+        "cue": "Une assiette propre est devant vous. Vous demandez cette assiette connue. Nom : féminin singulier.",
+        "answers": [
+          "Je prends l’assiette devant moi."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je prends l’assiette devant moi."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-assiettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je distribue ces assiettes placées à droite.",
+        "cue": "Les assiettes nécessaires sont déjà placées à droite. Vous parlez de ce groupe connu. Nom : féminin pluriel.",
+        "answers": [
+          "Je distribue les assiettes placées à droite."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je distribue les assiettes placées à droite."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-verre",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je remplis ce verre à ma place.",
+        "cue": "Un verre a été posé à votre place. Vous reprenez ce verre précis. Nom : masculin singulier.",
+        "answers": [
+          "Je remplis le verre à ma place."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je remplis le verre à ma place."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-verres",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je porte ces verres du plateau.",
+        "cue": "Des verres ont été lavés et se trouvent sur le plateau. Vous parlez de ceux du plateau. Nom : masculin pluriel.",
+        "answers": [
+          "Je porte les verres du plateau."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je porte les verres du plateau."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-tasse",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je prends cette tasse près de la théière.",
+        "cue": "Une tasse est prête près de la théière. Vous parlez de cette tasse. Nom : féminin singulier.",
+        "answers": [
+          "Je prends la tasse près de la théière."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je prends la tasse près de la théière."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-tasses",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je sors ces tasses de ce placard.",
+        "cue": "Les tasses pour les invités sont rangées dans un placard indiqué. Nom : féminin pluriel.",
+        "answers": [
+          "Je sors les tasses de ce placard."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je sors les tasses de ce placard."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-fourchette",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "J’ajoute cette fourchette du plateau.",
+        "cue": "Une fourchette manque à une place. Celle qui est sur le plateau doit y être ajoutée. Nom : féminin singulier.",
+        "answers": [
+          "J’ajoute la fourchette du plateau."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : J’ajoute la fourchette du plateau."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-couteau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je range ce couteau à pain montré au groupe.",
+        "cue": "Un couteau à pain a été montré au groupe. Vous le reprenez. Nom : masculin singulier.",
+        "answers": [
+          "Je range le couteau à pain montré au groupe."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je range le couteau à pain montré au groupe."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-ustensile",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je lave cet ustensile utilisé.",
+        "cue": "Un ustensile vient d’être utilisé. Vous parlez de cet ustensile connu. Nom : masculin singulier.",
+        "answers": [
+          "Je lave l’ustensile utilisé."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je lave l’ustensile utilisé."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-ustensiles",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je range ces ustensiles de l’atelier.",
+        "cue": "Les ustensiles de l’atelier doivent être rangés ensemble. Vous parlez de ce matériel connu. Nom : masculin pluriel.",
+        "answers": [
+          "Je range les ustensiles de l’atelier."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je range les ustensiles de l’atelier."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-eponge",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je prends cette éponge près de l’évier.",
+        "cue": "Une éponge propre se trouve près de l’évier. Vous reprenez cette éponge. Nom : féminin singulier.",
+        "answers": [
+          "Je prends l’éponge près de l’évier."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je prends l’éponge près de l’évier."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-evier",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je nettoie cet évier de la cuisine.",
+        "cue": "L’évier de la cuisine a été utilisé. Vous parlez de celui de cette cuisine. Nom : masculin singulier.",
+        "answers": [
+          "Je nettoie l’évier de la cuisine."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je nettoie l’évier de la cuisine."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-eau-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je préfère cette eau.",
+        "cue": "Vous parlez de l’eau en général, comme boisson que vous préférez. Nom : féminin singulier.",
+        "answers": [
+          "Je préfère l’eau."
+        ],
+        "directive": "Remplacez le démonstratif par un article défini pour parler de la catégorie en général.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je préfère l’eau."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-huile-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "J’aime cette huile d’olive.",
+        "cue": "Vous exprimez votre goût pour l’huile d’olive en général, sans demander une quantité. Nom : féminin singulier.",
+        "answers": [
+          "J’aime l’huile d’olive."
+        ],
+        "directive": "Remplacez le démonstratif par un article défini pour parler de la catégorie en général.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : J’aime l’huile d’olive."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-epinards-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "J’aime ces épinards.",
+        "cue": "Dans ce rôle, vous indiquez que vous aimez les épinards en général. Nom : masculin pluriel.",
+        "answers": [
+          "J’aime les épinards."
+        ],
+        "directive": "Remplacez le démonstratif par un article défini pour parler de la catégorie en général.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : J’aime les épinards."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-dessert",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je partage ce dessert commandé pour la table.",
+        "cue": "Un dessert a été commandé pour la table. Vous reprenez ce dessert connu. Nom : masculin singulier.",
+        "answers": [
+          "Je partage le dessert commandé pour la table."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je partage le dessert commandé pour la table."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-recette",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je relis cette recette choisie pour l’atelier.",
+        "cue": "Une recette a été choisie pour l’atelier. Vous parlez de cette recette précise. Nom : féminin singulier.",
+        "answers": [
+          "Je relis la recette choisie pour l’atelier."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je relis la recette choisie pour l’atelier."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-ingredients",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je vérifie ces ingrédients de cette recette.",
+        "cue": "Les ingrédients de la recette sont déjà préparés. Vous parlez de cet ensemble précis. Nom : masculin pluriel.",
+        "answers": [
+          "Je vérifie les ingrédients de cette recette."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je vérifie les ingrédients de cette recette."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-menu",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je lis ce menu devant moi.",
+        "cue": "Un menu est posé devant vous au restaurant. Vous reprenez ce document connu. Nom : masculin singulier.",
+        "answers": [
+          "Je lis le menu devant moi."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je lis le menu devant moi."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-t-a1-addition",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-t",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je vérifie cette addition de notre table.",
+        "cue": "Une addition vient d’être apportée pour votre table. Vous parlez de celle-ci. Nom : féminin singulier.",
+        "answers": [
+          "Je vérifie l’addition de notre table."
+        ],
+        "directive": "Remplacez le démonstratif par l’article défini pour reprendre le même élément connu.",
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je vérifie l’addition de notre table."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "aliments-2026-11-24-v1",
+    "activityId": "gram-ex-g2-curriculum-c",
+    "subthemeId": "g2",
+    "topic": "gram-aliments",
+    "level": "A1",
+    "label": "Corriger l’erreur",
+    "objective": "Employer le, la, l’ ou les pour une référence connue ou une catégorie générale ; respecter l’élision et le h aspiré.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Sources, formes et contextes relus ; réemploi explicite entre mécaniques. Images existantes conservées sous empreinte immuable. Modèles ouverts non exclusifs ; approbation enseignante en attente."
+    },
+    "presentations": [
+      "correct"
+    ],
+    "instructions": {
+      "correct": "Corrigez l’article et réécrivez la phrase entière."
+    },
+    "units": [
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-pain",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je coupe la pain sur la table.",
+        "cue": "Un pain vient d’être posé sur la table. Vous parlez de ce pain déjà connu. Nom : masculin singulier.",
+        "answers": [
+          "Je coupe le pain sur la table."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 11,
+          "text": "la"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je coupe le pain sur la table."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-soupe",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je sers le soupe du repas.",
+        "cue": "Une soupe a été préparée pour le repas. Vous parlez de cette soupe précise. Nom : féminin singulier.",
+        "answers": [
+          "Je sers la soupe du repas."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 10,
+          "text": "le"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je sers la soupe du repas."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-eau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je prends la eau de la carafe.",
+        "cue": "Une carafe d’eau est prête dans le réfrigérateur. Vous parlez de cette eau. Nom : féminin singulier.",
+        "answers": [
+          "Je prends l’eau de la carafe."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 10,
+          "end": 13,
+          "text": "la "
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je prends l’eau de la carafe."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-huile",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "J’ajoute la huile de cette bouteille.",
+        "cue": "Une bouteille d’huile est ouverte pour la recette. Vous parlez de cette huile précise. Nom : féminin singulier.",
+        "answers": [
+          "J’ajoute l’huile de cette bouteille."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 12,
+          "text": "la "
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : J’ajoute l’huile de cette bouteille."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-riz",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je goûte la riz de mon assiette.",
+        "cue": "Le riz de votre assiette est prêt. Vous parlez de la portion déjà servie. Nom : masculin singulier.",
+        "answers": [
+          "Je goûte le riz de mon assiette."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 11,
+          "text": "la"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je goûte le riz de mon assiette."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-pommes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je coupe le pommes de ce panier.",
+        "cue": "Des pommes viennent d’être lavées. Vous parlez de toutes les pommes de ce panier connu. Nom : féminin pluriel.",
+        "answers": [
+          "Je coupe les pommes de ce panier."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 11,
+          "text": "le"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je coupe les pommes de ce panier."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-oeuf",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je casse le œuf choisi pour la recette.",
+        "cue": "Un œuf a été choisi pour la recette. Vous parlez de cet œuf précis. Nom : masculin singulier.",
+        "answers": [
+          "Je casse l’œuf choisi pour la recette."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 12,
+          "text": "le "
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je casse l’œuf choisi pour la recette."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-oeufs",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je prends le œufs sur la table.",
+        "cue": "Les œufs nécessaires sont déjà sur la table. Vous reprenez ce groupe connu. Nom : masculin pluriel.",
+        "answers": [
+          "Je prends les œufs sur la table."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 10,
+          "end": 12,
+          "text": "le"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je prends les œufs sur la table."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-beurre",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je sors la beurre de la petite assiette.",
+        "cue": "Un morceau de beurre attend dans une petite assiette. Vous parlez de ce beurre. Nom : masculin singulier.",
+        "answers": [
+          "Je sors le beurre de la petite assiette."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 10,
+          "text": "la"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je sors le beurre de la petite assiette."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-confiture",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je goûte le confiture de ce pot.",
+        "cue": "Un pot de confiture est ouvert devant vous. Vous parlez de son contenu précis. Nom : féminin singulier.",
+        "answers": [
+          "Je goûte la confiture de ce pot."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 11,
+          "text": "le"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je goûte la confiture de ce pot."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-fromage",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je partage la fromage présenté au groupe.",
+        "cue": "Un fromage a été présenté au groupe. Vous le reprenez dans votre phrase. Nom : masculin singulier.",
+        "answers": [
+          "Je partage le fromage présenté au groupe."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 13,
+          "text": "la"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je partage le fromage présenté au groupe."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-farine",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je verse le farine déjà pesée.",
+        "cue": "La farine nécessaire à la recette a été pesée. Vous parlez de cette quantité connue. Nom : féminin singulier.",
+        "answers": [
+          "Je verse la farine déjà pesée."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 11,
+          "text": "le"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je verse la farine déjà pesée."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-chocolat-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "J’aime la chocolat.",
+        "cue": "Vous exprimez un goût général pour le chocolat, sans demander une portion. Nom : masculin singulier.",
+        "answers": [
+          "J’aime le chocolat."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 7,
+          "end": 9,
+          "text": "la"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : J’aime le chocolat."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-salade-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "J’aime le salade.",
+        "cue": "Vous parlez de votre goût pour la salade en général. Nom : féminin singulier.",
+        "answers": [
+          "J’aime la salade."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 7,
+          "end": 9,
+          "text": "le"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : J’aime la salade."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-legumes-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je préfère le légumes.",
+        "cue": "Vous donnez votre préférence pour la catégorie des légumes, sans désigner un lot. Nom : masculin pluriel.",
+        "answers": [
+          "Je préfère les légumes."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 13,
+          "text": "le"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je préfère les légumes."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-chocolat-negatif",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je n’aime pas la chocolat.",
+        "cue": "Dans ce rôle, vous n’aimez pas le chocolat en général. Ce n’est pas un refus de portion. Nom : masculin singulier.",
+        "answers": [
+          "Je n’aime pas le chocolat."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 14,
+          "end": 16,
+          "text": "la"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je n’aime pas le chocolat."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-cafe-negatif",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je n’aime pas la café.",
+        "cue": "Vous dites votre goût général : dans ce rôle, vous n’aimez pas le café. Nom : masculin singulier.",
+        "answers": [
+          "Je n’aime pas le café."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 14,
+          "end": 16,
+          "text": "la"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je n’aime pas le café."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-orange",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je garde la orange pour la personne qui arrive.",
+        "cue": "Une orange a été mise de côté pour la personne qui arrive. Vous parlez de ce fruit précis. Nom : féminin singulier.",
+        "answers": [
+          "Je garde l’orange pour la personne qui arrive."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 12,
+          "text": "la "
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je garde l’orange pour la personne qui arrive."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-abricots",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je lave le abricots de cette corbeille.",
+        "cue": "Des abricots sont déjà dans une corbeille. Vous parlez de ceux de cette corbeille. Nom : masculin pluriel.",
+        "answers": [
+          "Je lave les abricots de cette corbeille."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 10,
+          "text": "le"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je lave les abricots de cette corbeille."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-ananas",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je découpe le ananas choisi pour le dessert.",
+        "cue": "Un ananas a été choisi pour le dessert. Vous reprenez ce fruit connu. Nom : masculin singulier.",
+        "answers": [
+          "Je découpe l’ananas choisi pour le dessert."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 14,
+          "text": "le "
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je découpe l’ananas choisi pour le dessert."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-haricot",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je regarde la haricot isolé.",
+        "cue": "Un haricot est isolé pour une observation. Son h est aspiré : il n’y a pas d’élision. Nom : masculin singulier.",
+        "answers": [
+          "Je regarde le haricot isolé."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 13,
+          "text": "la"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Le h de haricot est aspiré : pas d’élision. Modèle : Je regarde le haricot isolé."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-haricots",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je lave le haricots de ce récipient.",
+        "cue": "Les haricots de la recette sont dans un récipient connu. Nom : masculin pluriel.",
+        "answers": [
+          "Je lave les haricots de ce récipient."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 10,
+          "text": "le"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Le h de haricot est aspiré : pas d’élision. Modèle : Je lave les haricots de ce récipient."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-yaourt",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je garde la yaourt réservé pour le goûter.",
+        "cue": "Un yaourt est réservé pour le goûter. Vous parlez de ce pot précis. Nom : masculin singulier.",
+        "answers": [
+          "Je garde le yaourt réservé pour le goûter."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 11,
+          "text": "la"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je garde le yaourt réservé pour le goûter."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-yaourts",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je range le yaourts du sac.",
+        "cue": "Plusieurs yaourts se trouvent dans le sac du groupe. Vous parlez de ceux de ce sac. Nom : masculin pluriel.",
+        "answers": [
+          "Je range les yaourts du sac."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 11,
+          "text": "le"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je range les yaourts du sac."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-gateau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je coupe la gâteau de l’anniversaire.",
+        "cue": "Un gâteau a été préparé pour l’anniversaire. Vous parlez de ce gâteau connu. Nom : masculin singulier.",
+        "answers": [
+          "Je coupe le gâteau de l’anniversaire."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 11,
+          "text": "la"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je coupe le gâteau de l’anniversaire."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-tarte",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je sers le tarte présentée au début du repas.",
+        "cue": "Une tarte a été présentée au début du repas. Vous parlez de cette tarte. Nom : féminin singulier.",
+        "answers": [
+          "Je sers la tarte présentée au début du repas."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 10,
+          "text": "le"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je sers la tarte présentée au début du repas."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-glace",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je prends le glace qui attend dans la cuisine.",
+        "cue": "Une glace a été préparée pour le dessert. Vous parlez de celle qui attend dans la cuisine. Nom : féminin singulier.",
+        "answers": [
+          "Je prends la glace qui attend dans la cuisine."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 10,
+          "end": 12,
+          "text": "le"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je prends la glace qui attend dans la cuisine."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-fruits-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "J’aime le fruits.",
+        "cue": "Vous parlez de la catégorie des fruits en général, sans préciser de fruits particuliers. Nom : masculin pluriel.",
+        "answers": [
+          "J’aime les fruits."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 7,
+          "end": 9,
+          "text": "le"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : J’aime les fruits."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-poisson-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "J’aime la poisson.",
+        "cue": "Vous indiquez un goût général pour le poisson. Nom : masculin singulier.",
+        "answers": [
+          "J’aime le poisson."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 7,
+          "end": 9,
+          "text": "la"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : J’aime le poisson."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-viande-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je préfère le viande.",
+        "cue": "Dans ce rôle, vous exprimez votre goût général pour la viande. Nom : féminin singulier.",
+        "answers": [
+          "Je préfère la viande."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 13,
+          "text": "le"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je préfère la viande."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-assiette",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je prends la assiette devant moi.",
+        "cue": "Une assiette propre est devant vous. Vous demandez cette assiette connue. Nom : féminin singulier.",
+        "answers": [
+          "Je prends l’assiette devant moi."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 10,
+          "end": 13,
+          "text": "la "
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je prends l’assiette devant moi."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-assiettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je distribue le assiettes placées à droite.",
+        "cue": "Les assiettes nécessaires sont déjà placées à droite. Vous parlez de ce groupe connu. Nom : féminin pluriel.",
+        "answers": [
+          "Je distribue les assiettes placées à droite."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 13,
+          "end": 15,
+          "text": "le"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je distribue les assiettes placées à droite."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-verre",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je remplis la verre à ma place.",
+        "cue": "Un verre a été posé à votre place. Vous reprenez ce verre précis. Nom : masculin singulier.",
+        "answers": [
+          "Je remplis le verre à ma place."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 13,
+          "text": "la"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je remplis le verre à ma place."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-verres",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je porte le verres du plateau.",
+        "cue": "Des verres ont été lavés et se trouvent sur le plateau. Vous parlez de ceux du plateau. Nom : masculin pluriel.",
+        "answers": [
+          "Je porte les verres du plateau."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 11,
+          "text": "le"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je porte les verres du plateau."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-tasse",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je prends le tasse près de la théière.",
+        "cue": "Une tasse est prête près de la théière. Vous parlez de cette tasse. Nom : féminin singulier.",
+        "answers": [
+          "Je prends la tasse près de la théière."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 10,
+          "end": 12,
+          "text": "le"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je prends la tasse près de la théière."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-tasses",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je sors le tasses de ce placard.",
+        "cue": "Les tasses pour les invités sont rangées dans un placard indiqué. Nom : féminin pluriel.",
+        "answers": [
+          "Je sors les tasses de ce placard."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 10,
+          "text": "le"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je sors les tasses de ce placard."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-fourchette",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "J’ajoute le fourchette du plateau.",
+        "cue": "Une fourchette manque à une place. Celle qui est sur le plateau doit y être ajoutée. Nom : féminin singulier.",
+        "answers": [
+          "J’ajoute la fourchette du plateau."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 11,
+          "text": "le"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : J’ajoute la fourchette du plateau."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-couteau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je range la couteau à pain montré au groupe.",
+        "cue": "Un couteau à pain a été montré au groupe. Vous le reprenez. Nom : masculin singulier.",
+        "answers": [
+          "Je range le couteau à pain montré au groupe."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 11,
+          "text": "la"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je range le couteau à pain montré au groupe."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-ustensile",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je lave le ustensile utilisé.",
+        "cue": "Un ustensile vient d’être utilisé. Vous parlez de cet ustensile connu. Nom : masculin singulier.",
+        "answers": [
+          "Je lave l’ustensile utilisé."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 11,
+          "text": "le "
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je lave l’ustensile utilisé."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-ustensiles",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je range le ustensiles de l’atelier.",
+        "cue": "Les ustensiles de l’atelier doivent être rangés ensemble. Vous parlez de ce matériel connu. Nom : masculin pluriel.",
+        "answers": [
+          "Je range les ustensiles de l’atelier."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 11,
+          "text": "le"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je range les ustensiles de l’atelier."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-eponge",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je prends la éponge près de l’évier.",
+        "cue": "Une éponge propre se trouve près de l’évier. Vous reprenez cette éponge. Nom : féminin singulier.",
+        "answers": [
+          "Je prends l’éponge près de l’évier."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 10,
+          "end": 13,
+          "text": "la "
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je prends l’éponge près de l’évier."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-evier",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je nettoie le évier de la cuisine.",
+        "cue": "L’évier de la cuisine a été utilisé. Vous parlez de celui de cette cuisine. Nom : masculin singulier.",
+        "answers": [
+          "Je nettoie l’évier de la cuisine."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 14,
+          "text": "le "
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je nettoie l’évier de la cuisine."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-eau-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je préfère la eau.",
+        "cue": "Vous parlez de l’eau en général, comme boisson que vous préférez. Nom : féminin singulier.",
+        "answers": [
+          "Je préfère l’eau."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 14,
+          "text": "la "
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je préfère l’eau."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-huile-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "J’aime la huile d’olive.",
+        "cue": "Vous exprimez votre goût pour l’huile d’olive en général, sans demander une quantité. Nom : féminin singulier.",
+        "answers": [
+          "J’aime l’huile d’olive."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 7,
+          "end": 10,
+          "text": "la "
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : J’aime l’huile d’olive."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-epinards-general",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "J’aime le épinards.",
+        "cue": "Dans ce rôle, vous indiquez que vous aimez les épinards en général. Nom : masculin pluriel.",
+        "answers": [
+          "J’aime les épinards."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 7,
+          "end": 9,
+          "text": "le"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : J’aime les épinards."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-dessert",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je partage la dessert commandé pour la table.",
+        "cue": "Un dessert a été commandé pour la table. Vous reprenez ce dessert connu. Nom : masculin singulier.",
+        "answers": [
+          "Je partage le dessert commandé pour la table."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 13,
+          "text": "la"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je partage le dessert commandé pour la table."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-recette",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je relis le recette choisie pour l’atelier.",
+        "cue": "Une recette a été choisie pour l’atelier. Vous parlez de cette recette précise. Nom : féminin singulier.",
+        "answers": [
+          "Je relis la recette choisie pour l’atelier."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 11,
+          "text": "le"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je relis la recette choisie pour l’atelier."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-ingredients",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je vérifie le ingrédients de cette recette.",
+        "cue": "Les ingrédients de la recette sont déjà préparés. Vous parlez de cet ensemble précis. Nom : masculin pluriel.",
+        "answers": [
+          "Je vérifie les ingrédients de cette recette."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 13,
+          "text": "le"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je vérifie les ingrédients de cette recette."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-menu",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je lis la menu devant moi.",
+        "cue": "Un menu est posé devant vous au restaurant. Vous reprenez ce document connu. Nom : masculin singulier.",
+        "answers": [
+          "Je lis le menu devant moi."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 7,
+          "end": 9,
+          "text": "la"
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Modèle : Je lis le menu devant moi."
+      },
+      {
+        "id": "gram-ex-g2-curriculum-c-a1-addition",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+          "typeId": "gram-ex-g2-curriculum-c",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "correct",
+        "prompt": "Je vérifie la addition de notre table.",
+        "cue": "Une addition vient d’être apportée pour votre table. Vous parlez de celle-ci. Nom : féminin singulier.",
+        "answers": [
+          "Je vérifie l’addition de notre table."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 14,
+          "text": "la "
+        },
+        "responseLines": 2,
+        "explanation": "Article défini adapté à la référence et au nom. Élision devant la voyelle ou le h muet. Modèle : Je vérifie l’addition de notre table."
+      }
+    ]
+  }
+]

@@ -1,0 +1,3804 @@
+[
+  {
+    "schemaVersion": 1,
+    "revision": "aliments-2026-11-24-v1",
+    "activityId": "gram-ex-g1-qcm-verbe",
+    "subthemeId": "g1",
+    "topic": "gram-aliments",
+    "level": "A1",
+    "label": "Choisir un, une ou des",
+    "objective": "Choisir un, une ou des selon le genre et le nombre dans une situation illustrée.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Sources, formes et contextes relus ; réemploi explicite entre mécaniques. Images existantes conservées sous empreinte immuable. Modèles ouverts non exclusifs ; approbation enseignante en attente."
+    },
+    "presentations": [
+      "choice",
+      "gap"
+    ],
+    "instructions": {
+      "choice": "Observez le produit. Choisissez un, une ou des selon le nom et le nombre indiqués.",
+      "gap": "Écrivez un, une ou des selon le nom et le nombre indiqués."
+    },
+    "units": [
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-croissant",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je voudrais ___ croissant.",
+        "cue": "À la boulangerie, vous demandez une seule viennoiserie pour le petit-déjeuner. Nom : masculin singulier.",
+        "answers": [
+          "un"
+        ],
+        "options": [
+          {
+            "id": "croissant-choix-1",
+            "text": "un"
+          },
+          {
+            "id": "croissant-choix-2",
+            "text": "une"
+          },
+          {
+            "id": "croissant-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je voudrais un croissant.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-croissant",
+            "src": "/lib/images/grammaire/curriculum/sha256/aaddfb418e2ff4dea7880996dfec5bf11f56ab3f8b37d0da49c8441ab3e97d63.webp",
+            "sha256": "aaddfb418e2ff4dea7880996dfec5bf11f56ab3f8b37d0da49c8441ab3e97d63",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : croissant. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/croissant.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-baguette",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’achète ___ baguette.",
+        "cue": "Pour le repas, vous achetez une seule baguette parmi celles du magasin. Nom : féminin singulier.",
+        "answers": [
+          "une"
+        ],
+        "options": [
+          {
+            "id": "baguette-choix-1",
+            "text": "une"
+          },
+          {
+            "id": "baguette-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "baguette-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : J’achète une baguette.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-baguette",
+            "src": "/lib/images/grammaire/curriculum/sha256/8c0406bfb91d7d6487e145481868f7f860aeaf5de29dc043bcc556daef7bcb43.webp",
+            "sha256": "8c0406bfb91d7d6487e145481868f7f860aeaf5de29dc043bcc556daef7bcb43",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : baguette. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/baguette.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-yaourt",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je prends ___ yaourt.",
+        "cue": "Au rayon frais, vous choisissez un seul pot de yaourt. Nom : masculin singulier.",
+        "answers": [
+          "un"
+        ],
+        "options": [
+          {
+            "id": "yaourt-choix-1",
+            "text": "un"
+          },
+          {
+            "id": "yaourt-choix-2",
+            "text": "une"
+          },
+          {
+            "id": "yaourt-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je prends un yaourt.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-yaourt",
+            "src": "/lib/images/grammaire/curriculum/sha256/a370fa2adb3abf26343fae35e1b07aafc78458eeecb7f7a2e8defef4b0fa2ca1.webp",
+            "sha256": "a370fa2adb3abf26343fae35e1b07aafc78458eeecb7f7a2e8defef4b0fa2ca1",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : yaourt. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/yaourt.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-pizza",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Nous commandons ___ pizza.",
+        "cue": "Vous commandez une seule pizza à partager, sans désigner une pizza déjà préparée. Nom : féminin singulier.",
+        "answers": [
+          "une"
+        ],
+        "options": [
+          {
+            "id": "pizza-choix-1",
+            "text": "une"
+          },
+          {
+            "id": "pizza-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "pizza-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Nous commandons une pizza.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-pizza",
+            "src": "/lib/images/grammaire/curriculum/sha256/c542485ffa88c63e10e54951c9b759f2f63ecad54d717266861ec2e610e846bb.webp",
+            "sha256": "c542485ffa88c63e10e54951c9b759f2f63ecad54d717266861ec2e610e846bb",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : pizza. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/pizza.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-sandwich",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je voudrais ___ sandwich.",
+        "cue": "Pour votre déjeuner à emporter, vous demandez un seul sandwich. Nom : masculin singulier.",
+        "answers": [
+          "un"
+        ],
+        "options": [
+          {
+            "id": "sandwich-choix-1",
+            "text": "un"
+          },
+          {
+            "id": "sandwich-choix-2",
+            "text": "une"
+          },
+          {
+            "id": "sandwich-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je voudrais un sandwich.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-sandwich",
+            "src": "/lib/images/grammaire/curriculum/sha256/5e7332287764846ace3308039da1df9409903eb46ca8cc5e792a1933459f9ab7.webp",
+            "sha256": "5e7332287764846ace3308039da1df9409903eb46ca8cc5e792a1933459f9ab7",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : sandwich. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/sandwich.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-oeufs",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Il me faut ___ œufs.",
+        "cue": "Vous préparez une omelette et demandez plusieurs œufs. Le nombre est donné par le texte. Nom : masculin pluriel.",
+        "answers": [
+          "des"
+        ],
+        "options": [
+          {
+            "id": "oeufs-choix-1",
+            "text": "des"
+          },
+          {
+            "id": "oeufs-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "oeufs-choix-3",
+            "text": "une"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Il me faut des œufs.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-œuf",
+            "src": "/lib/images/grammaire/curriculum/sha256/d0521fd458b3dfddcc80cd4f00297b01cfcd94f410f1234cf2fb745dc8de69e2.webp",
+            "sha256": "d0521fd458b3dfddcc80cd4f00297b01cfcd94f410f1234cf2fb745dc8de69e2",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : œuf. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/œuf.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-saucisses",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Nous achetons ___ saucisses.",
+        "cue": "Pour un repas de groupe, vous achetez plusieurs saucisses du même rayon. Nom : féminin pluriel.",
+        "answers": [
+          "des"
+        ],
+        "options": [
+          {
+            "id": "saucisses-choix-1",
+            "text": "des"
+          },
+          {
+            "id": "saucisses-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "saucisses-choix-3",
+            "text": "une"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Nous achetons des saucisses.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-saucisse",
+            "src": "/lib/images/grammaire/curriculum/sha256/7edc7f09aee3ec3cfd4eebf50b7e0eb24f6cefb7eac3ff00770a506a7b00b79f.webp",
+            "sha256": "7edc7f09aee3ec3cfd4eebf50b7e0eb24f6cefb7eac3ff00770a506a7b00b79f",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : saucisse. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/saucisse.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-quiche",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je choisis ___ quiche.",
+        "cue": "Au comptoir, vous choisissez une seule quiche pour le pique-nique. Nom : féminin singulier.",
+        "answers": [
+          "une"
+        ],
+        "options": [
+          {
+            "id": "quiche-choix-1",
+            "text": "une"
+          },
+          {
+            "id": "quiche-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "quiche-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je choisis une quiche.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-quiche",
+            "src": "/lib/images/grammaire/curriculum/sha256/fd95ccdd85b5f3e37a2ad1387f0929b1a2edc64b0e01b7f9188815a26f54da31.webp",
+            "sha256": "fd95ccdd85b5f3e37a2ad1387f0929b1a2edc64b0e01b7f9188815a26f54da31",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : quiche. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/quiche.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-brioche",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’apporte ___ brioche.",
+        "cue": "Pour le goûter, vous apportez une seule brioche achetée en chemin. Nom : féminin singulier.",
+        "answers": [
+          "une"
+        ],
+        "options": [
+          {
+            "id": "brioche-choix-1",
+            "text": "une"
+          },
+          {
+            "id": "brioche-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "brioche-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : J’apporte une brioche.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-brioche",
+            "src": "/lib/images/grammaire/curriculum/sha256/dba65f36a6445299a4b5f8d71fa77604ba557392b23ce553a3f8b16ab46127e8.webp",
+            "sha256": "dba65f36a6445299a4b5f8d71fa77604ba557392b23ce553a3f8b16ab46127e8",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : brioche. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/brioche.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-conserve",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je prends ___ conserve.",
+        "cue": "Pour compléter vos réserves, vous prenez une seule conserve. Nom : féminin singulier.",
+        "answers": [
+          "une"
+        ],
+        "options": [
+          {
+            "id": "conserve-choix-1",
+            "text": "une"
+          },
+          {
+            "id": "conserve-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "conserve-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je prends une conserve.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-conserve",
+            "src": "/lib/images/grammaire/curriculum/sha256/44c833d8e34ae42b5dcd5ddd0d0d0627f698541dc0f7fbf79ff15ed58d09a198.webp",
+            "sha256": "44c833d8e34ae42b5dcd5ddd0d0d0627f698541dc0f7fbf79ff15ed58d09a198",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : conserve. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/conserve.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-tartines",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Nous préparons ___ tartines.",
+        "cue": "Pour plusieurs personnes, vous préparez plus d’une tartine. Nom : féminin pluriel.",
+        "answers": [
+          "des"
+        ],
+        "options": [
+          {
+            "id": "tartines-choix-1",
+            "text": "des"
+          },
+          {
+            "id": "tartines-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "tartines-choix-3",
+            "text": "une"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Nous préparons des tartines.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-tartine",
+            "src": "/lib/images/grammaire/curriculum/sha256/c1d688478f66594b081eef47ba469af2f58002b94cc4d1820f7dcf182e917869.webp",
+            "sha256": "c1d688478f66594b081eef47ba469af2f58002b94cc4d1820f7dcf182e917869",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : tartine. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/tartine.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-wrap",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je commande ___ wrap.",
+        "cue": "Au déjeuner, vous commandez un seul wrap à emporter. Nom : masculin singulier.",
+        "answers": [
+          "un"
+        ],
+        "options": [
+          {
+            "id": "wrap-choix-1",
+            "text": "un"
+          },
+          {
+            "id": "wrap-choix-2",
+            "text": "une"
+          },
+          {
+            "id": "wrap-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je commande un wrap.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-wrap",
+            "src": "/lib/images/grammaire/curriculum/sha256/1107d03f75d3bf873078418633199fa2152f6bdcd51bade41224d09e29a55eee.webp",
+            "sha256": "1107d03f75d3bf873078418633199fa2152f6bdcd51bade41224d09e29a55eee",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : wrap. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/wrap.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-hamburger",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je voudrais ___ hamburger.",
+        "cue": "Dans votre rôle, vous souhaitez un seul hamburger, pas un menu complet. Nom : masculin singulier.",
+        "answers": [
+          "un"
+        ],
+        "options": [
+          {
+            "id": "hamburger-choix-1",
+            "text": "un"
+          },
+          {
+            "id": "hamburger-choix-2",
+            "text": "une"
+          },
+          {
+            "id": "hamburger-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je voudrais un hamburger.",
+        "imageSupports": [
+          {
+            "id": "aliments-aliments-hamburger",
+            "src": "/lib/images/grammaire/curriculum/sha256/cb7b38986ba6fa7ae73fa68fff6ed5764debdba0fc7427e9ccf1f984b237f723.webp",
+            "sha256": "cb7b38986ba6fa7ae73fa68fff6ed5764debdba0fc7427e9ccf1f984b237f723",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : hamburger. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/aliments/hamburger.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-pomme",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je prends ___ pomme.",
+        "cue": "Pour compléter votre goûter, vous choisissez un seul fruit de cette sorte. Nom : féminin singulier.",
+        "answers": [
+          "une"
+        ],
+        "options": [
+          {
+            "id": "pomme-choix-1",
+            "text": "une"
+          },
+          {
+            "id": "pomme-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "pomme-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je prends une pomme.",
+        "imageSupports": [
+          {
+            "id": "aliments-fruits-pomme",
+            "src": "/lib/images/grammaire/curriculum/sha256/2917d74b738562bd1cfae1359cecaa59a896774d309cc9de1fa42cc1b2fd49aa.webp",
+            "sha256": "2917d74b738562bd1cfae1359cecaa59a896774d309cc9de1fa42cc1b2fd49aa",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : pomme. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/fruits/pomme.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-poires",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je voudrais ___ poires.",
+        "cue": "Au marché, vous demandez plusieurs poires, sans indiquer lesquelles. Nom : féminin pluriel.",
+        "answers": [
+          "des"
+        ],
+        "options": [
+          {
+            "id": "poires-choix-1",
+            "text": "des"
+          },
+          {
+            "id": "poires-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "poires-choix-3",
+            "text": "une"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je voudrais des poires.",
+        "imageSupports": [
+          {
+            "id": "aliments-fruits-poire",
+            "src": "/lib/images/grammaire/curriculum/sha256/39d5e8bdc7624a13b452b0e11ed6c696da7bd01c8d04ddeb2548ca2836bf0065.webp",
+            "sha256": "39d5e8bdc7624a13b452b0e11ed6c696da7bd01c8d04ddeb2548ca2836bf0065",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : poire. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/fruits/poire.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-banane",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je mets ___ banane dans mon sac.",
+        "cue": "Avant de partir, vous mettez une seule banane dans votre sac. Nom : féminin singulier.",
+        "answers": [
+          "une"
+        ],
+        "options": [
+          {
+            "id": "banane-choix-1",
+            "text": "une"
+          },
+          {
+            "id": "banane-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "banane-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je mets une banane dans mon sac.",
+        "imageSupports": [
+          {
+            "id": "aliments-fruits-banane",
+            "src": "/lib/images/grammaire/curriculum/sha256/f35da213c1770026abaf4fafe598f4df202ebd6a470e64af8c0fff5604adcbb2.webp",
+            "sha256": "f35da213c1770026abaf4fafe598f4df202ebd6a470e64af8c0fff5604adcbb2",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : banane. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/fruits/banane.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-citron",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Il me faut ___ citron.",
+        "cue": "Pour une recette, vous avez besoin d’un seul citron entier. Nom : masculin singulier.",
+        "answers": [
+          "un"
+        ],
+        "options": [
+          {
+            "id": "citron-choix-1",
+            "text": "un"
+          },
+          {
+            "id": "citron-choix-2",
+            "text": "une"
+          },
+          {
+            "id": "citron-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Il me faut un citron.",
+        "imageSupports": [
+          {
+            "id": "aliments-fruits-citron",
+            "src": "/lib/images/grammaire/curriculum/sha256/335288a18ff542baa86c4be9fc6809229a11594faee8292216249803525f889d.webp",
+            "sha256": "335288a18ff542baa86c4be9fc6809229a11594faee8292216249803525f889d",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : citron. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/fruits/citron.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-oranges",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’achète ___ oranges.",
+        "cue": "Pour faire du jus, vous achetez plusieurs oranges. Nom : féminin pluriel.",
+        "answers": [
+          "des"
+        ],
+        "options": [
+          {
+            "id": "oranges-choix-1",
+            "text": "des"
+          },
+          {
+            "id": "oranges-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "oranges-choix-3",
+            "text": "une"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : J’achète des oranges.",
+        "imageSupports": [
+          {
+            "id": "aliments-fruits-oranges",
+            "src": "/lib/images/grammaire/curriculum/sha256/2702eee0e95c8541617872a2a9e2d0c91c2757031e029373e2fbbda085b7faa4.webp",
+            "sha256": "2702eee0e95c8541617872a2a9e2d0c91c2757031e029373e2fbbda085b7faa4",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : oranges. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/fruits/oranges.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-carottes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Nous prenons ___ carottes.",
+        "cue": "Pour une soupe de groupe, vous prenez plusieurs carottes. Nom : féminin pluriel.",
+        "answers": [
+          "des"
+        ],
+        "options": [
+          {
+            "id": "carottes-choix-1",
+            "text": "des"
+          },
+          {
+            "id": "carottes-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "carottes-choix-3",
+            "text": "une"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Nous prenons des carottes.",
+        "imageSupports": [
+          {
+            "id": "aliments-legumes-carotte",
+            "src": "/lib/images/grammaire/curriculum/sha256/f9ff33ea86d60f597e65ec9b715158d24894ac1f54fad9a89bee134c503865c4.webp",
+            "sha256": "f9ff33ea86d60f597e65ec9b715158d24894ac1f54fad9a89bee134c503865c4",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : carotte. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/legumes/carotte.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-poireau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’ajoute ___ poireau.",
+        "cue": "Vous ajoutez un seul poireau entier aux légumes prévus. Nom : masculin singulier.",
+        "answers": [
+          "un"
+        ],
+        "options": [
+          {
+            "id": "poireau-choix-1",
+            "text": "un"
+          },
+          {
+            "id": "poireau-choix-2",
+            "text": "une"
+          },
+          {
+            "id": "poireau-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : J’ajoute un poireau.",
+        "imageSupports": [
+          {
+            "id": "aliments-legumes-poireau",
+            "src": "/lib/images/grammaire/curriculum/sha256/8d9e1077575b3addc3fcab787a49d4e562d56d5271ac0eb1714c9c4d1da6fd98.webp",
+            "sha256": "8d9e1077575b3addc3fcab787a49d4e562d56d5271ac0eb1714c9c4d1da6fd98",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : poireau. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/legumes/poireau.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-tomates",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je choisis ___ tomates.",
+        "cue": "Pour la salade du repas, vous choisissez plusieurs tomates. Nom : féminin pluriel.",
+        "answers": [
+          "des"
+        ],
+        "options": [
+          {
+            "id": "tomates-choix-1",
+            "text": "des"
+          },
+          {
+            "id": "tomates-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "tomates-choix-3",
+            "text": "une"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je choisis des tomates.",
+        "imageSupports": [
+          {
+            "id": "aliments-legumes-tomate",
+            "src": "/lib/images/grammaire/curriculum/sha256/9ffca88af2f8377a015ff5f864e2e88d9df04005b238e71f7f39f85be4ddbe6e.webp",
+            "sha256": "9ffca88af2f8377a015ff5f864e2e88d9df04005b238e71f7f39f85be4ddbe6e",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : tomate. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/legumes/tomate.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-salade",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’achète ___ salade.",
+        "cue": "Au marché, vous achetez une seule salade entière, parmi plusieurs salades. Nom : féminin singulier.",
+        "answers": [
+          "une"
+        ],
+        "options": [
+          {
+            "id": "salade-choix-1",
+            "text": "une"
+          },
+          {
+            "id": "salade-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "salade-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : J’achète une salade.",
+        "imageSupports": [
+          {
+            "id": "aliments-legumes-salade",
+            "src": "/lib/images/grammaire/curriculum/sha256/72a0c00f64126931117b4d6963edfadd37936d99799b13fe33779b2efc8eef3d.webp",
+            "sha256": "72a0c00f64126931117b4d6963edfadd37936d99799b13fe33779b2efc8eef3d",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : salade. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/legumes/salade.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-pommes-terre",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je voudrais ___ pommes de terre.",
+        "cue": "Vous préparez une purée et demandez plusieurs pommes de terre. Nom : féminin pluriel.",
+        "answers": [
+          "des"
+        ],
+        "options": [
+          {
+            "id": "pommes-terre-choix-1",
+            "text": "des"
+          },
+          {
+            "id": "pommes-terre-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "pommes-terre-choix-3",
+            "text": "une"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je voudrais des pommes de terre.",
+        "imageSupports": [
+          {
+            "id": "aliments-legumes-pomme-de-terre",
+            "src": "/lib/images/grammaire/curriculum/sha256/70f06100849c13a2ce9495666e4ed4482e2d048051ad2e1c9f423e63ea5a63d0.webp",
+            "sha256": "70f06100849c13a2ce9495666e4ed4482e2d048051ad2e1c9f423e63ea5a63d0",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : pomme de terre. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/legumes/pomme-de-terre.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-bol",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je cherche ___ bol.",
+        "cue": "Pour servir votre soupe, vous cherchez un seul bol disponible. Nom : masculin singulier.",
+        "answers": [
+          "un"
+        ],
+        "options": [
+          {
+            "id": "bol-choix-1",
+            "text": "un"
+          },
+          {
+            "id": "bol-choix-2",
+            "text": "une"
+          },
+          {
+            "id": "bol-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je cherche un bol.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-bol",
+            "src": "/lib/images/grammaire/curriculum/sha256/e1f7d073cdd0695d3b495a276fe381e78c20aaad5fb13f660fb8d6f7a8efebf3.webp",
+            "sha256": "e1f7d073cdd0695d3b495a276fe381e78c20aaad5fb13f660fb8d6f7a8efebf3",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : bol. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/bol.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-assiette",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’ajoute ___ assiette.",
+        "cue": "Une personne arrive au repas. Vous ajoutez une seule assiette à la table. Nom : féminin singulier.",
+        "answers": [
+          "une"
+        ],
+        "options": [
+          {
+            "id": "assiette-choix-1",
+            "text": "une"
+          },
+          {
+            "id": "assiette-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "assiette-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : J’ajoute une assiette.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-assiette",
+            "src": "/lib/images/grammaire/curriculum/sha256/16757b567d42db7943316e08c8511cfb726e41a8b3d5c24afb212cb4431aede9.webp",
+            "sha256": "16757b567d42db7943316e08c8511cfb726e41a8b3d5c24afb212cb4431aede9",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : assiette. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/assiette.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-tasses",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je sors ___ tasses.",
+        "cue": "Plusieurs invités vont boire du thé. Vous sortez plusieurs tasses. Nom : féminin pluriel.",
+        "answers": [
+          "des"
+        ],
+        "options": [
+          {
+            "id": "tasses-choix-1",
+            "text": "des"
+          },
+          {
+            "id": "tasses-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "tasses-choix-3",
+            "text": "une"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je sors des tasses.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-tasse",
+            "src": "/lib/images/grammaire/curriculum/sha256/0d97986dc8c415b15d26dd84a76a729e567ecac36321fb99c7eaf3881e211445.webp",
+            "sha256": "0d97986dc8c415b15d26dd84a76a729e567ecac36321fb99c7eaf3881e211445",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : tasse. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/tasse.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-verre",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je voudrais ___ verre propre.",
+        "cue": "Vous voulez boire de l’eau et demandez un seul verre propre. Nom : masculin singulier.",
+        "answers": [
+          "un"
+        ],
+        "options": [
+          {
+            "id": "verre-choix-1",
+            "text": "un"
+          },
+          {
+            "id": "verre-choix-2",
+            "text": "une"
+          },
+          {
+            "id": "verre-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je voudrais un verre propre.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-verre",
+            "src": "/lib/images/grammaire/curriculum/sha256/e71b690fe4c4a782d1510e4a29c7ada929d420e6071be4253ef46b3595624a46.webp",
+            "sha256": "e71b690fe4c4a782d1510e4a29c7ada929d420e6071be4253ef46b3595624a46",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : verre. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/verre.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-fourchettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Nous prenons ___ fourchettes.",
+        "cue": "Vous mettez la table pour plusieurs personnes et prenez plusieurs fourchettes. Nom : féminin pluriel.",
+        "answers": [
+          "des"
+        ],
+        "options": [
+          {
+            "id": "fourchettes-choix-1",
+            "text": "des"
+          },
+          {
+            "id": "fourchettes-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "fourchettes-choix-3",
+            "text": "une"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Nous prenons des fourchettes.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-fourchette",
+            "src": "/lib/images/grammaire/curriculum/sha256/dfc05de144cb2215bbd2a484188082d94defda89a18920b5572a18060bd02d7e.webp",
+            "sha256": "dfc05de144cb2215bbd2a484188082d94defda89a18920b5572a18060bd02d7e",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : fourchette. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/fourchette.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-cuillere",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je demande ___ cuillère.",
+        "cue": "Pour remuer votre boisson, vous demandez une seule cuillère. Nom : féminin singulier.",
+        "answers": [
+          "une"
+        ],
+        "options": [
+          {
+            "id": "cuillere-choix-1",
+            "text": "une"
+          },
+          {
+            "id": "cuillere-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "cuillere-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je demande une cuillère.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-cuillere",
+            "src": "/lib/images/grammaire/curriculum/sha256/5a737c5a38bcdcdd15440b936d3f5246dd11e5bbbc8d90b76b6f4b35472a64fe.webp",
+            "sha256": "5a737c5a38bcdcdd15440b936d3f5246dd11e5bbbc8d90b76b6f4b35472a64fe",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : cuillere. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/cuillere.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-couteau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je cherche ___ couteau pour le pain.",
+        "cue": "Pour couper le pain, vous cherchez un seul couteau adapté. Nom : masculin singulier.",
+        "answers": [
+          "un"
+        ],
+        "options": [
+          {
+            "id": "couteau-choix-1",
+            "text": "un"
+          },
+          {
+            "id": "couteau-choix-2",
+            "text": "une"
+          },
+          {
+            "id": "couteau-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je cherche un couteau pour le pain.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-couteau",
+            "src": "/lib/images/grammaire/curriculum/sha256/71dcee97fe6503d3295498fe23af705e82c72e98c0f9c3dc29f52403a5932cc1.webp",
+            "sha256": "71dcee97fe6503d3295498fe23af705e82c72e98c0f9c3dc29f52403a5932cc1",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : couteau. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/couteau.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-pichet",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je remplis ___ pichet.",
+        "cue": "Pour apporter de l’eau à table, vous remplissez un seul pichet. Nom : masculin singulier.",
+        "answers": [
+          "un"
+        ],
+        "options": [
+          {
+            "id": "pichet-choix-1",
+            "text": "un"
+          },
+          {
+            "id": "pichet-choix-2",
+            "text": "une"
+          },
+          {
+            "id": "pichet-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je remplis un pichet.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-pichet",
+            "src": "/lib/images/grammaire/curriculum/sha256/baef0b86719da4b24213e8ec19ee2163cdfc2a6076890bb8c30ef6390c231599.webp",
+            "sha256": "baef0b86719da4b24213e8ec19ee2163cdfc2a6076890bb8c30ef6390c231599",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : pichet. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/pichet.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-rouleau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je choisis ___ rouleau à pâtisserie.",
+        "cue": "Pour étaler une pâte, vous choisissez un seul rouleau à pâtisserie. Nom : masculin singulier.",
+        "answers": [
+          "un"
+        ],
+        "options": [
+          {
+            "id": "rouleau-choix-1",
+            "text": "un"
+          },
+          {
+            "id": "rouleau-choix-2",
+            "text": "une"
+          },
+          {
+            "id": "rouleau-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je choisis un rouleau à pâtisserie.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-rouleau-a-patisserie",
+            "src": "/lib/images/grammaire/curriculum/sha256/a8b7d9d24df8dc22417e90e5df4923352698cd46ec060c1365a3341e313ba343.webp",
+            "sha256": "a8b7d9d24df8dc22417e90e5df4923352698cd46ec060c1365a3341e313ba343",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : rouleau a patisserie. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/rouleau-a-patisserie.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-nappe",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’installe ___ nappe propre.",
+        "cue": "Vous préparez la table et installez une seule nappe propre. Nom : féminin singulier.",
+        "answers": [
+          "une"
+        ],
+        "options": [
+          {
+            "id": "nappe-choix-1",
+            "text": "une"
+          },
+          {
+            "id": "nappe-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "nappe-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : J’installe une nappe propre.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-nappe",
+            "src": "/lib/images/grammaire/curriculum/sha256/da5a1b8d455b610795ca35b689f565c01e799a77c78d7c66f6dac3cf92dcecb4.webp",
+            "sha256": "da5a1b8d455b610795ca35b689f565c01e799a77c78d7c66f6dac3cf92dcecb4",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : nappe. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/nappe.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-saladier",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je voudrais ___ saladier.",
+        "cue": "Pour mélanger les crudités, vous demandez un seul saladier. Nom : masculin singulier.",
+        "answers": [
+          "un"
+        ],
+        "options": [
+          {
+            "id": "saladier-choix-1",
+            "text": "un"
+          },
+          {
+            "id": "saladier-choix-2",
+            "text": "une"
+          },
+          {
+            "id": "saladier-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je voudrais un saladier.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-saladier",
+            "src": "/lib/images/grammaire/curriculum/sha256/02e4a7a96982e6d88033c80dc4a1352fb81af4be77bdaba78961a4c36d2865e0.webp",
+            "sha256": "02e4a7a96982e6d88033c80dc4a1352fb81af4be77bdaba78961a4c36d2865e0",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : saladier. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/saladier.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-couvercle",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je cherche ___ couvercle.",
+        "cue": "Une casserole doit être couverte. Vous cherchez un couvercle qui convient. Nom : masculin singulier.",
+        "answers": [
+          "un"
+        ],
+        "options": [
+          {
+            "id": "couvercle-choix-1",
+            "text": "un"
+          },
+          {
+            "id": "couvercle-choix-2",
+            "text": "une"
+          },
+          {
+            "id": "couvercle-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je cherche un couvercle.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-couvercle",
+            "src": "/lib/images/grammaire/curriculum/sha256/8765d1debf485e93f4db7efc2b39525c184fa3a8173a262affd5f89569085b73.webp",
+            "sha256": "8765d1debf485e93f4db7efc2b39525c184fa3a8173a262affd5f89569085b73",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : couvercle. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/couvercle.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-passoire",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’utilise ___ passoire.",
+        "cue": "Pour égoutter les pâtes, vous utilisez une seule passoire. Nom : féminin singulier.",
+        "answers": [
+          "une"
+        ],
+        "options": [
+          {
+            "id": "passoire-choix-1",
+            "text": "une"
+          },
+          {
+            "id": "passoire-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "passoire-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : J’utilise une passoire.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-passoire",
+            "src": "/lib/images/grammaire/curriculum/sha256/d1ddb7bc573443bb45e0994a45b177ef28866c2b3c2cae48187c4e2a4d98fd77.webp",
+            "sha256": "d1ddb7bc573443bb45e0994a45b177ef28866c2b3c2cae48187c4e2a4d98fd77",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : passoire. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/passoire.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-bocal",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je prends ___ bocal vide.",
+        "cue": "Pour garder les biscuits, vous choisissez un seul bocal vide. Nom : masculin singulier.",
+        "answers": [
+          "un"
+        ],
+        "options": [
+          {
+            "id": "bocal-choix-1",
+            "text": "un"
+          },
+          {
+            "id": "bocal-choix-2",
+            "text": "une"
+          },
+          {
+            "id": "bocal-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je prends un bocal vide.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-bocal",
+            "src": "/lib/images/grammaire/curriculum/sha256/61011b0e57c15c150a757448ac6a1776293c19f3142734f0c6f274827a75849e.webp",
+            "sha256": "61011b0e57c15c150a757448ac6a1776293c19f3142734f0c6f274827a75849e",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : bocal. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/bocal.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-louche",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je voudrais ___ louche.",
+        "cue": "Pour servir la soupe, vous demandez une seule louche. Nom : féminin singulier.",
+        "answers": [
+          "une"
+        ],
+        "options": [
+          {
+            "id": "louche-choix-1",
+            "text": "une"
+          },
+          {
+            "id": "louche-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "louche-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je voudrais une louche.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-louche",
+            "src": "/lib/images/grammaire/curriculum/sha256/3a2f5fa1bb223a123d6c2395908c13a9e9c8f4490f3506a40955aa0d5d332307.webp",
+            "sha256": "3a2f5fa1bb223a123d6c2395908c13a9e9c8f4490f3506a40955aa0d5d332307",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : louche. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/louche.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-spatule",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je prends ___ spatule.",
+        "cue": "Pour retourner une préparation, vous prenez une seule spatule. Nom : féminin singulier.",
+        "answers": [
+          "une"
+        ],
+        "options": [
+          {
+            "id": "spatule-choix-1",
+            "text": "une"
+          },
+          {
+            "id": "spatule-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "spatule-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je prends une spatule.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-spatule",
+            "src": "/lib/images/grammaire/curriculum/sha256/d9fa1d1c8a129a961e31ae6eb32499c0a7f7d9b1f541f41e43d0a11e636d6524.webp",
+            "sha256": "d9fa1d1c8a129a961e31ae6eb32499c0a7f7d9b1f541f41e43d0a11e636d6524",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : spatule. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/spatule.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-entonnoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "J’utilise ___ entonnoir.",
+        "cue": "Pour remplir une bouteille sans verser à côté, vous utilisez un seul entonnoir. Nom : masculin singulier.",
+        "answers": [
+          "un"
+        ],
+        "options": [
+          {
+            "id": "entonnoir-choix-1",
+            "text": "un"
+          },
+          {
+            "id": "entonnoir-choix-2",
+            "text": "une"
+          },
+          {
+            "id": "entonnoir-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : J’utilise un entonnoir.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-entonnoir",
+            "src": "/lib/images/grammaire/curriculum/sha256/e3dad3def12e7d5b7ddc790146e1f3a341ea89490d230661e5ad462b7ed4c805.webp",
+            "sha256": "e3dad3def12e7d5b7ddc790146e1f3a341ea89490d230661e5ad462b7ed4c805",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : entonnoir. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/entonnoir.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-planche",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je pose ___ planche à découper.",
+        "cue": "Vous protégez la table avec une seule planche à découper. Nom : féminin singulier.",
+        "answers": [
+          "une"
+        ],
+        "options": [
+          {
+            "id": "planche-choix-1",
+            "text": "une"
+          },
+          {
+            "id": "planche-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "planche-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je pose une planche à découper.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-planche-à-découper",
+            "src": "/lib/images/grammaire/curriculum/sha256/63b9b84c33035d3054a3b27d68be1c82298b06da66e5287d4fcbc0881447b50f.webp",
+            "sha256": "63b9b84c33035d3054a3b27d68be1c82298b06da66e5287d4fcbc0881447b50f",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : planche à découper. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/planche-à-découper.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-doseur",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je cherche ___ doseur gradué.",
+        "cue": "Pour mesurer un liquide, vous cherchez un seul doseur gradué. Nom : masculin singulier.",
+        "answers": [
+          "un"
+        ],
+        "options": [
+          {
+            "id": "doseur-choix-1",
+            "text": "un"
+          },
+          {
+            "id": "doseur-choix-2",
+            "text": "une"
+          },
+          {
+            "id": "doseur-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je cherche un doseur gradué.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-doseur",
+            "src": "/lib/images/grammaire/curriculum/sha256/6745184280ad544ad8a0257d7250c524120b59bec7d18042b1b10a53492bd4c7.webp",
+            "sha256": "6745184280ad544ad8a0257d7250c524120b59bec7d18042b1b10a53492bd4c7",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : doseur. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/doseur.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-poele",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je choisis ___ poêle.",
+        "cue": "Pour cuire une petite portion, vous choisissez une seule poêle. Nom : féminin singulier.",
+        "answers": [
+          "une"
+        ],
+        "options": [
+          {
+            "id": "poele-choix-1",
+            "text": "une"
+          },
+          {
+            "id": "poele-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "poele-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je choisis une poêle.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-poele",
+            "src": "/lib/images/grammaire/curriculum/sha256/09fb5c87652e1f7aea29883c555f96a905bd55d051af203ac2008ee9d56463aa.webp",
+            "sha256": "09fb5c87652e1f7aea29883c555f96a905bd55d051af203ac2008ee9d56463aa",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : poele. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/poele.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-casserole",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je prends ___ casserole.",
+        "cue": "Pour chauffer de l’eau, vous prenez une seule casserole. Nom : féminin singulier.",
+        "answers": [
+          "une"
+        ],
+        "options": [
+          {
+            "id": "casserole-choix-1",
+            "text": "une"
+          },
+          {
+            "id": "casserole-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "casserole-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je prends une casserole.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-casserole",
+            "src": "/lib/images/grammaire/curriculum/sha256/625d8bacddb448472c66fe774a5b4baca0d47f64d45ab905f44204f13d4df7a7.webp",
+            "sha256": "625d8bacddb448472c66fe774a5b4baca0d47f64d45ab905f44204f13d4df7a7",
+            "width": 600,
+            "height": 450,
+            "alt": "Illustration du produit : casserole. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/casserole.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-plateau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je demande ___ plateau.",
+        "cue": "Pour transporter les tasses, vous demandez un seul plateau. Nom : masculin singulier.",
+        "answers": [
+          "un"
+        ],
+        "options": [
+          {
+            "id": "plateau-choix-1",
+            "text": "un"
+          },
+          {
+            "id": "plateau-choix-2",
+            "text": "une"
+          },
+          {
+            "id": "plateau-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je demande un plateau.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-plateau",
+            "src": "/lib/images/grammaire/curriculum/sha256/1e747bb01d3022a53fc1cb36e7c20e7c3c53d8c76d73724201a2fdefa756e6c3.webp",
+            "sha256": "1e747bb01d3022a53fc1cb36e7c20e7c3c53d8c76d73724201a2fdefa756e6c3",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : plateau. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/plateau.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-tabliers",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Nous distribuons ___ tabliers.",
+        "cue": "Plusieurs élèves cuisinent. Vous distribuez plusieurs tabliers. Nom : masculin pluriel.",
+        "answers": [
+          "des"
+        ],
+        "options": [
+          {
+            "id": "tabliers-choix-1",
+            "text": "des"
+          },
+          {
+            "id": "tabliers-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "tabliers-choix-3",
+            "text": "une"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Nous distribuons des tabliers.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-tablier",
+            "src": "/lib/images/grammaire/curriculum/sha256/a79aa909ffcbe2e638d971cdb6325a0a5c3b1c47c93fe98a4933db0ab8b76ad5.webp",
+            "sha256": "a79aa909ffcbe2e638d971cdb6325a0a5c3b1c47c93fe98a4933db0ab8b76ad5",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : tablier. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/tablier.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-theiere",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je remplis ___ théière.",
+        "cue": "Pour préparer du thé pour la table, vous remplissez une seule théière. Nom : féminin singulier.",
+        "answers": [
+          "une"
+        ],
+        "options": [
+          {
+            "id": "theiere-choix-1",
+            "text": "une"
+          },
+          {
+            "id": "theiere-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "theiere-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je remplis une théière.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-théière",
+            "src": "/lib/images/grammaire/curriculum/sha256/801bf5faddb189edc7844867a87e56536b9c977a9e377f1852f0c4c408152fc3.webp",
+            "sha256": "801bf5faddb189edc7844867a87e56536b9c977a9e377f1852f0c4c408152fc3",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : théière. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/théière.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-marmite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Nous utilisons ___ grande marmite.",
+        "cue": "Pour préparer le repas du groupe, vous utilisez une seule grande marmite. Nom : féminin singulier.",
+        "answers": [
+          "une"
+        ],
+        "options": [
+          {
+            "id": "marmite-choix-1",
+            "text": "une"
+          },
+          {
+            "id": "marmite-choix-2",
+            "text": "un"
+          },
+          {
+            "id": "marmite-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Nous utilisons une grande marmite.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-marmite",
+            "src": "/lib/images/grammaire/curriculum/sha256/373820bd6e6a0de6a6487efe0b2758bc58e3adbd7966f353d099a24af974a8ef.webp",
+            "sha256": "373820bd6e6a0de6a6487efe0b2758bc58e3adbd7966f353d099a24af974a8ef",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : marmite. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/marmite.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-ouvre-boite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je cherche ___ ouvre-boîte.",
+        "cue": "Une boîte de conserve doit être ouverte. Vous cherchez un seul ouvre-boîte. Nom : masculin singulier.",
+        "answers": [
+          "un"
+        ],
+        "options": [
+          {
+            "id": "ouvre-boite-choix-1",
+            "text": "un"
+          },
+          {
+            "id": "ouvre-boite-choix-2",
+            "text": "une"
+          },
+          {
+            "id": "ouvre-boite-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je cherche un ouvre-boîte.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-ouvre-boîte",
+            "src": "/lib/images/grammaire/curriculum/sha256/f468a557f92d74c51260f86158b70ed84289c68bb6dfe4e916185e2d7e818621.webp",
+            "sha256": "f468a557f92d74c51260f86158b70ed84289c68bb6dfe4e916185e2d7e818621",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : ouvre boîte. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/ouvre-boîte.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-g1-qcm-verbe-a1-fouet",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-qcm-verbe",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je prends ___ fouet de cuisine.",
+        "cue": "Pour battre les œufs, vous prenez un seul fouet de cuisine. Nom : masculin singulier.",
+        "answers": [
+          "un"
+        ],
+        "options": [
+          {
+            "id": "fouet-choix-1",
+            "text": "un"
+          },
+          {
+            "id": "fouet-choix-2",
+            "text": "une"
+          },
+          {
+            "id": "fouet-choix-3",
+            "text": "des"
+          }
+        ],
+        "explanation": "Un/une : singulier ; des : pluriel. Modèle : Je prends un fouet de cuisine.",
+        "imageSupports": [
+          {
+            "id": "aliments-cuisine-fouet",
+            "src": "/lib/images/grammaire/curriculum/sha256/c71771d6885b55c86bba85ef829d97623a6fbefe4841026dd37e9c208b039d11.webp",
+            "sha256": "c71771d6885b55c86bba85ef829d97623a6fbefe4841026dd37e9c208b039d11",
+            "width": 800,
+            "height": 600,
+            "alt": "Illustration du produit : fouet. Le nombre et la quantité demandés sont indiqués dans le texte.",
+            "source": {
+              "path": "/lib/images/vocabulaire/cuisine/fouet.webp",
+              "manifest": "docs/grammaire/implementation/aliments-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Image interne réemployée sans modification et relue visuellement. Support lexical : ni le nombre exact ni le conditionnement ne sont déduits de l’image ; le texte donne les quantités."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "aliments-2026-11-24-v1",
+    "activityId": "gram-ex-g1-curriculum-a",
+    "subthemeId": "g1",
+    "topic": "gram-aliments",
+    "level": "A1",
+    "label": "Associer",
+    "objective": "Choisir un, une ou des selon le genre et le nombre dans une situation illustrée.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Sources, formes et contextes relus ; réemploi explicite entre mécaniques. Images existantes conservées sous empreinte immuable. Modèles ouverts non exclusifs ; approbation enseignante en attente."
+    },
+    "presentations": [
+      "match"
+    ],
+    "instructions": {
+      "match": "Associez chaque phrase à l’article indéfini adapté à son nom et à son nombre."
+    },
+    "units": [
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-croissant",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 0,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "croissant-paire-1",
+            "left": "À la boulangerie, vous demandez une seule viennoiserie pour le petit-déjeuner. Nom : masculin singulier. Je voudrais ___ croissant.",
+            "right": "un",
+            "sourceId": "g1:croissant"
+          },
+          {
+            "id": "croissant-paire-2",
+            "left": "Pour le repas, vous achetez une seule baguette parmi celles du magasin. Nom : féminin singulier. J’achète ___ baguette.",
+            "right": "une",
+            "sourceId": "g1:baguette"
+          }
+        ],
+        "answers": [
+          "Je voudrais un croissant.\nJ’achète une baguette."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-baguette",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 1,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "baguette-paire-1",
+            "left": "Pour le repas, vous achetez une seule baguette parmi celles du magasin. Nom : féminin singulier. J’achète ___ baguette.",
+            "right": "une",
+            "sourceId": "g1:baguette"
+          },
+          {
+            "id": "baguette-paire-2",
+            "left": "Au rayon frais, vous choisissez un seul pot de yaourt. Nom : masculin singulier. Je prends ___ yaourt.",
+            "right": "un",
+            "sourceId": "g1:yaourt"
+          }
+        ],
+        "answers": [
+          "J’achète une baguette.\nJe prends un yaourt."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-yaourt",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 2,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "yaourt-paire-1",
+            "left": "Au rayon frais, vous choisissez un seul pot de yaourt. Nom : masculin singulier. Je prends ___ yaourt.",
+            "right": "un",
+            "sourceId": "g1:yaourt"
+          },
+          {
+            "id": "yaourt-paire-2",
+            "left": "Vous commandez une seule pizza à partager, sans désigner une pizza déjà préparée. Nom : féminin singulier. Nous commandons ___ pizza.",
+            "right": "une",
+            "sourceId": "g1:pizza"
+          }
+        ],
+        "answers": [
+          "Je prends un yaourt.\nNous commandons une pizza."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-pizza",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 3,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "pizza-paire-1",
+            "left": "Vous commandez une seule pizza à partager, sans désigner une pizza déjà préparée. Nom : féminin singulier. Nous commandons ___ pizza.",
+            "right": "une",
+            "sourceId": "g1:pizza"
+          },
+          {
+            "id": "pizza-paire-2",
+            "left": "Pour votre déjeuner à emporter, vous demandez un seul sandwich. Nom : masculin singulier. Je voudrais ___ sandwich.",
+            "right": "un",
+            "sourceId": "g1:sandwich"
+          }
+        ],
+        "answers": [
+          "Nous commandons une pizza.\nJe voudrais un sandwich."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-sandwich",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 4,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "sandwich-paire-1",
+            "left": "Pour votre déjeuner à emporter, vous demandez un seul sandwich. Nom : masculin singulier. Je voudrais ___ sandwich.",
+            "right": "un",
+            "sourceId": "g1:sandwich"
+          },
+          {
+            "id": "sandwich-paire-2",
+            "left": "Vous préparez une omelette et demandez plusieurs œufs. Le nombre est donné par le texte. Nom : masculin pluriel. Il me faut ___ œufs.",
+            "right": "des",
+            "sourceId": "g1:oeufs"
+          }
+        ],
+        "answers": [
+          "Je voudrais un sandwich.\nIl me faut des œufs."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-oeufs",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 5,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "oeufs-paire-1",
+            "left": "Vous préparez une omelette et demandez plusieurs œufs. Le nombre est donné par le texte. Nom : masculin pluriel. Il me faut ___ œufs.",
+            "right": "des",
+            "sourceId": "g1:oeufs"
+          },
+          {
+            "id": "oeufs-paire-2",
+            "left": "Au comptoir, vous choisissez une seule quiche pour le pique-nique. Nom : féminin singulier. Je choisis ___ quiche.",
+            "right": "une",
+            "sourceId": "g1:quiche"
+          }
+        ],
+        "answers": [
+          "Il me faut des œufs.\nJe choisis une quiche."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-saucisses",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 6,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "saucisses-paire-1",
+            "left": "Pour un repas de groupe, vous achetez plusieurs saucisses du même rayon. Nom : féminin pluriel. Nous achetons ___ saucisses.",
+            "right": "des",
+            "sourceId": "g1:saucisses"
+          },
+          {
+            "id": "saucisses-paire-2",
+            "left": "Au comptoir, vous choisissez une seule quiche pour le pique-nique. Nom : féminin singulier. Je choisis ___ quiche.",
+            "right": "une",
+            "sourceId": "g1:quiche"
+          }
+        ],
+        "answers": [
+          "Nous achetons des saucisses.\nJe choisis une quiche."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-quiche",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 7,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "quiche-paire-1",
+            "left": "Au comptoir, vous choisissez une seule quiche pour le pique-nique. Nom : féminin singulier. Je choisis ___ quiche.",
+            "right": "une",
+            "sourceId": "g1:quiche"
+          },
+          {
+            "id": "quiche-paire-2",
+            "left": "Pour plusieurs personnes, vous préparez plus d’une tartine. Nom : féminin pluriel. Nous préparons ___ tartines.",
+            "right": "des",
+            "sourceId": "g1:tartines"
+          }
+        ],
+        "answers": [
+          "Je choisis une quiche.\nNous préparons des tartines."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-brioche",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 8,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "brioche-paire-1",
+            "left": "Pour le goûter, vous apportez une seule brioche achetée en chemin. Nom : féminin singulier. J’apporte ___ brioche.",
+            "right": "une",
+            "sourceId": "g1:brioche"
+          },
+          {
+            "id": "brioche-paire-2",
+            "left": "Pour plusieurs personnes, vous préparez plus d’une tartine. Nom : féminin pluriel. Nous préparons ___ tartines.",
+            "right": "des",
+            "sourceId": "g1:tartines"
+          }
+        ],
+        "answers": [
+          "J’apporte une brioche.\nNous préparons des tartines."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-conserve",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 9,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "conserve-paire-1",
+            "left": "Pour compléter vos réserves, vous prenez une seule conserve. Nom : féminin singulier. Je prends ___ conserve.",
+            "right": "une",
+            "sourceId": "g1:conserve"
+          },
+          {
+            "id": "conserve-paire-2",
+            "left": "Pour plusieurs personnes, vous préparez plus d’une tartine. Nom : féminin pluriel. Nous préparons ___ tartines.",
+            "right": "des",
+            "sourceId": "g1:tartines"
+          }
+        ],
+        "answers": [
+          "Je prends une conserve.\nNous préparons des tartines."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-tartines",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 10,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "tartines-paire-1",
+            "left": "Pour plusieurs personnes, vous préparez plus d’une tartine. Nom : féminin pluriel. Nous préparons ___ tartines.",
+            "right": "des",
+            "sourceId": "g1:tartines"
+          },
+          {
+            "id": "tartines-paire-2",
+            "left": "Au déjeuner, vous commandez un seul wrap à emporter. Nom : masculin singulier. Je commande ___ wrap.",
+            "right": "un",
+            "sourceId": "g1:wrap"
+          }
+        ],
+        "answers": [
+          "Nous préparons des tartines.\nJe commande un wrap."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-wrap",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 11,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "wrap-paire-1",
+            "left": "Au déjeuner, vous commandez un seul wrap à emporter. Nom : masculin singulier. Je commande ___ wrap.",
+            "right": "un",
+            "sourceId": "g1:wrap"
+          },
+          {
+            "id": "wrap-paire-2",
+            "left": "Pour compléter votre goûter, vous choisissez un seul fruit de cette sorte. Nom : féminin singulier. Je prends ___ pomme.",
+            "right": "une",
+            "sourceId": "g1:pomme"
+          }
+        ],
+        "answers": [
+          "Je commande un wrap.\nJe prends une pomme."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-hamburger",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 12,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "hamburger-paire-1",
+            "left": "Dans votre rôle, vous souhaitez un seul hamburger, pas un menu complet. Nom : masculin singulier. Je voudrais ___ hamburger.",
+            "right": "un",
+            "sourceId": "g1:hamburger"
+          },
+          {
+            "id": "hamburger-paire-2",
+            "left": "Pour compléter votre goûter, vous choisissez un seul fruit de cette sorte. Nom : féminin singulier. Je prends ___ pomme.",
+            "right": "une",
+            "sourceId": "g1:pomme"
+          }
+        ],
+        "answers": [
+          "Je voudrais un hamburger.\nJe prends une pomme."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-pomme",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 13,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "pomme-paire-1",
+            "left": "Pour compléter votre goûter, vous choisissez un seul fruit de cette sorte. Nom : féminin singulier. Je prends ___ pomme.",
+            "right": "une",
+            "sourceId": "g1:pomme"
+          },
+          {
+            "id": "pomme-paire-2",
+            "left": "Au marché, vous demandez plusieurs poires, sans indiquer lesquelles. Nom : féminin pluriel. Je voudrais ___ poires.",
+            "right": "des",
+            "sourceId": "g1:poires"
+          }
+        ],
+        "answers": [
+          "Je prends une pomme.\nJe voudrais des poires."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-poires",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 14,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "poires-paire-1",
+            "left": "Au marché, vous demandez plusieurs poires, sans indiquer lesquelles. Nom : féminin pluriel. Je voudrais ___ poires.",
+            "right": "des",
+            "sourceId": "g1:poires"
+          },
+          {
+            "id": "poires-paire-2",
+            "left": "Avant de partir, vous mettez une seule banane dans votre sac. Nom : féminin singulier. Je mets ___ banane dans mon sac.",
+            "right": "une",
+            "sourceId": "g1:banane"
+          }
+        ],
+        "answers": [
+          "Je voudrais des poires.\nJe mets une banane dans mon sac."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-banane",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 15,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "banane-paire-1",
+            "left": "Avant de partir, vous mettez une seule banane dans votre sac. Nom : féminin singulier. Je mets ___ banane dans mon sac.",
+            "right": "une",
+            "sourceId": "g1:banane"
+          },
+          {
+            "id": "banane-paire-2",
+            "left": "Pour une recette, vous avez besoin d’un seul citron entier. Nom : masculin singulier. Il me faut ___ citron.",
+            "right": "un",
+            "sourceId": "g1:citron"
+          }
+        ],
+        "answers": [
+          "Je mets une banane dans mon sac.\nIl me faut un citron."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-citron",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 16,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "citron-paire-1",
+            "left": "Pour une recette, vous avez besoin d’un seul citron entier. Nom : masculin singulier. Il me faut ___ citron.",
+            "right": "un",
+            "sourceId": "g1:citron"
+          },
+          {
+            "id": "citron-paire-2",
+            "left": "Pour faire du jus, vous achetez plusieurs oranges. Nom : féminin pluriel. J’achète ___ oranges.",
+            "right": "des",
+            "sourceId": "g1:oranges"
+          }
+        ],
+        "answers": [
+          "Il me faut un citron.\nJ’achète des oranges."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-oranges",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 17,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "oranges-paire-1",
+            "left": "Pour faire du jus, vous achetez plusieurs oranges. Nom : féminin pluriel. J’achète ___ oranges.",
+            "right": "des",
+            "sourceId": "g1:oranges"
+          },
+          {
+            "id": "oranges-paire-2",
+            "left": "Vous ajoutez un seul poireau entier aux légumes prévus. Nom : masculin singulier. J’ajoute ___ poireau.",
+            "right": "un",
+            "sourceId": "g1:poireau"
+          }
+        ],
+        "answers": [
+          "J’achète des oranges.\nJ’ajoute un poireau."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-carottes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 18,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "carottes-paire-1",
+            "left": "Pour une soupe de groupe, vous prenez plusieurs carottes. Nom : féminin pluriel. Nous prenons ___ carottes.",
+            "right": "des",
+            "sourceId": "g1:carottes"
+          },
+          {
+            "id": "carottes-paire-2",
+            "left": "Vous ajoutez un seul poireau entier aux légumes prévus. Nom : masculin singulier. J’ajoute ___ poireau.",
+            "right": "un",
+            "sourceId": "g1:poireau"
+          }
+        ],
+        "answers": [
+          "Nous prenons des carottes.\nJ’ajoute un poireau."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-poireau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 19,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "poireau-paire-1",
+            "left": "Vous ajoutez un seul poireau entier aux légumes prévus. Nom : masculin singulier. J’ajoute ___ poireau.",
+            "right": "un",
+            "sourceId": "g1:poireau"
+          },
+          {
+            "id": "poireau-paire-2",
+            "left": "Pour la salade du repas, vous choisissez plusieurs tomates. Nom : féminin pluriel. Je choisis ___ tomates.",
+            "right": "des",
+            "sourceId": "g1:tomates"
+          }
+        ],
+        "answers": [
+          "J’ajoute un poireau.\nJe choisis des tomates."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-tomates",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 20,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "tomates-paire-1",
+            "left": "Pour la salade du repas, vous choisissez plusieurs tomates. Nom : féminin pluriel. Je choisis ___ tomates.",
+            "right": "des",
+            "sourceId": "g1:tomates"
+          },
+          {
+            "id": "tomates-paire-2",
+            "left": "Au marché, vous achetez une seule salade entière, parmi plusieurs salades. Nom : féminin singulier. J’achète ___ salade.",
+            "right": "une",
+            "sourceId": "g1:salade"
+          }
+        ],
+        "answers": [
+          "Je choisis des tomates.\nJ’achète une salade."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-salade",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 21,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "salade-paire-1",
+            "left": "Au marché, vous achetez une seule salade entière, parmi plusieurs salades. Nom : féminin singulier. J’achète ___ salade.",
+            "right": "une",
+            "sourceId": "g1:salade"
+          },
+          {
+            "id": "salade-paire-2",
+            "left": "Vous préparez une purée et demandez plusieurs pommes de terre. Nom : féminin pluriel. Je voudrais ___ pommes de terre.",
+            "right": "des",
+            "sourceId": "g1:pommes-terre"
+          }
+        ],
+        "answers": [
+          "J’achète une salade.\nJe voudrais des pommes de terre."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-pommes-terre",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 22,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "pommes-terre-paire-1",
+            "left": "Vous préparez une purée et demandez plusieurs pommes de terre. Nom : féminin pluriel. Je voudrais ___ pommes de terre.",
+            "right": "des",
+            "sourceId": "g1:pommes-terre"
+          },
+          {
+            "id": "pommes-terre-paire-2",
+            "left": "Pour servir votre soupe, vous cherchez un seul bol disponible. Nom : masculin singulier. Je cherche ___ bol.",
+            "right": "un",
+            "sourceId": "g1:bol"
+          }
+        ],
+        "answers": [
+          "Je voudrais des pommes de terre.\nJe cherche un bol."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-bol",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 23,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "bol-paire-1",
+            "left": "Pour servir votre soupe, vous cherchez un seul bol disponible. Nom : masculin singulier. Je cherche ___ bol.",
+            "right": "un",
+            "sourceId": "g1:bol"
+          },
+          {
+            "id": "bol-paire-2",
+            "left": "Une personne arrive au repas. Vous ajoutez une seule assiette à la table. Nom : féminin singulier. J’ajoute ___ assiette.",
+            "right": "une",
+            "sourceId": "g1:assiette"
+          }
+        ],
+        "answers": [
+          "Je cherche un bol.\nJ’ajoute une assiette."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-assiette",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 24,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "assiette-paire-1",
+            "left": "Une personne arrive au repas. Vous ajoutez une seule assiette à la table. Nom : féminin singulier. J’ajoute ___ assiette.",
+            "right": "une",
+            "sourceId": "g1:assiette"
+          },
+          {
+            "id": "assiette-paire-2",
+            "left": "Plusieurs invités vont boire du thé. Vous sortez plusieurs tasses. Nom : féminin pluriel. Je sors ___ tasses.",
+            "right": "des",
+            "sourceId": "g1:tasses"
+          }
+        ],
+        "answers": [
+          "J’ajoute une assiette.\nJe sors des tasses."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-tasses",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 25,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "tasses-paire-1",
+            "left": "Plusieurs invités vont boire du thé. Vous sortez plusieurs tasses. Nom : féminin pluriel. Je sors ___ tasses.",
+            "right": "des",
+            "sourceId": "g1:tasses"
+          },
+          {
+            "id": "tasses-paire-2",
+            "left": "Vous voulez boire de l’eau et demandez un seul verre propre. Nom : masculin singulier. Je voudrais ___ verre propre.",
+            "right": "un",
+            "sourceId": "g1:verre"
+          }
+        ],
+        "answers": [
+          "Je sors des tasses.\nJe voudrais un verre propre."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-verre",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 26,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "verre-paire-1",
+            "left": "Vous voulez boire de l’eau et demandez un seul verre propre. Nom : masculin singulier. Je voudrais ___ verre propre.",
+            "right": "un",
+            "sourceId": "g1:verre"
+          },
+          {
+            "id": "verre-paire-2",
+            "left": "Vous mettez la table pour plusieurs personnes et prenez plusieurs fourchettes. Nom : féminin pluriel. Nous prenons ___ fourchettes.",
+            "right": "des",
+            "sourceId": "g1:fourchettes"
+          }
+        ],
+        "answers": [
+          "Je voudrais un verre propre.\nNous prenons des fourchettes."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-fourchettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 27,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "fourchettes-paire-1",
+            "left": "Vous mettez la table pour plusieurs personnes et prenez plusieurs fourchettes. Nom : féminin pluriel. Nous prenons ___ fourchettes.",
+            "right": "des",
+            "sourceId": "g1:fourchettes"
+          },
+          {
+            "id": "fourchettes-paire-2",
+            "left": "Pour remuer votre boisson, vous demandez une seule cuillère. Nom : féminin singulier. Je demande ___ cuillère.",
+            "right": "une",
+            "sourceId": "g1:cuillere"
+          }
+        ],
+        "answers": [
+          "Nous prenons des fourchettes.\nJe demande une cuillère."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-cuillere",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 28,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "cuillere-paire-1",
+            "left": "Pour remuer votre boisson, vous demandez une seule cuillère. Nom : féminin singulier. Je demande ___ cuillère.",
+            "right": "une",
+            "sourceId": "g1:cuillere"
+          },
+          {
+            "id": "cuillere-paire-2",
+            "left": "Pour couper le pain, vous cherchez un seul couteau adapté. Nom : masculin singulier. Je cherche ___ couteau pour le pain.",
+            "right": "un",
+            "sourceId": "g1:couteau"
+          }
+        ],
+        "answers": [
+          "Je demande une cuillère.\nJe cherche un couteau pour le pain."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-couteau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 29,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "couteau-paire-1",
+            "left": "Pour couper le pain, vous cherchez un seul couteau adapté. Nom : masculin singulier. Je cherche ___ couteau pour le pain.",
+            "right": "un",
+            "sourceId": "g1:couteau"
+          },
+          {
+            "id": "couteau-paire-2",
+            "left": "Vous préparez la table et installez une seule nappe propre. Nom : féminin singulier. J’installe ___ nappe propre.",
+            "right": "une",
+            "sourceId": "g1:nappe"
+          }
+        ],
+        "answers": [
+          "Je cherche un couteau pour le pain.\nJ’installe une nappe propre."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-pichet",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 30,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "pichet-paire-1",
+            "left": "Pour apporter de l’eau à table, vous remplissez un seul pichet. Nom : masculin singulier. Je remplis ___ pichet.",
+            "right": "un",
+            "sourceId": "g1:pichet"
+          },
+          {
+            "id": "pichet-paire-2",
+            "left": "Vous préparez la table et installez une seule nappe propre. Nom : féminin singulier. J’installe ___ nappe propre.",
+            "right": "une",
+            "sourceId": "g1:nappe"
+          }
+        ],
+        "answers": [
+          "Je remplis un pichet.\nJ’installe une nappe propre."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-rouleau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 31,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "rouleau-paire-1",
+            "left": "Pour étaler une pâte, vous choisissez un seul rouleau à pâtisserie. Nom : masculin singulier. Je choisis ___ rouleau à pâtisserie.",
+            "right": "un",
+            "sourceId": "g1:rouleau"
+          },
+          {
+            "id": "rouleau-paire-2",
+            "left": "Vous préparez la table et installez une seule nappe propre. Nom : féminin singulier. J’installe ___ nappe propre.",
+            "right": "une",
+            "sourceId": "g1:nappe"
+          }
+        ],
+        "answers": [
+          "Je choisis un rouleau à pâtisserie.\nJ’installe une nappe propre."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-nappe",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 32,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "nappe-paire-1",
+            "left": "Vous préparez la table et installez une seule nappe propre. Nom : féminin singulier. J’installe ___ nappe propre.",
+            "right": "une",
+            "sourceId": "g1:nappe"
+          },
+          {
+            "id": "nappe-paire-2",
+            "left": "Pour mélanger les crudités, vous demandez un seul saladier. Nom : masculin singulier. Je voudrais ___ saladier.",
+            "right": "un",
+            "sourceId": "g1:saladier"
+          }
+        ],
+        "answers": [
+          "J’installe une nappe propre.\nJe voudrais un saladier."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-saladier",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 33,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "saladier-paire-1",
+            "left": "Pour mélanger les crudités, vous demandez un seul saladier. Nom : masculin singulier. Je voudrais ___ saladier.",
+            "right": "un",
+            "sourceId": "g1:saladier"
+          },
+          {
+            "id": "saladier-paire-2",
+            "left": "Pour égoutter les pâtes, vous utilisez une seule passoire. Nom : féminin singulier. J’utilise ___ passoire.",
+            "right": "une",
+            "sourceId": "g1:passoire"
+          }
+        ],
+        "answers": [
+          "Je voudrais un saladier.\nJ’utilise une passoire."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-couvercle",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 34,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "couvercle-paire-1",
+            "left": "Une casserole doit être couverte. Vous cherchez un couvercle qui convient. Nom : masculin singulier. Je cherche ___ couvercle.",
+            "right": "un",
+            "sourceId": "g1:couvercle"
+          },
+          {
+            "id": "couvercle-paire-2",
+            "left": "Pour égoutter les pâtes, vous utilisez une seule passoire. Nom : féminin singulier. J’utilise ___ passoire.",
+            "right": "une",
+            "sourceId": "g1:passoire"
+          }
+        ],
+        "answers": [
+          "Je cherche un couvercle.\nJ’utilise une passoire."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-passoire",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 35,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "passoire-paire-1",
+            "left": "Pour égoutter les pâtes, vous utilisez une seule passoire. Nom : féminin singulier. J’utilise ___ passoire.",
+            "right": "une",
+            "sourceId": "g1:passoire"
+          },
+          {
+            "id": "passoire-paire-2",
+            "left": "Pour garder les biscuits, vous choisissez un seul bocal vide. Nom : masculin singulier. Je prends ___ bocal vide.",
+            "right": "un",
+            "sourceId": "g1:bocal"
+          }
+        ],
+        "answers": [
+          "J’utilise une passoire.\nJe prends un bocal vide."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-bocal",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 36,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "bocal-paire-1",
+            "left": "Pour garder les biscuits, vous choisissez un seul bocal vide. Nom : masculin singulier. Je prends ___ bocal vide.",
+            "right": "un",
+            "sourceId": "g1:bocal"
+          },
+          {
+            "id": "bocal-paire-2",
+            "left": "Pour servir la soupe, vous demandez une seule louche. Nom : féminin singulier. Je voudrais ___ louche.",
+            "right": "une",
+            "sourceId": "g1:louche"
+          }
+        ],
+        "answers": [
+          "Je prends un bocal vide.\nJe voudrais une louche."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-louche",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 37,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "louche-paire-1",
+            "left": "Pour servir la soupe, vous demandez une seule louche. Nom : féminin singulier. Je voudrais ___ louche.",
+            "right": "une",
+            "sourceId": "g1:louche"
+          },
+          {
+            "id": "louche-paire-2",
+            "left": "Pour remplir une bouteille sans verser à côté, vous utilisez un seul entonnoir. Nom : masculin singulier. J’utilise ___ entonnoir.",
+            "right": "un",
+            "sourceId": "g1:entonnoir"
+          }
+        ],
+        "answers": [
+          "Je voudrais une louche.\nJ’utilise un entonnoir."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-spatule",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 38,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "spatule-paire-1",
+            "left": "Pour retourner une préparation, vous prenez une seule spatule. Nom : féminin singulier. Je prends ___ spatule.",
+            "right": "une",
+            "sourceId": "g1:spatule"
+          },
+          {
+            "id": "spatule-paire-2",
+            "left": "Pour remplir une bouteille sans verser à côté, vous utilisez un seul entonnoir. Nom : masculin singulier. J’utilise ___ entonnoir.",
+            "right": "un",
+            "sourceId": "g1:entonnoir"
+          }
+        ],
+        "answers": [
+          "Je prends une spatule.\nJ’utilise un entonnoir."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-entonnoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 39,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "entonnoir-paire-1",
+            "left": "Pour remplir une bouteille sans verser à côté, vous utilisez un seul entonnoir. Nom : masculin singulier. J’utilise ___ entonnoir.",
+            "right": "un",
+            "sourceId": "g1:entonnoir"
+          },
+          {
+            "id": "entonnoir-paire-2",
+            "left": "Vous protégez la table avec une seule planche à découper. Nom : féminin singulier. Je pose ___ planche à découper.",
+            "right": "une",
+            "sourceId": "g1:planche"
+          }
+        ],
+        "answers": [
+          "J’utilise un entonnoir.\nJe pose une planche à découper."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-planche",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 40,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "planche-paire-1",
+            "left": "Vous protégez la table avec une seule planche à découper. Nom : féminin singulier. Je pose ___ planche à découper.",
+            "right": "une",
+            "sourceId": "g1:planche"
+          },
+          {
+            "id": "planche-paire-2",
+            "left": "Pour mesurer un liquide, vous cherchez un seul doseur gradué. Nom : masculin singulier. Je cherche ___ doseur gradué.",
+            "right": "un",
+            "sourceId": "g1:doseur"
+          }
+        ],
+        "answers": [
+          "Je pose une planche à découper.\nJe cherche un doseur gradué."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-doseur",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 41,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "doseur-paire-1",
+            "left": "Pour mesurer un liquide, vous cherchez un seul doseur gradué. Nom : masculin singulier. Je cherche ___ doseur gradué.",
+            "right": "un",
+            "sourceId": "g1:doseur"
+          },
+          {
+            "id": "doseur-paire-2",
+            "left": "Pour cuire une petite portion, vous choisissez une seule poêle. Nom : féminin singulier. Je choisis ___ poêle.",
+            "right": "une",
+            "sourceId": "g1:poele"
+          }
+        ],
+        "answers": [
+          "Je cherche un doseur gradué.\nJe choisis une poêle."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-poele",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 42,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "poele-paire-1",
+            "left": "Pour cuire une petite portion, vous choisissez une seule poêle. Nom : féminin singulier. Je choisis ___ poêle.",
+            "right": "une",
+            "sourceId": "g1:poele"
+          },
+          {
+            "id": "poele-paire-2",
+            "left": "Pour transporter les tasses, vous demandez un seul plateau. Nom : masculin singulier. Je demande ___ plateau.",
+            "right": "un",
+            "sourceId": "g1:plateau"
+          }
+        ],
+        "answers": [
+          "Je choisis une poêle.\nJe demande un plateau."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-casserole",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 43,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "casserole-paire-1",
+            "left": "Pour chauffer de l’eau, vous prenez une seule casserole. Nom : féminin singulier. Je prends ___ casserole.",
+            "right": "une",
+            "sourceId": "g1:casserole"
+          },
+          {
+            "id": "casserole-paire-2",
+            "left": "Pour transporter les tasses, vous demandez un seul plateau. Nom : masculin singulier. Je demande ___ plateau.",
+            "right": "un",
+            "sourceId": "g1:plateau"
+          }
+        ],
+        "answers": [
+          "Je prends une casserole.\nJe demande un plateau."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-plateau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 44,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "plateau-paire-1",
+            "left": "Pour transporter les tasses, vous demandez un seul plateau. Nom : masculin singulier. Je demande ___ plateau.",
+            "right": "un",
+            "sourceId": "g1:plateau"
+          },
+          {
+            "id": "plateau-paire-2",
+            "left": "Plusieurs élèves cuisinent. Vous distribuez plusieurs tabliers. Nom : masculin pluriel. Nous distribuons ___ tabliers.",
+            "right": "des",
+            "sourceId": "g1:tabliers"
+          }
+        ],
+        "answers": [
+          "Je demande un plateau.\nNous distribuons des tabliers."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-tabliers",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 45,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "tabliers-paire-1",
+            "left": "Plusieurs élèves cuisinent. Vous distribuez plusieurs tabliers. Nom : masculin pluriel. Nous distribuons ___ tabliers.",
+            "right": "des",
+            "sourceId": "g1:tabliers"
+          },
+          {
+            "id": "tabliers-paire-2",
+            "left": "Pour préparer du thé pour la table, vous remplissez une seule théière. Nom : féminin singulier. Je remplis ___ théière.",
+            "right": "une",
+            "sourceId": "g1:theiere"
+          }
+        ],
+        "answers": [
+          "Nous distribuons des tabliers.\nJe remplis une théière."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-theiere",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 46,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "theiere-paire-1",
+            "left": "Pour préparer du thé pour la table, vous remplissez une seule théière. Nom : féminin singulier. Je remplis ___ théière.",
+            "right": "une",
+            "sourceId": "g1:theiere"
+          },
+          {
+            "id": "theiere-paire-2",
+            "left": "Une boîte de conserve doit être ouverte. Vous cherchez un seul ouvre-boîte. Nom : masculin singulier. Je cherche ___ ouvre-boîte.",
+            "right": "un",
+            "sourceId": "g1:ouvre-boite"
+          }
+        ],
+        "answers": [
+          "Je remplis une théière.\nJe cherche un ouvre-boîte."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-marmite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 47,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "marmite-paire-1",
+            "left": "Pour préparer le repas du groupe, vous utilisez une seule grande marmite. Nom : féminin singulier. Nous utilisons ___ grande marmite.",
+            "right": "une",
+            "sourceId": "g1:marmite"
+          },
+          {
+            "id": "marmite-paire-2",
+            "left": "Une boîte de conserve doit être ouverte. Vous cherchez un seul ouvre-boîte. Nom : masculin singulier. Je cherche ___ ouvre-boîte.",
+            "right": "un",
+            "sourceId": "g1:ouvre-boite"
+          }
+        ],
+        "answers": [
+          "Nous utilisons une grande marmite.\nJe cherche un ouvre-boîte."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-ouvre-boite",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 48,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "ouvre-boite-paire-1",
+            "left": "Une boîte de conserve doit être ouverte. Vous cherchez un seul ouvre-boîte. Nom : masculin singulier. Je cherche ___ ouvre-boîte.",
+            "right": "un",
+            "sourceId": "g1:ouvre-boite"
+          },
+          {
+            "id": "ouvre-boite-paire-2",
+            "left": "Pour le repas, vous achetez une seule baguette parmi celles du magasin. Nom : féminin singulier. J’achète ___ baguette.",
+            "right": "une",
+            "sourceId": "g1:baguette"
+          }
+        ],
+        "answers": [
+          "Je cherche un ouvre-boîte.\nJ’achète une baguette."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      },
+      {
+        "id": "gram-ex-g1-curriculum-a-a1-fouet",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+          "typeId": "gram-ex-g1-curriculum-a",
+          "position": 49,
+          "partition": "a1"
+        },
+        "kind": "match",
+        "prompt": "Deux situations indépendantes.",
+        "pairs": [
+          {
+            "id": "fouet-paire-1",
+            "left": "Pour battre les œufs, vous prenez un seul fouet de cuisine. Nom : masculin singulier. Je prends ___ fouet de cuisine.",
+            "right": "un",
+            "sourceId": "g1:fouet"
+          },
+          {
+            "id": "fouet-paire-2",
+            "left": "Pour le repas, vous achetez une seule baguette parmi celles du magasin. Nom : féminin singulier. J’achète ___ baguette.",
+            "right": "une",
+            "sourceId": "g1:baguette"
+          }
+        ],
+        "answers": [
+          "Je prends un fouet de cuisine.\nJ’achète une baguette."
+        ],
+        "explanation": "Chaque phrase garde son genre et son nombre ; associez les articles correspondants."
+      }
+    ]
+  }
+]

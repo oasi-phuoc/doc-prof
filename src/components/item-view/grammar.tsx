@@ -16,7 +16,7 @@ export function GrammarQuestionView({ question:q, mode }: {question:GrammarQuest
   if (u.kind==='production') return <GrammarProductionView unit={u} mode={mode}/>
   if (u.kind==='scenario') return <GrammarScenarioView question={q} mode={mode}/>
   const comparisonGap=u.kind==='completion'&&u.source.typeId==='gram-ex-f9-qcm-verbe'&&q.presentation==='gap'
-  const nounGap=u.kind==='completion'&&(['gram-ex-f12-qcm-verbe','gram-ex-f13-qcm-verbe'].includes(u.source.typeId)||u.source.typeId==='gram-ex-f11-qcm-conj'&&u.source.partition==='a2')&&q.presentation==='gap'
+  const nounGap=u.kind==='completion'&&(['gram-ex-f12-qcm-verbe','gram-ex-f13-qcm-verbe','gram-ex-g4-qcm-verbe'].includes(u.source.typeId)||['gram-ex-f11-qcm-conj','gram-ex-g6-qcm-verbe'].includes(u.source.typeId)&&u.source.partition==='a2')&&q.presentation==='gap'
   return <div className={`grammar-question${u.responseLines===2?' grammar-two-lines':''}${comparisonGap?' grammar-comparison-gap'+(u.source.partition==='a2'?' grammar-comparison-gap-a2':''):''}${nounGap?' grammar-noun-group-gap':''}`}>
     <GrammarImageSupports supports={u.imageSupports}/>
     {u.cue?<p className="grammar-cue">{u.cue}</p>:null}

@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-24",
+  "timezone": "Europe/Zurich",
+  "baseCommit": "8b8421584",
+  "status": "passed_for_pilot_human_approval_pending",
+  "scope": "Parler des aliments only; gamemode development paused.",
+  "delivery": {
+    "theme": "Parler des aliments",
+    "notions": [
+      "g1",
+      "g2",
+      "g3",
+      "g4",
+      "g5",
+      "g6"
+    ],
+    "notionLevelPairs": 7,
+    "activities": 19,
+    "banks": 20,
+    "offerings": 27,
+    "plannedOfferings": 27,
+    "units": 970,
+    "variants": 1360,
+    "authoredSourceRows": 350,
+    "readingDocuments": 20,
+    "readingQuestions": 60,
+    "readingSourceReuse": "20 of the 50 quantity situations, not 20 additional stories",
+    "teacherApprovedUnits": 0
+  },
+  "checks": {
+    "authoredContentAndCanonicalErrorSpans": "passed: 150 exact correction intervals",
+    "isolatedDeterministicRebuild": "passed",
+    "globalVariants": 18780,
+    "protectedTheoryAndCoFiles": 276,
+    "upstreamTcfGalleryAndInteractiveContent": "preserved exactly",
+    "previousConseillerDecrireAndDemanderRegressions": "passed",
+    "typescript": "passed",
+    "productionBuild": "passed",
+    "lint": "passed with existing warnings",
+    "existingGameCatalogBuildGate": "passed: unchanged 765 entries; no game feature added",
+    "browser": {
+      "status": "passed",
+      "offerings": 27,
+      "renderedQuestionUnits": 2720,
+      "renderedAnswerFields": 2920,
+      "worstFirstPageBudget": "Student and correction budgets include the full first-page header; reading supports and child questions measured separately.",
+      "server": "Vite preview of final production build after merging 3144b6a2a",
+      "sheets": 2420,
+      "horizontalOverflow": false,
+      "footerOverflow": false,
+      "errors": []
+    },
+    "actualPdfPreviews": 15,
+    "secretScan": {
+      "status": "passed after upstream integration",
+      "tool": "Gitleaks 8.30.1",
+      "changedFiles": 7192,
+      "findings": 0,
+      "canarySelfTest": "passed: synthetic credentials and arbitrary hashes remain detected",
+      "scope": "Commits depuis le jalon C0 et fichiers modifiés/non suivis actuels. Les secrets historiques préexistants et le bundle complet exigent encore la migration d’authentification F22 ; ce contrôle ne certifie pas leur absence.",
+      "commitAtFullScan": "3144b6a2a"
+    },
+    "pdfRasterWarnings": "Poppler reported Type 3 glyph bounding-box warnings. Selected text, checkboxes, images and page boundaries were visually reviewed.",
+    "finalIntegration": {
+      "commit": "8b8421584",
+      "upstreamApplicationChange": "Gallery catalogue JSON and public images; grammar sources remain byte-identical to the full-suite build.",
+      "productionBuild": "passed",
+      "immutableDistImages": 81,
+      "browserSmoke": {
+        "status": "passed",
+        "offerings": 6,
+        "renderedQuestionUnits": 600,
+        "sheets": 500,
+        "errors": []
+      },
+      "fullGrammarBrowserBuildCommit": "3144b6a2a"
+    }
+  },
+  "retirement": {
+    "removedWrittenNotions": [
+      "g1",
+      "g2",
+      "g3",
+      "g4",
+      "g5",
+      "g6"
+    ],
+    "totalRetiredNotions": 57,
+    "remainingWrittenBanks": 41,
+    "removedCommunicationGroup": "g4",
+    "otherCommunicationGroupsPreserved": 5,
+    "otherActivityAndOfferingRowsPreserved": true,
+    "coAndTheoriesPreserved": true,
+    "savedWorksheetCleanup": "deferred by owner; no real fiche access or deletion",
+    "workerDeployment": false
+  },
+  "media": {
+    "generated": 0,
+    "retouched": 0,
+    "obligations": 3,
+    "illustratedHostUnits": 150,
+    "distinctReusedImages": 81,
+    "immutableCopies": "SHA-256 identical to originals",
+    "semanticScope": "Lexical product hints. Text determines quantity, packaging, weight and number."
+  },
+  "globalCoverage": {
+    "reviewedActivities": 257,
+    "reviewedOfferings": 365,
+    "reviewedSelectableUnits": 13920,
+    "reviewedVariants": 18780,
+    "reviewedDocuments": 420,
+    "reviewedDocumentQuestions": 1580
+  },
+  "limitations": [
+    "Human pedagogical approval, physical printing and ENI classroom acceptance pending.",
+    "Historic theory remains protected; the banks correctly distinguish h muet and h aspiré. A theory wording revision requires a separate review.",
+    "Gamemode development and bank download performance work remain paused.",
+    "No next grammar theme started in this delivery."
+  ],
+  "sourceSha256": [
+    {
+      "path": "scripts/build-grammar-aliments.py",
+      "sha256": "b8dfc9e44e078c1f88a6b9e0ef0c6f1d8e80537cac2c940c98ac16206ae8c540"
+    },
+    {
+      "path": "scripts/grammar_curriculum/aliments-g1-a1.tsv",
+      "sha256": "9edb0e4181c89d944a67f7e07938591177b686898b5453c7e7574326b1482825"
+    },
+    {
+      "path": "scripts/grammar_curriculum/aliments-g2-a1.tsv",
+      "sha256": "38229f29edda6f03ec3610433d87fadf6d4fbdce278a9621bdca2a3dfc3bccf1"
+    },
+    {
+      "path": "scripts/grammar_curriculum/aliments-g3-a1.tsv",
+      "sha256": "e062eafdf845d1c39aeeec6e0aaccaacde5e818ef604474469305caa56cbe5d2"
+    },
+    {
+      "path": "scripts/grammar_curriculum/aliments-g4-a1.tsv",
+      "sha256": "e49503343fe583e135740a53e836ce97fe56f1ef0af397e61d40801a5ec7f314"
+    },
+    {
+      "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+      "sha256": "c5b932cb1e11360c863f7460f85e1adefaa72a62a454cc0690a8ab0ccf8c7258"
+    },
+    {
+      "path": "scripts/grammar_curriculum/aliments-g6-a1.tsv",
+      "sha256": "c0d51acfca9122408aaf920e73952966bb4a5f0420583a2c9db8a65a876b3b36"
+    },
+    {
+      "path": "scripts/grammar_curriculum/aliments-g6-a2.tsv",
+      "sha256": "397b678a72b36743641198b2143944319e53ccb58238046aeb1581ac2dcd4928"
+    },
+    {
+      "path": "scripts/grammar_curriculum/aliments-lectures-a1.json",
+      "sha256": "7c57d29fb2382de64df4cd07add91e260b1e8bd3cf52195bbf19557f36845eab"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/g1.json",
+      "sha256": "2792be121267271f2d820e85c0f9c9ed7637b7cc95f76836b6cc661be86276c5"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/g2.json",
+      "sha256": "46ab69717431ca91c47c51b65f69bed2468b30d70fa9239598e41aef56d60da4"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/g3.json",
+      "sha256": "d76ba79ee9c8e7a5d72cb6a6afe551049e8ceb2db0ef351d041f2699078096e1"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/g4.json",
+      "sha256": "4133e1c687cf106876104e5dffd85e173b957ec05d5fb2e38662c69681b5a78c"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/g5.json",
+      "sha256": "31cfa6c8938450330e3de0ead8a663b682d3a2445fb66bdaa15c3fc81c7f286b"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/g6.json",
+      "sha256": "a3a2aae71d9282b9ff0bc414fde383bcf4fa72938d75642e1c718504b4688bff"
+    },
+    {
+      "path": "src/grammaire/curriculum/registry.ts",
+      "sha256": "e8dca84c294981962e58ca70570781afc54142a45f7bbe0e42c4503a3eeec6a2"
+    },
+    {
+      "path": "src/grammaire/curriculum/pagination.ts",
+      "sha256": "b872b63e86a6802318e0933f0c723ed68ff37c59dbed80e6299a139192f7681f"
+    },
+    {
+      "path": "src/components/item-view/grammar.tsx",
+      "sha256": "e7c552bc41c0c2c7ac2e43e9b573de4b7f5e5321af0d55aa2dd23417a1447eef"
+    }
+  ],
+  "protectedSnapshotSha256": "f2ad9f4a28355cbe8d707ffd241d0a56dd41c8bbdc1cb49d7b1117a307db9b29",
+  "productionManifestSha256": "5b12b4190bfda4a00667d2d4e4e4b8342add185c77b61a8ef6566b5db8e68e2c",
+  "grammarBaseCommit": "f3c1b3609",
+  "integratedUpstreamTcfCommits": [
+    "3144b6a2a",
+    "8b8421584"
+  ]
+}

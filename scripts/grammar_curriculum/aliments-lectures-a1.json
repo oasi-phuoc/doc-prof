@@ -1,0 +1,362 @@
+[
+  {
+    "id": "quantite-pommes-kilo",
+    "sourceSituation": "pommes-kilo",
+    "title": "Au marché",
+    "genre": "Échange sur une quantité",
+    "text": [
+      "Un dîner est prévu ce soir.",
+      "Partenaire : « Que désirez-vous au marché ? »",
+      "Personne : « Je voudrais un kilo de pommes. »",
+      "Partenaire : « Quel poids souhaitez-vous ? »",
+      "Personne : « Un kilo de pommes. »"
+    ],
+    "questions": [
+      {"prompt": "De quel produit parle cet échange ?", "answer": "Des pommes.", "distractors": ["De l’eau.", "Du riz."], "evidence": "pommes"},
+      {"prompt": "Quelle expression de quantité est utilisée ?", "answer": "un kilo de", "distractors": ["une bouteille d’", "un paquet de"], "evidence": "un kilo de"},
+      {"prompt": "Quand le dîner est-il prévu ?", "answer": "Ce soir.", "evidence": "ce soir"}
+    ]
+  },
+  {
+    "id": "quantite-eau-bouteille",
+    "sourceSituation": "eau-bouteille",
+    "title": "Avant la promenade",
+    "genre": "Échange sur une quantité",
+    "text": [
+      "Le groupe part en promenade ce matin.",
+      "Partenaire : « Que prenez-vous pour la sortie ? »",
+      "Personne : « Je voudrais une bouteille d’eau. »",
+      "Partenaire : « Quel contenant voulez-vous ? »",
+      "Personne : « Une bouteille. »"
+    ],
+    "questions": [
+      {"prompt": "De quel produit parle cet échange ?", "answer": "De l’eau.", "distractors": ["Des pommes.", "Du riz."], "evidence": "eau"},
+      {"prompt": "Quelle expression de quantité est utilisée ?", "answer": "une bouteille d’", "distractors": ["un kilo de", "un paquet de"], "evidence": "une bouteille d’"},
+      {"prompt": "Quelle activité est prévue ?", "answer": "Une promenade.", "evidence": "en promenade"}
+    ]
+  },
+  {
+    "id": "quantite-riz-paquet",
+    "sourceSituation": "riz-paquet",
+    "title": "Compléter la réserve",
+    "genre": "Échange sur une quantité",
+    "text": [
+      "L’achat sert à compléter la réserve de la cuisine.",
+      "Partenaire : « Que voulez-vous pour vos réserves ? »",
+      "Personne : « J’achète un paquet de riz. »",
+      "Partenaire : « Quel conditionnement ? »",
+      "Personne : « Un paquet. »"
+    ],
+    "questions": [
+      {"prompt": "De quel produit parle cet échange ?", "answer": "Du riz.", "distractors": ["Des pommes.", "De l’eau."], "evidence": "riz"},
+      {"prompt": "Quelle expression de quantité est utilisée ?", "answer": "un paquet de", "distractors": ["un kilo de", "une bouteille d’"], "evidence": "un paquet de"},
+      {"prompt": "Pourquoi faire cet achat ?", "answer": "Pour compléter la réserve.", "evidence": "compléter la réserve"}
+    ]
+  },
+  {
+    "id": "quantite-lait-litre",
+    "sourceSituation": "lait-litre",
+    "title": "Préparer le goûter",
+    "genre": "Échange sur une quantité",
+    "text": [
+      "Une pâte à crêpes est prévue pour le goûter.",
+      "Partenaire : « Quelle quantité de lait vous faut-il ? »",
+      "Personne : « Il me faut un litre de lait. »",
+      "Partenaire : « Quel volume ? »",
+      "Personne : « Un litre. »"
+    ],
+    "questions": [
+      {"prompt": "De quel produit parle cet échange ?", "answer": "Du lait.", "distractors": ["Des pommes.", "De l’eau."], "evidence": "lait"},
+      {"prompt": "Quelle expression de quantité est utilisée ?", "answer": "un litre de", "distractors": ["un kilo de", "une bouteille d’"], "evidence": "un litre de"},
+      {"prompt": "Quelle préparation est prévue ?", "answer": "Une pâte à crêpes.", "evidence": "Une pâte à crêpes"}
+    ]
+  },
+  {
+    "id": "quantite-sucre-peu",
+    "sourceSituation": "sucre-peu",
+    "title": "Une boisson à préparer",
+    "genre": "Échange sur une quantité",
+    "text": [
+      "Une personne prépare une tasse de thé.",
+      "Partenaire : « Quelle quantité de sucre voulez-vous ? »",
+      "Personne : « Je voudrais un peu de sucre. »",
+      "Partenaire : « Une grande quantité ? »",
+      "Personne : « Non, une petite quantité. »"
+    ],
+    "questions": [
+      {"prompt": "De quel produit parle cet échange ?", "answer": "Du sucre.", "distractors": ["Des pommes.", "De l’eau."], "evidence": "sucre"},
+      {"prompt": "Quelle expression de quantité est utilisée ?", "answer": "un peu de", "distractors": ["un kilo de", "une bouteille d’"], "evidence": "un peu de"},
+      {"prompt": "Quelle boisson est préparée ?", "answer": "Du thé.", "evidence": "une tasse de thé"}
+    ]
+  },
+  {
+    "id": "quantite-pain-assez",
+    "sourceSituation": "pain-assez",
+    "title": "Le déjeuner du groupe",
+    "genre": "Échange sur une quantité",
+    "text": [
+      "Quatre personnes sont attendues pour le déjeuner.",
+      "Partenaire : « Avez-vous ce qu’il faut pour le groupe ? »",
+      "Personne : « Nous avons assez de pain. »",
+      "Partenaire : « Le pain suffit-il ? »",
+      "Personne : « Oui, il suffit pour le groupe. »"
+    ],
+    "questions": [
+      {"prompt": "De quel produit parle cet échange ?", "answer": "Du pain.", "distractors": ["Des pommes.", "De l’eau."], "evidence": "pain"},
+      {"prompt": "Quelle expression de quantité est utilisée ?", "answer": "assez de", "distractors": ["un kilo de", "une bouteille d’"], "evidence": "assez de"},
+      {"prompt": "Combien de personnes sont attendues ?", "answer": "Quatre personnes.", "evidence": "Quatre personnes"}
+    ]
+  },
+  {
+    "id": "quantite-sel-trop",
+    "sourceSituation": "sel-trop",
+    "title": "Un problème dans la soupe",
+    "genre": "Échange sur une quantité",
+    "text": [
+      "Une soupe est préparée pour le dîner.",
+      "Partenaire : « Quel est le problème dans la recette ? »",
+      "Personne : « Il y a trop de sel. »",
+      "Partenaire : « La quantité vous convient-elle ? »",
+      "Personne : « Non, il y en a plus que souhaité. »"
+    ],
+    "questions": [
+      {"prompt": "De quel produit parle cet échange ?", "answer": "Du sel.", "distractors": ["Des pommes.", "De l’eau."], "evidence": "sel"},
+      {"prompt": "Quelle expression de quantité est utilisée ?", "answer": "trop de", "distractors": ["un kilo de", "une bouteille d’"], "evidence": "trop de"},
+      {"prompt": "Quelle préparation est en cours ?", "answer": "Une soupe.", "evidence": "Une soupe"}
+    ]
+  },
+  {
+    "id": "quantite-cafe-tasse",
+    "sourceSituation": "cafe-tasse",
+    "title": "Une pause au café",
+    "genre": "Échange sur une quantité",
+    "text": [
+      "La personne prend sa pause au café.",
+      "Partenaire : « Que souhaitez-vous boire ? »",
+      "Personne : « Je voudrais une tasse de café. »",
+      "Partenaire : « Quel récipient ? »",
+      "Personne : « Une tasse. »"
+    ],
+    "questions": [
+      {"prompt": "De quel produit parle cet échange ?", "answer": "Du café.", "distractors": ["Des pommes.", "De l’eau."], "evidence": "café"},
+      {"prompt": "Quelle expression de quantité est utilisée ?", "answer": "une tasse de", "distractors": ["un kilo de", "une bouteille d’"], "evidence": "une tasse de"},
+      {"prompt": "À quel moment la personne commande-t-elle ?", "answer": "Pendant sa pause.", "evidence": "sa pause"}
+    ]
+  },
+  {
+    "id": "quantite-huile-cuillere",
+    "sourceSituation": "huile-cuillere",
+    "title": "Préparer une sauce",
+    "genre": "Échange sur une quantité",
+    "text": [
+      "Le partenaire prépare une vinaigrette.",
+      "Partenaire : « Quelle quantité d’huile ajoutez-vous ? »",
+      "Personne : « J’ajoute une cuillère d’huile. »",
+      "Partenaire : « Quelle mesure utilisez-vous ? »",
+      "Personne : « Une cuillère. »"
+    ],
+    "questions": [
+      {"prompt": "De quel produit parle cet échange ?", "answer": "De l’huile.", "distractors": ["Des pommes.", "De l’eau."], "evidence": "huile"},
+      {"prompt": "Quelle expression de quantité est utilisée ?", "answer": "une cuillère d’", "distractors": ["un kilo de", "une bouteille d’"], "evidence": "une cuillère d’"},
+      {"prompt": "Quelle sauce est préparée ?", "answer": "Une vinaigrette.", "evidence": "une vinaigrette"}
+    ]
+  },
+  {
+    "id": "quantite-fromage-morceau",
+    "sourceSituation": "fromage-morceau",
+    "title": "Après le plat",
+    "genre": "Échange sur une quantité",
+    "text": [
+      "Le fromage est prévu après le plat.",
+      "Partenaire : « Quelle portion souhaitez-vous ? »",
+      "Personne : « Je voudrais un morceau de fromage. »",
+      "Partenaire : « Un fromage entier ? »",
+      "Personne : « Non, un morceau. »"
+    ],
+    "questions": [
+      {"prompt": "De quel produit parle cet échange ?", "answer": "Du fromage.", "distractors": ["Des pommes.", "De l’eau."], "evidence": "fromage"},
+      {"prompt": "Quelle expression de quantité est utilisée ?", "answer": "un morceau de", "distractors": ["un kilo de", "une bouteille d’"], "evidence": "un morceau de"},
+      {"prompt": "Quand le fromage est-il prévu ?", "answer": "Après le plat.", "evidence": "après le plat"}
+    ]
+  },
+  {
+    "id": "quantite-confiture-pot",
+    "sourceSituation": "confiture-pot",
+    "title": "Les courses du goûter",
+    "genre": "Échange sur une quantité",
+    "text": [
+      "Un goûter est organisé demain.",
+      "Partenaire : « Que faut-il pour le goûter ? »",
+      "Personne : « J’achète un pot de confiture. »",
+      "Partenaire : « Combien de pots ? »",
+      "Personne : « Un pot. »"
+    ],
+    "questions": [
+      {"prompt": "De quel produit parle cet échange ?", "answer": "De la confiture.", "distractors": ["Des pommes.", "De l’eau."], "evidence": "confiture"},
+      {"prompt": "Quelle expression de quantité est utilisée ?", "answer": "un pot de", "distractors": ["un kilo de", "une bouteille d’"], "evidence": "un pot de"},
+      {"prompt": "Quand le goûter est-il organisé ?", "answer": "Demain.", "evidence": "demain"}
+    ]
+  },
+  {
+    "id": "quantite-tomates-deux-kilos",
+    "sourceSituation": "tomates-deux-kilos",
+    "title": "Un repas collectif",
+    "genre": "Échange sur une quantité",
+    "text": [
+      "Le repas réunit dix personnes.",
+      "Partenaire : « Que voulez-vous pour le repas ? »",
+      "Personne : « Je voudrais deux kilos de tomates. »",
+      "Partenaire : « Quel poids ? »",
+      "Personne : « Deux kilos. »"
+    ],
+    "questions": [
+      {"prompt": "De quel produit parle cet échange ?", "answer": "Des tomates.", "distractors": ["Des pommes.", "De l’eau."], "evidence": "tomates"},
+      {"prompt": "Quelle expression de quantité est utilisée ?", "answer": "deux kilos de", "distractors": ["un kilo de", "une bouteille d’"], "evidence": "deux kilos de"},
+      {"prompt": "Combien de personnes participent au repas ?", "answer": "Dix personnes.", "evidence": "dix personnes"}
+    ]
+  },
+  {
+    "id": "quantite-eau-verre",
+    "sourceSituation": "eau-verre",
+    "title": "À table",
+    "genre": "Échange sur une quantité",
+    "text": [
+      "La personne est assise à table.",
+      "Partenaire : « Que souhaitez-vous à table ? »",
+      "Personne : « Je voudrais un verre d’eau. »",
+      "Partenaire : « Un verre ou une bouteille ? »",
+      "Personne : « Un verre. »"
+    ],
+    "questions": [
+      {"prompt": "De quel produit parle cet échange ?", "answer": "De l’eau.", "distractors": ["Des pommes.", "Du riz."], "evidence": "eau"},
+      {"prompt": "Quelle expression de quantité est utilisée ?", "answer": "un verre d’", "distractors": ["un kilo de", "une bouteille d’"], "evidence": "un verre d’"},
+      {"prompt": "Où se trouve la personne ?", "answer": "À table.", "evidence": "à table"}
+    ]
+  },
+  {
+    "id": "quantite-farine-sac",
+    "sourceSituation": "farine-sac",
+    "title": "Avant l’atelier",
+    "genre": "Échange sur une quantité",
+    "text": [
+      "L’atelier commence à dix heures.",
+      "Partenaire : « Que commandez-vous pour l’atelier ? »",
+      "Personne : « Nous commandons un sac de farine. »",
+      "Partenaire : « Quel conditionnement ? »",
+      "Personne : « Un sac. »"
+    ],
+    "questions": [
+      {"prompt": "De quel produit parle cet échange ?", "answer": "De la farine.", "distractors": ["Des pommes.", "De l’eau."], "evidence": "farine"},
+      {"prompt": "Quelle expression de quantité est utilisée ?", "answer": "un sac de", "distractors": ["un kilo de", "une bouteille d’"], "evidence": "un sac de"},
+      {"prompt": "À quelle heure commence l’atelier ?", "answer": "À dix heures.", "evidence": "à dix heures"}
+    ]
+  },
+  {
+    "id": "quantite-beurre-peu",
+    "sourceSituation": "beurre-peu",
+    "title": "Au petit-déjeuner",
+    "genre": "Échange sur une quantité",
+    "text": [
+      "Une tartine est préparée au petit-déjeuner.",
+      "Partenaire : « Quelle quantité mettez-vous sur le pain ? »",
+      "Personne : « Je mets un peu de beurre sur le pain. »",
+      "Partenaire : « Une grande quantité ? »",
+      "Personne : « Non, une petite quantité. »"
+    ],
+    "questions": [
+      {"prompt": "De quel produit parle cet échange ?", "answer": "Du beurre.", "distractors": ["Des pommes.", "De l’eau."], "evidence": "beurre"},
+      {"prompt": "Quelle expression de quantité est utilisée ?", "answer": "un peu de", "distractors": ["un kilo de", "une bouteille d’"], "evidence": "un peu de"},
+      {"prompt": "Pour quel repas la tartine est-elle préparée ?", "answer": "Pour le petit-déjeuner.", "evidence": "au petit-déjeuner"}
+    ]
+  },
+  {
+    "id": "quantite-the-beaucoup",
+    "sourceSituation": "the-beaucoup",
+    "title": "Accueillir des visiteurs",
+    "genre": "Échange sur une quantité",
+    "text": [
+      "Une théière est prête pour les visiteurs.",
+      "Partenaire : « Que reste-t-il dans la théière ? »",
+      "Personne : « Il reste beaucoup de thé. »",
+      "Partenaire : « La quantité est-elle petite ? »",
+      "Personne : « Non, elle est importante. »"
+    ],
+    "questions": [
+      {"prompt": "De quel produit parle cet échange ?", "answer": "Du thé.", "distractors": ["Des pommes.", "De l’eau."], "evidence": "thé"},
+      {"prompt": "Quelle expression de quantité est utilisée ?", "answer": "beaucoup de", "distractors": ["un kilo de", "une bouteille d’"], "evidence": "beaucoup de"},
+      {"prompt": "Pour qui la théière est-elle prête ?", "answer": "Pour les visiteurs.", "evidence": "pour les visiteurs"}
+    ]
+  },
+  {
+    "id": "quantite-pommes-trois",
+    "sourceSituation": "pommes-trois",
+    "title": "Les fruits à emporter",
+    "genre": "Échange sur une quantité",
+    "text": [
+      "Les fruits doivent être emportés dans un sac.",
+      "Partenaire : « Combien de pommes prenez-vous ? »",
+      "Personne : « Je prends trois pommes. »",
+      "Partenaire : « Donnez-vous un poids ? »",
+      "Personne : « Non, je compte trois pommes. »"
+    ],
+    "questions": [
+      {"prompt": "De quel produit parle cet échange ?", "answer": "Des pommes.", "distractors": ["De l’eau.", "Du riz."], "evidence": "pommes"},
+      {"prompt": "Quelle expression de quantité est utilisée ?", "answer": "trois", "distractors": ["un kilo de", "une bouteille d’"], "evidence": "trois"},
+      {"prompt": "Où les fruits doivent-ils être mis ?", "answer": "Dans un sac.", "evidence": "dans un sac"}
+    ]
+  },
+  {
+    "id": "quantite-oeufs-quatre",
+    "sourceSituation": "oeufs-quatre",
+    "title": "Une omelette au menu",
+    "genre": "Échange sur une quantité",
+    "text": [
+      "Une omelette est prévue pour le déjeuner.",
+      "Partenaire : « Combien d’œufs faut-il ? »",
+      "Personne : « Il me faut quatre œufs. »",
+      "Partenaire : « Pour quelle activité ? »",
+      "Personne : « Pour la recette. »"
+    ],
+    "questions": [
+      {"prompt": "De quel produit parle cet échange ?", "answer": "Des œufs.", "distractors": ["Des pommes.", "De l’eau."], "evidence": "œufs"},
+      {"prompt": "Quelle expression de quantité est utilisée ?", "answer": "quatre", "distractors": ["un kilo de", "une bouteille d’"], "evidence": "quatre"},
+      {"prompt": "Quel plat est prévu ?", "answer": "Une omelette.", "evidence": "Une omelette"}
+    ]
+  },
+  {
+    "id": "quantite-carottes-sachet",
+    "sourceSituation": "carottes-sachet",
+    "title": "La soupe de légumes",
+    "genre": "Échange sur une quantité",
+    "text": [
+      "Le partenaire prépare une soupe de légumes.",
+      "Partenaire : « Quel produit demandez-vous ? »",
+      "Personne : « Je voudrais un sachet de carottes. »",
+      "Partenaire : « Quel conditionnement ? »",
+      "Personne : « Un sachet. »"
+    ],
+    "questions": [
+      {"prompt": "De quel produit parle cet échange ?", "answer": "Des carottes.", "distractors": ["Des pommes.", "De l’eau."], "evidence": "carottes"},
+      {"prompt": "Quelle expression de quantité est utilisée ?", "answer": "un sachet de", "distractors": ["un kilo de", "une bouteille d’"], "evidence": "un sachet de"},
+      {"prompt": "Quelle préparation est prévue ?", "answer": "Une soupe de légumes.", "evidence": "une soupe de légumes"}
+    ]
+  },
+  {
+    "id": "quantite-soupe-bol",
+    "sourceSituation": "soupe-bol",
+    "title": "Le début du repas",
+    "genre": "Échange sur une quantité",
+    "text": [
+      "Le repas commence par une soupe chaude.",
+      "Partenaire : « Que désirez-vous en entrée ? »",
+      "Personne : « Je voudrais un bol de soupe. »",
+      "Partenaire : « Dans quel récipient ? »",
+      "Personne : « Dans un bol. »"
+    ],
+    "questions": [
+      {"prompt": "De quel produit parle cet échange ?", "answer": "De la soupe.", "distractors": ["Des pommes.", "De l’eau."], "evidence": "soupe"},
+      {"prompt": "Quelle expression de quantité est utilisée ?", "answer": "un bol de", "distractors": ["un kilo de", "une bouteille d’"], "evidence": "un bol de"},
+      {"prompt": "Comment est la soupe ?", "answer": "Elle est chaude.", "evidence": "une soupe chaude"}
+    ]
+  }
+]

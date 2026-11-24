@@ -1,0 +1,3709 @@
+[
+  {
+    "schemaVersion": 1,
+    "revision": "aliments-2026-11-24-v1",
+    "activityId": "gram-ex-g5-qcm-verbe",
+    "subthemeId": "g5",
+    "topic": "gram-aliments",
+    "level": "A2",
+    "label": "Préciser une quantité indéfinie",
+    "objective": "Employer et accorder le déterminant indéfini demandé selon la quantité, la totalité ou la distribution.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Sources, formes et contextes relus ; réemploi explicite entre mécaniques. Images existantes conservées sous empreinte immuable. Modèles ouverts non exclusifs ; approbation enseignante en attente."
+    },
+    "presentations": [
+      "choice",
+      "gap"
+    ],
+    "instructions": {
+      "choice": "Employez le mot demandé avec la forme et l’accord adaptés au contexte.",
+      "gap": "Écrivez le déterminant demandé en respectant la famille et l’accord."
+    },
+    "units": [
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-chaque-produit",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 0,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ produit est contrôlé.",
+        "cue": "Le contrôle porte sur les produits un par un. Mot demandé : chaque.",
+        "answers": [
+          "Chaque"
+        ],
+        "options": [
+          {
+            "id": "chaque-produit-choix-1",
+            "text": "Chaque"
+          },
+          {
+            "id": "chaque-produit-choix-2",
+            "text": "Plusieurs"
+          },
+          {
+            "id": "chaque-produit-choix-3",
+            "text": "Tous"
+          }
+        ],
+        "explanation": "Chaque est invariable et accompagne un nom singulier. Modèle : Chaque produit est contrôlé."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-chaque-etiquette",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 1,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ étiquette est relue avant l’ouverture.",
+        "cue": "Les étiquettes sont relues individuellement avant l’ouverture du magasin. Mot demandé : chaque.",
+        "answers": [
+          "Chaque"
+        ],
+        "options": [
+          {
+            "id": "chaque-etiquette-choix-1",
+            "text": "Chaque"
+          },
+          {
+            "id": "chaque-etiquette-choix-2",
+            "text": "Plusieurs"
+          },
+          {
+            "id": "chaque-etiquette-choix-3",
+            "text": "Tous"
+          }
+        ],
+        "explanation": "Chaque est invariable et accompagne un nom singulier. Modèle : Chaque étiquette est relue avant l’ouverture."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-chaque-client",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 2,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ client reçoit un ticket.",
+        "cue": "Les clients reçoivent chacun un ticket, sans exception individuelle. Mot demandé : chaque.",
+        "answers": [
+          "Chaque"
+        ],
+        "options": [
+          {
+            "id": "chaque-client-choix-1",
+            "text": "Chaque"
+          },
+          {
+            "id": "chaque-client-choix-2",
+            "text": "Plusieurs"
+          },
+          {
+            "id": "chaque-client-choix-3",
+            "text": "Tous"
+          }
+        ],
+        "explanation": "Chaque est invariable et accompagne un nom singulier. Modèle : Chaque client reçoit un ticket."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-chaque-table",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 3,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "On nettoie ___ table après le service.",
+        "cue": "Les tables sont nettoyées une par une après le service. Mot demandé : chaque.",
+        "answers": [
+          "chaque"
+        ],
+        "options": [
+          {
+            "id": "chaque-table-choix-1",
+            "text": "chaque"
+          },
+          {
+            "id": "chaque-table-choix-2",
+            "text": "plusieurs"
+          },
+          {
+            "id": "chaque-table-choix-3",
+            "text": "tous"
+          }
+        ],
+        "explanation": "Chaque est invariable et accompagne un nom singulier. Modèle : On nettoie chaque table après le service."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-chaque-commande",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 4,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "On prépare ___ commande séparément.",
+        "cue": "Les commandes sont préparées séparément avec le mot chaque. Mot demandé : chaque.",
+        "answers": [
+          "chaque"
+        ],
+        "options": [
+          {
+            "id": "chaque-commande-choix-1",
+            "text": "chaque"
+          },
+          {
+            "id": "chaque-commande-choix-2",
+            "text": "plusieurs"
+          },
+          {
+            "id": "chaque-commande-choix-3",
+            "text": "tous"
+          }
+        ],
+        "explanation": "Chaque est invariable et accompagne un nom singulier. Modèle : On prépare chaque commande séparément."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-chaque-participant",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 5,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ participant reçoit une fiche.",
+        "cue": "Une fiche est prévue pour chacune des personnes de l’atelier. Mot demandé : chaque.",
+        "answers": [
+          "Chaque"
+        ],
+        "options": [
+          {
+            "id": "chaque-participant-choix-1",
+            "text": "Chaque"
+          },
+          {
+            "id": "chaque-participant-choix-2",
+            "text": "Plusieurs"
+          },
+          {
+            "id": "chaque-participant-choix-3",
+            "text": "Tous"
+          }
+        ],
+        "explanation": "Chaque est invariable et accompagne un nom singulier. Modèle : Chaque participant reçoit une fiche."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-chaque-jour",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 6,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "On note la température ___ jour.",
+        "cue": "Le relevé de température est effectué tous les jours, considérés un à un. Mot demandé : chaque.",
+        "answers": [
+          "chaque"
+        ],
+        "options": [
+          {
+            "id": "chaque-jour-choix-1",
+            "text": "chaque"
+          },
+          {
+            "id": "chaque-jour-choix-2",
+            "text": "plusieurs"
+          },
+          {
+            "id": "chaque-jour-choix-3",
+            "text": "tous"
+          }
+        ],
+        "explanation": "Chaque est invariable et accompagne un nom singulier. Modèle : On note la température chaque jour."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-chaque-pot",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 7,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ pot doit être fermé.",
+        "cue": "Les pots doivent être fermés individuellement avant le transport. Mot demandé : chaque.",
+        "answers": [
+          "Chaque"
+        ],
+        "options": [
+          {
+            "id": "chaque-pot-choix-1",
+            "text": "Chaque"
+          },
+          {
+            "id": "chaque-pot-choix-2",
+            "text": "Plusieurs"
+          },
+          {
+            "id": "chaque-pot-choix-3",
+            "text": "Tous"
+          }
+        ],
+        "explanation": "Chaque est invariable et accompagne un nom singulier. Modèle : Chaque pot doit être fermé."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-quelques-places",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 8,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Il reste ___ places libres.",
+        "cue": "Un petit nombre de places reste libre. Mot demandé : quelque.",
+        "answers": [
+          "quelques"
+        ],
+        "options": [
+          {
+            "id": "quelques-places-choix-1",
+            "text": "quelques"
+          },
+          {
+            "id": "quelques-places-choix-2",
+            "text": "chaque"
+          },
+          {
+            "id": "quelques-places-choix-3",
+            "text": "tout"
+          }
+        ],
+        "explanation": "Ici, quelques est un déterminant au pluriel. Modèle : Il reste quelques places libres."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-quelques-minutes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 9,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Attendez ___ minutes.",
+        "cue": "L’attente est courte et non chiffrée. Mot demandé : quelque.",
+        "answers": [
+          "quelques"
+        ],
+        "options": [
+          {
+            "id": "quelques-minutes-choix-1",
+            "text": "quelques"
+          },
+          {
+            "id": "quelques-minutes-choix-2",
+            "text": "chaque"
+          },
+          {
+            "id": "quelques-minutes-choix-3",
+            "text": "tout"
+          }
+        ],
+        "explanation": "Ici, quelques est un déterminant au pluriel. Modèle : Attendez quelques minutes."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-quelques-pommes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 10,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je voudrais ___ pommes.",
+        "cue": "Vous demandez un petit nombre de pommes, avec le mot quelque accordé. Mot demandé : quelque.",
+        "answers": [
+          "quelques"
+        ],
+        "options": [
+          {
+            "id": "quelques-pommes-choix-1",
+            "text": "quelques"
+          },
+          {
+            "id": "quelques-pommes-choix-2",
+            "text": "chaque"
+          },
+          {
+            "id": "quelques-pommes-choix-3",
+            "text": "tout"
+          }
+        ],
+        "explanation": "Ici, quelques est un déterminant au pluriel. Modèle : Je voudrais quelques pommes."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-quelques-biscuits",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 11,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "J’emporte ___ biscuits pour la pause.",
+        "cue": "Vous emportez un petit nombre de biscuits pour la pause. Mot demandé : quelque.",
+        "answers": [
+          "quelques"
+        ],
+        "options": [
+          {
+            "id": "quelques-biscuits-choix-1",
+            "text": "quelques"
+          },
+          {
+            "id": "quelques-biscuits-choix-2",
+            "text": "chaque"
+          },
+          {
+            "id": "quelques-biscuits-choix-3",
+            "text": "tout"
+          }
+        ],
+        "explanation": "Ici, quelques est un déterminant au pluriel. Modèle : J’emporte quelques biscuits pour la pause."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-quelques-idees",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 12,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ idées ont été proposées.",
+        "cue": "Un petit nombre d’idées a été proposé. Mot demandé : quelque.",
+        "answers": [
+          "Quelques"
+        ],
+        "options": [
+          {
+            "id": "quelques-idees-choix-1",
+            "text": "Quelques"
+          },
+          {
+            "id": "quelques-idees-choix-2",
+            "text": "Chaque"
+          },
+          {
+            "id": "quelques-idees-choix-3",
+            "text": "Tout"
+          }
+        ],
+        "explanation": "Ici, quelques est un déterminant au pluriel. Modèle : Quelques idées ont été proposées."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-quelques-questions",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 13,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "J’ai ___ questions après la lecture.",
+        "cue": "Vous avez un petit nombre de questions à poser après la lecture. Mot demandé : quelque.",
+        "answers": [
+          "quelques"
+        ],
+        "options": [
+          {
+            "id": "quelques-questions-choix-1",
+            "text": "quelques"
+          },
+          {
+            "id": "quelques-questions-choix-2",
+            "text": "chaque"
+          },
+          {
+            "id": "quelques-questions-choix-3",
+            "text": "tout"
+          }
+        ],
+        "explanation": "Ici, quelques est un déterminant au pluriel. Modèle : J’ai quelques questions après la lecture."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-quelques-restes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 14,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je réutilise ___ restes du repas.",
+        "cue": "Il subsiste un petit nombre de restes du repas. Mot demandé : quelque.",
+        "answers": [
+          "quelques"
+        ],
+        "options": [
+          {
+            "id": "quelques-restes-choix-1",
+            "text": "quelques"
+          },
+          {
+            "id": "quelques-restes-choix-2",
+            "text": "chaque"
+          },
+          {
+            "id": "quelques-restes-choix-3",
+            "text": "tout"
+          }
+        ],
+        "explanation": "Ici, quelques est un déterminant au pluriel. Modèle : Je réutilise quelques restes du repas."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-quelques-gouttes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 15,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Ajoutez ___ gouttes d’eau.",
+        "cue": "Une petite quantité, exprimée en gouttes, suffit. Mot demandé : quelque.",
+        "answers": [
+          "quelques"
+        ],
+        "options": [
+          {
+            "id": "quelques-gouttes-choix-1",
+            "text": "quelques"
+          },
+          {
+            "id": "quelques-gouttes-choix-2",
+            "text": "chaque"
+          },
+          {
+            "id": "quelques-gouttes-choix-3",
+            "text": "tout"
+          }
+        ],
+        "explanation": "Ici, quelques est un déterminant au pluriel. Modèle : Ajoutez quelques gouttes d’eau."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-plusieurs-livres",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 16,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ livres de recettes ont été ajoutés.",
+        "cue": "Plus d’un livre de recettes a été ajouté, sans nombre exact. Mot demandé : plusieurs.",
+        "answers": [
+          "Plusieurs"
+        ],
+        "options": [
+          {
+            "id": "plusieurs-livres-choix-1",
+            "text": "Plusieurs"
+          },
+          {
+            "id": "plusieurs-livres-choix-2",
+            "text": "Chaque"
+          },
+          {
+            "id": "plusieurs-livres-choix-3",
+            "text": "Toute"
+          }
+        ],
+        "explanation": "Plusieurs est invariable et accompagne un nom pluriel. Modèle : Plusieurs livres de recettes ont été ajoutés."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-plusieurs-bouteilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 17,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "La commande contient ___ bouteilles d’eau.",
+        "cue": "La commande contient plus d’une bouteille d’eau. Mot demandé : plusieurs.",
+        "answers": [
+          "plusieurs"
+        ],
+        "options": [
+          {
+            "id": "plusieurs-bouteilles-choix-1",
+            "text": "plusieurs"
+          },
+          {
+            "id": "plusieurs-bouteilles-choix-2",
+            "text": "chaque"
+          },
+          {
+            "id": "plusieurs-bouteilles-choix-3",
+            "text": "toute"
+          }
+        ],
+        "explanation": "Plusieurs est invariable et accompagne un nom pluriel. Modèle : La commande contient plusieurs bouteilles d’eau."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-plusieurs-solutions",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 18,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ solutions sont possibles.",
+        "cue": "Plus d’une solution est possible pour organiser le repas. Mot demandé : plusieurs.",
+        "answers": [
+          "Plusieurs"
+        ],
+        "options": [
+          {
+            "id": "plusieurs-solutions-choix-1",
+            "text": "Plusieurs"
+          },
+          {
+            "id": "plusieurs-solutions-choix-2",
+            "text": "Chaque"
+          },
+          {
+            "id": "plusieurs-solutions-choix-3",
+            "text": "Toute"
+          }
+        ],
+        "explanation": "Plusieurs est invariable et accompagne un nom pluriel. Modèle : Plusieurs solutions sont possibles."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-plusieurs-ateliers",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 19,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "On peut choisir entre ___ ateliers.",
+        "cue": "On peut choisir entre plus d’un atelier de cuisine. Mot demandé : plusieurs.",
+        "answers": [
+          "plusieurs"
+        ],
+        "options": [
+          {
+            "id": "plusieurs-ateliers-choix-1",
+            "text": "plusieurs"
+          },
+          {
+            "id": "plusieurs-ateliers-choix-2",
+            "text": "chaque"
+          },
+          {
+            "id": "plusieurs-ateliers-choix-3",
+            "text": "toute"
+          }
+        ],
+        "explanation": "Plusieurs est invariable et accompagne un nom pluriel. Modèle : On peut choisir entre plusieurs ateliers."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-plusieurs-magasins",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 20,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je compare les prix dans ___ magasins.",
+        "cue": "Vous comparez les prix dans plus d’un magasin, sans préciser leur nombre. Mot demandé : plusieurs.",
+        "answers": [
+          "plusieurs"
+        ],
+        "options": [
+          {
+            "id": "plusieurs-magasins-choix-1",
+            "text": "plusieurs"
+          },
+          {
+            "id": "plusieurs-magasins-choix-2",
+            "text": "chaque"
+          },
+          {
+            "id": "plusieurs-magasins-choix-3",
+            "text": "toute"
+          }
+        ],
+        "explanation": "Plusieurs est invariable et accompagne un nom pluriel. Modèle : Je compare les prix dans plusieurs magasins."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-plusieurs-personnes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 21,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ personnes attendent à l’accueil.",
+        "cue": "Plus d’une personne attend à l’accueil. Mot demandé : plusieurs.",
+        "answers": [
+          "Plusieurs"
+        ],
+        "options": [
+          {
+            "id": "plusieurs-personnes-choix-1",
+            "text": "Plusieurs"
+          },
+          {
+            "id": "plusieurs-personnes-choix-2",
+            "text": "Chaque"
+          },
+          {
+            "id": "plusieurs-personnes-choix-3",
+            "text": "Toute"
+          }
+        ],
+        "explanation": "Plusieurs est invariable et accompagne un nom pluriel. Modèle : Plusieurs personnes attendent à l’accueil."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-plusieurs-recettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 22,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je connais ___ recettes avec ce légume.",
+        "cue": "Vous connaissez plus d’une recette avec ce légume. Mot demandé : plusieurs.",
+        "answers": [
+          "plusieurs"
+        ],
+        "options": [
+          {
+            "id": "plusieurs-recettes-choix-1",
+            "text": "plusieurs"
+          },
+          {
+            "id": "plusieurs-recettes-choix-2",
+            "text": "chaque"
+          },
+          {
+            "id": "plusieurs-recettes-choix-3",
+            "text": "toute"
+          }
+        ],
+        "explanation": "Plusieurs est invariable et accompagne un nom pluriel. Modèle : Je connais plusieurs recettes avec ce légume."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-plusieurs-trajets",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 23,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ trajets mènent au marché.",
+        "cue": "Plus d’un trajet mène au marché. Mot demandé : plusieurs.",
+        "answers": [
+          "Plusieurs"
+        ],
+        "options": [
+          {
+            "id": "plusieurs-trajets-choix-1",
+            "text": "Plusieurs"
+          },
+          {
+            "id": "plusieurs-trajets-choix-2",
+            "text": "Chaque"
+          },
+          {
+            "id": "plusieurs-trajets-choix-3",
+            "text": "Toute"
+          }
+        ],
+        "explanation": "Plusieurs est invariable et accompagne un nom pluriel. Modèle : Plusieurs trajets mènent au marché."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-certains-clients",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 24,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ clients paient par carte.",
+        "cue": "Une partie des clients, et non leur totalité, paie par carte. Mot demandé : certain.",
+        "answers": [
+          "Certains"
+        ],
+        "options": [
+          {
+            "id": "certains-clients-choix-1",
+            "text": "Certains"
+          },
+          {
+            "id": "certains-clients-choix-2",
+            "text": "Certain"
+          },
+          {
+            "id": "certains-clients-choix-3",
+            "text": "Certaine"
+          },
+          {
+            "id": "certains-clients-choix-4",
+            "text": "Certaines"
+          }
+        ],
+        "explanation": "Certain s’accorde en genre et en nombre avec le nom. Modèle : Certains clients paient par carte."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-certaines-commandes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 25,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ commandes sont déjà prêtes.",
+        "cue": "Une partie des commandes, et non toutes, est déjà prête. Mot demandé : certain.",
+        "answers": [
+          "Certaines"
+        ],
+        "options": [
+          {
+            "id": "certaines-commandes-choix-1",
+            "text": "Certaines"
+          },
+          {
+            "id": "certaines-commandes-choix-2",
+            "text": "Certain"
+          },
+          {
+            "id": "certaines-commandes-choix-3",
+            "text": "Certaine"
+          },
+          {
+            "id": "certaines-commandes-choix-4",
+            "text": "Certains"
+          }
+        ],
+        "explanation": "Certain s’accorde en genre et en nombre avec le nom. Modèle : Certaines commandes sont déjà prêtes."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-certains-fruits",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 26,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ fruits du panier doivent être consommés aujourd’hui.",
+        "cue": "Une partie des fruits du panier doit être consommée aujourd’hui. Mot demandé : certain.",
+        "answers": [
+          "Certains"
+        ],
+        "options": [
+          {
+            "id": "certains-fruits-choix-1",
+            "text": "Certains"
+          },
+          {
+            "id": "certains-fruits-choix-2",
+            "text": "Certain"
+          },
+          {
+            "id": "certains-fruits-choix-3",
+            "text": "Certaine"
+          },
+          {
+            "id": "certains-fruits-choix-4",
+            "text": "Certaines"
+          }
+        ],
+        "explanation": "Certain s’accorde en genre et en nombre avec le nom. Modèle : Certains fruits du panier doivent être consommés aujourd’hui."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-certaines-personnes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 27,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ personnes préfèrent manger à l’extérieur.",
+        "cue": "Une partie des personnes préfère manger à l’extérieur, sans généraliser à tout le groupe. Mot demandé : certain.",
+        "answers": [
+          "Certaines"
+        ],
+        "options": [
+          {
+            "id": "certaines-personnes-choix-1",
+            "text": "Certaines"
+          },
+          {
+            "id": "certaines-personnes-choix-2",
+            "text": "Certain"
+          },
+          {
+            "id": "certaines-personnes-choix-3",
+            "text": "Certaine"
+          },
+          {
+            "id": "certaines-personnes-choix-4",
+            "text": "Certains"
+          }
+        ],
+        "explanation": "Certain s’accorde en genre et en nombre avec le nom. Modèle : Certaines personnes préfèrent manger à l’extérieur."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-certains-produits",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 28,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "L’offre concerne ___ produits seulement.",
+        "cue": "L’offre concerne une partie des produits seulement. Mot demandé : certain.",
+        "answers": [
+          "certains"
+        ],
+        "options": [
+          {
+            "id": "certains-produits-choix-1",
+            "text": "certains"
+          },
+          {
+            "id": "certains-produits-choix-2",
+            "text": "certain"
+          },
+          {
+            "id": "certains-produits-choix-3",
+            "text": "certaine"
+          },
+          {
+            "id": "certains-produits-choix-4",
+            "text": "certaines"
+          }
+        ],
+        "explanation": "Certain s’accorde en genre et en nombre avec le nom. Modèle : L’offre concerne certains produits seulement."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-certaines-salles",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 29,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ salles peuvent accueillir le repas.",
+        "cue": "Une partie des salles peut accueillir le repas, mais pas toutes. Mot demandé : certain.",
+        "answers": [
+          "Certaines"
+        ],
+        "options": [
+          {
+            "id": "certaines-salles-choix-1",
+            "text": "Certaines"
+          },
+          {
+            "id": "certaines-salles-choix-2",
+            "text": "Certain"
+          },
+          {
+            "id": "certaines-salles-choix-3",
+            "text": "Certaine"
+          },
+          {
+            "id": "certaines-salles-choix-4",
+            "text": "Certains"
+          }
+        ],
+        "explanation": "Certain s’accorde en genre et en nombre avec le nom. Modèle : Certaines salles peuvent accueillir le repas."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-certains-jours",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 30,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Le marché a lieu ___ jours de la semaine.",
+        "cue": "Le marché a lieu pendant une partie des jours de la semaine, pas tous. Mot demandé : certain.",
+        "answers": [
+          "certains"
+        ],
+        "options": [
+          {
+            "id": "certains-jours-choix-1",
+            "text": "certains"
+          },
+          {
+            "id": "certains-jours-choix-2",
+            "text": "certain"
+          },
+          {
+            "id": "certains-jours-choix-3",
+            "text": "certaine"
+          },
+          {
+            "id": "certains-jours-choix-4",
+            "text": "certaines"
+          }
+        ],
+        "explanation": "Certain s’accorde en genre et en nombre avec le nom. Modèle : Le marché a lieu certains jours de la semaine."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-certaines-etiquettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 31,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ étiquettes restent à vérifier.",
+        "cue": "Une partie des étiquettes reste à vérifier. Mot demandé : certain.",
+        "answers": [
+          "Certaines"
+        ],
+        "options": [
+          {
+            "id": "certaines-etiquettes-choix-1",
+            "text": "Certaines"
+          },
+          {
+            "id": "certaines-etiquettes-choix-2",
+            "text": "Certain"
+          },
+          {
+            "id": "certaines-etiquettes-choix-3",
+            "text": "Certaine"
+          },
+          {
+            "id": "certaines-etiquettes-choix-4",
+            "text": "Certains"
+          }
+        ],
+        "explanation": "Certain s’accorde en genre et en nombre avec le nom. Modèle : Certaines étiquettes restent à vérifier."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-tout-pain",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 32,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ le pain doit être partagé.",
+        "cue": "Le pain entier doit être partagé, sans partie laissée de côté. Mot demandé : tout.",
+        "answers": [
+          "Tout"
+        ],
+        "options": [
+          {
+            "id": "tout-pain-choix-1",
+            "text": "Tout"
+          },
+          {
+            "id": "tout-pain-choix-2",
+            "text": "Toute"
+          },
+          {
+            "id": "tout-pain-choix-3",
+            "text": "Tous"
+          },
+          {
+            "id": "tout-pain-choix-4",
+            "text": "Toutes"
+          }
+        ],
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Tout le pain doit être partagé."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-toute-soupe",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 33,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ la soupe sera servie.",
+        "cue": "La soupe entière sera servie, sans reste prévu. Mot demandé : tout.",
+        "answers": [
+          "Toute"
+        ],
+        "options": [
+          {
+            "id": "toute-soupe-choix-1",
+            "text": "Toute"
+          },
+          {
+            "id": "toute-soupe-choix-2",
+            "text": "Tout"
+          },
+          {
+            "id": "toute-soupe-choix-3",
+            "text": "Tous"
+          },
+          {
+            "id": "toute-soupe-choix-4",
+            "text": "Toutes"
+          }
+        ],
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Toute la soupe sera servie."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-tous-legumes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 34,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ les légumes sont lavés.",
+        "cue": "La totalité des légumes est lavée, sans exception. Mot demandé : tout.",
+        "answers": [
+          "Tous"
+        ],
+        "options": [
+          {
+            "id": "tous-legumes-choix-1",
+            "text": "Tous"
+          },
+          {
+            "id": "tous-legumes-choix-2",
+            "text": "Tout"
+          },
+          {
+            "id": "tous-legumes-choix-3",
+            "text": "Toute"
+          },
+          {
+            "id": "tous-legumes-choix-4",
+            "text": "Toutes"
+          }
+        ],
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Tous les légumes sont lavés."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-toutes-assiettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 35,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ les assiettes sont propres.",
+        "cue": "La totalité des assiettes est propre. Mot demandé : tout.",
+        "answers": [
+          "Toutes"
+        ],
+        "options": [
+          {
+            "id": "toutes-assiettes-choix-1",
+            "text": "Toutes"
+          },
+          {
+            "id": "toutes-assiettes-choix-2",
+            "text": "Tout"
+          },
+          {
+            "id": "toutes-assiettes-choix-3",
+            "text": "Toute"
+          },
+          {
+            "id": "toutes-assiettes-choix-4",
+            "text": "Tous"
+          }
+        ],
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Toutes les assiettes sont propres."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-tout-groupe",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 36,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ le groupe participe à la préparation.",
+        "cue": "Le groupe entier participe à la préparation du repas. Mot demandé : tout.",
+        "answers": [
+          "Tout"
+        ],
+        "options": [
+          {
+            "id": "tout-groupe-choix-1",
+            "text": "Tout"
+          },
+          {
+            "id": "tout-groupe-choix-2",
+            "text": "Toute"
+          },
+          {
+            "id": "tout-groupe-choix-3",
+            "text": "Tous"
+          },
+          {
+            "id": "tout-groupe-choix-4",
+            "text": "Toutes"
+          }
+        ],
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Tout le groupe participe à la préparation."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-toute-classe",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 37,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ la classe prépare l’atelier.",
+        "cue": "La classe entière prépare l’atelier, sans élève exclu de l’activité. Mot demandé : tout.",
+        "answers": [
+          "Toute"
+        ],
+        "options": [
+          {
+            "id": "toute-classe-choix-1",
+            "text": "Toute"
+          },
+          {
+            "id": "toute-classe-choix-2",
+            "text": "Tout"
+          },
+          {
+            "id": "toute-classe-choix-3",
+            "text": "Tous"
+          },
+          {
+            "id": "toute-classe-choix-4",
+            "text": "Toutes"
+          }
+        ],
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Toute la classe prépare l’atelier."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-tous-invites",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 38,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ les invités sont arrivés.",
+        "cue": "La totalité des invités est arrivée. Mot demandé : tout.",
+        "answers": [
+          "Tous"
+        ],
+        "options": [
+          {
+            "id": "tous-invites-choix-1",
+            "text": "Tous"
+          },
+          {
+            "id": "tous-invites-choix-2",
+            "text": "Tout"
+          },
+          {
+            "id": "tous-invites-choix-3",
+            "text": "Toute"
+          },
+          {
+            "id": "tous-invites-choix-4",
+            "text": "Toutes"
+          }
+        ],
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Tous les invités sont arrivés."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-toutes-tables",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 39,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ les tables sont prêtes.",
+        "cue": "La totalité des tables est prête pour le service. Mot demandé : tout.",
+        "answers": [
+          "Toutes"
+        ],
+        "options": [
+          {
+            "id": "toutes-tables-choix-1",
+            "text": "Toutes"
+          },
+          {
+            "id": "toutes-tables-choix-2",
+            "text": "Tout"
+          },
+          {
+            "id": "toutes-tables-choix-3",
+            "text": "Toute"
+          },
+          {
+            "id": "toutes-tables-choix-4",
+            "text": "Tous"
+          }
+        ],
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Toutes les tables sont prêtes."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-tout-monde",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 40,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ le monde est présent.",
+        "cue": "Toutes les personnes sont présentes. Mot demandé : tout.",
+        "answers": [
+          "Tout"
+        ],
+        "options": [
+          {
+            "id": "tout-monde-choix-1",
+            "text": "Tout"
+          },
+          {
+            "id": "tout-monde-choix-2",
+            "text": "Toute"
+          },
+          {
+            "id": "tout-monde-choix-3",
+            "text": "Tous"
+          },
+          {
+            "id": "tout-monde-choix-4",
+            "text": "Toutes"
+          }
+        ],
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Tout le monde est présent."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-toute-eau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 41,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ l’eau de la carafe doit être utilisée.",
+        "cue": "La totalité de l’eau de la carafe doit être utilisée pour cette étape. Mot demandé : tout.",
+        "answers": [
+          "Toute"
+        ],
+        "options": [
+          {
+            "id": "toute-eau-choix-1",
+            "text": "Toute"
+          },
+          {
+            "id": "toute-eau-choix-2",
+            "text": "Tout"
+          },
+          {
+            "id": "toute-eau-choix-3",
+            "text": "Tous"
+          },
+          {
+            "id": "toute-eau-choix-4",
+            "text": "Toutes"
+          }
+        ],
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Toute l’eau de la carafe doit être utilisée."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-tous-documents",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 42,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "J’ai vérifié ___ les documents du dossier.",
+        "cue": "Vous avez vérifié la totalité des documents du dossier. Mot demandé : tout.",
+        "answers": [
+          "tous"
+        ],
+        "options": [
+          {
+            "id": "tous-documents-choix-1",
+            "text": "tous"
+          },
+          {
+            "id": "tous-documents-choix-2",
+            "text": "tout"
+          },
+          {
+            "id": "tous-documents-choix-3",
+            "text": "toute"
+          },
+          {
+            "id": "tous-documents-choix-4",
+            "text": "toutes"
+          }
+        ],
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : J’ai vérifié tous les documents du dossier."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-toutes-recettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 43,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "J’ai lu ___ les recettes de la fiche.",
+        "cue": "Vous avez lu la totalité des recettes de la fiche. Mot demandé : tout.",
+        "answers": [
+          "toutes"
+        ],
+        "options": [
+          {
+            "id": "toutes-recettes-choix-1",
+            "text": "toutes"
+          },
+          {
+            "id": "toutes-recettes-choix-2",
+            "text": "tout"
+          },
+          {
+            "id": "toutes-recettes-choix-3",
+            "text": "toute"
+          },
+          {
+            "id": "toutes-recettes-choix-4",
+            "text": "tous"
+          }
+        ],
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : J’ai lu toutes les recettes de la fiche."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-aucun-ticket",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 44,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je n’ai ___ ticket.",
+        "cue": "Vous n’avez pas de ticket. Mot demandé : aucun.",
+        "answers": [
+          "aucun"
+        ],
+        "options": [
+          {
+            "id": "aucun-ticket-choix-1",
+            "text": "aucun"
+          },
+          {
+            "id": "aucun-ticket-choix-2",
+            "text": "aucune"
+          },
+          {
+            "id": "aucun-ticket-choix-3",
+            "text": "plusieurs"
+          }
+        ],
+        "explanation": "Dans ces phrases, aucun/aucune accompagne un nom singulier et s’emploie avec ne, sans pas. Modèle : Je n’ai aucun ticket."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-aucune-pomme",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 45,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Il ne reste ___ pomme dans le panier.",
+        "cue": "Il ne reste pas de pomme dans le panier. Mot demandé : aucun.",
+        "answers": [
+          "aucune"
+        ],
+        "options": [
+          {
+            "id": "aucune-pomme-choix-1",
+            "text": "aucune"
+          },
+          {
+            "id": "aucune-pomme-choix-2",
+            "text": "aucun"
+          },
+          {
+            "id": "aucune-pomme-choix-3",
+            "text": "plusieurs"
+          }
+        ],
+        "explanation": "Dans ces phrases, aucun/aucune accompagne un nom singulier et s’emploie avec ne, sans pas. Modèle : Il ne reste aucune pomme dans le panier."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-aucun-produit",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 46,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ produit n’est périmé dans ce lot.",
+        "cue": "Pas un seul produit n’est périmé dans ce lot. Mot demandé : aucun.",
+        "answers": [
+          "Aucun"
+        ],
+        "options": [
+          {
+            "id": "aucun-produit-choix-1",
+            "text": "Aucun"
+          },
+          {
+            "id": "aucun-produit-choix-2",
+            "text": "Aucune"
+          },
+          {
+            "id": "aucun-produit-choix-3",
+            "text": "Plusieurs"
+          }
+        ],
+        "explanation": "Dans ces phrases, aucun/aucune accompagne un nom singulier et s’emploie avec ne, sans pas. Modèle : Aucun produit n’est périmé dans ce lot."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-aucune-place",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 47,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Il n’y a ___ place disponible.",
+        "cue": "Aucune place n’est disponible. Mot demandé : aucun.",
+        "answers": [
+          "aucune"
+        ],
+        "options": [
+          {
+            "id": "aucune-place-choix-1",
+            "text": "aucune"
+          },
+          {
+            "id": "aucune-place-choix-2",
+            "text": "aucun"
+          },
+          {
+            "id": "aucune-place-choix-3",
+            "text": "plusieurs"
+          }
+        ],
+        "explanation": "Dans ces phrases, aucun/aucune accompagne un nom singulier et s’emploie avec ne, sans pas. Modèle : Il n’y a aucune place disponible."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-aucun-oubli",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 48,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "La vérification ne révèle ___ oubli.",
+        "cue": "La vérification ne révèle pas d’oubli. Mot demandé : aucun.",
+        "answers": [
+          "aucun"
+        ],
+        "options": [
+          {
+            "id": "aucun-oubli-choix-1",
+            "text": "aucun"
+          },
+          {
+            "id": "aucun-oubli-choix-2",
+            "text": "aucune"
+          },
+          {
+            "id": "aucun-oubli-choix-3",
+            "text": "plusieurs"
+          }
+        ],
+        "explanation": "Dans ces phrases, aucun/aucune accompagne un nom singulier et s’emploie avec ne, sans pas. Modèle : La vérification ne révèle aucun oubli."
+      },
+      {
+        "id": "gram-ex-g5-qcm-verbe-a2-aucune-erreur",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-qcm-verbe",
+          "position": 49,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Il n’y a ___ erreur sur l’étiquette.",
+        "cue": "Il n’y a pas d’erreur sur l’étiquette. Mot demandé : aucun.",
+        "answers": [
+          "aucune"
+        ],
+        "options": [
+          {
+            "id": "aucune-erreur-choix-1",
+            "text": "aucune"
+          },
+          {
+            "id": "aucune-erreur-choix-2",
+            "text": "aucun"
+          },
+          {
+            "id": "aucune-erreur-choix-3",
+            "text": "plusieurs"
+          }
+        ],
+        "explanation": "Dans ces phrases, aucun/aucune accompagne un nom singulier et s’emploie avec ne, sans pas. Modèle : Il n’y a aucune erreur sur l’étiquette."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "aliments-2026-11-24-v1",
+    "activityId": "gram-ex-g5-curriculum-t",
+    "subthemeId": "g5",
+    "topic": "gram-aliments",
+    "level": "A2",
+    "label": "Transformer une phrase",
+    "objective": "Employer et accorder le déterminant indéfini demandé selon la quantité, la totalité ou la distribution.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Sources, formes et contextes relus ; réemploi explicite entre mécaniques. Images existantes conservées sous empreinte immuable. Modèles ouverts non exclusifs ; approbation enseignante en attente."
+    },
+    "presentations": [
+      "transform"
+    ],
+    "instructions": {
+      "transform": "Reformulez avec le déterminant demandé en conservant les faits et les accords."
+    },
+    "units": [
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-chaque-produit",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 0,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Les produits sont contrôlés un par un.",
+        "cue": "Le contrôle porte sur les produits un par un.",
+        "answers": [
+          "Chaque produit est contrôlé."
+        ],
+        "directive": "Reformulez avec la famille de « chaque » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Chaque est invariable et accompagne un nom singulier. Modèle : Chaque produit est contrôlé."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-chaque-etiquette",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 1,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Les étiquettes sont relues une par une avant l’ouverture.",
+        "cue": "Les étiquettes sont relues individuellement avant l’ouverture du magasin.",
+        "answers": [
+          "Chaque étiquette est relue avant l’ouverture."
+        ],
+        "directive": "Reformulez avec la famille de « chaque » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Chaque est invariable et accompagne un nom singulier. Modèle : Chaque étiquette est relue avant l’ouverture."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-chaque-client",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 2,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Les clients reçoivent un ticket chacun.",
+        "cue": "Les clients reçoivent chacun un ticket, sans exception individuelle.",
+        "answers": [
+          "Chaque client reçoit un ticket."
+        ],
+        "directive": "Reformulez avec la famille de « chaque » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Chaque est invariable et accompagne un nom singulier. Modèle : Chaque client reçoit un ticket."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-chaque-table",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 3,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "On nettoie les tables une par une après le service.",
+        "cue": "Les tables sont nettoyées une par une après le service.",
+        "answers": [
+          "On nettoie chaque table après le service."
+        ],
+        "directive": "Reformulez avec la famille de « chaque » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Chaque est invariable et accompagne un nom singulier. Modèle : On nettoie chaque table après le service."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-chaque-commande",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 4,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "On prépare les commandes une par une.",
+        "cue": "Les commandes sont préparées séparément avec le mot chaque.",
+        "answers": [
+          "On prépare chaque commande séparément."
+        ],
+        "directive": "Reformulez avec la famille de « chaque » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Chaque est invariable et accompagne un nom singulier. Modèle : On prépare chaque commande séparément."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-chaque-participant",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 5,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Les participants reçoivent une fiche chacun.",
+        "cue": "Une fiche est prévue pour chacune des personnes de l’atelier.",
+        "answers": [
+          "Chaque participant reçoit une fiche."
+        ],
+        "directive": "Reformulez avec la famille de « chaque » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Chaque est invariable et accompagne un nom singulier. Modèle : Chaque participant reçoit une fiche."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-chaque-jour",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 6,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "On note la température tous les jours.",
+        "cue": "Le relevé de température est effectué tous les jours, considérés un à un.",
+        "answers": [
+          "On note la température chaque jour."
+        ],
+        "directive": "Reformulez avec la famille de « chaque » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Chaque est invariable et accompagne un nom singulier. Modèle : On note la température chaque jour."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-chaque-pot",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 7,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Les pots doivent être fermés un par un.",
+        "cue": "Les pots doivent être fermés individuellement avant le transport.",
+        "answers": [
+          "Chaque pot doit être fermé."
+        ],
+        "directive": "Reformulez avec la famille de « chaque » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Chaque est invariable et accompagne un nom singulier. Modèle : Chaque pot doit être fermé."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-quelques-places",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 8,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Il reste un petit nombre de places libres.",
+        "cue": "Un petit nombre de places reste libre.",
+        "answers": [
+          "Il reste quelques places libres."
+        ],
+        "directive": "Reformulez avec la famille de « quelque » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Ici, quelques est un déterminant au pluriel. Modèle : Il reste quelques places libres."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-quelques-minutes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 9,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Attendez un petit nombre de minutes.",
+        "cue": "L’attente est courte et non chiffrée.",
+        "answers": [
+          "Attendez quelques minutes."
+        ],
+        "directive": "Reformulez avec la famille de « quelque » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Ici, quelques est un déterminant au pluriel. Modèle : Attendez quelques minutes."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-quelques-pommes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 10,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je voudrais un petit nombre de pommes.",
+        "cue": "Vous demandez un petit nombre de pommes, avec le mot quelque accordé.",
+        "answers": [
+          "Je voudrais quelques pommes."
+        ],
+        "directive": "Reformulez avec la famille de « quelque » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Ici, quelques est un déterminant au pluriel. Modèle : Je voudrais quelques pommes."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-quelques-biscuits",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 11,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’emporte un petit nombre de biscuits pour la pause.",
+        "cue": "Vous emportez un petit nombre de biscuits pour la pause.",
+        "answers": [
+          "J’emporte quelques biscuits pour la pause."
+        ],
+        "directive": "Reformulez avec la famille de « quelque » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Ici, quelques est un déterminant au pluriel. Modèle : J’emporte quelques biscuits pour la pause."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-quelques-idees",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 12,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Un petit nombre d’idées a été proposé.",
+        "cue": "Un petit nombre d’idées a été proposé.",
+        "answers": [
+          "Quelques idées ont été proposées."
+        ],
+        "directive": "Reformulez avec la famille de « quelque » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Ici, quelques est un déterminant au pluriel. Modèle : Quelques idées ont été proposées."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-quelques-questions",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 13,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’ai un petit nombre de questions après la lecture.",
+        "cue": "Vous avez un petit nombre de questions à poser après la lecture.",
+        "answers": [
+          "J’ai quelques questions après la lecture."
+        ],
+        "directive": "Reformulez avec la famille de « quelque » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Ici, quelques est un déterminant au pluriel. Modèle : J’ai quelques questions après la lecture."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-quelques-restes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 14,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je réutilise un petit nombre de restes du repas.",
+        "cue": "Il subsiste un petit nombre de restes du repas.",
+        "answers": [
+          "Je réutilise quelques restes du repas."
+        ],
+        "directive": "Reformulez avec la famille de « quelque » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Ici, quelques est un déterminant au pluriel. Modèle : Je réutilise quelques restes du repas."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-quelques-gouttes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 15,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Ajoutez un petit nombre de gouttes d’eau.",
+        "cue": "Une petite quantité, exprimée en gouttes, suffit.",
+        "answers": [
+          "Ajoutez quelques gouttes d’eau."
+        ],
+        "directive": "Reformulez avec la famille de « quelque » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Ici, quelques est un déterminant au pluriel. Modèle : Ajoutez quelques gouttes d’eau."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-plusieurs-livres",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 16,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Plus d’un livre de recettes a été ajouté.",
+        "cue": "Plus d’un livre de recettes a été ajouté, sans nombre exact.",
+        "answers": [
+          "Plusieurs livres de recettes ont été ajoutés."
+        ],
+        "directive": "Reformulez avec la famille de « plusieurs » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Plusieurs est invariable et accompagne un nom pluriel. Modèle : Plusieurs livres de recettes ont été ajoutés."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-plusieurs-bouteilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 17,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "La commande contient plus d’une bouteille d’eau.",
+        "cue": "La commande contient plus d’une bouteille d’eau.",
+        "answers": [
+          "La commande contient plusieurs bouteilles d’eau."
+        ],
+        "directive": "Reformulez avec la famille de « plusieurs » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Plusieurs est invariable et accompagne un nom pluriel. Modèle : La commande contient plusieurs bouteilles d’eau."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-plusieurs-solutions",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 18,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Plus d’une solution est possible.",
+        "cue": "Plus d’une solution est possible pour organiser le repas.",
+        "answers": [
+          "Plusieurs solutions sont possibles."
+        ],
+        "directive": "Reformulez avec la famille de « plusieurs » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Plusieurs est invariable et accompagne un nom pluriel. Modèle : Plusieurs solutions sont possibles."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-plusieurs-ateliers",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 19,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "On peut choisir entre plus d’un atelier.",
+        "cue": "On peut choisir entre plus d’un atelier de cuisine.",
+        "answers": [
+          "On peut choisir entre plusieurs ateliers."
+        ],
+        "directive": "Reformulez avec la famille de « plusieurs » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Plusieurs est invariable et accompagne un nom pluriel. Modèle : On peut choisir entre plusieurs ateliers."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-plusieurs-magasins",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 20,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je compare les prix dans plus d’un magasin.",
+        "cue": "Vous comparez les prix dans plus d’un magasin, sans préciser leur nombre.",
+        "answers": [
+          "Je compare les prix dans plusieurs magasins."
+        ],
+        "directive": "Reformulez avec la famille de « plusieurs » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Plusieurs est invariable et accompagne un nom pluriel. Modèle : Je compare les prix dans plusieurs magasins."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-plusieurs-personnes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 21,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Plus d’une personne attend à l’accueil.",
+        "cue": "Plus d’une personne attend à l’accueil.",
+        "answers": [
+          "Plusieurs personnes attendent à l’accueil."
+        ],
+        "directive": "Reformulez avec la famille de « plusieurs » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Plusieurs est invariable et accompagne un nom pluriel. Modèle : Plusieurs personnes attendent à l’accueil."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-plusieurs-recettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 22,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je connais plus d’une recette avec ce légume.",
+        "cue": "Vous connaissez plus d’une recette avec ce légume.",
+        "answers": [
+          "Je connais plusieurs recettes avec ce légume."
+        ],
+        "directive": "Reformulez avec la famille de « plusieurs » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Plusieurs est invariable et accompagne un nom pluriel. Modèle : Je connais plusieurs recettes avec ce légume."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-plusieurs-trajets",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 23,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Plus d’un trajet mène au marché.",
+        "cue": "Plus d’un trajet mène au marché.",
+        "answers": [
+          "Plusieurs trajets mènent au marché."
+        ],
+        "directive": "Reformulez avec la famille de « plusieurs » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Plusieurs est invariable et accompagne un nom pluriel. Modèle : Plusieurs trajets mènent au marché."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-certains-clients",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 24,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Une partie des clients paie par carte.",
+        "cue": "Une partie des clients, et non leur totalité, paie par carte.",
+        "answers": [
+          "Certains clients paient par carte."
+        ],
+        "directive": "Reformulez avec la famille de « certain » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Certain s’accorde en genre et en nombre avec le nom. Modèle : Certains clients paient par carte."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-certaines-commandes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 25,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Une partie des commandes est déjà prête.",
+        "cue": "Une partie des commandes, et non toutes, est déjà prête.",
+        "answers": [
+          "Certaines commandes sont déjà prêtes."
+        ],
+        "directive": "Reformulez avec la famille de « certain » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Certain s’accorde en genre et en nombre avec le nom. Modèle : Certaines commandes sont déjà prêtes."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-certains-fruits",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 26,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Une partie des fruits du panier doit être consommée aujourd’hui.",
+        "cue": "Une partie des fruits du panier doit être consommée aujourd’hui.",
+        "answers": [
+          "Certains fruits du panier doivent être consommés aujourd’hui."
+        ],
+        "directive": "Reformulez avec la famille de « certain » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Certain s’accorde en genre et en nombre avec le nom. Modèle : Certains fruits du panier doivent être consommés aujourd’hui."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-certaines-personnes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 27,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Une partie des personnes préfère manger à l’extérieur.",
+        "cue": "Une partie des personnes préfère manger à l’extérieur, sans généraliser à tout le groupe.",
+        "answers": [
+          "Certaines personnes préfèrent manger à l’extérieur."
+        ],
+        "directive": "Reformulez avec la famille de « certain » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Certain s’accorde en genre et en nombre avec le nom. Modèle : Certaines personnes préfèrent manger à l’extérieur."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-certains-produits",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 28,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "L’offre concerne une partie des produits seulement.",
+        "cue": "L’offre concerne une partie des produits seulement.",
+        "answers": [
+          "L’offre concerne certains produits seulement."
+        ],
+        "directive": "Reformulez avec la famille de « certain » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Certain s’accorde en genre et en nombre avec le nom. Modèle : L’offre concerne certains produits seulement."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-certaines-salles",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 29,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Une partie des salles peut accueillir le repas.",
+        "cue": "Une partie des salles peut accueillir le repas, mais pas toutes.",
+        "answers": [
+          "Certaines salles peuvent accueillir le repas."
+        ],
+        "directive": "Reformulez avec la famille de « certain » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Certain s’accorde en genre et en nombre avec le nom. Modèle : Certaines salles peuvent accueillir le repas."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-certains-jours",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 30,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Le marché a lieu pendant une partie des jours de la semaine.",
+        "cue": "Le marché a lieu pendant une partie des jours de la semaine, pas tous.",
+        "answers": [
+          "Le marché a lieu certains jours de la semaine."
+        ],
+        "directive": "Reformulez avec la famille de « certain » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Certain s’accorde en genre et en nombre avec le nom. Modèle : Le marché a lieu certains jours de la semaine."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-certaines-etiquettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 31,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Une partie des étiquettes reste à vérifier.",
+        "cue": "Une partie des étiquettes reste à vérifier.",
+        "answers": [
+          "Certaines étiquettes restent à vérifier."
+        ],
+        "directive": "Reformulez avec la famille de « certain » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Certain s’accorde en genre et en nombre avec le nom. Modèle : Certaines étiquettes restent à vérifier."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-tout-pain",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 32,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "L’ensemble du pain doit être partagé.",
+        "cue": "Le pain entier doit être partagé, sans partie laissée de côté.",
+        "answers": [
+          "Tout le pain doit être partagé."
+        ],
+        "directive": "Reformulez avec la famille de « tout » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Tout le pain doit être partagé."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-toute-soupe",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 33,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "L’ensemble de la soupe sera servi.",
+        "cue": "La soupe entière sera servie, sans reste prévu.",
+        "answers": [
+          "Toute la soupe sera servie."
+        ],
+        "directive": "Reformulez avec la famille de « tout » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Toute la soupe sera servie."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-tous-legumes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 34,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "La totalité des légumes est lavée.",
+        "cue": "La totalité des légumes est lavée, sans exception.",
+        "answers": [
+          "Tous les légumes sont lavés."
+        ],
+        "directive": "Reformulez avec la famille de « tout » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Tous les légumes sont lavés."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-toutes-assiettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 35,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "La totalité des assiettes est propre.",
+        "cue": "La totalité des assiettes est propre.",
+        "answers": [
+          "Toutes les assiettes sont propres."
+        ],
+        "directive": "Reformulez avec la famille de « tout » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Toutes les assiettes sont propres."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-tout-groupe",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 36,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Le groupe entier participe à la préparation.",
+        "cue": "Le groupe entier participe à la préparation du repas.",
+        "answers": [
+          "Tout le groupe participe à la préparation."
+        ],
+        "directive": "Reformulez avec la famille de « tout » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Tout le groupe participe à la préparation."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-toute-classe",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 37,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "La classe entière prépare l’atelier.",
+        "cue": "La classe entière prépare l’atelier, sans élève exclu de l’activité.",
+        "answers": [
+          "Toute la classe prépare l’atelier."
+        ],
+        "directive": "Reformulez avec la famille de « tout » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Toute la classe prépare l’atelier."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-tous-invites",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 38,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "La totalité des invités est arrivée.",
+        "cue": "La totalité des invités est arrivée.",
+        "answers": [
+          "Tous les invités sont arrivés."
+        ],
+        "directive": "Reformulez avec la famille de « tout » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Tous les invités sont arrivés."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-toutes-tables",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 39,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "La totalité des tables est prête.",
+        "cue": "La totalité des tables est prête pour le service.",
+        "answers": [
+          "Toutes les tables sont prêtes."
+        ],
+        "directive": "Reformulez avec la famille de « tout » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Toutes les tables sont prêtes."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-tout-monde",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 40,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Toutes les personnes sont présentes.",
+        "cue": "Toutes les personnes sont présentes.",
+        "answers": [
+          "Tout le monde est présent."
+        ],
+        "directive": "Reformulez avec la famille de « tout » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Tout le monde est présent."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-toute-eau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 41,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "L’ensemble de l’eau de la carafe doit être utilisé.",
+        "cue": "La totalité de l’eau de la carafe doit être utilisée pour cette étape.",
+        "answers": [
+          "Toute l’eau de la carafe doit être utilisée."
+        ],
+        "directive": "Reformulez avec la famille de « tout » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Toute l’eau de la carafe doit être utilisée."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-tous-documents",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 42,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’ai vérifié la totalité des documents du dossier.",
+        "cue": "Vous avez vérifié la totalité des documents du dossier.",
+        "answers": [
+          "J’ai vérifié tous les documents du dossier."
+        ],
+        "directive": "Reformulez avec la famille de « tout » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : J’ai vérifié tous les documents du dossier."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-toutes-recettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 43,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’ai lu la totalité des recettes de la fiche.",
+        "cue": "Vous avez lu la totalité des recettes de la fiche.",
+        "answers": [
+          "J’ai lu toutes les recettes de la fiche."
+        ],
+        "directive": "Reformulez avec la famille de « tout » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : J’ai lu toutes les recettes de la fiche."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-aucun-ticket",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 44,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je n’ai pas de ticket.",
+        "cue": "Vous n’avez pas de ticket.",
+        "answers": [
+          "Je n’ai aucun ticket."
+        ],
+        "directive": "Reformulez avec la famille de « aucun » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Dans ces phrases, aucun/aucune accompagne un nom singulier et s’emploie avec ne, sans pas. Modèle : Je n’ai aucun ticket."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-aucune-pomme",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 45,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Il ne reste pas de pomme dans le panier.",
+        "cue": "Il ne reste pas de pomme dans le panier.",
+        "answers": [
+          "Il ne reste aucune pomme dans le panier."
+        ],
+        "directive": "Reformulez avec la famille de « aucun » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Dans ces phrases, aucun/aucune accompagne un nom singulier et s’emploie avec ne, sans pas. Modèle : Il ne reste aucune pomme dans le panier."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-aucun-produit",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 46,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Pas un seul produit n’est périmé dans ce lot.",
+        "cue": "Pas un seul produit n’est périmé dans ce lot.",
+        "answers": [
+          "Aucun produit n’est périmé dans ce lot."
+        ],
+        "directive": "Reformulez avec la famille de « aucun » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Dans ces phrases, aucun/aucune accompagne un nom singulier et s’emploie avec ne, sans pas. Modèle : Aucun produit n’est périmé dans ce lot."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-aucune-place",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 47,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Il n’y a pas de place disponible.",
+        "cue": "Aucune place n’est disponible.",
+        "answers": [
+          "Il n’y a aucune place disponible."
+        ],
+        "directive": "Reformulez avec la famille de « aucun » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Dans ces phrases, aucun/aucune accompagne un nom singulier et s’emploie avec ne, sans pas. Modèle : Il n’y a aucune place disponible."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-aucun-oubli",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 48,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "La vérification ne révèle pas d’oubli.",
+        "cue": "La vérification ne révèle pas d’oubli.",
+        "answers": [
+          "La vérification ne révèle aucun oubli."
+        ],
+        "directive": "Reformulez avec la famille de « aucun » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Dans ces phrases, aucun/aucune accompagne un nom singulier et s’emploie avec ne, sans pas. Modèle : La vérification ne révèle aucun oubli."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-t-a2-aucune-erreur",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-t",
+          "position": 49,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Il n’y a pas d’erreur sur l’étiquette.",
+        "cue": "Il n’y a pas d’erreur sur l’étiquette.",
+        "answers": [
+          "Il n’y a aucune erreur sur l’étiquette."
+        ],
+        "directive": "Reformulez avec la famille de « aucun » en conservant les faits. Accordez le nom, le verbe et le déterminant si nécessaire.",
+        "responseLines": 2,
+        "explanation": "Dans ces phrases, aucun/aucune accompagne un nom singulier et s’emploie avec ne, sans pas. Modèle : Il n’y a aucune erreur sur l’étiquette."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "aliments-2026-11-24-v1",
+    "activityId": "gram-ex-g5-curriculum-c",
+    "subthemeId": "g5",
+    "topic": "gram-aliments",
+    "level": "A2",
+    "label": "Corriger l’erreur",
+    "objective": "Employer et accorder le déterminant indéfini demandé selon la quantité, la totalité ou la distribution.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Sources, formes et contextes relus ; réemploi explicite entre mécaniques. Images existantes conservées sous empreinte immuable. Modèles ouverts non exclusifs ; approbation enseignante en attente."
+    },
+    "presentations": [
+      "correct"
+    ],
+    "instructions": {
+      "correct": "Corrigez la forme du déterminant sans changer sa famille, puis réécrivez la phrase."
+    },
+    "units": [
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-chaque-produit",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 0,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Chaques produit est contrôlé.",
+        "cue": "Le contrôle porte sur les produits un par un.",
+        "answers": [
+          "Chaque produit est contrôlé."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 7,
+          "text": "Chaques"
+        },
+        "explanation": "Chaque est invariable et accompagne un nom singulier. Modèle : Chaque produit est contrôlé."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-chaque-etiquette",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 1,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Chaques étiquette est relue avant l’ouverture.",
+        "cue": "Les étiquettes sont relues individuellement avant l’ouverture du magasin.",
+        "answers": [
+          "Chaque étiquette est relue avant l’ouverture."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 7,
+          "text": "Chaques"
+        },
+        "explanation": "Chaque est invariable et accompagne un nom singulier. Modèle : Chaque étiquette est relue avant l’ouverture."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-chaque-client",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 2,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Chaques client reçoit un ticket.",
+        "cue": "Les clients reçoivent chacun un ticket, sans exception individuelle.",
+        "answers": [
+          "Chaque client reçoit un ticket."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 7,
+          "text": "Chaques"
+        },
+        "explanation": "Chaque est invariable et accompagne un nom singulier. Modèle : Chaque client reçoit un ticket."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-chaque-table",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 3,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "On nettoie chaques table après le service.",
+        "cue": "Les tables sont nettoyées une par une après le service.",
+        "answers": [
+          "On nettoie chaque table après le service."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 18,
+          "text": "chaques"
+        },
+        "explanation": "Chaque est invariable et accompagne un nom singulier. Modèle : On nettoie chaque table après le service."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-chaque-commande",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 4,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "On prépare chaques commande séparément.",
+        "cue": "Les commandes sont préparées séparément avec le mot chaque.",
+        "answers": [
+          "On prépare chaque commande séparément."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 18,
+          "text": "chaques"
+        },
+        "explanation": "Chaque est invariable et accompagne un nom singulier. Modèle : On prépare chaque commande séparément."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-chaque-participant",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 5,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Chaques participant reçoit une fiche.",
+        "cue": "Une fiche est prévue pour chacune des personnes de l’atelier.",
+        "answers": [
+          "Chaque participant reçoit une fiche."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 7,
+          "text": "Chaques"
+        },
+        "explanation": "Chaque est invariable et accompagne un nom singulier. Modèle : Chaque participant reçoit une fiche."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-chaque-jour",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 6,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "On note la température chaques jour.",
+        "cue": "Le relevé de température est effectué tous les jours, considérés un à un.",
+        "answers": [
+          "On note la température chaque jour."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 23,
+          "end": 30,
+          "text": "chaques"
+        },
+        "explanation": "Chaque est invariable et accompagne un nom singulier. Modèle : On note la température chaque jour."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-chaque-pot",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 7,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Chaques pot doit être fermé.",
+        "cue": "Les pots doivent être fermés individuellement avant le transport.",
+        "answers": [
+          "Chaque pot doit être fermé."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 7,
+          "text": "Chaques"
+        },
+        "explanation": "Chaque est invariable et accompagne un nom singulier. Modèle : Chaque pot doit être fermé."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-quelques-places",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 8,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Il reste quelque places libres.",
+        "cue": "Un petit nombre de places reste libre.",
+        "answers": [
+          "Il reste quelques places libres."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 16,
+          "text": "quelque"
+        },
+        "explanation": "Ici, quelques est un déterminant au pluriel. Modèle : Il reste quelques places libres."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-quelques-minutes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 9,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Attendez quelque minutes.",
+        "cue": "L’attente est courte et non chiffrée.",
+        "answers": [
+          "Attendez quelques minutes."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 16,
+          "text": "quelque"
+        },
+        "explanation": "Ici, quelques est un déterminant au pluriel. Modèle : Attendez quelques minutes."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-quelques-pommes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 10,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je voudrais quelque pommes.",
+        "cue": "Vous demandez un petit nombre de pommes, avec le mot quelque accordé.",
+        "answers": [
+          "Je voudrais quelques pommes."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 19,
+          "text": "quelque"
+        },
+        "explanation": "Ici, quelques est un déterminant au pluriel. Modèle : Je voudrais quelques pommes."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-quelques-biscuits",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 11,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "J’emporte quelque biscuits pour la pause.",
+        "cue": "Vous emportez un petit nombre de biscuits pour la pause.",
+        "answers": [
+          "J’emporte quelques biscuits pour la pause."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 10,
+          "end": 17,
+          "text": "quelque"
+        },
+        "explanation": "Ici, quelques est un déterminant au pluriel. Modèle : J’emporte quelques biscuits pour la pause."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-quelques-idees",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 12,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Quelque idées ont été proposées.",
+        "cue": "Un petit nombre d’idées a été proposé.",
+        "answers": [
+          "Quelques idées ont été proposées."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 7,
+          "text": "Quelque"
+        },
+        "explanation": "Ici, quelques est un déterminant au pluriel. Modèle : Quelques idées ont été proposées."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-quelques-questions",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 13,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "J’ai quelque questions après la lecture.",
+        "cue": "Vous avez un petit nombre de questions à poser après la lecture.",
+        "answers": [
+          "J’ai quelques questions après la lecture."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 12,
+          "text": "quelque"
+        },
+        "explanation": "Ici, quelques est un déterminant au pluriel. Modèle : J’ai quelques questions après la lecture."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-quelques-restes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 14,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je réutilise quelque restes du repas.",
+        "cue": "Il subsiste un petit nombre de restes du repas.",
+        "answers": [
+          "Je réutilise quelques restes du repas."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 13,
+          "end": 20,
+          "text": "quelque"
+        },
+        "explanation": "Ici, quelques est un déterminant au pluriel. Modèle : Je réutilise quelques restes du repas."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-quelques-gouttes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 15,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Ajoutez quelque gouttes d’eau.",
+        "cue": "Une petite quantité, exprimée en gouttes, suffit.",
+        "answers": [
+          "Ajoutez quelques gouttes d’eau."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 15,
+          "text": "quelque"
+        },
+        "explanation": "Ici, quelques est un déterminant au pluriel. Modèle : Ajoutez quelques gouttes d’eau."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-plusieurs-livres",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 16,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Plusieures livres de recettes ont été ajoutés.",
+        "cue": "Plus d’un livre de recettes a été ajouté, sans nombre exact.",
+        "answers": [
+          "Plusieurs livres de recettes ont été ajoutés."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 10,
+          "text": "Plusieures"
+        },
+        "explanation": "Plusieurs est invariable et accompagne un nom pluriel. Modèle : Plusieurs livres de recettes ont été ajoutés."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-plusieurs-bouteilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 17,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "La commande contient plusieures bouteilles d’eau.",
+        "cue": "La commande contient plus d’une bouteille d’eau.",
+        "answers": [
+          "La commande contient plusieurs bouteilles d’eau."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 21,
+          "end": 31,
+          "text": "plusieures"
+        },
+        "explanation": "Plusieurs est invariable et accompagne un nom pluriel. Modèle : La commande contient plusieurs bouteilles d’eau."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-plusieurs-solutions",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 18,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Plusieures solutions sont possibles.",
+        "cue": "Plus d’une solution est possible pour organiser le repas.",
+        "answers": [
+          "Plusieurs solutions sont possibles."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 10,
+          "text": "Plusieures"
+        },
+        "explanation": "Plusieurs est invariable et accompagne un nom pluriel. Modèle : Plusieurs solutions sont possibles."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-plusieurs-ateliers",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 19,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "On peut choisir entre plusieures ateliers.",
+        "cue": "On peut choisir entre plus d’un atelier de cuisine.",
+        "answers": [
+          "On peut choisir entre plusieurs ateliers."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 22,
+          "end": 32,
+          "text": "plusieures"
+        },
+        "explanation": "Plusieurs est invariable et accompagne un nom pluriel. Modèle : On peut choisir entre plusieurs ateliers."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-plusieurs-magasins",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 20,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je compare les prix dans plusieures magasins.",
+        "cue": "Vous comparez les prix dans plus d’un magasin, sans préciser leur nombre.",
+        "answers": [
+          "Je compare les prix dans plusieurs magasins."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 25,
+          "end": 35,
+          "text": "plusieures"
+        },
+        "explanation": "Plusieurs est invariable et accompagne un nom pluriel. Modèle : Je compare les prix dans plusieurs magasins."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-plusieurs-personnes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 21,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Plusieures personnes attendent à l’accueil.",
+        "cue": "Plus d’une personne attend à l’accueil.",
+        "answers": [
+          "Plusieurs personnes attendent à l’accueil."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 10,
+          "text": "Plusieures"
+        },
+        "explanation": "Plusieurs est invariable et accompagne un nom pluriel. Modèle : Plusieurs personnes attendent à l’accueil."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-plusieurs-recettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 22,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je connais plusieures recettes avec ce légume.",
+        "cue": "Vous connaissez plus d’une recette avec ce légume.",
+        "answers": [
+          "Je connais plusieurs recettes avec ce légume."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 21,
+          "text": "plusieures"
+        },
+        "explanation": "Plusieurs est invariable et accompagne un nom pluriel. Modèle : Je connais plusieurs recettes avec ce légume."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-plusieurs-trajets",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 23,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Plusieures trajets mènent au marché.",
+        "cue": "Plus d’un trajet mène au marché.",
+        "answers": [
+          "Plusieurs trajets mènent au marché."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 10,
+          "text": "Plusieures"
+        },
+        "explanation": "Plusieurs est invariable et accompagne un nom pluriel. Modèle : Plusieurs trajets mènent au marché."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-certains-clients",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 24,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Certaines clients paient par carte.",
+        "cue": "Une partie des clients, et non leur totalité, paie par carte.",
+        "answers": [
+          "Certains clients paient par carte."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 9,
+          "text": "Certaines"
+        },
+        "explanation": "Certain s’accorde en genre et en nombre avec le nom. Modèle : Certains clients paient par carte."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-certaines-commandes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 25,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Certains commandes sont déjà prêtes.",
+        "cue": "Une partie des commandes, et non toutes, est déjà prête.",
+        "answers": [
+          "Certaines commandes sont déjà prêtes."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 8,
+          "text": "Certains"
+        },
+        "explanation": "Certain s’accorde en genre et en nombre avec le nom. Modèle : Certaines commandes sont déjà prêtes."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-certains-fruits",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 26,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Certaines fruits du panier doivent être consommés aujourd’hui.",
+        "cue": "Une partie des fruits du panier doit être consommée aujourd’hui.",
+        "answers": [
+          "Certains fruits du panier doivent être consommés aujourd’hui."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 9,
+          "text": "Certaines"
+        },
+        "explanation": "Certain s’accorde en genre et en nombre avec le nom. Modèle : Certains fruits du panier doivent être consommés aujourd’hui."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-certaines-personnes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 27,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Certains personnes préfèrent manger à l’extérieur.",
+        "cue": "Une partie des personnes préfère manger à l’extérieur, sans généraliser à tout le groupe.",
+        "answers": [
+          "Certaines personnes préfèrent manger à l’extérieur."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 8,
+          "text": "Certains"
+        },
+        "explanation": "Certain s’accorde en genre et en nombre avec le nom. Modèle : Certaines personnes préfèrent manger à l’extérieur."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-certains-produits",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 28,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "L’offre concerne certaines produits seulement.",
+        "cue": "L’offre concerne une partie des produits seulement.",
+        "answers": [
+          "L’offre concerne certains produits seulement."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 17,
+          "end": 26,
+          "text": "certaines"
+        },
+        "explanation": "Certain s’accorde en genre et en nombre avec le nom. Modèle : L’offre concerne certains produits seulement."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-certaines-salles",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 29,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Certains salles peuvent accueillir le repas.",
+        "cue": "Une partie des salles peut accueillir le repas, mais pas toutes.",
+        "answers": [
+          "Certaines salles peuvent accueillir le repas."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 8,
+          "text": "Certains"
+        },
+        "explanation": "Certain s’accorde en genre et en nombre avec le nom. Modèle : Certaines salles peuvent accueillir le repas."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-certains-jours",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 30,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Le marché a lieu certaines jours de la semaine.",
+        "cue": "Le marché a lieu pendant une partie des jours de la semaine, pas tous.",
+        "answers": [
+          "Le marché a lieu certains jours de la semaine."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 17,
+          "end": 26,
+          "text": "certaines"
+        },
+        "explanation": "Certain s’accorde en genre et en nombre avec le nom. Modèle : Le marché a lieu certains jours de la semaine."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-certaines-etiquettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 31,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Certains étiquettes restent à vérifier.",
+        "cue": "Une partie des étiquettes reste à vérifier.",
+        "answers": [
+          "Certaines étiquettes restent à vérifier."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 8,
+          "text": "Certains"
+        },
+        "explanation": "Certain s’accorde en genre et en nombre avec le nom. Modèle : Certaines étiquettes restent à vérifier."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-tout-pain",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 32,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Toute le pain doit être partagé.",
+        "cue": "Le pain entier doit être partagé, sans partie laissée de côté.",
+        "answers": [
+          "Tout le pain doit être partagé."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Toute"
+        },
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Tout le pain doit être partagé."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-toute-soupe",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 33,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tout la soupe sera servie.",
+        "cue": "La soupe entière sera servie, sans reste prévu.",
+        "answers": [
+          "Toute la soupe sera servie."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 4,
+          "text": "Tout"
+        },
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Toute la soupe sera servie."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-tous-legumes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 34,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tout les légumes sont lavés.",
+        "cue": "La totalité des légumes est lavée, sans exception.",
+        "answers": [
+          "Tous les légumes sont lavés."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 4,
+          "text": "Tout"
+        },
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Tous les légumes sont lavés."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-toutes-assiettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 35,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tous les assiettes sont propres.",
+        "cue": "La totalité des assiettes est propre.",
+        "answers": [
+          "Toutes les assiettes sont propres."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 4,
+          "text": "Tous"
+        },
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Toutes les assiettes sont propres."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-tout-groupe",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 36,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Toute le groupe participe à la préparation.",
+        "cue": "Le groupe entier participe à la préparation du repas.",
+        "answers": [
+          "Tout le groupe participe à la préparation."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Toute"
+        },
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Tout le groupe participe à la préparation."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-toute-classe",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 37,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tout la classe prépare l’atelier.",
+        "cue": "La classe entière prépare l’atelier, sans élève exclu de l’activité.",
+        "answers": [
+          "Toute la classe prépare l’atelier."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 4,
+          "text": "Tout"
+        },
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Toute la classe prépare l’atelier."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-tous-invites",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 38,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Toutes les invités sont arrivés.",
+        "cue": "La totalité des invités est arrivée.",
+        "answers": [
+          "Tous les invités sont arrivés."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 6,
+          "text": "Toutes"
+        },
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Tous les invités sont arrivés."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-toutes-tables",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 39,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tous les tables sont prêtes.",
+        "cue": "La totalité des tables est prête pour le service.",
+        "answers": [
+          "Toutes les tables sont prêtes."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 4,
+          "text": "Tous"
+        },
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Toutes les tables sont prêtes."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-tout-monde",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 40,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tous le monde est présent.",
+        "cue": "Toutes les personnes sont présentes.",
+        "answers": [
+          "Tout le monde est présent."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 4,
+          "text": "Tous"
+        },
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Tout le monde est présent."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-toute-eau",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 41,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tout l’eau de la carafe doit être utilisée.",
+        "cue": "La totalité de l’eau de la carafe doit être utilisée pour cette étape.",
+        "answers": [
+          "Toute l’eau de la carafe doit être utilisée."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 4,
+          "text": "Tout"
+        },
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : Toute l’eau de la carafe doit être utilisée."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-tous-documents",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 42,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "J’ai vérifié tout les documents du dossier.",
+        "cue": "Vous avez vérifié la totalité des documents du dossier.",
+        "answers": [
+          "J’ai vérifié tous les documents du dossier."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 13,
+          "end": 17,
+          "text": "tout"
+        },
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : J’ai vérifié tous les documents du dossier."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-toutes-recettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 43,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "J’ai lu tous les recettes de la fiche.",
+        "cue": "Vous avez lu la totalité des recettes de la fiche.",
+        "answers": [
+          "J’ai lu toutes les recettes de la fiche."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 12,
+          "text": "tous"
+        },
+        "explanation": "Tout s’accorde avec le nom de l’ensemble décrit. Modèle : J’ai lu toutes les recettes de la fiche."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-aucun-ticket",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 44,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je n’ai aucune ticket.",
+        "cue": "Vous n’avez pas de ticket.",
+        "answers": [
+          "Je n’ai aucun ticket."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 14,
+          "text": "aucune"
+        },
+        "explanation": "Dans ces phrases, aucun/aucune accompagne un nom singulier et s’emploie avec ne, sans pas. Modèle : Je n’ai aucun ticket."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-aucune-pomme",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 45,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Il ne reste aucun pomme dans le panier.",
+        "cue": "Il ne reste pas de pomme dans le panier.",
+        "answers": [
+          "Il ne reste aucune pomme dans le panier."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 17,
+          "text": "aucun"
+        },
+        "explanation": "Dans ces phrases, aucun/aucune accompagne un nom singulier et s’emploie avec ne, sans pas. Modèle : Il ne reste aucune pomme dans le panier."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-aucun-produit",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 46,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Aucune produit n’est périmé dans ce lot.",
+        "cue": "Pas un seul produit n’est périmé dans ce lot.",
+        "answers": [
+          "Aucun produit n’est périmé dans ce lot."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 6,
+          "text": "Aucune"
+        },
+        "explanation": "Dans ces phrases, aucun/aucune accompagne un nom singulier et s’emploie avec ne, sans pas. Modèle : Aucun produit n’est périmé dans ce lot."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-aucune-place",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 47,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Il n’y a aucun place disponible.",
+        "cue": "Aucune place n’est disponible.",
+        "answers": [
+          "Il n’y a aucune place disponible."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 14,
+          "text": "aucun"
+        },
+        "explanation": "Dans ces phrases, aucun/aucune accompagne un nom singulier et s’emploie avec ne, sans pas. Modèle : Il n’y a aucune place disponible."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-aucun-oubli",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 48,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "La vérification ne révèle aucune oubli.",
+        "cue": "La vérification ne révèle pas d’oubli.",
+        "answers": [
+          "La vérification ne révèle aucun oubli."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 26,
+          "end": 32,
+          "text": "aucune"
+        },
+        "explanation": "Dans ces phrases, aucun/aucune accompagne un nom singulier et s’emploie avec ne, sans pas. Modèle : La vérification ne révèle aucun oubli."
+      },
+      {
+        "id": "gram-ex-g5-curriculum-c-a2-aucune-erreur",
+        "source": {
+          "path": "scripts/grammar_curriculum/aliments-g5-a2.tsv",
+          "typeId": "gram-ex-g5-curriculum-c",
+          "position": 49,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Il n’y a aucun erreur sur l’étiquette.",
+        "cue": "Il n’y a pas d’erreur sur l’étiquette.",
+        "answers": [
+          "Il n’y a aucune erreur sur l’étiquette."
+        ],
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 14,
+          "text": "aucun"
+        },
+        "explanation": "Dans ces phrases, aucun/aucune accompagne un nom singulier et s’emploie avec ne, sans pas. Modèle : Il n’y a aucune erreur sur l’étiquette."
+      }
+    ]
+  }
+]
