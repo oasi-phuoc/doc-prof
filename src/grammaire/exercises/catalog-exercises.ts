@@ -116,7 +116,7 @@ export function buildGrammairePracticeTypes(): ExerciseType[] {
       seen.add(id)
       const les = lessonForType(id)
       const graded=grammarBanksForType(id)[0]
-      const label=graded&&['c4','d1','d2','d3','e1','e2','e3','e4','e5','e6','e7','f1','f2','f3','f4','f5','f6','f7','f8','f9','f10','f11','f12','f13','f14','description-physique','g1','g2','g3','g4','g5','g6','pc-idee','pc-avoir','pc-etre','imparfait','pqp','double-aux','pc-pronominaux','accord-pp'].includes(graded.subthemeId)?graded.label:les?.label??kind.label
+      const label=graded&&['c4','d1','d2','d3','e1','e2','e3','e4','e5','e6','e7','f1','f2','f3','f4','f5','f6','f7','f8','f9','f10','f11','f12','f13','f14','description-physique','g1','g2','g3','g4','g5','g6','pc-idee','pc-avoir','pc-etre','imparfait','pqp','double-aux','pc-pronominaux','accord-pp','i1','i2','i3','i5','i6','i7','i8','i9'].includes(graded.subthemeId)?graded.label:les?.label??kind.label
       types.push({
         id,
         topic: sub.topic,

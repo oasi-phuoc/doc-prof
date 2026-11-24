@@ -1,0 +1,3629 @@
+[
+  {
+    "schemaVersion": 1,
+    "revision": "pronoms-2026-11-24-v1",
+    "activityId": "gram-ex-i7-qcm-verbe",
+    "subthemeId": "i7",
+    "topic": "gram-pronoms",
+    "level": "A2",
+    "label": "Reprendre un complément avec en ou y",
+    "objective": "Employer en/y avec un référent explicite ; conserver quantités, négation, temps et place du pronom.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Situations et références relues ; réemploi explicite entre mécaniques. Modèles ouverts non exclusifs. Aucune approbation pédagogique humaine déclarée."
+    },
+    "presentations": [
+      "choice",
+      "gap"
+    ],
+    "instructions": {
+      "choice": "Choisissez en ou y selon le complément à reprendre ; les autres pronoms servent de contraste.",
+      "gap": "Complétez avec en ou y, sans changer la quantité ni le reste de la phrase."
+    },
+    "units": [
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-pain",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 0,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "J’___ veux.",
+        "cue": "On reprend du pain, quantité non précisée, complément direct indéfini de vouloir.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "pain-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "pain-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "pain-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "En reprend un produit présenté par du. Modèle : J’en veux."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-eau",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 1,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "J’___ bois.",
+        "cue": "On reprend de l’eau, quantité non précisée.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "eau-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "eau-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "eau-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "En reprend de l’eau. Modèle : J’en bois."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-pommes-trois",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 2,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "J’___ achète trois.",
+        "cue": "On reprend des pommes dans une quantité de trois ; le nombre doit rester.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "pommes-trois-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "pommes-trois-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "pommes-trois-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "En reprend le nom ; trois reste dans la phrase. Modèle : J’en achète trois."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-livres-deux",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 3,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ prends deux.",
+        "cue": "On reprend des livres dans une quantité de deux ; le nombre reste.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "livres-deux-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "livres-deux-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "livres-deux-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "En reprend le nom après une quantité. Modèle : Tu en prends deux."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-sucre",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 4,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Elle ___ ajoute.",
+        "cue": "On reprend du sucre, sans désigner un sucre particulier.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "sucre-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "sucre-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "sucre-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "En reprend du sucre. Modèle : Elle en ajoute."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-farine",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 5,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ utilisons.",
+        "cue": "On reprend de la farine, quantité non précisée.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "farine-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "farine-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "farine-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "En reprend une quantité indéfinie. Modèle : Nous en utilisons."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-the",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 6,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Vous ___ préparez beaucoup.",
+        "cue": "On reprend du thé dans une grande quantité ; beaucoup reste.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "the-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "the-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "the-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "En reprend de thé ; beaucoup reste. Modèle : Vous en préparez beaucoup."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-chaises-quatre",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 7,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Ils ___ apportent quatre.",
+        "cue": "On reprend des chaises dans une quantité de quatre.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "chaises-quatre-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "chaises-quatre-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "chaises-quatre-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "Le nombre quatre reste après le verbe. Modèle : Ils en apportent quatre."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-temps",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 8,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "J’___ ai un peu.",
+        "cue": "On reprend du temps dans une petite quantité ; un peu reste.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "temps-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "temps-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "temps-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "En reprend de temps ; un peu reste. Modèle : J’en ai un peu."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-questions",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 9,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ avons deux.",
+        "cue": "On reprend des questions dans une quantité de deux.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "questions-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "questions-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "questions-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "Le nombre deux reste dans la phrase. Modèle : Nous en avons deux."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-pain-negatif",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 10,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je n’___ veux pas.",
+        "cue": "On reprend du pain à la négation générale, devenu de pain dans la phrase source.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "pain-negatif-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "pain-negatif-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "pain-negatif-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "En se place entre n’ et veux. Modèle : Je n’en veux pas."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-eau-negatif",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 11,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Elle n’___ ajoute pas.",
+        "cue": "On reprend de l’eau à la négation générale. Aucune eau n’est ajoutée.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "eau-negatif-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "eau-negatif-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "eau-negatif-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "En se place avant le verbe. Modèle : Elle n’en ajoute pas."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-pommes-passe",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 12,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Elle ___ a acheté trois.",
+        "cue": "On reprend trois pommes achetées ; le nombre reste au passé composé.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "pommes-passe-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "pommes-passe-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "pommes-passe-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "En précède l’auxiliaire ; trois reste. Modèle : Elle en a acheté trois."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-livres-futur",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 13,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je vais ___ acheter deux.",
+        "cue": "On reprend deux livres à acheter ; le nombre reste avec le futur proche.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "livres-futur-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "livres-futur-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "livres-futur-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "En précède l’infinitif acheter. Modèle : Je vais en acheter deux."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-riz-modal",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 14,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous devons ___ cuire.",
+        "cue": "On reprend du riz à cuire ; une quantité non précisée est demandée.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "riz-modal-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "riz-modal-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "riz-modal-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "En précède l’infinitif cuire. Modèle : Nous devons en cuire."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-projet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 15,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "J’___ parle.",
+        "cue": "On reprend de ce projet, complément du verbe parler de.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "projet-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "projet-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "projet-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "Parler de quelque chose : en. Modèle : J’en parle."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-regle",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 16,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je m’___ souviens.",
+        "cue": "On reprend de cette règle, complément du verbe se souvenir de.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "regle-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "regle-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "regle-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "En suit le pronom réfléchi m’. Modèle : Je m’en souviens."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-aide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 17,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "J’___ ai besoin.",
+        "cue": "On reprend de cette aide, complément de avoir besoin de.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "aide-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "aide-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "aide-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "Avoir besoin de quelque chose : en. Modèle : J’en ai besoin."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-resultat",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 18,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ sommes satisfaits.",
+        "cue": "On reprend de ce résultat, complément de être satisfait de.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "resultat-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "resultat-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "resultat-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "Être satisfait de quelque chose : en. Modèle : Nous en sommes satisfaits."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-reponse",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 19,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ doutes.",
+        "cue": "On reprend de cette réponse, complément de douter de.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "reponse-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "reponse-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "reponse-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "Douter de quelque chose : en. Modèle : Tu en doutes."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-vacances",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 20,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Elle ___ rêve.",
+        "cue": "On reprend de ces vacances, complément de rêver de.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "vacances-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "vacances-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "vacances-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "Rêver de quelque chose : en. Modèle : Elle en rêve."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-occasion",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 21,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Vous ___ profitez.",
+        "cue": "On reprend de cette occasion, complément de profiter de.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "occasion-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "occasion-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "occasion-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "Profiter de quelque chose : en. Modèle : Vous en profitez."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-origine",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 22,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "J’___ reviens.",
+        "cue": "On reprend du village, origine du déplacement ; le pronom ne représente pas une destination.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "origine-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "origine-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "origine-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "En reprend le lieu d’où l’on revient. Modèle : J’en reviens."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-piscine-origine",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 23,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ revenons.",
+        "cue": "On reprend de la piscine comme origine du déplacement.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "piscine-origine-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "piscine-origine-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "piscine-origine-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "En représente ici l’origine du déplacement. Modèle : Nous en revenons."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-projet-negatif",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 24,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je n’___ ai pas parlé.",
+        "cue": "On reprend de ce projet après parler de, avec négation au passé composé.",
+        "answers": [
+          "en"
+        ],
+        "options": [
+          {
+            "id": "projet-negatif-choix-1",
+            "text": "en"
+          },
+          {
+            "id": "projet-negatif-choix-2",
+            "text": "y"
+          },
+          {
+            "id": "projet-negatif-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "En est entre n’ et l’auxiliaire. Modèle : Je n’en ai pas parlé."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 25,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "J’___ vais.",
+        "cue": "On reprend à l’école, destination du déplacement.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "ecole-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "ecole-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "ecole-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "Y reprend une destination introduite par à. Modèle : J’y vais."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-parc",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 26,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ joues.",
+        "cue": "On reprend dans le parc, lieu où se déroule le jeu.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "parc-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "parc-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "parc-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "Y reprend le lieu introduit par dans. Modèle : Tu y joues."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-salle",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 27,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Elle ___ travaille.",
+        "cue": "On reprend dans cette salle, lieu du travail.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "salle-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "salle-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "salle-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "Y reprend le lieu du travail. Modèle : Elle y travaille."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-bibliotheque",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 28,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ allons.",
+        "cue": "On reprend à la bibliothèque, destination du groupe.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "bibliotheque-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "bibliotheque-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "bibliotheque-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "Y reprend la destination. Modèle : Nous y allons."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-theatre",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 29,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Vous ___ restez.",
+        "cue": "On reprend au théâtre, lieu où les personnes restent.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "theatre-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "theatre-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "theatre-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "Y reprend le lieu où l’on reste. Modèle : Vous y restez."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-chez-parents",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 30,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Ils ___ dorment.",
+        "cue": "On reprend chez leurs parents comme lieu de sommeil, pas comme destinataires humains.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "chez-parents-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "chez-parents-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "chez-parents-choix-3",
+            "text": "leur"
+          }
+        ],
+        "explanation": "Y reprend tout le lieu chez leurs parents. Modèle : Ils y dorment."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-table",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 31,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je ___ pose le livre.",
+        "cue": "On reprend sur la table comme lieu où poser le livre ; on garde le livre comme COD.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "table-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "table-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "table-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "Y reprend sur la table, pas le livre. Modèle : Je y pose le livre."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-sac",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 32,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ ranges les clés.",
+        "cue": "On reprend dans ton sac comme lieu de rangement ; les clés restent comme COD.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "sac-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "sac-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "sac-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "Y reprend dans ton sac. Modèle : Tu y ranges les clés."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-armoire",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 33,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Elle ___ met les outils.",
+        "cue": "On reprend dans l’armoire, lieu de rangement des outils.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "armoire-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "armoire-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "armoire-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "Y reprend le lieu, les outils restent nommés. Modèle : Elle y met les outils."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-garage",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 34,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ rangeons la voiture.",
+        "cue": "On reprend au garage comme lieu du rangement de la voiture.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "garage-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "garage-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "garage-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "Y reprend au garage. Modèle : Nous y rangeons la voiture."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-refuge",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 35,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Vous ___ êtes arrivés.",
+        "cue": "On reprend au refuge comme lieu d’une arrivée passée.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "refuge-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "refuge-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "refuge-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "Y se place avant l’auxiliaire êtes. Modèle : Vous y êtes arrivés."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-village-retour",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 36,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Ils ___ sont retournés.",
+        "cue": "On reprend au village comme destination d’un retour, pas comme origine.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "village-retour-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "village-retour-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "village-retour-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "Y reprend la destination au village. Modèle : Ils y sont retournés."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-ecole-negatif",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 37,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je n’___ vais pas.",
+        "cue": "On reprend à l’école, destination où la personne ne va pas.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "ecole-negatif-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "ecole-negatif-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "ecole-negatif-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "Y se place entre n’ et vais. Modèle : Je n’y vais pas."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-parc-futur",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 38,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Elle va ___ courir.",
+        "cue": "On reprend au parc comme destination avec le futur proche.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "parc-futur-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "parc-futur-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "parc-futur-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "Y se place avant l’infinitif courir. Modèle : Elle va y courir."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-atelier-modal",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 39,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous pouvons ___ travailler.",
+        "cue": "On reprend dans cet atelier comme lieu de travail avec pouvoir.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "atelier-modal-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "atelier-modal-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "atelier-modal-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "Y précède l’infinitif travailler. Modèle : Nous pouvons y travailler."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-probleme",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 40,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "J’___ pense.",
+        "cue": "On reprend à ce problème, une chose, après penser à.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "probleme-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "probleme-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "probleme-choix-3",
+            "text": "lui"
+          }
+        ],
+        "explanation": "Penser à une chose : y ; les personnes ne sont pas visées ici. Modèle : J’y pense."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-question",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 41,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ réponds.",
+        "cue": "On reprend à cette question, une chose, après répondre à.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "question-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "question-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "question-choix-3",
+            "text": "lui"
+          }
+        ],
+        "explanation": "Répondre à une question : y. Modèle : Tu y réponds."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-horaire",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 42,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Elle s’___ habitue.",
+        "cue": "On reprend à cet horaire après s’habituer à ; ce n’est pas une personne.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "horaire-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "horaire-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "horaire-choix-3",
+            "text": "lui"
+          }
+        ],
+        "explanation": "Y suit le pronom réfléchi s’. Modèle : Elle s’y habitue."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-proposition",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 43,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ réfléchissons.",
+        "cue": "On reprend à cette proposition après réfléchir à.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "proposition-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "proposition-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "proposition-choix-3",
+            "text": "lui"
+          }
+        ],
+        "explanation": "Réfléchir à une chose : y. Modèle : Nous y réfléchissons."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-resultat-croire",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 44,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Vous ___ croyez.",
+        "cue": "On reprend à ce résultat après croire à ; aucun complément de personne n’est repris.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "resultat-croire-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "resultat-croire-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "resultat-croire-choix-3",
+            "text": "lui"
+          }
+        ],
+        "explanation": "Croire à une chose : y. Modèle : Vous y croyez."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-regle-attention",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 45,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Ils ___ font attention.",
+        "cue": "On reprend à cette règle après faire attention à.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "regle-attention-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "regle-attention-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "regle-attention-choix-3",
+            "text": "lui"
+          }
+        ],
+        "explanation": "Faire attention à quelque chose : y. Modèle : Ils y font attention."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-consigne-conformer",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 46,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je m’___ conforme.",
+        "cue": "On reprend à cette consigne après se conformer à.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "consigne-conformer-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "consigne-conformer-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "consigne-conformer-choix-3",
+            "text": "lui"
+          }
+        ],
+        "explanation": "Y reprend le complément de se conformer à. Modèle : Je m’y conforme."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-reunion-participer",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 47,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ participes.",
+        "cue": "On reprend à cette réunion, une activité, après participer à.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "reunion-participer-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "reunion-participer-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "reunion-participer-choix-3",
+            "text": "lui"
+          }
+        ],
+        "explanation": "Participer à une activité : y. Modèle : Tu y participes."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-sujet-passe",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 48,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ avons réfléchi.",
+        "cue": "On reprend à ce sujet, une chose, après réfléchir à au passé composé.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "sujet-passe-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "sujet-passe-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "sujet-passe-choix-3",
+            "text": "lui"
+          }
+        ],
+        "explanation": "Y précède l’auxiliaire. Modèle : Nous y avons réfléchi."
+      },
+      {
+        "id": "gram-ex-i7-qcm-verbe-a2-repas-negatif",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-qcm-verbe",
+          "position": 49,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Ils n’___ participent pas.",
+        "cue": "On reprend à ce repas comme activité à laquelle les personnes ne participent pas.",
+        "answers": [
+          "y"
+        ],
+        "options": [
+          {
+            "id": "repas-negatif-choix-1",
+            "text": "y"
+          },
+          {
+            "id": "repas-negatif-choix-2",
+            "text": "en"
+          },
+          {
+            "id": "repas-negatif-choix-3",
+            "text": "lui"
+          }
+        ],
+        "explanation": "Y est entre n’ et participent. Modèle : Ils n’y participent pas."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "pronoms-2026-11-24-v1",
+    "activityId": "gram-ex-i7-curriculum-t",
+    "subthemeId": "i7",
+    "topic": "gram-pronoms",
+    "level": "A2",
+    "label": "Transformer une phrase",
+    "objective": "Employer en/y avec un référent explicite ; conserver quantités, négation, temps et place du pronom.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Situations et références relues ; réemploi explicite entre mécaniques. Modèles ouverts non exclusifs. Aucune approbation pédagogique humaine déclarée."
+    },
+    "presentations": [
+      "transform"
+    ],
+    "instructions": {
+      "transform": "Réécrivez en conservant les faits et les référents, selon la reprise demandée."
+    },
+    "units": [
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-pain",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 0,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je veux du pain.",
+        "cue": "On reprend du pain, quantité non précisée, complément direct indéfini de vouloir.",
+        "answers": [
+          "J’en veux."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "En reprend un produit présenté par du. Modèle : J’en veux. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-eau",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 1,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je bois de l’eau.",
+        "cue": "On reprend de l’eau, quantité non précisée.",
+        "answers": [
+          "J’en bois."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "En reprend de l’eau. Modèle : J’en bois. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-pommes-trois",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 2,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’achète trois pommes.",
+        "cue": "On reprend des pommes dans une quantité de trois ; le nombre doit rester.",
+        "answers": [
+          "J’en achète trois."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "En reprend le nom ; trois reste dans la phrase. Modèle : J’en achète trois. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-livres-deux",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 3,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tu prends deux livres.",
+        "cue": "On reprend des livres dans une quantité de deux ; le nombre reste.",
+        "answers": [
+          "Tu en prends deux."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "En reprend le nom après une quantité. Modèle : Tu en prends deux. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-sucre",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 4,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Elle ajoute du sucre.",
+        "cue": "On reprend du sucre, sans désigner un sucre particulier.",
+        "answers": [
+          "Elle en ajoute."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "En reprend du sucre. Modèle : Elle en ajoute. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-farine",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 5,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous utilisons de la farine.",
+        "cue": "On reprend de la farine, quantité non précisée.",
+        "answers": [
+          "Nous en utilisons."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "En reprend une quantité indéfinie. Modèle : Nous en utilisons. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-the",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 6,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Vous préparez beaucoup de thé.",
+        "cue": "On reprend du thé dans une grande quantité ; beaucoup reste.",
+        "answers": [
+          "Vous en préparez beaucoup."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "En reprend de thé ; beaucoup reste. Modèle : Vous en préparez beaucoup. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-chaises-quatre",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 7,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Ils apportent quatre chaises.",
+        "cue": "On reprend des chaises dans une quantité de quatre.",
+        "answers": [
+          "Ils en apportent quatre."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Le nombre quatre reste après le verbe. Modèle : Ils en apportent quatre. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-temps",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 8,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’ai un peu de temps.",
+        "cue": "On reprend du temps dans une petite quantité ; un peu reste.",
+        "answers": [
+          "J’en ai un peu."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "En reprend de temps ; un peu reste. Modèle : J’en ai un peu. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-questions",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 9,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous avons deux questions.",
+        "cue": "On reprend des questions dans une quantité de deux.",
+        "answers": [
+          "Nous en avons deux."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Le nombre deux reste dans la phrase. Modèle : Nous en avons deux. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-pain-negatif",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 10,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je ne veux pas de pain.",
+        "cue": "On reprend du pain à la négation générale, devenu de pain dans la phrase source.",
+        "answers": [
+          "Je n’en veux pas."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "En se place entre n’ et veux. Modèle : Je n’en veux pas. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-eau-negatif",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 11,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Elle n’ajoute pas d’eau.",
+        "cue": "On reprend de l’eau à la négation générale. Aucune eau n’est ajoutée.",
+        "answers": [
+          "Elle n’en ajoute pas."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "En se place avant le verbe. Modèle : Elle n’en ajoute pas. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-pommes-passe",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 12,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Elle a acheté trois pommes.",
+        "cue": "On reprend trois pommes achetées ; le nombre reste au passé composé.",
+        "answers": [
+          "Elle en a acheté trois."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "En précède l’auxiliaire ; trois reste. Modèle : Elle en a acheté trois. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-livres-futur",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 13,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je vais acheter deux livres.",
+        "cue": "On reprend deux livres à acheter ; le nombre reste avec le futur proche.",
+        "answers": [
+          "Je vais en acheter deux."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "En précède l’infinitif acheter. Modèle : Je vais en acheter deux. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-riz-modal",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 14,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous devons cuire du riz.",
+        "cue": "On reprend du riz à cuire ; une quantité non précisée est demandée.",
+        "answers": [
+          "Nous devons en cuire."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "En précède l’infinitif cuire. Modèle : Nous devons en cuire. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-projet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 15,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je parle de ce projet.",
+        "cue": "On reprend de ce projet, complément du verbe parler de.",
+        "answers": [
+          "J’en parle."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Parler de quelque chose : en. Modèle : J’en parle. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-regle",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 16,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je me souviens de cette règle.",
+        "cue": "On reprend de cette règle, complément du verbe se souvenir de.",
+        "answers": [
+          "Je m’en souviens."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "En suit le pronom réfléchi m’. Modèle : Je m’en souviens. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-aide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 17,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’ai besoin de cette aide.",
+        "cue": "On reprend de cette aide, complément de avoir besoin de.",
+        "answers": [
+          "J’en ai besoin."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Avoir besoin de quelque chose : en. Modèle : J’en ai besoin. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-resultat",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 18,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous sommes satisfaits de ce résultat.",
+        "cue": "On reprend de ce résultat, complément de être satisfait de.",
+        "answers": [
+          "Nous en sommes satisfaits."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Être satisfait de quelque chose : en. Modèle : Nous en sommes satisfaits. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-reponse",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 19,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tu doutes de cette réponse.",
+        "cue": "On reprend de cette réponse, complément de douter de.",
+        "answers": [
+          "Tu en doutes."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Douter de quelque chose : en. Modèle : Tu en doutes. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-vacances",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 20,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Elle rêve de ces vacances.",
+        "cue": "On reprend de ces vacances, complément de rêver de.",
+        "answers": [
+          "Elle en rêve."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Rêver de quelque chose : en. Modèle : Elle en rêve. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-occasion",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 21,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Vous profitez de cette occasion.",
+        "cue": "On reprend de cette occasion, complément de profiter de.",
+        "answers": [
+          "Vous en profitez."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Profiter de quelque chose : en. Modèle : Vous en profitez. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-origine",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 22,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je reviens du village.",
+        "cue": "On reprend du village, origine du déplacement ; le pronom ne représente pas une destination.",
+        "answers": [
+          "J’en reviens."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "En reprend le lieu d’où l’on revient. Modèle : J’en reviens. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-piscine-origine",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 23,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous revenons de la piscine.",
+        "cue": "On reprend de la piscine comme origine du déplacement.",
+        "answers": [
+          "Nous en revenons."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "En représente ici l’origine du déplacement. Modèle : Nous en revenons. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-projet-negatif",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 24,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je n’ai pas parlé de ce projet.",
+        "cue": "On reprend de ce projet après parler de, avec négation au passé composé.",
+        "answers": [
+          "Je n’en ai pas parlé."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "En est entre n’ et l’auxiliaire. Modèle : Je n’en ai pas parlé. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 25,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je vais à l’école.",
+        "cue": "On reprend à l’école, destination du déplacement.",
+        "answers": [
+          "J’y vais."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Y reprend une destination introduite par à. Modèle : J’y vais. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-parc",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 26,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tu joues dans le parc.",
+        "cue": "On reprend dans le parc, lieu où se déroule le jeu.",
+        "answers": [
+          "Tu y joues."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Y reprend le lieu introduit par dans. Modèle : Tu y joues. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-salle",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 27,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Elle travaille dans cette salle.",
+        "cue": "On reprend dans cette salle, lieu du travail.",
+        "answers": [
+          "Elle y travaille."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Y reprend le lieu du travail. Modèle : Elle y travaille. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-bibliotheque",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 28,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous allons à la bibliothèque.",
+        "cue": "On reprend à la bibliothèque, destination du groupe.",
+        "answers": [
+          "Nous y allons."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Y reprend la destination. Modèle : Nous y allons. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-theatre",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 29,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Vous restez au théâtre.",
+        "cue": "On reprend au théâtre, lieu où les personnes restent.",
+        "answers": [
+          "Vous y restez."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Y reprend le lieu où l’on reste. Modèle : Vous y restez. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-chez-parents",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 30,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Ils dorment chez leurs parents.",
+        "cue": "On reprend chez leurs parents comme lieu de sommeil, pas comme destinataires humains.",
+        "answers": [
+          "Ils y dorment."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Y reprend tout le lieu chez leurs parents. Modèle : Ils y dorment. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-table",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 31,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je pose le livre sur la table.",
+        "cue": "On reprend sur la table comme lieu où poser le livre ; on garde le livre comme COD.",
+        "answers": [
+          "Je y pose le livre."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Y reprend sur la table, pas le livre. Modèle : Je y pose le livre. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-sac",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 32,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tu ranges les clés dans ton sac.",
+        "cue": "On reprend dans ton sac comme lieu de rangement ; les clés restent comme COD.",
+        "answers": [
+          "Tu y ranges les clés."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Y reprend dans ton sac. Modèle : Tu y ranges les clés. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-armoire",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 33,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Elle met les outils dans l’armoire.",
+        "cue": "On reprend dans l’armoire, lieu de rangement des outils.",
+        "answers": [
+          "Elle y met les outils."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Y reprend le lieu, les outils restent nommés. Modèle : Elle y met les outils. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-garage",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 34,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous rangeons la voiture au garage.",
+        "cue": "On reprend au garage comme lieu du rangement de la voiture.",
+        "answers": [
+          "Nous y rangeons la voiture."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Y reprend au garage. Modèle : Nous y rangeons la voiture. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-refuge",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 35,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Vous êtes arrivés au refuge.",
+        "cue": "On reprend au refuge comme lieu d’une arrivée passée.",
+        "answers": [
+          "Vous y êtes arrivés."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Y se place avant l’auxiliaire êtes. Modèle : Vous y êtes arrivés. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-village-retour",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 36,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Ils sont retournés au village.",
+        "cue": "On reprend au village comme destination d’un retour, pas comme origine.",
+        "answers": [
+          "Ils y sont retournés."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Y reprend la destination au village. Modèle : Ils y sont retournés. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-ecole-negatif",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 37,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je ne vais pas à l’école.",
+        "cue": "On reprend à l’école, destination où la personne ne va pas.",
+        "answers": [
+          "Je n’y vais pas."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Y se place entre n’ et vais. Modèle : Je n’y vais pas. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-parc-futur",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 38,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Elle va courir au parc.",
+        "cue": "On reprend au parc comme destination avec le futur proche.",
+        "answers": [
+          "Elle va y courir."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Y se place avant l’infinitif courir. Modèle : Elle va y courir. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-atelier-modal",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 39,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous pouvons travailler dans cet atelier.",
+        "cue": "On reprend dans cet atelier comme lieu de travail avec pouvoir.",
+        "answers": [
+          "Nous pouvons y travailler."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Y précède l’infinitif travailler. Modèle : Nous pouvons y travailler. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-probleme",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 40,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je pense à ce problème.",
+        "cue": "On reprend à ce problème, une chose, après penser à.",
+        "answers": [
+          "J’y pense."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Penser à une chose : y ; les personnes ne sont pas visées ici. Modèle : J’y pense. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-question",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 41,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tu réponds à cette question.",
+        "cue": "On reprend à cette question, une chose, après répondre à.",
+        "answers": [
+          "Tu y réponds."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Répondre à une question : y. Modèle : Tu y réponds. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-horaire",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 42,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Elle s’habitue à cet horaire.",
+        "cue": "On reprend à cet horaire après s’habituer à ; ce n’est pas une personne.",
+        "answers": [
+          "Elle s’y habitue."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Y suit le pronom réfléchi s’. Modèle : Elle s’y habitue. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-proposition",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 43,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous réfléchissons à cette proposition.",
+        "cue": "On reprend à cette proposition après réfléchir à.",
+        "answers": [
+          "Nous y réfléchissons."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Réfléchir à une chose : y. Modèle : Nous y réfléchissons. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-resultat-croire",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 44,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Vous croyez à ce résultat.",
+        "cue": "On reprend à ce résultat après croire à ; aucun complément de personne n’est repris.",
+        "answers": [
+          "Vous y croyez."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Croire à une chose : y. Modèle : Vous y croyez. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-regle-attention",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 45,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Ils font attention à cette règle.",
+        "cue": "On reprend à cette règle après faire attention à.",
+        "answers": [
+          "Ils y font attention."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Faire attention à quelque chose : y. Modèle : Ils y font attention. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-consigne-conformer",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 46,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je me conforme à cette consigne.",
+        "cue": "On reprend à cette consigne après se conformer à.",
+        "answers": [
+          "Je m’y conforme."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Y reprend le complément de se conformer à. Modèle : Je m’y conforme. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-reunion-participer",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 47,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tu participes à cette réunion.",
+        "cue": "On reprend à cette réunion, une activité, après participer à.",
+        "answers": [
+          "Tu y participes."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Participer à une activité : y. Modèle : Tu y participes. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-sujet-passe",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 48,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous avons réfléchi à ce sujet.",
+        "cue": "On reprend à ce sujet, une chose, après réfléchir à au passé composé.",
+        "answers": [
+          "Nous y avons réfléchi."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Y précède l’auxiliaire. Modèle : Nous y avons réfléchi. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-t-a2-repas-negatif",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-t",
+          "position": 49,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Ils ne participent pas à ce repas.",
+        "cue": "On reprend à ce repas comme activité à laquelle les personnes ne participent pas.",
+        "answers": [
+          "Ils n’y participent pas."
+        ],
+        "directive": "Remplacez le complément indiqué par en ou y. Conservez le temps, la négation, les quantités et le reste des faits.",
+        "responseLines": 2,
+        "explanation": "Y est entre n’ et participent. Modèle : Ils n’y participent pas. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "pronoms-2026-11-24-v1",
+    "activityId": "gram-ex-i7-curriculum-c",
+    "subthemeId": "i7",
+    "topic": "gram-pronoms",
+    "level": "A2",
+    "label": "Corriger l’erreur",
+    "objective": "Employer en/y avec un référent explicite ; conserver quantités, négation, temps et place du pronom.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Situations et références relues ; réemploi explicite entre mécaniques. Modèles ouverts non exclusifs. Aucune approbation pédagogique humaine déclarée."
+    },
+    "presentations": [
+      "correct"
+    ],
+    "instructions": {
+      "correct": "Corrigez la reprise du complément indiqué et réécrivez la phrase entière."
+    },
+    "units": [
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-pain",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 0,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "J’y veux.",
+        "cue": "On reprend du pain, quantité non précisée, complément direct indéfini de vouloir.",
+        "answers": [
+          "J’en veux."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 2,
+          "end": 3,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "En reprend un produit présenté par du. Modèle : J’en veux."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-eau",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 1,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "J’y bois.",
+        "cue": "On reprend de l’eau, quantité non précisée.",
+        "answers": [
+          "J’en bois."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 2,
+          "end": 3,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "En reprend de l’eau. Modèle : J’en bois."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-pommes-trois",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 2,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "J’y achète trois.",
+        "cue": "On reprend des pommes dans une quantité de trois ; le nombre doit rester.",
+        "answers": [
+          "J’en achète trois."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 2,
+          "end": 3,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "En reprend le nom ; trois reste dans la phrase. Modèle : J’en achète trois."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-livres-deux",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 3,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tu y prends deux.",
+        "cue": "On reprend des livres dans une quantité de deux ; le nombre reste.",
+        "answers": [
+          "Tu en prends deux."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 4,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "En reprend le nom après une quantité. Modèle : Tu en prends deux."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-sucre",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 4,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Elle y ajoute.",
+        "cue": "On reprend du sucre, sans désigner un sucre particulier.",
+        "answers": [
+          "Elle en ajoute."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 6,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "En reprend du sucre. Modèle : Elle en ajoute."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-farine",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 5,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous y utilisons.",
+        "cue": "On reprend de la farine, quantité non précisée.",
+        "answers": [
+          "Nous en utilisons."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 6,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "En reprend une quantité indéfinie. Modèle : Nous en utilisons."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-the",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 6,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Vous y préparez beaucoup.",
+        "cue": "On reprend du thé dans une grande quantité ; beaucoup reste.",
+        "answers": [
+          "Vous en préparez beaucoup."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 6,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "En reprend de thé ; beaucoup reste. Modèle : Vous en préparez beaucoup."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-chaises-quatre",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 7,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Ils y apportent quatre.",
+        "cue": "On reprend des chaises dans une quantité de quatre.",
+        "answers": [
+          "Ils en apportent quatre."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 4,
+          "end": 5,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "Le nombre quatre reste après le verbe. Modèle : Ils en apportent quatre."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-temps",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 8,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "J’y ai un peu.",
+        "cue": "On reprend du temps dans une petite quantité ; un peu reste.",
+        "answers": [
+          "J’en ai un peu."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 2,
+          "end": 3,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "En reprend de temps ; un peu reste. Modèle : J’en ai un peu."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-questions",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 9,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous y avons deux.",
+        "cue": "On reprend des questions dans une quantité de deux.",
+        "answers": [
+          "Nous en avons deux."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 6,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "Le nombre deux reste dans la phrase. Modèle : Nous en avons deux."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-pain-negatif",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 10,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je n’y veux pas.",
+        "cue": "On reprend du pain à la négation générale, devenu de pain dans la phrase source.",
+        "answers": [
+          "Je n’en veux pas."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 6,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "En se place entre n’ et veux. Modèle : Je n’en veux pas."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-eau-negatif",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 11,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Elle n’y ajoute pas.",
+        "cue": "On reprend de l’eau à la négation générale. Aucune eau n’est ajoutée.",
+        "answers": [
+          "Elle n’en ajoute pas."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 7,
+          "end": 8,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "En se place avant le verbe. Modèle : Elle n’en ajoute pas."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-pommes-passe",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 12,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Elle y a acheté trois.",
+        "cue": "On reprend trois pommes achetées ; le nombre reste au passé composé.",
+        "answers": [
+          "Elle en a acheté trois."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 6,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "En précède l’auxiliaire ; trois reste. Modèle : Elle en a acheté trois."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-livres-futur",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 13,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je vais y acheter deux.",
+        "cue": "On reprend deux livres à acheter ; le nombre reste avec le futur proche.",
+        "answers": [
+          "Je vais en acheter deux."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 9,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "En précède l’infinitif acheter. Modèle : Je vais en acheter deux."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-riz-modal",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 14,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous devons y cuire.",
+        "cue": "On reprend du riz à cuire ; une quantité non précisée est demandée.",
+        "answers": [
+          "Nous devons en cuire."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 13,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "En précède l’infinitif cuire. Modèle : Nous devons en cuire."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-projet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 15,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "J’y parle.",
+        "cue": "On reprend de ce projet, complément du verbe parler de.",
+        "answers": [
+          "J’en parle."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 2,
+          "end": 3,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "Parler de quelque chose : en. Modèle : J’en parle."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-regle",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 16,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je m’y souviens.",
+        "cue": "On reprend de cette règle, complément du verbe se souvenir de.",
+        "answers": [
+          "Je m’en souviens."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 6,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "En suit le pronom réfléchi m’. Modèle : Je m’en souviens."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-aide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 17,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "J’y ai besoin.",
+        "cue": "On reprend de cette aide, complément de avoir besoin de.",
+        "answers": [
+          "J’en ai besoin."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 2,
+          "end": 3,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "Avoir besoin de quelque chose : en. Modèle : J’en ai besoin."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-resultat",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 18,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous y sommes satisfaits.",
+        "cue": "On reprend de ce résultat, complément de être satisfait de.",
+        "answers": [
+          "Nous en sommes satisfaits."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 6,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "Être satisfait de quelque chose : en. Modèle : Nous en sommes satisfaits."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-reponse",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 19,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tu y doutes.",
+        "cue": "On reprend de cette réponse, complément de douter de.",
+        "answers": [
+          "Tu en doutes."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 4,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "Douter de quelque chose : en. Modèle : Tu en doutes."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-vacances",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 20,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Elle y rêve.",
+        "cue": "On reprend de ces vacances, complément de rêver de.",
+        "answers": [
+          "Elle en rêve."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 6,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "Rêver de quelque chose : en. Modèle : Elle en rêve."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-occasion",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 21,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Vous y profitez.",
+        "cue": "On reprend de cette occasion, complément de profiter de.",
+        "answers": [
+          "Vous en profitez."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 6,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "Profiter de quelque chose : en. Modèle : Vous en profitez."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-origine",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 22,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "J’y reviens.",
+        "cue": "On reprend du village, origine du déplacement ; le pronom ne représente pas une destination.",
+        "answers": [
+          "J’en reviens."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 2,
+          "end": 3,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "En reprend le lieu d’où l’on revient. Modèle : J’en reviens."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-piscine-origine",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 23,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous y revenons.",
+        "cue": "On reprend de la piscine comme origine du déplacement.",
+        "answers": [
+          "Nous en revenons."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 6,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "En représente ici l’origine du déplacement. Modèle : Nous en revenons."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-projet-negatif",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 24,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je n’y ai pas parlé.",
+        "cue": "On reprend de ce projet après parler de, avec négation au passé composé.",
+        "answers": [
+          "Je n’en ai pas parlé."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 6,
+          "text": "y"
+        },
+        "responseLines": 2,
+        "explanation": "En est entre n’ et l’auxiliaire. Modèle : Je n’en ai pas parlé."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 25,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "J’en vais.",
+        "cue": "On reprend à l’école, destination du déplacement.",
+        "answers": [
+          "J’y vais."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 2,
+          "end": 4,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Y reprend une destination introduite par à. Modèle : J’y vais."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-parc",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 26,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tu en joues.",
+        "cue": "On reprend dans le parc, lieu où se déroule le jeu.",
+        "answers": [
+          "Tu y joues."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 5,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Y reprend le lieu introduit par dans. Modèle : Tu y joues."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-salle",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 27,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Elle en travaille.",
+        "cue": "On reprend dans cette salle, lieu du travail.",
+        "answers": [
+          "Elle y travaille."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 7,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Y reprend le lieu du travail. Modèle : Elle y travaille."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-bibliotheque",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 28,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous en allons.",
+        "cue": "On reprend à la bibliothèque, destination du groupe.",
+        "answers": [
+          "Nous y allons."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 7,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Y reprend la destination. Modèle : Nous y allons."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-theatre",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 29,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Vous en restez.",
+        "cue": "On reprend au théâtre, lieu où les personnes restent.",
+        "answers": [
+          "Vous y restez."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 7,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Y reprend le lieu où l’on reste. Modèle : Vous y restez."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-chez-parents",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 30,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Ils en dorment.",
+        "cue": "On reprend chez leurs parents comme lieu de sommeil, pas comme destinataires humains.",
+        "answers": [
+          "Ils y dorment."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 4,
+          "end": 6,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Y reprend tout le lieu chez leurs parents. Modèle : Ils y dorment."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-table",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 31,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je en pose le livre.",
+        "cue": "On reprend sur la table comme lieu où poser le livre ; on garde le livre comme COD.",
+        "answers": [
+          "Je y pose le livre."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 5,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Y reprend sur la table, pas le livre. Modèle : Je y pose le livre."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-sac",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 32,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tu en ranges les clés.",
+        "cue": "On reprend dans ton sac comme lieu de rangement ; les clés restent comme COD.",
+        "answers": [
+          "Tu y ranges les clés."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 5,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Y reprend dans ton sac. Modèle : Tu y ranges les clés."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-armoire",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 33,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Elle en met les outils.",
+        "cue": "On reprend dans l’armoire, lieu de rangement des outils.",
+        "answers": [
+          "Elle y met les outils."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 7,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Y reprend le lieu, les outils restent nommés. Modèle : Elle y met les outils."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-garage",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 34,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous en rangeons la voiture.",
+        "cue": "On reprend au garage comme lieu du rangement de la voiture.",
+        "answers": [
+          "Nous y rangeons la voiture."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 7,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Y reprend au garage. Modèle : Nous y rangeons la voiture."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-refuge",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 35,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Vous en êtes arrivés.",
+        "cue": "On reprend au refuge comme lieu d’une arrivée passée.",
+        "answers": [
+          "Vous y êtes arrivés."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 7,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Y se place avant l’auxiliaire êtes. Modèle : Vous y êtes arrivés."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-village-retour",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 36,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Ils en sont retournés.",
+        "cue": "On reprend au village comme destination d’un retour, pas comme origine.",
+        "answers": [
+          "Ils y sont retournés."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 4,
+          "end": 6,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Y reprend la destination au village. Modèle : Ils y sont retournés."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-ecole-negatif",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 37,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je n’en vais pas.",
+        "cue": "On reprend à l’école, destination où la personne ne va pas.",
+        "answers": [
+          "Je n’y vais pas."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 7,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Y se place entre n’ et vais. Modèle : Je n’y vais pas."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-parc-futur",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 38,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Elle va en courir.",
+        "cue": "On reprend au parc comme destination avec le futur proche.",
+        "answers": [
+          "Elle va y courir."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 10,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Y se place avant l’infinitif courir. Modèle : Elle va y courir."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-atelier-modal",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 39,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous pouvons en travailler.",
+        "cue": "On reprend dans cet atelier comme lieu de travail avec pouvoir.",
+        "answers": [
+          "Nous pouvons y travailler."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 13,
+          "end": 15,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Y précède l’infinitif travailler. Modèle : Nous pouvons y travailler."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-probleme",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 40,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "J’en pense.",
+        "cue": "On reprend à ce problème, une chose, après penser à.",
+        "answers": [
+          "J’y pense."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 2,
+          "end": 4,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Penser à une chose : y ; les personnes ne sont pas visées ici. Modèle : J’y pense."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-question",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 41,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tu en réponds.",
+        "cue": "On reprend à cette question, une chose, après répondre à.",
+        "answers": [
+          "Tu y réponds."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 5,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Répondre à une question : y. Modèle : Tu y réponds."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-horaire",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 42,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Elle s’en habitue.",
+        "cue": "On reprend à cet horaire après s’habituer à ; ce n’est pas une personne.",
+        "answers": [
+          "Elle s’y habitue."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 7,
+          "end": 9,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Y suit le pronom réfléchi s’. Modèle : Elle s’y habitue."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-proposition",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 43,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous en réfléchissons.",
+        "cue": "On reprend à cette proposition après réfléchir à.",
+        "answers": [
+          "Nous y réfléchissons."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 7,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Réfléchir à une chose : y. Modèle : Nous y réfléchissons."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-resultat-croire",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 44,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Vous en croyez.",
+        "cue": "On reprend à ce résultat après croire à ; aucun complément de personne n’est repris.",
+        "answers": [
+          "Vous y croyez."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 7,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Croire à une chose : y. Modèle : Vous y croyez."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-regle-attention",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 45,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Ils en font attention.",
+        "cue": "On reprend à cette règle après faire attention à.",
+        "answers": [
+          "Ils y font attention."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 4,
+          "end": 6,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Faire attention à quelque chose : y. Modèle : Ils y font attention."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-consigne-conformer",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 46,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je m’en conforme.",
+        "cue": "On reprend à cette consigne après se conformer à.",
+        "answers": [
+          "Je m’y conforme."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 7,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Y reprend le complément de se conformer à. Modèle : Je m’y conforme."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-reunion-participer",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 47,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tu en participes.",
+        "cue": "On reprend à cette réunion, une activité, après participer à.",
+        "answers": [
+          "Tu y participes."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 5,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Participer à une activité : y. Modèle : Tu y participes."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-sujet-passe",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 48,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous en avons réfléchi.",
+        "cue": "On reprend à ce sujet, une chose, après réfléchir à au passé composé.",
+        "answers": [
+          "Nous y avons réfléchi."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 7,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Y précède l’auxiliaire. Modèle : Nous y avons réfléchi."
+      },
+      {
+        "id": "gram-ex-i7-curriculum-c-a2-repas-negatif",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+          "typeId": "gram-ex-i7-curriculum-c",
+          "position": 49,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Ils n’en participent pas.",
+        "cue": "On reprend à ce repas comme activité à laquelle les personnes ne participent pas.",
+        "answers": [
+          "Ils n’y participent pas."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 6,
+          "end": 8,
+          "text": "en"
+        },
+        "responseLines": 2,
+        "explanation": "Y est entre n’ et participent. Modèle : Ils n’y participent pas."
+      }
+    ]
+  }
+]

@@ -1,0 +1,5229 @@
+[
+  {
+    "schemaVersion": 1,
+    "revision": "pronoms-2026-11-24-v1",
+    "activityId": "gram-ex-i6-qcm-verbe",
+    "subthemeId": "i6",
+    "topic": "gram-pronoms",
+    "level": "A2",
+    "label": "Exprimer une présence, une absence ou un ensemble",
+    "objective": "Distinguer personne et chose, présence et absence, totalité et distribution individuelle.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Situations et références relues ; réemploi explicite entre mécaniques. Modèles ouverts non exclusifs. Aucune approbation pédagogique humaine déclarée."
+    },
+    "presentations": [
+      "choice",
+      "gap"
+    ],
+    "instructions": {
+      "choice": "Choisissez le pronom indéfini qui respecte les faits et la construction.",
+      "gap": "Écrivez un pronom indéfini adapté aux faits et à la construction."
+    },
+    "units": [
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-porte",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 0,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ attend devant la porte.",
+        "cue": "Une personne non identifiée attend devant la porte. Il ne s’agit pas d’un objet.",
+        "answers": [
+          "Quelqu’un"
+        ],
+        "options": [
+          {
+            "id": "porte-choix-1",
+            "text": "Quelqu’un"
+          },
+          {
+            "id": "porte-choix-2",
+            "text": "Quelque chose"
+          },
+          {
+            "id": "porte-choix-3",
+            "text": "Personne"
+          }
+        ],
+        "explanation": "Quelqu’un reprend une personne non identifiée. Modèle : Quelqu’un attend devant la porte."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-telephone",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 1,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ appelle le secrétariat.",
+        "cue": "Une personne non identifiée appelle le secrétariat.",
+        "answers": [
+          "Quelqu’un"
+        ],
+        "options": [
+          {
+            "id": "telephone-choix-1",
+            "text": "Quelqu’un"
+          },
+          {
+            "id": "telephone-choix-2",
+            "text": "Quelque chose"
+          },
+          {
+            "id": "telephone-choix-3",
+            "text": "Personne"
+          }
+        ],
+        "explanation": "Quelqu’un désigne une personne. Modèle : Quelqu’un appelle le secrétariat."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-accueil",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 2,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Il y a ___ à l’accueil.",
+        "cue": "Une personne non identifiée est à l’accueil.",
+        "answers": [
+          "quelqu’un"
+        ],
+        "options": [
+          {
+            "id": "accueil-choix-1",
+            "text": "quelqu’un"
+          },
+          {
+            "id": "accueil-choix-2",
+            "text": "quelque chose"
+          },
+          {
+            "id": "accueil-choix-3",
+            "text": "personne"
+          }
+        ],
+        "explanation": "Quelqu’un remplace une personne non identifiée. Modèle : Il y a quelqu’un à l’accueil."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-frappe",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 3,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ frappe à la porte.",
+        "cue": "Une personne non identifiée frappe à la porte.",
+        "answers": [
+          "Quelqu’un"
+        ],
+        "options": [
+          {
+            "id": "frappe-choix-1",
+            "text": "Quelqu’un"
+          },
+          {
+            "id": "frappe-choix-2",
+            "text": "Quelque chose"
+          },
+          {
+            "id": "frappe-choix-3",
+            "text": "Personne"
+          }
+        ],
+        "explanation": "Quelqu’un désigne une personne. Modèle : Quelqu’un frappe à la porte."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-outil-aide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 4,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ peut aider à porter la table.",
+        "cue": "Une personne non identifiée peut aider à porter une table.",
+        "answers": [
+          "Quelqu’un"
+        ],
+        "options": [
+          {
+            "id": "outil-aide-choix-1",
+            "text": "Quelqu’un"
+          },
+          {
+            "id": "outil-aide-choix-2",
+            "text": "Quelque chose"
+          },
+          {
+            "id": "outil-aide-choix-3",
+            "text": "Personne"
+          }
+        ],
+        "explanation": "Quelqu’un remplace une personne. Modèle : Quelqu’un peut aider à porter la table."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-reponse",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 5,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ connaît la réponse.",
+        "cue": "Une personne non identifiée connaît la réponse.",
+        "answers": [
+          "Quelqu’un"
+        ],
+        "options": [
+          {
+            "id": "reponse-choix-1",
+            "text": "Quelqu’un"
+          },
+          {
+            "id": "reponse-choix-2",
+            "text": "Quelque chose"
+          },
+          {
+            "id": "reponse-choix-3",
+            "text": "Personne"
+          }
+        ],
+        "explanation": "Quelqu’un désigne une personne. Modèle : Quelqu’un connaît la réponse."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-gare",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 6,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ nous attend à la gare.",
+        "cue": "Une personne non identifiée attend le groupe à la gare.",
+        "answers": [
+          "Quelqu’un"
+        ],
+        "options": [
+          {
+            "id": "gare-choix-1",
+            "text": "Quelqu’un"
+          },
+          {
+            "id": "gare-choix-2",
+            "text": "Quelque chose"
+          },
+          {
+            "id": "gare-choix-3",
+            "text": "Personne"
+          }
+        ],
+        "explanation": "Quelqu’un reprend une personne. Modèle : Quelqu’un nous attend à la gare."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-message",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 7,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ a envoyé un message.",
+        "cue": "Un message a été envoyé par une personne dont on ne connaît pas l’identité.",
+        "answers": [
+          "Quelqu’un"
+        ],
+        "options": [
+          {
+            "id": "message-choix-1",
+            "text": "Quelqu’un"
+          },
+          {
+            "id": "message-choix-2",
+            "text": "Quelque chose"
+          },
+          {
+            "id": "message-choix-3",
+            "text": "Personne"
+          }
+        ],
+        "explanation": "Quelqu’un désigne une personne non identifiée. Modèle : Quelqu’un a envoyé un message."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-demande",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 8,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je cherche ___ pour expliquer la consigne.",
+        "cue": "Vous cherchez une personne non identifiée qui puisse expliquer la consigne.",
+        "answers": [
+          "quelqu’un"
+        ],
+        "options": [
+          {
+            "id": "demande-choix-1",
+            "text": "quelqu’un"
+          },
+          {
+            "id": "demande-choix-2",
+            "text": "quelque chose"
+          },
+          {
+            "id": "demande-choix-3",
+            "text": "personne"
+          }
+        ],
+        "explanation": "Quelqu’un remplace une personne. Modèle : Je cherche quelqu’un pour expliquer la consigne."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-velo",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 9,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ répare un vélo.",
+        "cue": "Une personne non identifiée répare un vélo dans le local.",
+        "answers": [
+          "Quelqu’un"
+        ],
+        "options": [
+          {
+            "id": "velo-choix-1",
+            "text": "Quelqu’un"
+          },
+          {
+            "id": "velo-choix-2",
+            "text": "Quelque chose"
+          },
+          {
+            "id": "velo-choix-3",
+            "text": "Personne"
+          }
+        ],
+        "explanation": "Quelqu’un désigne une personne. Modèle : Quelqu’un répare un vélo."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-salle-vide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 10,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Il n’y a ___ dans la salle.",
+        "cue": "La salle contient des chaises visibles, mais aucune personne.",
+        "answers": [
+          "personne"
+        ],
+        "options": [
+          {
+            "id": "salle-vide-choix-1",
+            "text": "personne"
+          },
+          {
+            "id": "salle-vide-choix-2",
+            "text": "quelqu’un"
+          },
+          {
+            "id": "salle-vide-choix-3",
+            "text": "quelque chose"
+          }
+        ],
+        "explanation": "Personne avec ne exprime l’absence de personnes. Modèle : Il n’y a personne dans la salle."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-porte-vide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 11,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ n’attend devant la porte.",
+        "cue": "L’espace devant la porte est entièrement vide de personnes.",
+        "answers": [
+          "Personne"
+        ],
+        "options": [
+          {
+            "id": "porte-vide-choix-1",
+            "text": "Personne"
+          },
+          {
+            "id": "porte-vide-choix-2",
+            "text": "Quelqu’un"
+          },
+          {
+            "id": "porte-vide-choix-3",
+            "text": "Quelque chose"
+          }
+        ],
+        "explanation": "Personne sujet s’emploie avec ne, sans pas. Modèle : Personne n’attend devant la porte."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-voir-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 12,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je ne vois ___.",
+        "cue": "Vous voyez les tables, mais aucune personne.",
+        "answers": [
+          "personne"
+        ],
+        "options": [
+          {
+            "id": "voir-personne-choix-1",
+            "text": "personne"
+          },
+          {
+            "id": "voir-personne-choix-2",
+            "text": "quelqu’un"
+          },
+          {
+            "id": "voir-personne-choix-3",
+            "text": "quelque chose"
+          }
+        ],
+        "explanation": "Personne porte sur les personnes, pas les objets visibles. Modèle : Je ne vois personne."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-repondre-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 13,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ ne répond au téléphone.",
+        "cue": "Tous les appels sont restés sans réponse humaine.",
+        "answers": [
+          "Personne"
+        ],
+        "options": [
+          {
+            "id": "repondre-personne-choix-1",
+            "text": "Personne"
+          },
+          {
+            "id": "repondre-personne-choix-2",
+            "text": "Quelqu’un"
+          },
+          {
+            "id": "repondre-personne-choix-3",
+            "text": "Quelque chose"
+          }
+        ],
+        "explanation": "Personne sujet appelle ne sans pas. Modèle : Personne ne répond au téléphone."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-connaitre-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 14,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je ne connais ___ dans ce groupe.",
+        "cue": "Dans ce groupe nouveau, vous ne connaissez aucune personne, même si vous voyez les objets.",
+        "answers": [
+          "personne"
+        ],
+        "options": [
+          {
+            "id": "connaitre-personne-choix-1",
+            "text": "personne"
+          },
+          {
+            "id": "connaitre-personne-choix-2",
+            "text": "quelqu’un"
+          },
+          {
+            "id": "connaitre-personne-choix-3",
+            "text": "quelque chose"
+          }
+        ],
+        "explanation": "Personne désigne l’absence de personne connue. Modèle : Je ne connais personne dans ce groupe."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-attendre-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 15,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je n’attends ___.",
+        "cue": "Le rendez-vous est annulé ; vous n’attendez aucune personne.",
+        "answers": [
+          "personne"
+        ],
+        "options": [
+          {
+            "id": "attendre-personne-choix-1",
+            "text": "personne"
+          },
+          {
+            "id": "attendre-personne-choix-2",
+            "text": "quelqu’un"
+          },
+          {
+            "id": "attendre-personne-choix-3",
+            "text": "quelque chose"
+          }
+        ],
+        "explanation": "Personne s’emploie avec n’ devant attends. Modèle : Je n’attends personne."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-restaurant-vide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 16,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Il n’y a ___ au restaurant.",
+        "cue": "Le restaurant contient des tables, mais aucun client ni employé.",
+        "answers": [
+          "personne"
+        ],
+        "options": [
+          {
+            "id": "restaurant-vide-choix-1",
+            "text": "personne"
+          },
+          {
+            "id": "restaurant-vide-choix-2",
+            "text": "quelqu’un"
+          },
+          {
+            "id": "restaurant-vide-choix-3",
+            "text": "quelque chose"
+          }
+        ],
+        "explanation": "Personne reprend l’absence de personnes. Modèle : Il n’y a personne au restaurant."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-aider-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 17,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ ne peut aider pour le moment.",
+        "cue": "Aucune personne n’est disponible pour aider ; les objets ne sont pas en question.",
+        "answers": [
+          "Personne"
+        ],
+        "options": [
+          {
+            "id": "aider-personne-choix-1",
+            "text": "Personne"
+          },
+          {
+            "id": "aider-personne-choix-2",
+            "text": "Quelqu’un"
+          },
+          {
+            "id": "aider-personne-choix-3",
+            "text": "Quelque chose"
+          }
+        ],
+        "explanation": "Personne sujet prend ne, sans pas. Modèle : Personne ne peut aider pour le moment."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-inscription-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 18,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ ne s’est inscrit.",
+        "cue": "La liste d’inscription ne comporte aucun nom. Aucune personne n’a fait l’inscription.",
+        "answers": [
+          "Personne"
+        ],
+        "options": [
+          {
+            "id": "inscription-personne-choix-1",
+            "text": "Personne"
+          },
+          {
+            "id": "inscription-personne-choix-2",
+            "text": "Quelqu’un"
+          },
+          {
+            "id": "inscription-personne-choix-3",
+            "text": "Quelque chose"
+          }
+        ],
+        "explanation": "Personne sujet est grammaticalement singulier ; inscrit au masculin par défaut. Modèle : Personne ne s’est inscrit."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-bus-vide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 19,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Il n’y a ___ dans le bus.",
+        "cue": "Le bus est à l’arrêt avec des sièges, mais sans aucune personne.",
+        "answers": [
+          "personne"
+        ],
+        "options": [
+          {
+            "id": "bus-vide-choix-1",
+            "text": "personne"
+          },
+          {
+            "id": "bus-vide-choix-2",
+            "text": "quelqu’un"
+          },
+          {
+            "id": "bus-vide-choix-3",
+            "text": "quelque chose"
+          }
+        ],
+        "explanation": "Personne porte sur les personnes. Modèle : Il n’y a personne dans le bus."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-sac-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 20,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Il y a ___ dans le sac.",
+        "cue": "Le sac contient un objet non identifié, pas une personne.",
+        "answers": [
+          "quelque chose"
+        ],
+        "options": [
+          {
+            "id": "sac-objet-choix-1",
+            "text": "quelque chose"
+          },
+          {
+            "id": "sac-objet-choix-2",
+            "text": "quelqu’un"
+          },
+          {
+            "id": "sac-objet-choix-3",
+            "text": "personne"
+          }
+        ],
+        "explanation": "Quelque chose désigne une chose non identifiée. Modèle : Il y a quelque chose dans le sac."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-bruit",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 21,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ fait du bruit dans la boîte.",
+        "cue": "Un objet non identifié fait du bruit dans la boîte. Aucune personne n’est dans la boîte.",
+        "answers": [
+          "Quelque chose"
+        ],
+        "options": [
+          {
+            "id": "bruit-choix-1",
+            "text": "Quelque chose"
+          },
+          {
+            "id": "bruit-choix-2",
+            "text": "Quelqu’un"
+          },
+          {
+            "id": "bruit-choix-3",
+            "text": "Personne"
+          }
+        ],
+        "explanation": "Quelque chose reprend une chose. Modèle : Quelque chose fait du bruit dans la boîte."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-table-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 22,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Il y a ___ sur la table.",
+        "cue": "Un objet non identifié est posé sur la table.",
+        "answers": [
+          "quelque chose"
+        ],
+        "options": [
+          {
+            "id": "table-objet-choix-1",
+            "text": "quelque chose"
+          },
+          {
+            "id": "table-objet-choix-2",
+            "text": "quelqu’un"
+          },
+          {
+            "id": "table-objet-choix-3",
+            "text": "personne"
+          }
+        ],
+        "explanation": "Quelque chose désigne un objet non identifié. Modèle : Il y a quelque chose sur la table."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-oubli-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 23,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "J’ai oublié ___.",
+        "cue": "Vous avez oublié un objet non identifié ; aucune personne n’est laissée sur place.",
+        "answers": [
+          "quelque chose"
+        ],
+        "options": [
+          {
+            "id": "oubli-objet-choix-1",
+            "text": "quelque chose"
+          },
+          {
+            "id": "oubli-objet-choix-2",
+            "text": "quelqu’un"
+          },
+          {
+            "id": "oubli-objet-choix-3",
+            "text": "personne"
+          }
+        ],
+        "explanation": "Quelque chose reprend un objet. Modèle : J’ai oublié quelque chose."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-manque-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 24,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Il manque ___ pour jouer.",
+        "cue": "Un élément matériel manque au jeu ; toutes les personnes sont présentes.",
+        "answers": [
+          "quelque chose"
+        ],
+        "options": [
+          {
+            "id": "manque-objet-choix-1",
+            "text": "quelque chose"
+          },
+          {
+            "id": "manque-objet-choix-2",
+            "text": "quelqu’un"
+          },
+          {
+            "id": "manque-objet-choix-3",
+            "text": "personne"
+          }
+        ],
+        "explanation": "Quelque chose porte sur une chose. Modèle : Il manque quelque chose pour jouer."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-trouver-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 25,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "J’ai trouvé ___ dans la cour.",
+        "cue": "Vous avez trouvé un objet non identifié dans la cour.",
+        "answers": [
+          "quelque chose"
+        ],
+        "options": [
+          {
+            "id": "trouver-objet-choix-1",
+            "text": "quelque chose"
+          },
+          {
+            "id": "trouver-objet-choix-2",
+            "text": "quelqu’un"
+          },
+          {
+            "id": "trouver-objet-choix-3",
+            "text": "personne"
+          }
+        ],
+        "explanation": "Quelque chose reprend un objet. Modèle : J’ai trouvé quelque chose dans la cour."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-preparer-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 26,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je prépare ___ pour la fête.",
+        "cue": "Vous préparez une chose pour la fête, sans la préciser ; il ne s’agit pas de préparer une personne.",
+        "answers": [
+          "quelque chose"
+        ],
+        "options": [
+          {
+            "id": "preparer-objet-choix-1",
+            "text": "quelque chose"
+          },
+          {
+            "id": "preparer-objet-choix-2",
+            "text": "quelqu’un"
+          },
+          {
+            "id": "preparer-objet-choix-3",
+            "text": "personne"
+          }
+        ],
+        "explanation": "Quelque chose reprend une chose non précisée. Modèle : Je prépare quelque chose pour la fête."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-apporter-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 27,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "J’apporte ___ au groupe.",
+        "cue": "Vous apportez une chose non précisée au groupe, pas une personne.",
+        "answers": [
+          "quelque chose"
+        ],
+        "options": [
+          {
+            "id": "apporter-objet-choix-1",
+            "text": "quelque chose"
+          },
+          {
+            "id": "apporter-objet-choix-2",
+            "text": "quelqu’un"
+          },
+          {
+            "id": "apporter-objet-choix-3",
+            "text": "personne"
+          }
+        ],
+        "explanation": "Quelque chose désigne une chose. Modèle : J’apporte quelque chose au groupe."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-sac-vide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 28,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Il n’y a ___ dans le sac.",
+        "cue": "Le sac ne contient aucun objet ; aucune chose n’y reste.",
+        "answers": [
+          "rien"
+        ],
+        "options": [
+          {
+            "id": "sac-vide-choix-1",
+            "text": "rien"
+          },
+          {
+            "id": "sac-vide-choix-2",
+            "text": "quelque chose"
+          },
+          {
+            "id": "sac-vide-choix-3",
+            "text": "quelqu’un"
+          }
+        ],
+        "explanation": "Rien avec ne exprime l’absence de chose. Modèle : Il n’y a rien dans le sac."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-table-vide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 29,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je ne vois ___ sur la table.",
+        "cue": "La table ne porte aucun objet ; aucun objet ne peut être vu dessus.",
+        "answers": [
+          "rien"
+        ],
+        "options": [
+          {
+            "id": "table-vide-choix-1",
+            "text": "rien"
+          },
+          {
+            "id": "table-vide-choix-2",
+            "text": "quelque chose"
+          },
+          {
+            "id": "table-vide-choix-3",
+            "text": "quelqu’un"
+          }
+        ],
+        "explanation": "Rien reprend l’absence de chose. Modèle : Je ne vois rien sur la table."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-oubli-rien",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 30,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je n’ai ___ oublié.",
+        "cue": "Vous avez vérifié votre matériel : aucun objet n’a été oublié.",
+        "answers": [
+          "rien"
+        ],
+        "options": [
+          {
+            "id": "oubli-rien-choix-1",
+            "text": "rien"
+          },
+          {
+            "id": "oubli-rien-choix-2",
+            "text": "quelque chose"
+          },
+          {
+            "id": "oubli-rien-choix-3",
+            "text": "quelqu’un"
+          }
+        ],
+        "explanation": "Rien se place après l’auxiliaire et avant le participe. Modèle : Je n’ai rien oublié."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-reste-rien",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 31,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Il ne reste ___ dans le plat.",
+        "cue": "Il ne reste aucun aliment dans le plat.",
+        "answers": [
+          "rien"
+        ],
+        "options": [
+          {
+            "id": "reste-rien-choix-1",
+            "text": "rien"
+          },
+          {
+            "id": "reste-rien-choix-2",
+            "text": "quelque chose"
+          },
+          {
+            "id": "reste-rien-choix-3",
+            "text": "quelqu’un"
+          }
+        ],
+        "explanation": "Rien porte sur l’absence de chose restante. Modèle : Il ne reste rien dans le plat."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-changer-rien",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 32,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ n’a changé dans le programme.",
+        "cue": "Aucun élément du programme n’a changé.",
+        "answers": [
+          "Rien"
+        ],
+        "options": [
+          {
+            "id": "changer-rien-choix-1",
+            "text": "Rien"
+          },
+          {
+            "id": "changer-rien-choix-2",
+            "text": "Quelque chose"
+          },
+          {
+            "id": "changer-rien-choix-3",
+            "text": "Quelqu’un"
+          }
+        ],
+        "explanation": "Rien sujet prend ne, sans pas. Modèle : Rien n’a changé dans le programme."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-acheter-rien",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 33,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je n’ai ___ acheté.",
+        "cue": "Vous êtes revenu sans aucun achat d’objet ni d’aliment.",
+        "answers": [
+          "rien"
+        ],
+        "options": [
+          {
+            "id": "acheter-rien-choix-1",
+            "text": "rien"
+          },
+          {
+            "id": "acheter-rien-choix-2",
+            "text": "quelque chose"
+          },
+          {
+            "id": "acheter-rien-choix-3",
+            "text": "quelqu’un"
+          }
+        ],
+        "explanation": "Rien précède le participe acheté. Modèle : Je n’ai rien acheté."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-comprendre-rien",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 34,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je ne comprends ___.",
+        "cue": "Aucune partie de l’explication n’est comprise ; la question porte sur le contenu.",
+        "answers": [
+          "rien"
+        ],
+        "options": [
+          {
+            "id": "comprendre-rien-choix-1",
+            "text": "rien"
+          },
+          {
+            "id": "comprendre-rien-choix-2",
+            "text": "quelque chose"
+          },
+          {
+            "id": "comprendre-rien-choix-3",
+            "text": "quelqu’un"
+          }
+        ],
+        "explanation": "Rien exprime une absence totale de contenu compris. Modèle : Je ne comprends rien."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-manquer-rien",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 35,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Il ne manque ___ au matériel.",
+        "cue": "Tout le matériel est présent ; aucun objet ne manque.",
+        "answers": [
+          "rien"
+        ],
+        "options": [
+          {
+            "id": "manquer-rien-choix-1",
+            "text": "rien"
+          },
+          {
+            "id": "manquer-rien-choix-2",
+            "text": "quelque chose"
+          },
+          {
+            "id": "manquer-rien-choix-3",
+            "text": "quelqu’un"
+          }
+        ],
+        "explanation": "Rien porte sur l’absence d’objet manquant. Modèle : Il ne manque rien au matériel."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-comprendre-tout",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 36,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je comprends ___.",
+        "cue": "Vous comprenez toutes les explications, sans exception.",
+        "answers": [
+          "tout"
+        ],
+        "options": [
+          {
+            "id": "comprendre-tout-choix-1",
+            "text": "tout"
+          },
+          {
+            "id": "comprendre-tout-choix-2",
+            "text": "rien"
+          },
+          {
+            "id": "comprendre-tout-choix-3",
+            "text": "personne"
+          }
+        ],
+        "explanation": "Tout reprend la totalité des choses. Modèle : Je comprends tout."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-ranger-tout",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 37,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je range ___.",
+        "cue": "Vous rangez tous les objets du local, sans exception.",
+        "answers": [
+          "tout"
+        ],
+        "options": [
+          {
+            "id": "ranger-tout-choix-1",
+            "text": "tout"
+          },
+          {
+            "id": "ranger-tout-choix-2",
+            "text": "rien"
+          },
+          {
+            "id": "ranger-tout-choix-3",
+            "text": "personne"
+          }
+        ],
+        "explanation": "Tout reprend un ensemble de choses. Modèle : Je range tout."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-verifier-tout",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 38,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous vérifions ___.",
+        "cue": "Vous vérifiez la totalité des documents du dossier.",
+        "answers": [
+          "tout"
+        ],
+        "options": [
+          {
+            "id": "verifier-tout-choix-1",
+            "text": "tout"
+          },
+          {
+            "id": "verifier-tout-choix-2",
+            "text": "rien"
+          },
+          {
+            "id": "verifier-tout-choix-3",
+            "text": "personne"
+          }
+        ],
+        "explanation": "Tout reprend la totalité des choses. Modèle : Nous vérifions tout."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-lire-tout",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 39,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu lis ___.",
+        "cue": "Vous lisez la totalité des messages reçus.",
+        "answers": [
+          "tout"
+        ],
+        "options": [
+          {
+            "id": "lire-tout-choix-1",
+            "text": "tout"
+          },
+          {
+            "id": "lire-tout-choix-2",
+            "text": "rien"
+          },
+          {
+            "id": "lire-tout-choix-3",
+            "text": "personne"
+          }
+        ],
+        "explanation": "Tout reprend tous les messages. Modèle : Tu lis tout."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-emporter-tout",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 40,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Ils emportent ___.",
+        "cue": "Le groupe emporte l’ensemble du matériel prévu, sans exception.",
+        "answers": [
+          "tout"
+        ],
+        "options": [
+          {
+            "id": "emporter-tout-choix-1",
+            "text": "tout"
+          },
+          {
+            "id": "emporter-tout-choix-2",
+            "text": "rien"
+          },
+          {
+            "id": "emporter-tout-choix-3",
+            "text": "personne"
+          }
+        ],
+        "explanation": "Tout reprend l’ensemble des choses. Modèle : Ils emportent tout."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-noter-tout",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 41,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Vous notez ___.",
+        "cue": "Vous notez la totalité des informations utiles.",
+        "answers": [
+          "tout"
+        ],
+        "options": [
+          {
+            "id": "noter-tout-choix-1",
+            "text": "tout"
+          },
+          {
+            "id": "noter-tout-choix-2",
+            "text": "rien"
+          },
+          {
+            "id": "noter-tout-choix-3",
+            "text": "personne"
+          }
+        ],
+        "explanation": "Tout reprend la totalité des informations. Modèle : Vous notez tout."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-tous-prets",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 42,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ sont prêts.",
+        "cue": "Les participants forment un groupe mixte et sont prêts sans exception. Supprimez le nom participants.",
+        "answers": [
+          "Tous"
+        ],
+        "options": [
+          {
+            "id": "tous-prets-choix-1",
+            "text": "Tous"
+          },
+          {
+            "id": "tous-prets-choix-2",
+            "text": "Toutes"
+          },
+          {
+            "id": "tous-prets-choix-3",
+            "text": "Tout"
+          }
+        ],
+        "explanation": "Tous est ici un pronom masculin pluriel, sans nom après lui. Modèle : Tous sont prêts."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-tous-arrives",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 43,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ sont arrivés.",
+        "cue": "Les voyageurs sont des hommes ; tous sont arrivés. Supprimez le nom voyageurs.",
+        "answers": [
+          "Tous"
+        ],
+        "options": [
+          {
+            "id": "tous-arrives-choix-1",
+            "text": "Tous"
+          },
+          {
+            "id": "tous-arrives-choix-2",
+            "text": "Toutes"
+          },
+          {
+            "id": "tous-arrives-choix-3",
+            "text": "Tout"
+          }
+        ],
+        "explanation": "Tous reprend le groupe masculin pluriel. Modèle : Tous sont arrivés."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-tous-rendus",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 44,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ sont rendus.",
+        "cue": "Les exercices sont tous rendus ; aucun n’est oublié. Supprimez le nom exercices.",
+        "answers": [
+          "Tous"
+        ],
+        "options": [
+          {
+            "id": "tous-rendus-choix-1",
+            "text": "Tous"
+          },
+          {
+            "id": "tous-rendus-choix-2",
+            "text": "Toutes"
+          },
+          {
+            "id": "tous-rendus-choix-3",
+            "text": "Tout"
+          }
+        ],
+        "explanation": "Tous est pronom masculin pluriel. Modèle : Tous sont rendus."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-toutes-pretes",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 45,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ sont prêtes.",
+        "cue": "Les participantes sont toutes des femmes et sont prêtes. Supprimez le nom participantes.",
+        "answers": [
+          "Toutes"
+        ],
+        "options": [
+          {
+            "id": "toutes-pretes-choix-1",
+            "text": "Toutes"
+          },
+          {
+            "id": "toutes-pretes-choix-2",
+            "text": "Tous"
+          },
+          {
+            "id": "toutes-pretes-choix-3",
+            "text": "Tout"
+          }
+        ],
+        "explanation": "Toutes est pronom féminin pluriel. Modèle : Toutes sont prêtes."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-toutes-rangees",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 46,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ sont rangées.",
+        "cue": "Les boîtes sont toutes rangées. Supprimez le nom boîtes.",
+        "answers": [
+          "Toutes"
+        ],
+        "options": [
+          {
+            "id": "toutes-rangees-choix-1",
+            "text": "Toutes"
+          },
+          {
+            "id": "toutes-rangees-choix-2",
+            "text": "Tous"
+          },
+          {
+            "id": "toutes-rangees-choix-3",
+            "text": "Tout"
+          }
+        ],
+        "explanation": "Toutes reprend le groupe féminin pluriel. Modèle : Toutes sont rangées."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-chacun-fiche",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 47,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ des participants reçoit une fiche.",
+        "cue": "Chaque participant reçoit sa propre fiche ; on exprime la distribution individuelle.",
+        "answers": [
+          "Chacun"
+        ],
+        "options": [
+          {
+            "id": "chacun-fiche-choix-1",
+            "text": "Chacun"
+          },
+          {
+            "id": "chacun-fiche-choix-2",
+            "text": "Tous"
+          },
+          {
+            "id": "chacun-fiche-choix-3",
+            "text": "Tout"
+          }
+        ],
+        "explanation": "Chacun des participants est singulier. Modèle : Chacun des participants reçoit une fiche."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-chacun-badge",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 48,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ des visiteurs reçoit un badge.",
+        "cue": "Chaque visiteur reçoit son propre badge ; on conserve des visiteurs après le pronom.",
+        "answers": [
+          "Chacun"
+        ],
+        "options": [
+          {
+            "id": "chacun-badge-choix-1",
+            "text": "Chacun"
+          },
+          {
+            "id": "chacun-badge-choix-2",
+            "text": "Tous"
+          },
+          {
+            "id": "chacun-badge-choix-3",
+            "text": "Tout"
+          }
+        ],
+        "explanation": "Chacun est suivi de des et d’un groupe pluriel, mais commande un verbe singulier. Modèle : Chacun des visiteurs reçoit un badge."
+      },
+      {
+        "id": "gram-ex-i6-qcm-verbe-a2-chacun-tour",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-qcm-verbe",
+          "position": 49,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ des élèves parle à son tour.",
+        "cue": "Chaque élève parle à son tour ; on conserve des élèves après le pronom.",
+        "answers": [
+          "Chacun"
+        ],
+        "options": [
+          {
+            "id": "chacun-tour-choix-1",
+            "text": "Chacun"
+          },
+          {
+            "id": "chacun-tour-choix-2",
+            "text": "Tous"
+          },
+          {
+            "id": "chacun-tour-choix-3",
+            "text": "Tout"
+          }
+        ],
+        "explanation": "Chacun exprime une distribution individuelle. Modèle : Chacun des élèves parle à son tour."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "pronoms-2026-11-24-v1",
+    "activityId": "gram-ex-i6-curriculum-t",
+    "subthemeId": "i6",
+    "topic": "gram-pronoms",
+    "level": "A2",
+    "label": "Transformer une phrase",
+    "objective": "Distinguer personne et chose, présence et absence, totalité et distribution individuelle.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Situations et références relues ; réemploi explicite entre mécaniques. Modèles ouverts non exclusifs. Aucune approbation pédagogique humaine déclarée."
+    },
+    "presentations": [
+      "transform"
+    ],
+    "instructions": {
+      "transform": "Réécrivez en conservant les faits et les référents, selon la reprise demandée."
+    },
+    "units": [
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-porte",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 0,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Une personne attend devant la porte.",
+        "cue": "Une personne non identifiée attend devant la porte. Il ne s’agit pas d’un objet.",
+        "answers": [
+          "Quelqu’un attend devant la porte."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Quelqu’un reprend une personne non identifiée. Modèle : Quelqu’un attend devant la porte. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-telephone",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 1,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Une personne appelle le secrétariat.",
+        "cue": "Une personne non identifiée appelle le secrétariat.",
+        "answers": [
+          "Quelqu’un appelle le secrétariat."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Quelqu’un désigne une personne. Modèle : Quelqu’un appelle le secrétariat. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-accueil",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 2,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Il y a une personne à l’accueil.",
+        "cue": "Une personne non identifiée est à l’accueil.",
+        "answers": [
+          "Il y a quelqu’un à l’accueil."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Quelqu’un remplace une personne non identifiée. Modèle : Il y a quelqu’un à l’accueil. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-frappe",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 3,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Une personne frappe à la porte.",
+        "cue": "Une personne non identifiée frappe à la porte.",
+        "answers": [
+          "Quelqu’un frappe à la porte."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Quelqu’un désigne une personne. Modèle : Quelqu’un frappe à la porte. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-outil-aide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 4,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Une personne peut aider à porter la table.",
+        "cue": "Une personne non identifiée peut aider à porter une table.",
+        "answers": [
+          "Quelqu’un peut aider à porter la table."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Quelqu’un remplace une personne. Modèle : Quelqu’un peut aider à porter la table. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-reponse",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 5,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Une personne connaît la réponse.",
+        "cue": "Une personne non identifiée connaît la réponse.",
+        "answers": [
+          "Quelqu’un connaît la réponse."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Quelqu’un désigne une personne. Modèle : Quelqu’un connaît la réponse. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-gare",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 6,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Une personne nous attend à la gare.",
+        "cue": "Une personne non identifiée attend le groupe à la gare.",
+        "answers": [
+          "Quelqu’un nous attend à la gare."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Quelqu’un reprend une personne. Modèle : Quelqu’un nous attend à la gare. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-message",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 7,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Une personne a envoyé un message.",
+        "cue": "Un message a été envoyé par une personne dont on ne connaît pas l’identité.",
+        "answers": [
+          "Quelqu’un a envoyé un message."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Quelqu’un désigne une personne non identifiée. Modèle : Quelqu’un a envoyé un message. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-demande",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 8,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je cherche une personne pour expliquer la consigne.",
+        "cue": "Vous cherchez une personne non identifiée qui puisse expliquer la consigne.",
+        "answers": [
+          "Je cherche quelqu’un pour expliquer la consigne."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Quelqu’un remplace une personne. Modèle : Je cherche quelqu’un pour expliquer la consigne. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-velo",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 9,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Une personne répare un vélo.",
+        "cue": "Une personne non identifiée répare un vélo dans le local.",
+        "answers": [
+          "Quelqu’un répare un vélo."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Quelqu’un désigne une personne. Modèle : Quelqu’un répare un vélo. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-salle-vide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 10,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Il n’y a aucune personne dans la salle.",
+        "cue": "La salle contient des chaises visibles, mais aucune personne.",
+        "answers": [
+          "Il n’y a personne dans la salle."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Personne avec ne exprime l’absence de personnes. Modèle : Il n’y a personne dans la salle. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-porte-vide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 11,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Aucune personne n’attend devant la porte.",
+        "cue": "L’espace devant la porte est entièrement vide de personnes.",
+        "answers": [
+          "Personne n’attend devant la porte."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Personne sujet s’emploie avec ne, sans pas. Modèle : Personne n’attend devant la porte. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-voir-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 12,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je ne vois aucune personne.",
+        "cue": "Vous voyez les tables, mais aucune personne.",
+        "answers": [
+          "Je ne vois personne."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Personne porte sur les personnes, pas les objets visibles. Modèle : Je ne vois personne. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-repondre-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 13,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Aucune personne ne répond au téléphone.",
+        "cue": "Tous les appels sont restés sans réponse humaine.",
+        "answers": [
+          "Personne ne répond au téléphone."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Personne sujet appelle ne sans pas. Modèle : Personne ne répond au téléphone. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-connaitre-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 14,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je ne connais aucune personne dans ce groupe.",
+        "cue": "Dans ce groupe nouveau, vous ne connaissez aucune personne, même si vous voyez les objets.",
+        "answers": [
+          "Je ne connais personne dans ce groupe."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Personne désigne l’absence de personne connue. Modèle : Je ne connais personne dans ce groupe. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-attendre-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 15,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je n’attends aucune personne.",
+        "cue": "Le rendez-vous est annulé ; vous n’attendez aucune personne.",
+        "answers": [
+          "Je n’attends personne."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Personne s’emploie avec n’ devant attends. Modèle : Je n’attends personne. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-restaurant-vide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 16,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Il n’y a aucune personne au restaurant.",
+        "cue": "Le restaurant contient des tables, mais aucun client ni employé.",
+        "answers": [
+          "Il n’y a personne au restaurant."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Personne reprend l’absence de personnes. Modèle : Il n’y a personne au restaurant. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-aider-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 17,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Aucune personne ne peut aider pour le moment.",
+        "cue": "Aucune personne n’est disponible pour aider ; les objets ne sont pas en question.",
+        "answers": [
+          "Personne ne peut aider pour le moment."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Personne sujet prend ne, sans pas. Modèle : Personne ne peut aider pour le moment. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-inscription-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 18,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Aucune personne ne s’est inscrite.",
+        "cue": "La liste d’inscription ne comporte aucun nom. Aucune personne n’a fait l’inscription.",
+        "answers": [
+          "Personne ne s’est inscrit."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Personne sujet est grammaticalement singulier ; inscrit au masculin par défaut. Modèle : Personne ne s’est inscrit. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-bus-vide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 19,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Il n’y a aucune personne dans le bus.",
+        "cue": "Le bus est à l’arrêt avec des sièges, mais sans aucune personne.",
+        "answers": [
+          "Il n’y a personne dans le bus."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Personne porte sur les personnes. Modèle : Il n’y a personne dans le bus. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-sac-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 20,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Il y a un objet dans le sac.",
+        "cue": "Le sac contient un objet non identifié, pas une personne.",
+        "answers": [
+          "Il y a quelque chose dans le sac."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Quelque chose désigne une chose non identifiée. Modèle : Il y a quelque chose dans le sac. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-bruit",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 21,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Un objet fait du bruit dans la boîte.",
+        "cue": "Un objet non identifié fait du bruit dans la boîte. Aucune personne n’est dans la boîte.",
+        "answers": [
+          "Quelque chose fait du bruit dans la boîte."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Quelque chose reprend une chose. Modèle : Quelque chose fait du bruit dans la boîte. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-table-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 22,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Il y a un objet sur la table.",
+        "cue": "Un objet non identifié est posé sur la table.",
+        "answers": [
+          "Il y a quelque chose sur la table."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Quelque chose désigne un objet non identifié. Modèle : Il y a quelque chose sur la table. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-oubli-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 23,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’ai oublié un objet.",
+        "cue": "Vous avez oublié un objet non identifié ; aucune personne n’est laissée sur place.",
+        "answers": [
+          "J’ai oublié quelque chose."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Quelque chose reprend un objet. Modèle : J’ai oublié quelque chose. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-manque-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 24,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Il manque un élément matériel pour jouer.",
+        "cue": "Un élément matériel manque au jeu ; toutes les personnes sont présentes.",
+        "answers": [
+          "Il manque quelque chose pour jouer."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Quelque chose porte sur une chose. Modèle : Il manque quelque chose pour jouer. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-trouver-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 25,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’ai trouvé un objet dans la cour.",
+        "cue": "Vous avez trouvé un objet non identifié dans la cour.",
+        "answers": [
+          "J’ai trouvé quelque chose dans la cour."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Quelque chose reprend un objet. Modèle : J’ai trouvé quelque chose dans la cour. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-preparer-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 26,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je prépare une chose pour la fête.",
+        "cue": "Vous préparez une chose pour la fête, sans la préciser ; il ne s’agit pas de préparer une personne.",
+        "answers": [
+          "Je prépare quelque chose pour la fête."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Quelque chose reprend une chose non précisée. Modèle : Je prépare quelque chose pour la fête. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-apporter-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 27,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’apporte une chose au groupe.",
+        "cue": "Vous apportez une chose non précisée au groupe, pas une personne.",
+        "answers": [
+          "J’apporte quelque chose au groupe."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Quelque chose désigne une chose. Modèle : J’apporte quelque chose au groupe. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-sac-vide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 28,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Il n’y a aucun objet dans le sac.",
+        "cue": "Le sac ne contient aucun objet ; aucune chose n’y reste.",
+        "answers": [
+          "Il n’y a rien dans le sac."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Rien avec ne exprime l’absence de chose. Modèle : Il n’y a rien dans le sac. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-table-vide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 29,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je ne vois aucun objet sur la table.",
+        "cue": "La table ne porte aucun objet ; aucun objet ne peut être vu dessus.",
+        "answers": [
+          "Je ne vois rien sur la table."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Rien reprend l’absence de chose. Modèle : Je ne vois rien sur la table. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-oubli-rien",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 30,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je n’ai oublié aucun objet.",
+        "cue": "Vous avez vérifié votre matériel : aucun objet n’a été oublié.",
+        "answers": [
+          "Je n’ai rien oublié."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Rien se place après l’auxiliaire et avant le participe. Modèle : Je n’ai rien oublié. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-reste-rien",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 31,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Il ne reste aucun aliment dans le plat.",
+        "cue": "Il ne reste aucun aliment dans le plat.",
+        "answers": [
+          "Il ne reste rien dans le plat."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Rien porte sur l’absence de chose restante. Modèle : Il ne reste rien dans le plat. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-changer-rien",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 32,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Aucun élément n’a changé dans le programme.",
+        "cue": "Aucun élément du programme n’a changé.",
+        "answers": [
+          "Rien n’a changé dans le programme."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Rien sujet prend ne, sans pas. Modèle : Rien n’a changé dans le programme. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-acheter-rien",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 33,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je n’ai acheté aucun objet.",
+        "cue": "Vous êtes revenu sans aucun achat d’objet ni d’aliment.",
+        "answers": [
+          "Je n’ai rien acheté."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Rien précède le participe acheté. Modèle : Je n’ai rien acheté. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-comprendre-rien",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 34,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je ne comprends aucune partie de l’explication.",
+        "cue": "Aucune partie de l’explication n’est comprise ; la question porte sur le contenu.",
+        "answers": [
+          "Je ne comprends rien."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Rien exprime une absence totale de contenu compris. Modèle : Je ne comprends rien. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-manquer-rien",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 35,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Il ne manque aucun objet au matériel.",
+        "cue": "Tout le matériel est présent ; aucun objet ne manque.",
+        "answers": [
+          "Il ne manque rien au matériel."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Rien porte sur l’absence d’objet manquant. Modèle : Il ne manque rien au matériel. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-comprendre-tout",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 36,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je comprends toutes les explications.",
+        "cue": "Vous comprenez toutes les explications, sans exception.",
+        "answers": [
+          "Je comprends tout."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Tout reprend la totalité des choses. Modèle : Je comprends tout. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-ranger-tout",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 37,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je range tous les objets du local.",
+        "cue": "Vous rangez tous les objets du local, sans exception.",
+        "answers": [
+          "Je range tout."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Tout reprend un ensemble de choses. Modèle : Je range tout. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-verifier-tout",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 38,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous vérifions tous les documents du dossier.",
+        "cue": "Vous vérifiez la totalité des documents du dossier.",
+        "answers": [
+          "Nous vérifions tout."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Tout reprend la totalité des choses. Modèle : Nous vérifions tout. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-lire-tout",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 39,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tu lis tous les messages reçus.",
+        "cue": "Vous lisez la totalité des messages reçus.",
+        "answers": [
+          "Tu lis tout."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Tout reprend tous les messages. Modèle : Tu lis tout. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-emporter-tout",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 40,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Ils emportent tout le matériel prévu.",
+        "cue": "Le groupe emporte l’ensemble du matériel prévu, sans exception.",
+        "answers": [
+          "Ils emportent tout."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Tout reprend l’ensemble des choses. Modèle : Ils emportent tout. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-noter-tout",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 41,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Vous notez toutes les informations utiles.",
+        "cue": "Vous notez la totalité des informations utiles.",
+        "answers": [
+          "Vous notez tout."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Tout reprend la totalité des informations. Modèle : Vous notez tout. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-tous-prets",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 42,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tous les participants sont prêts.",
+        "cue": "Les participants forment un groupe mixte et sont prêts sans exception. Supprimez le nom participants.",
+        "answers": [
+          "Tous sont prêts."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Tous est ici un pronom masculin pluriel, sans nom après lui. Modèle : Tous sont prêts. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-tous-arrives",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 43,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tous les voyageurs sont arrivés.",
+        "cue": "Les voyageurs sont des hommes ; tous sont arrivés. Supprimez le nom voyageurs.",
+        "answers": [
+          "Tous sont arrivés."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Tous reprend le groupe masculin pluriel. Modèle : Tous sont arrivés. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-tous-rendus",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 44,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tous les exercices sont rendus.",
+        "cue": "Les exercices sont tous rendus ; aucun n’est oublié. Supprimez le nom exercices.",
+        "answers": [
+          "Tous sont rendus."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Tous est pronom masculin pluriel. Modèle : Tous sont rendus. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-toutes-pretes",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 45,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Toutes les participantes sont prêtes.",
+        "cue": "Les participantes sont toutes des femmes et sont prêtes. Supprimez le nom participantes.",
+        "answers": [
+          "Toutes sont prêtes."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Toutes est pronom féminin pluriel. Modèle : Toutes sont prêtes. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-toutes-rangees",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 46,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Toutes les boîtes sont rangées.",
+        "cue": "Les boîtes sont toutes rangées. Supprimez le nom boîtes.",
+        "answers": [
+          "Toutes sont rangées."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Toutes reprend le groupe féminin pluriel. Modèle : Toutes sont rangées. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-chacun-fiche",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 47,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Chaque participant reçoit une fiche.",
+        "cue": "Chaque participant reçoit sa propre fiche ; on exprime la distribution individuelle.",
+        "answers": [
+          "Chacun des participants reçoit une fiche."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Chacun des participants est singulier. Modèle : Chacun des participants reçoit une fiche. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-chacun-badge",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 48,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Chaque visiteur reçoit un badge.",
+        "cue": "Chaque visiteur reçoit son propre badge ; on conserve des visiteurs après le pronom.",
+        "answers": [
+          "Chacun des visiteurs reçoit un badge."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Chacun est suivi de des et d’un groupe pluriel, mais commande un verbe singulier. Modèle : Chacun des visiteurs reçoit un badge. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-t-a2-chacun-tour",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-t",
+          "position": 49,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Chaque élève parle à son tour.",
+        "cue": "Chaque élève parle à son tour ; on conserve des élèves après le pronom.",
+        "answers": [
+          "Chacun des élèves parle à son tour."
+        ],
+        "directive": "Reformulez avec un pronom indéfini qui conserve les personnes, les choses et la quantité indiquées. Adaptez la construction et l’accord.",
+        "responseLines": 2,
+        "explanation": "Chacun exprime une distribution individuelle. Modèle : Chacun des élèves parle à son tour. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "pronoms-2026-11-24-v1",
+    "activityId": "gram-ex-i6-curriculum-s",
+    "subthemeId": "i6",
+    "topic": "gram-pronoms",
+    "level": "A2",
+    "label": "Jouer une situation",
+    "objective": "Distinguer personne et chose, présence et absence, totalité et distribution individuelle.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Situations et références relues ; réemploi explicite entre mécaniques. Modèles ouverts non exclusifs. Aucune approbation pédagogique humaine déclarée."
+    },
+    "presentations": [
+      "scenario-set"
+    ],
+    "instructions": {
+      "scenario-set": "Jouez l’échange : demandez une information, répondez selon les faits puis poursuivez avec la relance."
+    },
+    "units": [
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-porte",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 0,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Une personne non identifiée attend devant la porte. Il ne s’agit pas d’un objet.",
+        "answers": [
+          "Personne A : Quelqu’un attend devant la porte.\nPersonne B : La personne est-elle identifiée ?\nPersonne A : Non, je ne sais pas qui c’est."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qui attend devant la porte ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "La personne est-elle identifiée ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-telephone",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 1,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Une personne non identifiée appelle le secrétariat.",
+        "answers": [
+          "Personne A : Quelqu’un appelle le secrétariat.\nPersonne B : Quel service appelle cette personne ?\nPersonne A : Le secrétariat."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qui appelle ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Quel service appelle cette personne ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-accueil",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 2,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Une personne non identifiée est à l’accueil.",
+        "answers": [
+          "Personne A : Il y a quelqu’un à l’accueil.\nPersonne B : À quel endroit ?\nPersonne A : À l’accueil."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Y a-t-il une personne à l’accueil ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "À quel endroit ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-frappe",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 3,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Une personne non identifiée frappe à la porte.",
+        "answers": [
+          "Personne A : Quelqu’un frappe à la porte.\nPersonne B : Connaissez-vous son nom ?\nPersonne A : Non, je ne connais pas son nom."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qui frappe à la porte ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Connaissez-vous son nom ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-outil-aide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 4,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Une personne non identifiée peut aider à porter une table.",
+        "answers": [
+          "Personne A : Quelqu’un peut aider à porter la table.\nPersonne B : Que faut-il porter ?\nPersonne A : Une table."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qui peut aider ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Que faut-il porter ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-reponse",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 5,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Une personne non identifiée connaît la réponse.",
+        "answers": [
+          "Personne A : Quelqu’un connaît la réponse.\nPersonne B : Cette personne est-elle identifiée ?\nPersonne A : Non, pas encore."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qui connaît la réponse ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Cette personne est-elle identifiée ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-gare",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 6,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Une personne non identifiée attend le groupe à la gare.",
+        "answers": [
+          "Personne A : Quelqu’un nous attend à la gare.\nPersonne B : Où faut-il retrouver cette personne ?\nPersonne A : À la gare."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qui vous attend ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Où faut-il retrouver cette personne ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-message",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 7,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Un message a été envoyé par une personne dont on ne connaît pas l’identité.",
+        "answers": [
+          "Personne A : Quelqu’un a envoyé un message.\nPersonne B : Connaissez-vous son identité ?\nPersonne A : Non, elle n’est pas connue."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qui a envoyé un message ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Connaissez-vous son identité ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-demande",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 8,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Vous cherchez une personne non identifiée qui puisse expliquer la consigne.",
+        "answers": [
+          "Personne A : Je cherche quelqu’un pour expliquer la consigne.\nPersonne B : Pour quelle aide ?\nPersonne A : Pour expliquer la consigne."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qui cherchez-vous ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Pour quelle aide ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-velo",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 9,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Une personne non identifiée répare un vélo dans le local.",
+        "answers": [
+          "Personne A : Quelqu’un répare un vélo.\nPersonne B : Quel objet est réparé ?\nPersonne A : Un vélo."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qui répare le vélo ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Quel objet est réparé ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-salle-vide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 10,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "La salle contient des chaises visibles, mais aucune personne.",
+        "answers": [
+          "Personne A : Il n’y a personne dans la salle.\nPersonne B : Y a-t-il des chaises ?\nPersonne A : Oui, les chaises sont dans la salle."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Y a-t-il quelqu’un dans la salle ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Y a-t-il des chaises ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-porte-vide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 11,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "L’espace devant la porte est entièrement vide de personnes.",
+        "answers": [
+          "Personne A : Personne n’attend devant la porte.\nPersonne B : L’espace est-il occupé par une personne ?\nPersonne A : Non, il n’y a aucune personne."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qui attend devant la porte ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "L’espace est-il occupé par une personne ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-voir-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 12,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Vous voyez les tables, mais aucune personne.",
+        "answers": [
+          "Personne A : Je ne vois personne.\nPersonne B : Voyez-vous les tables ?\nPersonne A : Oui, les tables sont visibles."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Voyez-vous quelqu’un ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Voyez-vous les tables ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-repondre-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 13,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Tous les appels sont restés sans réponse humaine.",
+        "answers": [
+          "Personne A : Personne ne répond au téléphone.\nPersonne B : Quelqu’un a-t-il répondu ?\nPersonne A : Non, tous les appels sont restés sans réponse."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qui répond au téléphone ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Quelqu’un a-t-il répondu ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-connaitre-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 14,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Dans ce groupe nouveau, vous ne connaissez aucune personne, même si vous voyez les objets.",
+        "answers": [
+          "Personne A : Je ne connais personne dans ce groupe.\nPersonne B : Le groupe est-il nouveau pour vous ?\nPersonne A : Oui, il est nouveau pour moi."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Connaissez-vous quelqu’un dans le groupe ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Le groupe est-il nouveau pour vous ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-attendre-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 15,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Le rendez-vous est annulé ; vous n’attendez aucune personne.",
+        "answers": [
+          "Personne A : Je n’attends personne.\nPersonne B : Que devient le rendez-vous ?\nPersonne A : Il est annulé."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Attendez-vous quelqu’un ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Que devient le rendez-vous ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-restaurant-vide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 16,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Le restaurant contient des tables, mais aucun client ni employé.",
+        "answers": [
+          "Personne A : Il n’y a personne au restaurant.\nPersonne B : Les tables sont-elles là ?\nPersonne A : Oui, elles sont là."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Y a-t-il quelqu’un au restaurant ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Les tables sont-elles là ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-aider-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 17,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Aucune personne n’est disponible pour aider ; les objets ne sont pas en question.",
+        "answers": [
+          "Personne A : Personne ne peut aider pour le moment.\nPersonne B : Est-ce possible maintenant ?\nPersonne A : Non, personne n’est disponible pour le moment."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qui peut aider ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Est-ce possible maintenant ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-inscription-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 18,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "La liste d’inscription ne comporte aucun nom. Aucune personne n’a fait l’inscription.",
+        "answers": [
+          "Personne A : Personne ne s’est inscrit.\nPersonne B : La liste comporte-t-elle un nom ?\nPersonne A : Non, elle est vide."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qui s’est inscrit ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "La liste comporte-t-elle un nom ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-bus-vide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 19,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Le bus est à l’arrêt avec des sièges, mais sans aucune personne.",
+        "answers": [
+          "Personne A : Il n’y a personne dans le bus.\nPersonne B : Le bus est-il à l’arrêt ?\nPersonne A : Oui, il est à l’arrêt."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Y a-t-il quelqu’un dans le bus ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Le bus est-il à l’arrêt ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-sac-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 20,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Le sac contient un objet non identifié, pas une personne.",
+        "answers": [
+          "Personne A : Il y a quelque chose dans le sac.\nPersonne B : Savez-vous quel objet ?\nPersonne A : Non, l’objet n’est pas identifié."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que contient le sac ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Savez-vous quel objet ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-bruit",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 21,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Un objet non identifié fait du bruit dans la boîte. Aucune personne n’est dans la boîte.",
+        "answers": [
+          "Personne A : Quelque chose fait du bruit dans la boîte.\nPersonne B : Où est l’objet ?\nPersonne A : Dans la boîte."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qu’est-ce qui fait du bruit ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Où est l’objet ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-table-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 22,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Un objet non identifié est posé sur la table.",
+        "answers": [
+          "Personne A : Il y a quelque chose sur la table.\nPersonne B : L’objet est-il identifié ?\nPersonne A : Non, pas encore."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qu’y a-t-il sur la table ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "L’objet est-il identifié ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-oubli-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 23,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Vous avez oublié un objet non identifié ; aucune personne n’est laissée sur place.",
+        "answers": [
+          "Personne A : J’ai oublié quelque chose.\nPersonne B : S’agit-il d’une personne ?\nPersonne A : Non, il s’agit d’un objet."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qu’avez-vous oublié ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "S’agit-il d’une personne ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-manque-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 24,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Un élément matériel manque au jeu ; toutes les personnes sont présentes.",
+        "answers": [
+          "Personne A : Il manque quelque chose pour jouer.\nPersonne B : Les personnes sont-elles présentes ?\nPersonne A : Oui, elles sont toutes présentes."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que manque-t-il ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Les personnes sont-elles présentes ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-trouver-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 25,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Vous avez trouvé un objet non identifié dans la cour.",
+        "answers": [
+          "Personne A : J’ai trouvé quelque chose dans la cour.\nPersonne B : Où l’avez-vous trouvé ?\nPersonne A : Dans la cour."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qu’avez-vous trouvé ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Où l’avez-vous trouvé ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-preparer-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 26,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Vous préparez une chose pour la fête, sans la préciser ; il ne s’agit pas de préparer une personne.",
+        "answers": [
+          "Personne A : Je prépare quelque chose pour la fête.\nPersonne B : Pour quelle occasion ?\nPersonne A : Pour la fête."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que préparez-vous ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Pour quelle occasion ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-apporter-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 27,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Vous apportez une chose non précisée au groupe, pas une personne.",
+        "answers": [
+          "Personne A : J’apporte quelque chose au groupe.\nPersonne B : L’avez-vous précisée ?\nPersonne A : Non, je ne la précise pas."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qu’apportez-vous au groupe ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "L’avez-vous précisée ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-sac-vide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 28,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Le sac ne contient aucun objet ; aucune chose n’y reste.",
+        "answers": [
+          "Personne A : Il n’y a rien dans le sac.\nPersonne B : Le sac est-il vide ?\nPersonne A : Oui, complètement."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que contient le sac ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Le sac est-il vide ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-table-vide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 29,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "La table ne porte aucun objet ; aucun objet ne peut être vu dessus.",
+        "answers": [
+          "Personne A : Je ne vois rien sur la table.\nPersonne B : Y a-t-il un objet ?\nPersonne A : Non, la table est vide."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que voyez-vous sur la table ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Y a-t-il un objet ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-oubli-rien",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 30,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Vous avez vérifié votre matériel : aucun objet n’a été oublié.",
+        "answers": [
+          "Personne A : Je n’ai rien oublié.\nPersonne B : Le matériel est-il complet ?\nPersonne A : Oui, il est complet."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Avez-vous oublié quelque chose ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Le matériel est-il complet ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-reste-rien",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 31,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Il ne reste aucun aliment dans le plat.",
+        "answers": [
+          "Personne A : Il ne reste rien dans le plat.\nPersonne B : Le plat est-il vide ?\nPersonne A : Oui, il est vide."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que reste-t-il dans le plat ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Le plat est-il vide ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-changer-rien",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 32,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Aucun élément du programme n’a changé.",
+        "answers": [
+          "Personne A : Rien n’a changé dans le programme.\nPersonne B : Le programme est-il identique ?\nPersonne A : Oui, il est identique."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qu’est-ce qui a changé ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Le programme est-il identique ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-acheter-rien",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 33,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Vous êtes revenu sans aucun achat d’objet ni d’aliment.",
+        "answers": [
+          "Personne A : Je n’ai rien acheté.\nPersonne B : Avez-vous fait un achat ?\nPersonne A : Non, aucun achat."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qu’avez-vous acheté ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Avez-vous fait un achat ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-comprendre-rien",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 34,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Aucune partie de l’explication n’est comprise ; la question porte sur le contenu.",
+        "answers": [
+          "Personne A : Je ne comprends rien.\nPersonne B : Faut-il expliquer à nouveau ?\nPersonne A : Oui, toute l’explication."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que comprenez-vous ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Faut-il expliquer à nouveau ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-manquer-rien",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 35,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Tout le matériel est présent ; aucun objet ne manque.",
+        "answers": [
+          "Personne A : Il ne manque rien au matériel.\nPersonne B : Le matériel est-il complet ?\nPersonne A : Oui, il est complet."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que manque-t-il au matériel ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Le matériel est-il complet ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-comprendre-tout",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 36,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Vous comprenez toutes les explications, sans exception.",
+        "answers": [
+          "Personne A : Je comprends tout.\nPersonne B : Y a-t-il une partie incomprise ?\nPersonne A : Non, aucune partie."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que comprenez-vous ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Y a-t-il une partie incomprise ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-ranger-tout",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 37,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Vous rangez tous les objets du local, sans exception.",
+        "answers": [
+          "Personne A : Je range tout.\nPersonne B : Faut-il laisser un objet dehors ?\nPersonne A : Non, tous les objets doivent être rangés."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que rangez-vous ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Faut-il laisser un objet dehors ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-verifier-tout",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 38,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Vous vérifiez la totalité des documents du dossier.",
+        "answers": [
+          "Personne A : Nous vérifions tout.\nPersonne B : Un document est-il exclu ?\nPersonne A : Non, aucun document."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que vérifiez-vous ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Un document est-il exclu ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-lire-tout",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 39,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Vous lisez la totalité des messages reçus.",
+        "answers": [
+          "Personne A : Tu lis tout.\nPersonne B : Un message est-il laissé de côté ?\nPersonne A : Non, je lis tous les messages."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que lis-tu ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Un message est-il laissé de côté ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-emporter-tout",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 40,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Le groupe emporte l’ensemble du matériel prévu, sans exception.",
+        "answers": [
+          "Personne A : Ils emportent tout.\nPersonne B : Reste-t-il du matériel prévu ?\nPersonne A : Non, tout est emporté."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qu’emportent-ils ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Reste-t-il du matériel prévu ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-noter-tout",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 41,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Vous notez la totalité des informations utiles.",
+        "answers": [
+          "Personne A : Vous notez tout.\nPersonne B : Y a-t-il une information utile à exclure ?\nPersonne A : Non, aucune."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que notez-vous ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Y a-t-il une information utile à exclure ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-tous-prets",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 42,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Les participants forment un groupe mixte et sont prêts sans exception. Supprimez le nom participants.",
+        "answers": [
+          "Personne A : Tous sont prêts.\nPersonne B : Une personne n’est-elle pas prête ?\nPersonne A : Non, tous les participants sont prêts."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qui est prêt ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Une personne n’est-elle pas prête ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-tous-arrives",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 43,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Les voyageurs sont des hommes ; tous sont arrivés. Supprimez le nom voyageurs.",
+        "answers": [
+          "Personne A : Tous sont arrivés.\nPersonne B : Un voyageur est-il encore attendu ?\nPersonne A : Non, ils sont tous arrivés."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qui est arrivé ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Un voyageur est-il encore attendu ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-tous-rendus",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 44,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Les exercices sont tous rendus ; aucun n’est oublié. Supprimez le nom exercices.",
+        "answers": [
+          "Personne A : Tous sont rendus.\nPersonne B : Un exercice manque-t-il ?\nPersonne A : Non, aucun ne manque."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quels exercices sont rendus ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Un exercice manque-t-il ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-toutes-pretes",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 45,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Les participantes sont toutes des femmes et sont prêtes. Supprimez le nom participantes.",
+        "answers": [
+          "Personne A : Toutes sont prêtes.\nPersonne B : Une participante n’est-elle pas prête ?\nPersonne A : Non, elles sont toutes prêtes."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qui est prêt ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Une participante n’est-elle pas prête ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-toutes-rangees",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 46,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Les boîtes sont toutes rangées. Supprimez le nom boîtes.",
+        "answers": [
+          "Personne A : Toutes sont rangées.\nPersonne B : Une boîte reste-t-elle dehors ?\nPersonne A : Non, toutes sont rangées."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quelles boîtes sont rangées ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Une boîte reste-t-elle dehors ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-chacun-fiche",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 47,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Chaque participant reçoit sa propre fiche ; on exprime la distribution individuelle.",
+        "answers": [
+          "Personne A : Chacun des participants reçoit une fiche.\nPersonne B : Combien de fiches par participant ?\nPersonne A : Une fiche chacun."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Comment les fiches sont-elles distribuées ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Combien de fiches par participant ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-chacun-badge",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 48,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Chaque visiteur reçoit son propre badge ; on conserve des visiteurs après le pronom.",
+        "answers": [
+          "Personne A : Chacun des visiteurs reçoit un badge.\nPersonne B : Combien de badges par visiteur ?\nPersonne A : Un badge chacun."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Comment les badges sont-ils distribués ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Combien de badges par visiteur ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      },
+      {
+        "id": "gram-ex-i6-curriculum-s-a2-chacun-tour",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+          "typeId": "gram-ex-i6-curriculum-s",
+          "position": 49,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Donner une information avec un pronom indéfini",
+        "situation": "Chaque élève parle à son tour ; on conserve des élèves après le pronom.",
+        "answers": [
+          "Personne A : Chacun des élèves parle à son tour.\nPersonne B : Les élèves parlent-ils tous en même temps ?\nPersonne A : Non, chacun parle à son tour."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Répondez selon les faits de la situation."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Comment la parole est-elle organisée ?"
+          }
+        ],
+        "task": "Répondez avec un pronom indéfini adapté aux faits, puis répondez à la relance. Échangez ensuite les rôles.",
+        "followUps": [
+          "Les élèves parlent-ils tous en même temps ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Personnes, choses et quantité conformes aux faits."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom, négation et accord adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Exemple non exclusif ; les autres formulations fidèles aux faits sont recevables."
+      }
+    ]
+  }
+]

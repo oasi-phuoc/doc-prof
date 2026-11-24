@@ -56,7 +56,7 @@ const analyses=bank('double-aux','B1').units;assert.equal(analyses.filter(u=>u.a
 const docs=require('../scripts/grammar_curriculum/passe-pqp-lectures-b1.json');assert.equal(docs.length,20);assert(docs.every(d=>d.text.every(l=>l.length<=80)))
 const before=p=>cp.execFileSync('git',['show','024dd2fcf:'+p],{encoding:'utf8',maxBuffer:16*1024*1024})
 const h8='src/grammaire/curriculum/data/imparfait-ou-pc.json';assert.equal(fs.readFileSync(root+'/'+h8,'utf8'),before(h8))
-const lp='src/grammaire/exercises/bank/lessons-revised.ts',legacy=s=>JSON.parse(s.split('= ').slice(1).join('= '));assert.deepEqual(legacy(fs.readFileSync(root+'/'+lp,'utf8')),legacy(before(lp)).filter(r=>!subs.includes(r.subId)))
+const lp='src/grammaire/exercises/bank/lessons-revised.ts',legacy=s=>JSON.parse(s.split('= ').slice(1).join('= '));assert.deepEqual(legacy(fs.readFileSync(root+'/'+lp,'utf8')),legacy(before(lp)).filter(r=>!require('../src/grammaire/curriculum/retired-subthemes.json').includes(r.subId)))
 const comm='src/grammaire/exercises/communication-data.json';assert.equal(fs.readFileSync(root+'/'+comm,'utf8'),before(comm))
 const protectedPaths=require('../docs/grammaire/implementation/passe-20261124-proofs/protected-sha256.json');for(const [p,h]of Object.entries(protectedPaths))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(root+'/'+p)).digest('hex'),h,p)
 const sourceRows=fs.readdirSync(root+'/scripts/grammar_curriculum').filter(p=>/^passe-.*\.tsv$/.test(p)).reduce((n,p)=>n+fs.readFileSync(root+'/scripts/grammar_curriculum/'+p,'utf8').trim().split('\n').filter(l=>!l.startsWith('#')).length,0);assert.equal(sourceRows,400)

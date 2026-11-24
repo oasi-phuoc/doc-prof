@@ -1,0 +1,560 @@
+[
+  {
+    "id": "table",
+    "sourceSituation": "table",
+    "title": "La table de travail",
+    "genre": "Note d’atelier",
+    "text": [
+      "La table sur laquelle nous travaillons est près de la fenêtre. Nous",
+      "l’utilisons pour préparer les maquettes. Elle peut accueillir quatre",
+      "personnes."
+    ],
+    "targets": [
+      {
+        "information": "Le meuble utilisé pour travailler",
+        "model": "Sur quel meuble travaillez-vous ?",
+        "evidence": "La table"
+      },
+      {
+        "information": "Le travail effectué",
+        "model": "Que préparez-vous sur la table ?",
+        "evidence": "les maquettes"
+      },
+      {
+        "information": "La capacité de la table",
+        "model": "Combien de personnes la table peut-elle accueillir ?",
+        "evidence": "quatre personnes"
+      }
+    ]
+  },
+  {
+    "id": "outil",
+    "sourceSituation": "outil",
+    "title": "Un outil de menuiserie",
+    "genre": "Présentation",
+    "text": [
+      "Voici le rabot avec lequel le menuisier travaille. Cet outil appartient à",
+      "l’atelier et sert à lisser le bois. Il est rangé dans une armoire après",
+      "chaque utilisation."
+    ],
+    "targets": [
+      {
+        "information": "L’outil utilisé par le menuisier",
+        "model": "Avec quel outil le menuisier travaille-t-il ?",
+        "evidence": "le rabot"
+      },
+      {
+        "information": "L’usage de l’outil",
+        "model": "À quoi sert cet outil ?",
+        "evidence": "lisser le bois"
+      },
+      {
+        "information": "Le lieu de rangement",
+        "model": "Où le rabot est-il rangé ?",
+        "evidence": "dans une armoire"
+      }
+    ]
+  },
+  {
+    "id": "salle",
+    "sourceSituation": "salle",
+    "title": "Une répétition",
+    "genre": "Message",
+    "text": [
+      "La salle dans laquelle le groupe répète est la salle bleue. La répétition",
+      "commence à dix-sept heures. Les musiciens préparent le concert de fin",
+      "d’année."
+    ],
+    "targets": [
+      {
+        "information": "La salle utilisée",
+        "model": "Dans quelle salle le groupe répète-t-il ?",
+        "evidence": "la salle bleue"
+      },
+      {
+        "information": "L’heure de début",
+        "model": "À quelle heure la répétition commence-t-elle ?",
+        "evidence": "à dix-sept heures"
+      },
+      {
+        "information": "L’événement préparé",
+        "model": "Quel événement les musiciens préparent-ils ?",
+        "evidence": "le concert de fin d’année"
+      }
+    ]
+  },
+  {
+    "id": "bus",
+    "sourceSituation": "bus",
+    "title": "Départ pour le musée",
+    "genre": "Note de sortie",
+    "text": [
+      "Le bus dans lequel les élèves montent part à huit heures. Il dispose de",
+      "trente-deux places et conduit le groupe au musée. Les billets sont",
+      "distribués par la professeure."
+    ],
+    "targets": [
+      {
+        "information": "L’heure de départ",
+        "model": "À quelle heure le bus part-il ?",
+        "evidence": "à huit heures"
+      },
+      {
+        "information": "La capacité du bus",
+        "model": "Combien de places le bus possède-t-il ?",
+        "evidence": "trente-deux places"
+      },
+      {
+        "information": "La destination",
+        "model": "Où le bus conduit-il le groupe ?",
+        "evidence": "au musée"
+      }
+    ]
+  },
+  {
+    "id": "questions",
+    "sourceSituation": "questions",
+    "title": "Préparer un entretien",
+    "genre": "Consigne",
+    "text": [
+      "Les questions auxquelles tu réponds portent sur l’environnement. Prépare tes",
+      "réponses sur une feuille, puis présente-les vendredi à ton groupe.",
+      "L’activité dure dix minutes."
+    ],
+    "targets": [
+      {
+        "information": "Le sujet des questions",
+        "model": "Sur quel sujet les questions portent-elles ?",
+        "evidence": "l’environnement"
+      },
+      {
+        "information": "Le jour de présentation",
+        "model": "Quel jour dois-tu présenter tes réponses ?",
+        "evidence": "vendredi"
+      },
+      {
+        "information": "La durée de l’activité",
+        "model": "Combien de temps l’activité dure-t-elle ?",
+        "evidence": "dix minutes"
+      }
+    ]
+  },
+  {
+    "id": "probleme",
+    "sourceSituation": "probleme",
+    "title": "Organiser l’accueil",
+    "genre": "Compte rendu",
+    "text": [
+      "Le problème auquel nous pensons est le manque de places à l’accueil. Nous",
+      "proposons d’ouvrir une deuxième salle. La responsable donnera sa réponse",
+      "lundi."
+    ],
+    "targets": [
+      {
+        "information": "Le problème discuté",
+        "model": "À quel problème pensez-vous ?",
+        "evidence": "le manque de places à l’accueil"
+      },
+      {
+        "information": "La solution proposée",
+        "model": "Quelle solution proposez-vous ?",
+        "evidence": "ouvrir une deuxième salle"
+      },
+      {
+        "information": "Le jour de la réponse",
+        "model": "Quand la responsable donnera-t-elle sa réponse ?",
+        "evidence": "lundi"
+      }
+    ]
+  },
+  {
+    "id": "regle",
+    "sourceSituation": "regle",
+    "title": "Sécurité à l’atelier",
+    "genre": "Règlement",
+    "text": [
+      "La règle à laquelle le groupe se conforme impose le port du casque dans",
+      "l’atelier. Le casque protège la tête. Il faut le remettre à l’entrée après",
+      "la séance."
+    ],
+    "targets": [
+      {
+        "information": "L’obligation prévue",
+        "model": "Que faut-il porter dans l’atelier ?",
+        "evidence": "le port du casque"
+      },
+      {
+        "information": "La partie du corps protégée",
+        "model": "Quelle partie du corps le casque protège-t-il ?",
+        "evidence": "la tête"
+      },
+      {
+        "information": "Le lieu de retour du casque",
+        "model": "Où faut-il remettre le casque ?",
+        "evidence": "à l’entrée"
+      }
+    ]
+  },
+  {
+    "id": "projets",
+    "sourceSituation": "projets",
+    "title": "Deux projets de classe",
+    "genre": "Présentation",
+    "text": [
+      "Les projets auxquels la classe participe sont un jardin et une exposition.",
+      "Le jardin est installé dans la cour. L’exposition ouvrira en juin à la",
+      "bibliothèque."
+    ],
+    "targets": [
+      {
+        "information": "Les projets suivis",
+        "model": "À quels projets la classe participe-t-elle ?",
+        "evidence": "un jardin et une exposition"
+      },
+      {
+        "information": "Le lieu du jardin",
+        "model": "Où le jardin est-il installé ?",
+        "evidence": "dans la cour"
+      },
+      {
+        "information": "Le mois d’ouverture de l’exposition",
+        "model": "Quand l’exposition ouvrira-t-elle ?",
+        "evidence": "en juin"
+      }
+    ]
+  },
+  {
+    "id": "batiment",
+    "sourceSituation": "batiment",
+    "title": "L’arrêt de la ligne huit",
+    "genre": "Information pratique",
+    "text": [
+      "Le bâtiment à côté duquel se trouve l’arrêt est une école. La ligne huit",
+      "dessert cet arrêt. Le premier bus passe à six heures trente les jours de",
+      "semaine."
+    ],
+    "targets": [
+      {
+        "information": "Le bâtiment près de l’arrêt",
+        "model": "À côté de quel bâtiment l’arrêt se trouve-t-il ?",
+        "evidence": "une école"
+      },
+      {
+        "information": "La ligne concernée",
+        "model": "Quelle ligne dessert cet arrêt ?",
+        "evidence": "La ligne huit"
+      },
+      {
+        "information": "L’heure du premier bus",
+        "model": "À quelle heure le premier bus passe-t-il en semaine ?",
+        "evidence": "à six heures trente"
+      }
+    ]
+  },
+  {
+    "id": "ecole",
+    "sourceSituation": "ecole",
+    "title": "Point de rencontre",
+    "genre": "Courriel",
+    "text": [
+      "Bonjour, l’école près de laquelle nous nous retrouvons est l’école du",
+      "Centre. Le rendez-vous est fixé à sept heures quarante-cinq. Nous partirons",
+      "ensuite à pied pour le parc."
+    ],
+    "targets": [
+      {
+        "information": "L’école du point de rencontre",
+        "model": "Près de quelle école vous retrouvez-vous ?",
+        "evidence": "l’école du Centre"
+      },
+      {
+        "information": "L’heure du rendez-vous",
+        "model": "À quelle heure le rendez-vous est-il fixé ?",
+        "evidence": "à sept heures quarante-cinq"
+      },
+      {
+        "information": "Le moyen de déplacement",
+        "model": "Comment irez-vous au parc ?",
+        "evidence": "à pied"
+      }
+    ]
+  },
+  {
+    "id": "arbres",
+    "sourceSituation": "arbres",
+    "title": "Jeux au jardin",
+    "genre": "Description",
+    "text": [
+      "Les arbres au pied desquels les enfants jouent sont des chênes. Ils se",
+      "trouvent au fond du jardin. Les enfants s’y retrouvent après le goûter pour",
+      "construire des cabanes."
+    ],
+    "targets": [
+      {
+        "information": "L’espèce des arbres",
+        "model": "Quels arbres se trouvent au fond du jardin ?",
+        "evidence": "des chênes"
+      },
+      {
+        "information": "Le moment des jeux",
+        "model": "Quand les enfants s’y retrouvent-ils ?",
+        "evidence": "après le goûter"
+      },
+      {
+        "information": "L’activité des enfants",
+        "model": "Que construisent les enfants ?",
+        "evidence": "des cabanes"
+      }
+    ]
+  },
+  {
+    "id": "maisons",
+    "sourceSituation": "maisons",
+    "title": "Déviation du chemin",
+    "genre": "Avis",
+    "text": [
+      "Les maisons à côté desquelles passe le chemin sont en rénovation. Le chemin",
+      "est fermé pendant deux jours. Pour aller à la gare, il faut suivre la rue du",
+      "Stade."
+    ],
+    "targets": [
+      {
+        "information": "Les bâtiments en rénovation",
+        "model": "Quels bâtiments sont en rénovation ?",
+        "evidence": "Les maisons"
+      },
+      {
+        "information": "La durée de fermeture",
+        "model": "Pendant combien de jours le chemin est-il fermé ?",
+        "evidence": "deux jours"
+      },
+      {
+        "information": "L’itinéraire de remplacement",
+        "model": "Quelle rue faut-il suivre pour aller à la gare ?",
+        "evidence": "la rue du Stade"
+      }
+    ]
+  },
+  {
+    "id": "pont",
+    "sourceSituation": "pont",
+    "title": "Le pont du village",
+    "genre": "Description",
+    "text": [
+      "Le pont sous lequel la rivière passe est construit en bois. Il relie le",
+      "village au terrain de sport. Les vélos doivent y être poussés à la main."
+    ],
+    "targets": [
+      {
+        "information": "Le matériau du pont",
+        "model": "En quelle matière le pont est-il construit ?",
+        "evidence": "en bois"
+      },
+      {
+        "information": "Le lieu rejoint",
+        "model": "À quel lieu le pont relie-t-il le village ?",
+        "evidence": "au terrain de sport"
+      },
+      {
+        "information": "La règle pour les vélos",
+        "model": "Comment faut-il faire traverser les vélos ?",
+        "evidence": "poussés à la main"
+      }
+    ]
+  },
+  {
+    "id": "boites",
+    "sourceSituation": "boites",
+    "title": "Ranger les outils",
+    "genre": "Notice",
+    "text": [
+      "Les boîtes dans lesquelles les outils sont rangés sont rouges. Chaque boîte",
+      "porte le nom du matériel sur une étiquette. Les boîtes doivent être fermées",
+      "après le cours."
+    ],
+    "targets": [
+      {
+        "information": "La couleur des boîtes",
+        "model": "De quelle couleur sont les boîtes ?",
+        "evidence": "rouges"
+      },
+      {
+        "information": "L’information sur l’étiquette",
+        "model": "Quelle information chaque étiquette porte-t-elle ?",
+        "evidence": "le nom du matériel"
+      },
+      {
+        "information": "Le moment de fermeture",
+        "model": "Quand faut-il fermer les boîtes ?",
+        "evidence": "après le cours"
+      }
+    ]
+  },
+  {
+    "id": "dossiers",
+    "sourceSituation": "dossiers",
+    "title": "Travail au secrétariat",
+    "genre": "Note de service",
+    "text": [
+      "Les dossiers sur lesquels les collègues travaillent concernent les",
+      "inscriptions. Ils doivent être terminés jeudi. La responsable les vérifiera",
+      "avant de les transmettre à l’accueil."
+    ],
+    "targets": [
+      {
+        "information": "Le sujet des dossiers",
+        "model": "Sur quoi les dossiers portent-ils ?",
+        "evidence": "les inscriptions"
+      },
+      {
+        "information": "Le jour limite",
+        "model": "Quel jour les dossiers doivent-ils être terminés ?",
+        "evidence": "jeudi"
+      },
+      {
+        "information": "La personne chargée du contrôle",
+        "model": "Qui vérifiera les dossiers ?",
+        "evidence": "La responsable"
+      }
+    ]
+  },
+  {
+    "id": "formation",
+    "sourceSituation": "formation",
+    "title": "Une nouvelle formation",
+    "genre": "Courriel",
+    "text": [
+      "La formation à laquelle elle s’inscrit porte sur les premiers secours. Elle",
+      "dure deux jours et se déroule au centre communal. Il faut apporter un carnet",
+      "pour prendre des notes."
+    ],
+    "targets": [
+      {
+        "information": "Le thème de la formation",
+        "model": "Sur quoi la formation porte-t-elle ?",
+        "evidence": "les premiers secours"
+      },
+      {
+        "information": "La durée",
+        "model": "Combien de jours la formation dure-t-elle ?",
+        "evidence": "deux jours"
+      },
+      {
+        "information": "Le matériel à apporter",
+        "model": "Que faut-il apporter pour prendre des notes ?",
+        "evidence": "un carnet"
+      }
+    ]
+  },
+  {
+    "id": "contrat",
+    "sourceSituation": "contrat",
+    "title": "Vérifier le courrier",
+    "genre": "Note",
+    "text": [
+      "Le contrat auquel le courrier fait référence a été signé lundi. Il concerne",
+      "la location de la salle. Une copie peut être demandée au secrétariat."
+    ],
+    "targets": [
+      {
+        "information": "La date de signature",
+        "model": "Quand le contrat a-t-il été signé ?",
+        "evidence": "lundi"
+      },
+      {
+        "information": "L’objet du contrat",
+        "model": "Que prévoit ce contrat ?",
+        "evidence": "la location de la salle"
+      },
+      {
+        "information": "Le lieu pour demander une copie",
+        "model": "Où peut-on demander une copie ?",
+        "evidence": "au secrétariat"
+      }
+    ]
+  },
+  {
+    "id": "activites",
+    "sourceSituation": "activites",
+    "title": "Choisir ses loisirs",
+    "genre": "Présentation",
+    "text": [
+      "Les activités auxquelles les élèves s’intéressent sont le basket et le",
+      "théâtre. Les séances de découverte auront lieu vendredi dans le gymnase.",
+      "Chaque élève peut essayer les deux activités."
+    ],
+    "targets": [
+      {
+        "information": "Les activités proposées",
+        "model": "À quelles activités les élèves s’intéressent-ils ?",
+        "evidence": "le basket et le théâtre"
+      },
+      {
+        "information": "Le jour des découvertes",
+        "model": "Quand les séances de découverte auront-elles lieu ?",
+        "evidence": "vendredi"
+      },
+      {
+        "information": "Le nombre d’activités qu’on peut essayer",
+        "model": "Combien d’activités chaque élève peut-il essayer ?",
+        "evidence": "les deux activités"
+      }
+    ]
+  },
+  {
+    "id": "outils-plusieurs",
+    "sourceSituation": "outils-plusieurs",
+    "title": "Réparer un vélo",
+    "genre": "Compte rendu",
+    "text": [
+      "Les outils avec lesquels nous réparons le vélo sont une clé et une pompe.",
+      "Nous travaillons dans l’atelier. La réparation doit être terminée avant",
+      "midi."
+    ],
+    "targets": [
+      {
+        "information": "Les outils utilisés",
+        "model": "Avec quels outils réparez-vous le vélo ?",
+        "evidence": "une clé et une pompe"
+      },
+      {
+        "information": "Le lieu du travail",
+        "model": "Où travaillez-vous ?",
+        "evidence": "dans l’atelier"
+      },
+      {
+        "information": "La limite de temps",
+        "model": "Avant quelle heure la réparation doit-elle être terminée ?",
+        "evidence": "avant midi"
+      }
+    ]
+  },
+  {
+    "id": "chaises",
+    "sourceSituation": "chaises",
+    "title": "Accueillir les visiteurs",
+    "genre": "Note d’accueil",
+    "text": [
+      "Les chaises sur lesquelles les visiteurs sont assis sont placées en cercle.",
+      "Il y a six chaises. L’animatrice commence par présenter le programme de la",
+      "visite."
+    ],
+    "targets": [
+      {
+        "information": "La disposition des chaises",
+        "model": "Comment les chaises sont-elles disposées ?",
+        "evidence": "en cercle"
+      },
+      {
+        "information": "Le nombre de chaises",
+        "model": "Combien de chaises y a-t-il ?",
+        "evidence": "six chaises"
+      },
+      {
+        "information": "Le début de la séance",
+        "model": "Que présente l’animatrice au début ?",
+        "evidence": "le programme de la visite"
+      }
+    ]
+  }
+]

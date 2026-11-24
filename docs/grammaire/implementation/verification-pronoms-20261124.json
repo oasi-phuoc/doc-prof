@@ -1,0 +1,203 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-24",
+  "timezone": "Europe/Zurich",
+  "baseCommit": "6e55930e9",
+  "status": "passed_for_pilot_human_approval_pending",
+  "scope": "Les pronoms only; gamemode development paused.",
+  "delivery": {
+    "newActivities": 26,
+    "newBanks": 26,
+    "newOfferings": 34,
+    "newSelectableUnits": 1270,
+    "newVariants": 1710,
+    "authoredSourceRows": 400,
+    "readingDocuments": 20,
+    "documentWritingTargets": 60,
+    "documentReuse": "Twenty i9 situations developed with additional explicit facts; not twenty independent extra source stories.",
+    "completeThemeActivities": 32,
+    "completeThemeBanks": 32,
+    "completeThemeOfferings": 41,
+    "plannedThemeOfferings": 41,
+    "completeThemeUnits": 1540,
+    "completeThemeVariants": 2070,
+    "existingCodOfferingsPreserved": 7,
+    "teacherApprovedUnits": 0
+  },
+  "checks": {
+    "authoredContent": "reviewed with explicit referents and constructions",
+    "canonicalErrorSpans": 200,
+    "isolatedDeterministicRebuild": "passed",
+    "globalVariants": 22650,
+    "sourceFactsForDontGap": "Both source statements provided, including subject and verb; remaining word order specified.",
+    "visibleElisions": "Elided l’/qu’ answers attach to the following word in the printed renderer.",
+    "enAndY": {
+      "en": 25,
+      "y": 25
+    },
+    "protectedTheoryAndCoFiles": 276,
+    "previousPasseAlimentsAndConseillerRegressions": "passed",
+    "browser": {
+      "server": "Vite preview of production build",
+      "offerings": 41,
+      "renderedQuestionUnits": 4140,
+      "renderedAnswerFields": 4240,
+      "sheets": 3268,
+      "verificationRuns": {
+        "initialFullThemeOfferings": 41,
+        "finalRecheckedOfferings": 9,
+        "finalRecheckedSubthemes": [
+          "i5",
+          "i8"
+        ],
+        "unchangedBankFileCount": 7,
+        "note": "The final run follows source-fact and elision fixes. Other bank files are byte-identical to the full-suite run; see unaffected-bank-sha256.json."
+      },
+      "horizontalOverflow": false,
+      "footerOverflow": false,
+      "worstFirstPageBudget": "Student/correction first-page header budgets checked for all unit heights; reading supports and child questions measured separately.",
+      "errors": []
+    },
+    "uniquePdfPreviews": 18,
+    "pdfRenderPasses": 23,
+    "pdfRasterWarnings": "Poppler Type 3 glyph bounding-box warnings; representative text, checkboxes, answer lines and page boundaries visually reviewed.",
+    "typescript": "passed",
+    "productionBuild": "passed",
+    "lint": "passed with existing warnings",
+    "existingGameCatalogBuildGate": "passed: unchanged 765 entries, no game feature added",
+    "secretScan": {
+      "tool": "Gitleaks 8.30.1",
+      "changedFiles": 7497,
+      "findings": 0,
+      "canarySelfTest": "passed",
+      "stage": "Full working-tree scan before the final pedagogical source-fact and apostrophe refinements; no authentication or secret-handling code was changed.",
+      "scope": "Commits depuis le jalon C0 et fichiers modifiés/non suivis actuels. Les secrets historiques préexistants et le bundle complet exigent encore la migration d’authentification F22 ; ce contrôle ne certifie pas leur absence."
+    }
+  },
+  "retirement": {
+    "removedWrittenSubthemes": [
+      "i1",
+      "i2",
+      "i3",
+      "i5",
+      "i6",
+      "i7",
+      "i8",
+      "i9"
+    ],
+    "totalRetiredNotions": 73,
+    "remainingWrittenBanks": 25,
+    "legacyCommunicationGroupsPreserved": 5,
+    "existingGradedCodPreserved": true,
+    "otherActivityAndOfferingRowsPreserved": true,
+    "savedWorksheetCleanup": "deferred by owner; no real fiche access or deletion",
+    "workerDeployment": false
+  },
+  "media": {
+    "generated": 0,
+    "modified": 0,
+    "newImageObligations": 0
+  },
+  "globalCoverage": {
+    "reviewedActivities": 312,
+    "reviewedOfferings": 442,
+    "reviewedSelectableUnits": 16760,
+    "reviewedVariants": 22650,
+    "reviewedDocuments": 460,
+    "reviewedDocumentQuestions": 1700
+  },
+  "limitations": [
+    "Human pedagogical approval, physical printing and ENI classroom acceptance pending.",
+    "Historic theory wording is protected; this delivery does not certify all historic theory statements.",
+    "Gamemode development, bank performance work and saved worksheet cleanup remain paused.",
+    "No next grammar theme started."
+  ],
+  "sourceSha256": [
+    {
+      "path": "scripts/build-grammar-pronoms.py",
+      "sha256": "a25f2735aec47c76bcba98ed00cb574a139d1306daf6019be631d0f2e9ced413"
+    },
+    {
+      "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+      "sha256": "7116fcc1a810731539cfb9cef779196dc98aaaf0c7e96f09e8bd99692e2ec701"
+    },
+    {
+      "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+      "sha256": "c20d33a56057f581a5001016340381f528572763952aad5fbf853edcc0276a66"
+    },
+    {
+      "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+      "sha256": "9e870db3e7e8df921eaea7381b6d64ceb762d90d94398acfbc08bef1022690b7"
+    },
+    {
+      "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+      "sha256": "0d82c562748cb0671dac7b337713de07c565848420a6cb4cc0e91c6fd2f5c3dc"
+    },
+    {
+      "path": "scripts/grammar_curriculum/pronoms-i6-a2.tsv",
+      "sha256": "f4cdea5f5c091edad3ce8fcea10be03a5260fc73a649407bf5b68b7485657e52"
+    },
+    {
+      "path": "scripts/grammar_curriculum/pronoms-i7-a2.tsv",
+      "sha256": "89729753d0b415f41d9cb36a179a2c868bf52ea32b4f21fd87bee610238edccc"
+    },
+    {
+      "path": "scripts/grammar_curriculum/pronoms-i8-b1.tsv",
+      "sha256": "d1c07902eba7ec423103ed367af21ae7a5046b39375869f4e350489bcb83a4d6"
+    },
+    {
+      "path": "scripts/grammar_curriculum/pronoms-i9-b1.tsv",
+      "sha256": "09adcdd5268e2ca9af81f44cdb2ddd517d0025a846acefd196424997da9fbaee"
+    },
+    {
+      "path": "scripts/grammar_curriculum/pronoms-i9-lectures-b1.json",
+      "sha256": "45442a9651d0e2e7b3728ebafd258b6816e5691ab677d382d3fdbf5bf66bdfc2"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/i1.json",
+      "sha256": "6e5823aba3a992d7dfce41cc34197b73684badb1d45b794c9b8df09ebf8cdbd2"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/i2.json",
+      "sha256": "d7be8ada1c52fb73103d553a8ac38f36e2d4742d7eea235d3e7598a8fafd8a98"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/i3.json",
+      "sha256": "996c9cd3d422baf60feb76842195100ce9b3409f1403f77398b8fa796e31ef0f"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/i5.json",
+      "sha256": "c355cc2a12848fb68a961bde29a786e3257bac8f9a041ea89a1d123b48a45429"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/i6.json",
+      "sha256": "38babb43c3b1f1f5b03a41fa9730abfb7b25be77ecc4f823346c89a228c1a775"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/i7.json",
+      "sha256": "8b65441aaa02a6821ea16818e76cd1dfd930cabeeff4ba4302fa41a0ff2247e7"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/i8.json",
+      "sha256": "fff06e424c9438354939c6ff0a76fc167454344a03f6ea592632407eff3c6f57"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/i9.json",
+      "sha256": "e1f27f0051f9a292a3243648db581984ef5ea021e5d475757519a16359893667"
+    },
+    {
+      "path": "src/grammaire/curriculum/registry.ts",
+      "sha256": "60cadf19046f1fb7824cf14e2e0eb01f8955c6225a1f5683049b35fdd025a2f4"
+    },
+    {
+      "path": "src/grammaire/curriculum/pagination.ts",
+      "sha256": "2d4018f62c164c347ec6a78e1ac7e281b94e9b3fd0a36e5a0dcaa36a68aa9240"
+    },
+    {
+      "path": "src/components/item-view/grammar.tsx",
+      "sha256": "5c335d50f968b7eb618b3e9c2e0246b2d1d9b60fd3ed78a097f70fad8827526b"
+    }
+  ],
+  "protectedSnapshotSha256": "b8919653b2ab1d8a3b08e04dc8f9ab8a8cd177be9ad14eeaca5b16a9b378e31c",
+  "productionManifestSha256": "024cc1f3b1a52cb1feba265fc797c7cca464cb839f3458c53f8aa9f967908801"
+}

@@ -1,0 +1,4094 @@
+[
+  {
+    "schemaVersion": 1,
+    "revision": "pronoms-2026-11-24-v1",
+    "activityId": "gram-ex-i3-qcm-verbe",
+    "subthemeId": "i3",
+    "topic": "gram-pronoms",
+    "level": "A2",
+    "label": "Désigner avec un pronom démonstratif",
+    "objective": "Reprendre un nom connu par celui/celle/ceux/celles, ou un fait par ce/cela, avec les compléments nécessaires.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Situations et références relues ; réemploi explicite entre mécaniques. Modèles ouverts non exclusifs. Aucune approbation pédagogique humaine déclarée."
+    },
+    "presentations": [
+      "choice",
+      "gap"
+    ],
+    "instructions": {
+      "choice": "Choisissez le démonstratif qui reprend le nom ou le fait selon la situation.",
+      "gap": "Écrivez le démonstratif qui respecte le référent et la forme demandés."
+    },
+    "units": [
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-sac-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 0,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je prends ___ de mon voisin.",
+        "cue": "Deux sacs sont connus. Vous choisissez le sac de votre voisin, nom masculin singulier.",
+        "answers": [
+          "celui"
+        ],
+        "options": [
+          {
+            "id": "sac-de-choix-1",
+            "text": "celui"
+          },
+          {
+            "id": "sac-de-choix-2",
+            "text": "celle"
+          },
+          {
+            "id": "sac-de-choix-3",
+            "text": "ceux"
+          }
+        ],
+        "explanation": "Celui reprend sac ; le complément de mon voisin est conservé. Modèle : Je prends celui de mon voisin."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-veste-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 1,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Voici ___ de ma sœur.",
+        "cue": "Vous retrouvez la veste de votre sœur. Le nom « veste » est au féminin singulier.",
+        "answers": [
+          "celle"
+        ],
+        "options": [
+          {
+            "id": "veste-de-choix-1",
+            "text": "celle"
+          },
+          {
+            "id": "veste-de-choix-2",
+            "text": "celui"
+          },
+          {
+            "id": "veste-de-choix-3",
+            "text": "celles"
+          }
+        ],
+        "explanation": "Celle reprend veste ; le complément est conservé. Modèle : Voici celle de ma sœur."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-livres-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 2,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je regarde ___ de la bibliothèque.",
+        "cue": "Vous comparez les livres de la bibliothèque. Le nom « livres » est au masculin pluriel.",
+        "answers": [
+          "ceux"
+        ],
+        "options": [
+          {
+            "id": "livres-de-choix-1",
+            "text": "ceux"
+          },
+          {
+            "id": "livres-de-choix-2",
+            "text": "celles"
+          },
+          {
+            "id": "livres-de-choix-3",
+            "text": "celui"
+          }
+        ],
+        "explanation": "Ceux reprend livres. Modèle : Je regarde ceux de la bibliothèque."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-cles-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 3,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Il me faut ___ du local.",
+        "cue": "Vous demandez les clés du local. Le nom « clés » est au féminin pluriel.",
+        "answers": [
+          "celles"
+        ],
+        "options": [
+          {
+            "id": "cles-de-choix-1",
+            "text": "celles"
+          },
+          {
+            "id": "cles-de-choix-2",
+            "text": "ceux"
+          },
+          {
+            "id": "cles-de-choix-3",
+            "text": "celle"
+          }
+        ],
+        "explanation": "Celles reprend clés. Modèle : Il me faut celles du local."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-casque-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 4,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "J’emprunte ___ de mon ami.",
+        "cue": "Vous empruntez le casque de votre ami. Le nom « casque » est au masculin singulier.",
+        "answers": [
+          "celui"
+        ],
+        "options": [
+          {
+            "id": "casque-de-choix-1",
+            "text": "celui"
+          },
+          {
+            "id": "casque-de-choix-2",
+            "text": "celle"
+          },
+          {
+            "id": "casque-de-choix-3",
+            "text": "ceux"
+          }
+        ],
+        "explanation": "Celui reprend casque. Modèle : J’emprunte celui de mon ami."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-carte-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 5,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je montre ___ du quartier.",
+        "cue": "La carte à montrer est celle du quartier. Le nom « carte » est au féminin singulier.",
+        "answers": [
+          "celle"
+        ],
+        "options": [
+          {
+            "id": "carte-de-choix-1",
+            "text": "celle"
+          },
+          {
+            "id": "carte-de-choix-2",
+            "text": "celui"
+          },
+          {
+            "id": "carte-de-choix-3",
+            "text": "celles"
+          }
+        ],
+        "explanation": "Celle reprend carte. Modèle : Je montre celle du quartier."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-plans-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 6,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous vérifions ___ de l’architecte.",
+        "cue": "Les plans à vérifier sont ceux de l’architecte. Le nom « plans » est au masculin pluriel.",
+        "answers": [
+          "ceux"
+        ],
+        "options": [
+          {
+            "id": "plans-de-choix-1",
+            "text": "ceux"
+          },
+          {
+            "id": "plans-de-choix-2",
+            "text": "celles"
+          },
+          {
+            "id": "plans-de-choix-3",
+            "text": "celui"
+          }
+        ],
+        "explanation": "Ceux reprend plans. Modèle : Nous vérifions ceux de l’architecte."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-photos-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 7,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous exposons ___ de la classe.",
+        "cue": "Les photos appartiennent à la classe. Le nom « photos » est au féminin pluriel.",
+        "answers": [
+          "celles"
+        ],
+        "options": [
+          {
+            "id": "photos-de-choix-1",
+            "text": "celles"
+          },
+          {
+            "id": "photos-de-choix-2",
+            "text": "ceux"
+          },
+          {
+            "id": "photos-de-choix-3",
+            "text": "celle"
+          }
+        ],
+        "explanation": "Celles reprend photos. Modèle : Nous exposons celles de la classe."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-velo-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 8,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je répare ___ de mon cousin.",
+        "cue": "Vous réparez le vélo de votre cousin. Le nom « vélo » est au masculin singulier.",
+        "answers": [
+          "celui"
+        ],
+        "options": [
+          {
+            "id": "velo-de-choix-1",
+            "text": "celui"
+          },
+          {
+            "id": "velo-de-choix-2",
+            "text": "celle"
+          },
+          {
+            "id": "velo-de-choix-3",
+            "text": "ceux"
+          }
+        ],
+        "explanation": "Celui reprend vélo. Modèle : Je répare celui de mon cousin."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-table-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 9,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je déplace ___ de la cuisine.",
+        "cue": "La table à déplacer est la table de la cuisine. Le nom « table » est au féminin singulier.",
+        "answers": [
+          "celle"
+        ],
+        "options": [
+          {
+            "id": "table-de-choix-1",
+            "text": "celle"
+          },
+          {
+            "id": "table-de-choix-2",
+            "text": "celui"
+          },
+          {
+            "id": "table-de-choix-3",
+            "text": "celles"
+          }
+        ],
+        "explanation": "Celle reprend table. Modèle : Je déplace celle de la cuisine."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-messages-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 10,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je relis ___ du secrétariat.",
+        "cue": "On relit les messages du secrétariat. Le nom « messages » est au masculin pluriel.",
+        "answers": [
+          "ceux"
+        ],
+        "options": [
+          {
+            "id": "messages-de-choix-1",
+            "text": "ceux"
+          },
+          {
+            "id": "messages-de-choix-2",
+            "text": "celles"
+          },
+          {
+            "id": "messages-de-choix-3",
+            "text": "celui"
+          }
+        ],
+        "explanation": "Ceux reprend messages. Modèle : Je relis ceux du secrétariat."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-recettes-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 11,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je choisis ___ du livre.",
+        "cue": "Les recettes sont celles du livre. Le nom « recettes » est au féminin pluriel.",
+        "answers": [
+          "celles"
+        ],
+        "options": [
+          {
+            "id": "recettes-de-choix-1",
+            "text": "celles"
+          },
+          {
+            "id": "recettes-de-choix-2",
+            "text": "ceux"
+          },
+          {
+            "id": "recettes-de-choix-3",
+            "text": "celle"
+          }
+        ],
+        "explanation": "Celles reprend recettes. Modèle : Je choisis celles du livre."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-document-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 12,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je signe ___ de l’assurance.",
+        "cue": "Le document est celui de l’assurance. Le nom « document » est au masculin singulier.",
+        "answers": [
+          "celui"
+        ],
+        "options": [
+          {
+            "id": "document-de-choix-1",
+            "text": "celui"
+          },
+          {
+            "id": "document-de-choix-2",
+            "text": "celle"
+          },
+          {
+            "id": "document-de-choix-3",
+            "text": "ceux"
+          }
+        ],
+        "explanation": "Celui reprend document. Modèle : Je signe celui de l’assurance."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-proposition-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 13,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous retenons ___ de l’équipe.",
+        "cue": "La proposition à retenir est la proposition de l’équipe. Le nom « proposition » est au féminin singulier.",
+        "answers": [
+          "celle"
+        ],
+        "options": [
+          {
+            "id": "proposition-de-choix-1",
+            "text": "celle"
+          },
+          {
+            "id": "proposition-de-choix-2",
+            "text": "celui"
+          },
+          {
+            "id": "proposition-de-choix-3",
+            "text": "celles"
+          }
+        ],
+        "explanation": "Celle reprend proposition. Modèle : Nous retenons celle de l’équipe."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-outils-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 14,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous nettoyons ___ de l’atelier.",
+        "cue": "Les outils à nettoyer sont ceux de l’atelier. Le nom « outils » est au masculin pluriel.",
+        "answers": [
+          "ceux"
+        ],
+        "options": [
+          {
+            "id": "outils-de-choix-1",
+            "text": "ceux"
+          },
+          {
+            "id": "outils-de-choix-2",
+            "text": "celles"
+          },
+          {
+            "id": "outils-de-choix-3",
+            "text": "celui"
+          }
+        ],
+        "explanation": "Ceux reprend outils. Modèle : Nous nettoyons ceux de l’atelier."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-tasses-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 15,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je sors ___ du placard.",
+        "cue": "Les tasses à sortir sont les tasses du placard. Le nom « tasses » est au féminin pluriel.",
+        "answers": [
+          "celles"
+        ],
+        "options": [
+          {
+            "id": "tasses-de-choix-1",
+            "text": "celles"
+          },
+          {
+            "id": "tasses-de-choix-2",
+            "text": "ceux"
+          },
+          {
+            "id": "tasses-de-choix-3",
+            "text": "celle"
+          }
+        ],
+        "explanation": "Celles reprend tasses. Modèle : Je sors celles du placard."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-bus-qui",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 16,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je prends ___ qui passe par la gare.",
+        "cue": "Plusieurs bus sont connus. Vous prenez le bus qui passe par la gare.",
+        "answers": [
+          "celui"
+        ],
+        "options": [
+          {
+            "id": "bus-qui-choix-1",
+            "text": "celui"
+          },
+          {
+            "id": "bus-qui-choix-2",
+            "text": "celle"
+          },
+          {
+            "id": "bus-qui-choix-3",
+            "text": "ceux"
+          }
+        ],
+        "explanation": "Celui reprend bus et garde la relative. Modèle : Je prends celui qui passe par la gare."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-chaise-qui",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 17,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je garde ___ qui est stable.",
+        "cue": "Plusieurs chaises sont connues. Vous gardez la chaise qui est stable.",
+        "answers": [
+          "celle"
+        ],
+        "options": [
+          {
+            "id": "chaise-qui-choix-1",
+            "text": "celle"
+          },
+          {
+            "id": "chaise-qui-choix-2",
+            "text": "celui"
+          },
+          {
+            "id": "chaise-qui-choix-3",
+            "text": "celles"
+          }
+        ],
+        "explanation": "Celle reprend chaise. Modèle : Je garde celle qui est stable."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-livres-que",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 18,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "J’emporte ___ que le groupe demande.",
+        "cue": "Les livres sont déjà connus. Vous emportez les livres que le groupe demande.",
+        "answers": [
+          "ceux"
+        ],
+        "options": [
+          {
+            "id": "livres-que-choix-1",
+            "text": "ceux"
+          },
+          {
+            "id": "livres-que-choix-2",
+            "text": "celles"
+          },
+          {
+            "id": "livres-que-choix-3",
+            "text": "celui"
+          }
+        ],
+        "explanation": "Ceux reprend livres. Modèle : J’emporte ceux que le groupe demande."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-fleurs-qui",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 19,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "J’arrose ___ qui sont près de la porte.",
+        "cue": "Les fleurs sont connues. Vous arrosez les fleurs qui sont près de la porte.",
+        "answers": [
+          "celles"
+        ],
+        "options": [
+          {
+            "id": "fleurs-qui-choix-1",
+            "text": "celles"
+          },
+          {
+            "id": "fleurs-qui-choix-2",
+            "text": "ceux"
+          },
+          {
+            "id": "fleurs-qui-choix-3",
+            "text": "celle"
+          }
+        ],
+        "explanation": "Celles reprend fleurs. Modèle : J’arrose celles qui sont près de la porte."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-plat-que",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 20,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je choisis ___ que le serveur recommande.",
+        "cue": "Plusieurs plats sont proposés. Vous choisissez le plat que le serveur recommande.",
+        "answers": [
+          "celui"
+        ],
+        "options": [
+          {
+            "id": "plat-que-choix-1",
+            "text": "celui"
+          },
+          {
+            "id": "plat-que-choix-2",
+            "text": "celle"
+          },
+          {
+            "id": "plat-que-choix-3",
+            "text": "ceux"
+          }
+        ],
+        "explanation": "Celui reprend plat. Modèle : Je choisis celui que le serveur recommande."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-valise-qui",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 21,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je prends ___ qui porte une étiquette verte.",
+        "cue": "Plusieurs valises sont présentes. Vous prenez la valise qui porte une étiquette verte.",
+        "answers": [
+          "celle"
+        ],
+        "options": [
+          {
+            "id": "valise-qui-choix-1",
+            "text": "celle"
+          },
+          {
+            "id": "valise-qui-choix-2",
+            "text": "celui"
+          },
+          {
+            "id": "valise-qui-choix-3",
+            "text": "celles"
+          }
+        ],
+        "explanation": "Celle reprend valise. Modèle : Je prends celle qui porte une étiquette verte."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-dessins-que",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 22,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous affichons ___ que les élèves préfèrent.",
+        "cue": "Les dessins sont connus. On affiche les dessins que les élèves préfèrent.",
+        "answers": [
+          "ceux"
+        ],
+        "options": [
+          {
+            "id": "dessins-que-choix-1",
+            "text": "ceux"
+          },
+          {
+            "id": "dessins-que-choix-2",
+            "text": "celles"
+          },
+          {
+            "id": "dessins-que-choix-3",
+            "text": "celui"
+          }
+        ],
+        "explanation": "Ceux reprend dessins. Modèle : Nous affichons ceux que les élèves préfèrent."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-portes-qui",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 23,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous fermons ___ qui donnent sur la rue.",
+        "cue": "Plusieurs portes sont connues. On ferme les portes qui donnent sur la rue.",
+        "answers": [
+          "celles"
+        ],
+        "options": [
+          {
+            "id": "portes-qui-choix-1",
+            "text": "celles"
+          },
+          {
+            "id": "portes-qui-choix-2",
+            "text": "ceux"
+          },
+          {
+            "id": "portes-qui-choix-3",
+            "text": "celle"
+          }
+        ],
+        "explanation": "Celles reprend portes. Modèle : Nous fermons celles qui donnent sur la rue."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-stylo-ci",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 24,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je prends ___.",
+        "cue": "Le stylo désigné est près de la personne qui parle. Employez la forme en -ci.",
+        "answers": [
+          "celui-ci"
+        ],
+        "options": [
+          {
+            "id": "stylo-ci-choix-1",
+            "text": "celui-ci"
+          },
+          {
+            "id": "stylo-ci-choix-2",
+            "text": "celle-ci"
+          },
+          {
+            "id": "stylo-ci-choix-3",
+            "text": "ceux-ci"
+          }
+        ],
+        "explanation": "Celui-ci reprend stylo, masculin singulier, proche. Modèle : Je prends celui-ci."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-boite-ci",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 25,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je ferme ___.",
+        "cue": "La boîte est proche de la personne qui parle. Employez la forme en -ci.",
+        "answers": [
+          "celle-ci"
+        ],
+        "options": [
+          {
+            "id": "boite-ci-choix-1",
+            "text": "celle-ci"
+          },
+          {
+            "id": "boite-ci-choix-2",
+            "text": "celui-ci"
+          },
+          {
+            "id": "boite-ci-choix-3",
+            "text": "celles-ci"
+          }
+        ],
+        "explanation": "Celle-ci reprend boîte. Modèle : Je ferme celle-ci."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-cahiers-ci",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 26,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je range ___.",
+        "cue": "Les cahiers sont proches de la personne qui parle. Employez -ci.",
+        "answers": [
+          "ceux-ci"
+        ],
+        "options": [
+          {
+            "id": "cahiers-ci-choix-1",
+            "text": "ceux-ci"
+          },
+          {
+            "id": "cahiers-ci-choix-2",
+            "text": "celles-ci"
+          },
+          {
+            "id": "cahiers-ci-choix-3",
+            "text": "celui-ci"
+          }
+        ],
+        "explanation": "Ceux-ci reprend cahiers. Modèle : Je range ceux-ci."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-assiettes-ci",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 27,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je lave ___.",
+        "cue": "Les assiettes sont proches de la personne qui parle. Employez -ci.",
+        "answers": [
+          "celles-ci"
+        ],
+        "options": [
+          {
+            "id": "assiettes-ci-choix-1",
+            "text": "celles-ci"
+          },
+          {
+            "id": "assiettes-ci-choix-2",
+            "text": "ceux-ci"
+          },
+          {
+            "id": "assiettes-ci-choix-3",
+            "text": "celle-ci"
+          }
+        ],
+        "explanation": "Celles-ci reprend assiettes. Modèle : Je lave celles-ci."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-ordinateur-ci",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 28,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "J’utilise ___.",
+        "cue": "L’ordinateur est proche de la personne qui parle. Employez -ci.",
+        "answers": [
+          "celui-ci"
+        ],
+        "options": [
+          {
+            "id": "ordinateur-ci-choix-1",
+            "text": "celui-ci"
+          },
+          {
+            "id": "ordinateur-ci-choix-2",
+            "text": "celle-ci"
+          },
+          {
+            "id": "ordinateur-ci-choix-3",
+            "text": "ceux-ci"
+          }
+        ],
+        "explanation": "Celui-ci reprend ordinateur. Modèle : J’utilise celui-ci."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-affiche-ci",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 29,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je lis ___.",
+        "cue": "L’affiche est proche de la personne qui parle. Employez -ci.",
+        "answers": [
+          "celle-ci"
+        ],
+        "options": [
+          {
+            "id": "affiche-ci-choix-1",
+            "text": "celle-ci"
+          },
+          {
+            "id": "affiche-ci-choix-2",
+            "text": "celui-ci"
+          },
+          {
+            "id": "affiche-ci-choix-3",
+            "text": "celles-ci"
+          }
+        ],
+        "explanation": "Celle-ci reprend affiche. Modèle : Je lis celle-ci."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-gants-ci",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 30,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je mets ___.",
+        "cue": "Les gants sont près de la personne qui parle. Employez -ci.",
+        "answers": [
+          "ceux-ci"
+        ],
+        "options": [
+          {
+            "id": "gants-ci-choix-1",
+            "text": "ceux-ci"
+          },
+          {
+            "id": "gants-ci-choix-2",
+            "text": "celles-ci"
+          },
+          {
+            "id": "gants-ci-choix-3",
+            "text": "celui-ci"
+          }
+        ],
+        "explanation": "Ceux-ci reprend gants. Modèle : Je mets ceux-ci."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-chaussures-ci",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 31,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je porte ___.",
+        "cue": "Les chaussures sont près de la personne qui parle. Employez -ci.",
+        "answers": [
+          "celles-ci"
+        ],
+        "options": [
+          {
+            "id": "chaussures-ci-choix-1",
+            "text": "celles-ci"
+          },
+          {
+            "id": "chaussures-ci-choix-2",
+            "text": "ceux-ci"
+          },
+          {
+            "id": "chaussures-ci-choix-3",
+            "text": "celle-ci"
+          }
+        ],
+        "explanation": "Celles-ci reprend chaussures. Modèle : Je porte celles-ci."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-parapluie-la",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 32,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je choisis ___.",
+        "cue": "Le parapluie désigné est éloigné de la personne qui parle. Employez -là.",
+        "answers": [
+          "celui-là"
+        ],
+        "options": [
+          {
+            "id": "parapluie-la-choix-1",
+            "text": "celui-là"
+          },
+          {
+            "id": "parapluie-la-choix-2",
+            "text": "celle-là"
+          },
+          {
+            "id": "parapluie-la-choix-3",
+            "text": "ceux-là"
+          }
+        ],
+        "explanation": "Celui-là reprend parapluie. Modèle : Je choisis celui-là."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-bouteille-la",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 33,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je remplis ___.",
+        "cue": "La bouteille désignée est éloignée de la personne qui parle. Employez -là.",
+        "answers": [
+          "celle-là"
+        ],
+        "options": [
+          {
+            "id": "bouteille-la-choix-1",
+            "text": "celle-là"
+          },
+          {
+            "id": "bouteille-la-choix-2",
+            "text": "celui-là"
+          },
+          {
+            "id": "bouteille-la-choix-3",
+            "text": "celles-là"
+          }
+        ],
+        "explanation": "Celle-là reprend bouteille. Modèle : Je remplis celle-là."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-sacs-la",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 34,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je déplace ___.",
+        "cue": "Les sacs désignés sont éloignés de la personne qui parle. Employez -là.",
+        "answers": [
+          "ceux-là"
+        ],
+        "options": [
+          {
+            "id": "sacs-la-choix-1",
+            "text": "ceux-là"
+          },
+          {
+            "id": "sacs-la-choix-2",
+            "text": "celles-là"
+          },
+          {
+            "id": "sacs-la-choix-3",
+            "text": "celui-là"
+          }
+        ],
+        "explanation": "Ceux-là reprend sacs. Modèle : Je déplace ceux-là."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-chaises-la",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 35,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je répare ___.",
+        "cue": "Les chaises désignées sont éloignées de la personne qui parle. Employez -là.",
+        "answers": [
+          "celles-là"
+        ],
+        "options": [
+          {
+            "id": "chaises-la-choix-1",
+            "text": "celles-là"
+          },
+          {
+            "id": "chaises-la-choix-2",
+            "text": "ceux-là"
+          },
+          {
+            "id": "chaises-la-choix-3",
+            "text": "celle-là"
+          }
+        ],
+        "explanation": "Celles-là reprend chaises. Modèle : Je répare celles-là."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-ticket-la",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 36,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je garde ___.",
+        "cue": "Le ticket est éloigné de la personne qui parle. Employez -là.",
+        "answers": [
+          "celui-là"
+        ],
+        "options": [
+          {
+            "id": "ticket-la-choix-1",
+            "text": "celui-là"
+          },
+          {
+            "id": "ticket-la-choix-2",
+            "text": "celle-là"
+          },
+          {
+            "id": "ticket-la-choix-3",
+            "text": "ceux-là"
+          }
+        ],
+        "explanation": "Celui-là reprend ticket. Modèle : Je garde celui-là."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-lampe-la",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 37,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "J’allume ___.",
+        "cue": "La lampe désignée est éloignée de la personne qui parle. Employez -là.",
+        "answers": [
+          "celle-là"
+        ],
+        "options": [
+          {
+            "id": "lampe-la-choix-1",
+            "text": "celle-là"
+          },
+          {
+            "id": "lampe-la-choix-2",
+            "text": "celui-là"
+          },
+          {
+            "id": "lampe-la-choix-3",
+            "text": "celles-là"
+          }
+        ],
+        "explanation": "Celle-là reprend lampe. Modèle : J’allume celle-là."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-cartons-la",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 38,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je porte ___.",
+        "cue": "Les cartons sont éloignés de la personne qui parle. Employez -là.",
+        "answers": [
+          "ceux-là"
+        ],
+        "options": [
+          {
+            "id": "cartons-la-choix-1",
+            "text": "ceux-là"
+          },
+          {
+            "id": "cartons-la-choix-2",
+            "text": "celles-là"
+          },
+          {
+            "id": "cartons-la-choix-3",
+            "text": "celui-là"
+          }
+        ],
+        "explanation": "Ceux-là reprend cartons. Modèle : Je porte ceux-là."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-valises-la",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 39,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je prends ___.",
+        "cue": "Les valises sont éloignées de la personne qui parle. Employez -là.",
+        "answers": [
+          "celles-là"
+        ],
+        "options": [
+          {
+            "id": "valises-la-choix-1",
+            "text": "celles-là"
+          },
+          {
+            "id": "valises-la-choix-2",
+            "text": "ceux-là"
+          },
+          {
+            "id": "valises-la-choix-3",
+            "text": "celle-là"
+          }
+        ],
+        "explanation": "Celles-là reprend valises. Modèle : Je prends celles-là."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-cela-explication",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 40,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je comprends ___.",
+        "cue": "Le pronom neutre reprend toute l’explication donnée, sans répéter son nom.",
+        "answers": [
+          "cela",
+          "ça"
+        ],
+        "options": [
+          {
+            "id": "cela-explication-choix-1",
+            "text": "cela"
+          },
+          {
+            "id": "cela-explication-choix-2",
+            "text": "ceux"
+          },
+          {
+            "id": "cela-explication-choix-3",
+            "text": "celui"
+          }
+        ],
+        "explanation": "Cela reprend un contenu global ; ça convient aussi. Modèle : Je comprends cela."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-cela-aide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 41,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "J’apprécie ___.",
+        "cue": "Le pronom neutre reprend le fait que le groupe apporte son aide.",
+        "answers": [
+          "cela",
+          "ça"
+        ],
+        "options": [
+          {
+            "id": "cela-aide-choix-1",
+            "text": "cela"
+          },
+          {
+            "id": "cela-aide-choix-2",
+            "text": "ceux"
+          },
+          {
+            "id": "cela-aide-choix-3",
+            "text": "celui"
+          }
+        ],
+        "explanation": "Cela reprend le fait ; ça convient aussi. Modèle : J’apprécie cela."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-cela-changement",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 42,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je note ___.",
+        "cue": "Le pronom neutre reprend le changement d’horaire annoncé.",
+        "answers": [
+          "cela",
+          "ça"
+        ],
+        "options": [
+          {
+            "id": "cela-changement-choix-1",
+            "text": "cela"
+          },
+          {
+            "id": "cela-changement-choix-2",
+            "text": "ceux"
+          },
+          {
+            "id": "cela-changement-choix-3",
+            "text": "celui"
+          }
+        ],
+        "explanation": "Cela reprend l’information ; ça convient aussi. Modèle : Je note cela."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-cela-recit",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 43,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je retiens ___.",
+        "cue": "Le pronom neutre reprend l’ensemble du récit, pas un objet masculin à choisir.",
+        "answers": [
+          "cela",
+          "ça"
+        ],
+        "options": [
+          {
+            "id": "cela-recit-choix-1",
+            "text": "cela"
+          },
+          {
+            "id": "cela-recit-choix-2",
+            "text": "ceux"
+          },
+          {
+            "id": "cela-recit-choix-3",
+            "text": "celui"
+          }
+        ],
+        "explanation": "Cela reprend un ensemble de faits ; ça convient aussi. Modèle : Je retiens cela."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-cela-proposition",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 44,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous acceptons ___.",
+        "cue": "Le pronom neutre reprend le fait de commencer plus tôt.",
+        "answers": [
+          "cela",
+          "ça"
+        ],
+        "options": [
+          {
+            "id": "cela-proposition-choix-1",
+            "text": "cela"
+          },
+          {
+            "id": "cela-proposition-choix-2",
+            "text": "ceux"
+          },
+          {
+            "id": "cela-proposition-choix-3",
+            "text": "celui"
+          }
+        ],
+        "explanation": "Cela reprend la proposition ; ça convient aussi. Modèle : Nous acceptons cela."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-ce-idees",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 45,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ sont de bonnes idées.",
+        "cue": "On identifie des idées avec le pronom neutre placé devant sont.",
+        "answers": [
+          "Ce"
+        ],
+        "options": [
+          {
+            "id": "ce-idees-choix-1",
+            "text": "Ce"
+          },
+          {
+            "id": "ce-idees-choix-2",
+            "text": "Cela"
+          },
+          {
+            "id": "ce-idees-choix-3",
+            "text": "Ceux"
+          }
+        ],
+        "explanation": "Ce est neutre et reste ce devant sont. Modèle : Ce sont de bonnes idées."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-ce-objets",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 46,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ sont des objets utiles.",
+        "cue": "On présente des objets utiles avec le pronom neutre placé devant sont.",
+        "answers": [
+          "Ce"
+        ],
+        "options": [
+          {
+            "id": "ce-objets-choix-1",
+            "text": "Ce"
+          },
+          {
+            "id": "ce-objets-choix-2",
+            "text": "Cela"
+          },
+          {
+            "id": "ce-objets-choix-3",
+            "text": "Ceux"
+          }
+        ],
+        "explanation": "Ce introduit une identification avec sont. Modèle : Ce sont des objets utiles."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-ce-choix",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 47,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ sont des choix raisonnables.",
+        "cue": "On identifie des choix raisonnables avec le pronom neutre devant sont.",
+        "answers": [
+          "Ce"
+        ],
+        "options": [
+          {
+            "id": "ce-choix-choix-1",
+            "text": "Ce"
+          },
+          {
+            "id": "ce-choix-choix-2",
+            "text": "Cela"
+          },
+          {
+            "id": "ce-choix-choix-3",
+            "text": "Ceux"
+          }
+        ],
+        "explanation": "Ce ne s’accorde pas comme ceux dans cette construction. Modèle : Ce sont des choix raisonnables."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-ce-personnes",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 48,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ sont les personnes attendues.",
+        "cue": "On identifie des personnes attendues avec le pronom neutre devant sont.",
+        "answers": [
+          "Ce"
+        ],
+        "options": [
+          {
+            "id": "ce-personnes-choix-1",
+            "text": "Ce"
+          },
+          {
+            "id": "ce-personnes-choix-2",
+            "text": "Cela"
+          },
+          {
+            "id": "ce-personnes-choix-3",
+            "text": "Ceux"
+          }
+        ],
+        "explanation": "Ce introduit une identification avec sont. Modèle : Ce sont les personnes attendues."
+      },
+      {
+        "id": "gram-ex-i3-qcm-verbe-a2-ce-solutions",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-qcm-verbe",
+          "position": 49,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "___ sont des solutions possibles.",
+        "cue": "On présente des solutions possibles avec le pronom neutre devant sont.",
+        "answers": [
+          "Ce"
+        ],
+        "options": [
+          {
+            "id": "ce-solutions-choix-1",
+            "text": "Ce"
+          },
+          {
+            "id": "ce-solutions-choix-2",
+            "text": "Cela"
+          },
+          {
+            "id": "ce-solutions-choix-3",
+            "text": "Ceux"
+          }
+        ],
+        "explanation": "Ce est neutre devant sont. Modèle : Ce sont des solutions possibles."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "pronoms-2026-11-24-v1",
+    "activityId": "gram-ex-i3-curriculum-t",
+    "subthemeId": "i3",
+    "topic": "gram-pronoms",
+    "level": "A2",
+    "label": "Transformer une phrase",
+    "objective": "Reprendre un nom connu par celui/celle/ceux/celles, ou un fait par ce/cela, avec les compléments nécessaires.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Situations et références relues ; réemploi explicite entre mécaniques. Modèles ouverts non exclusifs. Aucune approbation pédagogique humaine déclarée."
+    },
+    "presentations": [
+      "transform"
+    ],
+    "instructions": {
+      "transform": "Réécrivez en conservant les faits et les référents, selon la reprise demandée."
+    },
+    "units": [
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-sac-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 0,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je prends le sac de mon voisin.",
+        "cue": "Deux sacs sont connus. Vous choisissez le sac de votre voisin, nom masculin singulier.",
+        "answers": [
+          "Je prends celui de mon voisin."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celui reprend sac ; le complément de mon voisin est conservé. Modèle : Je prends celui de mon voisin. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-veste-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 1,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Voici la veste de ma sœur.",
+        "cue": "Vous retrouvez la veste de votre sœur. Le nom « veste » est au féminin singulier.",
+        "answers": [
+          "Voici celle de ma sœur."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celle reprend veste ; le complément est conservé. Modèle : Voici celle de ma sœur. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-livres-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 2,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je regarde les livres de la bibliothèque.",
+        "cue": "Vous comparez les livres de la bibliothèque. Le nom « livres » est au masculin pluriel.",
+        "answers": [
+          "Je regarde ceux de la bibliothèque."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Ceux reprend livres. Modèle : Je regarde ceux de la bibliothèque. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-cles-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 3,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Il me faut les clés du local.",
+        "cue": "Vous demandez les clés du local. Le nom « clés » est au féminin pluriel.",
+        "answers": [
+          "Il me faut celles du local."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celles reprend clés. Modèle : Il me faut celles du local. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-casque-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 4,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’emprunte le casque de mon ami.",
+        "cue": "Vous empruntez le casque de votre ami. Le nom « casque » est au masculin singulier.",
+        "answers": [
+          "J’emprunte celui de mon ami."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celui reprend casque. Modèle : J’emprunte celui de mon ami. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-carte-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 5,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je montre la carte du quartier.",
+        "cue": "La carte à montrer est celle du quartier. Le nom « carte » est au féminin singulier.",
+        "answers": [
+          "Je montre celle du quartier."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celle reprend carte. Modèle : Je montre celle du quartier. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-plans-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 6,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous vérifions les plans de l’architecte.",
+        "cue": "Les plans à vérifier sont ceux de l’architecte. Le nom « plans » est au masculin pluriel.",
+        "answers": [
+          "Nous vérifions ceux de l’architecte."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Ceux reprend plans. Modèle : Nous vérifions ceux de l’architecte. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-photos-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 7,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous exposons les photos de la classe.",
+        "cue": "Les photos appartiennent à la classe. Le nom « photos » est au féminin pluriel.",
+        "answers": [
+          "Nous exposons celles de la classe."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celles reprend photos. Modèle : Nous exposons celles de la classe. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-velo-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 8,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je répare le vélo de mon cousin.",
+        "cue": "Vous réparez le vélo de votre cousin. Le nom « vélo » est au masculin singulier.",
+        "answers": [
+          "Je répare celui de mon cousin."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celui reprend vélo. Modèle : Je répare celui de mon cousin. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-table-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 9,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je déplace la table de la cuisine.",
+        "cue": "La table à déplacer est la table de la cuisine. Le nom « table » est au féminin singulier.",
+        "answers": [
+          "Je déplace celle de la cuisine."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celle reprend table. Modèle : Je déplace celle de la cuisine. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-messages-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 10,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je relis les messages du secrétariat.",
+        "cue": "On relit les messages du secrétariat. Le nom « messages » est au masculin pluriel.",
+        "answers": [
+          "Je relis ceux du secrétariat."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Ceux reprend messages. Modèle : Je relis ceux du secrétariat. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-recettes-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 11,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je choisis les recettes du livre.",
+        "cue": "Les recettes sont celles du livre. Le nom « recettes » est au féminin pluriel.",
+        "answers": [
+          "Je choisis celles du livre."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celles reprend recettes. Modèle : Je choisis celles du livre. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-document-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 12,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je signe le document de l’assurance.",
+        "cue": "Le document est celui de l’assurance. Le nom « document » est au masculin singulier.",
+        "answers": [
+          "Je signe celui de l’assurance."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celui reprend document. Modèle : Je signe celui de l’assurance. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-proposition-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 13,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous retenons la proposition de l’équipe.",
+        "cue": "La proposition à retenir est la proposition de l’équipe. Le nom « proposition » est au féminin singulier.",
+        "answers": [
+          "Nous retenons celle de l’équipe."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celle reprend proposition. Modèle : Nous retenons celle de l’équipe. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-outils-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 14,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous nettoyons les outils de l’atelier.",
+        "cue": "Les outils à nettoyer sont ceux de l’atelier. Le nom « outils » est au masculin pluriel.",
+        "answers": [
+          "Nous nettoyons ceux de l’atelier."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Ceux reprend outils. Modèle : Nous nettoyons ceux de l’atelier. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-tasses-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 15,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je sors les tasses du placard.",
+        "cue": "Les tasses à sortir sont les tasses du placard. Le nom « tasses » est au féminin pluriel.",
+        "answers": [
+          "Je sors celles du placard."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celles reprend tasses. Modèle : Je sors celles du placard. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-bus-qui",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 16,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je prends le bus qui passe par la gare.",
+        "cue": "Plusieurs bus sont connus. Vous prenez le bus qui passe par la gare.",
+        "answers": [
+          "Je prends celui qui passe par la gare."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celui reprend bus et garde la relative. Modèle : Je prends celui qui passe par la gare. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-chaise-qui",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 17,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je garde la chaise qui est stable.",
+        "cue": "Plusieurs chaises sont connues. Vous gardez la chaise qui est stable.",
+        "answers": [
+          "Je garde celle qui est stable."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celle reprend chaise. Modèle : Je garde celle qui est stable. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-livres-que",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 18,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’emporte les livres que le groupe demande.",
+        "cue": "Les livres sont déjà connus. Vous emportez les livres que le groupe demande.",
+        "answers": [
+          "J’emporte ceux que le groupe demande."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Ceux reprend livres. Modèle : J’emporte ceux que le groupe demande. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-fleurs-qui",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 19,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’arrose les fleurs qui sont près de la porte.",
+        "cue": "Les fleurs sont connues. Vous arrosez les fleurs qui sont près de la porte.",
+        "answers": [
+          "J’arrose celles qui sont près de la porte."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celles reprend fleurs. Modèle : J’arrose celles qui sont près de la porte. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-plat-que",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 20,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je choisis le plat que le serveur recommande.",
+        "cue": "Plusieurs plats sont proposés. Vous choisissez le plat que le serveur recommande.",
+        "answers": [
+          "Je choisis celui que le serveur recommande."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celui reprend plat. Modèle : Je choisis celui que le serveur recommande. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-valise-qui",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 21,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je prends la valise qui porte une étiquette verte.",
+        "cue": "Plusieurs valises sont présentes. Vous prenez la valise qui porte une étiquette verte.",
+        "answers": [
+          "Je prends celle qui porte une étiquette verte."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celle reprend valise. Modèle : Je prends celle qui porte une étiquette verte. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-dessins-que",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 22,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous affichons les dessins que les élèves préfèrent.",
+        "cue": "Les dessins sont connus. On affiche les dessins que les élèves préfèrent.",
+        "answers": [
+          "Nous affichons ceux que les élèves préfèrent."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Ceux reprend dessins. Modèle : Nous affichons ceux que les élèves préfèrent. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-portes-qui",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 23,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous fermons les portes qui donnent sur la rue.",
+        "cue": "Plusieurs portes sont connues. On ferme les portes qui donnent sur la rue.",
+        "answers": [
+          "Nous fermons celles qui donnent sur la rue."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celles reprend portes. Modèle : Nous fermons celles qui donnent sur la rue. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-stylo-ci",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 24,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je prends ce stylo-ci.",
+        "cue": "Le stylo désigné est près de la personne qui parle. Employez la forme en -ci.",
+        "answers": [
+          "Je prends celui-ci."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celui-ci reprend stylo, masculin singulier, proche. Modèle : Je prends celui-ci. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-boite-ci",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 25,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je ferme cette boîte-ci.",
+        "cue": "La boîte est proche de la personne qui parle. Employez la forme en -ci.",
+        "answers": [
+          "Je ferme celle-ci."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celle-ci reprend boîte. Modèle : Je ferme celle-ci. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-cahiers-ci",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 26,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je range ces cahiers-ci.",
+        "cue": "Les cahiers sont proches de la personne qui parle. Employez -ci.",
+        "answers": [
+          "Je range ceux-ci."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Ceux-ci reprend cahiers. Modèle : Je range ceux-ci. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-assiettes-ci",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 27,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je lave ces assiettes-ci.",
+        "cue": "Les assiettes sont proches de la personne qui parle. Employez -ci.",
+        "answers": [
+          "Je lave celles-ci."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celles-ci reprend assiettes. Modèle : Je lave celles-ci. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-ordinateur-ci",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 28,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’utilise cet ordinateur-ci.",
+        "cue": "L’ordinateur est proche de la personne qui parle. Employez -ci.",
+        "answers": [
+          "J’utilise celui-ci."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celui-ci reprend ordinateur. Modèle : J’utilise celui-ci. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-affiche-ci",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 29,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je lis cette affiche-ci.",
+        "cue": "L’affiche est proche de la personne qui parle. Employez -ci.",
+        "answers": [
+          "Je lis celle-ci."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celle-ci reprend affiche. Modèle : Je lis celle-ci. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-gants-ci",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 30,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je mets ces gants-ci.",
+        "cue": "Les gants sont près de la personne qui parle. Employez -ci.",
+        "answers": [
+          "Je mets ceux-ci."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Ceux-ci reprend gants. Modèle : Je mets ceux-ci. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-chaussures-ci",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 31,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je porte ces chaussures-ci.",
+        "cue": "Les chaussures sont près de la personne qui parle. Employez -ci.",
+        "answers": [
+          "Je porte celles-ci."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celles-ci reprend chaussures. Modèle : Je porte celles-ci. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-parapluie-la",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 32,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je choisis ce parapluie-là.",
+        "cue": "Le parapluie désigné est éloigné de la personne qui parle. Employez -là.",
+        "answers": [
+          "Je choisis celui-là."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celui-là reprend parapluie. Modèle : Je choisis celui-là. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-bouteille-la",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 33,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je remplis cette bouteille-là.",
+        "cue": "La bouteille désignée est éloignée de la personne qui parle. Employez -là.",
+        "answers": [
+          "Je remplis celle-là."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celle-là reprend bouteille. Modèle : Je remplis celle-là. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-sacs-la",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 34,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je déplace ces sacs-là.",
+        "cue": "Les sacs désignés sont éloignés de la personne qui parle. Employez -là.",
+        "answers": [
+          "Je déplace ceux-là."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Ceux-là reprend sacs. Modèle : Je déplace ceux-là. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-chaises-la",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 35,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je répare ces chaises-là.",
+        "cue": "Les chaises désignées sont éloignées de la personne qui parle. Employez -là.",
+        "answers": [
+          "Je répare celles-là."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celles-là reprend chaises. Modèle : Je répare celles-là. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-ticket-la",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 36,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je garde ce ticket-là.",
+        "cue": "Le ticket est éloigné de la personne qui parle. Employez -là.",
+        "answers": [
+          "Je garde celui-là."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celui-là reprend ticket. Modèle : Je garde celui-là. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-lampe-la",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 37,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’allume cette lampe-là.",
+        "cue": "La lampe désignée est éloignée de la personne qui parle. Employez -là.",
+        "answers": [
+          "J’allume celle-là."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celle-là reprend lampe. Modèle : J’allume celle-là. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-cartons-la",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 38,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je porte ces cartons-là.",
+        "cue": "Les cartons sont éloignés de la personne qui parle. Employez -là.",
+        "answers": [
+          "Je porte ceux-là."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Ceux-là reprend cartons. Modèle : Je porte ceux-là. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-valises-la",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 39,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je prends ces valises-là.",
+        "cue": "Les valises sont éloignées de la personne qui parle. Employez -là.",
+        "answers": [
+          "Je prends celles-là."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Celles-là reprend valises. Modèle : Je prends celles-là. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-cela-explication",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 40,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je comprends cette explication.",
+        "cue": "Le pronom neutre reprend toute l’explication donnée, sans répéter son nom.",
+        "answers": [
+          "Je comprends cela.",
+          "Je comprends ça."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Cela reprend un contenu global ; ça convient aussi. Modèle : Je comprends cela. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-cela-aide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 41,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’apprécie le fait que le groupe apporte son aide.",
+        "cue": "Le pronom neutre reprend le fait que le groupe apporte son aide.",
+        "answers": [
+          "J’apprécie cela.",
+          "J’apprécie ça."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Cela reprend le fait ; ça convient aussi. Modèle : J’apprécie cela. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-cela-changement",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 42,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je note le changement d’horaire annoncé.",
+        "cue": "Le pronom neutre reprend le changement d’horaire annoncé.",
+        "answers": [
+          "Je note cela.",
+          "Je note ça."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Cela reprend l’information ; ça convient aussi. Modèle : Je note cela. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-cela-recit",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 43,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je retiens l’ensemble de ce récit.",
+        "cue": "Le pronom neutre reprend l’ensemble du récit, pas un objet masculin à choisir.",
+        "answers": [
+          "Je retiens cela.",
+          "Je retiens ça."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Cela reprend un ensemble de faits ; ça convient aussi. Modèle : Je retiens cela. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-cela-proposition",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 44,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous acceptons le fait de commencer plus tôt.",
+        "cue": "Le pronom neutre reprend le fait de commencer plus tôt.",
+        "answers": [
+          "Nous acceptons cela.",
+          "Nous acceptons ça."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Cela reprend la proposition ; ça convient aussi. Modèle : Nous acceptons cela. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-ce-idees",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 45,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Ces idées sont bonnes.",
+        "cue": "On identifie des idées avec le pronom neutre placé devant sont.",
+        "answers": [
+          "Ce sont de bonnes idées."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Ce est neutre et reste ce devant sont. Modèle : Ce sont de bonnes idées. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-ce-objets",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 46,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Ces objets sont utiles.",
+        "cue": "On présente des objets utiles avec le pronom neutre placé devant sont.",
+        "answers": [
+          "Ce sont des objets utiles."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Ce introduit une identification avec sont. Modèle : Ce sont des objets utiles. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-ce-choix",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 47,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Ces choix sont raisonnables.",
+        "cue": "On identifie des choix raisonnables avec le pronom neutre devant sont.",
+        "answers": [
+          "Ce sont des choix raisonnables."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Ce ne s’accorde pas comme ceux dans cette construction. Modèle : Ce sont des choix raisonnables. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-ce-personnes",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 48,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Voici les personnes attendues.",
+        "cue": "On identifie des personnes attendues avec le pronom neutre devant sont.",
+        "answers": [
+          "Ce sont les personnes attendues."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Ce introduit une identification avec sont. Modèle : Ce sont les personnes attendues. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-t-a2-ce-solutions",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-t",
+          "position": 49,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Ces solutions sont possibles.",
+        "cue": "On présente des solutions possibles avec le pronom neutre devant sont.",
+        "answers": [
+          "Ce sont des solutions possibles."
+        ],
+        "directive": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée.",
+        "responseLines": 2,
+        "explanation": "Ce est neutre devant sont. Modèle : Ce sont des solutions possibles. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "pronoms-2026-11-24-v1",
+    "activityId": "gram-ex-i3-curriculum-e",
+    "subthemeId": "i3",
+    "topic": "gram-pronoms",
+    "level": "A2",
+    "label": "Écrire avec un pronom en contexte",
+    "objective": "Reprendre un nom connu par celui/celle/ceux/celles, ou un fait par ce/cela, avec les compléments nécessaires.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Situations et références relues ; réemploi explicite entre mécaniques. Modèles ouverts non exclusifs. Aucune approbation pédagogique humaine déclarée."
+    },
+    "presentations": [
+      "open-written"
+    ],
+    "instructions": {
+      "open-written": "Rédigez une phrase selon les faits et la construction demandés. Le corrigé donne un modèle possible."
+    },
+    "units": [
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-sac-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 0,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Deux sacs sont connus. Vous choisissez le sac de votre voisin, nom masculin singulier.\nFaits : Je prends le sac de mon voisin.",
+        "answers": [
+          "Je prends celui de mon voisin."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celui reprend sac ; le complément de mon voisin est conservé."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-veste-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 1,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Vous retrouvez la veste de votre sœur. Le nom « veste » est au féminin singulier.\nFaits : Voici la veste de ma sœur.",
+        "answers": [
+          "Voici celle de ma sœur."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celle reprend veste ; le complément est conservé."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-livres-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 2,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Vous comparez les livres de la bibliothèque. Le nom « livres » est au masculin pluriel.\nFaits : Je regarde les livres de la bibliothèque.",
+        "answers": [
+          "Je regarde ceux de la bibliothèque."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Ceux reprend livres."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-cles-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 3,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Vous demandez les clés du local. Le nom « clés » est au féminin pluriel.\nFaits : Il me faut les clés du local.",
+        "answers": [
+          "Il me faut celles du local."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celles reprend clés."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-casque-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 4,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Vous empruntez le casque de votre ami. Le nom « casque » est au masculin singulier.\nFaits : J’emprunte le casque de mon ami.",
+        "answers": [
+          "J’emprunte celui de mon ami."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celui reprend casque."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-carte-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 5,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "La carte à montrer est celle du quartier. Le nom « carte » est au féminin singulier.\nFaits : Je montre la carte du quartier.",
+        "answers": [
+          "Je montre celle du quartier."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celle reprend carte."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-plans-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 6,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Les plans à vérifier sont ceux de l’architecte. Le nom « plans » est au masculin pluriel.\nFaits : Nous vérifions les plans de l’architecte.",
+        "answers": [
+          "Nous vérifions ceux de l’architecte."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Ceux reprend plans."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-photos-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 7,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Les photos appartiennent à la classe. Le nom « photos » est au féminin pluriel.\nFaits : Nous exposons les photos de la classe.",
+        "answers": [
+          "Nous exposons celles de la classe."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celles reprend photos."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-velo-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 8,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Vous réparez le vélo de votre cousin. Le nom « vélo » est au masculin singulier.\nFaits : Je répare le vélo de mon cousin.",
+        "answers": [
+          "Je répare celui de mon cousin."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celui reprend vélo."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-table-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 9,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "La table à déplacer est la table de la cuisine. Le nom « table » est au féminin singulier.\nFaits : Je déplace la table de la cuisine.",
+        "answers": [
+          "Je déplace celle de la cuisine."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celle reprend table."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-messages-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 10,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "On relit les messages du secrétariat. Le nom « messages » est au masculin pluriel.\nFaits : Je relis les messages du secrétariat.",
+        "answers": [
+          "Je relis ceux du secrétariat."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Ceux reprend messages."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-recettes-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 11,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Les recettes sont celles du livre. Le nom « recettes » est au féminin pluriel.\nFaits : Je choisis les recettes du livre.",
+        "answers": [
+          "Je choisis celles du livre."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celles reprend recettes."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-document-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 12,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Le document est celui de l’assurance. Le nom « document » est au masculin singulier.\nFaits : Je signe le document de l’assurance.",
+        "answers": [
+          "Je signe celui de l’assurance."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celui reprend document."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-proposition-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 13,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "La proposition à retenir est la proposition de l’équipe. Le nom « proposition » est au féminin singulier.\nFaits : Nous retenons la proposition de l’équipe.",
+        "answers": [
+          "Nous retenons celle de l’équipe."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celle reprend proposition."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-outils-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 14,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Les outils à nettoyer sont ceux de l’atelier. Le nom « outils » est au masculin pluriel.\nFaits : Nous nettoyons les outils de l’atelier.",
+        "answers": [
+          "Nous nettoyons ceux de l’atelier."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Ceux reprend outils."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-tasses-de",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 15,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Les tasses à sortir sont les tasses du placard. Le nom « tasses » est au féminin pluriel.\nFaits : Je sors les tasses du placard.",
+        "answers": [
+          "Je sors celles du placard."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celles reprend tasses."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-bus-qui",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 16,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Plusieurs bus sont connus. Vous prenez le bus qui passe par la gare.\nFaits : Je prends le bus qui passe par la gare.",
+        "answers": [
+          "Je prends celui qui passe par la gare."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celui reprend bus et garde la relative."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-chaise-qui",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 17,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Plusieurs chaises sont connues. Vous gardez la chaise qui est stable.\nFaits : Je garde la chaise qui est stable.",
+        "answers": [
+          "Je garde celle qui est stable."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celle reprend chaise."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-livres-que",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 18,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Les livres sont déjà connus. Vous emportez les livres que le groupe demande.\nFaits : J’emporte les livres que le groupe demande.",
+        "answers": [
+          "J’emporte ceux que le groupe demande."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Ceux reprend livres."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-fleurs-qui",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 19,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Les fleurs sont connues. Vous arrosez les fleurs qui sont près de la porte.\nFaits : J’arrose les fleurs qui sont près de la porte.",
+        "answers": [
+          "J’arrose celles qui sont près de la porte."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celles reprend fleurs."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-plat-que",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 20,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Plusieurs plats sont proposés. Vous choisissez le plat que le serveur recommande.\nFaits : Je choisis le plat que le serveur recommande.",
+        "answers": [
+          "Je choisis celui que le serveur recommande."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celui reprend plat."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-valise-qui",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 21,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Plusieurs valises sont présentes. Vous prenez la valise qui porte une étiquette verte.\nFaits : Je prends la valise qui porte une étiquette verte.",
+        "answers": [
+          "Je prends celle qui porte une étiquette verte."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celle reprend valise."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-dessins-que",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 22,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Les dessins sont connus. On affiche les dessins que les élèves préfèrent.\nFaits : Nous affichons les dessins que les élèves préfèrent.",
+        "answers": [
+          "Nous affichons ceux que les élèves préfèrent."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Ceux reprend dessins."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-portes-qui",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 23,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Plusieurs portes sont connues. On ferme les portes qui donnent sur la rue.\nFaits : Nous fermons les portes qui donnent sur la rue.",
+        "answers": [
+          "Nous fermons celles qui donnent sur la rue."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celles reprend portes."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-stylo-ci",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 24,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Le stylo désigné est près de la personne qui parle. Employez la forme en -ci.\nFaits : Je prends ce stylo-ci.",
+        "answers": [
+          "Je prends celui-ci."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celui-ci reprend stylo, masculin singulier, proche."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-boite-ci",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 25,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "La boîte est proche de la personne qui parle. Employez la forme en -ci.\nFaits : Je ferme cette boîte-ci.",
+        "answers": [
+          "Je ferme celle-ci."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celle-ci reprend boîte."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-cahiers-ci",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 26,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Les cahiers sont proches de la personne qui parle. Employez -ci.\nFaits : Je range ces cahiers-ci.",
+        "answers": [
+          "Je range ceux-ci."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Ceux-ci reprend cahiers."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-assiettes-ci",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 27,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Les assiettes sont proches de la personne qui parle. Employez -ci.\nFaits : Je lave ces assiettes-ci.",
+        "answers": [
+          "Je lave celles-ci."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celles-ci reprend assiettes."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-ordinateur-ci",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 28,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "L’ordinateur est proche de la personne qui parle. Employez -ci.\nFaits : J’utilise cet ordinateur-ci.",
+        "answers": [
+          "J’utilise celui-ci."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celui-ci reprend ordinateur."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-affiche-ci",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 29,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "L’affiche est proche de la personne qui parle. Employez -ci.\nFaits : Je lis cette affiche-ci.",
+        "answers": [
+          "Je lis celle-ci."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celle-ci reprend affiche."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-gants-ci",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 30,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Les gants sont près de la personne qui parle. Employez -ci.\nFaits : Je mets ces gants-ci.",
+        "answers": [
+          "Je mets ceux-ci."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Ceux-ci reprend gants."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-chaussures-ci",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 31,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Les chaussures sont près de la personne qui parle. Employez -ci.\nFaits : Je porte ces chaussures-ci.",
+        "answers": [
+          "Je porte celles-ci."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celles-ci reprend chaussures."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-parapluie-la",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 32,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Le parapluie désigné est éloigné de la personne qui parle. Employez -là.\nFaits : Je choisis ce parapluie-là.",
+        "answers": [
+          "Je choisis celui-là."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celui-là reprend parapluie."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-bouteille-la",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 33,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "La bouteille désignée est éloignée de la personne qui parle. Employez -là.\nFaits : Je remplis cette bouteille-là.",
+        "answers": [
+          "Je remplis celle-là."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celle-là reprend bouteille."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-sacs-la",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 34,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Les sacs désignés sont éloignés de la personne qui parle. Employez -là.\nFaits : Je déplace ces sacs-là.",
+        "answers": [
+          "Je déplace ceux-là."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Ceux-là reprend sacs."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-chaises-la",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 35,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Les chaises désignées sont éloignées de la personne qui parle. Employez -là.\nFaits : Je répare ces chaises-là.",
+        "answers": [
+          "Je répare celles-là."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celles-là reprend chaises."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-ticket-la",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 36,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Le ticket est éloigné de la personne qui parle. Employez -là.\nFaits : Je garde ce ticket-là.",
+        "answers": [
+          "Je garde celui-là."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celui-là reprend ticket."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-lampe-la",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 37,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "La lampe désignée est éloignée de la personne qui parle. Employez -là.\nFaits : J’allume cette lampe-là.",
+        "answers": [
+          "J’allume celle-là."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celle-là reprend lampe."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-cartons-la",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 38,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Les cartons sont éloignés de la personne qui parle. Employez -là.\nFaits : Je porte ces cartons-là.",
+        "answers": [
+          "Je porte ceux-là."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Ceux-là reprend cartons."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-valises-la",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 39,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Les valises sont éloignées de la personne qui parle. Employez -là.\nFaits : Je prends ces valises-là.",
+        "answers": [
+          "Je prends celles-là."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Celles-là reprend valises."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-cela-explication",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 40,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Le pronom neutre reprend toute l’explication donnée, sans répéter son nom.\nFaits : Je comprends cette explication.",
+        "answers": [
+          "Je comprends cela.",
+          "Je comprends ça."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Cela reprend un contenu global ; ça convient aussi."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-cela-aide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 41,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Le pronom neutre reprend le fait que le groupe apporte son aide.\nFaits : J’apprécie le fait que le groupe apporte son aide.",
+        "answers": [
+          "J’apprécie cela.",
+          "J’apprécie ça."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Cela reprend le fait ; ça convient aussi."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-cela-changement",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 42,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Le pronom neutre reprend le changement d’horaire annoncé.\nFaits : Je note le changement d’horaire annoncé.",
+        "answers": [
+          "Je note cela.",
+          "Je note ça."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Cela reprend l’information ; ça convient aussi."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-cela-recit",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 43,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Le pronom neutre reprend l’ensemble du récit, pas un objet masculin à choisir.\nFaits : Je retiens l’ensemble de ce récit.",
+        "answers": [
+          "Je retiens cela.",
+          "Je retiens ça."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Cela reprend un ensemble de faits ; ça convient aussi."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-cela-proposition",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 44,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Le pronom neutre reprend le fait de commencer plus tôt.\nFaits : Nous acceptons le fait de commencer plus tôt.",
+        "answers": [
+          "Nous acceptons cela.",
+          "Nous acceptons ça."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Cela reprend la proposition ; ça convient aussi."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-ce-idees",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 45,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "On identifie des idées avec le pronom neutre placé devant sont.\nFaits : Ces idées sont bonnes.",
+        "answers": [
+          "Ce sont de bonnes idées."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Ce est neutre et reste ce devant sont."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-ce-objets",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 46,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "On présente des objets utiles avec le pronom neutre placé devant sont.\nFaits : Ces objets sont utiles.",
+        "answers": [
+          "Ce sont des objets utiles."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Ce introduit une identification avec sont."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-ce-choix",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 47,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "On identifie des choix raisonnables avec le pronom neutre devant sont.\nFaits : Ces choix sont raisonnables.",
+        "answers": [
+          "Ce sont des choix raisonnables."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Ce ne s’accorde pas comme ceux dans cette construction."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-ce-personnes",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 48,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "On identifie des personnes attendues avec le pronom neutre devant sont.\nFaits : Voici les personnes attendues.",
+        "answers": [
+          "Ce sont les personnes attendues."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Ce introduit une identification avec sont."
+      },
+      {
+        "id": "gram-ex-i3-curriculum-e-a2-ce-solutions",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i3-a2.tsv",
+          "typeId": "gram-ex-i3-curriculum-e",
+          "position": 49,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "On présente des solutions possibles avec le pronom neutre devant sont.\nFaits : Ces solutions sont possibles.",
+        "answers": [
+          "Ce sont des solutions possibles."
+        ],
+        "mode": "written",
+        "task": "Reprenez le nom ou le fait avec le pronom démonstratif demandé dans la situation. Gardez les compléments et la distance indiquée. Écrivez une phrase complète ; vous pouvez ajouter une précision cohérente.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et référents conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Pronom et construction demandés ; genre, nombre et préposition adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; d’autres formulations fidèles aux faits et à la consigne sont recevables. Ce est neutre devant sont."
+      }
+    ]
+  }
+]

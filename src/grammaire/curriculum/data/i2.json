@@ -1,0 +1,3629 @@
+[
+  {
+    "schemaVersion": 1,
+    "revision": "pronoms-2026-11-24-v1",
+    "activityId": "gram-ex-i2-qcm-verbe",
+    "subthemeId": "i2",
+    "topic": "gram-pronoms",
+    "level": "A2",
+    "label": "Reprendre avec un pronom possessif",
+    "objective": "Remplacer un groupe possessif par un pronom complet en conservant le possesseur, le genre et le nombre de l’objet.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Situations et références relues ; réemploi explicite entre mécaniques. Modèles ouverts non exclusifs. Aucune approbation pédagogique humaine déclarée."
+    },
+    "presentations": [
+      "choice",
+      "gap"
+    ],
+    "instructions": {
+      "choice": "Choisissez le pronom possessif complet qui garde le possesseur et l’objet indiqués.",
+      "gap": "Écrivez le pronom possessif complet, avec sa préposition si nécessaire."
+    },
+    "units": [
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-sac-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 0,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je prends ___.",
+        "cue": "Le sac appartient à la personne qui parle. Le nom « sac » est au masculin singulier.",
+        "answers": [
+          "le mien"
+        ],
+        "options": [
+          {
+            "id": "sac-moi-choix-1",
+            "text": "le mien"
+          },
+          {
+            "id": "sac-moi-choix-2",
+            "text": "la mien"
+          },
+          {
+            "id": "sac-moi-choix-3",
+            "text": "les miens"
+          }
+        ],
+        "explanation": "Possesseur : moi ; objet : masculin singulier. Modèle : Je prends le mien."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-veste-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 1,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je retrouve ___.",
+        "cue": "La veste appartient à la personne qui parle. Le nom « veste » est au féminin singulier.",
+        "answers": [
+          "la mienne"
+        ],
+        "options": [
+          {
+            "id": "veste-moi-choix-1",
+            "text": "la mienne"
+          },
+          {
+            "id": "veste-moi-choix-2",
+            "text": "le mienne"
+          },
+          {
+            "id": "veste-moi-choix-3",
+            "text": "les miennes"
+          }
+        ],
+        "explanation": "Possesseur : moi ; objet : féminin singulier. Modèle : Je retrouve la mienne."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-livres-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 2,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Voici ___.",
+        "cue": "Les livres appartiennent à la personne qui parle. Le nom « livres » est au masculin pluriel.",
+        "answers": [
+          "les miens"
+        ],
+        "options": [
+          {
+            "id": "livres-moi-choix-1",
+            "text": "les miens"
+          },
+          {
+            "id": "livres-moi-choix-2",
+            "text": "les miennes"
+          },
+          {
+            "id": "livres-moi-choix-3",
+            "text": "le mien"
+          }
+        ],
+        "explanation": "Possesseur : moi ; objets : masculin pluriel. Modèle : Voici les miens."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-cles-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 3,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je cherche ___.",
+        "cue": "Les clés appartiennent à la personne qui parle. Le nom « clés » est au féminin pluriel.",
+        "answers": [
+          "les miennes"
+        ],
+        "options": [
+          {
+            "id": "cles-moi-choix-1",
+            "text": "les miennes"
+          },
+          {
+            "id": "cles-moi-choix-2",
+            "text": "les miens"
+          },
+          {
+            "id": "cles-moi-choix-3",
+            "text": "la mienne"
+          }
+        ],
+        "explanation": "Possesseur : moi ; objets : féminin pluriel. Modèle : Je cherche les miennes."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-stylo-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 4,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu récupères ___.",
+        "cue": "Le stylo appartient à la personne tutoyée. Le nom « stylo » est au masculin singulier.",
+        "answers": [
+          "le tien"
+        ],
+        "options": [
+          {
+            "id": "stylo-toi-choix-1",
+            "text": "le tien"
+          },
+          {
+            "id": "stylo-toi-choix-2",
+            "text": "la tien"
+          },
+          {
+            "id": "stylo-toi-choix-3",
+            "text": "les tiens"
+          }
+        ],
+        "explanation": "Possesseur : toi ; objet : masculin singulier. Modèle : Tu récupères le tien."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-carte-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 5,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu gardes ___.",
+        "cue": "La carte appartient à la personne tutoyée. Le nom « carte » est au féminin singulier.",
+        "answers": [
+          "la tienne"
+        ],
+        "options": [
+          {
+            "id": "carte-toi-choix-1",
+            "text": "la tienne"
+          },
+          {
+            "id": "carte-toi-choix-2",
+            "text": "le tienne"
+          },
+          {
+            "id": "carte-toi-choix-3",
+            "text": "les tiennes"
+          }
+        ],
+        "explanation": "Possesseur : toi ; objet : féminin singulier. Modèle : Tu gardes la tienne."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-billets-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 6,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu paies ___.",
+        "cue": "Les billets appartiennent à la personne tutoyée. Le nom « billets » est au masculin pluriel.",
+        "answers": [
+          "les tiens"
+        ],
+        "options": [
+          {
+            "id": "billets-toi-choix-1",
+            "text": "les tiens"
+          },
+          {
+            "id": "billets-toi-choix-2",
+            "text": "les tiennes"
+          },
+          {
+            "id": "billets-toi-choix-3",
+            "text": "le tien"
+          }
+        ],
+        "explanation": "Possesseur : toi ; objets : masculin pluriel. Modèle : Tu paies les tiens."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-photos-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 7,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu montres ___.",
+        "cue": "Les photos appartiennent à la personne tutoyée. Le nom « photos » est au féminin pluriel.",
+        "answers": [
+          "les tiennes"
+        ],
+        "options": [
+          {
+            "id": "photos-toi-choix-1",
+            "text": "les tiennes"
+          },
+          {
+            "id": "photos-toi-choix-2",
+            "text": "les tiens"
+          },
+          {
+            "id": "photos-toi-choix-3",
+            "text": "la tienne"
+          }
+        ],
+        "explanation": "Possesseur : toi ; objets : féminin pluriel. Modèle : Tu montres les tiennes."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-velo-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 8,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Elle répare ___.",
+        "cue": "Le vélo appartient à une seule personne déjà nommée, pas à la personne qui parle.",
+        "answers": [
+          "le sien"
+        ],
+        "options": [
+          {
+            "id": "velo-personne-choix-1",
+            "text": "le sien"
+          },
+          {
+            "id": "velo-personne-choix-2",
+            "text": "la sien"
+          },
+          {
+            "id": "velo-personne-choix-3",
+            "text": "les siens"
+          }
+        ],
+        "explanation": "Possesseur : une seule tierce personne ; objet masculin singulier. Modèle : Elle répare le sien."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-valise-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 9,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Il porte ___.",
+        "cue": "La valise appartient à une seule personne déjà nommée. Le nom « valise » est au féminin singulier.",
+        "answers": [
+          "la sienne"
+        ],
+        "options": [
+          {
+            "id": "valise-personne-choix-1",
+            "text": "la sienne"
+          },
+          {
+            "id": "valise-personne-choix-2",
+            "text": "le sienne"
+          },
+          {
+            "id": "valise-personne-choix-3",
+            "text": "les siennes"
+          }
+        ],
+        "explanation": "Le genre dépend de valise, pas du possesseur. Modèle : Il porte la sienne."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-dossiers-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 10,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "La collègue classe ___.",
+        "cue": "Les dossiers appartiennent à une seule collègue déjà nommée. Le nom « dossiers » est au masculin pluriel.",
+        "answers": [
+          "les siens"
+        ],
+        "options": [
+          {
+            "id": "dossiers-personne-choix-1",
+            "text": "les siens"
+          },
+          {
+            "id": "dossiers-personne-choix-2",
+            "text": "les siennes"
+          },
+          {
+            "id": "dossiers-personne-choix-3",
+            "text": "le sien"
+          }
+        ],
+        "explanation": "Possesseur singulier ; objets masculin pluriel. Modèle : La collègue classe les siens."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-places-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 11,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "L’organisateur garde ___.",
+        "cue": "Les places sont celles d’un seul organisateur déjà nommé. Le nom « places » est au féminin pluriel.",
+        "answers": [
+          "les siennes"
+        ],
+        "options": [
+          {
+            "id": "places-personne-choix-1",
+            "text": "les siennes"
+          },
+          {
+            "id": "places-personne-choix-2",
+            "text": "les siens"
+          },
+          {
+            "id": "places-personne-choix-3",
+            "text": "la sienne"
+          }
+        ],
+        "explanation": "Le genre dépend de places, pas du possesseur. Modèle : L’organisateur garde les siennes."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-projet-nous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 12,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous présentons ___.",
+        "cue": "Le projet appartient au groupe qui parle. Le nom « projet » est au masculin singulier.",
+        "answers": [
+          "le nôtre"
+        ],
+        "options": [
+          {
+            "id": "projet-nous-choix-1",
+            "text": "le nôtre"
+          },
+          {
+            "id": "projet-nous-choix-2",
+            "text": "la nôtre"
+          },
+          {
+            "id": "projet-nous-choix-3",
+            "text": "les nôtres"
+          }
+        ],
+        "explanation": "Possesseur : nous ; objet masculin singulier. Modèle : Nous présentons le nôtre."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-table-nous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 13,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous nettoyons ___.",
+        "cue": "La table appartient au groupe qui parle. Le nom « table » est au féminin singulier.",
+        "answers": [
+          "la nôtre"
+        ],
+        "options": [
+          {
+            "id": "table-nous-choix-1",
+            "text": "la nôtre"
+          },
+          {
+            "id": "table-nous-choix-2",
+            "text": "le nôtre"
+          },
+          {
+            "id": "table-nous-choix-3",
+            "text": "les nôtres"
+          }
+        ],
+        "explanation": "Possesseur : nous ; objet féminin singulier. Modèle : Nous nettoyons la nôtre."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-cahiers-nous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 14,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous rangeons ___.",
+        "cue": "Les cahiers appartiennent au groupe qui parle. Le nom « cahiers » est au masculin pluriel.",
+        "answers": [
+          "les nôtres"
+        ],
+        "options": [
+          {
+            "id": "cahiers-nous-choix-1",
+            "text": "les nôtres"
+          },
+          {
+            "id": "cahiers-nous-choix-2",
+            "text": "le nôtre"
+          },
+          {
+            "id": "cahiers-nous-choix-3",
+            "text": "la nôtre"
+          }
+        ],
+        "explanation": "Nôtre au singulier, nôtres au pluriel, avec accent. Modèle : Nous rangeons les nôtres."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-affiches-nous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 15,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous imprimons ___.",
+        "cue": "Les affiches sont celles du groupe qui parle. Le nom « affiches » est au féminin pluriel.",
+        "answers": [
+          "les nôtres"
+        ],
+        "options": [
+          {
+            "id": "affiches-nous-choix-1",
+            "text": "les nôtres"
+          },
+          {
+            "id": "affiches-nous-choix-2",
+            "text": "la nôtre"
+          },
+          {
+            "id": "affiches-nous-choix-3",
+            "text": "le nôtre"
+          }
+        ],
+        "explanation": "Les nôtres reprend aussi un nom féminin pluriel. Modèle : Nous imprimons les nôtres."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-parapluie-vous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 16,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Vous ouvrez ___.",
+        "cue": "Le parapluie appartient à la personne vouvoyée. Le nom « parapluie » est au masculin singulier.",
+        "answers": [
+          "le vôtre"
+        ],
+        "options": [
+          {
+            "id": "parapluie-vous-choix-1",
+            "text": "le vôtre"
+          },
+          {
+            "id": "parapluie-vous-choix-2",
+            "text": "la vôtre"
+          },
+          {
+            "id": "parapluie-vous-choix-3",
+            "text": "les vôtres"
+          }
+        ],
+        "explanation": "Possesseur : vous ; objet masculin singulier. Modèle : Vous ouvrez le vôtre."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-chaise-vous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 17,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Vous déplacez ___.",
+        "cue": "La chaise appartient aux personnes vouvoyées. Le nom « chaise » est au féminin singulier.",
+        "answers": [
+          "la vôtre"
+        ],
+        "options": [
+          {
+            "id": "chaise-vous-choix-1",
+            "text": "la vôtre"
+          },
+          {
+            "id": "chaise-vous-choix-2",
+            "text": "le vôtre"
+          },
+          {
+            "id": "chaise-vous-choix-3",
+            "text": "les vôtres"
+          }
+        ],
+        "explanation": "Possesseur : vous ; objet féminin singulier. Modèle : Vous déplacez la vôtre."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-documents-vous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 18,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Vous signez ___.",
+        "cue": "Les documents appartiennent aux personnes vouvoyées. Le nom « documents » est au masculin pluriel.",
+        "answers": [
+          "les vôtres"
+        ],
+        "options": [
+          {
+            "id": "documents-vous-choix-1",
+            "text": "les vôtres"
+          },
+          {
+            "id": "documents-vous-choix-2",
+            "text": "le vôtre"
+          },
+          {
+            "id": "documents-vous-choix-3",
+            "text": "la vôtre"
+          }
+        ],
+        "explanation": "Vôtre au singulier, vôtres au pluriel, avec accent. Modèle : Vous signez les vôtres."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-recettes-vous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 19,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Vous partagez ___.",
+        "cue": "Les recettes sont celles des personnes vouvoyées. Le nom « recettes » est au féminin pluriel.",
+        "answers": [
+          "les vôtres"
+        ],
+        "options": [
+          {
+            "id": "recettes-vous-choix-1",
+            "text": "les vôtres"
+          },
+          {
+            "id": "recettes-vous-choix-2",
+            "text": "la vôtre"
+          },
+          {
+            "id": "recettes-vous-choix-3",
+            "text": "le vôtre"
+          }
+        ],
+        "explanation": "Les vôtres reprend aussi un nom féminin pluriel. Modèle : Vous partagez les vôtres."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-local-eux",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 20,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Les voisins ouvrent ___.",
+        "cue": "Le local appartient à plusieurs voisins. Le nom « local » est au masculin singulier.",
+        "answers": [
+          "le leur"
+        ],
+        "options": [
+          {
+            "id": "local-eux-choix-1",
+            "text": "le leur"
+          },
+          {
+            "id": "local-eux-choix-2",
+            "text": "la leur"
+          },
+          {
+            "id": "local-eux-choix-3",
+            "text": "les leurs"
+          }
+        ],
+        "explanation": "Possesseurs pluriels ; objet singulier : leur sans s. Modèle : Les voisins ouvrent le leur."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-salle-elles",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 21,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Les associations préparent ___.",
+        "cue": "La salle est celle de plusieurs associations. Le nom « salle » est au féminin singulier.",
+        "answers": [
+          "la leur"
+        ],
+        "options": [
+          {
+            "id": "salle-elles-choix-1",
+            "text": "la leur"
+          },
+          {
+            "id": "salle-elles-choix-2",
+            "text": "le leur"
+          },
+          {
+            "id": "salle-elles-choix-3",
+            "text": "les leurs"
+          }
+        ],
+        "explanation": "Possesseurs pluriels ; objet féminin singulier. Modèle : Les associations préparent la leur."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-outils-eux",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 22,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Les ouvriers prennent ___.",
+        "cue": "Les outils appartiennent à plusieurs ouvriers. Le nom « outils » est au masculin pluriel.",
+        "answers": [
+          "les leurs"
+        ],
+        "options": [
+          {
+            "id": "outils-eux-choix-1",
+            "text": "les leurs"
+          },
+          {
+            "id": "outils-eux-choix-2",
+            "text": "le leur"
+          },
+          {
+            "id": "outils-eux-choix-3",
+            "text": "la leur"
+          }
+        ],
+        "explanation": "Le s de leurs dépend des objets pluriels. Modèle : Les ouvriers prennent les leurs."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-plantes-elles",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 23,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Les voisines arrosent ___.",
+        "cue": "Les plantes appartiennent à plusieurs voisines. Le nom « plantes » est au féminin pluriel.",
+        "answers": [
+          "les leurs"
+        ],
+        "options": [
+          {
+            "id": "plantes-elles-choix-1",
+            "text": "les leurs"
+          },
+          {
+            "id": "plantes-elles-choix-2",
+            "text": "la leur"
+          },
+          {
+            "id": "plantes-elles-choix-3",
+            "text": "le leur"
+          }
+        ],
+        "explanation": "Le s de leurs dépend des objets pluriels. Modèle : Les voisines arrosent les leurs."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-telephone-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 24,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je recharge ___.",
+        "cue": "Le téléphone est celui de la personne qui parle. Il y a plusieurs téléphones, on reprend le sien uniquement.",
+        "answers": [
+          "le mien"
+        ],
+        "options": [
+          {
+            "id": "telephone-moi-choix-1",
+            "text": "le mien"
+          },
+          {
+            "id": "telephone-moi-choix-2",
+            "text": "la mien"
+          },
+          {
+            "id": "telephone-moi-choix-3",
+            "text": "les miens"
+          }
+        ],
+        "explanation": "Objet masculin singulier appartenant à moi. Modèle : Je recharge le mien."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-reponse-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 25,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je vérifie ___.",
+        "cue": "La réponse est celle de la personne qui parle. Le nom « réponse » est au féminin singulier.",
+        "answers": [
+          "la mienne"
+        ],
+        "options": [
+          {
+            "id": "reponse-moi-choix-1",
+            "text": "la mienne"
+          },
+          {
+            "id": "reponse-moi-choix-2",
+            "text": "le mienne"
+          },
+          {
+            "id": "reponse-moi-choix-3",
+            "text": "les miennes"
+          }
+        ],
+        "explanation": "Objet féminin singulier appartenant à moi. Modèle : Je vérifie la mienne."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-gants-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 26,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je mets ___.",
+        "cue": "Les gants appartiennent à la personne qui parle. Le nom « gants » est au masculin pluriel.",
+        "answers": [
+          "les miens"
+        ],
+        "options": [
+          {
+            "id": "gants-moi-choix-1",
+            "text": "les miens"
+          },
+          {
+            "id": "gants-moi-choix-2",
+            "text": "les miennes"
+          },
+          {
+            "id": "gants-moi-choix-3",
+            "text": "le mien"
+          }
+        ],
+        "explanation": "Objets masculin pluriel appartenant à moi. Modèle : Je mets les miens."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-lunettes-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 27,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je nettoie ___.",
+        "cue": "Les lunettes appartiennent à la personne qui parle. Le nom « lunettes » est au féminin pluriel.",
+        "answers": [
+          "les miennes"
+        ],
+        "options": [
+          {
+            "id": "lunettes-moi-choix-1",
+            "text": "les miennes"
+          },
+          {
+            "id": "lunettes-moi-choix-2",
+            "text": "les miens"
+          },
+          {
+            "id": "lunettes-moi-choix-3",
+            "text": "la mienne"
+          }
+        ],
+        "explanation": "Objets féminin pluriel appartenant à moi. Modèle : Je nettoie les miennes."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-casque-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 28,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu portes ___.",
+        "cue": "Le casque est celui de la personne tutoyée. Le nom « casque » est au masculin singulier.",
+        "answers": [
+          "le tien"
+        ],
+        "options": [
+          {
+            "id": "casque-toi-choix-1",
+            "text": "le tien"
+          },
+          {
+            "id": "casque-toi-choix-2",
+            "text": "la tien"
+          },
+          {
+            "id": "casque-toi-choix-3",
+            "text": "les tiens"
+          }
+        ],
+        "explanation": "Objet masculin singulier appartenant à toi. Modèle : Tu portes le tien."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-bouteille-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 29,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu remplis ___.",
+        "cue": "La bouteille est celle de la personne tutoyée. Le nom « bouteille » est au féminin singulier.",
+        "answers": [
+          "la tienne"
+        ],
+        "options": [
+          {
+            "id": "bouteille-toi-choix-1",
+            "text": "la tienne"
+          },
+          {
+            "id": "bouteille-toi-choix-2",
+            "text": "le tienne"
+          },
+          {
+            "id": "bouteille-toi-choix-3",
+            "text": "les tiennes"
+          }
+        ],
+        "explanation": "Objet féminin singulier appartenant à toi. Modèle : Tu remplis la tienne."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-chaussures-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 30,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu laces ___.",
+        "cue": "Les chaussures appartiennent à la personne tutoyée. Le nom « chaussures » est au féminin pluriel.",
+        "answers": [
+          "les tiennes"
+        ],
+        "options": [
+          {
+            "id": "chaussures-toi-choix-1",
+            "text": "les tiennes"
+          },
+          {
+            "id": "chaussures-toi-choix-2",
+            "text": "les tiens"
+          },
+          {
+            "id": "chaussures-toi-choix-3",
+            "text": "la tienne"
+          }
+        ],
+        "explanation": "Objets féminin pluriel appartenant à toi. Modèle : Tu laces les tiennes."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-dessins-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 31,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu exposes ___.",
+        "cue": "Les dessins sont ceux de la personne tutoyée. Le nom « dessins » est au masculin pluriel.",
+        "answers": [
+          "les tiens"
+        ],
+        "options": [
+          {
+            "id": "dessins-toi-choix-1",
+            "text": "les tiens"
+          },
+          {
+            "id": "dessins-toi-choix-2",
+            "text": "les tiennes"
+          },
+          {
+            "id": "dessins-toi-choix-3",
+            "text": "le tien"
+          }
+        ],
+        "explanation": "Objets masculin pluriel appartenant à toi. Modèle : Tu exposes les tiens."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-ordinateur-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 32,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "La technicienne utilise ___.",
+        "cue": "L’ordinateur appartient à une seule personne déjà nommée. Le nom « ordinateur » est au masculin singulier.",
+        "answers": [
+          "le sien"
+        ],
+        "options": [
+          {
+            "id": "ordinateur-personne-choix-1",
+            "text": "le sien"
+          },
+          {
+            "id": "ordinateur-personne-choix-2",
+            "text": "la sien"
+          },
+          {
+            "id": "ordinateur-personne-choix-3",
+            "text": "les siens"
+          }
+        ],
+        "explanation": "Le genre dépend du nom ordinateur. Modèle : La technicienne utilise le sien."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-idee-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 33,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Le délégué explique ___.",
+        "cue": "L’idée est celle d’une seule personne déjà nommée. Le nom « idée » est au féminin singulier.",
+        "answers": [
+          "la sienne"
+        ],
+        "options": [
+          {
+            "id": "idee-personne-choix-1",
+            "text": "la sienne"
+          },
+          {
+            "id": "idee-personne-choix-2",
+            "text": "le sienne"
+          },
+          {
+            "id": "idee-personne-choix-3",
+            "text": "les siennes"
+          }
+        ],
+        "explanation": "Le genre dépend du nom idée. Modèle : Le délégué explique la sienne."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-cartes-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 34,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Le guide distribue ___.",
+        "cue": "Les cartes sont celles d’une seule personne déjà nommée. Le nom « cartes » est au féminin pluriel.",
+        "answers": [
+          "les siennes"
+        ],
+        "options": [
+          {
+            "id": "cartes-personne-choix-1",
+            "text": "les siennes"
+          },
+          {
+            "id": "cartes-personne-choix-2",
+            "text": "les siens"
+          },
+          {
+            "id": "cartes-personne-choix-3",
+            "text": "la sienne"
+          }
+        ],
+        "explanation": "Le genre dépend du nom cartes. Modèle : Le guide distribue les siennes."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-resultats-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 35,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "L’élève compare ___.",
+        "cue": "Les résultats sont ceux d’une seule personne déjà nommée. Le nom « résultats » est au masculin pluriel.",
+        "answers": [
+          "les siens"
+        ],
+        "options": [
+          {
+            "id": "resultats-personne-choix-1",
+            "text": "les siens"
+          },
+          {
+            "id": "resultats-personne-choix-2",
+            "text": "les siennes"
+          },
+          {
+            "id": "resultats-personne-choix-3",
+            "text": "le sien"
+          }
+        ],
+        "explanation": "Le genre dépend du nom résultats. Modèle : L’élève compare les siens."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-choix-nous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 36,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous confirmons ___.",
+        "cue": "Le choix est celui du groupe qui parle. Le nom « choix » est au masculin singulier.",
+        "answers": [
+          "le nôtre"
+        ],
+        "options": [
+          {
+            "id": "choix-nous-choix-1",
+            "text": "le nôtre"
+          },
+          {
+            "id": "choix-nous-choix-2",
+            "text": "la nôtre"
+          },
+          {
+            "id": "choix-nous-choix-3",
+            "text": "les nôtres"
+          }
+        ],
+        "explanation": "Objet masculin singulier appartenant à nous. Modèle : Nous confirmons le nôtre."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-proposition-nous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 37,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous défendons ___.",
+        "cue": "La proposition est celle du groupe qui parle. Le nom « proposition » est au féminin singulier.",
+        "answers": [
+          "la nôtre"
+        ],
+        "options": [
+          {
+            "id": "proposition-nous-choix-1",
+            "text": "la nôtre"
+          },
+          {
+            "id": "proposition-nous-choix-2",
+            "text": "le nôtre"
+          },
+          {
+            "id": "proposition-nous-choix-3",
+            "text": "les nôtres"
+          }
+        ],
+        "explanation": "Objet féminin singulier appartenant à nous. Modèle : Nous défendons la nôtre."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-bagages-nous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 38,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous déposons ___.",
+        "cue": "Les bagages appartiennent au groupe qui parle. Le nom « bagages » est au masculin pluriel.",
+        "answers": [
+          "les nôtres"
+        ],
+        "options": [
+          {
+            "id": "bagages-nous-choix-1",
+            "text": "les nôtres"
+          },
+          {
+            "id": "bagages-nous-choix-2",
+            "text": "le nôtre"
+          },
+          {
+            "id": "bagages-nous-choix-3",
+            "text": "la nôtre"
+          }
+        ],
+        "explanation": "Objets pluriels appartenant à nous. Modèle : Nous déposons les nôtres."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-boites-nous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 39,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous fermons ___.",
+        "cue": "Les boîtes appartiennent au groupe qui parle. Le nom « boîtes » est au féminin pluriel.",
+        "answers": [
+          "les nôtres"
+        ],
+        "options": [
+          {
+            "id": "boites-nous-choix-1",
+            "text": "les nôtres"
+          },
+          {
+            "id": "boites-nous-choix-2",
+            "text": "la nôtre"
+          },
+          {
+            "id": "boites-nous-choix-3",
+            "text": "le nôtre"
+          }
+        ],
+        "explanation": "Objets pluriels appartenant à nous. Modèle : Nous fermons les nôtres."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-numero-vous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 40,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Vous indiquez ___.",
+        "cue": "Le numéro est celui de la personne vouvoyée. Le nom « numéro » est au masculin singulier.",
+        "answers": [
+          "le vôtre"
+        ],
+        "options": [
+          {
+            "id": "numero-vous-choix-1",
+            "text": "le vôtre"
+          },
+          {
+            "id": "numero-vous-choix-2",
+            "text": "la vôtre"
+          },
+          {
+            "id": "numero-vous-choix-3",
+            "text": "les vôtres"
+          }
+        ],
+        "explanation": "Objet masculin singulier appartenant à vous. Modèle : Vous indiquez le vôtre."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-adresse-vous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 41,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Vous écrivez ___.",
+        "cue": "L’adresse est celle des personnes vouvoyées. Le nom « adresse » est au féminin singulier.",
+        "answers": [
+          "la vôtre"
+        ],
+        "options": [
+          {
+            "id": "adresse-vous-choix-1",
+            "text": "la vôtre"
+          },
+          {
+            "id": "adresse-vous-choix-2",
+            "text": "le vôtre"
+          },
+          {
+            "id": "adresse-vous-choix-3",
+            "text": "les vôtres"
+          }
+        ],
+        "explanation": "Objet féminin singulier appartenant à vous. Modèle : Vous écrivez la vôtre."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-exercices-vous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 42,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Vous corrigez ___.",
+        "cue": "Les exercices sont ceux des personnes vouvoyées. Le nom « exercices » est au masculin pluriel.",
+        "answers": [
+          "les vôtres"
+        ],
+        "options": [
+          {
+            "id": "exercices-vous-choix-1",
+            "text": "les vôtres"
+          },
+          {
+            "id": "exercices-vous-choix-2",
+            "text": "le vôtre"
+          },
+          {
+            "id": "exercices-vous-choix-3",
+            "text": "la vôtre"
+          }
+        ],
+        "explanation": "Objets pluriels appartenant à vous. Modèle : Vous corrigez les vôtres."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-valises-vous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 43,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Vous préparez ___.",
+        "cue": "Les valises appartiennent aux personnes vouvoyées. Le nom « valises » est au féminin pluriel.",
+        "answers": [
+          "les vôtres"
+        ],
+        "options": [
+          {
+            "id": "valises-vous-choix-1",
+            "text": "les vôtres"
+          },
+          {
+            "id": "valises-vous-choix-2",
+            "text": "la vôtre"
+          },
+          {
+            "id": "valises-vous-choix-3",
+            "text": "le vôtre"
+          }
+        ],
+        "explanation": "Objets pluriels appartenant à vous. Modèle : Vous préparez les vôtres."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-vehicule-eux",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 44,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Ces personnes conduisent ___.",
+        "cue": "Le véhicule appartient à plusieurs personnes. Le nom « véhicule » est au masculin singulier.",
+        "answers": [
+          "le leur"
+        ],
+        "options": [
+          {
+            "id": "vehicule-eux-choix-1",
+            "text": "le leur"
+          },
+          {
+            "id": "vehicule-eux-choix-2",
+            "text": "la leur"
+          },
+          {
+            "id": "vehicule-eux-choix-3",
+            "text": "les leurs"
+          }
+        ],
+        "explanation": "Possesseurs pluriels ; un seul objet. Modèle : Ces personnes conduisent le leur."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-commande-elles",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 45,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Les clientes retirent ___.",
+        "cue": "La commande est celle de plusieurs clientes. Le nom « commande » est au féminin singulier.",
+        "answers": [
+          "la leur"
+        ],
+        "options": [
+          {
+            "id": "commande-elles-choix-1",
+            "text": "la leur"
+          },
+          {
+            "id": "commande-elles-choix-2",
+            "text": "le leur"
+          },
+          {
+            "id": "commande-elles-choix-3",
+            "text": "les leurs"
+          }
+        ],
+        "explanation": "Possesseurs pluriels ; un seul objet féminin. Modèle : Les clientes retirent la leur."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-sacs-eux",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 46,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Les voyageurs chargent ___.",
+        "cue": "Les sacs appartiennent à plusieurs voyageurs. Le nom « sacs » est au masculin pluriel.",
+        "answers": [
+          "les leurs"
+        ],
+        "options": [
+          {
+            "id": "sacs-eux-choix-1",
+            "text": "les leurs"
+          },
+          {
+            "id": "sacs-eux-choix-2",
+            "text": "le leur"
+          },
+          {
+            "id": "sacs-eux-choix-3",
+            "text": "la leur"
+          }
+        ],
+        "explanation": "Possesseurs pluriels ; plusieurs objets. Modèle : Les voyageurs chargent les leurs."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-tasses-elles",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 47,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Ces personnes lavent ___.",
+        "cue": "Les tasses appartiennent à plusieurs personnes. Le nom « tasses » est au féminin pluriel.",
+        "answers": [
+          "les leurs"
+        ],
+        "options": [
+          {
+            "id": "tasses-elles-choix-1",
+            "text": "les leurs"
+          },
+          {
+            "id": "tasses-elles-choix-2",
+            "text": "la leur"
+          },
+          {
+            "id": "tasses-elles-choix-3",
+            "text": "le leur"
+          }
+        ],
+        "explanation": "Possesseurs pluriels ; plusieurs objets. Modèle : Ces personnes lavent les leurs."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-avis-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 48,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous parlons ___.",
+        "cue": "On reprend mon avis après de. Le nom « avis » est au masculin singulier et m’appartient.",
+        "answers": [
+          "du mien"
+        ],
+        "options": [
+          {
+            "id": "avis-moi-choix-1",
+            "text": "du mien"
+          },
+          {
+            "id": "avis-moi-choix-2",
+            "text": "de le mien"
+          },
+          {
+            "id": "avis-moi-choix-3",
+            "text": "de la mienne"
+          }
+        ],
+        "explanation": "De + le mien se contracte en du mien. Modèle : Nous parlons du mien."
+      },
+      {
+        "id": "gram-ex-i2-qcm-verbe-a2-messages-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-qcm-verbe",
+          "position": 49,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je réponds ___.",
+        "cue": "On répond aux messages de la personne tutoyée. Le nom « messages » est au masculin pluriel.",
+        "answers": [
+          "aux tiens"
+        ],
+        "options": [
+          {
+            "id": "messages-toi-choix-1",
+            "text": "aux tiens"
+          },
+          {
+            "id": "messages-toi-choix-2",
+            "text": "à les tiens"
+          },
+          {
+            "id": "messages-toi-choix-3",
+            "text": "à la tienne"
+          }
+        ],
+        "explanation": "À + les tiens se contracte en aux tiens. Modèle : Je réponds aux tiens."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "pronoms-2026-11-24-v1",
+    "activityId": "gram-ex-i2-curriculum-t",
+    "subthemeId": "i2",
+    "topic": "gram-pronoms",
+    "level": "A2",
+    "label": "Transformer une phrase",
+    "objective": "Remplacer un groupe possessif par un pronom complet en conservant le possesseur, le genre et le nombre de l’objet.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Situations et références relues ; réemploi explicite entre mécaniques. Modèles ouverts non exclusifs. Aucune approbation pédagogique humaine déclarée."
+    },
+    "presentations": [
+      "transform"
+    ],
+    "instructions": {
+      "transform": "Réécrivez en conservant les faits et les référents, selon la reprise demandée."
+    },
+    "units": [
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-sac-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 0,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je prends mon sac.",
+        "cue": "Le sac appartient à la personne qui parle. Le nom « sac » est au masculin singulier.",
+        "answers": [
+          "Je prends le mien."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Possesseur : moi ; objet : masculin singulier. Modèle : Je prends le mien. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-veste-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 1,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je retrouve ma veste.",
+        "cue": "La veste appartient à la personne qui parle. Le nom « veste » est au féminin singulier.",
+        "answers": [
+          "Je retrouve la mienne."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Possesseur : moi ; objet : féminin singulier. Modèle : Je retrouve la mienne. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-livres-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 2,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Voici mes livres.",
+        "cue": "Les livres appartiennent à la personne qui parle. Le nom « livres » est au masculin pluriel.",
+        "answers": [
+          "Voici les miens."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Possesseur : moi ; objets : masculin pluriel. Modèle : Voici les miens. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-cles-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 3,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je cherche mes clés.",
+        "cue": "Les clés appartiennent à la personne qui parle. Le nom « clés » est au féminin pluriel.",
+        "answers": [
+          "Je cherche les miennes."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Possesseur : moi ; objets : féminin pluriel. Modèle : Je cherche les miennes. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-stylo-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 4,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tu récupères ton stylo.",
+        "cue": "Le stylo appartient à la personne tutoyée. Le nom « stylo » est au masculin singulier.",
+        "answers": [
+          "Tu récupères le tien."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Possesseur : toi ; objet : masculin singulier. Modèle : Tu récupères le tien. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-carte-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 5,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tu gardes ta carte.",
+        "cue": "La carte appartient à la personne tutoyée. Le nom « carte » est au féminin singulier.",
+        "answers": [
+          "Tu gardes la tienne."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Possesseur : toi ; objet : féminin singulier. Modèle : Tu gardes la tienne. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-billets-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 6,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tu paies tes billets.",
+        "cue": "Les billets appartiennent à la personne tutoyée. Le nom « billets » est au masculin pluriel.",
+        "answers": [
+          "Tu paies les tiens."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Possesseur : toi ; objets : masculin pluriel. Modèle : Tu paies les tiens. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-photos-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 7,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tu montres tes photos.",
+        "cue": "Les photos appartiennent à la personne tutoyée. Le nom « photos » est au féminin pluriel.",
+        "answers": [
+          "Tu montres les tiennes."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Possesseur : toi ; objets : féminin pluriel. Modèle : Tu montres les tiennes. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-velo-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 8,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Elle répare son vélo.",
+        "cue": "Le vélo appartient à une seule personne déjà nommée, pas à la personne qui parle.",
+        "answers": [
+          "Elle répare le sien."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Possesseur : une seule tierce personne ; objet masculin singulier. Modèle : Elle répare le sien. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-valise-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 9,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Il porte sa valise.",
+        "cue": "La valise appartient à une seule personne déjà nommée. Le nom « valise » est au féminin singulier.",
+        "answers": [
+          "Il porte la sienne."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Le genre dépend de valise, pas du possesseur. Modèle : Il porte la sienne. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-dossiers-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 10,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "La collègue classe ses dossiers.",
+        "cue": "Les dossiers appartiennent à une seule collègue déjà nommée. Le nom « dossiers » est au masculin pluriel.",
+        "answers": [
+          "La collègue classe les siens."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Possesseur singulier ; objets masculin pluriel. Modèle : La collègue classe les siens. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-places-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 11,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "L’organisateur garde ses places.",
+        "cue": "Les places sont celles d’un seul organisateur déjà nommé. Le nom « places » est au féminin pluriel.",
+        "answers": [
+          "L’organisateur garde les siennes."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Le genre dépend de places, pas du possesseur. Modèle : L’organisateur garde les siennes. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-projet-nous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 12,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous présentons notre projet.",
+        "cue": "Le projet appartient au groupe qui parle. Le nom « projet » est au masculin singulier.",
+        "answers": [
+          "Nous présentons le nôtre."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Possesseur : nous ; objet masculin singulier. Modèle : Nous présentons le nôtre. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-table-nous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 13,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous nettoyons notre table.",
+        "cue": "La table appartient au groupe qui parle. Le nom « table » est au féminin singulier.",
+        "answers": [
+          "Nous nettoyons la nôtre."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Possesseur : nous ; objet féminin singulier. Modèle : Nous nettoyons la nôtre. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-cahiers-nous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 14,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous rangeons nos cahiers.",
+        "cue": "Les cahiers appartiennent au groupe qui parle. Le nom « cahiers » est au masculin pluriel.",
+        "answers": [
+          "Nous rangeons les nôtres."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Nôtre au singulier, nôtres au pluriel, avec accent. Modèle : Nous rangeons les nôtres. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-affiches-nous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 15,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous imprimons nos affiches.",
+        "cue": "Les affiches sont celles du groupe qui parle. Le nom « affiches » est au féminin pluriel.",
+        "answers": [
+          "Nous imprimons les nôtres."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Les nôtres reprend aussi un nom féminin pluriel. Modèle : Nous imprimons les nôtres. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-parapluie-vous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 16,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Vous ouvrez votre parapluie.",
+        "cue": "Le parapluie appartient à la personne vouvoyée. Le nom « parapluie » est au masculin singulier.",
+        "answers": [
+          "Vous ouvrez le vôtre."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Possesseur : vous ; objet masculin singulier. Modèle : Vous ouvrez le vôtre. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-chaise-vous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 17,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Vous déplacez votre chaise.",
+        "cue": "La chaise appartient aux personnes vouvoyées. Le nom « chaise » est au féminin singulier.",
+        "answers": [
+          "Vous déplacez la vôtre."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Possesseur : vous ; objet féminin singulier. Modèle : Vous déplacez la vôtre. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-documents-vous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 18,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Vous signez vos documents.",
+        "cue": "Les documents appartiennent aux personnes vouvoyées. Le nom « documents » est au masculin pluriel.",
+        "answers": [
+          "Vous signez les vôtres."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Vôtre au singulier, vôtres au pluriel, avec accent. Modèle : Vous signez les vôtres. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-recettes-vous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 19,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Vous partagez vos recettes.",
+        "cue": "Les recettes sont celles des personnes vouvoyées. Le nom « recettes » est au féminin pluriel.",
+        "answers": [
+          "Vous partagez les vôtres."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Les vôtres reprend aussi un nom féminin pluriel. Modèle : Vous partagez les vôtres. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-local-eux",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 20,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Les voisins ouvrent leur local.",
+        "cue": "Le local appartient à plusieurs voisins. Le nom « local » est au masculin singulier.",
+        "answers": [
+          "Les voisins ouvrent le leur."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Possesseurs pluriels ; objet singulier : leur sans s. Modèle : Les voisins ouvrent le leur. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-salle-elles",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 21,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Les associations préparent leur salle.",
+        "cue": "La salle est celle de plusieurs associations. Le nom « salle » est au féminin singulier.",
+        "answers": [
+          "Les associations préparent la leur."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Possesseurs pluriels ; objet féminin singulier. Modèle : Les associations préparent la leur. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-outils-eux",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 22,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Les ouvriers prennent leurs outils.",
+        "cue": "Les outils appartiennent à plusieurs ouvriers. Le nom « outils » est au masculin pluriel.",
+        "answers": [
+          "Les ouvriers prennent les leurs."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Le s de leurs dépend des objets pluriels. Modèle : Les ouvriers prennent les leurs. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-plantes-elles",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 23,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Les voisines arrosent leurs plantes.",
+        "cue": "Les plantes appartiennent à plusieurs voisines. Le nom « plantes » est au féminin pluriel.",
+        "answers": [
+          "Les voisines arrosent les leurs."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Le s de leurs dépend des objets pluriels. Modèle : Les voisines arrosent les leurs. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-telephone-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 24,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je recharge mon téléphone.",
+        "cue": "Le téléphone est celui de la personne qui parle. Il y a plusieurs téléphones, on reprend le sien uniquement.",
+        "answers": [
+          "Je recharge le mien."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Objet masculin singulier appartenant à moi. Modèle : Je recharge le mien. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-reponse-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 25,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je vérifie ma réponse.",
+        "cue": "La réponse est celle de la personne qui parle. Le nom « réponse » est au féminin singulier.",
+        "answers": [
+          "Je vérifie la mienne."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Objet féminin singulier appartenant à moi. Modèle : Je vérifie la mienne. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-gants-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 26,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je mets mes gants.",
+        "cue": "Les gants appartiennent à la personne qui parle. Le nom « gants » est au masculin pluriel.",
+        "answers": [
+          "Je mets les miens."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Objets masculin pluriel appartenant à moi. Modèle : Je mets les miens. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-lunettes-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 27,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je nettoie mes lunettes.",
+        "cue": "Les lunettes appartiennent à la personne qui parle. Le nom « lunettes » est au féminin pluriel.",
+        "answers": [
+          "Je nettoie les miennes."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Objets féminin pluriel appartenant à moi. Modèle : Je nettoie les miennes. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-casque-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 28,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tu portes ton casque.",
+        "cue": "Le casque est celui de la personne tutoyée. Le nom « casque » est au masculin singulier.",
+        "answers": [
+          "Tu portes le tien."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Objet masculin singulier appartenant à toi. Modèle : Tu portes le tien. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-bouteille-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 29,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tu remplis ta bouteille.",
+        "cue": "La bouteille est celle de la personne tutoyée. Le nom « bouteille » est au féminin singulier.",
+        "answers": [
+          "Tu remplis la tienne."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Objet féminin singulier appartenant à toi. Modèle : Tu remplis la tienne. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-chaussures-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 30,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tu laces tes chaussures.",
+        "cue": "Les chaussures appartiennent à la personne tutoyée. Le nom « chaussures » est au féminin pluriel.",
+        "answers": [
+          "Tu laces les tiennes."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Objets féminin pluriel appartenant à toi. Modèle : Tu laces les tiennes. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-dessins-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 31,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tu exposes tes dessins.",
+        "cue": "Les dessins sont ceux de la personne tutoyée. Le nom « dessins » est au masculin pluriel.",
+        "answers": [
+          "Tu exposes les tiens."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Objets masculin pluriel appartenant à toi. Modèle : Tu exposes les tiens. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-ordinateur-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 32,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "La technicienne utilise son ordinateur.",
+        "cue": "L’ordinateur appartient à une seule personne déjà nommée. Le nom « ordinateur » est au masculin singulier.",
+        "answers": [
+          "La technicienne utilise le sien."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Le genre dépend du nom ordinateur. Modèle : La technicienne utilise le sien. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-idee-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 33,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Le délégué explique son idée.",
+        "cue": "L’idée est celle d’une seule personne déjà nommée. Le nom « idée » est au féminin singulier.",
+        "answers": [
+          "Le délégué explique la sienne."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Le genre dépend du nom idée. Modèle : Le délégué explique la sienne. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-cartes-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 34,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Le guide distribue ses cartes.",
+        "cue": "Les cartes sont celles d’une seule personne déjà nommée. Le nom « cartes » est au féminin pluriel.",
+        "answers": [
+          "Le guide distribue les siennes."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Le genre dépend du nom cartes. Modèle : Le guide distribue les siennes. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-resultats-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 35,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "L’élève compare ses résultats.",
+        "cue": "Les résultats sont ceux d’une seule personne déjà nommée. Le nom « résultats » est au masculin pluriel.",
+        "answers": [
+          "L’élève compare les siens."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Le genre dépend du nom résultats. Modèle : L’élève compare les siens. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-choix-nous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 36,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous confirmons notre choix.",
+        "cue": "Le choix est celui du groupe qui parle. Le nom « choix » est au masculin singulier.",
+        "answers": [
+          "Nous confirmons le nôtre."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Objet masculin singulier appartenant à nous. Modèle : Nous confirmons le nôtre. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-proposition-nous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 37,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous défendons notre proposition.",
+        "cue": "La proposition est celle du groupe qui parle. Le nom « proposition » est au féminin singulier.",
+        "answers": [
+          "Nous défendons la nôtre."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Objet féminin singulier appartenant à nous. Modèle : Nous défendons la nôtre. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-bagages-nous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 38,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous déposons nos bagages.",
+        "cue": "Les bagages appartiennent au groupe qui parle. Le nom « bagages » est au masculin pluriel.",
+        "answers": [
+          "Nous déposons les nôtres."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Objets pluriels appartenant à nous. Modèle : Nous déposons les nôtres. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-boites-nous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 39,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous fermons nos boîtes.",
+        "cue": "Les boîtes appartiennent au groupe qui parle. Le nom « boîtes » est au féminin pluriel.",
+        "answers": [
+          "Nous fermons les nôtres."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Objets pluriels appartenant à nous. Modèle : Nous fermons les nôtres. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-numero-vous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 40,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Vous indiquez votre numéro.",
+        "cue": "Le numéro est celui de la personne vouvoyée. Le nom « numéro » est au masculin singulier.",
+        "answers": [
+          "Vous indiquez le vôtre."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Objet masculin singulier appartenant à vous. Modèle : Vous indiquez le vôtre. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-adresse-vous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 41,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Vous écrivez votre adresse.",
+        "cue": "L’adresse est celle des personnes vouvoyées. Le nom « adresse » est au féminin singulier.",
+        "answers": [
+          "Vous écrivez la vôtre."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Objet féminin singulier appartenant à vous. Modèle : Vous écrivez la vôtre. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-exercices-vous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 42,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Vous corrigez vos exercices.",
+        "cue": "Les exercices sont ceux des personnes vouvoyées. Le nom « exercices » est au masculin pluriel.",
+        "answers": [
+          "Vous corrigez les vôtres."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Objets pluriels appartenant à vous. Modèle : Vous corrigez les vôtres. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-valises-vous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 43,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Vous préparez vos valises.",
+        "cue": "Les valises appartiennent aux personnes vouvoyées. Le nom « valises » est au féminin pluriel.",
+        "answers": [
+          "Vous préparez les vôtres."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Objets pluriels appartenant à vous. Modèle : Vous préparez les vôtres. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-vehicule-eux",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 44,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Ces personnes conduisent leur véhicule.",
+        "cue": "Le véhicule appartient à plusieurs personnes. Le nom « véhicule » est au masculin singulier.",
+        "answers": [
+          "Ces personnes conduisent le leur."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Possesseurs pluriels ; un seul objet. Modèle : Ces personnes conduisent le leur. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-commande-elles",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 45,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Les clientes retirent leur commande.",
+        "cue": "La commande est celle de plusieurs clientes. Le nom « commande » est au féminin singulier.",
+        "answers": [
+          "Les clientes retirent la leur."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Possesseurs pluriels ; un seul objet féminin. Modèle : Les clientes retirent la leur. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-sacs-eux",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 46,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Les voyageurs chargent leurs sacs.",
+        "cue": "Les sacs appartiennent à plusieurs voyageurs. Le nom « sacs » est au masculin pluriel.",
+        "answers": [
+          "Les voyageurs chargent les leurs."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Possesseurs pluriels ; plusieurs objets. Modèle : Les voyageurs chargent les leurs. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-tasses-elles",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 47,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Ces personnes lavent leurs tasses.",
+        "cue": "Les tasses appartiennent à plusieurs personnes. Le nom « tasses » est au féminin pluriel.",
+        "answers": [
+          "Ces personnes lavent les leurs."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "Possesseurs pluriels ; plusieurs objets. Modèle : Ces personnes lavent les leurs. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-avis-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 48,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous parlons de mon avis.",
+        "cue": "On reprend mon avis après de. Le nom « avis » est au masculin singulier et m’appartient.",
+        "answers": [
+          "Nous parlons du mien."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "De + le mien se contracte en du mien. Modèle : Nous parlons du mien. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-t-a2-messages-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-t",
+          "position": 49,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je réponds à tes messages.",
+        "cue": "On répond aux messages de la personne tutoyée. Le nom « messages » est au masculin pluriel.",
+        "answers": [
+          "Je réponds aux tiens."
+        ],
+        "directive": "Remplacez le groupe possessif par un pronom possessif complet, avec la préposition nécessaire. Gardez le possesseur et l’objet.",
+        "responseLines": 2,
+        "explanation": "À + les tiens se contracte en aux tiens. Modèle : Je réponds aux tiens. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "pronoms-2026-11-24-v1",
+    "activityId": "gram-ex-i2-curriculum-c",
+    "subthemeId": "i2",
+    "topic": "gram-pronoms",
+    "level": "A2",
+    "label": "Corriger l’erreur",
+    "objective": "Remplacer un groupe possessif par un pronom complet en conservant le possesseur, le genre et le nombre de l’objet.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Situations et références relues ; réemploi explicite entre mécaniques. Modèles ouverts non exclusifs. Aucune approbation pédagogique humaine déclarée."
+    },
+    "presentations": [
+      "correct"
+    ],
+    "instructions": {
+      "correct": "Corrigez la reprise du complément indiqué et réécrivez la phrase entière."
+    },
+    "units": [
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-sac-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 0,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je prends la mien.",
+        "cue": "Le sac appartient à la personne qui parle. Le nom « sac » est au masculin singulier.",
+        "answers": [
+          "Je prends le mien."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 10,
+          "end": 17,
+          "text": "la mien"
+        },
+        "responseLines": 2,
+        "explanation": "Possesseur : moi ; objet : masculin singulier. Modèle : Je prends le mien."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-veste-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 1,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je retrouve le mienne.",
+        "cue": "La veste appartient à la personne qui parle. Le nom « veste » est au féminin singulier.",
+        "answers": [
+          "Je retrouve la mienne."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 21,
+          "text": "le mienne"
+        },
+        "responseLines": 2,
+        "explanation": "Possesseur : moi ; objet : féminin singulier. Modèle : Je retrouve la mienne."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-livres-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 2,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Voici les miennes.",
+        "cue": "Les livres appartiennent à la personne qui parle. Le nom « livres » est au masculin pluriel.",
+        "answers": [
+          "Voici les miens."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 6,
+          "end": 17,
+          "text": "les miennes"
+        },
+        "responseLines": 2,
+        "explanation": "Possesseur : moi ; objets : masculin pluriel. Modèle : Voici les miens."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-cles-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 3,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je cherche les miens.",
+        "cue": "Les clés appartiennent à la personne qui parle. Le nom « clés » est au féminin pluriel.",
+        "answers": [
+          "Je cherche les miennes."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 20,
+          "text": "les miens"
+        },
+        "responseLines": 2,
+        "explanation": "Possesseur : moi ; objets : féminin pluriel. Modèle : Je cherche les miennes."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-stylo-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 4,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tu récupères la tien.",
+        "cue": "Le stylo appartient à la personne tutoyée. Le nom « stylo » est au masculin singulier.",
+        "answers": [
+          "Tu récupères le tien."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 13,
+          "end": 20,
+          "text": "la tien"
+        },
+        "responseLines": 2,
+        "explanation": "Possesseur : toi ; objet : masculin singulier. Modèle : Tu récupères le tien."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-carte-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 5,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tu gardes le tienne.",
+        "cue": "La carte appartient à la personne tutoyée. Le nom « carte » est au féminin singulier.",
+        "answers": [
+          "Tu gardes la tienne."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 10,
+          "end": 19,
+          "text": "le tienne"
+        },
+        "responseLines": 2,
+        "explanation": "Possesseur : toi ; objet : féminin singulier. Modèle : Tu gardes la tienne."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-billets-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 6,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tu paies les tiennes.",
+        "cue": "Les billets appartiennent à la personne tutoyée. Le nom « billets » est au masculin pluriel.",
+        "answers": [
+          "Tu paies les tiens."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 20,
+          "text": "les tiennes"
+        },
+        "responseLines": 2,
+        "explanation": "Possesseur : toi ; objets : masculin pluriel. Modèle : Tu paies les tiens."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-photos-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 7,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tu montres les tiens.",
+        "cue": "Les photos appartiennent à la personne tutoyée. Le nom « photos » est au féminin pluriel.",
+        "answers": [
+          "Tu montres les tiennes."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 20,
+          "text": "les tiens"
+        },
+        "responseLines": 2,
+        "explanation": "Possesseur : toi ; objets : féminin pluriel. Modèle : Tu montres les tiennes."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-velo-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 8,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Elle répare la sien.",
+        "cue": "Le vélo appartient à une seule personne déjà nommée, pas à la personne qui parle.",
+        "answers": [
+          "Elle répare le sien."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 19,
+          "text": "la sien"
+        },
+        "responseLines": 2,
+        "explanation": "Possesseur : une seule tierce personne ; objet masculin singulier. Modèle : Elle répare le sien."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-valise-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 9,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Il porte le sienne.",
+        "cue": "La valise appartient à une seule personne déjà nommée. Le nom « valise » est au féminin singulier.",
+        "answers": [
+          "Il porte la sienne."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 18,
+          "text": "le sienne"
+        },
+        "responseLines": 2,
+        "explanation": "Le genre dépend de valise, pas du possesseur. Modèle : Il porte la sienne."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-dossiers-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 10,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "La collègue classe les siennes.",
+        "cue": "Les dossiers appartiennent à une seule collègue déjà nommée. Le nom « dossiers » est au masculin pluriel.",
+        "answers": [
+          "La collègue classe les siens."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 19,
+          "end": 30,
+          "text": "les siennes"
+        },
+        "responseLines": 2,
+        "explanation": "Possesseur singulier ; objets masculin pluriel. Modèle : La collègue classe les siens."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-places-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 11,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "L’organisateur garde les siens.",
+        "cue": "Les places sont celles d’un seul organisateur déjà nommé. Le nom « places » est au féminin pluriel.",
+        "answers": [
+          "L’organisateur garde les siennes."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 21,
+          "end": 30,
+          "text": "les siens"
+        },
+        "responseLines": 2,
+        "explanation": "Le genre dépend de places, pas du possesseur. Modèle : L’organisateur garde les siennes."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-projet-nous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 12,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous présentons la nôtre.",
+        "cue": "Le projet appartient au groupe qui parle. Le nom « projet » est au masculin singulier.",
+        "answers": [
+          "Nous présentons le nôtre."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 16,
+          "end": 24,
+          "text": "la nôtre"
+        },
+        "responseLines": 2,
+        "explanation": "Possesseur : nous ; objet masculin singulier. Modèle : Nous présentons le nôtre."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-table-nous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 13,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous nettoyons le nôtre.",
+        "cue": "La table appartient au groupe qui parle. Le nom « table » est au féminin singulier.",
+        "answers": [
+          "Nous nettoyons la nôtre."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 15,
+          "end": 23,
+          "text": "le nôtre"
+        },
+        "responseLines": 2,
+        "explanation": "Possesseur : nous ; objet féminin singulier. Modèle : Nous nettoyons la nôtre."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-cahiers-nous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 14,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous rangeons le nôtre.",
+        "cue": "Les cahiers appartiennent au groupe qui parle. Le nom « cahiers » est au masculin pluriel.",
+        "answers": [
+          "Nous rangeons les nôtres."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 14,
+          "end": 22,
+          "text": "le nôtre"
+        },
+        "responseLines": 2,
+        "explanation": "Nôtre au singulier, nôtres au pluriel, avec accent. Modèle : Nous rangeons les nôtres."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-affiches-nous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 15,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous imprimons la nôtre.",
+        "cue": "Les affiches sont celles du groupe qui parle. Le nom « affiches » est au féminin pluriel.",
+        "answers": [
+          "Nous imprimons les nôtres."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 15,
+          "end": 23,
+          "text": "la nôtre"
+        },
+        "responseLines": 2,
+        "explanation": "Les nôtres reprend aussi un nom féminin pluriel. Modèle : Nous imprimons les nôtres."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-parapluie-vous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 16,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Vous ouvrez la vôtre.",
+        "cue": "Le parapluie appartient à la personne vouvoyée. Le nom « parapluie » est au masculin singulier.",
+        "answers": [
+          "Vous ouvrez le vôtre."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 20,
+          "text": "la vôtre"
+        },
+        "responseLines": 2,
+        "explanation": "Possesseur : vous ; objet masculin singulier. Modèle : Vous ouvrez le vôtre."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-chaise-vous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 17,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Vous déplacez le vôtre.",
+        "cue": "La chaise appartient aux personnes vouvoyées. Le nom « chaise » est au féminin singulier.",
+        "answers": [
+          "Vous déplacez la vôtre."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 14,
+          "end": 22,
+          "text": "le vôtre"
+        },
+        "responseLines": 2,
+        "explanation": "Possesseur : vous ; objet féminin singulier. Modèle : Vous déplacez la vôtre."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-documents-vous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 18,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Vous signez le vôtre.",
+        "cue": "Les documents appartiennent aux personnes vouvoyées. Le nom « documents » est au masculin pluriel.",
+        "answers": [
+          "Vous signez les vôtres."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 20,
+          "text": "le vôtre"
+        },
+        "responseLines": 2,
+        "explanation": "Vôtre au singulier, vôtres au pluriel, avec accent. Modèle : Vous signez les vôtres."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-recettes-vous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 19,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Vous partagez la vôtre.",
+        "cue": "Les recettes sont celles des personnes vouvoyées. Le nom « recettes » est au féminin pluriel.",
+        "answers": [
+          "Vous partagez les vôtres."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 14,
+          "end": 22,
+          "text": "la vôtre"
+        },
+        "responseLines": 2,
+        "explanation": "Les vôtres reprend aussi un nom féminin pluriel. Modèle : Vous partagez les vôtres."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-local-eux",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 20,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Les voisins ouvrent la leur.",
+        "cue": "Le local appartient à plusieurs voisins. Le nom « local » est au masculin singulier.",
+        "answers": [
+          "Les voisins ouvrent le leur."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 20,
+          "end": 27,
+          "text": "la leur"
+        },
+        "responseLines": 2,
+        "explanation": "Possesseurs pluriels ; objet singulier : leur sans s. Modèle : Les voisins ouvrent le leur."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-salle-elles",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 21,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Les associations préparent le leur.",
+        "cue": "La salle est celle de plusieurs associations. Le nom « salle » est au féminin singulier.",
+        "answers": [
+          "Les associations préparent la leur."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 27,
+          "end": 34,
+          "text": "le leur"
+        },
+        "responseLines": 2,
+        "explanation": "Possesseurs pluriels ; objet féminin singulier. Modèle : Les associations préparent la leur."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-outils-eux",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 22,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Les ouvriers prennent le leur.",
+        "cue": "Les outils appartiennent à plusieurs ouvriers. Le nom « outils » est au masculin pluriel.",
+        "answers": [
+          "Les ouvriers prennent les leurs."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 22,
+          "end": 29,
+          "text": "le leur"
+        },
+        "responseLines": 2,
+        "explanation": "Le s de leurs dépend des objets pluriels. Modèle : Les ouvriers prennent les leurs."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-plantes-elles",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 23,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Les voisines arrosent la leur.",
+        "cue": "Les plantes appartiennent à plusieurs voisines. Le nom « plantes » est au féminin pluriel.",
+        "answers": [
+          "Les voisines arrosent les leurs."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 22,
+          "end": 29,
+          "text": "la leur"
+        },
+        "responseLines": 2,
+        "explanation": "Le s de leurs dépend des objets pluriels. Modèle : Les voisines arrosent les leurs."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-telephone-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 24,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je recharge la mien.",
+        "cue": "Le téléphone est celui de la personne qui parle. Il y a plusieurs téléphones, on reprend le sien uniquement.",
+        "answers": [
+          "Je recharge le mien."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 19,
+          "text": "la mien"
+        },
+        "responseLines": 2,
+        "explanation": "Objet masculin singulier appartenant à moi. Modèle : Je recharge le mien."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-reponse-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 25,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je vérifie le mienne.",
+        "cue": "La réponse est celle de la personne qui parle. Le nom « réponse » est au féminin singulier.",
+        "answers": [
+          "Je vérifie la mienne."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 20,
+          "text": "le mienne"
+        },
+        "responseLines": 2,
+        "explanation": "Objet féminin singulier appartenant à moi. Modèle : Je vérifie la mienne."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-gants-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 26,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je mets les miennes.",
+        "cue": "Les gants appartiennent à la personne qui parle. Le nom « gants » est au masculin pluriel.",
+        "answers": [
+          "Je mets les miens."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 19,
+          "text": "les miennes"
+        },
+        "responseLines": 2,
+        "explanation": "Objets masculin pluriel appartenant à moi. Modèle : Je mets les miens."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-lunettes-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 27,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je nettoie les miens.",
+        "cue": "Les lunettes appartiennent à la personne qui parle. Le nom « lunettes » est au féminin pluriel.",
+        "answers": [
+          "Je nettoie les miennes."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 20,
+          "text": "les miens"
+        },
+        "responseLines": 2,
+        "explanation": "Objets féminin pluriel appartenant à moi. Modèle : Je nettoie les miennes."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-casque-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 28,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tu portes la tien.",
+        "cue": "Le casque est celui de la personne tutoyée. Le nom « casque » est au masculin singulier.",
+        "answers": [
+          "Tu portes le tien."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 10,
+          "end": 17,
+          "text": "la tien"
+        },
+        "responseLines": 2,
+        "explanation": "Objet masculin singulier appartenant à toi. Modèle : Tu portes le tien."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-bouteille-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 29,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tu remplis le tienne.",
+        "cue": "La bouteille est celle de la personne tutoyée. Le nom « bouteille » est au féminin singulier.",
+        "answers": [
+          "Tu remplis la tienne."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 20,
+          "text": "le tienne"
+        },
+        "responseLines": 2,
+        "explanation": "Objet féminin singulier appartenant à toi. Modèle : Tu remplis la tienne."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-chaussures-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 30,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tu laces les tiens.",
+        "cue": "Les chaussures appartiennent à la personne tutoyée. Le nom « chaussures » est au féminin pluriel.",
+        "answers": [
+          "Tu laces les tiennes."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 18,
+          "text": "les tiens"
+        },
+        "responseLines": 2,
+        "explanation": "Objets féminin pluriel appartenant à toi. Modèle : Tu laces les tiennes."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-dessins-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 31,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tu exposes les tiennes.",
+        "cue": "Les dessins sont ceux de la personne tutoyée. Le nom « dessins » est au masculin pluriel.",
+        "answers": [
+          "Tu exposes les tiens."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 22,
+          "text": "les tiennes"
+        },
+        "responseLines": 2,
+        "explanation": "Objets masculin pluriel appartenant à toi. Modèle : Tu exposes les tiens."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-ordinateur-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 32,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "La technicienne utilise la sien.",
+        "cue": "L’ordinateur appartient à une seule personne déjà nommée. Le nom « ordinateur » est au masculin singulier.",
+        "answers": [
+          "La technicienne utilise le sien."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 24,
+          "end": 31,
+          "text": "la sien"
+        },
+        "responseLines": 2,
+        "explanation": "Le genre dépend du nom ordinateur. Modèle : La technicienne utilise le sien."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-idee-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 33,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Le délégué explique le sienne.",
+        "cue": "L’idée est celle d’une seule personne déjà nommée. Le nom « idée » est au féminin singulier.",
+        "answers": [
+          "Le délégué explique la sienne."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 20,
+          "end": 29,
+          "text": "le sienne"
+        },
+        "responseLines": 2,
+        "explanation": "Le genre dépend du nom idée. Modèle : Le délégué explique la sienne."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-cartes-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 34,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Le guide distribue les siens.",
+        "cue": "Les cartes sont celles d’une seule personne déjà nommée. Le nom « cartes » est au féminin pluriel.",
+        "answers": [
+          "Le guide distribue les siennes."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 19,
+          "end": 28,
+          "text": "les siens"
+        },
+        "responseLines": 2,
+        "explanation": "Le genre dépend du nom cartes. Modèle : Le guide distribue les siennes."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-resultats-personne",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 35,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "L’élève compare les siennes.",
+        "cue": "Les résultats sont ceux d’une seule personne déjà nommée. Le nom « résultats » est au masculin pluriel.",
+        "answers": [
+          "L’élève compare les siens."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 16,
+          "end": 27,
+          "text": "les siennes"
+        },
+        "responseLines": 2,
+        "explanation": "Le genre dépend du nom résultats. Modèle : L’élève compare les siens."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-choix-nous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 36,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous confirmons la nôtre.",
+        "cue": "Le choix est celui du groupe qui parle. Le nom « choix » est au masculin singulier.",
+        "answers": [
+          "Nous confirmons le nôtre."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 16,
+          "end": 24,
+          "text": "la nôtre"
+        },
+        "responseLines": 2,
+        "explanation": "Objet masculin singulier appartenant à nous. Modèle : Nous confirmons le nôtre."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-proposition-nous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 37,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous défendons le nôtre.",
+        "cue": "La proposition est celle du groupe qui parle. Le nom « proposition » est au féminin singulier.",
+        "answers": [
+          "Nous défendons la nôtre."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 15,
+          "end": 23,
+          "text": "le nôtre"
+        },
+        "responseLines": 2,
+        "explanation": "Objet féminin singulier appartenant à nous. Modèle : Nous défendons la nôtre."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-bagages-nous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 38,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous déposons le nôtre.",
+        "cue": "Les bagages appartiennent au groupe qui parle. Le nom « bagages » est au masculin pluriel.",
+        "answers": [
+          "Nous déposons les nôtres."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 14,
+          "end": 22,
+          "text": "le nôtre"
+        },
+        "responseLines": 2,
+        "explanation": "Objets pluriels appartenant à nous. Modèle : Nous déposons les nôtres."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-boites-nous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 39,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous fermons la nôtre.",
+        "cue": "Les boîtes appartiennent au groupe qui parle. Le nom « boîtes » est au féminin pluriel.",
+        "answers": [
+          "Nous fermons les nôtres."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 13,
+          "end": 21,
+          "text": "la nôtre"
+        },
+        "responseLines": 2,
+        "explanation": "Objets pluriels appartenant à nous. Modèle : Nous fermons les nôtres."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-numero-vous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 40,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Vous indiquez la vôtre.",
+        "cue": "Le numéro est celui de la personne vouvoyée. Le nom « numéro » est au masculin singulier.",
+        "answers": [
+          "Vous indiquez le vôtre."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 14,
+          "end": 22,
+          "text": "la vôtre"
+        },
+        "responseLines": 2,
+        "explanation": "Objet masculin singulier appartenant à vous. Modèle : Vous indiquez le vôtre."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-adresse-vous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 41,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Vous écrivez le vôtre.",
+        "cue": "L’adresse est celle des personnes vouvoyées. Le nom « adresse » est au féminin singulier.",
+        "answers": [
+          "Vous écrivez la vôtre."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 13,
+          "end": 21,
+          "text": "le vôtre"
+        },
+        "responseLines": 2,
+        "explanation": "Objet féminin singulier appartenant à vous. Modèle : Vous écrivez la vôtre."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-exercices-vous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 42,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Vous corrigez le vôtre.",
+        "cue": "Les exercices sont ceux des personnes vouvoyées. Le nom « exercices » est au masculin pluriel.",
+        "answers": [
+          "Vous corrigez les vôtres."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 14,
+          "end": 22,
+          "text": "le vôtre"
+        },
+        "responseLines": 2,
+        "explanation": "Objets pluriels appartenant à vous. Modèle : Vous corrigez les vôtres."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-valises-vous",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 43,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Vous préparez la vôtre.",
+        "cue": "Les valises appartiennent aux personnes vouvoyées. Le nom « valises » est au féminin pluriel.",
+        "answers": [
+          "Vous préparez les vôtres."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 14,
+          "end": 22,
+          "text": "la vôtre"
+        },
+        "responseLines": 2,
+        "explanation": "Objets pluriels appartenant à vous. Modèle : Vous préparez les vôtres."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-vehicule-eux",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 44,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Ces personnes conduisent la leur.",
+        "cue": "Le véhicule appartient à plusieurs personnes. Le nom « véhicule » est au masculin singulier.",
+        "answers": [
+          "Ces personnes conduisent le leur."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 25,
+          "end": 32,
+          "text": "la leur"
+        },
+        "responseLines": 2,
+        "explanation": "Possesseurs pluriels ; un seul objet. Modèle : Ces personnes conduisent le leur."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-commande-elles",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 45,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Les clientes retirent le leur.",
+        "cue": "La commande est celle de plusieurs clientes. Le nom « commande » est au féminin singulier.",
+        "answers": [
+          "Les clientes retirent la leur."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 22,
+          "end": 29,
+          "text": "le leur"
+        },
+        "responseLines": 2,
+        "explanation": "Possesseurs pluriels ; un seul objet féminin. Modèle : Les clientes retirent la leur."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-sacs-eux",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 46,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Les voyageurs chargent le leur.",
+        "cue": "Les sacs appartiennent à plusieurs voyageurs. Le nom « sacs » est au masculin pluriel.",
+        "answers": [
+          "Les voyageurs chargent les leurs."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 23,
+          "end": 30,
+          "text": "le leur"
+        },
+        "responseLines": 2,
+        "explanation": "Possesseurs pluriels ; plusieurs objets. Modèle : Les voyageurs chargent les leurs."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-tasses-elles",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 47,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Ces personnes lavent la leur.",
+        "cue": "Les tasses appartiennent à plusieurs personnes. Le nom « tasses » est au féminin pluriel.",
+        "answers": [
+          "Ces personnes lavent les leurs."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 21,
+          "end": 28,
+          "text": "la leur"
+        },
+        "responseLines": 2,
+        "explanation": "Possesseurs pluriels ; plusieurs objets. Modèle : Ces personnes lavent les leurs."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-avis-moi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 48,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous parlons de le mien.",
+        "cue": "On reprend mon avis après de. Le nom « avis » est au masculin singulier et m’appartient.",
+        "answers": [
+          "Nous parlons du mien."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 13,
+          "end": 23,
+          "text": "de le mien"
+        },
+        "responseLines": 2,
+        "explanation": "De + le mien se contracte en du mien. Modèle : Nous parlons du mien."
+      },
+      {
+        "id": "gram-ex-i2-curriculum-c-a2-messages-toi",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i2-a2.tsv",
+          "typeId": "gram-ex-i2-curriculum-c",
+          "position": 49,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je réponds à les tiens.",
+        "cue": "On répond aux messages de la personne tutoyée. Le nom « messages » est au masculin pluriel.",
+        "answers": [
+          "Je réponds aux tiens."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 22,
+          "text": "à les tiens"
+        },
+        "responseLines": 2,
+        "explanation": "À + les tiens se contracte en aux tiens. Modèle : Je réponds aux tiens."
+      }
+    ]
+  }
+]

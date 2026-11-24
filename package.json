@@ -132,7 +132,9 @@
     "test:grammar:aliments": "node scripts/test-grammar-aliments.cjs && python3 scripts/test-grammar-aliments-build.py",
     "test:grammar:aliments:browser": "node tests/grammar/aliments-browser.mjs && node tests/grammar/aliments-pdf.mjs",
     "test:grammar:passe": "node scripts/test-grammar-passe.cjs && python3 scripts/test-grammar-passe-build.py",
-    "test:grammar:passe:browser": "node tests/grammar/passe-browser.mjs && node tests/grammar/passe-pdf.mjs"
+    "test:grammar:passe:browser": "node tests/grammar/passe-browser.mjs && node tests/grammar/passe-pdf.mjs",
+    "test:grammar:pronoms": "node scripts/test-grammar-pronoms.cjs && python3 scripts/test-grammar-pronoms-build.py",
+    "test:grammar:pronoms:browser": "node tests/grammar/pronoms-browser.mjs && node tests/grammar/pronoms-pdf.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

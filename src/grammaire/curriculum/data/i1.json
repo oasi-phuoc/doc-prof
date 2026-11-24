@@ -1,0 +1,3929 @@
+[
+  {
+    "schemaVersion": 1,
+    "revision": "pronoms-2026-11-24-v1",
+    "activityId": "gram-ex-i1-qcm-verbe",
+    "subthemeId": "i1",
+    "topic": "gram-pronoms",
+    "level": "A2",
+    "label": "Relier avec qui, que ou où",
+    "objective": "Relier deux propositions par qui, que/qu’ ou où selon le rôle du relatif.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Situations et références relues ; réemploi explicite entre mécaniques. Modèles ouverts non exclusifs. Aucune approbation pédagogique humaine déclarée."
+    },
+    "presentations": [
+      "choice",
+      "gap"
+    ],
+    "instructions": {
+      "choice": "Choisissez le relatif qui respecte la construction donnée.",
+      "gap": "Écrivez qui, que/qu’ ou où selon la construction donnée."
+    },
+    "units": [
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-voisine",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 0,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je salue la voisine ___ habite ici.",
+        "cue": "Le nom voisine désigne la personne qui accomplit l’action d’habiter.",
+        "answers": [
+          "qui"
+        ],
+        "options": [
+          {
+            "id": "voisine-choix-1",
+            "text": "qui"
+          },
+          {
+            "id": "voisine-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "voisine-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Le relatif est sujet de habite. Modèle : Je salue la voisine qui habite ici."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-bus",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 1,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je prends le bus ___ passe devant l’école.",
+        "cue": "Le bus est le sujet de la proposition ajoutée.",
+        "answers": [
+          "qui"
+        ],
+        "options": [
+          {
+            "id": "bus-choix-1",
+            "text": "qui"
+          },
+          {
+            "id": "bus-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "bus-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Le relatif est sujet de passe. Modèle : Je prends le bus qui passe devant l’école."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-vendeuse",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 2,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Voici la vendeuse ___ sert les clients.",
+        "cue": "La vendeuse accomplit l’action de servir.",
+        "answers": [
+          "qui"
+        ],
+        "options": [
+          {
+            "id": "vendeuse-choix-1",
+            "text": "qui"
+          },
+          {
+            "id": "vendeuse-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "vendeuse-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Le relatif est sujet de sert. Modèle : Voici la vendeuse qui sert les clients."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-livre",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 3,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je lis un livre ___ explique les règles.",
+        "cue": "Le livre est ce qui explique les règles.",
+        "answers": [
+          "qui"
+        ],
+        "options": [
+          {
+            "id": "livre-choix-1",
+            "text": "qui"
+          },
+          {
+            "id": "livre-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "livre-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Le relatif est sujet de explique. Modèle : Je lis un livre qui explique les règles."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-chien",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 4,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je regarde le chien ___ court dans le parc.",
+        "cue": "Le chien accomplit l’action de courir.",
+        "answers": [
+          "qui"
+        ],
+        "options": [
+          {
+            "id": "chien-choix-1",
+            "text": "qui"
+          },
+          {
+            "id": "chien-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "chien-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Le relatif est sujet de court. Modèle : Je regarde le chien qui court dans le parc."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-affiche",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 5,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous lisons l’affiche ___ annonce le concert.",
+        "cue": "L’affiche annonce le concert.",
+        "answers": [
+          "qui"
+        ],
+        "options": [
+          {
+            "id": "affiche-choix-1",
+            "text": "qui"
+          },
+          {
+            "id": "affiche-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "affiche-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Le relatif est sujet de annonce. Modèle : Nous lisons l’affiche qui annonce le concert."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-eleves",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 6,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je vois les élèves ___ attendent devant la salle.",
+        "cue": "Les élèves sont les personnes qui attendent.",
+        "answers": [
+          "qui"
+        ],
+        "options": [
+          {
+            "id": "eleves-choix-1",
+            "text": "qui"
+          },
+          {
+            "id": "eleves-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "eleves-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Le relatif est sujet de attendent. Modèle : Je vois les élèves qui attendent devant la salle."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-train",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 7,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "C’est le train ___ relie Sion à Lausanne.",
+        "cue": "Le train relie deux villes.",
+        "answers": [
+          "qui"
+        ],
+        "options": [
+          {
+            "id": "train-choix-1",
+            "text": "qui"
+          },
+          {
+            "id": "train-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "train-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Le relatif est sujet de relie. Modèle : C’est le train qui relie Sion à Lausanne."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-plantes",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 8,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "J’arrose les plantes ___ ont besoin d’eau.",
+        "cue": "Les plantes ont besoin d’eau.",
+        "answers": [
+          "qui"
+        ],
+        "options": [
+          {
+            "id": "plantes-choix-1",
+            "text": "qui"
+          },
+          {
+            "id": "plantes-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "plantes-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Le relatif est sujet de ont. Modèle : J’arrose les plantes qui ont besoin d’eau."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-collegue",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 9,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je remercie la collègue ___ ouvre le local.",
+        "cue": "La collègue ouvre le local.",
+        "answers": [
+          "qui"
+        ],
+        "options": [
+          {
+            "id": "collegue-choix-1",
+            "text": "qui"
+          },
+          {
+            "id": "collegue-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "collegue-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Le relatif est sujet de ouvre. Modèle : Je remercie la collègue qui ouvre le local."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-porte",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 10,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous réparons la porte ___ donne sur la cour.",
+        "cue": "La porte donne sur la cour.",
+        "answers": [
+          "qui"
+        ],
+        "options": [
+          {
+            "id": "porte-choix-1",
+            "text": "qui"
+          },
+          {
+            "id": "porte-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "porte-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Le relatif est sujet de donne. Modèle : Nous réparons la porte qui donne sur la cour."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-equipe",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 11,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je connais l’équipe ___ organise la fête.",
+        "cue": "L’équipe organise la fête.",
+        "answers": [
+          "qui"
+        ],
+        "options": [
+          {
+            "id": "equipe-choix-1",
+            "text": "qui"
+          },
+          {
+            "id": "equipe-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "equipe-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Le relatif est sujet de organise. Modèle : Je connais l’équipe qui organise la fête."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-message",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 12,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu gardes le message ___ confirme le rendez-vous.",
+        "cue": "Le message confirme le rendez-vous.",
+        "answers": [
+          "qui"
+        ],
+        "options": [
+          {
+            "id": "message-choix-1",
+            "text": "qui"
+          },
+          {
+            "id": "message-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "message-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Le relatif est sujet de confirme. Modèle : Tu gardes le message qui confirme le rendez-vous."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-personnes",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 13,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous accueillons les personnes ___ apportent le matériel.",
+        "cue": "Les personnes apportent le matériel.",
+        "answers": [
+          "qui"
+        ],
+        "options": [
+          {
+            "id": "personnes-choix-1",
+            "text": "qui"
+          },
+          {
+            "id": "personnes-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "personnes-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Le relatif est sujet de apportent. Modèle : Nous accueillons les personnes qui apportent le matériel."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-cle",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 14,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je cherche la clé ___ ouvre cette armoire.",
+        "cue": "La clé ouvre cette armoire.",
+        "answers": [
+          "qui"
+        ],
+        "options": [
+          {
+            "id": "cle-choix-1",
+            "text": "qui"
+          },
+          {
+            "id": "cle-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "cle-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Le relatif est sujet de ouvre. Modèle : Je cherche la clé qui ouvre cette armoire."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-soupe",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 15,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je goûte la soupe ___ tu prépares.",
+        "cue": "La soupe est le complément direct de prépare, pas son sujet.",
+        "answers": [
+          "que"
+        ],
+        "options": [
+          {
+            "id": "soupe-choix-1",
+            "text": "que"
+          },
+          {
+            "id": "soupe-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "soupe-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Tu est le sujet ; le relatif reprend le COD. Modèle : Je goûte la soupe que tu prépares."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-film",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 16,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Voici le film ___ nous regardons.",
+        "cue": "Le film est le complément direct de regardons.",
+        "answers": [
+          "que"
+        ],
+        "options": [
+          {
+            "id": "film-choix-1",
+            "text": "que"
+          },
+          {
+            "id": "film-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "film-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Nous est le sujet ; le relatif reprend le COD. Modèle : Voici le film que nous regardons."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-velo",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 17,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je récupère le vélo ___ le mécanicien répare.",
+        "cue": "Le vélo est le complément direct de répare.",
+        "answers": [
+          "que"
+        ],
+        "options": [
+          {
+            "id": "velo-choix-1",
+            "text": "que"
+          },
+          {
+            "id": "velo-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "velo-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Le mécanicien est le sujet ; le relatif est COD. Modèle : Je récupère le vélo que le mécanicien répare."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-chanson",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 18,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je connais la chanson ___ la classe chante.",
+        "cue": "La chanson est le complément direct de chante.",
+        "answers": [
+          "que"
+        ],
+        "options": [
+          {
+            "id": "chanson-choix-1",
+            "text": "que"
+          },
+          {
+            "id": "chanson-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "chanson-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "La classe est le sujet ; le relatif est COD. Modèle : Je connais la chanson que la classe chante."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-legumes",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 19,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je lave les légumes ___ les élèves coupent.",
+        "cue": "Les légumes sont le complément direct de coupent.",
+        "answers": [
+          "que"
+        ],
+        "options": [
+          {
+            "id": "legumes-choix-1",
+            "text": "que"
+          },
+          {
+            "id": "legumes-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "legumes-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Le groupe « les élèves » est le sujet ; le relatif est COD. Modèle : Je lave les légumes que les élèves coupent."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-lettre",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 20,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je relis la lettre ___ vous signez.",
+        "cue": "La lettre est ce que vous signez.",
+        "answers": [
+          "que"
+        ],
+        "options": [
+          {
+            "id": "lettre-choix-1",
+            "text": "que"
+          },
+          {
+            "id": "lettre-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "lettre-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Vous est le sujet ; le relatif est COD. Modèle : Je relis la lettre que vous signez."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-plan",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 21,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous suivons le plan ___ la guide dessine.",
+        "cue": "Le plan est le complément direct de dessine.",
+        "answers": [
+          "que"
+        ],
+        "options": [
+          {
+            "id": "plan-choix-1",
+            "text": "que"
+          },
+          {
+            "id": "plan-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "plan-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "La guide est le sujet ; le relatif est COD. Modèle : Nous suivons le plan que la guide dessine."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-table",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 22,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je déplace la table ___ mon voisin nettoie.",
+        "cue": "La table est le complément direct de nettoie.",
+        "answers": [
+          "que"
+        ],
+        "options": [
+          {
+            "id": "table-choix-1",
+            "text": "que"
+          },
+          {
+            "id": "table-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "table-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Mon voisin est le sujet ; le relatif est COD. Modèle : Je déplace la table que mon voisin nettoie."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-livres",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 23,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Voici les livres ___ vous choisissez.",
+        "cue": "Les livres sont le complément direct de choisissez.",
+        "answers": [
+          "que"
+        ],
+        "options": [
+          {
+            "id": "livres-choix-1",
+            "text": "que"
+          },
+          {
+            "id": "livres-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "livres-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Vous est le sujet ; le relatif est COD. Modèle : Voici les livres que vous choisissez."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-dossier",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 24,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "C’est le dossier ___ nous cherchons.",
+        "cue": "Le dossier est le complément direct de cherchons.",
+        "answers": [
+          "que"
+        ],
+        "options": [
+          {
+            "id": "dossier-choix-1",
+            "text": "que"
+          },
+          {
+            "id": "dossier-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "dossier-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Nous est le sujet ; le relatif est COD. Modèle : C’est le dossier que nous cherchons."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-maison",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 25,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Voici la maison ___ les ouvriers construisent.",
+        "cue": "La maison est ce que les ouvriers construisent ; il ne s’agit pas du lieu d’une autre action.",
+        "answers": [
+          "que"
+        ],
+        "options": [
+          {
+            "id": "maison-choix-1",
+            "text": "que"
+          },
+          {
+            "id": "maison-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "maison-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Le groupe « les ouvriers » est le sujet ; le relatif est COD. Modèle : Voici la maison que les ouvriers construisent."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-billets",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 26,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je paie les billets ___ tu réserves.",
+        "cue": "Les billets sont le complément direct de réserves.",
+        "answers": [
+          "que"
+        ],
+        "options": [
+          {
+            "id": "billets-choix-1",
+            "text": "que"
+          },
+          {
+            "id": "billets-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "billets-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Tu est le sujet ; le relatif est COD. Modèle : Je paie les billets que tu réserves."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-valise",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 27,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je vois la valise ___ cette personne porte.",
+        "cue": "La valise est ce que cette personne porte.",
+        "answers": [
+          "que"
+        ],
+        "options": [
+          {
+            "id": "valise-choix-1",
+            "text": "que"
+          },
+          {
+            "id": "valise-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "valise-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Cette personne est le sujet ; le relatif est COD. Modèle : Je vois la valise que cette personne porte."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-photos",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 28,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je retrouve les photos ___ nous montrons.",
+        "cue": "Les photos sont ce que nous montrons.",
+        "answers": [
+          "que"
+        ],
+        "options": [
+          {
+            "id": "photos-choix-1",
+            "text": "que"
+          },
+          {
+            "id": "photos-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "photos-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Nous est le sujet ; le relatif est COD. Modèle : Je retrouve les photos que nous montrons."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-ville-visite",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 29,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "C’est la ville ___ le groupe visite.",
+        "cue": "La ville est le complément direct de visite ; la phrase ne dit pas où se déroule une autre action.",
+        "answers": [
+          "que"
+        ],
+        "options": [
+          {
+            "id": "ville-visite-choix-1",
+            "text": "que"
+          },
+          {
+            "id": "ville-visite-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "ville-visite-choix-3",
+            "text": "où"
+          }
+        ],
+        "explanation": "Le groupe est le sujet ; le relatif est COD. Modèle : C’est la ville que le groupe visite."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-roman",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 30,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Voici le roman ___elle lit.",
+        "cue": "Le roman est le complément direct de lis ; le mot suivant commence par une voyelle.",
+        "answers": [
+          "qu’"
+        ],
+        "options": [
+          {
+            "id": "roman-choix-1",
+            "text": "qu’"
+          },
+          {
+            "id": "roman-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "roman-choix-3",
+            "text": "qui"
+          }
+        ],
+        "explanation": "Que s’élide devant elle. Modèle : Voici le roman qu’elle lit."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-adresse",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 31,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je garde l’adresse ___ils utilisent.",
+        "cue": "L’adresse est ce que nous utilisons ; le mot suivant commence par une voyelle.",
+        "answers": [
+          "qu’"
+        ],
+        "options": [
+          {
+            "id": "adresse-choix-1",
+            "text": "qu’"
+          },
+          {
+            "id": "adresse-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "adresse-choix-3",
+            "text": "qui"
+          }
+        ],
+        "explanation": "Que s’élide devant ils. Modèle : Je garde l’adresse qu’ils utilisent."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-exercice",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 32,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "C’est l’exercice ___il termine.",
+        "cue": "L’exercice est le complément direct de termine.",
+        "answers": [
+          "qu’"
+        ],
+        "options": [
+          {
+            "id": "exercice-choix-1",
+            "text": "qu’"
+          },
+          {
+            "id": "exercice-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "exercice-choix-3",
+            "text": "qui"
+          }
+        ],
+        "explanation": "Que s’élide devant il. Modèle : C’est l’exercice qu’il termine."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-gateau",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 33,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je coupe le gâteau ___elle partage.",
+        "cue": "Le gâteau est le complément direct de partage.",
+        "answers": [
+          "qu’"
+        ],
+        "options": [
+          {
+            "id": "gateau-choix-1",
+            "text": "qu’"
+          },
+          {
+            "id": "gateau-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "gateau-choix-3",
+            "text": "qui"
+          }
+        ],
+        "explanation": "Que s’élide devant elle. Modèle : Je coupe le gâteau qu’elle partage."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-cle-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 34,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Voici la clé ___on cherche.",
+        "cue": "La clé est le complément direct de cherche.",
+        "answers": [
+          "qu’"
+        ],
+        "options": [
+          {
+            "id": "cle-objet-choix-1",
+            "text": "qu’"
+          },
+          {
+            "id": "cle-objet-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "cle-objet-choix-3",
+            "text": "qui"
+          }
+        ],
+        "explanation": "Que s’élide devant on. Modèle : Voici la clé qu’on cherche."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-plats",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 35,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je prépare les plats ___elle apporte.",
+        "cue": "Les plats sont le complément direct de apporte.",
+        "answers": [
+          "qu’"
+        ],
+        "options": [
+          {
+            "id": "plats-choix-1",
+            "text": "qu’"
+          },
+          {
+            "id": "plats-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "plats-choix-3",
+            "text": "qui"
+          }
+        ],
+        "explanation": "Que s’élide devant elle. Modèle : Je prépare les plats qu’elle apporte."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 36,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "C’est l’objet ___il répare.",
+        "cue": "L’objet est le complément direct de répare.",
+        "answers": [
+          "qu’"
+        ],
+        "options": [
+          {
+            "id": "objet-choix-1",
+            "text": "qu’"
+          },
+          {
+            "id": "objet-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "objet-choix-3",
+            "text": "qui"
+          }
+        ],
+        "explanation": "Que s’élide devant il. Modèle : C’est l’objet qu’il répare."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-horaires",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 37,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je vérifie les horaires ___on affiche.",
+        "cue": "Les horaires sont ce que nous affichons.",
+        "answers": [
+          "qu’"
+        ],
+        "options": [
+          {
+            "id": "horaires-choix-1",
+            "text": "qu’"
+          },
+          {
+            "id": "horaires-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "horaires-choix-3",
+            "text": "qui"
+          }
+        ],
+        "explanation": "Que s’élide devant on. Modèle : Je vérifie les horaires qu’on affiche."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-lettres",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 38,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Voici les lettres ___elles reçoivent.",
+        "cue": "Les lettres sont ce que les destinataires reçoivent.",
+        "answers": [
+          "qu’"
+        ],
+        "options": [
+          {
+            "id": "lettres-choix-1",
+            "text": "qu’"
+          },
+          {
+            "id": "lettres-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "lettres-choix-3",
+            "text": "qui"
+          }
+        ],
+        "explanation": "Que s’élide devant elles. Modèle : Voici les lettres qu’elles reçoivent."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-repas",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 39,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je paie le repas ___il prépare.",
+        "cue": "Le repas est le complément direct de prépare.",
+        "answers": [
+          "qu’"
+        ],
+        "options": [
+          {
+            "id": "repas-choix-1",
+            "text": "qu’"
+          },
+          {
+            "id": "repas-choix-2",
+            "text": "que"
+          },
+          {
+            "id": "repas-choix-3",
+            "text": "qui"
+          }
+        ],
+        "explanation": "Que s’élide devant il. Modèle : Je paie le repas qu’il prépare."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-quartier",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 40,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "C’est le quartier ___ nous résidons.",
+        "cue": "Le quartier est le lieu d’habitation, pas le COD du verbe résider.",
+        "answers": [
+          "où"
+        ],
+        "options": [
+          {
+            "id": "quartier-choix-1",
+            "text": "où"
+          },
+          {
+            "id": "quartier-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "quartier-choix-3",
+            "text": "que"
+          }
+        ],
+        "explanation": "Où reprend le lieu introduit par dans. Modèle : C’est le quartier où nous résidons."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 41,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Voici l’école ___ ma sœur travaille.",
+        "cue": "L’école est le lieu du travail, pas le sujet de travaille.",
+        "answers": [
+          "où"
+        ],
+        "options": [
+          {
+            "id": "ecole-choix-1",
+            "text": "où"
+          },
+          {
+            "id": "ecole-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "ecole-choix-3",
+            "text": "que"
+          }
+        ],
+        "explanation": "Où reprend un lieu. Modèle : Voici l’école où ma sœur travaille."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-salle",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 42,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je nettoie la salle ___ le groupe répète.",
+        "cue": "La salle est le lieu de répétition.",
+        "answers": [
+          "où"
+        ],
+        "options": [
+          {
+            "id": "salle-choix-1",
+            "text": "où"
+          },
+          {
+            "id": "salle-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "salle-choix-3",
+            "text": "que"
+          }
+        ],
+        "explanation": "Où reprend un lieu. Modèle : Je nettoie la salle où le groupe répète."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-parc",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 43,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous traversons le parc ___ les enfants jouent.",
+        "cue": "Le parc est le lieu du jeu.",
+        "answers": [
+          "où"
+        ],
+        "options": [
+          {
+            "id": "parc-choix-1",
+            "text": "où"
+          },
+          {
+            "id": "parc-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "parc-choix-3",
+            "text": "que"
+          }
+        ],
+        "explanation": "Où reprend un lieu. Modèle : Nous traversons le parc où les enfants jouent."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-cafe",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 44,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Voici le café ___ nous avons rendez-vous.",
+        "cue": "Le café est le lieu du rendez-vous.",
+        "answers": [
+          "où"
+        ],
+        "options": [
+          {
+            "id": "cafe-choix-1",
+            "text": "où"
+          },
+          {
+            "id": "cafe-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "cafe-choix-3",
+            "text": "que"
+          }
+        ],
+        "explanation": "Où reprend un lieu. Modèle : Voici le café où nous avons rendez-vous."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-bureau",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 45,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "C’est le bureau ___ le secrétariat travaille.",
+        "cue": "Le bureau est le lieu du travail du secrétariat.",
+        "answers": [
+          "où"
+        ],
+        "options": [
+          {
+            "id": "bureau-choix-1",
+            "text": "où"
+          },
+          {
+            "id": "bureau-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "bureau-choix-3",
+            "text": "que"
+          }
+        ],
+        "explanation": "Où reprend un lieu. Modèle : C’est le bureau où le secrétariat travaille."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-jour",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 46,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je me souviens du jour ___ nous avons fait connaissance.",
+        "cue": "Le jour est un repère de temps auquel la rencontre a eu lieu.",
+        "answers": [
+          "où"
+        ],
+        "options": [
+          {
+            "id": "jour-choix-1",
+            "text": "où"
+          },
+          {
+            "id": "jour-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "jour-choix-3",
+            "text": "que"
+          }
+        ],
+        "explanation": "Où peut reprendre un repère de temps. Modèle : Je me souviens du jour où nous avons fait connaissance."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-moment",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 47,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Voici le moment ___ le car est arrivé.",
+        "cue": "Le moment est le repère de l’arrivée du car.",
+        "answers": [
+          "où"
+        ],
+        "options": [
+          {
+            "id": "moment-choix-1",
+            "text": "où"
+          },
+          {
+            "id": "moment-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "moment-choix-3",
+            "text": "que"
+          }
+        ],
+        "explanation": "Où reprend un repère de temps. Modèle : Voici le moment où le car est arrivé."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-hotel",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 48,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous retrouvons l’hôtel ___ nous avons dormi.",
+        "cue": "L’hôtel est le lieu du séjour.",
+        "answers": [
+          "où"
+        ],
+        "options": [
+          {
+            "id": "hotel-choix-1",
+            "text": "où"
+          },
+          {
+            "id": "hotel-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "hotel-choix-3",
+            "text": "que"
+          }
+        ],
+        "explanation": "Où reprend un lieu. Modèle : Nous retrouvons l’hôtel où nous avons dormi."
+      },
+      {
+        "id": "gram-ex-i1-qcm-verbe-a2-village",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-qcm-verbe",
+          "position": 49,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je visite le village ___ mes grands-parents vivent.",
+        "cue": "Le village est le lieu de résidence des grands-parents.",
+        "answers": [
+          "où"
+        ],
+        "options": [
+          {
+            "id": "village-choix-1",
+            "text": "où"
+          },
+          {
+            "id": "village-choix-2",
+            "text": "qui"
+          },
+          {
+            "id": "village-choix-3",
+            "text": "que"
+          }
+        ],
+        "explanation": "Où reprend un lieu. Modèle : Je visite le village où mes grands-parents vivent."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "pronoms-2026-11-24-v1",
+    "activityId": "gram-ex-i1-curriculum-a",
+    "subthemeId": "i1",
+    "topic": "gram-pronoms",
+    "level": "A2",
+    "label": "Associer",
+    "objective": "Relier deux propositions par qui, que/qu’ ou où selon le rôle du relatif.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Situations et références relues ; réemploi explicite entre mécaniques. Modèles ouverts non exclusifs. Aucune approbation pédagogique humaine déclarée."
+    },
+    "presentations": [
+      "match"
+    ],
+    "instructions": {
+      "match": "Associez chaque phrase au relatif qui convient à sa construction."
+    },
+    "units": [
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-voisine",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 0,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "voisine-paire-1",
+            "left": "Le nom voisine désigne la personne qui accomplit l’action d’habiter. Je salue la voisine ___ habite ici.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:voisine"
+          },
+          {
+            "id": "voisine-paire-2",
+            "left": "La soupe est le complément direct de prépare, pas son sujet. Je goûte la soupe ___ tu prépares.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:soupe"
+          }
+        ],
+        "answers": [
+          "Je salue la voisine qui habite ici.\nJe goûte la soupe que tu prépares."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-bus",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 1,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "bus-paire-1",
+            "left": "Le bus est le sujet de la proposition ajoutée. Je prends le bus ___ passe devant l’école.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:bus"
+          },
+          {
+            "id": "bus-paire-2",
+            "left": "La soupe est le complément direct de prépare, pas son sujet. Je goûte la soupe ___ tu prépares.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:soupe"
+          }
+        ],
+        "answers": [
+          "Je prends le bus qui passe devant l’école.\nJe goûte la soupe que tu prépares."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-vendeuse",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 2,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "vendeuse-paire-1",
+            "left": "La vendeuse accomplit l’action de servir. Voici la vendeuse ___ sert les clients.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:vendeuse"
+          },
+          {
+            "id": "vendeuse-paire-2",
+            "left": "La soupe est le complément direct de prépare, pas son sujet. Je goûte la soupe ___ tu prépares.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:soupe"
+          }
+        ],
+        "answers": [
+          "Voici la vendeuse qui sert les clients.\nJe goûte la soupe que tu prépares."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-livre",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 3,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "livre-paire-1",
+            "left": "Le livre est ce qui explique les règles. Je lis un livre ___ explique les règles.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:livre"
+          },
+          {
+            "id": "livre-paire-2",
+            "left": "La soupe est le complément direct de prépare, pas son sujet. Je goûte la soupe ___ tu prépares.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:soupe"
+          }
+        ],
+        "answers": [
+          "Je lis un livre qui explique les règles.\nJe goûte la soupe que tu prépares."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-chien",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 4,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "chien-paire-1",
+            "left": "Le chien accomplit l’action de courir. Je regarde le chien ___ court dans le parc.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:chien"
+          },
+          {
+            "id": "chien-paire-2",
+            "left": "La soupe est le complément direct de prépare, pas son sujet. Je goûte la soupe ___ tu prépares.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:soupe"
+          }
+        ],
+        "answers": [
+          "Je regarde le chien qui court dans le parc.\nJe goûte la soupe que tu prépares."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-affiche",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 5,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "affiche-paire-1",
+            "left": "L’affiche annonce le concert. Nous lisons l’affiche ___ annonce le concert.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:affiche"
+          },
+          {
+            "id": "affiche-paire-2",
+            "left": "La soupe est le complément direct de prépare, pas son sujet. Je goûte la soupe ___ tu prépares.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:soupe"
+          }
+        ],
+        "answers": [
+          "Nous lisons l’affiche qui annonce le concert.\nJe goûte la soupe que tu prépares."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-eleves",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 6,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "eleves-paire-1",
+            "left": "Les élèves sont les personnes qui attendent. Je vois les élèves ___ attendent devant la salle.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:eleves"
+          },
+          {
+            "id": "eleves-paire-2",
+            "left": "La soupe est le complément direct de prépare, pas son sujet. Je goûte la soupe ___ tu prépares.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:soupe"
+          }
+        ],
+        "answers": [
+          "Je vois les élèves qui attendent devant la salle.\nJe goûte la soupe que tu prépares."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-train",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 7,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "train-paire-1",
+            "left": "Le train relie deux villes. C’est le train ___ relie Sion à Lausanne.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:train"
+          },
+          {
+            "id": "train-paire-2",
+            "left": "La soupe est le complément direct de prépare, pas son sujet. Je goûte la soupe ___ tu prépares.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:soupe"
+          }
+        ],
+        "answers": [
+          "C’est le train qui relie Sion à Lausanne.\nJe goûte la soupe que tu prépares."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-plantes",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 8,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "plantes-paire-1",
+            "left": "Les plantes ont besoin d’eau. J’arrose les plantes ___ ont besoin d’eau.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:plantes"
+          },
+          {
+            "id": "plantes-paire-2",
+            "left": "La soupe est le complément direct de prépare, pas son sujet. Je goûte la soupe ___ tu prépares.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:soupe"
+          }
+        ],
+        "answers": [
+          "J’arrose les plantes qui ont besoin d’eau.\nJe goûte la soupe que tu prépares."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-collegue",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 9,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "collegue-paire-1",
+            "left": "La collègue ouvre le local. Je remercie la collègue ___ ouvre le local.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:collegue"
+          },
+          {
+            "id": "collegue-paire-2",
+            "left": "La soupe est le complément direct de prépare, pas son sujet. Je goûte la soupe ___ tu prépares.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:soupe"
+          }
+        ],
+        "answers": [
+          "Je remercie la collègue qui ouvre le local.\nJe goûte la soupe que tu prépares."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-porte",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 10,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "porte-paire-1",
+            "left": "La porte donne sur la cour. Nous réparons la porte ___ donne sur la cour.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:porte"
+          },
+          {
+            "id": "porte-paire-2",
+            "left": "La soupe est le complément direct de prépare, pas son sujet. Je goûte la soupe ___ tu prépares.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:soupe"
+          }
+        ],
+        "answers": [
+          "Nous réparons la porte qui donne sur la cour.\nJe goûte la soupe que tu prépares."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-equipe",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 11,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "equipe-paire-1",
+            "left": "L’équipe organise la fête. Je connais l’équipe ___ organise la fête.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:equipe"
+          },
+          {
+            "id": "equipe-paire-2",
+            "left": "La soupe est le complément direct de prépare, pas son sujet. Je goûte la soupe ___ tu prépares.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:soupe"
+          }
+        ],
+        "answers": [
+          "Je connais l’équipe qui organise la fête.\nJe goûte la soupe que tu prépares."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-message",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 12,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "message-paire-1",
+            "left": "Le message confirme le rendez-vous. Tu gardes le message ___ confirme le rendez-vous.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:message"
+          },
+          {
+            "id": "message-paire-2",
+            "left": "La soupe est le complément direct de prépare, pas son sujet. Je goûte la soupe ___ tu prépares.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:soupe"
+          }
+        ],
+        "answers": [
+          "Tu gardes le message qui confirme le rendez-vous.\nJe goûte la soupe que tu prépares."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-personnes",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 13,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "personnes-paire-1",
+            "left": "Les personnes apportent le matériel. Nous accueillons les personnes ___ apportent le matériel.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:personnes"
+          },
+          {
+            "id": "personnes-paire-2",
+            "left": "La soupe est le complément direct de prépare, pas son sujet. Je goûte la soupe ___ tu prépares.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:soupe"
+          }
+        ],
+        "answers": [
+          "Nous accueillons les personnes qui apportent le matériel.\nJe goûte la soupe que tu prépares."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-cle",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 14,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "cle-paire-1",
+            "left": "La clé ouvre cette armoire. Je cherche la clé ___ ouvre cette armoire.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:cle"
+          },
+          {
+            "id": "cle-paire-2",
+            "left": "La soupe est le complément direct de prépare, pas son sujet. Je goûte la soupe ___ tu prépares.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:soupe"
+          }
+        ],
+        "answers": [
+          "Je cherche la clé qui ouvre cette armoire.\nJe goûte la soupe que tu prépares."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-soupe",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 15,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "soupe-paire-1",
+            "left": "La soupe est le complément direct de prépare, pas son sujet. Je goûte la soupe ___ tu prépares.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:soupe"
+          },
+          {
+            "id": "soupe-paire-2",
+            "left": "Le roman est le complément direct de lis ; le mot suivant commence par une voyelle. Voici le roman ___elle lit.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:roman"
+          }
+        ],
+        "answers": [
+          "Je goûte la soupe que tu prépares.\nVoici le roman qu’elle lit."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-film",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 16,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "film-paire-1",
+            "left": "Le film est le complément direct de regardons. Voici le film ___ nous regardons.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:film"
+          },
+          {
+            "id": "film-paire-2",
+            "left": "Le roman est le complément direct de lis ; le mot suivant commence par une voyelle. Voici le roman ___elle lit.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:roman"
+          }
+        ],
+        "answers": [
+          "Voici le film que nous regardons.\nVoici le roman qu’elle lit."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-velo",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 17,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "velo-paire-1",
+            "left": "Le vélo est le complément direct de répare. Je récupère le vélo ___ le mécanicien répare.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:velo"
+          },
+          {
+            "id": "velo-paire-2",
+            "left": "Le roman est le complément direct de lis ; le mot suivant commence par une voyelle. Voici le roman ___elle lit.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:roman"
+          }
+        ],
+        "answers": [
+          "Je récupère le vélo que le mécanicien répare.\nVoici le roman qu’elle lit."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-chanson",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 18,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "chanson-paire-1",
+            "left": "La chanson est le complément direct de chante. Je connais la chanson ___ la classe chante.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:chanson"
+          },
+          {
+            "id": "chanson-paire-2",
+            "left": "Le roman est le complément direct de lis ; le mot suivant commence par une voyelle. Voici le roman ___elle lit.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:roman"
+          }
+        ],
+        "answers": [
+          "Je connais la chanson que la classe chante.\nVoici le roman qu’elle lit."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-legumes",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 19,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "legumes-paire-1",
+            "left": "Les légumes sont le complément direct de coupent. Je lave les légumes ___ les élèves coupent.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:legumes"
+          },
+          {
+            "id": "legumes-paire-2",
+            "left": "Le roman est le complément direct de lis ; le mot suivant commence par une voyelle. Voici le roman ___elle lit.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:roman"
+          }
+        ],
+        "answers": [
+          "Je lave les légumes que les élèves coupent.\nVoici le roman qu’elle lit."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-lettre",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 20,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "lettre-paire-1",
+            "left": "La lettre est ce que vous signez. Je relis la lettre ___ vous signez.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:lettre"
+          },
+          {
+            "id": "lettre-paire-2",
+            "left": "Le roman est le complément direct de lis ; le mot suivant commence par une voyelle. Voici le roman ___elle lit.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:roman"
+          }
+        ],
+        "answers": [
+          "Je relis la lettre que vous signez.\nVoici le roman qu’elle lit."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-plan",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 21,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "plan-paire-1",
+            "left": "Le plan est le complément direct de dessine. Nous suivons le plan ___ la guide dessine.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:plan"
+          },
+          {
+            "id": "plan-paire-2",
+            "left": "Le roman est le complément direct de lis ; le mot suivant commence par une voyelle. Voici le roman ___elle lit.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:roman"
+          }
+        ],
+        "answers": [
+          "Nous suivons le plan que la guide dessine.\nVoici le roman qu’elle lit."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-table",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 22,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "table-paire-1",
+            "left": "La table est le complément direct de nettoie. Je déplace la table ___ mon voisin nettoie.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:table"
+          },
+          {
+            "id": "table-paire-2",
+            "left": "Le roman est le complément direct de lis ; le mot suivant commence par une voyelle. Voici le roman ___elle lit.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:roman"
+          }
+        ],
+        "answers": [
+          "Je déplace la table que mon voisin nettoie.\nVoici le roman qu’elle lit."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-livres",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 23,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "livres-paire-1",
+            "left": "Les livres sont le complément direct de choisissez. Voici les livres ___ vous choisissez.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:livres"
+          },
+          {
+            "id": "livres-paire-2",
+            "left": "Le roman est le complément direct de lis ; le mot suivant commence par une voyelle. Voici le roman ___elle lit.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:roman"
+          }
+        ],
+        "answers": [
+          "Voici les livres que vous choisissez.\nVoici le roman qu’elle lit."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-dossier",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 24,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "dossier-paire-1",
+            "left": "Le dossier est le complément direct de cherchons. C’est le dossier ___ nous cherchons.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:dossier"
+          },
+          {
+            "id": "dossier-paire-2",
+            "left": "Le roman est le complément direct de lis ; le mot suivant commence par une voyelle. Voici le roman ___elle lit.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:roman"
+          }
+        ],
+        "answers": [
+          "C’est le dossier que nous cherchons.\nVoici le roman qu’elle lit."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-maison",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 25,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "maison-paire-1",
+            "left": "La maison est ce que les ouvriers construisent ; il ne s’agit pas du lieu d’une autre action. Voici la maison ___ les ouvriers construisent.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:maison"
+          },
+          {
+            "id": "maison-paire-2",
+            "left": "Le roman est le complément direct de lis ; le mot suivant commence par une voyelle. Voici le roman ___elle lit.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:roman"
+          }
+        ],
+        "answers": [
+          "Voici la maison que les ouvriers construisent.\nVoici le roman qu’elle lit."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-billets",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 26,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "billets-paire-1",
+            "left": "Les billets sont le complément direct de réserves. Je paie les billets ___ tu réserves.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:billets"
+          },
+          {
+            "id": "billets-paire-2",
+            "left": "Le roman est le complément direct de lis ; le mot suivant commence par une voyelle. Voici le roman ___elle lit.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:roman"
+          }
+        ],
+        "answers": [
+          "Je paie les billets que tu réserves.\nVoici le roman qu’elle lit."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-valise",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 27,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "valise-paire-1",
+            "left": "La valise est ce que cette personne porte. Je vois la valise ___ cette personne porte.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:valise"
+          },
+          {
+            "id": "valise-paire-2",
+            "left": "Le roman est le complément direct de lis ; le mot suivant commence par une voyelle. Voici le roman ___elle lit.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:roman"
+          }
+        ],
+        "answers": [
+          "Je vois la valise que cette personne porte.\nVoici le roman qu’elle lit."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-photos",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 28,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "photos-paire-1",
+            "left": "Les photos sont ce que nous montrons. Je retrouve les photos ___ nous montrons.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:photos"
+          },
+          {
+            "id": "photos-paire-2",
+            "left": "Le roman est le complément direct de lis ; le mot suivant commence par une voyelle. Voici le roman ___elle lit.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:roman"
+          }
+        ],
+        "answers": [
+          "Je retrouve les photos que nous montrons.\nVoici le roman qu’elle lit."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-ville-visite",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 29,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "ville-visite-paire-1",
+            "left": "La ville est le complément direct de visite ; la phrase ne dit pas où se déroule une autre action. C’est la ville ___ le groupe visite.",
+            "right": "que",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:ville-visite"
+          },
+          {
+            "id": "ville-visite-paire-2",
+            "left": "Le roman est le complément direct de lis ; le mot suivant commence par une voyelle. Voici le roman ___elle lit.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:roman"
+          }
+        ],
+        "answers": [
+          "C’est la ville que le groupe visite.\nVoici le roman qu’elle lit."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-roman",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 30,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "roman-paire-1",
+            "left": "Le roman est le complément direct de lis ; le mot suivant commence par une voyelle. Voici le roman ___elle lit.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:roman"
+          },
+          {
+            "id": "roman-paire-2",
+            "left": "Le quartier est le lieu d’habitation, pas le COD du verbe résider. C’est le quartier ___ nous résidons.",
+            "right": "où",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:quartier"
+          }
+        ],
+        "answers": [
+          "Voici le roman qu’elle lit.\nC’est le quartier où nous résidons."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-adresse",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 31,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "adresse-paire-1",
+            "left": "L’adresse est ce que nous utilisons ; le mot suivant commence par une voyelle. Je garde l’adresse ___ils utilisent.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:adresse"
+          },
+          {
+            "id": "adresse-paire-2",
+            "left": "Le quartier est le lieu d’habitation, pas le COD du verbe résider. C’est le quartier ___ nous résidons.",
+            "right": "où",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:quartier"
+          }
+        ],
+        "answers": [
+          "Je garde l’adresse qu’ils utilisent.\nC’est le quartier où nous résidons."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-exercice",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 32,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "exercice-paire-1",
+            "left": "L’exercice est le complément direct de termine. C’est l’exercice ___il termine.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:exercice"
+          },
+          {
+            "id": "exercice-paire-2",
+            "left": "Le quartier est le lieu d’habitation, pas le COD du verbe résider. C’est le quartier ___ nous résidons.",
+            "right": "où",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:quartier"
+          }
+        ],
+        "answers": [
+          "C’est l’exercice qu’il termine.\nC’est le quartier où nous résidons."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-gateau",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 33,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "gateau-paire-1",
+            "left": "Le gâteau est le complément direct de partage. Je coupe le gâteau ___elle partage.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:gateau"
+          },
+          {
+            "id": "gateau-paire-2",
+            "left": "Le quartier est le lieu d’habitation, pas le COD du verbe résider. C’est le quartier ___ nous résidons.",
+            "right": "où",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:quartier"
+          }
+        ],
+        "answers": [
+          "Je coupe le gâteau qu’elle partage.\nC’est le quartier où nous résidons."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-cle-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 34,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "cle-objet-paire-1",
+            "left": "La clé est le complément direct de cherche. Voici la clé ___on cherche.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:cle-objet"
+          },
+          {
+            "id": "cle-objet-paire-2",
+            "left": "Le quartier est le lieu d’habitation, pas le COD du verbe résider. C’est le quartier ___ nous résidons.",
+            "right": "où",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:quartier"
+          }
+        ],
+        "answers": [
+          "Voici la clé qu’on cherche.\nC’est le quartier où nous résidons."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-plats",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 35,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "plats-paire-1",
+            "left": "Les plats sont le complément direct de apporte. Je prépare les plats ___elle apporte.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:plats"
+          },
+          {
+            "id": "plats-paire-2",
+            "left": "Le quartier est le lieu d’habitation, pas le COD du verbe résider. C’est le quartier ___ nous résidons.",
+            "right": "où",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:quartier"
+          }
+        ],
+        "answers": [
+          "Je prépare les plats qu’elle apporte.\nC’est le quartier où nous résidons."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 36,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "objet-paire-1",
+            "left": "L’objet est le complément direct de répare. C’est l’objet ___il répare.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:objet"
+          },
+          {
+            "id": "objet-paire-2",
+            "left": "Le quartier est le lieu d’habitation, pas le COD du verbe résider. C’est le quartier ___ nous résidons.",
+            "right": "où",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:quartier"
+          }
+        ],
+        "answers": [
+          "C’est l’objet qu’il répare.\nC’est le quartier où nous résidons."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-horaires",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 37,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "horaires-paire-1",
+            "left": "Les horaires sont ce que nous affichons. Je vérifie les horaires ___on affiche.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:horaires"
+          },
+          {
+            "id": "horaires-paire-2",
+            "left": "Le quartier est le lieu d’habitation, pas le COD du verbe résider. C’est le quartier ___ nous résidons.",
+            "right": "où",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:quartier"
+          }
+        ],
+        "answers": [
+          "Je vérifie les horaires qu’on affiche.\nC’est le quartier où nous résidons."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-lettres",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 38,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "lettres-paire-1",
+            "left": "Les lettres sont ce que les destinataires reçoivent. Voici les lettres ___elles reçoivent.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:lettres"
+          },
+          {
+            "id": "lettres-paire-2",
+            "left": "Le quartier est le lieu d’habitation, pas le COD du verbe résider. C’est le quartier ___ nous résidons.",
+            "right": "où",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:quartier"
+          }
+        ],
+        "answers": [
+          "Voici les lettres qu’elles reçoivent.\nC’est le quartier où nous résidons."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-repas",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 39,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "repas-paire-1",
+            "left": "Le repas est le complément direct de prépare. Je paie le repas ___il prépare.",
+            "right": "qu’",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:repas"
+          },
+          {
+            "id": "repas-paire-2",
+            "left": "Le quartier est le lieu d’habitation, pas le COD du verbe résider. C’est le quartier ___ nous résidons.",
+            "right": "où",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:quartier"
+          }
+        ],
+        "answers": [
+          "Je paie le repas qu’il prépare.\nC’est le quartier où nous résidons."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-quartier",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 40,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "quartier-paire-1",
+            "left": "Le quartier est le lieu d’habitation, pas le COD du verbe résider. C’est le quartier ___ nous résidons.",
+            "right": "où",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:quartier"
+          },
+          {
+            "id": "quartier-paire-2",
+            "left": "Le nom voisine désigne la personne qui accomplit l’action d’habiter. Je salue la voisine ___ habite ici.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:voisine"
+          }
+        ],
+        "answers": [
+          "C’est le quartier où nous résidons.\nJe salue la voisine qui habite ici."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 41,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "ecole-paire-1",
+            "left": "L’école est le lieu du travail, pas le sujet de travaille. Voici l’école ___ ma sœur travaille.",
+            "right": "où",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:ecole"
+          },
+          {
+            "id": "ecole-paire-2",
+            "left": "Le nom voisine désigne la personne qui accomplit l’action d’habiter. Je salue la voisine ___ habite ici.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:voisine"
+          }
+        ],
+        "answers": [
+          "Voici l’école où ma sœur travaille.\nJe salue la voisine qui habite ici."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-salle",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 42,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "salle-paire-1",
+            "left": "La salle est le lieu de répétition. Je nettoie la salle ___ le groupe répète.",
+            "right": "où",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:salle"
+          },
+          {
+            "id": "salle-paire-2",
+            "left": "Le nom voisine désigne la personne qui accomplit l’action d’habiter. Je salue la voisine ___ habite ici.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:voisine"
+          }
+        ],
+        "answers": [
+          "Je nettoie la salle où le groupe répète.\nJe salue la voisine qui habite ici."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-parc",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 43,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "parc-paire-1",
+            "left": "Le parc est le lieu du jeu. Nous traversons le parc ___ les enfants jouent.",
+            "right": "où",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:parc"
+          },
+          {
+            "id": "parc-paire-2",
+            "left": "Le nom voisine désigne la personne qui accomplit l’action d’habiter. Je salue la voisine ___ habite ici.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:voisine"
+          }
+        ],
+        "answers": [
+          "Nous traversons le parc où les enfants jouent.\nJe salue la voisine qui habite ici."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-cafe",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 44,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "cafe-paire-1",
+            "left": "Le café est le lieu du rendez-vous. Voici le café ___ nous avons rendez-vous.",
+            "right": "où",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:cafe"
+          },
+          {
+            "id": "cafe-paire-2",
+            "left": "Le nom voisine désigne la personne qui accomplit l’action d’habiter. Je salue la voisine ___ habite ici.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:voisine"
+          }
+        ],
+        "answers": [
+          "Voici le café où nous avons rendez-vous.\nJe salue la voisine qui habite ici."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-bureau",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 45,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "bureau-paire-1",
+            "left": "Le bureau est le lieu du travail du secrétariat. C’est le bureau ___ le secrétariat travaille.",
+            "right": "où",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:bureau"
+          },
+          {
+            "id": "bureau-paire-2",
+            "left": "Le nom voisine désigne la personne qui accomplit l’action d’habiter. Je salue la voisine ___ habite ici.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:voisine"
+          }
+        ],
+        "answers": [
+          "C’est le bureau où le secrétariat travaille.\nJe salue la voisine qui habite ici."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-jour",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 46,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "jour-paire-1",
+            "left": "Le jour est un repère de temps auquel la rencontre a eu lieu. Je me souviens du jour ___ nous avons fait connaissance.",
+            "right": "où",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:jour"
+          },
+          {
+            "id": "jour-paire-2",
+            "left": "Le nom voisine désigne la personne qui accomplit l’action d’habiter. Je salue la voisine ___ habite ici.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:voisine"
+          }
+        ],
+        "answers": [
+          "Je me souviens du jour où nous avons fait connaissance.\nJe salue la voisine qui habite ici."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-moment",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 47,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "moment-paire-1",
+            "left": "Le moment est le repère de l’arrivée du car. Voici le moment ___ le car est arrivé.",
+            "right": "où",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:moment"
+          },
+          {
+            "id": "moment-paire-2",
+            "left": "Le nom voisine désigne la personne qui accomplit l’action d’habiter. Je salue la voisine ___ habite ici.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:voisine"
+          }
+        ],
+        "answers": [
+          "Voici le moment où le car est arrivé.\nJe salue la voisine qui habite ici."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-hotel",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 48,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "hotel-paire-1",
+            "left": "L’hôtel est le lieu du séjour. Nous retrouvons l’hôtel ___ nous avons dormi.",
+            "right": "où",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:hotel"
+          },
+          {
+            "id": "hotel-paire-2",
+            "left": "Le nom voisine désigne la personne qui accomplit l’action d’habiter. Je salue la voisine ___ habite ici.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:voisine"
+          }
+        ],
+        "answers": [
+          "Nous retrouvons l’hôtel où nous avons dormi.\nJe salue la voisine qui habite ici."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-a-a2-village",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-a",
+          "position": 49,
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Deux constructions indépendantes.",
+        "pairs": [
+          {
+            "id": "village-paire-1",
+            "left": "Le village est le lieu de résidence des grands-parents. Je visite le village ___ mes grands-parents vivent.",
+            "right": "où",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:village"
+          },
+          {
+            "id": "village-paire-2",
+            "left": "Le nom voisine désigne la personne qui accomplit l’action d’habiter. Je salue la voisine ___ habite ici.",
+            "right": "qui",
+            "sourceId": "scripts/grammar_curriculum/pronoms-i1-a2.tsv:voisine"
+          }
+        ],
+        "answers": [
+          "Je visite le village où mes grands-parents vivent.\nJe salue la voisine qui habite ici."
+        ],
+        "explanation": "Associez chaque relatif à son rôle dans sa phrase ; que s’élide devant une voyelle."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "pronoms-2026-11-24-v1",
+    "activityId": "gram-ex-i1-curriculum-t",
+    "subthemeId": "i1",
+    "topic": "gram-pronoms",
+    "level": "A2",
+    "label": "Transformer une phrase",
+    "objective": "Relier deux propositions par qui, que/qu’ ou où selon le rôle du relatif.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Situations et références relues ; réemploi explicite entre mécaniques. Modèles ouverts non exclusifs. Aucune approbation pédagogique humaine déclarée."
+    },
+    "presentations": [
+      "transform"
+    ],
+    "instructions": {
+      "transform": "Réécrivez en conservant les faits et les référents, selon la reprise demandée."
+    },
+    "units": [
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-voisine",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 0,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je salue la voisine. Cette voisine habite ici.",
+        "cue": "Le nom voisine désigne la personne qui accomplit l’action d’habiter.",
+        "answers": [
+          "Je salue la voisine qui habite ici."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Le relatif est sujet de habite. Modèle : Je salue la voisine qui habite ici. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-bus",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 1,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je prends le bus. Ce bus passe devant l’école.",
+        "cue": "Le bus est le sujet de la proposition ajoutée.",
+        "answers": [
+          "Je prends le bus qui passe devant l’école."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Le relatif est sujet de passe. Modèle : Je prends le bus qui passe devant l’école. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-vendeuse",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 2,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Voici la vendeuse. Cette vendeuse sert les clients.",
+        "cue": "La vendeuse accomplit l’action de servir.",
+        "answers": [
+          "Voici la vendeuse qui sert les clients."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Le relatif est sujet de sert. Modèle : Voici la vendeuse qui sert les clients. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-livre",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 3,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je lis un livre. Ce livre explique les règles.",
+        "cue": "Le livre est ce qui explique les règles.",
+        "answers": [
+          "Je lis un livre qui explique les règles."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Le relatif est sujet de explique. Modèle : Je lis un livre qui explique les règles. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-chien",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 4,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je regarde le chien. Ce chien court dans le parc.",
+        "cue": "Le chien accomplit l’action de courir.",
+        "answers": [
+          "Je regarde le chien qui court dans le parc."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Le relatif est sujet de court. Modèle : Je regarde le chien qui court dans le parc. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-affiche",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 5,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous lisons l’affiche. Cette affiche annonce le concert.",
+        "cue": "L’affiche annonce le concert.",
+        "answers": [
+          "Nous lisons l’affiche qui annonce le concert."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Le relatif est sujet de annonce. Modèle : Nous lisons l’affiche qui annonce le concert. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-eleves",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 6,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je vois les élèves. Ces élèves attendent devant la salle.",
+        "cue": "Les élèves sont les personnes qui attendent.",
+        "answers": [
+          "Je vois les élèves qui attendent devant la salle."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Le relatif est sujet de attendent. Modèle : Je vois les élèves qui attendent devant la salle. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-train",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 7,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "C’est le train. Ce train relie Sion à Lausanne.",
+        "cue": "Le train relie deux villes.",
+        "answers": [
+          "C’est le train qui relie Sion à Lausanne."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Le relatif est sujet de relie. Modèle : C’est le train qui relie Sion à Lausanne. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-plantes",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 8,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’arrose les plantes. Ces plantes ont besoin d’eau.",
+        "cue": "Les plantes ont besoin d’eau.",
+        "answers": [
+          "J’arrose les plantes qui ont besoin d’eau."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Le relatif est sujet de ont. Modèle : J’arrose les plantes qui ont besoin d’eau. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-collegue",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 9,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je remercie la collègue. Cette collègue ouvre le local.",
+        "cue": "La collègue ouvre le local.",
+        "answers": [
+          "Je remercie la collègue qui ouvre le local."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Le relatif est sujet de ouvre. Modèle : Je remercie la collègue qui ouvre le local. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-porte",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 10,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous réparons la porte. Cette porte donne sur la cour.",
+        "cue": "La porte donne sur la cour.",
+        "answers": [
+          "Nous réparons la porte qui donne sur la cour."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Le relatif est sujet de donne. Modèle : Nous réparons la porte qui donne sur la cour. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-equipe",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 11,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je connais l’équipe. Cette équipe organise la fête.",
+        "cue": "L’équipe organise la fête.",
+        "answers": [
+          "Je connais l’équipe qui organise la fête."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Le relatif est sujet de organise. Modèle : Je connais l’équipe qui organise la fête. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-message",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 12,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tu gardes le message. Ce message confirme le rendez-vous.",
+        "cue": "Le message confirme le rendez-vous.",
+        "answers": [
+          "Tu gardes le message qui confirme le rendez-vous."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Le relatif est sujet de confirme. Modèle : Tu gardes le message qui confirme le rendez-vous. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-personnes",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 13,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous accueillons les personnes. Ces personnes apportent le matériel.",
+        "cue": "Les personnes apportent le matériel.",
+        "answers": [
+          "Nous accueillons les personnes qui apportent le matériel."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Le relatif est sujet de apportent. Modèle : Nous accueillons les personnes qui apportent le matériel. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-cle",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 14,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je cherche la clé. Cette clé ouvre cette armoire.",
+        "cue": "La clé ouvre cette armoire.",
+        "answers": [
+          "Je cherche la clé qui ouvre cette armoire."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Le relatif est sujet de ouvre. Modèle : Je cherche la clé qui ouvre cette armoire. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-soupe",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 15,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je goûte la soupe. Tu prépares cette soupe.",
+        "cue": "La soupe est le complément direct de prépare, pas son sujet.",
+        "answers": [
+          "Je goûte la soupe que tu prépares."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Tu est le sujet ; le relatif reprend le COD. Modèle : Je goûte la soupe que tu prépares. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-film",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 16,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Voici le film. Nous regardons ce film.",
+        "cue": "Le film est le complément direct de regardons.",
+        "answers": [
+          "Voici le film que nous regardons."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Nous est le sujet ; le relatif reprend le COD. Modèle : Voici le film que nous regardons. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-velo",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 17,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je récupère le vélo. Le mécanicien répare ce vélo.",
+        "cue": "Le vélo est le complément direct de répare.",
+        "answers": [
+          "Je récupère le vélo que le mécanicien répare."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Le mécanicien est le sujet ; le relatif est COD. Modèle : Je récupère le vélo que le mécanicien répare. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-chanson",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 18,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je connais la chanson. La classe chante cette chanson.",
+        "cue": "La chanson est le complément direct de chante.",
+        "answers": [
+          "Je connais la chanson que la classe chante."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "La classe est le sujet ; le relatif est COD. Modèle : Je connais la chanson que la classe chante. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-legumes",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 19,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je lave les légumes. Les élèves coupent ces légumes.",
+        "cue": "Les légumes sont le complément direct de coupent.",
+        "answers": [
+          "Je lave les légumes que les élèves coupent."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Le groupe « les élèves » est le sujet ; le relatif est COD. Modèle : Je lave les légumes que les élèves coupent. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-lettre",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 20,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je relis la lettre. Vous signez cette lettre.",
+        "cue": "La lettre est ce que vous signez.",
+        "answers": [
+          "Je relis la lettre que vous signez."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Vous est le sujet ; le relatif est COD. Modèle : Je relis la lettre que vous signez. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-plan",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 21,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous suivons le plan. La guide dessine ce plan.",
+        "cue": "Le plan est le complément direct de dessine.",
+        "answers": [
+          "Nous suivons le plan que la guide dessine."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "La guide est le sujet ; le relatif est COD. Modèle : Nous suivons le plan que la guide dessine. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-table",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 22,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je déplace la table. Mon voisin nettoie cette table.",
+        "cue": "La table est le complément direct de nettoie.",
+        "answers": [
+          "Je déplace la table que mon voisin nettoie."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Mon voisin est le sujet ; le relatif est COD. Modèle : Je déplace la table que mon voisin nettoie. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-livres",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 23,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Voici les livres. Vous choisissez ces livres.",
+        "cue": "Les livres sont le complément direct de choisissez.",
+        "answers": [
+          "Voici les livres que vous choisissez."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Vous est le sujet ; le relatif est COD. Modèle : Voici les livres que vous choisissez. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-dossier",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 24,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "C’est le dossier. Nous cherchons ce dossier.",
+        "cue": "Le dossier est le complément direct de cherchons.",
+        "answers": [
+          "C’est le dossier que nous cherchons."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Nous est le sujet ; le relatif est COD. Modèle : C’est le dossier que nous cherchons. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-maison",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 25,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Voici la maison. Les ouvriers construisent cette maison.",
+        "cue": "La maison est ce que les ouvriers construisent ; il ne s’agit pas du lieu d’une autre action.",
+        "answers": [
+          "Voici la maison que les ouvriers construisent."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Le groupe « les ouvriers » est le sujet ; le relatif est COD. Modèle : Voici la maison que les ouvriers construisent. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-billets",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 26,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je paie les billets. Tu réserves ces billets.",
+        "cue": "Les billets sont le complément direct de réserves.",
+        "answers": [
+          "Je paie les billets que tu réserves."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Tu est le sujet ; le relatif est COD. Modèle : Je paie les billets que tu réserves. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-valise",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 27,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je vois la valise. Cette personne porte cette valise.",
+        "cue": "La valise est ce que cette personne porte.",
+        "answers": [
+          "Je vois la valise que cette personne porte."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Cette personne est le sujet ; le relatif est COD. Modèle : Je vois la valise que cette personne porte. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-photos",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 28,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je retrouve les photos. Nous montrons ces photos.",
+        "cue": "Les photos sont ce que nous montrons.",
+        "answers": [
+          "Je retrouve les photos que nous montrons."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Nous est le sujet ; le relatif est COD. Modèle : Je retrouve les photos que nous montrons. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-ville-visite",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 29,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "C’est la ville. Le groupe visite cette ville.",
+        "cue": "La ville est le complément direct de visite ; la phrase ne dit pas où se déroule une autre action.",
+        "answers": [
+          "C’est la ville que le groupe visite."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Le groupe est le sujet ; le relatif est COD. Modèle : C’est la ville que le groupe visite. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-roman",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 30,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Voici le roman. Elle lit ce roman.",
+        "cue": "Le roman est le complément direct de lis ; le mot suivant commence par une voyelle.",
+        "answers": [
+          "Voici le roman qu’elle lit."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Que s’élide devant elle. Modèle : Voici le roman qu’elle lit. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-adresse",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 31,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je garde l’adresse. Ils utilisent cette adresse.",
+        "cue": "L’adresse est ce que nous utilisons ; le mot suivant commence par une voyelle.",
+        "answers": [
+          "Je garde l’adresse qu’ils utilisent."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Que s’élide devant ils. Modèle : Je garde l’adresse qu’ils utilisent. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-exercice",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 32,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "C’est l’exercice. Il termine cet exercice.",
+        "cue": "L’exercice est le complément direct de termine.",
+        "answers": [
+          "C’est l’exercice qu’il termine."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Que s’élide devant il. Modèle : C’est l’exercice qu’il termine. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-gateau",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 33,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je coupe le gâteau. Elle partage ce gâteau.",
+        "cue": "Le gâteau est le complément direct de partage.",
+        "answers": [
+          "Je coupe le gâteau qu’elle partage."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Que s’élide devant elle. Modèle : Je coupe le gâteau qu’elle partage. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-cle-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 34,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Voici la clé. On cherche cette clé.",
+        "cue": "La clé est le complément direct de cherche.",
+        "answers": [
+          "Voici la clé qu’on cherche."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Que s’élide devant on. Modèle : Voici la clé qu’on cherche. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-plats",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 35,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je prépare les plats. Elle apporte ces plats.",
+        "cue": "Les plats sont le complément direct de apporte.",
+        "answers": [
+          "Je prépare les plats qu’elle apporte."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Que s’élide devant elle. Modèle : Je prépare les plats qu’elle apporte. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-objet",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 36,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "C’est l’objet. Il répare cet objet.",
+        "cue": "L’objet est le complément direct de répare.",
+        "answers": [
+          "C’est l’objet qu’il répare."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Que s’élide devant il. Modèle : C’est l’objet qu’il répare. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-horaires",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 37,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je vérifie les horaires. On affiche ces horaires.",
+        "cue": "Les horaires sont ce que nous affichons.",
+        "answers": [
+          "Je vérifie les horaires qu’on affiche."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Que s’élide devant on. Modèle : Je vérifie les horaires qu’on affiche. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-lettres",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 38,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Voici les lettres. Elles reçoivent ces lettres.",
+        "cue": "Les lettres sont ce que les destinataires reçoivent.",
+        "answers": [
+          "Voici les lettres qu’elles reçoivent."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Que s’élide devant elles. Modèle : Voici les lettres qu’elles reçoivent. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-repas",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 39,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je paie le repas. Il prépare ce repas.",
+        "cue": "Le repas est le complément direct de prépare.",
+        "answers": [
+          "Je paie le repas qu’il prépare."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Que s’élide devant il. Modèle : Je paie le repas qu’il prépare. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-quartier",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 40,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "C’est le quartier. Nous résidons dans ce quartier.",
+        "cue": "Le quartier est le lieu d’habitation, pas le COD du verbe résider.",
+        "answers": [
+          "C’est le quartier où nous résidons."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Où reprend le lieu introduit par dans. Modèle : C’est le quartier où nous résidons. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 41,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Voici l’école. Ma sœur travaille dans cette école.",
+        "cue": "L’école est le lieu du travail, pas le sujet de travaille.",
+        "answers": [
+          "Voici l’école où ma sœur travaille."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Où reprend un lieu. Modèle : Voici l’école où ma sœur travaille. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-salle",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 42,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je nettoie la salle. Le groupe répète dans cette salle.",
+        "cue": "La salle est le lieu de répétition.",
+        "answers": [
+          "Je nettoie la salle où le groupe répète."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Où reprend un lieu. Modèle : Je nettoie la salle où le groupe répète. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-parc",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 43,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous traversons le parc. Les enfants jouent dans ce parc.",
+        "cue": "Le parc est le lieu du jeu.",
+        "answers": [
+          "Nous traversons le parc où les enfants jouent."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Où reprend un lieu. Modèle : Nous traversons le parc où les enfants jouent. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-cafe",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 44,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Voici le café. Nous avons rendez-vous dans ce café.",
+        "cue": "Le café est le lieu du rendez-vous.",
+        "answers": [
+          "Voici le café où nous avons rendez-vous."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Où reprend un lieu. Modèle : Voici le café où nous avons rendez-vous. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-bureau",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 45,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "C’est le bureau. Le secrétariat travaille dans ce bureau.",
+        "cue": "Le bureau est le lieu du travail du secrétariat.",
+        "answers": [
+          "C’est le bureau où le secrétariat travaille."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Où reprend un lieu. Modèle : C’est le bureau où le secrétariat travaille. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-jour",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 46,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je me souviens de ce jour. Nous avons fait connaissance ce jour-là.",
+        "cue": "Le jour est un repère de temps auquel la rencontre a eu lieu.",
+        "answers": [
+          "Je me souviens du jour où nous avons fait connaissance."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Où peut reprendre un repère de temps. Modèle : Je me souviens du jour où nous avons fait connaissance. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-moment",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 47,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Voici le moment. Le car est arrivé à ce moment-là.",
+        "cue": "Le moment est le repère de l’arrivée du car.",
+        "answers": [
+          "Voici le moment où le car est arrivé."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Où reprend un repère de temps. Modèle : Voici le moment où le car est arrivé. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-hotel",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 48,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous retrouvons cet hôtel. Nous avons dormi dans cet hôtel.",
+        "cue": "L’hôtel est le lieu du séjour.",
+        "answers": [
+          "Nous retrouvons l’hôtel où nous avons dormi."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Où reprend un lieu. Modèle : Nous retrouvons l’hôtel où nous avons dormi. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i1-curriculum-t-a2-village",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i1-a2.tsv",
+          "typeId": "gram-ex-i1-curriculum-t",
+          "position": 49,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je visite ce village. Mes grands-parents vivent dans ce village.",
+        "cue": "Le village est le lieu de résidence des grands-parents.",
+        "answers": [
+          "Je visite le village où mes grands-parents vivent."
+        ],
+        "directive": "Réunissez les deux phrases par qui, que/qu’ ou où. Conservez les faits et la construction indiquée.",
+        "responseLines": 2,
+        "explanation": "Où reprend un lieu. Modèle : Je visite le village où mes grands-parents vivent. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      }
+    ]
+  }
+]

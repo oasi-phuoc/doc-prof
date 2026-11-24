@@ -53,3 +53,12 @@ Les huit fichiers `passe-*.tsv` portent 400 situations relues. `passe-pqp-lectur
 Les sources sont réemployées explicitement : h1/h2 partagent les faits avec avoir ; h6 A2 forme le groupe verbal et B1 analyse la construction ; h9 A2 reprend des cas simples avec avoir/être. Les modèles d’écrit et de questions restent non exclusifs. La validation pédagogique humaine est en attente.
 
 `npm run test:grammar:passe` vérifie les variantes, recettes, filtres et intervalles de correction puis reconstruit les banques dans un répertoire isolé. `npm run test:grammar:passe:browser` utilise un aperçu de production sur le port 5188 et conserve les mesures et PDF dans `docs/grammaire/implementation/passe-20261124-proofs`.
+
+
+### Les pronoms — 24 novembre 2026
+
+Les huit fichiers `pronoms-*.tsv` contiennent 400 situations relues. `pronoms-i9-lectures-b1.json` développe vingt situations i9 en vingt documents de trois cibles de questionnement chacun. `python3 scripts/build-grammar-pronoms.py` compile les huit banques sans réécrire la banque COD `i4.json`.
+
+Les variantes réemploient les mêmes situations. Les lacunes avec dont donnent les deux faits et conservent l’ordre des mots restants. Les productions et questions ouvertes admettent les reformulations fidèles. Les reprises neutres concernées acceptent cela et ça. La validation pédagogique humaine est en attente.
+
+`npm run test:grammar:pronoms` vérifie réponses, référents, recettes, capacités et intervalles de correction, puis reconstruit les banques en isolation. `npm run test:grammar:pronoms:browser` attend un aperçu de production sur le port 5189 et écrit les preuves dans `docs/grammaire/implementation/pronoms-20261124-proofs`.

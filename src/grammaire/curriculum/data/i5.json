@@ -1,0 +1,3629 @@
+[
+  {
+    "schemaVersion": 1,
+    "revision": "pronoms-2026-11-24-v1",
+    "activityId": "gram-ex-i5-qcm-verbe",
+    "subthemeId": "i5",
+    "topic": "gram-pronoms",
+    "level": "A2",
+    "label": "Reprendre un destinataire : lui ou leur",
+    "objective": "Distinguer COI et COD selon le verbe ; reprendre le destinataire par lui/leur sans modifier les rôles.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Situations et références relues ; réemploi explicite entre mécaniques. Modèles ouverts non exclusifs. Aucune approbation pédagogique humaine déclarée."
+    },
+    "presentations": [
+      "choice",
+      "gap"
+    ],
+    "instructions": {
+      "choice": "Reprenez le complément indiqué par le pronom adapté au verbe et au nombre.",
+      "gap": "Écrivez le pronom qui reprend le complément indiqué ; distinguez COD et COI."
+    },
+    "units": [
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-voisine",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 0,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je ___ parle.",
+        "cue": "On reprend à la voisine, une seule personne, après parler.",
+        "answers": [
+          "lui"
+        ],
+        "options": [
+          {
+            "id": "voisine-choix-1",
+            "text": "lui"
+          },
+          {
+            "id": "voisine-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "voisine-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "Parler à quelqu’un : lui au singulier. Modèle : Je lui parle."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-parents",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 1,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je ___ téléphone.",
+        "cue": "On reprend à mes parents, plusieurs personnes, après téléphoner.",
+        "answers": [
+          "leur"
+        ],
+        "options": [
+          {
+            "id": "parents-choix-1",
+            "text": "leur"
+          },
+          {
+            "id": "parents-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "parents-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "Téléphoner à des personnes : leur, sans s. Modèle : Je leur téléphone."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-guide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 2,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ réponds.",
+        "cue": "On reprend à la guide, une seule personne, après répondre.",
+        "answers": [
+          "lui"
+        ],
+        "options": [
+          {
+            "id": "guide-choix-1",
+            "text": "lui"
+          },
+          {
+            "id": "guide-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "guide-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "Répondre à quelqu’un : lui. Modèle : Tu lui réponds."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-eleves",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 3,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Elle ___ explique la règle.",
+        "cue": "On reprend aux élèves, plusieurs personnes, après expliquer quelque chose.",
+        "answers": [
+          "leur"
+        ],
+        "options": [
+          {
+            "id": "eleves-choix-1",
+            "text": "leur"
+          },
+          {
+            "id": "eleves-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "eleves-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "Le COI des destinataires devient leur. Modèle : Elle leur explique la règle."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-responsable",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 4,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ écrivons.",
+        "cue": "On reprend au responsable, une seule personne, après écrire.",
+        "answers": [
+          "lui"
+        ],
+        "options": [
+          {
+            "id": "responsable-choix-1",
+            "text": "lui"
+          },
+          {
+            "id": "responsable-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "responsable-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "Écrire à quelqu’un : lui. Modèle : Nous lui écrivons."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-amies",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 5,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Vous ___ envoyez une invitation.",
+        "cue": "On reprend à mes amies, plusieurs personnes, après envoyer une invitation.",
+        "answers": [
+          "leur"
+        ],
+        "options": [
+          {
+            "id": "amies-choix-1",
+            "text": "leur"
+          },
+          {
+            "id": "amies-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "amies-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "Le COI des destinataires devient leur. Modèle : Vous leur envoyez une invitation."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-medecin",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 6,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Ils ___ racontent les faits.",
+        "cue": "On reprend au médecin, une seule personne, après raconter les faits.",
+        "answers": [
+          "lui"
+        ],
+        "options": [
+          {
+            "id": "medecin-choix-1",
+            "text": "lui"
+          },
+          {
+            "id": "medecin-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "medecin-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "Raconter quelque chose à quelqu’un : lui. Modèle : Ils lui racontent les faits."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-clients",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 7,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "La vendeuse ___ donne un reçu.",
+        "cue": "On reprend aux clients, plusieurs personnes, après donner un reçu.",
+        "answers": [
+          "leur"
+        ],
+        "options": [
+          {
+            "id": "clients-choix-1",
+            "text": "leur"
+          },
+          {
+            "id": "clients-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "clients-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "Donner quelque chose à des personnes : leur. Modèle : La vendeuse leur donne un reçu."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-soeur",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 8,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je ___ prête un livre.",
+        "cue": "On reprend à ma sœur, une seule personne, après prêter un livre.",
+        "answers": [
+          "lui"
+        ],
+        "options": [
+          {
+            "id": "soeur-choix-1",
+            "text": "lui"
+          },
+          {
+            "id": "soeur-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "soeur-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "Prêter à quelqu’un : lui. Modèle : Je lui prête un livre."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-voisins",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 9,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ demandes de l’aide.",
+        "cue": "On reprend aux voisins, plusieurs personnes, après demander de l’aide.",
+        "answers": [
+          "leur"
+        ],
+        "options": [
+          {
+            "id": "voisins-choix-1",
+            "text": "leur"
+          },
+          {
+            "id": "voisins-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "voisins-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "Demander à des personnes : leur. Modèle : Tu leur demandes de l’aide."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-animateur",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 10,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Elle ___ pose une question.",
+        "cue": "On reprend à l’animateur, une seule personne, après poser une question.",
+        "answers": [
+          "lui"
+        ],
+        "options": [
+          {
+            "id": "animateur-choix-1",
+            "text": "lui"
+          },
+          {
+            "id": "animateur-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "animateur-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "Poser une question à quelqu’un : lui. Modèle : Elle lui pose une question."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-participants",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 11,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ distribuons les fiches.",
+        "cue": "On reprend aux participants, plusieurs personnes, après distribuer les fiches.",
+        "answers": [
+          "leur"
+        ],
+        "options": [
+          {
+            "id": "participants-choix-1",
+            "text": "leur"
+          },
+          {
+            "id": "participants-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "participants-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "Distribuer quelque chose à des personnes : leur. Modèle : Nous leur distribuons les fiches."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-collegue",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 12,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Vous ___ montrez le plan.",
+        "cue": "On reprend à la collègue, une seule personne, après montrer le plan.",
+        "answers": [
+          "lui"
+        ],
+        "options": [
+          {
+            "id": "collegue-choix-1",
+            "text": "lui"
+          },
+          {
+            "id": "collegue-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "collegue-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "Montrer quelque chose à quelqu’un : lui. Modèle : Vous lui montrez le plan."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-enfants",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 13,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Ils ___ lisent une histoire.",
+        "cue": "On reprend aux enfants, plusieurs personnes, après lire une histoire.",
+        "answers": [
+          "leur"
+        ],
+        "options": [
+          {
+            "id": "enfants-choix-1",
+            "text": "leur"
+          },
+          {
+            "id": "enfants-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "enfants-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "Lire quelque chose à des personnes : leur. Modèle : Ils leur lisent une histoire."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-apprenti",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 14,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "On ___ propose un stage.",
+        "cue": "On reprend à l’apprenti, une seule personne, après proposer un stage.",
+        "answers": [
+          "lui"
+        ],
+        "options": [
+          {
+            "id": "apprenti-choix-1",
+            "text": "lui"
+          },
+          {
+            "id": "apprenti-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "apprenti-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "Proposer à quelqu’un : lui. Modèle : On lui propose un stage."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-associations",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 15,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "La mairie ___ offre du matériel.",
+        "cue": "On reprend aux associations, plusieurs destinataires, après offrir du matériel.",
+        "answers": [
+          "leur"
+        ],
+        "options": [
+          {
+            "id": "associations-choix-1",
+            "text": "leur"
+          },
+          {
+            "id": "associations-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "associations-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "Offrir quelque chose à des destinataires : leur. Modèle : La mairie leur offre du matériel."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-oncle",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 16,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je ___ souhaite un bon voyage.",
+        "cue": "On reprend à mon oncle, une seule personne, après souhaiter un bon voyage.",
+        "answers": [
+          "lui"
+        ],
+        "options": [
+          {
+            "id": "oncle-choix-1",
+            "text": "lui"
+          },
+          {
+            "id": "oncle-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "oncle-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "Souhaiter quelque chose à quelqu’un : lui. Modèle : Je lui souhaite un bon voyage."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-voyageuses",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 17,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ indiques le quai.",
+        "cue": "On reprend aux voyageuses, plusieurs personnes, après indiquer le quai.",
+        "answers": [
+          "leur"
+        ],
+        "options": [
+          {
+            "id": "voyageuses-choix-1",
+            "text": "leur"
+          },
+          {
+            "id": "voyageuses-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "voyageuses-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "Indiquer quelque chose à des personnes : leur. Modèle : Tu leur indiques le quai."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-professeure",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 18,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Elle ___ rend le livre.",
+        "cue": "On reprend à la professeure, une seule personne, après rendre le livre.",
+        "answers": [
+          "lui"
+        ],
+        "options": [
+          {
+            "id": "professeure-choix-1",
+            "text": "lui"
+          },
+          {
+            "id": "professeure-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "professeure-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "Rendre quelque chose à quelqu’un : lui. Modèle : Elle lui rend le livre."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-benevoles",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 19,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ apportons un repas.",
+        "cue": "On reprend aux bénévoles, plusieurs personnes, après apporter un repas.",
+        "answers": [
+          "leur"
+        ],
+        "options": [
+          {
+            "id": "benevoles-choix-1",
+            "text": "leur"
+          },
+          {
+            "id": "benevoles-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "benevoles-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "Apporter quelque chose à des personnes : leur. Modèle : Nous leur apportons un repas."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-pas-voisine",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 20,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je ne ___ parle pas.",
+        "cue": "On reprend à la voisine, une seule personne. La négation est déjà présente.",
+        "answers": [
+          "lui"
+        ],
+        "options": [
+          {
+            "id": "pas-voisine-choix-1",
+            "text": "lui"
+          },
+          {
+            "id": "pas-voisine-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "pas-voisine-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "Le COI se place entre ne et le verbe. Modèle : Je ne lui parle pas."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-pas-parents",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 21,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Elle ne ___ téléphone pas.",
+        "cue": "On reprend à ses parents, plusieurs personnes. La négation est déjà présente.",
+        "answers": [
+          "leur"
+        ],
+        "options": [
+          {
+            "id": "pas-parents-choix-1",
+            "text": "leur"
+          },
+          {
+            "id": "pas-parents-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "pas-parents-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "Le COI se place entre ne et le verbe. Modèle : Elle ne leur téléphone pas."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-pas-guide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 22,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous ne ___ avons pas répondu.",
+        "cue": "On reprend au guide, une seule personne, devant l’auxiliaire.",
+        "answers": [
+          "lui"
+        ],
+        "options": [
+          {
+            "id": "pas-guide-choix-1",
+            "text": "lui"
+          },
+          {
+            "id": "pas-guide-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "pas-guide-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "Le pronom COI précède l’auxiliaire ; pas le suit. Modèle : Nous ne lui avons pas répondu."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-pas-clients",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 23,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Vous ne ___ avez pas écrit.",
+        "cue": "On reprend aux clients, plusieurs personnes, devant l’auxiliaire.",
+        "answers": [
+          "leur"
+        ],
+        "options": [
+          {
+            "id": "pas-clients-choix-1",
+            "text": "leur"
+          },
+          {
+            "id": "pas-clients-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "pas-clients-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "Le pronom COI précède l’auxiliaire. Modèle : Vous ne leur avez pas écrit."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-deja-soeur",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 24,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je ___ ai déjà envoyé le plan.",
+        "cue": "On reprend à ma sœur, une seule personne, au passé composé.",
+        "answers": [
+          "lui"
+        ],
+        "options": [
+          {
+            "id": "deja-soeur-choix-1",
+            "text": "lui"
+          },
+          {
+            "id": "deja-soeur-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "deja-soeur-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "Lui précède ai ; pas d’élision de lui. Modèle : Je lui ai déjà envoyé le plan."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-deja-amis",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 25,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ as déjà parlé.",
+        "cue": "On reprend à mes amis, plusieurs personnes, au passé composé.",
+        "answers": [
+          "leur"
+        ],
+        "options": [
+          {
+            "id": "deja-amis-choix-1",
+            "text": "leur"
+          },
+          {
+            "id": "deja-amis-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "deja-amis-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "Leur précède l’auxiliaire. Modèle : Tu leur as déjà parlé."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-futur-responsable",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 26,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je vais ___ répondre.",
+        "cue": "On reprend au responsable, une seule personne, avec le futur proche.",
+        "answers": [
+          "lui"
+        ],
+        "options": [
+          {
+            "id": "futur-responsable-choix-1",
+            "text": "lui"
+          },
+          {
+            "id": "futur-responsable-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "futur-responsable-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "Le pronom précède l’infinitif répondre. Modèle : Je vais lui répondre."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-futur-eleves",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 27,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Elle va ___ expliquer le jeu.",
+        "cue": "On reprend aux élèves, plusieurs personnes, avec le futur proche.",
+        "answers": [
+          "leur"
+        ],
+        "options": [
+          {
+            "id": "futur-eleves-choix-1",
+            "text": "leur"
+          },
+          {
+            "id": "futur-eleves-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "futur-eleves-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "Le pronom précède l’infinitif expliquer. Modèle : Elle va leur expliquer le jeu."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-modal-collegue",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 28,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous pouvons ___ prêter le matériel.",
+        "cue": "On reprend à la collègue, une seule personne, avec pouvoir.",
+        "answers": [
+          "lui"
+        ],
+        "options": [
+          {
+            "id": "modal-collegue-choix-1",
+            "text": "lui"
+          },
+          {
+            "id": "modal-collegue-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "modal-collegue-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "Le pronom précède l’infinitif prêter. Modèle : Nous pouvons lui prêter le matériel."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-modal-voisins",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 29,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Vous voulez ___ demander un outil.",
+        "cue": "On reprend aux voisins, plusieurs personnes, avec vouloir.",
+        "answers": [
+          "leur"
+        ],
+        "options": [
+          {
+            "id": "modal-voisins-choix-1",
+            "text": "leur"
+          },
+          {
+            "id": "modal-voisins-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "modal-voisins-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "Le pronom précède l’infinitif demander. Modèle : Vous voulez leur demander un outil."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-voir-voisine",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 30,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je ___ vois.",
+        "cue": "Contraste COD/COI : voir la voisine n’a pas de préposition à ; une seule femme est désignée.",
+        "answers": [
+          "la"
+        ],
+        "options": [
+          {
+            "id": "voir-voisine-choix-1",
+            "text": "la"
+          },
+          {
+            "id": "voir-voisine-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "voir-voisine-choix-3",
+            "text": "leur"
+          }
+        ],
+        "explanation": "Voir quelqu’un : COD, donc la. Modèle : Je la vois."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-voir-voisins",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 31,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je ___ vois.",
+        "cue": "Contraste COD/COI : voir les voisins est une construction directe.",
+        "answers": [
+          "les"
+        ],
+        "options": [
+          {
+            "id": "voir-voisins-choix-1",
+            "text": "les"
+          },
+          {
+            "id": "voir-voisins-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "voir-voisins-choix-3",
+            "text": "lui"
+          }
+        ],
+        "explanation": "Voir des personnes : COD, donc les. Modèle : Je les vois."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-inviter-guide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 32,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___invites.",
+        "cue": "Contraste COD/COI : inviter le guide est une construction directe.",
+        "answers": [
+          "l’"
+        ],
+        "options": [
+          {
+            "id": "inviter-guide-choix-1",
+            "text": "l’"
+          },
+          {
+            "id": "inviter-guide-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "inviter-guide-choix-3",
+            "text": "leur"
+          }
+        ],
+        "explanation": "Inviter quelqu’un : COD ; le s’élide devant invites. Modèle : Tu l’invites."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-inviter-amies",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 33,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ invitons.",
+        "cue": "Contraste COD/COI : inviter les amies est une construction directe.",
+        "answers": [
+          "les"
+        ],
+        "options": [
+          {
+            "id": "inviter-amies-choix-1",
+            "text": "les"
+          },
+          {
+            "id": "inviter-amies-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "inviter-amies-choix-3",
+            "text": "lui"
+          }
+        ],
+        "explanation": "Inviter des personnes : COD, donc les. Modèle : Nous les invitons."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-ecouter-professeure",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 34,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je ___écoute.",
+        "cue": "Contraste COD/COI : écouter la professeure est une construction directe.",
+        "answers": [
+          "l’"
+        ],
+        "options": [
+          {
+            "id": "ecouter-professeure-choix-1",
+            "text": "l’"
+          },
+          {
+            "id": "ecouter-professeure-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "ecouter-professeure-choix-3",
+            "text": "leur"
+          }
+        ],
+        "explanation": "Écouter quelqu’un : COD ; la s’élide devant écoute. Modèle : Je l’écoute."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-aider-parents",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 35,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Elle ___ aide.",
+        "cue": "Contraste COD/COI : aider ses parents est une construction directe.",
+        "answers": [
+          "les"
+        ],
+        "options": [
+          {
+            "id": "aider-parents-choix-1",
+            "text": "les"
+          },
+          {
+            "id": "aider-parents-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "aider-parents-choix-3",
+            "text": "lui"
+          }
+        ],
+        "explanation": "Aider quelqu’un : COD, donc les. Modèle : Elle les aide."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-attendre-collegue",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 36,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___attendons.",
+        "cue": "Contraste COD/COI : attendre le collègue est une construction directe.",
+        "answers": [
+          "l’"
+        ],
+        "options": [
+          {
+            "id": "attendre-collegue-choix-1",
+            "text": "l’"
+          },
+          {
+            "id": "attendre-collegue-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "attendre-collegue-choix-3",
+            "text": "leur"
+          }
+        ],
+        "explanation": "Attendre quelqu’un : COD ; le s’élide devant attendons. Modèle : Nous l’attendons."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-saluer-voyageuses",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 37,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Il ___ salue.",
+        "cue": "Contraste COD/COI : saluer les voyageuses est une construction directe.",
+        "answers": [
+          "les"
+        ],
+        "options": [
+          {
+            "id": "saluer-voyageuses-choix-1",
+            "text": "les"
+          },
+          {
+            "id": "saluer-voyageuses-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "saluer-voyageuses-choix-3",
+            "text": "lui"
+          }
+        ],
+        "explanation": "Saluer des personnes : COD, donc les. Modèle : Il les salue."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-connaître-voisin",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 38,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ connais.",
+        "cue": "Contraste COD/COI : connaître le voisin est une construction directe.",
+        "answers": [
+          "le"
+        ],
+        "options": [
+          {
+            "id": "connaître-voisin-choix-1",
+            "text": "le"
+          },
+          {
+            "id": "connaître-voisin-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "connaître-voisin-choix-3",
+            "text": "leur"
+          }
+        ],
+        "explanation": "Connaître quelqu’un : COD, donc le. Modèle : Tu le connais."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-remercier-amies",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 39,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Vous ___ remerciez.",
+        "cue": "Contraste COD/COI : remercier les amies est une construction directe.",
+        "answers": [
+          "les"
+        ],
+        "options": [
+          {
+            "id": "remercier-amies-choix-1",
+            "text": "les"
+          },
+          {
+            "id": "remercier-amies-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "remercier-amies-choix-3",
+            "text": "lui"
+          }
+        ],
+        "explanation": "Remercier des personnes : COD, donc les. Modèle : Vous les remerciez."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-manquer-voisine",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 40,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je ___ manque.",
+        "cue": "On remplace à la voisine, personne qui éprouve le manque ; le sujet je est la personne absente.",
+        "answers": [
+          "lui"
+        ],
+        "options": [
+          {
+            "id": "manquer-voisine-choix-1",
+            "text": "lui"
+          },
+          {
+            "id": "manquer-voisine-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "manquer-voisine-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "Manquer à quelqu’un : COI lui, sans changer les rôles. Modèle : Je lui manque."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-plaire-parents",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 41,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Le spectacle ___ plaît.",
+        "cue": "Le spectacle plaît aux parents, plusieurs personnes. On remplace aux parents.",
+        "answers": [
+          "leur"
+        ],
+        "options": [
+          {
+            "id": "plaire-parents-choix-1",
+            "text": "leur"
+          },
+          {
+            "id": "plaire-parents-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "plaire-parents-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "Plaire à des personnes : leur. Modèle : Le spectacle leur plaît."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-convenir-responsable",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 42,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "L’horaire ___ convient.",
+        "cue": "L’horaire convient à la responsable, une seule personne.",
+        "answers": [
+          "lui"
+        ],
+        "options": [
+          {
+            "id": "convenir-responsable-choix-1",
+            "text": "lui"
+          },
+          {
+            "id": "convenir-responsable-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "convenir-responsable-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "Convenir à quelqu’un : lui. Modèle : L’horaire lui convient."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-ressembler-freres",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 43,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ ressembles.",
+        "cue": "La personne tutoyée ressemble à ses deux frères. On remplace à ses deux frères.",
+        "answers": [
+          "leur"
+        ],
+        "options": [
+          {
+            "id": "ressembler-freres-choix-1",
+            "text": "leur"
+          },
+          {
+            "id": "ressembler-freres-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "ressembler-freres-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "Ressembler à des personnes : leur. Modèle : Tu leur ressembles."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-appartenir-voisin",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 44,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Le vélo ___ appartient.",
+        "cue": "Le vélo appartient au voisin, une seule personne. On remplace au voisin.",
+        "answers": [
+          "lui"
+        ],
+        "options": [
+          {
+            "id": "appartenir-voisin-choix-1",
+            "text": "lui"
+          },
+          {
+            "id": "appartenir-voisin-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "appartenir-voisin-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "Appartenir à quelqu’un : lui. Modèle : Le vélo lui appartient."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-servir-invites",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 45,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Elle ___ sert le dessert.",
+        "cue": "On reprend aux invités, plusieurs personnes, après servir le dessert.",
+        "answers": [
+          "leur"
+        ],
+        "options": [
+          {
+            "id": "servir-invites-choix-1",
+            "text": "leur"
+          },
+          {
+            "id": "servir-invites-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "servir-invites-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "Servir quelque chose à des personnes : leur. Modèle : Elle leur sert le dessert."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-annoncer-directrice",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 46,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ annonçons le résultat.",
+        "cue": "On reprend à la directrice, une seule personne, après annoncer le résultat.",
+        "answers": [
+          "lui"
+        ],
+        "options": [
+          {
+            "id": "annoncer-directrice-choix-1",
+            "text": "lui"
+          },
+          {
+            "id": "annoncer-directrice-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "annoncer-directrice-choix-3",
+            "text": "la"
+          }
+        ],
+        "explanation": "Annoncer quelque chose à quelqu’un : lui. Modèle : Nous lui annonçons le résultat."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-confier-amis",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 47,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je ___ confie les clés.",
+        "cue": "On reprend à mes amis, plusieurs personnes, après confier les clés.",
+        "answers": [
+          "leur"
+        ],
+        "options": [
+          {
+            "id": "confier-amis-choix-1",
+            "text": "leur"
+          },
+          {
+            "id": "confier-amis-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "confier-amis-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "Confier quelque chose à des personnes : leur. Modèle : Je leur confie les clés."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-expliquer-gardien",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 48,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ expliques le problème.",
+        "cue": "On reprend au gardien, une seule personne, après expliquer le problème.",
+        "answers": [
+          "lui"
+        ],
+        "options": [
+          {
+            "id": "expliquer-gardien-choix-1",
+            "text": "lui"
+          },
+          {
+            "id": "expliquer-gardien-choix-2",
+            "text": "leur"
+          },
+          {
+            "id": "expliquer-gardien-choix-3",
+            "text": "le"
+          }
+        ],
+        "explanation": "Expliquer quelque chose à quelqu’un : lui. Modèle : Tu lui expliques le problème."
+      },
+      {
+        "id": "gram-ex-i5-qcm-verbe-a2-repondre-equipe",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-qcm-verbe",
+          "position": 49,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "On ___ a répondu.",
+        "cue": "On reprend aux membres de l’équipe, plusieurs personnes, au passé composé.",
+        "answers": [
+          "leur"
+        ],
+        "options": [
+          {
+            "id": "repondre-equipe-choix-1",
+            "text": "leur"
+          },
+          {
+            "id": "repondre-equipe-choix-2",
+            "text": "lui"
+          },
+          {
+            "id": "repondre-equipe-choix-3",
+            "text": "les"
+          }
+        ],
+        "explanation": "Leur précède l’auxiliaire a. Modèle : On leur a répondu."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "pronoms-2026-11-24-v1",
+    "activityId": "gram-ex-i5-curriculum-t",
+    "subthemeId": "i5",
+    "topic": "gram-pronoms",
+    "level": "A2",
+    "label": "Transformer une phrase",
+    "objective": "Distinguer COI et COD selon le verbe ; reprendre le destinataire par lui/leur sans modifier les rôles.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Situations et références relues ; réemploi explicite entre mécaniques. Modèles ouverts non exclusifs. Aucune approbation pédagogique humaine déclarée."
+    },
+    "presentations": [
+      "transform"
+    ],
+    "instructions": {
+      "transform": "Réécrivez en conservant les faits et les référents, selon la reprise demandée."
+    },
+    "units": [
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-voisine",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 0,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je parle à la voisine.",
+        "cue": "On reprend à la voisine, une seule personne, après parler.",
+        "answers": [
+          "Je lui parle."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Parler à quelqu’un : lui au singulier. Modèle : Je lui parle. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-parents",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 1,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je téléphone à mes parents.",
+        "cue": "On reprend à mes parents, plusieurs personnes, après téléphoner.",
+        "answers": [
+          "Je leur téléphone."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Téléphoner à des personnes : leur, sans s. Modèle : Je leur téléphone. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-guide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 2,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tu réponds à la guide.",
+        "cue": "On reprend à la guide, une seule personne, après répondre.",
+        "answers": [
+          "Tu lui réponds."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Répondre à quelqu’un : lui. Modèle : Tu lui réponds. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-eleves",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 3,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Elle explique la règle aux élèves.",
+        "cue": "On reprend aux élèves, plusieurs personnes, après expliquer quelque chose.",
+        "answers": [
+          "Elle leur explique la règle."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Le COI des destinataires devient leur. Modèle : Elle leur explique la règle. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-responsable",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 4,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous écrivons au responsable.",
+        "cue": "On reprend au responsable, une seule personne, après écrire.",
+        "answers": [
+          "Nous lui écrivons."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Écrire à quelqu’un : lui. Modèle : Nous lui écrivons. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-amies",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 5,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Vous envoyez une invitation à mes amies.",
+        "cue": "On reprend à mes amies, plusieurs personnes, après envoyer une invitation.",
+        "answers": [
+          "Vous leur envoyez une invitation."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Le COI des destinataires devient leur. Modèle : Vous leur envoyez une invitation. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-medecin",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 6,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Ils racontent les faits au médecin.",
+        "cue": "On reprend au médecin, une seule personne, après raconter les faits.",
+        "answers": [
+          "Ils lui racontent les faits."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Raconter quelque chose à quelqu’un : lui. Modèle : Ils lui racontent les faits. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-clients",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 7,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "La vendeuse donne un reçu aux clients.",
+        "cue": "On reprend aux clients, plusieurs personnes, après donner un reçu.",
+        "answers": [
+          "La vendeuse leur donne un reçu."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Donner quelque chose à des personnes : leur. Modèle : La vendeuse leur donne un reçu. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-soeur",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 8,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je prête un livre à ma sœur.",
+        "cue": "On reprend à ma sœur, une seule personne, après prêter un livre.",
+        "answers": [
+          "Je lui prête un livre."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Prêter à quelqu’un : lui. Modèle : Je lui prête un livre. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-voisins",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 9,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tu demandes de l’aide aux voisins.",
+        "cue": "On reprend aux voisins, plusieurs personnes, après demander de l’aide.",
+        "answers": [
+          "Tu leur demandes de l’aide."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Demander à des personnes : leur. Modèle : Tu leur demandes de l’aide. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-animateur",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 10,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Elle pose une question à l’animateur.",
+        "cue": "On reprend à l’animateur, une seule personne, après poser une question.",
+        "answers": [
+          "Elle lui pose une question."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Poser une question à quelqu’un : lui. Modèle : Elle lui pose une question. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-participants",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 11,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous distribuons les fiches aux participants.",
+        "cue": "On reprend aux participants, plusieurs personnes, après distribuer les fiches.",
+        "answers": [
+          "Nous leur distribuons les fiches."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Distribuer quelque chose à des personnes : leur. Modèle : Nous leur distribuons les fiches. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-collegue",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 12,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Vous montrez le plan à la collègue.",
+        "cue": "On reprend à la collègue, une seule personne, après montrer le plan.",
+        "answers": [
+          "Vous lui montrez le plan."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Montrer quelque chose à quelqu’un : lui. Modèle : Vous lui montrez le plan. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-enfants",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 13,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Ils lisent une histoire aux enfants.",
+        "cue": "On reprend aux enfants, plusieurs personnes, après lire une histoire.",
+        "answers": [
+          "Ils leur lisent une histoire."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Lire quelque chose à des personnes : leur. Modèle : Ils leur lisent une histoire. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-apprenti",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 14,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "On propose un stage à l’apprenti.",
+        "cue": "On reprend à l’apprenti, une seule personne, après proposer un stage.",
+        "answers": [
+          "On lui propose un stage."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Proposer à quelqu’un : lui. Modèle : On lui propose un stage. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-associations",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 15,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "La mairie offre du matériel aux associations.",
+        "cue": "On reprend aux associations, plusieurs destinataires, après offrir du matériel.",
+        "answers": [
+          "La mairie leur offre du matériel."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Offrir quelque chose à des destinataires : leur. Modèle : La mairie leur offre du matériel. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-oncle",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 16,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je souhaite un bon voyage à mon oncle.",
+        "cue": "On reprend à mon oncle, une seule personne, après souhaiter un bon voyage.",
+        "answers": [
+          "Je lui souhaite un bon voyage."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Souhaiter quelque chose à quelqu’un : lui. Modèle : Je lui souhaite un bon voyage. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-voyageuses",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 17,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tu indiques le quai aux voyageuses.",
+        "cue": "On reprend aux voyageuses, plusieurs personnes, après indiquer le quai.",
+        "answers": [
+          "Tu leur indiques le quai."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Indiquer quelque chose à des personnes : leur. Modèle : Tu leur indiques le quai. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-professeure",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 18,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Elle rend le livre à la professeure.",
+        "cue": "On reprend à la professeure, une seule personne, après rendre le livre.",
+        "answers": [
+          "Elle lui rend le livre."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Rendre quelque chose à quelqu’un : lui. Modèle : Elle lui rend le livre. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-benevoles",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 19,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous apportons un repas aux bénévoles.",
+        "cue": "On reprend aux bénévoles, plusieurs personnes, après apporter un repas.",
+        "answers": [
+          "Nous leur apportons un repas."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Apporter quelque chose à des personnes : leur. Modèle : Nous leur apportons un repas. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-pas-voisine",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 20,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je ne parle pas à la voisine.",
+        "cue": "On reprend à la voisine, une seule personne. La négation est déjà présente.",
+        "answers": [
+          "Je ne lui parle pas."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Le COI se place entre ne et le verbe. Modèle : Je ne lui parle pas. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-pas-parents",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 21,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Elle ne téléphone pas à ses parents.",
+        "cue": "On reprend à ses parents, plusieurs personnes. La négation est déjà présente.",
+        "answers": [
+          "Elle ne leur téléphone pas."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Le COI se place entre ne et le verbe. Modèle : Elle ne leur téléphone pas. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-pas-guide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 22,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous n’avons pas répondu au guide.",
+        "cue": "On reprend au guide, une seule personne, devant l’auxiliaire.",
+        "answers": [
+          "Nous ne lui avons pas répondu."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Le pronom COI précède l’auxiliaire ; pas le suit. Modèle : Nous ne lui avons pas répondu. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-pas-clients",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 23,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Vous n’avez pas écrit aux clients.",
+        "cue": "On reprend aux clients, plusieurs personnes, devant l’auxiliaire.",
+        "answers": [
+          "Vous ne leur avez pas écrit."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Le pronom COI précède l’auxiliaire. Modèle : Vous ne leur avez pas écrit. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-deja-soeur",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 24,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’ai déjà envoyé le plan à ma sœur.",
+        "cue": "On reprend à ma sœur, une seule personne, au passé composé.",
+        "answers": [
+          "Je lui ai déjà envoyé le plan."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Lui précède ai ; pas d’élision de lui. Modèle : Je lui ai déjà envoyé le plan. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-deja-amis",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 25,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tu as déjà parlé à mes amis.",
+        "cue": "On reprend à mes amis, plusieurs personnes, au passé composé.",
+        "answers": [
+          "Tu leur as déjà parlé."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Leur précède l’auxiliaire. Modèle : Tu leur as déjà parlé. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-futur-responsable",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 26,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je vais répondre au responsable.",
+        "cue": "On reprend au responsable, une seule personne, avec le futur proche.",
+        "answers": [
+          "Je vais lui répondre."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Le pronom précède l’infinitif répondre. Modèle : Je vais lui répondre. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-futur-eleves",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 27,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Elle va expliquer le jeu aux élèves.",
+        "cue": "On reprend aux élèves, plusieurs personnes, avec le futur proche.",
+        "answers": [
+          "Elle va leur expliquer le jeu."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Le pronom précède l’infinitif expliquer. Modèle : Elle va leur expliquer le jeu. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-modal-collegue",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 28,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous pouvons prêter le matériel à la collègue.",
+        "cue": "On reprend à la collègue, une seule personne, avec pouvoir.",
+        "answers": [
+          "Nous pouvons lui prêter le matériel."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Le pronom précède l’infinitif prêter. Modèle : Nous pouvons lui prêter le matériel. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-modal-voisins",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 29,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Vous voulez demander un outil aux voisins.",
+        "cue": "On reprend aux voisins, plusieurs personnes, avec vouloir.",
+        "answers": [
+          "Vous voulez leur demander un outil."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Le pronom précède l’infinitif demander. Modèle : Vous voulez leur demander un outil. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-voir-voisine",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 30,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je vois la voisine.",
+        "cue": "Contraste COD/COI : voir la voisine n’a pas de préposition à ; une seule femme est désignée.",
+        "answers": [
+          "Je la vois."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Voir quelqu’un : COD, donc la. Modèle : Je la vois. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-voir-voisins",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 31,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je vois les voisins.",
+        "cue": "Contraste COD/COI : voir les voisins est une construction directe.",
+        "answers": [
+          "Je les vois."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Voir des personnes : COD, donc les. Modèle : Je les vois. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-inviter-guide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 32,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tu invites le guide.",
+        "cue": "Contraste COD/COI : inviter le guide est une construction directe.",
+        "answers": [
+          "Tu l’invites."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Inviter quelqu’un : COD ; le s’élide devant invites. Modèle : Tu l’invites. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-inviter-amies",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 33,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous invitons les amies.",
+        "cue": "Contraste COD/COI : inviter les amies est une construction directe.",
+        "answers": [
+          "Nous les invitons."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Inviter des personnes : COD, donc les. Modèle : Nous les invitons. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-ecouter-professeure",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 34,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "J’écoute la professeure.",
+        "cue": "Contraste COD/COI : écouter la professeure est une construction directe.",
+        "answers": [
+          "Je l’écoute."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Écouter quelqu’un : COD ; la s’élide devant écoute. Modèle : Je l’écoute. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-aider-parents",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 35,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Elle aide ses parents.",
+        "cue": "Contraste COD/COI : aider ses parents est une construction directe.",
+        "answers": [
+          "Elle les aide."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Aider quelqu’un : COD, donc les. Modèle : Elle les aide. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-attendre-collegue",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 36,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous attendons le collègue.",
+        "cue": "Contraste COD/COI : attendre le collègue est une construction directe.",
+        "answers": [
+          "Nous l’attendons."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Attendre quelqu’un : COD ; le s’élide devant attendons. Modèle : Nous l’attendons. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-saluer-voyageuses",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 37,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Il salue les voyageuses.",
+        "cue": "Contraste COD/COI : saluer les voyageuses est une construction directe.",
+        "answers": [
+          "Il les salue."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Saluer des personnes : COD, donc les. Modèle : Il les salue. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-connaître-voisin",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 38,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tu connais le voisin.",
+        "cue": "Contraste COD/COI : connaître le voisin est une construction directe.",
+        "answers": [
+          "Tu le connais."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Connaître quelqu’un : COD, donc le. Modèle : Tu le connais. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-remercier-amies",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 39,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Vous remerciez les amies.",
+        "cue": "Contraste COD/COI : remercier les amies est une construction directe.",
+        "answers": [
+          "Vous les remerciez."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Remercier des personnes : COD, donc les. Modèle : Vous les remerciez. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-manquer-voisine",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 40,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je manque à la voisine.",
+        "cue": "On remplace à la voisine, personne qui éprouve le manque ; le sujet je est la personne absente.",
+        "answers": [
+          "Je lui manque."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Manquer à quelqu’un : COI lui, sans changer les rôles. Modèle : Je lui manque. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-plaire-parents",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 41,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Le spectacle plaît aux parents.",
+        "cue": "Le spectacle plaît aux parents, plusieurs personnes. On remplace aux parents.",
+        "answers": [
+          "Le spectacle leur plaît."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Plaire à des personnes : leur. Modèle : Le spectacle leur plaît. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-convenir-responsable",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 42,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "L’horaire convient à la responsable.",
+        "cue": "L’horaire convient à la responsable, une seule personne.",
+        "answers": [
+          "L’horaire lui convient."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Convenir à quelqu’un : lui. Modèle : L’horaire lui convient. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-ressembler-freres",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 43,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tu ressembles à tes deux frères.",
+        "cue": "La personne tutoyée ressemble à ses deux frères. On remplace à ses deux frères.",
+        "answers": [
+          "Tu leur ressembles."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Ressembler à des personnes : leur. Modèle : Tu leur ressembles. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-appartenir-voisin",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 44,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Le vélo appartient au voisin.",
+        "cue": "Le vélo appartient au voisin, une seule personne. On remplace au voisin.",
+        "answers": [
+          "Le vélo lui appartient."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Appartenir à quelqu’un : lui. Modèle : Le vélo lui appartient. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-servir-invites",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 45,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Elle sert le dessert aux invités.",
+        "cue": "On reprend aux invités, plusieurs personnes, après servir le dessert.",
+        "answers": [
+          "Elle leur sert le dessert."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Servir quelque chose à des personnes : leur. Modèle : Elle leur sert le dessert. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-annoncer-directrice",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 46,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Nous annonçons le résultat à la directrice.",
+        "cue": "On reprend à la directrice, une seule personne, après annoncer le résultat.",
+        "answers": [
+          "Nous lui annonçons le résultat."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Annoncer quelque chose à quelqu’un : lui. Modèle : Nous lui annonçons le résultat. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-confier-amis",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 47,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Je confie les clés à mes amis.",
+        "cue": "On reprend à mes amis, plusieurs personnes, après confier les clés.",
+        "answers": [
+          "Je leur confie les clés."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Confier quelque chose à des personnes : leur. Modèle : Je leur confie les clés. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-expliquer-gardien",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 48,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Tu expliques le problème au gardien.",
+        "cue": "On reprend au gardien, une seule personne, après expliquer le problème.",
+        "answers": [
+          "Tu lui expliques le problème."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Expliquer quelque chose à quelqu’un : lui. Modèle : Tu lui expliques le problème. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-t-a2-repondre-equipe",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-t",
+          "position": 49,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "On a répondu aux membres de l’équipe.",
+        "cue": "On reprend aux membres de l’équipe, plusieurs personnes, au passé composé.",
+        "answers": [
+          "On leur a répondu."
+        ],
+        "directive": "Remplacez le complément indiqué par un pronom. Gardez le temps, la négation, les rôles et le reste de la phrase.",
+        "responseLines": 2,
+        "explanation": "Leur précède l’auxiliaire a. Modèle : On leur a répondu. Les autres formulations qui respectent les faits et la consigne sont appréciées par l’enseignant."
+      }
+    ]
+  },
+  {
+    "schemaVersion": 1,
+    "revision": "pronoms-2026-11-24-v1",
+    "activityId": "gram-ex-i5-curriculum-c",
+    "subthemeId": "i5",
+    "topic": "gram-pronoms",
+    "level": "A2",
+    "label": "Corriger l’erreur",
+    "objective": "Distinguer COI et COD selon le verbe ; reprendre le destinataire par lui/leur sans modifier les rôles.",
+    "editorialStatus": "reviewed",
+    "review": {
+      "reviewer": "Codex — revue linguistique et fonctionnelle",
+      "date": "2026-11-24",
+      "humanReview": "pending",
+      "note": "Situations et références relues ; réemploi explicite entre mécaniques. Modèles ouverts non exclusifs. Aucune approbation pédagogique humaine déclarée."
+    },
+    "presentations": [
+      "correct"
+    ],
+    "instructions": {
+      "correct": "Corrigez la reprise du complément indiqué et réécrivez la phrase entière."
+    },
+    "units": [
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-voisine",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 0,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je leur parle.",
+        "cue": "On reprend à la voisine, une seule personne, après parler.",
+        "answers": [
+          "Je lui parle."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 7,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Parler à quelqu’un : lui au singulier. Modèle : Je lui parle."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-parents",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 1,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je lui téléphone.",
+        "cue": "On reprend à mes parents, plusieurs personnes, après téléphoner.",
+        "answers": [
+          "Je leur téléphone."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 6,
+          "text": "lui"
+        },
+        "responseLines": 2,
+        "explanation": "Téléphoner à des personnes : leur, sans s. Modèle : Je leur téléphone."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-guide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 2,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tu leur réponds.",
+        "cue": "On reprend à la guide, une seule personne, après répondre.",
+        "answers": [
+          "Tu lui réponds."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 7,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Répondre à quelqu’un : lui. Modèle : Tu lui réponds."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-eleves",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 3,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Elle lui explique la règle.",
+        "cue": "On reprend aux élèves, plusieurs personnes, après expliquer quelque chose.",
+        "answers": [
+          "Elle leur explique la règle."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 8,
+          "text": "lui"
+        },
+        "responseLines": 2,
+        "explanation": "Le COI des destinataires devient leur. Modèle : Elle leur explique la règle."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-responsable",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 4,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous leur écrivons.",
+        "cue": "On reprend au responsable, une seule personne, après écrire.",
+        "answers": [
+          "Nous lui écrivons."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 9,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Écrire à quelqu’un : lui. Modèle : Nous lui écrivons."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-amies",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 5,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Vous lui envoyez une invitation.",
+        "cue": "On reprend à mes amies, plusieurs personnes, après envoyer une invitation.",
+        "answers": [
+          "Vous leur envoyez une invitation."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 8,
+          "text": "lui"
+        },
+        "responseLines": 2,
+        "explanation": "Le COI des destinataires devient leur. Modèle : Vous leur envoyez une invitation."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-medecin",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 6,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Ils leur racontent les faits.",
+        "cue": "On reprend au médecin, une seule personne, après raconter les faits.",
+        "answers": [
+          "Ils lui racontent les faits."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 4,
+          "end": 8,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Raconter quelque chose à quelqu’un : lui. Modèle : Ils lui racontent les faits."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-clients",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 7,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "La vendeuse lui donne un reçu.",
+        "cue": "On reprend aux clients, plusieurs personnes, après donner un reçu.",
+        "answers": [
+          "La vendeuse leur donne un reçu."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 15,
+          "text": "lui"
+        },
+        "responseLines": 2,
+        "explanation": "Donner quelque chose à des personnes : leur. Modèle : La vendeuse leur donne un reçu."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-soeur",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 8,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je leur prête un livre.",
+        "cue": "On reprend à ma sœur, une seule personne, après prêter un livre.",
+        "answers": [
+          "Je lui prête un livre."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 7,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Prêter à quelqu’un : lui. Modèle : Je lui prête un livre."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-voisins",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 9,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tu lui demandes de l’aide.",
+        "cue": "On reprend aux voisins, plusieurs personnes, après demander de l’aide.",
+        "answers": [
+          "Tu leur demandes de l’aide."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 6,
+          "text": "lui"
+        },
+        "responseLines": 2,
+        "explanation": "Demander à des personnes : leur. Modèle : Tu leur demandes de l’aide."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-animateur",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 10,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Elle leur pose une question.",
+        "cue": "On reprend à l’animateur, une seule personne, après poser une question.",
+        "answers": [
+          "Elle lui pose une question."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 9,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Poser une question à quelqu’un : lui. Modèle : Elle lui pose une question."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-participants",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 11,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous lui distribuons les fiches.",
+        "cue": "On reprend aux participants, plusieurs personnes, après distribuer les fiches.",
+        "answers": [
+          "Nous leur distribuons les fiches."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 8,
+          "text": "lui"
+        },
+        "responseLines": 2,
+        "explanation": "Distribuer quelque chose à des personnes : leur. Modèle : Nous leur distribuons les fiches."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-collegue",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 12,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Vous leur montrez le plan.",
+        "cue": "On reprend à la collègue, une seule personne, après montrer le plan.",
+        "answers": [
+          "Vous lui montrez le plan."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 9,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Montrer quelque chose à quelqu’un : lui. Modèle : Vous lui montrez le plan."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-enfants",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 13,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Ils lui lisent une histoire.",
+        "cue": "On reprend aux enfants, plusieurs personnes, après lire une histoire.",
+        "answers": [
+          "Ils leur lisent une histoire."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 4,
+          "end": 7,
+          "text": "lui"
+        },
+        "responseLines": 2,
+        "explanation": "Lire quelque chose à des personnes : leur. Modèle : Ils leur lisent une histoire."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-apprenti",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 14,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "On leur propose un stage.",
+        "cue": "On reprend à l’apprenti, une seule personne, après proposer un stage.",
+        "answers": [
+          "On lui propose un stage."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 7,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Proposer à quelqu’un : lui. Modèle : On lui propose un stage."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-associations",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 15,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "La mairie lui offre du matériel.",
+        "cue": "On reprend aux associations, plusieurs destinataires, après offrir du matériel.",
+        "answers": [
+          "La mairie leur offre du matériel."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 10,
+          "end": 13,
+          "text": "lui"
+        },
+        "responseLines": 2,
+        "explanation": "Offrir quelque chose à des destinataires : leur. Modèle : La mairie leur offre du matériel."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-oncle",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 16,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je leur souhaite un bon voyage.",
+        "cue": "On reprend à mon oncle, une seule personne, après souhaiter un bon voyage.",
+        "answers": [
+          "Je lui souhaite un bon voyage."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 7,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Souhaiter quelque chose à quelqu’un : lui. Modèle : Je lui souhaite un bon voyage."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-voyageuses",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 17,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tu lui indiques le quai.",
+        "cue": "On reprend aux voyageuses, plusieurs personnes, après indiquer le quai.",
+        "answers": [
+          "Tu leur indiques le quai."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 6,
+          "text": "lui"
+        },
+        "responseLines": 2,
+        "explanation": "Indiquer quelque chose à des personnes : leur. Modèle : Tu leur indiques le quai."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-professeure",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 18,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Elle leur rend le livre.",
+        "cue": "On reprend à la professeure, une seule personne, après rendre le livre.",
+        "answers": [
+          "Elle lui rend le livre."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 9,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Rendre quelque chose à quelqu’un : lui. Modèle : Elle lui rend le livre."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-benevoles",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 19,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous lui apportons un repas.",
+        "cue": "On reprend aux bénévoles, plusieurs personnes, après apporter un repas.",
+        "answers": [
+          "Nous leur apportons un repas."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 8,
+          "text": "lui"
+        },
+        "responseLines": 2,
+        "explanation": "Apporter quelque chose à des personnes : leur. Modèle : Nous leur apportons un repas."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-pas-voisine",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 20,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je ne leur parle pas.",
+        "cue": "On reprend à la voisine, une seule personne. La négation est déjà présente.",
+        "answers": [
+          "Je ne lui parle pas."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 6,
+          "end": 10,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Le COI se place entre ne et le verbe. Modèle : Je ne lui parle pas."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-pas-parents",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 21,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Elle ne lui téléphone pas.",
+        "cue": "On reprend à ses parents, plusieurs personnes. La négation est déjà présente.",
+        "answers": [
+          "Elle ne leur téléphone pas."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 11,
+          "text": "lui"
+        },
+        "responseLines": 2,
+        "explanation": "Le COI se place entre ne et le verbe. Modèle : Elle ne leur téléphone pas."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-pas-guide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 22,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous ne leur avons pas répondu.",
+        "cue": "On reprend au guide, une seule personne, devant l’auxiliaire.",
+        "answers": [
+          "Nous ne lui avons pas répondu."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 12,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Le pronom COI précède l’auxiliaire ; pas le suit. Modèle : Nous ne lui avons pas répondu."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-pas-clients",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 23,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Vous ne lui avez pas écrit.",
+        "cue": "On reprend aux clients, plusieurs personnes, devant l’auxiliaire.",
+        "answers": [
+          "Vous ne leur avez pas écrit."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 11,
+          "text": "lui"
+        },
+        "responseLines": 2,
+        "explanation": "Le pronom COI précède l’auxiliaire. Modèle : Vous ne leur avez pas écrit."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-deja-soeur",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 24,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je leur ai déjà envoyé le plan.",
+        "cue": "On reprend à ma sœur, une seule personne, au passé composé.",
+        "answers": [
+          "Je lui ai déjà envoyé le plan."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 7,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Lui précède ai ; pas d’élision de lui. Modèle : Je lui ai déjà envoyé le plan."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-deja-amis",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 25,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tu lui as déjà parlé.",
+        "cue": "On reprend à mes amis, plusieurs personnes, au passé composé.",
+        "answers": [
+          "Tu leur as déjà parlé."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 6,
+          "text": "lui"
+        },
+        "responseLines": 2,
+        "explanation": "Leur précède l’auxiliaire. Modèle : Tu leur as déjà parlé."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-futur-responsable",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 26,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je vais leur répondre.",
+        "cue": "On reprend au responsable, une seule personne, avec le futur proche.",
+        "answers": [
+          "Je vais lui répondre."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 12,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Le pronom précède l’infinitif répondre. Modèle : Je vais lui répondre."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-futur-eleves",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 27,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Elle va lui expliquer le jeu.",
+        "cue": "On reprend aux élèves, plusieurs personnes, avec le futur proche.",
+        "answers": [
+          "Elle va leur expliquer le jeu."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 11,
+          "text": "lui"
+        },
+        "responseLines": 2,
+        "explanation": "Le pronom précède l’infinitif expliquer. Modèle : Elle va leur expliquer le jeu."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-modal-collegue",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 28,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous pouvons leur prêter le matériel.",
+        "cue": "On reprend à la collègue, une seule personne, avec pouvoir.",
+        "answers": [
+          "Nous pouvons lui prêter le matériel."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 13,
+          "end": 17,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Le pronom précède l’infinitif prêter. Modèle : Nous pouvons lui prêter le matériel."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-modal-voisins",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 29,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Vous voulez lui demander un outil.",
+        "cue": "On reprend aux voisins, plusieurs personnes, avec vouloir.",
+        "answers": [
+          "Vous voulez leur demander un outil."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 15,
+          "text": "lui"
+        },
+        "responseLines": 2,
+        "explanation": "Le pronom précède l’infinitif demander. Modèle : Vous voulez leur demander un outil."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-voir-voisine",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 30,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je lui vois.",
+        "cue": "Contraste COD/COI : voir la voisine n’a pas de préposition à ; une seule femme est désignée.",
+        "answers": [
+          "Je la vois."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 6,
+          "text": "lui"
+        },
+        "responseLines": 2,
+        "explanation": "Voir quelqu’un : COD, donc la. Modèle : Je la vois."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-voir-voisins",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 31,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je leur vois.",
+        "cue": "Contraste COD/COI : voir les voisins est une construction directe.",
+        "answers": [
+          "Je les vois."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 7,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Voir des personnes : COD, donc les. Modèle : Je les vois."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-inviter-guide",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 32,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tu lui invites.",
+        "cue": "Contraste COD/COI : inviter le guide est une construction directe.",
+        "answers": [
+          "Tu l’invites."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 7,
+          "text": "lui "
+        },
+        "responseLines": 2,
+        "explanation": "Inviter quelqu’un : COD ; le s’élide devant invites. Modèle : Tu l’invites."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-inviter-amies",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 33,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous leur invitons.",
+        "cue": "Contraste COD/COI : inviter les amies est une construction directe.",
+        "answers": [
+          "Nous les invitons."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 9,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Inviter des personnes : COD, donc les. Modèle : Nous les invitons."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-ecouter-professeure",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 34,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je lui écoute.",
+        "cue": "Contraste COD/COI : écouter la professeure est une construction directe.",
+        "answers": [
+          "Je l’écoute."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 7,
+          "text": "lui "
+        },
+        "responseLines": 2,
+        "explanation": "Écouter quelqu’un : COD ; la s’élide devant écoute. Modèle : Je l’écoute."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-aider-parents",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 35,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Elle leur aide.",
+        "cue": "Contraste COD/COI : aider ses parents est une construction directe.",
+        "answers": [
+          "Elle les aide."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 9,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Aider quelqu’un : COD, donc les. Modèle : Elle les aide."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-attendre-collegue",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 36,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous lui attendons.",
+        "cue": "Contraste COD/COI : attendre le collègue est une construction directe.",
+        "answers": [
+          "Nous l’attendons."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 9,
+          "text": "lui "
+        },
+        "responseLines": 2,
+        "explanation": "Attendre quelqu’un : COD ; le s’élide devant attendons. Modèle : Nous l’attendons."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-saluer-voyageuses",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 37,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Il leur salue.",
+        "cue": "Contraste COD/COI : saluer les voyageuses est une construction directe.",
+        "answers": [
+          "Il les salue."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 7,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Saluer des personnes : COD, donc les. Modèle : Il les salue."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-connaître-voisin",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 38,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tu lui connais.",
+        "cue": "Contraste COD/COI : connaître le voisin est une construction directe.",
+        "answers": [
+          "Tu le connais."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 6,
+          "text": "lui"
+        },
+        "responseLines": 2,
+        "explanation": "Connaître quelqu’un : COD, donc le. Modèle : Tu le connais."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-remercier-amies",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 39,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Vous leur remerciez.",
+        "cue": "Contraste COD/COI : remercier les amies est une construction directe.",
+        "answers": [
+          "Vous les remerciez."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 9,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Remercier des personnes : COD, donc les. Modèle : Vous les remerciez."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-manquer-voisine",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 40,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je leur manque.",
+        "cue": "On remplace à la voisine, personne qui éprouve le manque ; le sujet je est la personne absente.",
+        "answers": [
+          "Je lui manque."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 7,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Manquer à quelqu’un : COI lui, sans changer les rôles. Modèle : Je lui manque."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-plaire-parents",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 41,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Le spectacle lui plaît.",
+        "cue": "Le spectacle plaît aux parents, plusieurs personnes. On remplace aux parents.",
+        "answers": [
+          "Le spectacle leur plaît."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 13,
+          "end": 16,
+          "text": "lui"
+        },
+        "responseLines": 2,
+        "explanation": "Plaire à des personnes : leur. Modèle : Le spectacle leur plaît."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-convenir-responsable",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 42,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "L’horaire leur convient.",
+        "cue": "L’horaire convient à la responsable, une seule personne.",
+        "answers": [
+          "L’horaire lui convient."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 10,
+          "end": 14,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Convenir à quelqu’un : lui. Modèle : L’horaire lui convient."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-ressembler-freres",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 43,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tu lui ressembles.",
+        "cue": "La personne tutoyée ressemble à ses deux frères. On remplace à ses deux frères.",
+        "answers": [
+          "Tu leur ressembles."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 6,
+          "text": "lui"
+        },
+        "responseLines": 2,
+        "explanation": "Ressembler à des personnes : leur. Modèle : Tu leur ressembles."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-appartenir-voisin",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 44,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Le vélo leur appartient.",
+        "cue": "Le vélo appartient au voisin, une seule personne. On remplace au voisin.",
+        "answers": [
+          "Le vélo lui appartient."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 12,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Appartenir à quelqu’un : lui. Modèle : Le vélo lui appartient."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-servir-invites",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 45,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Elle lui sert le dessert.",
+        "cue": "On reprend aux invités, plusieurs personnes, après servir le dessert.",
+        "answers": [
+          "Elle leur sert le dessert."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 8,
+          "text": "lui"
+        },
+        "responseLines": 2,
+        "explanation": "Servir quelque chose à des personnes : leur. Modèle : Elle leur sert le dessert."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-annoncer-directrice",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 46,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous leur annonçons le résultat.",
+        "cue": "On reprend à la directrice, une seule personne, après annoncer le résultat.",
+        "answers": [
+          "Nous lui annonçons le résultat."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 9,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Annoncer quelque chose à quelqu’un : lui. Modèle : Nous lui annonçons le résultat."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-confier-amis",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 47,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Je lui confie les clés.",
+        "cue": "On reprend à mes amis, plusieurs personnes, après confier les clés.",
+        "answers": [
+          "Je leur confie les clés."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 6,
+          "text": "lui"
+        },
+        "responseLines": 2,
+        "explanation": "Confier quelque chose à des personnes : leur. Modèle : Je leur confie les clés."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-expliquer-gardien",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 48,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tu leur expliques le problème.",
+        "cue": "On reprend au gardien, une seule personne, après expliquer le problème.",
+        "answers": [
+          "Tu lui expliques le problème."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 7,
+          "text": "leur"
+        },
+        "responseLines": 2,
+        "explanation": "Expliquer quelque chose à quelqu’un : lui. Modèle : Tu lui expliques le problème."
+      },
+      {
+        "id": "gram-ex-i5-curriculum-c-a2-repondre-equipe",
+        "source": {
+          "path": "scripts/grammar_curriculum/pronoms-i5-a2.tsv",
+          "typeId": "gram-ex-i5-curriculum-c",
+          "position": 49,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "On lui a répondu.",
+        "cue": "On reprend aux membres de l’équipe, plusieurs personnes, au passé composé.",
+        "answers": [
+          "On leur a répondu."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 6,
+          "text": "lui"
+        },
+        "responseLines": 2,
+        "explanation": "Leur précède l’auxiliaire a. Modèle : On leur a répondu."
+      }
+    ]
+  }
+]
