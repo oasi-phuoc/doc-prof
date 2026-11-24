@@ -1,0 +1,375 @@
+[
+  {
+    "id": "conseil-cles",
+    "sourceSituation": "cles",
+    "title": "Un endroit pour les clés",
+    "genre": "Dialogue de conseil",
+    "text": [
+      "Demandeur : « J’égare souvent mes clés. Il y a une petite boîte juste à côté",
+      "de ma porte. »",
+      "Conseiller : « Tu devrais mettre tes clés dans la boîte près de la porte. »",
+      "Demandeur : « Quand les ranger ? »",
+      "Conseiller : « Dès que tu rentres, pour les retrouver au même endroit. »"
+    ],
+    "questions": [
+      {"prompt": "Quel conseil est donné dans ce dialogue ?", "answer": "Tu devrais mettre tes clés dans la boîte près de la porte.", "distractors": ["Tu devrais commencer par un texte court de la bibliothèque.", "Tu pourrais discuter dix minutes avec ton voisin chaque soir."], "evidence": "Tu devrais mettre tes clés dans la boîte près de la porte."},
+      {"prompt": "Où se trouve la petite boîte ?", "answer": "À côté de la porte.", "distractors": ["Dans le bus.", "À la bibliothèque."], "evidence": "juste à côté de ma porte"},
+      {"prompt": "Quand les ranger ?", "answer": "Dès que tu rentres, pour les retrouver au même endroit.", "evidence": "Dès que tu rentres, pour les retrouver au même endroit."}
+    ]
+  },
+  {
+    "id": "conseil-carnet",
+    "sourceSituation": "carnet",
+    "title": "Garder les rendez-vous",
+    "genre": "Dialogue de conseil",
+    "text": [
+      "Demandeur : « J’oublie les heures de mes rendez-vous. J’ai un carnet que je",
+      "garde toujours dans mon sac. »",
+      "Conseiller : « Vous pourriez noter vos rendez-vous dans votre carnet. »",
+      "Demandeur : « Quelles informations noter ? »",
+      "Conseiller : « La date, l’heure et le lieu du rendez-vous. »"
+    ],
+    "questions": [
+      {"prompt": "Quel conseil est donné dans ce dialogue ?", "answer": "Vous pourriez noter vos rendez-vous dans votre carnet.", "distractors": ["Vous pourriez chercher ce mot dans le dictionnaire de l’accueil.", "Vous devriez demander à la professeure de relire la phrase lentement."], "evidence": "Vous pourriez noter vos rendez-vous dans votre carnet."},
+      {"prompt": "Quel objet la personne garde-t-elle dans son sac ?", "answer": "Un carnet.", "distractors": ["Un plan du quartier.", "Une règle."], "evidence": "un carnet que je garde toujours dans mon sac"},
+      {"prompt": "Quelles informations noter ?", "answer": "La date, l’heure et le lieu du rendez-vous.", "evidence": "La date, l’heure et le lieu du rendez-vous."}
+    ]
+  },
+  {
+    "id": "conseil-depart",
+    "sourceSituation": "depart",
+    "title": "Rejoindre le bus",
+    "genre": "Dialogue de conseil",
+    "text": [
+      "Demandeur : « Mon bus part à huit heures. Je mets dix minutes pour rejoindre",
+      "l’arrêt et je suis souvent en retard. »",
+      "Conseiller : « Tu pourrais partir de chez toi à sept heures quarante-cinq. »",
+      "Demandeur : « Pourquoi aussi tôt ? »",
+      "Conseiller : « Pour arriver à l’arrêt cinq minutes avant le départ. »"
+    ],
+    "questions": [
+      {"prompt": "Quel conseil est donné dans ce dialogue ?", "answer": "Tu pourrais partir de chez toi à sept heures quarante-cinq.", "distractors": ["Tu pourrais discuter dix minutes avec ton voisin chaque soir.", "Tu devrais vérifier tes réserves avant de faire une liste de courses."], "evidence": "Tu pourrais partir de chez toi à sept heures quarante-cinq."},
+      {"prompt": "À quelle heure le bus part-il ?", "answer": "À huit heures.", "distractors": ["À sept heures.", "À neuf heures."], "evidence": "Mon bus part à huit heures"},
+      {"prompt": "Pourquoi aussi tôt ?", "answer": "Pour arriver à l’arrêt cinq minutes avant le départ.", "evidence": "Pour arriver à l’arrêt cinq minutes avant le départ."}
+    ]
+  },
+  {
+    "id": "conseil-dossier",
+    "sourceSituation": "dossier",
+    "title": "Préparer un dossier",
+    "genre": "Dialogue de conseil",
+    "text": [
+      "Demandeur : « Je dois apporter trois documents à l’accueil demain. Ce soir,",
+      "j’ai le temps de préparer mon sac. »",
+      "Conseiller : « Vous devriez préparer vos trois documents ce soir. »",
+      "Demandeur : « Où les mettre ? »",
+      "Conseiller : « Dans une pochette, puis dans votre sac. »"
+    ],
+    "questions": [
+      {"prompt": "Quel conseil est donné dans ce dialogue ?", "answer": "Vous devriez préparer vos trois documents ce soir.", "distractors": ["Vous devriez demander à la professeure de relire la phrase lentement.", "Vous pourriez comparer les deux prix avant de choisir votre abonnement."], "evidence": "Vous devriez préparer vos trois documents ce soir."},
+      {"prompt": "Combien de documents faut-il apporter ?", "answer": "Trois documents.", "distractors": ["Deux documents.", "Quatre documents."], "evidence": "trois documents à l’accueil demain"},
+      {"prompt": "Où les mettre ?", "answer": "Dans une pochette, puis dans votre sac.", "evidence": "Dans une pochette, puis dans votre sac."}
+    ]
+  },
+  {
+    "id": "conseil-lecture",
+    "sourceSituation": "lecture",
+    "title": "Commencer à lire",
+    "genre": "Dialogue de conseil",
+    "text": [
+      "Demandeur : « Je voudrais lire en français, mais les livres longs me",
+      "découragent. La bibliothèque propose des textes courts. »",
+      "Conseiller : « Tu devrais commencer par un texte court de la bibliothèque. »",
+      "Demandeur : « Comment le choisir ? »",
+      "Conseiller : « En regardant quelques pages et en demandant conseil à la",
+      "bibliothèque. »"
+    ],
+    "questions": [
+      {"prompt": "Quel conseil est donné dans ce dialogue ?", "answer": "Tu devrais commencer par un texte court de la bibliothèque.", "distractors": ["Tu devrais mettre tes clés dans la boîte près de la porte.", "Tu devrais vérifier tes réserves avant de faire une liste de courses."], "evidence": "Tu devrais commencer par un texte court de la bibliothèque."},
+      {"prompt": "Quels textes la bibliothèque propose-t-elle ?", "answer": "Des textes courts.", "distractors": ["Seulement des livres longs.", "Des messages à envoyer."], "evidence": "La bibliothèque propose des textes courts"},
+      {"prompt": "Comment le choisir ?", "answer": "En regardant quelques pages et en demandant conseil à la bibliothèque.", "evidence": "En regardant quelques pages et en demandant conseil à la bibliothèque."}
+    ]
+  },
+  {
+    "id": "conseil-mot-inconnu",
+    "sourceSituation": "mot-inconnu",
+    "title": "Comprendre un mot",
+    "genre": "Dialogue de conseil",
+    "text": [
+      "Demandeur : « Je rencontre un mot inconnu dans un message. Un dictionnaire",
+      "en français est disponible à l’accueil. »",
+      "Conseiller : « Vous pourriez chercher ce mot dans le dictionnaire de",
+      "l’accueil. »",
+      "Demandeur : « Que faire ensuite ? »",
+      "Conseiller : « Relisez le message avec le sens que vous avez trouvé. »"
+    ],
+    "questions": [
+      {"prompt": "Quel conseil est donné dans ce dialogue ?", "answer": "Vous pourriez chercher ce mot dans le dictionnaire de l’accueil.", "distractors": ["Vous pourriez noter vos rendez-vous dans votre carnet.", "Vous pourriez comparer les deux prix avant de choisir votre abonnement."], "evidence": "Vous pourriez chercher ce mot dans le dictionnaire de l’accueil."},
+      {"prompt": "Où le dictionnaire est-il disponible ?", "answer": "À l’accueil.", "distractors": ["Dans le bus.", "Chez le voisin."], "evidence": "Un dictionnaire en français est disponible à l’accueil"},
+      {"prompt": "Que faire ensuite ?", "answer": "Relisez le message avec le sens que vous avez trouvé.", "evidence": "Relisez le message avec le sens que vous avez trouvé."}
+    ]
+  },
+  {
+    "id": "conseil-conversation",
+    "sourceSituation": "conversation",
+    "title": "Parler chaque jour",
+    "genre": "Dialogue de conseil",
+    "text": [
+      "Demandeur : « Je voudrais pratiquer le français. Mon voisin accepte de",
+      "parler avec moi dix minutes chaque soir. »",
+      "Conseiller : « Tu pourrais discuter dix minutes avec ton voisin chaque soir.",
+      "»",
+      "Demandeur : « De quoi parler ? »",
+      "Conseiller : « De ta journée ou d’une activité que vous connaissez tous les",
+      "deux. »"
+    ],
+    "questions": [
+      {"prompt": "Quel conseil est donné dans ce dialogue ?", "answer": "Tu pourrais discuter dix minutes avec ton voisin chaque soir.", "distractors": ["Tu devrais mettre tes clés dans la boîte près de la porte.", "Tu pourrais partir de chez toi à sept heures quarante-cinq."], "evidence": "Tu pourrais discuter dix minutes avec ton voisin chaque soir."},
+      {"prompt": "Quand le voisin accepte-t-il de parler ?", "answer": "Chaque soir.", "distractors": ["Seulement le dimanche.", "Une fois par mois."], "evidence": "dix minutes chaque soir"},
+      {"prompt": "De quoi parler ?", "answer": "De ta journée ou d’une activité que vous connaissez tous les deux.", "evidence": "De ta journée ou d’une activité que vous connaissez tous les deux."}
+    ]
+  },
+  {
+    "id": "conseil-prononciation",
+    "sourceSituation": "prononciation",
+    "title": "Écouter une phrase",
+    "genre": "Dialogue de conseil",
+    "text": [
+      "Demandeur : « Je ne sais pas comment prononcer une phrase de la leçon. La",
+      "professeure peut la relire lentement. »",
+      "Conseiller : « Vous devriez demander à la professeure de relire la phrase",
+      "lentement. »",
+      "Demandeur : « Comment le demander poliment ? »",
+      "Conseiller : « Vous pourriez dire : « Pourriez-vous relire cette phrase,",
+      "s’il vous plaît ? » »"
+    ],
+    "questions": [
+      {"prompt": "Quel conseil est donné dans ce dialogue ?", "answer": "Vous devriez demander à la professeure de relire la phrase lentement.", "distractors": ["Vous pourriez noter vos rendez-vous dans votre carnet.", "Vous devriez préparer vos trois documents ce soir."], "evidence": "Vous devriez demander à la professeure de relire la phrase lentement."},
+      {"prompt": "Qui peut relire la phrase lentement ?", "answer": "La professeure.", "distractors": ["Le chauffeur.", "Le voisin."], "evidence": "La professeure peut la relire lentement"},
+      {"prompt": "Comment le demander poliment ?", "answer": "Vous pourriez dire : « Pourriez-vous relire cette phrase, s’il vous plaît ? »", "evidence": "Vous pourriez dire : « Pourriez-vous relire cette phrase, s’il vous plaît ? »"}
+    ]
+  },
+  {
+    "id": "conseil-budget",
+    "sourceSituation": "budget",
+    "title": "Préparer les courses",
+    "genre": "Dialogue de conseil",
+    "text": [
+      "Demandeur : « Je dépasse mon budget de courses. J’ai chez moi plusieurs",
+      "produits que j’oublie en allant au magasin. »",
+      "Conseiller : « Tu devrais vérifier tes réserves avant de faire une liste de",
+      "courses. »",
+      "Demandeur : « Pourquoi vérifier d’abord ? »",
+      "Conseiller : « Pour éviter d’acheter des produits que tu as déjà. »"
+    ],
+    "questions": [
+      {"prompt": "Quel conseil est donné dans ce dialogue ?", "answer": "Tu devrais vérifier tes réserves avant de faire une liste de courses.", "distractors": ["Tu devrais mettre tes clés dans la boîte près de la porte.", "Tu pourrais partir de chez toi à sept heures quarante-cinq."], "evidence": "Tu devrais vérifier tes réserves avant de faire une liste de courses."},
+      {"prompt": "Que faut-il vérifier avant la liste ?", "answer": "Les produits déjà présents à la maison.", "distractors": ["L’horaire d’un rendez-vous.", "Le contenu d’un courriel."], "evidence": "vérifier tes réserves avant de faire une liste"},
+      {"prompt": "Pourquoi vérifier d’abord ?", "answer": "Pour éviter d’acheter des produits que tu as déjà.", "evidence": "Pour éviter d’acheter des produits que tu as déjà."}
+    ]
+  },
+  {
+    "id": "conseil-prix",
+    "sourceSituation": "prix",
+    "title": "Choisir un abonnement",
+    "genre": "Dialogue de conseil",
+    "text": [
+      "Demandeur : « Je cherche un abonnement de transport. Deux offres couvrent",
+      "mon trajet, mais leurs prix sont différents. »",
+      "Conseiller : « Vous pourriez comparer les deux prix avant de choisir votre",
+      "abonnement. »",
+      "Demandeur : « Quel autre point vérifier ? »",
+      "Conseiller : « La durée de validité et les conditions de chaque offre. »"
+    ],
+    "questions": [
+      {"prompt": "Quel conseil est donné dans ce dialogue ?", "answer": "Vous pourriez comparer les deux prix avant de choisir votre abonnement.", "distractors": ["Vous pourriez noter vos rendez-vous dans votre carnet.", "Vous devriez préparer vos trois documents ce soir."], "evidence": "Vous pourriez comparer les deux prix avant de choisir votre abonnement."},
+      {"prompt": "Que couvrent les deux abonnements ?", "answer": "Le trajet de la personne.", "distractors": ["Une activité sportive.", "Un service d’impression."], "evidence": "Deux offres couvrent mon trajet"},
+      {"prompt": "Quel autre point vérifier ?", "answer": "La durée de validité et les conditions de chaque offre.", "evidence": "La durée de validité et les conditions de chaque offre."}
+    ]
+  },
+  {
+    "id": "conseil-pluie",
+    "sourceSituation": "pluie",
+    "title": "Sortir sous la pluie",
+    "genre": "Dialogue de conseil",
+    "text": [
+      "Demandeur : « Il pleut et je dois marcher jusqu’à l’école. Mon parapluie est",
+      "dans le placard de l’entrée. »",
+      "Conseiller : « Tu pourrais prendre ton parapluie dans le placard. »",
+      "Demandeur : « Où le remettre au retour ? »",
+      "Conseiller : « Dans l’entrée, après l’avoir fait sécher. »"
+    ],
+    "questions": [
+      {"prompt": "Quel conseil est donné dans ce dialogue ?", "answer": "Tu pourrais prendre ton parapluie dans le placard.", "distractors": ["Tu devrais mettre tes clés dans la boîte près de la porte.", "Tu pourrais partir de chez toi à sept heures quarante-cinq."], "evidence": "Tu pourrais prendre ton parapluie dans le placard."},
+      {"prompt": "Quel temps fait-il dans la situation ?", "answer": "Il pleut.", "distractors": ["Il neige.", "Il fait sec."], "evidence": "Il pleut et je dois marcher jusqu’à l’école"},
+      {"prompt": "Où le remettre au retour ?", "answer": "Dans l’entrée, après l’avoir fait sécher.", "evidence": "Dans l’entrée, après l’avoir fait sécher."}
+    ]
+  },
+  {
+    "id": "conseil-parcours",
+    "sourceSituation": "parcours",
+    "title": "S’orienter dans le quartier",
+    "genre": "Dialogue de conseil",
+    "text": [
+      "Demandeur : « Je ne connais pas le quartier. Un plan gratuit est proposé au",
+      "bureau d’information, qui est ouvert. »",
+      "Conseiller : « Vous devriez demander un plan au bureau d’information. »",
+      "Demandeur : « Quel lieu repérer en premier ? »",
+      "Conseiller : « Votre destination et le point où vous vous trouvez. »"
+    ],
+    "questions": [
+      {"prompt": "Quel conseil est donné dans ce dialogue ?", "answer": "Vous devriez demander un plan au bureau d’information.", "distractors": ["Vous pourriez noter vos rendez-vous dans votre carnet.", "Vous devriez préparer vos trois documents ce soir."], "evidence": "Vous devriez demander un plan au bureau d’information."},
+      {"prompt": "Quel service est ouvert ?", "answer": "Le bureau d’information.", "distractors": ["La salle de cours.", "Le service d’impression."], "evidence": "au bureau d’information, qui est ouvert"},
+      {"prompt": "Quel lieu repérer en premier ?", "answer": "Votre destination et le point où vous vous trouvez.", "evidence": "Votre destination et le point où vous vous trouvez."}
+    ]
+  },
+  {
+    "id": "conseil-adresse",
+    "sourceSituation": "adresse",
+    "title": "Garder une adresse",
+    "genre": "Dialogue de conseil",
+    "text": [
+      "Demandeur : « Je vais chez une amie, mais mon téléphone risque de manquer de",
+      "batterie. J’ai du papier et un stylo. »",
+      "Conseiller : « Tu devrais écrire son adresse sur un papier avant de partir.",
+      "»",
+      "Demandeur : « Quelle autre information garder ? »",
+      "Conseiller : « Le nom de la personne et un numéro de contact. »"
+    ],
+    "questions": [
+      {"prompt": "Quel conseil est donné dans ce dialogue ?", "answer": "Tu devrais écrire son adresse sur un papier avant de partir.", "distractors": ["Tu devrais mettre tes clés dans la boîte près de la porte.", "Tu pourrais partir de chez toi à sept heures quarante-cinq."], "evidence": "Tu devrais écrire son adresse sur un papier avant de partir."},
+      {"prompt": "Quel problème de téléphone est prévu ?", "answer": "La batterie risque de se décharger.", "distractors": ["Le téléphone est déjà perdu.", "L’écran est cassé."], "evidence": "mon téléphone risque de manquer de batterie"},
+      {"prompt": "Quelle autre information garder ?", "answer": "Le nom de la personne et un numéro de contact.", "evidence": "Le nom de la personne et un numéro de contact."}
+    ]
+  },
+  {
+    "id": "conseil-billet",
+    "sourceSituation": "billet",
+    "title": "Retrouver son billet",
+    "genre": "Dialogue de conseil",
+    "text": [
+      "Demandeur : « Je pars demain matin. Mon billet électronique est disponible",
+      "maintenant et je peux l’enregistrer sur mon téléphone. »",
+      "Conseiller : « Vous pourriez enregistrer votre billet dès aujourd’hui. »",
+      "Demandeur : « Pourquoi le faire maintenant ? »",
+      "Conseiller : « Pour pouvoir le retrouver plus facilement au moment du",
+      "départ. »"
+    ],
+    "questions": [
+      {"prompt": "Quel conseil est donné dans ce dialogue ?", "answer": "Vous pourriez enregistrer votre billet dès aujourd’hui.", "distractors": ["Vous pourriez noter vos rendez-vous dans votre carnet.", "Vous devriez préparer vos trois documents ce soir."], "evidence": "Vous pourriez enregistrer votre billet dès aujourd’hui."},
+      {"prompt": "Quand le voyage est-il prévu ?", "answer": "Demain matin.", "distractors": ["Ce soir.", "La semaine prochaine."], "evidence": "Je pars demain matin"},
+      {"prompt": "Pourquoi le faire maintenant ?", "answer": "Pour pouvoir le retrouver plus facilement au moment du départ.", "evidence": "Pour pouvoir le retrouver plus facilement au moment du départ."}
+    ]
+  },
+  {
+    "id": "conseil-batterie",
+    "sourceSituation": "batterie",
+    "title": "Préparer le téléphone",
+    "genre": "Dialogue de conseil",
+    "text": [
+      "Demandeur : « Mon téléphone est presque déchargé. Je suis encore chez moi et",
+      "mon chargeur fonctionne. »",
+      "Conseiller : « Tu pourrais recharger ton téléphone avant de sortir. »",
+      "Demandeur : « Où poser le téléphone ? »",
+      "Conseiller : « Près de la prise, dans un endroit où tu ne l’oublieras pas. »"
+    ],
+    "questions": [
+      {"prompt": "Quel conseil est donné dans ce dialogue ?", "answer": "Tu pourrais recharger ton téléphone avant de sortir.", "distractors": ["Tu devrais mettre tes clés dans la boîte près de la porte.", "Tu pourrais partir de chez toi à sept heures quarante-cinq."], "evidence": "Tu pourrais recharger ton téléphone avant de sortir."},
+      {"prompt": "Où la personne se trouve-t-elle encore ?", "answer": "Chez elle.", "distractors": ["Dans le train.", "À la médiathèque."], "evidence": "Je suis encore chez moi"},
+      {"prompt": "Où poser le téléphone ?", "answer": "Près de la prise, dans un endroit où tu ne l’oublieras pas.", "evidence": "Près de la prise, dans un endroit où tu ne l’oublieras pas."}
+    ]
+  },
+  {
+    "id": "conseil-copie",
+    "sourceSituation": "copie",
+    "title": "Garder son travail",
+    "genre": "Dialogue de conseil",
+    "text": [
+      "Demandeur : « Je travaille sur un texte important. Je peux en garder une",
+      "copie dans un second dossier. »",
+      "Conseiller : « Vous devriez sauvegarder une copie de votre texte dans un",
+      "autre dossier. »",
+      "Demandeur : « Quand refaire une sauvegarde ? »",
+      "Conseiller : « Après les modifications importantes. »"
+    ],
+    "questions": [
+      {"prompt": "Quel conseil est donné dans ce dialogue ?", "answer": "Vous devriez sauvegarder une copie de votre texte dans un autre dossier.", "distractors": ["Vous pourriez noter vos rendez-vous dans votre carnet.", "Vous devriez préparer vos trois documents ce soir."], "evidence": "Vous devriez sauvegarder une copie de votre texte dans un autre dossier."},
+      {"prompt": "Où peut-on garder une seconde copie ?", "answer": "Dans un autre dossier.", "distractors": ["Dans le panier de courses.", "Dans une enveloppe fermée."], "evidence": "dans un second dossier"},
+      {"prompt": "Quand refaire une sauvegarde ?", "answer": "Après les modifications importantes.", "evidence": "Après les modifications importantes."}
+    ]
+  },
+  {
+    "id": "conseil-photo-document",
+    "sourceSituation": "photo-document",
+    "title": "Envoyer une photo lisible",
+    "genre": "Dialogue de conseil",
+    "text": [
+      "Demandeur : « Je dois envoyer la photo d’un document. La première photo est",
+      "floue et une table bien éclairée est disponible. »",
+      "Conseiller : « Tu devrais refaire la photo sur la table bien éclairée. »",
+      "Demandeur : « Que vérifier avant l’envoi ? »",
+      "Conseiller : « Que le document entier et les informations sont lisibles. »"
+    ],
+    "questions": [
+      {"prompt": "Quel conseil est donné dans ce dialogue ?", "answer": "Tu devrais refaire la photo sur la table bien éclairée.", "distractors": ["Tu devrais mettre tes clés dans la boîte près de la porte.", "Tu pourrais partir de chez toi à sept heures quarante-cinq."], "evidence": "Tu devrais refaire la photo sur la table bien éclairée."},
+      {"prompt": "Quel défaut présente la première photo ?", "answer": "Elle est floue.", "distractors": ["Elle montre une autre personne.", "Elle est déjà imprimée."], "evidence": "La première photo est floue"},
+      {"prompt": "Que vérifier avant l’envoi ?", "answer": "Que le document entier et les informations sont lisibles.", "evidence": "Que le document entier et les informations sont lisibles."}
+    ]
+  },
+  {
+    "id": "conseil-piece-jointe",
+    "sourceSituation": "piece-jointe",
+    "title": "Vérifier un courriel",
+    "genre": "Dialogue de conseil",
+    "text": [
+      "Demandeur : « Je dois envoyer un formulaire par courriel. Le fichier est",
+      "prêt, mais je ne suis pas sûr de l’avoir ajouté au message. »",
+      "Conseiller : « Vous pourriez vérifier la pièce jointe avant d’envoyer le",
+      "courriel. »",
+      "Demandeur : « Que faut-il regarder ? »",
+      "Conseiller : « Le nom du fichier et sa présence dans le message. »"
+    ],
+    "questions": [
+      {"prompt": "Quel conseil est donné dans ce dialogue ?", "answer": "Vous pourriez vérifier la pièce jointe avant d’envoyer le courriel.", "distractors": ["Vous pourriez noter vos rendez-vous dans votre carnet.", "Vous devriez préparer vos trois documents ce soir."], "evidence": "Vous pourriez vérifier la pièce jointe avant d’envoyer le courriel."},
+      {"prompt": "Quel fichier est prêt ?", "answer": "Un formulaire.", "distractors": ["Un billet de bus.", "Une photo de groupe."], "evidence": "Le fichier est prêt"},
+      {"prompt": "Que faut-il regarder ?", "answer": "Le nom du fichier et sa présence dans le message.", "evidence": "Le nom du fichier et sa présence dans le message."}
+    ]
+  },
+  {
+    "id": "conseil-boite-mail",
+    "sourceSituation": "boite-mail",
+    "title": "Classer les messages",
+    "genre": "Dialogue de conseil",
+    "text": [
+      "Demandeur : « J’ai beaucoup de courriels et je ne retrouve plus les messages",
+      "du cours. Je peux créer des dossiers. »",
+      "Conseiller : « Tu pourrais créer un dossier pour les messages du cours. »",
+      "Demandeur : « Comment le nommer ? »",
+      "Conseiller : « Avec un nom simple, par exemple « Cours de français ». »"
+    ],
+    "questions": [
+      {"prompt": "Quel conseil est donné dans ce dialogue ?", "answer": "Tu pourrais créer un dossier pour les messages du cours.", "distractors": ["Tu devrais mettre tes clés dans la boîte près de la porte.", "Tu pourrais partir de chez toi à sept heures quarante-cinq."], "evidence": "Tu pourrais créer un dossier pour les messages du cours."},
+      {"prompt": "Quels messages faut-il mieux retrouver ?", "answer": "Ceux du cours.", "distractors": ["Ceux d’un magasin.", "Ceux d’un hôtel."], "evidence": "les messages du cours"},
+      {"prompt": "Comment le nommer ?", "answer": "Avec un nom simple, par exemple « Cours de français ».", "evidence": "Avec un nom simple, par exemple « Cours de français »."}
+    ]
+  },
+  {
+    "id": "conseil-impression",
+    "sourceSituation": "impression",
+    "title": "Trouver une imprimante",
+    "genre": "Dialogue de conseil",
+    "text": [
+      "Demandeur : « Je dois imprimer une fiche, mais je n’ai pas d’imprimante. La",
+      "médiathèque propose ce service et elle est ouverte. »",
+      "Conseiller : « Vous devriez demander à la médiathèque comment imprimer votre",
+      "fiche. »",
+      "Demandeur : « Quelle information demander aussi ? »",
+      "Conseiller : « Le prix et les formats de fichier acceptés. »"
+    ],
+    "questions": [
+      {"prompt": "Quel conseil est donné dans ce dialogue ?", "answer": "Vous devriez demander à la médiathèque comment imprimer votre fiche.", "distractors": ["Vous pourriez noter vos rendez-vous dans votre carnet.", "Vous devriez préparer vos trois documents ce soir."], "evidence": "Vous devriez demander à la médiathèque comment imprimer votre fiche."},
+      {"prompt": "Quel établissement propose l’impression ?", "answer": "La médiathèque.", "distractors": ["La banque.", "La gare."], "evidence": "La médiathèque propose ce service"},
+      {"prompt": "Quelle information demander aussi ?", "answer": "Le prix et les formats de fichier acceptés.", "evidence": "Le prix et les formats de fichier acceptés."}
+    ]
+  }
+]

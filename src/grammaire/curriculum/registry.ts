@@ -40,6 +40,8 @@ import adjectivePosition from './data/f12.json'
 import superlatives from './data/f13.json'
 import quantityComparisons from './data/f14.json'
 import physicalDescriptions from './data/description-physique.json'
+import politeAdvice from './data/f10.json'
+import imperatives from './data/f11.json'
 import moments from './data/e2.json'
 import durations from './data/e3.json'
 import frequencies from './data/e4.json'
@@ -53,7 +55,7 @@ import { assertGrammarBank } from './validation'
 import { isProtectedGrammarCo, type GrammarBank, type GrammarLevel } from './types'
 
 /** Editorial pilot only; publication requires a recorded teacher review. */
-export const GRAMMAR_PILOT_BANKS = [...raw, ...specialEr, ...pastContrast, ...directObjects, ...subjunctive, ...have, ...go, ...regularEr, ...ir, ...reOir, ...modals, ...reflexive, ...simpleNegation, ...otherNegations, ...addressForms, ...greetings, ...politeness, ...subjectPronouns, ...origins, ...identities, ...nationalities, ...families, ...familyCompletion,...closedQuestions,...openQuestions,...quelQuestions,...exclamations,...activities,...tonicPronouns,...locations,...directions,...locationArticles,...moments,...durations,...frequencies,...chronology,...demonstratives,...requests,...acceptances,...decriref4,...decriref5,...decriref6,...decriref7,...decriref8,...comparisons,...adjectivePosition,...superlatives,...quantityComparisons,...physicalDescriptions,...activityDailyBanks(reflexive as GrammarBank[])] as GrammarBank[]
+export const GRAMMAR_PILOT_BANKS = [...raw, ...specialEr, ...pastContrast, ...directObjects, ...subjunctive, ...have, ...go, ...regularEr, ...ir, ...reOir, ...modals, ...reflexive, ...simpleNegation, ...otherNegations, ...addressForms, ...greetings, ...politeness, ...subjectPronouns, ...origins, ...identities, ...nationalities, ...families, ...familyCompletion,...closedQuestions,...openQuestions,...quelQuestions,...exclamations,...activities,...tonicPronouns,...locations,...directions,...locationArticles,...moments,...durations,...frequencies,...chronology,...demonstratives,...requests,...acceptances,...decriref4,...decriref5,...decriref6,...decriref7,...decriref8,...comparisons,...adjectivePosition,...superlatives,...quantityComparisons,...physicalDescriptions,...politeAdvice,...imperatives,...activityDailyBanks(reflexive as GrammarBank[])] as GrammarBank[]
 GRAMMAR_PILOT_BANKS.forEach(assertGrammarBank)
 
 export function grammarBanksForType(typeId: string): GrammarBank[] {

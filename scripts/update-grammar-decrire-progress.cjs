@@ -1,4 +1,4 @@
-/** Publish measured pilot coverage for the selected Décrire notions; human approval stays pending. */
+/** Publish measured pilot coverage for the selected grammar notions; human approval stays pending. */
 const fs=require('node:fs'),path=require('node:path')
 const {load,root}=require('./gattegno-loader.cjs')
 const {GRAMMAR_PILOT_BANKS:banks}=load(root+'/src/grammaire/curriculum/registry.ts')
@@ -10,6 +10,7 @@ const themeBanks=banks.filter(b=>b.topic===theme)
 const scope=themeBanks.filter(b=>requested.includes(b.subthemeId))
 if(!scope.length)throw Error('No banks for '+theme)
 const planned=r.offerings.filter(o=>o.themeId===theme)
+const themeLabel=r.notionLevels.find(n=>n.themeId===theme)?.themeLabel??theme
 const covered=o=>themeBanks.some(b=>b.activityId===o.activityId&&b.level===o.level&&b.presentations.includes(o.presentation))
 const remainingNotions=[...new Set(planned.filter(o=>!covered(o)).map(o=>r.notionLevels.find(n=>n.pedagogicalNotionId===o.pedagogicalNotionId&&n.level===o.level).label))]
 for(const id of new Set(scope.map(b=>b.activityId))){
@@ -25,11 +26,12 @@ for(const id of new Set(scope.map(b=>b.activityId))){
  }
 }
 const units=banks.flatMap(b=>b.units),docs=units.filter(u=>u.kind==='reading'),ids=new Set(banks.map(b=>b.activityId)),notion=b=>r.activities.find(a=>a.activityId===b.activityId).pedagogicalNotionId
-Object.assign(r.implementation,{lastUpdated:date,reviewedVariants:banks.reduce((n,b)=>n+b.presentations.reduce((s,p)=>s+(p==='document-set'?b.units.reduce((n,u)=>n+u.questions.length,0):b.units.length),0),0),reviewedActivityUnits:units.length,reviewedSelectableUnits:units.length,reviewedActivities:ids.size,reviewedDocuments:docs.length,reviewedDocumentQuestions:docs.reduce((n,u)=>n+u.questions.length,0),reviewedOfferings:banks.reduce((n,b)=>n+b.presentations.length,0),reviewedNotions:new Set(banks.map(notion)).size,reviewedNotionLevelPairs:new Set(banks.map(b=>notion(b)+'@'+b.level)).size,remaining:`Décrire : ${planned.filter(covered).length}/${planned.length} offres en pilote. À poursuivre : ${remainingNotions.join(", ")||"validation du thème"}. Approbation enseignante, révisions et recette finale restent en attente.`})
+Object.assign(r.implementation,{lastUpdated:date,reviewedVariants:banks.reduce((n,b)=>n+b.presentations.reduce((s,p)=>s+(p==='document-set'?b.units.reduce((n,u)=>n+u.questions.length,0):b.units.length),0),0),reviewedActivityUnits:units.length,reviewedSelectableUnits:units.length,reviewedActivities:ids.size,reviewedDocuments:docs.length,reviewedDocumentQuestions:docs.reduce((n,u)=>n+u.questions.length,0),reviewedOfferings:banks.reduce((n,b)=>n+b.presentations.length,0),reviewedNotions:new Set(banks.map(notion)).size,reviewedNotionLevelPairs:new Set(banks.map(b=>notion(b)+'@'+b.level)).size,remaining:`${themeLabel} : ${planned.filter(covered).length}/${planned.length} offres en pilote. À poursuivre : ${remainingNotions.join(", ")||"validation du thème"}. Approbation enseignante, révisions et recette finale restent en attente.`})
 const slices={f9:'f9 A1/A2 — comparaisons (10 offres)',f12:'f12 A1/A2 — place de l’adjectif (8 offres)',f13:'f13 A1/A2 — superlatif (10 offres)',f14:'f14 A1/A2 — noms et verbes comparés (8 offres)','description-physique':'Description physique A1 (6 offres)'}
 const slice=requested.length===1?(slices[requested[0]]??requested[0]+' — '+scope.reduce((n,b)=>n+b.presentations.length,0)+' offres'):requested.join('/')+' — '+scope.reduce((n,b)=>n+b.presentations.length,0)+' offres'
 r.implementation.deliveredSlices=[...new Set([...r.implementation.deliveredSlices,slice])]
 for(const manifestPath of ['docs/grammaire/implementation/decrire-media-manifest.json','docs/grammaire/implementation/physique-media-manifest.json'].filter(p=>fs.existsSync(path.join(root,p))))for(const evidence of JSON.parse(fs.readFileSync(path.join(root,manifestPath))).obligations){
+ if(!scope.some(b=>b.activityId===evidence.hostActivityId))continue
  const image=r.imageObligations.find(i=>i.obligationId===evidence.obligationId)
  Object.assign(image,{reviewedIllustratedSituations:evidence.reviewedIllustratedSituations,approvedIllustratedSituations:0,distinctImages:evidence.distinctImages,mediaStatus:'réemploi vérifié ; validation enseignante en attente',manifest:manifestPath,humanReview:'pending'})
 }

@@ -126,7 +126,9 @@
     "test:grammar:adjectifs": "node scripts/test-grammar-adjectifs.cjs && python3 scripts/test-grammar-adjectifs-build.py",
     "test:grammar:adjectifs:browser": "node tests/grammar/adjectifs-browser.mjs && node tests/grammar/adjectifs-pdf.mjs && node tests/grammar/adjectifs-order-browser.mjs",
     "test:grammar:decrire:final": "node scripts/test-grammar-decrire-final.cjs && python3 scripts/test-grammar-decrire-final-build.py",
-    "test:grammar:decrire:final:browser": "node tests/grammar/decrire-final-browser.mjs && node tests/grammar/decrire-final-pdf.mjs"
+    "test:grammar:decrire:final:browser": "node tests/grammar/decrire-final-browser.mjs && node tests/grammar/decrire-final-pdf.mjs",
+    "test:grammar:conseiller": "node scripts/test-grammar-conseiller.cjs && python3 scripts/test-grammar-conseiller-build.py",
+    "test:grammar:conseiller:browser": "node tests/grammar/conseiller-browser.mjs && node tests/grammar/conseiller-pdf.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",

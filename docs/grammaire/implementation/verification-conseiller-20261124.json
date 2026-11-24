@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-24",
+  "timezone": "Europe/Zurich",
+  "baseCommit": "f96dee7f0",
+  "status": "passed_for_pilot_human_approval_pending",
+  "scope": "Conseiller quelqu’un only; gamemode development paused.",
+  "delivery": {
+    "theme": "Conseiller quelqu’un",
+    "notions": [
+      "f10",
+      "f11"
+    ],
+    "notionLevelPairs": 3,
+    "activities": 10,
+    "banks": 13,
+    "offerings": 16,
+    "plannedOfferings": 16,
+    "units": 620,
+    "variants": 810,
+    "authoredSituations": 150,
+    "readingDocuments": 20,
+    "readingQuestions": 60,
+    "readingSourceReuse": "20 of the 50 authored advice situations, not 20 extra stories",
+    "teacherApprovedUnits": 0
+  },
+  "checks": {
+    "authoredContentAndImperativeForms": "passed",
+    "isolatedDeterministicRebuild": "passed",
+    "globalVariants": 17420,
+    "protectedTheoryAndCoFiles": 276,
+    "upstreamTcfAndGalleryContent": "preserved exactly",
+    "previousDecrireAndDemanderRegressions": "passed",
+    "filters": {
+      "A1affirmative": 50,
+      "A1negative": 0,
+      "A2affirmative": 25,
+      "A2negative": 25,
+      "A2mixed": 50,
+      "noSilentFallback": true
+    },
+    "canonicalCorrectionSpans": 50,
+    "browser": {
+      "server": "Vite preview of final production build",
+      "offerings": 16,
+      "renderedQuestionUnits": 1620,
+      "renderedAnswerFields": 1620,
+      "sheets": 1620,
+      "horizontalOverflow": false,
+      "footerOverflow": false,
+      "worstFirstPageBudget": "All unit heights checked against the full first-page header budget, for student and corrected layouts; reading supports and questions measured separately.",
+      "errors": []
+    },
+    "actualPdfPreviews": 11,
+    "typescript": "passed",
+    "productionBuild": "passed",
+    "lint": "passed with existing warnings",
+    "existingGameCatalogBuildGate": "passed; unchanged catalog, no game features added",
+    "secretScan": {
+      "tool": "Gitleaks 8.30.1",
+      "changedFiles": 6939,
+      "findings": 0,
+      "canarySelfTest": "passed; arbitrary api_key and random hashes still detected",
+      "upstreamFalsePositive": {
+        "field": "qcm-delf2-trier-papier",
+        "matchedPublicPng": "public/lib/images/tcf/qcm-audit/qcm-delf2-trier-papier.png",
+        "resolution": "one exact SHA-256 added to the existing file-scoped exception; public PNG bytes verified",
+        "evidence": "docs/interactive/revue-empreintes-delf-lot2-20261123.json"
+      }
+    }
+  },
+  "retirement": {
+    "removedWrittenNotions": [
+      "f10",
+      "f11"
+    ],
+    "totalRetiredNotions": 51,
+    "remainingWrittenBanks": 47,
+    "removedCommunicationGroup": "f10",
+    "otherCommunicationGroupsPreserved": 6,
+    "otherActivityAndOfferingRowsPreserved": true,
+    "coAndTheoriesPreserved": true,
+    "savedWorksheetCleanup": "deferred by owner; no real fiche read or delete",
+    "workerDeployment": false
+  },
+  "media": {
+    "generated": 0,
+    "newImageObligations": 0
+  },
+  "globalCoverage": {
+    "reviewedActivities": 238,
+    "reviewedOfferings": 338,
+    "reviewedSelectableUnits": 12950,
+    "reviewedVariants": 17420,
+    "reviewedDocuments": 400,
+    "reviewedDocumentQuestions": 1520
+  },
+  "limitations": [
+    "Human pedagogical approval, physical printing and ENI classroom acceptance pending.",
+    "Hyphen-linked affirmative verb/pronoun groups remain one neutral order label; their internal order is assessed in Q/gap/correct/transform tasks.",
+    "Gamemode features and static-bank download performance work remain paused.",
+    "No next grammar theme started in this delivery."
+  ],
+  "sourceSha256": [
+    {
+      "path": "scripts/build-grammar-conseiller.py",
+      "sha256": "3c8cae2d8f565c0abd7a22025f8d2504bbd31298906c19fd09ec48b8678a242f"
+    },
+    {
+      "path": "scripts/grammar_curriculum/conseiller-f10-a2.tsv",
+      "sha256": "471df1c7caf817373a2dbfe1bcb5330538a74b7c48e86b6d36b579f6d64f4ec5"
+    },
+    {
+      "path": "scripts/grammar_curriculum/conseiller-f11-a1.tsv",
+      "sha256": "d97ae2aee53824c46ca74d400d2be4da1b04aa00ba82cca0b9686fcfc4e14027"
+    },
+    {
+      "path": "scripts/grammar_curriculum/conseiller-f11-a2.tsv",
+      "sha256": "dbeb8ffba6f85a2bafa8c8d2b2cbc0c545706b4666454fa0bacc0e56affe01c7"
+    },
+    {
+      "path": "scripts/grammar_curriculum/conseiller-lectures-a2.json",
+      "sha256": "8aaabaf9c83698b544fef56ffa83b9cb46c94bee06d5eb6f63f5c1c14bb4578a"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/f10.json",
+      "sha256": "a3064ab5d2331f19c786de4a0832fd8af297cda7a7dc263f32a9345c10d3ca05"
+    },
+    {
+      "path": "src/grammaire/curriculum/data/f11.json",
+      "sha256": "96b270691af4513a33fe85d2715761ac41984822c27fc78e4b8151e5a309ec93"
+    },
+    {
+      "path": "src/grammaire/curriculum/registry.ts",
+      "sha256": "4fc2cad8995414737452181ad4171f38316f12df0c96156f975bc97d980ed8ad"
+    },
+    {
+      "path": "src/grammaire/curriculum/pagination.ts",
+      "sha256": "c26f78e07da65c24fecf55b1ceae3c00f5d314aa856f0ca82e5874c65eda8948"
+    },
+    {
+      "path": "src/components/item-view/grammar.tsx",
+      "sha256": "c2d3955f5d0b5d36331a6bc3462850b1644b5040226383afb680743af1001a07"
+    }
+  ],
+  "protectedSnapshotSha256": "f2ad9f4a28355cbe8d707ffd241d0a56dd41c8bbdc1cb49d7b1117a307db9b29",
+  "productionManifestSha256": "24972c40114f2b96d98e8c2bbff0eeed0b46a0b4c77265ee53bff1a8c80b13c3"
+}
