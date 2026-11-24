@@ -251,6 +251,7 @@ export function WorksheetSheet({
     >
       {showHeader ? (
         <InstitutionalDocumentHeader
+          domain={page.domain}
           config={institutional}
           evalMode={evalMode}
           totalPoints={evalMode ? documentTotalPoints : undefined}

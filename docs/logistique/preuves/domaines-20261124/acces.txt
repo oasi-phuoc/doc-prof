@@ -1,0 +1,20 @@
+2:07:36 PM [vite] (client) Re-optimizing dependencies because vite config has changed
+2:07:38 PM [vite] (client) [optimizer] scanning dependencies...
+2:07:39 PM [vite] (client) Re-optimizing dependencies because vite config has changed
+2:07:41 PM [vite] (client) [optimizer] scanning dependencies...
+✔ full client access includes all four TCF/TCM tests without a domain environment variable (3355.904183ms)
+2:07:44 PM [vite] (client) [optimizer] scanning dependencies...
+✔ an old full domain configuration retains its selection and gains the four requested tests (2508.66504ms)
+✔ full can save, list and update all four tests with no server domain configuration (33.531096ms)
+✔ full can save, list and update all four tests with an old server domain configuration (9.639397ms)
+✔ saving regular and mixed permitted worksheets remains possible for full (4.388438ms)
+✔ partial access and unauthenticated requests cannot save or list the TCF/TCM worksheets (8.150327ms)
+✔ full cannot use a mixed worksheet to gain a domain outside its permissions (2.926319ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9938.544188

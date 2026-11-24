@@ -1,5 +1,8 @@
 import type { ReactNode } from 'react'
 import valaisLogo from '@/assets/logos/etat-du-valais.webp'
+import { EPCA_LOGO_SRC, isLogistiqueDomain } from '@/logistique/domains'
+import type { Domain } from '@/math/types'
+import '@/logistique/branding.css'
 
 export type InstitutionalHeader = {
   schoolName: string
@@ -78,15 +81,18 @@ export function InstitutionalDocumentHeader({
   evalMode,
   totalPoints,
   fallbackTitle,
+  domain,
 }: {
   config: InstitutionalHeader
   evalMode: boolean
   totalPoints?: number
   fallbackTitle?: string
+  domain?: Domain
 }) {
   const title = config.documentTitle.trim() || fallbackTitle || ''
+  const logoSrc = isLogistiqueDomain(domain) ? EPCA_LOGO_SRC : config.logoSrc
   return (
-    <div className="doc-header institutional">
+    <div className={`doc-header institutional${isLogistiqueDomain(domain) ? ' is-logistique' : ''}`}>
       <div className="doc-header-top">
         <div className="doc-header-school">
           <p className="doc-school-name">{config.schoolName}</p>
@@ -95,8 +101,8 @@ export function InstitutionalDocumentHeader({
         </div>
         <div className="doc-header-org">
           <div className="doc-logo-slot">
-            {config.logoSrc ? (
-              <img src={config.logoSrc} alt="" />
+            {logoSrc ? (
+              <img src={logoSrc} alt={isLogistiqueDomain(domain) ? 'EPCA' : ''} />
             ) : (
               <span aria-hidden>Logo</span>
             )}

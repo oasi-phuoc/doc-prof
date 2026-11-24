@@ -10,6 +10,8 @@ export type Domain =
   | 'jeux'
   | 'calligraphie'
   | 'grammaire'
+  | 'logistique-cfc'
+  | 'logistique-afp'
   | 'vocabulaire'
   | 'société'
   | 'santé'

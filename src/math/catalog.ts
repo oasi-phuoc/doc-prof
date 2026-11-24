@@ -27,6 +27,7 @@ import {
 import { TCM_CFR_EXERCISE_TYPES, TCM_CFR_TOPICS } from '@/tcm-cfr/catalog'
 import { TCM_CSC_EXERCISE_TYPES, TCM_CSC_TOPICS } from '@/tcm-csc/catalog'
 import { VOCABULAIRE_EXERCISE_TYPES, VOCABULAIRE_TOPICS } from '@/vocabulaire/catalog'
+import { isLogistiqueDomain } from '@/logistique/domains'
 
 export const topics: Topic[] = [
   { id: 'tpm-info', label: 'Informations', domain: 'tpm' },
@@ -994,6 +995,7 @@ export function isDraftPadExercise(typeId: string): boolean {
 }
 
 export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack): ExerciseType {
+  if (isLogistiqueDomain(domain)) throw new Error('Les cours et exercices de logistique ne sont pas encore ajoutés.')
   if (topic) {
     const list = typesForTopic(topic, track)
     if (list[0]) return list[0]
@@ -1038,6 +1040,7 @@ export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack
 }
 
 export function defaultPage(domain: Domain = 'algèbre'): PageConfigLike {
+  if (isLogistiqueDomain(domain)) return { domain, topic: '', exerciseType: '', difficulty: 'moyen', count: 1, columns: 1 }
   const type = firstTypeFor(domain)
   const count =
     domain === 'jeux' ||

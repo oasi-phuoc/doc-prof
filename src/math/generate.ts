@@ -57,6 +57,7 @@ import type {
   WorksheetPage,
 } from './types'
 import { generateItems } from './generate-items'
+import { isLogistiqueDomain, logistiqueDomainLabel } from '@/logistique/domains'
 import { headingForSlice } from './page-break-heading'
 
 /** CE instructions multi-docs → un bloc Exercice par document. */
@@ -116,6 +117,7 @@ function buildSingleBlock(
   const type = exerciseTypeById[config.exerciseType]
   const difficulty = config.difficulty ?? 'moyen'
   const fallbackTitle = type?.label ?? topic?.label ?? 'Exercices'
+  if (isLogistiqueDomain(config.domain)) return { title: logistiqueDomainLabel(config.domain), instruction: '', items: [], bankQuestionCap: 0 }
   if (config.exerciseType === 'tpm-consignes') {
     return {
       title: 'Informations',

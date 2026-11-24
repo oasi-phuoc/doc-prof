@@ -1,6 +1,7 @@
 import { readSessionUser } from '@/fiches/session'
 import { readAccessPassword } from '@/fiches/password'
 import type { Domain } from '@/math/types'
+import { LOGISTIQUE_DOMAIN_OPTIONS } from '@/logistique/domains'
 
 /**
  * Comptes d’accès (le mot de passe détermine le rôle).
@@ -23,6 +24,7 @@ export const REGULAR_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = 
   { id: 'géométrie', label: 'Géométrie' },
   { id: 'grammaire', label: 'Grammaire' },
   { id: 'jeux', label: 'Grilles de cartes' },
+  ...LOGISTIQUE_DOMAIN_OPTIONS,
   { id: 'logique', label: 'Logique' },
   { id: 'santé', label: 'Sciences et santé' },
   { id: 'société', label: 'Société' },
