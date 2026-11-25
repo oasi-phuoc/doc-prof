@@ -7,6 +7,7 @@ import { SelectBox } from '@/components/generator/SelectBox'
 import type { Domain } from '@/math/types'
 import { logistiqueDomainLabel, type LogistiqueDomain } from './domains'
 import { LOGISTIQUE_TYPES, logistiqueCatalogCounts, logistiqueThemesForDomain, type LogistiqueSubmodule, type LogistiqueTheme, type LogistiqueType } from './catalog'
+import { IMPORTED_LOGISTIQUE_BANKS, IMPORTED_LOGISTIQUE_COUNTS, IMPORTED_LOGISTIQUE_REPORT, logistiqueBankKey } from './registry'
 
 export type LogistiqueSelection = {
   themeId: string
@@ -84,17 +85,27 @@ export function LogistiqueDomainSettings({ domain, allowedDomains, onDomainChang
     <div className="logistique-type-group" aria-labelledby="logistique-types-title">
       <h3 id="logistique-types-title">Type de fiche</h3>
       <ol className="logistique-type-list">
-        {LOGISTIQUE_TYPES.map((type) => <li key={type.id}>
-          <button type="button" aria-pressed={selection.type === type.id} aria-describedby="logistique-bank-status" onClick={() => changeType(type.id)}>
-            <span>{type.label}</span>
-            <span className="logistique-type-state">À importer</span>
-          </button>
-        </li>)}
+        {LOGISTIQUE_TYPES.map((type) => {
+          const bank = activeSubmodule ? IMPORTED_LOGISTIQUE_BANKS[logistiqueBankKey(domain, activeSubmodule.code, type.id)] : undefined
+          const level = domain === 'logistique-afp' ? 'AFP' : 'CFC'
+          const importedCount = bank?.sourceUnitCount ?? bank?.units.length ?? 0
+          const approvedCount = bank?.units.filter(unit => unit.status === 'approved' && unit.eligibleLevels.includes(level) && unit.reviewByLevel[level]?.status === 'approved').length ?? 0
+          const pendingCount = Math.max(0, importedCount - approvedCount)
+          const bankStatus = !bank ? 'À importer' : importedCount === 0 ? 'Source à compléter' : pendingCount > 0 ? `${pendingCount} source(s) · à valider` : `${approvedCount} approuvée(s)`
+          return <li key={type.id}>
+            <button type="button" aria-pressed={selection.type === type.id} aria-describedby="logistique-bank-status" onClick={() => changeType(type.id)}>
+              <span>{type.label}</span>
+              <span className="logistique-type-state">{bankStatus}</span>
+            </button>
+          </li>
+        })}
       </ol>
       <p className="logistique-bank-status" id="logistique-bank-status" role="status">
         Le moteur accepte uniquement des banques raccordées et des unités approuvées pour le diplôme choisi.
       </p>
       <p className="logistique-catalog-count">{counts.themes} thèmes · {counts.submodules} sous-thèmes référencés</p>
+      <p className="logistique-catalog-count">{IMPORTED_LOGISTIQUE_COUNTS.populatedBanks}/{IMPORTED_LOGISTIQUE_COUNTS.catalogBanks} banques alimentées · {IMPORTED_LOGISTIQUE_REPORT.sourcePages.populated}/{IMPORTED_LOGISTIQUE_REPORT.sourcePages.curriculumPages} pages source avec contenu</p>
+      <p className="logistique-bank-status">{IMPORTED_LOGISTIQUE_COUNTS.uniqueUnits.toLocaleString('fr-CH')} unités sources archivées · {IMPORTED_LOGISTIQUE_COUNTS.approvedUnits} publiée(s). {IMPORTED_LOGISTIQUE_REPORT.review.quarantineCount} éléments à vérifier; le contenu EPCAS reste hors génération tant que la revue pédagogique et les droits ne sont pas validés.</p>
     </div>
     <section className="logistique-type-settings" aria-labelledby="logistique-settings-title">
       <h3 id="logistique-settings-title">Réglages · {activeType.label}</h3>

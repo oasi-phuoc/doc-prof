@@ -23,12 +23,16 @@ export type LogistiqueProvenance = {
   rights: LogistiqueRights
   resolution?: 'native-cfc' | 'native-afp' | 'inherited-cfc' | 'adapted' | 'original'
   derivedFrom?: { id: string; revision: string }
+  lessonId?: string
+  sourcePageId?: string
+  sourcePosition?: string
 }
 
 export type LogistiqueCorrection =
   | { kind: 'choice'; options: { id: string; text: string }[]; correctIds: string[] }
   | { kind: 'boolean'; answer: boolean; justification: string }
-  | { kind: 'open'; model: string; accepted?: string[]; criteria: { description: string; points?: number }[] }
+  | { kind: 'open'; model: string; accepted?: string[]; criteria: { description: string; points?: number }[]; explanation?: string }
+  | { kind: 'source-markdown'; blocks: { directive: string; markdown: string; startLine: number; endLine: number }[] }
   | { kind: 'numeric'; value: number; unit: string; tolerance: number; precision: string; formula: string; steps: string[] }
   | { kind: 'matching'; pairs: { leftId: string; rightId: string }[] }
   | { kind: 'ordering'; orderedIds: string[]; alternatives?: string[][] }
@@ -65,6 +69,7 @@ export type LogistiqueGlossaryPayload = {
   definition: string
   example?: string
   synonyms?: string[]
+  sourceLink?: string
 }
 
 export type LogistiqueTheoryPayload = {
@@ -86,6 +91,17 @@ export type LogistiqueSourceDocumentPayload = {
   sourceSlug: string
 }
 
+export type LogistiqueSourceQuestionPayload = {
+  kind: 'source-question'
+  title: string
+  sourceSlug: string
+  sourcePosition: string
+  promptMarkdown: string
+  parentHeading?: string
+  pageContext?: string
+  unsupportedBlocks?: { kind: string; directive: string; rawMarkdown: string }[]
+}
+
 export type LogistiquePayload =
   | LogistiqueQuestionPayload
   | LogistiqueMathPayload
@@ -93,6 +109,7 @@ export type LogistiquePayload =
   | LogistiqueGlossaryPayload
   | LogistiqueTheoryPayload
   | LogistiqueSourceDocumentPayload
+  | LogistiqueSourceQuestionPayload
 
 export type LogistiqueUnit = {
   id: string
@@ -101,6 +118,9 @@ export type LogistiqueUnit = {
   revision: string
   objectiveIds: string[]
   difficulty?: LogistiqueDifficulty
+  sourceDifficulty?: string
+  sourceType?: string
+  editorialNote?: string
   bloomLevel?: 1 | 2 | 3 | 4 | 5 | 6
   eligibleLevels: LogistiqueLevel[]
   reviewByLevel: Partial<Record<LogistiqueLevel, { status: LogistiqueEditorialStatus; revision: string }>>
@@ -108,6 +128,7 @@ export type LogistiqueUnit = {
   payload: LogistiquePayload
   correction?: LogistiqueCorrection
   provenance: LogistiqueProvenance[]
+  sourceDuplicateCandidates?: string[]
   tags: string[]
 }
 
@@ -117,6 +138,8 @@ export type LogistiqueBank = {
   submoduleCode: string
   type: LogistiqueType
   units: LogistiqueUnit[]
+  sourcePageIds?: string[]
+  sourceUnitCount?: number
 }
 
 export type LogistiqueGenerationConfig = {

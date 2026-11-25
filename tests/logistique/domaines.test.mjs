@@ -14,6 +14,8 @@ try {
   const { buildPage } = await vite.ssrLoadModule('/src/math/generate.ts')
   const { Header } = await vite.ssrLoadModule('/src/components/generator/Header.tsx')
   const { InstitutionalDocumentHeader, DEFAULT_INSTITUTIONAL } = await vite.ssrLoadModule('/src/components/math/PrintDocumentChrome.tsx')
+  const { LogistiqueDomainSettings } = await vite.ssrLoadModule('/src/logistique/DomainShell.tsx')
+  const { logistiqueThemesForDomain } = await vite.ssrLoadModule('/src/logistique/catalog.ts')
   const domains = ['logistique-cfc', 'logistique-afp']
 
   await test('two distinct regular domains follow existing access rules', () => {
@@ -45,5 +47,24 @@ try {
     assert.match(renderToStaticMarkup(React.createElement(Header, { onCreate() {}, domain: 'algèbre' })), /Clair/)
     assert.match(renderToStaticMarkup(React.createElement(InstitutionalDocumentHeader, { config, domain: 'algèbre', evalMode: false })), /custom-school-logo\.svg/)
     assert.equal(config.logoSrc, '/custom-school-logo.svg')
+  })
+  await test('catalogue displays imported source counts without publishing unapproved material', () => {
+    const domain = 'logistique-cfc'
+    const theme = logistiqueThemesForDomain(domain).find(candidate => candidate.submodules.some(module => module.code === '101'))
+    const submodule = theme?.submodules.find(module => module.code === '101')
+    assert.ok(theme && submodule)
+    const html = renderToStaticMarkup(React.createElement(LogistiqueDomainSettings, {
+      domain,
+      allowedDomains: [domain],
+      onDomainChange() {},
+      selection: { themeId: theme.id, submoduleId: submodule.id, type: 'theorie' },
+      onSelectionChange() {},
+      onGenerate() {},
+    }))
+    assert.match(html, /692\/715 banques alimentées/)
+    assert.match(html, /540\/560 pages source avec contenu/)
+    assert.match(html, /1 source\(s\) · à valider/)
+    assert.match(html, /unités sources archivées/)
+    assert.match(html, /hors génération/)
   })
 } finally { await vite.close() }

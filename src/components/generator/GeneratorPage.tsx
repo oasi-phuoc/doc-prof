@@ -676,6 +676,7 @@ export function GeneratorPage({
       <AudioProgressDialog progress={audio.audioProgress} onCancel={audio.cancelAudio} />
       <Header
         onCreate={() => undefined}
+        domain={logistiqueDomain ?? activePage.domain}
         generator
         onLogout={onLogout}
         rightSlot={(

@@ -1,5 +1,6 @@
 import {lazy,Suspense,type ReactNode} from 'react'
 import { navigateTo } from './routing'
+import { EPCA_LOGO_SRC, isLogistiqueDomain, logistiqueDomainLabel } from '@/logistique/domains'
 const CatalogPageTools=lazy(()=>import('./CatalogNavigation').then(module=>({default:module.CatalogPageTools})))
 
 export function Header({
@@ -9,8 +10,10 @@ export function Header({
   rightSlot,
   endSlot,
   onLogout,
+  domain,
 }: {
   onCreate: () => void
+  domain?: string
   generator?: boolean
   showCreate?: boolean
   rightSlot?: ReactNode
@@ -19,17 +22,18 @@ export function Header({
   onLogout?: () => void
 }) {
   const createVisible = showCreate ?? !generator
+  const logisticsDomain = isLogistiqueDomain(domain) ? domain : null
   return (
     <header className="topbar no-print">
       <div className="topbar-brand">
-        <a className="brand" href={generator || !createVisible ? '/' : '#top'}>
-          <><span className="brand-mark">
+        <a className={`brand${logisticsDomain ? ' brand-epca' : ''}`} href={generator || !createVisible ? '/' : '#top'}>
+          {logisticsDomain ? <><img src={EPCA_LOGO_SRC} alt="EPCA" /><span className="logistique-brand-label">{logistiqueDomainLabel(logisticsDomain)}</span></> : <><span className="brand-mark">
             <i />
             <i />
             <i />
           </span>
           Clair<span className="brand-accent">FLE</span>
-          </>
+          </>}
         </a>
         <a className="button small topbar-play" href="/interactif" onClick={event=>{if(event.button||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;event.preventDefault();navigateTo('/interactif');window.dispatchEvent(new PopStateEvent('popstate'))}}>Jouer en classe</a>
         {createVisible ? (

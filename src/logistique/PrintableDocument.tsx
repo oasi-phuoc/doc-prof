@@ -8,7 +8,9 @@ function CorrectionView({ correction }: { correction: LogistiqueCorrection }) {
     case 'boolean':
       return <p>Réponse : {correction.answer ? 'Vrai' : 'Faux'}. {correction.justification}</p>
     case 'open':
-      return <><p>Réponse attendue : {correction.model}</p>{correction.criteria.length > 0 ? <ul>{correction.criteria.map((criterion, index) => <li key={`${criterion.description}-${index}`}>{criterion.description}{criterion.points == null ? '' : ` (${criterion.points} pt)`}</li>)}</ul> : null}</>
+      return <><p>Réponse attendue : {correction.model}</p>{correction.criteria.length > 0 ? <ul>{correction.criteria.map((criterion, index) => <li key={`${criterion.description}-${index}`}>{criterion.description}{criterion.points == null ? '' : ` (${criterion.points} pt)`}</li>)}</ul> : null}{correction.explanation ? <p>{correction.explanation}</p> : null}</>
+    case 'source-markdown':
+      return <div className="logistique-correction-source">{correction.blocks.map((block, index) => <div key={`${block.directive}-${block.startLine}-${index}`}><strong>{block.directive === 'solution' ? 'Solution source' : 'Réponse source'}</strong><div className="logistique-doc-text">{block.markdown}</div></div>)}</div>
     case 'numeric':
       return <><p>Résultat : {correction.value} {correction.unit}</p><p>{correction.formula}</p><ol>{correction.steps.map((step, index) => <li key={`${step}-${index}`}>{step}</li>)}</ol></>
     case 'matching':
@@ -26,6 +28,8 @@ function StudentPayload({ payload }: { payload: LogistiqueSnapshot['units'][numb
       return <section className="logistique-doc-unit"><h3>{payload.title}</h3><p className="logistique-doc-text">{payload.markdown}</p></section>
     case 'source-document':
       return <section className="logistique-doc-unit"><h3>{payload.title}</h3>{payload.objectivesMarkdown ? <section><h4>Objectifs</h4><div className="logistique-doc-text">{payload.objectivesMarkdown}</div></section> : null}{payload.overviewMarkdown ? <section><h4>Aperçu</h4><div className="logistique-doc-text">{payload.overviewMarkdown}</div></section> : null}{payload.fullMarkdown ? <div className="logistique-doc-text">{payload.fullMarkdown}</div> : null}</section>
+    case 'source-question':
+      return <section className="logistique-doc-unit"><h3>{payload.title}</h3>{payload.pageContext ? <div className="logistique-doc-text">{payload.pageContext}</div> : null}{payload.promptMarkdown ? <div className="logistique-doc-text">{payload.promptMarkdown}</div> : null}</section>
     case 'question':
       return <section className="logistique-doc-unit"><p>{payload.prompt}</p>{payload.options ? <ol type="A">{payload.options.map(option => <li key={option.id}>{option.text}</li>)}</ol> : null}<div className="logistique-answer-lines" style={{ '--answer-lines': payload.responseLines ?? 2 } as React.CSSProperties} aria-hidden="true" /></section>
     case 'calculation':
@@ -33,7 +37,7 @@ function StudentPayload({ payload }: { payload: LogistiqueSnapshot['units'][numb
     case 'scenario':
       return <section className="logistique-doc-unit"><h3>{payload.title}</h3><p>{payload.context}</p><p><strong>Votre rôle :</strong> {payload.role}</p><p><strong>Mission :</strong> {payload.mission}</p>{payload.supports.map(support => <section className="logistique-doc-support" key={support.title}><h4>{support.title}</h4><p>{support.content}</p></section>)}<div className="logistique-answer-lines" style={{ '--answer-lines': payload.responseLines } as React.CSSProperties} aria-hidden="true" /></section>
     case 'glossary':
-      return <section className="logistique-doc-unit"><h3>{payload.term}</h3><p>{payload.definition}</p>{payload.example ? <p><strong>Exemple :</strong> {payload.example}</p> : null}{payload.synonyms?.length ? <p><strong>Synonymes :</strong> {payload.synonyms.join(', ')}</p> : null}</section>
+      return <section className="logistique-doc-unit"><h3>{payload.term}</h3><p>{payload.definition}</p>{payload.example ? <p><strong>Exemple :</strong> {payload.example}</p> : null}{payload.synonyms?.length ? <p><strong>Synonymes :</strong> {payload.synonyms.join(', ')}</p> : null}{payload.sourceLink ? <p><strong>Référence source :</strong> {payload.sourceLink}</p> : null}</section>
   }
 }
 

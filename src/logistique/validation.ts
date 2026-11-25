@@ -87,17 +87,25 @@ export function validateLogistiqueUnit(unit: LogistiqueUnit, bank: Pick<Logistiq
   if (!unit.revision.trim()) errors.push(`Révision manquante pour ${unit.id || 'une unité'}.`)
   if (unit.submoduleCode !== bank.submoduleCode || unit.type !== bank.type) errors.push(`L’unité ${unit.id} ne correspond pas à sa banque.`)
   const importedUnreviewed = unit.status === 'imported-unreviewed'
-  if (!importedUnreviewed && (!unit.objectiveIds.length || unit.objectiveIds.some(id => !id.trim()))) errors.push(`Objectifs manquants pour ${unit.id}.`)
-  if (!importedUnreviewed && !validDifficulty.has(unit.difficulty ?? '')) errors.push(`Difficulté invalide pour ${unit.id}.`)
-  if (!importedUnreviewed && (!Number.isInteger(unit.bloomLevel) || unit.bloomLevel! < 1 || unit.bloomLevel! > 6)) errors.push(`Niveau de Bloom invalide pour ${unit.id}.`)
+  const pendingEditorial = importedUnreviewed || unit.status === 'blocked'
+  if (!pendingEditorial && (!unit.objectiveIds.length || unit.objectiveIds.some(id => !id.trim()))) errors.push(`Objectifs manquants pour ${unit.id}.`)
+  if (!pendingEditorial && !validDifficulty.has(unit.difficulty ?? '')) errors.push(`Difficulté invalide pour ${unit.id}.`)
+  if (!pendingEditorial && (!Number.isInteger(unit.bloomLevel) || unit.bloomLevel! < 1 || unit.bloomLevel! > 6)) errors.push(`Niveau de Bloom invalide pour ${unit.id}.`)
   if (!validStatus.has(unit.status)) errors.push(`Statut éditorial invalide pour ${unit.id}.`)
   if (!unit.eligibleLevels.length || unit.eligibleLevels.some(level => level !== 'CFC' && level !== 'AFP')) errors.push(`Éligibilité invalide pour ${unit.id}.`)
-  if (!unit.provenance.length || unit.provenance.some(source => !source.path.trim() || source.rights === 'pending' && !importedUnreviewed)) errors.push(`Provenance ou droits non résolus pour ${unit.id}.`)
-  if (importedUnreviewed) {
-    if (unit.payload.kind !== 'source-document') errors.push(`Le contenu importé ${unit.id} doit rester au format source jusqu’à sa révision.`)
-    else if (!unit.payload.title.trim() || !unit.payload.sourceSlug.trim() || ![unit.payload.fullMarkdown, unit.payload.summaryMarkdown, unit.payload.objectivesMarkdown, unit.payload.objectivesSummaryMarkdown, unit.payload.overviewMarkdown, unit.payload.overviewSummaryMarkdown].some(content => content?.trim())) errors.push(`Le contenu source de ${unit.id} est incomplet.`)
+  if (!unit.provenance.length || unit.provenance.some(source => !source.path.trim() || source.rights === 'pending' && !pendingEditorial)) errors.push(`Provenance ou droits non résolus pour ${unit.id}.`)
+  if (pendingEditorial && unit.payload.kind === 'source-document') {
+    if (!unit.payload.title.trim() || !unit.payload.sourceSlug.trim() || ![unit.payload.fullMarkdown, unit.payload.summaryMarkdown, unit.payload.objectivesMarkdown, unit.payload.objectivesSummaryMarkdown, unit.payload.overviewMarkdown, unit.payload.overviewSummaryMarkdown].some(content => content?.trim())) errors.push(`Le contenu source de ${unit.id} est incomplet.`)
+  } else if (pendingEditorial && unit.payload.kind === 'source-question') {
+    if (!unit.payload.title.trim() || !unit.payload.sourceSlug.trim() || !unit.payload.sourcePosition.trim()) errors.push(`La référence source de ${unit.id} est incomplète.`)
+    if (unit.correction?.kind === 'source-markdown' && unit.correction.blocks.some(block => !block.markdown.trim())) errors.push(`Une réponse source de ${unit.id} est vide.`)
+  } else if (pendingEditorial) {
+    if (unit.payload.kind === 'source-document' || unit.payload.kind === 'source-question') errors.push(`Le contenu source de ${unit.id} est incomplet.`)
+    if (unit.payload.kind === 'question' && unit.payload.format !== 'qcm' && unit.payload.options) errors.push(`Options inattendues pour ${unit.id}.`)
+    errors.push(...validateLogistiquePayload(unit.type, unit.payload).map(error => `${unit.id}: ${error}`))
+    errors.push(...validateLogistiqueCorrection(unit.correction).map(error => `${unit.id}: ${error}`))
   } else {
-    if (unit.payload.kind === 'source-document') errors.push(`Le contenu source ${unit.id} doit être converti et validé avant utilisation.`)
+    if (unit.payload.kind === 'source-document' || unit.payload.kind === 'source-question') errors.push(`Le contenu source ${unit.id} doit être converti et validé avant utilisation.`)
     if (unit.payload.kind === 'question' && unit.payload.format !== 'qcm' && unit.payload.options) errors.push(`Options inattendues pour ${unit.id}.`)
     errors.push(...validateLogistiquePayload(unit.type, unit.payload).map(error => `${unit.id}: ${error}`))
     errors.push(...validateLogistiqueCorrection(unit.correction).map(error => `${unit.id}: ${error}`))
@@ -118,7 +126,7 @@ export function validateLogistiqueUnit(unit: LogistiqueUnit, bank: Pick<Logistiq
     if (unit.status === 'approved' && review?.status !== 'approved') errors.push(`${unit.id}: validation explicite ${level} requise.`)
     if (review?.status === 'approved' && !review.revision.trim()) errors.push(`${unit.id}: révision de validation ${level} manquante.`)
     const resolution = unit.provenance.some(source => source.resolution === 'inherited-cfc')
-    if (level === 'AFP' && resolution && review?.status !== 'approved' && unit.status !== 'imported-unreviewed') errors.push(`${unit.id}: héritage CFC non validé pour AFP.`)
+    if (level === 'AFP' && resolution && review?.status !== 'approved' && !pendingEditorial) errors.push(`${unit.id}: héritage CFC non validé pour AFP.`)
   }
   return errors
 }
