@@ -3,11 +3,26 @@ import type { LogistiqueDomain } from './domains'
 import type { LogistiqueBank } from './types'
 import type { LogistiqueLevel, LogistiqueType } from './catalog'
 import { diplomaForDomain, validateLogistiqueBank } from './validation'
+import importedBanksJson from './imported-banks.json'
+import type { LogistiqueUnit } from './types'
 
 export type BankResolver = (domain: LogistiqueDomain, submoduleCode: string, type: LogistiqueType) => LogistiqueBank | null
 
-/** No runtime bank is enabled until its source and pedagogical review are recorded. */
-export const EMPTY_LOGISTIQUE_BANKS: Readonly<Record<string, LogistiqueBank>> = Object.freeze({})
+type ImportedBanksData = {
+  banks: Record<string, { revision: string; submoduleCode: string; type: LogistiqueType; unitIds: string[] }>
+  units: Record<string, LogistiqueUnit>
+}
+
+const importedBanks = importedBanksJson as ImportedBanksData
+export const IMPORTED_LOGISTIQUE_BANKS: Readonly<Record<string, LogistiqueBank>> = Object.freeze(
+  Object.fromEntries(Object.entries(importedBanks.banks).map(([key, bank]) => [key, {
+    schemaVersion: 1,
+    revision: bank.revision,
+    submoduleCode: bank.submoduleCode,
+    type: bank.type,
+    units: bank.unitIds.map(id => importedBanks.units[id]).filter((unit): unit is LogistiqueUnit => Boolean(unit)),
+  }])) as Record<string, LogistiqueBank>,
+)
 
 export function logistiqueBankKey(domain: LogistiqueDomain, submoduleCode: string, type: LogistiqueType): string {
   return `${domain}:${submoduleCode}:${type}`

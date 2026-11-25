@@ -24,6 +24,8 @@ function StudentPayload({ payload }: { payload: LogistiqueSnapshot['units'][numb
   switch (payload.kind) {
     case 'theory':
       return <section className="logistique-doc-unit"><h3>{payload.title}</h3><p className="logistique-doc-text">{payload.markdown}</p></section>
+    case 'source-document':
+      return <section className="logistique-doc-unit"><h3>{payload.title}</h3>{payload.objectivesMarkdown ? <section><h4>Objectifs</h4><div className="logistique-doc-text">{payload.objectivesMarkdown}</div></section> : null}{payload.overviewMarkdown ? <section><h4>Aperçu</h4><div className="logistique-doc-text">{payload.overviewMarkdown}</div></section> : null}{payload.fullMarkdown ? <div className="logistique-doc-text">{payload.fullMarkdown}</div> : null}</section>
     case 'question':
       return <section className="logistique-doc-unit"><p>{payload.prompt}</p>{payload.options ? <ol type="A">{payload.options.map(option => <li key={option.id}>{option.text}</li>)}</ol> : null}<div className="logistique-answer-lines" style={{ '--answer-lines': payload.responseLines ?? 2 } as React.CSSProperties} aria-hidden="true" /></section>
     case 'calculation':

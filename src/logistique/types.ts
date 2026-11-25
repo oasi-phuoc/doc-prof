@@ -74,12 +74,25 @@ export type LogistiqueTheoryPayload = {
   sectionId: string
 }
 
+export type LogistiqueSourceDocumentPayload = {
+  kind: 'source-document'
+  title: string
+  fullMarkdown: string
+  summaryMarkdown: string
+  objectivesMarkdown?: string
+  objectivesSummaryMarkdown?: string
+  overviewMarkdown?: string
+  overviewSummaryMarkdown?: string
+  sourceSlug: string
+}
+
 export type LogistiquePayload =
   | LogistiqueQuestionPayload
   | LogistiqueMathPayload
   | LogistiqueScenarioPayload
   | LogistiqueGlossaryPayload
   | LogistiqueTheoryPayload
+  | LogistiqueSourceDocumentPayload
 
 export type LogistiqueUnit = {
   id: string
@@ -87,8 +100,8 @@ export type LogistiqueUnit = {
   type: LogistiqueType
   revision: string
   objectiveIds: string[]
-  difficulty: LogistiqueDifficulty
-  bloomLevel: 1 | 2 | 3 | 4 | 5 | 6
+  difficulty?: LogistiqueDifficulty
+  bloomLevel?: 1 | 2 | 3 | 4 | 5 | 6
   eligibleLevels: LogistiqueLevel[]
   reviewByLevel: Partial<Record<LogistiqueLevel, { status: LogistiqueEditorialStatus; revision: string }>>
   status: LogistiqueEditorialStatus

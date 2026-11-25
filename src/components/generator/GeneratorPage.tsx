@@ -24,9 +24,9 @@ import { Header } from '@/components/generator/Header'
 import { LogistiqueDomainResult, LogistiqueDomainSettings, type LogistiqueSelection } from '@/logistique/DomainShell'
 import { logistiqueThemesForDomain } from '@/logistique/catalog'
 import { tryGenerateLogistiqueBlock } from '@/logistique/generate'
-import { EMPTY_LOGISTIQUE_BANKS, logistiqueBankKey } from '@/logistique/registry'
+import { IMPORTED_LOGISTIQUE_BANKS, logistiqueBankKey } from '@/logistique/registry'
 import type { LogistiqueGenerationConfig, LogistiqueGenerationResult } from '@/logistique/types'
-import { isLogistiqueDomain, logistiqueDomainLabel, worksheetDomainFor, type LogistiqueDomain } from '@/logistique/domains'
+import { isLogistiqueDomain, worksheetDomainFor, type LogistiqueDomain } from '@/logistique/domains'
 import { LibreSidePanel } from '@/components/generator/LibreSidePanel'
 import { SettingsPanel } from '@/components/generator/SettingsPanel'
 import { ResultPanel } from '@/components/generator/ResultPanel'
@@ -119,7 +119,7 @@ export function GeneratorPage({
   function generateLogistique(config: Omit<LogistiqueGenerationConfig, 'seed'>) {
     setLogistiqueResult(tryGenerateLogistiqueBlock(
       { ...config, seed },
-      (domain, submoduleCode, type) => EMPTY_LOGISTIQUE_BANKS[logistiqueBankKey(domain, submoduleCode, type)] ?? null,
+      (domain, submoduleCode, type) => IMPORTED_LOGISTIQUE_BANKS[logistiqueBankKey(domain, submoduleCode, type)] ?? null,
     ))
     setLogistiquePreviewMode('student')
   }
@@ -677,86 +677,74 @@ export function GeneratorPage({
       <Header
         onCreate={() => undefined}
         generator
-        domain={logistiqueDomain ?? activePage.domain}
         onLogout={onLogout}
-        afterBrand={logistiqueDomain ? <span className="logistique-brand-label">{logistiqueDomainLabel(logistiqueDomain)}</span> : undefined}
-        rightSlot={logistiqueDomain ? undefined : (
+        rightSlot={(
           <>
-            <button type="button" className="button small" onClick={playWithClass}>Jouer cette fiche</button>
+            {!logistiqueDomain ? <button type="button" className="button small" onClick={playWithClass}>Jouer cette fiche</button> : null}
             <TopbarTools
-            themeColor={themeColor}
-            onThemeColor={applyThemeColor}
-            fontSize={fontSize}
-            onFontSizeChange={changeFontSize}
-            sheetFont={sheetFont}
-            onSheetFontChange={font => setSheetFont(applySheetFont(font))}
-            sheetFormat={sheetFormat}
-            onSheetFormatChange={setSheetFormat}
-            printCorrections={printCorrections}
-            onPrintCorrectionsChange={setPrintCorrections}
-            hideChrome={hideChrome}
-            onHideChromeChange={setHideChrome}
-            exerciseGap={activePage.domain === 'tcm-csc' ? activePage.exerciseGapPx ?? 50 : undefined}
-            onExerciseGapChange={changeExerciseGap}
-            pageBorder={pageBorder}
-            onPageBorderChange={(on) => {
-              setPageBorder(on)
-              storePageBorder(on, activePage.domain)
-            }}
-            sheetMargin={sheetMargin}
-            onSheetMarginChange={(margin) => {
-              setSheetMargin(margin)
-              storeSheetMargin(margin, activePage.domain)
-            }}
-            footerOpen={footerPanelOpen}
-            onToggleFooter={() => setFooterPanelOpen((v) => !v)}
-            libreOpen={libreMode}
-            onToggleLibre={() => {
-              setLibreMode((prev) => {
-                const next = !prev
-                setLibreSnapshot(next ? pages : null)
-                if (next) {
-                  const sheetBlock = activeSheet?.blocks[safeBlockIndex]
-                  const full = blockItemsForConfig(worksheets, pageIndex, safeBlockIndex)
-                  const seedItems = activeBlock.libreItems?.length
-                    ? activeBlock.libreItems
-                    : (full?.items ?? sheetBlock?.items ?? [])
-                  const seedInstruction =
-                    activeBlock.libreInstruction ?? full?.instruction ?? sheetBlock?.instruction ?? ''
-                  // TCF / grammaire : l’éditeur porte l’exercice entier. Figer la feuille
-                  // visible (souvent la suite) effaçait la page des premières questions.
-                  const patch: Partial<typeof activeBlock> =
-                    ctx.isTcf || ctx.isGrammaireExercise
+              themeColor={themeColor}
+              onThemeColor={applyThemeColor}
+              fontSize={fontSize}
+              onFontSizeChange={changeFontSize}
+              sheetFont={sheetFont}
+              onSheetFontChange={font => setSheetFont(applySheetFont(font))}
+              sheetFormat={sheetFormat}
+              onSheetFormatChange={setSheetFormat}
+              printCorrections={printCorrections}
+              onPrintCorrectionsChange={setPrintCorrections}
+              hideChrome={hideChrome}
+              onHideChromeChange={setHideChrome}
+              exerciseGap={activePage.domain === 'tcm-csc' ? activePage.exerciseGapPx ?? 50 : undefined}
+              onExerciseGapChange={changeExerciseGap}
+              pageBorder={pageBorder}
+              onPageBorderChange={(on) => {
+                setPageBorder(on)
+                storePageBorder(on, activePage.domain)
+              }}
+              sheetMargin={sheetMargin}
+              onSheetMarginChange={(margin) => {
+                setSheetMargin(margin)
+                storeSheetMargin(margin, activePage.domain)
+              }}
+              footerOpen={footerPanelOpen}
+              onToggleFooter={() => setFooterPanelOpen((value) => !value)}
+              libreOpen={libreMode}
+              onToggleLibre={() => {
+                setLibreMode((previous) => {
+                  const next = !previous
+                  setLibreSnapshot(next ? pages : null)
+                  if (next) {
+                    const sheetBlock = activeSheet?.blocks[safeBlockIndex]
+                    const full = blockItemsForConfig(worksheets, pageIndex, safeBlockIndex)
+                    const seedItems = activeBlock.libreItems?.length
+                      ? activeBlock.libreItems
+                      : (full?.items ?? sheetBlock?.items ?? [])
+                    const seedInstruction = activeBlock.libreInstruction ?? full?.instruction ?? sheetBlock?.instruction ?? ''
+                    const patch: Partial<typeof activeBlock> = ctx.isTcf || ctx.isGrammaireExercise
                       ? { libreItems: undefined, libreInstruction: undefined }
-                      : {
-                          libreItems: seedItems,
-                          libreInstruction: seedInstruction,
-                        }
-                  if (ctx.isFormes || ctx.isCadrans || ctx.isDroites || ctx.isConstruire || ctx.isTransform) {
-                    patch.coordLibre = true
+                      : { libreItems: seedItems, libreInstruction: seedInstruction }
+                    if (ctx.isFormes || ctx.isCadrans || ctx.isDroites || ctx.isConstruire || ctx.isTransform) patch.coordLibre = true
+                    if (ctx.isNumberLibreDomain) patch.numberLibre = true
+                    if (ctx.isPhraseDomain && isPhraseLibreEditable(activeBlock.exerciseType)) {
+                      patch.verbGroup = 'libre'
+                      patch.phraseItems = activeBlock.phraseItems ?? sheetBlock?.items
+                      patch.phraseInstruction = activeBlock.phraseInstruction ?? sheetBlock?.instruction
+                    }
+                    if (ctx.soutienKind === 'mots') patch.soutienMotsLibre = true
+                    if (ctx.soutienKind === 'completer') patch.soutienCompleterLibre = true
+                    updatePage(patch)
                   }
-                  if (ctx.isNumberLibreDomain) patch.numberLibre = true
-                  if (ctx.isPhraseDomain && isPhraseLibreEditable(activeBlock.exerciseType)) {
-                    patch.verbGroup = 'libre'
-                    patch.phraseItems = activeBlock.phraseItems ?? sheetBlock?.items
-                    patch.phraseInstruction =
-                      activeBlock.phraseInstruction ?? sheetBlock?.instruction
-                  }
-                  if (ctx.soutienKind === 'mots') patch.soutienMotsLibre = true
-                  if (ctx.soutienKind === 'completer') patch.soutienCompleterLibre = true
-                  updatePage(patch)
-                }
-                // Fermeture : on garde le contenu libre (pas de régénération de la fiche).
-                return next
-              })
-            }}
-            previewMode={mode}
-            onTogglePreviewMode={() =>
-              setMode((m) => (m === 'student' ? 'answers' : 'student'))
-            }
-            showPreviewToggle={!(ctx.isCalliDomain || ctx.isJeuxDomain)}
-            onLogout={onLogout}
-          />
+                  return next
+                })
+              }}
+              previewMode={logistiqueDomain ? logistiquePreviewMode : mode}
+              onTogglePreviewMode={() => {
+                if (logistiqueDomain) setLogistiquePreviewMode(value => value === 'student' ? 'answers' : 'student')
+                else setMode(value => value === 'student' ? 'answers' : 'student')
+              }}
+              showPreviewToggle={logistiqueDomain ? Boolean(logistiqueResult?.status === 'ready' && logistiqueResult.snapshot.units.some(unit => unit.correction)) : !(ctx.isCalliDomain || ctx.isJeuxDomain)}
+              onLogout={onLogout}
+            />
           </>
         )}
       />
