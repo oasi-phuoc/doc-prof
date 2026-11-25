@@ -8,6 +8,7 @@
     "prebuild": "node scripts/image-gallery-catalog.mjs && node scripts/gattegno-image-lexicon.mjs && node scripts/audio-catalog.mjs && node scripts/game-pool-catalog.mjs --check",
     "gallery:index": "node scripts/image-gallery-catalog.mjs",
     "test:gallery": "node --test tests/gallery/catalog.test.mjs",
+    "logistique:report": "node scripts/logistique/editorial-report.mjs",
     "test:gallery:browser": "node tests/gallery/browser.mjs",
     "dev": "vite",
     "build": "git config lfs.url https://github.com/oasi-phuoc/doc-prof.git/info/lfs >/dev/null 2>&1; git lfs pull || true; tsc -b && vite build",
