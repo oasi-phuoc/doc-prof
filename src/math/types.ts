@@ -962,7 +962,7 @@ export type ExerciseBlock = {
   coordRows?: number
   coordAxis?: CoordAxis
   coordMarks?: CoordMark[]
-  /** Étendue à 4 cadrans (−n à +n) ; maximum positif de chaque axe pour le TCM CFR 29. */
+  /** Étendue à 4 cadrans (−n à +n) ; maximum positif de chaque axe pour le TCM CFR 28. */
   coordRange?: number
   /** Côté du carré (3/4/5 mm cadrans, 6/8/10 mm formes). */
   coordCellMm?: CoordCellMm

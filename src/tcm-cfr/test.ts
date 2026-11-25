@@ -92,8 +92,8 @@ export const TCM_CFR_STEPS: readonly StepSpec[] = [
   { id: 25, label: 'Triangle décimal', blocks: [{ exerciseType: 'tcm-cfr-ex24', count: 1, columns: 1, pointsPerQuestion: 4 }] },
   { id: 26, label: 'Côté du carré', blocks: [{ exerciseType: 'tcm-cfr-ex25', count: 1, columns: 1, pointsPerQuestion: 2 }] },
   { id: 27, label: 'Côté du rectangle', blocks: [{ exerciseType: 'tcm-cfr-ex26', count: 1, columns: 1, pointsPerQuestion: 2 }] },
-  { id: 28, label: 'Plan de métro', blocks: [{ exerciseType: 'tcm-cfr-ex28', count: 1, columns: 1, pointsPerQuestion: 5, tcfPageBreakAfter: [true] }] },
-  { id: 29, label: 'Repérage cadran I', blocks: [{ exerciseType: 'tcm-cfr-ex27', count: 1, columns: 1, pointsPerQuestion: 8 }] },
+  { id: 28, label: 'Repérage cadran I', blocks: [{ exerciseType: 'tcm-cfr-ex27', count: 1, columns: 1, pointsPerQuestion: 8 }] },
+  { id: 29, label: 'Plan de métro', blocks: [{ exerciseType: 'tcm-cfr-ex28', count: 1, columns: 1, pointsPerQuestion: 5, tcfPageBreakAfter: [true] }] },
 ]
 
 const TCM_CFR_PACKED_PAGES: readonly (readonly number[])[] = [

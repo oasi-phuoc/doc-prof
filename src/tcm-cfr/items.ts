@@ -721,7 +721,7 @@ function genEx26(rng: Rng): MathItem[] {
   ]
 }
 
-/** Ex. 29 affiché : repère de taille fixe, graduation et maximum paramétrables. */
+/** Ex. 28 affiché : repère de taille fixe, graduation et maximum paramétrables. */
 function genEx27(rng: Rng, options: { coordRange?: number; coordUnitSquares?: 1 | 2 } = {}): MathItem[] {
   // 1 unité = 1 case → graduation jusqu’à 22 ; 1 unité = 2 cases → jusqu’à 11.
   const unitSquares = options.coordUnitSquares ?? (rng() < 0.5 ? 1 : 2)
@@ -851,7 +851,7 @@ function genEx27(rng: Rng, options: { coordRange?: number; coordUnitSquares?: 1 
 }
 
 /**
- * Ex. 28 — plan de métro, puis une question par item.
+ * Ex. 29 — plan de métro, puis une question par item.
  * Le plan n’est pas noté ; la première question porte le barème de l’exercice.
  * Le saut avant cette question est activé dans la recette du test.
  */
