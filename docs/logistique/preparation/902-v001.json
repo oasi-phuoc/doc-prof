@@ -1,0 +1,243 @@
+{
+  "diplomas": [
+    "CFC"
+  ],
+  "replacements": [],
+  "summary": [
+    "Relevez la demande, les unités, l’origine des données et les contraintes. Calculez en donnant la convention et les valeurs utilisées.",
+    "À la réception, distinguez attendu, reçu, écarté et admis. Pour le stock, distinguez physique, disponible et arrivages projetés.",
+    "Pour le transport, filtrez les offres selon la capacité et le délai avant de comparer les coûts. Présentez le choix avec ses chiffres et un contrôle prévu."
+  ],
+  "glossary": [
+    [
+      "arrivage confirmé",
+      "Quantité annoncée dont la date ou le statut est confirmé selon les règles du dossier."
+    ],
+    [
+      "capacité",
+      "Quantité maximale qu’un moyen ou un emplacement peut prendre en charge dans les conditions données."
+    ],
+    [
+      "contrainte impérative",
+      "Condition qu’une solution doit respecter pour être retenue."
+    ],
+    [
+      "coût moyen par colis",
+      "Coût du service considéré rapporté au nombre de colis du même périmètre."
+    ],
+    [
+      "critère de comparaison",
+      "Mesure ou caractéristique utilisée pour classer les solutions réalisables."
+    ],
+    [
+      "écart de quantité",
+      "Différence entre une quantité observée et sa référence, selon le sens de calcul annoncé."
+    ],
+    [
+      "fractionnement",
+      "Répartition d’un même envoi ou d’une quantité sur plusieurs lots ou trajets."
+    ],
+    [
+      "lot fournisseur",
+      "Quantité d’articles livrable ou commandable comme une unité selon les conditions du fournisseur."
+    ],
+    [
+      "non-conformité",
+      "Écart par rapport à une exigence portant par exemple sur la quantité, la référence, l’état ou les dimensions."
+    ],
+    [
+      "preuve de livraison",
+      "Document ou enregistrement qui atteste la remise d’un envoi."
+    ],
+    [
+      "projection de stock",
+      "Estimation du stock futur à partir des mouvements et hypothèses retenus."
+    ],
+    [
+      "quantité admise",
+      "Part de la quantité reçue qui remplit les conditions retenues pour rejoindre le stock utilisable."
+    ],
+    [
+      "quantité attendue",
+      "Quantité prévue d’après une commande ou un accord confirmé."
+    ],
+    [
+      "quantité écartée",
+      "Part de la quantité reçue mise à part à la suite d’un contrôle."
+    ],
+    [
+      "quantité reçue",
+      "Quantité physiquement constatée lors de la réception."
+    ],
+    [
+      "rapprochement",
+      "Comparaison de documents, mesures ou enregistrements pour expliquer un écart."
+    ],
+    [
+      "stock de sécurité",
+      "Quantité de réserve destinée à absorber certains aléas de consommation ou d’approvisionnement."
+    ],
+    [
+      "stock disponible",
+      "Quantité utilisable au moment considéré selon les déductions définies pour le cas."
+    ],
+    [
+      "stock physique",
+      "Quantité réellement présente à la date et à l’emplacement considérés."
+    ],
+    [
+      "stock réservé",
+      "Quantité affectée à un besoin ou une commande déjà identifiée."
+    ],
+    [
+      "taux de ponctualité",
+      "Proportion de livraisons terminées dans le délai retenu sur une période donnée."
+    ],
+    [
+      "traçabilité",
+      "Possibilité de retrouver la référence, l’historique et les opérations associées à un produit ou à un dossier."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-origine-1",
+      "kind": "maths",
+      "prompt": "Vous attendez 24 cartons de 15 pièces. À la réception, 23 cartons sont complets et le dernier contient 12 pièces. Calculez l’écart en suivant la convention reçu moins attendu.",
+      "answer": "Il manque 3 pièces. L’écart est de −3 pièces.",
+      "calculation": "24 × 15 = 360. 23 × 15 + 12 = 357. 357 − 360 = −3."
+    },
+    {
+      "id": "maths-origine-2",
+      "kind": "maths",
+      "prompt": "Le stock utilisable avant réception est de 86 pièces. Vous recevez 357 pièces, dont 5 sont écartées après le contrôle. Calculez le nouveau stock utilisable.",
+      "answer": "Le stock utilisable est de 438 pièces.",
+      "calculation": "357 − 5 = 352 pièces admises. 86 + 352 = 438."
+    },
+    {
+      "id": "maths-origine-3",
+      "kind": "maths",
+      "prompt": "Le stock physique est de 132 pièces, dont 6 endommagées et 18 réservées. Aucune pièce n’est à la fois endommagée et réservée. Calculez le stock disponible.",
+      "answer": "Le stock disponible est de 108 pièces.",
+      "calculation": "132 − 6 − 18 = 108 pièces."
+    },
+    {
+      "id": "maths-origine-4",
+      "kind": "maths",
+      "prompt": "Le stock disponible est de 108 pièces. Vous prévoyez d’utiliser 24 pièces par jour pendant quatre jours et souhaitez garder 20 pièces de sécurité. Le fournisseur livre par lots de 20. Calculez la quantité minimale à commander.",
+      "answer": "Il faut commander un lot, soit 20 pièces.",
+      "calculation": "24 × 4 + 20 = 116. 116 − 108 = 8 pièces à couvrir. Le plus petit lot suffit."
+    },
+    {
+      "id": "maths-origine-5",
+      "kind": "maths",
+      "prompt": "Une tournée part à 13 h 45 et le trajet dure 75 minutes. La livraison doit avoir lieu avant 15 h 15. Calculez l’arrivée estimée et la marge disponible.",
+      "answer": "L’arrivée prévue est à 15 h, avec 15 minutes de marge.",
+      "calculation": "13 h 45 + 1 h 15 = 15 h. 15 h 15 − 15 h = 15 min."
+    },
+    {
+      "id": "maths-origine-6",
+      "kind": "maths",
+      "prompt": "Une prestation coûte 148 CHF de transport, 28 CHF de manutention et 14 CHF d’emballage. Elle concerne 40 colis. Calculez le coût moyen par colis.",
+      "answer": "Le coût moyen est de 4,75 CHF par colis.",
+      "calculation": "(148 + 28 + 14) ÷ 40 = 190 ÷ 40 = 4,75 CHF."
+    },
+    {
+      "id": "maths-origine-7",
+      "kind": "maths",
+      "prompt": "Sur 125 livraisons planifiées, 115 sont réalisées au plus tard à l’heure convenue. Calculez le taux de livraisons à l’heure et le taux complémentaire.",
+      "answer": "92 % des livraisons sont à l’heure et 8 % sont hors délai.",
+      "calculation": "115 ÷ 125 × 100 = 92 %. 100 % − 92 % = 8 %."
+    },
+    {
+      "id": "verification-origine-1",
+      "kind": "verification",
+      "prompt": "Quelle différence faites-vous entre une donnée de commande et une observation de réception ?",
+      "answer": "La commande indique l’attendu ou l’accord. Le relevé de réception consigne ce qui a été physiquement constaté."
+    },
+    {
+      "id": "verification-origine-2",
+      "kind": "verification",
+      "prompt": "Pourquoi faut-il distinguer une pièce non livrée d’une pièce reçue mais endommagée ?",
+      "answer": "Les deux écarts ont une origine et un traitement différents. La pièce endommagée fait partie de la quantité reçue, même si elle ne rejoint pas le stock utilisable."
+    },
+    {
+      "id": "verification-origine-3",
+      "kind": "verification",
+      "prompt": "Donnez un exemple de contrainte impérative et un exemple de critère pour choisir un transporteur.",
+      "answer": "Exemple de contrainte : la capacité minimale nécessaire. Exemple de critère : le coût parmi les offres qui respectent les contraintes."
+    },
+    {
+      "id": "verification-origine-4",
+      "kind": "verification",
+      "prompt": "Que faut-il contrôler avant d’ajouter un arrivage annoncé au stock projeté ?",
+      "answer": "Vérifier la quantité, la date, le statut de confirmation et l’horizon du cas."
+    },
+    {
+      "id": "verification-origine-5",
+      "kind": "verification",
+      "prompt": "Quelle formule utilisez-vous pour comparer des coûts moyens de distribution par colis ?",
+      "answer": "Le coût total des prestations retenues divisé par le nombre de colis du même périmètre."
+    },
+    {
+      "id": "verification-origine-6",
+      "kind": "verification",
+      "prompt": "Quelles informations permettent à un collègue de reprendre le traitement d’un écart de réception ?",
+      "answer": "La référence du dossier, la date, la quantité attendue, les constats, l’action engagée et le prochain contrôle."
+    },
+    {
+      "id": "verification-origine-7",
+      "kind": "verification",
+      "prompt": "Comment rendre comparable un taux de livraison à l’heure d’une période à l’autre ?",
+      "answer": "Garder la même définition du délai, le même périmètre et la même méthode de calcul."
+    },
+    {
+      "id": "situation-origine-1",
+      "kind": "situation",
+      "prompt": "Une commande prévoit 360 pièces. Vous en comptez 357 et constatez que 5 des 357 sont endommagées. Le stock utilisable avant réception est de 86 pièces. Présentez les deux écarts, le nouveau stock utilisable et les informations à transmettre.",
+      "answer": "Trois pièces manquent et cinq des pièces reçues sont écartées. Ainsi, 352 entrent en stock et le stock utilisable passe à 438. Consigner la commande, le lot et les deux écarts, isoler les pièces endommagées et transmettre le dossier selon la procédure."
+    },
+    {
+      "id": "situation-origine-2",
+      "kind": "situation",
+      "prompt": "Vous avez 108 pièces disponibles et devez couvrir quatre jours à 24 pièces par jour en gardant 20 pièces de sécurité. Les réapprovisionnements se font par lots de 20. Proposez l’action minimale et un point à vérifier.",
+      "answer": "Le besoin est de 116 pièces, soit 8 de plus que le stock disponible. Demander un lot de 20 et vérifier que sa date d’arrivée couvre le risque avant la fin de l’horizon."
+    },
+    {
+      "id": "situation-origine-3",
+      "kind": "situation",
+      "prompt": "Vous expédiez 28 cartons sur une seule tournée, au départ à 13 h 45. Arrivée au plus tard à 15 h 15. A transporte 32 cartons en 75 min pour 148 CHF. B transporte 32 cartons en 100 min pour 126 CHF. C transporte 26 cartons en 85 min pour 135 CHF. Choisissez et justifiez.",
+      "answer": "Choisir A, capacité suffisante et arrivée à 15 h. B arrive à 15 h 25, hors délai. C arrive à 15 h 10 mais ne peut emporter que 26 des 28 cartons."
+    },
+    {
+      "id": "situation-origine-4",
+      "kind": "situation",
+      "prompt": "Une tournée arrive plus tard que prévu après un changement de quai. Le client n’a pas reçu de nouvelle heure. Proposez le premier message utile puis un contrôle de clôture.",
+      "answer": "Informer le client du statut confirmé, de l’heure estimée et de la personne de contact. Après la livraison, rapprocher la preuve de livraison et le suivi puis consigner la clôture."
+    },
+    {
+      "id": "situation-origine-5",
+      "kind": "situation",
+      "prompt": "Le relevé informatique indique 80 cartons disponibles. Sur le quai, 76 cartons sont comptés et quatre cartons sont absents de leur emplacement attendu. Expliquez comment vérifier l’origine de l’écart avant de corriger le stock.",
+      "answer": "Recompter et vérifier les références, les emplacements, les réservations et les mouvements non enregistrés. Consigner les constats et faire appliquer la procédure de correction après rapprochement."
+    },
+    {
+      "id": "situation-origine-6",
+      "kind": "situation",
+      "prompt": "Deux tournées sont comparées. La première compte 95 livraisons à l’heure sur 100. La seconde en compte 48 sur 50. Comparez leurs taux et donnez une limite de cette comparaison.",
+      "answer": "Les taux sont 95 % et 96 %. Le second est un peu supérieur, mais les effectifs, les critères de ponctualité et les caractéristiques des tournées doivent être comparables."
+    }
+  ],
+  "visual": {
+    "anchor": "1. Une méthode en quatre étapes",
+    "file": "log-902-methode-etude-cas-schema-v001.svg",
+    "sha256": "fc2ff1fce077779eaf075ac5a01413243bf47d5304b238147d22c37fe159551f",
+    "alt": "Lire les données, calculer les écarts, prendre une décision puis laisser une trace.",
+    "caption": "Une démarche de résolution qui mène de l’énoncé au contrôle de la décision.",
+    "origin": "Schéma original Doc-Prof pour les études de cas du module 902."
+  },
+  "editorialNotes": [
+    "Le code 902 est réservé au CFC. Aucune théorie ou banque exploitable n’existe dans l’archive EPCAS de référence. La théorie, les études de cas, les exercices et le glossaire sont des créations Doc-Prof.",
+    "Les exercices couvrent le contrôle de quantités (308), les propriétés de marchandises et le suivi de stock (105), ainsi que le service et les coûts de distribution (613). Les données et les dossiers sont fictifs.",
+    "Les premières situations et les problèmes peuvent être tirés indépendamment. Les énoncés répètent les valeurs nécessaires pour éviter une dépendance entre deux activités."
+  ]
+}

@@ -16,8 +16,11 @@ if (!catalogEntry) throw new Error(`Module absent du catalogue : ${code}`)
 const editorial = readJson(`docs/logistique/preparation/${revision}.json`)
 const archive = readJson(`docs/logistique/sources-epcas/${catalogEntry.theme}.generated.json`)
 const source = archive.modules.find((entry) => entry.module === code)
-if (!source?.pages.theorie) throw new Error(`Théorie source absente : ${code}`)
-const pages = Object.fromEntries(['objectifs', 'apercu', 'theorie'].map((page) => [page, source.pages[page]?.full ?? '']))
+const original = new URL(`docs/logistique/preparation/${revision}.md`, root)
+const pages = source?.pages.theorie
+  ? Object.fromEntries(['objectifs', 'apercu', 'theorie'].map((page) => [page, source.pages[page]?.full ?? '']))
+  : { theorie: existsSync(original) ? readFileSync(original, 'utf8').trim() : '' }
+if (!pages.theorie) throw new Error(`Théorie source ou cours original absent : ${code}`)
 for (const { page = 'theorie', from, to, reason } of editorial.replacements) {
   if (!reason || !from || pages[page]?.split(from).length !== 2) {
     throw new Error(`Correction introuvable ou ambiguë dans ${code} / ${page} : ${from}`)

@@ -4,6 +4,7 @@ import { module105 } from './banks/module-105-v001.generated.ts'
 import { module308 } from './banks/module-308-v001.generated.ts'
 import { module613 } from './banks/module-613-v001.generated.ts'
 import { module805 } from './banks/module-805-v001.generated.ts'
+import { module902 } from './banks/module-902-v001.generated.ts'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
 
@@ -36,6 +37,7 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-308-v001', units: [...module101, ...module102, ...module105, ...module308] },
   { revision: 'logistique-613-v001', units: [...module101, ...module102, ...module105, ...module308, ...module613] },
   { revision: 'logistique-805-v001', units: [...module101, ...module102, ...module105, ...module308, ...module613, ...module805] },
+  { revision: 'logistique-902-v001', units: [...module101, ...module102, ...module105, ...module308, ...module613, ...module805, ...module902] },
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!
