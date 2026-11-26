@@ -1,4 +1,5 @@
 import { module101 } from './banks/module-101-v001.generated.ts'
+import { module102 } from './banks/module-102-v001.generated.ts'
 import { module105 } from './banks/module-105-v001.generated.ts'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
@@ -28,6 +29,7 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
   { revision: 'logistique-101-v001', units: [...module101, ...module105] },
+  { revision: 'logistique-102-v001', units: [...module101, ...module102, ...module105] },
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!
