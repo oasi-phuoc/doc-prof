@@ -29,7 +29,8 @@ const reference = Object.values(pages).filter(Boolean).flatMap(theoryBlocks)
 if (editorial.visual) {
   const { anchor, file, sha256, alt, caption } = editorial.visual
   const position = reference.findIndex((block) => block.kind === 'heading' && block.text === anchor)
-  const path = `assets/logistique/${catalogEntry.theme}/${code}/commun/${file}`
+  const scope = editorial.diplomas.length === 1 ? editorial.diplomas[0].toLowerCase() : 'commun'
+  const path = `assets/logistique/${catalogEntry.theme}/${code}/${scope}/${file}`
   if (position < 0 || !/^[a-z0-9-]+\.svg$/.test(file)) throw new Error(`Figure mal placée : ${code}`)
   const bytes = readFileSync(new URL('public/' + path, root))
   if (createHash('sha256').update(bytes).digest('hex') !== sha256) {

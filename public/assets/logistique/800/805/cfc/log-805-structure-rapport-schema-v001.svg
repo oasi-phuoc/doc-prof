@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="290" viewBox="0 0 800 290" role="img" aria-labelledby="titre description">
+  <title id="titre">Hiérarchie des titres et table des matières</title>
+  <desc id="description">Les styles Titre 1 et Titre 2 du rapport alimentent les deux niveaux de la table des matières. Le texte courant reste dans le corps du rapport.</desc>
+  <rect width="800" height="290" fill="#fff"/>
+  <g fill="none" stroke="#222" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="20" y="53" width="330" height="200" rx="5"/>
+    <rect x="450" y="53" width="330" height="200" rx="5"/>
+    <path d="M370 143h60m-11-8 11 8-11 8M39 105h290M469 105h290"/>
+  </g>
+  <g fill="#222" font-family="sans-serif" font-size="22">
+    <text x="400" y="31" text-anchor="middle" font-weight="700">Styles et table des matières d’un rapport</text>
+    <text x="40" y="88" font-weight="700">Contenu du rapport</text>
+    <text x="470" y="88" font-weight="700">Table des matières</text>
+    <text x="40" y="136">Titre 1 · Réception</text>
+    <text x="58" y="167">Titre 2 · Contrôle du colis</text>
+    <text x="75" y="198" font-size="19">Normal · Texte du rapport…</text>
+    <text x="40" y="229">Titre 1 · Distribution</text>
+    <text x="470" y="136">Réception .................... 2</text>
+    <text x="488" y="167">Contrôle du colis .... 3</text>
+    <text x="470" y="198">Distribution .................. 6</text>
+  </g>
+</svg>

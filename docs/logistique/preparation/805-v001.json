@@ -1,0 +1,339 @@
+{
+  "diplomas": [
+    "CFC"
+  ],
+  "replacements": [
+    {
+      "to": "Le traitement de texte sert notamment à préparer des lettres, des rapports et des documentations illustrées. Les noms des commandes et les raccourcis peuvent varier selon la plateforme, la langue et la version de Word.",
+      "reason": "Formuler le contexte et le périmètre des exemples.",
+      "from": "Le traitement de texte est central en pro et en privé (lettres simples → documentations illustrées) · compétence de base dans presque toutes les professions."
+    },
+    {
+      "to": "| Action | Exemple de commande sous Windows |\n| --- | --- |",
+      "reason": "Supprimer la colonne de boutons historiques qui ne figurent pas dans les fiches.",
+      "from": "| Action | Bouton | Raccourci |\n| --- | --- | --- |"
+    },
+    {
+      "to": "| Afficher les marques de mise en forme | **Ctrl + Maj + 8** |",
+      "reason": "Préserver l’action et remplacer l’icône absente par une description texte.",
+      "from": "| Afficher les caractères non imprimables |  | **Ctrl+Shift+8** |"
+    },
+    {
+      "to": "| Créer un paragraphe | **Entrée** |",
+      "reason": "Préserver l’action et remplacer l’icône absente par une description texte.",
+      "from": "| Retour à la ligne | | **Enter** |"
+    },
+    {
+      "to": "| Passer à la ligne dans le même paragraphe | **Maj + Entrée** |",
+      "reason": "Préserver l’action et remplacer l’icône absente par une description texte.",
+      "from": "| Retour à la ligne dans le même paragraphe | | **Shift + Enter** |"
+    },
+    {
+      "to": "| Insérer un saut de page | **Ctrl + Entrée** |",
+      "reason": "Préserver l’action et remplacer l’icône absente par une description texte.",
+      "from": "| Saut de page | | **Ctrl + Enter** |"
+    },
+    {
+      "to": "| Effacer du texte | **Suppr** ou **Retour arrière** |",
+      "reason": "Préserver l’action et remplacer l’icône absente par une description texte.",
+      "from": "| Effacer du texte | | **Delete** ou **Backspace** |"
+    },
+    {
+      "to": "| Sélectionner un mot | **Double-clic** |",
+      "reason": "Préserver l’action et remplacer l’icône absente par une description texte.",
+      "from": "| Sélectionner un mot | | **Double-clic** |"
+    },
+    {
+      "to": "| Sélectionner un paragraphe dans le texte | **Triple-clic** |",
+      "reason": "Préserver l’action et remplacer l’icône absente par une description texte.",
+      "from": "| Sélectionner un paragraphe | | **Triple-clic** |"
+    },
+    {
+      "to": "| Action | Résultat |\n| --- | --- |\n| Gras, italique, souligné | Accentuer le texte sélectionné par la graisse, l’inclinaison ou un trait. |\n| Effacer la mise en forme directe | Revenir à la mise en forme définie par le style. |\n| Majuscules et petites majuscules | Afficher les lettres en capitales ou en capitales de hauteur réduite. |\n| Texte masqué | Appliquer un attribut dont l’affichage et l’impression dépendent des réglages. |\n| Barré | Faire passer un trait à travers les caractères. |\n| Indice et exposant | Placer les caractères sous ou au-dessus de la ligne de base. |",
+      "reason": "Remplacer les exemples visuels absents par des effets décrits. Les raccourcis de formatage dépendent de la configuration.",
+      "from": "| Action | Bouton | Raccourci | Exemple |\n| --- | --- | --- | --- |\n| Gras |  | **Ctrl + G** | Mots |\n| Italique |  | **Ctrl + I** | *Mots* |\n| Souligné |  | **Ctrl + U** | Mots |\n| Effacer la mise en forme |  | **Ctrl + Espace** | Mots |\n| Majuscule |  | **Ctrl + Shift + A** | Mots |\n| Petite majuscule |  | **Ctrl + Shift + K** | Mots |\n| Masqué |  | **Ctrl + Shift + H** | Mots |\n| Barré |  | | Mots |\n| En indice |  | | Mots |\n| En exposant |  | | Mots |"
+    },
+    {
+      "to": "#### 5.2.3 Paramètres avancés",
+      "reason": "Accord.",
+      "from": "#### 5.2.3 Paramètre avancés"
+    },
+    {
+      "to": "Les quatre alignements usuels sont **à gauche**, **à droite**, **centré** et **justifié**. En justification, le logiciel répartit les espaces pour aligner les deux bords du paragraphe.",
+      "reason": "Rendre les exemples compréhensibles sans capture.",
+      "from": "Il y a **4 alignements possibles** : gauche, droite, centré et justifié."
+    },
+    {
+      "to": "| Habillage | Effet dans la page |\n| --- | --- |\n| Aligné sur le texte | L’image se place dans la ligne comme un caractère. |\n| Encadré | Le texte contourne le rectangle de l’image. |\n| Adapté | Le texte peut suivre le contour de l’objet. |\n| Au travers | Le texte peut passer dans les zones ouvertes du contour d’habillage. |\n| Haut et bas | Le texte se place au-dessus et au-dessous de l’image. |\n| Derrière le texte | L’image se place sous le texte. |\n| Devant le texte | L’image se place par-dessus le texte. |",
+      "reason": "Remplacer les exemples graphiques manquants par le résultat de chaque réglage.",
+      "from": "| Habillage | Exemple |\n| --- | --- |\n| Aligné sur le texte |  |\n| Encadré |  |\n| Adapté |  |\n| Au travers |  |\n| Haut et bas |  |\n| Derrière le texte |  |\n| Devant le texte |  |"
+    },
+    {
+      "to": "Les options comprennent la bordure, l’ombre, la réflexion, la lumière, les contours adoucis, le biseau et la rotation.",
+      "reason": "Remplacer un tableau d’images vides par la liste des effets.",
+      "from": "| Bordure | Ombre | Réflexion | Lumière | Estompé | Biseau | Rotation |\n| --- | --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  |  |  |"
+    },
+    {
+      "to": "Les styles **Titre** aident Word à extraire les titres et leurs niveaux dans une table des matières automatique.",
+      "reason": "Présenter le mécanisme standard sans en faire l’unique moyen.",
+      "from": "Styles **Titre** indispensables pour la table des matières."
+    },
+    {
+      "to": "#### 5.13.4 Exemple\n\nDans un rapport de réception, appliquez **Titre 1** aux chapitres, **Titre 2** aux sous-chapitres et **Normal** au texte courant.",
+      "reason": "Remplacer l’allusion à une capture interne par un exemple autonome.",
+      "from": "#### 5.13.4 Exemple\n\n\n\nDocument annoté (**Le Petit Rapporteur**) : styles marqués en rouge — **Titre 1**, **Titre 2**, **Normal**, **Numéros**."
+    },
+    {
+      "to": "Pour créer une table des matières à partir des styles usuels, appliquez les styles de titre.",
+      "reason": "Éviter de présenter une solution usuelle comme la seule possible.",
+      "from": "Pour créer une table des matières, vous devez appliquer des styles de « Titres »"
+    },
+    {
+      "to": "Exemple fictif : **(Martin, 2024)** signale au lecteur la source correspondant à l’entrée de bibliographie.",
+      "reason": "Identifier la citation illustrative comme fictive.",
+      "from": "Exemple : *L'entreprise de logistique a connu une croissance exponentielle au cours des deux dernières années.* **(Van, 2000)**"
+    },
+    {
+      "to": "Ajoutez une **légende** à une image, une photo ou un graphique quand elle aide le lecteur à l’identifier.",
+      "reason": "Vouvoiement et précision.",
+      "from": "Quand tu mets une image, une photo ou un graphique, il est bien de mettre une **légende** (une petite phrase en dessous pour dire ce que c'est)."
+    },
+    {
+      "to": "Word insère la légende à la position choisie. La légende peut être dans le texte ou dans une zone liée à l’image selon son habillage.",
+      "reason": "La position et le conteneur dépendent de l’insertion.",
+      "from": "Word crée une zone de texte sous l'image"
+    },
+    {
+      "to": "**Astuce** : vérifiez dans l’aperçu la position de la légende quand vous modifiez l’habillage de l’image.",
+      "reason": "Éviter une garantie automatique.",
+      "from": "**Astuce :** la zone de texte de la légende garde le même **habillage** que l'image."
+    },
+    {
+      "to": "**Astuce** : ajoutez un titre à la table des illustrations si le modèle du rapport le prévoit.",
+      "reason": "Formulation éditoriale cohérente.",
+      "from": "**Astuce :** la table des illustrations **n'a pas de titre** — c'est à vous de le rajouter."
+    }
+  ],
+  "summary": [
+    "Un rapport structuré combine paragraphes, sauts, listes et tableaux. Les styles gardent une présentation cohérente.",
+    "Les styles Titre définissent la hiérarchie que la table des matières utilise. Après une modification, actualisez la table.",
+    "L’habillage, l’alignement, le rognage et les légendes rendent les illustrations lisibles. Les citations et notes renvoient aux sources.",
+    "Contrôlez les marges, les en-têtes, les pieds, les numéros et les tableaux dans l’aperçu avant impression."
+  ],
+  "glossary": [
+    [
+      "alignement",
+      "Position du texte par rapport aux bords de la zone de saisie."
+    ],
+    [
+      "bibliographie",
+      "Liste des références utilisées pour préparer le document."
+    ],
+    [
+      "cellule",
+      "Intersection d’une ligne et d’une colonne dans un tableau."
+    ],
+    [
+      "citation",
+      "Renvoi à une source dans le corps d’un document."
+    ],
+    [
+      "en-tête",
+      "Zone située en haut de la page, souvent répétée selon les réglages."
+    ],
+    [
+      "fusion de cellules",
+      "Réunion de plusieurs cellules contiguës en une seule."
+    ],
+    [
+      "habillage",
+      "Réglage qui organise la circulation du texte autour d’un objet."
+    ],
+    [
+      "interligne",
+      "Espacement entre les lignes d’un paragraphe."
+    ],
+    [
+      "légende",
+      "Texte associé à une figure ou à un tableau pour l’identifier."
+    ],
+    [
+      "marge",
+      "Distance entre le bord de page et la zone disponible pour le document."
+    ],
+    [
+      "note de bas de page",
+      "Information complémentaire généralement placée au bas de la page de son appel."
+    ],
+    [
+      "note de fin",
+      "Information complémentaire rassemblée en fin de document ou de section."
+    ],
+    [
+      "paragraphe",
+      "Unité de texte pouvant partager une mise en forme de paragraphe."
+    ],
+    [
+      "pied de page",
+      "Zone située en bas de la page qui peut contenir un numéro ou une référence."
+    ],
+    [
+      "retrait",
+      "Décalage d’un paragraphe par rapport aux limites de la zone de texte."
+    ],
+    [
+      "rognage",
+      "Masquage d’une partie des bords d’une image pour modifier le cadrage."
+    ],
+    [
+      "saut de ligne",
+      "Passage à la ligne à l’intérieur du même paragraphe."
+    ],
+    [
+      "saut de page",
+      "Commande qui déplace la suite du document au début de la page suivante."
+    ],
+    [
+      "section",
+      "Partie d’un document pouvant avoir ses propres réglages de mise en page."
+    ],
+    [
+      "style",
+      "Ensemble nommé de réglages de présentation réutilisables."
+    ],
+    [
+      "table des illustrations",
+      "Liste des figures ou autres objets légendés accompagnés de leur page."
+    ],
+    [
+      "table des matières",
+      "Liste structurée des titres du document et de leur emplacement."
+    ],
+    [
+      "trame de fond",
+      "Couleur ou motif de remplissage derrière un texte ou dans une cellule."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-source-1",
+      "kind": "maths",
+      "prompt": "Un rapport contient 3 500 mots. Vous saisissez en moyenne 35 mots par minute. Calculez le temps de saisie en minutes et en heures et minutes.",
+      "answer": "La saisie prend 100 minutes, soit 1 h 40.",
+      "calculation": "3 500 ÷ 35 = 100 min. 100 = 60 + 40."
+    },
+    {
+      "id": "maths-source-2",
+      "kind": "maths",
+      "prompt": "Un tableau comporte six lignes et cinq colonnes, sans cellules fusionnées. Calculez le nombre de cellules.",
+      "answer": "Le tableau comporte 30 cellules.",
+      "calculation": "6 × 5 = 30."
+    },
+    {
+      "id": "maths-source-3",
+      "kind": "maths",
+      "prompt": "Vous renseignez un tableau de 30 cellules. Le temps moyen est de 1,5 minute par cellule. Calculez la durée totale.",
+      "answer": "La saisie prend 45 minutes.",
+      "calculation": "30 × 1,5 = 45 min."
+    },
+    {
+      "id": "maths-source-4",
+      "kind": "maths",
+      "prompt": "Le rapport fait 24 pages. On imprime 20 exemplaires. Le coût est de 0,12 CHF par page imprimée. Calculez le coût total.",
+      "answer": "L’impression coûte 57,60 CHF.",
+      "calculation": "24 × 20 = 480 pages. 480 × 0,12 = 57,60 CHF."
+    },
+    {
+      "id": "maths-origine-1",
+      "kind": "maths",
+      "prompt": "Sur une page de 210 mm de large, les marges font 20 mm à gauche et 20 mm à droite. Calculez la largeur disponible pour un tableau.",
+      "answer": "Le tableau peut occuper 170 mm de largeur.",
+      "calculation": "210 − 20 − 20 = 170 mm."
+    },
+    {
+      "id": "verification-source-1",
+      "kind": "verification",
+      "prompt": "Quelle différence y a-t-il entre Entrée et Maj + Entrée lors de la saisie d’un texte dans Word ?",
+      "answer": "Entrée crée un nouveau paragraphe. Maj + Entrée crée une nouvelle ligne dans le paragraphe courant."
+    },
+    {
+      "id": "verification-source-2",
+      "kind": "verification",
+      "prompt": "Quelles opérations permettent de créer puis de tenir à jour une table des matières automatique ?",
+      "answer": "Attribuer les styles de titre, insérer une table des matières via Références, puis la mettre à jour lorsque les titres ou la pagination changent."
+    },
+    {
+      "id": "verification-source-3",
+      "kind": "verification",
+      "prompt": "Décrivez les effets des habillages « Aligné sur le texte », « Encadré » et « Haut et bas ».",
+      "answer": "Aligné sur le texte place l’image dans une ligne. Encadré laisse le texte contourner son rectangle. Haut et bas laisse du texte au-dessus et au-dessous."
+    },
+    {
+      "id": "verification-source-4",
+      "kind": "verification",
+      "prompt": "Comment faire pour que tous les paragraphes utilisant le même style suivent une nouvelle mise en forme ?",
+      "answer": "Modifier le style dans la galerie des styles. Les paragraphes utilisant ce style reprennent ses propriétés, sauf celles surchargées par une mise en forme directe."
+    },
+    {
+      "id": "verification-source-5",
+      "kind": "verification",
+      "prompt": "Où apparaissent une note de bas de page et une note de fin ?",
+      "answer": "La première apparaît au bas de la page concernée. La seconde se trouve à la fin du document ou de la section selon les réglages."
+    },
+    {
+      "id": "verification-origine-1",
+      "kind": "verification",
+      "prompt": "Pourquoi insérer une légende à l’aide d’une commande dédiée quand le rapport comporte plusieurs figures ?",
+      "answer": "Cela associe une légende et sa numérotation à chaque figure, ce qui permet de produire et d’actualiser une table des illustrations."
+    },
+    {
+      "id": "verification-origine-2",
+      "kind": "verification",
+      "prompt": "Quelles vérifications effectuer dans l’aperçu avant d’imprimer un rapport ?",
+      "answer": "Contrôler le format, l’orientation, les marges, les sauts de page, la numérotation et la lisibilité des tableaux et figures."
+    },
+    {
+      "id": "situation-source-1",
+      "kind": "situation",
+      "prompt": "Vous préparez un rapport de livraison avec deux chapitres et trois sous-chapitres. Indiquez les styles à appliquer et la vérification à faire après une modification de titre.",
+      "answer": "Appliquer Titre 1 aux chapitres et Titre 2 aux sous-chapitres. Actualiser toute la table des matières après le changement de titre."
+    },
+    {
+      "id": "situation-source-2",
+      "kind": "situation",
+      "prompt": "Vous préparez un planning comportant une colonne Jour et quatre colonnes de tournée. Il faut prévoir cinq jours ouvrables et une ligne d’en-tête. Décrivez la structure à créer.",
+      "answer": "Créer un tableau de six lignes et cinq colonnes. Consacrer la première ligne aux en-têtes et une ligne à chaque jour."
+    },
+    {
+      "id": "situation-source-3",
+      "kind": "situation",
+      "prompt": "Votre rapport reprend une idée trouvée dans un document d’entreprise. Proposez des informations à relever pour la citation et expliquez comment elles rejoignent la bibliographie.",
+      "answer": "Relever l’auteur ou l’organisation, le titre, la date et le type de document. Insérer la citation à l’endroit concerné puis générer ou compléter la bibliographie à partir de la source."
+    },
+    {
+      "id": "situation-source-4",
+      "kind": "situation",
+      "prompt": "Vous préparez un rapport avec une page de garde sans en-tête. Les pages suivantes doivent afficher le nom du dépôt en haut et le numéro en bas. Décrivez les réglages et un contrôle final.",
+      "answer": "Utiliser Première page différente, renseigner l’en-tête et le champ de numéro de page des suivantes, puis vérifier la première page et les suivantes dans l’aperçu."
+    },
+    {
+      "id": "situation-origine-1",
+      "kind": "situation",
+      "prompt": "Un tableau de réception déborde sur une seconde page. Proposez deux ajustements en conservant des données lisibles et vérifiez ce qui se passe sur la deuxième page.",
+      "answer": "Ajuster la largeur des colonnes ou passer le tableau en orientation paysage si le rapport le permet. Vérifier la répétition de l’en-tête et l’absence de ligne ou de colonne coupée."
+    }
+  ],
+  "visual": {
+    "anchor": "5.8 Table des matières",
+    "file": "log-805-structure-rapport-schema-v001.svg",
+    "sha256": "f59b8a05c51eef15246b2b942cd1b1f829239757e48e342cf7d8c4b6f912feb7",
+    "alt": "Les styles Titre 1 et Titre 2 d’un rapport alimentent les deux niveaux du sommaire.",
+    "caption": "Une table des matières automatique reprend les titres et leurs niveaux.",
+    "origin": "Schéma original Doc-Prof réalisé d’après le principe décrit dans le cours."
+  },
+  "editorialNotes": [
+    "Le module est réservé au CFC. Le registre EPCAS a écarté 85 références historiques. Les concepts essentiels sont décrits dans le cours et le schéma original. Les variantes visuelles de l’habillage, des bordures et des tableaux pourront être illustrées ensuite.",
+    "La situation de planning précise cinq jours plus une ligne d’en-tête et une colonne Jour plus quatre tournées, ce qui corrige la matrice ambiguë du document source.",
+    "Les exercices individuels et les corrigés sont autonomes sur papier. Les exemples de documents et d’auteurs sont fictifs."
+  ]
+}
