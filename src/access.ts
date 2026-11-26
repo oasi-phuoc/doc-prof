@@ -150,7 +150,7 @@ export function parseAccessDomainList(raw: string | undefined): Domain[] {
 function domainsFromEnv(account: 'full' | 'partial'): Domain[] {
   if (account === 'full') {
     const fromEnv = parseDomainList(import.meta.env.VITE_ACCESS_DOMAINS_FULL, [])
-    return [...new Set([...(fromEnv.length > 0 ? fromEnv : REGULAR_DOMAIN_IDS), ...FULL_TEST_DOMAINS])]
+    return [...new Set([...(fromEnv.length > 0 ? fromEnv : REGULAR_DOMAIN_IDS), ...LOGISTIQUE_DOMAIN_OPTIONS.map(({ id }) => id), ...FULL_TEST_DOMAINS])]
   }
   return [...new Set<Domain>(['algèbre', 'géométrie', 'alphabetisation', ...parseDomainList(import.meta.env.VITE_ACCESS_DOMAINS_PARTIAL, [])])]
 }

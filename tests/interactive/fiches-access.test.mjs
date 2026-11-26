@@ -55,9 +55,9 @@ try {
     assert.deepEqual(new Set(domainsForAccount('partial')), new Set(['algèbre','géométrie','alphabetisation']))
   })
 
-  await test('an old full domain configuration retains its selection and gains the four requested tests', async () => {
+  await test('a configured full domain list also includes logistics and the four TCF/TCM tests', async () => {
     const { domainsForAccount } = await clientAccess('algèbre,tcm-csc')
-    assert.deepEqual(new Set(domainsForAccount('full')), new Set(['algèbre', ...tests]))
+    assert.deepEqual(new Set(domainsForAccount('full')), new Set(['algèbre', 'logistique-cfc', 'logistique-afp', ...tests]))
     assert(!domainsForAccount('full').includes('tpf'))
     assert(!domainsForAccount('full').includes('tpm'))
     assert(domainsForAccount('admin').includes('tpf'))
