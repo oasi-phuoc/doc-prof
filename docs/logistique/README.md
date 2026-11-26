@@ -12,7 +12,7 @@ Le [cahier des charges consolidé](cahier-des-charges.md) reprend la v2.10 fourn
 
 Le générateur commun propose les neuf thèmes et 80 modules du CFC, ainsi que les sept thèmes et 63 modules de l’AFP. Chaque module présente les cinq types attendus. La génération, les titres, le corrigé, la grille de calcul et les sauts manuels passent par les feuilles standard. Les recettes enregistrent la révision de la banque et contrôlent le diplôme à la lecture. L’en-tête de la fiche utilise le visuel EPCA déjà fourni et le libellé du diplôme.
 
-La [banque active](../../src/logistique/approved-banks.ts) fournit les modules 101, 102, 105 et 308 dans les deux diplômes. Les modules ou types sans contenu exploitable portent l’indication « à compléter ». Le [suivi d’avancement](avancement-cahier-des-charges-20261126.md) décrit les révisions, la couverture et le travail restant.
+La [banque active](../../src/logistique/approved-banks.ts) fournit les modules 101, 102, 105, 308 et 613 dans les deux diplômes. Les modules ou types sans contenu exploitable portent l’indication « à compléter ». Le [suivi d’avancement](avancement-cahier-des-charges-20261126.md) décrit les révisions, la couverture et le travail restant.
 
 ## Sources et pilote
 
