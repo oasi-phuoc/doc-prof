@@ -1,3 +1,4 @@
+import { isLogistiqueDomain } from '@/logistique/catalog'
 import { isOralComprehensionExercise } from '@/components/generator/page-helpers'
 import { grammarEligibleCount } from '@/grammaire/curriculum/generate'
 import { maxQuestionsFor } from '@/components/generator/generator-derived'
@@ -258,8 +259,8 @@ const bankQuestionCap = activeSheetBlock?.bankQuestionCap
 const maxQuestions = cscQuestionLimit(activeBlock.exerciseType)
   ?? (isGrammaireDomain && activeBlock.grammarLevel
   ? Math.max(1,Math.min(50,grammarEligibleCount(activeBlock)))
-  : activePage.domain === 'gattegno' && bankQuestionCap != null
-  ? Math.min(baseMaxQuestions, bankQuestionCap)
+  : (activePage.domain === 'gattegno' || isLogistiqueDomain(activePage.domain)) && bankQuestionCap != null
+  ? Math.min(baseMaxQuestions, isLogistiqueDomain(activePage.domain) ? Math.max(1, bankQuestionCap) : bankQuestionCap)
   : baseMaxQuestions)
 const bankOverflow =
   Boolean(bankQuestionCap != null) &&

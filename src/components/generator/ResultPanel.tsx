@@ -1,3 +1,4 @@
+import { isLogistiqueDomain, isLogistiqueReferenceType } from '@/logistique/catalog'
 import { Fragment, useMemo, type RefObject } from 'react'
 import { PeEvaluationSheet } from '@/components/tcf/PeEvaluationSheet'
 import { peEvaluationsOf, type PeEvaluation } from '@/tcf/pe-evaluation'
@@ -174,7 +175,13 @@ export function ResultPanel({
     () => paginateTranscriptions(collectWorksheetTranscriptions(previewWorksheets)),
     [previewWorksheets],
   )
-  const answersBaseCount = isCalliDomain || isJeuxDomain ? 0 : previewWorksheets.length
+  const unavailableLogistique = previewWorksheets.some((sheet) =>
+    isLogistiqueDomain(sheet.domain) && sheet.blocks.some((block) => block.bankQuestionCap === 0),
+  )
+  const logisticsReferenceOnly = previewWorksheets.length > 0 && previewWorksheets.every((sheet) =>
+    isLogistiqueDomain(sheet.domain) && sheet.blocks.every((block) => isLogistiqueReferenceType(block.exerciseType)),
+  )
+  const answersBaseCount = isCalliDomain || isJeuxDomain || logisticsReferenceOnly ? 0 : previewWorksheets.length
   const useA5Double = isA5DoubleFormat(sheetFormat) && Boolean(a5LeftSheet && a5RightSheet)
   /** Corrigé PO : une page pour l’interaction, après la dernière feuille. */
   const correctionFollow = useMemo(() => {
@@ -207,7 +214,7 @@ export function ResultPanel({
   }, [a5LeftWorksheets, a5RightWorksheets, previewWorksheets, useA5Double])
   /** Corrigé : pages exercices + pages PE/PO + transcriptions. */
   const corrigeTotalPages = answersBaseCount + correctionFollow.length + transcriptionPacks.length
-  const includeCorrections = printCorrections && !isCalliDomain && !isJeuxDomain
+  const includeCorrections = printCorrections && !isCalliDomain && !isJeuxDomain && !logisticsReferenceOnly
   const printLabel = includeCorrections ? 'Imprimer la fiche et le corrigé' : 'Imprimer la fiche'
   const activePreviewIndex = Math.min(safeSheetIndex, Math.max(0, previewWorksheets.length - 1))
   const activePreview = previewWorksheets[activePreviewIndex]
@@ -250,7 +257,7 @@ export function ResultPanel({
         isTcf || (Boolean(isGrammaireExercise) && activeBlock.tcfExercise == null)
       }
       interactiveTcfPageBreaks={
-        sheet.domain==='grammaire' || isTcf ||
+        sheet.domain==='grammaire' || isLogistiqueDomain(sheet.domain) || isTcf ||
         pageExerciseBlocks.some(
           (block) =>
             block.grammarPresentation==='document-set' || block.grammarPresentation==='scenario-set' ||
@@ -276,7 +283,7 @@ export function ResultPanel({
             <div className="result-head">
               <div>
                 <p className="eyebrow">Aperçu</p>
-                <h2>Votre activité est prête.</h2>
+                <h2>{unavailableLogistique ? 'Contenu à compléter.' : 'Votre activité est prête.'}</h2>
                 {libreMode ? <p className="no-print">Cliquez sur une image de la fiche pour la remplacer.</p> : null}
               </div>
               <div className="result-head-actions no-print">
@@ -284,6 +291,7 @@ export function ResultPanel({
                   className="print-chip is-icon"
                   type="button"
                   onClick={onSaveFiche}
+                  disabled={unavailableLogistique}
                   aria-label="Enregistrer"
                   title="Enregistrer"
                 >
@@ -430,6 +438,7 @@ export function ResultPanel({
                   className="print-chip is-icon is-generate"
                   type="button"
                   onClick={printAll}
+                  disabled={unavailableLogistique}
                   aria-label={printLabel}
                   title={printLabel}
                 >
@@ -498,7 +507,7 @@ export function ResultPanel({
                           interactiveTcfOptions={
                             isTcf || (Boolean(isGrammaireExercise) && activeBlock.tcfExercise == null)
                           }
-                          interactiveTcfPageBreaks={a5LeftSheet.domain==='grammaire'||a5RightSheet.domain==='grammaire'||isTcf || pageExerciseBlocks.some(block => block.grammarPresentation==='document-set'||block.grammarPresentation==='scenario-set'||isGrammarReadingType(block.exerciseType)||block.exerciseType==='tcm-cfr-ex28')}
+                          interactiveTcfPageBreaks={a5LeftSheet.domain==='grammaire'||a5RightSheet.domain==='grammaire'||isLogistiqueDomain(a5LeftSheet.domain)||isLogistiqueDomain(a5RightSheet.domain)||isTcf || pageExerciseBlocks.some(block => block.grammarPresentation==='document-set'||block.grammarPresentation==='scenario-set'||isGrammarReadingType(block.exerciseType)||block.exerciseType==='tcm-cfr-ex28')}
                           onSelectTcfForm={selectTcfForm}
                           onSelectTcfFormForExercise={selectTcfFormForExercise}
                           onToggleFormulaireLetterGrid={toggleFormulaireLetterGrid}

@@ -1,5 +1,6 @@
+import { isLogistiqueDomain } from '@/logistique/catalog'
+import { logistiqueDocumentTitle } from '@/logistique/generate'
 import { AudioProgressDialog } from '@/components/AudioProgressDialog'
-import type { Domain } from '@/math/types'
 import { openInteractive } from '@/interactive/navigation'
 import { GrammarCurriculumError } from '@/grammaire/curriculum/types'
 import { waitForGrammarPrintImages } from '@/components/grammar/print-media'
@@ -21,8 +22,6 @@ import { SaveFicheDialog } from '@/components/generator/SaveFicheDialog'
 import { TopbarTools } from '@/components/generator/TopbarTools'
 import { FooterSidePanel } from '@/components/generator/FooterSidePanel'
 import { Header } from '@/components/generator/Header'
-import { LogistiqueDomainEmpty, LogistiqueDomainSettings } from '@/logistique/DomainShell'
-import { isLogistiqueDomain, logistiqueDomainLabel, worksheetDomainFor, type LogistiqueDomain } from '@/logistique/domains'
 import { LibreSidePanel } from '@/components/generator/LibreSidePanel'
 import { SettingsPanel } from '@/components/generator/SettingsPanel'
 import { ResultPanel } from '@/components/generator/ResultPanel'
@@ -96,18 +95,11 @@ export function GeneratorPage({
   const allowedDomains = useMemo(() => domainsForAccount(accessAccount), [accessAccount])
   const firstAllowedDomain = allowedDomains[0] ?? 'algèbre'
   const [openedFiche] = useState(readStagedFiche)
-  const preferredInitialDomain = accountCanAccessDomain(accessAccount, 'algèbre') ? 'algèbre' : firstAllowedDomain
-  const initial = defaultPage(worksheetDomainFor(preferredInitialDomain,
-    allowedDomains.find(domain => !isLogistiqueDomain(domain)) ?? 'algèbre'))
+  const initial = defaultPage(
+    accountCanAccessDomain(accessAccount, 'algèbre') ? 'algèbre' : firstAllowedDomain,
+  )
   const [pages, setPages] = useState<PageConfig[]>(() => openedFiche?.recipe.pages ?? [initial])
   const initialDomain = openedFiche?.recipe.pages[0]?.domain ?? initial.domain
-  const [logistiqueDomain, setLogistiqueDomain] = useState<LogistiqueDomain | null>(() => {
-    const requested = openedFiche?.recipe.pages[0]?.domain ?? preferredInitialDomain
-    return isLogistiqueDomain(requested) ? requested : null
-  })
-  useEffect(() => {
-    if (logistiqueDomain && !accountCanAccessDomain(accessAccount, logistiqueDomain)) setLogistiqueDomain(null)
-  }, [accessAccount, logistiqueDomain])
   const [sheetIndex, setSheetIndex] = useState(0)
   const [blockIndex, setBlockIndex] = useState(0)
   const [mode, setMode] = useState<PreviewMode>('student')
@@ -487,8 +479,11 @@ export function GeneratorPage({
     rememberFicheOnHistory({ ...next, recipe: saved.recipe })
   }
 
+  const printInstitutional = isLogistiqueDomain(pages[0]?.domain ?? activePage.domain) && !institutional.documentTitle.trim()
+    ? { ...institutional, documentTitle: logistiqueDocumentTitle(pages, evalMode) }
+    : institutional
   const chromeProps = {
-    institutional,
+    institutional: printInstitutional,
     evalMode,
     // TPM : total = somme des barèmes de la fiche (plus de plafond fixe à 100).
     documentTotalPoints: sheetTotalPoints,
@@ -504,17 +499,6 @@ export function GeneratorPage({
     // En mode libre : refresh sous la numérotation du panneau (pas sur le titre Exercice).
     showExerciseRefresh: !libreMode,
   } as const
-
-  function selectDomain(next: Domain) {
-    if (!accountCanAccessDomain(accessAccount, next)) return
-    if (isLogistiqueDomain(next)) {
-      setLogistiqueDomain(next)
-      return
-    }
-    const returningToWorksheet = Boolean(logistiqueDomain) && next === activePage.domain
-    setLogistiqueDomain(null)
-    if (!returningToWorksheet) changeDomain(next)
-  }
 
   const settingsPanelProps = {
     ...ctx,
@@ -540,7 +524,7 @@ export function GeneratorPage({
     setPointsPerQuestion,
     sheetTotalPoints,
     activePage,
-    changeDomain: selectDomain,
+    changeDomain,
     allowedDomains,
     accessAccount,
     activeBlock,
@@ -649,12 +633,11 @@ export function GeneratorPage({
       <Header
         onCreate={() => undefined}
         generator
-        domain={logistiqueDomain ?? activePage.domain}
-        onLogout={onLogout}
-        afterBrand={logistiqueDomain ? <span className="logistique-brand-label">{logistiqueDomainLabel(logistiqueDomain)}</span> : undefined}
-        rightSlot={logistiqueDomain ? undefined : (
+        rightSlot={
           <>
-            <button type="button" className="button small" onClick={playWithClass}>Jouer cette fiche</button>
+            {!isLogistiqueDomain(activePage.domain) && (
+              <button type="button" className="button small" onClick={playWithClass}>Jouer cette fiche</button>
+            )}
             <TopbarTools
             themeColor={themeColor}
             onThemeColor={applyThemeColor}
@@ -730,10 +713,10 @@ export function GeneratorPage({
             onLogout={onLogout}
           />
           </>
-        )}
+        }
       />
       <main className="generator-page" id="top">
-        <div className="generator-intro" hidden={Boolean(logistiqueDomain)}>
+        <div className="generator-intro">
           <a className="back-link" href="/">
             ← Retour à l’accueil
           </a>
@@ -746,13 +729,13 @@ export function GeneratorPage({
           <p className="hero-text">Chaque génération crée une nouvelle série d’exercices aléatoires.</p>
         </div>
         <div
-          className={`workspace${!logistiqueDomain && libreMode ? ' has-libre-panel' : ''}${!logistiqueDomain && footerPanelOpen ? ' has-footer-panel' : ''}`}
+          className={`workspace${libreMode ? ' has-libre-panel' : ''}${footerPanelOpen ? ' has-footer-panel' : ''}`}
         >
-          {logistiqueDomain ? <LogistiqueDomainSettings domain={logistiqueDomain} allowedDomains={allowedDomains} onDomainChange={selectDomain} /> : <SettingsPanel {...settingsPanelProps} />}
-          {logistiqueDomain ? <LogistiqueDomainEmpty domain={logistiqueDomain} /> : <WorksheetImageProvider enabled={libreMode} overrides={imageOverrides} onChange={setImageOverrides}>
+          <SettingsPanel {...settingsPanelProps} />
+          <WorksheetImageProvider enabled={libreMode} overrides={imageOverrides} onChange={setImageOverrides}>
             <ResultPanel {...resultPanelProps} />
-          </WorksheetImageProvider>}
-          {logistiqueDomain || !libreMode ? null : (
+          </WorksheetImageProvider>
+          {!libreMode ? null : (
             <LibreSidePanel
               activeBlock={activeBlock}
               activeSheet={activeSheet}
@@ -789,7 +772,7 @@ export function GeneratorPage({
               }}
             />
           )}
-          {logistiqueDomain || !footerPanelOpen ? null : (
+          {!footerPanelOpen ? null : (
             <FooterSidePanel
               institutional={institutional}
               setInstitutional={setInstitutional}

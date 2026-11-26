@@ -14,6 +14,8 @@ import { defaultEntriesFor } from '@/jeux/defaults'
 import { entriesToText } from '@/jeux/parse'
 import { JEUX_LIBRE_TOPIC, isJeuxTopicId, jeuxTopicsFromFr } from '@/jeux/topics'
 import { ACM_EXERCISE_TYPES, ACM_TOPICS } from '@/acm/catalog'
+import { logistiqueEligibleCount } from '@/logistique/generate'
+import { isLogistiqueDomain, logistiqueTopics, logistiqueType, logistiqueTypes } from '@/logistique/catalog'
 import { LOGIQUE_EXERCISE_TYPES, LOGIQUE_TOPICS } from '@/logique/catalog'
 import { SANTE_EXERCISE_TYPES, SANTE_TOPICS } from '@/sante/catalog'
 import { SOCIETE_EXERCISE_TYPES, SOCIETE_TOPICS } from '@/societe/catalog'
@@ -27,7 +29,6 @@ import {
 import { TCM_CFR_EXERCISE_TYPES, TCM_CFR_TOPICS } from '@/tcm-cfr/catalog'
 import { TCM_CSC_EXERCISE_TYPES, TCM_CSC_TOPICS } from '@/tcm-csc/catalog'
 import { VOCABULAIRE_EXERCISE_TYPES, VOCABULAIRE_TOPICS } from '@/vocabulaire/catalog'
-import { isLogistiqueDomain } from '@/logistique/domains'
 
 export const topics: Topic[] = [
   { id: 'tpm-info', label: 'Informations', domain: 'tpm' },
@@ -72,6 +73,7 @@ export const topics: Topic[] = [
   ...SANTE_TOPICS,
   ...ACM_TOPICS,
   ...LOGIQUE_TOPICS,
+  ...logistiqueTopics,
   // —— TCM CSC / TCM CFR (stubs vides, pas une copie de TPM) ——
   ...TCM_CSC_TOPICS,
   ...TCM_CFR_TOPICS,
@@ -855,6 +857,7 @@ export const exerciseTypes: ExerciseType[] = [
   ...SANTE_EXERCISE_TYPES,
   ...ACM_EXERCISE_TYPES,
   ...LOGIQUE_EXERCISE_TYPES,
+  ...logistiqueTypes,
   ...TCM_CSC_EXERCISE_TYPES,
   ...TCM_CFR_EXERCISE_TYPES,
 ]
@@ -971,6 +974,7 @@ export function isQuadExercise(typeId: string): boolean {
 export function isDraftPadExercise(typeId: string): boolean {
   return (
     typeId.includes('problemes') ||
+    logistiqueType(typeId)?.kind === 'maths' ||
     typeId.startsWith('equations-') ||
     typeId.startsWith('perimetres-') ||
     typeId.startsWith('aires-') ||
@@ -995,7 +999,11 @@ export function isDraftPadExercise(typeId: string): boolean {
 }
 
 export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack): ExerciseType {
-  if (isLogistiqueDomain(domain)) throw new Error('Les cours et exercices de logistique ne sont pas encore ajoutés.')
+  if (isLogistiqueDomain(domain)) {
+    const types = logistiqueTypes.filter((type) => type.domain === domain && (topic === undefined || type.topic === topic))
+    return types.find((type) => logistiqueEligibleCount(type.id) > 0)
+      ?? types[0] ?? logistiqueTypes.find((type) => type.domain === domain)!
+  }
   if (topic) {
     const list = typesForTopic(topic, track)
     if (list[0]) return list[0]
@@ -1040,13 +1048,13 @@ export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack
 }
 
 export function defaultPage(domain: Domain = 'algèbre'): PageConfigLike {
-  if (isLogistiqueDomain(domain)) return { domain, topic: '', exerciseType: '', difficulty: 'moyen', count: 1, columns: 1 }
   const type = firstTypeFor(domain)
   const count =
     domain === 'jeux' ||
     domain === 'calligraphie' ||
     isTpfFamilyDomain(domain) ||
     domain === 'grammaire' ||
+    isLogistiqueDomain(domain) ||
     domain === 'vocabulaire' ||
     domain === 'société' ||
     domain === 'santé' ||

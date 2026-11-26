@@ -60,7 +60,13 @@ export function GenericLibreEditor({
                     className="libre-line-input"
                     type="text"
                     value={item.answer ?? ''}
-                    onChange={(event) => patchItem(index, { answer: event.target.value })}
+                    onChange={(event) => {
+                    const answer = event.target.value
+                    patchItem(index, {
+                      answer,
+                      ...(item.responseAnswer != null ? { responseAnswer: answer } : {}),
+                    })
+                  }}
                   />
                 </label>
               </div>

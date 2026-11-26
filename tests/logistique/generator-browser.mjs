@@ -1,0 +1,134 @@
+import assert from 'node:assert/strict'
+import { readFile } from 'node:fs/promises'
+import { chromium } from 'playwright'
+import { createServer } from 'vite'
+
+const fixture = JSON.parse(await readFile(new URL('./fixture.json', import.meta.url), 'utf8'))
+const server = await createServer({
+  define: { 'import.meta.env.VITE_FICHES_API_URL': JSON.stringify('/__logistique_test') },
+  server: { host: '127.0.0.1', port: 5189, strictPort: true },
+  plugins: [{
+    name: 'logistique-test-banks',
+    enforce: 'pre',
+    transform(_code, id) {
+      if (!id.endsWith('/src/logistique/approved-banks.ts')) return
+      return `
+        export const currentLogistiquePublication = ${JSON.stringify(fixture)}
+        export function logistiquePublication(revision) {
+          return !revision || revision === currentLogistiquePublication.revision
+            ? currentLogistiquePublication : undefined
+        }
+      `
+    },
+  }],
+})
+let browser
+try {
+  await server.listen()
+  const base = 'http://127.0.0.1:5189'
+  browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH ?? '/usr/bin/chromium' })
+  const context = await browser.newContext({ viewport: { width: 1366, height: 1000 } })
+  await context.addCookies([{ name: 'clairfle-fiche-access', value: 'admin', url: base }])
+  await context.addInitScript(() => localStorage.setItem('clairfle-fiche-sync', 'logistique-browser-fixture'))
+  const page = await context.newPage()
+  let saved
+  await page.route('**/__logistique_test/fiches', async (route) => {
+    const request = route.request()
+    assert.equal(request.headers().authorization, 'Bearer logistique-browser-fixture')
+    if (request.method() === 'POST') {
+      saved = {
+        ...request.postDataJSON(),
+        id: 'logistique-test',
+        domains: ['logistique-afp'],
+        createdAt: '2026-11-26T00:00:00Z',
+        updatedAt: '2026-11-26T00:00:00Z',
+      }
+      await route.fulfill({ json: { fiche: saved } })
+      return
+    }
+    assert.equal(request.method(), 'GET')
+    await route.fulfill({ json: { fiches: saved ? [saved] : [] } })
+  })
+  page.setDefaultTimeout(90000)
+  const errors = []
+  page.on('pageerror', (error) => errors.push(error.message))
+
+  async function select(label, choice) {
+    await page.getByRole('button', { name: label, exact: true }).click()
+    await page.getByRole('option', { name: choice, exact: true }).click()
+  }
+
+  await page.goto(base + '/generateur')
+  const sheet = page.locator('.a4-frame .worksheet-sheet').first()
+  await sheet.waitFor()
+  const originalSize = await sheet.evaluate((el) => [el.offsetWidth, el.offsetHeight])
+  const shape = ['.doc-header', '.sheet-body', '.doc-footer']
+  for (const diploma of ['CFC', 'AFP']) {
+    await select('Domaine', 'Logistique ' + diploma)
+    await select('Sous-thème', '100 — Introduction aux modules')
+    await page.getByRole('heading', { name: 'Contenu à compléter.' }).waitFor()
+    assert.equal(await page.getByRole('button', { name: 'Enregistrer', exact: true }).isDisabled(), true)
+    await select('Sous-thème', '105 — Marchandises')
+    await sheet.getByText('Cartons à réceptionner', { exact: true }).waitFor()
+    assert.equal((await page.locator('.brand').textContent()).trim(), 'ClairFLE')
+    assert.equal(await page.locator('.brand img').count(), 0)
+    assert.equal(await sheet.locator('.doc-school-name').innerText(), 'Logistique ' + diploma)
+    assert.deepEqual(await sheet.evaluate((el) => [el.offsetWidth, el.offsetHeight]), originalSize)
+    for (const selector of shape) assert.equal(await sheet.locator(selector).count(), 1)
+    await sheet.getByText('Théorie : module 105', { exact: true }).waitFor()
+
+    await select('Type d’exercice', 'Mathématiques')
+    await sheet.locator('.problem-block .draft-pad.with-grid').waitFor()
+    assert.equal(await sheet.locator('.problem-response-line .answer-line-field').count(), 1)
+    assert.doesNotMatch(await sheet.innerText(), /42 kg/)
+    await page.getByRole('button', { name: 'Fiche élève (cliquer pour corrigé)', exact: true }).click()
+    await sheet.getByText('7 × 6 kg = 42 kg', { exact: true }).waitFor()
+    await sheet.getByText('Le poids total est de 42 kg.', { exact: true }).waitFor()
+    const reserve = await sheet.evaluate((el) => {
+      const bottom = el.querySelector('.exercise-item').getBoundingClientRect().bottom
+      const footer = el.querySelector('.doc-footer').getBoundingClientRect().top
+      return (footer - bottom) * el.offsetHeight / el.getBoundingClientRect().height
+    })
+    assert(reserve >= 25, `Le calcul tient dans la zone A4 en ${diploma} : ${reserve}px`)
+
+    await page.getByRole('button', { name: 'Type d’exercice', exact: true }).click()
+    const check = page.getByRole('option', { name: /^Vérification des connaissances/ })
+    assert.equal(await check.isDisabled(), diploma === 'AFP')
+    await page.keyboard.press('Escape')
+    if (diploma === 'CFC') {
+      await select('Type d’exercice', 'Vérification des connaissances')
+      await sheet.getByText('Que comprend la masse brute ?', { exact: true }).waitFor()
+    }
+    await select('Type d’exercice', 'Mises en situation')
+    await sheet.getByText(/^Vous repérez un carton mouillé/).waitFor()
+    await select('Type d’exercice', 'Glossaires')
+    await sheet.getByText('Tare. Masse de l’emballage vide.', { exact: true }).waitFor()
+  }
+
+  await select('Type d’exercice', 'Mathématiques')
+  const saveResponse = page.waitForResponse((response) =>
+    new URL(response.url()).pathname === '/__logistique_test/fiches' && response.request().method() === 'POST',
+  )
+  await page.getByRole('button', { name: 'Enregistrer', exact: true }).click()
+  const dialog = page.getByRole('dialog', { name: 'Enregistrer la fiche' })
+  await dialog.getByLabel('Nom de la fiche').fill('Pilote technique AFP')
+  await dialog.getByLabel('Enregistré par').fill('Formateur de test')
+  await dialog.getByRole('button', { name: 'Enregistrer', exact: true }).click()
+  await saveResponse
+  await dialog.waitFor({ state: 'hidden' })
+  assert.equal(saved.recipe.pages[0].logistiqueBankRevision, fixture.revision)
+  await page.goto(base + '/fiches')
+  await page.getByRole('button', { name: 'Ouvrir', exact: true }).click()
+  await page.waitForURL('**/generateur')
+  await sheet.getByText('Mathématiques : module 105', { exact: true }).waitFor()
+  await sheet.getByText(/^Vous réceptionnez 7 cartons/).waitFor()
+  await page.emulateMedia({ media: 'print' })
+  await page.locator('.print-only-sheets .worksheet-sheet').first().waitFor()
+  assert.match(await page.locator('.print-only-sheets').innerText(), /Le poids total est de 42 kg\./)
+  assert((await page.pdf()).subarray(0, 4).equals(Buffer.from('%PDF')))
+  assert.deepEqual(errors, [])
+  console.log('Pilotes techniques CFC et AFP : gabarit A4, cinq types, grille, corrigé, PDF, enregistrement simulé et réouverture.')
+} finally {
+  await browser?.close()
+  await server.close()
+}

@@ -1,3 +1,5 @@
+import { isLogistiqueDomain, LOGISTIQUE_DOMAINS } from '@/logistique/catalog'
+import epcaLogo from '@/assets/logos/epca.svg'
 import { grammarPageBreakQuestionId } from '@/grammaire/curriculum/pagination'
 import { Children, type CSSProperties, type HTMLAttributes, type ReactElement } from 'react'
 import './worksheet-typography.css'
@@ -252,8 +254,11 @@ export function WorksheetSheet({
     >
       {showHeader ? (
         <InstitutionalDocumentHeader
-          domain={page.domain}
-          config={institutional}
+          config={isLogistiqueDomain(page.domain) ? {
+            ...institutional,
+            logoSrc: epcaLogo,
+            schoolName: LOGISTIQUE_DOMAINS.find(({ id }) => id === page.domain)!.label,
+          } : institutional}
           evalMode={evalMode}
           totalPoints={evalMode ? documentTotalPoints : undefined}
           fallbackTitle={page.title}
@@ -487,7 +492,8 @@ export function WorksheetSheet({
                 {block.items.map((item, index) => {
                   const padLeft =
                     item.layout === 'algebra' ? Math.max(0, maxTokens - tokenizeAlgebra(item.prompt ?? '').length) : 0
-                  const draftGrid = block.problemDraftGrids?.[index] ?? page.problemDraftGrids?.[index] ?? true
+                  const draftGrid = isLogistiqueDomain(page.domain) ||
+                    (block.problemDraftGrids?.[index] ?? page.problemDraftGrids?.[index] ?? true)
                   const oralAnswerMode =
                     block.oralAnswerModes?.[index] ?? page.oralAnswerModes?.[index] ?? item.answerMode ?? 'qcm'
                   const sourceIndex = index + (block.itemOffset ?? 0)
@@ -505,11 +511,13 @@ export function WorksheetSheet({
                     block.items.length + (block.itemOffset ?? 0)
                   const isTheoryPageBreakable =
                     item.layout === 'theory' &&
-                    item.theoryBlock?.kind === 'section' &&
+                    (item.theoryBlock?.kind === 'section' || isLogistiqueDomain(page.domain)) &&
                     sourceIndex < theoryBreakCount - 1
                   const isGrammarPageBreakable=page.domain==='grammaire'&&block.exerciseType.startsWith('gram-ex-')&&(
                     item.grammar?grammarPageBreakQuestionId(item)!==undefined:!item.hideItemNumber&&item.layout!=='theory'&&(item.layout!=='tcf'||item.tcf?.kind==='qcm'||item.tcf?.kind==='lignes'||item.tcf?.kind==='dialogue')
                   )
+                  const isQuestionPageBreakable = isGrammarPageBreakable || (isLogistiqueDomain(page.domain) && item.layout !== 'theory')
+                  const canBreakAfter = isTheoryPageBreakable || isQuestionPageBreakable
                   const theoryPageBreakAfter = isGrammarPageBreakable ? Boolean(item.grammar&&block.grammarPageBreakAfterQuestionIds?.includes(grammarPageBreakQuestionId(item)!)||!item.grammar&&(block.tcfPageBreakAfter?.[sourceIndex]??page.tcfPageBreakAfter?.[sourceIndex])) : Boolean(
                     block.tcfPageBreakAfter?.[sourceIndex] ??
                       page.tcfPageBreakAfter?.[sourceIndex] ??
@@ -555,7 +563,7 @@ export function WorksheetSheet({
                       readableGeo={/^tcm-cfr-ex2[2-6]$/.test(block.exerciseType)}
                       showGeoFigure={block.geoFigureHelp !== false}
                       onToggleDraftGrid={
-                        interactiveDraftGrids && blockAllowsDraftGrid && onToggleDraftGrid
+                        interactiveDraftGrids && blockAllowsDraftGrid && !isLogistiqueDomain(page.domain) && onToggleDraftGrid
                           ? () => onToggleDraftGrid(index, blockIndex)
                           : undefined
                       }
@@ -595,10 +603,11 @@ export function WorksheetSheet({
                           ? () => onToggleTcfPageBreak(index, blockIndex)
                           : undefined
                       }
-                      pageBreakAfterKind={isGrammarPageBreakable?'question':undefined}
-                      theoryPageBreakAfter={isTheoryPageBreakable||isGrammarPageBreakable ? theoryPageBreakAfter : undefined}
+                      pageBreakAfterKind={isQuestionPageBreakable ? 'question' :
+                        isTheoryPageBreakable && isLogistiqueDomain(page.domain) ? 'section' : undefined}
+                      theoryPageBreakAfter={canBreakAfter ? theoryPageBreakAfter : undefined}
                       onToggleTheoryPageBreakAfter={
-                        interactiveTcfPageBreaks && (isTheoryPageBreakable||isGrammarPageBreakable) && onToggleTcfPageBreak
+                        interactiveTcfPageBreaks && canBreakAfter && onToggleTcfPageBreak
                           ? () => onToggleTcfPageBreak(index + (item.grammar?0:1), blockIndex)
                           : undefined
                       }

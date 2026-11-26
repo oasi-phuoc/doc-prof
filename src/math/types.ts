@@ -10,13 +10,13 @@ export type Domain =
   | 'jeux'
   | 'calligraphie'
   | 'grammaire'
-  | 'logistique-cfc'
-  | 'logistique-afp'
   | 'vocabulaire'
   | 'société'
   | 'santé'
   | 'acm'
   | 'logique'
+  | 'logistique-afp'
+  | 'logistique-cfc'
   | 'tpm'
   | 'tcm-csc'
   | 'tcm-cfr'
@@ -853,6 +853,8 @@ export type CompositeScene = {
 }
 
 export type ExerciseBlock = {
+  /** Publication logistique figée lors de l’enregistrement de la fiche. */
+  logistiqueBankRevision?: string
   topic: string
   exerciseType: string
   difficulty: Difficulty

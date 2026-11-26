@@ -1,0 +1,1244 @@
+{
+  "source": {
+    "revision": "ac2ceeae3ba7944fb4d24a7de103d41d3da98e1f",
+    "curriculumSha256": "a97f3cbfb2c1d984984c8d683f044532f94e8af24e40357834f7b9b58778659e",
+    "levelsSha256": "f023c38ea9b2b7e1b8eb48c548c2f41cf203292415ce9120992efd6156b7061e"
+  },
+  "theme": "800",
+  "modules": [
+    {
+      "module": "801",
+      "status": "imported-unreviewed",
+      "excludedReferences": [],
+      "pages": {
+        "objectifs": {
+          "full": "## Objectifs du module 801\n\nÀ l'issue de ce module, l'apprenti·e est capable de :\n\n- Expliquer le rôle du **GTIN** à la caisse et la différence GTIN-8 / GTIN-13 / ISBN / UPC\n- Décrire **SSCC** et **GS1-128** pour le suivi des unités de transport\n- Comparer **QR** et **Data Matrix** et citer des usages logistiques\n- Appliquer les règles de **placement** des codes et expliquer le principe **RFID** (tag + lecteur)",
+          "summary": "## Objectifs\n- GTIN · SSCC · GS1-128\n- QR · Data Matrix\n- Placement · RFID"
+        },
+        "apercu": {
+          "full": "## Aperçu du module 801\n\nCe module présente les principaux systèmes d'**identification des marchandises** : codes-barres 1-D, codes 2-D, règles de placement et RFID.\n\n### Vous allez découvrir\n1. GTIN, SSCC et GS1-128 (caisse, palettes, transport)\n2. Structure ISBN / GTIN-13 et préfixes pays\n3. Codes QR et Data Matrix (stockage, distribution)\n4. Placement des étiquettes et principes RFID\n\n### Source\nEnterSite — Logistics by ASFL / SVBL · Bloc 800 ICT",
+          "summary": "## Aperçu — Module 801\n- GTIN · SSCC · GS1-128\n- QR · Data Matrix\n- Placement · RFID"
+        },
+        "theorie": {
+          "full": "## 1. Identification des marchandises\n\nChez les grands distributeurs, chaque article porte un **GTIN** (Global Trade Item Number). À la caisse, un **scanner laser** lit les barres / espaces clairs et récupère désignation + prix depuis l'ordinateur central. Un numéro seul ne suffit pas : il faut l'accès à la liste du système.\n\n**Avantages :** plus de saisie manuelle · ticket détaillé · changements de prix (promos) en rayon seulement, pas sur chaque article.\n\n### 1.1 SSCC (Serial Shipping Container Code)\n\nSérie de numéros pour **étiqueter les palettes** · jusqu'à **128** caractères · alphanumérique (chiffres + lettres). Données aussi imprimées en clair sur l'étiquette. Permet le **Track & Trace** tout au long du trajet — à condition de lire à **chaque interface**. En Allemagne : **NVE** (numéro d'unité d'expédition).\n\n### 1.2 GTIN-8, GTIN-13, ISBN\n\n#### 1.2.1 Global Trade Item Number (GTIN)\nCode-barres **1-D** sur les produits en magasin · identification à la caisse + prix depuis la BDD. Chaque numéro est **unique au monde** (sinon confusion à la caisse).\n\n| Bureau | Rôle |\n| --- | --- |\n| **GS1 Suisse** | Enregistrement GTIN (Suisse) |\n| **Agence ISBN Suisse** | Livres (ISBN) |\n\n👉 **GTIN-13** = standard le plus répandu en Europe (13 positions). **UPC** (USA, 12 chiffres) : on ajoute un **0** devant → GTIN-13 compatible.\n\n### 1.3 Structure GTIN-13, GTIN-8, ISBN\n\nLes premiers chiffres = **pays** ou **groupe de produits** · le **dernier** = chiffre de contrôle.\n\n| Préfixe | Signification |\n| --- | --- |\n| 400–440 | Allemagne |\n| **76** | Suisse et Liechtenstein |\n| 90–91 | Autriche |\n| 00–13 | États-Unis |\n| 977 | Périodiques (monde) |\n| 978–979 | Livres (monde) |\n\n#### 1.3.1 ISBN vs GTIN-13\n**ISBN** = International Standard Book Number. Ancien **ISBN-10** → intégré au GTIN-13 en **2007** via préfixe **978** (ou **979**).\n\n**Ex.** 978-3-7657-1111-4 → GTIN-13 sans tirets : **9783765711114**\n\n| Segment | Sens |\n| --- | --- |\n| 978 | Livre |\n| 3 | Pays / langue |\n| 7657 | Maison d'édition |\n| 1111 | N° éditeur |\n| 4 | Contrôle |\n\n### 1.4 GTIN-128 (GS1-128)\n\nCode-barres de **transport** pour unités de commande / livraison / transport · scan EM/SM · assurance qualité. Sur palettes, cartons, emballages standard, présentoirs… Souvent + **SSCC** pour Track & Trace mondial. Utilisé aussi où la **sécurité** compte (santé, chimie, alimentation).\n\n**Tracking** = où est la marchandise maintenant · **Tracing** = traçabilité du parcours.\n\n### 1.5 Code QR (Quick Response)\n\nDéveloppé en **1994** par **Denso Wave** (Japon) pour la logistique automobile Toyota. Matrice **2D** de points · 3 repères d'orientation · correction d'erreurs jusqu'à **~30 %** de perte. Lecture via smartphone (« mobile tagging »). Usages : expositions, musées, sentiers, monuments…\n\n#### 1.5.1 Stockage\nÉtiquette article avec **DLC** + **n° de lot** · souvent + GTIN-128. En entreprise certifiée : rattacher un produit à son lot même après vente → **rappel ciblé** (seuls les lots concernés).\n\n### 1.6 Code Data Matrix\n\nCode **2D** très répandu · inscriptions permanentes (laser, estampage aiguille…) · chimie / médecine · tickets / adressage postal. Norme **ISO/IEC 16022**. Capacité jusqu'à **~3 116** chiffres ou **~2 335** caractères ASCII. Angle droit de lignes continues = position. Correction d'erreurs → souvent plus sûr / compact que le 1-D.\n\n#### 1.6.1 Distribution\nAdresse magazine via Data Matrix · lecture par **caméra** (2D, sans mouvement optique). QR : jusqu'à ~**4 000** caractères (magazines) · Data Matrix plus **petit** → industrie. Aussi : affranchissement envois en nombre · retour courrier indistribuable (Poste).\n\n### 1.7 Placement des codes\n\n#### Palettes\nÉtiquettes sur **≥ 2 côtés**, au-dessus du coin. Symbole le plus bas à **45 cm** du sol (± **5 cm**). Distance bord extérieur ≥ **5 cm**.\n\n#### Cartons\nMarquage sur **≥ 2 côtés**, en bas à droite. Distances : **34 mm** à droite (+0 / −23 mm) · **32 mm** vers le bas. Étiquette de recouvrement possible.\n\n#### Longs / cylindriques\nDiamètre ≥ **20 mm** ou arête ≥ **30 mm** → étiquette autocollante · sinon **étiquette volante**. Marquage radial : longueur du symbole ≤ **1/6** de la circonférence.\n\n### 1.8 RFID (Radio Frequency Identification)\n\nIdentification / localisation **automatique** sans contact visuel obligatoire. Objectifs logistique : ↓ ruptures · ↑ contrôle erreurs · ↓ coûts personnel. Commerce : suivi palettes / cartons sur toute la chaîne.\n\n#### 1.8.1 Composants\n| Élément | Rôle |\n| --- | --- |\n| **Transpondeur / tag** (puce + antenne) | Fixé sur/dans l'objet (souvent adhésif) |\n| **Lecteur / encodeur** | Lit ou modifie les données · passif ou actif · cm → > 1 km selon fréquence / puissance / environnement |\n\n#### 1.8.2 Applications\nAntivol magasins · accès bâtiments / remontées · EM / transport / stockage · blanchisseries · bibliothèques · animaux · vision : caisse supermarché / passeports / implants médicaux (débat vie privée).\n\n**Ex.** Hôpital (Caroline du Nord) : puce bébé → alarme « Code Pink » aux sorties → enlèvement évité.  \n**Ex.** Chronométrage sport (marathon, Ironman) : puce chaussure / vélo · temps live.",
+          "summary": "## À retenir — Module 801\n\n### Codes-barres 1-D et transport\nLe GTIN identifie chaque article de manière unique dans le monde ; le GTIN-13 est le standard le plus répandu en Europe. À la caisse, le scanner lit le code et récupère le prix depuis la base de données centrale. Le SSCC étiquette les palettes pour le suivi tout au long du transport, tandis que le GS1-128 sert aux unités de commande et de livraison. Le préfixe 76 correspond à la Suisse et au Liechtenstein, et le dernier chiffre est un chiffre de contrôle. L'ISBN des livres a été intégré au GTIN-13 en 2007 via le préfixe 978 ou 979.\n\n### Codes 2-D\nLe code QR est une matrice lisible par smartphone, avec correction d'erreurs jusqu'à environ 30 %. Il sert notamment à stocker la DLC et le numéro de lot pour les rappels ciblés. Le Data Matrix est plus compact et résistant, utilisé en industrie, en médecine et par la Poste. Le tracking indique où se trouve la marchandise, le tracing retrace tout son parcours.\n\n### Placement des étiquettes\nSur les palettes, les étiquettes doivent figurer sur au moins deux côtés, le symbole le plus bas à environ 45 cm du sol. Sur les cartons, le marquage se place en bas à droite avec des distances précises au bord. Les articles longs ou cylindriques reçoivent une étiquette autocollante ou volante selon leur taille.\n\n### RFID\nLa RFID permet d'identifier et de localiser des objets sans contact visuel obligatoire. Un transpondeur (puce et antenne) est fixé sur l'objet, et un lecteur lit ou modifie les données. Cette technologie réduit les ruptures et les erreurs dans la logistique, et sert aussi à l'antivol, au contrôle d'accès ou au chronométrage sportif."
+        },
+        "glossaire": {
+          "full": "## Glossaire — Module 801\n\n| Terme technique | Lien | Définition |\n| --- | --- | --- |\n| Identification | | Processus de **reconnaissance unique** d'un article, d'un emballage ou d'une unité de transport au moyen d'un code (barres, matrice 2D, RFID…). Permet la saisie automatique des données en caisse, en entrepôt ou en transport. |\n| Global Trade Item Number (GTIN) | | Numéro mondial d'identification des produits de consommation. Formats courants : **GTIN-13** (13 chiffres, standard européen) et **GTIN-8** (8 chiffres, petits emballages). Code-barres **1-D** lu à la caisse pour récupérer désignation et prix. |\n| Décodeur | | Appareil ou logiciel qui **lit** un code (barres, QR, Data Matrix…) et **convertit** les symboles en données exploitables par le système informatique (prix, référence, lot…). |\n| Alphanumérique | | Combinaison de **chiffres et de lettres** (et parfois caractères spéciaux). Ex. : le **SSCC** peut contenir jusqu'à 128 caractères alphanumériques. |\n| Agence | | Organisme officiel d'enregistrement des numéros d'identification. Ex. : **GS1 Suisse** (GTIN) · **Agence ISBN Suisse** (livres). |\n| Matrice | | Grille de points ou de modules formant un code **2D** (QR Code, Data Matrix). Permet de stocker plus d'informations qu'un code-barres 1-D et intègre une correction d'erreurs. |\n| Numéros de lot | | Identifiant attribué à un **lot de production** d'un produit. Permet la **traçabilité** et les rappels ciblés en cas de défaut (souvent combiné avec GTIN-128 ou Data Matrix). |\n| ASCII | | *American Standard Code for Information Interchange* — jeu de caractères standard pour l'échange de texte informatique. Le Data Matrix peut stocker jusqu'à environ **2'335** caractères ASCII. |\n| ISO | | *International Organization for Standardization* — organisme de normalisation internationale. Ex. : norme **ISO/IEC 16022** pour le Data Matrix. |\n| Transpondeur | | Composant **RFID** fixé sur l'objet (puce + antenne, souvent adhésif). Stocke et transmet des données au lecteur par ondes radio. Synonymes : étiquette RFID, puce RFID, radio-étiquette. |\n| Lecteur RFID | | Appareil qui **lit** (et parfois **écrit**) les données d'un transpondeur RFID sans contact visuel obligatoire. Existe en version passive ou active selon la portée et l'application. |",
+          "summary": "## Glossaire — À retenir\n- **Identification** : reconnaissance unique par code\n- **GTIN** : numéro mondial produit (GTIN-13 / GTIN-8)\n- **Décodeur** : lecture et conversion des codes\n- **Alphanumérique** : chiffres + lettres (ex. SSCC)\n- **Matrice** : code 2D (QR, Data Matrix)\n- **Lot** : traçabilité production · **RFID** : transpondeur + lecteur"
+        },
+        "situation": {
+          "full": "## Mises en situation — Module 801\n\nContexte : lors d'une réunion d'équipe chez **EnterSite AG**, Monsieur **Gugger** te charge d'étudier la technologie **RFID** et de présenter les possibilités pour l'entreprise. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions proposées.\n\n---\n\n### Mission 1 — Notes de réunion (GTIN vs RFID)\n\nPrépare les notes sur : conditions techniques GTIN-8/GTIN-13 · conditions techniques RFID · avantages/inconvénients.\n\n:::reponse\nLes **GTIN-8** et **GTIN-13** sont des normes d'identification par codes-barres. La **RFID** (*Radio-Frequency Identification*) est une technologie sans fil d'identification d'objets.\n\n**GTIN-8, GTIN-13 — conditions techniques**\n- GTIN généralement 13 chiffres ; **GTIN-8** pour petits produits\n- Basés sur codes-barres · nécessitent un **lecteur de codes-barres**\n\n**RFID — conditions techniques**\n- Transmission sans fil entre étiquette RFID et lecteur\n- Étiquettes stockent des informations · fonctionnement **sans ligne de visée**\n- Variantes **passives** (sans batterie) ou **actives** (avec batterie)\n\n**GTIN vs RFID — avantages/inconvénients**\n\n| | GTIN-8 / GTIN-13 | RFID |\n| --- | --- | --- |\n| **Avantages** | Répandus · moins chers · faciles à créer | Saisie automatisée · rapide · temps réel · applications variées (stocks, accès, antivol…) |\n| **Inconvénients** | Saisie manuelle possible · code visible requis · qualité d'impression | Coûts initiaux élevés · protection des données · interférences électroniques |\n:::\n\n---\n\n### Mission 2 — RFID active vs passive\n\nMonsieur **Lang** (service informatique) demande quelle variante recommander pour EnterSite AG.\n\n:::reponse\n**Tags RFID passifs**\n- Moins chers · idéaux pour une solution rentable\n- Pas de source d'énergie propre · activés par le lecteur · durables\n- Portée plus courte mais suffisante pour de nombreuses applications\n\n**Tags RFID actifs**\n- Plus grande portée · localisation plus précise (grands entrepôts)\n- Source d'énergie propre · signaux continus · surveillance permanente\n\n**Recommandation EnterSite AG**\n- **Passifs** : gestion des stocks et protection antivol — bon rapport coûts/efficacité/précision\n- **Actifs** : surveillance hors entreprise (SAV, toner, entretien…) — plus coûteux mais judicieux\n:::\n\n---\n\n### Mission 3 — Aspects financiers\n\nLa technologie RFID apporte-t-elle des avantages financiers par rapport au GTIN-13 ?\n\n:::reponse\n**Coûts d'investissement**\n- **RFID** : coûts initiaux plus élevés (étiquettes, lecteurs, infrastructure IT)\n- **GTIN-13** : moins coûteux · technologies codes-barres répandues et abordables\n\n**Efficacité**\n- **RFID** : saisie automatisée · économies main-d'œuvre et erreurs\n- **GTIN-13** : saisie manuelle plus lente · plus d'erreurs · coûts d'exploitation plus élevés\n\n**Précision**\n- **RFID** : suivi temps réel · réduction pertes (vol, mauvais comptage)\n- **GTIN-13** : processus manuels moins précis\n:::\n\n---\n\n### Mission 4 — Protection des données\n\nEst-il possible de lire des données RFID sans consentement ? Es-tu favorable au passage à la RFID ?\n\n:::reponse\n**Lecture sans consentement ?**\n- **Passifs** : en général seulement un ID unique · pas de données personnelles si identifiants cryptés\n- **Actifs** : peuvent stocker plus de données · risque si mesures de sécurité insuffisantes\n\n**Position favorable sous conditions**\n- Conformité aux **directives de protection des données** (stockage sécurisé, consentement, cryptage)\n- Protection contre **accès non autorisé**\n- **Information des clients** et consentement pour données personnelles\n\nLa RFID offre d'énormes avantages (efficacité, stocks, expérience client) si les règles de protection des données sont respectées.\n:::\n\n---\n\n### Quiz EnterSite\n\nForme un groupe de 3–4 joueurs et contrôle tes connaissances dans le quiz du groupe.\n\n> **Astuce EnterSite** : visite virtuelle logistique **salle 3 V1** — cherche l'image de droite. Bonne chance !\n\n:::reponse\n**Réponse individuelle / groupe** — quiz EnterSite (pas de solution unique ici).\n:::\n\n---\n\n### Mission 5 — Discussion STA\n\n:::reponse\n**Réponse ouverte** — notes de discussion STA (pas de solution unique).\n:::",
+          "summary": "## Mises en situation — À retenir\n- **M1** : GTIN (barres) vs RFID (sans fil) · avantages/inconvénients\n- **M2** : passif = stocks/antivol · actif = SAV/hors site\n- **M3** : RFID = invest. ↑ · efficacité et précision ↑\n- **M4** : protection données · cryptage · consentement\n- **Quiz** : EnterSite salle **3 V1**"
+        },
+        "maths": {
+          "full": "## Exercices de mathématiques — Module 801\n\nCalcule chaque résultat, puis vérifie avec le bouton solution.\n\n---\n\n### Exercice 1 — Gain de temps à la caisse\n\nSoulever, scanner et déposer un produit prend **0,8 sec** avec le scanner. Auparavant, une bonne caissière mettait **4,4 sec** (saisie manuelle du prix comprise).\n\nDe combien de **pourcent** le système actuel est-il plus rapide ? (arrondir à l'entier)\n\n:::solution\n**82 % plus rapide**\n\n(4,4 − 0,8) / 4,4 × 100 = 3,6 / 4,4 × 100 = **81,82 %** → arrondi **82 %**\n:::\n\n---\n\n### Exercice 2 — Articles par journée (8,5 h)\n\nCombien d'articles une caissière pouvait-elle saisir auparavant ? Combien peut-elle en scanner aujourd'hui (même temps de travail) ?\n\n:::solution\n**Auparavant :** 8,5 × 3'600 / 4,4 = **6'955 articles** (arrondi)\n\n**Aujourd'hui :** 8,5 × 3'600 / 0,8 = **38'250 articles**\n:::\n\n---\n\n### Exercice 3 — Erreurs de saisie\n\nLe taux d'erreur lors de la saisie manuelle était de **0,55 %**. Combien d'articles facturés de manière erronée (base exercice 2, ancien système) ?\n\n:::solution\n**38 articles erronés**\n\n6'954 × 0,55 / 100 = **38,25** → **38 articles**\n:::\n\n---\n\n### Exercice 4 — Nombre de caissières (samedi)\n\nEn moyenne **150'000** articles vendus un samedi à fort volume. Combien de caissières fallait-il autrefois ? Combien faut-il aujourd'hui ?\n\n:::solution\n**Autrefois :** 150'000 / 6'954 = **22 personnes** (arrondi supérieur)\n\n**Aujourd'hui :** 150'000 / 38'250 = **4 personnes** (arrondi supérieur)\n:::\n\n> **Contrôle rapide (ordre du corrigé)** : 82 · 6'955 · 38'250 · 38 · 22 · 4",
+          "summary": "## Maths — Solutions\n1. **82 %** plus rapide\n2. **6'955** / **38'250** articles par jour (8,5 h)\n3. **38** articles erronés (0,55 %)\n4. **22** / **4** caissières pour 150'000 articles"
+        },
+        "verification": {
+          "full": "## Vérification des acquis — Questions de contrôle\n\nThème : **Identification des marchandises**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.\n\n### Question 1\n\nQue signifie l'abréviation **SSCC** ? Décris ses principales caractéristiques en une phrase.\n\n:::reponse\n**SSCC** : *Serial Shipping Container Code*\n\nCaractéristiques : structure **alphanumérique** (chiffres et lettres), jusqu'à **128** caractères — utilisé pour étiqueter les palettes et le suivi (*Track & Trace*).\n:::\n\n### Question 2\n\nQue signifie l'abréviation **GTIN** ? Décris ses principales caractéristiques en une phrase.\n\n:::reponse\n**GTIN** : *Global Trade Item Number*\n\nCaractéristiques : code **unidimensionnel (1-D)** sur les produits en magasin · numéro **unique au monde** pour identification à la caisse.\n:::\n\n### Question 3\n\nQue signifie l'abréviation **QR Code** ? Décris ses principales caractéristiques en une phrase.\n\n:::reponse\n**QR Code** : *Quick Response Code* (réponse rapide)\n\nCaractéristiques : code **2D** (matrice) avec **3 repères d'orientation** dans les coins · **correction d'erreurs** jusqu'à environ **30 %** de perte du code.\n:::\n\n### Question 4\n\nSur combien de **côtés** d'une palette faut-il apposer une étiquette ?\n\n:::reponse\n**2 côtés** (au minimum), au-dessus du coin · symbole le plus bas à environ 45 cm du sol.\n:::\n\n### Question 5\n\nQue signifie l'abréviation **RFID** ? Décris ses principales caractéristiques en une phrase. De quels composants se compose une RFID ?\n\n:::reponse\n**RFID** : *Radio Frequency Identification* — identification par fréquence radio.\n\nCaractéristiques : identification **automatique** sans contact visuel obligatoire · le commerce utilise la RFID pour suivre palettes et cartons sur la chaîne d'approvisionnement.\n\n**Composants :**\n- **Transpondeur / étiquette RFID** (puce + antenne)\n- **Lecteur** / appareil de lecture et d'écriture\n:::",
+          "summary": "## Questions de contrôle — Solutions\n1. **SSCC** : alphanumérique · 128 car. · palettes\n2. **GTIN** : code 1-D · identification produit mondiale\n3. **QR** : 2D · correction erreurs ~30 %\n4. Étiquette palette sur **2 côtés**\n5. **RFID** : radio · transpondeur + lecteur"
+        }
+      }
+    },
+    {
+      "module": "802",
+      "status": "imported-unreviewed",
+      "excludedReferences": [],
+      "pages": {
+        "objectifs": {
+          "full": "## Objectifs du module 802\n\nÀ l'issue de ce module, l'apprenti·e est capable de :\n\n- Expliquer pourquoi surveiller le transport et le rôle des **indicateurs / enregistreurs**\n- Décrire le **Track & Trace** (classique vs RFID) et le suivi d'un colis (statut, quittance)\n- Appliquer le principe **LIFO** et citer les facteurs de planification des tournées\n- Distinguer planification **manuelle** et **optimisation** assistée (4 axes)",
+          "summary": "## Objectifs\n- Surveillance · enregistreurs\n- Track & Trace · statut\n- LIFO · optimisation tournées"
+        },
+        "apercu": {
+          "full": "## Aperçu du module 802\n\nCe module traite du **transport** côté ICT : surveillance des conditions, Track & Trace et planification / optimisation des tournées.\n\n### Vous allez découvrir\n1. Indicateurs et enregistreurs de transport (lien module 307)\n2. Track & Trace classique et avancé (RFID) · parcours colis postal\n3. Planification des tournées (LIFO, facteurs) et optimisation assistée\n\n### Source\nEnterSite — Logistics by ASFL / SVBL · Bloc 800 ICT",
+          "summary": "## Aperçu — Module 802\n- Surveillance · enregistreurs\n- Track & Trace\n- Tournées · optimisation"
+        },
+        "theorie": {
+          "full": "## 2. Le transport\n\n### 2.1 Surveillance du transport\n\n#### 2.1.1 Pourquoi surveiller ?\nContrôle sans faille des **conditions de transport** (indicateurs + enregistreurs) jusqu'au client → détecter négligences et protéger la qualité.\n\nPendant le trajet / stockage : chocs, chutes, dépose brutale, basculement, rupture de **chaîne du froid**, vols…  \nConséquences : argent · confiance · **réputation**. L'**assurance transport** couvre le financier **si le dommage est prouvé** — pas l'image. Les indicateurs prouvent le respect (ou non) des exigences de manutention.\n\n**Avantages :** prescriptions contrôlables (fab. → client) · heure / lieu / responsables en cas de dommage · ↓ dommages · détection de dommages **cachés** · ↓ réclamations / coûts.\n\n**Domaines :** distribution · route / rail / air / mer · transitaires · manutentions internes.\n\n#### 2.1.2 Indicateurs\nTypes et usages → détail module **307**.\n\n**Enregistreur de données de transport :** mesure continue et incorruptible (prod. → client) · chocs, vibrations, température, humidité, pression, inclinaison · horodatage · export PC · analyses stats / graphiques.\n\n### 2.2 Track and Trace\n\nSuivi et **traçabilité** d'un envoi de l'expéditeur au destinataire · avant et après livraison · utile pour améliorer l'expédition et traiter les **ordres de recherche**.\n\n| Variante | Principe |\n| --- | --- |\n| **Track & Trace** classique | Code-barres unique scanné aux étapes clés · statut consultable (ex. « Trié pour la livraison ») |\n| **Advanced** | Saisie auto via **RFID** (moins de manuel) |\n\n#### 2.2.1 Suivi d'un colis postal (ex. Poste Suisse)\n\n| Étape | Contenu |\n| --- | --- |\n| **Avis** | E-commerce (ex. Zalando) informe la date de livraison prévue |\n| **Suivi** | N° d'envoi sur post.ch · historique ~**180 jours** · services de planification tant que non livré |\n| **Réception** | Livraison chez le client · historique via n° d'identification |\n| **Retour** | Enregistrement en ligne · vendeur informé des articles attendus |\n| **Dépôt** | Guichet / agence · si pas d'étiquette retour → code-barres collé au dépôt |\n| **Quittance** | Récépissé avec n° = preuve de dépôt · base de **responsabilité** (perte / dommage) |\n\n🔎 Track & Trace Poste : [post.ch — expédier des colis](https://www.post.ch/fr/expedier-des-colis)\n\n#### 2.2.2 Statut d'un envoi\nLecture en **2 étapes** au scanner : d'abord le **statut**, puis le **code d'identification**.\n\n**Envois suivables (ex. Poste) :**\n\n| Type | Exemples |\n| --- | --- |\n| Express | SameDay (après-midi / soir), Lune Swiss Express |\n| Colis | PostPac Priority / Economy, Encombrant, Promo, Vinolog, BLN… |\n| Lettres | Recommandée (R), actes judiciaires, A Plus, Dispomail T&T… |\n| International | URGENT, PRIORITY Plus, PostPac International, recommandées |\n\n### 2.3 Planification du transport\n\nPréparer les **tournées** pour des véhicules à pleine capacité sur un itinéraire optimal. Objectif : **optimiser les coûts** (énergie ↑, espace de chargement rare) + écologie — sans sacrifier **délais** et **qualité**.\n\n👉 Mission : coordonner tous les aspects vers des objectifs précis.\n\n#### 2.3.1 Principe des tournées\nItinéraire basé sur les **lieux de déchargement** · métier des organisateurs de transport.\n\n**LIFO (Last-In, First-Out) :** ce qui se décharge en premier se charge en **dernier** → déchargement rationnel.\n\n**Facteurs d'influence :** trafic / chantiers · volume / poids / MD · n° de points · capacité véhicules · priorités clients (urgence, créneau) · moyens de déchargement · temps de travail / repos chauffeurs.\n\n**Mise à disposition :** si le chauffeur charge lui-même → préparer les unités par lieu de déchargement en zone dédiée.\n\n#### 2.3.2 Planification des tournées\nRegrouper et ordonner les ordres de transport · 1 tournée ≈ 1 personne + véhicule. Ex. : filiales, courrier, déchets, personnes, DEC (réseaux réguliers). Missions : détail (palettes) · vrac · personnes.\n\n| Approche | Caractéristique |\n| --- | --- |\n| **Manuelle** | Petites entreprises · carte · peu d'optimisation des coûts |\n| **Assistée (optimisation)** | Modèles mathématiques adaptés / **paramétrés** à l'entreprise |\n\n**Quatre points de l'optimisation :**\n1. Itinéraire optimal\n2. Utilisation économique des véhicules\n3. Chargement conforme et optimal\n4. Transmission auto des données (**sans papier**)",
+          "summary": "## À retenir — Module 802\n\n### Surveillance du transport\nSurveiller les conditions de transport permet de détecter les négligences et de protéger la qualité des marchandises. Pendant le trajet, des chocs, des ruptures de chaîne du froid ou des vols peuvent endommager les produits. Les indicateurs et enregistreurs mesurent en continu les chocs, la température, l'humidité et d'autres paramètres, avec horodatage. Ces données servent de preuve pour l'assurance transport, mais aussi pour réduire les dommages et les réclamations.\n\n### Track and Trace\nLe Track and Trace suit un envoi de l'expéditeur au destinataire grâce à un code-barres scanné à chaque étape clé. La version avancée utilise la RFID pour automatiser la saisie. Avec la Poste Suisse, le numéro d'envoi permet de consulter l'historique pendant environ 180 jours. La quittance de dépôt constitue une preuve de responsabilité en cas de perte ou de dommage.\n\n### Planification des tournées\nLa planification organise les tournées pour utiliser pleinement les véhicules sur un itinéraire optimal. Le principe LIFO impose de charger en dernier ce qui sera déchargé en premier. Le trafic, la capacité des véhicules, les priorités clients et le temps de travail des chauffeurs influencent l'organisation. L'optimisation assistée par logiciel vise l'itinéraire optimal, l'utilisation économique des véhicules, un chargement conforme et la transmission automatique des données."
+        },
+        "glossaire": {
+          "full": "## Glossaire — Module 802\n\n| Terme technique | Lien | Définition |\n| --- | --- | --- |\n| Indicateurs | | Grandeurs **mesurées** pendant le transport (température, chocs, humidité, inclinaison…) pour prouver le respect des conditions de manutention. Voir aussi module **307**. |\n| Enregistreur de données | | Appareil qui enregistre de manière **continue et incorruptible** les conditions de transport (chocs, vibrations, température, pression, inclinaison…) avec horodatage. Export vers PC pour analyses statistiques. |\n| Transitaire | | Entreprise ou personne qui **organise et coordonne** le transport international de marchandises (douane, documents, combinaison de modes de transport). |\n| Statistique | | Analyse **numérique** des données enregistrées pendant le transport (graphiques, tendances) pour détecter des anomalies ou améliorer les processus. |\n| Track and Trace | | Système de **suivi et traçabilité** d'un envoi de l'expéditeur au destinataire. Code-barres unique scanné aux étapes clés · statut consultable en ligne. |\n| Advanced Track and Trace | | Variante avancée du suivi : saisie **automatique** via **RFID** au lieu du scan manuel de codes-barres. |\n| Avis | | **Information préalable** au destinataire sur la livraison prévue (ex. e-commerce informe de la date de livraison). Première étape du suivi colis. |\n| Statut | | **État actuel** d'un envoi dans la chaîne logistique (ex. « Trié pour la livraison », « En transit »). Lu en deux étapes au scanner : statut puis code d'identification. |\n| Priorités | | **Urgence** ou importance d'une livraison (créneau client, express, SameDay…) influençant l'ordre des tournées et la planification. |\n| Planification des tournées | | Organisation des **ordres de transport** en tournées (1 personne + 1 véhicule) : regroupement, ordre des arrêts, respect du principe **LIFO**. |\n| Planification d'itinéraire | | Détermination du **parcours optimal** entre les lieux de déchargement en tenant compte du trafic, des restrictions, des capacités véhicules et des priorités clients. |",
+          "summary": "## Glossaire — À retenir\n- **Indicateurs** · **enregistreur** : mesure conditions transport\n- **Transitaire** : organisation transport international\n- **Track & Trace** : suivi envoi · **Advanced** : RFID\n- **Avis** · **statut** · **priorités**\n- **Planification** : tournées · itinéraire optimal · LIFO"
+        },
+        "situation": {
+          "full": "## Mises en situation — Module 802\n\nContexte : tu es chargé·e de **planifier et organiser des livraisons** chez EnterSite AG. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions / indications proposées.\n\n---\n\n### Mission 1 — Itinéraire le plus rapide (Google Maps)\n\nTu dois livrer quatre clients. Détermine l'itinéraire le plus rapide à l'aide de **Google Maps**.\n\n| Étape | Lieu |\n| --- | --- |\n| **Départ** | EnterSite AG, Rigistrasse 2, 5102 Rupperswil |\n| 1er déchargement | Aarau |\n| 2e déchargement | Reinach |\n| 3e déchargement | Zofingen |\n| 4e déchargement | Sursee |\n\n:::reponse\n**Réponse individuelle** — utiliser Google Maps pour comparer les ordres de passage possibles et choisir l'itinéraire le plus rapide (tenir compte du trafic, des distances et de l'ordre logique des livraisons).\n:::\n\n---\n\n### Mission 2 — Centres de gravité (plan de chargement)\n\nAfin que le chauffeur n'ait pas de problèmes lors d'un contrôle de police, prépare un plan de chargement de sorte que le **centre de gravité** reste dans les limites autorisées après chaque lieu de déchargement.\n\n:::reponse\n**Réponse individuelle** — plan de chargement à réaliser en respectant le principe **LIFO** (dernier chargé = premier déchargé) et en veillant au centre de gravité après chaque arrêt.\n:::\n\n---\n\n### Mission 3 — Plan de chargement (dessin)\n\nDessine un plan de chargement de manière à ce que le chargeur puisse charger le véhicule **sans se poser de questions**.\n\n:::reponse\n**Réponse individuelle** — schéma / plan de chargement clair avec ordre de chargement, emplacement des palettes et lieux de déchargement indiqués.\n:::\n\n---\n\n### Mission 4 — Répartition du poids\n\nCalcule la répartition du poids dans le bloc de chargement. Selon M. **Holzer**, la différence maximale entre les **quatre zones d'angle** peut être de **50 kg**.\n\n:::reponse\n**Réponse individuelle** — calcul de la répartition du poids par zone d'angle. Vérifier que l'écart maximal entre les quatre zones ne dépasse pas **50 kg**.\n:::\n\n---\n\n### Mission 5 — Discussion STA\n\nDiscute de la situation de travail et d'apprentissage en plénière avec la classe et l'enseignant·e. Note les informations complémentaires.\n\n:::reponse\n**Réponse ouverte** — notes de discussion STA (pas de solution unique).\n:::",
+          "summary": "## Mises en situation — À retenir\n- **M1** : itinéraire Google Maps (Rupperswil → Aarau · Reinach · Zofingen · Sursee)\n- **M2** : centre de gravité · LIFO\n- **M3** : plan de chargement (dessin)\n- **M4** : répartition poids · max. **50 kg** d'écart entre zones\n- **M5** : discussion STA"
+        },
+        "maths": {
+          "full": "## Exercices de mathématiques — Module 802\n\nCalcule chaque résultat, puis vérifie avec le bouton solution.\n\n---\n\n### Exercice 1 — Coûts de diesel par camion\n\nTournée moyenne : **400 km**/jour · consommation **28 l/100 km** · diesel **1,82 CHF**/l\n\nQuels sont les coûts de diesel par camion ?\n\n:::solution\n**Coût du diesel : 203,85 CHF**\n\n400 / 100 × 28 × 1,82 = **203,84 CHF** → **203,85 CHF** (arrondi)\n:::\n\n---\n\n### Exercice 2 — Économie de diesel (optimisation)\n\nGrâce à un logiciel de planification, la tournée passe de **400 km** à **372 km** en moyenne.\n\nCombien de frais de diesel peuvent être économisés par camion ?\n\n:::solution\n**Coût pour 372 km :** 372 / 100 × 28 × 1,82 = **189,57 CHF**\n\n**Économie :** 203,85 − 189,57 = **14,28 CHF** par camion et par jour\n:::\n\n---\n\n### Exercice 3 — Économie salariale (32 chauffeurs)\n\nEn optimisant la tournée, le chauffeur rentre **30 minutes** plus tôt. Salaire horaire moyen : **28,40 CHF**. **32** chauffeurs.\n\nCombien de coûts salariaux l'entreprise économise-t-elle par jour ?\n\n:::solution\n**Économie : 454,40 CHF/jour**\n\n32 × 28,40 × 0,5 h = **454,40 CHF**\n:::\n\n---\n\n### Exercice 4 — Licenciement de deux chauffeurs\n\nTous les chauffeurs travaillent **8 h**/jour et **22 jours**/mois. La direction licencie **2** chauffeurs (sur 32).\n\n**a.** Combien de coûts salariaux économisés par mois (ensemble des 32 → 30) ?\n\n**b.** Combien gagne en moyenne un chauffeur par mois ?\n\n**c.** La décision est-elle compréhensible d'un point de vue purement mathématique ?\n\n:::solution\n**a. Économie mensuelle : 10'032 CHF**\n\n- Coûts 32 chauffeurs : 8 × 22 × 28,50 × 32 = **160'512 CHF**\n- Coûts 30 chauffeurs : 8 × 22 × 28,50 × 30 = **150'480 CHF**\n- Économie : 160'512 − 150'480 = **10'032 CHF**\n\n**b. Salaire moyen mensuel : 5'016 CHF**\n\n160'512 / 32 = **5'016 CHF**\n\n**c. Oui** — purement mathématique, l'entreprise économise environ **10'000 CHF** par mois.\n:::\n\n> **Contrôle rapide (ordre du corrigé)** : 203,85 · 14,28 · 454,40 · 10'032 · 5'016 · Oui",
+          "summary": "## Maths — Solutions\n1. Diesel **203,85 CHF**/jour (400 km)\n2. Économie **14,28 CHF**/camion\n3. Économie salariale **454,40 CHF**/jour (32 ch.)\n4. **10'032 CHF**/mois · salaire moy. **5'016 CHF** · **Oui**"
+        },
+        "verification": {
+          "full": "## Vérification des acquis — Questions de contrôle\n\nThème : **Transport**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.\n\n### Question 1\n\nQuelles données un **enregistreur de données de transport** peut-il mesurer ?\n\n:::reponse\n- Température\n- Poids\n- Quantité de marchandise\n- Angle d'inclinaison\n- Pression de l'air\n- Vibration\n:::\n\n### Question 2\n\nNomme les **domaines d'application** de la surveillance du transport.\n\n:::reponse\n- Services de colis\n- Transports postaux, aériens et maritimes\n- Transitaires\n- Transporteurs\n- Manutention interne de marchandises\n:::\n\n### Question 3\n\n**Track and Trace** — quels sont les termes / éléments qui en font partie ?\n\n:::reponse\n- Confirmation / Reçu\n- Numéro d'envoi / Historique des envois\n- Suivi électronique des envois sur Internet\n- Trouver la preuve\n:::\n\n### Question 4\n\nQuels énoncés concernent le **Track and Trace** ?\n\n:::reponse\n- Le destinataire est indiqué sur le **récépissé**\n- Le marquage à barres sur le paquet est le **code-barres**\n- Le **statut** d'un envoi indique l'étape actuelle dans la chaîne logistique (pas « cher ou bon marché »)\n- Le client reçoit un **reçu** avec un numéro de code-barres\n:::\n\n### Question 5\n\nQuelles sont les **réponses correctes** concernant le Track and Trace (axes d'optimisation) ?\n\n:::reponse\n- Moyens auxiliaires de chargement disponibles\n- Utilisation économique des véhicules\n- Chargement optimal et conforme des véhicules\n- Planification d'un parcours optimal\n:::\n\n### Question 6\n\nQuelles activités supposent une bonne **planification de l'itinéraire** ?\n\n:::reponse\n- Répartition de la charge dans le camion\n- Priorités et souhaits des clients\n- Connaissance des restrictions\n- Arrimage du chargement\n- Véhicules concernés\n- Utilisation des chauffeurs de camion\n:::",
+          "summary": "## Questions de contrôle — Solutions\n1. Enregistreur : T°, poids, inclinaison, vibration…\n2. Colis · poste · transitaires · transporteurs · manutention\n3. Reçu · n° envoi · suivi Internet · preuve\n4. Récépissé · code-barres · statut · reçu\n5. Optimisation : véhicules · chargement · parcours\n6. Charge · priorités · restrictions · arrimage · véhicules · chauffeurs"
+        }
+      }
+    },
+    {
+      "module": "803",
+      "status": "imported-unreviewed",
+      "excludedReferences": [],
+      "pages": {
+        "objectifs": {
+          "full": "## Objectifs du module 803\n\nÀ l'issue de ce module, l'apprenti·e est capable de :\n\n- Expliquer le rôle d'un **ERP** et des modules associés\n- Distinguer CRM logiciel / stratégie / processus et situer vente, marketing, RH\n- Décrire les tâches de la **PCP** et les leviers de réduction des temps / stocks\n- Situer **CoFi** (créanciers / débiteurs), controlling, **GM** et e-commerce dans le système d'info",
+          "summary": "## Objectifs\n- ERP · CRM\n- PCP · qualité · projet\n- CoFi · GM · e-commerce"
+        },
+        "apercu": {
+          "full": "## Aperçu du module 803\n\nCe module présente les principaux **logiciels / domaines d'exploitation** d'une entreprise : ERP et modules associés (CRM, PCP, CoFi, GM…).\n\n### Vous allez découvrir\n1. ERP et CRM (logiciel, stratégie, processus)\n2. Vente, marketing, RH, PCP et management projet / qualité\n3. Comptabilité financière, controlling et gestion de matériel (achat, e-commerce)\n\n### Source\nEnterSite — Logistics by ASFL / SVBL · Bloc 800 ICT",
+          "summary": "## Aperçu — Module 803\n- ERP · CRM\n- PCP · CoFi · qualité\n- GM · achat · e-commerce"
+        },
+        "theorie": {
+          "full": "## 3. Logiciel d'exploitation\n\n### 3.1 ERP (Enterprise Resource Planning)\n\nApplication **complexe** : plusieurs logiciels / systèmes qui communiquent pour soutenir la **planification des ressources** de l'entreprise. Souvent divisé en **modules** combinables selon les besoins et avec des capacités variables.\n\n### 3.2 CRM (Customer Relationship Management)\n\nOrientation de l'entreprise vers ses **clients** · objectifs : **acquisition** et **fidélisation**. Collecte des données pertinentes → marketing relationnel aligné sur les besoins.\n\n| Sens du CRM | Contenu |\n| --- | --- |\n| **Logiciel** | Base techno pour saisir, analyser, présenter les interactions client |\n| **Stratégie** | Orientations des processus vers une expérience client optimale |\n| **Processus** | Procédures techno + stratégiques + systématiques d'orientation client |\n\n### 3.3 Vente / Marketing\n\n**Vente (sales) :** identification des groupes cibles · approche / acquisition · vente jusqu'à la livraison · de plus en plus le **suivi** post-vente (nouvelles ventes).\n\n**Marketing :** quels produits / services le marché souhaite · produire ce que les clients achètent (quantité suffisante) · comment influencer l'achat de nouveautés.\n\n### 3.4 Ressources humaines (RH)\n\nObjectifs : efficacité / productivité · sécurité des postes · capacité de travail et motivation · recrutement / fidélisation à coût raisonnable · climat / culture de direction · alignement sur l'objectif entreprise.\n\n### 3.5 Planification et contrôle de la production (PCP)\n\nFrontière gestion d'entreprise / informatique. Planifier, mettre en place et surveiller la production en **quantité** et **délais**. Couvre aussi l'amont (approvisionnement) et l'aval (distribution) · **gestion des matériaux** centrale.\n\n#### 3.5.1 Tâches\nPlanification du travail / temps de passage · gestion du matériel (approvisionnement + stockage) · type et organisation de fabrication · expédition (distribution).\n\n**Durée de fabrication** = temps pour passer toutes les étapes · base du taux d'exploitation des machines. Recalcul quotidien (ou +) : pannes / manque de matériel impactent tout.\n\n**Leviers d'optimisation :** système PCP · ↓ taille des lots · ↓ temps d'adaptation · ↓ transport / attentes / stockage · ↓ stocks.\n\nStocks utiles pour : capacité de livraison · délais de réappro · fluctuations demande · séries économiques. Lien étroit : ↓ temps de passage ↔ ↓ stocks.\n\n### 3.6 Management de projet\n\nGérer un projet **quelle que soit sa taille** (du déménagement au grand projet industriel) : objectifs · stratégie · organisation / coordination des facteurs de production · gestion des collaborateurs.\n\n### 3.7 Management qualité\n\nMesures pour une qualité **constante** des produits / services. Critique en alimentaire / pharma (santé) · aéronautique : chaque pièce avec **certificat** d'origine / matériaux (risque de falsification). Contrôle souvent par spécialistes (poste CQ / labo) · crucial si la prod. dépend de pièces achetées.\n\n### 3.8 Comptabilité financière (CoFi)\n\nDéterminer le **résultat global** · documenter actifs et variations de stocks · bénéfice / perte de la période · utile à l'entreprise, actionnaires, créanciers · **compte de résultat** + **bilan**.\n\n#### 3.8.1 Comptabilité\n| Domaine | Contenu |\n| --- | --- |\n| **Créanciers** | Obligations de paiement · factures **entrantes** (fournisseur) |\n| **Débiteurs** | Créances de l'entreprise · factures **sortantes** (client) |\n\n#### 3.8.2 Controlling\nContrôle de gestion : contrôler les opérations · analyses → rentabilité, bénéfices, valeur.\n\n### 3.9 Gestion de matériel (GM)\n\nGestion, planification et contrôle des **mouvements de matériel** (marchandises / biens). En production : approvisionner la fab. · lien étroit avec la **PCP**. International : « Materials Management ».\n\n#### 3.9.1 Achat\nActivités opérationnelles et stratégiques d'**acquisition** (matériaux, marchandises, moyens d'exploitation, services) — module **301**. Plus étroit que **approvisionnement** (qui inclut aussi la logistique d'appro). Objectif : lieu / délai / quantité / qualité + rapport qualité-prix. Inclut souvent la **gestion des relations fournisseurs**.\n\n#### 3.9.2 E-Commerce (WebEDI)\nÉchange numérique fournisseur ↔ acheteur (radio simple → IA). Internet, BDD, médias sociaux, banque en ligne, chatbots… → distances spatiales surmontées · parfois sans contact physique · évite le magasin / conseil face-à-face.",
+          "summary": "## À retenir — Module 803\n\n### ERP et CRM\nUn ERP regroupe plusieurs modules logiciels qui communiquent pour planifier les ressources de l'entreprise. Le CRM oriente l'entreprise vers ses clients en visant l'acquisition et la fidélisation. Le CRM peut désigner un logiciel, une stratégie ou des processus centrés sur l'expérience client.\n\n### Domaines métier\nLa vente couvre l'identification des cibles, l'acquisition et le suivi post-vente. Le marketing détermine quels produits le marché souhaite et comment en favoriser l'achat. Les ressources humaines visent l'efficacité, la sécurité et la motivation des collaborateurs. La PCP planifie la production en quantité et en délais, en gérant aussi l'approvisionnement et la distribution. Le management de projet, le management qualité et la comptabilité financière complètent ce socle.\n\n### Comptabilité et gestion de matériel\nLa comptabilité financière documente le résultat global via le compte de résultat et le bilan. Les créanciers concernent les factures entrantes, les débiteurs les factures sortantes. Le controlling analyse la rentabilité à partir des opérations. La gestion de matériel planifie les mouvements de marchandises, l'achat en est une partie, et l'e-commerce ou WebEDI permet l'échange numérique avec les fournisseurs."
+        },
+        "glossaire": {
+          "full": "## Glossaire — Module 803\n\n| Terme technique | Lien | Définition |\n| --- | --- | --- |\n| ERP | | *Enterprise Resource Planning* — système intégré de **planification des ressources** de l'entreprise. Regroupe plusieurs modules (finances, achats, stocks, ventes, RH…) pour une collaboration transparente entre les services. |\n| CRM | | *Customer Relationship Management* — gestion de la relation client. Trois dimensions : **logiciel** (données et analyses), **stratégie** (orientation client) et **processus** (procédures systématiques). Objectifs : acquisition et fidélisation. |\n| PCP | | *Planification et Contrôle de la Production* — planifier, mettre en œuvre et surveiller la production en **quantité** et **délais**. Couvre approvisionnement, fabrication et distribution. Synonyme courant : **GPAO**. |\n| Comptabilité financière | | Domaine qui détermine le **résultat global** de l'entreprise : actifs, variations de stocks, bénéfice ou perte. Produits : **compte de résultat** et **bilan**. Distingue créanciers (factures entrantes) et débiteurs (factures sortantes). |\n| Gestion des matières | | *Gestion de matériel (GM)* — gestion, planification et contrôle des **mouvements de matériel** (marchandises, biens). En production : approvisionner la fabrication. Lien étroit avec la PCP et l'achat (module **301**). |\n| E-Commerce | | Commerce électronique — échange numérique entre fournisseur et acheteur via Internet, BDD, médias sociaux, etc. Inclut le **WebEDI** (échange de données structurées entre partenaires commerciaux). |",
+          "summary": "## Glossaire — À retenir\n- **ERP** : planification intégrée des ressources (modules combinables)\n- **CRM** : relation client (logiciel · stratégie · processus)\n- **PCP/GPAO** : planification et contrôle de production\n- **CoFi** : compte de résultat · bilan\n- **GM** : mouvements de matériel · **E-Commerce** : WebEDI"
+        },
+        "situation": {
+          "full": "## Mises en situation — Module 803\n\nContexte : EnterSite AG se développe rapidement. Monsieur **Gugger** et Monsieur **Lang** te chargent de participer au nouveau projet **ERP**. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions proposées.\n\n---\n\n### Mission 1 — ERP : avantages et coûts\n\nMonsieur Lang souhaite que tu t'informes sur l'utilité et les coûts d'un ERP et que tu consignes tes conclusions par écrit.\n\n| Avantages | Coûts / défis |\n| --- | --- |\n| Intégration des processus (finances, achats, stocks, ventes, RH) → collaboration transparente et efficacité | Investissements initiaux importants (logiciels, matériel, formation) |\n| Données en temps réel → décisions éclairées · réactivité et compétitivité | Migration des données existantes : complexe · planification minutieuse |\n| Automatisation → réduction des coûts et interventions manuelles · ressources mieux utilisées | Formation des collaborateurs : temps et ressources |\n| Traitement plus rapide des demandes clients → satisfaction accrue | Adaptations spécifiques · intégration avec systèmes existants |\n| Évolutif → suit la croissance de l'entreprise (pertinent pour EnterSite AG) | Mise en place sur plusieurs mois selon taille et complexité |\n\n:::reponse\nVoir le tableau ci-dessus — avantages et coûts/défis d'un système ERP pour EnterSite AG.\n:::\n\n---\n\n### Mission 2 — Cadre des coûts pour le matériel\n\nTous les collaborateurs ont besoin d'un nouvel ordinateur portable ; les responsables de division reçoivent une imprimante grand format. Recherche sur Internet des modèles correspondant aux spécifications.\n\n**Laptop**\n\n| Critère | Exigence |\n| --- | --- |\n| Clavier | Suisse |\n| Système | Windows 11 |\n| Processeur | Core i9 11th Gen · > 4,6 GHz · 8 cœurs |\n| RAM | 32 Go |\n| Écran | 17 pouces · tactile |\n| Stockage | SSD 1'000 GB |\n\n**Imprimante**\n\n| Critère | Exigence |\n| --- | --- |\n| Type | Multifonction · laser/LED · couleur |\n| Format | A3, A4, A5 |\n| Bacs | 4 |\n| Fonctions | Recto verso · perforatrice et agrafeuse |\n| Connectivité | LAN · Cloud Printing |\n\n:::reponse\n**Exemples d'ordinateurs portables**\n\n| Fabricant | Modèle | Processeur | RAM | Stockage | OS |\n| --- | --- | --- | --- | --- | --- |\n| Dell | XPS 17 | Intel Core i9-11900H | 32 Go | 1 TB SSD | Windows 11 |\n| HP | Spectre x360 17t | Intel Core i9-11900H | 32 Go | 1 TB SSD | Windows 11 |\n| ASUS | ROG Zephyrus S17 | Intel Core i9-11900H | 32 Go | 1 TB SSD | Windows 11 |\n\n**Exemples d'imprimantes**\n\n| Fabricant | Modèle | Technologie | Formats | Bacs | Connectivité |\n| --- | --- | --- | --- | --- | --- |\n| Brother | MFC-L8900CDW | Laser couleur | A3/A4/A5 | 4 | LAN, Cloud |\n| HP | Color LaserJet Pro MFP M479fdw | Laser couleur | A3/A4/A5 | 4 | LAN, Cloud |\n| Epson | EcoTank ET-16650 | LED couleur | A3/A4/A5 | 4 | LAN, Cloud |\n:::\n\n---\n\n### Mission 3 — Cadre des coûts pour le logiciel\n\nRecherche les coûts par utilisateur pour le logiciel ERP et le service.\n\n:::reponse\nLes coûts varient entre environ **50 CHF** et **350 CHF** par utilisateur et par demande.\n\n**Réponse individuelle** — recherche Internet complémentaire selon le fournisseur ERP choisi.\n:::\n\n---\n\n### Mission 4 — Présentation PowerPoint\n\nRéalise une présentation professionnelle pour M. Gugger et M. Lang lors de la prochaine réunion.\n\n:::reponse\n**Réponse individuelle** — dépôt du fichier PowerPoint (pas de solution unique).\n:::\n\n---\n\n### Mission 5 — Discussion STA\n\n:::reponse\n**Réponse ouverte** — notes de discussion STA (pas de solution unique).\n:::",
+          "summary": "## Mises en situation — À retenir\n- **M1** : ERP avantages (intégration · temps réel · évolutif) vs coûts (investissement · migration · formation)\n- **M2** : laptops i9/32 Go/1 TB · imprimantes A3 multifonction\n- **M3** : ERP **50–350 CHF**/utilisateur\n- **M4** : présentation PPT · **M5** : STA"
+        },
+        "maths": {
+          "full": "## Exercices de mathématiques — Module 803\n\nCalcule chaque résultat, puis vérifie avec le bouton solution.\n\n### Données — acquisition ERP EnterSite AG\n\n| Poste | Quantité | Prix unitaire |\n| --- | --- | --- |\n| Ordinateurs portables | 10 | CHF 1'840 |\n| Points d'accès | 5 | CHF 555 |\n| Imprimantes | 2 | CHF 5'234 |\n| Scanners | 10 | CHF 976 |\n| Serveur d'entreprise | 1 | CHF 12'250 |\n| Système ERP SAP | 1 | CHF 52'000 |\n| Système de sauvegarde | 1 | CHF 2'360 |\n\n---\n\n### Exercice 1 — Coûts d'acquisition totaux\n\n:::solution\n**Coût d'acquisition total : 108'013 CHF**\n\n(10 × 1'840) + (5 × 555) + (2 × 5'234) + (10 × 976) + 12'250 + 52'000 + 2'360 = **108'013 CHF**\n:::\n\n---\n\n### Exercice 2 — Coûts d'installation\n\n- Installation électrique point d'accès : **878 CHF**/pièce\n- Configuration par connexion (laptops, scanners, imprimantes) : **125 CHF**/connexion\n\n:::solution\n**Coûts d'installation : 7'765 CHF**\n\n(878 × 5) + ((10 + 5 + 2 + 10) × 125) = 4'390 + 3'375 = **7'765 CHF**\n:::\n\n---\n\n### Exercice 3 — Frais de formation\n\n10 collaborateurs · **5** soirées de **3 h** · **135 CHF**/h\n\n:::solution\n**Frais de formation : 2'025 CHF**\n\n5 × 3 × 135 = **2'025 CHF**\n:::\n\n---\n\n### Exercice 4 — Dépassement de budget ERP\n\nBudget prévu système ERP SAP : **52'000 CHF** · facturé : **95'000 CHF**\n\nDe combien de pourcent le budget a-t-il été dépassé ?\n\n:::solution\n**Dépassement : 82,69 %**\n\n(95'000 − 52'000) / 52'000 × 100 = **82,69 %**\n:::\n\n> **Contrôle rapide (ordre du corrigé)** : 108'013 · 7'765 · 2'025 · 82,69",
+          "summary": "## Maths — Solutions\n1. Acquisition **108'013 CHF**\n2. Installation **7'765 CHF**\n3. Formation **2'025 CHF**\n4. Dépassement budget **82,69 %**"
+        },
+        "verification": {
+          "full": "## Vérification des acquis — Questions de contrôle\n\nThème : **Logiciel d'exploitation**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.\n\n### Question 1\n\nLes systèmes ERP sont souvent divisés en modules combinables. Quels **services** peuvent être reliés par un ERP ?\n\n:::reponse\n- Ressources humaines\n- Gestion de projet\n- Gestion de la qualité\n- Ventes / marketing\n- Comptabilité\n- Contrôle de gestion\n- Achats\n- E-commerce\n:::\n\n### Question 2\n\nQuels sont les **cinq sous-domaines** couverts par le système GPAO (PCP) ?\n\n:::reponse\n1. Planification du programme de production\n2. Planification des besoins en matériel\n3. Suivi des commandes\n4. Lancement des commandes\n5. Planification des délais et des capacités\n:::\n\n### Question 3\n\nDécris le terme technique **« temps de passage »**.\n\n:::reponse\nL'un des facteurs les plus importants pour la planification de la production. Le **temps de passage** est le temps nécessaire pour qu'un produit passe par **toutes les étapes de production**.\n:::\n\n### Question 4\n\nQuelles mesures soutiennent l'optimisation des processus de production ? Cite **cinq** mesures.\n\n:::reponse\n1. Utilisation d'un système GPAO favorisant la réduction des temps de passage\n2. Réduction de la taille des lots pour éviter l'engorgement du système\n3. Réduction des temps de changement de production\n4. Éviter les longs trajets de transport, les temps d'attente et de repos\n5. Réduction des stocks\n:::\n\n### Question 5\n\nLe juste-à-temps (JIT) est une idéalisation : nous n'aurions pas de stock. Pour quelles raisons les stocks sont-ils néanmoins nécessaires ?\n\n:::reponse\n- Maintien de la **disponibilité des livraisons**\n- Compensation des **délais de réapprovisionnement**\n- Compensation des **fluctuations de la demande**\n- Production de **tailles de série économiques**\n:::",
+          "summary": "## Questions de contrôle — Solutions\n1. ERP : RH · projet · qualité · ventes · compta · controlling · achats · e-commerce\n2. GPAO : programme · besoins matériel · suivi · lancement · délais/capacités\n3. **Temps de passage** = durée totale des étapes de production\n4. GPAO · lots ↓ · changements ↓ · transport ↓ · stocks ↓\n5. Stocks : livraison · délais · fluctuations · séries économiques"
+        }
+      }
+    },
+    {
+      "module": "804",
+      "status": "imported-unreviewed",
+      "excludedReferences": [
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 12,
+          "reason": "Illustration historique",
+          "alt": "Page d'accueil edu.vs.ch — Connexion"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 18,
+          "reason": "Illustration historique",
+          "alt": "Formulaire de connexion ICT-VS"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 35,
+          "reason": "Illustration historique",
+          "alt": "Changer le mot de passe"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 39,
+          "reason": "Illustration historique",
+          "alt": "Tableau de bord ENT VS"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 50,
+          "reason": "Illustration historique",
+          "alt": "Mes services — Accès Teams"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 52,
+          "reason": "Illustration historique",
+          "alt": "Connexion Microsoft — identifiant"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 54,
+          "reason": "Illustration historique",
+          "alt": "Choisir l'application Web Teams"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 62,
+          "reason": "Illustration historique",
+          "alt": "Activité"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 66,
+          "reason": "Illustration historique",
+          "alt": "Conversation"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 70,
+          "reason": "Illustration historique",
+          "alt": "Équipes"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 74,
+          "reason": "Illustration historique",
+          "alt": "Affectations"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 78,
+          "reason": "Illustration historique",
+          "alt": "Calendrier"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 85,
+          "reason": "Illustration historique",
+          "alt": "Nouvelle conversation Teams"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 91,
+          "reason": "Illustration historique",
+          "alt": "Sélection de la classe"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 98,
+          "reason": "Illustration historique",
+          "alt": "Canaux de la classe"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 100,
+          "reason": "Illustration historique",
+          "alt": "Afficher un canal masqué"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 106,
+          "reason": "Illustration historique",
+          "alt": "Fichiers du canal"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 112,
+          "reason": "Illustration historique",
+          "alt": "Menu — Télécharger un fichier"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 124,
+          "reason": "Illustration historique",
+          "alt": "Liste des affectations"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 126,
+          "reason": "Illustration historique",
+          "alt": "Détail du devoir — documents et Remettre"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 128,
+          "reason": "Illustration historique",
+          "alt": "Joindre un fichier"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 130,
+          "reason": "Illustration historique",
+          "alt": "Boîte de dialogue Ouvrir"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 143,
+          "reason": "Illustration historique",
+          "alt": "ENT — Accès Office 365"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 145,
+          "reason": "Illustration historique",
+          "alt": "Installer Office"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 147,
+          "reason": "Illustration historique",
+          "alt": "Téléchargement OfficeSetup.exe"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 149,
+          "reason": "Illustration historique",
+          "alt": "Dossier Téléchargements"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 151,
+          "reason": "Illustration historique",
+          "alt": "Progression de l'installation"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 153,
+          "reason": "Illustration historique",
+          "alt": "Tout est prêt !"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 155,
+          "reason": "Illustration historique",
+          "alt": "Recherche Windows — 365"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 157,
+          "reason": "Illustration historique",
+          "alt": "Portail Microsoft 365 — Installer des applications"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 169,
+          "reason": "Illustration historique",
+          "alt": "ENT — Accès OneDrive"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 171,
+          "reason": "Illustration historique",
+          "alt": "Connexion Microsoft — e-mail"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 173,
+          "reason": "Illustration historique",
+          "alt": "Rester connecté ?"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 175,
+          "reason": "Illustration historique",
+          "alt": "OneDrive — Mes fichiers"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 185,
+          "reason": "Illustration historique",
+          "alt": "Menu + Nouveau — Dossier"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 187,
+          "reason": "Illustration historique",
+          "alt": "Créer un dossier"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 189,
+          "reason": "Illustration historique",
+          "alt": "Dossier créé — Afficher les actions"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 198,
+          "reason": "Illustration historique",
+          "alt": "Charger → Fichiers"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 200,
+          "reason": "Illustration historique",
+          "alt": "Boîte de dialogue Ouvrir"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 210,
+          "reason": "Illustration historique",
+          "alt": "Corbeille — Restaurer"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 221,
+          "reason": "Illustration historique",
+          "alt": "ENT — Accès Outlook"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 223,
+          "reason": "Illustration historique",
+          "alt": "Connexion Outlook — e-mail"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 229,
+          "reason": "Illustration historique",
+          "alt": "Boîte de réception Outlook"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 240,
+          "reason": "Illustration historique",
+          "alt": "Icônes Répondre / Répondre à tous / Transférer"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 249,
+          "reason": "Illustration historique",
+          "alt": "Rédaction d'un courriel — Envoyer"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 251,
+          "reason": "Illustration historique",
+          "alt": "Éléments envoyés"
+        }
+      ],
+      "pages": {
+        "objectifs": {
+          "full": "## Objectifs du module 804\n\nÀ l'issue de ce module, l'apprenti·e est capable de :\n\n- Se connecter à l'**ENT VS** et utiliser **Teams**, **OneDrive**, **Outlook** et installer **Office 365**\n- Démarrer / se connecter / utiliser le **bureau** Windows (corbeille, raccourcis, explorateur)\n- Créer des dossiers, gérer les **sessions**, arrêter / mettre en veille et quitter une app bloquée\n- Paramétrer formats régionaux et outils de la barre des tâches\n- Distinguer types de licences / logiciels et appliquer les règles de base du **droit d'auteur** (CH)",
+          "summary": "## Objectifs\n- ENT · Teams · Office · OneDrive · Outlook\n- Bureau · fichiers · sessions\n- Veille / panne\n- Licences · copyright"
+        },
+        "apercu": {
+          "full": "## Aperçu du module 804\n\nCe module pose les **bases Windows** (bureau, fichiers, sessions), guide l'**utilisation ENT / Microsoft 365** (Teams, Office, OneDrive, Outlook) et introduit le **droit d'auteur** / licences — fondation avant Word, Excel, etc.\n\n### Vous allez découvrir\n1. Connexion ENT VS, Teams, installation Office 365, OneDrive et Outlook\n2. Démarrage, connexion et interface du bureau Windows 11\n3. Fichiers, dossiers, sessions, arrêt / veille, Gestionnaire des tâches\n4. Formats régionaux et outils de la barre des tâches\n5. Licences, copyright suisse, partage de fichiers et plagiat\n\n### Source\nEnterSite — Logistics by ASFL / SVBL · Bloc 800 ICT",
+          "summary": "## Aperçu — Module 804\n- ENT · Teams · Office · OneDrive · Outlook\n- Bureau Windows · fichiers · sessions\n- Arrêt / veille · panne\n- Licences · copyright · plagiat"
+        },
+        "theorie": {
+          "full": "## 4. Bases de l'informatique et droit d'auteur\n\n### 0.1 Utilisation — ENT VS Se connecter\n\nPremière connexion à l'environnement numérique de travail Valais ([edu.vs.ch](https://edu.vs.ch)).\n\n#### Connexion\n\n1. Ouvrir [https://edu.vs.ch](https://edu.vs.ch)\n2. Cliquer sur **Connexion**\n\n\n\n3. Optionnel : changer la langue via **FR**\n4. Saisir le nom d'utilisateur et le mot de passe reçus en classe\n5. Cliquer sur **Connexion**\n\n\n\n#### Première connexion\n\nLors de la première connexion, le système demande de changer le mot de passe.\n\n5. Saisir à nouveau le mot de passe reçu en classe (**mot de passe actuel**)\n6. Saisir un **nouveau mot de passe** en respectant les règles :\n\n- Entre 10 et 50 caractères\n- Majuscule, minuscule, chiffre et caractère spécial\n- Ne doit pas contenir le prénom / nom\n- Doit être différent des 10 derniers mots de passe\n\n7. Confirmer le nouveau mot de passe\n8. Cliquer sur **Modifier mon mot de passe**\n\n\n\n> Vous êtes maintenant connecté sur votre environnement numérique de travail.\n\n\n\n### 0.2 Utilisation — TEAMS\n\n#### Lancer TEAMS depuis l'ENT\n\n1. Cliquer sur **Accès** (carte Teams)\n2. Saisir l'identifiant Teams — id ENT (`prenom.nom@edu.vs.ch`)\n3. Cliquer sur **Suivant**\n4. Cliquer sur **Utilisez l'application Web à la place**\n\n\n\n\n\n\n\n> Vous pouvez aussi installer le client de bureau ; l'application Web suffit pour démarrer.\n\n#### La barre latérale\n\n- **Activité** — notifications\n\n\n\n- **Conversation** — conversations\n\n\n\n- **Équipes** — classe\n\n\n\n- **Affectations** — devoirs\n\n\n\n- **Calendrier** — calendrier\n\n\n\n#### Les conversations et messages\n\n1. Chercher un élève ou un professeur\n2. Taper le message\n\n\n\n#### Votre classe\n\n1. Sélectionner votre classe\n\n\n\n#### Les canaux (branches)\n\n1. Consulter les branches / canaux disponibles\n2. Pour un canal masqué : **…** → **Afficher**\n\n\n\n\n\n#### Les ressources disponibles\n\n1. Ouvrir un canal → onglet **Fichiers** → naviguer dans les dossiers\n\n\n\n#### Téléchargements\n\n1. Sur un document → **…** → **Télécharger**\n\n\n\n#### Les devoirs\n\n1. Ouvrir **Affectations**\n2. Voir les échéances\n3. Sélectionner un devoir\n4. Télécharger les documents de référence / faire le travail\n5. **Joindre** (PC ou OneDrive)\n6. **Ouvrir** le fichier choisi\n7. Cliquer sur **Remettre**\n\n\n\n\n\n\n\n\n\n### 0.3 Utilisation — Installation d'Office 365\n\n1. Aller dans votre espace ENT\n2. Sélectionner l'application **Office 365** → **Accès**\n3. Cliquer sur **Installer Office**\n4. Le téléchargement commence dans le navigateur (`OfficeSetup.exe`)\n5. Ouvrir le dossier du fichier téléchargé (par défaut **Téléchargements**)\n6. Accepter et lancer l'installation\n7. Attendre la fin de l'installation\n8. Lancer Office 365 depuis le bureau (recherche Windows : « 365 »)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n### 0.4 Utilisation — OneDrive\n\n#### Se connecter à OneDrive\n\n1. Aller dans l'espace ENT\n2. Sélectionner **OneDrive** → **Accès**\n3. Saisir l'adresse e-mail complète (`prenom.nom@edu.vs.ch`)\n4. Cliquer sur **Suivant**\n5. Fenêtre **Rester connecté ?** — sur un PC partagé, mieux vaut **ne pas** rester connecté\n\n\n\n\n\n\n\n\n\n#### Créer un nouveau dossier\n\n1. **+ Nouveau**\n2. **Dossier**\n3. Saisir le nom\n4. **Créer**\n5. Trois points verticaux → menu d'actions\n\n\n\n\n\n\n\n#### Insérer un fichier\n\n1. **Charger**\n2. **Fichiers** (ou glisser-déposer)\n3. Sélectionner le fichier\n4. **Ouvrir** (Ctrl pour une sélection multiple)\n\n\n\n\n\n#### Restaurer un fichier\n\nLes éléments supprimés vont dans la **Corbeille** ; on peut les restaurer.\n\n1. Ouvrir **Corbeille**\n2. Sélectionner l'élément\n3. Cliquer sur **Restaurer**\n\n\n\n### 0.5 Utilisation — Outlook\n\n#### Connexion à Outlook\n\n1. Aller dans l'espace ENT\n2. Sélectionner **Outlook** → **Accès**\n3. Saisir l'adresse `prenom.nom@edu.vs.ch`\n4. Cliquer sur **Suivant**\n\n\n\n\n\n#### Réception de nouveaux messages\n\nVous êtes sur la page d'accueil de la boîte aux lettres. Les nouveaux messages arrivent automatiquement et restent dans **Boîte de réception**.\n\n\n\n#### Répondre à un message\n\n1. Cliquer sur le résumé du message\n2. Le message complet s'affiche à droite\n3. Cinq symboles en haut à droite\n4. Flèche gauche = répondre à l'expéditeur\n5. Double flèche gauche = répondre à tous\n6. Flèche droite = transférer\n\n\n\n#### Écrire un courriel\n\n1. Les champs **De** et **À** sont à remplir dans l'en-tête\n2. Rédiger le message dans l'éditeur\n3. Cliquer sur **Envoyer**\n4. Vérifier l'envoi via **Éléments envoyés**\n\n\n\n\n\n### 4.1 Démarrage et arrêt de l'ordinateur\n\nAprès mise sous tension : **booting** (microprogramme) → vérif. périphériques → chargement du système d'exploitation en mémoire → fenêtre de connexion / bureau.\n\n👉 Attendre la **fin du démarrage** avant d'insérer USB / SSD avec données personnelles.\n\n#### 4.1.1 Connexion\nEn entreprise / école : environnement **réseau / domaine** · compte utilisateur + données partagées. Auth : mot de passe, PIN, code image, empreinte, iris…\n\n- Sécurise les **droits d'accès**\n- Droits souvent **limités** · seuls les **admins** ont des droits illimités\n- Saisir le nom d'utilisateur + mot de passe attribués par l'admin\n\n### 4.2 L'interface du bureau\n\nAprès Enter : le **bureau** commande vos actions.\n\n#### 4.2.1 Corbeille\nIcône différente si vide / pleine. Double-clic pour ouvrir · **Restaurer** pour récupérer · **Delete** pour supprimer définitivement depuis la corbeille.\n\n#### 4.2.2 Accès dossiers / fichiers\nDouble-clic sur l'icône du dossier.\n\n#### 4.2.3 Arrière-plan\nClic droit Bureau → **Personnaliser** → **Arrière-plan** :\n\n| Option | Effet |\n| --- | --- |\n| Remplir | Rogne pour occuper tout l'espace |\n| Ajuster | Agrandit en gardant les proportions |\n| Étendre | Idem, proportions conservées |\n| Étirer | Agrandit à la taille du bureau |\n| Vignette | Répète l'image |\n| Centrer | Cadre au centre |\n\n#### 4.2.4 Raccourcis\nMenu contextuel fichier/dossier/app → Afficher plus d'options → **Envoyer vers** → Bureau (créer un raccourci). Petite **flèche** en bas à gauche = raccourci.\n\n#### 4.2.5–4.2.6 Menu démarrer & Recherche\nBouton Démarrer → liste des apps. Bouton **Recherche** (barre des tâches) : fichiers, apps, sites web.\n\n#### 4.2.7 Explorateur de fichiers\nAccès via icône barre des tâches. Windows 11 crée un **dossier personnel** (Documents, Téléchargements, Images, Musique, Vidéos, OneDrive, Bureau…). Stocké sous `C:\\Utilisateurs\\…` · pas d'accès par défaut aux dossiers des autres · dossier **Public** pour partager sur la machine.\n\n#### 4.2.8–4.2.12 Barre des tâches & outils\n- **Épingler** une app : menu contextuel → Épingler à la barre des tâches\n- **Capture** : app Capture d'écran ou **Win+Shift+S**\n- Paramètres barre des tâches via menu contextuel\n- **Clavier tactile** (environnement tactile) via paramètres barre des tâches\n- Langue clavier, Internet/Wi‑Fi, haut-parleur, batterie, date/heure : zone de notification (bas droite)\n\n### 4.3 Nombres et dates (pays)\n\nSouvent via **Panneau de configuration** (compte admin) · formats régionaux : nombres, symbole monétaire, heure, date.\n\n### 4.4 Créer / nommer un dossier\n\nExplorateur → dossier cible (souvent Documents) → **Nouveau → Dossier** (ou **Ctrl+Shift+N**) → nommer → Enter. Renommer par clic · sous-dossiers idem · **Ctrl+C / Ctrl+V** pour copier-coller.\n\n### 4.5 Sessions\n\nPlusieurs utilisateurs sur la même machine sans tout fermer : ouvrir / activer une autre session.\n\n| Action | Effet |\n| --- | --- |\n| **Se déconnecter** | Ferme la session + apps/fichiers (enregistrer d'abord) |\n| Choisir un autre user | Nouvelle session · la précédente peut rester en **attente** |\n\n### 4.6 Arrêt / veille / redémarrage\n\nDémarrer → **Marche/Arrêt**. **Veille** : peu d'énergie · apps ouvertes · reprise rapide.\n\n### 4.7 Application bloquée\n\n**Ctrl+Alt+Suppr** → Gestionnaire des tâches → sélectionner l'app → **Fin de tâche** (parfois plusieurs fois).\n\n### 4.8 Droit d'auteur et licences\n\n#### 4.8.1 Types de logiciels / usages\n\n| Type | Idée clé |\n| --- | --- |\n| **Bêta** | Préversion · bogues possibles · aussi sous droit d'auteur |\n| **Freeware** | Gratuit mais sous copyright |\n| **Libre / open source** | Code source publié · copier, modifier, redistribuer (ex. Linux) |\n| **Shareware** | Essai gratuit · puis paiement ou fonctions bloquées |\n| **Copie pirate** | Usage sans licence · violation du droit d'auteur |\n\n**Partage de fichiers :** upload **et** download relevant du droit d'auteur. Usage privé depuis sources légales (et en pratique aussi illégales pour le download/stream) souvent toléré en CH · **upload** d'œuvres protégées **interdit** sauf si vous détenez les droits / œuvre libre.\n\n#### 4.8.2 Copyright (Suisse)\nRégi par la loi fédérale + accords internationaux. **Copies privées** autorisées : sphère perso / proches · enseignants en cours · copies internes entreprises / admins / instituts.\n\n#### 4.8.3 Licence de logiciel\nOn n'« achète » pas le logiciel : on acquiert une **licence** (CLUF / EULA à accepter). Souvent : 2ᵉ copie sur appareil mobile pour l'utilisateur principal. **ID produit** = authenticité (ex. Office : Fichier → Compte → À propos).\n\n#### 4.8.4 Plagiat\nVol de propriété intellectuelle · punissable. Poursuites difficiles (Internet, lois variables). En CH : surtout distribution depuis un PC en Suisse · streaming / download souvent peu poursuivis. Suivre l'évolution légale (ex. actions BSA).",
+          "summary": "## À retenir — Module 804\n\n### Environnement numérique ENT VS\nLa première connexion se fait sur edu.vs.ch avec l'identifiant reçu en classe. Lors de la première connexion, le système impose un nouveau mot de passe respectant des règles de sécurité précises. Teams s'ouvre depuis l'ENT via l'application Web ; la barre latérale donne accès aux conversations, à la classe, aux devoirs et au calendrier. Office 365 s'installe depuis l'ENT avec le fichier OfficeSetup.exe.\n\n### OneDrive et Outlook\nOneDrive permet de créer des dossiers, de charger des fichiers et de restaurer des éléments supprimés depuis la corbeille. Sur un PC partagé, il vaut mieux ne pas rester connecté. Outlook sert à recevoir des messages, à répondre, à transférer et à rédiger des courriels. Les messages envoyés se vérifient dans la section Éléments envoyés.\n\n### Bases Windows\nAprès le démarrage, l'ordinateur charge le système d'exploitation puis affiche l'écran de connexion. Le bureau permet d'accéder aux dossiers, à la corbeille et aux raccourcis. L'explorateur de fichiers organise les dossiers personnels de chaque utilisateur. Plusieurs sessions peuvent coexister sur une même machine, et la veille permet une reprise rapide. En cas d'application bloquée, Ctrl+Alt+Suppr ouvre le Gestionnaire des tâches.\n\n### Droit d'auteur et licences\nOn n'achète pas un logiciel mais une licence d'utilisation, souvent définie par un CLUF. Les freewares sont gratuits mais protégés, les logiciels libres permettent de modifier et redistribuer le code. Les copies privées à usage personnel sont autorisées en Suisse, mais l'upload d'œuvres protégées est interdit sans détenir les droits. Le plagiat constitue une infraction à la propriété intellectuelle."
+        },
+        "glossaire": {
+          "full": "## Glossaire — Module 804\n\n| Terme technique | Lien | Définition |\n| --- | --- | --- |\n| ENT | | *Environnement Numérique de Travail* — portail scolaire ou d'entreprise donnant accès aux services numériques (Teams, Office, OneDrive, Outlook…). Ex. : [edu.vs.ch](https://edu.vs.ch) pour le canton du Valais. |\n| Microsoft 365 | | Suite cloud de Microsoft regroupant Office (Word, Excel, PowerPoint…), Teams, OneDrive et Outlook. Les données sont souvent stockées sur **OneDrive** et accessibles depuis plusieurs appareils. |\n| Teams | | Application de **collaboration** (conversations, classes, devoirs, calendrier, fichiers partagés). Utilisée en classe pour les affectations et la communication avec les enseignants. |\n| OneDrive | | Service de **stockage cloud** personnel lié au compte Microsoft. Permet de créer des dossiers, charger des fichiers et restaurer des éléments depuis la corbeille. |\n| Outlook | | Application de **messagerie électronique** (courriels). Permet de recevoir, répondre, transférer et rédiger des messages ; les envois se vérifient dans **Éléments envoyés**. |\n| Booting | | Phase de **démarrage** de l'ordinateur : microprogramme → vérification des périphériques → chargement du système d'exploitation → écran de connexion. |\n| Domaine | | Environnement **réseau** d'entreprise ou d'école où l'utilisateur se connecte avec un compte centralisé. Les droits d'accès sont gérés par l'administrateur. |\n| CLUF / EULA | | *Contrat de Licence Utilisateur Final* — conditions d'utilisation acceptées lors de l'installation d'un logiciel. On n'achète pas le logiciel mais une **licence** d'usage. |\n| Freeware | | Logiciel **gratuit** mais toujours protégé par le **droit d'auteur**. L'utilisation est libre, mais la copie ou la modification reste encadrée par la licence. |\n| Shareware | | Logiciel en **essai gratuit** ; après la période d'essai, l'utilisateur doit payer ou certaines fonctions sont bloquées. |\n| Open source | | Logiciel dont le **code source** est publié. L'utilisateur peut copier, modifier et redistribuer selon la licence (ex. Linux). |\n| Licence logiciel | | Droit d'**utiliser** un programme selon des conditions précises (nombre d'appareils, usage commercial ou privé…). L'**ID produit** prouve l'authenticité (ex. Office : Fichier → Compte → À propos). |\n| Copyright | | *Droit d'auteur* — protection des œuvres (logiciels, textes, images…). En Suisse, les **copies privées** à usage personnel sont en principe autorisées ; l'**upload** d'œuvres protégées sans droits est interdit. |\n| Plagiat | | Vol de **propriété intellectuelle** (copier le travail d'autrui sans citation). Infraction punissable, notamment pour les devoirs et documents professionnels. |\n| Veille | | Mode de faible consommation où l'ordinateur reste allumé et les applications ouvertes ; la reprise est plus rapide qu'un arrêt complet. |\n| Explorateur de fichiers | | Outil Windows pour naviguer dans les **dossiers** et **fichiers** (Documents, Téléchargements, Bureau, OneDrive…). Chaque utilisateur possède son dossier personnel sous `C:\\Utilisateurs\\…`. |",
+          "summary": "## Glossaire — À retenir\n- **ENT** : portail vers Teams · Office · OneDrive · Outlook\n- **Booting** : démarrage · **Domaine** : compte réseau centralisé\n- **CLUF** : licence d'usage · **ID produit** : authenticité\n- **Freeware** : gratuit mais protégé · **Open source** : code modifiable\n- **Copyright** : copies privées OK · upload protégé interdit · **Plagiat** : vol intellectuel"
+        },
+        "situation": {
+          "full": "## Mises en situation — Module 804\n\nContexte : tu débutes ton apprentissage chez **EnterSite AG**. Monsieur **Lang** (service informatique) et Madame **Gugger** (RH) te chargent de mettre en place ton environnement numérique et de respecter les règles du droit d'auteur. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions proposées.\n\n---\n\n### Mission 1 — Première connexion ENT VS\n\nTu reçois en classe ton identifiant `prenom.nom@edu.vs.ch` et un mot de passe temporaire. Décris les étapes pour te connecter à l'ENT et sécuriser ton compte.\n\n:::reponse\n1. Ouvrir [https://edu.vs.ch](https://edu.vs.ch) et cliquer sur **Connexion**\n2. Saisir l'identifiant et le mot de passe temporaire\n3. Lors de la première connexion, **changer le mot de passe** :\n   - 10 à 50 caractères\n   - Majuscule, minuscule, chiffre et caractère spécial\n   - Pas de prénom/nom · différent des 10 derniers mots de passe\n4. Confirmer et cliquer sur **Modifier mon mot de passe**\n5. Vérifier l'accès au **tableau de bord** ENT\n:::\n\n---\n\n### Mission 2 — Remettre un devoir sur Teams\n\nUn devoir de logistique doit être remis avant vendredi. Explique comment accéder à Teams depuis l'ENT et remettre ton fichier.\n\n:::reponse\n1. Depuis l'ENT : carte **Teams** → **Accès**\n2. Saisir l'identifiant `prenom.nom@edu.vs.ch` → **Suivant**\n3. Choisir **Utilisez l'application Web à la place**\n4. Ouvrir **Affectations** → sélectionner le devoir\n5. Télécharger les documents de référence si nécessaire\n6. Travailler le devoir (Word, Excel…)\n7. **Joindre** le fichier (PC ou OneDrive) → **Ouvrir** → **Remettre**\n8. Vérifier que la remise apparaît comme envoyée\n:::\n\n---\n\n### Mission 3 — Installation Office 365 sur les postes EnterSite\n\nEnterSite AG équipe **15** nouveaux postes de travail. Monsieur Lang te demande de documenter la procédure d'installation Office depuis l'ENT.\n\n:::reponse\n1. Se connecter à l'ENT → application **Office 365** → **Accès**\n2. Cliquer sur **Installer Office** (`OfficeSetup.exe` se télécharge)\n3. Ouvrir le dossier **Téléchargements** et lancer l'installation\n4. Attendre la fin de l'installation\n5. Lancer Office depuis le menu Démarrer (recherche « 365 »)\n6. Vérifier la licence : Fichier → Compte → À propos (**ID produit**)\n7. Répéter sur chaque poste ou déployer selon la procédure IT de l'entreprise\n:::\n\n---\n\n### Mission 4 — Droit d'auteur : logiciel sans licence\n\nUn collègue propose d'installer une version « gratuite » d'un logiciel professionnel trouvée sur un site de partage. Que lui réponds-tu en te basant sur le droit d'auteur suisse ?\n\n:::reponse\n- Il s'agit probablement d'une **copie pirate** : usage sans licence valide = violation du **copyright**\n- On n'achète pas le logiciel mais une **licence** (CLUF) ; l'**ID produit** prouve l'authenticité\n- En Suisse : **copies privées** autorisées pour usage personnel depuis sources légales\n- L'**upload** et la distribution de logiciels protégés sans droits est **interdit**\n- Pour EnterSite AG : utiliser uniquement des licences **entreprise** ou **éducation** officielles (Microsoft 365 via ENT)\n- Risques : amendes (BSA), virus, absence de mises à jour, responsabilité de l'entreprise\n:::\n\n---\n\n### Mission 5 — Discussion STA\n\nDiscute avec la classe et l'enseignant·e des bonnes pratiques numériques (mots de passe, OneDrive sur PC partagé, plagiat dans les devoirs).\n\n:::reponse\n**Réponse ouverte** — notes de discussion STA (pas de solution unique).\n:::",
+          "summary": "## Mises en situation — À retenir\n- **M1** : edu.vs.ch · changement mot de passe (règles sécurité)\n- **M2** : Teams Web → Affectations → Joindre → Remettre\n- **M3** : ENT → Office 365 → OfficeSetup.exe → vérifier ID produit\n- **M4** : pas de copie pirate · licence CLUF · copies privées légales seulement\n- **M5** : discussion STA"
+        },
+        "maths": {
+          "full": "## Exercices de mathématiques — Module 804\n\nCalcule chaque résultat, puis vérifie avec le bouton solution.\n\n### Données — déploiement Microsoft 365 chez EnterSite AG\n\n| Poste | Quantité | Prix / durée |\n| --- | --- | --- |\n| Licence Microsoft 365 (par utilisateur/mois) | 45 | CHF 8,80 |\n| Installation Office par poste | 15 | 30 min |\n| Espace OneDrive par utilisateur | 45 | 1 To (1'000 Go) |\n| Budget logiciels annuel prévu | 1 | CHF 4'800 |\n| Coût réel licences + formation | 1 | CHF 7'920 |\n\n---\n\n### Exercice 1 — Coût mensuel des licences\n\nCombien EnterSite AG paie-t-elle par mois pour **45** utilisateurs Microsoft 365 ?\n\n:::solution\n**Coût mensuel : 396 CHF**\n\n45 × 8,80 = **396 CHF**\n:::\n\n---\n\n### Exercice 2 — Temps d'installation total\n\n**15** postes doivent recevoir Office 365. Chaque installation prend **30 minutes**.\n\nCombien de **heures** de travail au total (arrondir à l'entier supérieur si besoin) ?\n\n:::solution\n**Temps total : 7,5 h**\n\n15 × 30 min = 450 min = **7,5 h**\n:::\n\n---\n\n### Exercice 3 — Stockage OneDrive cumulé\n\nSi chaque utilisateur dispose de **1 To** de OneDrive, quel est le stockage **théorique total** pour **45** utilisateurs (en To) ?\n\n:::solution\n**Stockage total : 45 To**\n\n45 × 1 To = **45 To**\n:::\n\n---\n\n### Exercice 4 — Dépassement du budget logiciels\n\nLe budget annuel prévu était de **4'800 CHF**, le coût réel s'élève à **7'920 CHF**.\n\nDe combien de **pourcent** le budget a-t-il été dépassé ?\n\n:::solution\n**Dépassement : 65 %**\n\n(7'920 − 4'800) / 4'800 × 100 = 3'120 / 4'800 × 100 = **65 %**\n:::\n\n> **Contrôle rapide (ordre du corrigé)** : 396 · 7,5 · 45 · 65",
+          "summary": "## Maths — Solutions\n1. Licences mensuelles **396 CHF** (45 × 8,80)\n2. Installation **7,5 h** (15 × 30 min)\n3. Stockage OneDrive **45 To**\n4. Dépassement budget **65 %**"
+        },
+        "verification": {
+          "full": "## Vérification des acquis — Questions de contrôle\n\nThème : **Fondation Microsoft 365 et droit d'auteur**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.\n\n### Question 1\n\nQuelles règles doit respecter le **nouveau mot de passe** lors de la première connexion à l'ENT VS ?\n\n:::reponse\n- Entre **10 et 50 caractères**\n- Contenir une **majuscule**, une **minuscule**, un **chiffre** et un **caractère spécial**\n- Ne pas contenir le **prénom** ni le **nom**\n- Être **différent** des 10 derniers mots de passe\n:::\n\n### Question 2\n\nQuelle est la différence entre **freeware**, **shareware** et **open source** ?\n\n:::reponse\n- **Freeware** : gratuit mais protégé par le copyright ; usage libre selon la licence\n- **Shareware** : essai gratuit puis paiement ou fonctions limitées\n- **Open source** : code source publié ; copie, modification et redistribution possibles selon la licence (ex. Linux)\n:::\n\n### Question 3\n\nQue faire si une application est **bloquée** sur Windows ?\n\n:::reponse\n1. Appuyer sur **Ctrl+Alt+Suppr**\n2. Ouvrir le **Gestionnaire des tâches**\n3. Sélectionner l'application concernée\n4. Cliquer sur **Fin de tâche** (parfois plusieurs fois nécessaire)\n:::\n\n### Question 4\n\nQu'est-ce que le **booting** et pourquoi faut-il attendre la fin du démarrage avant d'insérer une clé USB ?\n\n:::reponse\nLe **booting** est la phase de démarrage : microprogramme → vérification des périphériques → chargement du système d'exploitation → écran de connexion.\n\nIl faut attendre la **fin du démarrage** pour que le système reconnaisse correctement les périphériques (USB, SSD) et évite des erreurs ou des conflits.\n:::\n\n### Question 5\n\nQuelles règles de base du **droit d'auteur** en Suisse dois-tu retenir pour les logiciels et les fichiers ?\n\n:::reponse\n- On acquiert une **licence** (CLUF), pas la propriété du logiciel\n- **Copies privées** à usage personnel / proches en principe autorisées\n- **Upload** d'œuvres protégées interdit sans détenir les droits\n- Le **plagiat** (vol de propriété intellectuelle) est une infraction\n- Partage de fichiers : download et upload peuvent violer le copyright\n:::",
+          "summary": "## Questions de contrôle — Solutions\n1. Mot de passe ENT : 10–50 car. · maj/min/chiffre/spécial · pas prénom/nom\n2. Freeware = gratuit protégé · Shareware = essai · Open source = code libre\n3. **Ctrl+Alt+Suppr** → Gestionnaire des tâches → Fin de tâche\n4. **Booting** = démarrage OS · attendre avant USB\n5. Licence CLUF · copies privées OK · upload interdit · pas de plagiat"
+        }
+      }
+    },
+    {
+      "module": "805",
+      "status": "imported-unreviewed",
+      "excludedReferences": [
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 11,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 17,
+          "reason": "Illustration historique",
+          "alt": "Afficher tout"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 29,
+          "reason": "Illustration historique",
+          "alt": "Gras"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 30,
+          "reason": "Illustration historique",
+          "alt": "Italique"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 31,
+          "reason": "Illustration historique",
+          "alt": "Souligné"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 32,
+          "reason": "Illustration historique",
+          "alt": "Effacer"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 33,
+          "reason": "Illustration historique",
+          "alt": "Majuscules"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 34,
+          "reason": "Illustration historique",
+          "alt": "Petites majuscules"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 35,
+          "reason": "Illustration historique",
+          "alt": "Masqué"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 36,
+          "reason": "Illustration historique",
+          "alt": "Barré"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 37,
+          "reason": "Illustration historique",
+          "alt": "Indice"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 38,
+          "reason": "Illustration historique",
+          "alt": "Exposant"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 44,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 48,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 52,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 54,
+          "reason": "Illustration historique",
+          "alt": "Contour"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 55,
+          "reason": "Illustration historique",
+          "alt": "Ombre"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 56,
+          "reason": "Illustration historique",
+          "alt": "Reflet"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 62,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 64,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 66,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 72,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 88,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 94,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 105,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 109,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 113,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 115,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 119,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 120,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 121,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 122,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 123,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 124,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 125,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 132,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 136,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 140,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 144,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 144,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 144,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 144,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 144,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 144,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 144,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 153,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 168,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 176,
+          "reason": "Illustration historique",
+          "alt": ""
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 228,
+          "reason": "Illustration historique",
+          "alt": "Insertion → Tableau 4×4"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 233,
+          "reason": "Illustration historique",
+          "alt": "Onglets Création et Disposition"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 240,
+          "reason": "Illustration historique",
+          "alt": "Marques de colonnes sur la règle"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 242,
+          "reason": "Illustration historique",
+          "alt": "Disposition — Taille de la cellule"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 249,
+          "reason": "Illustration historique",
+          "alt": "Lignes et colonnes — Insérer / Supprimer"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 255,
+          "reason": "Illustration historique",
+          "alt": "Neuf icônes d'alignement"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 257,
+          "reason": "Illustration historique",
+          "alt": "Exemple d'alignements dans un tableau 3×3"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 264,
+          "reason": "Illustration historique",
+          "alt": "Fusionner / Fractionner"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 271,
+          "reason": "Illustration historique",
+          "alt": "Création — groupe Bordures"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 293,
+          "reason": "Illustration historique",
+          "alt": "Galerie Styles — Accueil"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 297,
+          "reason": "Illustration historique",
+          "alt": "Label Exemple"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 301,
+          "reason": "Illustration historique",
+          "alt": "Exemple annoté — Titre 1 / Titre 2 / Normal / Numéros"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 307,
+          "reason": "Illustration historique",
+          "alt": "Menu — Créer un style"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 311,
+          "reason": "Illustration historique",
+          "alt": "Dialogue — Nom du style"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 317,
+          "reason": "Illustration historique",
+          "alt": "Propriétés — type Paragraphe"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 321,
+          "reason": "Illustration historique",
+          "alt": "Mise en forme du style"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 325,
+          "reason": "Illustration historique",
+          "alt": "Menu Format"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 339,
+          "reason": "Illustration historique",
+          "alt": "Clic droit — Mettre à jour / Modifier"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 347,
+          "reason": "Illustration historique",
+          "alt": "Galerie Styles — Titre 1 sélectionné"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 359,
+          "reason": "Illustration historique",
+          "alt": "Références — galerie Table des matières"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 365,
+          "reason": "Illustration historique",
+          "alt": "Dialogue — Table des matières personnalisée"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 377,
+          "reason": "Illustration historique",
+          "alt": "Groupe Table des matières — Mettre à jour la table"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 381,
+          "reason": "Illustration historique",
+          "alt": "Dialogue — Mettre à jour la table des matières"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 386,
+          "reason": "Illustration historique",
+          "alt": "Menu — Supprimer la table des matières"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 399,
+          "reason": "Illustration historique",
+          "alt": "Onglet Références — notes, citations, légendes"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 410,
+          "reason": "Illustration historique",
+          "alt": "Groupe Notes de bas de page"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 415,
+          "reason": "Illustration historique",
+          "alt": "Exemple de note de bas de page"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 431,
+          "reason": "Illustration historique",
+          "alt": "Citations et bibliographie — Gérer les sources"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 435,
+          "reason": "Illustration historique",
+          "alt": "Gestionnaire de source — Nouveau"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 439,
+          "reason": "Illustration historique",
+          "alt": "Créer une source — livre exemple"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 451,
+          "reason": "Illustration historique",
+          "alt": "Menu Insérer une citation"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 466,
+          "reason": "Illustration historique",
+          "alt": "Galerie Bibliographie — modèles prédéfinis"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 468,
+          "reason": "Illustration historique",
+          "alt": "Exemple de bibliographie"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 479,
+          "reason": "Illustration historique",
+          "alt": "Groupe Légendes"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 483,
+          "reason": "Illustration historique",
+          "alt": "Dialogue Légende"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 487,
+          "reason": "Illustration historique",
+          "alt": "Exemple — logo avec légende"
+        },
+        {
+          "page": "theorie",
+          "version": "full",
+          "line": 505,
+          "reason": "Illustration historique",
+          "alt": "Exemple — Table des illustrations"
+        }
+      ],
+      "pages": {
+        "objectifs": {
+          "full": "## Objectifs du module 805\n\nÀ l'issue de ce module, l'apprenti·e est capable de :\n\n- Saisir et corriger un texte (paragraphes, sauts, casse, date, symboles)\n- Mettre en forme paragraphes, insérer et formater des **illustrations**, bordures/trames et listes\n- Appliquer des **styles Titre** et générer / mettre à jour une **table des matières**\n- Insérer en-têtes, pieds de page, numéros de page et préparer l'impression",
+          "summary": "## Objectifs\n- Saisie · mise en forme\n- Styles · TdM\n- En-têtes · impression"
+        },
+        "apercu": {
+          "full": "## Aperçu du module 805\n\nCe module couvre les bases de **Word Microsoft 365** : saisie, mise en forme, styles, table des matières et impression.\n\n### Vous allez découvrir\n1. Saisie de texte, date/heure et symboles\n2. Paragraphes, illustrations, bordures, listes\n3. Styles, table des matières, en-têtes / pieds et numérotation\n4. Aperçu avant impression\n\n### Source\nEnterSite — Logistics by ASFL / SVBL · Bloc 800 ICT",
+          "summary": "## Aperçu — Module 805\n- Saisie · paragraphes · listes\n- Styles · table des matières\n- En-têtes · impression"
+        },
+        "theorie": {
+          "full": "## 5. Word Microsoft 365\n\nLe traitement de texte est central en pro et en privé (lettres simples → documentations illustrées) · compétence de base dans presque toutes les professions.\n\n### 5.1 L'écran de travail\n\nInterface Word : ruban (onglets Accueil, Insertion, Références…), zone de texte, règle, barre d'état.\n\n### 5.2 Écrire un texte\n\n\n\n#### 5.2.1 Base à connaître\n\n| Action | Bouton | Raccourci |\n| --- | --- | --- |\n| Afficher les caractères non imprimables |  | **Ctrl+Shift+8** |\n| Retour à la ligne | | **Enter** |\n| Retour à la ligne dans le même paragraphe | | **Shift + Enter** |\n| Saut de page | | **Ctrl + Enter** |\n| Effacer du texte | | **Delete** ou **Backspace** |\n| Sélectionner un mot | | **Double-clic** |\n| Sélectionner un paragraphe | | **Triple-clic** |\n\n#### 5.2.2 Police de texte\n\n| Action | Bouton | Raccourci | Exemple |\n| --- | --- | --- | --- |\n| Gras |  | **Ctrl + G** | Mots |\n| Italique |  | **Ctrl + I** | *Mots* |\n| Souligné |  | **Ctrl + U** | Mots |\n| Effacer la mise en forme |  | **Ctrl + Espace** | Mots |\n| Majuscule |  | **Ctrl + Shift + A** | Mots |\n| Petite majuscule |  | **Ctrl + Shift + K** | Mots |\n| Masqué |  | **Ctrl + Shift + H** | Mots |\n| Barré |  | | Mots |\n| En indice |  | | Mots |\n| En exposant |  | | Mots |\n\n#### 5.2.3 Paramètre avancés\n\n1. Étendre et réduire l'espacement des lettres\n\n\n\n2. Changer la couleur du texte et dégradé\n\n\n\n3. Effets de texte\n\n\n\n-  **Contour**\n-  **Ombre**\n-  **Reflet**\n\n### 5.3 Paragraphe\n\nIl y a **4 alignements possibles** : gauche, droite, centré et justifié.\n\n\n\n\n\n\n\n### 5.4 Illustrations\n\nDans Word, vous pouvez insérer différents types d'illustration comme des images, des formes, des schémas, etc.\n\n\n\nDans le ruban vous avez :\n\n1. **Images**\n2. **Formes**\n3. **Schémas** (SmartArt, graphiques…)\n4. **Capture d'écran**\n5. **Zone de texte** et **WordArt**\n\n#### Insérer des images\n\n1. Dans le menu, sélectionnez l'option « **Images** »\n2. Ensuite, choisissez l'emplacement de l'image\n- Vous pouvez également effectuer un « **glisser / déposer** » depuis le dossier vers le document Word (en maintenant le bouton gauche de la souris)\n\n\n\n#### Changer les paramètres de l'image\n\nLorsque vous sélectionnez une image, une option spéciale **Format de l'image** apparaît dans le ruban. Grâce à cet onglet, vous pouvez facilement modifier les paramètres de l'image.\n\n\n\n**3. Changer les dimensions de l'image**\n\n- **Rogner** : permet de couper l'image\n- **Hauteur** et **largeur** : permet de changer la taille\n\n**4. Aligner l'image** par rapport aux marges ou aux autres images du document\n\nAlignement horizontal :\n\n\n\nAlignement vertical :\n\n\n\n**5. Changer l'habillage de l'image**\n\n\n\n\n\n| Habillage | Exemple |\n| --- | --- |\n| Aligné sur le texte |  |\n| Encadré |  |\n| Adapté |  |\n| Au travers |  |\n| Haut et bas |  |\n| Derrière le texte |  |\n| Devant le texte |  |\n\n**6. Définir la position de l'image**\n\na. Sélectionner l'image et effectuer un **clic droit**\nb. Ensuite, sélectionner « **Taille et position…** »\n\n\n\nc. Sélectionner l'onglet « **Position** »\n\n\n\n**7. Changer le style de l'image**\n\n\n\n| Bordure | Ombre | Réflexion | Lumière | Estompé | Biseau | Rotation |\n| --- | --- | --- | --- | --- | --- | --- |\n|  |  |  |  |  |  |  |\n\n### 5.5 Bordure et trame\n\n#### Comment ajouter des bordures\n\n1. Cliquer sur les options de bordure\n2. Sélectionner « Bordure et trame… »\n\n\n\nDans ce menu, vous pouvez choisir :\n\n3. Le type\n4. Le style des traits des bordures\n5. La couleur\n6. La largeur\n7. Appliquer les bordures en cliquant sur le schéma central\n8. Sélectionner où rajouter ces bordures\n\n#### Comment ajouter des trames\n\n1. Sélectionner l’onglet « Trame de fond »\n\n\n\n2. Remplissage en couleur\n\n3. Trame de fond à 25%\n\n4. Trame de fond avec des différentes textures\n\n\n\n### 5.6 Puces et numérotation\n\nAccueil → Puces ou Numérotation · **Aucune** dans la bibliothèque pour supprimer.\n\n#### 5.6.1 Liste à plusieurs niveaux\nAccueil → Liste à plusieurs niveaux · changer de niveau avec **Augmenter / Diminuer le retrait** (curseur entre n° et texte). Pour une future table des matières : styles **Titre 1, Titre 2…**\n\n### 5.7 Styles de présentation\n\nFormats de caractères / paragraphes **mémorisés** · réutilisables. Accueil → galerie **Styles**. Styles **Titre** indispensables pour la table des matières.\n\n### 5.8 Table des matières\n\n1. Appliquer Titre 1, Titre 2… aux titres\n2. Positionner le curseur\n3. **Références** → Table des matières → modèle prédéfini\n\n#### 5.8.1 Mise à jour\nClic dans la table → bouton **Mettre à jour la table** (après modifications du texte).\n\n### 5.9 En-tête et pied de page\n\nTextes dans les marges haut / bas · souvent sur **toutes** les pages.\n\n#### 5.9.1 Prédéfini\nInsertion → En-tête / Pied de page → modèle → compléter si besoin.\n\n#### 5.9.2 Première page différente\nModifier l'en-tête/pied → cocher **Première page différente** (masque E/P sur la page 1).\n\n#### 5.9.3 Fermer\nBouton Fermer ou double-clic hors de la zone E/P.\n\n### 5.10 Numéroter les pages\n\nInsertion → Numéro de page → Haut / Bas de page · styles prédéfinis.\n\n### 5.11 Imprimer\n\n**Fichier → Imprimer** : aperçu à droite · choisir imprimante et paramètres · quitter via la flèche haut gauche.\n\n### 5.12 Tableaux\n\nUn **tableau** organise les informations en **grille** (lignes et colonnes). Utile pour comparer des données, un planning, un formulaire, un devis, etc.\n\n#### 5.12.1 Création d'un tableau\n1. Onglet **Insertion**\n2. Cliquer **Tableau**\n3. Sélectionner la taille (ex. **4×4**) ou **Insérer un tableau…**\n\n\n\n#### 5.12.2 Modification du tableau\nSélectionner le tableau ou placer le curseur dans une cellule → les onglets **Création** et **Disposition** apparaissent à droite du ruban.\n\n\n\n#### 5.12.3 Changer la taille\n1. Sélectionner une colonne, puis glisser les marques sur la **règle**\n2. Ou utiliser l'onglet **Disposition**\n3. Modifier hauteur / largeur dans **Taille de la cellule**\n\n\n\n\n\n#### 5.12.4 Ajouter ou supprimer des lignes / colonnes\n1. Sélectionner la ligne ou la colonne\n2. **Disposition** → **Supprimer**\n3. Ou **Insérer** une ligne / colonne (au-dessus, en dessous, à gauche, à droite)\n\n\n\n#### 5.12.5 Aligner le texte dans le tableau\n1. Sélectionner la ou les cellule(s)\n2. **Disposition** → l'alignement désiré (**9** positions : coin supérieur gauche … coin inférieur droit)\n\n\n\n\n\n#### 5.12.6 Fusionner et fractionner des cellules\n1. Sélectionner les cellules (ou lignes / colonnes)\n2. **Disposition** → **Fusionner**\n3. Ou **Fractionner** pour découper une cellule\n\n\n\n#### 5.12.7 Encadrer des cellules\n1. Sélectionner les lignes / colonnes (ou cellules)\n2. Onglet **Création**\n3. Groupe **Bordures** pour ajouter ou enlever des traits\n\n\n\n### 5.13 Styles\n\n#### 5.13.1 Un style, c'est quoi ?\nUn **style** est un ensemble de mises en forme enregistrées — typiquement une **police**, une **taille** et un **alignement** de paragraphe. À l'ouverture de Word, le modèle **Normal** est sélectionné par défaut. Ce modèle contient des styles de **titres** et plusieurs autres styles prêts à l'emploi.\n\n**Types de styles :**\n- **a.** Style de **caractère** — mise en forme d'un mot ou d'une sélection (police, gras, couleur…)\n- **b.** Style de **paragraphe** — mise en forme de tout le paragraphe (alignement, interligne, retraits…)\n- **c.** Style **lié** — combine caractère et paragraphe\n- **d.** Style de **liste** — puces / numérotation\n- **e.** Style de **tableau** — apparence globale d'un tableau\n\n#### 5.13.2 Utilité des styles\nEn **modifiant un style**, **toutes les occurrences** de ce style dans le document sont mises à jour automatiquement. Gain de temps, cohérence visuelle, et base indispensable pour une **table des matières**.\n\n#### 5.13.3 Appliquer un style\n1. Sélectionner le texte (ou placer le curseur dans le paragraphe)\n2. Onglet **Accueil** → groupe **Styles**\n3. Cliquer le style voulu dans la **galerie** (aperçu au survol)\n\n\n\n#### 5.13.4 Exemple\n\n\n\nDocument annoté (**Le Petit Rapporteur**) : styles marqués en rouge — **Titre 1**, **Titre 2**, **Normal**, **Numéros**.\n\n\n\n#### 5.13.5 Créer un style\n1. **a.** Mettre en forme le texte modèle (police, taille, alignement…)\n2. **b.** Ouvrir le menu de la galerie **Styles** (flèche vers le bas) → **Créer un style**\n\n\n\n3. **c.** Dans le dialogue **Créer un style à partir de la mise en forme**, saisir un **Nom** (ex. **EXEMPLE**) → éventuellement **Modifier…**\n\n\n\n4. **d.** Sous **Propriétés**, vérifier notamment :\n   - **Type de style** : **Paragraphe**\n   - **Style basé sur** / **Style du paragraphe suivant**\n\n\n\n5. **e.** Sous **Mise en forme**, ajuster police, taille, gras/italique, alignement, interligne… Consulter l'**aperçu**.\n\n\n\n6. **f.** Bouton **Format** pour les options avancées (Police, Paragraphe, Tabulations, Bordure, Numérotation…)\n\n\n\n7. **g.** Cocher **Ajouter à la galerie de styles** si besoin → **OK**\n\n#### 5.13.6 Modifier un style\n\n**Méthode 1 — Mettre à jour pour correspondre à la sélection**\n1. Modifier la mise en forme d'un texte déjà stylé\n2. Clic droit sur le style dans la galerie → **Mettre à jour … pour correspondre à la sélection**\n\n**Méthode 2 — Modifier… via Format**\n1. Clic droit sur le style → **Modifier…**\n2. Ajuster les options ou ouvrir **Format** (Police, Paragraphe…) → **OK**\n\n\n\n### 5.14 Table des matières\n\n#### 5.14.1 Créer une table des matières\nPour créer une table des matières, vous devez appliquer des styles de « Titres »\n- **a.** Par exemple : **Titre 1**, **Titre 2**, **Titre 3**, etc. au texte que vous souhaitez inclure dans la table des matières.\n\n\n\nMicrosoft Word recherche ces titres, puis insère la table des matières dans votre document.\nLorsque vous créez une table des matières de cette façon, vous pouvez la mettre rapidement à jour lorsque vous apportez des modifications à votre document.\n\n#### 5.14.2 Créer une table des matières à partir de la galerie\nUne fois les entrées marquées avec les « Titres 1, Titre 2, etc. », vous pouvez générer la table des matières :\n- **a.** Cliquer à l'endroit où vous souhaitez insérer la table des matières (en général au début du document)\n- **b.** Sous l'onglet **Références**\n- **c.** Cliquer sur **Table des matières**\n- **d.** Puis sur le style de table des matières souhaité\n\n\n\n- **e.** Cliquer sur **Table des matières personnalisée**, si vous souhaitez spécifier davantage d'options (par exemple le nombre de niveaux de titres à afficher)\n\n#### 5.14.3 Créer une table des matières personnalisée\n\n\n\nDans la boîte de dialogue **Table des matières**, vous pouvez effectuer l'une des opérations suivantes :\n- **a.** Saisir le nombre de niveaux dans **Afficher les niveaux**.\n- **b.** Choisir l'apparence globale dans le **Format**.\n- **c.** Choisir le type de ligne affichée entre le texte d'entrée et le numéro de page, dans **Caractères de suite**.\n- **d.** Les zones **Aperçu avant impression** et **Aperçu Web** vous donnent une idée de ce à quoi ressemblera votre table des matières.\n\n#### 5.14.4 Mettre à jour la table des matières\nSi vous avez ajouté ou supprimé des titres ou d'autres entrées de table des matières dans votre document, vous pouvez mettre à jour la table des matières rapidement.\n- **a.** Cliquer sur **Mettre à jour la table**, dans l'onglet **Références**\n\n\n\n- **b.** Cliquer sur **Mettre à jour les numéros de page uniquement** ou **Mettre à jour toute la table**.\n\n\n\n#### 5.14.5 Supprimer une table des matières\n- **a.** Cliquez sur **Table des matières**, puis sur **Supprimer la table des matières**.\n\n\n\n### 5.15 Référencements — Référencer c'est quoi ?\n\nQuand on écrit un document, on peut avoir besoin de citer des sources, d'ajouter des explications ou d'insérer des images avec des légendes. Pour faire ça proprement, on utilise les outils de **références** dans Word.\n\nVoici les principaux outils et à quoi ils servent :\n- **a.** Notes de bas de page ou de fin\n- **b.** Bibliographie et citations\n- **c.** Légendes et table des illustrations\n\nLes fonctionnalités se trouvent dans l'onglet **Références**.\n\n\n\n#### 5.15.1 Note de bas de page\n\nUne **note de bas de page** permet d'ajouter une petite explication ou une source en bas de la page. Par exemple, quand on parle d'un mot compliqué, on peut l'expliquer dans une note de bas de page.\n\n**Comment faire ?**\n- **a.** Cliquer à l'endroit du texte où on veut mettre la note\n- **b.** Aller dans l'onglet **Références**\n- **c.** Cliquer sur **Insérer une note de bas de page**\n\n\n\n- **d.** Word ajoute un petit chiffre (appel de note) à côté du texte\n- **e.** Écrire ensuite l'explication en bas de la page\n\n\n\nLa **note de fin** est comme une note de bas de page, mais elle s'affiche à la **toute fin** du document. Elle est utile si on veut regrouper toutes les notes au même endroit.\n\n#### 5.15.2 Bibliographie et citations\n\nLa **bibliographie** est une liste de tous les livres, sites web ou documents que tu as utilisés pour le travail. Elle se met souvent à la fin.\n\n##### Insérer des sources\n\nAvant d'insérer la bibliographie, il faut ajouter tes sources.\n\n**Comment faire ?**\n- **a.** Aller dans l'onglet **Références**\n- **b.** Cliquer sur **Gérer les sources**\n\n\n\n- **c.** Cliquer sur **Nouveau…**\n\n\n\n- **d.** Remplir les informations (titre, auteur, année, etc.) → **OK**\n\n\n\n##### Insérer une citation\n\nEnsuite, on peut insérer une **citation** dans le texte pour montrer d'où vient une idée ou une phrase.\n\n**Comment faire ?**\n- **a.** Cliquer dans le texte où on veut mettre la citation\n- **b.** Aller dans **Références**\n- **c.** Cliquer sur **Insérer une citation**\n- **d.** Choisir une source à ajouter\n\n\n\n- **e.** Word ajoute la source à la fin du paragraphe (ex. style auteur–année)\n\nExemple : *L'entreprise de logistique a connu une croissance exponentielle au cours des deux dernières années.* **(Van, 2000)**\n\n##### Insérer une bibliographie\n\nEnfin, on peut insérer la bibliographie avec toutes les sources saisies dans le document.\n\n**Comment faire ?**\n- **a.** Cliquer dans le texte où tu veux mettre la bibliographie\n- **b.** Aller dans **Références**\n- **c.** Cliquer sur **Bibliographie** et choisir un modèle\n\n\n\n\n\n#### 5.15.3 Légendes et table des illustrations\n\nQuand tu mets une image, une photo ou un graphique, il est bien de mettre une **légende** (une petite phrase en dessous pour dire ce que c'est).\n\n**Comment faire ?**\n- **a.** Cliquer sur l'image\n- **b.** Aller dans l'onglet **Références**\n- **c.** Cliquer sur **Insérer une légende**\n\n\n\n- **d.** Écrire un texte. Par exemple : « Figure 1 : Logo de l'entreprise »\n\n\n\n- **e.** Word crée une zone de texte sous l'image\n\n\n\n> **Astuce :** la zone de texte de la légende garde le même **habillage** que l'image.\n\n- **f.** On peut changer l'**étiquette** de la légende (Figure, Tableau…) ou simplement **exclure** le texte de l'étiquette (options du dialogue)\n\n##### Insérer une table des illustrations\n\nSi tu as mis plusieurs images ou graphiques avec des légendes, tu peux créer une **table des illustrations** (comme une table des matières, mais pour les images).\n\n**Comment faire ?**\n- **a.** Cliquer dans le texte où tu veux mettre la table des illustrations\n- **b.** Aller dans **Références**\n- **c.** Cliquer sur **Insérer une table des illustrations** et choisir un modèle\n- **d.** Word crée une liste de toutes les images avec leur numéro de page\n\n> **Astuce :** la table des illustrations **n'a pas de titre** — c'est à vous de le rajouter.\n\n\n",
+          "summary": "## À retenir — Module 805\n\n### Saisie de texte\nTableaux **Base à connaître** (¶, Enter, Shift+Enter, Ctrl+Enter, sélection) et **Police** (gras, italique, souligné, casse, indice/exposant…). **Paramètres avancés** : espacement des lettres, couleur / dégradé, effets (contour, ombre, reflet).\n\n### Mise en forme et listes\n**Paragraphe** : 4 alignements (gauche, droite, centré, justifié) et exemples de retraits (voir schéma *Aligner les paragraphes*). Le groupe Paragraphe permet aussi l'interligne et les retraits. **Illustrations** : insertion d'images (glisser-déposer), onglet **Format de l'image** (dimensions, alignements, habillage du texte, position, styles).\n\n### Styles et table des matières\nUn style regroupe des mises en forme réutilisables pour les caractères, les paragraphes, les listes ou les tableaux. Les styles Titre 1, Titre 2 et suivants sont indispensables pour générer une table des matières via l'onglet Références. Celle-ci se met à jour automatiquement après modification du document.\n\n### Tableaux et pages\nUn tableau organise les informations en lignes et colonnes. L'onglet Insertion permet de le créer, puis les onglets Création et Disposition servent à modifier la taille, fusionner des cellules et ajouter des bordures. Les en-têtes et pieds de page s'insèrent via Insertion, avec possibilité d'une première page différente. La numérotation et l'aperçu avant impression se trouvent dans Fichier.\n\n### Référencements\nLes notes de bas de page expliquent un terme en bas de page, les notes de fin regroupent les explications à la fin du document. Les sources s'enregistrent dans le gestionnaire, puis les citations et la bibliographie s'insèrent depuis Références. Les légendes décrivent les images, et la table des illustrations en recense toutes avec leur numéro de page."
+        },
+        "glossaire": {
+          "full": "## Glossaire — Module 805\n\n| Terme technique | Lien | Définition |\n| --- | --- | --- |\n| Ruban | | Barre d'outils de Word organisée en **onglets** (Accueil, Insertion, Références…). Chaque onglet regroupe des commandes par thème. |\n| Paragraphe | | Bloc de texte délimité par **Enter**. Un **saut de ligne** dans le même paragraphe se fait avec **Shift+Enter**. |\n| Afficher tout (¶) | | Mode qui affiche les **caractères non imprimables** (retours paragraphe, espaces, tabulations). Raccourci : **Ctrl+Shift+8**. |\n| Saut de page | | Force le texte suivant à commencer sur une **nouvelle page**. Raccourci : **Ctrl+Enter**. |\n| Habillage (texte) | | Mode de **disposition** d'une image par rapport au texte (aligné sur le texte, encadré, adapté, au travers, haut et bas, derrière / devant le texte). |\n| Format de l'image | | Onglet du ruban affiché lorsqu'une **image** est sélectionnée : taille, rognage, alignement, habillage, styles. |\n| Style | | Ensemble de mises en forme **mémorisées** (police, taille, alignement…). Types : caractère, paragraphe, lié, liste, tableau. |\n| Titre 1 / Titre 2… | | Styles de **titres** hiérarchiques. Indispensables pour générer une **table des matières** automatique. |\n| Table des matières (TdM) | | Liste automatique des titres du document avec **numéros de page**. Créée via **Références → Table des matières** après application des styles Titre. |\n| En-tête / Pied de page | | Zones de texte en **marge haute** ou **basse**, souvent répétées sur toutes les pages (logo, titre, numéro…). |\n| Note de bas de page | | Explication ou source placée **en bas de la page** avec un appel de note (chiffre) dans le texte. Onglet **Références**. |\n| Note de fin | | Comme une note de bas de page, mais regroupée **à la fin du document**. |\n| Bibliographie | | Liste des **sources** utilisées (livres, sites, documents). Insérée après avoir saisi les sources dans le **Gestionnaire de sources**. |\n| Citation | | Renvoi dans le texte à une source enregistrée (ex. style **auteur–année**). **Références → Insérer une citation**. |\n| Légende | | Texte sous une **image** ou un graphique (ex. « Figure 1 : Logo de l'entreprise »). **Références → Insérer une légende**. |\n| Table des illustrations | | Liste des figures / tableaux légendés avec numéros de page, comme une TdM pour les images. |\n| Fusionner (cellules) | | Combiner plusieurs **cellules** d'un tableau en une seule. Onglet **Disposition → Fusionner**. |\n| Trame | | **Fond coloré** d'un paragraphe ou d'une cellule. Accueil → Bordure et trame. |",
+          "summary": "## Glossaire — À retenir\n- **Enter** = paragraphe · **Shift+Enter** = saut de ligne · **Ctrl+Enter** = page\n- **Styles Titre** → base de la **TdM**\n- **Références** : notes · citations · bibliographie · légendes\n- **En-tête/pied** : marges haut/bas · **Fusionner** = cellules combinées"
+        },
+        "situation": {
+          "full": "## Mises en situation — Module 805\n\nContexte : chez **EnterSite AG**, Monsieur **Gugger** te demande de rédiger et mettre en forme des documents professionnels avec Word. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions proposées.\n\n---\n\n### Mission 1 — Rapport logistique avec styles et table des matières\n\nTu dois rédiger un rapport intitulé **« Le Petit Rapporteur »** avec des chapitres structurés. Explique comment appliquer les styles et insérer une table des matières.\n\n:::reponse\n1. Rédiger le texte et appliquer **Titre 1**, **Titre 2**, **Titre 3** aux titres de chapitres et sous-chapitres (Accueil → Styles)\n2. Placer le curseur **au début** du document (avant le texte)\n3. Onglet **Références** → **Table des matières** → choisir un modèle (ou **personnalisée** pour les niveaux)\n4. Word génère automatiquement la liste avec les numéros de page\n5. Après modification des titres : clic dans la TdM → **Mettre à jour la table** → tout ou numéros de page uniquement\n:::\n\n---\n\n### Mission 2 — Tableau de planification des livraisons\n\nEnterSite doit présenter un planning sur **5 jours** et **4 tournées**. Décris comment créer et formater le tableau dans Word.\n\n:::reponse\n1. **Insertion** → **Tableau** → sélectionner **5×5** (1 ligne d'en-tête + 4 tournées) ou **Insérer un tableau…**\n2. Saisir les en-têtes (Jour, Tournée A, B, C, D…)\n3. Onglets **Création** et **Disposition** pour :\n   - Ajuster largeur/hauteur des cellules\n   - **Aligner** le texte (9 positions)\n   - **Fusionner** des cellules si besoin (ex. jour sur plusieurs lignes)\n   - **Bordures** pour encadrer (onglet Création)\n:::\n\n---\n\n### Mission 3 — Bibliographie et citation\n\nDans ton rapport, tu cites une étude : *« L'entreprise de logistique a connu une croissance exponentielle… »* (Van, 2000). Comment gérer sources et bibliographie ?\n\n:::reponse\n1. **Références** → **Gérer les sources** → **Nouveau…**\n2. Renseigner auteur (**Van**), année (**2000**), titre, type de document → **OK**\n3. Placer le curseur dans le paragraphe → **Insérer une citation** → choisir la source\n4. Word ajoute le renvoi (ex. **Van, 2000**) en fin de paragraphe\n5. En fin de document : **Bibliographie** → choisir un modèle\n6. La liste des sources s'insère automatiquement\n:::\n\n---\n\n### Mission 4 — En-tête, pied de page et numérotation\n\nLe rapport EnterSite doit porter le logo en en-tête et le numéro de page en pied. La **première page** (page de garde) doit rester sans en-tête.\n\n:::reponse\n1. **Insertion** → **En-tête** → modèle → insérer le logo / nom EnterSite AG\n2. **Insertion** → **Pied de page** → modèle\n3. Dans l'en-tête/pied : cocher **Première page différente** (page 1 sans en-tête)\n4. **Insertion** → **Numéro de page** → position (haut ou bas) et style\n5. **Fermer** l'en-tête/pied (bouton ou double-clic hors zone)\n6. Vérifier via **Fichier → Imprimer** (aperçu)\n:::\n\n---\n\n### Mission 5 — Discussion STA\n\nDiscute avec la classe de l'intérêt des **styles** par rapport à la mise en forme manuelle (couleur, gras, taille saisis à la main).\n\n:::reponse\n**Réponse ouverte** — notes de discussion STA (pas de solution unique).\n:::",
+          "summary": "## Mises en situation — À retenir\n- **M1** : Titre 1/2/3 → Références → TdM → Mettre à jour\n- **M2** : Insertion → Tableau · Disposition · fusion · bordures\n- **M3** : Gérer sources → citation → bibliographie\n- **M4** : En-tête/pied · 1re page différente · n° de page\n- **M5** : discussion STA"
+        },
+        "maths": {
+          "full": "## Exercices de mathématiques — Module 805\n\nCalcule chaque résultat, puis vérifie avec le bouton solution.\n\n### Données — production documentaire EnterSite AG\n\n| Poste | Valeur |\n| --- | --- |\n| Rapport à rédiger | 3'500 mots |\n| Vitesse de frappe moyenne | 35 mots/min |\n| Pages du rapport final | 24 |\n| Exemplaires à imprimer | 20 |\n| Coût impression | CHF 0,12/page |\n| Tableau planning | 6 lignes × 5 colonnes |\n| Temps moyen par cellule | 1,5 min |\n\n---\n\n### Exercice 1 — Temps de rédaction\n\nCombien de **minutes** faut-il pour saisir **3'500 mots** à **35 mots/min** ?\n\n:::solution\n**Temps de saisie : 100 minutes**\n\n3'500 / 35 = **100 min** (= 1 h 40)\n:::\n\n---\n\n### Exercice 2 — Nombre de cellules du tableau\n\nUn tableau comporte **6 lignes** et **5 colonnes**.\n\nCombien de **cellules** au total ?\n\n:::solution\n**30 cellules**\n\n6 × 5 = **30 cellules**\n:::\n\n---\n\n### Exercice 3 — Temps de remplissage du tableau\n\nChaque cellule du tableau (exercice 2) prend en moyenne **1,5 minute**.\n\nQuel est le temps total en **minutes** ?\n\n:::solution\n**Temps total : 45 minutes**\n\n30 × 1,5 = **45 min**\n:::\n\n---\n\n### Exercice 4 — Coût d'impression\n\nLe rapport fait **24 pages**. EnterSite imprime **20** exemplaires à **CHF 0,12** la page.\n\nQuel est le **coût total** d'impression ?\n\n:::solution\n**Coût total : 57,60 CHF**\n\n24 × 20 × 0,12 = **57,60 CHF**\n:::\n\n> **Contrôle rapide (ordre du corrigé)** : 100 · 30 · 45 · 57,60",
+          "summary": "## Maths — Solutions\n1. Saisie **100 min** (3'500 ÷ 35)\n2. Tableau **30 cellules** (6 × 5)\n3. Remplissage **45 min** (30 × 1,5)\n4. Impression **57,60 CHF** (24 × 20 × 0,12)"
+        },
+        "verification": {
+          "full": "## Vérification des acquis — Questions de contrôle\n\nThème : **Word Microsoft 365**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.\n\n### Question 1\n\nQuelle est la différence entre **Enter** et **Shift+Enter** lors de la saisie ?\n\n:::reponse\n- **Enter** crée un **nouveau paragraphe**\n- **Shift+Enter** crée un **saut de ligne** dans le **même paragraphe** (pas de nouvelle indentation ni espacement de paragraphe)\n:::\n\n### Question 2\n\nQuelles étapes pour créer une **table des matières** automatique ?\n\n:::reponse\n1. Appliquer les styles **Titre 1**, **Titre 2**, etc. aux titres du document\n2. Placer le curseur à l'emplacement souhaité (souvent en début de document)\n3. Onglet **Références** → **Table des matières** → choisir un modèle\n4. Après modification : **Mettre à jour la table** (tout ou numéros de page uniquement)\n:::\n\n### Question 3\n\nCite **trois types d'habillage** d'image et décris brièvement leur effet.\n\n:::reponse\n| Habillage | Effet |\n| --- | --- |\n| **Aligné sur le texte** | L'image se comporte comme un caractère dans la ligne |\n| **Encadré** | Le texte contourne l'image sur un rectangle |\n| **Haut et bas** | Le texte passe au-dessus et en dessous, pas sur les côtés |\n| *(autres : adapté, au travers, derrière / devant le texte)* | Disposition libre ou calque sous / sur le texte |\n:::\n\n### Question 4\n\nComment **modifier un style** pour que tous les paragraphes concernés se mettent à jour ?\n\n:::reponse\n**Méthode 1** : modifier un texte stylé → clic droit sur le style dans la galerie → **Mettre à jour … pour correspondre à la sélection**\n\n**Méthode 2** : clic droit sur le style → **Modifier…** → ajuster les options → **OK**\n\nToutes les occurrences du style dans le document sont mises à jour automatiquement.\n:::\n\n### Question 5\n\nQuelle est la différence entre une **note de bas de page** et une **note de fin** ?\n\n:::reponse\n- **Note de bas de page** : l'explication apparaît **en bas de la même page** que l'appel de note\n- **Note de fin** : toutes les notes sont regroupées **à la toute fin du document**\n\nLes deux s'insèrent via **Références** (Insérer une note de bas de page / de fin).\n:::",
+          "summary": "## Questions de contrôle — Solutions\n1. **Enter** = paragraphe · **Shift+Enter** = saut de ligne\n2. Styles Titre → Références → TdM → Mettre à jour\n3. Habillage image : aligné sur le texte · encadré · haut et bas (etc.)\n4. Mettre à jour style = tout le document cohérent\n5. Bas de page = même page · Note de fin = fin du document"
+        }
+      }
+    },
+    {
+      "module": "806",
+      "status": "imported-unreviewed",
+      "excludedReferences": [],
+      "pages": {
+        "objectifs": {
+          "full": "## Objectifs du module 806\n\nÀ l'issue de ce module, l'apprenti·e est capable de :\n\n- Saisir et formater des données dans un classeur Excel\n- Créer des formules (opérateurs, priorités, **références absolues F4**)\n- Utiliser des fonctions statistiques et métiers (SI, RECHERCHV, ARRONDI…)\n- Créer un graphique adapté et préparer une **source de données** pour le publipostage",
+          "summary": "## Objectifs\n- Saisie · formules · F4\n- Fonctions · graphiques\n- Source publipostage"
+        },
+        "apercu": {
+          "full": "## Aperçu du module 806\n\nCe module couvre les bases d'**Excel Microsoft 365** : saisie, formules, fonctions, graphiques et lien avec le publipostage Word.\n\n### Vous allez découvrir\n1. Saisie et formatage des données\n2. Formules, opérateurs, références absolues et fonctions\n3. Graphiques recommandés et types principaux\n4. Source de données Excel pour un publipostage Word\n\n### Source\nEnterSite — Logistics by ASFL / SVBL · Bloc 800 ICT",
+          "summary": "## Aperçu — Module 806\n- Saisie · formules · fonctions\n- Graphiques\n- Publipostage (source Excel)"
+        },
+        "theorie": {
+          "full": "## 6. Excel Microsoft 365\n\nLes fichiers Excel s'appellent des **classeurs**. Nouveau classeur vierge · modèles · liste **Récent** · **Ouvrir** un existant.\n\n### 6.1 L'écran de travail\n\nRuban, barre de formule, feuille (lignes / colonnes / cellules), onglets de feuilles.\n\n### 6.2 Saisir des données\n\nTexte, chiffres, dates/heures, formules, fonctions. Excel reconnaît chiffres / dates / heures pour les calculs.  \nTexte aligné à **gauche** · nombres à **droite**. Paramètres régionaux **Suisse** : souvent le **point** comme séparateur décimal.\n\n**Sélection multiple** (zones non contiguës) : maintenir **Ctrl** pendant la sélection.\n\n#### 6.2.1 Formater un nombre\nPar défaut : format **Standard**. Menu contextuel → **Format de cellule** → décimales · séparateur de milliers…\n\n### 6.3 Calculs simples\n\n#### 6.3.1 Principe des formules\nToute formule commence par **=**.\n\n| Opérateurs | Exemples |\n| --- | --- |\n| Maths `+ − * / % ^` | `=5%` → 0,05 · `=2^3` → 8 |\n| Comparaison `= <> < > <= >=` | résultat **VRAI** / **FAUX** |\n| Concaténation `&` | `\"Ouest\"&\" et \"&\"Nord\"` |\n| Référence `:` `;` | `B1:C4` plage · `B1;C4` cellules séparées |\n\n**Fonctions** = formules préécrites (ex. **MOYENNE**).\n\n#### 6.3.2 Formule simple\nCellule résultat → `=` → cliquer les cellules + opérateurs → **Enter**. Ex. `=B2*C2`.\n\n#### 6.3.3 Fonctions statistiques (Accueil → Édition)\n| Fonction | Rôle |\n| --- | --- |\n| Somme | Total |\n| Moyenne | Moyenne |\n| Nb | Nombre de valeurs numériques |\n| Max / Min | Plus grande / plus petite |\n\n**Priorités :** `2*3+4=10` · `2*(3+4)=14` → utiliser des **parenthèses**.\n\n#### 6.3.4 Référence absolue\nFixer une cellule à la recopie : touche **F4** → `$A$1` · 2ᵉ F4 = ligne seule · 3ᵉ = colonne seule.\n\n### 6.4 Calcul avec fonctions\n\n`=` + début du nom → liste · double-clic → arguments.\n\n| Fonction | Usage |\n| --- | --- |\n| ARRONDI / .INF / .SUP | Arrondir (ex. paquets / palettes) |\n| ARRONDI.AU.MULTIPLE | Ex. 5 centimes · ou `=ARRONDI(n*20;0)/20` (négatifs visibles) |\n| RANG · GRANDE/PETITE.VALEUR | Classement / nᵉ valeur |\n| NB.SI · NB.SI.ENS · SOMME.SI(.ENS) | Compter / sommer sous condition |\n| SI · SIERREUR | Condition · masquer #N/A (ex. avec RECHERCHV) |\n| NBVAL · NB | Non vides / nombres |\n| VPM | Mensualité prêt |\n| RECHERCHV / RECHERCHX | Recherche dans un tableau |\n| GAUCHE / DROITE | Extraire caractères |\n| ANNEE / MOIS / JOUR | Extraire d'une date |\n| `&` / CONCATENER | Lier textes (espace entre `\" \"`) |\n\n**Données → Convertir** : séparer un texte (ex. `1400` | `Yverdon-les-Bains`).  \n**Heures > 24 h :** format `[hh]:mm` · calendrier 1904 pour heures négatives (options).\n\n#### 6.4.1–6.4.3 Formats\n- **%** : Excel ×100 → ne pas ×100 dans la formule\n- Boutons ↑/↓ décimales\n- Format **Comptabilité** + symbole monétaire (CHF…)\n\n### 6.5 Afficher les formules\n\nRaccourci **Ctrl + accent grave** (` sous Windows) : bascule formules ↔ résultats.\n\n### 6.6 Créer un graphique\n\n#### 6.6.1 Types\n| Type | Usage |\n| --- | --- |\n| Histogramme / courbe | Évolution dans le temps |\n| Secteurs | % d'une seule série |\n| Barres | Comparaisons |\n\n#### 6.6.2–6.6.4 Création\nSélectionner données (Ctrl si non contiguës) → **Insertion** → Graphiques recommandés ou type choisi.  \n**Déplacer le graphique** → Nouvelle feuille (onglet Création).\n\n### 6.7 Publipostage (mailing)\n\nEnvoi en nombre = **2 fichiers** :\n\n| Fichier | Contenu |\n| --- | --- |\n| Document de base (Word) | Texte fixe + **champs** |\n| Source de données (Excel) | Infos variables = **champs** × **enregistrements** |\n\n**Procédure :** créer Excel → lettre Word → Publipostage → **Sélection des destinataires** (liste existante) → insérer champs → **Aperçu** → **Terminer** (document fusionné).",
+          "summary": "## À retenir — Module 806\n\n### L'écran et la saisie\nUn fichier Excel est un **classeur** composé de feuilles avec lignes, colonnes et cellules. On y saisit du texte, des chiffres, des dates ou des formules. Excel aligne le texte à gauche et les nombres à droite ; en Suisse, le point sert souvent de séparateur décimal. Pour sélectionner plusieurs zones éloignées, on maintient **Ctrl**.\n\n### Formules et calculs\nToute formule commence par **=** et peut utiliser des opérateurs ou des fonctions comme **Somme** ou **MOYENNE**. La touche **F4** fixe une cellule en référence absolue (**$A$1**) lors de la recopie, et des **parenthèses** corrigent les priorités de calcul. Le raccourci **Ctrl + accent grave** affiche les formules à la place des résultats.\n\n### Graphiques et publipostage\nUn graphique se crée à partir de données sélectionnées via **Insertion**, en choisissant un type adapté (histogramme, secteurs ou barres). Le publipostage lie un document Word (texte fixe et champs) à un fichier Excel (données variables) pour envoyer des courriers en série via **Sélection des destinataires**, un **Aperçu** puis **Terminer**."
+        },
+        "glossaire": {
+          "full": "## Glossaire — Module 806\n\n| Terme technique | Lien | Définition |\n| --- | --- | --- |\n| Classeur | | Fichier Excel contenant une ou plusieurs **feuilles** de calcul. S'ouvre via Nouveau, modèle ou liste **Récent**. |\n| Cellule | | Intersection d'une **ligne** et d'une **colonne**. Chaque cellule a une adresse (ex. **B2**). C'est l'unité de base pour saisir données et formules. |\n| Formule | | Calcul commençant toujours par **=**. Combine opérateurs (+, −, *, /…), références de cellules et **fonctions**. |\n| Fonction | | Formule **préécrite** par Excel (ex. **SOMME**, **MOYENNE**, **SI**, **RECHERCHV**). Saisie : `=` + nom → liste d'aide. |\n| Référence absolue | | Cellule **fixée** lors de la recopie. Touche **F4** : `$A$1` (ligne et colonne), puis ligne seule ou colonne seule. |\n| Plage | | Ensemble de cellules contiguës (ex. **B1:C4** avec `:`) ou séparées (ex. **B1;C4** avec `;`). |\n| RECHERCHV | | Fonction de **recherche verticale** dans un tableau. Retourne une valeur correspondant à un critère (ex. prix selon référence article). |\n| SI | | Fonction **conditionnelle** : si une condition est vraie, retourne une valeur, sinon une autre. Ex. `=SI(A1>100;\"OK\";\"KO\")`. |\n| NB.SI | | Compte le nombre de cellules répondant à un **critère** (ex. nombre de livraisons « Terminé »). |\n| SOMME.SI | | Additionne les valeurs d'une plage qui répondent à un **critère**. |\n| ARRONDI | | Arrondit un nombre à un nombre de décimales défini. Variantes : **ARRONDI.INF**, **ARRONDI.SUP**, **ARRONDI.AU.MULTIPLE**. |\n| Graphique | | Représentation visuelle des données. Types : histogramme/courbe (évolution), secteurs (%), barres (comparaison). |\n| Publipostage | | Envoi en nombre de documents personnalisés. **Excel** = source de données (champs × enregistrements) · **Word** = modèle avec champs. |\n| Enregistrement | | Ligne de données dans une table Excel (un client, un article, une livraison…). Chaque ligne = un **enregistrement** pour le publipostage. |\n| Format Comptabilité | | Format de cellule affichant les nombres avec symbole monétaire (**CHF**) et alignement en colonnes. |",
+          "summary": "## Glossaire — À retenir\n- **Formule** commence par **=** · **F4** = référence absolue\n- **SI** · **RECHERCHV** · **NB.SI** · **SOMME.SI** · **ARRONDI**\n- **Graphique** : histogramme · secteurs · barres\n- **Publipostage** : Excel (données) + Word (modèle)"
+        },
+        "situation": {
+          "full": "## Mises en situation — Module 806\n\nContexte : chez **EnterSite AG**, Monsieur **Gugger** te charge d'analyser des données logistiques et de préparer un publipostage clients. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions proposées.\n\n---\n\n### Mission 1 — Tableau de ventes et formules\n\nTu disposes d'un tableau avec colonnes **Article**, **Quantité** (B) et **Prix unitaire** (C). La colonne **Total** (D) doit calculer le montant par ligne.\n\n:::reponse\n1. Cellule **D2** : saisir `=B2*C2` → **Enter**\n2. Recopier la formule vers le bas (poignée de recopie)\n3. Pour un total général en **D20** : `=SOMME(D2:D19)` ou bouton **Somme** (Accueil → Édition)\n4. Vérifier l'alignement : texte à gauche, nombres à droite\n5. Formater en **Comptabilité CHF** si besoin (menu contextuel → Format de cellule)\n:::\n\n---\n\n### Mission 2 — RECHERCHV pour les tarifs transport\n\nUn tableau de référence liste les **codes postaux** et les **tarifs de livraison**. Dans une autre feuille, tu saisis le code postal et veux afficher automatiquement le tarif.\n\n:::reponse\n1. Créer le tableau de référence (ex. colonne A = code postal, colonne B = tarif)\n2. Dans la cellule résultat : `=RECHERCHV(critère;plage;no_colonne;FAUX)`\n3. Ex. : `=RECHERCHV(A2;Tarifs!A:B;2;FAUX)`\n4. Le **FAUX** impose une correspondance exacte\n5. Si erreur #N/A : vérifier le code postal ou utiliser **SIERREUR** pour masquer l'erreur\n:::\n\n---\n\n### Mission 3 — Graphique d'évolution des stocks\n\nEnterSite souhaite visualiser l'évolution des stocks sur **6 mois**. Quel type de graphique choisir et comment le créer ?\n\n:::reponse\n1. Choisir un **histogramme** ou une **courbe** (évolution dans le temps)\n2. Sélectionner les données (mois + quantités) — **Ctrl** si zones non contiguës\n3. **Insertion** → **Graphiques recommandés** ou choisir le type\n4. Adapter titre et légendes (onglet **Création**)\n5. Option : **Déplacer le graphique** → **Nouvelle feuille** pour un affichage dédié\n:::\n\n---\n\n### Mission 4 — Source de données pour publipostage\n\nEnterSite envoie **120 lettres** personnalisées aux clients. Décris la procédure Excel + Word.\n\n:::reponse\n1. **Excel** : créer un tableau avec une ligne par client (Nom, Adresse, Ville, N° client…)\n2. Chaque colonne = un **champ** de publipostage\n3. **Word** : rédiger la lettre type avec texte fixe\n4. **Publipostage** → **Sélection des destinataires** → **Utiliser une liste existante** → choisir le fichier Excel\n5. Insérer les **champs** (<<Nom>>, <<Adresse>>…) dans la lettre\n6. **Aperçu des résultats** → vérifier → **Terminer et fusionner** → document fusionné ou impression\n:::\n\n---\n\n### Mission 5 — Discussion STA\n\nDiscute de l'intérêt de la touche **F4** (référence absolue) lors de la recopie de formules.\n\n:::reponse\n**Réponse ouverte** — notes de discussion STA (pas de solution unique).\n:::",
+          "summary": "## Mises en situation — À retenir\n- **M1** : `=B*C` · SOMME · format CHF\n- **M2** : RECHERCHV(critère;plage;col;FAUX)\n- **M3** : histogramme/courbe · Insertion → graphique\n- **M4** : Excel = source · Word = publipostage · fusionner\n- **M5** : discussion STA (F4)"
+        },
+        "maths": {
+          "full": "## Exercices de mathématiques — Module 806\n\nCalcule chaque résultat, puis vérifie avec le bouton solution.\n\n### Données — suivi logistique EnterSite AG\n\n| Article | Quantité | Prix unitaire (CHF) |\n| --- | --- | --- |\n| Palette A | 45 | 12,50 |\n| Palette B | 32 | 18,00 |\n| Carton C | 120 | 3,75 |\n| Carton D | 88 | 4,20 |\n\nTaux de TVA : **8,1 %** · Remise globale : **5 %** sur le sous-total HT\n\n---\n\n### Exercice 1 — Total par ligne\n\nCalcule le total pour **Palette A** (45 × 12,50 CHF).\n\n:::solution\n**Total Palette A : 562,50 CHF**\n\n45 × 12,50 = **562,50 CHF**\n:::\n\n---\n\n### Exercice 2 — Sous-total HT\n\nCalcule le **sous-total HT** des quatre lignes.\n\n:::solution\n**Sous-total HT : 2'789,10 CHF**\n\n(45×12,50) + (32×18) + (120×3,75) + (88×4,20) = 562,50 + 576 + 450 + 369,60 = **2'789,10 CHF**\n:::\n\n---\n\n### Exercice 3 — Remise de 5 %\n\nQuel montant de **remise** (5 %) s'applique au sous-total HT ?\n\n:::solution\n**Remise : 139,46 CHF**\n\n2'789,10 × 5 / 100 = **139,455 CHF** → **139,46 CHF** (arrondi)\n:::\n\n---\n\n### Exercice 4 — Montant TTC\n\nAprès remise, quelle est la **TVA** (8,1 %) puis le **total TTC** ?\n\n:::solution\n**Base après remise :** 2'789,10 − 139,46 = **2'649,64 CHF**\n\n**TVA :** 2'649,64 × 8,1 / 100 = **214,62 CHF**\n\n**Total TTC :** 2'649,64 + 214,62 = **2'864,26 CHF**\n:::\n\n> **Contrôle rapide (ordre du corrigé)** : 562,50 · 2'789,10 · 139,46 · 2'864,26",
+          "summary": "## Maths — Solutions\n1. Palette A **562,50 CHF**\n2. Sous-total HT **2'789,10 CHF**\n3. Remise **139,46 CHF**\n4. Total TTC **2'864,26 CHF**"
+        },
+        "verification": {
+          "full": "## Vérification des acquis — Questions de contrôle\n\nThème : **Excel Microsoft 365**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.\n\n### Question 1\n\nPar quoi commence toute **formule** Excel ? Que signifie la touche **F4** ?\n\n:::reponse\n- Toute formule commence par **=**\n- **F4** fixe une référence lors de la recopie : `$A$1` (absolu complet), puis ligne seule (`A$1`), colonne seule (`$A1`), puis relatif (A1)\n:::\n\n### Question 2\n\nCalcule mentalement : `2*3+4` et `2*(3+4)`. Pourquoi utiliser des parenthèses ?\n\n:::reponse\n- `2*3+4` = 6 + 4 = **10** (multiplication avant addition)\n- `2*(3+4)` = 2 × 7 = **14** (parenthèses en premier)\n- Les **parenthèses** changent l'ordre des opérations et évitent des erreurs de calcul\n:::\n\n### Question 3\n\nÀ quoi sert la fonction **SI** ? Donne un exemple logistique.\n\n:::reponse\n**SI** teste une condition et retourne une valeur si vrai, une autre si faux.\n\nEx. : `=SI(B2>=50;\"Stock OK\";\"Réapprovisionner\")` — si la quantité en B2 est ≥ 50, affiche « Stock OK », sinon « Réapprovisionner ».\n:::\n\n### Question 4\n\nQuels graphiques pour : (a) évolution mensuelle des ventes, (b) répartition des parts de marché ?\n\n:::reponse\n- **(a) Évolution dans le temps** : histogramme ou **courbe**\n- **(b) Répartition en %** d'une seule série : graphique en **secteurs**\n:::\n\n### Question 5\n\nQuels sont les **deux fichiers** nécessaires pour un publipostage et leur rôle ?\n\n:::reponse\n| Fichier | Rôle |\n| --- | --- |\n| **Excel** (source de données) | Tableau avec champs et enregistrements (une ligne = un destinataire) |\n| **Word** (document de base) | Lettre type avec champs de publipostage insérés (texte fixe + données variables) |\n:::",
+          "summary": "## Questions de contrôle — Solutions\n1. **=** · **F4** = référence absolue ($A$1)\n2. 10 vs 14 · parenthèses = priorités\n3. **SI** = condition · ex. stock OK / réappro\n4. Courbe/histogramme · secteurs\n5. Excel = données · Word = modèle"
+        }
+      }
+    },
+    {
+      "module": "807",
+      "status": "imported-unreviewed",
+      "excludedReferences": [],
+      "pages": {
+        "objectifs": {
+          "full": "## Objectifs du module 807\n\nÀ l'issue de ce module, l'apprenti·e est capable de :\n\n- Créer une présentation (modèle / copie) et personnaliser le **masque**\n- Insérer texte, tableaux, graphiques, images, SmartArt, vidéo et audio\n- Appliquer **transitions** et **animations** (ordre, minutage)\n- Configurer le diaporama, enregistrer (.pptx / vidéo) et imprimer",
+          "summary": "## Objectifs\n- Masque · diapositives · objets\n- Média · animations\n- Diaporama · export"
+        },
+        "apercu": {
+          "full": "## Aperçu du module 807\n\nCe module couvre **PowerPoint Microsoft 365** : création de diapositives, médias, animations et diffusion.\n\n### Vous allez découvrir\n1. Écran, Accès rapide, masque et dispositions\n2. Tableaux, graphiques, images, SmartArt, vidéo et audio\n3. Transitions, animations et configuration du diaporama\n4. Enregistrement (.pptx / vidéo) et impression\n\n### Source\nEnterSite — Logistics by ASFL / SVBL · Bloc 800 ICT",
+          "summary": "## Aperçu — Module 807\n- Masque · dispositions · objets\n- Média · transitions · animations\n- Diaporama · export · impression"
+        },
+        "theorie": {
+          "full": "## 7. PowerPoint Microsoft 365\n\nCréer des présentations (projection, web, entretien, cours, séances). Imprimable pour notes. Possible : défilement auto · animations · sons · vidéos · liens.  \n👉 PowerPoint = **support** · les techniques orales de présentation s'apprennent à part.\n\n### 7.1 L'écran de travail\n\nNouvelle présentation → ruban (onglets Fichier, Accueil, Insertion, Création, Transitions, Animations, Diaporama…).\n\n#### 7.1.1 Barre d'outils Accès rapide\nSi absente : **Fichier → Options → Barre d'outils Accès rapide** → Afficher. Ajouter au minimum : **Commencer depuis le début** · Enregistrer · Annuler · Refaire. Personnaliser aussi via le bouton ▼ de la barre.\n\n### 7.2–7.3 Outils d'aide\n**Annuler / Refaire** via Accès rapide.  \n**Affichage** : cocher Règle / Grille pour aligner les objets.\n\n### 7.4 Créer une présentation\n\n| Méthode | Démarche |\n| --- | --- |\n| Modèle / thème | Fichier → Nouveau → vignette |\n| Depuis existant | Fichier → Ouvrir → **Ouvrir une copie** → modifier → Enregistrer sous |\n\n### 7.5 Mode Masque des diapositives\n\nTrame commune : thème, polices, emplacements, puces. Modifications → **toutes** les diapositives.\n\n- Police / gras / italique / couleur (Accueil)\n- Puces / numéros / niveaux · Personnaliser (Webdings, Wingdings…)\n- Logo : Insertion → Images · fermer le masque ensuite\n\n### 7.6 Construire les diapositives\n\nAprès fermeture du masque :\n\n| Action | Où |\n| --- | --- |\n| Nouvelle diapositive | Accueil → Diapositives |\n| Disposition | Titre · Titre et contenu · Deux contenus… |\n\n**Saisie :** Enter = nouveau paragraphe · **Shift+Enter** = saut de ligne. Formats issus du masque. Niveaux de puces : Augmenter / Diminuer le retrait.\n\n### 7.7 Tableau\n\nDisposition Titre et contenu → icône Tableau → lignes / colonnes. Onglets **Création** et **Mise en page**.\n\nSélection cellule / colonne / ligne / tableau entier · Insérer / Supprimer lignes-colonnes · Scinder · Fusionner · Trier.\n\n### 7.8 Graphique\n\nPowerPoint s'appuie sur **Excel**.\n\n| Méthode | Démarche |\n| --- | --- |\n| Objet Excel | Insertion → Objet → À partir d'un fichier · **Liaison** = maj auto |\n| Titre et contenu | Icône Graphique → type → données fictives à adapter |\n\n### 7.9 Vidéo\n\nFormats mp3/mp4/mov… · disposition Titre et contenu ou Insertion → Vidéo.\n\n- **Fichier** local ou **Vidéo en ligne** (YouTube…) = moins lourd\n- **Découper** (onglet Lecture) · lecture aperçu · plein écran / luminosité (Format vidéo)\n\n### 7.10–7.11 SmartArt & images\n\nSmartArt → **Hiérarchie** (organigramme).  \nImages : Insertion (ou dans le masque) · Format image · **Aligner / Grouper** plusieurs images.\n\n### 7.12 Personnaliser\n\n| Réglage | Contenu |\n| --- | --- |\n| Taille | Défaut **16:9** (grand écran) · ou 4:3 / personnalisé (Conception) |\n| Arrière-plan | Masquer graphiques du masque sur une diapo (Mise en forme de l'arrière-plan) |\n\n### 7.13 Pied de page / numérotation\n\nInsertion → En-tête et pied de page : Date · N° diapositive · Texte pied → **Appliquer partout**.\n\n### 7.14 Audio\n\nInsertion → Audio → Fichier sur PC · ou **Enregistrer l'audio** (micro) → haut-parleur sur la diapo.\n\n### 7.15 Transition\n\nEffet d'apparition d'une diapo → suivante. Onglet **Transitions** : effet · options · durée · Après (auto) · **Appliquer partout**. Icône sous la miniature = transition présente.\n\n### 7.16 Animation\n\nEffets sur **objets** (pas toute la diapo) :\n\n| Type | Moment |\n| --- | --- |\n| Entrée | À l'arrivée |\n| Accentuation | Objet déjà là |\n| Sortie | Disparition |\n| Trajectoire | Mouvement |\n\nVolet Animation : ordre · démarrage (clic / avec précédent / après) · délai / durée · son associé.\n\n### 7.17 Diaporama\n\n| Config | Usage |\n| --- | --- |\n| Présentateur (plein écran) | Exposé live (défaut) |\n| Borne | Boucle jusqu'à Échap (stands) |\n| Personnalisé | Sous-ensemble / ordre choisi de diapos |\n| Mode Présentateur | 2 moniteurs (notes + public) |\n\n### 7.18 Enregistrer\n\n- **.pptx** : transitions + animations · visionneuse compatible côté destinataire\n- **Vidéo** : Fichier → Exporter → Créer une vidéo (wmv…) · résolution / minutage\n\n### 7.19 Imprimer\n\nFichier → Imprimer (Ctrl+P) : copies · imprimante · toutes / sélection / active · n° de diapos par page · recto / recto-verso.",
+          "summary": "## À retenir — Module 807\n\n### Création et masque\nPowerPoint crée des présentations pour un cours, un exposé ou une réunion ; c'est un **support visuel**, pas un substitut aux techniques orales. On part d'un modèle ou d'une copie, puis on personnalise le **masque des diapositives**, qui définit la trame commune (polices, puces, logo) pour toutes les pages.\n\n### Contenu et médias\nLes dispositions comme **Titre et contenu** structurent chaque diapositive. On y ajoute des tableaux, des graphiques Excel, des images ou du **SmartArt**. On peut aussi intégrer une **vidéo** (fichier ou en ligne) et de l'**audio**, y compris un enregistrement au micro.\n\n### Transitions et diffusion\nLes **transitions** relient les diapositives et les **animations** font bouger des objets précis (entrée, sortie, etc.). Pour présenter, le mode **Présentateur** convient à un exposé live et le mode **Borne** à un affichage en boucle. On enregistre en **.pptx** ou en **vidéo**, puis on imprime si besoin."
+        },
+        "glossaire": {
+          "full": "## Glossaire — Module 807\n\n| Terme technique | Lien | Définition |\n| --- | --- | --- |\n| Diapositive | | Page individuelle d'une présentation PowerPoint. Contient texte, images, tableaux, graphiques, vidéos… |\n| Masque des diapositives | | **Trame commune** (thème, polices, logo, puces) appliquée à **toutes** les diapositives. Modifications du masque = effet global. |\n| Disposition | | Modèle de mise en page d'une diapositive (Titre seul, Titre et contenu, Deux contenus…). |\n| Accès rapide | | Barre d'outils personnalisable en haut de l'écran (Enregistrer, Annuler, Commencer depuis le début…). |\n| SmartArt | | Graphiques intelligents pour organigrammes, processus, hiérarchies. Insertion → **SmartArt** → Hiérarchie. |\n| Transition | | Effet d'**apparition** entre deux diapositives (fondu, balayage…). Onglet **Transitions** · peut s'appliquer partout. |\n| Animation | | Effet sur un **objet** d'une diapositive (entrée, accentuation, sortie, trajectoire). Différent des transitions. |\n| Diaporama | | Mode de **présentation** plein écran. Variantes : présentateur, borne (boucle), personnalisé, mode Présentateur (2 écrans). |\n| Mode Présentateur | | Affichage sur **deux moniteurs** : notes et contrôles pour le présentateur, diapositive pour le public. |\n| .pptx | | Format de fichier PowerPoint standard. Conserve transitions et animations si le destinataire possède une visionneuse compatible. |\n| Liaison (objet Excel) | | Lien entre un graphique PowerPoint et un fichier Excel : les données se **mettent à jour** automatiquement si le fichier source change. |\n| Pied de page | | Zone en bas de diapositive pour date, numéro de diapositive ou texte fixe. **Insertion → En-tête et pied de page**. |",
+          "summary": "## Glossaire — À retenir\n- **Masque** = trame globale · **Disposition** = mise en page\n- **Transition** = entre diapos · **Animation** = sur un objet\n- **SmartArt** = organigramme · **Diaporama** = mode présentation\n- **.pptx** · liaison Excel pour graphiques"
+        },
+        "situation": {
+          "full": "## Mises en situation — Module 807\n\nContexte : Monsieur **Gugger** te demande de préparer une présentation PowerPoint pour la prochaine réunion EnterSite AG sur les résultats logistiques. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions proposées.\n\n---\n\n### Mission 1 — Créer la présentation et le masque\n\nTu dois créer une présentation avec le logo EnterSite et une charte graphique cohérente.\n\n:::reponse\n1. **Fichier → Nouveau** → choisir un thème ou modèle\n2. **Affichage → Masque des diapositives**\n3. Personnaliser : police, couleurs, puces (Accueil)\n4. **Insertion → Images** : placer le logo EnterSite AG\n5. Fermer le masque → toutes les diapositives héritent de la trame\n6. **Accueil → Diapositives** : ajouter des diapos avec disposition Titre et contenu\n:::\n\n---\n\n### Mission 2 — Insérer un graphique Excel\n\nLes données de ventes sont dans un fichier Excel. Comment les intégrer dans une diapositive avec mise à jour possible ?\n\n:::reponse\n**Méthode 1 — Objet lié**\n1. **Insertion → Objet → Créer à partir d'un fichier**\n2. Cocher **Liaison** pour mise à jour automatique\n\n**Méthode 2 — Disposition Titre et contenu**\n1. Icône **Graphique** sur la diapositive\n2. Choisir le type (histogramme, secteurs…)\n3. Adapter les données fictives dans la feuille Excel intégrée\n:::\n\n---\n\n### Mission 3 — Transitions et animations\n\nLa présentation doit être fluide mais professionnelle. Comment gérer transitions et animations ?\n\n:::reponse\n**Transitions** (entre diapositives)\n1. Onglet **Transitions** → choisir un effet (ex. Fondu)\n2. Régler la **durée** · option **Après** pour défilement auto\n3. **Appliquer partout** pour uniformiser\n\n**Animations** (sur objets)\n1. Sélectionner l'objet (texte, image…)\n2. Onglet **Animations** → type : Entrée, Accentuation, Sortie, Trajectoire\n3. Volet Animation : ordre, démarrage (au clic / avec précédent / après), délai\n:::\n\n---\n\n### Mission 4 — Présenter et exporter\n\nLa réunion approche. Comment lancer le diaporama et préparer une version vidéo pour les absents ?\n\n:::reponse\n**Diaporama live**\n1. **Diaporama → Depuis le début** (ou Accès rapide)\n2. Mode **Présentateur** si deux écrans (notes + public)\n\n**Export vidéo**\n1. **Fichier → Exporter → Créer une vidéo**\n2. Choisir résolution et minutage par diapositive\n3. Format **wmv** ou autre proposé\n\n**Enregistrement .pptx** : format standard, transitions et animations conservées\n:::\n\n---\n\n### Mission 5 — Discussion STA\n\nDiscute des bonnes pratiques : PowerPoint est un **support** — quelles règles pour ne pas surcharger les diapositives ?\n\n:::reponse\n**Réponse ouverte** — notes de discussion STA (pas de solution unique).\n:::",
+          "summary": "## Mises en situation — À retenir\n- **M1** : Masque → logo · dispositions\n- **M2** : Graphique Excel · liaison ou intégré\n- **M3** : Transitions (diapos) · Animations (objets)\n- **M4** : Diaporama · export vidéo · .pptx\n- **M5** : STA — support, pas surcharge"
+        },
+        "maths": {
+          "full": "## Exercices de mathématiques — Module 807\n\nCalcule chaque résultat, puis vérifie avec le bouton solution.\n\n### Données — présentation EnterSite AG\n\n| Paramètre | Valeur |\n| --- | --- |\n| Nombre de diapositives | 18 |\n| Durée moyenne par diapositive (exposé) | 2,5 min |\n| Temps de préparation par diapositive | 20 min |\n| Coût impression (notes, 4 diapos/page) | CHF 0,08/page |\n| Exemplaires notes à imprimer | 12 |\n\n---\n\n### Exercice 1 — Durée totale de l'exposé\n\nCombien de **minutes** dure la présentation (18 diapos × 2,5 min) ?\n\n:::solution\n**Durée : 45 minutes**\n\n18 × 2,5 = **45 min**\n:::\n\n---\n\n### Exercice 2 — Temps de préparation\n\nCombien de **heures** de préparation au total (18 × 20 min) ?\n\n:::solution\n**Préparation : 6 heures**\n\n18 × 20 = 360 min = **6 h**\n:::\n\n---\n\n### Exercice 3 — Pages d'impression des notes\n\nLes notes comprennent **18 diapositives**, **4 diapositives par page**. Combien de **pages** à imprimer (arrondi supérieur) ?\n\n:::solution\n**5 pages**\n\n18 / 4 = 4,5 → **5 pages** (arrondi supérieur)\n:::\n\n---\n\n### Exercice 4 — Coût d'impression des notes\n\nImprimer **5 pages** × **12 exemplaires** à **CHF 0,08**/page.\n\n:::solution\n**Coût : 4,80 CHF**\n\n5 × 12 × 0,08 = **4,80 CHF**\n:::\n\n> **Contrôle rapide (ordre du corrigé)** : 45 · 6 · 5 · 4,80",
+          "summary": "## Maths — Solutions\n1. Exposé **45 min** (18 × 2,5)\n2. Préparation **6 h** (18 × 20 min)\n3. Impression **5 pages** (18 ÷ 4)\n4. Coût **4,80 CHF** (5 × 12 × 0,08)"
+        },
+        "verification": {
+          "full": "## Vérification des acquis — Questions de contrôle\n\nThème : **PowerPoint Microsoft 365**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.\n\n### Question 1\n\nQuelle est la différence entre **masque des diapositives** et **disposition** ?\n\n:::reponse\n- **Masque** : trame **globale** (logo, polices, couleurs) appliquée à toutes les diapositives\n- **Disposition** : **mise en page** d'une diapositive individuelle (emplacement titre/contenu)\n:::\n\n### Question 2\n\nQuelle est la différence entre une **transition** et une **animation** ?\n\n:::reponse\n- **Transition** : effet de passage **entre deux diapositives** entières\n- **Animation** : effet sur un **objet** à l'intérieur d'une diapositive (entrée, accentuation, sortie, trajectoire)\n:::\n\n### Question 3\n\nCite **quatre types d'animations** et leur moment.\n\n:::reponse\n| Type | Moment |\n| --- | --- |\n| **Entrée** | À l'arrivée de l'objet |\n| **Accentuation** | Objet déjà visible |\n| **Sortie** | Disparition de l'objet |\n| **Trajectoire** | Déplacement de l'objet |\n:::\n\n### Question 4\n\nQuelles configurations de diaporama connais-tu ?\n\n:::reponse\n- **Présentateur** (plein écran) — exposé live\n- **Borne** — boucle jusqu'à Échap (stands)\n- **Personnalisé** — sous-ensemble ou ordre choisi\n- **Mode Présentateur** — 2 moniteurs (notes + public)\n:::\n\n### Question 5\n\nComment insérer une **vidéo** dans une diapositive ? Quelle option réduit la taille du fichier ?\n\n:::reponse\n1. Disposition **Titre et contenu** → icône Vidéo, ou **Insertion → Vidéo**\n2. **Fichier** sur le PC ou **Vidéo en ligne** (YouTube…)\n3. **Vidéo en ligne** = fichier moins lourd (pas de gros fichier intégré)\n4. Onglet **Lecture** : découper, aperçu, plein écran\n:::",
+          "summary": "## Questions de contrôle — Solutions\n1. Masque = trame globale · Disposition = mise en page\n2. Transition = entre diapos · Animation = sur objet\n3. Entrée · Accentuation · Sortie · Trajectoire\n4. Présentateur · Borne · Personnalisé · 2 écrans\n5. Insertion → Vidéo · en ligne = plus léger"
+        }
+      }
+    },
+    {
+      "module": "808",
+      "status": "imported-unreviewed",
+      "excludedReferences": [],
+      "pages": {
+        "objectifs": {
+          "full": "## Objectifs du module 808\n\nÀ l'issue de ce module, l'apprenti·e est capable de :\n\n- Distinguer les **versions** OneNote et organiser un bloc-notes (sections / pages)\n- Prendre des notes (texte, dessin) et **partager** pour collaborer\n- Utiliser balises, couleurs et **modèles** (y compris modèles perso)\n- Enregistrer de l'audio, utiliser la recherche intelligente et convertir le **manuscrit en texte**",
+          "summary": "## Objectifs\n- Versions · structure\n- Notes · partage\n- Balises · modèles · manuscrit"
+        },
+        "apercu": {
+          "full": "## Aperçu du module 808\n\nCe module présente **OneNote Microsoft 365** : organisation des notes, collaboration et fonctionnalités avancées.\n\n### Vous allez découvrir\n1. Versions OneNote et structure bloc-notes / sections / pages\n2. Création, saisie, dessin et partage\n3. Balises, couleurs, modèles et enregistrement audio\n4. Recherche intelligente et conversion manuscrit → texte\n\n### Source\nEnterSite — Logistics by ASFL / SVBL · Bloc 800 ICT",
+          "summary": "## Aperçu — Module 808\n- Versions · structure\n- Notes · partage · balises\n- Modèles · audio · manuscrit"
+        },
+        "theorie": {
+          "full": "## 8. OneNote Microsoft 365\n\nCentraliser documents, ressources et notes (cours / projet) au même endroit · remplacer le bloc-notes papier · intégrer PowerPoint, Word, web, captures, notes manuscrites…\n\n### 8.1 Versions\n\n| Version | Particularité |\n| --- | --- |\n| **OneNote 2016** (bureau) | Ruban Office complet · sections horizontales · **seul** à stocker aussi en local (PC) + cloud · max. d'options (Fichier → Options) |\n| **OneNote pour Windows** | Préinstallé · ruban compact · navigation verticale · Premium M365 (relecture manuscrite, Chercheur, Maths…) |\n| **OneNote 365** | Équivalent cloud · données sur **OneDrive** |\n\nFonctions et symboles proches d'une version à l'autre → on s'y retrouve vite.\n\n### 8.2 Structure\n\n**Bloc-notes** → **sections** → **pages** / sous-pages. Organisation libre · renommer, déplacer, supprimer à tout moment.\n\n### 8.3 Formation\n\nAide Microsoft (vidéos à jour) :  \n[Formation OneNote](https://support.microsoft.com/fr-fr/office/vid%C3%A9o-de-formation-onenote-1c983b65-42f6-42c1-ab61-235aae5d0115)\n\n### 8.4 Premiers pas\n\n1. **Fichier → Nouveau** → emplacement (ex. OneDrive) → nom → Créer  \n2. Partage possible à la création ou plus tard  \n3. **+ Nouvelle section** · clic droit → Renommer  \n4. **Ajouter une page** · cliquer le titre en haut pour nommer\n\n### 8.5 Prise de notes\n\n- **Texte :** clic n'importe où · police / taille / couleur\n- **Dessin :** onglet Dessin · stylet / souris / doigt · formes, crayons, surligneurs, pinceaux\n\n### 8.6 Collaboration et partage\n\nUtile pour : coédition · révision · historique des versions (y compris partage avec soi-même).\n\n**Fichier → Partager** → e-mail · autorisations · message → Envoyer. Modifier les personnes à tout moment · coédition en temps réel.\n\n### 8.7 Astuces avancées\n\n#### 8.7.1 Recherche intelligente\nRévision → sélectionner des mots → **Recherche intelligente** (panneau web à droite) · ou saisir d'autres termes.\n\n#### 8.7.2 Audio\nInsertion → **Enregistrer l'audio** → Arrêter · fichier sur la page · Renommer (clic droit) · Lecture.\n\n### 8.8 Organisation avancée\n\n#### 8.8.1 Balises\nCases à cocher, adresse (maison), etc. · créer les siennes : **Personnaliser mes balises** → Nouvelle balise (nom, symbole, couleur texte / surlignage).  \n**Rechercher des indicateurs** : panneau de toutes les balises du bloc-notes (cocher / décocher depuis le panneau).\n\n#### 8.8.2 Couleurs\n| Élément | Comment |\n| --- | --- |\n| Bloc-notes | Clic droit → Propriétés → couleur |\n| Section | Clic droit → Couleur de la section |\n| Page | Affichage → Couleur de page |\n\n### 8.9–8.10 Modèles\n\n**Insertion → Modèles de page** : Académique · Vierge · Professionnel · Décoratif · Planificateur.  \n**Enregistrer la page active comme modèle** → Mes modèles · option modèle par défaut de la section.\n\n#### Notes manuscrites\nDessin → **Sélection par lasso** → **Entrée manuscrite en texte** (stylet → texte tapé).\n\n### 8.11 Conclusion\n\nOutil polyvalent · explorer les fonctions pour l'adapter à son style de travail.",
+          "summary": "## À retenir — Module 808\n\n### Versions et structure\nOneNote regroupe notes, documents et ressources dans un même espace. Selon la version (**2016**, **pour Windows** ou **365**), l'interface et le stockage varient, mais l'organisation reste la même : **bloc-notes → sections → pages**.\n\n### Notes et partage\nOn saisit du texte librement et on dessine via l'onglet **Dessin**. Le **partage** permet la coédition en temps réel et l'historique des versions, y compris entre ses propres appareils.\n\n### Organisation avancée\nLes **balises**, les couleurs et les **modèles de page** facilitent le classement. La **recherche intelligente** complète des termes sélectionnés, et le lasso convertit une note manuscrite en texte."
+        },
+        "glossaire": {
+          "full": "## Glossaire — Module 808\n\n| Terme technique | Lien | Définition |\n| --- | --- | --- |\n| Bloc-notes | | Conteneur principal OneNote regroupant **sections** et **pages**. Équivalent d'un classeur ou d'un dossier de cours. |\n| Section | | Division thématique d'un bloc-notes (ex. « Module 801 », « Projet EnterSite »). Créée via **+ Nouvelle section**. |\n| Page | | Feuille de notes dans une section. Clic sur le titre en haut pour **nommer**. Peut contenir sous-pages. |\n| OneNote 365 | | Version **cloud** : données stockées sur **OneDrive**, accessibles depuis plusieurs appareils. |\n| OneNote 2016 | | Version **bureau** : seule à pouvoir stocker aussi en **local** (PC) + cloud · ruban Office complet. |\n| Coédition | | Travail **simultané** de plusieurs personnes sur le même bloc-notes en temps réel. Via **Fichier → Partager**. |\n| Balise | | Marqueur visuel (case à cocher, adresse, étoile…) pour organiser et retrouver des notes. **Personnaliser mes balises** pour en créer. |\n| Modèle de page | | Mise en page prédéfinie (Académique, Professionnel, Planificateur…). **Insertion → Modèles de page**. |\n| Recherche intelligente | | Panneau web à droite affichant des résultats liés au texte sélectionné. Onglet **Révision**. |\n| Lasso | | Outil de sélection (onglet **Dessin**) pour entourer une écriture manuscrite et la convertir en texte. |\n| Entrée manuscrite en texte | | Conversion de l'écriture à la main en texte tapé. Lasso → **Entrée manuscrite en texte**. |\n| Historique des versions | | Suivi des modifications d'une page partagée. Permet de revenir à une version antérieure. |",
+          "summary": "## Glossaire — À retenir\n- **Bloc-notes → sections → pages**\n- **365** = cloud OneDrive · **2016** = local possible\n- **Balises** · **modèles** · **coédition**\n- **Lasso** → manuscrit en texte · **Recherche intelligente**"
+        },
+        "situation": {
+          "full": "## Mises en situation — Module 808\n\nContexte : pour ton apprentissage chez **EnterSite AG**, tu organises tes notes de cours et de stage dans OneNote. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions proposées.\n\n---\n\n### Mission 1 — Structurer le bloc-notes CFC Logistique\n\nTu débutes l'année et veux un bloc-notes clair pour tous les modules EnterSite.\n\n:::reponse\n1. **Fichier → Nouveau** → emplacement **OneDrive** → nom « CFC Logistique EnterSite »\n2. **+ Nouvelle section** par bloc ou module (ex. « Bloc 800 ICT », « Bloc 700 »)\n3. Clic droit sur section → **Renommer**\n4. **Ajouter une page** par leçon · nommer le titre en haut\n5. Couleur de section (clic droit → **Couleur de la section**) pour repérage visuel\n:::\n\n---\n\n### Mission 2 — Notes de réunion avec le formateur\n\nPendant une réunion, tu prends des notes mixtes (texte + schéma). Comment organiser et retrouver les tâches ?\n\n:::reponse\n1. **Texte** : clic n'importe où sur la page · police/taille/couleur\n2. **Dessin** : onglet **Dessin** → stylet/souris → formes, surligneur\n3. **Balises** : case à cocher pour les tâches · **Rechercher des indicateurs** pour tout lister\n4. **Audio** : Insertion → **Enregistrer l'audio** pendant la réunion → fichier sur la page\n5. **Recherche intelligente** : sélectionner un terme technique → panneau web à droite\n:::\n\n---\n\n### Mission 3 — Partager avec un collègue de classe\n\nTu travailles en binôme sur un rapport de stage. Comment partager le bloc-notes ?\n\n:::reponse\n1. **Fichier → Partager**\n2. Saisir l'e-mail du collègue (`prenom.nom@edu.vs.ch`)\n3. Choisir les **autorisations** (lecture ou modification)\n4. Message optionnel → **Envoyer**\n5. **Coédition en temps réel** : les deux peuvent modifier simultanément\n6. **Historique des versions** disponible pour revenir en arrière si besoin\n:::\n\n---\n\n### Mission 4 — Modèle de page pour comptes rendus\n\nTu rédiges souvent des comptes rendus de stage avec la même structure.\n\n:::reponse\n1. Créer une page type (titre, date, activités, apprentissages, signature)\n2. **Insertion → Modèles de page** → choisir **Professionnel** ou **Vierge** comme base\n3. Mettre en forme la page finale\n4. **Enregistrer la page active comme modèle** → **Mes modèles**\n5. Option : définir comme **modèle par défaut** de la section\n6. Chaque nouvelle page peut reprendre cette structure\n:::\n\n---\n\n### Mission 5 — Discussion STA\n\nDiscute des avantages de OneNote par rapport à un bloc-notes papier pour un apprenti en logistique.\n\n:::reponse\n**Réponse ouverte** — notes de discussion STA (pas de solution unique).\n:::",
+          "summary": "## Mises en situation — À retenir\n- **M1** : bloc-notes OneDrive · sections par bloc · pages nommées\n- **M2** : texte + dessin · balises · audio · recherche intelligente\n- **M3** : Partager → coédition · historique versions\n- **M4** : modèle perso · Mes modèles · défaut section\n- **M5** : STA — OneNote vs papier"
+        },
+        "maths": {
+          "full": "## Exercices de mathématiques — Module 808\n\nCalcule chaque résultat, puis vérifie avec le bouton solution.\n\n### Données — organisation des notes EnterSite\n\n| Élément | Quantité |\n| --- | --- |\n| Modules CFC à documenter | 24 |\n| Pages par module (moyenne) | 8 |\n| Sections du bloc-notes | 6 |\n| Durée moyenne par page (prise de notes) | 12 min |\n| Enregistrements audio par semaine | 3 |\n| Durée moyenne par audio | 8 min |\n\n---\n\n### Exercice 1 — Nombre total de pages prévues\n\nCombien de **pages** au total (24 modules × 8 pages) ?\n\n:::solution\n**192 pages**\n\n24 × 8 = **192 pages**\n:::\n\n---\n\n### Exercice 2 — Pages par section\n\nSi les **192 pages** sont réparties également dans **6 sections**, combien de pages par section ?\n\n:::solution\n**32 pages par section**\n\n192 / 6 = **32 pages**\n:::\n\n---\n\n### Exercice 3 — Temps de saisie total\n\nCombien de **heures** pour saisir les 192 pages à 12 min/page ?\n\n:::solution\n**38,4 heures**\n\n192 × 12 = 2'304 min = **38,4 h**\n:::\n\n---\n\n### Exercice 4 — Temps audio hebdomadaire\n\nCombien de **minutes** d'audio par semaine (3 × 8 min) ?\n\n:::solution\n**24 minutes/semaine**\n\n3 × 8 = **24 min**\n:::\n\n> **Contrôle rapide (ordre du corrigé)** : 192 · 32 · 38,4 · 24",
+          "summary": "## Maths — Solutions\n1. **192 pages** (24 × 8)\n2. **32 pages/section** (192 ÷ 6)\n3. Saisie **38,4 h** (192 × 12 min)\n4. Audio **24 min/sem.** (3 × 8)"
+        },
+        "verification": {
+          "full": "## Vérification des acquis — Questions de contrôle\n\nThème : **OneNote Microsoft 365**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.\n\n### Question 1\n\nQuelle est la **structure hiérarchique** d'un bloc-notes OneNote ?\n\n:::reponse\n**Bloc-notes** → **sections** → **pages** (et éventuellement sous-pages)\n\nChaque niveau peut être renommé, déplacé ou supprimé à tout moment.\n:::\n\n### Question 2\n\nQuelle différence entre **OneNote 2016** et **OneNote 365** concernant le stockage ?\n\n:::reponse\n- **OneNote 2016** (bureau) : seul à stocker aussi en **local** (PC) + cloud · ruban Office complet\n- **OneNote 365** : version **cloud** · données sur **OneDrive**\n:::\n\n### Question 3\n\nComment **partager** un bloc-notes et permettre la coédition ?\n\n:::reponse\n1. **Fichier → Partager**\n2. Saisir l'e-mail du destinataire\n3. Définir les **autorisations** (lecture / modification)\n4. **Envoyer** → coédition en temps réel possible\n5. Modifier les personnes autorisées à tout moment\n:::\n\n### Question 4\n\nComment convertir une **note manuscrite** en texte tapé ?\n\n:::reponse\n1. Onglet **Dessin**\n2. **Sélection par lasso** : entourer l'écriture manuscrite\n3. **Entrée manuscrite en texte** → conversion en texte tapé\n:::\n\n### Question 5\n\nÀ quoi servent les **balises** et comment les retrouver toutes ?\n\n:::reponse\n- **Balises** : marqueurs visuels (case à cocher, adresse, étoile…) pour organiser les notes et les tâches\n- **Personnaliser mes balises** : créer ses propres balises (nom, symbole, couleur)\n- **Rechercher des indicateurs** : panneau listant toutes les balises du bloc-notes (cocher/décocher depuis le panneau)\n:::",
+          "summary": "## Questions de contrôle — Solutions\n1. Bloc-notes → sections → pages\n2. 2016 = local+cloud · 365 = OneDrive\n3. Fichier → Partager → autorisations → coédition\n4. Dessin → Lasso → Entrée manuscrite en texte\n5. Balises = marqueurs · Rechercher des indicateurs"
+        }
+      }
+    },
+    {
+      "module": "809",
+      "status": "imported-unreviewed",
+      "excludedReferences": [],
+      "pages": {
+        "objectifs": {
+          "full": "## Objectifs du module 809\n\nÀ l'issue de ce module, l'apprenti·e est capable de :\n\n- Définir l'**intralogistique** et citer ses domaines d'activité\n- Expliquer les **objectifs** du poste de contrôle (indicateurs + visualisation)\n- Décrire son **rôle** (évaluation / recommandations vs décision humaine)\n- Citer les **exigences** envers les collaborateurs du poste de contrôle",
+          "summary": "## Objectifs\n- Intralogistique\n- Poste de contrôle · KPI\n- Rôle · profil collab."
+        },
+        "apercu": {
+          "full": "## Aperçu du module 809\n\nCe module situe l'**intralogistique** et le rôle du **poste de contrôle** (panneau de commande) dans l'entrepôt.\n\n### Vous allez découvrir\n1. Définition et rôles de l'intralogistique\n2. Objectifs du poste de contrôle (KPI et visualisation)\n3. Rôles opérationnels et exigences des collaborateurs\n4. Conclusion : contrôle opérationnel et recommandations\n\n### Source\nEnterSite — Logistics by ASFL / SVBL · Bloc 800 ICT",
+          "summary": "## Aperçu — Module 809\n- Intralogistique\n- Poste de contrôle (KPI · process)\n- Profil collaborateurs"
+        },
+        "theorie": {
+          "full": "## 9. Poste de contrôle\n\n### 9.1 Intralogistique\n\nTerme d'origine allemande (manutention / stockage). **Logistique interne** à l'entreprise : contrôler, exécuter et organiser le **flux de matériel** interne.\n\n👉 Même domaine que le flux de matériel interne / micro-logistique · met en évidence la frontière **interne ↔ externe**.\n\n#### 9.1.1 Rôles\nRéception et sortie · systèmes de stockage · transport · logiciel picking / tri · télématique, capteurs, robotique · logiciels métier · systèmes complets.\n\n👉 Harmoniser le plus grand nombre possible de domaines et de conditions.\n\n### 9.2 Le poste de contrôle\n\nAussi appelé **panneau de commande** · point central d'un **WMS** · assiste la gestion globale entrepôt / exploitation. Importance croissante avec capteurs et robotique.\n\n#### 9.2.1 Objectifs\nRegrouper les **KPI** d'intralogistique (saisie, évaluation, analyse récurrente), par ex. :\n\n- Volume / urgences en commissionnement\n- Transports utilisés / actifs\n- Capacité personnel (expédition, picking)\n- Livraisons entrantes encore ouvertes\n- Taux de prélèvement · volume prévu du jour\n\nAussi : **représentation graphique** des processus → réagir vite aux perturbations / imprévus · flux sans faille. Questions typiques : dysfonctionnements manutention ? logiciel ?\n\nNiveau technique du poste de contrôle → impact fort sur l'**efficacité** des processus.\n\n#### 9.2.2 Rôle\nSelon l'infrastructure : visualisation · planification · optimisation · prévisions vs réalité · limites de performance · controlling · état du système.\n\nLe responsable peut ↑ / modifier ressources ou mesures organisationnelles. En général le poste de contrôle **évalue, prépare et visualise** — il ne pilote pas toujours directement.  \nParticularité : les collaborateurs **associent** les recommandations à leur expérience · **eux** décident des mesures finales.\n\n#### 9.2.3 Exigences collaborateurs\nPivot de l'intralogistique · formation logistique solide + expérience · bonnes compétences **IT / Excel** · pensée analytique, process, prévoyante · **travail en équipe** fréquent.\n\n#### 9.2.4 Conclusion\nInstrument de **contrôle opérationnel** en intralogistique : soutient planification et pilotage · visualise / surveille en continu · détecte écarts objectifs ↔ réalité · propose des **recommandations d'action**.",
+          "summary": "## À retenir — Module 809\n\n### Intralogistique\nL'**intralogistique** est la logistique **interne** d'une entreprise : elle organise le flux de matériel entre réception, stockage, transport interne, picking et expédition.\n\n### Poste de contrôle\nLe **poste de contrôle** (panneau de commande) centralise les **indicateurs clés** d'un entrepôt dans un **WMS** : volumes de picking, transports actifs, capacité du personnel ou livraisons ouvertes. Il visualise aussi les processus pour réagir vite aux perturbations.\n\n### Rôle humain\nCe poste **évalue et recommande** plutôt qu'il ne décide seul : les collaborateurs croisent les données avec leur expérience. Il demande une solide formation logistique, des compétences en **IT et Excel**, et un esprit analytique."
+        },
+        "glossaire": {
+          "full": "## Glossaire — Module 809\n\n| Terme technique | Lien | Définition |\n| --- | --- | --- |\n| Intralogistique | | Logistique qui se déroule **à l'intérieur** de l'entreprise. Mission : contrôler, exécuter et organiser le **flux de marchandises** interne (réception, stockage, transport, picking, expédition…). |\n| Télématique | | Combinaison des **télécommunications** et de l'**informatique** pour transmettre des données en temps réel (localisation de véhicules, suivi de flotte, communication entre systèmes logistiques). |\n| Capteurs | | Dispositifs qui **mesurent** des grandeurs physiques (température, poids, position, remplissage…) et transmettent les données au système de gestion. Essentiels pour le poste de contrôle et l'automatisation. |\n| Robotique | | Systèmes automatisés (robots de stockage, chariots autonomes, bras manipulateurs…) qui exécutent des tâches de manutention et de transport en intralogistique, souvent pilotés depuis le poste de contrôle. |\n| Visualisation | | Représentation **graphique** des processus, des KPI et de l'état du système sur le poste de contrôle. Permet de détecter rapidement les perturbations et d'orienter les décisions. |\n| Pensée analytique | | Capacité à **analyser** des données et des processus, identifier les causes et proposer des solutions de manière structurée et anticipative. Compétence clé des collaborateurs du poste de contrôle. |",
+          "summary": "## Glossaire — À retenir\n- **Intralogistique** : flux matériel interne à l'entreprise\n- **Télématique** : télécom + informatique (données en temps réel)\n- **Capteurs** : mesure et transmission de données\n- **Robotique** : automatisation de la manutention\n- **Visualisation** : graphiques KPI / processus sur le poste de contrôle\n- **Pensée analytique** : analyse structurée et anticipative"
+        },
+        "situation": {
+          "full": "## Mises en situation — Module 809\n\nContexte : tu travailles chez **EnterSite AG**, service d'assistance. Monsieur **Holzer** t'a chargé·e d'analyser le **flux de marchandises** d'un client. Rédige d'abord ta propre réponse, puis utilise le bouton pour afficher ou masquer les solutions proposées.\n\n---\n\n### Mission 1 — Analyser le flux de marchandises\n\nUn client signale qu'en dépit de davantage de personnel et d'engins de manutention, le volume de matériel dans la zone de réception et de stockage ne peut pas être augmenté. Le plan de situation montre le flux de marchandises (indiqué en rouge).\n\nEn tant que logisticien·ne, vois-tu un potentiel d'amélioration ?\n\n:::reponse\nAu premier coup d'œil, le flux de marchandises semble ordonné et en ordre.\n:::\n\n---\n\n### Mission 2 — Optimiser le poste de travail n° 2\n\nL'employé·e du point 2 dispose d'un poste PC, d'un scanner à main et d'une imprimante d'étiquettes. Il/elle se plaint de ne pas pouvoir traiter à temps le volume de marchandises provenant de la zone de réception.\n\nQuelle solution proposes-tu ? Justifie ta réponse pour la communiquer au client.\n\n:::reponse\n**Analyser les goulots d'étranglement**\n- Analyser les processus de travail pour identifier goulots et inefficacités\n- Vérifier le matériel (PC, scanner, imprimante) : fonctionnement et mise à jour\n\n**Optimiser logiciel et matériel**\n- Vérifier que le logiciel répond aux exigences du processus\n- S'assurer que scanner et imprimante sont suffisamment rapides\n\n**Automatiser les processus**\n- Saisie automatique des codes-barres, impression d'étiquettes après numérisation, autres mesures gain de temps\n\n**Former et soutenir les employé·e·s**\n- Formations pour une utilisation optimale de la technologie\n- Service d'assistance pour résoudre rapidement les problèmes\n\n**Communiquer avec les employé·e·s**\n- Discuter des changements proposés, recueillir expériences et préoccupations\n\n**Surveiller et adapter en permanence**\n- Système de contrôle des performances\n- Réexaminer les possibilités d'optimisation dès que de nouveaux défis apparaissent\n:::\n\n---\n\n### Mission 3 — Optimiser le poste de travail n° 3\n\nLes six caristes responsables de la livraison au stockage en bloc et au stockage de palettes ont reçu un avertissement écrit parce qu'ils se parlent beaucoup.\n\nQuelle solution proposes-tu ? Justifie ta réponse.\n\n:::reponse\n- Définir des **directives claires** sur le comportement pendant les heures de travail (conversations)\n- Sensibiliser aux effets des conversations excessives sur la **productivité**, la concentration et l'efficacité\n- Définir des **temps de pause** clairs pour les échanges\n- Mettre en place un **système de surveillance** du comportement\n- Donner un **feedback** régulier aux collaborateurs\n- **Optimiser l'aménagement** des postes pour réduire les tentations de discussion\n- Introduire un **système de récompense** pour les caristes qui respectent les directives\n- Développer une **culture de travail positive** montrant l'impact des performances individuelles sur le succès global\n:::\n\n---\n\n### Mission 4 — Optimiser sortie, expédition et chargement\n\nLe client se plaint que les chauffeurs de camion attendent trop longtemps et doivent récupérer les documents de livraison, de fret et de douane dans différents bureaux.\n\nQuelle solution proposes-tu ? Justifie ta réponse.\n\n:::reponse\n- **Système centralisé** pour livraison, fret et douane — un seul point de retrait pour les chauffeurs\n- Passer à des **systèmes numériques** de gestion des documents\n- **Transmission numérique anticipée** des documents avec fournisseurs et transporteurs\n- **Intégration** gestion de la chaîne d'approvisionnement / dédouanement\n- **Politiques et procédures claires** avec tous les partenaires\n- **Vérification anticipée** des chargements et documents\n- **Automatisation** des processus douaniers\n- **Calendrier d'enlèvements** pour minimiser les temps d'attente\n:::\n\n---\n\n### Mission 5 — Discussion STA\n\nDiscute de la situation de travail et d'apprentissage en plénière avec la classe et l'enseignant·e. Note les informations complémentaires.\n\n:::reponse\n**Réponse ouverte** — notes de discussion STA (pas de solution unique).\n:::",
+          "summary": "## Mises en situation — À retenir\n- **M1** : flux marchandises — premier regard ordonné\n- **M2** : poste n° 2 — goulots · automatisation · formation\n- **M3** : caristes — directives · pauses · aménagement · feedback\n- **M4** : expédition — documents centralisés · numérique · planning\n- **M5** : discussion STA"
+        },
+        "maths": {
+          "full": "## Exercices de mathématiques — Module 809\n\nCalcule chaque résultat, puis vérifie avec le bouton solution.\n\n---\n\n### Exercice 1 — Conteneurs non conformes\n\nUn système de stockage de conteneurs entièrement automatisé effectue **152'000** mouvements de conteneurs par jour. Un fournisseur livre par erreur **897** conteneurs avec un fond à tête de taureau.\n\nQuel est le **pourcentage** de conteneurs non conformes introduits ce jour-là ?\n\n:::solution\n**Taux de conteneurs non conformes : 0,5901 %**\n\n897 / 152'000 × 100 = **0,5901 %**\n:::\n\n---\n\n### Exercice 2 — Temps d'arrêt de l'installation\n\nDes dysfonctionnements d'accumulation sont signalés dans le système de stockage de **huit** conteneurs. Le poste de contrôle arrête l'installation complète. Pour chaque conteneur : en moyenne **6 ¼ min** de dépannage.\n\nCombien de temps l'installation complète est-elle arrêtée ?\n\n:::solution\n**Temps d'arrêt : 50 minutes**\n\n6,25 × 8 = **50 min**\n:::\n\n---\n\n### Exercice 3 — Coûts d'immobilisation\n\nUne heure d'exploitation du système coûte **CHF 1'250**. Utilise les données de l'exercice 2.\n\nQuels sont les **coûts d'immobilisation** prévus ?\n\n:::solution\n**Coût d'immobilisation : 1'041,67 CHF**\n\n1'250 × 50 / 60 = **1'041,67 CHF**\n:::\n\n---\n\n### Exercice 4 — Sortie et retraitement des conteneurs\n\nLe poste de contrôle sort du stock tous les conteneurs restants avec fond à tête de taureau.\n\n| Opération | Temps/unité | Quantité |\n| --- | --- | --- |\n| Déstockage | 17 sec. | 889 conteneurs |\n| Transvasement manuel | 20 sec. | 889 |\n| Nouvel étiquetage | 5 sec. | 889 |\n| Mise en stock | 17 sec. | 889 |\n\n**1 employé** à **28,40 CHF**/h · coût installation **1'250 CHF**/h\n\n**a.** Combien d'heures dure l'action ?\n\n**b.** À combien s'élèvent les coûts totaux ?\n\n:::solution\n**Temps total :** (17 + 20 + 5 + 17) × 889 = **52'451 sec.** = **14,56972 h**\n\n| Poste | Calcul | Montant |\n| --- | --- | --- |\n| Coût collaborateur | 14,56972 × 28,40 | **413,78 CHF** |\n| Coût installation | 14,56972 × 1'250 | **18'212,15 CHF** |\n| **Coût total** | | **18'625,93 CHF** |\n:::\n\n> **Contrôle rapide (ordre du corrigé)** : 0,5901 · 50 · 1'041,67 · 14,56972 · 18'625,93",
+          "summary": "## Maths — Solutions\n1. Non conformes **0,5901 %**\n2. Arrêt **50 min**\n3. Immobilisation **1'041,67 CHF**\n4. **14,57 h** · coût total **18'625,93 CHF** (889 cont.)"
+        },
+        "verification": {
+          "full": "## Vérification des acquis — Questions de contrôle\n\nThème : **Poste de contrôle**. Réponds d'abord sans regarder les solutions, puis révèle-les pour t'autocorriger.\n\n### Question 1\n\nQue signifie le terme **intralogistique** ? Quelles sont les tâches assumées par l'intralogistique au sein de l'entreprise ?\n\n:::reponse\n**Intralogistique :** logistique qui se déroule à l'intérieur de ses propres portes.\n\n**Missions :** contrôler, exécuter et organiser le **flux de marchandises** au sein de l'entreprise.\n:::\n\n### Question 2\n\nDécris les principales caractéristiques du **poste de contrôle**.\n\n:::reponse\nDans l'intralogistique, le poste de contrôle (également appelé **Control Panel**) est un **point central** d'un système de gestion d'entrepôt. Il assiste les collaborateurs·trices responsables dans la **gestion globale** de l'entrepôt et de l'exploitation.\n:::\n\n### Question 3\n\nQuels sont les **deux objectifs** du poste de contrôle ? Donne à chaque fois deux exemples pratiques.\n\n:::reponse\n**Objectif 1 — Regroupement des indicateurs d'intralogistique**\n\nExemples :\n- Quelle quantité de commandes en préparation ? Combien de commandes urgentes ?\n- Quels transports sont utilisés à quelle fréquence ? Lesquels sont actifs ?\n- Quelle capacité en personnel pour l'expédition / la préparation ?\n- Quelles livraisons entrantes sont encore ouvertes ?\n- Quel est le taux de prélèvement ? Quel volume de commandes prévu aujourd'hui ?\n\n**Objectif 2 — Représentation des processus**\n\nPermet de réagir de manière ciblée aux perturbations internes et aux événements imprévus.\n\nExemples :\n- Quelles perturbations connues dans la manutention ?\n- Quels dysfonctionnements connus côté logiciel ?\n:::\n\n### Question 4\n\nDécris **trois tâches** du poste de contrôle d'une entreprise de logistique.\n\n:::reponse\nParmi les tâches possibles :\n- Visualisation des processus\n- Planification des processus\n- Optimisation\n- Comparaison des objectifs et de la réalité\n- Mise en évidence des limites de performance\n- Contrôle de gestion\n- Affichage de l'état du système\n:::\n\n### Question 5\n\nDécris **quatre exigences** auxquelles doivent répondre les collaborateurs du poste de contrôle.\n\n:::reponse\n- Formation initiale et continue **solide en logistique**\n- **Expérience** dans la pratique\n- Bonnes **compétences informatiques**, notamment **Excel**\n- **Pensée analytique**, orientée processus et **anticipative**\n:::",
+          "summary": "## Questions de contrôle — Solutions\n1. Intralogistique = flux interne · contrôler / exécuter / organiser\n2. Point central WMS · gestion globale entrepôt\n3. KPI + visualisation processus (exemples)\n4. Visualisation · planification · optimisation…\n5. Logistique · expérience · Excel · pensée analytique"
+        }
+      }
+    }
+  ]
+}

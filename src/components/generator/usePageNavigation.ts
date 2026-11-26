@@ -57,6 +57,7 @@ import {
   subthemesForTopicAll,
 } from '@/grammaire/exercises'
 import { GRAM_EXERCISE_KINDS } from '@/grammaire/exercises/kinds'
+import { isLogistiqueDomain, logistiqueSubthemes, logistiqueTypeForSubtheme } from '@/logistique/catalog'
 import { addPageBlock, pageBlocks, stampExerciseNumbers } from '@/math/page-model'
 import type { InstitutionalHeader } from '@/components/math/PrintDocumentChrome'
 import type {
@@ -128,7 +129,7 @@ export function usePageNavigation({
   /** Prochain type du même thème (même logique que « + Exercice »). */
   const createNextExerciseBlock = (): ExerciseBlock | null => {
     const currentTypes =
-      activePage.domain === 'grammaire'
+      activePage.domain === 'grammaire' || isLogistiqueDomain(activePage.domain)
         ? typeChoicesForBlock(activePage.domain, activeBlock)
         : typesForTopic(
             activeBlock.topic,
@@ -271,6 +272,13 @@ export function usePageNavigation({
 
   function changeDomain(next: Domain) {
     if (!accountCanAccessDomain(accessAccount, next)) return
+    if (isLogistiqueDomain(next) && next === activePage.domain) return
+    const switchesLogistics = isLogistiqueDomain(next) || isLogistiqueDomain(activePage.domain)
+    if (switchesLogistics) {
+      if ((worksheets.length > 1 || pageExerciseBlocks.length > 1 || activeBlock.libreItems?.length) &&
+        !window.confirm('Changer de domaine remplacera les activités de la fiche en cours. Continuer ?')) return
+      setMode('student')
+    }
     setBlockIndex(0)
     if (isTpmDomain(next)) {
       setSheetIndex(0)
@@ -317,7 +325,7 @@ export function usePageNavigation({
       isTcmCscDomain(activePage.domain) ||
       isTcmCfrDomain(activePage.domain) ||
       isTpfFamilyDomain(activePage.domain)
-    if (leavingTpm) {
+    if (leavingTpm || switchesLogistics) {
       setSheetIndex(0)
       setPages([{ ...defaultPage(next), ...applyType(type), domain: next }])
     } else {
@@ -400,6 +408,14 @@ export function usePageNavigation({
   }, [activePage.domain, activeBlock.topic, activeBlock.exerciseType])
 
   function changeTopic(topic: string) {
+    if (isLogistiqueDomain(activePage.domain)) {
+      const subtheme = logistiqueSubthemes(topic).find((entry) => entry.domain === activePage.domain)
+      const type = subtheme && logistiqueTypeForSubtheme(subtheme.id, activeBlock.exerciseType)
+      if (!type) return
+      if (activeBlock.libreItems?.length && !window.confirm('Changer de thème remplacera les modifications de cette activité. Continuer ?')) return
+      updatePage(applyType(type, activeBlock))
+      return
+    }
     if (activePage.domain === 'calligraphie') {
       const kind = isCalliPhrasesType(activeBlock.exerciseType) ? 'calli-phrases' : 'calli-mots'
       const type = { ...exerciseTypeById[kind]!, topic }

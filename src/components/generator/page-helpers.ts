@@ -1,3 +1,5 @@
+import { logistiqueType } from '@/logistique/catalog'
+import { logistiqueEligibleCount } from '@/logistique/generate'
 import {
   isCalliPhrasesType,
 } from '@/calligraphie/defaults'
@@ -87,7 +89,8 @@ export function clearLibreContentFreeze(): Partial<ExerciseBlock> {
 }
 
 export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<ExerciseBlock> {
-  const isProblem = type.id.includes('problemes')
+  const logisticsKind = logistiqueType(type.id)?.kind
+  const isProblem = type.id.includes('problemes') || logisticsKind === 'maths'
   const isOpTable =
     type.id.startsWith('addition-tableau') || type.id.startsWith('soustraction-tableau')
   const isDecompose = type.id.endsWith('-decompose')
@@ -212,6 +215,7 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
   const coordSize = coordSizeFor('moyen')
   return {
     exerciseType: type.id,
+    logistiqueBankRevision: undefined,
     topic: type.topic,
     track: type.track,
     phrasePolarity: isPhrase ? prev?.phrasePolarity : undefined,
@@ -233,7 +237,12 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
     ...(grammarUsesGradedDefault(type.id) ? defaultGrammarPilot(type.id) : {}),
     columns: type.preferredColumns ?? 2,
     ...clearLibreContentFreeze(),
-    ...(isDecompose
+    ...(logisticsKind
+      ? { count: Math.max(1, Math.min(
+          { theorie: 1, glossaire: 1, maths: 6, verification: 10, situation: 2 }[logisticsKind],
+          logistiqueEligibleCount(type.id),
+        )) }
+      : isDecompose
       ? { count: 6, columns: 1 }
       : isOpTable
       ? { count: 2 }

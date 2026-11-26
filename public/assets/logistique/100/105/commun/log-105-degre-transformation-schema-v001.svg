@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="360" viewBox="0 0 840 360" role="img" aria-labelledby="title description">
+  <title id="title">Le degré de transformation dépend de l’usage</title>
+  <desc id="description">Pour un atelier de jus, la pomme est une matière première, le jus avant conditionnement est un produit semi-fini et le jus conditionné est un produit fini. Une pomme vendue entière pour être mangée est également un produit fini pour cet autre usage.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 1 1 L 11 6 L 1 11 Z" fill="#151515"/>
+    </marker>
+  </defs>
+  <rect width="840" height="360" fill="#fff"/>
+  <g fill="none" stroke="#151515" stroke-width="2">
+    <path d="M 255 137 H 303 M 535 137 H 583 M 255 272 H 583" marker-end="url(#arrow)"/>
+    <rect x="22" y="96" width="226" height="84" rx="5"/>
+    <rect x="307" y="96" width="222" height="84" rx="5"/>
+    <rect x="588" y="96" width="230" height="84" rx="5"/>
+    <rect x="22" y="230" width="226" height="84" rx="5"/>
+    <rect x="588" y="230" width="230" height="84" rx="5"/>
+  </g>
+  <g fill="#151515" font-family="sans-serif" text-anchor="middle">
+    <text x="420" y="39" font-size="28" font-weight="700">Le degré de transformation dépend de l’usage</text>
+    <text x="420" y="77" font-size="23" font-weight="700">Fabrication de jus</text>
+    <text x="135" y="129" font-size="21" font-weight="700">Pomme brute</text>
+    <text x="135" y="157" font-size="19">Matière première</text>
+    <text x="418" y="129" font-size="21" font-weight="700">Jus avant emballage</text>
+    <text x="418" y="157" font-size="19">Produit semi-fini</text>
+    <text x="703" y="129" font-size="21" font-weight="700">Jus conditionné</text>
+    <text x="703" y="157" font-size="19">Produit fini</text>
+    <text x="420" y="215" font-size="23" font-weight="700">Vente à consommer entier</text>
+    <text x="135" y="279" font-size="21" font-weight="700">Pomme brute</text>
+    <text x="703" y="263" font-size="21" font-weight="700">Pomme entière</text>
+    <text x="703" y="291" font-size="19">Produit fini</text>
+  </g>
+</svg>

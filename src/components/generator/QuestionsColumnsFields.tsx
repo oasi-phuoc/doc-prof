@@ -1,3 +1,4 @@
+import { isLogistiqueReferenceType } from '@/logistique/catalog'
 import {
   blockPointsTotal,
   formatPointsLabel,
@@ -218,6 +219,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
               {activeBlock.grammarPresentation==='document-set' || grammarAudioOnly || isPhraseChart ||
               isVocabLearn ||
               isGramTheory ||
+              isLogistiqueReferenceType(activeBlock.exerciseType) ||
               isJeuxDomain ||
               isCalliDomain ||
               isSoutienMots ||

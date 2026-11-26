@@ -20,6 +20,8 @@ import {
 import { SelectBox } from '@/components/generator/SelectBox'
 import { applyType, clearLibreContentFreeze } from '@/components/generator/page-helpers'
 import { DIFFICULTY_OPTIONS } from '@/math/difficulty'
+import { isLogistiqueDomain, logistiqueSubthemes, logistiqueType, logistiqueTypeForSubtheme } from '@/logistique/catalog'
+import { logistiqueEligibleCount } from '@/logistique/generate'
 import { exerciseTypeById } from '@/math/catalog'
 import {
   centeredOrigin,
@@ -158,6 +160,23 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
     isQuadType,
     quadPool,
   } = p
+  const logisticsDomain = isLogistiqueDomain(activePage.domain)
+  const logisticsSubthemes = logisticsDomain ? logistiqueSubthemes(activeBlock.topic) : []
+  const logisticsModule = logistiqueType(activeBlock.exerciseType)?.module
+  const subthemes = logisticsDomain ? logisticsSubthemes : gramSubthemes
+  const subthemeId = logisticsDomain
+    ? logisticsSubthemes.find((entry) => entry.code === logisticsModule)?.id
+    : gramSubtheme?.id
+  const changeSubtheme = (id: string) => {
+    if (!logisticsDomain) {
+      changeGramSubtheme(id)
+      return
+    }
+    const type = logistiqueTypeForSubtheme(id, activeBlock.exerciseType)
+    if (type?.domain !== activePage.domain || type.topic !== activeBlock.topic) return
+    if (activeBlock.libreItems?.length && !window.confirm('Changer de sous-thème remplacera les modifications de cette activité. Continuer ?')) return
+    updatePage(applyType(type, activeBlock))
+  }
   const grammarCoTheme = grammarCoThemeForType(activeBlock.exerciseType)
   const grammarOrderBank=activeBlock.grammarLevel?grammarBankFor(activeBlock.exerciseType,activeBlock.grammarLevel):undefined
   const isGrammarOrder = isGrammaireDomain && activeBlock.grammarPresentation==='order' && (!grammarOrderBank||grammarOrderHasSentenceFilters(grammarOrderBank.units))
@@ -183,7 +202,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                     className={evalMode ? 'active' : ''}
                     onClick={() => {
                       setEvalMode(true)
-                      if (!institutional.documentTitle.trim()) {
+                      if (!logisticsDomain && !institutional.documentTitle.trim()) {
                         setInstitutional((current) => ({ ...current, documentTitle: 'Évaluation' }))
                       }
                     }}
@@ -256,13 +275,13 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   ))}
                 </SelectBox>
               ) : null}
-              {isGrammaireDomain && gramSubthemes.length > 0 ? (
+              {(isGrammaireDomain || logisticsDomain) && subthemes.length > 0 ? (
                 <SelectBox
                   label="Sous-thème"
-                  value={gramSubtheme?.id ?? gramSubthemes[0]!.id}
-                  onChange={changeGramSubtheme}
+                  value={subthemeId ?? subthemes[0]!.id}
+                  onChange={changeSubtheme}
                 >
-                  {gramSubthemes.map((sub) => (
+                  {subthemes.map((sub) => (
                     <option value={sub.id} key={sub.id}>
                       {sub.label}
                     </option>
@@ -435,11 +454,14 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
               >
                 {typeChoices
                   .filter((type) => !isTcf || tcfSlotShownInMenu(type.id, tcfNiveau))
-                  .map((type) => (
-                  <option value={type.id} key={type.id}>
-                    {tcfMenuLabel(type.id, tcfNiveau) ?? type.label}
-                  </option>
-                ))}
+                  .map((type) => {
+                    const pending = logisticsDomain && logistiqueEligibleCount(type.id) === 0
+                    return (
+                      <option value={type.id} key={type.id} disabled={pending}>
+                        {tcfMenuLabel(type.id, tcfNiveau) ?? type.label}{pending ? ' (à compléter)' : ''}
+                      </option>
+                    )
+                  })}
               </SelectBox>
               )}
               {!libreMode && isJeuxDomain && jeuxTemplate ? (
@@ -536,6 +558,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
               isVocabLearn ||
               isGramTheory ||
               isGrammaireDomain ||
+              logisticsDomain ||
               isLogique ||
               isSoutienFr ||
               isAlphabetisation ||

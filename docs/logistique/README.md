@@ -1,23 +1,29 @@
-# Logistique CFC et AFP — domaines et logo
+# Logistique AFP et CFC
 
-## Étape du 24 novembre 2026
+Le [cahier des charges consolidé](cahier-des-charges.md) reprend la v2.10 fournie et les décisions de la v2.11 et précise le cadrage de la reprise au §0. Le gabarit de fiche, le générateur et les actions communes servent de référence de recette.
 
-Périmètre confirmé par l’utilisateur : **« Domaines et logo uniquement »**. Les deux domaines `logistique-cfc` et `logistique-afp` figurent dans le sélecteur et dans les autorisations. Comme les autres domaines réguliers, ils sont accessibles aux comptes administrateur et full par défaut ; une liste d’accès explicite ou un compte personnel peut les autoriser séparément. Les droits des domaines déjà présents sont conservés.
+## Références
 
-Chaque domaine affiche son nom et un écran indiquant que ses cours et exercices ne sont pas encore ajoutés. Aucun cours, exercice, thème, banque ou corrigé EPCAS n’est importé ou présenté comme validé. Le passage par ces écrans préserve la fiche en cours ; le retour à son domaine la restitue sans régénération.
+- Doc-Prof au départ de la reprise : `0a23f9287`.
+- Contenus Git EPCAS : `ac2ceeae3ba7944fb4d24a7de103d41d3da98e1f`.
+- L’ancien écran de préfiguration et ses preuves restent consultables dans l’historique au commit `767525134`.
 
-L’en-tête du générateur affiche EPCA dans ces deux domaines. Le logo ClairFLE reste affiché ailleurs. Le composant d’en-tête imprimable connaît également le logo EPCA pour les futures fiches logistiques ; cette étape ne propose pas encore d’impression de ces domaines vides.
+## État du raccordement
 
-Le fichier `src/assets/logos/epca.svg` est une transcription vectorielle du visuel fourni dans le message : lettres noires et traverse rouge. Il ne s’agit pas d’un fichier officiel téléchargé. Les logos existants restent conservés.
+Le générateur commun propose les neuf thèmes et 80 modules du CFC, ainsi que les sept thèmes et 63 modules de l’AFP. Chaque module présente les cinq types attendus. La génération, les titres, le corrigé, la grille de calcul et les sauts manuels passent par les feuilles standard. Les recettes enregistrent la révision de la banque et contrôlent le diplôme à la lecture. L’en-tête de la fiche utilise le visuel EPCA déjà fourni et le libellé du diplôme.
 
-## Suite éventuelle
+La [banque active](../../src/logistique/approved-banks.ts) fournit le module 105 dans les deux diplômes. Les modules ou types sans contenu exploitable portent l’indication « à compléter ». Le [suivi d’avancement](avancement-cahier-des-charges-20261126.md) décrit les révisions, la couverture et le travail restant.
 
-Le [cahier des charges fourni](cahier-des-charges.md) reste la référence pour une étape d’import distincte : catalogue CFC/AFP, contenus, corrigés, éligibilité, relecture et preuves. Sa copie est conservée sans modification. Le dépôt EPCAS a seulement été consulté en lecture seule au commit `ac2ceeae3ba7944fb4d24a7de103d41d3da98e1f` ; ses cours, comptes et données ne font pas partie de cette livraison.
+## Sources et pilote
 
-## Vérification
+- L’[inventaire source](inventaire-epcas.generated.json) couvre les 80 codes. Il compte 16 emplacements sans déclaration en CFC et 7 en AFP. Les déclarations AFP présentes dans ce registre sont des candidatures à l’héritage.
+- Les [sources archivées](sources-epcas/) et les [sources du 105](pilote-105/sources-epcas.json) contiennent 540 pages pédagogiques du Git de référence, avec leurs versions complètes et résumées et leurs corrigés lorsqu’ils existent. L’import a exclu 149 références historiques et consigné leurs emplacements. L’archive demeure la référence de travail pour l’adaptation des prochains modules.
+- Le [dossier du 105](pilote-105/relecture.md) contient le projet de résumé, le glossaire reconstruit, les corrections proposées, la couverture par section et les points à arbitrer. Le Git inspecté ne fournit pas la validation pédagogique du CFC ou de l’AFP ni les éventuelles variantes publiées hors Git.
+- Le module 105 dispose d’une première pagination automatique et d’un schéma original. Le suivi distingue les fonctions démarrées, validées sur le pilote et à généraliser.
 
-- `node node_modules/typescript/bin/tsc --noEmit --project tsconfig.app.json`
-- `LOGISTIQUE_TEST_URL=http://127.0.0.1:5187 node tests/logistique/domaines-browser.mjs`
-- `node --test tests/interactive/fiches-access.test.mjs`
+L’extraction se reproduit avec `node scripts/import-logistique-epcas.mjs /chemin/vers/le/depot/epcas`. Le script lit les objets Git du commit fixé et analyse les déclarations statiques.
 
-Le contrôle navigateur couvre les deux sélections, l’affichage et le chargement du logo, l’absence de fiche générée dans ces domaines vides, le retour à la fiche précédente, le maintien de ClairFLE ailleurs et les écrans ordinateur/mobile.
+## Contrôles
+
+- `npm run test:logistique` contrôle les effectifs, l’ordre des types, l’éligibilité, la déduplication et les révisions de recettes.
+- `npm run test:logistique:browser` démarre un Vite local et contrôle le parcours des deux diplômes en Chromium, dont les dimensions du gabarit, la grille, le corrigé, le PDF et la réouverture d’une recette. La seconde vérification parcourt les cinq types de la banque active du 105 en CFC et AFP et mesure la réserve au pied sur chaque page imprimée.

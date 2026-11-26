@@ -1,0 +1,54 @@
+{
+  "revision": "fixture-105-v1",
+  "units": [
+    {
+      "id": "fixture-105-theorie",
+      "module": "105",
+      "revision": "v1",
+      "approvedFor": ["CFC", "AFP"],
+      "kind": "theorie",
+      "blocks": [
+        { "kind": "heading", "text": "Cartons à réceptionner" },
+        { "kind": "paragraph", "text": "Le poids brut d’un carton comprend le contenu et l’emballage." }
+      ]
+    },
+    {
+      "id": "fixture-105-maths",
+      "module": "105",
+      "revision": "v1",
+      "approvedFor": ["CFC", "AFP"],
+      "kind": "maths",
+      "prompt": "Vous réceptionnez 7 cartons de 6 kg chacun. Calculez leur poids total.",
+      "calculation": "7 × 6 kg = 42 kg",
+      "answer": "Le poids total est de 42 kg."
+    },
+    {
+      "id": "fixture-105-verification",
+      "module": "105",
+      "revision": "v1",
+      "approvedFor": ["CFC"],
+      "kind": "verification",
+      "prompt": "Que comprend la masse brute ?",
+      "answer": "La masse du contenu et celle de son emballage."
+    },
+    {
+      "id": "fixture-105-situation",
+      "module": "105",
+      "revision": "v1",
+      "approvedFor": ["CFC", "AFP"],
+      "kind": "situation",
+      "prompt": "Vous repérez un carton mouillé à la réception. Quel renseignement consignez-vous ?",
+      "answer": "L’état de l’emballage et la référence du colis concerné."
+    },
+    {
+      "id": "fixture-105-glossaire",
+      "module": "105",
+      "revision": "v1",
+      "approvedFor": ["CFC", "AFP"],
+      "kind": "glossaire",
+      "blocks": [
+        { "kind": "paragraph", "text": "Tare. Masse de l’emballage vide." }
+      ]
+    }
+  ]
+}

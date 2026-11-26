@@ -7,6 +7,8 @@
     "predev": "node scripts/image-gallery-catalog.mjs && node scripts/gattegno-image-lexicon.mjs && node scripts/audio-catalog.mjs && node scripts/game-pool-catalog.mjs --check",
     "prebuild": "node scripts/image-gallery-catalog.mjs && node scripts/gattegno-image-lexicon.mjs && node scripts/audio-catalog.mjs && node scripts/game-pool-catalog.mjs --check",
     "gallery:index": "node scripts/image-gallery-catalog.mjs",
+    "test:logistique": "node --test tests/logistique/generation.test.mjs",
+    "test:logistique:browser": "node tests/logistique/generator-browser.mjs && node tests/logistique/published-browser.mjs",
     "test:gallery": "node --test tests/gallery/catalog.test.mjs",
     "test:gallery:browser": "node tests/gallery/browser.mjs",
     "dev": "vite",

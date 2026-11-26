@@ -130,7 +130,7 @@ export function ItemView({
   tcfPageBreakBefore?: boolean
   onToggleTcfPageBreak?: () => void
   /** Théorie : la section suivante commence sur une nouvelle page. */
-  pageBreakAfterKind?: 'question'
+  pageBreakAfterKind?: 'question' | 'section'
   theoryPageBreakAfter?: boolean
   onToggleTheoryPageBreakAfter?: () => void
   /** Masquer les icônes de forme en marge (ex. dual form sur le titre). */
@@ -194,7 +194,7 @@ export function ItemView({
   )
   const grammarPart=item.grammar?.readingPart??item.grammar?.scenarioPart
   const showTheoryPageChip = Boolean(
-    onToggleTheoryPageBreakAfter && (item.layout === 'theory' && item.theoryBlock?.kind === 'section' || pageBreakAfterKind==='question'),
+    onToggleTheoryPageBreakAfter && (item.layout === 'theory' && item.theoryBlock?.kind === 'section' || pageBreakAfterKind != null),
   )
   const pageBreakChipLabel = showTheoryPageChip
     ? pageBreakAfterKind==='question' ? theoryPageBreakAfter?'Annuler le saut de page après cette question':'Ajouter un saut de page après cette question' : theoryPageBreakAfter

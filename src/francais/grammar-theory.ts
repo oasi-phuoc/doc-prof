@@ -7,6 +7,7 @@ export type TheoryExampleItem = string | { text: string; wrong?: string }
 
 export type GrammarTheoryBlock =
   | { kind: 'section'; role: 'regarder' | 'expliquer' | 'retenir'; blocks: GrammarTheoryBlock[] }
+  | { kind: 'image'; src: string; alt: string; caption: string }
   | { kind: 'heading'; text: string; sub?: boolean }
   | { kind: 'paragraph'; text: string }
   | { kind: 'note'; text: string }

@@ -1,3 +1,6 @@
+import { splitLogistiquePages } from '@/logistique/pagination'
+import { isLogistiqueDomain, isLogistiqueReferenceType } from '@/logistique/catalog'
+import { generateLogistique, logistiqueDocumentTitle } from '@/logistique/generate'
 import { paginateCePosters } from '@/tcf/ce-poster-pages'
 import { splitTcfAudioQuestionPages } from '@/tcf/audio-question-pages'
 import { splitCscColumnPages } from '@/tcm-csc/pagination'
@@ -56,7 +59,6 @@ import type {
   WorksheetPage,
 } from './types'
 import { generateItems } from './generate-items'
-import { isLogistiqueDomain, logistiqueDomainLabel } from '@/logistique/domains'
 import { headingForSlice } from './page-break-heading'
 
 /** CE instructions multi-docs → un bloc Exercice par document. */
@@ -111,12 +113,12 @@ function buildSingleBlock(
   document?: WorksheetDocument
   bankQuestionCap?: number
 } {
+  if (isLogistiqueDomain(config.domain)) return generateLogistique(config, seed)
   const rng = createRng(seed)
   const topic = topicById[config.topic]
   const type = exerciseTypeById[config.exerciseType]
   const difficulty = config.difficulty ?? 'moyen'
   const fallbackTitle = type?.label ?? topic?.label ?? 'Exercices'
-  if (isLogistiqueDomain(config.domain)) return { title: logistiqueDomainLabel(config.domain), instruction: '', items: [], bankQuestionCap: 0 }
   if (config.exerciseType === 'tpm-consignes') {
     return {
       title: 'Informations',
@@ -422,7 +424,7 @@ export function buildPage(
     const single = pageAsConfig(page, block)
     const local = block.contentSeed ?? 0
     const result = buildSingleBlock(single, seed + index * 10007 + local, worksheetSeed)
-    const isTheory = isGrammarTheoryType(block.exerciseType) || isGrammaireTheoryType(block.exerciseType)
+    const isTheory = isLogistiqueReferenceType(block.exerciseType) || isGrammarTheoryType(block.exerciseType) || isGrammaireTheoryType(block.exerciseType)
     const isJeux = block.exerciseType.startsWith('jeux-')
     const isTpmConsignes = isInfoPageType(block.exerciseType)
     // Une feuille « suite » ne doit pas figer seulement sa tranche : sinon le mode
@@ -449,7 +451,7 @@ export function buildPage(
         exerciseIndex = exerciseCursor++
       }
     }
-    const rawItems = libre?.items ?? result.items
+    const rawItems = isLogistiqueDomain(page.domain) && result.items.length === 0 ? result.items : (libre?.items ?? result.items)
     const items = rawItems.map((item) => {
       const clean = sanitizeItemNumberNoise(item as Record<string, unknown>) as MathItem
       return block.tcfCeTextFont && clean.tcf?.kind === 'support' && clean.tcf.exercise.competence === 'CE'
@@ -501,7 +503,7 @@ export function buildPage(
   const isTpmConsignesPage = isInfoPageType(config.exerciseType)
   return {
     ...config,
-    title: isTpmConsignesPage
+    title: isLogistiqueDomain(config.domain) ? logistiqueDocumentTitle([config]) : isTpmConsignesPage
       ? 'Informations'
       : isTheoryPage
         ? (first?.title ?? type?.label ?? 'Théorie')
@@ -660,6 +662,10 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
     const cscPages = splitCscColumnPages(worksheet)
     if (cscPages) {
       out.push(...cscPages.map(sheet=>({...sheet,configIndex:index})))
+      return
+    }
+    if (isLogistiqueDomain(page.domain)) {
+      out.push(...splitLogistiquePages(worksheet).map((sheet) => ({ ...sheet, configIndex: index })))
       return
     }
     const gradedPages=splitGradedGrammarPages(worksheet)

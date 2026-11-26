@@ -45,10 +45,12 @@ import { GRAM_EXERCISE_KINDS } from '@/grammaire/exercises/kinds'
 import { GRAMMAR_NEW_PILOT_TYPES, GRAMMAR_PILOT_BANKS, grammarBanksForType } from '@/grammaire/curriculum/registry'
 import { COORD_LETTER_MAX, COORD_SHAPES } from '@/math/coord-reperage'
 import { TRANSFORM_MAX_POINTS } from '@/math/coord-transformations'
+import { isLogistiqueDomain, logistiqueTopics, logistiqueTypeChoices } from '@/logistique/catalog'
 import type { Domain, ExerciseBlock, WorksheetPage } from '@/math/types'
 
 /** Thèmes du sélecteur selon le domaine actif. */
 export function topicsForDomain(domain: Domain) {
+  if (isLogistiqueDomain(domain)) return logistiqueTopics.filter((topic) => topic.domain === domain)
   return domain === 'algèbre'
     ? algebraTopics
     : domain === 'géométrie'
@@ -91,6 +93,7 @@ export function typeChoicesForBlock(
   domain: Domain,
   block: Pick<ExerciseBlock, 'exerciseType' | 'topic' | 'track'>,
 ) {
+  if (isLogistiqueDomain(domain)) return logistiqueTypeChoices(block.topic, block.exerciseType)
   if (domain === 'soutien-fr') {
     const bankId =
       parseSoutienType(block.exerciseType)?.bankId ??

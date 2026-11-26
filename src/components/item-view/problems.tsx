@@ -286,6 +286,14 @@ function TheoryBlockContent({ block }: { block: GrammarTheoryBlock }) {
     )
   }
   if (block.kind === 'page') return null
+  if (block.kind === 'image') {
+    return (
+      <figure className="grammar-support-image">
+        <WorksheetImage src={block.src} alt={block.alt} />
+        <figcaption>{block.caption}</figcaption>
+      </figure>
+    )
+  }
   if (block.kind === 'heading') {
     const Tag = block.sub ? 'h4' : 'h3'
     return <Tag className={`theory-heading${block.sub ? ' is-sub' : ''}`}>{block.text}</Tag>
