@@ -58,7 +58,6 @@ export type ResultPanelProps = {
   onOpenBook: () => void
   isCalliDomain: boolean
   isJeuxDomain: boolean
-  jeuxPreviewSheets: Array<{ sheet: WorksheetPage; index: number }> | null
   previewFrameRef: RefObject<HTMLDivElement | null>
   seed: number
   previewWorksheets: WorksheetPage[]
@@ -138,7 +137,6 @@ export function ResultPanel({
   onOpenBook,
   isCalliDomain,
   isJeuxDomain,
-  jeuxPreviewSheets,
   previewFrameRef,
   seed,
   previewWorksheets,
@@ -460,25 +458,7 @@ export function ResultPanel({
             </div>
             <div className="sheet-preview-wrap no-print-nav">
               <div className="sheet-preview-cluster">
-                <div className={`sheet-preview-row${jeuxPreviewSheets && jeuxPreviewSheets.length > 1 ? ' is-jeux-duplex' : ''}${showCorrectionFollow || showTranscriptionPreview ? ' is-po-stack' : ''}${showPageStack ? ' is-page-stack' : ''}`}>
-                  {jeuxPreviewSheets && jeuxPreviewSheets.length > 1 ? (
-                    <div className="sheet-stage is-jeux-stack">
-                      {jeuxPreviewSheets.map(({ sheet, index }, stackIdx) => (
-                        <A4Frame
-                          key={`jeux-prev-${sheet.exerciseType}-${seed}-${index}`}
-                          ref={stackIdx === 0 ? previewFrameRef : undefined}
-                        >
-                          <WorksheetSheet
-                            page={sheet}
-                            pageNumber={index + 1}
-                            sheetIndex={index + 1}
-                            total={previewWorksheets.length}
-                            {...sheetProps}
-                          />
-                        </A4Frame>
-                      ))}
-                    </div>
-                  ) : (
+                <div className={`sheet-preview-row${showCorrectionFollow || showTranscriptionPreview ? ' is-po-stack' : ''}${showPageStack ? ' is-page-stack' : ''}`}>
                   <div className={`sheet-stage${useA5Double ? ' is-a5-double' : ''}${showPageStack ? ' is-page-stack' : ''}`}>
                     {useA5Double && a5LeftSheet && a5RightSheet ? (
                       <A4Frame ref={previewFrameRef} className="is-landscape">
@@ -556,7 +536,6 @@ export function ResultPanel({
                         ))
                       : null}
                   </div>
-                  )}
                   {isFormes && activeBlock.coordLibre ? (
                     <aside className="coord-page-palette no-print">
                       <b>Formes</b>

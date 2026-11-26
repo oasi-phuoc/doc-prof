@@ -2150,15 +2150,6 @@ html.is-margin-symmetric .print-only-sheets .worksheet-sheet.sheet-even .draft-g
   gap:16px;
   width:100%;
 }
-.sheet-preview-row.is-jeux-duplex{flex-wrap:wrap;justify-content:center}
-.sheet-stage.is-jeux-stack{
-  display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:center;gap:18px;width:100%
-}
-/* Jeux multi-feuilles : chaque A4 garde une largeur raisonnable. */
-.sheet-stage.is-jeux-stack .a4-frame{
-  flex:0 0 auto;
-  width:min(420px, calc((100% - 18px) / 2));
-}
 /* Saut de page et corrigé : la feuille suivante est sous la principale, le cadre défile. */
 .sheet-preview-wrap:has(.is-page-stack) .sheet-preview-cluster,
 .sheet-preview-wrap:has(.is-po-stack) .sheet-preview-cluster{
