@@ -1,0 +1,280 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "replacements": [
+    {
+      "from": "La gestion des marchandises regroupe tous les **flux de marchandises et de données** au sein d'une entreprise (**en interne**). Points clés :",
+      "to": "La gestion des marchandises organise les flux physiques et les informations qui les relient. Elle couvre notamment les réceptions, les stocks, l’intralogistique et la préparation des expéditions.",
+      "reason": "Articule la gestion d’entrepôt et la gestion des matières."
+    },
+    {
+      "from": "Optimiser le flux de marchandises (approvisionnement, mise à disposition interne, stockage, distribution) de façon **économique** (coûts réduits, disponibilité rapide). But ultime : **optimisation des marges**. Des **indicateurs** (§10.6) servent à comparer, piloter et optimiser.",
+      "to": "Organiser les flux et les stocks pour satisfaire les besoins au moment convenu avec des coûts maîtrisés. Les **indicateurs** du §10.6 permettent de comparer les résultats et de suivre les effets d’un changement.",
+      "reason": "Privilégie les objectifs opérationnels observables."
+    },
+    {
+      "from": "Un **diagramme Sankey** visualise les quantités de flux internes (épaisseur de flèche = volume). Aide à prioriser les principaux flux pour l'optimisation.",
+      "to": "Un **diagramme de Sankey** représente les flux par des bandes dont la largeur traduit une grandeur, par exemple le volume ou la masse. Employer la même unité pour toutes les branches comparées.",
+      "reason": "Précise la grandeur et son unité."
+    },
+    {
+      "from": "Réutilisées longtemps : n° d'article, désignation, unité (pce, kg, L, m), emplacement (fixe), fournisseur, poids, volume…  ",
+      "to": "Réutilisées pour plusieurs opérations : numéro d’article, désignation, unité de base, poids, volume et, quand le système le prévoit, emplacement fixe ou fournisseur de référence. Une donnée de base peut être actualisée selon la procédure.",
+      "reason": "Distingue la référence stable en usage d’une valeur immuable."
+    },
+    {
+      "from": "Évoluent en permanence : stock, consommation, commandes, factures…",
+      "to": "Consignent un événement : réception, sortie, transfert, commande ou facture. Les quantités de stock et moyennes de consommation sont des états ou indicateurs calculés à partir des opérations enregistrées.",
+      "reason": "Sépare les transactions et les indicateurs."
+    },
+    {
+      "from": "- Besoin total 250 − stock 100 − commandes 50 = **besoin net 100** → risque de rupture, il faut agir.",
+      "to": "- Besoin de 250 pièces pour la date fixée, dont 100 disponibles et 50 attendues à temps. Besoin net : 250 − 100 − 50 = **100 pièces** à couvrir.",
+      "reason": "Rend les conditions du besoin net explicites."
+    },
+    {
+      "from": "**Entreposage :** affectation fixe, chaotique/flexible, zones par catégorie, ABC selon rotation.",
+      "to": "**Entreposage :** emplacement fixe ou flexible, zones par catégorie ou implantation selon la rotation. En emplacement flexible, enregistrer la position réelle du stock à chaque mouvement.",
+      "reason": "Explique le terme et sa conséquence pratique."
+    },
+    {
+      "from": "Rotation des stocks = besoin annuel / stock  ",
+      "to": "Rotation des stocks = sorties de la période ÷ stock moyen, exprimés dans la même unité.",
+      "reason": "Corrige le dénominateur et précise le périmètre."
+    },
+    {
+      "from": "Durée de stockage = 360 / rotation  ",
+      "to": "Durée moyenne de stockage = nombre de jours de la période ÷ rotation du stock sur cette période.",
+      "reason": "Précise les conditions de la formule."
+    },
+    {
+      "from": "(**Année bancaire :** 12 mois × 30 j = **360 j/an**)",
+      "to": "Pour cet exemple, on utilise une année conventionnelle de **360 jours**. Indiquer la convention utilisée dans le résultat.",
+      "reason": "Évite de présenter 360 jours comme une règle unique."
+    },
+    {
+      "from": "Taux de service = commandes honorées / commandes reçues × 100  ",
+      "to": "Taux de service = commandes satisfaites selon le critère retenu ÷ commandes reçues × 100. Préciser la période et le critère, par exemple livraison complète.",
+      "reason": "Définit la mesure et permet de la comparer."
+    },
+    {
+      "from": "Ex. 237 / 262 × 100 ≈ **90,45 %**",
+      "to": "Ex. 237 ÷ 262 × 100 ≈ **90,46 %**.",
+      "reason": "Corrige l’arrondi au centième."
+    },
+    {
+      "from": "Ex. 82 / 154 Mio ≈ **53,25 %** du CA pour les achats",
+      "to": "Ex. 82 millions de francs ÷ 154 millions de francs × 100 ≈ **53,25 %**.",
+      "reason": "Affiche les unités du numérateur et du dénominateur."
+    }
+  ],
+  "summary": [
+    "Les données de base décrivent l’article et ses paramètres. Les mouvements enregistrent les réceptions, les transferts et les sorties.",
+    "Le besoin net dépend du stock utilisable et des réceptions confirmées pour le bon délai. Un stock suffisant en quantité peut être indisponible pour une commande.",
+    "Comparer les indicateurs sur le même périmètre. La rotation rapporte les sorties au stock moyen et le taux de livraison à temps mesure le respect de l’échéance."
+  ],
+  "glossary": [
+    [
+      "approvisionnement",
+      "Activités qui permettent de disposer des articles nécessaires au moment voulu."
+    ],
+    [
+      "besoin net",
+      "Quantité encore à couvrir après prise en compte du stock utilisable et des réceptions attendues à temps."
+    ],
+    [
+      "donnée de base",
+      "Information de référence réutilisée dans plusieurs opérations, comme la désignation d’un article."
+    ],
+    [
+      "donnée de mouvement",
+      "Enregistrement d’une opération, avec par exemple article, quantité, date et emplacement."
+    ],
+    [
+      "ERP",
+      "Progiciel de gestion intégré qui partage les informations entre des activités comme les achats, les stocks et la vente."
+    ],
+    [
+      "intralogistique",
+      "Organisation des déplacements, du stockage et de la préparation des marchandises au sein d’un site ou d’une entreprise."
+    ],
+    [
+      "inventaire",
+      "Comptage ou contrôle physique des articles, comparé au stock enregistré."
+    ],
+    [
+      "réapprovisionnement",
+      "Action destinée à reconstituer un stock ou la quantité disponible à un emplacement."
+    ],
+    [
+      "rebut",
+      "Produit ou partie de produit écarté parce qu’il ne satisfait pas aux critères retenus."
+    ],
+    [
+      "rotation du stock",
+      "Rapport entre les sorties de la période et le stock moyen, dans la même unité."
+    ],
+    [
+      "stock disponible",
+      "Quantité utilisable pour le besoin considéré après prise en compte des réservations et blocages."
+    ],
+    [
+      "stock moyen",
+      "Quantité moyenne en stock pendant la période d’observation."
+    ],
+    [
+      "stock de sécurité",
+      "Quantité prévue pour couvrir des variations de demande ou de délai."
+    ],
+    [
+      "taux de livraison à temps",
+      "Part des livraisons effectuées au plus tard à la date prévue, selon le périmètre défini."
+    ],
+    [
+      "taux de service",
+      "Part des demandes ou commandes satisfaites selon les critères retenus."
+    ],
+    [
+      "unité de base",
+      "Unité utilisée pour enregistrer ou convertir les quantités d’un article, par exemple pièce, kilogramme ou litre."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-origine-1",
+      "kind": "maths",
+      "prompt": "Sur 750 moniteurs livrés pendant l’année, 670 sont arrivés à la date prévue ou avant. Calculez le taux de livraison à temps, au centième de pour cent.",
+      "answer": "Le taux de livraison à temps est de 89,33 %.",
+      "calculation": "670 ÷ 750 × 100 ≈ 89,33 %."
+    },
+    {
+      "id": "maths-origine-2",
+      "kind": "maths",
+      "prompt": "Les sorties annuelles d’un article sont de 450 pièces et le stock moyen est de 40 pièces. Calculez la rotation et la durée moyenne de stockage avec une année conventionnelle de 360 jours.",
+      "answer": "Le stock tourne 11,25 fois par an. La durée moyenne de stockage est de 32 jours.",
+      "calculation": "450 ÷ 40 = 11,25 rotations. 360 ÷ 11,25 = 32 jours.",
+      "approvedFor": [
+        "CFC"
+      ]
+    },
+    {
+      "id": "maths-origine-3",
+      "kind": "maths",
+      "prompt": "Un atelier produit 350 pièces. Il écarte 27 pièces comme rebuts. Calculez le taux de rebut au centième de pour cent.",
+      "answer": "Le taux de rebut est de 7,71 %.",
+      "calculation": "27 ÷ 350 × 100 ≈ 7,71 %."
+    },
+    {
+      "id": "maths-origine-4",
+      "kind": "maths",
+      "prompt": "Les achats de marchandises d’une entreprise fictive s’élèvent à 154,7 millions de francs et son chiffre d’affaires à 228 millions. Quelle part les achats représentent-ils, au centième de pour cent ?",
+      "answer": "Les achats de marchandises représentent 67,85 % du chiffre d’affaires.",
+      "calculation": "154,7 ÷ 228 × 100 ≈ 67,85 %.",
+      "approvedFor": [
+        "CFC"
+      ]
+    },
+    {
+      "id": "maths-origine-5",
+      "kind": "maths",
+      "prompt": "Une commande demande 450 pièces. Il en reste 78 disponibles et 120 autres arriveront avant la préparation. Combien de pièces faut-il encore couvrir ?",
+      "answer": "Le besoin net est de 252 pièces.",
+      "calculation": "450 − 78 − 120 = 252 pièces."
+    },
+    {
+      "id": "maths-creation-6",
+      "kind": "maths",
+      "prompt": "Un article compte 85 pièces disponibles le matin. L’équipe réceptionne 24 pièces en bon état puis en expédie 37. Quel est le stock disponible si aucune pièce n’est réservée ou bloquée ?",
+      "answer": "Le stock disponible est de 72 pièces.",
+      "calculation": "85 + 24 − 37 = 72 pièces."
+    },
+    {
+      "id": "verification-origine-1",
+      "kind": "verification",
+      "prompt": "Classez le numéro d’article, l’unité de base, une réception aujourd’hui et la sortie d’hier en données de base ou données de mouvement.",
+      "answer": "Le numéro d’article et l’unité de base sont des données de base. La réception et la sortie sont des données de mouvement."
+    },
+    {
+      "id": "verification-origine-2",
+      "kind": "verification",
+      "prompt": "Citez deux activités d’intralogistique au sein d’un dépôt.",
+      "answer": "La préparation des commandes et les transports internes."
+    },
+    {
+      "id": "verification-origine-3",
+      "kind": "verification",
+      "prompt": "Donnez un objectif économique, un objectif lié au service et un objectif environnemental pour un dépôt.",
+      "answer": "Par exemple réduire le coût de stockage, livrer les articles à la date demandée et favoriser le réemploi des emballages."
+    },
+    {
+      "id": "verification-origine-4",
+      "kind": "verification",
+      "prompt": "Pourquoi un stock très bas et une livraison rapide peuvent-ils être difficiles à concilier ?",
+      "answer": "Un stock bas limite les coûts mais laisse moins de marge devant une hausse de demande ou un retard d’approvisionnement."
+    },
+    {
+      "id": "verification-origine-5",
+      "kind": "verification",
+      "prompt": "Rappelez les six éléments à contrôler pour la disponibilité d’un article selon les 6B.",
+      "answer": "La bonne marchandise, au bon moment, au bon endroit, en bonne quantité, en bonne qualité et au bon prix."
+    },
+    {
+      "id": "verification-creation-6",
+      "kind": "verification",
+      "prompt": "Expliquez pourquoi le délai de référence d’un fournisseur et la date de livraison d’une commande donnée appartiennent à des catégories différentes.",
+      "answer": "Le délai de référence est un paramètre de planification réutilisé. La date prévue dans une commande appartient à cette transaction.",
+      "approvedFor": [
+        "CFC"
+      ]
+    },
+    {
+      "id": "situation-creation-1",
+      "kind": "situation",
+      "prompt": "Le bon de livraison indique 36 cartons. Vous en comptez 35, dont un endommagé. Qu’indiquez-vous à la réception ?",
+      "answer": "Enregistrer ou signaler 35 cartons reçus, dont un endommagé. Appliquer la procédure d’écart et isoler le carton abîmé si nécessaire avant qu’il ne devienne disponible."
+    },
+    {
+      "id": "situation-creation-2",
+      "kind": "situation",
+      "prompt": "La fiche indique une unité de base en pièces. Le fournisseur envoie cinq cartons de douze pièces chacun. Décrivez le contrôle à faire avant de valider la réception.",
+      "answer": "Vérifier le conditionnement et l’unité d’enregistrement. Si tous les cartons sont complets et acceptés, valider une entrée de 5 × 12 = 60 pièces."
+    },
+    {
+      "id": "situation-creation-3",
+      "kind": "situation",
+      "prompt": "Un article est placé dans un nouvel emplacement. Le stock total reste identique. Quelle donnée devez-vous enregistrer pour faciliter le prochain prélèvement ?",
+      "answer": "Enregistrer le transfert avec l’article, la quantité déplacée et les emplacements de départ et d’arrivée, selon la procédure."
+    },
+    {
+      "id": "situation-creation-4",
+      "kind": "situation",
+      "prompt": "Un client demande 40 pièces pour demain. Le dépôt en a 30. Une réception de 20 pièces est prévue après-demain. Que faut-il faire ?",
+      "answer": "Le besoin non couvert pour demain est de 10 pièces. Vérifier une autre source ou une avance de livraison, puis communiquer un délai réaliste selon la procédure."
+    },
+    {
+      "id": "situation-creation-5",
+      "kind": "situation",
+      "prompt": "Deux équipes calculent un taux de service. L’une compte les commandes livrées intégralement, l’autre les lignes livrées. Que faut-il fixer avant de comparer les taux ?",
+      "answer": "Fixer une même unité de comptage, une même période, le critère de service et le traitement des livraisons partielles puis recalculer.",
+      "approvedFor": [
+        "CFC"
+      ]
+    }
+  ],
+  "editorialNotes": [
+    "Les exercices d’origine utilisent des articles commerciaux. Les données de calcul sont conservées quand elles servent l’objectif. Les marques et noms sont retirés.",
+    "Le calcul source de disponibilité est nommé taux de livraison à temps, car la donnée mesurée est le respect du délai. Le taux de service exige un critère de satisfaction explicite.",
+    "La rotation se rapporte au stock moyen. Dans le calcul du besoin net, seules les réceptions confirmées à temps et le stock utilisable peuvent couvrir le besoin.",
+    "Des champs ambigus du corrigé ERP sont remplacés par des exemples explicites de références, transactions et indicateurs calculés."
+  ],
+  "visual": {
+    "anchor": "10.4 Données statiques et dynamiques (ERP)",
+    "file": "log-110-gestion-entrepot-schema-v001.svg",
+    "alt": "Contrôler la réception — Tracer le mouvement — Préparer la sortie",
+    "caption": "La fiche article relie chaque mouvement à une quantité et à un emplacement.",
+    "sha256": "51648f01aad0aaf218ea0d5ee00c7d876431617b3a291e7d6de9d1601e14eb8a",
+    "origin": "Schéma original Doc-Prof pour le module 110."
+  }
+}
