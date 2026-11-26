@@ -1,0 +1,238 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "replacements": [
+    {
+      "from": "Le client est une personne ou une entreprise qui achète des marchandises ou utilise des services d'une autre personne ou entreprise. Souvent, le client est également appelé « acheteur » ou « débiteur ». Le mot « débiteur » est souvent utilisé pour la facturation et la comptabilité.",
+      "to": "Un **client** achète un bien ou une prestation. L’**acheteur** passe la commande. Le **débiteur** doit une somme. Selon la commande, ces rôles peuvent concerner des personnes ou entreprises différentes.",
+      "reason": "Distingue les rôles.",
+      "page": "theorie"
+    },
+    {
+      "from": "- **Grands commerçants** — commandes régulières, plusieurs articles ; livraison par colis pour les quantités plus importantes",
+      "to": "- **Clients professionnels** — commandes pour une activité professionnelle, par exemple pour approvisionner un magasin ou un atelier. Le volume et la fréquence varient selon la demande.\n- **Clients internes** — autres services de la même entreprise. Ils reçoivent une marchandise ou une prestation du dépôt.",
+      "reason": "Introduit le client interne et explicite le client professionnel.",
+      "page": "theorie"
+    },
+    {
+      "from": "Pour chaque commande exécutée, EnterSite AG établit une **facture**. Si le client paie, cela génère un **chiffre d'affaires**. Ce chiffre d'affaires sert à payer le **salaire** des collaborateurs. Le salaire de tous les collaborateurs provient donc des paiements des clients.",
+      "to": "Les ventes réalisées contribuent au **chiffre d’affaires** de l’entreprise. Une facture peut être réglée ultérieurement. Le paiement reçu est un **encaissement**. Le chiffre d’affaires contribue à financer les dépenses de l’entreprise, dont les salaires, les achats et le transport.",
+      "reason": "Sépare la vente, le paiement et les dépenses.",
+      "page": "theorie"
+    },
+    {
+      "from": "**Remarque :** en tant que logisticien·ne, je comprends que chaque commande client est la base de mon emploi et donc du paiement de mon salaire. En conséquence, je me comporte de manière **respectueuse** et **valorisante** envers tous les clients.",
+      "to": "Un logisticien contribue au service en contrôlant l’article, la quantité, l’adresse et les informations utiles. En cas d’écart, prévenir la personne chargée du suivi.",
+      "reason": "Relie la commande à des gestes concrets.",
+      "page": "theorie"
+    },
+    {
+      "from": "**Remarque :** le client souhaite être pris au sérieux et que l'on communique **honnêtement** avec lui.",
+      "to": "Communiquer avec respect et honnêteté. Clarifier la demande et expliquer les contraintes de sécurité, de délai, de droit d’accès ou de livraison qui s’appliquent.",
+      "reason": "Précise le cadre professionnel de la relation.",
+      "page": "theorie"
+    },
+    {
+      "from": "- Expliquer pourquoi chaque commande compte pour l'emploi et le salaire",
+      "to": "- Expliquer le rôle de la commande, de la facture et de l’encaissement.",
+      "reason": "Aligne les objectifs sur le cours corrigé.",
+      "page": "objectifs"
+    },
+    {
+      "from": "2. Lien commande → chiffre d'affaires → salaire",
+      "to": "2. Commande, chiffre d’affaires et encaissement",
+      "reason": "Aligne l’aperçu sur le cours corrigé.",
+      "page": "apercu"
+    }
+  ],
+  "summary": [
+    "L’acheteur, le destinataire et le débiteur peuvent être des personnes différentes. Le client interne reçoit une prestation d’un service de la même organisation.",
+    "Suivre la demande jusqu’à sa résolution. Clarifier le besoin, vérifier les informations et annoncer une suite réaliste.",
+    "Le chiffre d’affaires mesure les ventes et l’encaissement indique quand le paiement est reçu."
+  ],
+  "glossary": [
+    [
+      "acheteur",
+      "Personne ou organisation qui passe l’achat, pour elle-même ou pour le compte d’un client."
+    ],
+    [
+      "chiffre d’affaires",
+      "Montant des ventes réalisées sur une période selon les règles comptables applicables."
+    ],
+    [
+      "client",
+      "Personne ou organisation qui achète un bien ou une prestation."
+    ],
+    [
+      "client fidèle",
+      "Client qui revient régulièrement chez un même fournisseur."
+    ],
+    [
+      "client interne",
+      "Personne ou service de la même organisation qui reçoit une prestation, un produit ou une information."
+    ],
+    [
+      "client professionnel",
+      "Organisation ou personne agissant dans le cadre de son activité professionnelle."
+    ],
+    [
+      "créance",
+      "Droit de demander le paiement d’un montant dû."
+    ],
+    [
+      "débiteur",
+      "Personne ou organisation qui doit une somme à une autre."
+    ],
+    [
+      "destinataire",
+      "Personne ou organisation à laquelle un envoi est remis."
+    ],
+    [
+      "encaissement",
+      "Réception effective d’un paiement."
+    ],
+    [
+      "facture",
+      "Document indiquant les biens ou prestations facturés, leurs montants et les modalités de paiement."
+    ],
+    [
+      "offre",
+      "Proposition qui précise le produit ou la prestation, le prix et les conditions."
+    ],
+    [
+      "réclamation",
+      "Signalement d’un écart par un client qui demande une vérification ou une solution."
+    ],
+    [
+      "service client",
+      "Équipe ou activité qui répond aux demandes, suit les dossiers et traite les écarts."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-origine-1",
+      "kind": "maths",
+      "prompt": "Convertissez 1 875 CHF en euros et en yuans avec les cours d’exercice suivants, sans frais. Un franc suisse vaut 1,05 EUR et 8,19 CNY.",
+      "answer": "1 968,75 EUR ou 15 356,25 CNY.",
+      "calculation": "1 875 × 1,05 = 1 968,75 EUR. 1 875 × 8,19 = 15 356,25 CNY.",
+      "approvedFor": [
+        "CFC"
+      ]
+    },
+    {
+      "id": "maths-origine-2",
+      "kind": "maths",
+      "prompt": "Une entreprise a 850 clients. Leur nombre augmente de 14 % en un an. Combien de clients compte-t-elle ensuite ?",
+      "answer": "Elle compte 969 clients.",
+      "calculation": "850 × 1,14 = 969 clients."
+    },
+    {
+      "id": "maths-origine-3",
+      "kind": "maths",
+      "prompt": "L’entreprise a gagné 125 clients. Parmi eux, 35 ont indiqué le site Internet. Sur les 90 autres, deux tiers citent le prix et le reste la qualité. Combien citent le prix et combien citent la qualité ?",
+      "answer": "60 clients citent le prix et 30 la qualité.",
+      "calculation": "125 − 35 = 90. 90 × 2 ÷ 3 = 60. 90 − 60 = 30."
+    },
+    {
+      "id": "maths-creation-4",
+      "kind": "maths",
+      "prompt": "Sur une offre de 4 600 CHF, l’entreprise accorde 11 % de remise. Un supplément de livraison représente 10 % du montant remisé. Calculez le supplément et le total.",
+      "answer": "Le supplément est de 409,40 CHF et le total de 4 503,40 CHF.",
+      "calculation": "4 600 × 0,89 = 4 094 CHF. 4 094 × 0,10 = 409,40 CHF. 4 094 + 409,40 = 4 503,40 CHF.",
+      "approvedFor": [
+        "CFC"
+      ]
+    },
+    {
+      "id": "maths-creation-5",
+      "kind": "maths",
+      "prompt": "Un client commande sept cartons à 18 CHF pièce. La livraison coûte 12 CHF pour l’ensemble. Quel total obtient-on ?",
+      "answer": "Le total est de 138 CHF.",
+      "calculation": "7 × 18 + 12 = 138 CHF."
+    },
+    {
+      "id": "verification-origine-1",
+      "kind": "verification",
+      "prompt": "Pourquoi la précision du travail au dépôt compte-t-elle pour le client ?",
+      "answer": "Elle permet de livrer le bon article, au bon endroit et au délai prévu. Elle limite les écarts et retours."
+    },
+    {
+      "id": "verification-origine-2",
+      "kind": "verification",
+      "prompt": "Qu’est-ce qui caractérise un client fidèle ?",
+      "answer": "Il revient et achète régulièrement auprès d’un même fournisseur."
+    },
+    {
+      "id": "verification-origine-3",
+      "kind": "verification",
+      "prompt": "Quel retour d’un client régulier peut aider à améliorer une prestation ?",
+      "answer": "Par exemple le signalement d’un conditionnement difficile à ouvrir ou d’un créneau de livraison mal adapté."
+    },
+    {
+      "id": "verification-origine-4",
+      "kind": "verification",
+      "prompt": "La production demande au dépôt de mettre des pièces à sa disposition. Quel rôle joue la production ?",
+      "answer": "Elle est un client interne du dépôt."
+    },
+    {
+      "id": "verification-origine-5",
+      "kind": "verification",
+      "prompt": "Quelles attitudes renforcent la confiance lors d’une réclamation ?",
+      "answer": "Écouter, vérifier les faits, communiquer avec respect et annoncer la suite avec honnêteté."
+    },
+    {
+      "id": "verification-creation-6",
+      "kind": "verification",
+      "prompt": "Une facture de 600 CHF prévoit un paiement à 30 jours. Quelle opération se produit quand le virement est reçu ?",
+      "answer": "L’encaissement de 600 CHF."
+    },
+    {
+      "id": "situation-origine-1",
+      "kind": "situation",
+      "prompt": "Un client attend un colis aujourd’hui. Le dossier indique qu’il est toujours au dépôt. Préparez une réponse en deux étapes.",
+      "answer": "Confirmer les informations dans le dossier et vérifier quand le colis pourra partir. Indiquer au client le fait constaté et l’heure du prochain suivi."
+    },
+    {
+      "id": "situation-origine-2",
+      "kind": "situation",
+      "prompt": "Une cliente demande à entrer dans la zone de chargement pour gagner du temps. Que lui proposez-vous ?",
+      "answer": "Expliquer que la zone est réservée et orienter la cliente vers la zone autorisée ou la personne qui organise le retrait."
+    },
+    {
+      "id": "situation-origine-3",
+      "kind": "situation",
+      "prompt": "Trois clients signalent que les cartons arrivent écrasés. Quels faits transmettez-vous pour aider votre équipe à corriger le problème ?",
+      "answer": "Noter les références des envois, la date, l’état à réception et les éléments d’emballage pertinents. Faire remonter les constats au responsable."
+    },
+    {
+      "id": "situation-origine-4",
+      "kind": "situation",
+      "prompt": "Le service de production demande douze pièces, mais seules huit sont disponibles. Comment organisez-vous la réponse ?",
+      "answer": "Confirmer la quantité disponible, le besoin et le délai. Proposer le prélèvement des huit pièces si cela aide et vérifier le délai pour les quatre restantes."
+    },
+    {
+      "id": "situation-creation-5",
+      "kind": "situation",
+      "prompt": "Une entreprise paie une commande et demande de livrer à une autre adresse. Quelles informations faut-il vérifier et à quels rôles correspondent-elles ?",
+      "answer": "Vérifier l’identité du client et du débiteur sur le dossier et distinguer les coordonnées de facturation du nom et de l’adresse vérifiés du destinataire.",
+      "approvedFor": [
+        "CFC"
+      ]
+    }
+  ],
+  "editorialNotes": [
+    "Les chiffres et cours de change sont des données d’exercice. Le calcul sur l’acquisition de clients utilise des effectifs cohérents pour que les parts reconstituent le total.",
+    "Le cours sépare vente, encaissement et salaire. Le calcul de deux pourcentages successifs est transposé à une offre logistique.",
+    "Les mises en situation sont autonomes. Les missions source qui exigent une visite virtuelle, un débat ou des personnes nommées restent dans l’archive."
+  ],
+  "visual": {
+    "anchor": "1.1 L'importance du client",
+    "file": "log-201-demande-client-schema-v001.svg",
+    "alt": "Clarifier la demande — Vérifier le dossier — Confirmer la suite",
+    "caption": "Donner un délai que l’équipe est en mesure de tenir.",
+    "sha256": "5c27192b7bb7047d5a094123472c9c1b0571abf8cd4a84991a9c1d8c18c90525",
+    "origin": "Schéma original Doc-Prof pour le module 201."
+  }
+}

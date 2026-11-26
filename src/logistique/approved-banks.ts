@@ -9,6 +9,8 @@ import { module107 } from './banks/module-107-v001.generated.ts'
 import { module108 } from './banks/module-108-v001.generated.ts'
 import { module109 } from './banks/module-109-v001.generated.ts'
 import { module110 } from './banks/module-110-v001.generated.ts'
+import { module201 } from './banks/module-201-v001.generated.ts'
+import { module202 } from './banks/module-202-v001.generated.ts'
 import { module308 } from './banks/module-308-v001.generated.ts'
 import { module613 } from './banks/module-613-v001.generated.ts'
 import { module805 } from './banks/module-805-v001.generated.ts'
@@ -71,6 +73,15 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
       ...module100, ...module101, ...module102, ...module103, ...module104,
       ...module105, ...module106, ...module107, ...module108, ...module109,
       ...module110, ...module308, ...module613, ...module805, ...module902,
+    ],
+  },
+  {
+    revision: 'logistique-201-202-v001',
+    units: [
+      ...module100, ...module101, ...module102, ...module103, ...module104,
+      ...module105, ...module106, ...module107, ...module108, ...module109,
+      ...module110, ...module201, ...module202, ...module308, ...module613,
+      ...module805, ...module902,
     ],
   },
 ]
