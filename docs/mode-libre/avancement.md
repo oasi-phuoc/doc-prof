@@ -20,7 +20,7 @@ Dans Chrome, la recette du site de production a vérifié la connexion administr
 |---|---|---|
 | Prérequis comptes | Validé en production | Recette Cloudflare, contrôle D1 et tests des comptes ci-dessus. |
 | Cahier des charges | V1.2 validée | Exigences, arbitrages et critères de réception approuvés et publiés. |
-| L0 — Inventaire exécutable | À lancer | Figer le commit et l’arbre Git sur la branche cible à jour. Établir la référence de build, les matrices par type et contrôle, les recettes historiques et les mesures écran/PDF. |
+| L0 — Inventaire exécutable | En cours | Référence `e72ec7c24` figée et build vérifié. [Inventaire des types](audit-types.md), [relevé écran et PDF](audit-controles.md) et [état des recettes](audit-recettes.md) disponibles. Compléter les variantes, droits, profils, effets des contrôles et réouvertures historiques. |
 | L1 — Générateur et contrats d’état | À lancer après L0 | Panneau unique, géométrie de l’aperçu, identité des unités, verrous, historique et contrat de reprise. |
 | L2 — Pilotes | À lancer après L1 | Calcul avec recalcul, QCM illustré et document avec sous-questions. Prouver les parcours de bout en bout avant de généraliser. |
 | L3 — Mathématiques et tests | À lancer après les pilotes | Mathématiques, géométrie, logique, TPM et TCM, selon les profils recensés. |

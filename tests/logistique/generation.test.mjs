@@ -49,7 +49,9 @@ test('le tirage est déterministe et limité aux unités approuvées pour le dip
   assert.equal(result.items[0].responseAnswer, 'Le poids total est de 42 kg.')
   assert.deepEqual(generateLogistique(config('AFP', '105', 'verification'), 109, fixture.units).items, [])
   assert.equal(generateLogistique(config('CFC', '105', 'verification'), 109, fixture.units).items.length, 1)
-  assert.deepEqual(generateLogistique(config('AFP', '100', 'maths'), 109).items, [], 'les modules à compléter restent vides')
+  assert.deepEqual(generateLogistique({
+    ...config('AFP', '100', 'maths'), logistiqueBankRevision: 'logistique-initiale',
+  }, 109).items, [], 'une révision sans banque ne produit pas d’exercice')
   assert.equal(generateLogistique(maths, 109).bankQuestionCap, 2)
   assert.deepEqual(generateLogistique({ ...maths, domain: 'logistique-cfc' }, 109, fixture.units).items, [])
 })
