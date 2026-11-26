@@ -237,15 +237,6 @@ export function GeneratorPage({
   const previewSheet = previewWorksheets[Math.min(safeSheetIndex, previewWorksheets.length - 1)]
   const a5LeftSheet = a5LeftWorksheets?.[Math.min(safeSheetIndex, a5LeftWorksheets.length - 1)]
   const a5RightSheet = a5RightWorksheets?.[Math.min(safeSheetIndex, a5RightWorksheets.length - 1)]
-  /** Jeux : aperçu de toutes les feuilles de la config (recto + verso) côte à côte / empilées. */
-  const jeuxPreviewSheets = useMemo(() => {
-    if (activePage.domain !== 'jeux') return null
-    const related = previewWorksheets
-      .map((sheet, index) => ({ sheet, index }))
-      .filter(({ sheet }) => (sheet.configIndex ?? 0) === pageIndex)
-    return related.length > 0 ? related : null
-  }, [activePage.domain, previewWorksheets, pageIndex])
-
   const available = topicsForDomain(activePage.domain)
   const typeChoices = typeChoicesForBlock(activePage.domain, activeBlock)
   const firstExerciseNo = exerciseStartIndex(pages, pageIndex)
@@ -601,8 +592,7 @@ export function GeneratorPage({
         pointsPerQuestion,
         saveCopy: true,
       }),
-    jeuxPreviewSheets,
-    previewFrameRef,
+      previewFrameRef,
     seed,
     previewWorksheets,
     sheetFormat,
@@ -652,9 +642,9 @@ export function GeneratorPage({
         domain={logistiqueDomain ?? activePage.domain}
         onLogout={onLogout}
         afterBrand={logistiqueDomain ? <span className="logistique-brand-label">{logistiqueDomainLabel(logistiqueDomain)}</span> : undefined}
-        rightSlot={logistiqueDomain ? undefined : (
+        rightSlot={(
           <>
-            <button type="button" className="button small" onClick={playWithClass}>Jouer cette fiche</button>
+            {logistiqueDomain ? null : <button type="button" className="button small" onClick={playWithClass}>Jouer cette fiche</button>}
             <TopbarTools
             themeColor={themeColor}
             onThemeColor={applyThemeColor}
@@ -733,7 +723,7 @@ export function GeneratorPage({
         )}
       />
       <main className="generator-page" id="top">
-        <div className="generator-intro" hidden={Boolean(logistiqueDomain)}>
+        <div className="generator-intro">
           <a className="back-link" href="/">
             ← Retour à l’accueil
           </a>
