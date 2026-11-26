@@ -8,6 +8,7 @@ const { load, root } = require('../../scripts/gattegno-loader.cjs')
 const catalog = load(root + '/src/logistique/catalog.ts')
 const { generateLogistique, logistiqueDocumentTitle } = load(root + '/src/logistique/generate.ts')
 const { freezeLogistiquePages, validLogistiquePages } = load(root + '/src/logistique/recipe.ts')
+const { currentLogistiquePublication } = load(root + '/src/logistique/approved-banks.ts')
 
 function config(diploma, module, kind) {
   const tag = diploma.toLowerCase()
@@ -60,8 +61,8 @@ test('les titres et les recettes conservent les modules, le diplôme et la révi
   assert.equal(logistiqueDocumentTitle([a, b], true), 'Évaluation : modules 101 et 105')
   assert.equal(logistiqueDocumentTitle([config('AFP', '105', 'glossaire')]), 'Glossaire : module 105')
   const pages = freezeLogistiquePages([{ ...a, extraBlocks: [b] }])
-  assert.equal(pages[0].logistiqueBankRevision, 'logistique-105-v001')
-  assert.equal(pages[0].extraBlocks[0].logistiqueBankRevision, 'logistique-105-v001')
+  assert.equal(pages[0].logistiqueBankRevision, currentLogistiquePublication.revision)
+  assert.equal(pages[0].extraBlocks[0].logistiqueBankRevision, currentLogistiquePublication.revision)
   assert.equal(validLogistiquePages(pages), true)
   assert.equal(validLogistiquePages([a, config('AFP', '105', 'maths')]), false)
   assert.equal(validLogistiquePages([config('AFP', '902', 'theorie')]), false)

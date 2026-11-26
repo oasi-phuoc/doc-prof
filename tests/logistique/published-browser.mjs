@@ -52,6 +52,7 @@ try {
   await sheet.waitFor()
   for (const diploma of ['CFC', 'AFP']) {
     await select('Domaine', 'Logistique ' + diploma)
+    await select('Sous-thème', '105 — Marchandises')
     await sheet.getByText('Théorie : module 105', { exact: true }).waitFor()
     const theory = await inspectPrint('Théorie ' + diploma)
     assert(theory.pages.length > 1)

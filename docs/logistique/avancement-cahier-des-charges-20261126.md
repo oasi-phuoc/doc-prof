@@ -20,12 +20,13 @@ Référence de réalisation dans le [cahier des charges v2.11](cahier-des-charge
 | L1e — Pagination et titres | Pilote | Titres automatiques, sauts manuels et découpage automatique initial. Chromium a mesuré au moins 25 px de réserve sur chaque page imprimée des cinq types du 105, dans les deux diplômes avec le format A4 et les réglages par défaut. Étendre la mesure à toutes les combinaisons de formats, réglages et textes longs. |
 | L1f — Évaluation | À poursuivre | Les modes communs sont accessibles. Le récit adaptatif, la durée indicative, le barème Bloom et les modèles de nouveau tirage ne sont pas réalisés. |
 | L2 et L3 — Module 105 | Révision `105-v001` active | Cours commun, 45 termes de glossaire, quatre calculs et quatre vérifications CFC, dont deux et deux en AFP, et deux situations communes. Le résumé réécrit est disponible dans les données éditoriales. L’ancien exercice SGH, dépendant de pictogrammes, demeure archivé. |
+| L3 — Module 101 | Révision `101-v001` active | Cours de 42 blocs, schéma original, 16 termes, quatre problèmes CFC dont trois AFP, sept vérifications et quatre situations communes. Le détail des adaptations, dont le corrigé du tonnage de Hambourg, figure dans la [préparation du 101](preparation/101-v001.json). |
 | L3c et V2.10 — Visuels | Pilote | Le schéma original du degré de transformation est rangé sous `public/assets/logistique/100/105/commun/`. Le [registre du visuel](pilote-105/visuels/registre.json) conserve l’empreinte, la révision et l’éligibilité. |
 | L4 et suivants — Généralisation | À poursuivre | Reprendre les thèmes dans l’ordre du référentiel et mesurer les unités effectivement disponibles par diplôme. Les cibles nominales de banque restent à atteindre. |
 
 ## Reprise opérationnelle
 
-1. Continuer avec 101 et 102, communs aux deux parcours. Partir des archives par thème sous [sources-epcas](sources-epcas/), puis convertir les contenus autonomes en unités des cinq types existants.
+1. Continuer avec 102, commun aux deux parcours. Partir des archives par thème sous [sources-epcas](sources-epcas/), puis convertir les contenus autonomes en unités des cinq types existants.
 2. Vérifier les corrigés, la place du contenu dans le référentiel, les écarts AFP/CFC et les dépendances à des médias écartés.
 3. Enregistrer une révision de banque et la conserver pour les recettes déjà créées. Les changements de fond du 105 sont consignés dans les [données de préparation](pilote-105/preparation.generated.json) et dans le [dossier éditorial](pilote-105/relecture.md).
 4. Vérifier dans les deux diplômes le nombre d’unités disponibles, la génération, le corrigé, l’impression et la réouverture. Reporter dans ce fichier les preuves, les écarts et le prochain module retenu.
@@ -33,6 +34,7 @@ Référence de réalisation dans le [cahier des charges v2.11](cahier-des-charge
 ## Commandes
 
 - `node scripts/import-logistique-epcas.mjs /chemin/vers/epcas` produit le catalogue et les archives à partir des objets Git de référence.
+- `node scripts/prepare-logistique-module.mjs 101-v001` reconstitue la banque du 101 à partir de l’archive et de sa préparation éditoriale.
 - `node scripts/prepare-logistique-105.mjs` produit les données éditoriales et la banque active du 105.
 - `npm run test:logistique` et `npm run test:logistique:browser` vérifient le catalogue, l’éligibilité, le gabarit et les recettes.
 
@@ -41,3 +43,5 @@ Référence de réalisation dans le [cahier des charges v2.11](cahier-des-charge
 - Pilote actif 105 CFC et AFP en Chromium. La théorie restitue 98 blocs, le glossaire 45 entrées et les exercices et leurs corrigés occupent les mêmes rendus que les autres domaines.
 - API de fiches avec Worker et D1 locaux. Enregistrement et lecture testés pour les deux diplômes et refus du module 902 en AFP et des recettes mixtes.
 - Suite interactive générale lancée pendant la reprise. 564 réussites sur 567. Les trois tests en échec échouent aussi sur la révision de départ. Ils concernent le pool « Nommer les formes », les transcriptions CO et les cotes des triangles.
+
+- Module 101. L’assemblage vérifie les corrections, l’empreinte du schéma et la présence de contenus dans les cinq types pour les deux diplômes. Le relevé Chromium ci-dessus s’applique au 105.

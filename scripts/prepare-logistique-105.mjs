@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto'
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { cells, theoryBlocks } from './logistique-theory-blocks.mjs'
 
 const directory = new URL('../docs/logistique/pilote-105/', import.meta.url)
 const { source, pages } = JSON.parse(readFileSync(new URL('sources-epcas.json', directory), 'utf8'))
@@ -36,30 +37,7 @@ const corrected = corrections.reduce((text, [from, to]) => {
   return text.replace(from, to)
 }, original)
 
-const emphasis = (text) => text.replace(/\*\*([^*]+)\*\*/g, '{g}$1{/g}')
 const plain = (text) => text.replace(/\*\*/g, '').trim()
-const cells = (line) => line.trim().replace(/^\||\|$/g, '').split('|').map((cell) => cell.trim())
-
-function theoryBlocks(markdown) {
-  return markdown.replace(/^#{1,6} .+$/gm, '\n$&\n').trim().split(/\n\s*\n/).flatMap((chunk) => {
-    const lines = chunk.split('\n').map((line) => line.trim()).filter(Boolean)
-    if (lines.every((line) => line.startsWith('|')) && lines.length >= 3) {
-      return [{
-        kind: 'table',
-        headers: cells(lines[0]).map(emphasis),
-        rows: lines.slice(2).map((line) => cells(line).map(emphasis)),
-      }]
-    }
-    if (lines.every((line) => /^[-*] |^\d+\. /.test(line))) {
-      return [{ kind: 'list', items: lines.map((line) => emphasis(line.replace(/^[-*] /, ''))) }]
-    }
-    if (lines.every((line) => /^#{1,6} /.test(line))) {
-      return lines.map((line) => ({ kind: 'heading', text: plain(line.replace(/^#+ /, '')), sub: line.startsWith('###') }))
-    }
-    if (/^---+$/.test(chunk)) return []
-    return [{ kind: 'paragraph', text: emphasis(lines.join(' ')) }]
-  })
-}
 
 function segment(markdown, from, to) {
   const body = markdown.split(from + '\n')[1]?.split('\n' + to)[0]?.trim()
