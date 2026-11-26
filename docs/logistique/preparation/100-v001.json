@@ -1,0 +1,179 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "replacements": [],
+  "summary": [
+    "Une marchandise circule entre les postes. Les informations enregistrées permettent de l’identifier et de suivre son parcours.",
+    "On choisit un module selon la question à traiter, comme les propriétés d’une marchandise, le tri ou la place au dépôt.",
+    "Une révision courte réserve du temps pour lire, chercher une réponse et comprendre le corrigé."
+  ],
+  "glossary": [
+    [
+      "compétence",
+      "Capacité à mobiliser des connaissances et des gestes pour accomplir une tâche."
+    ],
+    [
+      "corrigé",
+      "Réponse expliquée qui permet de contrôler le résultat et le raisonnement."
+    ],
+    [
+      "destinataire",
+      "Personne ou organisation à qui l’envoi est remis."
+    ],
+    [
+      "emplacement",
+      "Place identifiée où une marchandise peut être stockée."
+    ],
+    [
+      "expédition",
+      "Activité qui prépare et remet une marchandise pour son transport."
+    ],
+    [
+      "flux de marchandises",
+      "Déplacement physique des matières, des produits et des colis."
+    ],
+    [
+      "flux d’informations",
+      "Circulation des données qui permettent d’organiser et de suivre le travail."
+    ],
+    [
+      "habilitation",
+      "Autorisation de réaliser une tâche ou d’accéder à une information dans un périmètre défini."
+    ],
+    [
+      "module",
+      "Partie du cours consacrée à un ensemble de notions et de tâches liées."
+    ],
+    [
+      "planning",
+      "Organisation des activités, des personnes et des horaires."
+    ],
+    [
+      "prélèvement",
+      "Retrait de marchandises du stock pour satisfaire un besoin."
+    ],
+    [
+      "réception",
+      "Étape au cours de laquelle les marchandises entrantes sont reçues et contrôlées."
+    ],
+    [
+      "traçabilité",
+      "Possibilité de retrouver les informations relatives à une marchandise et à son parcours."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-origine-1",
+      "kind": "maths",
+      "prompt": "Vous avez 45 minutes pour réviser. Vous passez 12 minutes à lire un module et 18 minutes à résoudre un exercice. Combien de minutes reste-t-il pour la correction ?",
+      "answer": "Il reste 15 minutes.",
+      "calculation": "45 − (12 + 18) = 15 min."
+    },
+    {
+      "id": "maths-origine-2",
+      "kind": "maths",
+      "prompt": "Deux apprentis contrôlent 16 colis chacun. Une collègue en contrôle 8. Combien de colis l’équipe contrôle-t-elle ?",
+      "answer": "L’équipe contrôle 40 colis.",
+      "calculation": "2 × 16 + 8 = 40 colis."
+    },
+    {
+      "id": "maths-origine-3",
+      "kind": "maths",
+      "prompt": "Une révision commence à 13 h 35. Vous lisez 20 minutes, faites une pause de 5 minutes, puis corrigez un exercice pendant 25 minutes. À quelle heure finissez-vous ?",
+      "answer": "La révision se termine à 14 h 25.",
+      "calculation": "20 + 5 + 25 = 50 min. 13 h 35 + 50 min = 14 h 25."
+    },
+    {
+      "id": "maths-origine-4",
+      "kind": "maths",
+      "prompt": "Sur 24 minutes de révision, vous consacrez un quart au glossaire. Combien de minutes consacrez-vous au glossaire et combien en reste-t-il ?",
+      "answer": "Six minutes pour le glossaire et 18 minutes pour la suite.",
+      "calculation": "24 ÷ 4 = 6 min. 24 − 6 = 18 min."
+    },
+    {
+      "id": "maths-origine-5",
+      "kind": "maths",
+      "prompt": "Deux séances durent respectivement 35 et 45 minutes. Vous réservez 20 % de l’ensemble à la correction. Calculez la durée de la correction.",
+      "answer": "La correction prend 16 minutes.",
+      "calculation": "(35 + 45) × 0,20 = 16 min.",
+      "approvedFor": [
+        "CFC"
+      ]
+    },
+    {
+      "id": "verification-origine-1",
+      "kind": "verification",
+      "prompt": "Quel module consulter pour choisir où stocker un produit fragile selon ses propriétés ?",
+      "answer": "Le module 105 « Marchandises »."
+    },
+    {
+      "id": "verification-origine-2",
+      "kind": "verification",
+      "prompt": "Quel module explique les emplacements et les mouvements de stock ?",
+      "answer": "Le module 110 « Définition de la gestion d’entrepôt »."
+    },
+    {
+      "id": "verification-origine-3",
+      "kind": "verification",
+      "prompt": "Un colis passe du quai au rayon B et le nouvel emplacement est enregistré. Identifiez le flux de marchandises et le flux d’informations.",
+      "answer": "Le déplacement du colis est le flux de marchandises. L’enregistrement du rayon B est le flux d’informations."
+    },
+    {
+      "id": "verification-origine-4",
+      "kind": "verification",
+      "prompt": "Dans quel module chercher à qui l’on peut transmettre les coordonnées d’un destinataire ?",
+      "answer": "Le module 109 « Protection des données et sécurité de l’information », puis la procédure d’accès du site."
+    },
+    {
+      "id": "verification-origine-5",
+      "kind": "verification",
+      "prompt": "À quoi sert le corrigé après avoir terminé un exercice ?",
+      "answer": "À comparer le résultat et le raisonnement avec un modèle, puis à repérer ce qui reste à retravailler."
+    },
+    {
+      "id": "verification-origine-6",
+      "kind": "verification",
+      "prompt": "Donnez un exemple de tâche qui combine le module 105 et le module 110.",
+      "answer": "Choisir l’emplacement d’un article fragile en tenant compte de ses propriétés et de la place disponible."
+    },
+    {
+      "id": "situation-origine-1",
+      "kind": "situation",
+      "prompt": "Un colis arrive au quai. La référence est lisible, mais l’emballage est abîmé. Donnez deux actions avant son rangement et indiquez ce que vous notez.",
+      "answer": "Contrôler la référence et l’état, signaler l’écart avant rangement selon la procédure et noter la référence, la date et le dommage observé."
+    },
+    {
+      "id": "situation-origine-2",
+      "kind": "situation",
+      "prompt": "Vous avez 30 minutes pour réviser les flux de marchandises. Choisissez un module et proposez trois plages de travail avec leur durée.",
+      "answer": "Consulter le module 104. Exemple : 10 minutes de lecture, 12 minutes d’exercice et 8 minutes de correction, soit 30 minutes."
+    },
+    {
+      "id": "situation-origine-3",
+      "kind": "situation",
+      "prompt": "Vous déplacez un colis du rayon A au rayon B. Après le mouvement, le système indique encore A. Décrivez l’écart et proposez une action.",
+      "answer": "Le mouvement physique et le relevé diffèrent. Vérifier la référence et l’emplacement réel, puis mettre à jour l’information ou signaler l’écart selon la procédure."
+    },
+    {
+      "id": "situation-origine-4",
+      "kind": "situation",
+      "prompt": "Une équipe reçoit des cartons vides et souhaite réduire ses déchets. Citez deux modules utiles et une question à poser pour chacun.",
+      "answer": "106 : quelle filière accepte ce carton ? 107 : comment l’éviter ou le réemployer avant de l’orienter vers une filière ?"
+    }
+  ],
+  "editorialNotes": [
+    "Cours original, car le registre EPCAS ne contient pas de théorie ou d’exercices pour ce sous-module.",
+    "Les codes et intitulés sont repris du catalogue de référence. Les durées et quantités des exercices sont fictives.",
+    "Le calcul d’une part de durée sur deux séances est réservé au CFC. Les autres activités sont communes."
+  ],
+  "visual": {
+    "anchor": "1. Du quai au destinataire",
+    "file": "log-100-parcours-colis-schema-v001.svg",
+    "alt": "Recevoir, identifier, stocker puis expédier un colis, en enregistrant les informations utiles.",
+    "caption": "Le mouvement du colis est suivi par des informations à chaque étape.",
+    "sha256": "8f1e717341ca4323b1bdf1d2d89957b5ac8c9dfb1423e33e1e181c280a08b643",
+    "origin": "Schéma original Doc-Prof pour le module 100."
+  }
+}

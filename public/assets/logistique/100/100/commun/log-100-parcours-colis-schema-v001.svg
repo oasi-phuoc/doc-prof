@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="200" viewBox="0 0 800 200" role="img" aria-labelledby="titre desc">
+  <title id="titre">Le parcours d’un colis dans les modules d’introduction</title>
+  <desc id="desc">Recevoir, identifier, stocker et expédier. À chaque étape, une information accompagne le colis.</desc>
+  <rect width="800" height="200" fill="white"/>
+  <g stroke="#222" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="12" y="64" width="176" height="65" rx="5"/><rect x="212" y="64" width="176" height="65" rx="5"/>
+    <rect x="412" y="64" width="176" height="65" rx="5"/><rect x="612" y="64" width="176" height="65" rx="5"/>
+    <path d="M194 96h11m-5-5 5 5-5 5m194-5h11m-5-5 5 5-5 5m194-5h11m-5-5 5 5-5 5"/>
+  </g>
+  <g font-family="sans-serif" fill="#222" text-anchor="middle">
+    <text x="400" y="32" font-size="27" font-weight="bold">Le parcours d’un colis</text>
+    <text x="100" y="104" font-size="24">Réceptionner</text><text x="300" y="104" font-size="24">Identifier</text>
+    <text x="500" y="104" font-size="24">Stocker</text><text x="700" y="104" font-size="24">Expédier</text>
+    <text x="400" y="172" font-size="21">À chaque étape, un relevé accompagne la marchandise.</text>
+  </g>
+</svg>

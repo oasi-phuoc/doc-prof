@@ -1,3 +1,4 @@
+import { module100 } from './banks/module-100-v001.generated.ts'
 import { module101 } from './banks/module-101-v001.generated.ts'
 import { module102 } from './banks/module-102-v001.generated.ts'
 import { module103 } from './banks/module-103-v001.generated.ts'
@@ -43,6 +44,13 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   {
     revision: 'logistique-103-104-v001',
     units: [...module101, ...module102, ...module103, ...module104, ...module105, ...module308, ...module613, ...module805, ...module902],
+  },
+  {
+    revision: 'logistique-100-v001',
+    units: [
+      ...module100, ...module101, ...module102, ...module103, ...module104,
+      ...module105, ...module308, ...module613, ...module805, ...module902,
+    ],
   },
 ]
 
