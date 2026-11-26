@@ -22,6 +22,8 @@ Référence de réalisation dans le [cahier des charges v2.11](cahier-des-charge
 | L2 et L3 — Module 105 | Révision `105-v001` active | Cours commun, 45 termes de glossaire, quatre calculs et quatre vérifications CFC, dont deux et deux en AFP, et deux situations communes. Le résumé réécrit est disponible dans les données éditoriales. L’ancien exercice SGH, dépendant de pictogrammes, demeure archivé. |
 | L3 — Module 101 | Révision `101-v001` active | Cours de 42 blocs, schéma original, 16 termes, quatre problèmes CFC dont trois AFP, sept vérifications et quatre situations communes. Le détail des adaptations, dont le corrigé du tonnage de Hambourg, figure dans la [préparation du 101](preparation/101-v001.json). |
 | L3 — Module 102 | Révision `102-v001` active | Cours de 73 blocs, schéma original, 25 termes, quatre problèmes CFC dont trois AFP, sept vérifications communes et six situations CFC dont cinq AFP. Le détail des choix et de la distinction entre chaîne logistique et SCM figure dans la [préparation du 102](preparation/102-v001.json). |
+| L4 — Module 103 | Révision `103-v001` active | Cours de 36 blocs, schéma des 6B, 15 termes, sept problèmes CFC dont trois AFP, six vérifications et quatre situations communes. Les corrections de durée, de coût et de date figurent dans la [préparation du 103](preparation/103-v001.json). |
+| L4 — Module 104 | Révision `104-v001` active | Cours de 48 blocs, schéma négoce et production, 20 termes, cinq problèmes CFC dont quatre AFP, six vérifications communes et cinq situations CFC dont quatre AFP. La [préparation du 104](preparation/104-v001.json) distingue le prix d’achat du coût total de la décision. |
 | L2 — Module 308 | Révision `308-v001` active | Cours de 51 blocs, schéma brut–tare–net et 25 termes. Cinq problèmes CFC dont quatre AFP, sept vérifications et six situations CFC dont quatre AFP. Les écarts sur le comptage par pesage et la métrologie suisse figurent dans la [préparation du 308](preparation/308-v001.json). |
 | L2 — Module 613 | Révision `613-v001` active | Cours de 35 blocs, schéma des trois flux et 21 termes. Les catégories absentes du Git source sont renseignées par cinq calculs CFC dont quatre AFP et huit vérifications communes. Six situations CFC dont cinq AFP. Le catalogue conserve les années 3 CFC et 2 AFP. [Préparation du 613](preparation/613-v001.json). |
 | L2 — Module 805 | Révision `805-v001` active en CFC | Cours de 163 blocs, schéma des styles et du sommaire, 23 termes, cinq calculs, sept vérifications et cinq situations. Cours autonome à l’écrit après exclusion des 85 références visuelles historiques. [Préparation du 805](preparation/805-v001.json). |
@@ -31,7 +33,7 @@ Référence de réalisation dans le [cahier des charges v2.11](cahier-des-charge
 
 ## Reprise opérationnelle
 
-1. Poursuivre le thème 100 avec 103 et 104. Les six sous-modules pilotes 105, 101, 308, 613, 805 et 902 fournissent maintenant des unités actives. La recette complète et la généralisation restent à effectuer. Partir des archives par thème sous [sources-epcas](sources-epcas/), puis convertir les contenus autonomes en unités des cinq types existants.
+1. Poursuivre le thème 100 avec le module d’introduction 100, qui demande un cours original, puis les modules 106 à 110. Les six sous-modules pilotes 105, 101, 308, 613, 805 et 902 fournissent maintenant des unités actives. La recette complète et la généralisation restent à effectuer. Partir des archives par thème sous [sources-epcas](sources-epcas/), puis convertir les contenus autonomes en unités des cinq types existants.
 2. Vérifier les corrigés, la place du contenu dans le référentiel, les écarts AFP/CFC et les dépendances à des médias écartés.
 3. Enregistrer une révision de banque et la conserver pour les recettes déjà créées. Les changements de fond du 105 sont consignés dans les [données de préparation](pilote-105/preparation.generated.json) et dans le [dossier éditorial](pilote-105/relecture.md).
 4. Vérifier dans les deux diplômes le nombre d’unités disponibles, la génération, le corrigé, l’impression et la réouverture. Reporter dans ce fichier les preuves, les écarts et le prochain module retenu.
@@ -39,7 +41,7 @@ Référence de réalisation dans le [cahier des charges v2.11](cahier-des-charge
 ## Commandes
 
 - `node scripts/import-logistique-epcas.mjs /chemin/vers/epcas` produit le catalogue et les archives à partir des objets Git de référence.
-- `node scripts/prepare-logistique-module.mjs 101-v001` reconstitue la banque du 101 à partir de l’archive et de sa préparation éditoriale. La même commande accepte `102-v001`, `308-v001`, `613-v001`, `805-v001` et `902-v001`.
+- `node scripts/prepare-logistique-module.mjs 101-v001` reconstitue la banque du 101 à partir de l’archive et de sa préparation éditoriale. La même commande accepte une révision de la [préparation éditoriale](preparation/), par exemple `104-v001`.
 - `node scripts/prepare-logistique-105.mjs` produit les données éditoriales et la banque active du 105.
 - `npm run test:logistique` et `npm run test:logistique:browser` vérifient le catalogue, l’éligibilité, le gabarit et les recettes.
 
@@ -49,4 +51,4 @@ Référence de réalisation dans le [cahier des charges v2.11](cahier-des-charge
 - API de fiches avec Worker et D1 locaux. Enregistrement et lecture testés pour les deux diplômes et refus du module 902 en AFP et des recettes mixtes.
 - Suite interactive générale lancée pendant la reprise. 564 réussites sur 567. Les trois tests en échec échouent aussi sur la révision de départ. Ils concernent le pool « Nommer les formes », les transcriptions CO et les cotes des triangles.
 
-- Modules 101, 102, 308, 613, 805 et 902. L’assemblage vérifie les corrections, l’empreinte des schémas et la présence de contenus dans les cinq types pour chaque diplôme éligible. Le relevé Chromium ci-dessus s’applique au 105.
+- Modules 101 à 104, 308, 613, 805 et 902. L’assemblage vérifie les corrections, l’empreinte des schémas et la présence de contenus dans les cinq types pour chaque diplôme éligible. Le relevé Chromium ci-dessus s’applique au 105.

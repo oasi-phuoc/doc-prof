@@ -1,5 +1,7 @@
 import { module101 } from './banks/module-101-v001.generated.ts'
 import { module102 } from './banks/module-102-v001.generated.ts'
+import { module103 } from './banks/module-103-v001.generated.ts'
+import { module104 } from './banks/module-104-v001.generated.ts'
 import { module105 } from './banks/module-105-v001.generated.ts'
 import { module308 } from './banks/module-308-v001.generated.ts'
 import { module613 } from './banks/module-613-v001.generated.ts'
@@ -38,6 +40,10 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-613-v001', units: [...module101, ...module102, ...module105, ...module308, ...module613] },
   { revision: 'logistique-805-v001', units: [...module101, ...module102, ...module105, ...module308, ...module613, ...module805] },
   { revision: 'logistique-902-v001', units: [...module101, ...module102, ...module105, ...module308, ...module613, ...module805, ...module902] },
+  {
+    revision: 'logistique-103-104-v001',
+    units: [...module101, ...module102, ...module103, ...module104, ...module105, ...module308, ...module613, ...module805, ...module902],
+  },
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!

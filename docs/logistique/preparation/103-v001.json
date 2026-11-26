@@ -1,0 +1,253 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "replacements": [
+    {
+      "from": "une entreprise réalise des bénéfices lorsqu'elle travaille de manière **efficace** et **efficiente** :",
+      "to": "travailler de manière **efficace** et **efficiente** contribue à la performance d’une entreprise. Le bénéfice dépend aussi des recettes et de l’ensemble des charges.",
+      "reason": "Le bénéfice ne découle pas automatiquement de deux qualités d’organisation."
+    },
+    {
+      "from": "**L'efficacité** est la capacité d'un établissement à atteindre les objectifs fixés dans les délais impartis.",
+      "to": "**L’efficacité** mesure le degré d’atteinte des objectifs, dans le délai prévu s’il fait partie des objectifs.",
+      "reason": "Préciser le rôle du délai."
+    },
+    {
+      "from": "**L'efficience** est la réalisation des objectifs sans gaspillage de ressources.",
+      "to": "**L’efficience** met en rapport les résultats atteints et les ressources consommées.",
+      "reason": "Employer une définition comparative."
+    },
+    {
+      "from": "depuis la source chez les fournisseurs à la livraison des produits finis aux clients et au service après-vente.",
+      "to": "des fournisseurs jusqu’à la livraison des produits finis aux clients et au suivi après-vente.",
+      "reason": "Correction de la formulation."
+    },
+    {
+      "from": "Même si le terme logistique est facile à interpréter, la **Society Of Logistic Engineers (S.O.L.E.)** propose une autre définition :\n\n**« La logistique est l'art et la science de l'organisation, de la planification et de l'activité technique en ce qui concerne les exigences, la définition, l'approvisionnement et les ressources nécessaires pour soutenir les objectifs, les plans et les opérations ». **\n\nSource : http://www.sole.org/",
+      "to": "La **Society of Logistics Engineers (SOLE)** insiste sur la planification des ressources et des activités de soutien nécessaires pour atteindre les objectifs d’une opération.",
+      "reason": "Reformuler la définition citée en conservant son attribution."
+    },
+    {
+      "from": "**L'objectif de la logistique est d'assurer le meilleur flux possible de marchandises et de données.**",
+      "to": "**L’objectif de la logistique est d’assurer le meilleur flux possible de marchandises et de données.** Ce résultat se recherche notamment en conciliant la disponibilité pour livrer, les ressources immobilisées dans le stock et les coûts des opérations.",
+      "reason": "Relier la théorie aux trois objectifs opérationnels demandés dans les vérifications."
+    },
+    {
+      "from": "6. **Bon prix**",
+      "to": "6. **Bon prix**, ou coût adapté au service dans le contexte des opérations",
+      "reason": "Cohérence du vocabulaire entre cours et corrigé."
+    },
+    {
+      "from": "8. **Bons clients**",
+      "to": "8. **Bon client** : le destinataire auquel la livraison est destinée",
+      "reason": "Préciser le sens opérationnel."
+    }
+  ],
+  "summary": [
+    "La logistique fait circuler les marchandises et les informations nécessaires depuis les fournisseurs jusqu’aux clients.",
+    "Être efficace, c’est atteindre l’objectif. L’efficience met en relation le résultat et les ressources utilisées.",
+    "Les 6B aident à vérifier le service promis. Les bonnes informations et le bon destinataire complètent ce cadre.",
+    "Il faut rechercher un équilibre entre disponibilité des produits, coûts et ressources immobilisées."
+  ],
+  "glossary": [
+    [
+      "bon destinataire",
+      "Personne, entreprise ou établissement auquel l’envoi est destiné."
+    ],
+    [
+      "capital immobilisé",
+      "Ressources financières engagées dans un actif, par exemple des marchandises en stock."
+    ],
+    [
+      "coût logistique",
+      "Dépense liée aux opérations logistiques, par exemple le stockage, la manutention ou le transport."
+    ],
+    [
+      "disponibilité de livraison",
+      "Capacité à fournir la quantité attendue au moment prévu."
+    ],
+    [
+      "efficacité",
+      "Degré d’atteinte des objectifs fixés."
+    ],
+    [
+      "efficience",
+      "Rapport entre les résultats obtenus et les ressources mobilisées."
+    ],
+    [
+      "flux de données",
+      "Circulation des informations nécessaires pour organiser et suivre les opérations."
+    ],
+    [
+      "flux de marchandises",
+      "Déplacement des matières et produits dans le cadre des opérations logistiques."
+    ],
+    [
+      "flux tendu",
+      "Organisation visant à limiter les stocks en coordonnant précisément production et approvisionnement."
+    ],
+    [
+      "intégration verticale",
+      "Degré auquel une entreprise réalise elle-même plusieurs étapes successives de sa chaîne."
+    ],
+    [
+      "ressource",
+      "Moyen humain, matériel, temporel ou financier mobilisé pour une activité."
+    ],
+    [
+      "règle des 6B",
+      "Contrôle de la marchandise, de la quantité, de la qualité, du moment, de l’endroit et du prix convenus."
+    ],
+    [
+      "service après-vente",
+      "Activités de suivi et d’assistance après la vente ou la livraison."
+    ],
+    [
+      "stratégie",
+      "Choix à moyen ou long terme qui orientent les décisions de l’organisation."
+    ],
+    [
+      "tactique",
+      "Choix opérationnels qui permettent d’appliquer une stratégie et de réagir à des changements."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-source-1",
+      "kind": "maths",
+      "prompt": "Un trajet maritime de 19 535 km est prévu à une vitesse moyenne de 28 km/h. Estimez la durée de navigation en jours, heures et minutes. Arrondissez à la minute la plus proche.",
+      "answer": "Le trajet dure environ 29 jours, 1 h et 41 min.",
+      "calculation": "19 535 ÷ 28 ≈ 697,6786 h. 29 × 24 = 696 h. Le reste vaut 1 h et environ 40,71 min.",
+      "approvedFor": [
+        "CFC"
+      ]
+    },
+    {
+      "id": "maths-source-2",
+      "kind": "maths",
+      "prompt": "Sur un trajet, un navire parcourt 19 535 km à 28 km/h. Il consomme 13,5 t de carburant par heure de navigation. Estimez sa consommation au centième de tonne en arrondissant à la fin.",
+      "answer": "La consommation est d’environ 9 418,66 t.",
+      "calculation": "(19 535 ÷ 28) × 13,5 ≈ 9 418,66 t.",
+      "approvedFor": [
+        "CFC"
+      ]
+    },
+    {
+      "id": "maths-source-3",
+      "kind": "maths",
+      "prompt": "Pour un calcul simplifié, retenez une consommation de 9 418,66 t et un prix de 1,10 CHF par kilogramme. Calculez le coût total du carburant au franc près.",
+      "answer": "Le coût estimé est de 10 360 526 CHF pour les données arrondies de cet énoncé.",
+      "calculation": "9 418,66 × 1 000 = 9 418 660 kg. 9 418 660 × 1,10 = 10 360 526 CHF.",
+      "approvedFor": [
+        "CFC"
+      ]
+    },
+    {
+      "id": "maths-source-4",
+      "kind": "maths",
+      "prompt": "Un navire part le 1er février 2027 à 08 h en temps universel. La navigation dure 29 jours, 1 h et 41 min. Calculez l’arrivée dans le même fuseau, sans escale.",
+      "answer": "L’arrivée est prévue le 2 mars 2027 à 09 h 41 en temps universel.",
+      "calculation": "Février 2027 compte 28 jours. 1er février + 28 jours = 1er mars, puis ajouter 1 jour, 1 h et 41 min.",
+      "approvedFor": [
+        "CFC"
+      ]
+    },
+    {
+      "id": "maths-origine-1",
+      "kind": "maths",
+      "prompt": "Un dépôt doit livrer 40 pièces. Il en a déjà 27 de prêtes. Combien en manque-t-il pour compléter la livraison ?",
+      "answer": "Il manque 13 pièces.",
+      "calculation": "40 − 27 = 13."
+    },
+    {
+      "id": "maths-origine-2",
+      "kind": "maths",
+      "prompt": "Deux offres concernent la même prestation. L’une coûte 84 CHF et l’autre 76 CHF. Calculez l’écart de prix.",
+      "answer": "L’écart est de 8 CHF.",
+      "calculation": "84 − 76 = 8 CHF."
+    },
+    {
+      "id": "maths-origine-3",
+      "kind": "maths",
+      "prompt": "Un fournisseur annonce quatre jours de délai. Le client attend ses pièces dans six jours. Calculez la marge en jours si la commande part aujourd’hui.",
+      "answer": "La marge est de deux jours.",
+      "calculation": "6 − 4 = 2 jours."
+    },
+    {
+      "id": "verification-source-1",
+      "kind": "verification",
+      "prompt": "Citez trois objectifs opérationnels à équilibrer dans l’organisation d’un stock.",
+      "answer": "La disponibilité pour livrer, la limitation du capital immobilisé et la maîtrise des coûts."
+    },
+    {
+      "id": "verification-source-2",
+      "kind": "verification",
+      "prompt": "Nommez les six conditions de la règle des 6B.",
+      "answer": "Bonne marchandise, bonne quantité, bonne qualité, bon moment, bon endroit et bon prix ou coût adapté au service."
+    },
+    {
+      "id": "verification-source-3",
+      "kind": "verification",
+      "prompt": "Quels deux repères complètent les 6B dans le cours ?",
+      "answer": "Les bonnes informations et le bon client destinataire."
+    },
+    {
+      "id": "verification-source-4",
+      "kind": "verification",
+      "prompt": "Distinguez efficacité et efficience pour une équipe de préparation de commandes.",
+      "answer": "L’efficacité mesure l’atteinte de l’objectif de service. L’efficience compare le résultat aux ressources engagées pour l’obtenir."
+    },
+    {
+      "id": "verification-source-5",
+      "kind": "verification",
+      "prompt": "Sur quels deux flux l’objectif de la logistique porte-t-il dans ce chapitre ?",
+      "answer": "Le flux de marchandises et le flux des données qui l’accompagnent."
+    },
+    {
+      "id": "verification-origine-1",
+      "kind": "verification",
+      "prompt": "Pourquoi garder une quantité très élevée de marchandises disponibles peut-il poser un problème à l’entreprise ?",
+      "answer": "Un stock élevé immobilise du capital, occupe de la place et peut augmenter les risques de perte ou d’obsolescence."
+    },
+    {
+      "id": "situation-source-1",
+      "kind": "situation",
+      "prompt": "Deux fournisseurs proposent le même article avec la même qualité. A le propose à 38 CHF sous quatre jours, B à 44 CHF sous deux jours. Le client en a besoin dans trois jours. Quelle offre retenez-vous et pourquoi ?",
+      "answer": "Retenir B si le délai de trois jours est impératif. A est moins cher mais ne peut pas respecter le délai annoncé."
+    },
+    {
+      "id": "situation-source-2",
+      "kind": "situation",
+      "prompt": "Deux articles ont un stock nul, une demande régulière et un délai de réapprovisionnement supérieur au délai demandé par les clients. Quel objectif est menacé et quelle information vous faut-il avant de proposer un stock minimal ?",
+      "answer": "La disponibilité de livraison est menacée. Vérifier la consommation attendue et sa variabilité durant le délai fournisseur, ainsi que l’objectif de service."
+    },
+    {
+      "id": "situation-source-3",
+      "kind": "situation",
+      "prompt": "Une équipe livre la bonne référence et la bonne quantité à l’heure prévue. Le colis est arrivé au mauvais quai. Identifiez le B non respecté et proposez une action préventive.",
+      "answer": "Le bon endroit n’a pas été respecté. Confirmer le quai dans les données d’expédition et vérifier la consigne avant le départ."
+    },
+    {
+      "id": "situation-origine-1",
+      "kind": "situation",
+      "prompt": "Deux équipes préparent chacune 120 commandes conformes dans le délai. L’une consomme 8 heures et l’autre 10. Comparez leur efficacité et leur efficience sur ces critères.",
+      "answer": "Elles atteignent le même objectif et ont la même efficacité sur ce critère. L’équipe qui consomme 8 heures est plus efficiente sur le temps, à qualité et autres ressources comparables."
+    }
+  ],
+  "visual": {
+    "anchor": "3.2.2 Tâches",
+    "file": "log-103-six-b-schema-v001.svg",
+    "sha256": "78923e2ef01878faa0bac9f9075dac2519f1bd23e1fbf70867761ae5bb121774",
+    "alt": "La marchandise, la quantité, la qualité, le moment, l’endroit et le prix forment les six B.",
+    "caption": "Les six conditions s’apprécient ensemble pour une même livraison.",
+    "origin": "Schéma original Doc-Prof conçu pour ce module."
+  },
+  "editorialNotes": [
+    "La durée du voyage est arrondie à la minute la plus proche. Les quantités et coûts utilisent les valeurs annoncées, avec leur arrondi explicitement précisé.",
+    "La date d’arrivée fixe le calendrier 2027. Depuis le 1er février, 28 jours mènent au 1er mars, puis le 29e jour au 2 mars.",
+    "Les quatre exercices maritimes à plusieurs étapes sont proposés en CFC. Trois exercices numériques autonomes sont partagés avec l’AFP.",
+    "Les références à une visite virtuelle et à des prix en ligne restent archivées. Les situations utilisent des données fictives fournies."
+  ]
+}
