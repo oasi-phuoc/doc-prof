@@ -652,9 +652,9 @@ export function GeneratorPage({
         domain={logistiqueDomain ?? activePage.domain}
         onLogout={onLogout}
         afterBrand={logistiqueDomain ? <span className="logistique-brand-label">{logistiqueDomainLabel(logistiqueDomain)}</span> : undefined}
-        rightSlot={logistiqueDomain ? undefined : (
+        rightSlot={(
           <>
-            <button type="button" className="button small" onClick={playWithClass}>Jouer cette fiche</button>
+            {logistiqueDomain ? null : <button type="button" className="button small" onClick={playWithClass}>Jouer cette fiche</button>}
             <TopbarTools
             themeColor={themeColor}
             onThemeColor={applyThemeColor}
@@ -733,7 +733,7 @@ export function GeneratorPage({
         )}
       />
       <main className="generator-page" id="top">
-        <div className="generator-intro" hidden={Boolean(logistiqueDomain)}>
+        <div className="generator-intro">
           <a className="back-link" href="/">
             ← Retour à l’accueil
           </a>
