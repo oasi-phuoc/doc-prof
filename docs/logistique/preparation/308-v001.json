@@ -1,0 +1,360 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "replacements": [
+    {
+      "from": "Compter, mesurer et peser sont des contrôles centraux dans le transport de marchandises. En Europe : système **décimal**. Autres unités encore utilisées (douzaine, pint, etc.).",
+      "to": "Le comptage, la mesure et le pesage sont essentiels pour contrôler les marchandises. En Suisse, les unités du Système international (**SI**) coexistent dans les documents logistiques avec d’autres unités ou regroupements, par exemple la pinte et la douzaine.",
+      "reason": "Expliciter les notions distinctes d’unité de mesure et de regroupement."
+    },
+    {
+      "from": "**Exemples d'unités :**\n- Baril (USA) : 158,8 l pétrole",
+      "to": "**Exemples d’unités**\n\n- Baril de pétrole américain : environ 159 l",
+      "reason": "Approximation correcte du baril de 42 gallons américains et séparation du titre."
+    },
+    {
+      "from": "- Inch : 2,54 cm",
+      "to": "- Pouce (inch) : 2,54 cm",
+      "reason": "Préciser le terme français."
+    },
+    {
+      "from": "- Pint (GB) : 0,568 l",
+      "to": "- Pinte impériale (GB) : environ 0,568 l",
+      "reason": "Le volume de la pinte est différent selon le système."
+    },
+    {
+      "from": "- TB / TJB : taille de navire\n- **TEU** : conteneur 20 pieds",
+      "to": "- **TB** : indice de jauge brute d’un navire. Le **TJB** désigne une ancienne unité de jauge.\n- **TEU** ou **EVP** : équivalent vingt pieds, unité utilisée pour exprimer une capacité en conteneurs.",
+      "reason": "Distinguer indice, ancienne unité et unité de capacité logistique."
+    },
+    {
+      "from": "1791 : Assemblée nationale française → mesures uniformes ; mètre = 1/10 000 000 de la distance Pôle Nord–Équateur. **Convention du mètre** (1875) : Suisse parmi les 17 signataires ; aujourd'hui 51 membres + 26 associés. Mètre étalon (platine-iridium) à Paris (1799).",
+      "to": "En 1791, la France retient pour le mètre le dix-millionième de la distance du pôle à l’équateur le long d’un méridien. Le mètre des Archives, en platine, date de 1799. La Suisse est l’un des 17 signataires de la **Convention du mètre** en 1875. Le prototype international en platine-iridium est adopté en 1889. La définition actuelle s’appuie sur la vitesse de la lumière dans le vide.",
+      "reason": "Distinguer deux étalons historiques et éviter un effectif devenu obsolète."
+    },
+    {
+      "from": "**Compteur métrique** (fils, câbles…) ; souvent remplacé par **laser**.",
+      "to": "Un **compteur métrique** peut mesurer la longueur de fils et câbles qui défilent. Un **télémètre laser** mesure une distance en ligne droite.",
+      "reason": "Les outils ne répondent pas au même besoin."
+    },
+    {
+      "from": "Qualité : classe de précision **DIN 866** (I–III).",
+      "to": "Contrôler la classe de précision ou la tolérance annoncée pour l’instrument et les comparer au besoin du contrôle.",
+      "reason": "Une seule référence normative ne couvre pas tous les instruments cités."
+    },
+    {
+      "from": "**Pied à coulisse** (calibre) : épaisseur, diamètre, profondeur · ~1/10 mm",
+      "to": "**Pied à coulisse** : épaisseur, diamètre et profondeur selon le modèle. Vérifier sa résolution et son exactitude.",
+      "reason": "Ces caractéristiques varient selon le modèle."
+    },
+    {
+      "from": "Poids lié à la gravité (Lune ~6× plus faible). Unité de force : **newton (N)** ; langage courant : « poids ».",
+      "to": "La **masse** s’exprime notamment en kilogrammes. Le **poids** est la force de gravité exercée sur l’objet et s’exprime en newtons. Le poids d’un même objet est environ six fois plus faible sur la Lune. Au dépôt, les balances affichent généralement une masse en kilogrammes ou en grammes.",
+      "reason": "Lever l’ambiguïté entre poids et masse."
+    },
+    {
+      "from": "Deux principes :\n1.",
+      "to": "Deux principes\n\n1.",
+      "reason": "Séparer l’intertitre et la liste."
+    },
+    {
+      "from": "**Balances de comparaison**\n-",
+      "to": "**Balances de comparaison**\n\n-",
+      "reason": "Séparer l’intertitre et la liste."
+    },
+    {
+      "from": "**Dynamomètre / balances à ressort**\n-",
+      "to": "**Dynamomètre / balances à ressort**\n\n-",
+      "reason": "Séparer l’intertitre et la liste."
+    },
+    {
+      "from": "Force contre ressort ; sensible à la gravité locale → calibrer sur lieu d'usage ; ressort s'use → poids trop élevés",
+      "to": "Le ressort se déforme sous l’effet d’une force. Un appareil gradué en masse dépend de la gravité locale. L’usure du ressort peut fausser l’indication dans un sens ou l’autre.",
+      "reason": "Éviter de donner un sens d’erreur universel."
+    },
+    {
+      "from": "**ne pas rester** sur la balance ; retirer le véhicule après dépôt (sans tarage préalable du véhicule)",
+      "to": "Déposer la charge selon les consignes du poste et exclure les masses qui ne font pas partie de la pesée ou les compenser par une tare connue.",
+      "reason": "La procédure exacte dépend de l’installation."
+    },
+    {
+      "from": "Règles :\n-",
+      "to": "Règles d’utilisation\n\n-",
+      "reason": "Séparer l’intertitre et la liste."
+    },
+    {
+      "from": "Mode d'emploi ; balances électroniques : **préchauffage** ; souvent laisser allumées la journée",
+      "to": "Suivre le mode d’emploi, y compris le temps de stabilisation ou de préchauffage s’il est prescrit.",
+      "reason": "Condition dépendante de l’instrument."
+    },
+    {
+      "from": "- **Calibrer** : remettre à zéro avant usage (sol, déséquilibre, nouveau lieu / gravité). Sans conséquence financière → possible sans officier",
+      "to": "- **Mise à zéro** : régler l’indication à zéro quand la balance est vide.\n- **Étalonnage** : comparer les indications à des valeurs de référence pour connaître l’écart.\n- **Ajustage** : intervenir sur l’instrument afin d’améliorer ses indications. Il se distingue de l’étalonnage.",
+      "reason": "Distinguer tare, zéro, étalonnage et ajustage."
+    },
+    {
+      "from": "**Cst. art. 125** : métrologie = Confédération → **loi fédérale sur la métrologie**. Contrôles périodiques par **vérificateur** ; marque d'identification. Non vérifié → mention « non vérifié officiellement ».",
+      "to": "L’**art. 125 Cst.** attribue la compétence en métrologie à la Confédération. La **loi fédérale sur la métrologie** et les ordonnances applicables précisent quels usages exigent un contrôle officiel de conformité. Les marquages et l’intervalle de vérification dépendent de la catégorie d’instrument. Une vérification est distincte d’un étalonnage.",
+      "reason": "Clarifier le cadre suisse sans appliquer une règle unique."
+    },
+    {
+      "from": "**Soumis à vérification (ex.) :** douanes · pompes à essence vente. Tolérance type : > 2 l → écart max **0,5 %**.",
+      "to": "**Exemples d’usages réglementés** : mesure utilisée pour une décision douanière ou pour la vente au public de carburant. Les erreurs maximales tolérées dépendent du type d’instrument et de l’usage.",
+      "reason": "Écarter une tolérance chiffrée sans référence instrumentale."
+    },
+    {
+      "from": "**Non soumis (ex.) :** ravitaillement interne entreprise · mélanges process · remplissage emballages finaux.",
+      "to": "Un contrôle interne de mélange peut relever de la procédure de l’entreprise. Pour une vente fondée sur la quantité mesurée ou le contrôle de préemballages, appliquer les prescriptions propres à l’usage.",
+      "reason": "L’usage réglementé se détermine au cas par cas."
+    }
+  ],
+  "summary": [
+    "On compte des pièces, on mesure des dimensions ou des volumes et on pèse des marchandises. Il faut identifier l’unité avant de comparer une mesure au bulletin de livraison.",
+    "Le comptage par groupes et le comptage à l’aide d’une balance se fondent sur des quantités partielles ou un échantillon. Un résultat incertain doit être contrôlé.",
+    "On choisit un instrument adapté à la grandeur et à la précision demandées. Une masse nette s’obtient en retirant la tare de la masse brute.",
+    "Mettre à zéro, tarer, étalonner, ajuster et vérifier répondent à des objectifs différents. Les mesures commerciales peuvent être soumises à des prescriptions particulières en Suisse."
+  ],
+  "glossary": [
+    [
+      "ajustage",
+      "Intervention qui modifie les indications de l’instrument pour les rapprocher des valeurs attendues."
+    ],
+    [
+      "baril de pétrole",
+      "Unité de volume d’environ 159 litres, équivalant à 42 gallons américains."
+    ],
+    [
+      "carat métrique",
+      "Unité de masse de 0,2 gramme, notamment employée pour les pierres précieuses."
+    ],
+    [
+      "comptage par groupes",
+      "Calcul du nombre d’objets à partir de groupes de même taille, en ajoutant les pièces qui restent."
+    ],
+    [
+      "balance compteuse",
+      "Balance qui estime le nombre de pièces d’après la masse mesurée et une masse de référence."
+    ],
+    [
+      "compteur manuel",
+      "Instrument qui ajoute une unité au total à chaque action de l’opérateur."
+    ],
+    [
+      "débitmètre",
+      "Instrument de mesure d’une quantité qui traverse un circuit par unité de temps."
+    ],
+    [
+      "douzaine",
+      "Regroupement de douze pièces."
+    ],
+    [
+      "dynamomètre",
+      "Instrument qui mesure une force, exprimée notamment en newtons."
+    ],
+    [
+      "étalonnage",
+      "Comparaison documentée entre les indications d’un instrument et des valeurs de référence."
+    ],
+    [
+      "EVP / TEU",
+      "Équivalent vingt pieds, unité utilisée pour exprimer une capacité en conteneurs."
+    ],
+    [
+      "gabarit",
+      "Outil qui aide à vérifier si une pièce respecte des dimensions ou des limites définies."
+    ],
+    [
+      "gallon",
+      "Unité de volume valant environ 3,79 litres aux États-Unis ou 4,55 litres dans le système impérial."
+    ],
+    [
+      "masse brute",
+      "Masse totale de la marchandise et de son emballage."
+    ],
+    [
+      "masse nette",
+      "Masse de la marchandise seule."
+    ],
+    [
+      "micromètre",
+      "Instrument de mesure précis employé pour des dimensions adaptées à sa plage de mesure."
+    ],
+    [
+      "mise à zéro",
+      "Réglage de l’indication à zéro quand l’instrument est vide."
+    ],
+    [
+      "pied à coulisse",
+      "Instrument coulissant qui mesure des dimensions extérieures, intérieures ou des profondeurs, selon le modèle."
+    ],
+    [
+      "pinte impériale",
+      "Unité de volume d’environ 0,568 litre."
+    ],
+    [
+      "pont-bascule",
+      "Plateforme de pesage destinée notamment aux véhicules."
+    ],
+    [
+      "pouce",
+      "Unité de longueur égale à 2,54 centimètres."
+    ],
+    [
+      "résolution",
+      "Plus petite variation d’indication que l’on peut lire sur l’instrument."
+    ],
+    [
+      "tare",
+      "Masse du contenant ou de l’emballage, que l’on retranche pour obtenir la masse nette."
+    ],
+    [
+      "tolérance",
+      "Écart admissible entre une valeur constatée et une valeur spécifiée."
+    ],
+    [
+      "vérification officielle",
+      "Contrôle de conformité aux prescriptions applicables à un instrument réglementé."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-source-1",
+      "kind": "maths",
+      "prompt": "Vous réceptionnez six fûts contenant chacun 158,8 l d’huile. Pour un exercice de contrôle, prélevez 0,1 % du contenu de chaque fût. Vous utilisez une bouteille de 250 ml et une étiquette par fût. Vérifiez la capacité et calculez le matériel nécessaire.",
+      "answer": "Une bouteille suffit par fût. Il faut six bouteilles et six étiquettes.",
+      "calculation": "158,8 × 0,001 = 0,1588 l = 158,8 ml. 158,8 ml < 250 ml."
+    },
+    {
+      "id": "maths-source-2",
+      "kind": "maths",
+      "prompt": "Dix boulons de référence pèsent 136,16 g. Un envoi pèse 6,5 kg avec un emballage de 700 g. Estimez le nombre de boulons et arrondissez à la pièce la plus proche.",
+      "answer": "L’envoi contient environ 426 boulons. Le nombre exact se confirme par un comptage.",
+      "calculation": "6 500 − 700 = 5 800 g. 5 800 × 10 ÷ 136,16 ≈ 425,97, soit 426.",
+      "approvedFor": [
+        "CFC"
+      ]
+    },
+    {
+      "id": "maths-source-3",
+      "kind": "maths",
+      "prompt": "Le bulletin annonce des écrans de 22, 24 et 15 pouces. Les diagonales mesurées sont respectivement 55,88 cm, 60,96 cm et 38,10 cm. Comparez les diagonales en utilisant 1 pouce = 2,54 cm.",
+      "answer": "Les trois diagonales correspondent au bulletin sur ce critère.",
+      "calculation": "22 × 2,54 = 55,88. 24 × 2,54 = 60,96. 15 × 2,54 = 38,10."
+    },
+    {
+      "id": "maths-source-4",
+      "kind": "maths",
+      "prompt": "La masse brute d’un envoi est de 7 600 kg. L’emballage représente 7 % de la masse brute. Calculez la tare et la masse nette.",
+      "answer": "La tare est de 532 kg et la masse nette de 7 068 kg.",
+      "calculation": "7 600 × 0,07 = 532 kg. 7 600 − 532 = 7 068 kg."
+    },
+    {
+      "id": "maths-origine-1",
+      "kind": "maths",
+      "prompt": "Une palette contient quatre couches. Chaque couche comporte six cartons de douze pièces. Calculez le nombre de pièces sur la palette.",
+      "answer": "La palette contient 288 pièces.",
+      "calculation": "4 × 6 × 12 = 288 pièces."
+    },
+    {
+      "id": "verification-source-1",
+      "kind": "verification",
+      "prompt": "Donnez le volume approximatif d’un gallon américain et celui d’un gallon impérial. Donnez un exemple de produit mesuré avec ces unités.",
+      "answer": "Un gallon américain vaut environ 3,79 l et un gallon impérial environ 4,55 l. Un carburant liquide en est un exemple."
+    },
+    {
+      "id": "verification-source-2",
+      "kind": "verification",
+      "prompt": "Comment un pont-bascule permet-il de déterminer la masse de la marchandise transportée par un camion ?",
+      "answer": "On soustrait la masse du camion vide à la masse du camion chargé. Les deux mesures sont prises dans des conditions comparables."
+    },
+    {
+      "id": "verification-source-3",
+      "kind": "verification",
+      "prompt": "Expliquez comment une balance à bras égaux permet de déterminer la masse d’une pièce.",
+      "answer": "On place la pièce sur un plateau et des masses de référence sur l’autre jusqu’à obtenir l’équilibre."
+    },
+    {
+      "id": "verification-source-4",
+      "kind": "verification",
+      "prompt": "Citez deux exemples où une mesure peut être soumise à des prescriptions de métrologie légale.",
+      "answer": "Une mesure utilisée pour la vente au public de carburant ou pour une décision douanière."
+    },
+    {
+      "id": "verification-source-5",
+      "kind": "verification",
+      "prompt": "Que peut-on mesurer avec un pied à coulisse équipé des accessoires habituels ?",
+      "answer": "Une dimension extérieure ou intérieure, par exemple un diamètre, et une profondeur."
+    },
+    {
+      "id": "verification-origine-1",
+      "kind": "verification",
+      "prompt": "Quelle est la différence entre mettre à zéro une balance et la tarer avec un contenant vide ?",
+      "answer": "La mise à zéro corrige l’indication à vide. La tare déduit la masse du contenant pour afficher celle du contenu."
+    },
+    {
+      "id": "verification-origine-2",
+      "kind": "verification",
+      "prompt": "Quel résultat obtient-on en étalonnant une balance ?",
+      "answer": "On connaît les écarts entre les indications de la balance et les valeurs de référence."
+    },
+    {
+      "id": "situation-source-1",
+      "kind": "situation",
+      "prompt": "Vous devez mesurer le diamètre d’une vis, compter des sachets et relever le volume d’eau dans un petit récipient. Associez un instrument à chaque tâche.",
+      "answer": "Utiliser un pied à coulisse pour le diamètre, un compteur manuel pour les sachets et un récipient jaugé pour le volume."
+    },
+    {
+      "id": "situation-source-2",
+      "kind": "situation",
+      "prompt": "Le plan exige un diamètre de 8,00 mm avec une tolérance de ±0,05 mm. Votre mesure donne 8,07 mm. Calculez l’intervalle admissible et indiquez la suite à donner.",
+      "answer": "L’intervalle va de 7,95 à 8,05 mm. Enregistrer le résultat hors tolérance et signaler l’écart selon la procédure.",
+      "approvedFor": [
+        "CFC"
+      ]
+    },
+    {
+      "id": "situation-source-3",
+      "kind": "situation",
+      "prompt": "Vous contrôlez un lot de vis identiques avec une balance compteuse. Décrivez la préparation de la balance, l’échantillon de référence et le contrôle du résultat.",
+      "answer": "Choisir une balance adaptée, préparer la tare, peser un échantillon compté à la main puis peser le lot. Si le résultat est proche d’un seuil ou inattendu, vérifier par comptage."
+    },
+    {
+      "id": "situation-source-4",
+      "kind": "situation",
+      "prompt": "Sur un fût cylindrique, le rayon intérieur est constant et le niveau du liquide atteint les deux tiers de la hauteur utile. Expliquez comment déterminer la quantité manquante.",
+      "answer": "Dans un cylindre de section constante, le liquide occupe les deux tiers du volume utile. La quantité manquante est donc un tiers de ce volume.",
+      "approvedFor": [
+        "CFC"
+      ]
+    },
+    {
+      "id": "situation-origine-1",
+      "kind": "situation",
+      "prompt": "Une palette arrive avec quatre couches de huit cartons. Une couche a été ouverte et trois cartons ont été retirés. Calculez le nombre reçu et expliquez comment l’inscrire sur le bon.",
+      "answer": "4 × 8 − 3 = 29 cartons. Inscrire la quantité comptée et signaler tout écart par rapport à la quantité annoncée."
+    },
+    {
+      "id": "situation-origine-2",
+      "kind": "situation",
+      "prompt": "Vous voyez un marquage de vérification endommagé sur une balance utilisée au comptoir. Quelle mesure prenez-vous et que consignez-vous ?",
+      "answer": "Écarter l’instrument de cet usage, informer la personne responsable et consigner l’identification de la balance, le défaut constaté et la date."
+    }
+  ],
+  "visual": {
+    "anchor": "8.3.1 Tarer et calibrer",
+    "file": "log-308-brut-tare-net-schema-v001.svg",
+    "sha256": "059bd8438f2e3541e472863a459611b79346617047a804f037026eeebd72a811",
+    "alt": "La masse brute de 6,5 kg moins la tare de 0,7 kg donne une masse nette de 5,8 kg.",
+    "caption": "La tare correspond ici à la masse de l’emballage vide.",
+    "origin": "Schéma original Doc-Prof sur le principe brut, tare et net."
+  },
+  "editorialNotes": [
+    "Le comptage de boulons au plus proche donne 426, contre 425 dans la source. L’exercice signale le caractère estimatif du comptage par pesage.",
+    "La conversion des écrans vérifie uniquement la diagonale, qui n’autorise pas à elle seule l’acceptation de la livraison.",
+    "Les exercices dépendant des images de la balance et du pied à coulisse ont été rendus autonomes par le texte.",
+    "Les obligations officielles sont introduites avec l’art. 125 Cst., la loi fédérale sur la métrologie et les ordonnances applicables. Les prescriptions précises dépendent de l’usage et de l’instrument.",
+    "Le calcul de comptage par masse et les situations de tolérance numérique et de volume sont rattachés au CFC dans cette révision. Les autres exercices sont communs."
+  ]
+}
