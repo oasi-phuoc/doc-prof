@@ -16,7 +16,9 @@ Les mots de passe ne sont ni renvoyés par l’API ni enregistrés en clair : d�
 
 ## Activation du serveur
 
-Le 23 novembre 2026, après correction des réglages de build Cloudflare, le contrôle effectué par l’utilisateur sur l’URL du Worker affiche `{"ok":true}`. Cela confirme que l’API est servie, mais ne vérifie ni le schéma D1 ni les accès administrateur. La création des comptes et la sauvegarde de leurs fiches en production restent à confirmer. Cette session ne dispose pas d’une authentification Cloudflare permettant de vérifier directement ces opérations distantes.
+Le 26 novembre 2026, la recette en production a confirmé que l’API du Worker accepte la création par l’administrateur et rejette les demandes invalides, les doublons et les créations sans droits. Les deux comptes synthétiques ont pu se connecter et enregistrer leurs fiches. La lecture croisée a été refusée et les sessions ont été révoquées à la déconnexion. Les trois migrations D1 étaient appliquées. Les comptes et fiches synthétiques ont été supprimés après la vérification. Le [suivi de la refonte du mode Libre](../mode-libre/avancement.md) récapitule cette recette.
+
+Un test Chrome sur le site de production a également vérifié la connexion administrateur, la création d’un compte depuis **Comptes enseignants** et la connexion de ce compte depuis **Mon compte**. Le compte de recette a été supprimé ensuite.
 
 Dans **Workers & Pages → clairfle-fiches → Settings → Builds**, utiliser :
 
