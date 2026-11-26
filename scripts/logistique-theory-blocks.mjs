@@ -5,6 +5,7 @@ export const cells = (line) => line.trim().replace(/^\||\|$/g, '').split('|').ma
 export function theoryBlocks(markdown) {
   return markdown.replace(/^#{1,6} .+$/gm, '\n$&\n').trim().split(/\n\s*\n/).flatMap((chunk) => {
     const lines = chunk.split('\n').map((line) => line.trim()).filter(Boolean)
+    if (!lines.length) return []
     if (lines.every((line) => line.startsWith('|')) && lines.length >= 3) {
       return [{
         kind: 'table',

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="210" viewBox="0 0 800 210" role="img" aria-labelledby="title desc">
+  <title id="title">Reconnaître les dommages mécaniques</title>
+  <desc id="desc">Une flèche latérale indique un choc. Une flèche verticale au-dessus d’un colis isolé indique une chute. Deux colis superposés et des flèches vers le colis inférieur montrent la pression de l’empilage.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0 0l6 3-6 3z" fill="#222"/>
+    </marker>
+  </defs>
+  <rect width="800" height="210" fill="white"/>
+  <g stroke="#ccc" stroke-width="2" fill="none">
+    <path d="M266 50v146m268-146v146"/>
+  </g>
+  <g stroke="#222" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M110 107h82v45h-82zM110 107l10-10h82l-10 10m10-10v45l-10 10" fill="#eee"/>
+    <path d="M65 128h38" marker-end="url(#arrow)"/>
+    <path d="M360 106h80v37h-80z" fill="#eee"/>
+    <path d="M400 67v31" marker-end="url(#arrow)"/>
+    <path d="M345 153h110" fill="none"/>
+    <path d="M620 88h92v30h-92zM606 118h120v35H606z" fill="#eee"/>
+    <path d="M643 101v32" marker-end="url(#arrow)"/>
+    <path d="M688 101v32" marker-end="url(#arrow)"/>
+    <path d="M593 153h146" fill="none"/>
+  </g>
+  <g fill="#222" font-family="sans-serif" text-anchor="middle">
+    <text x="400" y="34" font-size="25" font-weight="bold">Reconnaître les dommages mécaniques</text>
+    <text x="133" y="186" font-size="19" font-weight="bold">Choc</text>
+    <text x="400" y="186" font-size="19" font-weight="bold">Chute</text>
+    <text x="665" y="186" font-size="19" font-weight="bold">Pression à l’empilage</text>
+  </g>
+</svg>

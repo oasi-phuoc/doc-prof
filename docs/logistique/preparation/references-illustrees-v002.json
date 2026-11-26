@@ -1,0 +1,339 @@
+{
+  "revision": "logistique-references-v002",
+  "modules": [
+    {
+      "module": "100",
+      "base": "100-v001",
+      "figures": [
+        {
+          "anchor": "3. Organiser votre révision",
+          "file": "log-100-parcours-revision-schema-v002.svg",
+          "sha256": "ab8f403f668df4cdc67b6fd122e6d43a11e8f74aad67a3e2585ce387fd94df69",
+          "alt": "Organiser une courte révision — Lire. Repérer la notion ; S’exercer. Appliquer à un colis ; Corriger. Relever un écart",
+          "caption": "Ajoutez les durées pour vérifier que toutes les étapes tiennent dans votre créneau."
+        }
+      ],
+      "overview": [
+        "Suivre un colis depuis le quai jusqu’au destinataire.",
+        "Choisir un module selon la tâche au dépôt.",
+        "Utiliser le glossaire, les exercices et le corrigé pour réviser."
+      ]
+    },
+    {
+      "module": "101",
+      "base": "101-v001",
+      "figures": [
+        {
+          "anchor": "1.2.1 La Route de la Soie",
+          "file": "log-101-relais-dechange-schema-v002.svg",
+          "sha256": "4005d9b0920609e7c3b40a0d52ae68c56efaa2425ef9a577ca969cb79f7de304",
+          "alt": "Un échange organisé par relais — Producteur. Préparer les marchandises ; Relais. Transférer et regrouper ; Marché. Distribuer à l’arrivée",
+          "caption": "Le schéma illustre le principe des relais. Les routes historiques formaient un réseau."
+        },
+        {
+          "anchor": "1.3 Les grandes étapes de la logistique",
+          "file": "log-101-organisation-transport-schema-v002.svg",
+          "sha256": "efba17d43cd26f0600b84927e8d0040cac31e47f0c89b61136849e70f05382fb",
+          "alt": "Des moyens qui changent la portée des flux — Transport local. Portage et voies locales ; Transport mécanisé. Charges et distances accrues ; Coordination. Suivi des mouvements",
+          "caption": "La distance, la charge et les délais influencent le choix d’un moyen de transport."
+        }
+      ]
+    },
+    {
+      "module": "102",
+      "base": "102-v001",
+      "figures": [
+        {
+          "anchor": "2.3 Chaîne de processus logistique",
+          "file": "log-102-chaine-processus-schema-v002.svg",
+          "sha256": "c021100e89327f93092e49e8914640f85c1bd85ebf4a63eefa13acf731bb110c",
+          "alt": "Trois maillons de la chaîne logistique — Approvisionner. Recevoir la matière ; Transformer. Organiser les postes ; Distribuer. Préparer puis expédier",
+          "caption": "Une commande déclenche des échanges d’information entre les maillons."
+        },
+        {
+          "anchor": "2.4 Gestion de la chaîne d'approvisionnement (SCM)",
+          "file": "log-102-coordination-scm-schema-v002.svg",
+          "sha256": "77316886660a50771d3e244f5c1a3b63d06709553ad92690c1412c66f10f5e69",
+          "alt": "Deux flux et une décision commune — Flux physique. Marchandise en mouvement ; Flux d’information. État du stock et engagements",
+          "caption": "Un délai fournisseur modifié doit être communiqué avant de promettre une date au client."
+        }
+      ]
+    },
+    {
+      "module": "103",
+      "base": "103-v001",
+      "figures": [
+        {
+          "anchor": "3.2.2 Tâches",
+          "file": "log-103-tache-objectif-schema-v002.svg",
+          "sha256": "c218636474d447165f9b81b14a9859ebb14d086b2bb14fe2ca7bedcf649e4973",
+          "alt": "De l’objectif à la vérification — Objectif. Expédier à 16 h ; Tâche. Préparer la commande ; Contrôle. Article et délai",
+          "caption": "L’objectif décrit le résultat attendu. Le contrôle vérifie la réalisation."
+        }
+      ]
+    },
+    {
+      "module": "104",
+      "base": "104-v001",
+      "figures": [
+        {
+          "anchor": "4.5 Fonctions TTS",
+          "file": "log-104-fonctions-tts-schema-v002.svg",
+          "sha256": "8cec79298e6fa87f1ea3589c46d04f29868f09cb0a550b22826046edded11ec0",
+          "alt": "Transport, transbordement et stockage — Transport. Changer de lieu ; Transbordement. Changer de support ; Stockage. Attendre en emplacement",
+          "caption": "Ces fonctions répondent à des besoins différents au cours du trajet de la marchandise."
+        },
+        {
+          "anchor": "4.1 Approvisionnement",
+          "file": "log-104-controle-entree-schema-v002.svg",
+          "sha256": "724643eb2265fef673075b3910850cfcbf1e6d84815919f367ace2a99bbc90a9",
+          "alt": "Relier la commande à la réception — Besoin. Référence et quantité ; Livraison. Articles reçus ; Contrôle. État et quantité",
+          "caption": "Comparer la marchandise livrée à la commande avant d’enregistrer sa disponibilité."
+        }
+      ]
+    },
+    {
+      "module": "105",
+      "base": "105-v001",
+      "figures": [
+        {
+          "anchor": "5.1 Caractéristiques et manipulation des marchandises",
+          "file": "log-105-manutention-schema-v002.svg",
+          "sha256": "74be38a2d12e804fe9f5908a3a3b66fa3f2365565d598b445f448f3cad5931e8",
+          "alt": "Les propriétés guident la manutention — Caisse stable. Caler et respecter la charge ; Objet fragile. Protéger les points sensibles",
+          "caption": "Une forme ou une fragilité différente peut exiger une autre protection et un autre support."
+        },
+        {
+          "anchor": "5.4.1 Les influences mécaniques (choc, chute, pression)",
+          "file": "log-105-dommages-schema-v002.svg",
+          "sha256": "3b22b028d9091a1efb51e8cd0aa0d04a66afc70758658520226e134eaa03bf02",
+          "alt": "Trois forces exercées sur un colis. Une flèche latérale représente le choc. Une flèche vers le sol représente la chute. Deux flèches provenant d’un colis supérieur représentent la pression à l’empilage.",
+          "caption": "Le signalement précise le dommage observé et la marchandise concernée."
+        },
+        {
+          "anchor": "5.5.3 L'hygrométrie",
+          "file": "log-105-hygrometrie-schema-v002.svg",
+          "sha256": "fd129a46d394b0a88e1ab7064101f00ef6fcdfc6003ea0fc9e5eb23bdfffb937",
+          "alt": "Le produit réagit aux conditions de l’air — Air humide. Certains emballages ramollissent ; Air trop sec. Certains produits se dessèchent",
+          "caption": "Comparer les conditions relevées aux limites applicables à chaque produit."
+        },
+        {
+          "anchor": "5.7.2 La manutention des marchandises",
+          "file": "log-105-choisir-support-schema-v002.svg",
+          "sha256": "14edc45b68a3087e53f992479a7ec1b93b88451105f202b2414d934cb1dc67ea",
+          "alt": "Choisir le support de manutention — Observer. Dimensions et stabilité ; Vérifier. Masse de la charge ; Choisir. Équipement adapté",
+          "caption": "Avant de déplacer une charge, appliquer les limites et les consignes du matériel prévu."
+        }
+      ]
+    },
+    {
+      "module": "106",
+      "base": "106-v001",
+      "figures": [
+        {
+          "anchor": "6.3 Flux de matières dans la gestion des déchets",
+          "file": "log-106-bilan-matieres-schema-v002.svg",
+          "sha256": "3bac7a4f75bd58a5f1f8699a565beff744f0a5b95e863a68563ecfc1581d3f23",
+          "alt": "Un apport, plusieurs destinations — Apports. Toutes les matières triées ; Flux valorisés. Matières ou énergie ; Résidus. Traitement adapté",
+          "caption": "Suivre séparément les masses orientées vers les filières, dans la même unité."
+        },
+        {
+          "anchor": "6.5 Objectif 2030 — la pyramide des déchets",
+          "file": "log-106-priorites-schema-v002.svg",
+          "sha256": "dbd360b049278837f887100ee64b185c9e6a262655a72b7c81eb4511c6d9a2bd",
+          "alt": "Les premières décisions réduisent les déchets — Prévenir. Éviter le déchet ; Réemployer. Prolonger l’usage ; Trier. Orienter le résidu",
+          "caption": "Examiner d’abord les actions qui évitent la production d’un déchet."
+        }
+      ]
+    },
+    {
+      "module": "107",
+      "base": "107-v001",
+      "figures": [
+        {
+          "anchor": "7.3.2 Traitement spécial",
+          "file": "log-107-suivi-filieres-schema-v002.svg",
+          "sha256": "057927ff2ed5a2656d6e5fdbe6906455ae98a7df93261ecd03a453780fda7ca2",
+          "alt": "Suivre une orientation de déchets — Identifier. Référence disponible ; Vérifier. Consignes de la filière ; Tracer. Remise et destination",
+          "caption": "Pour un déchet douteux, conserver l’identification et consulter le responsable."
+        }
+      ]
+    },
+    {
+      "module": "108",
+      "base": "108-v001",
+      "figures": [
+        {
+          "anchor": "8.2.5 Surpopulation",
+          "file": "log-108-indicateur-perimetre-schema-v002.svg",
+          "sha256": "e26968abd8945d00df18e0ea91f06ee3e766360e111a3312f2fc4571500937d5",
+          "alt": "Mesurer avec un périmètre explicite — Mesure totale. Quantité du site ; Mesure rapportée. Quantité par personne",
+          "caption": "Un total et un résultat par personne répondent à des questions différentes."
+        },
+        {
+          "anchor": "8.2.8 Déchets plastiques",
+          "file": "log-108-pertes-plastiques-schema-v002.svg",
+          "sha256": "f292d8bfc467f091e566d39b9dc0a394393c34efe345b9206ee278fe4bad2290",
+          "alt": "Maîtriser les pertes au poste — Réceptionner. Retenir les emballages ; Collecter. Utiliser la filière prévue ; Contrôler. Repérer les écarts",
+          "caption": "Le schéma montre comment éviter qu’un emballage devienne un déchet dispersé."
+        }
+      ]
+    },
+    {
+      "module": "109",
+      "base": "109-v001",
+      "figures": [
+        {
+          "anchor": "9.1 Autorisation d'accès",
+          "file": "log-109-droits-par-zone-schema-v002.svg",
+          "sha256": "38c3aa2c510d4207b74f59b04a6f13d6a640268f534207dc476fa04a53a8a2e6",
+          "alt": "Une autorisation correspond à un périmètre — Accueil. Visiteurs autorisés ; Dépôt. Personnel habilité ; Zone réservée. Accès spécifique",
+          "caption": "Affecter les droits selon la tâche et les zones nécessaires au poste."
+        },
+        {
+          "anchor": "9.2 Secret épistolaire",
+          "file": "log-109-courrier-nominatif-schema-v002.svg",
+          "sha256": "1aa386e7e9dbd3a1294a7b5ecde6d53128f5101c6113c52723910c568792fdee",
+          "alt": "Orienter un courrier fermé — Lire l’adresse. Destinataire et mention ; Vérifier le mandat. Appliquer la procédure ; Remettre. Personne autorisée",
+          "caption": "En cas de doute, vérifier le mandat ou remettre l’envoi fermé."
+        }
+      ]
+    },
+    {
+      "module": "110",
+      "base": "110-v001",
+      "figures": [
+        {
+          "anchor": "10.4.2 Données de mouvement (Transaction Data) — dynamiques",
+          "file": "log-110-reference-transaction-schema-v002.svg",
+          "sha256": "695168c633c052ce52d6738ea3ea3a5e2e90859edde9600f039fa37adf94fc6a",
+          "alt": "Référence article, mouvement, stock — Donnée de base. Article A14, unité pièce ; Mouvement. Sortie de 8 pièces ; Stock. 30 − 8 = 22 pièces",
+          "caption": "Le stock se calcule à partir des mouvements enregistrés pour la même référence."
+        },
+        {
+          "anchor": "10.5.1 Approvisionnement et stockage",
+          "file": "log-110-besoin-net-schema-v002.svg",
+          "sha256": "98f50afbf1623685276fc115ca1e0cf6706d789613ea1693512cd56f77c96718",
+          "alt": "Comparer les quantités avant le départ — Besoin total. 60 pièces à préparer ; Stock disponible. 40 pièces au bon moment ; Besoin net. 20 pièces à couvrir",
+          "caption": "Si la réception est prévue après le départ, elle ne couvre pas le besoin de cette commande."
+        }
+      ]
+    },
+    {
+      "module": "201",
+      "base": "201-v001",
+      "figures": [
+        {
+          "anchor": "1.2 « Le client est roi »",
+          "file": "log-201-roles-commande-schema-v002.svg",
+          "sha256": "37d4c77f8bc3e90cdb2671b3ed8de8bb806aa0ab43bbadd3037a896773041914",
+          "alt": "Distinguer les rôles d’une commande — Acheteur. Passe la commande ; Débiteur. Doit le paiement ; Destinataire. Reçoit la livraison",
+          "caption": "Les données de livraison et de facturation peuvent désigner des personnes différentes."
+        }
+      ]
+    },
+    {
+      "module": "202",
+      "base": "202-v001",
+      "figures": [
+        {
+          "anchor": "2.3 Mes vêtements",
+          "file": "log-202-tenue-tache-schema-v002.svg",
+          "sha256": "d4482b3b16e2d9e2ff981e0cccf3c79183a02b05a508b0107ca4894566e3e395",
+          "alt": "Adapter sa tenue à la tâche — À l’accueil. Tenue prévue sur le site ; Sur le quai. Protections du poste",
+          "caption": "Les consignes de la zone précisent les vêtements et protections requis."
+        }
+      ],
+      "overview": [
+        "Relier ses valeurs à ses comportements au travail.",
+        "Adapter sa communication, sa tenue et ses gestes d’hygiène au poste.",
+        "Comprendre le rôle de la mission, de la vision et de la charte dans une entreprise."
+      ]
+    },
+    {
+      "module": "308",
+      "base": "308-v001",
+      "figures": [
+        {
+          "anchor": "8.2.3 Accessoires de mesure des longueurs (précision)",
+          "file": "log-308-lecture-longueur-schema-v002.svg",
+          "sha256": "826bcfa7f1544fbc2999211391f4181a6a6d8da347a64148cb44ab0ed2c72d24",
+          "alt": "Lire la même unité aux deux extrémités — Début. Repère à 2 cm ; Fin. Repère à 17 cm ; Longueur. 17 − 2 = 15 cm",
+          "caption": "La longueur correspond à la différence entre les deux positions lues."
+        },
+        {
+          "anchor": "8.2.4 Mesure des volumes",
+          "file": "log-308-volume-colis-schema-v002.svg",
+          "sha256": "3db932f4723bed917f096329323467bf011f68d8d2e916d8040885c126218a5c",
+          "alt": "Un colis rectangulaire avec sa longueur de 60 cm, sa largeur de 40 cm et sa hauteur de 30 cm. Le volume est de 72 000 cm³.",
+          "caption": "Schéma non à l’échelle. Convertir les dimensions dans la même unité avant de les multiplier."
+        }
+      ]
+    },
+    {
+      "module": "613",
+      "base": "613-v001",
+      "figures": [
+        {
+          "anchor": "13.13–13.16 Coûts et marge",
+          "file": "log-613-cout-marge-schema-v002.svg",
+          "sha256": "896cae0fae5df9d4dc33b1132eff6b4d1f7f01d61f3c0cd594093a113a6e36af",
+          "alt": "Relier la recette aux coûts retenus — Recette. 120 CHF ; Coûts. 95 CHF ; Marge. 120 − 95 = 25 CHF",
+          "caption": "Préciser le périmètre des coûts avant de comparer des marges."
+        }
+      ]
+    },
+    {
+      "module": "805",
+      "base": "805-v001",
+      "figures": [
+        {
+          "anchor": "5.4 Illustrations",
+          "file": "log-805-illustration-document-schema-v002.svg",
+          "sha256": "241a7c27686a5f713a851c1c3c0367e48179fcd6ee3ccea6bc4311cf0db91f69",
+          "alt": "Image, légende et mise en page — Choisir. Image utile et lisible ; Placer. Position dans le texte ; Vérifier. Légende et impression",
+          "caption": "Après insertion, vérifier la page en aperçu et la lisibilité de la légende."
+        },
+        {
+          "anchor": "5.12.6 Fusionner et fractionner des cellules",
+          "file": "log-805-structure-tableau-schema-v002.svg",
+          "sha256": "ab756addecd70a4c8c0bcc05dd12deb83eda6a1270810dc0dd2d28dff1e7d5bb",
+          "alt": "Deux tableaux comportant la même ligne de données. Dans le second, la cellule du titre occupe toute la largeur de la première ligne.",
+          "caption": "Une ligne d’en-tête claire facilite la comparaison. Limiter les fusions superflues."
+        },
+        {
+          "anchor": "5.15.3 Légendes et table des illustrations",
+          "file": "log-805-table-des-figures-schema-v002.svg",
+          "sha256": "f3f3de8fd29f2490787c4d44b6f82b45390618ea12fcdb21ec63cc7cff2fa5af",
+          "alt": "Construire la liste des illustrations — Figure. Image dans le document ; Légende. Nom et numéro ; Liste. Table des illustrations",
+          "caption": "Utiliser des légendes régulières puis actualiser les numéros avant l’impression."
+        }
+      ]
+    },
+    {
+      "module": "902",
+      "base": "902-v001",
+      "figures": [
+        {
+          "anchor": "2.2 Traiter deux écarts distincts",
+          "file": "log-902-ecarts-reception-schema-v002.svg",
+          "sha256": "945f9f6ae701ffdb1e3d8859a4ac84f77361c58cbd54be7b70d14847ab9d8a6d",
+          "alt": "Un écart de quantité, un écart d’état — Quantité. Attendu 36, reçu 35 ; État. Un des 35 colis est abîmé",
+          "caption": "Enregistrer les deux contrôles séparément pour éviter une mise en stock incorrecte."
+        },
+        {
+          "anchor": "4.1 Choisir une solution réalisable",
+          "file": "log-902-choix-transport-schema-v002.svg",
+          "sha256": "f0d4efd0daed3dd1abd27663c04599da94c7f7b93e0e1c40169fe4538cf8431d",
+          "alt": "Comparer seulement les options admissibles — Contrainte. Arriver avant 16 h ; Filtre. Écarter un trajet tardif ; Comparaison. Comparer le prix restant",
+          "caption": "Le prix départage les options qui respectent déjà les contraintes impératives."
+        }
+      ],
+      "overview": [
+        "Lire une étude de cas et identifier les données fiables.",
+        "Comparer les quantités, les délais ou les coûts.",
+        "Formuler et transmettre une décision justifiée."
+      ]
+    }
+  ]
+}

@@ -15,13 +15,14 @@ import { module308 } from './banks/module-308-v001.generated.ts'
 import { module613 } from './banks/module-613-v001.generated.ts'
 import { module805 } from './banks/module-805-v001.generated.ts'
 import { module902 } from './banks/module-902-v001.generated.ts'
+import { illustratedReferences } from './banks/references-v002.generated.ts'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
 
 type ReferenceBlock = Exclude<GrammarTheoryBlock, { kind: 'page' }>
 
 type UnitContent =
-  | { kind: 'theorie' | 'glossaire'; blocks: ReferenceBlock[] }
+  | { kind: 'objectifs-apercu' | 'theorie' | 'glossaire'; blocks: ReferenceBlock[] }
   | { kind: 'maths'; prompt: string; calculation: string; answer: string }
   | { kind: 'verification'; prompt: string; answer: string; options?: readonly string[] }
   | { kind: 'situation'; prompt: string; answer: string }
@@ -37,6 +38,17 @@ export type LogistiquePublication = {
   revision: string
   units: readonly LogistiqueUnit[]
 }
+
+const serviceClientPublication: LogistiquePublication = {
+  revision: 'logistique-201-202-v001',
+  units: [
+    ...module100, ...module101, ...module102, ...module103, ...module104,
+    ...module105, ...module106, ...module107, ...module108, ...module109,
+    ...module110, ...module201, ...module202, ...module308, ...module613,
+    ...module805, ...module902,
+  ],
+}
+const revisedReferenceIds = new Set<string>(illustratedReferences.map(({ id }) => id))
 
 /** Ajouter une publication après validation. Garder les versions utilisées par les recettes. */
 export const logistiquePublications: readonly LogistiquePublication[] = [
@@ -75,14 +87,10 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
       ...module110, ...module308, ...module613, ...module805, ...module902,
     ],
   },
+  serviceClientPublication,
   {
-    revision: 'logistique-201-202-v001',
-    units: [
-      ...module100, ...module101, ...module102, ...module103, ...module104,
-      ...module105, ...module106, ...module107, ...module108, ...module109,
-      ...module110, ...module201, ...module202, ...module308, ...module613,
-      ...module805, ...module902,
-    ],
+    revision: 'logistique-references-v002',
+    units: [...serviceClientPublication.units.filter(({ id }) => !revisedReferenceIds.has(id)), ...illustratedReferences],
   },
 ]
 

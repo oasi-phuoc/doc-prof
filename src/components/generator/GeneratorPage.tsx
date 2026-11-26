@@ -26,7 +26,7 @@ import { LibreSidePanel } from '@/components/generator/LibreSidePanel'
 import { SettingsPanel } from '@/components/generator/SettingsPanel'
 import { ResultPanel } from '@/components/generator/ResultPanel'
 import { contrastOnTheme, readThemeColor, theorySectionColors } from '@/components/generator/theme'
-import { applyBaseFontSize, readBaseFontSize } from '@/components/generator/typography'
+import { applyBaseFontSize, DEFAULT_BASE_FONT_SIZE, readBaseFontSize } from '@/components/generator/typography'
 import {
   applySheetChrome,
   isTestSheetDomain,
@@ -165,7 +165,12 @@ export function GeneratorPage({
     }))
   }
 
-  const worksheets = useMemo(() => buildWorksheets(pages, seed, pointsPerQuestion), [pages, seed, pointsPerQuestion])
+  const logisticsLayout = useMemo(() => ({
+    a5: isA5DoubleFormat(sheetFormat),
+    hideChrome,
+    fontScale: fontSizes.default / DEFAULT_BASE_FONT_SIZE,
+  }), [sheetFormat, hideChrome, fontSizes.default])
+  const worksheets = useMemo(() => buildWorksheets(pages, seed, pointsPerQuestion, logisticsLayout), [pages, seed, pointsPerQuestion, logisticsLayout])
   const [libreSnapshot, setLibreSnapshot] = useState<PageConfig[] | null>(
     () => openedFiche?.recipe.libreSnapshot ?? null,
   )
@@ -206,8 +211,8 @@ export function GeneratorPage({
         })
       : null
   const previewWorksheets = useMemo(
-    () => (previewSource ? buildWorksheets(previewSource, seed, pointsPerQuestion) : worksheets),
-    [previewSource, seed, worksheets, pointsPerQuestion],
+    () => (previewSource ? buildWorksheets(previewSource, seed, pointsPerQuestion, logisticsLayout) : worksheets),
+    [previewSource, seed, worksheets, pointsPerQuestion, logisticsLayout],
   )
   const a5SourcePages = previewSource ?? pages
   const a5LeftWorksheets = useMemo(() => {
@@ -216,16 +221,18 @@ export function GeneratorPage({
       a5SourcePages.map((page) => pageForA5Half(page, 'left')),
       seed,
       pointsPerQuestion,
+      logisticsLayout,
     )
-  }, [sheetFormat, a5SourcePages, seed, pointsPerQuestion])
+  }, [sheetFormat, a5SourcePages, seed, pointsPerQuestion, logisticsLayout])
   const a5RightWorksheets = useMemo(() => {
     if (!isA5DoubleFormat(sheetFormat)) return null
     return buildWorksheets(
       a5SourcePages.map((page) => pageForA5Half(page, 'right')),
       seed,
       pointsPerQuestion,
+      logisticsLayout,
     )
-  }, [sheetFormat, a5SourcePages, seed, pointsPerQuestion])
+  }, [sheetFormat, a5SourcePages, seed, pointsPerQuestion, logisticsLayout])
   const previewSheet = previewWorksheets[Math.min(safeSheetIndex, previewWorksheets.length - 1)]
   const a5LeftSheet = a5LeftWorksheets?.[Math.min(safeSheetIndex, a5LeftWorksheets.length - 1)]
   const a5RightSheet = a5RightWorksheets?.[Math.min(safeSheetIndex, a5RightWorksheets.length - 1)]

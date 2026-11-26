@@ -6,6 +6,7 @@ import { isLogistiqueReferenceType, logistiqueType, type LogistiqueType } from '
 
 function unitItems(unit: LogistiqueUnit): MathItem[] {
   switch (unit.kind) {
+    case 'objectifs-apercu':
     case 'theorie':
     case 'glossaire':
       return unit.blocks.map((block, index) => ({

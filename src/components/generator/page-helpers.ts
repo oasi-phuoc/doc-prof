@@ -239,7 +239,7 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
     ...clearLibreContentFreeze(),
     ...(logisticsKind
       ? { count: Math.max(1, Math.min(
-          { theorie: 1, glossaire: 1, maths: 6, verification: 10, situation: 2 }[logisticsKind],
+          { 'objectifs-apercu': 1, theorie: 1, glossaire: 1, maths: 6, verification: 10, situation: 2 }[logisticsKind],
           logistiqueEligibleCount(type.id),
         )) }
       : isDecompose

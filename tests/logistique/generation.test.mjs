@@ -9,6 +9,7 @@ const catalog = load(root + '/src/logistique/catalog.ts')
 const { generateLogistique, logistiqueDocumentTitle } = load(root + '/src/logistique/generate.ts')
 const { freezeLogistiquePages, validLogistiquePages } = load(root + '/src/logistique/recipe.ts')
 const { currentLogistiquePublication } = load(root + '/src/logistique/approved-banks.ts')
+const { splitLogistiquePages } = load(root + '/src/logistique/pagination.ts')
 
 function config(diploma, module, kind) {
   const tag = diploma.toLowerCase()
@@ -21,7 +22,7 @@ function config(diploma, module, kind) {
   }
 }
 
-test('le catalogue reproduit les 143 sous-thèmes et les 715 types EPCAS', () => {
+test('le catalogue propose les six types dans les 143 sous-thèmes autorisés', () => {
   for (const [diploma, themes, modules] of [['CFC', 9, 80], ['AFP', 7, 63]]) {
     const domain = 'logistique-' + diploma.toLowerCase()
     const topics = catalog.logistiqueTopics.filter((topic) => topic.domain === domain)
@@ -31,13 +32,33 @@ test('le catalogue reproduit les 143 sous-thèmes et les 715 types EPCAS', () =>
     for (const subtheme of subthemes) {
       const first = catalog.logistiqueTypeForSubtheme(subtheme.id, '')
       assert.deepEqual(catalog.logistiqueTypeChoices(subtheme.topic, first.id).map((type) => type.kind),
-        ['theorie', 'maths', 'verification', 'situation', 'glossaire'])
+        ['objectifs-apercu', 'theorie', 'maths', 'verification', 'situation', 'glossaire'])
     }
   }
-  assert.equal(new Set(catalog.logistiqueTypes.map((type) => type.id)).size, 715)
+  assert.equal(new Set(catalog.logistiqueTypes.map((type) => type.id)).size, 858)
   for (const code of ['501', '506', '604', '612', '702', '705', '805', '807', '901', '902']) {
     assert.equal(catalog.logistiqueType(`log-afp-${code}-theorie`), undefined)
   }
+})
+
+test('les références actives séparent objectifs, aperçu et théorie illustrée sans modifier les anciennes recettes', () => {
+  for (const type of catalog.logistiqueTypes.filter(({ kind }) => kind === 'theorie')) {
+    const theoryPage = config(type.diploma, type.module, type.kind)
+    const introPage = config(type.diploma, type.module, 'objectifs-apercu')
+    const theory = generateLogistique(theoryPage, 7).items.map((item) => item.theoryBlock)
+    const intro = generateLogistique(introPage, 7).items.map((item) => item.theoryBlock)
+    assert.equal(Boolean(theory.length), Boolean(intro.length), type.id)
+    if (!theory.length) continue
+    assert.equal(validLogistiquePages(freezeLogistiquePages([introPage])), true, type.id)
+    assert(intro.some((block) => block.kind === 'heading' && /^Objectifs/.test(block.text)), type.id)
+    assert(intro.some((block) => block.kind === 'heading' && /^Aperçu/.test(block.text)), type.id)
+    assert.doesNotMatch(JSON.stringify(intro), /EnterSite|ASFL|SVBL|"text":"Source"/i, type.id)
+    assert(!theory.some((block) => block.kind === 'heading' && /^(?:Objectifs du module|Aperçu)/.test(block.text)), type.id)
+    assert(theory.filter((block) => block.kind === 'image').length >= 2, type.id)
+  }
+  const historical = { ...config('AFP', '105', 'theorie'), logistiqueBankRevision: 'logistique-105-v001' }
+  assert.equal(freezeLogistiquePages([historical])[0].logistiqueBankRevision, historical.logistiqueBankRevision)
+  assert.equal(generateLogistique(historical, 7).items.length, 98)
 })
 
 test('le tirage est déterministe et limité aux unités approuvées pour le diplôme', () => {
@@ -70,4 +91,16 @@ test('les titres et les recettes conservent les modules, le diplôme et la révi
   assert.equal(validLogistiquePages([config('AFP', '902', 'theorie')]), false)
   assert.equal(validLogistiquePages([{ ...a, extraBlocks: [null] }]), false)
   assert.equal(validLogistiquePages([{ ...a, logistiqueBankRevision: 'inconnue' }]), false)
+})
+
+test('les questions restent dans l’ordre et partagent les pages sauf saut manuel', () => {
+  const items = generateLogistique({ ...config('CFC', '110', 'maths'), count: 6 }, 20261126).items
+  const block = { title: 'Exercice 1', items, exerciseIndex: 1, exerciseType: 'log-cfc-110-maths' }
+  const sheets = splitLogistiquePages({ blocks: [block], items })
+  assert.deepEqual(sheets.flatMap((sheet) => sheet.items), items)
+  assert(sheets.every((sheet) => sheet.items.length > 1))
+  assert.deepEqual(sheets.map((sheet) => sheet.blocks[0].itemOffset), [0, 2, 4])
+  const withBreak = splitLogistiquePages({ blocks: [{ ...block, tcfPageBreakAfter: [true] }], items })
+  assert.deepEqual(withBreak[0].items, items.slice(0, 1))
+  assert.deepEqual(withBreak.flatMap((sheet) => sheet.items), items)
 })

@@ -556,7 +556,7 @@ export function WorksheetSheet({
                       itemLabel={/^tcm-(?:csc|cfr)-ex0[12]$/.test(block.exerciseType)?String.fromCharCode(65+index+itemOffset):undefined}
                       seriesNumber={/^tcm-csc-ex16$/.test(block.exerciseType)||/^tcm-cfr-ex16$/.test(block.exerciseType)?index+itemOffset+1:undefined}
                       hideNumber={/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType)||/^tcm-cfr-ex(?:07|08|09|10|16)$/.test(block.exerciseType)}
-                      index={index + (page.domain==='grammaire'||/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType) ? block.itemOffset ?? 0 : 0)}
+                      index={isLogistiqueDomain(page.domain) || page.domain === 'grammaire' || /^tcm-csc-ex(?:10|11)$/.test(block.exerciseType) ? sourceIndex : index}
                       algebraPadLeft={padLeft}
                       draftGrid={draftGrid}
                       stackGeo={/^tcm-cfr-ex2[2-6]$/.test(block.exerciseType) || block.exerciseType.includes('peri-aire')}

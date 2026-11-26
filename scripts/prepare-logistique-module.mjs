@@ -1,6 +1,6 @@
-import { createHash } from 'node:crypto'
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { theoryBlocks } from './logistique-theory-blocks.mjs'
+import { insertLogistiqueFigures, moduleIntroduction } from './logistique-reference-blocks.mjs'
 
 const root = new URL('../', import.meta.url)
 const revision = process.argv[2] ?? ''
@@ -28,22 +28,20 @@ for (const { page = 'theorie', from, to, reason } of editorial.replacements) {
   pages[page] = pages[page].replace(from, () => to)
 }
 
-const reference = Object.values(pages).filter(Boolean).flatMap(theoryBlocks)
-if (editorial.visual) {
-  const { anchor, file, sha256, alt, caption } = editorial.visual
-  const position = reference.findIndex((block) => block.kind === 'heading' && block.text === anchor)
-  const scope = editorial.diplomas.length === 1 ? editorial.diplomas[0].toLowerCase() : 'commun'
-  const path = `assets/logistique/${catalogEntry.theme}/${code}/${scope}/${file}`
-  if (position < 0 || !/^[a-z0-9-]+\.svg$/.test(file)) throw new Error(`Figure mal placée : ${code}`)
-  const bytes = readFileSync(new URL('public/' + path, root))
-  if (createHash('sha256').update(bytes).digest('hex') !== sha256) {
-    throw new Error(`Empreinte différente de la figure enregistrée : ${code}`)
-  }
-  reference.splice(position + 1, 0, { kind: 'image', src: '/' + path, alt, caption })
-}
+const legacyCombinedReference = editorial.legacyCombinedReference === true
+const introduction = legacyCombinedReference ? [] : [moduleIntroduction(
+  theoryBlocks(editorial.objectives ?? pages.objectifs ?? ''),
+  theoryBlocks(editorial.overview ?? pages.apercu ?? ''),
+)]
+const reference = legacyCombinedReference ? Object.values(pages).filter(Boolean).flatMap(theoryBlocks) : theoryBlocks(pages.theorie)
+const figures = editorial.visuals ?? (editorial.visual ? [editorial.visual] : [])
+if (!legacyCombinedReference && figures.length === 0) throw new Error('Illustrations de la théorie absentes : ' + code)
+const scope = editorial.diplomas.length === 1 ? editorial.diplomas[0].toLowerCase() : 'commun'
+const course = insertLogistiqueFigures(reference, figures, new URL('public/', root), `assets/logistique/${catalogEntry.theme}/${code}/${scope}`)
 const kinds = ['maths', 'verification', 'situation']
 const units = [
-  { id: 'theorie-source', kind: 'theorie', blocks: reference },
+  ...introduction,
+  { id: 'theorie-source', kind: 'theorie', blocks: course },
   { id: 'glossaire-reconstitue', kind: 'glossaire', blocks: editorial.glossary.map(([term, definition]) =>
     ({ kind: 'paragraph', text: `{g}${term}{/g} — ${definition}` })) },
   ...editorial.exercises,
@@ -71,4 +69,4 @@ if (existsSync(destination) && readFileSync(destination, 'utf8') !== output) {
 mkdirSync(new URL('.', destination), { recursive: true })
 writeFileSync(destination, output)
 const counts = editorial.diplomas.map((diploma) => `${diploma} ${units.filter((unit) => unit.approvedFor.includes(diploma)).length}`)
-console.log(`${revision} · ${reference.length} blocs de théorie · ${editorial.glossary.length} termes · ${counts.join(', ')} unités`)
+console.log(`${revision} · ${course.length} blocs de théorie · ${editorial.glossary.length} termes · ${counts.join(', ')} unités`)

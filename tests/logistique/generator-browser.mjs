@@ -69,6 +69,7 @@ try {
     await page.getByRole('heading', { name: 'Contenu à compléter.' }).waitFor()
     assert.equal(await page.getByRole('button', { name: 'Enregistrer', exact: true }).isDisabled(), true)
     await select('Sous-thème', '105 — Marchandises')
+    await select('Type d’exercice', 'Théorie')
     await sheet.getByText('Cartons à réceptionner', { exact: true }).waitFor()
     assert.equal((await page.locator('.brand').textContent()).trim(), 'ClairFLE')
     assert.equal(await page.locator('.brand img').count(), 0)

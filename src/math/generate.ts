@@ -1,4 +1,4 @@
-import { splitLogistiquePages } from '@/logistique/pagination'
+import { splitLogistiquePages, type LogistiquePageLayout } from '@/logistique/pagination'
 import { isLogistiqueDomain, isLogistiqueReferenceType } from '@/logistique/catalog'
 import { generateLogistique, logistiqueDocumentTitle } from '@/logistique/generate'
 import { paginateCePosters } from '@/tcf/ce-poster-pages'
@@ -567,7 +567,7 @@ function collectSoutienReservedWords(pages: PageConfig[], seed: number): {
   return { reserved: [...reserved], type1Words, type5Words }
 }
 
-export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints = 1): WorksheetPage[] {
+export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints = 1, logisticsLayout?: LogistiquePageLayout): WorksheetPage[] {
   let exerciseNo = 1
   const out: WorksheetPage[] = []
   const { reserved, type1Words, type5Words } = collectSoutienReservedWords(pages, seed)
@@ -665,7 +665,8 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
       return
     }
     if (isLogistiqueDomain(page.domain)) {
-      out.push(...splitLogistiquePages(worksheet).map((sheet) => ({ ...sheet, configIndex: index })))
+      const sheets = splitLogistiquePages(worksheet, { ...logisticsLayout, firstPageHasHeader: out.length === 0 })
+      out.push(...sheets.map((sheet) => ({ ...sheet, configIndex: index })))
       return
     }
     const gradedPages=splitGradedGrammarPages(worksheet)

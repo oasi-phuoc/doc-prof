@@ -2,35 +2,45 @@ import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import { headingForSlice } from '@/math/page-break-heading'
 import type { MathItem, WorksheetBlock, WorksheetPage } from '@/math/types'
 
-const CONTENT_BUDGET = 660
-const ACTIVITY_HEADING = 72
+export type LogistiquePageLayout = {
+  a5?: boolean
+  hideChrome?: boolean
+  fontScale?: number
+}
 
-function lineCount(text: string, width = 66): number {
+// Espace imprimable après marges, pied de page et réserve de bas de page.
+const A4_CONTENT = 946
+const A4_HEADER = 287
+const A5_CONTENT = 695
+const A5_HEADER = 275
+
+function lineCount(text: string, width: number): number {
   return text.split('\n').reduce((sum, line) => sum + Math.max(1, Math.ceil(line.length / width)), 0)
 }
 
-function theoryHeight(block: GrammarTheoryBlock): number {
+function theoryHeight(block: GrammarTheoryBlock, width: number, scale: number): number {
+  const lines = (text: string, columns = width) => lineCount(text.replace(/\{\/?g\}/g, ''), columns) * 26 * scale
   switch (block.kind) {
     case 'heading':
-      return 42 + (lineCount(block.text) - 1) * 33
+      return 12 + (block.sub ? 28 : 32) * scale * lineCount(block.text, width * 0.8)
     case 'image':
-      return 226
+      return 184 + lines(block.caption)
     case 'paragraph':
     case 'note':
     case 'rule':
     case 'notice':
     case 'attention':
     case 'astuce':
-      return 14 + lineCount(block.text) * 25
+      return 12 + lines(block.text)
     case 'list':
-      return 20 + block.items.reduce((sum, item) => sum + lineCount(item, 59) * 25, 0)
+      return 16 + block.items.reduce((sum, item) => sum + lines(item, width * 0.9), 0)
     case 'table':
-      return 20 + [block.headers, ...block.rows].reduce((sum, row) => sum + 20 +
-        Math.max(...row.map((cell) => lineCount(cell, Math.floor(58 / row.length)))) * 25, 0)
+      return 18 + [block.headers, ...block.rows].reduce((sum, row) => sum + 14 +
+        Math.max(...row.map((cell) => lines(cell, width * 0.84 / row.length))), 0)
     case 'section':
-      return 58 + block.blocks.reduce((sum, child) => sum + theoryHeight(child), 0)
+      return 58 + block.blocks.reduce((sum, child) => sum + theoryHeight(child, width, scale), 0)
     case 'examples':
-      return 30 + block.items.reduce((sum, item) => sum + lineCount(typeof item === 'string' ? item : item.text) * 25, 0)
+      return 30 + block.items.reduce((sum, item) => sum + lines(typeof item === 'string' ? item : item.text), 0)
     case 'tab':
       return 30 + block.rows.length * 32
     case 'page':
@@ -38,18 +48,29 @@ function theoryHeight(block: GrammarTheoryBlock): number {
   }
 }
 
-function height(item: MathItem): number {
-  if (item.theoryBlock) return theoryHeight(item.theoryBlock)
-  const prompt = lineCount(item.prompt ?? '') * 25
-  if (item.calcAnswer) return 160 + prompt + lineCount(item.calcAnswer) * 22
-  return 49 + prompt + lineCount(item.answer) * 25 + (item.options?.length ?? 0) * 18
+function height(item: MathItem, a5: boolean, scale: number): number {
+  const width = (a5 ? 53 : 72) / scale
+  if (item.theoryBlock) return theoryHeight(item.theoryBlock, width, scale)
+  const prompt = lineCount(item.prompt ?? '', width * 1.2) * 24 * scale
+  const answer = lineCount(item.answer, width * 0.84) * 27 * scale
+  if (item.calcAnswer) return (a5 ? 145 : 174) + prompt + answer
+  return 48 + prompt + answer + (item.options?.length ?? 0) * 22 * scale
 }
 
-/** Uses the existing worksheet blocks and user cuts, with a conservative A4 budget for content. */
-export function splitLogistiquePages(page: WorksheetPage): WorksheetPage[] {
+/** Enchaîne les questions dans l’espace disponible et respecte les sauts manuels. */
+export function splitLogistiquePages(
+  page: WorksheetPage,
+  { a5 = false, hideChrome = false, fontScale = 1, firstPageHasHeader = true }:
+    LogistiquePageLayout & { firstPageHasHeader?: boolean } = {},
+): WorksheetPage[] {
   const pages: WorksheetPage[] = []
   let blocks: WorksheetBlock[] = []
   let used = 0
+  const budget = (pageIndex = pages.length) => {
+    const hasHeader = !hideChrome && (a5 || (firstPageHasHeader && pageIndex === 0))
+    return (a5 ? A5_CONTENT : A4_CONTENT) + (hideChrome ? 45 : 0)
+      - (hasHeader ? (a5 ? A5_HEADER : A4_HEADER) + (fontScale - 1) * 92 : 0)
+  }
   const flush = () => {
     if (!blocks.length) return
     pages.push({ ...page, blocks, items: blocks.flatMap((block) => block.items), isContinuation: pages.length > 0 })
@@ -58,7 +79,7 @@ export function splitLogistiquePages(page: WorksheetPage): WorksheetPage[] {
   }
   for (const [blockIndex, block] of page.blocks.entries()) {
     let start = 0
-    let overhead = ACTIVITY_HEADING
+    let overhead = block.items.some((item) => item.layout === 'theory') ? 16 : 84 * fontScale
     const append = (end: number) => {
       blocks.push({
         ...block,
@@ -71,13 +92,22 @@ export function splitLogistiquePages(page: WorksheetPage): WorksheetPage[] {
       start = end
       overhead = 0
     }
+    const heights = block.items.map((item) => height(item, a5, fontScale))
+    const withFollowing = [...heights]
+    for (let index = block.items.length - 2; index >= 0; index--) {
+      if (block.items[index]?.theoryBlock?.kind === 'heading' && !block.tcfPageBreakAfter?.[index]) {
+        withFollowing[index]! += withFollowing[index + 1]!
+      }
+    }
     for (const [index, item] of block.items.entries()) {
-      const itemHeight = height(item)
-      const following = block.items[index + 1]
-      const keepWithFollowing = item.theoryBlock?.kind === 'heading' && following ? height(following) : 0
-      if (used > 0 && used + overhead + itemHeight + keepWithFollowing > CONTENT_BUDGET) {
-        if (index > start) append(index)
+      const itemHeight = heights[index]!
+      if (used > 0 && used + overhead + withFollowing[index]! > budget()) {
+        const previousHeight = heights[index - 1] ?? 0
+        const balanceLastQuestion = !item.theoryBlock && index === block.items.length - 1 && index - start >= 3
+          && previousHeight + itemHeight <= budget(pages.length + 1)
+        if (index > start) append(balanceLastQuestion ? index - 1 : index)
         flush()
+        if (balanceLastQuestion) used = previousHeight
       }
       used += overhead + itemHeight
       overhead = 0

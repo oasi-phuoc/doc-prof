@@ -10,6 +10,7 @@ export type LogistiqueDomain = (typeof LOGISTIQUE_DOMAINS)[number]['id']
 export type LogistiqueDiploma = (typeof LOGISTIQUE_DOMAINS)[number]['diploma']
 
 const kinds = [
+  { id: 'objectifs-apercu', label: 'Objectifs et aperçu', instruction: '' },
   { id: 'theorie', label: 'Théorie', instruction: '' },
   { id: 'maths', label: 'Mathématiques', instruction: 'Écrivez votre calcul et formulez votre réponse.' },
   { id: 'verification', label: 'Vérification des connaissances', instruction: 'Répondez aux questions.' },
@@ -79,7 +80,7 @@ export function logistiqueSubthemes(topic: string) {
 export function logistiqueTypeForSubtheme(subthemeId: string, previousType: string) {
   const subtheme = subthemes.find(({ id }) => id === subthemeId)
   if (!subtheme) return undefined
-  return typesById.get(`${prefix(subtheme.diploma)}-${subtheme.code}-${logistiqueType(previousType)?.kind ?? 'theorie'}`)
+  return typesById.get(`${prefix(subtheme.diploma)}-${subtheme.code}-${logistiqueType(previousType)?.kind ?? kinds[0].id}`)
 }
 
 export function logistiqueTypeChoices(topic: string, typeId: string) {
@@ -90,7 +91,7 @@ export function logistiqueTypeChoices(topic: string, typeId: string) {
 
 export function isLogistiqueReferenceType(typeId: string) {
   const kind = logistiqueType(typeId)?.kind
-  return kind === 'theorie' || kind === 'glossaire'
+  return kind === 'objectifs-apercu' || kind === 'theorie' || kind === 'glossaire'
 }
 
 type CataloguePage = {

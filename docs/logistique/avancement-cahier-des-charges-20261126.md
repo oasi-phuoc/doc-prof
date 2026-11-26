@@ -2,13 +2,14 @@
 
 **Point de reprise du 26 novembre 2026**
 
-Référence de réalisation dans le [cahier des charges v2.11](cahier-des-charges.md). Révision Doc-Prof de départ `0a23f9287`. Révision EPCAS `ac2ceeae3ba7944fb4d24a7de103d41d3da98e1f`.
+Référence de réalisation dans le [cahier des charges v2.12](cahier-des-charges.md). Révision Doc-Prof de départ `0a23f9287`. Révision EPCAS `ac2ceeae3ba7944fb4d24a7de103d41d3da98e1f`.
 
 ## Décisions du responsable
 
 - Conserver la structure des fiches, le gabarit A4 et le générateur existants.
 - Partir du parcours standard après retrait de l’ancien écran Logistique.
 - Relire et activer directement les contenus exploitables. Conserver le détail des corrections pour les révisions ultérieures.
+- Placer Objectifs et aperçu avant Théorie, retirer les mentions de source de la fiche d’aperçu, traiter visuels et mise en page dans le même lot et enchaîner les questions sans saut automatique prématuré.
 
 ## Avancement par lot
 
@@ -17,7 +18,8 @@ Référence de réalisation dans le [cahier des charges v2.11](cahier-des-charge
 | L0 — Existant et inventaire | Réalisé | Les 9 thèmes et 80 modules CFC, les 7 thèmes et 63 modules AFP et les 715 types sont générés depuis la référence EPCAS. 540 déclarations source archivées, parmi lesquelles 149 références historiques exclues. L’[inventaire](inventaire-epcas.generated.json) repère 16 types sans déclaration en CFC et 7 en AFP. |
 | L1 — Générateur commun | Pilote actif | Sélecteurs communs, feuille, activités, élève, corrigé, grille, titres, impression, Libre générique et recettes versionnées. Les contrôles de catalogue empêchent les recettes incompatibles avec le diplôme ou mélangeant les diplômes. |
 | L1b à L1d — Sélection et formats | Partiel | Le tirage déterministe, les questions ouvertes, les QCM, les calculs et les cas simples sont pris en charge. La sélection individuelle en banque, l’évaluation multi-sous-thèmes au sein d’une activité et les formats avancés demandent encore un raccordement aux contrôles existants. |
-| L1e — Pagination et titres | Pilote | Titres automatiques, sauts manuels et découpage automatique initial. Chromium a mesuré au moins 25 px de réserve sur chaque page imprimée des cinq types du 105, dans les deux diplômes avec le format A4 et les réglages par défaut. Étendre la mesure à toutes les combinaisons de formats, réglages et textes longs. |
+| L1e — Pagination et titres | Révisé en V2.12 | Enchaînement des questions dans l’espace disponible, numérotation continue et sauts manuels. La capacité tient compte de la présence de l’en-tête et de la taille du texte. La pagination s’appuie sur une estimation contrôlée en Chromium. Étendre la mesure aux réglages et aux contenus libres atypiques. |
+| V2.12 — Objectifs, aperçu et cours illustrés | Révision `logistique-references-v002` | 17 modules actifs préparés, avec 31 nouveaux schémas originaux en complément des 17 déjà publiés. Les anciens types et versions de banque restent accessibles aux recettes historiques. [Registre des figures et des introductions](preparation/references-illustrees-v002.json). |
 | L1f — Évaluation | À poursuivre | Les modes communs sont accessibles. Le récit adaptatif, la durée indicative, le barème Bloom et les modèles de nouveau tirage ne sont pas réalisés. |
 | L4 — Module 100 | Révision `100-v001` active | Cours original de 17 blocs, schéma du parcours d’un colis, 13 termes, cinq problèmes CFC dont quatre AFP, six questions et quatre situations communes. [Cours](preparation/100-v001.md) et [préparation](preparation/100-v001.json). |
 | L2 et L3 — Module 105 | Révision `105-v001` active | Cours commun, 45 termes de glossaire, quatre calculs et quatre vérifications CFC, dont deux et deux en AFP, et deux situations communes. Le résumé réécrit est disponible dans les données éditoriales. L’ancien exercice SGH, dépendant de pictogrammes, demeure archivé. |
@@ -41,7 +43,7 @@ Référence de réalisation dans le [cahier des charges v2.11](cahier-des-charge
 
 ## Reprise opérationnelle
 
-1. Les onze modules du thème 100 disposent des cinq types en CFC et AFP. Poursuivre le thème 200 avec le module 203 « La gestion de soi », puis le 204 « Le marché ». Les cibles nominales de contenu et la recette complète restent à atteindre. Partir des archives par thème sous [sources-epcas](sources-epcas/), puis convertir les contenus autonomes en unités des cinq types existants.
+1. Les onze modules du thème 100 disposent des six types en CFC et AFP. Poursuivre le thème 200 avec le module 203 « La gestion de soi », puis le 204 « Le marché ». Les cibles nominales de contenu et la recette complète restent à atteindre. Partir des [archives par thème](sources-epcas/), préparer les six types et vérifier visuels et composition ensemble avant publication.
 2. Vérifier les corrigés, la place du contenu dans le référentiel, les écarts AFP/CFC et les dépendances à des médias écartés.
 3. Enregistrer une révision de banque et la conserver pour les recettes déjà créées. Les changements de fond du 105 sont consignés dans les [données de préparation](pilote-105/preparation.generated.json) et dans le [dossier éditorial](pilote-105/relecture.md).
 4. Vérifier dans les deux diplômes le nombre d’unités disponibles, la génération, le corrigé, l’impression et la réouverture. Reporter dans ce fichier les preuves, les écarts et le prochain module retenu.
@@ -50,10 +52,22 @@ Référence de réalisation dans le [cahier des charges v2.11](cahier-des-charge
 
 - `node scripts/import-logistique-epcas.mjs /chemin/vers/epcas` produit le catalogue et les archives à partir des objets Git de référence.
 - `node scripts/prepare-logistique-module.mjs 101-v001` reconstitue la banque du 101 à partir de l’archive et de sa préparation éditoriale. La même commande accepte une révision de la [préparation éditoriale](preparation/), par exemple `104-v001`.
-- `node scripts/prepare-logistique-105.mjs` produit les données éditoriales et la banque active du 105.
+- `node scripts/prepare-logistique-105.mjs` reproduit la révision historique du 105.
+- `node scripts/prepare-logistique-illustrated-publication.mjs` reconstitue les objectifs, aperçus et théories de la V2.12. Pour les nouveaux modules, le compilateur standard sépare ces contenus à partir des champs source ou des textes éditoriaux `objectives` et `overview`. Les illustrations se déclarent dans `visuals` avec leurs ancrages et empreintes.
 - `npm run test:logistique` et `npm run test:logistique:browser` vérifient le catalogue, l’éligibilité, le gabarit et les recettes.
 
 ## Résultats de recette
+
+### Publication V2.12
+
+- Chromium a imprimé les objectifs et aperçus sur une page pour les 32 couples module et diplôme actifs. Les théories ont conservé les figures et leurs légendes. Les 31 nouveaux schémas ont passé le contrôle de débordement des libellés.
+- Les 96 combinaisons de module, diplôme et type d’exercice évaluées avec les réglages A4 par défaut ont conservé au moins 36,55 px avant le pied de page. Les modules 105 et 110 ont donné des suites de questions numérotées sans reprise à 1 dans la fiche élève et le corrigé. La suite de génération couvre aussi un saut manuel explicite.
+- Le 110 reste lisible en A4 avec une taille de texte de 20 px. En double A5, le même exercice conserve le gabarit et tient à raison d’une question par demi-feuille. Le corrigé descend à 16,8 px de réserve dans ce cas. La cible de 25 px reste à vérifier sur le double A5.
+- Le PDF du 105 obtenu à partir d’une fenêtre de 390 px mesure 594,96 × 841,92 pt. L’aperçu du module occupe une page et la théorie illustrée, 14 pages.
+- `node --test tests/logistique/generation.test.mjs tests/interactive/fiches-access.test.mjs` donne 12 réussites. La recette Chromium de sauvegarde simulée et de réouverture passe. TypeScript, lint et build Vite passent avec avertissements.
+- Couverture active de la V2.12. 102 types sur 480 en CFC et 90 sur 378 en AFP. Les cibles nominales et la recette de tous les réglages et contenus libres restent à poursuivre.
+
+### Lots précédents
 
 - Pilote actif 105 CFC et AFP en Chromium. La théorie restitue 98 blocs, le glossaire 45 entrées et les exercices et leurs corrigés occupent les mêmes rendus que les autres domaines.
 - API de fiches avec Worker et D1 locaux. Enregistrement et lecture testés pour les deux diplômes et refus du module 902 en AFP et des recettes mixtes.

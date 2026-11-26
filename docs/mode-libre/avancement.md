@@ -4,7 +4,7 @@
 
 - [Cahier des charges validé — V1.2](cahier-des-charges.md)
 - [Référence du code consulté pour la publication](https://github.com/oasi-phuoc/doc-prof/commit/c24a995b76c68c284b2614e113120cdb2873ba81)
-- [Cahier des charges Logistique V2.11](../logistique/cahier-des-charges.md) et [suivi Logistique](../logistique/avancement-cahier-des-charges-20261126.md)
+- [Cahier des charges Logistique V2.12](../logistique/cahier-des-charges.md) et [suivi Logistique](../logistique/avancement-cahier-des-charges-20261126.md)
 
 ## Prérequis Cloudflare
 
@@ -26,7 +26,7 @@ Dans Chrome, la recette du site de production a vérifié la connexion administr
 | L3 — Mathématiques et tests | À lancer après les pilotes | Mathématiques, géométrie, logique, TPM et TCM, selon les profils recensés. |
 | L4 — Autres profils imprimables | À lancer après les pilotes | Alphabétisation, Soutien FR, Gattegno, calligraphie et cartes. |
 | L5 — Grammaire et TCF/TPF | À lancer après les pilotes | Banques graduées, supports, audio, snapshots et barèmes. |
-| L6 — Société et Logistique AFP/CFC | À lancer après les pilotes | Partir du générateur commun déjà raccordé aux modules Logistique 101 et 105. Valider les domaines AFP et CFC pour la réception finale. |
+| L6 — Société et Logistique AFP/CFC | À lancer après les pilotes | Partir du générateur commun déjà raccordé aux modules Logistique 101 et 105. Intégrer le type Objectifs et aperçu ajouté en V2.12 et valider les deux diplômes. Les chiffres L0 restent associés à la référence V2.11. |
 | L7 — Cas d’échec et ergonomie avancée | À lancer après le socle | Cas de reprise, quotas, médias durables, pagination et actions en série. |
 | L8 — Réception complète | À lancer après la couverture | Critères de réception, preuves par contexte, accessibilité, performances et revue. |
 

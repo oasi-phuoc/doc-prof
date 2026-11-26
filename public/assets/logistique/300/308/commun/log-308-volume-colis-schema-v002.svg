@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="230" viewBox="0 0 800 230" role="img" aria-labelledby="title desc">
+  <title id="title">Trois dimensions pour calculer un volume</title>
+  <desc id="desc">Un colis rectangulaire mesure 60 cm de longueur, 40 cm de largeur et 30 cm de hauteur. Son volume est de 72 000 cm³.</desc>
+  <rect width="800" height="230" fill="white"/>
+  <g stroke="#222" stroke-width="2.5" stroke-linejoin="round">
+    <path d="M118 93l72-50h234l-72 50z" fill="#f7f7f7"/>
+    <path d="M118 93h234v83H118z" fill="#fff"/>
+    <path d="M352 93l72-50v83l-72 50z" fill="#ddd"/>
+    <path d="M118 196h234m-228-5-6 5 6 5m222-10 6 5-6 5M364 193l72-50m-64 50h-8l2-8m62-41 8-1-2 8M98 93v83m-5-77 5-6 5 6m-10 71 5 6 5-6" fill="none"/>
+  </g>
+  <g fill="#222" font-family="sans-serif" text-anchor="middle">
+    <text x="235" y="220" font-size="18">Longueur 60 cm</text>
+    <text x="424" y="184" font-size="18">Largeur 40 cm</text>
+    <text x="81" y="136" font-size="18" transform="rotate(-90 81 136)">Hauteur 30 cm</text>
+    <text x="600" y="92" font-size="24" font-weight="bold">Volume du colis</text>
+    <text x="600" y="131" font-size="21">60 × 40 × 30</text>
+    <text x="600" y="166" font-size="23" font-weight="bold">72 000 cm³</text>
+  </g>
+</svg>
