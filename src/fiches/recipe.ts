@@ -1,3 +1,4 @@
+import { normalizeLegacySanteBlock } from '@/sante/catalog'
 import { freezeLogistiquePages, validLogistiquePages } from '@/logistique/recipe'
 import {hasRetiredGrammarRecipe} from '@/grammaire/curriculum/retirement'
 import type { InstitutionalHeader } from '@/components/math/PrintDocumentChrome'
@@ -109,6 +110,7 @@ function migratePage(page: PageConfig): PageConfig {
       topic: migrateDomainToken(block.topic),
       exerciseType: migrateDomainToken(block.exerciseType),
     }
+    if (page.domain === 'santé') return normalizeLegacySanteBlock(migrated)
     return page.domain === 'gattegno' ? normalizeLegacyPhraseBlock(migrated)
       : page.domain === 'grammaire' ? normalizeGrammarCoBlock(migrated)
       : page.domain === 'société' ? normalizeSocieteBlock(migrated) : migrated
@@ -120,6 +122,7 @@ function migratePage(page: PageConfig): PageConfig {
     exerciseType: migrateDomainToken(page.exerciseType),
     extraBlocks: extra,
   }
+  if (migrated.domain === 'santé') return normalizeLegacySanteBlock(migrated)
   return migrated.domain === 'gattegno' ? normalizeLegacyPhraseBlock(migrated)
     : migrated.domain === 'grammaire' ? normalizeGrammarCoBlock(migrated)
     : migrated.domain === 'société' ? normalizeSocieteBlock(migrated) : migrated

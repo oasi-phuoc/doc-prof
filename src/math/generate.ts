@@ -45,6 +45,7 @@ import { splitGradedGrammarPages } from '@/grammaire/curriculum/pagination'
 import { tryGenerateAcmBlock } from '@/acm/generate'
 import { tryGenerateLogiqueBlock } from '@/logique/generate'
 import { tryGenerateSanteBlock } from '@/sante/generate'
+import { paginateSanteWorksheet } from '@/sante/pagination'
 import { tryGenerateSocieteBlock } from '@/societe/generate'
 import { isSocieteTheoryType } from '@/societe/types'
 import { isTcmCfrConsignesType, TCM_CFR_MAX_SCORE } from '@/tcm-cfr/test'
@@ -181,7 +182,7 @@ function buildSingleBlock(
       items: societe.items,
     }
   }
-  const sante = tryGenerateSanteBlock(config)
+  const sante = tryGenerateSanteBlock(config, rng)
   if (sante) {
     return {
       title: fallbackTitle,
@@ -782,6 +783,11 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
     const gradedPages=splitGradedGrammarPages(worksheet)
     if (gradedPages) {
       out.push(...gradedPages.map(sheet=>({...sheet,configIndex:index})))
+      return
+    }
+
+    if (page.domain === 'santé') {
+      out.push(...paginateSanteWorksheet(worksheet).map((sheet) => ({ ...sheet, configIndex: index })))
       return
     }
 

@@ -25,6 +25,7 @@ import { isLogistiqueDomain, isLogistiqueReferenceType, logistiqueSubthemes, log
 import { logistiqueEligibleCount } from '@/logistique/generate'
 import { LogistiqueEvaluationFields } from './LogistiqueEvaluationFields'
 import { exerciseTypeById } from '@/math/catalog'
+import { santeActivityLevel, santeLevelsForTopic } from '@/sante/catalog'
 import {
   centeredOrigin,
   isReperageCadrans,
@@ -157,6 +158,11 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
     ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex)?.items
       .filter(item => item.grammar?.readingPart?.kind === 'question').length
     : undefined
+  const santeLevels = activePage.domain === 'santé' ? santeLevelsForTopic(activeBlock.topic) : []
+  const santeLevel = santeActivityLevel(activeBlock.exerciseType) ?? santeLevels[0]
+  const visibleTypeChoices = santeLevel
+    ? typeChoices.filter((type) => santeActivityLevel(type.id) === santeLevel)
+    : typeChoices
   const logisticsDomain = isLogistiqueDomain(activePage.domain)
   const logisticsSubthemes = logisticsDomain ? logistiqueSubthemes(activeBlock.topic) : []
   const logisticsType = logistiqueType(activeBlock.exerciseType)
@@ -395,7 +401,20 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                 />
               ) : null}
               {isPhraseDomain&&activeBlock.exerciseType.endsWith('-images')&&<PhraseImageLabelControls labels={activeBlock.phraseImageLabels} shown={activeBlock.phraseImageShownCategories} onLabels={phraseImageLabels=>updatePage({phraseImageLabels})} onShown={phraseImageShownCategories=>updatePage({phraseImageShownCategories})}/>}
-              {isTpmLike || typeChoices.length <= 1 ? null : (
+              {santeLevels.length > 0 ? (
+                <SelectBox
+                  label="Niveau"
+                  value={santeLevel ?? ''}
+                  onChange={(level) => {
+                    const next = typeChoices.find((type) => santeActivityLevel(type.id) === level)
+                    const type = next && exerciseTypeById[next.id]
+                    if (type) updatePage(applyType(type, activeBlock))
+                  }}
+                >
+                  {santeLevels.map((level) => <option key={level} value={level}>{level}</option>)}
+                </SelectBox>
+              ) : null}
+              {isTpmLike || visibleTypeChoices.length <= 1 ? null : (
               <SelectBox
                 label={isTcf ? 'Exercice' : 'Type d’exercice'}
                 value={activeBlock.exerciseType}
@@ -451,7 +470,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   updatePage(patch)
                 }}
               >
-                {typeChoices
+                {visibleTypeChoices
                   .filter((type) => !isTcf || tcfSlotShownInMenu(type.id, tcfNiveau))
                   .map((type) => {
                     const pending = logisticsDomain && logistiqueEligibleCount(type.id) === 0
@@ -542,7 +561,8 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   onChange={(patch) => updatePage(patch)}
                 />
               ) : null}
-              {isReperage ||
+              {activePage.domain === 'santé' ||
+              isReperage ||
               isPhraseDomain ||
               isJeuxDomain ||
               isCalliDomain ||

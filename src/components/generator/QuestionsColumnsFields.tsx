@@ -8,6 +8,7 @@ import { logistiqueHasSummary, logistiqueModuleCapacities } from '@/logistique/g
 import { SelectBox } from './SelectBox'
 import { supportsActivityQuestionCount } from './activity-settings'
 import { isSocieteType } from '@/societe/types'
+import { isSanteType } from '@/sante/types'
 import {
   blockPointsTotal,
   formatPointsLabel,
@@ -197,6 +198,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
     firstExerciseNo,
     sheetTotalPoints,
   } = props
+  if (isSanteType(activeBlock.exerciseType)) return null
   const grammarAudioOnly = isAudioOnlyGrammarCo(activeBlock.exerciseType,activeBlock.grammarCoLevel,activeBlock.grammarCoAudioId)
   const questionMin = isTransform ? 3 : activeBlock.exerciseType === 'tcm-csc-ex14' ? 2 : 1
   const cscQuestionHint = activeBlock.exerciseType === 'tcm-csc-ex03' ? 'Nombres à entourer, 1 point chacun.'

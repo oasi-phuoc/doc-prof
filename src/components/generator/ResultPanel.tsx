@@ -174,6 +174,10 @@ export function ResultPanel({
     () => paginateTranscriptions(collectWorksheetTranscriptions(renderedSheets)),
     [renderedSheets],
   )
+  const hasSanteAudio = renderedSheets.some((sheet) =>
+    sheet.domain === 'santé' && sheet.blocks.some((block) => block.corrigeAudios?.length),
+  )
+  const showTcfAudioDownload = isTcf || Boolean(isGrammaireExercise) || hasSanteAudio
   const unavailableLogistique = renderedSheets.some((sheet) =>
     isLogistiqueDomain(sheet.domain) && sheet.blocks.some((block) => block.bankQuestionCap === 0 && !block.items.length),
   )
@@ -256,7 +260,7 @@ export function ResultPanel({
       interactiveOralModes={isOralComprehensionExercise(activeBlock.exerciseType)}
       onCycleOralAnswerMode={(itemIndex, block) => cycleOralAnswerMode(itemIndex, block, index)}
       interactiveTcfOptions={
-        isTcf || (Boolean(isGrammaireExercise) && activeBlock.tcfExercise == null)
+        isTcf || sheet.domain === 'santé' || (Boolean(isGrammaireExercise) && activeBlock.tcfExercise == null)
       }
       interactiveTcfPageBreaks={
         sheet.domain==='grammaire' || isLogistiqueDomain(sheet.domain) || isTcf ||
@@ -400,8 +404,7 @@ export function ResultPanel({
                     />
                   </svg>
                 </button>
-                {isTcf ||
-                isGrammaireExercise ||
+                {showTcfAudioDownload ||
                 isTcmCfr ||
                 isTcmCsc ||
                 ((isSoutienFr || isAlphabetisation) &&
@@ -410,7 +413,7 @@ export function ResultPanel({
                     className="print-chip is-icon is-generate"
                     type="button"
                     onClick={() =>
-                      void (isTcf || isGrammaireExercise
+                      void (showTcfAudioDownload
                         ? downloadActiveTcfAudios()
                         : isTcmCsc
                           ? downloadActiveTcmCscAudios()
@@ -426,7 +429,7 @@ export function ResultPanel({
                     disabled={!!isTcmCsc && cscAudioBusy}
                     aria-busy={!!isTcmCsc && cscAudioBusy}
                     title={
-                      isTcf || isGrammaireExercise
+                      showTcfAudioDownload
                         ? 'Télécharger les pistes groupées (consignes + audios)'
                         : isTcmCsc
                           ? 'Télécharger les audios CSC : nombres, calculs et nombres à entourer'
@@ -589,7 +592,8 @@ export function ResultPanel({
                             onToggleDraftGrid={toggleDraftGrid}
                             interactiveOralModes={isOralComprehensionExercise(activeBlock.exerciseType)}
                             onCycleOralAnswerMode={cycleOralAnswerMode}
-                            interactiveTcfOptions={isTcf || (Boolean(isGrammaireExercise) && activeBlock.tcfExercise == null)}
+                            interactiveTcfOptions={isTcf || left?.domain === 'santé' || right?.domain === 'santé' ||
+                              (Boolean(isGrammaireExercise) && activeBlock.tcfExercise == null)}
                             interactiveTcfPageBreaks={domain === 'grammaire' || (domain != null && isLogistiqueDomain(domain)) ||
                               isTcf || pageExerciseBlocks.some((block) => block.grammarPresentation === 'document-set' ||
                                 block.grammarPresentation === 'scenario-set' || isGrammarReadingType(block.exerciseType) ||

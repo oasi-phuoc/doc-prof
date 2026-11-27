@@ -366,7 +366,6 @@ export function usePageNavigation({
       next === 'grammaire' ||
       next === 'vocabulaire' ||
       next === 'société' ||
-      next === 'santé' ||
       next === 'acm' ||
       next === 'jeux' ||
       next === 'calligraphie'
@@ -374,6 +373,9 @@ export function usePageNavigation({
       setInstitutional((current) =>
         current.course === 'Mathématiques' ? { ...current, course: 'Français' } : current,
       )
+    }
+    if (next === 'santé') {
+      setInstitutional((current) => ({ ...current, course: 'Sciences et santé' }))
     }
     if (next === 'logique') {
       setInstitutional((current) =>
