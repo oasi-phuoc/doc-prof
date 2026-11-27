@@ -30,6 +30,7 @@ import { soutienPhrasesForSonOrAll, type SoutienLevelFilter } from './phrases-da
 import { buildType10DetsFromWords } from './det-plurals'
 import {
   AUDIO_ORDER_CLIPS,
+  SOUTIEN_LISTEN_MAX,
   buildSyllableReadingList,
   countSoundInPhrase,
   joinSoutienOrder,
@@ -276,9 +277,10 @@ export function genKind(
     case 'ecouter': {
       /** Grille : n° + case + trait (+ QR) ; positifs = son (au/eau admis pour /o/). */
       const cols = Math.max(1, Math.min(3, Math.round(options?.columns ?? 3) || 3))
-      const need = Math.max(1, Math.min(30, n))
+      const need = Math.max(1, Math.min(SOUTIEN_LISTEN_MAX, n))
       const withAudio = (list: readonly string[]) => list.filter((w) => Boolean(soutienAudioFor(w)))
-      const soundPool = withAudio(lessonWordsBySound(bank))
+      const targetWords = lessonWordsBySound(bank)
+      const soundPool = withAudio(targetWords)
       const negPool = withAudio(otherWords(bank))
       const posCount = Math.max(1, Math.min(need, Math.ceil(need * 0.55)))
       const negCount = Math.max(0, need - posCount)
@@ -293,13 +295,13 @@ export function genKind(
       }
       // Repli si la banque audio est trop petite.
       if (optionsList.length < need) {
-        const fallback = shuffle(rng, [...lessonWordsBySound(bank), ...otherWords(bank)]).filter(
+        const fallback = shuffle(rng, [...targetWords, ...otherWords(bank)]).filter(
           (w) => !optionsList.some((p) => p.toLowerCase() === w.toLowerCase()),
         )
         optionsList = [...optionsList, ...fallback].slice(0, need)
       }
       optionsList = optionsList.slice(0, need)
-      const positiveSet = new Set(positives.map((w) => w.toLowerCase()))
+      const positiveSet = new Set(targetWords.map((w) => w.toLowerCase()))
       const checked = optionsList.filter((w) => positiveSet.has(w.toLowerCase()))
       const audios = optionsList.map((w) => soutienAudioFor(w))
       const shown = optionsList.map(displayVocabLabel)
@@ -323,7 +325,7 @@ export function genKind(
     case 'ecouter-image': {
       /** Grille images fluide ; positifs = son (au/eau admis pour /o/). Uniquement mots avec image fichier. */
       const cols = Math.max(3, Math.min(5, Math.round(options?.columns ?? 3) || 3))
-      const need = Math.max(1, Math.min(30, n))
+      const need = Math.max(1, Math.min(SOUTIEN_LISTEN_MAX, n))
       const withImg = (list: readonly string[]) => list.filter((w) => isSoutienType1Word(w))
       const soundPool = lessonWordsBySound(bank)
       const posPool = withImg(soundPool)
@@ -359,7 +361,7 @@ export function genKind(
       pool = paired.map((p) => p.w)
       const finalImages = paired.map((p) => p.img)
       const audios = pool.map((w) => soutienAudioFor(w))
-      const positiveSet = new Set(positives.map((w) => w.toLowerCase()))
+      const positiveSet = new Set(soundPool.map((w) => w.toLowerCase()))
       const checked = pool.filter((w) => positiveSet.has(w.toLowerCase()))
       const shown = pool.map(displayVocabLabel)
       const shownChecked = checked.map(displayVocabLabel)

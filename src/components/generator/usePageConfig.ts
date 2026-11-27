@@ -13,6 +13,7 @@ import {
 import { isInlineArithmetic, isIndependentListProfile, liveEditorProfile, opensWithoutOverlay, writesNativePayload } from '@/components/generator/libre/profiles'
 import { hasLockedItems, identifyItems, trimUnlockedItems } from '@/components/generator/libre/flat-items'
 import { gridCells, withGridCells } from '@/components/generator/libre/word-list'
+import { listenRows, replaceListenRows, resizeListenRows } from '@/components/generator/libre/listen-rows'
 import { syllableRows, replaceSyllableRows } from '@/components/generator/libre/syllable-rows'
 import { countSoundRows, determinantRows, replaceCountSoundRows, replaceDeterminantRows } from '@/components/generator/libre/soutien-phrase-rows'
 import type { SpacingPreferences } from '@/components/generator/libre/preferences'
@@ -38,6 +39,7 @@ import { createRng } from '@/math/rng'
 import { parseAlphaType } from '@/alphabetisation/kinds'
 import { parseSoutienType } from '@/francais/soutien/kinds'
 import { soutienBankById } from '@/francais/soutien/banks'
+import { SOUTIEN_LISTEN_MAX } from '@/francais/soutien/gen-kind-helpers'
 import { addAudioOrderSeries, audioOrderKind } from '@/francais/soutien/audio-order'
 import { isDraftPadExercise } from '@/math/catalog'
 import {
@@ -135,6 +137,19 @@ export function usePageConfig({
       const pageSeed = seed + pageIndex * 7919 + safeBlockIndex * 10007
       const config = pageAsConfig(activeSheet, nextBlock)
       function resizeGrid(previous: MathItem[], localSeed: number) {
+        if (editorProfile === 'ecoute-de-mots' && previous[0]?.layout === 'listen-check') {
+          const existing = previous[0]
+          const rows = listenRows(existing)
+          const target = count ?? rows.length
+          const draw = target > rows.length ? { ...config, count: SOUTIEN_LISTEN_MAX } : config
+          const next = buildPage(draw, pageSeed + localSeed, 1, seed).items[0]
+          if (!next) return { items: previous, removed: false, unavailable: true }
+          const kept = resizeListenRows(rows, listenRows(next), target)
+          return {
+            items: [replaceListenRows({ ...existing, letterGridCols: next.letterGridCols }, kept)],
+            removed: target < rows.length, unavailable: kept.length < target,
+          }
+        }
         const generated = buildPage(config, pageSeed + localSeed, 1, seed).items
         const readRows = editorProfile === 'syllabes-audio' ? syllableRows
           : editorProfile === 'sons-a-compter' ? countSoundRows : editorProfile === 'determinants' ? determinantRows : gridCells
@@ -157,6 +172,10 @@ export function usePageConfig({
       const localSeed = nextBlock.contentSeed ?? 0
       const left = activeBlock.libreItems?.length ? resizeGrid(activeBlock.libreItems, localSeed) : undefined
       const right = rightGrid ? resizeGrid(rightGrid.items, nextBlock.contentSeedTwin ?? localSeed) : undefined
+      if (left?.unavailable || right?.unavailable) {
+        window.alert('La banque ne fournit pas assez de mots distincts pour atteindre cette quantité.')
+        return
+      }
       if ((left?.removed || right?.removed) && !window.confirm('Réduire la grille et retirer les dernières cases ?')) return
       patch = { ...patch,
         ...(left ? { libreItems: left.items } : {}),

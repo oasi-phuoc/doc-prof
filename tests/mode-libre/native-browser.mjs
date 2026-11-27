@@ -667,13 +667,68 @@ try {
   assert.match(await mathGlossary.locator('.print-only-sheets .glossary-card').nth(1).textContent(), /Exemple sur le quadrillage/)
   await mathGlossary.close()
 
+  for (const illustrated of [false, true]) {
+    const sounds = await open(context, illustrated ? {
+      domain: 'alphabetisation', topic: 'alpha-voyelles', exerciseType: 'alpha-a-ecouter-image',
+      count: 6, columns: 3, printCorrections: true,
+    } : {
+      domain: 'soutien-fr', topic: 'soutien-voyelles', exerciseType: 'soutien-a-ecouter',
+      count: 6, columns: 2, printCorrections: true,
+    })
+    await toggleLive(sounds)
+    const settings = sounds.locator('#activity-editor')
+    const editor = settings.getByLabel('Mots à écouter', { exact: true })
+    const first = editor.getByRole('group', { name: 'Mot 1', exact: true })
+    const input = first.getByRole('textbox', { name: 'Mot 1', exact: true })
+    const words = editor.getByRole('textbox', { name: /^Mot \d+$/ })
+    const prior = await words.evaluateAll((fields) => fields.map(({ value }) => value.toLowerCase()))
+    const replacement = ['chat', 'table', 'banane', 'ananas'].find((word) => !prior.includes(word))
+    assert(replacement)
+    const correction = sounds.locator('.print-only-sheets .listen-check-block').last()
+    await input.fill('mot-introuvable-xyz')
+    assert.equal(await input.getAttribute('aria-invalid'), 'true')
+    assert.equal(await input.getAttribute('data-applied-value'), prior[0])
+    await input.fill(replacement)
+    const hit = first.getByRole('checkbox', { name: /Le son .* est présent/ })
+    assert.equal(await input.getAttribute('aria-invalid'), 'false')
+    assert(await hit.isChecked())
+    assert.match(await first.locator('audio').getAttribute('src'), new RegExp(`/${replacement}\\.mp3$`))
+    const student = preview(sounds).locator('.listen-check-block')
+    assert.doesNotMatch(await student.innerText(), new RegExp(replacement))
+    const firstAnswer = correction.locator('.listen-check-cell, .listen-check-image-cell').first()
+    assert.match(await firstAnswer.textContent(), new RegExp(replacement))
+    assert.equal(await firstAnswer.locator('.listen-check-box').textContent(), '✓')
+    await hit.uncheck()
+    assert.equal(await firstAnswer.locator('.listen-check-box').textContent(), '')
+    await button(sounds, 'Annuler').click()
+    assert.equal(await firstAnswer.locator('.listen-check-box').textContent(), '✓')
+    if (illustrated) {
+      await first.locator('.tcf-image-field input[type=file]').setInputFiles({
+        name: 'mot.png', mimeType: 'image/png', buffer: tinyPng,
+      })
+      await student.locator('.listen-check-image img[src^="data:image/"]').first().waitFor()
+    } else {
+      await student.locator('.listen-check-qr img').first().waitFor()
+    }
+    await button(settings.getByRole('group', { name: 'Nombre de colonnes' }), illustrated ? '4' : '3').click()
+    assert.match(await student.locator('.listen-check-grid').getAttribute('style'), illustrated ? /repeat\(4,/ : /repeat\(3,/)
+    assert.equal(await input.inputValue(), replacement)
+    await settings.getByRole('spinbutton', { name: 'Nombre de mots', exact: true }).fill('7')
+    const current = await words.evaluateAll((fields) => fields.map(({ value }) => value.toLowerCase()))
+    assert.equal(current.length, 7)
+    assert.equal(new Set(current).size, 7)
+    assert.equal(current[0], replacement)
+    assert.match(await firstAnswer.textContent(), new RegExp(replacement))
+    await sounds.close()
+  }
+
   const unavailable = await open(context, {
     domain: 'soutien-fr', topic: 'soutien-consonnes-iii', exerciseType: 'soutien-x-gz-associer-image',
   })
   await unavailable.getByText('Aucun contenu disponible pour cette activité.', { exact: true }).waitFor()
   assert(await button(unavailable, 'Enregistrer').isDisabled())
   await context.close()
-  console.log('Calligraphie, cartes, Gattegno, mots illustrés, mots à compléter, Grammaire, Société, Logistique AFP/CFC, leçons et glossaires de maths et activité indisponible testés.')
+  console.log('Calligraphie, cartes, Gattegno, mots illustrés, mots à compléter, Grammaire, Société, Logistique AFP/CFC, références de maths, écoute de mots et activité indisponible testés.')
 } finally {
   await browser?.close()
   await server?.close()

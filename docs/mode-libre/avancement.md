@@ -26,9 +26,9 @@ Dans Chrome, la recette du site de production a vérifié la connexion administr
 | L1 — Générateur et contrats d’état | En cours | Panneau unique, géométrie, listes identifiées et verrous vérifiés sur l’Algèbre. Historique et reprise locale par compte et par fiche. Étendre les preuves aux autres profils et aux droits individuels. |
 | L2 — Pilotes | En cours | Calcul en ligne, CE avec support commun et CO 1 avec QCM illustrés. Édition et correction testées sur les trois pilotes. Étendre les preuves de reprise et de verrouillage par forme. |
 | L3 — Mathématiques et tests | En cours | Calculs en ligne, opérations posées, conversions, repérage, comparaison, tri, leçons et glossaires de mathématiques, choix dans la banque de Logique. Raccorder les autres familles mathématiques et les activités restantes des évaluations TPM / TCM. |
-| L4 — Autres profils imprimables | En cours | Calligraphie, cartes, variantes Gattegno équipées de leur éditeur, mots illustrés et à compléter, grilles et découpage syllabiques, dictées et lecture de phrases de Soutien FR. Poursuivre les listes et associations restantes. |
+| L4 — Autres profils imprimables | En cours | Calligraphie, cartes, variantes Gattegno équipées de leur éditeur, mots illustrés et à compléter, grilles et découpage syllabiques, dictées, écoute de mots et lecture de phrases. Poursuivre les listes et associations restantes. |
 | L5 — Grammaire et TCF/TPF | En cours | Théorie et édition de données des dix présentations graduées. CE, CO, PE et PO raccordées en A4. Poursuivre les profils historiques de grammaire, les médias et verrous des activités graduées et la preuve de chaque forme et barème TCF/TPF. |
-| L6 — Société et Logistique AFP/CFC | En cours | Édition des références structurées en A4 et double A5. Édition indépendante des questions simples sur les deux moitiés. Poursuivre les formats structurés, les activités mixtes et la mesure papier sur les autres modules. |
+| L6 — Société et Logistique AFP/CFC | En cours | Édition des références structurées et questions simples en A4. Conservation des références modifiées au passage en double A5. Poursuivre les formats structurés, les activités mixtes et la mesure papier sur les autres modules. |
 | L7 — Cas d’échec et ergonomie avancée | En cours | Reprise, isolation, conflit entre onglets et quota vérifiés. Sélection et espacements par activité sur les calculs, préférences d’espacement pour les profils compatibles. Poursuivre les médias et les autres contrôles de présentation. |
 | L8 — Réception complète | À lancer après la couverture | Critères de réception, preuves par contexte, accessibilité, performances et revue. |
 
@@ -49,6 +49,18 @@ L’inventaire de la version intégrée `e500ef9e` compte 4 272 contextes, dont 
 Les 23 leçons et les deux glossaires d’algèbre et de géométrie utilisent le panneau Libre. Les leçons exposent le titre, l’objectif, le vocabulaire, les étapes, l’exemple et le schéma. Le glossaire permet de modifier les notions, leurs définitions, les exemples, les schémas et l’ordre. La quantité de notions est bornée par la banque et conserve les entrées personnalisées. Les fiches de référence ne portent pas de barème et les options de difficulté sont masquées.
 
 Le scénario `tests/mode-libre/native-browser.mjs` vérifie sur la leçon d’addition et le glossaire de géométrie la mise à jour de la fiche, l’import et le rétablissement du schéma, l’annulation, la quantité et le contenu destiné à l’impression.
+
+### Écoute de mots en Soutien FR et Alphabétisation
+
+Le panneau Libre permet de changer les mots des activités d’écoute avec QR et des activités d’écoute illustrées. La banque fournit les médias associés et le son de la leçon détermine la coche proposée dans le corrigé. La case reste modifiable pour une prononciation particulière. Un changement de quantité ou de colonnes conserve les mots personnalisés et leurs médias.
+
+Les parcours Chromium vérifient un exemple en Soutien FR et un en Alphabétisation. Ils couvrent la saisie invalide, le QR, l’import d’image, la correction et l’annulation. Les quatre tests de conversion en jeu interactif passent. Le relevé comporte 4 269 contextes, dont 160 raccordés pour l’écoute de mots. Il reste 664 contextes A4 à raccorder et le relevé ne signale aucune erreur de génération.
+
+```sh
+node tests/mode-libre/native-browser.mjs
+node --test tests/interactive/sound-check.test.mjs
+node scripts/audit-mode-libre.mjs /tmp/doc-prof-libre-ecoute-audit types
+```
 
 ## Panneau unique et addition A4
 

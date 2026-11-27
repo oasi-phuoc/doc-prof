@@ -323,7 +323,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                   onChange={(event) => {
                     const next = Math.max(
                       questionMin,
-                      Math.min(maxQuestions, Number(event.target.value) || questionMin),
+                      Math.min(maxQuestions, Math.trunc(Number(event.target.value)) || questionMin),
                     )
                     updatePage({ count: next })
                   }}
@@ -347,16 +347,6 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                 {isSoutienCompleter && !activeBlock.soutienCompleterLibre ? (
                   <small className="muted">
                     Nombre de mots à compléter (défaut 12 · 2 colonnes · max. 18).
-                  </small>
-                ) : null}
-                {soutienKind === 'ecouter' ? (
-                  <small className="muted">
-                    Mots à écouter / écrire (défaut 8 · 2 colonnes · max. 30).
-                  </small>
-                ) : null}
-                {soutienKind === 'ecouter-image' ? (
-                  <small className="muted">
-                    Images à écouter / cocher (défaut 12 · 4 colonnes · max. 30).
                   </small>
                 ) : null}
                 {soutienKind === 'syllabe-son' ? (

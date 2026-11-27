@@ -34,6 +34,7 @@ import {
 import { SOUTIEN_KINDS, parseSoutienType } from '@/francais/soutien/kinds'
 import { soutienBankById } from '@/francais/soutien/banks'
 import { audioOrderKind, defaultAudioOrderCapacity } from '@/francais/soutien/audio-order'
+import { SOUTIEN_LISTEN_MAX } from '@/francais/soutien/gen-kind-helpers'
 import {
   resolveSoutienSelection,
   soutienExerciseTypeId,
@@ -198,7 +199,7 @@ export function maxQuestionsFor({
   ) {
     return 18
   }
-  if (soutienKind === 'ecouter' || soutienKind === 'ecouter-image') return 30
+  if (soutienKind === 'ecouter' || soutienKind === 'ecouter-image') return SOUTIEN_LISTEN_MAX
   if (
     soutienKind === 'lettres-phrase' ||
     soutienKind === 'determinants' ||

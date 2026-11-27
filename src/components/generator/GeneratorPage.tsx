@@ -1038,6 +1038,7 @@ export function GeneratorPage({
                 logic={activeProfile === 'logique-visuelle' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
                 phraseOrder={activeProfile === 'mots-dans-l-ordre' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
                 syllableContent={activeProfile === 'syllabes-audio' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
+                listenContent={activeProfile === 'ecoute-de-mots' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
                 soutienPhrases={activeProfile === 'sons-a-compter' || activeProfile === 'determinants'
                   ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
                 audioOrderContent={activeProfile === 'association-audio' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
