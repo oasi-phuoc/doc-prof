@@ -26,7 +26,7 @@ Dans Chrome, la recette du site de production a vérifié la connexion administr
 | L1 — Générateur et contrats d’état | En cours | Panneau unique, géométrie, listes identifiées et verrous vérifiés sur l’Algèbre. Historique et reprise locale par compte et par fiche. Étendre les preuves aux autres profils et aux droits individuels. |
 | L2 — Pilotes | En cours | Calcul en ligne, CE avec support commun et CO 1 avec QCM illustrés. Édition et correction testées sur les trois pilotes. Étendre les preuves de reprise et de verrouillage par forme. |
 | L3 — Mathématiques et tests | En cours | Calculs en ligne, opérations posées, conversions, repérage, comparaison, tri, leçons et glossaires de mathématiques, choix dans la banque de Logique. Raccorder les autres familles mathématiques et les activités restantes des évaluations TPM / TCM. |
-| L4 — Autres profils imprimables | En cours | Calligraphie, cartes, variantes Gattegno équipées de leur éditeur, mots illustrés et à compléter, grilles et découpage syllabiques, dictées, écoute de mots, lettres mélangées, syllabes à relier et lecture de phrases. Poursuivre les listes et associations restantes. |
+| L4 — Autres profils imprimables | En cours | Calligraphie, cartes, variantes Gattegno équipées de leur éditeur et ensemble des contextes générables de Soutien FR raccordés en A4. Poursuivre les lectures et activités d’Alphabétisation. |
 | L5 — Grammaire et TCF/TPF | En cours | Théorie et édition de données des dix présentations graduées. CE, CO, PE et PO raccordées en A4. Poursuivre les profils historiques de grammaire, les médias et verrous des activités graduées et la preuve de chaque forme et barème TCF/TPF. |
 | L6 — Société et Logistique AFP/CFC | En cours | Édition des références structurées et questions simples en A4. Conservation des références modifiées au passage en double A5. Poursuivre les formats structurés, les activités mixtes et la mesure papier sur les autres modules. |
 | L7 — Cas d’échec et ergonomie avancée | En cours | Reprise, isolation, conflit entre onglets et quota vérifiés. Sélection et espacements par activité sur les calculs, préférences d’espacement pour les profils compatibles. Poursuivre les médias et les autres contrôles de présentation. |
@@ -81,6 +81,12 @@ L’inventaire raccorde les 40 contextes de cette famille. Le relevé de 4 269 c
 Le panneau Libre permet de modifier les deux parties de chaque paire et de mélanger la partie droite. La quantité suit la capacité du tirage. Changer la quantité ou le nombre de colonnes conserve les paires modifiées. Le corrigé associe chaque occurrence dans sa colonne, y compris lorsqu’une même syllabe figure deux fois. Le navigateur vérifie ces correspondances, la saisie incomplète et l’annulation.
 
 L’inventaire raccorde les 40 contextes de cette famille. Le relevé de 4 269 contextes compte 584 raccordements A4 en attente et aucune erreur de génération.
+
+### Mots mêlés en Soutien FR
+
+Le panneau Libre permet de choisir les mots et les sens autorisés, de recomposer la grille et de déplacer chaque mot. Le corrigé se recalcule à partir des positions. Une position incompatible ou une liste avec un doublon conserve la dernière grille valide. Le parcours Chromium couvre aussi une ancienne recette sans positions enregistrées, la modification des mots et l’annulation.
+
+Les 40 contextes de mots mêlés terminent le raccordement des activités générables de Soutien FR en A4. Après intégration des quatre symétries, l’inventaire de `feeff150` relève 4 269 contextes de sélection, dont 540 à raccorder en A4 dans les autres domaines. Il ne relève aucune erreur de génération.
 
 ## Panneau unique et addition A4
 

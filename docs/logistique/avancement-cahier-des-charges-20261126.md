@@ -328,16 +328,18 @@ La révision `logistique-tableaux-v007` ajoute 12 exercices pour les deux diplô
 
 Chromium a contrôlé les 72 combinaisons de module, diplôme, format, vue et taille de texte (16, 18 et 24 px), ainsi que 24 PDF. La réserve minimale était de 40,42 px en A4 et de 31,28 px en double A5. En double A5, les activités sur tableaux utilisent au plus l’échelle du réglage 18 px. Dans les activités de calcul, la grille et la zone de réponse sont côte à côte sous le tableau.
 
+La révision `logistique-reponses-v009` publie 31 exercices supplémentaires en CFC, dont 26 en AFP. La vérification propose des QCM à quatre choix, des lignes simples et des lignes numérotées selon la capacité du module. Des tableaux de comparaison, de classement et d’ordre sont disponibles en vérification et en mise en situation selon le module. L’éditeur Libre peut ajouter, retirer et déplacer les lignes et colonnes et transformer une cellule en réponse attendue. Chromium a contrôlé les six présentations dans les deux diplômes, en A4 et double A5, sur 48 PDF élève et corrigé. La réserve minimale est de 39,36 px. [Banque et annexes](../../src/logistique/banks/reponses-v009.ts).
+
 La carte Libre d’une question de calcul, de vérification ou de mise en situation permet de choisir une photo de la bibliothèque du module source. Les réglages de taille, de placement, de légende et de visibilité sont enregistrés dans la question. À droite, le texte habille le cadre et la grille de calcul commence sous l’énoncé et l’image. Le choix Corrigé seulement masque la photo sur la fiche élève. Le double A5 reprend les questions Libre enregistrées sur les deux moitiés. La recette navigateur a vérifié la sauvegarde simulée et la réouverture d’un problème AFP illustré, ainsi que ses PDF A4 et double A5. L’import privé et les galeries de plusieurs images restent à réaliser.
 
 La publication des modules est terminée pour les deux diplômes. La publication `logistique-901-v001` a clôturé le premier passage sur le catalogue. La révision `logistique-illustrations-fico-ict-projets-v003` rassemble les cours et les résumés du deuxième passage illustré. Chaque recette conserve sa révision de banque.
 
 | Diplôme | Modules | Types actifs | Problèmes de calcul | Questions de vérification | Situations |
 |---|---:|---:|---:|---:|---:|
-| CFC | 80 | 480 | 2617 | 4134 | 1759 |
-| AFP | 63 | 378 | 1961 | 3256 | 1345 |
+| CFC | 80 | 480 | 2617 | 4161 | 1763 |
+| AFP | 63 | 378 | 1961 | 3279 | 1348 |
 
-Les effectifs sont dédupliqués par identifiant dans chaque diplôme. La banque compte 8 510 unités d’exercice distinctes. Chaque module dépasse la cible du §5.1 dans son diplôme, avec au moins 31 calculs, 51 vérifications et 21 mises en situation. Les formats structurés et la conception avancée des évaluations figurent dans les lots L1c à L1f.
+Les effectifs sont dédupliqués par identifiant dans chaque diplôme. La banque compte 8 541 unités d’exercice distinctes. Chaque module dépasse la cible du §5.1 dans son diplôme, avec au moins 31 calculs, 51 vérifications et 21 mises en situation. Les formats structurés et la conception avancée des évaluations figurent dans les lots L1c à L1f.
 
 Pour un enrichissement ultérieur, partir des archives et du dossier éditorial du module, vérifier les droits par diplôme, les corrigés, la composition A4 et la continuité des recettes. Enregistrer chaque nouvelle révision et ses résultats dans ce suivi. [Archives par thème](sources-epcas/).
 

@@ -12,7 +12,8 @@ function withAssetBase<T extends { src: string }>(figure: T): T {
   return { ...figure, src: import.meta.env.BASE_URL + figure.src.replace(/^\//, '') }
 }
 
-function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'], wordsRng?: Rng): MathItem[] {
+function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'],
+  presentation?: LogistiquePresentation, presentationRng?: Rng): MathItem[] {
   const logistiqueSource = { id: unit.id, module: unit.module, revision: unit.revision }
   switch (unit.kind) {
     case 'objectifs-apercu':
@@ -48,21 +49,33 @@ function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'
       if (unit.gaps) {
         const answers = [...unit.gaps.answers]
         const distractors = [...(unit.gaps.distractors ?? [])]
-        const words = wordsRng ? shuffle(wordsRng, [...answers, ...distractors]) : undefined
+        const words = presentationRng ? shuffle(presentationRng, [...answers, ...distractors]) : undefined
         return [{ logistiqueSource, layout: 'text', prompt: unit.prompt, answer: unit.answer, logistiqueGaps: { answers, words, distractors } }]
       }
       if (unit.options?.length) {
-        return [{ logistiqueSource, layout: 'select', prompt: unit.prompt, options: [...unit.options], answer: unit.answer }]
+        const options = presentationRng ? shuffle(presentationRng, [...unit.options]) : [...unit.options]
+        return [{ logistiqueSource, layout: 'select', prompt: unit.prompt, options, answer: unit.answer }]
       }
-      return [{ logistiqueSource, layout: 'text', prompt: unit.prompt, answer: unit.answer }]
+      return [{ logistiqueSource, layout: 'text', prompt: unit.prompt, answer: unit.answer,
+        ...(unit.numberedAnswers ? { logistiqueResponseLines: {
+          kind: 'numbered', answers: [...unit.numberedAnswers], ordered: unit.orderedAnswers,
+        } } : presentation === 'lignes-simples' ? { logistiqueResponseLines: { kind: 'simple', count: 2 } } : {}),
+      }]
     case 'situation':
-      return [{ logistiqueSource, layout: 'text', prompt: unit.prompt, answer: unit.answer }]
+      return [{ logistiqueSource, layout: 'text', prompt: unit.prompt, answer: unit.answer,
+        ...(unit.table ? { logistiqueTable: unit.table } : {}),
+      }]
   }
 }
 
 function hasPresentation(unit: LogistiqueUnit, presentation?: LogistiquePresentation): boolean {
-  if ((unit.kind === 'maths' || unit.kind === 'verification') && unit.table) return unit.table.presentation === presentation
+  if ('table' in unit && unit.table) return unit.table.presentation === presentation
   if (unit.kind === 'verification' && unit.gaps) return presentation === 'sans-liste' || presentation === 'avec-liste'
+  if (unit.kind === 'verification') {
+    if (presentation === 'qcm') return Boolean(unit.options?.length && unit.options.includes(unit.answer))
+    if (presentation === 'lignes-numerotees') return Boolean(unit.numberedAnswers?.length)
+    if (presentation === 'lignes-simples') return !unit.options?.length && !unit.numberedAnswers?.length
+  }
   return presentation === undefined
 }
 
@@ -90,9 +103,9 @@ export function logistiqueModuleCapacities(type: LogistiqueType, modules: string
 
 export function logistiqueQuestionItems(type: LogistiqueType, modules: string[], revision?: string, presentation?: LogistiquePresentation): MathItem[] {
   if (!validLogistiqueSelection(type, { modules }) || !validLogistiquePresentation(type, presentation)) return []
-  const wordsRng = presentation === 'avec-liste' ? createRng(20261127) : undefined
+  const presentationRng = presentation === 'avec-liste' || presentation === 'qcm' ? createRng(20261127) : undefined
   return eligibleUnits(type, logistiquePublication(revision)?.units ?? [], modules, presentation)
-    .flatMap((unit) => unitItems(unit, undefined, wordsRng))
+    .flatMap((unit) => unitItems(unit, undefined, presentation, presentationRng))
 }
 
 export function logistiqueQuestionPhotos(type: LogistiqueType, modules: string[], revision?: string) {
@@ -170,7 +183,8 @@ export function generateLogistique(
       ? reference ? type.description
         : presentation === 'sans-liste' || presentation === 'avec-liste' ? 'Complétez les textes.' : type.instruction
       : modules.length ? 'Contenu à compléter pour cette sélection.' : 'Sélectionnez au moins un sous-thème.',
-    items: selected.flatMap((unit) => unitItems(unit, config.logistiqueTheoryView, presentation === 'avec-liste' ? rng : undefined)),
+    items: selected.flatMap((unit) => unitItems(unit, config.logistiqueTheoryView, presentation,
+      presentation === 'avec-liste' || presentation === 'qcm' ? rng : undefined)),
     bankQuestionCap: reference && eligible.length ? undefined : eligible.length,
   }
 }

@@ -795,13 +795,62 @@ try {
   assert.equal(await syllableSubject.locator('tr').count(), 4)
   await syllableMatchPage.close()
 
+  const legacyWordGrid = Array.from({ length: 15 }, (_, row) =>
+    Array.from({ length: 15 }, (_, column) => row === 0 ? 'CABANE'[column] ?? 'Z' : 'Z'))
+  const wordSearchPage = await open(context, {
+    domain: 'soutien-fr', topic: 'soutien-voyelles', exerciseType: 'soutien-a-mots-meles',
+    count: 12, columns: 1, printCorrections: true,
+    libreItems: [{
+      layout: 'word-search', answer: 'cabane',
+      wordSearch: { size: 15, grid: legacyWordGrid, words: ['cabane'], hitCells: [...'CABANE'].map((_, column) => `0,${column}`) },
+    }],
+  })
+  await toggleLive(wordSearchPage)
+  const wordSearchEditor = wordSearchPage.locator('#activity-editor').getByLabel('Grille de mots mêlés', { exact: true })
+  const wordList = wordSearchEditor.getByRole('textbox', { name: 'Mots à placer, un par ligne', exact: true })
+  const wordSearchStudent = preview(wordSearchPage).locator('.word-search-block')
+  const wordSearchGrid = wordSearchStudent.locator('.word-search-grid')
+  assert.equal(await wordSearchGrid.locator('td').count(), 225)
+  await wordSearchEditor.getByText('Position des mots', { exact: true }).click()
+  const wordPosition = wordSearchEditor.getByRole('group', { name: 'cabane', exact: true })
+  const wordRow = wordPosition.getByRole('spinbutton', { name: 'Ligne', exact: true })
+  const wordColumn = wordPosition.getByRole('spinbutton', { name: 'Colonne', exact: true })
+  assert.equal(await wordRow.inputValue(), '1')
+  assert.equal(await wordColumn.inputValue(), '1')
+  await wordList.fill('cabane\nCÂBANE')
+  assert.equal(await wordList.getAttribute('aria-invalid'), 'true')
+  assert.deepEqual(await wordSearchStudent.locator('.word-search-list-word').allTextContents(), ['cabane'])
+  await wordList.fill('cabane')
+  assert.equal(await wordList.getAttribute('aria-invalid'), 'false')
+  const directions = wordSearchEditor.getByRole('group', { name: 'Sens autorisés', exact: true })
+  for (const name of ['Vers la gauche', 'Vers le haut', 'Vers le bas']) {
+    await directions.getByRole('checkbox', { name, exact: true }).uncheck()
+  }
+  await wordRow.fill('1')
+  const appliedGrid = await wordSearchGrid.textContent()
+  await wordColumn.fill('15')
+  assert.equal(await wordColumn.getAttribute('aria-invalid'), 'true')
+  assert.equal(await wordSearchGrid.textContent(), appliedGrid)
+  await wordColumn.fill('1')
+  const wordSolution = wordSearchPage.locator('.print-only-sheets .word-search-grid').last()
+  assert.equal((await wordSolution.locator('tr').first().locator('.is-hit').allTextContents()).join(''), 'CABANE')
+  assert.equal(await wordSearchGrid.locator('.is-hit').count(), 0)
+  await wordList.fill('cabane\njardin')
+  assert.deepEqual(await wordSearchStudent.locator('.word-search-list-word').allTextContents(), ['cabane', 'jardin'])
+  const previousWordGrid = await wordSearchGrid.textContent()
+  await button(wordSearchEditor, 'Recomposer la grille').click()
+  assert.notEqual(await wordSearchGrid.textContent(), previousWordGrid)
+  await button(wordSearchPage, 'Annuler').click()
+  assert.equal(await wordSearchGrid.textContent(), previousWordGrid)
+  await wordSearchPage.close()
+
   const unavailable = await open(context, {
     domain: 'soutien-fr', topic: 'soutien-consonnes-iii', exerciseType: 'soutien-x-gz-associer-image',
   })
   await unavailable.getByText('Aucun contenu disponible pour cette activité.', { exact: true }).waitFor()
   assert(await button(unavailable, 'Enregistrer').isDisabled())
   await context.close()
-  console.log('Calligraphie, cartes, Gattegno, mots illustrés, mots à compléter, Grammaire, Société, Logistique AFP/CFC, références de maths, écoute de mots, lettres mélangées, syllabes à relier et activité indisponible testés.')
+  console.log('Calligraphie, cartes, Gattegno, mots illustrés, mots à compléter, Grammaire, Société, Logistique AFP/CFC, références de maths, écoute de mots, lettres mélangées, syllabes à relier, mots mêlés et activité indisponible testés.')
 } finally {
   await browser?.close()
   await server?.close()

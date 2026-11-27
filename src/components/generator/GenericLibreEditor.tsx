@@ -108,7 +108,7 @@ export function GenericLibreEditor({
                     }
                   />
                 </label>
-                {!(direct && item.layout === 'select') ? <label className="libre-field is-line">
+                {!(direct && item.layout === 'select') && item.logistiqueResponseLines?.kind !== 'numbered' ? <label className="libre-field is-line">
                   <span>Réponse</span>
                   <TextField
                     className={logistique ? 'libre-line-input is-textarea' : 'libre-line-input'}
@@ -124,6 +124,30 @@ export function GenericLibreEditor({
                   />
                 </label> : null}
               </div>}
+              {item.logistiqueResponseLines?.kind === 'simple' && (
+                <label className="libre-field is-line">
+                  <span>Lignes de rédaction</span>
+                  <input className="libre-line-input" type="number" min={1} max={8}
+                    value={item.logistiqueResponseLines.count} onChange={(event) => {
+                      const count = Number(event.target.value)
+                      if (Number.isInteger(count) && count >= 1 && count <= 8) {
+                        patchItem(index, { logistiqueResponseLines: { kind: 'simple', count } })
+                      }
+                    }} />
+                </label>
+              )}
+              {item.logistiqueResponseLines?.kind === 'numbered' && item.logistiqueResponseLines.answers.map((answer, position) => (
+                <label key={position} className="libre-field is-line">
+                  <span>Réponse {position + 1}</span>
+                  <input className="libre-line-input" value={answer} onChange={(event) => {
+                    const lines = item.logistiqueResponseLines
+                    if (lines?.kind !== 'numbered') return
+                    const answers = lines.answers.with(position, event.target.value)
+                    patchItem(index, { logistiqueResponseLines: { ...lines, answers },
+                      answer: answers.join('\n'), libreCorrectionPending: true })
+                  }} />
+                </label>
+              ))}
               {item.logistiqueTable && <LogistiqueTableEditor table={item.logistiqueTable}
                 onChange={(logistiqueTable) => patchItem(index, { logistiqueTable, libreCorrectionPending: true })} />}
               {(editableCalculation || direct && item.calcAnswer != null) && (

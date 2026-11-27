@@ -56,8 +56,9 @@ function LogistiqueIllustratedPrompt({ item, mode, children }: { item: MathItem;
 
 export function SelectPillsRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const options = item.options ?? []
+  const isLogistique = Boolean(item.logistiqueSource || item.logistiqueLocalModule)
   const selectedSet = new Set(
-    item.logistiqueLocalModule ? [item.answer] :
+    isLogistique ? [item.answer] :
       (item.labels?.length ? item.labels : item.answer.split(/\s*·\s*|\s*,\s*/)).map((s) => s.trim()).filter(Boolean),
   )
   const answerMode = item.answerMode ?? 'qcm'
@@ -101,11 +102,13 @@ export function SelectPillsRow({ item, mode }: { item: MathItem; mode: PreviewMo
     )
   }
 
-  if (isOral) {
+  if (isOral || isLogistique) {
     const letters = ['A', 'B', 'C']
     return (
       <div className="oral-answer-stack" aria-label="Choix">
-        <p className="oral-qcm-prompt">{item.prompt}</p>
+        <LogistiqueIllustratedPrompt item={item} mode={mode}>
+          <p className="oral-qcm-prompt">{item.prompt}</p>
+        </LogistiqueIllustratedPrompt>
         <div className="oral-qcm-options" role="group">
           {options.map((option, index) => {
             const selected = mode === 'answers' && selectedSet.has(option)
@@ -113,7 +116,7 @@ export function SelectPillsRow({ item, mode }: { item: MathItem; mode: PreviewMo
               <div key={`${option}-${index}`} className={`oral-qcm-option ${selected ? 'selected' : ''}`}>
                 <span className="oral-qcm-option-text">{option}</span>
                 <span className="oral-qcm-check">
-                  {letters[index] ?? String(index + 1)}{' '}
+                  {isLogistique ? String.fromCharCode(65 + index) : letters[index] ?? String(index + 1)}{' '}
                   <span className={`oral-qcm-box ${selected ? 'checked' : ''}`} aria-hidden>
                     {selected ? '✓' : ''}
                   </span>
@@ -650,6 +653,22 @@ export function StackedPrompt({ item, mode, showHelp = false }: { item: MathItem
         </LogistiqueIllustratedPrompt>
         <LogistiqueTableView table={item.logistiqueTable} mode={mode} />
         {show && item.answer ? <strong className="filled-answer logistique-table-note">{item.answer}</strong> : null}
+      </div>
+    )
+  }
+  const response = item.logistiqueResponseLines
+  if (response) {
+    const fields = response.kind === 'numbered' ? response.answers :
+      show ? [item.answer] : Array.from({ length: response.count }, () => '')
+    const line = (value: string) => <span className={`answer-line-field ${show ? 'filled' : ''}`}>{show ? value : '\u00a0'}</span>
+    return (
+      <div className="prompt-stack logistique-response-lines">
+        <LogistiqueIllustratedPrompt item={item} mode={mode}>
+          <p className="prompt-stack-text">{prompt}</p>
+        </LogistiqueIllustratedPrompt>
+        {response.kind === 'numbered' ? <ol className="logistique-numbered-lines">
+          {fields.map((value, index) => <li key={index}>{line(value)}</li>)}
+        </ol> : fields.map((value, index) => <div key={index}>{line(value)}</div>)}
       </div>
     )
   }
