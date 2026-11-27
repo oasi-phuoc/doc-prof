@@ -15,16 +15,19 @@ def options(answer,others,slug):
  return [dict(id='forme-'+hashlib.sha256((slug+'|'+x).encode()).hexdigest()[:10],text=x) for x in vals]
 def fill(p,a):return p.replace('___',a)
 def cap(s):return s[0].upper()+s[1:]
-E2=rows('temps-e2-a1',6);E3={l:rows('temps-e3-'+l.lower(),5 if l=='A1' else 9) for l in ['A1','A2']};E4=rows('temps-e4-a1',6);E5={l:rows('temps-e5-'+l.lower(),7 if l=='A1' else 11) for l in ['A1','A2']};READ=rows('temps-lectures-a1',15,20)
+E2=rows('temps-e2-a1',6);E3={l:rows('temps-e3-'+l.lower(),5 if l=='A1' else 9) for l in ['A1','A2']};E4=rows('temps-e4-a1',6);E5={l:rows('temps-e5-'+l.lower(),7 if l=='A1' else 11) for l in ['A1','A2']};READ=rows('temps-lectures-a1',20,20)
 media={};uses={}
-def support(name,aid,uid):
- path='/lib/images/vocabulaire/'+name+'.webp';p=ROOT/'public'/path.lstrip('/');data=p.read_bytes();sha=hashlib.sha256(data).hexdigest();w,h=Image.open(p).size
+def register_support(path,image_id,alt,note,aid,uid):
+ p=ROOT/'public'/path.lstrip('/');data=p.read_bytes();sha=hashlib.sha256(data).hexdigest()
+ with Image.open(p) as image:w,h=image.size
  src=f'/lib/images/grammaire/curriculum/sha256/{sha}.webp';out=ROOT/'public'/src.lstrip('/');out.parent.mkdir(exist_ok=True,parents=True)
  if out.exists():assert out.read_bytes()==data
  else:shutil.copyfile(p,out)
+ s=dict(id=image_id,src=src,sha256=sha,width=w,height=h,alt=alt,source=dict(path=path,manifest=MANIFEST,rights='permitted-reuse',note=note))
+ media[image_id]=s;uses.setdefault(image_id,[]).append(dict(activityId=aid,unitId=uid));return s
+def support(name,aid,uid):
  label={'huit-heures':'8 heures','douze-heures':'12 heures','quatorze-heures-trente':'2 heures 30 sur un cadran de douze heures','dix-huit-heures':'6 heures sur un cadran de douze heures','lundi':'le mot lundi','calendrier':'un calendrier symbolique','printemps':'un arbre en fleurs au printemps','été':'un paysage ensoleillé en été','automne':'un arbre aux feuilles rouges en automne','hiver':'un paysage enneigé en hiver'}[name.split('/')[-1]]
- s=dict(id='temps-'+name.replace('/','-'),src=src,sha256=sha,width=w,height=h,alt='Illustration montrant '+label+'.',source=dict(path=path,manifest=MANIFEST,rights='permitted-reuse',note='Réemploi interne sans modification. Le texte fixe la date et distingue matin et après-midi sur les cadrans de douze heures. Le calendrier et les saisons sont symboliques.'))
- media[name]=s;uses.setdefault(name,[]).append(dict(activityId=aid,unitId=uid));return s
+ return register_support('/lib/images/vocabulaire/'+name+'.webp','temps-'+name.replace('/','-'),'Illustration montrant '+label+'.','Réemploi interne sans modification. Le texte fixe la date et distingue matin et après-midi sur les cadrans de douze heures. Le calendrier et les saisons sont symboliques.',aid,uid)
 banks=[];aid='gram-ex-e2-qcm-verbe';units=[]
 for i,(slug,image,context,p,a,task) in enumerate(E2):
  others={'à':['en','le'],'en':['à','le'],'au':['en','à'],'le':['en','au'],'vers':['en','au']}[a]
@@ -35,15 +38,21 @@ for mode in ['written','oral']:
  for i,(slug,image,context,p,a,task) in enumerate(E2):units.append(unit(aid,'A1',slug,i,context,[fill(p,a)],'temps-e2-a1',kind='production',mode=mode,task=task+' '+('Écrivez' if mode=='written' else 'Dites')+' une seule phrase.',writeLines=2 if mode=='written' else 0,rubric=rubric(['Repère temporel conforme à la situation.','Expression de temps adaptée.','Une phrase compréhensible et utile.']),explanation='Exemple possible ; toute phrase correcte respectant le repère et la demande est recevable, y compris les accords adaptés à la personne. Appréciation enseignante.'))
  banks.append(bank(aid,'e2','A1','Écrire une phrase utile' if mode=='written' else 'Dire une phrase utile',{'open-written' if mode=='written' else 'open-oral':('Écrivez' if mode=='written' else 'Dites')+' une seule phrase adaptée à la demande et au repère temporel.'},units))
 aid='gram-ex-e2-communication-ce';units=[]
-for i,(slug,genre,title,text,q,a,e,d1,d2,q2,a2,e2,q3,a3,e3) in enumerate(READ):
+for i,(slug,genre,title,text,q,a,e,d1,d2,q2,a2,e2,q3,a3,e3,q4,a4,e4,image,alt) in enumerate(READ):
  text=text.replace('\\n','\n');qs=[]
- for j,(question,answer,evidence) in enumerate([(q,a,e),(q2,a2,e2),(q3,a3,e3)]):
+ for j,(question,answer,evidence) in enumerate([(q,a,e),(q2,a2,e2),(q3,a3,e3),(q4,a4,e4)]):
   assert evidence in text,(slug,evidence)
   child=dict(id=slug+f'-q{j+1}',prompt=question,answers=[answer],evidence=[evidence],explanation='Le document indique : « '+evidence+' ».',response='choice' if j==0 else 'short')
   if j==0:child['options']=options(answer,[d1,d2],slug)
   qs.append(child)
- units.append(unit(aid,'A1',slug,i,title,[],'temps-lectures-a1',kind='reading',genre=genre,text=text,questions=qs,explanation='Les réponses courtes équivalentes sont recevables si elles conservent le repère exact.'))
-banks.append(bank(aid,'e2','A1','Lire une situation',{'document-set':'Lisez chaque document et répondez à ses trois questions : un choix et deux réponses courtes.'},units))
+ u=unit(aid,'A1',slug,i,title,[],'temps-lectures-a1',kind='reading',genre=genre,text=text,questions=qs,explanation='Les réponses courtes équivalentes sont recevables si elles conservent l’information du document.')
+ assert bool(image)==bool(alt),slug
+ if image:u['imageSupports']=[register_support(image,'temps-lecture-'+slug,alt,'Illustration TCF réemployée à l’identique pour situer le document.',aid,u['id'])]
+ units.append(u)
+reading_bank=bank(aid,'e2','A1','Lire une situation',{'document-set':'Lisez chaque document. Cochez une réponse, puis écrivez trois réponses courtes.'},units)
+reading_bank['revision']='temps-2026-11-27-v2'
+reading_bank['review'].update(date='2026-11-27',note='Questions de lecture relues avec leurs preuves textuelles. L’appréciation enseignante est en attente.')
+banks.append(reading_bank)
 for level,source in E3.items():
  aid='gram-ex-e3-qcm-verbe';units=[]
  for i,row in enumerate(source):
@@ -114,6 +123,8 @@ for i,row in enumerate(E5['A2'][:20]):
  units.append(unit(aid,'A2',slug,i,title,[],'temps-e5-a2',kind='reading',genre=genre,text=text,questions=qs,explanation='Les réponses doivent conserver l’ordre explicite du texte.'))
 banks.append(bank(aid,'e5','A2','Lire une chronologie',{'document-set':'Lisez chaque document. Repérez la première action, l’action suivante et la dernière action.'},units))
 for sub in ['e2','e3','e4','e5']:(ROOT/f'src/grammaire/curriculum/data/{sub}.json').write_text(json.dumps([b for b in banks if b['subthemeId']==sub],ensure_ascii=False,indent=2)+'\n')
-b=next(b for b in banks if b['activityId']=='gram-ex-e2-qcm-verbe');ob=dict(obligationId='IMG-e2-A1',hostActivityId=b['activityId'],level='A1',reviewedIllustratedSituations=50,distinctImages=len(media),unitIds=[u['id'] for u in b['units']],humanReview='pending')
-(ROOT/MANIFEST).write_text(json.dumps(dict(obligations=[ob],distinctImages=len(media),humanReview='pending',images=[dict(**s,uses=uses[n]) for n,s in media.items()],note='50 situations illustrées par dix images internes vérifiées. Les contextes et les 20 lectures A2 réemploient des situations : aucun quota de nouvelles histoires ou nouvelles images revendiqué.'),ensure_ascii=False,indent=2)+'\n')
+b=next(b for b in banks if b['activityId']=='gram-ex-e2-qcm-verbe')
+completion_image_count=len({s['sha256'] for u in b['units'] for s in u['imageSupports']})
+ob=dict(obligationId='IMG-e2-A1',hostActivityId=b['activityId'],level='A1',reviewedIllustratedSituations=50,distinctImages=completion_image_count,unitIds=[u['id'] for u in b['units']],humanReview='pending')
+(ROOT/MANIFEST).write_text(json.dumps(dict(obligations=[ob],distinctImages=len({s['sha256'] for s in media.values()}),humanReview='pending',images=[dict(**s,uses=uses[n]) for n,s in media.items()],note='Dix images illustrent les 50 situations à compléter. Quatre illustrations TCF situent des documents de lecture A1.'),ensure_ascii=False,indent=2)+'\n')
 print(json.dumps(dict(banks=len(banks),activities=len({b['activityId'] for b in banks}),offerings=sum(len(b['presentations']) for b in banks),units=sum(len(b['units']) for b in banks))))

@@ -61,7 +61,7 @@
       "humanReview": "pending"
     }
   ],
-  "distinctImages": 10,
+  "distinctImages": 14,
   "humanReview": "pending",
   "images": [
     {
@@ -423,7 +423,87 @@
           "unitId": "gram-ex-e2-qcm-verbe-a1-lundi"
         }
       ]
+    },
+    {
+      "id": "temps-lecture-train",
+      "src": "/lib/images/grammaire/curriculum/sha256/f201b60e59b3825aa6069503e70326fffd9850799b947efad3dc6e1bc4b7517a.webp",
+      "sha256": "f201b60e59b3825aa6069503e70326fffd9850799b947efad3dc6e1bc4b7517a",
+      "width": 1448,
+      "height": 1086,
+      "alt": "Un train de voyageurs.",
+      "source": {
+        "path": "/lib/images/tcf/qcm-audit/vocab-train-isole.webp",
+        "manifest": "docs/grammaire/implementation/temps-media-manifest.json",
+        "rights": "permitted-reuse",
+        "note": "Illustration TCF réemployée à l’identique pour situer le document."
+      },
+      "uses": [
+        {
+          "activityId": "gram-ex-e2-communication-ce",
+          "unitId": "gram-ex-e2-communication-ce-a1-train"
+        }
+      ]
+    },
+    {
+      "id": "temps-lecture-bibliotheque",
+      "src": "/lib/images/grammaire/curriculum/sha256/ad3eea66d0f7c58f6bd794b917e02e920b91c551f2c0ff4a89e94703260e4886.webp",
+      "sha256": "ad3eea66d0f7c58f6bd794b917e02e920b91c551f2c0ff4a89e94703260e4886",
+      "width": 1448,
+      "height": 1086,
+      "alt": "Des rayons de livres et des tables de lecture.",
+      "source": {
+        "path": "/lib/images/tcf/co/bg/bibliotheque.webp",
+        "manifest": "docs/grammaire/implementation/temps-media-manifest.json",
+        "rights": "permitted-reuse",
+        "note": "Illustration TCF réemployée à l’identique pour situer le document."
+      },
+      "uses": [
+        {
+          "activityId": "gram-ex-e2-communication-ce",
+          "unitId": "gram-ex-e2-communication-ce-a1-bibliotheque"
+        }
+      ]
+    },
+    {
+      "id": "temps-lecture-marche",
+      "src": "/lib/images/grammaire/curriculum/sha256/a97e6f2877bc9b65f3494af06f270e0f0ef8756800b09998d9e71cd2e9dcd8be.webp",
+      "sha256": "a97e6f2877bc9b65f3494af06f270e0f0ef8756800b09998d9e71cd2e9dcd8be",
+      "width": 1448,
+      "height": 1086,
+      "alt": "Des étals de fruits et de légumes sur une place.",
+      "source": {
+        "path": "/lib/images/tcf/co/bg/marche.webp",
+        "manifest": "docs/grammaire/implementation/temps-media-manifest.json",
+        "rights": "permitted-reuse",
+        "note": "Illustration TCF réemployée à l’identique pour situer le document."
+      },
+      "uses": [
+        {
+          "activityId": "gram-ex-e2-communication-ce",
+          "unitId": "gram-ex-e2-communication-ce-a1-marche"
+        }
+      ]
+    },
+    {
+      "id": "temps-lecture-fetes",
+      "src": "/lib/images/grammaire/curriculum/sha256/10ad81d11dd482af44090a8d1f4ba88e96ac74a6645646caa240ef71deaf283a.webp",
+      "sha256": "10ad81d11dd482af44090a8d1f4ba88e96ac74a6645646caa240ef71deaf283a",
+      "width": 1448,
+      "height": 1086,
+      "alt": "Un bassin couvert avec des lignes de nage.",
+      "source": {
+        "path": "/lib/images/tcf/co/bg/piscine.webp",
+        "manifest": "docs/grammaire/implementation/temps-media-manifest.json",
+        "rights": "permitted-reuse",
+        "note": "Illustration TCF réemployée à l’identique pour situer le document."
+      },
+      "uses": [
+        {
+          "activityId": "gram-ex-e2-communication-ce",
+          "unitId": "gram-ex-e2-communication-ce-a1-fetes"
+        }
+      ]
     }
   ],
-  "note": "50 situations illustrées par dix images internes vérifiées. Les contextes et les 20 lectures A2 réemploient des situations : aucun quota de nouvelles histoires ou nouvelles images revendiqué."
+  "note": "Dix images illustrent les 50 situations à compléter. Quatre illustrations TCF situent des documents de lecture A1."
 }

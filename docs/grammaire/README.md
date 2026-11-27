@@ -45,6 +45,8 @@ Chacune des 160 situations a sa propre illustration dans le style dessiné CE/CO
 
 La revue des personnages a remplacé huit scènes. Les remplacements concernent le musée, l’atelier vélo, la bibliothèque, la cantine et la gare. La revue des autres groupes de communication et des scènes de compréhension orale reste ouverte. [Critères graphiques et diversité des personnages](../tcf/style-images.md)
 
+En compréhension écrite graduée, « Se situer dans le temps → Le moment → Lire une situation » propose 80 questions sur 20 documents A1. Quatre documents réemploient un visuel TCF. [Relecture et sources](implementation/temps-a1-a2-relecture.md)
+
 ## Vérification et entretien
 
 La couverture détaillée est dans [audit.json](audit.json). Les contenus éditoriaux et le générateur reproductible se trouvent dans `scripts/grammar_curriculum/`.

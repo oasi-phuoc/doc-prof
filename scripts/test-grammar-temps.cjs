@@ -24,7 +24,11 @@ for(const b of banks){
  for(const presentation of b.presentations){
   const cfg={domain:'grammaire',topic:b.topic,exerciseType:b.activityId,difficulty:'facile',columns:1,count:50,...defaultGrammarPilot(b.activityId),grammarLevel:b.level,grammarPresentation:presentation,grammarBankRevision:b.revision,...(presentation==='document-set'?{grammarDocumentCount:20}:{})}
   const snapshot=generateGrammarSelection(cfg,839);assert(isGrammarSnapshot(snapshot));assert.deepEqual(generateGrammarSelection(cfg,839),snapshot)
-  const expected=presentation==='document-set'?60:50;variants+=expected
+  const expected=presentation==='document-set'?(b.level==='A1'?80:60):50;variants+=expected
+  if(presentation==='document-set'&&b.level==='A1'){
+   assert.equal(snapshot.questions.filter(q=>q.unit.imageSupports?.length).length,4)
+   assert(snapshot.groups.every(group=>group.questionIds.length===4))
+  }
   const recipe=buildFicheRecipe(input([cfg]));assert(parseFicheRecipe(JSON.parse(JSON.stringify(recipe))))
   const game=convertRecipe(recipe);assert.equal(game.questions.length,expected);assert.deepEqual(game.issues,[])
   assert(game.questions.every(q=>!('answer' in q)&&!('model' in q)&&!('correctId' in q)&&!('sortingTargets' in q)))
@@ -41,7 +45,7 @@ for(const b of banks){
   }
  }
 }
-assert.equal(variants,1420)
+assert.equal(variants,1440)
 const {grammarEligibleCount}=load(root+'/src/grammaire/curriculum/generate.ts')
 const {validGrammarUnit}=load(root+'/src/grammaire/curriculum/validation.ts')
 const {applyType}=load(root+'/src/components/generator/page-helpers.ts')
@@ -72,9 +76,9 @@ for(const b of scoped('e5').filter(b=>b.presentations.includes('order'))){
  assert(game.questions.every(q=>q.mode==='sequence'&&q.words.length===(b.level==='A1'?3:4)&&q.instruction.includes('étape')))
 }
 const images=require('../docs/grammaire/implementation/temps-media-manifest.json'),digest=b=>crypto.createHash('sha256').update(b).digest('hex')
-assert.equal(images.obligations.length,1);assert.equal(images.distinctImages,10);assert.equal(images.obligations[0].reviewedIllustratedSituations,50)
+assert.equal(images.obligations.length,1);assert.equal(images.distinctImages,14);assert.equal(images.obligations[0].distinctImages,10);assert.equal(images.obligations[0].reviewedIllustratedSituations,50)
 for(const image of images.images){assert(validGrammarImage(image));const bytes=fs.readFileSync(root+'/public'+image.src);assert.equal(digest(bytes),image.sha256);assert.deepEqual(bytes,fs.readFileSync(root+'/public'+image.source.path))}
-const readings=banks.flatMap(b=>b.units).filter(u=>u.kind==='reading');assert.equal(readings.length,40);assert.equal(new Set(readings.map(u=>u.text)).size,40);assert.equal(readings.flatMap(u=>u.questions).length,120)
+const readings=banks.flatMap(b=>b.units).filter(u=>u.kind==='reading');assert.equal(readings.length,40);assert.equal(new Set(readings.map(u=>u.text)).size,40);assert.equal(readings.flatMap(u=>u.questions).length,140)
 for(const u of readings){assert.deepEqual(u.answers,[]);for(const q of u.questions)assert(q.evidence.every(e=>u.text.includes(e)))}
 const scenarios=banks.flatMap(b=>b.units).filter(u=>u.kind==='scenario');assert.equal(scenarios.length,50)
 for(const u of scenarios){assert.equal(u.contract,'open');assert(u.turns.every(t=>!t.text.includes('___')&&!t.questionId));assert(u.rubric.length>=3&&u.followUps.length)}
@@ -85,4 +89,4 @@ for(const sub of ['e2','e3','e4','e5']){
 const before=JSON.parse(cp.execFileSync('git',['show','fd05e4de5:src/grammaire/exercises/bank/lessons-revised.ts'],{encoding:'utf8'}).split('= ').slice(1).join('= '))
 const after=fs.readFileSync(root+'/src/grammaire/exercises/bank/lessons-revised.ts','utf8').split('= ').slice(1).join('= ')
 assert.deepEqual(JSON.parse(after),before.filter(x=>!require('../src/grammaire/curriculum/retired-subthemes.json').includes(x.subId)))
-console.log(JSON.stringify({status:'passed',activities:18,banks:22,offerings:28,units:1040,variants,documents:40,documentQuestions:120,groupedAssociations:50,openScenarios:50,illustratedSituations:50,distinctImages:10,retiredHistoricalBanks:4,savedWorksheets:'untouched, deferred by owner'}))
+console.log(JSON.stringify({status:'passed',activities:18,banks:22,offerings:28,units:1040,variants,documents:40,documentQuestions:140,groupedAssociations:50,openScenarios:50,illustratedSituations:50,illustratedReadings:4,distinctImages:14,retiredHistoricalBanks:4,savedWorksheets:'untouched, deferred by owner'}))
