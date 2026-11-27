@@ -275,7 +275,7 @@ function buildOrderSentences(words: readonly string[]): (readonly string[])[] {
   return words.slice(0, 12).map((raw) => {
     const w = displayVocabLabel(raw)
     const art = articleFor(w) === 'Une' ? 'la/determinant' : 'le/determinant'
-    return [`je/pronom`, `vois/verbe`, art, `${w}/nom`, `./interjection`] as const
+    return [`je/pronom`, `vois/verbe`, art, `${w.replace(/\s+/g, '_')}/nom`, `./interjection`] as const
   })
 }
 

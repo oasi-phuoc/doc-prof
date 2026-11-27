@@ -1,5 +1,6 @@
 import { exerciseTypeById } from '@/math/catalog'
 import { FreeNumberControls } from './FreeNumberControls'
+import type { FocusEventHandler, ReactNode } from 'react'
 import type { ExerciseBlock, MathItem, WorksheetPage } from '@/math/types'
 import type { GameTemplate } from '@/jeux/templates'
 import { PhraseLibreEditor, isPhraseLibreEditable } from '@/francais/PhraseLibreEditor'
@@ -34,11 +35,15 @@ import { VocabAddWordRow } from '@/components/generator/VocabAddWordRow'
 import type { VocabWordEntry } from '@/francais/vocab-learn'
 
 export type LibreSidePanelProps = {
+  settings: ReactNode
+  footer: ReactNode
+  onFocusCapture: FocusEventHandler<HTMLElement>
   activeBlock: ExerciseBlock
   activeSheet: WorksheetPage | undefined
   safeBlockIndex: number
   isPhraseDomain: boolean
   isNumberLibreDomain: boolean
+  liveAddition: boolean
   isCalliDomain: boolean
   isJeuxDomain: boolean
   isTcf: boolean
@@ -70,11 +75,15 @@ export type LibreSidePanelProps = {
 }
 
 export function LibreSidePanel({
+  settings,
+  footer,
+  onFocusCapture,
   activeBlock,
   activeSheet,
   safeBlockIndex,
   isPhraseDomain,
   isNumberLibreDomain,
+  liveAddition,
   isCalliDomain,
   isJeuxDomain,
   isTcf,
@@ -111,7 +120,13 @@ export function LibreSidePanel({
       activeBlock.logistiqueBankRevision),
   } : undefined
   return (
-    <aside className="side-tool-panel is-libre no-print" aria-label="Mode libre">
+    <aside
+      className="side-tool-panel is-libre no-print"
+      id="activity-editor"
+      aria-label="Mode libre"
+      tabIndex={-1}
+      onFocusCapture={onFocusCapture}
+    >
       <div className="side-tool-panel-head is-libre-head">
         <button
           type="button"
@@ -124,7 +139,9 @@ export function LibreSidePanel({
         </button>
         <h3>Mode libre</h3>
       </div>
-      <div className="side-tool-panel-body">
+      {footer}
+      <div className="side-tool-panel-body" hidden={Boolean(footer)}>
+        <div className="activity-settings">{settings}</div>
         {isNumberLibreDomain && activeBlock.numberLibre &&
           exerciseTypeById[activeBlock.exerciseType]?.supportsNumberRange !== false ? (
           <div className="libre-number-generation">
@@ -158,6 +175,7 @@ export function LibreSidePanel({
         ) : null}
         {isNumberLibreDomain && !((isDroites || isConstruire) && activeBlock.coordLibre) ? (
           <TpmLibreEditor
+            liveArithmetic={liveAddition}
             exerciseType={activeBlock.exerciseType}
             instruction={
               activeBlock.libreInstruction ??
@@ -169,9 +187,10 @@ export function LibreSidePanel({
               activeSheet?.blocks[safeBlockIndex]?.items ??
               []
             }
-            onChangeInstruction={(libreInstruction) =>
-              updatePage({ libreInstruction })
-            }
+            onChangeInstruction={(libreInstruction) => {
+              const libreItems = activeBlock.libreItems ?? activeSheet?.blocks[safeBlockIndex]?.items
+              updatePage(liveAddition ? { libreInstruction, libreItems } : { libreInstruction })
+            }}
             onChangeItems={(libreItems) => updatePage({ libreItems })}
           />
         ) : null}

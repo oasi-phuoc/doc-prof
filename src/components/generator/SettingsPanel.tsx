@@ -150,9 +150,17 @@ export type SettingsPanelProps = {
   setAllDraftGrids: (value: boolean) => void
 }
 
-export function SettingsPanel(p: SettingsPanelProps) {
+export function SettingsPanel(props: SettingsPanelProps) {
   return (
-    <aside className="settings-panel no-print">
+    <aside className="settings-panel activity-settings no-print">
+      <ActivitySettings {...props} />
+    </aside>
+  )
+}
+
+export function ActivitySettings(p: SettingsPanelProps) {
+  return (
+    <>
       <PageStructureTabs
         worksheets={p.worksheets}
         pages={p.pages}
@@ -323,6 +331,6 @@ export function SettingsPanel(p: SettingsPanelProps) {
           setAllDraftGrids={p.setAllDraftGrids}
         />
       </div>
-    </aside>
+    </>
   )
 }

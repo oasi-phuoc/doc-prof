@@ -24,10 +24,12 @@ import {
   TRANSFORM_MAX_POINTS,
   isTransformationExercise,
 } from '@/math/coord-transformations'
+import { buildPage } from '@/math/generate'
 import { isDraftPadExercise } from '@/math/catalog'
 import {
   blockFromPage,
   pageBlocks,
+  pageAsConfig,
   setPageBlock,
 } from '@/math/page-model'
 import { isTpmDomain } from '@/tpm/test'
@@ -49,6 +51,7 @@ export type UsePageConfigParams = {
   worksheets: WorksheetPage[]
   seed: number
   libreMode: boolean
+  additionA4: boolean
   isPhraseDomain: boolean
   isCalliDomain: boolean
   isJeuxDomain: boolean
@@ -65,12 +68,19 @@ export function usePageConfig({
   worksheets,
   seed,
   libreMode,
+  additionA4,
   isPhraseDomain,
   isCalliDomain,
   isJeuxDomain,
   isTcf,
 }: UsePageConfigParams) {
-  const updatePage = (patch: Partial<PageConfig>) =>
+  const updatePage = (patch: Partial<PageConfig>) => {
+    if (
+      additionA4 && patch.count != null && activeBlock.libreItems &&
+      patch.count < activeBlock.libreItems.length &&
+      !window.confirm('Retirer les dernières questions de cette activité personnalisée ?')
+    ) return
+
     setPages((current) =>
       current.map((page, index) => {
         if (index !== pageIndex) return page
@@ -152,9 +162,20 @@ export function usePageConfig({
             coordMarks: omega ? [...figure, omega] : figure,
           }
         }
+        if (additionA4 && patch.count != null && fixed.libreItems?.length) {
+          const kept = fixed.libreItems.slice(0, fixed.count)
+          if (kept.length < fixed.count) {
+            const config = pageAsConfig(page, { ...fixed, libreItems: undefined })
+            const blockSeed = seed + pageIndex * 7919 + safeBlockIndex * 10007 + (fixed.contentSeed ?? 0)
+            const { items } = buildPage(config, blockSeed, 1, seed)
+            kept.push(...items.slice(kept.length, fixed.count))
+          }
+          fixed = { ...fixed, libreItems: kept }
+        }
         return setPageBlock(merged, safeBlockIndex, fixed)
       }),
     )
+  }
 
   // Mode libre Gattegno : synchronise le brouillon éditable après un nouveau tirage.
   useEffect(() => {
@@ -366,7 +387,7 @@ export function usePageConfig({
 
   // Mode libre générique : reprend le tirage dans libreItems après Générer / Valider.
   useEffect(() => {
-    if (!libreMode) return
+    if (!libreMode || activeBlock.exerciseType === 'addition-ligne') return
     if (isPhraseDomain && isPhraseLibreEditable(activeBlock.exerciseType)) return
     if (isCalliDomain || isJeuxDomain || isTcf) return
     if (activeBlock.libreItems && activeBlock.libreItems.length > 0) return

@@ -13,7 +13,7 @@ Découpage de l’ancien monolithe `App.tsx` / `GeneratorPage.tsx` pour le déve
 | `useCoordEditing.ts` | Outil repérage : origine, marques, axes |
 | `usePageConfig.ts` | `updatePage`, sync mode libre, grilles / modes oraux / TCF |
 | `usePageNavigation.ts` | Domaine / thème / pages / exercices (+ effets de migration) |
-| `SettingsPanel.tsx` | Aside paramètres (compose les champs ci-dessous) |
+| `SettingsPanel.tsx` | Panneau normal et réglages réutilisés en mode Libre |
 | `PageStructureTabs.tsx` | Titre panneau + onglets feuilles / exercices |
 | `DomainThemeTypeFields.tsx` | Mode, domaine, thème, type, phrase, jeux, TPF / TCF, quad |
 | `CalliSettingsPanel.tsx` | Réglages calligraphie |
@@ -24,8 +24,8 @@ Découpage de l’ancien monolithe `App.tsx` / `GeneratorPage.tsx` pour le déve
 | `ResultPanel.tsx` | Actions aperçu + stage A4 + feuilles impression |
 | `TopbarTools.tsx` | Icônes haut : aperçu, pied, libre ; menu à droite (Paramètres + déconnexion) |
 | `sheet-format.ts` | Format portrait A4 vs paysage double A5 + graines jumelles |
-| `FooterSidePanel.tsx` | Panneau droit en-tête / pied de page |
-| `LibreSidePanel.tsx` | Panneau droit édition manuelle (tous domaines) |
+| `FooterSidePanel.tsx` | Édition de l’en-tête et du pied de page, intégrée au panneau gauche en mode Libre |
+| `LibreSidePanel.tsx` | Panneau gauche avec réglages et éditeurs spécialisés |
 | `GenericLibreEditor.tsx` | Éditeur générique consigne + questions |
 | `WorksheetSheet.tsx` | Rendu d’une feuille A4 (élève / corrigé) |
 | `SelectBox.tsx` | Liste déroulante du panneau |

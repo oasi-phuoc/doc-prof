@@ -29,7 +29,7 @@ import type { TcfTypeReponse } from '@/tcf/types'
 
 export type ResultPanelProps = {
   libreMode: boolean
-  validateManual: () => void
+  validateManual?: () => void
   isTcf: boolean
   isGrammaireExercise?: boolean
   isTcmCfr: boolean
@@ -277,7 +277,7 @@ export function ResultPanel({
   )
 
   return (
-          <section className="result-panel">
+          <section className="result-panel" id="activity-preview" tabIndex={-1}>
             {isTcmCsc && cscAudioBusy && <p role="status" className="no-print">Préparation des audios CSC…</p>}
             {isTcmCsc && cscAudioError && <p role="alert" className="no-print">{cscAudioError}</p>}
             <div className="result-head">
@@ -302,7 +302,7 @@ export function ResultPanel({
                     />
                   </svg>
                 </button>
-                {!libreMode ? null : (
+                {!libreMode || !validateManual ? null : (
                   <button
                     className="print-chip is-icon is-validate"
                     type="button"

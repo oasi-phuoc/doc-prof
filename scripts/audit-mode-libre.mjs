@@ -179,7 +179,10 @@ async function auditControls() {
           const normalPdf = await pdfMeasure(page, join(root, 'normal.pdf'))
           await page.getByRole('button', { name: 'Mode libre', exact: true }).click()
           await page.locator('.side-tool-panel.is-libre').waitFor()
-          const libre = await measure(page)
+          const editor = await measure(page)
+          const showPreview = page.getByRole('button', { name: 'Aperçu', exact: true })
+          if (await showPreview.isVisible()) await showPreview.click()
+          const libre = { ...await measure(page), libre: editor.libre }
           const frameDelta = libre.frame?.map((value, i) => round(value - normal.frame[i])) ?? null
           const itemCounts = [normal.visibleItems.length, libre.visibleItems.length]
           const sameItems = itemCounts[0] > 0 && JSON.stringify(normal.visibleItems) === JSON.stringify(libre.visibleItems)
@@ -188,6 +191,8 @@ async function auditControls() {
             ? normalPdf.textHash === librePdf.textHash && normalPdf.pages === librePdf.pages &&
               JSON.stringify(normalPdf.sizePoints) === JSON.stringify(librePdf.sizePoints)
             : null
+          const showEditor = page.getByRole('button', { name: 'Édition', exact: true })
+          if (await showEditor.isVisible()) await showEditor.click()
           await page.getByRole('button', { name: 'Fermer le mode libre', exact: true }).click()
           await page.locator('.side-tool-panel.is-libre').waitFor({ state: 'detached' })
           const closed = await measure(page)

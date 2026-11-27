@@ -232,7 +232,9 @@ function associerSyllabes(
     let guard = 0
     while (clips.length < AUDIO_ORDER_CLIPS && guard < 200) {
       guard += 1
-      const raw = pick(rng, type1Words(bank, rng, 24))
+      const candidates = type1Words(bank, rng, 24)
+      if (!candidates.length) break
+      const raw = pick(rng, candidates)
       const parts = syllabifyFr(displayVocabLabel(raw))
       const syll = parts.find((p) => syllableLetterCount(p) <= 3 && wordHasLessonLetter(p, bank))
       if (!syll) continue

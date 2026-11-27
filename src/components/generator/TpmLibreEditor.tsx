@@ -201,6 +201,7 @@ function NumInput({
   compact,
   wide,
   requireNumber = true,
+  applyWhileTyping = false,
   listId,
 }: {
   value: string
@@ -210,47 +211,58 @@ function NumInput({
   wide?: boolean
   /** Si true, refuse les textes non numériques (restaure). */
   requireNumber?: boolean
+  applyWhileTyping?: boolean
   /** datalist partagée (ex. 1–100) : choisir ou saisir. */
   listId?: string
 }) {
   const [draft, setDraft] = useState(value)
   const prevRef = useRef(value)
+  const inputRef = useRef<HTMLInputElement>(null)
+  const invalid = applyWhileTyping && parseFrNumber(draft) == null
 
   useEffect(() => {
-    setDraft(value)
+    if (!applyWhileTyping || document.activeElement !== inputRef.current) setDraft(value)
     prevRef.current = value
-  }, [value])
+  }, [applyWhileTyping, value])
 
   const finish = () => {
+    if (applyWhileTyping) return
     const trimmed = draft.trim()
-    if (!trimmed) {
-      setDraft(prevRef.current)
-      return
-    }
-    if (requireNumber && parseFrNumber(trimmed) == null) {
+    if (!trimmed || (requireNumber && parseFrNumber(trimmed) == null)) {
       setDraft(prevRef.current)
       return
     }
     onCommit(trimmed)
   }
 
-  return (
+  const input = (
     <input
+      ref={inputRef}
       className={`libre-line-input${wide ? ' is-wide' : ''}${compact ? ' is-num' : ''}`}
       type="text"
       inputMode="decimal"
       list={listId}
       value={draft}
       aria-label={ariaLabel}
-      onChange={(e) => setDraft(e.target.value)}
+      aria-invalid={invalid || undefined}
+      data-applied-value={applyWhileTyping ? value : undefined}
+      onChange={(event) => {
+        const text = event.target.value
+        setDraft(text)
+        if (applyWhileTyping && parseFrNumber(text) != null) onCommit(text)
+      }}
       onBlur={finish}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter') {
-          e.preventDefault()
-          ;(e.target as HTMLInputElement).blur()
-        }
+      onKeyDown={(event) => {
+        if (event.key === 'Enter') event.currentTarget.blur()
       }}
     />
+  )
+
+  return (
+    <>
+      {input}
+      {invalid && <small className="libre-field-error" role="alert">Saisissez un nombre.</small>}
+    </>
   )
 }
 
@@ -529,12 +541,14 @@ export function TpmLibreEditor({
   instruction,
   items,
   exerciseType,
+  liveArithmetic = false,
   onChangeInstruction,
   onChangeItems,
 }: {
   instruction: string
   items: MathItem[]
   exerciseType: string
+  liveArithmetic?: boolean
   onChangeInstruction: (value: string) => void
   onChangeItems: (items: MathItem[]) => void
 }) {
@@ -574,11 +588,12 @@ export function TpmLibreEditor({
   return (
     <div className="quad-libre-block tpm-libre-editor">
       <b>Contenu de la fiche (mode libre)</b>
-      <p className="type-hint muted">
-        Modifiez les nombres puis validez (✓) : les corrigés (cadre gris) se recalculent seuls et
-        ne sont pas modifiables. Un champ nombre laissé vide retrouve sa valeur précédente. Le
-        bouton sous le n° tire d’autres nombres au hasard pour cette question.
-      </p>
+      {!liveArithmetic && (
+        <p className="type-hint muted">
+          Modifiez les nombres puis validez (✓). Les corrigés se recalculent.
+          Le bouton sous le numéro tire d’autres nombres pour cette question.
+        </p>
+      )}
       <datalist id={NUM_1_100_LIST_ID}>
         {NUM_1_100_OPTIONS.map((n) => (
           <option key={n} value={n} />
@@ -614,7 +629,7 @@ export function TpmLibreEditor({
               </button>
             </div>
             <div className="libre-item-body">
-              {renderFields(item, index, patch, withProps, exerciseType, onChangeItems, items)}
+              {renderFields(item, index, patch, withProps, exerciseType, onChangeItems, items, liveArithmetic)}
             </div>
           </li>
         ))}
@@ -675,6 +690,7 @@ function renderFields(
   exerciseType: string,
   onChangeItems: (items: MathItem[]) => void,
   items: MathItem[] = [],
+  liveArithmetic = false,
 ) {
   if (hasCscFields(item, exerciseType)) return <TcmCscFields item={item} typeId={exerciseType} change={(next) => patch(index, next)} />
   if (item.decompose) {
@@ -1583,6 +1599,7 @@ function renderFields(
             compact
             value={fmt(value)}
             ariaLabel={isMissing ? `Corrigé ${label}` : label}
+            applyWhileTyping={liveArithmetic}
             onCommit={(raw) => {
               const n = parseFrNumber(raw)
               if (n == null) return

@@ -23,7 +23,7 @@ import { TopbarTools } from '@/components/generator/TopbarTools'
 import { FooterSidePanel } from '@/components/generator/FooterSidePanel'
 import { Header } from '@/components/generator/Header'
 import { LibreSidePanel } from '@/components/generator/LibreSidePanel'
-import { SettingsPanel } from '@/components/generator/SettingsPanel'
+import { ActivitySettings, SettingsPanel } from '@/components/generator/SettingsPanel'
 import { ResultPanel } from '@/components/generator/ResultPanel'
 import { contrastOnTheme, readThemeColor, theorySectionColors } from '@/components/generator/theme'
 import { applyBaseFontSize, DEFAULT_BASE_FONT_SIZE, readBaseFontSize } from '@/components/generator/typography'
@@ -77,6 +77,7 @@ import {
   exerciseStartIndex,
   pageAsConfig,
   pageBlocks,
+  replacePageBlock,
 } from '@/math/page-model'
 import { randomSeed } from '@/math/rng'
 import type {
@@ -139,6 +140,21 @@ export function GeneratorPage({
   const theoryColors = theorySectionColors(themeColor)
   const [footerPanelOpen, setFooterPanelOpen] = useState(false)
   const [libreMode, setLibreMode] = useState(() => openedFiche?.recipe.libreMode ?? false)
+  const [libreView, setLibreView] = useState<'editor' | 'preview'>('editor')
+  const editorFocusRef = useRef<HTMLElement | null>(null)
+  const changeLibreView = (view: 'editor' | 'preview') => {
+    if (view === libreView) return
+    setLibreView(view)
+    requestAnimationFrame(() => {
+      const panel = document.getElementById(view === 'editor' ? 'activity-editor' : 'activity-preview')
+      const lastField = editorFocusRef.current
+      if (view === 'editor' && lastField && panel?.contains(lastField) && lastField.getClientRects().length) {
+        lastField.focus({ preventScroll: true })
+      } else {
+        panel?.focus({ preventScroll: true })
+      }
+    })
+  }
   const [ficheRef, setFicheRef] = useState<{ id: string; name: string } | null>(() =>
     openedFiche ? { id: openedFiche.id, name: openedFiche.name } : null,
   )
@@ -200,20 +216,37 @@ export function GeneratorPage({
   const pageExerciseBlocks = pageBlocks(activePage)
   const safeBlockIndex = Math.min(blockIndex, Math.max(0, pageExerciseBlocks.length - 1))
   const activeBlock = pageExerciseBlocks[safeBlockIndex] ?? blockFromPage(activePage)
-  /**
-   * Mode libre : aperçu et impression montrent la dernière version validée (bouton Valider).
-   * Exception : saisie au clic sur la fiche (repérage), qui reste en direct.
-   */
-  const previewSource =
-    libreMode && !activeBlock.coordLibre && libreSnapshot && libreSnapshot.length === pages.length
-      ? libreSnapshot.map((page, index) => {
-          const live = pages[index] ?? page
-          if (pageBlocks(live).some((block) => block.exerciseType === 'tcm-csc-ex18')) return live
-          return live.domain === 'tcm-csc' && live.exerciseGapPx !== page.exerciseGapPx
-            ? { ...page, exerciseGapPx: live.exerciseGapPx }
-            : page
-        })
-      : null
+  const isAdditionPilot = activePage.domain === 'algèbre' && activeBlock.exerciseType === 'addition-ligne'
+  const additionA4 = isAdditionPilot && !isA5DoubleFormat(sheetFormat)
+  const liveAddition = libreMode && additionA4
+
+  /** Les exercices encore ouverts avec validation conservent leur dernière version appliquée. */
+  const previewSource = useMemo(() => {
+    if (!libreMode || activeBlock.coordLibre || !libreSnapshot || libreSnapshot.length !== pages.length) return null
+    return libreSnapshot.map((page, index) => {
+      const live = pages[index] ?? page
+      if (live.domain !== page.domain) return live
+      const liveBlocks = pageBlocks(live)
+      if (liveBlocks.some((block) => block.exerciseType === 'tcm-csc-ex18')) return live
+      if (live.domain === 'algèbre' && !isA5DoubleFormat(sheetFormat)) {
+        const savedBlocks = pageBlocks(page)
+        const includesAddition = [...savedBlocks, ...liveBlocks].some(({ exerciseType }) =>
+          exerciseType === 'addition-ligne',
+        )
+        if (includesAddition) {
+          if (savedBlocks.length !== liveBlocks.length) return live
+          return liveBlocks.reduce<PageConfig>((applied, block, index) =>
+            block.exerciseType === 'addition-ligne' || savedBlocks[index]?.exerciseType === 'addition-ligne'
+              ? replacePageBlock(applied, index, block)
+              : applied,
+          page)
+        }
+      }
+      return live.domain === 'tcm-csc' && live.exerciseGapPx !== page.exerciseGapPx
+        ? { ...page, exerciseGapPx: live.exerciseGapPx }
+        : page
+    })
+  }, [libreMode, activeBlock.coordLibre, libreSnapshot, pages, sheetFormat])
   const previewWorksheets = useMemo(
     () => (previewSource ? buildWorksheets(previewSource, seed, pointsPerQuestion, logisticsLayout) : worksheets),
     [previewSource, seed, worksheets, pointsPerQuestion, logisticsLayout],
@@ -300,6 +333,7 @@ export function GeneratorPage({
     worksheets,
     seed,
     libreMode,
+    additionA4,
     isPhraseDomain: ctx.isPhraseDomain,
     isCalliDomain: ctx.isCalliDomain,
     isJeuxDomain: ctx.isJeuxDomain,
@@ -445,7 +479,23 @@ export function GeneratorPage({
     updatePage({ calliText: joinCalliLines(ctx.calliFields.filter((_, i) => i !== index)) })
   }
 
+  function confirmAdditionOutput(action: 'imprimer' | 'enregistrer') {
+    if (!liveAddition) return true
+    const field = document.querySelector<HTMLInputElement>('#activity-editor input[data-applied-value][aria-invalid="true"]')
+    if (!field) return true
+    const calculation = field.closest('[role="group"]')?.getAttribute('aria-label')
+    const label = [calculation, field.getAttribute('aria-label')].filter(Boolean).join(' · ')
+    if (window.confirm(`${label} contient une saisie invalide. Voulez-vous ${action} la fiche avec la dernière valeur valide (${field.dataset.appliedValue}) ?`)) {
+      return true
+    }
+    setLibreView('editor')
+    setFooterPanelOpen(false)
+    requestAnimationFrame(() => field.focus())
+    return false
+  }
+
   async function printAll() {
+    if (!confirmAdditionOutput('imprimer')) return
     try {
       const printRoot=document.querySelector<HTMLElement>('.print-only-sheets')
       if(printRoot)await waitForGrammarPrintImages(printRoot)
@@ -569,10 +619,21 @@ export function GeneratorPage({
     setAllDraftGrids,
   }
 
+  const footerPanel = footerPanelOpen ? (
+    <FooterSidePanel
+      institutional={institutional}
+      setInstitutional={setInstitutional}
+      evalMode={evalMode}
+      activeExerciseLabel={exerciseTypeById[activeBlock.exerciseType]?.label ?? ''}
+      referenceLocked={referenceLocked}
+      onClose={() => setFooterPanelOpen(false)}
+    />
+  ) : null
+
   const resultPanelProps = {
     ...ctx,
     libreMode,
-    validateManual,
+    validateManual: liveAddition ? undefined : validateManual,
     downloadActiveTcfAudios: audio.downloadActiveTcfAudios,
     downloadActiveTcmCfrAudios: audio.downloadActiveTcmCfrAudios,
     downloadActiveTcmCscAudios: audio.downloadActiveTcmCscAudios,
@@ -588,7 +649,9 @@ export function GeneratorPage({
     generate,
     printAll,
     printCorrections,
-    onSaveFiche: () => setSaveOpen(true),
+    onSaveFiche: () => {
+      if (confirmAdditionOutput('enregistrer')) setSaveOpen(true)
+    },
     onOpenBook: () =>
       setBookRequest({
         kind: activePage.domain === 'alphabetisation' ? 'alpha' : 'soutien',
@@ -676,9 +739,13 @@ export function GeneratorPage({
               storeSheetMargin(margin, activePage.domain)
             }}
             footerOpen={footerPanelOpen}
-            onToggleFooter={() => setFooterPanelOpen((v) => !v)}
+            onToggleFooter={() => {
+              setFooterPanelOpen((open) => !open)
+              if (libreMode) setLibreView('editor')
+            }}
             libreOpen={libreMode}
             onToggleLibre={() => {
+              setLibreView('editor')
               setLibreMode((prev) => {
                 const next = !prev
                 setLibreSnapshot(next ? pages : null)
@@ -695,14 +762,13 @@ export function GeneratorPage({
                   const patch: Partial<typeof activeBlock> =
                     ctx.isTcf || ctx.isGrammaireExercise
                       ? { libreItems: undefined, libreInstruction: undefined }
-                      : {
-                          libreItems: seedItems,
-                          libreInstruction: seedInstruction,
-                        }
+                      : isAdditionPilot
+                        ? {}
+                        : { libreItems: seedItems, libreInstruction: seedInstruction }
                   if (ctx.isFormes || ctx.isCadrans || ctx.isDroites || ctx.isConstruire || ctx.isTransform) {
                     patch.coordLibre = true
                   }
-                  if (ctx.isNumberLibreDomain) patch.numberLibre = true
+                  if (ctx.isNumberLibreDomain && !isAdditionPilot) patch.numberLibre = true
                   if (ctx.isPhraseDomain && isPhraseLibreEditable(activeBlock.exerciseType)) {
                     patch.verbGroup = 'libre'
                     patch.phraseItems = activeBlock.phraseItems ?? sheetBlock?.items
@@ -711,7 +777,7 @@ export function GeneratorPage({
                   }
                   if (ctx.soutienKind === 'mots') patch.soutienMotsLibre = true
                   if (ctx.soutienKind === 'completer') patch.soutienCompleterLibre = true
-                  updatePage(patch)
+                  if (Object.keys(patch).length) updatePage(patch)
                 }
                 // Fermeture : on garde le contenu libre (pas de régénération de la fiche).
                 return next
@@ -741,14 +807,36 @@ export function GeneratorPage({
           <p className="hero-text">Chaque génération crée une nouvelle série d’exercices aléatoires.</p>
         </div>
         <div
-          className={`workspace${libreMode ? ' has-libre-panel' : ''}${footerPanelOpen ? ' has-footer-panel' : ''}`}
+          className={`workspace${libreMode ? ' has-libre-panel' : ''}${!libreMode && footerPanelOpen ? ' has-footer-panel' : ''}`}
+          data-libre-view={libreMode ? libreView : undefined}
         >
-          <SettingsPanel {...settingsPanelProps} />
-          <WorksheetImageProvider enabled={libreMode} overrides={imageOverrides} onChange={setImageOverrides}>
-            <ResultPanel {...resultPanelProps} />
-          </WorksheetImageProvider>
-          {!libreMode ? null : (
+          {libreMode && (
+            <div className="libre-mobile-switch mode-toggle is-2 no-print" role="group" aria-label="Afficher en mode libre">
+              <button
+                type="button"
+                className={libreView === 'editor' ? 'active' : undefined}
+                aria-pressed={libreView === 'editor'}
+                aria-controls="activity-editor"
+                onClick={() => changeLibreView('editor')}
+              >
+                Édition
+              </button>
+              <button
+                type="button"
+                className={libreView === 'preview' ? 'active' : undefined}
+                aria-pressed={libreView === 'preview'}
+                aria-controls="activity-preview"
+                onClick={() => changeLibreView('preview')}
+              >
+                Aperçu
+              </button>
+            </div>
+          )}
+          {libreMode ? (
             <LibreSidePanel
+              settings={<ActivitySettings {...settingsPanelProps} />}
+              footer={footerPanel}
+              onFocusCapture={(event) => { editorFocusRef.current = event.target }}
               activeBlock={activeBlock}
               activeSheet={activeSheet}
               logistiqueItemsOnSheet={logistiqueItemsOnSheet}
@@ -757,6 +845,7 @@ export function GeneratorPage({
               safeBlockIndex={safeBlockIndex}
               isPhraseDomain={ctx.isPhraseDomain}
               isNumberLibreDomain={ctx.isNumberLibreDomain}
+              liveAddition={liveAddition}
               isCalliDomain={ctx.isCalliDomain}
               isJeuxDomain={ctx.isJeuxDomain}
               isTcf={ctx.isTcf}
@@ -786,19 +875,11 @@ export function GeneratorPage({
                 setLibreSnapshot(null)
               }}
             />
-          )}
-          {!footerPanelOpen ? null : (
-            <FooterSidePanel
-              institutional={institutional}
-              setInstitutional={setInstitutional}
-              evalMode={evalMode}
-              activeExerciseLabel={
-                exerciseTypeById[activeBlock.exerciseType]?.label ?? ''
-              }
-              referenceLocked={referenceLocked}
-              onClose={() => setFooterPanelOpen(false)}
-            />
-          )}
+          ) : <SettingsPanel {...settingsPanelProps} />}
+          <WorksheetImageProvider enabled={libreMode} overrides={imageOverrides} onChange={setImageOverrides}>
+            <ResultPanel {...resultPanelProps} />
+          </WorksheetImageProvider>
+          {!libreMode && footerPanel}
         </div>
       </main>
       {saveOpen ? (
