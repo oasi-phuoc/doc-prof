@@ -1,0 +1,204 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Définir la **qualité** et l'**assurance qualité**\n- Distinguer critères **subjectifs** et **objectifs**\n- Expliquer le rôle de la logistique (échantillons, **quarantaine AQ**)\n- Comparer **sous- / bonne / sur-qualité**\n- Choisir entre contrôle **complet** et **par échantillonnage** (improvisé, simple, multiple) et décrire un contrôle de **fonctionnement**",
+  "overview": "## Aperçu du module 309\n\n- Traduire une exigence en critère observable avec une unité et une tolérance.\n- Distinguer contrôle exhaustif, échantillonnage et assurance qualité.\n- Rattacher le constat et la décision au lot contrôlé.",
+  "replacements": [
+    {
+      "from": "Fournisseur fiable → échantillonnage suffit. Parfois **aucun** contrôle destinataire si le fournisseur a un SMQ approuvé (ex. ISO 9001) et accord écrit.",
+      "to": "La fiabilité du fournisseur contribue à définir le plan, avec les exigences et conséquences d’un défaut. Une certification ne remplace pas à elle seule les contrôles convenus.",
+      "reason": "Évite d’assimiler certification à autorisation de dispense."
+    }
+  ],
+  "summary": [
+    "Traduire une exigence en critère observable avec une unité et une tolérance.",
+    "Distinguer contrôle exhaustif, échantillonnage et assurance qualité.",
+    "Rattacher le constat et la décision au lot contrôlé."
+  ],
+  "glossary": [
+    [
+      "Assurance qualité",
+      "Organisation qui donne confiance dans la capacité à répondre aux exigences."
+    ],
+    [
+      "Caractéristique",
+      "Propriété mesurable ou observable d’un article."
+    ],
+    [
+      "Conformité",
+      "Satisfaction d’une exigence définie."
+    ],
+    [
+      "Contrôle complet",
+      "Vérification de toutes les unités du lot."
+    ],
+    [
+      "Contrôle visuel",
+      "Vérification de critères observables avec la méthode définie."
+    ],
+    [
+      "Échantillon",
+      "Partie du lot choisie pour un contrôle."
+    ],
+    [
+      "Exigence",
+      "Critère attendu tel qu’il est défini au dossier."
+    ],
+    [
+      "Libération",
+      "Autorisation de mettre le lot à disposition après le contrôle prévu."
+    ],
+    [
+      "Lot non conforme",
+      "Lot qui ne satisfait pas aux règles d’acceptation applicables."
+    ],
+    [
+      "Mesure",
+      "Détermination d’une valeur avec un instrument, une méthode et une unité."
+    ],
+    [
+      "Plan de contrôle",
+      "Description des critères, prélèvements et règles de décision."
+    ],
+    [
+      "Tolérance",
+      "Intervalle ou écart admis autour de la valeur de référence."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "On inspecte 45 pièces. Quatre sont non conformes. Combien sont conformes à ce contrôle ?",
+      "answer": "41 pièces.",
+      "calculation": "45 − 4 = 41."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Un diamètre est de 24,8 mm et la valeur de référence de 25,0 mm. Calculez l’écart absolu.",
+      "answer": "0,2 mm.",
+      "calculation": "25,0 − 24,8 = 0,2 mm."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Une fiche fixe 80 ± 2 mm. Donnez les deux limites.",
+      "answer": "78 et 82 mm.",
+      "calculation": "80 − 2 = 78 mm. 80 + 2 = 82 mm."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Le contrôle prend 75 secondes par pièce. Donnez la durée pour huit pièces, en minutes.",
+      "answer": "Dix minutes.",
+      "calculation": "8 × 75 = 600 s = 10 min."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Neuf unités sur un échantillon de 180 ont un écart. Calculez la part constatée dans l’échantillon.",
+      "answer": "5 %.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "9 ÷ 180 × 100 = 5 %."
+    },
+    {
+      "id": "maths-fiche-6",
+      "kind": "maths",
+      "prompt": "Deux lots testés donnent 12 écarts sur 300 et 8 sur 100. Calculez la proportion cumulée.",
+      "answer": "5 %.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "(12 + 8) ÷ (300 + 100) × 100 = 5 %."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quelle différence entre assurance qualité et contrôle d’entrée ?",
+      "answer": "L’assurance organise la qualité. Le contrôle d’entrée conçoit ou réalise des vérifications sur les livraisons."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Qu’est-ce qu’un critère mesurable ?",
+      "answer": "Un critère associé à une méthode d’observation, une unité si nécessaire et une règle de décision."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Pourquoi définir l’échantillon à l’avance ?",
+      "answer": "Pour appliquer le même plan et limiter les biais de sélection."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Que faut-il consigner avec une mesure ?",
+      "answer": "Lot, critère, valeur, unité, référence de contrôle et suite éventuelle."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Une certification suffit-elle à supprimer le contrôle prévu ?",
+      "answer": "Le contrôle change seulement selon le plan et les responsabilités applicables."
+    },
+    {
+      "id": "verification-fiche-6",
+      "kind": "verification",
+      "prompt": "Que sépare un stock bloqué d’un stock libéré ?",
+      "answer": "La décision autorisée d’utiliser ou de distribuer le lot."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Une pièce est juste à la limite annoncée. Comment décidez-vous ?",
+      "answer": "Vérifier l’intervalle, la méthode, l’instrument et la règle d’acceptation avant de conclure."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Le lot arrive sans document demandé au plan de contrôle. Quelle suite ?",
+      "answer": "Consigner la pièce manquante, maintenir le statut approprié et demander le document."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Les pièces contrôlées proviennent toutes du carton ouvert d’abord. Pourquoi le signaler ?",
+      "answer": "Ce choix peut biaiser le résultat. Appliquer le plan d’échantillonnage prévu."
+    },
+    {
+      "id": "situation-fiche-4",
+      "kind": "situation",
+      "prompt": "Deux mesures différentes sont relevées sur la même pièce. Que vérifiez-vous ?",
+      "answer": "Vérifier procédure, unité, instrument et conditions, puis transmettre l’écart avec les relevés.",
+      "approvedFor": [
+        "CFC"
+      ]
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "9.1 Importance de l'assurance qualité",
+      "file": "log-309-notions-1-v001.svg",
+      "alt": "Exigence. Critère et tolérance. Contrôle. Méthode et résultat. Statut. Libération ou suivi.",
+      "caption": "La décision s’appuie sur un résultat et son mode de mesure.",
+      "sha256": "1820b7f7029a793f23f8ec0a8566feb5cc2a2943a8384709830c0fe1e755774f",
+      "origin": "Illustration originale Doc-Prof du module 309."
+    },
+    {
+      "anchor": "9.5 Contrôles de qualité dans les entreprises",
+      "file": "log-309-notions-2-v001.svg",
+      "alt": "Complet. Toutes les unités sont vérifiées. Échantillon. Une partie définie est vérifiée.",
+      "caption": "Le plan applicable indique la sélection et la règle d’acceptation.",
+      "sha256": "1f123b9cf2074fafb7ec7d096c27959f4278a33b2cde7e596ec1b46c571c2900",
+      "origin": "Illustration originale Doc-Prof du module 309."
+    }
+  ]
+}

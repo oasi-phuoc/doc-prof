@@ -1,0 +1,209 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Relier **délai d'approvisionnement** et besoin de stock\n- Comparer stock, **JIT** et sync. fabrication ainsi que les concepts de **sourcing**\n- Choisir une **procédure de commande** adaptée\n- Calculer une **Qopt** (Andler) dans les conditions du modèle\n- Utiliser les analyses **ABC** et **XYZ** et en déduire des formes d'appro / emplacements\n- Expliquer l'impact du mode d'acquisition sur la **réception**",
+  "overview": "## Aperçu du module 311\n\n- Comparer approvisionnement sur stock, cadencé et synchronisé au besoin.\n- Choisir un déclencheur de commande et sélectionner les critères de sourcing.\n- Interpréter la quantité économique et les analyses ABC et XYZ avec leurs hypothèses.",
+  "replacements": [
+    {
+      "from": "Qopt = intersection / point bas des coûts totaux.",
+      "to": "Dans le modèle usuel, la quantité économique minimise la somme des coûts de passation et de stockage retenus. Vérifier ensuite les tailles de lots et les contraintes réelles.",
+      "reason": "Précise le sens opérationnel de l’optimum."
+    },
+    {
+      "from": "**Solution (ex.) :** fournisseur ISO 9001 inclut les points de contrôle client dans son contrôle sortie + certificat → réception réduite à réception/stockage/enregistrement. Applicable **au cas par cas** selon directives internes.",
+      "to": "Une adaptation du contrôle d’entrée suppose un plan validé, des preuves et des responsabilités définies. Une certification seule ne supprime pas un contrôle convenu.",
+      "reason": "Nuance le rôle de la certification."
+    }
+  ],
+  "summary": [
+    "Comparer approvisionnement sur stock, cadencé et synchronisé au besoin.",
+    "Choisir un déclencheur de commande et sélectionner les critères de sourcing.",
+    "Interpréter la quantité économique et les analyses ABC et XYZ avec leurs hypothèses."
+  ],
+  "glossary": [
+    [
+      "Analyse ABC",
+      "Classement selon un critère d’importance, souvent la valeur annuelle consommée."
+    ],
+    [
+      "Analyse XYZ",
+      "Classement selon la régularité ou la variabilité de la consommation."
+    ],
+    [
+      "Coût de passation",
+      "Coût pris en compte pour traiter une commande."
+    ],
+    [
+      "Délai d’approvisionnement",
+      "Temps nécessaire jusqu’à la disponibilité de la marchandise."
+    ],
+    [
+      "Juste-à-temps",
+      "Approvisionnement coordonné avec le moment du besoin."
+    ],
+    [
+      "Lot économique",
+      "Quantité qui minimise les coûts retenus par un modèle de commande et de stockage."
+    ],
+    [
+      "Point de commande",
+      "Seuil qui déclenche la revue ou la commande prévue."
+    ],
+    [
+      "Rythme de commande",
+      "Cadence à laquelle le stock est revu ou la commande est passée."
+    ],
+    [
+      "Sourcing multiple",
+      "Approvisionnement auprès de plusieurs fournisseurs."
+    ],
+    [
+      "Sourcing unique",
+      "Approvisionnement confié à une source choisie."
+    ],
+    [
+      "Stock tampon",
+      "Réserve pour absorber une variation dans le flux."
+    ],
+    [
+      "Synchronisation",
+      "Coordination des arrivées et de la consommation."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "La consommation est de 18 unités par jour. Le délai est de trois jours. Calculez le besoin pendant le délai.",
+      "answer": "54 unités.",
+      "calculation": "18 × 3 = 54."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Il reste 62 pièces et le maximum retenu est de 150. Sans autre entrée ni réservation, combien acheter ?",
+      "answer": "88 pièces.",
+      "calculation": "150 − 62 = 88."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "La demande hebdomadaire vaut 84 pièces. Des lots de 21 pièces sont livrés. Combien de lots couvrent la demande ?",
+      "answer": "Quatre lots.",
+      "calculation": "84 ÷ 21 = 4."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Le délai passe de cinq à huit jours avec 12 unités consommées par jour. Quel volume supplémentaire couvre l’écart ?",
+      "answer": "36 unités.",
+      "calculation": "(8 − 5) × 12 = 36 unités."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Pour la formule Q = √(2 × demande annuelle × coût par commande ÷ coût annuel de stockage par unité), utilisez 1 200 pièces, 25 CHF et 1,50 CHF.",
+      "answer": "La quantité du modèle est de 200 pièces.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "√(2 × 1 200 × 25 ÷ 1,50) = √40 000 = 200."
+    },
+    {
+      "id": "maths-fiche-6",
+      "kind": "maths",
+      "prompt": "Un article représente 7 500 CHF de valeur annuelle consommée sur 30 000 CHF. Calculez sa part pour l’analyse ABC.",
+      "answer": "25 %.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "7 500 ÷ 30 000 × 100 = 25 %."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quelle différence entre rythme et point de commande ?",
+      "answer": "Le rythme suit un moment fixé. Le point suit un seuil de stock."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Que montre le classement XYZ ?",
+      "answer": "La régularité ou la variabilité de la consommation."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Comment reliez-vous la demande et le stock pendant le délai ?",
+      "answer": "La consommation attendue pendant le délai détermine le besoin à couvrir avant la prochaine disponibilité."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Quel compromis fait un lot économique ?",
+      "answer": "Le coût de commander plus souvent et le coût de stocker une quantité moyenne plus élevée."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Citez un avantage et une limite du juste-à-temps.",
+      "answer": "Moins de stock, mais une dépendance plus forte à la fiabilité du flux."
+    },
+    {
+      "id": "verification-fiche-6",
+      "kind": "verification",
+      "prompt": "Pourquoi choisir plusieurs sources ?",
+      "answer": "Pour limiter la dépendance ou accroître la disponibilité, en tenant compte des coûts et de la coordination."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "La demande est stable mais le délai fournisseur augmente. Que réévaluez-vous ?",
+      "answer": "Le besoin pendant le délai, la date de déclenchement et les réserves utiles."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Le passage en juste-à-temps multiplie les livraisons. Quel effet contrôlez-vous ?",
+      "answer": "La charge de réception, les créneaux, le coût de transport et le niveau de service."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Deux fournisseurs proposent le même prix mais des délais variables. Que comparez-vous ?",
+      "answer": "Délai moyen, régularité, risque et coût total à conditions comparables."
+    },
+    {
+      "id": "situation-fiche-4",
+      "kind": "situation",
+      "prompt": "Un article à forte valeur est irrégulier. Comment interprétez-vous ce résultat ?",
+      "answer": "La valeur et la variabilité sont deux critères distincts. Ajuster le suivi aux deux et aux enjeux réels.",
+      "approvedFor": [
+        "CFC"
+      ]
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "11.5 Procédures de commande (variation liée à la consommation)",
+      "file": "log-311-notions-1-v001.svg",
+      "alt": "Point de commande. Stock au seuil défini. Rythme de commande. Date de revue convenue.",
+      "caption": "Le choix du déclencheur ne fixe pas à lui seul la quantité.",
+      "sha256": "2b5c7f7efeb7d7dcf8761998cf692a8c6a20b7374480441c5d0e1ac4bd5498d8",
+      "origin": "Illustration originale Doc-Prof du module 311."
+    },
+    {
+      "anchor": "11.7 Analyse ABC / XYZ",
+      "file": "log-311-notions-2-v001.svg",
+      "alt": "ABC. Importance selon un critère. XYZ. Variabilité de la demande.",
+      "caption": "Un article fortement consommé en valeur peut aussi être irrégulier.",
+      "sha256": "9090ba15506b72d0eaa4a7c455728b658da2a00791d36dc911045def90c55123",
+      "origin": "Illustration originale Doc-Prof du module 311."
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Citer les principaux types d'**erreurs de livraison** et comment les détecter\n- Distinguer dommages sur suremballage et emballage de **vente**\n- Expliquer le rôle des **indicateurs** (basculement, choc, température) et des enregistreurs\n- Appliquer la procédure en **5 étapes** et le comportement en cas de **sinistre** (protocole, photos, signatures)",
+  "overview": "## Aperçu du module 307\n\n- Distinguer une erreur de livraison d’un dommage et d’une cause supposée.\n- Documenter l’état, l’identification et les éléments utiles au suivi.\n- Orienter la marchandise selon la procédure et l’état constaté.",
+  "replacements": [
+    {
+      "from": "Mise en page libre ; contenu correct + **visa du transporteur** indispensables. Joindre **photos** + bon de transport / livraison traité.",
+      "to": "Utiliser le formulaire ou l’enregistrement prévu, avec date, références, constat et pièces utiles. L’intervention du transporteur dépend de la procédure et des règles applicables.",
+      "reason": "Évite de présenter une signature comme condition absolue."
+    }
+  ],
+  "summary": [
+    "Distinguer une erreur de livraison d’un dommage et d’une cause supposée.",
+    "Documenter l’état, l’identification et les éléments utiles au suivi.",
+    "Orienter la marchandise selon la procédure et l’état constaté."
+  ],
+  "glossary": [
+    [
+      "Avarie",
+      "Dommage constaté sur un bien ou un envoi."
+    ],
+    [
+      "Bon de transport",
+      "Trace qui accompagne ou documente la prise en charge du transport."
+    ],
+    [
+      "Cause",
+      "Événement à établir à partir des constatations et de l’enquête."
+    ],
+    [
+      "Constat",
+      "Description précise de ce qui est observé au moment du contrôle."
+    ],
+    [
+      "Dommage apparent",
+      "Altération observable lors du contrôle usuel."
+    ],
+    [
+      "Emballage de vente",
+      "Emballage dans lequel le produit est remis à l’utilisateur final."
+    ],
+    [
+      "Indicateur de choc",
+      "Repère signalant un événement selon ses caractéristiques, sans établir seul la cause."
+    ],
+    [
+      "Isolement",
+      "Mise à part selon la procédure pour éviter la distribution d’un article en écart."
+    ],
+    [
+      "Preuve",
+      "Élément vérifiable conservé pour appuyer le constat."
+    ],
+    [
+      "Réclamation",
+      "Signalement d’un écart accompagné d’une demande de traitement."
+    ],
+    [
+      "Suremballage",
+      "Emballage extérieur destiné à regrouper et protéger pendant le transport."
+    ],
+    [
+      "Traçabilité",
+      "Ensemble des données qui permettent de retrouver l’envoi et ses mouvements."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Sur 64 colis, sept ont un dommage apparent. Combien n’en présentent pas au contrôle initial ?",
+      "answer": "57 colis.",
+      "calculation": "64 − 7 = 57."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Une livraison contient 14 cartons de 12 articles, dont 19 sont mis en contrôle. Combien restent hors de ce contrôle spécifique ?",
+      "answer": "149 articles.",
+      "calculation": "14 × 12 − 19 = 149."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Sur 150 dossiers, 12 nécessitent une réserve. Calculez le taux.",
+      "answer": "8 %.",
+      "calculation": "12 ÷ 150 × 100 = 8 %."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Quatre dossiers sont traités en 2, 3, 5 et 6 jours. Calculez la moyenne.",
+      "answer": "Quatre jours.",
+      "calculation": "(2 + 3 + 5 + 6) ÷ 4 = 4 jours."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Le taux de dossiers endommagés passe de 4,0 % à 2,5 %. Calculez l’écart et la baisse relative.",
+      "answer": "1,5 point et 37,5 % de baisse relative.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "4,0 − 2,5 = 1,5 point. 1,5 ÷ 4,0 × 100 = 37,5 %."
+    },
+    {
+      "id": "maths-fiche-6",
+      "kind": "maths",
+      "prompt": "Les zones A et B traitent 60 et 140 colis, avec 6 et 7 dommages. Calculez le taux global.",
+      "answer": "6,5 %.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "(6 + 7) ÷ (60 + 140) × 100 = 6,5 %."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quelle différence entre un manquant et un dommage apparent ?",
+      "answer": "Un manquant concerne la quantité, un dommage l’état observé."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Que prouve une photographie ?",
+      "answer": "L’état visible dans son cadre au moment du constat, avec la référence et les autres éléments utiles."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Pourquoi distinguer la mesure de température de son historique ?",
+      "answer": "Une mesure ponctuelle ne suffit pas à établir ce qui s’est produit sur tout le trajet."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Que faire si un indicateur de choc a changé ?",
+      "answer": "Noter le constat et appliquer le contrôle prévu, sans attribuer la cause."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Qu’indique le suremballage ?",
+      "answer": "Il protège ou regroupe les produits, mais son état ne suffit pas toujours à connaître leur état intérieur."
+    },
+    {
+      "id": "verification-fiche-6",
+      "kind": "verification",
+      "prompt": "Pourquoi relever les marques et références ?",
+      "answer": "Elles permettent de rattacher le constat aux bons articles et documents."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Un carton présente une déchirure avant ouverture. Qu’écrivez-vous ?",
+      "answer": "La référence, l’emplacement du défaut, le moment et les preuves disponibles, puis signaler selon la procédure."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Un fournisseur attribue le dommage au dépôt. Vous n’avez pas de preuve de la cause. Que transmettez-vous ?",
+      "answer": "Les faits et les pièces de dossier. Distinguer ce qui est constaté et ce qui doit être vérifié."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Le contenu est fragile et le transporteur repart. Que faites-vous du dossier ?",
+      "answer": "Consigner les réserves pertinentes, préserver les éléments utiles et informer le poste désigné selon les délais."
+    },
+    {
+      "id": "situation-fiche-4",
+      "kind": "situation",
+      "prompt": "Des écarts semblables reviennent avec un même emballage. Proposez un suivi.",
+      "answer": "Comparer lots et conditions comparables, déterminer les contrôles à ajouter et suivre les résultats.",
+      "approvedFor": [
+        "CFC"
+      ]
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "7.1 Erreur dans la livraison",
+      "file": "log-307-notions-1-v001.svg",
+      "alt": "Quantité. Manquant ou surplus. Référence. Article ou destination. État. Dommage observable.",
+      "caption": "Une description précise aide à choisir le bon contrôle.",
+      "sha256": "fba1f16f340090ed2c3eee78efe6681a317f2368be599e3ee12b776701542c74",
+      "origin": "Illustration originale Doc-Prof du module 307."
+    },
+    {
+      "anchor": "7.3 En cas de dommage",
+      "file": "log-307-notions-2-v001.svg",
+      "alt": "Identifier. Envoi et unité. Constater. État et moment. Suivre. Signalement et décision.",
+      "caption": "Les preuves accompagnent le dossier de traitement.",
+      "sha256": "dd578a0dd371e535c98d2efc3330eaebaefd44057f45a34a636db2d544a40356",
+      "origin": "Illustration originale Doc-Prof du module 307."
+    }
+  ]
+}

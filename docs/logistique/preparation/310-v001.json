@@ -1,0 +1,195 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Expliquer pourquoi et comment **préparer** (réemballer / étiqueter) avant stockage\n- Décrire l'**enregistrement** des marchandises dans l'ERP\n- Définir un **article** et lire l'en-tête d'une fiche de stock (UL, UV, point de commande…)\n- Distinguer stock **disponible**, réservé, AQ, bloqué et **total**\n- Comptabiliser des **entrées** et **sorties** simples",
+  "overview": "## Aperçu du module 310\n\n- Relier le conditionnement, l’identification et l’aptitude au stockage.\n- Enregistrer la référence, la quantité, le lot et le statut dans le dossier.\n- Confirmer l’emplacement avant de rendre la marchandise disponible.",
+  "replacements": [],
+  "summary": [
+    "Relier le conditionnement, l’identification et l’aptitude au stockage.",
+    "Enregistrer la référence, la quantité, le lot et le statut dans le dossier.",
+    "Confirmer l’emplacement avant de rendre la marchandise disponible."
+  ],
+  "glossary": [
+    [
+      "Conditionnement",
+      "Présentation qui permet de conserver, identifier ou manipuler l’article."
+    ],
+    [
+      "Conversion d’unité",
+      "Passage de l’unité de livraison à l’unité de base, par exemple carton à pièce."
+    ],
+    [
+      "Donnée article",
+      "Information de référence sur un article."
+    ],
+    [
+      "Étiquette de stock",
+      "Support qui identifie l’article et les données de suivi nécessaires."
+    ],
+    [
+      "Emplacement",
+      "Position repérée dans l’entrepôt."
+    ],
+    [
+      "Lot",
+      "Ensemble d’unités dont l’identifiant permet le suivi commun."
+    ],
+    [
+      "Mise en stock",
+      "Affectation et enregistrement de la marchandise dans un emplacement."
+    ],
+    [
+      "Quantité disponible",
+      "Quantité utilisable après prise en compte des réservations et blocages."
+    ],
+    [
+      "Reconditionnement",
+      "Changement du conditionnement pour un usage prévu."
+    ],
+    [
+      "Statut",
+      "Indication du droit d’utiliser, contrôler ou déplacer un lot."
+    ],
+    [
+      "Unité de base",
+      "Unité retenue pour compter et gérer l’article."
+    ],
+    [
+      "Unité de livraison",
+      "Unité ou conditionnement employé dans la livraison."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Huit cartons de 15 pièces arrivent. Enregistrez la quantité en pièces.",
+      "answer": "120 pièces.",
+      "calculation": "8 × 15 = 120."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Un lot de 74 pièces est reconditionné par six. Combien de boîtes pleines et de pièces restantes ?",
+      "answer": "Douze boîtes pleines et deux pièces.",
+      "calculation": "74 = 12 × 6 + 2."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "La zone A accepte 24 unités et en contient 19. Calculez la place disponible.",
+      "answer": "Cinq unités.",
+      "calculation": "24 − 19 = 5."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Quatre lots ont chacun une étiquette principale et deux de suivi. Combien d’étiquettes préparer ?",
+      "answer": "Douze étiquettes.",
+      "calculation": "4 × (1 + 2) = 12."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Un lot de 180 pièces compte 15 réservées et 20 en contrôle, dans des sous-ensembles distincts. Calculez le disponible.",
+      "answer": "145 pièces.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "180 − 15 − 20 = 145."
+    },
+    {
+      "id": "maths-fiche-6",
+      "kind": "maths",
+      "prompt": "Un article arrive à raison de 24 pièces par carton. Dix cartons sont reçus en deux lots de six et quatre cartons. Donnez les quantités à tracer par lot.",
+      "answer": "144 et 96 pièces.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "6 × 24 = 144. 4 × 24 = 96."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Pourquoi un nouvel emballage peut-il être nécessaire avant le stockage ?",
+      "answer": "Pour respecter la protection, l’identification et la manipulation prévues."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Quels champs vérifier avant d’enregistrer la marchandise ?",
+      "answer": "Référence, unité, quantité, lot, statut et destination prévue."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Pourquoi garder la référence du lot lors d’un remplacement d’étiquette ?",
+      "answer": "Pour préserver le lien entre l’article, son origine et les contrôles."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Quand un article en contrôle est-il disponible ?",
+      "answer": "Après la libération conforme à la procédure."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Que distingue une unité de livraison et une unité de base ?",
+      "answer": "La première décrit le conditionnement livré. La seconde sert au comptage et suivi."
+    },
+    {
+      "id": "verification-fiche-6",
+      "kind": "verification",
+      "prompt": "Pourquoi confirmer l’emplacement après déplacement ?",
+      "answer": "Pour aligner la position réelle et celle du système."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Une palette est préparée pour un rayon mais la place est occupée. Comment vous coordonnez-vous ?",
+      "answer": "Demander une affectation autorisée et enregistrer l’emplacement réellement utilisé."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Deux lots identiques en apparence doivent être reconditionnés. Que préservez-vous ?",
+      "answer": "Le lien entre article, lot et nouvelles unités, sans fusion des références de suivi."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Vous trouvez un écart entre l’étiquette et le comptage. Quelle suite ?",
+      "answer": "Stopper l’enregistrement, vérifier le dossier et faire corriger ou signaler l’écart."
+    },
+    {
+      "id": "situation-fiche-4",
+      "kind": "situation",
+      "prompt": "Un bac reste en contrôle, mais sa destination est connue. Que saisissez-vous ?",
+      "answer": "Sa position et son statut en contrôle. Attendre l’autorisation avant de le libérer."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "10.1 Objectifs d'un nouvel emballage",
+      "file": "log-310-notions-1-v001.svg",
+      "alt": "Vérifier. Article, lot et état. Regrouper. Conditionnement adapté. Identifier. Nouvelle étiquette.",
+      "caption": "La nouvelle unité garde une identification qui permet le suivi du lot.",
+      "sha256": "69307d3b45bfeeae0cc1dc0828c48a67fa43c2649480127bbe4d6ab064d1c4e6",
+      "origin": "Illustration originale Doc-Prof du module 310."
+    },
+    {
+      "anchor": "10.2 Enregistrement de la marchandise",
+      "file": "log-310-notions-2-v001.svg",
+      "alt": "Marchandise. Référence et lot. Quantité. Unité de base. Stock. Position et statut.",
+      "caption": "L’emplacement réel et le statut restent consultables.",
+      "sha256": "6600f66a9c6b81f821c6c6973e2f7ecb7b5e167df2ccabf928469854e06d4ff4",
+      "origin": "Illustration originale Doc-Prof du module 310."
+    }
+  ]
+}

@@ -1,0 +1,234 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Identifier les **dangers d'infrastructure** (circulation, quai, rampes…)\n- Expliquer la **sécurisation** des véhicules routiers et ferroviaires au déchargement\n- Distinguer catégories d'engins **S** et **R** (CFST) et les règles de formation / âge\n- Utiliser correctement ponts/tôles, monte-charges et règles d'accès aux automatismes\n- Reconnaître les **signaux** d'avertissement, interdiction, obligation et secours",
+  "overview": "## Aperçu du module 305\n\n- Reconnaître les dangers du quai, des accès et des zones de passage.\n- Vérifier les autorisations, l’état des moyens de liaison et les conditions de prise en charge.\n- Décrire les constats d’arrêt et d’alerte selon la procédure du site.",
+  "replacements": [
+    {
+      "from": "- Avec chariots : forces de poussée → **cales** sous les roues + **chaîne/sangle** au quai",
+      "to": "- Pour les opérations avec engin, appliquer le dispositif d’immobilisation homologué du site.",
+      "reason": "Retire l’assemblage générique de dispositifs."
+    },
+    {
+      "from": "**Semi-remorques** : mêmes mesures + anti-basculement (**béquille**, pile de palettes / support dolly / dispositif anti-basculement).",
+      "to": "**Semi-remorques** : utiliser seulement les dispositifs d’immobilisation, de maintien et de prévention du basculement prévus pour l’installation.",
+      "reason": "Écarte le recours improvisé à des palettes empilées."
+    },
+    {
+      "from": "**Ferroviaire** : personnel qualifié ; **frein à main** et/ou **sabot de freinage** (entre rail et roue).",
+      "to": "**Ferroviaire** : la mise en sécurité relève des personnes qualifiées, selon les règles du site et de l’exploitant.",
+      "reason": "Évite une procédure générique de mise en sécurité ferroviaire."
+    },
+    {
+      "from": "**Jeunes (< 18 ans)** : travaux dangereux interdits en principe ; conduite chariots = dangereuse → **18 ans** en règle générale. **Dérogation logisticiens** : dès **15 ans** en formation avec mesures d'accompagnement (art. 4 protection des jeunes / loi sur le travail art. 29).",
+      "to": "**Jeunes en formation** : vérifier les mesures d’accompagnement et les autorisations prévues par la formation et le poste avant toute activité exposée.",
+      "reason": "Retire un âge présenté comme règle suffisante."
+    },
+    {
+      "from": "**Statistique (ordres de grandeur) :** > 10 000 accidents engins / an en Suisse (~100 mio CHF). Causes graves (exemple DE) : collisions **48,7 %** · conducteur 20,6 % · monter/descendre 4,6 % · accessoire 6,5 % · chargement 9,8 % · autres 9,8 %.",
+      "to": "Les constats de sécurité s’appuient sur les incidents documentés du site et des chiffres datés, avec leur périmètre.",
+      "reason": "Retire des chiffres sans provenance vérifiable."
+    },
+    {
+      "from": "En principe **ne pas** rester dans HRL / automatismes. Dépannage = personnel formé. Pour y pénétrer : arrêter **toute** l'installation + sécuriser contre remise en marche (**cadenas** sur interrupteur principal). Ne jamais se fier à un simple « c'est arrêté ». Signaler / faire faire par le supérieur.",
+      "to": "L’accès aux installations automatisées et leur mise en sécurité relèvent des personnes habilitées, selon une procédure validée. En cas de panne, signaler le défaut et rester hors de la zone.",
+      "reason": "Cadre l’intervention et retire une consignation générique."
+    },
+    {
+      "from": "Lignes HT dangereuses. Ligne de contact ferroviaire **15 000 V** : s'approcher = danger de mort. Charger wagons ouverts seulement si lignes **déconnectées et mises à la terre**. **Ne pas toucher** même déconnectées/mises à la terre sans procédure.",
+      "to": "Les lignes électriques et caténaires présentent un danger mortel. Respecter la zone d’exclusion et attendre l’autorisation de l’exploitant compétent.",
+      "reason": "Ne donne aucune étape de manipulation électrique."
+    }
+  ],
+  "summary": [
+    "Reconnaître les dangers du quai, des accès et des zones de passage.",
+    "Vérifier les autorisations, l’état des moyens de liaison et les conditions de prise en charge.",
+    "Décrire les constats d’arrêt et d’alerte selon la procédure du site."
+  ],
+  "glossary": [
+    [
+      "Alerte",
+      "Transmission au service désigné lorsqu’un danger ou incident est constaté."
+    ],
+    [
+      "Autorisation",
+      "Droit d’exécuter une tâche dans un périmètre vérifié."
+    ],
+    [
+      "Charge utile",
+      "Masse maximale admise pour l’usage et l’équipement indiqués."
+    ],
+    [
+      "Consigne de quai",
+      "Règle du site pour la prise en charge des véhicules et opérations."
+    ],
+    [
+      "Déchargement",
+      "Transfert des marchandises d’un véhicule vers la zone de réception."
+    ],
+    [
+      "Engin de manutention",
+      "Équipement servant à transporter ou lever une charge."
+    ],
+    [
+      "Habilitation",
+      "Reconnaissance de la compétence et autorisation pour une tâche définie."
+    ],
+    [
+      "Immobilisation",
+      "État confirmé du véhicule selon les moyens et procédures prévus."
+    ],
+    [
+      "Moyen de liaison",
+      "Équipement homologué reliant le véhicule et la zone de réception."
+    ],
+    [
+      "Pont de chargement",
+      "Dispositif qui permet le franchissement prévu entre quai et véhicule."
+    ],
+    [
+      "Signalisation",
+      "Marques ou signes indiquant un danger, une obligation ou une direction."
+    ],
+    [
+      "Zone d’exclusion",
+      "Secteur dans lequel l’accès est interdit pendant l’opération."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Deux lots de 18 colis et un lot de 12 arrivent au quai. Calculez le nombre de colis.",
+      "answer": "48 colis.",
+      "calculation": "18 + 18 + 12 = 48."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Une opération est arrêtée à 9 h 18 et reprend à 9 h 45. Calculez l’arrêt.",
+      "answer": "27 minutes.",
+      "calculation": "45 − 18 = 27 min."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Un planning accorde 50 minutes. Le contrôle préalable dure 8 minutes et la clôture 6 minutes. Calculez le temps disponible entre les deux.",
+      "answer": "36 minutes.",
+      "calculation": "50 − 8 − 6 = 36 min."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Sur le plan fictif, un trajet autorisé de 45 m est parcouru pour six allers-retours. Calculez la distance cumulée.",
+      "answer": "540 m.",
+      "calculation": "45 × 2 × 6 = 540 m."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Sur 80 inspections de matériel, six exigent un retrait. Calculez le taux.",
+      "answer": "7,5 %.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "6 ÷ 80 × 100 = 7,5 %."
+    },
+    {
+      "id": "maths-fiche-6",
+      "kind": "maths",
+      "prompt": "Un planning compte quatre quais pendant 90 min. L’un des quatre est fermé 30 min. Calculez le temps cumulé disponible des quais.",
+      "answer": "330 minutes-quais.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "4 × 90 − 30 = 330."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quels éléments vérifier avant l’opération au quai ?",
+      "answer": "Autorisations, état du véhicule et du matériel, zone dégagée, moyens et validation du poste compétent."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Quel est le rôle d’un moyen de liaison ?",
+      "answer": "Relier le quai et le véhicule dans les conditions prévues pour l’équipement."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Quand signalez-vous un pont endommagé ?",
+      "answer": "Avant son usage. Suspendre l’opération et prévenir la personne compétente."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Pourquoi séparer la voie des piétons ?",
+      "answer": "Pour maîtriser les risques de collision et prévenir les intrusions en zone de travail."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Comment vérifier qui peut utiliser un engin ?",
+      "answer": "Vérifier la formation et l’autorisation pour l’engin et le site conformément aux règles applicables."
+    },
+    {
+      "id": "verification-fiche-6",
+      "kind": "verification",
+      "prompt": "Quelles informations fournir en alertant ?",
+      "answer": "Le lieu, le danger constaté, la référence du véhicule ou du matériel et les personnes potentiellement concernées."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Le départ n’est pas confirmé alors que quelqu’un s’apprête à franchir la liaison de quai. Que faites-vous ?",
+      "answer": "Faire interrompre les mouvements, prévenir les personnes concernées et demander la confirmation du poste responsable."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Un piéton attend dans le secteur réservé au véhicule. Quelle suite donnez-vous ?",
+      "answer": "Arrêter l’opération si nécessaire, orienter vers l’attente autorisée et reprendre selon consigne."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Le pont de chargement n’a plus de plaque lisible. Quelle décision prenez-vous ?",
+      "answer": "Retirer le pont de l’usage et faire vérifier ses limites par le poste compétent."
+    },
+    {
+      "id": "situation-fiche-4",
+      "kind": "situation",
+      "prompt": "Le créneau est dépassé, mais une installation se met en défaut. Comment conciliez-vous les contraintes ?",
+      "answer": "Suspendre l’opération, protéger la zone selon le site et replanifier après intervention qualifiée.",
+      "approvedFor": [
+        "CFC"
+      ]
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "5.1 Dangers liés à l'infrastructure",
+      "file": "log-305-notions-1-v001.svg",
+      "alt": "Circulation. Repérer les trajectoires. Interface. Vérifier quai et véhicule. Accès. Appliquer la consigne.",
+      "caption": "Les passages autorisés et la zone de travail restent distincts.",
+      "sha256": "629813aa5dbc35a00bb607016bd77f922f3be086d7fe21005f29c60ecaae1a1b",
+      "origin": "Illustration originale Doc-Prof du module 305."
+    },
+    {
+      "anchor": "5.2.3 Moyens auxiliaires de liaison",
+      "file": "log-305-notions-2-v001.svg",
+      "alt": "Identification. Plaque et usage prévu. Contrôle. État avant opération. Décision. Validation par le site.",
+      "caption": "En cas d’incertitude, arrêter et demander la vérification du poste compétent.",
+      "sha256": "679a29c9cf4d2d74d2636641133bb3d179e05c96b58547cad9489863be4c2c05",
+      "origin": "Illustration originale Doc-Prof du module 305."
+    }
+  ]
+}

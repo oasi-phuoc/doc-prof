@@ -1,0 +1,214 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Distinguer identification **globale** et **détaillée**\n- Appliquer les règles d'ouverture (sécurité, plombs douaniers)\n- Citer les principaux **documents d'accompagnement** (bon de transport, CMR, lettre de voiture, bulletin)\n- Effectuer correctement une **réception sous réserve**\n- Situer Maastricht et la **CVIM** dans le transport / commerce international",
+  "overview": "## Aperçu du module 304\n\n- Vérifier le destinataire avant de comparer les références et les quantités.\n- Lire les documents de livraison et de transport et distinguer leurs usages.\n- Consigner les motifs de réserve et les contrôles encore à effectuer.",
+  "replacements": [
+    {
+      "from": "Informe sur les marchandises livrées ; sert au **contrôle**. Vérifier : contenu de la livraison + conformité à la **commande**. Entreprises au registre du commerce : conservation **10 ans**.",
+      "to": "Le bulletin de livraison aide à rapprocher la marchandise et la commande. La durée de conservation dépend de sa fonction, notamment s’il sert de pièce comptable, et des règles applicables.",
+      "reason": "Évite d’attribuer un délai universel à tous les bons."
+    },
+    {
+      "from": "**Corrections :** idéalement en présence du transporteur (contresigne). Différences inscrites **directement** sur le bon. Pas de règle juridique unique — **jamais** effacer / Tipp-Ex ; corrections clairement visibles ; signatures transporteur **et** destinataire. Accords **oraux** non probants. Contestation grave → informer **immédiatement** le fournisseur.",
+      "to": "Rendre chaque correction traçable. Consigner l’écart de façon lisible et transmettre la preuve selon les modalités prévues.",
+      "reason": "Distingue trace utile et condition juridique générale."
+    },
+    {
+      "from": "Convention des Nations unies sur les contrats de vente internationale de marchandises. Signée le 11.4.1988 (10 pays à l'origine) ; aujourd'hui ~**89** pays signataires (> 3/4 du commerce international).",
+      "to": "La Convention des Nations unies sur les contrats de vente internationale de marchandises, adoptée à Vienne en 1980 et entrée en vigueur en 1988, s’applique selon ses conditions. Elle concerne la vente et non le contrat de transport.",
+      "reason": "Corrige la date et distingue les contrats."
+    }
+  ],
+  "summary": [
+    "Vérifier le destinataire avant de comparer les références et les quantités.",
+    "Lire les documents de livraison et de transport et distinguer leurs usages.",
+    "Consigner les motifs de réserve et les contrôles encore à effectuer."
+  ],
+  "glossary": [
+    [
+      "Adresse de livraison",
+      "Lieu où la marchandise doit être remise."
+    ],
+    [
+      "Bon de livraison",
+      "Document recensant les articles et quantités déclarés livrés."
+    ],
+    [
+      "CMR",
+      "Convention relative au transport international de marchandises par route dans son champ d’application."
+    ],
+    [
+      "Destinataire",
+      "Personne ou organisation à laquelle l’envoi doit être remis."
+    ],
+    [
+      "Document d’accompagnement",
+      "Document ou donnée rattaché à la marchandise transportée."
+    ],
+    [
+      "Étiquette",
+      "Support d’identification apposé sur une unité."
+    ],
+    [
+      "Identification détaillée",
+      "Rapprochement des unités et références avec le dossier."
+    ],
+    [
+      "Identification globale",
+      "Vérification de la destination et de l’identité de l’envoi."
+    ],
+    [
+      "Lettre de voiture",
+      "Document attestant les données de prise en charge pour le transport."
+    ],
+    [
+      "Lot",
+      "Groupe d’articles identifiés par une référence commune."
+    ],
+    [
+      "Réserve",
+      "Mention précise et datée d’un écart ou d’un contrôle restant à réaliser."
+    ],
+    [
+      "Traçabilité",
+      "Possibilité de retrouver les enregistrements et événements d’un envoi."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Trois palettes portent 24, 18 et 20 colis. Le document en annonce 64. Calculez l’écart constaté moins annoncé.",
+      "answer": "L’écart est de −2 colis.",
+      "calculation": "24 + 18 + 20 − 64 = −2."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Le lot A comporte 5 cartons de 12 pièces. Le lot B comporte 6 cartons de 8 pièces. Calculez le nombre total de pièces.",
+      "answer": "108 pièces.",
+      "calculation": "5 × 12 + 6 × 8 = 108."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Sur 120 étiquettes, neuf demandent une vérification manuelle. Combien peuvent être traitées directement ?",
+      "answer": "111 étiquettes.",
+      "calculation": "120 − 9 = 111."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Il faut 4 minutes pour vérifier une référence. Calculez la durée pour 11 références successives.",
+      "answer": "44 minutes.",
+      "calculation": "11 × 4 = 44 min."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Huit des 160 colis ont une réserve documentée. Calculez le taux.",
+      "answer": "5 %.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "8 ÷ 160 × 100 = 5 %."
+    },
+    {
+      "id": "maths-fiche-6",
+      "kind": "maths",
+      "prompt": "Une palette a une tare de 22 kg et une masse brute de 358 kg. Combien reste-t-il si les marchandises sont réparties en huit colis de même masse ?",
+      "answer": "42 kg de marchandise par colis.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "(358 − 22) ÷ 8 = 42 kg."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quelle question résout l’identification globale ?",
+      "answer": "L’envoi et son adresse correspondent-ils au destinataire prévu ?"
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Quels éléments comparez-vous à l’identification détaillée ?",
+      "answer": "Référence d’article, lot si requis, quantités et documents du même envoi."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Une lettre de voiture et un bon de livraison ont-ils la même fonction ?",
+      "answer": "La première documente le transport. Le second décrit les articles livrés et facilite le contrôle de la commande."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Pourquoi dater et préciser une réserve ?",
+      "answer": "Pour décrire le constat ou le contrôle en suspens et permettre le suivi."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Que faire si le code est illisible ?",
+      "answer": "Préserver l’identification disponible, vérifier avec le dossier et demander la procédure de traitement."
+    },
+    {
+      "id": "verification-fiche-6",
+      "kind": "verification",
+      "prompt": "Quel texte concerne la vente internationale et lequel concerne le transport international routier dans leurs champs ?",
+      "answer": "La CVIM concerne la vente. La CMR concerne le transport par route."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Le camion arrive au bon dépôt avec un envoi destiné à un autre site. Quelle suite donnez-vous ?",
+      "answer": "Identifier l’écart avant déchargement, prévenir le poste compétent et appliquer l’orientation autorisée."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Deux colis ont la même étiquette mais contiennent des références différentes au dossier. Que faites-vous ?",
+      "answer": "Identifier les unités sans les mélanger, vérifier les pièces de dossier et consigner l’écart."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Le contrôle interne est différé mais un carton est écrasé. Que mentionnez-vous ?",
+      "answer": "La référence, l’état observable, la date et le contrôle qui reste à effectuer, selon la procédure."
+    },
+    {
+      "id": "situation-fiche-4",
+      "kind": "situation",
+      "prompt": "La lettre de voiture et le bon n’ont pas le même nombre d’unités. Comment analysez-vous l’écart ?",
+      "answer": "Comparer le niveau de comptage, palettes, cartons ou pièces, et les références avant d’établir le constat.",
+      "approvedFor": [
+        "CFC"
+      ]
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "4.1 Identification globale",
+      "file": "log-304-notions-1-v001.svg",
+      "alt": "Global. Destinataire et site. Détaillé. Articles, lots et quantités.",
+      "caption": "Le second contrôle concerne le contenu du bon dossier.",
+      "sha256": "6842cbe7eba8eb89a911514c78dd2835e251ff92f0371114f23cb8b6047f2b9a",
+      "origin": "Illustration originale Doc-Prof du module 304."
+    },
+    {
+      "anchor": "4.4 La réception sous réserve",
+      "file": "log-304-notions-2-v001.svg",
+      "alt": "Décrire. Dossier et constat factuel. Préciser. Contrôle encore nécessaire. Transmettre. Date et trace du signalement.",
+      "caption": "Suivre les conditions et délais applicables à la réception.",
+      "sha256": "d23781b34102f1858c973d6a2fb8f2e20613af256e53661e975fa9458f9ce3bc",
+      "origin": "Illustration originale Doc-Prof du module 304."
+    }
+  ]
+}

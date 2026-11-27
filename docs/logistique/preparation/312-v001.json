@@ -1,0 +1,206 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Expliquer l'importance du **niveau de stock** pour l'entreprise\n- Classer les stocks (FEFO / FIFO / LIFO) et citer les principaux **types**\n- Calculer **stock mini** et **point de commande**\n- Distinguer stock **disponible**, réservé, AQ, bloqué et **total**\n- Lire une **fiche de stock** et comptabiliser entrées, sorties, AQ et réservations",
+  "overview": "## Aperçu du module 312\n\n- Lire les quantités physiques, réservées, bloquées et disponibles.\n- Calculer les besoins couverts pendant un délai et le seuil de commande.\n- Appliquer la règle de sortie prévue selon les dates et le suivi des lots.",
+  "replacements": [
+    {
+      "from": "**Stock physique (réel)** — couvre la demande courante clients/production, quel que soit l'emplacement.",
+      "to": "**Stock physique (réel)** — quantité présente, dont une partie peut être réservée, bloquée ou en cours de contrôle.",
+      "reason": "Distingue présence et disponibilité."
+    },
+    {
+      "from": "**Stock de sécurité** — quantité toujours présente (souvent dans l'ERP) pour :",
+      "to": "**Stock de sécurité** — réserve définie pour couvrir des aléas, par exemple :",
+      "reason": "Précise que la réserve n’est pas toujours intacte."
+    }
+  ],
+  "summary": [
+    "Lire les quantités physiques, réservées, bloquées et disponibles.",
+    "Calculer les besoins couverts pendant un délai et le seuil de commande.",
+    "Appliquer la règle de sortie prévue selon les dates et le suivi des lots."
+  ],
+  "glossary": [
+    [
+      "Consommation journalière",
+      "Quantité utilisée par jour dans le périmètre observé."
+    ],
+    [
+      "Date d’expiration",
+      "Date de fin d’utilisation ou de vente selon la règle applicable."
+    ],
+    [
+      "FEFO",
+      "Priorité au lot dont l’échéance est la plus proche."
+    ],
+    [
+      "FIFO",
+      "Priorité au lot entré le premier."
+    ],
+    [
+      "LIFO",
+      "Priorité au lot entré le plus récemment, lorsque le contexte le permet."
+    ],
+    [
+      "Point de commande",
+      "Seuil tenant compte du besoin pendant le délai et de la réserve définie."
+    ],
+    [
+      "Stock bloqué",
+      "Quantité temporairement non utilisable."
+    ],
+    [
+      "Stock disponible",
+      "Quantité utilisable pour un besoin après application des réservations et statuts."
+    ],
+    [
+      "Stock maximal",
+      "Limite retenue pour la quantité stockée."
+    ],
+    [
+      "Stock physique",
+      "Quantité effectivement présente."
+    ],
+    [
+      "Stock réservé",
+      "Quantité affectée à un besoin et non disponible pour un autre."
+    ],
+    [
+      "Stock de sécurité",
+      "Réserve couvrant des aléas de consommation ou d’approvisionnement."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Le stock physique est de 220 pièces, dont 35 réservées et 25 sous contrôle dans des groupes distincts. Calculez le disponible.",
+      "answer": "160 pièces.",
+      "calculation": "220 − 35 − 25 = 160."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "La consommation est de 14 pièces par jour pendant cinq jours. Calculez le besoin du délai.",
+      "answer": "70 pièces.",
+      "calculation": "14 × 5 = 70."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Au besoin du délai de 70 pièces s’ajoute une réserve de 30. Calculez le point de commande.",
+      "answer": "100 pièces.",
+      "calculation": "70 + 30 = 100."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Sur 68 pièces en stock, 54 doivent être prélevées. Quel solde reste après cette sortie ?",
+      "answer": "14 pièces.",
+      "calculation": "68 − 54 = 14."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "La capacité retenue est de 400 pièces et 292 y sont stockées. Calculez le taux d’occupation et la place libre.",
+      "answer": "73 % d’occupation et 108 places.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "292 ÷ 400 × 100 = 73 %. 400 − 292 = 108."
+    },
+    {
+      "id": "maths-fiche-6",
+      "kind": "maths",
+      "prompt": "Le seuil vaut 120 pièces avec un délai de quatre jours et 32 pièces de sécurité. Quelle consommation quotidienne a été retenue ?",
+      "answer": "22 pièces par jour.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "(120 − 32) ÷ 4 = 22."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quelle différence entre physique et disponible ?",
+      "answer": "Le physique est présent. Le disponible est utilisable pour le besoin considéré."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Que signifie FEFO ?",
+      "answer": "Faire sortir en priorité ce qui arrive à échéance en premier."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Pourquoi le point de commande inclut-il une réserve dans le modèle du cours ?",
+      "answer": "Pour couvrir un aléa en plus de la consommation attendue pendant le délai."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "À quoi sert le stock maximal ?",
+      "answer": "À limiter le volume ou la valeur immobilisée selon la politique retenue."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Un stock négatif dans le système correspond-il à une quantité réelle ?",
+      "answer": "Il signale un manque ou un écart à examiner."
+    },
+    {
+      "id": "verification-fiche-6",
+      "kind": "verification",
+      "prompt": "Pourquoi noter l’unité avec la quantité ?",
+      "answer": "Pour distinguer les pièces, cartons et autres unités et éviter un écart de conversion."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Un lot plus récent expire avant l’ancien. Quelle règle peut lui donner la priorité ?",
+      "answer": "FEFO si la procédure de l’article le prescrit. Vérifier dates, état et autorisation."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Le stock disponible tombe sous le seuil, mais une livraison est attendue demain. Que vérifiez-vous ?",
+      "answer": "Sa confirmation, l’heure utilisable et les besoins couverts avant de déclencher la décision."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Le système indique 40 pièces, votre comptage en donne 36. Quelle suite ?",
+      "answer": "Recompter, vérifier unité et mouvements, puis transmettre l’écart et demander l’ajustement autorisé."
+    },
+    {
+      "id": "situation-fiche-4",
+      "kind": "situation",
+      "prompt": "Un lot est marqué disponible mais son contrôle est en cours. Que faites-vous ?",
+      "answer": "Suspendre son usage, signaler l’incohérence et rétablir le statut selon la procédure."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "12.3 Types de stocks",
+      "file": "log-312-notions-1-v001.svg",
+      "alt": "Consommation. Pièces par jour. Délai. Jours jusqu’au stock. Réserve. Aléas pris en compte.",
+      "caption": "Le seuil correspond au besoin pendant le délai plus la réserve du modèle.",
+      "sha256": "3ba9cedfce8d93592d9cdfd4ac7a0ca7395f36fa3a8b0da41e1fd3bd416a329c",
+      "origin": "Illustration originale Doc-Prof du module 312."
+    },
+    {
+      "anchor": "12.4 Aspect opérationnel",
+      "file": "log-312-notions-2-v001.svg",
+      "alt": "Disponible. Affectable à un besoin. Réservé. Affecté à un dossier. Bloqué. En attente de décision.",
+      "caption": "Le stock utilisable dépend du dossier, de la réservation et du contrôle.",
+      "sha256": "2a5a27063fc4da5180fb7d3566b791f50b91d2b467fb263db509d3064049a399",
+      "origin": "Illustration originale Doc-Prof du module 312."
+    }
+  ]
+}
