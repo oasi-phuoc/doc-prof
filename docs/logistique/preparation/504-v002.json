@@ -1,0 +1,30 @@
+{
+  "theoryOnly": true,
+  "baseTheory": "module-504-v001",
+  "diplomas": [
+    "CFC"
+  ],
+  "replacements": [],
+  "summaryTheory": "## 4. Le flux de matériel\n\n### 4.1 Types de flux\n\nLe **flux externe** relie fournisseurs, site et clients. Le **flux interne** suit les matières, pièces et retours entre zones. Les informations déclenchent ou confirment le mouvement.\n\n### 4.2 et 4.3 Kanban et Two-Bin\n\nUn **Kanban** est un signal qui autorise ou demande un réapprovisionnement. En système **Two-Bin**, on utilise un premier bac puis on signale son réapprovisionnement dès qu’il est vide. Le deuxième bac couvre la consommation pendant le délai. La **commande optique** utilise un repère visible qui indique le besoin.\n\n### 4.5 et 4.6 Just in Time et Just in Sequence\n\nLe **juste-à-temps (JIT)** met la quantité requise à disposition au moment du besoin. Le **Just in Sequence (JIS)** exige en plus le bon ordre des unités. Ces pratiques réduisent certains stocks et demandent des livraisons fiables et des informations précises. Prévoyez comment signaler et traiter un retard.\n\n### 4.7 et 4.8 Low Cost Automation et Jidoka\n\nLa **Low Cost Automation (LCA)** vise des dispositifs simples et peu coûteux, comme une alimentation sur rouleaux. Le **Jidoka** consiste à repérer un défaut et permettre l’arrêt ou l’alerte avant qu’il se propage. Cherchez sa cause et vérifiez la reprise.",
+  "visuals": [
+    {
+      "anchor": "4.3 Système Two-Bin",
+      "summaryAnchor": "4.2 et 4.3 Kanban et Two-Bin",
+      "file": "log-504-deux-bacs-photo-v002.webp",
+      "alt": "Un bac vide porte une carte orange et un second bac contient des pièces.",
+      "caption": "Le bac vide donne le signal de réapprovisionnement. Le second fournit les pièces pendant l’attente.",
+      "sha256": "2d499e63de63c96c3389a45f7f6bee52f853621d38b12fb49aa8bfab4dca5a1d",
+      "origin": "Mise en scène photoréaliste originale générée pour Doc-Prof."
+    },
+    {
+      "anchor": "4.7 Low Cost Automation (LCA)",
+      "summaryAnchor": "4.7 et 4.8 Low Cost Automation et Jidoka",
+      "file": "log-407-convoyeur-photo-v002.webp",
+      "path": "assets/logistique/400/407/commun/log-407-convoyeur-photo-v002.webp",
+      "alt": "Des cartons avancent sur une courte piste de rouleaux.",
+      "caption": "Un dispositif simple facilite le déplacement entre deux postes quand il correspond au flux et à la charge.",
+      "sha256": "d097541867d1911c03b2026e05e746638e555eb0e06c3bc03065ec0c48e7d9d6",
+      "origin": "Mise en scène photoréaliste originale générée pour Doc-Prof."
+    }
+  ]
+}

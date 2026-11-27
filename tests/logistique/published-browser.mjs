@@ -128,6 +128,7 @@ try {
       console.log(`Modules 105 et 110 ${diploma} : questions groupées dans la fiche élève et le corrigé.`)
     }
 
+    let checkedModules = 0
     for (const [code, { visuals }] of photoPlans) {
       if (requestedModules.length && !requestedModules.includes(code)) continue
       const caption = visuals[0].summaryAnchor
@@ -149,10 +150,11 @@ try {
       const pdf = await page.pdf({ preferCSSPageSize: true })
       assert.equal(pdf.subarray(0, 4).toString(), '%PDF')
       await page.getByRole('button', { name: 'Complet', exact: true }).click()
+      checkedModules += 1
       const restored = await inspectPrint(`${code} ${diploma} complet restauré`)
       assert.equal(restored.printText, complete.printText)
     }
-    console.log(`Logistique ${diploma} : illustrations intégrées au cours et au résumé des ${requestedModules.length || photoPlans.size} modules révisés.`)
+    if (checkedModules) console.log(`Logistique ${diploma} : illustrations intégrées au cours et au résumé de ${checkedModules} modules.`)
   }
   assert.deepEqual(errors, [])
 } finally {

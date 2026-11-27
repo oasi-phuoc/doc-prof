@@ -121,6 +121,12 @@ import { module405 as theory405 } from './banks/module-405-v002.generated.ts'
 import { module406 as theory406 } from './banks/module-406-v002.generated.ts'
 import { module408 as theory408 } from './banks/module-408-v002.generated.ts'
 import { module410 as theory410 } from './banks/module-410-v002.generated.ts'
+import { module501 as theory501 } from './banks/module-501-v002.generated.ts'
+import { module502 as theory502 } from './banks/module-502-v002.generated.ts'
+import { module503 as theory503 } from './banks/module-503-v002.generated.ts'
+import { module504 as theory504 } from './banks/module-504-v002.generated.ts'
+import { module505 as theory505 } from './banks/module-505-v002.generated.ts'
+import { module506 as theory506 } from './banks/module-506-v002.generated.ts'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
 
@@ -269,6 +275,15 @@ const theories_stockage = [
 ]
 const theoryIds_stockage = new Set<string>(theories_stockage.map(({ id }) => id))
 
+const publication_stockage_v002: LogistiquePublication = {
+  revision: 'logistique-theories-stockage-v002',
+  units: [...publication_approvisionnement_v002.units.filter(({ id }) => !theoryIds_stockage.has(id)), ...theories_stockage],
+}
+const theories_production = [
+  ...theory501, ...theory502, ...theory503, ...theory504, ...theory505, ...theory506,
+]
+const theoryIds_production = new Set<string>(theories_production.map(({ id }) => id))
+
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
@@ -325,9 +340,10 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   foundationPhotoPublication,
   publication_service_client_v002,
   publication_approvisionnement_v002,
+  publication_stockage_v002,
   {
-    revision: 'logistique-theories-stockage-v002',
-    units: [...publication_approvisionnement_v002.units.filter(({ id }) => !theoryIds_stockage.has(id)), ...theories_stockage],
+    revision: 'logistique-theories-production-v002',
+    units: [...publication_stockage_v002.units.filter(({ id }) => !theoryIds_production.has(id)), ...theories_production],
   },
 ]
 
