@@ -215,7 +215,8 @@ test('le râtelier vertical et le stockage en épis ont une illustration dans le
 
 test('les glossaires repris fournissent une photo individuelle pour chaque notion', () => {
   const photoGlossaries = [
-    ['100', 13], ['101', 16], ['102', 25], ['103', 15], ['104', 20], ['106', 14], ['107', 15],
+    ['100', 13], ['101', 16], ['102', 25], ['103', 15], ['104', 20], ['105', 45], ['106', 14], ['107', 15],
+    ['108', 13], ['109', 15], ['110', 16],
     ['306', 34], ['403', 27], ['404', 12],
   ]
   for (const [code, count] of photoGlossaries) for (const diploma of ['CFC', 'AFP']) {
