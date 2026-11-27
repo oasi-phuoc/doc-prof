@@ -70,6 +70,10 @@ export function CalliSettingsPanel({
                           type="button"
                           className={(activeBlock.calliSize ?? DEFAULT_CALLI_SIZE) === size.id ? 'active' : ''}
                           onClick={() => {
+                            if (libreMode) {
+                              updatePage({ calliSize: size.id })
+                              return
+                            }
                             const nextText = initialCalliText({
                               exerciseType: activeBlock.exerciseType,
                               topic: activeBlock.topic,

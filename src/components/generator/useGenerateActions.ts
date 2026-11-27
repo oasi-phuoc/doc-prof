@@ -23,7 +23,8 @@ import type {
   PreviewMode,
 } from '@/math/types'
 import type { InstitutionalHeader } from '@/components/math/PrintDocumentChrome'
-import { hasLockedItems, rerollAddition } from '@/components/generator/libre/flat-items'
+import { isInlineArithmetic } from '@/components/generator/libre/profiles'
+import { hasLockedItems, rerollArithmetic } from '@/components/generator/libre/flat-items'
 import { clearLibreContentFreeze } from '@/components/generator/page-helpers'
 import { blockItemsForConfig } from '@/components/generator/sheet-items'
 import { patchBlockSeedForHalf } from '@/components/generator/sheet-format'
@@ -233,7 +234,8 @@ export function useGenerateActions({
 
   function generate() {
     if (hasTcfLockedQuestions(activeBlock.tcfExercise)) return
-    if (activeBlock.exerciseType === 'addition-ligne' && activeBlock.libreItems?.some(({ libreId }) => libreId)) {
+    if (activeBlock.libreItems?.some(({ libreId }) => libreId) && pages[pageIndex] &&
+      isInlineArithmetic(pages[pageIndex].domain, activeBlock.exerciseType)) {
       regenerateBlock(safeBlockIndex)
       return
     }
@@ -305,8 +307,14 @@ export function useGenerateActions({
         if (index !== pageIndex) return page
         const block = pageBlocks(page)[targetBlock]
         if (!block || hasTcfLockedQuestions(block.tcfExercise)) return page
-        if (!half && page.domain === 'algèbre' && block.exerciseType === 'addition-ligne' && (libreMode || block.libreItems?.some(({ libreId }) => libreId))) {
-          return rerollAddition(page, pageIndex, targetBlock, seed, nextSeed, itemId)
+        const customizedArithmetic = isInlineArithmetic(page.domain, block.exerciseType) &&
+          block.libreItems?.some(({ libreId }) => libreId)
+        if (half === 'right' && customizedArithmetic) {
+          return setPageBlock(page, targetBlock, patchBlockSeedForHalf(block, half, nextSeed))
+        }
+        if ((customizedArithmetic && half === 'left') ||
+          (!half && isInlineArithmetic(page.domain, block.exerciseType) && (libreMode || customizedArithmetic))) {
+          return rerollArithmetic(page, pageIndex, targetBlock, seed, nextSeed, itemId)
         }
         const release = clearLibreContentFreeze()
         const seedPatch = half

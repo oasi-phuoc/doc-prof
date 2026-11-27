@@ -1,3 +1,4 @@
+import { updateInlineCalculation, type InlineCalculation } from '@/components/generator/libre/arithmetic'
 /**
  * Éditeur libre TPM / TCM CFR / TCM CSC :
  * numérotation à gauche (couleur), champs à droite, traits (pas pastilles),
@@ -203,6 +204,7 @@ function NumInput({
   requireNumber = true,
   applyWhileTyping = false,
   transient,
+  validate,
   listId,
 }: {
   value: string
@@ -214,6 +216,7 @@ function NumInput({
   requireNumber?: boolean
   applyWhileTyping?: boolean
   transient?: { value?: string; write: (value: string | null) => void }
+  validate?: (value: number) => string | undefined
   /** datalist partagée (ex. 1–100) : choisir ou saisir. */
   listId?: string
 }) {
@@ -221,7 +224,11 @@ function NumInput({
   const prevRef = useRef(value)
   const inputRef = useRef<HTMLInputElement>(null)
   const displayed = transient?.value ?? draft
-  const invalid = applyWhileTyping && parseFrNumber(displayed) == null
+  const invalidity = (text: string) => {
+    const number = parseFrNumber(text)
+    return number === null ? 'Saisissez un nombre.' : validate?.(number)
+  }
+  const error = applyWhileTyping && displayed !== value ? invalidity(displayed) : undefined
 
   useEffect(() => {
     if (!applyWhileTyping || document.activeElement !== inputRef.current) setDraft(value)
@@ -247,13 +254,13 @@ function NumInput({
       list={listId}
       value={displayed}
       aria-label={ariaLabel}
-      aria-invalid={invalid || undefined}
+      aria-invalid={error ? true : undefined}
       data-applied-value={applyWhileTyping ? value : undefined}
       onChange={(event) => {
         const text = event.target.value
         setDraft(text)
         if (applyWhileTyping) {
-          const valid = parseFrNumber(text) != null
+          const valid = !invalidity(text)
           transient?.write(valid ? null : text)
           if (valid) onCommit(text)
         }
@@ -268,7 +275,7 @@ function NumInput({
   return (
     <>
       {input}
-      {invalid && <small className="libre-field-error" role="alert">Saisissez un nombre.</small>}
+      {error && <small className="libre-field-error" role="alert">{error}</small>}
     </>
   )
 }
@@ -1614,13 +1621,21 @@ function renderFields(
       return { a: na, b: nb, r: computeForward(na, nb, nop) }
     }
 
-    const applyOp = (next: {
-      a?: number
-      b?: number
-      op?: ArithOp
-      result?: number
-      missing?: MissingPos
-    }) => {
+    function applyOp(next: Partial<InlineCalculation>) {
+      if (liveArithmetic) {
+        const calculated = updateInlineCalculation({ a, b, result, op, missing }, next)
+        if ('error' in calculated) {
+          window.alert(calculated.error)
+          return
+        }
+        const values = calculated.calculation
+        const shown = (key: MissingPos) => values.missing === key ? '□' : fmt(values[key])
+        patch(index, {
+          ...item, ...values, prompt: `${shown('a')} ${values.op} ${shown('b')} = ${shown('result')}`,
+          answer: fmt(values[values.missing]),
+        })
+        return
+      }
       const nop = next.op ?? op
       const miss = next.missing ?? missing
       let na = next.a ?? a
@@ -1669,11 +1684,18 @@ function renderFields(
       const id = item.libreId ? `${item.libreId}:${key}` : null
       return (
         <div className={`libre-seq-chip${isMissing ? ' is-blank' : ''}`}>
-          <NumInput
+          {liveArithmetic && key === 'result' && isMissing ? (
+            <CorrigeBox value={fmt(value)} ariaLabel={`Corrigé ${label}`} compact />
+          ) : <NumInput
             compact
             value={fmt(value)}
             ariaLabel={isMissing ? `Corrigé ${label}` : label}
             applyWhileTyping={liveArithmetic}
+            validate={liveArithmetic ? (number) => {
+              if (!Number.isSafeInteger(number)) return 'Saisissez un nombre entier.'
+              const candidate = updateInlineCalculation({ a, b, result, op, missing }, { [key]: number })
+              return 'error' in candidate ? candidate.error : undefined
+            } : undefined}
             transient={transient && id ? {
               value: transient.fields[id], write: (text) => transient.write(id, text),
             } : undefined}
@@ -1682,7 +1704,7 @@ function renderFields(
               if (n == null) return
               onCommit(n)
             }}
-          />
+          />}
           <button
             type="button"
             className={`libre-seq-toggle${isMissing ? ' is-on' : ''}`}

@@ -51,10 +51,11 @@ export type LibreSidePanelProps = {
   safeBlockIndex: number
   isPhraseDomain: boolean
   isNumberLibreDomain: boolean
-  liveAddition: boolean
+  liveArithmetic: boolean
   liveTcf: boolean
   evalMode: boolean
-  additionId: string
+  livePhrase: boolean
+  arithmeticId: string
   maxQuestions: number
   transientFields: Record<string, string>
   onTransientField: (id: string, text: string | null) => void
@@ -98,10 +99,11 @@ export function LibreSidePanel({
   safeBlockIndex,
   isPhraseDomain,
   isNumberLibreDomain,
-  liveAddition,
+  liveArithmetic,
   liveTcf,
   evalMode,
-  additionId,
+  livePhrase,
+  arithmeticId,
   maxQuestions,
   transientFields,
   onTransientField,
@@ -141,7 +143,8 @@ export function LibreSidePanel({
       activeBlock.logistiqueBankRevision),
   } : undefined
   const activeItems = activeBlock.libreItems ?? activeSheet?.blocks[safeBlockIndex]?.items ?? []
-  const arithmeticItems = liveAddition ? identifyItems(activeItems, additionId) : activeItems
+  const phraseItems = activeBlock.phraseItems ?? activeSheet?.blocks[safeBlockIndex]?.items ?? []
+  const arithmeticItems = liveArithmetic ? identifyItems(activeItems, arithmeticId) : activeItems
   return (
     <aside
       className="side-tool-panel is-libre no-print"
@@ -189,25 +192,23 @@ export function LibreSidePanel({
         isPhraseLibreEditable(activeBlock.exerciseType) ? (
           <PhraseLibreEditor
             exerciseType={activeBlock.exerciseType}
-            items={
-              activeBlock.phraseItems ??
-              activeSheet?.blocks[safeBlockIndex]?.items ??
-              []
-            }
+            items={phraseItems}
             instruction={
               activeBlock.phraseInstruction ??
               activeSheet?.blocks[safeBlockIndex]?.instruction ??
               ''
             }
-            onChangeItems={(phraseItems) => updatePage({ phraseItems })}
-            onChangeInstruction={(phraseInstruction) =>
-              updatePage({ phraseInstruction })
-            }
+            onChangeItems={(items) => updatePage(livePhrase
+              ? { verbGroup: 'libre', phraseItems: items, count: items.length || activeBlock.count }
+              : { phraseItems: items })}
+            onChangeInstruction={(phraseInstruction) => updatePage(livePhrase
+              ? { verbGroup: 'libre', phraseInstruction, phraseItems }
+              : { phraseInstruction })}
           />
         ) : null}
         {isNumberLibreDomain && !((isDroites || isConstruire) && activeBlock.coordLibre) ? (
           <TpmLibreEditor
-            liveArithmetic={liveAddition}
+            liveArithmetic={liveArithmetic}
             exerciseType={activeBlock.exerciseType}
             instruction={
               activeBlock.libreInstruction ??
@@ -216,13 +217,13 @@ export function LibreSidePanel({
             }
             items={arithmeticItems}
             maxQuestions={maxQuestions}
-            transient={liveAddition ? { fields: transientFields, write: onTransientField } : undefined}
-            onRegenerate={liveAddition ? (id) => onRegenerateBlock?.(safeBlockIndex, undefined, id) : undefined}
+            transient={liveArithmetic ? { fields: transientFields, write: onTransientField } : undefined}
+            onRegenerate={liveArithmetic ? (id) => onRegenerateBlock?.(safeBlockIndex, undefined, id) : undefined}
             onChangeInstruction={(libreInstruction) => {
-              updatePage(liveAddition ? { libreId: additionId, libreInstruction, libreItems: arithmeticItems } : { libreInstruction })
+              updatePage(liveArithmetic ? { libreId: arithmeticId, libreInstruction, libreItems: arithmeticItems } : { libreInstruction })
             }}
-            onChangeItems={(libreItems) => updatePage(liveAddition
-              ? { libreId: additionId, libreItems, ...(libreItems.length === activeBlock.count ? {} : { count: libreItems.length }) }
+            onChangeItems={(libreItems) => updatePage(liveArithmetic
+              ? { libreId: arithmeticId, libreItems, ...(libreItems.length === activeBlock.count ? {} : { count: libreItems.length }) }
               : { libreItems })}
           />
         ) : null}
@@ -282,6 +283,7 @@ export function LibreSidePanel({
                     className="pill-input"
                     type="text"
                     value={value}
+                    aria-label={`Modèle ${index + 1}`}
                     spellCheck
                     onChange={(event) => setCalliFieldAt(index, event.target.value)}
                   />

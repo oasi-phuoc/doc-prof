@@ -1,9 +1,10 @@
+import { isInlineArithmetic } from './profiles'
 import { hasTcfLockedQuestions } from '@/tcf/libre-questions'
 import { buildPage } from '@/math/generate'
 import { pageAsConfig, pageBlocks, setPageBlock } from '@/math/page-model'
 import type { ExerciseBlock, MathItem, PageConfig } from '@/math/types'
 
-export function additionActivityId(block: ExerciseBlock, seed: number, pageIndex: number, blockIndex: number) {
+export function arithmeticActivityId(block: ExerciseBlock, seed: number, pageIndex: number, blockIndex: number) {
   return block.libreId ?? `addition-${(seed >>> 0).toString(36)}-${pageIndex}-${blockIndex}`
 }
 
@@ -31,7 +32,7 @@ export function trimUnlockedItems(items: MathItem[], count: number): MathItem[] 
   }, []).reverse()
 }
 
-export function rerollAddition(
+export function rerollArithmetic(
   page: PageConfig,
   pageIndex: number,
   blockIndex: number,
@@ -40,8 +41,8 @@ export function rerollAddition(
   targetId?: string,
 ): PageConfig {
   const block = pageBlocks(page)[blockIndex]
-  if (page.domain !== 'algèbre' || block?.exerciseType !== 'addition-ligne') return page
-  const activityId = additionActivityId(block, seed, pageIndex, blockIndex)
+  if (!block || !isInlineArithmetic(page.domain, block.exerciseType)) return page
+  const activityId = arithmeticActivityId(block, seed, pageIndex, blockIndex)
   const pageSeed = seed + pageIndex * 7919 + blockIndex * 10007
   const old = buildPage(pageAsConfig(page, block), pageSeed + (block.contentSeed ?? 0), 1, seed)
   const items = identifyItems(block.libreItems ?? old.items, activityId)

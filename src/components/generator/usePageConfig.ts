@@ -8,6 +8,7 @@ import {
   resizeDraftGrids,
   resizeOralAnswerModes,
 } from '@/components/generator/page-helpers'
+import { isInlineArithmetic, liveEditorProfile, writesNativePayload } from '@/components/generator/libre/profiles'
 import { hasLockedItems, identifyItems, trimUnlockedItems } from '@/components/generator/libre/flat-items'
 import { blockItemsForConfig } from '@/components/generator/sheet-items'
 import { defaultCoordQuestionReply } from '@/components/generator/WorksheetSheet'
@@ -52,7 +53,8 @@ export type UsePageConfigParams = {
   worksheets: WorksheetPage[]
   seed: number
   libreMode: boolean
-  additionA4: boolean
+  arithmeticA4: boolean
+  editorProfile: ReturnType<typeof liveEditorProfile>
   isPhraseDomain: boolean
   isCalliDomain: boolean
   isJeuxDomain: boolean
@@ -69,18 +71,22 @@ export function usePageConfig({
   worksheets,
   seed,
   libreMode,
-  additionA4,
+  arithmeticA4,
+  editorProfile,
   isPhraseDomain,
   isCalliDomain,
   isJeuxDomain,
   isTcf,
 }: UsePageConfigParams) {
-  const updatePage = (patch: Partial<PageConfig>) => {
+  const updatePage = (change: Partial<PageConfig>) => {
+    const patch = writesNativePayload(editorProfile, change)
+      ? { ...change, libreItems: undefined, libreInstruction: undefined }
+      : change
     const releasesTcf = Object.hasOwn(patch, 'tcfExercise') && patch.tcfExercise === undefined
     if (hasLockedItems(activeBlock) && (patch.exerciseType !== undefined || releasesTcf)) {
       if (!window.confirm('Remplacer cette activité et ses questions verrouillées ?')) return
     }
-    if (additionA4 && patch.count != null && patch.libreItems === undefined && activeBlock.libreItems) {
+    if (arithmeticA4 && patch.count != null && patch.libreItems === undefined && activeBlock.libreItems) {
       const locked = activeBlock.libreItems.filter(({ libreLocked }) => libreLocked).length
       if (patch.count < locked) {
         window.alert(`Il reste ${locked} questions verrouillées. Choisissez au moins ${locked} questions ou déverrouillez-en.`)
@@ -171,7 +177,7 @@ export function usePageConfig({
             coordMarks: omega ? [...figure, omega] : figure,
           }
         }
-        if (additionA4 && patch.count != null && patch.libreItems === undefined && fixed.libreItems?.length) {
+        if (arithmeticA4 && patch.count != null && patch.libreItems === undefined && fixed.libreItems?.length) {
           const kept = trimUnlockedItems(fixed.libreItems, fixed.count)
           if (kept.length < fixed.count) {
             const config = pageAsConfig(page, { ...fixed, libreItems: undefined })
@@ -396,7 +402,7 @@ export function usePageConfig({
 
   // Mode libre générique : reprend le tirage dans libreItems après Générer / Valider.
   useEffect(() => {
-    if (!libreMode || activeBlock.exerciseType === 'addition-ligne') return
+    if (!libreMode || (activeSheet && isInlineArithmetic(activeSheet.domain, activeBlock.exerciseType))) return
     if (isPhraseDomain && isPhraseLibreEditable(activeBlock.exerciseType)) return
     if (isCalliDomain || isJeuxDomain || isTcf) return
     if (activeBlock.libreItems && activeBlock.libreItems.length > 0) return

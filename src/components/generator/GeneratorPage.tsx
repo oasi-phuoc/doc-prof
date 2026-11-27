@@ -57,8 +57,8 @@ import { useQuestionsOverflow } from '@/components/generator/useQuestionsOverflo
 import { useGeneratorAudio } from '@/components/generator/useGeneratorAudio'
 import { useGenerateActions } from '@/components/generator/useGenerateActions'
 import { useCoordEditing } from '@/components/generator/useCoordEditing'
-import { additionActivityId } from '@/components/generator/libre/flat-items'
-import { liveEditorProfile } from '@/components/generator/libre/profiles'
+import { arithmeticActivityId } from '@/components/generator/libre/flat-items'
+import { isInlineArithmetic, liveEditorProfile } from '@/components/generator/libre/profiles'
 import { hasTcfCorrectionsToReview, isTcfSubjectIncomplete } from '@/tcf/libre-questions'
 import { DraftRecovery } from '@/components/generator/libre/DraftRecovery'
 import { useLibreDraft } from '@/components/generator/libre/useLibreDraft'
@@ -280,10 +280,10 @@ export function GeneratorPage({
   const pageExerciseBlocks = pageBlocks(activePage)
   const safeBlockIndex = Math.min(blockIndex, Math.max(0, pageExerciseBlocks.length - 1))
   const activeBlock = pageExerciseBlocks[safeBlockIndex] ?? blockFromPage(activePage)
-  const isAdditionPilot = activePage.domain === 'algèbre' && activeBlock.exerciseType === 'addition-ligne'
+  const inlineArithmetic = isInlineArithmetic(activePage.domain, activeBlock.exerciseType)
   const activeProfile = liveEditorProfile(activePage.domain, activeBlock.exerciseType, sheetFormat)
-  const additionA4 = activeProfile === 'addition'
-  const liveAddition = libreMode && additionA4
+  const arithmeticA4 = activeProfile === 'calcul-en-ligne'
+  const liveArithmetic = libreMode && arithmeticA4
   const liveTcf = libreMode && (activeProfile === 'document' || activeProfile === 'audio-qcm')
 
   /** Les exercices encore ouverts avec validation conservent leur dernière version appliquée. */
@@ -396,7 +396,8 @@ export function GeneratorPage({
     worksheets,
     seed,
     libreMode,
-    additionA4,
+    arithmeticA4,
+    editorProfile: activeProfile,
     isPhraseDomain: ctx.isPhraseDomain,
     isCalliDomain: ctx.isCalliDomain,
     isJeuxDomain: ctx.isJeuxDomain,
@@ -543,8 +544,8 @@ export function GeneratorPage({
     updatePage({ calliText: joinCalliLines(ctx.calliFields.filter((_, i) => i !== index)) })
   }
 
-  function confirmAdditionOutput(action: 'imprimer' | 'enregistrer') {
-    if (!liveAddition) return true
+  function confirmArithmeticOutput(action: 'imprimer' | 'enregistrer') {
+    if (!liveArithmetic) return true
     const field = document.querySelector<HTMLInputElement>('#activity-editor input[data-applied-value][aria-invalid="true"]')
     if (!field) return true
     const calculation = field.closest('[role="group"]')?.getAttribute('aria-label')
@@ -562,7 +563,7 @@ export function GeneratorPage({
     .some(({ tcfExercise }) => hasTcfCorrectionsToReview(tcfExercise)))
 
   async function printAll() {
-    if (!confirmAdditionOutput('imprimer')) return
+    if (!confirmArithmeticOutput('imprimer')) return
     if (pages.some((page) => pageBlocks(page).some(({ tcfExercise }) => isTcfSubjectIncomplete(tcfExercise)))) {
       window.alert('Une question ou un support est incomplet. Complétez le contenu concerné avant d’imprimer.')
       return
@@ -719,7 +720,7 @@ export function GeneratorPage({
   const resultPanelProps = {
     ...ctx,
     libreMode,
-    validateManual: liveAddition || liveTcf ? undefined : validateManual,
+    validateManual: activeProfile ? undefined : validateManual,
     correctionsToReview,
     downloadActiveTcfAudios: audio.downloadActiveTcfAudios,
     downloadActiveTcmCfrAudios: audio.downloadActiveTcmCfrAudios,
@@ -737,7 +738,7 @@ export function GeneratorPage({
     printAll,
     printCorrections: printCorrections && !printStudentOnly,
     onSaveFiche: () => {
-      if (confirmAdditionOutput('enregistrer')) setSaveOpen(true)
+      if (confirmArithmeticOutput('enregistrer')) setSaveOpen(true)
     },
     onOpenBook: () =>
       setBookRequest({
@@ -836,7 +837,7 @@ export function GeneratorPage({
               setLibreMode((prev) => {
                 const next = !prev
                 setLibreSnapshot(next ? pages : null)
-                if (next) {
+                if (next && activeProfile !== 'calligraphie' && activeProfile !== 'cartes' && activeProfile !== 'phrase') {
                   const sheetBlock = activeSheet?.blocks[safeBlockIndex]
                   const full = blockItemsForConfig(worksheets, pageIndex, safeBlockIndex)
                   const seedItems = activeBlock.libreItems?.length
@@ -849,13 +850,13 @@ export function GeneratorPage({
                   const patch: Partial<typeof activeBlock> =
                     ctx.isTcf || ctx.isGrammaireExercise
                       ? { libreItems: undefined, libreInstruction: undefined }
-                      : isAdditionPilot
+                      : inlineArithmetic
                         ? {}
                         : { libreItems: seedItems, libreInstruction: seedInstruction }
                   if (ctx.isFormes || ctx.isCadrans || ctx.isDroites || ctx.isConstruire || ctx.isTransform) {
                     patch.coordLibre = true
                   }
-                  if (ctx.isNumberLibreDomain && !isAdditionPilot) patch.numberLibre = true
+                  if (ctx.isNumberLibreDomain && !inlineArithmetic) patch.numberLibre = true
                   if (ctx.isPhraseDomain && isPhraseLibreEditable(activeBlock.exerciseType)) {
                     patch.verbGroup = 'libre'
                     patch.phraseItems = activeBlock.phraseItems ?? sheetBlock?.items
@@ -936,10 +937,11 @@ export function GeneratorPage({
               safeBlockIndex={safeBlockIndex}
               isPhraseDomain={ctx.isPhraseDomain}
               isNumberLibreDomain={ctx.isNumberLibreDomain}
-              liveAddition={liveAddition}
+              liveArithmetic={liveArithmetic}
               liveTcf={liveTcf}
               evalMode={evalMode}
-              additionId={additionActivityId(activeBlock, seed, pageIndex, safeBlockIndex)}
+              livePhrase={activeProfile === 'phrase'}
+              arithmeticId={arithmeticActivityId(activeBlock, seed, pageIndex, safeBlockIndex)}
               maxQuestions={ctx.maxQuestions}
               transientFields={transientFields}
               onTransientField={writeTransientField}

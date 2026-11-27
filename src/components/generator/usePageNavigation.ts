@@ -1,3 +1,4 @@
+import { isInlineArithmetic } from '@/components/generator/libre/profiles'
 import { hasLockedItems } from '@/components/generator/libre/flat-items'
 import type { Dispatch, SetStateAction } from 'react'
 import { useEffect } from 'react'
@@ -237,7 +238,7 @@ export function usePageNavigation({
     const next: PageConfig = {
       domain: activePage.domain,
       ...newBlock,
-      ...(newBlock.exerciseType === 'addition-ligne' ? { libreId: crypto.randomUUID() } : {}),
+      ...(isInlineArithmetic(activePage.domain, newBlock.exerciseType) ? { libreId: crypto.randomUUID() } : {}),
       extraBlocks: undefined,
     }
     // Insérée juste après la page active, pas en fin de document.
@@ -261,7 +262,7 @@ export function usePageNavigation({
   const addExerciseOnPage = () => {
     const newBlock = createNextExerciseBlock()
     if (!newBlock) return
-    const newId = newBlock.exerciseType === 'addition-ligne' ? crypto.randomUUID() : undefined
+    const newId = isInlineArithmetic(activePage.domain, newBlock.exerciseType) ? crypto.randomUUID() : undefined
     setPages((current) =>
       current.map((page, index) => {
         if (index !== pageIndex) return page

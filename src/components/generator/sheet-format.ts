@@ -1,3 +1,4 @@
+import { isInlineArithmetic } from './libre/profiles'
 import { pageBlocks, setPageBlock } from '@/math/page-model'
 import type { ExerciseBlock, PageConfig } from '@/math/types'
 import { isLogistiqueDomain } from '@/logistique/catalog'
@@ -28,6 +29,9 @@ export function pageForA5Half(page: PageConfig, half: 'left' | 'right'): PageCon
       half === 'right'
         ? (block.contentSeedTwin ?? block.contentSeed ?? 0)
         : (block.contentSeed ?? 0)
+    const keepCustomized = half === 'left' &&
+      isInlineArithmetic(page.domain, block.exerciseType) &&
+      block.libreItems?.some(({ libreId }) => libreId)
     next = setPageBlock(next, index, {
       contentSeed: seed,
       calliText: undefined,
@@ -36,8 +40,8 @@ export function pageForA5Half(page: PageConfig, half: 'left' | 'right'): PageCon
       gameSelectedIds: undefined,
       phraseItems: undefined,
       phraseInstruction: undefined,
-      libreItems: logistics ? block.libreItems : undefined,
-      libreInstruction: logistics ? block.libreInstruction : undefined,
+      libreItems: logistics || keepCustomized ? block.libreItems : undefined,
+      libreInstruction: logistics || keepCustomized ? block.libreInstruction : undefined,
     })
   })
   return next
