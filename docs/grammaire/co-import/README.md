@@ -24,15 +24,15 @@ La banque `src/grammaire/exercises/co-bank.json` conserve les identifiants, enre
 
 | Niveau | Pistes | QCM texte et réponse sur trait | Questions avec QCM image | Scènes de support |
 | --- | ---: | ---: | ---: | ---: |
-| A1 | 127 | 419 | 175 | 2 |
-| A2 | 125 | 188 | 63 | 13 |
-| **Total** | **252** | **607** | **238** | **15** |
+| A1 | 127 | 431 | 179 | 4 |
+| A2 | 125 | 188 | 70 | 13 |
+| **Total** | **252** | **619** | **249** | **17** |
 
-Les 100 questions initiales ont été relues et associées à leur passage. Vingt pistes A2 qui avaient une seule question en ont maintenant deux. Les ajouts portent notamment sur les consignes de visite, les billets pendant les travaux, la procédure de retour et le contenu d’un message sur un forum. Les questions qui demandaient d’identifier certains noms non épelés portent désormais sur un fait du dialogue. Le [relevé des passages et des réemplois](questions-verification-20261127.json) documente les 607 questions.
+Les 100 questions initiales ont été relues et associées à leur passage. Vingt pistes A2 qui avaient une seule question en ont maintenant deux. Les ajouts portent notamment sur les consignes de visite, les billets pendant les travaux, la procédure de retour et le contenu d’un message sur un forum. Les questions qui demandaient d’identifier certains noms non épelés portent désormais sur un fait du dialogue. Le [relevé des passages et des réemplois](questions-verification-20261127.json) documente les 607 questions de cette première passe. Le [complément Word](complement-word-20261127.md) a ajouté 12 questions A1.
 
 Whisper large-v3 en français a recoupé des passages ciblés des pistes A1 005, 013, 016 et 116. La comparaison des voix dans la piste 005 attribue les 25 ans à Paolo et les 35 ans à Nicole. La piste 016 confirme le nombre d’enfants, qui devient la réponse attendue. La commande de deux tartes aux fraises de la piste 116 apparaît dans les trois reconnaissances disponibles.
 
-Dans le générateur, les formes **Texte**, **Phrase** et **Image** correspondent au QCM texte, à la réponse sur trait et au QCM illustré. Les 607 questions proposent les deux premiers formats. Le QCM image est disponible pour 238 questions. Quinze pistes affichent aussi une scène de dialogue. Les scènes et les choix publiés ont été examinés visuellement selon le [référentiel graphique TCF](../../tcf/style-images.md). Les empreintes et passages associés figurent dans le [registre des illustrations](illustrations-co-20261127.json). Le [registre des choix à illustrer](images-a-preparer.json) rassemble 10 questions repérées lors de la revue des transcriptions.
+Dans le générateur, les formes **Texte**, **Phrase** et **Image** correspondent au QCM texte, à la réponse sur trait et au QCM illustré. Les 619 questions proposent les deux premières formes et 249 proposent la forme Image. Les 10 trios en attente ont été générés et intégrés. Deux scènes de support supplémentaires illustrent une conversation à la boulangerie et une rencontre dans le couloir d’un train, sans montrer les éléments demandés dans les réponses. Les scènes de support sont facultatives. Les nouvelles images respectent le [référentiel graphique TCF](../../tcf/style-images.md). Les fichiers, empreintes et passages associés figurent dans le [registre des illustrations](illustrations-co-20261127.json) et l’état de chaque trio figure dans le [suivi des choix illustrés](images-a-preparer.json).
 
 Les questions ont été relues sur les transcriptions recoupées. Lors de la première passe, les pistes et les images ont été testées dans le navigateur sur un échantillon des deux niveaux, avec les formes disponibles et l’export PDF. Les 252 pistes ont été décodées intégralement sans erreur. L’écoute de validation et l’approbation enseignante restent à faire.
 
@@ -44,4 +44,4 @@ La scène du conseil professionnel donné à Stéphane a été remplacée après
 node scripts/audit-grammar-co-import.cjs
 ```
 
-Le contrôle vérifie les 252 fichiers et leurs empreintes, les 38 liens du catalogue, les transcriptions, la sélection et la sauvegarde de chaque piste au bon niveau, puis les formes de réponse et les références des images. Les nouvelles questions et le rapport peuvent être régénérés avec `python3 scripts/build-grammar-co-questions.py`.
+Le contrôle vérifie les 252 fichiers et leurs empreintes, les 38 liens du catalogue, les transcriptions, la sélection et la sauvegarde de chaque piste au bon niveau, puis les formes de réponse et les références des images. Le script `scripts/build-grammar-co-questions.py` documente la construction de la première passe à partir des transcriptions. La banque active comprend aussi les ajouts Word ultérieurs.
