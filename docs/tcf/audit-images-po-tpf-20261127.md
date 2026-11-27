@@ -4,7 +4,7 @@ L’[ordonnance à la pharmacie](../../public/lib/images/tcf/po/a2/pharmacie-ord
 
 Le [suivi par fichier](audit-images-po-tpf-20261127.csv) donne le chemin du média dans le dépôt, les identifiants des exercices, l’étape d’une série, l’écart visuel et les actions à préserver. Le niveau est celui de la banque du TPF. La revue couvre les fichiers actifs résolus par le générateur. Elle a été faite sur planches et par comparaison agrandie pour les exemples prioritaires et les cas intermédiaires.
 
-Les **68 images prioritaires** constituent le lot autorisé. **27 sur 68** ont été remplacées à leur emplacement d’origine. Le tableau ci-dessous conserve le constat de départ. Le statut et l’empreinte de chaque reprise figurent dans le suivi par fichier.
+Les **68 images prioritaires** constituent le lot autorisé. **33 sur 68** ont été remplacées à leur emplacement d’origine. Le tableau ci-dessous conserve le constat de départ. Le statut et l’empreinte de chaque reprise figurent dans le suivi par fichier.
 
 | Banque | Images examinées | Rendu photo à refaire | Décor à harmoniser | Contours à harmoniser | À confirmer | Sans reprise prioritaire | Référence validée |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
