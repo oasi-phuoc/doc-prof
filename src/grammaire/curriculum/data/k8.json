@@ -1,7 +1,7 @@
 [
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k8-qcm-verbe",
     "subthemeId": "k8",
     "topic": "gram-exprimer",
@@ -1523,12 +1523,312 @@
           }
         ],
         "explanation": "Le relatif est complément direct de « propose ». Modèle : Ce que l’on propose, c’est de prévenir les voyageurs avant un changement de quai."
+      },
+      {
+        "id": "gram-ex-k8-qcm-verbe-b1-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k8-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "___ on parle, c’est de la proposition suivante : mettre un plan tactile à l’entrée.",
+        "cue": "Choisissez le pronom relatif neutre selon la fonction dans la proposition.",
+        "answers": [
+          "Ce dont"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-atelier-braille-choix-1",
+            "text": "Ce dont"
+          },
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-atelier-braille-choix-2",
+            "text": "Ce qui"
+          },
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-atelier-braille-choix-3",
+            "text": "Ce que"
+          }
+        ],
+        "explanation": "Parler de se reprend avec ce dont. Modèle : Ce dont on parle, c’est de la proposition suivante : mettre un plan tactile à l’entrée."
+      },
+      {
+        "id": "gram-ex-k8-qcm-verbe-b1-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k8-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "___ explique la décision, c’est le fait suivant : les bandes magnétiques se détérioraient.",
+        "cue": "Choisissez le pronom relatif neutre selon la fonction dans la proposition.",
+        "answers": [
+          "Ce qui"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-archives-sonores-choix-1",
+            "text": "Ce qui"
+          },
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-archives-sonores-choix-2",
+            "text": "Ce que"
+          },
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-archives-sonores-choix-3",
+            "text": "Ce dont"
+          }
+        ],
+        "explanation": "Le relatif est sujet du verbe « explique ». Modèle : Ce qui explique la décision, c’est le fait suivant : les bandes magnétiques se détérioraient."
+      },
+      {
+        "id": "gram-ex-k8-qcm-verbe-b1-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k8-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "___ l’on propose, c’est de donner un numéro à chaque casier.",
+        "cue": "Choisissez le pronom relatif neutre selon la fonction dans la proposition.",
+        "answers": [
+          "Ce que"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-casiers-cantine-choix-1",
+            "text": "Ce que"
+          },
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-casiers-cantine-choix-2",
+            "text": "Ce qui"
+          },
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-casiers-cantine-choix-3",
+            "text": "Ce dont"
+          }
+        ],
+        "explanation": "Le relatif est complément direct de « propose ». Modèle : Ce que l’on propose, c’est de donner un numéro à chaque casier."
+      },
+      {
+        "id": "gram-ex-k8-qcm-verbe-b1-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k8-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "___ on parle, c’est de la proposition suivante : prévoir de l’ombre pour les semis.",
+        "cue": "Choisissez le pronom relatif neutre selon la fonction dans la proposition.",
+        "answers": [
+          "Ce dont"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-atelier-ombre-choix-1",
+            "text": "Ce dont"
+          },
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-atelier-ombre-choix-2",
+            "text": "Ce qui"
+          },
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-atelier-ombre-choix-3",
+            "text": "Ce que"
+          }
+        ],
+        "explanation": "Parler de se reprend avec ce dont. Modèle : Ce dont on parle, c’est de la proposition suivante : prévoir de l’ombre pour les semis."
+      },
+      {
+        "id": "gram-ex-k8-qcm-verbe-b1-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k8-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "___ explique la décision, c’est le fait suivant : le micro du guichet était en panne.",
+        "cue": "Choisissez le pronom relatif neutre selon la fonction dans la proposition.",
+        "answers": [
+          "Ce qui"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-guichet-sourdine-choix-1",
+            "text": "Ce qui"
+          },
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-guichet-sourdine-choix-2",
+            "text": "Ce que"
+          },
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-guichet-sourdine-choix-3",
+            "text": "Ce dont"
+          }
+        ],
+        "explanation": "Le relatif est sujet du verbe « explique ». Modèle : Ce qui explique la décision, c’est le fait suivant : le micro du guichet était en panne."
+      },
+      {
+        "id": "gram-ex-k8-qcm-verbe-b1-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k8-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "___ l’on propose, c’est de prêter des protections auditives pendant la visite.",
+        "cue": "Choisissez le pronom relatif neutre selon la fonction dans la proposition.",
+        "answers": [
+          "Ce que"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-protecteurs-oreilles-choix-1",
+            "text": "Ce que"
+          },
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-protecteurs-oreilles-choix-2",
+            "text": "Ce qui"
+          },
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-protecteurs-oreilles-choix-3",
+            "text": "Ce dont"
+          }
+        ],
+        "explanation": "Le relatif est complément direct de « propose ». Modèle : Ce que l’on propose, c’est de prêter des protections auditives pendant la visite."
+      },
+      {
+        "id": "gram-ex-k8-qcm-verbe-b1-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k8-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "___ on parle, c’est de la proposition suivante : imprimer les consignes avant l’évaluation.",
+        "cue": "Choisissez le pronom relatif neutre selon la fonction dans la proposition.",
+        "answers": [
+          "Ce dont"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-reseau-ecole-choix-1",
+            "text": "Ce dont"
+          },
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-reseau-ecole-choix-2",
+            "text": "Ce qui"
+          },
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-reseau-ecole-choix-3",
+            "text": "Ce que"
+          }
+        ],
+        "explanation": "Parler de se reprend avec ce dont. Modèle : Ce dont on parle, c’est de la proposition suivante : imprimer les consignes avant l’évaluation."
+      },
+      {
+        "id": "gram-ex-k8-qcm-verbe-b1-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k8-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "___ explique la décision, c’est le fait suivant : le prix était affiché seulement par kilo.",
+        "cue": "Choisissez le pronom relatif neutre selon la fonction dans la proposition.",
+        "answers": [
+          "Ce qui"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-panneau-comptoir-choix-1",
+            "text": "Ce qui"
+          },
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-panneau-comptoir-choix-2",
+            "text": "Ce que"
+          },
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-panneau-comptoir-choix-3",
+            "text": "Ce dont"
+          }
+        ],
+        "explanation": "Le relatif est sujet du verbe « explique ». Modèle : Ce qui explique la décision, c’est le fait suivant : le prix était affiché seulement par kilo."
+      },
+      {
+        "id": "gram-ex-k8-qcm-verbe-b1-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k8-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "___ l’on propose, c’est de installer une rampe pour l’arrivée du bateau.",
+        "cue": "Choisissez le pronom relatif neutre selon la fonction dans la proposition.",
+        "answers": [
+          "Ce que"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-bateau-rampe-choix-1",
+            "text": "Ce que"
+          },
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-bateau-rampe-choix-2",
+            "text": "Ce qui"
+          },
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-bateau-rampe-choix-3",
+            "text": "Ce dont"
+          }
+        ],
+        "explanation": "Le relatif est complément direct de « propose ». Modèle : Ce que l’on propose, c’est de installer une rampe pour l’arrivée du bateau."
+      },
+      {
+        "id": "gram-ex-k8-qcm-verbe-b1-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k8-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "___ on parle, c’est de la proposition suivante : mettre la boîte du journal sous le porche.",
+        "cue": "Choisissez le pronom relatif neutre selon la fonction dans la proposition.",
+        "answers": [
+          "Ce dont"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-abri-journal-choix-1",
+            "text": "Ce dont"
+          },
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-abri-journal-choix-2",
+            "text": "Ce qui"
+          },
+          {
+            "id": "gram-ex-k8-qcm-verbe-b1-abri-journal-choix-3",
+            "text": "Ce que"
+          }
+        ],
+        "explanation": "Parler de se reprend avec ce dont. Modèle : Ce dont on parle, c’est de la proposition suivante : mettre la boîte du journal sous le porche."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k8-curriculum-t",
     "subthemeId": "k8",
     "topic": "gram-exprimer",
@@ -2398,12 +2698,182 @@
         ],
         "responseLines": 2,
         "explanation": "Le relatif est complément direct de « propose »."
+      },
+      {
+        "id": "gram-ex-k8-curriculum-t-b1-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k8-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les personnes parlent de cette proposition : mettre un plan tactile à l’entrée.",
+        "directive": "Reformulez en commençant par le pronom relatif neutre adapté : ce qui, ce que ou ce dont.",
+        "answers": [
+          "Ce dont on parle, c’est de la proposition suivante : mettre un plan tactile à l’entrée."
+        ],
+        "responseLines": 2,
+        "explanation": "Parler de se reprend avec ce dont."
+      },
+      {
+        "id": "gram-ex-k8-curriculum-t-b1-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k8-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Voici le point qui explique la décision : les bandes magnétiques se détérioraient.",
+        "directive": "Reformulez en commençant par le pronom relatif neutre adapté : ce qui, ce que ou ce dont.",
+        "answers": [
+          "Ce qui explique la décision, c’est le fait suivant : les bandes magnétiques se détérioraient."
+        ],
+        "responseLines": 2,
+        "explanation": "Le relatif est sujet du verbe « explique »."
+      },
+      {
+        "id": "gram-ex-k8-curriculum-t-b1-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k8-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Voici le contenu de la proposition : donner un numéro à chaque casier.",
+        "directive": "Reformulez en commençant par le pronom relatif neutre adapté : ce qui, ce que ou ce dont.",
+        "answers": [
+          "Ce que l’on propose, c’est de donner un numéro à chaque casier."
+        ],
+        "responseLines": 2,
+        "explanation": "Le relatif est complément direct de « propose »."
+      },
+      {
+        "id": "gram-ex-k8-curriculum-t-b1-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k8-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les personnes parlent de cette proposition : prévoir de l’ombre pour les semis.",
+        "directive": "Reformulez en commençant par le pronom relatif neutre adapté : ce qui, ce que ou ce dont.",
+        "answers": [
+          "Ce dont on parle, c’est de la proposition suivante : prévoir de l’ombre pour les semis."
+        ],
+        "responseLines": 2,
+        "explanation": "Parler de se reprend avec ce dont."
+      },
+      {
+        "id": "gram-ex-k8-curriculum-t-b1-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k8-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Voici le point qui explique la décision : le micro du guichet était en panne.",
+        "directive": "Reformulez en commençant par le pronom relatif neutre adapté : ce qui, ce que ou ce dont.",
+        "answers": [
+          "Ce qui explique la décision, c’est le fait suivant : le micro du guichet était en panne."
+        ],
+        "responseLines": 2,
+        "explanation": "Le relatif est sujet du verbe « explique »."
+      },
+      {
+        "id": "gram-ex-k8-curriculum-t-b1-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k8-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Voici le contenu de la proposition : prêter des protections auditives pendant la visite.",
+        "directive": "Reformulez en commençant par le pronom relatif neutre adapté : ce qui, ce que ou ce dont.",
+        "answers": [
+          "Ce que l’on propose, c’est de prêter des protections auditives pendant la visite."
+        ],
+        "responseLines": 2,
+        "explanation": "Le relatif est complément direct de « propose »."
+      },
+      {
+        "id": "gram-ex-k8-curriculum-t-b1-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k8-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les personnes parlent de cette proposition : imprimer les consignes avant l’évaluation.",
+        "directive": "Reformulez en commençant par le pronom relatif neutre adapté : ce qui, ce que ou ce dont.",
+        "answers": [
+          "Ce dont on parle, c’est de la proposition suivante : imprimer les consignes avant l’évaluation."
+        ],
+        "responseLines": 2,
+        "explanation": "Parler de se reprend avec ce dont."
+      },
+      {
+        "id": "gram-ex-k8-curriculum-t-b1-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k8-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Voici le point qui explique la décision : le prix était affiché seulement par kilo.",
+        "directive": "Reformulez en commençant par le pronom relatif neutre adapté : ce qui, ce que ou ce dont.",
+        "answers": [
+          "Ce qui explique la décision, c’est le fait suivant : le prix était affiché seulement par kilo."
+        ],
+        "responseLines": 2,
+        "explanation": "Le relatif est sujet du verbe « explique »."
+      },
+      {
+        "id": "gram-ex-k8-curriculum-t-b1-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k8-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Voici le contenu de la proposition : installer une rampe pour l’arrivée du bateau.",
+        "directive": "Reformulez en commençant par le pronom relatif neutre adapté : ce qui, ce que ou ce dont.",
+        "answers": [
+          "Ce que l’on propose, c’est de installer une rampe pour l’arrivée du bateau."
+        ],
+        "responseLines": 2,
+        "explanation": "Le relatif est complément direct de « propose »."
+      },
+      {
+        "id": "gram-ex-k8-curriculum-t-b1-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k8-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les personnes parlent de cette proposition : mettre la boîte du journal sous le porche.",
+        "directive": "Reformulez en commençant par le pronom relatif neutre adapté : ce qui, ce que ou ce dont.",
+        "answers": [
+          "Ce dont on parle, c’est de la proposition suivante : mettre la boîte du journal sous le porche."
+        ],
+        "responseLines": 2,
+        "explanation": "Parler de se reprend avec ce dont."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k8-curriculum-c",
     "subthemeId": "k8",
     "topic": "gram-exprimer",
@@ -3566,6 +4036,236 @@
           "Ce que l’on propose, c’est de prévenir les voyageurs avant un changement de quai."
         ],
         "explanation": "Le relatif est complément direct de « propose ».",
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 6,
+          "text": "Ce qui"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k8-curriculum-c-b1-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k8-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Ce qui on parle, c’est de la proposition suivante : mettre un plan tactile à l’entrée.",
+        "cue": "Choisissez le pronom relatif neutre selon la fonction dans la proposition.",
+        "answers": [
+          "Ce dont on parle, c’est de la proposition suivante : mettre un plan tactile à l’entrée."
+        ],
+        "explanation": "Parler de se reprend avec ce dont.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 6,
+          "text": "Ce qui"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k8-curriculum-c-b1-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k8-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Ce que explique la décision, c’est le fait suivant : les bandes magnétiques se détérioraient.",
+        "cue": "Choisissez le pronom relatif neutre selon la fonction dans la proposition.",
+        "answers": [
+          "Ce qui explique la décision, c’est le fait suivant : les bandes magnétiques se détérioraient."
+        ],
+        "explanation": "Le relatif est sujet du verbe « explique ».",
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 6,
+          "text": "Ce que"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k8-curriculum-c-b1-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k8-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Ce qui l’on propose, c’est de donner un numéro à chaque casier.",
+        "cue": "Choisissez le pronom relatif neutre selon la fonction dans la proposition.",
+        "answers": [
+          "Ce que l’on propose, c’est de donner un numéro à chaque casier."
+        ],
+        "explanation": "Le relatif est complément direct de « propose ».",
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 6,
+          "text": "Ce qui"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k8-curriculum-c-b1-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k8-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Ce qui on parle, c’est de la proposition suivante : prévoir de l’ombre pour les semis.",
+        "cue": "Choisissez le pronom relatif neutre selon la fonction dans la proposition.",
+        "answers": [
+          "Ce dont on parle, c’est de la proposition suivante : prévoir de l’ombre pour les semis."
+        ],
+        "explanation": "Parler de se reprend avec ce dont.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 6,
+          "text": "Ce qui"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k8-curriculum-c-b1-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k8-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Ce que explique la décision, c’est le fait suivant : le micro du guichet était en panne.",
+        "cue": "Choisissez le pronom relatif neutre selon la fonction dans la proposition.",
+        "answers": [
+          "Ce qui explique la décision, c’est le fait suivant : le micro du guichet était en panne."
+        ],
+        "explanation": "Le relatif est sujet du verbe « explique ».",
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 6,
+          "text": "Ce que"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k8-curriculum-c-b1-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k8-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Ce qui l’on propose, c’est de prêter des protections auditives pendant la visite.",
+        "cue": "Choisissez le pronom relatif neutre selon la fonction dans la proposition.",
+        "answers": [
+          "Ce que l’on propose, c’est de prêter des protections auditives pendant la visite."
+        ],
+        "explanation": "Le relatif est complément direct de « propose ».",
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 6,
+          "text": "Ce qui"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k8-curriculum-c-b1-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k8-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Ce qui on parle, c’est de la proposition suivante : imprimer les consignes avant l’évaluation.",
+        "cue": "Choisissez le pronom relatif neutre selon la fonction dans la proposition.",
+        "answers": [
+          "Ce dont on parle, c’est de la proposition suivante : imprimer les consignes avant l’évaluation."
+        ],
+        "explanation": "Parler de se reprend avec ce dont.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 6,
+          "text": "Ce qui"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k8-curriculum-c-b1-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k8-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Ce que explique la décision, c’est le fait suivant : le prix était affiché seulement par kilo.",
+        "cue": "Choisissez le pronom relatif neutre selon la fonction dans la proposition.",
+        "answers": [
+          "Ce qui explique la décision, c’est le fait suivant : le prix était affiché seulement par kilo."
+        ],
+        "explanation": "Le relatif est sujet du verbe « explique ».",
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 6,
+          "text": "Ce que"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k8-curriculum-c-b1-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k8-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Ce qui l’on propose, c’est de installer une rampe pour l’arrivée du bateau.",
+        "cue": "Choisissez le pronom relatif neutre selon la fonction dans la proposition.",
+        "answers": [
+          "Ce que l’on propose, c’est de installer une rampe pour l’arrivée du bateau."
+        ],
+        "explanation": "Le relatif est complément direct de « propose ».",
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 6,
+          "text": "Ce qui"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k8-curriculum-c-b1-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k8-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Ce qui on parle, c’est de la proposition suivante : mettre la boîte du journal sous le porche.",
+        "cue": "Choisissez le pronom relatif neutre selon la fonction dans la proposition.",
+        "answers": [
+          "Ce dont on parle, c’est de la proposition suivante : mettre la boîte du journal sous le porche."
+        ],
+        "explanation": "Parler de se reprend avec ce dont.",
         "error": {
           "segmentId": "prompt",
           "start": 0,

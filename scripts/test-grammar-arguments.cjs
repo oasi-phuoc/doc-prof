@@ -36,7 +36,7 @@ for (const bank of banks) {
   assert.equal(bank.editorialStatus, 'reviewed')
   assert.equal(isRetiredGrammarType(bank.activityId), true)
   assert.equal(bankForType(bank.activityId).length, 0)
-  assert.equal(bank.units.length, bank.presentations.includes('document-set') ? 20 : 50)
+  assert.equal(bank.units.length, bank.presentations.includes('document-set') ? 20 : 60)
   for (const presentation of bank.presentations) {
     const document = presentation === 'document-set'
     const config = {
@@ -52,7 +52,8 @@ for (const bank of banks) {
     assert.notDeepEqual(selected.questions.map(question => question.id),
       generateGrammarSelection(config, seed + 1).questions.map(question => question.id))
     assert.equal(grammarEligibleCount(config), bank.units.length)
-    assert.equal(selected.questions.length, bank.units.length)
+    assert.equal(selected.questions.length, document ? 20 : 50)
+    if (!document) assert(selected.questions.some(question => question.unit.source.position >= 50))
     const input = {
       pages: [config], seed, institutional: {}, evalMode: false, pointsPerQuestion: 1,
       libreMode: false, libreSnapshot: null,
@@ -92,10 +93,10 @@ for (const bank of banks) {
   }
 }
 
-assert.equal(variants, 3730)
-assert.equal(errorSpans, 250)
+assert.equal(variants, 4400)
+assert.equal(errorSpans, 300)
 assert.equal(documents, 120)
-assert.equal(scenarios, 100)
+assert.equal(scenarios, 120)
 const unit = (subtheme, level, slug, presentation = 'choice') => banks
   .find(bank => bank.subthemeId === subtheme && bank.level === level && bank.presentations.includes(presentation))
   .units.find(item => item.id.endsWith('-' + slug))

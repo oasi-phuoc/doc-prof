@@ -1,7 +1,7 @@
 [
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k5-qcm-verbe",
     "subthemeId": "k5",
     "topic": "gram-exprimer",
@@ -1573,12 +1573,322 @@
           }
         ],
         "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Modèle : Un agent a annoncé le quai par haut-parleur afin de réduire les déplacements de dernière minute."
+      },
+      {
+        "id": "gram-ex-k5-qcm-verbe-a2-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k5-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "L’équipe a préparé un plan tactile ___ aider les visiteurs à se repérer.",
+        "cue": "Introduisez le but de l’action avant le verbe à l’infinitif.",
+        "answers": [
+          "pour",
+          "afin d’"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-atelier-braille-choix-1",
+            "text": "pour"
+          },
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-atelier-braille-choix-2",
+            "text": "parce que"
+          },
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-atelier-braille-choix-3",
+            "text": "bien que"
+          }
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Modèle : L’équipe a préparé un plan tactile pour aider les visiteurs à se repérer."
+      },
+      {
+        "id": "gram-ex-k5-qcm-verbe-a2-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k5-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Une archiviste a numérisé les cassettes ___ préserver les anciens témoignages.",
+        "cue": "Introduisez le but de l’action avant le verbe à l’infinitif.",
+        "answers": [
+          "afin de",
+          "pour"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-archives-sonores-choix-1",
+            "text": "afin de"
+          },
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-archives-sonores-choix-2",
+            "text": "parce que"
+          },
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-archives-sonores-choix-3",
+            "text": "bien que"
+          }
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Modèle : Une archiviste a numérisé les cassettes afin de préserver les anciens témoignages."
+      },
+      {
+        "id": "gram-ex-k5-qcm-verbe-a2-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k5-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Une surveillante a numéroté les casiers ___ laisser le couloir libre.",
+        "cue": "Introduisez le but de l’action avant le verbe à l’infinitif.",
+        "answers": [
+          "pour",
+          "afin de"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-casiers-cantine-choix-1",
+            "text": "pour"
+          },
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-casiers-cantine-choix-2",
+            "text": "parce que"
+          },
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-casiers-cantine-choix-3",
+            "text": "bien que"
+          }
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Modèle : Une surveillante a numéroté les casiers pour laisser le couloir libre."
+      },
+      {
+        "id": "gram-ex-k5-qcm-verbe-a2-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k5-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Les jardiniers ont installé un voile ___ empêcher les jeunes pousses de sécher.",
+        "cue": "Introduisez le but de l’action avant le verbe à l’infinitif.",
+        "answers": [
+          "afin d’",
+          "pour"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-atelier-ombre-choix-1",
+            "text": "afin d’"
+          },
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-atelier-ombre-choix-2",
+            "text": "parce que"
+          },
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-atelier-ombre-choix-3",
+            "text": "bien que"
+          }
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Modèle : Les jardiniers ont installé un voile afin d’empêcher les jeunes pousses de sécher."
+      },
+      {
+        "id": "gram-ex-k5-qcm-verbe-a2-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k5-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "La responsable a installé un petit écran ___ signaler le prochain numéro.",
+        "cue": "Introduisez le but de l’action avant le verbe à l’infinitif.",
+        "answers": [
+          "pour",
+          "afin de"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-guichet-sourdine-choix-1",
+            "text": "pour"
+          },
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-guichet-sourdine-choix-2",
+            "text": "parce que"
+          },
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-guichet-sourdine-choix-3",
+            "text": "bien que"
+          }
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Modèle : La responsable a installé un petit écran pour signaler le prochain numéro."
+      },
+      {
+        "id": "gram-ex-k5-qcm-verbe-a2-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k5-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "La guide a distribué des protections auditives ___ atténuer le bruit.",
+        "cue": "Introduisez le but de l’action avant le verbe à l’infinitif.",
+        "answers": [
+          "afin d’",
+          "pour"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-protecteurs-oreilles-choix-1",
+            "text": "afin d’"
+          },
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-protecteurs-oreilles-choix-2",
+            "text": "parce que"
+          },
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-protecteurs-oreilles-choix-3",
+            "text": "bien que"
+          }
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Modèle : La guide a distribué des protections auditives afin d’atténuer le bruit."
+      },
+      {
+        "id": "gram-ex-k5-qcm-verbe-a2-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k5-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Le secrétariat a imprimé les consignes ___ permettre à chacun de lire le sujet.",
+        "cue": "Introduisez le but de l’action avant le verbe à l’infinitif.",
+        "answers": [
+          "pour",
+          "afin de"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-reseau-ecole-choix-1",
+            "text": "pour"
+          },
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-reseau-ecole-choix-2",
+            "text": "parce que"
+          },
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-reseau-ecole-choix-3",
+            "text": "bien que"
+          }
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Modèle : Le secrétariat a imprimé les consignes pour permettre à chacun de lire le sujet."
+      },
+      {
+        "id": "gram-ex-k5-qcm-verbe-a2-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k5-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Le responsable a modifié les étiquettes ___ permettre aux clients de comparer les prix.",
+        "cue": "Introduisez le but de l’action avant le verbe à l’infinitif.",
+        "answers": [
+          "afin de",
+          "pour"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-panneau-comptoir-choix-1",
+            "text": "afin de"
+          },
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-panneau-comptoir-choix-2",
+            "text": "parce que"
+          },
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-panneau-comptoir-choix-3",
+            "text": "bien que"
+          }
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Modèle : Le responsable a modifié les étiquettes afin de permettre aux clients de comparer les prix."
+      },
+      {
+        "id": "gram-ex-k5-qcm-verbe-a2-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k5-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Un moniteur a fixé une rampe amovible ___ faciliter le débarquement.",
+        "cue": "Introduisez le but de l’action avant le verbe à l’infinitif.",
+        "answers": [
+          "pour",
+          "afin de"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-bateau-rampe-choix-1",
+            "text": "pour"
+          },
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-bateau-rampe-choix-2",
+            "text": "parce que"
+          },
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-bateau-rampe-choix-3",
+            "text": "bien que"
+          }
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Modèle : Un moniteur a fixé une rampe amovible pour faciliter le débarquement."
+      },
+      {
+        "id": "gram-ex-k5-qcm-verbe-a2-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k5-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Deux élèves ont déplacé la boîte sous le porche ___ mettre les journaux à l’abri.",
+        "cue": "Introduisez le but de l’action avant le verbe à l’infinitif.",
+        "answers": [
+          "afin de",
+          "pour"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-abri-journal-choix-1",
+            "text": "afin de"
+          },
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-abri-journal-choix-2",
+            "text": "parce que"
+          },
+          {
+            "id": "gram-ex-k5-qcm-verbe-a2-abri-journal-choix-3",
+            "text": "bien que"
+          }
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Modèle : Deux élèves ont déplacé la boîte sous le porche afin de mettre les journaux à l’abri."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k5-curriculum-t",
     "subthemeId": "k5",
     "topic": "gram-exprimer",
@@ -2448,12 +2758,182 @@
         ],
         "responseLines": 2,
         "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat."
+      },
+      {
+        "id": "gram-ex-k5-curriculum-t-a2-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k5-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "L’équipe a préparé un plan tactile.\nObjectif : aider les visiteurs à se repérer.",
+        "directive": "Reliez les informations avec la construction « pour ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "L’équipe a préparé un plan tactile pour aider les visiteurs à se repérer."
+        ],
+        "responseLines": 2,
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat."
+      },
+      {
+        "id": "gram-ex-k5-curriculum-t-a2-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k5-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Une archiviste a numérisé les cassettes.\nObjectif : préserver les anciens témoignages.",
+        "directive": "Reliez les informations avec la construction « afin de ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Une archiviste a numérisé les cassettes afin de préserver les anciens témoignages."
+        ],
+        "responseLines": 2,
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat."
+      },
+      {
+        "id": "gram-ex-k5-curriculum-t-a2-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k5-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Une surveillante a numéroté les casiers.\nObjectif : laisser le couloir libre.",
+        "directive": "Reliez les informations avec la construction « pour ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Une surveillante a numéroté les casiers pour laisser le couloir libre."
+        ],
+        "responseLines": 2,
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat."
+      },
+      {
+        "id": "gram-ex-k5-curriculum-t-a2-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k5-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Les jardiniers ont installé un voile.\nObjectif : empêcher les jeunes pousses de sécher.",
+        "directive": "Reliez les informations avec la construction « afin d’ ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Les jardiniers ont installé un voile afin d’empêcher les jeunes pousses de sécher."
+        ],
+        "responseLines": 2,
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat."
+      },
+      {
+        "id": "gram-ex-k5-curriculum-t-a2-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k5-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "La responsable a installé un petit écran.\nObjectif : signaler le prochain numéro.",
+        "directive": "Reliez les informations avec la construction « pour ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "La responsable a installé un petit écran pour signaler le prochain numéro."
+        ],
+        "responseLines": 2,
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat."
+      },
+      {
+        "id": "gram-ex-k5-curriculum-t-a2-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k5-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "La guide a distribué des protections auditives.\nObjectif : atténuer le bruit.",
+        "directive": "Reliez les informations avec la construction « afin d’ ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "La guide a distribué des protections auditives afin d’atténuer le bruit."
+        ],
+        "responseLines": 2,
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat."
+      },
+      {
+        "id": "gram-ex-k5-curriculum-t-a2-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k5-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Le secrétariat a imprimé les consignes.\nObjectif : permettre à chacun de lire le sujet.",
+        "directive": "Reliez les informations avec la construction « pour ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Le secrétariat a imprimé les consignes pour permettre à chacun de lire le sujet."
+        ],
+        "responseLines": 2,
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat."
+      },
+      {
+        "id": "gram-ex-k5-curriculum-t-a2-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k5-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Le responsable a modifié les étiquettes.\nObjectif : permettre aux clients de comparer les prix.",
+        "directive": "Reliez les informations avec la construction « afin de ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Le responsable a modifié les étiquettes afin de permettre aux clients de comparer les prix."
+        ],
+        "responseLines": 2,
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat."
+      },
+      {
+        "id": "gram-ex-k5-curriculum-t-a2-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k5-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Un moniteur a fixé une rampe amovible.\nObjectif : faciliter le débarquement.",
+        "directive": "Reliez les informations avec la construction « pour ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Un moniteur a fixé une rampe amovible pour faciliter le débarquement."
+        ],
+        "responseLines": 2,
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat."
+      },
+      {
+        "id": "gram-ex-k5-curriculum-t-a2-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k5-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Deux élèves ont déplacé la boîte sous le porche.\nObjectif : mettre les journaux à l’abri.",
+        "directive": "Reliez les informations avec la construction « afin de ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Deux élèves ont déplacé la boîte sous le porche afin de mettre les journaux à l’abri."
+        ],
+        "responseLines": 2,
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k5-curriculum-s",
     "subthemeId": "k5",
     "topic": "gram-exprimer",
@@ -5223,12 +5703,562 @@
           "Personne B : Quel est le but de cette action ?\nPersonne A : Un agent a annoncé le quai par haut-parleur afin de réduire les déplacements de dernière minute.\nPersonne B : Quelle action permet de poursuivre cet objectif ?\nPersonne A : Un agent a annoncé le quai par haut-parleur."
         ],
         "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Les reformulations fidèles sont recevables."
+      },
+      {
+        "id": "gram-ex-k5-curriculum-s-a2-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k5-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Un échange à deux",
+        "situation": "L’équipe a préparé un plan tactile.\nObjectif : aider les visiteurs à se repérer.",
+        "task": "Expliquez à un partenaire pourquoi l’action est prévue. Exprimez le but avec pour ou afin de suivi d’un infinitif. Répondez à la relance puis échangez les rôles.",
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Formulez la réponse et précisez-la."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez les questions puis écoutez la réponse."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quel est le but de cette action ?"
+          }
+        ],
+        "followUps": [
+          "Quelle action permet de poursuivre cet objectif ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "answers": [
+          "Personne B : Quel est le but de cette action ?\nPersonne A : L’équipe a préparé un plan tactile pour aider les visiteurs à se repérer.\nPersonne B : Quelle action permet de poursuivre cet objectif ?\nPersonne A : L’équipe a préparé un plan tactile."
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Les reformulations fidèles sont recevables."
+      },
+      {
+        "id": "gram-ex-k5-curriculum-s-a2-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k5-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Un échange à deux",
+        "situation": "Une archiviste a numérisé les cassettes.\nObjectif : préserver les anciens témoignages.",
+        "task": "Expliquez à un partenaire pourquoi l’action est prévue. Exprimez le but avec pour ou afin de suivi d’un infinitif. Répondez à la relance puis échangez les rôles.",
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Formulez la réponse et précisez-la."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez les questions puis écoutez la réponse."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quel est le but de cette action ?"
+          }
+        ],
+        "followUps": [
+          "Quelle action permet de poursuivre cet objectif ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "answers": [
+          "Personne B : Quel est le but de cette action ?\nPersonne A : Une archiviste a numérisé les cassettes afin de préserver les anciens témoignages.\nPersonne B : Quelle action permet de poursuivre cet objectif ?\nPersonne A : Une archiviste a numérisé les cassettes."
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Les reformulations fidèles sont recevables."
+      },
+      {
+        "id": "gram-ex-k5-curriculum-s-a2-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k5-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Un échange à deux",
+        "situation": "Une surveillante a numéroté les casiers.\nObjectif : laisser le couloir libre.",
+        "task": "Expliquez à un partenaire pourquoi l’action est prévue. Exprimez le but avec pour ou afin de suivi d’un infinitif. Répondez à la relance puis échangez les rôles.",
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Formulez la réponse et précisez-la."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez les questions puis écoutez la réponse."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quel est le but de cette action ?"
+          }
+        ],
+        "followUps": [
+          "Quelle action permet de poursuivre cet objectif ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "answers": [
+          "Personne B : Quel est le but de cette action ?\nPersonne A : Une surveillante a numéroté les casiers pour laisser le couloir libre.\nPersonne B : Quelle action permet de poursuivre cet objectif ?\nPersonne A : Une surveillante a numéroté les casiers."
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Les reformulations fidèles sont recevables."
+      },
+      {
+        "id": "gram-ex-k5-curriculum-s-a2-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k5-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Un échange à deux",
+        "situation": "Les jardiniers ont installé un voile.\nObjectif : empêcher les jeunes pousses de sécher.",
+        "task": "Expliquez à un partenaire pourquoi l’action est prévue. Exprimez le but avec pour ou afin de suivi d’un infinitif. Répondez à la relance puis échangez les rôles.",
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Formulez la réponse et précisez-la."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez les questions puis écoutez la réponse."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quel est le but de cette action ?"
+          }
+        ],
+        "followUps": [
+          "Quelle action permet de poursuivre cet objectif ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "answers": [
+          "Personne B : Quel est le but de cette action ?\nPersonne A : Les jardiniers ont installé un voile afin d’empêcher les jeunes pousses de sécher.\nPersonne B : Quelle action permet de poursuivre cet objectif ?\nPersonne A : Les jardiniers ont installé un voile."
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Les reformulations fidèles sont recevables."
+      },
+      {
+        "id": "gram-ex-k5-curriculum-s-a2-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k5-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Un échange à deux",
+        "situation": "La responsable a installé un petit écran.\nObjectif : signaler le prochain numéro.",
+        "task": "Expliquez à un partenaire pourquoi l’action est prévue. Exprimez le but avec pour ou afin de suivi d’un infinitif. Répondez à la relance puis échangez les rôles.",
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Formulez la réponse et précisez-la."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez les questions puis écoutez la réponse."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quel est le but de cette action ?"
+          }
+        ],
+        "followUps": [
+          "Quelle action permet de poursuivre cet objectif ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "answers": [
+          "Personne B : Quel est le but de cette action ?\nPersonne A : La responsable a installé un petit écran pour signaler le prochain numéro.\nPersonne B : Quelle action permet de poursuivre cet objectif ?\nPersonne A : La responsable a installé un petit écran."
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Les reformulations fidèles sont recevables."
+      },
+      {
+        "id": "gram-ex-k5-curriculum-s-a2-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k5-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Un échange à deux",
+        "situation": "La guide a distribué des protections auditives.\nObjectif : atténuer le bruit.",
+        "task": "Expliquez à un partenaire pourquoi l’action est prévue. Exprimez le but avec pour ou afin de suivi d’un infinitif. Répondez à la relance puis échangez les rôles.",
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Formulez la réponse et précisez-la."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez les questions puis écoutez la réponse."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quel est le but de cette action ?"
+          }
+        ],
+        "followUps": [
+          "Quelle action permet de poursuivre cet objectif ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "answers": [
+          "Personne B : Quel est le but de cette action ?\nPersonne A : La guide a distribué des protections auditives afin d’atténuer le bruit.\nPersonne B : Quelle action permet de poursuivre cet objectif ?\nPersonne A : La guide a distribué des protections auditives."
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Les reformulations fidèles sont recevables."
+      },
+      {
+        "id": "gram-ex-k5-curriculum-s-a2-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k5-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Un échange à deux",
+        "situation": "Le secrétariat a imprimé les consignes.\nObjectif : permettre à chacun de lire le sujet.",
+        "task": "Expliquez à un partenaire pourquoi l’action est prévue. Exprimez le but avec pour ou afin de suivi d’un infinitif. Répondez à la relance puis échangez les rôles.",
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Formulez la réponse et précisez-la."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez les questions puis écoutez la réponse."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quel est le but de cette action ?"
+          }
+        ],
+        "followUps": [
+          "Quelle action permet de poursuivre cet objectif ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "answers": [
+          "Personne B : Quel est le but de cette action ?\nPersonne A : Le secrétariat a imprimé les consignes pour permettre à chacun de lire le sujet.\nPersonne B : Quelle action permet de poursuivre cet objectif ?\nPersonne A : Le secrétariat a imprimé les consignes."
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Les reformulations fidèles sont recevables."
+      },
+      {
+        "id": "gram-ex-k5-curriculum-s-a2-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k5-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Un échange à deux",
+        "situation": "Le responsable a modifié les étiquettes.\nObjectif : permettre aux clients de comparer les prix.",
+        "task": "Expliquez à un partenaire pourquoi l’action est prévue. Exprimez le but avec pour ou afin de suivi d’un infinitif. Répondez à la relance puis échangez les rôles.",
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Formulez la réponse et précisez-la."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez les questions puis écoutez la réponse."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quel est le but de cette action ?"
+          }
+        ],
+        "followUps": [
+          "Quelle action permet de poursuivre cet objectif ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "answers": [
+          "Personne B : Quel est le but de cette action ?\nPersonne A : Le responsable a modifié les étiquettes afin de permettre aux clients de comparer les prix.\nPersonne B : Quelle action permet de poursuivre cet objectif ?\nPersonne A : Le responsable a modifié les étiquettes."
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Les reformulations fidèles sont recevables."
+      },
+      {
+        "id": "gram-ex-k5-curriculum-s-a2-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k5-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Un échange à deux",
+        "situation": "Un moniteur a fixé une rampe amovible.\nObjectif : faciliter le débarquement.",
+        "task": "Expliquez à un partenaire pourquoi l’action est prévue. Exprimez le but avec pour ou afin de suivi d’un infinitif. Répondez à la relance puis échangez les rôles.",
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Formulez la réponse et précisez-la."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez les questions puis écoutez la réponse."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quel est le but de cette action ?"
+          }
+        ],
+        "followUps": [
+          "Quelle action permet de poursuivre cet objectif ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "answers": [
+          "Personne B : Quel est le but de cette action ?\nPersonne A : Un moniteur a fixé une rampe amovible pour faciliter le débarquement.\nPersonne B : Quelle action permet de poursuivre cet objectif ?\nPersonne A : Un moniteur a fixé une rampe amovible."
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Les reformulations fidèles sont recevables."
+      },
+      {
+        "id": "gram-ex-k5-curriculum-s-a2-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k5-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Un échange à deux",
+        "situation": "Deux élèves ont déplacé la boîte sous le porche.\nObjectif : mettre les journaux à l’abri.",
+        "task": "Expliquez à un partenaire pourquoi l’action est prévue. Exprimez le but avec pour ou afin de suivi d’un infinitif. Répondez à la relance puis échangez les rôles.",
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Formulez la réponse et précisez-la."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez les questions puis écoutez la réponse."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quel est le but de cette action ?"
+          }
+        ],
+        "followUps": [
+          "Quelle action permet de poursuivre cet objectif ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "answers": [
+          "Personne B : Quel est le but de cette action ?\nPersonne A : Deux élèves ont déplacé la boîte sous le porche afin de mettre les journaux à l’abri.\nPersonne B : Quelle action permet de poursuivre cet objectif ?\nPersonne A : Deux élèves ont déplacé la boîte sous le porche."
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Les reformulations fidèles sont recevables."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k5-curriculum-p",
     "subthemeId": "k5",
     "topic": "gram-exprimer",
@@ -6831,6 +7861,326 @@
         "task": "Expliquez à un partenaire pourquoi l’action est prévue. Exprimez le but avec pour ou afin de suivi d’un infinitif. Relance : « Quelle action permet de poursuivre cet objectif ? »",
         "answers": [
           "Un agent a annoncé le quai par haut-parleur afin de réduire les déplacements de dernière minute.\nRéponse possible à la relance : Un agent a annoncé le quai par haut-parleur."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k5-curriculum-p-a2-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k5-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "L’équipe a préparé un plan tactile.\nObjectif : aider les visiteurs à se repérer.",
+        "task": "Expliquez à un partenaire pourquoi l’action est prévue. Exprimez le but avec pour ou afin de suivi d’un infinitif. Relance : « Quelle action permet de poursuivre cet objectif ? »",
+        "answers": [
+          "L’équipe a préparé un plan tactile pour aider les visiteurs à se repérer.\nRéponse possible à la relance : L’équipe a préparé un plan tactile."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k5-curriculum-p-a2-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k5-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Une archiviste a numérisé les cassettes.\nObjectif : préserver les anciens témoignages.",
+        "task": "Expliquez à un partenaire pourquoi l’action est prévue. Exprimez le but avec pour ou afin de suivi d’un infinitif. Relance : « Quelle action permet de poursuivre cet objectif ? »",
+        "answers": [
+          "Une archiviste a numérisé les cassettes afin de préserver les anciens témoignages.\nRéponse possible à la relance : Une archiviste a numérisé les cassettes."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k5-curriculum-p-a2-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k5-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Une surveillante a numéroté les casiers.\nObjectif : laisser le couloir libre.",
+        "task": "Expliquez à un partenaire pourquoi l’action est prévue. Exprimez le but avec pour ou afin de suivi d’un infinitif. Relance : « Quelle action permet de poursuivre cet objectif ? »",
+        "answers": [
+          "Une surveillante a numéroté les casiers pour laisser le couloir libre.\nRéponse possible à la relance : Une surveillante a numéroté les casiers."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k5-curriculum-p-a2-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k5-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Les jardiniers ont installé un voile.\nObjectif : empêcher les jeunes pousses de sécher.",
+        "task": "Expliquez à un partenaire pourquoi l’action est prévue. Exprimez le but avec pour ou afin de suivi d’un infinitif. Relance : « Quelle action permet de poursuivre cet objectif ? »",
+        "answers": [
+          "Les jardiniers ont installé un voile afin d’empêcher les jeunes pousses de sécher.\nRéponse possible à la relance : Les jardiniers ont installé un voile."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k5-curriculum-p-a2-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k5-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "La responsable a installé un petit écran.\nObjectif : signaler le prochain numéro.",
+        "task": "Expliquez à un partenaire pourquoi l’action est prévue. Exprimez le but avec pour ou afin de suivi d’un infinitif. Relance : « Quelle action permet de poursuivre cet objectif ? »",
+        "answers": [
+          "La responsable a installé un petit écran pour signaler le prochain numéro.\nRéponse possible à la relance : La responsable a installé un petit écran."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k5-curriculum-p-a2-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k5-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "La guide a distribué des protections auditives.\nObjectif : atténuer le bruit.",
+        "task": "Expliquez à un partenaire pourquoi l’action est prévue. Exprimez le but avec pour ou afin de suivi d’un infinitif. Relance : « Quelle action permet de poursuivre cet objectif ? »",
+        "answers": [
+          "La guide a distribué des protections auditives afin d’atténuer le bruit.\nRéponse possible à la relance : La guide a distribué des protections auditives."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k5-curriculum-p-a2-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k5-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le secrétariat a imprimé les consignes.\nObjectif : permettre à chacun de lire le sujet.",
+        "task": "Expliquez à un partenaire pourquoi l’action est prévue. Exprimez le but avec pour ou afin de suivi d’un infinitif. Relance : « Quelle action permet de poursuivre cet objectif ? »",
+        "answers": [
+          "Le secrétariat a imprimé les consignes pour permettre à chacun de lire le sujet.\nRéponse possible à la relance : Le secrétariat a imprimé les consignes."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k5-curriculum-p-a2-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k5-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le responsable a modifié les étiquettes.\nObjectif : permettre aux clients de comparer les prix.",
+        "task": "Expliquez à un partenaire pourquoi l’action est prévue. Exprimez le but avec pour ou afin de suivi d’un infinitif. Relance : « Quelle action permet de poursuivre cet objectif ? »",
+        "answers": [
+          "Le responsable a modifié les étiquettes afin de permettre aux clients de comparer les prix.\nRéponse possible à la relance : Le responsable a modifié les étiquettes."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k5-curriculum-p-a2-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k5-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Un moniteur a fixé une rampe amovible.\nObjectif : faciliter le débarquement.",
+        "task": "Expliquez à un partenaire pourquoi l’action est prévue. Exprimez le but avec pour ou afin de suivi d’un infinitif. Relance : « Quelle action permet de poursuivre cet objectif ? »",
+        "answers": [
+          "Un moniteur a fixé une rampe amovible pour faciliter le débarquement.\nRéponse possible à la relance : Un moniteur a fixé une rampe amovible."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Le groupe à l’infinitif exprime le but. La même personne fait l’action et vise le résultat. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k5-curriculum-p-a2-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k5-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Deux élèves ont déplacé la boîte sous le porche.\nObjectif : mettre les journaux à l’abri.",
+        "task": "Expliquez à un partenaire pourquoi l’action est prévue. Exprimez le but avec pour ou afin de suivi d’un infinitif. Relance : « Quelle action permet de poursuivre cet objectif ? »",
+        "answers": [
+          "Deux élèves ont déplacé la boîte sous le porche afin de mettre les journaux à l’abri.\nRéponse possible à la relance : Deux élèves ont déplacé la boîte sous le porche."
         ],
         "rubric": [
           {
