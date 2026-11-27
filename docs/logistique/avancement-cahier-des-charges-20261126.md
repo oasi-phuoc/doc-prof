@@ -167,6 +167,16 @@ Les huit sorties du 103 ont été vérifiées dans Chromium et en PDF, en CFC et
 
 La révision `logistique-glossaires-tableaux-v006` couvre les 1 170 entrées des 80 modules CFC et des 63 modules AFP qui en partagent le contenu. La fiche présente les colonnes Image, Notion et Explication / définition. Chaque notion dispose d’un fichier d’image distinct dans son glossaire, avec un texte alternatif. Le lot publie 967 schémas en couleur et neuf reconstitutions photographiques individuelles, dont cinq pour les supports du 306. Les définitions et leur ordre proviennent de la révision enregistrée. Les en-têtes sont répétés après chaque saut en A4 et en double A5. [Registre des visuels](../../src/logistique/banks/glossaires-visuels-v006.json).
 
+### Remplacement des schémas par des photos
+
+L’inventaire initial dénombre 193 entrées illustrées par une photo et 977 par un schéma WebP. Les remplacements utilisent une photo couleur par notion. Les notions abstraites sont illustrées par une situation de travail liée à leur définition. Chaque photo est vérifiée dans le registre avec son texte alternatif et son chemin dans la fiche.
+
+| Étape | Avancement | Visuels concernés |
+| --- | --- | --- |
+| Premier lot | 262 entrées en photo sur 1 170 | 69 schémas dédiés retirés. Le 100 et le 101 sont entièrement en photos. Les nouvelles reconstitutions illustrent notamment la compétence, l’habilitation, la NLFA, la route de l’ambre et le juste-à-temps. |
+
+La commande `node scripts/prepare-logistique-glossaire.mjs --audit` donne le détail par module et vérifie les chemins, les doublons et les textes alternatifs. Le [registre éditorial des photos](preparation/glossaires-photos-v006.txt) associe chaque nouvelle photo à sa notion exacte.
+
 Chromium a contrôlé les 286 combinaisons de module, diplôme et format avec le réglage de 16 px, puis 22 combinaisons à 24 px. Les contrôles vérifient une image chargée par ligne, l’ordre des notions et la répétition des en-têtes. À 16 px, la réserve minimale au pied était de 27,34 px en A4 et de 14,17 px en double A5. Le saut manuel après la deuxième notion du 306 a aussi été vérifié dans le générateur et dans les PDF des deux formats.
 
 La révision `logistique-glossaires-illustres-v003` associe une photo ou un schéma en couleur à 171 définitions. Elle couvre les 80 modules CFC et les 63 modules AFP. La photo est encadrée à côté de la définition. Les schémas disposent de la largeur nécessaire pour lire leurs indications. Le 306 compare notamment les palettes EUR, CHEP et synthétiques et les formats de palettes. Les 403, 407, 409 et 410 illustrent les rayonnages, moyens de transport, engins et convoyeurs. Chromium a contrôlé les 286 combinaisons de module, diplôme et format, et les PDF des 306, 409 et 806. La réserve minimale était de 92,38 px en A4 et 56,61 px en double A5. [Associations entre termes et illustrations](../../src/logistique/banks/glossaires-illustres-v003.ts).

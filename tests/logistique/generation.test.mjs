@@ -213,6 +213,19 @@ test('le râtelier vertical et le stockage en épis ont une illustration dans le
   }
 })
 
+test('les glossaires 100 et 101 fournissent une photo individuelle pour chaque notion', () => {
+  for (const [code, count] of [['100', 13], ['101', 16]]) for (const diploma of ['CFC', 'AFP']) {
+    const page = config(diploma, code, 'glossaire')
+    for (const logistiqueBankRevision of [undefined, 'logistique-glossaires-tableaux-v006']) {
+      const { items } = generateLogistique({ ...page, logistiqueBankRevision }, 7)
+      const photos = items.map(({ logistiqueGlossaryFigure }) => logistiqueGlossaryFigure)
+      assert.equal(photos.length, count)
+      assert(photos.every((photo) => photo?.alt.trim() && /-photo-v\d+\.webp$/.test(photo.src) && existsSync(root + '/public' + photo.src)))
+      assert.equal(new Set(photos.map(({ src }) => src)).size, photos.length)
+    }
+  }
+})
+
 test('les nouvelles publications conservent le tirage des recettes du thème 600', () => {
   const page = { ...config('AFP', '616', 'maths'), count: 6 }
   const historical = { ...page, logistiqueBankRevision: 'logistique-614-615-616-v001' }
