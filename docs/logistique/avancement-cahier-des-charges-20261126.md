@@ -135,6 +135,7 @@ Le passage de contrôle réexamine les chapitres du cours complet et du résumé
 | 101 | Tableau Chasser, Transformer, Consommer. Ravitaillement napoléonien, Gizeh, ambre et soie. 14 repères historiques et trois étapes du registre papier au scan. | Révision `logistique-theorie-101-v003`. 25 insertions, dont 22 images originales supplémentaires. Cours complet et résumé vérifiés en A4 et PDF, CFC et AFP. [Préparation 101](preparation/101-v003.json). |
 | 100, 102–110 et 201–209 | Suivi de l’humidité, traitement des déchets, contrôle documentaire, hygiène, part de marché et modèle AIDA. | Révision `logistique-illustrations-fondations-service-v003`. 20 insertions supplémentaires dans 19 modules. 76 parcours A4 et PDF vérifiés. |
 | 301–312 et 401–410 | Supports de charge et défauts de palette, contrôle des stocks, rayonnages, engins, AutoStore et convoyage vertical. | Révision `logistique-illustrations-approvisionnement-stockage-v003`. 36 insertions supplémentaires dans 22 modules. 88 parcours A4 et PDF vérifiés. |
+| 501–506 et 601–616 | Production en vrac, cycle PDCA, prélèvement assisté, feuillard et protection d’arête, fret et chaussée roulante. | Révision `logistique-illustrations-production-distribution-v003`. 22 insertions supplémentaires dans 22 modules. 72 parcours A4 et PDF vérifiés. |
 
 ## Enrichissement des exercices
 
