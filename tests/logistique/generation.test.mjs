@@ -189,6 +189,25 @@ test('les palettes spéciales et les formes de stockage ont des vues propres dan
   }
 })
 
+test('le râtelier vertical et le stockage en épis ont une illustration dans les deux cours et glossaires', () => {
+  for (const diploma of ['CFC', 'AFP']) {
+    for (const [module, word, file] of [
+      ['403', 'Râtelier vertical', 'log-403-ratelier-vertical-photo-v006.webp'],
+      ['408', 'Stockage en épis', 'log-408-epis-photo-v005.webp'],
+    ]) {
+      const glossary = generateLogistique(config(diploma, module, 'glossaire'), 7).items
+      assert(glossary.some(({ theoryBlock, logistiqueGlossaryFigure }) =>
+        theoryBlock.text.startsWith(`{g}${word}{/g}`) && logistiqueGlossaryFigure?.src.endsWith(file)))
+      for (const logistiqueTheoryView of ['complet', 'resume']) {
+        const page = { ...config(diploma, module, 'theorie'), logistiqueTheoryView }
+        const { items } = generateLogistique(page, 7)
+        const figure = items.find(({ theoryBlock }) => theoryBlock.src?.endsWith(file))?.theoryBlock
+        assert(figure?.caption.trim() && existsSync(root + '/public' + figure.src), `${module} ${diploma} ${logistiqueTheoryView}`)
+      }
+    }
+  }
+})
+
 test('les nouvelles publications conservent le tirage des recettes du thème 600', () => {
   const page = { ...config('AFP', '616', 'maths'), count: 6 }
   const historical = { ...page, logistiqueBankRevision: 'logistique-614-615-616-v001' }
@@ -227,7 +246,8 @@ test('les tableaux de données et de dates renvoient au cours et gardent le tira
   for (const diploma of ['CFC', 'AFP']) for (const [code, kind, presentation] of modules) {
     const usual = { ...config(diploma, code, kind), count: 12 }
     const before = { ...usual, logistiqueBankRevision: 'logistique-glossaires-illustres-v003' }
-    assert.deepEqual(generateLogistique(usual, 12), generateLogistique(before, 12))
+    const after = { ...usual, logistiqueBankRevision: 'logistique-tableaux-v007' }
+    assert.deepEqual(generateLogistique(after, 12), generateLogistique(before, 12))
     const page = { ...usual, logistiquePresentation: presentation }
     const { items, bankQuestionCap } = generateLogistique(page, 12)
     assert.equal(bankQuestionCap, 4)
@@ -254,6 +274,36 @@ test('les tableaux de données et de dates renvoient au cours et gardent le tira
     }
   }
   assert(!validLogistiquePages([{ ...config('CFC', '306', 'theorie'), logistiquePresentation: 'tableau-donnees' }]))
+})
+
+test('les exercices des acquis couvrent tous les modules avec des questions distinctes et une référence au cours', () => {
+  const kinds = ['maths', 'verification', 'situation']
+  const previous = logistiquePublications.find(({ revision }) => revision === 'logistique-palettes-et-stockage-v005')
+  const added = currentLogistiquePublication.units.filter(({ revision }) => revision === 'acquis-v008')
+  assert.equal(added.length, 286)
+  const normalize = (text) => text.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ').trim()
+  const prompts = new Set(previous.units.filter(({ kind }) => kinds.includes(kind)).map(({ module, kind, prompt }) =>
+    `${module}/${kind}/${normalize(prompt)}`))
+  for (const { id, module, kind, prompt, answer, calculation, theorySection } of added) {
+    const key = `${module}/${kind}/${normalize(prompt)}`
+    assert(!prompts.has(key), id)
+    prompts.add(key)
+    assert(answer.trim(), id)
+    assert.equal(Boolean(calculation), kind === 'maths', id)
+    const theory = previous.units.find((unit) => unit.module === module && unit.kind === 'theorie')
+    assert(theory.blocks.some((block) => block.kind === 'heading' && block.text === theorySection), id)
+  }
+  for (const { diploma, module, kind } of catalog.logistiqueTypes.filter(({ kind }) => kinds.includes(kind))) {
+    const relevant = added.filter((unit) => unit.module === module && unit.kind === kind && unit.approvedFor.includes(diploma))
+    assert(relevant.length, `${diploma} ${module} ${kind}`)
+    const page = { ...config(diploma, module, kind), count: 999 }
+    const { items, bankQuestionCap } = generateLogistique(page, 20261127)
+    const old = generateLogistique({ ...page, logistiqueBankRevision: previous.revision }, 20261127)
+    assert.equal(items.length, bankQuestionCap)
+    assert.equal(items.length, old.items.length + relevant.length)
+    assert.equal(items.length, new Set(items.map(({ logistiqueSource }) => logistiqueSource.id)).size)
+  }
 })
 
 test('l’évaluation combine des modules de plusieurs thèmes et applique chaque quota séparément', () => {
@@ -306,7 +356,8 @@ test('les deux présentations des textes à trous gardent le même tirage et la 
     for (const code of ['101', '105', '306', '308', '409']) {
       const page = { ...config(diploma, code, 'verification'), count: 4 }
       const older = { ...page, logistiqueBankRevision: 'logistique-glossaires-supports-manutention-v002' }
-      assert.deepEqual(generateLogistique(page, 27), generateLogistique(older, 27))
+      const gapsPublication = { ...page, logistiqueBankRevision: 'logistique-textes-a-trous-v006' }
+      assert.deepEqual(generateLogistique(gapsPublication, 27), generateLogistique(older, 27))
       const without = generateLogistique({ ...page, logistiqueGapMode: 'sans-liste' }, 27)
       const withWords = { ...page, logistiqueGapMode: 'avec-liste' }
       const withList = generateLogistique(withWords, 27)

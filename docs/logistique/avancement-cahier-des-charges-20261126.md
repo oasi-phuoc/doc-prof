@@ -153,6 +153,8 @@ Le module 306 ajoute une mise en scène des supports spéciaux aux versions Comp
 
 La révision `logistique-palettes-et-stockage-v005` met en regard les supports spéciaux du §6.6 et ajoute des vues distinctes aux formes de stockage. Le 306 présente huit nouveaux supports, dont la palette-réservoir de type Varitainer, le cadre grillagé, la palette à fûts, la palette INKA et la box à claire-voie. Le 403 montre notamment le bloc à plat, le compartimentage, les rayonnages à palettes, à double entrée et push-back, ainsi que les carrousels, navettes et transstockeurs. Le 404 compare les installations à ciel ouvert, couvertes et fermées. Les 23 nouvelles reconstitutions en couleur apparaissent dans les deux versions du cours. Les glossaires des trois modules reprennent les vues adaptées et ajoutent 18 définitions. Les 36 parcours cours, résumé et glossaire en CFC et AFP ont été exportés en PDF A4 et double A5. La réserve minimale mesurée était de 76,23 px en A4 et de 25,78 px en double A5. [Préparation du 306](preparation/306-v005.json), [du 403](preparation/403-v005.json) et [du 404](preparation/404-v005.json).
 
+La révision `logistique-implantations-stockage-v006` illustre aussi le râtelier vertical pour panneaux et profilés au §3.1.6 du 403 et le stockage en épis au §8.4.3 du 408. Les visuels figurent dans le cours, le résumé et le glossaire CFC et AFP. Les photos montrent comment les séparations maintiennent les produits debout et comment les places en biais s’implantent par rapport à l’allée. Les 24 parcours et PDF ont été vérifiés en A4 et double A5. La réserve minimale était de 87,17 px en A4 et de 43,63 px en double A5. [Préparation du 403](preparation/403-v006.json) et [du 408](preparation/408-v005.json).
+
 En double A5, les tableaux répètent leurs en-têtes et les listes reprennent à l’entrée suivante. Chaque ligne de tableau et chaque entrée de liste restent entières. La coupure de mise en page conserve le bloc original dans la fiche Libre et les sauts manuels s’appliquent après sa dernière partie. La grille de calcul comporte quatre lignes en double A5 pour réserver de la place à la réponse et au pied de page. La campagne de mesure après ajustement a couvert les 286 combinaisons de module, diplôme et version de théorie dans Chromium. Avec le réglage de texte de 16 px, les 3 038 demi-feuilles contrôlées ont conservé au moins 25,78 px avant le pied.
 
 ## Glossaires des supports et de la manutention
@@ -244,6 +246,26 @@ Les 72 parcours A4 et PDF couvrent les banques complètes de calculs, de vérifi
 
 Les neuf lots ont ajouté 6 552 exercices corrigés. Les 448 dossiers décrivent les données de métier et les sections du cours qui les expliquent. Les problèmes portent sur des méthodes distinctes, dont le calcul direct, la comparaison, le calcul inverse et l’interprétation. Les cas accompagnent le travail de préparation, le traitement des écarts et le contrôle après changement. Les 429 parcours A4 et PDF couvrent les trois activités des 80 modules CFC et 63 modules AFP aux quantités proposées par le générateur. La réserve minimale mesurée est de 33,36 px.
 
+### Vérification des acquis, mises en situation et calculs
+
+La révision `logistique-exercices-acquis-v008` ajoute 286 exercices corrigés aux banques actives des neuf thèmes. Chaque module reçoit de nouvelles vérifications des acquis, mises en situation et questions de calcul. Les 63 modules AFP partagent 235 de ces exercices. Les questions partent de sections précises du cours. La relecture a comparé les nouveaux énoncés à la banque active et remplacé les formulations qui portaient sur un acquis déjà contrôlé de la même manière. Le 306 ajoute le choix des supports à fûts, à claire-voie et à réservoir. Le 403 distingue les accès et la rotation du drive-through et du push-back et applique le calcul à un magasin grande hauteur. [Banque des acquis](../../src/logistique/banks/acquis-v008.json).
+
+| Thème | Vérifications | Situations | Calculs |
+|---|---:|---:|---:|
+| 100 | 22 | 22 | 11 |
+| 200 | 18 | 18 | 9 |
+| 300 | 14 | 13 | 12 |
+| 400 | 12 | 11 | 10 |
+| 500 | 6 | 6 | 6 |
+| 600 | 16 | 16 | 16 |
+| 700 | 5 | 5 | 5 |
+| 800 | 9 | 9 | 9 |
+| 900 | 2 | 2 | 2 |
+
+Le nombre maximal proposé dans le générateur correspond à la capacité du module ou de la sélection, du diplôme, de la présentation et de la révision de banque. Le tirage du maximum utilise chaque identifiant une fois et la numérotation se poursuit sur les pages suivantes. Les recettes enregistrées gardent leur révision et leur tirage.
+
+Les 429 parcours à capacité complète ont été contrôlés dans Chromium en A4, en fiche élève et en corrigé. La réserve minimale au pied était de 23,11 px pour la fiche élève et de 29,11 px pour le corrigé. Les six tirages au maximum du 105 ont aussi été vérifiés dans le générateur et en PDF, dans les deux diplômes.
+
 ## Reprise opérationnelle
 
 En Évaluation, le sélecteur Sous-thème permet de composer une activité de calcul, de vérification ou de mise en situation avec des modules de plusieurs thèmes. Le tirage utilise une quantité totale ou les quotas de chaque module. Une pénurie dans un module ne reporte pas son quota sur un autre. Le passage en Exercice rétablit le module principal et le retour en Évaluation rappelle la sélection. Les recettes enregistrent les codes, les quantités et la révision. Les questions conservent l’identifiant et le module de leur unité source.
@@ -262,10 +284,10 @@ La publication des modules est terminée pour les deux diplômes. La publication
 
 | Diplôme | Modules | Types actifs | Problèmes de calcul | Questions de vérification | Situations |
 |---|---:|---:|---:|---:|---:|
-| CFC | 80 | 480 | 2537 | 4030 | 1657 |
-| AFP | 63 | 378 | 1898 | 3169 | 1260 |
+| CFC | 80 | 480 | 2617 | 4134 | 1759 |
+| AFP | 63 | 378 | 1961 | 3256 | 1345 |
 
-Les effectifs sont dédupliqués par identifiant dans chaque diplôme. La banque compte 8 224 unités d’exercice distinctes. Chaque module atteint la cible du §5.1 dans son diplôme, avec au moins 30 calculs, 50 vérifications et 20 mises en situation. Les formats structurés et la conception avancée des évaluations figurent dans les lots L1c à L1f.
+Les effectifs sont dédupliqués par identifiant dans chaque diplôme. La banque compte 8 510 unités d’exercice distinctes. Chaque module dépasse la cible du §5.1 dans son diplôme, avec au moins 31 calculs, 51 vérifications et 21 mises en situation. Les formats structurés et la conception avancée des évaluations figurent dans les lots L1c à L1f.
 
 Pour un enrichissement ultérieur, partir des archives et du dossier éditorial du module, vérifier les droits par diplôme, les corrigés, la composition A4 et la continuité des recettes. Enregistrer chaque nouvelle révision et ses résultats dans ce suivi. [Archives par thème](sources-epcas/).
 

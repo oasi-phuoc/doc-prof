@@ -10,7 +10,12 @@ try {
   const { demoRecipe } = await server.ssrLoadModule('/src/interactive/demo.ts')
   const { defaultPage } = await server.ssrLoadModule('/src/math/catalog.ts')
   const { buildWorksheets } = await server.ssrLoadModule('/src/math/generate.ts')
-  const { prepareGame } = await server.ssrLoadModule('/src/interactive/domain/plan.ts')
+  const { prepareGame, roundsFor } = await server.ssrLoadModule('/src/interactive/domain/plan.ts')
+  const { GRAMMAR_CO_BANK } = await server.ssrLoadModule('/src/grammaire/exercises/co-bank.ts')
+  const { GRAMMAR_CO_THEMES, grammarCoTypeId } = await server.ssrLoadModule('/src/grammaire/exercises/co-themes.ts')
+  const { adaptSourceItem } = await server.ssrLoadModule('/src/interactive/domain/source-adapters.ts')
+  const { parseFicheRecipe } = await server.ssrLoadModule('/src/fiches/recipe.ts')
+  const { normalizeEditorialBank } = await server.ssrLoadModule('/src/tcf/editorial-json.mjs')
   const { startSession, transition } = await server.ssrLoadModule('/src/interactive/domain/session.ts')
   const { compactSession, newRecord, replaySession, planIdentity } = await server.ssrLoadModule('/src/interactive/domain/persistence.ts')
   const { competitionQuiz, createCompetition, competitionView } = await server.ssrLoadModule('/src/interactive/competition/core.ts')
@@ -58,10 +63,74 @@ try {
     assert.deepEqual(convertRecipe(input), converted)
   })
 
+  const trueFalseRecipe = entry => {
+    const theme = GRAMMAR_CO_THEMES.find(theme => theme.id === entry.theme)
+    return { ...demoRecipe(), libreMode: false, pages: [{ ...defaultPage('grammaire'),
+      topic: theme.topic, exerciseType: grammarCoTypeId(theme.subId), count: 5,
+      grammarCoAudioId: entry.exercise.id, grammarCoLevel: entry.level, grammarCoFormat: 'true-false', libreItems: undefined,
+    }] }
+  }
+
+  await test('grammar true/false keeps every selected statement, its answer and fixed A/B order in Class and Solo', () => {
+    for (const entry of GRAMMAR_CO_BANK) {
+      const input = trueFalseRecipe(entry)
+      const paper = buildWorksheets(input.pages, input.seed)
+      const source = paper[0].items.find(item => item.grammarCoTrueFalse)
+      assert(source, entry.exercise.id)
+      const converted = convertRecipe(input)
+      assert.deepEqual(converted.issues, [], entry.exercise.id)
+      assert.equal(converted.questions.length, source.grammarCoTrueFalse.length)
+      for (const mode of ['class', 'solo']) {
+        const plan = prepareGame(converted, undefined, mode)
+        assert.equal(roundsFor(plan).length, source.grammarCoTrueFalse.length)
+        for (const [index, question] of plan.questions.entries()) {
+          const statement = source.grammarCoTrueFalse[index]
+          assert.deepEqual(roundsFor(plan)[index].questionIds, [question.id])
+          assert.equal(question.audio, source.audioSrc)
+          assert.deepEqual(question.choices.map(choice => choice.text), ['Vrai', 'Faux'])
+          const expectedPrompt = statement.proposedAnswer
+            ? `${statement.text}\nRéponse proposée : ${statement.proposedAnswer}` : statement.text
+          assert.equal(question.prompt, expectedPrompt)
+          assert.equal(plan.corrections[question.id].choiceId, statement.correct ? 'true' : 'false')
+          assert(plan.corrections[question.id].text.endsWith(statement.evidence))
+          assert.equal(plan.corrections[question.id].transcript, sourceTranscript(entry.exercise.support, question.audio))
+          assert(!('correctId' in question) && !('transcript' in question) && !('evidence' in question))
+        }
+      }
+      assert.deepEqual(buildWorksheets(input.pages, input.seed), paper)
+    }
+  })
+
+  await test('a grammar true/false transcript is released after correcting the whole recording and stale sources are rejected', () => {
+    const entry = GRAMMAR_CO_BANK.find(row => row.exercise.id === 'gram-co-se-deplacer-piste170')
+    const input = trueFalseRecipe(entry)
+    const reopened = parseFicheRecipe(JSON.parse(JSON.stringify(input)))
+    assert.equal(reopened?.pages[0].grammarCoFormat, 'true-false')
+    const game = prepareGame(convertRecipe(reopened))
+    let state = startSession(game)
+    for (const [index, question] of game.questions.entries()) {
+      assert.equal(reviewTranscript(game, state), undefined)
+      state = reveal(game, state)
+      assert.equal(reviewTranscript(game, state), index === game.questions.length - 1 ? game.corrections[question.id].transcript : undefined)
+      if (index < game.questions.length - 1) state = transition(game, state, { type: 'NEXT' }, 1000)
+    }
+    const [source] = buildWorksheets(input.pages, input.seed)[0].items
+    for (const invalid of [
+      { ...source, audioSrc: undefined },
+      { ...source, answer: '' },
+      { ...source, grammarCoTrueFalse: [] },
+      { ...source, grammarCoTrueFalse: source.grammarCoTrueFalse.map(statement => ({ ...statement, id: 'duplicate' })) },
+    ]) {
+      const adapted = adaptSourceItem(invalid, input.pages[0].exerciseType)
+      assert.equal(adapted.items.length, 0)
+      assert.equal(adapted.issues.length, 1)
+    }
+  })
+
   await test('real CO banks at all three levels copy each track verbatim, including tracks with several selected questions', async () => {
     let checked = 0, tracks = new Set()
     for (const [level, domain] of [['a0-a1', 'tcf-csc'], ['a1-a2', 'tcf-cfr'], ['a2-b1', 'tpf']]) {
-      const bank = JSON.parse(await readFile(`src/tcf/content/${level}/co.json`, 'utf8'))
+      const bank = normalizeEditorialBank(JSON.parse(await readFile(`src/tcf/content/${level}/co.json`, 'utf8')))
       const samples = bank.filter(item => item.type_exercice === 'complet' && item.questions.length && item.support.transcription).slice(0, 3)
       for (const original of samples) {
         const input = recipe(original); input.pages[0].domain = domain

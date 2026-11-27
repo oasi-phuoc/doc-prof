@@ -60,3 +60,13 @@ export const palletAndStorageFigures: Readonly<Record<string, readonly (readonly
     ['Stockage automatisé', photo('403', 'grande-hauteur')],
   ],
 }
+
+export const storageArrangementTerms: Readonly<Record<string, readonly (readonly [string, string])[]>> = {
+  '403': [['Râtelier vertical', 'Support à séparations qui maintient debout des produits longs ou des panneaux. L’accès et la stabilité dépendent du dispositif prévu.']],
+  '408': [['Stockage en épis', 'Disposition des places de stockage au sol en biais par rapport à l’allée. Elle facilite certaines manœuvres mais utilise généralement moins bien la surface que des rangées droites.']],
+}
+
+export const storageArrangementFigures = {
+  '403': [['Râtelier vertical', 'log-403-ratelier-vertical-photo-v006.webp']],
+  '408': [['Stockage en épis', 'log-408-epis-photo-v005.webp']],
+} as const

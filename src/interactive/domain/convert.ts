@@ -21,6 +21,7 @@ import { adaptPrintablePairs } from './printable-pairs'
 import { adaptPrintableDecks } from './printable-decks'
 import { adaptPrintableRiddles } from './printable-riddles'
 import { sourceTranscript } from './transcripts'
+import { GRAMMAR_CO_BANK } from '@/grammaire/exercises/co-bank'
 import { adaptWordClassification } from './word-classification'
 import { adaptGuidedOral } from './guided-oral'
 import {PHRASE_COLORS} from '@/francais/phrase-banks'
@@ -121,6 +122,11 @@ export function convertRecipe(
         const printableRiddles=adaptPrintableRiddles(block.items,block.exerciseType,
           (item,part)=>deriveSeed({originalSeed:recipe.seed,sourceKey:canonicalJson({page:pageIndex,block:blockIndex,item,part,exerciseType:block.exerciseType}),purpose:'distractors'}))
         block.items.forEach((item, itemIndex) => {
+          const statementAudio = item.grammarCoTrueFalse && item.audioSrc
+          const transcriptSupport = statementAudio
+            ? GRAMMAR_CO_BANK.find(({ exercise: co }) =>
+              co.support.audio === statementAudio || co.support.audios?.includes(statementAudio))?.exercise.support
+            : exercise?.competence === 'CO' ? exercise.support : undefined
           const base = (part = 0): Question => ({
             id: `p${pageIndex}b${blockIndex}i${itemIndex}s${part}-${hash(`${recipe.seed}:${block.exerciseType}:${canonicalJson(item)}`)}`,
             source: {
@@ -174,7 +180,7 @@ export function convertRecipe(
               image: c.image ? image(c.image) : undefined,
             }))
             game.questions.push(q)
-            const transcript = exercise?.competence === 'CO' ? sourceTranscript(media, q.audio, q.audioParts) : undefined
+            const transcript = transcriptSupport ? sourceTranscript(record(transcriptSupport), q.audio, q.audioParts) : undefined
             game.corrections[q.id] = { text, choiceId, ...(transcript ? { transcript } : {}) }
           }
           const tcfQuestion = (
@@ -381,6 +387,7 @@ export function convertRecipe(
               const q = base(item.part)
               q.prompt = item.prompt; q.instruction = `${block.instruction}\n${item.instruction}`; q.choices = item.choices
               q.mode = item.mode ?? 'choice'; q.audio = item.audio ?? q.audio; q.images = item.images ?? []
+              if (item.audioGrouping) q.audioGrouping = item.audioGrouping
               if (item.context!==undefined) q.context=item.context
               if (item.documentId!==undefined) q.source.documentId=item.documentId
               if (item.scenarioId!==undefined) q.source.scenarioId=item.scenarioId
