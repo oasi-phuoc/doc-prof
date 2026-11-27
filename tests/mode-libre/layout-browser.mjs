@@ -128,11 +128,17 @@ async function checkAddition(page) {
   const right = Number((await first.getByRole('textbox', { name: '2ᵉ', exact: true }).inputValue()).replace(/[\s'’]/g, ''))
   await button(page, 'Fiche élève (cliquer pour corrigé)').click()
   const correction = page.locator(items).first().locator('.eq-ans')
+  const initialCorrection = await correction.textContent()
   const number = (value) => Number(value.replace(/[\s'’]/g, '').replace(',', '.'))
   for (const value of [17, 29]) {
     await operand.fill(String(value))
     assert.equal(number(await correction.textContent()), value + right)
   }
+
+  await button(page, 'Annuler').click()
+  assert.equal(await correction.textContent(), initialCorrection)
+  await button(page, 'Rétablir').click()
+  assert.equal(number(await correction.textContent()), 29 + right)
 
   await operand.fill('-')
   assert.equal(await operand.getAttribute('aria-invalid'), 'true')
@@ -191,6 +197,54 @@ async function checkAddition(page) {
   assert.equal(number(await correction.textContent()), 29 + right)
 }
 
+async function checkLocks(page) {
+  await page.goto('/generateur')
+  await button(page, 'Mode libre').click()
+  const quantity = page.getByRole('spinbutton', { name: 'Nombre de questions', exact: true })
+  await quantity.fill('3')
+  await page.waitForFunction((selector) => document.querySelectorAll(selector).length === 3, items)
+  const rows = page.locator('#activity-editor .libre-item-card')
+  const before = await page.locator(items).allTextContents()
+  const firstId = await rows.first().getAttribute('data-libre-id')
+
+  await button(page, 'Verrou de la question 1').click()
+  await button(page, 'Verrou de la question 3').click()
+  assert.equal(await button(page, 'Verrou de la question 1').getAttribute('aria-pressed'), 'true')
+  assert(await button(page, 'Autres nombres pour la question 1').isDisabled())
+  await button(page, 'Régénérer les questions déverrouillées').click()
+  const regenerated = await page.locator(items).allTextContents()
+  assert.equal(regenerated[0], before[0])
+  assert.notEqual(regenerated[1], before[1])
+  assert.equal(regenerated[2], before[2])
+  assert.equal(await rows.first().getAttribute('data-libre-id'), firstId)
+  await button(page, 'Annuler').click()
+  assert.deepEqual(await page.locator(items).allTextContents(), before)
+  await button(page, 'Rétablir').click()
+  assert.deepEqual(await page.locator(items).allTextContents(), regenerated)
+
+  page.once('dialog', async (dialog) => {
+    assert.match(dialog.message(), /2 questions verrouillées/)
+    await dialog.accept()
+  })
+  await quantity.fill('1')
+  assert.equal(await quantity.inputValue(), '3')
+
+  await rows.first().locator('summary').click()
+  await button(rows.first(), 'Dupliquer').click()
+  assert.equal(await rows.count(), 4)
+  const cloneId = await rows.nth(1).getAttribute('data-libre-id')
+  assert(cloneId && cloneId !== firstId)
+  assert.equal(await button(page, 'Verrou de la question 2').getAttribute('aria-pressed'), 'false')
+  await button(rows.first(), 'Descendre').click()
+  assert.equal(await rows.first().getAttribute('data-libre-id'), cloneId)
+  assert.equal(await rows.nth(1).getAttribute('data-libre-id'), firstId)
+  assert.equal(await button(page, 'Verrou de la question 2').getAttribute('aria-pressed'), 'true')
+  await button(page, 'Fermer le mode libre').click()
+  await button(page, 'Mode libre').click()
+  assert.equal(await rows.nth(1).getAttribute('data-libre-id'), firstId)
+  assert.equal(await button(page, 'Verrou de la question 2').getAttribute('aria-pressed'), 'true')
+}
+
 try {
   await server?.listen()
   const baseURL = process.env.BASE_URL ?? 'http://127.0.0.1:' + server.httpServer.address().port
@@ -208,8 +262,9 @@ try {
     console.log(`Double A5 à ${width} px`)
   }
   await checkAddition(page)
+  await checkLocks(page)
   await context.close()
-  console.log('9 parcours de présentation et 1 parcours d’édition testés.')
+  console.log('9 parcours de présentation, édition, historique et verrous testés.')
 } finally {
   await browser?.close()
   await server?.close()

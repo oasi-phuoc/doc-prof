@@ -8,6 +8,7 @@ import { normalizeLegacyPhraseBlock } from '@/francais/phrase-themes'
 import { normalizeGrammarCoBlock } from '@/grammaire/exercises/co-themes'
 import { freezeGrammarPages, validGrammarRecipePages } from '@/grammaire/curriculum/recipe'
 import { readSessionUser } from '@/fiches/session'
+import { validLibreMetadata } from '@/fiches/libre-metadata'
 import { normalizeFicheAuthor } from '@/fiches/author'
 
 /** Recette qui reproduit la fiche imprimée : config, graine, en-tête, points. */
@@ -124,7 +125,7 @@ function migratePage(page: PageConfig): PageConfig {
 export function parseFicheRecipe(value: unknown): FicheRecipe | null {
   if (!isRecord(value) || value.version !== 1 || hasRetiredGrammarRecipe(value)) return null
   if (!Array.isArray(value.pages) || value.pages.length === 0 || value.pages.length > 60) return null
-  if (!value.pages.every(isPage)) return null
+  if (!value.pages.every(isPage) || !validLibreMetadata(value.pages)) return null
   if (typeof value.seed !== 'number' || !Number.isFinite(value.seed)) return null
   if (!isRecord(value.institutional)) return null
   if (typeof value.evalMode !== 'boolean') return null
@@ -133,7 +134,8 @@ export function parseFicheRecipe(value: unknown): FicheRecipe | null {
   }
   if (typeof value.libreMode !== 'boolean') return null
   if (value.libreSnapshot !== null) {
-    if (!Array.isArray(value.libreSnapshot) || !value.libreSnapshot.every(isPage)) return null
+    if (!Array.isArray(value.libreSnapshot) || value.libreSnapshot.length > 60 ||
+        !value.libreSnapshot.every(isPage) || !validLibreMetadata(value.libreSnapshot)) return null
   }
   const pages = (value.pages as PageConfig[]).map(migratePage)
   if (!validGrammarRecipePages(pages,value.seed) || !validLogistiquePages(pages)) return null

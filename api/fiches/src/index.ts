@@ -1,3 +1,4 @@
+import { validLibreMetadata } from '../../../src/fiches/libre-metadata'
 import { validLogistiqueCataloguePages } from '../../../src/logistique/catalog'
 import { createPersonalAccount, handleAccounts, personalUser, type AccountsEnv } from './accounts'
 import { handleCompetitionRequest, type CompetitionEnv } from './competition'
@@ -219,7 +220,7 @@ function isPage(value: unknown): value is Record<string, unknown> {
 function parseRecipe(value: unknown): Record<string, unknown> | null {
   if (!isRecord(value) || value.version !== 1) return null
   if (!Array.isArray(value.pages) || value.pages.length === 0 || value.pages.length > 60) return null
-  if (!value.pages.every(isPage) || !validLogistiqueCataloguePages(value.pages)) return null
+  if (!value.pages.every(isPage) || !validLogistiqueCataloguePages(value.pages) || !validLibreMetadata(value.pages)) return null
   if (typeof value.seed !== 'number' || !Number.isFinite(value.seed)) return null
   if (!isRecord(value.institutional)) return null
   if (typeof value.evalMode !== 'boolean') return null
@@ -228,7 +229,7 @@ function parseRecipe(value: unknown): Record<string, unknown> | null {
   if (typeof value.libreMode !== 'boolean') return null
   if (value.libreSnapshot !== null) {
     if (!Array.isArray(value.libreSnapshot) || value.libreSnapshot.length > 60) return null
-    if (!value.libreSnapshot.every(isPage) || !validLogistiqueCataloguePages(value.libreSnapshot)) return null
+    if (!value.libreSnapshot.every(isPage) || !validLogistiqueCataloguePages(value.libreSnapshot) || !validLibreMetadata(value.libreSnapshot)) return null
   }
   return value
 }

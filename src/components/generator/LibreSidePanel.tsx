@@ -1,6 +1,6 @@
 import { exerciseTypeById } from '@/math/catalog'
 import { FreeNumberControls } from './FreeNumberControls'
-import type { FocusEventHandler, ReactNode } from 'react'
+import type { FocusEventHandler, KeyboardEventHandler, ReactNode } from 'react'
 import type { ExerciseBlock, MathItem, WorksheetPage } from '@/math/types'
 import type { GameTemplate } from '@/jeux/templates'
 import { PhraseLibreEditor, isPhraseLibreEditable } from '@/francais/PhraseLibreEditor'
@@ -30,12 +30,20 @@ function tcfSupportExercise(items: MathItem[] | undefined): TcfExercise | undefi
   return tcf?.kind === 'support' ? tcf.exercise : undefined
 }
 import { GenericLibreEditor } from '@/components/generator/GenericLibreEditor'
+import { identifyItems } from '@/components/generator/libre/flat-items'
 import { TpmLibreEditor } from '@/components/generator/TpmLibreEditor'
 import { VocabAddWordRow } from '@/components/generator/VocabAddWordRow'
 import type { VocabWordEntry } from '@/francais/vocab-learn'
 
 export type LibreSidePanelProps = {
   settings: ReactNode
+  history: {
+    canUndo: boolean
+    canRedo: boolean
+    undo: () => void
+    redo: () => void
+    onKeyDown: KeyboardEventHandler<HTMLElement>
+  }
   footer: ReactNode
   onFocusCapture: FocusEventHandler<HTMLElement>
   activeBlock: ExerciseBlock
@@ -44,6 +52,10 @@ export type LibreSidePanelProps = {
   isPhraseDomain: boolean
   isNumberLibreDomain: boolean
   liveAddition: boolean
+  additionId: string
+  maxQuestions: number
+  transientFields: Record<string, string>
+  onTransientField: (id: string, text: string | null) => void
   isCalliDomain: boolean
   isJeuxDomain: boolean
   isTcf: boolean
@@ -71,11 +83,12 @@ export type LibreSidePanelProps = {
   updatePage: (patch: Partial<ExerciseBlock>) => void
   onClose: () => void
   /** Régénère l’exercice actif (autres nombres / autre tirage banque). */
-  onRegenerateBlock?: (blockIndex: number, half?: 'left' | 'right') => void
+  onRegenerateBlock?: (blockIndex: number, half?: 'left' | 'right', itemId?: string) => void
 }
 
 export function LibreSidePanel({
   settings,
+  history,
   footer,
   onFocusCapture,
   activeBlock,
@@ -84,6 +97,10 @@ export function LibreSidePanel({
   isPhraseDomain,
   isNumberLibreDomain,
   liveAddition,
+  additionId,
+  maxQuestions,
+  transientFields,
+  onTransientField,
   isCalliDomain,
   isJeuxDomain,
   isTcf,
@@ -119,6 +136,8 @@ export function LibreSidePanel({
       [...new Set(genericItems.map((item) => item.logistiqueSource?.module ?? logistics.module))],
       activeBlock.logistiqueBankRevision),
   } : undefined
+  const activeItems = activeBlock.libreItems ?? activeSheet?.blocks[safeBlockIndex]?.items ?? []
+  const arithmeticItems = liveAddition ? identifyItems(activeItems, additionId) : activeItems
   return (
     <aside
       className="side-tool-panel is-libre no-print"
@@ -126,6 +145,7 @@ export function LibreSidePanel({
       aria-label="Mode libre"
       tabIndex={-1}
       onFocusCapture={onFocusCapture}
+      onKeyDown={history.onKeyDown}
     >
       <div className="side-tool-panel-head is-libre-head">
         <button
@@ -138,6 +158,14 @@ export function LibreSidePanel({
           ×
         </button>
         <h3>Mode libre</h3>
+        <div className="libre-history" role="group" aria-label="Historique des modifications">
+          <button type="button" className="side-tool-close" title="Annuler" aria-label="Annuler" disabled={!history.canUndo} onClick={history.undo}>
+            <span aria-hidden="true">↶</span>
+          </button>
+          <button type="button" className="side-tool-close" title="Rétablir" aria-label="Rétablir" disabled={!history.canRedo} onClick={history.redo}>
+            <span aria-hidden="true">↷</span>
+          </button>
+        </div>
       </div>
       {footer}
       <div className="side-tool-panel-body" hidden={Boolean(footer)}>
@@ -182,16 +210,16 @@ export function LibreSidePanel({
               activeSheet?.blocks[safeBlockIndex]?.instruction ??
               ''
             }
-            items={
-              activeBlock.libreItems ??
-              activeSheet?.blocks[safeBlockIndex]?.items ??
-              []
-            }
+            items={arithmeticItems}
+            maxQuestions={maxQuestions}
+            transient={liveAddition ? { fields: transientFields, write: onTransientField } : undefined}
+            onRegenerate={liveAddition ? (id) => onRegenerateBlock?.(safeBlockIndex, undefined, id) : undefined}
             onChangeInstruction={(libreInstruction) => {
-              const libreItems = activeBlock.libreItems ?? activeSheet?.blocks[safeBlockIndex]?.items
-              updatePage(liveAddition ? { libreInstruction, libreItems } : { libreInstruction })
+              updatePage(liveAddition ? { libreId: additionId, libreInstruction, libreItems: arithmeticItems } : { libreInstruction })
             }}
-            onChangeItems={(libreItems) => updatePage({ libreItems })}
+            onChangeItems={(libreItems) => updatePage(liveAddition
+              ? { libreId: additionId, libreItems, ...(libreItems.length === activeBlock.count ? {} : { count: libreItems.length }) }
+              : { libreItems })}
           />
         ) : null}
         {soutienKind === 'mots' ? (

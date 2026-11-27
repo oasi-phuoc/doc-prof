@@ -22,6 +22,7 @@ import type {
   PreviewMode,
 } from '@/math/types'
 import type { InstitutionalHeader } from '@/components/math/PrintDocumentChrome'
+import { rerollAddition } from '@/components/generator/libre/flat-items'
 import { clearLibreContentFreeze } from '@/components/generator/page-helpers'
 import { blockItemsForConfig } from '@/components/generator/sheet-items'
 import { patchBlockSeedForHalf } from '@/components/generator/sheet-format'
@@ -228,6 +229,10 @@ export function useGenerateActions({
   }
 
   function generate() {
+    if (activeBlock.exerciseType === 'addition-ligne' && activeBlock.libreItems?.some(({ libreId }) => libreId)) {
+      regenerateBlock(safeBlockIndex)
+      return
+    }
     const nextSeed = randomSeed()
     setSeed(nextSeed)
     setMode('student')
@@ -287,7 +292,7 @@ export function useGenerateActions({
   }
 
   /** Régénère uniquement l’exercice ciblé (les autres blocs / pages restent inchangés). */
-  function regenerateBlock(targetBlock: number, half?: 'left' | 'right') {
+  function regenerateBlock(targetBlock: number, half?: 'left' | 'right', itemId?: string) {
     const nextSeed = randomSeed()
     setMode('student')
     setBlockIndex(targetBlock)
@@ -296,6 +301,9 @@ export function useGenerateActions({
         if (index !== pageIndex) return page
         const block = pageBlocks(page)[targetBlock]
         if (!block) return page
+        if (!half && page.domain === 'algèbre' && block.exerciseType === 'addition-ligne' && (libreMode || block.libreItems?.some(({ libreId }) => libreId))) {
+          return rerollAddition(page, pageIndex, targetBlock, seed, nextSeed, itemId)
+        }
         const release = clearLibreContentFreeze()
         const seedPatch = half
           ? patchBlockSeedForHalf(block, half, nextSeed)

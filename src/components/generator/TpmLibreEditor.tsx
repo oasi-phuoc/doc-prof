@@ -202,6 +202,7 @@ function NumInput({
   wide,
   requireNumber = true,
   applyWhileTyping = false,
+  transient,
   listId,
 }: {
   value: string
@@ -212,13 +213,15 @@ function NumInput({
   /** Si true, refuse les textes non numériques (restaure). */
   requireNumber?: boolean
   applyWhileTyping?: boolean
+  transient?: { value?: string; write: (value: string | null) => void }
   /** datalist partagée (ex. 1–100) : choisir ou saisir. */
   listId?: string
 }) {
   const [draft, setDraft] = useState(value)
   const prevRef = useRef(value)
   const inputRef = useRef<HTMLInputElement>(null)
-  const invalid = applyWhileTyping && parseFrNumber(draft) == null
+  const displayed = transient?.value ?? draft
+  const invalid = applyWhileTyping && parseFrNumber(displayed) == null
 
   useEffect(() => {
     if (!applyWhileTyping || document.activeElement !== inputRef.current) setDraft(value)
@@ -242,14 +245,18 @@ function NumInput({
       type="text"
       inputMode="decimal"
       list={listId}
-      value={draft}
+      value={displayed}
       aria-label={ariaLabel}
       aria-invalid={invalid || undefined}
       data-applied-value={applyWhileTyping ? value : undefined}
       onChange={(event) => {
         const text = event.target.value
         setDraft(text)
-        if (applyWhileTyping && parseFrNumber(text) != null) onCommit(text)
+        if (applyWhileTyping) {
+          const valid = parseFrNumber(text) != null
+          transient?.write(valid ? null : text)
+          if (valid) onCommit(text)
+        }
       }}
       onBlur={finish}
       onKeyDown={(event) => {
@@ -537,11 +544,19 @@ function hydrateAlgebraTemplateItem(item: MathItem, exerciseType: string, index:
   return item
 }
 
+type TransientArithmeticInputs = {
+  fields: Record<string, string>
+  write: (id: string, value: string | null) => void
+}
+
 export function TpmLibreEditor({
   instruction,
   items,
   exerciseType,
   liveArithmetic = false,
+  onRegenerate,
+  maxQuestions,
+  transient,
   onChangeInstruction,
   onChangeItems,
 }: {
@@ -549,6 +564,9 @@ export function TpmLibreEditor({
   items: MathItem[]
   exerciseType: string
   liveArithmetic?: boolean
+  onRegenerate?: (id?: string) => void
+  maxQuestions?: number
+  transient?: TransientArithmeticInputs
   onChangeInstruction: (value: string) => void
   onChangeItems: (items: MathItem[]) => void
 }) {
@@ -557,6 +575,11 @@ export function TpmLibreEditor({
   }
 
   const rerollItem = (index: number) => {
+    if (onRegenerate) {
+      const item = items[index]
+      if (item?.libreId && !item.libreLocked) onRegenerate(item.libreId)
+      return
+    }
     const seed = randomSeed()
     const batch = generateItems(exerciseType, Math.max(items.length, index + 1), createRng(seed), 'moyen', undefined, undefined, seed)
     const next = batch[index]
@@ -583,11 +606,31 @@ export function TpmLibreEditor({
     if (changed) onChangeItems(next)
   }, [exerciseType, items, onChangeItems])
 
+  function moveItem(index: number, offset: number) {
+    const next = [...items]
+    const [item] = next.splice(index, 1)
+    if (!item) return
+    next.splice(index + offset, 0, item)
+    onChangeItems(next)
+  }
+
+  function duplicateItem(index: number) {
+    const source = items[index]
+    if (!source) return
+    const copy = { ...source, libreId: crypto.randomUUID(), libreLocked: undefined }
+    onChangeItems([...items.slice(0, index + 1), copy, ...items.slice(index + 1)])
+  }
+
   const withProps = exerciseType.includes('ex16')
 
   return (
     <div className="quad-libre-block tpm-libre-editor">
-      <b>Contenu de la fiche (mode libre)</b>
+      <b>Contenu de la fiche</b>
+      {onRegenerate && items.some(({ libreLocked }) => !libreLocked) && (
+        <button type="button" className="button secondary small" onClick={() => onRegenerate()}>
+          Régénérer les questions déverrouillées
+        </button>
+      )}
       {!liveArithmetic && (
         <p className="type-hint muted">
           Modifiez les nombres puis validez (✓). Les corrigés se recalculent.
@@ -615,7 +658,7 @@ export function TpmLibreEditor({
       </label>
       <ul className="libre-item-list is-tpm" aria-label="Questions">
         {items.map((item, index) => (
-          <li key={`tpm-libre-${index}`} className="libre-item-card is-tpm-row">
+          <li key={item.libreId ?? `tpm-libre-${index}`} data-libre-id={item.libreId} className="libre-item-card is-tpm-row">
             <div className="libre-item-num-col">
               <span className="libre-item-num is-accent">{index + 1}.</span>
               <button
@@ -623,13 +666,42 @@ export function TpmLibreEditor({
                 className="libre-item-reroll no-print"
                 aria-label={`Autres nombres pour la question ${index + 1}`}
                 title="Autres nombres au hasard"
+                disabled={Boolean(item.libreLocked)}
                 onClick={() => rerollItem(index)}
               >
                 <RefreshIcon />
               </button>
             </div>
             <div className="libre-item-body">
-              {renderFields(item, index, patch, withProps, exerciseType, onChangeItems, items, liveArithmetic)}
+              {renderFields(item, index, patch, withProps, exerciseType, onChangeItems, items, liveArithmetic, transient)}
+              {liveArithmetic && (
+                <div className="libre-unit-actions">
+                  <button
+                    type="button"
+                    className="button secondary small"
+                    aria-label={`Verrou de la question ${index + 1}`}
+                    aria-pressed={Boolean(item.libreLocked)}
+                    onClick={() => patch(index, { ...item, libreLocked: !item.libreLocked })}
+                  >
+                    {item.libreLocked ? 'Verrouillée' : 'Verrouiller'}
+                  </button>
+                  <details>
+                    <summary aria-label={`Actions de la question ${index + 1}`}>⋯</summary>
+                    <div>
+                      <button type="button" disabled={index === 0} onClick={() => moveItem(index, -1)}>Monter</button>
+                      <button type="button" disabled={index === items.length - 1} onClick={() => moveItem(index, 1)}>Descendre</button>
+                      <button type="button" disabled={maxQuestions != null && items.length >= maxQuestions} onClick={() => duplicateItem(index)}>Dupliquer</button>
+                      <button
+                        type="button"
+                        disabled={Boolean(item.libreLocked) || items.length < 2}
+                        onClick={() => onChangeItems(items.filter((_, i) => i !== index))}
+                      >
+                        Supprimer
+                      </button>
+                    </div>
+                  </details>
+                </div>
+              )}
             </div>
           </li>
         ))}
@@ -691,6 +763,7 @@ function renderFields(
   onChangeItems: (items: MathItem[]) => void,
   items: MathItem[] = [],
   liveArithmetic = false,
+  transient?: TransientArithmeticInputs,
 ) {
   if (hasCscFields(item, exerciseType)) return <TcmCscFields item={item} typeId={exerciseType} change={(next) => patch(index, next)} />
   if (item.decompose) {
@@ -1593,6 +1666,7 @@ function renderFields(
       onCommit: (n: number) => void,
     ) => {
       const isMissing = missing === key
+      const id = item.libreId ? `${item.libreId}:${key}` : null
       return (
         <div className={`libre-seq-chip${isMissing ? ' is-blank' : ''}`}>
           <NumInput
@@ -1600,6 +1674,9 @@ function renderFields(
             value={fmt(value)}
             ariaLabel={isMissing ? `Corrigé ${label}` : label}
             applyWhileTyping={liveArithmetic}
+            transient={transient && id ? {
+              value: transient.fields[id], write: (text) => transient.write(id, text),
+            } : undefined}
             onCommit={(raw) => {
               const n = parseFrNumber(raw)
               if (n == null) return

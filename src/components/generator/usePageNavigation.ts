@@ -1,3 +1,4 @@
+import { hasLockedItems } from '@/components/generator/libre/flat-items'
 import type { Dispatch, SetStateAction } from 'react'
 import { useEffect } from 'react'
 import {
@@ -71,6 +72,7 @@ import type {
 export type UsePageNavigationParams = {
   accessAccount: ReturnType<typeof import('@/access').readAccessAccount>
   allowedDomains: Domain[]
+  pages: PageConfig[]
   activePage: PageConfig
   activeBlock: ExerciseBlock
   pageIndex: number
@@ -94,6 +96,7 @@ export type UsePageNavigationParams = {
 export function usePageNavigation({
   accessAccount,
   allowedDomains,
+  pages,
   activePage,
   activeBlock,
   pageIndex,
@@ -234,6 +237,7 @@ export function usePageNavigation({
     const next: PageConfig = {
       domain: activePage.domain,
       ...newBlock,
+      ...(newBlock.exerciseType === 'addition-ligne' ? { libreId: crypto.randomUUID() } : {}),
       extraBlocks: undefined,
     }
     // Insérée juste après la page active, pas en fin de document.
@@ -243,6 +247,9 @@ export function usePageNavigation({
   }
 
   const removePage = (configIdx: number) => {
+    const page = pages[configIdx]
+    if (page && pageBlocks(page).some(hasLockedItems) &&
+      !window.confirm('Retirer cette feuille et ses questions verrouillées ?')) return
     setPages((current) => {
       if (current.length <= 1) return current
       return current.filter((_, pageIdx) => pageIdx !== configIdx)
@@ -254,6 +261,7 @@ export function usePageNavigation({
   const addExerciseOnPage = () => {
     const newBlock = createNextExerciseBlock()
     if (!newBlock) return
+    const newId = newBlock.exerciseType === 'addition-ligne' ? crypto.randomUUID() : undefined
     setPages((current) =>
       current.map((page, index) => {
         if (index !== pageIndex) return page
@@ -266,7 +274,7 @@ export function usePageNavigation({
             sheet?.blocks[blockIdx]?.exerciseIndex ?? block.exerciseNo ?? blockIdx + 1,
         )
         const nextNo = Math.max(0, ...numbers) + 1
-        return addPageBlock(stampExerciseNumbers(page, numbers), { ...newBlock, exerciseNo: nextNo })
+        return addPageBlock(stampExerciseNumbers(page, numbers), { ...newBlock, exerciseNo: nextNo, ...(newId ? { libreId: newId } : {}) })
       }),
     )
     setBlockIndex(pageExerciseBlocks.length)
@@ -276,6 +284,10 @@ export function usePageNavigation({
     if (!accountCanAccessDomain(accessAccount, next)) return
     if (isLogistiqueDomain(next) && next === activePage.domain) return
     const switchesLogistics = isLogistiqueDomain(next) || isLogistiqueDomain(activePage.domain)
+    const replacesDocument = switchesLogistics || isTpmDomain(next) || isTcmCscDomain(next) ||
+      isTcmCfrDomain(next) || isTpfFamilyDomain(next)
+    if (replacesDocument && pages.some((page) => pageBlocks(page).some(hasLockedItems)) &&
+      !window.confirm('Remplacer la fiche et ses questions verrouillées ?')) return
     if (switchesLogistics) {
       if ((worksheets.length > 1 || pageExerciseBlocks.length > 1 || activeBlock.libreItems?.length) &&
         !window.confirm('Changer de domaine remplacera les activités de la fiche en cours. Continuer ?')) return

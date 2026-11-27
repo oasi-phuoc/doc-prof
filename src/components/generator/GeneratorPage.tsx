@@ -56,6 +56,11 @@ import { useQuestionsOverflow } from '@/components/generator/useQuestionsOverflo
 import { useGeneratorAudio } from '@/components/generator/useGeneratorAudio'
 import { useGenerateActions } from '@/components/generator/useGenerateActions'
 import { useCoordEditing } from '@/components/generator/useCoordEditing'
+import { additionActivityId } from '@/components/generator/libre/flat-items'
+import { DraftRecovery } from '@/components/generator/libre/DraftRecovery'
+import { useLibreDraft } from '@/components/generator/libre/useLibreDraft'
+import { useLibreHistory } from '@/components/generator/libre/useLibreHistory'
+import type { LibreRevision } from '@/components/generator/libre/history'
 import { usePageConfig } from '@/components/generator/usePageConfig'
 import { usePageNavigation } from '@/components/generator/usePageNavigation'
 import {
@@ -69,6 +74,7 @@ import { phraseSelection } from '@/francais/phrase-options'
 import { isPhraseThemeId } from '@/francais/phrase-themes'
 import type { VocabWordEntry } from '@/francais/vocab-learn'
 import { createFiche, storeSyncPassword, updateFiche } from '@/fiches/api'
+import { readSessionUser } from '@/fiches/session'
 import { buildFicheRecipe, readStagedFiche, rememberFicheOnHistory } from '@/fiches/recipe'
 import { BookStudio, type BookRequest } from '@/livres/BookStudio'
 import { buildWorksheets } from '@/math/generate'
@@ -93,6 +99,7 @@ export function GeneratorPage({
   onLogout: () => void
 }) {
   const accessAccount = readAccessAccount()
+  const draftOwner = readSessionUser()?.id
   const allowedDomains = useMemo(() => domainsForAccount(accessAccount), [accessAccount])
   const firstAllowedDomain = allowedDomains[0] ?? 'algèbre'
   const [openedFiche] = useState(readStagedFiche)
@@ -159,6 +166,18 @@ export function GeneratorPage({
     openedFiche ? { id: openedFiche.id, name: openedFiche.name } : null,
   )
   const [saveOpen, setSaveOpen] = useState(false)
+  const [transientFields, setTransientFields] = useState<Record<string, string>>({})
+  function writeTransientField(key: string, text: string | null) {
+    setTransientFields((current) => {
+      if (text === null) {
+        if (!Object.hasOwn(current, key)) return current
+        const next = { ...current }
+        delete next[key]
+        return next
+      }
+      return current[key] === text ? current : { ...current, [key]: text }
+    })
+  }
   const [bookRequest, setBookRequest] = useState<BookRequest | null>(null)
   const previewFrameRef = useRef<HTMLDivElement>(null)
 
@@ -194,6 +213,47 @@ export function GeneratorPage({
   const [libreSnapshot, setLibreSnapshot] = useState<PageConfig[] | null>(
     () => openedFiche?.recipe.libreSnapshot ?? null,
   )
+  const revision = useMemo<LibreRevision>(() => ({
+    pages, seed, institutional, evalMode, pointsPerQuestion, libreSnapshot,
+    sheetFormat, sheetFont, hideChrome, printCorrections, imageOverrides,
+  }), [
+    pages, seed, institutional, evalMode, pointsPerQuestion, libreSnapshot,
+    sheetFormat, sheetFont, hideChrome, printCorrections, imageOverrides,
+  ])
+  function restoreRevision(previous: LibreRevision) {
+    setPages(previous.pages)
+    setSeed(previous.seed)
+    setInstitutional(previous.institutional)
+    setEvalMode(previous.evalMode)
+    setPointsPerQuestion(previous.pointsPerQuestion)
+    setLibreSnapshot(previous.libreSnapshot)
+    if (previous.sheetFormat) setSheetFormat(previous.sheetFormat)
+    if (previous.sheetFont) setSheetFont(previous.sheetFont)
+    setHideChrome(previous.hideChrome ?? false)
+    setPrintCorrections(previous.printCorrections ?? true)
+    setImageOverrides(previous.imageOverrides ?? {})
+  }
+  const libreHistory = useLibreHistory(revision, libreMode, restoreRevision)
+  const draftSnapshot = useMemo(() => ({
+    revision, libreMode, sheetIndex, blockIndex, fields: transientFields, fiche: ficheRef,
+  }), [revision, libreMode, sheetIndex, blockIndex, transientFields, ficheRef])
+  const libreDraft = useLibreDraft({
+    owner: draftOwner,
+    savedId: ficheRef?.id,
+    allowedDomains,
+    snapshot: draftSnapshot,
+    restore: (next) => {
+      libreHistory.clearHistory()
+      restoreRevision(next.revision)
+      setLibreMode(next.libreMode)
+      setLibreView('editor')
+      setSheetIndex(next.sheetIndex)
+      setBlockIndex(next.blockIndex)
+      setTransientFields(next.fields)
+      setFicheRef(next.fiche ?? null)
+      setFooterPanelOpen(false)
+    },
+  })
   const safeSheetIndex = Math.min(sheetIndex, Math.max(0, worksheets.length - 1))
   const activeSheet = worksheets[safeSheetIndex] ?? worksheets[0]
   const pageIndex = activeSheet?.configIndex ?? Math.min(sheetIndex, Math.max(0, pages.length - 1))
@@ -372,6 +432,7 @@ export function GeneratorPage({
   } = usePageNavigation({
     accessAccount,
     allowedDomains,
+    pages,
     activePage,
     activeBlock,
     pageIndex,
@@ -539,6 +600,7 @@ export function GeneratorPage({
     const next = { id: saved.id, name: saved.name }
     setFicheRef(next)
     rememberFicheOnHistory({ ...next, recipe: saved.recipe })
+    await libreDraft.finishSave(next)
   }
 
   const printInstitutional = isLogistiqueDomain(pages[0]?.domain ?? activePage.domain) && !institutional.documentTitle.trim()
@@ -563,6 +625,15 @@ export function GeneratorPage({
   } as const
 
   const settingsPanelProps = {
+    recovery: draftOwner ? (
+      <DraftRecovery
+        drafts={libreDraft.available}
+        message={libreDraft.message}
+        error={libreDraft.error}
+        onResume={libreDraft.choose}
+        onDiscard={libreDraft.discard}
+      />
+    ) : undefined,
     ...ctx,
     worksheets,
     pages,
@@ -788,7 +859,7 @@ export function GeneratorPage({
               setMode((m) => (m === 'student' ? 'answers' : 'student'))
             }
             showPreviewToggle={!(ctx.isCalliDomain || ctx.isJeuxDomain)}
-            onLogout={onLogout}
+            onLogout={() => { void libreDraft.flush().finally(onLogout) }}
           />
           </>
         }
@@ -809,6 +880,9 @@ export function GeneratorPage({
         <div
           className={`workspace${libreMode ? ' has-libre-panel' : ''}${!libreMode && footerPanelOpen ? ' has-footer-panel' : ''}`}
           data-libre-view={libreMode ? libreView : undefined}
+          onInputCapture={libreHistory.onInputCapture}
+          onBlurCapture={libreHistory.stopInputGroup}
+          onPointerDownCapture={libreHistory.stopInputGroup}
         >
           {libreMode && (
             <div className="libre-mobile-switch mode-toggle is-2 no-print" role="group" aria-label="Afficher en mode libre">
@@ -835,6 +909,7 @@ export function GeneratorPage({
           {libreMode ? (
             <LibreSidePanel
               settings={<ActivitySettings {...settingsPanelProps} />}
+              history={libreHistory}
               footer={footerPanel}
               onFocusCapture={(event) => { editorFocusRef.current = event.target }}
               activeBlock={activeBlock}
@@ -846,6 +921,10 @@ export function GeneratorPage({
               isPhraseDomain={ctx.isPhraseDomain}
               isNumberLibreDomain={ctx.isNumberLibreDomain}
               liveAddition={liveAddition}
+              additionId={additionActivityId(activeBlock, seed, pageIndex, safeBlockIndex)}
+              maxQuestions={ctx.maxQuestions}
+              transientFields={transientFields}
+              onTransientField={writeTransientField}
               isCalliDomain={ctx.isCalliDomain}
               isJeuxDomain={ctx.isJeuxDomain}
               isTcf={ctx.isTcf}

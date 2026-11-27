@@ -1,3 +1,4 @@
+import { hasLockedItems } from '@/components/generator/libre/flat-items'
 import { TabRemoveButton } from '@/components/generator/TabRemoveButton'
 import { removePageBlock } from '@/math/page-model'
 import type { Dispatch, SetStateAction } from 'react'
@@ -107,6 +108,9 @@ export function PageStructureTabs({
                         label="Retirer cet exercice"
                         onRemove={() => {
                           const blockIdx = index
+                          const block = pageExerciseBlocks[blockIdx]
+                          if (block && hasLockedItems(block) &&
+                            !window.confirm('Retirer cet exercice et ses questions verrouillées ?')) return
                           const numbers = pageExerciseBlocks.map(
                             (block, i) =>
                               activeSheet?.blocks?.[i]?.exerciseIndex ??

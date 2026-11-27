@@ -1,4 +1,4 @@
-import type { Dispatch, SetStateAction } from 'react'
+import type { Dispatch, ReactNode, SetStateAction } from 'react'
 import { PageStructureTabs } from '@/components/generator/PageStructureTabs'
 import {
   DomainThemeTypeFields,
@@ -28,6 +28,7 @@ import type {
 } from '@/math/types'
 
 export type SettingsPanelProps = {
+  recovery?: ReactNode
   worksheets: WorksheetPage[]
   pages: PageConfig[]
   safeSheetIndex: number
@@ -161,6 +162,7 @@ export function SettingsPanel(props: SettingsPanelProps) {
 export function ActivitySettings(p: SettingsPanelProps) {
   return (
     <>
+      {p.recovery}
       <PageStructureTabs
         worksheets={p.worksheets}
         pages={p.pages}

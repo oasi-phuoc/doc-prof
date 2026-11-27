@@ -442,6 +442,10 @@ export type MathItem = {
   logistiqueGaps?: { answers: string[]; words?: string[] }
   logistiqueImage?: LogistiqueQuestionImage
   logistiqueGlossaryFigure?: LogistiqueGlossaryFigure
+  /** Identité locale d’une occurrence éditée, distincte des identifiants de banque. */
+  libreId?: string
+  /** Protège l’occurrence du tirage. */
+  libreLocked?: boolean
   layout: Layout
   grammar?: import('@/grammaire/curriculum/types').GrammarQuestion
   cscTask?: import('@/tcm-csc/task-types').CscTask
@@ -899,6 +903,8 @@ export type CompositeScene = {
 }
 
 export type ExerciseBlock = {
+  /** Identité locale de l’activité éditée. */
+  libreId?: string
   /** Publication logistique figée lors de l’enregistrement de la fiche. */
   logistiqueBankRevision?: string
   logistiqueTheoryView?: 'complet' | 'resume'

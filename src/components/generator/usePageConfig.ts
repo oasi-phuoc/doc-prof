@@ -8,6 +8,7 @@ import {
   resizeDraftGrids,
   resizeOralAnswerModes,
 } from '@/components/generator/page-helpers'
+import { hasLockedItems, identifyItems, trimUnlockedItems } from '@/components/generator/libre/flat-items'
 import { blockItemsForConfig } from '@/components/generator/sheet-items'
 import { defaultCoordQuestionReply } from '@/components/generator/WorksheetSheet'
 import { isPhraseLibreEditable } from '@/francais/PhraseLibreEditor'
@@ -75,11 +76,18 @@ export function usePageConfig({
   isTcf,
 }: UsePageConfigParams) {
   const updatePage = (patch: Partial<PageConfig>) => {
-    if (
-      additionA4 && patch.count != null && activeBlock.libreItems &&
-      patch.count < activeBlock.libreItems.length &&
-      !window.confirm('Retirer les dernières questions de cette activité personnalisée ?')
-    ) return
+    if (hasLockedItems(activeBlock) && patch.exerciseType !== undefined) {
+      if (!window.confirm('Remplacer cette activité et ses questions verrouillées ?')) return
+    }
+    if (additionA4 && patch.count != null && patch.libreItems === undefined && activeBlock.libreItems) {
+      const locked = activeBlock.libreItems.filter(({ libreLocked }) => libreLocked).length
+      if (patch.count < locked) {
+        window.alert(`Il reste ${locked} questions verrouillées. Choisissez au moins ${locked} questions ou déverrouillez-en.`)
+        return
+      }
+      if (patch.count < activeBlock.libreItems.length &&
+        !window.confirm('Retirer les dernières questions déverrouillées de cette activité ?')) return
+    }
 
     setPages((current) =>
       current.map((page, index) => {
@@ -162,15 +170,15 @@ export function usePageConfig({
             coordMarks: omega ? [...figure, omega] : figure,
           }
         }
-        if (additionA4 && patch.count != null && fixed.libreItems?.length) {
-          const kept = fixed.libreItems.slice(0, fixed.count)
+        if (additionA4 && patch.count != null && patch.libreItems === undefined && fixed.libreItems?.length) {
+          const kept = trimUnlockedItems(fixed.libreItems, fixed.count)
           if (kept.length < fixed.count) {
             const config = pageAsConfig(page, { ...fixed, libreItems: undefined })
             const blockSeed = seed + pageIndex * 7919 + safeBlockIndex * 10007 + (fixed.contentSeed ?? 0)
             const { items } = buildPage(config, blockSeed, 1, seed)
             kept.push(...items.slice(kept.length, fixed.count))
           }
-          fixed = { ...fixed, libreItems: kept }
+          fixed = { ...fixed, libreItems: fixed.libreId ? identifyItems(kept, fixed.libreId) : kept }
         }
         return setPageBlock(merged, safeBlockIndex, fixed)
       }),
