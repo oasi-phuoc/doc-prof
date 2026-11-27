@@ -1,0 +1,197 @@
+{
+  "diplomas": [
+    "CFC"
+  ],
+  "objectives": "## Objectifs\n\n- Créer une présentation (modèle / copie) et personnaliser le **masque**\n- Insérer texte, tableaux, graphiques, images, SmartArt, vidéo et audio\n- Appliquer **transitions** et **animations** (ordre, minutage)\n- Configurer le diaporama, enregistrer (.pptx / vidéo) et imprimer",
+  "overview": "## Aperçu du module 807\n\n- Construire un support oral pour expliquer une opération ou présenter un résultat.\n- Appliquer des dispositions cohérentes et insérer des données et des médias lisibles.\n- Préparer le diaporama, la diffusion et les documents imprimés.",
+  "replacements": [
+    {
+      "from": "Trame commune : thème, polices, emplacements, puces. Modifications → **toutes** les diapositives.",
+      "to": "Le masque contrôle les réglages communs des dispositions qui lui sont associées. Les modifications s'appliquent aux diapositives utilisant ces dispositions, avec des exceptions possibles pour les personnalisations locales.",
+      "reason": "Préciser la portée du masque."
+    },
+    {
+      "from": "| Objet Excel | Insertion → Objet → À partir d'un fichier · **Liaison** = maj auto |",
+      "to": "| Objet Excel | Une liaison peut actualiser le graphique si le fichier source reste disponible et si les réglages l'autorisent. |",
+      "reason": "Indiquer les dépendances pour le partage."
+    },
+    {
+      "from": "Formats mp3/mp4/mov… · disposition Titre et contenu ou Insertion → Vidéo.",
+      "to": "Insérer une vidéo depuis un fichier ou une source en ligne prise en charge. Le MP4 avec encodage compatible est un choix courant. Tester le son et la lecture sur le poste de diffusion.",
+      "reason": "Distinguer audio et vidéo et rendre la fiche durable."
+    },
+    {
+      "from": "- **Vidéo** : Fichier → Exporter → Créer une vidéo (wmv…) · résolution / minutage",
+      "to": "- **Vidéo** : l'export sur les versions compatibles propose notamment le format MP4. Vérifier le minutage, l'audio et la résolution.",
+      "reason": "Éviter de figer un ancien format."
+    }
+  ],
+  "summary": [
+    "Construire un support oral pour expliquer une opération ou présenter un résultat.",
+    "Appliquer des dispositions cohérentes et insérer des données et des médias lisibles.",
+    "Préparer le diaporama, la diffusion et les documents imprimés."
+  ],
+  "glossary": [
+    [
+      "Présentation",
+      "Ensemble de diapositives destiné à communiquer un message."
+    ],
+    [
+      "Diapositive",
+      "Écran ou page de la présentation."
+    ],
+    [
+      "Masque des diapositives",
+      "Ensemble de réglages communs appliqués aux dispositions qui en dépendent."
+    ],
+    [
+      "Disposition",
+      "Organisation des emplacements sur une diapositive."
+    ],
+    [
+      "Zone de contenu",
+      "Emplacement réservé pour du texte, un tableau, une image ou un autre élément."
+    ],
+    [
+      "Graphique lié",
+      "Graphique pouvant se mettre à jour depuis un fichier source accessible et compatible."
+    ],
+    [
+      "Transition",
+      "Effet au passage entre deux diapositives."
+    ],
+    [
+      "Animation",
+      "Effet appliqué à un objet d'une diapositive."
+    ],
+    [
+      "Minutage",
+      "Réglage de la durée et de l'ordre de présentation des contenus."
+    ],
+    [
+      "Mode Présentateur",
+      "Affichage de travail avec notes et contrôles pour l'orateur."
+    ],
+    [
+      "Document imprimé",
+      "Mise en page qui regroupe plusieurs diapositives sur une feuille."
+    ],
+    [
+      "Format 16:9",
+      "Rapport large entre la largeur et la hauteur du support."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Vous disposez de 8 min, dont 1 min d'ouverture et 2 min de questions. Quel temps reste pour le contenu principal ?",
+      "answer": "5 min",
+      "calculation": "8 − 1 − 2 = 5."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Vous imprimez 14 diapositives à 3 par face. Combien de faces faut-il au minimum ?",
+      "answer": "5 faces",
+      "calculation": "14 ÷ 3 ≈ 4,67, donc 5."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Une présentation automatique comporte 12 diapositives. Chacune s'affiche 20 s, transitions comprises. Quelle est la durée ?",
+      "answer": "4 min",
+      "calculation": "12 × 20 s = 240 s."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Le support doit respecter 16:9. Si la largeur vaut 1 280 px, quelle hauteur choisir ?",
+      "answer": "720 px",
+      "calculation": "1 280 ÷ 16 × 9 = 720."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Une vidéo dure 2 min 05 s. Vous retirez les 18 premières secondes et les 12 dernières. Quelle durée reste ?",
+      "answer": "1 min 35 s",
+      "calculation": "125 − 18 − 12 = 95 s."
+    },
+    {
+      "id": "maths-fiche-6",
+      "kind": "maths",
+      "prompt": "Dans un tableau, 56 lignes sur 70 sont conformes. Quelle valeur en pourcentage afficher dans la présentation ?",
+      "answer": "80 %",
+      "calculation": "56 ÷ 70 × 100 = 80."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quand modifier le masque des diapositives ?",
+      "answer": "Pour appliquer des règles visuelles cohérentes à plusieurs dispositions, par exemple polices ou emplacements."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Comment distinguer transition et animation ?",
+      "answer": "La transition agit entre deux diapositives. L'animation agit sur un objet."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Que vérifier pour une vidéo incorporée ou liée ?",
+      "answer": "La lecture dans les conditions de présentation, le son, l'accès au fichier ou au réseau et les droits de diffusion."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Comment afficher ses notes tout en projetant le support ?",
+      "answer": "Configurer le mode Présentateur avec les écrans et vérifier quel écran reçoit les notes."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Pourquoi préférer un graphique simple à un tableau dense pour montrer une évolution ?",
+      "answer": "Un graphique bien choisi rend visibles les tendances et les écarts pendant le temps de lecture disponible."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Vous présentez les résultats de quatre semaines de réception. Proposez trois diapositives avec un rôle précis.",
+      "answer": "Présenter le périmètre et l'objectif, montrer les résultats avec un graphique daté, puis conclure sur une action et son suivi."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Une vidéo en ligne fonctionne au bureau, mais la salle ne garantit pas Internet. Comment préparer l'exposé ?",
+      "answer": "Tester la présentation dans la salle, prévoir une copie locale si autorisée ou un support de remplacement et vérifier le son."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Le document imprimé comporte des titres minuscules et une série impossible à distinguer en gris. Quelles adaptations faites-vous ?",
+      "answer": "Augmenter le texte, réduire le nombre de diapositives par page, distinguer la série à l'aide de motifs ou de libellés et contrôler l'aperçu."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "7.6 Construire les diapositives",
+      "file": "log-807-notions-1-v001.svg",
+      "alt": "Masque. Polices et éléments communs. Disposition. Zones titre et contenu. Diapositive. Données et message du jour.",
+      "caption": "Une disposition lie les règles communes aux contenus du jour.",
+      "sha256": "ad56f73f2debb36e7751122e6eaf17d45de77eefdb44aa12dca248740abd47ba",
+      "origin": "Illustration originale Doc-Prof du module 807."
+    },
+    {
+      "anchor": "7.16 Animation",
+      "file": "log-807-notions-2-v001.svg",
+      "alt": "Le passage de la diapositive 1 à la diapositive 2 est une transition. Dans la deuxième diapositive, une flèche montre l'apparition d'un graphique, qui est une animation.",
+      "caption": "Le passage entre écrans et l’apparition d’un objet sont deux réglages distincts.",
+      "sha256": "30bc4a53f3c1657f61b749dbbf2435a490cf87e0ca87f51a2f66bacb88b5e159",
+      "origin": "Illustration originale Doc-Prof du module 807."
+    }
+  ]
+}

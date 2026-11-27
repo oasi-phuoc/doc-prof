@@ -1,0 +1,214 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Distinguer les **versions** OneNote et organiser un bloc-notes (sections / pages)\n- Prendre des notes (texte, dessin) et **partager** pour collaborer\n- Utiliser balises, couleurs et **modèles** (y compris modèles perso)\n- Enregistrer de l'audio, retrouver une note et convertir le **manuscrit en texte** si la fonction est disponible",
+  "overview": "## Aperçu du module 808\n\n- Organiser les notes de cours ou de projet par bloc-notes, section et page.\n- Mettre en évidence les actions et retrouver une information ou une ancienne version.\n- Partager un bloc-notes en limitant les accès et en tenant compte des fonctions disponibles.",
+  "replacements": [
+    {
+      "from": "| **OneNote 2016** (bureau) | Ruban Office complet · sections horizontales · **seul** à stocker aussi en local (PC) + cloud · max. d'options (Fichier → Options) |",
+      "to": "| **Application de bureau** | Fonctions de saisie et d'organisation selon le système et l'édition installés. |",
+      "reason": "Employer les familles d'applications actuelles."
+    },
+    {
+      "from": "| **OneNote pour Windows** | Préinstallé · ruban compact · navigation verticale · Premium M365 (relecture manuscrite, Chercheur, Maths…) |",
+      "to": "| **OneNote pour le Web** | Accès depuis le navigateur aux blocs-notes partagés compatibles. |",
+      "reason": "Éviter de confondre les éditions Windows."
+    },
+    {
+      "from": "| **OneNote 365** | Équivalent cloud · données sur **OneDrive** |",
+      "to": "| **Applications mobiles** | Consultation et saisie des notes selon la plateforme et le compte. |",
+      "reason": "Distinguer les capacités des clients."
+    },
+    {
+      "from": "#### 8.7.1 Recherche intelligente",
+      "to": "#### 8.7.1 Retrouver une note",
+      "reason": "Privilégier une fonction disponible sur les clients actuels."
+    },
+    {
+      "from": "Révision → sélectionner des mots → **Recherche intelligente** (panneau web à droite) · ou saisir d'autres termes.",
+      "to": "Utiliser la recherche du bloc-notes et préciser sa portée si l'application le permet. Rechercher une date, un identifiant d'article ou un terme unique dans le titre ou le contenu.",
+      "reason": "Faire pratiquer la recherche de contenu."
+    },
+    {
+      "from": "**Insertion → Modèles de page** : Académique · Vierge · Professionnel · Décoratif · Planificateur.  ",
+      "to": "Dans une version compatible, choisir un modèle de page. À défaut, conserver une page de référence et la dupliquer pour chaque nouvelle prise de notes.",
+      "reason": "Proposer un parcours indépendant de l'édition."
+    },
+    {
+      "from": "**Enregistrer la page active comme modèle** → Mes modèles · option modèle par défaut de la section.",
+      "to": "Un modèle de contrôle peut contenir date, observations, pièces jointes et actions à suivre. Tester la structure sur un exemple avant de l'adopter.",
+      "reason": "Ancrer l'usage dans une situation de stage."
+    },
+    {
+      "from": "Dessin → **Sélection par lasso** → **Entrée manuscrite en texte** (stylet → texte tapé).",
+      "to": "Si la conversion manuscrite est disponible, sélectionner les tracés puis utiliser la commande de conversion. Vérifier les références, quantités et noms obtenus.",
+      "reason": "Indiquer les conditions de disponibilité et la relecture."
+    }
+  ],
+  "summary": [
+    "Organiser les notes de cours ou de projet par bloc-notes, section et page.",
+    "Mettre en évidence les actions et retrouver une information ou une ancienne version.",
+    "Partager un bloc-notes en limitant les accès et en tenant compte des fonctions disponibles."
+  ],
+  "glossary": [
+    [
+      "Bloc-notes",
+      "Ensemble de notes regroupées dans des sections."
+    ],
+    [
+      "Section",
+      "Groupe thématique de pages dans un bloc-notes."
+    ],
+    [
+      "Page",
+      "Support de note pouvant réunir texte, dessin, fichier ou lien."
+    ],
+    [
+      "Sous-page",
+      "Page hiérarchisée sous une autre pour organiser un ensemble de notes."
+    ],
+    [
+      "Balise",
+      "Repère associé à une note, par exemple une action à réaliser."
+    ],
+    [
+      "Coédition",
+      "Modification d'un contenu partagé par plusieurs personnes autorisées."
+    ],
+    [
+      "Historique des versions",
+      "Ensemble des états antérieurs disponibles pour une page ou un document."
+    ],
+    [
+      "Synchronisation",
+      "Mise à jour des notes entre le service et les appareils pris en charge."
+    ],
+    [
+      "Modèle",
+      "Format de page réutilisé pour uniformiser les prises de notes."
+    ],
+    [
+      "Encre numérique",
+      "Tracés saisis à la main à l'aide d'un stylet ou d'un autre dispositif."
+    ],
+    [
+      "Conversion manuscrite",
+      "Transformation de tracés reconnus en texte modifiable."
+    ],
+    [
+      "Autorisation de partage",
+      "Droit accordé aux personnes qui consultent ou modifient un bloc-notes."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Vous créez 4 sections avec 3 pages dans chacune, puis ajoutez 2 pages au total. Combien de pages sont présentes ?",
+      "answer": "14 pages",
+      "calculation": "4 × 3 + 2 = 14."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Dans une section, 7 actions sont terminées sur 12. Combien restent ouvertes ?",
+      "answer": "5 actions",
+      "calculation": "12 − 7 = 5."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Vous enregistrez des notes audio de 3 min 50 s et 2 min 25 s. Quelle est leur durée totale ?",
+      "answer": "6 min 15 s",
+      "calculation": "230 + 145 = 375 s."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Quatre pages avec des pièces jointes occupent 6, 9, 12 et 8 Mo. Quelle taille totale faut-il prévoir ?",
+      "answer": "35 Mo",
+      "calculation": "6 + 9 + 12 + 8 = 35."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Le groupe a terminé 18 actions sur 24. Quel pourcentage est atteint ?",
+      "answer": "75 %",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "18 ÷ 24 × 100 = 75."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Dans quelle unité organiser plusieurs pages traitant du même cours ?",
+      "answer": "Dans une section du bloc-notes."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Quel est l'intérêt d'une balise « à faire » ?",
+      "answer": "Repérer les actions à retrouver et à fermer après traitement."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Pourquoi vérifier la version de OneNote avant d'imposer une commande à la classe ?",
+      "answer": "Les capacités et les noms des commandes diffèrent notamment entre Web, bureau et mobile."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Quelles données contrôler avant d'enregistrer une discussion de groupe ?",
+      "answer": "Le besoin, les règles et autorisations applicables, les participants et l'accès à l'enregistrement."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Que faire après une conversion de notes manuscrites ?",
+      "answer": "Relire notamment les références, nombres et unités avant de réutiliser le texte."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Votre groupe note ses observations de stage. Proposez un classement et une règle pour les titres.",
+      "answer": "Bloc-notes de stage, sections par thème ou zone, pages du type date – activité – objet, et balises réservées aux actions."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Vous partagez des notes avec un nouveau collègue qui doit les lire seulement. Comment procéder ?",
+      "answer": "Vérifier le périmètre du bloc-notes, inviter le compte approprié en lecture et contrôler l'accès obtenu."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Une page est vide sur le poste d'un membre de l'équipe alors qu'elle semblait renseignée. Que vérifiez-vous ?",
+      "answer": "Contrôler le compte, le bon bloc-notes, la synchronisation et les droits; consulter les versions ou la corbeille si disponibles avant d'écraser le document."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "8.2 Structure",
+      "file": "log-808-notions-1-v001.svg",
+      "alt": "Bloc-notes. Stage logistique. Section. Réception. Page. 12 mai — Contrôle de lots.",
+      "caption": "La date du relevé figure dans le titre de la page.",
+      "sha256": "5eec04fd071e29d69b2e79882a60f2726349a4c9edefabb2a4ebee93b15b342b",
+      "origin": "Illustration originale Doc-Prof du module 808."
+    },
+    {
+      "anchor": "8.6 Collaboration et partage",
+      "file": "log-808-notions-2-v001.svg",
+      "alt": "Périmètre. Choisir le bloc-notes. Personnes. Lecture ou modification. Vérification. Contrôler les droits actifs.",
+      "caption": "Le droit choisi dépend de la tâche à effectuer.",
+      "sha256": "8cefbe4b3e8371d34bf7b54f4bf33048377fd6b66f90aedf43ff2e29c6e5ef48",
+      "origin": "Illustration originale Doc-Prof du module 808."
+    }
+  ]
+}

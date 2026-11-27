@@ -1,0 +1,209 @@
+{
+  "diplomas": [
+    "CFC"
+  ],
+  "objectives": "## Objectifs\n\n- Saisir et formater des données dans un classeur Excel\n- Créer des formules (opérateurs, priorités, **références absolues F4**)\n- Utiliser des fonctions statistiques et métiers (SI, RECHERCHV, ARRONDI…)\n- Créer un graphique adapté et préparer une **source de données** pour le publipostage",
+  "overview": "## Aperçu du module 806\n\n- Construire un tableau de stock avec des données dans les bonnes unités.\n- Calculer et vérifier des résultats avec des formules, fonctions et références recopiables.\n- Choisir un graphique pertinent et préparer une liste fiable pour un publipostage.",
+  "replacements": [
+    {
+      "from": "| Référence `:` `;` | `B1:C4` plage · `B1;C4` cellules séparées |",
+      "to": "| Référence | `B1:C4` désigne une plage. Le séparateur des arguments d'une fonction dépend des paramètres régionaux. |",
+      "reason": "Distinguer plage et séparation des arguments."
+    },
+    {
+      "from": "**Données → Convertir** : séparer un texte (ex. `1400` | `Yverdon-les-Bains`).  ",
+      "to": "**Données → Convertir** : vérifier l'aperçu, le séparateur et le format des nouvelles colonnes avant validation.",
+      "reason": "Garder les identifiants et éviter de modifier les données adjacentes."
+    },
+    {
+      "from": "**Heures > 24 h :** format `[hh]:mm` · calendrier 1904 pour heures négatives (options).",
+      "to": "**Durées cumulées > 24 h :** utiliser le format de durée `[h]:mm`. Vérifier le résultat en heures sur un calcul connu.",
+      "reason": "Ne pas changer le système de dates du classeur pour afficher une durée."
+    },
+    {
+      "from": "- **%** : Excel ×100 → ne pas ×100 dans la formule",
+      "to": "- **%** : un rapport de 0,945 s'affiche comme 94,5 % en format pourcentage. Le format change l'affichage, la valeur utilisée dans les calculs reste 0,945.",
+      "reason": "Clarifier valeur et présentation."
+    },
+    {
+      "from": "Raccourci **Ctrl + accent grave** (` sous Windows) : bascule formules ↔ résultats.",
+      "to": "Dans l'onglet **Formules**, utiliser **Afficher les formules** pour inspecter les références. Le raccourci dépend du clavier et de la version.",
+      "reason": "Proposer une commande repérable selon le contexte."
+    }
+  ],
+  "summary": [
+    "Construire un tableau de stock avec des données dans les bonnes unités.",
+    "Calculer et vérifier des résultats avec des formules, fonctions et références recopiables.",
+    "Choisir un graphique pertinent et préparer une liste fiable pour un publipostage."
+  ],
+  "glossary": [
+    [
+      "Classeur",
+      "Fichier qui regroupe une ou plusieurs feuilles."
+    ],
+    [
+      "Feuille",
+      "Grille organisée en lignes et en colonnes dans le classeur."
+    ],
+    [
+      "Cellule",
+      "Intersection d'une ligne et d'une colonne, par exemple B2."
+    ],
+    [
+      "Plage",
+      "Ensemble de cellules référencées comme B2:B8."
+    ],
+    [
+      "Formule",
+      "Expression commençant par le signe égal et calculant une valeur."
+    ],
+    [
+      "Fonction",
+      "Calcul prédéfini utilisé dans une formule avec des arguments."
+    ],
+    [
+      "Référence relative",
+      "Référence dont la ligne ou la colonne change à la recopie."
+    ],
+    [
+      "Référence absolue",
+      "Référence dont la ligne et la colonne sont fixées, comme $B$2."
+    ],
+    [
+      "Format de cellule",
+      "Règle d'affichage d'une donnée, par exemple CHF ou pourcentage."
+    ],
+    [
+      "Série",
+      "Ensemble de valeurs représentées dans un graphique."
+    ],
+    [
+      "Recherche exacte",
+      "Mise en correspondance avec la valeur égale à la clé recherchée."
+    ],
+    [
+      "Publipostage",
+      "Production de documents personnalisés par fusion d'un modèle et d'une liste de données."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "La cellule B2 contient 36 pièces et C2 contient le prix unitaire de CHF 7,50. Donnez une formule de valorisation et le résultat.",
+      "answer": "=B2*C2 donne CHF 270",
+      "calculation": "36 × 7,50 = 270."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "B2, B3 et B4 contiennent 8, 16 et 21. Quelle est la somme et quelle formule utiliser dans Excel en français ?",
+      "answer": "=SOMME(B2:B4) donne 45",
+      "calculation": "8 + 16 + 21 = 45."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Le taux se trouve en E1 et vaut 3 %. La valeur en B2 est CHF 7 500. Donnez en C2 une formule recopiable vers C3 et le résultat de C2.",
+      "answer": "=B2*$E$1 donne CHF 225",
+      "calculation": "La valeur est relative, le taux est fixe. 7 500 × 0,03 = 225."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Évaluez =2*(3+4) et comparez à =2*3+4.",
+      "answer": "14 contre 10",
+      "calculation": "2 × 7 = 14 et 6 + 4 = 10."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Un fournisseur annonce 165 pièces par carton et vous devez expédier 710 pièces. Combien de cartons faut-il au minimum ?",
+      "answer": "5 cartons",
+      "calculation": "710 ÷ 165 ≈ 4,30. Arrondir à l'entier supérieur."
+    },
+    {
+      "id": "maths-fiche-6",
+      "kind": "maths",
+      "prompt": "La cellule B8 contient 0,945. Quel affichage donne le format pourcentage avec une décimale ?",
+      "answer": "94,5 %",
+      "calculation": "0,945 est équivalent à 94,5 sur 100."
+    },
+    {
+      "id": "maths-fiche-7",
+      "kind": "maths",
+      "prompt": "Les valeurs quotidiennes sont 26, 39, 41 et 34. Donnez le résultat de MOYENNE.",
+      "answer": "35",
+      "calculation": "(26 + 39 + 41 + 34) ÷ 4 = 35."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quelle référence utiliser pour empêcher totalement le déplacement de B1 à la recopie ?",
+      "answer": "$B$1."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Pourquoi conserver un code postal avec un zéro initial en texte quand il sert d'identifiant ?",
+      "answer": "Pour conserver tous ses caractères tels qu'ils doivent apparaître dans les données et dans la fusion."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Comment rechercher un article par sa référence exacte ?",
+      "answer": "Utiliser une correspondance exacte dans la fonction de recherche et traiter l'absence de résultat de manière explicite."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Quelle représentation choisir pour suivre une évolution mensuelle ?",
+      "answer": "Une courbe ou des colonnes ordonnées dans le temps, avec les mois et l'unité identifiés."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Comment préparer les colonnes d'un fichier de publipostage ?",
+      "answer": "Utiliser un en-tête par champ, une ligne par destinataire et vérifier les types de données et les doublons."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Les premières valeurs sont justes mais les lignes suivantes affichent 0 après recopie. Le taux est toujours en F1. Comment diagnostiquer ?",
+      "answer": "Comparer les formules, fixer le taux avec $F$1, recopier et vérifier un résultat à la main."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Vous devez présenter les réceptions des six derniers mois. Décrivez votre préparation.",
+      "answer": "Organiser une ligne par mois, vérifier les totaux, choisir colonnes ou courbe et préciser mois, unité et période du graphique."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Avant de générer des lettres, certains noms sont vides et les codes postaux ont perdu un caractère. Que faites-vous ?",
+      "answer": "Corriger la liste avec les données sources autorisées, conserver les identifiants en texte et vérifier plusieurs lettres via l'aperçu avant fusion."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "6.3.4 Référence absolue",
+      "file": "log-806-notions-1-v001.svg",
+      "alt": "Taux source. E1 contient 3 %. Résultat en C2. =B2*$E$1. Résultat en C3. =B3*$E$1.",
+      "caption": "Le taux reste dans E1; le montant à la ligne suivante passe de B2 à B3.",
+      "sha256": "1e04cf1ae2cfdf01caf62dcba5041f3abaf3ace4c0f1a5686faf9e67c60d2750",
+      "origin": "Illustration originale Doc-Prof du module 806."
+    },
+    {
+      "anchor": "6.6 Créer un graphique",
+      "file": "log-806-notions-2-v001.svg",
+      "alt": "Graphique en colonnes. Janvier : 50 palettes, février : 30 palettes, mars : 60 palettes. L'axe vertical part de zéro.",
+      "caption": "Les colonnes comparent les quantités. Le mois est sur l’axe horizontal, l’unité figure sur l’axe vertical.",
+      "sha256": "d3c855744457145876c6b19a67d4918b531a73ede6adf38a09dc68457ad35017",
+      "origin": "Illustration originale Doc-Prof du module 806."
+    }
+  ]
+}

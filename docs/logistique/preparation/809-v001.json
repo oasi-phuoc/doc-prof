@@ -1,0 +1,194 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Définir l'**intralogistique** et citer ses domaines d'activité\n- Expliquer les **objectifs** du poste de contrôle (indicateurs + visualisation)\n- Décrire son **rôle** (évaluation / recommandations vs décision humaine)\n- Citer les **exigences** envers les collaborateurs du poste de contrôle",
+  "overview": "## Aperçu du module 809\n\n- Repérer les flux internes et les données utiles à la gestion de l'entrepôt.\n- Comparer les prévisions, l'activité réelle et les alertes au poste de contrôle.\n- Choisir une réponse opérationnelle adaptée puis confirmer le retour à la normale.",
+  "replacements": [
+    {
+      "from": "Aussi appelé **panneau de commande** · point central d'un **WMS** · assiste la gestion globale entrepôt / exploitation. Importance croissante avec capteurs et robotique.",
+      "to": "Le poste de contrôle centralise les données d'exploitation. Il peut utiliser un WMS ainsi que les mesures des équipements et les observations du terrain.",
+      "reason": "Éviter de limiter le poste à un composant logiciel."
+    },
+    {
+      "from": "Aussi : **représentation graphique** des processus → réagir vite aux perturbations / imprévus · flux sans faille. Questions typiques : dysfonctionnements manutention ? logiciel ?",
+      "to": "L'affichage des volumes, urgences et états facilite la détection d'une perturbation. Avant d'agir, confirmer la fraîcheur de la donnée et la zone touchée.",
+      "reason": "Introduire la qualification des alertes."
+    }
+  ],
+  "summary": [
+    "Repérer les flux internes et les données utiles à la gestion de l'entrepôt.",
+    "Comparer les prévisions, l'activité réelle et les alertes au poste de contrôle.",
+    "Choisir une réponse opérationnelle adaptée puis confirmer le retour à la normale."
+  ],
+  "glossary": [
+    [
+      "Intralogistique",
+      "Organisation des flux de marchandises et des informations à l'intérieur du site."
+    ],
+    [
+      "Poste de contrôle",
+      "Fonction qui rassemble les données et aide à coordonner les décisions de l'exploitation."
+    ],
+    [
+      "WMS",
+      "Système logiciel dédié à la gestion des opérations d'entrepôt."
+    ],
+    [
+      "Indicateur",
+      "Mesure définie pour suivre l'état ou la performance d'un processus."
+    ],
+    [
+      "Capacité",
+      "Quantité de travail réalisable avec les moyens disponibles sur une période."
+    ],
+    [
+      "File d'attente",
+      "Ensemble d'unités ou de tâches en attente d'une opération."
+    ],
+    [
+      "Alerte",
+      "Signal à traiter selon sa gravité et la procédure prévue."
+    ],
+    [
+      "Écart",
+      "Différence entre une valeur mesurée et une référence."
+    ],
+    [
+      "Priorité",
+      "Ordre de traitement fixé en fonction de critères tels que sécurité et échéance."
+    ],
+    [
+      "Cadence",
+      "Quantité traitée par unité de temps."
+    ],
+    [
+      "Mode dégradé",
+      "Organisation temporaire prévue pour maintenir certaines activités pendant un incident."
+    ],
+    [
+      "Escalade",
+      "Transmission d'un incident au niveau de responsabilité compétent."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Vous prévoyez 56 lignes de picking et 41 sont terminées. Combien restent à préparer ?",
+      "answer": "15 lignes",
+      "calculation": "56 − 41 = 15."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Deux opérateurs préparent chacun 28 lignes par heure pendant 2 h. Quelle quantité traitent-ils ?",
+      "answer": "112 lignes",
+      "calculation": "2 × 28 × 2 = 112."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Le poste suit 35 livraisons attendues, dont 27 enregistrées au quai. Combien ne sont pas encore enregistrées ?",
+      "answer": "8 livraisons",
+      "calculation": "35 − 27 = 8."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Le contrôle constate 20 palettes en attente. On en traite 6 et 4 nouvelles arrivent. Combien attendent maintenant ?",
+      "answer": "18 palettes",
+      "calculation": "20 − 6 + 4 = 18."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "La cadence prévue vaut 80 unités/h et la cadence constatée 68. Quel écart relatif au plan observez-vous ?",
+      "answer": "−15 %",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "(68 − 80) ÷ 80 × 100 = −15."
+    },
+    {
+      "id": "maths-fiche-6",
+      "kind": "maths",
+      "prompt": "Un quai résorbe un retard net de 12 colis/h après les nouvelles arrivées. Après combien d'heures un retard initial de 42 colis disparaît-il ?",
+      "answer": "3 h 30",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "42 ÷ 12 = 3,5 h."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quels flux relèvent de l'intralogistique ?",
+      "answer": "Par exemple la réception, les transferts, le stockage, la préparation et la mise à disposition à l'intérieur du site."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Que compare un tableau de suivi lorsqu'il affiche un écart ?",
+      "answer": "La mesure réelle et une valeur cible pour la même période, la même unité et le même processus."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Pourquoi vérifier l'heure d'une alerte ?",
+      "answer": "Elle aide à savoir si la donnée est récente, si la situation évolue et qui intervenait."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Quelle est la différence entre une recommandation et une décision ?",
+      "answer": "La recommandation aide à choisir. La décision engage une action et relève d'un rôle autorisé."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Donnez un élément à inscrire à la clôture d'un incident.",
+      "answer": "Par exemple l'heure de reprise, la cause constatée, l'action et l'indicateur revenu dans la plage prévue."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Le tableau indique un convoyeur arrêté, mais l'équipe terrain le voit tourner. Que faites-vous ?",
+      "answer": "Vérifier l'identifiant du matériel, l'heure et la source du signal; signaler l'incohérence et suivre la procédure avant d'écarter l'alerte."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Deux ordres atteignent le même seuil d'urgence et un seul opérateur est disponible. Comment fixer l'ordre ?",
+      "answer": "Comparer sécurité, échéances, dépendances et ressources; faire confirmer la priorité selon la procédure et informer les personnes concernées."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Le retard au quai augmente malgré le renfort. Proposez un suivi.",
+      "answer": "Comparer arrivées et sorties sur la même durée, localiser le goulet, ajuster l'affectation ou le flux avec le responsable et mesurer le résultat."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "9.1 Intralogistique",
+      "file": "log-809-notions-1-v001.svg",
+      "alt": "Réception. Livraisons et contrôles. Stockage. Mouvements et positions. Expédition. Préparation et départs.",
+      "caption": "Les événements du WMS suivent les mouvements entre zones.",
+      "sha256": "8fce97a4e508f4c40b4a51ac4a0b96bfb160e9622313ecbe9f35338ce819a365",
+      "origin": "Illustration originale Doc-Prof du module 809."
+    },
+    {
+      "anchor": "9.2.2 Rôle",
+      "file": "log-809-notions-2-v001.svg",
+      "alt": "Qualifier. Source, heure et impact. Coordonner. Informer et agir selon le rôle. Clôturer. Vérifier et consigner.",
+      "caption": "L’équipe vérifie la réalité de l’écart et la reprise du flux.",
+      "sha256": "6dec8d12174eb00e3abc356d1854cacc2b10d6a88d9e73a9be39a6834c677703",
+      "origin": "Illustration originale Doc-Prof du module 809."
+    }
+  ]
+}

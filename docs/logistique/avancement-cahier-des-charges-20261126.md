@@ -98,10 +98,14 @@ Référence de réalisation dans le [cahier des charges v2.12](cahier-des-charge
 | L4 — Module 802 | Révision `802-v001` active en CFC et AFP | 2 schémas, 12 termes, 6/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 802](preparation/802-v001.json). |
 | L4 — Module 803 | Révision `803-v001` active en CFC et AFP | 2 schémas, 12 termes, 6/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 803](preparation/803-v001.json). |
 | L4 — Module 804 | Révision `804-v001` active en CFC et AFP | 2 schémas, 12 termes, 6/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 804](preparation/804-v001.json). |
+| L4 — Module 806 | Révision `806-v001` active en CFC | 2 schémas, 12 termes, 7 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 806](preparation/806-v001.json). |
+| L4 — Module 807 | Révision `807-v001` active en CFC | 2 schémas, 12 termes, 6 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 807](preparation/807-v001.json). |
+| L4 — Module 808 | Révision `808-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 808](preparation/808-v001.json). |
+| L4 — Module 809 | Révision `809-v001` active en CFC et AFP | 2 schémas, 12 termes, 6/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 809](preparation/809-v001.json). |
 
 ## Reprise opérationnelle
 
-1. Les thèmes 100 à 700 disposent des six types pour tous les modules et diplômes prévus au catalogue. Le premier lot ICT (801 à 804) est actif dans les deux diplômes et le 805 est déjà actif en CFC. Poursuivre par le module 806 « Excel Microsoft 365 ». Les cibles nominales de banque restent à atteindre. Partir des archives et vérifier visuels et composition avant publication. [Archives par thème](sources-epcas/).
+1. Les thèmes 100 à 800 disposent des six types pour tous les modules et diplômes prévus au catalogue. Poursuivre par le module 901 « Planifier et évaluer les projets logistiques ». Le 902 est déjà actif en CFC. Les cibles nominales de banque restent à atteindre. Partir des archives et vérifier visuels et composition avant publication. [Archives par thème](sources-epcas/).
 2. Vérifier les corrigés, la place du contenu dans le référentiel, les écarts AFP/CFC et les dépendances à des médias écartés.
 3. Enregistrer une révision de banque et la conserver pour les recettes déjà créées. Les changements de fond du 105 sont consignés dans les [données de préparation](pilote-105/preparation.generated.json) et dans le [dossier éditorial](pilote-105/relecture.md).
 4. Vérifier dans les deux diplômes le nombre d’unités disponibles, la génération, le corrigé, l’impression et la réouverture. Reporter dans ce fichier les preuves, les écarts et le prochain module retenu.
@@ -120,6 +124,7 @@ Référence de réalisation dans le [cahier des charges v2.12](cahier-des-charge
 
 - Modules 701 à 705, soit 36 contextes module, diplôme et type vérifiés en Chromium A4. Réserve minimale au pied de 79,64 px. Les aperçus occupent une page, les cours illustrés produisent un PDF et les suites de calcul gardent les numéros.
 - Modules 801 à 804, soit 48 contextes module, diplôme et type vérifiés en Chromium A4. Réserve minimale au pied de 79,64 px. Les aperçus occupent une page, les cours illustrés produisent un PDF et les suites de calcul gardent les numéros.
+- Modules 806 à 809, soit 36 contextes module, diplôme et type vérifiés en Chromium A4. Réserve minimale au pied de 79,64 px. Les aperçus occupent une page, les cours illustrés produisent un PDF et les suites de calcul gardent les numéros.
 
 ### Thèmes 300 à 600 — Publications
 
