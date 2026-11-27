@@ -35,6 +35,17 @@ const modelQuestions = {
   result: ['Comment calculez-vous le résultat sur la période ?', 'Soustrayez les coûts du chiffre d’affaires sur le même périmètre et la même période.'],
   capital: ['Quelle base utilisez-vous pour imputer un intérêt au stock ?', 'La valeur moyenne du stock dans le périmètre du calcul. Appliquez le taux et la durée retenus.'],
   service: ['Comment interprétez-vous la progression de 80 % à 86 % ?', 'Le taux a gagné six points de pourcentage. Le calcul d’une hausse relative partirait de 80 %.'],
+  valuation: ['Comment calculez-vous la valeur d’un article compté à l’inventaire ?', 'Multipliez son nombre d’unités validé par sa valeur unitaire selon la même règle de valorisation.'],
+  expense: ['Pourquoi comparer le coût moyen d’une unité en indiquant aussi le volume ?', 'Les frais fixes se répartissent sur un nombre d’unités qui varie avec le volume traité.'],
+  benefits: ['Quel écart de périmètre faut-il contrôler quand on compare deux rémunérations ?', 'Vérifiez les avantages et coûts complémentaires compris dans chacun des montants, sur une même durée.'],
+  codeCheck: ['Que permet de vérifier la clé d’un GTIN ?', 'Elle aide à repérer certaines erreurs de lecture ou de saisie. Elle ne décrit pas le produit ni sa disponibilité.'],
+  spreadsheet: ['Quel effet ont les signes dollar dans la référence $E$1 ?', 'Ils fixent la colonne E et la ligne 1 pour que la recopie ne déplace pas la référence.'],
+  printing: ['Pourquoi compter des feuilles plutôt que des pages avant un tirage recto verso ?', 'Une feuille peut porter deux pages. Le dernier côté d’un exemplaire peut rester vide.'],
+  files: ['Pourquoi vérifier le nombre de copies ou versions dans un calcul d’espace occupé ?', 'Chaque copie conservée peut occuper de l’espace. Le calcul doit porter sur les fichiers du même périmètre.'],
+  playback: ['Quelle durée se distingue de la transition entre deux diapositives ?', 'L’animation agit sur un objet ou un élément dans une diapositive. La transition relie deux diapositives.'],
+  locale: ['Que faut-il contrôler avant de comparer deux montants importés ?', 'Contrôlez le séparateur décimal, l’unité et le séparateur de milliers utilisés dans chaque fichier.'],
+  layout: ['Pourquoi conserver le même facteur pour la largeur et la hauteur d’une image ?', 'Le facteur identique conserve les proportions et évite de déformer l’image.'],
+  tableValues: ['Que faut-il revérifier après modification d’une ligne dans un tableau ?', 'Vérifiez l’unité, le total et toutes les valeurs de synthèse qui dépendent de la ligne modifiée.'],
 }
 
 const followUps = {
@@ -58,6 +69,17 @@ const followUps = {
   result: 'Un coût oublié est ajouté après l’établissement du premier bilan.',
   capital: 'Le périmètre de stockage change au cours de la période comptable.',
   service: 'Le volume de demandes change entre deux périodes du suivi.',
+  valuation: 'Une nouvelle pièce d’inventaire confirme le prix unitaire mais corrige le comptage.',
+  expense: 'Le nombre d’opérations change alors que les frais du local restent les mêmes.',
+  benefits: 'Une seconde estimation précise les frais de formation auparavant omis.',
+  codeCheck: 'Une référence a été ressaisie et le contrôle doit être refait sur la valeur corrigée.',
+  spreadsheet: 'Une référence de taux change de cellule avant la recopie d’une formule.',
+  printing: 'La dernière version ajoute une annexe qui doit figurer dans les exemplaires.',
+  files: 'Une version supplémentaire a été conservée depuis la première estimation.',
+  playback: 'Deux séquences sont ajoutées et la durée de fin doit être vérifiée.',
+  locale: 'Le fichier d’un autre site n’utilise pas le même ordre de date ou le même séparateur.',
+  layout: 'Les marges sont modifiées avant la mise à jour de l’illustration.',
+  tableValues: 'Une source corrige la dernière ligne du tableau présenté.',
 }
 
 function sections(blocks, reference) {
@@ -92,12 +114,14 @@ for (const group of groups) {
     if (!/^[a-z0-9]+$/.test(id) || !consequence || !dossierMaths[model] || !modelQuestions[model] || !followUps[model]) {
       throw new Error(`Dossier incomplet ${module}/${id}`)
     }
-    const theorySection = sections(course.blocks, reference)
+    const [primary, ...mathReferences] = reference.split(' ~ ')
+    const theorySection = sections(course.blocks, primary)
     const values = operands.split(',').map(Number)
     if (values.length !== 6 || values.some((value) => !Number.isFinite(value) || value <= 0)) throw new Error(`Jeu de données invalide ${module}/${id}`)
     const calculations = dossierMaths[model](unit, values)
     for (const [index, [task, result, calculation]] of calculations.entries()) {
-      add('maths', `${id}-${index + 1}`, theorySection, [`${context} ${task}`, result, calculation])
+      const mathSection = mathReferences[index] ? sections(course.blocks, mathReferences[index]) : theorySection
+      add('maths', `${id}-${index + 1}`, mathSection, [`${context} ${task}`, result, calculation])
     }
     const facts = [
       [`${context} Quel objectif professionnel guide ce dossier ?`, objective],
