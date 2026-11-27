@@ -261,6 +261,7 @@ import { module306 as palletTypes306 } from './banks/module-306-v005.generated.t
 import { module403 as storageTypes403 } from './banks/module-403-v005.generated.ts'
 import { module404 as storageTypes404 } from './banks/module-404-v005.generated.ts'
 import { palletAndStorageFigures, palletAndStorageTerms } from './banks/glossaires-palettes-stockage-v004'
+import { logistiqueAcquisitionExercises } from './banks/acquis-v008'
 import type { LogistiqueExerciseTable } from './tables'
 import type { LogistiqueGlossaryFigure } from '@/math/types'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
@@ -626,6 +627,11 @@ const palletAndStoragePublication: LogistiquePublication = {
   palletAndStorageFigures, 'v004'),
 }
 
+const acquisitionExercisesPublication: LogistiquePublication = {
+  revision: 'logistique-exercices-acquis-v008',
+  units: [...palletAndStoragePublication.units, ...logistiqueAcquisitionExercises(palletAndStoragePublication.units)],
+}
+
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
@@ -712,6 +718,7 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   illustratedGlossariesPublication,
   tableExercisesPublication,
   palletAndStoragePublication,
+  acquisitionExercisesPublication,
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!
