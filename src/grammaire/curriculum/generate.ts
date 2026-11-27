@@ -36,7 +36,7 @@ function eligible(bank: GrammarBank, block: ExerciseBlock): GrammarUnit[] {
   return units.filter(u=>isNegativeGrammarOrder(u)===(polarity==='negative'))
 }
 export function grammarEligibleCount(block: ExerciseBlock): number {
-  const bank=block.grammarLevel?grammarBankFor(block.exerciseType,block.grammarLevel):undefined
+  const bank=block.grammarLevel?grammarBankFor(block.exerciseType,block.grammarLevel,block.grammarBankRevision):undefined
   return bank && block.grammarPresentation && bank.presentations.includes(block.grammarPresentation) ? eligible(bank,block).length : 0
 }
 
@@ -56,10 +56,11 @@ export function generateGrammarSelection(block: ExerciseBlock, seed: number): Gr
       invalid('Les paramètres et la sélection sauvegardée diffèrent. Régénérez cet exercice pour appliquer le changement.')
     if (s.seed===seed && s.requestKey===key && s.questions.length===count) return s
   }
-  const bank=grammarBankFor(block.exerciseType,block.grammarLevel)
-  if (!bank || !bank.presentations.includes(block.grammarPresentation))
+  const current=grammarBankFor(block.exerciseType,block.grammarLevel)
+  if (!current || !current.presentations.includes(block.grammarPresentation))
     throw new GrammarCurriculumError('GRAMMAR_ACTIVITY_UNAVAILABLE','Ce niveau ou ce mode de réponse n’est pas encore disponible pour cette activité.')
-  if (bank.revision!==block.grammarBankRevision)
+  const bank=grammarBankFor(block.exerciseType,block.grammarLevel,block.grammarBankRevision)
+  if (!bank)
     throw new GrammarCurriculumError('GRAMMAR_BANK_REVISION_MISSING','Cette révision de banque n’est plus disponible. Choisissez explicitement la banque actuelle pour régénérer.')
   const pilot=bank.editorialStatus!=='approved'
   if (pilot && block.grammarPreview!==true)
