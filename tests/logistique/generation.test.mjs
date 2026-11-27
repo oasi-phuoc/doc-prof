@@ -220,7 +220,7 @@ test('les glossaires repris fournissent une photo individuelle pour chaque notio
     ['204', 14], ['205', 14], ['206', 14],
     ['207', 14], ['208', 14], ['209', 14],
     ['301', 12], ['302', 12], ['303', 12], ['304', 12], ['305', 12],
-    ['306', 34], ['307', 12], ['308', 25], ['309', 12], ['403', 27], ['404', 12],
+    ['306', 34], ['307', 12], ['308', 25], ['309', 12], ['403', 27], ['404', 12], ['409', 27], ['410', 23],
   ]
   for (const [code, count] of photoGlossaries) for (const diploma of ['CFC', 'AFP']) {
     const page = config(diploma, code, 'glossaire')
