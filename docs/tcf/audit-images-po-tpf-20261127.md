@@ -1,10 +1,10 @@
 # Images à reprendre en production orale du TPF
 
-L’[ordonnance à la pharmacie](../../public/lib/images/tcf/po/a2/pharmacie-ordonnance.webp) est la référence validée pour cette revue. Le traitement attendu est une peinture numérique semi-réaliste avec des proportions naturelles, un modelé doux, des contours fins et un décor peint. Les références graphiques TCF et le format individuel 4:3 s’appliquent aux futures reprises. [Référentiel TCF](style-images.md)
+L’[ordonnance à la pharmacie](https://github.com/oasi-phuoc/doc-prof/blob/064857253ed602472ef2640c52da23bc2c88c33e/public/lib/images/tcf/po/a2/pharmacie-ordonnance.webp) est la référence validée pour cette revue. Le traitement attendu est une peinture numérique semi-réaliste avec des proportions naturelles, un modelé doux, des contours fins et un décor peint. Les références graphiques TCF et le format individuel 4:3 s’appliquent aux futures reprises. [Référentiel TCF](style-images.md)
 
 Le [suivi par fichier](audit-images-po-tpf-20261127.csv) donne le chemin du média dans le dépôt, les identifiants des exercices, l’étape d’une série, l’écart visuel et les actions à préserver. Le niveau est celui de la banque du TPF. La revue couvre les fichiers actifs résolus par le générateur. Elle a été faite sur planches et par comparaison agrandie pour les exemples prioritaires et les cas intermédiaires.
 
-Les **68 images prioritaires** constituent le lot autorisé. **47 sur 68** ont été remplacées à leur emplacement d’origine. Le tableau ci-dessous conserve le constat de départ. Le statut et l’empreinte de chaque reprise figurent dans le suivi par fichier.
+La reprise couvre les **99 scènes A1–A2** du format **Image à décrire et interaction**. **20 sur 99** ont été remplacées à leur emplacement d’origine. Le premier lot avait déjà repris 36 images A0–A1. Le tableau présente l’audit initial et le CSV consigne chaque image publiée.
 
 | Banque | Images examinées | Rendu photo à refaire | Décor à harmoniser | Contours à harmoniser | À confirmer | Sans reprise prioritaire | Référence validée |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
