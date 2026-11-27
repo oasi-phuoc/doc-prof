@@ -13,6 +13,7 @@ import {
 import { MAX_BASE_FONT_SIZE, MIN_BASE_FONT_SIZE } from '@/components/generator/typography'
 import type { SheetMargin } from '@/components/generator/page-border'
 import {
+  isA5DoubleFormat,
   SHEET_FORMAT_LABELS,
   type SheetFormat,
 } from '@/components/generator/sheet-format'
@@ -20,12 +21,14 @@ import {
 function IconBtn({
   label,
   active,
+  disabledReason,
   onClick,
   children,
   className = '',
 }: {
   label: string
   active?: boolean
+  disabledReason?: string
   onClick: () => void
   children: ReactNode
   className?: string
@@ -35,8 +38,10 @@ function IconBtn({
       type="button"
       className={`topbar-icon-btn${active ? ' active' : ''}${className ? ` ${className}` : ''}`}
       aria-label={label}
-      title={label}
+      title={disabledReason ?? label}
+      aria-description={disabledReason}
       aria-pressed={active}
+      disabled={Boolean(disabledReason)}
       onClick={onClick}
     >
       {children}
@@ -617,7 +622,8 @@ export function TopbarTools({
           />
         </svg>
       </IconBtn>}
-      <IconBtn label="Mode libre" active={libreOpen} onClick={onToggleLibre}>
+      <IconBtn label="Mode libre" active={libreOpen} onClick={onToggleLibre}
+        disabledReason={isA5DoubleFormat(settings.sheetFormat) ? 'Mode libre disponible en A4 uniquement' : undefined}>
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
           <path
             fill="currentColor"

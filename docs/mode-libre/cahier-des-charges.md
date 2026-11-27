@@ -70,6 +70,8 @@ La publication a été préparée dans une copie isolée de la branche distante 
 
 ### 3.1 Deux états du même générateur
 
+Le mode Libre est disponible en A4. Le bouton reste visible et désactivé en double A5. Si ce format est choisi pendant l’édition, le panneau se ferme en conservant le contenu. Les fiches et brouillons double A5 existants s’ouvrent en mode simple et leur contenu reste imprimable. Les mesures du double A5 portent sur le mode simple.
+
 | Zone | Mode normal | Mode Libre |
 |---|---|---|
 | Panneau d’activité à gauche | Paramètres rapides de l’activité | Paramètres de l’activité, contenu et présentation adaptés au profil |
@@ -634,7 +636,7 @@ Les lots peuvent se chevaucher lorsque leur contrat est stable. Les identités, 
 | ID | Test |
 |---|---|
 | UI-01 | Ouvrir Libre : `SettingsPanel` normal absent, panneau Libre unique à gauche, résultat unique à droite ; fermeture inverse sans perte. |
-| UI-02 | Mesurer `A4Frame` avant/après à 1024, 1366, 1440 et 1920 px (selon breakpoints réels) : même largeur et hauteur à la tolérance de rendu près (proposée : 1 px), même échelle ; test portrait et double A5. |
+| UI-02 | En A4, mesurer `A4Frame` avant et après l’ouverture aux largeurs 1024, 1366, 1440 et 1920 px. Vérifier les dimensions à 1 px près et l’échelle. En double A5, vérifier la désactivation du bouton et les dimensions du PDF. |
 | UI-03 | À 320, 390 et 768 px, vérifier l’accès à l’éditeur et à l’aperçu ainsi que l’absence de débordement horizontal global. Vérifier la disposition existante aux largeurs où elle reste utilisable et la bascule aux largeurs où elle est nécessaire. La bascule préserve l’activité, le zoom, la saisie et le retour de focus. |
 | UI-04 | Défilement indépendant, accès aux actions, ouverture de l'en-tête/pied sans troisième colonne ; aucun overlay d'aide dans le PDF. |
 | UI-05 | Absence de paragraphes d'aide statiques sous les réglages ; info-bulle après délai, clavier/focus/Escape, tactile, pas de déplacement du layout. Les erreurs restent visibles. |

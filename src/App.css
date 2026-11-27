@@ -5209,9 +5209,10 @@ textarea.pill-input,
   background:#fff;color:var(--muted);display:inline-flex;align-items:center;justify-content:center;
   flex:0 0 auto;transition:border-color .15s,color .15s,background .15s,box-shadow .15s
 }
-.topbar-icon-btn:hover{
+.topbar-icon-btn:hover:not(:disabled){
   border-color:color-mix(in srgb,var(--purple) 40%,var(--line));color:var(--purple)
 }
+.topbar-icon-btn:disabled{opacity:.5;cursor:not-allowed}
 .topbar-icon-btn.active{
   border-color:var(--purple);color:var(--purple);
   background:var(--lavender);box-shadow:0 0 0 2px color-mix(in srgb,var(--purple) 18%,#fff)

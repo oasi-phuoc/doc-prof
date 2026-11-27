@@ -200,7 +200,16 @@ async function auditControls() {
           await page.locator('.a4-frame .worksheet-sheet').first().waitFor()
           const normal = await measure(page)
           const normalPdf = await pdfMeasure(page, join(root, 'normal.pdf'))
-          await page.getByRole('button', { name: 'Mode libre', exact: true }).click()
+          const libreToggle = page.getByRole('button', { name: 'Mode libre', exact: true })
+          if (entry.format === 'a5-double-landscape') {
+            const disabled = await libreToggle.isDisabled()
+            const editorCount = await page.locator('#activity-editor').count()
+            delete normal.visibleItems
+            rows.push({ ...entry, width, normal, normalPdf, disabled, editorCount,
+              status: disabled && editorCount === 0 ? 'réussi' : 'échoué' })
+            continue
+          }
+          await libreToggle.click()
           await page.locator('.side-tool-panel.is-libre').waitFor()
           const editor = await measure(page)
           const showPreview = page.getByRole('button', { name: 'Aperçu', exact: true })

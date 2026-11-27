@@ -139,6 +139,7 @@ export function GeneratorPage({
   const [sheetFormat, setSheetFormat] = useState<SheetFormat>(
     () => openedFiche?.recipe.sheetFormat ?? 'a4-portrait',
   )
+  const libreAvailable = !isA5DoubleFormat(sheetFormat)
   const [hideChrome, setHideChrome] = useState(
     () => openedFiche?.recipe.hideChrome ?? false,
   )
@@ -156,7 +157,8 @@ export function GeneratorPage({
   const [imageOverrides, setImageOverrides] = useState<Record<string, string>>(() => openedFiche?.recipe.imageOverrides ?? {})
   const theoryColors = theorySectionColors(themeColor)
   const [footerPanelOpen, setFooterPanelOpen] = useState(false)
-  const [libreMode, setLibreMode] = useState(() => openedFiche?.recipe.libreMode ?? false)
+  const [libreEnabled, setLibreMode] = useState(() => libreAvailable && (openedFiche?.recipe.libreMode ?? false))
+  const libreMode = libreAvailable && libreEnabled
   const [libreView, setLibreView] = useState<'editor' | 'preview'>('editor')
   const [worksheetSettingsTarget, setWorksheetSettingsTarget] = useState<HTMLDivElement | null>(null)
   const editorFocusRef = useRef<HTMLElement | null>(null)
@@ -222,8 +224,16 @@ export function GeneratorPage({
     worksheets[0] && isLogistiqueDomain(worksheets[0].domain) ? worksheets.flatMap((sheet) => sheet.items) : undefined,
   [worksheets])
   const [libreSnapshot, setLibreSnapshot] = useState<PageConfig[] | null>(
-    () => openedFiche?.recipe.libreSnapshot ?? null,
+    () => libreAvailable ? openedFiche?.recipe.libreSnapshot ?? null : null,
   )
+  function closeLibre() {
+    setLibreMode(false)
+    setLibreSnapshot(null)
+  }
+  function changeSheetFormat(format: SheetFormat) {
+    setSheetFormat(format)
+    if (isA5DoubleFormat(format)) closeLibre()
+  }
   const revision = useMemo<LibreRevision>(() => ({
     pages, seed, institutional, evalMode, pointsPerQuestion, libreSnapshot,
     sheetFormat, sheetFont, hideChrome, printCorrections, imageOverrides,
@@ -238,7 +248,7 @@ export function GeneratorPage({
     setEvalMode(previous.evalMode)
     setPointsPerQuestion(previous.pointsPerQuestion)
     setLibreSnapshot(previous.libreSnapshot)
-    if (previous.sheetFormat) setSheetFormat(previous.sheetFormat)
+    if (previous.sheetFormat) changeSheetFormat(previous.sheetFormat)
     if (previous.sheetFont) setSheetFont(previous.sheetFont)
     setHideChrome(previous.hideChrome ?? false)
     setPrintCorrections(previous.printCorrections ?? true)
@@ -256,7 +266,7 @@ export function GeneratorPage({
     restore: (next) => {
       libreHistory.clearHistory()
       restoreRevision(next.revision)
-      setLibreMode(next.libreMode)
+      setLibreMode(next.libreMode && !isA5DoubleFormat(next.revision.sheetFormat ?? sheetFormat))
       setLibreView('editor')
       setSheetIndex(next.sheetIndex)
       setBlockIndex(next.blockIndex)
@@ -771,7 +781,7 @@ export function GeneratorPage({
     sheetFont,
     onSheetFontChange: (font) => setSheetFont(applySheetFont(font)),
     sheetFormat,
-    onSheetFormatChange: setSheetFormat,
+    onSheetFormatChange: changeSheetFormat,
     printCorrections,
     onPrintCorrectionsChange: setPrintCorrections,
     hideChrome,
@@ -877,6 +887,7 @@ export function GeneratorPage({
             onToggleFooter={() => setFooterPanelOpen((open) => !open)}
             libreOpen={libreMode}
             onToggleLibre={() => {
+              if (!libreAvailable) return
               setLibreView('editor')
               setFooterPanelOpen(false)
               setLibreMode((prev) => {
@@ -973,15 +984,9 @@ export function GeneratorPage({
           )}
           <SettingsPanel
             settings={settingsPanelProps}
-            header={libreMode && <LibrePanelHeader history={libreHistory} onClose={() => {
-              setLibreMode(false)
-              setLibreSnapshot(null)
-            }} />}
-            presentation={libreMode && (
+            header={libreMode && <LibrePanelHeader history={libreHistory} onClose={closeLibre} />}
+            presentation={libreMode ? (
               <div className="libre-sheet-settings">
-                {a5Pairs && questionsOverflow && (
-                  <p role="alert" className="libre-field-error">Le contenu dépasse une demi-feuille A5. Répartissez-le sur plusieurs pages ou réduisez le contenu.</p>
-                )}
                 <details className="libre-theory-block worksheet-settings">
                   <summary>Présentation du contenu</summary>
                   <div className="worksheet-settings-list" ref={setWorksheetSettingsTarget} />
@@ -1005,7 +1010,9 @@ export function GeneratorPage({
                   <FooterFields {...footerFields} />
                 </details>
               </div>
-            )}
+            ) : a5Pairs && questionsOverflow ? (
+              <p role="alert" className="libre-field-error">Le contenu dépasse une demi-feuille A5. Répartissez-le sur plusieurs pages ou réduisez le contenu.</p>
+            ) : null}
           >
             {libreMode && (
               <LibreActivityEditor

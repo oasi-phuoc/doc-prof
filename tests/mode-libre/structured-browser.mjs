@@ -152,7 +152,6 @@ async function qcmPilot(page) {
 
 async function doubleA5Document(page) {
   const data = recipe('tcf-ce-ex-4', 'tcf-ce', shared)
-  data.sheetFormat = 'a5-double-landscape'
   data.printCorrections = false
   data.pages[0].contentSeedTwin = 87
   await openFiche(page, data)
@@ -160,14 +159,15 @@ async function doubleA5Document(page) {
   const panel = page.locator('#activity-editor .tcf-editor')
   const source = panel.getByRole('textbox', { name: 'Texte', exact: true })
   await source.fill('Le rendez-vous est à dix heures.')
-  assert.equal(await halves.getByText('Le rendez-vous est à dix heures.', { exact: true }).count(), 2)
   const invalidCorrection = panel.getByText('Corrigé à vérifier', { exact: true })
   assert.equal(await invalidCorrection.count(), 2)
 
-  await source.fill('Le groupe se rend à l’atelier et retrouve ses collègues. '.repeat(110))
-  await page.getByRole('alert').filter({ hasText: /Le contenu dépasse une demi-feuille A5/ }).waitFor()
-  await source.fill('Le rendez-vous est à dix heures.')
-  await page.getByText(/Le contenu dépasse une demi-feuille A5/).waitFor({ state: 'hidden' })
+  const editor = page.locator('#activity-editor')
+  await editor.getByText('Mise en page de la fiche', { exact: true }).click()
+  await editor.getByRole('radio', { name: /Paysage — double A5/ }).click()
+  assert(await button(page, 'Mode libre').isDisabled())
+  assert.equal(await editor.count(), 0)
+  assert.equal(await halves.getByText('Le rendez-vous est à dix heures.', { exact: true }).count(), 2)
   await page.emulateMedia({ media: 'print' })
   const printed = page.locator('.print-only-sheets .a5-half')
   assert.equal(await printed.count(), 2)

@@ -26,6 +26,14 @@ async function open(context, data) {
   return page
 }
 
+async function selectDoubleA5(page) {
+  const editor = page.locator('#activity-editor')
+  await editor.getByText('Mise en page de la fiche', { exact: true }).click()
+  await editor.getByRole('radio', { name: /Paysage — double A5/ }).click()
+  assert(await button(page, 'Mode libre').isDisabled())
+  assert.equal(await editor.count(), 0)
+}
+
 async function toggleLive(page, readContent = () => preview(page).innerText()) {
   const text = await readContent()
   await button(page, 'Mode libre').click()
@@ -76,11 +84,12 @@ try {
 
   const phraseA5 = await open(context, {
     domain: 'gattegno', topic: 'phrase-simple', exerciseType: 'phrase-simple-ecrire', verbGroup: 'er',
-    sheetFormat: 'a5-double-landscape', contentSeedTwin: 61,
+    contentSeedTwin: 61,
   })
   await toggleLive(phraseA5)
   await phraseA5.getByRole('textbox', { name: 'Consigne de production écrite', exact: true })
     .fill('Écrivez une phrase sur l’atelier.')
+  await selectDoubleA5(phraseA5)
   assert.equal(await phraseA5.locator('.a4-frame .a5-half').getByText('Écrivez une phrase sur l’atelier.', { exact: true }).count(), 2)
   await phraseA5.close()
 
@@ -141,22 +150,22 @@ try {
     ['soutien-fr', 'soutien-voyelles', 'soutien-a-completer'],
     ['alphabetisation', 'alpha-voyelles', 'alpha-a-mots'],
   ]) {
-    const wordsA5 = await open(context, { domain, topic, exerciseType, sheetFormat: 'a5-double-landscape' })
+    const wordsA5 = await open(context, { domain, topic, exerciseType })
     await toggleLive(wordsA5)
     await wordsA5.getByRole('textbox', { name: 'Mot 1', exact: true }).fill('atelier')
+    if (domain === 'soutien-fr') {
+      await wordsA5.getByRole('combobox', { name: 'Partie cachée du mot 1', exact: true }).selectOption('2:4')
+    }
+    await selectDoubleA5(wordsA5)
     const visibleHalves = wordsA5.locator('.a4-frame .a5-half')
     assert.equal(await visibleHalves.count(), 2)
     if (domain === 'soutien-fr') {
-      await wordsA5.getByRole('combobox', { name: 'Partie cachée du mot 1', exact: true }).selectOption('2:4')
       for (const half of await visibleHalves.all()) {
         assert.deepEqual(await half.locator('.syllable-complete-card').first().locator('.syllable-complete-affix').allTextContents(), ['at', 'ier'])
       }
     } else {
       for (const half of await visibleHalves.all()) assert.equal(await half.locator('.vocab-card-word').first().textContent(), 'atelier')
     }
-    await button(wordsA5, 'Fermer le mode libre').click()
-    await button(wordsA5, 'Mode libre').click()
-    assert.equal(await wordsA5.getByRole('textbox', { name: 'Mot 1', exact: true }).inputValue(), 'atelier')
     await wordsA5.close()
   }
 
@@ -198,25 +207,6 @@ try {
   assert.equal(await letterCells.nth(changedCell).textContent(), 'A')
   await letters.close()
 
-  const lettersA5 = await open(context, {
-    domain: 'alphabetisation', topic: 'alpha-voyelles', exerciseType: 'alpha-a-lettres-maj', count: 2,
-    contentSeedTwin: 62, sheetFormat: 'a5-double-landscape',
-  })
-  const cellsA5 = (half) => preview(lettersA5).locator(`.a5-half.is-${half} .letter-table-cell`)
-  const leftLetters = await cellsA5('left').allTextContents()
-  const oldRightLetter = await cellsA5('right').first().textContent()
-  await toggleLive(lettersA5)
-  await button(lettersA5, 'Droite').click()
-  const letter = oldRightLetter === 'Z' ? 'W' : 'Z'
-  await lettersA5.getByRole('textbox', { name: 'Case 1', exact: true }).fill(letter)
-  assert.deepEqual(await cellsA5('left').allTextContents(), leftLetters)
-  assert.equal(await cellsA5('right').first().textContent(), letter)
-  await lettersA5.getByRole('spinbutton', { name: 'Nombre de lignes', exact: true }).fill('3')
-  assert.equal(await cellsA5('left').count(), 24)
-  assert.equal(await cellsA5('right').count(), 24)
-  assert.equal(await cellsA5('right').first().textContent(), letter)
-  await lettersA5.close()
-
   const syllables = await open(context, {
     domain: 'soutien-fr', topic: 'soutien-voyelles', exerciseType: 'soutien-a-syllabes', count: 2,
   })
@@ -250,24 +240,6 @@ try {
   assert.equal(await bank.inputValue(), nextId)
   assert.equal(await puzzle.locator('.logique-stem img').first().getAttribute('src'), changedPuzzle)
   await logic.close()
-
-  const logicA5 = await open(context, {
-    domain: 'logique', topic: 'logique-suite-graphique', exerciseType: 'logique-suite-graphique',
-    contentSeedTwin: 62, sheetFormat: 'a5-double-landscape',
-  })
-  const scene = (half) => preview(logicA5).locator(`.a5-half.is-${half} .logique-stem img`).first().getAttribute('src')
-  const leftScene = await scene('left')
-  const rightScene = await scene('right')
-  await toggleLive(logicA5)
-  await button(logicA5, 'Droite').click()
-  const rightBank = logicA5.getByRole('combobox', { name: 'Question de la banque', exact: true }).first()
-  const bankId = await rightBank.inputValue()
-  const otherBankId = await rightBank.locator('option').evaluateAll((options, current) =>
-    options.find(({ value }) => value && value !== current).value, bankId)
-  await rightBank.selectOption(otherBankId)
-  assert.equal(await scene('left'), leftScene)
-  assert.notEqual(await scene('right'), rightScene)
-  await logicA5.close()
 
   const coordinates = await open(context, {
     domain: 'géométrie', topic: 'reperage', exerciseType: 'reperage-droites', count: 3,
@@ -331,39 +303,20 @@ try {
   assert.deepEqual(await displayedSyllables.allTextContents(), ['dom', 'i', 'no'])
   await pronounce.close()
 
-  const pronounceA5 = await open(context, {
-    domain: 'alphabetisation', topic: 'alpha-voyelles', exerciseType: 'alpha-a-syllabes-prononcer',
-    sheetFormat: 'a5-double-landscape', contentSeedTwin: 191,
-  })
-  await toggleLive(pronounceA5)
-  const leftSyllables = preview(pronounceA5).locator('.a5-half.is-left')
-  const initialLeftSyllables = await leftSyllables.innerText()
-  await button(pronounceA5, 'Droite').click()
-  await pronounceA5.getByRole('textbox', { name: 'Mot 1', exact: true }).fill('domino')
-  assert.deepEqual(await preview(pronounceA5).locator('.a5-half.is-right .syllable-pronounce-row').first()
-    .locator('.syllable-pronounce-cell').allTextContents(), ['do', 'mi', 'no'])
-  assert.equal(await leftSyllables.innerText(), initialLeftSyllables)
-  await pronounceA5.close()
-
   const associations = await open(context, {
     domain: 'soutien-fr', topic: 'soutien-voyelles', exerciseType: 'soutien-a-associer-audio',
-    sheetFormat: 'a5-double-landscape', contentSeedTwin: 191,
   })
   await toggleLive(associations)
-  const leftSeries = preview(associations).locator('.a5-half.is-left')
-  const rightSeries = preview(associations).locator('.a5-half.is-right')
-  const initialSeries = await leftSeries.innerText()
-  await button(associations, 'Droite').click()
+  const seriesPreview = preview(associations)
   const firstSeries = associations.getByRole('group', { name: 'Série 1', exact: true })
   const firstTrack = firstSeries.getByRole('combobox', { name: 'Mot de la piste 1', exact: true })
   const substitute = (await firstTrack.locator('option').nth(1).textContent()).trim()
   await firstTrack.focus()
   await firstTrack.selectOption({ label: substitute })
   assert.equal(await firstTrack.evaluate((element) => document.activeElement === element), true)
-  assert.equal(await rightSeries.getByText(substitute, { exact: true }).count(), 1)
-  assert.equal(await leftSeries.innerText(), initialSeries)
+  assert.equal(await seriesPreview.getByText(substitute, { exact: true }).count(), 1)
   await button(associations, 'Fiche élève (cliquer pour corrigé)').click()
-  const companion = rightSeries.locator('.audio-order-slot').filter({ has: associations.getByText(substitute, { exact: true }) })
+  const companion = seriesPreview.locator('.audio-order-slot').filter({ has: associations.getByText(substitute, { exact: true }) })
   assert.equal(await companion.locator('.audio-order-slot-line').innerText(), '1')
   await firstSeries.getByRole('button', { name: 'Reculer la piste 1', exact: true }).click()
   assert.equal(await companion.locator('.audio-order-slot-line').innerText(), '2')
@@ -446,18 +399,16 @@ try {
     domain: 'grammaire', topic: 'gram-present', exerciseType: 'gram-ex-etre-qcm-conj',
     grammarActivityId: 'gram-ex-etre-qcm-conj', grammarLevel: 'A1', grammarPresentation: 'choice',
     grammarBankRevision: 'etre-a1-2026-11-11.1', grammarPreview: true,
-    sheetFormat: 'a5-double-landscape', contentSeedTwin: 94,
+    contentSeedTwin: 94,
   })
   await toggleLive(grammarA5)
   const grammarA5Editor = grammarA5.locator('#activity-editor')
   const firstGrammarQuestion = grammarA5Editor.getByRole('group', { name: 'Question 1', exact: true })
   await firstGrammarQuestion.getByRole('textbox', { name: 'Phrase avec une lacune (___)', exact: true })
     .fill('Dans cette école, je ___ à l’heure.')
-  const grammarA5Previews = grammarA5.locator('.a4-frame .a5-half')
-  assert.equal(await grammarA5Previews.getByText(/Dans cette école/).count(), 2)
   await firstGrammarQuestion.getByText('Corrigé à vérifier', { exact: true }).waitFor()
-  await button(grammarA5, 'Annuler').click()
-  assert.equal(await grammarA5Previews.getByText(/Dans cette école/).count(), 0)
+  await selectDoubleA5(grammarA5)
+  assert.equal(await grammarA5.locator('.a4-frame .a5-half').getByText(/Dans cette école/).count(), 2)
   await grammarA5.close()
 
   const gradedCases = [
@@ -629,36 +580,14 @@ try {
   assert.equal(await glossaryTerm.inputValue(), originalTerm)
   await glossary.close()
 
-  const mathsA5 = await open(context, {
-    domain: 'logistique-cfc', topic: 'log-cfc-theme-100', exerciseType: 'log-cfc-101-maths',
-    sheetFormat: 'a5-double-landscape', printCorrections: true,
-  })
-  await toggleLive(mathsA5)
-  const halfText = async (half) => (await mathsA5.locator(`.print-only-sheets .a5-half.is-${half}`).allTextContents()).join('\n')
-  const leftLogistics = await halfText('left')
-  await button(mathsA5, 'Droite').click()
-  const rightQuestions = mathsA5.getByRole('list', { name: 'Questions', exact: true })
-  const protectedQuestion = rightQuestions.getByRole('listitem').first()
-  await protectedQuestion.getByRole('textbox', { name: 'Énoncé', exact: true }).fill('Calculez le nombre de colis à droite.')
-  await protectedQuestion.getByRole('textbox', { name: 'Réponse', exact: true }).fill('42 colis')
-  await button(protectedQuestion, 'Corrigé vérifié').click()
-  await button(protectedQuestion, 'Verrou de la question 1').click()
-  const replacement = rightQuestions.getByRole('listitem').nth(1)
-  const replacementText = await replacement.getByRole('textbox', { name: 'Énoncé', exact: true }).inputValue()
-  await button(replacement, 'Régénérer la question').click()
-  assert.notEqual(await replacement.getByRole('textbox', { name: 'Énoncé', exact: true }).inputValue(), replacementText)
-  assert.equal(await halfText('left'), leftLogistics)
-  assert.match(await halfText('right'), /Calculez le nombre de colis à droite/)
-  assert.match(await halfText('right'), /42 colis/)
-  await mathsA5.close()
-
   const referenceA5 = await open(context, {
     domain: 'logistique-afp', topic: 'log-afp-theme-100', exerciseType: 'log-afp-101-theorie',
-    logistiqueTheoryView: 'resume', sheetFormat: 'a5-double-landscape',
+    logistiqueTheoryView: 'resume',
   })
   await toggleLive(referenceA5)
   await referenceA5.getByLabel('Contenu de la théorie', { exact: true })
     .getByRole('textbox', { name: 'Titre', exact: true }).first().fill('Logistique au quotidien')
+  await selectDoubleA5(referenceA5)
   for (const half of ['left', 'right']) {
     assert.match(await preview(referenceA5).locator(`.a5-half.is-${half}`).innerText(), /Logistique au quotidien/)
   }

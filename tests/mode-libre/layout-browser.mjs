@@ -57,10 +57,9 @@ async function assertNoHorizontalOverflow(page) {
   assert(fits, 'Le document déborde horizontalement.')
 }
 
-async function checkLayout(page, width, doubleA5) {
+async function checkLayout(page, width) {
   await page.setViewportSize({ width, height: 900 })
   await page.goto('/generateur')
-  if (doubleA5) await chooseDoubleA5(page)
   const normal = await snapshot(page)
   const print = width === 1366 ? await pdfSize(page, 'normal') : null
   const domains = await selectDomainOptions(page)
@@ -94,7 +93,7 @@ async function checkLayout(page, width, doubleA5) {
       const layout = panel.getByText('Mise en page de la fiche', { exact: true })
       await layout.click()
       const format = panel.getByRole('radio', { name: /Paysage — double A5/ })
-      assert.equal(await format.getAttribute('aria-checked'), String(doubleA5))
+      assert.equal(await format.getAttribute('aria-checked'), 'false')
       await panel.getByRole('radio', { name: /Sans correction/ }).click()
       await button(page, 'Imprimer la fiche').waitFor()
       await button(page, 'Annuler').click()
@@ -122,7 +121,7 @@ async function checkLayout(page, width, doubleA5) {
   if (print) {
     const librePrint = await pdfSize(page, 'libre')
     assert.deepEqual(librePrint, print)
-    assert.deepEqual(print.size, doubleA5 ? [841.92, 594.96] : [594.96, 841.92])
+    assert.deepEqual(print.size, [594.96, 841.92])
   }
 
   if (width <= 550) {
@@ -134,6 +133,40 @@ async function checkLayout(page, width, doubleA5) {
   assert.equal(await page.locator('.settings-panel').count(), 1)
   assert.equal(await page.locator('.settings-panel[data-same-panel=true]').count(), 1)
   assert.deepEqual((await snapshot(page)).contents, normal.contents)
+}
+
+async function checkDoubleA5Lock(page, width) {
+  await page.setViewportSize({ width, height: 900 })
+  await page.goto('/generateur')
+  await chooseDoubleA5(page)
+  const toggle = button(page, 'Mode libre')
+  assert(await toggle.isDisabled())
+  assert.equal(await toggle.getAttribute('aria-pressed'), 'false')
+  assert.equal(await page.locator(editor).count(), 0)
+  assert(await page.locator('.result-panel').isVisible())
+  await assertNoHorizontalOverflow(page)
+  if (width !== 1366) return
+
+  assert.deepEqual((await pdfSize(page, 'double-a5')).size, [841.92, 594.96])
+  const settings = button(page, 'Paramètres')
+  await settings.click()
+  await page.getByRole('radio', { name: /Portrait A4/ }).click()
+  await settings.click()
+  await toggle.click()
+  const panel = page.locator(editor)
+  await panel.getByRole('textbox', { name: 'Consigne', exact: true }).fill('Consigne conservée entre les formats.')
+  await panel.getByText('Mise en page de la fiche', { exact: true }).click()
+  await panel.getByRole('radio', { name: /Paysage — double A5/ }).click()
+  assert(await toggle.isDisabled())
+  assert.equal(await panel.count(), 0)
+  assert.match(await page.locator(frame).first().innerText(), /Consigne conservée entre les formats/)
+  await settings.click()
+  await page.getByRole('radio', { name: /Portrait A4/ }).click()
+  await settings.click()
+  assert(await toggle.isEnabled())
+  assert.equal(await panel.count(), 0)
+  await toggle.click()
+  assert.equal(await panel.getByRole('textbox', { name: 'Consigne', exact: true }).inputValue(), 'Consigne conservée entre les formats.')
 }
 
 async function checkAddition(page) {
@@ -304,11 +337,11 @@ try {
   const page = await context.newPage()
   page.setDefaultTimeout(15000)
   for (const width of [320, 390, 768, 851, 1024, 1366, 1440, 1920]) {
-    await checkLayout(page, width, false)
+    await checkLayout(page, width)
     console.log(`A4 à ${width} px`)
   }
   for (const width of [390, 1366]) {
-    await checkLayout(page, width, true)
+    await checkDoubleA5Lock(page, width)
     console.log(`Double A5 à ${width} px`)
   }
   await checkAddition(page)

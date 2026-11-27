@@ -207,11 +207,11 @@ export async function auditTypes(server, profile, seed) {
           if (result.status === 'générable' && pilot) result.status = 'générable en aperçu pilote'
         }
         const editorProfiles = Object.fromEntries(formats.map((format) =>
-          [format, modules.editors.liveEditorProfile(domain, type.id, format, patch?.grammarPresentation)],
+          [format, format === 'a4-portrait' ? modules.editors.liveEditorProfile(domain, type.id, format, patch?.grammarPresentation) : null],
         ))
         if (result.status.startsWith('générable')) {
           for (const format of formats) {
-            const key = editorProfiles[format] ?? 'à raccorder'
+            const key = format === 'a4-portrait' ? editorProfiles[format] ?? 'à raccorder' : 'hors périmètre du mode Libre'
             const counts = liveProfilesByFormat[format]
             counts[key] = (counts[key] ?? 0) + 1
           }

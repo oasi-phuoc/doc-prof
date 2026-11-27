@@ -61,6 +61,16 @@ async function checkDoubleA5(context) {
   recipe.pages[0].count = 2
   recipe.pages[0].libreItems = undefined
   recipe.pages[0].contentSeedTwin = 42
+  recipe.pages[0].a5RightLibre = {
+    id: 'ancienne-activite-droite',
+    items: [321, 724].map((a, index) => ({
+      ...state(operations[0], false).pages[0].libreItems[0],
+      a, result: a + 3, answer: String(a + 3), prompt: `${a} + 3 = □`,
+      libreId: `ancien-calcul-${index}`, libreLocked: index === 0,
+    })),
+  }
+  recipe.libreMode = true
+  recipe.libreSnapshot = structuredClone(recipe.pages)
   await page.addInitScript((value) => history.replaceState({
     ...history.state, clairfleFiche: { id: 'a5-fixture', name: 'Calcul double A5', recipe: value },
   }, ''), recipe)
@@ -68,35 +78,18 @@ async function checkDoubleA5(context) {
   const visible = (half) => page.locator(`.a4-frame .a5-half.is-${half} .eq-row`).allTextContents()
   try {
     await page.goto('/generateur')
-    await button('Mode libre').click()
-    await button('Fiche élève (cliquer pour corrigé)').click()
+    assert(await button('Mode libre').isDisabled())
+    assert.equal(await page.locator('#activity-editor').count(), 0)
     const beforeLeft = await visible('left')
     const beforeRight = await visible('right')
     assert.equal(beforeLeft.length, 2)
     assert.equal(beforeRight.length, 2)
-    await button('Droite').click()
-    const first = page.getByRole('group', { name: 'Calcul 1', exact: true })
-    await first.getByRole('textbox', { name: '1ʳᵉ', exact: true }).fill('321')
-    const editedRight = await visible('right')
-    assert.match(editedRight[0], /321/)
-    assert.equal(editedRight[1], beforeRight[1])
-    assert.deepEqual(await visible('left'), beforeLeft)
-    await button('Annuler').click()
-    assert.deepEqual(await visible('right'), beforeRight)
-    await button('Rétablir').click()
-    await button('Verrou de la question 1').click()
-    await button('Fermer le mode libre').click()
+    assert.match(beforeRight[0], /321/)
     await button('Régénérer la mini-fiche de droite').click()
-    await button('Fiche élève (cliquer pour corrigé)').click()
     assert.deepEqual(await visible('left'), beforeLeft)
-    assert.equal((await visible('right'))[0], editedRight[0])
-    assert.notEqual((await visible('right'))[1], editedRight[1])
-    await button('Mode libre').click()
-    await button('Gauche').click()
-    await first.getByRole('textbox', { name: '1ʳᵉ', exact: true }).fill('123')
-    assert.match((await visible('left'))[0], /123/)
-    assert.equal((await visible('right'))[0], editedRight[0])
-    await button('Fermer le mode libre').click()
+    const updatedRight = await visible('right')
+    assert.equal(updatedRight[0], beforeRight[0])
+    assert.notEqual(updatedRight[1], beforeRight[1])
     const print = await page.locator('.print-only-sheets .a5-half.is-right').last().textContent()
     assert.match(print, /321/)
   } finally {
@@ -139,33 +132,19 @@ async function checkStructuredCalculations(context) {
     },
   ]
   for (const { config, check } of fixtures) {
-    for (const sheetFormat of ['a4-portrait', 'a5-double-landscape']) {
-      const page = await context.newPage()
-      const recipe = state(operations[0], false)
-      const twin = sheetFormat === 'a5-double-landscape'
-      recipe.sheetFormat = sheetFormat
-      recipe.pages = [{ ...recipe.pages[0], ...config }]
-      if (twin) {
-        recipe.pages[0].libreId = 'gauche'
-        recipe.pages[0].libreItems = config.libreItems.map((item) => ({ ...item, libreId: 'calcul-gauche' }))
-        recipe.pages[0].a5RightLibre = { id: 'droite', items: config.libreItems.map((item) => ({ ...item, libreId: 'calcul-droite' })) }
-      }
-      await page.addInitScript((value) => history.replaceState({
-        ...history.state, clairfleFiche: { id: 'structured-math-fixture', name: 'Calcul témoin', recipe: value },
-      }, ''), recipe)
-      try {
-        await page.goto('/generateur')
-        await page.getByRole('button', { name: 'Mode libre', exact: true }).click()
-        assert.equal(await page.getByRole('button', { name: 'Valider les changements', exact: true }).count(), 0)
-        if (twin) await page.getByRole('button', { name: 'Droite', exact: true }).click()
-        const left = page.locator('.a4-frame .a5-half.is-left .exercise-item').first()
-        const input = twin ? left.locator('.column-prompt, .convert-value').first() : null
-        const original = await input?.textContent()
-        await check(page, page.locator(twin ? '.a4-frame .a5-half.is-right' : '.a4-frame'))
-        if (input) assert.equal(await input.textContent(), original)
-      } finally {
-        await page.close()
-      }
+    const page = await context.newPage()
+    const recipe = state(operations[0], false)
+    recipe.pages = [{ ...recipe.pages[0], ...config }]
+    await page.addInitScript((value) => history.replaceState({
+      ...history.state, clairfleFiche: { id: 'structured-math-fixture', name: 'Calcul témoin', recipe: value },
+    }, ''), recipe)
+    try {
+      await page.goto('/generateur')
+      await page.getByRole('button', { name: 'Mode libre', exact: true }).click()
+      assert.equal(await page.getByRole('button', { name: 'Valider les changements', exact: true }).count(), 0)
+      await check(page, page.locator('.a4-frame'))
+    } finally {
+      await page.close()
     }
   }
 }
@@ -225,10 +204,9 @@ async function checkBatch(context) {
 }
 
 async function checkNumericTests(context) {
-  async function open(config, doubleA5 = false) {
+  async function open(config) {
     const page = await context.newPage()
     const recipe = { ...state(operations[0], false), evalMode: true, printCorrections: false,
-      sheetFormat: doubleA5 ? 'a5-double-landscape' : 'a4-portrait',
       pages: [{ difficulty: 'moyen', columns: 1, count: 1, ...config }] }
     await page.addInitScript((value) => history.replaceState({
       ...history.state, clairfleFiche: { id: 'numeric-test-fixture', name: 'Comparaison et tri', recipe: value },
@@ -260,23 +238,6 @@ async function checkNumericTests(context) {
     assert.equal(await csc.getByRole('button', { name: 'Actions de la question 1', exact: true }).count(), 0)
   } finally {
     await csc.close()
-  }
-
-  const { page: cscA5 } = await open({
-    domain: 'tcm-csc', topic: 'tcm-csc-test', exerciseType: 'tcm-csc-ex07', pointsPerQuestion: 0.5, count: 2,
-  }, true)
-  try {
-    const firstHalf = cscA5.locator('.print-only-sheets .a5-half.is-left .exercise-item')
-    const secondHalf = cscA5.locator('.print-only-sheets .a5-half.is-right .exercise-item')
-    const unchanged = await firstHalf.allTextContents()
-    await cscA5.getByRole('button', { name: 'Droite', exact: true }).click()
-    await cscA5.getByRole('textbox', { name: 'Gauche 1', exact: true }).fill('97')
-    await cscA5.getByRole('textbox', { name: 'Droite 1', exact: true }).fill('2')
-    assert.equal(await cscA5.getByRole('status', { name: 'Corrigé signe 1', exact: true }).innerText(), '>')
-    assert.match(await secondHalf.first().textContent(), /97/)
-    assert.deepEqual(await firstHalf.allTextContents(), unchanged)
-  } finally {
-    await cscA5.close()
   }
 
   const { page: cfr } = await open({
