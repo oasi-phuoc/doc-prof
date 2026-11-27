@@ -310,7 +310,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                     bankOverflow
                       ? activeBlock.grammarLevel ? `Ces paramètres permettent ${bankQuestionCap} ${grammarSituations?'situations':'questions'}.` : `La banque de cet enregistrement ne contient que ${bankQuestionCap} questions.`
                       : questionsOverflow
-                        ? 'Trop de questions pour une seule fiche A4. Réduisez le nombre ou ajoutez une page.'
+                        ? 'Le contenu dépasse la place disponible. Réduisez le nombre ou ajoutez une page.'
                         : undefined
                   }
                   type="number"

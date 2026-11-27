@@ -91,8 +91,8 @@ export type ResultPanelProps = {
   activeBlock: ExerciseBlock
   toggleDraftGrid: (itemIndex: number, targetBlock?: number) => void
   cycleOralAnswerMode: (itemIndex: number, targetBlock?: number, sheetIndex?: number) => void
-  selectTcfForm: (itemIndex: number, form: TcfTypeReponse, targetBlock?: number, sheetIndex?: number) => void
-  selectTcfFormForExercise: (form: TcfTypeReponse, targetBlock?: number, sheetIndex?: number) => void
+  selectTcfForm: (itemIndex: number, form: TcfTypeReponse, targetBlock?: number, renderedSheet?: WorksheetPage) => void
+  selectTcfFormForExercise: (form: TcfTypeReponse, targetBlock?: number, renderedSheet?: WorksheetPage) => void
   toggleFormulaireLetterGrid: (targetBlock?: number) => void
   toggleTcfPageBreak: (itemIndex: number, targetBlock?: number, sheetIndex?: number, questionModeIndex?: number, renderedSheet?: WorksheetPage) => void
   isFormes: boolean
@@ -273,8 +273,8 @@ export function ResultPanel({
             block.exerciseType === 'tcm-cfr-ex28',
         )
       }
-      onSelectTcfForm={(itemIndex, form, block) => selectTcfForm(itemIndex, form, block, index)}
-      onSelectTcfFormForExercise={(form, block) => selectTcfFormForExercise(form, block, index)}
+      onSelectTcfForm={selectTcfForm}
+      onSelectTcfFormForExercise={selectTcfFormForExercise}
       onToggleFormulaireLetterGrid={toggleFormulaireLetterGrid}
       onToggleTcfPageBreak={(itemIndex, block, question) => toggleTcfPageBreak(itemIndex, block, index, question)}
       coordEdit={coordEdit}

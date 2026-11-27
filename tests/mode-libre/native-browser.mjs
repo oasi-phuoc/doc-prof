@@ -74,6 +74,16 @@ try {
   assert.match(await preview(phrase).innerText(), /Écrivez une phrase sur l’atelier/)
   await phrase.close()
 
+  const phraseA5 = await open(context, {
+    domain: 'gattegno', topic: 'phrase-simple', exerciseType: 'phrase-simple-ecrire', verbGroup: 'er',
+    sheetFormat: 'a5-double-landscape', contentSeedTwin: 61,
+  })
+  await toggleLive(phraseA5)
+  await phraseA5.getByRole('textbox', { name: 'Consigne de production écrite', exact: true })
+    .fill('Écrivez une phrase sur l’atelier.')
+  assert.equal(await phraseA5.locator('.a4-frame .a5-half').getByText('Écrivez une phrase sur l’atelier.', { exact: true }).count(), 2)
+  await phraseA5.close()
+
   for (const [domain, topic, exerciseType] of [
     ['soutien-fr', 'soutien-voyelles', 'soutien-a-mots'],
     ['alphabetisation', 'alpha-voyelles', 'alpha-a-mots'],
@@ -126,6 +136,29 @@ try {
   await button(completion, 'Ajouter le mot').click()
   assert.equal(await completion.getByRole('combobox', { name: 'Partie cachée du mot 3', exact: true }).inputValue(), '0:2')
   await completion.close()
+
+  for (const [domain, topic, exerciseType] of [
+    ['soutien-fr', 'soutien-voyelles', 'soutien-a-completer'],
+    ['alphabetisation', 'alpha-voyelles', 'alpha-a-mots'],
+  ]) {
+    const wordsA5 = await open(context, { domain, topic, exerciseType, sheetFormat: 'a5-double-landscape' })
+    await toggleLive(wordsA5)
+    await wordsA5.getByRole('textbox', { name: 'Mot 1', exact: true }).fill('atelier')
+    const visibleHalves = wordsA5.locator('.a4-frame .a5-half')
+    assert.equal(await visibleHalves.count(), 2)
+    if (domain === 'soutien-fr') {
+      await wordsA5.getByRole('combobox', { name: 'Partie cachée du mot 1', exact: true }).selectOption('2:4')
+      for (const half of await visibleHalves.all()) {
+        assert.deepEqual(await half.locator('.syllable-complete-card').first().locator('.syllable-complete-affix').allTextContents(), ['at', 'ier'])
+      }
+    } else {
+      for (const half of await visibleHalves.all()) assert.equal(await half.locator('.vocab-card-word').first().textContent(), 'atelier')
+    }
+    await button(wordsA5, 'Fermer le mode libre').click()
+    await button(wordsA5, 'Mode libre').click()
+    assert.equal(await wordsA5.getByRole('textbox', { name: 'Mot 1', exact: true }).inputValue(), 'atelier')
+    await wordsA5.close()
+  }
 
   const order = await open(context, {
     domain: 'soutien-fr', topic: 'soutien-voyelles', exerciseType: 'soutien-a-ordre',
@@ -408,6 +441,24 @@ try {
   await button(grammar, 'Fermer le mode libre').click()
   assert.match(await preview(grammar).innerText(), /Dans cet atelier, je/)
   await grammar.close()
+
+  const grammarA5 = await open(context, {
+    domain: 'grammaire', topic: 'gram-present', exerciseType: 'gram-ex-etre-qcm-conj',
+    grammarActivityId: 'gram-ex-etre-qcm-conj', grammarLevel: 'A1', grammarPresentation: 'choice',
+    grammarBankRevision: 'etre-a1-2026-11-11.1', grammarPreview: true,
+    sheetFormat: 'a5-double-landscape', contentSeedTwin: 94,
+  })
+  await toggleLive(grammarA5)
+  const grammarA5Editor = grammarA5.locator('#activity-editor')
+  const firstGrammarQuestion = grammarA5Editor.getByRole('group', { name: 'Question 1', exact: true })
+  await firstGrammarQuestion.getByRole('textbox', { name: 'Phrase avec une lacune (___)', exact: true })
+    .fill('Dans cette école, je ___ à l’heure.')
+  const grammarA5Previews = grammarA5.locator('.a4-frame .a5-half')
+  assert.equal(await grammarA5Previews.getByText(/Dans cette école/).count(), 2)
+  await firstGrammarQuestion.getByText('Corrigé à vérifier', { exact: true }).waitFor()
+  await button(grammarA5, 'Annuler').click()
+  assert.equal(await grammarA5Previews.getByText(/Dans cette école/).count(), 0)
+  await grammarA5.close()
 
   const gradedCases = [
     { topic: 'gram-entrer-contact', subtheme: 'b1', id: 'gram-ex-b1-curriculum-a', presentation: 'match',

@@ -150,6 +150,35 @@ async function qcmPilot(page) {
   assert.equal(await liveQuestion(page).getByText('Corrigé à vérifier', { exact: true }).count(), 0)
 }
 
+async function doubleA5Document(page) {
+  const data = recipe('tcf-ce-ex-4', 'tcf-ce', shared)
+  data.sheetFormat = 'a5-double-landscape'
+  data.printCorrections = false
+  data.pages[0].contentSeedTwin = 87
+  await openFiche(page, data)
+  const halves = page.locator('.a4-frame .a5-half')
+  const panel = page.locator('#activity-editor .tcf-editor')
+  const source = panel.getByRole('textbox', { name: 'Texte', exact: true })
+  await source.fill('Le rendez-vous est à dix heures.')
+  assert.equal(await halves.getByText('Le rendez-vous est à dix heures.', { exact: true }).count(), 2)
+  const invalidCorrection = panel.getByText('Corrigé à vérifier', { exact: true })
+  assert.equal(await invalidCorrection.count(), 2)
+
+  await source.fill('Le groupe se rend à l’atelier et retrouve ses collègues. '.repeat(110))
+  await page.getByRole('alert').filter({ hasText: /Le contenu dépasse une demi-feuille A5/ }).waitFor()
+  await source.fill('Le rendez-vous est à dix heures.')
+  await page.getByText(/Le contenu dépasse une demi-feuille A5/).waitFor({ state: 'hidden' })
+  await page.emulateMedia({ media: 'print' })
+  const printed = page.locator('.print-only-sheets .a5-half')
+  assert.equal(await printed.count(), 2)
+  assert.equal(await printed.getByText('Le rendez-vous est à dix heures.', { exact: true }).count(), 2)
+  const reserves = await printed.evaluateAll((halves) => halves.map((half) =>
+    half.querySelector('.doc-footer').getBoundingClientRect().top -
+    half.querySelector('.exercise-grid').getBoundingClientRect().bottom))
+  assert(reserves.every((reserve) => reserve >= 0), `Réserves avant le pied de page ${reserves.join(', ')}`)
+  assert((await page.pdf({ preferCSSPageSize: true })).subarray(0, 4).equals(Buffer.from('%PDF')))
+}
+
 async function audioGroups(page) {
   const sample = {
     ...qcm,
@@ -291,6 +320,9 @@ try {
   const documentPage = await context.newPage()
   await documentPilot(documentPage)
   await documentPage.close()
+  const doubleA5 = await context.newPage()
+  await doubleA5Document(doubleA5)
+  await doubleA5.close()
   const qcmPage = await context.newPage()
   await qcmPilot(qcmPage)
   await qcmPage.close()

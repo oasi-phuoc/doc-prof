@@ -67,27 +67,27 @@ export function liveEditorProfile(domain: Domain, exerciseType: string, format: 
   if (audioOrderKind(wordKind)) return 'association-audio'
   if (wordKind === 'syllabe-son' || wordKind === 'syllabe-son-qr' || wordKind === 'syllabes-prononcer') return 'syllabes-audio'
   if (logistics?.domain === domain || domain === 'société' && isSocieteType(exerciseType)) return 'question-simple'
-  if (format === 'a4-portrait') {
-    if (domain === 'tpm' && (NUMERIC_ORDER_TYPES.has(exerciseType) || exerciseType === 'tpm-comparer' || exerciseType === 'tpm-ranger') ||
-      domain === 'tcm-csc' && ['tcm-csc-ex06', 'tcm-csc-ex07', 'tcm-csc-ex25'].includes(exerciseType) ||
-      domain === 'tcm-cfr' && (exerciseType === 'tcm-cfr-ex03' || exerciseType === 'tcm-cfr-ex04')) return 'ordre-numerique'
-    if (domain === 'géométrie' && (isReperageConstruire(exerciseType) || isReperageDroites(exerciseType))) return 'questions-de-reperage'
-    if (domain === 'calligraphie' && isCalligraphieType(exerciseType)) return 'calligraphie'
-    if (domain === 'jeux' && isJeuxType(exerciseType)) return 'cartes'
-    if (domain === 'gattegno' && isPhraseLibreEditable(exerciseType)) return 'phrase'
-    if (domain === 'grammaire' && isGrammaireExerciseType(exerciseType)) {
-      if (isProtectedGrammarCo(exerciseType)) return 'audio-grammaire'
-      if (grammarPresentation) return 'grammaire-graduee'
-    }
-    if (wordKind === 'mots') return 'mots-illustres'
-    if (wordKind === 'completer') return 'mot-a-trou'
+  if (domain === 'grammaire' && isGrammaireExerciseType(exerciseType)) {
+    if (isProtectedGrammarCo(exerciseType)) return 'audio-grammaire'
+    if (grammarPresentation) return 'grammaire-graduee'
   }
-  if (format === 'a4-portrait' && isTpfFamilyDomain(domain)) {
+  if (isTpfFamilyDomain(domain)) {
     const slot = tcfSlotByTypeId[exerciseType]
     if (slot?.competence === 'CE') return 'document'
     if (slot?.competence === 'CO') return 'audio-qcm'
     if (slot?.competence === 'PE') return 'production-ecrite'
     if (slot?.competence === 'PO') return 'production-orale'
+  }
+  if (wordKind === 'mots') return 'mots-illustres'
+  if (wordKind === 'completer') return 'mot-a-trou'
+  if (domain === 'gattegno' && isPhraseLibreEditable(exerciseType)) return 'phrase'
+  if (domain === 'tpm' && (NUMERIC_ORDER_TYPES.has(exerciseType) || exerciseType === 'tpm-comparer' || exerciseType === 'tpm-ranger') ||
+    domain === 'tcm-csc' && ['tcm-csc-ex06', 'tcm-csc-ex07', 'tcm-csc-ex25'].includes(exerciseType) ||
+    domain === 'tcm-cfr' && (exerciseType === 'tcm-cfr-ex03' || exerciseType === 'tcm-cfr-ex04')) return 'ordre-numerique'
+  if (format === 'a4-portrait') {
+    if (domain === 'géométrie' && (isReperageConstruire(exerciseType) || isReperageDroites(exerciseType))) return 'questions-de-reperage'
+    if (domain === 'calligraphie' && isCalligraphieType(exerciseType)) return 'calligraphie'
+    if (domain === 'jeux' && isJeuxType(exerciseType)) return 'cartes'
   }
   return null
 }

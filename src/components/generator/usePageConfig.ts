@@ -413,12 +413,12 @@ export function usePageConfig({
     )
   }
 
-  const selectTcfForm = (itemIndex: number, form: TcfTypeReponse, targetBlock = safeBlockIndex, sheetAt = safeSheetIndex) => {
+  const selectTcfForm = (itemIndex: number, form: TcfTypeReponse, targetBlock = safeBlockIndex, renderedSheet?: WorksheetPage) => {
     setPages((current) =>
       current.map((page, index) => {
         if (index !== pageIndex) return page
         const block = pageBlocks(page)[targetBlock] ?? blockFromPage(page)
-        const sheet = worksheets[sheetAt]
+        const sheet = renderedSheet ?? worksheets[safeSheetIndex]
         const sheetBlock = sheet?.blocks.find((entry, i) => (entry.sourceBlockIndex ?? i) === targetBlock)
         const offset = sheetBlock?.itemOffset ?? 0
         const modeIndex = itemIndex + offset
@@ -431,12 +431,12 @@ export function usePageConfig({
   }
 
   /** Applique la même forme (QCM / texte) à toutes les questions de l’exercice. */
-  const selectTcfFormForExercise = (form: TcfTypeReponse, targetBlock = safeBlockIndex, sheetAt = safeSheetIndex) => {
+  const selectTcfFormForExercise = (form: TcfTypeReponse, targetBlock = safeBlockIndex, renderedSheet?: WorksheetPage) => {
     setPages((current) =>
       current.map((page, index) => {
         if (index !== pageIndex) return page
         const block = pageBlocks(page)[targetBlock] ?? blockFromPage(page)
-        const sheet = worksheets[sheetAt]
+        const sheet = renderedSheet ?? worksheets[safeSheetIndex]
         const sheetBlock = sheet?.blocks.find((entry, i) => (entry.sourceBlockIndex ?? i) === targetBlock)
         const offset = sheetBlock?.itemOffset ?? 0
         const items = sheetBlock?.items ?? []

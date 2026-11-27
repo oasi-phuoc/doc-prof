@@ -1,6 +1,7 @@
 import { useEffect, useState, type RefObject } from 'react'
 import type { InstitutionalHeader } from '@/components/math/PrintDocumentChrome'
 import type { ExerciseBlock, PreviewMode, WorksheetPage } from '@/math/types'
+import type { A5WorksheetPair } from './sheet-format'
 
 type OverflowDeps = {
   previewFrameRef: RefObject<HTMLDivElement | null>
@@ -13,6 +14,7 @@ type OverflowDeps = {
   extraBlocks: ExerciseBlock[] | undefined
   evalMode: boolean
   institutional: InstitutionalHeader
+  physicalSheets?: readonly A5WorksheetPair[] | null
 }
 
 /**
@@ -30,31 +32,31 @@ export function useQuestionsOverflow({
   extraBlocks,
   evalMode,
   institutional,
+  physicalSheets,
 }: OverflowDeps): boolean {
   const [questionsOverflow, setQuestionsOverflow] = useState(false)
 
   useEffect(() => {
     const frame = previewFrameRef.current
     if (!frame) return
+    const stage = frame.closest('.sheet-stage') ?? frame
 
-    const measurePanel = (root: Element) => {
-      const body = root.querySelector('.sheet-body') as HTMLElement | null
-      const grid = root.querySelector('.exercise-grid') as HTMLElement | null
-      const footer = root.querySelector('.doc-footer') as HTMLElement | null
-      if (!body || !grid) return false
+    const measurePanel = (root: HTMLElement) => {
+      const body = root.querySelector<HTMLElement>('.sheet-body')
+      const grids = root.querySelectorAll<HTMLElement>('.exercise-grid')
+      const footer = root.querySelector<HTMLElement>('.doc-footer')
+      if (!body || root.clientHeight === 0) return false
 
       // Hauteur naturelle du contenu (sans compression) vs place disponible sous l'en-tête.
-      const contentHeight = Math.max(grid.scrollHeight, grid.offsetHeight)
       const bodyLimit = body.clientHeight
-      const rootEl = root as HTMLElement
-      const sheetOverflow = rootEl.scrollHeight > rootEl.clientHeight + 2
+      const sheetOverflow = root.scrollHeight > root.clientHeight + 2
       const bodyOverflow = body.scrollHeight > body.clientHeight + 2
-      const gridOverflow = contentHeight > bodyLimit + 2
+      const gridOverflow = Array.from(grids).some((grid) => Math.max(grid.scrollHeight, grid.offsetHeight) > bodyLimit + 2)
 
       // Pied chevauché / poussé hors feuille si le corps déborde.
       let footerClash = false
       if (footer) {
-        const sheetBox = rootEl.getBoundingClientRect()
+        const sheetBox = root.getBoundingClientRect()
         const footerBox = footer.getBoundingClientRect()
         footerClash = footerBox.bottom > sheetBox.bottom + 1
       }
@@ -63,28 +65,14 @@ export function useQuestionsOverflow({
     }
 
     const measure = () => {
-      const sheet = frame.querySelector('.worksheet-sheet') as HTMLElement | null
-      if (!sheet) {
-        setQuestionsOverflow(false)
-        return
-      }
-      const halves = sheet.querySelectorAll('.a5-half')
-      if (halves.length > 0) {
-        setQuestionsOverflow(Array.from(halves).some((half) => measurePanel(half)))
-        return
-      }
-      setQuestionsOverflow(measurePanel(sheet))
+      const panels = stage.querySelectorAll<HTMLElement>('.a5-half, .worksheet-sheet:not(.is-a5-double)')
+      setQuestionsOverflow(Array.from(panels).some(measurePanel))
     }
 
     measure()
     const raf = requestAnimationFrame(measure)
     const observer = new ResizeObserver(measure)
-    const sheet = frame.querySelector('.worksheet-sheet')
-    const body = frame.querySelector('.sheet-body')
-    const grid = frame.querySelector('.exercise-grid')
-    if (sheet) observer.observe(sheet)
-    if (body) observer.observe(body)
-    if (grid) observer.observe(grid)
+    stage.querySelectorAll('.worksheet-sheet, .sheet-body, .exercise-grid, .exercise-block').forEach((node) => observer.observe(node))
     return () => {
       cancelAnimationFrame(raf)
       observer.disconnect()
@@ -112,6 +100,7 @@ export function useQuestionsOverflow({
     extraBlocks,
     evalMode,
     institutional,
+    physicalSheets,
   ])
 
   return questionsOverflow

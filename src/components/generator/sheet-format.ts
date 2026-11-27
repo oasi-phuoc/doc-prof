@@ -45,14 +45,14 @@ export function pageForA5Half(page: PageConfig, half: 'left' | 'right'): PageCon
   const logistics = isLogistiqueDomain(page.domain)
   let next = page
   blocks.forEach((block, index) => {
-    const seed =
-      half === 'right'
-        ? (block.contentSeedTwin ?? block.contentSeed ?? 0)
-        : (block.contentSeed ?? 0)
-    const profile = liveEditorProfile(page.domain, block.exerciseType, 'a5-double-landscape')
+    const profile = liveEditorProfile(page.domain, block.exerciseType, 'a5-double-landscape', block.grammarPresentation)
+    // Les deux exemplaires d’un document grammatical personnalisé utilisent sa sélection enregistrée.
+    const useTwinSeed = half === 'right' && !(profile === 'grammaire-graduee' && block.grammarSnapshot?.editedInLibre)
+    const seed = (useTwinSeed ? block.contentSeedTwin : undefined) ?? block.contentSeed ?? 0
     const independent = usesIndependentHalves(profile)
     /** Une référence a le même contenu dans les deux exemplaires. */
     const sharedReference = profile === 'theorie'
+    const sharedPhrase = profile === 'phrase' && block.verbGroup === 'libre'
     const sharedLegacyQuestions = logistics && !block.libreId
     const rightLibre = independent && half === 'right' ? block.a5RightLibre : undefined
     const keepCustomized = independent && half === 'left' && (isIndependentListProfile(profile)
@@ -63,8 +63,8 @@ export function pageForA5Half(page: PageConfig, half: 'left' | 'right'): PageCon
       gameEntries: undefined,
       gameText: undefined,
       gameSelectedIds: undefined,
-      phraseItems: undefined,
-      phraseInstruction: undefined,
+      phraseItems: sharedPhrase ? block.phraseItems : undefined,
+      phraseInstruction: sharedPhrase ? block.phraseInstruction : undefined,
       libreId: rightLibre?.id ?? (keepCustomized ? block.libreId : undefined),
       libreItems: rightLibre?.items ?? (keepCustomized || sharedReference || sharedLegacyQuestions ? block.libreItems : undefined),
       libreInstruction: rightLibre?.instruction ?? (keepCustomized || sharedReference || sharedLegacyQuestions ? block.libreInstruction : undefined),

@@ -225,9 +225,10 @@ async function checkBatch(context) {
 }
 
 async function checkNumericTests(context) {
-  async function open(config) {
+  async function open(config, doubleA5 = false) {
     const page = await context.newPage()
     const recipe = { ...state(operations[0], false), evalMode: true, printCorrections: false,
+      sheetFormat: doubleA5 ? 'a5-double-landscape' : 'a4-portrait',
       pages: [{ difficulty: 'moyen', columns: 1, count: 1, ...config }] }
     await page.addInitScript((value) => history.replaceState({
       ...history.state, clairfleFiche: { id: 'numeric-test-fixture', name: 'Comparaison et tri', recipe: value },
@@ -259,6 +260,23 @@ async function checkNumericTests(context) {
     assert.equal(await csc.getByRole('button', { name: 'Actions de la question 1', exact: true }).count(), 0)
   } finally {
     await csc.close()
+  }
+
+  const { page: cscA5 } = await open({
+    domain: 'tcm-csc', topic: 'tcm-csc-test', exerciseType: 'tcm-csc-ex07', pointsPerQuestion: 0.5, count: 2,
+  }, true)
+  try {
+    const firstHalf = cscA5.locator('.print-only-sheets .a5-half.is-left .exercise-item')
+    const secondHalf = cscA5.locator('.print-only-sheets .a5-half.is-right .exercise-item')
+    const unchanged = await firstHalf.allTextContents()
+    await cscA5.getByRole('button', { name: 'Droite', exact: true }).click()
+    await cscA5.getByRole('textbox', { name: 'Gauche 1', exact: true }).fill('97')
+    await cscA5.getByRole('textbox', { name: 'Droite 1', exact: true }).fill('2')
+    assert.equal(await cscA5.getByRole('status', { name: 'Corrigé signe 1', exact: true }).innerText(), '>')
+    assert.match(await secondHalf.first().textContent(), /97/)
+    assert.deepEqual(await firstHalf.allTextContents(), unchanged)
+  } finally {
+    await cscA5.close()
   }
 
   const { page: cfr } = await open({

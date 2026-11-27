@@ -82,6 +82,10 @@ node --test tests/mode-libre/arithmetic.test.mjs tests/mode-libre/metadata.test.
 
 ## Double A5 et contenus structurés
 
+Le double A5 utilise les éditeurs directs de la Grammaire graduée, de la compréhension orale de Grammaire et des activités CE, CO, PE et PO du TPF et des deux TCF. Les exemplaires d’un même support reprennent le contenu personnalisé. Les modèles de phrases de Gattegno, les mots illustrés et les mots à compléter reprennent aussi leurs données personnalisées dans les deux exemplaires. La comparaison et le rangement des tests mathématiques peuvent être modifiés indépendamment par moitié.
+
+L’en-tête compact de Grammaire et du TCF laisse plus de place au contenu sur une demi-feuille. La mesure surveille les différentes pages physiques de l’activité, y compris les deux moitiés. Un dépassement est signalé dans le panneau Libre. Le témoin TCF vérifie la modification du support et l’état des corrigés, l’apparition du message après l’ajout d’un texte long, puis les deux exemplaires sans chevauchement à l’impression après rétablissement du texte court.
+
 La révision `d90588a` permet de modifier chaque moitié A5 des calculs en ligne. Le navigateur vérifie la conservation de l’autre moitié, le verrou lors d’un tirage local et le contenu destiné à l’impression. La validation des recettes distingue les deux listes d’occurrences et leurs identifiants.
 
 Les essais sur les mots illustrés et les mots à compléter partent de la liste visible. Le changement de colonnes en Alphabétisation garde les mots édités. Les essais Grammaire et Logistique modifient le contenu structuré, y compris un tableau après un saut de page. Pour le module Logistique 101, le passage de Résumé à Complet demande une confirmation lorsque la référence a été modifiée. Les deux diplômes conservent la grille de calcul et la séparation du sujet et du corrigé. Un exercice de Société et l’état sans contenu de Soutien FR sont également testés.

@@ -374,6 +374,7 @@ export function GeneratorPage({
   const questionsOverflow = useQuestionsOverflow({
     previewFrameRef,
     previewWorksheets,
+    physicalSheets: a5Pairs,
     pageIndex,
     sheetIndex,
     mode,
@@ -978,6 +979,9 @@ export function GeneratorPage({
             }} />}
             presentation={libreMode && (
               <div className="libre-sheet-settings">
+                {a5Pairs && questionsOverflow && (
+                  <p role="alert" className="libre-field-error">Le contenu dépasse une demi-feuille A5. Répartissez-le sur plusieurs pages ou réduisez le contenu.</p>
+                )}
                 <details className="libre-theory-block worksheet-settings">
                   <summary>Présentation du contenu</summary>
                   <div className="worksheet-settings-list" ref={setWorksheetSettingsTarget} />
@@ -1056,7 +1060,7 @@ export function GeneratorPage({
                 jeuxTemplate={ctx.jeuxTemplate}
                 jeuxText={ctx.jeuxText}
                 tcfNiveau={ctx.tcfNiveau}
-                renderedExercise={tcfExerciseOnConfig(worksheets, pageIndex)}
+                renderedExercise={tcfExerciseOnConfig(worksheets, pageIndex, safeBlockIndex)}
                 updatePage={updatePage}
                 onRegenerateBlock={regenerateBlock}
               />

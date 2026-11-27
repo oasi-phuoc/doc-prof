@@ -69,15 +69,15 @@ export function blockItemsForConfig(
 export function tcfExerciseOnConfig(
   worksheets: readonly WorksheetPage[],
   configIndex: number,
+  blockIndex: number,
 ): TcfExercise | undefined {
   for (let index = 0; index < worksheets.length; index++) {
     const sheet = worksheets[index]!
     if ((sheet.configIndex ?? index) !== configIndex) continue
-    for (const block of sheet.blocks) {
-      for (const item of block.items) {
-        const tcf = item.tcf
-        if (tcf?.kind === 'support') return tcf.exercise
-      }
+    const block = sheet.blocks.find((entry, position) => (entry.sourceBlockIndex ?? position) === blockIndex)
+    for (const item of block?.items ?? []) {
+      const tcf = item.tcf
+      if (tcf?.kind === 'support') return tcf.exercise
     }
   }
   return undefined

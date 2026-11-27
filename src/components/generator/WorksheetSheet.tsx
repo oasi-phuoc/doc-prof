@@ -40,6 +40,7 @@ import {
 import { parseGramExerciseType } from '@/grammaire/exercises/subthemes'
 import { clampInlineBlankPx } from '@/tcf/inline-blank'
 import { tcfPeSlotDefaults } from '@/tcf/pe-defaults'
+import { isTpfFamilyDomain } from '@/tcf/catalog'
 
 const CSC_BOLD = ['Écrivez', 'Entourez', 'Complétez', 'Rangez', 'Comparez', 'Décomposez', 'Calculez', 'calculez', 'Posez', 'Reproduisez', 'reliez', 'Cochez', 'Dessinez', 'Résolvez', 'Coloriez', 'Nommez', 'Mesurez', 'Convertissez', 'Répondez', 'Lisez', 'milliers', 'centaines', 'dizaines', 'unités']
 function markCscInstruction(text: string): string {
@@ -168,9 +169,9 @@ export type WorksheetSheetProps = {
   interactiveTcfOptions?: boolean
   /** Affiche le contrôle de saut de page réservé aux fiches TCF. */
   interactiveTcfPageBreaks?: boolean
-  onSelectTcfForm?: (index: number, form: TcfTypeReponse, blockIndex?: number) => void
+  onSelectTcfForm?: (index: number, form: TcfTypeReponse, blockIndex: number, sheet: WorksheetPage) => void
   /** Qui suis-je Infos/Verbe : bascule QCM ↔ texte pour tout l’exercice. */
-  onSelectTcfFormForExercise?: (form: TcfTypeReponse, blockIndex?: number) => void
+  onSelectTcfFormForExercise?: (form: TcfTypeReponse, blockIndex: number, sheet: WorksheetPage) => void
   onToggleTcfPageBreak?: (index: number, blockIndex: number, questionModeIndex: number | undefined, page: WorksheetPage) => void
   onToggleFormulaireLetterGrid?: (blockIndex: number) => void
   settingsTarget?: HTMLElement | null
@@ -265,6 +266,7 @@ export function WorksheetSheet({
     : page.columns
   const isSoutienFr = page.domain === 'soutien-fr'
   const isAlphabetisation = page.domain === 'alphabetisation'
+  const compactHeader = asHalf && (page.domain === 'grammaire' || isTpfFamilyDomain(page.domain))
   const domainClass = isLogistiqueDomain(page.domain) ? ' is-logistique'
     : page.domain === 'tcm-csc' ? ' is-tcm-csc' : page.domain === 'tcm-cfr' ? ' is-tcm-cfr' : page.domain === 'tpm' ? ' is-tpm' : ''
   const Root = asHalf ? 'div' : 'article'
@@ -273,7 +275,7 @@ export function WorksheetSheet({
     : `worksheet-sheet ${parity}${isJeuxSheet ? ' is-jeux' : ''}${isSoutienFr ? ' is-soutien-fr' : ''}${isAlphabetisation ? ' is-alphabetisation' : ''}${evalMode ? ' is-eval' : ''}`
   return (
     <Root
-      className={rootClass + domainClass + (isLogistiqueDomain(page.domain) ? ' is-logistique' : '')}
+      className={rootClass + domainClass + (compactHeader ? ' has-compact-header' : '')}
       style={{ '--sheet-columns': sheetColumns, ...(page.domain === 'tcm-csc' ? { '--csc-exercise-gap': `${page.exerciseGapPx ?? 50}px` } : {}) } as CSSProperties}
     >
       {showHeader ? (
@@ -425,7 +427,7 @@ export function WorksheetSheet({
                         active={dualActive}
                         forms={['qcm_texte', 'lignes']}
                         layout="inline"
-                        onSelect={(form) => onSelectTcfFormForExercise(form, blockIndex)}
+                        onSelect={(form) => onSelectTcfFormForExercise(form, blockIndex, page)}
                       />
                     ) : null}
                     {parseGramExerciseType(block.exerciseType)?.kindId === 'formulaire' &&
@@ -628,13 +630,13 @@ export function WorksheetSheet({
                       hideTcfFormIcons={dualForm || !showMarginForms}
                       onSelectTcfForm={
                         showMarginForms && onSelectTcfForm
-                          ? (form) => onSelectTcfForm(index, form, blockIndex)
+                          ? (form) => onSelectTcfForm(index, form, blockIndex, page)
                           : undefined
                       }
                       onSelectTcfFormAt={
                         showCadreForms && onSelectTcfForm
                           ? (modeIndex, form) =>
-                              onSelectTcfForm(modeIndex - itemOffset, form, blockIndex)
+                              onSelectTcfForm(modeIndex - itemOffset, form, blockIndex, page)
                           : undefined
                       }
                       tcfQuestionPageBreakBefore={block.tcfQuestionPageBreakBefore}
