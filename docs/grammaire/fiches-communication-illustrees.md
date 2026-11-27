@@ -5077,7 +5077,7 @@ Modèle de production — Je vais préparer le déjeuner dimanche.
 
 ### La visite
 
-![Un visiteur montre un billet dans une galerie](../../public/lib/images/grammaire/communication/e2-04-un-visiteur-montre-un-billet-dans-une-galerie.webp)
+![Un visiteur présente son billet réservé au musée](../../public/lib/images/grammaire/communication/futur-proche-04-un-visiteur-presente-son-billet-reserve-au-musee.webp)
 
 **Lire la situation**
 
@@ -5983,7 +5983,7 @@ Modèle de production — Je prends ce roman car il est facile à lire.
 
 ### Le téléphone
 
-![Deux hommes comparent des téléphones en magasin](../../public/lib/images/grammaire/communication/choix-au-magasin-de-telephones.webp)
+![Un homme présente le téléphone simple qu’il a choisi](../../public/lib/images/grammaire/communication/k2-06-un-homme-presente-le-telephone-simple-quil-a-choisi.webp)
 
 **Lire la situation**
 
@@ -6354,7 +6354,7 @@ Modèle de production — Je prends le train parce que mon vélo est abîmé.
 
 ### Le repas
 
-![Une cliente décline la carte des desserts au restaurant](../../public/lib/images/grammaire/communication/f3-05-une-cliente-decline-la-carte-des-desserts-au-restaurant.webp)
+![Une cliente explique son refus devant la carte des desserts](../../public/lib/images/grammaire/communication/k3-05-une-cliente-explique-son-refus-devant-la-carte-des-desserts.webp)
 
 **Lire la situation**
 
@@ -6436,7 +6436,7 @@ Modèle de production — Je demande de l’aide parce que je ne comprends pas l
 
 ### La réparation
 
-![Deux adultes examinent le frein d’un vélo dans un atelier](../../public/lib/images/grammaire/communication/i4-07-deux-adultes-examinent-le-frein-dun-velo-dans-un-atelier.webp)
+![Une cycliste montre un câble de frein débranché](../../public/lib/images/grammaire/communication/k3-07-une-cycliste-montre-un-cable-de-frein-debranche.webp)
 
 **Lire la situation**
 
