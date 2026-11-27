@@ -1,5 +1,6 @@
 import { isLogistiqueDomain } from '@/logistique/catalog'
 import { logistiqueDocumentTitle } from '@/logistique/generate'
+import { completeLogistiquePrompt } from '@/logistique/libre'
 import { AudioProgressDialog } from '@/components/AudioProgressDialog'
 import { openInteractive } from '@/interactive/navigation'
 import { GrammarCurriculumError } from '@/grammaire/curriculum/types'
@@ -618,6 +619,7 @@ export function GeneratorPage({
   async function printAll(includesCorrections: boolean, capture: (studentOnly: boolean) => () => void) {
     function missingPrompt(item: MathItem) {
       if (!item.libreCorrectionPending) return false
+      if (item.logistiqueSource || item.logistiqueLocalModule) return !completeLogistiquePrompt(item)
       if (item.layout === 'phrase-order') return !item.tokens?.length || item.tokens.some(({ text }) => !text.trim())
       if (item.layout === 'determinant-fill') return !item.determinantFills?.length ||
         item.determinantFills.some(({ parts }) => !parts.some((part) => 'blank' in part) ||
@@ -1049,6 +1051,7 @@ export function GeneratorPage({
                 phraseOrder={activeProfile === 'mots-dans-l-ordre' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
                 syllableContent={activeProfile === 'syllabes-audio' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
                 listenContent={activeProfile === 'ecoute-de-mots' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
+                syllableMatchContent={activeProfile === 'syllabes-a-relier' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
                 soutienPhrases={activeProfile === 'sons-a-compter' || activeProfile === 'determinants' || activeProfile === 'lettres-dans-phrase'
                   ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
                 audioOrderContent={activeProfile === 'association-audio' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}

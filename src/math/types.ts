@@ -465,6 +465,8 @@ export type SpatialPractice =
 
 export type MathItem = {
   logistiqueSource?: { id: string; module: string; revision: string }
+  /** Module choisi pour une question rédigée dans la fiche. */
+  logistiqueLocalModule?: string
   /** Question ajoutée en Libre et conservée par les nouveaux tirages. */
   logistiqueRetained?: boolean
   logistiqueGaps?: LogistiqueGaps

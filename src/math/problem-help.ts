@@ -1,6 +1,11 @@
 import { fmt } from './column-arith'
 import type { MathItem } from './types'
 
+export function isWrittenProblem(item: MathItem): boolean {
+  return item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer ||
+    item.logistiqueLocalModule && item.calcAnswer !== undefined)
+}
+
 const assets = [
   ['crayons?', 'ecole-bureau/crayon', 'Crayons'],
   ['cahiers?', 'ecole-bureau/cahier', 'Cahiers'],

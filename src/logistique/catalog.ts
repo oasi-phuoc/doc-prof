@@ -171,6 +171,14 @@ export function validLogistiqueCataloguePages(pages: readonly CataloguePage[]): 
       validLogistiquePresentation(type, presentation) &&
       (gapMode === undefined || presentation === undefined) &&
       items.every((item) =>
+        (item?.logistiqueLocalModule === undefined || (!isLogistiqueReferenceType(type.id) &&
+          !item.logistiqueSource && typeof item.libreId === 'string' &&
+          typeof item.prompt === 'string' && typeof item.answer === 'string' &&
+          (item.layout === 'text' || (type.kind !== 'maths' && item.layout === 'select' &&
+            Array.isArray(item.options) && item.options.length >= 2 && item.options.length <= 12 &&
+            item.options.every((option: unknown) => typeof option === 'string'))) &&
+          subthemes.some(({ code, diploma }) =>
+            code === item.logistiqueLocalModule && diploma === type.diploma))) &&
         (item?.logistiqueImage === undefined || validLogistiqueQuestionImage(item.logistiqueImage, type.diploma)) &&
         (item?.logistiqueTable === undefined || (
           (type.kind === 'maths' || type.kind === 'verification') && !item.logistiqueGaps && validLogistiqueExerciseTable(item.logistiqueTable))) &&

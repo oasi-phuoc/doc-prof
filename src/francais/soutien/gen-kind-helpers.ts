@@ -12,6 +12,7 @@ import {
 /** Types 13–15 : 4 QR + 4 cases par série (une ligne). */
 export const AUDIO_ORDER_CLIPS = 4
 export const SOUTIEN_LISTEN_MAX = 30
+export const SOUTIEN_SYLLABLE_PAIR_MAX = 16
 
 export const DISTRACTOR_LETTERS = 'bcdfghjklmnpqrstvwxzBCDFGHIJKLMNPQRSTVWXZ'.split('')
 

@@ -1,5 +1,6 @@
 import {PhraseSvcBlock} from './item-view/phrase-svc'
 import type { CoordShape, MathItem, PreviewMode } from '@/math/types'
+import { isWrittenProblem } from '@/math/problem-help'
 import type { GlossaryFigureId } from '@/math/glossary-banks'
 import type { TcfTypeReponse } from '@/tcf/types'
 import { TcfFormMarginIcons } from '@/components/tcf/TcfFormIcons'
@@ -172,7 +173,7 @@ export function ItemView({
     onRemove: (x: number, y: number) => void
   }
 }) {
-  const isProblem = item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)
+  const isProblem = isWrittenProblem(item)
   const isEquation = item.layout === 'equation'
   const isGeoCalc = item.layout === 'geo' && Boolean(item.calcAnswer || item.responseAnswer)
   const isAlgebraDraft = item.layout === 'algebra'

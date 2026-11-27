@@ -177,7 +177,7 @@ export function ResultPanel({
     [renderedSheets],
   )
   const unavailableLogistique = renderedSheets.some((sheet) =>
-    isLogistiqueDomain(sheet.domain) && sheet.blocks.some((block) => block.bankQuestionCap === 0),
+    isLogistiqueDomain(sheet.domain) && sheet.blocks.some((block) => block.bankQuestionCap === 0 && !block.items.length),
   )
   const unavailableActivity = Boolean(previewSheet?.blocks.length && previewSheet.blocks.every(
     (block) => block.items.length === 0 && !block.document,

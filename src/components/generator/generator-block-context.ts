@@ -262,11 +262,13 @@ const logisticsCap = logistics && !isLogistiqueReferenceType(logistics.id) ? [..
   logistiquePresentationFor(activeBlock),
 ).values()].reduce((sum, count) => sum + count, 0) : undefined
 const bankQuestionCap = logisticsCap ?? activeSheetBlock?.bankQuestionCap
+const syllablePairCap = isSoutienRelier && bankQuestionCap !== undefined ? Math.max(1, bankQuestionCap) : undefined
 const audioSeriesCap = soutienBank && audioOrderKind(soutienKind) ? Math.max(1, defaultAudioOrderCapacity(soutienBank, soutienKind)) : undefined
 const maxQuestions = (logisticsCap === undefined ? undefined : Math.max(1, logisticsCap))
   ?? exerciseTypeById[activeBlock.exerciseType]?.maxCount
   ?? cscQuestionLimit(activeBlock.exerciseType)
   ?? audioSeriesCap
+  ?? syllablePairCap
   ?? (isGrammaireDomain && activeBlock.grammarLevel
   ? Math.max(1,Math.min(50,grammarEligibleCount(activeBlock)))
   : activePage.domain === 'gattegno' && bankQuestionCap != null

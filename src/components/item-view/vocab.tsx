@@ -4,6 +4,7 @@ import QRCode from 'qrcode'
 import type { MathItem, PreviewMode } from '@/math/types'
 import { displayVocabLabel } from '@/francais/display-vocab-label'
 import { soutienAudioAbsoluteUrl } from '@/francais/soutien/audio'
+import { syllableMatchOrder } from '@/francais/soutien/syllable-match'
 import { highlightThemeLetters } from './highlights'
 
 export function VocabTable({ item }: { item: MathItem }) {
@@ -93,6 +94,7 @@ export function VocabMatch({ item, mode }: { item: MathItem; mode: PreviewMode }
   const graphemes = item.themeGraphemes ?? []
 
   if (syllableMode) {
+    const matchOrder = mode === 'answers' ? syllableMatchOrder(item) : []
     const colCount = Math.max(1, Math.min(2, item.letterGridCols ?? 1))
     const mid = colCount === 2 ? Math.ceil(left.length / 2) : left.length
     const columns =
@@ -114,12 +116,7 @@ export function VocabMatch({ item, mode }: { item: MathItem; mode: PreviewMode }
           {colLeft.map((leftPart, index) => {
             const rightPart = colRight[index] ?? ''
             const globalIndex = offset + index
-            const matchLeft =
-              mode === 'answers'
-                ? left.find((l) => byLeft.get(l) === rightPart)
-                : undefined
-            const matchNum =
-              matchLeft != null ? left.findIndex((l) => l === matchLeft) + 1 : 0
+            const matchNum = (matchOrder[globalIndex] ?? -1) + 1
             return (
               <tr key={`sm-${key}-${index}`}>
                 <td className="syllable-match-num">{globalIndex + 1}.</td>

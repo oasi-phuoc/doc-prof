@@ -457,7 +457,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   .map((type) => {
                     const pending = logisticsDomain && logistiqueEligibleCount(type.id) === 0
                     return (
-                      <option value={type.id} key={type.id} disabled={pending}>
+                      <option value={type.id} key={type.id} disabled={pending && isLogistiqueReferenceType(type.id)}>
                         {tcfMenuLabel(type.id, tcfNiveau) ?? type.label}{pending ? ' (à compléter)' : ''}
                       </option>
                     )

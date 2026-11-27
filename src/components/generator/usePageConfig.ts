@@ -49,7 +49,8 @@ import { createRng } from '@/math/rng'
 import { parseAlphaType } from '@/alphabetisation/kinds'
 import { parseSoutienType } from '@/francais/soutien/kinds'
 import { soutienBankById } from '@/francais/soutien/banks'
-import { SOUTIEN_LISTEN_MAX } from '@/francais/soutien/gen-kind-helpers'
+import { SOUTIEN_LISTEN_MAX, SOUTIEN_SYLLABLE_PAIR_MAX } from '@/francais/soutien/gen-kind-helpers'
+import { syllableMatchOrder, withSyllablePairs } from '@/francais/soutien/syllable-match'
 import { addAudioOrderSeries, audioOrderKind } from '@/francais/soutien/audio-order'
 import { isDraftPadExercise } from '@/math/catalog'
 import {
@@ -163,6 +164,30 @@ export function usePageConfig({
       const pageSeed = seed + pageIndex * 7919 + safeBlockIndex * 10007
       const config = pageAsConfig(activeSheet, nextBlock)
       function resizeGrid(previous: MathItem[], localSeed: number) {
+        if (editorProfile === 'syllabes-a-relier' && previous[0]?.layout === 'vocab-match') {
+          const existing = previous[0]
+          const pairs = existing.vocabPairs ?? []
+          const target = count ?? pairs.length
+          const draw = target > pairs.length ? { ...config, count: SOUTIEN_SYLLABLE_PAIR_MAX } : config
+          const next = buildPage(draw, pageSeed + localSeed, 1, seed).items[0]
+          if (!next) return { items: previous, removed: false, unavailable: true }
+          const kept = pairs.slice(0, target)
+          const keys = new Set(kept.map(({ left, right }) => `${left}\0${right}`.toLocaleLowerCase('fr')))
+          for (const pair of next.vocabPairs ?? []) {
+            if (kept.length >= target) break
+            const key = `${pair.left}\0${pair.right}`.toLocaleLowerCase('fr')
+            if (keys.has(key)) continue
+            keys.add(key)
+            kept.push(pair)
+          }
+          const columns = next.letterGridCols ?? 1
+          const order = pairs.length === kept.length && columns === existing.letterGridCols
+            ? syllableMatchOrder(existing) : undefined
+          return {
+            items: [withSyllablePairs(existing, kept, columns, order)],
+            removed: target < pairs.length, unavailable: kept.length < target,
+          }
+        }
         if (editorProfile === 'ecoute-de-mots' && previous[0]?.layout === 'listen-check') {
           const existing = previous[0]
           const rows = listenRows(existing)
@@ -202,7 +227,9 @@ export function usePageConfig({
       const left = activeBlock.libreItems?.length ? resizeGrid(activeBlock.libreItems, localSeed) : undefined
       const right = rightGrid ? resizeGrid(rightGrid.items, nextBlock.contentSeedTwin ?? localSeed) : undefined
       if (left?.unavailable || right?.unavailable) {
-        window.alert('La banque ne fournit pas assez de mots distincts pour atteindre cette quantité.')
+        window.alert(editorProfile === 'syllabes-a-relier'
+          ? 'La banque ne fournit pas assez de paires distinctes pour atteindre cette quantité.'
+          : 'La banque ne fournit pas assez de mots distincts pour atteindre cette quantité.')
         return
       }
       if ((left?.removed || right?.removed) && !window.confirm('Réduire la grille et retirer les dernières cases ?')) return

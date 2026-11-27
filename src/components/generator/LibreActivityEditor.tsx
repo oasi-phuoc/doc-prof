@@ -17,8 +17,8 @@ import { GameContentPanel } from '@/jeux/GameContentPanel'
 import { DEFAULT_GAME_FONT_SIZE } from '@/jeux/font-size'
 import { TcfExerciseEditor } from '@/tcf/TcfExerciseEditor'
 import type { TcfExercise, TcfNiveau } from '@/tcf/types'
-import { isLogistiqueReferenceType, logistiquePresentationFor, logistiqueType } from '@/logistique/catalog'
-import { logistiqueQuestionPhotos } from '@/logistique/generate'
+import { isLogistiqueReferenceType, logistiqueModules, logistiquePresentationFor, logistiqueType } from '@/logistique/catalog'
+import { logistiqueQuestionItems, logistiqueQuestionPhotos } from '@/logistique/generate'
 import { LogistiqueLibreBank } from './LogistiqueLibreBank'
 
 function tcfSupportExercise(items: MathItem[] | undefined): TcfExercise | undefined {
@@ -32,6 +32,7 @@ import { LetterGridEditor } from '@/components/generator/libre/LetterGridEditor'
 import { LogicEditor } from '@/components/generator/libre/LogicEditor'
 import { SyllableEditor } from '@/components/generator/libre/SyllableEditor'
 import { ListenCheckEditor } from '@/components/generator/libre/ListenCheckEditor'
+import { SyllableMatchEditor } from '@/components/generator/libre/SyllableMatchEditor'
 import { SoutienPhraseRowsEditor } from '@/components/generator/libre/SoutienPhraseRowsEditor'
 import { AudioOrderEditor } from '@/components/generator/libre/AudioOrderEditor'
 import { audioOrderKind } from '@/francais/soutien/audio-order'
@@ -59,6 +60,7 @@ type LibreActivityEditorProps = {
   phraseOrder: SheetBlockItems | null
   syllableContent: SheetBlockItems | null
   listenContent: SheetBlockItems | null
+  syllableMatchContent: SheetBlockItems | null
   soutienPhrases: SheetBlockItems | null
   audioOrderContent: SheetBlockItems | null
   syllableBank: SoutienVowelBank | null | undefined
@@ -117,6 +119,7 @@ export function LibreActivityEditor({
   phraseOrder,
   syllableContent,
   listenContent,
+  syllableMatchContent,
   soutienPhrases,
   audioOrderContent,
   syllableBank,
@@ -156,12 +159,28 @@ export function LibreActivityEditor({
   onRegenerateBlock,
 }: LibreActivityEditorProps) {
   const logistics = logistiqueType(activeBlock.exerciseType)
+  const logistiqueQuestionType = logistics && !isLogistiqueReferenceType(logistics.id) ? logistics : undefined
   const genericItems = activeBlock.libreItems ?? logistiqueActiveItems ?? activeSheet?.blocks[safeBlockIndex]?.items ?? []
-  const logistiquePhotos = logistics && !isLogistiqueReferenceType(logistics.id) ? {
-    defaultModule: logistics.module,
-    byModule: logistiqueQuestionPhotos(logistics,
-      [...new Set(genericItems.map((item) => item.logistiqueSource?.module ?? logistics.module))],
+  const logistiquePhotos = logistiqueQuestionType ? {
+    defaultModule: logistiqueQuestionType.module,
+    byModule: logistiqueQuestionPhotos(logistiqueQuestionType,
+      [...new Set(genericItems.map((item) => item.logistiqueSource?.module ?? item.logistiqueLocalModule ?? logistiqueQuestionType.module))],
       activeBlock.logistiqueBankRevision),
+  } : undefined
+  const allowedModules = evalMode ? activeBlock.logistiqueSelection?.modules : undefined
+  const logistiqueEditor = logistiqueQuestionType ? {
+    kind: logistiqueQuestionType.kind,
+    defaultModule: logistiqueQuestionType.module,
+    modules: logistiqueModules(logistiqueQuestionType.domain).filter(({ code }) =>
+      !allowedModules?.length || allowedModules.includes(code)),
+    original(item: MathItem) {
+      const source = item.logistiqueSource
+      if (!source) return undefined
+      const presentation = item.logistiqueTable?.presentation ??
+        (item.logistiqueGaps ? item.logistiqueGaps.words ? 'avec-liste' : 'sans-liste' : undefined)
+      return logistiqueQuestionItems(logistiqueQuestionType, [source.module], activeBlock.logistiqueBankRevision, presentation)
+        .find((entry) => entry.logistiqueSource?.id === source.id)
+    },
   } : undefined
   const activeItems = activeBlock.libreItems ?? activeSheet?.blocks[safeBlockIndex]?.items ?? []
   const phraseItems = activeBlock.phraseItems ?? activeSheet?.blocks[safeBlockIndex]?.items ?? []
@@ -169,11 +188,16 @@ export function LibreActivityEditor({
   const editedActivityId = halfEditor?.id ?? arithmeticId
   const arithmeticItems = liveArithmetic ? identifyItems(halfEditor?.content?.items ?? activeItems, editedActivityId) : activeItems
   const logicContent = logic && (halfEditor?.content ?? logic)
-  const questions = textExercise && (halfEditor?.content ?? textExercise)
+  const questions = textExercise ? halfEditor?.content ?? textExercise :
+    logistiqueQuestionType ? { items: genericItems, instruction: logistiqueQuestionType.instruction } : null
+  const questionInstruction = questions?.items.length || !logistiqueQuestionType
+    ? questions?.instruction ?? ''
+    : activeBlock.libreInstruction ?? logistiqueQuestionType.instruction
   const wordListContent = letterGrid && (halfEditor?.content ?? letterGrid)
   const orderedPhrases = phraseOrder && (halfEditor?.content ?? phraseOrder)
   const syllables = syllableContent && (halfEditor?.content ?? syllableContent)
   const listening = listenContent && (halfEditor?.content ?? listenContent)
+  const syllableMatches = syllableMatchContent && (halfEditor?.content ?? syllableMatchContent)
   const soutienPhraseContent = soutienPhrases && (halfEditor?.content ?? soutienPhrases)
   const audioSeries = audioOrderContent && (halfEditor?.content ?? audioOrderContent)
   const arithmeticInstruction = halfEditor?.content?.instruction ?? activeBlock.libreInstruction ??
@@ -183,9 +207,15 @@ export function LibreActivityEditor({
       updatePage({ a5RightLibre: { id: editedActivityId, items, instruction } })
       return
     }
+    const breaks = logistiqueEditor && activeBlock.tcfPageBreakAfter && questions
+      ? new Set(identifyItems(questions.items, editedActivityId).flatMap(({ libreId }, index) =>
+        activeBlock.tcfPageBreakAfter?.[index] ? [libreId] : []))
+      : undefined
+    const count = logistiqueEditor ? Math.max(1, items.length) : items.length
     updatePage({
       libreId: editedActivityId, libreItems: items, libreInstruction: instruction,
-      ...(!halfEditor && !isTpmLike && !keepCount && items.length !== activeBlock.count ? { count: items.length } : {}),
+      ...(breaks ? { tcfPageBreakAfter: items.map(({ libreId }) => breaks.has(libreId)) } : {}),
+      ...(!halfEditor && !isTpmLike && !keepCount && count !== activeBlock.count ? { count } : {}),
     })
   }
   const renderedWords = liveWords ? activeItems.find((item) => item.layout === 'vocab-table')?.vocabEntries
@@ -260,6 +290,12 @@ export function LibreActivityEditor({
           onChange={(next) => editActivityItems(listening.items.map((current, position) =>
             position === index ? next : current), listening.instruction, true)} />
       ))}
+      {syllableMatches?.items.map((item, index) => (
+        <SyllableMatchEditor key={`${editedActivityId}:${index}`} item={item}
+          id={`${editedActivityId}:${activeBlock.exerciseType}:${index}`} fields={transientFields} writeField={onTransientField}
+          onChange={(next) => editActivityItems(syllableMatches.items.map((current, position) =>
+            position === index ? next : current), syllableMatches.instruction, true)} />
+      ))}
       {soutienPhraseContent && syllableBank && soutienPhraseContent.items.map((item, index) => (
         <SoutienPhraseRowsEditor key={`${editedActivityId}:${index}`} item={item} bank={syllableBank}
           id={`${editedActivityId}:${activeBlock.exerciseType}:${index}`} fields={transientFields} writeField={onTransientField}
@@ -277,22 +313,23 @@ export function LibreActivityEditor({
           items={logistiqueItemsOnSheet ?? genericItems}
           onReroll={onRegenerateBlock ? () => onRegenerateBlock(safeBlockIndex) : undefined}
           onAdd={(added) => {
-            if (questions) editActivityItems([...questions.items, ...added], questions.instruction)
+            if (questions) editActivityItems(identifyItems([...questions.items, ...added], editedActivityId), questionInstruction)
             else updatePage({ libreItems: [...genericItems, ...added] })
           }} />
       )}
-      {questions?.items.length ? (
+      {questions && (questions.items.length > 0 || logistiqueEditor) ? (
         <GenericLibreEditor
           key={editedActivityId}
           direct
-          instruction={questions.instruction}
+          instruction={questionInstruction}
           items={identifyItems(questions.items, editedActivityId)}
           editableCalculation={logistics?.kind === 'maths'}
+          logistique={logistiqueEditor}
           logistiquePhotos={logistiquePhotos}
           fields={transientFields}
           writeField={onTransientField}
           onChangeInstruction={(instruction) => editActivityItems(identifyItems(questions.items, editedActivityId), instruction)}
-          onChangeItems={(items) => editActivityItems(items, questions.instruction)}
+          onChangeItems={(items) => editActivityItems(items, questionInstruction)}
           onRegenerate={(id) => onRegenerateBlock?.(safeBlockIndex, halfEditor?.value, id)}
         />
       ) : null}
@@ -494,6 +531,7 @@ export function LibreActivityEditor({
       !phraseOrder &&
       !syllableContent &&
       !listenContent &&
+      !syllableMatchContent &&
       !soutienPhrases &&
       !audioOrderContent &&
       soutienKind !== 'mots' &&
