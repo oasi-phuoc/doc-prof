@@ -75,7 +75,7 @@ test('les 858 types des modules CFC et AFP disposent de contenu à générer', (
 })
 
 test('les glossaires de manutention incluent leurs nouveaux termes dans les deux diplômes', () => {
-  const modules = [['306', 'Box-palette', 30], ['407', 'Diagramme de capacité', 22], ['409', 'AutoStore', 27], ['410', 'Palonnier', 23]]
+  const modules = [['306', 'Box-palette', 34], ['407', 'Diagramme de capacité', 22], ['409', 'AutoStore', 27], ['410', 'Palonnier', 23]]
   for (const diploma of ['CFC', 'AFP']) {
     for (const [code, term, count] of modules) {
       const page = config(diploma, code, 'glossaire')
@@ -102,7 +102,8 @@ test('les illustrations des glossaires sont reliées à des définitions et gard
       entry.kind === 'glossaire' && entry.module === type.module)
     assert(figures.length > 0, type.id)
     assert.equal(figures.length, Object.keys(unit.illustrations).length, type.id)
-    assert.deepEqual(items.map(({ theoryBlock }) => theoryBlock), previous.items.map(({ theoryBlock }) => theoryBlock))
+    const preserved = new Set(items.map(({ theoryBlock }) => theoryBlock.text))
+    assert(previous.items.every(({ theoryBlock }) => preserved.has(theoryBlock.text)), type.id)
     assert(previous.items.every((item) => !item.logistiqueGlossaryFigure))
     for (const { theoryBlock, logistiqueGlossaryFigure } of figures) {
       const term = theoryBlock.text.match(/^\{g\}(.+?)\{\/g\}/)?.[1]
@@ -152,17 +153,38 @@ test('les résumés illustrés sont distincts du cours et figés dans la recette
   assert(!validLogistiquePages([{ ...config('AFP', '101', 'maths'), logistiqueTheoryView: 'resume' }]))
 })
 
-test('le 306 associe le nouvel encadré au passage des supports spéciaux dans les deux versions', () => {
+test('le 306 garde la photo encadrée des supports spéciaux dans les deux versions', () => {
   for (const diploma of ['CFC', 'AFP']) {
     for (const logistiqueTheoryView of ['complet', 'resume']) {
       const page = { ...config(diploma, '306', 'theorie'), logistiqueTheoryView }
       const blocks = generateLogistique(page, 7).items.map(({ theoryBlock }) => theoryBlock)
       const index = blocks.findIndex((block) => block.src?.endsWith(palletPhoto.file))
       assert(index > 0)
-      assert.equal(blocks[index - 1].text, logistiqueTheoryView === 'resume' ? palletPhoto.summaryAnchor : palletPhoto.anchor)
+      const previousHeading = blocks.slice(0, index).findLast((block) => block.kind === 'heading')
+      assert.equal(previousHeading?.text, logistiqueTheoryView === 'resume' ? palletPhoto.summaryAnchor : palletPhoto.anchor)
       assert.equal(blocks[index + 1].text, palletPhoto.prose)
       const saved = { ...page, logistiqueBankRevision: 'logistique-exercices-approvisionnement-complet-v005' }
       assert(generateLogistique(saved, 7).items.every(({ theoryBlock }) => !theoryBlock.src?.endsWith(palletPhoto.file)))
+    }
+  }
+})
+
+test('les palettes spéciales et les formes de stockage ont des vues propres dans le cours, le résumé et le glossaire', () => {
+  const codes = [['306', 8, 'Varitainer', 'varitainer'], ['403', 13, 'Drive-through', 'drive-through'], ['404', 3, 'Entrepôt ouvert', 'a-ciel-ouvert']]
+  for (const [code, count, term, photo] of codes) for (const diploma of ['CFC', 'AFP']) {
+    const matches = (src) => src?.includes('-photo-v005.webp')
+    const glossary = generateLogistique(config(diploma, code, 'glossaire'), 7).items
+    assert(glossary.some(({ theoryBlock, logistiqueGlossaryFigure }) =>
+      theoryBlock.text.startsWith(`{g}${term}{/g}`) && logistiqueGlossaryFigure?.src.includes(`-${photo}-photo-v005.webp`)))
+    for (const logistiqueTheoryView of ['complet', 'resume']) {
+      const page = { ...config(diploma, code, 'theorie'), logistiqueTheoryView }
+      const figures = (cfg) => generateLogistique(cfg, 7).items.flatMap(({ theoryBlock }) =>
+        theoryBlock.kind === 'image-row' ? theoryBlock.cells : theoryBlock.kind === 'image' ? [theoryBlock] : [])
+      const current = figures(page).filter(({ src }) => matches(src))
+      assert.equal(current.length, count)
+      assert(current.every(({ src, alt, caption }) => alt && caption && existsSync(root + '/public' + src)))
+      const legacy = figures({ ...page, logistiqueBankRevision: 'logistique-tableaux-v007' })
+      assert(legacy.every(({ src }) => !matches(src)))
     }
   }
 })

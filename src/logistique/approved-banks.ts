@@ -257,6 +257,10 @@ import { supportsGlossaryAdditions } from './banks/supports-glossaires-v002'
 import { logistiqueGapExercises } from './banks/textes-a-trous-v006'
 import { illustrateLogistiqueGlossaries } from './banks/glossaires-illustres-v003'
 import { logistiqueTableExercises } from './banks/tableaux-v007'
+import { module306 as palletTypes306 } from './banks/module-306-v005.generated.ts'
+import { module403 as storageTypes403 } from './banks/module-403-v005.generated.ts'
+import { module404 as storageTypes404 } from './banks/module-404-v005.generated.ts'
+import { palletAndStorageFigures, palletAndStorageTerms } from './banks/glossaires-palettes-stockage-v004'
 import type { LogistiqueExerciseTable } from './tables'
 import type { LogistiqueGlossaryFigure } from '@/math/types'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
@@ -579,22 +583,23 @@ const palletSupportsTheoryPublication: LogistiquePublication = {
     unit.id === illustrated306[0].id ? illustrated306[0] : unit),
 }
 
+function extendGlossary(unit: LogistiqueUnit, terms?: readonly (readonly [string, string])[]): LogistiqueUnit {
+  if (unit.kind !== 'glossaire' || !terms) return unit
+  const additions = terms.map(([term, definition]) => ({
+    kind: 'paragraph' as const,
+    text: `{g}${term}{/g} — ${definition}`,
+  }))
+  return {
+    ...unit,
+    revision: `${unit.module}-glossaire-v002`,
+    blocks: [...unit.blocks, ...additions].sort((a, b) =>
+      a.kind === 'paragraph' && b.kind === 'paragraph' ? a.text.localeCompare(b.text, 'fr-CH') : 0),
+  }
+}
+
 const supportsGlossariesPublication: LogistiquePublication = {
   revision: 'logistique-glossaires-supports-manutention-v002',
-  units: palletSupportsTheoryPublication.units.map((unit) => {
-    const terms = supportsGlossaryAdditions[unit.module]
-    if (unit.kind !== 'glossaire' || !terms) return unit
-    const additions = terms.map(([term, definition]) => ({
-      kind: 'paragraph' as const,
-      text: `{g}${term}{/g} — ${definition}`,
-    }))
-    return {
-      ...unit,
-      revision: `${unit.module}-glossaire-v002`,
-      blocks: [...unit.blocks, ...additions].sort((a, b) =>
-        a.kind === 'paragraph' && b.kind === 'paragraph' ? a.text.localeCompare(b.text, 'fr-CH') : 0),
-    }
-  }),
+  units: palletSupportsTheoryPublication.units.map((unit) => extendGlossary(unit, supportsGlossaryAdditions[unit.module])),
 }
 
 const gapExercisesPublication: LogistiquePublication = {
@@ -610,6 +615,15 @@ const illustratedGlossariesPublication: LogistiquePublication = {
 const tableExercisesPublication: LogistiquePublication = {
   revision: 'logistique-tableaux-v007',
   units: [...illustratedGlossariesPublication.units, ...logistiqueTableExercises],
+}
+
+const palletAndStorageCourses = new Map([palletTypes306[0], storageTypes403[0], storageTypes404[0]]
+  .map((unit): [string, LogistiqueUnit] => [unit.id, unit]))
+const palletAndStoragePublication: LogistiquePublication = {
+  revision: 'logistique-palettes-et-stockage-v005',
+  units: illustrateLogistiqueGlossaries(tableExercisesPublication.units.map((unit) =>
+    palletAndStorageCourses.get(unit.id) ?? extendGlossary(unit, palletAndStorageTerms[unit.module])),
+  palletAndStorageFigures, 'v004'),
 }
 
 export const logistiquePublications: readonly LogistiquePublication[] = [
@@ -697,6 +711,7 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   gapExercisesPublication,
   illustratedGlossariesPublication,
   tableExercisesPublication,
+  palletAndStoragePublication,
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!
