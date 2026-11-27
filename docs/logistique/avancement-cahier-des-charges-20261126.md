@@ -174,6 +174,7 @@ L’inventaire initial dénombre 193 entrées illustrées par une photo et 977 p
 | Étape | Avancement | Visuels concernés |
 | --- | --- | --- |
 | Premier lot | 262 entrées en photo sur 1 170 | 69 schémas dédiés retirés. Le 100 et le 101 sont entièrement en photos. Les nouvelles reconstitutions illustrent notamment la compétence, l’habilitation, la NLFA, la route de l’ambre et le juste-à-temps. |
+| Objectifs, palettes et stockage | 296 entrées en photo sur 1 170 | 34 autres schémas dédiés retirés. Les glossaires 103, 306, 403 et 404 sont entièrement en photos, avec notamment des vues du capital immobilisé, de l’efficience, du marquage EPAL, de l’emprise et de la hauteur utile. Les six glossaires déjà terminés ont été contrôlés en CFC et AFP, en A4 et en double A5, soit 24 exports PDF. |
 
 La commande `node scripts/prepare-logistique-glossaire.mjs --audit` donne le détail par module et vérifie les chemins, les doublons et les textes alternatifs. Le [registre éditorial des photos](preparation/glossaires-photos-v006.txt) associe chaque nouvelle photo à sa notion exacte.
 
