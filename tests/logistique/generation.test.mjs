@@ -189,6 +189,25 @@ test('les palettes spéciales et les formes de stockage ont des vues propres dan
   }
 })
 
+test('le râtelier vertical et le stockage en épis ont une illustration dans les deux cours et glossaires', () => {
+  for (const diploma of ['CFC', 'AFP']) {
+    for (const [module, word, file] of [
+      ['403', 'Râtelier vertical', 'log-403-ratelier-vertical-photo-v006.webp'],
+      ['408', 'Stockage en épis', 'log-408-epis-photo-v005.webp'],
+    ]) {
+      const glossary = generateLogistique(config(diploma, module, 'glossaire'), 7).items
+      assert(glossary.some(({ theoryBlock, logistiqueGlossaryFigure }) =>
+        theoryBlock.text.startsWith(`{g}${word}{/g}`) && logistiqueGlossaryFigure?.src.endsWith(file)))
+      for (const logistiqueTheoryView of ['complet', 'resume']) {
+        const page = { ...config(diploma, module, 'theorie'), logistiqueTheoryView }
+        const { items } = generateLogistique(page, 7)
+        const figure = items.find(({ theoryBlock }) => theoryBlock.src?.endsWith(file))?.theoryBlock
+        assert(figure?.caption.trim() && existsSync(root + '/public' + figure.src), `${module} ${diploma} ${logistiqueTheoryView}`)
+      }
+    }
+  }
+})
+
 test('les nouvelles publications conservent le tirage des recettes du thème 600', () => {
   const page = { ...config('AFP', '616', 'maths'), count: 6 }
   const historical = { ...page, logistiqueBankRevision: 'logistique-614-615-616-v001' }

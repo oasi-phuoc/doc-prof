@@ -260,7 +260,11 @@ import { logistiqueTableExercises } from './banks/tableaux-v007'
 import { module306 as palletTypes306 } from './banks/module-306-v005.generated.ts'
 import { module403 as storageTypes403 } from './banks/module-403-v005.generated.ts'
 import { module404 as storageTypes404 } from './banks/module-404-v005.generated.ts'
-import { palletAndStorageFigures, palletAndStorageTerms } from './banks/glossaires-palettes-stockage-v004'
+import { module403 as storageArrangements403 } from './banks/module-403-v006.generated.ts'
+import { module408 as storageArrangements408 } from './banks/module-408-v005.generated.ts'
+import {
+  palletAndStorageFigures, palletAndStorageTerms, storageArrangementFigures, storageArrangementTerms,
+} from './banks/glossaires-palettes-stockage-v004'
 import { logistiqueAcquisitionExercises } from './banks/acquis-v008'
 import type { LogistiqueExerciseTable } from './tables'
 import type { LogistiqueGlossaryFigure } from '@/math/types'
@@ -632,6 +636,15 @@ const acquisitionExercisesPublication: LogistiquePublication = {
   units: [...palletAndStoragePublication.units, ...logistiqueAcquisitionExercises(palletAndStoragePublication.units)],
 }
 
+const storageArrangementCourses = new Map([storageArrangements403[0], storageArrangements408[0]]
+  .map((unit): [string, LogistiqueUnit] => [unit.id, unit]))
+const storageArrangementsPublication: LogistiquePublication = {
+  revision: 'logistique-implantations-stockage-v006',
+  units: illustrateLogistiqueGlossaries(acquisitionExercisesPublication.units.map((unit) =>
+    storageArrangementCourses.get(unit.id) ?? extendGlossary(unit, storageArrangementTerms[unit.module])),
+  storageArrangementFigures, 'v005'),
+}
+
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
@@ -719,6 +732,7 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   tableExercisesPublication,
   palletAndStoragePublication,
   acquisitionExercisesPublication,
+  storageArrangementsPublication,
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!

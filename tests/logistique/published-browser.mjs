@@ -8,7 +8,7 @@ const plan = JSON.parse(await readFile(new URL('../../docs/logistique/preparatio
 const curriculum = JSON.parse(await readFile(new URL('../../src/logistique/curriculum.generated.json', import.meta.url), 'utf8'))
 const preparation = new URL('../../docs/logistique/preparation/', import.meta.url)
 const requestedModules = process.argv.slice(2)
-const photoFiles = (await readdir(preparation)).filter((file) => /^\d{3}-v00[2345]\.json$/.test(file)
+const photoFiles = (await readdir(preparation)).filter((file) => /^\d{3}-v00[23456]\.json$/.test(file)
   && (!requestedModules.length || requestedModules.includes(file.slice(0, 3)))).sort()
 const photoPlans = new Map(await Promise.all(photoFiles.map(async (file) => [
   file.slice(0, 3),
