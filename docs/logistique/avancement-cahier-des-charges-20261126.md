@@ -180,6 +180,12 @@ La révision `logistique-exercices-service-client-v003` ajoute 126 exercices cor
 
 Les 54 parcours A4 et PDF couvrent la capacité complète des trois types, avec corrigé et numérotation continue. La réserve minimale mesurée au pied était de 58,80 px.
 
+### Relecture des mathématiques — thèmes 100 et 200
+
+Les 100 problèmes ajoutés lors de l’enrichissement des deux thèmes ont été relus avec la théorie, l’énoncé, les unités et le calcul. Chaque problème est rattaché à un titre du cours. La révision `logistique-maths-fondations-service-v004` reformule ou remplace 35 problèmes. Les exercices de calendrier et de quantités du 101 renvoient aux routes commerciales et au ravitaillement. Le 201 distingue chiffre d’affaires et encaissement, le 202 applique les contrôles d’hygiène et le 205 calcule un passage à l’action dans le modèle AIDA. [Références et retouches par problème](../../src/logistique/banks/relecture-maths-v004.ts).
+
+Les 40 parcours A4 et PDF de mathématiques ont été vérifiés sur la banque complète, dans les deux diplômes. La réserve minimale mesurée était de 39,95 px. Les recettes vers les révisions précédentes restent résolubles.
+
 ## Reprise opérationnelle
 
 La publication des modules est terminée pour les deux diplômes. La publication `logistique-901-v001` a clôturé le premier passage sur le catalogue. La révision `logistique-illustrations-fico-ict-projets-v003` rassemble les cours et les résumés du deuxième passage illustré. Chaque recette conserve sa révision de banque.

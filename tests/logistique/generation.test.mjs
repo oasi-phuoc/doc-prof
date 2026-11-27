@@ -8,7 +8,7 @@ const { load, root } = require('../../scripts/gattegno-loader.cjs')
 const catalog = load(root + '/src/logistique/catalog.ts')
 const { generateLogistique, logistiqueDocumentTitle, logistiqueHasSummary } = load(root + '/src/logistique/generate.ts')
 const { freezeLogistiquePages, validLogistiquePages } = load(root + '/src/logistique/recipe.ts')
-const { currentLogistiquePublication } = load(root + '/src/logistique/approved-banks.ts')
+const { currentLogistiquePublication, logistiquePublications } = load(root + '/src/logistique/approved-banks.ts')
 const { splitLogistiquePages } = load(root + '/src/logistique/pagination.ts')
 
 function config(diploma, module, kind) {
@@ -148,6 +148,28 @@ test('les banques enrichies augmentent la capacité par diplôme et préservent 
       assert.deepEqual(generateLogistique(freezeLogistiquePages([historical])[0], 20261127), before, type.id)
     }
   }
+})
+
+test('la relecture des mathématiques des thèmes 100 et 200 rattache les problèmes à leur cours', () => {
+  const original = logistiquePublications.find(({ revision }) => revision === 'logistique-illustrations-fico-ict-projets-v003')
+  const priorMaths = original.units.filter((unit) => unit.kind === 'maths' && /^(?:fondations|service-client)-exercices-v003$/.test(unit.revision))
+  const currentById = new Map(currentLogistiquePublication.units.map((unit) => [unit.id, unit]))
+  const sections = new Map(currentLogistiquePublication.units.filter((unit) => unit.kind === 'theorie').map((unit) => [
+    unit.module, new Set(unit.blocks.filter(({ kind }) => kind === 'heading').map(({ text }) => text)),
+  ]))
+  assert.equal(priorMaths.length, 100)
+  for (const exercise of priorMaths) {
+    const reviewed = currentById.get(exercise.id)
+    assert.equal(reviewed.kind, 'maths', exercise.id)
+    assert.deepEqual(reviewed.approvedFor, exercise.approvedFor, exercise.id)
+    assert(sections.get(exercise.module).has(reviewed.theorySection), exercise.id)
+  }
+  const hygiene = currentById.get('log-202-maths-v003-05')
+  assert.match(hygiene.prompt, /lavage des mains/)
+  assert.match(hygiene.calculation, /6 \+ 4 − 2 = 8/)
+  const saved = { ...config('CFC', '202', 'maths'), count: 30, logistiqueBankRevision: original.revision }
+  const [frozen] = freezeLogistiquePages([saved])
+  assert(generateLogistique(frozen, 7).items.some(({ prompt }) => prompt.includes('CHF 58 par veste')))
 })
 
 test('les titres et les recettes conservent les modules, le diplôme et la révision', () => {
