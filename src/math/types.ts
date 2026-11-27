@@ -1179,6 +1179,8 @@ export type WorksheetBlock = {
   exerciseType: string
   /** Index des photos à habiller avec le paragraphe suivant sur cette feuille. */
   logistiqueWrappedFigures?: number[]
+  /** Disposition imprimée des listes et tableaux A5, avec l’index du bloc d’origine. */
+  logistiqueTheorySlices?: { sourceIndex: number; theoryBlock?: GrammarTheoryBlock; isLast: boolean }[]
   /** Points par question (propagé depuis ExerciseBlock). */
   pointsPerQuestion?: number
   /**

@@ -84,6 +84,20 @@
   max-height: 29mm;
 }
 
+.a5-half.is-logistique .theory-table {
+  table-layout: fixed;
+  font-size: calc(var(--theory-size) * .9);
+  overflow-wrap: anywhere;
+}
+
+.a5-half.is-logistique .theory-table :is(th, td) {
+  padding: 3px 6px;
+}
+
+.a5-half.is-logistique .problem-block .draft-pad {
+  --grid-rows: 4;
+}
+
 .is-logistique .theory-grid .grammar-support-image figcaption {
   margin-top: 1mm;
   font-size: .8em;

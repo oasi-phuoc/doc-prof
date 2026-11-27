@@ -323,7 +323,7 @@ export function usePageConfig({
         }
         const offset = sheetBlock?.itemOffset ?? 0
         // Saut avant la question = coupure après l’item précédent.
-        const modeIndex = itemIndex + offset - 1
+        const modeIndex = sheetBlock?.logistiqueTheorySlices?.[itemIndex - 1]?.sourceIndex ?? itemIndex + offset - 1
         if (modeIndex < 0) return page
         const totalItems = Math.max(
           block.tcfPageBreakAfter?.length ?? 0,

@@ -514,7 +514,8 @@ export function WorksheetSheet({
                     (block.problemDraftGrids?.[index] ?? page.problemDraftGrids?.[index] ?? true)
                   const oralAnswerMode =
                     block.oralAnswerModes?.[index] ?? page.oralAnswerModes?.[index] ?? item.answerMode ?? 'qcm'
-                  const sourceIndex = index + (block.itemOffset ?? 0)
+                  const theorySlice = block.logistiqueTheorySlices?.[index]
+                  const sourceIndex = theorySlice?.sourceIndex ?? index + (block.itemOffset ?? 0)
                   const tcfFormMode =
                     block.tcfFormModes?.[sourceIndex] ?? page.tcfFormModes?.[sourceIndex]
                   const tcfPageBreakBefore =
@@ -526,10 +527,12 @@ export function WorksheetSheet({
                   const theoryBreakCount =
                     block.tcfPageBreakAfter?.length ??
                     page.tcfPageBreakAfter?.length ??
-                    block.items.length + (block.itemOffset ?? 0)
+                    (block.logistiqueTheorySlices ? (block.logistiqueTheorySlices.at(-1)?.sourceIndex ?? -1) + 1
+                      : block.items.length + (block.itemOffset ?? 0))
                   const isTheoryPageBreakable =
                     item.layout === 'theory' &&
                     (item.theoryBlock?.kind === 'section' || isLogistiqueDomain(page.domain)) &&
+                    theorySlice?.isLast !== false &&
                     sourceIndex < theoryBreakCount - 1
                   const isGrammarPageBreakable=page.domain==='grammaire'&&block.exerciseType.startsWith('gram-ex-')&&(
                     item.grammar?grammarPageBreakQuestionId(item)!==undefined:!item.hideItemNumber&&item.layout!=='theory'&&(item.layout!=='tcf'||item.tcf?.kind==='qcm'||item.tcf?.kind==='lignes'||item.tcf?.kind==='dialogue')
@@ -569,7 +572,7 @@ export function WorksheetSheet({
                   return (
                     <ItemView
                       key={`${block.exerciseType}-${block.exerciseIndex}-${index}-${item.answer}-${tcfFormMode ?? ''}`}
-                      item={item}
+                      item={theorySlice?.theoryBlock ? { ...item, theoryBlock: theorySlice.theoryBlock } : item}
                       mode={mode}
                       itemLabel={/^tcm-(?:csc|cfr)-ex0[12]$/.test(block.exerciseType)?String.fromCharCode(65+index+itemOffset):undefined}
                       seriesNumber={/^tcm-csc-ex16$/.test(block.exerciseType)||/^tcm-cfr-ex16$/.test(block.exerciseType)?index+itemOffset+1:undefined}

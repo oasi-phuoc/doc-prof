@@ -12,6 +12,7 @@ const { generateLogistique, logistiqueDocumentTitle, logistiqueHasSummary } = lo
 const { freezeLogistiquePages, validLogistiquePages } = load(root + '/src/logistique/recipe.ts')
 const { currentLogistiquePublication, logistiquePublications } = load(root + '/src/logistique/approved-banks.ts')
 const { splitLogistiquePages } = load(root + '/src/logistique/pagination.ts')
+const { blockItemsForConfig } = load(root + '/src/components/generator/sheet-items.ts')
 
 function config(diploma, module, kind) {
   const tag = diploma.toLowerCase()
@@ -293,4 +294,39 @@ test('le texte habille la photo sur la même page et un saut manuel reste priori
   assert.equal(sheets.find(({ items: pageItems }) => pageItems.includes(items[3])).items.at(-1), items[3])
   assert(sheets.every(({ blocks }) => blocks.every(({ logistiqueWrappedFigures }) => !logistiqueWrappedFigures?.length)))
   assert.deepEqual(sheets.flatMap((sheet) => sheet.items), items)
+})
+
+test('les tableaux longs répètent leurs en-têtes en A5 et restent entiers dans les données de la fiche', () => {
+  const title = { kind: 'heading', text: 'Comparaison des supports' }
+  const table = { kind: 'table', headers: ['Support', 'Contrôle'], rows: Array.from(
+    { length: 12 }, (_, index) => [`Support ${index + 1}`, 'Vérifier le marquage du support et relever les défauts avant l’échange.'],
+  ) }
+  const prose = { kind: 'paragraph', text: 'Relever les écarts dans le registre.' }
+  const items = [title, table, prose].map((theoryBlock) => ({ layout: 'theory', theoryBlock, answer: '' }))
+  const block = { title: 'Théorie', instruction: 'Lire le tableau.', items, exerciseIndex: 1, exerciseType: 'log-afp-306-theorie' }
+  const sheet = { items, blocks: [{ ...block, tcfPageBreakAfter: [false, true] }] }
+  const a4 = splitLogistiquePages(sheet)
+  assert.deepEqual(a4.flatMap((page) => page.items), items)
+  assert(a4.every(({ blocks }) => blocks.every((entry) => !entry.logistiqueTheorySlices)))
+
+  const a5 = splitLogistiquePages(sheet, { a5: true }).map((page) => ({ ...page, configIndex: 0 }))
+  const slices = a5.flatMap(({ blocks }) => blocks.flatMap((entry) => entry.logistiqueTheorySlices))
+    .filter((part) => part.theoryBlock?.kind === 'table')
+  assert(slices.length > 1)
+  assert(slices.every((part) => part.sourceIndex === 1 && part.theoryBlock.headers === table.headers))
+  assert.deepEqual(slices.flatMap(({ theoryBlock }) => theoryBlock.rows), table.rows)
+  assert.deepEqual(slices.map(({ isLast }) => isLast), [...Array(slices.length - 1).fill(false), true])
+  assert.deepEqual(a5.at(-1).items, [items[2]], 'Le saut manuel vient après la dernière partie du tableau')
+  assert.deepEqual(blockItemsForConfig(a5, 0, 0), { items, instruction: block.instruction })
+})
+
+test('les longues listes A5 se poursuivent en gardant chaque entrée entière', () => {
+  const list = { kind: 'list', items: Array.from({ length: 12 }, (_, index) =>
+    `Consigne ${index + 1} pour reconnaître le pictogramme et lire l’étiquette avant de déplacer le lot.`) }
+  const item = { layout: 'theory', theoryBlock: list, answer: '' }
+  const block = { title: 'Théorie', items: [item], exerciseIndex: 1, exerciseType: 'log-afp-105-theorie' }
+  const pages = splitLogistiquePages({ blocks: [block], items: [item] }, { a5: true })
+  assert(pages.length > 1)
+  const fragments = pages.flatMap((page) => page.blocks[0].logistiqueTheorySlices)
+  assert.deepEqual(fragments.flatMap(({ theoryBlock }) => theoryBlock.items), list.items)
 })
