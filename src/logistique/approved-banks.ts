@@ -256,6 +256,8 @@ import { module306 as illustrated306 } from './banks/module-306-v004.generated.t
 import { supportsGlossaryAdditions } from './banks/supports-glossaires-v002'
 import { logistiqueGapExercises } from './banks/textes-a-trous-v006'
 import { illustrateLogistiqueGlossaries } from './banks/glossaires-illustres-v003'
+import { logistiqueTableExercises } from './banks/tableaux-v007'
+import type { LogistiqueExerciseTable } from './tables'
 import type { LogistiqueGlossaryFigure } from '@/math/types'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
@@ -266,9 +268,9 @@ type UnitContent =
   | { kind: 'objectifs-apercu'; blocks: ReferenceBlock[] }
   | { kind: 'glossaire'; blocks: ReferenceBlock[]; illustrations?: Record<string, LogistiqueGlossaryFigure> }
   | { kind: 'theorie'; blocks: ReferenceBlock[]; summaryBlocks?: ReferenceBlock[] }
-  | { kind: 'maths'; prompt: string; calculation: string; answer: string; theorySection?: string }
+  | { kind: 'maths'; prompt: string; calculation: string; answer: string; theorySection?: string; table?: LogistiqueExerciseTable }
   | { kind: 'verification'; prompt: string; answer: string; options?: readonly string[]; theorySection?: string;
-      gaps?: { answers: readonly string[]; distractors?: readonly string[] } }
+      gaps?: { answers: readonly string[]; distractors?: readonly string[] }; table?: LogistiqueExerciseTable }
   | { kind: 'situation'; prompt: string; answer: string; theorySection?: string }
 
 export type LogistiqueUnit = UnitContent & {
@@ -605,6 +607,11 @@ const illustratedGlossariesPublication: LogistiquePublication = {
   units: illustrateLogistiqueGlossaries(gapExercisesPublication.units),
 }
 
+const tableExercisesPublication: LogistiquePublication = {
+  revision: 'logistique-tableaux-v007',
+  units: [...illustratedGlossariesPublication.units, ...logistiqueTableExercises],
+}
+
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
@@ -689,6 +696,7 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   supportsGlossariesPublication,
   gapExercisesPublication,
   illustratedGlossariesPublication,
+  tableExercisesPublication,
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!

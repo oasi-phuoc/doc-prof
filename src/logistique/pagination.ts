@@ -104,6 +104,8 @@ function theoryHeight(block: GrammarTheoryBlock, width: number, scale: number): 
 }
 
 function height(item: MathItem, a5: boolean, scale: number): number {
+  const table = item.logistiqueTable
+  if (a5 && table) scale = Math.min(1.125, scale)
   const width = (a5 ? 53 : 72) / scale
   const glossaryFigure = item.logistiqueGlossaryFigure
   if (glossaryFigure && item.theoryBlock) {
@@ -127,12 +129,18 @@ function height(item: MathItem, a5: boolean, scale: number): number {
   }
   const prompt = lineCount(item.prompt ?? '', width * 1.2) * 24 * scale
   const answer = lineCount(item.answer, width * 0.84) * 27 * scale
+  const columnWidth = table ? Math.max(4, width / table.headers.length - 2) : 1
+  const tableHeight = table ? 8 + [table.headers, ...table.rows].reduce((sum, row) => {
+    const lines = row.map((cell) => lineCount(typeof cell === 'string' ? cell : cell.answer, columnWidth))
+    return sum + (a5 ? 5 : 9) + (a5 ? 20 : 23) * scale * Math.max(...lines)
+  }, 0) + (a5 ? 0 : Math.max(0, scale - 1) * 100) : 0
   if (item.calcAnswer) {
     // Même un énoncé court conserve la grille, le trait et leurs espacements.
     const minimum = (a5 ? 183 : 240) + (scale - 1) * 56
-    return imageHeight + Math.max(minimum, (a5 ? 145 : 174) + prompt + answer)
+    const calculations = table ? lineCount(item.calcAnswer, width) * 18 * scale : 0
+    return imageHeight + tableHeight + Math.max(minimum, (a5 ? 145 : 174) + prompt + answer, calculations + prompt + answer + 36)
   }
-  return imageHeight + 48 + prompt + answer + (item.options?.length ?? 0) * 22 * scale
+  return imageHeight + tableHeight + 48 + prompt + answer + (item.options?.length ?? 0) * 22 * scale
 }
 
 /** Enchaîne les questions dans l’espace disponible et respecte les sauts manuels. */

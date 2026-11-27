@@ -425,6 +425,7 @@ export type DivisionStep = {
 }
 
 export type LogistiqueGapMode = 'sans-liste' | 'avec-liste'
+export type LogistiquePresentation = LogistiqueGapMode | import('@/logistique/tables').LogistiqueTablePresentation
 export type LogistiqueGaps = { answers: string[]; words?: string[]; distractors?: string[] }
 export type LogistiqueGlossaryFigure = { src: string; alt: string; caption?: string }
 export type LogistiqueQuestionImage = {
@@ -463,6 +464,7 @@ export type MathItem = {
   /** Question ajoutée en Libre et conservée par les nouveaux tirages. */
   logistiqueRetained?: boolean
   logistiqueGaps?: LogistiqueGaps
+  logistiqueTable?: import('@/logistique/tables').LogistiqueExerciseTable
   logistiqueImage?: LogistiqueQuestionImage
   logistiqueGlossaryFigure?: LogistiqueGlossaryFigure
   layout: Layout
@@ -929,6 +931,7 @@ export type ExerciseBlock = {
   /** Modules de l’activité en mode Évaluation, avec une répartition facultative. */
   logistiqueSelection?: { modules: string[]; quantities?: Record<string, number> }
   logistiqueGapMode?: LogistiqueGapMode
+  logistiquePresentation?: LogistiquePresentation
   topic: string
   exerciseType: string
   difficulty: Difficulty

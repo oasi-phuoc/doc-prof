@@ -12,6 +12,7 @@ const catalog = load(root + '/src/logistique/catalog.ts')
 const { generateLogistique, logistiqueDocumentTitle, logistiqueHasSummary, logistiqueQuestionItems, logistiqueQuestionPhotos } = load(root + '/src/logistique/generate.ts')
 const { availableLogistiqueQuestions, retainLogistiqueQuestions } = load(root + '/src/logistique/libre.ts')
 const { editLogistiqueGaps, logistiqueGapDistractors, validLogistiqueGaps } = load(root + '/src/logistique/gaps.ts')
+const { validLogistiqueExerciseTable } = load(root + '/src/logistique/tables.ts')
 const { freezeLogistiquePages, validLogistiquePages } = load(root + '/src/logistique/recipe.ts')
 const { currentLogistiquePublication, logistiquePublications } = load(root + '/src/logistique/approved-banks.ts')
 const { splitLogistiquePages } = load(root + '/src/logistique/pagination.ts')
@@ -193,6 +194,44 @@ test('le tirage est déterministe et limité aux unités approuvées pour le dip
   }, 109).items, [], 'une révision sans banque ne produit pas d’exercice')
   assert.equal(generateLogistique({ ...maths, logistiqueBankRevision: 'logistique-theories-projets-v002' }, 109).bankQuestionCap, 2)
   assert.deepEqual(generateLogistique({ ...maths, domain: 'logistique-cfc' }, 109, fixture.units).items, [])
+})
+
+test('les tableaux de données et de dates renvoient au cours et gardent le tirage habituel des recettes', () => {
+  const modules = [
+    ['306', 'verification', 'tableau-donnees'],
+    ['308', 'maths', 'tableau-donnees'],
+    ['406', 'maths', 'tableau-dates'],
+  ]
+  for (const diploma of ['CFC', 'AFP']) for (const [code, kind, presentation] of modules) {
+    const usual = { ...config(diploma, code, kind), count: 12 }
+    const before = { ...usual, logistiqueBankRevision: 'logistique-glossaires-illustres-v003' }
+    assert.deepEqual(generateLogistique(usual, 12), generateLogistique(before, 12))
+    const page = { ...usual, logistiquePresentation: presentation }
+    const { items, bankQuestionCap } = generateLogistique(page, 12)
+    assert.equal(bankQuestionCap, 4)
+    assert.equal(items.length, 4)
+    assert(items.every(({ logistiqueTable }) => validLogistiqueExerciseTable(logistiqueTable)))
+    const type = catalog.logistiqueType(page.exerciseType)
+    assert.equal(logistiqueQuestionItems(type, [code], undefined, presentation).length, 4)
+    assert.equal(logistiqueQuestionItems(type, [code], before.logistiqueBankRevision, presentation).length, 0)
+    const headings = new Set(generateLogistique(config(diploma, code, 'theorie'), 12).items
+      .map(({ theoryBlock }) => theoryBlock.text))
+    for (const item of items) {
+      const source = currentLogistiquePublication.units.find(({ id }) => id === item.logistiqueSource.id)
+      assert(headings.has(source.theorySection), item.logistiqueSource.id)
+      if (kind === 'maths') assert(item.calcAnswer && item.responseAnswer, item.logistiqueSource.id)
+    }
+    const [saved] = freezeLogistiquePages([{ ...page, libreItems: items }])
+    assert.equal(saved.logistiquePresentation, presentation)
+    assert(validLogistiquePages([saved]))
+    const invalidItem = { ...items[0], logistiqueTable: { ...items[0].logistiqueTable, rows: [['donnée']] } }
+    assert(!validLogistiquePages([{ ...saved, libreItems: [invalidItem] }]))
+    if (code === '406') {
+      const leap = items.find(({ logistiqueSource }) => logistiqueSource.id.includes('bissextile'))
+      assert.deepEqual(leap?.logistiqueTable.rows[0], ['A', '28.02.2028', '02.03.2028', { answer: '3' }])
+    }
+  }
+  assert(!validLogistiquePages([{ ...config('CFC', '306', 'theorie'), logistiquePresentation: 'tableau-donnees' }]))
 })
 
 test('l’évaluation combine des modules de plusieurs thèmes et applique chaque quota séparément', () => {
