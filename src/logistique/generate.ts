@@ -1,14 +1,14 @@
 import { pageBlocks } from '@/math/page-model'
-import { createRng, shuffle } from '@/math/rng'
-import type { MathItem, PageConfig } from '@/math/types'
+import { createRng, shuffle, type Rng } from '@/math/rng'
+import type { LogistiqueGapMode, MathItem, PageConfig } from '@/math/types'
 import { currentLogistiquePublication, logistiquePublication, type LogistiqueUnit } from './approved-banks'
-import { isLogistiqueReferenceType, logistiqueType, validLogistiqueSelection, type LogistiqueType } from './catalog'
+import { isLogistiqueReferenceType, logistiqueType, validLogistiqueGapMode, validLogistiqueSelection, type LogistiqueType } from './catalog'
 
 function withAssetBase<T extends { src: string }>(figure: T): T {
   return { ...figure, src: import.meta.env.BASE_URL + figure.src.replace(/^\//, '') }
 }
 
-function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView']): MathItem[] {
+function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'], wordsRng?: Rng): MathItem[] {
   const logistiqueSource = { id: unit.id, module: unit.module, revision: unit.revision }
   switch (unit.kind) {
     case 'objectifs-apercu':
@@ -32,6 +32,11 @@ function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'
         responseAnswer: unit.answer,
       }]
     case 'verification':
+      if (unit.gaps) {
+        const answers = [...unit.gaps.answers]
+        const words = wordsRng ? shuffle(wordsRng, [...answers, ...(unit.gaps.distractors ?? [])]) : undefined
+        return [{ logistiqueSource, layout: 'text', prompt: unit.prompt, answer: unit.answer, logistiqueGaps: { answers, words } }]
+      }
       if (unit.options?.length) {
         return [{ logistiqueSource, layout: 'select', prompt: unit.prompt, options: [...unit.options], answer: unit.answer }]
       }
@@ -41,10 +46,11 @@ function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'
   }
 }
 
-function eligibleUnits(type: LogistiqueType, units: readonly LogistiqueUnit[], modules = [type.module]): LogistiqueUnit[] {
+function eligibleUnits(type: LogistiqueType, units: readonly LogistiqueUnit[], modules = [type.module], gapMode?: LogistiqueGapMode): LogistiqueUnit[] {
   const codes = new Set(modules)
   const matching = units.filter((unit) =>
-    codes.has(unit.module) && unit.kind === type.kind && unit.approvedFor.includes(type.diploma),
+    codes.has(unit.module) && unit.kind === type.kind && unit.approvedFor.includes(type.diploma) &&
+    (unit.kind !== 'verification' || Boolean(unit.gaps) === Boolean(gapMode)),
   )
   return [...new Map(matching.map((unit) => [unit.id, unit])).values()]
 }
@@ -54,18 +60,19 @@ export function logistiqueEligibleCount(typeId: string): number {
   return type ? eligibleUnits(type, currentLogistiquePublication.units).length : 0
 }
 
-export function logistiqueModuleCapacities(type: LogistiqueType, modules: string[], revision?: string) {
+export function logistiqueModuleCapacities(type: LogistiqueType, modules: string[], revision?: string, gapMode?: LogistiqueGapMode) {
   const counts = new Map(modules.map((code) => [code, 0]))
-  for (const unit of eligibleUnits(type, logistiquePublication(revision)?.units ?? [], modules)) {
+  for (const unit of eligibleUnits(type, logistiquePublication(revision)?.units ?? [], modules, gapMode)) {
     counts.set(unit.module, (counts.get(unit.module) ?? 0) + 1)
   }
   return counts
 }
 
-export function logistiqueQuestionItems(type: LogistiqueType, modules: string[], revision?: string): MathItem[] {
-  if (!validLogistiqueSelection(type, { modules })) return []
-  return eligibleUnits(type, logistiquePublication(revision)?.units ?? [], modules)
-    .flatMap((unit) => unitItems(unit, undefined))
+export function logistiqueQuestionItems(type: LogistiqueType, modules: string[], revision?: string, gapMode?: LogistiqueGapMode): MathItem[] {
+  if (!validLogistiqueSelection(type, { modules }) || !validLogistiqueGapMode(type, gapMode)) return []
+  const wordsRng = gapMode === 'avec-liste' ? createRng(20261127) : undefined
+  return eligibleUnits(type, logistiquePublication(revision)?.units ?? [], modules, gapMode)
+    .flatMap((unit) => unitItems(unit, undefined, wordsRng))
 }
 
 export function logistiqueHasSummary(typeId: string, revision?: string): boolean {
@@ -102,13 +109,15 @@ export function generateLogistique(
 ) {
   const type = logistiqueType(config.exerciseType)
   if (!type || type.domain !== config.domain || type.topic !== config.topic ||
-      !validLogistiqueSelection(type, config.logistiqueSelection)) {
+      !validLogistiqueSelection(type, config.logistiqueSelection) ||
+      !validLogistiqueGapMode(type, config.logistiqueGapMode)) {
     return { title: 'Logistique', instruction: 'Sélection indisponible.', items: [], bankQuestionCap: 0 }
   }
 
   const modules = config.logistiqueSelection?.modules ?? [type.module]
   const quantities = config.logistiqueSelection?.quantities
-  const eligible = eligibleUnits(type, units, modules)
+  const gapMode = config.logistiqueGapMode
+  const eligible = eligibleUnits(type, units, modules, gapMode)
   const reference = isLogistiqueReferenceType(type.id)
   const count = Number.isFinite(config.count) ? Math.max(1, Math.floor(config.count)) : 1
   const candidates = excludedIds?.size ? eligible.filter(({ id }) => !excludedIds.has(id)) : eligible
@@ -119,9 +128,12 @@ export function generateLogistique(
   return {
     title: logistiqueDocumentTitle([config]),
     instruction: eligible.length
-      ? reference ? type.description : type.instruction
+      ? reference ? type.description
+        : gapMode === 'sans-liste' ? 'Complétez les textes.'
+          : gapMode === 'avec-liste' ? 'Complétez les textes avec les mots proposés. Utilisez chaque proposition une seule fois. Il peut rester des mots.'
+            : type.instruction
       : modules.length ? 'Contenu à compléter pour cette sélection.' : 'Sélectionnez au moins un sous-thème.',
-    items: selected.flatMap((unit) => unitItems(unit, config.logistiqueTheoryView)),
+    items: selected.flatMap((unit) => unitItems(unit, config.logistiqueTheoryView, gapMode === 'avec-liste' ? rng : undefined)),
     bankQuestionCap: reference && eligible.length ? undefined : eligible.length,
   }
 }

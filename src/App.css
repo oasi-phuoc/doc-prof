@@ -2078,6 +2078,10 @@ html.is-margin-symmetric .print-only-sheets .worksheet-sheet.sheet-even .draft-g
 .logistique-bank-question input{margin:0}
 .logistique-bank-lot{display:flex;flex-wrap:wrap;gap:8px;align-items:end}
 .logistique-bank-lot input{width:4.3em}
+.logistique-gaps{--tcf-blank-inline-px:min(145px,28%)}
+.logistique-gaps .prompt-stack-text{white-space:pre-wrap;line-height:1.7}
+.logistique-words{margin:0;font-size:.9em;line-height:1.55}
+.logistique-words strong{display:block}
 .mode-toggle-block>b,.custom-header-form>b{font-size:calc(13px * var(--app-font-scale, 1))}
 .mode-toggle{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:4px;border-radius:12px;background:#f4f2ef}
 .mode-toggle button{border:0;border-radius:9px;padding:10px 8px;background:transparent;color:var(--muted);font-size:calc(13px * var(--app-font-scale, 1));font-weight:700}

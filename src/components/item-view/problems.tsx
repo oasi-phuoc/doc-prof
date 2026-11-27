@@ -1,4 +1,5 @@
 import { WorksheetImage } from '@/components/WorksheetImage'
+import { renderEnonceText } from '@/components/tcf/TcfQuestions'
 import { Fragment } from 'react'
 import { theorySpacerDivisor, type GrammarTheoryBlock } from '@/francais/grammar-theory'
 import {
@@ -588,6 +589,15 @@ function stackedLineAnswer(item: MathItem): string {
 export function StackedPrompt({ item, mode, showHelp = false }: { item: MathItem; mode: PreviewMode; showHelp?: boolean }) {
   const show = mode === 'answers'
   const prompt = item.prompt ?? ''
+  if (item.logistiqueGaps) {
+    const { answers, words } = item.logistiqueGaps
+    return (
+      <div className="prompt-stack logistique-gaps">
+        <p className="prompt-stack-text">{renderEnonceText(prompt, show ? answers : [])}</p>
+        {words?.length ? <p className="logistique-words"><strong>Mots proposés</strong> {words.join(' · ')}</p> : null}
+      </div>
+    )
+  }
   const lines = prompt.split('\n')
   const lineAnswer = stackedLineAnswer(item)
   // Style rule de trois kg : « n kg … → p francs » puis « m kg … → ____ ».

@@ -13,8 +13,8 @@ export function LogistiqueEvaluationFields({ type, activeBlock, themes, updatePa
   const [theme, setTheme] = useState(type.topic)
   const modules = useMemo(() => logistiqueModules(type.domain), [type.domain])
   const capacities = useMemo(() =>
-    logistiqueModuleCapacities(type, modules.map(({ code }) => code), activeBlock.logistiqueBankRevision),
-  [type, modules, activeBlock.logistiqueBankRevision])
+    logistiqueModuleCapacities(type, modules.map(({ code }) => code), activeBlock.logistiqueBankRevision, activeBlock.logistiqueGapMode),
+  [type, modules, activeBlock.logistiqueBankRevision, activeBlock.logistiqueGapMode])
   const visible = modules.filter(({ topic }) => topic === theme)
   const selection = activeBlock.logistiqueSelection?.modules ?? [type.module]
   const quantities = activeBlock.logistiqueSelection?.quantities

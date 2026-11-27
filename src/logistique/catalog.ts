@@ -114,6 +114,10 @@ export function validLogistiqueSelection(type: LogistiqueType, selection: unknow
       modules.includes(code) && typeof quantity === 'number' && Number.isSafeInteger(quantity) && quantity >= 1)
 }
 
+export function validLogistiqueGapMode(type: LogistiqueType, mode: unknown): boolean {
+  return mode === undefined || (type.kind === 'verification' && (mode === 'sans-liste' || mode === 'avec-liste'))
+}
+
 type CataloguePage = {
   domain?: unknown
   exerciseType?: unknown
@@ -129,8 +133,10 @@ export function validLogistiqueCataloguePages(pages: readonly CataloguePage[]): 
     const type = typeof block.exerciseType === 'string' ? logistiqueType(block.exerciseType) : undefined
     const view = 'logistiqueTheoryView' in block ? block.logistiqueTheoryView : undefined
     const selection = 'logistiqueSelection' in block ? block.logistiqueSelection : undefined
+    const gapMode = 'logistiqueGapMode' in block ? block.logistiqueGapMode : undefined
     return type?.domain === domain && type.topic === block.topic &&
       validLogistiqueSelection(type, selection) &&
+      validLogistiqueGapMode(type, gapMode) &&
       (view === undefined || (type.kind === 'theorie' && (view === 'complet' || view === 'resume')))
   }
   return pages.every((page) => page.domain === domain && validBlock(page) &&

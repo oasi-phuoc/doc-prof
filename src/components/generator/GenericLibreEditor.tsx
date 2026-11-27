@@ -47,6 +47,7 @@ export function GenericLibreEditor({
                   <input
                     className="libre-line-input"
                     type="text"
+                    readOnly={Boolean(item.logistiqueGaps)}
                     value={item.prompt ?? item.left ?? ''}
                     onChange={(event) =>
                       patchItem(index, {
@@ -61,6 +62,7 @@ export function GenericLibreEditor({
                   <input
                     className="libre-line-input"
                     type="text"
+                    readOnly={Boolean(item.logistiqueGaps)}
                     value={item.answer ?? ''}
                     onChange={(event) => {
                     const answer = event.target.value

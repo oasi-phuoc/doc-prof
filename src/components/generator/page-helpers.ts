@@ -218,6 +218,7 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
     logistiqueBankRevision: undefined,
     logistiqueTheoryView: undefined,
     logistiqueSelection: undefined,
+    logistiqueGapMode: undefined,
     topic: type.topic,
     track: type.track,
     phrasePolarity: isPhrase ? prev?.phrasePolarity : undefined,

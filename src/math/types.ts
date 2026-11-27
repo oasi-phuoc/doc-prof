@@ -424,10 +424,13 @@ export type DivisionStep = {
   endCol: number
 }
 
+export type LogistiqueGapMode = 'sans-liste' | 'avec-liste'
+
 export type MathItem = {
   logistiqueSource?: { id: string; module: string; revision: string }
   /** Question ajoutée en Libre et conservée par les nouveaux tirages. */
   logistiqueRetained?: boolean
+  logistiqueGaps?: { answers: string[]; words?: string[] }
   layout: Layout
   grammar?: import('@/grammaire/curriculum/types').GrammarQuestion
   cscTask?: import('@/tcm-csc/task-types').CscTask
@@ -890,6 +893,7 @@ export type ExerciseBlock = {
   logistiqueTheoryView?: 'complet' | 'resume'
   /** Modules de l’activité en mode Évaluation, avec une répartition facultative. */
   logistiqueSelection?: { modules: string[]; quantities?: Record<string, number> }
+  logistiqueGapMode?: LogistiqueGapMode
   topic: string
   exerciseType: string
   difficulty: Difficulty

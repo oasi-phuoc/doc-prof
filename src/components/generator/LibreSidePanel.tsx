@@ -337,6 +337,7 @@ export function LibreSidePanel({
           <>
             {logistics && !isLogistiqueReferenceType(logistics.id) && (
               <LogistiqueLibreBank key={logistics.id} type={logistics} revision={activeBlock.logistiqueBankRevision}
+                gapMode={activeBlock.logistiqueGapMode}
                 items={logistiqueItemsOnSheet ?? genericItems}
                 onReroll={onRegenerateBlock ? () => onRegenerateBlock(safeBlockIndex) : undefined}
                 onAdd={(items) => updatePage({ libreItems: [...genericItems, ...items] })} />

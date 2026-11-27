@@ -212,6 +212,36 @@ test('le choix en Libre écarte les doublons et conserve les questions retouché
   }
 })
 
+test('les deux présentations des textes à trous gardent le même tirage et la même correction', () => {
+  for (const diploma of ['CFC', 'AFP']) {
+    for (const code of ['101', '105', '306', '308', '409']) {
+      const page = { ...config(diploma, code, 'verification'), count: 4 }
+      const older = { ...page, logistiqueBankRevision: 'logistique-glossaires-supports-manutention-v002' }
+      assert.deepEqual(generateLogistique(page, 27), generateLogistique(older, 27))
+      const without = generateLogistique({ ...page, logistiqueGapMode: 'sans-liste' }, 27)
+      const withWords = { ...page, logistiqueGapMode: 'avec-liste' }
+      const withList = generateLogistique(withWords, 27)
+      assert.equal(withList.bankQuestionCap, 3)
+      const keys = (result) => result.items.map(({ logistiqueSource, prompt, logistiqueGaps }) =>
+        [logistiqueSource.id, prompt, logistiqueGaps.answers])
+      assert.deepEqual(keys(withList), keys(without))
+      assert.deepEqual(withList, generateLogistique(freezeLogistiquePages([withWords])[0], 27))
+      assert(without.items.every((item) => item.logistiqueGaps.words === undefined))
+      for (const item of withList.items) {
+        const { answers, words } = item.logistiqueGaps
+        assert.equal(item.prompt.match(/___/g).length, answers.length)
+        assert(answers.every((word) => words.includes(word)))
+        assert.equal(new Set(words).size, words.length)
+      }
+      const theory = currentLogistiquePublication.units.find((unit) => unit.module === code && unit.kind === 'theorie')
+      for (const unit of currentLogistiquePublication.units.filter((entry) => entry.module === code && entry.gaps)) {
+        assert(theory.blocks.some(({ kind, text }) => kind === 'heading' && text === unit.theorySection), unit.id)
+      }
+    }
+  }
+  assert(!validLogistiquePages([{ ...config('AFP', '105', 'maths'), logistiqueGapMode: 'sans-liste' }]))
+})
+
 test('les banques enrichies augmentent la capacité par diplôme et préservent les tirages enregistrés', () => {
   const additions = { CFC: { maths: 5, verification: 5, situation: 4 }, AFP: { maths: 4, verification: 5, situation: 3 } }
   const lots = [
