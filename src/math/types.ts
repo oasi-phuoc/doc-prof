@@ -425,6 +425,7 @@ export type DivisionStep = {
 }
 
 export type LogistiqueGapMode = 'sans-liste' | 'avec-liste'
+export type LogistiqueGlossaryFigure = { src: string; alt: string; caption?: string }
 export type LogistiqueQuestionImage = {
   src: string
   alt: string
@@ -440,6 +441,7 @@ export type MathItem = {
   logistiqueRetained?: boolean
   logistiqueGaps?: { answers: string[]; words?: string[] }
   logistiqueImage?: LogistiqueQuestionImage
+  logistiqueGlossaryFigure?: LogistiqueGlossaryFigure
   layout: Layout
   grammar?: import('@/grammaire/curriculum/types').GrammarQuestion
   cscTask?: import('@/tcm-csc/task-types').CscTask

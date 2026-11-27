@@ -14,14 +14,19 @@ function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'
     case 'objectifs-apercu':
     case 'theorie':
     case 'glossaire':
-      return (unit.kind === 'theorie' && view === 'resume' ? unit.summaryBlocks ?? [] : unit.blocks).map((block, index) => ({
-        layout: 'theory',
-        prompt: `${unit.id}:${index}`,
-        answer: '',
-        theoryBlock: block.kind === 'image' ? withAssetBase(block)
-          : block.kind === 'image-row' ? { ...block, cells: block.cells.map(withAssetBase) }
-            : block,
-      }))
+      return (unit.kind === 'theorie' && view === 'resume' ? unit.summaryBlocks ?? [] : unit.blocks).map((block, index) => {
+        const term = unit.kind === 'glossaire' && block.kind === 'paragraph' ? block.text.match(/^\{g\}(.+?)\{\/g\}/)?.[1] : undefined
+        const figure = term && unit.kind === 'glossaire' ? unit.illustrations?.[term] : undefined
+        return {
+          layout: 'theory',
+          prompt: `${unit.id}:${index}`,
+          answer: '',
+          theoryBlock: block.kind === 'image' ? withAssetBase(block)
+            : block.kind === 'image-row' ? { ...block, cells: block.cells.map(withAssetBase) }
+              : block,
+          ...(figure ? { logistiqueGlossaryFigure: withAssetBase(figure) } : {}),
+        }
+      })
     case 'maths':
       return [{
         logistiqueSource,
