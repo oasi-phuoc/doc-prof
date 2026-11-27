@@ -8,7 +8,9 @@ const button = (scope, name) => scope.getByRole('button', { name, exact: true })
 
 async function open(context, exerciseType, overrides = {}) {
   const page = await context.newPage()
-  await page.addInitScript(({ exerciseType, overrides }) => history.replaceState({
+  const area = exerciseType.startsWith('aires-')
+  const title = area ? 'Aires' : 'Périmètres'
+  await page.addInitScript(({ exerciseType, overrides, area }) => history.replaceState({
     ...history.state,
     clairfleFiche: {
       id: 'perimetre-fixture', name: 'Périmètre témoin',
@@ -16,21 +18,21 @@ async function open(context, exerciseType, overrides = {}) {
         version: 1, seed: 20261127, institutional: {}, evalMode: false, pointsPerQuestion: 1,
         libreMode: false, libreSnapshot: null, printCorrections: true,
         pages: [{
-          domain: 'géométrie', topic: 'perimetres', exerciseType, difficulty: 'moyen',
+          domain: 'géométrie', topic: area ? 'aires' : 'perimetres', exerciseType, difficulty: 'moyen',
           count: 2, columns: 1, ...overrides,
         }],
       },
     },
-  }, ''), { exerciseType, overrides })
+  }, ''), { exerciseType, overrides, area })
   await page.goto('/generateur')
   const preview = page.locator('.a4-frame .worksheet-sheet').first()
   const print = page.locator('.print-only-sheets .worksheet-sheet')
   await preview.waitFor()
   const before = await print.first().textContent()
-  assert.equal(await page.getByRole('region', { name: 'Périmètres', exact: true }).count(), 0)
+  assert.equal(await page.getByRole('region', { name: title, exact: true }).count(), 0)
   await button(page, 'Mode libre').click()
   const panel = page.locator('#activity-editor')
-  const editor = panel.getByRole('region', { name: 'Périmètres', exact: true })
+  const editor = panel.getByRole('region', { name: title, exact: true })
   await editor.waitFor()
   assert.equal(await print.first().textContent(), before)
   assert.equal(await button(panel, 'Valider les changements').count(), 0)
@@ -119,8 +121,45 @@ try {
   assert(await field(quadRow, 'Longueur').isVisible())
   assert(await field(quadRow, 'Largeur').isVisible())
   await quadrilateral.page.close()
+  const areaSquare = await open(context, 'aires-carre')
+  const areaSquareRow = question(areaSquare.editor, 1)
+  await field(areaSquareRow, 'Côté').fill('5,5')
+  assert.equal(await answer(areaSquare.print), '30,25 cm²')
+  await areaSquareRow.getByRole('combobox', { name: 'Unité des cotes', exact: true }).selectOption('dm')
+  assert.equal(await answer(areaSquare.print), '30,25 dm²')
+  await areaSquare.page.close()
+
+  const areaTriangle = await open(context, 'aires-triangle-manquant')
+  const areaTriangleRow = question(areaTriangle.editor, 1)
+  await field(areaTriangleRow, 'Base').fill('5')
+  await field(areaTriangleRow, 'Aire donnée').fill('30')
+  assert.match(await areaTriangle.print.first().textContent(), /L’aire mesure 30 cm²/)
+  assert.equal(await answer(areaTriangle.print), '12 cm')
+  assert.match(await areaTriangle.print.last().locator('.draft-pad-answer').first().textContent(), /\(30 × 2\) ÷ 5/)
+  await areaTriangle.page.close()
+
+  const areaDisk = await open(context, 'aires-disque-manquant')
+  const areaDiskRow = question(areaDisk.editor, 1)
+  await field(areaDiskRow, 'Aire donnée').fill('314')
+  assert.equal(await answer(areaDisk.print), '10 cm')
+  await field(areaDiskRow, 'Valeur de π').fill('3')
+  assert.equal(await answer(areaDisk.print), '10,23 cm')
+  assert.match(await areaDisk.print.first().textContent(), /Prenez π = 3\./)
+  await areaDisk.page.close()
+
+  const areaRhombus = await open(context, 'aires-losange', { count: 1, libreItems: [{
+    layout: 'geo', figure: 'rhombus', dims: { side: 8, height: 3, unit: 'cm' },
+    prompt: 'Calculez l’aire.', calcAnswer: '8 × 3', responseAnswer: '24 cm²', answer: '24 cm²',
+  }] })
+  const height = field(question(areaRhombus.editor, 1), 'Hauteur')
+  await height.fill('9')
+  assert.equal(await height.getAttribute('aria-invalid'), 'true')
+  assert.equal(await answer(areaRhombus.print), '24 cm²')
+  await height.fill('4')
+  assert.equal(await answer(areaRhombus.print), '32 cm²')
+  await areaRhombus.page.close()
   await context.close()
-  console.log('Périmètres A4 vérifiés avec cote manquante, unité, π, contraintes, verrou et conversion double A5.')
+  console.log('Périmètres et aires A4 vérifiés avec cote manquante, unité, π, contraintes, verrou et conversion double A5.')
 } finally {
   await browser?.close()
   await server?.close()

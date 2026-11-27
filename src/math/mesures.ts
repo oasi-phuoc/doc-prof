@@ -75,10 +75,10 @@ const perimeterTools = {
   circle: { keys: ['radius'], unknown: 'radius', factor: 2 },
 } satisfies Partial<Record<Figure, { keys: (keyof FigureDims)[]; unknown: FigureDims['ask']; factor: number }>>
 
-type PerimeterFigure = keyof typeof perimeterTools
-type PerimeterDimension = (typeof perimeterTools)[PerimeterFigure]['keys'][number]
+type PlanarMeasureFigure = keyof typeof perimeterTools
+type PerimeterDimension = (typeof perimeterTools)[PlanarMeasureFigure]['keys'][number]
 type PerimeterKey = PerimeterDimension | 'perimeter' | 'perimeterPi'
-export type PerimeterValues = Partial<Record<PerimeterKey, number>> & { unit?: string }
+type PerimeterValues = Partial<Record<PerimeterKey, number>> & { unit?: string }
 const perimeterNames: Record<PerimeterKey, string> = {
   side: 'Côté', length: 'Longueur', width: 'Largeur', a: 'Côté A', b: 'Côté B', c: 'Côté C',
   base: 'Base', top: 'Base supérieure', bottom: 'Base inférieure', radius: 'Rayon',
@@ -90,9 +90,9 @@ export function isPerimeterExercise(type: string): boolean {
     type === 'perimetres-melange'
 }
 
-function perimeterFigure(item: MathItem): PerimeterFigure | undefined {
+function planarMeasureFigure(item: MathItem): PlanarMeasureFigure | undefined {
   const figure = item.figure
-  return item.layout === 'geo' && figure && Object.hasOwn(perimeterTools, figure) ? figure as PerimeterFigure : undefined
+  return item.layout === 'geo' && figure && Object.hasOwn(perimeterTools, figure) ? figure as PlanarMeasureFigure : undefined
 }
 
 function perimeterGiven(item: MathItem): number {
@@ -101,7 +101,7 @@ function perimeterGiven(item: MathItem): number {
 }
 
 export function perimeterInputs(item: MathItem): { key: PerimeterKey; label: string; value: number }[] {
-  const figure = perimeterFigure(item)
+  const figure = planarMeasureFigure(item)
   const dims = item.dims
   if (!figure || !dims) return []
   const keys: PerimeterKey[] = perimeterTools[figure].keys.filter((key) => key !== dims.ask)
@@ -113,7 +113,7 @@ export function perimeterInputs(item: MathItem): { key: PerimeterKey; label: str
   }))
 }
 
-function perimeterItem(figure: PerimeterFigure, dims: FigureDims, missing: boolean, given?: number): MathItem {
+function perimeterItem(figure: PlanarMeasureFigure, dims: FigureDims, missing: boolean, given?: number): MathItem {
   const { keys, unknown, factor } = perimeterTools[figure]
   const pi = dims.perimeterPi ?? PI
   const unit = dims.unit ?? 'cm'
@@ -152,7 +152,7 @@ function perimeterItem(figure: PerimeterFigure, dims: FigureDims, missing: boole
 }
 
 export function editPerimeter(item: MathItem, values: PerimeterValues): MathItem | undefined {
-  const figure = perimeterFigure(item)
+  const figure = planarMeasureFigure(item)
   if (!figure || !item.dims) return undefined
   const { keys, unknown, factor } = perimeterTools[figure]
   const missing = Boolean(item.dims.ask)
@@ -214,157 +214,152 @@ function periCircle(rng: Rng, difficulty: Difficulty, missing: boolean, range?: 
   return perimeterItem('circle', { radius: val(rng, difficulty, range) }, missing)
 }
 
-function areaSquare(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
-  const s = val(rng, difficulty, range)
-  const a = round2(s * s)
-  if (!missing) {
-    return geo({
-      prompt: 'Calculez l’aire.',
-      figure: 'square',
-      dims: { side: s, unit: 'cm' },
-      calc: `${fmt(s)} × ${fmt(s)}`,
-      response: `${fmt(a)} cm²`,
-    })
+const areaTools = {
+  square: { keys: ['side'], unknown: 'side' },
+  rectangle: { keys: ['length', 'width'], unknown: 'width' },
+  triangle: { keys: ['base', 'height'], unknown: 'height' },
+  parallelogram: { keys: ['base', 'height'], unknown: 'height' },
+  rhombus: { keys: ['side', 'height'], unknown: 'height' },
+  trapezoid: { keys: ['top', 'bottom', 'height'], unknown: 'height' },
+  circle: { keys: ['radius'], unknown: 'radius' },
+} satisfies Record<PlanarMeasureFigure, { keys: (keyof FigureDims)[]; unknown: FigureDims['ask'] }>
+
+type AreaKey = (typeof areaTools)[PlanarMeasureFigure]['keys'][number] | 'area' | 'areaPi'
+type AreaValues = Partial<Record<AreaKey, number>> & { unit?: string }
+export type FigureMeasureValues = PerimeterValues & AreaValues
+
+const areaNames: Record<AreaKey, string> = {
+  side: 'Côté', length: 'Longueur', width: 'Largeur', base: 'Base', height: 'Hauteur',
+  radius: 'Rayon', top: 'Base supérieure', bottom: 'Base inférieure', area: 'Aire donnée', areaPi: 'Valeur de π',
+}
+
+export function isAreaExercise(type: string): boolean {
+  return /^aires-(?:carre|rectangle|triangle|parallelogramme|losange|trapeze|quadrilatere|disque)(?:-manquant)?$/.test(type) ||
+    type === 'aires-melange'
+}
+
+function areaGiven(item: MathItem): number {
+  const match = item.prompt?.match(/L’aire mesure ([0-9]+(?:[,.][0-9]+)?)/u)
+  return item.dims?.area ?? Number(match?.[1]?.replace(',', '.'))
+}
+
+export function areaInputs(item: MathItem): { key: AreaKey; label: string; value: number }[] {
+  const figure = planarMeasureFigure(item)
+  const dims = item.dims
+  if (!figure || !dims) return []
+  const keys: AreaKey[] = areaTools[figure].keys.filter((key) => key !== dims.ask)
+  if (dims.ask) keys.unshift('area')
+  if (figure === 'circle') keys.push('areaPi')
+  return keys.map((key) => ({
+    key, label: areaNames[key],
+    value: key === 'area' ? areaGiven(item) : key === 'areaPi' ? dims.areaPi ?? PI : dims[key]!,
+  }))
+}
+
+function areaTerms(figure: PlanarMeasureFigure, dims: FigureDims) {
+  if (figure === 'square') return { base: 1, text: '', divisor: 1 }
+  if (figure === 'circle') {
+    const pi = dims.areaPi ?? PI
+    return { base: pi, text: String(pi).replace('.', ','), divisor: 1 }
   }
-  return geo({
-    prompt: `L’aire mesure ${fmt(a)} cm². Calculez le côté.`,
-    figure: 'square',
-    dims: { ask: 'side', unit: 'cm' },
-    calc: `√${fmt(a)}`,
-    response: `${fmt(s)} cm`,
-  })
+  if (figure === 'trapezoid') {
+    return { base: dims.top! + dims.bottom!, text: `(${fmt(dims.top!)} + ${fmt(dims.bottom!)})`, divisor: 2 }
+  }
+  const first = areaTools[figure].keys[0]!
+  return { base: dims[first]!, text: fmt(dims[first]!), divisor: figure === 'triangle' ? 2 : 1 }
+}
+
+function areaSize(figure: PlanarMeasureFigure, dims: FigureDims, given?: number): number {
+  if (given === undefined) return dims[areaTools[figure].unknown]!
+  const { base, divisor } = areaTerms(figure, dims)
+  const size = given * divisor / base
+  return figure === 'square' || figure === 'circle' ? Math.sqrt(size) : size
+}
+
+function areaItem(figure: PlanarMeasureFigure, dims: FigureDims, missing: boolean, given?: number): MathItem {
+  const { unknown } = areaTools[figure]
+  const unit = dims.unit ?? 'cm'
+  const { base, text, divisor } = areaTerms(figure, dims)
+  const size = areaSize(figure, dims, given)
+  const square = figure === 'square'
+  const circle = figure === 'circle'
+  const total = given ?? round2((square || circle ? base * size * size : base * size) / divisor)
+  const piText = circle ? ` Prenez π = ${text}.` : ''
+  const labeled: FigureDims = { ...dims, unit }
+  if (figure === 'triangle') labeled.triangleKind = 'scalene'
+  let calculation: string
+  let prompt: string
+  if (missing) {
+    delete labeled[unknown]
+    labeled.ask = unknown
+    calculation = square ? `√${fmt(total)}`
+      : circle ? `√(${fmt(total)} ÷ ${text})`
+      : divisor === 2 ? `(${fmt(total)} × 2) ÷ ${text}` : `${fmt(total)} ÷ ${text}`
+    const directive = square ? 'Calculez le côté.'
+      : circle ? 'Calculez le rayon.'
+      : figure === 'rectangle' ? `La longueur mesure ${text} ${unit}. Calculez la largeur.`
+      : figure === 'rhombus' ? `Le côté mesure ${text} ${unit}. Calculez la hauteur.`
+      : figure === 'trapezoid' ? `Les bases mesurent ${fmt(dims.top!)} ${unit} et ${fmt(dims.bottom!)} ${unit}. Calculez la hauteur.`
+      : `La base mesure ${text} ${unit}. Calculez la hauteur.`
+    prompt = `L’aire mesure ${fmt(total)} ${unit}². ${directive}${piText}`
+  } else {
+    const product = `${text} × ${fmt(size)}`
+    calculation = square ? `${fmt(size)} × ${fmt(size)}`
+      : circle ? `${product}²`
+      : figure === 'triangle' ? `(${product}) ÷ 2`
+      : divisor === 2 ? `${product} ÷ 2` : product
+    prompt = `Calculez l’aire.${piText}`
+  }
+  return geo({ prompt, figure, dims: labeled, calc: calculation, response: missing ? `${fmt(size)} ${unit}` : `${fmt(total)} ${unit}²` })
+}
+
+export function editArea(item: MathItem, values: AreaValues): MathItem | undefined {
+  const figure = planarMeasureFigure(item)
+  if (!figure || !item.dims) return undefined
+  const missing = Boolean(item.dims.ask)
+  const dims = { ...item.dims, ...values }
+  const given = missing ? values.area ?? areaGiven(item) : undefined
+  if (Object.keys(values).length === 1 && values.unit !== undefined) {
+    return { ...item, ...areaItem(figure, dims, missing, given) }
+  }
+  const pi = dims.areaPi ?? PI
+  const { unknown, keys } = areaTools[figure]
+  const size = areaSize(figure, dims, given)
+  const dimensions = keys.map((key) => key === unknown ? size : dims[key]!)
+  if (figure === 'circle' && !(pi >= 3 && pi <= 4)) return undefined
+  if (dimensions.some((value) => !Number.isFinite(value) || round2(value) <= 0)) return undefined
+  if (figure === 'rhombus' && size > dims.side!) return undefined
+  return { ...item, ...areaItem(figure, dims, missing, given) }
+}
+
+function areaSquare(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
+  return areaItem('square', { side: val(rng, difficulty, range) }, missing)
 }
 
 function areaRectangle(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
-  const length = val(rng, difficulty, range)
-  const width = val(rng, difficulty, range)
-  const a = round2(length * width)
-  if (!missing) {
-    return geo({
-      prompt: 'Calculez l’aire.',
-      figure: 'rectangle',
-      dims: { length, width, unit: 'cm' },
-      calc: `${fmt(length)} × ${fmt(width)}`,
-      response: `${fmt(a)} cm²`,
-    })
-  }
-  return geo({
-    prompt: `L’aire mesure ${fmt(a)} cm². La longueur mesure ${fmt(length)} cm. Calculez la largeur.`,
-    figure: 'rectangle',
-    dims: { length, ask: 'width', unit: 'cm' },
-    calc: `${fmt(a)} ÷ ${fmt(length)}`,
-    response: `${fmt(width)} cm`,
-  })
+  return areaItem('rectangle', { length: val(rng, difficulty, range), width: val(rng, difficulty, range) }, missing)
 }
 
 function areaTriangle(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
-  const base = val(rng, difficulty, range)
-  const height = val(rng, difficulty, range)
-  const a = round2((base * height) / 2)
-  if (!missing) {
-    return geo({
-      prompt: 'Calculez l’aire.',
-      figure: 'triangle',
-      dims: { base, height, triangleKind: 'scalene', unit: 'cm' },
-      calc: `(${fmt(base)} × ${fmt(height)}) ÷ 2`,
-      response: `${fmt(a)} cm²`,
-    })
-  }
-  return geo({
-    prompt: `L’aire mesure ${fmt(a)} cm². La base mesure ${fmt(base)} cm. Calculez la hauteur.`,
-    figure: 'triangle',
-    dims: { base, ask: 'height', triangleKind: 'scalene', unit: 'cm' },
-    calc: `(${fmt(a)} × 2) ÷ ${fmt(base)}`,
-    response: `${fmt(height)} cm`,
-  })
+  return areaItem('triangle', { base: val(rng, difficulty, range), height: val(rng, difficulty, range) }, missing)
 }
 
 function areaParallelogram(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
-  const base = val(rng, difficulty, range)
-  const height = val(rng, difficulty, range)
-  const a = round2(base * height)
-  if (!missing) {
-    return geo({
-      prompt: 'Calculez l’aire.',
-      figure: 'parallelogram',
-      dims: { base, height, unit: 'cm' },
-      calc: `${fmt(base)} × ${fmt(height)}`,
-      response: `${fmt(a)} cm²`,
-    })
-  }
-  return geo({
-    prompt: `L’aire mesure ${fmt(a)} cm². La base mesure ${fmt(base)} cm. Calculez la hauteur.`,
-    figure: 'parallelogram',
-    dims: { base, ask: 'height', unit: 'cm' },
-    calc: `${fmt(a)} ÷ ${fmt(base)}`,
-    response: `${fmt(height)} cm`,
-  })
+  return areaItem('parallelogram', { base: val(rng, difficulty, range), height: val(rng, difficulty, range) }, missing)
 }
 
 function areaRhombus(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
-  const s = val(rng, difficulty, range)
-  const height = val(rng, difficulty, range)
-  const a = round2(s * height)
-  if (!missing) {
-    return geo({
-      prompt: 'Calculez l’aire.',
-      figure: 'rhombus',
-      dims: { side: s, height, unit: 'cm' },
-      calc: `${fmt(s)} × ${fmt(height)}`,
-      response: `${fmt(a)} cm²`,
-    })
-  }
-  return geo({
-    prompt: `L’aire mesure ${fmt(a)} cm². Le côté mesure ${fmt(s)} cm. Calculez la hauteur.`,
-    figure: 'rhombus',
-    dims: { side: s, ask: 'height', unit: 'cm' },
-    calc: `${fmt(a)} ÷ ${fmt(s)}`,
-    response: `${fmt(height)} cm`,
-  })
+  return areaItem('rhombus', { side: val(rng, difficulty, range), height: val(rng, difficulty, range) }, missing)
 }
 
 function areaTrapezoid(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
-  const top = val(rng, difficulty, range)
-  const bottom = val(rng, difficulty, range)
-  const height = val(rng, difficulty, range)
-  const a = round2(((top + bottom) * height) / 2)
-  if (!missing) {
-    return geo({
-      prompt: 'Calculez l’aire.',
-      figure: 'trapezoid',
-      dims: { top, bottom, height, unit: 'cm' },
-      calc: `(${fmt(top)} + ${fmt(bottom)}) × ${fmt(height)} ÷ 2`,
-      response: `${fmt(a)} cm²`,
-    })
-  }
-  return geo({
-    prompt: `L’aire mesure ${fmt(a)} cm². Les bases mesurent ${fmt(top)} cm et ${fmt(bottom)} cm. Calculez la hauteur.`,
-    figure: 'trapezoid',
-    dims: { top, bottom, ask: 'height', unit: 'cm' },
-    calc: `(${fmt(a)} × 2) ÷ (${fmt(top)} + ${fmt(bottom)})`,
-    response: `${fmt(height)} cm`,
-  })
+  return areaItem('trapezoid', {
+    top: val(rng, difficulty, range), bottom: val(rng, difficulty, range), height: val(rng, difficulty, range),
+  }, missing)
 }
 
 function areaDisk(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
-  const r = val(rng, difficulty, range)
-  const a = round2(PI * r * r)
-  if (!missing) {
-    return geo({
-      prompt: 'Calculez l’aire. Prenez π = 3,14.',
-      figure: 'circle',
-      dims: { radius: r, unit: 'cm' },
-      calc: `3,14 × ${fmt(r)}²`,
-      response: `${fmt(a)} cm²`,
-    })
-  }
-  return geo({
-    prompt: `L’aire mesure ${fmt(a)} cm². Calculez le rayon. Prenez π = 3,14.`,
-    figure: 'circle',
-    dims: { ask: 'radius', unit: 'cm' },
-    calc: `√(${fmt(a)} ÷ 3,14)`,
-    response: `${fmt(r)} cm`,
-  })
+  return areaItem('circle', { radius: val(rng, difficulty, range) }, missing)
 }
 
 function volCube(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
@@ -467,35 +462,42 @@ function volSphere(rng: Rng, difficulty: Difficulty, range?: NumberRange): MathI
   })
 }
 
-const perimeterGenerators: Record<PerimeterFigure, MeasureFn> = {
+const perimeterGenerators: Record<PlanarMeasureFigure, MeasureFn> = {
   square: periSquare, rectangle: periRectangle, triangle: periTriangle, parallelogram: periParallelogram,
   rhombus: periRhombus, trapezoid: periTrapezoid, circle: periCircle,
 }
 
-const AREA = [areaSquare, areaRectangle, areaTriangle, areaParallelogram, areaRhombus, areaTrapezoid, areaDisk] as const
+const areaGenerators: Record<PlanarMeasureFigure, MeasureFn> = {
+  square: areaSquare, rectangle: areaRectangle, triangle: areaTriangle, parallelogram: areaParallelogram,
+  rhombus: areaRhombus, trapezoid: areaTrapezoid, circle: areaDisk,
+}
 
 const VOL = [volCube, volCuboid, volCylinder, volCone] as const
 
 type MeasureFn = (rng: Rng, d: Difficulty, missing: boolean, range?: NumberRange) => MathItem
 
 export function perimeterChoices(type: string): { figure: Figure; label: string }[] {
-  const figures = type === 'perimetres-melange' ? Object.keys(perimeterGenerators) as PerimeterFigure[]
+  const figures = type === 'perimetres-melange' ? Object.keys(perimeterGenerators) as PlanarMeasureFigure[]
     : type.startsWith('perimetres-quadrilatere') ? PERI_QUAD_FIGURES : []
   return figures.map((figure) => ({ figure, label: QUAD_SHAPE_LABELS[figure] ?? (figure === 'triangle' ? 'Triangle' : 'Cercle') }))
 }
 
 export function withPerimeterFigure(item: MathItem, figure: Figure, rng: Rng, difficulty: Difficulty): MathItem {
   if (!Object.hasOwn(perimeterGenerators, figure) || figure === item.figure) return item
-  const next = perimeterGenerators[figure as PerimeterFigure](rng, difficulty, Boolean(item.dims?.ask))
+  const next = perimeterGenerators[figure as PlanarMeasureFigure](rng, difficulty, Boolean(item.dims?.ask))
   return { ...item, ...(editPerimeter(next, { unit: item.dims?.unit ?? 'cm' }) ?? next) }
 }
 
-const AREA_QUAD: Partial<Record<Figure, MeasureFn>> = {
-  square: areaSquare,
-  rectangle: areaRectangle,
-  parallelogram: areaParallelogram,
-  rhombus: areaRhombus,
-  trapezoid: areaTrapezoid,
+export function areaChoices(type: string): { figure: Figure; label: string }[] {
+  const figures = type === 'aires-melange' ? Object.keys(areaGenerators) as PlanarMeasureFigure[]
+    : type.startsWith('aires-quadrilatere') ? AREA_QUAD_FIGURES : []
+  return figures.map((figure) => ({ figure, label: QUAD_SHAPE_LABELS[figure] ?? (figure === 'triangle' ? 'Triangle' : 'Disque') }))
+}
+
+export function withAreaFigure(item: MathItem, figure: Figure, rng: Rng, difficulty: Difficulty): MathItem {
+  if (!Object.hasOwn(areaGenerators, figure) || figure === item.figure) return item
+  const next = areaGenerators[figure as PlanarMeasureFigure](rng, difficulty, Boolean(item.dims?.ask))
+  return { ...item, ...(editArea(next, { unit: item.dims?.unit ?? 'cm' }) ?? next) }
 }
 
 const VOL_QUAD: Partial<Record<Figure, MeasureFn>> = {
@@ -535,7 +537,7 @@ export function tryGenerateMesure(
     return pickQuad(rng, perimeterGenerators, PERI_QUAD_FIGURES, shapes, d, typeId.endsWith('-manquant'), range)
   }
   if (typeId === 'aires-quadrilatere' || typeId === 'aires-quadrilatere-manquant') {
-    return pickQuad(rng, AREA_QUAD, AREA_QUAD_FIGURES, shapes, d, typeId.endsWith('-manquant'), range)
+    return pickQuad(rng, areaGenerators, AREA_QUAD_FIGURES, shapes, d, typeId.endsWith('-manquant'), range)
   }
   if (typeId === 'volumes-quadrilatere' || typeId === 'volumes-quadrilatere-manquant') {
     return pickQuad(rng, VOL_QUAD, VOLUME_QUAD_FIGURES, shapes, d, typeId.endsWith('-manquant'), range)
@@ -545,7 +547,7 @@ export function tryGenerateMesure(
     return fn(rng, d, rng() < 0.45, range)
   }
   if (typeId === 'aires-melange') {
-    const fn = pick(rng, [...AREA])
+    const fn = pick(rng, Object.values(areaGenerators))
     return fn(rng, d, rng() < 0.45, range)
   }
   if (typeId === 'volumes-melange') {

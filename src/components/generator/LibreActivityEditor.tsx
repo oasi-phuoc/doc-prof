@@ -28,7 +28,7 @@ function tcfSupportExercise(items: MathItem[] | undefined): TcfExercise | undefi
 import { GenericLibreEditor } from '@/components/generator/GenericLibreEditor'
 import { identifyItems } from '@/components/generator/libre/flat-items'
 import { TheoryEditor } from '@/components/generator/libre/TheoryEditor'
-import { PerimeterEditor } from '@/components/generator/libre/PerimeterEditor'
+import { FigureMeasureEditor } from '@/components/generator/libre/FigureMeasureEditor'
 import { LetterGridEditor } from '@/components/generator/libre/LetterGridEditor'
 import { LogicEditor } from '@/components/generator/libre/LogicEditor'
 import { SyllableEditor } from '@/components/generator/libre/SyllableEditor'
@@ -56,7 +56,7 @@ type LibreActivityEditorProps = {
   evalMode: boolean
   livePhrase: boolean
   theory: SheetBlockItems | null
-  perimeters: SheetBlockItems | null
+  measuredFigures: SheetBlockItems | null
   textExercise: SheetBlockItems | null
   letterGrid: SheetBlockItems | null
   logic: SheetBlockItems | null
@@ -117,7 +117,7 @@ export function LibreActivityEditor({
   evalMode,
   livePhrase,
   theory,
-  perimeters,
+  measuredFigures,
   textExercise,
   letterGrid,
   logic,
@@ -265,12 +265,12 @@ export function LibreActivityEditor({
       {theory ? (
         <TheoryEditor exerciseType={activeBlock.exerciseType} items={theory.items} onChange={(libreItems) => updatePage({ libreItems })} />
       ) : null}
-      {perimeters?.items.length ? (
-        <PerimeterEditor type={activeBlock.exerciseType} difficulty={activeBlock.difficulty}
-          items={identifyItems(perimeters.items, editedActivityId)} instruction={perimeters.instruction}
+      {measuredFigures?.items.length ? (
+        <FigureMeasureEditor type={activeBlock.exerciseType} difficulty={activeBlock.difficulty}
+          items={identifyItems(measuredFigures.items, editedActivityId)} instruction={measuredFigures.instruction}
           fields={transientFields} writeField={onTransientField}
-          onInstruction={(instruction) => editActivityItems(identifyItems(perimeters.items, editedActivityId), instruction)}
-          onChange={(items) => editActivityItems(items, perimeters.instruction)}
+          onInstruction={(instruction) => editActivityItems(identifyItems(measuredFigures.items, editedActivityId), instruction)}
+          onChange={(items) => editActivityItems(items, measuredFigures.instruction)}
           onRegenerate={(id) => onRegenerateBlock?.(safeBlockIndex, undefined, id)} />
       ) : null}
       {wordListContent?.items.length ? (
@@ -375,7 +375,7 @@ export function LibreActivityEditor({
             : { phraseInstruction })}
         />
       ) : null}
-      {!theory && !perimeters && (isNumberLibreDomain || isTpmLike) && !isDroites && !isConstruire ? (
+      {!theory && !measuredFigures && (isNumberLibreDomain || isTpmLike) && !isDroites && !isConstruire ? (
         <TpmLibreEditor
           key={editedActivityId}
           liveArithmetic={liveArithmetic}

@@ -275,7 +275,7 @@ export function usePageConfig({
         grammarPageBreakAfterQuestionIds: activeBlock.grammarPageBreakAfterQuestionIds?.filter((id) => cutIds.has(id)) }
     }
     const glossaryBank = mathGlossaryBank(activeBlock.exerciseType)
-    const resizesAppliedItems = glossaryBank || inlineArithmetic || editorProfile === 'question-simple' || editorProfile === 'perimetre' ||
+    const resizesAppliedItems = glossaryBank || inlineArithmetic || editorProfile === 'question-simple' || editorProfile === 'perimetre' || editorProfile === 'aire' ||
       editorProfile === 'logique-visuelle' || editorProfile === 'mots-dans-l-ordre'
     if (resizesAppliedItems && count != null && patch.libreItems === undefined) {
       const lists = [activeBlock.libreItems ?? [], (doubleA5 ? activeBlock.a5RightLibre?.items : undefined) ?? []]

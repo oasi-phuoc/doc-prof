@@ -1,8 +1,11 @@
-import { editPerimeter, perimeterChoices, perimeterInputs, withPerimeterFigure, type PerimeterValues } from '@/math/mesures'
+import {
+  areaChoices, areaInputs, editArea, editPerimeter, isAreaExercise,
+  perimeterChoices, perimeterInputs, withAreaFigure, withPerimeterFigure, type FigureMeasureValues,
+} from '@/math/mesures'
 import { createRng, randomSeed } from '@/math/rng'
 import type { Difficulty, MathItem } from '@/math/types'
 
-export function PerimeterEditor({ type, difficulty, items, instruction, fields, writeField, onInstruction, onChange, onRegenerate }: {
+export function FigureMeasureEditor({ type, difficulty, items, instruction, fields, writeField, onInstruction, onChange, onRegenerate }: {
   type: string
   difficulty: Difficulty
   items: MathItem[]
@@ -13,7 +16,11 @@ export function PerimeterEditor({ type, difficulty, items, instruction, fields, 
   onChange: (items: MathItem[]) => void
   onRegenerate: (id?: string) => void
 }) {
-  const figures = perimeterChoices(type)
+  const area = isAreaExercise(type)
+  const figures = area ? areaChoices(type) : perimeterChoices(type)
+  const readInputs = area ? areaInputs : perimeterInputs
+  const edit = area ? editArea : editPerimeter
+  const chooseFigure = area ? withAreaFigure : withPerimeterFigure
   function update(index: number, item: MathItem) {
     onChange(items.map((current, position) => position === index ? item : current))
   }
@@ -21,13 +28,13 @@ export function PerimeterEditor({ type, difficulty, items, instruction, fields, 
   function regenerate(id?: string) {
     for (const item of items) {
       if (item.libreLocked || !item.libreId || (id && id !== item.libreId)) continue
-      for (const { key } of perimeterInputs(item)) writeField(`${item.libreId}:${key}`, null)
+      for (const { key } of readInputs(item)) writeField(`${item.libreId}:${key}`, null)
     }
     onRegenerate(id)
   }
 
   return (
-    <section className="quad-libre-block" aria-label="Périmètres">
+    <section className="quad-libre-block" aria-label={area ? 'Aires' : 'Périmètres'}>
       <label className="libre-field is-line">
         <span>Consigne</span>
         <textarea className="libre-line-input is-textarea" rows={2} value={instruction}
@@ -39,7 +46,7 @@ export function PerimeterEditor({ type, difficulty, items, instruction, fields, 
         </button>
       )}
       {items.map((item, index) => {
-        const inputs = perimeterInputs(item)
+        const inputs = readInputs(item)
         if (!inputs.length) return null
         const id = item.libreId ?? `perimetre-${index}`
         const unit = item.dims?.unit ?? 'cm'
@@ -53,7 +60,7 @@ export function PerimeterEditor({ type, difficulty, items, instruction, fields, 
                   const choice = figures.find(({ figure }) => figure === event.target.value)
                   if (!choice) return
                   for (const { key } of inputs) writeField(`${id}:${key}`, null)
-                  update(index, withPerimeterFigure(item, choice.figure, createRng(randomSeed()), difficulty))
+                  update(index, chooseFigure(item, choice.figure, createRng(randomSeed()), difficulty))
                 }}>
                   {figures.map(({ figure, label }) => <option key={figure} value={figure}>{label}</option>)}
                 </select>
@@ -71,14 +78,14 @@ export function PerimeterEditor({ type, difficulty, items, instruction, fields, 
                       aria-invalid={error} aria-describedby={error ? field : undefined} data-applied-value={read}
                       onChange={(event) => {
                         const text = event.target.value
-                        const values: PerimeterValues = {}
+                        const values: FigureMeasureValues = {}
                         for (const { key: name } of inputs) {
                           const candidate = (name === key ? text : fields[`${id}:${name}`])?.trim()
                           if (candidate === undefined) continue
-                          const pattern = name === 'perimeterPi' ? /^\d{1,7}(?:[.,]\d{1,6})?$/ : /^\d{1,7}(?:[.,]\d{1,2})?$/
+                          const pattern = name.endsWith('Pi') ? /^\d{1,7}(?:[.,]\d{1,6})?$/ : /^\d{1,7}(?:[.,]\d{1,2})?$/
                           if (pattern.test(candidate)) values[name] = Number(candidate.replace(',', '.'))
                         }
-                        const edited = values[key] === undefined ? undefined : editPerimeter(item, values)
+                        const edited = values[key] === undefined ? undefined : edit(item, values)
                         writeField(field, edited ? null : text)
                         if (edited) {
                           for (const { key: name } of inputs) {
@@ -91,7 +98,7 @@ export function PerimeterEditor({ type, difficulty, items, instruction, fields, 
                       }} />
                   </label>
                   {error && <span id={field} className="libre-field-error" role="alert">
-                    {key === 'perimeterPi' ? 'Pour π, saisissez une valeur de 3 à 4.'
+                    {key.endsWith('Pi') ? 'Pour π, saisissez une valeur de 3 à 4.'
                       : 'Saisissez une mesure positive compatible avec les autres cotes de la figure.'}
                   </span>}
                 </div>
@@ -100,7 +107,7 @@ export function PerimeterEditor({ type, difficulty, items, instruction, fields, 
             <label className="libre-field is-line">
               <span>Unité des cotes</span>
               <select className="libre-line-input" value={unit} onChange={(event) => {
-                const edited = editPerimeter(item, { unit: event.target.value })
+                const edited = edit(item, { unit: event.target.value })
                 if (edited) update(index, edited)
               }}>
                 {[...new Set(['mm', 'cm', 'dm', 'm', 'km', unit])].map((choice) => <option key={choice} value={choice}>{choice}</option>)}

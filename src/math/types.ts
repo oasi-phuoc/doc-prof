@@ -412,6 +412,8 @@ export type FigureDims = {
   /** Périmètre donné (ex. 25–26 CFR) — placeholder `[périmètre]` dans l’énoncé. */
   perimeter?: number
   perimeterPi?: number
+  area?: number
+  areaPi?: number
   unit?: string
   triangleKind?: 'equilateral' | 'isosceles' | 'scalene' | 'right'
   trapezoidKind?: 'rectangle' | 'isosceles' | 'scalene'

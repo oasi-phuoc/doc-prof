@@ -62,7 +62,11 @@ L’inventaire sur `0974f642` raccorde les quatre variantes. Sur 4 269 contextes
 
 Les 17 types de périmètres donnent accès aux cotes connues, au périmètre donné lorsqu’une cote est à trouver, à l’unité et à la valeur de π. Les exercices mixtes et ceux sur les quadrilatères permettent aussi de choisir une figure. Les modifications recalculent la figure, l’énoncé et le corrigé. Les cotes en cours de saisie s’appliquent ensemble dès qu’elles forment une figure valide.
 
-Le test `node tests/mode-libre/perimeter-browser.mjs` couvre le calcul du périmètre, la cote inconnue, le changement d’unité et de figure, le rejet d’un triangle dégénéré, le verrou, l’annulation et le passage en double A5. Les 153 tirages automatiques comparés à `54fcc3b3` gardent les mêmes figures et résultats. L’inventaire sur `ebb8c54b` compte 523 contextes A4 à raccorder sur 4 269. Il ne relève aucune erreur de génération.
+Le test `node tests/mode-libre/figure-measures-browser.mjs` couvre le calcul du périmètre, la cote inconnue, le changement d’unité et de figure, le rejet d’un triangle dégénéré, le verrou, l’annulation et le passage en double A5. Les 153 tirages automatiques comparés à `54fcc3b3` gardent les mêmes figures et résultats. L’inventaire sur `ebb8c54b` compte 523 contextes A4 à raccorder sur 4 269. Il ne relève aucune erreur de génération.
+
+### Aires des figures simples en A4
+
+Les 17 types d’aires partagent le panneau des mesures. Les champs disponibles suivent la figure et la question posée. Une aire donnée recalcule la cote cherchée, et l’unité s’affiche au carré pour l’aire et en unité de longueur pour une cote. Le navigateur vérifie le côté décimal d’un carré, la hauteur d’un triangle, le rayon d’un disque et le rejet d’une hauteur incompatible avec un losange. Les 153 tirages automatiques comparés à `13091c87` gardent leurs figures et leurs résultats.
 
 ### Écoute de mots en Soutien FR et Alphabétisation
 
