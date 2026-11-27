@@ -4,7 +4,7 @@ L’[ordonnance à la pharmacie](https://github.com/oasi-phuoc/doc-prof/blob/064
 
 Le [suivi par fichier](audit-images-po-tpf-20261127.csv) donne le chemin du média dans le dépôt, les identifiants des exercices, l’étape d’une série, l’écart visuel et les actions à préserver. Le niveau est celui de la banque du TPF. La revue couvre les fichiers actifs résolus par le générateur. Elle a été faite sur planches et par comparaison agrandie pour les exemples prioritaires et les cas intermédiaires.
 
-La reprise couvre les **99 scènes A1–A2** du format **Image à décrire et interaction**. **20 sur 99** ont été remplacées à leur emplacement d’origine. Le premier lot avait déjà repris 36 images A0–A1. Le tableau présente l’audit initial et le CSV consigne chaque image publiée.
+La reprise couvre les **99 scènes A1–A2** du format **Image à décrire et interaction**. **34 sur 99** ont été remplacées à leur emplacement d’origine. Le premier lot avait déjà repris 36 images A0–A1. Le tableau présente l’audit initial et le CSV consigne chaque image publiée.
 
 | Banque | Images examinées | Rendu photo à refaire | Décor à harmoniser | Contours à harmoniser | À confirmer | Sans reprise prioritaire | Référence validée |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
