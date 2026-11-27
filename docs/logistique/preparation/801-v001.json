@@ -1,0 +1,240 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Expliquer le rôle du **GTIN** à la caisse et la différence GTIN-8 / GTIN-13 / ISBN / UPC\n- Décrire **SSCC** et **GS1-128** pour le suivi des unités de transport\n- Comparer **QR** et **Data Matrix** et citer des usages logistiques\n- Appliquer les règles de **placement** des codes et expliquer le principe **RFID** (tag + lecteur)",
+  "overview": "## Aperçu du module 801\n\n- Identifier un article, une unité d'expédition et un lot en choisissant la bonne donnée.\n- Reconnaître les supports optiques et le principe d'une lecture par radio.\n- Placer l'étiquette pour la rendre lisible aux points de passage.",
+  "replacements": [
+    {
+      "from": "Série de numéros pour **étiqueter les palettes** · jusqu'à **128** caractères · alphanumérique (chiffres + lettres). Données aussi imprimées en clair sur l'étiquette. Permet le **Track & Trace** tout au long du trajet — à condition de lire à **chaque interface**. En Allemagne : **NVE** (numéro d'unité d'expédition).",
+      "to": "Le **SSCC** identifie une unité logistique, par exemple une palette expédiée. Il contient **18 chiffres**. Le code GS1-128 peut porter cette donnée sous l'identifiant d'application **(00)**.",
+      "reason": "Corriger la longueur et la nature de l'identifiant."
+    },
+    {
+      "from": "Code-barres **1-D** sur les produits en magasin · identification à la caisse + prix depuis la BDD. Chaque numéro est **unique au monde** (sinon confusion à la caisse).",
+      "to": "Le GTIN est un **identifiant numérique**. Un code-barres tel qu'EAN-13 peut le représenter. Le système associe la référence à la désignation et au prix.",
+      "reason": "Distinguer les données et leur support."
+    },
+    {
+      "from": "Les premiers chiffres = **pays** ou **groupe de produits** · le **dernier** = chiffre de contrôle.",
+      "to": "Le préfixe ordinaire indique généralement l'organisation GS1 qui a attribué le numéro, pas le pays de fabrication. Certains préfixes sont réservés à des catégories particulières. Le dernier chiffre sert au contrôle.",
+      "reason": "Éviter une interprétation erronée de l'origine."
+    },
+    {
+      "from": "### 1.4 GTIN-128 (GS1-128)",
+      "to": "### 1.4 GS1-128",
+      "reason": "Employer le nom correct de la symbologie."
+    },
+    {
+      "from": "Étiquette article avec **DLC** + **n° de lot** · souvent + GTIN-128. En entreprise certifiée : rattacher un produit à son lot même après vente → **rappel ciblé** (seuls les lots concernés).",
+      "to": "Selon la syntaxe et le système adoptés, une étiquette peut associer référence, durée de validité et lot. Il faut aussi conserver le lien entre le lot et les mouvements pour permettre un **rappel ciblé**.",
+      "reason": "Le symbole seul ne garantit pas la remontée des données."
+    },
+    {
+      "from": "Étiquettes sur **≥ 2 côtés**, au-dessus du coin. Symbole le plus bas à **45 cm** du sol (± **5 cm**). Distance bord extérieur ≥ **5 cm**.",
+      "to": "Sur une unité palettisée, prévoir deux faces accessibles lorsque le protocole le prévoit. Pour l'étiquette logistique GS1, la zone de pose habituelle du symbole se situe entre **400 et 800 mm** de la base, avec au moins **50 mm** du bord vertical. Suivre les consignes adaptées aux unités basses.",
+      "reason": "Donner une plage de pose et préciser le périmètre."
+    },
+    {
+      "from": "| **Lecteur / encodeur** | Lit ou modifie les données · passif ou actif · cm → > 1 km selon fréquence / puissance / environnement |",
+      "to": "| **Lecteur / encodeur** | Lit ou écrit selon le matériel. La portée dépend du système, de l'étiquette et de l'environnement. |",
+      "reason": "Distinguer la lecture d'un tag des performances de localisation."
+    },
+    {
+      "from": "**Avantages :** plus de saisie manuelle · ticket détaillé · changements de prix (promos) en rayon seulement, pas sur chaque article.",
+      "to": "**Avantages :** moins de saisies manuelles, ticket détaillé et mise à jour du prix dans le système.",
+      "reason": "Corriger la présentation du code et de ses usages."
+    },
+    {
+      "from": "| 3 | Pays / langue |",
+      "to": "| 3 | Groupe d’enregistrement germanophone |",
+      "reason": "Corriger la présentation du code et de ses usages."
+    },
+    {
+      "from": "| 1111 | N° éditeur |",
+      "to": "| 1111 | Numéro de publication |",
+      "reason": "Corriger la présentation du code et de ses usages."
+    }
+  ],
+  "summary": [
+    "Identifier un article, une unité d'expédition et un lot en choisissant la bonne donnée.",
+    "Reconnaître les supports optiques et le principe d'une lecture par radio.",
+    "Placer l'étiquette pour la rendre lisible aux points de passage."
+  ],
+  "glossary": [
+    [
+      "GTIN",
+      "Identifiant GS1 d'une référence commerciale à un niveau d'emballage défini."
+    ],
+    [
+      "GTIN-8",
+      "Identifiant de huit chiffres pouvant notamment être utilisé sur de petits articles."
+    ],
+    [
+      "GTIN-13",
+      "Identifiant commercial de treize chiffres avec un chiffre de contrôle."
+    ],
+    [
+      "SSCC",
+      "Identifiant GS1 de dix-huit chiffres attribué à une unité logistique."
+    ],
+    [
+      "GS1-128",
+      "Symbole linéaire qui peut encoder plusieurs données typées, dont le SSCC."
+    ],
+    [
+      "Identifiant d'application",
+      "Préfixe qui indique la nature et le format d'une donnée GS1."
+    ],
+    [
+      "ISBN",
+      "Numéro international attribué à une édition ou à un format de publication."
+    ],
+    [
+      "Data Matrix",
+      "Symbole matriciel à deux dimensions reconnaissable à ses deux bordures pleines adjacentes."
+    ],
+    [
+      "Code QR",
+      "Symbole matriciel repérable notamment par trois motifs carrés dans les coins."
+    ],
+    [
+      "RFID",
+      "Identification par échange radio entre une étiquette et un lecteur."
+    ],
+    [
+      "Lot",
+      "Ensemble d'unités rattaché à une même origine ou fabrication pour le suivi."
+    ],
+    [
+      "Chiffre de contrôle",
+      "Chiffre calculé à partir des autres pour détecter certaines erreurs de saisie."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Le même article est livré en 12 cartons de 8 pièces. Combien de pièces contrôlez-vous ?",
+      "answer": "96 pièces",
+      "calculation": "12 × 8 = 96."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Chaque palette reçoit deux étiquettes portant le même SSCC. Combien d'étiquettes pour 17 palettes ?",
+      "answer": "34 étiquettes",
+      "calculation": "17 × 2 = 34."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Sur 150 lectures de test, 144 réussissent du premier coup. Combien faut-il relire ?",
+      "answer": "6 lectures",
+      "calculation": "150 − 144 = 6."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Dans l'exercice, le symbole doit laisser au moins 50 mm libres au bord. Vous mesurez 37 mm. De combien au minimum faut-il l'éloigner ?",
+      "answer": "13 mm",
+      "calculation": "50 − 37 = 13."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Pour les douze premiers chiffres d'un GTIN-13, la somme pondérée vaut 84. Quelle valeur ajouter pour atteindre le multiple de 10 suivant ?",
+      "answer": "6",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "90 − 84 = 6."
+    },
+    {
+      "id": "maths-fiche-6",
+      "kind": "maths",
+      "prompt": "Sur 250 passages, 240 sont lus à la première tentative. Quel est le taux de réussite initial ?",
+      "answer": "96 %",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "240 ÷ 250 × 100 = 96."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Que distingue le SSCC lorsque deux palettes transportent le même produit ?",
+      "answer": "Les deux unités logistiques, chacune avec son propre SSCC."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "De quelle donnée a-t-on besoin pour rappeler une série d'articles fabriqués ensemble ?",
+      "answer": "Le numéro de lot, à associer à la référence et aux mouvements concernés."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Un GTIN permet-il de déduire le prix à lui seul ?",
+      "answer": "Le GTIN identifie la référence; le prix est rattaché à cette référence dans le système."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Quel repère visuel distingue un Data Matrix d'un QR courant ?",
+      "answer": "Le Data Matrix possède deux bords adjacents pleins. Le QR possède trois grands repères carrés."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Pourquoi vérifier la lisibilité de l'étiquette après filmage d'une palette ?",
+      "answer": "Le film peut masquer, froisser ou rendre réfléchissant le symbole."
+    },
+    {
+      "id": "verification-fiche-6",
+      "kind": "verification",
+      "prompt": "Que lit-on avec un lecteur RFID ?",
+      "answer": "Des données de l'étiquette transmises par radio, selon la portée et l'environnement."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Deux palettes identiques à destination de deux clients ont le même SSCC. Comment intervenir ?",
+      "answer": "Mettre les unités en attente, identifier chacune, attribuer les SSCC distincts selon la procédure et vérifier la cohérence du système et des étiquettes."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Une palette doit pouvoir être lue depuis deux faces. Où coller les étiquettes ?",
+      "answer": "Choisir deux faces accessibles selon la consigne de pose, loin des bords et des plis, avec le même identifiant sur les deux faces. Tester après filmage."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Le service qualité annonce que seul le lot B4 est touché. Comment éviter le retrait de tous les articles ?",
+      "answer": "Associer référence, lot et mouvements dans le système, isoler les unités B4 et identifier précisément les livraisons à signaler."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "1.1 SSCC (Serial Shipping Container Code)",
+      "file": "log-801-notions-1-v001.svg",
+      "alt": "GTIN. Référence de produit. SSCC. Unité logistique précise. Lot. Série à tracer.",
+      "caption": "Deux palettes du même produit gardent des SSCC différents.",
+      "sha256": "1bd74b1e3a255cf40197ba7152c7f6be43d2c12d372a6fb2366781e7e735c651",
+      "origin": "Illustration originale Doc-Prof du module 801."
+    },
+    {
+      "anchor": "1.7 Placement des codes",
+      "file": "log-801-notions-2-v001.svg",
+      "alt": "Sur le côté de la palette, une étiquette apparaît dans la zone de 400 à 800 mm depuis la base. Une marge d'au moins 50 mm la sépare du bord vertical.",
+      "caption": "Schéma de principe hors échelle. Les dimensions concernent le symbole de l’étiquette logistique GS1 sur une unité de hauteur suffisante.",
+      "sha256": "ad75b49797de790ae0722828fa85ec5190b8af0ef0db297393e8e7793bf1128c",
+      "origin": "Illustration originale Doc-Prof du module 801."
+    }
+  ]
+}

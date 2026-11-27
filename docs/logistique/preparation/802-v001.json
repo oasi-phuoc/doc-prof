@@ -1,0 +1,204 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Expliquer pourquoi surveiller le transport et le rôle des **indicateurs / enregistreurs**\n- Décrire le **Track & Trace** (classique vs RFID) et le suivi d'un colis (statut, quittance)\n- Appliquer le principe **LIFO** et citer les facteurs de planification des tournées\n- Distinguer planification **manuelle** et **optimisation** assistée (4 axes)",
+  "overview": "## Aperçu du module 802\n\n- Surveiller les conditions de transport et identifier les preuves disponibles.\n- Lire une suite de statuts et utiliser l'identifiant d'envoi lors d'une recherche.\n- Préparer une tournée et ordonner les unités en fonction des arrêts et des contraintes.",
+  "replacements": [
+    {
+      "from": "Conséquences : argent · confiance · **réputation**. L'**assurance transport** couvre le financier **si le dommage est prouvé** — pas l'image. Les indicateurs prouvent le respect (ou non) des exigences de manutention.",
+      "to": "Un incident peut entraîner des coûts et dégrader la confiance. Les mesures et justificatifs documentent la réclamation; la couverture dépend du contrat et des circonstances.",
+      "reason": "Éviter de promettre une indemnisation."
+    },
+    {
+      "from": "**Enregistreur de données de transport :** mesure continue et incorruptible (prod. → client) · chocs, vibrations, température, humidité, pression, inclinaison · horodatage · export PC · analyses stats / graphiques.",
+      "to": "**Enregistreur de données de transport :** mesure à intervalle défini, par exemple température et humidité, avec horodatage. Vérifier l'identification, l'emplacement, la configuration et la continuité des mesures.",
+      "reason": "Préciser comment juger la fiabilité de l'enregistrement."
+    },
+    {
+      "from": "| **Suivi** | N° d'envoi sur post.ch · historique ~**180 jours** · services de planification tant que non livré |",
+      "to": "| **Suivi** | Numéro d'envoi dans le service officiel du transporteur; durée d'historique et options selon la prestation. |",
+      "reason": "Éviter de figer la durée d'un service."
+    },
+    {
+      "from": "Lecture en **2 étapes** au scanner : d'abord le **statut**, puis le **code d'identification**.",
+      "to": "Selon le système, l'opérateur sélectionne ou confirme d'abord l'événement, puis lit l'identifiant de l'envoi. Le statut indique le dernier événement transmis.",
+      "reason": "Distinguer le principe d'une implémentation."
+    }
+  ],
+  "summary": [
+    "Surveiller les conditions de transport et identifier les preuves disponibles.",
+    "Lire une suite de statuts et utiliser l'identifiant d'envoi lors d'une recherche.",
+    "Préparer une tournée et ordonner les unités en fonction des arrêts et des contraintes."
+  ],
+  "glossary": [
+    [
+      "Indicateur de choc",
+      "Dispositif qui révèle le dépassement d'un seuil pendant la manutention ou le transport."
+    ],
+    [
+      "Enregistreur de données",
+      "Appareil qui conserve des mesures et leur horaire."
+    ],
+    [
+      "Chaîne du froid",
+      "Maintien des conditions de température exigées le long du trajet."
+    ],
+    [
+      "Statut",
+      "Événement enregistré qui renseigne sur l'étape atteinte par un envoi."
+    ],
+    [
+      "Track & Trace",
+      "Suivi du dernier événement connu et historique des étapes enregistrées."
+    ],
+    [
+      "Quittance",
+      "Justificatif délivré pour attester le dépôt ou une remise selon le cas."
+    ],
+    [
+      "Tournée",
+      "Suite organisée d'arrêts desservis avec un moyen de transport."
+    ],
+    [
+      "Créneau",
+      "Intervalle prévu ou accepté pour une livraison ou un enlèvement."
+    ],
+    [
+      "LIFO",
+      "Dernier chargé, premier déchargé, dans une configuration de chargement compatible."
+    ],
+    [
+      "Charge utile",
+      "Masse maximale de chargement admissible selon les données du véhicule et les limites applicables."
+    ],
+    [
+      "Arrimage",
+      "Immobilisation des marchandises contre les déplacements pendant le transport."
+    ],
+    [
+      "Point de passage",
+      "Lieu ou étape où l'envoi peut être identifié et enregistré."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Pour une tournée, les tronçons mesurent 18, 22, 9 et 16 km. Quelle distance prévoir ?",
+      "answer": "65 km",
+      "calculation": "18 + 22 + 9 + 16 = 65."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Vous partez à 08 h 20. Le trajet dure 36 min et le premier déchargement 14 min. À quelle heure repartez-vous du premier arrêt ?",
+      "answer": "09 h 10",
+      "calculation": "08 h 20 + 36 min + 14 min = 09 h 10."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Trois unités pèsent 340, 265 et 290 kg. La charge utile donnée est 950 kg. Calculez la marge de masse.",
+      "answer": "55 kg",
+      "calculation": "950 − (340 + 265 + 290) = 55."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "L'indicateur doit signaler une température au-dessus de 8 °C. Le maximum mesuré est 10,5 °C. Quel dépassement notez-vous ?",
+      "answer": "2,5 °C",
+      "calculation": "10,5 − 8 = 2,5."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Sur 80 livraisons, 74 respectent leur créneau. Quel taux est obtenu au dixième ?",
+      "answer": "92,5 %",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "74 ÷ 80 × 100 = 92,5."
+    },
+    {
+      "id": "maths-fiche-6",
+      "kind": "maths",
+      "prompt": "Une optimisation fait passer une tournée de 160 à 136 km. Calculez le gain relatif en kilomètres.",
+      "answer": "15 %",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "(160 − 136) ÷ 160 × 100 = 15."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quelle différence distingue un indicateur à seuil d'un enregistreur de données ?",
+      "answer": "L'indicateur signale un dépassement; l'enregistreur permet de relire une série de valeurs et leurs horaires."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Que prouve la quittance remise lors d'un dépôt ?",
+      "answer": "Le dépôt enregistré de l'envoi selon les données portées sur la quittance."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Pourquoi le dernier statut ne donne-t-il pas toujours la position actuelle ?",
+      "answer": "Il décrit le dernier événement enregistré; aucun autre événement n'a peut-être encore été transmis."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Quel ordre de chargement convient à A, B puis C avec un seul accès arrière et sans autre contrainte ?",
+      "answer": "Charger C, puis B, puis A pour accéder à A en premier."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Citez deux contraintes à contrôler avant de valider la tournée.",
+      "answer": "Par exemple les créneaux, les accès, le poids, le volume, l'arrimage et les temps de travail."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Un envoi froid est livré avec un indicateur déclenché. Décrivez la marche à suivre.",
+      "answer": "Isoler selon la procédure, relever l'identifiant et la mesure, préserver la preuve et demander la décision du responsable qualité."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Pour un colis, le suivi s'arrête au tri de départ. Préparez une demande de recherche.",
+      "answer": "Rassembler numéro d'envoi, date et quittance, dernier statut et informations utiles de remise, puis contacter le canal désigné."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Le premier client impose un créneau étroit et la charge la plus lourde est destinée au dernier. Que contrôlez-vous ?",
+      "answer": "Vérifier le créneau, la répartition des masses, l'accès et l'arrimage; ajuster l'ordre ou le véhicule avec le répartiteur si les contraintes sont incompatibles."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "2.2 Track and Trace",
+      "file": "log-802-notions-1-v001.svg",
+      "alt": "07 h 40. Dépôt enregistré. 11 h 10. Tri au centre. 15 h 25. Remise confirmée.",
+      "caption": "Le numéro d’envoi relie les horodatages et les statuts.",
+      "sha256": "a94d81cba7a1b8ac95ba33fa76aa97288ad7af1b6b2bb255b65be7bf9945a2e7",
+      "origin": "Illustration originale Doc-Prof du module 802."
+    },
+    {
+      "anchor": "2.3.1 Principe des tournées",
+      "file": "log-802-notions-2-v001.svg",
+      "alt": "En vue de dessus, le compartiment contient de gauche à droite les lots C, B et A, avec la porte arrière à droite. L'ordre de déchargement est A, B puis C.",
+      "caption": "Le premier lot est accessible depuis la porte. L’ordre suppose une répartition des masses et un arrimage compatibles.",
+      "sha256": "9443e7c4008e2b5d42f2a4349a389c6dca44e005ac7c9418f79ee1c8ce2da476",
+      "origin": "Illustration originale Doc-Prof du module 802."
+    }
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Expliquer le rôle d'un **ERP** et des modules associés\n- Distinguer CRM logiciel / stratégie / processus et situer vente, marketing, RH\n- Décrire les tâches de la **PCP** et les leviers de réduction des temps / stocks\n- Situer **CoFi** (créanciers / débiteurs), controlling, **GM** et e-commerce dans le système d'info",
+  "overview": "## Aperçu du module 803\n\n- Relier une commande, ses mouvements de matériel et sa facture dans le système.\n- Reconnaître les responsabilités des modules de production, relation client, stock et comptabilité.\n- Vérifier une donnée avant sa validation afin de limiter les erreurs en aval.",
+  "replacements": [
+    {
+      "from": "Application **complexe** : plusieurs logiciels / systèmes qui communiquent pour soutenir la **planification des ressources** de l'entreprise. Souvent divisé en **modules** combinables selon les besoins et avec des capacités variables.",
+      "to": "Un **ERP** relie des opérations telles que les achats, le stock, la production et la comptabilité. Des modules partagent, selon les interfaces, des références et des événements.",
+      "reason": "Préciser l'intégration des flux."
+    },
+    {
+      "from": "Échange numérique fournisseur ↔ acheteur (radio simple → IA). Internet, BDD, médias sociaux, banque en ligne, chatbots… → distances spatiales surmontées · parfois sans contact physique · évite le magasin / conseil face-à-face.",
+      "to": "Le commerce électronique couvre des opérations réalisées en ligne. L'**EDI** échange des données structurées entre partenaires, par exemple commandes, avis d'expédition et factures. Le **WebEDI** permet à un partenaire d'utiliser un portail pour ces échanges.",
+      "reason": "Distinguer la vente en ligne et l'échange de documents."
+    }
+  ],
+  "summary": [
+    "Relier une commande, ses mouvements de matériel et sa facture dans le système.",
+    "Reconnaître les responsabilités des modules de production, relation client, stock et comptabilité.",
+    "Vérifier une donnée avant sa validation afin de limiter les erreurs en aval."
+  ],
+  "glossary": [
+    [
+      "ERP",
+      "Progiciel qui relie plusieurs activités de l'entreprise au moyen de données et processus partagés."
+    ],
+    [
+      "CRM",
+      "Gestion des relations avec les clients et système qui la soutient."
+    ],
+    [
+      "PCP",
+      "Planification et contrôle de la production, notamment des ressources et des délais."
+    ],
+    [
+      "Gestion de matériel",
+      "Organisation des approvisionnements, stocks et mouvements."
+    ],
+    [
+      "Donnée de base",
+      "Information stable utilisée par plusieurs opérations, comme une référence article."
+    ],
+    [
+      "Mouvement",
+      "Événement enregistré qui modifie un stock, un état ou une localisation."
+    ],
+    [
+      "Créancier",
+      "Tiers auquel l'entreprise doit un montant, par exemple un fournisseur."
+    ],
+    [
+      "Débiteur",
+      "Tiers redevable d'un montant envers l'entreprise, par exemple un client facturé."
+    ],
+    [
+      "Contrôle de gestion",
+      "Analyse des résultats et écarts pour éclairer les décisions."
+    ],
+    [
+      "EDI",
+      "Échange électronique structuré de documents entre systèmes."
+    ],
+    [
+      "Ordre de fabrication",
+      "Instruction précisant un travail de production et les quantités concernées."
+    ],
+    [
+      "Traçabilité",
+      "Possibilité de retrouver les étapes et données d'une opération."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "L'ERP enregistre 48 pièces au départ, une entrée de 30 et une sortie de 17. Quel solde affiche-t-il ?",
+      "answer": "61 pièces",
+      "calculation": "48 + 30 − 17 = 61."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Vous commandez 60 bacs et recevez déjà 45. Quel reste est à livrer ?",
+      "answer": "15 bacs",
+      "calculation": "60 − 45 = 15."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Une facture fournisseur porte sur 24 unités à CHF 11,50, sans frais. Quel total vérifier ?",
+      "answer": "CHF 276",
+      "calculation": "24 × 11,50 = 276."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Une fabrication requiert 3 vis par produit et l'ordre porte sur 40 produits. Combien prévoir ?",
+      "answer": "120 vis",
+      "calculation": "40 × 3 = 120."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Le lot traverse 25 min de préparation, 40 min d'exécution et 15 min d'attente. Calculez le temps de traversée.",
+      "answer": "80 min",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "25 + 40 + 15 = 80."
+    },
+    {
+      "id": "maths-fiche-6",
+      "kind": "maths",
+      "prompt": "Le temps prévu est 150 min, le temps mesuré 165 min. Calculez l'écart relatif au prévu.",
+      "answer": "+10 %",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "(165 − 150) ÷ 150 × 100 = 10."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quel intérêt présente la référence commune de l'article entre achat et stock ?",
+      "answer": "Elle rattache les opérations au bon article et réduit les rapprochements manuels."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Quel module conserve typiquement l'historique d'un contact commercial ?",
+      "answer": "Le CRM."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Que planifie la PCP en plus de la quantité à fabriquer ?",
+      "answer": "Par exemple la date, la capacité, la main-d'œuvre, les machines et les matières nécessaires."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Une facture d'achat non réglée concerne quel domaine de la comptabilité ?",
+      "answer": "Les créanciers ou comptes fournisseurs."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Donnez un exemple de mesure de contrôle de gestion de l'entrepôt.",
+      "answer": "Le coût par commande, la valeur de stock, un écart budgétaire ou un indicateur de productivité."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Une commande de 50 unités arrive en deux livraisons et la première contient 20 unités. Que faut-il saisir et transmettre ?",
+      "answer": "Enregistrer la réception de 20 sur la bonne commande, contrôler la quantité ouverte de 30 et signaler l'échéance si nécessaire."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Le fichier article indique la pièce, mais un collègue a saisi un carton comme une pièce. Que faites-vous ?",
+      "answer": "Vérifier la référence, le conditionnement et le mouvement, faire corriger l'écriture avec sa trace et vérifier le solde."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Un ordre de fabrication est bloqué par une pièce manquante. Quels services associer à la résolution ?",
+      "answer": "Production ou PCP pour le besoin et l'échéance, stock pour le solde réel, achats pour le délai ou une alternative validée."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "3.1 ERP (Enterprise Resource Planning)",
+      "file": "log-803-notions-1-v001.svg",
+      "alt": "Achats. Commande de 50 pièces. Gestion de matériel. Réception de 20 pièces. Comptabilité. Facture à rapprocher.",
+      "caption": "La même référence lie les écritures opérationnelles.",
+      "sha256": "3714f93d6e425aebfd2103c97bcc6defef04e9c461f6627f94c45cbbb53a56ce",
+      "origin": "Illustration originale Doc-Prof du module 803."
+    },
+    {
+      "anchor": "3.5 Planification et contrôle de la production (PCP)",
+      "file": "log-803-notions-2-v001.svg",
+      "alt": "Besoin. Quantité et date cible. Capacité. Matières, machines et temps. Suivi. Avancement et écarts.",
+      "caption": "Le contrôle actualise les données après le lancement.",
+      "sha256": "e53a7d719a8d46e7de8676880af5f5eafbc6d708636f2eed86350eda872720a7",
+      "origin": "Illustration originale Doc-Prof du module 803."
+    }
+  ]
+}

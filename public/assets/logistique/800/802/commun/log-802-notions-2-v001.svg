@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="220" viewBox="0 0 800 220" role="img" aria-labelledby="titre info">
+  <title id="titre">Ordre de chargement par l’arrière</title>
+  <desc id="info">En vue de dessus, le compartiment contient de gauche à droite les lots C, B et A, avec la porte arrière à droite. L&#x27;ordre de déchargement est A, B puis C.</desc>
+  <rect width="800" height="220" fill="#fff"/>
+  <g font-family="sans-serif" fill="#202020">
+    <text x="400" y="30" text-anchor="middle" font-size="25" font-weight="bold">Ordre de chargement par l’arrière</text>
+<path d="M176 64H610V171H176z M176 69H104L78 120v45h98" fill="none" stroke="#353535" stroke-width="3"/>
+    <rect x="191" y="79" width="123" height="76" fill="#eee" stroke="#333" stroke-width="2"/>
+    <rect x="331" y="79" width="123" height="76" fill="#eee" stroke="#333" stroke-width="2"/>
+    <rect x="471" y="79" width="123" height="76" fill="#dedede" stroke="#333" stroke-width="2"/>
+    <path d="M610 65l22-14m-22 120 22 14m-22-68h96m-8-7 8 7-8 7" fill="none" stroke="#333" stroke-width="3"/>
+    <g text-anchor="middle">
+      <text x="252" y="112" font-size="25" font-weight="bold">C</text>
+      <text x="392" y="112" font-size="25" font-weight="bold">B</text>
+      <text x="532" y="112" font-size="25" font-weight="bold">A</text>
+      <text x="252" y="137" font-size="16">3e arrêt</text>
+      <text x="392" y="137" font-size="16">2e arrêt</text>
+      <text x="532" y="137" font-size="16">1er arrêt</text>
+      <text x="660" y="99" font-size="16">Porte arrière</text>
+      <text x="392" y="202" font-size="17">Charger C → B → A · Décharger A → B → C</text>
+    </g>
+  </g>
+</svg>
