@@ -36,7 +36,8 @@ export function identifyItems(items: MathItem[], activityId: string): MathItem[]
 
 export function hasLockedItems(block: ExerciseBlock): boolean {
   return Boolean(block.libreItems?.some(({ libreLocked }) => libreLocked) ||
-    block.a5RightLibre?.items.some(({ libreLocked }) => libreLocked)) || hasTcfLockedQuestions(block.tcfExercise)
+    block.a5RightLibre?.items.some(({ libreLocked }) => libreLocked) ||
+    block.grammarSnapshot?.libreLockedQuestionIds?.length) || hasTcfLockedQuestions(block.tcfExercise)
 }
 
 export function trimUnlockedItems(items: MathItem[], count: number): MathItem[] {
@@ -80,12 +81,13 @@ export function rerollFlatActivity(
   const signature = ({ layout, op, a, b, missing, convert, prompt, left, right, sequence, responseAnswer, logique }: MathItem) =>
     JSON.stringify([layout, op, a, b, missing, convert, prompt, left, right, sequence, responseAnswer, logique?.id])
   const signatures = new Set(items.map(signature))
+  const fixedSeries = ['tpm-suite', 'tpm-grandes-suites', 'tpm-suites-6'].includes(block.exerciseType)
   let cursor = 0
   const next = items.map((item, index) => {
     if (!eligible(item)) return item
-    while (cursor < generated.length && signatures.has(signature(generated[cursor]!))) cursor += 1
-    const replacement = generated[cursor++]
-    if (!replacement) return item
+    while (!fixedSeries && cursor < generated.length && signatures.has(signature(generated[cursor]!))) cursor += 1
+    const replacement = fixedSeries ? generated[index] : generated[cursor++]
+    if (!replacement || signatures.has(signature(replacement))) return item
     signatures.add(signature(replacement))
     return { ...replacement, libreId: `tirage-${(pageSeed >>> 0).toString(36)}-${(newSeed >>> 0).toString(36)}-${index}` }
   })

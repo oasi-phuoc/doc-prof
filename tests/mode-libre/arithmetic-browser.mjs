@@ -278,6 +278,75 @@ async function checkNumericTests(context) {
   } finally {
     await cfr.close()
   }
+
+  const { page: notation, printItems: notationItems } = await open({
+    domain: 'algèbre', topic: 'nombres', exerciseType: 'nombres-chiffres',
+  })
+  try {
+    const number = notation.getByRole('textbox', { name: 'Nombre 1', exact: true })
+    await number.fill('102')
+    assert.match(await notationItems.first().textContent(), /cent[- ]deux/)
+    assert.equal(await notation.getByRole('status', { name: 'Corrigé 1', exact: true }).innerText(), '102')
+  } finally {
+    await notation.close()
+  }
+
+  const { page: position } = await open({
+    domain: 'algèbre', topic: 'nombres', exerciseType: 'nombres-position',
+  })
+  try {
+    await position.getByRole('textbox', { name: 'Nombre 1', exact: true }).fill('1234')
+    await position.getByRole('combobox', { name: 'Position du chiffre 1', exact: true }).selectOption('centaines')
+    assert.equal(await position.getByRole('status', { name: 'Corrigé 1', exact: true }).innerText(), '2')
+  } finally {
+    await position.close()
+  }
+
+  const { page: boundary } = await open({
+    domain: 'algèbre', topic: 'nombres', exerciseType: 'nombres-encadrer-100',
+  })
+  try {
+    const number = boundary.getByRole('textbox', { name: 'Nombre 1', exact: true })
+    const baseline = await number.getAttribute('data-applied-value')
+    await number.fill('300')
+    assert.equal(await number.getAttribute('aria-invalid'), 'true')
+    assert.equal(await number.getAttribute('data-applied-value'), baseline)
+    await number.fill('305')
+    assert.equal(await boundary.getByRole('status', { name: 'Corrigé 1', exact: true }).innerText(), '300 < 305 < 400')
+  } finally {
+    await boundary.close()
+  }
+
+  const { page: sequence } = await open({
+    domain: 'algèbre', topic: 'nombres', exerciseType: 'nombres-suite',
+  })
+  try {
+    const series = sequence.getByRole('group', { name: 'Suite 1', exact: true })
+    const terms = sequence.getByRole('group', { name: 'Termes à compléter', exact: true }).getByRole('button')
+    const blanks = await terms.evaluateAll((buttons) => buttons.flatMap((button, index) =>
+      button.getAttribute('aria-pressed') === 'true' ? [index] : []))
+    assert.equal(blanks.length, 3)
+    await series.getByRole('textbox', { name: 'Premier terme', exact: true }).fill('2')
+    await series.getByRole('textbox', { name: 'Pas de la suite', exact: true }).fill('3')
+    assert.equal(await sequence.getByRole('status', { name: 'Corrigé 1', exact: true }).innerText(),
+      blanks.map((index) => String(2 + index * 3)).join(' ; '))
+    assert.deepEqual(await terms.allTextContents(), ['2', '5', '8', '11', '14', '17', '20', '23'])
+  } finally {
+    await sequence.close()
+  }
+
+  const { page: assessedSequence } = await open({
+    domain: 'tcm-csc', topic: 'tcm-csc-test', exerciseType: 'tcm-csc-ex04',
+  })
+  try {
+    const step = assessedSequence.getByRole('group', { name: 'Suite 1', exact: true })
+      .getByRole('textbox', { name: 'Pas de la suite', exact: true })
+    await step.fill('80')
+    assert.equal(await step.getAttribute('aria-invalid'), 'true')
+    assert.equal(await assessedSequence.getByRole('group', { name: 'Termes à compléter', exact: true }).count(), 0)
+  } finally {
+    await assessedSequence.close()
+  }
 }
 
 try {
@@ -298,7 +367,7 @@ try {
   await teacher.addCookies([{ name: 'clairfle-fiche-access', value: 'admin', url: baseURL }])
   await checkNumericTests(teacher)
   await teacher.close()
-  console.log('Calculs en ligne et posés, conversions, double A5 et contraintes des tests de comparaison et de tri vérifiés.')
+  console.log('Calculs, conversions, double A5, notation, encadrement et contraintes des tests mathématiques vérifiés.')
 } finally {
   await browser?.close()
   await server?.close()

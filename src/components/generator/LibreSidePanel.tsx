@@ -33,6 +33,8 @@ import { LetterGridEditor } from '@/components/generator/libre/LetterGridEditor'
 import { LogicEditor } from '@/components/generator/libre/LogicEditor'
 import { SyllableEditor } from '@/components/generator/libre/SyllableEditor'
 import { SoutienPhraseRowsEditor } from '@/components/generator/libre/SoutienPhraseRowsEditor'
+import { AudioOrderEditor } from '@/components/generator/libre/AudioOrderEditor'
+import { audioOrderKind } from '@/francais/soutien/audio-order'
 import { GrammarEditor } from '@/components/generator/libre/GrammarEditor'
 import type { GrammarSnapshot } from '@/grammaire/curriculum/types'
 import type { SheetBlockItems } from '@/components/generator/sheet-items'
@@ -67,8 +69,10 @@ export type LibreSidePanelProps = {
   phraseOrder: SheetBlockItems | null
   syllableContent: SheetBlockItems | null
   soutienPhrases: SheetBlockItems | null
+  audioOrderContent: SheetBlockItems | null
   syllableBank: SoutienVowelBank | null | undefined
   grammarSelection: GrammarSnapshot | null
+  grammarCanRegenerate: boolean
   arithmeticId: string
   halfEditor?: { value: 'left' | 'right'; setValue: (half: 'left' | 'right') => void; content: SheetBlockItems | null; id: string }
   maxQuestions: number
@@ -127,8 +131,10 @@ export function LibreSidePanel({
   phraseOrder,
   syllableContent,
   soutienPhrases,
+  audioOrderContent,
   syllableBank,
   grammarSelection,
+  grammarCanRegenerate,
   arithmeticId,
   halfEditor,
   maxQuestions,
@@ -182,6 +188,7 @@ export function LibreSidePanel({
   const orderedPhrases = phraseOrder && (halfEditor?.content ?? phraseOrder)
   const syllables = syllableContent && (halfEditor?.content ?? syllableContent)
   const soutienPhraseContent = soutienPhrases && (halfEditor?.content ?? soutienPhrases)
+  const audioSeries = audioOrderContent && (halfEditor?.content ?? audioOrderContent)
   const arithmeticInstruction = halfEditor?.content?.instruction ?? activeBlock.libreInstruction ??
     activeSheet?.blocks[safeBlockIndex]?.instruction ?? ''
   function editActivityItems(items: MathItem[], instruction: string, keepCount = false) {
@@ -291,6 +298,11 @@ export function LibreSidePanel({
             onChange={(next) => editActivityItems(identifyItems(soutienPhraseContent.items.map((current, position) =>
               position === index ? next : current), editedActivityId), soutienPhraseContent.instruction, true)} />
         ))}
+        {audioSeries?.items.length && syllableBank && audioOrderKind(soutienKind) ? (
+          <AudioOrderEditor items={identifyItems(audioSeries.items, editedActivityId)} bank={syllableBank} kind={soutienKind}
+            preferred={soutienType1Words} excluded={activeBlock.soutienExcludeWords}
+            onChange={(items) => editActivityItems(items, audioSeries.instruction, true)} />
+        ) : null}
         {questions?.items.length ? (
           <GenericLibreEditor
             key={editedActivityId}
@@ -463,10 +475,13 @@ export function LibreSidePanel({
         {grammarSelection ? (
           <GrammarEditor key={arithmeticId} selection={grammarSelection} activityId={arithmeticId}
             fields={transientFields} writeField={onTransientField}
+            onRegenerate={grammarCanRegenerate ? (id) => onRegenerateBlock?.(safeBlockIndex, undefined, id) : undefined}
             onChange={(grammarSnapshot) => updatePage({ grammarSnapshot, libreItems: undefined, libreInstruction: undefined })} />
         ) : isGrammaireExercise ? (
           <TcfExerciseEditor
             variant="grammaire"
+            live={liveTcf}
+            scored={evalMode}
             niveau={tcfNiveau}
             typeId={activeBlock.exerciseType}
             exercise={activeBlock.tcfExercise}
@@ -492,6 +507,7 @@ export function LibreSidePanel({
         !phraseOrder &&
         !syllableContent &&
         !soutienPhrases &&
+        !audioOrderContent &&
         soutienKind !== 'mots' &&
         soutienKind !== 'completer' &&
         !(isDroites || isConstruire) ? (

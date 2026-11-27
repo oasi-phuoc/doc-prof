@@ -42,6 +42,8 @@ import type { CountIconKind } from '@/math/types'
 import { RefreshIcon } from '@/components/generator/WorksheetSheet'
 import { fractionPartsFromItem, fractionTermFr } from '@/tpm/fraction-words'
 import { hasMeasureDims, recalcTpmLibreItem } from '@/tpm/libre-recalc'
+import { NUMBER_PLACES, numberQuestion } from './libre/number-notation'
+import { numberSequence } from './libre/number-sequence'
 import { buildDecompose, decomposeAnswer, decomposeError } from '@/math/decompose'
 import { algebraProblemOptions, rebuildAlgebraProblem, rollAlgebraProblem } from '@/math/word-problems'
 import { opTableAnswer, opTableCell, opTableError } from '@/math/op-table'
@@ -861,6 +863,69 @@ function renderFields(
   transient?: TransientArithmeticInputs,
   fixedTest = false,
 ) {
+  const notation = liveArithmetic ? numberQuestion(item, exerciseType) : undefined
+  if (notation) {
+    const input = transientInput(transient, item, 'nombre')
+    const applied = parseFrNumber(notation.value)
+    return <>
+      <Field label="Nombre">
+        <NumInput value={notation.value} ariaLabel={`Nombre ${index + 1}`} applyWhileTyping
+          transient={input} validate={notation.validate}
+          onCommit={(raw) => {
+            const value = parseFrNumber(raw)
+            if (value !== null) patch(index, notation.apply(value))
+          }} />
+      </Field>
+      {notation.place && applied !== null && <Field label="Position du chiffre">
+        <LineSelect value={notation.place} ariaLabel={`Position du chiffre ${index + 1}`}
+          options={NUMBER_PLACES.filter((_, position) => applied >= 10 ** position).map((place) => ({ value: place, label: place }))}
+          onChange={(value) => {
+            const place = NUMBER_PLACES.find((entry) => entry === value)
+            if (!place) return
+            const pending = input?.value ? parseFrNumber(input.value) : null
+            const usable = pending !== null && Number.isInteger(pending) && pending <= 9999 && pending >= 10 ** NUMBER_PLACES.indexOf(place)
+            if (usable) input?.write(null)
+            patch(index, notation.apply(usable ? pending : applied, place))
+          }} />
+      </Field>}
+      <Field label="Corrigé">
+        <CorrigeBox value={item.answer} ariaLabel={`Corrigé ${index + 1}`} />
+      </Field>
+    </>
+  }
+  const series = liveArithmetic ? numberSequence(item, exerciseType, index) : undefined
+  if (series) {
+    const { start, step, blanks } = series
+    return <>
+      <div className="libre-inline-triple" role="group" aria-label={`Suite ${index + 1}`}>
+        <Field label="Premier terme">
+          <NumInput value={fmt(start)} ariaLabel="Premier terme" applyWhileTyping transient={transientInput(transient, item, 'premier-terme')}
+            validate={(value) => series.validate(value, step)}
+            onCommit={(value) => patch(index, series.apply(parseFrNumber(value)!, step))} />
+        </Field>
+        <Field label="Pas de la suite">
+          <NumInput value={fmt(step)} ariaLabel="Pas de la suite" applyWhileTyping transient={transientInput(transient, item, 'pas')}
+            validate={(value) => series.validate(start, value)}
+            onCommit={(value) => patch(index, series.apply(start, parseFrNumber(value)!))} />
+        </Field>
+      </div>
+      {!fixedTest && <div className="libre-unit-actions" role="group" aria-label="Termes à compléter">
+        {series.terms.map((term, position) => {
+          const blank = blanks.includes(position)
+          return <button type="button" key={position} className="button secondary small" aria-pressed={blank}
+            aria-label={`Terme ${position + 1} à compléter`}
+            disabled={blank ? blanks.length <= 1 : blanks.length >= series.terms.length - 2}
+            onClick={() => patch(index, series.apply(start, step, blank
+              ? blanks.filter((entry) => entry !== position) : [...blanks, position].sort((a, b) => a - b)))}>
+            {term}
+          </button>
+        })}
+      </div>}
+      <Field label="Corrigé">
+        <CorrigeBox value={item.answer} ariaLabel={`Corrigé ${index + 1}`} />
+      </Field>
+    </>
+  }
   if (hasCscFields(item, exerciseType)) return <TcmCscFields item={item} typeId={exerciseType} change={(next) => patch(index, next)} />
   if (item.decompose) {
     const calc = item.decompose

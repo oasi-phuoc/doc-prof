@@ -1,5 +1,7 @@
 import { isLogistiqueDomain, isLogistiqueReferenceType } from '@/logistique/catalog'
-import { Fragment, useMemo, type RefObject } from 'react'
+import { Fragment, useMemo, useState, type CSSProperties, type ReactNode, type RefObject } from 'react'
+import { flushSync } from 'react-dom'
+import { useWorksheetImageSources, WorksheetPrintImages } from '@/components/WorksheetImage'
 import { PeEvaluationSheet } from '@/components/tcf/PeEvaluationSheet'
 import { peEvaluationsOf, type PeEvaluation } from '@/tcf/pe-evaluation'
 import { isGrammarReadingType } from '@/grammaire/exercises/reading-types'
@@ -54,7 +56,7 @@ export type ResultPanelProps = {
   drawSoutienSeries: () => void
   drawAlphaSeries: () => void
   generate: () => void
-  printAll: () => void
+  printAll: (includesCorrections: boolean, capture: (studentOnly: boolean) => () => void) => Promise<void>
   printCorrections: boolean
   onSaveFiche: () => void
   onOpenBook: () => void
@@ -222,6 +224,8 @@ export function ResultPanel({
   }, [a5LeftWorksheets, a5RightWorksheets, previewWorksheets, useA5Double])
   /** Corrigé : pages exercices + pages PE/PO + transcriptions. */
   const corrigeTotalPages = answersBaseCount + correctionFollow.length + transcriptionPacks.length
+  const [printCapture, setPrintCapture] = useState<ReactNode>(null)
+  const imageSources = useWorksheetImageSources()
   const includeCorrections = printCorrections && !isCalliDomain && !isJeuxDomain && !logisticsReferenceOnly
   const printLabel = includeCorrections ? 'Imprimer la fiche et le corrigé' : 'Imprimer la fiche'
   const activePreviewIndex = Math.min(safeSheetIndex, Math.max(0, previewWorksheets.length - 1))
@@ -283,6 +287,105 @@ export function ResultPanel({
       {...sheetProps}
     />
   )
+
+  function renderPrintSheets(withCorrections: boolean, style?: CSSProperties) {
+    return (
+      <div className="sheet-stage print-only-sheets" style={style} aria-hidden>
+        {useA5Double && a5LeftWorksheets && a5RightWorksheets
+          ? a5LeftWorksheets.map((leftPage, index) => {
+              const rightPage = a5RightWorksheets[index] ?? leftPage
+              return (
+                <DualA5Sheet
+                  key={`print-student-a5-${leftPage.exerciseType}-${seed}-${index}`}
+                  leftPage={leftPage}
+                  rightPage={rightPage}
+                  pageNumber={index + 1}
+                  sheetIndex={index + 1}
+                  total={a5LeftWorksheets.length}
+                  {...chromeProps}
+                  mode="student"
+                />
+              )
+            })
+          : previewWorksheets.map((page, index) => (
+              <WorksheetSheet
+                key={`print-student-${page.exerciseType}-${seed}-${index}`}
+                page={page}
+                pageNumber={index + 1}
+                sheetIndex={index + 1}
+                total={previewWorksheets.length}
+                {...chromeProps}
+                mode="student"
+              />
+            ))}
+        {withCorrections ? (
+          <>
+            {useA5Double && a5LeftWorksheets && a5RightWorksheets
+              ? a5LeftWorksheets.map((leftPage, index) => {
+                  const rightPage = a5RightWorksheets[index] ?? leftPage
+                  return (
+                    <Fragment key={`print-answers-a5-${leftPage.exerciseType}-${seed}-${index}`}>
+                    <DualA5Sheet
+                      leftPage={leftPage}
+                      rightPage={rightPage}
+                      pageNumber={index + 1}
+                      sheetIndex={a5LeftWorksheets.length + index + 1}
+                      total={a5LeftWorksheets.length}
+                      {...chromeProps}
+                      mode="answers"
+                    />
+                    </Fragment>
+                  )
+                })
+              : previewWorksheets.map((page, index) => (
+                <Fragment key={`print-answers-${page.exerciseType}-${seed}-${index}`}>
+                  <WorksheetSheet
+                    page={page}
+                    pageNumber={index + 1}
+                    sheetIndex={previewWorksheets.length + index + 1}
+                    total={previewWorksheets.length}
+                    {...chromeProps}
+                    mode="answers"
+                  />
+                </Fragment>
+                ))}
+            {correctionFollow.map((page, i) =>
+              page.kind === 'pe' ? (
+                <PeEvaluationSheet key={`print-pe-${page.evaluation.id}-${i}`} evaluation={page.evaluation} />
+              ) : (
+                <InteractionCorrigeSheet key={`print-po-${page.exercise.id}`} exercise={page.exercise} />
+              ),
+            )}
+            {transcriptionPacks.map((entries, i) => (
+              <TranscriptionAppendixSheet
+                key={`print-transcription-${i}`}
+                entries={entries}
+                pageNumber={answersBaseCount + correctionFollow.length + i + 1}
+                totalPages={corrigeTotalPages}
+                institutional={chromeProps.institutional}
+                appendixIndex={i + 1}
+                appendixTotal={transcriptionPacks.length}
+              />
+            ))}
+          </>
+        ) : null}
+      </div>
+    )
+  }
+
+  function printCurrentRevision() {
+    void printAll(includeCorrections, (studentOnly) => {
+      const computed = getComputedStyle(document.documentElement)
+      const style = Object.fromEntries(Array.from(computed).filter((name) => name.startsWith('--')).map((name) =>
+        [name, computed.getPropertyValue(name)]))
+      flushSync(() => setPrintCapture(
+        <WorksheetPrintImages sources={imageSources}>
+          {renderPrintSheets(includeCorrections && !studentOnly, style)}
+        </WorksheetPrintImages>,
+      ))
+      return () => setPrintCapture(null)
+    })
+  }
 
   return (
           <section className="result-panel" id="activity-preview" tabIndex={-1}>
@@ -450,8 +553,8 @@ export function ResultPanel({
                 <button
                   className="print-chip is-icon is-generate"
                   type="button"
-                  onClick={printAll}
-                  disabled={unavailableDocument}
+                  onClick={printCurrentRevision}
+                  disabled={unavailableDocument || printCapture !== null}
                   aria-label={printLabel}
                   title={printLabel}
                 >
@@ -592,87 +695,7 @@ export function ResultPanel({
                 </div>
               </div>
             </div>
-            {/* Impression : fiches élèves ; corrigés seulement s’il y en a */}
-            <div className="sheet-stage print-only-sheets" aria-hidden>
-              {useA5Double && a5LeftWorksheets && a5RightWorksheets
-                ? a5LeftWorksheets.map((leftPage, index) => {
-                    const rightPage = a5RightWorksheets[index] ?? leftPage
-                    return (
-                      <DualA5Sheet
-                        key={`print-student-a5-${leftPage.exerciseType}-${seed}-${index}`}
-                        leftPage={leftPage}
-                        rightPage={rightPage}
-                        pageNumber={index + 1}
-                        sheetIndex={index + 1}
-                        total={a5LeftWorksheets.length}
-                        {...chromeProps}
-                        mode="student"
-                      />
-                    )
-                  })
-                : previewWorksheets.map((page, index) => (
-                    <WorksheetSheet
-                      key={`print-student-${page.exerciseType}-${seed}-${index}`}
-                      page={page}
-                      pageNumber={index + 1}
-                      sheetIndex={index + 1}
-                      total={previewWorksheets.length}
-                      {...chromeProps}
-                      mode="student"
-                    />
-                  ))}
-              {includeCorrections ? (
-                <>
-                  {useA5Double && a5LeftWorksheets && a5RightWorksheets
-                    ? a5LeftWorksheets.map((leftPage, index) => {
-                        const rightPage = a5RightWorksheets[index] ?? leftPage
-                        return (
-                          <Fragment key={`print-answers-a5-${leftPage.exerciseType}-${seed}-${index}`}>
-                          <DualA5Sheet
-                            leftPage={leftPage}
-                            rightPage={rightPage}
-                            pageNumber={index + 1}
-                            sheetIndex={a5LeftWorksheets.length + index + 1}
-                            total={a5LeftWorksheets.length}
-                            {...chromeProps}
-                            mode="answers"
-                          />
-                          </Fragment>
-                        )
-                      })
-                    : previewWorksheets.map((page, index) => (
-                      <Fragment key={`print-answers-${page.exerciseType}-${seed}-${index}`}>
-                        <WorksheetSheet
-                          page={page}
-                          pageNumber={index + 1}
-                          sheetIndex={previewWorksheets.length + index + 1}
-                          total={previewWorksheets.length}
-                          {...chromeProps}
-                          mode="answers"
-                        />
-                      </Fragment>
-                      ))}
-                  {correctionFollow.map((page, i) =>
-                    page.kind === 'pe' ? (
-                      <PeEvaluationSheet key={`print-pe-${page.evaluation.id}-${i}`} evaluation={page.evaluation} />
-                    ) : (
-                      <InteractionCorrigeSheet key={`print-po-${page.exercise.id}`} exercise={page.exercise} />
-                    ),
-                  )}
-                  {transcriptionPacks.map((entries, i) => (
-                    <TranscriptionAppendixSheet
-                      key={`print-transcription-${i}`}
-                      entries={entries}
-                      pageNumber={answersBaseCount + correctionFollow.length + i + 1}
-                      totalPages={corrigeTotalPages}
-                      institutional={chromeProps.institutional}
-                      appendixIndex={i + 1}
-                      appendixTotal={transcriptionPacks.length}
-                    />
-                  ))}
-                </>
-              ) : null}
-            </div>
+            {printCapture ?? renderPrintSheets(includeCorrections)}
           </section>
 
   )

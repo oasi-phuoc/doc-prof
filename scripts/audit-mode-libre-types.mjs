@@ -147,7 +147,11 @@ export async function auditTypes(server, profile, seed) {
     editors: 'components/generator/libre/profiles.ts',
     generation: 'math/generate.ts',
     alpha: 'alphabetisation/themes.ts',
+    alphaKinds: 'alphabetisation/kinds.ts',
     soutien: 'francais/soutien/themes.ts',
+    soutienKinds: 'francais/soutien/kinds.ts',
+    soutienBanks: 'francais/soutien/banks.ts',
+    audioOrder: 'francais/soutien/audio-order.ts',
     grammar: 'grammaire/exercises/index.ts',
     grammarCo: 'grammaire/exercises/co-themes.ts',
     grammarCoBank: 'grammaire/exercises/co-bank.ts',
@@ -227,7 +231,18 @@ export async function auditTypes(server, profile, seed) {
     })),
   )
   const declared = exerciseTypes.map(({ id, topic }) => ({ id, topic, domain: topicById[topic]?.domain ?? null }))
-  const unmatchedDeclarations = declared.filter(({ id }) => !reachedTypes.has(id))
+  const unmatchedDeclarations = declared.filter(({ id }) => !reachedTypes.has(id)).map((entry) => {
+    const parsed = entry.domain === 'alphabetisation' ? modules.alphaKinds.parseAlphaType(entry.id)
+      : entry.domain === 'soutien-fr' ? modules.soutienKinds.parseSoutienType(entry.id) : undefined
+    if (parsed && modules.audioOrder.audioOrderKind(parsed.kind)) {
+      const bank = modules.soutienBanks.soutienBankById(parsed.bankId)
+      if (bank && modules.audioOrder.defaultAudioOrderCapacity(bank, parsed.kind) === 0) {
+        return { ...entry, reason: 'la banque ne fournit aucune série complète avec les médias requis' }
+      }
+    }
+    if (entry.id === 'calli-4-lignes' || entry.id === 'calli-6-lignes') return { ...entry, reason: 'format de recette historique' }
+    return entry
+  })
   return {
     ...profile,
     seed,

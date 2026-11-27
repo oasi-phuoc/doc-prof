@@ -1226,8 +1226,8 @@ export function TcfExerciseEditor({
   /** Tous les audios CO, tous niveaux : choisir un audio recharge questions + transcription. */
   const coAudioEntries = useMemo(
     () =>
-      slot?.competence === 'CO' || isGrammaire ? tcfAudioEntries(tcfBankAllLevels('CO')) : [],
-    [slot?.competence, isGrammaire],
+      slot?.competence === 'CO' || (isGrammaire && !live) ? tcfAudioEntries(tcfBankAllLevels('CO')) : [],
+    [slot?.competence, isGrammaire, live],
   )
   const scenarioAudioPaths = useMemo(
     () =>
@@ -1313,7 +1313,8 @@ export function TcfExerciseEditor({
   }
 
   const exercise = current
-  const selectableTypes = live && bank.length
+  const selectableTypes = live && isGrammaire ? types.filter(({ typeExercice }) => exercise.type_exercice === typeExercice)
+    : live && bank.length
     ? types.filter((type) => type.typeExercice === exercise.type_exercice || bank.some((entry) => entry.type_exercice === type.typeExercice))
     : types
   const usesQuestions = (meta?.reponses.length ?? 0) > 0

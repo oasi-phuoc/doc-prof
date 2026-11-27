@@ -110,6 +110,19 @@ L’inventaire de `01d9c5e` retrouve 4 097 contextes générables et 1 089 profi
 
 Le relevé initial de la pagination des 143 cours complets de Logistique en double A5 comptait 52 cas sous la réserve de 25 px. Les tableaux et les listes dépassant la hauteur disponible sont répartis à l’impression. Le test unitaire sur le module 305 vérifie la conservation de chaque ligne dans l’ordre, la répétition des en-têtes et la présence du tableau entier dans l’éditeur. Un deuxième relevé après découpe des tableaux avait isolé quatre cas de listes longues dans les modules 105 et 410.
 
+Le contrôle après découpe des listes couvre les 143 cours complets et 2 700 pages. Chaque moitié mesure 148,5 × 210 mm à la tolérance du test. La réserve minimale après décodage des images est de 38,0 px. Les résumés A4 et les PDF des quatre modules illustrés 101, 306, 407 et 409 restent vérifiés pour les deux diplômes.
+
+```sh
+node tests/logistique/double-a5-browser.mjs
+node tests/logistique/published-browser.mjs 101 306 407 409
+```
+
+Les associations audio de Soutien FR et d’Alphabétisation utilisent les mots et médias de la banque de la leçon. Le navigateur vérifie le remplacement d’un mot, la conservation du focus, le déplacement d’une piste, la mise à jour du numéro dans son corrigé et l’isolement de la seconde moitié. La quantité supplémentaire est limitée aux associations distinctes disponibles. Les cinq déclarations qui ne peuvent composer une série ne sont pas proposées à la création et restent documentées pour les anciennes recettes. Ce relevé intermédiaire totalise 4 136 contextes, 4 097 générables et aucun résultat vide dans les sélecteurs.
+
+Le verrou d’une unité graduée protège ses choix, ses données et, quand elle en contient, son document ou son dialogue avec leurs sous-questions. La recette vérifie le nouveau tirage d’une unité déverrouillée et l’annulation jusqu’à la sélection précédente. L’édition du CO thématique réutilise le niveau et l’enregistrement de la banque de Grammaire. La modification de l’énoncé affiche son état de correction et le verrou bloque la régénération du support lié.
+
+Les essais de numération couvrent l’écriture en lettres, la position d’un chiffre et l’encadrement. Les suites recalculent les termes masqués à partir du premier terme et du pas. Les essais vérifient le refus d’un pas incompatible avec l’exercice CSC et la conservation des trous du sujet.
+
 ```sh
 node scripts/audit-mode-libre.mjs /tmp/doc-prof-libre types
 node scripts/audit-mode-libre.mjs /tmp/doc-prof-libre recettes

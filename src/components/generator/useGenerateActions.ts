@@ -30,6 +30,8 @@ import { blockItemsForConfig } from '@/components/generator/sheet-items'
 import { patchBlockSeedForHalf } from '@/components/generator/sheet-format'
 import { isTpmFamilyExercise, recalcTpmLibreItems } from '@/tpm/libre-recalc'
 import { retainLogistiqueQuestions } from '@/logistique/libre'
+import { generateGrammarSelection, grammarCutIds, rerollGrammarSelection } from '@/grammaire/curriculum/generate'
+import { GrammarCurriculumError, isProtectedGrammarCo } from '@/grammaire/curriculum/types'
 
 export type UseGenerateActionsParams = {
   pages: PageConfig[]
@@ -234,6 +236,10 @@ export function useGenerateActions({
 
   function generate() {
     if (hasTcfLockedQuestions(activeBlock.tcfExercise)) return
+    if (pages[pageIndex]?.domain === 'grammaire' && activeBlock.grammarPresentation && !isProtectedGrammarCo(activeBlock.exerciseType)) {
+      regenerateBlock(safeBlockIndex)
+      return
+    }
     if ((activeBlock.a5RightLibre || activeBlock.libreItems?.some(({ libreId }) => libreId)) && pages[pageIndex] &&
       hasFlatRegeneration(liveEditorProfile(pages[pageIndex].domain, activeBlock.exerciseType, 'a4-portrait'))) {
       regenerateBlock(safeBlockIndex)
@@ -307,8 +313,25 @@ export function useGenerateActions({
         if (index !== pageIndex) return page
         const block = pageBlocks(page)[targetBlock]
         if (!block || hasTcfLockedQuestions(block.tcfExercise)) return page
-        const profile = liveEditorProfile(page.domain, block.exerciseType, half ? 'a5-double-landscape' : 'a4-portrait')
-        if (half && isIndependentListProfile(profile)) {
+        const profile = liveEditorProfile(page.domain, block.exerciseType, half ? 'a5-double-landscape' : 'a4-portrait', block.grammarPresentation)
+        if (profile === 'grammaire-graduee') {
+          const base = seed + pageIndex * 7919 + targetBlock * 10007
+          try {
+            const current = generateGrammarSelection(block, base + (block.contentSeed ?? 0))
+            const selected = typeof target === 'string' ? new Set([target]) : target ? new Set(target) : undefined
+            const grammarSnapshot = rerollGrammarSelection(current, block, base + nextSeed, selected)
+            if (grammarSnapshot === current) return page
+            const cutIds = grammarCutIds(grammarSnapshot)
+            return setPageBlock(page, targetBlock, {
+              contentSeed: nextSeed, grammarSnapshot, libreItems: undefined, libreInstruction: undefined,
+              grammarPageBreakAfterQuestionIds: block.grammarPageBreakAfterQuestionIds?.filter((id) => cutIds.has(id)),
+            })
+          } catch (error) {
+            if (!(error instanceof GrammarCurriculumError)) throw error
+            return page
+          }
+        }
+        if (half && (isIndependentListProfile(profile) || profile === 'association-audio')) {
           return setPageBlock(page, targetBlock, {
             ...patchBlockSeedForHalf(block, half, nextSeed),
             ...(half === 'right' ? { a5RightLibre: undefined } : { libreItems: undefined, libreInstruction: undefined }),

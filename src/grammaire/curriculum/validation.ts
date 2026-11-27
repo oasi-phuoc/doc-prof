@@ -151,6 +151,9 @@ export function isGrammarSnapshot(v: unknown): v is GrammarSnapshot {
     v.questions.every(q=>q.presentation===v.presentation) && unique(v.questions.map(q=>q.id))
   if (!valid || !record(v)) return false
   if (v.editedInLibre !== undefined && v.editedInLibre !== true) return false
+  if (v.libreLockedQuestionIds !== undefined && (v.editedInLibre !== true || !Array.isArray(v.libreLockedQuestionIds) ||
+    !unique(v.libreLockedQuestionIds) || !(v.libreLockedQuestionIds as unknown[]).every(id =>
+      (v.questions as GrammarQuestion[]).some(question => question.id === id)))) return false
   if (v.libreCorrectionsPending !== undefined && (v.editedInLibre !== true || !Array.isArray(v.libreCorrectionsPending) ||
     !unique(v.libreCorrectionsPending) || !(v.libreCorrectionsPending as unknown[]).every(id =>
       (v.questions as GrammarQuestion[]).some(question => question.id === id)))) return false

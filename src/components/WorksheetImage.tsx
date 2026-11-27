@@ -9,6 +9,14 @@ type ImageEditor = {
 }
 const ImageContext = createContext<ImageEditor>({ enabled: false, replacements: {}, edit: () => {} })
 
+export function useWorksheetImageSources(): Record<string, string> {
+  return useContext(ImageContext).replacements
+}
+
+export function WorksheetPrintImages({ sources, children }: { sources: Record<string, string>; children: ReactNode }) {
+  return <ImageContext.Provider value={{ enabled: false, replacements: sources, edit: () => {} }}>{children}</ImageContext.Provider>
+}
+
 /** Les choix de banque sont sauvegardables ; les fichiers locaux restent en mémoire. */
 export function WorksheetImageProvider({ enabled, overrides, onChange, children }: {
   enabled: boolean

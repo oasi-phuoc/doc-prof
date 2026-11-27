@@ -1,6 +1,5 @@
 import { grammarPageBreakQuestionId } from '@/grammaire/curriculum/pagination'
-import { generateGrammarSelection, grammarRequestKey, grammarSelectionCount } from '@/grammaire/curriculum/generate'
-import { grammarGroups } from '@/grammaire/curriculum/scenario'
+import { generateGrammarSelection, grammarCutIds, grammarRequestKey, grammarSelectionCount, withGrammarQuestions } from '@/grammaire/curriculum/generate'
 import { GrammarCurriculumError } from '@/grammaire/curriculum/types'
 import { useEffect, type Dispatch, type SetStateAction } from 'react'
 import {
@@ -34,6 +33,11 @@ import {
   isTransformationExercise,
 } from '@/math/coord-transformations'
 import { buildPage } from '@/math/generate'
+import { createRng } from '@/math/rng'
+import { parseAlphaType } from '@/alphabetisation/kinds'
+import { parseSoutienType } from '@/francais/soutien/kinds'
+import { soutienBankById } from '@/francais/soutien/banks'
+import { addAudioOrderSeries, audioOrderKind } from '@/francais/soutien/audio-order'
 import { isDraftPadExercise } from '@/math/catalog'
 import {
   blockFromPage,
@@ -100,6 +104,29 @@ export function usePageConfig({
     }
     const count = patch.count
     const rightGrid = doubleA5 ? activeBlock.a5RightLibre : undefined
+    if (editorProfile === 'association-audio' && activeSheet && count !== undefined &&
+      !patch.exerciseType && !patch.libreItems && (activeBlock.libreItems?.length || rightGrid?.items.length)) {
+      const parsed = activeSheet.domain === 'alphabetisation' ? parseAlphaType(activeBlock.exerciseType) : parseSoutienType(activeBlock.exerciseType)
+      const bank = parsed && soutienBankById(parsed.bankId)
+      if (bank && parsed && audioOrderKind(parsed.kind)) {
+        const kind = parsed.kind
+        const pool = { type1Words: activeBlock.soutienType1Words, excludeWords: activeBlock.soutienExcludeWords }
+        const base = seed + pageIndex * 7919 + safeBlockIndex * 10007
+        const original = activeBlock.libreItems
+        const previousCount = Math.max(original?.length ?? 0, rightGrid?.items.length ?? 0)
+        if (count < previousCount && !window.confirm('Retirer les dernières séries d’associations ?')) return
+        const primarySeed = activeBlock.contentSeed ?? 0
+        const left = original && addAudioOrderSeries(original, count, bank, kind, createRng(base + primarySeed), pool)
+        const right = rightGrid && addAudioOrderSeries(rightGrid.items, count, bank, kind,
+          createRng(base + (activeBlock.contentSeedTwin ?? primarySeed)), pool)
+        if (left === null || right === null) {
+          window.alert('La banque ne fournit pas assez d’associations distinctes pour atteindre cette quantité.')
+          return
+        }
+        patch = { ...patch, ...(left ? { libreItems: activeBlock.libreId ? identifyItems(left, activeBlock.libreId) : left } : {}),
+          ...(right && rightGrid ? { a5RightLibre: { ...rightGrid, items: identifyItems(right, rightGrid.id) } } : {}) }
+      }
+    }
     if (isIndependentListProfile(editorProfile) &&
       activeSheet && (activeBlock.libreItems?.length || rightGrid?.items.length) && !patch.libreItems && !patch.exerciseType &&
       (count !== undefined || patch.columns !== undefined)) {
@@ -140,8 +167,17 @@ export function usePageConfig({
       Object.keys(patch).length === 1 && (count !== undefined || patch.grammarDocumentCount !== undefined)) {
       const nextBlock = { ...activeBlock, ...patch, grammarSnapshot: undefined }
       const target = grammarSelectionCount(nextBlock)
-      const questions = grammar.questions.slice(0, target)
+      const locked = new Set(grammar.libreLockedQuestionIds)
+      if (target < locked.size) {
+        window.alert(`Il reste ${locked.size} unités verrouillées. Choisissez une quantité compatible ou retirez un verrou.`)
+        return
+      }
       if (target < grammar.questions.length && !window.confirm('Retirer les dernières unités de grammaire ?')) return
+      const removeCount = grammar.questions.length - target
+      const removed = new Set(removeCount > 0
+        ? grammar.questions.filter(({ id }) => !locked.has(id)).slice(-removeCount).map(({ id }) => id)
+        : [])
+      const questions = grammar.questions.filter(({ id }) => !removed.has(id))
       if (questions.length < target) {
         try {
           const generated = generateGrammarSelection(nextBlock, grammar.seed)
@@ -157,10 +193,10 @@ export function usePageConfig({
         window.alert('Cette banque ne fournit pas assez de nouvelles questions pour conserver la sélection actuelle.')
         return
       }
-      patch = { ...patch, grammarSnapshot: {
-        ...grammar, requestKey: grammarRequestKey(nextBlock), questions, groups: grammarGroups(questions, grammar.presentation),
-        libreCorrectionsPending: grammar.libreCorrectionsPending?.filter((id) => questions.some((question) => question.id === id)),
-      } }
+      const snapshot = withGrammarQuestions({ ...grammar, requestKey: grammarRequestKey(nextBlock) }, questions)
+      const cutIds = grammarCutIds(snapshot)
+      patch = { ...patch, grammarSnapshot: snapshot,
+        grammarPageBreakAfterQuestionIds: activeBlock.grammarPageBreakAfterQuestionIds?.filter((id) => cutIds.has(id)) }
     }
     const resizesAppliedItems = inlineArithmetic || editorProfile === 'question-simple' ||
       editorProfile === 'logique-visuelle' || editorProfile === 'mots-dans-l-ordre'

@@ -312,6 +312,32 @@ try {
   assert.equal(await leftSyllables.innerText(), initialLeftSyllables)
   await pronounceA5.close()
 
+  const associations = await open(context, {
+    domain: 'soutien-fr', topic: 'soutien-voyelles', exerciseType: 'soutien-a-associer-audio',
+    sheetFormat: 'a5-double-landscape', contentSeedTwin: 191,
+  })
+  await toggleLive(associations)
+  const leftSeries = preview(associations).locator('.a5-half.is-left')
+  const rightSeries = preview(associations).locator('.a5-half.is-right')
+  const initialSeries = await leftSeries.innerText()
+  await button(associations, 'Droite').click()
+  const firstSeries = associations.getByRole('group', { name: 'Série 1', exact: true })
+  const firstTrack = firstSeries.getByRole('combobox', { name: 'Mot de la piste 1', exact: true })
+  const substitute = (await firstTrack.locator('option').nth(1).textContent()).trim()
+  await firstTrack.focus()
+  await firstTrack.selectOption({ label: substitute })
+  assert.equal(await firstTrack.evaluate((element) => document.activeElement === element), true)
+  assert.equal(await rightSeries.getByText(substitute, { exact: true }).count(), 1)
+  assert.equal(await leftSeries.innerText(), initialSeries)
+  await button(associations, 'Fiche élève (cliquer pour corrigé)').click()
+  const companion = rightSeries.locator('.audio-order-slot').filter({ has: associations.getByText(substitute, { exact: true }) })
+  assert.equal(await companion.locator('.audio-order-slot-line').innerText(), '1')
+  await firstSeries.getByRole('button', { name: 'Reculer la piste 1', exact: true }).click()
+  assert.equal(await companion.locator('.audio-order-slot-line').innerText(), '2')
+  await button(associations, 'Annuler').click()
+  assert.equal(await companion.locator('.audio-order-slot-line').innerText(), '1')
+  await associations.close()
+
   const countSounds = await open(context, {
     domain: 'soutien-fr', topic: 'soutien-voyelles', exerciseType: 'soutien-a-compter',
   })
@@ -368,6 +394,17 @@ try {
   assert.equal(await answer.inputValue(), correctId)
   assert.match(await preview(grammar).innerText(), /suis bien/)
   await button(grammarQuestion, 'Corrigé vérifié').click()
+  const grammarItems = grammar.locator('.print-only-sheets .exercise-item')
+  const initialGraded = await grammarItems.allTextContents()
+  await button(grammarQuestion, 'Verrou de la question 1').click()
+  assert(await button(grammarQuestion, 'Régénérer cette unité').isDisabled())
+  await button(grammar, 'Régénérer les unités déverrouillées').click()
+  const drawnGraded = await grammarItems.allTextContents()
+  assert.equal(drawnGraded[0], initialGraded[0])
+  assert.notEqual(drawnGraded[1], initialGraded[1])
+  await button(grammar, 'Annuler').click()
+  assert.deepEqual(await grammarItems.allTextContents(), initialGraded)
+  assert.equal(await button(grammarQuestion, 'Verrou de la question 1').getAttribute('aria-pressed'), 'true')
   await button(grammar, 'Fermer le mode libre').click()
   assert.match(await preview(grammar).innerText(), /Dans cet atelier, je/)
   await grammar.close()
@@ -414,11 +451,27 @@ try {
   assert.equal(await text.getAttribute('aria-invalid'), 'true')
   await text.fill(`${originalText}\n\n${addition}`)
   assert.equal(await text.getAttribute('aria-invalid'), 'false')
+  await button(document, 'Verrou du document 1').click()
+  assert(await button(document, 'Régénérer cette unité').isDisabled())
   const numberOfTexts = document.getByRole('spinbutton', { name: 'Nombre de textes', exact: true })
   await numberOfTexts.fill('2')
   assert.equal(await numberOfTexts.inputValue(), '2')
   assert((await document.locator('.print-only-sheets .worksheet-sheet').allTextContents()).join('\n').includes(addition))
   await document.close()
+
+  const oralGrammar = await open(context, {
+    domain: 'grammaire', topic: 'gram-activite', gramSubtheme: 'co-universite-ecole',
+    exerciseType: 'gram-ex-co-universite-ecole-co-theme', grammarCoLevel: 'A1',
+  })
+  await toggleLive(oralGrammar)
+  const oralQuestion = oralGrammar.locator('#activity-editor .tcf-question-editor').first()
+  await oralQuestion.getByRole('textbox', { name: 'Énoncé', exact: true }).fill('Où se trouve la salle de l’atelier ?')
+  assert((await oralGrammar.locator('.print-only-sheets .worksheet-sheet').allTextContents()).join('\n')
+    .includes('Où se trouve la salle de l’atelier ?'))
+  await oralQuestion.getByText('Corrigé à vérifier', { exact: true }).waitFor()
+  await button(oralQuestion, 'Verrouiller la question').click()
+  assert(await button(oralGrammar, 'Autre série au hasard').isDisabled())
+  await oralGrammar.close()
 
   for (const diploma of ['afp', 'cfc']) {
     const course = await open(context, {
@@ -443,6 +496,30 @@ try {
     assert.match(await pages.first().textContent(), /Référence personnalisée/)
     await button(course, 'Annuler').click()
     assert.deepEqual(await pages.allTextContents(), before)
+    if (diploma === 'afp') {
+      const heading = courseEditor.getByRole('textbox', { name: 'Titre', exact: true }).first()
+      await heading.fill('Référence demandée pour impression')
+      await course.evaluate(() => {
+        const decode = HTMLImageElement.prototype.decode
+        const waiting = []
+        window.releasePrintImages = () => waiting.splice(0).forEach((ready) => ready())
+        HTMLImageElement.prototype.decode = function () {
+          if (!this.closest('.print-only-sheets')) return decode.call(this)
+          document.documentElement.dataset.printPreparing = 'yes'
+          return new Promise((resolve, reject) => waiting.push(() => decode.call(this).then(resolve, reject)))
+        }
+        window.print = () => {
+          document.documentElement.dataset.emittedTitle = document.querySelector('.print-only-sheets .theory-heading').textContent
+        }
+      })
+      await button(course, 'Imprimer la fiche').click()
+      await course.locator('html[data-print-preparing="yes"]').waitFor({ state: 'attached' })
+      await heading.fill('Référence modifiée pendant le chargement')
+      assert.match(await pages.first().textContent(), /Référence demandée pour impression/)
+      await course.evaluate(() => window.releasePrintImages())
+      await course.locator('html[data-emitted-title="Référence demandée pour impression"]').waitFor({ state: 'attached' })
+      await pages.first().getByText('Référence modifiée pendant le chargement', { exact: true }).waitFor({ state: 'attached' })
+    }
     await course.close()
 
     const maths = await open(context, {

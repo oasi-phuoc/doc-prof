@@ -3,11 +3,12 @@ import {isRetiredGrammarType} from './retirement'
 import { createRng, shuffle } from '@/math/rng'
 import type { ExerciseBlock, MathItem, PageConfig } from '@/math/types'
 import { grammarBankFor } from './registry'
-import { GrammarCurriculumError, isProtectedGrammarCo, type GrammarBank, type GrammarSnapshot, type GrammarUnit } from './types'
+import { GrammarCurriculumError, isProtectedGrammarCo, type GrammarBank, type GrammarQuestion, type GrammarSnapshot, type GrammarUnit } from './types'
 import { isGrammarSnapshot } from './validation'
 import { grammarItems } from './items'
 import { createGrammarQuestion } from './questions'
 import { grammarGroups } from './scenario'
+import { grammarPageBreakQuestionId } from './pagination'
 
 export function hasGrammarSettings(block: ExerciseBlock): boolean {
   return ['grammarLevel','grammarActivityId','grammarPresentation','grammarBankRevision','grammarSnapshot','grammarPreview','grammarDocumentCount','grammarPageBreakAfterQuestionIds']
@@ -29,13 +30,52 @@ function eligible(bank: GrammarBank, block: ExerciseBlock): GrammarUnit[] {
   const optional=['adjectif','adverbe','preposition','conjonction'] as const
   const units=bank.units.filter(u=>u.kind==='order' && !optional.some(category=>
     block.phraseCategories?.[category]===false && u.tokens.some(t=>t.category===category)))
-  const negative=(u: GrammarUnit) => u.kind==='order' && u.tokens.some(t=>t.category==='negation')
   const polarity=block.phrasePolarity??'positive'
   if (polarity==='mixed') {
-    if (!units.some(negative) || !units.some(u=>!negative(u))) return []
+    if (!units.some(isNegativeOrder) || !units.some(u=>!isNegativeOrder(u))) return []
     return units
   }
-  return units.filter(u=>negative(u)===(polarity==='negative'))
+  return units.filter(u=>isNegativeOrder(u)===(polarity==='negative'))
+}
+
+function isNegativeOrder(unit: GrammarUnit): boolean {
+  return unit.kind === 'order' && unit.tokens.some((token) => token.category === 'negation')
+}
+
+export function withGrammarQuestions(snapshot: GrammarSnapshot, questions: GrammarQuestion[]): GrammarSnapshot {
+  const ids = new Set(questions.map(({ id }) => id))
+  return {
+    ...snapshot, editedInLibre: true, questions, groups: grammarGroups(questions, snapshot.presentation),
+    libreLockedQuestionIds: snapshot.libreLockedQuestionIds?.filter((id) => ids.has(id)),
+    libreCorrectionsPending: snapshot.libreCorrectionsPending?.filter((id) => ids.has(id)),
+  }
+}
+
+export function grammarCutIds(snapshot: GrammarSnapshot): Set<string> {
+  return new Set(grammarItems(snapshot).map(grammarPageBreakQuestionId).filter((id): id is string => id !== undefined))
+}
+
+export function canRerollGrammarSelection(snapshot: GrammarSnapshot, block: ExerciseBlock): boolean {
+  const bank = grammarBankFor(snapshot.activityId, snapshot.level)
+  return Boolean(bank?.revision === snapshot.bankRevision && eligible(bank, block).length > snapshot.questions.length)
+}
+
+export function rerollGrammarSelection(snapshot: GrammarSnapshot, block: ExerciseBlock, seed: number, targets?: ReadonlySet<string>): GrammarSnapshot {
+  const bank = grammarBankFor(snapshot.activityId, snapshot.level)
+  if (!bank || bank.revision !== snapshot.bankRevision) return snapshot
+  const used = new Set(snapshot.questions.map(({ id }) => id))
+  const locked = new Set(snapshot.libreLockedQuestionIds)
+  const candidates = shuffle(createRng(seed), eligible(bank, block).filter(({ id }) => !used.has(id)))
+  const preservePolarity = snapshot.presentation === 'order' && block.phrasePolarity === 'mixed' && grammarOrderHasSentenceFilters(bank.units)
+  const questions = snapshot.questions.map((question) => {
+    if (locked.has(question.id) || (targets && !targets.has(question.id))) return question
+    const index = preservePolarity ? candidates.findIndex((unit) => isNegativeOrder(unit) === isNegativeOrder(question.unit)) : 0
+    if (index < 0 || !candidates[index]) return question
+    const [unit] = candidates.splice(index, 1)
+    return createGrammarQuestion(unit!, snapshot.presentation, seed)
+  })
+  return questions.every((question, index) => question === snapshot.questions[index])
+    ? snapshot : withGrammarQuestions({ ...snapshot, seed }, questions)
 }
 export function grammarEligibleCount(block: ExerciseBlock): number {
   const bank=block.grammarLevel?grammarBankFor(block.exerciseType,block.grammarLevel):undefined
@@ -72,8 +112,7 @@ export function generateGrammarSelection(block: ExerciseBlock, seed: number): Gr
   const rng=createRng(seed)
   let selected=shuffle(rng,pool).slice(0,count)
   if (block.grammarPresentation==='order' && block.phrasePolarity==='mixed' && grammarOrderHasSentenceFilters(pool)) {
-    const isNegative=(u:GrammarUnit)=>u.kind==='order'&&u.tokens.some(t=>t.category==='negation')
-    const a=shuffle(rng,pool.filter(u=>!isNegative(u))), n=shuffle(rng,pool.filter(isNegative))
+    const a=shuffle(rng,pool.filter(u=>!isNegativeOrder(u))), n=shuffle(rng,pool.filter(isNegativeOrder))
     const negatives=Math.min(n.length,Math.ceil(block.count/2))
     selected=shuffle(rng,[...n.slice(0,negatives),...a.slice(0,block.count-negatives)])
     if (selected.length!==block.count) throw new GrammarCurriculumError('GRAMMAR_CAPACITY_EXCEEDED','Ce tirage mixte ne contient pas assez de phrases dans chaque forme.')

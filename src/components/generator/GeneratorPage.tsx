@@ -1,4 +1,3 @@
-import { flushSync } from 'react-dom'
 import { isLogistiqueDomain } from '@/logistique/catalog'
 import { logistiqueDocumentTitle } from '@/logistique/generate'
 import { AudioProgressDialog } from '@/components/AudioProgressDialog'
@@ -61,7 +60,7 @@ import { arithmeticActivityId, worksheetActivityIds } from '@/components/generat
 import { isCalculationProfile, isInlineArithmetic, isTcfLiveProfile, isWordListProfile, liveEditorProfile, opensWithoutOverlay, usesIndependentHalves } from '@/components/generator/libre/profiles'
 import { readSpacingPreferences, spacingPreferenceKey } from '@/components/generator/libre/preferences'
 import { hasTcfCorrectionsToReview, isTcfSubjectIncomplete } from '@/tcf/libre-questions'
-import { generateGrammarSelection } from '@/grammaire/curriculum/generate'
+import { canRerollGrammarSelection, generateGrammarSelection } from '@/grammaire/curriculum/generate'
 import { DraftRecovery } from '@/components/generator/libre/DraftRecovery'
 import { useLibreDraft } from '@/components/generator/libre/useLibreDraft'
 import { useLibreHistory } from '@/components/generator/libre/useLibreHistory'
@@ -141,7 +140,6 @@ export function GeneratorPage({
   const [hideChrome, setHideChrome] = useState(
     () => openedFiche?.recipe.hideChrome ?? false,
   )
-  const [printStudentOnly, setPrintStudentOnly] = useState(false)
   const [printCorrections, setPrintCorrections] = useState(
     () => openedFiche?.recipe.printCorrections ?? true,
   )
@@ -599,7 +597,7 @@ export function GeneratorPage({
       libreItems?.some((item) => item.libreCorrectionPending) ||
       isA5DoubleFormat(sheetFormat) && a5RightLibre?.items.some((item) => item.libreCorrectionPending)))
 
-  async function printAll() {
+  async function printAll(includesCorrections: boolean, capture: (studentOnly: boolean) => () => void) {
     function missingPrompt(item: MathItem) {
       if (!item.libreCorrectionPending) return false
       if (item.layout === 'phrase-order') return !item.tokens?.length || item.tokens.some(({ text }) => !text.trim())
@@ -614,17 +612,19 @@ export function GeneratorPage({
       window.alert('Une question ou un support est incomplet. Complétez le contenu concerné avant d’imprimer.')
       return
     }
-    const studentOnly = correctionsToReview && printCorrections
+    const studentOnly = correctionsToReview && includesCorrections
     if (!confirmAppliedOutput('imprimer', studentOnly)) return
-    if (studentOnly) flushSync(() => setPrintStudentOnly(true))
+    const release = capture(studentOnly)
     try {
       const printRoot = document.querySelector<HTMLElement>('.print-only-sheets')
-      if (printRoot) await waitForGrammarPrintImages(printRoot)
-      window.print()
+      if (printRoot) {
+        await Promise.all([document.fonts.ready, waitForGrammarPrintImages(printRoot)])
+        if (printRoot.isConnected) window.print()
+      }
     } catch (error) {
       window.alert(error instanceof Error ? error.message : 'Les images de la fiche ne sont pas prêtes pour l’impression.')
     } finally {
-      if (studentOnly) setPrintStudentOnly(false)
+      release()
     }
   }
 
@@ -785,7 +785,7 @@ export function GeneratorPage({
     drawAlphaSeries,
     generate,
     printAll,
-    printCorrections: printCorrections && !printStudentOnly,
+    printCorrections,
     onSaveFiche: () => {
       if (confirmAppliedOutput('enregistrer')) setSaveOpen(true)
     },
@@ -998,7 +998,9 @@ export function GeneratorPage({
               syllableContent={activeProfile === 'syllabes-audio' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
               soutienPhrases={activeProfile === 'sons-a-compter' || activeProfile === 'determinants'
                 ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
+              audioOrderContent={activeProfile === 'association-audio' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
               grammarSelection={grammarSelection}
+              grammarCanRegenerate={grammarSelection !== null && canRerollGrammarSelection(grammarSelection, activeAsPage)}
               arithmeticId={arithmeticActivityId(activeBlock, seed, pageIndex, safeBlockIndex, reservedActivityIds)}
               halfEditor={halfEditor}
               maxQuestions={ctx.maxQuestions}

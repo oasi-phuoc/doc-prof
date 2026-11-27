@@ -32,6 +32,8 @@ import {
   resolveAlphaSelection,
 } from '@/alphabetisation/themes'
 import { SOUTIEN_KINDS, parseSoutienType } from '@/francais/soutien/kinds'
+import { soutienBankById } from '@/francais/soutien/banks'
+import { audioOrderKind, defaultAudioOrderCapacity } from '@/francais/soutien/audio-order'
 import {
   resolveSoutienSelection,
   soutienExerciseTypeId,
@@ -99,7 +101,9 @@ export function typeChoicesForBlock(
       parseSoutienType(block.exerciseType)?.bankId ??
       resolveSoutienSelection(block.topic, block.exerciseType)?.sound.bankId ??
       'a'
-    return SOUTIEN_KINDS.map(
+    const bank = soutienBankById(bankId)
+    return SOUTIEN_KINDS.filter(({ id }) => !bank || !audioOrderKind(id) ||
+      soutienExerciseTypeId(bankId, id) === block.exerciseType || defaultAudioOrderCapacity(bank, id) > 0).map(
       (kind) => exerciseTypeById[soutienExerciseTypeId(bankId, kind.id)],
     ).filter((t): t is NonNullable<typeof t> => Boolean(t))
   }
@@ -115,7 +119,9 @@ export function typeChoicesForBlock(
             Boolean(exerciseTypeById[alphaExerciseTypeId(bankId, k.id)]),
           )
         : ALPHA_LETTER_KINDS
-    return kinds
+    const bank = soutienBankById(bankId)
+    return kinds.filter(({ id }) => !bank || !audioOrderKind(id) ||
+      alphaExerciseTypeId(bankId, id) === block.exerciseType || defaultAudioOrderCapacity(bank, id) > 0)
       .map((kind) => exerciseTypeById[alphaExerciseTypeId(bankId, kind.id)])
       .filter((t): t is NonNullable<typeof t> => Boolean(t))
   }

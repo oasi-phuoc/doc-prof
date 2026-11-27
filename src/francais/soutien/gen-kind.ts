@@ -5,6 +5,7 @@ import type { Difficulty, MathItem, PhraseToken } from '@/math/types'
 import { displayVocabLabel } from '@/francais/display-vocab-label'
 import type { SoutienVowelBank } from './banks'
 import { soutienAudioFor } from './audio'
+import { audioOrderWordPool } from './audio-order'
 import { completesFromType1Words } from './complete-blank'
 import { soutienEntriesWithImages, soutienImageFor } from './images'
 import type { SoutienKindId } from './kinds'
@@ -716,44 +717,7 @@ export function genKind(
         return picked
       }
 
-      let pool: string[]
-      if (mode === 'images') {
-        const pinned = (options?.type1Words ?? []).filter(
-          (w) => Boolean(soutienImageFor(w)) && Boolean(soutienAudioFor(w)),
-        )
-        const fallback = type1WordPool(bank).filter(
-          (w) => Boolean(soutienImageFor(w)) && Boolean(soutienAudioFor(w)),
-        )
-        /** Pool le plus large possible pour couvrir plusieurs séries sans doublon. */
-        const seen = new Set<string>()
-        pool = []
-        for (const raw of [...pinned, ...fallback]) {
-          const key = raw.toLowerCase()
-          if (seen.has(key) || exclude.has(key)) continue
-          if (!soutienImageFor(raw) || !soutienAudioFor(raw)) continue
-          seen.add(key)
-          pool.push(raw)
-        }
-      } else {
-        /** Type 14 : mots avec audio uniquement (QR obligatoire). */
-        const candidates = [
-          ...bank.audioPairs.map((p) => p.word),
-          ...bank.wordSearchWords,
-          ...lessonWordsForText(bank),
-          ...lessonWordsBySound(bank),
-          ...bank.words,
-          ...type1WordPool(bank),
-        ]
-        const seen = new Set<string>()
-        pool = []
-        for (const raw of candidates) {
-          const key = raw.toLowerCase()
-          if (seen.has(key) || exclude.has(key)) continue
-          if (!soutienAudioFor(raw)) continue
-          seen.add(key)
-          pool.push(raw)
-        }
-      }
+      const pool = audioOrderWordPool(bank, mode, options)
 
       const items: MathItem[] = []
       for (let s = 0; s < seriesCount; s++) {

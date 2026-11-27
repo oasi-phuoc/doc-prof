@@ -28,6 +28,7 @@ import {
   subthemesForTopicAll,
 } from '@/grammaire/exercises'
 import { soutienBankById } from '@/francais/soutien/banks'
+import { audioOrderKind, defaultAudioOrderCapacity } from '@/francais/soutien/audio-order'
 import { type1WordPool, type1Words } from '@/francais/soutien/generate'
 import { parseAlphaType } from '@/alphabetisation/kinds'
 import { resolveAlphaSelection } from '@/alphabetisation/themes'
@@ -256,8 +257,10 @@ const baseMaxQuestions = maxQuestionsFor({
 })
 const activeSheetBlock = worksheets[safeSheetIndex]?.blocks[safeBlockIndex]
 const bankQuestionCap = activeSheetBlock?.bankQuestionCap
+const audioSeriesCap = soutienBank && audioOrderKind(soutienKind) ? Math.max(1, defaultAudioOrderCapacity(soutienBank, soutienKind)) : undefined
 const maxQuestions = exerciseTypeById[activeBlock.exerciseType]?.maxCount
   ?? cscQuestionLimit(activeBlock.exerciseType)
+  ?? audioSeriesCap
   ?? (isGrammaireDomain && activeBlock.grammarLevel
   ? Math.max(1,Math.min(50,grammarEligibleCount(activeBlock)))
   : (activePage.domain === 'gattegno' || isLogistiqueDomain(activePage.domain)) && bankQuestionCap != null

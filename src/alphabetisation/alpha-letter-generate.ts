@@ -19,6 +19,7 @@ import type { SoutienGenerateOptions } from '@/francais/soutien/generate-options
 import { type1Words } from '@/francais/soutien/type1-words'
 import type { SoutienVowelBank } from '@/francais/soutien/banks'
 import { soutienAudioFor } from '@/francais/soutien/audio'
+import { audioOrderChoices, audioOrderLetterKey, shortAudioSyllable } from '@/francais/soutien/audio-order'
 import { syllabifyFr } from '@/francais/soutien/syllabify-fr'
 import {
   wordHasLessonLetter,
@@ -215,11 +216,6 @@ function syllabesPrononcer(
   }
 }
 
-/** Nombre de lettres d’une syllabe (accents compris, sans signe). */
-function syllableLetterCount(syll: string): number {
-  return [...syll].filter((ch) => /\p{L}/u.test(ch)).length
-}
-
 function associerSyllabes(
   bank: SoutienVowelBank,
   rng: Rng,
@@ -235,21 +231,22 @@ function associerSyllabes(
       const candidates = type1Words(bank, rng, 24)
       if (!candidates.length) break
       const raw = pick(rng, candidates)
-      const parts = syllabifyFr(displayVocabLabel(raw))
-      const syll = parts.find((p) => syllableLetterCount(p) <= 3 && wordHasLessonLetter(p, bank))
-      if (!syll) continue
-      const key = syll.toLowerCase()
+      const syllable = shortAudioSyllable(raw, bank)
+      if (!syllable) continue
+      const key = audioOrderLetterKey(syllable.word)
       if (used.has(key)) continue
-      const audioSrc = soutienAudioFor(syll) ?? soutienAudioFor(raw)
-      if (!audioSrc) continue
       used.add(key)
-      clips.push({
-        word: syll,
-        // Audio de la syllabe si dispo, sinon le mot source (QR).
-        audioSrc,
-      })
+      clips.push(syllable)
     }
-    if (clips.length < AUDIO_ORDER_CLIPS) break
+    if (clips.length < AUDIO_ORDER_CLIPS) {
+      const reserve = audioOrderChoices(bank, 'associer-syllabe').filter(({ word }) => !used.has(audioOrderLetterKey(word)))
+      const need = AUDIO_ORDER_CLIPS - clips.length
+      if (reserve.length < need) break
+      for (const syllable of shuffle(rng, reserve).slice(0, need)) {
+        clips.push(syllable)
+        used.add(audioOrderLetterKey(syllable.word))
+      }
+    }
     const slotSource = clips.map((clip, i) => ({
       word: clip.word,
       correctNum: i + 1,

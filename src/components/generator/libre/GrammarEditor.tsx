@@ -25,11 +25,14 @@ export type GrammarEditorProps = {
   activityId: string
   fields: Record<string, string>
   writeField: (id: string, value: string | null) => void
+  onRegenerate?: (id?: string) => void
 }
 
-export function GrammarEditor({ selection, onChange, activityId, fields, writeField }: GrammarEditorProps) {
+export function GrammarEditor({ selection, onChange, activityId, fields, writeField, onRegenerate }: GrammarEditorProps) {
   const [open, setOpen] = useState<string | null | undefined>(undefined)
   const pending = selection.libreCorrectionsPending ?? []
+  const locked = selection.libreLockedQuestionIds ?? []
+  const openAvailable = open == null || selection.questions.some(({ id }) => id === open)
   function field(question: GrammarQuestion, name: string, value: string, candidate: (value: string, change: ChangeQuestion) => GrammarSnapshot,
     options?: { multiline?: boolean; error?: string }): ReactNode {
     const id = `${activityId}:${question.id}:${name}`
@@ -68,6 +71,10 @@ export function GrammarEditor({ selection, onChange, activityId, fields, writeFi
   return (
     <div className="quad-libre-block">
       <b>Exercice de grammaire</b>
+      {onRegenerate && locked.length < selection.questions.length &&
+        <button type="button" className="button secondary small" onClick={() => onRegenerate()}>
+          Régénérer les unités déverrouillées
+        </button>}
       <label className="libre-field is-line">
         <span>Consigne de l’activité</span>
         <input className="libre-line-input" value={fields[`${activityId}:instruction`] ?? selection.instruction}
@@ -83,6 +90,7 @@ export function GrammarEditor({ selection, onChange, activityId, fields, writeFi
       <ul className="libre-item-list" aria-label="Questions de grammaire">
         {selection.questions.map((question, index) => {
           const unit = question.unit
+          const protectedUnit = locked.includes(question.id)
           const edit: GrammarField = (name, value, update, options) => field(question, name, value,
             (text, change) => change(update(text), options?.review), options)
           const correct = unit.kind === 'completion'
@@ -90,13 +98,14 @@ export function GrammarEditor({ selection, onChange, activityId, fields, writeFi
             : undefined
           return (
             <li key={question.id} className="libre-item-card">
-              <details open={open === undefined ? index === 0 : open === question.id}>
+              <details open={open === undefined || !openAvailable ? index === 0 : open === question.id}>
                 <summary onClick={(event) => {
                   event.preventDefault()
                   setOpen(event.currentTarget.parentElement?.hasAttribute('open') ? null : question.id)
                 }}>
                   {index + 1}. {unit.prompt.replace(/\s+/g, ' ').slice(0, 70)}
                   {pending.includes(question.id) && ' · À vérifier'}
+                  {protectedUnit && ' · Verrouillée'}
                 </summary>
               <div className="libre-item-body" role="group" aria-label={`Question ${index + 1}`}>
                 {(unit.kind === 'completion' || unit.kind === 'personal-gap') && edit('Phrase avec une lacune (___)', unit.prompt,
@@ -135,6 +144,17 @@ export function GrammarEditor({ selection, onChange, activityId, fields, writeFi
                     })}>Corrigé vérifié</button>
                   </div>
                 )}
+                <div className="libre-unit-actions">
+                  <button type="button" className="button secondary small" aria-pressed={protectedUnit}
+                    aria-label={`Verrou ${unit.kind === 'reading' ? 'du document' : unit.kind === 'scenario' ? 'du dialogue' : 'de la question'} ${index + 1}`}
+                    onClick={() => onChange({ ...selection, editedInLibre: true,
+                      libreLockedQuestionIds: protectedUnit ? locked.filter((id) => id !== question.id) : [...locked, question.id],
+                    })}>
+                    {protectedUnit ? 'Verrouillée' : 'Verrouiller'}
+                  </button>
+                  {onRegenerate && <button type="button" className="button secondary small" disabled={protectedUnit}
+                    onClick={() => onRegenerate(question.id)}>Régénérer cette unité</button>}
+                </div>
               </div>
               </details>
             </li>

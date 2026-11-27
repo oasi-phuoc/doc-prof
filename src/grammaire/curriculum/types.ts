@@ -84,6 +84,7 @@ export type GrammarSnapshot = {
   schemaVersion: 1
   editedInLibre?: true
   libreCorrectionsPending?: string[]
+  libreLockedQuestionIds?: string[]
   activityId: string
   level: GrammarLevel
   presentation: GrammarPresentation
