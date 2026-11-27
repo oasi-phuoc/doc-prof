@@ -56,6 +56,8 @@ Les quatre exercices de symétrie sur repère donnent accès aux sommets, à l�
 
 `node tests/mode-libre/transformations-browser.mjs` vérifie les quatre variantes, le maintien de la figure à l’ouverture, l’ajout et le retrait par clic, l’annulation, la correction et la largeur réelle du repère imprimé à 0,6 mm près.
 
+L’inventaire sur `0974f642` raccorde les quatre variantes. Sur 4 269 contextes de sélection, il reste 580 profils à raccorder en A4 et aucune erreur de génération n’est relevée.
+
 ### Écoute de mots en Soutien FR et Alphabétisation
 
 Le panneau Libre permet de changer les mots des activités d’écoute avec QR et des activités d’écoute illustrées. La banque fournit les médias associés et le son de la leçon détermine la coche proposée dans le corrigé. La case reste modifiable pour une prononciation particulière. Un changement de quantité ou de colonnes conserve les mots personnalisés et leurs médias.
