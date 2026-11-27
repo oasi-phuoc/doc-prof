@@ -145,6 +145,10 @@ Le deuxième passage couvre les 80 modules CFC et les 63 modules AFP. Il porte l
 
 Dans les cours et résumés, les photos en couleur suivies d’un paragraphe suffisamment long s’affichent à droite dans un cadre qui contient aussi la légende. Le texte reprend toute la largeur sous le cadre. La pagination réunit la photo et le paragraphe sur la même feuille. Un saut manuel explicite ou une largeur de texte insuffisante donne une composition verticale. Les tableaux et les frises, dont ceux du 101, gardent leur disposition de lecture.
 
+Chromium a contrôlé l’habillage et le pied de page sur les 286 parcours A4 des 80 modules CFC et 63 modules AFP. La réserve minimale mesurée était de 53,14 px. Les fichiers PDF des modules 101, 306 et 409 ont aussi été contrôlés dans les deux diplômes.
+
+Le module 306 ajoute une mise en scène des supports spéciaux aux versions Complet et Résumé, en CFC et AFP. Le passage explique le choix entre une palette synthétique et une box-palette destinée au vrac et rappelle que la couleur seule ne permet pas d’identifier un support CHEP. La nouvelle figure et son paragraphe sont publiés dans la révision `logistique-theorie-306-v004`. Les quatre parcours A4 et PDF du 306 ont été vérifiés avec la nouvelle photo encadrée. [Préparation du 306](preparation/306-v004.json).
+
 ## Enrichissement des exercices
 
 ### Fondations — 100 à 110

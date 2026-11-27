@@ -8,7 +8,7 @@ const plan = JSON.parse(await readFile(new URL('../../docs/logistique/preparatio
 const curriculum = JSON.parse(await readFile(new URL('../../src/logistique/curriculum.generated.json', import.meta.url), 'utf8'))
 const preparation = new URL('../../docs/logistique/preparation/', import.meta.url)
 const requestedModules = process.argv.slice(2)
-const photoFiles = (await readdir(preparation)).filter((file) => /^\d{3}-v00[23]\.json$/.test(file)
+const photoFiles = (await readdir(preparation)).filter((file) => /^\d{3}-v00[234]\.json$/.test(file)
   && (!requestedModules.length || requestedModules.includes(file.slice(0, 3)))).sort()
 const photoPlans = new Map(await Promise.all(photoFiles.map(async (file) => [
   file.slice(0, 3),
@@ -200,6 +200,7 @@ try {
       if (code === '306') assert(complete.pages.some(({ wraps }) => wraps.length > 0), 'Photos de palettes habillées')
       const images = page.locator('.print-only-sheets .exercise-item img[src*="/assets/logistique/"][src$=".webp"]')
       assert.equal(await images.count(), imageCount(theory.blocks))
+      if (code === '306') assert.equal(await page.locator('.print-only-sheets .logistique-theory-wrap img[src$="log-306-supports-speciaux-photo-v004.webp"]').count(), 1)
       if (code === '101') await verifyHistoryTable()
       await verifyPdf(`${code} ${diploma} complet`)
       await page.getByRole('button', { name: 'Résumé', exact: true }).click()
@@ -207,6 +208,7 @@ try {
       assert(summary.printText.includes(caption))
       assert.notEqual(summary.printText, complete.printText)
       assert.equal(await images.count(), imageCount(theory.summaryBlocks))
+      if (code === '306') assert.equal(await page.locator('.print-only-sheets .logistique-theory-wrap img[src$="log-306-supports-speciaux-photo-v004.webp"]').count(), 1)
       if (code === '101') await verifyHistoryTable()
       assert(summary.pages.length <= complete.pages.length)
       await verifyPdf(`${code} ${diploma} résumé`)

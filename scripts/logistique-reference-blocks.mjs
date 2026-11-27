@@ -48,7 +48,9 @@ export function insertLogistiqueFigures(blocks, figures, publicDirectory, direct
     } else {
       block = { kind: 'image', ...figureImage(figure, publicDirectory, directory) }
     }
-    inserted.splice(indices[0] + 1, 0, block)
+    const additions = [block]
+    if (figure.prose?.trim()) additions.push({ kind: 'paragraph', text: figure.prose.trim() })
+    inserted.splice(indices[0] + 1, 0, ...additions)
   }
   return inserted
 }

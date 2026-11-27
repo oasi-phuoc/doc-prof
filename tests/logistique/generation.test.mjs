@@ -5,6 +5,7 @@ import { dossierMaths } from '../../scripts/logistique-dossier-maths.mjs'
 
 const require = createRequire(import.meta.url)
 const fixture = require('./fixture.json')
+const palletPhoto = require('../../docs/logistique/preparation/306-v004.json').visuals[0]
 const { load, root } = require('../../scripts/gattegno-loader.cjs')
 const catalog = load(root + '/src/logistique/catalog.ts')
 const { generateLogistique, logistiqueDocumentTitle, logistiqueHasSummary } = load(root + '/src/logistique/generate.ts')
@@ -89,7 +90,10 @@ test('les résumés illustrés sont distincts du cours et figés dans la recette
         const figures = images(version)
         assert(figures.length > images(previous).length, `${diploma} ${code}`)
         assert(figures.every((figure) => figure.src.endsWith('.webp') && figure.alt && figure.caption), `${diploma} ${code}`)
-        if (code !== '101') assert.deepEqual(textBlocks(version), textBlocks(previous), `${diploma} ${code}`)
+        if (code !== '101') {
+          const originalText = textBlocks(version).filter((block) => code !== '306' || block.text !== palletPhoto.prose)
+          assert.deepEqual(originalText, textBlocks(previous), `${diploma} ${code}`)
+        }
       }
       const historical = { ...full, logistiqueBankRevision: 'logistique-901-v001' }
       assert(!logistiqueHasSummary(full.exerciseType, historical.logistiqueBankRevision))
@@ -98,6 +102,21 @@ test('les résumés illustrés sont distincts du cours et figés dans la recette
     }
   }
   assert(!validLogistiquePages([{ ...config('AFP', '101', 'maths'), logistiqueTheoryView: 'resume' }]))
+})
+
+test('le 306 associe le nouvel encadré au passage des supports spéciaux dans les deux versions', () => {
+  for (const diploma of ['CFC', 'AFP']) {
+    for (const logistiqueTheoryView of ['complet', 'resume']) {
+      const page = { ...config(diploma, '306', 'theorie'), logistiqueTheoryView }
+      const blocks = generateLogistique(page, 7).items.map(({ theoryBlock }) => theoryBlock)
+      const index = blocks.findIndex((block) => block.src?.endsWith(palletPhoto.file))
+      assert(index > 0)
+      assert.equal(blocks[index - 1].text, logistiqueTheoryView === 'resume' ? palletPhoto.summaryAnchor : palletPhoto.anchor)
+      assert.equal(blocks[index + 1].text, palletPhoto.prose)
+      const saved = { ...page, logistiqueBankRevision: 'logistique-exercices-approvisionnement-complet-v005' }
+      assert(generateLogistique(saved, 7).items.every(({ theoryBlock }) => !theoryBlock.src?.endsWith(palletPhoto.file)))
+    }
+  }
 })
 
 test('les nouvelles publications conservent le tirage des recettes du thème 600', () => {
