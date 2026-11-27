@@ -33,6 +33,10 @@ function tcfSupportExercise(items: MathItem[] | undefined): TcfExercise | undefi
 import { GenericLibreEditor } from '@/components/generator/GenericLibreEditor'
 import { identifyItems } from '@/components/generator/libre/flat-items'
 import { TheoryEditor } from '@/components/generator/libre/TheoryEditor'
+import { LetterGridEditor } from '@/components/generator/libre/LetterGridEditor'
+import { LogicEditor } from '@/components/generator/libre/LogicEditor'
+import { GrammarCompletionEditor } from '@/components/generator/libre/GrammarCompletionEditor'
+import type { GrammarSnapshot } from '@/grammaire/curriculum/types'
 import type { SheetBlockItems } from '@/components/generator/sheet-items'
 import { TpmLibreEditor } from '@/components/generator/TpmLibreEditor'
 import { VocabAddWordRow } from '@/components/generator/VocabAddWordRow'
@@ -60,6 +64,9 @@ export type LibreSidePanelProps = {
   livePhrase: boolean
   theory: SheetBlockItems | null
   textExercise: SheetBlockItems | null
+  letterGrid: SheetBlockItems | null
+  logic: SheetBlockItems | null
+  grammarSelection: GrammarSnapshot | null
   arithmeticId: string
   halfEditor?: { value: 'left' | 'right'; setValue: (half: 'left' | 'right') => void; content: SheetBlockItems | null }
   maxQuestions: number
@@ -94,7 +101,7 @@ export type LibreSidePanelProps = {
   updatePage: (patch: Partial<ExerciseBlock>) => void
   onClose: () => void
   /** Régénère l’exercice actif (autres nombres / autre tirage banque). */
-  onRegenerateBlock?: (blockIndex: number, half?: 'left' | 'right', itemId?: string) => void
+  onRegenerateBlock?: (blockIndex: number, half?: 'left' | 'right', target?: string | readonly string[]) => void
 }
 
 export function LibreSidePanel({
@@ -113,6 +120,9 @@ export function LibreSidePanel({
   livePhrase,
   theory,
   textExercise,
+  letterGrid,
+  logic,
+  grammarSelection,
   arithmeticId,
   halfEditor,
   maxQuestions,
@@ -224,6 +234,18 @@ export function LibreSidePanel({
         {theory ? (
           <TheoryEditor items={theory.items} onChange={(libreItems) => updatePage({ libreItems })} />
         ) : null}
+        {letterGrid?.items.length ? (
+          <LetterGridEditor items={letterGrid.items} instruction={letterGrid.instruction}
+            activityId={`${arithmeticId}:${activeBlock.exerciseType}`} fields={transientFields} writeField={onTransientField}
+            onChange={(libreItems) => updatePage({ libreItems, libreInstruction: letterGrid.instruction })}
+            onInstruction={(libreInstruction) => updatePage({ libreInstruction, libreItems: letterGrid.items })} />
+        ) : null}
+        {logic?.items.length ? (
+          <LogicEditor type={activeBlock.exerciseType} items={identifyItems(logic.items, arithmeticId)} instruction={logic.instruction}
+            onChange={(libreItems) => updatePage({ libreId: arithmeticId, libreItems })}
+            onInstruction={(libreInstruction) => updatePage({ libreId: arithmeticId, libreInstruction, libreItems: identifyItems(logic.items, arithmeticId) })}
+            onRegenerate={(id) => onRegenerateBlock?.(safeBlockIndex, undefined, id)} />
+        ) : null}
         {textExercise?.items.length ? (
           <GenericLibreEditor
             key={arithmeticId}
@@ -288,6 +310,7 @@ export function LibreSidePanel({
         ) : null}
         {soutienKind === 'mots' ? (
           <SoutienMotsLibreEditor
+            key={`${arithmeticId}-${activeBlock.exerciseType}`}
             entries={
               (liveWords && !activeBlock.soutienMotsLibre ? undefined : activeBlock.soutienMotsEntries) ??
               renderedWords ??
@@ -303,6 +326,7 @@ export function LibreSidePanel({
         ) : null}
         {soutienKind === 'completer' ? (
           <SoutienCompleterLibreEditor
+            key={`${arithmeticId}-${activeBlock.exerciseType}`}
             entries={
               (!liveWords || activeBlock.soutienCompleterLibre) && activeBlock.soutienCompleterEntries?.length
                 ? activeBlock.soutienCompleterEntries
@@ -418,7 +442,11 @@ export function LibreSidePanel({
             onChange={(patch) => updatePage(patch)}
           />
         ) : null}
-        {isGrammaireExercise ? (
+        {grammarSelection ? (
+          <GrammarCompletionEditor selection={grammarSelection} activityId={arithmeticId}
+            fields={transientFields} writeField={onTransientField}
+            onChange={(grammarSnapshot) => updatePage({ grammarSnapshot, libreItems: undefined, libreInstruction: undefined })} />
+        ) : isGrammaireExercise ? (
           <TcfExerciseEditor
             variant="grammaire"
             niveau={tcfNiveau}
@@ -465,6 +493,8 @@ export function LibreSidePanel({
         !isGrammaireExercise &&
         !theory &&
         !textExercise &&
+        !letterGrid &&
+        !logic &&
         soutienKind !== 'mots' &&
         soutienKind !== 'completer' &&
         !(isDroites || isConstruire) ? (

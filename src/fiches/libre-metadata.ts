@@ -69,7 +69,14 @@ export function validLibreMetadata(pages: readonly unknown[]): boolean {
   }
   function validActivity(block: unknown) {
     if (!record(block) || !validTcfMetadata(block.tcfExercise)) return false
+    for (const gap of [block.questionGapPx, block.columnGapPx]) {
+      if (gap !== undefined && (typeof gap !== 'number' || !Number.isInteger(gap) || gap < 0 || gap > 32)) return false
+    }
     if (block.libreId !== undefined && !registerActivity(block.libreId)) return false
+    for (const entries of [block.soutienMotsEntries, block.soutienCompleterEntries]) {
+      if (Array.isArray(entries) && entries.some((entry: unknown) => record(entry) && entry.libreImage !== undefined &&
+        (entry.libreImage !== true || typeof entry.id !== 'string' || !validLibreRaster(entry.imageSrc)))) return false
+    }
     if (block.a5RightLibre !== undefined) {
       const right = block.a5RightLibre
       if (!record(right) || !registerActivity(right.id) || !Array.isArray(right.items) ||

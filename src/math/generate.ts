@@ -490,6 +490,8 @@ export function buildPage(
       // Filet anti bruit binaire (7,2700000000000005) sur toutes les fiches.
       items,
       columns: config.domain === 'gattegno' ? 1 : block.columns,
+      questionGapPx: block.questionGapPx,
+      columnGapPx: block.columnGapPx,
       exerciseType: block.exerciseType,
       pointsPerQuestion: block.pointsPerQuestion,
       givens: libreGivens ?? result.givens,

@@ -5,6 +5,7 @@ import { readSessionUser } from '@/fiches/session'
 import {
   discardLibreDraft, listLibreDrafts, writeLibreDraft, type LibreDraft, type LibreDraftSnapshot,
 } from './drafts'
+import type { LibreRevision } from './history'
 
 const HISTORY_KEY = 'clairfleLibreDraft'
 const SAVE_DELAY = 350
@@ -57,6 +58,8 @@ export function useLibreDraft({
   const [hydrated, setHydrated] = useState(false)
   const last = useRef(snapshot)
   const applied = useRef(snapshot)
+  const activeWorksheet = useRef(worksheet)
+  const changingWorksheet = useRef(false)
   const head = useRef<LibreDraft | null>(null)
   const pendingRestore = useRef(false)
   const started = useRef(false)
@@ -82,6 +85,7 @@ export function useLibreDraft({
     head.current = draft
     started.current = true
     rememberWorksheet(owner, draft.worksheet)
+    activeWorksheet.current = draft.worksheet
     setWorksheet(draft.worksheet)
     activeRestore.current(stored)
     setMessage('Brouillon récupéré.')
@@ -112,7 +116,7 @@ export function useLibreDraft({
   }, [owner])
 
   function flush() {
-    if (!owner || !hydrated || readSessionUser()?.id !== owner) return Promise.resolve()
+    if (!owner || !hydrated || changingWorksheet.current || readSessionUser()?.id !== owner) return Promise.resolve()
     const target = last.current
     if (!started.current) {
       if (!target.libreMode) return Promise.resolve()
@@ -122,9 +126,9 @@ export function useLibreDraft({
       if (!edited) return Promise.resolve()
       started.current = true
     }
-    const document = worksheet
+    const document = activeWorksheet.current
     const work = busy.current.then(async () => {
-      if (readSessionUser()?.id !== owner || applied.current === target) return
+      if (readSessionUser()?.id !== owner || activeWorksheet.current !== document || applied.current === target) return
       const previous = head.current
       const draft: LibreDraft = {
         version: 1, owner, worksheet: document, id: crypto.randomUUID(),
@@ -138,8 +142,10 @@ export function useLibreDraft({
       setMessage('Brouillon conservé sur cet appareil.')
       const entries = await listLibreDrafts(owner)
       if (readSessionUser()?.id === owner) setAvailable(entries)
-    }).catch(() => {
-      setError('Le brouillon n’a pas pu être conservé. La fiche reste ouverte avec vos modifications.')
+    }).catch((cause: unknown) => {
+      setError(cause instanceof DOMException && cause.name === 'QuotaExceededError'
+        ? 'Le stockage local est plein. La révision précédente reste disponible et vos modifications restent dans la fiche ouverte.'
+        : 'Le brouillon n’a pas pu être conservé. La fiche reste ouverte avec vos modifications.')
     })
     busy.current = work
     return work
@@ -186,16 +192,19 @@ export function useLibreDraft({
     applyDraft(draft)
   }
 
-  async function finishSave(fiche: { id: string; name: string }) {
+  async function finishSave(fiche: { id: string; name: string }, savedRevision: LibreRevision) {
     if (!owner || readSessionUser()?.id !== owner) return
-    await flush()
-    const current = head.current
+    const pending = flush()
+    changingWorksheet.current = true
     const nextWorksheet = `fiche-${fiche.id}`
     try {
-      if (Object.keys(last.current.fields).length) {
+      await pending
+      const current = head.current
+      const target = last.current
+      if (target.revision !== savedRevision || Object.keys(target.fields).length) {
         const draft: LibreDraft = {
           version: 1, owner, worksheet: nextWorksheet, id: crypto.randomUUID(),
-          parent: current?.id ?? null, modifiedAt: Date.now(), snapshot: { ...last.current, fiche },
+          parent: current?.id ?? null, modifiedAt: Date.now(), snapshot: { ...target, fiche },
         }
         await writeLibreDraft(draft)
         if (current && current.worksheet !== nextWorksheet) await discardLibreDraft(current)
@@ -203,14 +212,19 @@ export function useLibreDraft({
       } else {
         if (current) await discardLibreDraft(current)
         head.current = null
+        started.current = false
         setMessage('')
       }
-      applied.current = last.current
+      applied.current = target
+      activeWorksheet.current = nextWorksheet
       setWorksheet(nextWorksheet)
       rememberWorksheet(owner, nextWorksheet)
       setAvailable(await listLibreDrafts(owner))
     } catch {
       setError('La fiche a été enregistrée. Le rangement du brouillon local a échoué.')
+    } finally {
+      changingWorksheet.current = false
+      if (activeWorksheet.current === nextWorksheet && applied.current !== last.current) void flush()
     }
   }
 

@@ -81,6 +81,8 @@ export type GrammarQuestion = {
 }
 export type GrammarSnapshot = {
   schemaVersion: 1
+  editedInLibre?: true
+  libreCorrectionsPending?: string[]
   activityId: string
   level: GrammarLevel
   presentation: GrammarPresentation

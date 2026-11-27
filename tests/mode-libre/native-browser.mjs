@@ -6,6 +6,7 @@ const server = process.env.BASE_URL ? null : await createServer({ server: { host
 let browser
 const button = (scope, name) => scope.getByRole('button', { name, exact: true })
 const preview = (page) => page.locator('.a4-frame .worksheet-sheet').first()
+const tinyPng = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAAFElEQVR4nGPU9r7DgA0wYRUdtBIAC9IBYkd6Sd0AAAAASUVORK5CYII=', 'base64')
 
 async function open(context, data) {
   const page = await context.newPage()
@@ -95,6 +96,14 @@ try {
       assert.deepEqual((await labels()).filter(Boolean), ['atelier', ...before.slice(1)])
       assert.equal(await preview(words).locator('.vocab-table').evaluate((node) => node.style.getPropertyValue('--vocab-cols')), '4')
     }
+    const cards = preview(words).locator('.vocab-card-image')
+    const neighborImage = await cards.nth(1).locator('img').evaluateAll((images) => images.map((img) => img.getAttribute('src')))
+    const upload = words.locator('.soutien-mots-libre input[type=file]').first()
+    await upload.setInputFiles({ name: 'mot.png', mimeType: 'image/png', buffer: tinyPng })
+    await cards.first().locator('img[src^="data:image/"]').waitFor()
+    assert.deepEqual(await cards.nth(1).locator('img').evaluateAll((images) => images.map((img) => img.getAttribute('src'))), neighborImage)
+    await upload.setInputFiles({ name: 'mot.svg', mimeType: 'image/svg+xml', buffer: Buffer.from('<svg/>') })
+    await words.getByText('Choisissez une image JPG, PNG ou WebP.', { exact: true }).waitFor()
     await button(words, 'Fermer le mode libre').click()
     assert.deepEqual((await labels()).filter(Boolean), ['atelier', ...before.slice(1)])
     await words.close()
@@ -113,6 +122,62 @@ try {
   await button(completion, 'Ajouter le mot').click()
   assert.equal(await completion.getByRole('combobox', { name: 'Partie cachée du mot 3', exact: true }).inputValue(), '0:2')
   await completion.close()
+
+  const letters = await open(context, {
+    domain: 'alphabetisation', topic: 'alpha-voyelles', exerciseType: 'alpha-a-lettres-maj', count: 2,
+  })
+  const letterCells = preview(letters).locator('.letter-table-cell')
+  const initialLetters = await letterCells.allTextContents()
+  const changedCell = initialLetters.findIndex((letter) => letter !== 'A')
+  assert(changedCell >= 0)
+  await toggleLive(letters)
+  const letterInput = letters.getByRole('textbox', { name: `Case ${changedCell + 1}`, exact: true })
+  await letterInput.fill('12')
+  assert.equal(await letterInput.getAttribute('aria-invalid'), 'true')
+  assert.deepEqual(await letterCells.allTextContents(), initialLetters)
+  await letterInput.fill('a')
+  assert.equal(await letterCells.nth(changedCell).textContent(), 'A')
+  assert.equal(await preview(letters).locator('.letter-table-cell.selected').count(), 0)
+  await button(letters, 'Fiche élève (cliquer pour corrigé)').click()
+  assert.match(await letterCells.nth(changedCell).getAttribute('class'), /selected/)
+  await letters.getByRole('spinbutton', { name: 'Nombre de lignes', exact: true }).fill('3')
+  assert.equal(await letterCells.count(), 24)
+  assert.equal(await letterCells.nth(changedCell).textContent(), 'A')
+  await letters.close()
+
+  const syllables = await open(context, {
+    domain: 'soutien-fr', topic: 'soutien-voyelles', exerciseType: 'soutien-a-syllabes', count: 2,
+  })
+  await toggleLive(syllables)
+  await syllables.getByRole('textbox', { name: 'Case 1', exact: true }).fill('tra')
+  assert.deepEqual(await preview(syllables).locator('.syllable-table').evaluateAll((tables) =>
+    tables.map((table) => table.querySelector('.syllable-table-cell').textContent)), ['tra', 'tra'])
+  await syllables.close()
+
+  const logic = await open(context, {
+    domain: 'logique', topic: 'logique-suite-graphique', exerciseType: 'logique-suite-graphique',
+  })
+  await toggleLive(logic)
+  const puzzle = preview(logic).locator('.logique-block').first()
+  const beforePuzzle = await puzzle.locator('.logique-stem img').first().getAttribute('src')
+  const logicQuestion = logic.getByRole('group', { name: 'Question 1', exact: true })
+  const bank = logicQuestion.getByRole('combobox', { name: 'Question de la banque', exact: true })
+  const currentId = await bank.inputValue()
+  const nextId = await bank.locator('option').evaluateAll((options, current) =>
+    options.find(({ value }) => value && value !== current).value, currentId)
+  await bank.selectOption(nextId)
+  const changedPuzzle = await puzzle.locator('.logique-stem img').first().getAttribute('src')
+  assert.notEqual(changedPuzzle, beforePuzzle)
+  const correctionChoice = logicQuestion.getByRole('combobox', { name: 'Bonne réponse', exact: true })
+  await correctionChoice.selectOption('1')
+  assert.equal(await puzzle.locator('.logique-choice.is-answer').count(), 0)
+  await button(logic, 'Fiche élève (cliquer pour corrigé)').click()
+  assert.match(await puzzle.locator('.logique-choice.is-answer').innerText(), /B\./)
+  await button(logicQuestion, 'Verrou de la question 1').click()
+  await button(logic, 'Régénérer les questions déverrouillées').click()
+  assert.equal(await bank.inputValue(), nextId)
+  assert.equal(await puzzle.locator('.logique-stem img').first().getAttribute('src'), changedPuzzle)
+  await logic.close()
 
   const theory = await open(context, {
     domain: 'grammaire', topic: 'gram-entrer-contact', exerciseType: 'gram-b1-theorie',
@@ -133,6 +198,31 @@ try {
   await button(theory, 'Annuler').click()
   assert.equal(await printedTheory.nth(1).textContent(), originalTheory[1])
   await theory.close()
+
+  const grammar = await open(context, {
+    domain: 'grammaire', topic: 'gram-present', exerciseType: 'gram-ex-etre-qcm-conj',
+    grammarActivityId: 'gram-ex-etre-qcm-conj', grammarLevel: 'A1', grammarPresentation: 'choice',
+    grammarBankRevision: 'etre-a1-2026-11-11.1', grammarPreview: true,
+  })
+  await toggleLive(grammar)
+  const grammarQuestion = grammar.getByRole('group', { name: 'Question 1', exact: true })
+  const grammarPrompt = grammarQuestion.getByRole('textbox', { name: 'Phrase avec une lacune (___)', exact: true })
+  await grammarPrompt.fill('Cette saisie ne contient aucune lacune.')
+  assert.equal(await grammarPrompt.getAttribute('aria-invalid'), 'true')
+  assert.doesNotMatch(await preview(grammar).innerText(), /Cette saisie/)
+  await grammarPrompt.fill('Dans cet atelier, je ___ à l’heure.')
+  assert.match(await preview(grammar).innerText(), /Dans cet atelier, je/)
+  await grammarQuestion.getByText('Corrigé à vérifier', { exact: true }).waitFor()
+  const answer = grammarQuestion.getByRole('combobox', { name: 'Bonne réponse', exact: true })
+  const correctId = await answer.inputValue()
+  const choiceIndex = (await answer.locator('option').evaluateAll((options) => options.map((option) => option.value))).indexOf(correctId)
+  await grammarQuestion.getByRole('textbox', { name: `Choix ${choiceIndex + 1}`, exact: true }).fill('suis bien')
+  assert.equal(await answer.inputValue(), correctId)
+  assert.match(await preview(grammar).innerText(), /suis bien/)
+  await button(grammarQuestion, 'Corrigé vérifié').click()
+  await button(grammar, 'Fermer le mode libre').click()
+  assert.match(await preview(grammar).innerText(), /Dans cet atelier, je/)
+  await grammar.close()
 
   for (const diploma of ['afp', 'cfc']) {
     const course = await open(context, {

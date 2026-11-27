@@ -1,4 +1,6 @@
 import { grammarPageBreakQuestionId } from '@/grammaire/curriculum/pagination'
+import { generateGrammarSelection, grammarRequestKey } from '@/grammaire/curriculum/generate'
+import { GrammarCurriculumError } from '@/grammaire/curriculum/types'
 import { useEffect, type Dispatch, type SetStateAction } from 'react'
 import {
   clearLibreContentFreeze,
@@ -8,8 +10,9 @@ import {
   resizeDraftGrids,
   resizeOralAnswerModes,
 } from '@/components/generator/page-helpers'
-import { isInlineArithmetic, liveEditorProfile, opensWithoutOverlay, writesNativePayload } from '@/components/generator/libre/profiles'
+import { isInlineArithmetic, isWordListProfile, liveEditorProfile, opensWithoutOverlay, writesNativePayload } from '@/components/generator/libre/profiles'
 import { hasLockedItems, identifyItems, trimUnlockedItems } from '@/components/generator/libre/flat-items'
+import { gridCells, withGridCells } from '@/components/generator/libre/word-list'
 import { blockItemsForConfig } from '@/components/generator/sheet-items'
 import { defaultCoordQuestionReply } from '@/components/generator/WorksheetSheet'
 import { isPhraseLibreEditable } from '@/francais/PhraseLibreEditor'
@@ -82,7 +85,7 @@ export function usePageConfig({
   isTcf,
 }: UsePageConfigParams) {
   const updatePage = (change: Partial<PageConfig>) => {
-    const patch = writesNativePayload(editorProfile, change)
+    let patch = writesNativePayload(editorProfile, change)
       ? { ...change, libreItems: undefined, libreInstruction: undefined }
       : change
     const releasesTcf = Object.hasOwn(patch, 'tcfExercise') && patch.tcfExercise === undefined
@@ -90,7 +93,49 @@ export function usePageConfig({
       if (!window.confirm('Remplacer cette activité et ses questions verrouillées ?')) return
     }
     const count = patch.count
-    const resizesAppliedItems = inlineArithmetic || editorProfile === 'question-simple'
+    if (isWordListProfile(editorProfile) &&
+      activeSheet && activeBlock.libreItems?.length && !patch.libreItems && !patch.exerciseType &&
+      (count !== undefined || patch.columns !== undefined)) {
+      const previous = activeBlock.libreItems
+      const nextBlock = { ...activeBlock, ...patch, libreItems: undefined }
+      const localSeed = seed + pageIndex * 7919 + safeBlockIndex * 10007 + (nextBlock.contentSeed ?? 0)
+      const generated = buildPage(pageAsConfig(activeSheet, nextBlock), localSeed, 1, seed).items
+      const removed = previous.some((item, index) => gridCells(item).length > (generated[index] ? gridCells(generated[index]!).length : 0))
+      if (removed && !window.confirm('Réduire la grille et retirer les dernières cases ?')) return
+      patch = { ...patch, libreItems: generated.map((item, index) => {
+        const old = previous[index]
+        if (!old || item.layout !== old.layout) return item
+        const newCells = gridCells(item).map((cell, position) => gridCells(old)[position] ?? cell)
+        return withGridCells({ ...old, letterGridCols: item.letterGridCols }, newCells)
+      }) }
+    }
+    const grammar = activeBlock.grammarSnapshot
+    if (editorProfile === 'grammaire-lacune' && grammar?.editedInLibre && count != null &&
+      Object.keys(patch).length === 1 && count !== grammar.questions.length) {
+      const questions = grammar.questions.slice(0, count)
+      if (count < grammar.questions.length && !window.confirm('Retirer les dernières questions de grammaire ?')) return
+      const nextBlock = { ...activeBlock, count, grammarSnapshot: undefined }
+      if (questions.length < count) {
+        try {
+          const generated = generateGrammarSelection(nextBlock, grammar.seed)
+          const existing = new Set(questions.map(({ id }) => id))
+          questions.push(...generated.questions.filter(({ id }) => !existing.has(id)).slice(0, count - questions.length))
+        } catch (error) {
+          if (!(error instanceof GrammarCurriculumError)) throw error
+          window.alert(error.message)
+          return
+        }
+      }
+      if (questions.length !== count) {
+        window.alert('Cette banque ne fournit pas assez de nouvelles questions pour conserver la sélection actuelle.')
+        return
+      }
+      patch = { ...patch, grammarSnapshot: {
+        ...grammar, requestKey: grammarRequestKey(nextBlock), questions,
+        libreCorrectionsPending: grammar.libreCorrectionsPending?.filter((id) => questions.some((question) => question.id === id)),
+      } }
+    }
+    const resizesAppliedItems = inlineArithmetic || editorProfile === 'question-simple' || editorProfile === 'logique-visuelle'
     if (resizesAppliedItems && count != null && patch.libreItems === undefined) {
       const lists = [activeBlock.libreItems ?? [], (doubleA5 ? activeBlock.a5RightLibre?.items : undefined) ?? []]
       const locked = Math.max(...lists.map((items) => items.filter(({ libreLocked }) => libreLocked).length))
@@ -133,7 +178,9 @@ export function usePageConfig({
           fixed = {
             ...fixed,
             // Changement de type → lever le contenu figé (sinon refresh / type restent bloqués après le mode libre).
-            ...(patch.exerciseType != null ? { ...clearLibreContentFreeze(), libreId: undefined } : {}),
+            ...(patch.exerciseType != null ? {
+              ...clearLibreContentFreeze(), libreId: undefined, questionGapPx: undefined, columnGapPx: undefined,
+            } : {}),
             phraseItems: patch.phraseItems!==undefined ? patch.phraseItems : undefined,
             phraseInstruction:
               patch.phraseInstruction!==undefined ? patch.phraseInstruction : patch.phraseItems!==undefined ? fixed.phraseInstruction : undefined,

@@ -480,6 +480,8 @@ export function WorksheetSheet({
                 }`}
                 style={
                   {
+                    rowGap: block.questionGapPx,
+                    columnGap: block.columns > 1 ? block.columnGapPx : undefined,
                     /* Soutien FR : Colonnes = grille interne ; la feuille reste 1 col. */
                     '--sheet-columns': block.items.some((item) =>
                       [

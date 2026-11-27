@@ -149,6 +149,10 @@ export function isGrammarSnapshot(v: unknown): v is GrammarSnapshot {
     Array.isArray(v.questions) && v.questions.length>0 && v.questions.length<=50 && v.questions.every(isGrammarQuestion) &&
     v.questions.every(q=>q.presentation===v.presentation) && unique(v.questions.map(q=>q.id))
   if (!valid || !record(v)) return false
+  if (v.editedInLibre !== undefined && v.editedInLibre !== true) return false
+  if (v.libreCorrectionsPending !== undefined && (v.editedInLibre !== true || !Array.isArray(v.libreCorrectionsPending) ||
+    !unique(v.libreCorrectionsPending) || !(v.libreCorrectionsPending as unknown[]).every(id =>
+      (v.questions as GrammarQuestion[]).some(question => question.id === id)))) return false
   const units=(v.questions as GrammarQuestion[]).map(q=>q.unit)
   if(!consistentGrammarImages(units)||!unique([...units.map(u=>u.id),...units.flatMap(u=>u.kind==='reading'||u.kind==='scenario'&&u.contract==='closed'?u.questions.map(c=>c.id):[])]))return false
   if (v.presentation!=='document-set'&&v.presentation!=='scenario-set') return true

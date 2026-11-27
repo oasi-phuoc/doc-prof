@@ -1,6 +1,7 @@
 import { LIBRE_IMAGE_MAX_CHARS, validLibreRaster } from '@/fiches/libre-metadata'
 
 const TYPES = ['image/jpeg', 'image/png', 'image/webp']
+export const LIBRE_IMAGE_ACCEPT = TYPES.join(',')
 const MAX_SOURCE_BYTES = 2_500_000
 const MAX_SIDE = 640
 

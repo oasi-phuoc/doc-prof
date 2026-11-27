@@ -49,11 +49,11 @@ function inspectDrafts({ worksheet, owner }) {
   })
 }
 
-async function waitForDraft(page, worksheet, count) {
+async function waitForDraft(page, worksheet, count, owner = 'alice') {
   // Browser-side storage is asynchronous, including the hook's debounce.
   const deadline = Date.now() + 10_000
   for (;;) {
-    const result = await page.evaluate(inspectDrafts, { worksheet, owner: 'alice' })
+    const result = await page.evaluate(inspectDrafts, { worksheet, owner })
     if (result.length === count) return result
     if (Date.now() >= deadline) assert.fail(`Attendu ${count} brouillons, reçu ${result.length}`)
     await new Promise((resolve) => setTimeout(resolve, 100))
@@ -116,8 +116,23 @@ try {
   await other.getByRole('button', { name: 'Domaine', exact: true }).waitFor()
   assert.equal(await other.getByText('Brouillons sur cet appareil', { exact: true }).count(), 0)
   assert.equal(await other.locator('#activity-editor').count(), 0)
+  await other.getByRole('button', { name: 'Mode libre', exact: true }).click()
+  await firstNumber(other).fill('17')
+  await other.getByText('Brouillon conservé sur cet appareil.', { exact: true }).waitFor()
+  const bobWorksheet = await other.evaluate(() => history.state.clairfleLibreDraft.worksheet)
+  await other.evaluate(() => {
+    const put = IDBObjectStore.prototype.put
+    IDBObjectStore.prototype.put = function (...args) {
+      if (this.name === 'worksheets') throw new DOMException('Quota témoin', 'QuotaExceededError')
+      return put.apply(this, args)
+    }
+  })
+  await firstNumber(other).fill('84')
+  await other.getByText(/Le stockage local est plein/).waitFor()
+  assert.equal(await firstNumber(other).inputValue(), '84')
+  assert.equal((await waitForDraft(other, bobWorksheet, 1, 'bob'))[0].operand, 17)
   await context.close()
-  console.log('Reprise, valeurs transitoires, divergence entre onglets et isolation de compte vérifiées.')
+  console.log('Reprise, valeurs transitoires, divergence entre onglets, quota et isolation de compte vérifiés.')
 } finally {
   await browser?.close()
   await server?.close()

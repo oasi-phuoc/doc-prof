@@ -29,6 +29,7 @@ import type {
 
 export type SettingsPanelProps = {
   recovery?: ReactNode
+  supportsBlockSpacing?: boolean
   worksheets: WorksheetPage[]
   pages: PageConfig[]
   safeSheetIndex: number
@@ -160,6 +161,10 @@ export function SettingsPanel(props: SettingsPanelProps) {
 }
 
 export function ActivitySettings(p: SettingsPanelProps) {
+  const rendered = p.activeSheet?.blocks.find((block, index) => (block.sourceBlockIndex ?? index) === p.safeBlockIndex)
+  const itemCount = rendered?.items.length ?? 0
+  const columns = rendered?.columns ?? 1
+  const spacing = p.supportsBlockSpacing && itemCount > 1
   return (
     <>
       {p.recovery}
@@ -302,6 +307,15 @@ export function ActivitySettings(p: SettingsPanelProps) {
           firstExerciseNo={p.firstExerciseNo}
           sheetTotalPoints={p.sheetTotalPoints}
         />
+        {spacing && (
+          <details className="libre-theory-block">
+            <summary>Espacement de l’activité</summary>
+            {itemCount > columns && <SpacingField name="Entre les lignes de questions" value={p.activeBlock.questionGapPx}
+              onChange={(questionGapPx) => p.updatePage({ questionGapPx })} />}
+            {columns > 1 && <SpacingField name="Entre les colonnes" value={p.activeBlock.columnGapPx}
+              onChange={(columnGapPx) => p.updatePage({ columnGapPx })} />}
+          </details>
+        )}
         <CoordLibreSettings
           activeBlock={p.activeBlock}
           activeAsPage={p.activeAsPage}
@@ -334,5 +348,25 @@ export function ActivitySettings(p: SettingsPanelProps) {
         />
       </div>
     </>
+  )
+}
+
+function SpacingField({ name, value, onChange }: {
+  name: string
+  value?: number
+  onChange: (value: number | undefined) => void
+}) {
+  const values = [...new Set([0, 4, 8, 12, 16, 20, 24, 28, 32, ...(value === undefined ? [] : [value])])].sort((a, b) => a - b)
+  return (
+    <label className="libre-field is-line">
+      <span>{name}</span>
+      <select className="libre-line-input" value={value ?? ''} onChange={(event) => {
+        const selected = event.target.value
+        onChange(selected === '' ? undefined : Number(selected))
+      }}>
+        <option value="">Par défaut</option>
+        {values.map((distance) => <option key={distance} value={distance}>{distance} px</option>)}
+      </select>
+    </label>
   )
 }

@@ -1192,6 +1192,9 @@ export type ExerciseBlock = {
   libreItems?: MathItem[]
   /** Mode libre global : consigne saisie (écrase l’instruction tirée). */
   libreInstruction?: string
+  /** Espacements de la grille de l’activité, en pixels CSS. */
+  questionGapPx?: number
+  columnGapPx?: number
   /** TCM CSC : espace supplémentaire entre les exercices d’une même page, en pixels. */
   exerciseGapPx?: number
   /** TCM CSC suites graphiques : identifiants choisis (vide = tirage). */
@@ -1223,6 +1226,8 @@ export type WorksheetBlock = {
   instruction: string
   items: MathItem[]
   columns: number
+  questionGapPx?: number
+  columnGapPx?: number
   exerciseType: string
   /** Index des photos à habiller avec le paragraphe suivant sur cette feuille. */
   logistiqueWrappedFigures?: number[]

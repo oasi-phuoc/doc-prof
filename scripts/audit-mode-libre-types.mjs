@@ -203,7 +203,7 @@ export async function auditTypes(server, profile, seed) {
           if (result.status === 'générable' && pilot) result.status = 'générable en aperçu pilote'
         }
         const editorProfiles = Object.fromEntries(formats.map((format) =>
-          [format, modules.editors.liveEditorProfile(domain, type.id, format)],
+          [format, modules.editors.liveEditorProfile(domain, type.id, format, patch?.grammarPresentation)],
         ))
         if (result.status.startsWith('générable')) {
           for (const format of formats) {

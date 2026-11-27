@@ -1,4 +1,5 @@
 import { updateInlineCalculation, type InlineCalculation } from '@/components/generator/libre/arithmetic'
+import { updateColumnCalculation } from '@/components/generator/libre/column-calculation'
 /**
  * Éditeur libre TPM / TCM CFR / TCM CSC :
  * numérotation à gauche (couleur), champs à droite, traits (pas pastilles),
@@ -40,7 +41,7 @@ import { generateItems } from '@/math/generate-items'
 import type { CountIconKind } from '@/math/types'
 import { RefreshIcon } from '@/components/generator/WorksheetSheet'
 import { fractionPartsFromItem, fractionTermFr } from '@/tpm/fraction-words'
-import { hasMeasureDims } from '@/tpm/libre-recalc'
+import { hasMeasureDims, recalcTpmLibreItem } from '@/tpm/libre-recalc'
 import { buildDecompose, decomposeAnswer, decomposeError } from '@/math/decompose'
 import { algebraProblemOptions, rebuildAlgebraProblem, rollAlgebraProblem } from '@/math/word-problems'
 import { opTableAnswer, opTableCell, opTableError } from '@/math/op-table'
@@ -48,6 +49,7 @@ import { mulAudioParts, numberAudioParts } from '@/tcm-cfr/audio-nombres'
 import { clampFracShapeCfr } from '@/math/fraction-shapes'
 import {
   CONVERT_FAMILY_OPTIONS,
+  convertValue,
   inferConvertFamily,
   unitSelectOptions,
   unitsForFamily,
@@ -556,6 +558,12 @@ type TransientArithmeticInputs = {
   write: (id: string, value: string | null) => void
 }
 
+function transientInput(transient: TransientArithmeticInputs | undefined, item: MathItem, field: string) {
+  if (!transient || !item.libreId) return undefined
+  const id = `${item.libreId}:${field}`
+  return { value: transient.fields[id], write: (value: string | null) => transient.write(id, value) }
+}
+
 export function TpmLibreEditor({
   instruction,
   items,
@@ -571,12 +579,32 @@ export function TpmLibreEditor({
   items: MathItem[]
   exerciseType: string
   liveArithmetic?: boolean
-  onRegenerate?: (id?: string) => void
+  onRegenerate?: (target?: string | readonly string[]) => void
   maxQuestions?: number
   transient?: TransientArithmeticInputs
   onChangeInstruction: (value: string) => void
   onChangeItems: (items: MathItem[]) => void
 }) {
+  const [selecting, setSelecting] = useState(false)
+  const [selection, setSelection] = useState<string[]>([])
+  const [search, setSearch] = useState('')
+  const [lockedOnly, setLockedOnly] = useState(false)
+  const selectedIds = new Set(selection)
+  const selected = items.filter((item) => item.libreId && selectedIds.has(item.libreId))
+  const unlocked = selected.filter(({ libreLocked }) => !libreLocked)
+  const query = search.trim().toLocaleLowerCase('fr')
+  const visible = items.map((item, index) => ({ item, index })).filter(({ item, index }) =>
+    !selecting || ((!lockedOnly || item.libreLocked) &&
+      (!query || `${index + 1} ${item.prompt ?? `${item.a ?? ''} ${item.op ?? ''} ${item.b ?? ''}`}`.toLocaleLowerCase('fr').includes(query))),
+  )
+  function selectItems(group: readonly MathItem[]) {
+    setSelection(group.flatMap(({ libreId }) => libreId ? [libreId] : []))
+  }
+  function lockSelection(locked: boolean) {
+    onChangeItems(items.map((item) => item.libreId && selectedIds.has(item.libreId) && Boolean(item.libreLocked) !== locked
+      ? { ...item, libreLocked: locked }
+      : item))
+  }
   const patch = (index: number, next: MathItem) => {
     onChangeItems(items.map((item, i) => (i === index ? next : item)))
   }
@@ -663,11 +691,52 @@ export function TpmLibreEditor({
           onChange={(e) => onChangeInstruction(e.target.value)}
         />
       </label>
+      {liveArithmetic && items.length > 1 && (
+        <details className="libre-theory-block" onToggle={(event) => setSelecting(event.currentTarget.open)}>
+          <summary>Sélectionner des questions</summary>
+          <div className="libre-unit-actions" role="group" aria-label="Sélection de questions">
+            <label className="libre-field is-line">
+              <span>Rechercher par numéro ou énoncé</span>
+              <input className="libre-line-input" type="search" value={search} onChange={(event) => setSearch(event.target.value)} />
+            </label>
+            <label>
+              <input type="checkbox" checked={lockedOnly} onChange={(event) => setLockedOnly(event.target.checked)} />
+              Questions verrouillées
+            </label>
+            <button type="button" className="button secondary small" onClick={() => selectItems(items)}>Toutes les questions de l’activité</button>
+            <button type="button" className="button secondary small" disabled={!visible.length} onClick={() => selectItems(visible.map(({ item }) => item))}>Questions visibles</button>
+            <button type="button" className="button secondary small" disabled={!selected.length} onClick={() => setSelection([])}>Vider la sélection</button>
+            <span role="status">{selected.length} sélectionnée{selected.length === 1 ? '' : 's'} sur {items.length}</span>
+            <button type="button" className="button secondary small" disabled={!unlocked.length} onClick={() => lockSelection(true)}>Verrouiller la sélection</button>
+            <button type="button" className="button secondary small" disabled={selected.length === unlocked.length} onClick={() => lockSelection(false)}>Déverrouiller la sélection</button>
+            {onRegenerate && (
+              <button type="button" className="button secondary small" disabled={!unlocked.length}
+                onClick={() => onRegenerate(unlocked.map(({ libreId }) => libreId!))}>
+                Régénérer la sélection déverrouillée
+              </button>
+            )}
+            <button type="button" className="button secondary small" disabled={!unlocked.length || items.length === unlocked.length}
+              onClick={() => {
+                if (!window.confirm(`Supprimer ${unlocked.length} question${unlocked.length === 1 ? '' : 's'} déverrouillée${unlocked.length === 1 ? '' : 's'} ?`)) return
+                const removed = new Set(unlocked)
+                onChangeItems(items.filter((item) => !removed.has(item)))
+              }}>
+              Supprimer la sélection déverrouillée
+            </button>
+          </div>
+        </details>
+      )}
       <ul className="libre-item-list is-tpm" aria-label="Questions">
-        {items.map((item, index) => (
+        {visible.map(({ item, index }) => (
           <li key={item.libreId ?? `tpm-libre-${index}`} data-libre-id={item.libreId} className="libre-item-card is-tpm-row">
             <div className="libre-item-num-col">
               <span className="libre-item-num is-accent">{index + 1}.</span>
+              {selecting && item.libreId && (
+                <input type="checkbox" aria-label={`Sélectionner la question ${index + 1}`} checked={selectedIds.has(item.libreId)}
+                  onChange={(event) => setSelection(event.target.checked
+                    ? [...selection, item.libreId!]
+                    : selection.filter((id) => id !== item.libreId))} />
+              )}
               <button
                 type="button"
                 className="libre-item-reroll no-print"
@@ -1836,6 +1905,34 @@ function renderFields(
     item.layout === 'column-empty' ||
     item.layout === 'division-column'
   ) {
+    if (liveArithmetic) {
+      const a = item.a ?? item.dividend ?? 0
+      const b = item.b ?? item.divisor ?? 0
+      const operand = (side: 'a' | 'b') => {
+        const update = (value: number) => updateColumnCalculation(item, exerciseType, side === 'a' ? value : a, side === 'b' ? value : b)
+        return (
+          <NumInput compact applyWhileTyping value={fmt(side === 'a' ? a : b)}
+            ariaLabel={side === 'a' ? 'Premier nombre' : 'Second nombre'}
+            transient={transientInput(transient, item, side)}
+            validate={(value) => {
+              const candidate = update(value)
+              return 'error' in candidate ? candidate.error : undefined
+            }}
+            onCommit={(raw) => {
+              const value = parseFrNumber(raw)
+              if (value === null) return
+              const candidate = update(value)
+              if ('item' in candidate) patch(index, candidate.item)
+            }} />
+        )
+      }
+      return (
+        <div role="group" aria-label={`Calcul colonne ${index + 1}`}>
+          <div className="libre-inline-triple is-op">{operand('a')}<span>{item.op}</span>{operand('b')}</div>
+          <Field label="Corrigé"><CorrigeBox value={item.answer} ariaLabel={`Corrigé ${index + 1}`} /></Field>
+        </div>
+      )
+    }
     // CFR 9–10 / TPM 18 : multiplicateur ≤ 99.
     const capsMulB =
       exerciseType.includes('ex09') ||
@@ -2361,7 +2458,7 @@ function renderFields(
       if (!units.includes(to) || to === from) {
         to = units.find((u) => u !== from) ?? units[0]!
       }
-      patch(index, {
+      const changed = {
         ...item,
         convert: {
           value: next.value ?? item.convert!.value,
@@ -2369,7 +2466,8 @@ function renderFields(
           to,
           family: nextFamily,
         },
-      })
+      }
+      patch(index, liveArithmetic ? recalcTpmLibreItem(changed, exerciseType) : changed)
     }
     return (
       <div className="libre-frac-stack" role="group" aria-label={`Conversion ${index + 1}`}>
@@ -2379,17 +2477,24 @@ function renderFields(
               compact
               value={item.convert.value}
               ariaLabel={`Valeur ${index + 1}`}
+              applyWhileTyping={liveArithmetic}
+              transient={transientInput(transient, item, 'value')}
+              validate={liveArithmetic ? (value) => {
+                const result = convertValue(value, item.convert!.from, item.convert!.to, family)
+                if (value < 0) return 'Saisissez une valeur positive ou nulle.'
+                if (result == null || !Number.isFinite(result)) return 'Ces unités ne permettent pas de convertir cette valeur.'
+              } : undefined}
               onCommit={(value) => applyConvert({ value })}
             />
           </Field>
-          <Field label="Unité">
+          {!liveArithmetic && <Field label="Unité">
             <LineSelect
               value={family}
               ariaLabel={`Famille d’unités ${index + 1}`}
               options={[...CONVERT_FAMILY_OPTIONS]}
               onChange={(fam) => applyConvert({ family: fam as ConvertFamily })}
             />
-          </Field>
+          </Field>}
         </div>
         <div className="libre-inline-triple is-op">
           <Field label="De">

@@ -58,8 +58,9 @@ import { useGeneratorAudio } from '@/components/generator/useGeneratorAudio'
 import { useGenerateActions } from '@/components/generator/useGenerateActions'
 import { useCoordEditing } from '@/components/generator/useCoordEditing'
 import { arithmeticActivityId } from '@/components/generator/libre/flat-items'
-import { isInlineArithmetic, liveEditorProfile, opensWithoutOverlay } from '@/components/generator/libre/profiles'
+import { isCalculationProfile, isInlineArithmetic, isWordListProfile, liveEditorProfile, opensWithoutOverlay } from '@/components/generator/libre/profiles'
 import { hasTcfCorrectionsToReview, isTcfSubjectIncomplete } from '@/tcf/libre-questions'
+import { generateGrammarSelection } from '@/grammaire/curriculum/generate'
 import { DraftRecovery } from '@/components/generator/libre/DraftRecovery'
 import { useLibreDraft } from '@/components/generator/libre/useLibreDraft'
 import { useLibreHistory } from '@/components/generator/libre/useLibreHistory'
@@ -282,8 +283,8 @@ export function GeneratorPage({
   const safeBlockIndex = Math.min(blockIndex, Math.max(0, pageExerciseBlocks.length - 1))
   const activeBlock = pageExerciseBlocks[safeBlockIndex] ?? blockFromPage(activePage)
   const inlineArithmetic = isInlineArithmetic(activePage.domain, activeBlock.exerciseType)
-  const activeProfile = liveEditorProfile(activePage.domain, activeBlock.exerciseType, sheetFormat)
-  const arithmetic = activeProfile === 'calcul-en-ligne'
+  const activeProfile = liveEditorProfile(activePage.domain, activeBlock.exerciseType, sheetFormat, activeBlock.grammarPresentation)
+  const arithmetic = isCalculationProfile(activeProfile)
   const liveArithmetic = libreMode && arithmetic
   const liveTcf = libreMode && (activeProfile === 'document' || activeProfile === 'audio-qcm')
 
@@ -296,8 +297,8 @@ export function GeneratorPage({
       const liveBlocks = pageBlocks(live)
       if (liveBlocks.some((block) => block.exerciseType === 'tcm-csc-ex18')) return live
       const oldBlocks = pageBlocks(page)
-      const liveEditor = ({ exerciseType }: { exerciseType: string }) =>
-        Boolean(liveEditorProfile(live.domain, exerciseType, sheetFormat))
+      const liveEditor = ({ exerciseType, grammarPresentation }: typeof activeBlock) =>
+        Boolean(liveEditorProfile(live.domain, exerciseType, sheetFormat, grammarPresentation))
       if (liveBlocks.some(liveEditor) || oldBlocks.some(liveEditor)) {
         if (oldBlocks.length !== liveBlocks.length || liveBlocks.every(liveEditor)) return live
         return liveBlocks.reduce<PageConfig>((applied, block, index) =>
@@ -413,6 +414,15 @@ export function GeneratorPage({
   })
 
   const activeAsPage = pageAsConfig(activePage, activeBlock)
+  const grammarSelection = (() => {
+    if (!libreMode || activeProfile !== 'grammaire-lacune') return null
+    try {
+      return generateGrammarSelection(activeAsPage, seed + pageIndex * 7919 + safeBlockIndex * 10007 + (activeBlock.contentSeed ?? 0))
+    } catch (error) {
+      if (!(error instanceof GrammarCurriculumError)) throw error
+      return null
+    }
+  })()
 
   const {
     coordTool,
@@ -568,7 +578,8 @@ export function GeneratorPage({
   }
 
   const correctionsToReview = pages.some((page) => pageBlocks(page)
-    .some(({ tcfExercise, libreItems }) => hasTcfCorrectionsToReview(tcfExercise) ||
+    .some(({ tcfExercise, libreItems, grammarSnapshot }) => hasTcfCorrectionsToReview(tcfExercise) ||
+      Boolean(grammarSnapshot?.libreCorrectionsPending?.length) ||
       libreItems?.some((item) => item.libreCorrectionPending)))
 
   async function printAll() {
@@ -626,7 +637,7 @@ export function GeneratorPage({
     const next = { id: saved.id, name: saved.name }
     setFicheRef(next)
     rememberFicheOnHistory({ ...next, recipe: saved.recipe })
-    await libreDraft.finishSave(next)
+    await libreDraft.finishSave(next, revision)
   }
 
   const printInstitutional = isLogistiqueDomain(pages[0]?.domain ?? activePage.domain) && !institutional.documentTitle.trim()
@@ -651,6 +662,7 @@ export function GeneratorPage({
   } as const
 
   const settingsPanelProps = {
+    supportsBlockSpacing: arithmetic && !isA5DoubleFormat(sheetFormat),
     recovery: draftOwner ? (
       <DraftRecovery
         drafts={libreDraft.available}
@@ -953,6 +965,9 @@ export function GeneratorPage({
               livePhrase={activeProfile === 'phrase'}
               theory={activeProfile === 'theorie' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
               textExercise={activeProfile === 'question-simple' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
+              letterGrid={isWordListProfile(activeProfile) ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
+              logic={activeProfile === 'logique-visuelle' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
+              grammarSelection={grammarSelection}
               arithmeticId={arithmeticActivityId(activeBlock, seed, pageIndex, safeBlockIndex)}
               halfEditor={halfEditor}
               maxQuestions={ctx.maxQuestions}

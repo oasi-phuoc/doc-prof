@@ -1,11 +1,13 @@
 import { useId, useRef, useState } from 'react'
-import { GAME_IMAGE_ACCEPT, readGameImageFile } from '@/jeux/image'
+import { LIBRE_IMAGE_ACCEPT } from '@/fiches/libre-media'
 import { soutienEntriesWithImages, soutienImageFor } from './images'
+import { useLibreImages } from './useLibreImages'
 
 export type SoutienMotEntry = {
   id: string
   label: string
   imageSrc?: string
+  libreImage?: true
 }
 
 export const SOUTIEN_MOTS_MAX = 16
@@ -56,7 +58,7 @@ export function SoutienMotsLibreEditor({
 }) {
   const baseId = useId()
   const fileRefs = useRef<Array<HTMLInputElement | null>>([])
-  const [error, setError] = useState<string | null>(null)
+  const { error, setError, pickImage, cancelDraftImage } = useLibreImages(entries, onChange)
   const [draftLabel, setDraftLabel] = useState('')
   const [draftImage, setDraftImage] = useState<string | undefined>()
   const [replaceIndex, setReplaceIndex] = useState<number | null>(null)
@@ -64,17 +66,6 @@ export function SoutienMotsLibreEditor({
 
   const used = new Set(entries.map((e) => e.label.trim().toLowerCase()).filter(Boolean))
   const suggestions = suggestedWords.filter((w) => w.trim() && !used.has(w.trim().toLowerCase()))
-
-  async function pickImage(file: File | undefined, apply: (src: string) => void) {
-    if (!file) return
-    try {
-      const dataUrl = await readGameImageFile(file)
-      apply(dataUrl)
-      setError(null)
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Image refusée.')
-    }
-  }
 
   function updateAt(index: number, patch: Partial<SoutienMotEntry>) {
     const next = entries.map((entry, i) => (i === index ? { ...entry, ...patch } : entry))
@@ -114,10 +105,12 @@ export function SoutienMotsLibreEditor({
         id: newEntryId(label),
         label,
         imageSrc: draftImage || soutienImageFor(label),
+        libreImage: draftImage ? true : undefined,
       },
     ])
     setDraftLabel('')
     setDraftImage(undefined)
+    cancelDraftImage()
     setError(null)
   }
 
@@ -151,11 +144,9 @@ export function SoutienMotsLibreEditor({
                 id={inputId}
                 className="visually-hidden"
                 type="file"
-                accept={GAME_IMAGE_ACCEPT}
+                accept={LIBRE_IMAGE_ACCEPT}
                 onChange={(event) => {
-                  void pickImage(event.target.files?.[0], (src) =>
-                    updateAt(index, { imageSrc: src }),
-                  )
+                  void pickImage(event.target.files?.[0], entry.id)
                   event.target.value = ''
                 }}
               />
@@ -220,9 +211,9 @@ export function SoutienMotsLibreEditor({
             ref={draftFileRef}
             className="visually-hidden"
             type="file"
-            accept={GAME_IMAGE_ACCEPT}
+            accept={LIBRE_IMAGE_ACCEPT}
             onChange={(event) => {
-              void pickImage(event.target.files?.[0], setDraftImage)
+              void pickImage(event.target.files?.[0], null, setDraftImage)
               event.target.value = ''
             }}
           />

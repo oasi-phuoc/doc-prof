@@ -11,7 +11,8 @@ export function GrammarLevelControl({block,onChange}:{block:ExerciseBlock;onChan
   const orderUnits=bank?.units.filter(u=>u.kind==='order')??[]
   const negativeCount=orderUnits.filter(u=>u.kind==='order'&&u.tokens.some(t=>t.category==='negation')).length
   const change=(patch:Partial<ExerciseBlock>)=>{
-    if (block.libreItems?.length && !window.confirm('Ce changement remplacera les modifications manuelles de cet exercice. Continuer ?')) return
+    if ((block.libreItems?.length || block.grammarSnapshot?.editedInLibre) &&
+      !window.confirm('Ce changement remplacera les modifications manuelles de cet exercice. Continuer ?')) return
     onChange({...clearLibreContentFreeze(),grammarSnapshot:undefined,grammarPageBreakAfterQuestionIds:undefined,...patch})
   }
   const newOnly=grammarUsesGradedDefault(block.exerciseType)

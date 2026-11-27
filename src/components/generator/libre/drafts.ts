@@ -69,10 +69,15 @@ async function updateWorksheet(
       const key = [owner, worksheet]
       const request = store.get(key)
       request.onsuccess = () => {
-        const current = request.result as WorksheetDrafts | undefined
-        const revisions = update(current?.revisions ?? [])
-        if (revisions.length) store.put({ owner, worksheet, revisions })
-        else store.delete(key)
+        try {
+          const current = request.result as WorksheetDrafts | undefined
+          const revisions = update(current?.revisions ?? [])
+          if (revisions.length) store.put({ owner, worksheet, revisions })
+          else store.delete(key)
+        } catch (cause) {
+          reject(cause)
+          tx.abort()
+        }
       }
       tx.oncomplete = () => resolve()
       tx.onerror = () => reject(tx.error)

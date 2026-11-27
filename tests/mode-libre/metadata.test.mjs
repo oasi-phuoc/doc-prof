@@ -31,6 +31,9 @@ test('les images privées en mode Libre sont limitées aux images raster reconnu
   assert(validLibreMetadata([{ ...page, tcfExercise: { questions: [question] } }]))
   assert(!validLibreMetadata([{ ...page, tcfExercise: { questions: [question, question] } }]))
   assert(!validLibreMetadata([{ ...page, tcfExercise: { questions: [{ ...question, choix: [{ id: 'a', image: 'data:image/png;base64,PHN2Zz4=' }] }] } }]))
+  const word = { id: 'mot-1', label: 'atelier', imageSrc: png, libreImage: true }
+  assert(validLibreMetadata([{ ...page, soutienMotsEntries: [word] }]))
+  assert(!validLibreMetadata([{ ...page, soutienMotsEntries: [{ ...word, imageSrc: 'data:image/png;base64,PHN2Zz4=' }] }]))
 })
 
 test('le contenu et les verrous de droite restent distincts dans une recette A5', () => {

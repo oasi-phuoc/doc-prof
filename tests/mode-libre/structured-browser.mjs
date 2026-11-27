@@ -140,6 +140,31 @@ async function qcmPilot(page) {
   assert.equal(await liveQuestion(page).getByText('Corrigé à vérifier', { exact: true }).count(), 0)
 }
 
+async function audioGroups(page) {
+  const sample = {
+    ...qcm,
+    support: { audios: [qcm.support.audios[0], '/lib/audio/second-fixture-audio.mp3'] },
+    questions: ['Premier dialogue', 'Dialogue à conserver'].map((enonce, index) => ({
+      type_reponse: 'qcm_texte', audio: index + 1, enonce,
+      choix: [{ id: 'oui', texte: 'Oui', correct: true }, { id: 'non', texte: 'Non', correct: false },
+        { id: 'jamais', texte: 'Jamais', correct: false }],
+    })),
+  }
+  await openFiche(page, recipe('tcf-co-ex-2', 'tcf-co', sample))
+  const rows = page.locator('#activity-editor .tcf-six-courts-audio')
+  await rows.nth(1).waitFor()
+  await button(rows.nth(1), 'Verrouiller la question').click()
+  await button(page, 'Supprimer l’audio 1 et ses questions').click()
+  assert.equal(await rows.count(), 1)
+  assert.match(await worksheet(page).innerText(), /Dialogue à conserver/)
+  assert.doesNotMatch(await worksheet(page).innerText(), /Premier dialogue/)
+  assert.equal(await button(rows.first(), 'Question verrouillée').getAttribute('aria-pressed'), 'true')
+  assert.equal(await rows.first().getByText('Corrigé à vérifier', { exact: true }).count(), 0)
+  await button(page, 'Annuler').click()
+  assert.equal(await rows.count(), 2)
+  assert.match(await worksheet(page).innerText(), /Premier dialogue/)
+}
+
 try {
   await server?.listen()
   const baseURL = process.env.BASE_URL ?? 'http://127.0.0.1:' + server.httpServer.address().port
@@ -149,9 +174,12 @@ try {
   const documentPage = await context.newPage()
   await documentPilot(documentPage)
   await documentPage.close()
-  await qcmPilot(await context.newPage())
+  const qcmPage = await context.newPage()
+  await qcmPilot(qcmPage)
+  await qcmPage.close()
+  await audioGroups(await context.newPage())
   await context.close()
-  console.log('Document partagé, corrigés à vérifier, QCM illustré et réouverture testés.')
+  console.log('Document partagé, corrigés à vérifier, QCM illustré, réouverture et liaison audio testés.')
 } finally {
   await browser?.close()
   await server?.close()

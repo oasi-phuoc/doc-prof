@@ -23,8 +23,8 @@ import type {
   PreviewMode,
 } from '@/math/types'
 import type { InstitutionalHeader } from '@/components/math/PrintDocumentChrome'
-import { isInlineArithmetic } from '@/components/generator/libre/profiles'
-import { hasLockedItems, rerollArithmetic } from '@/components/generator/libre/flat-items'
+import { hasFlatRegeneration, liveEditorProfile } from '@/components/generator/libre/profiles'
+import { hasLockedItems, rerollFlatActivity } from '@/components/generator/libre/flat-items'
 import { clearLibreContentFreeze } from '@/components/generator/page-helpers'
 import { blockItemsForConfig } from '@/components/generator/sheet-items'
 import { patchBlockSeedForHalf } from '@/components/generator/sheet-format'
@@ -235,7 +235,7 @@ export function useGenerateActions({
   function generate() {
     if (hasTcfLockedQuestions(activeBlock.tcfExercise)) return
     if ((activeBlock.a5RightLibre || activeBlock.libreItems?.some(({ libreId }) => libreId)) && pages[pageIndex] &&
-      isInlineArithmetic(pages[pageIndex].domain, activeBlock.exerciseType)) {
+      hasFlatRegeneration(liveEditorProfile(pages[pageIndex].domain, activeBlock.exerciseType, 'a4-portrait'))) {
       regenerateBlock(safeBlockIndex)
       return
     }
@@ -298,7 +298,7 @@ export function useGenerateActions({
   }
 
   /** Régénère uniquement l’exercice ciblé (les autres blocs / pages restent inchangés). */
-  function regenerateBlock(targetBlock: number, half?: 'left' | 'right', itemId?: string) {
+  function regenerateBlock(targetBlock: number, half?: 'left' | 'right', target?: string | readonly string[]) {
     const nextSeed = randomSeed()
     setMode('student')
     setBlockIndex(targetBlock)
@@ -307,14 +307,14 @@ export function useGenerateActions({
         if (index !== pageIndex) return page
         const block = pageBlocks(page)[targetBlock]
         if (!block || hasTcfLockedQuestions(block.tcfExercise)) return page
-        const customizedArithmetic = isInlineArithmetic(page.domain, block.exerciseType) &&
-          block.libreItems?.some(({ libreId }) => libreId)
-        if (isInlineArithmetic(page.domain, block.exerciseType)) {
+        const profile = liveEditorProfile(page.domain, block.exerciseType, half ? 'a5-double-landscape' : 'a4-portrait')
+        if (hasFlatRegeneration(profile)) {
+          const customizedArithmetic = block.libreItems?.some(({ libreId }) => libreId)
           if (half === 'right' && !libreMode && !block.a5RightLibre) {
             return setPageBlock(page, targetBlock, patchBlockSeedForHalf(block, half, nextSeed))
           }
           if (libreMode || customizedArithmetic && half !== 'right' || half === 'right' && block.a5RightLibre) {
-            return rerollArithmetic(page, pageIndex, targetBlock, seed, nextSeed, itemId, half)
+            return rerollFlatActivity(page, pageIndex, targetBlock, seed, nextSeed, target, half)
           }
           if (half === 'left' && block.a5RightLibre) {
             return setPageBlock(page, targetBlock, {

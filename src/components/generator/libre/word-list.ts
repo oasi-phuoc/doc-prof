@@ -1,0 +1,15 @@
+import type { MathItem } from '@/math/types'
+
+export function gridCells(item: MathItem): string[] {
+  if (item.layout === 'mark-letter') return item.markLetterWords ?? []
+  if (item.layout === 'dictee-grid') return item.dicteeWords ?? []
+  if (item.layout === 'read-phrases') return item.readPhrases ?? []
+  return item.options ?? []
+}
+
+export function withGridCells(item: MathItem, cells: string[]): MathItem {
+  if (item.layout === 'mark-letter') return { ...item, markLetterWords: cells, answer: cells.join(' · ') }
+  if (item.layout === 'dictee-grid') return { ...item, dicteeWords: cells, answer: cells.join(' · ') }
+  if (item.layout === 'read-phrases') return { ...item, readPhrases: cells, answer: cells.join(' · ') }
+  return { ...item, options: cells, answer: item.layout === 'syllable-table' ? cells.join(' · ') : item.answer }
+}

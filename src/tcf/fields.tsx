@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect } from 'react'
-import { readLibreImage } from './libre-media'
+import { LIBRE_IMAGE_ACCEPT, readLibreImage } from '@/fiches/libre-media'
 import { AudioProgressDialog } from '@/components/AudioProgressDialog'
 import { useRef, useState } from 'react'
 import { GAME_IMAGE_ACCEPT, readGameImageFile } from '@/jeux/image'
@@ -148,7 +148,7 @@ export function ImageField({
           ref={fileRef}
           className="visually-hidden"
           type="file"
-          accept={durable ? "image/jpeg,image/png,image/webp" : GAME_IMAGE_ACCEPT}
+          accept={durable ? LIBRE_IMAGE_ACCEPT : GAME_IMAGE_ACCEPT}
           onChange={(event) => {
             const file = event.target.files?.[0]
             event.target.value = ''

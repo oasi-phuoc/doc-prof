@@ -69,3 +69,17 @@ node tests/mode-libre/structured-browser.mjs
 node tests/mode-libre/arithmetic-browser.mjs
 node --test tests/mode-libre/arithmetic.test.mjs tests/mode-libre/metadata.test.mjs
 ```
+
+## Double A5 et contenus structurés
+
+La révision `d90588a` permet de modifier chaque moitié A5 des calculs en ligne. Le navigateur vérifie la conservation de l’autre moitié, le verrou lors d’un tirage local et le contenu destiné à l’impression. La validation des recettes distingue les deux listes d’occurrences et leurs identifiants.
+
+Les essais sur les mots illustrés et les mots à compléter partent de la liste visible. Le changement de colonnes en Alphabétisation garde les mots édités. Les essais Grammaire et Logistique modifient le contenu structuré, y compris un tableau après un saut de page. Pour le module Logistique 101, le passage de Résumé à Complet demande une confirmation lorsque la référence a été modifiée. Les deux diplômes conservent la grille de calcul et la séparation du sujet et du corrigé. Un exercice de Société et l’état sans contenu de Soutien FR sont également testés.
+
+La suite des banques de Logistique génère les 858 types. La recette navigateur des cours vérifie les 80 modules CFC et les 63 modules AFP, ainsi que les mises en page des exercices des modules 105 et 110. Les suites unitaires Calcul, Métadonnées, Logistique et Accès totalisent 26 réussites.
+
+```sh
+node tests/mode-libre/native-browser.mjs
+node tests/logistique/published-browser.mjs
+node --test tests/mode-libre/arithmetic.test.mjs tests/mode-libre/metadata.test.mjs tests/logistique/generation.test.mjs tests/interactive/fiches-access.test.mjs
+```

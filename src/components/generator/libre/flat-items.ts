@@ -1,4 +1,4 @@
-import { isInlineArithmetic } from './profiles'
+import { hasFlatRegeneration, liveEditorProfile } from './profiles'
 import { hasTcfLockedQuestions } from '@/tcf/libre-questions'
 import { buildPage } from '@/math/generate'
 import { pageAsConfig, pageBlocks, setPageBlock } from '@/math/page-model'
@@ -33,17 +33,17 @@ export function trimUnlockedItems(items: MathItem[], count: number): MathItem[] 
   }, []).reverse()
 }
 
-export function rerollArithmetic(
+export function rerollFlatActivity(
   page: PageConfig,
   pageIndex: number,
   blockIndex: number,
   seed: number,
   newSeed: number,
-  targetId?: string,
+  target?: string | readonly string[],
   half?: 'left' | 'right',
 ): PageConfig {
   const block = pageBlocks(page)[blockIndex]
-  if (!block || !isInlineArithmetic(page.domain, block.exerciseType)) return page
+  if (!block || !hasFlatRegeneration(liveEditorProfile(page.domain, block.exerciseType, half ? 'a5-double-landscape' : 'a4-portrait'))) return page
   const right = half === 'right'
   const rightLibre = right ? block.a5RightLibre : undefined
   const activityId = right
@@ -55,21 +55,24 @@ export function rerollArithmetic(
   const localSeed = right ? block.contentSeedTwin ?? block.contentSeed ?? 0 : block.contentSeed ?? 0
   const old = buildPage(pageAsConfig(page, { ...block, libreItems: currentItems, libreInstruction: instruction }), pageSeed + localSeed, 1, seed)
   const items = identifyItems(currentItems ?? old.items, activityId)
-  const eligible = (item: MathItem) => !item.libreLocked && (!targetId || item.libreId === targetId)
+  const targeted = typeof target === 'string' ? new Set([target]) : target ? new Set(target) : null
+  const eligible = (item: MathItem) => !item.libreLocked && (!targeted || Boolean(item.libreId && targeted.has(item.libreId)))
   if (!items.some(eligible)) return page
 
   const template = pageAsConfig(page, {
     ...block, count: Math.max(items.length * 2, 4), libreItems: undefined, libreInstruction: undefined,
   })
   const generated = buildPage(template, pageSeed + newSeed, 1, seed).items
-  const prompts = new Set(items.map(({ prompt }) => prompt))
+  const signature = ({ layout, op, a, b, missing, convert, prompt, logique }: MathItem) =>
+    JSON.stringify([layout, op, a, b, missing, convert, prompt, logique?.id])
+  const signatures = new Set(items.map(signature))
   let cursor = 0
   const next = items.map((item, index) => {
     if (!eligible(item)) return item
-    while (cursor < generated.length && prompts.has(generated[cursor]?.prompt)) cursor += 1
+    while (cursor < generated.length && signatures.has(signature(generated[cursor]!))) cursor += 1
     const replacement = generated[cursor++]
     if (!replacement) return item
-    prompts.add(replacement.prompt)
+    signatures.add(signature(replacement))
     return { ...replacement, libreId: `tirage-${(pageSeed >>> 0).toString(36)}-${(newSeed >>> 0).toString(36)}-${index}` }
   })
   if (next.every((item, index) => item === items[index])) return page

@@ -1,7 +1,8 @@
 import { useId, useRef, useState } from 'react'
-import { GAME_IMAGE_ACCEPT, readGameImageFile } from '@/jeux/image'
+import { LIBRE_IMAGE_ACCEPT } from '@/fiches/libre-media'
 import type { SoutienComplete } from './banks'
 import { soutienImageFor } from './images'
+import { useLibreImages } from './useLibreImages'
 
 export type SoutienCompleterEntry = {
   id: string
@@ -11,6 +12,7 @@ export type SoutienCompleterEntry = {
   after: string
   word: string
   imageSrc?: string
+  libreImage?: true
 }
 
 export const SOUTIEN_COMPLETER_MAX = 16
@@ -73,23 +75,13 @@ export function SoutienCompleterLibreEditor({
   const baseId = useId()
   const fileRefs = useRef<Array<HTMLInputElement | null>>([])
   const draftFileRef = useRef<HTMLInputElement | null>(null)
-  const [error, setError] = useState<string | null>(null)
+  const { error, pickImage, cancelDraftImage } = useLibreImages(entries, onChange)
   const [draftWord, setDraftWord] = useState('')
   const [draftArticle, setDraftArticle] = useState<'Un' | 'Une'>('Un')
   const [draftImage, setDraftImage] = useState<string | undefined>()
 
   const used = new Set(entries.map((e) => e.word.trim().toLowerCase()))
   const suggestions = suggestedWords.filter((w) => w.trim() && !used.has(w.trim().toLowerCase()))
-
-  async function pickImage(file: File | undefined, apply: (src: string) => void) {
-    if (!file) return
-    try {
-      apply(await readGameImageFile(file))
-      setError(null)
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'Image refusée.')
-    }
-  }
 
   function updateAt(index: number, patch: Partial<SoutienCompleterEntry>) {
     onChange(entries.map((entry, i) => (i === index ? { ...entry, ...patch } : entry)))
@@ -139,11 +131,9 @@ export function SoutienCompleterLibreEditor({
                 id={inputId}
                 className="visually-hidden"
                 type="file"
-                accept={GAME_IMAGE_ACCEPT}
+                accept={LIBRE_IMAGE_ACCEPT}
                 onChange={(event) => {
-                  void pickImage(event.target.files?.[0], (src) =>
-                    updateAt(index, { imageSrc: src }),
-                  )
+                  void pickImage(event.target.files?.[0], entry.id)
                   event.target.value = ''
                 }}
               />
@@ -227,9 +217,9 @@ export function SoutienCompleterLibreEditor({
             ref={draftFileRef}
             className="visually-hidden"
             type="file"
-            accept={GAME_IMAGE_ACCEPT}
+            accept={LIBRE_IMAGE_ACCEPT}
             onChange={(event) => {
-              void pickImage(event.target.files?.[0], setDraftImage)
+              void pickImage(event.target.files?.[0], null, setDraftImage)
               event.target.value = ''
             }}
           />
@@ -266,9 +256,11 @@ export function SoutienCompleterLibreEditor({
                 ...parts,
                 word,
                 imageSrc: draftImage || soutienImageFor(word),
+                libreImage: draftImage ? true : undefined,
               })
               setDraftWord('')
               setDraftImage(undefined)
+              cancelDraftImage()
             }}
           >
             +

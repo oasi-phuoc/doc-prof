@@ -34,7 +34,7 @@ export function isTcfCorrectionComplete(question: TcfQuestion): boolean {
 
 function questionPrompt(question: TcfQuestion) {
   return [
-    question.enonce, question.image, question.images, question.type_reponse,
+    question.enonce, question.image, question.images, question.type_reponse, question.audio,
     question.type_reponse === 'lignes' ? question.tableau?.map(({ label }) => label)
       : question.choix.map((choice) => [choice.id, 'texte' in choice ? choice.texte : choice.image]),
   ]
@@ -48,16 +48,17 @@ export function editTcfQuestion(previous: TcfQuestion, next: TcfQuestion): TcfQu
 
 export function checkTcfSupport(previous: TcfExercise, next: TcfExercise): TcfExercise {
   if (previous.id !== next.id || previous.type_exercice !== next.type_exercice || previous.support === next.support) return next
-  const oldQuestions = new Set(previous.questions.map(({ libreId }) => libreId))
-  const changedTracks = previous.type_exercice === 'six_courts' && next.type_exercice === 'six_courts'
-    ? new Set(next.support.audios.flatMap((src, index) => src === previous.support.audios[index] ? [] : [index + 1]))
-    : null
+  const oldQuestions = new Map(previous.questions.map((question) => [question.libreId, question]))
+  const tracksBefore = 'audios' in previous.support ? previous.support.audios : null
+  const tracksAfter = 'audios' in next.support ? next.support.audios : null
   return {
     ...next,
-    questions: next.questions.map((question) =>
-      oldQuestions.has(question.libreId) && (!changedTracks || changedTracks.has(question.audio ?? 1))
-        ? { ...question, correctionARevoir: true }
-        : question),
+    questions: next.questions.map((question) => {
+      const old = oldQuestions.get(question.libreId)
+      if (!old) return question
+      if (tracksBefore && tracksAfter && tracksBefore[(old.audio ?? 1) - 1] === tracksAfter[(question.audio ?? 1) - 1]) return question
+      return { ...question, correctionARevoir: true }
+    }),
   }
 }
 
@@ -74,8 +75,9 @@ export function hasTcfLockedQuestions(exercise: TcfExercise | undefined): boolea
 export function isTcfSubjectIncomplete(exercise: TcfExercise | undefined): boolean {
   if (!exercise?.questions?.some(({ libreId }) => libreId)) return false
   if (exercise.questions.some((question) => !hasQuestionContent(question))) return true
-  if (exercise.type_exercice === 'six_courts') {
-    return exercise.support.audios.some((audio) => !audio.trim())
+  if (exercise.type_exercice === 'six_courts' || exercise.type_exercice === 'trois_moyens') {
+    return exercise.questions.some((question) => !exercise.support.audios[(question.audio ?? 1) - 1]?.trim())
   }
+  if (exercise.type_exercice === 'complet' || exercise.type_exercice === 'images_a_reconnaitre') return !exercise.support.audio?.trim()
   return exercise.competence === 'CE' && !exercise.support.texte.trim()
 }

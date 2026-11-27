@@ -3,10 +3,13 @@ import { isDeepStrictEqual } from 'node:util'
 export async function auditRecipes(server, profile, seed) {
   const { defaultPage } = await server.ssrLoadModule('/src/math/catalog.ts')
   const { buildWorksheets } = await server.ssrLoadModule('/src/math/generate.ts')
+  const { pageForA5Half } = await server.ssrLoadModule('/src/components/generator/sheet-format.ts')
   const { parseFicheRecipe, buildFicheRecipe } = await server.ssrLoadModule('/src/fiches/recipe.ts')
   const addition = defaultPage('algèbre')
   const items = buildWorksheets([addition], seed)[0].items
   const edited = { ...items[0], a: 17, b: 25, result: 42, prompt: '17 + 25 = □', answer: '42' }
+  const right = { ...edited, libreId: 'droite-1', libreLocked: true }
+  const a5RightLibre = { id: 'activite-droite', items: [right] }
   const imageOverrides = { '/lib/images/témoin.webp': '/lib/images/témoin-remplacement.webp' }
   const witnesses = [
     {
@@ -43,9 +46,28 @@ export async function auditRecipes(server, profile, seed) {
       page: { ...addition, libreItems: [edited, ...items.slice(1)] },
       expected: { libreItems: [edited, ...items.slice(1)] },
       options: { libreMode: true, libreSnapshot: [addition], imageOverrides },
+      verify: (sheets) => sheets[0].items.some(({ a, b, result, answer }) =>
+        a === edited.a && b === edited.b && result === edited.result && answer === edited.answer),
     },
+    {
+      id: 'libre-double-a5',
+      page: { ...addition, a5RightLibre },
+      expected: { a5RightLibre },
+      options: { sheetFormat: 'a5-double-landscape' },
+      render: (recipe) => ['left', 'right'].flatMap((half) => buildWorksheets(
+        recipe.pages.map((page) => pageForA5Half(page, half)), recipe.seed,
+      )),
+      verify: ([left, right]) => left.items.every(({ libreId }) => libreId !== 'droite-1') &&
+        right.items.some(({ libreId, libreLocked, answer }) => libreId === 'droite-1' && libreLocked && answer === '42'),
+    },
+    ...['afp', 'cfc'].map((diploma) => ({
+      id: `logistique-${diploma}-105-historique`,
+      page: { ...defaultPage(`logistique-${diploma}`), topic: `log-${diploma}-theme-100`,
+        exerciseType: `log-${diploma}-105-theorie`, logistiqueBankRevision: 'logistique-105-v001' },
+      expected: { logistiqueBankRevision: 'logistique-105-v001' },
+    })),
   ]
-  const rows = witnesses.map(({ id, page, expected, options }) => {
+  const rows = witnesses.map(({ id, page, expected, options, render = (recipe) => buildWorksheets(recipe.pages, recipe.seed), verify }) => {
     const original = {
       version: 1,
       pages: [page],
@@ -65,16 +87,14 @@ export async function auditRecipes(server, profile, seed) {
       )
       const roundTrip = parseFicheRecipe(JSON.parse(JSON.stringify(buildFicheRecipe(loaded))))
       if (!roundTrip) return { id, status: 'échoué', reason: 'recette réécrite refusée' }
-      const before = buildWorksheets(loaded.pages, loaded.seed)
-      const after = buildWorksheets(roundTrip.pages, roundTrip.seed)
+      const before = render(loaded)
+      const after = render(roundTrip)
       const sameContent = isDeepStrictEqual(before.map(({ items }) => items), after.map(({ items }) => items))
       const sameLibreData = isDeepStrictEqual(loaded.libreSnapshot, roundTrip.libreSnapshot) &&
         isDeepStrictEqual(loaded.imageOverrides, options?.imageOverrides) &&
         isDeepStrictEqual(loaded.imageOverrides, roundTrip.imageOverrides) &&
-        loaded.libreMode === roundTrip.libreMode
-      const editConsumed = !options || before[0].items.some(({ a, b, result, answer }) =>
-        a === edited.a && b === edited.b && result === edited.result && answer === edited.answer,
-      )
+        loaded.libreMode === roundTrip.libreMode && loaded.sheetFormat === roundTrip.sheetFormat
+      const editConsumed = verify?.(before) ?? true
       return {
         id,
         status: matchesExpected && sameContent && sameLibreData && editConsumed && before.some(({ items }) => items.length)
