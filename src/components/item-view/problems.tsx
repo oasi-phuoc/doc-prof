@@ -625,6 +625,7 @@ export function StackedPrompt({ item, mode, showHelp = false }: { item: MathItem
     <div className={`prompt-stack${line ? ' societe-line' : ''}`}>
       <p className="prompt-stack-text">{prompt}</p>
       {showHelp && <ProblemHelp item={item} />}
+      {item.areaFigures && !show && <span className="answer-line-field">{'\u00a0'}</span>}
       <span className={`answer-line-field ${show ? 'filled' : ''}`}>
         {show ? lineAnswer : '\u00a0'}
       </span>

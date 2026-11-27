@@ -6604,3 +6604,13 @@ textarea.pill-input,
 .math-theory-sections dt{font-weight:700}
 .math-theory-sections dd{margin:0 0 1.8mm}
 .math-theory-sections li{margin-bottom:1.4mm}
+
+.math-square-figures,.math-solid-choices{display:grid;justify-items:center;gap:2mm;margin-block:1mm}
+.math-square-figures-row{display:flex;flex-wrap:wrap;align-items:end;justify-content:center;gap:3mm}
+.math-square-figures-row figure{margin:0;text-align:center}
+.math-square-figures-row figcaption,.math-square-figures p{margin:0;font-size:.82em}
+.math-square-grid{border-collapse:collapse}
+.math-square-grid td{box-sizing:border-box;width:3.6mm;height:3.6mm;border:.2mm solid #88929d;padding:0}
+.math-square-grid .is-filled{border-color:#48576a;background:#dce4ef;print-color-adjust:exact}
+.math-solid-choices img{display:block;width:40mm;height:auto;max-width:100%;object-fit:contain}
+.math-solid-choices .math-square-grid td{width:3.2mm;height:3.2mm}

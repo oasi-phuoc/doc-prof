@@ -627,6 +627,7 @@ export const exerciseTypes: ExerciseType[] = [
   t('fonctions-regle', 'fonctions', 'Retrouver la règle de calcul', 'Déduire une règle à partir de valeurs d’entrée et de sortie.', 'Écrivez la règle qui donne y à partir de x. Elle est de la forme y = ax + b.', 'texte', { preferredColumns: 2, preferredCount: 6, maxCount: 8 }),
   t('figures-patrons-cube', 'figures', 'Reconnaître un patron de cube', 'Décider si six carrés peuvent être pliés en cube sans recouvrement.', 'Indiquez si chaque figure peut être pliée pour former un cube.', 'geo', { preferredColumns: 2, preferredCount: 6, maxCount: 8 }),
   t('figures-tracer-droites', 'figures', 'Tracer des droites à l’équerre', 'Construire une parallèle ou une perpendiculaire passant par un point donné.', 'Tracez chaque droite avec une règle et une équerre.', 'geo', { preferredColumns: 1, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
+  t('figures-vues-solide', 'figures', 'Vues d’un solide en cubes', 'Associer trois dessins aux vues de face, de côté et de dessus.', 'Regardez le solide. Associez chaque vue à une lettre.', 'geo', { preferredColumns: 2, preferredCount: 2, maxCount: 4, supportsNumberRange: false }),
   t('figures-angles', 'figures', 'Classer les angles', 'Reconnaître des angles aigus, droits et obtus dans différentes orientations.', 'Indiquez si chaque angle est aigu, droit ou obtus.', 'geo', { preferredColumns: 2, preferredCount: 6, maxCount: 8 }),
   t('figures-reproduire', 'figures', 'Reproduire sur quadrillage', 'Recopier une silhouette en s’aidant du quadrillage.', 'Reproduisez le modèle en comptant les carreaux.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
   t('figures-agrandir', 'figures', 'Agrandir sur quadrillage', 'Reproduire une silhouette en doublant les longueurs en carreaux.', 'Reproduisez le modèle. Chaque longueur mesurée en carreaux doit être doublée.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
@@ -693,6 +694,8 @@ export const exerciseTypes: ExerciseType[] = [
   t('aires-quadrilatere-manquant', 'aires', 'Côté de quadrilatère', 'Retrouver une mesure d’un quadrilatère à partir de l’aire.', 'Calculez la mesure demandée.', 'geo', { preferredColumns: 2 }),
   t('aires-disque-manquant', 'aires', 'Rayon du disque', 'Retrouver le rayon à partir de l’aire.', 'Calculez le rayon. Prenez π = 3,14.', 'geo', { figure: 'circle', preferredColumns: 2 }),
   t('aires-melange', 'aires', 'Mélanger', 'Toutes les formes, au hasard : aire ou mesure manquante.', 'Calculez l’aire ou la mesure demandée.', 'geo', { preferredColumns: 2 }),
+  t('aires-composees-quadrillage', 'aires', 'Aire d’une figure composée', 'Trouver une aire en découpant ou en complétant une figure.', 'Écrivez le calcul de l’aire de chaque figure.', 'geo', { preferredColumns: 2, preferredCount: 4, maxCount: 4, supportsNumberRange: false }),
+  t('aires-perimetres-comparer', 'aires', 'Comparer les aires et les périmètres', 'Comparer des figures de même aire ou de même périmètre.', 'Comparez l’aire et le périmètre des figures.', 'geo', { preferredColumns: 2, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
 
   t('volumes-cube', 'volumes', 'Cube', 'Volume d’un cube.', 'Calculez le volume.', 'geo', { figure: 'cube', preferredColumns: 2 }),
   t('volumes-pave', 'volumes', 'Pavé droit', 'Volume L × l × h.', 'Calculez le volume.', 'geo', { figure: 'cuboid', preferredColumns: 2 }),
@@ -707,8 +710,8 @@ export const exerciseTypes: ExerciseType[] = [
   t('volumes-cone-manquant', 'volumes', 'Hauteur du cône', 'Retrouver la hauteur à partir du volume.', 'Calculez la hauteur. Prenez π = 3,14.', 'geo', { figure: 'cone', preferredColumns: 2 }),
   t('volumes-melange', 'volumes', 'Mélanger', 'Tous les solides, au hasard.', 'Calculez le volume ou la mesure demandée.', 'geo', { preferredColumns: 2 }),
 
-  t('reperage-itineraires', 'reperage', 'Suivre et décrire un trajet', 'Suivre un trajet ou le décrire avec les points cardinaux.', 'Sur le plan, le nord est en haut.', 'geo', { preferredColumns: 1, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
   t('reperage-lire', 'reperage', 'Lire des coordonnées', 'Lire les coordonnées de formes sur un tableau.', 'Écrivez les coordonnées de chaque forme.', 'geo', { preferredColumns: 2 }),
+  t('reperage-itineraires', 'reperage', 'Suivre et décrire un trajet', 'Suivre un trajet ou le décrire avec les points cardinaux.', 'Sur le plan, le nord est en haut.', 'geo', { preferredColumns: 1, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
   t('reperage-placer', 'reperage', 'Placer des formes', 'Dessiner les formes sur un tableau vide à partir des coordonnées.', 'Dessinez chaque forme à l’emplacement indiqué.', 'geo', { preferredColumns: 2 }),
   t('reperage-cadrans-lire', 'reperage', 'Lire les 4 cadrans', 'Lire les coordonnées de points dans le plan (axes et cadrans).', 'Écrivez les coordonnées de chaque point.', 'geo', { preferredColumns: 1 }),
   t('reperage-cadrans-placer', 'reperage', 'Placer dans les 4 cadrans', 'Placer des points sur un repère vide à partir des coordonnées.', 'Placez chaque point à l’emplacement indiqué.', 'geo', { preferredColumns: 1 }),
@@ -1009,7 +1012,7 @@ export function isDraftPadExercise(typeId: string): boolean {
     logistiqueType(typeId)?.kind === 'maths' ||
     typeId.startsWith('equations-') ||
     typeId.startsWith('perimetres-') ||
-    typeId.startsWith('aires-') ||
+    (typeId.startsWith('aires-') && typeId !== 'aires-composees-quadrillage' && typeId !== 'aires-perimetres-comparer') ||
     typeId.startsWith('volumes-') ||
     // TPM : géométrie périmètre/aire, priorité, réduction, évaluation, équations.
     // Pas de grille pour ops décimales / puissances / relatifs / fractions (ex. 26, 27, 29, 30).

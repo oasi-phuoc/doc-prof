@@ -168,6 +168,17 @@ export type CountIconScene = {
   tokens: CountIconToken[]
 }
 
+export type RectangleGrid = {
+  width: number
+  height: number
+  cut?: { width: number; height: number }
+}
+
+export type SolidViews = {
+  image: string
+  views: Array<{ label: string; cells: boolean[][] }>
+}
+
 export type CoordShape =
   | 'point'
   | 'circle'
@@ -598,6 +609,8 @@ export type MathItem = {
   numberLine?: { start: number; step: number; intervals: number; target: number; labelAt: number }
   baseTen?: { hundreds: number; tens: number; ones: number }
   menuPrices?: { label: string; cents: number }[]
+  areaFigures?: RectangleGrid[]
+  solidViews?: SolidViews
   measureScale?: { kind: 'mass' | 'capacity' | 'duration'; unit: string; step: number; tick: number }
   lengthUnits?: { a: number; b: number }
   functionPairs?: { x: number; y: number }[]

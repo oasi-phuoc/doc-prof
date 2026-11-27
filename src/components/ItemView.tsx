@@ -68,6 +68,7 @@ import {
   WordSearchBlock,
 } from './item-view/vocab'
 
+import { AreaFigures, SolidViewChoices } from './item-view/geometry-practice'
 import { MeasurementScale } from './item-view/measurement-practice'
 import { MathTheoryView } from './item-view/math-theory'
 import { BaseTenCollection, LengthUnitComparison, MenuPriceTable } from './item-view/foundations-practice'
@@ -473,6 +474,8 @@ export function ItemView({
         )}
         {item.baseTen && <BaseTenCollection collection={item.baseTen} />}
         {item.lengthUnits && <LengthUnitComparison lengths={item.lengthUnits} mode={mode} />}
+        {item.areaFigures && <AreaFigures figures={item.areaFigures} />}
+        {item.solidViews && <SolidViewChoices solid={item.solidViews} />}
         {item.measureScale && <MeasurementScale scale={item.measureScale} />}
         {item.numberLine && <NumberLinePractice line={item.numberLine} />}
         {item.functionPairs && <FunctionValueTable pairs={item.functionPairs} />}
