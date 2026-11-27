@@ -6,6 +6,7 @@ export type LogistiquePageLayout = {
   a5?: boolean
   hideChrome?: boolean
   fontScale?: number
+  evaluation?: boolean
 }
 
 // Espace imprimable après marges, pied de page et réserve de bas de page.

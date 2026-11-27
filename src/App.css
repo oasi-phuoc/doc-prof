@@ -2065,6 +2065,12 @@ html.is-margin-symmetric .print-only-sheets .worksheet-sheet.sheet-even .draft-g
 .doc-document-title{margin:10px 0 4px;text-align:center;font-size:calc(22px * var(--app-font-scale, 1));font-weight:800;letter-spacing:-.03em}
 
 .mode-toggle-block{display:flex;flex-direction:column;gap:10px;padding-top:4px}
+.logistique-selection-list{display:grid;gap:6px;margin:0;padding:0;list-style:none}
+.logistique-selection-list li{display:flex;align-items:center;flex-wrap:wrap;gap:6px;font-size:.86em}
+.logistique-selection-list li span{flex:1;min-width:100px}
+.logistique-selection-list li input{width:4.3em}
+.logistique-selection-list li button{padding:5px 9px}
+.logistique-selection-list li small{width:100%}
 .mode-toggle-block>b,.custom-header-form>b{font-size:calc(13px * var(--app-font-scale, 1))}
 .mode-toggle{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:4px;border-radius:12px;background:#f4f2ef}
 .mode-toggle button{border:0;border-radius:9px;padding:10px 8px;background:transparent;color:var(--muted);font-size:calc(13px * var(--app-font-scale, 1));font-weight:700}

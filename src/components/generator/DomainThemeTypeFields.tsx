@@ -23,8 +23,9 @@ import { SelectBox } from '@/components/generator/SelectBox'
 import { applyType, clearLibreContentFreeze } from '@/components/generator/page-helpers'
 import { DIFFICULTY_OPTIONS } from '@/math/difficulty'
 import { FreeNumberControls } from './FreeNumberControls'
-import { isLogistiqueDomain, logistiqueSubthemes, logistiqueType, logistiqueTypeForSubtheme } from '@/logistique/catalog'
+import { isLogistiqueDomain, isLogistiqueReferenceType, logistiqueSubthemes, logistiqueType, logistiqueTypeForSubtheme } from '@/logistique/catalog'
 import { logistiqueEligibleCount } from '@/logistique/generate'
+import { LogistiqueEvaluationFields } from './LogistiqueEvaluationFields'
 import { exerciseTypeById } from '@/math/catalog'
 import {
   centeredOrigin,
@@ -167,7 +168,9 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
     exerciseTypeById[activeBlock.exerciseType]?.supportsNumberRange !== false
   const logisticsDomain = isLogistiqueDomain(activePage.domain)
   const logisticsSubthemes = logisticsDomain ? logistiqueSubthemes(activeBlock.topic) : []
-  const logisticsModule = logistiqueType(activeBlock.exerciseType)?.module
+  const logisticsType = logistiqueType(activeBlock.exerciseType)
+  const logisticsModule = logisticsType?.module
+  const mixedActivity = logisticsDomain && evalMode && logisticsType && !isLogistiqueReferenceType(logisticsType.id)
   const subthemes = logisticsDomain ? logisticsSubthemes : gramSubthemes
   const subthemeId = logisticsDomain
     ? logisticsSubthemes.find((entry) => entry.code === logisticsModule)?.id
@@ -248,7 +251,10 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   ),
                 )}
               </SelectBox>
-              {isTpmLike ? null : (
+              {mixedActivity ? (
+                <LogistiqueEvaluationFields key={logisticsType.id} type={logisticsType}
+                  themes={available} activeBlock={activeBlock} updatePage={updatePage} />
+              ) : isTpmLike ? null : (
                 <SelectBox
                   label={isTcf ? 'Compétence' : 'Thème'}
                   value={soutienSelection?.theme.id ?? activeBlock.topic}
@@ -280,7 +286,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   ))}
                 </SelectBox>
               ) : null}
-              {(isGrammaireDomain || logisticsDomain) && subthemes.length > 0 ? (
+              {!mixedActivity && (isGrammaireDomain || logisticsDomain) && subthemes.length > 0 ? (
                 <SelectBox
                   label="Sous-thème"
                   value={subthemeId ?? subthemes[0]!.id}
@@ -415,7 +421,9 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                 value={activeBlock.exerciseType}
                 onChange={(value) => {
                   const type = exerciseTypeById[value]
-                  if (!type) return
+                  if (!type || value === activeBlock.exerciseType) return
+                  if (logisticsDomain && activeBlock.libreItems?.length &&
+                      !window.confirm('Changer de type remplacera les modifications de cette activité. Continuer ?')) return
                   if (
                     (isReperageFormes(value) && isReperageFormes(activeBlock.exerciseType)) ||
                     (isReperageCadrans(value) && isReperageCadrans(activeBlock.exerciseType))
@@ -454,7 +462,11 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                     })
                     return
                   }
-                  updatePage(applyType(type, activeBlock))
+                  const patch = applyType(type, activeBlock)
+                  if (mixedActivity && !isLogistiqueReferenceType(value) && activeBlock.logistiqueSelection) {
+                    patch.logistiqueSelection = { modules: activeBlock.logistiqueSelection.modules }
+                  }
+                  updatePage(patch)
                 }}
               >
                 {typeChoices

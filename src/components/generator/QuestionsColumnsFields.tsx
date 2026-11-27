@@ -226,6 +226,8 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
               isGramTheory ||
               mathTheoryTopic(activeBlock.exerciseType) ||
               isLogistiqueReferenceType(activeBlock.exerciseType) ||
+              (evalMode && activeBlock.logistiqueSelection &&
+                (!activeBlock.logistiqueSelection.modules.length || activeBlock.logistiqueSelection.quantities)) ||
               isJeuxDomain ||
               isCalliDomain ||
               isSoutienMots ||

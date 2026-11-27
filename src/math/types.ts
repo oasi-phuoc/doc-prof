@@ -425,6 +425,7 @@ export type DivisionStep = {
 }
 
 export type MathItem = {
+  logistiqueSource?: { id: string; module: string; revision: string }
   layout: Layout
   grammar?: import('@/grammaire/curriculum/types').GrammarQuestion
   cscTask?: import('@/tcm-csc/task-types').CscTask
@@ -885,6 +886,8 @@ export type ExerciseBlock = {
   /** Publication logistique figée lors de l’enregistrement de la fiche. */
   logistiqueBankRevision?: string
   logistiqueTheoryView?: 'complet' | 'resume'
+  /** Modules de l’activité en mode Évaluation, avec une répartition facultative. */
+  logistiqueSelection?: { modules: string[]; quantities?: Record<string, number> }
   topic: string
   exerciseType: string
   difficulty: Difficulty

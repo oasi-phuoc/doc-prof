@@ -166,6 +166,28 @@ test('le tirage est déterministe et limité aux unités approuvées pour le dip
   assert.deepEqual(generateLogistique({ ...maths, domain: 'logistique-cfc' }, 109, fixture.units).items, [])
 })
 
+test('l’évaluation combine des modules de plusieurs thèmes et applique chaque quota séparément', () => {
+  for (const diploma of ['CFC', 'AFP']) {
+    const base = { ...config(diploma, '105', 'maths'), count: 8 }
+    const page = { ...base, logistiqueSelection: { modules: ['105', '308'], quantities: { '105': 3, '308': 1 } } }
+    const draw = generateLogistique(page, 32, [...fixture.units, ...fixture.units])
+    assert.deepEqual(draw.items.map(({ logistiqueSource }) => logistiqueSource.module), ['105', '308'])
+    assert.equal(draw.bankQuestionCap, 2)
+    assert.match(draw.title, /105 et 308/)
+    const pooled = { ...page, logistiqueSelection: { modules: ['105', '308'] } }
+    assert.deepEqual(generateLogistique(pooled, 32, fixture.units), generateLogistique(pooled, 32, fixture.units))
+    assert.equal(generateLogistique({ ...page, logistiqueSelection: { modules: [] } }, 32, fixture.units).items.length, 0)
+    assert.equal(validLogistiquePages(freezeLogistiquePages([page])), true)
+  }
+  const base = config('AFP', '105', 'maths')
+  for (const selection of [{ modules: ['501'] }, { modules: ['105', '105'] },
+    { modules: ['105'], quantities: { '308': 2 } }, { modules: ['105'], quantities: { '105': -1 } }]) {
+    const page = { ...base, logistiqueSelection: selection }
+    assert.equal(generateLogistique(page, 32, fixture.units).items.length, 0)
+    assert.equal(validLogistiquePages([page]), false)
+  }
+})
+
 test('les banques enrichies augmentent la capacité par diplôme et préservent les tirages enregistrés', () => {
   const additions = { CFC: { maths: 5, verification: 5, situation: 4 }, AFP: { maths: 4, verification: 5, situation: 3 } }
   const lots = [

@@ -426,6 +426,7 @@ export function buildPage(
   seed: number,
   startExercise = 1,
   worksheetSeed = seed,
+  logistiqueEvaluation = true,
 ): WorksheetPage {
   // CE « Lire des instructions » : 1 document = 1 exercice (pas 2 docs dans le même).
   const page = expandTcfInstructionDocuments(config, seed)
@@ -433,6 +434,7 @@ export function buildPage(
   let exerciseCursor = startExercise
   const built: WorksheetBlock[] = blocksIn.map((block, index) => {
     const single = pageAsConfig(page, block)
+    if (!logistiqueEvaluation && isLogistiqueDomain(page.domain)) single.logistiqueSelection = undefined
     const local = block.contentSeed ?? 0
     const result = buildSingleBlock(single, seed + index * 10007 + local, worksheetSeed)
     const isTheory = Boolean(mathTheoryTopic(block.exerciseType)) || isLogistiqueReferenceType(block.exerciseType) || isGrammarTheoryType(block.exerciseType) || isGrammaireTheoryType(block.exerciseType)
@@ -515,7 +517,7 @@ export function buildPage(
   const isTpmConsignesPage = isInfoPageType(config.exerciseType)
   return {
     ...config,
-    title: isLogistiqueDomain(config.domain) ? logistiqueDocumentTitle([config]) : isTpmConsignesPage
+    title: isLogistiqueDomain(config.domain) ? logistiqueDocumentTitle([config], false, logistiqueEvaluation) : isTpmConsignesPage
       ? 'Informations'
       : isTheoryPage
         ? (first?.title ?? type?.label ?? 'Théorie')
@@ -594,7 +596,7 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
       : pages
 
   pagesWithExclude.forEach((page, index) => {
-    const worksheet = buildPage(page, seed + index * 7919, exerciseNo, seed)
+    const worksheet = buildPage(page, seed + index * 7919, exerciseNo, seed, logisticsLayout?.evaluation)
     const scoredBlocks = worksheet.blocks.filter((block) => !isInfoPageType(block.exerciseType))
     if (scoredBlocks.length) {
       exerciseNo = Math.max(...scoredBlocks.map((block) => block.exerciseIndex)) + 1

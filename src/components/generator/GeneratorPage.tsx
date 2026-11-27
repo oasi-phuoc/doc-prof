@@ -169,7 +169,8 @@ export function GeneratorPage({
     a5: isA5DoubleFormat(sheetFormat),
     hideChrome,
     fontScale: fontSizes.default / DEFAULT_BASE_FONT_SIZE,
-  }), [sheetFormat, hideChrome, fontSizes.default])
+    evaluation: evalMode,
+  }), [sheetFormat, hideChrome, fontSizes.default, evalMode])
   const worksheets = useMemo(() => buildWorksheets(pages, seed, pointsPerQuestion, logisticsLayout), [pages, seed, pointsPerQuestion, logisticsLayout])
   const [libreSnapshot, setLibreSnapshot] = useState<PageConfig[] | null>(
     () => openedFiche?.recipe.libreSnapshot ?? null,
@@ -487,7 +488,7 @@ export function GeneratorPage({
   }
 
   const printInstitutional = isLogistiqueDomain(pages[0]?.domain ?? activePage.domain) && !institutional.documentTitle.trim()
-    ? { ...institutional, documentTitle: logistiqueDocumentTitle(pages, evalMode) }
+    ? { ...institutional, documentTitle: logistiqueDocumentTitle(pages, evalMode, evalMode) }
     : institutional
   const chromeProps = {
     institutional: printInstitutional,

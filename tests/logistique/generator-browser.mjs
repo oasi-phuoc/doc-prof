@@ -104,9 +104,27 @@ try {
     await sheet.getByText(/^Vous repérez un carton mouillé/).waitFor()
     await select('Type d’exercice', 'Glossaires')
     await sheet.getByText('Tare. Masse de l’emballage vide.', { exact: true }).waitFor()
+
+    await select('Type d’exercice', 'Mathématiques')
+    await page.getByRole('button', { name: 'Évaluation', exact: true }).click()
+    await select('Thème', '300 — Procurement Management')
+    await select('Sous-thème', '308 — Les contrôles de quantités')
+    await page.keyboard.press('Escape')
+    const modules = page.getByRole('list', { name: 'Modules retenus', exact: true })
+    assert.match(await modules.innerText(), /105.*Marchandises[\s\S]*308.*contrôles de quantités/)
+    await page.getByRole('button', { name: 'Par module', exact: true }).click()
+    assert.equal(await page.getByRole('spinbutton', { name: 'Nombre de questions du module 308' }).inputValue(), '1')
+    await sheet.getByText('Mathématiques : modules 105 et 308', { exact: true }).waitFor()
+    await page.getByRole('button', { name: 'Exercice', exact: true }).click()
+    await sheet.getByText('Mathématiques : module 105', { exact: true }).waitFor()
+    assert.equal(await page.getByRole('list', { name: 'Modules retenus', exact: true }).count(), 0)
+    await page.getByRole('button', { name: 'Évaluation', exact: true }).click()
+    await sheet.getByText('Mathématiques : modules 105 et 308', { exact: true }).waitFor()
+    assert.equal(await page.getByRole('spinbutton', { name: 'Nombre de questions du module 105' }).inputValue(), '1')
+    await page.getByRole('button', { name: 'Exercice', exact: true }).click()
   }
 
-  await select('Type d’exercice', 'Mathématiques')
+  await page.getByRole('button', { name: 'Évaluation', exact: true }).click()
   const saveResponse = page.waitForResponse((response) =>
     new URL(response.url()).pathname === '/__logistique_test/fiches' && response.request().method() === 'POST',
   )
@@ -118,14 +136,18 @@ try {
   await saveResponse
   await dialog.waitFor({ state: 'hidden' })
   assert.equal(saved.recipe.pages[0].logistiqueBankRevision, fixture.revision)
+  assert.deepEqual(saved.recipe.pages[0].logistiqueSelection, {
+    modules: ['105', '308'], quantities: { '105': 1, '308': 1 },
+  })
   await page.goto(base + '/fiches')
   await page.getByRole('button', { name: 'Ouvrir', exact: true }).click()
   await page.waitForURL('**/generateur')
-  await sheet.getByText('Mathématiques : module 105', { exact: true }).waitFor()
+  await sheet.getByText('Mathématiques : modules 105 et 308', { exact: true }).waitFor()
   await sheet.getByText(/^Vous réceptionnez 7 cartons/).waitFor()
   await page.emulateMedia({ media: 'print' })
   await page.locator('.print-only-sheets .worksheet-sheet').first().waitFor()
   assert.match(await page.locator('.print-only-sheets').innerText(), /Le poids total est de 42 kg\./)
+  assert.match(await page.locator('.print-only-sheets').innerText(), /La masse brute est de 208 kg\./)
   assert((await page.pdf()).subarray(0, 4).equals(Buffer.from('%PDF')))
   assert.deepEqual(errors, [])
   console.log('Pilotes techniques CFC et AFP : gabarit A4, cinq types, grille, corrigé, PDF, enregistrement simulé et réouverture.')

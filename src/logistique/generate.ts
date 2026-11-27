@@ -2,13 +2,14 @@ import { pageBlocks } from '@/math/page-model'
 import { createRng, shuffle } from '@/math/rng'
 import type { MathItem, PageConfig } from '@/math/types'
 import { currentLogistiquePublication, logistiquePublication, type LogistiqueUnit } from './approved-banks'
-import { isLogistiqueReferenceType, logistiqueType, type LogistiqueType } from './catalog'
+import { isLogistiqueReferenceType, logistiqueType, validLogistiqueSelection, type LogistiqueType } from './catalog'
 
 function withAssetBase<T extends { src: string }>(figure: T): T {
   return { ...figure, src: import.meta.env.BASE_URL + figure.src.replace(/^\//, '') }
 }
 
 function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView']): MathItem[] {
+  const logistiqueSource = { id: unit.id, module: unit.module, revision: unit.revision }
   switch (unit.kind) {
     case 'objectifs-apercu':
     case 'theorie':
@@ -23,6 +24,7 @@ function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'
       }))
     case 'maths':
       return [{
+        logistiqueSource,
         layout: 'text',
         prompt: unit.prompt,
         answer: unit.answer,
@@ -31,17 +33,18 @@ function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'
       }]
     case 'verification':
       if (unit.options?.length) {
-        return [{ layout: 'select', prompt: unit.prompt, options: [...unit.options], answer: unit.answer }]
+        return [{ logistiqueSource, layout: 'select', prompt: unit.prompt, options: [...unit.options], answer: unit.answer }]
       }
-      return [{ layout: 'text', prompt: unit.prompt, answer: unit.answer }]
+      return [{ logistiqueSource, layout: 'text', prompt: unit.prompt, answer: unit.answer }]
     case 'situation':
-      return [{ layout: 'text', prompt: unit.prompt, answer: unit.answer }]
+      return [{ logistiqueSource, layout: 'text', prompt: unit.prompt, answer: unit.answer }]
   }
 }
 
-function eligibleUnits(type: LogistiqueType, units: readonly LogistiqueUnit[]): LogistiqueUnit[] {
+function eligibleUnits(type: LogistiqueType, units: readonly LogistiqueUnit[], modules = [type.module]): LogistiqueUnit[] {
+  const codes = new Set(modules)
   const matching = units.filter((unit) =>
-    unit.module === type.module && unit.kind === type.kind && unit.approvedFor.includes(type.diploma),
+    codes.has(unit.module) && unit.kind === type.kind && unit.approvedFor.includes(type.diploma),
   )
   return [...new Map(matching.map((unit) => [unit.id, unit])).values()]
 }
@@ -51,6 +54,14 @@ export function logistiqueEligibleCount(typeId: string): number {
   return type ? eligibleUnits(type, currentLogistiquePublication.units).length : 0
 }
 
+export function logistiqueModuleCapacities(type: LogistiqueType, modules: string[], revision?: string) {
+  const counts = new Map(modules.map((code) => [code, 0]))
+  for (const unit of eligibleUnits(type, logistiquePublication(revision)?.units ?? [], modules)) {
+    counts.set(unit.module, (counts.get(unit.module) ?? 0) + 1)
+  }
+  return counts
+}
+
 export function logistiqueHasSummary(typeId: string, revision?: string): boolean {
   const type = logistiqueType(typeId)
   const publication = logistiquePublication(revision)
@@ -58,15 +69,16 @@ export function logistiqueHasSummary(typeId: string, revision?: string): boolean
     .some((unit) => unit.kind === 'theorie' && unit.summaryBlocks?.length))
 }
 
-export function logistiqueDocumentTitle(pages: readonly PageConfig[], evalMode = false): string {
-  const types = pages.flatMap((page) => pageBlocks(page).flatMap((block) => {
+export function logistiqueDocumentTitle(pages: readonly PageConfig[], evalMode = false, includeSelection = true): string {
+  const activities = pages.flatMap((page) => pageBlocks(page).flatMap((block) => {
     const type = logistiqueType(block.exerciseType)
-    return type?.domain === page.domain && type.topic === block.topic ? [type] : []
+    return type?.domain === page.domain && type.topic === block.topic
+      ? [{ type, modules: (includeSelection && block.logistiqueSelection?.modules) || [type.module] }] : []
   }))
-  const first = types[0]
-  if (!first) return 'Logistique'
-  const codes = [...new Set(types.map(({ module }) => module))].sort()
-  const label = types.every(({ kind }) => kind === first.kind)
+  const first = activities[0]?.type
+  const codes = [...new Set(activities.flatMap(({ modules }) => modules))].sort()
+  if (!first || !codes.length) return 'Logistique'
+  const label = activities.every(({ type }) => type.kind === first.kind)
     ? first.kind === 'glossaire' ? 'Glossaire' : first.label
     : evalMode ? 'Évaluation' : 'Exercices'
   const list = new Intl.ListFormat('fr-CH').format(codes)
@@ -79,19 +91,25 @@ export function generateLogistique(
   units: readonly LogistiqueUnit[] = logistiquePublication(config.logistiqueBankRevision)?.units ?? [],
 ) {
   const type = logistiqueType(config.exerciseType)
-  if (!type || type.domain !== config.domain || type.topic !== config.topic) {
+  if (!type || type.domain !== config.domain || type.topic !== config.topic ||
+      !validLogistiqueSelection(type, config.logistiqueSelection)) {
     return { title: 'Logistique', instruction: 'Sélection indisponible.', items: [], bankQuestionCap: 0 }
   }
 
-  const eligible = eligibleUnits(type, units)
+  const modules = config.logistiqueSelection?.modules ?? [type.module]
+  const quantities = config.logistiqueSelection?.quantities
+  const eligible = eligibleUnits(type, units, modules)
   const reference = isLogistiqueReferenceType(type.id)
   const count = Number.isFinite(config.count) ? Math.max(1, Math.floor(config.count)) : 1
-  const selected = reference ? eligible : shuffle(createRng(seed), eligible).slice(0, count)
+  const rng = createRng(seed)
+  const selected = reference ? eligible : quantities
+    ? modules.flatMap((code) => shuffle(rng, eligible.filter((unit) => unit.module === code)).slice(0, quantities[code]))
+    : shuffle(rng, eligible).slice(0, count)
   return {
     title: logistiqueDocumentTitle([config]),
     instruction: eligible.length
       ? reference ? type.description : type.instruction
-      : 'Contenu à compléter pour ce module.',
+      : modules.length ? 'Contenu à compléter pour cette sélection.' : 'Sélectionnez au moins un sous-thème.',
     items: selected.flatMap((unit) => unitItems(unit, config.logistiqueTheoryView)),
     bankQuestionCap: reference && eligible.length ? undefined : eligible.length,
   }
