@@ -217,6 +217,7 @@ test('les glossaires repris fournissent une photo individuelle pour chaque notio
   const photoGlossaries = [
     ['100', 13], ['101', 16], ['102', 25], ['103', 15], ['104', 20], ['105', 45], ['106', 14], ['107', 15],
     ['108', 13], ['109', 15], ['110', 16], ['201', 14], ['202', 14], ['203', 14],
+    ['204', 14], ['205', 14], ['206', 14],
     ['306', 34], ['403', 27], ['404', 12],
   ]
   for (const [code, count] of photoGlossaries) for (const diploma of ['CFC', 'AFP']) {
