@@ -43,7 +43,7 @@ La première banque proposait dix fiches de situation du quotidien pour chacun d
 
 Chacune des 160 situations a sa propre illustration dans le style dessiné CE/CO. Le [registre des illustrations](illustrations.json) conserve les chemins, empreintes et contrôles. Le [registre des scènes](images-a-preparer.json) donne l’état de chacune des 160 situations.
 
-La revue des personnages a remplacé quatre scènes où revenaient des visages trop proches. Les fiches du musée, de l’atelier vélo et de la bibliothèque emploient des scènes TCF vérifiées pour leurs rôles et leurs personnages. La revue des autres groupes et des scènes de compréhension orale reste ouverte. [Critères graphiques et diversité des personnages](../tcf/style-images.md)
+La revue des personnages a remplacé huit scènes. Les remplacements concernent le musée, l’atelier vélo, la bibliothèque, la cantine et la gare. La revue des autres groupes de communication et des scènes de compréhension orale reste ouverte. [Critères graphiques et diversité des personnages](../tcf/style-images.md)
 
 ## Vérification et entretien
 

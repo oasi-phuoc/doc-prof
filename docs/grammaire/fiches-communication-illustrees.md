@@ -4005,7 +4005,7 @@ Modèle de production — Dimanche, nous avons partagé un gâteau.
 
 ### Le retard
 
-![Un voyageur parle à une agente sur le quai](../../public/lib/images/grammaire/communication/imparfait-ou-pc-08-un-voyageur-parle-a-une-agente-sur-le-quai.webp)
+![Des voyageurs attendent dans le hall de la gare](../../public/lib/images/tcf/qcm-audit/qcm-lot20d-attente-gare.png)
 
 **Lire la situation**
 
@@ -4706,7 +4706,7 @@ Modèle de production — Omar est en train de réparer une chaise.
 
 ### Le repas
 
-![Une femme apporte un plateau à la cantine](../../public/lib/images/grammaire/communication/j1-05-une-femme-apporte-un-plateau-a-la-cantine.webp)
+![Une femme porte un plateau-repas à la cantine](../../public/lib/images/tcf/catalogue/actions/plateau-a-la-cantine.webp)
 
 **Lire la situation**
 
@@ -5323,7 +5323,7 @@ Modèle de production — Je vais emprunter un roman mercredi.
 
 ### Le voyage
 
-![Un voyageur attend avec sa valise sur le quai](../../public/lib/images/grammaire/communication/futur-proche-10-un-voyageur-attend-avec-sa-valise-sur-le-quai.webp)
+![Deux voyageurs attendent le train avec leurs valises](../../public/lib/images/tcf/qcm-audit/co57-voyage.webp)
 
 **Lire la situation**
 
@@ -5901,7 +5901,7 @@ Modèle de production — Je choisis la natation car j’aime l’eau.
 
 ### Le repas
 
-![Un homme parle de son choix devant un menu illustré](../../public/lib/images/grammaire/communication/k2-04-un-homme-parle-de-son-choix-devant-un-menu-illustre.webp)
+![Deux personnes choisissent un plat à la cantine](../../public/lib/images/tcf/co/scenes/ecole/06-ecole-menu-de-la-cantine.webp)
 
 **Lire la situation**
 

@@ -6572,6 +6572,62 @@
         "domicile",
         "document"
       ]
+    },
+    "/lib/images/tcf/qcm-audit/qcm-hist1-metro-face-commissariat.png": {
+      "width": 1448,
+      "height": 1086,
+      "sha256": "c2366f362db86c26886b7021f656d59ec501d50ea4b5aabc1f297027cdf24aa1",
+      "origin": "TCF",
+      "viewed": true
+    },
+    "/lib/images/tcf/qcm-audit/grammaire-metro-a-cote-parc.webp": {
+      "width": 1448,
+      "height": 1086,
+      "sha256": "e8354ce854e5376d66aaee5d34040335f1b2c9dbb9ca8d0272a3a76f7204b58b",
+      "origin": "project-generated",
+      "viewed": true,
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "mode": "individuelle",
+      "sourceSha256": "1e675d8e8f0d61a08c0003e280165fceca3e4f02ee000536680802c033553216",
+      "title": "Une entrée du métro à côté du parc",
+      "keywords": [
+        "métro",
+        "parc",
+        "à côté",
+        "grille",
+        "ville"
+      ]
+    },
+    "/lib/images/tcf/qcm-audit/grammaire-copie-carte-identite.webp": {
+      "width": 1448,
+      "height": 1086,
+      "sha256": "ac98b68e8ad799f8651b07ba22b6dd75b4cbad961a314a18eca5f3a4efebe199",
+      "origin": "project-generated",
+      "viewed": true,
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "mode": "individuelle",
+      "sourceSha256": "d690dea0847a2d8b65a8849485289f75e36f8445b682f4feb0ab4dd738e219e0",
+      "title": "Une photocopie de carte d’identité",
+      "keywords": [
+        "carte d’identité",
+        "photocopie",
+        "document",
+        "portrait",
+        "identité"
+      ]
+    },
+    "/lib/images/tcf/co/scenes/reprises/dialogue-b1-travail-invitation-deux-interlocuteurs.png": {
+      "width": 1448,
+      "height": 1086,
+      "sha256": "179753d551c70c659a2bc315d18a5141455b47ccf9e3cd6154b9b274a5ac6e3e",
+      "origin": "TCF",
+      "viewed": true
     }
   },
   "bindings": {
@@ -7210,6 +7266,18 @@
             "/lib/images/tcf/qcm-audit/audit-context-plan-ville.webp",
             "/lib/images/tcf/qcm-audit/extension573-horaire-train.webp",
             "/lib/images/tcf/qcm-audit/extension573-ticket-metro.webp"
+          ]
+        },
+        "4": {
+          "answers": [
+            "En face du commissariat",
+            "Derrière la mairie",
+            "À côté du parc"
+          ],
+          "paths": [
+            "/lib/images/tcf/qcm-audit/qcm-hist1-metro-face-commissariat.png",
+            "/lib/images/tcf/qcm-audit/grammaire-metro-derriere-mairie.webp",
+            "/lib/images/tcf/qcm-audit/grammaire-metro-a-cote-parc.webp"
           ]
         }
       }
@@ -8722,10 +8790,15 @@
         }
       },
       "scene": {
-        "path": "/lib/images/tcf/co/scenes/grammaire/a2-176-conversation-autour-du-travail.webp",
+        "path": "/lib/images/tcf/co/scenes/reprises/dialogue-b1-travail-invitation-deux-interlocuteurs.png",
         "interlocutors": 2,
         "proof": "avec tes compétences et tes qualités",
-        "review": "Stéphane écoute un conseil dans un cadre domestique. Le décor est neutre. Le rôle de la personne qui conseille est lisible, son identité reste libre dans la transcription."
+        "review": "Une femme aux cheveux très courts et un homme aux tempes dégagées échangent debout près d’un bureau. Aucun objet ne désigne un des métiers proposés dans les réponses.",
+        "visualRevision": {
+          "reason": "diversité des personnages",
+          "previousImage": "/lib/images/tcf/co/scenes/grammaire/a2-176-conversation-autour-du-travail.webp",
+          "source": "TCF"
+        }
       }
     },
     "gram-co-loisirs-a2-piste_197": {
@@ -10040,6 +10113,22 @@
             "/lib/images/tcf/qcm-audit/grammaire-accuse-reception-lettre.webp",
             "/lib/images/tcf/qcm-audit/grammaire-carnet-de-timbres.webp",
             "/lib/images/tcf/qcm-audit/grammaire-changement-adresse.webp"
+          ]
+        }
+      }
+    },
+    "gram-co-loisirs-a2-piste_097": {
+      "questions": {
+        "0": {
+          "answers": [
+            "Un petit texte de présentation",
+            "Une copie de sa carte d’identité",
+            "Un appareil photo"
+          ],
+          "paths": [
+            "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+            "/lib/images/tcf/qcm-audit/grammaire-copie-carte-identite.webp",
+            "/lib/images/tcf/qcm-audit/co834-appareil-photo-dessine.webp"
           ]
         }
       }
