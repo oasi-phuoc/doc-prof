@@ -86,7 +86,7 @@ L’inventaire raccorde les 40 contextes de cette famille. Le relevé de 4 269 c
 
 Le panneau Libre permet de choisir les mots et les sens autorisés, de recomposer la grille et de déplacer chaque mot. Le corrigé se recalcule à partir des positions. Une position incompatible ou une liste avec un doublon conserve la dernière grille valide. Le parcours Chromium couvre aussi une ancienne recette sans positions enregistrées, la modification des mots et l’annulation.
 
-Les 40 contextes de mots mêlés terminent le raccordement des activités générables de Soutien FR en A4. L’inventaire de 4 269 contextes relève 544 raccordements A4 en attente dans les autres domaines et aucune erreur de génération.
+Les 40 contextes de mots mêlés terminent le raccordement des activités générables de Soutien FR en A4. Après intégration des quatre symétries, l’inventaire de `feeff150` relève 4 269 contextes de sélection, dont 540 à raccorder en A4 dans les autres domaines. Il ne relève aucune erreur de génération.
 
 ## Panneau unique et addition A4
 
