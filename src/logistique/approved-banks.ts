@@ -11,6 +11,8 @@ import { module109 } from './banks/module-109-v001.generated.ts'
 import { module110 } from './banks/module-110-v001.generated.ts'
 import { module201 } from './banks/module-201-v001.generated.ts'
 import { module202 } from './banks/module-202-v001.generated.ts'
+import { module203 } from './banks/module-203-v001.generated.ts'
+import { module204 } from './banks/module-204-v001.generated.ts'
 import { module308 } from './banks/module-308-v001.generated.ts'
 import { module613 } from './banks/module-613-v001.generated.ts'
 import { module805 } from './banks/module-805-v001.generated.ts'
@@ -49,6 +51,14 @@ const serviceClientPublication: LogistiquePublication = {
   ],
 }
 const revisedReferenceIds = new Set<string>(illustratedReferences.map(({ id }) => id))
+const illustratedPublication: LogistiquePublication = {
+  revision: 'logistique-references-v002',
+  units: [...serviceClientPublication.units.filter(({ id }) => !revisedReferenceIds.has(id)), ...illustratedReferences],
+}
+const serviceOrganisationPublication: LogistiquePublication = {
+  revision: 'logistique-203-204-v001',
+  units: [...illustratedPublication.units, ...module203, ...module204],
+}
 
 /** Ajouter une publication après validation. Garder les versions utilisées par les recettes. */
 export const logistiquePublications: readonly LogistiquePublication[] = [
@@ -88,10 +98,8 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
     ],
   },
   serviceClientPublication,
-  {
-    revision: 'logistique-references-v002',
-    units: [...serviceClientPublication.units.filter(({ id }) => !revisedReferenceIds.has(id)), ...illustratedReferences],
-  },
+  illustratedPublication,
+  serviceOrganisationPublication,
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!
