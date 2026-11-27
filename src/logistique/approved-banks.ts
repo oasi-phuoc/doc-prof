@@ -157,6 +157,8 @@ import { module806 as theory806 } from './banks/module-806-v002.generated.ts'
 import { module807 as theory807 } from './banks/module-807-v002.generated.ts'
 import { module808 as theory808 } from './banks/module-808-v002.generated.ts'
 import { module809 as theory809 } from './banks/module-809-v002.generated.ts'
+import { module901 as theory901 } from './banks/module-901-v002.generated.ts'
+import { module902 as theory902 } from './banks/module-902-v002.generated.ts'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
 
@@ -344,6 +346,15 @@ const theories_ict = [
 ]
 const theoryIds_ict = new Set<string>(theories_ict.map(({ id }) => id))
 
+const publication_ict_v002: LogistiquePublication = {
+  revision: 'logistique-theories-ict-v002',
+  units: [...publication_fico_v002.units.filter(({ id }) => !theoryIds_ict.has(id)), ...theories_ict],
+}
+const theories_projets = [
+  ...theory901, ...theory902,
+]
+const theoryIds_projets = new Set<string>(theories_projets.map(({ id }) => id))
+
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
@@ -404,9 +415,10 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   publication_production_v002,
   publication_distribution_v002,
   publication_fico_v002,
+  publication_ict_v002,
   {
-    revision: 'logistique-theories-ict-v002',
-    units: [...publication_fico_v002.units.filter(({ id }) => !theoryIds_ict.has(id)), ...theories_ict],
+    revision: 'logistique-theories-projets-v002',
+    units: [...publication_ict_v002.units.filter(({ id }) => !theoryIds_projets.has(id)), ...theories_projets],
   },
 ]
 

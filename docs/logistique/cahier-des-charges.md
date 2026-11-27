@@ -217,7 +217,7 @@ Règles UI : le changement de thème choisit un sous-thème valide et conserve l
 | Type | Réglages spécifiques | Sortie |
 |---|---|---|
 | Objectifs et aperçu | Lecture du module | Objectifs et aperçu sans mention de source imprimée |
-| Théorie | Complet / Résumé pédagogique retravaillé / Aide-mémoire ; sélection de chapitres ; inclure exemples, figures, tableaux, encadré à retenir | Document structuré, sans double corrigé ; le résumé approuvé couvre toutes les notions essentielles de la théorie complète |
+| Théorie | Complet ou Résumé pédagogique retravaillé. Exemples, figures et tableaux placés au passage concerné. | Document structuré, sans double corrigé ; le résumé approuvé couvre toutes les notions essentielles de la théorie complète |
 | Mathématiques | Quantité, difficulté, familles de calcul, source originale/nouvelle/toutes, espace de calcul, points (facultatif) | Problèmes + corrigé détaillé |
 | Vérification | Quantité, difficulté, formes de questions, niveau de Bloom, notions, source, espace de réponse, mélange des options | Questions + corrigé correspondant |
 | Mises en situation | Nombre de cas, difficulté, thèmes de cas, documents supports, espace de rédaction | Cas et sous-questions + grille de correction |

@@ -68,7 +68,7 @@ test('les 858 types des modules CFC et AFP disposent de contenu à générer', (
 
 test('les résumés illustrés sont distincts du cours et figés dans la recette', () => {
   const publishedTheories = currentLogistiquePublication.units.filter((unit) => unit.kind === 'theorie' && unit.summaryBlocks)
-  assert.equal(publishedTheories.length, 78)
+  assert.equal(new Set(publishedTheories.map(({ module }) => module)).size, 80)
   for (const { module: code, approvedFor } of publishedTheories) {
     for (const diploma of approvedFor) {
       const full = config(diploma, code, 'theorie')
@@ -79,9 +79,11 @@ test('les résumés illustrés sont distincts du cours et figés dans la recette
       const blocks = generateLogistique(summary, 7).items.map((item) => item.theoryBlock)
       const fullBlocks = generateLogistique(full, 7).items.map((item) => item.theoryBlock)
       assert(blocks.length < fullBlocks.length)
-      const photos = blocks.filter((block) => block.kind === 'image')
-      assert(photos.length >= 2)
-      assert(photos.every((photo) => photo.src.endsWith('.webp') && photo.alt && photo.caption))
+      for (const version of [blocks, fullBlocks]) {
+        const figures = version.filter((block) => block.kind === 'image')
+        assert(figures.length >= 2)
+        assert(figures.every((figure) => figure.src.endsWith('.webp') && figure.alt && figure.caption))
+      }
       const historical = { ...full, logistiqueBankRevision: 'logistique-901-v001' }
       assert(!logistiqueHasSummary(full.exerciseType, historical.logistiqueBankRevision))
       assert(generateLogistique(historical, 7).items.some((item) => item.theoryBlock?.src?.endsWith('.svg')))

@@ -996,7 +996,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                   {!hasSummary && <small className="muted">Résumé indisponible dans cette révision.</small>}
                 </div>
               )}
-              {isLogistiqueReferenceType(activeBlock.exerciseType) ||
+              {isLogistiqueTheory ||
               isPhraseChart ||
               isVocabLearn ||
               isVocabPool ||

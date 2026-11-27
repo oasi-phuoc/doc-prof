@@ -14,7 +14,7 @@ Le générateur commun propose les neuf thèmes et 80 modules du CFC, ainsi que 
 
 La [banque active](../../src/logistique/approved-banks.ts) permet de générer les six types des 80 modules CFC et des 63 modules AFP, soit 858 combinaisons diplôme, module et type. Le [suivi d’avancement](avancement-cahier-des-charges-20261126.md) détaille les révisions, les contrôles A4 et les effectifs de la banque. Les volumes nominaux et les fonctions avancées d’évaluation et d’édition restent à compléter.
 
-Le type Théorie propose Complet et Résumé dans le générateur pour les modules dont la réécriture est publiée. Les versions illustrées, les ancrages des images, leurs légendes et les résumés figurent dans les dossiers de préparation.
+Le type Théorie propose Complet et Résumé pour les 80 modules CFC et les 63 modules AFP. Chaque version présente les visuels en couleur au fil du cours. Les ancrages, légendes, textes alternatifs et résumés figurent dans les [dossiers de préparation](preparation/).
 
 ## Sources et pilote
 
@@ -28,4 +28,4 @@ L’extraction se reproduit avec `node scripts/import-logistique-epcas.mjs /chem
 ## Contrôles
 
 - `npm run test:logistique` contrôle les effectifs, l’ordre des types, l’éligibilité, la déduplication et les révisions de recettes.
-- `npm run test:logistique:browser` démarre un Vite local et contrôle le parcours des deux diplômes en Chromium, dont les dimensions du gabarit, la grille, le corrigé, le PDF et la réouverture d’une recette. La seconde vérification parcourt les objectifs, aperçus et cours illustrés du lot de reprise V2.12. Elle contrôle la réserve au pied de la fiche, les cinq autres types du pilote 105 et l’enchaînement des calculs du 110 dans les deux diplômes.
+- `npm run test:logistique:browser` démarre un Vite local et contrôle le parcours des deux diplômes en Chromium, dont les dimensions du gabarit, la grille, le corrigé, le PDF et la réouverture d’une recette. La vérification des publications contrôle les objectifs et aperçus, les cours complets et les résumés illustrés, ainsi que la génération du PDF. Elle mesure la réserve au pied de la fiche et vérifie aussi le corrigé et l’enchaînement des calculs des modules 105 et 110.
