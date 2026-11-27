@@ -10,9 +10,66 @@ try {
   const { runtimeFor } = await server.ssrLoadModule('/src/interactive/domain/round-runtime.ts')
   const { newRecord, compactSession, replaySession, planIdentity } = await server.ssrLoadModule('/src/interactive/domain/persistence.ts')
   const { defaultPage, exerciseTypes } = await server.ssrLoadModule('/src/math/catalog.ts')
+  const { buildPage } = await server.ssrLoadModule('/src/math/generate.ts')
+  const { adaptLogistics } = await server.ssrLoadModule('/src/interactive/domain/logistics.ts')
   const base = demoRecipe()
   const audio = { layout: 'audio-order', answer: '1 → chat · 2 → sac', audioOrder: { mode: 'words', clips: [{ word: 'chat', audioSrc: '/lib/audio/chat.mp3' }, { word: 'sac', audioSrc: '/lib/audio/sac.mp3' }], slots: [{ word: 'sac', correctNum: 2 }, { word: 'chat', correctNum: 1 }] } }
   const phrase = { layout: 'phrase-order', tokens: [{ text: 'est' }, { text: 'petite' }, { text: 'Elle' }], labels: ['Elle', 'est', 'petite'], answer: 'Elle est petite.', responseAnswer: 'Elle est petite.' }
+  await test('AFP and CFC guided logistics preserve source texts and reserve model answers for teacher-led correction', () => {
+    for (const [domain, type] of [['logistique-afp', 'log-afp-100-maths'], ['logistique-cfc', 'log-cfc-209-situation']]) {
+      const topic = exerciseTypes.find(entry => entry.id === type).topic
+      const config = { ...defaultPage(domain), topic, exerciseType: type, count: 2 }
+      const before = buildPage(config, base.seed)
+      const game = convertRecipe({ ...base, libreMode: false, pages: [config] })
+      assert.ok(game.questions.length >= 2)
+      assert.deepEqual(buildPage(config, base.seed), before)
+      for (const q of game.questions) {
+        const source = before.blocks[q.source.block].items[q.source.item]
+        assert.equal(q.prompt, source.prompt)
+        assert.ok(game.corrections[q.id].text.includes(source.responseAnswer ?? source.answer))
+        if (source.calcAnswer) assert.ok(game.corrections[q.id].text.includes(source.calcAnswer))
+        assert.equal(q.compatibility, 'teacher-led')
+        assert.equal(q.mode, 'oral')
+        assert.deepEqual(q.choices, [])
+      }
+      for (const mode of ['class', 'solo']) {
+        const initial = startSession(game, mode)
+        assert.equal(transition(game, initial, { type: 'SELECT', choiceId: 'a' }), initial)
+        assert.equal(initial.history.length, 0)
+      }
+    }
+  })
+  await test('logistics tables and gap activities expose source data while keeping blank answers in the correction', () => {
+    const fixtures = [
+      ['log-cfc-306-verification', 'tableau-donnees'],
+      ['log-cfc-101-verification', 'sans-liste'],
+      ['log-cfc-101-verification', 'avec-liste'],
+    ]
+    for (const [exerciseType, logistiquePresentation] of fixtures) {
+      const topic = exerciseTypes.find(entry => entry.id === exerciseType).topic
+      const config = { ...defaultPage('logistique-cfc'), topic, exerciseType, logistiquePresentation, count: 2 }
+      const generated = buildPage(config, base.seed)
+      const game = convertRecipe({ ...base, libreMode: false, pages: [config] })
+      assert.equal(game.questions.length, 2, logistiquePresentation)
+      for (const q of game.questions) {
+        const source = generated.blocks[q.source.block].items[q.source.item]
+        const correction = game.corrections[q.id].text
+        assert.equal(q.prompt, source.prompt)
+        if (source.logistiqueTable) {
+          assert.match(q.context, /à compléter/)
+          assert.equal(correction.includes('Ligne 1'), true)
+          assert.deepEqual(q.choices, [])
+          const invalid = { ...source, logistiqueTable: { ...source.logistiqueTable, rows: [['row without all columns']] } }
+          assert.match(adaptLogistics(invalid).reason, /colonnes/)
+        } else {
+          assert.match(correction, /Blanc 1/)
+          if (source.logistiqueGaps.words) assert.ok(source.logistiqueGaps.words.every(word => q.context.includes(word)))
+          else assert.equal(q.context, undefined)
+          assert.match(adaptLogistics({ ...source, logistiqueGaps: { answers: [] } }).reason, /blancs/)
+        }
+      }
+    }
+  })
   await test('audio associations preserve explicit source mapping and use only source alternatives', () => {
     const adapted = adaptSourceItem(audio, 'soutien-audio')
     assert.equal(adapted.items.length, 2)

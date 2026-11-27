@@ -45,6 +45,7 @@ try {
   await run('pools-browser')
   await run('setup-home-browser')
   await run('source-chooser-browser')
+  await run('display-theme-browser')
   await run('loto-browser')
   await run('memory-browser')
   await run('image-annotations-browser')

@@ -4,12 +4,17 @@ import {positionOf} from './source-position'
 import {matchingTextKey} from './matching'
 import type {Game,Question,MemoryCard} from './types'
 
-const family=(q:Question)=>['jeux-memory','jeux-vocabulaire'].includes(q.source.exerciseType)
+export type MemoryScope = true | 'decks'
+export function supportsMemory(q: Question, scope: MemoryScope, keepLoto = false): boolean {
+ const type = q.source.exerciseType
+ return type === 'jeux-memory' || type === 'jeux-vocabulaire' ||
+   scope === 'decks' && (type === 'jeux-dominos' || type === 'jeux-loto' && !keepLoto)
+}
 const groupKey=(q:Question)=>[q.source.page,q.source.block,q.source.item,q.source.exerciseType].join(':')
 /** Balanced groups keep four to six A–F positions, without dropping a pair. */
-export function memoryGame(game:Game):Game {
+export function memoryGame(game:Game,scope:MemoryScope=true,keepLoto=false):Game {
  const groups=new Map<string,Question[]>()
- for(const q of game.questions)if(family(q)&&!q.memoryBoard)groups.set(groupKey(q),[...groups.get(groupKey(q))??[],q])
+ for(const q of game.questions)if(supportsMemory(q,scope,keepLoto)&&!q.memoryBoard)groups.set(groupKey(q),[...groups.get(groupKey(q))??[],q])
  const replacements=new Map<string,Question>(),removed=new Set<string>(),corrections={...game.corrections},issues=[...game.issues]
  for(const [key,source]of groups){
   const sorted=[...source].sort((a,b)=>a.source.part-b.source.part),words=sorted.map(q=>q.choices.find(c=>c.id===game.corrections[q.id]?.choiceId)?.text)
@@ -30,8 +35,8 @@ export function memoryGame(game:Game):Game {
  if(!replacements.size)return issues.length===game.issues.length?game:{...game,issues}
  return{...game,questions:game.questions.flatMap(q=>replacements.has(q.id)?[replacements.get(q.id)!]:removed.has(q.id)?[]:[q]),corrections,issues,...(game.rounds?{rounds:undefined}:{})}
 }
-export function memorySelection(keys:string[],game:Game,enabled:boolean):string[] {
- const boards=(enabled?memoryGame(game):game).questions.filter(q=>q.memoryBoard),result=new Set<string>()
+export function memorySelection(keys:string[],game:Game,enabled:boolean,scope:MemoryScope=true,keepLoto=false):string[] {
+ const boards=(enabled?memoryGame(game,scope,keepLoto):game).questions.filter(q=>q.memoryBoard),result=new Set<string>()
  for(const key of keys){const board=boards.find(q=>enabled?q.memoryBoard!.sourceKeys.includes(key):positionOf(q)===key);if(board){if(enabled)result.add(positionOf(board));else board.memoryBoard!.sourceKeys.forEach(source=>result.add(source))}else result.add(key)}
  return [...result]
 }

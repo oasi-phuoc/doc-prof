@@ -116,6 +116,7 @@ export type PreviousAttempt = {
   results: Attempt[]
   manualVotes: Record<string, ManualVote>
   teacherMarks: Record<string, 'success' | 'review' | 'unassessed'>
+  teacherBadges?: Record<string, true>
   audioListens?: number
   extraListens?: number
   memoryBoards?: Record<string,MemoryRuntime>
@@ -132,6 +133,7 @@ export type Session = {
   history: Attempt[]
   manualVotes: Record<string, ManualVote>
   teacherMarks: Record<string, 'success' | 'review' | 'unassessed'>
+  teacherBadges?: Record<string, true>
   note: string
   teacherLocked?: boolean
   revealedAt?: number
@@ -163,6 +165,7 @@ export type Action = (
   | { type: 'ASSESS'; value: 'acquired' | 'retry'; questionId?: string }
   | { type: 'MANUAL_VOTE_SET'; questionId: string; vote: ManualVote | null }
   | { type: 'TEACHER_MARK_SET'; questionId: string; value: 'success' | 'review' | 'unassessed' }
+  | { type: 'TEACHER_BADGE'; questionId: string; badge: 'well-explained'; on: boolean }
   | { type: 'SESSION_NOTE_SET'; note: string }
   | { type: 'NEXT' | 'PREVIOUS' | 'SKIP' | 'PAUSE' | 'RESUME' }
 ) & { roundId?: string }

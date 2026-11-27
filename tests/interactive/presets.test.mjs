@@ -3,11 +3,24 @@ import { test } from 'node:test'
 import { createServer } from 'vite'
 const server = await createServer({ server: { middlewareMode: true, hmr: false }, appType: 'custom' })
 try {
-  const { applyPlanOptions, DEFAULT_PLAN_OPTIONS, readPlanOptions } = await server.ssrLoadModule('/src/interactive/domain/plan-options.ts')
+  const { applyPlanOptions, DEFAULT_PLAN_OPTIONS, NEW_PLAN_OPTIONS, readPlanOptions } = await server.ssrLoadModule('/src/interactive/domain/plan-options.ts')
   const { prepareGame } = await server.ssrLoadModule('/src/interactive/domain/plan.ts')
   const { readLocalPreset, presetOptions } = await server.ssrLoadModule('/src/interactive/presets.ts')
   const questions = Array.from({ length: 6 }, (_, i) => ({ id: `q${i}`, source: { page: 0, block: 0, item: i, part: 0, exerciseType: 'addition' }, title: 'Calcul', instruction: 'Calculez', prompt: `${i} + 1`, mode: 'choice', images: [], compatibility: 'auto', choices: Array.from({ length: 6 }, (_, n) => ({ id: `n${n}`, text: String(n) })) }))
   const game = { id: 'preset-options', seed: 4567, title: 'Test', questions, corrections: Object.fromEntries(questions.map((q) => [q.id, { choiceId: 'n2', text: '2' }])), issues: [] }
+  await test('three-card sessions separate audio cards and keep True/False fixed even with a six-choice cap', () => {
+    const polar = { ...questions[2], audio: '/audio.mp3', choices: [{ id: 'false', text: 'Faux' }, { id: 'true', text: 'Vrai' }] }
+    const input = { ...game, questions: [...questions.slice(0, 2).map(q => ({ ...q, audio: '/audio.mp3' })), polar], corrections: { ...game.corrections, [polar.id]: { choiceId: 'true', text: 'Vrai' } } }
+    for (const maxChoices of [3, 6]) {
+      const options = readPlanOptions({ ...NEW_PLAN_OPTIONS, maxChoices })
+      const prepared = prepareGame(applyPlanOptions(input, options), undefined, 'class', options.maxChoices)
+      assert.equal(prepared.rounds.length, 3)
+      assert.deepEqual(prepared.questions.map(q => q.choices.length), [maxChoices, maxChoices, 3])
+      assert.deepEqual(prepared.questions[2].choices.map(choice => choice.text), ['Vrai', 'Faux', 'Je ne sais pas'])
+      assert.equal(prepared.corrections[polar.id].choiceId, 'true')
+    }
+    assert.equal(applyPlanOptions(input, DEFAULT_PLAN_OPTIONS), input)
+  })
   await test('default preset options preserve the original plan and unknown options cannot be silently ignored', () => {
     assert.equal(applyPlanOptions(game, DEFAULT_PLAN_OPTIONS), game)
     assert.deepEqual(readPlanOptions(undefined), DEFAULT_PLAN_OPTIONS)
@@ -56,6 +69,8 @@ try {
     const preset = { version: 2, presetId: 'local-preset', sourceKey: 'saved:worksheet', name: 'Ma séance', conversionVersion: 2, paletteVersion: 1, contentHashAtSave: '123', selectedQuestionIds: ['0:0:0:0'], ...DEFAULT_PLAN_OPTIONS, revealPolicy: 'teacher-only', correctionTiming: 'deferred', voteBeforeBoard: true, timer: { enabled: true, defaultSec: 30, feedbackSec: 5 }, scoring: { mode: 'none' }, effects: { badges: false }, playMode: 'class', revision: 0, createdAt: 1, updatedAt: 1 }
     assert.deepEqual(readLocalPreset(preset), preset)
     assert.deepEqual(presetOptions(preset), DEFAULT_PLAN_OPTIONS)
+    const current = readLocalPreset({ ...preset, ...NEW_PLAN_OPTIONS })
+    assert.deepEqual(presetOptions(current), NEW_PLAN_OPTIONS)
     for (const patch of [{ version: 3 }, { revision: -1 }, { selectedQuestionIds: ['wrong'] }, { futureField: true }, { timer: { ...preset.timer, feedbackSec: 11 } }]) {
       const future = { ...preset, ...patch }; const before = structuredClone(future)
       assert.throws(() => readLocalPreset(future), /conservées/)

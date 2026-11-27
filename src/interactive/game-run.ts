@@ -3,7 +3,7 @@ import { canonicalJson, hash } from './domain/seeds'
 import type { PlayMode } from './domain/types'
 import type { SessionSource, SourceReference } from './domain/source'
 import { latestRun } from './local-runs'
-import { readPlanOptions, type PlanOptions } from './domain/plan-options'
+import { NEW_PLAN_OPTIONS, readPlanOptions, type PlanOptions } from './domain/plan-options'
 import { positionOf } from './domain/source-position'
 
 export type GameSource = {
@@ -49,7 +49,7 @@ export function createGameSource(value: { recipe: FicheRecipe; name: string }, k
   const sourceKey = `${kind}-${hash(canonicalJson({ recipe: value.recipe, sourceId }))}`
   const metadata = readMetadata(sourceKey)
   const seed = metadata?.seed ?? (kind === 'saved' ? nextGameSeed(value.recipe.seed) : value.recipe.seed)
-  return { name: value.name, template: value.recipe, recipe: { ...value.recipe, seed }, sourceKey, selectedKeys: metadata?.selectedKeys ?? null, replay: metadata?.replay ?? 0, options: readPlanOptions(metadata?.options??defaultOptions), presetId: metadata?.presetId, ...(sourceId || kind === 'demo' ? { reference: { kind, id: sourceId || 'demo' } } : {}) }
+  return { name: value.name, template: value.recipe, recipe: { ...value.recipe, seed }, sourceKey, selectedKeys: metadata?.selectedKeys ?? null, replay: metadata?.replay ?? 0, options: readPlanOptions(metadata?.options ?? defaultOptions ?? NEW_PLAN_OPTIONS), presetId: metadata?.presetId, ...(sourceId || kind === 'demo' ? { reference: { kind, id: sourceId || 'demo' } } : {}) }
 }
 export async function loadGameSource(value: { recipe: FicheRecipe; name: string }, kind: SourceReference['kind'], sourceId = '', defaultOptions?:PlanOptions): Promise<GameSource> {
   const source = createGameSource(value, kind, sourceId, defaultOptions)
@@ -62,7 +62,12 @@ export async function loadGameSource(value: { recipe: FicheRecipe; name: string 
   } catch (error) { return { ...source, storageWarning: error instanceof Error ? error.message : 'Reprise locale indisponible. Le jeu peut continuer.' } }
 }
 export function renewGameSource(source: GameSource, selectedKeys: string[] | null): GameSource {
-  return { ...source, recipe: { ...source.template, seed: nextGameSeed(source.recipe.seed) }, selectedKeys, replay: 0, sessionId: undefined, restoredGameId: undefined, resolvedKeys: undefined }
+  const options = source.options.cardRulesVersion || source.presetId ? source.options : {
+    ...source.options,
+    cardRulesVersion: NEW_PLAN_OPTIONS.cardRulesVersion,
+    maxChoices: source.options.maxChoices === 6 ? NEW_PLAN_OPTIONS.maxChoices : source.options.maxChoices,
+  }
+  return { ...source, options, recipe: { ...source.template, seed: nextGameSeed(source.recipe.seed) }, selectedKeys, replay: 0, sessionId: undefined, restoredGameId: undefined, resolvedKeys: undefined }
 }
 export function saveGameRun(source: GameSource, selectedKeys: string[] | null): boolean {
   try { sessionStorage.setItem(prefix + source.sourceKey, JSON.stringify({ seed: source.recipe.seed, selectedKeys, replay: source.replay, options: source.options, presetId: source.presetId })); return true }

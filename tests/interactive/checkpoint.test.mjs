@@ -38,6 +38,30 @@ try {
     assert.deepEqual(resumed.state.history, state.history)
     assert.deepEqual(replaySession(game, compactSession(resumed.record, resumed.state), planId, now).state, resumed.state)
   })
+  await test('teacher badges follow revealed class attempts and survive retry, compaction and later editing', () => {
+    const badge = { type: 'TEACHER_BADGE', badge: 'well-explained', questionId: 'q1', on: true }
+    const reveal = [{ type: 'CARDS_UP' }, { type: 'DISCUSS' }, { type: 'REVEAL' }]
+    const read = actions => replaySession(game, record(actions), planId, now).state
+    assert.equal(read([badge]).teacherBadges, undefined)
+    assert.equal(read([...reveal, { ...badge, questionId: 'q2' }]).teacherBadges, undefined)
+    assert.equal(read([...reveal, { type: 'PAUSE' }, badge]).teacherBadges, undefined)
+    assert.equal(replaySession(game, record([{ type: 'SELECT', choiceId: 'a' }, badge], 'solo'), planId, now, 'solo').state.teacherBadges, undefined)
+    const marked = read([...reveal, badge])
+    assert.deepEqual(marked.teacherBadges, { q1: true })
+    const roundId = Object.keys(marked.roundStates)[0]
+    assert.deepEqual(read([...reveal, badge, { type: 'UNREVEAL', roundId }]).teacherBadges, {})
+    const actions = [...reveal, badge, { type: 'RETRY_QUESTION', roundId }, ...reveal, badge, { type: 'FINISH' }]
+    const original = record(actions), state = read(actions), compacted = compactSession(original, state)
+    assert.deepEqual(state.previousAttempts[0].teacherBadges, { q1: true })
+    assert.deepEqual(replaySession(game, compacted, planId, now).state, state)
+    const edited = read([...actions, { ...badge, on: false }, { ...badge, questionId: 'q2' }])
+    assert.deepEqual(edited.teacherBadges, {})
+    for (const teacherBadges of [{ q2: true }, { q1: false }, { q1: 'private text' }]) {
+      const forged = structuredClone(compacted)
+      forged.checkpoint.state.teacherBadges = teacherBadges
+      assert.throws(() => replaySession(game, forged, planId, now), /Instantané/)
+    }
+  })
   await test('solo checkpoint retains the selected answer, verdict and remaining feedback time', () => {
     const original = { ...record([{ type: 'SELECT', questionId: 'q1', choiceId: 'b' }, { type: 'PAUSE' }], 'solo'), clock: { roundId: 'q1', phase: 'revealed', durationMs: 7000, remainingMs: 2900 } }
     const { state } = replaySession(game, original, planId, now, 'solo')

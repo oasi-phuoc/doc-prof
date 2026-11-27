@@ -20,6 +20,7 @@ import { excludeQuestions, prepareGame } from './domain/plan'
 import { useMediaPreflight } from './media/useMediaPreflight'
 import type { ToolbarGuard } from './domain/teacher'
 import { patchClassroomPreferences, type ClassroomPreferences } from './preferences'
+import { displayThemeClass, useDisplayTheme } from './display-theme'
 import { MediaCheck } from './components/MediaCheck'
 import { FullPreload } from './components/FullPreload'
 import { useFullPreload } from './media/useFullPreload'
@@ -33,7 +34,7 @@ import {poolRecipe,convertPoolRecipe,assertPoolDraw} from './pools/recipe'
 // The selector preloads this game entry before validating and opening a pool.
 // eslint-disable-next-line react/only-export-components -- This lazy game entry also validates the selector before navigation.
 export {checkPoolQuestions} from './pools/recipe'
-import {DEFAULT_PLAN_OPTIONS} from './domain/plan-options'
+import { NEW_PLAN_OPTIONS } from './domain/plan-options'
 import { readDraftWarning, readInteractiveDraft } from './navigation'
 import { loadLocalDraft, localDraftId } from './drafts'
 import { SessionView } from './SessionView'
@@ -111,7 +112,8 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
   const [paletteVersion, setPaletteVersion] = useState(initialPreferences.paletteVersion ?? 1)
   const [timer, setTimer] = useState(initialPreferences.timer)
   const [showTranscripts, setShowTranscripts] = useState(initialPreferences.showTranscripts ?? true)
-  const [contrast, setContrast] = useState(initialPreferences.contrast)
+  const [teacherBadges, setTeacherBadges] = useState(initialPreferences.teacherBadges ?? false)
+  const { theme } = useDisplayTheme()
   const [mascot, setMascot] = useState<MascotKind>(initialPreferences.mascot)
   const [preferencesWarning, setPreferencesWarning] = useState(initialWarning)
   const [mode, setMode] = useState<PlayMode>(() => {
@@ -143,7 +145,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
       const kind = poolId ? 'pool' : demo ? 'demo' : draftId !== null ? 'draft' : 'saved'
       const id = poolId ?? (demo ? 'demo' : draftId ?? savedId!)
       const pool=kind==='pool'?await loadPool(id):undefined
-      const poolOptions=pool?{...DEFAULT_PLAN_OPTIONS,orderMode:pool.config.shuffle?'shuffled' as const:'source' as const}:undefined
+      const poolOptions=pool?{...NEW_PLAN_OPTIONS,orderMode:pool.config.shuffle?'shuffled' as const:'source' as const}:undefined
       const fiche = kind === 'saved' ? (await listFiches()).find((f) => f.id === id) : undefined
       if (kind === 'saved' && !fiche) throw new Error('Cette fiche est introuvable ou inaccessible pour votre compte.')
       const value = pool?{recipe:poolRecipe(pool.config,pool.seed),name:pool.name}:demo ? { recipe: demoRecipe(), name: 'Les cartes de la classe' } : kind === 'draft' ? await loadLocalDraft(id) : { recipe: fiche!.recipe, name: fiche!.name }
@@ -179,20 +181,20 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
   const forbidden = source?.recipe.pages.some(
     (page) => !allowed.has(page.domain),
   )
-  const game = useMemo(
+  const sourceGame = useMemo(
     () => {
       if (!source || forbidden) return null
       const converted = source.reference?.kind==='pool'?convertPoolRecipe(source.recipe,source.name):convertRecipe(source.recipe, source.name)
-      const replayed = source.replay ? { ...converted, id: `${converted.id}-replay-${source.replay}`, seed: deriveSeed({ originalSeed: source.recipe.seed, sourceKey: source.sourceKey, purpose: 'replay', attempt: source.replay }) } : converted
-      return applyPlanOptions(replayed, source.options)
+      return source.replay ? { ...converted, id: `${converted.id}-replay-${source.replay}`, seed: deriveSeed({ originalSeed: source.recipe.seed, sourceKey: source.sourceKey, purpose: 'replay', attempt: source.replay }) } : converted
     },
     [source, forbidden],
   )
+  const game = useMemo(() => sourceGame && source ? applyPlanOptions(sourceGame, source.options) : null, [sourceGame, source])
   const selectedSources = useMemo(() => game?lotoSelection(selection??game.questions.map(questionSourceKey),game):[], [selection, game])
   const selected = useMemo(() => game?.questions.filter((question) => selectedSources.includes(questionSourceKey(question))).map((question) => question.id) ?? [], [selectedSources, game])
   const selectedGame = useMemo(
-    () => (game ? prepareGame(game, selected, mode) : null),
-    [game, selected, mode],
+    () => (game ? prepareGame(game, selected, mode, source?.options.cardRulesVersion === 2 ? source.options.maxChoices : undefined) : null),
+    [game, selected, mode, source?.options.cardRulesVersion, source?.options.maxChoices],
   )
   const media = useMediaPreflight(selectedGame, !playing)
   const activeGame = useMemo(() => {
@@ -202,7 +204,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
   }, [selectedGame, excludeUnavailable, media.excluded, source, selectionModified])
   const preload = useFullPreload(activeGame, media.manager)
   const readabilityPlan = useMemo(() => activeGame ? { id: activeGame.id, questions: activeGame.questions, rounds: activeGame.rounds } : null, [activeGame])
-  const readabilityOptions = useMemo(() => ({ mode, colors, shapes, timer, mascot, contrast }), [mode, colors, shapes, timer, mascot, contrast])
+  const readabilityOptions = useMemo(() => ({ mode, colors, shapes, timer, mascot, theme }), [mode, colors, shapes, timer, mascot, theme])
   const readability = useReadabilityPreflight(readabilityPlan, readabilityOptions, !playing && !competitionOpen && media.complete, preload.resolve)
   const resumeKey = activeGame?.id ?? ''
   const [resumeResult, setResumeResult] = useState<{ key: string; saved: Resume | null; warning: string } | null>(null)
@@ -231,9 +233,14 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
       if(nextSelection!==null)nextSelection=sortingSelection(nextSelection,game.questions,!!options.wordSorting)
       options={...options,customOrder:sortingSelection(options.customOrder,game.questions,!!options.wordSorting)}
     }
-    if(game&&!!options.memory!==!!source?.options.memory){
-      if(nextSelection!==null)nextSelection=memorySelection(nextSelection,game,!!options.memory)
-      options={...options,customOrder:memorySelection(options.customOrder,game,!!options.memory)}
+    const previous = source?.options
+    if (game && sourceGame && (options.memory !== previous?.memory || options.memory === 'decks' && !!options.loto !== !!previous?.loto)) {
+      const remap = (keys: string[]) => {
+        const expanded = memorySelection(keys, game, false)
+        return options.memory ? memorySelection(expanded, sourceGame, true, options.memory, !!options.loto) : expanded
+      }
+      if (nextSelection !== null) nextSelection = remap(lotoSelection(nextSelection, game))
+      options = { ...options, customOrder: remap(options.customOrder) }
     }
     if(nextSelection!==selection)setSelected(nextSelection)
     setSource((source) => source ? { ...source, options: readPlanOptions(options), presetId: undefined } : source)
@@ -308,6 +315,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
     homeHref:poolId?'/interactif':undefined,
     onCompetition: activeGame && media.complete && readability.complete && preload.phase !== 'loading' ? () => { if (!hasLocalCompetition(activeGame.id) && !hasDuel(activeGame.id, 'duel') && !hasDuel(activeGame.id, 'teams')) newPart(false); setCompetitionOpen(true) } : undefined,
     toolbarGuard,
+    teacherBadges,
     mascot,
     onMascot: (next: MascotKind) => { setMascot(next); savePreferences({ mascot: next }) },
     mode,
@@ -318,8 +326,6 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
     },
     fullscreen,
     playing,
-    contrast,
-    onContrast: () => { setContrast(!contrast); savePreferences({ contrast: !contrast }) },
     onFiches: returnToFiches,
     timer,
     onTimer: changeTimer,
@@ -338,7 +344,7 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
   if (competitionOpen && activeGame) return <Suspense fallback={<LoadingScreen title="Ouverture de la compétition" />}><CompetitionSetup key={activeGame.id} game={activeGame} timer={timer} colors={colors} shapes={shapes} showTranscripts={showTranscripts} onNewPart={() => newPart(false)} onExit={() => setCompetitionOpen(false)} /></Suspense>
   return (
     <PreparedMediaContext value={preload.resolve}>
-    <div className={`ci-app${contrast ? ' ci-high-contrast' : ''}${playing ? ' ci-playing' : ''}${fullscreen ? ' ci-immersive' : ''}`} data-mascot={mascot} style={mascotStyle(mascot,preload.resolve)}>
+    <div className={`ci-app${displayThemeClass(theme)}${playing ? ' ci-playing' : ''}${fullscreen ? ' ci-immersive' : ''}`} data-mascot={mascot} style={mascotStyle(mascot,preload.resolve)}>
       {preferencesWarning && <p className="ci-notice" role="status">{preferencesWarning} Le jeu reste utilisable.</p>}
       {!playing && <ClassroomHeader {...header} compact />}
       {loading ? (
@@ -562,6 +568,11 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
                       const next = event.target.checked ? 'hold-to-reveal' : 'none'
                       setToolbarGuard(next); savePreferences({ toolbarGuard: next })
                     }} />Maintenir le bouton pour révéler</label><p>Un appui de 600 ms évite une correction affichée par erreur. Fonctionne aussi avec Entrée ou Espace.</p></div>}
+                    {mode === 'class' && <label className="ci-settings-toggle"><input type="checkbox" checked={teacherBadges} onChange={event => {
+                      const enabled = event.target.checked
+                      setTeacherBadges(enabled)
+                      savePreferences({ teacherBadges: enabled })
+                    }} />Proposer le badge « Bien expliqué »</label>}
                     <details className="ci-settings-extra"><summary>Couleurs et symboles des cartes</summary><PaletteSettings colors={colors} shapes={shapes} onColors={changeColors} onShapes={changeShapes} /></details>
                     <details className="ci-settings-extra"><summary>Ordre des questions et préréglages</summary>
                 {source && <PresetPanel key={source.reference ? `${source.reference.kind}:${source.reference.id}` : source.sourceKey} sourceKey={source.reference ? `${source.reference.kind}:${source.reference.id}` : source.sourceKey} contentHash={String(hash(canonicalJson(source.template)))} questions={game.questions} selected={selectedSources} options={source.options} timer={timer} mode={mode} onOptions={changePlanOptions} onApply={applyPreset} activePresetId={source.presetId} paletteVersion={paletteVersion} />}

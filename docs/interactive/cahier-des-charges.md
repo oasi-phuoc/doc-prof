@@ -12,7 +12,7 @@
 
 ## Priorités non négociables
 
-1. **Participation collective à six cartes physiques** : A–F et six couleurs constantes ; 1 élève au tableau, autres élèves avec leurs propres cartes papier/plastifiées, sans téléphone individuel.
+1. **Participation collective avec cartes physiques** : A–C par défaut et A–F en option, avec six couleurs constantes. Un élève joue au tableau et les autres disposent de leurs cartes papier ou plastifiées, sans téléphone individuel.
 2. **Refonte créative complète** : esthétique **adolescente, moderne, premium et ludique**, pas de look enfantin ; conserver l'esprit des grandes cartes de couleur montrées au propriétaire, en proposant une direction originale cohérente.
 3. **Révélation contrôlée par l'enseignant** : ni correction affichée pendant le vote, ni avance imposée après un clic.
 4. **Réutilisation des contenus réels** : banque de maths, FLE, TPF/TCF, grammaire, alphabétisation, soutien, logique, jeux papier et médias ; conservation totale de l'impression.
@@ -1932,7 +1932,9 @@ Silhouettes pleines, tracées en SVG, **identiques sur l'écran et sur le papier
 - Seuls `transform` et `opacity` sont animés (pas de `box-shadow`, `filter` ni `backdrop-filter`). Avec `prefers-reduced-motion: reduce` ou `ClassroomSettings.motion = 'reduced'` : transitions instantanées, aucun mouvement de décor, minuteur sans pulsation (texte seul).
 - Thèmes : `light` (défaut) ; `high-contrast` (texte noir sur blanc, contours de 4 px, lettre dans un disque plein, aucun dégradé) ; `dark` (P1) avec **palette des cartes inchangée** et contrastes revalidés.
 
-### 58.8 Kit imprimable des six cartes
+### 58.8 Kit imprimable des cartes
+
+**Précision du 27 novembre 2026.** Les nouvelles parties proposent trois choix au maximum par défaut. L’enseignant peut choisir jusqu’à six réponses dans la préparation. Une question audio se joue sur un seul jeu de cartes quand la limite choisie est inférieure à six. Le Vrai/Faux affiche A « Vrai », B « Faux » et C « Je ne sais pas ». Les références explicites à une lettre, les réponses collectives et les grilles Loto gardent leurs choix source. L’impression propose trois cartes A–C par défaut et six A–F sur demande. Les deux formats utilisent le même gabarit recto verso.
 
 | Élément | Spécification |
 |---|---|

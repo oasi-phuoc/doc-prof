@@ -15,6 +15,7 @@ export function PrintCards({
   shapes?: ShapeId[]
 }) {
   const [sets, setSets] = useState(1)
+  const [cardsPerSet, setCardsPerSet] = useState<3 | 6>(3)
   const [inkSaving, setInkSaving] = useState(false)
   const [duplexEdge, setDuplexEdge] = useState<'long' | 'short'>('long')
   // Mirror the positions, not the card artwork, across the printer's flip edge.
@@ -24,11 +25,16 @@ export function PrintCards({
       <div className="ci-no-print">
         <h2>Les cartes de la classe</h2>
         <p>
-          Un jeu contient six cartes carrées à découper, deux par ligne sur trois lignes.
-          Les deux pages forment le recto et le verso d’une même feuille A4, avec la même
-          couleur, lettre et forme des deux côtés.
+          Les deux pages forment le recto et le verso d’une même feuille A4.
+          Chaque carte porte la même couleur, lettre et forme des deux côtés.
         </p>
         <div className="ci-toolbar">
+          <label>Cartes par jeu{' '}
+            <select value={cardsPerSet} onChange={event => setCardsPerSet(event.target.value === '6' ? 6 : 3)}>
+              <option value="3">3 cartes (A–C)</option>
+              <option value="6">6 cartes (A–F)</option>
+            </select>
+          </label>
           <label>
             Retournement recto verso{' '}
             <select
@@ -71,7 +77,7 @@ export function PrintCards({
       <div className={`ci-print-pages${inkSaving ? ' ci-ink-saving' : ''}`}>
         {Array.from({ length: sets }, (_, set) => ['front', 'back'].map((side) => (
           <div className="ci-card-sheet" key={`${set}-${side}`} data-set={set + 1} data-side={side}>
-            {(side === 'front' ? [0, 1, 2, 3, 4, 5] : backOrder).map((i) => (
+            {(side === 'front' ? [0, 1, 2, 3, 4, 5] : backOrder).map((i) => i >= cardsPerSet ? <div key={i} aria-hidden="true" /> : (
               <div
                 key={PALETTE[i]!.letter}
                 className="ci-paper-card"

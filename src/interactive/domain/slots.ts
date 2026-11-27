@@ -14,8 +14,16 @@ const normalized = (value: string) => value.normalize('NFKD').replace(/\p{M}/gu,
 const aggregates = new Set(['aucune de ces reponses', 'aucune des reponses', 'aucune reponse', 'toutes les reponses', 'toutes ces reponses', 'les deux', 'les deux reponses'])
 const isAggregate = (text: string) => aggregates.has(normalized(text))
 const isTrueFalse = (q: Question) => q.choices.length === 2 && q.choices.some((choice) => normalized(choice.text) === 'vrai') && q.choices.some((choice) => normalized(choice.text) === 'faux')
-function referencesLetters(q: Question): boolean {
-  const content = [q.prompt, ...q.choices.map((choice) => choice.text)].join('\n')
+export function threeCardTrueFalse(q: Question): Question | undefined {
+  if (!isTrueFalse(q)) return undefined
+  const choices = [...q.choices].sort((a, b) => Number(normalized(b.text) === 'vrai') - Number(normalized(a.text) === 'vrai'))
+  const id = ['unsure', 'unsure-1', 'unsure-2'].find(candidate => choices.every(choice => choice.id !== candidate))!
+  const keys = 'A correspond à Vrai. B correspond à Faux.'
+  const instruction = [q.instruction === keys ? '' : q.instruction, `${keys} C signifie « Je ne sais pas ».`].filter(Boolean).join(' ')
+  return { ...q, choices: [...choices, { id, text: 'Je ne sais pas' }], choiceOrderPolicy: 'fixed', instruction, ...(q.audio ? { audioGrouping: 'individual' } : {}) }
+}
+export function referencesLetters(q: Question, includeInstruction = false): boolean {
+  const content = [q.prompt, includeInstruction ? q.instruction : '', ...q.choices.map((choice) => choice.text)].join('\n')
   return /\b(?:r[ée]ponses?|choix|options?|propositions?|cartes?)\s+[A-F]\b/i.test(content) || /\b[A-F]\s+(?:et|ou)\s+[A-F]\b/.test(content) || q.choices.some((choice) => /^\s*[A-F][.)]\s/.test(choice.text))
 }
 export function choiceOrderPolicy(q: Question): ChoiceOrderPolicy {

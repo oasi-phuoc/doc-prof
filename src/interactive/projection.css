@@ -20,7 +20,7 @@
   padding: 10px 14px;
   color: #fff;
   white-space: nowrap;
-  background: linear-gradient(100deg, var(--blue, #5456c5), var(--ci-accent));
+  background: linear-gradient(100deg, var(--blue, #5456c5), var(--ci-action));
   box-shadow: 0 7px 15px #5c49e526;
 }
 .ci-app .ci-header .ci-icon-button {
@@ -337,7 +337,7 @@
   display: flex;
   align-items: stretch;
   margin-top: 10px;
-  background: #fff;
+  background: var(--ci-paper);
   border: 2px solid var(--card-color);
 }
 .ci-app .ci-correction-card > .ci-card-badge {

@@ -66,6 +66,7 @@ function validAction(value: unknown): value is Action {
   if (type === 'ASSESS') return keys.every((key) => ['type', 'value', 'questionId'].includes(key)) && ['acquired', 'retry'].includes(value.value as string) && (value.questionId === undefined || typeof value.questionId === 'string')
   if (type === 'MANUAL_VOTE_SET') return keys.length === 3 && keys.every((key) => ['type', 'questionId', 'vote'].includes(key)) && typeof value.questionId === 'string' && isVotePayload(value.vote)
   if (type === 'TEACHER_MARK_SET') return keys.length === 3 && keys.every((key) => ['type', 'questionId', 'value'].includes(key)) && typeof value.questionId === 'string' && ['success', 'review', 'unassessed'].includes(value.value as string)
+  if (type === 'TEACHER_BADGE') return keys.length === 4 && keys.every(key => ['type', 'questionId', 'badge', 'on'].includes(key)) && typeof value.questionId === 'string' && value.badge === 'well-explained' && typeof value.on === 'boolean'
   if (type === 'SESSION_NOTE_SET') return keys.length === 2 && typeof value.note === 'string' && value.note.length <= 2000
   if (type === 'TEACHER_LOCK_SET') return keys.length === 2 && typeof value.locked === 'boolean'
   if (type === 'UNREVEAL') return keys.length === 2 && typeof value.roundId === 'string'

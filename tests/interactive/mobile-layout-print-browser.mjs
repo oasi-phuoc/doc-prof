@@ -68,6 +68,7 @@ try {
   await page.context().addCookies([{ name: 'clairfle-fiche-access', value: 'admin', url: base }])
   await page.goto(`${base}/interactif/demo`)
   await page.locator('.ci-launch:enabled').waitFor({ timeout: 120000 })
+  await page.getByRole('combobox', { name: 'Cartes par jeu', exact: true }).selectOption('6')
   await page.getByRole('spinbutton', { name: 'Jeux de cartes', exact: true }).fill('2')
   await page.emulateMedia({ media: 'print' })
   assert.equal(await page.locator('.ci-card-sheet').count(), 4)

@@ -1,6 +1,6 @@
 import { questionsForRound, roundsFor } from './plan'
 import { validateManualVote } from './votes'
-import type { Game, PlayMode, Session, RoundRuntime, MemoryRuntime } from './types'
+import type { Attempt, Game, PlayMode, Session, RoundRuntime, MemoryRuntime } from './types'
 import { copyRuntime, sequenceLength } from './round-runtime'
 import { maxListensFor } from './listening'
 import {validWordPlacements} from './word-sorting'
@@ -10,8 +10,13 @@ import {copyMemoryBoards,memoryComplete,validMemoryRuntime} from './memory'
 
 export type SessionCheckpoint = { state: Session; lastEventId?: string }
 const object = (value: unknown): value is Record<string, unknown> => !!value && typeof value === 'object' && !Array.isArray(value)
-const stateFields = ['gameId', 'mode', 'index', 'phase', 'selected', 'selections', 'paused', 'finished', 'history', 'manualVotes', 'teacherMarks', 'note', 'teacherLocked', 'revealedAt', 'revealRetractions', 'roundStates', 'previousAttempts']
+const stateFields = ['gameId', 'mode', 'index', 'phase', 'selected', 'selections', 'paused', 'finished', 'history', 'manualVotes', 'teacherMarks', 'teacherBadges', 'note', 'teacherLocked', 'revealedAt', 'revealRetractions', 'roundStates', 'previousAttempts']
 const copyVotes = (votes: Session['manualVotes']) => Object.fromEntries(Object.entries(votes).map(([id, vote]) => [id, { ...vote, counts: { ...vote.counts } }]))
+const copyBadges = (value: Pick<Session, 'teacherBadges'>) => value.teacherBadges ? { teacherBadges: { ...value.teacherBadges } } : {}
+function validBadges(value: unknown, history: Attempt[], mode: PlayMode): boolean {
+  return value === undefined || mode === 'class' && object(value) &&
+    Object.entries(value).every(([id, granted]) => granted === true && history.some(attempt => attempt.questionId === id && !attempt.skipped))
+}
 function validListening(value: Record<string, unknown>, questions: Game['questions'], mode: PlayMode, hasAudio: boolean): boolean {
   const maximum = maxListensFor(questions)
   const listens = value.audioListens ?? 0, extra = value.extraListens ?? 0
@@ -28,11 +33,12 @@ export function copySession(state: Session): Session {
     selections: { ...state.selections }, history: state.history.map((attempt) => ({ ...attempt })),
     manualVotes: copyVotes(state.manualVotes),
     teacherMarks: { ...state.teacherMarks },
+    ...copyBadges(state),
     ...('teacherLocked' in state ? { teacherLocked: state.teacherLocked } : {}),
     ...('revealedAt' in state ? { revealedAt: state.revealedAt } : {}),
     ...(state.revealRetractions ? { revealRetractions: { ...state.revealRetractions } } : {}),
     ...(state.roundStates ? { roundStates: Object.fromEntries(Object.entries(state.roundStates).map(([id, runtime]) => [id, copyRuntime(runtime)])) } : {}),
-    ...(state.previousAttempts ? { previousAttempts: state.previousAttempts.map((attempt) => ({ ...attempt, ...(attempt.memoryBoards?{memoryBoards:copyMemoryBoards(attempt.memoryBoards)}:{}), results: attempt.results.map((result) => ({ ...result })), manualVotes: copyVotes(attempt.manualVotes), teacherMarks: { ...attempt.teacherMarks } })) } : {}) }
+    ...(state.previousAttempts ? { previousAttempts: state.previousAttempts.map((attempt) => ({ ...attempt, ...copyBadges(attempt), ...(attempt.memoryBoards?{memoryBoards:copyMemoryBoards(attempt.memoryBoards)}:{}), results: attempt.results.map((result) => ({ ...result })), manualVotes: copyVotes(attempt.manualVotes), teacherMarks: { ...attempt.teacherMarks } })) } : {}) }
 }
 
 function validAttempt(game: Game, value: unknown, mode: PlayMode, ids = game.questions.map((q) => q.id), memories: Record<string,unknown> = {}): boolean {
@@ -107,6 +113,7 @@ function validState(game: Game, raw: unknown, mode: PlayMode): raw is Session {
     if (!validation.ok || !validation.vote) return false
   }
   if (Object.entries(raw.teacherMarks).some(([id, mark]) => mode !== 'class' || !game.questions.some((q) => q.id === id) || !['success', 'review', 'unassessed'].includes(mark as string))) return false
+  if (!validBadges(raw.teacherBadges, history, mode)) return false
   if (raw.roundStates !== undefined) {
     if (!object(raw.roundStates) || Object.entries(raw.roundStates).some(([id, value]) => !validRuntime(game, id, value, mode))) return false
     for (const [id, value] of Object.entries(raw.roundStates)) {
@@ -121,11 +128,12 @@ function validState(game: Game, raw: unknown, mode: PlayMode): raw is Session {
     if (!Array.isArray(raw.previousAttempts) || raw.previousAttempts.length > 5000 || mode !== 'class') return false
     const previousByRound = new Map<string, number>()
     for (const attempt of raw.previousAttempts) {
-      if (!object(attempt) || Object.keys(attempt).some((key) => !['roundId', 'attempt', 'results', 'manualVotes', 'teacherMarks', 'audioListens', 'extraListens', 'memoryBoards'].includes(key)) || typeof attempt.roundId !== 'string' || attempt.attempt !== (previousByRound.get(attempt.roundId) ?? 0) || !Array.isArray(attempt.results) || !object(attempt.manualVotes) || !object(attempt.teacherMarks)) return false
+      if (!object(attempt) || Object.keys(attempt).some((key) => !['roundId', 'attempt', 'results', 'manualVotes', 'teacherMarks', 'teacherBadges', 'audioListens', 'extraListens', 'memoryBoards'].includes(key)) || typeof attempt.roundId !== 'string' || attempt.attempt !== (previousByRound.get(attempt.roundId) ?? 0) || !Array.isArray(attempt.results) || !object(attempt.manualVotes) || !object(attempt.teacherMarks)) return false
       const round = roundsFor(game).find((round) => round.id === attempt.roundId)
       if (!round || !validMemories(game,game.questions.filter(q=>round.questionIds.includes(q.id)),attempt.memoryBoards,mode) || !validListening(attempt, game.questions.filter((q) => round.questionIds.includes(q.id)), mode, !!round.audio) || attempt.results.length > round.questionIds.length || !attempt.results.every((result) => validAttempt(game, result, mode, round.questionIds, object(attempt.memoryBoards)?attempt.memoryBoards:{})) || new Set(attempt.results.map((a) => a.questionId)).size !== attempt.results.length ||
         Object.entries(attempt.manualVotes).some(([id, vote]) => { if (!round.questionIds.includes(id)) return true; const checked = validateManualVote(game.questions.find((q) => q.id === id)!, vote); return !checked.ok || !checked.vote }) ||
-        Object.entries(attempt.teacherMarks).some(([id, mark]) => !round.questionIds.includes(id) || !['success', 'review', 'unassessed'].includes(mark as string))) return false
+        Object.entries(attempt.teacherMarks).some(([id, mark]) => !round.questionIds.includes(id) || !['success', 'review', 'unassessed'].includes(mark as string)) ||
+        !validBadges(attempt.teacherBadges, attempt.results, mode)) return false
       previousByRound.set(attempt.roundId, (attempt.attempt as number) + 1)
     }
     for (const [id, count] of previousByRound) if (!object(raw.roundStates) || (raw.roundStates[id] as RoundRuntime | undefined)?.attempt !== count) return false

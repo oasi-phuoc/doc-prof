@@ -6,9 +6,11 @@ import type { ShapeId } from '../domain/palette'
 import type { ClassroomHeaderProps } from '../components/ClassroomHeader'
 import { fitQuestion, type Readability } from './fit'
 import { originalMedia, PreparedMediaContext, type MediaResolver } from '../media/prepared-context'
+import type { DisplayTheme } from '../preferences'
 
 export type ReadabilityPlan = { id: string; questions: Question[]; rounds?: Round[] }
-export type ReadabilityOptions = Pick<ClassroomHeaderProps, 'mascot' | 'contrast' | 'timer'> & { mode: PlayMode; colors: string[]; shapes: ShapeId[] }
+
+export type ReadabilityOptions = Pick<ClassroomHeaderProps, 'mascot' | 'timer'> & { mode: PlayMode; colors: string[]; shapes: ShapeId[]; theme: DisplayTheme }
 export type ReadabilityResult = { width: number; height: number; questionId: string } & Readability
 const nextTask = () => new Promise<void>((resolve) => { const channel = new MessageChannel(); channel.port1.onmessage = () => { channel.port1.close(); channel.port2.close(); resolve() }; channel.port2.postMessage(null) })
 function cancelled(signal: AbortSignal) { if (signal.aborted) throw new DOMException('Annulé', 'AbortError') }

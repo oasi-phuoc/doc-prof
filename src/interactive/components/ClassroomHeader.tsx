@@ -7,6 +7,7 @@ import type { PlayMode } from '../domain/types'
 import { validSeconds, validFeedbackSeconds, type TimerSettings } from '../domain/settings'
 import type { ToolbarGuard } from '../domain/teacher'
 import { HomeHeader } from './HomeHeader'
+import { DisplayThemeButtons } from '../display-theme'
 
 export type ClassroomHeaderProps = {
   compact?: boolean
@@ -15,8 +16,6 @@ export type ClassroomHeaderProps = {
   onMascot: (mascot: MascotKind) => void
   mode: PlayMode
   onMode: (mode: PlayMode) => void
-  contrast: boolean
-  onContrast: () => void
   fullscreen: boolean
   playing: boolean
   onFullscreen: () => void
@@ -24,10 +23,11 @@ export type ClassroomHeaderProps = {
   timer: TimerSettings
   onTimer: (settings: TimerSettings) => void
   toolbarGuard?: ToolbarGuard
+  teacherBadges?: boolean
   onCompetition?: () => void
 }
-export function ClassroomHeader({ homeHref='/generateur', compact = false, mascot, onMascot, mode, onMode, contrast, onContrast, fullscreen, playing, onFullscreen, onFiches, timer, onTimer, onCompetition, session }: ClassroomHeaderProps & {
-  session?: { progress: string; paused: boolean; canSkip: boolean; onSkip: () => void; onPause: () => void; onExit: () => void; audio?: ReactNode; teacherLocked?: boolean; onNavigate?: () => void; onConsole?: () => void }
+export function ClassroomHeader({ homeHref='/generateur', compact = false, mascot, onMascot, mode, onMode, fullscreen, playing, onFullscreen, onFiches, timer, onTimer, onCompetition, session }: ClassroomHeaderProps & {
+  session?: { progress: string; paused: boolean; canSkip: boolean; onSkip: () => void; onPause: () => void; onExit: () => void; audio?: ReactNode; teacherLocked?: boolean; onNavigate?: () => void; onConsole?: () => void; onMask?: () => void }
 }) {
   const locked = !!session?.teacherLocked
   const [panel, setPanel] = useState<'mascot' | 'timer' | null>(null)
@@ -63,7 +63,8 @@ export function ClassroomHeader({ homeHref='/generateur', compact = false, masco
         {session?.onNavigate&&<button className="ci-question-navigation ci-icon-button" type="button" aria-label={`Choisir une question · ${session.progress}`} disabled={locked||session.paused} onClick={()=>{setOptionsOpen(false);session.onNavigate?.()}}><Icon name="folder"/></button>}
         {session&&<IconButton icon="skip" label="Passer" disabled={locked||!session.canSkip||session.paused} onClick={()=>{setOptionsOpen(false);session.onSkip()}}/>}
         {session&&(mode==='class'||session.paused)&&<IconButton icon={session.paused?'play':'pause'} label={session.paused?'Reprendre':'Pause'} disabled={locked} onClick={()=>{setOptionsOpen(false);session.onPause()}}/>}
-        <IconButton icon="contrast" label="Contraste" disabled={locked} aria-pressed={contrast} onClick={onContrast} />
+        {session?.onMask && <IconButton icon="screen-off" label="Masquer l’écran" aria-haspopup="dialog" disabled={locked} onClick={session.onMask} />}
+        <DisplayThemeButtons disabled={locked} />
         <IconButton icon={mode === 'class' ? 'users' : 'user'} label="Mode de jeu" disabled={locked} aria-description={`Mode actuel : ${mode === 'class' ? 'Classe' : 'Solo'}`} aria-pressed={mode === 'solo'} onClick={() => { setPanel(null); onMode(mode === 'class' ? 'solo' : 'class') }} />
         {!playing && onCompetition && <IconButton icon="trophy" label="Compétition" onClick={onCompetition} />}
         <div className="ci-header-option">

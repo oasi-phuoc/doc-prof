@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useState } from 'react'
 import { readClassroomPreferences, type ClassroomPreferences } from './preferences'
 import { loadLegacyPreferences } from './legacy-preferences'
+import { DisplayThemeProvider } from './display-theme'
 import './interactive.css'
 import './projection.css'
 import './teacher-controls.css'
@@ -28,10 +29,14 @@ function InteractiveRoutes() {
     )
     return () => { active = false }
   }, [])
+  if (!loaded) return <LoadingScreen title="Préparation du jeu" description="Votre séance arrive…" />
   const path = window.location.pathname.replace(/\/+$/, '')
+  return <DisplayThemeProvider preferences={loaded.preferences}><InteractiveRoute path={path} loaded={loaded} /></DisplayThemeProvider>
+}
+
+function InteractiveRoute({ path, loaded }: { path: string; loaded: { preferences: ClassroomPreferences; warning: string } }) {
   if (/^\/interactif\/rejoindre(?:\/\d{6})?$/.test(path)) return <Suspense fallback={<LoadingScreen title="Ouverture de la compétition" />}><CompetitionPage /></Suspense>
   if (/^\/interactif\/salle\/\d{6}$/.test(path)) return <Suspense fallback={<LoadingScreen title="Ouverture de la salle" />}><CompetitionPage host /></Suspense>
-  if (!loaded) return <LoadingScreen title="Préparation du jeu" description="Votre séance arrive…" />
   if (window.location.pathname.replace(/\/+$/, '') === '/interactif/cartes') return <Suspense fallback={<LoadingScreen title="Préparation des cartes" />}><CardsPage initial={loaded.preferences} initialWarning={loaded.warning} /></Suspense>
   if (window.location.pathname.replace(/\/+$/, '') === '/interactif/diagnostic') return <Suspense fallback={<LoadingScreen title="Ouverture du diagnostic" />}><DiagnosticPage colors={loaded.preferences.colors} shapes={loaded.preferences.shapes} /></Suspense>
   if(path==='/interactif'&&!new URLSearchParams(window.location.search).has('pool')&&!new URLSearchParams(window.location.search).has('d')&&!window.history.state?.[INTERACTIVE_DRAFT_KEY])return <Suspense fallback={<LoadingScreen title="Choix des exercices" />}><PoolPage initialPreferences={loaded.preferences} initialWarning={loaded.warning}/></Suspense>
