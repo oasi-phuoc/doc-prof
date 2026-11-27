@@ -2,7 +2,7 @@
 
 **Mis à jour le 27 novembre 2026**
 
-Référence de réalisation dans le [cahier des charges v2.12](cahier-des-charges.md). Révision Doc-Prof de départ `0a23f9287`. Révision EPCAS `ac2ceeae3ba7944fb4d24a7de103d41d3da98e1f`.
+Référence de réalisation dans le [cahier des charges v2.13](cahier-des-charges.md). Révision Doc-Prof de départ `0a23f9287`. Révision EPCAS `ac2ceeae3ba7944fb4d24a7de103d41d3da98e1f`.
 
 ## Décisions du responsable
 
@@ -10,6 +10,9 @@ Référence de réalisation dans le [cahier des charges v2.12](cahier-des-charge
 - Partir du parcours standard après retrait de l’ancien écran Logistique.
 - Relire et activer directement les contenus exploitables. Conserver le détail des corrections pour les révisions ultérieures.
 - Placer Objectifs et aperçu avant Théorie, retirer les mentions de source de la fiche d’aperçu, traiter visuels et mise en page dans le même lot et enchaîner les questions sans saut automatique prématuré.
+
+- Proposer Complet et Résumé à la place des colonnes pour la théorie. Reformuler les notions pour les 15–21 ans en conservant les termes techniques, les unités et les consignes.
+- Reprendre tous les modules avec des photos, des schémas et des mises en scène en couleur. Placer chaque visuel auprès du passage traité et relire la mise en page des deux versions.
 
 ## Avancement par lot
 
@@ -104,9 +107,18 @@ Référence de réalisation dans le [cahier des charges v2.12](cahier-des-charge
 | L4 — Module 809 | Révision `809-v001` active en CFC et AFP | 2 schémas, 12 termes, 6/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 809](preparation/809-v001.json). |
 | L4 — Module 901 | Révision `901-v001` active en CFC | 2 schémas, 12 termes, 7 calculs, 6 vérifications et 4 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 901](preparation/901-v001.json). |
 
+## Reprise des théories illustrées
+
+| Modules | État | Détail |
+|---|---|---|
+| 101, 306, 407 et 409 | Complet et Résumé actifs en CFC et AFP | Le 101 met en regard les deux chaînes d’activités avec des scènes en couleur. Le 306 compare les palettes EUR et CHEP, les autres formats et leurs circuits de retour. Les 407 et 409 montrent les organes et usages des engins. [101](preparation/101-v002.json), [306](preparation/306-v002.json), [407](preparation/407-v002.json), [409](preparation/409-v002.json). |
+| 76 autres modules | Reprise des visuels et résumés à poursuivre | Les cours complets publiés restent disponibles. Le résumé devient sélectionnable à mesure que la version relue est publiée. |
+
+Révision `logistique-theories-101-306-407-409-v002`. Les 17 insertions WebP en couleur et les textes associés ont été vérifiés dans les deux versions et les deux diplômes, soit 16 parcours A4. Les recettes antérieures conservent leur contenu. Reprendre ensuite les autres modules Fondations, puis les thèmes suivants.
+
 ## Reprise opérationnelle
 
-La publication des modules est terminée pour les deux diplômes. La génération utilise la révision `logistique-901-v001` et conserve les révisions enregistrées dans les anciennes recettes.
+La publication des modules est terminée pour les deux diplômes. La publication `logistique-901-v001` a clôturé le premier passage sur le catalogue. Les révisions suivantes enrichissent les théories et conservent les révisions enregistrées dans les anciennes recettes.
 
 | Diplôme | Modules | Types actifs | Problèmes de calcul | Questions de vérification | Situations |
 |---|---:|---:|---:|---:|---:|

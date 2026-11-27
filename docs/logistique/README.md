@@ -1,6 +1,6 @@
 # Logistique AFP et CFC
 
-Le [cahier des charges consolidé](cahier-des-charges.md) reprend la v2.10 fournie et les décisions de reprise jusqu’à la v2.12 au §0. Le gabarit de fiche, le générateur et les actions communes servent de référence de recette.
+Le [cahier des charges consolidé](cahier-des-charges.md) reprend la v2.10 fournie et les décisions de reprise jusqu’à la v2.13 au §0. Le gabarit de fiche, le générateur et les actions communes servent de référence de recette.
 
 ## Références
 
@@ -13,6 +13,8 @@ Le [cahier des charges consolidé](cahier-des-charges.md) reprend la v2.10 fourn
 Le générateur commun propose les neuf thèmes et 80 modules du CFC, ainsi que les sept thèmes et 63 modules de l’AFP. Chaque module présente six types. Objectifs et aperçu précède Théorie dans le sélecteur standard. La génération, les titres, le corrigé, la grille de calcul et les sauts manuels passent par les feuilles standard. Les recettes enregistrent la révision de la banque et contrôlent le diplôme à la lecture. L’en-tête de la fiche utilise le visuel EPCA déjà fourni et le libellé du diplôme.
 
 La [banque active](../../src/logistique/approved-banks.ts) permet de générer les six types des 80 modules CFC et des 63 modules AFP, soit 858 combinaisons diplôme, module et type. Le [suivi d’avancement](avancement-cahier-des-charges-20261126.md) détaille les révisions, les contrôles A4 et les effectifs de la banque. Les volumes nominaux et les fonctions avancées d’évaluation et d’édition restent à compléter.
+
+Le type Théorie propose Complet et Résumé dans le générateur pour les modules dont la réécriture est publiée. Les versions illustrées, les ancrages des images, leurs légendes et les résumés figurent dans les dossiers de préparation.
 
 ## Sources et pilote
 

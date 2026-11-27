@@ -116,6 +116,33 @@ try {
     assert.deepEqual(warehouse.pages.flatMap((sheet) => sheet.numbers), [...numbers, ...numbers])
     assert(warehouse.pages.every((sheet) => sheet.count >= 2))
     console.log(`Modules 105 et 110 ${diploma} : questions groupées dans la fiche élève et le corrigé.`)
+
+    for (const [code, caption, photos] of [
+      ['101', 'Chasser, transformer, consommer', 3],
+      ['306', '6.5 Reconnaître une palette CHEP', 4],
+      ['407', '7.1 Déplacer les marchandises sur un site', 3],
+      ['409', '9.2 Reconnaître les engins au sol', 7],
+    ]) {
+      const { title, theme } = curriculum.modules.find(({ code: module }) => code === module)
+      await select('Thème', theme + ' — ' + curriculum.themes.find(({ code }) => code === theme).title)
+      await select('Sous-thème', code + ' — ' + title)
+      await select('Type d’exercice', 'Théorie')
+      assert.equal(await page.getByRole('group', { name: 'Nombre de colonnes', exact: true }).count(), 0)
+      const complete = await inspectPrint(`${code} ${diploma} complet`)
+      assert.equal(await page.locator('.print-only-sheets img[src$="-photo-v002.webp"]').count(), photos)
+      await page.getByRole('button', { name: 'Résumé', exact: true }).click()
+      const summary = await inspectPrint(`${code} ${diploma} résumé`)
+      assert(summary.printText.includes(caption))
+      assert.notEqual(summary.printText, complete.printText)
+      assert.equal(await page.locator('.print-only-sheets img[src$="-photo-v002.webp"]').count(), photos)
+      assert(summary.pages.length <= complete.pages.length)
+      const pdf = await page.pdf({ preferCSSPageSize: true })
+      assert.equal(pdf.subarray(0, 4).toString(), '%PDF')
+      await page.getByRole('button', { name: 'Complet', exact: true }).click()
+      const restored = await inspectPrint(`${code} ${diploma} complet restauré`)
+      assert.equal(restored.printText, complete.printText)
+    }
+    console.log(`Logistique ${diploma} : photos intégrées au cours et au résumé des modules 101, 306, 407 et 409.`)
   }
   assert.deepEqual(errors, [])
 } finally {

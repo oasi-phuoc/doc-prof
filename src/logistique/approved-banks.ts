@@ -79,13 +79,18 @@ import { module809 } from './banks/module-809-v001.generated.ts'
 import { module901 } from './banks/module-901-v001.generated.ts'
 import { module902 } from './banks/module-902-v001.generated.ts'
 import { illustratedReferences } from './banks/references-v002.generated.ts'
+import { module101 as theory101 } from './banks/module-101-v002.generated.ts'
+import { module306 as theory306 } from './banks/module-306-v002.generated.ts'
+import { module407 as theory407 } from './banks/module-407-v002.generated.ts'
+import { module409 as theory409 } from './banks/module-409-v002.generated.ts'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
 
 type ReferenceBlock = Exclude<GrammarTheoryBlock, { kind: 'page' }>
 
 type UnitContent =
-  | { kind: 'objectifs-apercu' | 'theorie' | 'glossaire'; blocks: ReferenceBlock[] }
+  | { kind: 'objectifs-apercu' | 'glossaire'; blocks: ReferenceBlock[] }
+  | { kind: 'theorie'; blocks: ReferenceBlock[]; summaryBlocks?: ReferenceBlock[] }
   | { kind: 'maths'; prompt: string; calculation: string; answer: string }
   | { kind: 'verification'; prompt: string; answer: string; options?: readonly string[] }
   | { kind: 'situation'; prompt: string; answer: string }
@@ -181,6 +186,13 @@ const publication_806_807_808_809_v001: LogistiquePublication = {
 }
 
 /** Ajouter une publication après validation. Garder les versions utilisées par les recettes. */
+const publication_901_v001: LogistiquePublication = {
+  revision: 'logistique-901-v001',
+  units: [...publication_806_807_808_809_v001.units, ...module901],
+}
+const photoTheories = [...theory101, ...theory306, ...theory407, ...theory409]
+const photoTheoryIds = new Set<string>(photoTheories.map(({ id }) => id))
+
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
@@ -232,9 +244,10 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   publication_701_702_703_704_705_v001,
   publication_801_802_803_804_v001,
   publication_806_807_808_809_v001,
+  publication_901_v001,
   {
-    revision: 'logistique-901-v001',
-    units: [...publication_806_807_808_809_v001.units, ...module901],
+    revision: 'logistique-theories-101-306-407-409-v002',
+    units: [...publication_901_v001.units.filter(({ id }) => !photoTheoryIds.has(id)), ...photoTheories],
   },
 ]
 

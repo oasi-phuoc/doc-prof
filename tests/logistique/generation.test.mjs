@@ -6,7 +6,7 @@ const require = createRequire(import.meta.url)
 const fixture = require('./fixture.json')
 const { load, root } = require('../../scripts/gattegno-loader.cjs')
 const catalog = load(root + '/src/logistique/catalog.ts')
-const { generateLogistique, logistiqueDocumentTitle } = load(root + '/src/logistique/generate.ts')
+const { generateLogistique, logistiqueDocumentTitle, logistiqueHasSummary } = load(root + '/src/logistique/generate.ts')
 const { freezeLogistiquePages, validLogistiquePages } = load(root + '/src/logistique/recipe.ts')
 const { currentLogistiquePublication } = load(root + '/src/logistique/approved-banks.ts')
 const { splitLogistiquePages } = load(root + '/src/logistique/pagination.ts')
@@ -64,6 +64,29 @@ test('les 858 types des modules CFC et AFP disposent de contenu à générer', (
     const page = config(type.diploma, type.module, type.kind)
     assert(generateLogistique(page, 20261127).items.length > 0, type.id)
   }
+})
+
+test('les résumés illustrés sont distincts du cours et figés dans la recette', () => {
+  for (const diploma of ['CFC', 'AFP']) {
+    for (const code of ['101', '306', '407', '409']) {
+      const full = config(diploma, code, 'theorie')
+      const [summary] = freezeLogistiquePages([{ ...full, logistiqueTheoryView: 'resume' }])
+      assert(logistiqueHasSummary(full.exerciseType))
+      assert(validLogistiquePages([summary]))
+      assert.equal(summary.logistiqueTheoryView, 'resume')
+      const blocks = generateLogistique(summary, 7).items.map((item) => item.theoryBlock)
+      const fullBlocks = generateLogistique(full, 7).items.map((item) => item.theoryBlock)
+      assert(blocks.length < fullBlocks.length)
+      const photos = blocks.filter((block) => block.kind === 'image')
+      assert(photos.length >= 3)
+      assert(photos.every((photo) => photo.src.endsWith('.webp') && photo.alt && photo.caption))
+      const historical = { ...full, logistiqueBankRevision: 'logistique-901-v001' }
+      assert(!logistiqueHasSummary(full.exerciseType, historical.logistiqueBankRevision))
+      assert(generateLogistique(historical, 7).items.some((item) => item.theoryBlock?.src?.endsWith('.svg')))
+      assert(!validLogistiquePages([{ ...historical, logistiqueTheoryView: 'resume' }]))
+    }
+  }
+  assert(!validLogistiquePages([{ ...config('AFP', '101', 'maths'), logistiqueTheoryView: 'resume' }]))
 })
 
 test('les nouvelles publications conservent le tirage des recettes du thème 600', () => {

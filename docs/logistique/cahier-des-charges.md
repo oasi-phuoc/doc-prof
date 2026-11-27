@@ -1,6 +1,6 @@
 # Cahier des charges — Logistique CFC et Logistique AFP dans Doc-Prof
 
-**Version 2.12 — 26 novembre 2026**
+**Version 2.13 — 27 novembre 2026**
 **Produit cible :** [Doc-Prof / ClairFLE](https://github.com/oasi-phuoc/doc-prof)
 **Source pédagogique :** [EPCAS Logistique](https://github.com/oasi-phuoc/epcas) — contenus pédagogiques originaux de l’auteur du projet ; EnterSite est une entreprise fictive créée pour enseigner la logistique, parcours CFC et AFP.
 **Statut :** spécification de réalisation ; les contenus exploitables sont activés après relecture de réalisation selon le §0. Ce document ne constitue ni une migration déjà exécutée, ni une validation des banques, ni une modification des dépôts.
@@ -20,6 +20,10 @@ Les décisions de reprise du 26 novembre 2026 priment sur les exemples et propos
 | Évaluation et Libre | Les modes, gestes et réglages déjà disponibles sont la référence de la première livraison. Les demandes V2.9 de sélection multiple, de sélection en banque, de scénario adaptatif et de nouveaux outils d’édition restent des besoins à tracer. Leur réalisation est conditionnée à leur compatibilité avec les contrôles existants ou à une décision explicite sur l’extension de l’interface. |
 | Pagination et sauvegarde | Conserver le format physique et les chemins communs de sauvegarde et d’impression. Tester les cas limites avec contenus longs, corrigés et sauts existants. La réserve de 25 px du §8.5 est un critère de réception pour la logistique. Les changements nécessaires au moteur de pagination doivent être mesurés et soumis à un contrôle A4 des domaines existants. |
 | Élargissement | Mettre en service les unités exploitables au fil des lots. Commencer par 105 dans les deux diplômes. Les cibles de banque sont calculées sur les unités distinctes éligibles, après déduplication et relecture. Le [suivi d’avancement](avancement-cahier-des-charges-20261126.md) indique à chaque lot la couverture, la révision, les preuves et le travail restant. |
+
+La v2.13 précise la présentation de la théorie. Dans ce type, le réglage des colonnes cède la place au choix **Complet** ou **Résumé**. Le résumé suit les notions et les termes techniques du cours complet. Il reformule pour les 15–21 ans, explique les gestes par des exemples concrets et conserve les conditions d’application, les dimensions et les consignes de sécurité.
+
+Reprendre chacun des 80 modules avec des images en couleur, des schémas utiles et des mises en scène adaptées. Insérer les visuels au passage concerné, avec des légendes qui expliquent ce qu’il faut observer. Pour les objets de la même famille, adopter un angle et une lumière comparables. Comparer notamment les formats EUR et CHEP et les engins de manutention. Dans le 101, mettre en regard la chasse, la transformation et la consommation avec l’approvisionnement, la production et la distribution. Vérifier l’aperçu et le PDF de chaque version publiée.
 
 Le texte source reste archivé au commit EPCAS fixé. Les corrections linguistiques, les corrections métier identifiées et les exclusions d’items sont consignées avec le contenu d’origine. Les générateurs de révisions maintiennent la séparation AFP/CFC. Cette décision remplace les clauses antérieures d’attente d’accord pédagogique externe et autorise la résolution documentée des anomalies de fond constatées pendant la relecture.
 

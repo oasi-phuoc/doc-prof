@@ -855,6 +855,7 @@ export type CompositeScene = {
 export type ExerciseBlock = {
   /** Publication logistique figée lors de l’enregistrement de la fiche. */
   logistiqueBankRevision?: string
+  logistiqueTheoryView?: 'complet' | 'resume'
   topic: string
   exerciseType: string
   difficulty: Difficulty

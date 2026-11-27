@@ -4,12 +4,12 @@ import type { MathItem, PageConfig } from '@/math/types'
 import { currentLogistiquePublication, logistiquePublication, type LogistiqueUnit } from './approved-banks'
 import { isLogistiqueReferenceType, logistiqueType, type LogistiqueType } from './catalog'
 
-function unitItems(unit: LogistiqueUnit): MathItem[] {
+function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView']): MathItem[] {
   switch (unit.kind) {
     case 'objectifs-apercu':
     case 'theorie':
     case 'glossaire':
-      return unit.blocks.map((block, index) => ({
+      return (unit.kind === 'theorie' && view === 'resume' ? unit.summaryBlocks ?? [] : unit.blocks).map((block, index) => ({
         layout: 'theory',
         prompt: `${unit.id}:${index}`,
         answer: '',
@@ -47,6 +47,13 @@ export function logistiqueEligibleCount(typeId: string): number {
   return type ? eligibleUnits(type, currentLogistiquePublication.units).length : 0
 }
 
+export function logistiqueHasSummary(typeId: string, revision?: string): boolean {
+  const type = logistiqueType(typeId)
+  const publication = logistiquePublication(revision)
+  return type?.kind === 'theorie' && Boolean(publication && eligibleUnits(type, publication.units)
+    .some((unit) => unit.kind === 'theorie' && unit.summaryBlocks?.length))
+}
+
 export function logistiqueDocumentTitle(pages: readonly PageConfig[], evalMode = false): string {
   const types = pages.flatMap((page) => pageBlocks(page).flatMap((block) => {
     const type = logistiqueType(block.exerciseType)
@@ -81,7 +88,7 @@ export function generateLogistique(
     instruction: eligible.length
       ? reference ? type.description : type.instruction
       : 'Contenu à compléter pour ce module.',
-    items: selected.flatMap(unitItems),
+    items: selected.flatMap((unit) => unitItems(unit, config.logistiqueTheoryView)),
     bankQuestionCap: reference && eligible.length ? undefined : eligible.length,
   }
 }

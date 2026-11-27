@@ -16,7 +16,7 @@ export function insertLogistiqueFigures(blocks, figures, publicDirectory, direct
   const inserted = [...blocks]
   for (const { anchor, file, sha256, alt, caption } of figures) {
     const indices = inserted.flatMap((block, index) => block.kind === 'heading' && block.text === anchor ? [index] : [])
-    if (indices.length !== 1 || !/^[a-z0-9-]+\.svg$/.test(file) || !alt?.trim() || !caption?.trim()) {
+    if (indices.length !== 1 || !/^[a-z0-9-]+\.(?:svg|webp|jpe?g|png)$/.test(file) || !alt?.trim() || !caption?.trim()) {
       throw new Error('Figure sans ancrage unique, alternative ou légende : ' + file)
     }
     const path = directory + '/' + file

@@ -107,7 +107,9 @@ export function validLogistiqueCataloguePages(pages: readonly CataloguePage[]): 
   const validBlock = (block: unknown) => {
     if (!block || typeof block !== 'object' || !('exerciseType' in block) || !('topic' in block)) return false
     const type = typeof block.exerciseType === 'string' ? logistiqueType(block.exerciseType) : undefined
-    return type?.domain === domain && type.topic === block.topic
+    const view = 'logistiqueTheoryView' in block ? block.logistiqueTheoryView : undefined
+    return type?.domain === domain && type.topic === block.topic &&
+      (view === undefined || (type.kind === 'theorie' && (view === 'complet' || view === 'resume')))
   }
   return pages.every((page) => page.domain === domain && validBlock(page) &&
     (page.extraBlocks === undefined || (Array.isArray(page.extraBlocks) && page.extraBlocks.every(validBlock))))

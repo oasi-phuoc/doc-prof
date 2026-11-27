@@ -3,6 +3,7 @@ import type { ExerciseBlock, PageConfig } from './types'
 export function blockFromPage(page: PageConfig): ExerciseBlock {
   return {
     logistiqueBankRevision: page.logistiqueBankRevision,
+    logistiqueTheoryView: page.logistiqueTheoryView,
     topic: page.topic,
     exerciseType: page.exerciseType,
     difficulty: page.difficulty,
@@ -107,7 +108,7 @@ export function pageBlocks(page: PageConfig): ExerciseBlock[] {
 }
 
 export function pageAsConfig(page: PageConfig, block: ExerciseBlock): PageConfig {
-  return { ...page, ...block, logistiqueBankRevision: block.logistiqueBankRevision, phraseCategories: block.phraseCategories, phraseImageLabels:block.phraseImageLabels, phraseImageShownCategories:block.phraseImageShownCategories, phraseSentenceType:block.phraseSentenceType, phraseVoice:block.phraseVoice, grammarCoLevel: block.grammarCoLevel, grammarCoAudioId: block.grammarCoAudioId,
+  return { ...page, ...block, logistiqueBankRevision: block.logistiqueBankRevision, logistiqueTheoryView: block.logistiqueTheoryView, phraseCategories: block.phraseCategories, phraseImageLabels:block.phraseImageLabels, phraseImageShownCategories:block.phraseImageShownCategories, phraseSentenceType:block.phraseSentenceType, phraseVoice:block.phraseVoice, grammarCoLevel: block.grammarCoLevel, grammarCoAudioId: block.grammarCoAudioId,
     grammarLevel:block.grammarLevel,grammarActivityId:block.grammarActivityId,grammarPresentation:block.grammarPresentation,
     grammarBankRevision:block.grammarBankRevision,grammarSnapshot:block.grammarSnapshot,grammarPreview:block.grammarPreview,
     grammarDocumentCount:block.grammarDocumentCount,grammarPageBreakAfterQuestionIds:block.grammarPageBreakAfterQuestionIds,extraBlocks:undefined }

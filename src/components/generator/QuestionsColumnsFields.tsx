@@ -1,4 +1,5 @@
-import { isLogistiqueReferenceType } from '@/logistique/catalog'
+import { isLogistiqueReferenceType, logistiqueType } from '@/logistique/catalog'
+import { logistiqueHasSummary } from '@/logistique/generate'
 import {
   blockPointsTotal,
   formatPointsLabel,
@@ -214,6 +215,9 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
       !isGramTheory &&
       (sheetItems == null || sheetItems.length === 0 || Boolean(sheetHasInlineBlank))) ||
     (isTcf && peMotsClesSlot)
+  const isLogistiqueTheory = logistiqueType(activeBlock.exerciseType)?.kind === 'theorie'
+  const theoryView = activeBlock.logistiqueTheoryView ?? 'complet'
+  const hasSummary = isLogistiqueTheory && logistiqueHasSummary(activeBlock.exerciseType, activeBlock.logistiqueBankRevision)
   return (
     <>
               {activeBlock.grammarPresentation==='document-set' || grammarAudioOnly || isPhraseChart ||
@@ -963,7 +967,28 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                   </small>
                 </label>
               ) : null}
-              {isPhraseChart ||
+              {isLogistiqueTheory && (
+                <div className="mode-toggle-block">
+                  <b>Version de la théorie</b>
+                  <div className="mode-toggle is-2" role="group" aria-label="Version de la théorie">
+                    {(['complet', 'resume'] as const).map((view) => (
+                      <button
+                        key={view}
+                        type="button"
+                        className={theoryView === view ? 'active' : ''}
+                        aria-pressed={theoryView === view}
+                        disabled={view === 'resume' && !hasSummary}
+                        onClick={() => updatePage({ logistiqueTheoryView: view, columns: 1, libreItems: undefined, libreInstruction: undefined, tcfPageBreakAfter: undefined })}
+                      >
+                        {view === 'complet' ? 'Complet' : 'Résumé'}
+                      </button>
+                    ))}
+                  </div>
+                  {!hasSummary && <small className="muted">Résumé en préparation.</small>}
+                </div>
+              )}
+              {isLogistiqueReferenceType(activeBlock.exerciseType) ||
+              isPhraseChart ||
               isVocabLearn ||
               isVocabPool ||
               isGramTheory ||

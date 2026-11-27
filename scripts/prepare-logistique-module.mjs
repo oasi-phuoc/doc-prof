@@ -37,15 +37,24 @@ const reference = legacyCombinedReference ? Object.values(pages).filter(Boolean)
 const figures = editorial.visuals ?? (editorial.visual ? [editorial.visual] : [])
 if (!legacyCombinedReference && figures.length === 0) throw new Error('Illustrations de la théorie absentes : ' + code)
 const scope = editorial.diplomas.length === 1 ? editorial.diplomas[0].toLowerCase() : 'commun'
-const course = insertLogistiqueFigures(reference, figures, new URL('public/', root), `assets/logistique/${catalogEntry.theme}/${code}/${scope}`)
+const publicDirectory = new URL('public/', root)
+const figureDirectory = `assets/logistique/${catalogEntry.theme}/${code}/${scope}`
+const course = insertLogistiqueFigures(reference, figures, publicDirectory, figureDirectory)
+const summary = editorial.summaryTheory
+  ? insertLogistiqueFigures(theoryBlocks(editorial.summaryTheory),
+    figures.map(({ summaryAnchor, ...figure }) => ({ ...figure, anchor: summaryAnchor ?? figure.anchor })),
+    publicDirectory, figureDirectory)
+  : undefined
+const theory = { id: 'theorie-source', kind: 'theorie', blocks: course, ...(summary ? { summaryBlocks: summary } : {}) }
 const kinds = ['maths', 'verification', 'situation']
-const units = [
+const draftUnits = editorial.theoryOnly ? [theory] : [
   ...introduction,
-  { id: 'theorie-source', kind: 'theorie', blocks: course },
+  theory,
   { id: 'glossaire-reconstitue', kind: 'glossaire', blocks: editorial.glossary.map(([term, definition]) =>
     ({ kind: 'paragraph', text: `{g}${term}{/g} — ${definition}` })) },
   ...editorial.exercises,
-].map(({ id, approvedFor = editorial.diplomas, ...data }) => ({
+]
+const units = draftUnits.map(({ id, approvedFor = editorial.diplomas, ...data }) => ({
   id: `log-${code}-${id}`, ...data, module: code, revision, approvedFor,
 }))
 if (new Set(units.map(({ id }) => id)).size !== units.length ||
@@ -53,8 +62,8 @@ if (new Set(units.map(({ id }) => id)).size !== units.length ||
     units.some((unit) => unit.blocks ? !unit.blocks.length :
       !kinds.includes(unit.kind) || !unit.prompt?.trim() || !unit.answer?.trim() ||
       (unit.kind === 'maths' && !unit.calculation?.trim())) ||
-    editorial.diplomas.some((diploma) => kinds.some((kind) =>
-      !units.some((unit) => unit.kind === kind && unit.approvedFor.includes(diploma))))) {
+    (!editorial.theoryOnly && editorial.diplomas.some((diploma) => kinds.some((kind) =>
+      !units.some((unit) => unit.kind === kind && unit.approvedFor.includes(diploma)))))) {
   throw new Error(`Contenus incomplets ou diplôme incompatible : ${code}`)
 }
 
@@ -69,4 +78,4 @@ if (existsSync(destination) && readFileSync(destination, 'utf8') !== output) {
 mkdirSync(new URL('.', destination), { recursive: true })
 writeFileSync(destination, output)
 const counts = editorial.diplomas.map((diploma) => `${diploma} ${units.filter((unit) => unit.approvedFor.includes(diploma)).length}`)
-console.log(`${revision} · ${course.length} blocs de théorie · ${editorial.glossary.length} termes · ${counts.join(', ')} unités`)
+console.log(`${revision} · ${course.length} blocs de théorie${summary ? ' · ' + summary.length + ' blocs de résumé' : ''} · ${counts.join(', ')} unités`)
