@@ -61,6 +61,16 @@ async function documentPilot(page) {
   await openFiche(page, recipe('tcf-ce-ex-4', 'tcf-ce', shared))
   const panel = page.locator('#activity-editor .tcf-editor')
   assert.equal(await page.locator('#activity-editor .tcf-question-editor').count(), 2)
+  const settings = page.locator('#activity-editor .worksheet-settings')
+  await settings.getByText('Présentation des questions', { exact: true }).click()
+  const secondQuestion = settings.getByRole('group', { name: 'Question 2', exact: true })
+  const pageBreak = button(secondQuestion, 'Passer cette question et les suivantes sur une nouvelle page')
+  await pageBreak.waitFor()
+  assert.equal(await page.locator('.a4-frame .tcf-page-chip').count(), 0)
+  await pageBreak.click()
+  await page.locator('.a4-frame').nth(1).waitFor()
+  await button(page, 'Annuler').click()
+  assert.equal(await page.locator('.a4-frame').count(), 1)
   await panel.getByRole('textbox', { name: 'Texte', exact: true }).fill('Le rendez-vous est à neuf heures.')
   assert.match(await worksheet(page).innerText(), /neuf heures/)
   const rows = page.locator('#activity-editor .tcf-question-editor')
@@ -207,6 +217,44 @@ async function pictureRecognition(page) {
   assert.equal(await review.count(), 0)
 }
 
+async function worksheetImage(page) {
+  let saved
+  await page.route('**/lib/images/vocabulaire/**', (route) => route.fulfill({
+    contentType: 'image/png', body: Buffer.from(png, 'base64'),
+  }))
+  await page.route('**/fiches/fixture', async (route) => {
+    const { name, recipe } = route.request().postDataJSON()
+    saved = recipe
+    await route.fulfill({ json: { fiche: { id: 'fixture', name, domains: ['alphabetisation'],
+      createdAt: '2026-11-27T00:00:00Z', updatedAt: '2026-11-27T00:00:00Z', recipe } } })
+  })
+  const config = recipe('alpha-a-mots', 'alpha-voyelles')
+  config.pages[0] = { ...config.pages[0], domain: 'alphabetisation', count: 3, columns: 3 }
+  await openFiche(page, config, false)
+  const firstImage = worksheet(page).locator('.vocab-card-image img[role=button]').first()
+  const original = await firstImage.getAttribute('src')
+  const settings = page.locator('#activity-editor .worksheet-settings')
+  await settings.getByText('Présentation des questions', { exact: true }).click()
+  await button(settings, 'Remplacer l’image').first().click()
+  const picker = page.getByRole('dialog', { name: 'Choisir une image vocabulaire', exact: true })
+  await picker.getByLabel('Importer une image', { exact: true }).setInputFiles({
+    name: 'temoin.png', mimeType: 'image/png', buffer: Buffer.from(png, 'base64'),
+  })
+  await picker.waitFor({ state: 'detached' })
+  const image = worksheet(page).locator('.vocab-card-image img[src^="data:image/webp"]')
+  await image.waitFor()
+  assert.equal(await image.count(), 1)
+  await button(page, 'Enregistrer').click()
+  const save = page.getByRole('dialog', { name: 'Enregistrer la fiche' })
+  await save.getByRole('textbox', { name: 'Enregistré par', exact: true }).fill('Enseignant Témoin')
+  await button(save, 'Mettre à jour').click()
+  await save.waitFor({ state: 'detached' })
+  assert.match(saved.imageOverrides[original], /^data:image\/webp/)
+  await page.reload()
+  await image.waitFor()
+  assert.equal(await image.count(), 1)
+}
+
 async function formAndOral(context) {
   const form = await context.newPage()
   await openFiche(form, recipe('tcf-pe-ex-1', 'tcf-pe', {
@@ -252,6 +300,7 @@ try {
   await writing(await context.newPage())
   await pictureRecognition(await context.newPage())
   await formAndOral(context)
+  await worksheetImage(await context.newPage())
   await context.close()
   console.log('Document partagé, QCM illustré, liaison audio, reconnaissance d’images, formulaire et oral vérifiés.')
 } finally {

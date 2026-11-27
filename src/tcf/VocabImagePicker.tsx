@@ -33,6 +33,8 @@ export function VocabImagePicker({
   onUpload,
   onReset,
   uploadError,
+  uploadAccept = 'image/jpeg,image/png,image/webp,image/svg+xml',
+  uploadLabel = 'Importer une image temporaire',
   choices=ALL_WORDS,
 }: {
   open: boolean
@@ -42,6 +44,8 @@ export function VocabImagePicker({
   onUpload?: (file: File) => void | Promise<void>
   onReset?: () => void
   uploadError?: string
+  uploadAccept?: string
+  uploadLabel?: string
   choices?: readonly VocabHit[]
 }) {
   const [query, setQuery] = useState('')
@@ -106,8 +110,8 @@ export function VocabImagePicker({
         </header>
         {onUpload ? (
           <div className="worksheet-image-upload">
-            <label>Importer une image temporaire
-              <input type="file" accept="image/jpeg,image/png,image/webp,image/svg+xml" onChange={(event) => {
+            <label>{uploadLabel}
+              <input type="file" accept={uploadAccept} onChange={(event) => {
                 const file = event.target.files?.[0]
                 if (file) void onUpload(file)
                 event.target.value = ''

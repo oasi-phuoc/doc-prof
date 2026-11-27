@@ -71,7 +71,9 @@ export function rerollFlatActivity(
   const old = buildPage(pageAsConfig(page, { ...block, libreItems: currentItems, libreInstruction: instruction }), pageSeed + localSeed, 1, seed)
   const items = identifyItems(currentItems ?? old.items, activityId)
   const targeted = typeof target === 'string' ? new Set([target]) : target ? new Set(target) : null
-  const eligible = (item: MathItem) => !item.libreLocked && (!targeted || Boolean(item.libreId && targeted.has(item.libreId)))
+  const eligible = (item: MathItem) => !item.libreLocked && (targeted
+    ? Boolean(item.libreId && targeted.has(item.libreId))
+    : !item.logistiqueRetained)
   if (!items.some(eligible)) return page
 
   const template = pageAsConfig(page, {

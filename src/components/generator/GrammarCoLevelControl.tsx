@@ -6,19 +6,17 @@ export function GrammarCoLevelControl({ value, a1Available = true, a2Available, 
   a2Available: boolean
   onChange: (level: GrammarCoLevel) => void
 }) {
+  if (!a1Available || !a2Available) return null
   return (
     <div className="mode-toggle-block">
       <b>Niveau</b>
       <div className="mode-toggle" role="group" aria-label="Niveau de compréhension orale">
         {(['A1','A2'] as const).map(level=>(
           <button key={level} type="button" className={value===level?'active':''}
-            aria-pressed={value===level} disabled={level==='A1'?!a1Available:!a2Available}
-            title={(level==='A1'?!a1Available:!a2Available)?`Aucun audio ${level} pour ce thème`:undefined}
+            aria-pressed={value===level}
             onClick={()=>{if(level!==value)onChange(level)}}>{level}</button>
         ))}
       </div>
-      {!a2Available?<small>Les audios A2 seront ajoutés plus tard.</small>:null}
-      {!a1Available?<small>Ce thème contient actuellement uniquement des audios A2.</small>:null}
     </div>
   )
 }

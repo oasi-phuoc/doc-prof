@@ -14,15 +14,12 @@ import { grammarCoThemeForType } from '@/grammaire/exercises/co-themes'
 import { defaultGrammarCoLevel, grammarCoEntries, hasGrammarCoTheme } from '@/grammaire/exercises/co-bank'
 import { isNegativePhraseTheme, isPhraseThemeId } from '@/francais/phrase-themes'
 import { phraseSelection } from '@/francais/phrase-options'
-import {newPictureSentence} from '@/francais/phrase-images'
-import {blockItemsForConfig} from './sheet-items'
 import {
   ACCESS_DOMAIN_OPTIONS,
 } from '@/access'
 import { SelectBox } from '@/components/generator/SelectBox'
 import { applyType, clearLibreContentFreeze } from '@/components/generator/page-helpers'
 import { DIFFICULTY_OPTIONS } from '@/math/difficulty'
-import { FreeNumberControls } from './FreeNumberControls'
 import { isLogistiqueDomain, isLogistiqueReferenceType, logistiqueSubthemes, logistiqueType, logistiqueTypeForSubtheme } from '@/logistique/catalog'
 import { logistiqueEligibleCount } from '@/logistique/generate'
 import { LogistiqueEvaluationFields } from './LogistiqueEvaluationFields'
@@ -36,10 +33,6 @@ import {
   resolveAxesGrid,
 } from '@/math/coord-reperage'
 import { QUAD_SHAPE_LABELS } from '@/math/mesures'
-import { isPhraseLibreEditable, PhraseLibreEditor } from '@/francais/PhraseLibreEditor'
-import { GameContentPanel } from '@/jeux/GameContentPanel'
-import { DEFAULT_GAME_FONT_SIZE } from '@/jeux/font-size'
-import type { GameTemplate } from '@/jeux/templates'
 import { TcfCoAudioSlotsPicker, tcfCoAudioSlotCount } from '@/tcf/co-audio-slots'
 import { TcfBankPicker } from '@/tcf/TcfExerciseEditor'
 import { tcfMenuLabel, tcfSlotShownInMenu } from '@/tcf/catalog'
@@ -58,6 +51,9 @@ import type {
 import { resolveAlphaSelection } from '@/alphabetisation/themes'
 import { resolveSoutienSelection } from '@/francais/soutien/themes'
 import type { InstitutionalHeader } from '@/components/math/PrintDocumentChrome'
+import { supportsActivityDifficulty } from './activity-settings'
+import { ceArtFor } from '@/tcf/ce-art'
+import { blockItemsForConfig } from './sheet-items'
 
 export type DomainThemeTypeFieldsProps = {
   isJeuxDomain: boolean
@@ -69,9 +65,8 @@ export type DomainThemeTypeFieldsProps = {
   pointsPerQuestion: number
   setPointsPerQuestion: Dispatch<SetStateAction<number>>
   sheetTotalPoints: number
-  pages: PageConfig[]
   worksheets: WorksheetPage[]
-  safeSheetIndex: number
+  pageIndex: number
   isTpmLike: boolean
   activePage: PageConfig
   changeDomain: (next: Domain) => void
@@ -103,8 +98,6 @@ export type DomainThemeTypeFieldsProps = {
   updatePage: (patch: Partial<ExerciseBlock>) => void
   typeChoices: Array<{ id: string; label: string }>
   activeAsPage: PageConfig
-  jeuxTemplate: GameTemplate | null | undefined
-  jeuxText: string
   isReperage: boolean
   isVocabLearn: boolean
   isGramTheory: boolean
@@ -124,9 +117,8 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
     pointsPerQuestion,
     setPointsPerQuestion,
     sheetTotalPoints,
-    pages,
     worksheets,
-    safeSheetIndex,
+    pageIndex,
     isTpmLike,
     activePage,
     changeDomain,
@@ -155,8 +147,6 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
     updatePage,
     typeChoices,
     activeAsPage,
-    jeuxTemplate,
-    jeuxText,
     isReperage,
     isVocabLearn,
     isGramTheory,
@@ -164,8 +154,6 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
     isQuadType,
     quadPool,
   } = p
-  const showNumberRange = !libreMode && isNumberLibreDomain &&
-    exerciseTypeById[activeBlock.exerciseType]?.supportsNumberRange !== false
   const logisticsDomain = isLogistiqueDomain(activePage.domain)
   const logisticsSubthemes = logisticsDomain ? logistiqueSubthemes(activeBlock.topic) : []
   const logisticsType = logistiqueType(activeBlock.exerciseType)
@@ -192,6 +180,14 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
   const showGrammarCoLevel = grammarCoTheme && (activeBlock.exerciseType.endsWith('-co-theme') || hasGrammarCoTheme(grammarCoTheme.id))
   const grammarCoLevel = activeBlock.grammarCoLevel ?? (grammarCoTheme ? defaultGrammarCoLevel(grammarCoTheme.id) : 'A1')
   const grammarCoAudios = grammarCoTheme ? grammarCoEntries(grammarCoTheme.id,grammarCoLevel) : []
+  const ceSupport = isTcf && activeBlock.exerciseType.startsWith('tcf-ce')
+    ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex)?.items.find((item) => item.tcf?.kind === 'support')?.tcf
+    : undefined
+  const ceCanUseImage = ceSupport?.kind === 'support' && ceSupport.exercise.competence === 'CE' && Boolean(ceArtFor(ceSupport.exercise))
+  const ceShowsImage = activePage.domain === 'tcf-csc' && ceCanUseImage && activeBlock.tcfCeFormat === 'image'
+  const showDocumentPoints = evalMode && !isTpmLike && !isTcf && worksheets.some(({ blocks }) =>
+    blocks.some(({ items, pointsPerQuestion }) => pointsPerQuestion == null && items.some((item) =>
+      item.layout !== 'theory' && !item.noPoints && item.points == null)))
   return (
     <>
               {isJeuxDomain || isCalliDomain ? null : (
@@ -218,7 +214,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                     Évaluation
                   </button>
                 </div>
-                {evalMode && !isTpmLike && !isTcf && (
+                {showDocumentPoints && (
                   <label>
                     Points par question
                     <input
@@ -231,18 +227,13 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                         setPointsPerQuestion(Math.max(1, Math.min(20, Number(event.target.value) || 1)))
                       }
                     />
-                    <small className="muted">
-                      Total document : {sheetTotalPoints} pts
-                      {pages.length > 1
-                        ? ` (${pages.length} pages × points par question)`
-                        : ` (${worksheets[safeSheetIndex]?.items.length ?? 0} × ${pointsPerQuestion})`}
-                    </small>
+                    <small className="muted">Total document {sheetTotalPoints} pts</small>
                   </label>
                 )}
               </div>
               )}
 
-              <SelectBox label="Domaine" value={activePage.domain} onChange={(value) => changeDomain(value as Domain)}>
+              {allowedDomains.length > 1 && <SelectBox label="Domaine" value={activePage.domain} onChange={(value) => changeDomain(value as Domain)}>
                 {ACCESS_DOMAIN_OPTIONS.filter((domain) => allowedDomains.includes(domain.id)).map(
                   (domain) => (
                     <option value={domain.id} key={domain.id}>
@@ -250,11 +241,11 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                     </option>
                   ),
                 )}
-              </SelectBox>
+              </SelectBox>}
               {mixedActivity ? (
                 <LogistiqueEvaluationFields key={logisticsType.id} type={logisticsType}
                   themes={available} activeBlock={activeBlock} updatePage={updatePage} />
-              ) : isTpmLike ? null : (
+              ) : isTpmLike || available.length < 2 ? null : (
                 <SelectBox
                   label={isTcf ? 'Compétence' : 'Thème'}
                   value={soutienSelection?.theme.id ?? activeBlock.topic}
@@ -267,7 +258,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   ))}
                 </SelectBox>
               )}
-              {(isSoutienFr || isAlphabetisation) && soutienSelection ? (
+              {(isSoutienFr || isAlphabetisation) && soutienSelection && soutienSelection.theme.letters.length > 1 ? (
                 <SelectBox
                   label={
                     isAlphabetisation && activePage.topic === 'alpha-phrases'
@@ -286,7 +277,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   ))}
                 </SelectBox>
               ) : null}
-              {!mixedActivity && (isGrammaireDomain || logisticsDomain) && subthemes.length > 0 ? (
+              {!mixedActivity && (isGrammaireDomain || logisticsDomain) && subthemes.length > 1 ? (
                 <SelectBox
                   label="Sous-thème"
                   value={subthemeId ?? subthemes[0]!.id}
@@ -397,24 +388,6 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                 />
               ) : null}
               {isPhraseDomain&&activeBlock.exerciseType.endsWith('-images')&&<PhraseImageLabelControls labels={activeBlock.phraseImageLabels} shown={activeBlock.phraseImageShownCategories} onLabels={phraseImageLabels=>updatePage({phraseImageLabels})} onShown={phraseImageShownCategories=>updatePage({phraseImageShownCategories})}/>}
-              {isPhraseDomain&&activeBlock.exerciseType.endsWith('-images')&&!libreMode&&activeBlock.verbGroup!=='libre'&&<button type="button" onClick={()=>{const block=blockItemsForConfig(worksheets,activeSheet?.configIndex??safeSheetIndex,safeBlockIndex);updatePage({verbGroup:'libre',phraseItems:block?.items.length?block.items:[newPictureSentence()],phraseInstruction:block?.items.length?block.instruction:'Écrivez une phrase à partir des images. Ajoutez les mots nécessaires.'})}}>Personnaliser les images</button>}
-              {!libreMode &&
-              isPhraseDomain &&
-              !isPhraseChart &&
-              activeBlock.verbGroup === 'libre' &&
-              isPhraseLibreEditable(activeBlock.exerciseType) ? (
-                <PhraseLibreEditor
-                  exerciseType={activeBlock.exerciseType}
-                  items={activeBlock.phraseItems ?? activeSheet?.blocks[safeBlockIndex]?.items ?? []}
-                  instruction={
-                    activeBlock.phraseInstruction ??
-                    activeSheet?.blocks[safeBlockIndex]?.instruction ??
-                    ''
-                  }
-                  onChangeItems={(phraseItems) => updatePage({ phraseItems,...(activeBlock.exerciseType.endsWith('-images')?{count:phraseItems.length}:{}) })}
-                  onChangeInstruction={(phraseInstruction) => updatePage({ phraseInstruction })}
-                />
-              ) : null}
               {isTpmLike || typeChoices.length <= 1 ? null : (
               <SelectBox
                 label={isTcf ? 'Exercice' : 'Type d’exercice'}
@@ -481,33 +454,6 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   })}
               </SelectBox>
               )}
-              {!libreMode && isJeuxDomain && jeuxTemplate ? (
-                <GameContentPanel
-                  typeId={activeBlock.exerciseType}
-                  template={jeuxTemplate}
-                  entries={activeBlock.gameEntries}
-                  text={jeuxText}
-                  gameSource={activeBlock.gameSource}
-                  gameTopic={activeBlock.gameTopic}
-                  gameSelectedIds={activeBlock.gameSelectedIds}
-                  gameBackColor={activeBlock.gameBackColor}
-                  gameSeriesName={activeBlock.gameSeriesName}
-                  gameBorderId={activeBlock.gameBorderId}
-                  gameBorderRectoId={
-                    activeBlock.gameBorderRectoId !== undefined
-                      ? activeBlock.gameBorderRectoId
-                      : activeBlock.gameBorderId
-                  }
-                  gameBorderVersoId={
-                    activeBlock.gameBorderVersoId !== undefined
-                      ? activeBlock.gameBorderVersoId
-                      : activeBlock.gameBorderId
-                  }
-                  gameFontSize={activeBlock.gameFontSize ?? DEFAULT_GAME_FONT_SIZE}
-                  gameAlpha={activeBlock.gameAlpha}
-                  onChange={(next) => updatePage(next)}
-                />
-              ) : null}
               {isGrammaireDomain && showGrammarCoLevel ? (
                 <GrammarCoLevelControl
                   value={grammarCoLevel}
@@ -520,7 +466,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                 />
               ) : null}
               {isGrammaireDomain ? <GrammarLevelControl block={activeBlock} onChange={updatePage}/> : null}
-              {isGrammaireDomain && showGrammarCoLevel && grammarCoAudios.length>0 ? (
+              {isGrammaireDomain && showGrammarCoLevel && grammarCoAudios.length > 1 ? (
                 <SelectBox label="Audio" value={activeBlock.grammarCoAudioId??grammarCoAudios[0]!.exercise.id}
                   onChange={grammarCoAudioId=>updatePage({
                     ...clearLibreContentFreeze(),grammarCoAudioId,tcfExercise:undefined,
@@ -531,8 +477,8 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   ))}
                 </SelectBox>
               ) : null}
-              {isTcf && activeBlock.exerciseType.startsWith('tcf-ce') ? <TcfCeTextFontControl value={activeBlock.tcfCeTextFont ?? 'arial'} onChange={tcfCeTextFont => updatePage({ tcfCeTextFont })} /> : null}
-              {activePage.domain === 'tcf-csc' && activeBlock.exerciseType.startsWith('tcf-ce') ? (
+              {libreMode && ceSupport && !ceShowsImage ? <TcfCeTextFontControl value={activeBlock.tcfCeTextFont ?? 'arial'} onChange={tcfCeTextFont => updatePage({ tcfCeTextFont })} /> : null}
+              {activePage.domain === 'tcf-csc' && ceCanUseImage ? (
                 <TcfCeFormatControl value={activeBlock.tcfCeFormat ?? 'texte'}
                   onChange={(tcfCeFormat) => updatePage({ tcfCeFormat, libreItems: undefined })} />
               ) : null}
@@ -581,43 +527,13 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
               isSoutienFr ||
               isAlphabetisation ||
               isTcf ||
-              isTpmLike ? null : (
-              <>
-              <div className={`niveau-row${showNumberRange && activeBlock.numberLibre ? ' is-libre' : ''}`}>
-                <SelectBox
-                  label="Niveau"
-                  value={activeBlock.difficulty ?? 'moyen'}
-                  onChange={(value) => updatePage({ difficulty: value as Difficulty })}
-                >
-                  {DIFFICULTY_OPTIONS.map((opt) => (
-                    <option value={opt.value} key={opt.value}>
-                      {opt.label}
-                    </option>
-                  ))}
+              isTpmLike ||
+              (!libreMode && (activeBlock.libreItems?.length || activeBlock.numberLibre)) ||
+              !supportsActivityDifficulty(activeBlock.exerciseType, activeBlock.count) ? null : (
+                <SelectBox label={activeBlock.libreItems?.length ? 'Niveau du prochain tirage' : 'Niveau'} value={activeBlock.difficulty ?? 'moyen'}
+                  onChange={(value) => updatePage({ difficulty: value as Difficulty })}>
+                  {DIFFICULTY_OPTIONS.map(({ value, label }) => <option key={value} value={value}>{label}</option>)}
                 </SelectBox>
-                {showNumberRange ? (
-                  <button
-                    type="button"
-                    className={`niveau-libre-btn${activeBlock.numberLibre ? ' active' : ''}`}
-                    aria-pressed={!!activeBlock.numberLibre}
-                    aria-label="Saisir les valeurs"
-                    title="Saisir les valeurs à la place du niveau"
-                    onClick={() =>
-                      updatePage({
-                        numberLibre: !activeBlock.numberLibre,
-                        numberMin: activeBlock.numberMin ?? 1,
-                        numberMax: activeBlock.numberMax ?? 100,
-                      })
-                    }
-                  >
-                    Valeurs
-                  </button>
-                ) : null}
-              </div>
-              {showNumberRange && activeBlock.numberLibre ? (
-                <FreeNumberControls activeBlock={activeBlock} updatePage={updatePage} />
-              ) : null}
-              </>
               )}
               {isNumberLibreDomain && isMathProblemHelpType(activeBlock.exerciseType) && (
                 <button

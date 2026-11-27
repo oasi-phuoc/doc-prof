@@ -2,6 +2,7 @@ import { mathTheoryTopic } from '@/math/theory-lessons'
 import { isLogistiqueReferenceType, logistiqueType } from '@/logistique/catalog'
 import { logistiqueHasSummary, logistiqueModuleCapacities } from '@/logistique/generate'
 import { SelectBox } from './SelectBox'
+import { supportsActivityQuestionCount } from './activity-settings'
 import { isSocieteType } from '@/societe/types'
 import {
   blockPointsTotal,
@@ -103,6 +104,7 @@ function parsePointsInput(raw: string): number | undefined {
 }
 
 export type QuestionsColumnsFieldsProps = {
+  libreMode: boolean
   activeBlock: ExerciseBlock
   updatePage: (patch: Partial<ExerciseBlock>) => void
   isTransform: boolean
@@ -148,6 +150,7 @@ export type QuestionsColumnsFieldsProps = {
 
 export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
   const {
+    libreMode,
     activeBlock,
     updatePage,
     isTransform,
@@ -201,11 +204,15 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
     : null
   const hideTcmCscColumns = activeBlock.exerciseType.startsWith('tcm-csc-') && !['tcm-csc-ex07', 'tcm-csc-ex10', 'tcm-csc-ex11'].includes(activeBlock.exerciseType)
   const grammarSituations=activeBlock.grammarPresentation==='scenario-set'
-  const sheetItems = activeSheet?.blocks?.[safeBlockIndex]?.items
+  const sheetBlock = activeSheet?.blocks.find((block, index) => (block.sourceBlockIndex ?? index) === safeBlockIndex)
+  const sheetItems = sheetBlock?.items ?? []
+  const hasOuterColumns = sheetItems.length > 1 &&
+    (!sheetItems.some(({ layout }) => layout === 'coord') || activeBlock.exerciseType === 'transformations-tracer-axes')
+  const hasTcfQuestionColumns = sheetItems.some(({ tcf }) => tcf?.kind === 'qcm' || tcf?.kind === 'lignes')
   const sheetHasInlineBlank = sheetItems?.some((item) => {
     if (!item.tcf) return false
     if (item.tcf.kind === 'texte_images') return hasInlineBlank(item.tcf.texte)
-    if (item.tcf.kind === 'qcm' || item.tcf.kind === 'lignes') {
+    if (item.tcf.kind === 'lignes') {
       return hasInlineBlank(item.tcf.enonce)
     }
     return false
@@ -213,11 +220,8 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
   const peMotsClesSlot = tcfPeTagsForSlot(tcfSlotByTypeId[activeBlock.exerciseType]?.numero).includes(
     TCF_PE_TAG_MOTS_CLES,
   )
-  const showInlineBlankWidth =
-    (isGrammaireExercise &&
-      !isGramTheory &&
-      (sheetItems == null || sheetItems.length === 0 || Boolean(sheetHasInlineBlank))) ||
-    (isTcf && peMotsClesSlot)
+  const showInlineBlankWidth = libreMode && sheetHasInlineBlank &&
+    ((isGrammaireExercise && !isGramTheory) || (isTcf && peMotsClesSlot))
   const logistics = logistiqueType(activeBlock.exerciseType)
   const isLogistiqueTheory = logistics?.kind === 'theorie'
   const theoryView = activeBlock.logistiqueTheoryView ?? 'complet'
@@ -249,7 +253,8 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                   <option value="avec-liste" disabled={!gapCapacity}>Texte à trous avec liste</option>
                 </SelectBox>
               ) : null}
-              {activeBlock.grammarPresentation==='document-set' || grammarAudioOnly || isPhraseChart ||
+              {!supportsActivityQuestionCount(activeBlock.exerciseType, questionMin, maxQuestions) ||
+              activeBlock.grammarPresentation==='document-set' || grammarAudioOnly || isPhraseChart ||
               isVocabLearn ||
               isGramTheory ||
               mathTheoryTopic(activeBlock.exerciseType) ||
@@ -392,7 +397,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                 ) : null}
               </label>
               )}
-              {isTpmLike &&
+              {isTpmLike && evalMode && blockPointsTotal(sheetItems, 1) > 0 &&
               !(
                 isTpmConsignesType(activeBlock.exerciseType) ||
                 isTcmCfrConsignesType(activeBlock.exerciseType) ||
@@ -948,7 +953,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                   </div>
                 </div>
               ) : null}
-              {isGrammaireExercise && !isGramTheory ? (
+              {isGrammaireExercise && !isGramTheory && !hideColumnsOption && hasOuterColumns && hasTcfQuestionColumns ? (
                 <div className="mode-toggle-block">
                   <b>Colonnes</b>
                   <div className="mode-toggle is-2" role="group" aria-label="Nombre de colonnes">
@@ -1000,7 +1005,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                   </small>
                 </label>
               ) : null}
-              {isLogistiqueTheory && (
+              {isLogistiqueTheory && (hasSummary || libreMode && theoryView === 'resume') && (
                 <div className="mode-toggle-block">
                   <b>Version de la théorie</b>
                   <div className="mode-toggle is-2" role="group" aria-label="Version de la théorie">
@@ -1031,7 +1036,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                   {!hasSummary && <small className="muted">Résumé indisponible dans cette révision.</small>}
                 </div>
               )}
-              {isLogistiqueTheory ||
+              {!hasOuterColumns || isLogistiqueTheory ||
               isPhraseChart ||
               isVocabLearn ||
               isVocabPool ||

@@ -166,23 +166,19 @@ try {
   assert.equal(await editor.getByRole('button', { name: 'Ajouter un lot', exact: true }).isDisabled(), true)
   const alternativeCorrection = '180 kg + 28 kg = 208 kg'
   await editor.getByLabel('Calcul du corrigé').last().fill(alternativeCorrection)
-  await page.getByRole('button', { name: 'Valider les changements', exact: true }).click()
   await sheet.getByText(/^La palette pèse 28 kg/).waitFor()
   await editor.getByRole('button', { name: 'Régénérer les questions tirées', exact: true }).click()
   assert.equal(await editor.getByLabel('Calcul du corrigé').last().inputValue(), alternativeCorrection)
-  await page.getByRole('button', { name: 'Valider les changements', exact: true }).click()
   const firstQuestionEditor = editor.locator('.generic-libre-editor .libre-item-card').first()
   await firstQuestionEditor.getByText('Image de la question', { exact: true }).click()
   await select('Photo de la bibliothèque', 'Carton réceptionné')
   await firstQuestionEditor.getByLabel('Légende', { exact: true }).fill('Exemple de carton à contrôler')
   await select('Taille de l’image', 'Grande')
-  await page.getByRole('button', { name: 'Valider les changements', exact: true }).click()
   const firstFigure = sheet.locator('.logistique-illustrated-prompt.is-droite .logistique-question-image')
   await firstFigure.waitFor()
   assert.equal(await firstFigure.count(), 1)
   assert.equal(await firstFigure.evaluate((figure) => getComputedStyle(figure).cssFloat), 'right')
   await select('Visibilité de l’image', 'Corrigé seulement')
-  await page.getByRole('button', { name: 'Valider les changements', exact: true }).click()
   assert.equal(await sheet.locator('.logistique-question-image').count(), 0)
   const saveLibre = page.waitForResponse((response) =>
     new URL(response.url()).pathname === '/__logistique_test/fiches' && response.request().method() === 'POST',
@@ -191,10 +187,10 @@ try {
   await dialog.getByRole('button', { name: 'Enregistrer une nouvelle fiche', exact: true }).click()
   await saveLibre
   await dialog.waitFor({ state: 'hidden' })
-  const manual = saved.recipe.libreSnapshot[0].libreItems.find((item) => item.logistiqueRetained)
+  const manual = saved.recipe.pages[0].libreItems.find((item) => item.logistiqueRetained)
   assert.equal(manual.logistiqueSource.id, 'fixture-308-maths')
   assert.equal(manual.calcAnswer, alternativeCorrection)
-  const firstItem = saved.recipe.libreSnapshot[0].libreItems[0]
+  const firstItem = saved.recipe.pages[0].libreItems[0]
   assert.equal(firstItem.logistiqueImage.visibility, 'answers')
   assert.equal(firstItem.logistiqueImage.width, 180)
   assert.equal(manual.logistiqueImage, undefined)
@@ -213,11 +209,13 @@ try {
   assert((await page.pdf()).subarray(0, 4).equals(Buffer.from('%PDF')))
 
   await page.emulateMedia({ media: 'screen' })
-  await page.getByRole('button', { name: 'Paramètres', exact: true }).click()
-  await page.getByRole('radio', { name: /Paysage — double A5/ }).click()
-  await page.keyboard.press('Escape')
+  const layout = editor.getByText('Mise en page de la fiche', { exact: true })
+  await layout.click()
+  await editor.getByRole('radio', { name: /Paysage — double A5/ }).click()
+  await layout.click()
   await page.emulateMedia({ media: 'print' })
-  assert.equal(await printablePhoto.count(), 2)
+  assert.equal(await printablePhoto.count(), 1)
+  assert.equal(await page.locator('.print-only-sheets .a5-half.is-left .logistique-question-image').count(), 1)
   const a5Reserves = await printablePhoto.evaluateAll((figures) => figures.map((figure) => {
     const item = figure.closest('.exercise-item')
     const footer = figure.closest('.a5-half').querySelector('.doc-footer')

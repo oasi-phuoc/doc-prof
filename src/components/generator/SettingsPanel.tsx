@@ -14,7 +14,6 @@ import type { InstitutionalHeader } from '@/components/math/PrintDocumentChrome'
 import type { CoordTool } from '@/components/generator/useCoordEditing'
 import type { VocabWordEntry } from '@/francais/vocab-learn'
 import type { SoutienComplete } from '@/francais/soutien/banks'
-import type { GameTemplate } from '@/jeux/templates'
 import type { TcfNiveau } from '@/tcf/types'
 import type { resolveAxesGrid } from '@/math/coord-reperage'
 import type {
@@ -85,8 +84,6 @@ export type SettingsPanelProps = {
   updatePage: (patch: Partial<ExerciseBlock>) => void
   typeChoices: Array<{ id: string; label: string }>
   activeAsPage: PageConfig
-  jeuxTemplate: GameTemplate | null | undefined
-  jeuxText: string
   isReperage: boolean
   isVocabLearn: boolean
   isGramTheory: boolean
@@ -100,9 +97,6 @@ export type SettingsPanelProps = {
   vocabDifficultyOptions: Array<{ value: Difficulty; label: string }>
   vocabSubgroups: Array<{ id: string; label: string }>
   activeVocabSubgroup: string | undefined
-  setCalliFieldAt: (index: number, value: string) => void
-  removeCalliField: (index: number) => void
-  addCalliExtraWord: (entry: VocabWordEntry) => void
 
   isSoutienMots: boolean
   isSoutienCompleter: boolean
@@ -155,15 +149,33 @@ export type SettingsPanelProps = {
   setAllDraftGrids: (value: boolean) => void
 }
 
-export function SettingsPanel(props: SettingsPanelProps) {
+export function SettingsPanel({ settings, header, presentation, children }: {
+  settings: SettingsPanelProps
+  header?: ReactNode
+  presentation?: ReactNode
+  children?: ReactNode
+}) {
+  const libre = settings.libreMode
   return (
-    <aside className="settings-panel activity-settings no-print">
-      <ActivitySettings {...props} />
+    <aside
+      className={libre ? 'side-tool-panel is-libre no-print' : 'settings-panel no-print'}
+      id={libre ? 'activity-editor' : 'activity-settings'}
+      aria-label={libre ? 'Mode libre' : 'Paramètres de l’activité'}
+      tabIndex={libre ? -1 : undefined}
+    >
+      {header}
+      <div className={libre ? 'side-tool-panel-body' : undefined}>
+        <div className="activity-settings">
+          <ActivitySettings {...settings} />
+        </div>
+        {presentation}
+        {children}
+      </div>
     </aside>
   )
 }
 
-export function ActivitySettings(p: SettingsPanelProps) {
+function ActivitySettings(p: SettingsPanelProps) {
   const rendered = p.activeSheet?.blocks.find((block, index) => (block.sourceBlockIndex ?? index) === p.safeBlockIndex)
   const itemCount = rendered?.items.length ?? 0
   const columns = rendered?.columns ?? 1
@@ -199,9 +211,8 @@ export function ActivitySettings(p: SettingsPanelProps) {
           pointsPerQuestion={p.pointsPerQuestion}
           setPointsPerQuestion={p.setPointsPerQuestion}
           sheetTotalPoints={p.sheetTotalPoints}
-          pages={p.pages}
           worksheets={p.worksheets}
-          safeSheetIndex={p.safeSheetIndex}
+          pageIndex={p.pageIndex}
           isTpmLike={p.isTpmLike}
           activePage={p.activePage}
           changeDomain={p.changeDomain}
@@ -231,8 +242,6 @@ export function ActivitySettings(p: SettingsPanelProps) {
           updatePage={p.updatePage}
           typeChoices={p.typeChoices}
           activeAsPage={p.activeAsPage}
-          jeuxTemplate={p.jeuxTemplate}
-          jeuxText={p.jeuxText}
           isReperage={p.isReperage}
           isVocabLearn={p.isVocabLearn}
           isGramTheory={p.isGramTheory}
@@ -251,9 +260,6 @@ export function ActivitySettings(p: SettingsPanelProps) {
           vocabDifficultyOptions={p.vocabDifficultyOptions}
           vocabSubgroups={p.vocabSubgroups}
           activeVocabSubgroup={p.activeVocabSubgroup}
-          setCalliFieldAt={p.setCalliFieldAt}
-          removeCalliField={p.removeCalliField}
-          addCalliExtraWord={p.addCalliExtraWord}
         />
         <SoutienVocabFields
           isVocabPool={p.isVocabPool}
@@ -268,6 +274,7 @@ export function ActivitySettings(p: SettingsPanelProps) {
           vocabCustomWords={p.vocabCustomWords}
         />
         <QuestionsColumnsFields
+          libreMode={p.libreMode}
           activeBlock={p.activeBlock}
           updatePage={p.updatePage}
           isTransform={p.isTransform}
@@ -353,7 +360,6 @@ export function ActivitySettings(p: SettingsPanelProps) {
         <DraftGridControls
           isTpmLike={p.isTpmLike}
           pages={p.pages}
-          pageExerciseBlocks={p.pageExerciseBlocks}
           activeBlock={p.activeBlock}
           setAllTpmDraftGrids={p.setAllTpmDraftGrids}
           setAllDraftGrids={p.setAllDraftGrids}

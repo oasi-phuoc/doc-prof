@@ -8,7 +8,6 @@ import type { ExerciseBlock, PageConfig } from '@/math/types'
 export type DraftGridControlsProps = {
   isTpmLike: boolean
   pages: PageConfig[]
-  pageExerciseBlocks: ExerciseBlock[]
   activeBlock: ExerciseBlock
   setAllTpmDraftGrids: (value: boolean) => void
   setAllDraftGrids: (value: boolean) => void
@@ -17,7 +16,6 @@ export type DraftGridControlsProps = {
 export function DraftGridControls({
   isTpmLike,
   pages,
-  pageExerciseBlocks,
   activeBlock,
   setAllTpmDraftGrids,
   setAllDraftGrids,
@@ -66,7 +64,7 @@ export function DraftGridControls({
                   </div>
                   <small className="muted">Toutes les grilles de toutes les pages.</small>
                 </div>
-              ) : pageExerciseBlocks.some((b) => isProblemExercise(b.exerciseType)) ? (
+              ) : isProblemExercise(activeBlock.exerciseType) ? (
                 <div className="mode-toggle draft-grid-page-toggle" role="group" aria-label="Grille de brouillon">
                   {(() => {
                     const grids = resizeDraftGrids(activeBlock.problemDraftGrids, activeBlock.count)

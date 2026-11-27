@@ -6,6 +6,7 @@ import './worksheet-typography.css'
 import { ExerciseFrame } from '@/components/math/ExerciseFrame'
 import { renderSheetCopy } from '@/components/sheet-copy'
 import { ItemView, tokenizeAlgebra } from '@/components/ItemView'
+import { WorksheetSettings, WorksheetSettingsScope } from './WorksheetSettings'
 import {
   ALPHA_SOUTIEN_REFERENCE,
   DocumentFooter,
@@ -169,8 +170,10 @@ export type WorksheetSheetProps = {
   onSelectTcfForm?: (index: number, form: TcfTypeReponse, blockIndex?: number) => void
   /** Qui suis-je Infos/Verbe : bascule QCM ↔ texte pour tout l’exercice. */
   onSelectTcfFormForExercise?: (form: TcfTypeReponse, blockIndex?: number) => void
-  onToggleTcfPageBreak?: (index: number, blockIndex?: number, questionModeIndex?: number) => void
+  onToggleTcfPageBreak?: (index: number, blockIndex: number, questionModeIndex: number | undefined, page: WorksheetPage) => void
   onToggleFormulaireLetterGrid?: (blockIndex: number) => void
+  settingsTarget?: HTMLElement | null
+  settingsBlockIndex?: number
   /** Bouton refresh : régénère uniquement cet exercice (et éventuellement une moitié A5). */
   onRegenerateBlock?: (blockIndex: number, half?: 'left' | 'right') => void
   /** Afficher le refresh à côté du titre (désactivé en mode libre). */
@@ -213,6 +216,8 @@ export function WorksheetSheet({
   onSelectTcfFormForExercise,
   onToggleTcfPageBreak,
   onToggleFormulaireLetterGrid,
+  settingsTarget,
+  settingsBlockIndex,
   onRegenerateBlock,
   showExerciseRefresh = true,
   forceHeader = false,
@@ -285,6 +290,8 @@ export function WorksheetSheet({
       <SheetBody>
         {(page.blocks.length > 0 ? page.blocks : fallbackBlocks(page)).map((block, renderedBlockIndex) => {
           const blockIndex = block.sourceBlockIndex ?? renderedBlockIndex
+          const activitySettingsTarget = settingsTarget === undefined ? undefined
+            : blockIndex === settingsBlockIndex ? settingsTarget : null
           const algebraItems = block.items.filter((item) => item.layout === 'algebra')
           const maxTokens =
             algebraItems.length > 0
@@ -343,10 +350,10 @@ export function WorksheetSheet({
                 ? clampInlineBlankPx(peBlank)
                 : undefined
           return (
+            <WorksheetSettingsScope target={activitySettingsTarget} key={`${block.exerciseType}-${block.exerciseIndex}`}>
             <section
               className="exercise-block"
               data-exercise-type={block.exerciseType}
-              key={`${block.exerciseType}-${block.exerciseIndex}`}
               style={
                 blankPx != null
                   ? ({ '--tcf-blank-inline-px': `${blankPx}px` } as CSSProperties)
@@ -394,6 +401,7 @@ export function WorksheetSheet({
                         <RefreshIcon />
                       </button>
                     ) : null}
+                    <WorksheetSettings label="Toute l’activité">
                     {dualForm &&
                     dualFormSelect &&
                     dualActive &&
@@ -426,6 +434,7 @@ export function WorksheetSheet({
                         Grille
                       </button>
                     ) : null}
+                    </WorksheetSettings>
                     {evalMode && blockPts > 0 ? (
                       <span className="instruction-points">/ {pointsBadge}</span>
                     ) : null}
@@ -573,6 +582,9 @@ export function WorksheetSheet({
                     <ItemView
                       key={`${block.exerciseType}-${block.exerciseIndex}-${index}-${item.answer}-${tcfFormMode ?? ''}`}
                       item={theorySlice?.theoryBlock ? { ...item, theoryBlock: theorySlice.theoryBlock } : item}
+                      settingsLabel={item.layout === 'theory' ? `Section ${sourceIndex + 1}`
+                        : item.tcf?.kind === 'qcm' || item.tcf?.kind === 'lignes' ? `Question ${item.tcf.numeroLabel ?? item.tcf.numero}`
+                        : item.tcf?.kind === 'audio_cadre' ? item.tcf.audioLabel : `Question ${sourceIndex + 1}`}
                       mode={mode}
                       itemLabel={/^tcm-(?:csc|cfr)-ex0[12]$/.test(block.exerciseType)?String.fromCharCode(65+index+itemOffset):undefined}
                       seriesNumber={/^tcm-csc-ex16$/.test(block.exerciseType)||/^tcm-cfr-ex16$/.test(block.exerciseType)?index+itemOffset+1:undefined}
@@ -615,14 +627,14 @@ export function WorksheetSheet({
                       }
                       tcfQuestionPageBreakBefore={block.tcfQuestionPageBreakBefore}
                       onToggleTcfQuestionPageBreak={interactiveTcfPageBreaks && isTcfAudioCadre && onToggleTcfPageBreak
-                        ? question => onToggleTcfPageBreak(index, blockIndex, question) : undefined}
+                        ? question => onToggleTcfPageBreak(index, blockIndex, question, page) : undefined}
                       tcfPageBreakBefore={isTcfPageBreakable ? tcfPageBreakBefore : undefined}
                       onToggleTcfPageBreak={
                         interactiveTcfPageBreaks &&
                         isTcfPageBreakable && (!isTcfAudioCadre || tcfPageBreakBefore) &&
                         sourceIndex > 0 &&
                         onToggleTcfPageBreak
-                          ? () => onToggleTcfPageBreak(index, blockIndex)
+                          ? () => onToggleTcfPageBreak(index, blockIndex, undefined, page)
                           : undefined
                       }
                       pageBreakAfterKind={isQuestionPageBreakable ? 'question' :
@@ -630,12 +642,13 @@ export function WorksheetSheet({
                       theoryPageBreakAfter={canBreakAfter ? theoryPageBreakAfter : undefined}
                       onToggleTheoryPageBreakAfter={
                         interactiveTcfPageBreaks && canBreakAfter && onToggleTcfPageBreak
-                          ? () => onToggleTcfPageBreak(index + (item.grammar?0:1), blockIndex)
+                          ? () => onToggleTcfPageBreak(index + (item.grammar?0:1), blockIndex, undefined, page)
                           : undefined
                       }
                       formulaireLetterGrid={Boolean(block.formulaireLetterGrid)}
                       onToggleFormulaireLetterGrid={
-                        isFormulaireItem && onToggleFormulaireLetterGrid
+                        isFormulaireItem && onToggleFormulaireLetterGrid &&
+                        (settingsTarget === undefined || parseGramExerciseType(block.exerciseType)?.kindId !== 'formulaire')
                           ? () => onToggleFormulaireLetterGrid(blockIndex)
                           : undefined
                       }
@@ -646,6 +659,7 @@ export function WorksheetSheet({
                 }))}
               </WorksheetItems>
             </section>
+            </WorksheetSettingsScope>
           )
         })}
       </SheetBody>
@@ -668,30 +682,31 @@ export function DualA5Sheet({
   rightPage,
   ...sheetProps
 }: Omit<WorksheetSheetProps, 'page' | 'asHalf' | 'forceHeader'> & {
-  leftPage: WorksheetPage
-  rightPage: WorksheetPage
+  leftPage?: WorksheetPage
+  rightPage?: WorksheetPage
 }) {
-  const isJeuxSheet = leftPage.domain === 'jeux'
+  const isJeuxSheet = (leftPage ?? rightPage)?.domain === 'jeux'
   const parity = sheetProps.sheetIndex % 2 === 1 ? 'sheet-odd' : 'sheet-even'
   return (
     <article
       className={`worksheet-sheet is-a5-double ${parity}${isJeuxSheet ? ' is-jeux' : ''}${sheetProps.evalMode ? ' is-eval' : ''}`}
     >
-      <WorksheetSheet
+      {leftPage ? <WorksheetSheet
         {...sheetProps}
         page={leftPage}
         asHalf="left"
         forceHeader={!sheetProps.hideChrome}
-      />
+      /> : <div className="a5-half is-left" aria-hidden="true" />}
       <div className="a5-cut-guide" aria-hidden="true">
         <span className="a5-cut-mark" />
       </div>
-      <WorksheetSheet
+      {rightPage ? <WorksheetSheet
         {...sheetProps}
         page={rightPage}
+        settingsTarget={leftPage && sheetProps.settingsTarget ? null : sheetProps.settingsTarget}
         asHalf="right"
         forceHeader={!sheetProps.hideChrome}
-      />
+      /> : <div className="a5-half is-right" aria-hidden="true" />}
     </article>
   )
 }

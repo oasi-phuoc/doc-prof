@@ -9,7 +9,7 @@ import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { isGrammaireTheoryType } from '@/grammaire/types'
 import { A4Frame } from '@/components/generator/A4Frame'
 import { FormesPalette } from '@/components/generator/FormesPalette'
-import { isA5DoubleFormat, type SheetFormat } from '@/components/generator/sheet-format'
+import type { A5WorksheetPair } from '@/components/generator/sheet-format'
 import { DualA5Sheet, WorksheetSheet } from '@/components/generator/WorksheetSheet'
 import { InteractionCorrigeSheet } from '@/components/tcf/InteractionCorrigeSheet'
 import { TranscriptionAppendixSheet } from '@/components/tcf/TranscriptionAppendixSheet'
@@ -31,8 +31,9 @@ import type { TcfTypeReponse } from '@/tcf/types'
 
 export type ResultPanelProps = {
   libreMode: boolean
+  settingsTarget?: HTMLElement | null
+  settingsBlockIndex: number
   correctionsToReview?: boolean
-  validateManual?: () => void
   isTcf: boolean
   isGrammaireExercise?: boolean
   isTcmCfr: boolean
@@ -83,11 +84,7 @@ export type ResultPanelProps = {
     pointsPerQuestion: number
     hideChrome?: boolean
   }
-  sheetFormat: SheetFormat
-  a5LeftWorksheets: WorksheetPage[] | null
-  a5RightWorksheets: WorksheetPage[] | null
-  a5LeftSheet: WorksheetPage | undefined
-  a5RightSheet: WorksheetPage | undefined
+  a5Pairs: A5WorksheetPair[] | null
   previewSheet: WorksheetPage | undefined
   safeSheetIndex: number
   pageExerciseBlocks: ExerciseBlock[]
@@ -97,7 +94,7 @@ export type ResultPanelProps = {
   selectTcfForm: (itemIndex: number, form: TcfTypeReponse, targetBlock?: number, sheetIndex?: number) => void
   selectTcfFormForExercise: (form: TcfTypeReponse, targetBlock?: number, sheetIndex?: number) => void
   toggleFormulaireLetterGrid: (targetBlock?: number) => void
-  toggleTcfPageBreak: (itemIndex: number, targetBlock?: number, sheetIndex?: number, questionModeIndex?: number) => void
+  toggleTcfPageBreak: (itemIndex: number, targetBlock?: number, sheetIndex?: number, questionModeIndex?: number, renderedSheet?: WorksheetPage) => void
   isFormes: boolean
   isCadrans: boolean
   isTransform: boolean
@@ -112,8 +109,9 @@ export type ResultPanelProps = {
 
 export function ResultPanel({
   libreMode,
+  settingsTarget,
+  settingsBlockIndex,
   correctionsToReview,
-  validateManual,
   isTcf,
   isGrammaireExercise,
   isTcmCfr,
@@ -147,11 +145,7 @@ export function ResultPanel({
   previewFrameRef,
   seed,
   previewWorksheets,
-  sheetFormat,
-  a5LeftWorksheets,
-  a5RightWorksheets,
-  a5LeftSheet,
-  a5RightSheet,
+  a5Pairs,
   sheetProps,
   chromeProps,
   previewSheet,
@@ -175,38 +169,34 @@ export function ResultPanel({
   placeOrigin,
   removeCoordMark,
 }: ResultPanelProps) {
+  const renderedSheets = useMemo(() => a5Pairs
+    ? a5Pairs.flatMap(({ left, right }) => [left, right].filter((sheet) => sheet !== undefined))
+    : previewWorksheets, [a5Pairs, previewWorksheets])
   const transcriptionPacks = useMemo(
-    () => paginateTranscriptions(collectWorksheetTranscriptions(previewWorksheets)),
-    [previewWorksheets],
+    () => paginateTranscriptions(collectWorksheetTranscriptions(renderedSheets)),
+    [renderedSheets],
   )
-  const unavailableLogistique = previewWorksheets.some((sheet) =>
+  const unavailableLogistique = renderedSheets.some((sheet) =>
     isLogistiqueDomain(sheet.domain) && sheet.blocks.some((block) => block.bankQuestionCap === 0),
   )
   const unavailableActivity = Boolean(previewSheet?.blocks.length && previewSheet.blocks.every(
     (block) => block.items.length === 0 && !block.document,
   ))
-  const unavailableDocument = unavailableLogistique || previewWorksheets.every((sheet) =>
+  const unavailableDocument = unavailableLogistique || renderedSheets.every((sheet) =>
     sheet.blocks.every((block) => block.items.length === 0 && !block.document),
   )
-  const logisticsReferenceOnly = previewWorksheets.length > 0 && previewWorksheets.every((sheet) =>
+  const logisticsReferenceOnly = renderedSheets.length > 0 && renderedSheets.every((sheet) =>
     isLogistiqueDomain(sheet.domain) && sheet.blocks.every((block) => isLogistiqueReferenceType(block.exerciseType)),
   )
-  const answersBaseCount = isCalliDomain || isJeuxDomain || logisticsReferenceOnly ? 0 : previewWorksheets.length
-  const useA5Double = isA5DoubleFormat(sheetFormat) && Boolean(a5LeftSheet && a5RightSheet)
+  const physicalPageCount = a5Pairs?.length ?? previewWorksheets.length
+  const answersBaseCount = isCalliDomain || isJeuxDomain || logisticsReferenceOnly ? 0 : physicalPageCount
   /** Corrigé PO : une page pour l’interaction, après la dernière feuille. */
   const correctionFollow = useMemo(() => {
-    const sheets =
-      useA5Double && a5LeftWorksheets && a5RightWorksheets
-        ? a5LeftWorksheets.flatMap((left, index) => {
-            const right = a5RightWorksheets[index]
-            return right && right !== left ? [left, right] : [left]
-          })
-        : previewWorksheets
     const seen = new Set<string>()
     const pages: Array<
       { kind: 'pe'; evaluation: PeEvaluation } | { kind: 'po'; exercise: TcfPoImageInteraction }
     > = []
-    for (const sheet of sheets) {
+    for (const sheet of renderedSheets) {
       for (const evaluation of peEvaluationsOf(sheet)) {
         const key = `pe:${evaluation.id}:${evaluation.title}`
         if (seen.has(key)) continue
@@ -221,7 +211,7 @@ export function ResultPanel({
       }
     }
     return pages
-  }, [a5LeftWorksheets, a5RightWorksheets, previewWorksheets, useA5Double])
+  }, [renderedSheets])
   /** Corrigé : pages exercices + pages PE/PO + transcriptions. */
   const corrigeTotalPages = answersBaseCount + correctionFollow.length + transcriptionPacks.length
   const [printCapture, setPrintCapture] = useState<ReactNode>(null)
@@ -235,7 +225,9 @@ export function ResultPanel({
   const pageGroup = previewWorksheets
     .map((sheet, index) => ({ sheet, index }))
     .filter(({ sheet, index }) => (sheet.configIndex ?? index) === activeConfig)
-  const showPageStack = !useA5Double && pageGroup.some(({ sheet }) => sheet.isContinuation)
+  const a5Group = a5Pairs?.map((pair, index) => ({ pair, index }))
+    .filter(({ pair }) => pair.configIndex === activeConfig)
+  const showPageStack = a5Group ? a5Group.length > 1 : pageGroup.some(({ sheet }) => sheet.isContinuation)
   const lastPreview = previewWorksheets[previewWorksheets.length - 1]
   const onLastPage =
     previewWorksheets.length > 0 &&
@@ -261,6 +253,8 @@ export function ResultPanel({
       pageNumber={index + 1}
       sheetIndex={index + 1}
       total={previewWorksheets.length}
+      settingsTarget={settingsTarget}
+      settingsBlockIndex={settingsBlockIndex}
       interactiveDraftGrids={pageExerciseBlocks.some((block) => isProblemExercise(block.exerciseType))}
       onToggleDraftGrid={toggleDraftGrid}
       interactiveOralModes={isOralComprehensionExercise(activeBlock.exerciseType)}
@@ -291,22 +285,19 @@ export function ResultPanel({
   function renderPrintSheets(withCorrections: boolean, style?: CSSProperties) {
     return (
       <div className="sheet-stage print-only-sheets" style={style} aria-hidden>
-        {useA5Double && a5LeftWorksheets && a5RightWorksheets
-          ? a5LeftWorksheets.map((leftPage, index) => {
-              const rightPage = a5RightWorksheets[index] ?? leftPage
-              return (
-                <DualA5Sheet
-                  key={`print-student-a5-${leftPage.exerciseType}-${seed}-${index}`}
-                  leftPage={leftPage}
-                  rightPage={rightPage}
-                  pageNumber={index + 1}
-                  sheetIndex={index + 1}
-                  total={a5LeftWorksheets.length}
-                  {...chromeProps}
-                  mode="student"
-                />
-              )
-            })
+        {a5Pairs
+          ? a5Pairs.map(({ left, right }, index) => (
+              <DualA5Sheet
+                key={`print-student-a5-${seed}-${index}`}
+                leftPage={left}
+                rightPage={right}
+                pageNumber={index + 1}
+                sheetIndex={index + 1}
+                total={physicalPageCount}
+                {...chromeProps}
+                mode="student"
+              />
+            ))
           : previewWorksheets.map((page, index) => (
               <WorksheetSheet
                 key={`print-student-${page.exerciseType}-${seed}-${index}`}
@@ -320,23 +311,19 @@ export function ResultPanel({
             ))}
         {withCorrections ? (
           <>
-            {useA5Double && a5LeftWorksheets && a5RightWorksheets
-              ? a5LeftWorksheets.map((leftPage, index) => {
-                  const rightPage = a5RightWorksheets[index] ?? leftPage
-                  return (
-                    <Fragment key={`print-answers-a5-${leftPage.exerciseType}-${seed}-${index}`}>
-                    <DualA5Sheet
-                      leftPage={leftPage}
-                      rightPage={rightPage}
-                      pageNumber={index + 1}
-                      sheetIndex={a5LeftWorksheets.length + index + 1}
-                      total={a5LeftWorksheets.length}
-                      {...chromeProps}
-                      mode="answers"
-                    />
-                    </Fragment>
-                  )
-                })
+            {a5Pairs
+              ? a5Pairs.map(({ left, right }, index) => (
+                  <DualA5Sheet
+                    key={`print-answers-a5-${seed}-${index}`}
+                    leftPage={left}
+                    rightPage={right}
+                    pageNumber={index + 1}
+                    sheetIndex={physicalPageCount + index + 1}
+                    total={physicalPageCount}
+                    {...chromeProps}
+                    mode="answers"
+                  />
+                ))
               : previewWorksheets.map((page, index) => (
                 <Fragment key={`print-answers-${page.exerciseType}-${seed}-${index}`}>
                   <WorksheetSheet
@@ -400,7 +387,6 @@ export function ResultPanel({
                     : 'Votre activité est prête.'}
                 </h2>
                 {correctionsToReview && <p role="status" className="no-print">Corrigé à vérifier</p>}
-                {libreMode ? <p className="no-print">Cliquez sur une image de la fiche pour la remplacer.</p> : null}
               </div>
               <div className="result-head-actions no-print">
                 <button
@@ -418,22 +404,6 @@ export function ResultPanel({
                     />
                   </svg>
                 </button>
-                {!libreMode || !validateManual ? null : (
-                  <button
-                    className="print-chip is-icon is-validate"
-                    type="button"
-                    onClick={validateManual}
-                    aria-label="Valider les changements"
-                    title="Valider les changements"
-                  >
-                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
-                      <path
-                        fill="currentColor"
-                        d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
-                      />
-                    </svg>
-                  </button>
-                )}
                 {isTcf ||
                 isGrammaireExercise ||
                 isTcmCfr ||
@@ -604,35 +574,40 @@ export function ResultPanel({
                       ))}
                     </div>
                   ) : (
-                  <div className={`sheet-stage${useA5Double ? ' is-a5-double' : ''}${showPageStack ? ' is-page-stack' : ''}`}>
-                    {useA5Double && a5LeftSheet && a5RightSheet ? (
-                      <A4Frame ref={previewFrameRef} className="is-landscape">
-                        <DualA5Sheet
-                          key={`a5-${a5LeftSheet.exerciseType}-${seed}-${safeSheetIndex}-${pageExerciseBlocks.length}`}
-                          leftPage={a5LeftSheet}
-                          rightPage={a5RightSheet}
-                          pageNumber={safeSheetIndex + 1}
-                          sheetIndex={safeSheetIndex + 1}
-                          total={previewWorksheets.length}
-                          interactiveDraftGrids={pageExerciseBlocks.some((b) =>
-                            isProblemExercise(b.exerciseType),
-                          )}
-                          onToggleDraftGrid={toggleDraftGrid}
-                          interactiveOralModes={isOralComprehensionExercise(activeBlock.exerciseType)}
-                          onCycleOralAnswerMode={cycleOralAnswerMode}
-                          interactiveTcfOptions={
-                            isTcf || (Boolean(isGrammaireExercise) && activeBlock.tcfExercise == null)
-                          }
-                          interactiveTcfPageBreaks={a5LeftSheet.domain==='grammaire'||a5RightSheet.domain==='grammaire'||isLogistiqueDomain(a5LeftSheet.domain)||isLogistiqueDomain(a5RightSheet.domain)||isTcf || pageExerciseBlocks.some(block => block.grammarPresentation==='document-set'||block.grammarPresentation==='scenario-set'||isGrammarReadingType(block.exerciseType)||block.exerciseType==='tcm-cfr-ex28')}
-                          onSelectTcfForm={selectTcfForm}
-                          onSelectTcfFormForExercise={selectTcfFormForExercise}
-                          onToggleFormulaireLetterGrid={toggleFormulaireLetterGrid}
-                          onToggleTcfPageBreak={(itemIndex, block, question) => toggleTcfPageBreak(itemIndex, block, undefined, question)}
-                          coordEdit={coordEdit}
-                          {...sheetProps}
-                        />
-                      </A4Frame>
-                    ) : showPageStack ? (
+                  <div className={`sheet-stage${a5Pairs ? ' is-a5-double' : ''}${showPageStack ? ' is-page-stack' : ''}`}>
+                    {a5Group ? a5Group.map(({ pair: { left, right }, index }, stackIndex) => {
+                      const domain = (left ?? right)?.domain
+                      return (
+                        <A4Frame key={`a5-${activeConfig}-${seed}-${index}`}
+                          ref={stackIndex === 0 ? previewFrameRef : undefined} className="is-landscape">
+                          <DualA5Sheet
+                            leftPage={left}
+                            rightPage={right}
+                            pageNumber={index + 1}
+                            sheetIndex={index + 1}
+                            total={physicalPageCount}
+                            settingsTarget={settingsTarget}
+                            settingsBlockIndex={settingsBlockIndex}
+                            interactiveDraftGrids={pageExerciseBlocks.some((block) => isProblemExercise(block.exerciseType))}
+                            onToggleDraftGrid={toggleDraftGrid}
+                            interactiveOralModes={isOralComprehensionExercise(activeBlock.exerciseType)}
+                            onCycleOralAnswerMode={cycleOralAnswerMode}
+                            interactiveTcfOptions={isTcf || (Boolean(isGrammaireExercise) && activeBlock.tcfExercise == null)}
+                            interactiveTcfPageBreaks={domain === 'grammaire' || (domain != null && isLogistiqueDomain(domain)) ||
+                              isTcf || pageExerciseBlocks.some((block) => block.grammarPresentation === 'document-set' ||
+                                block.grammarPresentation === 'scenario-set' || isGrammarReadingType(block.exerciseType) ||
+                                block.exerciseType === 'tcm-cfr-ex28')}
+                            onSelectTcfForm={selectTcfForm}
+                            onSelectTcfFormForExercise={selectTcfFormForExercise}
+                            onToggleFormulaireLetterGrid={toggleFormulaireLetterGrid}
+                            onToggleTcfPageBreak={(itemIndex, block, question, sheet) =>
+                              toggleTcfPageBreak(itemIndex, block, undefined, question, sheet)}
+                            coordEdit={coordEdit}
+                            {...sheetProps}
+                          />
+                        </A4Frame>
+                      )
+                    }) : showPageStack ? (
                       pageGroup.map(({ sheet, index }, stackIdx) => (
                         <A4Frame
                           key={`page-stack-${sheet.exerciseType}-${seed}-${index}`}
@@ -682,7 +657,7 @@ export function ResultPanel({
                       : null}
                   </div>
                   )}
-                  {isFormes && activeBlock.coordLibre ? (
+                  {!libreMode && isFormes && activeBlock.coordLibre ? (
                     <aside className="coord-page-palette no-print">
                       <b>Formes</b>
                       <FormesPalette

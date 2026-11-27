@@ -8,7 +8,7 @@ import { normalizeLegacyPhraseBlock } from '@/francais/phrase-themes'
 import { normalizeGrammarCoBlock } from '@/grammaire/exercises/co-themes'
 import { freezeGrammarPages, validGrammarRecipePages } from '@/grammaire/curriculum/recipe'
 import { readSessionUser } from '@/fiches/session'
-import { validLibreMetadata } from '@/fiches/libre-metadata'
+import { validLibreMetadata, validLibreRaster } from '@/fiches/libre-metadata'
 import { normalizeFicheAuthor } from '@/fiches/author'
 
 /** Recette qui reproduit la fiche imprimée : config, graine, en-tête, points. */
@@ -32,7 +32,7 @@ export type FicheRecipe = {
   hideChrome?: boolean
   /** Inclut le corrigé à l’impression ; activé par défaut pour les anciennes fiches. */
   printCorrections?: boolean
-  /** Remplacements d’images provenant de la banque ; fichiers temporaires exclus. */
+  /** Remplacements de banque et images raster préparées pour la fiche. */
   imageOverrides?: Record<string, string>
 }
 
@@ -162,7 +162,8 @@ export function parseFicheRecipe(value: unknown): FicheRecipe | null {
     hideChrome,
     printCorrections: value.printCorrections !== false,
     imageOverrides: isRecord(value.imageOverrides)
-      ? Object.fromEntries(Object.entries(value.imageOverrides).filter(([key, image]) => key && typeof image === 'string' && image.startsWith('/lib/images/'))) as Record<string, string>
+      ? Object.fromEntries(Object.entries(value.imageOverrides).filter(([key, image]) =>
+          key && typeof image === 'string' && (image.startsWith('/lib/images/') || validLibreRaster(image)))) as Record<string, string>
       : undefined,
   }
 }
@@ -191,7 +192,7 @@ export function buildFicheRecipe(input: {
   sheetFont?: SheetFontId
   hideChrome?: boolean
   printCorrections?: boolean
-  /** Remplacements d’images provenant de la banque ; fichiers temporaires exclus. */
+  /** Remplacements de banque et images raster préparées pour la fiche. */
   imageOverrides?: Record<string, string>
 }): FicheRecipe {
   return { version: 1, ...input, pages:freezeLogistiquePages(freezeGrammarPages(input.pages,input.seed)),

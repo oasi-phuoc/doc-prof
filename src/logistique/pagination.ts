@@ -45,9 +45,11 @@ function a5TheoryHeight(block: A5TheoryBlock, scale: number) {
 function splitA5Theory(block: A5TheoryBlock, maxHeight: number, scale: number): A5TheoryBlock[] {
   const count = block.kind === 'table' ? block.rows.length : block.items.length
   if (count < 2 || a5TheoryHeight(block, scale) <= maxHeight) return [block]
-  const segment = (start: number, end: number) => block.kind === 'table'
-    ? { ...block, rows: block.rows.slice(start, end) }
-    : { ...block, items: block.items.slice(start, end) }
+  const segment = (start: number, end: number): A5TheoryBlock => {
+    if (block.kind === 'table') return { ...block, rows: block.rows.slice(start, end) }
+    if (block.kind === 'list') return { ...block, items: block.items.slice(start, end) }
+    return { ...block, items: block.items.slice(start, end) }
+  }
   const fragments: A5TheoryBlock[] = []
   let start = 0
   for (let end = 2; end <= count; end++) {
@@ -122,8 +124,9 @@ function height(item: MathItem, a5: boolean, scale: number): number {
     const captionHeight = caption ? lineCount(caption, width * (diagram ? 0.65 : 0.24)) * 18 * scale : 0
     return diagram ? 153 + textHeight + captionHeight : Math.max(a5 ? 84 : 105, textHeight) + captionHeight
   }
-  if (a5 && ['table', 'list', 'examples'].includes(item.theoryBlock?.kind ?? '')) {
-    return a5TheoryHeight(item.theoryBlock as A5TheoryBlock, scale)
+  const theory = item.theoryBlock
+  if (a5 && (theory?.kind === 'table' || theory?.kind === 'list' || theory?.kind === 'examples')) {
+    return a5TheoryHeight(theory, scale)
   }
   if (item.theoryBlock) return theoryHeight(item.theoryBlock, a5 ? width * 0.9 : width, scale, a5)
   const image = item.logistiqueImage

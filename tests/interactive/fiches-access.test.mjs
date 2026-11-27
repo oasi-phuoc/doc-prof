@@ -130,7 +130,10 @@ try {
           { layout: 'inline', op: '+', a: 9, b: 7, result: 16, answer: '16', libreId: 'addition-temoin', libreLocked: true },
         ],
       }
-      const enriched = parseFicheRecipe({ ...base.recipe, sheetFormat: 'a5-double-landscape', pages: [{
+      const imageOverrides = {
+        '/lib/images/temoin.webp': 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAAFElEQVR4nGPU9r7DgA0wYRUdtBIAC9IBYkd6Sd0AAAAASUVORK5CYII=',
+      }
+      const enriched = parseFicheRecipe({ ...base.recipe, sheetFormat: 'a5-double-landscape', imageOverrides, pages: [{
         domain: 'algèbre', topic: 'addition', exerciseType: 'addition-ligne', difficulty: 'moyen', count: 1, columns: 1,
         a5RightLibre: half,
       }] })
@@ -142,10 +145,13 @@ try {
       const parsed = parseFicheRecipe(listed.body.fiches[0].recipe)
       assert.equal(parsed.sheetFormat, enriched.sheetFormat)
       assert.deepEqual(parsed.pages[0].a5RightLibre, half)
+      assert.deepEqual(parsed.imageOverrides, imageOverrides)
       const invalid = structuredClone(saved.body.fiche.recipe)
       invalid.pages[0].a5RightLibre.items.push(half.items[0])
       assert.equal(parseFicheRecipe(invalid), null)
       assert.equal((await h.request('PUT', route, { ...base, recipe: invalid }, 'partial')).status, 400)
+      const ephemeral = { ...saved.body.fiche.recipe, imageOverrides: { '/lib/images/temoin.webp': 'blob:https://exemple.invalid/image' } }
+      assert.equal((await h.request('PUT', route, { ...base, recipe: ephemeral }, 'partial')).status, 400)
     } finally { h.close() }
   })
 

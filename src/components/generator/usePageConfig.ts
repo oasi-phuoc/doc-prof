@@ -467,12 +467,12 @@ export function usePageConfig({
     )
   }
 
-  const toggleTcfPageBreak = (itemIndex: number, targetBlock = safeBlockIndex, sheetAt = safeSheetIndex, questionModeIndex?: number) => {
+  const toggleTcfPageBreak = (itemIndex: number, targetBlock = safeBlockIndex, sheetAt = safeSheetIndex, questionModeIndex?: number, renderedSheet?: WorksheetPage) => {
     setPages((current) =>
       current.map((page, index) => {
         if (index !== pageIndex) return page
         const block = pageBlocks(page)[targetBlock] ?? blockFromPage(page)
-        const sheet = worksheets[sheetAt]
+        const sheet = renderedSheet ?? worksheets[sheetAt]
         const sheetBlock = sheet?.blocks.find((entry, i) => (entry.sourceBlockIndex ?? i) === targetBlock)
         if (questionModeIndex != null && questionModeIndex > 1) {
           const breaks = block.tcfQuestionPageBreakBefore ?? []

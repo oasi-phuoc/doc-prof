@@ -1,4 +1,4 @@
-import { FICHE_BODY_MAX_CHARS, validLibreMetadata } from '../../../src/fiches/libre-metadata'
+import { FICHE_BODY_MAX_CHARS, validLibreMetadata, validLibreRaster } from '../../../src/fiches/libre-metadata'
 import { validLogistiqueCataloguePages } from '../../../src/logistique/catalog'
 import { createPersonalAccount, handleAccounts, personalUser, type AccountsEnv } from './accounts'
 import { handleCompetitionRequest, type CompetitionEnv } from './competition'
@@ -221,6 +221,8 @@ function parseRecipe(value: unknown): Record<string, unknown> | null {
   if (!isRecord(value) || value.version !== 1) return null
   if (!Array.isArray(value.pages) || value.pages.length === 0 || value.pages.length > 60) return null
   if (!value.pages.every(isPage) || !validLogistiqueCataloguePages(value.pages) || !validLibreMetadata(value.pages)) return null
+  if (isRecord(value.imageOverrides) && Object.values(value.imageOverrides).some((source) =>
+    typeof source === 'string' && /^\s*(blob:|data:)/i.test(source) && !validLibreRaster(source))) return null
   if (typeof value.seed !== 'number' || !Number.isFinite(value.seed)) return null
   if (!isRecord(value.institutional)) return null
   if (typeof value.evalMode !== 'boolean') return null

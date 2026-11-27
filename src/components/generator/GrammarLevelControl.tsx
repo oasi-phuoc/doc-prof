@@ -17,7 +17,7 @@ export function GrammarLevelControl({block,onChange}:{block:ExerciseBlock;onChan
   }
   const newOnly=grammarUsesGradedDefault(block.exerciseType)
   return <>
-    <SelectBox label="Niveau de grammaire" value={block.grammarLevel??'legacy'} onChange={value=>{
+    {(!newOnly || banks.length>1) && <SelectBox label="Niveau de grammaire" value={block.grammarLevel??'legacy'} onChange={value=>{
       const next=banks.find(b=>b.level===value)
       change(next?{grammarLevel:next.level,grammarActivityId:next.activityId,grammarBankRevision:next.revision,
         grammarPresentation:next.presentations.includes(block.grammarPresentation!)?block.grammarPresentation:next.presentations[0],
@@ -28,9 +28,9 @@ export function GrammarLevelControl({block,onChange}:{block:ExerciseBlock;onChan
     }}>
       {!newOnly?<option value="legacy">Banque actuelle</option>:null}
       {banks.map(b=><option key={b.level} value={b.level}>{b.level}{b.editorialStatus!=='approved'?' — pilote':''}</option>)}
-    </SelectBox>
+    </SelectBox>}
     {bank?<>
-      {block.grammarPresentation==='document-set'?<label className="select-shell">
+      {block.grammarPresentation==='document-set' && bank.units.length>1?<label className="select-shell">
         <span>Textes</span>
         <input className="pill-input" type="number" aria-label="Nombre de textes" min={1} max={Math.min(20,bank.units.length)} value={block.grammarDocumentCount??1}
           onChange={event=>onChange({grammarDocumentCount:Math.max(1,Math.min(20,bank.units.length,Number(event.target.value)||1))})}/>

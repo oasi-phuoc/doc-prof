@@ -398,16 +398,18 @@ function PrintCorrectionsSection({
   )
 }
 
-function ChromeSection({
+export function SheetChromeSettings({
   hideChrome,
   onChange,
+  heading = true,
 }: {
   hideChrome: boolean
   onChange: (hide: boolean) => void
+  heading?: boolean
 }) {
   return (
     <div className="settings-section" role="group" aria-label="En-tête et pied de page">
-      <p className="settings-section-title">En-tête et pied de page</p>
+      {heading && <p className="settings-section-title">En-tête et pied de page</p>}
       <button
         type="button"
         role="switch"
@@ -438,28 +440,7 @@ function ChromeSection({
   )
 }
 
-/** Menu tout à droite : Paramètres + déconnexion. */
-function AccountMenu({
-  themeColor,
-  onThemeColor,
-  fontSize,
-  onFontSizeChange,
-  sheetFont,
-  onSheetFontChange,
-  sheetFormat,
-  onSheetFormatChange,
-  printCorrections,
-  onPrintCorrectionsChange,
-  hideChrome,
-  onHideChromeChange,
-  exerciseGap,
-  onExerciseGapChange,
-  pageBorder,
-  onPageBorderChange,
-  sheetMargin,
-  onSheetMarginChange,
-  onLogout,
-}: {
+export type SheetSettingsProps = {
   themeColor: string
   onThemeColor: (color: string) => void
   fontSize: number
@@ -478,8 +459,47 @@ function AccountMenu({
   onPageBorderChange: (on: boolean) => void
   sheetMargin: SheetMargin
   onSheetMarginChange: (margin: SheetMargin) => void
-  onLogout: () => void
-}) {
+}
+
+export function SheetSettings({
+  themeColor,
+  onThemeColor,
+  fontSize,
+  onFontSizeChange,
+  sheetFont,
+  onSheetFontChange,
+  sheetFormat,
+  onSheetFormatChange,
+  printCorrections,
+  onPrintCorrectionsChange,
+  hideChrome,
+  onHideChromeChange,
+  exerciseGap,
+  onExerciseGapChange,
+  pageBorder,
+  onPageBorderChange,
+  sheetMargin,
+  onSheetMarginChange,
+  showChromeControls = true,
+}: SheetSettingsProps & { showChromeControls?: boolean }) {
+  return (
+    <>
+      <FontSizeSection fontSize={fontSize} onChange={onFontSizeChange} sheetFont={sheetFont} onSheetFontChange={onSheetFontChange} />
+      <ColorSection themeColor={themeColor} onChange={onThemeColor} />
+      <FormatSection sheetFormat={sheetFormat} onChange={onSheetFormatChange} />
+      <PageBorderSection pageBorder={pageBorder} onChange={onPageBorderChange} />
+      <MarginSection sheetMargin={sheetMargin} onChange={onSheetMarginChange} />
+      <PrintCorrectionsSection printCorrections={printCorrections} onChange={onPrintCorrectionsChange} />
+      {showChromeControls && <SheetChromeSettings hideChrome={hideChrome} onChange={onHideChromeChange} />}
+      {exerciseGap != null && onExerciseGapChange ? (
+        <ExerciseGapSection value={exerciseGap} onChange={onExerciseGapChange} />
+      ) : null}
+    </>
+  )
+}
+
+function AccountMenu({ settings, onLogout }: { settings?: ReactNode; onLogout: () => void }) {
+  const label = settings ? 'Paramètres' : 'Compte'
   const [open, setOpen] = useState(false)
   const boxRef = useRef<HTMLDivElement>(null)
 
@@ -504,8 +524,8 @@ function AccountMenu({
       <button
         type="button"
         className={`topbar-icon-btn${open ? ' active' : ''}`}
-        aria-label="Paramètres"
-        title="Paramètres"
+        aria-label={label}
+        title={label}
         aria-expanded={open}
         aria-haspopup="menu"
         onClick={() => setOpen((value) => !value)}
@@ -513,19 +533,10 @@ function AccountMenu({
         <SettingsIcon />
       </button>
       {open ? (
-        <div className="topbar-account-menu" role="menu" aria-label="Paramètres">
-          <p className="settings-menu-heading">Paramètres</p>
-          <FontSizeSection fontSize={fontSize} onChange={onFontSizeChange} sheetFont={sheetFont} onSheetFontChange={onSheetFontChange} />
-          <ColorSection themeColor={themeColor} onChange={onThemeColor} />
-          <FormatSection sheetFormat={sheetFormat} onChange={onSheetFormatChange} />
-          <PageBorderSection pageBorder={pageBorder} onChange={onPageBorderChange} />
-          <MarginSection sheetMargin={sheetMargin} onChange={onSheetMarginChange} />
-          <PrintCorrectionsSection printCorrections={printCorrections} onChange={onPrintCorrectionsChange} />
-          <ChromeSection hideChrome={hideChrome} onChange={onHideChromeChange} />
-          {exerciseGap != null && onExerciseGapChange ? (
-            <ExerciseGapSection value={exerciseGap} onChange={onExerciseGapChange} />
-          ) : null}
-          <div className="settings-menu-divider" />
+        <div className="topbar-account-menu" role="menu" aria-label={label}>
+          <p className="settings-menu-heading">{label}</p>
+          {settings}
+          {settings && <div className="settings-menu-divider" />}
           <button
             type="button"
             className="settings-logout-btn"
@@ -550,24 +561,7 @@ function AccountMenu({
 }
 
 export function TopbarTools({
-  themeColor,
-  onThemeColor,
-  fontSize,
-  onFontSizeChange,
-  sheetFont,
-  onSheetFontChange,
-  sheetFormat,
-  onSheetFormatChange,
-  printCorrections,
-  onPrintCorrectionsChange,
-  hideChrome,
-  onHideChromeChange,
-  exerciseGap,
-  onExerciseGapChange,
-  pageBorder,
-  onPageBorderChange,
-  sheetMargin,
-  onSheetMarginChange,
+  settings,
   footerOpen,
   onToggleFooter,
   libreOpen,
@@ -577,25 +571,7 @@ export function TopbarTools({
   showPreviewToggle = true,
   onLogout,
 }: {
-  themeColor: string
-  onThemeColor: (color: string) => void
-  fontSize: number
-  onFontSizeChange: (size: number) => void
-  sheetFont: SheetFontId
-  onSheetFontChange: (font: SheetFontId) => void
-  sheetFormat: SheetFormat
-  onSheetFormatChange: (format: SheetFormat) => void
-  printCorrections: boolean
-  onPrintCorrectionsChange: (include: boolean) => void
-  hideChrome: boolean
-  onHideChromeChange: (hide: boolean) => void
-  /** TCM CSC : espace entre les exercices, en pixels. Absent sur les autres fiches. */
-  exerciseGap?: number
-  onExerciseGapChange?: (gap: number) => void
-  pageBorder: boolean
-  onPageBorderChange: (on: boolean) => void
-  sheetMargin: SheetMargin
-  onSheetMarginChange: (margin: SheetMargin) => void
+  settings: SheetSettingsProps
   footerOpen: boolean
   onToggleFooter: () => void
   libreOpen: boolean
@@ -633,14 +609,14 @@ export function TopbarTools({
           )}
         </IconBtn>
       ) : null}
-      <IconBtn label="En-tête et pied de page" active={footerOpen} onClick={onToggleFooter}>
+      {!libreOpen && <IconBtn label="En-tête et pied de page" active={footerOpen} onClick={onToggleFooter}>
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
           <path
             fill="currentColor"
             d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm0 2v3h14V5H5zm0 5v9h14v-9H5zm2 6h6v2H7v-2z"
           />
         </svg>
-      </IconBtn>
+      </IconBtn>}
       <IconBtn label="Mode libre" active={libreOpen} onClick={onToggleLibre}>
         <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden>
           <path
@@ -650,27 +626,7 @@ export function TopbarTools({
         </svg>
       </IconBtn>
       <CatalogMenu />
-      <AccountMenu
-        themeColor={themeColor}
-        onThemeColor={onThemeColor}
-        fontSize={fontSize}
-        onFontSizeChange={onFontSizeChange}
-        sheetFont={sheetFont}
-        onSheetFontChange={onSheetFontChange}
-        sheetFormat={sheetFormat}
-        onSheetFormatChange={onSheetFormatChange}
-        printCorrections={printCorrections}
-        onPrintCorrectionsChange={onPrintCorrectionsChange}
-        hideChrome={hideChrome}
-        onHideChromeChange={onHideChromeChange}
-        exerciseGap={exerciseGap}
-        onExerciseGapChange={onExerciseGapChange}
-        pageBorder={pageBorder}
-        onPageBorderChange={onPageBorderChange}
-        sheetMargin={sheetMargin}
-        onSheetMarginChange={onSheetMarginChange}
-        onLogout={onLogout}
-      />
+      <AccountMenu settings={libreOpen ? undefined : <SheetSettings {...settings} />} onLogout={onLogout} />
     </div>
   )
 }

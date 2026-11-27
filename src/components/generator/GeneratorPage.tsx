@@ -19,12 +19,13 @@ import {
   readAccessAccount,
 } from '@/access'
 import { SaveFicheDialog } from '@/components/generator/SaveFicheDialog'
-import { TopbarTools } from '@/components/generator/TopbarTools'
-import { FooterSidePanel } from '@/components/generator/FooterSidePanel'
+import { SheetChromeSettings, SheetSettings, TopbarTools, type SheetSettingsProps } from '@/components/generator/TopbarTools'
+import { FooterFields, FooterSidePanel } from '@/components/generator/FooterSidePanel'
 import { Header } from '@/components/generator/Header'
-import { LibreSidePanel } from '@/components/generator/LibreSidePanel'
-import { ActivitySettings, SettingsPanel } from '@/components/generator/SettingsPanel'
+import { LibreActivityEditor, LibrePanelHeader } from '@/components/generator/LibreActivityEditor'
+import { SettingsPanel } from '@/components/generator/SettingsPanel'
 import { ResultPanel } from '@/components/generator/ResultPanel'
+import { FormesPalette } from '@/components/generator/FormesPalette'
 import { contrastOnTheme, readThemeColor, theorySectionColors } from '@/components/generator/theme'
 import { applyBaseFontSize, DEFAULT_BASE_FONT_SIZE, readBaseFontSize } from '@/components/generator/typography'
 import {
@@ -39,6 +40,7 @@ import { applySheetFont, readSheetFont } from '@/components/generator/sheet-font
 import {
   isA5DoubleFormat,
   pageForA5Half,
+  pairA5Worksheets,
   type SheetFormat,
 } from '@/components/generator/sheet-format'
 import { blockItemsForConfig, tcfExerciseOnConfig } from '@/components/generator/sheet-items'
@@ -156,6 +158,7 @@ export function GeneratorPage({
   const [footerPanelOpen, setFooterPanelOpen] = useState(false)
   const [libreMode, setLibreMode] = useState(() => openedFiche?.recipe.libreMode ?? false)
   const [libreView, setLibreView] = useState<'editor' | 'preview'>('editor')
+  const [worksheetSettingsTarget, setWorksheetSettingsTarget] = useState<HTMLDivElement | null>(null)
   const editorFocusRef = useRef<HTMLElement | null>(null)
   const changeLibreView = (view: 'editor' | 'preview') => {
     if (view === libreView) return
@@ -341,8 +344,8 @@ export function GeneratorPage({
     )
   }, [sheetFormat, a5SourcePages, seed, pointsPerQuestion, logisticsLayout])
   const previewSheet = previewWorksheets[Math.min(safeSheetIndex, previewWorksheets.length - 1)]
-  const a5LeftSheet = a5LeftWorksheets?.[Math.min(safeSheetIndex, a5LeftWorksheets.length - 1)]
-  const a5RightSheet = a5RightWorksheets?.[Math.min(safeSheetIndex, a5RightWorksheets.length - 1)]
+  const a5Pairs = useMemo(() => a5LeftWorksheets && a5RightWorksheets
+    ? pairA5Worksheets(a5LeftWorksheets, a5RightWorksheets) : null, [a5LeftWorksheets, a5RightWorksheets])
   const halfSheets = editableHalf === 'left' ? a5LeftWorksheets : a5RightWorksheets
   const reservedActivityIds = useMemo(() => worksheetActivityIds(pages), [pages])
   const halfEditor = libreMode && usesIndependentHalves(activeProfile) && halfSheets ? {
@@ -688,7 +691,7 @@ export function GeneratorPage({
 
   const settingsPanelProps = {
     liveCoordQuestions: libreMode && activeProfile === 'questions-de-reperage',
-    supportsBlockSpacing: arithmetic && !isA5DoubleFormat(sheetFormat),
+    supportsBlockSpacing: libreMode && arithmetic && !isA5DoubleFormat(sheetFormat),
     spacingPreferenceKey: spacingKey,
     recovery: draftOwner ? (
       <DraftRecovery
@@ -737,9 +740,6 @@ export function GeneratorPage({
     updatePage,
     typeChoices,
     activeAsPage,
-    setCalliFieldAt,
-    removeCalliField,
-    addCalliExtraWord,
     soutienBankSound: ctx.soutienBank?.sound,
     soutienCompletes: ctx.soutienBank?.completes ?? [],
     soutienBankWords: ctx.soutienBank?.words ?? [],
@@ -755,21 +755,45 @@ export function GeneratorPage({
     setAllDraftGrids,
   }
 
-  const footerPanel = footerPanelOpen ? (
-    <FooterSidePanel
-      institutional={institutional}
-      setInstitutional={setInstitutional}
-      evalMode={evalMode}
-      activeExerciseLabel={exerciseTypeById[activeBlock.exerciseType]?.label ?? ''}
-      referenceLocked={referenceLocked}
-      onClose={() => setFooterPanelOpen(false)}
-    />
-  ) : null
+  const footerFields = {
+    institutional,
+    setInstitutional,
+    evalMode,
+    activeExerciseLabel: exerciseTypeById[activeBlock.exerciseType]?.label ?? '',
+    referenceLocked,
+  }
+  const sheetSettings: SheetSettingsProps = {
+    themeColor,
+    onThemeColor: applyThemeColor,
+    fontSize,
+    onFontSizeChange: changeFontSize,
+    sheetFont,
+    onSheetFontChange: (font) => setSheetFont(applySheetFont(font)),
+    sheetFormat,
+    onSheetFormatChange: setSheetFormat,
+    printCorrections,
+    onPrintCorrectionsChange: setPrintCorrections,
+    hideChrome,
+    onHideChromeChange: setHideChrome,
+    exerciseGap: activePage.domain === 'tcm-csc' ? activePage.exerciseGapPx ?? 50 : undefined,
+    onExerciseGapChange: changeExerciseGap,
+    pageBorder,
+    onPageBorderChange: (on) => {
+      setPageBorder(on)
+      storePageBorder(on, activePage.domain)
+    },
+    sheetMargin,
+    onSheetMarginChange: (margin) => {
+      setSheetMargin(margin)
+      storeSheetMargin(margin, activePage.domain)
+    },
+  }
 
   const resultPanelProps = {
     ...ctx,
     libreMode,
-    validateManual: activeProfile ? undefined : validateManual,
+    settingsTarget: libreMode ? worksheetSettingsTarget : undefined,
+    settingsBlockIndex: safeBlockIndex,
     correctionsToReview,
     downloadActiveTcfAudios: audio.downloadActiveTcfAudios,
     downloadActiveTcmCfrAudios: audio.downloadActiveTcmCfrAudios,
@@ -801,11 +825,7 @@ export function GeneratorPage({
     previewFrameRef,
     seed,
     previewWorksheets,
-    sheetFormat,
-    a5LeftWorksheets,
-    a5RightWorksheets,
-    a5LeftSheet,
-    a5RightSheet,
+    a5Pairs,
     sheetProps,
     chromeProps,
     previewSheet,
@@ -851,38 +871,13 @@ export function GeneratorPage({
               <button type="button" className="button small" onClick={playWithClass}>Jouer cette fiche</button>
             )}
             <TopbarTools
-            themeColor={themeColor}
-            onThemeColor={applyThemeColor}
-            fontSize={fontSize}
-            onFontSizeChange={changeFontSize}
-            sheetFont={sheetFont}
-            onSheetFontChange={font => setSheetFont(applySheetFont(font))}
-            sheetFormat={sheetFormat}
-            onSheetFormatChange={setSheetFormat}
-            printCorrections={printCorrections}
-            onPrintCorrectionsChange={setPrintCorrections}
-            hideChrome={hideChrome}
-            onHideChromeChange={setHideChrome}
-            exerciseGap={activePage.domain === 'tcm-csc' ? activePage.exerciseGapPx ?? 50 : undefined}
-            onExerciseGapChange={changeExerciseGap}
-            pageBorder={pageBorder}
-            onPageBorderChange={(on) => {
-              setPageBorder(on)
-              storePageBorder(on, activePage.domain)
-            }}
-            sheetMargin={sheetMargin}
-            onSheetMarginChange={(margin) => {
-              setSheetMargin(margin)
-              storeSheetMargin(margin, activePage.domain)
-            }}
+            settings={sheetSettings}
             footerOpen={footerPanelOpen}
-            onToggleFooter={() => {
-              setFooterPanelOpen((open) => !open)
-              if (libreMode) setLibreView('editor')
-            }}
+            onToggleFooter={() => setFooterPanelOpen((open) => !open)}
             libreOpen={libreMode}
             onToggleLibre={() => {
               setLibreView('editor')
+              setFooterPanelOpen(false)
               setLibreMode((prev) => {
                 const next = !prev
                 setLibreSnapshot(next ? pages : null)
@@ -905,7 +900,6 @@ export function GeneratorPage({
                   if (ctx.isFormes || ctx.isCadrans || ctx.isDroites || ctx.isConstruire || ctx.isTransform) {
                     patch.coordLibre = true
                   }
-                  if (ctx.isNumberLibreDomain && !inlineArithmetic) patch.numberLibre = true
                   if (ctx.isPhraseDomain && isPhraseLibreEditable(activeBlock.exerciseType)) {
                     patch.verbGroup = 'libre'
                     patch.phraseItems = activeBlock.phraseItems ?? sheetBlock?.items
@@ -949,6 +943,10 @@ export function GeneratorPage({
           onInputCapture={libreHistory.onInputCapture}
           onBlurCapture={libreHistory.stopInputGroup}
           onPointerDownCapture={libreHistory.stopInputGroup}
+          onKeyDown={libreMode ? libreHistory.onKeyDown : undefined}
+          onFocusCapture={(event) => {
+            if (libreMode && event.target.closest('#activity-editor')) editorFocusRef.current = event.target
+          }}
         >
           {libreMode && (
             <div className="libre-mobile-switch mode-toggle is-2 no-print" role="group" aria-label="Afficher en mode libre">
@@ -972,77 +970,109 @@ export function GeneratorPage({
               </button>
             </div>
           )}
-          {libreMode ? (
-            <LibreSidePanel
-              settings={<ActivitySettings {...settingsPanelProps} />}
-              history={libreHistory}
-              footer={footerPanel}
-              onFocusCapture={(event) => { editorFocusRef.current = event.target }}
-              activeBlock={activeBlock}
-              activeSheet={activeSheet}
-              logistiqueItemsOnSheet={logistiqueItemsOnSheet}
-              logistiqueActiveItems={logistiqueItemsOnSheet
-                ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex)?.items : undefined}
-              safeBlockIndex={safeBlockIndex}
-              isPhraseDomain={ctx.isPhraseDomain}
-              isNumberLibreDomain={ctx.isNumberLibreDomain}
-              liveArithmetic={liveArithmetic}
-              liveTcf={liveTcf}
-              evalMode={evalMode}
-              livePhrase={activeProfile === 'phrase'}
-              theory={activeProfile === 'theorie' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
-              textExercise={activeProfile === 'question-simple' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
-              letterGrid={isWordListProfile(activeProfile) ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
-              logic={activeProfile === 'logique-visuelle' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
-              phraseOrder={activeProfile === 'mots-dans-l-ordre' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
-              syllableContent={activeProfile === 'syllabes-audio' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
-              soutienPhrases={activeProfile === 'sons-a-compter' || activeProfile === 'determinants'
-                ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
-              audioOrderContent={activeProfile === 'association-audio' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
-              grammarSelection={grammarSelection}
-              grammarCanRegenerate={grammarSelection !== null && canRerollGrammarSelection(grammarSelection, activeAsPage)}
-              arithmeticId={arithmeticActivityId(activeBlock, seed, pageIndex, safeBlockIndex, reservedActivityIds)}
-              halfEditor={halfEditor}
-              maxQuestions={ctx.maxQuestions}
-              transientFields={transientFields}
-              onTransientField={writeTransientField}
-              isCalliDomain={ctx.isCalliDomain}
-              isJeuxDomain={ctx.isJeuxDomain}
-              isTcf={ctx.isTcf}
-              isGrammaireExercise={ctx.isGrammaireExercise}
-              isTpmLike={ctx.isTpmLike}
-              isDroites={ctx.isDroites}
-              isConstruire={ctx.isConstruire}
-              soutienKind={ctx.soutienKind}
-              syllableBank={ctx.soutienBank}
-              liveWords={activeProfile === 'mots-illustres' || activeProfile === 'mot-a-trou'}
-              alphaWords={ctx.isAlphabetisation}
-              soutienType1Words={ctx.soutienType1Words}
-              soutienType1WordPool={ctx.soutienType1WordPool}
-              soutienCompletes={ctx.soutienBank?.completes ?? []}
-              soutienBankWords={ctx.soutienBank?.words ?? []}
-              calliIsPhrases={ctx.calliIsPhrases}
-              calliFields={ctx.calliFields}
-              setCalliFieldAt={setCalliFieldAt}
-              removeCalliField={removeCalliField}
-              addCalliExtraWord={addCalliExtraWord}
-              jeuxTemplate={ctx.jeuxTemplate}
-              jeuxText={ctx.jeuxText}
-              tcfNiveau={ctx.tcfNiveau}
-              renderedExercise={tcfExerciseOnConfig(worksheets, pageIndex)}
-              updatePage={updatePage}
-              onRegenerateBlock={regenerateBlock}
-              onClose={() => {
-                // Ferme le panneau sans effacer le contenu libre ni régénérer la fiche.
-                setLibreMode(false)
-                setLibreSnapshot(null)
-              }}
-            />
-          ) : <SettingsPanel {...settingsPanelProps} />}
+          <SettingsPanel
+            settings={settingsPanelProps}
+            header={libreMode && <LibrePanelHeader history={libreHistory} onClose={() => {
+              setLibreMode(false)
+              setLibreSnapshot(null)
+            }} />}
+            presentation={libreMode && (
+              <div className="libre-sheet-settings">
+                <details className="libre-theory-block worksheet-settings">
+                  <summary>Présentation des questions</summary>
+                  <div className="worksheet-settings-list" ref={setWorksheetSettingsTarget} />
+                </details>
+                {ctx.isFormes && activeBlock.coordLibre && (
+                  <div role="group" aria-label="Formes à placer">
+                    <FormesPalette
+                      marks={activeBlock.coordMarks ?? []}
+                      selectedKind={selectedCoordShape}
+                      onSelect={setSelectedCoordShape}
+                    />
+                  </div>
+                )}
+                <details className="libre-theory-block">
+                  <summary>Mise en page de la fiche</summary>
+                  <SheetSettings {...sheetSettings} showChromeControls={false} />
+                </details>
+                <details className="libre-theory-block">
+                  <summary>En-tête et pied de page</summary>
+                  <SheetChromeSettings hideChrome={hideChrome} onChange={setHideChrome} heading={false} />
+                  <FooterFields {...footerFields} />
+                </details>
+              </div>
+            )}
+          >
+            {libreMode && (
+              <LibreActivityEditor
+                activeBlock={activeBlock}
+                activeSheet={activeSheet}
+                logistiqueItemsOnSheet={logistiqueItemsOnSheet}
+                logistiqueActiveItems={logistiqueItemsOnSheet
+                  ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex)?.items : undefined}
+                safeBlockIndex={safeBlockIndex}
+                isPhraseDomain={ctx.isPhraseDomain}
+                isNumberLibreDomain={ctx.isNumberLibreDomain}
+                liveArithmetic={liveArithmetic}
+                liveTcf={liveTcf}
+                evalMode={evalMode}
+                livePhrase={activeProfile === 'phrase'}
+                theory={activeProfile === 'theorie' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
+                textExercise={activeProfile === 'question-simple' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
+                letterGrid={isWordListProfile(activeProfile) ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
+                logic={activeProfile === 'logique-visuelle' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
+                phraseOrder={activeProfile === 'mots-dans-l-ordre' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
+                syllableContent={activeProfile === 'syllabes-audio' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
+                soutienPhrases={activeProfile === 'sons-a-compter' || activeProfile === 'determinants'
+                  ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
+                audioOrderContent={activeProfile === 'association-audio' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
+                grammarSelection={grammarSelection}
+                grammarCanRegenerate={grammarSelection !== null && canRerollGrammarSelection(grammarSelection, activeAsPage)}
+                arithmeticId={arithmeticActivityId(activeBlock, seed, pageIndex, safeBlockIndex, reservedActivityIds)}
+                halfEditor={halfEditor}
+                maxQuestions={ctx.maxQuestions}
+                transientFields={transientFields}
+                onTransientField={writeTransientField}
+                isCalliDomain={ctx.isCalliDomain}
+                isJeuxDomain={ctx.isJeuxDomain}
+                isTcf={ctx.isTcf}
+                isGrammaireExercise={ctx.isGrammaireExercise}
+                isTpmLike={ctx.isTpmLike}
+                isDroites={ctx.isDroites}
+                isConstruire={ctx.isConstruire}
+                soutienKind={ctx.soutienKind}
+                syllableBank={ctx.soutienBank}
+                liveWords={activeProfile === 'mots-illustres' || activeProfile === 'mot-a-trou'}
+                alphaWords={ctx.isAlphabetisation}
+                soutienType1Words={ctx.soutienType1Words}
+                soutienType1WordPool={ctx.soutienType1WordPool}
+                soutienCompletes={ctx.soutienBank?.completes ?? []}
+                soutienBankWords={ctx.soutienBank?.words ?? []}
+                calliIsPhrases={ctx.calliIsPhrases}
+                calliFields={ctx.calliFields}
+                setCalliFieldAt={setCalliFieldAt}
+                removeCalliField={removeCalliField}
+                addCalliExtraWord={addCalliExtraWord}
+                jeuxTemplate={ctx.jeuxTemplate}
+                jeuxText={ctx.jeuxText}
+                tcfNiveau={ctx.tcfNiveau}
+                renderedExercise={tcfExerciseOnConfig(worksheets, pageIndex)}
+                updatePage={updatePage}
+                onRegenerateBlock={regenerateBlock}
+              />
+            )}
+            {libreMode && !activeProfile && (
+              <button type="button" className="button small secondary" onClick={validateManual}>
+                Valider les changements
+              </button>
+            )}
+          </SettingsPanel>
           <WorksheetImageProvider enabled={libreMode} overrides={imageOverrides} onChange={setImageOverrides}>
             <ResultPanel {...resultPanelProps} />
           </WorksheetImageProvider>
-          {!libreMode && footerPanel}
+          {!libreMode && footerPanelOpen && (
+            <FooterSidePanel {...footerFields} onClose={() => setFooterPanelOpen(false)} />
+          )}
         </div>
       </main>
       {saveOpen ? (

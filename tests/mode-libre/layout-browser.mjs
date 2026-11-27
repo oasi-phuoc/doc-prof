@@ -64,11 +64,16 @@ async function checkLayout(page, width, doubleA5) {
   const normal = await snapshot(page)
   const print = width === 1366 ? await pdfSize(page, 'normal') : null
   const domains = await selectDomainOptions(page)
+  await page.locator('.workspace > .settings-panel').evaluate((panel) => { panel.dataset.samePanel = 'true' })
+  assert.equal(await page.getByText('Espacement de l’activité', { exact: true }).count(), 0)
 
   await button(page, 'Mode libre').click()
   assert.equal(await page.locator('.settings-panel').count(), 0)
   assert.equal(await page.locator(editor).count(), 1)
+  assert.equal(await page.locator(`${editor}[data-same-panel=true]`).count(), 1)
   assert.equal(await page.locator('.result-panel').count(), 1)
+  assert.equal(await button(page, 'Paramètres').count(), 0)
+  assert.equal(await page.getByRole('radio', { name: /Paysage — double A5/ }).count(), 0)
   assert.deepEqual(await selectDomainOptions(page), domains)
   await assertNoHorizontalOverflow(page)
 
@@ -85,11 +90,27 @@ async function checkLayout(page, width, doubleA5) {
     const right = await page.locator('.result-panel').boundingBox()
     if (width >= 851) assert(left.x + left.width <= right.x + 1)
     if (width === 1366) {
-      await button(page, 'En-tête et pied de page').click()
-      await page.locator(editor + ' > .is-footer').waitFor()
+      const panel = page.locator(editor)
+      const layout = panel.getByText('Mise en page de la fiche', { exact: true })
+      await layout.click()
+      const format = panel.getByRole('radio', { name: /Paysage — double A5/ })
+      assert.equal(await format.getAttribute('aria-checked'), String(doubleA5))
+      await panel.getByRole('radio', { name: /Sans correction/ }).click()
+      await button(page, 'Imprimer la fiche').waitFor()
+      await button(page, 'Annuler').click()
+      await button(page, 'Imprimer la fiche et le corrigé').waitFor()
+      await layout.click()
+      const footer = panel.getByText('En-tête et pied de page', { exact: true })
+      await footer.click()
+      const title = panel.getByRole('textbox', { name: /Titre de la fiche/ })
+      const previousTitle = await title.inputValue()
+      await title.fill('Fiche témoin du panneau Libre')
+      await page.locator(frame).first().getByText('Fiche témoin du panneau Libre', { exact: true }).first().waitFor()
+      await button(page, 'Annuler').click()
+      assert.equal(await title.inputValue(), previousTitle)
+      assert(await panel.getByRole('button', { name: 'Domaine' }).isVisible())
       assert.equal(await page.locator('.workspace > .is-footer').count(), 0)
-      assert.equal(await page.locator('.result-panel').count(), 1)
-      await button(page, 'Fermer le panneau pied de page').click()
+      await footer.click()
     }
   }
 
@@ -111,6 +132,7 @@ async function checkLayout(page, width, doubleA5) {
   await button(page, 'Fermer le mode libre').click()
   assert.equal(await page.locator(editor).count(), 0)
   assert.equal(await page.locator('.settings-panel').count(), 1)
+  assert.equal(await page.locator('.settings-panel[data-same-panel=true]').count(), 1)
   assert.deepEqual((await snapshot(page)).contents, normal.contents)
 }
 
@@ -197,6 +219,34 @@ async function checkAddition(page) {
   assert.equal(number(await correction.textContent()), 29 + right)
 }
 
+async function checkRelevantSettings(page) {
+  await page.goto('/generateur')
+  const settings = page.locator('.settings-panel')
+  const select = async (field, option) => {
+    await button(settings, field).click()
+    await settings.getByRole('listbox', { name: field, exact: true }).getByRole('option', { name: option }).click()
+  }
+  await button(settings, 'Niveau').waitFor()
+  const original = await page.locator(items).allTextContents()
+  await select('Niveau', 'Avancé')
+  assert.notDeepEqual(await page.locator(items).allTextContents(), original)
+  assert.equal(await settings.getByText('Valeurs du prochain tirage', { exact: true }).count(), 0)
+  await button(page, 'Mode libre').click()
+  const range = page.locator(editor).getByText('Valeurs du prochain tirage', { exact: true })
+  await range.click()
+  await page.locator(editor).getByRole('checkbox', { name: 'Utiliser des valeurs personnalisées' }).check()
+  await page.locator(editor).getByRole('spinbutton', { name: 'De', exact: true }).waitFor()
+  await button(page, 'Fermer le mode libre').click()
+  await select('Thème', /^Fractions$/)
+  assert.equal(await button(settings, 'Niveau').count(), 0)
+  await settings.getByRole('spinbutton', { name: 'Nombre de questions' }).waitFor()
+  await select('Domaine', /Géométrie/)
+  await select('Thème', /Conversions d’unités/)
+  await select('Type d’exercice', /Mesurer des segments/)
+  assert.equal(await settings.getByRole('spinbutton', { name: 'Nombre de questions' }).count(), 0)
+  assert.equal(await settings.getByRole('group', { name: 'Nombre de colonnes' }).count(), 0)
+}
+
 async function checkLocks(page) {
   await page.goto('/generateur')
   await button(page, 'Mode libre').click()
@@ -253,7 +303,7 @@ try {
   await context.addCookies([{ name: 'clairfle-fiche-access', value: 'partial', url: baseURL }])
   const page = await context.newPage()
   page.setDefaultTimeout(15000)
-  for (const width of [320, 390, 768, 1024, 1366, 1440, 1920]) {
+  for (const width of [320, 390, 768, 851, 1024, 1366, 1440, 1920]) {
     await checkLayout(page, width, false)
     console.log(`A4 à ${width} px`)
   }
@@ -263,8 +313,9 @@ try {
   }
   await checkAddition(page)
   await checkLocks(page)
+  await checkRelevantSettings(page)
   await context.close()
-  console.log('9 parcours de présentation, édition, historique et verrous testés.')
+  console.log('10 configurations de présentation, édition, historique et verrous testés.')
 } finally {
   await browser?.close()
   await server?.close()

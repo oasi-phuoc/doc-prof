@@ -11,6 +11,7 @@ import { GlossaryFigure } from './math/GlossaryFigure'
 import { LogiqueBlock } from './item-view/logique'
 import { ExerciseFrame } from './math/ExerciseFrame'
 import { TcfItemView } from './tcf/TcfItemView'
+import { WorksheetSettings } from './generator/WorksheetSettings'
 import { GrammarQuestionView } from './item-view/grammar'
 import { isGrammarQuestion } from '@/grammaire/curriculum/validation'
 import { AlgebraRow } from './item-view/algebra'
@@ -88,6 +89,7 @@ export function ItemView({
   item,
   mode,
   index,
+  settingsLabel = `Question ${index + 1}`,
   itemLabel,
   seriesNumber,
   hideNumber: hideNumberOverride = false,
@@ -120,6 +122,7 @@ export function ItemView({
   item: MathItem
   mode: PreviewMode
   index: number
+  settingsLabel?: string
   itemLabel?: string
   /** Bandeau de série pour le rangement et la logique du TCM CSC. */
   seriesNumber?: number
@@ -259,12 +262,14 @@ export function ItemView({
         isOralSelect ? ' is-oral' : ''
       }${tcfFullWidth ? ' is-tcf-full' : ''}`}
     >
+      <WorksheetSettings label={settingsLabel}>
       {isDraftPad && onToggleDraftGrid ? (
         <button
           type="button"
           className={`no-print draft-grid-chip draft-grid-chip-margin ${draftGrid ? 'on' : 'off'}`}
           onClick={onToggleDraftGrid}
           aria-pressed={draftGrid}
+          title="Grille de brouillon"
         >
           {draftGrid ? 'Grille' : 'Sans'}
         </button>
@@ -346,6 +351,7 @@ export function ItemView({
           </svg>
         </button>
       ) : null}
+      </WorksheetSettings>
       {item.coordScene || (hideNumber && itemLabel===undefined) || seriesNumber!==undefined ? null : <div className="item-number">{itemLabel ?? (grammarPart?.kind==='question'?grammarPart.number:index + 1)}.</div>}
       <div className="item-content">
         {item.layout==='grammar' ? isGrammarQuestion(item.grammar) ? <GrammarQuestionView question={item.grammar} mode={mode}/> : <p>Question grammaticale à vérifier.</p> : null}

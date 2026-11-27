@@ -32,6 +32,14 @@ Dans Chrome, la recette du site de production a vérifié la connexion administr
 
 À chaque lot, inscrire le commit vérifié, les commandes et leurs résultats, les liens vers les preuves et les éventuels cas bloqués. L’état « validé » correspond à une condition de sortie démontrée.
 
+### Panneau d’activité et réglages applicables
+
+La bascule conserve le même panneau de gauche. Le mode Libre ajoute l’édition, l’historique et les réglages repliables de présentation des questions, de mise en page et d’en-tête. Les formats de réponse, sauts de page et commandes de grille du bloc actif apparaissent dans ce panneau. L’aperçu garde la même largeur dans les deux modes. Sur téléphone, la bascule Édition / Aperçu conserve l’activité en cours.
+
+En mode simple, une liste à une seule valeur disparaît et les réglages de quantité ou de difficulté suivent les capacités du générateur. Les plages numériques, les modèles de calligraphie et la personnalisation du contenu des jeux sont accessibles dans le mode Libre. Les bornes et les niveaux des types de mathématiques ont été comparés sur trois graines fixes, avec le même contexte de génération. Les réglages de contenu et de présentation qui dépendent d’un support sont affichés selon les unités effectivement rendues.
+
+`tests/mode-libre/layout-browser.mjs` couvre huit largeurs en A4 et deux en double A5, de 320 à 1 920 px. Le parcours vérifie le maintien du panneau, la visibilité des réglages selon l’activité, l’application des options d’impression et d’en-tête et leur annulation. `tests/mode-libre/structured-browser.mjs` vérifie aussi les sauts de page et l’import d’images initiés dans le panneau.
+
 ## Panneau unique et addition A4
 
 Le commit `03ec309`, basé sur `6cd8c38`, intègre les réglages et les éditeurs spécialisés dans le panneau gauche du mode Libre. L’en-tête et le pied de page utilisent le même emplacement. La bascule Édition / Aperçu apparaît jusqu’à 550 px et rend le focus au dernier champ utilisé.

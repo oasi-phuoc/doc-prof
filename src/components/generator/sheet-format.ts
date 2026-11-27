@@ -1,6 +1,6 @@
 import { isIndependentListProfile, liveEditorProfile, usesIndependentHalves } from './libre/profiles'
 import { pageBlocks, setPageBlock } from '@/math/page-model'
-import type { ExerciseBlock, PageConfig } from '@/math/types'
+import type { ExerciseBlock, PageConfig, WorksheetPage } from '@/math/types'
 import { isLogistiqueDomain } from '@/logistique/catalog'
 
 /** Format de la feuille imprimable. */
@@ -13,6 +13,26 @@ export const SHEET_FORMAT_LABELS: Record<SheetFormat, string> = {
 
 export function isA5DoubleFormat(format: SheetFormat | undefined): boolean {
   return format === 'a5-double-landscape'
+}
+
+export type A5WorksheetPair = { configIndex: number; left?: WorksheetPage; right?: WorksheetPage }
+
+export function pairA5Worksheets(left: WorksheetPage[], right: WorksheetPage[]): A5WorksheetPair[] {
+  const groups = new Map<number, { left: WorksheetPage[]; right: WorksheetPage[] }>()
+  function add(sheets: WorksheetPage[], side: 'left' | 'right') {
+    sheets.forEach((sheet, index) => {
+      const config = sheet.configIndex ?? index
+      const group = groups.get(config) ?? { left: [], right: [] }
+      group[side].push(sheet)
+      groups.set(config, group)
+    })
+  }
+  add(left, 'left')
+  add(right, 'right')
+  return [...groups].sort(([a], [b]) => a - b).flatMap(([configIndex, group]) =>
+    Array.from({ length: Math.max(group.left.length, group.right.length) }, (_, index) => ({
+      configIndex, left: group.left[index], right: group.right[index],
+    })))
 }
 
 /**
@@ -33,6 +53,7 @@ export function pageForA5Half(page: PageConfig, half: 'left' | 'right'): PageCon
     const independent = usesIndependentHalves(profile)
     /** Une référence a le même contenu dans les deux exemplaires. */
     const sharedReference = profile === 'theorie'
+    const sharedLegacyQuestions = logistics && !block.libreId
     const rightLibre = independent && half === 'right' ? block.a5RightLibre : undefined
     const keepCustomized = independent && half === 'left' && (isIndependentListProfile(profile)
       ? Boolean(block.libreItems?.length) : block.libreItems?.some(({ libreId }) => libreId))
@@ -45,8 +66,8 @@ export function pageForA5Half(page: PageConfig, half: 'left' | 'right'): PageCon
       phraseItems: undefined,
       phraseInstruction: undefined,
       libreId: rightLibre?.id ?? (keepCustomized ? block.libreId : undefined),
-      libreItems: rightLibre?.items ?? (keepCustomized || sharedReference || (logistics && !block.libreId) ? block.libreItems : undefined),
-      libreInstruction: rightLibre?.instruction ?? (keepCustomized || sharedReference || (logistics && !block.libreId) ? block.libreInstruction : undefined),
+      libreItems: rightLibre?.items ?? (keepCustomized || sharedReference || sharedLegacyQuestions ? block.libreItems : undefined),
+      libreInstruction: rightLibre?.instruction ?? (keepCustomized || sharedReference || sharedLegacyQuestions ? block.libreInstruction : undefined),
     })
   })
   return next

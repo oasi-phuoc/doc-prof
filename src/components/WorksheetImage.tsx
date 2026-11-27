@@ -1,6 +1,7 @@
-import { createContext, useContext, useState, type ImgHTMLAttributes, type ReactNode } from 'react'
+import { createContext, useContext, useRef, useState, type Dispatch, type ImgHTMLAttributes, type ReactNode, type SetStateAction } from 'react'
 import { VocabImagePicker } from '@/tcf/VocabImagePicker'
-import { readGameImageFile } from '@/jeux/image'
+import { LIBRE_IMAGE_ACCEPT, readLibreImage } from '@/fiches/libre-media'
+import { WorksheetSettings } from '@/components/generator/WorksheetSettings'
 
 type ImageEditor = {
   enabled: boolean
@@ -17,43 +18,57 @@ export function WorksheetPrintImages({ sources, children }: { sources: Record<st
   return <ImageContext.Provider value={{ enabled: false, replacements: sources, edit: () => {} }}>{children}</ImageContext.Provider>
 }
 
-/** Les choix de banque sont sauvegardables ; les fichiers locaux restent en mémoire. */
 export function WorksheetImageProvider({ enabled, overrides, onChange, children }: {
   enabled: boolean
   overrides: Record<string, string>
-  onChange: (next: Record<string, string>) => void
+  onChange: Dispatch<SetStateAction<Record<string, string>>>
   children: ReactNode
 }) {
-  const [temporary, setTemporary] = useState<Record<string, string>>({})
   const [selected, setSelected] = useState<{ src: string; label: string } | null>(null)
   const [error, setError] = useState('')
-  const close = () => { setSelected(null); setError('') }
-  const withoutTemporary = (src: string) => setTemporary((current) => {
-    const next = { ...current }; delete next[src]; return next
-  })
+  const request = useRef(0)
+  const close = () => {
+    request.current += 1
+    setSelected(null)
+    setError('')
+  }
   return (
-    <ImageContext.Provider value={{ enabled, replacements: { ...overrides, ...temporary }, edit: (src, label) => { setError(''); setSelected({ src, label }) } }}>
+    <ImageContext.Provider value={{ enabled, replacements: overrides, edit: (src, label) => {
+      request.current += 1
+      setError('')
+      setSelected({ src, label })
+    } }}>
       {children}
       <VocabImagePicker open={enabled && selected !== null} onClose={close}
         initialQuery={selected?.label && !/^(Image|Scène|Choix|Audio)\b/i.test(selected.label) ? selected.label : ''}
         onPick={(src) => {
           if (!selected) return
-          withoutTemporary(selected.src)
-          onChange({ ...overrides, [selected.src]: src })
+          request.current += 1
+          onChange((current) => ({ ...current, [selected.src]: src }))
         }}
         onUpload={async (file) => {
           if (!selected) return
+          const pending = ++request.current
           try {
-            const image = await readGameImageFile(file)
-            setTemporary((current) => ({ ...current, [selected.src]: image }))
+            const image = await readLibreImage(file)
+            if (request.current !== pending) return
+            onChange((current) => ({ ...current, [selected.src]: image }))
             close()
-          } catch (err) { setError(err instanceof Error ? err.message : 'Impossible de lire cette image.') }
+          } catch (err) {
+            if (request.current === pending) setError(err instanceof Error ? err.message : 'Impossible de lire cette image.')
+          }
         }}
         onReset={() => {
           if (!selected) return
-          withoutTemporary(selected.src)
-          const next = { ...overrides }; delete next[selected.src]; onChange(next); close()
+          onChange((current) => {
+            const next = { ...current }
+            delete next[selected.src]
+            return next
+          })
+          close()
         }}
+        uploadAccept={LIBRE_IMAGE_ACCEPT}
+        uploadLabel="Importer une image"
         uploadError={error}
       />
     </ImageContext.Provider>
@@ -65,7 +80,7 @@ export function WorksheetImage({ editable = true, applyOverrides = true, src, al
   ImgHTMLAttributes<HTMLImageElement> & { editable?: boolean; applyOverrides?: boolean }) {
   const editor = useContext(ImageContext)
   const canEdit = editor.enabled && editable && Boolean(src) && !/^Audio\b/i.test(alt ?? '') && !/qr|game-card-border/.test(className ?? '')
-  return <img {...props} src={src && applyOverrides ? editor.replacements[src] ?? src : src} alt={alt}
+  return <><img {...props} src={src && applyOverrides ? editor.replacements[src] ?? src : src} alt={alt}
     className={`${className ?? ''}${canEdit ? ' is-editable-word-image' : ''}`.trim() || undefined}
     tabIndex={canEdit ? 0 : props.tabIndex} role={canEdit ? 'button' : props.role}
     aria-label={canEdit ? `Modifier l’image${alt ? ` : ${alt}` : ''}` : props['aria-label']}
@@ -79,4 +94,12 @@ export function WorksheetImage({ editable = true, applyOverrides = true, src, al
         event.preventDefault(); event.stopPropagation(); editor.edit(src, alt ?? '')
       } else onKeyDown?.(event)
     }} />
+    {canEdit && src && (
+      <WorksheetSettings onlyInPanel label={alt ? `Image · ${alt}` : 'Image'}>
+        <button type="button" className="button small secondary" onClick={() => editor.edit(src, alt ?? '')}>
+          Remplacer l’image
+        </button>
+      </WorksheetSettings>
+    )}
+  </>
 }

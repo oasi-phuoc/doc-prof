@@ -15,6 +15,7 @@ import type {
 } from '@/tcf/types'
 import { TcfFormMarginIcons } from './TcfFormIcons'
 import { TcfImage } from './TexteSupport'
+import { WorksheetSettings } from '@/components/generator/WorksheetSettings'
 
 const INLINE_BLANK_RE = /_{3,}|_ _ _/g
 
@@ -479,6 +480,7 @@ export function AudioCadre({
             )
           return (
             <div key={q.numero} className="tcf-audio-cadre-q" data-tcf-question-index={q.formModeIndex}>
+              <WorksheetSettings label={`Question ${q.numeroLabel ?? q.numero} · ${audioLabel}`}>
               {forms}
               {onTogglePageBreak && q.formModeIndex != null && q.formModeIndex > 1 && !(questionIndex === 0 && framePageBreakBefore) ? <button
                 type="button"
@@ -489,6 +491,7 @@ export function AudioCadre({
                 onClick={() => onTogglePageBreak(q.formModeIndex!)}>
                 <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M4 2.5h5.2L12 5.3V13.5H4Z M8 7v4 M6 9h4" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" /></svg>
               </button> : null}
+              </WorksheetSettings>
               {body}
             </div>
           )
