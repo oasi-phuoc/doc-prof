@@ -172,6 +172,9 @@ export function GeneratorPage({
     evaluation: evalMode,
   }), [sheetFormat, hideChrome, fontSizes.default, evalMode])
   const worksheets = useMemo(() => buildWorksheets(pages, seed, pointsPerQuestion, logisticsLayout), [pages, seed, pointsPerQuestion, logisticsLayout])
+  const logistiqueItemsOnSheet = useMemo(() =>
+    worksheets[0] && isLogistiqueDomain(worksheets[0].domain) ? worksheets.flatMap((sheet) => sheet.items) : undefined,
+  [worksheets])
   const [libreSnapshot, setLibreSnapshot] = useState<PageConfig[] | null>(
     () => openedFiche?.recipe.libreSnapshot ?? null,
   )
@@ -385,6 +388,7 @@ export function GeneratorPage({
     pageIndex,
     safeBlockIndex,
     seed,
+    evalMode,
     libreMode,
     activeBlock,
     calliFieldsLength: ctx.calliFields.length,
@@ -488,7 +492,7 @@ export function GeneratorPage({
   }
 
   const printInstitutional = isLogistiqueDomain(pages[0]?.domain ?? activePage.domain) && !institutional.documentTitle.trim()
-    ? { ...institutional, documentTitle: logistiqueDocumentTitle(pages, evalMode, evalMode) }
+    ? { ...institutional, documentTitle: logistiqueDocumentTitle(previewSource ?? pages, evalMode, evalMode) }
     : institutional
   const chromeProps = {
     institutional: printInstitutional,
@@ -747,6 +751,9 @@ export function GeneratorPage({
             <LibreSidePanel
               activeBlock={activeBlock}
               activeSheet={activeSheet}
+              logistiqueItemsOnSheet={logistiqueItemsOnSheet}
+              logistiqueActiveItems={logistiqueItemsOnSheet
+                ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex)?.items : undefined}
               safeBlockIndex={safeBlockIndex}
               isPhraseDomain={ctx.isPhraseDomain}
               isNumberLibreDomain={ctx.isNumberLibreDomain}

@@ -426,6 +426,8 @@ export type DivisionStep = {
 
 export type MathItem = {
   logistiqueSource?: { id: string; module: string; revision: string }
+  /** Question ajoutée en Libre et conservée par les nouveaux tirages. */
+  logistiqueRetained?: boolean
   layout: Layout
   grammar?: import('@/grammaire/curriculum/types').GrammarQuestion
   cscTask?: import('@/tcm-csc/task-types').CscTask

@@ -21,7 +21,7 @@ Référence de réalisation dans le [cahier des charges v2.13](cahier-des-charge
 |---|---|---|
 | L0 — Existant et inventaire | Réalisé | Les 9 thèmes et 80 modules CFC, les 7 thèmes et 63 modules AFP et les 715 types sont générés depuis la référence EPCAS. 540 déclarations source archivées, parmi lesquelles 149 références historiques exclues. L’[inventaire](inventaire-epcas.generated.json) repère 16 types sans déclaration en CFC et 7 en AFP. |
 | L1 — Générateur commun | Pilote actif | Sélecteurs communs, feuille, activités, élève, corrigé, grille, titres, impression, Libre générique et recettes versionnées. Les contrôles de catalogue empêchent les recettes incompatibles avec le diplôme ou mélangeant les diplômes. |
-| L1b — Sélection en Évaluation et Libre | En cours | Plusieurs sous-thèmes peuvent alimenter une activité en Évaluation. Le choix, les quotas et la révision de banque sont sauvegardés. La sélection individuelle en Libre reste à raccorder. |
+| L1b — Sélection en Évaluation et Libre | Sélection active | Plusieurs sous-thèmes peuvent alimenter une activité en Évaluation. Le panneau Libre permet de rechercher des questions, consulter leurs corrigés et ajouter une sélection ou un lot. |
 | L1c et L1d — Édition et formats | Partiel | L’éditeur commun, les questions ouvertes, les QCM, les calculs et les cas simples sont pris en charge. Les formats avancés et les médias par question restent à compléter. |
 | L1e — Pagination et titres | A4 et double A5 vérifiés | Enchaînement des questions dans l’espace disponible, numérotation continue et sauts manuels. En double A5, les tableaux et listes longs se poursuivent ligne par ligne. Étendre la mesure aux réglages et aux contenus libres atypiques. |
 | V2.12 — Objectifs, aperçu et cours illustrés | Révision `logistique-references-v002` | 17 modules actifs préparés, avec 31 nouveaux schémas originaux en complément des 17 déjà publiés. Les anciens types et versions de banque restent accessibles aux recettes historiques. [Registre des figures et des introductions](preparation/references-illustrees-v002.json). |
@@ -243,6 +243,8 @@ Les neuf lots ont ajouté 6 552 exercices corrigés. Les 448 dossiers décrive
 ## Reprise opérationnelle
 
 En Évaluation, le sélecteur Sous-thème permet de composer une activité de calcul, de vérification ou de mise en situation avec des modules de plusieurs thèmes. Le tirage utilise une quantité totale ou les quotas de chaque module. Une pénurie dans un module ne reporte pas son quota sur un autre. Le passage en Exercice rétablit le module principal et le retour en Évaluation rappelle la sélection. Les recettes enregistrent les codes, les quantités et la révision. Les questions conservent l’identifiant et le module de leur unité source.
+
+Dans Libre, la banque utilise le type de l’activité, le diplôme et la révision de la fiche. Le formateur peut rechercher des énoncés dans un module, consulter leur corrigé, puis ajouter des questions cochées ou tirer un lot. Les ajouts écartent les questions déjà présentes dans la fiche. Le renouvellement du tirage conserve les ajouts et leurs retouches. L’édition des problèmes permet de reprendre séparément l’énoncé, le calcul du corrigé et la réponse.
 
 La publication des modules est terminée pour les deux diplômes. La publication `logistique-901-v001` a clôturé le premier passage sur le catalogue. La révision `logistique-illustrations-fico-ict-projets-v003` rassemble les cours et les résumés du deuxième passage illustré. Chaque recette conserve sa révision de banque.
 

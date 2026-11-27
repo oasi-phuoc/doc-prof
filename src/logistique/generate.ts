@@ -62,6 +62,12 @@ export function logistiqueModuleCapacities(type: LogistiqueType, modules: string
   return counts
 }
 
+export function logistiqueQuestionItems(type: LogistiqueType, modules: string[], revision?: string): MathItem[] {
+  if (!validLogistiqueSelection(type, { modules })) return []
+  return eligibleUnits(type, logistiquePublication(revision)?.units ?? [], modules)
+    .flatMap((unit) => unitItems(unit, undefined))
+}
+
 export function logistiqueHasSummary(typeId: string, revision?: string): boolean {
   const type = logistiqueType(typeId)
   const publication = logistiquePublication(revision)
@@ -72,8 +78,11 @@ export function logistiqueHasSummary(typeId: string, revision?: string): boolean
 export function logistiqueDocumentTitle(pages: readonly PageConfig[], evalMode = false, includeSelection = true): string {
   const activities = pages.flatMap((page) => pageBlocks(page).flatMap((block) => {
     const type = logistiqueType(block.exerciseType)
-    return type?.domain === page.domain && type.topic === block.topic
-      ? [{ type, modules: (includeSelection && block.logistiqueSelection?.modules) || [type.module] }] : []
+    if (type?.domain !== page.domain || type.topic !== block.topic) return []
+    const selected = (includeSelection && block.logistiqueSelection?.modules) || [type.module]
+    const retained = block.libreItems?.flatMap(({ logistiqueSource, logistiqueRetained }) =>
+      logistiqueRetained && logistiqueSource ? [logistiqueSource.module] : []) ?? []
+    return [{ type, modules: [...selected, ...retained] }]
   }))
   const first = activities[0]?.type
   const codes = [...new Set(activities.flatMap(({ modules }) => modules))].sort()
@@ -89,6 +98,7 @@ export function generateLogistique(
   config: PageConfig,
   seed: number,
   units: readonly LogistiqueUnit[] = logistiquePublication(config.logistiqueBankRevision)?.units ?? [],
+  excludedIds?: ReadonlySet<string>,
 ) {
   const type = logistiqueType(config.exerciseType)
   if (!type || type.domain !== config.domain || type.topic !== config.topic ||
@@ -101,10 +111,11 @@ export function generateLogistique(
   const eligible = eligibleUnits(type, units, modules)
   const reference = isLogistiqueReferenceType(type.id)
   const count = Number.isFinite(config.count) ? Math.max(1, Math.floor(config.count)) : 1
+  const candidates = excludedIds?.size ? eligible.filter(({ id }) => !excludedIds.has(id)) : eligible
   const rng = createRng(seed)
   const selected = reference ? eligible : quantities
-    ? modules.flatMap((code) => shuffle(rng, eligible.filter((unit) => unit.module === code)).slice(0, quantities[code]))
-    : shuffle(rng, eligible).slice(0, count)
+    ? modules.flatMap((code) => shuffle(rng, candidates.filter((unit) => unit.module === code)).slice(0, quantities[code]))
+    : shuffle(rng, candidates).slice(0, count)
   return {
     title: logistiqueDocumentTitle([config]),
     instruction: eligible.length

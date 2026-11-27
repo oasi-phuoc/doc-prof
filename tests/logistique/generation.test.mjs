@@ -8,7 +8,8 @@ const fixture = require('./fixture.json')
 const palletPhoto = require('../../docs/logistique/preparation/306-v004.json').visuals[0]
 const { load, root } = require('../../scripts/gattegno-loader.cjs')
 const catalog = load(root + '/src/logistique/catalog.ts')
-const { generateLogistique, logistiqueDocumentTitle, logistiqueHasSummary } = load(root + '/src/logistique/generate.ts')
+const { generateLogistique, logistiqueDocumentTitle, logistiqueHasSummary, logistiqueQuestionItems } = load(root + '/src/logistique/generate.ts')
+const { availableLogistiqueQuestions, retainLogistiqueQuestions } = load(root + '/src/logistique/libre.ts')
 const { freezeLogistiquePages, validLogistiquePages } = load(root + '/src/logistique/recipe.ts')
 const { currentLogistiquePublication, logistiquePublications } = load(root + '/src/logistique/approved-banks.ts')
 const { splitLogistiquePages } = load(root + '/src/logistique/pagination.ts')
@@ -185,6 +186,29 @@ test('l’évaluation combine des modules de plusieurs thèmes et applique chaqu
     const page = { ...base, logistiqueSelection: selection }
     assert.equal(generateLogistique(page, 32, fixture.units).items.length, 0)
     assert.equal(validLogistiquePages([page]), false)
+  }
+})
+
+test('le choix en Libre écarte les doublons et conserve les questions retouchées lors d’un nouveau tirage', () => {
+  const page = { ...config('AFP', '105', 'maths'), count: 4, logistiqueSelection: { modules: ['105', '308'] } }
+  const type = catalog.logistiqueType(page.exerciseType)
+  const original = generateLogistique(page, 7).items
+  const candidates = logistiqueQuestionItems(type, ['105', '308'])
+  const newQuestion = availableLogistiqueQuestions(candidates, original)
+    .find((item) => item.logistiqueSource.module === '308')
+  assert(newQuestion)
+  assert(!availableLogistiqueQuestions(candidates, [{ prompt: newQuestion.prompt }]).includes(newQuestion))
+  assert.deepEqual(logistiqueQuestionItems(type, ['501']), [])
+
+  const retained = { ...newQuestion, calcAnswer: 'Calcul relu par le formateur', logistiqueRetained: true }
+  const editable = { ...page, libreItems: [...original, retained], libreInstruction: 'Présentez le calcul.' }
+  for (const evalMode of [true, false]) {
+    const draw = retainLogistiqueQuestions(editable, 41, evalMode)
+    assert.equal(draw.libreItems.length, 5)
+    assert.equal(draw.libreItems.at(-1), retained)
+    assert.equal(draw.libreInstruction, editable.libreInstruction)
+    assert.equal(new Set(draw.libreItems.map((item) => item.logistiqueSource.id)).size, 5)
+    if (!evalMode) assert(draw.libreItems.slice(0, -1).every((item) => item.logistiqueSource.module === '105'))
   }
 })
 

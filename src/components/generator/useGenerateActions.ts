@@ -14,7 +14,7 @@ import { isJeuxType } from '@/jeux/templates'
 import { tcfNiveauForConfig } from '@/tcf/catalog'
 import { buildTpfFamilyTestPages, nextLastPoExercise } from '@/tcf/generate'
 import { buildWorksheets } from '@/math/generate'
-import { pageBlocks, setPageBlock } from '@/math/page-model'
+import { pageAsConfig, pageBlocks, setPageBlock } from '@/math/page-model'
 import { randomSeed } from '@/math/rng'
 import type {
   ExerciseBlock,
@@ -26,6 +26,7 @@ import { clearLibreContentFreeze } from '@/components/generator/page-helpers'
 import { blockItemsForConfig } from '@/components/generator/sheet-items'
 import { patchBlockSeedForHalf } from '@/components/generator/sheet-format'
 import { isTpmFamilyExercise, recalcTpmLibreItems } from '@/tpm/libre-recalc'
+import { retainLogistiqueQuestions } from '@/logistique/libre'
 
 export type UseGenerateActionsParams = {
   pages: PageConfig[]
@@ -40,6 +41,7 @@ export type UseGenerateActionsParams = {
   pageIndex: number
   safeBlockIndex: number
   seed: number
+  evalMode: boolean
   libreMode: boolean
   activeBlock: ExerciseBlock
   calliFieldsLength: number
@@ -64,6 +66,7 @@ export function useGenerateActions({
   pageIndex,
   safeBlockIndex,
   seed,
+  evalMode,
   libreMode,
   activeBlock,
   calliFieldsLength,
@@ -150,6 +153,8 @@ export function useGenerateActions({
       const builtSheets = buildWorksheets(
         current.map((p, i) => (i !== pageIndex ? p : cleared)),
         seed,
+        undefined,
+        { evaluation: evalMode },
       )
       const builtBlock = blockItemsForConfig(builtSheets, pageIndex, safeBlockIndex)
       if (!builtBlock || builtBlock.items.length === 0) {
@@ -270,8 +275,12 @@ export function useGenerateActions({
       return
     }
     // Tous domaines : lève l’overlay libre (sinon la graine / le type ne s’appliquent plus).
+    const page = pages[pageIndex]
+    const retained = page ? retainLogistiqueQuestions(pageAsConfig(page, activeBlock),
+      nextSeed * 2 + pageIndex * 7919 + safeBlockIndex * 10007, evalMode) : {}
     updatePage({
       ...release,
+      ...retained,
       contentSeed: nextSeed,
       coordLibre: false,
     })
@@ -360,7 +369,9 @@ export function useGenerateActions({
             gameSelectedIds: reshuffled.gameSelectedIds,
           }
         }
-        return setPageBlock(page, targetBlock, patch)
+        const retained = retainLogistiqueQuestions(pageAsConfig(page, block),
+          seed + nextSeed + index * 7919 + targetBlock * 10007, evalMode)
+        return setPageBlock(page, targetBlock, { ...patch, ...retained })
       }),
     )
   }
