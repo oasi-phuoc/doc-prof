@@ -1308,7 +1308,25 @@
           { "id": "c", "texte": "Au premier étage" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "À côté de la sortie" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "À côté de la sortie" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-boutique-sortie-musee.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-boutique-salle12.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-boutique-premier-etage.png"
+              }
+            ]
+          }
         }
       }
     ],
@@ -2298,7 +2316,25 @@
           { "id": "c", "texte": "Devant la caisse" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Derrière la personne" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Derrière la personne" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-rayon-derriere-femme.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-rayon-deuxieme-etage.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-rayon-devant-caisse.png"
+              }
+            ]
+          }
         }
       }
     ],
@@ -2826,7 +2862,25 @@
           { "id": "c", "texte": "Le téléphone du restaurant" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Le téléphone du bureau" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Le téléphone du bureau" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-telephone-bureau.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-interphone-entree.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-telephone-restaurant.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -2925,7 +2979,25 @@
           { "id": "c", "texte": "Dans un livre de cuisine" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur le menu du restaurant" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur le menu du restaurant" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/extension573-menu-restaurant.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-site-supermarche.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-livre-cuisine-ouvert.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -3597,7 +3669,25 @@
           { "id": "c", "texte": "Devant les caisses" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Au fond du magasin" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Au fond du magasin" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-frais-fond-magasin-naturel.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-frais-entree-magasin-naturel-sans-caisse.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-frais-devant-caisses-naturel.png"
+              }
+            ]
+          }
         },
         "audio": 2
       },
@@ -5794,7 +5884,25 @@
           { "id": "c", "texte": "À côté de la gare" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Derrière elle" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Derrière elle" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-piscine-derriere-femme.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-piscine-etage.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-piscine-cote-gare.png"
+              }
+            ]
+          }
         }
       }
     ],
@@ -6437,7 +6545,25 @@
           { "id": "c", "texte": "Au rayon pour hommes de la boutique" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur le site Internet" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur le site Internet" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-site-vetements-hommes.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-catalogue-vetements-hommes.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-rayon-vetements-hommes.png"
+              }
+            ]
+          }
         },
         "audio": 4
       },
@@ -7815,7 +7941,25 @@
           { "id": "c", "texte": "La place de la Mairie" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Le parc Mon Repos" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Le parc Mon Repos" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-immeuble-pres-parc.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-immeuble-pres-gare.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-immeuble-place-mairie.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -7843,7 +7987,25 @@
           { "id": "c", "texte": "Loin de l’arrêt" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "En face" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "En face" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-immeuble-face-arret.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-immeuble-derriere-arret.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-immeuble-loin-arret.png"
+              }
+            ]
+          }
         }
       }
     ],
@@ -8349,7 +8511,25 @@
           { "id": "c", "texte": "Devant le magasin" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Au fond du magasin" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Au fond du magasin" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-cereales-fond-magasin.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-cereales-caisse.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-cereales-devant-magasin.png"
+              }
+            ]
+          }
         }
       }
     ],
@@ -10496,7 +10676,25 @@
           { "id": "c", "texte": "À la boulangerie" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Au centre commercial voisin" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Au centre commercial voisin" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-glace-centre-commercial.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-glace-maison.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-glace-boulangerie.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -13587,7 +13785,25 @@
           { "id": "c", "texte": "Une villa" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Un studio" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Un studio" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-studio-piece-unique.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-villa-jardin.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -15112,7 +15328,25 @@
           { "id": "c", "texte": "Dans l’armoire du couloir" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur l’étagère près de la fenêtre" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur l’étagère près de la fenêtre" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-livres-etagere-fenetre.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-livres-table-porte.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-livres-armoire-couloir.png"
+              }
+            ]
+          }
         },
         "audio": 2
       },
@@ -16432,7 +16666,25 @@
           { "id": "c", "texte": "Seulement des boissons froides" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Des boissons chaudes ou froides" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Des boissons chaudes ou froides" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-boissons-chaudes-froides.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-boissons-chaudes.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-boissons-froides.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -18094,7 +18346,25 @@
           { "id": "c", "texte": "Devant la boîte aux lettres" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Dans le local" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Dans le local" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-velos-dans-local.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-velos-couloir.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-velos-boites-lettres.png"
+              }
+            ]
+          }
         },
         "audio": 3
       },
@@ -18109,7 +18379,25 @@
           { "id": "c", "texte": "Dans l’ascenseur" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur la boîte aux lettres" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur la boîte aux lettres" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-nom-boite-lettres.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-nom-porte-garage.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-nom-ascenseur.png"
+              }
+            ]
+          }
         },
         "audio": 4
       },
@@ -19518,7 +19806,25 @@
           { "id": "c", "texte": "Dans la vitrine voisine" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur le site Internet" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur le site Internet" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-site-vetements-hommes.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-reserve-vetements-hommes.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-vitrine-vetements-hommes.png"
+              }
+            ]
+          }
         }
       }
     ],
@@ -22263,7 +22569,25 @@
           { "id": "c", "texte": "À côté de la forêt" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Entre la piscine et le parc" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Entre la piscine et le parc" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-hotel-entre-piscine-parc.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-hotel-derriere-plage.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-hotel-cote-foret.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -22277,7 +22601,25 @@
           { "id": "c", "texte": "Au bord du lac" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Derrière la plage" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Derrière la plage" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-camping-derriere-plage.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-camping-entre-piscine-parc.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-camping-bord-lac.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -22837,7 +23179,25 @@
           { "id": "c", "texte": "Le tennis et le golf" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "La voile et la natation" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "La voile et la natation" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-duo-voile-natation.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-duo-kayak-ski.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-duo-tennis-golf.png"
+              }
+            ]
+          }
         }
       }
     ],
@@ -23208,7 +23568,25 @@
           { "id": "c", "texte": "Le parc zoologique" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Le château d’Arnajon" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Le château d’Arnajon" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-chateau-provencal.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co306-batiment-theatre-dessine.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-parc-zoologique.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -23374,7 +23752,25 @@
           { "id": "c", "texte": "Uniquement au bord du fleuve" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Dans les rues ou dans les salles de concert" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Dans les rues ou dans les salles de concert" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-concert-rue-salle.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-concert-musee.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-concert-bord-fleuve.png"
+              }
+            ]
+          }
         }
       }
     ],
@@ -23557,7 +23953,25 @@
           { "id": "c", "texte": "Serveur, cuisinier et boulanger" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Comédien, chanteur et musicien" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Comédien, chanteur et musicien" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-trio-metiers-spectacle.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-trio-metiers-sante.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-trio-metiers-restauration.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -24120,7 +24534,25 @@
           { "id": "c", "texte": "Au supermarché" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Dans le hall" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Dans le hall" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-discussion-hall.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-discussion-toit.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-discussion-supermarche.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -24148,7 +24580,25 @@
           { "id": "c", "texte": "Dans les appartements" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Dans les couloirs" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Dans les couloirs" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-interdit-fumer-couloir.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-interdit-fumer-terrasse.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-interdit-fumer-appartement.png"
+              }
+            ]
+          }
         }
       }
     ],
@@ -24993,7 +25443,25 @@
           { "id": "c", "texte": "Devant la boutique" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "À la porte numéro 1" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "À la porte numéro 1" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-guide-porte1.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-guide-premier-etage.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-guide-devant-boutique.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -26176,7 +26644,25 @@
           { "id": "c", "texte": "Sur la porte du local à vélos" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur la boîte aux lettres" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur la boîte aux lettres" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-nom-boite-lettres.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-nom-porte-garage.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-nom-porte-local-velos.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -26251,7 +26737,25 @@
           { "id": "c", "texte": "Au fond du jardin" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "À côté du garage" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "À côté du garage" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-local-velos-cote-garage.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-local-velos-dernier-etage.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-local-velos-fond-jardin.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -26265,7 +26769,25 @@
           { "id": "c", "texte": "Dans le garage" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Dans le hall d'entrée" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Dans le hall d'entrée" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-reglement-hall.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-reglement-local-velos.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-reglement-garage.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -26279,7 +26801,25 @@
           { "id": "c", "texte": "Sur le toit" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Dans l'ascenseur" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Dans l'ascenseur" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-mot-ascenseur.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-mot-balcon.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-mot-toit.png"
+              }
+            ]
+          }
         }
       }
     ],
@@ -26370,7 +26910,25 @@
           { "id": "c", "texte": "Sur le toit" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Devant les boîtes aux lettres" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Devant les boîtes aux lettres" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-discussion-hall.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-discussion-garage.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-discussion-toit.png"
+              }
+            ]
+          }
         }
       }
     ],
@@ -26542,7 +27100,25 @@
           { "id": "c", "texte": "Sur le parking" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Dans les couloirs" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Dans les couloirs" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-femme-fume-couloir.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-femme-fume-jardin.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-femme-fume-parking.png"
+              }
+            ]
+          }
         }
       }
     ],
@@ -27322,7 +27898,25 @@
           { "id": "c", "texte": "À l'office du tourisme" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Au distributeur automatique" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Au distributeur automatique" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-distributeur-tickets.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-kiosque-journaux.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-office-tourisme.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -27350,7 +27944,25 @@
           { "id": "c", "texte": "À côté de la poste" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "En face de la gare" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "En face de la gare" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-metro-face-gare.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-metro-derriere-mairie.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-metro-cote-poste.png"
+              }
+            ]
+          }
         }
       }
     ],
@@ -27552,7 +28164,25 @@
           { "id": "c", "texte": "À côté du parc" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "En face du commissariat" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "En face du commissariat" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-metro-face-commissariat.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-metro-derriere-mairie.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-metro-cote-parc.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -27780,7 +28410,25 @@
           { "id": "c", "texte": "Une carte de réduction" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Une copie de son billet électronique" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Une copie de son billet électronique" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/extension573-billet-avion.webp",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/extension573-ticket-metro.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-carte-reduction.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -27874,7 +28522,25 @@
           { "id": "c", "texte": "Sur le plan de la ville" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur le tableau des départs" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur le tableau des départs" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-tableau-departs-aeroport.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-site-hotel.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-plan-ville-ivoire.png"
+              }
+            ]
+          }
         }
       }
     ],
@@ -28134,7 +28800,25 @@
           { "id": "c", "texte": "Près de l'entrée" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Au fond à droite" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Au fond à droite" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-rayon-bd-fond-droite.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-rayon-bd-fond-gauche.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-rayon-bd-entree.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -28533,7 +29217,25 @@
           { "id": "c", "texte": "Sur un muret" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur un banc" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur un banc" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-professeure-banc.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-professeure-chaise.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-professeure-muret.png"
+              }
+            ]
+          }
         },
         "audio": 1
       },
@@ -29603,7 +30305,25 @@
           { "id": "c", "texte": "Dans son carnet" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur les murs du bureau" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur les murs du bureau" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-images-mur-bureau.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-images-porte-cuisine.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-images-carnet.png"
+              }
+            ]
+          }
         }
       }
     ],
@@ -29990,7 +30710,25 @@
           { "id": "c", "texte": "Sur le toit" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur le balcon" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur le balcon" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-repas-balcon.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-repas-jardin.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-repas-toit.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -30929,7 +31667,25 @@
           { "id": "c", "texte": "À l'office du tourisme" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "À l'accueil de la gare" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "À l'accueil de la gare" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-remboursement-accueil-gare.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-remboursement-train.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-remboursement-tourisme.png"
+              }
+            ]
+          }
         }
       }
     ],
@@ -31382,7 +32138,25 @@
           { "id": "c", "texte": "Du réfrigérateur" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "De la voiture" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "De la voiture" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-courses-voiture.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-courses-placard.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-courses-frigo.png"
+              }
+            ]
+          }
         },
         "audio": 1
       },
@@ -31700,7 +32474,25 @@
           { "id": "c", "texte": "Seulement à la campagne" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Au centre-ville et près des gares" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Au centre-ville et près des gares" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-stations-velos-centre-gare.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-stations-velos-aeroport.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-stations-velos-campagne.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -32143,7 +32935,25 @@
           { "id": "c", "texte": "À la sortie de l'aéroport" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Au comptoir d'enregistrement" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Au comptoir d'enregistrement" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-comptoir-enregistrement-avion.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-service-bagages.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-sortie-aeroport.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -33506,7 +34316,25 @@
           { "id": "c", "texte": "À côté de la cantine" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "À côté de la bibliothèque" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "À côté de la bibliothèque" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-directeur-cote-biblio.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-directeur-cote-gymnase.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-directeur-cote-cantine.png"
+              }
+            ]
+          }
         }
       }
     ]
@@ -34193,7 +35021,25 @@
           { "id": "c", "texte": "Dans sa chambre" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Dehors" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Dehors" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-repas-dehors.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-repas-domicile-famille.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-repas-chambre.png"
+              }
+            ]
+          }
         }
       }
     ]
@@ -36070,7 +36916,25 @@
           { "id": "c", "texte": "Chez elle" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "À l'entrée" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "À l'entrée" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-rdv-entree-theatre.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-rdv-salon.png"
+              }
+            ]
+          }
         },
         "audio": 3
       },
@@ -36857,7 +37721,25 @@
           { "id": "c", "texte": "À l'arrêt du bus" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "À l'entrée du magasin" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "À l'entrée du magasin" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-attendre-entree-magasin.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-arret-bus.png"
+              }
+            ]
+          }
         },
         "audio": 3
       }
@@ -37484,7 +38366,25 @@
           { "id": "c", "texte": "Dans l'école" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Devant la mairie" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Devant la mairie" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-expo-devant-mairie.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-expo-devant-gare.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-expo-dans-ecole.png"
+              }
+            ]
+          }
         },
         "audio": 1
       },
@@ -39710,7 +40610,25 @@
           { "id": "c", "texte": "Au restaurant" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur le site de l'agence" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur le site de l'agence" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-site-agence-emploi.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/co306-bibliotheque-dessine.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
+              }
+            ]
+          }
         },
         "audio": 1
       },
@@ -42127,7 +43045,25 @@
           { "id": "c", "texte": "Sur son bureau" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Au tableau" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Au tableau" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-calendrier-tableau.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-calendrier-porte.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-calendrier-bureau-prof.png"
+              }
+            ]
+          }
         }
       }
     ],
@@ -42765,7 +43701,25 @@
           { "id": "c", "texte": "Dans la bibliothèque" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "À l'entrée de la salle" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "À l'entrée de la salle" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-parapluie-entree-classe.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-parapluie-bureau-prof.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-parapluie-bibliotheque.png"
+              }
+            ]
+          }
         },
         "audio": 2
       },
@@ -42780,7 +43734,25 @@
           { "id": "c", "texte": "Ses affiches" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Ses livres" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Ses livres" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-livres-histoire-ivoire.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-journaux-pluriel.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-affiches-ivoire.png"
+              }
+            ]
+          }
         },
         "audio": 2
       },
@@ -43432,7 +44404,25 @@
           { "id": "c", "texte": "Les horaires du train" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Les résultats de la classe" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Les résultats de la classe" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-resultats-classe-document.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/extension573-facture.webp"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-horaires-train-document.png"
+              }
+            ]
+          }
         },
         "audio": 3
       },
@@ -44913,7 +45903,25 @@
           { "id": "c", "texte": "À l'entrée du magasin" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "À côté des livres" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "À côté des livres" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-disques-cote-livres.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-disques-cote-vetements.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-disques-entree-magasin.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -45220,7 +46228,25 @@
           { "id": "c", "texte": "Le permis et un CV" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Le billet et une pièce d'identité" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Le billet et une pièce d'identité" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-billet-train-identite.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-passeport-facture.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-permis-cv.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -45370,7 +46396,25 @@
           { "id": "c", "texte": "Un passeport et un billet" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Un CV et une photocopie de la pièce d'identité" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Un CV et une photocopie de la pièce d'identité" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-cv-photocopie-identite.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-diplome-facture.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-passeport-billet-ivoire.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -49335,7 +50379,25 @@
           { "id": "c", "texte": "Chez sa cousine" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Dans un restaurant près de son hôtel" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Dans un restaurant près de son hôtel" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-restaurant-pres-hotel.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-restaurant-entreprise.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-repas-domicile.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -49911,7 +50973,25 @@
           { "id": "c", "texte": "Au premier étage" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Derrière elle" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Derrière elle" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-rayon-derriere-femme.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-rayon-gauche-femme.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-rayon-premier-etage.png"
+              }
+            ]
+          }
         },
         "audio": 3
       },
@@ -50798,7 +51878,25 @@
           { "id": "c", "texte": "Dans sa chambre" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Dehors" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Dehors" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-repas-dehors.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-repas-domicile-famille.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-repas-chambre.png"
+              }
+            ]
+          }
         },
         "audio": 2
       },
@@ -50958,7 +52056,25 @@
           { "id": "c", "texte": "Devant la vitrine d'une librairie" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Devant le menu du restaurant" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Devant le menu du restaurant" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-personne-menu-restaurant.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-personne-programme-cinema.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-personne-vitrine-librairie.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -51349,7 +52465,25 @@
           { "id": "c", "texte": "Autour du cou" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur sa tête" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur sa tête" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-objet-noir-tete.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-objet-noir-pieds.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-objet-noir-cou.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -52665,7 +53799,25 @@
           { "id": "c", "texte": "Sur la table de la cuisine" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur le bureau" }
+          "lignes": { "nb_lignes": 1, "reponse_modele": "Sur le bureau" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-objets-sur-bureau.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-objets-sur-lit.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-objets-table-cuisine.png"
+              }
+            ]
+          }
         }
       },
       {
