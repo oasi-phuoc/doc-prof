@@ -1,18 +1,29 @@
-# Relevé des contrôles et des dimensions, référence L0
+# Relevé des contrôles et des dimensions, lot L0
 
-La [preuve JSON](audit-controles.json) consigne six parcours du générateur existant avec Chromium 156.0.8078.79. La fenêtre mesure 1 366 × 900 px ou 390 × 900 px. Le navigateur utilise une session administrateur synthétique locale. Les mesures concernent le commit `e72ec7c24`, dont la référence complète figure dans l’[inventaire des types](audit-types.md).
+Le [relevé JSON](audit-controles.json) couvre 13 parcours sur le commit `561d0a0`, avec Chromium 156.0.8078.79 et une hauteur de fenêtre de 900 px. Les essais utilisent un accès administrateur synthétique local. Ils couvrent l’addition en ligne et le module 105 de Logistique AFP et CFC. Le script compare les contrôles visibles, le contenu de l’aperçu, le format, le nombre de pages et le texte extrait des PDF du parcours normal et du mode Libre.
 
-| Fiche | Largeur de fenêtre | Variation du cadre à l’ouverture de Libre | Panneaux Réglages et Libre ouverts | Pages PDF en Libre |
-|---|---:|---:|---|---:|
-| Algèbre, addition | 1 366 px | +1,00 × +1,42 px | Oui | 2 |
-| Logistique CFC, 105 Mathématiques | 1 366 px | +1,00 × +1,42 px | Oui | 4 |
-| Logistique AFP, 105 Mathématiques | 1 366 px | +1,00 × +1,42 px | Oui | 2 |
-| Algèbre, addition | 390 px | 0 × 0 px | Oui | 2 |
-| Logistique CFC, 105 Mathématiques | 390 px | 0 × 0 px | Oui | 4 |
-| Logistique AFP, 105 Mathématiques | 390 px | 0 × 0 px | Oui | 2 |
+| Fiche | Largeurs de fenêtre | Écart du cadre à l’ouverture de Libre | Identité du contenu à la fermeture |
+|---|---|---|---|
+| Algèbre A4 | 320, 390, 768 px | 0 × 0 px | 3 sur 3 |
+| Algèbre A4 | 1 024, 1 366, 1 440, 1 920 px | +1,00 × +1,42 px | 4 sur 4 |
+| Logistique AFP et CFC A4 | 390 px | 0 × 0 px | 2 sur 2 |
+| Logistique AFP et CFC A4 | 1 366 px | +1,00 × +1,42 px | 2 sur 2 |
+| Algèbre double A5 | 390 et 1 366 px | 0 × 0 px et +1,00 × +0,70 px | 0 sur 2 |
 
-Le cadre passe de 519 × 734 px à 520 × 735,42 px à 1 366 px de largeur. L’écart en hauteur dépasse la tolérance initiale de 1 px de l’arbitrage ARB-07. À 390 px, il mesure 308 × 435,59 px dans les deux modes. Le panneau Réglages reste monté à l’ouverture de Libre dans les six cas. Les listes JSON donnent les libellés, le type HTML et l’état activé ou désactivé des contrôles dans chacun des panneaux.
+Les deux panneaux restent montés dans les 13 parcours. L’aperçu conserve le texte des questions à l’ouverture de Libre. Le texte extrait, le nombre de pages et les dimensions PDF concordent entre les deux modes dans les 13 cas. Les mesures sont de 594,96 × 841,92 pt pour les PDF A4 portrait et de 841,92 × 594,96 pt pour les PDF double A5. Le relevé double A5 signale que le texte de l’aperçu diffère après fermeture. La variation en hauteur de 1,42 px de l’A4 au bureau dépasse la tolérance écran initiale de 1 px.
 
-Chaque PDF a une taille de 594,96 × 841,92 pt. Ce relevé donne une référence de pages et de format. Il reste à comparer les sorties normal et Libre, à mesurer les réserves, à fixer la tolérance physique des exercices de mesure et à compléter le relevé par navigateur et format.
+### Effet des réglages sur l’addition à 1 366 px
 
-L’effet des valeurs de contrôle, les états conditionnels, les autres profils et le parcours Logistique associant plusieurs sous-modules restent à tester. La présence d’un contrôle dans le DOM ne prouve pas sa conformité.
+| Contrôle | Observation |
+|---|---|
+| Nombre de questions | Les valeurs 2 et 3 laissent huit questions visibles lors du relevé immédiat, en mode normal et Libre. |
+| Audio | Le sélecteur est absent, conformément au cas négatif attendu. |
+| Premier opérande | Les valeurs 17 et 29 ne se reflètent pas dans le corrigé pendant la saisie ni après la sortie du champ dans ce parcours. |
+
+Pour reproduire le relevé sur le code de référence, utiliser le script avec Chromium, `pdfinfo` et `pdftotext`. La variable `CHROMIUM_PATH` peut indiquer un autre binaire Chromium. La navigation et le tirage de chaque fiche utilisent les actions du générateur. Les comparaisons se font à l’intérieur de chaque tirage.
+
+```sh
+node scripts/audit-mode-libre.mjs /tmp/doc-prof-mode-libre controles
+```
+
+La validation par contrôle et par variante reste à étendre, de même que les mesures physiques des exercices de précision, les pages avec supports longs et les parcours sur d’autres navigateurs.

@@ -1,10 +1,10 @@
 # Suivi de la refonte du mode Libre
 
-**Mise à jour le 26 novembre 2026**
+**Mise à jour le 27 novembre 2026**
 
 - [Cahier des charges validé — V1.2](cahier-des-charges.md)
 - [Référence du code consulté pour la publication](https://github.com/oasi-phuoc/doc-prof/commit/c24a995b76c68c284b2614e113120cdb2873ba81)
-- [Cahier des charges Logistique V2.12](../logistique/cahier-des-charges.md) et [suivi Logistique](../logistique/avancement-cahier-des-charges-20261126.md)
+- [Cahier des charges Logistique V2.13](../logistique/cahier-des-charges.md) et [suivi Logistique](../logistique/avancement-cahier-des-charges-20261126.md)
 
 ## Prérequis Cloudflare
 
@@ -20,13 +20,13 @@ Dans Chrome, la recette du site de production a vérifié la connexion administr
 |---|---|---|
 | Prérequis comptes | Validé en production | Recette Cloudflare, contrôle D1 et tests des comptes ci-dessus. |
 | Cahier des charges | V1.2 validée | Exigences, arbitrages et critères de réception approuvés et publiés. |
-| L0 — Inventaire exécutable | En cours | Référence `e72ec7c24` figée et build vérifié. [Inventaire des types](audit-types.md), [relevé écran et PDF](audit-controles.md) et [état des recettes](audit-recettes.md) disponibles. Compléter les variantes, droits, profils, effets des contrôles et réouvertures historiques. |
+| L0 — Inventaire exécutable | En cours | Référence de reprise `561d0a0`. [4 086 contextes](audit-types.md), [13 comparaisons écran et PDF](audit-controles.md) et [7 recettes témoins](audit-recettes.md). Poursuivre les vérifications par profil, les droits individuels et les effets des réglages. Les erreurs de génération et l’écart en double A5 sont consignés. |
 | L1 — Générateur et contrats d’état | À lancer après L0 | Panneau unique, géométrie de l’aperçu, identité des unités, verrous, historique et contrat de reprise. |
 | L2 — Pilotes | À lancer après L1 | Calcul avec recalcul, QCM illustré et document avec sous-questions. Prouver les parcours de bout en bout avant de généraliser. |
 | L3 — Mathématiques et tests | À lancer après les pilotes | Mathématiques, géométrie, logique, TPM et TCM, selon les profils recensés. |
 | L4 — Autres profils imprimables | À lancer après les pilotes | Alphabétisation, Soutien FR, Gattegno, calligraphie et cartes. |
 | L5 — Grammaire et TCF/TPF | À lancer après les pilotes | Banques graduées, supports, audio, snapshots et barèmes. |
-| L6 — Société et Logistique AFP/CFC | À lancer après les pilotes | Partir du générateur commun déjà raccordé aux modules Logistique 101 et 105. Intégrer le type Objectifs et aperçu ajouté en V2.12 et valider les deux diplômes. Les chiffres L0 restent associés à la référence V2.11. |
+| L6 — Société et Logistique AFP/CFC | À lancer après les pilotes | Partir du générateur commun et de la référence Logistique V2.13 recensée en L0, avec les six types de contenu et les variantes Complet et Résumé. Valider les deux diplômes et leurs règles de rendu. |
 | L7 — Cas d’échec et ergonomie avancée | À lancer après le socle | Cas de reprise, quotas, médias durables, pagination et actions en série. |
 | L8 — Réception complète | À lancer après la couverture | Critères de réception, preuves par contexte, accessibilité, performances et revue. |
 

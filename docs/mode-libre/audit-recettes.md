@@ -24,3 +24,14 @@ Les deux suites ci-dessous passent 10 tests sur 10 après correction d’une fix
 ```sh
 node --test tests/logistique/generation.test.mjs tests/interactive/fiches-access.test.mjs
 ```
+
+## Reprise du 27 novembre 2026
+
+La [preuve JSON](audit-recettes.json) couvre sept recettes témoins au commit `561d0a0` avec la graine `20261126`. Le script passe chaque fixture par le lecteur de recettes v1, la réécrit avec le constructeur de recettes et compare les items à la réouverture. Les sept cas passent, dont les migrations TCM vers TPM et TCF vers TPF, un thème négatif Gattegno, une compréhension orale de Grammaire et les deux anciens formats de Calligraphie. Le témoin Libre préserve le calcul édité, sa réponse calculée, son instantané et la référence de remplacement d’image.
+
+```sh
+node scripts/audit-mode-libre.mjs /tmp/doc-prof-mode-libre recettes
+node --test tests/logistique/generation.test.mjs tests/interactive/fiches-access.test.mjs
+```
+
+Les 16 tests Logistique et droits d’accès passent sur cette révision. Le contrôle TypeScript, la compilation Vite et le lint passent également. Vite relève la taille de certains bundles et des médias interactifs absents du checkout partiel. Le lint signale des avertissements existants. La couverture des recettes reste à étendre aux autres schémas et aux réouvertures via le navigateur, ainsi qu’aux médias persistés et au brouillon multi-onglets.
