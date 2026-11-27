@@ -160,6 +160,7 @@ import { module809 as theory809 } from './banks/module-809-v002.generated.ts'
 import { module901 as theory901 } from './banks/module-901-v002.generated.ts'
 import { module902 as theory902 } from './banks/module-902-v002.generated.ts'
 import { foundationExercises } from './banks/fondations-exercices-v003'
+import { serviceClientExercises } from './banks/service-client-exercices-v003'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
 
@@ -361,6 +362,11 @@ const publication_projets_v002: LogistiquePublication = {
   units: [...publication_ict_v002.units.filter(({ id }) => !theoryIds_projets.has(id)), ...theories_projets],
 }
 
+const foundationExercisePublication: LogistiquePublication = {
+  revision: 'logistique-exercices-fondations-v003',
+  units: [...publication_projets_v002.units, ...foundationExercises],
+}
+
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
@@ -423,9 +429,10 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   publication_fico_v002,
   publication_ict_v002,
   publication_projets_v002,
+  foundationExercisePublication,
   {
-    revision: 'logistique-exercices-fondations-v003',
-    units: [...publication_projets_v002.units, ...foundationExercises],
+    revision: 'logistique-exercices-service-client-v003',
+    units: [...foundationExercisePublication.units, ...serviceClientExercises],
   },
 ]
 

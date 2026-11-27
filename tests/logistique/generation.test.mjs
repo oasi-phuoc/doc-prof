@@ -120,21 +120,27 @@ test('le tirage est déterministe et limité aux unités approuvées pour le dip
   assert.deepEqual(generateLogistique({ ...maths, domain: 'logistique-cfc' }, 109, fixture.units).items, [])
 })
 
-test('les banques Fondations augmentent la capacité par diplôme et préservent les tirages enregistrés', () => {
+test('les banques enrichies augmentent la capacité par diplôme et préservent les tirages enregistrés', () => {
   const additions = { CFC: { maths: 5, verification: 5, situation: 4 }, AFP: { maths: 4, verification: 5, situation: 3 } }
-  for (const type of catalog.logistiqueTypes.filter(({ module }) => /^10[0-9]$|^110$/.test(module))) {
-    const extra = additions[type.diploma][type.kind]
-    if (!extra) continue
-    const page = { ...config(type.diploma, type.module, type.kind), count: 30 }
-    const historical = { ...page, logistiqueBankRevision: 'logistique-theories-projets-v002' }
-    const expanded = { ...page, logistiqueBankRevision: 'logistique-exercices-fondations-v003' }
-    const before = generateLogistique(historical, 20261127)
-    const after = generateLogistique(expanded, 20261127)
-    assert.equal(after.bankQuestionCap, before.bankQuestionCap + extra, type.id)
-    const prompts = new Set(after.items.map(({ prompt }) => prompt))
-    assert.equal(prompts.size, after.items.length, type.id)
-    assert(before.items.every(({ prompt }) => prompts.has(prompt)), type.id)
-    assert.deepEqual(generateLogistique(freezeLogistiquePages([historical])[0], 20261127), before, type.id)
+  const lots = [
+    [/^10[0-9]$|^110$/, 'logistique-theories-projets-v002', 'logistique-exercices-fondations-v003'],
+    [/^20[1-9]$/, 'logistique-exercices-fondations-v003', 'logistique-exercices-service-client-v003'],
+  ]
+  for (const [pattern, previousRevision, expandedRevision] of lots) {
+    for (const type of catalog.logistiqueTypes.filter(({ module }) => pattern.test(module))) {
+      const extra = additions[type.diploma][type.kind]
+      if (!extra) continue
+      const page = { ...config(type.diploma, type.module, type.kind), count: 30 }
+      const historical = { ...page, logistiqueBankRevision: previousRevision }
+      const expanded = { ...page, logistiqueBankRevision: expandedRevision }
+      const before = generateLogistique(historical, 20261127)
+      const after = generateLogistique(expanded, 20261127)
+      assert.equal(after.bankQuestionCap, before.bankQuestionCap + extra, type.id)
+      const prompts = new Set(after.items.map(({ prompt }) => prompt))
+      assert.equal(prompts.size, after.items.length, type.id)
+      assert(before.items.every(({ prompt }) => prompts.has(prompt)), type.id)
+      assert.deepEqual(generateLogistique(freezeLogistiquePages([historical])[0], 20261127), before, type.id)
+    }
   }
 })
 

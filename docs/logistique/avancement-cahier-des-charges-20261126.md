@@ -146,7 +146,25 @@ La révision `logistique-exercices-fondations-v003` ajoute 154 exercices corrig�
 | 109 | 10 / 8 | 11 / 11 | 8 / 7 |
 | 110 | 11 / 8 | 11 / 10 | 9 / 7 |
 
-Les 66 parcours A4 et PDF ont été vérifiés sur la banque complète de chaque type dans les deux diplômes. Le corrigé accompagne la fiche élève et les questions restent numérotées en continu. La réserve minimale au pied était de 38,73 px. La révision antérieure reste accessible aux recettes déjà enregistrées. Poursuivre avec le thème Service client.
+Les 66 parcours A4 et PDF ont été vérifiés sur la banque complète de chaque type dans les deux diplômes. Le corrigé accompagne la fiche élève et les questions restent numérotées en continu. La réserve minimale au pied était de 38,73 px. La révision antérieure reste accessible aux recettes déjà enregistrées.
+
+### Service client — 201 à 209
+
+La révision `logistique-exercices-service-client-v003` ajoute 126 exercices corrigés. Elle comprend 45 calculs, 45 vérifications et 36 mises en situation. L’AFP dispose de 108 de ces nouvelles unités. [Banque Service client](../../src/logistique/banks/service-client-exercices-v003.ts).
+
+| Module | Calculs CFC / AFP | Vérifications CFC / AFP | Situations CFC / AFP |
+|---|---:|---:|---:|
+| 201 | 10 / 7 | 11 / 11 | 9 / 7 |
+| 202 | 10 / 8 | 11 / 11 | 9 / 7 |
+| 203 | 12 / 9 | 12 / 11 | 9 / 7 |
+| 204 | 12 / 8 | 12 / 11 | 9 / 7 |
+| 205 | 12 / 8 | 12 / 11 | 9 / 7 |
+| 206 | 12 / 9 | 12 / 11 | 9 / 7 |
+| 207 | 12 / 9 | 11 / 10 | 9 / 7 |
+| 208 | 12 / 9 | 12 / 11 | 9 / 7 |
+| 209 | 12 / 9 | 12 / 11 | 9 / 7 |
+
+Les 54 parcours A4 et PDF couvrent la capacité complète des trois types, avec corrigé et numérotation continue. La réserve minimale mesurée au pied était de 58,80 px.
 
 ## Reprise opérationnelle
 
@@ -154,10 +172,10 @@ La publication des modules est terminée pour les deux diplômes. La publication
 
 | Diplôme | Modules | Types actifs | Problèmes de calcul | Questions de vérification | Situations |
 |---|---:|---:|---:|---:|---:|
-| CFC | 80 | 480 | 500 | 501 | 338 |
-| AFP | 63 | 378 | 293 | 400 | 245 |
+| CFC | 80 | 480 | 545 | 546 | 374 |
+| AFP | 63 | 378 | 329 | 445 | 272 |
 
-Les effectifs sont dédupliqués par identifiant dans chaque diplôme. La banque commune compte 1 339 unités d’exercice distinctes au total. Les cibles nominales du §5.1 (30 calculs, 50 vérifications et 20 situations par module et diplôme) restent à atteindre. Les demandes de sélection avancée en Évaluation et en Libre figurent dans les lots L1b à L1f.
+Les effectifs sont dédupliqués par identifiant dans chaque diplôme. La banque commune compte 1 465 unités d’exercice distinctes au total. Les cibles nominales du §5.1 (30 calculs, 50 vérifications et 20 situations par module et diplôme) restent à atteindre. Les demandes de sélection avancée en Évaluation et en Libre figurent dans les lots L1b à L1f.
 
 Pour un enrichissement ultérieur, partir des archives et du dossier éditorial du module, vérifier les droits par diplôme, les corrigés, la composition A4 et la continuité des recettes. Enregistrer chaque nouvelle révision et ses résultats dans ce suivi. [Archives par thème](sources-epcas/).
 
