@@ -1,4 +1,4 @@
-import { fmt } from '@/math/column-arith'
+import { fmt, fmtOperand } from '@/math/column-arith'
 import type { MathItem, PreviewMode } from '@/math/types'
 import {
   FractionAnswerBlank,
@@ -58,8 +58,10 @@ export function parseBinaryEquation(prompt: string): {
 export function EquationRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const show = mode === 'answers'
   const missing = item.missing ?? 'result'
-  const aText = missing === 'a' && !show ? null : formatOperand(item.a)
-  const bText = missing === 'b' && !show ? null : formatOperand(item.b)
+  const operandA = item.a == null ? '' : fmtOperand(item.a, item.freeOperandPlaces?.[0])
+  const operandB = item.b == null ? '' : fmtOperand(item.b, item.freeOperandPlaces?.[1])
+  const aText = missing === 'a' && !show ? null : operandA
+  const bText = missing === 'b' && !show ? null : operandB
   const resultMissing = missing === 'result'
   // Quand le trou est sur a ou b, on affiche le résultat en clair (pas de 2ᵉ trait).
   const resultShown = resultMissing

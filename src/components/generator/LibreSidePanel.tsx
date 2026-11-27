@@ -1,3 +1,5 @@
+import { exerciseTypeById } from '@/math/catalog'
+import { FreeNumberControls } from './FreeNumberControls'
 import type { ExerciseBlock, MathItem, WorksheetPage } from '@/math/types'
 import type { GameTemplate } from '@/jeux/templates'
 import { PhraseLibreEditor, isPhraseLibreEditable } from '@/francais/PhraseLibreEditor'
@@ -108,6 +110,17 @@ export function LibreSidePanel({
         <h3>Mode libre</h3>
       </div>
       <div className="side-tool-panel-body">
+        {isNumberLibreDomain && activeBlock.numberLibre &&
+          exerciseTypeById[activeBlock.exerciseType]?.supportsNumberRange !== false ? (
+          <div className="libre-number-generation">
+            <FreeNumberControls activeBlock={activeBlock} updatePage={updatePage} />
+            {onRegenerateBlock && (
+              <button type="button" className="button small secondary" onClick={() => onRegenerateBlock(safeBlockIndex)}>
+                Générer avec ces valeurs
+              </button>
+            )}
+          </div>
+        ) : null}
         {isPhraseDomain &&
         isPhraseLibreEditable(activeBlock.exerciseType) ? (
           <PhraseLibreEditor

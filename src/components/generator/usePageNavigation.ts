@@ -220,6 +220,8 @@ export function usePageNavigation({
       numberMin: activeBlock.numberMin,
       numberMax: activeBlock.numberMax,
       numberDecimals: activeBlock.numberDecimals,
+      numberDecimalPlaces: activeBlock.numberDecimalPlaces,
+      numberSecondDecimalPlaces: activeBlock.numberSecondDecimalPlaces,
       quadLibre: isQuadExercise(nextType.id) ? activeBlock.quadLibre : undefined,
       quadShapes: isQuadExercise(nextType.id) ? activeBlock.quadShapes : undefined,
     }

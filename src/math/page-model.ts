@@ -56,6 +56,8 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     numberMin: page.numberMin,
     numberMax: page.numberMax,
     numberDecimals: page.numberDecimals,
+    numberDecimalPlaces: page.numberDecimalPlaces,
+    numberSecondDecimalPlaces: page.numberSecondDecimalPlaces,
     quadLibre: page.quadLibre,
     quadShapes: page.quadShapes,
     vocabRows: page.vocabRows,

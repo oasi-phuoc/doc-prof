@@ -108,6 +108,7 @@ body { font-size: 16px; }
 .niveau-row.is-libre .select-control{opacity:.55}
 .number-libre-fields{display:grid;grid-template-columns:1fr 1fr;gap:8px 10px;align-items:end}
 .number-libre-fields .mode-toggle-block{grid-column:1 / -1}
+.libre-number-generation{display:grid;gap:8px;margin-bottom:12px}
 .quad-libre-block{display:flex;flex-direction:column;gap:10px}
 .quad-libre-block>b{font-size:calc(12px * var(--app-font-scale, 1))}
 .quad-shape-list{display:flex;flex-wrap:wrap;gap:6px}

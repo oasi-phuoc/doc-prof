@@ -20,6 +20,7 @@ import {
 import { SelectBox } from '@/components/generator/SelectBox'
 import { applyType, clearLibreContentFreeze } from '@/components/generator/page-helpers'
 import { DIFFICULTY_OPTIONS } from '@/math/difficulty'
+import { FreeNumberControls } from './FreeNumberControls'
 import { isLogistiqueDomain, logistiqueSubthemes, logistiqueType, logistiqueTypeForSubtheme } from '@/logistique/catalog'
 import { logistiqueEligibleCount } from '@/logistique/generate'
 import { exerciseTypeById } from '@/math/catalog'
@@ -599,49 +600,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                 ) : null}
               </div>
               {showNumberRange && activeBlock.numberLibre ? (
-                <div className="number-libre-fields">
-                  <label className="select-shell">
-                    <span>De</span>
-                    <input
-                      className="pill-input"
-                      type="number"
-                      inputMode="decimal"
-                      step={activeBlock.numberDecimals ? 0.1 : 1}
-                      value={activeBlock.numberMin ?? 1}
-                      onChange={(event) => updatePage({ numberMin: Number(event.target.value) })}
-                    />
-                  </label>
-                  <label className="select-shell">
-                    <span>À</span>
-                    <input
-                      className="pill-input"
-                      type="number"
-                      inputMode="decimal"
-                      step={activeBlock.numberDecimals ? 0.1 : 1}
-                      value={activeBlock.numberMax ?? 100}
-                      onChange={(event) => updatePage({ numberMax: Number(event.target.value) })}
-                    />
-                  </label>
-                  <div className="mode-toggle-block">
-                    <b>Décimales</b>
-                    <div className="mode-toggle">
-                      <button
-                        type="button"
-                        className={!activeBlock.numberDecimals ? 'active' : ''}
-                        onClick={() => updatePage({ numberDecimals: false })}
-                      >
-                        Sans
-                      </button>
-                      <button
-                        type="button"
-                        className={activeBlock.numberDecimals ? 'active' : ''}
-                        onClick={() => updatePage({ numberDecimals: true })}
-                      >
-                        Avec
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                <FreeNumberControls activeBlock={activeBlock} updatePage={updatePage} />
               ) : null}
               </>
               )}

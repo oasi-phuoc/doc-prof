@@ -437,6 +437,7 @@ export type MathItem = {
    * La virgule s’affiche dans la case des unités (même carré).
    */
   decimalPlaces?: number
+  freeOperandPlaces?: [number, number]
   /** Chiffres du reste (division posée). */
   digitsRemainder?: string[]
   /** Met en évidence le trait de calcul sous les opérandes. */
@@ -989,6 +990,8 @@ export type ExerciseBlock = {
   numberMin?: number
   numberMax?: number
   numberDecimals?: boolean
+  numberDecimalPlaces?: number
+  numberSecondDecimalPlaces?: number
   /** Choix des quadrilatères (sinon tirage au hasard parmi toutes les formes). */
   quadLibre?: boolean
   quadShapes?: Figure[]
