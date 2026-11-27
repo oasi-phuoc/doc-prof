@@ -546,6 +546,8 @@ export type MathItem = {
   mathTheory?: import('./theory-lessons').MathTheoryLesson & { topic: string }
   /** Coupure de page initiale après cette section de théorie, modifiable dans l’aperçu. */
   theoryPageBreakAfter?: boolean
+  /** Style des fiches FALC révisées du catalogue Grammaire, y compris en mode Libre. */
+  grammarTheoryFalc?: boolean
   /** Entrée de glossaire maths (mot + définition + schéma). */
   glossary?: {
     sourceId?: string
@@ -1271,6 +1273,8 @@ export type ExerciseBlock = {
 
 export type PageConfig = ExerciseBlock & {
   domain: Domain
+  /** Format transmis à la génération des deux exemplaires A5. */
+  grammarTheoryPaper?: 'a5'
   /** Types d’exercices supplémentaires sur la même feuille A4. */
   extraBlocks?: ExerciseBlock[]
 }

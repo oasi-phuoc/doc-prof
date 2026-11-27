@@ -2,6 +2,7 @@ import { isLogistiqueDomain, LOGISTIQUE_DOMAINS } from '@/logistique/catalog'
 import { isWrittenProblem } from '@/math/problem-help'
 import epcaLogo from '@/assets/logos/epca.svg'
 import { grammarPageBreakQuestionId } from '@/grammaire/curriculum/pagination'
+import { isGrammaireTheoryType } from '@/grammaire/types'
 import { Children, type CSSProperties, type HTMLAttributes, type ReactElement } from 'react'
 import './worksheet-typography.css'
 import { ExerciseFrame } from '@/components/math/ExerciseFrame'
@@ -562,7 +563,8 @@ export function WorksheetSheet({
                     block.items.length + (block.itemOffset ?? 0)
                   const isTheoryPageBreakable =
                     item.layout === 'theory' &&
-                    (item.theoryBlock?.kind === 'section' || isLogistiqueDomain(page.domain)) &&
+                    (item.theoryBlock?.kind === 'section' || isLogistiqueDomain(page.domain) ||
+                      (item.grammarTheoryFalc && item.theoryBlock?.kind !== 'heading')) &&
                     theorySlice?.isLast !== false &&
                     sourceIndex < theoryBreakCount - 1
                   const isGrammarPageBreakable=page.domain==='grammaire'&&block.exerciseType.startsWith('gram-ex-')&&(
@@ -602,6 +604,7 @@ export function WorksheetSheet({
                   const itemOffset = block.itemOffset ?? 0
                   return (
                     <ItemView
+                      grammarTheory={item.layout === 'theory' && isGrammaireTheoryType(block.exerciseType)}
                       key={`${block.exerciseType}-${block.exerciseIndex}-${index}-${item.answer}-${tcfFormMode ?? ''}`}
                       item={theorySlice?.theoryBlock ? { ...item, theoryBlock: theorySlice.theoryBlock } : item}
                       settingsLabel={item.layout === 'theory' ? `Section ${sourceIndex + 1}`

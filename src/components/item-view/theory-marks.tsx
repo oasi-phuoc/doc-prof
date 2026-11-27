@@ -2,7 +2,15 @@ import type { ReactNode } from 'react'
 import { Fragment } from 'react'
 
 /** `{g}…{/g}` gras · `{c}…{/c}` couleur · `{s}…{/s}` souligné · `/n` retour · `{ligne}` / `{ligne/2}` / `{ligne/3}` (remplacent l’espace défaut `ligne/4` entre kinds) · après `{tab:N}`, `+` vide, `>` flèche, `<` puce, `-` tiret, dans l’ordre des colonnes. `+` devant `N` (`{tab:+1+}` ou `{tab :+1+}`, espace optionnel autour de `:`) enlève la puce / le numéro de la ligne. */
-const MARK = /\{(g|c|s)\}([\s\S]*?)\{\/\1\}|\/n/g
+const MARK = /\{(g|c|s|sujet|verbe|fin)\}([\s\S]*?)\{\/\1\}|\/n/g
+const MARK_CLASS = {
+  g: 'theory-mark-bold',
+  c: 'theory-mark-theme',
+  s: 'theory-mark-under',
+  sujet: 'theory-mark-subject',
+  verbe: 'theory-mark-verb',
+  fin: 'theory-mark-ending',
+}
 const LIGNE = /\{ligne(?:\/([234]))?\}/gi
 const TAB = /\{tab\s*:\s*(\+?)(\d+)(?:\s*([+><-]+|fleche))?(?:\s*(puce))?\}/gi
 
@@ -239,10 +247,9 @@ export function TheoryRichText({ text }: { text: string }) {
       last = start + match[0].length
       continue
     }
-    const kind = match[1]
+    const kind = match[1] as keyof typeof MARK_CLASS
     const inner = match[2] ?? ''
-    const className =
-      kind === 'g' ? 'theory-mark-bold' : kind === 'c' ? 'theory-mark-theme' : 'theory-mark-under'
+    const className = MARK_CLASS[kind]
     nodes.push(
       <span key={key} className={className}>
         {inner.split('/n').map((part, index) => (

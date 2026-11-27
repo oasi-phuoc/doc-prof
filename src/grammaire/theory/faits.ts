@@ -10,7 +10,7 @@ export const faitsDocs: GrammaireTheoryDoc[] = [
     title: 'La forme passive',
     topic: 'gram-faits',
     public: 'B1',
-    objectif: 'Mettre l’objet au début de la phrase.',
+    objectif: 'Utiliser la forme passive pour parler de la personne ou de la chose qui subit l’action.',
     blocks: sheet({
       title: 'La forme passive',
       intro: 'Je mets l’objet {g}au début{/g} de la phrase.',

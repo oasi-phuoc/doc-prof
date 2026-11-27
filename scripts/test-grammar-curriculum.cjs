@@ -39,25 +39,26 @@ const { GRAM_LESSONS_PROTECTED: protectedLessons } = get('exercises/bank/lessons
 const { ALL_GRAM_SUBTHEMES, buildGrammairePracticeTypes } = get('exercises/catalog-exercises.ts')
 const { tryGenerateGrammaireExerciseBlock: generate } = get('exercises/generate.ts')
 const { gramExerciseFormUi } = get('exercises/qui-suis-je-ui.ts')
-const { GRAMMAIRE_THEORY_DOCS: theory } = get('theory/index.ts')
+const { GRAMMAIRE_THEORY_DOCS: theory, theoryDocByTypeId } = get('theory/index.ts')
 const { validateTcfExercise } = load(path.join(root, 'src/tcf/validate.ts'))
 const comm = get('exercises/communication.ts')
 const illustrations = load(path.join(root, 'docs/grammaire/illustrations.json'))
 let checks = 0
 function check(condition, message) { assert.ok(condition, message); checks++ }
 const normalize = text => text.normalize('NFC').toLocaleLowerCase('fr').replace(/[’']/g, "'").replace(/\s+/g, ' ').trim()
-check(theory.length === 99, 'all theory ids retained')
 for (const [file, hash] of Object.entries(load(path.join(root, 'scripts/grammar_curriculum/protected-theory-hashes.json')))) {
   check(crypto.createHash('sha256').update(fs.readFileSync(path.join(root, file))).digest('hex') === hash, 'protected theory ' + file)
 }
 const protectedTopics = new Set(['gram-se-presenter', 'gram-entrer-contact'])
 const originalTheory = load(path.join(root, 'scripts/grammar_curriculum/theory-source.json')).docs
+assert.deepEqual(theory.map(doc => doc.typeId).sort(), originalTheory.map(doc => doc.typeId).filter(id => id !== 'gram-a5-theorie').sort())
+check(theoryDocByTypeId['gram-a5-theorie'] === theoryDocByTypeId['gram-a4-theorie'], 'destinations alias retained')
+// La reprise de chaque bloc source est contrôlée par test-grammar-theory-falc.cjs.
 for (const doc of theory) {
   const original = originalTheory.find(d => d.typeId === doc.typeId)
-  for (const field of ['id','typeId','index','title','topic','public','objectif']) {
+  for (const field of ['id','typeId','index','topic','public']) {
     check(doc[field] === (doc.id === 'c4' && field === 'topic' ? 'gram-exclamation' : original[field]), `theory identity ${doc.typeId} ${field}`)
   }
-  assert.deepEqual(doc.blocks, original.blocks, `restored theory ${doc.typeId}`)
 }
 // Imported listening contexts have audio supports, rather than new 50-question theory banks.
 const audioSubthemes = new Set(get('exercises/co-bank.ts').grammarCoSubthemes().map(s=>s.id))

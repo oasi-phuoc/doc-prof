@@ -99,6 +99,7 @@ export function ItemView({
   itemLabel,
   seriesNumber,
   hideNumber: hideNumberOverride = false,
+  grammarTheory = false,
   algebraPadLeft = 0,
   draftGrid = true,
   problemHelp = false,
@@ -133,6 +134,7 @@ export function ItemView({
   /** Bandeau de série pour le rangement et la logique du TCM CSC. */
   seriesNumber?: number
   hideNumber?: boolean
+  grammarTheory?: boolean
   /** Cases vides à gauche pour aligner verticalement les atomes entre questions. */
   algebraPadLeft?: number
   /** Zone de brouillon avec grille 4×4 mm (problèmes). */
@@ -266,7 +268,7 @@ export function ItemView({
     <div
       className={`exercise-item layout-${item.layout}${isDraftPad ? ' is-problem' : ''}${
         isOralSelect ? ' is-oral' : ''
-      }${tcfFullWidth ? ' is-tcf-full' : ''}`}
+      }${tcfFullWidth ? ' is-tcf-full' : ''}${grammarTheory || item.grammarTheoryFalc ? ' grammar-theory-item' : ''}${item.grammarTheoryFalc ? ' is-falc' : ''}`}
     >
       <WorksheetSettings label={settingsLabel}>
       {isDraftPad && onToggleDraftGrid ? (

@@ -8,6 +8,7 @@ import { isGrammarReadingType } from '@/grammaire/exercises/reading-types'
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { isGrammaireTheoryType } from '@/grammaire/types'
 import { A4Frame } from '@/components/generator/A4Frame'
+import { GrammarTheoryReading } from '@/components/generator/GrammarTheoryReading'
 import type { A5WorksheetPair } from '@/components/generator/sheet-format'
 import { DualA5Sheet, WorksheetSheet } from '@/components/generator/WorksheetSheet'
 import { InteractionCorrigeSheet } from '@/components/tcf/InteractionCorrigeSheet'
@@ -224,6 +225,7 @@ export function ResultPanel({
     .filter(({ sheet, index }) => (sheet.configIndex ?? index) === activeConfig)
   const a5Group = a5Pairs?.map((pair, index) => ({ pair, index }))
     .filter(({ pair }) => pair.configIndex === activeConfig)
+  const grammarTheoryItems = pageGroup.flatMap(({ sheet }) => sheet.items.filter(item => item.grammarTheoryFalc))
   const showPageStack = a5Group ? a5Group.length > 1 : pageGroup.some(({ sheet }) => sheet.isContinuation)
   const lastPreview = previewWorksheets[previewWorksheets.length - 1]
   const onLastPage =
@@ -547,6 +549,7 @@ export function ResultPanel({
                 ) : null}
               </div>
             </div>
+            {grammarTheoryItems.length > 0 && <GrammarTheoryReading key={activeConfig} items={grammarTheoryItems} />}
             <div className="sheet-preview-wrap no-print-nav">
               <div className="sheet-preview-cluster">
                 <div className={`sheet-preview-row${jeuxPreviewSheets && jeuxPreviewSheets.length > 1 ? ' is-jeux-duplex' : ''}${showCorrectionFollow || showTranscriptionPreview ? ' is-po-stack' : ''}${showPageStack ? ' is-page-stack' : ''}`}>

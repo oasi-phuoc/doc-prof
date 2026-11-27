@@ -500,7 +500,7 @@ export function buildPage(
     const corrigeAudios = collectCorrigeAudioSrcs(items, result.document?.audioSrc)
     const tcfPageBreakAfter =
       block.tcfPageBreakAfter ??
-      page.tcfPageBreakAfter ??
+      (isGrammaireTheoryType(block.exerciseType) ? undefined : page.tcfPageBreakAfter) ??
       (isTheory ? items.map((item) => Boolean(item.theoryPageBreakAfter)) : undefined)
     return {
       exerciseIndex,
@@ -608,6 +608,19 @@ function collectSoutienReservedWords(pages: PageConfig[], seed: number): {
   return { reserved: [...reserved], type1Words, type5Words }
 }
 
+function theoryPageSlices(items: MathItem[], breaks?: boolean[], continueOnNextPage = true): MathItem[][] {
+  const segments: MathItem[][] = [[]]
+  items.forEach((item, index) => {
+    if (item.theoryBlock?.kind === 'page') {
+      if (continueOnNextPage) segments.push([])
+      return
+    }
+    segments[segments.length - 1]!.push(item)
+    if (index < items.length - 1 && (breaks?.[index] ?? item.theoryPageBreakAfter)) segments.push([])
+  })
+  return segments.filter(slice => slice.length > 0)
+}
+
 export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints = 1, logisticsLayout?: LogistiquePageLayout): WorksheetPage[] {
   let exerciseNo = 1
   const out: WorksheetPage[] = []
@@ -630,7 +643,8 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
     }
 
     const hasFullPageContent = (block: WorksheetBlock) =>
-      block.problemHelp || block.items.some((item) => item.mathTheory)
+      block.problemHelp || block.items.some((item) => item.mathTheory || item.grammarTheoryFalc) ||
+      (worksheet.blocks.length > 1 && isGrammaireTheoryType(block.exerciseType))
     if (worksheet.blocks.some(hasFullPageContent)) {
       let continuation = false
       const append = (blocks: WorksheetBlock[]) => {
@@ -652,6 +666,19 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
         }
         append(preceding)
         preceding = []
+        if (isGrammaireTheoryType(block.exerciseType) || block.items.some(item => item.grammarTheoryFalc)) {
+          let itemOffset = 0
+          for (const items of theoryPageSlices(block.items, block.tcfPageBreakAfter, page.continueOnNextPage)) {
+            append([{
+              ...block,
+              sourceBlockIndex,
+              itemOffset,
+              items,
+            }])
+            itemOffset += items.length
+          }
+          return
+        }
         const capacity = block.problemHelp && block.exerciseType === 'problemes-donnees-utiles' ? 2 : 1
         for (let offset = 0; offset < block.items.length; offset += capacity) {
           const end = offset + capacity
@@ -819,19 +846,7 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
       const sourceBlock = worksheet.blocks[0]
       const items = sourceBlock?.items ?? worksheet.items
       const breaks = sourceBlock?.tcfPageBreakAfter ?? page.tcfPageBreakAfter
-      const segments: MathItem[][] = [[]]
-      items.forEach((item, itemIndex) => {
-        if (item.theoryBlock?.kind === 'page') {
-          if (page.continueOnNextPage !== false) segments.push([])
-          return
-        }
-        segments[segments.length - 1]!.push(item)
-        if (
-          itemIndex < items.length - 1 &&
-          (breaks?.[itemIndex] ?? item.theoryPageBreakAfter ?? false)
-        ) segments.push([])
-      })
-      const sheets = segments.filter((slice) => slice.length > 0)
+      const sheets = theoryPageSlices(items, breaks, page.continueOnNextPage)
       if (!sourceBlock || sheets.length <= 1) {
         const kept = sheets[0] ?? items.filter((item) => item.theoryBlock?.kind !== 'page')
         out.push({

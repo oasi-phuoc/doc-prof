@@ -4,16 +4,18 @@ import { buildWordVocab } from './exercises/word-vocab'
 import { tryGenerateGrammaireExerciseBlock } from './exercises/generate'
 import { isGrammaireExerciseType } from './exercises/types'
 import { theoryDocByTypeId } from './theory'
+import { falcLessonBlocks } from './theory/falc-lesson'
 import { isGrammaireTheoryType } from './types'
 import { generateGradedGrammarBlock } from './curriculum/generate'
 import { GrammarCurriculumError } from './curriculum/types'
 
-function blockToItem(docTitle: string, block: GrammarTheoryBlock, index: number): MathItem {
+function blockToItem(docTitle: string, block: GrammarTheoryBlock, index: number, falc: boolean): MathItem {
   return {
     layout: 'theory',
     prompt: `${docTitle}-${index}`,
     answer: '',
     theoryBlock: block,
+    grammarTheoryFalc: falc || undefined,
   }
 }
 
@@ -50,20 +52,17 @@ export function tryGenerateGrammaireBlock(
       ],
     }
   }
-  const items = normalizeTheoryBlocks(doc.blocks).reduce<MathItem[]>((result, block) => {
+  // Les anciennes recettes enregistrent leurs coupes selon les index du gabarit historique.
+  const legacyBlocks = normalizeTheoryBlocks(doc.blocks)
+  const usesLegacyBreaks = config.tcfPageBreakAfter?.length === legacyBlocks.filter(block => block.kind !== 'page').length
+  const falcBlocks = usesLegacyBreaks ? undefined : falcLessonBlocks(doc, config.grammarTheoryPaper)
+  const items = (falcBlocks ?? legacyBlocks).reduce<MathItem[]>((result, block) => {
     if (block.kind === 'page') {
-      let previousSection: MathItem | undefined
-      for (let index = result.length - 1; index >= 0; index -= 1) {
-        if (result[index]?.theoryBlock?.kind === 'section') {
-          previousSection = result[index]
-          break
-        }
-      }
-      const previous = previousSection ?? result[result.length - 1]
+      const previous = result[result.length - 1]
       if (previous) previous.theoryPageBreakAfter = true
       return result
     }
-    result.push(blockToItem(doc.title, block, result.length))
+    result.push(blockToItem(doc.title, block, result.length, Boolean(falcBlocks)))
     return result
   }, [])
   return {

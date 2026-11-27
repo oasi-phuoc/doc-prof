@@ -460,7 +460,7 @@ export const exprimerDocs: GrammaireTheoryDoc[] = [
     title: 'Le subjonctif passé',
     topic: 'gram-exprimer',
     public: 'B1',
-    objectif: 'Parler d’une action déjà faite après que.',
+    objectif: 'Utiliser le subjonctif passé pour une action déjà faite au moment dont on parle.',
     blocks: sheet({
       title: 'Le subjonctif passé',
       intro: 'Je parle d’une action {g}déjà faite{/g} après que.',

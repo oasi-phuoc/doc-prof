@@ -76,26 +76,20 @@ Repère thèmes : Se présenter → Conjuguer au présent → Entrer en contact 
 
 ## 2. Structure type d’une fiche
 
-Ordre fixe des blocs :
+Pour la grammaire, chaque fiche commence par un titre et un exemple. Organiser les autres blocs selon la notion. Les trois rubriques historiques sont facultatives. [Cahier des charges de la théorie de grammaire](../../../docs/grammaire/cahier-des-charges-theorie-falc.md)
 
 | Bloc | Contenu |
 |---|---|
 | **Titre** | Court et concret (« Le présent des verbes en -er ») |
 | **Ce que je vais apprendre** | 1 à 2 phrases |
-| **Je regarde** | 1 exemple simple + pictogramme ou image |
-| **J’explique** | La règle en **3 à 5 phrases** courtes |
-| **Je retiens** | Encadré (couleur) avec l’essentiel |
+| **Exemple** | Une phrase du quotidien. Ajouter une image si elle aide à comprendre. |
+| **Règle** | Des phrases courtes pour expliquer les formes mises en évidence. |
+| **Repère** | Un encadré si l’élève doit retrouver rapidement un point essentiel. |
 | **Tableau ou schéma** | La règle sous forme visuelle |
 | **Attention !** | **Un seul** piège ou exception fréquente |
-| **Je m’entraîne** | **3 à 5** exercices progressifs |
-| **Ce que j’ai appris** | Liste à cocher |
+| **Essai** | Une vérification brève avec réponse si elle aide à comprendre. |
 
-### À compléter — Exemples de fiches validées
-
-- [ ] Liens / chemins vers 1–2 fiches modèles validées
-- [ ] Variantes selon le niveau (pré-A1 vs A2)
-
-*(À compléter.)*
+Les fiches « Le verbe être », « Autres prépositions et adverbes de lieu » et « L’accord du participe passé » illustrent ce découpage, du pré-A1 au B1. [Bilan de la refonte](../../../docs/grammaire/implementation/theorie-falc.md)
 
 ---
 
@@ -191,11 +185,11 @@ Toujours doubler : libellé, gras, soulignement ou position dans un tableau.
 - [ ] Une seule notion dans la fiche
 - [ ] Phrases courtes (≤ 12 mots)
 - [ ] Mots difficiles expliqués ; vocabulaire constant
-- [ ] Exemple **avant** la règle (« Je regarde » puis « J’explique »)
-- [ ] Encadré « Je retiens » présent
+- [ ] Exemple résolu **avant** la règle
+- [ ] Tableau, encadré ou autre repère quand il facilite la lecture
 - [ ] Code couleur et pictogrammes cohérents (et lisibles sans couleur seule)
 - [ ] Police ≥ 14, texte à gauche, mise en page aérée
-- [ ] Exercices progressifs avec exemple résolu
+- [ ] Liens avec les exercices associés à la notion
 - [ ] Testé avec un apprenant (quand possible)
 - [ ] Traduction d’aide présente si langue d’origine demandée (§7)
 

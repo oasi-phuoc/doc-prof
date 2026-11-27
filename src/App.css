@@ -3,6 +3,7 @@
 @font-face{font-family:'Calli Marelle';src:url('/fonts/calli/marelle.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:'Calli Playwrite';src:url('/fonts/calli/playwrite-es.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
 :root {
+  --lesson-font-family: 'Didact Gothic', 'Arial', sans-serif;
   --ink:#28252f;
   --muted:#6f6875;
   --line:#e7e0ea;
@@ -6706,7 +6707,7 @@ textarea.pill-input,
 
 .math-theory-lesson {
   color: #172336;
-  font-family: 'Didact Gothic', 'Arial', sans-serif;
+  font-family: var(--lesson-font-family);
   font-size: 14pt;
   line-height: 1.3;
   text-align: left;
@@ -6729,6 +6730,63 @@ textarea.pill-input,
 .math-theory-word-given { color: #874515; }
 .math-theory-word-step { color: #174A7E; }
 .math-theory-word-result { color: #155E40; }
+
+.grammar-theory-item {
+  font-family: var(--lesson-font-family);
+}
+.grammar-theory-item.is-falc {
+  --theory-size: max(14pt, calc(14pt * var(--app-font-scale, 1)));
+  --theory-example-ink: #174a7e;
+  font-size: var(--theory-size);
+  line-height: 1.5;
+  text-align: left;
+}
+.grammar-theory-item.is-falc :is(.theory-heading, .theory-paragraph) {
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.grammar-theory-item.is-falc .theory-heading {
+  font-size: calc(20pt * var(--app-font-scale, 1));
+  border: 0;
+  line-height: 1.2;
+}
+.grammar-theory-item.is-falc .theory-heading.is-sub {
+  font-size: calc(16pt * var(--app-font-scale, 1));
+}
+.grammar-theory-item.is-falc .theory-mark-theme { color: var(--theory-example-ink); }
+.theory-mark-subject { color: #174a7e; font-weight: 700; }
+.theory-mark-verb { color: #912d25; font-weight: 700; }
+.theory-mark-ending { color: #155e40; text-decoration: underline; text-underline-offset: .15em; }
+.grammar-theory-item.is-falc :is(.theory-mark-under, .theory-examples-block.is-border .theory-examples) {
+  text-decoration-color: #155e40;
+  border-color: var(--theory-example-ink);
+}
+.grammar-theory-item.is-falc .theory-tab-cell { white-space: normal; }
+.grammar-theory-item.is-falc .theory-tab[aria-hidden] { min-width: .7em !important; width: .7em !important; }
+.grammar-theory-item.is-falc :is(.theory-table, .theory-image-table) { font-size: var(--theory-size); }
+.grammar-theory-item.is-falc .theory-image-table figcaption { line-height: 1.5; }
+.grammar-theory-item.is-falc .theory-table :is(th, td) { overflow-wrap: anywhere; }
+.grammar-theory-item.is-falc .theory-attention-label { color: #874515; }
+.grammar-theory-item.is-falc .theory-attention-box:empty { display: none; }
+.grammar-theory-reading {
+  width: min(100%, 70ch);
+  margin: 0 auto 1rem;
+  padding: .75rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: .5rem;
+  background: #fff;
+}
+.grammar-theory-reading summary { cursor: pointer; font-weight: 700; }
+.grammar-theory-reading-content { display: grid; gap: .65rem; margin-top: 1rem; }
+.grammar-theory-reading-content > * { min-width: 0; }
+.grammar-theory-reading .theory-tabs { max-width: 100%; }
+.grammar-theory-reading :is(th, td, figcaption) { overflow-wrap: anywhere; }
+@media screen and (max-width: 580px) {
+  .grammar-theory-reading { padding-inline: .625rem; }
+  .grammar-theory-reading .theory-table { table-layout: fixed; }
+  .grammar-theory-reading .theory-image-table tr { display: grid; gap: .65rem; }
+  .grammar-theory-reading .theory-image-table img { height: auto; max-height: 38mm; }
+}
 
 .has-compact-math-header .doc-header.institutional { margin-bottom: 8px; padding-top: 0; }
 .has-compact-math-header .doc-header.institutional:has(.doc-document-title) {
