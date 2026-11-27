@@ -25,12 +25,14 @@ La banque `src/grammaire/exercises/co-bank.json` conserve les identifiants, enre
 | Niveau | Pistes | QCM texte et réponse sur trait | Questions avec QCM image | Scènes de support |
 | --- | ---: | ---: | ---: | ---: |
 | A1 | 127 | 419 | 175 | 2 |
-| A2 | 125 | 155 | 61 | 13 |
-| **Total** | **252** | **574** | **236** | **15** |
+| A2 | 125 | 168 | 63 | 13 |
+| **Total** | **252** | **587** | **238** | **15** |
 
-Les 100 questions déjà présentes ont été conservées. Les 474 nouvelles questions sont rattachées à un passage de la transcription. La banque réutilise les questions TCF lorsque le dialogue correspond et propose des questions rédigées pour les autres pistes. Le [relevé des passages et des réemplois](questions-verification-20261127.json) permet de retrouver chaque réponse ajoutée.
+Les 100 questions initiales ont été relues et associées à leur passage. Treize questions A2 complètent les ajouts précédents, par exemple sur le justificatif demandé pour un retour, les charges d’un logement et la date de début d’un emploi. Les questions qui demandaient d’identifier certains noms non épelés portent désormais sur un fait du dialogue. Le [relevé des passages et des réemplois](questions-verification-20261127.json) documente les 587 questions.
 
-Dans le générateur, les formes **Texte**, **Phrase** et **Image** correspondent au QCM texte, à la réponse sur trait et au QCM illustré. Les 574 questions proposent les deux premiers formats. Le QCM image est disponible pour 236 questions. 108 ont reçu ce format pendant la reprise. Chaque nouvelle illustration est générée dans son propre fichier. Des images TCF existantes sont réutilisées lorsque leur contenu correspond au choix. 15 pistes affichent aussi une scène de dialogue. Les scènes et les choix publiés ont été examinés visuellement selon le [référentiel graphique TCF](../../tcf/style-images.md). Les empreintes et passages associés figurent dans le [registre des illustrations](illustrations-co-20261127.json). Le [registre des choix à illustrer](images-a-preparer.json) rassemble 10 questions repérées lors de la revue des transcriptions.
+Whisper large-v3 en français a recoupé des passages ciblés des pistes A1 005, 013, 016 et 116. La comparaison des voix dans la piste 005 attribue les 25 ans à Paolo et les 35 ans à Nicole. La piste 016 confirme le nombre d’enfants, qui devient la réponse attendue. La commande de deux tartes aux fraises de la piste 116 apparaît dans les trois reconnaissances disponibles.
+
+Dans le générateur, les formes **Texte**, **Phrase** et **Image** correspondent au QCM texte, à la réponse sur trait et au QCM illustré. Les 587 questions proposent les deux premiers formats. Le QCM image est disponible pour 238 questions, dont deux nouvelles questions A2 sur le moyen de contact et les boissons, illustrées avec des visuels TCF existants. 15 pistes affichent aussi une scène de dialogue. Les scènes et les choix publiés ont été examinés visuellement selon le [référentiel graphique TCF](../../tcf/style-images.md). Les empreintes et passages associés figurent dans le [registre des illustrations](illustrations-co-20261127.json). Le [registre des choix à illustrer](images-a-preparer.json) rassemble 10 questions repérées lors de la revue des transcriptions.
 
 Les questions ont été relues sur les transcriptions recoupées. Lors de la première passe, les pistes et les images ont été testées dans le navigateur sur un échantillon des deux niveaux, avec les formes disponibles et l’export PDF. Les 252 pistes ont été décodées intégralement sans erreur. L’écoute de validation et l’approbation enseignante restent à faire.
 

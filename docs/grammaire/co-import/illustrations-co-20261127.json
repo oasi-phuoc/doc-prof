@@ -6628,6 +6628,27 @@
       "sha256": "179753d551c70c659a2bc315d18a5141455b47ccf9e3cd6154b9b274a5ac6e3e",
       "origin": "TCF",
       "viewed": true
+    },
+    "/lib/images/tcf/qcm-audit/vocab-telephone-fixe.webp": {
+      "width": 1448,
+      "height": 1086,
+      "sha256": "cf7ea1022b9237339429aee8a5c0882f8d46feb412eebdd7679a62032ead4d1a",
+      "origin": "TCF",
+      "viewed": true
+    },
+    "/lib/images/tcf/qcm-audit/co834-bouteille-lait-dessinee.webp": {
+      "width": 1280,
+      "height": 960,
+      "sha256": "aaf1746c6df84474fd5f25938f9df329eb5caa5e25198e2c7e49d08139259920",
+      "origin": "TCF",
+      "viewed": true
+    },
+    "/lib/images/tcf/qcm-audit/co834-bouteille-eau-dessinee.webp": {
+      "width": 1280,
+      "height": 960,
+      "sha256": "c0f525c2f7e347128c94a162d9f516a910aaa1935a35727de6a69ef2dfd958eb",
+      "origin": "TCF",
+      "viewed": true
     }
   },
   "bindings": {
@@ -8871,6 +8892,20 @@
         "interlocutors": 2,
         "proof": "Regarde, Solène! Quel beau gâteau à la crème!",
         "review": "Isabelle et Solène discutent devant une vitrine. Le gâteau fixe le contexte. Les postures ne montrent ni douleur ni indice sur le motif du refus."
+      },
+      "questions": {
+        "1": {
+          "answers": [
+            "Du lait",
+            "De l’eau",
+            "Du jus d’orange"
+          ],
+          "paths": [
+            "/lib/images/tcf/qcm-audit/co834-bouteille-lait-dessinee.webp",
+            "/lib/images/tcf/qcm-audit/co834-bouteille-eau-dessinee.webp",
+            "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp"
+          ]
+        }
       }
     },
     "gram-co-entretien-embauche-a2-piste_179": {
@@ -9503,6 +9538,18 @@
             "/lib/images/tcf/qcm-audit/grammaire-voiture-clignotant.webp",
             "/lib/images/tcf/qcm-audit/grammaire-voiture-klaxon.webp",
             "/lib/images/tcf/qcm-audit/grammaire-voiture-radio.webp"
+          ]
+        },
+        "1": {
+          "answers": [
+            "Par téléphone",
+            "Par courrier",
+            "Par courriel"
+          ],
+          "paths": [
+            "/lib/images/tcf/qcm-audit/vocab-telephone-fixe.webp",
+            "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+            "/lib/images/tcf/qcm-audit/communication-courriel.webp"
           ]
         }
       }

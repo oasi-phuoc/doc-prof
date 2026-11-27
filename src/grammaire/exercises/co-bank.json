@@ -925,7 +925,7 @@
           }
         },
         {
-          "enonce": "Quel est son prénom ?",
+          "enonce": "Quel prénom est associé au nom Zola ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -1859,29 +1859,29 @@
           }
         },
         {
-          "enonce": "Comment s’appellent les enfants de Simon et Sandra ?",
+          "enonce": "Combien d’enfants de Simon et Sandra sont sur la photo ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
           "choix": [
             {
               "id": "a",
-              "texte": "Andrea et Élisa",
+              "texte": "Deux",
               "correct": true
             },
             {
               "id": "b",
-              "texte": "Sonia et Marie"
+              "texte": "Un"
             },
             {
               "id": "c",
-              "texte": "Simon et Sandra"
+              "texte": "Trois"
             }
           ],
           "formes": {
             "lignes": {
               "nb_lignes": 1,
-              "reponse_modele": "Andrea et Élisa"
+              "reponse_modele": "Deux"
             }
           }
         }
@@ -2469,12 +2469,12 @@
           "choix": [
             {
               "id": "a",
-              "texte": "À Lori",
+              "texte": "À son amie",
               "correct": true
             },
             {
               "id": "b",
-              "texte": "À la mère de Lori"
+              "texte": "À la mère de son amie"
             },
             {
               "id": "c",
@@ -2484,34 +2484,34 @@
           "formes": {
             "lignes": {
               "nb_lignes": 1,
-              "reponse_modele": "À Lori"
+              "reponse_modele": "À son amie"
             }
           }
         },
         {
-          "enonce": "Qui répond au téléphone ?",
+          "enonce": "Qui répond à l’appel de Laura ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
           "choix": [
             {
               "id": "a",
-              "texte": "La mère de Lori",
+              "texte": "La mère de son amie",
               "correct": true
             },
             {
               "id": "b",
-              "texte": "Lori"
+              "texte": "Son amie"
             },
             {
               "id": "c",
-              "texte": "Une amie de Laura"
+              "texte": "Une professeure"
             }
           ],
           "formes": {
             "lignes": {
               "nb_lignes": 1,
-              "reponse_modele": "La mère de Lori"
+              "reponse_modele": "La mère de son amie"
             }
           }
         },
@@ -2884,7 +2884,7 @@
       },
       "questions": [
         {
-          "enonce": "Quand a lieu la fête des voisins, selon Madame Bugier ?",
+          "enonce": "Quand la fête des voisins a-t-elle lieu ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -2911,7 +2911,7 @@
           }
         },
         {
-          "enonce": "Quel événement Madame Bugier organise-t-elle samedi ?",
+          "enonce": "Quel événement la voisine organise-t-elle samedi ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -6028,6 +6028,33 @@
               "reponse_modele": "Au cinquième étage"
             }
           }
+        },
+        {
+          "enonce": "Quand les visites du T3 sont-elles prévues ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Mardi de 17 h à 19 h",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Lundi de 17 h à 19 h"
+            },
+            {
+              "id": "c",
+              "texte": "Mardi de 14 h à 16 h"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Mardi de 17 h à 19 h"
+            }
+          }
         }
       ]
     },
@@ -6342,6 +6369,33 @@
                   "image": "/lib/images/tcf/qcm-audit/qcm-vehicule-tramway-ivoire.png"
                 }
               ]
+            }
+          }
+        },
+        {
+          "enonce": "Que comprend le loyer du studio ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Les charges",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Une place de parking"
+            },
+            {
+              "id": "c",
+              "texte": "Les meubles"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Les charges"
             }
           }
         }
@@ -7181,34 +7235,34 @@
       },
       "questions": [
         {
-          "enonce": "Comment s'appelle la nouvelle voisine ?",
+          "enonce": "Qui se présente au début de l’échange ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
           "choix": [
             {
               "id": "a",
-              "texte": "Catherine Sol",
+              "texte": "La nouvelle voisine",
               "correct": true
             },
             {
               "id": "b",
-              "texte": "Marion Garant"
+              "texte": "Le gardien de l’immeuble"
             },
             {
               "id": "c",
-              "texte": "Sophie Martin"
+              "texte": "Une ancienne locataire"
             }
           ],
           "formes": {
             "lignes": {
               "nb_lignes": 1,
-              "reponse_modele": "Catherine Sol"
+              "reponse_modele": "La nouvelle voisine"
             }
           }
         },
         {
-          "enonce": "Où son nom est-il inscrit ?",
+          "enonce": "Où le nom de la nouvelle voisine est-il inscrit ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -7754,7 +7808,7 @@
           }
         },
         {
-          "enonce": "Que madame Signoret ne respecte-t-elle pas selon monsieur Blanc ?",
+          "enonce": "D’après M. Blanc, qu’est-ce que Mme Signoret ne respecte pas ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -9353,7 +9407,7 @@
       },
       "questions": [
         {
-          "enonce": "Que les élèves vont-ils voir au musée ?",
+          "enonce": "Que vont voir les élèves au musée ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -9394,6 +9448,33 @@
                   "image": "/lib/images/tcf/qcm-audit/grammaire-expo-auto.webp"
                 }
               ]
+            }
+          }
+        },
+        {
+          "enonce": "Combien de parents faut-il pour accompagner la sortie scolaire ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Deux",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Un"
+            },
+            {
+              "id": "c",
+              "texte": "Trois"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Deux"
             }
           }
         }
@@ -10654,29 +10735,29 @@
       },
       "questions": [
         {
-          "enonce": "Comment l’intervenant s’appelle-t-il ?",
+          "enonce": "Quelle est la spécialité de l’intervenant ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
           "choix": [
             {
               "id": "a",
-              "texte": "Philippe Hugon",
+              "texte": "Les outils informatiques",
               "correct": true
             },
             {
               "id": "b",
-              "texte": "Pierre Martin"
+              "texte": "La comptabilité"
             },
             {
               "id": "c",
-              "texte": "Paul Dupré"
+              "texte": "La gestion des stocks"
             }
           ],
           "formes": {
             "lignes": {
               "nb_lignes": 1,
-              "reponse_modele": "Philippe Hugon"
+              "reponse_modele": "Les outils informatiques"
             }
           }
         },
@@ -14116,7 +14197,7 @@
           }
         },
         {
-          "enonce": "Que le médecin lui conseille-t-il d’abord ?",
+          "enonce": "Que conseille d’abord le médecin ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -17290,6 +17371,51 @@
               ]
             }
           }
+        },
+        {
+          "enonce": "Comment le garagiste va-t-il informer sa cliente au sujet de la réparation ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Par téléphone",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Par courrier"
+            },
+            {
+              "id": "c",
+              "texte": "Par courriel"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Par téléphone"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-telephone-fixe.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/communication-lettre.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/communication-courriel.webp"
+                }
+              ]
+            }
+          }
         }
       ]
     },
@@ -19073,29 +19199,29 @@
           }
         },
         {
-          "enonce": "À quel nom réservent-ils ?",
+          "enonce": "Quel hébergement les clients demandent-ils ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
           "choix": [
             {
               "id": "a",
-              "texte": "Nocella",
+              "texte": "Un bungalow pour quatre",
               "correct": true
             },
             {
               "id": "b",
-              "texte": "Martin"
+              "texte": "Une chambre double"
             },
             {
               "id": "c",
-              "texte": "Dubard"
+              "texte": "Un emplacement pour une tente"
             }
           ],
           "formes": {
             "lignes": {
               "nb_lignes": 1,
-              "reponse_modele": "Nocella"
+              "reponse_modele": "Un bungalow pour quatre"
             }
           }
         }
@@ -22322,6 +22448,33 @@
               "reponse_modele": "Un remboursement"
             }
           }
+        },
+        {
+          "enonce": "Quel document le vendeur demande-t-il à la cliente ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Un ticket de caisse",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Une carte d’identité"
+            },
+            {
+              "id": "c",
+              "texte": "Une carte bancaire"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Un ticket de caisse"
+            }
+          }
         }
       ]
     },
@@ -22946,7 +23099,7 @@
       },
       "questions": [
         {
-          "enonce": "Comment la personne suit-elle surtout l’actualité ?",
+          "enonce": "Comment la personne qui regarde peu la télévision suit-elle l’actualité ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -22973,7 +23126,7 @@
           }
         },
         {
-          "enonce": "Quelle chaîne la personne regarde-t-elle habituellement à 19 h 45 ?",
+          "enonce": "Sur quelle chaîne passe le journal de 19 h 45 mentionné dans le dialogue ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -23246,7 +23399,7 @@
       },
       "questions": [
         {
-          "enonce": "Que les auteurs de l’étude ont-ils analysé ?",
+          "enonce": "Qu’ont analysé les auteurs de l’étude ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -23372,6 +23525,33 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "La mairie"
+            }
+          }
+        },
+        {
+          "enonce": "Pourquoi Pedro accepte-t-il finalement d’aller au bal ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Il apprend que l’invitation n’est pas nécessaire",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "La mairie lui propose de l’emmener"
+            },
+            {
+              "id": "c",
+              "texte": "Le bal est reporté à un autre jour"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Il apprend que l’invitation n’est pas nécessaire"
             }
           }
         }
@@ -23820,6 +24000,33 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Un pseudo et un mot de passe"
+            }
+          }
+        },
+        {
+          "enonce": "Quelle danse est proposée le soir même dans l’onglet des sorties ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "La salsa",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Le tango"
+            },
+            {
+              "id": "c",
+              "texte": "La valse"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "La salsa"
             }
           }
         }
@@ -25448,6 +25655,33 @@
               ]
             }
           }
+        },
+        {
+          "enonce": "Quel est le thème du concours de photo ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "La vie en ville",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Les vacances à la mer"
+            },
+            {
+              "id": "c",
+              "texte": "Les sports d’hiver"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "La vie en ville"
+            }
+          }
         }
       ]
     },
@@ -25681,7 +25915,7 @@
       },
       "questions": [
         {
-          "enonce": "Que Benjamin demande-t-il à Clément d’apporter ?",
+          "enonce": "Qu’est-ce que Benjamin demande à Clément d’apporter ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -26779,6 +27013,33 @@
               "reponse_modele": "Une bronchite"
             }
           }
+        },
+        {
+          "enonce": "Quelle habitude le médecin demande-t-il à M. Abry d’arrêter ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Fumer",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Boire du café"
+            },
+            {
+              "id": "c",
+              "texte": "Faire du sport"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Fumer"
+            }
+          }
         }
       ]
     },
@@ -27044,7 +27305,7 @@
       },
       "questions": [
         {
-          "enonce": "Quel sujet les deux personnes discutent-elles ?",
+          "enonce": "De quoi les deux personnes parlent-elles ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -27411,6 +27672,51 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Elle a une intolérance alimentaire"
+            }
+          }
+        },
+        {
+          "enonce": "Quel aliment donne mal au ventre à Solène ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Du lait",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "De l’eau"
+            },
+            {
+              "id": "c",
+              "texte": "Du jus d’orange"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Du lait"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/co834-bouteille-lait-dessinee.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/co834-bouteille-eau-dessinee.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp"
+                }
+              ]
             }
           }
         }
@@ -28715,7 +29021,7 @@
       },
       "questions": [
         {
-          "enonce": "Quelle démarche la personne demande-t-elle de l’aider à faire ?",
+          "enonce": "Pour quelle démarche la personne demande-t-elle de l’aide ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -29416,6 +29722,33 @@
               ]
             }
           }
+        },
+        {
+          "enonce": "Quelles qualités sont citées chez Stéphane ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Il est accueillant, patient et organisé",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Il est rapide, créatif et autonome"
+            },
+            {
+              "id": "c",
+              "texte": "Il est discret, prudent et réservé"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Il est accueillant, patient et organisé"
+            }
+          }
         }
       ]
     },
@@ -29937,6 +30270,33 @@
               ]
             }
           }
+        },
+        {
+          "enonce": "Quelle autre qualité Madame Durand cite-t-elle en plus de son sens de l’organisation ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "L’esprit d’équipe",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "La ponctualité"
+            },
+            {
+              "id": "c",
+              "texte": "La discrétion"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "L’esprit d’équipe"
+            }
+          }
         }
       ]
     },
@@ -30197,6 +30557,33 @@
                   "image": "/lib/images/tcf/qcm-audit/grammaire-tenue-survetement-baskets.webp"
                 }
               ]
+            }
+          }
+        },
+        {
+          "enonce": "Quand Adrien commence-t-il son nouveau poste ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Demain",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Ce soir"
+            },
+            {
+              "id": "c",
+              "texte": "La semaine prochaine"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Demain"
             }
           }
         }
