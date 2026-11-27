@@ -387,8 +387,32 @@ function tableValues(unit, [a, b, c, d, expected, updated]) {
   ]
 }
 
+function environment(_unit, [firstMass, firstVisitors, secondMass, secondVisitors, gramsGoal, projected]) {
+  const before = firstMass * 1000 / firstVisitors
+  const after = secondMass * 1000 / secondVisitors
+  return [
+    [`Le premier événement collecte ${firstMass} kg de déchets pour ${firstVisitors} visiteurs. Donnez les grammes par visiteur au centième.`, `${n(before)} g par visiteur`, `Convertissez les kg en g, puis divisez par le nombre de visiteurs.`],
+    [`Les deux événements collectent ${firstMass} et ${secondMass} kg pour ${firstVisitors} et ${secondVisitors} visiteurs. Quelle moyenne combinée en grammes par visiteur obtient-on, au centième ?`, `${n((firstMass + secondMass) * 1000 / (firstVisitors + secondVisitors))} g par visiteur`, `Additionnez les masses et les effectifs avant de calculer le rapport, puis convertissez en grammes.`],
+    [`Le premier événement produit ${firstMass} kg pour ${firstVisitors} visites, le second ${secondMass} pour ${secondVisitors}. Quelle est la variation signée, second moins premier, en grammes de déchets par visite ?`, `${n(after - before)} g par visite`, `Calculez les ratios non arrondis des deux événements. Soustrayez le premier du second.`],
+    [`L’objectif fixe ${gramsGoal} g de déchets par visiteur au maximum. Avec ${projected} visiteurs, quel plafond en kg cela donne-t-il ?`, `${n3(gramsGoal * projected / 1000)} kg`, `Multipliez les grammes par visiteur par l’effectif puis divisez par 1 000.`],
+    [`Le deuxième événement collecte ${secondMass} kg pour ${secondVisitors} visites. Par rapport à un objectif de ${gramsGoal} g par visite, quel est l’écart signé du bilan réel au plafond en kg ?`, `${n3(secondMass - gramsGoal * secondVisitors / 1000)} kg`, `Le plafond est ${gramsGoal} × ${secondVisitors} ÷ 1 000 kg. Soustrayez ce plafond de la masse mesurée.`],
+  ]
+}
+
+function impact(_unit, [firstKm, secondKm, rate, secondRate, runs, goal]) {
+  const first = firstKm * rate
+  const second = secondKm * secondRate
+  return [
+    [`Dans cet exercice, un trajet de ${firstKm} km est estimé à ${n3(rate)} kg de CO₂e par km. Calculez l’impact prévu par trajet.`, `${n(first)} kg CO₂e`, `Multipliez le parcours par le facteur fictif du dossier.`],
+    [`Le service est accompli par ${runs} trajets de ${firstKm} km au facteur d’exercice de ${n3(rate)} kg CO₂e/km. Quel impact total prévoir ?`, `${n(first * runs)} kg CO₂e`, `Calculez l’impact par trajet puis multipliez par le nombre de trajets.`],
+    [`Deux options de même service donnent ${firstKm} km à ${n3(rate)} kg CO₂e/km ou ${secondKm} km à ${n3(secondRate)} kg CO₂e/km. Quel écart résulte du modèle ?`, `${n(Math.abs(first - second))} kg CO₂e`, `Reconstituez les impacts sur l’ensemble des trajets, ${n(first)} et ${n(second)} kg CO₂e, puis comparez.`],
+    [`L’objectif de ce dossier est d’au plus ${goal} kg CO₂e par trajet. Avec un facteur de ${n3(rate)} kg CO₂e/km, quelle distance entière est compatible avec cet objectif ?`, `${Math.floor(goal / rate)} km`, `Divisez l’objectif par le facteur retenu. Arrondissez au nombre inférieur de kilomètres entiers si nécessaire.`],
+    [`Un relevé d’exercice fait état de ${n3(first)} kg CO₂e pour ${firstKm} km. Calculez le facteur moyen en kg CO₂e/km au millième.`, `${n3(rate)} kg CO₂e/km`, `Divisez le bilan du trajet par les kilomètres de ce même parcours.`],
+  ]
+}
+
 export const dossierMaths = {
   stock, series, planning, area, audit, cost, mass, levels, cadence, lever,
   route, tonneDistance, volume, tension, depreciation, payroll, indicator, result, capital, service, valuation, expense, benefits,
-  codeCheck, spreadsheet, printing, files, playback, locale, layout, tableValues,
+  codeCheck, spreadsheet, printing, files, playback, locale, layout, tableValues, environment, impact,
 }

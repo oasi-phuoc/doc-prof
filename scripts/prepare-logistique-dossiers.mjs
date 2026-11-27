@@ -46,6 +46,8 @@ const modelQuestions = {
   locale: ['Que faut-il contrôler avant de comparer deux montants importés ?', 'Contrôlez le séparateur décimal, l’unité et le séparateur de milliers utilisés dans chaque fichier.'],
   layout: ['Pourquoi conserver le même facteur pour la largeur et la hauteur d’une image ?', 'Le facteur identique conserve les proportions et évite de déformer l’image.'],
   tableValues: ['Que faut-il revérifier après modification d’une ligne dans un tableau ?', 'Vérifiez l’unité, le total et toutes les valeurs de synthèse qui dépendent de la ligne modifiée.'],
+  environment: ['Pourquoi rapporter la masse de déchets au nombre de visiteurs ?', 'L’indicateur par visiteur permet de comparer des événements de fréquentations différentes, avec le même périmètre de déchets.'],
+  impact: ['Pourquoi vérifier le service couvert avant de comparer deux estimations d’impact ?', 'Une comparaison porte sur des parcours et quantités couvrant le même besoin, avec des facteurs calculés sur un périmètre comparable.'],
 }
 
 const followUps = {
@@ -80,6 +82,8 @@ const followUps = {
   locale: 'Le fichier d’un autre site n’utilise pas le même ordre de date ou le même séparateur.',
   layout: 'Les marges sont modifiées avant la mise à jour de l’illustration.',
   tableValues: 'Une source corrige la dernière ligne du tableau présenté.',
+  environment: 'La fréquentation réelle change et le bilan doit être recalculé.',
+  impact: 'Un tronçon est modifié dans l’une des options de transport.',
 }
 
 function sections(blocks, reference) {
