@@ -50,6 +50,7 @@ Référence de réalisation dans le [cahier des charges v2.13](cahier-des-charge
 | L2 — Module 805 | Révision `805-v001` active en CFC | Cours de 163 blocs, schéma des styles et du sommaire, 23 termes, cinq calculs, sept vérifications et cinq situations. Cours autonome à l’écrit après exclusion des 85 références visuelles historiques. [Préparation du 805](preparation/805-v001.json). |
 | L2 — Module 902 | Révision `902-v001` active en CFC | Cours original de 40 blocs, schéma de résolution, 22 termes, sept calculs, sept vérifications et six études de cas. Le [cours original](preparation/902-v001.md) et les [données éditoriales](preparation/902-v001.json) distinguent les créations de l’archive EPCAS vide. |
 | L3c et V2.10 — Visuels | Pilote | Le schéma original du degré de transformation est rangé sous `public/assets/logistique/100/105/commun/`. Le [registre du visuel](pilote-105/visuels/registre.json) conserve l’empreinte, la révision et l’éligibilité. |
+| L3d — Glossaires | Enrichissement ciblé | 54 définitions ajoutées aux modules 306, 407, 409 et 410, de la palette EUR aux dispositifs de convoyage. Les huit parcours CFC et AFP ont été vérifiés en A4 et PDF. |
 | L4 et suivants — Généralisation | Six types actifs pour chaque module | La révision `logistique-901-v001` couvre les 480 types CFC et les 378 types AFP. Le tableau de couverture indique les unités disponibles et les cibles nominales à atteindre. |
 | L4 — Module 301 | Révision `301-v001` active en CFC et AFP | 2 schémas, 12 termes, 6/4 calculs, 6 vérifications et 4/3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 301](preparation/301-v001.json). |
 | L4 — Module 302 | Révision `302-v001` active en CFC et AFP | 2 schémas, 12 termes, 6/4 calculs, 6 vérifications et 4/3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 302](preparation/302-v001.json). |
@@ -150,6 +151,10 @@ Chromium a contrôlé l’habillage et le pied de page sur les 286 parcours A4 d
 Le module 306 ajoute une mise en scène des supports spéciaux aux versions Complet et Résumé, en CFC et AFP. Le passage explique le choix entre une palette synthétique et une box-palette destinée au vrac et rappelle que la couleur seule ne permet pas d’identifier un support CHEP. La nouvelle figure et son paragraphe sont publiés dans la révision `logistique-theorie-306-v004`. Les quatre parcours A4 et PDF du 306 ont été vérifiés avec la nouvelle photo encadrée. [Préparation du 306](preparation/306-v004.json).
 
 En double A5, les tableaux répètent leurs en-têtes et les listes reprennent à l’entrée suivante. Chaque ligne de tableau et chaque entrée de liste restent entières. La coupure de mise en page conserve le bloc original dans la fiche Libre et les sauts manuels s’appliquent après sa dernière partie. La grille de calcul comporte quatre lignes en double A5 pour réserver de la place à la réponse et au pied de page. La campagne de mesure a couvert 286 parcours de théorie. Les 50 parcours de vérification ciblés après ajustement ont conservé au moins 25,78 px avant le pied.
+
+## Glossaires des supports et de la manutention
+
+La révision `logistique-glossaires-supports-manutention-v002` ajoute 54 définitions aux glossaires CFC et AFP. Le 306 compte 30 termes sur les formats, les supports spéciaux et les échanges. Le 407 en compte 22 sur le déplacement, le levage et la capacité. Les 409 et 410 comptent respectivement 27 et 23 termes sur les engins, leurs organes et le convoyage. Les huit sorties A4 et PDF ont été vérifiées. La réserve minimale mesurée était de 101,52 px. [Définitions ajoutées](../../src/logistique/banks/supports-glossaires-v002.ts).
 
 ## Enrichissement des exercices
 

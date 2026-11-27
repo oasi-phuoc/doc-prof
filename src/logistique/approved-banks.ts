@@ -253,6 +253,7 @@ import { dossierExercises100 } from './banks/dossiers-100-v005.generated.ts'
 import { dossierExercises200 } from './banks/dossiers-200-v005.generated.ts'
 import { dossierExercises300 } from './banks/dossiers-300-v005.generated.ts'
 import { module306 as illustrated306 } from './banks/module-306-v004.generated.ts'
+import { supportsGlossaryAdditions } from './banks/supports-glossaires-v002'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
 
@@ -571,6 +572,24 @@ const palletSupportsTheoryPublication: LogistiquePublication = {
     unit.id === illustrated306[0].id ? illustrated306[0] : unit),
 }
 
+const supportsGlossariesPublication: LogistiquePublication = {
+  revision: 'logistique-glossaires-supports-manutention-v002',
+  units: palletSupportsTheoryPublication.units.map((unit) => {
+    const terms = supportsGlossaryAdditions[unit.module]
+    if (unit.kind !== 'glossaire' || !terms) return unit
+    const additions = terms.map(([term, definition]) => ({
+      kind: 'paragraph' as const,
+      text: `{g}${term}{/g} — ${definition}`,
+    }))
+    return {
+      ...unit,
+      revision: `${unit.module}-glossaire-v002`,
+      blocks: [...unit.blocks, ...additions].sort((a, b) =>
+        a.kind === 'paragraph' && b.kind === 'paragraph' ? a.text.localeCompare(b.text, 'fr-CH') : 0),
+    }
+  }),
+}
+
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
@@ -652,6 +671,7 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   customerServiceExercisePublication,
   procurementTargetsExercisePublication,
   palletSupportsTheoryPublication,
+  supportsGlossariesPublication,
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!

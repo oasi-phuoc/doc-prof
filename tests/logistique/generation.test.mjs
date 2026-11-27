@@ -69,6 +69,23 @@ test('les 858 types des modules CFC et AFP disposent de contenu à générer', (
   }
 })
 
+test('les glossaires de manutention incluent leurs nouveaux termes dans les deux diplômes', () => {
+  const modules = [['306', 'Box-palette', 30], ['407', 'Diagramme de capacité', 22], ['409', 'AutoStore', 27], ['410', 'Palonnier', 23]]
+  for (const diploma of ['CFC', 'AFP']) {
+    for (const [code, term, count] of modules) {
+      const page = config(diploma, code, 'glossaire')
+      const blocks = generateLogistique(page, 7).items.map(({ theoryBlock }) => theoryBlock.text)
+      assert.equal(blocks.length, count)
+      assert(blocks.some((text) => text.startsWith(`{g}${term}{/g} — `)))
+      assert.equal(new Set(blocks.map((text) => text.split('{/g}')[0])).size, count)
+      const historical = { ...page, logistiqueBankRevision: 'logistique-theorie-306-v004' }
+      const before = generateLogistique(historical, 7).items.map(({ theoryBlock }) => theoryBlock.text)
+      assert.equal(before.length, 12)
+      assert(before.every((text) => blocks.includes(text)))
+    }
+  }
+})
+
 test('les résumés illustrés sont distincts du cours et figés dans la recette', () => {
   const publishedTheories = currentLogistiquePublication.units.filter((unit) => unit.kind === 'theorie' && unit.summaryBlocks)
   assert.equal(publishedTheories.length, 80)
