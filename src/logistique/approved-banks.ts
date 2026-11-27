@@ -113,6 +113,14 @@ import { module309 as theory309 } from './banks/module-309-v002.generated.ts'
 import { module310 as theory310 } from './banks/module-310-v002.generated.ts'
 import { module311 as theory311 } from './banks/module-311-v002.generated.ts'
 import { module312 as theory312 } from './banks/module-312-v002.generated.ts'
+import { module401 as theory401 } from './banks/module-401-v002.generated.ts'
+import { module402 as theory402 } from './banks/module-402-v002.generated.ts'
+import { module403 as theory403 } from './banks/module-403-v002.generated.ts'
+import { module404 as theory404 } from './banks/module-404-v002.generated.ts'
+import { module405 as theory405 } from './banks/module-405-v002.generated.ts'
+import { module406 as theory406 } from './banks/module-406-v002.generated.ts'
+import { module408 as theory408 } from './banks/module-408-v002.generated.ts'
+import { module410 as theory410 } from './banks/module-410-v002.generated.ts'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
 
@@ -251,6 +259,16 @@ const theories_approvisionnement = [
 ]
 const theoryIds_approvisionnement = new Set<string>(theories_approvisionnement.map(({ id }) => id))
 
+const publication_approvisionnement_v002: LogistiquePublication = {
+  revision: 'logistique-theories-approvisionnement-v002',
+  units: [...publication_service_client_v002.units.filter(({ id }) => !theoryIds_approvisionnement.has(id)), ...theories_approvisionnement],
+}
+const theories_stockage = [
+  ...theory401, ...theory402, ...theory403, ...theory404, ...theory405, ...theory406,
+  ...theory408, ...theory410,
+]
+const theoryIds_stockage = new Set<string>(theories_stockage.map(({ id }) => id))
+
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
@@ -306,9 +324,10 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   firstPhotoPublication,
   foundationPhotoPublication,
   publication_service_client_v002,
+  publication_approvisionnement_v002,
   {
-    revision: 'logistique-theories-approvisionnement-v002',
-    units: [...publication_service_client_v002.units.filter(({ id }) => !theoryIds_approvisionnement.has(id)), ...theories_approvisionnement],
+    revision: 'logistique-theories-stockage-v002',
+    units: [...publication_approvisionnement_v002.units.filter(({ id }) => !theoryIds_stockage.has(id)), ...theories_stockage],
   },
 ]
 

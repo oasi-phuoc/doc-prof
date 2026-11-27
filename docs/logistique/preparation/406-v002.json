@@ -1,0 +1,31 @@
+{
+  "theoryOnly": true,
+  "baseTheory": "module-406-v001",
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "replacements": [],
+  "summaryTheory": "## 6. Principes de stockage\n\n### 6.1 Lotissement par case (emplacement fixe)\n\nUn **emplacement fixe** est attribué à une référence. Il aide à retrouver l’article, mais peut rester vide s’il n’y a plus de stock. Gardez une identification lisible et évitez la confusion entre des produits voisins.\n\n### 6.2 Stockage chaotique (anarchique)\n\nLe **stockage chaotique** attribue un emplacement libre compatible. Le système enregistre la relation entre l’article, la quantité et l’emplacement. Tout **transfert** doit être confirmé pour garder la trace du lot.\n\n### 6.3 FIFO — First In, First Out\n\nLa première unité entrée sort d’abord. Dans un rayonnage dynamique, l’entrée à l’arrière et la prise à l’avant peuvent faciliter le **FIFO**. Si la règle utilise la date d’expiration, on parle de **FEFO** : première échéance, première sortie. Vérifiez la règle de l’article.\n\n### 6.4 et 6.5 LIFO et HIFO\n\nLe **LIFO** fait sortir la dernière unité entrée en premier, par exemple une pile accessible du dessus. Le **HIFO** classe les unités selon la valeur ou le prix le plus élevé dans le cadre défini. Ne confondez pas un ordre physique et une méthode comptable. Suivez la consigne de lot et de traçabilité du site.",
+  "visuals": [
+    {
+      "anchor": "6.2 Stockage chaotique (anarchique)",
+      "summaryAnchor": "6.2 Stockage chaotique (anarchique)",
+      "file": "log-110-mouvement-photo-v002.webp",
+      "path": "assets/logistique/100/110/commun/log-110-mouvement-photo-v002.webp",
+      "alt": "Un carton est enregistré devant un emplacement de rayonnage.",
+      "caption": "En cas d’emplacement dynamique, le système doit indiquer où chaque unité a été rangée.",
+      "sha256": "bdf4d5dfa197fb3866ace522f2353e666afc580962d6d94cf0609af941dc611d",
+      "origin": "Mise en scène photoréaliste originale générée pour Doc-Prof."
+    },
+    {
+      "anchor": "6.3 FIFO — First In, First Out",
+      "summaryAnchor": "6.3 FIFO — First In, First Out",
+      "file": "log-406-fifo-photo-v002.webp",
+      "alt": "Des cartons occupent des pistes inclinées à rouleaux, ouvertes aux deux extrémités.",
+      "caption": "Si l’entrée se fait à l’arrière et la sortie à l’avant, le premier colis entré arrive au point de prélèvement.",
+      "sha256": "38e8b395d6ec76899c960dcec201ec845e2b990aa0136b45addc36b9742d509f",
+      "origin": "Mise en scène photoréaliste originale générée pour Doc-Prof."
+    }
+  ]
+}
