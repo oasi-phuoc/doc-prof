@@ -1,0 +1,173 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Analyser les **erreurs** de picking (causes, conséquences, prévention)\n- Décrire les trois **sous-systèmes** (info, matériel, organisation) et options (série/parallèle, MOP…)\n- Différencier les principaux **trieurs** et les **5 temps** partiels\n- Calculer des **ratios** de performance et relier conception d'entrepôt aux besoins",
+  "overview": "## Aperçu du module 611\n\n- Comparer les stratégies de prélèvement et la consolidation.\n- Décomposer les temps de préparation avec un périmètre explicite.\n- Mesurer qualité et rendement pour cibler une amélioration.",
+  "replacements": [],
+  "summary": [
+    "Comparer les stratégies de prélèvement et la consolidation.",
+    "Décomposer les temps de préparation avec un périmètre explicite.",
+    "Mesurer qualité et rendement pour cibler une amélioration."
+  ],
+  "glossary": [
+    [
+      "Batch picking",
+      "Prélèvement groupé de lignes de plusieurs commandes selon une organisation définie."
+    ],
+    [
+      "Cadence de préparation",
+      "Quantité traitée par unité de temps."
+    ],
+    [
+      "Consolidation",
+      "Regroupement des lignes et unités d’un même dossier."
+    ],
+    [
+      "Erreur de préparation",
+      "Écart entre l’attendu et la réalisation selon le contrôle."
+    ],
+    [
+      "Implantation",
+      "Organisation des positions et parcours dans un entrepôt."
+    ],
+    [
+      "Ligne de prélèvement",
+      "Référence avec la quantité à prélever pour le dossier."
+    ],
+    [
+      "Prélèvement par zone",
+      "Préparation répartie entre secteurs."
+    ],
+    [
+      "Temps de déplacement",
+      "Temps consacré au trajet dans le périmètre mesuré."
+    ],
+    [
+      "Temps de recherche",
+      "Durée consacrée à retrouver l’article ou la position."
+    ],
+    [
+      "Temps de saisie",
+      "Durée consacrée à lire ou enregistrer les données."
+    ],
+    [
+      "Taux d’erreur",
+      "Part des opérations présentant un écart selon la définition retenue."
+    ],
+    [
+      "Trieur",
+      "Installation qui oriente les unités vers le traitement ou la destination."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Une tournée couvre 84 lignes en 42 minutes. Calculez la cadence en lignes par minute.",
+      "answer": "Deux lignes par minute.",
+      "calculation": "84 ÷ 42 = 2."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Une préparation dure 36 min dont 14 de déplacement et 8 de recherche. Combien restent pour les autres étapes ?",
+      "answer": "14 minutes.",
+      "calculation": "36 − 14 − 8 = 14 min."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Six reprises sont relevées sur 300 lignes. Calculez le taux.",
+      "answer": "2 %.",
+      "calculation": "6 ÷ 300 × 100 = 2 %."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Un rangement ramène un trajet de 160 à 112 m. Quel est le gain de distance ?",
+      "answer": "48 m.",
+      "calculation": "160 − 112 = 48 m."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Le temps moyen passe de 48 à 39 min pour un travail comparable. Calculez la diminution relative au dixième.",
+      "answer": "18,8 %.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "(48 − 39) ÷ 48 × 100 = 18,75 %, soit 18,8 %."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "À quoi sert le prélèvement par zone ?",
+      "answer": "À répartir les opérations entre secteurs pour leur organisation et leur capacité."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Que faut-il distinguer dans un relevé de temps ?",
+      "answer": "Déplacement, recherche, prélèvement, saisie et autres étapes selon la méthode retenue."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Comment lire un taux d’erreur ?",
+      "answer": "Vérifier le type d’écart, le volume utilisé au dénominateur et le périmètre d’observation."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Quel intérêt a une consolidation ?",
+      "answer": "Elle rassemble la commande et permet un contrôle avant le départ."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Pourquoi surveiller la qualité en plus de la cadence ?",
+      "answer": "Un gain de vitesse peut entraîner davantage de reprises ou d’erreurs."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Le déplacement représente la moitié du temps. Quelle amélioration testez-vous ?",
+      "answer": "Comparer le placement et le parcours, puis mesurer temps et qualité dans un pilote."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Trois zones préparent une même commande et une unité manque. Comment la retrouvez-vous ?",
+      "answer": "Comparer les traces de chaque zone et le relevé de consolidation."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "La cadence augmente après un changement de méthode. Comment vérifiez-vous son effet ?",
+      "answer": "Comparer des charges similaires et contrôler les erreurs et délais en parallèle."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "11.5 Optimiser (5 temps partiels)",
+      "file": "log-611-notions-1-v001.svg",
+      "alt": "Déplacement. Trajet entre positions. Prélèvement. Recherche et prise. Traitement. Saisie et contrôles.",
+      "caption": "Mesurer les étapes sur le même périmètre avant d’interpréter un gain.",
+      "sha256": "cbfd2bde9a38fa5ce731b65cb3838bfc25ace27b3fdc4916ed93e25e8c3da292",
+      "origin": "Illustration originale Doc-Prof du module 611."
+    },
+    {
+      "anchor": "11.6 Critères & ratios",
+      "file": "log-611-notions-2-v001.svg",
+      "alt": "Cadence. Lignes par durée. Qualité. Erreurs par volume.",
+      "caption": "Un gain de vitesse ne suffit pas sans contrôle des erreurs.",
+      "sha256": "d65bc4b2bf5c47ff90d6214c96c3888daedac1c2aea9db0c80a9485e97a36ce3",
+      "origin": "Illustration originale Doc-Prof du module 611."
+    }
+  ]
+}

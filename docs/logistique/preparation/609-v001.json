@@ -1,0 +1,184 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Expliquer le rôle de la **navigation** (coût, capacité, lenteur) et du **Rhin** pour la Suisse\n- Situer les grandes **voies** (océans, Suez/Panama/Kiel) et la notion de **TEU**\n- Décrire le **transbordement** (portiques, spreader, LIFO, arrimage)\n- Relier les **forces** maritimes au chargement correct des conteneurs",
+  "overview": "## Aperçu du module 609\n\n- Repérer les voies, ports et points de transbordement maritimes et fluviaux.\n- Relier les unités au trajet et au dossier de chaque transfert.\n- Reconnaître les contraintes du mouvement et les responsabilités du chargement.",
+  "replacements": [
+    {
+      "from": "Chargement **LIFO**. Cale : glissières. Pont : *bridge fittings*, **twistlocks**, barres d'arrimage…",
+      "to": "Le plan tient compte des escales, des unités et des opérations autorisées. Il est validé par les personnes compétentes.",
+      "reason": "Évite de présenter un ordre fixe comme universel."
+    },
+    {
+      "from": "Vagues · Beaufort 10–11 · vagues ~15 m → tangage / roulis. Forces **simultanées**, intenses, multidirectionnelles (tangage, roulis, immersion, glissement, oscillations…). Ne jamais supposer mer calme · arrimage terrestre ≠ toujours suffisant en mer.",
+      "to": "Les conditions de navigation peuvent produire des efforts simultanés, notamment en roulis et tangage. Traiter l’unité selon le plan et le dossier applicables.",
+      "reason": "Sépare le principe des valeurs non nécessaires."
+    }
+  ],
+  "summary": [
+    "Repérer les voies, ports et points de transbordement maritimes et fluviaux.",
+    "Relier les unités au trajet et au dossier de chaque transfert.",
+    "Reconnaître les contraintes du mouvement et les responsabilités du chargement."
+  ],
+  "glossary": [
+    [
+      "Amont",
+      "Direction du côté de la source d’un cours d’eau, selon le contexte."
+    ],
+    [
+      "Barge",
+      "Embarcation destinée à transporter du fret, notamment sur des voies intérieures."
+    ],
+    [
+      "Cale",
+      "Espace du navire utilisé selon le plan de chargement."
+    ],
+    [
+      "Conteneur",
+      "Unité intermodale identifiée, compatible avec des équipements définis."
+    ],
+    [
+      "Corridor",
+      "Parcours principal qui relie plusieurs points d’un réseau."
+    ],
+    [
+      "EVP",
+      "Équivalent vingt pieds, unité de comptage de capacité conteneur."
+    ],
+    [
+      "Navigation fluviale",
+      "Transport sur les voies navigables intérieures."
+    ],
+    [
+      "Port",
+      "Site comprenant des interfaces pour accostage, manutention ou transfert."
+    ],
+    [
+      "Post-acheminement",
+      "Trajet qui suit l’étape principale."
+    ],
+    [
+      "Pré-acheminement",
+      "Trajet qui précède l’étape principale."
+    ],
+    [
+      "Roulis",
+      "Mouvement d’inclinaison latérale du navire."
+    ],
+    [
+      "Transbordement",
+      "Transfert d’unités entre moyens de transport ou liaisons."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Une desserte comprend 40 km de collecte, 210 km par voie d’eau et 28 km de remise. Calculez la distance totale.",
+      "answer": "278 km.",
+      "calculation": "40 + 210 + 28 = 278 km."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Un départ compte 30 unités de 20 pieds et 12 de 40 pieds. Avec 1 EVP et 2 EVP respectivement, calculez le total.",
+      "answer": "54 EVP.",
+      "calculation": "30 + 12 × 2 = 54 EVP."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Sur 72 dossiers, sept attendent une pièce documentaire. Combien sont complets pour ce contrôle ?",
+      "answer": "65 dossiers.",
+      "calculation": "72 − 7 = 65."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Deux attentes en port durent 15 h et 9 h. Calculez le total.",
+      "answer": "24 heures.",
+      "calculation": "15 + 9 = 24 h."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Un créneau de manutention prévoit 18 opérations par heure pendant quatre heures, dont 30 minutes d’arrêt. Calculez le nombre d’opérations au débit indiqué.",
+      "answer": "63 opérations.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "(4 − 0,5) × 18 = 63."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Qu’est-ce qu’un pré-acheminement ?",
+      "answer": "Le trajet qui relie le lieu de départ au départ de l’étape principale."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Quel rôle joue un port de transbordement ?",
+      "answer": "Il transfère les unités entre moyens ou trajets selon le dossier."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Quelle différence entre EVP et nombre physique de conteneurs ?",
+      "answer": "L’EVP convertit les tailles en unités de référence. Le nombre physique compte les conteneurs."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Pourquoi relever les événements du transfert ?",
+      "answer": "Pour conserver la responsabilité de prise en charge et connaître l’étape atteinte."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Pourquoi vérifier le plan de chargement auprès du service qualifié ?",
+      "answer": "Les contraintes de poids, position et mouvement dépendent du navire, de la route et des règles applicables."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "La correspondance est reportée. Quelles données réévaluez-vous ?",
+      "answer": "La date de prise en charge, la zone temporaire, les conditions et la nouvelle échéance."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Les documents de deux unités ne concordent pas. Que faites-vous ?",
+      "answer": "Isoler le traitement des deux dossiers, vérifier les identifiants et demander la correction autorisée."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Une unité porte un dommage à l’arrivée. Que consignez-vous ?",
+      "answer": "La référence, le lieu, l’état observé et la trace de transfert avant transmission."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "9.3 Transbordement",
+      "file": "log-609-notions-1-v001.svg",
+      "alt": "Collecte. Pré-acheminement. Navigation. Liaison principale. Remise. Post-acheminement.",
+      "caption": "Les événements de transfert sont rattachés à la même unité.",
+      "sha256": "0ce5a281cbde49e1b81db5447d2e53db21e8367d3da24ad7c0e9f54753e988c4",
+      "origin": "Illustration originale Doc-Prof du module 609."
+    },
+    {
+      "anchor": "9.4 Forces dynamiques",
+      "file": "log-609-notions-2-v001.svg",
+      "alt": "Roulis. Inclinaison latérale. Tangage. Inclinaison longitudinale.",
+      "caption": "Le plan de chargement tient compte des conditions définies par le service compétent.",
+      "sha256": "435b0dbf96e8f071ca9bf8ca6f6d0ccc67a2c481863d0e52a99bd64c3b337c4c",
+      "origin": "Illustration originale Doc-Prof du module 609."
+    }
+  ]
+}

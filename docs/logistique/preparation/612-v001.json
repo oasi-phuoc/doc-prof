@@ -1,0 +1,175 @@
+{
+  "diplomas": [
+    "CFC"
+  ],
+  "objectives": "## Objectifs\n\n- Expliquer la **planification de tournées** (LIFO, disposition, cadre légal)\n- Mener une réflexion **Make or Buy** / scoring en distribution\n- Appliquer les bases **denrées / chaîne du froid** et les **7 principes HACCP**\n- Relier **répartition/arrimage**, regroupage et variantes de **Cross-Docking**",
+  "overview": "## Aperçu du module 612\n\n- Construire une tournée à partir des étapes, créneaux et contraintes.\n- Comparer un service interne à un service confié à un partenaire.\n- Distinguer prévision de trajet, validation du dossier et suivi des écarts.",
+  "replacements": [
+    {
+      "from": "Unités : cadre + couvercle + cerclage · cylindriques (plat / cales) · panneaux (cerclage L+T si glissant) · support adapté longueur.",
+      "to": "La compatibilité des supports, des unités et de l’arrimage se vérifie auprès du personnel qualifié et dans les documents applicables.",
+      "reason": "Retire des schémas d’arrimage génériques."
+    }
+  ],
+  "summary": [
+    "Construire une tournée à partir des étapes, créneaux et contraintes.",
+    "Comparer un service interne à un service confié à un partenaire.",
+    "Distinguer prévision de trajet, validation du dossier et suivi des écarts."
+  ],
+  "glossary": [
+    [
+      "Créneau",
+      "Plage convenue pour une prise en charge ou une remise."
+    ],
+    [
+      "Cross-docking",
+      "Transfert orienté vers l’expédition avec séjour limité et sans mise en stock durable."
+    ],
+    [
+      "Délai de service",
+      "Temps prévu ou mesuré dans le périmètre de service."
+    ],
+    [
+      "Enlèvement",
+      "Prise en charge à l’origine du trajet."
+    ],
+    [
+      "Groupage",
+      "Réunion d’envois dans un flux commun."
+    ],
+    [
+      "HACCP",
+      "Démarche de maîtrise des dangers et points critiques dans son champ d’application."
+    ],
+    [
+      "Marge de temps",
+      "Temps réservé pour un aléa ou une contrainte."
+    ],
+    [
+      "Ordre de transport",
+      "Dossier qui précise le travail et les données à traiter."
+    ],
+    [
+      "Planification",
+      "Choix organisé des ressources, trajets, dates et séquences."
+    ],
+    [
+      "Preuve de livraison",
+      "Trace de la remise selon les conditions du service."
+    ],
+    [
+      "Tournée",
+      "Séquence organisée de points à desservir."
+    ],
+    [
+      "Transport sous conditions",
+      "Transport prévu avec des paramètres ou contraintes à respecter."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Une tournée parcourt 44, 37 et 19 km. Calculez la distance totale.",
+      "answer": "100 km.",
+      "calculation": "44 + 37 + 19 = 100 km."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Elle part à 7 h 25 et cumule 70 min de trajet et 35 min d’arrêts. Calculez l’arrivée.",
+      "answer": "9 h 10.",
+      "calculation": "7 h 25 + 105 min = 9 h 10."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Un service interne coûte 180 CHF et une option externe 155 CHF plus 35 CHF de transfert. Comparez.",
+      "answer": "L’interne est à 180 CHF contre 190 CHF, soit 10 CHF de moins.",
+      "calculation": "155 + 35 = 190. 190 − 180 = 10 CHF."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Sur 18 arrêts, 15 sont confirmés. Calculez le reste à vérifier.",
+      "answer": "Trois arrêts.",
+      "calculation": "18 − 15 = 3."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "On dispose de 240 min. La tournée prévoit 125 min de conduite et 85 d’opérations. Calculez la marge.",
+      "answer": "30 minutes.",
+      "calculation": "240 − 125 − 85 = 30 min."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quelles données relever pour bâtir la tournée ?",
+      "answer": "Origines, destinations, volumes, délais, exigences, véhicule et contraintes du dossier."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Que signifie défendre une marge de temps réaliste ?",
+      "answer": "Prévoir du temps pour des imprévus ou contraintes identifiés sans promettre un délai impossible."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Quel intérêt a le cross-docking ?",
+      "answer": "Orienter les unités reçues vers leur départ sans stockage durable quand le flux le permet."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Pourquoi comparer deux options au même périmètre ?",
+      "answer": "Les frais et responsabilités doivent couvrir les mêmes prestations et contraintes."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Quels éléments vérifier pour une denrée sous conditions ?",
+      "answer": "Le dossier et les exigences applicables à l’envoi, ainsi que les contrôles du service compétent."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Un client impose un créneau qui chevauche un autre arrêt prioritaire. Que faites-vous ?",
+      "answer": "Vérifier possibilités et contraintes, puis convenir d’un ajustement autorisé avant confirmation."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Un détour menace la qualité de service. Comment gérez-vous l’écart ?",
+      "answer": "Évaluer la nouvelle échéance, vérifier la faisabilité et informer le responsable et les destinataires prévus."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Deux lots au même départ ont des conditions différentes. Que vérifiez-vous ?",
+      "answer": "La compatibilité selon le dossier et le plan validé, puis les possibilités d’affectation séparée."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "12.2 Principe d'une tournée",
+      "file": "log-612-notions-1-v001.svg",
+      "alt": "Départ. Envois et heure. Arrêts. Créneaux et service. Retour. Clôture des dossiers.",
+      "caption": "Chaque arrêt tient compte du trajet précédent et du temps de service.",
+      "sha256": "af2a09f981db0f2e15977a1b3fd8faefbd56aae8bc8221221ed21e589779e2e6",
+      "origin": "Illustration originale Doc-Prof du module 612."
+    },
+    {
+      "anchor": "12.6 Regroupage & Cross-Docking",
+      "file": "log-612-notions-2-v001.svg",
+      "alt": "Entrée. Envoi confirmé. Regroupage. Destination et créneau. Sortie. Départ enregistré.",
+      "caption": "L’identifiant et la destination restent visibles entre les quais.",
+      "sha256": "4a071649bf9132e127a3791e3b9a21b2c5babde718801981dd5893f20d5ff795",
+      "origin": "Illustration originale Doc-Prof du module 612."
+    }
+  ]
+}

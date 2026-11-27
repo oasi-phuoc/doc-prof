@@ -1,0 +1,173 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Expliquer le **transport combiné** et le rôle des **interfaces**\n- Distinguer ferroutage **accompagné** (ROLA) et **non accompagné**\n- Décrire les conteneurs **ISO** (20'/40', types) et leur intérêt\n- Comparer **ACTS**, caisses mobiles, **Cargo Domino** et situer **CST**",
+  "overview": "## Aperçu du module 610\n\n- Comparer le parcours combiné à un trajet utilisant un seul mode.\n- Identifier les unités compatibles et la fonction du transbordement.\n- Suivre les correspondances en conservant la référence de l’unité.",
+  "replacements": [],
+  "summary": [
+    "Comparer le parcours combiné à un trajet utilisant un seul mode.",
+    "Identifier les unités compatibles et la fonction du transbordement.",
+    "Suivre les correspondances en conservant la référence de l’unité."
+  ],
+  "glossary": [
+    [
+      "Conteneur ISO",
+      "Conteneur répondant aux caractéristiques normalisées de la famille considérée."
+    ],
+    [
+      "Caisse mobile",
+      "Unité conçue pour les moyens et transferts spécifiés."
+    ],
+    [
+      "Chaussée roulante",
+      "Organisation qui transporte des véhicules routiers sur une liaison ferroviaire prévue."
+    ],
+    [
+      "Correspondance",
+      "Passage prévu vers le mode ou trajet suivant."
+    ],
+    [
+      "Desserte locale",
+      "Collecte ou livraison dans le périmètre proche d’un terminal."
+    ],
+    [
+      "Envoi accompagné",
+      "Transport où la présence d’un conducteur suit les conditions du service."
+    ],
+    [
+      "Interface",
+      "Point où deux modes ou opérations se raccordent."
+    ],
+    [
+      "Intermodal",
+      "Utilisant plusieurs modes avec la même unité de chargement selon l’organisation."
+    ],
+    [
+      "Terminal",
+      "Site où les unités sont prises en charge ou transférées."
+    ],
+    [
+      "Transport combiné",
+      "Organisation recourant à plusieurs modes, notamment une liaison principale et des dessertes routières."
+    ],
+    [
+      "Transbordement",
+      "Transfert d’une unité entre moyens de transport."
+    ],
+    [
+      "UTI",
+      "Unité de transport intermodal."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "La collecte fait 34 km, la liaison rail 190 km et la desserte 26 km. Calculez le total.",
+      "answer": "250 km.",
+      "calculation": "34 + 190 + 26 = 250 km."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Un parcours direct utilise 240 km de route. Le parcours combiné utilise 69 km de route. Calculez la différence routière.",
+      "answer": "171 km de route en moins.",
+      "calculation": "240 − 69 = 171 km."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Une unité doit rejoindre un départ à 16 h 40. Le transfert dure 55 min. À quelle heure doit-il commencer au plus tard ?",
+      "answer": "À 15 h 45.",
+      "calculation": "16 h 40 − 55 min = 15 h 45."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Le terminal traite 15 unités par heure pendant 2 h 30. Combien d’unités complètes peut-il traiter à ce rythme ?",
+      "answer": "37 unités complètes.",
+      "calculation": "15 × 2,5 = 37,5. Retenir 37."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Trois postes coûtent 160, 220 et 90 CHF dans un scénario combiné. Comparez leur somme à un trajet direct à 520 CHF.",
+      "answer": "470 CHF, soit 50 CHF de moins.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "160 + 220 + 90 = 470. 520 − 470 = 50 CHF."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quel est l’intérêt d’une unité intermodale ?",
+      "answer": "Elle peut passer entre des moyens compatibles avec un suivi continu de l’identifiant."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Quel rôle joue le terminal ?",
+      "answer": "Il organise la remise, le séjour et le transfert entre étapes du réseau."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Que distingue la chaussée roulante d’un transfert de seul conteneur ?",
+      "answer": "Elle prend en charge le véhicule routier prévu par le service."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Pourquoi comparer séparément les kilomètres routiers ?",
+      "answer": "Pour mesurer la part de trajet routier même si le parcours total est différent."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Quelles données vérifier pour une correspondance ?",
+      "answer": "Heures, unité, statut, destination et contraintes de la liaison."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "L’unité arrive trop tard pour le train prévu. Quelle action coordonnez-vous ?",
+      "answer": "Vérifier l’option autorisée de report et actualiser les étapes et conditions de séjour."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "L’équipement de transfert annoncé n’est pas compatible. Que faites-vous ?",
+      "answer": "Arrêter le traitement, identifier la référence et demander une solution validée."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Le client compare un service direct et un service combiné. Quels éléments présentez-vous ?",
+      "answer": "Le coût complet, les délais, les transferts, le service et les hypothèses comparables."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "10.2 Conteneurs ISO",
+      "file": "log-610-notions-1-v001.svg",
+      "alt": "Collecte. Trajet routier local. Liaison. Rail ou voie navigable. Desserte. Fin du trajet.",
+      "caption": "L’identité de l’unité suit les étapes, sous réserve de compatibilité.",
+      "sha256": "33312261b5e4c496ed184fc14ea553fca3e30191c1d16c6f7395aef566d5bea4",
+      "origin": "Illustration originale Doc-Prof du module 610."
+    },
+    {
+      "anchor": "10.3 Autres systèmes d'échange",
+      "file": "log-610-notions-2-v001.svg",
+      "alt": "Unité. Type et identification. Terminal. Équipement et créneau. Suite. Mode et destination.",
+      "caption": "Chaque mode doit accepter la même unité selon son dossier.",
+      "sha256": "44bd9cedeafbb8bde9e8d19e443d4ad5abc1dabf904ab70d43f69e0e03c026c7",
+      "origin": "Illustration originale Doc-Prof du module 610."
+    }
+  ]
+}

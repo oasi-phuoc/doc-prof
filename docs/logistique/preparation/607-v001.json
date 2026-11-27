@@ -1,0 +1,179 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Expliquer les atouts du **rail** et le rôle de la Suisse / NLFA\n- Décrire les **forces dynamiques** en ferroviaire (triage, vibrations)\n- Appliquer les principes de **chargement** (responsabilité, rapports essieux/bogies)\n- Lire un marquage **MD** (classe + ONU) et citer des perspectives d'avenir",
+  "overview": "## Aperçu du module 607\n\n- Situer les axes et points de transfert dans un trajet ferroviaire.\n- Relier le triage, les mouvements et les contraintes du dossier de transport.\n- Vérifier les repères d’identification et les responsabilités avant la remise.",
+  "replacements": [
+    {
+      "from": "Ex. : danger **33** (liquides inflammables, double = particularité) + ONU **1203** = essence.",
+      "to": "Le numéro ONU identifie une marchandise réglementée dans le cadre applicable. L’identification et la prise en charge se vérifient auprès du service qualifié.",
+      "reason": "Privilégie la lecture des rôles des repères."
+    }
+  ],
+  "summary": [
+    "Situer les axes et points de transfert dans un trajet ferroviaire.",
+    "Relier le triage, les mouvements et les contraintes du dossier de transport.",
+    "Vérifier les repères d’identification et les responsabilités avant la remise."
+  ],
+  "glossary": [
+    [
+      "Axe ferroviaire",
+      "Ensemble de liaisons reliant des régions ou points du réseau."
+    ],
+    [
+      "Bogie",
+      "Ensemble roulant d’un véhicule ferroviaire."
+    ],
+    [
+      "Desserte",
+      "Service qui relie la destination au réseau."
+    ],
+    [
+      "Fret",
+      "Transport de marchandises ou ensemble de marchandises transportées."
+    ],
+    [
+      "Gare de triage",
+      "Site où sont organisés les mouvements et regroupements de wagons."
+    ],
+    [
+      "Interface rail-route",
+      "Point de transfert entre les réseaux ferroviaire et routier."
+    ],
+    [
+      "Lettre de voiture",
+      "Document attestant des données du trajet et des unités."
+    ],
+    [
+      "Manœuvre",
+      "Déplacement de véhicules ferroviaires selon les règles de l’exploitant."
+    ],
+    [
+      "RID",
+      "Règlement concernant le transport international ferroviaire de marchandises dangereuses."
+    ],
+    [
+      "Terminal",
+      "Lieu prévu pour remettre ou transférer des unités de transport."
+    ],
+    [
+      "Unité de chargement",
+      "Ensemble identifié pris en charge pour le transport."
+    ],
+    [
+      "Wagon",
+      "Véhicule ferroviaire qui reçoit des marchandises ou unités prévues."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Une liaison comprend 92 km par rail puis 18 km par route. Calculez la distance totale.",
+      "answer": "110 km.",
+      "calculation": "92 + 18 = 110 km."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Un dossier regroupe 12 unités au départ et huit au second terminal. Calculez le nombre total à suivre.",
+      "answer": "20 unités.",
+      "calculation": "12 + 8 = 20."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Le trajet dure 3 h 20 puis le transfert 45 min. Calculez le total.",
+      "answer": "4 h 05.",
+      "calculation": "3 h 20 + 45 min = 4 h 05."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Sur 45 envois, 39 ont obtenu une confirmation d’arrivée. Combien manquent au relevé ?",
+      "answer": "Six confirmations.",
+      "calculation": "45 − 39 = 6."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Sur 180 envois ferroviaires, 153 arrivent dans le délai. Calculez le taux.",
+      "answer": "85 %.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "153 ÷ 180 × 100 = 85 %."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "À quoi sert un terminal ?",
+      "answer": "À prendre en charge ou transférer des unités sur les moyens prévus."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Pourquoi distinguer trajet ferroviaire et desserte finale ?",
+      "answer": "Le domicile ou site final peut demander un autre mode ou un autre prestataire."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Quel phénomène justifie de vérifier les contraintes du chargement ?",
+      "answer": "Les mouvements liés au transport et aux opérations du réseau."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Que doit indiquer le dossier des unités ?",
+      "answer": "Les références, destinations, masses et autres données nécessaires à la prise en charge."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Quel règlement concerne les marchandises dangereuses par rail dans son champ d’application ?",
+      "answer": "Le RID, avec les règles et restrictions applicables au dossier."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Un transfert routier n’est plus confirmé à l’arrivée du train. Quelle suite proposez-vous ?",
+      "answer": "Informer les responsables de transfert et convenir d’une nouvelle desserte validée."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Une unité manque au relevé du terminal. Que comparez-vous ?",
+      "answer": "Le manifeste, les références et les traces des points précédents."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "L’étiquette de danger est illisible. Que faites-vous ?",
+      "answer": "Suspendre la remise et demander une vérification par les personnes qualifiées."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "7.1 Principaux itinéraires",
+      "file": "log-607-notions-1-v001.svg",
+      "alt": "Enlèvement. Site de départ. Rail. Liaison et terminal. Livraison. Desserte finale.",
+      "caption": "Les dossiers de remise précisent qui prend en charge chaque étape.",
+      "sha256": "28cbfe422c6c6b009967629878c9df81f84b3b2cb038c93a711c42752dbcb02f",
+      "origin": "Illustration originale Doc-Prof du module 607."
+    },
+    {
+      "anchor": "7.2 Forces dynamiques (rail)",
+      "file": "log-607-notions-2-v001.svg",
+      "alt": "Unité. Identité et masse. Service. Trajet et contraintes.",
+      "caption": "Les conditions techniques sont vérifiées sur le dossier applicable.",
+      "sha256": "61e4093fdf29081fc09843cd833bddc134b231ece1db31580735482c2fc68354",
+      "origin": "Illustration originale Doc-Prof du module 607."
+    }
+  ]
+}
