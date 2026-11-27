@@ -57,7 +57,7 @@ try {
       await Promise.all(elements.flatMap((element) => [...element.querySelectorAll('img')]).map((img) => img.decode()))
       return elements.map((element) => {
         const bounds = element.getBoundingClientRect()
-        const items = [...element.querySelectorAll('.exercise-item')]
+        const items = [...element.querySelectorAll('.exercise-item, .logistique-glossary-table tbody tr')]
         const body = element.querySelector('.sheet-body').getBoundingClientRect()
         const lastBottom = Math.max(...items.map((item) => item.getBoundingClientRect().bottom))
         const footer = element.querySelector('.doc-footer')
@@ -159,6 +159,9 @@ try {
       await select('Type d’exercice', 'Glossaires')
       const glossary = await inspectPrint('Glossaire ' + diploma)
       assert.equal(glossary.pages.reduce((sum, item) => sum + item.count, 0), 45)
+      const glossaries = page.locator('.print-only-sheets .logistique-glossary-table')
+      assert.deepEqual(await glossaries.first().locator('thead th').allTextContents(), ['Image', 'Notion', 'Explication / définition'])
+      assert.equal(await glossaries.locator('tbody figure img').count(), 45)
       await select('Type d’exercice', 'Mathématiques')
       const questionCount = page.getByRole('spinbutton', { name: 'Nombre de questions', exact: true })
       const max = Number(await questionCount.getAttribute('max'))

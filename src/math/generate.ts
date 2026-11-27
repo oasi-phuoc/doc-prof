@@ -1,8 +1,9 @@
 import { mathTheoryLessons, mathTheoryTopic } from './theory-lessons'
 import { isMathProblemHelpType } from './problem-help'
 import { splitLogistiquePages, type LogistiquePageLayout } from '@/logistique/pagination'
-import { isLogistiqueDomain, isLogistiqueReferenceType } from '@/logistique/catalog'
+import { isLogistiqueDomain, isLogistiqueReferenceType, logistiqueType } from '@/logistique/catalog'
 import { generateLogistique, logistiqueDocumentTitle } from '@/logistique/generate'
+import { completeLogistiqueGlossaryItem } from '@/logistique/glossary'
 import { paginateCePosters } from '@/tcf/ce-poster-pages'
 import { splitTcfAudioQuestionPages } from '@/tcf/audio-question-pages'
 import { splitCscColumnPages } from '@/tcm-csc/pagination'
@@ -465,8 +466,10 @@ export function buildPage(
       }
     }
     const rawItems = isLogistiqueDomain(page.domain) && result.items.length === 0 ? result.items : (libre?.items ?? result.items)
+    const logistics = logistiqueType(block.exerciseType)
     const items = rawItems.map((item) => {
       const clean = sanitizeItemNumberNoise(item as Record<string, unknown>) as MathItem
+      if (logistics?.kind === 'glossaire' && !clean.logistiqueGlossaryEntry) return completeLogistiqueGlossaryItem(clean, logistics.module)
       return block.tcfCeTextFont && clean.tcf?.kind === 'support' && clean.tcf.exercise.competence === 'CE'
         ? { ...clean, tcf: { ...clean.tcf, ceTextFont: block.tcfCeTextFont } }
         : clean

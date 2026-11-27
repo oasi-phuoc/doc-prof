@@ -108,6 +108,16 @@ function height(item: MathItem, a5: boolean, scale: number): number {
   if (a5 && table) scale = Math.min(1.125, scale)
   const width = (a5 ? 53 : 72) / scale
   const glossaryFigure = item.logistiqueGlossaryFigure
+  const entry = item.logistiqueGlossaryEntry
+  if (entry) {
+    const lines = (text: string, columns: number) => lineCount(text.replace(/\{\/?g\}/g, ''), columns / scale)
+    const termHeight = lines(entry.term, a5 ? 15 : 17) * (a5 ? 20 : 23) * scale
+    const definitionHeight = lines(entry.definition, a5 ? 33 : 42) * (a5 ? 20 : 23) * scale
+    const caption = glossaryFigure?.caption
+    const captionHeight = caption ? 4 + lines(caption, a5 ? 18 : 21) * (a5 ? 14 : 16) * scale : 0
+    const wrappingReserve = Math.max(0, scale - 1) * 24
+    return (a5 ? 10 : 11) + wrappingReserve + Math.max(termHeight, definitionHeight, (a5 ? 61 : 76) + captionHeight)
+  }
   if (glossaryFigure && item.theoryBlock) {
     const diagram = glossaryFigure.src.includes('-schema-')
     const textHeight = theoryHeight(item.theoryBlock, width * (diagram ? 1 : 0.67), scale)
@@ -167,6 +177,8 @@ export function splitLogistiquePages(
   }
   const a5ItemLimit = budget(0) - 56
   for (const [blockIndex, block] of page.blocks.entries()) {
+    const glossary = block.items.length > 0 && block.items.every((item) => item.logistiqueGlossaryEntry)
+    const glossaryHeadingHeight = glossary ? (a5 ? 29 : 34) + (fontScale - 1) * 45 : 0
     const slices = block.items.flatMap<TheoryLayoutSlice>((item, sourceIndex) => {
       const theory = item.theoryBlock
       if (a5 && (theory?.kind === 'table' || theory?.kind === 'list')) {
@@ -181,7 +193,7 @@ export function splitLogistiquePages(
     const breakAfter = ({ item, sourceIndex, isLast }: TheoryLayoutSlice) =>
       isLast && (item.theoryPageBreakAfter || block.tcfPageBreakAfter?.[sourceIndex])
     let start = 0
-    let overhead = block.items.some((item) => item.layout === 'theory') ? 16 : 84 * fontScale
+    let overhead = glossary ? glossaryHeadingHeight : block.items.some((item) => item.layout === 'theory') ? 16 : 84 * fontScale
     const append = (end: number) => {
       const slice = slices.slice(start, end)
       const offset = slice[0]?.sourceIndex ?? 0
@@ -191,6 +203,7 @@ export function splitLogistiquePages(
         sourceBlockIndex: blockIndex,
         itemOffset: offset,
         items: slice.map(({ item }) => item),
+        ...(glossary ? { logistiqueGlossaryLength: block.items.length } : {}),
         ...(hasSlices ? {
           logistiqueTheorySlices: slice.map(({ sourceIndex, theoryBlock, isLast }) => ({ sourceIndex, theoryBlock, isLast })),
         } : {}),
@@ -231,6 +244,7 @@ export function splitLogistiquePages(
           && previousHeight + itemHeight <= budget(pages.length + 1)
         if (index > start) append(balanceLastQuestion ? index - 1 : index)
         flush()
+        overhead = glossary ? glossaryHeadingHeight : overhead
         if (balanceLastQuestion) used = previousHeight
       }
       used += overhead + itemHeight
@@ -238,6 +252,7 @@ export function splitLogistiquePages(
       if (breakAfter(slice)) {
         append(index + 1)
         flush()
+        overhead = glossaryHeadingHeight
       }
     }
     if (start < slices.length || slices.length === 0) append(slices.length)

@@ -2084,6 +2084,23 @@ html.is-margin-symmetric .print-only-sheets .worksheet-sheet.sheet-even .draft-g
 .logistique-words strong{display:block}
 .logistique-words small{display:block}
 .logistique-gap-editor{display:grid;gap:6px}
+.logistique-glossary-table{
+  --theory-size:calc(12pt * var(--app-font-scale,1));table-layout:fixed;line-height:1.4;overflow-wrap:anywhere
+}
+.logistique-glossary-table .logistique-glossary-image-col{width:25%}
+.logistique-glossary-table .logistique-glossary-term-col{width:23%}
+.logistique-glossary-table tbody th,.logistique-glossary-table tbody td{vertical-align:middle}
+.logistique-glossary-table tbody tr{break-inside:avoid}
+.logistique-glossary-table figure{margin:0}
+.logistique-glossary-table img{display:block;width:100%;height:76px;object-fit:contain}
+.logistique-glossary-table figcaption{font-size:.78em;line-height:1.24;margin-top:3px}
+.logistique-glossary-table tbody th{position:relative}
+.logistique-glossary-break{position:absolute;inset:auto 4px 3px auto}
+.logistique-glossary-break[aria-pressed='true']{color:var(--purple);background:var(--lavender)}
+.a5-half .logistique-glossary-table{--theory-size:calc(10.5pt * var(--app-font-scale,1))}
+.a5-half .logistique-glossary-table .logistique-glossary-image-col{width:26%}
+.a5-half .logistique-glossary-table th,.a5-half .logistique-glossary-table td{padding:3px 5px}
+.a5-half .logistique-glossary-table img{height:61px}
 .logistique-table-editor>summary{cursor:pointer;font-weight:600}
 .logistique-table-editor fieldset{display:grid;gap:6px;min-width:0;margin:8px 0 0;padding:6px;border:1px solid var(--line)}
 .logistique-exercise-table{

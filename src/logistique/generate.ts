@@ -2,6 +2,7 @@ import { pageBlocks } from '@/math/page-model'
 import { createRng, shuffle, type Rng } from '@/math/rng'
 import type { LogistiquePresentation, MathItem, PageConfig } from '@/math/types'
 import { currentLogistiquePublication, logistiquePublication, type LogistiqueUnit } from './approved-banks'
+import { completeLogistiqueGlossaryItem } from './glossary'
 import {
   isLogistiqueReferenceType, logistiquePhotoPath, logistiquePresentationFor, logistiqueType,
   validLogistiquePresentation, validLogistiqueSelection, type LogistiqueType,
@@ -16,10 +17,7 @@ function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'
   switch (unit.kind) {
     case 'objectifs-apercu':
     case 'theorie':
-    case 'glossaire':
       return (unit.kind === 'theorie' && view === 'resume' ? unit.summaryBlocks ?? [] : unit.blocks).map((block, index) => {
-        const term = unit.kind === 'glossaire' && block.kind === 'paragraph' ? block.text.match(/^\{g\}(.+?)\{\/g\}/)?.[1] : undefined
-        const figure = term && unit.kind === 'glossaire' ? unit.illustrations?.[term] : undefined
         return {
           layout: 'theory',
           prompt: `${unit.id}:${index}`,
@@ -27,9 +25,12 @@ function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'
           theoryBlock: block.kind === 'image' ? withAssetBase(block)
             : block.kind === 'image-row' ? { ...block, cells: block.cells.map(withAssetBase) }
               : block,
-          ...(figure ? { logistiqueGlossaryFigure: withAssetBase(figure) } : {}),
         }
       })
+    case 'glossaire':
+      return unit.blocks.map((theoryBlock, index) => completeLogistiqueGlossaryItem({
+        layout: 'theory', prompt: `${unit.id}:${index}`, answer: '', theoryBlock,
+      }, unit.module, unit.illustrations))
     case 'maths':
       return [{
         logistiqueSource,

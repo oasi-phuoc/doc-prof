@@ -270,6 +270,7 @@ import type { LogistiqueExerciseTable } from './tables'
 import type { LogistiqueGlossaryFigure } from '@/math/types'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
+import { logistiqueGlossaryFigures } from './glossary'
 
 type ReferenceBlock = Exclude<GrammarTheoryBlock, { kind: 'page' }>
 
@@ -645,6 +646,15 @@ const storageArrangementsPublication: LogistiquePublication = {
   storageArrangementFigures, 'v005'),
 }
 
+const glossaryTablesPublication: LogistiquePublication = {
+  revision: 'logistique-glossaires-tableaux-v006',
+  units: storageArrangementsPublication.units.map((unit) => unit.kind === 'glossaire' ? {
+    ...unit,
+    revision: `${unit.module}-glossaire-illustre-v006`,
+    illustrations: logistiqueGlossaryFigures[unit.module],
+  } : unit),
+}
+
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
@@ -733,6 +743,7 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   palletAndStoragePublication,
   acquisitionExercisesPublication,
   storageArrangementsPublication,
+  glossaryTablesPublication,
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!

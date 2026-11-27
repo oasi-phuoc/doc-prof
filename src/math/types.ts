@@ -468,6 +468,7 @@ export type MathItem = {
   logistiqueTable?: import('@/logistique/tables').LogistiqueExerciseTable
   logistiqueImage?: LogistiqueQuestionImage
   logistiqueGlossaryFigure?: LogistiqueGlossaryFigure
+  logistiqueGlossaryEntry?: { term: string; definition: string }
   layout: Layout
   grammar?: import('@/grammaire/curriculum/types').GrammarQuestion
   cscTask?: import('@/tcm-csc/task-types').CscTask
@@ -1248,6 +1249,8 @@ export type WorksheetBlock = {
   exerciseType: string
   /** Index des photos à habiller avec le paragraphe suivant sur cette feuille. */
   logistiqueWrappedFigures?: number[]
+  /** Nombre de notions de la source, avant pagination du tableau du glossaire. */
+  logistiqueGlossaryLength?: number
   /** Disposition imprimée des listes et tableaux A5, avec l’index du bloc d’origine. */
   logistiqueTheorySlices?: { sourceIndex: number; theoryBlock?: GrammarTheoryBlock; isLast: boolean }[]
   /** Points par question (propagé depuis ExerciseBlock). */

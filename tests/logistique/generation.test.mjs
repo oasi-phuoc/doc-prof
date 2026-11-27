@@ -91,7 +91,7 @@ test('les glossaires de manutention incluent leurs nouveaux termes dans les deux
   }
 })
 
-test('les illustrations des glossaires sont reliées à des définitions et gardent les anciennes recettes', () => {
+test('chaque notion de glossaire a son propre visuel et garde la définition de la recette', () => {
   let combinations = 0
   for (const type of catalog.logistiqueTypes.filter(({ kind }) => kind === 'glossaire')) {
     const page = config(type.diploma, type.module, type.kind)
@@ -100,21 +100,26 @@ test('les illustrations des glossaires sont reliées à des définitions et gard
     const figures = items.filter((item) => item.logistiqueGlossaryFigure)
     const unit = currentLogistiquePublication.units.find((entry) =>
       entry.kind === 'glossaire' && entry.module === type.module)
-    assert(figures.length > 0, type.id)
+    assert.equal(figures.length, items.length, type.id)
     assert.equal(figures.length, Object.keys(unit.illustrations).length, type.id)
+    assert.equal(new Set(figures.map(({ logistiqueGlossaryFigure }) => logistiqueGlossaryFigure.src)).size, items.length, type.id)
     const preserved = new Set(items.map(({ theoryBlock }) => theoryBlock.text))
     assert(previous.items.every(({ theoryBlock }) => preserved.has(theoryBlock.text)), type.id)
-    assert(previous.items.every((item) => !item.logistiqueGlossaryFigure))
-    for (const { theoryBlock, logistiqueGlossaryFigure } of figures) {
+    assert(previous.items.every((item) => item.logistiqueGlossaryFigure && item.logistiqueGlossaryEntry), type.id)
+    for (const { theoryBlock, logistiqueGlossaryEntry, logistiqueGlossaryFigure } of figures) {
       const term = theoryBlock.text.match(/^\{g\}(.+?)\{\/g\}/)?.[1]
       const { src, alt } = logistiqueGlossaryFigure
       assert(alt && src.endsWith('.webp') && existsSync(root + '/public/' + src.replace(/^\//, '')), term)
-      assert(src.includes('/commun/') || src.includes('/' + type.diploma.toLowerCase() + '/'), type.id)
+      assert(/\/(?:commun|glossaire)\//.test(src) || src.includes('/' + type.diploma.toLowerCase() + '/'), type.id)
       assert(src.endsWith(unit.illustrations[term].src), term)
+      assert.equal(logistiqueGlossaryEntry?.term, term)
+      assert(logistiqueGlossaryEntry?.definition.trim().length, term)
     }
     combinations += 1
   }
   assert.equal(combinations, 143)
+  assert.equal(currentLogistiquePublication.units.filter(({ kind }) => kind === 'glossaire')
+    .reduce((sum, { illustrations }) => sum + Object.keys(illustrations).length, 0), 1170)
 })
 
 test('les résumés illustrés sont distincts du cours et figés dans la recette', () => {

@@ -15,6 +15,7 @@ import {
   type InstitutionalHeader,
 } from '@/components/math/PrintDocumentChrome'
 import { DecomposeExample } from '@/components/item-view/decompose'
+import { LogistiqueGlossaryTable } from '@/components/item-view/logistique-glossary'
 import { isDraftPadExercise } from '@/math/catalog'
 import { blockPointsTotal, formatPointsLabel, sumPointWeights } from '@/tpm/test'
 import { isReperageConstruire } from '@/math/coord-reperage'
@@ -285,6 +286,15 @@ export function WorksheetSheet({
       <SheetBody>
         {(page.blocks.length > 0 ? page.blocks : fallbackBlocks(page)).map((block, renderedBlockIndex) => {
           const blockIndex = block.sourceBlockIndex ?? renderedBlockIndex
+          if (block.items.length && block.items.every((item) => item.logistiqueGlossaryEntry)) {
+            return (
+              <section className="exercise-block" data-exercise-type={block.exerciseType} key={`glossaire-${blockIndex}`}>
+                <LogistiqueGlossaryTable block={block}
+                  onBreakAfter={interactiveTcfPageBreaks && onToggleTcfPageBreak
+                    ? (index) => onToggleTcfPageBreak(index + 1, blockIndex) : undefined} />
+              </section>
+            )
+          }
           const algebraItems = block.items.filter((item) => item.layout === 'algebra')
           const maxTokens =
             algebraItems.length > 0
