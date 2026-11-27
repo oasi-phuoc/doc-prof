@@ -41,7 +41,7 @@ La première banque proposait dix fiches de situation du quotidien pour chacun d
 - une tâche de PE demandant une seule phrase ;
 - une tâche de PO demandant une seule prise de parole courte, avec modèle réservé au corrigé.
 
-Dix illustrations du sous-thème « Demander une possibilité » ont été régénérées individuellement dans le style dessiné CE/CO. Le [registre des illustrations](illustrations.json) conserve les chemins, empreintes et contrôles. Le [registre des scènes](images-a-preparer.json) donne l’état de chacune des 160 situations.
+Chacune des 160 situations a sa propre illustration dans le style dessiné CE/CO. Le [registre des illustrations](illustrations.json) conserve les chemins, empreintes et contrôles. Le [registre des scènes](images-a-preparer.json) donne l’état de chacune des 160 situations.
 
 ## Vérification et entretien
 
