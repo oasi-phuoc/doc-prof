@@ -1,0 +1,173 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Distinguer préparation **statique** / **dynamique** et déplacement **1D** / **2D**\n- Comparer modes de prélèvement, transfert, infos (batch / real-time) et série / parallèle\n- Expliquer prélèvement **orienté commande** vs **orienté article**\n- Décrire Pick-by-Scan, Voice, Light, Vision et **Pick-and-Pack**",
+  "overview": "## Aperçu du module 601\n\n- Préparer les lignes d’une commande selon l’organisation du dépôt.\n- Distinguer article, emplacement, lot, unité et quantité.\n- Contrôler le prélèvement et organiser la remise à l’emballage.",
+  "replacements": [],
+  "summary": [
+    "Préparer les lignes d’une commande selon l’organisation du dépôt.",
+    "Distinguer article, emplacement, lot, unité et quantité.",
+    "Contrôler le prélèvement et organiser la remise à l’emballage."
+  ],
+  "glossary": [
+    [
+      "Bon de préparation",
+      "Liste des lignes à prélever pour un dossier."
+    ],
+    [
+      "Commande",
+      "Ensemble des articles et conditions demandés."
+    ],
+    [
+      "Consolidation",
+      "Regroupement de prélèvements pour un même départ."
+    ],
+    [
+      "Contrôle de préparation",
+      "Vérification de l’identité, de l’état et des quantités prélevées."
+    ],
+    [
+      "Emplacement",
+      "Position repérée dans le dépôt."
+    ],
+    [
+      "Ligne de commande",
+      "Référence et quantité demandées dans un dossier."
+    ],
+    [
+      "Lot",
+      "Identifiant qui relie les unités et leurs mouvements."
+    ],
+    [
+      "Picking",
+      "Prélèvement d’articles pour une commande."
+    ],
+    [
+      "Pick-and-pack",
+      "Organisation reliant la préparation et l’emballage dans le même flux."
+    ],
+    [
+      "Préparation par zone",
+      "Répartition des prélèvements entre les zones."
+    ],
+    [
+      "Scan",
+      "Lecture d’un code pour vérifier ou enregistrer une donnée."
+    ],
+    [
+      "Substitution",
+      "Remplacement autorisé d’un article selon les conditions du dossier."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "La commande A demande 7, 12 et 8 unités sur ses trois lignes. Calculez le total.",
+      "answer": "27 unités.",
+      "calculation": "7 + 12 + 8 = 27."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Il faut 52 pièces et les cartons en contiennent 10. Préparez le nombre de cartons complets et le reste.",
+      "answer": "Cinq cartons et deux pièces.",
+      "calculation": "52 = 5 × 10 + 2."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Onze commandes passent à l’emballage, puis sept de plus. Calculez le nombre reçu.",
+      "answer": "18 commandes.",
+      "calculation": "11 + 7 = 18."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Chaque ligne prend 30 secondes. Donnez la durée pour 16 lignes sans interruption.",
+      "answer": "Huit minutes.",
+      "calculation": "16 × 30 = 480 s = 8 min."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Sur 125 lignes vérifiées, cinq exigent une reprise. Calculez le taux.",
+      "answer": "4 %.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "5 ÷ 125 × 100 = 4 %."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quelles données comparez-vous au prélèvement ?",
+      "answer": "Référence, emplacement, quantité, unité et lot si requis."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "À quoi sert la consolidation ?",
+      "answer": "Elle rassemble les unités d’un même dossier prélevées séparément."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Que distingue la ligne de commande d’un article ?",
+      "answer": "Une ligne indique une référence avec la quantité et les conditions d’un dossier."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Que faites-vous si le code ne correspond pas ?",
+      "answer": "Suspendre le prélèvement et vérifier le dossier et l’identification."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Quel est le principe du pick-and-pack ?",
+      "answer": "Relier le prélèvement et le conditionnement de la commande dans le même flux."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "La quantité disponible est de 6 pièces pour 10 demandées. Comment traitez-vous la ligne ?",
+      "answer": "Enregistrer le manque et transmettre le dossier avant toute substitution ou clôture."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Deux commandes se trouvent dans le même chariot. Comment vérifiez-vous le regroupement ?",
+      "answer": "Identifier séparément les dossiers, puis contrôler chaque article à la consolidation."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Une unité est enregistrée en cartons, mais la demande est en pièces. Quelle vérification faites-vous ?",
+      "answer": "Vérifier la conversion officielle de l’article avant de saisir le prélèvement."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "1.1 Stratégies et notions",
+      "file": "log-601-notions-1-v001.svg",
+      "alt": "Demande. Lire référence et unité. Prélèvement. Vérifier la position. Contrôle. Comparer au dossier.",
+      "caption": "La trace relie les unités au dossier de la commande.",
+      "sha256": "1eef9a6fdff3dbb74b2e5dfd7ab9038fd89fb49e76a2b93399a49d1c7cae9d68",
+      "origin": "Illustration originale Doc-Prof du module 601."
+    },
+    {
+      "anchor": "1.3 Pick-and-Pack",
+      "file": "log-601-notions-2-v001.svg",
+      "alt": "Préparer. Articles du dossier. Emballer. Protection adaptée. Remettre. Commande identifiée.",
+      "caption": "Le dossier reste identifiable lors du passage entre opérations.",
+      "sha256": "669982c77f7cfe0725029ae4ca0568b3313bd5b3ea81e060567916e843555a2b",
+      "origin": "Illustration originale Doc-Prof du module 601."
+    }
+  ]
+}

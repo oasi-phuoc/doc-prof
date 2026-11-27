@@ -1,0 +1,173 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Expliquer les trois **fonctions** de l'emballage\n- Utiliser le vocabulaire **DIN 55405** (moyen, accessoires, paquet…)\n- Choisir un emballage / rembourrage selon contraintes et **durabilité**\n- Décrire les contraintes (mécaniques, climatiques, nuisibles, vol) et les **normes** (empilage, symboles)",
+  "overview": "## Aperçu du module 602\n\n- Distinguer les usages de protection, de regroupement et de transport.\n- Choisir un emballage à partir du produit et des contraintes de son parcours.\n- Vérifier les repères et le suivi de l’emballage réutilisable.",
+  "replacements": [],
+  "summary": [
+    "Distinguer les usages de protection, de regroupement et de transport.",
+    "Choisir un emballage à partir du produit et des contraintes de son parcours.",
+    "Vérifier les repères et le suivi de l’emballage réutilisable."
+  ],
+  "glossary": [
+    [
+      "Calage",
+      "Dispositif qui limite les déplacements ou contacts dans un emballage."
+    ],
+    [
+      "Conditionnement",
+      "Présentation d’un produit dans son emballage ou contenant."
+    ],
+    [
+      "Emballage de transport",
+      "Emballage destiné à protéger ou regrouper pendant le déplacement."
+    ],
+    [
+      "Emballage de vente",
+      "Emballage lié à la remise d’un article au client."
+    ],
+    [
+      "Emballage réutilisable",
+      "Support conçu pour plusieurs cycles de récupération et d’usage."
+    ],
+    [
+      "Fragilité",
+      "Sensibilité du bien aux chocs ou autres sollicitations."
+    ],
+    [
+      "Masse brute",
+      "Masse du contenu et du contenant mesurés ensemble."
+    ],
+    [
+      "Masse nette",
+      "Masse du seul contenu pris en compte."
+    ],
+    [
+      "Protection",
+      "Fonction qui limite les dommages dans les conditions prévues."
+    ],
+    [
+      "Suremballage",
+      "Protection ou regroupement ajouté autour d’unités déjà conditionnées."
+    ],
+    [
+      "Tare",
+      "Masse de l’emballage vide dans la mesure."
+    ],
+    [
+      "Unité d’expédition",
+      "Ensemble identifiable préparé pour le départ."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Quatre colis de 8 kg de contenu ont chacun une tare de 0,5 kg. Calculez la masse brute totale.",
+      "answer": "34 kg.",
+      "calculation": "4 × (8 + 0,5) = 34 kg."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Une boîte de 60 × 40 × 30 cm est assimilée à un pavé. Calculez son volume en litres.",
+      "answer": "72 L.",
+      "calculation": "60 × 40 × 30 = 72 000 cm³ = 72 L."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Il faut envoyer 34 articles, au plus 8 par carton. Combien faut-il de cartons ?",
+      "answer": "Cinq cartons.",
+      "calculation": "4 × 8 = 32, plus un carton."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "On récupère 57 bacs sur 60 prêtés. Combien sont encore attendus ?",
+      "answer": "Trois bacs.",
+      "calculation": "60 − 57 = 3."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Deux solutions de protection coûtent 2,80 CHF ou 3,40 CHF par envoi. Calculez l’écart pour 180 envois.",
+      "answer": "108 CHF.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "(3,40 − 2,80) × 180 = 108 CHF."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quels dommages un emballage peut-il limiter ?",
+      "answer": "Les chocs, frottements, compressions ou autres risques pour lesquels il est conçu."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Qu’est-ce qui différencie la masse nette de la brute ?",
+      "answer": "La masse brute inclut les emballages retenus pour la mesure."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Pourquoi observer le parcours avant de choisir la protection ?",
+      "answer": "Les manipulations, conditions et transferts influencent les risques."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "À quoi sert le calage ?",
+      "answer": "À limiter les mouvements ou les contacts du contenu."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Qu’est-ce qui rend un emballage réutilisable en pratique ?",
+      "answer": "Une conception adaptée et un circuit de collecte, de contrôle et de remise en service."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Le carton est intact mais son contenu se déplace. Quelle suite ?",
+      "answer": "Vérifier l’adaptation du conditionnement et utiliser la protection validée avant remise."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Un client demande de réutiliser un contenant abîmé. Comment répondez-vous ?",
+      "answer": "Vérifier le critère d’acceptation du support et écarter ou remplacer selon la procédure."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "L’étiquette est masquée après suremballage. Que faites-vous ?",
+      "answer": "Rétablir l’identification prévue et confirmer son lien avec le contenu."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "2.2 Termes DIN 55405",
+      "file": "log-602-notions-1-v001.svg",
+      "alt": "Produit. Article à protéger. Vente. Présentation et remise. Transport. Protection et groupage.",
+      "caption": "Chaque niveau remplit une fonction à vérifier sur le parcours.",
+      "sha256": "dc0cb7da2e94ed7f6ce5700c6fcbb9a5e510f9a6ef5abfe20da72ef42466afa9",
+      "origin": "Illustration originale Doc-Prof du module 602."
+    },
+    {
+      "anchor": "2.3 Quel est le bon emballage ?",
+      "file": "log-602-notions-2-v001.svg",
+      "alt": "Produit. Masse, taille et fragilité. Parcours. Manutention et séjour. Emballage. Protection et marquage.",
+      "caption": "Vérifier l’ensemble avant d’autoriser l’expédition.",
+      "sha256": "58948f5a8d596b1ed49aca2de760d813d132e6898f255f85783be784dffe8f27",
+      "origin": "Illustration originale Doc-Prof du module 602."
+    }
+  ]
+}

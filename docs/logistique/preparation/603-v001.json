@@ -1,0 +1,224 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Comparer **filmage**, **rétraction** et **cerclage**\n- Choisir un **feuillard** (PP/PET, textile, acier) selon traction, allongement et rappel\n- Calculer une **force de rupture** et l'appliquer à un cas (ex. 2 cerclages)\n- Distinguer les **fermetures** (boucle, chape, sans chape, ficelle)",
+  "overview": "## Aperçu du module 603\n\n- Distinguer le maintien d’une unité de charge et son arrimage sur le véhicule.\n- Identifier les familles de matériels et lire les données du dossier applicable.\n- Reconnaître les signes qui imposent de suspendre la remise et de signaler.",
+  "replacements": [
+    {
+      "from": "Pour sécuriser un chargement de palettes : **filmage (stretch)** · **rétraction** · **cerclage**.",
+      "to": "Le filmage, la rétraction et le cerclage peuvent maintenir les éléments d’une unité. L’arrimage sur un véhicule relève des dispositifs et règles du transport.",
+      "reason": "Distingue conditionnement et arrimage."
+    },
+    {
+      "from": "- Étirer le film pendant l'enveloppement → stabilité (réglage de la tension)",
+      "to": "- L’emploi est déterminé par les matériels, le produit et la procédure validée.",
+      "reason": "Retire un réglage générique."
+    },
+    {
+      "from": "- Inclure la **palette** dans le stretch pour stabilité optimale · **sauf** avant contrôle de profil auto (sinon rejet « palette défectueuse »)",
+      "to": "- Vérifier la compatibilité avec le support et les contrôles prévus.",
+      "reason": "Évite une consigne systématique."
+    },
+    {
+      "from": "Housse **thermo-rétractable** (souvent PVC épais) chauffée (soufflante / flamme / four) → se resserre. Protège intempéries, poussière, vol. Peu écologique. **Non étirable** : une fois abîmée, protection insuffisante. Ne pas surchauffer un même endroit.",
+      "to": "La rétraction utilise un matériau prévu pour changer de dimension. La mise en œuvre relève d’équipements et de procédures validés, utilisés par les personnes autorisées.",
+      "reason": "Supprime des méthodes thermiques génériques."
+    },
+    {
+      "from": "Feuillard autour de grosses unités. **Vertical** = souvent le mieux (relie palette + charge). **Horizontal** plus rare (ex. fûts). Piles très instables : combinaison V+H · parfois mieux d'ajouter du stretch plutôt qu'un cerclage horizontal.",
+      "to": "Le cerclage maintient une unité avec le système prévu. En cas d’instabilité, interrompre la remise et faire vérifier la configuration.",
+      "reason": "Supprime une combinaison non validée de dispositifs."
+    },
+    {
+      "from": "(Pratique : ~10 N ≈ 1 kg.)",
+      "to": "Une force s’exprime en newtons. Elle ne doit pas être confondue avec une masse en kilogrammes.",
+      "reason": "Précise la différence d’unité."
+    },
+    {
+      "from": "**Ex. EnterSite** — palette toner 600 kg · 2 cerclages → ≥ **300 kg** / feuillard.",
+      "to": "**Exemple de laboratoire** : les valeurs suivantes comparent deux éprouvettes fictives, sans fixer de limite de transport.",
+      "reason": "Écarte le dimensionnement d’un arrimage à partir d’une force de rupture."
+    },
+    {
+      "from": "| Rupture | 3200 N ≈ **320 kg** | 10 800 N ≈ **1080 kg** |",
+      "to": "| Rupture de l’éprouvette | 3 200 N | 10 800 N |",
+      "reason": "Supprime l’équivalence abusive avec une charge transportable."
+    },
+    {
+      "from": "Les deux suffisent → trancher sur d'autres critères.",
+      "to": "Pour une situation réelle, vérifier les limites d’emploi, les systèmes compatibles et la procédure de transport.",
+      "reason": "Écarte la conclusion de sécurité non valable."
+    },
+    {
+      "from": "Tendre → poser chape → écraser / poinçonner · plastique ou métal · appareils combinés (tension + chape + soudure).",
+      "to": "Cette famille de fermeture s’utilise uniquement avec le système et l’équipement compatibles selon leurs instructions.",
+      "reason": "Retire une procédure de manipulation générique."
+    }
+  ],
+  "summary": [
+    "Distinguer le maintien d’une unité de charge et son arrimage sur le véhicule.",
+    "Identifier les familles de matériels et lire les données du dossier applicable.",
+    "Reconnaître les signes qui imposent de suspendre la remise et de signaler."
+  ],
+  "glossary": [
+    [
+      "Allongement",
+      "Variation de longueur rapportée à la longueur initiale."
+    ],
+    [
+      "Arrimage",
+      "Maintien de la charge sur le moyen de transport selon les règles applicables."
+    ],
+    [
+      "Cerclage",
+      "Maintien d’unités au moyen d’un système de bandes prévu à cet effet."
+    ],
+    [
+      "Charge admissible",
+      "Limite d’emploi définie pour la configuration considérée."
+    ],
+    [
+      "Feuillard",
+      "Bande utilisée dans un système de cerclage."
+    ],
+    [
+      "Film étirable",
+      "Film de maintien conçu pour l’emploi spécifié."
+    ],
+    [
+      "Force de rupture",
+      "Force à laquelle un échantillon rompt dans des conditions d’essai."
+    ],
+    [
+      "Maintien de charge",
+      "Stabilisation des éléments de l’unité selon le conditionnement prévu."
+    ],
+    [
+      "Rétraction",
+      "Changement de dimension d’un matériau selon ses caractéristiques."
+    ],
+    [
+      "Section",
+      "Surface de coupe calculée ou mesurée."
+    ],
+    [
+      "Traction",
+      "Sollicitation qui tend à allonger une pièce."
+    ],
+    [
+      "Unité de charge",
+      "Groupe de biens réunis pour être manipulés comme un ensemble."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Une éprouvette rectangulaire de laboratoire mesure 10 mm de large et 0,5 mm d’épaisseur. Calculez sa section.",
+      "answer": "5 mm².",
+      "calculation": "10 × 0,5 = 5 mm²."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Un essai fictif porte sur une éprouvette de 5 mm² et une contrainte de rupture de 200 N/mm². Calculez la force du modèle.",
+      "answer": "1 000 N, valeur d’essai.",
+      "calculation": "5 × 200 = 1 000 N."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "On contrôle huit unités et on en écarte trois. Combien restent au statut prévu pour le flux ?",
+      "answer": "Cinq unités.",
+      "calculation": "8 − 3 = 5."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Un contrôle dure 4 minutes par unité. Donnez la durée pour douze unités.",
+      "answer": "48 minutes.",
+      "calculation": "12 × 4 = 48 min."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Un relevé porte sur 160 unités dont 12 doivent être reprises. Calculez le taux.",
+      "answer": "7,5 %.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "12 ÷ 160 × 100 = 7,5 %."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Que distingue le maintien d’une palette de l’arrimage sur un véhicule ?",
+      "answer": "Le premier stabilise l’unité. L’arrimage concerne sa tenue sur le véhicule selon la configuration de transport."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Une force de rupture est-elle une limite d’usage ?",
+      "answer": "Elle décrit un essai. Les limites d’usage se vérifient dans la documentation et la procédure applicables."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Quelle différence entre masse et force ?",
+      "answer": "La masse s’exprime en kg. La force s’exprime en N."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Que faire si une unité est déformée ?",
+      "answer": "Suspendre sa remise, sécuriser selon consigne et signaler à la personne compétente."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Quels documents vérifier avant une décision ?",
+      "answer": "Données de l’unité, caractéristiques des matériels et plan ou procédure de transport."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Un film est coupé et plusieurs colis se décalent. Quelle suite ?",
+      "answer": "Écarter l’unité du flux, maintenir la zone sûre et demander la remise en conformité autorisée."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Le document d’essai ne mentionne pas de charge admissible. Que faites-vous ?",
+      "answer": "Ne pas l’utiliser comme autorisation. Demander le dossier applicable au matériel et à la configuration."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Une palette stable à l’arrêt doit prendre la route. Que vérifiez-vous ?",
+      "answer": "La compatibilité du maintien, le dossier de transport et la validation de l’arrimage par les personnes responsables."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "Cerclage",
+      "file": "log-603-notions-1-v001.svg",
+      "alt": "Unité. Maintien des éléments. Véhicule. Arrimage de l’ensemble.",
+      "caption": "La validation de l’unité ne remplace pas celle du transport.",
+      "sha256": "cb9202139cf82fdda53e924a335f9a933a852dd9610a7c954e87a38d51375fe7",
+      "origin": "Illustration originale Doc-Prof du module 603."
+    },
+    {
+      "anchor": "3.1.1 Résistance à la traction",
+      "file": "log-603-notions-2-v001.svg",
+      "alt": "Éprouvette. Section et mesure d’essai. Résultat. Force de rupture. Usage. Limite documentée.",
+      "caption": "Seule la documentation applicable fixe la limite d’usage.",
+      "sha256": "cdfde4020a252ad256b09c78e5719fdafb2e06b1094780accf5105e00016740a",
+      "origin": "Illustration originale Doc-Prof du module 603."
+    }
+  ]
+}

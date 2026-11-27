@@ -46,6 +46,12 @@ import { module503 } from './banks/module-503-v001.generated.ts'
 import { module504 } from './banks/module-504-v001.generated.ts'
 import { module505 } from './banks/module-505-v001.generated.ts'
 import { module506 } from './banks/module-506-v001.generated.ts'
+import { module601 } from './banks/module-601-v001.generated.ts'
+import { module602 } from './banks/module-602-v001.generated.ts'
+import { module603 } from './banks/module-603-v001.generated.ts'
+import { module604 } from './banks/module-604-v001.generated.ts'
+import { module605 } from './banks/module-605-v001.generated.ts'
+import { module606 } from './banks/module-606-v001.generated.ts'
 import { module613 } from './banks/module-613-v001.generated.ts'
 import { module805 } from './banks/module-805-v001.generated.ts'
 import { module902 } from './banks/module-902-v001.generated.ts'
@@ -116,6 +122,11 @@ const publication_401_402_403_404_405_406_407_408_409_410_v001: LogistiquePublic
   units: [...publication_304_305_306_307_309_310_311_312_v001.units, ...module401, ...module402, ...module403, ...module404, ...module405, ...module406, ...module407, ...module408, ...module409, ...module410],
 }
 
+const publication_501_502_503_504_505_506_v001: LogistiquePublication = {
+  revision: 'logistique-501-502-503-504-505-506-v001',
+  units: [...publication_401_402_403_404_405_406_407_408_409_410_v001.units, ...module501, ...module502, ...module503, ...module504, ...module505, ...module506],
+}
+
 /** Ajouter une publication après validation. Garder les versions utilisées par les recettes. */
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
@@ -161,9 +172,10 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   publication_301_302_303_v001,
   publication_304_305_306_307_309_310_311_312_v001,
   publication_401_402_403_404_405_406_407_408_409_410_v001,
+  publication_501_502_503_504_505_506_v001,
   {
-    revision: 'logistique-501-502-503-504-505-506-v001',
-    units: [...publication_401_402_403_404_405_406_407_408_409_410_v001.units, ...module501, ...module502, ...module503, ...module504, ...module505, ...module506],
+    revision: 'logistique-601-602-603-604-605-606-v001',
+    units: [...publication_501_502_503_504_505_506_v001.units, ...module601, ...module602, ...module603, ...module604, ...module605, ...module606],
   },
 ]
 

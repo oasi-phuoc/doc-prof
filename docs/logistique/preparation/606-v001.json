@@ -1,0 +1,184 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Expliquer les atouts / contraintes du **transport routier** en Suisse\n- Relier les **forces dynamiques** à la sécurisation du chargement\n- Appliquer les règles de **répartition** (essieux) et citer les moyens d'arrimage\n- Décrire la **RPLP** (objectifs, tarification, utilisation des recettes)",
+  "overview": "## Aperçu du module 606\n\n- Relier le dossier routier au trajet, aux documents et au service prévu.\n- Distinguer effets du mouvement et limites de l’ensemble véhicule-charge.\n- Interpréter une redevance chiffrée à partir d’hypothèses explicites.",
+  "replacements": [
+    {
+      "from": "Mesurées en m/s² (N) · pesanteur ≈ **10 m/s²** = **1 g** · 1 kg ≈ 10 N.",
+      "to": "Une accélération s’exprime en m/s² et une force en N. L’accélération de la pesanteur vaut environ 9,81 m/s².",
+      "reason": "Corrige les unités."
+    },
+    {
+      "from": "Tarif selon **émissions** (véhicules propres = moins taxés). CH : appareil électronique + tachygraphe · contrôle **GPS**. Étrangers : appareil ou paiement douane (carte à puce).",
+      "to": "Vérifier les barèmes et modalités de déclaration officiels applicables au véhicule et au trajet, à la date du transport.",
+      "reason": "Les options et montants peuvent évoluer."
+    }
+  ],
+  "summary": [
+    "Relier le dossier routier au trajet, aux documents et au service prévu.",
+    "Distinguer effets du mouvement et limites de l’ensemble véhicule-charge.",
+    "Interpréter une redevance chiffrée à partir d’hypothèses explicites."
+  ],
+  "glossary": [
+    [
+      "Accélération",
+      "Variation de la vitesse par unité de temps."
+    ],
+    [
+      "Arrimage",
+      "Maintien de la charge sur le véhicule selon les règles et dispositifs applicables."
+    ],
+    [
+      "Charge utile",
+      "Quantité ou masse utile prévue dans les limites du véhicule et du dossier."
+    ],
+    [
+      "Desserte routière",
+      "Transport par route reliant les destinations prévues."
+    ],
+    [
+      "Essieu",
+      "Élément lié aux roues auquel une charge est attribuée."
+    ],
+    [
+      "Force",
+      "Effort exprimé en newtons."
+    ],
+    [
+      "Kilométrage",
+      "Distance parcourue dans le périmètre mesuré."
+    ],
+    [
+      "Lettre de voiture",
+      "Document qui atteste des données du transport."
+    ],
+    [
+      "Masse",
+      "Grandeur mesurée en kilogrammes ou tonnes."
+    ],
+    [
+      "Répartition",
+      "Distribution de la charge selon la configuration du véhicule."
+    ],
+    [
+      "RPLP",
+      "Redevance suisse sur le trafic des poids lourds liée aux prestations."
+    ],
+    [
+      "Trajet",
+      "Parcours du départ à une destination prévue."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Un circuit dessert trois sites sur 22, 38 et 24 km. Calculez la distance.",
+      "answer": "84 km.",
+      "calculation": "22 + 38 + 24 = 84 km."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Un trajet de 95 km est suivi d’un retour de 89 km. Calculez le total.",
+      "answer": "184 km.",
+      "calculation": "95 + 89 = 184 km."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Une livraison part à 8 h 35, roule 65 min puis attend 20 min. Calculez l’heure de fin d’attente.",
+      "answer": "10 h.",
+      "calculation": "8 h 35 + 65 min + 20 min = 10 h."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Un lot fictif comprend 12 unités de 45 kg. Calculez la masse.",
+      "answer": "540 kg.",
+      "calculation": "12 × 45 = 540 kg."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Un calcul d’exercice donne 0,03 CHF par tonne-kilomètre avec 12 t et 80 km. Calculez le coût selon cette hypothèse.",
+      "answer": "28,80 CHF.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "0,03 × 12 × 80 = 28,80 CHF."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quel est un avantage fréquent du transport routier ?",
+      "answer": "La souplesse de desserte des points accessibles par route."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Quelle différence entre accélération et force ?",
+      "answer": "L’accélération s’exprime en m/s². Une force s’exprime en N."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Pourquoi la masse totale ne suffit-elle pas ?",
+      "answer": "Les limites et la répartition par essieu et configuration doivent être vérifiées."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Quelles données alimentent le dossier d’un trajet ?",
+      "answer": "Destinations, distances, délais, documents, véhicule et données des unités."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Que signifie RPLP ?",
+      "answer": "Redevance sur le trafic des poids lourds liée aux prestations."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Le trajet initial est fermé. Quelle suite organisez-vous ?",
+      "answer": "Vérifier le trajet de remplacement autorisé, la nouvelle heure et les contraintes du véhicule, puis transmettre la mise à jour."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "La masse mesurée diffère du dossier avant départ. Que faites-vous ?",
+      "answer": "Suspendre la validation, vérifier l’unité et les limites applicables, puis signaler."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Un devis routier mélange transport et redevance. Quelles précisions demandez-vous ?",
+      "answer": "Les distances, données et coûts retenus, et si les postes sont inclus ou séparés."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "6.1 Trafic routier",
+      "file": "log-606-notions-1-v001.svg",
+      "alt": "Départ. Véhicule et envois. Trajet. Arrêts et contraintes. Destination. Heure et remise.",
+      "caption": "Valider les données du trajet et les transmettre aux personnes concernées.",
+      "sha256": "27f7e71e3822a207b1b8d52e3ea88d6f65ff01513934f95362e3a18a843dfe9f",
+      "origin": "Illustration originale Doc-Prof du module 606."
+    },
+    {
+      "anchor": "6.2 Répartition de la charge",
+      "file": "log-606-notions-2-v001.svg",
+      "alt": "Total. Masse de l’ensemble. Répartition. Charges et limites locales.",
+      "caption": "Seuls les documents applicables valident la configuration réelle.",
+      "sha256": "20fd3e9c4d3cd6dff26910b80842eecc07473fccc49b97644c37ded0b947fb25",
+      "origin": "Illustration originale Doc-Prof du module 606."
+    }
+  ]
+}

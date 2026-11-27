@@ -1,0 +1,189 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Appliquer les règles d'**adressage** lettres et colis\n- Comparer les principales **prestations** (A/B, Priority/Economy, Signature…)\n- Décrire le flux **étranger** et le **tri** (lettres séquencé, colis)\n- Expliquer la **distribution**, PickPost et My Post 24",
+  "overview": "## Aperçu du module 605\n\n- Rédiger une adresse lisible et la rattacher au bon envoi.\n- Choisir une prestation selon le trajet, le délai et le suivi demandé.\n- Comprendre le passage du dépôt au tri et à la remise.",
+  "replacements": [
+    {
+      "from": "Base d'un flux sans faille dépôt → distribution. Autrefois : adresses de fermes + mémoire des facteurs. Aujourd'hui : critères stricts pour machines (jusqu'à ~**18 millions** de lettres/jour).",
+      "to": "Une adresse lisible et correcte facilite le tri et la remise. Vérifier la présentation prévue pour le support et la destination.",
+      "reason": "Évite une capacité de tri non datée."
+    },
+    {
+      "from": "Colis > **2 kg** : Urdorf (camion) ou Zurich Aéroport (avion).  ",
+      "to": "Le routage dépend du service, du contenu, du format et du réseau du prestataire.",
+      "reason": "Supprime une règle de plateforme non vérifiée."
+    },
+    {
+      "from": "Documents / petites marchandises ≤ **2 kg** : hub ZH-Mülligen (colis ≤ 2 kg = « documents » en postal international).  ",
+      "to": "Distinguer les documents et les autres marchandises selon leur nature et la réglementation, et contrôler les formalités du dossier.",
+      "reason": "Le poids seul ne détermine pas la nature de l’envoi."
+    }
+  ],
+  "summary": [
+    "Rédiger une adresse lisible et la rattacher au bon envoi.",
+    "Choisir une prestation selon le trajet, le délai et le suivi demandé.",
+    "Comprendre le passage du dépôt au tri et à la remise."
+  ],
+  "glossary": [
+    [
+      "Adresse d’expédition",
+      "Coordonnées de l’émetteur de l’envoi."
+    ],
+    [
+      "Adresse de remise",
+      "Coordonnées de la destination retenue."
+    ],
+    [
+      "Affranchissement",
+      "Indication du paiement ou des conditions associées à l’acheminement."
+    ],
+    [
+      "Centre de tri",
+      "Site qui répartit les envois selon leur traitement et leur destination."
+    ],
+    [
+      "Code-barres",
+      "Représentation lisible par un équipement de certaines données d’identification."
+    ],
+    [
+      "Dédouanement",
+      "Formalités qui permettent le passage douanier de l’envoi."
+    ],
+    [
+      "Identifiant d’envoi",
+      "Référence utilisée pour retrouver le dossier et les événements."
+    ],
+    [
+      "NPA",
+      "Numéro postal d’acheminement."
+    ],
+    [
+      "Point de retrait",
+      "Lieu désigné où le destinataire peut prendre en charge l’envoi."
+    ],
+    [
+      "Prestation",
+      "Service choisi et défini par des conditions."
+    ],
+    [
+      "Suivi",
+      "Consultation des événements enregistrés pour l’envoi."
+    ],
+    [
+      "Tri",
+      "Répartition des envois entre destinations ou parcours."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Vous préparez 45 lettres et 17 colis. Combien d’envois remettez-vous ?",
+      "answer": "62 envois.",
+      "calculation": "45 + 17 = 62."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Sur 120 adresses, neuf sont à corriger. Combien sont prêtes après le premier contrôle ?",
+      "answer": "111 adresses.",
+      "calculation": "120 − 9 = 111."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Un tarif d’exercice est de 2,40 CHF par envoi. Calculez le coût pour 15 envois.",
+      "answer": "36 CHF.",
+      "calculation": "15 × 2,40 = 36 CHF."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Une remise démarre à 15 h 46 et termine à 16 h 12. Calculez sa durée.",
+      "answer": "26 minutes.",
+      "calculation": "14 + 12 = 26 min."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Sur 225 envois, 18 nécessitent un traitement manuel. Calculez la part.",
+      "answer": "8 %.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "18 ÷ 225 × 100 = 8 %."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Que signifie NPA ?",
+      "answer": "Numéro postal d’acheminement."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "À quoi sert l’adresse de l’expéditeur ?",
+      "answer": "À rattacher l’envoi à son émetteur et à faciliter le retour si nécessaire."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Comment comparer deux prestations ?",
+      "answer": "Vérifier le délai, la destination, les conditions, l’identification et le suivi."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Quel rôle joue le centre de tri ?",
+      "answer": "Il répartit les envois par traitement et destination."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Que vérifiez-vous avant un envoi à l’étranger ?",
+      "answer": "Les règles du pays et du prestataire, les formalités et les documents applicables à l’envoi."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Le NPA et la localité semblent contradictoires. Que faites-vous ?",
+      "answer": "Vérifier la destination auprès d’une source autorisée avant dépôt."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Le client demande une preuve de remise. Comment choisissez-vous ?",
+      "answer": "Vérifier les prestations qui répondent à ce besoin pour la destination et expliquer leurs conditions."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Un colis manque au relevé d’un départ. Comment organisez-vous la recherche ?",
+      "answer": "Utiliser l’identifiant et les traces du dépôt, tri et transfert avant d’établir l’écart."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "5.1 Adressage",
+      "file": "log-605-notions-1-v001.svg",
+      "alt": "Destinataire. Nom ou organisation. Voie. Rue et numéro. Destination. NPA et localité.",
+      "caption": "Vérifier les règles d’adressage en vigueur du prestataire.",
+      "sha256": "cc0783b9bbd47c1abd9e087053dee35c209bbf8425c304d784d7fe70f4b42348",
+      "origin": "Illustration originale Doc-Prof du module 605."
+    },
+    {
+      "anchor": "5.4 Centres de tri",
+      "file": "log-605-notions-2-v001.svg",
+      "alt": "Dépôt. Envoi identifié. Tri. Destination et traitement. Remise. Distribution ou retrait.",
+      "caption": "Chaque événement utile peut être relié à l’identifiant.",
+      "sha256": "26eb2a34693e805d3380eb9f83a262f2623daa7fb7b9b8501b231b1720abf479",
+      "origin": "Illustration originale Doc-Prof du module 605."
+    }
+  ]
+}

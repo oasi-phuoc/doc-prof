@@ -74,10 +74,16 @@ Référence de réalisation dans le [cahier des charges v2.12](cahier-des-charge
 | L4 — Module 504 | Révision `504-v001` active en CFC | 2 schémas, 12 termes, 5 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 504](preparation/504-v001.json). |
 | L4 — Module 505 | Révision `505-v001` active en CFC | 2 schémas, 12 termes, 5 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 505](preparation/505-v001.json). |
 | L4 — Module 506 | Révision `506-v001` active en CFC | 2 schémas, 12 termes, 5 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 506](preparation/506-v001.json). |
+| L4 — Module 601 | Révision `601-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 601](preparation/601-v001.json). |
+| L4 — Module 602 | Révision `602-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 602](preparation/602-v001.json). |
+| L4 — Module 603 | Révision `603-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 603](preparation/603-v001.json). |
+| L4 — Module 604 | Révision `604-v001` active en CFC | 2 schémas, 12 termes, 5 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 604](preparation/604-v001.json). |
+| L4 — Module 605 | Révision `605-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 605](preparation/605-v001.json). |
+| L4 — Module 606 | Révision `606-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 606](preparation/606-v001.json). |
 
 ## Reprise opérationnelle
 
-1. Les onze modules du thème 100 et les neuf modules du thème 200 disposent des six types en CFC et AFP. Les thèmes 300 et 400 sont actifs dans les deux diplômes et le thème 500 en CFC. Poursuivre avec les modules 601 à 612 et 614 à 616. Le module 613 est déjà actif. Les cibles nominales de contenu et la recette complète restent à atteindre. Partir des [archives par thème](sources-epcas/), préparer les six types et vérifier visuels et composition ensemble avant publication.
+1. Les onze modules du thème 100 et les neuf modules du thème 200 disposent des six types en CFC et AFP. Les thèmes 300 et 400 sont actifs dans les deux diplômes et le thème 500 en CFC. Poursuivre avec les modules 607 à 612 et 614 à 616. Les modules 601 à 606 et 613 sont actifs selon le diplôme. Les cibles nominales de contenu et la recette complète restent à atteindre. Partir des [archives par thème](sources-epcas/), préparer les six types et vérifier visuels et composition ensemble avant publication.
 2. Vérifier les corrigés, la place du contenu dans le référentiel, les écarts AFP/CFC et les dépendances à des médias écartés.
 3. Enregistrer une révision de banque et la conserver pour les recettes déjà créées. Les changements de fond du 105 sont consignés dans les [données de préparation](pilote-105/preparation.generated.json) et dans le [dossier éditorial](pilote-105/relecture.md).
 4. Vérifier dans les deux diplômes le nombre d’unités disponibles, la génération, le corrigé, l’impression et la réouverture. Reporter dans ce fichier les preuves, les écarts et le prochain module retenu.
@@ -100,6 +106,7 @@ Référence de réalisation dans le [cahier des charges v2.12](cahier-des-charge
 - Modules 304 à 312, soit 96 contextes module, diplôme et type vérifiés en Chromium A4. Réserve minimale au pied de 53,14 px. Les aperçus occupent une page, les cours illustrés produisent un PDF et les suites de calcul gardent les numéros.
 - Modules 401 à 410, soit 120 contextes module, diplôme et type vérifiés en Chromium A4. Réserve minimale au pied de 79,64 px. Les aperçus occupent une page, les cours illustrés produisent un PDF et les suites de calcul gardent les numéros.
 - Modules 501 à 506, soit 36 contextes module, diplôme et type vérifiés en Chromium A4. Réserve minimale au pied de 79,64 px. Les aperçus occupent une page, les cours illustrés produisent un PDF et les suites de calcul gardent les numéros.
+- Modules 601 à 606, soit 66 contextes module, diplôme et type vérifiés en Chromium A4. Réserve minimale au pied de 79,64 px. Les aperçus occupent une page, les cours illustrés produisent un PDF et les suites de calcul gardent les numéros.
 
 ### Thème 200 — Déploiement du 27 novembre
 

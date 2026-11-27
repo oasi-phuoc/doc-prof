@@ -1,0 +1,175 @@
+{
+  "diplomas": [
+    "CFC"
+  ],
+  "objectives": "## Objectifs\n\n- Distinguer vente **directe** / **indirecte** et distribution à **un** / **plusieurs** niveaux\n- Expliquer centralisé vs décentralisé et le **Cross Docking**\n- Décrire le marché **postal** (service public, réservé ≤50 g…)\n- Situer les acteurs **DEC** et le rôle des **Incoterms** à l'export",
+  "overview": "## Aperçu du module 604\n\n- Relier les canaux de vente aux réseaux de distribution.\n- Comparer livraison directe, plateforme et desserte régionale.\n- Identifier les rôles et informations nécessaires pour suivre un départ.",
+  "replacements": [
+    {
+      "from": "Ouverture du marché · plusieurs opérateurs · seule **La Poste Suisse SA** a l'obligation de service public : lettres et colis ≤ **20 kg** partout en Suisse à prix identiques/avantageux.",
+      "to": "Plusieurs opérateurs proposent des services postaux. Les obligations de service universel, limites et tarifs applicables se vérifient dans les documents en vigueur.",
+      "reason": "Évite d’enseigner une limite ou un tarif sans référence datée."
+    }
+  ],
+  "summary": [
+    "Relier les canaux de vente aux réseaux de distribution.",
+    "Comparer livraison directe, plateforme et desserte régionale.",
+    "Identifier les rôles et informations nécessaires pour suivre un départ."
+  ],
+  "glossary": [
+    [
+      "Canal de vente",
+      "Chemin commercial entre le vendeur et le client."
+    ],
+    [
+      "Canal direct",
+      "Parcours sans intermédiaire commercial entre fournisseur et client."
+    ],
+    [
+      "Canal indirect",
+      "Parcours avec un ou plusieurs intermédiaires commerciaux."
+    ],
+    [
+      "Desserte",
+      "Organisation des destinations servies par un flux."
+    ],
+    [
+      "Distribution physique",
+      "Ensemble des mouvements et opérations vers les destinataires."
+    ],
+    [
+      "Flux d’information",
+      "Transmission des données du dossier entre les acteurs."
+    ],
+    [
+      "Groupage",
+      "Réunion de plusieurs envois dans un même flux ou départ."
+    ],
+    [
+      "Incoterms",
+      "Règles contractuelles sélectionnées qui répartissent certaines obligations, coûts et risques."
+    ],
+    [
+      "Intermédiaire",
+      "Acteur qui participe au parcours commercial ou opérationnel."
+    ],
+    [
+      "Plateforme",
+      "Site de réception, regroupement, transfert ou répartition."
+    ],
+    [
+      "Réseau de distribution",
+      "Ensemble de sites et liaisons qui organise les livraisons."
+    ],
+    [
+      "Traçabilité",
+      "Capacité de retrouver les mouvements et responsabilités d’un envoi."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Un départ régional couvre 14, 22 et 19 envois. Calculez le total.",
+      "answer": "55 envois.",
+      "calculation": "14 + 22 + 19 = 55."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Une livraison directe coûte 130 CHF. Avec plateforme, le transfert et la desserte coûtent 78 et 39 CHF. Comparez.",
+      "answer": "La plateforme coûte 117 CHF, soit 13 CHF de moins.",
+      "calculation": "78 + 39 = 117. 130 − 117 = 13 CHF."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Un centre traite 480 unités en six heures. Calculez le débit moyen.",
+      "answer": "80 unités par heure.",
+      "calculation": "480 ÷ 6 = 80."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Sur 180 envois, 45 prennent un canal indirect. Calculez la part.",
+      "answer": "25 %.",
+      "calculation": "45 ÷ 180 × 100 = 25 %."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Le trajet direct prend 75 min. Par plateforme, le trajet comprend 28, 15 et 42 min. Donnez l’écart.",
+      "answer": "Le trajet via plateforme prend dix minutes de plus.",
+      "calculation": "28 + 15 + 42 = 85 min. 85 − 75 = 10 min."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quel rôle joue une plateforme ?",
+      "answer": "Elle organise le regroupement, la répartition ou le transfert selon le réseau."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Qu’est-ce qui distingue un canal direct d’un canal indirect ?",
+      "answer": "La présence d’intermédiaires dans le canal indirect."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Pourquoi distinguer canal commercial et parcours physique ?",
+      "answer": "Un achat direct peut emprunter plusieurs sites et transporteurs."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Quelles données comparer entre deux réseaux ?",
+      "answer": "Délais, capacité, coûts, destinations et qualité de service."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Les Incoterms remplacent-ils la commande complète ?",
+      "answer": "Ils définissent certaines obligations. Le dossier doit préciser le terme, la version et le lieu convenu avec les autres conditions."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Une région regroupe beaucoup de petits envois. Quel scénario comparez-vous à la livraison directe ?",
+      "answer": "Un passage par plateforme avec groupage et desserte régionale, selon coûts et délai."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Un transporteur reçoit une ancienne adresse. Comment corrigez-vous le dossier ?",
+      "answer": "Vérifier la destination validée, transmettre la mise à jour autorisée et garder la trace."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Les coûts diminuent mais les retards augmentent. Quelles données comparez-vous ?",
+      "answer": "Coûts, taux de service, volumes et causes sur une période comparable."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "4.2 Distribution (répartition)",
+      "file": "log-604-notions-1-v001.svg",
+      "alt": "Fournisseur. Envois identifiés. Plateforme. Groupage et répartition. Clients. Desserte organisée.",
+      "caption": "Les données de destination suivent le flux physique.",
+      "sha256": "90fba1c8c7351c2f1d8b6c4084778a06f2c8b562e4c6b71e8f7c745d6f3ec541",
+      "origin": "Illustration originale Doc-Prof du module 604."
+    },
+    {
+      "anchor": "4.1 Canaux de vente",
+      "file": "log-604-notions-2-v001.svg",
+      "alt": "Direct. Fournisseur et client. Indirect. Intermédiaire dans le canal.",
+      "caption": "Le canal choisi ne décrit pas à lui seul tous les trajets.",
+      "sha256": "3cf2e786ceb03c224032a18217c291a86f69fb392a579fd98e221ad85cdb2efd",
+      "origin": "Illustration originale Doc-Prof du module 604."
+    }
+  ]
+}
