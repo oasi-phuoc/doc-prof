@@ -222,9 +222,11 @@ test('les glossaires repris fournissent une photo individuelle pour chaque notio
     ['301', 12], ['302', 12], ['303', 12], ['304', 12], ['305', 12],
     ['306', 34], ['307', 12], ['308', 25], ['309', 12], ['310', 12], ['311', 12], ['312', 12],
     ['401', 12], ['402', 12], ['403', 27], ['404', 12], ['407', 22], ['409', 27], ['410', 23],
+    ['501', 12],
   ]
   for (const [code, count] of photoGlossaries) for (const diploma of ['CFC', 'AFP']) {
     const page = config(diploma, code, 'glossaire')
+    if (diploma === 'AFP' && !catalog.logistiqueType(page.exerciseType)) continue
     for (const logistiqueBankRevision of [undefined, 'logistique-glossaires-tableaux-v006']) {
       const { items } = generateLogistique({ ...page, logistiqueBankRevision }, 7)
       const photos = items.map(({ logistiqueGlossaryFigure }) => logistiqueGlossaryFigure)
