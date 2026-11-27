@@ -117,7 +117,9 @@ function height(item: MathItem, a5: boolean, scale: number): number {
     const caption = glossaryFigure?.caption
     const captionHeight = caption ? 4 + lines(caption, a5 ? 18 : 21) * (a5 ? 14 : 16) * scale : 0
     const wrappingReserve = Math.max(0, scale - 1) * 24
-    return (a5 ? 10 : 11) + wrappingReserve + Math.max(termHeight, definitionHeight, (a5 ? 61 : 76) + captionHeight)
+    const photo = glossaryFigure?.src.includes('-photo-')
+    const imageHeight = a5 ? (photo ? 86 : 61) : (photo ? 116 : 76)
+    return (a5 ? 10 : 11) + wrappingReserve + Math.max(termHeight, definitionHeight, imageHeight + captionHeight)
   }
   if (glossaryFigure && item.theoryBlock) {
     const diagram = glossaryFigure.src.includes('-schema-')
