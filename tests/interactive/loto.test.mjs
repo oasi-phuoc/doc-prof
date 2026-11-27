@@ -4,7 +4,7 @@ import {createServer} from 'vite'
 const vite=await createServer({server:{middlewareMode:true,hmr:false},appType:'custom'})
 try{
  const {convertRecipe}=await vite.ssrLoadModule('/src/interactive/domain/convert.ts'),{defaultPage}=await vite.ssrLoadModule('/src/math/catalog.ts'),{defaultThemeGameContent}=await vite.ssrLoadModule('/src/jeux/bank.ts'),{demoRecipe}=await vite.ssrLoadModule('/src/interactive/demo.ts'),{buildWorksheets}=await vite.ssrLoadModule('/src/math/generate.ts')
- const {applyPlanOptions,readPlanOptions,DEFAULT_PLAN_OPTIONS}=await vite.ssrLoadModule('/src/interactive/domain/plan-options.ts'),{prepareGame,excludeQuestions}=await vite.ssrLoadModule('/src/interactive/domain/plan.ts')
+ const {applyPlanOptions,readPlanOptions,DEFAULT_PLAN_OPTIONS,NEW_PLAN_OPTIONS}=await vite.ssrLoadModule('/src/interactive/domain/plan-options.ts'),{prepareGame,excludeQuestions}=await vite.ssrLoadModule('/src/interactive/domain/plan.ts')
  const {lotoGame,lotoProgress,lotoSummary,lotoGoalMet,lotoSelection}=await vite.ssrLoadModule('/src/interactive/domain/loto.ts'),{positionOf}=await vite.ssrLoadModule('/src/interactive/domain/source-position.ts')
  const {startSession,transition}=await vite.ssrLoadModule('/src/interactive/domain/session.ts'),{questionsForAttempt}=await vite.ssrLoadModule('/src/interactive/domain/round-runtime.ts')
  const {newRecord,replaySession,compactSession,planIdentity}=await vite.ssrLoadModule('/src/interactive/domain/persistence.ts'),{readLocalPreset,presetOptions}=await vite.ssrLoadModule('/src/interactive/presets.ts')
@@ -14,6 +14,62 @@ try{
  const source=convertRecipe(recipe()),game=prepareGame(applyPlanOptions(source,{...DEFAULT_PLAN_OPTIONS,loto:'line'})),first=game.questions[0],board=first.lotoBoard
  const reveal=(game,state)=>['CARDS_UP','DISCUSS','REVEAL'].reduce((s,type)=>transition(game,s,{type},1000),state)
  const mark=(game,state,value='success')=>transition(game,state,{type:'TEACHER_MARK_SET',questionId:game.questions[state.index].id,value})
+ const extended = { ...NEW_PLAN_OPTIONS, loto: 'line', lotoLayout: 'extended' }
+ await test('large Loto keeps all pairs, limits each draw to the requested cards and avoids singleton boards', () => {
+   for (const [count, sizes] of [[2, [2]], [7, [7]], [25, [25]], [26, [24, 2]], [27, [25, 2]]]) {
+     const raw = convertRecipe(recipe(42, count))
+     for (const maxChoices of [2, 3, 6]) {
+       const options = readPlanOptions({ ...extended, maxChoices })
+       const converted = applyPlanOptions(raw, options)
+       const boards = [...new Map(converted.questions.map(q => [q.lotoBoard.groupId, q.lotoBoard])).values()]
+       assert.deepEqual(boards.map(board => board.cells.length), sizes)
+       assert.deepEqual(converted.questions.map(positionOf).sort(), raw.questions.map(positionOf).sort())
+       assert.deepEqual(converted, applyPlanOptions(raw, options))
+       for (const question of converted.questions) {
+         const { cells } = question.lotoBoard
+         assert.equal(question.lotoBoard.layout, 'extended')
+         assert.equal(question.choices.length, Math.min(maxChoices, cells.length))
+         assert.equal(question.matchingGroup, undefined)
+         assert.ok(question.choices.every(choice => cells.some(cell => cell.id === choice.id && cell.text === choice.text)))
+         assert.ok(question.choices.some(choice => choice.id === converted.corrections[question.id].choiceId))
+       }
+     }
+   }
+   const input = convertRecipe(recipe(42, 27)), converted = applyPlanOptions(input, extended)
+   const first = converted.questions[0], selected = prepareGame(converted, [first.id])
+   assert.equal(selected.questions.length, 25)
+   assert.equal(excludeQuestions(prepareGame(converted), new Set([first.id])).questions.length, 2)
+   assert.throws(() => readPlanOptions({ ...extended, loto: undefined }))
+   const invalid = structuredClone(input)
+   invalid.questions.at(-1).images = invalid.questions[0].images
+   const refused = applyPlanOptions(invalid, extended)
+   assert.ok(refused.questions.every(question => !question.lotoBoard))
+   assert.ok(refused.issues.length > invalid.issues.length)
+ })
+ await test('large Loto requires a complete row and restores teacher marks and the board after replay', async () => {
+   const converted = prepareGame(applyPlanOptions(convertRecipe(recipe(12, 7)), extended))
+   const q = converted.questions[0], board = q.lotoBoard
+   assert.equal(lotoGoalMet(board, new Set([board.cells.at(-1).id])), false)
+   assert.equal(lotoGoalMet(board, new Set(board.cells.slice(0, board.columns).map(cell => cell.id))), true)
+   let state = startSession(converted)
+   for (const type of ['CARDS_UP', 'DISCUSS', 'REVEAL']) state = transition(converted, state, { type }, 1000)
+   assert.equal(lotoProgress(converted, state, q).marked.length, 0)
+   state = mark(converted, state)
+   assert.deepEqual(lotoProgress(converted, state, q).marked, [converted.corrections[q.id].choiceId])
+   const record = { ...await newRecord(converted), updatedAt: 1000 }
+   const saved = compactSession(record, state)
+   const restored = replaySession(converted, saved, await planIdentity(converted), 1500)
+   assert.deepEqual(lotoProgress(converted, restored.state, q), lotoProgress(converted, state, q))
+   const solo = prepareGame(applyPlanOptions(convertRecipe(recipe(12, 7)), { ...extended, loto: 'board' }), undefined, 'solo')
+   let player = startSession(solo, 'solo')
+   const draw = solo.questions[0], correct = solo.corrections[draw.id].choiceId
+   player = transition(solo, player, { type: 'SELECT', choiceId: draw.choices.find(choice => choice.id !== correct).id })
+   assert.deepEqual(lotoProgress(solo, player, draw).marked, [])
+   player = transition(solo, player, { type: 'NEXT' })
+   const next = solo.questions[player.index]
+   player = transition(solo, player, { type: 'SELECT', choiceId: solo.corrections[next.id].choiceId })
+   assert.deepEqual(lotoProgress(solo, player, next).marked, [solo.corrections[next.id].choiceId])
+ })
  await test('two hundred real Loto configurations retain every caller pair and unchanged paper, with fixed A–F cases and seeded draws',()=>{
   const orders=new Set()
   for(const count of [9,27])for(let seed=1;seed<=100;seed++){
@@ -38,6 +94,8 @@ try{
    for(const q of out.questions){assert.equal(q.choices.length,q.lotoBoard.cells.length);assert.equal(q.lotoBoard.goal,goal);if(q.lotoBoard.groupId!==current){assert.ok(!closed.has(q.lotoBoard.groupId));if(current)closed.add(current);current=q.lotoBoard.groupId}}
   }
   const preset=readLocalPreset({version:2,presetId:'loto',sourceKey:'source',name:'Loto',conversionVersion:2,paletteVersion:1,contentHashAtSave:'1',selectedQuestionIds:source.questions.map(positionOf),...DEFAULT_PLAN_OPTIONS,loto:'board',revealPolicy:'teacher-only',correctionTiming:'deferred',voteBeforeBoard:true,timer:{enabled:false,defaultSec:30,feedbackSec:5},scoring:{mode:'none'},effects:{badges:false},playMode:'class',revision:0,createdAt:1,updatedAt:1});assert.equal(presetOptions(preset).loto,'board')
+  assert.equal(presetOptions(preset).lotoLayout, undefined)
+  assert.deepEqual(presetOptions(readLocalPreset({ ...preset, ...extended })), extended)
  })
  await test('selections cover whole grids and a missing image excludes its whole grid and rounds, keeping the next grid usable',()=>{
   const expanded=lotoSelection([positionOf(first)],game);assert.deepEqual(new Set(expanded),new Set(board.sourceKeys));const selected=prepareGame(lotoGame(source,'line'),[first.id]);assert.equal(selected.questions.length,board.cells.length)

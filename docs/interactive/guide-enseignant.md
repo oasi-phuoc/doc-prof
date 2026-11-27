@@ -12,7 +12,7 @@ Dans **Préparer et mémoriser une séance**, choisissez l’ordre des questions
 
 Le Vrai/Faux utilise trois cartes. **A** signifie « Vrai », **B** signifie « Faux » et **C** signifie « Je ne sais pas ». Avec trois cartes, les questions audio s’affichent une par une.
 
-Le **Mémory** réutilise les associations image–mot des fiches Vocabulaire, Mémory, Dominos et Loto. Activez **Mémory : cartes retournées** dans les préréglages. Chaque plateau comprend quatre à six cartes. Pour jouer avec les cases et les tirages d’une fiche Loto, activez **Loto : grille collective**.
+Le **Mémory** réutilise les associations image–mot des fiches Vocabulaire, Mémory, Dominos et Loto. Activez **Mémory : cartes retournées** dans les préréglages. Chaque plateau comprend quatre à six cartes. Pour jouer avec les cases et les tirages d’une fiche Loto, activez **Loto : grille collective**. Le format par défaut propose jusqu’à 25 cases et trois cartes de réponse par tirage. **Voir la grille** affiche les mots et les cases cochées. En Classe, cochez la case après la révélation si le groupe a trouvé. En Solo, une bonne réponse la coche. Choisissez **Une ligne** pour une rangée complète ou **Grille complète** pour toutes les cases. Le format compact reprend les cases A–F dans l’écran de jeu.
 
 Pour la logistique AFP ou CFC, ouvrez une fiche de calcul, de vérification ou de situation et choisissez **Jouer**. Les données des tableaux apparaissent dans **Document à lire**, avec les cases à compléter. Les mots proposés apparaissent lorsque cette option figure sur la fiche. Après l’échange, révélez le corrigé puis indiquez votre appréciation.
 

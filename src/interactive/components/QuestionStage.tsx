@@ -142,7 +142,7 @@ export function QuestionStage({
         </div>
         {report.questionScroll && <button className="ci-read-more" onClick={() => setReading('question')}>Suite ▾ <span className="ci-sr-only">Lire la question et le document</span></button>}
       </section>
-      {q.lotoBoard?lotoContent:q.mode === 'choice' ? (
+      {q.lotoBoard && q.lotoBoard.layout !== 'extended' ? lotoContent : q.mode === 'choice' ? (
         <div
           className={`ci-answer-grid ci-count-${q.choices.length}`}
           role="group"
@@ -221,6 +221,7 @@ export function QuestionStage({
           )}
         </section>
       )}
+      {q.lotoBoard?.layout === 'extended' && lotoContent}
       {report.manualScroll && !q.wordSorting && q.mode!=='memory' && <button className="ci-read-more" onClick={() => setReading('question')}>Suite ▾ <span className="ci-sr-only">Lire la consigne complète</span></button>}
       {drop.available&&<><span className="ci-sr-only" role="status">{drop.announcement}</span><SequenceDragGhost drag={drop.drag}>{dragged&&drop.drag&&<div className="ci-word-drop-ghost" style={{background:colors[slotOffset+drop.drag.source],color:inkForColor(colors[slotOffset+drop.drag.source]!)}}><b>{PALETTE[slotOffset+drop.drag.source]!.letter}</b><span>{dragged.text}</span></div>}</SequenceDragGhost></>}
       {reading !== null && <TextReadingDialog fractionNotation={fractions} title={reading === 'question' ? 'Question et document' : `Proposition ${PALETTE[slotOffset + reading]!.letter}`} text={reading === 'question' ? [playPrompt(q.prompt), q.context, q.oralSituation, q.wordSorting?sortingSentence(q.wordSorting.sentence):undefined, q.wordSorting?`Catégories : ${q.wordSorting.categories.map(c=>c.label).join(' · ')}`:undefined, q.phraseImagePrefix, q.phraseImages?.map(clue=>clue.label).join(' · '), q.words?`Mots à déplacer : ${(imageOrder??q.words.map((_,i)=>i)).map(i=>q.words![i]).join(' · ')}`:undefined, q.mode === 'choice' ? '' : q.instruction].filter(Boolean).join('\n\n') : q.choices[reading]?.text ?? ''} images={reading === 'question' ? q.mode==='memory'&&phase!=='revealed'?[]:q.images : q.choices[reading]?.image ? [q.choices[reading]!.image!] : []} grammarImages={reading==='question'?q.grammarImages:undefined} figure={reading === 'question' ? q.figure : undefined} fractionFigure={reading === 'question' ? q.fractionFigure : undefined} numberSequence={reading === 'question' ? q.numberSequence : undefined} wordClassification={reading === 'question' ? q.wordClassification : undefined} onClose={() => setReading(null)} />}

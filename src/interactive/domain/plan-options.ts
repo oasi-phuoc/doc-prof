@@ -7,25 +7,26 @@ import type { Game } from './types'
 import {wordSortingGame} from './word-sorting'
 import { memoryGame, type MemoryScope } from './memory-conversion'
 import {lotoGame,lotoClusters} from './loto'
+import { extendedLotoGame } from './loto-extended'
 import type {LotoGoal} from './types'
 
-export type PlanOptions = { orderMode: 'source' | 'shuffled' | 'custom'; customOrder: string[]; maxChoices: 2 | 3 | 4 | 5 | 6; numericOrder: boolean; wordSorting?: boolean; memory?: false | MemoryScope; loto?: LotoGoal; cardRulesVersion?: 2 }
+export type PlanOptions = { orderMode: 'source' | 'shuffled' | 'custom'; customOrder: string[]; maxChoices: 2 | 3 | 4 | 5 | 6; numericOrder: boolean; wordSorting?: boolean; memory?: false | MemoryScope; loto?: LotoGoal; lotoLayout?: 'extended'; cardRulesVersion?: 2 }
 export const DEFAULT_PLAN_OPTIONS: PlanOptions = { orderMode: 'source', customOrder: [], maxChoices: 6, numericOrder: false }
 export const NEW_PLAN_OPTIONS: PlanOptions = { ...DEFAULT_PLAN_OPTIONS, maxChoices: 3, cardRulesVersion: 2 }
 export function readPlanOptions(raw: unknown): PlanOptions {
   if (raw === undefined) return { ...DEFAULT_PLAN_OPTIONS, customOrder: [] }
   if (!raw || typeof raw !== 'object' || Array.isArray(raw)) throw new Error('Options de préparation invalides.')
   const value = raw as Record<string, unknown>
-  if (Object.keys(value).some((key) => !['orderMode', 'customOrder', 'maxChoices', 'numericOrder','wordSorting','memory','loto','cardRulesVersion'].includes(key)) || value.cardRulesVersion!==undefined&&value.cardRulesVersion!==2 || value.loto!==undefined&&!['line','board'].includes(value.loto as string) || value.memory!==undefined&&typeof value.memory!=='boolean'&&value.memory!=='decks' || value.wordSorting!==undefined&&typeof value.wordSorting!=='boolean' || !['source', 'shuffled', 'custom'].includes(value.orderMode as string) || ![2, 3, 4, 5, 6].includes(value.maxChoices as number) || typeof value.numericOrder !== 'boolean' ||
+  if (Object.keys(value).some((key) => !['orderMode', 'customOrder', 'maxChoices', 'numericOrder','wordSorting','memory','loto','lotoLayout','cardRulesVersion'].includes(key)) || value.cardRulesVersion!==undefined&&value.cardRulesVersion!==2 || value.loto!==undefined&&!['line','board'].includes(value.loto as string) || value.lotoLayout!==undefined&&(value.lotoLayout!=='extended'||!value.loto) || value.memory!==undefined&&typeof value.memory!=='boolean'&&value.memory!=='decks' || value.wordSorting!==undefined&&typeof value.wordSorting!=='boolean' || !['source', 'shuffled', 'custom'].includes(value.orderMode as string) || ![2, 3, 4, 5, 6].includes(value.maxChoices as number) || typeof value.numericOrder !== 'boolean' ||
     !Array.isArray(value.customOrder) || value.customOrder.length > 5000 || new Set(value.customOrder).size !== value.customOrder.length || value.customOrder.some((id) => typeof id !== 'string' || !sourcePosition.test(id))) throw new Error('Options de préparation invalides.')
-  return { orderMode: value.orderMode as PlanOptions['orderMode'], customOrder: [...value.customOrder] as string[], maxChoices: value.maxChoices as PlanOptions['maxChoices'], numericOrder: value.numericOrder,...(value.wordSorting?{wordSorting:true}:{}),...(value.memory?{memory:value.memory}:{}),...(value.loto?{loto:value.loto as LotoGoal}:{}),...(value.cardRulesVersion===2?{cardRulesVersion:2}:{}) }
+  return { orderMode: value.orderMode as PlanOptions['orderMode'], customOrder: [...value.customOrder] as string[], maxChoices: value.maxChoices as PlanOptions['maxChoices'], numericOrder: value.numericOrder,...(value.wordSorting?{wordSorting:true}:{}),...(value.memory?{memory:value.memory}:{}),...(value.loto?{loto:value.loto as LotoGoal}:{}),...(value.lotoLayout==='extended'?{lotoLayout:'extended'}:{}),...(value.cardRulesVersion===2?{cardRulesVersion:2}:{}) }
 }
 
 /** Changes only order and verified source choices; never manufactures an option. */
 export function applyPlanOptions(game: Game, options: PlanOptions): Game {
   if(options.wordSorting)game=wordSortingGame(game)
   if(options.memory)game=memoryGame(game,options.memory,!!options.loto)
-  if(options.loto)game=lotoGame(game,options.loto)
+  if (options.loto) game = options.lotoLayout === 'extended' ? extendedLotoGame(game, options.loto, options.maxChoices) : lotoGame(game, options.loto)
   const {wordSorting,memory,loto,...base}=options
   const effective = { ...base, customOrder: options.orderMode === 'custom' ? options.customOrder : [],...(wordSorting?{wordSorting:true}:{}),...(memory?{memory:true}:{}),...(loto?{loto}:{}) }
   if (canonicalJson(effective) === canonicalJson(DEFAULT_PLAN_OPTIONS)) return game

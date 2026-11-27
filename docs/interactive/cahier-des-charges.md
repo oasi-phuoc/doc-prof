@@ -1934,7 +1934,7 @@ Silhouettes pleines, tracées en SVG, **identiques sur l'écran et sur le papier
 
 ### 58.8 Kit imprimable des cartes
 
-**Précision du 27 novembre 2026.** Les nouvelles parties proposent trois choix au maximum par défaut. L’enseignant peut choisir jusqu’à six réponses dans la préparation. Une question audio se joue sur un seul jeu de cartes quand la limite choisie est inférieure à six. Le Vrai/Faux affiche A « Vrai », B « Faux » et C « Je ne sais pas ». Les références explicites à une lettre, les réponses collectives et les grilles Loto gardent leurs choix source. L’impression propose trois cartes A–C par défaut et six A–F sur demande. Les deux formats utilisent le même gabarit recto verso.
+**Précision du 27 novembre 2026.** Les nouvelles parties proposent trois choix au maximum par défaut. L’enseignant peut choisir jusqu’à six réponses dans la préparation. Une question audio se joue sur un seul jeu de cartes quand la limite choisie est inférieure à six. Le Vrai/Faux affiche A « Vrai », B « Faux » et C « Je ne sais pas ». Les questions qui citent explicitement une lettre gardent leurs choix source. Les grilles Loto gardent toutes leurs cases. Le Loto à grille séparée limite chaque tirage au nombre de cartes choisi. L’impression propose trois cartes A–C par défaut et six A–F sur demande. Les deux formats utilisent le même gabarit recto verso.
 
 | Élément | Spécification |
 |---|---|

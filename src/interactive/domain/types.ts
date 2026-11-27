@@ -21,7 +21,7 @@ export type MemoryCard={id:string;image?:string;text?:string}
 export type MemoryBoardData={cards:MemoryCard[];sourceKeys:string[];group:number;total:number}
 export type MemoryRuntime={open:string[];found:string[];turns:number;misses:number;checked:boolean}
 export type LotoGoal='line'|'board'
-export type LotoBoardData={groupId:string;number:number;total:number;columns:2|3;goal:LotoGoal;sourceKeys:string[];cells:{id:string;text:string}[]}
+export type LotoBoardData={groupId:string;number:number;total:number;columns:2|3|4|5;goal:LotoGoal;sourceKeys:string[];cells:{id:string;text:string}[];layout?:'extended'}
 /** Projection data never contains the solution or a correctness flag. */
 export type Question = {
   id: string

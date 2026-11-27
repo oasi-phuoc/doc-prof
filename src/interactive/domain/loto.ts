@@ -37,7 +37,10 @@ export function lotoClusters(questions:Question[]):Question[][] {
 export const lotoGoalLabel=(goal:LotoGoal)=>goal==='line'?'Une ligne':'Grille complète'
 export function lotoGoalMet(board:LotoBoardData,marked:ReadonlySet<string>):boolean {
  if(board.goal==='board')return board.cells.every(cell=>marked.has(cell.id))
- for(let start=0;start<board.cells.length;start+=board.columns)if(board.cells.slice(start,start+board.columns).every(cell=>marked.has(cell.id)))return true
+ for(let start=0;start<board.cells.length;start+=board.columns){
+  const row=board.cells.slice(start,start+board.columns)
+  if((board.layout!=='extended'||row.length===board.columns)&&row.every(cell=>marked.has(cell.id)))return true
+ }
  return false
 }
 /** Only revealed answers and explicit teacher judgements can contribute. */
