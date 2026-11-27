@@ -679,8 +679,11 @@ export function GeneratorPage({
     await libreDraft.finishSave(next, revision)
   }
 
-  const printInstitutional = isLogistiqueDomain(pages[0]?.domain ?? activePage.domain) && !institutional.documentTitle.trim()
-    ? { ...institutional, documentTitle: logistiqueDocumentTitle(previewSource ?? pages, evalMode, evalMode) }
+  const automaticLogistiqueTitle = isLogistiqueDomain(pages[0]?.domain ?? activePage.domain)
+    ? logistiqueDocumentTitle(previewSource ?? pages, evalMode, evalMode)
+    : undefined
+  const printInstitutional = automaticLogistiqueTitle && !institutional.documentTitle.trim()
+    ? { ...institutional, documentTitle: automaticLogistiqueTitle }
     : institutional
   const chromeProps = {
     institutional: printInstitutional,
@@ -770,6 +773,7 @@ export function GeneratorPage({
     institutional,
     setInstitutional,
     evalMode,
+    automaticLogistiqueTitle,
     activeExerciseLabel: exerciseTypeById[activeBlock.exerciseType]?.label ?? '',
     referenceLocked,
   }

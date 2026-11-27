@@ -12,6 +12,7 @@ export type FooterSidePanelProps = {
   institutional: InstitutionalHeader
   setInstitutional: (next: InstitutionalHeader) => void
   evalMode: boolean
+  automaticLogistiqueTitle?: string
   activeExerciseLabel: string
   referenceLocked: boolean
   onClose: () => void
@@ -43,6 +44,7 @@ export function FooterFields({
   institutional,
   setInstitutional,
   evalMode,
+  automaticLogistiqueTitle,
   activeExerciseLabel,
   referenceLocked,
 }: Omit<FooterSidePanelProps, 'onClose'>) {
@@ -191,13 +193,11 @@ export function FooterFields({
           onChange={(event) =>
             setInstitutional({ ...institutional, documentTitle: event.target.value })
           }
-          placeholder={
-            evalMode
-              ? 'Évaluation'
-              : (activeExerciseLabel || 'Nom du type d’exercice')
-          }
+          placeholder={automaticLogistiqueTitle ?? (evalMode ? 'Évaluation' : activeExerciseLabel || 'Nom du type d’exercice')}
         />
-        <small className="muted">Vide = nom du type d’exercice partout sur la fiche.</small>
+        <small className="muted">{automaticLogistiqueTitle
+          ? 'Effacez le titre personnalisé pour rétablir le titre automatique.'
+          : 'Vide = nom du type d’exercice partout sur la fiche.'}</small>
       </label>
       <label>
         Référence

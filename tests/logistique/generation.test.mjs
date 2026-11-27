@@ -537,6 +537,11 @@ test('les titres et les recettes conservent les modules, le diplôme et la révi
   assert.equal(logistiqueDocumentTitle([a]), 'Mathématiques : module 105')
   assert.equal(logistiqueDocumentTitle([a, b], true), 'Évaluation : modules 101 et 105')
   assert.equal(logistiqueDocumentTitle([config('AFP', '105', 'glossaire')]), 'Glossaire : module 105')
+  for (const diploma of ['AFP', 'CFC']) {
+    const theory = config(diploma, '101', 'theorie')
+    assert.equal(logistiqueDocumentTitle([theory]), 'Théorie : module 101')
+    assert.equal(logistiqueDocumentTitle([{ ...theory, logistiqueTheoryView: 'resume' }]), 'Théorie résumée : module 101')
+  }
   const pages = freezeLogistiquePages([{ ...a, extraBlocks: [b] }])
   assert.equal(pages[0].logistiqueBankRevision, currentLogistiquePublication.revision)
   assert.equal(pages[0].extraBlocks[0].logistiqueBankRevision, currentLogistiquePublication.revision)
