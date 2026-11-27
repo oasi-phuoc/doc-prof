@@ -601,8 +601,12 @@ export function GeneratorPage({
 
   async function printAll() {
     function missingPrompt(item: MathItem) {
-      return item.libreCorrectionPending && (item.layout === 'phrase-order'
-        ? !item.tokens?.length || item.tokens.some(({ text }) => !text.trim()) : !item.prompt?.trim())
+      if (!item.libreCorrectionPending) return false
+      if (item.layout === 'phrase-order') return !item.tokens?.length || item.tokens.some(({ text }) => !text.trim())
+      if (item.layout === 'determinant-fill') return !item.determinantFills?.length ||
+        item.determinantFills.some(({ parts }) => !parts.some((part) => 'blank' in part) ||
+          !parts.some((part) => 't' in part && /\p{L}/u.test(part.t)))
+      return !item.prompt?.trim()
     }
     if (pages.some((page) => pageBlocks(page).some(({ tcfExercise, libreItems, a5RightLibre, coordQuestionsLibre }) => isTcfSubjectIncomplete(tcfExercise) ||
       coordQuestionsLibre?.some((question) => question.correctionPending && !question.prompt.trim()) ||
@@ -992,6 +996,8 @@ export function GeneratorPage({
               logic={activeProfile === 'logique-visuelle' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
               phraseOrder={activeProfile === 'mots-dans-l-ordre' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
               syllableContent={activeProfile === 'syllabes-audio' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
+              soutienPhrases={activeProfile === 'sons-a-compter' || activeProfile === 'determinants'
+                ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
               grammarSelection={grammarSelection}
               arithmeticId={arithmeticActivityId(activeBlock, seed, pageIndex, safeBlockIndex, reservedActivityIds)}
               halfEditor={halfEditor}

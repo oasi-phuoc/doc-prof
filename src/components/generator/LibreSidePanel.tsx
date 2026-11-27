@@ -32,6 +32,7 @@ import { TheoryEditor } from '@/components/generator/libre/TheoryEditor'
 import { LetterGridEditor } from '@/components/generator/libre/LetterGridEditor'
 import { LogicEditor } from '@/components/generator/libre/LogicEditor'
 import { SyllableEditor } from '@/components/generator/libre/SyllableEditor'
+import { SoutienPhraseRowsEditor } from '@/components/generator/libre/SoutienPhraseRowsEditor'
 import { GrammarEditor } from '@/components/generator/libre/GrammarEditor'
 import type { GrammarSnapshot } from '@/grammaire/curriculum/types'
 import type { SheetBlockItems } from '@/components/generator/sheet-items'
@@ -65,6 +66,7 @@ export type LibreSidePanelProps = {
   logic: SheetBlockItems | null
   phraseOrder: SheetBlockItems | null
   syllableContent: SheetBlockItems | null
+  soutienPhrases: SheetBlockItems | null
   syllableBank: SoutienVowelBank | null | undefined
   grammarSelection: GrammarSnapshot | null
   arithmeticId: string
@@ -124,6 +126,7 @@ export function LibreSidePanel({
   logic,
   phraseOrder,
   syllableContent,
+  soutienPhrases,
   syllableBank,
   grammarSelection,
   arithmeticId,
@@ -178,16 +181,17 @@ export function LibreSidePanel({
   const wordListContent = letterGrid && (halfEditor?.content ?? letterGrid)
   const orderedPhrases = phraseOrder && (halfEditor?.content ?? phraseOrder)
   const syllables = syllableContent && (halfEditor?.content ?? syllableContent)
+  const soutienPhraseContent = soutienPhrases && (halfEditor?.content ?? soutienPhrases)
   const arithmeticInstruction = halfEditor?.content?.instruction ?? activeBlock.libreInstruction ??
     activeSheet?.blocks[safeBlockIndex]?.instruction ?? ''
-  function editActivityItems(items: MathItem[], instruction: string) {
+  function editActivityItems(items: MathItem[], instruction: string, keepCount = false) {
     if (rightHalf) {
       updatePage({ a5RightLibre: { id: editedActivityId, items, instruction } })
       return
     }
     updatePage({
       libreId: editedActivityId, libreItems: items, libreInstruction: instruction,
-      ...(!halfEditor && !isTpmLike && items.length !== activeBlock.count ? { count: items.length } : {}),
+      ...(!halfEditor && !isTpmLike && !keepCount && items.length !== activeBlock.count ? { count: items.length } : {}),
     })
   }
   const renderedWords = liveWords ? activeItems.find((item) => item.layout === 'vocab-table')?.vocabEntries
@@ -280,6 +284,12 @@ export function LibreSidePanel({
               if (halfEditor) editActivityItems(items, syllables.instruction)
               else updatePage({ libreItems: items, libreInstruction: syllables.instruction })
             }} />
+        ))}
+        {soutienPhraseContent && syllableBank && soutienPhraseContent.items.map((item, index) => (
+          <SoutienPhraseRowsEditor key={`${editedActivityId}:${index}`} item={item} bank={syllableBank}
+            id={`${editedActivityId}:${activeBlock.exerciseType}:${index}`} fields={transientFields} writeField={onTransientField}
+            onChange={(next) => editActivityItems(identifyItems(soutienPhraseContent.items.map((current, position) =>
+              position === index ? next : current), editedActivityId), soutienPhraseContent.instruction, true)} />
         ))}
         {questions?.items.length ? (
           <GenericLibreEditor
@@ -481,6 +491,7 @@ export function LibreSidePanel({
         !logic &&
         !phraseOrder &&
         !syllableContent &&
+        !soutienPhrases &&
         soutienKind !== 'mots' &&
         soutienKind !== 'completer' &&
         !(isDroites || isConstruire) ? (

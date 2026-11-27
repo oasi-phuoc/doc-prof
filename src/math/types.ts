@@ -745,6 +745,7 @@ export type MathItem = {
   determinantFills?: Array<{
     parts: Array<{ t: string } | { blank: string }>
     sentence: string
+    correctionPending?: true
   }>
   /** Soutien FR type 11 : mots de dictée (grille 2 colonnes). */
   dicteeWords?: string[]
@@ -1235,6 +1236,7 @@ export type WorksheetBlock = {
   /** Index des photos à habiller avec le paragraphe suivant sur cette feuille. */
   logistiqueWrappedFigures?: number[]
   /** Disposition imprimée des listes et tableaux A5, avec l’index du bloc d’origine. */
+  logistiqueSourceItemCount?: number
   logistiqueTheorySlices?: { sourceIndex: number; theoryBlock?: GrammarTheoryBlock; isLast: boolean }[]
   /** Points par question (propagé depuis ExerciseBlock). */
   pointsPerQuestion?: number

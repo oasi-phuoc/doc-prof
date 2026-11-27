@@ -267,7 +267,7 @@ export function WorksheetSheet({
     : `worksheet-sheet ${parity}${isJeuxSheet ? ' is-jeux' : ''}${isSoutienFr ? ' is-soutien-fr' : ''}${isAlphabetisation ? ' is-alphabetisation' : ''}${evalMode ? ' is-eval' : ''}`
   return (
     <Root
-      className={rootClass + domainClass}
+      className={rootClass + domainClass + (isLogistiqueDomain(page.domain) ? ' is-logistique' : '')}
       style={{ '--sheet-columns': sheetColumns, ...(page.domain === 'tcm-csc' ? { '--csc-exercise-gap': `${page.exerciseGapPx ?? 50}px` } : {}) } as CSSProperties}
     >
       {showHeader ? (
@@ -526,11 +526,9 @@ export function WorksheetSheet({
                     Boolean(
                       block.tcfPageBreakAfter?.[sourceIndex - 1] ?? page.tcfPageBreakAfter?.[sourceIndex - 1],
                     )
-                  const theoryBreakCount =
-                    block.tcfPageBreakAfter?.length ??
-                    page.tcfPageBreakAfter?.length ??
-                    (block.logistiqueTheorySlices ? (block.logistiqueTheorySlices.at(-1)?.sourceIndex ?? -1) + 1
-                      : block.items.length + (block.itemOffset ?? 0))
+                  const theoryBreakCount = block.logistiqueSourceItemCount ??
+                    block.tcfPageBreakAfter?.length ?? page.tcfPageBreakAfter?.length ??
+                    block.items.length + (block.itemOffset ?? 0)
                   const isTheoryPageBreakable =
                     item.layout === 'theory' &&
                     (item.theoryBlock?.kind === 'section' || isLogistiqueDomain(page.domain)) &&

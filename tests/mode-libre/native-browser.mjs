@@ -312,6 +312,41 @@ try {
   assert.equal(await leftSyllables.innerText(), initialLeftSyllables)
   await pronounceA5.close()
 
+  const countSounds = await open(context, {
+    domain: 'soutien-fr', topic: 'soutien-voyelles', exerciseType: 'soutien-a-compter',
+  })
+  await toggleLive(countSounds)
+  const phraseField = countSounds.getByRole('textbox', { name: 'Phrase 1', exact: true })
+  const initialPhrase = await phraseField.inputValue()
+  await phraseField.fill('')
+  assert.equal(await phraseField.getAttribute('aria-invalid'), 'true')
+  assert.equal(await phraseField.getAttribute('data-applied-value'), initialPhrase)
+  await phraseField.fill('Papa.')
+  assert.match(await preview(countSounds).innerText(), /Papa\./)
+  assert.equal(await countSounds.getByRole('status', { name: 'Occurrences du son pour la phrase 1', exact: true }).innerText(), '2')
+  await button(countSounds, 'Fiche élève (cliquer pour corrigé)').click()
+  assert.equal(await preview(countSounds).locator('.count-sound-blank').first().innerText(), '2')
+  await countSounds.close()
+
+  const determinants = await open(context, {
+    domain: 'soutien-fr', topic: 'soutien-voyelles', exerciseType: 'soutien-a-determinants',
+  })
+  await toggleLive(determinants)
+  const detRow = determinants.getByRole('group', { name: 'Phrase 1', exact: true })
+  const withBlanks = detRow.getByRole('textbox', { name: 'Phrase avec des lacunes (___)', exact: true })
+  const detApplied = await withBlanks.inputValue()
+  await withBlanks.fill('Une phrase sans lacune.')
+  assert.equal(await withBlanks.getAttribute('aria-invalid'), 'true')
+  await withBlanks.fill(`À l’atelier, ${detApplied}`)
+  const correction = detRow.getByRole('combobox', { name: 'Déterminant 1', exact: true })
+  await correction.selectOption('les')
+  assert.match(await preview(determinants).innerText(), /À l’atelier/)
+  await detRow.getByText('Corrigé à vérifier', { exact: true }).waitFor()
+  await button(determinants, 'Fiche élève (cliquer pour corrigé)').click()
+  assert.equal(await preview(determinants).locator('.determinant-blank').first().innerText(), 'les')
+  await button(detRow, 'Corrigé vérifié').click()
+  await determinants.close()
+
   const grammar = await open(context, {
     domain: 'grammaire', topic: 'gram-present', exerciseType: 'gram-ex-etre-qcm-conj',
     grammarActivityId: 'gram-ex-etre-qcm-conj', grammarLevel: 'A1', grammarPresentation: 'choice',

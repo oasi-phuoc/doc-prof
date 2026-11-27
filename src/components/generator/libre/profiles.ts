@@ -52,6 +52,8 @@ export function liveEditorProfile(domain: Domain, exerciseType: string, format: 
   if (wordKind === 'dictee') return 'dictee-de-mots'
   if (wordKind === 'lire') return 'lecture-de-phrases'
   if (wordKind === 'ordre') return 'mots-dans-l-ordre'
+  if (wordKind === 'compter') return 'sons-a-compter'
+  if (wordKind === 'determinants') return 'determinants'
   if (wordKind === 'syllabe-son' || wordKind === 'syllabe-son-qr' || wordKind === 'syllabes-prononcer') return 'syllabes-audio'
   if (logistics?.domain === domain || domain === 'société' && isSocieteType(exerciseType)) return 'question-simple'
   if (format === 'a4-portrait') {
@@ -99,7 +101,7 @@ export function opensWithoutOverlay(profile: LiveEditorProfile): boolean {
   return isTcfLiveProfile(profile) || hasFlatRegeneration(profile) || profile === 'calligraphie' || profile === 'cartes' || profile === 'phrase' ||
     profile === 'mots-illustres' || profile === 'mot-a-trou' || profile === 'theorie' ||
     profile === 'question-simple' || profile === 'grammaire-graduee' || profile === 'questions-de-reperage' || profile === 'mots-dans-l-ordre' ||
-    profile === 'syllabes-audio' || isWordListProfile(profile)
+    isIndependentListProfile(profile)
 }
 
 export function isWordListProfile(profile: LiveEditorProfile): boolean {
@@ -108,7 +110,7 @@ export function isWordListProfile(profile: LiveEditorProfile): boolean {
 }
 
 export function isIndependentListProfile(profile: LiveEditorProfile): boolean {
-  return isWordListProfile(profile) || profile === 'syllabes-audio'
+  return isWordListProfile(profile) || profile === 'syllabes-audio' || profile === 'sons-a-compter' || profile === 'determinants'
 }
 
 export function writesNativePayload(profile: LiveEditorProfile, patch: object): boolean {

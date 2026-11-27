@@ -106,6 +106,10 @@ Les essais sur les tests mathématiques vérifient le refus d’un nombre supér
 
 Les essais du TCF vérifient la sélection et l’import local d’une image en reconnaissance d’objets, l’état du corrigé d’un formulaire incomplet et l’édition d’un thème de production orale. Le sujet de production orale garde les questions de l’examinateur dans le corrigé. La validation de la recette vérifie les identifiants des situations et refuse un média attaché à une URL de session. Le navigateur vérifie aussi une modification syllabique confinée à la moitié droite du double A5.
 
+L’inventaire de `01d9c5e` retrouve 4 097 contextes générables et 1 089 profils A4 à raccorder, ainsi que 2 328 profils double A5 à raccorder. Les treize comparaisons écran/PDF conservent la pagination, les dimensions et le contenu à l’ouverture de Libre. Le délai de l’addition atteint un 95ᵉ centile de 93,27 ms sur ce relevé.
+
+Le relevé initial de la pagination des 143 cours complets de Logistique en double A5 comptait 52 cas sous la réserve de 25 px. Les tableaux et les listes dépassant la hauteur disponible sont répartis à l’impression. Le test unitaire sur le module 305 vérifie la conservation de chaque ligne dans l’ordre, la répétition des en-têtes et la présence du tableau entier dans l’éditeur. Un deuxième relevé après découpe des tableaux avait isolé quatre cas de listes longues dans les modules 105 et 410.
+
 ```sh
 node scripts/audit-mode-libre.mjs /tmp/doc-prof-libre types
 node scripts/audit-mode-libre.mjs /tmp/doc-prof-libre recettes

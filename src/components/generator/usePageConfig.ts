@@ -15,6 +15,7 @@ import { isInlineArithmetic, isIndependentListProfile, liveEditorProfile, opensW
 import { hasLockedItems, identifyItems, trimUnlockedItems } from '@/components/generator/libre/flat-items'
 import { gridCells, withGridCells } from '@/components/generator/libre/word-list'
 import { syllableRows, replaceSyllableRows } from '@/components/generator/libre/syllable-rows'
+import { countSoundRows, determinantRows, replaceCountSoundRows, replaceDeterminantRows } from '@/components/generator/libre/soutien-phrase-rows'
 import type { SpacingPreferences } from '@/components/generator/libre/preferences'
 import { blockItemsForConfig } from '@/components/generator/sheet-items'
 import { defaultCoordQuestionReply } from '@/components/generator/WorksheetSheet'
@@ -107,18 +108,21 @@ export function usePageConfig({
       const config = pageAsConfig(activeSheet, nextBlock)
       function resizeGrid(previous: MathItem[], localSeed: number) {
         const generated = buildPage(config, pageSeed + localSeed, 1, seed).items
-        const readRows = editorProfile === 'syllabes-audio' ? syllableRows : gridCells
+        const readRows = editorProfile === 'syllabes-audio' ? syllableRows
+          : editorProfile === 'sons-a-compter' ? countSoundRows : editorProfile === 'determinants' ? determinantRows : gridCells
         const removed = previous.some((item, index) => readRows(item).length > (generated[index] ? readRows(generated[index]!).length : 0))
         const items = generated.map((item, index) => {
           const old = previous[index]
           if (!old || item.layout !== old.layout) return item
-          if (editorProfile === 'syllabes-audio') {
-            const existing = syllableRows(old)
-            return replaceSyllableRows({ ...old, letterGridCols: item.letterGridCols },
-              syllableRows(item).map((row, position) => existing[position] ?? row))
+          const retained = old
+          function keepRows<Row>(read: (value: MathItem) => Row[], replace: (value: MathItem, rows: Row[]) => MathItem) {
+            const existing = read(retained)
+            return replace({ ...retained, letterGridCols: item.letterGridCols }, read(item).map((row, position) => existing[position] ?? row))
           }
-          const existing = gridCells(old)
-          return withGridCells({ ...old, letterGridCols: item.letterGridCols }, gridCells(item).map((cell, position) => existing[position] ?? cell))
+          if (editorProfile === 'syllabes-audio') return keepRows(syllableRows, replaceSyllableRows)
+          if (editorProfile === 'sons-a-compter') return keepRows(countSoundRows, replaceCountSoundRows)
+          if (editorProfile === 'determinants') return keepRows(determinantRows, replaceDeterminantRows)
+          return keepRows(gridCells, withGridCells)
         })
         return { items, removed }
       }
@@ -449,7 +453,7 @@ export function usePageConfig({
         const modeIndex = sheetBlock?.logistiqueTheorySlices?.[itemIndex - 1]?.sourceIndex ?? itemIndex + offset - 1
         if (modeIndex < 0) return page
         const totalItems = Math.max(
-          block.tcfPageBreakAfter?.length ?? 0,
+          block.tcfPageBreakAfter?.length ?? 0, sheetBlock?.logistiqueSourceItemCount ?? 0,
           sheetBlock?.tcfPageBreakAfter?.length ?? 0,
           modeIndex + 1,
           sheetBlock?.items.length ?? 0,

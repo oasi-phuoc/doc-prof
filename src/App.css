@@ -659,6 +659,7 @@ html,body,#root{
   width:100%;border-collapse:collapse;table-layout:auto;font-size:var(--theory-size);margin:0;line-height:1.4
 }
 .theory-table col.theory-col{min-width:0}
+.a5-half.is-logistique .theory-table{table-layout:fixed;overflow-wrap:anywhere}
 .theory-table>thead>tr>th,.theory-table>tbody>tr>th,.theory-table>tbody>tr>td{
   border:1px solid var(--ink);padding:4px 8px;text-align:left;vertical-align:top
 }

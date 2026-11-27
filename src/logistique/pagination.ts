@@ -19,7 +19,7 @@ function lineCount(text: string, width: number): number {
   return text.split('\n').reduce((sum, line) => sum + Math.max(1, Math.ceil(line.length / width)), 0)
 }
 
-type A5TheoryBlock = Extract<GrammarTheoryBlock, { kind: 'table' | 'list' }>
+type A5TheoryBlock = Extract<GrammarTheoryBlock, { kind: 'table' | 'list' | 'examples' }>
 type TheoryLayoutSlice = { item: MathItem; sourceIndex: number; theoryBlock?: A5TheoryBlock; isLast: boolean }
 
 function a5TheoryHeight(block: A5TheoryBlock, scale: number) {
@@ -27,11 +27,19 @@ function a5TheoryHeight(block: A5TheoryBlock, scale: number) {
     return 40 + block.items.reduce((sum, text) => sum + 8 +
       27 * scale * lineCount(text.replace(/\{\/?g\}/g, ''), 47 / scale), 0)
   }
+  if (block.kind === 'examples') {
+    return theoryHeight(block, 47.7 / scale, scale, true)
+  }
   const columns = Math.max(block.headers.length, ...block.rows.map((row) => row.length), 1)
-  const width = Math.max(1, 52 / scale / columns - 2)
+  const width = 52 / scale
   const rows = block.colHeader !== false && block.headers.some(Boolean) ? [block.headers, ...block.rows] : block.rows
   return 14 + rows.reduce((sum, row) => sum + 8 +
-    24 * scale * Math.max(1, ...row.map((cell) => lineCount(cell.replace(/\{\/?g\}/g, ''), width))), 0)
+    24 * scale * Math.max(1, ...row.map((cell, index) => {
+      const column = block.widths?.[index]
+      const percentage = typeof column === 'number' ? column
+        : typeof column === 'string' && /^\d+(?:\.\d+)?%$/.test(column) ? Number.parseFloat(column) : 100 / columns
+      return lineCount(cell.replace(/\{\/?g\}/g, ''), Math.max(5, width * percentage / 100 - 2))
+    })), 0)
 }
 
 function splitA5Theory(block: A5TheoryBlock, maxHeight: number, scale: number): A5TheoryBlock[] {
@@ -95,7 +103,8 @@ function theoryHeight(block: GrammarTheoryBlock, width: number, scale: number, a
     case 'section':
       return 58 + block.blocks.reduce((sum, child) => sum + theoryHeight(child, width, scale, a5), 0)
     case 'examples':
-      return 30 + block.items.reduce((sum, item) => sum + lines(typeof item === 'string' ? item : item.text), 0)
+      return 30 + block.items.reduce((sum, item) => sum + (typeof item === 'string' ? lines(item) :
+        lines(item.text) + (a5 && item.wrong ? lines(item.wrong) : 0)), 0)
     case 'tab':
       return 30 + block.rows.length * 32
     case 'page':
@@ -113,8 +122,8 @@ function height(item: MathItem, a5: boolean, scale: number): number {
     const captionHeight = caption ? lineCount(caption, width * (diagram ? 0.65 : 0.24)) * 18 * scale : 0
     return diagram ? 153 + textHeight + captionHeight : Math.max(a5 ? 84 : 105, textHeight) + captionHeight
   }
-  if (a5 && (item.theoryBlock?.kind === 'table' || item.theoryBlock?.kind === 'list')) {
-    return a5TheoryHeight(item.theoryBlock, scale)
+  if (a5 && ['table', 'list', 'examples'].includes(item.theoryBlock?.kind ?? '')) {
+    return a5TheoryHeight(item.theoryBlock as A5TheoryBlock, scale)
   }
   if (item.theoryBlock) return theoryHeight(item.theoryBlock, a5 ? width * 0.9 : width, scale, a5)
   const image = item.logistiqueImage
@@ -159,7 +168,7 @@ export function splitLogistiquePages(
   for (const [blockIndex, block] of page.blocks.entries()) {
     const slices = block.items.flatMap<TheoryLayoutSlice>((item, sourceIndex) => {
       const theory = item.theoryBlock
-      if (a5 && (theory?.kind === 'table' || theory?.kind === 'list')) {
+      if (a5 && (theory?.kind === 'table' || theory?.kind === 'list' || theory?.kind === 'examples' && theory.marker !== 'numeros')) {
         const fragments = splitA5Theory(theory, a5ItemLimit, fontScale)
         if (fragments.length > 1) {
           return fragments.map((theoryBlock, index) => ({ item, sourceIndex, theoryBlock, isLast: index === fragments.length - 1 }))
@@ -179,6 +188,7 @@ export function splitLogistiquePages(
         ...block,
         ...headingForSlice(block, start, block.items),
         sourceBlockIndex: blockIndex,
+        logistiqueSourceItemCount: block.items.length,
         itemOffset: offset,
         items: slice.map(({ item }) => item),
         ...(hasSlices ? {
