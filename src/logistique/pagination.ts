@@ -164,7 +164,7 @@ function height(item: MathItem, a5: boolean, scale: number): number {
   if (isWrittenProblem(item)) {
     // Même un énoncé court conserve la grille, le trait et leurs espacements.
     const minimum = (a5 ? 183 : 248) + (scale - 1) * 56
-    const calculations = item.calcAnswer && (table || item.logistiqueLocalModule)
+    const calculations = item.calcAnswer && (!a5 || table || item.logistiqueLocalModule)
       ? lineCount(item.calcAnswer, width) * 18 * scale : 0
     return imageHeight + tableHeight + Math.max(minimum, (a5 ? 145 : 174) + prompt + answer, calculations + prompt + answer + 36)
   }
@@ -207,6 +207,10 @@ export function splitLogistiquePages(
       return [{ item, sourceIndex, theoryBlock: undefined, isLast: true }]
     })
     const hasSlices = slices.length !== block.items.length
+    // L’estimation par caractères laisse une marge aux retours réels et au corrigé imprimé.
+    const questionReserve = block.items.some((item) => item.layout !== 'theory')
+      ? 12 + (!a5 ? Math.max(0, fontScale - 1) * 200 : 0)
+      : 0
     const breakAfter = ({ item, sourceIndex, isLast }: TheoryLayoutSlice) =>
       isLast && (item.theoryPageBreakAfter || block.tcfPageBreakAfter?.[sourceIndex])
     let start = 0
@@ -274,10 +278,10 @@ export function splitLogistiquePages(
     }
     for (const [index, slice] of slices.entries()) {
       const itemHeight = heights[index]!
-      if (!wrappedParagraphs.has(index) && used > 0 && used + overhead + withFollowing[index]! > budget()) {
+      if (!wrappedParagraphs.has(index) && used > 0 && used + overhead + withFollowing[index]! + questionReserve > budget()) {
         const previousHeight = heights[index - 1] ?? 0
         const balanceLastQuestion = !slice.item.theoryBlock && index === slices.length - 1 && index - start >= 3
-          && previousHeight + itemHeight <= budget(pages.length + 1)
+          && previousHeight + itemHeight + questionReserve <= budget(pages.length + 1)
         if (index > start) append(balanceLastQuestion ? index - 1 : index)
         flush()
         overhead = glossary ? glossaryHeadingHeight : overhead
