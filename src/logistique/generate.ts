@@ -123,14 +123,17 @@ export function logistiqueDocumentTitle(pages: readonly PageConfig[], evalMode =
     const selected = (includeSelection && block.logistiqueSelection?.modules) || [type.module]
     const retained = block.libreItems?.flatMap(({ logistiqueSource, logistiqueRetained }) =>
       logistiqueRetained && logistiqueSource ? [logistiqueSource.module] : []) ?? []
-    return [{ type, modules: [...selected, ...retained] }]
+    return [{ type, modules: [...selected, ...retained], summary: block.logistiqueTheoryView === 'resume' }]
   }))
   const first = activities[0]?.type
   const codes = [...new Set(activities.flatMap(({ modules }) => modules))].sort()
   if (!first || !codes.length) return 'Logistique'
-  const label = activities.every(({ type }) => type.kind === first.kind)
-    ? first.kind === 'glossaire' ? 'Glossaire' : first.label
-    : evalMode ? 'Évaluation' : 'Exercices'
+  let label = evalMode ? 'Évaluation' : 'Exercices'
+  if (activities.every(({ type }) => type.kind === first.kind)) {
+    label = first.label
+    if (first.kind === 'glossaire') label = 'Glossaire'
+    if (first.kind === 'theorie' && activities.every(({ summary }) => summary)) label = 'Théorie résumée'
+  }
   const list = new Intl.ListFormat('fr-CH').format(codes)
   return `${label} : ${codes.length === 1 ? 'module' : 'modules'} ${list}`
 }

@@ -310,6 +310,8 @@ Les 429 parcours à capacité complète ont été contrôlés dans Chromium en A
 
 ## Reprise opérationnelle
 
+Le titre automatique distingue « Théorie » et « Théorie résumée » pour chaque module dans les deux diplômes. Le champ Titre de la fiche affiche la valeur automatique en exemple. Une saisie personnalisée est enregistrée par le mécanisme commun. Effacer le champ rétablit le calcul automatique. Les 32 tests de génération passent.
+
 En Évaluation, le sélecteur Sous-thème permet de composer une activité de calcul, de vérification ou de mise en situation avec des modules de plusieurs thèmes. Le tirage utilise une quantité totale ou les quotas de chaque module. Une pénurie dans un module ne reporte pas son quota sur un autre. Le passage en Exercice rétablit le module principal et le retour en Évaluation rappelle la sélection. Les recettes enregistrent les codes, les quantités et la révision. Les questions conservent l’identifiant et le module de leur unité source.
 
 Dans Libre, la banque utilise le type de l’activité, le diplôme et la révision de la fiche. Le formateur peut rechercher des énoncés dans un module, consulter leur corrigé, puis ajouter des questions cochées ou tirer un lot. Les ajouts écartent les questions déjà présentes dans la fiche. Le renouvellement du tirage conserve les ajouts et leurs retouches. L’édition des problèmes permet de reprendre séparément l’énoncé, le calcul du corrigé et la réponse.
