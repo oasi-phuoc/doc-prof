@@ -1,6 +1,6 @@
 # Fiches de communication illustrées
 
-42 situations illustrées sur les 160 du registre.
+65 situations illustrées sur les 160 du registre.
 
 Chaque fiche propose un texte à lire, cinq questions, une production écrite et une prise de parole.
 
@@ -1654,6 +1654,830 @@ Modèle de production — La fontaine est à gauche du kiosque.
 
 </details>
 
+## Fixer un moment
+
+### Le dentiste
+
+![Une patiente montre une carte à l’accueil du cabinet dentaire](../../public/lib/images/grammaire/communication/e2-01-une-patiente-montre-une-carte-a-laccueil-du-cabinet-dentaire.webp)
+
+**Lire la situation**
+
+Lina est au cabinet dentaire. Le moment prévu est lundi à neuf heures. Son objectif est de faire contrôler ses dents. Le document mentionne une carte de rendez-vous.
+
+1. Qui est au centre de cette situation ?
+
+   A. Paul · B. Nadia · C. Lina
+2. Où se trouve cette personne ?
+
+   A. à l’école de langues · B. au cabinet dentaire · C. à la maison de quartier
+3. Quel est le moment prévu ?
+
+   A. lundi à neuf heures · B. samedi à midi · C. mardi à dix-huit heures
+4. Quel est son objectif ?
+
+   A. rencontrer ses voisins · B. commencer son cours · C. faire contrôler ses dents
+5. Quel objet ou élément le document mentionne-t-il ?
+
+   A. un emploi du temps · B. une carte de rendez-vous · C. une invitation
+
+**Écrire** — Lina veut faire contrôler ses dents : écrivez une phrase utile pour cette situation.
+
+**Dire** — Vous êtes à la place de Lina : dites une phrase utile pour faire contrôler ses dents.
+
+<details>
+<summary>Corrigé et modèle</summary>
+
+1. Lina
+2. au cabinet dentaire
+3. lundi à neuf heures
+4. faire contrôler ses dents
+5. une carte de rendez-vous
+
+Modèle de production — Mon rendez-vous est lundi à neuf heures.
+
+</details>
+
+### Le repas partagé
+
+![Un homme remet une invitation dans une salle de quartier](../../public/lib/images/grammaire/communication/e2-02-un-homme-remet-une-invitation-dans-une-salle-de-quartier.webp)
+
+**Lire la situation**
+
+Paul est à la maison de quartier. Le moment prévu est samedi à midi. Son objectif est de rencontrer ses voisins. Le document mentionne une invitation.
+
+1. Qui est au centre de cette situation ?
+
+   A. Lina · B. Nadia · C. Paul
+2. Où se trouve cette personne ?
+
+   A. à l’école de langues · B. à la maison de quartier · C. au cabinet dentaire
+3. Quel est le moment prévu ?
+
+   A. samedi à midi · B. lundi à neuf heures · C. mardi à dix-huit heures
+4. Quel est son objectif ?
+
+   A. faire contrôler ses dents · B. commencer son cours · C. rencontrer ses voisins
+5. Quel objet ou élément le document mentionne-t-il ?
+
+   A. un emploi du temps · B. une invitation · C. une carte de rendez-vous
+
+**Écrire** — Paul veut rencontrer ses voisins : écrivez une phrase utile pour cette situation.
+
+**Dire** — Vous êtes à la place de Paul : dites une phrase utile pour rencontrer ses voisins.
+
+<details>
+<summary>Corrigé et modèle</summary>
+
+1. Paul
+2. à la maison de quartier
+3. samedi à midi
+4. rencontrer ses voisins
+5. une invitation
+
+Modèle de production — Le repas commence samedi à midi.
+
+</details>
+
+### Le cours du soir
+
+![Une femme tient un carnet à l’entrée de la salle de cours](../../public/lib/images/grammaire/communication/e2-03-une-femme-tient-un-carnet-a-lentree-de-la-salle-de-cours.webp)
+
+**Lire la situation**
+
+Nadia est à l’école de langues. Le moment prévu est mardi à dix-huit heures. Son objectif est de commencer son cours. Le document mentionne un emploi du temps.
+
+1. Qui est au centre de cette situation ?
+
+   A. Lina · B. Paul · C. Nadia
+2. Où se trouve cette personne ?
+
+   A. à la maison de quartier · B. à l’école de langues · C. au cabinet dentaire
+3. Quel est le moment prévu ?
+
+   A. mardi à dix-huit heures · B. lundi à neuf heures · C. samedi à midi
+4. Quel est son objectif ?
+
+   A. faire contrôler ses dents · B. rencontrer ses voisins · C. commencer son cours
+5. Quel objet ou élément le document mentionne-t-il ?
+
+   A. une invitation · B. un emploi du temps · C. une carte de rendez-vous
+
+**Écrire** — Nadia veut commencer son cours : écrivez une phrase utile pour cette situation.
+
+**Dire** — Vous êtes à la place de Nadia : dites une phrase utile pour commencer son cours.
+
+<details>
+<summary>Corrigé et modèle</summary>
+
+1. Nadia
+2. à l’école de langues
+3. mardi à dix-huit heures
+4. commencer son cours
+5. un emploi du temps
+
+Modèle de production — Le cours commence mardi à dix-huit heures.
+
+</details>
+
+### La visite
+
+![Un visiteur montre un billet dans une galerie](../../public/lib/images/grammaire/communication/e2-04-un-visiteur-montre-un-billet-dans-une-galerie.webp)
+
+**Lire la situation**
+
+Omar est au musée. Le moment prévu est dimanche après-midi. Son objectif est de suivre une visite guidée. Le document mentionne un billet réservé.
+
+1. Qui est au centre de cette situation ?
+
+   A. Lina · B. Paul · C. Omar
+2. Où se trouve cette personne ?
+
+   A. à la maison de quartier · B. au musée · C. au cabinet dentaire
+3. Quel est le moment prévu ?
+
+   A. dimanche après-midi · B. lundi à neuf heures · C. samedi à midi
+4. Quel est son objectif ?
+
+   A. faire contrôler ses dents · B. rencontrer ses voisins · C. suivre une visite guidée
+5. Quel objet ou élément le document mentionne-t-il ?
+
+   A. une invitation · B. un billet réservé · C. une carte de rendez-vous
+
+**Écrire** — Omar veut suivre une visite guidée : écrivez une phrase utile pour cette situation.
+
+**Dire** — Vous êtes à la place de Omar : dites une phrase utile pour suivre une visite guidée.
+
+<details>
+<summary>Corrigé et modèle</summary>
+
+1. Omar
+2. au musée
+3. dimanche après-midi
+4. suivre une visite guidée
+5. un billet réservé
+
+Modèle de production — La visite a lieu dimanche après-midi.
+
+</details>
+
+### Le chantier
+
+![Une femme accueille des ouvriers devant son immeuble](../../public/lib/images/grammaire/communication/e2-05-une-femme-accueille-des-ouvriers-devant-son-immeuble.webp)
+
+**Lire la situation**
+
+Sofia est dans son immeuble. Le moment prévu est en septembre. Son objectif est de laisser entrer les ouvriers. Le document mentionne un avis de travaux.
+
+1. Qui est au centre de cette situation ?
+
+   A. Lina · B. Paul · C. Sofia
+2. Où se trouve cette personne ?
+
+   A. à la maison de quartier · B. dans son immeuble · C. au cabinet dentaire
+3. Quel est le moment prévu ?
+
+   A. en septembre · B. lundi à neuf heures · C. samedi à midi
+4. Quel est son objectif ?
+
+   A. faire contrôler ses dents · B. rencontrer ses voisins · C. laisser entrer les ouvriers
+5. Quel objet ou élément le document mentionne-t-il ?
+
+   A. une invitation · B. un avis de travaux · C. une carte de rendez-vous
+
+**Écrire** — Sofia veut laisser entrer les ouvriers : écrivez une phrase utile pour cette situation.
+
+**Dire** — Vous êtes à la place de Sofia : dites une phrase utile pour laisser entrer les ouvriers.
+
+<details>
+<summary>Corrigé et modèle</summary>
+
+1. Sofia
+2. dans son immeuble
+3. en septembre
+4. laisser entrer les ouvriers
+5. un avis de travaux
+
+Modèle de production — Les travaux commencent en septembre.
+
+</details>
+
+### Le marché
+
+![Un client utilise sa liste au marché aux fruits](../../public/lib/images/grammaire/communication/e2-06-un-client-utilise-sa-liste-au-marche-aux-fruits.webp)
+
+**Lire la situation**
+
+Kenji est sur la place centrale. Le moment prévu est le mercredi matin. Son objectif est de acheter des fruits. Le document mentionne une liste de courses.
+
+1. Qui est au centre de cette situation ?
+
+   A. Lina · B. Paul · C. Kenji
+2. Où se trouve cette personne ?
+
+   A. à la maison de quartier · B. sur la place centrale · C. au cabinet dentaire
+3. Quel est le moment prévu ?
+
+   A. le mercredi matin · B. lundi à neuf heures · C. samedi à midi
+4. Quel est son objectif ?
+
+   A. faire contrôler ses dents · B. rencontrer ses voisins · C. acheter des fruits
+5. Quel objet ou élément le document mentionne-t-il ?
+
+   A. une invitation · B. une liste de courses · C. une carte de rendez-vous
+
+**Écrire** — Kenji veut acheter des fruits : écrivez une phrase utile pour cette situation.
+
+**Dire** — Vous êtes à la place de Kenji : dites une phrase utile pour acheter des fruits.
+
+<details>
+<summary>Corrigé et modèle</summary>
+
+1. Kenji
+2. sur la place centrale
+3. le mercredi matin
+4. acheter des fruits
+5. une liste de courses
+
+Modèle de production — Le marché a lieu le mercredi matin.
+
+</details>
+
+### La randonnée
+
+![Deux femmes regardent un livret au début d’un sentier](../../public/lib/images/grammaire/communication/e2-07-deux-femmes-regardent-un-livret-au-debut-dun-sentier.webp)
+
+**Lire la situation**
+
+Mei est au départ du sentier. Le moment prévu est au printemps. Son objectif est de découvrir la montagne. Le document mentionne le programme du club.
+
+1. Qui est au centre de cette situation ?
+
+   A. Lina · B. Paul · C. Mei
+2. Où se trouve cette personne ?
+
+   A. à la maison de quartier · B. au départ du sentier · C. au cabinet dentaire
+3. Quel est le moment prévu ?
+
+   A. au printemps · B. lundi à neuf heures · C. samedi à midi
+4. Quel est son objectif ?
+
+   A. faire contrôler ses dents · B. rencontrer ses voisins · C. découvrir la montagne
+5. Quel objet ou élément le document mentionne-t-il ?
+
+   A. une invitation · B. le programme du club · C. une carte de rendez-vous
+
+**Écrire** — Mei veut découvrir la montagne : écrivez une phrase utile pour cette situation.
+
+**Dire** — Vous êtes à la place de Mei : dites une phrase utile pour découvrir la montagne.
+
+<details>
+<summary>Corrigé et modèle</summary>
+
+1. Mei
+2. au départ du sentier
+3. au printemps
+4. découvrir la montagne
+5. le programme du club
+
+Modèle de production — La randonnée est prévue au printemps.
+
+</details>
+
+### Le train
+
+![Un voyageur présente son billet sur un quai](../../public/lib/images/grammaire/communication/e2-08-un-voyageur-presente-son-billet-sur-un-quai.webp)
+
+**Lire la situation**
+
+Karim est à la gare centrale. Le moment prévu est à huit heures et demie. Son objectif est de prendre le train. Le document mentionne un billet de transport.
+
+1. Qui est au centre de cette situation ?
+
+   A. Lina · B. Paul · C. Karim
+2. Où se trouve cette personne ?
+
+   A. à la maison de quartier · B. à la gare centrale · C. au cabinet dentaire
+3. Quel est le moment prévu ?
+
+   A. à huit heures et demie · B. lundi à neuf heures · C. samedi à midi
+4. Quel est son objectif ?
+
+   A. faire contrôler ses dents · B. rencontrer ses voisins · C. prendre le train
+5. Quel objet ou élément le document mentionne-t-il ?
+
+   A. une invitation · B. un billet de transport · C. une carte de rendez-vous
+
+**Écrire** — Karim veut prendre le train : écrivez une phrase utile pour cette situation.
+
+**Dire** — Vous êtes à la place de Karim : dites une phrase utile pour prendre le train.
+
+<details>
+<summary>Corrigé et modèle</summary>
+
+1. Karim
+2. à la gare centrale
+3. à huit heures et demie
+4. prendre le train
+5. un billet de transport
+
+Modèle de production — Mon train part à huit heures et demie.
+
+</details>
+
+### Les vacances
+
+![Deux femmes consultent une brochure de voyage](../../public/lib/images/grammaire/communication/e2-09-deux-femmes-consultent-une-brochure-de-voyage.webp)
+
+**Lire la situation**
+
+Emma est à l’agence de voyages. Le moment prévu est en juillet. Son objectif est de préparer son séjour. Le document mentionne une brochure.
+
+1. Qui est au centre de cette situation ?
+
+   A. Lina · B. Paul · C. Emma
+2. Où se trouve cette personne ?
+
+   A. à la maison de quartier · B. à l’agence de voyages · C. au cabinet dentaire
+3. Quel est le moment prévu ?
+
+   A. en juillet · B. lundi à neuf heures · C. samedi à midi
+4. Quel est son objectif ?
+
+   A. faire contrôler ses dents · B. rencontrer ses voisins · C. préparer son séjour
+5. Quel objet ou élément le document mentionne-t-il ?
+
+   A. une invitation · B. une brochure · C. une carte de rendez-vous
+
+**Écrire** — Emma veut préparer son séjour : écrivez une phrase utile pour cette situation.
+
+**Dire** — Vous êtes à la place de Emma : dites une phrase utile pour préparer son séjour.
+
+<details>
+<summary>Corrigé et modèle</summary>
+
+1. Emma
+2. à l’agence de voyages
+3. en juillet
+4. préparer son séjour
+5. une brochure
+
+Modèle de production — Nous partons en vacances en juillet.
+
+</details>
+
+### La permanence
+
+![Un homme parle à la réception d’un centre social](../../public/lib/images/grammaire/communication/e2-10-un-homme-parle-a-la-reception-dun-centre-social.webp)
+
+**Lire la situation**
+
+Marco est au centre social. Le moment prévu est le vendredi soir. Son objectif est de rencontrer un conseiller. Le document mentionne une affiche.
+
+1. Qui est au centre de cette situation ?
+
+   A. Lina · B. Paul · C. Marco
+2. Où se trouve cette personne ?
+
+   A. à la maison de quartier · B. au centre social · C. au cabinet dentaire
+3. Quel est le moment prévu ?
+
+   A. le vendredi soir · B. lundi à neuf heures · C. samedi à midi
+4. Quel est son objectif ?
+
+   A. faire contrôler ses dents · B. rencontrer ses voisins · C. rencontrer un conseiller
+5. Quel objet ou élément le document mentionne-t-il ?
+
+   A. une invitation · B. une affiche · C. une carte de rendez-vous
+
+**Écrire** — Marco veut rencontrer un conseiller : écrivez une phrase utile pour cette situation.
+
+**Dire** — Vous êtes à la place de Marco : dites une phrase utile pour rencontrer un conseiller.
+
+<details>
+<summary>Corrigé et modèle</summary>
+
+1. Marco
+2. au centre social
+3. le vendredi soir
+4. rencontrer un conseiller
+5. une affiche
+
+Modèle de production — La permanence est ouverte le vendredi soir.
+
+</details>
+
+## Répondre à une proposition
+
+### Le café
+
+![Deux femmes échangent une tasse à la cafétéria](../../public/lib/images/grammaire/communication/f3-01-deux-femmes-echangent-une-tasse-a-la-cafeteria.webp)
+
+**Lire la situation**
+
+Lina est à la cafétéria. Le moment prévu est pendant la pause. Son objectif est d’accepter un café. Le document mentionne une tasse.
+
+1. Qui est au centre de cette situation ?
+
+   A. Paul · B. Nadia · C. Lina
+2. Où se trouve cette personne ?
+
+   A. chez sa voisine · B. à la cafétéria · C. devant le cinéma
+3. Quel est le moment prévu ?
+
+   A. pendant la pause · B. samedi soir · C. dimanche midi
+4. Quel est son objectif ?
+
+   A. refuser une invitation · B. accepter une invitation à déjeuner · C. accepter un café
+5. Quel objet ou élément le document mentionne-t-il ?
+
+   A. une invitation · B. une tasse · C. une affiche de film
+
+**Écrire** — Lina veut accepter un café : écrivez une phrase utile pour cette situation.
+
+**Dire** — Vous êtes à la place de Lina : dites une phrase utile pour accepter un café.
+
+<details>
+<summary>Corrigé et modèle</summary>
+
+1. Lina
+2. à la cafétéria
+3. pendant la pause
+4. accepter un café
+5. une tasse
+
+Modèle de production — Oui, un café avec plaisir.
+
+</details>
+
+### Le cinéma
+
+![Deux personnes parlent devant une affiche de cinéma](../../public/lib/images/grammaire/communication/f3-02-deux-personnes-parlent-devant-une-affiche-de-cinema.webp)
+
+**Lire la situation**
+
+Paul est devant le cinéma. Le moment prévu est samedi soir. Son objectif est de refuser une invitation. Le document mentionne une affiche de film.
+
+1. Qui est au centre de cette situation ?
+
+   A. Lina · B. Nadia · C. Paul
+2. Où se trouve cette personne ?
+
+   A. chez sa voisine · B. devant le cinéma · C. à la cafétéria
+3. Quel est le moment prévu ?
+
+   A. samedi soir · B. pendant la pause · C. dimanche midi
+4. Quel est son objectif ?
+
+   A. accepter un café · B. accepter une invitation à déjeuner · C. refuser une invitation
+5. Quel objet ou élément le document mentionne-t-il ?
+
+   A. une invitation · B. une affiche de film · C. une tasse
+
+**Écrire** — Paul veut refuser une invitation : écrivez une phrase utile pour cette situation.
+
+**Dire** — Vous êtes à la place de Paul : dites une phrase utile pour refuser une invitation.
+
+<details>
+<summary>Corrigé et modèle</summary>
+
+1. Paul
+2. devant le cinéma
+3. samedi soir
+4. refuser une invitation
+5. une affiche de film
+
+Modèle de production — Merci, mais je ne suis pas disponible samedi.
+
+</details>
+
+### Le repas
+
+![Une femme reçoit une carte près d’une table dressée](../../public/lib/images/grammaire/communication/f3-03-une-femme-recoit-une-carte-pres-dune-table-dressee.webp)
+
+**Lire la situation**
+
+Nadia est chez sa voisine. Le moment prévu est dimanche midi. Son objectif est d’accepter une invitation à déjeuner. Le document mentionne une invitation.
+
+1. Qui est au centre de cette situation ?
+
+   A. Lina · B. Paul · C. Nadia
+2. Où se trouve cette personne ?
+
+   A. devant le cinéma · B. chez sa voisine · C. à la cafétéria
+3. Quel est le moment prévu ?
+
+   A. dimanche midi · B. pendant la pause · C. samedi soir
+4. Quel est son objectif ?
+
+   A. accepter un café · B. refuser une invitation · C. accepter une invitation à déjeuner
+5. Quel objet ou élément le document mentionne-t-il ?
+
+   A. une affiche de film · B. une invitation · C. une tasse
+
+**Écrire** — Nadia veut accepter une invitation à déjeuner : écrivez une phrase utile pour cette situation.
+
+**Dire** — Vous êtes à la place de Nadia : dites une phrase utile pour accepter une invitation à déjeuner.
+
+<details>
+<summary>Corrigé et modèle</summary>
+
+1. Nadia
+2. chez sa voisine
+3. dimanche midi
+4. accepter une invitation à déjeuner
+5. une invitation
+
+Modèle de production — Merci, je viendrai avec plaisir.
+
+</details>
+
+### La sortie
+
+![Deux hommes parlent près d’un vélo devant un centre sportif](../../public/lib/images/grammaire/communication/f3-04-deux-hommes-parlent-pres-dun-velo-devant-un-centre-sportif.webp)
+
+**Lire la situation**
+
+Omar est au centre sportif. Le moment prévu est mercredi. Son objectif est de refuser une sortie à vélo. Le document mentionne un vélo.
+
+1. Qui est au centre de cette situation ?
+
+   A. Lina · B. Paul · C. Omar
+2. Où se trouve cette personne ?
+
+   A. devant le cinéma · B. au centre sportif · C. à la cafétéria
+3. Quel est le moment prévu ?
+
+   A. mercredi · B. pendant la pause · C. samedi soir
+4. Quel est son objectif ?
+
+   A. accepter un café · B. refuser une invitation · C. refuser une sortie à vélo
+5. Quel objet ou élément le document mentionne-t-il ?
+
+   A. une affiche de film · B. un vélo · C. une tasse
+
+**Écrire** — Omar veut refuser une sortie à vélo : écrivez une phrase utile pour cette situation.
+
+**Dire** — Vous êtes à la place de Omar : dites une phrase utile pour refuser une sortie à vélo.
+
+<details>
+<summary>Corrigé et modèle</summary>
+
+1. Omar
+2. au centre sportif
+3. mercredi
+4. refuser une sortie à vélo
+5. un vélo
+
+Modèle de production — Merci, mais je préfère me reposer.
+
+</details>
+
+### Le dessert
+
+![Une cliente décline la carte des desserts au restaurant](../../public/lib/images/grammaire/communication/f3-05-une-cliente-decline-la-carte-des-desserts-au-restaurant.webp)
+
+**Lire la situation**
+
+Sofia est au restaurant. Le moment prévu est à la fin du repas. Son objectif est de refuser un dessert. Le document mentionne la carte des desserts.
+
+1. Qui est au centre de cette situation ?
+
+   A. Lina · B. Paul · C. Sofia
+2. Où se trouve cette personne ?
+
+   A. devant le cinéma · B. au restaurant · C. à la cafétéria
+3. Quel est le moment prévu ?
+
+   A. à la fin du repas · B. pendant la pause · C. samedi soir
+4. Quel est son objectif ?
+
+   A. accepter un café · B. refuser une invitation · C. refuser un dessert
+5. Quel objet ou élément le document mentionne-t-il ?
+
+   A. une affiche de film · B. la carte des desserts · C. une tasse
+
+**Écrire** — Sofia veut refuser un dessert : écrivez une phrase utile pour cette situation.
+
+**Dire** — Vous êtes à la place de Sofia : dites une phrase utile pour refuser un dessert.
+
+<details>
+<summary>Corrigé et modèle</summary>
+
+1. Sofia
+2. au restaurant
+3. à la fin du repas
+4. refuser un dessert
+5. la carte des desserts
+
+Modèle de production — Non merci, je n’ai plus faim.
+
+</details>
+
+### Le covoiturage
+
+![Une femme ouvre la porte passager à un homme](../../public/lib/images/grammaire/communication/f3-06-une-femme-ouvre-la-porte-passager-a-un-homme.webp)
+
+**Lire la situation**
+
+Kenji est sur le parking. Le moment prévu est demain matin. Son objectif est d’accepter une place en voiture. Le document mentionne une voiture.
+
+1. Qui est au centre de cette situation ?
+
+   A. Lina · B. Paul · C. Kenji
+2. Où se trouve cette personne ?
+
+   A. devant le cinéma · B. sur le parking · C. à la cafétéria
+3. Quel est le moment prévu ?
+
+   A. demain matin · B. pendant la pause · C. samedi soir
+4. Quel est son objectif ?
+
+   A. accepter un café · B. refuser une invitation · C. accepter une place en voiture
+5. Quel objet ou élément le document mentionne-t-il ?
+
+   A. une affiche de film · B. une voiture · C. une tasse
+
+**Écrire** — Kenji veut accepter une place en voiture : écrivez une phrase utile pour cette situation.
+
+**Dire** — Vous êtes à la place de Kenji : dites une phrase utile pour accepter une place en voiture.
+
+<details>
+<summary>Corrigé et modèle</summary>
+
+1. Kenji
+2. sur le parking
+3. demain matin
+4. accepter une place en voiture
+5. une voiture
+
+Modèle de production — Oui, merci de m’emmener.
+
+</details>
+
+### L’aide
+
+![Deux femmes consultent un catalogue à la bibliothèque](../../public/lib/images/grammaire/communication/f3-07-deux-femmes-consultent-un-catalogue-a-la-bibliotheque.webp)
+
+**Lire la situation**
+
+Mei est à la bibliothèque. Le moment prévu est cet après-midi. Son objectif est d’accepter de l’aide pour chercher un livre. Le document mentionne un catalogue.
+
+1. Qui est au centre de cette situation ?
+
+   A. Lina · B. Paul · C. Mei
+2. Où se trouve cette personne ?
+
+   A. devant le cinéma · B. à la bibliothèque · C. à la cafétéria
+3. Quel est le moment prévu ?
+
+   A. cet après-midi · B. pendant la pause · C. samedi soir
+4. Quel est son objectif ?
+
+   A. accepter un café · B. refuser une invitation · C. accepter de l’aide pour chercher un livre
+5. Quel objet ou élément le document mentionne-t-il ?
+
+   A. une affiche de film · B. un catalogue · C. une tasse
+
+**Écrire** — Mei veut accepter de l’aide pour chercher un livre : écrivez une phrase utile pour cette situation.
+
+**Dire** — Vous êtes à la place de Mei : dites une phrase utile pour accepter de l’aide pour chercher un livre.
+
+<details>
+<summary>Corrigé et modèle</summary>
+
+1. Mei
+2. à la bibliothèque
+3. cet après-midi
+4. accepter de l’aide pour chercher un livre
+5. un catalogue
+
+Modèle de production — Oui, votre aide me serait utile.
+
+</details>
+
+### La réunion
+
+![Deux collègues parlent d’un agenda au bureau](../../public/lib/images/grammaire/communication/f3-08-deux-collegues-parlent-dun-agenda-au-bureau.webp)
+
+**Lire la situation**
+
+Karim est au bureau. Le moment prévu est vendredi. Son objectif est de refuser un nouvel horaire. Le document mentionne un calendrier.
+
+1. Qui est au centre de cette situation ?
+
+   A. Lina · B. Paul · C. Karim
+2. Où se trouve cette personne ?
+
+   A. devant le cinéma · B. au bureau · C. à la cafétéria
+3. Quel est le moment prévu ?
+
+   A. vendredi · B. pendant la pause · C. samedi soir
+4. Quel est son objectif ?
+
+   A. accepter un café · B. refuser une invitation · C. refuser un nouvel horaire
+5. Quel objet ou élément le document mentionne-t-il ?
+
+   A. une affiche de film · B. un calendrier · C. une tasse
+
+**Écrire** — Karim veut refuser un nouvel horaire : écrivez une phrase utile pour cette situation.
+
+**Dire** — Vous êtes à la place de Karim : dites une phrase utile pour refuser un nouvel horaire.
+
+<details>
+<summary>Corrigé et modèle</summary>
+
+1. Karim
+2. au bureau
+3. vendredi
+4. refuser un nouvel horaire
+5. un calendrier
+
+Modèle de production — Désolé, cet horaire ne me convient pas.
+
+</details>
+
+### La marche
+
+![Deux femmes regardent un plan à l’entrée du parc](../../public/lib/images/grammaire/communication/f3-09-deux-femmes-regardent-un-plan-a-lentree-du-parc.webp)
+
+**Lire la situation**
+
+Emma est à l’entrée du parc. Le moment prévu est ce soir. Son objectif est d’accepter une promenade. Le document mentionne un plan du parc.
+
+1. Qui est au centre de cette situation ?
+
+   A. Lina · B. Paul · C. Emma
+2. Où se trouve cette personne ?
+
+   A. devant le cinéma · B. à l’entrée du parc · C. à la cafétéria
+3. Quel est le moment prévu ?
+
+   A. ce soir · B. pendant la pause · C. samedi soir
+4. Quel est son objectif ?
+
+   A. accepter un café · B. refuser une invitation · C. accepter une promenade
+5. Quel objet ou élément le document mentionne-t-il ?
+
+   A. une affiche de film · B. un plan du parc · C. une tasse
+
+**Écrire** — Emma veut accepter une promenade : écrivez une phrase utile pour cette situation.
+
+**Dire** — Vous êtes à la place de Emma : dites une phrase utile pour accepter une promenade.
+
+<details>
+<summary>Corrigé et modèle</summary>
+
+1. Emma
+2. à l’entrée du parc
+3. ce soir
+4. accepter une promenade
+5. un plan du parc
+
+Modèle de production — Bonne idée, je viens avec vous.
+
+</details>
+
+### Le gâteau
+
+![Un homme décline une part de gâteau](../../public/lib/images/grammaire/communication/f3-10-un-homme-decline-une-part-de-gateau.webp)
+
+**Lire la situation**
+
+Marco est dans la salle commune. Le moment prévu est pendant la fête. Son objectif est de refuser une part de gâteau. Le document mentionne un gâteau.
+
+1. Qui est au centre de cette situation ?
+
+   A. Lina · B. Paul · C. Marco
+2. Où se trouve cette personne ?
+
+   A. devant le cinéma · B. dans la salle commune · C. à la cafétéria
+3. Quel est le moment prévu ?
+
+   A. pendant la fête · B. pendant la pause · C. samedi soir
+4. Quel est son objectif ?
+
+   A. accepter un café · B. refuser une invitation · C. refuser une part de gâteau
+5. Quel objet ou élément le document mentionne-t-il ?
+
+   A. une affiche de film · B. un gâteau · C. une tasse
+
+**Écrire** — Marco veut refuser une part de gâteau : écrivez une phrase utile pour cette situation.
+
+**Dire** — Vous êtes à la place de Marco : dites une phrase utile pour refuser une part de gâteau.
+
+<details>
+<summary>Corrigé et modèle</summary>
+
+1. Marco
+2. dans la salle commune
+3. pendant la fête
+4. refuser une part de gâteau
+5. un gâteau
+
+Modèle de production — Non merci, j’en ai déjà mangé.
+
+</details>
+
 ## Raconter un événement
 
 ### Le déménagement
@@ -1699,6 +2523,47 @@ Modèle de production — Le mois dernier, j’ai déménagé.
 
 ## Annoncer un projet
 
+### La visite
+
+![Un visiteur montre un billet dans une galerie](../../public/lib/images/grammaire/communication/e2-04-un-visiteur-montre-un-billet-dans-une-galerie.webp)
+
+**Lire la situation**
+
+Omar est au musée. Le moment prévu est demain. Son objectif est de visiter une exposition. Le document mentionne un billet.
+
+1. Qui est au centre de cette situation ?
+
+   A. Lina · B. Paul · C. Omar
+2. Où se trouve cette personne ?
+
+   A. au centre de langues · B. au musée · C. dans son nouvel immeuble
+3. Quel est le moment prévu ?
+
+   A. demain · B. samedi · C. lundi
+4. Quel est son objectif ?
+
+   A. déménager · B. commencer un cours · C. visiter une exposition
+5. Quel objet ou élément le document mentionne-t-il ?
+
+   A. un cahier · B. un billet · C. des cartons
+
+**Écrire** — À la place de Omar, écrivez une phrase au futur proche pour annoncer le projet.
+
+**Dire** — À la place de Omar, annoncez le projet en une phrase au futur proche.
+
+<details>
+<summary>Corrigé et modèle</summary>
+
+1. Omar
+2. au musée
+3. demain
+4. visiter une exposition
+5. un billet
+
+Modèle de production — Je vais visiter une exposition demain.
+
+</details>
+
 ### La randonnée
 
 ![Deux personnes marchent avec un sac à dos en montagne](../../public/lib/images/tcf/qcm-audit/vocab-randonnee.webp)
@@ -1737,5 +2602,91 @@ Kenji est en montagne. Le moment prévu est ce week-end. Son objectif est de fai
 5. un sac à dos
 
 Modèle de production — Je vais faire une randonnée ce week-end.
+
+</details>
+
+## Organiser une explication
+
+### Le téléphone
+
+![Deux hommes comparent des téléphones en magasin](../../public/lib/images/grammaire/communication/choix-au-magasin-de-telephones.webp)
+
+**Lire la situation**
+
+Kenji est au magasin. Le moment prévu est jeudi. Son objectif est d’expliquer son choix de téléphone. Le document mentionne un modèle simple.
+
+1. Qui est au centre de cette situation ?
+
+   A. Lina · B. Paul · C. Kenji
+2. Où se trouve cette personne ?
+
+   A. à l’agence immobilière · B. au magasin · C. à la gare
+3. Quel est le moment prévu ?
+
+   A. jeudi · B. demain · C. lundi
+4. Quel est son objectif ?
+
+   A. expliquer son choix de transport · B. expliquer son choix de logement · C. expliquer son choix de téléphone
+5. Quel objet ou élément le document mentionne-t-il ?
+
+   A. une annonce · B. un modèle simple · C. un billet de train
+
+**Écrire** — Kenji veut expliquer son choix de téléphone : écrivez une phrase utile pour cette situation.
+
+**Dire** — Vous êtes à la place de Kenji : dites une phrase utile pour expliquer son choix de téléphone.
+
+<details>
+<summary>Corrigé et modèle</summary>
+
+1. Kenji
+2. au magasin
+3. jeudi
+4. expliquer son choix de téléphone
+5. un modèle simple
+
+Modèle de production — Je choisis ce téléphone car il est simple à utiliser.
+
+</details>
+
+## Expliquer une raison
+
+### Le repas
+
+![Une cliente décline la carte des desserts au restaurant](../../public/lib/images/grammaire/communication/f3-05-une-cliente-decline-la-carte-des-desserts-au-restaurant.webp)
+
+**Lire la situation**
+
+Sofia est au restaurant. Le moment prévu est à midi. Son objectif est d’expliquer un refus de dessert. Le document mentionne une carte de desserts.
+
+1. Qui est au centre de cette situation ?
+
+   A. Lina · B. Paul · C. Sofia
+2. Où se trouve cette personne ?
+
+   A. dans son appartement · B. au restaurant · C. au cabinet médical
+3. Quel est le moment prévu ?
+
+   A. à midi · B. hier · C. ce matin
+4. Quel est son objectif ?
+
+   A. expliquer son absence · B. expliquer un geste · C. expliquer un refus de dessert
+5. Quel objet ou élément le document mentionne-t-il ?
+
+   A. une fenêtre ouverte · B. une carte de desserts · C. un bus en panne
+
+**Écrire** — Sofia veut expliquer un refus de dessert : écrivez une phrase utile pour cette situation.
+
+**Dire** — Vous êtes à la place de Sofia : dites une phrase utile pour expliquer un refus de dessert.
+
+<details>
+<summary>Corrigé et modèle</summary>
+
+1. Sofia
+2. au restaurant
+3. à midi
+4. expliquer un refus de dessert
+5. une carte de desserts
+
+Modèle de production — Je ne prends pas de dessert parce que je n’ai plus faim.
 
 </details>
