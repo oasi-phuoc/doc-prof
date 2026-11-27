@@ -68,7 +68,10 @@ test('les 858 types des modules CFC et AFP disposent de contenu à générer', (
 
 test('les résumés illustrés sont distincts du cours et figés dans la recette', () => {
   const publishedTheories = currentLogistiquePublication.units.filter((unit) => unit.kind === 'theorie' && unit.summaryBlocks)
+  assert.equal(publishedTheories.length, 80)
   assert.equal(new Set(publishedTheories.map(({ module }) => module)).size, 80)
+  const images = (blocks) => blocks.flatMap((block) => block.kind === 'image' ? [block] : block.kind === 'image-row' ? block.cells : [])
+  const textBlocks = (blocks) => blocks.filter((block) => block.kind !== 'image' && block.kind !== 'image-row')
   for (const { module: code, approvedFor } of publishedTheories) {
     for (const diploma of approvedFor) {
       const full = config(diploma, code, 'theorie')
@@ -79,10 +82,13 @@ test('les résumés illustrés sont distincts du cours et figés dans la recette
       const blocks = generateLogistique(summary, 7).items.map((item) => item.theoryBlock)
       const fullBlocks = generateLogistique(full, 7).items.map((item) => item.theoryBlock)
       assert(blocks.length < fullBlocks.length)
-      for (const version of [blocks, fullBlocks]) {
-        const figures = version.filter((block) => block.kind === 'image')
-        assert(figures.length >= 2)
-        assert(figures.every((figure) => figure.src.endsWith('.webp') && figure.alt && figure.caption))
+      for (const [view, version] of [[summary, blocks], [full, fullBlocks]]) {
+        const baseline = { ...view, logistiqueBankRevision: 'logistique-theories-projets-v002' }
+        const previous = generateLogistique(baseline, 7).items.map((item) => item.theoryBlock)
+        const figures = images(version)
+        assert(figures.length > images(previous).length, `${diploma} ${code}`)
+        assert(figures.every((figure) => figure.src.endsWith('.webp') && figure.alt && figure.caption), `${diploma} ${code}`)
+        if (code !== '101') assert.deepEqual(textBlocks(version), textBlocks(previous), `${diploma} ${code}`)
       }
       const historical = { ...full, logistiqueBankRevision: 'logistique-901-v001' }
       assert(!logistiqueHasSummary(full.exerciseType, historical.logistiqueBankRevision))

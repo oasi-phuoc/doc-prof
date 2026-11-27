@@ -14,7 +14,7 @@ Le générateur commun propose les neuf thèmes et 80 modules du CFC, ainsi que 
 
 La [banque active](../../src/logistique/approved-banks.ts) permet de générer les six types des 80 modules CFC et des 63 modules AFP, soit 858 combinaisons diplôme, module et type. Le [suivi d’avancement](avancement-cahier-des-charges-20261126.md) détaille les révisions, les contrôles A4 et les effectifs de la banque. Les volumes nominaux et les fonctions avancées d’évaluation et d’édition restent à compléter.
 
-Le type Théorie propose Complet et Résumé pour les 80 modules CFC et les 63 modules AFP. Chaque version présente les visuels en couleur au fil du cours. Les ancrages, légendes, textes alternatifs et résumés figurent dans les [dossiers de préparation](preparation/).
+Le type Théorie propose Complet et Résumé pour les 80 modules CFC et les 63 modules AFP. La deuxième relecture a enrichi les deux versions avec 62 nouveaux visuels en couleur. Les ancrages, légendes, textes alternatifs et résumés figurent dans les [dossiers de préparation](preparation/). Les résultats par lot figurent dans le [suivi de la relecture des illustrations](avancement-cahier-des-charges-20261126.md#relecture-des-illustrations-par-chapitre).
 
 ## Sources et pilote
 

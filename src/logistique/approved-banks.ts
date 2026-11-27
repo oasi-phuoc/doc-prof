@@ -225,6 +225,22 @@ import { module613 as reviewed613 } from './banks/module-613-v003.generated.ts'
 import { module614 as reviewed614 } from './banks/module-614-v003.generated.ts'
 import { module615 as reviewed615 } from './banks/module-615-v003.generated.ts'
 import { module616 as reviewed616 } from './banks/module-616-v003.generated.ts'
+import { module701 as reviewed701 } from './banks/module-701-v003.generated.ts'
+import { module702 as reviewed702 } from './banks/module-702-v003.generated.ts'
+import { module703 as reviewed703 } from './banks/module-703-v003.generated.ts'
+import { module704 as reviewed704 } from './banks/module-704-v003.generated.ts'
+import { module705 as reviewed705 } from './banks/module-705-v003.generated.ts'
+import { module801 as reviewed801 } from './banks/module-801-v003.generated.ts'
+import { module802 as reviewed802 } from './banks/module-802-v003.generated.ts'
+import { module803 as reviewed803 } from './banks/module-803-v003.generated.ts'
+import { module804 as reviewed804 } from './banks/module-804-v003.generated.ts'
+import { module805 as reviewed805 } from './banks/module-805-v003.generated.ts'
+import { module806 as reviewed806 } from './banks/module-806-v003.generated.ts'
+import { module807 as reviewed807 } from './banks/module-807-v003.generated.ts'
+import { module808 as reviewed808 } from './banks/module-808-v003.generated.ts'
+import { module809 as reviewed809 } from './banks/module-809-v003.generated.ts'
+import { module901 as reviewed901 } from './banks/module-901-v003.generated.ts'
+import { module902 as reviewed902 } from './banks/module-902-v003.generated.ts'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
 
@@ -470,6 +486,12 @@ const productionAndDistributionIllustrations = reviewedIllustrationPublication(p
   ...reviewed613, ...reviewed614, ...reviewed615, ...reviewed616,
 ])
 
+const financeDigitalAndProjectsIllustrations = reviewedIllustrationPublication(productionAndDistributionIllustrations, 'logistique-illustrations-fico-ict-projets-v003', [
+  ...reviewed701, ...reviewed702, ...reviewed703, ...reviewed704, ...reviewed705, ...reviewed801,
+  ...reviewed802, ...reviewed803, ...reviewed804, ...reviewed805, ...reviewed806, ...reviewed807,
+  ...reviewed808, ...reviewed809, ...reviewed901, ...reviewed902,
+])
+
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
@@ -538,6 +560,7 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   foundationsAndServiceIllustrations,
   procurementAndStorageIllustrations,
   productionAndDistributionIllustrations,
+  financeDigitalAndProjectsIllustrations,
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!

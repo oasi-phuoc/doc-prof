@@ -136,6 +136,9 @@ Le passage de contrôle réexamine les chapitres du cours complet et du résumé
 | 100, 102–110 et 201–209 | Suivi de l’humidité, traitement des déchets, contrôle documentaire, hygiène, part de marché et modèle AIDA. | Révision `logistique-illustrations-fondations-service-v003`. 20 insertions supplémentaires dans 19 modules. 76 parcours A4 et PDF vérifiés. |
 | 301–312 et 401–410 | Supports de charge et défauts de palette, contrôle des stocks, rayonnages, engins, AutoStore et convoyage vertical. | Révision `logistique-illustrations-approvisionnement-stockage-v003`. 36 insertions supplémentaires dans 22 modules. 88 parcours A4 et PDF vérifiés. |
 | 501–506 et 601–616 | Production en vrac, cycle PDCA, prélèvement assisté, feuillard et protection d’arête, fret et chaussée roulante. | Révision `logistique-illustrations-production-distribution-v003`. 22 insertions supplémentaires dans 22 modules. 72 parcours A4 et PDF vérifiés. |
+| 701–705, 801–809 et 901–902 | Valeur d’un chariot, salaire brut et net, RFID, rapport de réception, références Excel, effets PowerPoint et organisation du bloc-notes. | Révision `logistique-illustrations-fico-ict-projets-v003`. 16 insertions supplémentaires dans 16 modules. 46 parcours A4 et PDF vérifiés. |
+
+Le deuxième passage couvre les 80 modules CFC et les 63 modules AFP. Il porte le cours complet à 292 insertions, soit 116 de plus que le premier passage. Les deux versions utilisent 62 nouveaux visuels en couleur, dont 48 scènes photoréalistes et 14 schémas. Les 286 combinaisons de module, diplôme et version ont été vérifiées dans le gabarit A4 et exportées en PDF. Les 80 préparations `v003` reproduisent les contenus publiés avec leurs légendes et les empreintes des visuels.
 
 ## Enrichissement des exercices
 
@@ -179,7 +182,7 @@ Les 54 parcours A4 et PDF couvrent la capacité complète des trois types, avec 
 
 ## Reprise opérationnelle
 
-La publication des modules est terminée pour les deux diplômes. La publication `logistique-901-v001` a clôturé le premier passage sur le catalogue. La révision `logistique-theories-projets-v002` rassemble les cours illustrés et leurs résumés. Chaque recette conserve sa révision de banque.
+La publication des modules est terminée pour les deux diplômes. La publication `logistique-901-v001` a clôturé le premier passage sur le catalogue. La révision `logistique-illustrations-fico-ict-projets-v003` rassemble les cours et les résumés du deuxième passage illustré. Chaque recette conserve sa révision de banque.
 
 | Diplôme | Modules | Types actifs | Problèmes de calcul | Questions de vérification | Situations |
 |---|---:|---:|---:|---:|---:|
