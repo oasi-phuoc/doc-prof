@@ -26,7 +26,7 @@ function newEntryId(label: string): string {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-|-$/g, '')
-  return `soutien-${slug || 'mot'}-${Date.now().toString(36)}`
+  return `soutien-${slug || 'mot'}-${crypto.randomUUID()}`
 }
 
 function entryFromWord(label: string): SoutienMotEntry {
@@ -91,7 +91,7 @@ export function SoutienMotsLibreEditor({
   function applySuggestion(word: string) {
     const next = entryFromWord(word)
     if (replaceIndex != null && replaceIndex >= 0 && replaceIndex < entries.length) {
-      const replaced = entries.map((entry, i) => (i === replaceIndex ? next : entry))
+      const replaced = entries.map((entry, i) => (i === replaceIndex ? { ...next, id: entry.id } : entry))
       onChange(replaced)
       setReplaceIndex(null)
       setError(null)

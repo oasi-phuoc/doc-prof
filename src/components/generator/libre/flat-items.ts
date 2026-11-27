@@ -20,7 +20,8 @@ export function identifyItems(items: MathItem[], activityId: string): MathItem[]
 }
 
 export function hasLockedItems(block: ExerciseBlock): boolean {
-  return Boolean(block.libreItems?.some(({ libreLocked }) => libreLocked)) || hasTcfLockedQuestions(block.tcfExercise)
+  return Boolean(block.libreItems?.some(({ libreLocked }) => libreLocked) ||
+    block.a5RightLibre?.items.some(({ libreLocked }) => libreLocked)) || hasTcfLockedQuestions(block.tcfExercise)
 }
 
 export function trimUnlockedItems(items: MathItem[], count: number): MathItem[] {
@@ -39,18 +40,26 @@ export function rerollArithmetic(
   seed: number,
   newSeed: number,
   targetId?: string,
+  half?: 'left' | 'right',
 ): PageConfig {
   const block = pageBlocks(page)[blockIndex]
   if (!block || !isInlineArithmetic(page.domain, block.exerciseType)) return page
-  const activityId = arithmeticActivityId(block, seed, pageIndex, blockIndex)
+  const right = half === 'right'
+  const rightLibre = right ? block.a5RightLibre : undefined
+  const activityId = right
+    ? rightLibre?.id ?? `${arithmeticActivityId(block, seed, pageIndex, blockIndex)}-droite`
+    : arithmeticActivityId(block, seed, pageIndex, blockIndex)
+  const currentItems = right ? rightLibre?.items : block.libreItems
+  const instruction = right ? rightLibre?.instruction : block.libreInstruction
   const pageSeed = seed + pageIndex * 7919 + blockIndex * 10007
-  const old = buildPage(pageAsConfig(page, block), pageSeed + (block.contentSeed ?? 0), 1, seed)
-  const items = identifyItems(block.libreItems ?? old.items, activityId)
+  const localSeed = right ? block.contentSeedTwin ?? block.contentSeed ?? 0 : block.contentSeed ?? 0
+  const old = buildPage(pageAsConfig(page, { ...block, libreItems: currentItems, libreInstruction: instruction }), pageSeed + localSeed, 1, seed)
+  const items = identifyItems(currentItems ?? old.items, activityId)
   const eligible = (item: MathItem) => !item.libreLocked && (!targetId || item.libreId === targetId)
   if (!items.some(eligible)) return page
 
   const template = pageAsConfig(page, {
-    ...block, count: Math.max(block.count * 2, 4), libreItems: undefined, libreInstruction: undefined,
+    ...block, count: Math.max(items.length * 2, 4), libreItems: undefined, libreInstruction: undefined,
   })
   const generated = buildPage(template, pageSeed + newSeed, 1, seed).items
   const prompts = new Set(items.map(({ prompt }) => prompt))
@@ -64,9 +73,12 @@ export function rerollArithmetic(
     return { ...replacement, libreId: `tirage-${(pageSeed >>> 0).toString(36)}-${(newSeed >>> 0).toString(36)}-${index}` }
   })
   if (next.every((item, index) => item === items[index])) return page
+  if (right) return setPageBlock(page, blockIndex, {
+    a5RightLibre: { id: activityId, items: next, instruction: instruction ?? old.instruction },
+  })
   return setPageBlock(page, blockIndex, {
     libreId: activityId,
     libreItems: next,
-    libreInstruction: block.libreInstruction ?? old.instruction,
+    libreInstruction: instruction ?? old.instruction,
   })
 }

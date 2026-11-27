@@ -48,14 +48,7 @@ function validTcfMetadata(value: unknown): boolean {
 /** Optional v1 extension. Older v1 readers preserve the fields inside page objects. */
 export function validLibreMetadata(pages: readonly unknown[]): boolean {
   const activities = new Set<string>()
-  function validActivity(block: unknown) {
-    if (!record(block) || !validTcfMetadata(block.tcfExercise)) return false
-    if (block.libreId !== undefined) {
-      if (!validId(block.libreId) || activities.has(block.libreId)) return false
-      activities.add(block.libreId)
-    }
-    const items = block.libreItems
-    if (!Array.isArray(items)) return block.libreId === undefined || items === undefined
+  function validItems(items: unknown[], activityId: unknown) {
     const ids = new Set<string>()
     return items.every((item: unknown) => {
       if (!record(item)) return false
@@ -63,9 +56,28 @@ export function validLibreMetadata(pages: readonly unknown[]): boolean {
         if (!validId(item.libreId) || ids.has(item.libreId)) return false
         ids.add(item.libreId)
       }
+      if (item.libreCorrectionPending !== undefined &&
+        (!validId(activityId) || !validId(item.libreId) || typeof item.libreCorrectionPending !== 'boolean')) return false
       return item.libreLocked === undefined ||
-        (validId(block.libreId) && validId(item.libreId) && typeof item.libreLocked === 'boolean')
+        (validId(activityId) && validId(item.libreId) && typeof item.libreLocked === 'boolean')
     })
+  }
+  function registerActivity(id: unknown) {
+    if (!validId(id) || activities.has(id)) return false
+    activities.add(id)
+    return true
+  }
+  function validActivity(block: unknown) {
+    if (!record(block) || !validTcfMetadata(block.tcfExercise)) return false
+    if (block.libreId !== undefined && !registerActivity(block.libreId)) return false
+    if (block.a5RightLibre !== undefined) {
+      const right = block.a5RightLibre
+      if (!record(right) || !registerActivity(right.id) || !Array.isArray(right.items) ||
+        !right.items.length || right.items.length > 100 ||
+        (right.instruction !== undefined && typeof right.instruction !== 'string') || !validItems(right.items, right.id)) return false
+    }
+    const items = block.libreItems
+    return Array.isArray(items) ? validItems(items, block.libreId) : block.libreId === undefined || items === undefined
   }
   return pages.every((page) =>
     validActivity(page) && record(page) &&

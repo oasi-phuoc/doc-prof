@@ -29,9 +29,9 @@ export function pageForA5Half(page: PageConfig, half: 'left' | 'right'): PageCon
       half === 'right'
         ? (block.contentSeedTwin ?? block.contentSeed ?? 0)
         : (block.contentSeed ?? 0)
-    const keepCustomized = half === 'left' &&
-      isInlineArithmetic(page.domain, block.exerciseType) &&
-      block.libreItems?.some(({ libreId }) => libreId)
+    const arithmetic = isInlineArithmetic(page.domain, block.exerciseType)
+    const rightLibre = arithmetic && half === 'right' ? block.a5RightLibre : undefined
+    const keepCustomized = arithmetic && half === 'left' && block.libreItems?.some(({ libreId }) => libreId)
     next = setPageBlock(next, index, {
       contentSeed: seed,
       calliText: undefined,
@@ -40,8 +40,9 @@ export function pageForA5Half(page: PageConfig, half: 'left' | 'right'): PageCon
       gameSelectedIds: undefined,
       phraseItems: undefined,
       phraseInstruction: undefined,
-      libreItems: logistics || keepCustomized ? block.libreItems : undefined,
-      libreInstruction: logistics || keepCustomized ? block.libreInstruction : undefined,
+      libreId: rightLibre?.id ?? (keepCustomized ? block.libreId : undefined),
+      libreItems: rightLibre?.items ?? ((keepCustomized || logistics && !block.libreId) ? block.libreItems : undefined),
+      libreInstruction: rightLibre?.instruction ?? ((keepCustomized || logistics && !block.libreId) ? block.libreInstruction : undefined),
     })
   })
   return next

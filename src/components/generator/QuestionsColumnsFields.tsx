@@ -2,6 +2,7 @@ import { mathTheoryTopic } from '@/math/theory-lessons'
 import { isLogistiqueReferenceType, logistiqueType } from '@/logistique/catalog'
 import { logistiqueHasSummary, logistiqueModuleCapacities } from '@/logistique/generate'
 import { SelectBox } from './SelectBox'
+import { isSocieteType } from '@/societe/types'
 import {
   blockPointsTotal,
   formatPointsLabel,
@@ -252,6 +253,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
               isVocabLearn ||
               isGramTheory ||
               mathTheoryTopic(activeBlock.exerciseType) ||
+              isSocieteType(activeBlock.exerciseType) ||
               isLogistiqueReferenceType(activeBlock.exerciseType) ||
               (evalMode && activeBlock.logistiqueSelection &&
                 (!activeBlock.logistiqueSelection.modules.length || activeBlock.logistiqueSelection.quantities)) ||
@@ -848,7 +850,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                         onClick={() =>
                           updatePage({
                             columns: value,
-                            count: value === 3 ? 9 : 12,
+                            ...(activeBlock.soutienMotsLibre ? {} : { count: value === 3 ? 9 : 12 }),
                           })
                         }
                       >
@@ -856,9 +858,9 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                       </button>
                     ))}
                   </div>
-                  <small className="muted">
-                    3 colonnes = 9 mots · 4 colonnes = 12 mots.
-                  </small>
+                  {!activeBlock.soutienMotsLibre ? (
+                    <small className="muted">3 colonnes = 9 mots · 4 colonnes = 12 mots.</small>
+                  ) : null}
                 </div>
               ) : null}
               {isAlphaSyllabeTableCols ? (
@@ -1011,6 +1013,8 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                         disabled={view === 'resume' && !hasSummary}
                         onClick={() => {
                           if (view === theoryView) return
+                          if (activeBlock.libreItems?.length &&
+                            !window.confirm('Changer de version et remplacer le contenu personnalisé de cette activité ?')) return
                           updatePage({
                             logistiqueTheoryView: view,
                             columns: 1,

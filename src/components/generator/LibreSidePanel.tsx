@@ -11,6 +11,7 @@ import {
 } from '@/francais/soutien/SoutienMotsLibreEditor'
 import {
   defaultSoutienCompleterEntries,
+  SOUTIEN_COMPLETER_MAX,
   SoutienCompleterLibreEditor,
 } from '@/francais/soutien/SoutienCompleterLibreEditor'
 import {
@@ -31,6 +32,8 @@ function tcfSupportExercise(items: MathItem[] | undefined): TcfExercise | undefi
 }
 import { GenericLibreEditor } from '@/components/generator/GenericLibreEditor'
 import { identifyItems } from '@/components/generator/libre/flat-items'
+import { TheoryEditor } from '@/components/generator/libre/TheoryEditor'
+import type { SheetBlockItems } from '@/components/generator/sheet-items'
 import { TpmLibreEditor } from '@/components/generator/TpmLibreEditor'
 import { VocabAddWordRow } from '@/components/generator/VocabAddWordRow'
 import type { VocabWordEntry } from '@/francais/vocab-learn'
@@ -55,7 +58,10 @@ export type LibreSidePanelProps = {
   liveTcf: boolean
   evalMode: boolean
   livePhrase: boolean
+  theory: SheetBlockItems | null
+  textExercise: SheetBlockItems | null
   arithmeticId: string
+  halfEditor?: { value: 'left' | 'right'; setValue: (half: 'left' | 'right') => void; content: SheetBlockItems | null }
   maxQuestions: number
   transientFields: Record<string, string>
   onTransientField: (id: string, text: string | null) => void
@@ -67,6 +73,8 @@ export type LibreSidePanelProps = {
   isDroites: boolean
   isConstruire: boolean
   soutienKind: string | undefined
+  liveWords: boolean
+  alphaWords: boolean
   soutienType1Words: readonly string[]
   soutienType1WordPool: readonly string[]
   soutienCompletes: readonly SoutienComplete[]
@@ -103,7 +111,10 @@ export function LibreSidePanel({
   liveTcf,
   evalMode,
   livePhrase,
+  theory,
+  textExercise,
   arithmeticId,
+  halfEditor,
   maxQuestions,
   transientFields,
   onTransientField,
@@ -115,6 +126,8 @@ export function LibreSidePanel({
   isDroites,
   isConstruire,
   soutienKind,
+  liveWords,
+  alphaWords,
   soutienType1Words,
   soutienType1WordPool,
   soutienCompletes,
@@ -144,7 +157,27 @@ export function LibreSidePanel({
   } : undefined
   const activeItems = activeBlock.libreItems ?? activeSheet?.blocks[safeBlockIndex]?.items ?? []
   const phraseItems = activeBlock.phraseItems ?? activeSheet?.blocks[safeBlockIndex]?.items ?? []
-  const arithmeticItems = liveArithmetic ? identifyItems(activeItems, arithmeticId) : activeItems
+  const rightHalf = halfEditor?.value === 'right'
+  const currentArithmeticId = rightHalf ? activeBlock.a5RightLibre?.id ?? `${arithmeticId}-droite` : arithmeticId
+  const arithmeticItems = liveArithmetic ? identifyItems(halfEditor?.content?.items ?? activeItems, currentArithmeticId) : activeItems
+  const arithmeticInstruction = halfEditor?.content?.instruction ?? activeBlock.libreInstruction ??
+    activeSheet?.blocks[safeBlockIndex]?.instruction ?? ''
+  function editArithmetic(items: MathItem[], instruction: string) {
+    if (rightHalf) {
+      updatePage({ a5RightLibre: { id: currentArithmeticId, items, instruction } })
+      return
+    }
+    updatePage({
+      libreId: currentArithmeticId, libreItems: items, libreInstruction: instruction,
+      ...(!halfEditor && items.length !== activeBlock.count ? { count: items.length } : {}),
+    })
+  }
+  const renderedWords = liveWords ? activeItems.find((item) => item.layout === 'vocab-table')?.vocabEntries
+    ?.map(({ id, label, imageSrc }) => ({ id, label, imageSrc })) : undefined
+  const renderedCompletes = liveWords ? activeItems.find((item) => item.layout === 'syllable-complete')?.syllableCompletes
+    ?.map(({ article, word, before, blank, after, imageSrc }, index) => ({
+      id: `soutien-comp-occurrence-${index}`, article, word, before, blank, after, imageSrc,
+    })) : undefined
   return (
     <aside
       className="side-tool-panel is-libre no-print"
@@ -188,6 +221,22 @@ export function LibreSidePanel({
             )}
           </div>
         ) : null}
+        {theory ? (
+          <TheoryEditor items={theory.items} onChange={(libreItems) => updatePage({ libreItems })} />
+        ) : null}
+        {textExercise?.items.length ? (
+          <GenericLibreEditor
+            key={arithmeticId}
+            direct
+            instruction={textExercise.instruction}
+            items={identifyItems(textExercise.items, arithmeticId)}
+            onChangeInstruction={(libreInstruction) => updatePage({
+              libreId: arithmeticId, libreInstruction,
+              libreItems: identifyItems(textExercise.items, arithmeticId),
+            })}
+            onChangeItems={(libreItems) => updatePage({ libreId: arithmeticId, libreItems })}
+          />
+        ) : null}
         {isPhraseDomain &&
         isPhraseLibreEditable(activeBlock.exerciseType) ? (
           <PhraseLibreEditor
@@ -207,46 +256,66 @@ export function LibreSidePanel({
           />
         ) : null}
         {isNumberLibreDomain && !((isDroites || isConstruire) && activeBlock.coordLibre) ? (
+          <>
+          {halfEditor && (
+            <div className="mode-toggle is-2" role="group" aria-label="Demi-feuille à modifier">
+              {(['left', 'right'] as const).map((half) => (
+                <button key={half} type="button" className={halfEditor.value === half ? 'active' : ''}
+                  aria-pressed={halfEditor.value === half} onClick={() => halfEditor.setValue(half)}>
+                  {half === 'left' ? 'Gauche' : 'Droite'}
+                </button>
+              ))}
+            </div>
+          )}
           <TpmLibreEditor
+            key={currentArithmeticId}
             liveArithmetic={liveArithmetic}
             exerciseType={activeBlock.exerciseType}
-            instruction={
-              activeBlock.libreInstruction ??
-              activeSheet?.blocks[safeBlockIndex]?.instruction ??
-              ''
-            }
+            instruction={arithmeticInstruction}
             items={arithmeticItems}
             maxQuestions={maxQuestions}
             transient={liveArithmetic ? { fields: transientFields, write: onTransientField } : undefined}
-            onRegenerate={liveArithmetic ? (id) => onRegenerateBlock?.(safeBlockIndex, undefined, id) : undefined}
+            onRegenerate={liveArithmetic ? (id) => onRegenerateBlock?.(safeBlockIndex, halfEditor?.value, id) : undefined}
             onChangeInstruction={(libreInstruction) => {
-              updatePage(liveArithmetic ? { libreId: arithmeticId, libreInstruction, libreItems: arithmeticItems } : { libreInstruction })
+              if (liveArithmetic) editArithmetic(arithmeticItems, libreInstruction)
+              else updatePage({ libreInstruction })
             }}
-            onChangeItems={(libreItems) => updatePage(liveArithmetic
-              ? { libreId: arithmeticId, libreItems, ...(libreItems.length === activeBlock.count ? {} : { count: libreItems.length }) }
-              : { libreItems })}
+            onChangeItems={(libreItems) => liveArithmetic
+              ? editArithmetic(libreItems, arithmeticInstruction)
+              : updatePage({ libreItems })}
           />
+          </>
         ) : null}
         {soutienKind === 'mots' ? (
           <SoutienMotsLibreEditor
             entries={
-              activeBlock.soutienMotsEntries ??
+              (liveWords && !activeBlock.soutienMotsLibre ? undefined : activeBlock.soutienMotsEntries) ??
+              renderedWords ??
               defaultSoutienMotsEntries(soutienType1Words)
             }
             suggestedWords={soutienType1WordPool}
-            onChange={(soutienMotsEntries) => updatePage({ soutienMotsEntries })}
+            onChange={(soutienMotsEntries) => updatePage(liveWords ? {
+              soutienMotsLibre: true,
+              soutienMotsEntries,
+              ...(alphaWords ? { count: soutienMotsEntries.length } : {}),
+            } : { soutienMotsEntries })}
           />
         ) : null}
         {soutienKind === 'completer' ? (
           <SoutienCompleterLibreEditor
             entries={
-              activeBlock.soutienCompleterEntries?.length
+              (!liveWords || activeBlock.soutienCompleterLibre) && activeBlock.soutienCompleterEntries?.length
                 ? activeBlock.soutienCompleterEntries
-                : defaultSoutienCompleterEntries(soutienCompletes)
+                : renderedCompletes ?? defaultSoutienCompleterEntries(soutienCompletes)
             }
             suggestedWords={soutienBankWords}
+            max={liveWords ? 18 : SOUTIEN_COMPLETER_MAX}
             onChange={(soutienCompleterEntries) =>
-              updatePage({ soutienCompleterEntries })
+              updatePage(liveWords ? {
+                soutienCompleterLibre: true,
+                soutienCompleterEntries,
+                count: soutienCompleterEntries.length,
+              } : { soutienCompleterEntries })
             }
           />
         ) : null}
@@ -394,6 +463,8 @@ export function LibreSidePanel({
         !isJeuxDomain &&
         !isTcf &&
         !isGrammaireExercise &&
+        !theory &&
+        !textExercise &&
         soutienKind !== 'mots' &&
         soutienKind !== 'completer' &&
         !(isDroites || isConstruire) ? (

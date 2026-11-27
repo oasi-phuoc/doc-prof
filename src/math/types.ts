@@ -446,6 +446,8 @@ export type MathItem = {
   libreId?: string
   /** Protège l’occurrence du tirage. */
   libreLocked?: boolean
+  /** Corrigé à vérifier après une modification manuelle de l’énoncé. */
+  libreCorrectionPending?: boolean
   layout: Layout
   grammar?: import('@/grammaire/curriculum/types').GrammarQuestion
   cscTask?: import('@/tcm-csc/task-types').CscTask
@@ -905,6 +907,8 @@ export type CompositeScene = {
 export type ExerciseBlock = {
   /** Identité locale de l’activité éditée. */
   libreId?: string
+  /** Contenu édité sur la moitié droite d’une feuille double A5. */
+  a5RightLibre?: { id: string; items: MathItem[]; instruction?: string }
   /** Publication logistique figée lors de l’enregistrement de la fiche. */
   logistiqueBankRevision?: string
   logistiqueTheoryView?: 'complet' | 'resume'

@@ -234,7 +234,7 @@ export function useGenerateActions({
 
   function generate() {
     if (hasTcfLockedQuestions(activeBlock.tcfExercise)) return
-    if (activeBlock.libreItems?.some(({ libreId }) => libreId) && pages[pageIndex] &&
+    if ((activeBlock.a5RightLibre || activeBlock.libreItems?.some(({ libreId }) => libreId)) && pages[pageIndex] &&
       isInlineArithmetic(pages[pageIndex].domain, activeBlock.exerciseType)) {
       regenerateBlock(safeBlockIndex)
       return
@@ -309,12 +309,18 @@ export function useGenerateActions({
         if (!block || hasTcfLockedQuestions(block.tcfExercise)) return page
         const customizedArithmetic = isInlineArithmetic(page.domain, block.exerciseType) &&
           block.libreItems?.some(({ libreId }) => libreId)
-        if (half === 'right' && customizedArithmetic) {
-          return setPageBlock(page, targetBlock, patchBlockSeedForHalf(block, half, nextSeed))
-        }
-        if ((customizedArithmetic && half === 'left') ||
-          (!half && isInlineArithmetic(page.domain, block.exerciseType) && (libreMode || customizedArithmetic))) {
-          return rerollArithmetic(page, pageIndex, targetBlock, seed, nextSeed, itemId)
+        if (isInlineArithmetic(page.domain, block.exerciseType)) {
+          if (half === 'right' && !libreMode && !block.a5RightLibre) {
+            return setPageBlock(page, targetBlock, patchBlockSeedForHalf(block, half, nextSeed))
+          }
+          if (libreMode || customizedArithmetic && half !== 'right' || half === 'right' && block.a5RightLibre) {
+            return rerollArithmetic(page, pageIndex, targetBlock, seed, nextSeed, itemId, half)
+          }
+          if (half === 'left' && block.a5RightLibre) {
+            return setPageBlock(page, targetBlock, {
+              ...patchBlockSeedForHalf(block, half, nextSeed), libreItems: undefined, libreInstruction: undefined,
+            })
+          }
         }
         const release = clearLibreContentFreeze()
         const seedPatch = half

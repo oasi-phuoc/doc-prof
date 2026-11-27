@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import type { MathItem } from '@/math/types'
 import { LogistiqueImageFields, type LogistiquePhotoChoice } from './LogistiqueImageFields'
 
@@ -12,6 +13,7 @@ export function GenericLibreEditor({
   logistiquePhotos,
   onChangeInstruction,
   onChangeItems,
+  direct = false,
 }: {
   instruction: string
   items: MathItem[]
@@ -19,7 +21,9 @@ export function GenericLibreEditor({
   logistiquePhotos?: { defaultModule: string; byModule: ReadonlyMap<string, readonly LogistiquePhotoChoice[]> }
   onChangeInstruction: (value: string) => void
   onChangeItems: (items: MathItem[]) => void
+  direct?: boolean
 }) {
+  const [invalidChoice, setInvalidChoice] = useState<{ id: string; index: number; text: string } | null>(null)
   const patchItem = (index: number, patch: Partial<MathItem>) => {
     onChangeItems(items.map((item, i) => (i === index ? { ...item, ...patch } : item)))
   }
@@ -41,7 +45,7 @@ export function GenericLibreEditor({
       </label>
       <ul className="libre-item-list" aria-label="Questions">
         {items.map((item, index) => (
-          <li key={`libre-item-${index}`} className="libre-item-card is-libre-row">
+          <li key={item.libreId ?? index} className="libre-item-card is-libre-row">
             <span className="libre-item-num is-accent">{index + 1}.</span>
             <div className="libre-item-body">
               <div className="libre-pair">
@@ -55,12 +59,13 @@ export function GenericLibreEditor({
                     onChange={(event) =>
                       patchItem(index, {
                         prompt: event.target.value,
+                        ...(direct ? { libreCorrectionPending: true } : {}),
                         ...(item.left != null ? { left: event.target.value } : {}),
                       })
                     }
                   />
                 </label>
-                <label className="libre-field is-line">
+                {!(direct && item.layout === 'select') ? <label className="libre-field is-line">
                   <span>Réponse</span>
                   <input
                     className="libre-line-input"
@@ -75,9 +80,9 @@ export function GenericLibreEditor({
                     })
                   }}
                   />
-                </label>
+                </label> : null}
               </div>
-              {editableCalculation && (
+              {(editableCalculation || direct && item.calcAnswer != null) && (
                 <label className="libre-field is-line">
                   <span>Calcul du corrigé</span>
                   <textarea className="libre-line-input is-textarea" rows={2}
@@ -89,20 +94,48 @@ export function GenericLibreEditor({
                 <div className="libre-options">
                   <b>Choix</b>
                   {item.options.map((opt, oi) => (
-                    <label key={`opt-${index}-${oi}`} className="libre-field is-line">
-                      <span>{String.fromCharCode(65 + oi)}</span>
+                    <label key={oi} className="libre-field is-line">
+                      <span>{`Choix ${String.fromCharCode(65 + oi)}`}</span>
                       <input
                         className="libre-line-input"
                         type="text"
-                        value={opt}
+                        value={invalidChoice && invalidChoice.id === item.libreId && invalidChoice.index === oi ? invalidChoice.text : opt}
+                        aria-invalid={Boolean(invalidChoice && invalidChoice.id === item.libreId && invalidChoice.index === oi)}
+                        data-applied-value={direct ? opt : undefined}
                         onChange={(event) => {
                           const options = [...(item.options ?? [])]
-                          options[oi] = event.target.value
-                          patchItem(index, { options })
+                          const text = event.target.value
+                          if (direct && item.libreId && (!text.trim() || options.some((option, i) => i !== oi && option.trim() === text.trim()))) {
+                            setInvalidChoice({ id: item.libreId, index: oi, text })
+                            return
+                          }
+                          options[oi] = text
+                          setInvalidChoice(null)
+                          patchItem(index, { options, ...(direct && item.answer === opt ? { answer: text } : {}) })
                         }}
                       />
                     </label>
                   ))}
+                  {direct && item.layout === 'select' ? (
+                    <label className="libre-field is-line">
+                      <span>Bonne réponse</span>
+                      <select className="libre-line-input" value={item.answer}
+                        onChange={(event) => patchItem(index, { answer: event.target.value })}>
+                        <option value="" disabled>Choisir une réponse</option>
+                        {item.options.map((option) => <option key={option} value={option}>{option}</option>)}
+                      </select>
+                    </label>
+                  ) : null}
+                  {invalidChoice?.id === item.libreId && invalidChoice ? (
+                    <p role="alert" className="questions-overflow-hint">Saisissez un choix distinct et non vide.</p>
+                  ) : null}
+                </div>
+              ) : null}
+              {direct && item.libreCorrectionPending ? (
+                <div className="libre-unit-actions">
+                  <span>Corrigé à vérifier</span>
+                  <button type="button" className="button" disabled={!item.prompt?.trim() || !item.answer?.trim()}
+                    onClick={() => patchItem(index, { libreCorrectionPending: false })}>Corrigé vérifié</button>
                 </div>
               ) : null}
               {logistiquePhotos && <LogistiqueImageFields

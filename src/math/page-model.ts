@@ -3,6 +3,7 @@ import type { ExerciseBlock, PageConfig } from './types'
 export function blockFromPage(page: PageConfig): ExerciseBlock {
   return {
     libreId: page.libreId,
+    a5RightLibre: page.a5RightLibre,
     logistiqueBankRevision: page.logistiqueBankRevision,
     logistiqueTheoryView: page.logistiqueTheoryView,
     logistiqueSelection: page.logistiqueSelection,

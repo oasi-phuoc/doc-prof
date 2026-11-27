@@ -8,7 +8,7 @@ import {
   resizeDraftGrids,
   resizeOralAnswerModes,
 } from '@/components/generator/page-helpers'
-import { isInlineArithmetic, liveEditorProfile, writesNativePayload } from '@/components/generator/libre/profiles'
+import { isInlineArithmetic, liveEditorProfile, opensWithoutOverlay, writesNativePayload } from '@/components/generator/libre/profiles'
 import { hasLockedItems, identifyItems, trimUnlockedItems } from '@/components/generator/libre/flat-items'
 import { blockItemsForConfig } from '@/components/generator/sheet-items'
 import { defaultCoordQuestionReply } from '@/components/generator/WorksheetSheet'
@@ -39,6 +39,7 @@ import { isTcmCfrDomain } from '@/tcm-cfr/test'
 import type { TcfTypeReponse } from '@/tcf/types'
 import type {
   ExerciseBlock,
+  MathItem,
   PageConfig,
   WorksheetPage,
 } from '@/math/types'
@@ -53,7 +54,8 @@ export type UsePageConfigParams = {
   worksheets: WorksheetPage[]
   seed: number
   libreMode: boolean
-  arithmeticA4: boolean
+  inlineArithmetic: boolean
+  doubleA5: boolean
   editorProfile: ReturnType<typeof liveEditorProfile>
   isPhraseDomain: boolean
   isCalliDomain: boolean
@@ -71,7 +73,8 @@ export function usePageConfig({
   worksheets,
   seed,
   libreMode,
-  arithmeticA4,
+  inlineArithmetic,
+  doubleA5,
   editorProfile,
   isPhraseDomain,
   isCalliDomain,
@@ -86,13 +89,16 @@ export function usePageConfig({
     if (hasLockedItems(activeBlock) && (patch.exerciseType !== undefined || releasesTcf)) {
       if (!window.confirm('Remplacer cette activité et ses questions verrouillées ?')) return
     }
-    if (arithmeticA4 && patch.count != null && patch.libreItems === undefined && activeBlock.libreItems) {
-      const locked = activeBlock.libreItems.filter(({ libreLocked }) => libreLocked).length
-      if (patch.count < locked) {
+    const count = patch.count
+    const resizesAppliedItems = inlineArithmetic || editorProfile === 'question-simple'
+    if (resizesAppliedItems && count != null && patch.libreItems === undefined) {
+      const lists = [activeBlock.libreItems ?? [], (doubleA5 ? activeBlock.a5RightLibre?.items : undefined) ?? []]
+      const locked = Math.max(...lists.map((items) => items.filter(({ libreLocked }) => libreLocked).length))
+      if (count < locked) {
         window.alert(`Il reste ${locked} questions verrouillées. Choisissez au moins ${locked} questions ou déverrouillez-en.`)
         return
       }
-      if (patch.count < activeBlock.libreItems.length &&
+      if (lists.some((items) => count < items.length) &&
         !window.confirm('Retirer les dernières questions déverrouillées de cette activité ?')) return
     }
 
@@ -127,7 +133,7 @@ export function usePageConfig({
           fixed = {
             ...fixed,
             // Changement de type → lever le contenu figé (sinon refresh / type restent bloqués après le mode libre).
-            ...(patch.exerciseType != null ? clearLibreContentFreeze() : {}),
+            ...(patch.exerciseType != null ? { ...clearLibreContentFreeze(), libreId: undefined } : {}),
             phraseItems: patch.phraseItems!==undefined ? patch.phraseItems : undefined,
             phraseInstruction:
               patch.phraseInstruction!==undefined ? patch.phraseInstruction : patch.phraseItems!==undefined ? fixed.phraseInstruction : undefined,
@@ -177,15 +183,24 @@ export function usePageConfig({
             coordMarks: omega ? [...figure, omega] : figure,
           }
         }
-        if (arithmeticA4 && patch.count != null && patch.libreItems === undefined && fixed.libreItems?.length) {
-          const kept = trimUnlockedItems(fixed.libreItems, fixed.count)
-          if (kept.length < fixed.count) {
-            const config = pageAsConfig(page, { ...fixed, libreItems: undefined })
-            const blockSeed = seed + pageIndex * 7919 + safeBlockIndex * 10007 + (fixed.contentSeed ?? 0)
-            const { items } = buildPage(config, blockSeed, 1, seed)
-            kept.push(...items.slice(kept.length, fixed.count))
+        if (resizesAppliedItems && count != null) {
+          const baseSeed = seed + pageIndex * 7919 + safeBlockIndex * 10007
+          const config = pageAsConfig(page, { ...fixed, libreItems: undefined })
+          function resize(items: MathItem[], localSeed: number, id?: string) {
+            const kept = trimUnlockedItems(items, fixed.count)
+            if (kept.length < fixed.count) {
+              const generated = buildPage(config, baseSeed + localSeed, 1, seed).items
+              kept.push(...generated.slice(kept.length, fixed.count))
+            }
+            return id ? identifyItems(kept, id) : kept
           }
-          fixed = { ...fixed, libreItems: fixed.libreId ? identifyItems(kept, fixed.libreId) : kept }
+          if (patch.libreItems === undefined && fixed.libreItems?.length) {
+            fixed = { ...fixed, libreItems: resize(fixed.libreItems, fixed.contentSeed ?? 0, fixed.libreId) }
+          }
+          const right = fixed.a5RightLibre
+          if (doubleA5 && right?.items.length) {
+            fixed = { ...fixed, a5RightLibre: { ...right, items: resize(right.items, fixed.contentSeedTwin ?? fixed.contentSeed ?? 0, right.id) } }
+          }
         }
         return setPageBlock(merged, safeBlockIndex, fixed)
       }),
@@ -403,6 +418,7 @@ export function usePageConfig({
   // Mode libre générique : reprend le tirage dans libreItems après Générer / Valider.
   useEffect(() => {
     if (!libreMode || (activeSheet && isInlineArithmetic(activeSheet.domain, activeBlock.exerciseType))) return
+    if (opensWithoutOverlay(editorProfile)) return
     if (isPhraseDomain && isPhraseLibreEditable(activeBlock.exerciseType)) return
     if (isCalliDomain || isJeuxDomain || isTcf) return
     if (activeBlock.libreItems && activeBlock.libreItems.length > 0) return
@@ -423,6 +439,7 @@ export function usePageConfig({
     )
   }, [
     libreMode,
+    editorProfile,
     isPhraseDomain,
     isCalliDomain,
     isJeuxDomain,

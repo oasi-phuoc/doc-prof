@@ -73,6 +73,7 @@ import { tcfPeSlotDefaults } from '@/tcf/pe-defaults'
 export function clearLibreContentFreeze(): Partial<ExerciseBlock> {
   return {
     libreItems: undefined,
+    a5RightLibre: undefined,
     libreInstruction: undefined,
     tcfExercise: undefined,
     tcfBankId: undefined,

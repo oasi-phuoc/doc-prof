@@ -5325,6 +5325,9 @@ textarea.pill-input,
 .libre-unit-actions details button{background:#fff;border:1px solid var(--line);border-radius:6px;padding:6px}
 .libre-history{display:flex;gap:6px;margin-left:auto}
 .libre-history button:disabled{opacity:.45;cursor:default}
+.libre-theory-block{min-width:0;padding:8px;border:1px solid var(--line);border-radius:6px}
+.libre-theory-block summary{min-height:32px;cursor:pointer}
+.libre-theory-block :is(fieldset,.libre-theory-block){min-width:0;margin:4px 0}
 .libre-mobile-switch.mode-toggle{display:none}
 .side-tool-panel.is-libre > .side-tool-panel-body[hidden]{display:none}
 .side-tool-panel.is-libre > .side-tool-panel.is-footer{

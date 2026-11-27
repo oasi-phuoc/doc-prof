@@ -32,3 +32,16 @@ test('les images privées en mode Libre sont limitées aux images raster reconnu
   assert(!validLibreMetadata([{ ...page, tcfExercise: { questions: [question, question] } }]))
   assert(!validLibreMetadata([{ ...page, tcfExercise: { questions: [{ ...question, choix: [{ id: 'a', image: 'data:image/png;base64,PHN2Zz4=' }] }] } }]))
 })
+
+test('le contenu et les verrous de droite restent distincts dans une recette A5', () => {
+  const worksheet = {
+    ...page,
+    libreId: 'gauche',
+    libreItems: [{ layout: 'inline', answer: '8', libreId: 'calcul-gauche', libreLocked: true }],
+    a5RightLibre: { id: 'droite', items: [{ layout: 'inline', answer: '9', libreId: 'calcul-droite', libreLocked: true }] },
+  }
+  assert(validLibreMetadata([worksheet]))
+  assert(!validLibreMetadata([{ ...worksheet, a5RightLibre: { ...worksheet.a5RightLibre, id: 'gauche' } }]))
+  assert(!validLibreMetadata([{ ...worksheet, a5RightLibre: { id: 'droite', items: [] } }]))
+  assert(!validLibreMetadata([{ ...worksheet, a5RightLibre: { id: 'droite', items: [{ libreLocked: true }] } }]))
+})

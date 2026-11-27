@@ -58,7 +58,7 @@ import { useGeneratorAudio } from '@/components/generator/useGeneratorAudio'
 import { useGenerateActions } from '@/components/generator/useGenerateActions'
 import { useCoordEditing } from '@/components/generator/useCoordEditing'
 import { arithmeticActivityId } from '@/components/generator/libre/flat-items'
-import { isInlineArithmetic, liveEditorProfile } from '@/components/generator/libre/profiles'
+import { isInlineArithmetic, liveEditorProfile, opensWithoutOverlay } from '@/components/generator/libre/profiles'
 import { hasTcfCorrectionsToReview, isTcfSubjectIncomplete } from '@/tcf/libre-questions'
 import { DraftRecovery } from '@/components/generator/libre/DraftRecovery'
 import { useLibreDraft } from '@/components/generator/libre/useLibreDraft'
@@ -113,6 +113,7 @@ export function GeneratorPage({
   const initialDomain = openedFiche?.recipe.pages[0]?.domain ?? initial.domain
   const [sheetIndex, setSheetIndex] = useState(0)
   const [blockIndex, setBlockIndex] = useState(0)
+  const [arithmeticHalf, setArithmeticHalf] = useState<'left' | 'right'>('left')
   const [mode, setMode] = useState<PreviewMode>('student')
   const [institutional, setInstitutional] = useState<InstitutionalHeader>(() =>
     openedFiche
@@ -282,8 +283,8 @@ export function GeneratorPage({
   const activeBlock = pageExerciseBlocks[safeBlockIndex] ?? blockFromPage(activePage)
   const inlineArithmetic = isInlineArithmetic(activePage.domain, activeBlock.exerciseType)
   const activeProfile = liveEditorProfile(activePage.domain, activeBlock.exerciseType, sheetFormat)
-  const arithmeticA4 = activeProfile === 'calcul-en-ligne'
-  const liveArithmetic = libreMode && arithmeticA4
+  const arithmetic = activeProfile === 'calcul-en-ligne'
+  const liveArithmetic = libreMode && arithmetic
   const liveTcf = libreMode && (activeProfile === 'document' || activeProfile === 'audio-qcm')
 
   /** Les exercices encore ouverts avec validation conservent leur dernière version appliquée. */
@@ -336,6 +337,12 @@ export function GeneratorPage({
   const previewSheet = previewWorksheets[Math.min(safeSheetIndex, previewWorksheets.length - 1)]
   const a5LeftSheet = a5LeftWorksheets?.[Math.min(safeSheetIndex, a5LeftWorksheets.length - 1)]
   const a5RightSheet = a5RightWorksheets?.[Math.min(safeSheetIndex, a5RightWorksheets.length - 1)]
+  const arithmeticHalfSheets = arithmeticHalf === 'left' ? a5LeftWorksheets : a5RightWorksheets
+  const halfEditor = liveArithmetic && arithmeticHalfSheets ? {
+    value: arithmeticHalf,
+    setValue: setArithmeticHalf,
+    content: blockItemsForConfig(arithmeticHalfSheets, pageIndex, safeBlockIndex),
+  } : undefined
   /** Jeux : aperçu de toutes les feuilles de la config (recto + verso) côte à côte / empilées. */
   const jeuxPreviewSheets = useMemo(() => {
     if (activePage.domain !== 'jeux') return null
@@ -396,7 +403,8 @@ export function GeneratorPage({
     worksheets,
     seed,
     libreMode,
-    arithmeticA4,
+    inlineArithmetic: arithmetic,
+    doubleA5: isA5DoubleFormat(sheetFormat),
     editorProfile: activeProfile,
     isPhraseDomain: ctx.isPhraseDomain,
     isCalliDomain: ctx.isCalliDomain,
@@ -544,7 +552,7 @@ export function GeneratorPage({
     updatePage({ calliText: joinCalliLines(ctx.calliFields.filter((_, i) => i !== index)) })
   }
 
-  function confirmArithmeticOutput(action: 'imprimer' | 'enregistrer') {
+  function confirmAppliedOutput(action: 'imprimer' | 'enregistrer') {
     if (!liveArithmetic) return true
     const field = document.querySelector<HTMLInputElement>('#activity-editor input[data-applied-value][aria-invalid="true"]')
     if (!field) return true
@@ -560,11 +568,13 @@ export function GeneratorPage({
   }
 
   const correctionsToReview = pages.some((page) => pageBlocks(page)
-    .some(({ tcfExercise }) => hasTcfCorrectionsToReview(tcfExercise)))
+    .some(({ tcfExercise, libreItems }) => hasTcfCorrectionsToReview(tcfExercise) ||
+      libreItems?.some((item) => item.libreCorrectionPending)))
 
   async function printAll() {
-    if (!confirmArithmeticOutput('imprimer')) return
-    if (pages.some((page) => pageBlocks(page).some(({ tcfExercise }) => isTcfSubjectIncomplete(tcfExercise)))) {
+    if (!confirmAppliedOutput('imprimer')) return
+    if (pages.some((page) => pageBlocks(page).some(({ tcfExercise, libreItems }) => isTcfSubjectIncomplete(tcfExercise) ||
+      libreItems?.some((item) => item.libreCorrectionPending && !item.prompt?.trim())))) {
       window.alert('Une question ou un support est incomplet. Complétez le contenu concerné avant d’imprimer.')
       return
     }
@@ -738,7 +748,7 @@ export function GeneratorPage({
     printAll,
     printCorrections: printCorrections && !printStudentOnly,
     onSaveFiche: () => {
-      if (confirmArithmeticOutput('enregistrer')) setSaveOpen(true)
+      if (confirmAppliedOutput('enregistrer')) setSaveOpen(true)
     },
     onOpenBook: () =>
       setBookRequest({
@@ -837,7 +847,7 @@ export function GeneratorPage({
               setLibreMode((prev) => {
                 const next = !prev
                 setLibreSnapshot(next ? pages : null)
-                if (next && activeProfile !== 'calligraphie' && activeProfile !== 'cartes' && activeProfile !== 'phrase') {
+                if (next && !opensWithoutOverlay(activeProfile)) {
                   const sheetBlock = activeSheet?.blocks[safeBlockIndex]
                   const full = blockItemsForConfig(worksheets, pageIndex, safeBlockIndex)
                   const seedItems = activeBlock.libreItems?.length
@@ -941,7 +951,10 @@ export function GeneratorPage({
               liveTcf={liveTcf}
               evalMode={evalMode}
               livePhrase={activeProfile === 'phrase'}
+              theory={activeProfile === 'theorie' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
+              textExercise={activeProfile === 'question-simple' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
               arithmeticId={arithmeticActivityId(activeBlock, seed, pageIndex, safeBlockIndex)}
+              halfEditor={halfEditor}
               maxQuestions={ctx.maxQuestions}
               transientFields={transientFields}
               onTransientField={writeTransientField}
@@ -953,6 +966,8 @@ export function GeneratorPage({
               isDroites={ctx.isDroites}
               isConstruire={ctx.isConstruire}
               soutienKind={ctx.soutienKind}
+              liveWords={activeProfile === 'mots-illustres' || activeProfile === 'mot-a-trou'}
+              alphaWords={ctx.isAlphabetisation}
               soutienType1Words={ctx.soutienType1Words}
               soutienType1WordPool={ctx.soutienType1WordPool}
               soutienCompletes={ctx.soutienBank?.completes ?? []}

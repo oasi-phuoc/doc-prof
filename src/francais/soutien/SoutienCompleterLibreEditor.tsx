@@ -22,15 +22,14 @@ function newEntryId(word: string): string {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-|-$/g, '')
-  return `soutien-comp-${slug || 'mot'}-${Date.now().toString(36)}`
+  return `soutien-comp-${slug || 'mot'}-${crypto.randomUUID()}`
 }
 
 /** Découpe simple : cache le début du mot (première syllabe approx. 2 lettres). */
 export function splitWordForBlank(word: string): Pick<SoutienCompleterEntry, 'before' | 'blank' | 'after'> {
   const w = word.trim()
   if (w.length <= 2) return { before: '', blank: w, after: '' }
-  const cut = Math.min(3, Math.max(2, Math.floor(w.length / 3)))
-  return { before: '', blank: w.slice(0, cut), after: w.slice(cut) }
+  return { before: '', blank: w.slice(0, 2), after: w.slice(2) }
 }
 
 export function defaultSoutienCompleterEntries(
@@ -78,7 +77,6 @@ export function SoutienCompleterLibreEditor({
   const [draftWord, setDraftWord] = useState('')
   const [draftArticle, setDraftArticle] = useState<'Un' | 'Une'>('Un')
   const [draftImage, setDraftImage] = useState<string | undefined>()
-  const [draftBlank, setDraftBlank] = useState('')
 
   const used = new Set(entries.map((e) => e.word.trim().toLowerCase()))
   const suggestions = suggestedWords.filter((w) => w.trim() && !used.has(w.trim().toLowerCase()))
@@ -188,8 +186,8 @@ export function SoutienCompleterLibreEditor({
                     applyBlankSelection(index, w, a || 0, b || 1)
                   }}
                 >
-                  {Array.from({ length: Math.max(1, w.length) }, (_, start) =>
-                    Array.from({ length: w.length - start }, (_, len) => {
+                  {Array.from({ length: w.length }, (_, start) =>
+                    Array.from({ length: Math.min(2, w.length - start) }, (_, len) => {
                       const end = start + len + 1
                       const label = `${w.slice(0, start)}[${w.slice(start, end)}]${w.slice(end)}`
                       return (
@@ -251,11 +249,7 @@ export function SoutienCompleterLibreEditor({
             maxLength={40}
             placeholder="Nouveau mot"
             aria-label="Nouveau mot libre"
-            onChange={(event) => {
-              const word = event.target.value
-              setDraftWord(word)
-              if (!draftBlank) setDraftBlank(splitWordForBlank(word).blank)
-            }}
+            onChange={(event) => setDraftWord(event.target.value)}
           />
           <button
             type="button"
@@ -269,14 +263,11 @@ export function SoutienCompleterLibreEditor({
               addEntry({
                 id: newEntryId(word),
                 article: draftArticle,
-                before: parts.before,
-                blank: draftBlank.trim() || parts.blank,
-                after: parts.after,
+                ...parts,
                 word,
                 imageSrc: draftImage || soutienImageFor(word),
               })
               setDraftWord('')
-              setDraftBlank('')
               setDraftImage(undefined)
             }}
           >
