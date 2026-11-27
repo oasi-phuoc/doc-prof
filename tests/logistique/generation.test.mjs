@@ -104,7 +104,9 @@ test('les nouvelles publications conservent le tirage des recettes du thème 600
   const historical = { ...page, logistiqueBankRevision: 'logistique-614-615-616-v001' }
   const previous = generateLogistique(historical, 20261127)
   assert(previous.items.length > 0)
-  assert.deepEqual(generateLogistique(page, 20261127), previous)
+  const beforeEnrichment = { ...page, logistiqueBankRevision: 'logistique-exercices-production-v005' }
+  assert.deepEqual(generateLogistique(beforeEnrichment, 20261127), previous)
+  assert.deepEqual(generateLogistique(freezeLogistiquePages([historical])[0], 20261127), previous)
   assert.deepEqual(generateLogistique({
     ...config('CFC', '901', 'maths'), logistiqueBankRevision: historical.logistiqueBankRevision,
   }, 20261127).items, [])

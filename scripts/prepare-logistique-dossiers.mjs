@@ -25,6 +25,16 @@ const modelQuestions = {
   levels: ['Pourquoi vérifier les niveaux réellement accessibles avant d’annoncer une capacité ?', 'La capacité du plan peut inclure des niveaux condamnés, trop bas ou soumis à une autre limite de charge.'],
   cadence: ['À quelle condition la file d’attente grandit-elle ?', 'Elle grandit si les arrivées dépassent durablement la cadence du poste qui traite les unités.'],
   lever: ['Quelle modification augmente le moment sans changer la force ?', 'Augmenter la distance au pivot. Le moment est le produit de cette distance et de la force.'],
+  route: ['Pourquoi ajouter le temps de transfert au délai de bout en bout ?', 'La remise ou le changement de mode occupe une partie du délai même quand la distance ne change pas.'],
+  tonneDistance: ['Quelles deux grandeurs combine-t-on pour obtenir des tonnes-kilomètres ?', 'La masse retenue en tonnes et le parcours retenu en kilomètres. Le produit des deux donne la base de ce calcul fictif.'],
+  volume: ['Quelle différence faites-vous entre volume utile et encombrement extérieur ?', 'Le volume utile décrit la capacité intérieure. L’encombrement se calcule sur les mesures extérieures et peut être supérieur.'],
+  tension: ['Quelle unité donne la formule résistance en N/mm² × section en mm² ?', 'Le newton. Le calcul donne une force, à distinguer de la masse et d’une capacité garantie pour un montage.'],
+  depreciation: ['Quels éléments faut-il connaître pour calculer l’amortissement linéaire annuel ?', 'Le prix d’acquisition, la valeur résiduelle estimée et la durée d’amortissement.'],
+  payroll: ['Quelle grandeur sert de point de départ au salaire net et au coût direct de l’employeur ?', 'Le salaire brut. Les retenues donnent le net et les charges employeur s’ajoutent pour établir le coût.'],
+  indicator: ['Pourquoi exprimer consommation et stock moyen dans la même unité ?', 'Leur quotient donne un nombre de rotations. Mélanger cartons et pièces fausse le résultat.'],
+  result: ['Comment calculez-vous le résultat sur la période ?', 'Soustrayez les coûts du chiffre d’affaires sur le même périmètre et la même période.'],
+  capital: ['Quelle base utilisez-vous pour imputer un intérêt au stock ?', 'La valeur moyenne du stock dans le périmètre du calcul. Appliquez le taux et la durée retenus.'],
+  service: ['Comment interprétez-vous la progression de 80 % à 86 % ?', 'Le taux a gagné six points de pourcentage. Le calcul d’une hausse relative partirait de 80 %.'],
 }
 
 const followUps = {
@@ -38,6 +48,16 @@ const followUps = {
   levels: 'Le plan est révisé après la fermeture d’un niveau.',
   cadence: 'Le poste suivant annonce une reprise progressive après une interruption.',
   lever: 'Un autre groupe de cours déplace le point d’application de la force sur le modèle.',
+  route: 'Le deuxième tronçon change et l’ancien délai figure encore au suivi.',
+  tonneDistance: 'La masse du document est corrigée après l’établissement du calcul initial.',
+  volume: 'Le fournisseur change de contenant alors que le volume déclaré reste identique.',
+  tension: 'Le rapport d’essai change la section de l’échantillon sans réviser la force théorique.',
+  depreciation: 'La valeur résiduelle estimée est révisée avant l’acceptation du plan.',
+  payroll: 'Le décompte a été corrigé et les bases des charges doivent être revérifiées.',
+  indicator: 'Un relevé de fin de période corrige la quantité prise comme référence.',
+  result: 'Un coût oublié est ajouté après l’établissement du premier bilan.',
+  capital: 'Le périmètre de stockage change au cours de la période comptable.',
+  service: 'Le volume de demandes change entre deux périodes du suivi.',
 }
 
 function sections(blocks, reference) {
