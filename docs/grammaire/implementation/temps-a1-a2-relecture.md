@@ -1,18 +1,18 @@
 # Relecture — Se situer dans le temps (A1 / A2)
 
-Date : 23 novembre 2026. Statut : pilote relu techniquement, validation enseignante en attente. Zéro unité approuvée par un enseignant à ce stade.
+Pilote relu le 23 novembre 2026. Dernière mise à jour des lectures A1 le 27 novembre. La validation enseignante reste en attente.
 
 Le générateur propose Grammaire → Se situer dans le temps → Le moment, La durée, La fréquence ou La chronologie, puis A1 — pilote / A2 — pilote selon l’activité.
 
 | Notion | Niveaux | Activités | Offres | Unités sélectionnables | Réalisations |
 | --- | --- | ---: | ---: | ---: | ---: |
-| Le moment (e2) | A1 | 4 | 5 | 170 | 260 |
+| Le moment (e2) | A1 | 4 | 5 | 170 | 280 |
 | La durée (e3) | A1, A2 | 4 | 7 | 250 | 350 |
 | La fréquence (e4) | A1 | 4 | 5 | 200 | 250 |
 | La chronologie (e5) | A1, A2 | 6 | 11 | 420 | 560 |
-| Total | | 18 | 28 | 1 040 | 1 420 |
+| Total | | 18 | 28 | 1 040 | 1 440 |
 
-Une lecture est une unité sélectionnable avec trois questions. Les 40 textes représentent 120 questions. Une association est un problème avec deux phrases ; les 50 problèmes représentent 100 associations. Ces sous-questions ne gonflent pas le quota d’unités sélectionnables. Les 320 lignes éditoriales sources sont réemployées entre mécanismes ; elles ne sont pas présentées comme 1 040 histoires originales.
+La sélection se fait par texte. Les 20 textes A1 proposent quatre questions chacun, dont un QCM et trois réponses courtes. Les 20 textes A2 en proposent trois chacun, pour un total de 140 questions de lecture. Les 50 problèmes d’association contiennent chacun deux phrases à relier. Les 320 lignes sources alimentent 1 040 unités réparties entre les différentes activités.
 
 ## Points linguistiques à relire
 
@@ -28,6 +28,8 @@ Une lecture est une unité sélectionnable avec trois questions. Les 40 textes r
 Les sept fichiers `scripts/grammar_curriculum/temps-*.tsv` sont les sources à modifier. `python3 scripts/build-grammar-temps.py` produit e2/e3/e4/e5 et le manifeste. `python3 scripts/test-grammar-temps-build.py` vérifie la reconstruction dans un répertoire isolé.
 
 IMG-e2-A1 couvre 50 situations illustrées avec dix images internes réemployées, copiées sans modification sous un chemin SHA-256. Le [manifeste](temps-media-manifest.json) conserve origine, dimensions, texte alternatif, empreinte et usages. Il ne revendique pas 50 images nouvelles.
+
+En A1, chaque texte propose une nouvelle question factuelle sur une information encore peu exploitée, par exemple le délai avant un rendez-vous, le dossier à apporter ou l’heure de réouverture. Quatre visuels TCF existants situent le train, la bibliothèque, le marché et la piscine. Les réponses se trouvent dans les documents. [Sources des questions](../../../scripts/grammar_curriculum/temps-lectures-a1.tsv)
 
 Les 20 lectures A2 réemploient les vingt premières procédures du corpus A2, avec leurs preuves textuelles ; elles ne constituent pas vingt histoires supplémentaires.
 

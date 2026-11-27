@@ -1,3 +1,5 @@
+import { exerciseTypeById } from '@/math/catalog'
+import { FreeNumberControls } from './FreeNumberControls'
 import type { ExerciseBlock, MathItem, WorksheetPage } from '@/math/types'
 import type { GameTemplate } from '@/jeux/templates'
 import { PhraseLibreEditor, isPhraseLibreEditable } from '@/francais/PhraseLibreEditor'
@@ -18,6 +20,9 @@ import { GameContentPanel } from '@/jeux/GameContentPanel'
 import { DEFAULT_GAME_FONT_SIZE } from '@/jeux/font-size'
 import { TcfExerciseEditor } from '@/tcf/TcfExerciseEditor'
 import type { TcfExercise, TcfNiveau } from '@/tcf/types'
+import { isLogistiqueReferenceType, logistiqueType } from '@/logistique/catalog'
+import { logistiqueQuestionPhotos } from '@/logistique/generate'
+import { LogistiqueLibreBank } from './LogistiqueLibreBank'
 
 function tcfSupportExercise(items: MathItem[] | undefined): TcfExercise | undefined {
   const tcf = items?.find((item) => item.tcf?.kind === 'support')?.tcf
@@ -56,6 +61,8 @@ export type LibreSidePanelProps = {
   tcfNiveau: TcfNiveau
   /** Exercice réellement affiché, même s’il est sur une autre feuille de la suite. */
   renderedExercise?: TcfExercise
+  logistiqueItemsOnSheet?: MathItem[]
+  logistiqueActiveItems?: MathItem[]
   updatePage: (patch: Partial<ExerciseBlock>) => void
   onClose: () => void
   /** Régénère l’exercice actif (autres nombres / autre tirage banque). */
@@ -89,10 +96,20 @@ export function LibreSidePanel({
   jeuxText,
   tcfNiveau,
   renderedExercise,
+  logistiqueItemsOnSheet,
+  logistiqueActiveItems,
   updatePage,
   onRegenerateBlock,
   onClose,
 }: LibreSidePanelProps) {
+  const logistics = logistiqueType(activeBlock.exerciseType)
+  const genericItems = activeBlock.libreItems ?? logistiqueActiveItems ?? activeSheet?.blocks[safeBlockIndex]?.items ?? []
+  const logistiquePhotos = logistics && !isLogistiqueReferenceType(logistics.id) ? {
+    defaultModule: logistics.module,
+    byModule: logistiqueQuestionPhotos(logistics,
+      [...new Set(genericItems.map((item) => item.logistiqueSource?.module ?? logistics.module))],
+      activeBlock.logistiqueBankRevision),
+  } : undefined
   return (
     <aside className="side-tool-panel is-libre no-print" aria-label="Mode libre">
       <div className="side-tool-panel-head is-libre-head">
@@ -108,6 +125,17 @@ export function LibreSidePanel({
         <h3>Mode libre</h3>
       </div>
       <div className="side-tool-panel-body">
+        {isNumberLibreDomain && activeBlock.numberLibre &&
+          exerciseTypeById[activeBlock.exerciseType]?.supportsNumberRange !== false ? (
+          <div className="libre-number-generation">
+            <FreeNumberControls activeBlock={activeBlock} updatePage={updatePage} />
+            {onRegenerateBlock && (
+              <button type="button" className="button small secondary" onClick={() => onRegenerateBlock(safeBlockIndex)}>
+                Générer avec ces valeurs
+              </button>
+            )}
+          </div>
+        ) : null}
         {isPhraseDomain &&
         isPhraseLibreEditable(activeBlock.exerciseType) ? (
           <PhraseLibreEditor
@@ -313,22 +341,27 @@ export function LibreSidePanel({
         soutienKind !== 'mots' &&
         soutienKind !== 'completer' &&
         !(isDroites || isConstruire) ? (
-          <GenericLibreEditor
-            instruction={
-              activeBlock.libreInstruction ??
-              activeSheet?.blocks[safeBlockIndex]?.instruction ??
-              ''
-            }
-            items={
-              activeBlock.libreItems ??
-              activeSheet?.blocks[safeBlockIndex]?.items ??
-              []
-            }
-            onChangeInstruction={(libreInstruction) =>
-              updatePage({ libreInstruction })
-            }
-            onChangeItems={(libreItems) => updatePage({ libreItems })}
-          />
+          <>
+            {logistics && !isLogistiqueReferenceType(logistics.id) && (
+              <LogistiqueLibreBank key={logistics.id} type={logistics} revision={activeBlock.logistiqueBankRevision}
+                gapMode={activeBlock.logistiqueGapMode}
+                items={logistiqueItemsOnSheet ?? genericItems}
+                onReroll={onRegenerateBlock ? () => onRegenerateBlock(safeBlockIndex) : undefined}
+                onAdd={(items) => updatePage({ libreItems: [...genericItems, ...items] })} />
+            )}
+            <GenericLibreEditor
+              instruction={
+                activeBlock.libreInstruction ??
+                activeSheet?.blocks[safeBlockIndex]?.instruction ??
+                ''
+              }
+              items={genericItems}
+              editableCalculation={logistics?.kind === 'maths'}
+              logistiquePhotos={logistiquePhotos}
+              onChangeInstruction={(libreInstruction) => updatePage({ libreInstruction })}
+              onChangeItems={(libreItems) => updatePage({ libreItems })}
+            />
+          </>
         ) : null}
       </div>
     </aside>

@@ -244,6 +244,17 @@ import { module902 as reviewed902 } from './banks/module-902-v003.generated.ts'
 import { foundationAndServiceMathReview } from './banks/relecture-maths-v004'
 import { procurementExercises } from './banks/approvisionnement-exercices-v004'
 import { dossierExercises400 } from './banks/dossiers-400-v005.generated.ts'
+import { dossierExercises500 } from './banks/dossiers-500-v005.generated.ts'
+import { dossierExercises600 } from './banks/dossiers-600-v005.generated.ts'
+import { dossierExercises700 } from './banks/dossiers-700-v005.generated.ts'
+import { dossierExercises800 } from './banks/dossiers-800-v005.generated.ts'
+import { dossierExercises900 } from './banks/dossiers-900-v005.generated.ts'
+import { dossierExercises100 } from './banks/dossiers-100-v005.generated.ts'
+import { dossierExercises200 } from './banks/dossiers-200-v005.generated.ts'
+import { dossierExercises300 } from './banks/dossiers-300-v005.generated.ts'
+import { module306 as illustrated306 } from './banks/module-306-v004.generated.ts'
+import { supportsGlossaryAdditions } from './banks/supports-glossaires-v002'
+import { logistiqueGapExercises } from './banks/textes-a-trous-v006'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
 
@@ -253,7 +264,8 @@ type UnitContent =
   | { kind: 'objectifs-apercu' | 'glossaire'; blocks: ReferenceBlock[] }
   | { kind: 'theorie'; blocks: ReferenceBlock[]; summaryBlocks?: ReferenceBlock[] }
   | { kind: 'maths'; prompt: string; calculation: string; answer: string; theorySection?: string }
-  | { kind: 'verification'; prompt: string; answer: string; options?: readonly string[]; theorySection?: string }
+  | { kind: 'verification'; prompt: string; answer: string; options?: readonly string[]; theorySection?: string;
+      gaps?: { answers: readonly string[]; distractors?: readonly string[] } }
   | { kind: 'situation'; prompt: string; answer: string; theorySection?: string }
 
 export type LogistiqueUnit = UnitContent & {
@@ -516,6 +528,75 @@ const storageExercisePublication: LogistiquePublication = {
   units: [...procurementExercisePublication.units, ...dossierExercises400],
 }
 
+const productionExercisePublication: LogistiquePublication = {
+  revision: 'logistique-exercices-production-v005',
+  units: [...storageExercisePublication.units, ...dossierExercises500],
+}
+
+const distributionExercisePublication: LogistiquePublication = {
+  revision: 'logistique-exercices-distribution-v005',
+  units: [...productionExercisePublication.units, ...dossierExercises600],
+}
+
+const financialExercisePublication: LogistiquePublication = {
+  revision: 'logistique-exercices-finance-v005',
+  units: [...distributionExercisePublication.units, ...dossierExercises700],
+}
+
+const informatiqueExercisePublication: LogistiquePublication = {
+  revision: 'logistique-exercices-informatique-v005',
+  units: [...financialExercisePublication.units, ...dossierExercises800],
+}
+
+const projectsExercisePublication: LogistiquePublication = {
+  revision: 'logistique-exercices-projets-v005',
+  units: [...informatiqueExercisePublication.units, ...dossierExercises900],
+}
+
+const foundationsExercisePublication: LogistiquePublication = {
+  revision: 'logistique-exercices-foundations-maths-v005',
+  units: [...projectsExercisePublication.units, ...dossierExercises100],
+}
+
+const customerServiceExercisePublication: LogistiquePublication = {
+  revision: 'logistique-exercices-service-client-v005',
+  units: [...foundationsExercisePublication.units, ...dossierExercises200],
+}
+
+const procurementTargetsExercisePublication: LogistiquePublication = {
+  revision: 'logistique-exercices-approvisionnement-complet-v005',
+  units: [...customerServiceExercisePublication.units, ...dossierExercises300],
+}
+
+const palletSupportsTheoryPublication: LogistiquePublication = {
+  revision: 'logistique-theorie-306-v004',
+  units: procurementTargetsExercisePublication.units.map((unit) =>
+    unit.id === illustrated306[0].id ? illustrated306[0] : unit),
+}
+
+const supportsGlossariesPublication: LogistiquePublication = {
+  revision: 'logistique-glossaires-supports-manutention-v002',
+  units: palletSupportsTheoryPublication.units.map((unit) => {
+    const terms = supportsGlossaryAdditions[unit.module]
+    if (unit.kind !== 'glossaire' || !terms) return unit
+    const additions = terms.map(([term, definition]) => ({
+      kind: 'paragraph' as const,
+      text: `{g}${term}{/g} — ${definition}`,
+    }))
+    return {
+      ...unit,
+      revision: `${unit.module}-glossaire-v002`,
+      blocks: [...unit.blocks, ...additions].sort((a, b) =>
+        a.kind === 'paragraph' && b.kind === 'paragraph' ? a.text.localeCompare(b.text, 'fr-CH') : 0),
+    }
+  }),
+}
+
+const gapExercisesPublication: LogistiquePublication = {
+  revision: 'logistique-textes-a-trous-v006',
+  units: [...supportsGlossariesPublication.units, ...logistiqueGapExercises],
+}
+
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
@@ -588,6 +669,17 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   foundationsAndServiceMathPublication,
   procurementExercisePublication,
   storageExercisePublication,
+  productionExercisePublication,
+  distributionExercisePublication,
+  financialExercisePublication,
+  informatiqueExercisePublication,
+  projectsExercisePublication,
+  foundationsExercisePublication,
+  customerServiceExercisePublication,
+  procurementTargetsExercisePublication,
+  palletSupportsTheoryPublication,
+  supportsGlossariesPublication,
+  gapExercisesPublication,
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!

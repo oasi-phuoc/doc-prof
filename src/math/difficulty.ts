@@ -8,6 +8,16 @@ export type NumberRange = {
   min: number
   max: number
   decimals: boolean
+  places?: number
+  secondPlaces?: number
+}
+
+export const MAX_FREE_DECIMAL_PLACES = 3
+
+export function freeDecimalPlaces(value: number | undefined): number {
+  return value != null && Number.isFinite(value)
+    ? Math.min(MAX_FREE_DECIMAL_PLACES, Math.max(0, Math.trunc(value)))
+    : 1
 }
 
 export function numberRangeFrom(config: {
@@ -15,6 +25,8 @@ export function numberRangeFrom(config: {
   numberMin?: number
   numberMax?: number
   numberDecimals?: boolean
+  numberDecimalPlaces?: number
+  numberSecondDecimalPlaces?: number
 }): NumberRange | undefined {
   if (!config.numberLibre) return undefined
   let min = Number(config.numberMin)
@@ -26,7 +38,13 @@ export function numberRangeFrom(config: {
     min = max
     max = swap
   }
-  return { min, max, decimals: !!config.numberDecimals }
+  return {
+    min,
+    max,
+    decimals: !!config.numberDecimals,
+    places: freeDecimalPlaces(config.numberDecimalPlaces),
+    secondPlaces: freeDecimalPlaces(config.numberSecondDecimalPlaces),
+  }
 }
 
 export function roundToPlaces(n: number, places: number): number {
@@ -56,8 +74,17 @@ export function pickWithPlaces(rng: Rng, min: number, max: number, places: numbe
 
 export function pickInRange(rng: Rng, range: NumberRange): number {
   if (range.decimals) {
-    // Par défaut 1 décimale (ligne / usages génériques) ; les colonnes ont leurs propres tirages.
-    return pickWithPlaces(rng, range.min, range.max, 1)
+    const places = range.places ?? 1
+    const scale = 10 ** places
+    const min = Math.ceil(range.min * scale - 1e-9)
+    const max = Math.floor(range.max * scale + 1e-9)
+    if (max >= min) {
+      const sampled = int(rng, min, max)
+      if (places === 0 || sampled % 10 !== 0) return sampled / scale
+      if (sampled < max) return (sampled + 1) / scale
+      if (sampled > min) return (sampled - 1) / scale
+    }
+    return roundToPlaces(range.min, places)
   }
   const lo = Math.ceil(range.min)
   const hi = Math.floor(range.max)

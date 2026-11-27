@@ -9,6 +9,7 @@ const { logistiquePublications } = load(root + '/src/logistique/approved-banks.t
 const baseline = logistiquePublications.find(({ revision }) => revision === 'logistique-exercices-approvisionnement-v004')
 const theme = process.argv[2]
 if (!/^[1-9]00$/.test(theme)) throw new Error('Indiquez un thème de 100 à 900.')
+const compactCases = ['100', '200', '300'].includes(theme)
 const input = new URL(`../docs/logistique/preparation/dossiers-${theme}-v005.txt`, import.meta.url)
 const destination = new URL(`../src/logistique/banks/dossiers-${theme}-v005.generated.ts`, import.meta.url)
 const groups = readFileSync(input, 'utf8').trim().split(/^# /mu).filter(Boolean)
@@ -25,6 +26,35 @@ const modelQuestions = {
   levels: ['Pourquoi vérifier les niveaux réellement accessibles avant d’annoncer une capacité ?', 'La capacité du plan peut inclure des niveaux condamnés, trop bas ou soumis à une autre limite de charge.'],
   cadence: ['À quelle condition la file d’attente grandit-elle ?', 'Elle grandit si les arrivées dépassent durablement la cadence du poste qui traite les unités.'],
   lever: ['Quelle modification augmente le moment sans changer la force ?', 'Augmenter la distance au pivot. Le moment est le produit de cette distance et de la force.'],
+  route: ['Pourquoi ajouter le temps de transfert au délai de bout en bout ?', 'La remise ou le changement de mode occupe une partie du délai même quand la distance ne change pas.'],
+  tonneDistance: ['Quelles deux grandeurs combine-t-on pour obtenir des tonnes-kilomètres ?', 'La masse retenue en tonnes et le parcours retenu en kilomètres. Le produit des deux donne la base de ce calcul fictif.'],
+  volume: ['Quelle différence faites-vous entre volume utile et encombrement extérieur ?', 'Le volume utile décrit la capacité intérieure. L’encombrement se calcule sur les mesures extérieures et peut être supérieur.'],
+  tension: ['Quelle unité donne la formule résistance en N/mm² × section en mm² ?', 'Le newton. Le calcul donne une force, à distinguer de la masse et d’une capacité garantie pour un montage.'],
+  depreciation: ['Quels éléments faut-il connaître pour calculer l’amortissement linéaire annuel ?', 'Le prix d’acquisition, la valeur résiduelle estimée et la durée d’amortissement.'],
+  payroll: ['Quelle grandeur sert de point de départ au salaire net et au coût direct de l’employeur ?', 'Le salaire brut. Les retenues donnent le net et les charges employeur s’ajoutent pour établir le coût.'],
+  indicator: ['Pourquoi exprimer consommation et stock moyen dans la même unité ?', 'Leur quotient donne un nombre de rotations. Mélanger cartons et pièces fausse le résultat.'],
+  result: ['Comment calculez-vous le résultat sur la période ?', 'Soustrayez les coûts du chiffre d’affaires sur le même périmètre et la même période.'],
+  capital: ['Quelle base utilisez-vous pour imputer un intérêt au stock ?', 'La valeur moyenne du stock dans le périmètre du calcul. Appliquez le taux et la durée retenus.'],
+  service: ['Comment interprétez-vous la progression de 80 % à 86 % ?', 'Le taux a gagné six points de pourcentage. Le calcul d’une hausse relative partirait de 80 %.'],
+  valuation: ['Comment calculez-vous la valeur d’un article compté à l’inventaire ?', 'Multipliez son nombre d’unités validé par sa valeur unitaire selon la même règle de valorisation.'],
+  expense: ['Pourquoi comparer le coût moyen d’une unité en indiquant aussi le volume ?', 'Les frais fixes se répartissent sur un nombre d’unités qui varie avec le volume traité.'],
+  benefits: ['Quel écart de périmètre faut-il contrôler quand on compare deux rémunérations ?', 'Vérifiez les avantages et coûts complémentaires compris dans chacun des montants, sur une même durée.'],
+  codeCheck: ['Que permet de vérifier la clé d’un GTIN ?', 'Elle aide à repérer certaines erreurs de lecture ou de saisie. Elle ne décrit pas le produit ni sa disponibilité.'],
+  spreadsheet: ['Quel effet ont les signes dollar dans la référence $E$1 ?', 'Ils fixent la colonne E et la ligne 1 pour que la recopie ne déplace pas la référence.'],
+  printing: ['Pourquoi compter des feuilles plutôt que des pages avant un tirage recto verso ?', 'Une feuille peut porter deux pages. Le dernier côté d’un exemplaire peut rester vide.'],
+  files: ['Pourquoi vérifier le nombre de copies ou versions dans un calcul d’espace occupé ?', 'Chaque copie conservée peut occuper de l’espace. Le calcul doit porter sur les fichiers du même périmètre.'],
+  playback: ['Quelle durée se distingue de la transition entre deux diapositives ?', 'L’animation agit sur un objet ou un élément dans une diapositive. La transition relie deux diapositives.'],
+  locale: ['Que faut-il contrôler avant de comparer deux montants importés ?', 'Contrôlez le séparateur décimal, l’unité et le séparateur de milliers utilisés dans chaque fichier.'],
+  layout: ['Pourquoi conserver le même facteur pour la largeur et la hauteur d’une image ?', 'Le facteur identique conserve les proportions et évite de déformer l’image.'],
+  tableValues: ['Que faut-il revérifier après modification d’une ligne dans un tableau ?', 'Vérifiez l’unité, le total et toutes les valeurs de synthèse qui dépendent de la ligne modifiée.'],
+  environment: ['Pourquoi rapporter la masse de déchets au nombre de visiteurs ?', 'L’indicateur par visiteur permet de comparer des événements de fréquentations différentes, avec le même périmètre de déchets.'],
+  impact: ['Pourquoi vérifier le service couvert avant de comparer deux estimations d’impact ?', 'Une comparaison porte sur des parcours et quantités couvrant le même besoin, avec des facteurs calculés sur un périmètre comparable.'],
+  journey: ['Quel groupe sert de base si l’on mesure le passage d’une étape du parcours client à la suivante ?', 'Le groupe qui a atteint la première des deux étapes comparées. Le taux indique la part qui atteint ensuite la seconde.'],
+  market: ['Quelles données faut-il harmoniser pour calculer une part de marché ?', 'La zone, la période, la catégorie d’articles et l’unité des ventes. Le marché et l’entreprise doivent être mesurés de la même façon.'],
+  saleCash: ['Quel montant appartient à l’encaissement quand une vente a été payée en partie ?', 'Seule la part effectivement versée appartient à l’encaissement. La vente et le solde dû sont suivis séparément.'],
+  tolerance: ['Pourquoi comparer une tolérance et une mesure dans la même unité ?', 'Les valeurs doivent représenter une même grandeur avant de décider si la lecture se trouve entre les limites.'],
+  orderSize: ['À quoi sert la quantité donnée par la formule d’Andler ?', 'Elle donne un repère dans un modèle de demande et de coûts stables. On vérifie ensuite les lots, la capacité et les conditions praticables.'],
+  cycle: ['Que représente la remontée du niveau après la baisse du stock sur un cycle de réapprovisionnement ?', 'Une réception. La différence entre le niveau juste avant et le niveau juste après donne la quantité reçue.'],
 }
 
 const followUps = {
@@ -38,6 +68,35 @@ const followUps = {
   levels: 'Le plan est révisé après la fermeture d’un niveau.',
   cadence: 'Le poste suivant annonce une reprise progressive après une interruption.',
   lever: 'Un autre groupe de cours déplace le point d’application de la force sur le modèle.',
+  route: 'Le deuxième tronçon change et l’ancien délai figure encore au suivi.',
+  tonneDistance: 'La masse du document est corrigée après l’établissement du calcul initial.',
+  volume: 'Le fournisseur change de contenant alors que le volume déclaré reste identique.',
+  tension: 'Le rapport d’essai change la section de l’échantillon sans réviser la force théorique.',
+  depreciation: 'La valeur résiduelle estimée est révisée avant l’acceptation du plan.',
+  payroll: 'Le décompte a été corrigé et les bases des charges doivent être revérifiées.',
+  indicator: 'Un relevé de fin de période corrige la quantité prise comme référence.',
+  result: 'Un coût oublié est ajouté après l’établissement du premier bilan.',
+  capital: 'Le périmètre de stockage change au cours de la période comptable.',
+  service: 'Le volume de demandes change entre deux périodes du suivi.',
+  valuation: 'Une nouvelle pièce d’inventaire confirme le prix unitaire mais corrige le comptage.',
+  expense: 'Le nombre d’opérations change alors que les frais du local restent les mêmes.',
+  benefits: 'Une seconde estimation précise les frais de formation auparavant omis.',
+  codeCheck: 'Une référence a été ressaisie et le contrôle doit être refait sur la valeur corrigée.',
+  spreadsheet: 'Une référence de taux change de cellule avant la recopie d’une formule.',
+  printing: 'La dernière version ajoute une annexe qui doit figurer dans les exemplaires.',
+  files: 'Une version supplémentaire a été conservée depuis la première estimation.',
+  playback: 'Deux séquences sont ajoutées et la durée de fin doit être vérifiée.',
+  locale: 'Le fichier d’un autre site n’utilise pas le même ordre de date ou le même séparateur.',
+  layout: 'Les marges sont modifiées avant la mise à jour de l’illustration.',
+  tableValues: 'Une source corrige la dernière ligne du tableau présenté.',
+  environment: 'La fréquentation réelle change et le bilan doit être recalculé.',
+  impact: 'Un tronçon est modifié dans l’une des options de transport.',
+  journey: 'Le relevé est corrigé pour distinguer les personnes intéressées et les achats effectifs.',
+  market: 'La zone étudiée est élargie à des vendeurs supplémentaires.',
+  saleCash: 'Un acompte arrive après l’établissement du premier relevé des ventes.',
+  tolerance: 'Une lecture est corrigée avec une unité différente sur la nouvelle fiche.',
+  orderSize: 'Le fournisseur change la taille des conditionnements qui peuvent être commandés.',
+  cycle: 'La date d’arrivée se décale et la baisse du stock se poursuit.',
 }
 
 function sections(blocks, reference) {
@@ -72,12 +131,14 @@ for (const group of groups) {
     if (!/^[a-z0-9]+$/.test(id) || !consequence || !dossierMaths[model] || !modelQuestions[model] || !followUps[model]) {
       throw new Error(`Dossier incomplet ${module}/${id}`)
     }
-    const theorySection = sections(course.blocks, reference)
+    const [primary, ...mathReferences] = reference.split(' ~ ')
+    const theorySection = sections(course.blocks, primary)
     const values = operands.split(',').map(Number)
     if (values.length !== 6 || values.some((value) => !Number.isFinite(value) || value <= 0)) throw new Error(`Jeu de données invalide ${module}/${id}`)
     const calculations = dossierMaths[model](unit, values)
     for (const [index, [task, result, calculation]] of calculations.entries()) {
-      add('maths', `${id}-${index + 1}`, theorySection, [`${context} ${task}`, result, calculation])
+      const mathSection = mathReferences[index] ? sections(course.blocks, mathReferences[index]) : theorySection
+      add('maths', `${id}-${index + 1}`, mathSection, [`${context} ${task}`, result, calculation])
     }
     const facts = [
       [`${context} Quel objectif professionnel guide ce dossier ?`, objective],
@@ -89,9 +150,9 @@ for (const group of groups) {
     ]
     for (const [index, pair] of facts.entries()) add('verification', `${id}-${index + 1}`, theorySection, pair)
     const cases = [
-      [`${context} Vous préparez l’opération. a) Formulez l’objectif. b) Expliquez le contrôle à prévoir. c) Indiquez la trace à préparer.`, `a) ${objective} b) ${rule} c) ${evidence}`],
-      [`${anomaly} Vous reprenez le dossier. a) Indiquez la suite immédiate. b) Justifiez-la par une conséquence possible. c) Dites ce que votre collègue doit retrouver dans la trace.`, `a) ${action} b) ${consequence} c) ${evidence}`],
-      [`${title}. ${followUps[model]} a) Indiquez le critère à vérifier sur la nouvelle donnée. b) Précisez ce que vous consignez. c) Expliquez le risque si l’ancienne conclusion est réutilisée.`, `a) ${rule} b) ${evidence} c) ${consequence}`],
+      [`${context} ${compactCases ? 'a) Donnez l’objectif. b) Que vérifiez-vous ? c) Que consignez-vous ?' : 'Vous préparez l’opération. a) Formulez l’objectif. b) Expliquez le contrôle à prévoir. c) Indiquez la trace à préparer.'}`, `a) ${objective} b) ${rule} c) ${evidence}`],
+      [`${anomaly} ${compactCases ? 'a) Décidez de la suite. b) Quel risque évitez-vous ? c) Que consignez-vous ?' : 'Vous reprenez le dossier. a) Indiquez la suite immédiate. b) Justifiez-la par une conséquence possible. c) Dites ce que votre collègue doit retrouver dans la trace.'}`, `a) ${action} b) ${consequence} c) ${evidence}`],
+      [`${title}. ${followUps[model]} ${compactCases ? 'a) Quel critère vérifiez-vous ? b) Que consignez-vous ? c) Quel risque subsiste ?' : 'a) Indiquez le critère à vérifier sur la nouvelle donnée. b) Précisez ce que vous consignez. c) Expliquez le risque si l’ancienne conclusion est réutilisée.'}`, `a) ${rule} b) ${evidence} c) ${consequence}`],
     ]
     for (const [index, pair] of cases.entries()) add('situation', `${id}-${index + 1}`, theorySection, pair)
   }

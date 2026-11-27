@@ -1,5 +1,7 @@
 import { WorksheetImage } from '@/components/WorksheetImage'
-import { Fragment } from 'react'
+import { renderEnonceText } from '@/components/tcf/TcfQuestions'
+import { Fragment, type ReactNode } from 'react'
+import { logistiquePhotoPath } from '@/logistique/catalog'
 import { theorySpacerDivisor, type GrammarTheoryBlock } from '@/francais/grammar-theory'
 import {
   TheoryFlow,
@@ -13,7 +15,7 @@ import {
   theoryTabRows,
   theoryTableColWidths,
 } from './theory-marks'
-import { fmt } from '@/math/column-arith'
+import { problemAid } from '@/math/problem-help'
 import { MoneyChangeBoard } from './money-change'
 import type { MathItem, PreviewMode } from '@/math/types'
 import {
@@ -32,6 +34,24 @@ import {
   tokenizeAlgebra,
   tokenIsFrac,
 } from './algebra'
+
+function LogistiqueIllustratedPrompt({ item, mode, children }: { item: MathItem; mode: PreviewMode; children: ReactNode }) {
+  const image = item.logistiqueImage
+  if (!image || (image.visibility === 'answers' && mode !== 'answers') || !logistiquePhotoPath(image.src)) return children
+  const figure = (
+    <figure className="logistique-question-image" style={{ width: image.width }}>
+      <WorksheetImage editable={false} applyOverrides={false} src={import.meta.env.BASE_URL + image.src.slice(1)} alt={image.alt} />
+      {image.caption && <figcaption>{image.caption}</figcaption>}
+    </figure>
+  )
+  return (
+    <div className={`logistique-illustrated-prompt is-${image.placement}`}>
+      {image.placement !== 'apres' && figure}
+      {children}
+      {image.placement === 'apres' && figure}
+    </div>
+  )
+}
 
 export function SelectPillsRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const options = item.options ?? []
@@ -129,10 +149,12 @@ export function SelectPillsRow({ item, mode }: { item: MathItem; mode: PreviewMo
     )
   }
 
-  const stacked = (item.prompt?.length ?? 0) > 28
+  const stacked = Boolean(item.logistiqueImage) || (item.prompt?.length ?? 0) > 28
   return (
     <div className={`select-pills-row${stacked ? ' stacked' : ''}`} aria-label="Choix">
-      <span className="select-pills-prompt">{item.prompt}</span>
+      <LogistiqueIllustratedPrompt item={item} mode={mode}>
+        <span className="select-pills-prompt">{item.prompt}</span>
+      </LogistiqueIllustratedPrompt>
       <div className="select-pills" role="group">
         {options.map((option) => {
           const selected = mode === 'answers' && selectedSet.has(option)
@@ -585,9 +607,20 @@ function stackedLineAnswer(item: MathItem): string {
   return item.answer ?? ''
 }
 
-export function StackedPrompt({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+export function StackedPrompt({ item, mode, showHelp = false }: { item: MathItem; mode: PreviewMode; showHelp?: boolean }) {
   const show = mode === 'answers'
   const prompt = item.prompt ?? ''
+  if (item.logistiqueGaps) {
+    const { answers, words } = item.logistiqueGaps
+    return (
+      <div className="prompt-stack logistique-gaps">
+        <LogistiqueIllustratedPrompt item={item} mode={mode}>
+          <p className="prompt-stack-text">{renderEnonceText(prompt, show ? answers : [])}</p>
+        </LogistiqueIllustratedPrompt>
+        {words?.length ? <p className="logistique-words"><strong>Mots proposés</strong> {words.join(' · ')}</p> : null}
+      </div>
+    )
+  }
   const lines = prompt.split('\n')
   const lineAnswer = stackedLineAnswer(item)
   // Style rule de trois kg : « n kg … → p francs » puis « m kg … → ____ ».
@@ -609,6 +642,7 @@ export function StackedPrompt({ item, mode }: { item: MathItem; mode: PreviewMod
             {line}
           </p>
         ))}
+        {showHelp && <ProblemHelp item={item} />}
         <div className="proportion-kg-question" aria-label="Question">
           <span className="prompt-stack-text">{last}</span>
           <span className={`answer-line-field ${show ? 'filled' : ''}`}>
@@ -622,7 +656,11 @@ export function StackedPrompt({ item, mode }: { item: MathItem; mode: PreviewMod
   const line = item.labels?.includes('societe-line')
   return (
     <div className={`prompt-stack${line ? ' societe-line' : ''}`}>
-      <p className="prompt-stack-text">{prompt}</p>
+      <LogistiqueIllustratedPrompt item={item} mode={mode}>
+        <p className="prompt-stack-text">{prompt}</p>
+      </LogistiqueIllustratedPrompt>
+      {showHelp && <ProblemHelp item={item} />}
+      {item.areaFigures && !show && <span className="answer-line-field">{'\u00a0'}</span>}
       <span className={`answer-line-field ${show ? 'filled' : ''}`}>
         {show ? lineAnswer : '\u00a0'}
       </span>
@@ -765,41 +803,55 @@ export function InlinePrompt({ item, mode }: { item: MathItem; mode: PreviewMode
   )
 }
 
+function ProblemHelp({ item }: { item: MathItem }) {
+  const { pictures, facts } = problemAid(item)
+  if (!pictures.length && !facts.length) return null
+  return (
+    <aside className="math-problem-help" aria-label="Aide illustrée">
+      {pictures.length > 0 && (
+        <div className="math-problem-pictures">
+          {pictures.map(({ image, label, quantity }, index) => (
+            <figure key={`${image}-${index}`}>
+              <img src={image} alt="" />
+              <figcaption>{quantity ? `${quantity} ${label.toLocaleLowerCase('fr-CH')}` : label}</figcaption>
+            </figure>
+          ))}
+        </div>
+      )}
+      {facts.length > 0 && (
+        <dl className="math-problem-facts">
+          {facts.map(({ label, value }, index) => (
+            <div key={index}><dt>{label}</dt><dd>{value}</dd></div>
+          ))}
+        </dl>
+      )}
+    </aside>
+  )
+}
+
 export function ProblemBlock({
   item,
   mode,
   draftGrid = true,
+  showHelp = false,
 }: {
   item: MathItem
   mode: PreviewMode
   draftGrid?: boolean
+  showHelp?: boolean
 }) {
   const show = mode === 'answers'
-  const promptParts = (item.prompt ?? '').split('\n\n')
-  const question = item.problemTemplateId ? promptParts.pop() : undefined
-  const sketch = item.labels?.includes('sketch-vars') ? item.problemVarDefs ?? [] : []
+  const prompt = item.prompt ?? ''
+  const parts = /^(.*[.!?]\s+)([^.!?]+\?)$/s.exec(prompt.trim())
   return (
     <div className="problem-block">
-      {sketch.length > 0 ? (
-        <div className="problem-sketch" aria-label="Données du problème">
-          {sketch.map((def) => (
-            <div key={def.key}>
-              <b>{def.label}</b>
-              <span>{fmt(item.problemVars?.[def.key] ?? 0)}</span>
-            </div>
-          ))}
-        </div>
-      ) : null}
-      <p className="problem-prompt">
-        {question ? (
-          <>
-            {promptParts.join('\n\n')}
-            {promptParts.length > 0 ? '\n\n' : ''}
-            <strong>{question}</strong>
-          </>
-        ) : item.prompt}
-      </p>
-      {item.labels?.includes('sketch-change') ? (
+      <LogistiqueIllustratedPrompt item={item} mode={mode}>
+        <p className="problem-prompt">
+          {parts ? <>{parts[1]}<strong>{parts[2]}</strong></> : prompt}
+        </p>
+      </LogistiqueIllustratedPrompt>
+      {showHelp && <ProblemHelp item={item} />}
+      {showHelp && item.labels?.includes('sketch-change') ? (
         <MoneyChangeBoard parts={item.changeParts ?? []} mode={mode} />
       ) : null}
       <div className="problem-field">

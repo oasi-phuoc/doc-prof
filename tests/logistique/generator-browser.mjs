@@ -6,7 +6,7 @@ import { createServer } from 'vite'
 const fixture = JSON.parse(await readFile(new URL('./fixture.json', import.meta.url), 'utf8'))
 const server = await createServer({
   define: { 'import.meta.env.VITE_FICHES_API_URL': JSON.stringify('/__logistique_test') },
-  server: { host: '127.0.0.1', port: 5189, strictPort: true },
+  server: { host: '127.0.0.1', port: 5189, strictPort: true, hmr: false, watch: null },
   plugins: [{
     name: 'logistique-test-banks',
     enforce: 'pre',
@@ -104,9 +104,27 @@ try {
     await sheet.getByText(/^Vous repérez un carton mouillé/).waitFor()
     await select('Type d’exercice', 'Glossaires')
     await sheet.getByText('Tare. Masse de l’emballage vide.', { exact: true }).waitFor()
+
+    await select('Type d’exercice', 'Mathématiques')
+    await page.getByRole('button', { name: 'Évaluation', exact: true }).click()
+    await select('Thème', '300 — Procurement Management')
+    await select('Sous-thème', '308 — Les contrôles de quantités')
+    await page.keyboard.press('Escape')
+    const modules = page.getByRole('list', { name: 'Modules retenus', exact: true })
+    assert.match(await modules.innerText(), /105.*Marchandises[\s\S]*308.*contrôles de quantités/)
+    await page.getByRole('button', { name: 'Par module', exact: true }).click()
+    assert.equal(await page.getByRole('spinbutton', { name: 'Nombre de questions du module 308' }).inputValue(), '1')
+    await sheet.getByText('Mathématiques : modules 105 et 308', { exact: true }).waitFor()
+    await page.getByRole('button', { name: 'Exercice', exact: true }).click()
+    await sheet.getByText('Mathématiques : module 105', { exact: true }).waitFor()
+    assert.equal(await page.getByRole('list', { name: 'Modules retenus', exact: true }).count(), 0)
+    await page.getByRole('button', { name: 'Évaluation', exact: true }).click()
+    await sheet.getByText('Mathématiques : modules 105 et 308', { exact: true }).waitFor()
+    assert.equal(await page.getByRole('spinbutton', { name: 'Nombre de questions du module 105' }).inputValue(), '1')
+    await page.getByRole('button', { name: 'Exercice', exact: true }).click()
   }
 
-  await select('Type d’exercice', 'Mathématiques')
+  await page.getByRole('button', { name: 'Évaluation', exact: true }).click()
   const saveResponse = page.waitForResponse((response) =>
     new URL(response.url()).pathname === '/__logistique_test/fiches' && response.request().method() === 'POST',
   )
@@ -118,17 +136,97 @@ try {
   await saveResponse
   await dialog.waitFor({ state: 'hidden' })
   assert.equal(saved.recipe.pages[0].logistiqueBankRevision, fixture.revision)
+  assert.deepEqual(saved.recipe.pages[0].logistiqueSelection, {
+    modules: ['105', '308'], quantities: { '105': 1, '308': 1 },
+  })
   await page.goto(base + '/fiches')
   await page.getByRole('button', { name: 'Ouvrir', exact: true }).click()
   await page.waitForURL('**/generateur')
-  await sheet.getByText('Mathématiques : module 105', { exact: true }).waitFor()
+  await sheet.getByText('Mathématiques : modules 105 et 308', { exact: true }).waitFor()
   await sheet.getByText(/^Vous réceptionnez 7 cartons/).waitFor()
   await page.emulateMedia({ media: 'print' })
   await page.locator('.print-only-sheets .worksheet-sheet').first().waitFor()
   assert.match(await page.locator('.print-only-sheets').innerText(), /Le poids total est de 42 kg\./)
+  assert.match(await page.locator('.print-only-sheets').innerText(), /La masse brute est de 208 kg\./)
+  assert((await page.pdf()).subarray(0, 4).equals(Buffer.from('%PDF')))
+
+  await page.emulateMedia({ media: 'screen' })
+  await page.getByRole('button', { name: 'Exercice', exact: true }).click()
+  await page.getByRole('button', { name: 'Mode libre', exact: true }).click()
+  const editor = page.getByRole('complementary', { name: 'Mode libre' })
+  await editor.getByText('Banque de questions', { exact: true }).click()
+  await select('Module de la banque', '308 — Les contrôles de quantités')
+  await editor.getByRole('searchbox', { name: 'Rechercher une question' }).fill('masse brute')
+  await editor.getByRole('checkbox', { name: /^La palette pèse 28 kg/ }).check()
+  await editor.getByText('Corrigé', { exact: true }).click()
+  await editor.getByText('28 kg + 180 kg = 208 kg', { exact: true }).waitFor()
+  await editor.getByRole('button', { name: 'Ajouter la sélection (1)', exact: true }).click()
+  await editor.getByRole('status').getByText('1 question ajoutée.').waitFor()
+  assert.equal(await editor.getByRole('checkbox', { name: /^La palette pèse 28 kg/ }).count(), 0)
+  assert.equal(await editor.getByRole('button', { name: 'Ajouter un lot', exact: true }).isDisabled(), true)
+  const alternativeCorrection = '180 kg + 28 kg = 208 kg'
+  await editor.getByLabel('Calcul du corrigé').last().fill(alternativeCorrection)
+  await page.getByRole('button', { name: 'Valider les changements', exact: true }).click()
+  await sheet.getByText(/^La palette pèse 28 kg/).waitFor()
+  await editor.getByRole('button', { name: 'Régénérer les questions tirées', exact: true }).click()
+  assert.equal(await editor.getByLabel('Calcul du corrigé').last().inputValue(), alternativeCorrection)
+  await page.getByRole('button', { name: 'Valider les changements', exact: true }).click()
+  const firstQuestionEditor = editor.locator('.generic-libre-editor .libre-item-card').first()
+  await firstQuestionEditor.getByText('Image de la question', { exact: true }).click()
+  await select('Photo de la bibliothèque', 'Carton réceptionné')
+  await firstQuestionEditor.getByLabel('Légende', { exact: true }).fill('Exemple de carton à contrôler')
+  await select('Taille de l’image', 'Grande')
+  await page.getByRole('button', { name: 'Valider les changements', exact: true }).click()
+  const firstFigure = sheet.locator('.logistique-illustrated-prompt.is-droite .logistique-question-image')
+  await firstFigure.waitFor()
+  assert.equal(await firstFigure.count(), 1)
+  assert.equal(await firstFigure.evaluate((figure) => getComputedStyle(figure).cssFloat), 'right')
+  await select('Visibilité de l’image', 'Corrigé seulement')
+  await page.getByRole('button', { name: 'Valider les changements', exact: true }).click()
+  assert.equal(await sheet.locator('.logistique-question-image').count(), 0)
+  const saveLibre = page.waitForResponse((response) =>
+    new URL(response.url()).pathname === '/__logistique_test/fiches' && response.request().method() === 'POST',
+  )
+  await page.getByRole('button', { name: 'Enregistrer', exact: true }).click()
+  await dialog.getByRole('button', { name: 'Enregistrer une nouvelle fiche', exact: true }).click()
+  await saveLibre
+  await dialog.waitFor({ state: 'hidden' })
+  const manual = saved.recipe.libreSnapshot[0].libreItems.find((item) => item.logistiqueRetained)
+  assert.equal(manual.logistiqueSource.id, 'fixture-308-maths')
+  assert.equal(manual.calcAnswer, alternativeCorrection)
+  const firstItem = saved.recipe.libreSnapshot[0].libreItems[0]
+  assert.equal(firstItem.logistiqueImage.visibility, 'answers')
+  assert.equal(firstItem.logistiqueImage.width, 180)
+  assert.equal(manual.logistiqueImage, undefined)
+  await page.goto(base + '/fiches')
+  await page.getByRole('button', { name: 'Ouvrir', exact: true }).click()
+  await page.waitForURL('**/generateur')
+  await page.waitForFunction(() =>
+    document.querySelector('.print-only-sheets')?.textContent?.includes('La palette pèse 28 kg'))
+  assert.equal(await sheet.locator('.logistique-question-image').count(), 0)
+  await page.emulateMedia({ media: 'print' })
+  assert.match(await page.locator('.print-only-sheets').innerText(), /180 kg \+ 28 kg = 208 kg/)
+  const printablePhoto = page.locator('.print-only-sheets .logistique-question-image')
+  assert.equal(await printablePhoto.count(), 1)
+  assert.equal(await printablePhoto.locator('figcaption').innerText(), 'Exemple de carton à contrôler')
+  assert(await printablePhoto.locator('img').evaluate(async (img) => { await img.decode(); return img.naturalWidth > 0 }))
+  assert((await page.pdf()).subarray(0, 4).equals(Buffer.from('%PDF')))
+
+  await page.emulateMedia({ media: 'screen' })
+  await page.getByRole('button', { name: 'Paramètres', exact: true }).click()
+  await page.getByRole('radio', { name: /Paysage — double A5/ }).click()
+  await page.keyboard.press('Escape')
+  await page.emulateMedia({ media: 'print' })
+  assert.equal(await printablePhoto.count(), 2)
+  const a5Reserves = await printablePhoto.evaluateAll((figures) => figures.map((figure) => {
+    const item = figure.closest('.exercise-item')
+    const footer = figure.closest('.a5-half').querySelector('.doc-footer')
+    return footer.getBoundingClientRect().top - item.getBoundingClientRect().bottom
+  }))
+  assert(a5Reserves.every((reserve) => reserve >= 25), JSON.stringify(a5Reserves))
   assert((await page.pdf()).subarray(0, 4).equals(Buffer.from('%PDF')))
   assert.deepEqual(errors, [])
-  console.log('Pilotes techniques CFC et AFP : gabarit A4, cinq types, grille, corrigé, PDF, enregistrement simulé et réouverture.')
+  console.log('Pilotes CFC et AFP : évaluation de deux thèmes, choix Libre, maintien au nouveau tirage, sauvegarde et PDF.')
 } finally {
   await browser?.close()
   await server.close()

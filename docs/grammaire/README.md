@@ -41,7 +41,11 @@ La première banque proposait dix fiches de situation du quotidien pour chacun d
 - une tâche de PE demandant une seule phrase ;
 - une tâche de PO demandant une seule prise de parole courte, avec modèle réservé au corrigé.
 
-Dix illustrations du sous-thème « Demander une possibilité » ont été régénérées individuellement dans le style dessiné CE/CO. Le [registre des illustrations](illustrations.json) conserve les chemins, empreintes et contrôles. Le [registre des scènes](images-a-preparer.json) donne l’état de chacune des 160 situations.
+Chacune des 160 situations a sa propre illustration dans le style dessiné CE/CO. Le [registre des illustrations](illustrations.json) conserve les chemins, empreintes et contrôles. Le [registre des scènes](images-a-preparer.json) donne l’état de chacune des 160 situations.
+
+La revue des personnages a remplacé huit scènes. Les remplacements concernent le musée, l’atelier vélo, la bibliothèque, la cantine et la gare. La revue des autres groupes de communication et des scènes de compréhension orale reste ouverte. [Critères graphiques et diversité des personnages](../tcf/style-images.md)
+
+En compréhension écrite graduée, « Se situer dans le temps → Le moment → Lire une situation » propose 80 questions sur 20 documents A1. Quatre documents réemploient un visuel TCF. [Relecture et sources](implementation/temps-a1-a2-relecture.md)
 
 ## Vérification et entretien
 

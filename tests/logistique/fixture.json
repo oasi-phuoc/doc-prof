@@ -9,7 +9,13 @@
       "kind": "theorie",
       "blocks": [
         { "kind": "heading", "text": "Cartons à réceptionner" },
-        { "kind": "paragraph", "text": "Le poids brut d’un carton comprend le contenu et l’emballage." }
+        { "kind": "paragraph", "text": "Le poids brut d’un carton comprend le contenu et l’emballage." },
+        {
+          "kind": "image",
+          "src": "/assets/logistique/300/307/commun/log-307-dommage-photo-v002.webp",
+          "alt": "Un carton déformé au quai",
+          "caption": "Carton réceptionné"
+        }
       ]
     },
     {
@@ -21,6 +27,16 @@
       "prompt": "Vous réceptionnez 7 cartons de 6 kg chacun. Calculez leur poids total.",
       "calculation": "7 × 6 kg = 42 kg",
       "answer": "Le poids total est de 42 kg."
+    },
+    {
+      "id": "fixture-308-maths",
+      "module": "308",
+      "revision": "v1",
+      "approvedFor": ["CFC", "AFP"],
+      "kind": "maths",
+      "prompt": "La palette pèse 28 kg et sa charge 180 kg. Calculez la masse brute.",
+      "calculation": "28 kg + 180 kg = 208 kg",
+      "answer": "La masse brute est de 208 kg."
     },
     {
       "id": "fixture-105-verification",

@@ -17,6 +17,10 @@ export function fmt(n: number): string {
     .replace('.', ',')
 }
 
+export function fmtOperand(value: number, places?: number): string {
+  return places === undefined ? fmt(value) : value.toFixed(places).replace('.', ',')
+}
+
 /**
  * Nettoie le bruit binaire dans une chaîne affichée
  * (`7,2700000000000005`, `0.30000000000000004`, etc.).
@@ -47,6 +51,7 @@ const TEXT_KEYS = [
 
 /** Applique `fmt` / nettoyage de bruit binaire sur les champs texte d’un item. */
 export function sanitizeItemNumberNoise<T extends Record<string, unknown>>(item: T): T {
+  if (item.freeOperandPlaces) return item
   const out: Record<string, unknown> = { ...item }
   for (const key of TEXT_KEYS) {
     const v = out[key]
@@ -239,7 +244,39 @@ function columnMulDecimalItem(a: number, b: number, result: number, empty: boole
   }
 }
 
-export function columnItem(op: ArithOp, a: number, b: number, result: number, empty: boolean): MathItem {
+export function columnItem(
+  op: ArithOp, a: number, b: number, result: number, empty: boolean,
+  freePlaces?: [number, number], forcePartials = false,
+): MathItem {
+  if (freePlaces) {
+    const [pa, pb] = freePlaces
+    const places = op === '×' ? pa + pb : Math.max(pa, pb)
+    const sa = scaleInt(a, pa)
+    const sb = scaleInt(b, pb)
+    const productRows = op === '×' && (sb >= 10 || forcePartials)
+      ? String(sb).split('').reverse().map((digit, index) => sa * Number(digit) * 10 ** index)
+      : []
+    const width = Math.max(7, intWidthOf(a, pa) + pa, intWidthOf(b, pb) + pb,
+      intWidthOf(result, places) + places, ...productRows.map((partial) => widthOf(partial)))
+    const operand = (value: number, operandPlaces: number) => {
+      if (op === '×') return digitsDecimal(value, width - operandPlaces, operandPlaces)
+      return [...digitsDecimal(value, width - places, operandPlaces), ...Array<string>(places - operandPlaces).fill('')]
+    }
+    return {
+      layout: empty ? 'column-empty' : 'column',
+      prompt: empty ? `${fmtOperand(a, pa)} ${op} ${fmtOperand(b, pb)}` : undefined,
+      op, a, b, result,
+      digitsA: operand(a, pa),
+      digitsB: operand(b, pb),
+      digitsResult: digitsDecimal(result, width - places, places),
+      digitsPartials: productRows.map((partial) => digits(partial, width)),
+      carries: computeCarries(op, op === '×' ? sa : scaleInt(a, places), op === '×' ? sb : scaleInt(b, places), width),
+      decimalPlaces: places,
+      freeOperandPlaces: freePlaces,
+      blankOperands: empty,
+      answer: fmt(result),
+    }
+  }
   if (op === '×' && (decimalPlacesOf(a) > 0 || decimalPlacesOf(b) > 0) && decimalPlacesOf(b) > 0) {
     return columnMulDecimalItem(a, b, result, empty)
   }
@@ -354,6 +391,19 @@ export function normalizeColumnLayouts(items: MathItem[]): MathItem[] {
     if (item.layout !== 'column' && item.layout !== 'column-empty') return item
     const places = item.decimalPlaces ?? 0
     const partials = item.digitsPartials ?? []
+    if (item.freeOperandPlaces) {
+      const workingRows = maxPartials > 0 && !partials.length && item.op === '×'
+        ? [digits(scaleInt(item.result ?? 0, places), maxWidth)]
+        : partials
+      return {
+        ...item,
+        digitsA: padDigitRow(item.digitsA, maxWidth),
+        digitsB: padDigitRow(item.digitsB, maxWidth),
+        digitsResult: padDigitRow(item.digitsResult, maxWidth),
+        carries: padDigitRow(item.carries, maxWidth),
+        digitsPartials: Array.from({ length: maxPartials }, (_, i) => padDigitRow(workingRows[i], maxWidth)),
+      }
+    }
     const padRow = (row: string[] | undefined) =>
       maxPlaces > 0 || places > 0
         ? padDecimalRow(row, places, maxPlaces, maxWidth)
@@ -408,8 +458,8 @@ function placeDigitsAtEnd(value: string, width: number, endCol: number): string[
   return row
 }
 
-export function divisionColumnItem(dividend: number, divisor: number, empty: boolean): MathItem {
-  const places = Math.max(decimalPlacesOf(dividend), decimalPlacesOf(dividend / divisor))
+export function divisionColumnItem(dividend: number, divisor: number, empty: boolean, workingPlaces?: number): MathItem {
+  const places = workingPlaces ?? Math.max(decimalPlacesOf(dividend), decimalPlacesOf(dividend / divisor))
   const scale = 10 ** places
   const scaledDividend = scaleInt(dividend, places)
   const scaledQuotient = Math.floor(scaledDividend / divisor)
@@ -480,11 +530,13 @@ export function normalizeDivisionLayouts(items: MathItem[]): MathItem[] {
   })
 }
 
-export function inlineOp(op: ArithOp, a: number, b: number, result: number, missing: MissingPos = 'result'): MathItem {
-  const leftA = missing === 'a' ? '□' : fmt(a)
-  const leftB = missing === 'b' ? '□' : fmt(b)
+export function inlineOp(op: ArithOp, a: number, b: number, result: number, missing: MissingPos = 'result', freePlaces?: [number, number]): MathItem {
+  const operandA = fmtOperand(a, freePlaces?.[0])
+  const operandB = fmtOperand(b, freePlaces?.[1])
+  const leftA = missing === 'a' ? '□' : operandA
+  const leftB = missing === 'b' ? '□' : operandB
   const right = missing === 'result' ? '□' : fmt(result)
-  const answer = missing === 'a' ? fmt(a) : missing === 'b' ? fmt(b) : fmt(result)
+  const answer = missing === 'a' ? operandA : missing === 'b' ? operandB : fmt(result)
   return {
     layout: missing === 'result' ? 'inline' : 'inline',
     prompt: `${leftA} ${op} ${leftB} = ${right}`,

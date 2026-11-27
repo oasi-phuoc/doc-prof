@@ -1,4 +1,4 @@
-function francs(amount: number): string {
+export function formatSwissFrancs(amount: number): string {
   return (Math.round(amount * 100) / 100).toFixed(2).replace('.', ',')
 }
 
@@ -52,5 +52,5 @@ export function describeSwissChange(amountFr: number): { parts: ChangePart[]; se
   const covered = parts.reduce((sum, part) => sum + part.cents * part.count, 0)
   const left = Math.round(amountFr * 100) - covered
   const rest = left > 0 ? ` Il reste ${left} centime${left > 1 ? 's' : ''}.` : ''
-  return { parts, sentence: `On rend ${francs(amountFr)} francs : ${list}.${rest}` }
+  return { parts, sentence: `On rend ${formatSwissFrancs(amountFr)} francs : ${list}.${rest}` }
 }

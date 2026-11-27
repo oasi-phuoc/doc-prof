@@ -47,7 +47,7 @@ import {
   isTransformationPlacer,
 } from '@/math/coord-transformations'
 import { DIFFICULTY_OPTIONS } from '@/math/difficulty'
-import { isQuadExercise } from '@/math/catalog'
+import { exerciseTypeById, isQuadExercise } from '@/math/catalog'
 import {
   AREA_QUAD_FIGURES,
   PERI_QUAD_FIGURES,
@@ -256,7 +256,8 @@ const baseMaxQuestions = maxQuestionsFor({
 })
 const activeSheetBlock = worksheets[safeSheetIndex]?.blocks[safeBlockIndex]
 const bankQuestionCap = activeSheetBlock?.bankQuestionCap
-const maxQuestions = cscQuestionLimit(activeBlock.exerciseType)
+const maxQuestions = exerciseTypeById[activeBlock.exerciseType]?.maxCount
+  ?? cscQuestionLimit(activeBlock.exerciseType)
   ?? (isGrammaireDomain && activeBlock.grammarLevel
   ? Math.max(1,Math.min(50,grammarEligibleCount(activeBlock)))
   : (activePage.domain === 'gattegno' || isLogistiqueDomain(activePage.domain)) && bankQuestionCap != null

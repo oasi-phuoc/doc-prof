@@ -405,7 +405,7 @@ function AxesScene({
   const mathAtCol = (col: number) => Math.round(((col - originCol) / unit) * 1000) / 1000
   const mathAtRow = (row: number) => Math.round(((row - originRow) / unit) * 1000) / 1000
   const markAt = (x: number, y: number) => scene.marks.find((m) => m.x === x && m.y === y)
-  const fineN = scene.fineGrid ? 5 : 0
+  const fineN = scene.fineGrid && !scene.hideGrid ? 5 : 0
   const labelStepX = scene.labelStep ?? (rangeX >= 20 ? 4 : rangeX >= 12 ? 2 : 1)
   const labelStepY = scene.labelStep ?? (rangeY >= 20 ? 4 : rangeY >= 12 ? 2 : 1)
   const dashScale = cellMm / 5
@@ -432,7 +432,7 @@ function AxesScene({
       height={`${svgH}mm`}
       viewBox={`0 0 ${svgW} ${svgH}`}
       role="img"
-      aria-label={hideAxes ? 'Quadrillage sans axes' : 'Repère à quatre cadrans'}
+      aria-label={scene.hideGrid ? 'Zone de construction' : hideAxes ? 'Quadrillage sans axes' : 'Repère à quatre cadrans'}
     >
       {fineN
         ? Array.from({ length: visibleCols * fineN + 1 }, (_, i) => {
@@ -468,7 +468,7 @@ function AxesScene({
         : null}
       {Array.from({ length: cols + 1 }, (_, col) => {
         const isAxis = !hideAxes && col === originCol
-        if (!isAxis && col > visibleCols) return null
+        if (!isAxis && (col > visibleCols || (scene.hideGrid && col > 0 && col < visibleCols))) return null
         // TCM CFR cadran I : pas de quadrillage en x < 0 (marge −1), axes seuls + graduations.
         if (!isAxis && scene.originZeroInNegCell && mathAtCol(col) < -1e-9) {
           return null
@@ -491,7 +491,7 @@ function AxesScene({
       })}
       {Array.from({ length: rows + 1 }, (_, row) => {
         const isAxis = !hideAxes && row === originRow
-        if (!isAxis && row > visibleRows) return null
+        if (!isAxis && (row > visibleRows || (scene.hideGrid && row > 0 && row < visibleRows))) return null
         if (!isAxis && scene.originZeroInNegCell && mathAtRow(row) < -1e-9) {
           return null
         }

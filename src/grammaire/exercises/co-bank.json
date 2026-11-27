@@ -283,6 +283,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Son numéro de portable"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-passeport-de-voyage.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-telephone-de-bureau.webp"
+                }
+              ]
             }
           }
         },
@@ -675,6 +693,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Un message de répondeur"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-message-repondeur.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-annonce-dans-la-gare.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-presentation-meteo.webp"
+                }
+              ]
             }
           }
         },
@@ -729,6 +765,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Un numéro de téléphone"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/communication-lettre.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/communication-courriel.webp"
+                }
+              ]
             }
           }
         },
@@ -871,7 +925,7 @@
           }
         },
         {
-          "enonce": "Quel est son prénom ?",
+          "enonce": "Quel prénom est associé au nom Zola ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -1459,6 +1513,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Grand et blond"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-homme-grand-blond.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-homme-petit-blond.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-homme-grand-brun.webp"
+                }
+              ]
             }
           }
         },
@@ -1594,6 +1666,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "À un apéritif"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-aperitif-entre-amis.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/co306-mariage-dessine.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-concert-en-salle.webp"
+                }
+              ]
             }
           }
         }
@@ -1769,29 +1859,29 @@
           }
         },
         {
-          "enonce": "Comment s’appellent les enfants de Simon et Sandra ?",
+          "enonce": "Combien d’enfants de Simon et Sandra sont sur la photo ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
           "choix": [
             {
               "id": "a",
-              "texte": "Andrea et Élisa",
+              "texte": "Deux",
               "correct": true
             },
             {
               "id": "b",
-              "texte": "Sonia et Marie"
+              "texte": "Un"
             },
             {
               "id": "c",
-              "texte": "Simon et Sandra"
+              "texte": "Trois"
             }
           ],
           "formes": {
             "lignes": {
               "nb_lignes": 1,
-              "reponse_modele": "Andrea et Élisa"
+              "reponse_modele": "Deux"
             }
           }
         }
@@ -1983,6 +2073,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Grand et brun"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-homme-grand-brun.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-homme-petit-brun.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-homme-grand-blond.webp"
+                }
+              ]
             }
           }
         }
@@ -2048,6 +2156,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Un anniversaire"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/co306-anniversaire-dessine.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/co306-mariage-dessine.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-remise-de-diplome.webp"
+                }
+              ]
             }
           }
         },
@@ -2102,6 +2228,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Une jeune fille blonde"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-jeune-fille-blonde.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-jeune-fille-brune.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-jeune-fille-rousse.webp"
+                }
+              ]
             }
           }
         },
@@ -2325,12 +2469,12 @@
           "choix": [
             {
               "id": "a",
-              "texte": "À Lori",
+              "texte": "À son amie",
               "correct": true
             },
             {
               "id": "b",
-              "texte": "À la mère de Lori"
+              "texte": "À la mère de son amie"
             },
             {
               "id": "c",
@@ -2340,34 +2484,34 @@
           "formes": {
             "lignes": {
               "nb_lignes": 1,
-              "reponse_modele": "À Lori"
+              "reponse_modele": "À son amie"
             }
           }
         },
         {
-          "enonce": "Qui répond au téléphone ?",
+          "enonce": "Qui répond à l’appel de Laura ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
           "choix": [
             {
               "id": "a",
-              "texte": "La mère de Lori",
+              "texte": "La mère de son amie",
               "correct": true
             },
             {
               "id": "b",
-              "texte": "Lori"
+              "texte": "Son amie"
             },
             {
               "id": "c",
-              "texte": "Une amie de Laura"
+              "texte": "Une professeure"
             }
           ],
           "formes": {
             "lignes": {
               "nb_lignes": 1,
-              "reponse_modele": "La mère de Lori"
+              "reponse_modele": "La mère de son amie"
             }
           }
         },
@@ -2672,6 +2816,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Deux"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-mere-deux-enfants.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-mere-un-enfant.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-mere-trois-enfants.webp"
+                }
+              ]
             }
           }
         }
@@ -2722,7 +2884,7 @@
       },
       "questions": [
         {
-          "enonce": "Quand a lieu la fête des voisins, selon Madame Bugier ?",
+          "enonce": "Quand la fête des voisins a-t-elle lieu ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -2749,7 +2911,7 @@
           }
         },
         {
-          "enonce": "Quel événement Madame Bugier organise-t-elle samedi ?",
+          "enonce": "Quel événement la voisine organise-t-elle samedi ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -3009,6 +3171,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Des plats à partager"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-plats-a-partager.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-cadeaux-pour-enfants.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-jeux-de-societe.webp"
+                }
+              ]
             }
           }
         }
@@ -3312,6 +3492,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "De serviettes et d’assiettes"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-serviettes-et-assiettes.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-bougies-et-fleurs.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-chaises-et-coussins.webp"
+                }
+              ]
             }
           }
         },
@@ -3405,6 +3603,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Un apéro"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-aperitif-entre-amis.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/co834-pique-nique-parc-dessine.webp"
+                }
+              ]
             }
           }
         },
@@ -4282,6 +4498,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Un blog avec des photos"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-blog-photos.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-studio-radio.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-application-paiement.webp"
+                }
+              ]
             }
           }
         }
@@ -4452,6 +4686,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Une cuisine équipée"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/co/bg/cuisine.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-cuisine-sans-fenetre.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-cuisine-en-renovation.webp"
+                }
+              ]
             }
           }
         },
@@ -4644,6 +4896,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Lumineuses"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-salon-lumineux.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-salon-sombre.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-petite-piece-revision.webp"
+                }
+              ]
             }
           }
         }
@@ -5146,6 +5416,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Une cuisine équipée"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/co/bg/cuisine.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-cuisine-sans-fenetre.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-cuisine-en-renovation.webp"
+                }
+              ]
             }
           }
         },
@@ -5173,6 +5461,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Lumineuses"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-salon-lumineux.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-salon-sombre.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-petite-piece-revision.webp"
+                }
+              ]
             }
           }
         },
@@ -5462,6 +5768,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Une fuite d’eau"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-salle-de-bain-fuite.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-salle-de-bain-electricite.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-salle-de-bain-vitre-cassee.webp"
+                }
+              ]
             }
           }
         },
@@ -5489,6 +5813,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Il est ancien"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-immeuble-ancien.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-immeuble-neuf.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-immeuble-travaux.webp"
+                }
+              ]
             }
           }
         },
@@ -5684,6 +6026,33 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Au cinquième étage"
+            }
+          }
+        },
+        {
+          "enonce": "Quand les visites du T3 sont-elles prévues ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Mardi de 17 h à 19 h",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Lundi de 17 h à 19 h"
+            },
+            {
+              "id": "c",
+              "texte": "Mardi de 14 h à 16 h"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Mardi de 17 h à 19 h"
             }
           }
         }
@@ -6002,6 +6371,33 @@
               ]
             }
           }
+        },
+        {
+          "enonce": "Que comprend le loyer du studio ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Les charges",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Une place de parking"
+            },
+            {
+              "id": "c",
+              "texte": "Les meubles"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Les charges"
+            }
+          }
         }
       ]
     },
@@ -6178,6 +6574,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Au gaz"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/extension573-chauffage-gaz.png",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-electricite.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-poele-a-bois.webp"
+                }
+              ]
             }
           }
         },
@@ -6369,6 +6783,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Des appareils électriques"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-etabli-electromenager.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-atelier-cordonnier.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-atelier-reparation-velo.webp"
+                }
+              ]
             }
           }
         }
@@ -6612,6 +7044,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "La cuisine"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/co/bg/cuisine.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-chambre-simple.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/co/bg/salon.webp"
+                }
+              ]
             }
           }
         },
@@ -6785,34 +7235,34 @@
       },
       "questions": [
         {
-          "enonce": "Comment s'appelle la nouvelle voisine ?",
+          "enonce": "Qui se présente au début de l’échange ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
           "choix": [
             {
               "id": "a",
-              "texte": "Catherine Sol",
+              "texte": "La nouvelle voisine",
               "correct": true
             },
             {
               "id": "b",
-              "texte": "Marion Garant"
+              "texte": "Le gardien de l’immeuble"
             },
             {
               "id": "c",
-              "texte": "Sophie Martin"
+              "texte": "Une ancienne locataire"
             }
           ],
           "formes": {
             "lignes": {
               "nb_lignes": 1,
-              "reponse_modele": "Catherine Sol"
+              "reponse_modele": "La nouvelle voisine"
             }
           }
         },
         {
-          "enonce": "Où son nom est-il inscrit ?",
+          "enonce": "Où le nom de la nouvelle voisine est-il inscrit ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -6835,6 +7285,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Sur la boîte aux lettres"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/qcm-hist1-nom-boite-lettres.png",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/qcm-hist1-nom-porte-garage.png"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/qcm-hist1-nom-porte-local-velos.png"
+                }
+              ]
             }
           }
         },
@@ -6961,6 +7429,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "En laisse"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-chien-laisse.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-chien-bras.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-chien-panier.webp"
+                }
+              ]
             }
           }
         },
@@ -6988,6 +7474,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "À côté du garage"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/qcm-hist1-local-velos-cote-garage.png",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/qcm-hist1-local-velos-dernier-etage.png"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/qcm-hist1-local-velos-fond-jardin.png"
+                }
+              ]
             }
           }
         },
@@ -7060,6 +7564,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Dans l'ascenseur"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/qcm-hist1-mot-ascenseur.png",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/qcm-hist1-mot-balcon.png"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/qcm-hist1-mot-toit.png"
+                }
+              ]
             }
           }
         }
@@ -7264,11 +7786,29 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Sale"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-couloir-sale.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-couloir-propre.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-couloir-sombre.webp"
+                }
+              ]
             }
           }
         },
         {
-          "enonce": "Que madame Signoret ne respecte-t-elle pas selon monsieur Blanc ?",
+          "enonce": "D’après M. Blanc, qu’est-ce que Mme Signoret ne respecte pas ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -7450,6 +7990,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "En laisse"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-voisins-chiens-laisse.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-voisins-chiens-bras.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-voisins-chiens-sac.webp"
+                }
+              ]
             }
           }
         },
@@ -7477,6 +8035,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Devant les boîtes aux lettres"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/qcm-hist1-discussion-hall.png",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/qcm-hist1-discussion-garage.png"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/qcm-hist1-discussion-toit.png"
+                }
+              ]
             }
           }
         }
@@ -8257,6 +8833,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Des fêtes"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/co834-fete-dessinee.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-depart-voyage-etudiants.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-competition-athletisme.webp"
+                }
+              ]
             }
           }
         }
@@ -8323,6 +8917,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Le bureau du professeur Martin"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-bureau-professeur-universite.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-bibliotheque-universite.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-restaurant-universitaire.webp"
+                }
+              ]
             }
           }
         },
@@ -8465,6 +9077,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Une présentation devant la classe"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-presentation-devant-la-classe.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/qcm-a1-lot20-dictee.png"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-lecture.webp"
+                }
+              ]
             }
           }
         },
@@ -8649,6 +9279,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Une kermesse"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-ecole-kermesse.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-ecole-reunion-parents.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-ecole-competition-natation.webp"
+                }
+              ]
             }
           }
         }
@@ -8754,11 +9402,12 @@
           " scolaire jeudi prochain avec le prof d'histoire géo ? Il faut 2",
           " parents. Volontiers. Vous allez faire quoi ? On va au Musée",
           " d'histoire naturelle voir l'exposition sur les dinosaures."
-        ]
+        ],
+        "image": "/lib/images/tcf/co/scenes/grammaire/a2-071-preparer-une-sortie-scolaire.webp"
       },
       "questions": [
         {
-          "enonce": "Que les élèves vont-ils voir au musée ?",
+          "enonce": "Que vont voir les élèves au musée ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -8781,6 +9430,51 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Une exposition sur les dinosaures"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-expo-squelette.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/co306-musee-dessine.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-expo-auto.webp"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "enonce": "Combien de parents faut-il pour accompagner la sortie scolaire ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Deux",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Un"
+            },
+            {
+              "id": "c",
+              "texte": "Trois"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Deux"
             }
           }
         }
@@ -9144,6 +9838,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Elle regarde des séries"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/co306-regarder-film-television-dessine.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-sport-au-salon.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-jouer-piano-salon.webp"
+                }
+              ]
             }
           }
         },
@@ -9171,6 +9883,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Une heure"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/duree-hm-0100.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/duree-hm-0010.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/duree-hm-0200.webp"
+                }
+              ]
             }
           }
         },
@@ -9755,6 +10485,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Midi"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/co834-horloge-1200-dessinee.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/co834-horloge-1300-dessinee.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/co834-horloge-1900-dessinee.webp"
+                }
+              ]
             }
           }
         }
@@ -9827,6 +10575,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Un problème d’ordinateur"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-panne-ordinateur.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/co57-panne-voiture.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-robinet-sans-eau.webp"
+                }
+              ]
             }
           }
         },
@@ -9969,29 +10735,29 @@
       },
       "questions": [
         {
-          "enonce": "Comment l’intervenant s’appelle-t-il ?",
+          "enonce": "Quelle est la spécialité de l’intervenant ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
           "choix": [
             {
               "id": "a",
-              "texte": "Philippe Hugon",
+              "texte": "Les outils informatiques",
               "correct": true
             },
             {
               "id": "b",
-              "texte": "Pierre Martin"
+              "texte": "La comptabilité"
             },
             {
               "id": "c",
-              "texte": "Paul Dupré"
+              "texte": "La gestion des stocks"
             }
           ],
           "formes": {
             "lignes": {
               "nb_lignes": 1,
-              "reponse_modele": "Philippe Hugon"
+              "reponse_modele": "Les outils informatiques"
             }
           }
         },
@@ -10019,6 +10785,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Organiser les fichiers"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-classer-fichiers-ordinateur.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-reparer-telephones.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-nettoyer-les-bureaux.webp"
+                }
+              ]
             }
           }
         },
@@ -10205,6 +10989,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "En équipe"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-travailler-en-equipe.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-travailler-seul-bureau.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-teletravail-en-visio.webp"
+                }
+              ]
             }
           }
         },
@@ -11223,6 +12025,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Pour partir à la montagne"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-vetements-chauds-montagne.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-partir-a-la-plage.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-bureau-climatise.webp"
+                }
+              ]
             }
           }
         },
@@ -11340,6 +12160,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Deux"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-tables-deux.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-tables-quatre.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-tables-six.webp"
+                }
+              ]
             }
           }
         },
@@ -11721,6 +12559,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Deux"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-entrees-deux.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-entrees-trois.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-entrees-quatre.webp"
+                }
+              ]
             }
           }
         },
@@ -12338,6 +13194,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Huit"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-tables-huit.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-tables-six.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-tables-dix.webp"
+                }
+              ]
             }
           }
         }
@@ -12599,6 +13473,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Deux"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/co306-croissants-dessine.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-quatre-croissants.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-six-croissants.webp"
+                }
+              ]
             }
           }
         },
@@ -12883,6 +13775,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Deux"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-deux-baguettes.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/co306-baguette-dessine.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-trois-baguettes.webp"
+                }
+              ]
             }
           }
         }
@@ -13287,7 +14197,7 @@
           }
         },
         {
-          "enonce": "Que le médecin lui conseille-t-il d’abord ?",
+          "enonce": "Que conseille d’abord le médecin ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -13310,6 +14220,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Rester à la maison"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-rester-a-la-maison.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-arriver-au-travail.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-partir-en-voyage.webp"
+                }
+              ]
             }
           }
         }
@@ -13708,6 +14636,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Pour les dents"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/co834-dentiste-dessine.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-examen-de-la-vue.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-consultation-du-dos.webp"
+                }
+              ]
             }
           }
         }
@@ -14203,6 +15149,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Un comprimé"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-un-comprime.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-deux-comprimes.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-trois-comprimes.webp"
+                }
+              ]
             }
           }
         },
@@ -14628,6 +15592,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Des pastilles contre la toux"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-pastilles-contre-toux.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/co834-savon-dessine.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp"
+                }
+              ]
             }
           }
         }
@@ -14693,6 +15675,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Une brûlure"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-brulure.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-coupure.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-fracture.webp"
+                }
+              ]
             }
           }
         },
@@ -14880,6 +15880,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Une cuillère"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-sirop-une-cuillere.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-sirop-deux-cuilleres.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-sirop-trois-cuilleres.webp"
+                }
+              ]
             }
           }
         },
@@ -14980,6 +15998,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "À la place de la Mairie"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-place-de-la-mairie.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-place-de-la-gare.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-place-du-marche.webp"
+                }
+              ]
             }
           }
         },
@@ -15061,6 +16097,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Au distributeur automatique"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/qcm-hist1-distributeur-tickets.png",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/qcm-a1-kiosque-journaux.png"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/qcm-hist1-office-tourisme.png"
+                }
+              ]
             }
           }
         },
@@ -15115,6 +16169,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "En face de la gare"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/qcm-hist1-metro-face-gare.png",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-metro-derriere-mairie.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-metro-a-cote-poste.webp"
+                }
+              ]
             }
           }
         }
@@ -15327,6 +16399,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Par SMS"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-paiement-par-sms.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/co834-cheque-dessine.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-paiement-en-especes.webp"
+                }
+              ]
             }
           }
         },
@@ -15474,6 +16564,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Un vélo ou une trottinette électrique"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-velo-et-trottinette.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-bus-et-metro.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-voiture-et-moto.webp"
+                }
+              ]
             }
           }
         }
@@ -15799,6 +16907,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "En face du commissariat"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/qcm-hist1-metro-face-commissariat.png",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-metro-derriere-mairie.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-metro-a-cote-parc.webp"
+                }
+              ]
             }
           }
         },
@@ -16008,6 +17134,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Deux heures"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/duree-hm-0200.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/duree-hm-0500.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/duree-hm-1000.webp"
+                }
+              ]
             }
           }
         },
@@ -16179,7 +17323,8 @@
           " accident et le clignotant ne marche plus. D'accord, madame. Je",
           " vais regarder et vérifier l’état général du véhicule. Je vous",
           " appelle dans la journée pour la réparation."
-        ]
+        ],
+        "image": "/lib/images/tcf/co/scenes/grammaire/a2-013-chez-le-garagiste.webp"
       },
       "questions": [
         {
@@ -16206,6 +17351,69 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Le clignotant"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-voiture-clignotant.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-voiture-klaxon.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-voiture-radio.webp"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "enonce": "Comment le garagiste va-t-il informer sa cliente au sujet de la réparation ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Par téléphone",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Par courrier"
+            },
+            {
+              "id": "c",
+              "texte": "Par courriel"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Par téléphone"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-telephone-fixe.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/communication-lettre.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/communication-courriel.webp"
+                }
+              ]
             }
           }
         }
@@ -16605,6 +17813,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Côté fenêtre"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-train-place-fenetre.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-train-place-couloir.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-train-place-porte.webp"
+                }
+              ]
             }
           }
         }
@@ -16830,6 +18056,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Côté fenêtre"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-train-place-fenetre.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-train-place-couloir.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-train-place-porte.webp"
+                }
+              ]
             }
           }
         },
@@ -16922,6 +18166,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Le TGV"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/qcm-20261120-train-tgv.png",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-partir-en-covoiturage.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-avion-embarquement.webp"
+                }
+              ]
             }
           }
         }
@@ -17094,6 +18356,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Côté hublot"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-avion-place-hublot.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-avion-place-couloir.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-avion-place-milieu.webp"
+                }
+              ]
             }
           }
         },
@@ -17637,6 +18917,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Deux"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-deux-valises.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-valise.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-trois-valises.webp"
+                }
+              ]
             }
           }
         },
@@ -17664,6 +18962,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Deux heures"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/duree-hm-0200.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/duree-hm-0100.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/duree-hm-0300.webp"
+                }
+              ]
             }
           }
         }
@@ -17883,29 +19199,29 @@
           }
         },
         {
-          "enonce": "À quel nom réservent-ils ?",
+          "enonce": "Quel hébergement les clients demandent-ils ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
           "choix": [
             {
               "id": "a",
-              "texte": "Nocella",
+              "texte": "Un bungalow pour quatre",
               "correct": true
             },
             {
               "id": "b",
-              "texte": "Martin"
+              "texte": "Une chambre double"
             },
             {
               "id": "c",
-              "texte": "Dubard"
+              "texte": "Un emplacement pour une tente"
             }
           ],
           "formes": {
             "lignes": {
               "nb_lignes": 1,
-              "reponse_modele": "Nocella"
+              "reponse_modele": "Un bungalow pour quatre"
             }
           }
         }
@@ -18210,6 +19526,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Le camping"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/co/bg/camping.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-croisiere-paquebot.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/co/bg/hotel.webp"
+                }
+              ]
             }
           }
         },
@@ -18991,6 +20325,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Beau et chaud"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-paris-chaud.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-paris-pluvieux.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-paris-venteux.webp"
+                }
+              ]
             }
           }
         },
@@ -19377,6 +20729,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Deux heures"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/duree-hm-0200.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/duree-hm-0100.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/duree-hm-0300.webp"
+                }
+              ]
             }
           }
         },
@@ -19572,6 +20942,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Dans la nature"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-sport-sur-sentier.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-sport-piscine-municipale.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-sport-stade-couvert.webp"
+                }
+              ]
             }
           }
         },
@@ -19599,6 +20987,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Une initiation à la zumba"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-cours-de-danse-fitness.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/catalogue/actions/nager-a-la-piscine.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/co306-escalade-dessine.webp"
+                }
+              ]
             }
           }
         }
@@ -19991,6 +21397,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Le château d’Arnajon"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-chateau-arnajon.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-theatre-de-ville.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/qcm-hist1-parc-zoologique.png"
+                }
+              ]
             }
           }
         },
@@ -20650,6 +22074,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Une visite guidée"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-visite-guidee-ville.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-visite-en-sous-marin.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-visite-en-helicoptere.webp"
+                }
+              ]
             }
           }
         },
@@ -20871,6 +22313,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Le rayon multimédia"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/qcm-20261120-rayon-multimedia.png",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/co/bg/magasin-chaussures.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-rayon-des-meubles.webp"
+                }
+              ]
             }
           }
         },
@@ -20986,6 +22446,33 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Un remboursement"
+            }
+          }
+        },
+        {
+          "enonce": "Quel document le vendeur demande-t-il à la cliente ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Un ticket de caisse",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Une carte d’identité"
+            },
+            {
+              "id": "c",
+              "texte": "Une carte bancaire"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Un ticket de caisse"
             }
           }
         }
@@ -21385,6 +22872,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Un accusé de réception"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-accuse-reception-lettre.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-carnet-de-timbres.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-changement-adresse.webp"
+                }
+              ]
             }
           }
         }
@@ -21524,6 +23029,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "À mettre de l’argent de côté"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-epargner-pieces.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-payer-dans-un-magasin.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-deposer-lettre-boite-postale.webp"
+                }
+              ]
             }
           }
         }
@@ -21576,7 +23099,7 @@
       },
       "questions": [
         {
-          "enonce": "Comment la personne suit-elle surtout l’actualité ?",
+          "enonce": "Comment la personne qui regarde peu la télévision suit-elle l’actualité ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -21603,7 +23126,7 @@
           }
         },
         {
-          "enonce": "Quelle chaîne la personne regarde-t-elle habituellement à 19 h 45 ?",
+          "enonce": "Sur quelle chaîne passe le journal de 19 h 45 mentionné dans le dialogue ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -21876,7 +23399,7 @@
       },
       "questions": [
         {
-          "enonce": "Que les auteurs de l’étude ont-ils analysé ?",
+          "enonce": "Qu’ont analysé les auteurs de l’étude ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -22002,6 +23525,33 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "La mairie"
+            }
+          }
+        },
+        {
+          "enonce": "Pourquoi Pedro accepte-t-il finalement d’aller au bal ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Il apprend que l’invitation n’est pas nécessaire",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "La mairie lui propose de l’emmener"
+            },
+            {
+              "id": "c",
+              "texte": "Le bal est reporté à un autre jour"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Il apprend que l’invitation n’est pas nécessaire"
             }
           }
         }
@@ -22309,6 +23859,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Les garder dans l’appartement"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-chaussures-gardees-appartement.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-chaussures-posees-sur-table.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-chaussures-laissees-rue.webp"
+                }
+              ]
             }
           }
         }
@@ -22432,6 +24000,33 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Un pseudo et un mot de passe"
+            }
+          }
+        },
+        {
+          "enonce": "Quelle danse est proposée le soir même dans l’onglet des sorties ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "La salsa",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Le tango"
+            },
+            {
+              "id": "c",
+              "texte": "La valse"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "La salsa"
             }
           }
         }
@@ -22966,6 +24561,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Des vêtements, des chaussures et des livres"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-vetements-chaussures-livres.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-livres-lampes-assiettes.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-chaussures-rideaux-casseroles.webp"
+                }
+              ]
             }
           }
         }
@@ -24022,6 +25635,51 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Un petit texte de présentation"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/communication-lettre.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-copie-carte-identite.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/co834-appareil-photo-dessine.webp"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "enonce": "Quel est le thème du concours de photo ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "La vie en ville",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Les vacances à la mer"
+            },
+            {
+              "id": "c",
+              "texte": "Les sports d’hiver"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "La vie en ville"
             }
           }
         }
@@ -24257,7 +25915,7 @@
       },
       "questions": [
         {
-          "enonce": "Que Benjamin demande-t-il à Clément d’apporter ?",
+          "enonce": "Qu’est-ce que Benjamin demande à Clément d’apporter ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -24368,6 +26026,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Un cahier et un crayon"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-cahier-crayon.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-ordinateur-souris.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-appareil-photo-et-carte.webp"
+                }
+              ]
             }
           }
         }
@@ -24764,6 +26440,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Des maillots et des serviettes"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-maillots-serviettes.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-gants-bonnets.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-lampes-bottes.webp"
+                }
+              ]
             }
           }
         }
@@ -25289,7 +26983,8 @@
           " la douleur et la fièvre. Prenez aussi cet antibiotique. Vous fumez",
           " toujours ? Oui, un peu. Il faut que vous fassiez attention,",
           " monsieur. Pour guérir rapidement, arrêtez la cigarette."
-        ]
+        ],
+        "image": "/lib/images/tcf/co/scenes/grammaire/a2-120-rendez-vous-medical.webp"
       },
       "questions": [
         {
@@ -25316,6 +27011,33 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Une bronchite"
+            }
+          }
+        },
+        {
+          "enonce": "Quelle habitude le médecin demande-t-il à M. Abry d’arrêter ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Fumer",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Boire du café"
+            },
+            {
+              "id": "c",
+              "texte": "Faire du sport"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Fumer"
             }
           }
         }
@@ -25389,6 +27111,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Le pédiatre"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/co306-cabinet-pediatrie-dessine.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/co834-dentiste-dessine.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-examen-de-la-vue.webp"
+                }
+              ]
             }
           }
         }
@@ -25494,6 +27234,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Courir"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-sport-sur-sentier.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-natation-lac.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-tournoi-sportif.webp"
+                }
+              ]
             }
           }
         }
@@ -25547,7 +27305,7 @@
       },
       "questions": [
         {
-          "enonce": "Quel sujet les deux personnes discutent-elles ?",
+          "enonce": "De quoi les deux personnes parlent-elles ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -25916,6 +27674,51 @@
               "reponse_modele": "Elle a une intolérance alimentaire"
             }
           }
+        },
+        {
+          "enonce": "Quel aliment donne mal au ventre à Solène ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Du lait",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "De l’eau"
+            },
+            {
+              "id": "c",
+              "texte": "Du jus d’orange"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Du lait"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/co834-bouteille-lait-dessinee.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/co834-bouteille-eau-dessinee.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/co834-jus-orange-dessine.webp"
+                }
+              ]
+            }
+          }
         }
       ]
     },
@@ -26017,6 +27820,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Vivre dans un écoquartier"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-quartier-durable.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-logements-autoroute.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-logements-garage-dessous.webp"
+                }
+              ]
             }
           }
         }
@@ -26554,6 +28375,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Avec le maquillage"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-deodorants-cosmetiques.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-deodorants-pharmacie.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-deodorants-serviettes.webp"
+                }
+              ]
             }
           }
         }
@@ -26626,6 +28465,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Un soin pour le visage"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-soin-du-visage.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-equipement-de-sport.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-parfum.webp"
+                }
+              ]
             }
           }
         }
@@ -27164,7 +29021,7 @@
       },
       "questions": [
         {
-          "enonce": "Quelle démarche la personne demande-t-elle de l’aider à faire ?",
+          "enonce": "Pour quelle démarche la personne demande-t-elle de l’aide ?",
           "type_reponse": "qcm_texte",
           "points": 1,
           "melanger": true,
@@ -27280,6 +29137,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Maître-nageur"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-surveillance-bassin.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-serveur.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-bibliothecaire-rayon-homme.webp"
+                }
+              ]
             }
           }
         }
@@ -27800,7 +29675,7 @@
           " accueillant, patient et organisé. Avec Noël qui arrive, il y a",
           " beaucoup d'offres. C'est une très bonne idée."
         ],
-        "image": "/lib/images/tcf/co/scenes/grammaire/a2-176-conversation-autour-du-travail.webp"
+        "image": "/lib/images/tcf/co/scenes/reprises/dialogue-b1-travail-invitation-deux-interlocuteurs.png"
       },
       "questions": [
         {
@@ -27845,6 +29720,33 @@
                   "image": "/lib/images/tcf/qcm-audit/vocab-cuisinier.webp"
                 }
               ]
+            }
+          }
+        },
+        {
+          "enonce": "Quelles qualités sont citées chez Stéphane ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Il est accueillant, patient et organisé",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Il est rapide, créatif et autonome"
+            },
+            {
+              "id": "c",
+              "texte": "Il est discret, prudent et réservé"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Il est accueillant, patient et organisé"
             }
           }
         }
@@ -27915,6 +29817,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Le contact avec les clients"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-emploi-contact-clients.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-emploi-ranger-reserve.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-emploi-organiser-livraisons.webp"
+                }
+              ]
             }
           }
         }
@@ -28061,6 +29981,24 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Elle se présentera"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-entretien-se-presenter.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-entretien-visiter-locaux.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-entretien-signer-contrat.webp"
+                }
+              ]
             }
           }
         },
@@ -28284,7 +30222,8 @@
           " Parlez-moi de vos qualités et de vos défauts. Je suis organisée et",
           " j'ai l'esprit d'équipe. Pour mes défauts, je dirais que je suis",
           " parfois trop enthousiaste."
-        ]
+        ],
+        "image": "/lib/images/tcf/co/scenes/grammaire/a2-185-entretien-professionnel.webp"
       },
       "questions": [
         {
@@ -28311,6 +30250,51 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Accueillir et conseiller les clients"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/vocab-vendeuse.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-preparer-journaux.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-organiser-transports.webp"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "enonce": "Quelle autre qualité Madame Durand cite-t-elle en plus de son sens de l’organisation ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "L’esprit d’équipe",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "La ponctualité"
+            },
+            {
+              "id": "c",
+              "texte": "La discrétion"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "L’esprit d’équipe"
             }
           }
         }
@@ -28555,6 +30539,51 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Une chemise, un pantalon droit et des chaussures de ville"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-tenue-chemise-ville.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-tenue-short-sandales.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/grammaire-tenue-survetement-baskets.webp"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "enonce": "Quand Adrien commence-t-il son nouveau poste ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Demain",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Ce soir"
+            },
+            {
+              "id": "c",
+              "texte": "La semaine prochaine"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Demain"
             }
           }
         }

@@ -1,4 +1,5 @@
 import type { MathItem } from '@/math/types'
+import { LogistiqueImageFields, type LogistiquePhotoChoice } from './LogistiqueImageFields'
 
 /**
  * Éditeur libre générique : consigne + énoncé / réponse / choix pour chaque item.
@@ -7,11 +8,15 @@ import type { MathItem } from '@/math/types'
 export function GenericLibreEditor({
   instruction,
   items,
+  editableCalculation,
+  logistiquePhotos,
   onChangeInstruction,
   onChangeItems,
 }: {
   instruction: string
   items: MathItem[]
+  editableCalculation?: boolean
+  logistiquePhotos?: { defaultModule: string; byModule: ReadonlyMap<string, readonly LogistiquePhotoChoice[]> }
   onChangeInstruction: (value: string) => void
   onChangeItems: (items: MathItem[]) => void
 }) {
@@ -45,6 +50,7 @@ export function GenericLibreEditor({
                   <input
                     className="libre-line-input"
                     type="text"
+                    readOnly={Boolean(item.logistiqueGaps)}
                     value={item.prompt ?? item.left ?? ''}
                     onChange={(event) =>
                       patchItem(index, {
@@ -59,6 +65,7 @@ export function GenericLibreEditor({
                   <input
                     className="libre-line-input"
                     type="text"
+                    readOnly={Boolean(item.logistiqueGaps)}
                     value={item.answer ?? ''}
                     onChange={(event) => {
                     const answer = event.target.value
@@ -70,6 +77,14 @@ export function GenericLibreEditor({
                   />
                 </label>
               </div>
+              {editableCalculation && (
+                <label className="libre-field is-line">
+                  <span>Calcul du corrigé</span>
+                  <textarea className="libre-line-input is-textarea" rows={2}
+                    value={item.calcAnswer ?? ''}
+                    onChange={(event) => patchItem(index, { calcAnswer: event.target.value })} />
+                </label>
+              )}
               {item.options && item.options.length > 0 ? (
                 <div className="libre-options">
                   <b>Choix</b>
@@ -90,6 +105,10 @@ export function GenericLibreEditor({
                   ))}
                 </div>
               ) : null}
+              {logistiquePhotos && <LogistiqueImageFields
+                photos={logistiquePhotos.byModule.get(item.logistiqueSource?.module ?? logistiquePhotos.defaultModule) ?? []}
+                image={item.logistiqueImage}
+                onChange={(logistiqueImage) => patchItem(index, { logistiqueImage })} />}
             </div>
           </li>
         ))}

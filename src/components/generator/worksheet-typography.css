@@ -42,3 +42,70 @@
 .measured-diagram:not(.has-positioned-measures) > .measured-diagram-shape { max-height: 35mm; }
 
 .positioned-measures-plot { position: relative; width: 100%; }
+.logistique-theory-wrap {
+  display: flow-root;
+  width: 100%;
+  break-inside: avoid;
+}
+
+.logistique-theory-wrap > .exercise-item.layout-theory {
+  display: block !important;
+}
+
+.logistique-theory-wrap > .exercise-item.layout-theory:first-child {
+  float: right;
+  width: 38%;
+  max-width: 55mm;
+  margin: 0 0 1mm 3mm;
+}
+
+.is-logistique .theory-grid .grammar-support-image {
+  width: fit-content;
+  max-width: 100%;
+  margin: 1mm auto;
+  padding: 1.5mm;
+  border: 1px solid #a8a29e;
+  border-radius: 2mm;
+}
+
+.is-logistique .logistique-theory-wrap .grammar-support-image {
+  width: 100%;
+  margin: 0;
+}
+
+.logistique-theory-wrap .grammar-support-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 36mm;
+}
+
+.a5-half .logistique-theory-wrap .grammar-support-image img {
+  max-height: 29mm;
+}
+
+.a5-half.is-logistique .theory-table {
+  table-layout: fixed;
+  font-size: calc(var(--theory-size) * .9);
+  overflow-wrap: anywhere;
+}
+
+.a5-half.is-logistique .theory-table :is(th, td) {
+  padding: 3px 6px;
+}
+
+.a5-half.is-logistique .problem-block .draft-pad {
+  --grid-rows: 4;
+}
+
+.is-logistique .theory-grid .grammar-support-image figcaption {
+  margin-top: 1mm;
+  font-size: .8em;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.a4-frame .logistique-theory-wrap > :first-child > .tcf-page-chip {
+  top: auto;
+  bottom: 0;
+}

@@ -1,15 +1,20 @@
 import assert from 'node:assert/strict'
 import { createRequire } from 'node:module'
 import { test } from 'node:test'
+import { dossierMaths } from '../../scripts/logistique-dossier-maths.mjs'
 
 const require = createRequire(import.meta.url)
 const fixture = require('./fixture.json')
+const palletPhoto = require('../../docs/logistique/preparation/306-v004.json').visuals[0]
 const { load, root } = require('../../scripts/gattegno-loader.cjs')
 const catalog = load(root + '/src/logistique/catalog.ts')
-const { generateLogistique, logistiqueDocumentTitle, logistiqueHasSummary } = load(root + '/src/logistique/generate.ts')
+const { generateLogistique, logistiqueDocumentTitle, logistiqueHasSummary, logistiqueQuestionItems, logistiqueQuestionPhotos } = load(root + '/src/logistique/generate.ts')
+const { availableLogistiqueQuestions, retainLogistiqueQuestions } = load(root + '/src/logistique/libre.ts')
 const { freezeLogistiquePages, validLogistiquePages } = load(root + '/src/logistique/recipe.ts')
 const { currentLogistiquePublication, logistiquePublications } = load(root + '/src/logistique/approved-banks.ts')
 const { splitLogistiquePages } = load(root + '/src/logistique/pagination.ts')
+const { blockItemsForConfig } = load(root + '/src/components/generator/sheet-items.ts')
+const { pageForA5Half } = load(root + '/src/components/generator/sheet-format.ts')
 
 function config(diploma, module, kind) {
   const tag = diploma.toLowerCase()
@@ -66,6 +71,23 @@ test('les 858 types des modules CFC et AFP disposent de contenu à générer', (
   }
 })
 
+test('les glossaires de manutention incluent leurs nouveaux termes dans les deux diplômes', () => {
+  const modules = [['306', 'Box-palette', 30], ['407', 'Diagramme de capacité', 22], ['409', 'AutoStore', 27], ['410', 'Palonnier', 23]]
+  for (const diploma of ['CFC', 'AFP']) {
+    for (const [code, term, count] of modules) {
+      const page = config(diploma, code, 'glossaire')
+      const blocks = generateLogistique(page, 7).items.map(({ theoryBlock }) => theoryBlock.text)
+      assert.equal(blocks.length, count)
+      assert(blocks.some((text) => text.startsWith(`{g}${term}{/g} — `)))
+      assert.equal(new Set(blocks.map((text) => text.split('{/g}')[0])).size, count)
+      const historical = { ...page, logistiqueBankRevision: 'logistique-theorie-306-v004' }
+      const before = generateLogistique(historical, 7).items.map(({ theoryBlock }) => theoryBlock.text)
+      assert.equal(before.length, 12)
+      assert(before.every((text) => blocks.includes(text)))
+    }
+  }
+})
+
 test('les résumés illustrés sont distincts du cours et figés dans la recette', () => {
   const publishedTheories = currentLogistiquePublication.units.filter((unit) => unit.kind === 'theorie' && unit.summaryBlocks)
   assert.equal(publishedTheories.length, 80)
@@ -88,7 +110,10 @@ test('les résumés illustrés sont distincts du cours et figés dans la recette
         const figures = images(version)
         assert(figures.length > images(previous).length, `${diploma} ${code}`)
         assert(figures.every((figure) => figure.src.endsWith('.webp') && figure.alt && figure.caption), `${diploma} ${code}`)
-        if (code !== '101') assert.deepEqual(textBlocks(version), textBlocks(previous), `${diploma} ${code}`)
+        if (code !== '101') {
+          const originalText = textBlocks(version).filter((block) => code !== '306' || block.text !== palletPhoto.prose)
+          assert.deepEqual(originalText, textBlocks(previous), `${diploma} ${code}`)
+        }
       }
       const historical = { ...full, logistiqueBankRevision: 'logistique-901-v001' }
       assert(!logistiqueHasSummary(full.exerciseType, historical.logistiqueBankRevision))
@@ -99,12 +124,29 @@ test('les résumés illustrés sont distincts du cours et figés dans la recette
   assert(!validLogistiquePages([{ ...config('AFP', '101', 'maths'), logistiqueTheoryView: 'resume' }]))
 })
 
+test('le 306 associe le nouvel encadré au passage des supports spéciaux dans les deux versions', () => {
+  for (const diploma of ['CFC', 'AFP']) {
+    for (const logistiqueTheoryView of ['complet', 'resume']) {
+      const page = { ...config(diploma, '306', 'theorie'), logistiqueTheoryView }
+      const blocks = generateLogistique(page, 7).items.map(({ theoryBlock }) => theoryBlock)
+      const index = blocks.findIndex((block) => block.src?.endsWith(palletPhoto.file))
+      assert(index > 0)
+      assert.equal(blocks[index - 1].text, logistiqueTheoryView === 'resume' ? palletPhoto.summaryAnchor : palletPhoto.anchor)
+      assert.equal(blocks[index + 1].text, palletPhoto.prose)
+      const saved = { ...page, logistiqueBankRevision: 'logistique-exercices-approvisionnement-complet-v005' }
+      assert(generateLogistique(saved, 7).items.every(({ theoryBlock }) => !theoryBlock.src?.endsWith(palletPhoto.file)))
+    }
+  }
+})
+
 test('les nouvelles publications conservent le tirage des recettes du thème 600', () => {
   const page = { ...config('AFP', '616', 'maths'), count: 6 }
   const historical = { ...page, logistiqueBankRevision: 'logistique-614-615-616-v001' }
   const previous = generateLogistique(historical, 20261127)
   assert(previous.items.length > 0)
-  assert.deepEqual(generateLogistique(page, 20261127), previous)
+  const beforeEnrichment = { ...page, logistiqueBankRevision: 'logistique-exercices-production-v005' }
+  assert.deepEqual(generateLogistique(beforeEnrichment, 20261127), previous)
+  assert.deepEqual(generateLogistique(freezeLogistiquePages([historical])[0], 20261127), previous)
   assert.deepEqual(generateLogistique({
     ...config('CFC', '901', 'maths'), logistiqueBankRevision: historical.logistiqueBankRevision,
   }, 20261127).items, [])
@@ -124,6 +166,99 @@ test('le tirage est déterministe et limité aux unités approuvées pour le dip
   }, 109).items, [], 'une révision sans banque ne produit pas d’exercice')
   assert.equal(generateLogistique({ ...maths, logistiqueBankRevision: 'logistique-theories-projets-v002' }, 109).bankQuestionCap, 2)
   assert.deepEqual(generateLogistique({ ...maths, domain: 'logistique-cfc' }, 109, fixture.units).items, [])
+})
+
+test('l’évaluation combine des modules de plusieurs thèmes et applique chaque quota séparément', () => {
+  for (const diploma of ['CFC', 'AFP']) {
+    const base = { ...config(diploma, '105', 'maths'), count: 8 }
+    const page = { ...base, logistiqueSelection: { modules: ['105', '308'], quantities: { '105': 3, '308': 1 } } }
+    const draw = generateLogistique(page, 32, [...fixture.units, ...fixture.units])
+    assert.deepEqual(draw.items.map(({ logistiqueSource }) => logistiqueSource.module), ['105', '308'])
+    assert.equal(draw.bankQuestionCap, 2)
+    assert.match(draw.title, /105 et 308/)
+    const pooled = { ...page, logistiqueSelection: { modules: ['105', '308'] } }
+    assert.deepEqual(generateLogistique(pooled, 32, fixture.units), generateLogistique(pooled, 32, fixture.units))
+    assert.equal(generateLogistique({ ...page, logistiqueSelection: { modules: [] } }, 32, fixture.units).items.length, 0)
+    assert.equal(validLogistiquePages(freezeLogistiquePages([page])), true)
+  }
+  const base = config('AFP', '105', 'maths')
+  for (const selection of [{ modules: ['501'] }, { modules: ['105', '105'] },
+    { modules: ['105'], quantities: { '308': 2 } }, { modules: ['105'], quantities: { '105': -1 } }]) {
+    const page = { ...base, logistiqueSelection: selection }
+    assert.equal(generateLogistique(page, 32, fixture.units).items.length, 0)
+    assert.equal(validLogistiquePages([page]), false)
+  }
+})
+
+test('le choix en Libre écarte les doublons et conserve les questions retouchées lors d’un nouveau tirage', () => {
+  const page = { ...config('AFP', '105', 'maths'), count: 4, logistiqueSelection: { modules: ['105', '308'] } }
+  const type = catalog.logistiqueType(page.exerciseType)
+  const original = generateLogistique(page, 7).items
+  const candidates = logistiqueQuestionItems(type, ['105', '308'])
+  const newQuestion = availableLogistiqueQuestions(candidates, original)
+    .find((item) => item.logistiqueSource.module === '308')
+  assert(newQuestion)
+  assert(!availableLogistiqueQuestions(candidates, [{ prompt: newQuestion.prompt }]).includes(newQuestion))
+  assert.deepEqual(logistiqueQuestionItems(type, ['501']), [])
+
+  const retained = { ...newQuestion, calcAnswer: 'Calcul relu par le formateur', logistiqueRetained: true }
+  const editable = { ...page, libreItems: [...original, retained], libreInstruction: 'Présentez le calcul.' }
+  for (const evalMode of [true, false]) {
+    const draw = retainLogistiqueQuestions(editable, 41, evalMode)
+    assert.equal(draw.libreItems.length, 5)
+    assert.equal(draw.libreItems.at(-1), retained)
+    assert.equal(draw.libreInstruction, editable.libreInstruction)
+    assert.equal(new Set(draw.libreItems.map((item) => item.logistiqueSource.id)).size, 5)
+    if (!evalMode) assert(draw.libreItems.slice(0, -1).every((item) => item.logistiqueSource.module === '105'))
+  }
+})
+
+test('les deux présentations des textes à trous gardent le même tirage et la même correction', () => {
+  for (const diploma of ['CFC', 'AFP']) {
+    for (const code of ['101', '105', '306', '308', '409']) {
+      const page = { ...config(diploma, code, 'verification'), count: 4 }
+      const older = { ...page, logistiqueBankRevision: 'logistique-glossaires-supports-manutention-v002' }
+      assert.deepEqual(generateLogistique(page, 27), generateLogistique(older, 27))
+      const without = generateLogistique({ ...page, logistiqueGapMode: 'sans-liste' }, 27)
+      const withWords = { ...page, logistiqueGapMode: 'avec-liste' }
+      const withList = generateLogistique(withWords, 27)
+      assert.equal(withList.bankQuestionCap, 3)
+      const keys = (result) => result.items.map(({ logistiqueSource, prompt, logistiqueGaps }) =>
+        [logistiqueSource.id, prompt, logistiqueGaps.answers])
+      assert.deepEqual(keys(withList), keys(without))
+      assert.deepEqual(withList, generateLogistique(freezeLogistiquePages([withWords])[0], 27))
+      assert(without.items.every((item) => item.logistiqueGaps.words === undefined))
+      for (const item of withList.items) {
+        const { answers, words } = item.logistiqueGaps
+        assert.equal(item.prompt.match(/___/g).length, answers.length)
+        assert(answers.every((word) => words.includes(word)))
+        assert.equal(new Set(words).size, words.length)
+      }
+      const theory = currentLogistiquePublication.units.find((unit) => unit.module === code && unit.kind === 'theorie')
+      for (const unit of currentLogistiquePublication.units.filter((entry) => entry.module === code && entry.gaps)) {
+        assert(theory.blocks.some(({ kind, text }) => kind === 'heading' && text === unit.theorySection), unit.id)
+      }
+    }
+  }
+  assert(!validLogistiquePages([{ ...config('AFP', '105', 'maths'), logistiqueGapMode: 'sans-liste' }]))
+})
+
+test('la photo d’une question reste attachée à son item et le catalogue refuse une source incompatible', () => {
+  const page = config('AFP', '105', 'maths')
+  const type = catalog.logistiqueType(page.exerciseType)
+  const photos = logistiqueQuestionPhotos(type, ['105']).get('105')
+  assert(photos.length > 1)
+  assert(photos.every(({ src }) => catalog.logistiquePhotoPath(src, 'AFP')))
+  const item = generateLogistique(page, 11).items[0]
+  const image = { ...photos[0], caption: 'Photo de contrôle', width: 140, placement: 'droite', visibility: 'answers' }
+  const attached = { ...page, libreItems: [{ ...item, logistiqueImage: image }] }
+  assert(validLogistiquePages(freezeLogistiquePages([attached])))
+  for (const half of ['left', 'right']) {
+    assert.deepEqual(pageForA5Half(attached, half).libreItems, attached.libreItems)
+  }
+  for (const src of ['https://example.com/photo.webp', 'blob:temporary', '/assets/logistique/900/901/cfc/log-901-photo-v001.webp']) {
+    assert(!validLogistiquePages([{ ...page, libreItems: [{ ...item, logistiqueImage: { ...image, src } }] }]))
+  }
 })
 
 test('les banques enrichies augmentent la capacité par diplôme et préservent les tirages enregistrés', () => {
@@ -180,14 +315,14 @@ test('les problèmes ajoutés et relus se rattachent à une section de leur cour
   assert(generateLogistique(frozen, 7).items.some(({ prompt }) => prompt.includes('CHF 58 par veste')))
 })
 
-test('les thèmes dont les dossiers sont publiés atteignent les cibles de banque pour chaque diplôme', () => {
+test('les neuf thèmes atteignent les cibles de banque pour chacun des modules CFC et AFP', () => {
   const targets = { maths: 30, verification: 50, situation: 20 }
   const units = currentLogistiquePublication.units
   const activeThemes = new Set(units.flatMap(({ revision }) => revision.match(/^dossiers-(\d00)-v005$/)?.[1] ?? []))
   const sectionsByModule = new Map(units.filter(({ kind }) => kind === 'theorie').map((unit) => [
     unit.module, new Set(unit.blocks.filter(({ kind }) => kind === 'heading').map(({ text }) => text)),
   ]))
-  assert(activeThemes.has('400'))
+  assert.deepEqual([...activeThemes].sort(), ['100', '200', '300', '400', '500', '600', '700', '800', '900'])
   for (const module of new Set(units.map((unit) => unit.module))) {
     if (!activeThemes.has(module[0] + '00')) continue
     const additions = units.filter((unit) => unit.module === module && unit.revision.startsWith('dossiers-'))
@@ -201,6 +336,17 @@ test('les thèmes dont les dossiers sont publiés atteignent les cibles de banqu
     assert(bank.bankQuestionCap >= targets[type.kind], type.id)
     assert.equal(new Set(bank.items.map(({ prompt }) => prompt)).size, bank.items.length, type.id)
   }
+})
+
+test('les calculs des dossiers conservent les unités, les décimales et les références utilisées dans le cours', () => {
+  const [, redevance] = dossierMaths.tonneDistance('trajets', [312, 18, 0.025, 245, 22, 35])
+  assert.match(redevance[0], /0,025/)
+  assert.equal(redevance[1], 'CHF 140,4')
+  const copiedFormula = dossierMaths.spreadsheet('colis', [43, 59, 36, 62, 4, 9])[3]
+  assert.match(copiedFormula[0], /B2\*\$E\$1/)
+  assert.equal(copiedFormula[1], '=B3*$E$1, soit CHF 236')
+  const cycle = dossierMaths.cycle('pièces', [174, 12, 96, 5, 112, 40])
+  assert.deepEqual(cycle.map(([, answer]) => answer), ['7 jours', '36 pièces', '148 pièces', '-4 pièces', '12 pièces par jour'])
 })
 
 test('les titres et les recettes conservent les modules, le diplôme et la révision', () => {
@@ -236,4 +382,63 @@ test('les problèmes courts gardent chacun la place de leur grille et de la rép
   const block = { title: 'Exercice 1', items, exerciseIndex: 1, exerciseType: 'log-cfc-302-maths' }
   const pages = splitLogistiquePages({ blocks: [block], items })
   assert.deepEqual(pages.map((page) => page.items.length), [2, 2, 2])
+})
+
+test('le texte habille la photo sur la même page et un saut manuel reste prioritaire', () => {
+  const items = [
+    { kind: 'heading', text: 'Supports de charge' },
+    { kind: 'paragraph', text: 'Consigne de contrôle. '.repeat(54) },
+    { kind: 'heading', sub: true, text: 'Comparer les deux supports' },
+    { kind: 'image', src: '/assets/logistique/log-306-supports-photo-v004.webp', alt: 'Deux supports', caption: 'Palette et box-palette.' },
+    { kind: 'paragraph', text: 'Vérifiez le type de marchandise et le mode de prise avant de choisir le support de charge. '.repeat(3) },
+  ].map((theoryBlock) => ({ layout: 'theory', theoryBlock, answer: '' }))
+  const block = { title: 'Théorie', items, exerciseIndex: 1, exerciseType: 'log-afp-306-theorie' }
+  for (const a5 of [false, true]) {
+    const sheets = splitLogistiquePages({ items, blocks: [block] }, { a5 })
+    assert.deepEqual(sheets.flatMap((sheet) => sheet.items), items)
+    const wrapped = sheets.find(({ items: pageItems }) => pageItems.includes(items[3])).blocks[0]
+    assert.deepEqual(wrapped.logistiqueWrappedFigures.map((index) => wrapped.items.slice(index, index + 2)), [items.slice(3)])
+    assert(wrapped.items.includes(items[2]), 'Le titre reste avec la photo')
+  }
+
+  const withBreak = { ...block, tcfPageBreakAfter: [false, false, false, true] }
+  const sheets = splitLogistiquePages({ items, blocks: [withBreak] })
+  assert.equal(sheets.find(({ items: pageItems }) => pageItems.includes(items[3])).items.at(-1), items[3])
+  assert(sheets.every(({ blocks }) => blocks.every(({ logistiqueWrappedFigures }) => !logistiqueWrappedFigures?.length)))
+  assert.deepEqual(sheets.flatMap((sheet) => sheet.items), items)
+})
+
+test('les tableaux longs répètent leurs en-têtes en A5 et restent entiers dans les données de la fiche', () => {
+  const title = { kind: 'heading', text: 'Comparaison des supports' }
+  const table = { kind: 'table', headers: ['Support', 'Contrôle'], rows: Array.from(
+    { length: 12 }, (_, index) => [`Support ${index + 1}`, 'Vérifier le marquage du support et relever les défauts avant l’échange.'],
+  ) }
+  const prose = { kind: 'paragraph', text: 'Relever les écarts dans le registre.' }
+  const items = [title, table, prose].map((theoryBlock) => ({ layout: 'theory', theoryBlock, answer: '' }))
+  const block = { title: 'Théorie', instruction: 'Lire le tableau.', items, exerciseIndex: 1, exerciseType: 'log-afp-306-theorie' }
+  const sheet = { items, blocks: [{ ...block, tcfPageBreakAfter: [false, true] }] }
+  const a4 = splitLogistiquePages(sheet)
+  assert.deepEqual(a4.flatMap((page) => page.items), items)
+  assert(a4.every(({ blocks }) => blocks.every((entry) => !entry.logistiqueTheorySlices)))
+
+  const a5 = splitLogistiquePages(sheet, { a5: true }).map((page) => ({ ...page, configIndex: 0 }))
+  const slices = a5.flatMap(({ blocks }) => blocks.flatMap((entry) => entry.logistiqueTheorySlices))
+    .filter((part) => part.theoryBlock?.kind === 'table')
+  assert(slices.length > 1)
+  assert(slices.every((part) => part.sourceIndex === 1 && part.theoryBlock.headers === table.headers))
+  assert.deepEqual(slices.flatMap(({ theoryBlock }) => theoryBlock.rows), table.rows)
+  assert.deepEqual(slices.map(({ isLast }) => isLast), [...Array(slices.length - 1).fill(false), true])
+  assert.deepEqual(a5.at(-1).items, [items[2]], 'Le saut manuel vient après la dernière partie du tableau')
+  assert.deepEqual(blockItemsForConfig(a5, 0, 0), { items, instruction: block.instruction })
+})
+
+test('les longues listes A5 se poursuivent en gardant chaque entrée entière', () => {
+  const list = { kind: 'list', items: Array.from({ length: 12 }, (_, index) =>
+    `Consigne ${index + 1} pour reconnaître le pictogramme et lire l’étiquette avant de déplacer le lot.`) }
+  const item = { layout: 'theory', theoryBlock: list, answer: '' }
+  const block = { title: 'Théorie', items: [item], exerciseIndex: 1, exerciseType: 'log-afp-105-theorie' }
+  const pages = splitLogistiquePages({ blocks: [block], items: [item] }, { a5: true })
+  assert(pages.length > 1)
+  const fragments = pages.flatMap((page) => page.blocks[0].logistiqueTheorySlices)
+  assert.deepEqual(fragments.flatMap(({ theoryBlock }) => theoryBlock.items), list.items)
 })

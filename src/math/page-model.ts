@@ -4,6 +4,8 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
   return {
     logistiqueBankRevision: page.logistiqueBankRevision,
     logistiqueTheoryView: page.logistiqueTheoryView,
+    logistiqueSelection: page.logistiqueSelection,
+    logistiqueGapMode: page.logistiqueGapMode,
     topic: page.topic,
     exerciseType: page.exerciseType,
     difficulty: page.difficulty,
@@ -24,6 +26,7 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     phraseItems: page.phraseItems,
     phraseInstruction: page.phraseInstruction,
     problemDraftGrids: page.problemDraftGrids,
+    problemHelp: page.problemHelp,
     formulaireLetterGrid: page.formulaireLetterGrid,
     inlineBlankPx: page.inlineBlankPx,
     oralAnswerModes: page.oralAnswerModes,
@@ -56,6 +59,8 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     numberMin: page.numberMin,
     numberMax: page.numberMax,
     numberDecimals: page.numberDecimals,
+    numberDecimalPlaces: page.numberDecimalPlaces,
+    numberSecondDecimalPlaces: page.numberSecondDecimalPlaces,
     quadLibre: page.quadLibre,
     quadShapes: page.quadShapes,
     vocabRows: page.vocabRows,
@@ -108,7 +113,7 @@ export function pageBlocks(page: PageConfig): ExerciseBlock[] {
 }
 
 export function pageAsConfig(page: PageConfig, block: ExerciseBlock): PageConfig {
-  return { ...page, ...block, logistiqueBankRevision: block.logistiqueBankRevision, logistiqueTheoryView: block.logistiqueTheoryView, phraseCategories: block.phraseCategories, phraseImageLabels:block.phraseImageLabels, phraseImageShownCategories:block.phraseImageShownCategories, phraseSentenceType:block.phraseSentenceType, phraseVoice:block.phraseVoice, grammarCoLevel: block.grammarCoLevel, grammarCoAudioId: block.grammarCoAudioId,
+  return { ...page, ...block, logistiqueBankRevision: block.logistiqueBankRevision, logistiqueTheoryView: block.logistiqueTheoryView, logistiqueSelection: block.logistiqueSelection, logistiqueGapMode: block.logistiqueGapMode, phraseCategories: block.phraseCategories, phraseImageLabels:block.phraseImageLabels, phraseImageShownCategories:block.phraseImageShownCategories, phraseSentenceType:block.phraseSentenceType, phraseVoice:block.phraseVoice, grammarCoLevel: block.grammarCoLevel, grammarCoAudioId: block.grammarCoAudioId,
     grammarLevel:block.grammarLevel,grammarActivityId:block.grammarActivityId,grammarPresentation:block.grammarPresentation,
     grammarBankRevision:block.grammarBankRevision,grammarSnapshot:block.grammarSnapshot,grammarPreview:block.grammarPreview,
     grammarDocumentCount:block.grammarDocumentCount,grammarPageBreakAfterQuestionIds:block.grammarPageBreakAfterQuestionIds,extraBlocks:undefined }

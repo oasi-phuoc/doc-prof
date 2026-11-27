@@ -1,4 +1,4 @@
-import type { MathItem, WorksheetPage } from '@/math/types'
+import type { MathItem, WorksheetBlock, WorksheetPage } from '@/math/types'
 import type { TcfExercise } from '@/tcf/types'
 
 export type SheetBlockItems = {
@@ -16,7 +16,13 @@ export function blockItemsForConfig(
   configIndex: number,
   blockIndex: number,
 ): SheetBlockItems | null {
-  const parts: Array<{ offset: number; items: MathItem[]; instruction: string; continuation: boolean }> = []
+  const parts: Array<{
+    offset: number
+    items: MathItem[]
+    instruction: string
+    continuation: boolean
+    theorySlices: WorksheetBlock['logistiqueTheorySlices']
+  }> = []
   worksheets.forEach((sheet, index) => {
     if ((sheet.configIndex ?? index) !== configIndex) return
     const block =
@@ -28,6 +34,7 @@ export function blockItemsForConfig(
       items: block.items,
       instruction: block.instruction,
       continuation: Boolean(sheet.isContinuation) || (block.itemOffset ?? 0) > 0,
+      theorySlices: block.logistiqueTheorySlices,
     })
   })
   if (parts.length === 0) return null
@@ -54,7 +61,7 @@ export function blockItemsForConfig(
   for (const part of parts) {
     if (part.offset === 0 && part.instruction.trim()) instruction = part.instruction
     for (let i = 0; i < part.items.length; i++) {
-      items[part.offset + i] = part.items[i]!
+      items[part.theorySlices?.[i]?.sourceIndex ?? part.offset + i] = part.items[i]!
     }
   }
   return { items: items.filter((item) => item != null), instruction }

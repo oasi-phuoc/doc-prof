@@ -6,16 +6,66 @@ export type LogistiquePageLayout = {
   a5?: boolean
   hideChrome?: boolean
   fontScale?: number
+  evaluation?: boolean
 }
 
 // Espace imprimable après marges, pied de page et réserve de bas de page.
 const A4_CONTENT = 946
 const A4_HEADER = 287
-const A5_CONTENT = 695
+const A5_CONTENT = 665
 const A5_HEADER = 275
 
 function lineCount(text: string, width: number): number {
   return text.split('\n').reduce((sum, line) => sum + Math.max(1, Math.ceil(line.length / width)), 0)
+}
+
+type A5TheoryBlock = Extract<GrammarTheoryBlock, { kind: 'table' | 'list' }>
+type TheoryLayoutSlice = { item: MathItem; sourceIndex: number; theoryBlock?: A5TheoryBlock; isLast: boolean }
+
+function a5TheoryHeight(block: A5TheoryBlock, scale: number) {
+  if (block.kind === 'list') {
+    return 40 + block.items.reduce((sum, text) => sum + 8 +
+      27 * scale * lineCount(text.replace(/\{\/?g\}/g, ''), 47 / scale), 0)
+  }
+  const columns = Math.max(block.headers.length, ...block.rows.map((row) => row.length), 1)
+  const width = Math.max(1, 52 / scale / columns - 2)
+  const rows = block.colHeader !== false && block.headers.some(Boolean) ? [block.headers, ...block.rows] : block.rows
+  return 14 + rows.reduce((sum, row) => sum + 8 +
+    24 * scale * Math.max(1, ...row.map((cell) => lineCount(cell.replace(/\{\/?g\}/g, ''), width))), 0)
+}
+
+function splitA5Theory(block: A5TheoryBlock, maxHeight: number, scale: number): A5TheoryBlock[] {
+  const count = block.kind === 'table' ? block.rows.length : block.items.length
+  if (count < 2 || a5TheoryHeight(block, scale) <= maxHeight) return [block]
+  const segment = (start: number, end: number) => block.kind === 'table'
+    ? { ...block, rows: block.rows.slice(start, end) }
+    : { ...block, items: block.items.slice(start, end) }
+  const fragments: A5TheoryBlock[] = []
+  let start = 0
+  for (let end = 2; end <= count; end++) {
+    if (a5TheoryHeight(segment(start, end), scale) <= maxHeight) continue
+    fragments.push(segment(start, end - 1))
+    start = end - 1
+  }
+  fragments.push(segment(start, count))
+  return fragments
+}
+
+function wrappedFigureHeight(image: GrammarTheoryBlock, prose: GrammarTheoryBlock, a5: boolean, scale: number) {
+  if (image.kind !== 'image' || prose.kind !== 'paragraph') return undefined
+  if (!/-photo-v\d+\.webp$/i.test(image.src)) return undefined
+  const text = prose.text.replace(/\{\/?g\}/g, '')
+  if (text.length < 85 || (a5 && scale > 1.15)) return undefined
+  const width = (a5 ? 53 : 72) / scale
+  const figure = (a5 ? 132 : 155) + lineCount(image.caption, width * 0.45) * 19 * scale
+  const lineHeight = 26 * scale
+  const beside = Math.floor(figure / lineHeight)
+  const narrowWidth = width * 0.6
+  const below = Math.max(0, text.length - beside * narrowWidth)
+  const flow = below
+    ? beside + lineCount(text.slice(-below), width)
+    : lineCount(text, narrowWidth)
+  return 12 + Math.max(figure, Math.max(flow, lineCount(text, width)) * lineHeight)
 }
 
 function theoryHeight(block: GrammarTheoryBlock, width: number, scale: number): number {
@@ -55,15 +105,26 @@ function theoryHeight(block: GrammarTheoryBlock, width: number, scale: number): 
 
 function height(item: MathItem, a5: boolean, scale: number): number {
   const width = (a5 ? 53 : 72) / scale
+  if (a5 && (item.theoryBlock?.kind === 'table' || item.theoryBlock?.kind === 'list')) {
+    return a5TheoryHeight(item.theoryBlock, scale)
+  }
   if (item.theoryBlock) return theoryHeight(item.theoryBlock, width, scale)
+  const image = item.logistiqueImage
+  const captionColumns = image ? Math.max(8, (image.width - 12) / (7 * scale)) : 1
+  const imageHeight = image ? (a5 ? 99 : 136) + (image.caption ? lineCount(image.caption, captionColumns) * 17 * scale : 0) : 0
+  if (item.logistiqueGaps) {
+    const prompt = lineCount((item.prompt ?? '').replace(/_{3,}|_ _ _/g, '                 '), width) * 26 * scale
+    const words = item.logistiqueGaps.words
+    return imageHeight + 32 + prompt + (words?.length ? 16 + lineCount(words.join(' · '), width * 0.87) * 26 * scale : 0)
+  }
   const prompt = lineCount(item.prompt ?? '', width * 1.2) * 24 * scale
   const answer = lineCount(item.answer, width * 0.84) * 27 * scale
   if (item.calcAnswer) {
     // Même un énoncé court conserve la grille, le trait et leurs espacements.
     const minimum = (a5 ? 183 : 240) + (scale - 1) * 56
-    return Math.max(minimum, (a5 ? 145 : 174) + prompt + answer)
+    return imageHeight + Math.max(minimum, (a5 ? 145 : 174) + prompt + answer)
   }
-  return 48 + prompt + answer + (item.options?.length ?? 0) * 22 * scale
+  return imageHeight + 48 + prompt + answer + (item.options?.length ?? 0) * 22 * scale
 }
 
 /** Enchaîne les questions dans l’espace disponible et respecte les sauts manuels. */
@@ -86,33 +147,69 @@ export function splitLogistiquePages(
     blocks = []
     used = 0
   }
+  const a5ItemLimit = budget(0) - 56
   for (const [blockIndex, block] of page.blocks.entries()) {
+    const slices = block.items.flatMap<TheoryLayoutSlice>((item, sourceIndex) => {
+      const theory = item.theoryBlock
+      if (a5 && (theory?.kind === 'table' || theory?.kind === 'list')) {
+        const fragments = splitA5Theory(theory, a5ItemLimit, fontScale)
+        if (fragments.length > 1) {
+          return fragments.map((theoryBlock, index) => ({ item, sourceIndex, theoryBlock, isLast: index === fragments.length - 1 }))
+        }
+      }
+      return [{ item, sourceIndex, theoryBlock: undefined, isLast: true }]
+    })
+    const hasSlices = slices.length !== block.items.length
+    const breakAfter = ({ item, sourceIndex, isLast }: TheoryLayoutSlice) =>
+      isLast && (item.theoryPageBreakAfter || block.tcfPageBreakAfter?.[sourceIndex])
     let start = 0
     let overhead = block.items.some((item) => item.layout === 'theory') ? 16 : 84 * fontScale
     const append = (end: number) => {
+      const slice = slices.slice(start, end)
+      const offset = slice[0]?.sourceIndex ?? 0
       blocks.push({
         ...block,
         ...headingForSlice(block, start, block.items),
         sourceBlockIndex: blockIndex,
-        itemOffset: start,
-        items: block.items.slice(start, end),
-        problemDraftGrids: block.problemDraftGrids?.slice(start, end),
+        itemOffset: offset,
+        items: slice.map(({ item }) => item),
+        ...(hasSlices ? {
+          logistiqueTheorySlices: slice.map(({ sourceIndex, theoryBlock, isLast }) => ({ sourceIndex, theoryBlock, isLast })),
+        } : {}),
+        ...(wrappedFigures.size ? {
+          logistiqueWrappedFigures: [...wrappedFigures].filter((index) => index >= start && index + 1 < end)
+            .map((index) => index - start),
+        } : {}),
+        problemDraftGrids: block.problemDraftGrids?.slice(offset, (slice.at(-1)?.sourceIndex ?? -1) + 1),
       })
       start = end
       overhead = 0
     }
-    const heights = block.items.map((item) => height(item, a5, fontScale))
+    const heights = slices.map(({ item, theoryBlock }) => height(theoryBlock ? { ...item, theoryBlock } : item, a5, fontScale))
+    const wrappedFigures = new Set<number>()
+    for (let index = 0; index + 1 < slices.length; index++) {
+      const slice = slices[index]!
+      const image = slice.item.theoryBlock
+      const prose = slices[index + 1]!.item.theoryBlock
+      if (!image || !prose || breakAfter(slice)) continue
+      const wrapped = wrappedFigureHeight(image, prose, a5, fontScale)
+      if (wrapped === undefined || (a5 && wrapped > a5ItemLimit)) continue
+      wrappedFigures.add(index)
+      heights[index] = wrapped
+      heights[++index] = 0
+    }
     const withFollowing = [...heights]
-    for (let index = block.items.length - 2; index >= 0; index--) {
-      if (block.items[index]?.theoryBlock?.kind === 'heading' && !block.tcfPageBreakAfter?.[index]) {
+    for (let index = slices.length - 2; index >= 0; index--) {
+      const slice = slices[index]!
+      if (slice.item.theoryBlock?.kind === 'heading' && !breakAfter(slice)) {
         withFollowing[index]! += withFollowing[index + 1]!
       }
     }
-    for (const [index, item] of block.items.entries()) {
+    for (const [index, slice] of slices.entries()) {
       const itemHeight = heights[index]!
-      if (used > 0 && used + overhead + withFollowing[index]! > budget()) {
+      if (!wrappedFigures.has(index - 1) && used > 0 && used + overhead + withFollowing[index]! > budget()) {
         const previousHeight = heights[index - 1] ?? 0
-        const balanceLastQuestion = !item.theoryBlock && index === block.items.length - 1 && index - start >= 3
+        const balanceLastQuestion = !slice.item.theoryBlock && index === slices.length - 1 && index - start >= 3
           && previousHeight + itemHeight <= budget(pages.length + 1)
         if (index > start) append(balanceLastQuestion ? index - 1 : index)
         flush()
@@ -120,12 +217,12 @@ export function splitLogistiquePages(
       }
       used += overhead + itemHeight
       overhead = 0
-      if (block.tcfPageBreakAfter?.[index] || item.theoryPageBreakAfter) {
+      if (breakAfter(slice)) {
         append(index + 1)
         flush()
       }
     }
-    if (start < block.items.length || block.items.length === 0) append(block.items.length)
+    if (start < slices.length || slices.length === 0) append(slices.length)
   }
   flush()
   return pages.length ? pages : [page]

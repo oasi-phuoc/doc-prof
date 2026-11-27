@@ -4,6 +4,8 @@
  */
 import type { ShapeKind } from '@/components/math/FractionShape'
 import { int, pick, shuffle, type Rng } from './rng'
+import { fmt, simplify } from './column-arith'
+import type { MathItem } from './types'
 
 export type FracShapeItem = {
   kind: ShapeKind
@@ -125,4 +127,26 @@ export function genFracItems(rng: Rng, count: number): FracShapeItem[] {
   }
 
   return items
+}
+
+export function generateFractionFigures(rng: Rng, count: number, mode: 'color' | 'read'): MathItem[] {
+  return genFracSingleItems(rng, Math.max(1, count)).map((item) => ({
+    layout: 'fraction-shape' as const,
+    fracShape: { ...item, mode },
+    answer: `${item.n}/${item.d}`,
+  }))
+}
+
+/** Fractions propres dont l’écriture décimale est finie. */
+export function generateFractionDecimals(rng: Rng, count: number): MathItem[] {
+  const dens = shuffle(rng, [2, 4, 5, 8, 10]).slice(0, count)
+  while (dens.length < count) dens.push(pick(rng, [2, 4, 5, 8, 10]))
+  return dens.map((d) => {
+    const [nn, dd] = simplify(int(rng, 1, d - 1), d)
+    return {
+      layout: 'inline' as const,
+      prompt: `${nn}/${dd} =`,
+      answer: fmt(nn / dd),
+    }
+  })
 }

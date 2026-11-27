@@ -29,11 +29,13 @@ export function optionsFromChildren(children: ReactNode): SelectOption[] {
 export function SelectBox({
   label,
   value,
+  multipleValues,
   children,
   onChange,
 }: {
   label: string
-  value: string
+  value?: string
+  multipleValues?: readonly string[]
   children: ReactNode
   onChange: (value: string) => void
 }) {
@@ -72,29 +74,35 @@ export function SelectBox({
           aria-controls={listId}
           onClick={() => setOpen((current) => !current)}
         >
-          <span className="select-control-value">{selected?.label ?? '—'}</span>
+          <span className="select-control-value">{multipleValues
+            ? `${multipleValues.length} sélectionné${multipleValues.length === 1 ? '' : 's'}`
+            : selected?.label ?? '—'}</span>
           <span className="select-caret" aria-hidden />
         </button>
         {open && (
-          <ul className="select-menu" role="listbox" id={listId} aria-labelledby={`${listId}-label`}>
-            {options.map((option) => (
-              <li key={option.value} role="presentation">
-                <button
-                  type="button"
-                  role="option"
-                  className={`select-option ${option.value === value ? 'selected' : ''}`}
-                  aria-selected={option.value === value}
-                  disabled={option.disabled}
-                  onClick={() => {
-                    if (option.disabled) return
-                    onChange(option.value)
-                    setOpen(false)
-                  }}
-                >
-                  {option.label}
-                </button>
-              </li>
-            ))}
+          <ul className="select-menu" role="listbox" id={listId} aria-labelledby={`${listId}-label`}
+            aria-multiselectable={multipleValues ? true : undefined}>
+            {options.map((option) => {
+              const checked = multipleValues ? multipleValues.includes(option.value) : option.value === value
+              return (
+                <li key={option.value} role="presentation">
+                  <button
+                    type="button"
+                    role="option"
+                    className={`select-option ${checked ? 'selected' : ''}`}
+                    aria-selected={checked}
+                    disabled={option.disabled}
+                    onClick={() => {
+                      if (option.disabled) return
+                      onChange(option.value)
+                      if (!multipleValues) setOpen(false)
+                    }}
+                  >
+                    {option.label}
+                  </button>
+                </li>
+              )
+            })}
           </ul>
         )}
       </div>

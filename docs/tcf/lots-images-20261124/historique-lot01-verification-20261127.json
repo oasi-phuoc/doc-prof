@@ -15,7 +15,9 @@
     "historical_remaining_A2": 142,
     "historical_remaining_B1": 19,
     "gallery_images": 8678,
-    "concurrent_images_preserved": 123
+    "concurrent_images_preserved": 123,
+    "gallery_images_after_later_main_integrations": 8865,
+    "concurrent_images_preserved_after_later_main_integrations": 310
   },
   "checks": {
     "source_audio_answers_and_raw_editorial_fragments": "100 questions passed scripts/check-tcf-image-batch-20261124.py",
@@ -831,5 +833,8 @@
       "selected_in_questions": true
     }
   ],
-  "additional_concurrent_main_preserved": "42ad0b18b050ba7fc2bd42aab266f86b3052a055"
+  "additional_concurrent_main_preserved": "42ad0b18b050ba7fc2bd42aab266f86b3052a055",
+  "later_main_integrations": [
+    "5d18ae180223395f2dd2e9999667dfafdfa15e6f"
+  ]
 }

@@ -1,6 +1,6 @@
 # Galerie d’images
 
-État du 27 novembre : **8 678 images indexées**, dont **4 839 TCF avec titres et mots-clés revus sur les pixels**, aucun fichier TCF en attente de cette revue. Le premier lot historique de100 trios est activé : 270 images ont été publiées au fil de sa préparation, dont quatre propositions conservées mais non sélectionnées ; 99 images ont été ajoutées pendant cette reprise. Les originaux et les illustrations de grammaire reçus par le pull sont conservés. [Suivi TCF](../tcf/lots-images-20261124/README.md).
+État du 27 novembre : **8 865 images indexées**, dont **5 022 TCF avec titres et mots-clés revus sur les pixels**, aucun fichier TCF en attente de cette revue. Le premier lot historique de100 trios est activé : 270 images ont été publiées au fil de sa préparation, dont quatre propositions conservées mais non sélectionnées ; 99 images ont été ajoutées pendant cette reprise. Les originaux et les illustrations de grammaire reçus par le pull sont conservés. [Suivi TCF](../tcf/lots-images-20261124/README.md).
 
 La rubrique `/images` est accessible par l’icône image du menu supérieur. Elle partage l’accès du créateur de fiches, mais reste une page indépendante : elle ne génère aucune fiche.
 

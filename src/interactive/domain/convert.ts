@@ -101,6 +101,7 @@ export function convertRecipe(
         recipe.seed + pageIndex * 7919,
         exerciseNo,
         recipe.seed,
+        recipe.evalMode,
       )
       exerciseNo += page.blocks.length
       page.blocks.forEach((block, blockIndex) => {

@@ -1781,7 +1781,7 @@ Modèle de production — Le cours commence mardi à dix-huit heures.
 
 ### La visite
 
-![Un visiteur montre un billet dans une galerie](../../public/lib/images/grammaire/communication/e2-04-un-visiteur-montre-un-billet-dans-une-galerie.webp)
+![Deux personnes parlent d’un billet devant un musée](../../public/lib/images/tcf/co/scenes/reprises/dialogue-invitation-musee-en-pied.png)
 
 **Lire la situation**
 
@@ -4005,7 +4005,7 @@ Modèle de production — Dimanche, nous avons partagé un gâteau.
 
 ### Le retard
 
-![Un voyageur parle à une agente sur le quai](../../public/lib/images/grammaire/communication/imparfait-ou-pc-08-un-voyageur-parle-a-une-agente-sur-le-quai.webp)
+![Des voyageurs attendent dans le hall de la gare](../../public/lib/images/tcf/qcm-audit/qcm-lot20d-attente-gare.png)
 
 **Lire la situation**
 
@@ -4376,7 +4376,7 @@ Modèle de production — Je les lave avant le repas.
 
 ### Le vélo
 
-![Deux adultes examinent le frein d’un vélo dans un atelier](../../public/lib/images/grammaire/communication/i4-07-deux-adultes-examinent-le-frein-dun-velo-dans-un-atelier.webp)
+![Deux adultes examinent une roue dans un atelier de vélos](../../public/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-leurre-2.webp)
 
 **Lire la situation**
 
@@ -4706,7 +4706,7 @@ Modèle de production — Omar est en train de réparer une chaise.
 
 ### Le repas
 
-![Une femme apporte un plateau à la cantine](../../public/lib/images/grammaire/communication/j1-05-une-femme-apporte-un-plateau-a-la-cantine.webp)
+![Une femme porte un plateau-repas à la cantine](../../public/lib/images/tcf/catalogue/actions/plateau-a-la-cantine.webp)
 
 **Lire la situation**
 
@@ -5077,7 +5077,7 @@ Modèle de production — Je vais préparer le déjeuner dimanche.
 
 ### La visite
 
-![Un visiteur montre un billet dans une galerie](../../public/lib/images/grammaire/communication/e2-04-un-visiteur-montre-un-billet-dans-une-galerie.webp)
+![Un visiteur présente son billet réservé au musée](../../public/lib/images/grammaire/communication/futur-proche-04-un-visiteur-presente-son-billet-reserve-au-musee.webp)
 
 **Lire la situation**
 
@@ -5323,7 +5323,7 @@ Modèle de production — Je vais emprunter un roman mercredi.
 
 ### Le voyage
 
-![Un voyageur attend avec sa valise sur le quai](../../public/lib/images/grammaire/communication/futur-proche-10-un-voyageur-attend-avec-sa-valise-sur-le-quai.webp)
+![Deux voyageurs attendent le train avec leurs valises](../../public/lib/images/tcf/qcm-audit/co57-voyage.webp)
 
 **Lire la situation**
 
@@ -5901,7 +5901,7 @@ Modèle de production — Je choisis la natation car j’aime l’eau.
 
 ### Le repas
 
-![Un homme parle de son choix devant un menu illustré](../../public/lib/images/grammaire/communication/k2-04-un-homme-parle-de-son-choix-devant-un-menu-illustre.webp)
+![Deux personnes choisissent un plat à la cantine](../../public/lib/images/tcf/co/scenes/ecole/06-ecole-menu-de-la-cantine.webp)
 
 **Lire la situation**
 
@@ -5942,7 +5942,7 @@ Modèle de production — Je prends la salade car je veux un repas léger.
 
 ### Le livre
 
-![Une lectrice présente un roman à la bibliothèque](../../public/lib/images/grammaire/communication/k2-05-une-lectrice-presente-un-roman-a-la-bibliotheque.webp)
+![Deux lectrices discutent de leur choix de livre](../../public/lib/images/tcf/co/scenes/reprises/dialogue-roman-bibliotheque-en-pied.png)
 
 **Lire la situation**
 
@@ -5983,7 +5983,7 @@ Modèle de production — Je prends ce roman car il est facile à lire.
 
 ### Le téléphone
 
-![Deux hommes comparent des téléphones en magasin](../../public/lib/images/grammaire/communication/choix-au-magasin-de-telephones.webp)
+![Un homme présente le téléphone simple qu’il a choisi](../../public/lib/images/grammaire/communication/k2-06-un-homme-presente-le-telephone-simple-quil-a-choisi.webp)
 
 **Lire la situation**
 
@@ -6354,7 +6354,7 @@ Modèle de production — Je prends le train parce que mon vélo est abîmé.
 
 ### Le repas
 
-![Une cliente décline la carte des desserts au restaurant](../../public/lib/images/grammaire/communication/f3-05-une-cliente-decline-la-carte-des-desserts-au-restaurant.webp)
+![Une cliente explique son refus devant la carte des desserts](../../public/lib/images/grammaire/communication/k3-05-une-cliente-explique-son-refus-devant-la-carte-des-desserts.webp)
 
 **Lire la situation**
 
@@ -6395,7 +6395,7 @@ Modèle de production — Je ne prends pas de dessert parce que je n’ai plus f
 
 ### La bibliothèque
 
-![Un lecteur demande de l’aide avec un catalogue](../../public/lib/images/grammaire/communication/k3-06-un-lecteur-demande-de-laide-avec-un-catalogue.webp)
+![Un lecteur échange avec une bibliothécaire au comptoir](../../public/lib/images/tcf/qcm-audit/co-personnages-20261112-2.png)
 
 **Lire la situation**
 
@@ -6436,7 +6436,7 @@ Modèle de production — Je demande de l’aide parce que je ne comprends pas l
 
 ### La réparation
 
-![Deux adultes examinent le frein d’un vélo dans un atelier](../../public/lib/images/grammaire/communication/i4-07-deux-adultes-examinent-le-frein-dun-velo-dans-un-atelier.webp)
+![Une cycliste montre un câble de frein débranché](../../public/lib/images/grammaire/communication/k3-07-une-cycliste-montre-un-cable-de-frein-debranche.webp)
 
 **Lire la situation**
 

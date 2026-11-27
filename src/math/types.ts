@@ -168,6 +168,17 @@ export type CountIconScene = {
   tokens: CountIconToken[]
 }
 
+export type RectangleGrid = {
+  width: number
+  height: number
+  cut?: { width: number; height: number }
+}
+
+export type SolidViews = {
+  image: string
+  views: Array<{ label: string; cells: boolean[][] }>
+}
+
 export type CoordShape =
   | 'point'
   | 'circle'
@@ -241,6 +252,8 @@ export type CoordScene = {
   originRow?: number
   /** Masquer axes, labels x/y et graduations (origine à deviner). */
   hideAxes?: boolean
+  /** Garder le cadre de construction sans lignes intérieures. */
+  hideGrid?: boolean
   /** Masquer uniquement numérotation et libellés x/y (axes visibles). */
   hideAxisLabels?: boolean
   /** Flèches aux extrémités positives des axes. */
@@ -368,6 +381,9 @@ export type ExerciseType = {
   visual: 'ligne' | 'trou' | 'colonne' | 'colonne-vide' | 'texte' | 'geo' | 'suite'
   figure?: Figure
   preferredColumns?: number
+  preferredCount?: number
+  maxCount?: number
+  supportsNumberRange?: false
   /** Filtre Voc / Gram / Com du domaine français. */
   track?: FrenchTrack
 }
@@ -408,7 +424,22 @@ export type DivisionStep = {
   endCol: number
 }
 
+export type LogistiqueGapMode = 'sans-liste' | 'avec-liste'
+export type LogistiqueQuestionImage = {
+  src: string
+  alt: string
+  caption: string
+  width: 100 | 140 | 180
+  placement: 'avant' | 'apres' | 'droite'
+  visibility: 'both' | 'answers'
+}
+
 export type MathItem = {
+  logistiqueSource?: { id: string; module: string; revision: string }
+  /** Question ajoutée en Libre et conservée par les nouveaux tirages. */
+  logistiqueRetained?: boolean
+  logistiqueGaps?: { answers: string[]; words?: string[] }
+  logistiqueImage?: LogistiqueQuestionImage
   layout: Layout
   grammar?: import('@/grammaire/curriculum/types').GrammarQuestion
   cscTask?: import('@/tcm-csc/task-types').CscTask
@@ -434,6 +465,7 @@ export type MathItem = {
    * La virgule s’affiche dans la case des unités (même carré).
    */
   decimalPlaces?: number
+  freeOperandPlaces?: [number, number]
   /** Chiffres du reste (division posée). */
   digitsRemainder?: string[]
   /** Met en évidence le trait de calcul sous les opérandes. */
@@ -461,6 +493,7 @@ export type MathItem = {
   selectVariant?: 'pills' | 'oral' | 'cards'
   /** Bloc de théorie grammaticale (fiche lecture seule). */
   theoryBlock?: GrammarTheoryBlock
+  mathTheory?: import('./theory-lessons').MathTheoryLesson & { topic: string }
   /** Coupure de page initiale après cette section de théorie, modifiable dans l’aperçu. */
   theoryPageBreakAfter?: boolean
   /** Entrée de glossaire maths (mot + définition + schéma). */
@@ -586,7 +619,18 @@ export type MathItem = {
     /** Points marqués (œil, pompon…) sur des intersections. */
     dots?: Array<{ x: number; y: number }>
   }
-  /** Segments à mesurer (TCM CFR). */
+  gridRotation?: 'clockwise' | 'counterclockwise'
+  exerciseImage?: { kind: 'angles' | 'cube-nets'; id: string }
+  numberLine?: { start: number; step: number; intervals: number; target: number; labelAt: number }
+  baseTen?: { hundreds: number; tens: number; ones: number }
+  menuPrices?: { label: string; cents: number }[]
+  areaFigures?: RectangleGrid[]
+  solidViews?: SolidViews
+  measureScale?: { kind: 'mass' | 'capacity' | 'duration'; unit: string; step: number; tick: number }
+  lengthUnits?: { a: number; b: number }
+  functionPairs?: { x: number; y: number }[]
+  graphPractice?: { pairs: { x: number; y: number }[]; task: 'read' | 'plot'; yStep: number }
+  /** Segments à mesurer à taille réelle. */
   segments?: Array<{ mm: number; unit: 'mm' | 'cm'; display: string; slope?: number }>
   /** Plan de métro (TCM CFR). */
   metroMap?: {
@@ -856,6 +900,9 @@ export type ExerciseBlock = {
   /** Publication logistique figée lors de l’enregistrement de la fiche. */
   logistiqueBankRevision?: string
   logistiqueTheoryView?: 'complet' | 'resume'
+  /** Modules de l’activité en mode Évaluation, avec une répartition facultative. */
+  logistiqueSelection?: { modules: string[]; quantities?: Record<string, number> }
+  logistiqueGapMode?: LogistiqueGapMode
   topic: string
   exerciseType: string
   difficulty: Difficulty
@@ -915,6 +962,7 @@ export type ExerciseBlock = {
    * `true` = avec grille, `false` = cadre blanc seul. Index = n° de question.
    */
   problemDraftGrids?: boolean[]
+  problemHelp?: boolean
   /** Formulaire grammaire / TPF : cases lettre à la place des traits. */
   formulaireLetterGrid?: boolean
   /**
@@ -979,6 +1027,8 @@ export type ExerciseBlock = {
   numberMin?: number
   numberMax?: number
   numberDecimals?: boolean
+  numberDecimalPlaces?: number
+  numberSecondDecimalPlaces?: number
   /** Choix des quadrilatères (sinon tirage au hasard parmi toutes les formes). */
   quadLibre?: boolean
   quadShapes?: Figure[]
@@ -1162,6 +1212,10 @@ export type WorksheetBlock = {
   items: MathItem[]
   columns: number
   exerciseType: string
+  /** Index des photos à habiller avec le paragraphe suivant sur cette feuille. */
+  logistiqueWrappedFigures?: number[]
+  /** Disposition imprimée des listes et tableaux A5, avec l’index du bloc d’origine. */
+  logistiqueTheorySlices?: { sourceIndex: number; theoryBlock?: GrammarTheoryBlock; isLast: boolean }[]
   /** Points par question (propagé depuis ExerciseBlock). */
   pointsPerQuestion?: number
   /**
@@ -1174,6 +1228,7 @@ export type WorksheetBlock = {
   givens?: AlgebraGiven[]
   document?: WorksheetDocument
   problemDraftGrids?: boolean[]
+  problemHelp?: boolean
   formulaireLetterGrid?: boolean
   /** TCM CFR exercices 26 et 27 : forme affichée comme aide. */
   geoFigureHelp?: boolean

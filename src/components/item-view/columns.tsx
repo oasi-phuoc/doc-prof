@@ -60,21 +60,24 @@ export function ColumnOp({ item, mode }: { item: MathItem; mode: PreviewMode }) 
         carry?: boolean
         sign?: string
         comma?: boolean
+        places?: number
       }
     | { kind: 'rule' }
 
   const bHasDecimal =
     typeof item.b === 'number' && Math.abs(item.b - Math.round(item.b)) > 1e-9
+  const free = item.freeOperandPlaces
   const lines: Line[] = [
     { kind: 'digits', digits: carries, blank: !show, carry: true },
-    { kind: 'digits', digits: item.digitsA, blank: empty, comma: decimalPlaces > 0 },
+    { kind: 'digits', digits: item.digitsA, blank: empty, comma: free ? free[0] > 0 : decimalPlaces > 0, places: free && item.op === '×' ? free[0] : decimalPlaces },
     {
       kind: 'digits',
       digits: item.digitsB,
       blank: empty,
       sign: item.op,
       // × entier : pas de virgule ; × décimal (ex. 1,5) : virgule aux unités.
-      comma: decimalPlaces > 0 && (item.op !== '×' || bHasDecimal),
+      comma: free ? free[1] > 0 : decimalPlaces > 0 && (item.op !== '×' || bHasDecimal),
+      places: free && item.op === '×' ? free[1] : decimalPlaces,
     },
     { kind: 'rule' },
   ]
@@ -109,7 +112,7 @@ export function ColumnOp({ item, mode }: { item: MathItem; mode: PreviewMode }) 
                 showAnswer={show}
                 answerDigits={line.digits}
                 carry={line.carry}
-                decimalPlaces={decimalPlaces}
+                decimalPlaces={line.places ?? decimalPlaces}
                 showDecimalComma={Boolean(line.comma)}
               />
             </div>

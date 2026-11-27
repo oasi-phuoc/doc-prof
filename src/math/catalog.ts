@@ -1,3 +1,4 @@
+import { MATH_THEORY_PREFIX, mathTheoryLessons } from './theory-lessons'
 import { PHRASE_THEME_DEFS } from '@/francais/phrase-themes'
 import type { Difficulty, Domain, ExerciseType, FrenchTrack, Topic } from './types'
 import {
@@ -48,6 +49,7 @@ export const topics: Topic[] = [
   { id: 'relatifs', label: 'Nombres relatifs', domain: 'algèbre' },
   { id: 'puissances', label: 'Puissances et racines', domain: 'algèbre' },
   { id: 'expressions', label: 'Expressions algébriques', domain: 'algèbre' },
+  { id: 'fonctions', label: 'Fonctions', domain: 'algèbre' },
   { id: 'equations', label: 'Équations', domain: 'algèbre' },
   { id: 'glossaire-geometrie', label: 'Glossaire', domain: 'géométrie' },
   { id: 'figures', label: 'Formes', domain: 'géométrie' },
@@ -438,6 +440,8 @@ export const exerciseTypes: ExerciseType[] = [
     'geo',
     { preferredColumns: 2 },
   ),
+  t('nombres-groupements', 'nombres', 'Compter par groupements', 'Lire une collection organisée en plaques, barres et cubes.', 'Écrivez le total d’unités et le nombre de dizaines complètes.', 'geo', { preferredColumns: 2, preferredCount: 4, maxCount: 4 }),
+  t('nombres-intercaler', 'nombres', 'Intercaler un nombre', 'Trouver un nombre strictement compris entre deux bornes.', 'Écrivez un nombre strictement compris entre les deux bornes.', 'texte', { preferredColumns: 2, preferredCount: 6, maxCount: 10 }),
   t('nombres-position', 'nombres', 'Valeur positionnelle', 'Retrouver le chiffre des unités, dizaines, centaines…', 'Indiquez le chiffre demandé.', 'texte', { preferredColumns: 1 }),
   t('nombres-decompose', 'nombres', 'Décomposer', 'Écrire un nombre en sommes de puissances de 10 (milliers… unités).', 'Décomposez chaque nombre.', 'ligne', { preferredColumns: 1 }),
   t('nombres-comparer', 'nombres', 'Comparer', 'Choisir le symbole correct : <, = ou >.', 'Coloriez la pastille correcte.', 'ligne', { preferredColumns: 2 }),
@@ -447,6 +451,7 @@ export const exerciseTypes: ExerciseType[] = [
   t('nombres-ranger', 'nombres', 'Ranger', 'Ranger cinq nombres dans l’ordre croissant ou décroissant.', 'Rangez les nombres dans l’ordre demandé.', 'suite', { preferredColumns: 1 }),
   t('nombres-suite', 'nombres', 'Suites à trous', 'Compléter une suite numérique.', 'Complétez les termes manquants.', 'suite'),
 
+  t('nombres-droite-graduee', 'nombres', 'Lire une droite graduée', 'Déterminer la valeur d’une graduation à partir de deux repères.', 'Donnez la valeur indiquée par chaque flèche.', 'ligne', { preferredColumns: 2, preferredCount: 6, maxCount: 8 }),
   t('addition-ligne', 'addition', 'En ligne', 'Calculer 46 + 37 = ?', 'Calculez chaque addition.', 'ligne'),
   t('addition-trou', 'addition', 'En ligne avec des trous', 'Compléter 46 + ? = 83 ou ? + 37 = 83.', 'Complétez le nombre manquant.', 'trou'),
   t('addition-colonne', 'addition', 'En colonnes (nombres posés)', 'Les nombres sont déjà alignés dans le tableau.', 'Effectuez les additions en colonnes. Écrivez le résultat et les retenues.', 'colonne', { preferredColumns: 2 }),
@@ -537,6 +542,7 @@ export const exerciseTypes: ExerciseType[] = [
   t('estimation-difference', 'estimation', 'Estimer une différence', 'Estimer 91 − 28 à la dizaine.', 'Estimez le résultat à la dizaine la plus proche.', 'ligne'),
 
   t('multiplication-ligne', 'multiplication', 'En ligne (tables)', 'Calculer 7 × 8 = ?', 'Calculez chaque produit.', 'ligne'),
+  t('multiplication-addition-iteree', 'multiplication', 'Transformer une addition répétée', 'Reconnaître des termes identiques puis écrire et calculer la multiplication correspondante.', 'Écrivez le nombre de termes × la valeur d’un terme, puis calculez.', 'ligne', { preferredColumns: 2, preferredCount: 8 }),
   t('multiplication-trou', 'multiplication', 'En ligne avec des trous', 'Compléter 7 × ? = 56.', 'Complétez le nombre manquant.', 'trou'),
   t('multiplication-colonne', 'multiplication', 'En colonnes × 1 chiffre', 'Nombres déjà posés, multiplicateur à 1 chiffre.', 'Effectuez les multiplications en colonnes.', 'colonne', { preferredColumns: 2 }),
   t('multiplication-colonne-poser', 'multiplication', 'En colonnes à poser × 1 chiffre', 'Poser le calcul dans le tableau.', 'Posez les nombres, puis calculez.', 'colonne-vide', { preferredColumns: 2 }),
@@ -555,12 +561,18 @@ export const exerciseTypes: ExerciseType[] = [
   t('problemes-division', 'problemes', 'Division', 'Problèmes de division.', 'Lisez le problème. Écrivez le calcul et la réponse.', 'texte', { preferredColumns: 1 }),
   t('problemes-melange', 'problemes', 'Tout mélanger', 'Problèmes avec les quatre opérations.', 'Lisez le problème. Écrivez le calcul et la réponse.', 'texte', { preferredColumns: 1 }),
 
+  t('problemes-donnees-utiles', 'problemes', 'Choisir les données et l’opération', 'Repérer les données utiles à la question et proposer une opération.', 'Notez les deux données utiles. Écrivez l’opération qui permet de répondre, sans l’effectuer.', 'texte', { preferredColumns: 1, preferredCount: 4, maxCount: 5, supportsNumberRange: false }),
+  t('problemes-lire-menu', 'problemes', 'Lire un menu et calculer en CHF', 'Prélever les prix d’une commande puis calculer le total ou la monnaie à rendre.', 'Utilisez les prix du menu pour calculer. Écrivez votre démarche.', 'texte', { preferredColumns: 1, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
+
   t('multiples-reconnaitre', 'multiples', 'Reconnaître un multiple', 'Dire si un nombre est multiple d’un autre.', 'Répondez par oui ou non.', 'ligne'),
   t('multiples-diviseurs', 'multiples', 'Lister les diviseurs', 'Trouver tous les diviseurs d’un nombre.', 'Écrivez tous les diviseurs, du plus petit au plus grand.', 'texte'),
   t('multiples-pgcd', 'multiples', 'PGCD', 'Plus grand commun diviseur de deux nombres.', 'Calculez le PGCD.', 'ligne'),
   t('multiples-ppcm', 'multiples', 'PPCM', 'Plus petit commun multiple de deux nombres.', 'Calculez le PPCM.', 'ligne'),
 
   t('fractions-identifier', 'fractions', 'Lire une fraction', 'Donner le numérateur ou le dénominateur.', 'Complétez.', 'ligne'),
+  t('fractions-colorier', 'fractions', 'Colorier une fraction', 'Représenter une fraction en coloriant des parts égales.', 'Coloriez la fraction indiquée.', 'geo', { preferredColumns: 2, preferredCount: 6, maxCount: 8 }),
+  t('fractions-lire-figure', 'fractions', 'Lire une fraction sur une figure', 'Écrire la fraction représentée par les parts coloriées.', 'Écrivez la fraction représentée.', 'geo', { preferredColumns: 2, preferredCount: 6, maxCount: 8 }),
+  t('fractions-vers-decimal', 'fractions', 'Passer à l’écriture décimale', 'Passer de l’écriture fractionnaire à l’écriture décimale exacte.', 'Écrivez chaque fraction sous forme décimale.', 'ligne', { preferredColumns: 2, preferredCount: 8 }),
   t('fractions-equivalentes', 'fractions', 'Fractions équivalentes', 'Amplifier ou réduire : 2/5 = ?/10 ou 6/15 = ?/5.', 'Complétez la fraction équivalente.', 'ligne'),
   t('fractions-simplifier', 'fractions', 'Simplifier', 'Réduire une fraction.', 'Simplifiez chaque fraction.', 'ligne'),
   t('fractions-comparer', 'fractions', 'Comparer', 'Comparer deux fractions.', 'Coloriez la pastille correcte.', 'ligne', { preferredColumns: 2 }),
@@ -612,7 +624,20 @@ export const exerciseTypes: ExerciseType[] = [
   t('figures-nommer', 'figures', 'Nommer la figure', 'Reconnaître carré, rectangle, triangles, trapèzes, cercle, ovale…', 'Nommez chaque figure.', 'geo', { preferredColumns: 2 }),
   t('figures-proprietes', 'figures', 'Propriétés', 'Côtés, angles droits et symétries, y compris les triangles et les trapèzes.', 'Complétez les propriétés.', 'geo', { preferredColumns: 1 }),
 
+  t('fonctions-regle', 'fonctions', 'Retrouver la règle de calcul', 'Déduire une règle à partir de valeurs d’entrée et de sortie.', 'Écrivez la règle qui donne y à partir de x. Elle est de la forme y = ax + b.', 'texte', { preferredColumns: 2, preferredCount: 6, maxCount: 8 }),
+  t('fonctions-graphe-tableau', 'fonctions', 'Passer du graphique au tableau', 'Lire les valeurs sur un graphique ou tracer le graphique à partir du tableau.', 'Suivez la consigne pour chaque tableau et graphique.', 'texte', { preferredColumns: 2, preferredCount: 2, maxCount: 4, supportsNumberRange: false }),
+  t('fonctions-proportion-affine', 'fonctions', 'Reconnaître un prix proportionnel', 'Distinguer prix proportionnel et prix avec des frais fixes.', 'Écrivez le calcul du prix. Expliquez s’il est proportionnel.', 'texte', { preferredColumns: 2, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
+  t('figures-patrons-cube', 'figures', 'Reconnaître un patron de cube', 'Décider si six carrés peuvent être pliés en cube sans recouvrement.', 'Indiquez si chaque figure peut être pliée pour former un cube.', 'geo', { preferredColumns: 2, preferredCount: 6, maxCount: 8 }),
+  t('figures-tracer-droites', 'figures', 'Tracer des droites à l’équerre', 'Construire une parallèle ou une perpendiculaire passant par un point donné.', 'Tracez chaque droite avec une règle et une équerre.', 'geo', { preferredColumns: 1, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
+  t('figures-vues-solide', 'figures', 'Vues d’un solide en cubes', 'Associer trois dessins aux vues de face, de côté et de dessus.', 'Regardez le solide. Associez chaque vue à une lettre.', 'geo', { preferredColumns: 2, preferredCount: 2, maxCount: 4, supportsNumberRange: false }),
+  t('figures-angles', 'figures', 'Classer les angles', 'Reconnaître des angles aigus, droits et obtus dans différentes orientations.', 'Indiquez si chaque angle est aigu, droit ou obtus.', 'geo', { preferredColumns: 2, preferredCount: 6, maxCount: 8 }),
+  t('figures-reproduire', 'figures', 'Reproduire sur quadrillage', 'Recopier une silhouette en s’aidant du quadrillage.', 'Reproduisez le modèle en comptant les carreaux.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
+  t('figures-agrandir', 'figures', 'Agrandir sur quadrillage', 'Reproduire une silhouette en doublant les longueurs en carreaux.', 'Reproduisez le modèle. Chaque longueur mesurée en carreaux doit être doublée.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
+  t('mesures-segments', 'conversions', 'Mesurer des segments à la règle', 'Mesurer des segments à taille réelle puis comparer leurs longueurs.', 'Imprimez à 100 %, puis mesurez chaque segment et répondez aux questions.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 1 }),
   t('conversions-longueur', 'conversions', 'Longueurs', 'km, hm, dam, m, dm, cm, mm.', 'Convertissez.', 'ligne', { preferredColumns: 2 }),
+  t('mesures-lire-instrument', 'conversions', 'Lire un instrument gradué', 'Lire une balance, un verre doseur ou un minuteur.', 'Lisez la mesure. Écrivez le nombre et son unité.', 'geo', { preferredColumns: 2, preferredCount: 3, maxCount: 4, supportsNumberRange: false }),
+  t('mesures-comparer-grandeurs', 'conversions', 'Comparer des mesures', 'Comparer des masses, des capacités ou des durées exprimées dans deux unités.', 'Comparez les mesures avec <, = ou >.', 'ligne', { preferredColumns: 2, preferredCount: 9, maxCount: 12, supportsNumberRange: false }),
+  t('mesures-etalon', 'conversions', 'Comparer avec un étalon', 'Reporter un étalon de longueur et comparer les mesures obtenues.', 'Reportez le modèle le long des bandes A et B, par exemple avec une bande de papier.', 'geo', { preferredColumns: 2, preferredCount: 4, maxCount: 4, supportsNumberRange: false }),
   t('conversions-aire', 'conversions', 'Aires', 'km², hm², dam², m², dm², cm², mm².', 'Convertissez.', 'ligne', { preferredColumns: 2 }),
   t('conversions-volume', 'conversions', 'Volumes', 'km³, hm³, dam³, m³, dm³, cm³, mm³.', 'Convertissez.', 'ligne', { preferredColumns: 2 }),
   t('conversions-capacite', 'conversions', 'Capacités', 'L, dL, cL, mL.', 'Convertissez.', 'ligne', { preferredColumns: 2 }),
@@ -671,6 +696,8 @@ export const exerciseTypes: ExerciseType[] = [
   t('aires-quadrilatere-manquant', 'aires', 'Côté de quadrilatère', 'Retrouver une mesure d’un quadrilatère à partir de l’aire.', 'Calculez la mesure demandée.', 'geo', { preferredColumns: 2 }),
   t('aires-disque-manquant', 'aires', 'Rayon du disque', 'Retrouver le rayon à partir de l’aire.', 'Calculez le rayon. Prenez π = 3,14.', 'geo', { figure: 'circle', preferredColumns: 2 }),
   t('aires-melange', 'aires', 'Mélanger', 'Toutes les formes, au hasard : aire ou mesure manquante.', 'Calculez l’aire ou la mesure demandée.', 'geo', { preferredColumns: 2 }),
+  t('aires-composees-quadrillage', 'aires', 'Aire d’une figure composée', 'Trouver une aire en découpant ou en complétant une figure.', 'Écrivez le calcul de l’aire de chaque figure.', 'geo', { preferredColumns: 2, preferredCount: 4, maxCount: 4, supportsNumberRange: false }),
+  t('aires-perimetres-comparer', 'aires', 'Comparer les aires et les périmètres', 'Comparer des figures de même aire ou de même périmètre.', 'Comparez l’aire et le périmètre des figures.', 'geo', { preferredColumns: 2, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
 
   t('volumes-cube', 'volumes', 'Cube', 'Volume d’un cube.', 'Calculez le volume.', 'geo', { figure: 'cube', preferredColumns: 2 }),
   t('volumes-pave', 'volumes', 'Pavé droit', 'Volume L × l × h.', 'Calculez le volume.', 'geo', { figure: 'cuboid', preferredColumns: 2 }),
@@ -686,6 +713,7 @@ export const exerciseTypes: ExerciseType[] = [
   t('volumes-melange', 'volumes', 'Mélanger', 'Tous les solides, au hasard.', 'Calculez le volume ou la mesure demandée.', 'geo', { preferredColumns: 2 }),
 
   t('reperage-lire', 'reperage', 'Lire des coordonnées', 'Lire les coordonnées de formes sur un tableau.', 'Écrivez les coordonnées de chaque forme.', 'geo', { preferredColumns: 2 }),
+  t('reperage-itineraires', 'reperage', 'Suivre et décrire un trajet', 'Suivre un trajet ou le décrire avec les points cardinaux.', 'Sur le plan, le nord est en haut.', 'geo', { preferredColumns: 1, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
   t('reperage-placer', 'reperage', 'Placer des formes', 'Dessiner les formes sur un tableau vide à partir des coordonnées.', 'Dessinez chaque forme à l’emplacement indiqué.', 'geo', { preferredColumns: 2 }),
   t('reperage-cadrans-lire', 'reperage', 'Lire les 4 cadrans', 'Lire les coordonnées de points dans le plan (axes et cadrans).', 'Écrivez les coordonnées de chaque point.', 'geo', { preferredColumns: 1 }),
   t('reperage-cadrans-placer', 'reperage', 'Placer dans les 4 cadrans', 'Placer des points sur un repère vide à partir des coordonnées.', 'Placez chaque point à l’emplacement indiqué.', 'geo', { preferredColumns: 1 }),
@@ -744,6 +772,15 @@ export const exerciseTypes: ExerciseType[] = [
     'Colonne 1 : placez les points et formez la figure. Colonne 2 : écrivez les coordonnées des nouveaux points.',
     'geo',
     { preferredColumns: 1 },
+  ),
+  t('transformations-tracer-axes', 'transformations', 'Trouver les axes de symétrie', 'Tracer tous les axes d’une figure, si elle en a.', 'Tracez les axes et écrivez leur nombre.', 'geo', { preferredColumns: 2, preferredCount: 4, maxCount: 4, supportsNumberRange: false }),
+  t('transformations-symetrie-quadrillage', 'transformations', 'Compléter une silhouette par symétrie', 'Tracer le reflet d’une silhouette sur un quadrillage.', 'Dessinez le reflet de la silhouette de l’autre côté de l’axe.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
+  t('transformations-translation', 'transformations', 'Construire l’image par translation', 'Déplacer chaque sommet d’une figure selon le même déplacement.', 'Construisez l’image de la figure en suivant le déplacement indiqué.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
+  t('transformations-quart-tour', 'transformations', 'Faire pivoter une figure d’un quart de tour', 'Tourner une silhouette de 90° sur un quadrillage.', 'Suivez le sens indiqué pour reproduire la figure après un quart de tour.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
+  ...Object.entries(mathTheoryLessons).map(([topic, lesson]) =>
+    t(`${MATH_THEORY_PREFIX}${topic}`, topic, 'Théorie', lesson.title, '', 'texte', {
+      preferredColumns: 1, preferredCount: 1, maxCount: 1, supportsNumberRange: false,
+    }),
   ),
   t('glossaire-algebre-mots', 'glossaire-algebre', 'Mots du glossaire', 'Définitions et schémas des termes d’algèbre (opérations, nombres…).', 'Lisez chaque mot, sa définition et le schéma.', 'texte', { preferredColumns: 2 }),
   t('glossaire-geometrie-mots', 'glossaire-geometrie', 'Mots du glossaire', 'Définitions et schémas des termes de géométrie (droite, segment, angle…).', 'Lisez chaque mot, sa définition et le schéma.', 'texte', { preferredColumns: 2 }),
@@ -977,7 +1014,7 @@ export function isDraftPadExercise(typeId: string): boolean {
     logistiqueType(typeId)?.kind === 'maths' ||
     typeId.startsWith('equations-') ||
     typeId.startsWith('perimetres-') ||
-    typeId.startsWith('aires-') ||
+    (typeId.startsWith('aires-') && typeId !== 'aires-composees-quadrillage' && typeId !== 'aires-perimetres-comparer') ||
     typeId.startsWith('volumes-') ||
     // TPM : géométrie périmètre/aire, priorité, réduction, évaluation, équations.
     // Pas de grille pour ops décimales / puissances / relatifs / fractions (ex. 26, 27, 29, 30).

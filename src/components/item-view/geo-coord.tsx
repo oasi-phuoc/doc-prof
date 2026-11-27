@@ -220,10 +220,10 @@ export function CoordBlock({
         : scene.hideAxes
           ? {
               ...scene,
-              showOrigin: show,
+              showOrigin: show && scene.showOrigin !== false,
               marks: scene.marks.map((mark) => ({
                 ...mark,
-                showCoord: Boolean(mark.given || show),
+                showCoord: mark.showCoord ?? Boolean(mark.given || show),
               })),
             }
           : {
@@ -291,6 +291,7 @@ export function CoordBlock({
           </div>
         </div>
       ) : null}
+      {isConstruct && scene?.hideAxes && item.prompt && <p className="column-prompt">{item.prompt}</p>}
       <CoordGrid
         cellScale={csc ? 2 : 1}
         paddedLabels={csc}

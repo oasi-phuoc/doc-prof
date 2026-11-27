@@ -1,5 +1,7 @@
 const number = new Intl.NumberFormat('fr-CH', { maximumFractionDigits: 2 })
+const precise = new Intl.NumberFormat('fr-CH', { maximumFractionDigits: 3 })
 const n = (value) => number.format(value)
+const n3 = (value) => precise.format(value)
 const sum = (values) => values.reduce((total, value) => total + value, 0)
 const percent = (value, total) => n(value / total * 100)
 
@@ -148,4 +150,339 @@ function lever(_unit, [force, arm, comparable, otherArm, addedForce, addedArm]) 
   ]
 }
 
-export const dossierMaths = { stock, series, planning, area, audit, cost, mass, levels, cadence, lever }
+function route(_unit, [firstKm, secondKm, firstMin, secondMin, stop, deadline]) {
+  const km = firstKm + secondKm
+  const trip = firstMin + secondMin + stop
+  return [
+    [`Le parcours comporte deux tronçons de ${firstKm} et ${secondKm} km. Quelle distance figure au relevé de trajet ?`, `${km} km`, `Additionnez les deux tronçons. ${firstKm} + ${secondKm} = ${km} km.`],
+    [`Les tronçons durent ${firstMin} et ${secondMin} min, séparés par un transfert de ${stop} min. Quelle durée totale annoncer ?`, `${trip} min`, `Le transfert compte dans le délai de bout en bout. ${firstMin} + ${stop} + ${secondMin} = ${trip} min.`],
+    [`Le parcours complet de ${km} km doit finir dans les ${deadline} min. Les déplacements et le transfert demandent ${trip} min. Calculez la marge ou le dépassement par rapport au délai.`, `${Math.abs(deadline - trip)} min ${deadline >= trip ? 'de marge' : 'de dépassement'}`, `Comparez le délai prévu à celui du parcours complet. La différence absolue vaut ${Math.abs(deadline - trip)} min.`],
+    [`Le trajet parcourt ${km} km en ${firstMin + secondMin} min de déplacement. Une attente de ${stop} min s’ajoute. Calculez la vitesse moyenne sur la durée totale, au dixième de kilomètre par heure.`, `${n(Math.round(km * 600 / trip) / 10)} km/h`, `Divisez ${km} km par ${trip} ÷ 60 heures, puis arrondissez au dixième.`],
+    [`Il reste ${secondKm} km et ${secondMin} min de déplacement prévus. Le délai de livraison permet ${secondMin + stop} min pour terminer. Quel délai intermédiaire maximum peut-on absorber, si le temps de déplacement reste le même ?`, `${stop} min`, `La marge avant l’échéance vaut ${secondMin + stop} − ${secondMin} = ${stop} min. Comparez un délai supplémentaire à cette marge.`],
+  ]
+}
+
+function tonneDistance(_unit, [km, tonnes, tariff, altKm, altTonnes, fee]) {
+  const work = km * tonnes
+  const charge = work * tariff
+  return [
+    [`Le dossier d’exercice retient ${tonnes} t sur ${km} km. Calculez les tonnes-kilomètres retenus.`, `${n(work)} t·km`, `Multipliez la masse retenue par la distance. ${tonnes} × ${km} = ${work} t·km.`],
+    [`Le tarif fictif est de CHF ${n3(tariff)} par tonne-kilomètre pour ${tonnes} t sur ${km} km. Calculez la redevance d’exercice au centime.`, `CHF ${n(charge)}`, `La base vaut ${work} t·km. Multipliez par le tarif fictif pour obtenir CHF ${n(charge)}.`],
+    [`Deux itinéraires font ${km} et ${altKm} km pour la même masse de ${tonnes} t. Avec un tarif fictif de CHF ${n3(tariff)} par t·km, calculez la différence de redevance, au centime.`, `CHF ${n(Math.abs(altKm - km) * tonnes * tariff)}`, `La différence de base est ${Math.abs(altKm - km)} × ${tonnes} t·km. Multipliez par CHF ${n3(tariff)}.`],
+    [`Un relevé indique CHF ${n3(charge)} pour ${km} km au tarif fictif de CHF ${n3(tariff)} par t·km. Retrouvez la masse retenue.`, `${tonnes} t`, `La masse est égale au montant divisé par distance × tarif. ${n3(charge)} ÷ (${km} × ${n3(tariff)}) = ${tonnes}.`],
+    [`Le dossier chiffre deux parcours. Le premier retient ${tonnes} t sur ${km} km et le second ${altTonnes} t sur ${altKm} km. Le tarif fictif est de CHF ${n3(tariff)} par t·km. Ajoutez CHF ${fee} de frais fixes pour l’ensemble. Quel est le total au centime ?`, `CHF ${n((work + altTonnes * altKm) * tariff + fee)}`, `Calculez les deux bases, ${work} et ${altTonnes * altKm} t·km. Appliquez le tarif à leur somme, puis ajoutez les frais fixes.`],
+  ]
+}
+
+function volume(unit, [length, width, height, count, limit, fill]) {
+  const litres = length * width * height / 1000
+  return [
+    [`Une caisse rectangulaire mesure intérieurement ${length} × ${width} × ${height} cm. Quel est son volume utile en litres ? Prenez 1 L = 1 000 cm³.`, `${n3(litres)} L`, `Multipliez les trois dimensions en cm, puis divisez les cm³ obtenus par 1 000.`],
+    [`Le volume mesuré est de ${n3(litres)} L par unité pour ${count} ${unit}. Quel volume total en m³ faut-il relever ? Prenez 1 m³ = 1 000 L et arrondissez au millième.`, `${n3(count * litres / 1000)} m³`, `Calculez le volume total de ${n3(count * litres)} L puis divisez par 1 000.`],
+    [`Le dossier impose une limite de ${limit} L et l’unité complétée mesure ${n3(litres)} L. Calculez l’écart absolu à la limite et indiquez son sens.`, `${n3(Math.abs(litres - limit))} L ${litres > limit ? 'au-dessus' : litres < limit ? 'en dessous' : 'd’écart'}`, `Comparez le volume utile et la limite dans la même unité. L’écart absolu vaut ${n3(Math.abs(litres - limit))} L.`],
+    [`Un emballage de ${n3(litres)} L n’est rempli qu’à ${fill} %. Quel volume représente le contenu, au millième de litre ?`, `${n3(litres * fill / 100)} L`, `Multipliez le volume utile par ${fill} ÷ 100.`],
+    [`Une caisse a une base intérieure de ${length} × ${width} cm. Pour recevoir ${n3(litres)} L, quelle hauteur intérieure minimale faut-il dans ce modèle rectangulaire ?`, `${height} cm`, `Convertissez le volume en cm³ en multipliant par 1 000. Divisez par l’aire de la base, ${length} × ${width} cm².`],
+  ]
+}
+
+function tension(_unit, [strength, section, newtons, reference, elongation, width]) {
+  const force = strength * section
+  return [
+    [`Dans l’essai théorique, la résistance à la traction est de ${strength} N/mm² et la section de ${section} mm². Calculez la force de rupture du modèle.`, `${force} N`, `Force de rupture = résistance à la traction × section. ${strength} × ${section} = ${force} N.`],
+    [`Pour une section de ${section} mm² et une force de rupture de ${force} N mesurée, quelle résistance le modèle attribue-t-il à la matière ?`, `${strength} N/mm²`, `Divisez la force en newtons par la section en millimètres carrés.`],
+    [`Comparez les forces de rupture théoriques de deux sections de ${section} et ${width} mm², à ${strength} N/mm². Quel écart absolu trouvez-vous ?`, `${Math.abs(strength * (width - section))} N`, `Calculez les deux forces dans le même modèle et prenez la valeur absolue de leur différence.`],
+    [`Une bande de formation longue de ${reference} mm s’allonge de ${elongation} mm lors d’un essai. Calculez l’allongement relatif au centième de pour cent.`, `${percent(elongation, reference)} %`, `Rapportez l’augmentation à la longueur initiale. ${elongation} ÷ ${reference} × 100 ≈ ${percent(elongation, reference)} %.`],
+    [`Le dossier d’essai affiche ${newtons} N pour une force déjà calculée à la rupture. Exprimez cette force en kN, avec 1 kN = 1 000 N.`, `${n3(newtons / 1000)} kN`, `La conversion vaut ${newtons} ÷ 1 000 = ${n3(newtons / 1000)} kN. Il s’agit toujours d’une force.`],
+  ]
+}
+
+function depreciation(_unit, [purchase, residual, years, elapsed, maintenance, rate]) {
+  const amortisable = purchase - residual
+  const yearly = amortisable / years
+  return [
+    [`Le prix est de CHF ${n(purchase)} et la valeur résiduelle prévue de CHF ${n(residual)}. Quelle base amortissable retenir ?`, `CHF ${n(amortisable)}`, `Déduisez la valeur résiduelle du prix d’acquisition. ${n(purchase)} − ${n(residual)} = ${n(amortisable)}.`],
+    [`La valeur amortissable est de CHF ${n(amortisable)} sur ${years} ans. Quelle annuité donne l’amortissement linéaire, au centime ?`, `CHF ${n(yearly)} par an`, `Répartissez la même base sur ${years} années. ${n(amortisable)} ÷ ${years} ≈ ${n(yearly)}.`],
+    [`Au départ, l’équipement vaut CHF ${n(purchase)}. Sa base amortissable est de CHF ${n(amortisable)} sur ${years} ans. Calculez sa valeur nette comptable après ${elapsed} ans, au centime.`, `CHF ${n(purchase - yearly * elapsed)}`, `Retirez ${elapsed} annuités égales de la valeur d’achat. ${n(purchase)} − ${elapsed} × (${n(amortisable)} ÷ ${years}) ≈ ${n(purchase - yearly * elapsed)}.`],
+    [`Le plan fixe une valeur de départ de CHF ${n(purchase)}, une valeur résiduelle de CHF ${n(residual)} et une durée de ${years} ans. Les frais d’entretien s’élèvent à CHF ${n(maintenance)} par an. Quel coût annuel retenir pour ces deux postes, au centime ?`, `CHF ${n(yearly + maintenance)} par an`, `Ajoutez CHF ${n(maintenance)} à l’annuité calculée sur ${n(amortisable)} ÷ ${years}.`],
+    [`Le capital moyen immobilisé est de CHF ${n((purchase + residual) / 2)}. Le taux d’intérêt fictif est de ${n(rate)} % par an. Quel intérêt annuel est imputé à ce capital ?`, `CHF ${n((purchase + residual) / 2 * rate / 100)}`, `Multipliez le capital moyen par le taux annuel converti en décimal.`],
+  ]
+}
+
+function payroll(_unit, [gross, withheld, fixed, employer, allowance, months]) {
+  const employeeCost = gross * withheld / 100 + fixed
+  const employerCost = gross * (1 + employer / 100) + allowance
+  return [
+    [`Le salaire brut fictif vaut CHF ${gross}. L’exemple retient ${n(withheld)} % du brut et CHF ${fixed} en plus. Calculez le total des retenues au centime.`, `CHF ${n(employeeCost)}`, `Appliquez le taux au brut puis ajoutez la retenue fixe. ${gross} × ${n3(withheld / 100)} + ${fixed} ≈ ${n(employeeCost)}.`],
+    [`Une fiche fictive indique CHF ${gross} de brut et CHF ${n(employeeCost)} de retenues. Calculez le salaire net.`, `CHF ${n(gross - employeeCost)}`, `Salaire net = brut − retenues. ${gross} − ${n(employeeCost)} = ${n(gross - employeeCost)}.`],
+    [`Le brut vaut CHF ${gross}. La charge patronale fictive est de ${n(employer)} % du brut et l’équipement coûte CHF ${allowance} par mois. Quel coût mensuel obtient l’employeur sur ces postes, au centime ?`, `CHF ${n(employerCost)}`, `Ajoutez la charge proportionnelle et l’équipement au brut. Le résultat est de CHF ${n(employerCost)}.`],
+    [`Une mission dure ${months} mois, avec un coût d’employeur constant de CHF ${n(employerCost)} par mois dans ce dossier. Calculez le budget total prévisionnel.`, `CHF ${n(employerCost * months)}`, `Multipliez le coût mensuel retenu par le nombre de mois. ${n(employerCost)} × ${months} = ${n(employerCost * months)}.`],
+    [`Les retenues de CHF ${n(employeeCost)} portent sur un brut de CHF ${gross}. Quelle part du brut représentent-elles au centième de pour cent ?`, `${percent(employeeCost, gross)} %`, `Rapportez les retenues au brut et multipliez par 100.`],
+  ]
+}
+
+function indicator(unit, [initial, final, days, used, daily, expected]) {
+  const middle = (initial + final) / 2
+  const rotation = used / middle
+  return [
+    [`Le stock est de ${initial} ${unit} au début et de ${final} à la fin. Calculez le stock moyen à l’aide de ces deux relevés.`, `${n(middle)} ${unit}`, `Stock moyen = (début + fin) ÷ 2. (${initial} + ${final}) ÷ 2 = ${n(middle)}.`],
+    [`La consommation est de ${used} ${unit} pour un stock moyen de ${n(middle)}. Calculez la rotation sur cette période au centième.`, `${n(rotation)} rotations`, `Rotation = consommation ÷ stock moyen. ${used} ÷ ${n(middle)} ≈ ${n(rotation)}.`],
+    [`La période dure ${days} jours. Calculez la durée moyenne de stockage au centième avec ${used} ${unit} consommés et un stock moyen de ${n(middle)}.`, `${n(days / rotation)} jours`, `Divisez les jours de la période par la rotation non arrondie ${used} ÷ ${n(middle)}.`],
+    [`Le stock actuel est de ${final} ${unit} et la demande moyenne de ${daily} par jour. Donnez la couverture au centième et vérifiez si elle atteint ${expected} jours.`, `${n(final / daily)} jours, objectif ${final / daily >= expected ? 'atteint' : 'à compléter'}`, `Calculez ${final} ÷ ${daily}, puis comparez au délai exigé de ${expected} jours.`],
+    [`Pour couvrir ${expected} jours de demande avec ${daily} ${unit} nécessaires chaque jour, quel stock cible faut-il ? Donnez son écart au stock actuel de ${final}.`, `${expected * daily} ${unit}, écart cible moins actuel de ${expected * daily - final}`, `Multipliez la demande quotidienne par la durée. Puis retranchez le stock actuel du besoin calculé.`],
+  ]
+}
+
+function result(unit, [revenue, fixed, variable, qty, avgStock, rate]) {
+  const expenses = fixed + variable * qty
+  return [
+    [`Pour ${qty} ${unit}, le dossier prévoit CHF ${fixed} de coûts fixes et CHF ${variable} de coûts variables par unité. Calculez les coûts totaux.`, `CHF ${n(expenses)}`, `Additionnez les coûts fixes et les coûts qui varient avec le volume. ${fixed} + ${variable} × ${qty} = ${n(expenses)}.`],
+    [`Le chiffre d’affaires vaut CHF ${revenue} et les coûts de même périmètre CHF ${expenses}. Quel est le résultat ?`, `CHF ${n(revenue - expenses)}`, `Résultat = chiffre d’affaires − coûts. ${revenue} − ${expenses} = ${revenue - expenses}.`],
+    [`Le chiffre d’affaires de CHF ${revenue} couvre des coûts de CHF ${expenses}. Quel pourcentage du chiffre d’affaires est absorbé par les coûts, au centième ?`, `${percent(expenses, revenue)} %`, `Rapportez les coûts au chiffre d’affaires. ${expenses} ÷ ${revenue} × 100 ≈ ${percent(expenses, revenue)} %.`],
+    [`Vous prévoyez ${qty} ${unit} et CHF ${expenses} de coûts. Quel chiffre d’affaires moyen par unité couvre exactement ces coûts, au centime près ?`, `Environ CHF ${n(expenses / qty)} par unité`, `Répartissez les coûts sur les unités prévues. ${expenses} ÷ ${qty} ≈ ${n(expenses / qty)}.`],
+    [`Le stock moyen vaut CHF ${avgStock}. Le dossier applique un coût annuel fictif de possession de ${n(rate)} %. Calculez ce poste pour une année.`, `CHF ${n(avgStock * rate / 100)}`, `Multipliez la valeur de stock moyenne par le taux annuel exprimé en décimal.`],
+  ]
+}
+
+function capital(_unit, [initial, final, rate, months, space, rent]) {
+  const average = (initial + final) / 2
+  const annual = average * rate / 100
+  return [
+    [`La valeur du stock est de CHF ${n(initial)} au début et de CHF ${n(final)} à la fin. Estimez le capital moyen à partir de ces deux relevés.`, `CHF ${n(average)}`, `Additionnez les deux valeurs et divisez par deux. On obtient CHF ${n(average)}.`],
+    [`Le capital moyen vaut CHF ${n(average)}. Le taux annuel fictif est de ${n(rate)} %. Quel intérêt annuel est imputé à ce stock ?`, `CHF ${n(annual)}`, `Multipliez le capital moyen par le taux annuel en décimal. Le résultat est de CHF ${n(annual)}.`],
+    [`L’intérêt annuel de stockage vaut CHF ${n(annual)}. Pour un séjour de ${months} mois et une règle proportionnelle, calculez l’intérêt de cette période au centime.`, `CHF ${n(annual * months / 12)}`, `Divisez l’intérêt annuel par 12 et multipliez par ${months}.`],
+    [`Le stock occupe ${space} m². Le loyer d’exercice est de CHF ${rent} par m² et par mois. Calculez le loyer du périmètre pour ${months} mois.`, `CHF ${n(space * rent * months)}`, `Multipliez la surface par le tarif et par le nombre de mois.`],
+    [`L’intérêt annuel attribué au capital est de CHF ${n(annual)}. Le loyer annuel de la zone est de CHF ${n(space * rent * 12)}. Quel total annuel prévoir pour ces deux postes ?`, `CHF ${n(annual + space * rent * 12)}`, `Les deux montants portent sur une année. Additionnez l’intérêt et le loyer du même périmètre.`],
+  ]
+}
+
+function service(unit, [total, onTime, second, secondOnTime, goal, recovery]) {
+  return [
+    [`Sur ${total} ${unit}, ${onTime} sont satisfaites dans les conditions prévues. Calculez le taux de service au centième de pour cent.`, `${percent(onTime, total)} %`, `Taux de service = unités satisfaites ÷ unités du même périmètre × 100. Le taux vaut ${percent(onTime, total)} %.`],
+    [`Le relevé A satisfait ${onTime} unités sur ${total}, le B ${secondOnTime} sur ${second}. Calculez le taux commun sans compter d’unité deux fois.`, `${percent(onTime + secondOnTime, total + second)} %`, `Additionnez les deux nombres satisfaits et les deux effectifs. Le taux vaut ${onTime + secondOnTime} ÷ ${total + second} × 100.`],
+    [`Le site exige au moins ${goal} % de ${unit} satisfaites sur ${total} au total. Quel est le nombre entier minimal à atteindre ?`, `${Math.ceil(total * goal / 100)} unités satisfaites`, `Appliquez le pourcentage au total puis arrondissez au supérieur pour atteindre au moins l’objectif.`],
+    [`Le dossier satisfait d’abord ${onTime} des ${total} ${unit}. Une correction rend ${recovery} unités supplémentaires conformes. De combien de points de pourcentage le taux augmente-t-il ?`, `${percent(recovery, total)} points`, `Le dénominateur reste ${total}. Les ${recovery} nouvelles unités satisfaites donnent ${percent(recovery, total)} points d’augmentation.`],
+    [`Sur ${total} ${unit}, il en reste ${total - onTime} non satisfaites. Pour un objectif d’au moins ${goal} %, calculez l’écart signé en unités satisfaites entre le minimum exigé et l’existant.`, `${Math.ceil(total * goal / 100) - onTime} unités`, `Le minimum exigé est ${Math.ceil(total * goal / 100)}. Le nombre satisfait est ${total} − ${total - onTime} = ${onTime}. Soustrayez ce second nombre du premier.`],
+  ]
+}
+
+function valuation(unit, [recorded, counted, price, second, secondPrice, review]) {
+  return [
+    [`La fiche prévoit ${recorded} ${unit} et le comptage en donne ${counted}. Calculez l’écart signé physique moins théorique.`, `${counted - recorded} ${unit}`, `Soustrayez la quantité théorique de la quantité constatée. ${counted} − ${recorded} = ${counted - recorded}.`],
+    [`Le comptage confirme ${counted} ${unit} à CHF ${n(price)} de valeur unitaire. Quelle valeur faut-il inscrire pour la référence ?`, `CHF ${n(counted * price)}`, `Valorisez la quantité physique confirmée en multipliant par le prix de revient unitaire fourni.`],
+    [`Une référence compte ${counted} unités à CHF ${n(price)} et une autre ${second} à CHF ${n(secondPrice)}. Calculez leur valeur totale à la date de l’inventaire.`, `CHF ${n(counted * price + second * secondPrice)}`, `Calculez CHF ${n(counted * price)} et CHF ${n(second * secondPrice)} pour les deux références, puis additionnez.`],
+    [`Le stock théorique est de ${recorded} unités et le stock physique est de ${counted}. Calculez l’effet de l’écart sur la valeur à CHF ${n(price)} l’unité.`, `CHF ${n((counted - recorded) * price)}`, `L’écart quantitatif est de ${counted - recorded} unités. Multipliez-le par la valeur unitaire.`],
+    [`Une fiche affiche CHF ${n(counted * price)} à CHF ${n(price)} par unité. Un second comptage trouve ${review} unités. Retrouvez la quantité correspondant à la fiche et l’écart signé du second comptage.`, `${counted} unités sur la fiche, écart de ${review - counted}`, `Divisez la valeur par le prix unitaire. Puis calculez ${review} − ${counted} = ${review - counted}.`],
+  ]
+}
+
+function expense(unit, [qty, variable, labour, space, supplies, shared]) {
+  const activity = qty * variable
+  const total = activity + labour + space + supplies
+  return [
+    [`Pour la période, le dossier attribue CHF ${labour} au personnel, CHF ${space} au local et CHF ${supplies} aux équipements. Calculez le total de ces postes.`, `CHF ${n(labour + space + supplies)}`, `Additionnez les trois montants portant sur le même périmètre.`],
+    [`Le dossier annonce ${qty} ${unit} et CHF ${variable} de coût variable par unité. Quel coût variable total faut-il retenir ?`, `CHF ${n(activity)}`, `Multipliez la quantité par le coût correspondant. ${qty} × ${variable} = ${activity}.`],
+    [`Les postes fixes totalisent CHF ${labour + space + supplies}. Ajoutez CHF ${activity} de coûts variables. Quel montant complet obtient-on ?`, `CHF ${n(total)}`, `Coût total = part fixe + part variable. ${labour + space + supplies} + ${activity} = ${total}.`],
+    [`Dans les CHF ${total} de coûts du poste, les frais du local valent CHF ${space}. Quelle part représentent-ils, au centième de pour cent ?`, `${percent(space, total)} %`, `Divisez les frais du local par le coût total de la période et multipliez par 100.`],
+    [`Un budget d’exercice de CHF ${total + shared} comporte CHF ${shared} pour un autre poste. Attribuez le solde aux ${qty} ${unit} étudiées. Calculez le coût moyen au centime.`, `CHF ${n(total / qty)} par unité`, `Retirez les coûts de l’autre poste, puis répartissez CHF ${total} sur ${qty} unités.`],
+  ]
+}
+
+function benefits(_unit, [salary, allowance, months, equipment, training, temporary]) {
+  return [
+    [`Le salaire brut mensuel d’exercice est de CHF ${salary}. Un avantage convenu est évalué à CHF ${allowance} par mois. Quelle rémunération totale retenir ?`, `CHF ${n(salary + allowance)} par mois`, `Ajoutez la valeur de l’avantage au salaire brut pour cette comparaison.`],
+    [`Pour ${months} mois, le salaire mensuel vaut CHF ${salary} et l’avantage mensuel CHF ${allowance}. Quel est le coût de ces deux postes sur la mission ?`, `CHF ${n((salary + allowance) * months)}`, `Additionnez les deux postes mensuels, puis multipliez par ${months}.`],
+    [`Le dossier prévoit CHF ${equipment} d’équipement et CHF ${training} de formation au début d’une mission de ${months} mois. Quel coût moyen mensuel donnent ces deux postes, au centime ?`, `CHF ${n((equipment + training) / months)} par mois`, `Additionnez les dépenses de démarrage puis répartissez-les sur la durée.`],
+    [`Une mission temporaire comparable coûte CHF ${temporary} par mois. Que représente en CHF l’écart avec un coût mensuel de CHF ${salary + allowance} pour les mêmes postes ?`, `CHF ${n(Math.abs(temporary - salary - allowance))}`, `Comparez les deux coûts mensuels de même périmètre et calculez la différence absolue.`],
+    [`Pour ${months} mois, le budget de l’exercice réunit salaire et avantages de CHF ${salary + allowance} par mois, CHF ${equipment} d’équipement et CHF ${training} de formation. Quel est le coût global ?`, `CHF ${n((salary + allowance) * months + equipment + training)}`, `Multipliez les dépenses mensuelles par la durée et ajoutez une seule fois les postes de démarrage.`],
+  ]
+}
+
+function codeCheck(unit, [odd, even, entered, checked, errors, goal]) {
+  const sumWeighted = odd + 3 * even
+  const key = (10 - sumWeighted % 10) % 10
+  return [
+    [`Pour un GTIN-13, la somme des chiffres de rang impair avant la clé vaut ${odd} et celle des rangs pairs vaut ${even}. Calculez la somme pondérée en utilisant les coefficients 1 et 3.`, `${sumWeighted}`, `Somme pondérée = ${odd} + 3 × ${even} = ${sumWeighted}.`],
+    [`La somme pondérée avant la clé d’un GTIN-13 est de ${sumWeighted}. Quel chiffre faut-il ajouter pour atteindre un multiple de dix ?`, `${key}`, `Le reste modulo dix vaut ${sumWeighted % 10}. La clé est le complément sauf si le reste vaut zéro.`],
+    [`Un GTIN-13 fictif a une somme pondérée de ${sumWeighted} et une clé saisie de ${entered}. Le total satisfait-il le contrôle de la clé ?`, (sumWeighted + entered) % 10 === 0 ? 'Oui, le total est un multiple de 10.' : 'Non, le total n’est pas un multiple de 10.', `Le contrôle donne ${sumWeighted} + ${entered} = ${sumWeighted + entered}. Vérifiez le reste après division par 10.`],
+    [`Sur ${checked} ${unit}, ${errors} ont une clé invalide. Calculez au centième le pourcentage qui passe ce seul contrôle.`, `${percent(checked - errors, checked)} %`, `On compte ${checked} − ${errors} = ${checked - errors} codes passant le contrôle. Rapportez-les à tous les codes lus.`],
+    [`Sur ${checked} lectures, au moins ${goal} % doivent passer le contrôle de la clé. Combien d’échecs ce critère permet-il au maximum ?`, `${checked - Math.ceil(checked * goal / 100)} échecs`, `Il faut au moins ${Math.ceil(checked * goal / 100)} succès. Soustrayez ce minimum du total des lectures.`],
+  ]
+}
+
+function spreadsheet(unit, [a, b, c, d, unitPrice, rate]) {
+  const values = [a, b, c, d]
+  const total = sum(values)
+  return [
+    [`Dans une feuille Excel, B2 à B5 contiennent ${values.join(', ')} ${unit}. Donnez la formule SOMME et le total.`, `=SOMME(B2:B5), soit ${total}`, `La plage B2:B5 contient les quatre lignes. Leur somme est ${total}.`],
+    [`Les cellules B2 à B5 valent ${values.join(', ')}. Donnez la formule du maximum et ce maximum.`, `=MAX(B2:B5), soit ${Math.max(...values)}`, `MAX renvoie la valeur la plus haute de la plage de quatre cellules.`],
+    [`Les quatre relevés de B2 à B5 sont ${values.join(', ')}. Calculez leur moyenne au centième et donnez la formule correspondante.`, `=MOYENNE(B2:B5), soit ${n(total / 4)}`, `La moyenne vaut ${total} ÷ 4. La fonction MOYENNE conserve le même périmètre.`],
+    [`B2 vaut ${a}, B3 vaut ${b} et E1 contient le prix par unité de CHF ${unitPrice}. En C2, on saisit =B2*\u0024E\u00241. Quelle formule donne la recopie en C3 et quel montant calcule-t-elle ?`, `=B3*\u0024E\u00241, soit CHF ${n(b * unitPrice)}`, `B2 suit la ligne et change en B3. Les deux signes dollar fixent E1. Le résultat vaut ${b} × ${unitPrice}.`],
+    [`Le total de ${total} ${unit} est réduit de ${rate} % dans un scénario. Donnez au centième la valeur prévue et une formule avec le total en B6 et le taux au format pourcentage en E1.`, `=B6*(1-E1), soit ${n(total * (1 - rate / 100))}`, `E1 est le taux et vaut ${n3(rate / 100)} dans le calcul. Multipliez ${total} par 1 moins ce taux.`],
+  ]
+}
+
+function printing(unit, [pages, copies, inserts, firstPage, per, blocked]) {
+  return [
+    [`Le document final comporte ${pages} pages. On imprime ${copies} exemplaires en recto. Combien de feuilles faut-il prévoir ?`, `${pages * copies} feuilles`, `En recto, une page occupe une feuille. Multipliez par le nombre d’exemplaires.`],
+    [`Il faut ${copies} exemplaires séparés de ${pages} pages en recto verso. Combien de feuilles faut-il si chaque exemplaire commence sur une nouvelle feuille ?`, `${Math.ceil(pages / 2) * copies} feuilles`, `Pour chaque exemplaire, divisez les pages par deux et arrondissez au supérieur. Multipliez ensuite par ${copies}.`],
+    [`La pièce jointe ajoute ${inserts} pages à un document de ${pages} pages. Le document commence au numéro ${firstPage} et la numérotation continue. Quel est le dernier numéro ?`, `${firstPage + pages + inserts - 1}`, `Le document final compte ${pages + inserts} pages. Le dernier numéro est le premier plus ce total moins un.`],
+    [`Vous devez répartir ${pages} éléments de ${unit} en planches de ${per} éléments. Combien de planches faut-il, en gardant toute planche entamée ?`, `${Math.ceil(pages / per)} planches`, `Divisez le nombre d’éléments par la capacité par planche, puis arrondissez au supérieur.`],
+    [`Un contrôle a marqué ${blocked} des ${pages} pages à écarter de l’impression de test. Quel pourcentage peut être imprimé, au centième ?`, `${percent(pages - blocked, pages)} %`, `Soustrayez les pages écartées puis calculez la part des pages retenues.`],
+  ]
+}
+
+function files(unit, [count, size, limit, versions, removed, second]) {
+  return [
+    [`Un espace de travail conserve ${count} ${unit} de ${size} Mo chacun en moyenne. Calculez l’espace estimé occupé.`, `${count * size} Mo`, `Multipliez le nombre d’éléments par la taille moyenne annoncée.`],
+    [`La limite d’exercice est de ${limit} Mo. La collection actuelle occupe ${count * size} Mo. Quelle marge reste-t-il avant la limite ?`, `${limit - count * size} Mo`, `Retirez l’espace déjà occupé de la capacité fixée par le dossier.`],
+    [`Le dossier de travail conserve ${versions} versions de ${size} Mo pour le même fichier. Quel espace représentent ces copies ?`, `${versions * size} Mo`, `Chaque copie occupe ${size} Mo dans cet exercice. Multipliez par le nombre de versions.`],
+    [`Un dossier de ${count * size} Mo est révisé en retirant ${removed} Mo puis en ajoutant ${second} Mo. Quel est le nouveau volume occupé ?`, `${count * size - removed + second} Mo`, `Appliquez les deux mouvements dans la même unité. ${count * size} − ${removed} + ${second} = ${count * size - removed + second}.`],
+    [`Le dossier contient ${count * size} Mo. Pour ce calcul, 1 Go vaut 1 000 Mo. Donnez l’équivalent en Go au millième.`, `${n3(count * size / 1000)} Go`, `Divisez la valeur en Mo par 1 000 selon la convention du dossier.`],
+  ]
+}
+
+function playback(_unit, [slides, each, transitions, clip, deadline, extra]) {
+  const total = slides * each + (slides - 1) * transitions + clip
+  return [
+    [`Le diaporama comporte ${slides} diapositives. Le commentaire de chacune dure ${each} s, avant les transitions. Quel temps total de commentaire prévoir ?`, `${slides * each} s`, `Multipliez la durée de commentaire par le nombre de diapositives.`],
+    [`Entre ${slides} diapositives, chaque transition dure ${transitions} s. Aucune transition ne précède la première et ne suit la dernière. Quelle durée ajouter ?`, `${(slides - 1) * transitions} s`, `Il y a ${slides - 1} transitions entre ${slides} diapositives. Multipliez par ${transitions}.`],
+    [`Le commentaire occupe ${slides * each} s et les transitions ${(slides - 1) * transitions} s. Ajoutez une vidéo de ${clip} s. Quelle durée prévoir au total en minutes et secondes ?`, `${Math.floor(total / 60)} min ${total % 60} s`, `Additionnez les trois durées, soit ${total} s. Divisez par 60 et gardez le reste en secondes.`],
+    [`Le temps attribué au diaporama est de ${deadline} s. La version actuelle dure ${total} s. De combien est-elle en dessous ou au-dessus de ce temps ?`, `${Math.abs(deadline - total)} s ${deadline >= total ? 'de marge' : 'de dépassement'}`, `Comparez les deux durées en secondes, puis prenez l’écart absolu.`],
+    [`Une animation de ${extra} s est ajoutée à chacune des deux premières diapositives. La présentation durait ${total} s. Quelle durée atteint-elle après ce changement ?`, `${total + 2 * extra} s`, `Ajoutez les deux animations à la durée totale. ${total} + 2 × ${extra} = ${total + 2 * extra}.`],
+  ]
+}
+
+function locale(_unit, [day, month, otherDay, francs, cents, supplement]) {
+  const digits = (value) => String(value).padStart(2, '0')
+  return [
+    [`Le dossier indique le ${digits(day)}/${digits(month)}/2026 dans l’ordre jour, mois, année. Réécrivez la date dans l’ordre mois, jour, année.`, `${digits(month)}/${digits(day)}/2026`, `Inversez la position du jour et du mois en gardant leur signification.`],
+    [`Deux flux de fichiers indiquent le jour ${day} et le jour ${otherDay} du même mois. Après vérification des formats, calculez l’écart absolu de date.`, `${Math.abs(otherDay - day)} jours`, `Le mois est le même. Prenez la différence absolue entre les jours.`],
+    [`Un fichier importé donne ${francs}.${digits(cents)} CHF avec point décimal. Calculez ce montant en centimes de franc.`, `${francs * 100 + cents} centimes`, `Multipliez les francs par 100 et ajoutez les centimes déjà indiqués.`],
+    [`Une colonne du fichier donne CHF ${francs}.${digits(cents)} avec un point décimal et une autre donne CHF ${supplement},50 avec une virgule décimale. Donnez la somme en francs avec une virgule.`, `CHF ${n(francs + cents / 100 + supplement + 0.5)}`, `Lisez les deux séparateurs comme des décimales selon leur format. Additionnez les montants au centime.`],
+    [`La valeur sans séparateur d’un fichier est ${francs * 100 + cents} centimes. Présentez-la en francs avec une virgule et deux chiffres après la virgule.`, `CHF ${francs},${digits(cents)}`, `Divisez la valeur par 100. Le reste entier de la division donne les centimes à écrire sur deux chiffres.`],
+  ]
+}
+
+function layout(_unit, [width, height, lateral, topBottom, imageWidth, imageHeight]) {
+  const innerWidth = width - 2 * lateral
+  const innerHeight = height - 2 * topBottom
+  return [
+    [`La page fait ${width} mm de large avec une marge de ${lateral} mm de chaque côté. Quelle largeur reste pour le cadre de contenu ?`, `${innerWidth} mm`, `Retirez deux marges latérales. ${width} − 2 × ${lateral} = ${innerWidth} mm.`],
+    [`La page mesure ${height} mm de haut avec ${topBottom} mm de marge en haut et autant en bas. Calculez la hauteur utile.`, `${innerHeight} mm`, `Retranchez les marges du haut et du bas.`],
+    [`Le cadre utile mesure ${innerWidth} × ${innerHeight} mm. Calculez son aire en cm² en prenant 1 cm² = 100 mm².`, `${n(innerWidth * innerHeight / 100)} cm²`, `Multipliez les dimensions en millimètres puis divisez par 100.`],
+    [`Une image mesure ${imageWidth} × ${imageHeight} mm. On double sa largeur en conservant ses proportions. Quelle hauteur faut-il prévoir ?`, `${imageHeight * 2} mm`, `Une mise à l’échelle uniforme double les deux dimensions.`],
+    [`Le cadre admet ${innerWidth} mm en largeur. On conserve la forme d’une image de ${imageWidth} × ${imageHeight} mm et on l’ajuste à la largeur du cadre. Calculez sa hauteur au centième.`, `${n(innerWidth * imageHeight / imageWidth)} mm`, `Le facteur d’échelle est ${innerWidth} ÷ ${imageWidth}. Appliquez-le aussi à la hauteur de ${imageHeight} mm.`],
+  ]
+}
+
+function tableValues(unit, [a, b, c, d, expected, updated]) {
+  const values = [a, b, c, d]
+  const total = sum(values)
+  return [
+    [`Les quatre lignes du tableau indiquent ${values.join(', ')} ${unit}. Calculez le total à inscrire.`, `${total} ${unit}`, `Additionnez les valeurs des quatre lignes.`],
+    [`Le tableau indique ${values.join(', ')} ${unit} pour quatre périodes. Quelle est la moyenne au centième par période ?`, `${n(total / 4)} ${unit} par période`, `La somme des relevés vaut ${total}. Répartissez-la sur quatre périodes.`],
+    [`Le total attendu est de ${expected} ${unit}. Le tableau comporte ${values.join(', ')}. Calculez l’écart signé constaté moins attendu.`, `${total - expected} ${unit}`, `Additionnez les lignes puis soustrayez le total attendu. ${total} − ${expected} = ${total - expected}.`],
+    [`Dans le tableau de ${total} ${unit} au total, la deuxième ligne vaut ${b}. Quelle part du total cette ligne représente-t-elle, au centième de pour cent ?`, `${percent(b, total)} %`, `Divisez la valeur de la deuxième ligne par le total et multipliez par 100.`],
+    [`Le tableau totalise ${total} ${unit}. Une correction remplace la dernière ligne de ${d} par ${updated}. Quel total faut-il maintenant présenter ?`, `${total - d + updated} ${unit}`, `Retirez la dernière ligne d’origine puis ajoutez la valeur corrigée.`],
+  ]
+}
+
+function environment(_unit, [firstMass, firstVisitors, secondMass, secondVisitors, gramsGoal, projected]) {
+  const before = firstMass * 1000 / firstVisitors
+  const after = secondMass * 1000 / secondVisitors
+  return [
+    [`Le premier événement collecte ${firstMass} kg de déchets pour ${firstVisitors} visiteurs. Donnez les grammes par visiteur au centième.`, `${n(before)} g par visiteur`, `Convertissez les kg en g, puis divisez par le nombre de visiteurs.`],
+    [`Les deux événements collectent ${firstMass} et ${secondMass} kg pour ${firstVisitors} et ${secondVisitors} visiteurs. Quelle moyenne combinée en grammes par visiteur obtient-on, au centième ?`, `${n((firstMass + secondMass) * 1000 / (firstVisitors + secondVisitors))} g par visiteur`, `Additionnez les masses et les effectifs avant de calculer le rapport, puis convertissez en grammes.`],
+    [`Le premier événement produit ${firstMass} kg pour ${firstVisitors} visites, le second ${secondMass} pour ${secondVisitors}. Quelle est la variation signée, second moins premier, en grammes de déchets par visite ?`, `${n(after - before)} g par visite`, `Calculez les ratios non arrondis des deux événements. Soustrayez le premier du second.`],
+    [`L’objectif fixe ${gramsGoal} g de déchets par visiteur au maximum. Avec ${projected} visiteurs, quel plafond en kg cela donne-t-il ?`, `${n3(gramsGoal * projected / 1000)} kg`, `Multipliez les grammes par visiteur par l’effectif puis divisez par 1 000.`],
+    [`Le deuxième événement collecte ${secondMass} kg pour ${secondVisitors} visites. Par rapport à un objectif de ${gramsGoal} g par visite, quel est l’écart signé du bilan réel au plafond en kg ?`, `${n3(secondMass - gramsGoal * secondVisitors / 1000)} kg`, `Le plafond est ${gramsGoal} × ${secondVisitors} ÷ 1 000 kg. Soustrayez ce plafond de la masse mesurée.`],
+  ]
+}
+
+function impact(_unit, [firstKm, secondKm, rate, secondRate, runs, goal]) {
+  const first = firstKm * rate
+  const second = secondKm * secondRate
+  return [
+    [`Dans cet exercice, un trajet de ${firstKm} km est estimé à ${n3(rate)} kg de CO₂e par km. Calculez l’impact prévu par trajet.`, `${n(first)} kg CO₂e`, `Multipliez le parcours par le facteur fictif du dossier.`],
+    [`Le service est accompli par ${runs} trajets de ${firstKm} km au facteur d’exercice de ${n3(rate)} kg CO₂e/km. Quel impact total prévoir ?`, `${n(first * runs)} kg CO₂e`, `Calculez l’impact par trajet puis multipliez par le nombre de trajets.`],
+    [`Deux options de même service donnent ${firstKm} km à ${n3(rate)} kg CO₂e/km ou ${secondKm} km à ${n3(secondRate)} kg CO₂e/km. Quel écart résulte du modèle ?`, `${n(Math.abs(first - second))} kg CO₂e`, `Reconstituez les impacts sur l’ensemble des trajets, ${n(first)} et ${n(second)} kg CO₂e, puis comparez.`],
+    [`L’objectif de ce dossier est d’au plus ${goal} kg CO₂e par trajet. Avec un facteur de ${n3(rate)} kg CO₂e/km, quelle distance entière est compatible avec cet objectif ?`, `${Math.floor(goal / rate)} km`, `Divisez l’objectif par le facteur retenu. Arrondissez au nombre inférieur de kilomètres entiers si nécessaire.`],
+    [`Un relevé d’exercice fait état de ${n3(first)} kg CO₂e pour ${firstKm} km. Calculez le facteur moyen en kg CO₂e/km au millième.`, `${n3(rate)} kg CO₂e/km`, `Divisez le bilan du trajet par les kilomètres de ce même parcours.`],
+  ]
+}
+
+function journey(_unit, [seen, interested, requested, bought, goal, second]) {
+  return [
+    [`Sur ${seen} personnes qui voient l’offre, ${interested} s’y intéressent. Calculez le taux d’intérêt rapporté au premier groupe, au centième.`, `${percent(interested, seen)} %`, `Divisez les personnes intéressées par celles qui ont vu l’offre et multipliez par 100.`],
+    [`Parmi les ${interested} personnes intéressées, ${requested} demandent une information détaillée et ${bought} de celles-ci achètent. Calculez le taux d’achat parmi les demandes détaillées, au centième.`, `${percent(bought, requested)} %`, `Le public de départ pour ce taux est celui des ${requested} demandes détaillées. Calculez ${bought} ÷ ${requested} × 100.`],
+    [`Le suivi compte ${seen} personnes au premier contact et ${bought} achats issus de ces contacts. Calculez le taux de passage du premier contact à l’achat.`, `${percent(bought, seen)} %`, `Comparez l’action finale à l’effectif du début, en gardant les deux valeurs du même dossier.`],
+    [`Le groupe des personnes intéressées compte ${interested} personnes. On vise au moins ${goal} % d’achats dans cette base. Combien d’achats entiers faut-il ?`, `${Math.ceil(interested * goal / 100)} achats`, `Appliquez le taux cible à la base et arrondissez au supérieur si le nombre n’est pas entier.`],
+    [`Sur la même base de ${requested} demandes détaillées, les achats passent de ${bought} à ${second} après une correction du suivi. De combien de points le taux change-t-il ?`, `${percent(second - bought, requested)} points`, `Le dénominateur reste ${requested}. La variation vaut (${second} − ${bought}) ÷ ${requested} × 100.`],
+  ]
+}
+
+function market(unit, [firstSales, firstMarket, secondSales, secondMarket, otherSales, goal]) {
+  return [
+    [`L’entreprise vend ${firstSales} ${unit} sur un marché de ${firstMarket} unités pendant le trimestre. Calculez sa part de marché en volume au centième.`, `${percent(firstSales, firstMarket)} %`, `Divisez les ventes de l’entreprise par les ventes du marché dans le même périmètre.`],
+    [`Deux zones distinctes donnent ${firstSales} ventes sur ${firstMarket} et ${secondSales} sur ${secondMarket}. Calculez la part de l’entreprise sur les deux zones réunies.`, `${percent(firstSales + secondSales, firstMarket + secondMarket)} %`, `Additionnez ventes de l’entreprise et ventes du marché par zone avant de calculer le taux global.`],
+    [`La part en volume vaut ${percent(firstSales, firstMarket)} % dans une zone et ${percent(secondSales, secondMarket)} % dans l’autre. Calculez la variation signée seconde moins première, au centième à partir des taux indiqués.`, `${n(Number(percent(secondSales, secondMarket).replace(',', '.')) - Number(percent(firstSales, firstMarket).replace(',', '.')))} points`, `Soustrayez les deux pourcentages indiqués et exprimez l’écart en points de pourcentage.`],
+    [`Sur ${firstMarket} ${unit} vendues au total, deux vendeurs en vendent ${firstSales} et ${otherSales}. Combien d’unités appartiennent aux ventes des autres vendeurs ?`, `${firstMarket - firstSales - otherSales} ${unit}`, `Soustrayez les ventes des deux fournisseurs du volume total du marché.`],
+    [`Le marché reste à ${firstMarket} ${unit}. Quel volume entier minimal de ventes faut-il pour atteindre au moins ${goal} % du marché ?`, `${Math.ceil(firstMarket * goal / 100)} ${unit}`, `Appliquez le pourcentage cible à l’ensemble du marché puis arrondissez au supérieur si nécessaire.`],
+  ]
+}
+
+function saleCash(_unit, [first, second, third, deposit, shipping, refund]) {
+  const billed = first + second + third
+  return [
+    [`Trois ventes facturées valent CHF ${first}, ${second} et ${third}. Calculez le chiffre d’affaires de ces opérations avant toute correction.`, `CHF ${n(billed)}`, `Additionnez les montants des ventes du même dossier. ${first} + ${second} + ${third} = ${billed}.`],
+    [`Le prix convenu est CHF ${third} et le débiteur verse un acompte de CHF ${deposit}. Quel solde doit-il encore régler ?`, `CHF ${n(third - deposit)}`, `Déduisez l’acompte déjà versé du montant convenu.`],
+    [`Les ventes sont facturées CHF ${first}, ${second} et ${third}. Les deux premières sont payées et la dernière donne un acompte de CHF ${deposit}. Calculez le montant encaissé.`, `CHF ${n(first + second + deposit)}`, `Comptez les montants effectivement versés, sans ajouter le solde de la dernière vente.`],
+    [`Le prix des marchandises de la commande vaut CHF ${third}. L’offre prévoit CHF ${shipping} pour la livraison et le client a payé CHF ${deposit}. Quel montant reste à encaisser selon ces conditions ?`, `CHF ${n(third + shipping - deposit)}`, `Additionnez le prix et les frais facturés, puis retirez le montant déjà payé.`],
+    [`Un avoir de CHF ${refund} corrige la vente de CHF ${second}. Les deux autres ventes sont de CHF ${first} et ${third}. Calculez le chiffre d’affaires corrigé pour ces ventes.`, `CHF ${n(billed - refund)}`, `Le chiffre d’affaires d’origine vaut CHF ${billed}. Retranchez l’avoir de CHF ${refund}.`],
+  ]
+}
+
+function tolerance(_unit, [target, allowed, first, second, third, reference]) {
+  const min = target - allowed
+  const max = target + allowed
+  const measured = [first, second, third]
+  const errors = measured.filter((value) => value < min - 1e-9 || value > max + 1e-9).length
+  return [
+    [`La dimension cible est de ${n(target)} mm, avec une tolérance de ± ${n(allowed)} mm. Donnez l’intervalle accepté avec ses limites.`, `${n(min)} à ${n(max)} mm`, `Soustrayez puis ajoutez la tolérance à la dimension cible.`],
+    [`Vous mesurez ${n(first)} mm pour une cible de ${n(target)} mm. Quel écart signé, mesure moins cible, relevez-vous ?`, `${n(first - target)} mm`, `L’écart vaut ${n(first)} − ${n(target)} = ${n(first - target)} mm.`],
+    [`Le plan accepte de ${n(min)} à ${n(max)} mm, limites incluses. Les trois lectures sont ${measured.map(n).join(', ')} mm. Combien sortent de l’intervalle ?`, `${errors} lectures`, `Comparez chaque valeur aux deux limites. Le nombre de lectures hors des limites est de ${errors}.`],
+    [`Deux mesures du même format valent ${n(second)} et ${n(third)} mm. Quelle différence absolue en centimètres faut-il transmettre au millième ?`, `${n3(Math.abs(second - third) / 10)} cm`, `Calculez la différence absolue en mm, puis divisez par 10 pour l’exprimer en cm.`],
+    [`Un contrôle de référence compare ${n(reference)} mm attendus à une lecture de ${n(first)} mm. L’écart maximum admis pour ce contrôle est de ${n(allowed)} mm. Vérifiez la différence absolue et le critère.`, `${n(Math.abs(first - reference))} mm, critère ${Math.abs(first - reference) <= allowed + 1e-9 ? 'respecté' : 'dépassé'}`, `Comparez la différence absolue à la limite de ${n(allowed)} mm.`],
+  ]
+}
+
+function orderSize(_unit, [annual, order, price, rate, lot, alternate]) {
+  const holding = price * rate / 100
+  const optimal = Math.sqrt(2 * annual * order / holding)
+  return [
+    [`Le prix est de CHF ${price} par unité et le coût annuel de possession est de ${rate} % du prix. Calculez le coût de possession annuel par unité.`, `CHF ${n(holding)} par unité`, `Multipliez le prix par le taux annuel transformé en décimal.`],
+    [`La demande annuelle est de ${annual} unités et la commande coûte CHF ${order}. Avec un coût de possession de CHF ${n(holding)} par unité et par an, calculez la quantité d’Andler au centième.`, `${n(optimal)} unités`, `Le modèle donne √(2 × ${annual} × ${order} ÷ ${n(holding)}) ≈ ${n(optimal)}.`],
+    [`On prévoit de commander par lots de ${lot} pour ${annual} unités par an. Donnez le nombre de commandes du modèle théorique au centième, puis le coût annuel associé.`, `${n(annual / lot)} commandes, CHF ${n(annual / lot * order)}`, `Divisez la demande annuelle par le lot, puis multipliez ce rapport non arrondi par CHF ${order} par commande.`],
+    [`Dans le modèle, le stock moyen d’un lot de ${lot} est la moitié du lot. Avec CHF ${n(holding)} de possession par unité, calculez le coût annuel correspondant.`, `CHF ${n(lot / 2 * holding)}`, `Le stock moyen vaut ${n(lot / 2)} unités. Multipliez par le coût annuel unitaire.`],
+    [`Le modèle recommande ${n(optimal)} unités. Le poste ne peut acheter que par multiples de ${alternate}. Quels multiples immédiatement inférieur et supérieur encadrent la quantité recommandée ?`, `${Math.floor(optimal / alternate) * alternate} et ${Math.ceil(optimal / alternate) * alternate} unités`, `Repérez les deux multiples de ${alternate} qui encadrent la valeur du modèle avant de comparer les options réalisables.`],
+  ]
+}
+
+function cycle(unit, [initial, daily, point, waiting, delivery, safety]) {
+  const before = point - daily * waiting
+  const after = before + delivery
+  return [
+    [`Au départ, le stock contient ${initial} ${unit}. Sans arrivée, il diminue de ${daily} par jour. Après combien de jours le relevé de fin de journée atteint ou franchit le point de commande de ${point} ?`, `${Math.ceil((initial - point) / daily)} jours`, `Le stock doit baisser d’au moins ${initial} − ${point} = ${initial - point}. Divisez par la sortie journalière et arrondissez au supérieur.`],
+    [`La commande est passée à ${point} ${unit}. Elle arrive après ${waiting} jours pendant lesquels le stock baisse de ${daily} par jour. Combien d’unités restent juste avant l’arrivée ?`, `${before} ${unit}`, `Le besoin du délai vaut ${waiting} × ${daily} = ${waiting * daily}. Retranchez-le au stock du déclenchement.`],
+    [`Le relevé juste avant la livraison est de ${before} ${unit}. Le lot reçu en apporte ${delivery}. À quel niveau remonte le stock ?`, `${after} ${unit}`, `La réception augmente le solde de toute la quantité remise. ${before} + ${delivery} = ${after}.`],
+    [`La réserve de sécurité cible est de ${safety} ${unit}. Le relevé juste avant livraison en montre ${before}. Donnez l’écart signé relevé moins cible.`, `${before - safety} ${unit}`, `L’écart vaut ${before} − ${safety} = ${before - safety}. Un signe négatif indique que la réserve est entamée.`],
+    [`Sur la partie descendante du graphique, le niveau passe de ${point} à ${before} ${unit} en ${waiting} jours, sans entrée. Calculez la consommation moyenne par jour.`, `${daily} ${unit} par jour`, `Soustrayez les niveaux puis divisez la différence par la durée. (${point} − ${before}) ÷ ${waiting} = ${daily}.`],
+  ]
+}
+
+export const dossierMaths = {
+  stock, series, planning, area, audit, cost, mass, levels, cadence, lever,
+  route, tonneDistance, volume, tension, depreciation, payroll, indicator, result, capital, service, valuation, expense, benefits,
+  codeCheck, spreadsheet, printing, files, playback, locale, layout, tableValues, environment, impact, journey, market, saleCash,
+  tolerance, orderSize, cycle,
+}

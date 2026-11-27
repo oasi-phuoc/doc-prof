@@ -29,10 +29,19 @@ import { generatePerimetreCompose } from './perimetre-compose'
 import { generateLengthConversionBatch, tryGenerateConversion } from './conversions'
 import { tryGenerateTpmItems } from '@/tpm/items'
 import { tryGenerateFigure } from './figures-school'
+import { generateFractionDecimals, generateFractionFigures } from './fraction-shapes'
+import { tryGenerateGeometryPractice } from './geometry-practice'
 import { tryGenerateMesure } from './mesures'
 import { makeWordProblem } from './problems'
 import { tryGenerateTcmCfrItems } from '@/tcm-cfr/items'
 import { tryGenerateTcmCscItems } from '@/tcm-csc/items'
+import { tryGenerateFreeArithmetic } from './free-arithmetic'
+import { tryGenerateFunctionPractice } from './function-practice'
+import { tryGenerateGeometryMeasurement } from './geometry-measurement'
+import { tryGenerateGeometryConstructions } from './geometry-constructions'
+import { tryGenerateMeasurementPractice } from './measurement-practice'
+import { tryGenerateMathFoundations } from './foundations-practice'
+import { tryGenerateNumberRepresentations } from './number-representations'
 import { generateCountIcons } from '@/math/count-icons'
 import { int, pick, shuffle, type Rng } from './rng'
 import type {
@@ -91,6 +100,26 @@ export function generateItems(
   if (tcmCsc) return tcmCsc
   const tcmCfr = tryGenerateTcmCfrItems(typeId, count, rng, worksheetSeed, orderAscending, coordOptions)
   if (tcmCfr) return tcmCfr
+  if (typeId === 'fractions-colorier' || typeId === 'fractions-lire-figure') {
+    return generateFractionFigures(rng, count, typeId === 'fractions-colorier' ? 'color' : 'read')
+  }
+  if (typeId === 'fractions-vers-decimal') return generateFractionDecimals(rng, count)
+  const freeArithmetic = range?.decimals && tryGenerateFreeArithmetic(typeId, rng, count, range)
+  if (freeArithmetic) return normalizeDivisionLayouts(normalizeColumnLayouts(freeArithmetic))
+  const functionPractice = tryGenerateFunctionPractice(typeId, rng, count, difficulty)
+  if (functionPractice) return functionPractice
+  const geometryMeasurement = tryGenerateGeometryMeasurement(typeId, rng, count)
+  if (geometryMeasurement) return geometryMeasurement
+  const constructions = tryGenerateGeometryConstructions(typeId, rng, count)
+  if (constructions) return constructions
+  const measurements = tryGenerateMeasurementPractice(typeId, rng, count, difficulty)
+  if (measurements) return measurements
+  const foundations = tryGenerateMathFoundations(typeId, rng, count, difficulty, range)
+  if (foundations) return foundations
+  const geometryPractice = tryGenerateGeometryPractice(typeId, rng, count)
+  if (geometryPractice) return geometryPractice
+  const numberRepresentations = tryGenerateNumberRepresentations(typeId, rng, count, difficulty, range)
+  if (numberRepresentations) return numberRepresentations
   if (typeId === 'conversions-longueur' && count >= 2) {
     // Lot unique (pas deux fois mm→cm) ; Q5–Q6 en décimal si count ≥ 5.
     return generateLengthConversionBatch(rng, count, range)

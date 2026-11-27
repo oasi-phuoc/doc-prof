@@ -1,5 +1,7 @@
+import { mathTheoryTopic } from '@/math/theory-lessons'
 import { isLogistiqueReferenceType, logistiqueType } from '@/logistique/catalog'
-import { logistiqueHasSummary } from '@/logistique/generate'
+import { logistiqueHasSummary, logistiqueModuleCapacities } from '@/logistique/generate'
+import { SelectBox } from './SelectBox'
 import {
   blockPointsTotal,
   formatPointsLabel,
@@ -215,15 +217,44 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
       !isGramTheory &&
       (sheetItems == null || sheetItems.length === 0 || Boolean(sheetHasInlineBlank))) ||
     (isTcf && peMotsClesSlot)
-  const isLogistiqueTheory = logistiqueType(activeBlock.exerciseType)?.kind === 'theorie'
+  const logistics = logistiqueType(activeBlock.exerciseType)
+  const isLogistiqueTheory = logistics?.kind === 'theorie'
   const theoryView = activeBlock.logistiqueTheoryView ?? 'complet'
   const hasSummary = isLogistiqueTheory && logistiqueHasSummary(activeBlock.exerciseType, activeBlock.logistiqueBankRevision)
+  const gapMode = activeBlock.logistiqueGapMode
+  const selectedModules = logistics?.kind === 'verification'
+    ? (evalMode ? activeBlock.logistiqueSelection?.modules : undefined) ?? [logistics.module] : []
+  const gapCapacity = logistics?.kind === 'verification' ? [...logistiqueModuleCapacities(
+    logistics, selectedModules, activeBlock.logistiqueBankRevision, 'sans-liste',
+  ).values()].reduce((total, stock) => total + stock, 0) : 0
   return (
     <>
+              {logistics?.kind === 'verification' && (gapCapacity > 0 || gapMode) ? (
+                <SelectBox label="Présentation des questions" value={gapMode ?? 'questions'} onChange={(value) => {
+                  const next = value === 'avec-liste' || value === 'sans-liste' ? value : undefined
+                  if (next === gapMode) return
+                  if (activeBlock.libreItems?.length &&
+                      !window.confirm('Changer de présentation remplacera le contenu libre de cette activité. Continuer ?')) return
+                  updatePage({
+                    logistiqueGapMode: next,
+                    libreItems: undefined,
+                    libreInstruction: undefined,
+                    ...(next && activeBlock.count > gapCapacity ? { count: Math.max(1, gapCapacity) } : {}),
+                    ...(Boolean(next) === Boolean(gapMode) ? {} : { tcfPageBreakAfter: undefined }),
+                  })
+                }}>
+                  <option value="questions">Questions habituelles</option>
+                  <option value="sans-liste" disabled={!gapCapacity}>Texte à trous sans liste</option>
+                  <option value="avec-liste" disabled={!gapCapacity}>Texte à trous avec liste</option>
+                </SelectBox>
+              ) : null}
               {activeBlock.grammarPresentation==='document-set' || grammarAudioOnly || isPhraseChart ||
               isVocabLearn ||
               isGramTheory ||
+              mathTheoryTopic(activeBlock.exerciseType) ||
               isLogistiqueReferenceType(activeBlock.exerciseType) ||
+              (evalMode && activeBlock.logistiqueSelection &&
+                (!activeBlock.logistiqueSelection.modules.length || activeBlock.logistiqueSelection.quantities)) ||
               isJeuxDomain ||
               isCalliDomain ||
               isSoutienMots ||
@@ -1001,6 +1032,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
               isVocabLearn ||
               isVocabPool ||
               isGramTheory ||
+              mathTheoryTopic(activeBlock.exerciseType) ||
               isGrammaireDomain ||
               isLogique ||
               isJeuxDomain ||

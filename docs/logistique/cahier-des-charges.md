@@ -535,12 +535,12 @@ La grille est vérifiée pour chacun des 143 sous-thèmes de catalogue (80 CFC +
 
 ### 4.7 Placement et composition dans les fiches de théorie
 
-**THV-05 — Encadré illustré par défaut.** Utiliser les blocs de théorie et encadrés existants, avec bordure discrète et marges internes cohérentes. Placer la figure à proximité immédiate du paragraphe, de la définition ou de l'exemple correspondant, et non dans une galerie d'images en fin de cours. Un encadré peut regrouper titre, illustration, légende et explication courte. Les figures s'insèrent dans le flux normal du texte. Un encadré « Exemple professionnel » ou « À retenir » peut accueillir une illustration lorsque pertinente, sans dupliquer inutilement le texte. Ne pas utiliser la couleur comme seul code de lecture.
+**THV-05 — Encadré illustré par défaut.** Utiliser les blocs de théorie et encadrés existants, avec bordure discrète et marges internes cohérentes. Placer la figure à proximité immédiate du paragraphe, de la définition ou de l'exemple correspondant. Pour une photo qui reste lisible à cette taille, placer l’image et sa légende dans un encadré à droite du passage associé. Le paragraphe coule à gauche puis reprend la pleine largeur sous l’encadré. Appliquer cette disposition au cours complet et au résumé quand le paragraphe et la largeur disponibles s’y prêtent. Les annotations techniques, les tableaux comparatifs et les frises gardent une largeur adaptée à leur lecture. Ne pas utiliser la couleur comme seul code de lecture.
 
 | Disposition | Quand l'utiliser | Règle de rendu |
 |---|---|---|
-| Encadré centré sous le texte (défaut) | Une illustration explicative accompagne une définition ou un exemple | Image proportionnée, titre et légende dans le même bloc |
-| Texte et visuel côte à côte | Objet simple, comparaison courte, petite figure | Colonne de texte suffisante ; basculer en disposition verticale si l'espace manque |
+| Photo encadrée avec habillage du texte | Photo lisible à côté de son explication | La légende suit la photo dans le cadre. Le texte retrouve toute la largeur sous l’encadré. |
+| Encadré centré | Paragraphe trop bref, photo à agrandir ou réglage de feuille trop étroit | Image proportionnée, titre et légende regroupés à la pagination. |
 | Encadré pleine largeur | Schéma dense, plan, tableau, graphique ou document annoté | Taille de lecture suffisante, annotations et légende visibles |
 | Planche comparative de 2 à 4 vignettes | Plusieurs objets ou catégories à distinguer | Échelle relative cohérente lorsqu'elle est significative ; libellé sous chaque vignette |
 | Séquence numérotée | Une succession d'actions ou d'étapes à comprendre | Ordre explicite, une courte légende par étape, continuité visuelle |

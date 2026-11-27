@@ -5578,7 +5578,7 @@
   },
   {
     "schemaVersion": 1,
-    "revision": "temps-2026-11-23-v1",
+    "revision": "temps-2026-11-27-v2",
     "activityId": "gram-ex-e2-communication-ce",
     "subthemeId": "e2",
     "topic": "gram-temps",
@@ -5588,15 +5588,15 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-23",
+      "date": "2026-11-27",
       "humanReview": "pending",
-      "note": "Repères et variantes relus. Modèles ouverts non exclusifs, appréciation enseignante en attente. Les étapes entières ne constituent pas un classement par nature grammaticale."
+      "note": "Questions de lecture relues avec leurs preuves textuelles. L’appréciation enseignante est en attente."
     },
     "presentations": [
       "document-set"
     ],
     "instructions": {
-      "document-set": "Lisez chaque document et répondez à ses trois questions : un choix et deux réponses courtes."
+      "document-set": "Lisez chaque document. Cochez une réponse, puis écrivez trois réponses courtes."
     },
     "units": [
       {
@@ -5662,9 +5662,21 @@
             ],
             "explanation": "Le document indique : « avant le 10 mai ».",
             "response": "short"
+          },
+          {
+            "id": "rdv-q4",
+            "prompt": "Combien de minutes avant le rendez-vous faut-il arriver ?",
+            "answers": [
+              "Dix minutes."
+            ],
+            "evidence": [
+              "dix minutes avant"
+            ],
+            "explanation": "Le document indique : « dix minutes avant ».",
+            "response": "short"
           }
         ],
-        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent le repère exact."
+        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent l’information du document."
       },
       {
         "id": "gram-ex-e2-communication-ce-a1-train",
@@ -5729,9 +5741,37 @@
             ],
             "explanation": "Le document indique : « arrivée à destination à 10 h 30 ».",
             "response": "short"
+          },
+          {
+            "id": "train-q4",
+            "prompt": "Où faut-il se présenter avant le départ ?",
+            "answers": [
+              "Sur le quai."
+            ],
+            "evidence": [
+              "Présentez-vous sur le quai avant le départ"
+            ],
+            "explanation": "Le document indique : « Présentez-vous sur le quai avant le départ ».",
+            "response": "short"
           }
         ],
-        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent le repère exact."
+        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent l’information du document.",
+        "imageSupports": [
+          {
+            "id": "temps-lecture-train",
+            "src": "/lib/images/grammaire/curriculum/sha256/f201b60e59b3825aa6069503e70326fffd9850799b947efad3dc6e1bc4b7517a.webp",
+            "sha256": "f201b60e59b3825aa6069503e70326fffd9850799b947efad3dc6e1bc4b7517a",
+            "width": 1448,
+            "height": 1086,
+            "alt": "Un train de voyageurs.",
+            "source": {
+              "path": "/lib/images/tcf/qcm-audit/vocab-train-isole.webp",
+              "manifest": "docs/grammaire/implementation/temps-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Illustration TCF réemployée à l’identique pour situer le document."
+            }
+          }
+        ]
       },
       {
         "id": "gram-ex-e2-communication-ce-a1-inscriptions",
@@ -5796,9 +5836,21 @@
             ],
             "explanation": "Le document indique : « le 7 septembre ».",
             "response": "short"
+          },
+          {
+            "id": "inscriptions-q4",
+            "prompt": "Que faut-il apporter à l’accueil ?",
+            "answers": [
+              "Votre dossier."
+            ],
+            "evidence": [
+              "Apportez votre dossier à l’accueil"
+            ],
+            "explanation": "Le document indique : « Apportez votre dossier à l’accueil ».",
+            "response": "short"
           }
         ],
-        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent le repère exact."
+        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent l’information du document."
       },
       {
         "id": "gram-ex-e2-communication-ce-a1-fete",
@@ -5863,9 +5915,21 @@
             ],
             "explanation": "Le document indique : « se terminera à 22 h ».",
             "response": "short"
+          },
+          {
+            "id": "fete-q4",
+            "prompt": "À quelle heure est le repas ?",
+            "answers": [
+              "À 19 h."
+            ],
+            "evidence": [
+              "Le repas sera servi à 19 h"
+            ],
+            "explanation": "Le document indique : « Le repas sera servi à 19 h ».",
+            "response": "short"
           }
         ],
-        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent le repère exact."
+        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent l’information du document."
       },
       {
         "id": "gram-ex-e2-communication-ce-a1-bibliotheque",
@@ -5930,9 +5994,37 @@
             ],
             "explanation": "Le document indique : « du lundi au vendredi de 10 h à 18 h ».",
             "response": "short"
+          },
+          {
+            "id": "bibliotheque-q4",
+            "prompt": "Quand peut-on rendre les livres ?",
+            "answers": [
+              "Pendant les heures d’ouverture."
+            ],
+            "evidence": [
+              "Les retours de livres sont possibles pendant les heures d’ouverture"
+            ],
+            "explanation": "Le document indique : « Les retours de livres sont possibles pendant les heures d’ouverture ».",
+            "response": "short"
           }
         ],
-        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent le repère exact."
+        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent l’information du document.",
+        "imageSupports": [
+          {
+            "id": "temps-lecture-bibliotheque",
+            "src": "/lib/images/grammaire/curriculum/sha256/ad3eea66d0f7c58f6bd794b917e02e920b91c551f2c0ff4a89e94703260e4886.webp",
+            "sha256": "ad3eea66d0f7c58f6bd794b917e02e920b91c551f2c0ff4a89e94703260e4886",
+            "width": 1448,
+            "height": 1086,
+            "alt": "Des rayons de livres et des tables de lecture.",
+            "source": {
+              "path": "/lib/images/tcf/co/bg/bibliotheque.webp",
+              "manifest": "docs/grammaire/implementation/temps-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Illustration TCF réemployée à l’identique pour situer le document."
+            }
+          }
+        ]
       },
       {
         "id": "gram-ex-e2-communication-ce-a1-formation",
@@ -5997,9 +6089,21 @@
             ],
             "explanation": "Le document indique : « à 9 h ».",
             "response": "short"
+          },
+          {
+            "id": "formation-q4",
+            "prompt": "En quel mois allez-vous recevoir le programme ?",
+            "answers": [
+              "En août."
+            ],
+            "evidence": [
+              "Vous recevrez le programme en août"
+            ],
+            "explanation": "Le document indique : « Vous recevrez le programme en août ».",
+            "response": "short"
           }
         ],
-        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent le repère exact."
+        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent l’information du document."
       },
       {
         "id": "gram-ex-e2-communication-ce-a1-journee",
@@ -6064,9 +6168,21 @@
             ],
             "explanation": "Le document indique : « atelier de dessin à 14 h 30 ».",
             "response": "short"
+          },
+          {
+            "id": "journee-q4",
+            "prompt": "À quelle heure le centre ferme-t-il ?",
+            "answers": [
+              "À 18 h."
+            ],
+            "evidence": [
+              "Le centre ferme à 18 h"
+            ],
+            "explanation": "Le document indique : « Le centre ferme à 18 h ».",
+            "response": "short"
           }
         ],
-        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent le repère exact."
+        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent l’information du document."
       },
       {
         "id": "gram-ex-e2-communication-ce-a1-couture",
@@ -6131,9 +6247,21 @@
             ],
             "explanation": "Le document indique : « au 8 septembre ».",
             "response": "short"
+          },
+          {
+            "id": "couture-q4",
+            "prompt": "Que faut-il apporter à la première séance ?",
+            "answers": [
+              "Votre matériel."
+            ],
+            "evidence": [
+              "Apportez votre matériel à cette première séance"
+            ],
+            "explanation": "Le document indique : « Apportez votre matériel à cette première séance ».",
+            "response": "short"
           }
         ],
-        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent le repère exact."
+        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent l’information du document."
       },
       {
         "id": "gram-ex-e2-communication-ce-a1-saisons",
@@ -6198,9 +6326,21 @@
             ],
             "explanation": "Le document indique : « ferme en automne ».",
             "response": "short"
+          },
+          {
+            "id": "saisons-q4",
+            "prompt": "Où peut-on trouver les dates précises ?",
+            "answers": [
+              "Dans le programme du camping."
+            ],
+            "evidence": [
+              "Consultez notre programme pour connaître les dates précises"
+            ],
+            "explanation": "Le document indique : « Consultez notre programme pour connaître les dates précises ».",
+            "response": "short"
           }
         ],
-        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent le repère exact."
+        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent l’information du document."
       },
       {
         "id": "gram-ex-e2-communication-ce-a1-ateliers",
@@ -6265,9 +6405,21 @@
             ],
             "explanation": "Le document indique : « photographie en mai ».",
             "response": "short"
+          },
+          {
+            "id": "ateliers-q4",
+            "prompt": "Quand les inscriptions à un atelier ferment-elles ?",
+            "answers": [
+              "Une semaine avant le début de l’atelier."
+            ],
+            "evidence": [
+              "ferment une semaine avant son début"
+            ],
+            "explanation": "Le document indique : « ferment une semaine avant son début ».",
+            "response": "short"
           }
         ],
-        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent le repère exact."
+        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent l’information du document."
       },
       {
         "id": "gram-ex-e2-communication-ce-a1-approximation",
@@ -6332,9 +6484,21 @@
             ],
             "explanation": "Le document indique : « à 8 h 30 ».",
             "response": "short"
+          },
+          {
+            "id": "approximation-q4",
+            "prompt": "Quel transport peut avoir du retard ?",
+            "answers": [
+              "Le bus."
+            ],
+            "evidence": [
+              "le bus peut avoir un peu de retard"
+            ],
+            "explanation": "Le document indique : « le bus peut avoir un peu de retard ».",
+            "response": "short"
           }
         ],
-        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent le repère exact."
+        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent l’information du document."
       },
       {
         "id": "gram-ex-e2-communication-ce-a1-lendemain",
@@ -6399,9 +6563,21 @@
             ],
             "explanation": "Le document indique : « ce soir ».",
             "response": "short"
+          },
+          {
+            "id": "lendemain-q4",
+            "prompt": "Pourquoi est-ce que Léa téléphone à Sami ?",
+            "answers": [
+              "Pour confirmer le lieu."
+            ],
+            "evidence": [
+              "pour confirmer le lieu"
+            ],
+            "explanation": "Le document indique : « pour confirmer le lieu ».",
+            "response": "short"
           }
         ],
-        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent le repère exact."
+        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent l’information du document."
       },
       {
         "id": "gram-ex-e2-communication-ce-a1-anniversaire",
@@ -6466,9 +6642,21 @@
             ],
             "explanation": "Le document indique : « avant le 1er avril ».",
             "response": "short"
+          },
+          {
+            "id": "anniversaire-q4",
+            "prompt": "Que vont prendre les invités ensemble ?",
+            "answers": [
+              "Le goûter."
+            ],
+            "evidence": [
+              "Nous prendrons le goûter ensemble"
+            ],
+            "explanation": "Le document indique : « Nous prendrons le goûter ensemble ».",
+            "response": "short"
           }
         ],
-        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent le repère exact."
+        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent l’information du document."
       },
       {
         "id": "gram-ex-e2-communication-ce-a1-benevolat",
@@ -6533,9 +6721,21 @@
             ],
             "explanation": "Le document indique : « pas de séance le 5 décembre ».",
             "response": "short"
+          },
+          {
+            "id": "benevolat-q4",
+            "prompt": "Quand la collecte reprend-elle après l’annulation ?",
+            "answers": [
+              "Le samedi suivant."
+            ],
+            "evidence": [
+              "La collecte reprendra le samedi suivant"
+            ],
+            "explanation": "Le document indique : « La collecte reprendra le samedi suivant ».",
+            "response": "short"
           }
         ],
-        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent le repère exact."
+        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent l’information du document."
       },
       {
         "id": "gram-ex-e2-communication-ce-a1-travaux",
@@ -6600,9 +6800,21 @@
             ],
             "explanation": "Le document indique : « à 7 h ».",
             "response": "short"
+          },
+          {
+            "id": "travaux-q4",
+            "prompt": "Que faut-il prévoir pendant les travaux ?",
+            "answers": [
+              "Un autre trajet."
+            ],
+            "evidence": [
+              "prévoir un autre trajet pendant les travaux"
+            ],
+            "explanation": "Le document indique : « prévoir un autre trajet pendant les travaux ».",
+            "response": "short"
           }
         ],
-        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent le repère exact."
+        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent l’information du document."
       },
       {
         "id": "gram-ex-e2-communication-ce-a1-rappel",
@@ -6667,9 +6879,21 @@
             ],
             "explanation": "Le document indique : « Jeudi : rapporter le document ».",
             "response": "short"
+          },
+          {
+            "id": "rappel-q4",
+            "prompt": "Où faut-il rapporter le document signé ?",
+            "answers": [
+              "À l’accueil."
+            ],
+            "evidence": [
+              "rapporter le document signé à l’accueil"
+            ],
+            "explanation": "Le document indique : « rapporter le document signé à l’accueil ».",
+            "response": "short"
           }
         ],
-        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent le repère exact."
+        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent l’information du document."
       },
       {
         "id": "gram-ex-e2-communication-ce-a1-trimestre",
@@ -6734,9 +6958,21 @@
             ],
             "explanation": "Le document indique : « le lundi à 9 h ».",
             "response": "short"
+          },
+          {
+            "id": "trimestre-q4",
+            "prompt": "À quelle heure ont lieu les séances ?",
+            "answers": [
+              "À 9 h."
+            ],
+            "evidence": [
+              "le lundi à 9 h"
+            ],
+            "explanation": "Le document indique : « le lundi à 9 h ».",
+            "response": "short"
           }
         ],
-        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent le repère exact."
+        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent l’information du document."
       },
       {
         "id": "gram-ex-e2-communication-ce-a1-marche",
@@ -6801,9 +7037,37 @@
             ],
             "explanation": "Le document indique : « ferment à midi ».",
             "response": "short"
+          },
+          {
+            "id": "marche-q4",
+            "prompt": "Qui peut-on rencontrer au marché ?",
+            "answers": [
+              "Les commerçants."
+            ],
+            "evidence": [
+              "pour rencontrer les commerçants"
+            ],
+            "explanation": "Le document indique : « pour rencontrer les commerçants ».",
+            "response": "short"
           }
         ],
-        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent le repère exact."
+        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent l’information du document.",
+        "imageSupports": [
+          {
+            "id": "temps-lecture-marche",
+            "src": "/lib/images/grammaire/curriculum/sha256/a97e6f2877bc9b65f3494af06f270e0f0ef8756800b09998d9e71cd2e9dcd8be.webp",
+            "sha256": "a97e6f2877bc9b65f3494af06f270e0f0ef8756800b09998d9e71cd2e9dcd8be",
+            "width": 1448,
+            "height": 1086,
+            "alt": "Des étals de fruits et de légumes sur une place.",
+            "source": {
+              "path": "/lib/images/tcf/co/bg/marche.webp",
+              "manifest": "docs/grammaire/implementation/temps-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Illustration TCF réemployée à l’identique pour situer le document."
+            }
+          }
+        ]
       },
       {
         "id": "gram-ex-e2-communication-ce-a1-sortie",
@@ -6868,9 +7132,21 @@
             ],
             "explanation": "Le document indique : « à 16 h ».",
             "response": "short"
+          },
+          {
+            "id": "sortie-q4",
+            "prompt": "Que faut-il prévoir pour le repas de midi ?",
+            "answers": [
+              "Un pique-nique."
+            ],
+            "evidence": [
+              "prévoir un pique-nique pour le repas de midi"
+            ],
+            "explanation": "Le document indique : « prévoir un pique-nique pour le repas de midi ».",
+            "response": "short"
           }
         ],
-        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent le repère exact."
+        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent l’information du document."
       },
       {
         "id": "gram-ex-e2-communication-ce-a1-fetes",
@@ -6935,9 +7211,37 @@
             ],
             "explanation": "Le document indique : « rouvrira le 27 décembre ».",
             "response": "short"
+          },
+          {
+            "id": "fetes-q4",
+            "prompt": "À quelle heure la piscine rouvre-t-elle le 27 décembre ?",
+            "answers": [
+              "À 9 h."
+            ],
+            "evidence": [
+              "rouvrira le 27 décembre à 9 h"
+            ],
+            "explanation": "Le document indique : « rouvrira le 27 décembre à 9 h ».",
+            "response": "short"
           }
         ],
-        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent le repère exact."
+        "explanation": "Les réponses courtes équivalentes sont recevables si elles conservent l’information du document.",
+        "imageSupports": [
+          {
+            "id": "temps-lecture-fetes",
+            "src": "/lib/images/grammaire/curriculum/sha256/10ad81d11dd482af44090a8d1f4ba88e96ac74a6645646caa240ef71deaf283a.webp",
+            "sha256": "10ad81d11dd482af44090a8d1f4ba88e96ac74a6645646caa240ef71deaf283a",
+            "width": 1448,
+            "height": 1086,
+            "alt": "Un bassin couvert avec des lignes de nage.",
+            "source": {
+              "path": "/lib/images/tcf/co/bg/piscine.webp",
+              "manifest": "docs/grammaire/implementation/temps-media-manifest.json",
+              "rights": "permitted-reuse",
+              "note": "Illustration TCF réemployée à l’identique pour situer le document."
+            }
+          }
+        ]
       }
     ]
   }

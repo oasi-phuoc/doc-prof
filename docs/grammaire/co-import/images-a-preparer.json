@@ -1,13 +1,275 @@
 {
   "schema_version": 1,
   "generation_enabled": false,
-  "status": "awaiting_verified_transcripts_and_questions",
+  "status": "illustrations_individuelles_a_preparer",
   "reuse_collection": "public/lib/images/tcf/",
+  "qcm_image_disponibles": 238,
+  "questions_avec_choix_a_preparer": 10,
   "requirements": [
-    "Only describe images after verifying the audio and its questions.",
-    "List three distinct answer concepts and their correct answer.",
-    "Record suitable existing CO TCF image candidates, or a description to generate later.",
-    "Do not activate image choices until every image has been verified."
+    "Vérifier la transcription et les trois choix de la question.",
+    "Générer chaque nouvelle illustration dans un fichier individuel ou réutiliser une illustration TCF contrôlée.",
+    "Vérifier la lisibilité des trois choix et la concordance de la réponse avant activation."
   ],
-  "items": []
+  "items": [
+    {
+      "piste": "gram-co-presenter-piste015",
+      "niveau": "A1",
+      "index": 4,
+      "question": "Que fait Felipe ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Il est étudiant",
+          "correct": true,
+          "sujet": "a male adult student studying at an open notebook in a classroom"
+        },
+        {
+          "id": "b",
+          "texte": "Il est professeur",
+          "correct": false,
+          "sujet": "a male adult professor teaching at a blackboard"
+        },
+        {
+          "id": "c",
+          "texte": "Il est ingénieur",
+          "correct": false,
+          "sujet": "a male engineer in safety helmet checking a drawing on a structural work site"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-aeroport-piste192",
+      "niveau": "A1",
+      "index": 1,
+      "question": "Que demande l’agent au voyageur de faire avec sa valise ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "L’ouvrir",
+          "correct": true,
+          "sujet": "traveller opens his own suitcase on a baggage table, fully open clearly visible"
+        },
+        {
+          "id": "b",
+          "texte": "La peser",
+          "correct": false,
+          "sujet": "same traveller places his closed suitcase on a weighing scale"
+        },
+        {
+          "id": "c",
+          "texte": "La fermer",
+          "correct": false,
+          "sujet": "same traveller presses down to close the lid of his suitcase with the zipper in reach"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-hotel-piste204",
+      "niveau": "A1",
+      "index": 0,
+      "question": "Quels équipements sont dans la salle de bains ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Une baignoire et un sèche-cheveux",
+          "correct": true,
+          "sujet": "bathtub and hand-held hair dryer in a bathroom"
+        },
+        {
+          "id": "b",
+          "texte": "Une douche et un lave-linge",
+          "correct": false,
+          "sujet": "walk-in shower and washing machine in a bathroom"
+        },
+        {
+          "id": "c",
+          "texte": "Un sauna et un jacuzzi",
+          "correct": false,
+          "sujet": "wood sauna and a separate bubbling jacuzzi in a spa room"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-fetes-a2-piste_058",
+      "niveau": "A2",
+      "index": 1,
+      "question": "Où se dérouleront le repas et la danse ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Dehors",
+          "correct": true,
+          "sujet": "wedding meal tables and a small area for dancing outside in a garden"
+        },
+        {
+          "id": "b",
+          "texte": "Dans une salle de la mairie",
+          "correct": false,
+          "sujet": "same type wedding meal and dance in a municipal hall room"
+        },
+        {
+          "id": "c",
+          "texte": "Dans le hall de la gare",
+          "correct": false,
+          "sujet": "same event in a big recognizable rail station hall with platform visible behind a window"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-universite-ecole-a2-piste_066",
+      "niveau": "A2",
+      "index": 0,
+      "question": "Où les parents ont-ils signé l’autorisation ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Dans le cahier de liaison",
+          "correct": true,
+          "sujet": "adult hand signing a school-to-home notebook with abstract non-legible strokes"
+        },
+        {
+          "id": "b",
+          "texte": "Sur un billet de train",
+          "correct": false,
+          "sujet": "same hand marks a small paper train ticket with tiny train symbol"
+        },
+        {
+          "id": "c",
+          "texte": "Au dos d’une photo",
+          "correct": false,
+          "sujet": "same hand signs the visible back of a printed photograph that is turning face-up along one edge"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-faire-achats-a2-piste_007",
+      "niveau": "A2",
+      "index": 0,
+      "question": "Pourquoi le client appelle-t-il le service après-vente ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Son téléphone ne s’allume plus",
+          "correct": true,
+          "sujet": "person tries to switch on a phone with dark screen, no icons, and small finger on power switch"
+        },
+        {
+          "id": "b",
+          "texte": "Son colis n’est pas arrivé",
+          "correct": false,
+          "sujet": "same person checks an open empty delivery mailbox in front of house, expecting a parcel"
+        },
+        {
+          "id": "c",
+          "texte": "Il a oublié le prix payé",
+          "correct": false,
+          "sujet": "same person looks at a receipt with a puzzled expression and rubs head, receipt has no amount"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-actualite-a2-piste_033",
+      "niveau": "A2",
+      "index": 0,
+      "question": "Comment la personne suit-elle surtout l’actualité ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Elle lit la presse en ligne",
+          "correct": true,
+          "sujet": "adult reads news articles on a tablet, abstract heading and article pictures only"
+        },
+        {
+          "id": "b",
+          "texte": "Elle regarde le journal télévisé chaque soir",
+          "correct": false,
+          "sujet": "same adult watches a newscast on a television at home"
+        },
+        {
+          "id": "c",
+          "texte": "Elle achète tous ses journaux à la gare",
+          "correct": false,
+          "sujet": "same adult buys printed newspapers at a railway station's news kiosk"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-actualite-a2-piste_037",
+      "niveau": "A2",
+      "index": 0,
+      "question": "Quel sujet est associé au magazine Télérama ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "L’actualité culturelle",
+          "correct": true,
+          "sujet": "a magazine cover collage showing people in cinema, theatre and museum, textless"
+        },
+        {
+          "id": "b",
+          "texte": "La mode",
+          "correct": false,
+          "sujet": "magazine showing clothes and a fashion runway, textless"
+        },
+        {
+          "id": "c",
+          "texte": "Le sport",
+          "correct": false,
+          "sujet": "magazine showing athletes and stadium sports, textless"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-vie-associative-a2-piste_078",
+      "niveau": "A2",
+      "index": 0,
+      "question": "Quel type d’aide l’association demande-t-elle aux bénévoles ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "De l’aide pour les devoirs ou les études",
+          "correct": true,
+          "sujet": "adult volunteer helps a learner do homework at a desk with books"
+        },
+        {
+          "id": "b",
+          "texte": "De l’aide pour conduire un bus",
+          "correct": false,
+          "sujet": "adult instructor helps a driver at the controls of a city bus"
+        },
+        {
+          "id": "c",
+          "texte": "De l’aide pour vendre des vélos",
+          "correct": false,
+          "sujet": "adult volunteer helps sell bicycles to customers in a shop"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-sante-a2-piste_118",
+      "niveau": "A2",
+      "index": 0,
+      "question": "Que doit faire Bianca si elle veut fumer ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Sortir",
+          "correct": true,
+          "sujet": "same adult steps out through a doorway onto pavement"
+        },
+        {
+          "id": "b",
+          "texte": "Ouvrir seulement la fenêtre",
+          "correct": false,
+          "sujet": "same adult opens a window while remaining inside the room"
+        },
+        {
+          "id": "c",
+          "texte": "Changer de place dans la pièce",
+          "correct": false,
+          "sujet": "same adult moves between two seats inside the room, window stays closed"
+        }
+      ]
+    }
+  ]
 }

@@ -1,3 +1,5 @@
+import { mathTheoryTopic } from '@/math/theory-lessons'
+import { isMathProblemHelpType } from '@/math/problem-help'
 import { grammarOrderHasSentenceFilters } from '@/grammaire/curriculum/types'
 import { TcfCeFormatControl, TcfCeTextFontControl } from './TcfCeFormatControl'
 import { PhrasePolarityControl } from './PhrasePolarityControl'
@@ -20,8 +22,10 @@ import {
 import { SelectBox } from '@/components/generator/SelectBox'
 import { applyType, clearLibreContentFreeze } from '@/components/generator/page-helpers'
 import { DIFFICULTY_OPTIONS } from '@/math/difficulty'
-import { isLogistiqueDomain, logistiqueSubthemes, logistiqueType, logistiqueTypeForSubtheme } from '@/logistique/catalog'
+import { FreeNumberControls } from './FreeNumberControls'
+import { isLogistiqueDomain, isLogistiqueReferenceType, logistiqueSubthemes, logistiqueType, logistiqueTypeForSubtheme } from '@/logistique/catalog'
 import { logistiqueEligibleCount } from '@/logistique/generate'
+import { LogistiqueEvaluationFields } from './LogistiqueEvaluationFields'
 import { exerciseTypeById } from '@/math/catalog'
 import {
   centeredOrigin,
@@ -160,9 +164,13 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
     isQuadType,
     quadPool,
   } = p
+  const showNumberRange = !libreMode && isNumberLibreDomain &&
+    exerciseTypeById[activeBlock.exerciseType]?.supportsNumberRange !== false
   const logisticsDomain = isLogistiqueDomain(activePage.domain)
   const logisticsSubthemes = logisticsDomain ? logistiqueSubthemes(activeBlock.topic) : []
-  const logisticsModule = logistiqueType(activeBlock.exerciseType)?.module
+  const logisticsType = logistiqueType(activeBlock.exerciseType)
+  const logisticsModule = logisticsType?.module
+  const mixedActivity = logisticsDomain && evalMode && logisticsType && !isLogistiqueReferenceType(logisticsType.id)
   const subthemes = logisticsDomain ? logisticsSubthemes : gramSubthemes
   const subthemeId = logisticsDomain
     ? logisticsSubthemes.find((entry) => entry.code === logisticsModule)?.id
@@ -243,7 +251,10 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   ),
                 )}
               </SelectBox>
-              {isTpmLike ? null : (
+              {mixedActivity ? (
+                <LogistiqueEvaluationFields key={logisticsType.id} type={logisticsType}
+                  themes={available} activeBlock={activeBlock} updatePage={updatePage} />
+              ) : isTpmLike ? null : (
                 <SelectBox
                   label={isTcf ? 'Compétence' : 'Thème'}
                   value={soutienSelection?.theme.id ?? activeBlock.topic}
@@ -275,7 +286,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   ))}
                 </SelectBox>
               ) : null}
-              {(isGrammaireDomain || logisticsDomain) && subthemes.length > 0 ? (
+              {!mixedActivity && (isGrammaireDomain || logisticsDomain) && subthemes.length > 0 ? (
                 <SelectBox
                   label="Sous-thème"
                   value={subthemeId ?? subthemes[0]!.id}
@@ -410,7 +421,9 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                 value={activeBlock.exerciseType}
                 onChange={(value) => {
                   const type = exerciseTypeById[value]
-                  if (!type) return
+                  if (!type || value === activeBlock.exerciseType) return
+                  if (logisticsDomain && activeBlock.libreItems?.length &&
+                      !window.confirm('Changer de type remplacera les modifications de cette activité. Continuer ?')) return
                   if (
                     (isReperageFormes(value) && isReperageFormes(activeBlock.exerciseType)) ||
                     (isReperageCadrans(value) && isReperageCadrans(activeBlock.exerciseType))
@@ -449,7 +462,11 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                     })
                     return
                   }
-                  updatePage(applyType(type, activeBlock))
+                  const patch = applyType(type, activeBlock)
+                  if (mixedActivity && !isLogistiqueReferenceType(value) && activeBlock.logistiqueSelection) {
+                    patch.logistiqueSelection = { modules: activeBlock.logistiqueSelection.modules }
+                  }
+                  updatePage(patch)
                 }}
               >
                 {typeChoices
@@ -557,6 +574,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
               isCalliDomain ||
               isVocabLearn ||
               isGramTheory ||
+              mathTheoryTopic(activeBlock.exerciseType) ||
               isGrammaireDomain ||
               logisticsDomain ||
               isLogique ||
@@ -565,7 +583,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
               isTcf ||
               isTpmLike ? null : (
               <>
-              <div className={`niveau-row${activeBlock.numberLibre ? ' is-libre' : ''}`}>
+              <div className={`niveau-row${showNumberRange && activeBlock.numberLibre ? ' is-libre' : ''}`}>
                 <SelectBox
                   label="Niveau"
                   value={activeBlock.difficulty ?? 'moyen'}
@@ -577,7 +595,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                     </option>
                   ))}
                 </SelectBox>
-                {!libreMode && isNumberLibreDomain ? (
+                {showNumberRange ? (
                   <button
                     type="button"
                     className={`niveau-libre-btn${activeBlock.numberLibre ? ' active' : ''}`}
@@ -596,52 +614,20 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   </button>
                 ) : null}
               </div>
-              {!libreMode && isNumberLibreDomain && activeBlock.numberLibre ? (
-                <div className="number-libre-fields">
-                  <label className="select-shell">
-                    <span>De</span>
-                    <input
-                      className="pill-input"
-                      type="number"
-                      inputMode="decimal"
-                      step={activeBlock.numberDecimals ? 0.1 : 1}
-                      value={activeBlock.numberMin ?? 1}
-                      onChange={(event) => updatePage({ numberMin: Number(event.target.value) })}
-                    />
-                  </label>
-                  <label className="select-shell">
-                    <span>À</span>
-                    <input
-                      className="pill-input"
-                      type="number"
-                      inputMode="decimal"
-                      step={activeBlock.numberDecimals ? 0.1 : 1}
-                      value={activeBlock.numberMax ?? 100}
-                      onChange={(event) => updatePage({ numberMax: Number(event.target.value) })}
-                    />
-                  </label>
-                  <div className="mode-toggle-block">
-                    <b>Décimales</b>
-                    <div className="mode-toggle">
-                      <button
-                        type="button"
-                        className={!activeBlock.numberDecimals ? 'active' : ''}
-                        onClick={() => updatePage({ numberDecimals: false })}
-                      >
-                        Sans
-                      </button>
-                      <button
-                        type="button"
-                        className={activeBlock.numberDecimals ? 'active' : ''}
-                        onClick={() => updatePage({ numberDecimals: true })}
-                      >
-                        Avec
-                      </button>
-                    </div>
-                  </div>
-                </div>
+              {showNumberRange && activeBlock.numberLibre ? (
+                <FreeNumberControls activeBlock={activeBlock} updatePage={updatePage} />
               ) : null}
               </>
+              )}
+              {isNumberLibreDomain && isMathProblemHelpType(activeBlock.exerciseType) && (
+                <button
+                  type="button"
+                  className="button small secondary"
+                  aria-pressed={Boolean(activeBlock.problemHelp)}
+                  onClick={() => updatePage({ problemHelp: !activeBlock.problemHelp })}
+                >
+                  {activeBlock.problemHelp ? 'Masquer l’aide illustrée' : 'Afficher l’aide illustrée'}
+                </button>
               )}
               {isQuadType ? (
                 <div className="quad-libre-block">

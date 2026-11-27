@@ -75,6 +75,41 @@ def reused_questions(entries, tcf):
     return result
 
 
+def revise_reused_questions(entries, reused):
+    pistes = {entry['exercise']['id']: entry['exercise'] for entry in entries}
+    for exercise_id, index, prompt, answer, wrong1, wrong2, evidence in rows('revision-tcf'):
+        index = int(index)
+        item, previous = reused[exercise_id][index]
+        if not answer:
+            assert not (wrong1 or wrong2 or evidence)
+            item['enonce'] = prompt
+            continue
+
+        assert normalized(evidence) in transcript(pistes[exercise_id]), (exercise_id, evidence)
+        correct, = [choice['id'] for choice in item['choix'] if choice.get('correct')]
+        distractors = iter((wrong1, wrong2))
+        choices = [(choice['id'], answer if choice['id'] == correct else next(distractors))
+                   for choice in item['choix']]
+        reused[exercise_id][index] = (
+            question(prompt, choices, correct),
+            {'proof': evidence, 'previous_question': {'source': previous['source'], 'index': previous['index']}},
+        )
+
+
+def reviewed_original_questions(entries):
+    pistes = index_pistes(entries)
+    reviewed = {}
+    for number, *passages in rows('initiales'):
+        exercise = pistes['A1', number]['exercise']
+        exercise_id = exercise['id']
+        assert exercise_id not in reviewed
+        assert len(passages) == len(exercise['questions']), exercise_id
+        for passage in passages:
+            assert passage and normalized(passage) in transcript(exercise), (exercise_id, passage)
+        reviewed[exercise_id] = [{'proof': passage} for passage in passages]
+    return reviewed
+
+
 def attach_media(exercise, media, assets, sources):
     for index, binding in media.get('questions', {}).items():
         question_ = exercise['questions'][int(index)]
@@ -110,6 +145,7 @@ def build():
     tcf = {record['id']: record for record in json.loads(TCF.read_text(encoding='utf-8'))}
     authored = authored_questions(entries)
     reused = reused_questions(entries, tcf)
+    revise_reused_questions(entries, reused)
     assert set(authored).isdisjoint(reused)
     additions = {**authored, **reused}
     media = json.loads(MEDIA.read_text(encoding='utf-8'))
@@ -120,7 +156,10 @@ def build():
         assert path.startswith('/lib/images/tcf/')
         assert 3 * asset['width'] == 4 * asset['height']
     summary = {level: Counter(pistes=0, questions=0, qcm_image=0, illustrative_scenes=0) for level in ('A1', 'A2')}
-    trace = {}
+    trace = reviewed_original_questions(entries)
+    original_review_count = sum(len(passages) for passages in trace.values())
+    assert set(trace).isdisjoint(additions)
+    assert set(trace) | set(additions) == {entry['exercise']['id'] for entry in entries}
     for entry in entries:
         exercise = entry['exercise']
         key = exercise['id']
@@ -137,6 +176,7 @@ def build():
                                       qcm_image=sum(bool(q.get('formes', {}).get('qcm_image')) for q in exercise['questions']),
                                       illustrative_scenes=int(scene))
     payload = dict(date='2026-11-27', questions_added=sum(len(items) for items in additions.values()),
+                   original_questions_reviewed=original_review_count,
                    by_level=summary, review_basis='transcriptions recoupées et passages TCF correspondants',
                    human_listening=False, teacher_approval=False, proof_by_track=trace)
     BANK.write_text(json.dumps(entries, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')

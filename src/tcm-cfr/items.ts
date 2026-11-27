@@ -1,7 +1,7 @@
 /**
  * Générateurs d’items TCM CFR (types `tcm-cfr-*`).
  */
-import { genFracSingleItems } from '@/math/fraction-shapes'
+import { generateFractionDecimals, generateFractionFigures } from '@/math/fraction-shapes'
 import { createRng, int, pick, shuffle, type Rng } from '@/math/rng'
 import type { ArithOp, Figure, MathItem } from '@/math/types'
 import { fmt, sanitizeItemNumberNoise } from '@/math/column-arith'
@@ -17,18 +17,8 @@ import { mulAudioParts, numberAudioParts } from './audio-nombres'
 import { generateMetroQuestions, pickMetroMap } from './metro'
 import { genShopProblems, genWorkProblems } from './problems'
 import { pickSymmetryTemplate } from './symetrie'
+import { generateRulerSegments } from '@/math/geometry-practice'
 import { isTcmCfrType } from './types'
-
-function gcd(a: number, b: number): number {
-  let x = Math.abs(a)
-  let y = Math.abs(b)
-  while (y) {
-    const t = y
-    y = x % y
-    x = t
-  }
-  return x || 1
-}
 
 function oneDecimal(rng: Rng, loTenths: number, hiTenths: number): number {
   let t = int(rng, loTenths, hiTenths)
@@ -357,15 +347,6 @@ function genEx11(rng: Rng, count: number): MathItem[] {
   }))
 }
 
-/** Ex. 12 / 13 — formes simples distinctes. */
-function genFracShapes(rng: Rng, count: number, mode: 'color' | 'read'): MathItem[] {
-  return genFracSingleItems(rng, Math.max(1, count)).map((item) => ({
-    layout: 'fraction-shape' as const,
-    fracShape: { ...item, mode },
-    answer: `${item.n}/${item.d}`,
-  }))
-}
-
 function genEx14(rng: Rng): MathItem[] {
   return genShopProblems(rng)
 }
@@ -502,21 +483,7 @@ function genEx18(rng: Rng): MathItem[] {
 
 /** Ex. 19 — mesurer 3 segments + QCM. */
 function genEx19(rng: Rng): MathItem[] {
-  const lengthsMm = shuffle(rng, [
-    int(rng, 25, 45),
-    int(rng, 50, 80),
-    int(rng, 90, 120),
-  ])
-  const units: Array<'mm' | 'cm'> = shuffle(rng, ['mm', 'cm', pick(rng, ['mm', 'cm'] as const)])
-  // Garantir au moins 1 cm et 1 mm.
-  if (!units.includes('cm')) units[0] = 'cm'
-  if (!units.includes('mm')) units[1] = 'mm'
-  const segments = lengthsMm.map((mm, i) => ({
-    mm,
-    unit: units[i]!,
-    display: units[i] === 'cm' ? fmt(mm / 10) : String(mm),
-    slope: (rng() < 0.5 ? -1 : 1) * (2 + int(rng, 0, 6)) / 100,
-  }))
+  const segments = generateRulerSegments(rng)
   const longest = segments.reduce((best, s, i) => (s.mm > segments[best]!.mm ? i : best), 0)
   const shortest = segments.reduce((best, s, i) => (s.mm < segments[best]!.mm ? i : best), 0)
   return [
@@ -554,26 +521,6 @@ function genEx20(rng: Rng, count: number): MathItem[] {
     })
   }
   return items
-}
-
-/** Ex. 21 — fractions → décimaux, dénominateurs distincts, non entiers. */
-function genEx21(rng: Rng, count: number): MathItem[] {
-  const dens = shuffle(rng, [2, 4, 5, 8, 10]).slice(0, count)
-  while (dens.length < count) dens.push(pick(rng, [2, 4, 5, 8, 10]))
-  return dens.map((d) => {
-    let n = int(rng, 1, d - 1)
-    while (n % d === 0) n = int(rng, 1, d - 1)
-    const g = gcd(n, d)
-    // Garder une fraction non entière.
-    const nn = n / g
-    const dd = d / g
-    const value = nn / dd
-    return {
-      layout: 'inline' as const,
-      prompt: `${nn}/${dd} =`,
-      answer: fmt(Math.round(value * 1000) / 1000),
-    }
-  })
 }
 
 function dualGeo(
@@ -901,8 +848,8 @@ export function tryGenerateTcmCfrItems(
   else if (typeId === 'tcm-cfr-ex09') items = genEx09(rng).slice(0, Math.max(1, count))
   else if (typeId === 'tcm-cfr-ex10') items = genEx10(rng).slice(0, Math.max(1, count))
   else if (typeId === 'tcm-cfr-ex11') items = genEx11(rng, count)
-  else if (typeId === 'tcm-cfr-ex12') items = genFracShapes(rng, count, 'color')
-  else if (typeId === 'tcm-cfr-ex13') items = genFracShapes(rng, count, 'read')
+  else if (typeId === 'tcm-cfr-ex12') items = generateFractionFigures(rng, count, 'color')
+  else if (typeId === 'tcm-cfr-ex13') items = generateFractionFigures(rng, count, 'read')
   else if (typeId === 'tcm-cfr-ex14') items = genEx14(rng).slice(0, Math.max(1, count))
   else if (typeId === 'tcm-cfr-ex15') items = genEx15(rng).slice(0, Math.max(1, count))
   else if (typeId === 'tcm-cfr-ex16') items = genEx16(rng, worksheetSeed).slice(0, Math.max(1, count))
@@ -910,7 +857,7 @@ export function tryGenerateTcmCfrItems(
   else if (typeId === 'tcm-cfr-ex18') items = genEx18(rng)
   else if (typeId === 'tcm-cfr-ex19') items = genEx19(rng)
   else if (typeId === 'tcm-cfr-ex20') items = genEx20(rng, count)
-  else if (typeId === 'tcm-cfr-ex21') items = genEx21(rng, count)
+  else if (typeId === 'tcm-cfr-ex21') items = generateFractionDecimals(rng, count)
   else if (typeId === 'tcm-cfr-ex22') items = genEx22(rng)
   else if (typeId === 'tcm-cfr-ex23') items = genEx23(rng)
   else if (typeId === 'tcm-cfr-ex24') items = genEx24(rng)

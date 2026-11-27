@@ -57,20 +57,81 @@ export function CscProblemBlock({ item, mode, draftGrid = true }: { item: MathIt
   return <div className="csc-problem-text"><p>{parts.join('\n\n')}</p><p><b>{question}</b></p><div className={`draft-pad draft-pad-short ${draftGrid ? 'with-grid' : 'plain'}`} aria-label="Zone de développement">{mode === 'answers' && task?.kind === 'problem' && operation && <strong className="filled-answer draft-pad-answer">{task.a} {operation} {task.b} = {operation === '+' ? task.a + task.b : task.a - task.b}</strong>}</div><p className="csc-problem-answer"><span className="csc-problem-answer-label">Réponse :</span><span className={`answer-line-field${mode === 'answers' ? ' filled' : ''}`}>{mode === 'answers' ? item.answer : '\u00a0'}</span></p></div>
 }
 
-export function CscCopyBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
-  const template = item.symmetryFigure, task = item.cscTask
-  if (!template || task?.kind !== 'copy') return null
-  const cellMm=4*1.15
-  const columns = template.side === 'left' ? template.axisX : template.cols - template.axisX
+export function GridReproductionBlock({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+  const template = item.symmetryFigure
+  const scale = item.cscTask?.kind === 'copy' ? item.cscTask.scale : 1
+  const rotation = item.gridRotation
+  if (!template) return null
+
+  const cellMm = 4 * 1.15
+  const sourceCols = template.side === 'left' ? template.axisX : template.cols - template.axisX
+  const sourceRows = template.rows
   const offset = template.side === 'left' ? 0 : template.axisX
-  return <div className="csc-copy">{[{scale:1,model:true},{scale:task.scale,model:false}].map(({scale,model}, index) => {
-    const cols = columns * scale, rows = template.rows * scale, reveal = model || mode === 'answers'
-    const point = (p: { x: number; y: number }) => ({ x: 1 + (p.x - offset) * scale, y: 1 + rows - p.y * scale })
-    return <div key={index}><p>{model ? 'Modèle' : task.scale === 2 ? 'Reproduction agrandie' : 'Reproduction'}</p><svg data-copy-scale={scale} data-copy-cols={cols} data-copy-rows={rows} viewBox={`0 0 ${cols + 2} ${rows + 2}`} style={{ width: `${(cols+2)*cellMm}mm`, height: `${(rows+2)*cellMm}mm` }} role="img" aria-label={model ? 'Quadrillage du modèle' : 'Quadrillage de reproduction'}>
-      {Array.from({ length: cols + 1 }, (_, x) => <line key={`x${x}`} x1={x + 1} x2={x + 1} y1="1" y2={rows + 1} className="csc-copy-grid" />)}
-      {Array.from({ length: rows + 1 }, (_, y) => <line key={`y${y}`} y1={y + 1} y2={y + 1} x1="1" x2={cols + 1} className="csc-copy-grid" />)}
-      {reveal && template.polylines.map((poly, i) => <path key={i} data-copy-figure d={poly.map((p, j) => { const s = point(p); return `${j ? 'L' : 'M'}${s.x},${s.y}` }).join(' ')} fill="none" stroke="var(--purple)" strokeWidth=".1" />)}
-      {reveal && template.dots?.map((p, i) => { const s = point(p); return <circle key={i} cx={s.x} cy={s.y} r=".15" fill="var(--purple)" /> })}
-    </svg></div>
-  })}</div>
+  const grids = [
+    { model: true, scale: 1, cols: sourceCols, rows: sourceRows, heading: 'Modèle' },
+    {
+      model: false,
+      scale,
+      cols: rotation ? sourceRows : sourceCols * scale,
+      rows: rotation ? sourceCols : sourceRows * scale,
+      heading: rotation ? 'Figure tournée' : scale === 2 ? 'Reproduction agrandie' : 'Reproduction',
+    },
+  ]
+
+  return (
+    <>
+      {rotation && <p className="column-prompt">{item.prompt}</p>}
+      <div className="csc-copy">
+        {grids.map((grid) => {
+          const { cols, rows, model, heading } = grid
+          const reveal = model || mode === 'answers'
+          const point = (p: { x: number; y: number }) => {
+            const x = p.x - offset
+            const y = sourceRows - p.y
+            if (!model && rotation === 'clockwise') return { x: 1 + sourceRows - y, y: 1 + x }
+            if (!model && rotation === 'counterclockwise') return { x: 1 + y, y: 1 + sourceCols - x }
+            return { x: 1 + x * grid.scale, y: 1 + y * grid.scale }
+          }
+          return (
+            <div key={heading}>
+              <p>{heading}</p>
+              <svg
+                data-copy-scale={grid.scale}
+                data-copy-cols={cols}
+                data-copy-rows={rows}
+                viewBox={`0 0 ${cols + 2} ${rows + 2}`}
+                style={{ width: `${(cols + 2) * cellMm}mm`, height: `${(rows + 2) * cellMm}mm` }}
+                role="img"
+                aria-label={model ? 'Quadrillage du modèle' : 'Quadrillage de reproduction'}
+              >
+                {Array.from({ length: cols + 1 }, (_, x) =>
+                  <line key={`x${x}`} x1={x + 1} x2={x + 1} y1="1" y2={rows + 1} className="csc-copy-grid" />,
+                )}
+                {Array.from({ length: rows + 1 }, (_, y) =>
+                  <line key={`y${y}`} y1={y + 1} y2={y + 1} x1="1" x2={cols + 1} className="csc-copy-grid" />,
+                )}
+                {reveal && template.polylines.map((poly, i) => (
+                  <path
+                    key={i}
+                    data-copy-figure
+                    d={poly.map((p, j) => {
+                      const s = point(p)
+                      return `${j ? 'L' : 'M'}${s.x},${s.y}`
+                    }).join(' ')}
+                    fill="none"
+                    stroke="var(--purple)"
+                    strokeWidth=".1"
+                  />
+                ))}
+                {reveal && template.dots?.map((p, i) => {
+                  const s = point(p)
+                  return <circle key={i} cx={s.x} cy={s.y} r=".15" fill="var(--purple)" />
+                })}
+              </svg>
+            </div>
+          )
+        })}
+      </div>
+    </>
+  )
 }

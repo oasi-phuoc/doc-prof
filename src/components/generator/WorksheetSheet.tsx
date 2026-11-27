@@ -83,6 +83,22 @@ function coAudioInBanner(block: WorksheetBlock): boolean {
   })
 }
 
+function wrapLogistiqueFigures(indices: number[] | undefined, items: ReactElement[]): ReactElement[] {
+  if (!indices?.length) return items
+  const starts = new Set(indices)
+  const result: ReactElement[] = []
+  for (const [index, item] of items.entries()) {
+    if (starts.has(index - 1)) continue
+    result.push(starts.has(index) ? (
+      <div className="logistique-theory-wrap" key={item.key}>
+        {item}
+        {items[index + 1]}
+      </div>
+    ) : item)
+  }
+  return result
+}
+
 function WorksheetItems({groupedOperations=false,children,...props}:HTMLAttributes<HTMLDivElement>&{groupedOperations?:boolean}) {
   if(!groupedOperations)return <div {...props}>{children}</div>
   const items=Children.toArray(children) as ReactElement<{item:MathItem}>[]
@@ -109,6 +125,7 @@ export function fallbackBlocks(page: WorksheetPage): WorksheetBlock[] {
       exerciseType: page.exerciseType,
       givens: page.givens,
       problemDraftGrids: page.problemDraftGrids,
+      problemHelp: page.problemHelp,
       formulaireLetterGrid: page.formulaireLetterGrid,
       inlineBlankPx: page.inlineBlankPx,
       oralAnswerModes: page.oralAnswerModes,
@@ -242,7 +259,8 @@ export function WorksheetSheet({
     : page.columns
   const isSoutienFr = page.domain === 'soutien-fr'
   const isAlphabetisation = page.domain === 'alphabetisation'
-  const domainClass = page.domain === 'tcm-csc' ? ' is-tcm-csc' : page.domain === 'tcm-cfr' ? ' is-tcm-cfr' : page.domain === 'tpm' ? ' is-tpm' : ''
+  const domainClass = isLogistiqueDomain(page.domain) ? ' is-logistique'
+    : page.domain === 'tcm-csc' ? ' is-tcm-csc' : page.domain === 'tcm-cfr' ? ' is-tcm-cfr' : page.domain === 'tpm' ? ' is-tpm' : ''
   const Root = asHalf ? 'div' : 'article'
   const rootClass = asHalf
     ? `a5-half is-${asHalf}${isJeuxSheet ? ' is-jeux' : ''}${isSoutienFr ? ' is-soutien-fr' : ''}${isAlphabetisation ? ' is-alphabetisation' : ''}${evalMode ? ' is-eval' : ''}`
@@ -451,7 +469,7 @@ export function WorksheetSheet({
               ) : null}
               <WorksheetItems
                 groupedOperations={/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType)}
-                className={`exercise-grid${
+                className={`exercise-grid${block.exerciseType === 'transformations-tracer-axes' ? ' coord-grid-columns' : ''}${
                   block.items.every((item) => item.layout === 'algebra')
                     ? ' algebra-grid'
                     : block.items.every((item) => item.layout === 'theory')
@@ -489,14 +507,15 @@ export function WorksheetSheet({
                   } as CSSProperties
                 }
               >
-                {block.items.map((item, index) => {
+                {wrapLogistiqueFigures(block.logistiqueWrappedFigures, block.items.map((item, index) => {
                   const padLeft =
                     item.layout === 'algebra' ? Math.max(0, maxTokens - tokenizeAlgebra(item.prompt ?? '').length) : 0
                   const draftGrid = isLogistiqueDomain(page.domain) ||
                     (block.problemDraftGrids?.[index] ?? page.problemDraftGrids?.[index] ?? true)
                   const oralAnswerMode =
                     block.oralAnswerModes?.[index] ?? page.oralAnswerModes?.[index] ?? item.answerMode ?? 'qcm'
-                  const sourceIndex = index + (block.itemOffset ?? 0)
+                  const theorySlice = block.logistiqueTheorySlices?.[index]
+                  const sourceIndex = theorySlice?.sourceIndex ?? index + (block.itemOffset ?? 0)
                   const tcfFormMode =
                     block.tcfFormModes?.[sourceIndex] ?? page.tcfFormModes?.[sourceIndex]
                   const tcfPageBreakBefore =
@@ -508,10 +527,12 @@ export function WorksheetSheet({
                   const theoryBreakCount =
                     block.tcfPageBreakAfter?.length ??
                     page.tcfPageBreakAfter?.length ??
-                    block.items.length + (block.itemOffset ?? 0)
+                    (block.logistiqueTheorySlices ? (block.logistiqueTheorySlices.at(-1)?.sourceIndex ?? -1) + 1
+                      : block.items.length + (block.itemOffset ?? 0))
                   const isTheoryPageBreakable =
                     item.layout === 'theory' &&
                     (item.theoryBlock?.kind === 'section' || isLogistiqueDomain(page.domain)) &&
+                    theorySlice?.isLast !== false &&
                     sourceIndex < theoryBreakCount - 1
                   const isGrammarPageBreakable=page.domain==='grammaire'&&block.exerciseType.startsWith('gram-ex-')&&(
                     item.grammar?grammarPageBreakQuestionId(item)!==undefined:!item.hideItemNumber&&item.layout!=='theory'&&(item.layout!=='tcf'||item.tcf?.kind==='qcm'||item.tcf?.kind==='lignes'||item.tcf?.kind==='dialogue')
@@ -551,14 +572,15 @@ export function WorksheetSheet({
                   return (
                     <ItemView
                       key={`${block.exerciseType}-${block.exerciseIndex}-${index}-${item.answer}-${tcfFormMode ?? ''}`}
-                      item={item}
+                      item={theorySlice?.theoryBlock ? { ...item, theoryBlock: theorySlice.theoryBlock } : item}
                       mode={mode}
                       itemLabel={/^tcm-(?:csc|cfr)-ex0[12]$/.test(block.exerciseType)?String.fromCharCode(65+index+itemOffset):undefined}
                       seriesNumber={/^tcm-csc-ex16$/.test(block.exerciseType)||/^tcm-cfr-ex16$/.test(block.exerciseType)?index+itemOffset+1:undefined}
                       hideNumber={/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType)||/^tcm-cfr-ex(?:07|08|09|10|16)$/.test(block.exerciseType)}
-                      index={isLogistiqueDomain(page.domain) || page.domain === 'grammaire' || /^tcm-csc-ex(?:10|11)$/.test(block.exerciseType) ? sourceIndex : index}
+                      index={block.problemHelp || isLogistiqueDomain(page.domain) || page.domain === 'grammaire' || /^tcm-csc-ex(?:10|11)$/.test(block.exerciseType) ? sourceIndex : index}
                       algebraPadLeft={padLeft}
                       draftGrid={draftGrid}
+                      problemHelp={block.problemHelp ?? false}
                       stackGeo={/^tcm-cfr-ex2[2-6]$/.test(block.exerciseType) || block.exerciseType.includes('peri-aire')}
                       readableGeo={/^tcm-cfr-ex2[2-6]$/.test(block.exerciseType)}
                       showGeoFigure={block.geoFigureHelp !== false}
@@ -621,7 +643,7 @@ export function WorksheetSheet({
                       coordEdit={coordEdit}
                     />
                   )
-                })}
+                }))}
               </WorksheetItems>
             </section>
           )

@@ -1,3 +1,5 @@
+import { mathTheoryLessons, mathTheoryTopic } from './theory-lessons'
+import { isMathProblemHelpType } from './problem-help'
 import { splitLogistiquePages, type LogistiquePageLayout } from '@/logistique/pagination'
 import { isLogistiqueDomain, isLogistiqueReferenceType } from '@/logistique/catalog'
 import { generateLogistique, logistiqueDocumentTitle } from '@/logistique/generate'
@@ -119,6 +121,15 @@ function buildSingleBlock(
   const type = exerciseTypeById[config.exerciseType]
   const difficulty = config.difficulty ?? 'moyen'
   const fallbackTitle = type?.label ?? topic?.label ?? 'Exercices'
+  const theoryTopic = mathTheoryTopic(config.exerciseType)
+  if (theoryTopic && (config.domain === 'algèbre' || config.domain === 'géométrie')) {
+    const lesson = mathTheoryLessons[theoryTopic]!
+    return {
+      title: lesson.title,
+      instruction: `Théorie — ${lesson.title}`,
+      items: [{ layout: 'theory', mathTheory: { ...lesson, topic: theoryTopic }, answer: '' }],
+    }
+  }
   if (config.exerciseType === 'tpm-consignes') {
     return {
       title: 'Informations',
@@ -364,7 +375,7 @@ function buildSingleBlock(
     : null
   const generated = generateItems(
     config.exerciseType,
-    config.count,
+    Math.min(config.count, type?.maxCount ?? config.count),
     rng,
     difficulty,
     numberRangeFrom(config),
@@ -415,6 +426,7 @@ export function buildPage(
   seed: number,
   startExercise = 1,
   worksheetSeed = seed,
+  logistiqueEvaluation = true,
 ): WorksheetPage {
   // CE « Lire des instructions » : 1 document = 1 exercice (pas 2 docs dans le même).
   const page = expandTcfInstructionDocuments(config, seed)
@@ -422,9 +434,10 @@ export function buildPage(
   let exerciseCursor = startExercise
   const built: WorksheetBlock[] = blocksIn.map((block, index) => {
     const single = pageAsConfig(page, block)
+    if (!logistiqueEvaluation && isLogistiqueDomain(page.domain)) single.logistiqueSelection = undefined
     const local = block.contentSeed ?? 0
     const result = buildSingleBlock(single, seed + index * 10007 + local, worksheetSeed)
-    const isTheory = isLogistiqueReferenceType(block.exerciseType) || isGrammarTheoryType(block.exerciseType) || isGrammaireTheoryType(block.exerciseType)
+    const isTheory = Boolean(mathTheoryTopic(block.exerciseType)) || isLogistiqueReferenceType(block.exerciseType) || isGrammarTheoryType(block.exerciseType) || isGrammaireTheoryType(block.exerciseType)
     const isJeux = block.exerciseType.startsWith('jeux-')
     const isTpmConsignes = isInfoPageType(block.exerciseType)
     // Une feuille « suite » ne doit pas figer seulement sa tranche : sinon le mode
@@ -482,6 +495,7 @@ export function buildPage(
       givens: libreGivens ?? result.givens,
       document: result.document,
       problemDraftGrids: block.problemDraftGrids,
+      problemHelp: isMathProblemHelpType(block.exerciseType) ? block.problemHelp : undefined,
       formulaireLetterGrid: block.formulaireLetterGrid,
       geoFigureHelp: block.geoFigureHelp,
       deniseRate: block.deniseRate,
@@ -503,7 +517,7 @@ export function buildPage(
   const isTpmConsignesPage = isInfoPageType(config.exerciseType)
   return {
     ...config,
-    title: isLogistiqueDomain(config.domain) ? logistiqueDocumentTitle([config]) : isTpmConsignesPage
+    title: isLogistiqueDomain(config.domain) ? logistiqueDocumentTitle([config], false, logistiqueEvaluation) : isTpmConsignesPage
       ? 'Informations'
       : isTheoryPage
         ? (first?.title ?? type?.label ?? 'Théorie')
@@ -582,10 +596,49 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
       : pages
 
   pagesWithExclude.forEach((page, index) => {
-    const worksheet = buildPage(page, seed + index * 7919, exerciseNo, seed)
+    const worksheet = buildPage(page, seed + index * 7919, exerciseNo, seed, logisticsLayout?.evaluation)
     const scoredBlocks = worksheet.blocks.filter((block) => !isInfoPageType(block.exerciseType))
     if (scoredBlocks.length) {
       exerciseNo = Math.max(...scoredBlocks.map((block) => block.exerciseIndex)) + 1
+    }
+
+    if (worksheet.blocks.some((block) => block.problemHelp)) {
+      let continuation = false
+      const append = (blocks: WorksheetBlock[]) => {
+        if (blocks.length === 0) return
+        out.push({
+          ...worksheet,
+          blocks,
+          items: blocks.flatMap((block) => block.items),
+          configIndex: index,
+          isContinuation: continuation,
+        })
+        continuation = true
+      }
+      let preceding: WorksheetBlock[] = []
+      worksheet.blocks.forEach((block, sourceBlockIndex) => {
+        if (!block.problemHelp) {
+          preceding.push({ ...block, sourceBlockIndex })
+          return
+        }
+        append(preceding)
+        preceding = []
+        const capacity = block.exerciseType === 'problemes-donnees-utiles' ? 2 : 1
+        for (let offset = 0; offset < block.items.length; offset += capacity) {
+          const end = offset + capacity
+          append([{
+            ...block,
+            ...headingForSlice(block, offset, block.items),
+            sourceBlockIndex,
+            itemOffset: offset,
+            document: offset === 0 ? block.document : undefined,
+            items: block.items.slice(offset, end),
+            problemDraftGrids: block.problemDraftGrids?.slice(offset, end),
+          }])
+        }
+      })
+      append(preceding)
+      return
     }
 
     const isCom =

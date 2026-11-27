@@ -108,6 +108,7 @@ body { font-size: 16px; }
 .niveau-row.is-libre .select-control{opacity:.55}
 .number-libre-fields{display:grid;grid-template-columns:1fr 1fr;gap:8px 10px;align-items:end}
 .number-libre-fields .mode-toggle-block{grid-column:1 / -1}
+.libre-number-generation{display:grid;gap:8px;margin-bottom:12px}
 .quad-libre-block{display:flex;flex-direction:column;gap:10px}
 .quad-libre-block>b{font-size:calc(12px * var(--app-font-scale, 1))}
 .quad-shape-list{display:flex;flex-wrap:wrap;gap:6px}
@@ -1819,7 +1820,7 @@ html.is-margin-symmetric .print-only-sheets .worksheet-sheet.sheet-even .draft-g
   display:grid;
   grid-template-columns:repeat(var(--sheet-columns, 2), minmax(0, 1fr));
 }
-.worksheet-sheet .exercise-grid:has(.layout-coord){
+.worksheet-sheet .exercise-grid:not(.coord-grid-columns):has(.layout-coord){
   grid-template-columns:minmax(0,1fr);
 }
 /* Soutien FR (1 item pleine largeur) : les « Colonnes » du panneau
@@ -2064,6 +2065,33 @@ html.is-margin-symmetric .print-only-sheets .worksheet-sheet.sheet-even .draft-g
 .doc-document-title{margin:10px 0 4px;text-align:center;font-size:calc(22px * var(--app-font-scale, 1));font-weight:800;letter-spacing:-.03em}
 
 .mode-toggle-block{display:flex;flex-direction:column;gap:10px;padding-top:4px}
+.logistique-selection-list{display:grid;gap:6px;margin:0;padding:0;list-style:none}
+.logistique-selection-list li{display:flex;align-items:center;flex-wrap:wrap;gap:6px;font-size:.86em}
+.logistique-selection-list li span{flex:1;min-width:100px}
+.logistique-selection-list li input{width:4.3em}
+.logistique-selection-list li button{padding:5px 9px}
+.logistique-selection-list li small{width:100%}
+.logistique-bank>summary{cursor:pointer;font-weight:700}
+.logistique-bank[open]>:not(summary){margin-top:8px}
+.logistique-bank .libre-item-card{display:block}
+.logistique-bank-question{display:flex;gap:8px;align-items:baseline}
+.logistique-bank-question input{margin:0}
+.logistique-bank-lot{display:flex;flex-wrap:wrap;gap:8px;align-items:end}
+.logistique-bank-lot input{width:4.3em}
+.logistique-gaps{--tcf-blank-inline-px:min(145px,28%)}
+.logistique-gaps .prompt-stack-text{white-space:pre-wrap;line-height:1.7}
+.logistique-words{margin:0;font-size:.9em;line-height:1.55}
+.logistique-words strong{display:block}
+.logistique-image-fields>summary{cursor:pointer;font-weight:600}
+.logistique-image-fields[open]>:not(summary){margin-top:8px}
+.logistique-image-thumbnail{display:block;max-width:120px;max-height:74px;object-fit:contain}
+.logistique-illustrated-prompt{display:flow-root;min-width:0;width:100%}
+.logistique-question-image{max-width:100%;margin:4px auto 6px;padding:1.3mm;border:1px solid #a8a29e;border-radius:1.7mm}
+.logistique-illustrated-prompt.is-droite .logistique-question-image{float:right;max-width:40%;margin-inline-start:3mm}
+.logistique-question-image img{display:block;width:100%;max-height:115px;object-fit:contain}
+.logistique-question-image figcaption{margin-top:4px;font-size:.78em;line-height:1.22;overflow-wrap:anywhere}
+.a5-half .logistique-question-image{margin-block:0 2px;padding:.8mm}
+.a5-half .logistique-question-image img{max-height:62px}
 .mode-toggle-block>b,.custom-header-form>b{font-size:calc(13px * var(--app-font-scale, 1))}
 .mode-toggle{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:4px;border-radius:12px;background:#f4f2ef}
 .mode-toggle button{border:0;border-radius:9px;padding:10px 8px;background:transparent;color:var(--muted);font-size:calc(13px * var(--app-font-scale, 1));font-weight:700}
@@ -5848,6 +5876,47 @@ textarea.pill-input,
   padding:4px 10px;cursor:pointer;border-radius:0
 }
 .tcm-cfr-audio-btn:disabled{opacity:.5;cursor:default}
+.math-exercise-image{display:block;width:100%;height:23mm;object-fit:contain;object-position:center;margin-bottom:var(--ex-prompt-gap)}
+.math-base-ten{
+  display:grid;grid-template-columns:minmax(0, 4fr) minmax(0, 2fr) minmax(0, 1.4fr);
+  gap:1.5mm;margin-bottom:var(--ex-prompt-gap);font-size:.85em
+}
+.math-base-ten-tiles{display:flex;align-items:flex-start;flex-wrap:wrap;gap:.65mm;margin-top:1mm}
+.math-base-ten-tiles img{display:block;flex:none;object-fit:fill}
+.math-base-ten-plate img{width:9mm;height:9mm}
+.math-base-ten-rod img{width:9mm;height:.9mm}
+.math-base-ten-cube img{width:.9mm;height:.9mm}
+.math-problem-help{font-size:.8em;margin-block:1.5mm}
+.math-problem-pictures{display:flex;flex-wrap:wrap;gap:2mm 3mm}
+.math-problem-pictures figure{display:grid;justify-items:center;max-width:30mm;margin:0;text-align:center;line-height:1.2}
+.math-problem-pictures img{display:block;width:15mm;height:12mm;object-fit:contain}
+.math-problem-pictures figcaption{margin-top:1mm}
+.math-problem-facts{display:flex;flex-wrap:wrap;gap:.5mm 3mm;margin:1mm 0 0}
+.math-problem-facts div{display:flex;align-items:baseline;gap:1mm}
+.math-problem-facts dd{font-weight:700;margin:0}
+.math-menu-prices{
+  width:100%;table-layout:fixed;border-collapse:collapse;margin-bottom:var(--ex-prompt-gap);font-size:.9em
+}
+.math-menu-prices :is(th,td){padding:.5mm 2mm;border-bottom:1px solid var(--line);text-align:center}
+.math-menu-prices td{font-variant-numeric:tabular-nums;white-space:nowrap}
+.item-content:has(> .math-menu-prices) .draft-pad{--grid-rows:calc(3 * var(--sheet-columns, 1))}
+.math-scale svg{display:block;width:100%;height:32mm;max-width:68mm;margin-inline:auto}
+.math-scale text{fill:currentColor;font-family:inherit}
+.math-length-units{display:grid;gap:2mm;margin:0 0 var(--ex-prompt-gap);font-size:.85em}
+.math-length-row{display:grid;grid-template-columns:4em minmax(0, 1fr);align-items:center;gap:1mm}
+.math-length-strip{display:grid;height:4mm;outline:1px solid var(--ink);outline-offset:-1px}
+.math-length-strip span+span{border-left:1px dashed var(--ink)}
+
+.math-number-line{display:grid;margin:0 1.5ch var(--ex-prompt-gap);text-align:center;color:var(--ink)}
+.math-number-tick{position:relative;display:grid;justify-items:center;min-width:0;grid-template-rows:1.2em 8px 1.4em}
+.math-number-tick::before{content:"";position:absolute;inset:calc(1.2em + 3px) 0 auto;border-top:1px solid currentColor}
+.math-number-tick:first-child::before{left:50%}
+.math-number-tick:last-child::before{right:50%}
+.math-number-tick-pointer{line-height:1.2em;font-weight:700}
+.math-number-tick-mark{height:8px;border-left:1px solid currentColor}
+.math-number-tick-label{font-size:.9em;line-height:1.4;white-space:nowrap}
+.math-function-values{width:100%;border-collapse:collapse;margin-bottom:var(--ex-prompt-gap);text-align:center}
+.math-function-values :is(th,td){border:1px solid var(--line);padding:2px}
 .tcm-cfr-symmetry{width:100%}
 /* Grille 20×10 : toute la largeur utile, les cases suivent cette largeur. */
 .tcm-cfr-symmetry-svg{width:100%;max-width:none;height:auto;display:block;margin:0}
@@ -5865,6 +5934,7 @@ textarea.pill-input,
 .tcm-cfr-segment-num{font-weight:700}
 .tcm-cfr-segment-line-wrap{min-width:0}
 .tcm-cfr-segment-line{height:0;border-top:2.5px solid var(--ink,#222);max-width:100%}
+.tcm-cfr-segment-line.is-sloped{display:block;overflow:visible;border:0;max-width:none}
 .tcm-cfr-segment-answer{display:contents}
 .tcm-cfr-segment-answer .answer-line-field.compact{
   width:100%;min-width:0;box-sizing:border-box;text-align:center
@@ -6548,3 +6618,37 @@ textarea.pill-input,
 
 /* Guided question-writing corrections retain the complete rubric on A4. */
 .grammar-reading-writing .grammar-rubric li { margin: 1mm 0; }
+
+.math-theory-lesson h3{font-size:calc(20pt * var(--app-font-scale, 1));margin:0 0 2mm;line-height:1.2}
+.math-theory-goal{margin:0 0 2mm}
+.math-theory-lesson figure{margin:0 0 4mm;text-align:center}
+.math-theory-lesson figure img{width:100%;height:43mm;display:block;object-fit:contain}
+.math-theory-lesson figcaption{font-weight:700;margin-top:1mm}
+.math-theory-lesson h4{font-size:1em;color:var(--purple);margin:0 0 1.5mm}
+.math-theory-sections{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:5mm}
+.math-theory-sections dl,.math-theory-sections ol{margin:0}
+.math-theory-sections ol{padding-left:1.4em}
+.math-theory-sections dt{font-weight:700}
+.math-theory-sections dd{margin:0 0 1.8mm}
+.math-theory-sections li{margin-bottom:1.4mm}
+
+.math-square-figures,.math-solid-choices{display:grid;justify-items:center;gap:2mm;margin-block:1mm}
+.math-square-figures-row{display:flex;flex-wrap:wrap;align-items:end;justify-content:center;gap:3mm}
+.math-square-figures-row figure{margin:0;text-align:center}
+.math-square-figures-row figcaption,.math-square-figures p{margin:0;font-size:.82em}
+.math-square-grid{border-collapse:collapse}
+.math-square-grid td{box-sizing:border-box;width:3.6mm;height:3.6mm;border:.2mm solid #88929d;padding:0}
+.math-square-grid .is-filled{border-color:#48576a;background:#dce4ef;print-color-adjust:exact}
+.math-solid-choices img{display:block;width:40mm;height:auto;max-width:100%;object-fit:contain}
+.math-solid-choices .math-square-grid td{width:3.2mm;height:3.2mm}
+
+.math-table-and-graph{display:grid;justify-items:center;gap:1.5mm}
+.math-table-and-graph>p{justify-self:start}
+.math-temperature-graph{display:block;width:min(49mm,100%);height:auto;overflow:visible;color:#182238}
+.math-temperature-graph text{fill:currentColor;font-size:9px}
+.math-graph-grid{stroke:#a2adbb;stroke-width:.65}
+.math-graph-grid.is-minor{stroke:#c6cdd5}
+.math-graph-axes{fill:none;stroke:#101828;stroke-width:1.25}
+.math-graph-series polyline{fill:none;stroke:#263e70;stroke-width:1.6}
+.math-graph-series circle{fill:#263e70}
+.math-table-and-graph table{margin:0;font-size:.84em}

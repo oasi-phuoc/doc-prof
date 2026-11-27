@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
 import type { MathItem, PreviewMode } from '@/math/types'
 import { mirrorPoint, type GridPt } from '@/tcm-cfr/symetrie'
-import { CscCopyBlock, CscLengthBlock } from './tcm-csc'
+import { GridReproductionBlock, CscLengthBlock } from './tcm-csc'
 
 /**
  * Dictée audio TCM CFR (ex. 1–2) : uniquement la zone de réponse sur la fiche.
@@ -51,7 +51,9 @@ export function SymmetryGridBlock({
     if (!tpl?.dots) return []
     return tpl.dots.map((p) => mirrorPoint(p, tpl.axisX))
   }, [tpl])
-  if (item.cscTask?.kind === 'copy') return <CscCopyBlock item={item} mode={mode} />
+  if (item.cscTask?.kind === 'copy' || item.gridRotation) {
+    return <GridReproductionBlock item={item} mode={mode} />
+  }
   if (!tpl) return null
   const size = 280
   const pad = 12
@@ -131,7 +133,7 @@ export function SymmetryGridBlock({
   )
 }
 
-function SegmentSlope({ mm, slope, color }: { mm: number; slope: number; color: string }) {
+function SegmentSlope({ mm, slope, color, showLength }: { mm: number; slope: number; color: string; showLength: boolean }) {
   const angle = Math.atan(slope)
   const dx = mm * Math.cos(angle)
   const dy = mm * Math.sin(angle)
@@ -140,7 +142,7 @@ function SegmentSlope({ mm, slope, color }: { mm: number; slope: number; color: 
   const y1 = dy >= 0 ? height - pad : pad
   const y2 = dy >= 0 ? pad : height - pad
   return (
-    <svg className="tcm-cfr-segment-line is-sloped" data-length-mm={mm} viewBox={`0 0 ${dx} ${height}`} style={{ width: `${dx}mm`, height: `${height}mm` }} role="img" aria-label={`Segment incliné de ${mm} millimètres`}>
+    <svg className="tcm-cfr-segment-line is-sloped" data-length-mm={mm} viewBox={`0 0 ${dx} ${height}`} style={{ width: `${dx}mm`, height: `${height}mm` }} role="img" aria-label={showLength ? `Segment incliné de ${mm} millimètres` : 'Segment incliné à mesurer'}>
       <line x1="0" y1={y1} x2={dx} y2={y2} stroke={color} strokeWidth="0.7" strokeLinecap="butt" />
     </svg>
   )
@@ -169,7 +171,7 @@ export function SegmentMeasureBlock({
             <div className="tcm-cfr-segment-row" key={`seg-${i}`}>
               <span className="tcm-cfr-segment-num">{letter}.</span>
               <div className="tcm-cfr-segment-line-wrap">
-                {seg.slope ? <SegmentSlope mm={widthMm} slope={seg.slope} color={item.cscTask?.kind==='length-table' ? `var(--csc-segment-${item.cscTask.colors?.[i]??i}, ${['#23723b','#174eae','#b52335','#aa5811'][(item.cscTask.colors?.[i]??i)%4]})` : 'var(--ink)'} /> : <div className="tcm-cfr-segment-line" style={{ width: `${widthMm}mm`, ...(item.cscTask?.kind==='length-table'?{borderColor:`var(--csc-segment-${item.cscTask.colors?.[i]??i}, ${['#23723b','#174eae','#b52335','#aa5811'][(item.cscTask.colors?.[i]??i)%4]})`}:{}) }} />}
+                {seg.slope ? <SegmentSlope showLength={show} mm={widthMm} slope={seg.slope} color={item.cscTask?.kind==='length-table' ? `var(--csc-segment-${item.cscTask.colors?.[i]??i}, ${['#23723b','#174eae','#b52335','#aa5811'][(item.cscTask.colors?.[i]??i)%4]})` : 'var(--ink)'} /> : <div className="tcm-cfr-segment-line" style={{ width: `${widthMm}mm`, ...(item.cscTask?.kind==='length-table'?{borderColor:`var(--csc-segment-${item.cscTask.colors?.[i]??i}, ${['#23723b','#174eae','#b52335','#aa5811'][(item.cscTask.colors?.[i]??i)%4]})`}:{}) }} />}
               </div>
               <span className="tcm-cfr-segment-answer">
                 <span className={`answer-line-field compact ${show ? 'filled' : ''}`}>

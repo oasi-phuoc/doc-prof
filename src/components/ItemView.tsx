@@ -68,6 +68,19 @@ import {
   WordSearchBlock,
 } from './item-view/vocab'
 
+import { TableAndGraph } from './item-view/function-practice'
+import { AreaFigures, SolidViewChoices } from './item-view/geometry-practice'
+import { MeasurementScale } from './item-view/measurement-practice'
+import { MathTheoryView } from './item-view/math-theory'
+import { BaseTenCollection, LengthUnitComparison, MenuPriceTable } from './item-view/foundations-practice'
+import { FunctionValueTable, NumberLinePractice } from './item-view/number-representations'
+
+const exerciseImages = import.meta.glob<string>(['../math/media/angles/*.png', '../math/media/cube-nets/*.png'], {
+  eager: true,
+  import: 'default',
+  query: '?url',
+})
+
 export type { AlgebraFracToken, AlgebraTokenPart } from './item-view/algebra'
 export { AlgebraRow, tokenizeAlgebra } from './item-view/algebra'
 
@@ -80,6 +93,7 @@ export function ItemView({
   hideNumber: hideNumberOverride = false,
   algebraPadLeft = 0,
   draftGrid = true,
+  problemHelp = false,
   onToggleDraftGrid,
   oralAnswerMode,
   onCycleOralAnswerMode,
@@ -114,6 +128,7 @@ export function ItemView({
   algebraPadLeft?: number
   /** Zone de brouillon avec grille 4×4 mm (problèmes). */
   draftGrid?: boolean
+  problemHelp?: boolean
   onToggleDraftGrid?: () => void
   oralAnswerMode?: 'qcm' | 'text' | 'images'
   onCycleOralAnswerMode?: () => void
@@ -342,7 +357,9 @@ export function ItemView({
         {item.layout === 'compare' && <CompareRow item={item} mode={mode} />}
         {item.layout === 'encadrement' && <EncadrementRow item={item} mode={mode} />}
         {item.layout === 'select' && <SelectPillsRow item={oralItem} mode={mode} />}
-        {item.layout === 'theory' && <TheoryBlockView item={item} />}
+        {item.layout === 'theory' && (
+          item.mathTheory ? <MathTheoryView lesson={item.mathTheory} /> : <TheoryBlockView item={item} />
+        )}
         {item.layout === 'glossary' && item.glossary ? (
           <div className="glossary-card">
             <div className="glossary-figure-wrap">
@@ -442,13 +459,29 @@ export function ItemView({
         {item.layout === 'symmetry-grid' && <SymmetryGridBlock item={item} mode={mode} />}
         {item.layout === 'segment-measure' && <SegmentMeasureBlock item={item} mode={mode} />}
         {item.layout === 'metro-map' && <MetroMapBlock item={item} mode={mode} />}
-        {isProblem && <ProblemBlock item={item} mode={mode} draftGrid={draftGrid} />}
+        {item.menuPrices && <MenuPriceTable prices={item.menuPrices} />}
+        {isProblem && <ProblemBlock item={item} mode={mode} draftGrid={draftGrid} showHelp={problemHelp} />}
         {item.audioSrc && item.layout !== 'audio-dictation' ? (
           <audio className="oral-audio" controls preload="none" src={item.audioSrc}>
             Écoutez l’enregistrement.
           </audio>
         ) : null}
-        {isStackedText && !item.convert && <StackedPrompt item={item} mode={mode} />}
+        {item.exerciseImage && (
+          <img
+            className="math-exercise-image"
+            src={exerciseImages[`../math/media/${item.exerciseImage.kind}/${item.exerciseImage.id}.png`]}
+            alt={item.exerciseImage.kind === 'angles' ? 'Angle à classer' : 'Assemblage de six carrés'}
+          />
+        )}
+        {item.baseTen && <BaseTenCollection collection={item.baseTen} />}
+        {item.lengthUnits && <LengthUnitComparison lengths={item.lengthUnits} mode={mode} />}
+        {item.areaFigures && <AreaFigures figures={item.areaFigures} />}
+        {item.solidViews && <SolidViewChoices solid={item.solidViews} />}
+        {item.measureScale && <MeasurementScale scale={item.measureScale} />}
+        {item.numberLine && <NumberLinePractice line={item.numberLine} />}
+        {item.graphPractice && <TableAndGraph graph={item.graphPractice} prompt={item.prompt ?? ''} mode={mode} />}
+        {item.functionPairs && <FunctionValueTable pairs={item.functionPairs} />}
+        {isStackedText && !item.convert && !item.graphPractice && <StackedPrompt item={item} mode={mode} showHelp={problemHelp} />}
         {!isProblem &&
           !isStackedText &&
           item.layout === 'inline' &&

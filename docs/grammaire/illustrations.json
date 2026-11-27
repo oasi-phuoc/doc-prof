@@ -842,27 +842,24 @@
     }
   },
   "e2-04": {
-    "image": "/lib/images/grammaire/communication/e2-04-un-visiteur-montre-un-billet-dans-une-galerie.webp",
+    "image": "/lib/images/tcf/co/scenes/reprises/dialogue-invitation-musee-en-pied.png",
     "width": 1448,
     "height": 1086,
-    "sha256": "437fabcefada6a7292d658569c0752e7f89fe68187f576388b508ab305d58b71",
-    "title": "Un visiteur montre un billet dans une galerie",
+    "sha256": "48418332a67073a02ad3223195a510606d6ad17fa5bad0e3383998e7ee73eba5",
+    "title": "Deux personnes parlent d’un billet devant un musée",
     "keywords": [
       "musée",
-      "galerie",
-      "tableaux",
-      "billet"
+      "billet",
+      "visite",
+      "conversation",
+      "exposition"
     ],
-    "review": "Le visiteur montre un billet vierge pendant son échange avec une guide dans la salle d’exposition.",
-    "generation": {
-      "tool": "image_gen",
-      "mode": "individuelle",
-      "date": "2026-11-27",
-      "references": [
-        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
-      ],
-      "sourceSha256": "4db500e009fd9611832a1735e997f4841e06adc4a46a39ab651396b3761d42d8"
+    "review": "Le premier visiteur tend un billet devant les affiches du musée. Les deux visiteurs se distinguent par leur âge apparent, leur taille et leur coiffure.",
+    "reused": true,
+    "visualRevision": {
+      "reason": "diversité des personnages",
+      "previousImage": "/lib/images/grammaire/communication/e2-04-un-visiteur-montre-un-billet-dans-une-galerie.webp",
+      "source": "TCF"
     }
   },
   "e2-05": {
@@ -1010,37 +1007,52 @@
     }
   },
   "futur-proche-04": {
-    "image": "/lib/images/grammaire/communication/e2-04-un-visiteur-montre-un-billet-dans-une-galerie.webp",
+    "image": "/lib/images/grammaire/communication/futur-proche-04-un-visiteur-presente-son-billet-reserve-au-musee.webp",
     "width": 1448,
     "height": 1086,
-    "sha256": "437fabcefada6a7292d658569c0752e7f89fe68187f576388b508ab305d58b71",
-    "title": "Un visiteur montre un billet dans une galerie",
+    "sha256": "d8512c6d43236d1a45494f799ff7337196ccff9e553a3bb07ad6e7d85c97519b",
+    "title": "Un visiteur présente son billet réservé au musée",
     "keywords": [
       "musée",
-      "galerie",
-      "tableaux",
-      "billet"
+      "billet",
+      "visite",
+      "exposition",
+      "réservation"
     ],
-    "reused": true,
-    "reusedFrom": "e2-04",
-    "review": "Le même adulte montre un billet de visite dans une galerie et parle à une guide. Le cadre correspond au projet de visite."
+    "review": "Le billet de visite et l’entrée de la galerie sont visibles pendant l’échange.",
+    "generation": {
+      "tool": "image_gen",
+      "mode": "individuelle",
+      "date": "2026-11-27",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "sourceSha256": "78995e8401f96e2f6b3a7cd4d55ddedbe4cefa6a30034ad897a6f9e6ff8c4a88"
+    }
   },
   "k2-06": {
-    "image": "/lib/images/grammaire/communication/choix-au-magasin-de-telephones.webp",
-    "sha256": "cc02d59ca9768501d954b2747554b2a1a6f92ef55f16e4112a64da41c7fe2b5d",
+    "image": "/lib/images/grammaire/communication/k2-06-un-homme-presente-le-telephone-simple-quil-a-choisi.webp",
     "width": 1448,
     "height": 1086,
-    "title": "Deux hommes comparent des téléphones en magasin",
+    "sha256": "0f0e9dd19a9edf03bfc34474deca5cebbdabd8e025608ee4282291fe54c9fd42",
+    "title": "Un homme présente le téléphone simple qu’il a choisi",
     "keywords": [
       "magasin",
       "téléphone",
-      "carte SIM",
-      "tablette",
-      "client"
+      "clavier",
+      "vendeur",
+      "choix"
     ],
-    "reused": true,
-    "reusedFrom": "c2-08",
-    "review": "Dans un commerce, les deux clients parlent d’un modèle de téléphone visible. Le choix reste expliqué dans le texte."
+    "review": "Le téléphone à clavier est visible dans la main du client.",
+    "generation": {
+      "tool": "image_gen",
+      "mode": "individuelle",
+      "date": "2026-11-27",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "sourceSha256": "ae6d32c0cc221a9709d8b148c537e59f813168ec247d5146844a60b42d26e4ba"
+    }
   },
   "f3-01": {
     "image": "/lib/images/grammaire/communication/f3-01-deux-femmes-echangent-une-tasse-a-la-cafeteria.webp",
@@ -1293,21 +1305,28 @@
     }
   },
   "k3-05": {
-    "image": "/lib/images/grammaire/communication/f3-05-une-cliente-decline-la-carte-des-desserts-au-restaurant.webp",
+    "image": "/lib/images/grammaire/communication/k3-05-une-cliente-explique-son-refus-devant-la-carte-des-desserts.webp",
     "width": 1448,
     "height": 1086,
-    "sha256": "a05733aee1af3cc45387cb634f36c3425c0d1e03784e973f56c07509d97f523d",
-    "title": "Une cliente décline la carte des desserts au restaurant",
+    "sha256": "d9d4cdc95faf2d5991f3f494e4258e4628025400292ed2d12f923a42cdeb2f43",
+    "title": "Une cliente explique son refus devant la carte des desserts",
     "keywords": [
       "restaurant",
       "carte",
-      "desserts",
-      "serveur",
-      "cliente"
+      "dessert",
+      "cliente",
+      "refus"
     ],
-    "reused": true,
-    "reusedFrom": "f3-05",
-    "review": "La cliente refuse la proposition de dessert. Le même contexte permet d’expliquer son refus."
+    "review": "La carte illustrée reste ouverte pendant que la cliente parle au serveur.",
+    "generation": {
+      "tool": "image_gen",
+      "mode": "individuelle",
+      "date": "2026-11-27",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "sourceSha256": "d73b61310ba73c93a43df090579dbe5dc1a7c6e9108406821c4ab5c1a8d4727f"
+    }
   },
   "description-physique-01": {
     "image": "/lib/images/grammaire/communication/description-physique-01-deux-femmes-parlent-devant-la-mairie.webp",
@@ -2180,28 +2199,24 @@
     }
   },
   "imparfait-ou-pc-08": {
-    "image": "/lib/images/grammaire/communication/imparfait-ou-pc-08-un-voyageur-parle-a-une-agente-sur-le-quai.webp",
+    "image": "/lib/images/tcf/qcm-audit/qcm-lot20d-attente-gare.png",
     "width": 1448,
     "height": 1086,
-    "sha256": "5e1e54fea4a6209482dd2aae581b7dd64b5a7b4927ec2cf072c78b2bfe0db23a",
-    "title": "Un voyageur parle à une agente sur le quai",
+    "sha256": "8be94cca8c9d11ba8219d2bc78604956178af43dc9d40062ed67ae6bb47f3770",
+    "title": "Des voyageurs attendent dans le hall de la gare",
     "keywords": [
-      "gare",
-      "quai",
       "train",
+      "gare",
       "attente",
-      "voyageur"
+      "valise",
+      "voyage"
     ],
-    "review": "Le voyageur échange avec une agente tandis que d’autres personnes attendent.",
-    "generation": {
-      "tool": "image_gen",
-      "mode": "individuelle",
-      "date": "2026-11-27",
-      "references": [
-        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
-      ],
-      "sourceSha256": "d14fb3a460e96ab4f63e4a19c79b3d2a835fa6a574a949d94d17a8025a90a122"
+    "review": "Un train est visible à travers la fenêtre. Les voyageurs attendent avec leurs valises. Une voyageuse âgée s’appuie sur une canne. Le retard est précisé dans la fiche.",
+    "reused": true,
+    "visualRevision": {
+      "reason": "diversité des personnages",
+      "previousImage": "/lib/images/grammaire/communication/imparfait-ou-pc-08-un-voyageur-parle-a-une-agente-sur-le-quai.webp",
+      "source": "TCF"
     }
   },
   "imparfait-ou-pc-09": {
@@ -2405,28 +2420,24 @@
     }
   },
   "i4-07": {
-    "image": "/lib/images/grammaire/communication/i4-07-deux-adultes-examinent-le-frein-dun-velo-dans-un-atelier.webp",
+    "image": "/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-leurre-2.webp",
     "width": 1448,
     "height": 1086,
-    "sha256": "7fbc1c4ee19deb96fcb2ae04e2fd395f286cb4f129085845056f458db3dfce09",
-    "title": "Deux adultes examinent le frein d’un vélo dans un atelier",
+    "sha256": "eb5898791c1e6e7ae2dde57a638e0767f35f961116d3e950261312b52f0b90db",
+    "title": "Deux adultes examinent une roue dans un atelier de vélos",
     "keywords": [
-      "atelier",
       "vélo",
-      "frein",
+      "atelier",
+      "réparation",
       "roue",
-      "réparation"
+      "outils"
     ],
-    "review": "La position des mains attire l’attention vers le frein avant du vélo.",
-    "generation": {
-      "tool": "image_gen",
-      "mode": "individuelle",
-      "date": "2026-11-27",
-      "references": [
-        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
-      ],
-      "sourceSha256": "16204fcc528ae207f12e9d93fe572b22a1f7ec18f1b1e42a88628487ae3dd19b"
+    "review": "La cliente tient la roue. L’autre personne lui montre la zone à examiner. Les deux visages et coiffures diffèrent de ceux de la précédente version.",
+    "reused": true,
+    "visualRevision": {
+      "reason": "diversité des personnages",
+      "previousImage": "/lib/images/grammaire/communication/i4-07-deux-adultes-examinent-le-frein-dun-velo-dans-un-atelier.webp",
+      "source": "TCF"
     }
   },
   "i4-08": {
@@ -2605,28 +2616,24 @@
     }
   },
   "j1-05": {
-    "image": "/lib/images/grammaire/communication/j1-05-une-femme-apporte-un-plateau-a-la-cantine.webp",
+    "image": "/lib/images/tcf/catalogue/actions/plateau-a-la-cantine.webp",
     "width": 1448,
     "height": 1086,
-    "sha256": "e3b391ee9cc108a27b7addf7df078c954c8222a2c52aba80a213a1bb982a7ac9",
-    "title": "Une femme apporte un plateau à la cantine",
+    "sha256": "2e61f9561e4018b612361349effabbcb687366028827b6453c3c2a245674a26b",
+    "title": "Une femme porte un plateau-repas à la cantine",
     "keywords": [
       "cantine",
-      "plateau",
       "repas",
-      "service",
-      "salle"
+      "plateau",
+      "comptoir",
+      "service"
     ],
-    "review": "La personne transporte le repas sur un plateau devant les tables.",
-    "generation": {
-      "tool": "image_gen",
-      "mode": "individuelle",
-      "date": "2026-11-27",
-      "references": [
-        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
-      ],
-      "sourceSha256": "21056365f15e8a97064b4efe4283acf3bc756d3861bc7960b873e37a65797704"
+    "review": "Le plateau, son assiette et le comptoir situent la scène. La femme porte un foulard bleu et tient le repas devant elle.",
+    "reused": true,
+    "visualRevision": {
+      "reason": "diversité des personnages",
+      "previousImage": "/lib/images/grammaire/communication/j1-05-une-femme-apporte-un-plateau-a-la-cantine.webp",
+      "source": "TCF"
     }
   },
   "j1-06": {
@@ -2755,21 +2762,28 @@
     }
   },
   "k3-07": {
-    "image": "/lib/images/grammaire/communication/i4-07-deux-adultes-examinent-le-frein-dun-velo-dans-un-atelier.webp",
+    "image": "/lib/images/grammaire/communication/k3-07-une-cycliste-montre-un-cable-de-frein-debranche.webp",
     "width": 1448,
     "height": 1086,
-    "sha256": "7fbc1c4ee19deb96fcb2ae04e2fd395f286cb4f129085845056f458db3dfce09",
-    "title": "Deux adultes examinent le frein d’un vélo dans un atelier",
+    "sha256": "d668a42335453b2df9e8f260349f19d1ce63bfbdf73b4a70a68857f3bcf87245",
+    "title": "Une cycliste montre un câble de frein débranché",
     "keywords": [
-      "atelier",
       "vélo",
       "frein",
-      "roue",
-      "réparation"
+      "câble",
+      "réparation",
+      "atelier"
     ],
-    "reused": true,
-    "reusedFrom": "i4-07",
-    "review": "Les deux adultes examinent le frein du même vélo dans l’atelier. Le contexte est celui d’un problème de réparation."
+    "review": "La cycliste désigne le frein arrière et tient l’extrémité du câble.",
+    "generation": {
+      "tool": "image_gen",
+      "mode": "individuelle",
+      "date": "2026-11-27",
+      "references": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "sourceSha256": "826a05aa552fa218f728674c92f71bd6b2107d64ce2740637f6caa211423fd1b"
+    }
   },
   "futur-proche-01": {
     "image": "/lib/images/grammaire/communication/futur-proche-01-deux-femmes-parlent-pres-des-cartons-de-demenagement.webp",
@@ -2947,28 +2961,24 @@
     }
   },
   "futur-proche-10": {
-    "image": "/lib/images/grammaire/communication/futur-proche-10-un-voyageur-attend-avec-sa-valise-sur-le-quai.webp",
-    "width": 1448,
-    "height": 1086,
-    "sha256": "912bca3c9b24144da4f27ed32ac189645ac2ce590e0544066aecfcd2d14f4ee1",
-    "title": "Un voyageur attend avec sa valise sur le quai",
+    "image": "/lib/images/tcf/qcm-audit/co57-voyage.webp",
+    "width": 1280,
+    "height": 960,
+    "sha256": "67daabeb8f9467a22c8acaffc7a9f5998c1aa1e2a6eb6ad65ca2d4956c4685b3",
+    "title": "Deux voyageurs attendent le train avec leurs valises",
     "keywords": [
       "train",
-      "gare",
       "quai",
       "valise",
-      "voyageur"
+      "gare",
+      "voyage"
     ],
-    "review": "La valise est visible devant le train arrêté.",
-    "generation": {
-      "tool": "image_gen",
-      "mode": "individuelle",
-      "date": "2026-11-27",
-      "references": [
-        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
-      ],
-      "sourceSha256": "aec20fcee2a093880e93e8a042265fc0251593a3a46f8d98c9408fccdda3983e"
+    "review": "Deux voyageurs d’âges différents discutent devant le train. Leurs valises sont visibles de part et d’autre.",
+    "reused": true,
+    "visualRevision": {
+      "reason": "diversité des personnages",
+      "previousImage": "/lib/images/grammaire/communication/futur-proche-10-un-voyageur-attend-avec-sa-valise-sur-le-quai.webp",
+      "source": "TCF"
     }
   },
   "imparfait-ou-pc-06": {
@@ -3322,53 +3332,45 @@
     }
   },
   "k2-04": {
-    "image": "/lib/images/grammaire/communication/k2-04-un-homme-parle-de-son-choix-devant-un-menu-illustre.webp",
+    "image": "/lib/images/tcf/co/scenes/ecole/06-ecole-menu-de-la-cantine.webp",
     "width": 1448,
     "height": 1086,
-    "sha256": "a12f47b21ee82e384d451298daa318fe447f7047351665d32a78dbfbdc6ec373",
-    "title": "Un homme parle de son choix devant un menu illustré",
+    "sha256": "fc000b769d635e0c64795cbf55d2f9427e05fb3dccff077c4e40fb115303bc81",
+    "title": "Deux personnes choisissent un plat à la cantine",
     "keywords": [
       "cantine",
-      "choix",
       "menu",
+      "plat",
       "plateau",
-      "plat"
+      "choix"
     ],
-    "review": "Le menu ouvert montre différentes assiettes possibles.",
-    "generation": {
-      "tool": "image_gen",
-      "mode": "individuelle",
-      "date": "2026-11-27",
-      "references": [
-        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
-      ],
-      "sourceSha256": "bc2c6b6214a43ce1b955f04c9b2db6be8bf0d6c98d16caa50409b7a0c16098dc"
+    "review": "Les personnes se tournent vers le menu illustré. Leurs coupes, leurs tenues et leurs expressions se distinguent.",
+    "reused": true,
+    "visualRevision": {
+      "reason": "diversité des personnages",
+      "previousImage": "/lib/images/grammaire/communication/k2-04-un-homme-parle-de-son-choix-devant-un-menu-illustre.webp",
+      "source": "TCF"
     }
   },
   "k2-05": {
-    "image": "/lib/images/grammaire/communication/k2-05-une-lectrice-presente-un-roman-a-la-bibliotheque.webp",
+    "image": "/lib/images/tcf/co/scenes/reprises/dialogue-roman-bibliotheque-en-pied.png",
     "width": 1448,
     "height": 1086,
-    "sha256": "349b69c0cd5cdd5b3cc5df1fe5644c06d9e51b55d2abe6fac24cf111b408faa1",
-    "title": "Une lectrice présente un roman à la bibliothèque",
+    "sha256": "af7e44de48d44fc13e169c72693e341912f8e1df5fc5b5efb95b20cdac197760",
+    "title": "Deux lectrices discutent de leur choix de livre",
     "keywords": [
       "bibliothèque",
       "roman",
-      "couverture",
       "lecture",
-      "livres"
+      "livres",
+      "choix"
     ],
-    "review": "La lectrice montre la couverture du roman pendant l’échange.",
-    "generation": {
-      "tool": "image_gen",
-      "mode": "individuelle",
-      "date": "2026-11-27",
-      "references": [
-        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
-      ],
-      "sourceSha256": "517e6efc737c3d960ec250b623c589d4e3f56bf0fc7c0717a899634cb2eb2e91"
+    "review": "Les deux personnes tiennent un livre dans la bibliothèque. Leurs silhouettes, coiffures et postures sont distinctes.",
+    "reused": true,
+    "visualRevision": {
+      "reason": "diversité des personnages",
+      "previousImage": "/lib/images/grammaire/communication/k2-05-une-lectrice-presente-un-roman-a-la-bibliotheque.webp",
+      "source": "TCF"
     }
   },
   "k2-07": {
@@ -3572,28 +3574,24 @@
     }
   },
   "k3-06": {
-    "image": "/lib/images/grammaire/communication/k3-06-un-lecteur-demande-de-laide-avec-un-catalogue.webp",
+    "image": "/lib/images/tcf/qcm-audit/co-personnages-20261112-2.png",
     "width": 1448,
     "height": 1086,
-    "sha256": "b61e9caa35fd51940dfc5feb4d813c5aec0c540b5e05970f8b6a2a1d5227f433",
-    "title": "Un lecteur demande de l’aide avec un catalogue",
+    "sha256": "0b8636e429c218559e08af5d4894cb490cefafc6fbbc814c3a8af6eb920e19bf",
+    "title": "Un lecteur échange avec une bibliothécaire au comptoir",
     "keywords": [
       "bibliothèque",
-      "catalogue",
-      "livre",
+      "lecture",
+      "aide",
       "accueil",
-      "aide"
+      "fauteuil roulant"
     ],
-    "review": "Le lecteur apporte un grand catalogue au comptoir.",
-    "generation": {
-      "tool": "image_gen",
-      "mode": "individuelle",
-      "date": "2026-11-27",
-      "references": [
-        "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp",
-        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
-      ],
-      "sourceSha256": "4c7d66e11e07a1c45e4638782ebaacdd46c801908a6e1197ee59bd4b62cb52df"
+    "review": "Un lecteur en fauteuil roulant et une bibliothécaire aux cheveux gris échangent au comptoir. Le catalogue et la raison de la demande sont précisés par le texte de la fiche.",
+    "reused": true,
+    "visualRevision": {
+      "reason": "diversité des personnages",
+      "previousImage": "/lib/images/grammaire/communication/k3-06-un-lecteur-demande-de-laide-avec-un-catalogue.webp",
+      "source": "TCF"
     }
   },
   "k3-08": {
