@@ -2457,7 +2457,7 @@
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k4-curriculum-d",
     "subthemeId": "k4",
     "topic": "gram-exprimer",
@@ -2489,18 +2489,18 @@
         "kind": "reading",
         "prompt": "Où prendre la pause ?",
         "genre": "Journal d’école",
-        "text": "Mardi, les surveillants ont fait sortir les élèves par la porte de la cantine. Des traces d’eau étaient visibles près du terrain de sport. Le conseil des élèves cherchait une solution pour les jours de pluie.\nLa cour était inondée. Les élèves ont pris leur pause sous le préau. La prof a ouvert le préau. L’objectif est le suivant : offrir un abri aux élèves.",
+        "text": "Mardi, les surveillants ont fait sortir les élèves par la porte de la cantine. Des traces d’eau étaient visibles près du terrain de sport. Le conseil des élèves cherchait une solution pour les jours de pluie.\nLa cour était inondée. C’est pourquoi les élèves ont pris leur pause sous le préau. La prof a ouvert le préau. L’objectif est le suivant : offrir un abri aux élèves.",
         "answers": [],
         "questions": [
           {
             "id": "gram-ex-k4-curriculum-d-a2-cour-q1",
-            "prompt": "Quelle conséquence découle de la situation initiale du deuxième paragraphe ?",
+            "prompt": "Quelle conséquence est introduite par « C’est pourquoi » ?",
             "answers": [
               "Les élèves ont pris leur pause sous le préau."
             ],
             "evidence": [
               "La cour était inondée.",
-              "Les élèves ont pris leur pause sous le préau."
+              "C’est pourquoi les élèves ont pris leur pause sous le préau."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -2521,7 +2521,7 @@
           },
           {
             "id": "gram-ex-k4-curriculum-d-a2-cour-q2",
-            "prompt": "Pour quelle raison la décision initiale a-t-elle été prise ?",
+            "prompt": "Quel fait est présenté au début du deuxième paragraphe ?",
             "answers": [
               "La cour était inondée."
             ],
@@ -2558,18 +2558,18 @@
         "kind": "reading",
         "prompt": "Une autre ligne le matin",
         "genre": "Info voyageurs",
-        "text": "Les travaux durent jusqu’à vendredi. À la gare du haut, la navette part devant le kiosque. Le premier conducteur attend les passagers du train de 7 h 50.\nLa ligne de tram était coupée. Les voyageurs ont pris la navette. La régie a ajouté un départ à huit heures. L’objectif est le suivant : réduire l’attente.",
+        "text": "Les travaux durent jusqu’à vendredi. À la gare du haut, la navette part devant le kiosque. Le premier conducteur attend les passagers du train de 7 h 50.\nLa ligne de tram était coupée. C’est pourquoi les voyageurs ont pris la navette. La régie a ajouté un départ à huit heures. L’objectif est le suivant : réduire l’attente.",
         "answers": [],
         "questions": [
           {
             "id": "gram-ex-k4-curriculum-d-a2-tram-q1",
-            "prompt": "Quelle conséquence découle de la situation initiale du deuxième paragraphe ?",
+            "prompt": "Quelle conséquence est introduite par « C’est pourquoi » ?",
             "answers": [
               "Les voyageurs ont pris la navette."
             ],
             "evidence": [
               "La ligne de tram était coupée.",
-              "Les voyageurs ont pris la navette."
+              "C’est pourquoi les voyageurs ont pris la navette."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -2590,7 +2590,7 @@
           },
           {
             "id": "gram-ex-k4-curriculum-d-a2-tram-q2",
-            "prompt": "Pour quelle raison la décision initiale a-t-elle été prise ?",
+            "prompt": "Quel fait est présenté au début du deuxième paragraphe ?",
             "answers": [
               "La ligne de tram était coupée."
             ],
@@ -2627,18 +2627,18 @@
         "kind": "reading",
         "prompt": "Une sonnette à portée de main",
         "genre": "Courriel aux visiteurs",
-        "text": "Bonjour, l’entrée latérale donne sur la cour du musée. Elle est ouverte de dix heures à seize heures. Les personnes qui arrivent par cette porte peuvent attendre à l’abri.\nLe bouton était trop haut. Les visiteurs ont demandé de l’aide. La concierge a installé un bouton plus bas. L’objectif est le suivant : faciliter l’accès.",
+        "text": "Bonjour, l’entrée latérale donne sur la cour du musée. Elle est ouverte de dix heures à seize heures. Les personnes qui arrivent par cette porte peuvent attendre à l’abri.\nLe bouton était trop haut. C’est pourquoi les visiteurs ont demandé de l’aide. La concierge a installé un bouton plus bas. L’objectif est le suivant : faciliter l’accès.",
         "answers": [],
         "questions": [
           {
             "id": "gram-ex-k4-curriculum-d-a2-porte-q1",
-            "prompt": "Quelle conséquence découle de la situation initiale du deuxième paragraphe ?",
+            "prompt": "Quelle conséquence est introduite par « C’est pourquoi » ?",
             "answers": [
               "Les visiteurs ont demandé de l’aide."
             ],
             "evidence": [
               "Le bouton était trop haut.",
-              "Les visiteurs ont demandé de l’aide."
+              "C’est pourquoi les visiteurs ont demandé de l’aide."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -2659,7 +2659,7 @@
           },
           {
             "id": "gram-ex-k4-curriculum-d-a2-porte-q2",
-            "prompt": "Pour quelle raison la décision initiale a-t-elle été prise ?",
+            "prompt": "Quel fait est présenté au début du deuxième paragraphe ?",
             "answers": [
               "Le bouton était trop haut."
             ],
@@ -2696,18 +2696,18 @@
         "kind": "reading",
         "prompt": "Les premiers livres du hameau",
         "genre": "Brève",
-        "text": "Vendredi après-midi, une trentaine de personnes se sont réunies près du four communal. C’était la première fois que le hameau participait à la tournée. Les habitants avaient annoncé leur choix par un vote.\nLe village a prêté une place de stationnement. Le bibliobus s’est arrêté au hameau. Le conducteur a préparé un itinéraire plus court. L’objectif est le suivant : desservir le hameau à temps.",
+        "text": "Vendredi après-midi, une trentaine de personnes se sont réunies près du four communal. C’était la première fois que le hameau participait à la tournée. Les habitants avaient annoncé leur choix par un vote.\nLe village a prêté une place de stationnement. C’est pourquoi le bibliobus s’est arrêté au hameau. Le conducteur a préparé un itinéraire plus court. L’objectif est le suivant : desservir le hameau à temps.",
         "answers": [],
         "questions": [
           {
             "id": "gram-ex-k4-curriculum-d-a2-bibliobus-q1",
-            "prompt": "Quelle conséquence découle de la situation initiale du deuxième paragraphe ?",
+            "prompt": "Quelle conséquence est introduite par « C’est pourquoi » ?",
             "answers": [
               "Le bibliobus s’est arrêté au hameau."
             ],
             "evidence": [
               "Le village a prêté une place de stationnement.",
-              "Le bibliobus s’est arrêté au hameau."
+              "C’est pourquoi le bibliobus s’est arrêté au hameau."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -2728,7 +2728,7 @@
           },
           {
             "id": "gram-ex-k4-curriculum-d-a2-bibliobus-q2",
-            "prompt": "Pour quelle raison la décision initiale a-t-elle été prise ?",
+            "prompt": "Quel fait est présenté au début du deuxième paragraphe ?",
             "answers": [
               "Le village a prêté une place de stationnement."
             ],
@@ -2765,18 +2765,18 @@
         "kind": "reading",
         "prompt": "Le service continue dans le hall",
         "genre": "Message à l’équipe",
-        "text": "L’équipe d’ouverture a trouvé une flaque sous l’étagère du fond. Elle a coupé le courant dans la réserve. Les personnes chargées des prêts sont arrivées quelques minutes plus tard.\nUne fuite a mouillé le plafond. La bibliothécaire a fermé la réserve. Les employés ont sorti les cartons. L’objectif est le suivant : protéger les documents.",
+        "text": "L’équipe d’ouverture a trouvé une flaque sous l’étagère du fond. Elle a coupé le courant dans la réserve. Les personnes chargées des prêts sont arrivées quelques minutes plus tard.\nUne fuite a mouillé le plafond. C’est pourquoi la bibliothécaire a fermé la réserve. Les employés ont sorti les cartons. L’objectif est le suivant : protéger les documents.",
         "answers": [],
         "questions": [
           {
             "id": "gram-ex-k4-curriculum-d-a2-fuite-q1",
-            "prompt": "Quelle conséquence découle de la situation initiale du deuxième paragraphe ?",
+            "prompt": "Quelle conséquence est introduite par « C’est pourquoi » ?",
             "answers": [
               "La bibliothécaire a fermé la réserve."
             ],
             "evidence": [
               "Une fuite a mouillé le plafond.",
-              "La bibliothécaire a fermé la réserve."
+              "C’est pourquoi la bibliothécaire a fermé la réserve."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -2797,7 +2797,7 @@
           },
           {
             "id": "gram-ex-k4-curriculum-d-a2-fuite-q2",
-            "prompt": "Pour quelle raison la décision initiale a-t-elle été prise ?",
+            "prompt": "Quel fait est présenté au début du deuxième paragraphe ?",
             "answers": [
               "Une fuite a mouillé le plafond."
             ],
@@ -2834,18 +2834,18 @@
         "kind": "reading",
         "prompt": "Le premier jour du détour",
         "genre": "Récit",
-        "text": "Nous sommes arrivés du côté du bois vers onze heures. Le père de Lila avait prévu de rejoindre les autres à la plage avant le repas. Les plus jeunes voulaient savoir combien de temps il restait à marcher.\nLa passerelle était fermée. Les familles ont suivi le sentier du bois. La commune a posé une flèche au croisement. L’objectif est le suivant : guider les familles.",
+        "text": "Nous sommes arrivés du côté du bois vers onze heures. Le père de Lila avait prévu de rejoindre les autres à la plage avant le repas. Les plus jeunes voulaient savoir combien de temps il restait à marcher.\nLa passerelle était fermée. C’est pourquoi les familles ont suivi le sentier du bois. La commune a posé une flèche au croisement. L’objectif est le suivant : guider les familles.",
         "answers": [],
         "questions": [
           {
             "id": "gram-ex-k4-curriculum-d-a2-plage-q1",
-            "prompt": "Quelle conséquence découle de la situation initiale du deuxième paragraphe ?",
+            "prompt": "Quelle conséquence est introduite par « C’est pourquoi » ?",
             "answers": [
               "Les familles ont suivi le sentier du bois."
             ],
             "evidence": [
               "La passerelle était fermée.",
-              "Les familles ont suivi le sentier du bois."
+              "C’est pourquoi les familles ont suivi le sentier du bois."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -2866,7 +2866,7 @@
           },
           {
             "id": "gram-ex-k4-curriculum-d-a2-plage-q2",
-            "prompt": "Pour quelle raison la décision initiale a-t-elle été prise ?",
+            "prompt": "Quel fait est présenté au début du deuxième paragraphe ?",
             "answers": [
               "La passerelle était fermée."
             ],
@@ -2903,18 +2903,18 @@
         "kind": "reading",
         "prompt": "Mieux entendre depuis le fond",
         "genre": "Compte rendu",
-        "text": "Des élèves assis au dernier rang ont demandé une pause pendant la répétition. Les musiciens ont attendu sur la scène pendant les essais. Un parent leur avait signalé le même problème à la fin du premier morceau.\nLe public du fond entendait mal. Le technicien a déplacé un haut-parleur. La régie a fait un essai avant l’ouverture. L’objectif est le suivant : vérifier le son au dernier rang.",
+        "text": "Des élèves assis au dernier rang ont demandé une pause pendant la répétition. Les musiciens ont attendu sur la scène pendant les essais. Un parent leur avait signalé le même problème à la fin du premier morceau.\nLe public du fond entendait mal. C’est pourquoi le technicien a déplacé un haut-parleur. La régie a fait un essai avant l’ouverture. L’objectif est le suivant : vérifier le son au dernier rang.",
         "answers": [],
         "questions": [
           {
             "id": "gram-ex-k4-curriculum-d-a2-concert-q1",
-            "prompt": "Quelle conséquence découle de la situation initiale du deuxième paragraphe ?",
+            "prompt": "Quelle conséquence est introduite par « C’est pourquoi » ?",
             "answers": [
               "Le technicien a déplacé un haut-parleur."
             ],
             "evidence": [
               "Le public du fond entendait mal.",
-              "Le technicien a déplacé un haut-parleur."
+              "C’est pourquoi le technicien a déplacé un haut-parleur."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -2935,7 +2935,7 @@
           },
           {
             "id": "gram-ex-k4-curriculum-d-a2-concert-q2",
-            "prompt": "Pour quelle raison la décision initiale a-t-elle été prise ?",
+            "prompt": "Quel fait est présenté au début du deuxième paragraphe ?",
             "answers": [
               "Le public du fond entendait mal."
             ],
@@ -2972,18 +2972,18 @@
         "kind": "reading",
         "prompt": "Un rendez-vous après les cours",
         "genre": "Note de secrétariat",
-        "text": "Pour remettre un dossier, munissez-vous de votre carte. Le bureau se trouve au bout du couloir, après l’escalier. Les élèves peuvent demander l’aide d’une personne de l’accueil pour écrire leur nom.\nLe guichet fermait à seize heures. Plusieurs élèves ont dû revenir mardi. Le secrétariat a proposé un rendez-vous à dix-sept heures. L’objectif est le suivant : recevoir les élèves après les cours.",
+        "text": "Pour remettre un dossier, munissez-vous de votre carte. Le bureau se trouve au bout du couloir, après l’escalier. Les élèves peuvent demander l’aide d’une personne de l’accueil pour écrire leur nom.\nLe guichet fermait à seize heures. C’est pourquoi plusieurs élèves ont dû revenir mardi. Le secrétariat a proposé un rendez-vous à dix-sept heures. L’objectif est le suivant : recevoir les élèves après les cours.",
         "answers": [],
         "questions": [
           {
             "id": "gram-ex-k4-curriculum-d-a2-courrier-q1",
-            "prompt": "Quelle conséquence découle de la situation initiale du deuxième paragraphe ?",
+            "prompt": "Quelle conséquence est introduite par « C’est pourquoi » ?",
             "answers": [
               "Plusieurs élèves ont dû revenir mardi."
             ],
             "evidence": [
               "Le guichet fermait à seize heures.",
-              "Plusieurs élèves ont dû revenir mardi."
+              "C’est pourquoi plusieurs élèves ont dû revenir mardi."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -3004,7 +3004,7 @@
           },
           {
             "id": "gram-ex-k4-curriculum-d-a2-courrier-q2",
-            "prompt": "Pour quelle raison la décision initiale a-t-elle été prise ?",
+            "prompt": "Quel fait est présenté au début du deuxième paragraphe ?",
             "answers": [
               "Le guichet fermait à seize heures."
             ],
@@ -3041,18 +3041,18 @@
         "kind": "reading",
         "prompt": "À qui appartient ce sac ?",
         "genre": "Carnet d’activité",
-        "text": "Le groupe a emprunté un sac par personne. Avant de partir, une monitrice a pris une photo des sacs posés devant la porte. La photo permet de voir où se trouvait chaque paire de chaussures.\nLes sacs étaient presque identiques. Les moniteurs ont confondu deux affaires. Le club a cousu des étiquettes. L’objectif est le suivant : rendre chaque sac à la bonne personne.",
+        "text": "Le groupe a emprunté un sac par personne. Avant de partir, une monitrice a pris une photo des sacs posés devant la porte. La photo permet de voir où se trouvait chaque paire de chaussures.\nLes sacs étaient presque identiques. C’est pourquoi les moniteurs ont confondu deux affaires. Le club a cousu des étiquettes. L’objectif est le suivant : rendre chaque sac à la bonne personne.",
         "answers": [],
         "questions": [
           {
             "id": "gram-ex-k4-curriculum-d-a2-sacs-q1",
-            "prompt": "Quelle conséquence découle de la situation initiale du deuxième paragraphe ?",
+            "prompt": "Quelle conséquence est introduite par « C’est pourquoi » ?",
             "answers": [
               "Les moniteurs ont confondu deux affaires."
             ],
             "evidence": [
               "Les sacs étaient presque identiques.",
-              "Les moniteurs ont confondu deux affaires."
+              "C’est pourquoi les moniteurs ont confondu deux affaires."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -3073,7 +3073,7 @@
           },
           {
             "id": "gram-ex-k4-curriculum-d-a2-sacs-q2",
-            "prompt": "Pour quelle raison la décision initiale a-t-elle été prise ?",
+            "prompt": "Quel fait est présenté au début du deuxième paragraphe ?",
             "answers": [
               "Les sacs étaient presque identiques."
             ],
@@ -3110,18 +3110,18 @@
         "kind": "reading",
         "prompt": "La protection du mur peint",
         "genre": "Article local",
-        "text": "La fresque représente le lac en hiver. Le jour du marché, les artistes travaillaient près de la grande fontaine. Un visiteur a demandé pourquoi la première partie du mur était encore couverte.\nDes taches sont apparues près de la fresque. Le musée a déplacé un stand. Une bénévole a fixé une bâche. L’objectif est le suivant : éviter de nouvelles taches.",
+        "text": "La fresque représente le lac en hiver. Le jour du marché, les artistes travaillaient près de la grande fontaine. Un visiteur a demandé pourquoi la première partie du mur était encore couverte.\nDes taches sont apparues près de la fresque. C’est pourquoi le musée a déplacé un stand. Une bénévole a fixé une bâche. L’objectif est le suivant : éviter de nouvelles taches.",
         "answers": [],
         "questions": [
           {
             "id": "gram-ex-k4-curriculum-d-a2-fresque-q1",
-            "prompt": "Quelle conséquence découle de la situation initiale du deuxième paragraphe ?",
+            "prompt": "Quelle conséquence est introduite par « C’est pourquoi » ?",
             "answers": [
               "Le musée a déplacé un stand."
             ],
             "evidence": [
               "Des taches sont apparues près de la fresque.",
-              "Le musée a déplacé un stand."
+              "C’est pourquoi le musée a déplacé un stand."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -3142,7 +3142,7 @@
           },
           {
             "id": "gram-ex-k4-curriculum-d-a2-fresque-q2",
-            "prompt": "Pour quelle raison la décision initiale a-t-elle été prise ?",
+            "prompt": "Quel fait est présenté au début du deuxième paragraphe ?",
             "answers": [
               "Des taches sont apparues près de la fresque."
             ],
@@ -3179,18 +3179,18 @@
         "kind": "reading",
         "prompt": "Les nouveaux horaires de la gare",
         "genre": "Annonce",
-        "text": "L’horaire change lundi à cinq heures. Le bureau de vente reste au même endroit. Les voyageurs qui ne connaissent pas le bâtiment trouveront l’entrée en suivant les flèches bleues.\nLe texte était trop petit. Des voyageurs ont demandé l’heure au guichet. La gare a imprimé un nouvel horaire. L’objectif est le suivant : rendre les heures lisibles de loin.",
+        "text": "L’horaire change lundi à cinq heures. Le bureau de vente reste au même endroit. Les voyageurs qui ne connaissent pas le bâtiment trouveront l’entrée en suivant les flèches bleues.\nLe texte était trop petit. C’est pourquoi des voyageurs ont demandé l’heure au guichet. La gare a imprimé un nouvel horaire. L’objectif est le suivant : rendre les heures lisibles de loin.",
         "answers": [],
         "questions": [
           {
             "id": "gram-ex-k4-curriculum-d-a2-horaire-q1",
-            "prompt": "Quelle conséquence découle de la situation initiale du deuxième paragraphe ?",
+            "prompt": "Quelle conséquence est introduite par « C’est pourquoi » ?",
             "answers": [
               "Des voyageurs ont demandé l’heure au guichet."
             ],
             "evidence": [
               "Le texte était trop petit.",
-              "Des voyageurs ont demandé l’heure au guichet."
+              "C’est pourquoi des voyageurs ont demandé l’heure au guichet."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -3211,7 +3211,7 @@
           },
           {
             "id": "gram-ex-k4-curriculum-d-a2-horaire-q2",
-            "prompt": "Pour quelle raison la décision initiale a-t-elle été prise ?",
+            "prompt": "Quel fait est présenté au début du deuxième paragraphe ?",
             "answers": [
               "Le texte était trop petit."
             ],
@@ -3248,18 +3248,18 @@
         "kind": "reading",
         "prompt": "Un inventaire au musée",
         "genre": "Fiche de visite",
-        "text": "La salle des objets prêtés se trouve derrière l’accueil. Vous pouvez demander une feuille à la première table. Notez d’abord le nom de l’objet qui vous intéresse, puis cherchez son origine.\nLe musée a reçu une liste d’inventaire. Les bénévoles ont identifié les objets. La conservatrice a placé les étiquettes sous les objets. L’objectif est le suivant : indiquer l’origine des objets.",
+        "text": "La salle des objets prêtés se trouve derrière l’accueil. Vous pouvez demander une feuille à la première table. Notez d’abord le nom de l’objet qui vous intéresse, puis cherchez son origine.\nLe musée a reçu une liste d’inventaire. C’est pourquoi les bénévoles ont identifié les objets. La conservatrice a placé les étiquettes sous les objets. L’objectif est le suivant : indiquer l’origine des objets.",
         "answers": [],
         "questions": [
           {
             "id": "gram-ex-k4-curriculum-d-a2-vitrine-q1",
-            "prompt": "Quelle conséquence découle de la situation initiale du deuxième paragraphe ?",
+            "prompt": "Quelle conséquence est introduite par « C’est pourquoi » ?",
             "answers": [
               "Les bénévoles ont identifié les objets."
             ],
             "evidence": [
               "Le musée a reçu une liste d’inventaire.",
-              "Les bénévoles ont identifié les objets."
+              "C’est pourquoi les bénévoles ont identifié les objets."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -3280,7 +3280,7 @@
           },
           {
             "id": "gram-ex-k4-curriculum-d-a2-vitrine-q2",
-            "prompt": "Pour quelle raison la décision initiale a-t-elle été prise ?",
+            "prompt": "Quel fait est présenté au début du deuxième paragraphe ?",
             "answers": [
               "Le musée a reçu une liste d’inventaire."
             ],
@@ -3317,18 +3317,18 @@
         "kind": "reading",
         "prompt": "Le tournoi du samedi",
         "genre": "Message d’une capitaine",
-        "text": "Notre équipe avait rendez-vous à huit heures devant le terrain. J’ai demandé aux joueuses d’apporter les deux maillots car plusieurs équipes portent du bleu. Le premier match devait commencer à neuf heures.\nLe terrain était détrempé. Le club a déplacé les matchs au gymnase. Le club a réservé le gymnase. L’objectif est le suivant : jouer même en cas de pluie.",
+        "text": "Notre équipe avait rendez-vous à huit heures devant le terrain. J’ai demandé aux joueuses d’apporter les deux maillots car plusieurs équipes portent du bleu. Le premier match devait commencer à neuf heures.\nLe terrain était détrempé. C’est pourquoi le club a déplacé les matchs au gymnase. Le club a réservé le gymnase. L’objectif est le suivant : jouer même en cas de pluie.",
         "answers": [],
         "questions": [
           {
             "id": "gram-ex-k4-curriculum-d-a2-tournoi-q1",
-            "prompt": "Quelle conséquence découle de la situation initiale du deuxième paragraphe ?",
+            "prompt": "Quelle conséquence est introduite par « C’est pourquoi » ?",
             "answers": [
               "Le club a déplacé les matchs au gymnase."
             ],
             "evidence": [
               "Le terrain était détrempé.",
-              "Le club a déplacé les matchs au gymnase."
+              "C’est pourquoi le club a déplacé les matchs au gymnase."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -3349,7 +3349,7 @@
           },
           {
             "id": "gram-ex-k4-curriculum-d-a2-tournoi-q2",
-            "prompt": "Pour quelle raison la décision initiale a-t-elle été prise ?",
+            "prompt": "Quel fait est présenté au début du deuxième paragraphe ?",
             "answers": [
               "Le terrain était détrempé."
             ],
@@ -3386,18 +3386,18 @@
         "kind": "reading",
         "prompt": "La table de midi",
         "genre": "Témoignage",
-        "text": "Nous avions apporté de l’eau, des fruits et deux grandes nappes. Mon amie voulait s’asseoir près des jeux pour garder les sacs en vue. Quand le groupe est arrivé, nous avons cherché où installer le repas.\nLe soleil chauffait les bancs. Le groupe a mangé sous les arbres. Une animatrice a déplacé une table. L’objectif est le suivant : trouver de l’ombre.",
+        "text": "Nous avions apporté de l’eau, des fruits et deux grandes nappes. Mon amie voulait s’asseoir près des jeux pour garder les sacs en vue. Quand le groupe est arrivé, nous avons cherché où installer le repas.\nLe soleil chauffait les bancs. C’est pourquoi le groupe a mangé sous les arbres. Une animatrice a déplacé une table. L’objectif est le suivant : trouver de l’ombre.",
         "answers": [],
         "questions": [
           {
             "id": "gram-ex-k4-curriculum-d-a2-pique-nique-q1",
-            "prompt": "Quelle conséquence découle de la situation initiale du deuxième paragraphe ?",
+            "prompt": "Quelle conséquence est introduite par « C’est pourquoi » ?",
             "answers": [
               "Le groupe a mangé sous les arbres."
             ],
             "evidence": [
               "Le soleil chauffait les bancs.",
-              "Le groupe a mangé sous les arbres."
+              "C’est pourquoi le groupe a mangé sous les arbres."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -3418,7 +3418,7 @@
           },
           {
             "id": "gram-ex-k4-curriculum-d-a2-pique-nique-q2",
-            "prompt": "Pour quelle raison la décision initiale a-t-elle été prise ?",
+            "prompt": "Quel fait est présenté au début du deuxième paragraphe ?",
             "answers": [
               "Le soleil chauffait les bancs."
             ],
@@ -3455,18 +3455,18 @@
         "kind": "reading",
         "prompt": "Une autre entrée pour la réunion",
         "genre": "Lettre aux familles",
-        "text": "Nous vous attendons dans la salle des associations. La réunion commence à dix-huit heures. Si vous avez besoin d’aide, une personne portant un badge jaune vous accueillera devant le parking.\nL’ascenseur était en panne. La directrice a ouvert l’entrée de la cour. La directrice a annoncé le nouvel accès à l’entrée. L’objectif est le suivant : informer les familles.",
+        "text": "Nous vous attendons dans la salle des associations. La réunion commence à dix-huit heures. Si vous avez besoin d’aide, une personne portant un badge jaune vous accueillera devant le parking.\nL’ascenseur était en panne. C’est pourquoi la directrice a ouvert l’entrée de la cour. La directrice a annoncé le nouvel accès à l’entrée. L’objectif est le suivant : informer les familles.",
         "answers": [],
         "questions": [
           {
             "id": "gram-ex-k4-curriculum-d-a2-ascenseur-q1",
-            "prompt": "Quelle conséquence découle de la situation initiale du deuxième paragraphe ?",
+            "prompt": "Quelle conséquence est introduite par « C’est pourquoi » ?",
             "answers": [
               "La directrice a ouvert l’entrée de la cour."
             ],
             "evidence": [
               "L’ascenseur était en panne.",
-              "La directrice a ouvert l’entrée de la cour."
+              "C’est pourquoi la directrice a ouvert l’entrée de la cour."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -3487,7 +3487,7 @@
           },
           {
             "id": "gram-ex-k4-curriculum-d-a2-ascenseur-q2",
-            "prompt": "Pour quelle raison la décision initiale a-t-elle été prise ?",
+            "prompt": "Quel fait est présenté au début du deuxième paragraphe ?",
             "answers": [
               "L’ascenseur était en panne."
             ],
@@ -3524,18 +3524,18 @@
         "kind": "reading",
         "prompt": "Le retour des livres en soirée",
         "genre": "Message de la bibliothèque",
-        "text": "Les livres sont normalement à rendre dans les trois semaines. Sur le reçu, la date figure sous le titre. Le car scolaire ramène les élèves dans le quartier en début de soirée.\nLa bibliothèque fermait avant le retour du car. Le personnel a décalé la date de retour. La mairie a fixé une boîte à côté du portail. L’objectif est le suivant : permettre les retours le soir.",
+        "text": "Les livres sont normalement à rendre dans les trois semaines. Sur le reçu, la date figure sous le titre. Le car scolaire ramène les élèves dans le quartier en début de soirée.\nLa bibliothèque fermait avant le retour du car. C’est pourquoi le personnel a décalé la date de retour. La mairie a fixé une boîte à côté du portail. L’objectif est le suivant : permettre les retours le soir.",
         "answers": [],
         "questions": [
           {
             "id": "gram-ex-k4-curriculum-d-a2-livres-q1",
-            "prompt": "Quelle conséquence découle de la situation initiale du deuxième paragraphe ?",
+            "prompt": "Quelle conséquence est introduite par « C’est pourquoi » ?",
             "answers": [
               "Le personnel a décalé la date de retour."
             ],
             "evidence": [
               "La bibliothèque fermait avant le retour du car.",
-              "Le personnel a décalé la date de retour."
+              "C’est pourquoi le personnel a décalé la date de retour."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -3556,7 +3556,7 @@
           },
           {
             "id": "gram-ex-k4-curriculum-d-a2-livres-q2",
-            "prompt": "Pour quelle raison la décision initiale a-t-elle été prise ?",
+            "prompt": "Quel fait est présenté au début du deuxième paragraphe ?",
             "answers": [
               "La bibliothèque fermait avant le retour du car."
             ],
@@ -3593,18 +3593,18 @@
         "kind": "reading",
         "prompt": "Un gilet pour chaque enfant",
         "genre": "Extrait d’entretien",
-        "text": "Le guide travaille avec les groupes du mercredi. Il explique que chaque personne doit essayer son matériel avant de monter sur l’eau. Une autre équipe arrive en général à midi avec des tailles différentes.\nLes gilets étaient trop grands. Les enfants ont emprunté ceux d’un autre groupe. Le guide a classé les gilets par taille. L’objectif est le suivant : trouver rapidement un gilet adapté.",
+        "text": "Le guide travaille avec les groupes du mercredi. Il explique que chaque personne doit essayer son matériel avant de monter sur l’eau. Une autre équipe arrive en général à midi avec des tailles différentes.\nLes gilets étaient trop grands. C’est pourquoi les enfants ont emprunté ceux d’un autre groupe. Le guide a classé les gilets par taille. L’objectif est le suivant : trouver rapidement un gilet adapté.",
         "answers": [],
         "questions": [
           {
             "id": "gram-ex-k4-curriculum-d-a2-gilets-q1",
-            "prompt": "Quelle conséquence découle de la situation initiale du deuxième paragraphe ?",
+            "prompt": "Quelle conséquence est introduite par « C’est pourquoi » ?",
             "answers": [
               "Les enfants ont emprunté ceux d’un autre groupe."
             ],
             "evidence": [
               "Les gilets étaient trop grands.",
-              "Les enfants ont emprunté ceux d’un autre groupe."
+              "C’est pourquoi les enfants ont emprunté ceux d’un autre groupe."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -3625,7 +3625,7 @@
           },
           {
             "id": "gram-ex-k4-curriculum-d-a2-gilets-q2",
-            "prompt": "Pour quelle raison la décision initiale a-t-elle été prise ?",
+            "prompt": "Quel fait est présenté au début du deuxième paragraphe ?",
             "answers": [
               "Les gilets étaient trop grands."
             ],
@@ -3662,18 +3662,18 @@
         "kind": "reading",
         "prompt": "La séance sans chauffage",
         "genre": "Journal du club",
-        "text": "Les joueurs sont arrivés avec leurs vêtements habituels. Une joueuse a prêté son blouson à une nouvelle personne. L’entraînement de la semaine suivante doit avoir lieu dans un autre bâtiment.\nLes radiateurs ne fonctionnaient plus. L’entraîneuse a déplacé l’échauffement. Le gardien a apporté des couvertures. L’objectif est le suivant : éviter que les joueurs aient froid.",
+        "text": "Les joueurs sont arrivés avec leurs vêtements habituels. Une joueuse a prêté son blouson à une nouvelle personne. L’entraînement de la semaine suivante doit avoir lieu dans un autre bâtiment.\nLes radiateurs ne fonctionnaient plus. C’est pourquoi l’entraîneuse a déplacé l’échauffement. Le gardien a apporté des couvertures. L’objectif est le suivant : éviter que les joueurs aient froid.",
         "answers": [],
         "questions": [
           {
             "id": "gram-ex-k4-curriculum-d-a2-froid-q1",
-            "prompt": "Quelle conséquence découle de la situation initiale du deuxième paragraphe ?",
+            "prompt": "Quelle conséquence est introduite par « C’est pourquoi » ?",
             "answers": [
               "L’entraîneuse a déplacé l’échauffement."
             ],
             "evidence": [
               "Les radiateurs ne fonctionnaient plus.",
-              "L’entraîneuse a déplacé l’échauffement."
+              "C’est pourquoi l’entraîneuse a déplacé l’échauffement."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -3694,7 +3694,7 @@
           },
           {
             "id": "gram-ex-k4-curriculum-d-a2-froid-q2",
-            "prompt": "Pour quelle raison la décision initiale a-t-elle été prise ?",
+            "prompt": "Quel fait est présenté au début du deuxième paragraphe ?",
             "answers": [
               "Les radiateurs ne fonctionnaient plus."
             ],
@@ -3731,18 +3731,18 @@
         "kind": "reading",
         "prompt": "Une balise avant le virage",
         "genre": "Rapport de course",
-        "text": "Les participants ont retiré leur dossard à l’entrée du stade. Le départ a été donné près du banc vert. Le jury avait demandé un essai avant l’arrivée des plus jeunes.\nLe vent avait emporté une flèche. Les organisateurs ont ajouté une marque au sol. Une bénévole a montré le parcours sur un plan. L’objectif est le suivant : éviter les erreurs au croisement.",
+        "text": "Les participants ont retiré leur dossard à l’entrée du stade. Le départ a été donné près du banc vert. Le jury avait demandé un essai avant l’arrivée des plus jeunes.\nLe vent avait emporté une flèche. C’est pourquoi les organisateurs ont ajouté une marque au sol. Une bénévole a montré le parcours sur un plan. L’objectif est le suivant : éviter les erreurs au croisement.",
         "answers": [],
         "questions": [
           {
             "id": "gram-ex-k4-curriculum-d-a2-piste-q1",
-            "prompt": "Quelle conséquence découle de la situation initiale du deuxième paragraphe ?",
+            "prompt": "Quelle conséquence est introduite par « C’est pourquoi » ?",
             "answers": [
               "Les organisateurs ont ajouté une marque au sol."
             ],
             "evidence": [
               "Le vent avait emporté une flèche.",
-              "Les organisateurs ont ajouté une marque au sol."
+              "C’est pourquoi les organisateurs ont ajouté une marque au sol."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -3763,7 +3763,7 @@
           },
           {
             "id": "gram-ex-k4-curriculum-d-a2-piste-q2",
-            "prompt": "Pour quelle raison la décision initiale a-t-elle été prise ?",
+            "prompt": "Quel fait est présenté au début du deuxième paragraphe ?",
             "answers": [
               "Le vent avait emporté une flèche."
             ],
@@ -3800,18 +3800,18 @@
         "kind": "reading",
         "prompt": "Deux chemins autour du parc",
         "genre": "Bulletin municipal",
-        "text": "La mairie ouvre le parc à huit heures. Les chiens doivent être tenus en laisse près du lac. À l’entrée nord, les familles peuvent consulter une carte avant de choisir leur balade.\nLe chemin de la digue était barré. Les cyclistes ont contourné le parc. La commune a prévenu le club. L’objectif est le suivant : faciliter le trajet des cyclistes.",
+        "text": "La mairie ouvre le parc à huit heures. Les chiens doivent être tenus en laisse près du lac. À l’entrée nord, les familles peuvent consulter une carte avant de choisir leur balade.\nLe chemin de la digue était barré. C’est pourquoi les cyclistes ont contourné le parc. La commune a prévenu le club. L’objectif est le suivant : faciliter le trajet des cyclistes.",
         "answers": [],
         "questions": [
           {
             "id": "gram-ex-k4-curriculum-d-a2-digue-q1",
-            "prompt": "Quelle conséquence découle de la situation initiale du deuxième paragraphe ?",
+            "prompt": "Quelle conséquence est introduite par « C’est pourquoi » ?",
             "answers": [
               "Les cyclistes ont contourné le parc."
             ],
             "evidence": [
               "Le chemin de la digue était barré.",
-              "Les cyclistes ont contourné le parc."
+              "C’est pourquoi les cyclistes ont contourné le parc."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -3832,7 +3832,7 @@
           },
           {
             "id": "gram-ex-k4-curriculum-d-a2-digue-q2",
-            "prompt": "Pour quelle raison la décision initiale a-t-elle été prise ?",
+            "prompt": "Quel fait est présenté au début du deuxième paragraphe ?",
             "answers": [
               "Le chemin de la digue était barré."
             ],

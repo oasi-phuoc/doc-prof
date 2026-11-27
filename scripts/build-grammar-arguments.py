@@ -188,27 +188,34 @@ def make_question(unit_id, index, prompt, answer, evidence, alternatives=()):
     return item
 
 
-def link_reading(doc, ref, subtheme, level):
+def link_reading(doc, ref, subtheme):
     row = BY_SLUG[doc['slug']]
     cause, result, contrast, action = (sentence(row[key]) for key in ('cause', 'result', 'contrast', 'action'))
     goal = f'L’objectif est le suivant : {row["goal"]}.'
-    if level == 'A2':
-        sections = [doc['intro'], f'{cause} {result} {action} {goal}']
-    else:
-        # Keep a complete, identifiable third fact for comparing the two situations.
-        sections = [doc['intro'], f'{cause} {result} {contrast}', f'{action} {goal}']
+    cause_statement = f'{result.removesuffix(".")}, car {row["cause"]}.'
+    result_statement = f'C’est pourquoi {row["result"]}.'
+    contrast_statement = f'En revanche, {row["contrast"]}.'
+    sections = {
+        'k2': [doc['intro'], f'{cause} {result} {contrast}', f'{action} {goal}'],
+        'k3': [doc['intro'], f'{cause_statement} {action} {goal}'],
+        'k4': [doc['intro'], f'{cause} {result_statement} {action} {goal}'],
+        'k6': [doc['intro'], f'{cause} {result} {contrast_statement}', f'{action} {goal}'],
+    }[subtheme]
     primary = {
         'k2': ('Quel connecteur peut introduire le deuxième de ces deux faits comme conséquence ? '
                f'« {cause} » Puis « {result} »', 'Par conséquent', [cause, result], ['En revanche', 'En effet']),
-        'k3': ('Quel fait explique la décision dans le deuxième paragraphe ?', cause, [cause, result], [result, action]),
-        'k4': ('Quelle conséquence découle de la situation initiale du deuxième paragraphe ?', result, [cause, result], [cause, action]),
-        'k6': (f'Quel fait le document met-il en contraste avec « {result} » ?', contrast, [result, contrast], [cause, action]),
+        'k3': ('Quelle raison est donnée après le mot « car » dans le deuxième paragraphe ?',
+               cause, [cause_statement], [result, action]),
+        'k4': ('Quelle conséquence est introduite par « C’est pourquoi » ?', result,
+               [cause, result_statement], [cause, action]),
+        'k6': (f'Quel fait le document met-il en contraste avec « {result} » ?', contrast,
+               [result, contrast_statement], [cause, action]),
     }[subtheme]
     secondary = {
         'k2': ('Quel objectif est indiqué ?', capital(row['goal']) + '.', [goal]),
         'k3': ('Quelle autre action a été entreprise pour améliorer la situation ?', action, [action]),
-        'k4': ('Pour quelle raison la décision initiale a-t-elle été prise ?', cause, [cause]),
-        'k6': ('Quelle action a été prévue pour répondre à la situation ?', action, [action]),
+        'k4': ('Quel fait est présenté au début du deuxième paragraphe ?', cause, [cause]),
+        'k6': ('Quelle action a été menée pour répondre à la situation ?', action, [action]),
     }[subtheme]
     text = '\n'.join(sections)
     return text, [
@@ -244,7 +251,7 @@ def reading_bank(bank):
         if subtheme in ('k12', 'k13'):
             text, questions = mode_reading(source, ref, subtheme)
         else:
-            text, questions = link_reading(source, ref, subtheme, level)
+            text, questions = link_reading(source, ref, subtheme)
         assert all(quote in text for question in questions for quote in question['evidence']), ref['id']
         units.append(dict(**ref, kind='reading', prompt=source['title'], genre=source['genre'], text=text,
                           answers=[], questions=questions, responseLines=1,
@@ -287,7 +294,8 @@ def build():
         notion = notions[subtheme, level]
         presentations = [offer['presentation'] for offer in offers]
         primary = presentations[0]
-        bank = dict(schemaVersion=1, revision=f'arguments-{DATE}-v1', activityId=activity, subthemeId=subtheme,
+        version = 2 if primary == 'document-set' and subtheme in {'k3', 'k4', 'k6', 'k12', 'k13'} else 1
+        bank = dict(schemaVersion=1, revision=f'arguments-{DATE}-v{version}', activityId=activity, subthemeId=subtheme,
                     topic=topic, level=level, label=activities[activity]['label'],
                     objective=first.get('objective') or notion['label'], editorialStatus='reviewed',
                     review=dict(reviewer='Codex — revue linguistique et fonctionnelle', date=DATE,

@@ -105,6 +105,19 @@ assert.equal(unit('k11', 'B1', 'chariot', 'transform').answers[0], 'Je m’en co
 assert.equal(unit('k12', 'B1', 'tournee').answers[0], 'soient venus')
 assert.equal(unit('k13', 'B1', 'panier').answers[0], 'prend')
 assert.equal(unit('k7', 'B1', 'cour').answers[0], 'Bien que')
+for (const [subtheme, level, marker] of [
+  ['k3', 'A2', ', car la cour était inondée.'],
+  ['k4', 'A2', 'C’est pourquoi les élèves ont pris leur pause sous le préau.'],
+  ['k6', 'B1', 'En revanche, les élèves du bâtiment B sont rentrés en classe.'],
+]) {
+  const reading = unit(subtheme, level, 'cour', 'document-set')
+  assert(reading.questions[0].evidence.some(passage => passage.includes(marker)))
+}
+for (const subtheme of ['k12', 'k13']) {
+  const reading = unit(subtheme, 'B1', 'panier', 'document-set')
+  assert.equal(reading.questions[2].answers[0], 'Pour les poires.')
+  assert(reading.questions[2].evidence[0].includes('trop petits pour les poires'))
+}
 assert.deepEqual(require('../src/grammaire/curriculum/data/k10.json'), GRAMMAR_PILOT_BANKS.filter(bank => bank.subthemeId === 'k10'))
 
 const files = [...new Set(banks.map(bank => bank.subthemeId))].map(subtheme =>
