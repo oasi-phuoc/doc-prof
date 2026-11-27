@@ -1,6 +1,6 @@
 """Draw the exact examples used by src/math/theory-lessons.ts."""
 from functools import lru_cache
-from math import hypot
+from math import cos, hypot, radians, sin
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
@@ -540,6 +540,150 @@ def transformations():
         d.save(name)
 
 
+def place_table(name, labels, rows, notes, *, highlight=(), operator='', operator_row=1, plus_row=-1, rules=()):
+    d = Diagram()
+    xs = [145 + 135 * i for i in range(len(labels))]
+    for x, label in zip(xs, labels):
+        if label:
+            d.text(x, 24, label, 29, STEP)
+    left, right = xs[0] - 57, xs[-1] + 57
+    for x in xs[:-1]:
+        d.line((x + 67, 48), (x + 67, 250), color=GRID, width=2)
+    step = 39 if len(rows) >= 5 else 49
+    for row, (values, role) in enumerate(rows):
+        y = 58 + row * step if len(rows) >= 5 else 73 + row * step
+        if row in rules:
+            d.line((left - 18, y - 23), (right, y - 23), width=2)
+        if row == operator_row and operator:
+            d.text(left - 33, y, operator, 33)
+        if row == plus_row:
+            d.text(left - 33, y, '+', 33)
+        for col, (x, value) in enumerate(zip(xs, values)):
+            if (row, col) in highlight:
+                d.box((x - 33, y - 19, x + 33, y + 19), role, BLUE_FILL)
+            d.text(x, y, value, 35, role)
+    for i, (message, role) in enumerate(notes):
+        d.text(588, 67 + i * 54, message, 30 if len(message) < 19 else 25, role, 'lm')
+    d.save(name)
+
+
+def arithmetic_supplements():
+    places = ('Centaines', 'Dizaines', 'Unités')
+    place_table('numeration-zero', places, [('406', INK), (('', 0, ''), STEP)],
+                [('Colonne vide', STEP), ('406 = 400 + 6', RESULT)], highlight=((0, 1),))
+    place_table('numeration-comparer', places, [('406', GIVEN), ('460', GIVEN)],
+                [('0 dizaine < 6 dizaines', STEP), ('406 < 460', RESULT)], highlight=((0, 1), (1, 1)))
+    place_table('soustraction-zero', places, [((2, 9, 12), STEP), ('302', INK), (' 67', INK), ('235', RESULT)],
+                [('2 centaines', STEP), ('9 dizaines', STEP), ('12 unités', STEP)], operator='−', operator_row=2, rules=(3,))
+    place_table('multiplication-colonne', places, [(' 2 ', STEP), (' 27', INK), ('  4', INK), ('108', RESULT)],
+                [('Retenue : 2', STEP), ('7 × 4 = 28', INK), ('Produit : 108', RESULT)], highlight=((0, 1),), operator='×', operator_row=2, rules=(3,))
+    place_table('multiplication-deux-chiffres', places, [(' 23', INK), (' 14', INK), (' 92', STEP), ('230', GIVEN), ('322', RESULT)],
+                [('23 × 4 = 92', STEP), ('23 × 10 = 230', GIVEN), ('92 + 230 = 322', RESULT)], operator='×', plus_row=3, rules=(2, 4))
+    decimals = ('Unités', 'Dixièmes', 'Centièmes')
+    place_table('decimaux-comparer', decimals, [(('3,', '8', '0'), GIVEN), (('3,', '7', '5'), GIVEN)],
+                [('8 dixièmes > 7 dixièmes', STEP), ('3,80 > 3,75', RESULT)], highlight=((0, 1), (1, 1)))
+    place_table('decimaux-soustraction', decimals, [(('4,', '8', '0'), INK), (('1,', '2', '5'), INK), (('3,', '5', '5'), RESULT)],
+                [('Virgules alignées', STEP), ('4,80 − 1,25 = 3,55', RESULT)], operator='−', rules=(2,))
+    place_table('decimaux-produit', ('', 'Unités', 'Dixièmes'), [(('', '2,', '4'), GIVEN), (('', '3', ''), INK), (('', '7,', '2'), RESULT)],
+                [('24 dixièmes × 3', STEP), ('72 dixièmes', STEP), ('7,2', RESULT)], operator='×', rules=(2,))
+
+
+def division_work(name, dividend, divisor, quotient, working, notes, focus=None):
+    d = Diagram()
+    for value, y, color in [(dividend, 31, GIVEN), *working]:
+        d.text(316, y, value, 34, color, 'rm')
+        if str(value).startswith('−'):
+            d.line((218, y + 20), (321, y + 20), color=GRID, width=2)
+    d.line((341, 12), (341, 237), color=INK)
+    d.line((342, 55), (501, 55), color=INK)
+    d.text(419, 31, divisor, 33, GIVEN)
+    d.tag(419, 96, quotient, RESULT, 38, GREEN_FILL)
+    if focus is not None:
+        width = lambda text: d.draw.textlength(text, font=font(38))
+        center = 419 - width(quotient) / 2 + width(quotient[:focus]) + width(quotient[focus]) / 2
+        d.draw.ellipse((center - 13, 78, center + 13, 114), outline=STEP, width=2)
+    for index, (text, color) in enumerate(notes):
+        d.text(559, 50 + index * 57, text, 30, color, 'lm')
+    d.save(name)
+
+
+def division_supplements():
+    division_work('division-posee', '85', 4, '21',
+                  [('−8  ', 73, STEP), ('5', 122, INK), ('−4', 164, STEP), ('1', 216, RESULT)],
+                  [('Deux fois 4 dans 8', STEP), ('Une fois 4 dans 5', STEP), ('Reste : 1', RESULT)])
+    division_work('division-zero-quotient', '816', 4, '204',
+                  [('−8    ', 69, STEP), ('1  ', 112, STEP), ('16', 154, INK), ('−16', 188, STEP), ('0', 228, RESULT)],
+                  [('8 ÷ 4 donne 2', STEP), ('Dans 1, zéro fois 4', STEP), ('16 ÷ 4 donne 4', RESULT)], focus=1)
+    division_work('decimaux-quotient', '7,5', 3, '2,5',
+                  [('−6  ', 73, STEP), ('15', 122, INK), ('−15', 164, STEP), ('0', 216, RESULT)],
+                  [('Il reste 1 unité', STEP), ('1 unité et 5 dixièmes', INK), ('15 dixièmes ÷ 3', RESULT)], focus=1)
+    d = Diagram()
+    for x, top, bottom in [(255, '7,5', '75'), (635, '0,3', '3')]:
+        d.tag(x, 47, top, GIVEN, 42, AMBER_FILL)
+        d.arrow((x, 82), (x, 151))
+        d.text(x + 90, 117, '× 10', 36, STEP)
+        d.tag(x, 197, bottom, RESULT, 42, GREEN_FILL)
+    d.text(443, 47, '÷', 40)
+    d.text(443, 197, '÷', 40)
+    d.save('decimaux-diviseur')
+
+
+def supplemental_number_line(name, left_label, right_label, target, target_label, middle=None):
+    d = Diagram()
+    x = lambda i: 100 + i * 72
+    d.arrow((x(0), 145), (846, 145), INK)
+    for i in range(11):
+        d.line((x(i), 129), (x(i), 161), color=INK if i in (0, 5, 10) else GRID)
+    for i, label in ((0, left_label), (10, right_label)):
+        d.text(x(i), 192, label, 39)
+    if middle:
+        d.text(x(5), 192, middle, 34, STEP)
+    d.tag(x(target), 42, target_label, RESULT, 37, GREEN_FILL)
+    d.arrow((x(target), 76), (x(target), 129), RESULT)
+    d.save(name)
+
+
+def shapes_supplements():
+    d = Diagram()
+    d.polygon([(68, 173), (178, 41), (291, 173)], GIVEN, AMBER_FILL)
+    d.polygon([(342, 51), (549, 51), (549, 178), (342, 178)], STEP, BLUE_FILL)
+    d.line((342, 73), (364, 73), (364, 51), color=STEP)
+    d.polygon([(737, 24), (818, 105), (737, 186), (656, 105)], RESULT, GREEN_FILL)
+    d.line((723, 38), (737, 52), (751, 38), color=RESULT)
+    for x, label, tone in [(178, 'Triangle', GIVEN), (446, 'Rectangle', STEP), (737, 'Carré tourné', RESULT)]:
+        d.text(x, 223, label, 34, tone)
+    d.save('figures-classer')
+
+    d = Diagram()
+    for x, degrees, name, tone in [(150, 45, 'Aigu', GIVEN), (455, 90, 'Droit', STEP), (773, 120, 'Obtus', RESULT)]:
+        center = (x, 166)
+        angle = radians(degrees)
+        d.line((x + 94, 166), center, (x + 95 * cos(angle), 166 - 95 * sin(angle)), color=tone, width=4)
+        if degrees == 90:
+            d.line((x, 142), (x + 24, 142), (x + 24, 166), color=tone)
+        else:
+            d.draw.arc((x - 42, 124, x + 42, 208), 360 - degrees, 360, fill=tone, width=3)
+        d.text(x + 25, 205, f'{degrees}°', 33, tone)
+        d.text(x + 25, 239, name, 33, tone)
+    d.save('figures-angles')
+
+
+def measured_strip(name, sections, total):
+    d = Diagram()
+    left, width = 90, 740
+    amount = sum(value for value, _ in sections)
+    x = left
+    for i, (value, label) in enumerate(sections):
+        length = width * value / amount
+        color, fill = (GIVEN, AMBER_FILL) if i < len(sections) - 1 else (STEP, BLUE_FILL)
+        d.draw.rectangle((x, 89, x + length, 151), fill=fill, outline=color, width=3)
+        d.text(x + length / 2, 55, label, 34, color)
+        x += length
+    d.line((left, 185), (left, 202), (left + width, 202), (left + width, 185), color=RESULT)
+    d.text(460, 233, total, 35, RESULT)
+    d.save(name)
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     place_value()
@@ -563,6 +707,13 @@ def main():
     cubes()
     coordinates()
     transformations()
+    arithmetic_supplements()
+    division_supplements()
+    supplemental_number_line('arrondi-centaine', '300', '400', 8.2, '382', '350')
+    supplemental_number_line('decimaux-droite', '2', '3', 4, '2,4')
+    shapes_supplements()
+    measured_strip('mesures-melangees', [(10, '10 mm'), (10, '10 mm'), (10, '10 mm'), (4, '4 mm')], '34 mm')
+    measured_strip('mesures-temps', [(60, '1 heure = 60 minutes'), (15, '15 minutes')], '75 minutes')
 
 
 if __name__ == '__main__':

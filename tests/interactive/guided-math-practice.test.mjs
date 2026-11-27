@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
 import { resolve } from 'node:path'
+import { access } from 'node:fs/promises'
 import { createServer } from 'vite'
 
 const server = await createServer({
@@ -15,6 +16,8 @@ try {
   const { buildPage } = await server.ssrLoadModule('/src/math/generate.ts')
   const { defaultPage } = await server.ssrLoadModule('/src/math/catalog.ts')
   const practice = await server.ssrLoadModule('/src/math/guided-practice.ts')
+  const fundamentals = await server.ssrLoadModule('/src/math/fundamental-practice.ts')
+  const { realMapPlans } = await server.ssrLoadModule('/src/math/real-map-catalog.ts')
   const itemsFor = (exerciseType, topic, domain, difficulty, seed) => buildPage({
     ...defaultPage(domain), exerciseType, topic, difficulty, count: 2,
   }, seed).items
@@ -100,12 +103,77 @@ try {
     const [annotated] = buildPage({ ...page, sionMapBackground: 'annotated' }, 41).items
     assert.deepEqual(annotated, { ...original, sionMap: { ...original.sionMap, background: 'annotated' } })
 
-    const mixed = buildPage({ ...page, sionMapBackground: 'simplified', extraBlocks: [page] }, 41)
+    const mixed = buildPage({ ...page, realMapId: 'ardon', sionMapBackground: 'simplified', extraBlocks: [page] }, 41)
     assert.equal(mixed.blocks[0].items[0].sionMap.background, 'simplified')
+    assert.equal(mixed.blocks[0].items[0].sionMap.planId, 'ardon')
     assert.equal(mixed.blocks[1].items[0].sionMap.background, undefined)
+    assert.equal(mixed.blocks[1].items[0].sionMap.planId, undefined)
 
     const [frozen] = buildPage({ ...page, libreItems: [simplified], sionMapBackground: 'photo' }, 41).items
     assert.deepEqual(frozen, { ...original, sionMap: { ...original.sionMap, background: 'photo' } })
+  })
+
+  await test('every Swiss plan has three distinct assets and unambiguous questions', async () => {
+    assert.equal(realMapPlans.length, 20)
+    assert.equal(new Set(realMapPlans.map(({ id }) => id)).size, 20)
+    assert(['sion-ensemble', 'zermatt', 'martigny', 'ardon', 'vetroz', 'lausanne', 'berne', 'zurich', 'bale'].every(
+      id => realMapPlans.some(plan => plan.id === id),
+    ))
+    for (const { id, places, grid } of realMapPlans) {
+      assert(places.length >= 2)
+      assert.equal(new Set(places.map(({ code }) => code)).size, places.length)
+      for (const place of places) {
+        assert(place.x > 0 && place.x < 1 && place.y > 0 && place.y < 1)
+        assert.equal(Math.floor(place.x * grid.columns), place.column)
+        assert.equal(Math.floor(place.y * grid.rows), place.row)
+      }
+      if (id !== 'sion-historique') {
+        for (const variant of ['photo.webp', 'annotated.webp', 'simplified.png']) {
+          await access(resolve(`src/math/media/spatial/swiss/${id}-${variant}`))
+        }
+      }
+      for (const difficulty of ['facile', 'avance']) {
+        const page = {
+          ...defaultPage('géométrie'), topic: 'reperage', exerciseType: practice.REAL_MAP_TYPE, count: 1, difficulty,
+          realMapId: id,
+        }
+        for (let seed = 1; seed <= 12; seed++) {
+          const [item] = buildPage(page, seed).items
+          const place = places[item.sionMap.target]
+          assert.equal(item.answer, difficulty === 'avance' ? place.name : place.code)
+          assert.equal(item.sionMap.planId ?? 'sion-historique', id)
+        }
+      }
+    }
+  })
+
+  await test('fundamental practice has a guided item and a consistent second answer', () => {
+    const { PLACE_VALUE_PRACTICE, DECIMAL_LINE_PRACTICE, SHAPE_PRACTICE, LENGTH_PRACTICE } = fundamentals
+    for (let seed = 1; seed <= 32; seed++) {
+      const numbers = itemsFor(PLACE_VALUE_PRACTICE, 'nombres', 'algèbre', 'facile', seed)
+      assert(numbers[0].baseTen.tens > 0)
+      assert.equal(numbers[1].baseTen.tens, 0)
+      for (const item of numbers) {
+        const { hundreds, tens, ones } = item.baseTen
+        assert.equal(item.answer, `${hundreds * 100 + tens * 10 + ones} = ${hundreds * 100} + ${tens * 10} + ${ones}`)
+      }
+      const lines = itemsFor(DECIMAL_LINE_PRACTICE, 'decimaux', 'algèbre', 'avance', seed)
+      assert.deepEqual(lines.map(({ numberLine }) => numberLine.labelAt), [1, 10])
+      for (const { numberLine, answer } of lines) {
+        const { start, target, step, labelAt } = numberLine
+        assert.notEqual(target, labelAt)
+        assert.equal(step, 0.01)
+        assert.equal(Math.round((start + target * step) * 100), Math.round(Number.parseFloat(answer.replace(',', '.')) * 100))
+      }
+      const shapes = itemsFor(SHAPE_PRACTICE, 'figures', 'géométrie', 'facile', seed)
+      assert.notEqual(shapes[0].shapePractice.kind, shapes[1].shapePractice.kind)
+      assert.equal(shapes[0].shapePractice.angle, 0)
+      assert(shapes[1].shapePractice.angle > 0)
+      for (const { lengthPractice, answer } of itemsFor(LENGTH_PRACTICE, 'conversions', 'géométrie', 'avance', seed)) {
+        const { cm, mm } = lengthPractice
+        assert.equal(answer, `${cm * 10} mm + ${mm} mm = ${cm * 10 + mm} mm.`)
+      }
+    }
   })
 } finally {
   await server.close()

@@ -677,6 +677,8 @@ export type MathItem = {
   exerciseImage?: { kind: 'angles' | 'cube-nets'; id: string }
   numberLine?: { start: number; step: number; intervals: number; target: number; labelAt: number }
   baseTen?: { hundreds: number; tens: number; ones: number }
+  shapePractice?: { kind: 'triangle' | 'carre' | 'rectangle'; angle: number }
+  lengthPractice?: { cm: number; mm: number }
   menuPrices?: { label: string; cents: number }[]
   areaFigures?: RectangleGrid[]
   solidViews?: SolidViews
@@ -689,7 +691,7 @@ export type MathItem = {
   subtractionExchange?: { guided: boolean; digits: string[] }
   rectangleMeasures?: { length: number; width: number; guided: boolean }
   translationPractice?: { figure: Array<readonly [number, number]>; vector: readonly [number, number]; guided: boolean }
-  sionMap?: { target: number; background?: SionMapBackground }
+  sionMap?: { target: number; background?: SionMapBackground; planId?: string }
   lengthUnits?: { a: number; b: number }
   functionPairs?: { x: number; y: number }[]
   graphPractice?: { pairs: { x: number; y: number }[]; task: 'read' | 'plot'; yStep: number }
@@ -1037,6 +1039,7 @@ export type ExerciseBlock = {
   problemDraftGrids?: boolean[]
   problemHelp?: boolean
   sionMapBackground?: SionMapBackground
+  realMapId?: string
   /** Formulaire grammaire / TPF : cases lettre à la place des traits. */
   formulaireLetterGrid?: boolean
   /**

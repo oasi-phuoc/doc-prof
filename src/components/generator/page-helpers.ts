@@ -217,6 +217,7 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
   return {
     exerciseType: type.id,
     sionMapBackground: prev?.exerciseType === type.id ? prev.sionMapBackground : undefined,
+    realMapId: prev?.exerciseType === type.id ? prev.realMapId : undefined,
     libreId: undefined,
     logistiqueBankRevision: undefined,
     logistiqueTheoryView: undefined,

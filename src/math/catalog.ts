@@ -1,4 +1,5 @@
 import { MATH_THEORY_PREFIX, mathTheoryLessons } from './theory-lessons'
+import { DECIMAL_LINE_PRACTICE, LENGTH_PRACTICE, PLACE_VALUE_PRACTICE, SHAPE_PRACTICE } from './fundamental-practice'
 import { ALGEBRA_GLOSSARY, GEOMETRY_GLOSSARY } from './glossary-banks'
 import {
   ADDITION_CARRY_TYPE,
@@ -452,6 +453,7 @@ export const exerciseTypes: ExerciseType[] = [
   t('nombres-groupements', 'nombres', 'Compter par groupements', 'Lire une collection organisée en plaques, barres et cubes.', 'Écrivez le total d’unités et le nombre de dizaines complètes.', 'geo', { preferredColumns: 2, preferredCount: 4, maxCount: 4 }),
   t('nombres-intercaler', 'nombres', 'Intercaler un nombre', 'Trouver un nombre strictement compris entre deux bornes.', 'Écrivez un nombre strictement compris entre les deux bornes.', 'texte', { preferredColumns: 2, preferredCount: 6, maxCount: 10 }),
   t('nombres-position', 'nombres', 'Valeur positionnelle', 'Retrouver le chiffre des unités, dizaines, centaines…', 'Indiquez le chiffre demandé.', 'texte', { preferredColumns: 1 }),
+  t(PLACE_VALUE_PRACTICE, 'nombres', 'Lire les groupements, pas à pas', 'Lire des centaines, dizaines et unités, avec un zéro si une colonne est vide.', 'Écrivez chaque nombre.', 'texte', { preferredColumns: 1, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
   t('nombres-decompose', 'nombres', 'Décomposer', 'Écrire un nombre en sommes de puissances de 10 (milliers… unités).', 'Décomposez chaque nombre.', 'ligne', { preferredColumns: 1 }),
   t('nombres-comparer', 'nombres', 'Comparer', 'Choisir le symbole correct : <, = ou >.', 'Coloriez la pastille correcte.', 'ligne', { preferredColumns: 2 }),
   t('nombres-encadrer-10', 'nombres', 'Encadrer (pas de 10)', 'Encadrer un nombre entre deux dizaines consécutives.', 'Complétez l’encadrement par pas de 10.', 'ligne', { preferredColumns: 2 }),
@@ -592,6 +594,7 @@ export const exerciseTypes: ExerciseType[] = [
   t('fractions-div', 'fractions', 'Diviser', 'Division de deux fractions.', 'Calculez et simplifiez si possible.', 'ligne'),
 
   t('decimaux-comparer', 'decimaux', 'Comparer', 'Comparer 3,8 et 3,75.', 'Coloriez la pastille correcte.', 'ligne', { preferredColumns: 2 }),
+  t(DECIMAL_LINE_PRACTICE, 'decimaux', 'Lire des décimaux sur une droite', 'Trouver le décimal sous une flèche, avec un pas de 0,1 ou de 0,01.', 'Lisez le nombre indiqué par chaque flèche.', 'texte', { preferredColumns: 1, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
   t('decimaux-add-colonne', 'decimaux', 'Addition en colonne (nombres posés)', 'Additions de décimaux déjà alignés.', 'Calculez les additions en colonnes.', 'colonne', { preferredColumns: 2 }),
   t('decimaux-add-colonne-poser', 'decimaux', 'Addition en colonne à poser', 'Poser puis additionner des décimaux.', 'Posez les nombres, puis calculez.', 'colonne-vide', { preferredColumns: 2 }),
   t('decimaux-sub-colonne', 'decimaux', 'Soustraction en colonne (nombres posés)', 'Soustractions de décimaux déjà alignés.', 'Calculez les soustractions en colonnes.', 'colonne', { preferredColumns: 2 }),
@@ -633,6 +636,7 @@ export const exerciseTypes: ExerciseType[] = [
   t('equations-systeme-add', 'equations', 'Systèmes (addition)', 'Combinaison linéaire.', 'Résolvez le système. Écrivez le développement, puis l’ensemble solution.', 'texte', { preferredColumns: 1 }),
 
   t('figures-nommer', 'figures', 'Nommer la figure', 'Reconnaître carré, rectangle, triangles, trapèzes, cercle, ovale…', 'Nommez chaque figure.', 'geo', { preferredColumns: 2 }),
+  t(SHAPE_PRACTICE, 'figures', 'Reconnaître une forme tournée', 'Reconnaître un triangle, un rectangle ou un carré, même tourné.', 'Nommez chaque forme.', 'texte', { preferredColumns: 2, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
   t('figures-proprietes', 'figures', 'Propriétés', 'Côtés, angles droits et symétries, y compris les triangles et les trapèzes.', 'Complétez les propriétés.', 'geo', { preferredColumns: 1 }),
 
   t('fonctions-regle', 'fonctions', 'Retrouver la règle de calcul', 'Déduire une règle à partir de valeurs d’entrée et de sortie.', 'Écrivez la règle qui donne y à partir de x. Elle est de la forme y = ax + b.', 'texte', { preferredColumns: 2, preferredCount: 6, maxCount: 8 }),
@@ -649,6 +653,7 @@ export const exerciseTypes: ExerciseType[] = [
   t('figures-agrandir', 'figures', 'Agrandir sur quadrillage', 'Reproduire une silhouette en doublant les longueurs en carreaux.', 'Reproduisez le modèle. Chaque longueur mesurée en carreaux doit être doublée.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
   t('mesures-segments', 'conversions', 'Mesurer des segments à la règle', 'Mesurer des segments à taille réelle puis comparer leurs longueurs.', 'Imprimez à 100 %, puis mesurez chaque segment et répondez aux questions.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 1 }),
   t(RULER_SEGMENT_TYPE, 'conversions', 'Lire un segment sur une règle', 'Calculer une longueur avec les deux graduations d’une règle dessinée.', 'Trouvez la longueur de chaque segment.', 'geo', { preferredColumns: 1, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
+  t(LENGTH_PRACTICE, 'conversions', 'Additionner des cm et des mm', 'Convertir en millimètres puis additionner deux longueurs.', 'Calculez chaque longueur totale en mm.', 'texte', { preferredColumns: 1, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
   t('conversions-longueur', 'conversions', 'Longueurs', 'km, hm, dam, m, dm, cm, mm.', 'Convertissez.', 'ligne', { preferredColumns: 2 }),
   t('mesures-lire-instrument', 'conversions', 'Lire un instrument gradué', 'Lire une balance, un verre doseur ou un minuteur.', 'Lisez la mesure. Écrivez le nombre et son unité.', 'geo', { preferredColumns: 2, preferredCount: 3, maxCount: 4, supportsNumberRange: false }),
   t('mesures-comparer-grandeurs', 'conversions', 'Comparer des mesures', 'Comparer des masses, des capacités ou des durées exprimées dans deux unités.', 'Comparez les mesures avec <, = ou >.', 'ligne', { preferredColumns: 2, preferredCount: 9, maxCount: 12, supportsNumberRange: false }),
@@ -797,7 +802,7 @@ export const exerciseTypes: ExerciseType[] = [
   t('transformations-translation', 'transformations', 'Construire l’image par translation', 'Déplacer chaque sommet d’une figure selon le même déplacement.', 'Construisez l’image de la figure en suivant le déplacement indiqué.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
   t('transformations-quart-tour', 'transformations', 'Faire pivoter une figure d’un quart de tour', 'Tourner une silhouette de 90° sur un quadrillage.', 'Suivez le sens indiqué pour reproduire la figure après un quart de tour.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
   t(TRANSLATION_PRACTICE_TYPE, 'transformations', 'Translation, pas à pas', 'Déplacer les sommets d’un triangle sur un quadrillage.', 'Faites glisser le triangle.', 'texte', { preferredColumns: 1, preferredCount: 1, maxCount: 1, supportsNumberRange: false }),
-  t(REAL_MAP_TYPE, 'reperage', 'Lire un plan de Sion', 'Repérer des lieux sur une photo aérienne, une photo avec les routes ou un plan simplifié.', 'Repérez les lieux grâce aux points et aux cases.', 'texte', { preferredColumns: 1, preferredCount: 1, maxCount: 1, supportsNumberRange: false }),
+  t(REAL_MAP_TYPE, 'reperage', 'Lire un plan de ville ou de village', 'Repérer des lieux sur une photo aérienne, une photo avec les routes ou un plan simplifié.', 'Repérez les lieux grâce aux points et aux cases.', 'texte', { preferredColumns: 1, preferredCount: 1, maxCount: 1, supportsNumberRange: false }),
   ...Object.entries(mathTheoryLessons).map(([topic, lesson]) =>
     t(`${MATH_THEORY_PREFIX}${topic}`, topic, 'Théorie', lesson.title, '', 'texte', {
       preferredColumns: 1, preferredCount: 1, maxCount: 1, supportsNumberRange: false,

@@ -10,7 +10,7 @@ Ajouter dans le générateur des exercices imprimables qui prolongent les suppor
 
 [Existant](#existant-et-sources) · [Théorie FALC](#théorie-falc-et-repères-visuels) · [Algèbre](#compléments-en-algèbre) · [Géométrie](#compléments-en-géométrie) · [Recette](#critères-de-réception) · [Suivi d’avancement](avancement.md)
 
-La refonte de la théorie couvre les 23 thèmes, avec 31 pages illustrées. La liste des types présente **Théorie** en premier lorsqu’une leçon existe. Le contrôle de rendu couvre ces 31 pages en PDF A4 et double A5. Le suivi indique les exercices d’application intégrés et les retours à recueillir auprès des élèves. [Suivi d’avancement](avancement.md)
+La refonte de la théorie couvre les 23 thèmes, avec 49 pages illustrées. La liste des types présente **Théorie** en premier lorsqu’une leçon existe. Le suivi indique les exercices d’application intégrés et les retours à recueillir auprès des élèves. [Suivi d’avancement](avancement.md)
 
 ## Existant et sources
 
@@ -129,7 +129,7 @@ Prendre comme fond une seule image cohérente montrant un lieu dans son ensemble
 
 Le quadrillage forme un calque visible par-dessus l’image. Poser des lignes fines ou translucides et placer les lettres, chiffres et flèche du nord sur des zones lisibles. Placer les points d’intérêt à leur position exacte dans l’image, par exemple un point « Entrée de l’école » sur l’entrée et un point « Arrêt du bus » au bord de la route. L’image, le quadrillage et les points partagent le même cadrage à l’aperçu et à l’impression. Les lieux occupent leur surface réelle sur le plan et peuvent traverser plusieurs cases. Les illustrations actuelles à pictogrammes par case servent de référence fonctionnelle pour les exercices existants. [Données des plans](../../src/math/spatial-practice.ts) · [Rendu des plans](../../src/components/item-view/spatial-practice.tsx)
 
-Proposer trois images pour un même lieu. La photo aérienne montre le lieu réel. Une deuxième version surligne les routes principales et les chemins à pied sur la photo. Le plan en noir et blanc simplifie les bâtiments en blocs et conserve les tracés essentiels. Utiliser la même emprise pour que le quadrillage, les points et les réponses gardent leur position. Le plan de Sion sert de premier exemple. [Suivi d’avancement](avancement.md)
+Proposer trois images pour un même lieu. La photo aérienne montre le lieu réel. Une deuxième version surligne les routes principales et les chemins à pied sur la photo. Le plan en noir et blanc simplifie les bâtiments en blocs et conserve les tracés essentiels. Utiliser la même emprise pour que le quadrillage, les points et les réponses gardent leur position. La série couvre 20 plans de villes et de villages, dont deux cadrages de Sion, avec des questions sur des lieux réels. [Suivi d’avancement](avancement.md)
 
 Dans une question de case, indiquer le point précis qui doit être repéré. Une question avec une réponse unique vise un point à l’intérieur d’une case. Lorsque deux points occupent la même case, les distinguer par leur nom ou demander toutes les réponses. Pour un trajet par cases, expliciter les déplacements autorisés. Pour un trajet qui suit les rues, utiliser les rues et croisements visibles dans l’image. Le trajet de solution se superpose au fond dans le corrigé.
 

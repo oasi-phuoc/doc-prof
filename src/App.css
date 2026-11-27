@@ -6712,17 +6712,23 @@ textarea.pill-input,
   line-height: 1.3;
   text-align: left;
 }
-.math-theory-lesson h3 { font-size: 20pt; margin: 0 0 2mm; line-height: 1.2; }
+.math-theory-lesson h2 { font-size: 22pt; font-weight: 700; margin: 0 0 3mm; line-height: 1.15; }
+.math-theory-lesson h3, .math-theory-lesson h4 {
+  font-size: 18pt;
+  font-weight: 700;
+  margin: 0 0 1mm;
+  line-height: 1.2;
+}
 .math-theory-goal { margin: 0 0 2mm; }
 .math-theory-lesson figure { margin: 0 0 3mm; }
 .math-theory-lesson figure img { display: block; width: 100%; max-height: 51mm; object-fit: contain; }
 .math-theory-lesson figcaption { font-weight: 700; margin-top: 1mm; }
 .math-theory-example { font-weight: 700; margin: 0 0 3mm; }
-.math-theory-lesson h4 { font-size: 1em; margin: 0 0 1mm; }
 .math-theory-sections section + section { margin-top: 2mm; }
 .math-theory-sections dl, .math-theory-sections ol { margin: 0; }
 .math-theory-sections ol { padding-left: 1.6em; list-style: decimal outside; }
 .math-theory-sections li { display: list-item; }
+.math-theory-sections li::marker { font-weight: 700; }
 .math-theory-sections dt { display: inline; font-weight: 700; }
 .math-theory-sections dd { display: inline; margin: 0; }
 .math-theory-sections dt::after { content: ' — '; color: #172336; }
@@ -6824,7 +6830,9 @@ textarea.pill-input,
   overflow-wrap: anywhere;
 }
 .a5-half .math-theory-lesson figure { margin-bottom: 2mm; }
-.a5-half .math-theory-lesson figure img { max-height: 35mm; }
+.a5-half .math-theory-lesson figure img { max-height: 32mm; }
+.a5-half .math-theory-lesson h2 { margin-bottom: 2mm; }
+.a5-half .math-theory-lesson { line-height: 1.24; }
 
 .math-worked-example {
   margin: 0 0 3mm;
@@ -6835,6 +6843,36 @@ textarea.pill-input,
   text-align: left;
 }
 .math-worked-example p { margin: 0; }
+.math-fundamental-example img { display: block; width: min(100%, 110mm); height: auto; }
+.math-fundamental-shape { display: block; width: min(100%, 29mm); height: auto; fill: #e8f1f9; stroke: #174a7e; stroke-width: 3; }
+.math-fundamental-length { display: flex; width: min(100%, 104mm); gap: 1px; font-size: 14pt; }
+.math-fundamental-length span {
+  display: grid;
+  place-items: center;
+  min-width: max-content;
+  padding: 1mm 2mm;
+  border: 1px solid currentColor;
+  background: #e8f1f9;
+}
+.math-fundamental-length span:first-child { background: #f5ebdd; }
+[data-exercise-type='nombres-groupements-guide'] .math-base-ten-rod img { height: 1.7mm; }
+[data-exercise-type='nombres-groupements-guide'] .math-base-ten-cube img { width: 2.8mm; height: 2.8mm; }
+[data-exercise-type='nombres-groupements-guide'] .prompt-stack-text,
+[data-exercise-type='decimaux-droite-guide'] .prompt-stack-text,
+[data-exercise-type='figures-nommer-guide'] .prompt-stack-text,
+[data-exercise-type='mesures-addition-longueurs'] .prompt-stack-text {
+  font-size: 14pt;
+  line-height: 1.3;
+  text-align: left;
+  white-space: pre-line;
+}
+.a5-half .math-fundamental-example {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, .9fr);
+  align-items: center;
+  gap: 3mm;
+}
+.a5-half .math-fundamental-example img { width: 100%; }
 .math-worked-addition {
   display: grid;
   grid-template-columns: max-content minmax(0, 1fr);
@@ -6912,6 +6950,9 @@ textarea.pill-input,
 .math-sion-path-key::before { border-top: 1.5px dashed currentColor; }
 .math-sion-map.is-annotated .math-sion-road-key::before { border: 1px solid #302b24; background: #fff9e9; }
 .math-sion-map.is-annotated .math-sion-path-key::before { border-top-color: #865a00; }
+.math-sion-map.is-regional .math-sion-place text { font-size: 12.5px; }
+.math-sion-map.is-regional figcaption { flex-wrap: wrap; }
+.math-region-attribution { flex-basis: 100%; font-size: 8pt; }
 .a5-half .math-rectangle-question, .a5-half .math-rectangle-example { gap: 2mm; }
 .a5-half .math-translation-practice svg { width: min(100%, 68mm); }
 .a5-half .math-sion-map figure { width: min(100%, 111mm); }

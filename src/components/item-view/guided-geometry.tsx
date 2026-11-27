@@ -1,6 +1,7 @@
 import { useId } from 'react'
-import { RECTANGLE_MEASURES_TYPE, SION_GRID, SION_PLACES, TRANSLATION_GRID, TRANSLATION_PRACTICE_TYPE, translatePoint } from '@/math/guided-practice'
+import { RECTANGLE_MEASURES_TYPE, TRANSLATION_GRID, TRANSLATION_PRACTICE_TYPE, translatePoint } from '@/math/guided-practice'
 import type { MathItem, PreviewMode, SionMapBackground } from '@/math/types'
+import { DEFAULT_REAL_MAP_ID, REAL_MAP_COLUMNS, realMapPlan, type RealMapPlan } from '@/math/real-map-catalog'
 import sionPhoto from '@/math/media/spatial/sion-swissimage.webp'
 import sionAnnotatedPhoto from '@/math/media/spatial/sion-photo-chemins.webp'
 import sionSimplifiedMap from '@/math/media/spatial/sion-plan-simplifie.png'
@@ -17,6 +18,26 @@ const sionBackgrounds: Record<SionMapBackground, { src: string; alt: string; cap
   photo: { src: sionPhoto, alt: 'Photo aérienne', caption: 'Sion · Photo aérienne © swisstopo' },
   annotated: { src: sionAnnotatedPhoto, alt: 'Photo aérienne avec les routes et les chemins', caption: 'Sion · Photo © swisstopo' },
   simplified: { src: sionSimplifiedMap, alt: 'Plan simplifié', caption: 'Sion · Dessin d’après © swisstopo' },
+}
+
+const townImages = import.meta.glob<string>('../../math/media/spatial/swiss/*.{png,webp}', {
+  eager: true, import: 'default', query: '?url',
+})
+
+function labelCoordinates(plan: RealMapPlan, width: number, height: number) {
+  const chosen: Array<{ x: number; y: number; width: number }> = []
+  return plan.places.map(({ name, x, y }) => {
+    const dotX = x * width
+    const dotY = y * height
+    const half = Math.min(name.length * 3.55, 143)
+    const labelX = Math.max(half + 4, Math.min(width - half - 4, dotX))
+    const candidates = [-11, 22, -29, 40, -48, 58].map(offset => Math.max(10, Math.min(height - 5, dotY + offset)))
+    const labelY = candidates.find(y => !chosen.some(
+      label => Math.abs(y - label.y) < 18 && Math.abs(labelX - label.x) < half + label.width + 5,
+    )) ?? candidates[0]!
+    chosen.push({ x: labelX, y: labelY, width: half })
+    return { x: labelX, y: labelY, anchor: 'middle' as const }
+  })
 }
 
 function RectangleFigure({ length, width, hatched }: { length: number; width: number; hatched: boolean }) {
@@ -115,39 +136,46 @@ export function TranslationPractice({ practice, mode }: {
 }
 
 export function SionMapPractice({ item, mode }: { item: MathItem; mode: PreviewMode }) {
-  const { target, background } = item.sionMap!
+  const { target, background, planId } = item.sionMap!
+  const plan = realMapPlan(planId)
+  const historic = plan.id === DEFAULT_REAL_MAP_ID
   const variant = background === 'annotated' || background === 'simplified' ? background : 'photo'
   const map = sionBackgrounds[variant]
-  const model = SION_PLACES[(target + 1) % SION_PLACES.length]!
+  const image = historic ? map.src : townImages[`../../math/media/spatial/swiss/${plan.id}-${variant}.${variant === 'simplified' ? 'png' : 'webp'}`]
+  const model = plan.places[(target + 1) % plan.places.length]!
   const show = mode === 'answers'
-  const { columns, rows } = SION_GRID
+  const { columns, rows } = plan.grid
   const w = 432
   const h = 288
+  const labels = historic ? plan.places.map(({ x, y }, index) => {
+    const offset = sionLabelOffsets[index]!
+    return { x: x * w + offset.dx, y: y * h + offset.dy, anchor: offset.anchor }
+  }) : labelCoordinates(plan, w, h)
   return (
-    <div className={`math-geometry-pilot math-sion-map is-${variant}`}>
+    <div className={`math-geometry-pilot math-sion-map is-${variant}${historic ? '' : ' is-regional'}`}>
       <p className="math-sion-example"><strong>Exemple.</strong> {model.name} se trouve en {model.code}.</p>
       <figure>
-        <svg viewBox={`-20 -22 ${w + 20} ${h + 22}`} role="img" aria-label={`${map.alt} de Sion avec colonnes A à D et lignes 1 à 3. ${SION_PLACES.map(({ name, code }) => `${name}, case ${code}`).join('. ')}.`}>
-          <image href={map.src} width={w} height={h} />
+        <svg viewBox={`-20 -22 ${w + 20} ${h + 22}`} role="img" aria-label={`${map.alt}. ${plan.label}. Colonnes A à ${REAL_MAP_COLUMNS[columns - 1]} et lignes 1 à ${rows}. ${plan.places.map(({ name, code }) => `${name}, case ${code}`).join('. ')}.`}>
+          <image href={image} width={w} height={h} />
           <g className="math-sion-grid">
             {Array.from({ length: columns - 1 }, (_, index) => <line key={index} x1={(index + 1) * w / columns} x2={(index + 1) * w / columns} y1="0" y2={h} />)}
             {Array.from({ length: rows - 1 }, (_, index) => <line key={index} x1="0" x2={w} y1={(index + 1) * h / rows} y2={(index + 1) * h / rows} />)}
           </g>
           <rect x="0" y="0" width={w} height={h} fill="none" stroke="currentColor" />
-          {Array.from({ length: columns }, (_, index) => <text key={index} x={(index + 0.5) * w / columns} y="-6" textAnchor="middle">{'ABCD'[index]}</text>)}
+          {Array.from({ length: columns }, (_, index) => <text key={index} x={(index + 0.5) * w / columns} y="-6" textAnchor="middle">{REAL_MAP_COLUMNS[index]}</text>)}
           {Array.from({ length: rows }, (_, index) => <text key={index} x="-11" y={(index + 0.54) * h / rows} textAnchor="middle">{index + 1}</text>)}
           <g className="math-sion-north" aria-hidden="true">
             <path d="M409 39V12M405 17L409 12L413 17" />
             <text x="409" y="51" textAnchor="middle">N</text>
           </g>
-          {SION_PLACES.map(({ name, x, y, column, row }, index) => {
-            const { dx, dy, anchor } = sionLabelOffsets[index]!
+          {plan.places.map(({ name, x, y, column, row }, index) => {
+            const label = labels[index]!
             return (
               <g key={name} className="math-sion-place">
                 {show && index === target && <rect x={column * w / columns} y={row * h / rows} width={w / columns} height={h / rows} className="math-sion-answer-cell" />}
-                <line x1={x * w} y1={y * h} x2={x * w} y2={y * h + dy - 4} />
+                <line x1={x * w} y1={y * h} x2={historic ? x * w : label.x} y2={label.y - 4} />
                 <circle cx={x * w} cy={y * h} r="4" />
-                <text x={x * w + dx} y={y * h + dy} textAnchor={anchor}>{name}</text>
+                <text x={label.x} y={label.y} textAnchor={label.anchor}>{name}</text>
               </g>
             )
           })}
@@ -159,7 +187,8 @@ export function SionMapPractice({ item, mode }: { item: MathItem; mode: PreviewM
               <span className="math-sion-path-key">Chemin à pied</span>
             </span>
           )}
-          <span>{map.caption}</span>
+          <span>{historic ? map.caption : `${plan.label}${variant === 'simplified' ? '' : ' · © swisstopo'}`}</span>
+          {!historic && variant !== 'photo' && <small className="math-region-attribution">Tracés © OpenStreetMap (ODbL) · openstreetmap.org/copyright</small>}
         </figcaption>
       </figure>
       <p className="math-sion-question">{item.prompt}</p>

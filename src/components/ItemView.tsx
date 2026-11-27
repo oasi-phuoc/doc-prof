@@ -78,6 +78,7 @@ import { AreaFigures, SolidViewChoices } from './item-view/geometry-practice'
 import { MeasurementScale } from './item-view/measurement-practice'
 import { RulerSegmentFigure } from './item-view/guided-practice'
 import { RectangleMeasuresPractice, SionMapPractice, TranslationPractice } from './item-view/guided-geometry'
+import { FundamentalLength, FundamentalShape } from './item-view/fundamental-practice'
 import { MathTheoryView } from './item-view/math-theory'
 import { BaseTenCollection, LengthUnitComparison, MenuPriceTable } from './item-view/foundations-practice'
 import { FunctionValueTable, NumberLinePractice } from './item-view/number-representations'
@@ -491,6 +492,8 @@ export function ItemView({
           />
         )}
         {item.baseTen && <BaseTenCollection collection={item.baseTen} />}
+        {item.shapePractice && <FundamentalShape shape={item.shapePractice} />}
+        {item.lengthPractice && <FundamentalLength length={item.lengthPractice} />}
         {item.lengthUnits && <LengthUnitComparison lengths={item.lengthUnits} mode={mode} />}
         {item.areaFigures && <AreaFigures figures={item.areaFigures} />}
         {item.solidViews && <SolidViewChoices solid={item.solidViews} />}

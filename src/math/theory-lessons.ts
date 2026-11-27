@@ -1,9 +1,11 @@
 import { mathGlossaryBank } from './glossary-banks'
+import { mathTheorySupplements as extra } from './theory-supplements'
 
 export type MathTheoryRole = 'given' | 'step' | 'result'
 
 export type MathTheoryLesson = {
   title: string
+  heading?: string
   goal: string
   words: Array<[word: string, definition: string, role?: MathTheoryRole]>
   steps: string[]
@@ -19,16 +21,19 @@ type MathTheoryCourse = MathTheoryLesson & { continuation?: MathTheoryLesson[] }
 export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
   nombres: {
     title: 'Lire un nombre',
+    heading: 'Combien de centaines, de dizaines et d’unités ?',
     goal: 'La place du chiffre indique sa valeur.',
     words: [['Centaine', 'Un groupe de 100 unités.', 'given'], ['Dizaine', 'Un groupe de 10 unités.', 'step'], ['Unité', 'Un objet pris seul.', 'result']],
     steps: ['Je lis 2 dans la colonne des centaines.', 'Je lis 4 dans la colonne des dizaines.', 'Je lis 3 dans la colonne des unités.'],
     example: '243 = 200 + 40 + 3.',
     visualAlt: 'Tableau : 2 centaines dans la première colonne, 4 dizaines au milieu, 3 unités à droite.',
     illustration: 'nombres',
+    continuation: [extra.zeroPlace, extra.compareWhole],
   },
   addition: {
     title: 'Poser une addition',
-    goal: 'J’additionne deux nombres pour trouver le total.',
+    heading: 'Comment additionner ?',
+    goal: 'Je réunis deux quantités pour trouver le total.',
     words: [['Retenue', 'La dizaine que j’ajoute à gauche, dans cet exemple.', 'step'], ['Somme', 'Le résultat de l’addition.', 'result']],
     steps: ['Je place les unités sous les unités.', 'Je calcule 7 + 5 = 12.', 'J’écris 2 unités. Je reporte 1 dizaine à gauche.', 'Je calcule 2 + 1 + 1 = 4 dizaines.'],
     example: 'La somme de 27 et 15 est 42.',
@@ -37,42 +42,51 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
   },
   soustraction: {
     title: 'Poser une soustraction',
+    heading: 'Que faire quand les unités manquent ?',
     goal: 'Je peux échanger 1 dizaine contre 10 unités.',
     words: [['Échange', 'Je change 1 dizaine en 10 unités.', 'step'], ['Différence', 'Le résultat de la soustraction.', 'result']],
     steps: ['Je place les unités sous les unités.', 'Avec 2 unités, je ne peux pas en enlever 7.', 'J’échange 1 dizaine. Il reste 3 dizaines et j’ai 12 unités.', 'Je calcule 12 − 7 = 5 et 3 − 1 = 2.'],
     example: '42 − 17 = 25. Je vérifie avec 25 + 17 = 42.',
     visualAlt: 'Dans 42, 4 dizaines et 2 unités deviennent 3 dizaines et 12 unités. En enlevant 17, il reste 25.',
     illustration: 'soustraction',
+    continuation: [extra.exchangeZero],
   },
   estimation: {
     title: 'Arrondir à la dizaine',
+    heading: 'Quelle dizaine est la plus proche ?',
     goal: 'Je cherche la dizaine la plus proche.',
     words: [['Nombre de départ', 'Le nombre que je veux arrondir.', 'step'], ['Nombre arrondi', 'La dizaine que je choisis.', 'result'], ['≈', 'Veut dire « à peu près égal à ».']],
     steps: ['Je place 47 entre 40 et 50.', 'Je compte les pas jusqu’à 40 et jusqu’à 50.', '47 est plus proche de 50. Je choisis 50.'],
     example: '47 ≈ 50. Si le nombre est juste au milieu, je choisis la dizaine du dessus.',
     visualAlt: 'Sur la droite, 47 se trouve à 7 pas de 40 et à 3 pas de 50.',
     illustration: 'estimation',
+    continuation: [extra.roundHundred],
   },
   multiplication: {
     title: 'Multiplier des groupes',
+    heading: 'Comment compter des groupes égaux ?',
     goal: 'Je compte plusieurs groupes de même taille.',
     words: [['Facteurs', 'Les nombres que je multiplie. Ici, 3 et 4.', 'step'], ['Produit', 'Le résultat de la multiplication.', 'result']],
     steps: ['Je compte 3 groupes.', 'Je compte 4 objets dans chaque groupe.', 'Je multiplie 3 par 4.'],
     example: '3 × 4 = 12.',
     visualAlt: 'Trois plateaux contiennent chacun quatre jetons. Le produit 12 est le nombre total de jetons.',
     illustration: 'multiplication',
+    continuation: [extra.multiplyOneDigit, extra.multiplyTwoDigits],
   },
   division: {
     title: 'Partager en parts égales',
+    heading: 'Combien reçoit chaque groupe ?',
     goal: 'Chaque groupe reçoit la même quantité.',
     words: [['Dividende', 'Le nombre à partager. Ici, 14.', 'given'], ['Diviseur', 'Ici, le nombre de groupes. Il y en a 4.', 'step'], ['Quotient', 'Le nombre reçu dans chaque groupe. Ici, 3.', 'result'], ['Reste', 'Ce qui est encore à côté. Ici, 2.', 'given']],
     steps: ['Je distribue les jetons dans 4 groupes.', 'Chaque groupe reçoit 3 jetons.', 'Je compte les 2 jetons restés à côté.'],
     example: 'Je vérifie avec 4 × 3 + 2 = 14.',
     visualAlt: 'Les 14 jetons forment quatre groupes de trois. Deux jetons, à l’extérieur, forment le reste.',
     illustration: 'division',
+    continuation: [extra.longDivision, extra.zeroInQuotient],
   },
   problemes: {
     title: 'Lire un problème',
+    heading: 'Que faut-il trouver ?',
     goal: 'La question me dit ce que je dois trouver.',
     words: [['Données', 'Les informations utiles au calcul.', 'given'], ['Question', 'Ce que je cherche.', 'step'], ['Réponse', 'La phrase qui répond à la question.', 'result']],
     steps: ['Je lis la question.', 'Je repère les nombres utiles : 4 crayons et 3 crayons.', 'Je choisis le calcul et j’écris une réponse.'],
@@ -82,15 +96,17 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
   },
   multiples: {
     title: 'Multiples et diviseurs',
+    heading: 'Quels nombres sont dans les deux listes ?',
     goal: 'Je peux trouver un nombre commun à deux listes.',
-    words: [['Multiple', 'Le résultat d’une multiplication par un nombre entier.', 'given'], ['PPCM', 'Le plus petit multiple positif commun aux deux listes.', 'result'], ['PGCD', 'Le plus grand nombre qui divise les deux nombres sans reste.', 'step']],
-    steps: ['J’écris les multiples de 4 et de 6.', 'Je repère 12 dans les deux listes. C’est le PPCM.', 'Je cherche aussi les nombres qui divisent 4 et 6 sans reste.'],
+    words: [['Multiple', 'Le résultat d’une multiplication par un entier.', 'given'], ['PPCM', 'Le premier multiple positif des deux listes.', 'result'], ['PGCD', 'Le plus grand diviseur des deux nombres.', 'step']],
+    steps: ['J’écris les multiples de 4 et de 6.', 'Le premier multiple positif commun est 12.', 'Le plus grand diviseur commun est 2.'],
     example: 'Le PPCM de 4 et 6 est 12. Le PGCD de 4 et 6 est 2.',
     visualAlt: 'Les listes de multiples 4, 8, 12 et 6, 12 ont 12 en commun. Les diviseurs communs sont 1 et 2.',
     illustration: 'multiples',
   },
   fractions: {
     title: 'Lire une fraction',
+    heading: 'Combien de parts sont prises ?',
     goal: 'Une fraction peut montrer des parts égales.',
     words: [['Numérateur', 'Le nombre du haut. Il dit combien de parts je prends.', 'step'], ['Dénominateur', 'Le nombre du bas. Il dit combien il y a de parts en tout.', 'result']],
     steps: ['Je vérifie que toutes les parts ont la même taille.', 'Je compte les 4 parts en tout.', 'Je compte les 3 parts hachurées.'],
@@ -99,16 +115,20 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
     illustration: 'fractions',
   },
   decimaux: {
-    title: 'Aligner les virgules',
+    title: 'Additionner des décimaux',
+    heading: 'Comment aligner les virgules ?',
     goal: 'La virgule sépare les unités des dixièmes.',
     words: [['Virgule', 'Le signe placé après les unités.', 'step'], ['Dixième', 'Une des 10 parts égales d’une unité.', 'given'], ['Centième', 'Une des 100 parts égales d’une unité.', 'result']],
     steps: ['J’écris 1,2 sous la forme 1,20. La valeur est la même.', 'Je place les virgules l’une sous l’autre.', 'Je calcule en commençant par les centièmes.'],
     example: '1,20 + 0,35 = 1,55.',
     visualAlt: 'Les virgules de 1,20, 0,35 et 1,55 sont alignées. Les chiffres occupent les colonnes unités, dixièmes et centièmes.',
     illustration: 'decimaux',
+    continuation: [extra.decimalLine, extra.compareDecimals, extra.subtractDecimals,
+      extra.multiplyDecimals, extra.divideDecimals, extra.decimalDivisor],
   },
   proportionnalite: {
     title: 'Trouver un prix proportionnel',
+    heading: 'Combien coûte une seule bouteille ?',
     goal: 'Chaque jus coûte le même prix.',
     words: [['Prix pour un jus', 'Le prix d’une seule bouteille.', 'step'], ['Prix total', 'Le prix de toutes les bouteilles.', 'result']],
     steps: ['Je lis le prix de 2 jus : 6 CHF.', 'Je divise par 2. Un jus coûte 3 CHF.', 'Je multiplie 3 CHF par 4.'],
@@ -117,6 +137,7 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
     illustration: 'proportionnalite',
     continuation: [{
       title: 'Lire un pourcentage',
+      heading: 'Combien de parts sur 100 ?',
       goal: 'Un pourcentage dit combien de parts je prends sur 100.',
       words: [['100 %', 'Toutes les parts de la grille.', 'given'], ['25 %', '25 parts sur 100.', 'result']],
       steps: ['Je regarde les 100 cases.', 'Je compte les cases hachurées.', 'Je prends un quart de la grille : 25 cases.'],
@@ -127,6 +148,7 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
   },
   relatifs: {
     title: 'Lire les nombres négatifs',
+    heading: 'Où se trouvent-ils par rapport à zéro ?',
     goal: 'Sur la droite, un nombre est plus petit quand il est plus à gauche.',
     words: [['Zéro', 'Le nombre qui sépare positifs et négatifs.', 'given'], ['Négatif', 'Un nombre plus petit que zéro.', 'step'], ['Positif', 'Un nombre plus grand que zéro.', 'result']],
     steps: ['Je repère le zéro.', 'Je place −3 et −1 à gauche de zéro.', 'Je vois que −3 est plus à gauche que −1.'],
@@ -136,6 +158,7 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
   },
   puissances: {
     title: 'Lire un carré et une racine',
+    heading: 'Combien de carreaux dans le carré ?',
     goal: 'Je peux compter les carreaux d’un carré.',
     words: [['Carré', 'Le nombre multiplié par lui-même.', 'step'], ['Racine carrée', 'La longueur du côté du carré, dans ce dessin.', 'result']],
     steps: ['Je compte 3 carreaux de côté.', 'Je calcule 3 × 3 = 9 carreaux.', 'Pour un carré de 9 carreaux, je retrouve le côté de 3 carreaux.'],
@@ -145,6 +168,7 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
   },
   expressions: {
     title: 'Remplacer une lettre par un nombre',
+    heading: 'Comment calculer quand x vaut 4 ?',
     goal: 'Une lettre peut remplacer un nombre.',
     words: [['Expression', 'Un calcul. Ici, c’est 2x + 3.'], ['x', 'La lettre à remplacer. Ici, x vaut 4.', 'step'], ['Résultat', 'Le nombre trouvé après le calcul.', 'result']],
     steps: ['2x veut dire 2 × x. Je remplace x par 4.', 'Je calcule d’abord 2 × 4.', 'J’ajoute 3.'],
@@ -154,6 +178,7 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
   },
   fonctions: {
     title: 'Entrer un nombre et suivre une règle',
+    heading: 'Quel résultat donne la règle ?',
     goal: 'La règle donne un résultat pour chaque nombre entré.',
     words: [['Entrée x', 'Le nombre que je choisis.', 'given'], ['Règle', 'Le calcul à faire.', 'step'], ['Résultat y', 'Le nombre obtenu.', 'result']],
     steps: ['Je choisis x = 3.', 'Je multiplie 3 par 2.', 'J’ajoute 1. Je trouve y = 7.'],
@@ -162,6 +187,7 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
     illustration: 'fonctions',
     continuation: [{
       title: 'Lire un point sur un graphique',
+      heading: 'Que disent les deux axes ?',
       goal: 'Un point montre une entrée et son résultat.',
       words: [['Entrée x', 'Je la lis en bas du graphique.', 'given'], ['Résultat y', 'Je le lis sur l’axe vertical.', 'result']],
       steps: ['Je repère x = 3 en bas.', 'Je monte jusqu’au point.', 'Je vais à gauche pour lire y = 7.'],
@@ -172,6 +198,7 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
   },
   equations: {
     title: 'Trouver le nombre caché',
+    heading: 'Quel nombre rend l’égalité vraie ?',
     goal: 'Une équation est une égalité avec un nombre à trouver.',
     words: [['Inconnue x', 'Le nombre que je cherche.', 'given'], ['Même opération', 'Je retire 3 des deux côtés.', 'step'], ['Solution', 'Le nombre qui rend l’égalité vraie.', 'result']],
     steps: ['Je repère x dans x + 3 = 8.', 'Je retire 3 du côté gauche et du côté droit.', 'Je trouve x = 5. Je vérifie avec 5 + 3 = 8.'],
@@ -181,14 +208,16 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
   },
   figures: {
     title: 'Reconnaître les parties d’une figure',
+    heading: 'Où sont les côtés et les sommets ?',
     goal: 'Les côtés, les sommets et les angles aident à reconnaître une forme.',
     words: [['Côté', 'Un trait droit du bord.', 'step'], ['Sommet', 'Le point où deux côtés se rencontrent.', 'given'], ['Angle droit', 'Un angle comme le coin d’une feuille.', 'result']],
     steps: ['Je suis le bord pour compter les côtés.', 'Je marque chaque sommet avec un point.', 'Je cherche un coin qui se ferme comme le coin d’une feuille.'],
     example: 'Un carré a 4 côtés de même longueur et 4 angles droits.',
     visualAlt: 'Sur un carré, un trait épais désigne un côté, un point désigne un sommet et un petit carré marque un angle droit.',
     illustration: 'figures',
-    continuation: [{
+    continuation: [extra.nameShapes, extra.recognizeAngles, {
       title: 'Reconnaître deux droites',
+      heading: 'Comment utiliser une équerre ?',
       goal: 'Je regarde comment les droites sont placées.',
       words: [['Parallèles', 'Deux droites qui gardent le même écart.', 'step'], ['Perpendiculaires', 'Deux droites qui se coupent à angle droit.', 'result']],
       steps: ['Je regarde si les droites se coupent.', 'Si elles se coupent, je pose le coin droit de l’équerre dans l’angle.', 'Si les deux bords suivent les droites, elles sont perpendiculaires.'],
@@ -199,6 +228,7 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
   },
   conversions: {
     title: 'Changer d’unité de longueur',
+    heading: 'Comment passer des mètres aux centimètres ?',
     goal: 'La longueur reste la même quand j’écris une autre unité.',
     words: [['Mètre (m)', 'Une unité de longueur.', 'given'], ['Centimètre (cm)', 'Il faut 100 cm pour faire 1 m.', 'result'], ['Millimètre (mm)', 'Il faut 10 mm pour faire 1 cm.']],
     steps: ['Je sais que 1 m = 100 cm.', 'Pour passer de mètres à centimètres, je multiplie par 100.', 'Pour revenir aux mètres, je divise par 100.'],
@@ -207,16 +237,18 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
     illustration: 'conversions',
     continuation: [{
       title: 'Lire une longueur sur une règle',
+      heading: 'Que faire si le segment commence après zéro ?',
       goal: 'La longueur est la distance entre les deux bouts du segment.',
       words: [['Départ', 'La graduation du premier bout.', 'given'], ['Arrivée', 'La graduation du deuxième bout.', 'step'], ['Longueur', 'La distance entre les deux bouts.', 'result']],
       steps: ['Je lis 2 cm au départ.', 'Je lis 7 cm à l’arrivée.', 'Je calcule 7 − 2 = 5 cm.'],
       example: 'Le segment mesure 5 cm.',
       visualAlt: 'Sur la règle dessinée, un segment commence à la graduation 2 et se termine à la graduation 7.',
       illustration: 'regle',
-    }],
+    }, extra.mixedLengths, extra.readTime],
   },
   perimetres: {
     title: 'Mesurer le tour',
+    heading: 'Comment trouver le périmètre ?',
     goal: 'Le périmètre est la longueur du tour.',
     words: [['Côtés', 'Les traits du bord. Ici, ils mesurent 5 cm et 3 cm.', 'given'], ['Périmètre', 'La longueur de tout le contour.', 'step'], ['cm', 'Centimètres. C’est une unité de longueur.', 'result']],
     steps: ['Je suis le bord du doigt.', 'Je lis les longueurs des quatre côtés.', 'J’additionne ces longueurs en centimètres.'],
@@ -226,6 +258,7 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
   },
   aires: {
     title: 'Mesurer la surface',
+    heading: 'Combien de carreaux couvrent la figure ?',
     goal: 'L’aire mesure la place à l’intérieur d’une figure.',
     words: [['Rangée', 'Une ligne de carreaux.', 'step'], ['Aire', 'La mesure de la surface intérieure.', 'result'], ['cm²', 'L’aire d’un carré de 1 cm de côté.']],
     steps: ['Je compte 5 carreaux dans une rangée.', 'Je compte 3 rangées.', 'Je multiplie 5 par 3 et j’écris cm².'],
@@ -235,6 +268,7 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
   },
   volumes: {
     title: 'Compter les cubes',
+    heading: 'Combien de cubes dans chaque couche ?',
     goal: 'Le volume indique la place occupée par un solide.',
     words: [['Couche', 'Un étage de petits cubes.', 'step'], ['Volume', 'La place occupée par toutes les couches.', 'result'], ['cm³', 'Le volume d’un cube de 1 cm de côté.']],
     steps: ['Je compte 3 × 2 = 6 cubes dans une couche.', 'Je compte 2 couches identiques.', 'Je multiplie 6 par 2.'],
@@ -244,6 +278,7 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
   },
   reperage: {
     title: 'Placer un point dans un repère',
+    heading: 'Quel axe faut-il lire en premier ?',
     goal: 'Deux nombres me disent où placer un point.',
     words: [['Origine O', 'L’endroit où les deux axes se croisent.', 'given'], ['Abscisse', 'Le premier nombre. Je vais à gauche ou à droite.', 'step'], ['Ordonnée', 'Le deuxième nombre. Je monte ou je descends.', 'result']],
     steps: ['Je pars de l’origine O.', 'Je vais de 3 carreaux vers la droite.', 'Je monte de 2 carreaux et je place le point A.'],
@@ -253,6 +288,7 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
   },
   transformations: {
     title: 'Faire une translation',
+    heading: 'De combien de cases faut-il avancer ?',
     goal: 'Je fais glisser toute la figure dans la même direction.',
     words: [['Figure de départ', 'C’est la figure avant le déplacement.', 'given'], ['Déplacement', 'Je suis la direction et la longueur de la flèche.', 'step'], ['Image', 'C’est la figure obtenue.', 'result']],
     steps: ['Je repère le point A.', 'Je vais de 3 cases à droite, puis de 1 case vers le haut.', 'Je fais le même déplacement pour chaque sommet.', 'Je relie les nouveaux points.'],
@@ -262,6 +298,7 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
     continuation: [
       {
         title: 'Faire une rotation',
+        heading: 'Autour de quel point faut-il tourner ?',
         goal: 'Je tourne la figure autour d’un point.',
         words: [['Centre O', 'Le point autour duquel je tourne.', 'given'], ['Sens', 'La direction indiquée par la flèche courbe.', 'step'], ['Image', 'La figure après le tour.', 'result']],
         steps: ['Je repère le centre O.', 'Je suis la flèche pour tourner A d’un quart de tour.', 'Je garde la même distance entre le centre et le point.', 'Je tourne les autres sommets et je les relie.'],
@@ -271,6 +308,7 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
       },
       {
         title: 'Construire une symétrie axiale',
+        heading: 'Où placer le reflet ?',
         goal: 'Je construis le reflet de l’autre côté d’une ligne.',
         words: [['Figure de départ', 'C’est la figure que je veux refléter.', 'given'], ['Axe', 'La ligne du miroir.', 'step'], ['Reflet', 'La figure obtenue comme dans un miroir.', 'result']],
         steps: ['Je repère l’axe.', 'Depuis A, je compte les carreaux jusqu’à l’axe à angle droit.', 'Je place A′ à la même distance, de l’autre côté.', 'Je fais pareil pour les autres sommets. Je relie les points.'],
@@ -280,6 +318,7 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
       },
       {
         title: 'Construire une symétrie centrale',
+        heading: 'Où placer le centre et le point image ?',
         goal: 'Je place le point image de l’autre côté du centre.',
         words: [['Point A', 'Le point de départ.', 'given'], ['Centre O', 'Le point qui se trouve au milieu.', 'step'], ['Point A′', 'Le point image de A.', 'result']],
         steps: ['Je trace la ligne de A à O.', 'Je continue sur la même ligne après O.', 'Je place A′ à la même distance de O que A.', 'Je fais pareil pour chaque sommet. Je relie les points.'],
@@ -289,6 +328,7 @@ export const mathTheoryLessons: Record<string, MathTheoryCourse> = {
       },
       {
         title: 'Agrandir une figure',
+        heading: 'Comment doubler les longueurs ?',
         goal: 'Je change la taille sans changer la forme.',
         words: [['Modèle', 'La figure de départ.', 'given'], ['Facteur 2', 'Je multiplie les longueurs par 2.', 'step'], ['Agrandissement', 'La figure obtenue, plus grande.', 'result']],
         steps: ['Je choisis le point de départ.', 'Dans le modèle, je compte 2 cases sur la base.', 'Pour agrandir, je trace 4 cases sur la base.', 'Je double aussi la hauteur et je relie les sommets.'],

@@ -1,6 +1,8 @@
 import { mathTheoryTopic } from '@/math/theory-lessons'
 import { mathGlossaryBank } from '@/math/glossary-banks'
 import { isGuidedColumnType, isSingleColumnPractice, REAL_MAP_TYPE } from '@/math/guided-practice'
+import { isFundamentalPractice, SHAPE_PRACTICE } from '@/math/fundamental-practice'
+import { realMapPlan, realMapPlans } from '@/math/real-map-catalog'
 import { isLogistiqueReferenceType, logistiquePresentationFor, logistiqueType } from '@/logistique/catalog'
 import { logistiqueHasSummary, logistiqueModuleCapacities } from '@/logistique/generate'
 import { SelectBox } from './SelectBox'
@@ -256,12 +258,18 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
   return (
     <>
               {activeBlock.exerciseType === REAL_MAP_TYPE && (
-                <SelectBox label="Fond du plan" value={activeBlock.sionMapBackground ?? 'photo'}
-                  onChange={(value) => updatePage({ sionMapBackground: value === 'annotated' || value === 'simplified' ? value : 'photo' })}>
-                  <option value="photo">Photo aérienne réelle</option>
-                  <option value="annotated">Photo avec routes et chemins</option>
-                  <option value="simplified">Plan simplifié en noir et blanc</option>
-                </SelectBox>
+                <>
+                  <SelectBox label="Lieu du plan" value={realMapPlan(activeBlock.realMapId).id}
+                    onChange={(value) => updatePage({ realMapId: realMapPlan(value).id, libreItems: undefined, libreInstruction: undefined })}>
+                    {realMapPlans.map(({ id, label }) => <option key={id} value={id}>{label}</option>)}
+                  </SelectBox>
+                  <SelectBox label="Fond du plan" value={activeBlock.sionMapBackground ?? 'photo'}
+                    onChange={(value) => updatePage({ sionMapBackground: value === 'annotated' || value === 'simplified' ? value : 'photo' })}>
+                    <option value="photo">Photo aérienne réelle</option>
+                    <option value="annotated">Photo avec routes et chemins</option>
+                    <option value="simplified">Plan simplifié en noir et blanc</option>
+                  </SelectBox>
+                </>
               )}
               {supportsPresentation && (presentations.some(({ capacity }) => capacity > 0) || presentation) ? (
                 <SelectBox label="Présentation des questions" value={presentation ?? 'questions'} onChange={(value) => {
@@ -1067,6 +1075,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
               isGramTheory ||
               mathTheoryTopic(activeBlock.exerciseType) ||
               isSingleColumnPractice(activeBlock.exerciseType) ||
+              (isFundamentalPractice(activeBlock.exerciseType) && activeBlock.exerciseType !== SHAPE_PRACTICE) ||
               isGrammaireDomain ||
               isLogique ||
               isJeuxDomain ||
@@ -1085,7 +1094,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
               <div className="mode-toggle-block">
                 <b>Colonnes</b>
                 <div className="mode-toggle is-3" role="group" aria-label="Nombre de colonnes">
-                  {(isGuidedColumnType(activeBlock.exerciseType) ? [1, 2] : [1, 2, 3]).map((value) => (
+                  {(isGuidedColumnType(activeBlock.exerciseType) || activeBlock.exerciseType === SHAPE_PRACTICE ? [1, 2] : [1, 2, 3]).map((value) => (
                     <button
                       key={value}
                       type="button"

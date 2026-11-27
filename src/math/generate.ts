@@ -392,7 +392,7 @@ function buildSingleBlock(
     config.quadLibre ? config.quadShapes : undefined,
     worksheetSeed,
     config.orderAscending,
-    { coordRange: config.coordRange, coordUnitSquares: config.coordUnitSquares },
+    { coordRange: config.coordRange, coordUnitSquares: config.coordUnitSquares, realMapId: config.realMapId },
   )
   const tpmCompareLine = config.domain === 'tpm' && config.exerciseType === 'nombres-comparer'
   return {

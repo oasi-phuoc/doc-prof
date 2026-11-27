@@ -1,6 +1,9 @@
 import { columnItem, fmt } from './column-arith'
 import { int, type Rng } from './rng'
+import { DEFAULT_REAL_MAP_ID, realMapPlan } from './real-map-catalog'
 import type { Difficulty, MathItem } from './types'
+
+export { SION_GRID, SION_PLACES } from './real-map-catalog'
 
 export const ADDITION_CARRY_TYPE = 'addition-retenue-guidee'
 export const SUBTRACTION_EXCHANGE_TYPE = 'soustraction-echange-guide'
@@ -122,37 +125,21 @@ function translationPractice(rng: Rng, difficulty: Difficulty): MathItem {
   }).join(' · ') }
 }
 
-const sionLandmarks = [
-  { name: 'Église Saint-Théodule', easting: 2593858, northing: 1120236 },
-  { name: 'Hôtel de ville', easting: 2593980, northing: 1120260 },
-  { name: 'Basilique de Valère', easting: 2594266, northing: 1120249 },
-  { name: 'Château de Tourbillon', easting: 2594469, northing: 1120560 },
-] as const
-
-export const SION_GRID = { columns: 4, rows: 3 }
-
-export const SION_PLACES = sionLandmarks.map(({ name, easting, northing }) => {
-  // Emprise LV95 de l’image SWISSIMAGE. Les valeurs restent dans le repère de la photo.
-  const x = (easting - 2593720) / 940
-  const y = (1120697 - northing) / 627
-  const column = Math.floor(x * SION_GRID.columns)
-  const row = Math.floor(y * SION_GRID.rows)
-  return { name, x, y, column, row, code: `${'ABCD'[column]}${row + 1}` }
-})
-
-function readRealMap(rng: Rng, difficulty: Difficulty): MathItem {
-  const target = int(rng, 0, SION_PLACES.length - 1)
-  const place = SION_PLACES[target]!
+function readRealMap(rng: Rng, difficulty: Difficulty, id?: string): MathItem {
+  const plan = realMapPlan(id)
+  const target = int(rng, 0, plan.places.length - 1)
+  const place = plan.places[target]!
+  const reverse = difficulty === 'avance'
   return {
     layout: 'text',
-    sionMap: { target },
-    prompt: difficulty === 'avance' ? `Quel lieu est dans la case ${place.code} ?` : `Dans quelle case se trouve ce lieu ?\n${place.name}`,
-    answer: difficulty === 'avance' ? place.name : place.code,
+    sionMap: { target, ...(plan.id !== DEFAULT_REAL_MAP_ID ? { planId: plan.id } : {}) },
+    prompt: reverse ? `Quel lieu est dans la case ${place.code} ?` : `Dans quelle case se trouve ce lieu ?\n${place.name}`,
+    answer: reverse ? place.name : place.code,
   }
 }
 
 export function tryGenerateGuidedPractice(
-  typeId: string, rng: Rng, count: number, difficulty: Difficulty,
+  typeId: string, rng: Rng, count: number, difficulty: Difficulty, realMapId?: string,
 ): MathItem[] | undefined {
   if (typeId === ADDITION_CARRY_TYPE) {
     return Array.from({ length: count }, (_, index) => additionWithCarry(rng, difficulty, index))
@@ -167,6 +154,6 @@ export function tryGenerateGuidedPractice(
     return Array.from({ length: count }, (_, index) => rectangleMeasures(rng, difficulty, index))
   }
   if (typeId === TRANSLATION_PRACTICE_TYPE) return [translationPractice(rng, difficulty)]
-  if (typeId === REAL_MAP_TYPE) return [readRealMap(rng, difficulty)]
+  if (typeId === REAL_MAP_TYPE) return [readRealMap(rng, difficulty, realMapId)]
   return undefined
 }

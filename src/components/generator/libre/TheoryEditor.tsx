@@ -132,6 +132,7 @@ function MathTheoryFields({ lesson, update }: { lesson: MathLesson; update: (pat
   return (
     <>
       <TextField label="Titre" value={lesson.title} onChange={(title) => update({ title })} />
+      <TextField label="Titre de l’explication" value={lesson.heading ?? ''} onChange={(heading) => update({ heading })} />
       <TextField label="Objectif" value={lesson.goal} onChange={(goal) => update({ goal })} multiline />
       <TextField label="Exemple" value={lesson.example} onChange={(example) => update({ example })} multiline />
       <label>

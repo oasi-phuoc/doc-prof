@@ -33,6 +33,7 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     problemDraftGrids: page.problemDraftGrids,
     problemHelp: page.problemHelp,
     sionMapBackground: page.sionMapBackground,
+    realMapId: page.realMapId,
     formulaireLetterGrid: page.formulaireLetterGrid,
     inlineBlankPx: page.inlineBlankPx,
     oralAnswerModes: page.oralAnswerModes,
@@ -123,7 +124,8 @@ export function pageAsConfig(page: PageConfig, block: ExerciseBlock): PageConfig
   return { ...page, ...block, logistiqueBankRevision: block.logistiqueBankRevision, logistiqueTheoryView: block.logistiqueTheoryView, logistiqueSelection: block.logistiqueSelection, logistiqueGapMode: block.logistiqueGapMode, logistiquePresentation: block.logistiquePresentation, phraseCategories: block.phraseCategories, phraseImageLabels:block.phraseImageLabels, phraseImageShownCategories:block.phraseImageShownCategories, phraseSentenceType:block.phraseSentenceType, phraseVoice:block.phraseVoice, grammarCoLevel: block.grammarCoLevel, grammarCoAudioId: block.grammarCoAudioId,
     grammarLevel:block.grammarLevel,grammarActivityId:block.grammarActivityId,grammarPresentation:block.grammarPresentation,
     grammarBankRevision:block.grammarBankRevision,grammarSnapshot:block.grammarSnapshot,grammarPreview:block.grammarPreview,
-    grammarDocumentCount:block.grammarDocumentCount,grammarPageBreakAfterQuestionIds:block.grammarPageBreakAfterQuestionIds,extraBlocks:undefined }
+    grammarDocumentCount:block.grammarDocumentCount,grammarPageBreakAfterQuestionIds:block.grammarPageBreakAfterQuestionIds,
+    realMapId: block.realMapId, extraBlocks:undefined }
 }
 
 export function setPageBlock(page: PageConfig, blockIndex: number, patch: Partial<ExerciseBlock>): PageConfig {

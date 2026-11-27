@@ -42,6 +42,7 @@ import { tryGenerateGeometryMeasurement } from './geometry-measurement'
 import { tryGenerateGeometryConstructions } from './geometry-constructions'
 import { tryGenerateMeasurementPractice } from './measurement-practice'
 import { tryGenerateGuidedPractice } from './guided-practice'
+import { tryGenerateFundamentalPractice } from './fundamental-practice'
 import { tryGenerateMathFoundations } from './foundations-practice'
 import { tryGenerateNumberRepresentations } from './number-representations'
 import { generateCountIcons } from '@/math/count-icons'
@@ -94,7 +95,7 @@ export function generateItems(
   shapes?: Figure[],
   worksheetSeed?: number,
   orderAscending?: boolean,
-  coordOptions?: { coordRange?: number; coordUnitSquares?: 1 | 2 },
+  coordOptions?: { coordRange?: number; coordUnitSquares?: 1 | 2; realMapId?: string },
 ): MathItem[] {
   const tpm = tryGenerateTpmItems(typeId, count, rng)
   if (tpm) return tpm
@@ -118,8 +119,10 @@ export function generateItems(
   if (constructions) return constructions
   const measurements = tryGenerateMeasurementPractice(typeId, rng, count, difficulty)
   if (measurements) return measurements
-  const guidedPractice = tryGenerateGuidedPractice(typeId, rng, count, difficulty)
+  const guidedPractice = tryGenerateGuidedPractice(typeId, rng, count, difficulty, coordOptions?.realMapId)
   if (guidedPractice) return guidedPractice
+  const fundamentalPractice = tryGenerateFundamentalPractice(typeId, rng, count, difficulty)
+  if (fundamentalPractice) return fundamentalPractice
   const foundations = tryGenerateMathFoundations(typeId, rng, count, difficulty, range)
   if (foundations) return foundations
   const geometryPractice = tryGenerateGeometryPractice(typeId, rng, count)

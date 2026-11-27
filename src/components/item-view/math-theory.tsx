@@ -12,7 +12,8 @@ export function MathTheoryView({ lesson }: { lesson: NonNullable<MathItem['mathT
 
   return (
     <article className="math-theory-lesson">
-      <h3>{lesson.title}</h3>
+      {lesson.heading && <h2>{lesson.title}</h2>}
+      <h3>{lesson.heading || lesson.title}</h3>
       <p className="math-theory-goal">{lesson.goal}</p>
       {lesson.hideVisual ? (
         <p className="math-theory-example">{lesson.example}</p>
