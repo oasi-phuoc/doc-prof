@@ -19,7 +19,7 @@ export function gameControl(root,name) {
   }})
 }
 
-export async function useSixCards(page) {
+export async function chooseSixCards(page) {
   await page.getByRole('button', { name: /^Préparer la séance/ }).click()
   const settings = page.getByRole('dialog', { name: 'Préparer la séance', exact: true })
   await settings.getByText('Ordre des questions et préréglages', { exact: true }).click()

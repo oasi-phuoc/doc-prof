@@ -1,4 +1,4 @@
-import {gameControl, useSixCards} from './browser-actions.mjs'
+import {gameControl, chooseSixCards} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { readFile, writeFile } from 'node:fs/promises'
 import { createServer } from 'vite'
@@ -44,7 +44,7 @@ async function setup(width, height) {
   page.on('pageerror', (error) => errors.push(error.message))
   await page.goto(`${base}/interactif/${saved.id}`)
   await page.locator('.ci-launch:enabled').waitFor({ timeout: 120000 })
-  await useSixCards(page)
+  await chooseSixCards(page)
   return { context, page }
 }
 async function navigate(page, prompt) {

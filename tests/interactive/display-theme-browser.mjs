@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import { chromium } from 'playwright'
 import AxeBuilder from '@axe-core/playwright'
-import { gameControl, useSixCards, waitForBrowserValue } from './browser-actions.mjs'
+import { gameControl, chooseSixCards, waitForBrowserValue } from './browser-actions.mjs'
 
 const base = process.env.INTERACTIVE_TEST_URL ?? 'http://127.0.0.1:5180'
 const browser = await chromium.launch({ executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined, args: ['--no-sandbox'] })
@@ -142,7 +142,7 @@ try {
       assert.deepEqual(await slots('back'), ['B', 'A', 'D', 'C', 'F', 'E'])
       await page.goto(`${base}/interactif/demo`)
       await page.locator('.ci-launch:enabled').waitFor()
-      await useSixCards(page)
+      await chooseSixCards(page)
       await page.locator('.ci-launch:enabled').click()
       await page.locator('.ci-answer').first().waitFor()
       assert.equal(await page.locator('.ci-answer').count(), 6)
