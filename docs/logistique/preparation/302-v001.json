@@ -1,0 +1,219 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Expliquer comment choisir **où** acheter (budget, disponibilité, relation, canaux)\n- Décrire la **loi de l'offre et de la demande** et l'équilibre de marché\n- Dérouler le **processus de commande** : offre, commande, confirmation, facture\n- Lister les éléments **minimaux** d'une demande d'offre, d'une commande et d'une facture",
+  "overview": "## Aperçu du module 302\n\n- Définir une demande d’offre exploitable, puis comparer les conditions.\n- Contrôler la commande, la confirmation et la facture sur les mêmes références.\n- Distinguer les quantités de l’offre et de la demande dans un périmètre donné.",
+  "replacements": [
+    {
+      "from": "**Loi de la demande :** plus c'est cher, moins il y a de demande.",
+      "to": "**Loi de la demande :** à conditions comparables, une hausse de prix réduit généralement la quantité demandée.",
+      "reason": "Précise l’hypothèse du modèle."
+    },
+    {
+      "from": "NVIDIA / AMD pour PS5, Xbox, PC. Demande ↑ (ventes massives) → retards (ex. PS5), stocks épuisés. Causes : Covid (usines bloquées/fermées) + demande appareils ↑ ~175 %. Offre insuffisante → prix des cartes restantes ×3.",
+      "to": "Pour un article dont la disponibilité diminue, vérifier la quantité réellement livrable et la date, même si plusieurs fournisseurs le proposent.",
+      "reason": "Retire les statistiques et causalités non étayées."
+    },
+    {
+      "from": "**Fonctionnement :** EnterSite visite un salon impression 3D → 4 fournisseurs = offre de quantité 4. Plus le prix ↑, plus la quantité offerte ↑ (et plus de vendeurs entrent) → **loi de l'offre**.",
+      "to": "Le nombre de fournisseurs ne mesure pas la quantité offerte. Au prix considéré, additionner les quantités que les fournisseurs peuvent proposer.",
+      "reason": "Corrige la confusion entre fournisseurs et unités."
+    },
+    {
+      "from": "**Attention :** l'offre a une **date de validité**. Jusqu'à cette date, le fournisseur s'engage. Si le client change les conditions → offre plus valable. Confirmation client → contenu fixé → dans le processus, confirmation entraîne la **commande**.",
+      "to": "Relire la période de validité et les réserves. Si le client demande des conditions différentes, faire confirmer les conditions nouvelles avant de traiter la commande.",
+      "reason": "Nuance la portée de l’offre."
+    }
+  ],
+  "summary": [
+    "Définir une demande d’offre exploitable, puis comparer les conditions.",
+    "Contrôler la commande, la confirmation et la facture sur les mêmes références.",
+    "Distinguer les quantités de l’offre et de la demande dans un périmètre donné."
+  ],
+  "glossary": [
+    [
+      "Accusé de réception",
+      "Avis que le document a été reçu."
+    ],
+    [
+      "Achat",
+      "Acquisition d’un bien selon des conditions convenues."
+    ],
+    [
+      "Bon de commande",
+      "Document qui décrit la demande d’achat adressée au fournisseur."
+    ],
+    [
+      "Comparaison d’offres",
+      "Évaluation des propositions avec les mêmes critères."
+    ],
+    [
+      "Confirmation",
+      "Réponse qui précise ce que le fournisseur accepte et peut livrer."
+    ],
+    [
+      "Conditions de paiement",
+      "Échéance, mode et autres modalités prévues pour régler le prix."
+    ],
+    [
+      "Demande",
+      "Quantité recherchée par les acheteurs à des conditions données."
+    ],
+    [
+      "Demande d’offre",
+      "Demande de prix, délai et caractéristiques avant l’achat."
+    ],
+    [
+      "Facture",
+      "Document qui indique le montant à payer et ses éléments."
+    ],
+    [
+      "Offre",
+      "Proposition commerciale indiquant prix et conditions."
+    ],
+    [
+      "Rabais",
+      "Réduction du prix selon des conditions définies."
+    ],
+    [
+      "Validité",
+      "Période pendant laquelle les conditions d’une offre sont applicables."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Le fournisseur propose 72 pièces à 5,40 CHF. Calculez le prix hors autres frais.",
+      "answer": "388,80 CHF.",
+      "calculation": "72 × 5,40 = 388,80 CHF."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Un montant de 640 CHF bénéficie d’un rabais de 12 %. Calculez le prix après rabais.",
+      "answer": "563,20 CHF.",
+      "calculation": "640 × (1 − 0,12) = 563,20 CHF."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Une commande de 120 unités arrive en deux lots de 50 et de 45 unités. Calculez le reste.",
+      "answer": "25 unités.",
+      "calculation": "120 − 50 − 45 = 25."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Un devis prévoit 2,5 kg à 18 CHF par kg et 12 CHF de livraison. Donnez le total.",
+      "answer": "57 CHF.",
+      "calculation": "2,5 × 18 + 12 = 57 CHF."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Comparez 75 pièces à 11 CHF frais inclus et 75 à 10,40 CHF plus 52 CHF de port.",
+      "answer": "La première offre coûte 825 CHF contre 832 CHF.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "75 × 11 = 825. 75 × 10,40 + 52 = 832 CHF."
+    },
+    {
+      "id": "maths-fiche-6",
+      "kind": "maths",
+      "prompt": "Un lot passe de 480 à 528 CHF. Quel est le taux de hausse ?",
+      "answer": "10 %.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "(528 − 480) ÷ 480 × 100 = 10 %."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quels renseignements inscrire dans une demande d’offre ?",
+      "answer": "Article, quantité, délai et adresse de livraison, ainsi que les exigences pertinentes."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Que contrôlez-vous à réception d’une confirmation ?",
+      "answer": "Références, quantités, prix, échéances, adresse et conditions."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "À quoi sert la période de validité ?",
+      "answer": "À savoir jusqu’à quand l’offre peut être acceptée selon ses conditions."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Que compare-t-on pour définir l’équilibre d’un marché ?",
+      "answer": "Les quantités offerte et demandée pour un même prix et un périmètre comparable."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Quel document comparez-vous en premier à une facture inattendue ?",
+      "answer": "La commande et, pour les articles facturés, la confirmation et le relevé de livraison."
+    },
+    {
+      "id": "verification-fiche-6",
+      "kind": "verification",
+      "prompt": "Un prix unitaire plus bas garantit-il un total livré inférieur ?",
+      "answer": "Il faut inclure les quantités, frais et autres conditions."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Une offre expire aujourd’hui, mais la livraison est ambiguë. Quelle suite proposez-vous ?",
+      "answer": "Faire préciser le délai et obtenir une proposition valable avant de décider."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "La confirmation porte sur 48 pièces alors que la commande en prévoit 60. Que faites-vous ?",
+      "answer": "Signaler et faire clarifier l’écart avant de mettre à jour le stock attendu."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "La facture indique 12,20 CHF l’unité et la commande 11,80 CHF. Comment vérifiez-vous ?",
+      "answer": "Contrôler la référence, l’accord valide et les frais séparés, puis transmettre l’écart au service compétent."
+    },
+    {
+      "id": "situation-fiche-4",
+      "kind": "situation",
+      "prompt": "Deux fournisseurs proposent des garanties de service différentes. Comment comparer ?",
+      "answer": "Fixer les exigences éliminatoires, puis comparer coût, délai et service sur un périmètre commun.",
+      "approvedFor": [
+        "CFC"
+      ]
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "2.1.1 Déroulement schématique d'une commande",
+      "file": "log-302-notions-1-v001.svg",
+      "alt": "Demande. Article, quantité, date. Vérification. Offre et confirmation. Exécution. Livraison et facture.",
+      "caption": "Relier chaque document au même dossier.",
+      "sha256": "5938b5206912758a84f8894ecd25fb768cd0922181a771214e87e77e956f97f7",
+      "origin": "Illustration originale Doc-Prof du module 302."
+    },
+    {
+      "anchor": "2.3.1 L'offre",
+      "file": "log-302-notions-2-v001.svg",
+      "alt": "Prix affiché. Prix de la marchandise. Coût livré. Prix plus frais convenus.",
+      "caption": "Le coût livré intègre les frais retenus dans la comparaison.",
+      "sha256": "cbd71f81e47e75f202d80b15b84d3d6b4e11d01d9d8366dc7e3d4448dbe9274e",
+      "origin": "Illustration originale Doc-Prof du module 302."
+    }
+  ]
+}

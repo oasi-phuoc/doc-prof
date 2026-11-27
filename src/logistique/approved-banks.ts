@@ -18,6 +18,9 @@ import { module206 } from './banks/module-206-v001.generated.ts'
 import { module207 } from './banks/module-207-v001.generated.ts'
 import { module208 } from './banks/module-208-v001.generated.ts'
 import { module209 } from './banks/module-209-v001.generated.ts'
+import { module301 } from './banks/module-301-v001.generated.ts'
+import { module302 } from './banks/module-302-v001.generated.ts'
+import { module303 } from './banks/module-303-v001.generated.ts'
 import { module308 } from './banks/module-308-v001.generated.ts'
 import { module613 } from './banks/module-613-v001.generated.ts'
 import { module805 } from './banks/module-805-v001.generated.ts'
@@ -69,6 +72,11 @@ const serviceCommunicationPublication: LogistiquePublication = {
   units: [...serviceOrganisationPublication.units, ...module205, ...module206],
 }
 
+const publication_207_208_209_v001: LogistiquePublication = {
+  revision: 'logistique-207-208-209-v001',
+  units: [...serviceCommunicationPublication.units, ...module207, ...module208, ...module209],
+}
+
 /** Ajouter une publication après validation. Garder les versions utilisées par les recettes. */
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
@@ -110,9 +118,10 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   illustratedPublication,
   serviceOrganisationPublication,
   serviceCommunicationPublication,
+  publication_207_208_209_v001,
   {
-    revision: 'logistique-207-208-209-v001',
-    units: [...serviceCommunicationPublication.units, ...module207, ...module208, ...module209],
+    revision: 'logistique-301-302-303-v001',
+    units: [...publication_207_208_209_v001.units, ...module301, ...module302, ...module303],
   },
 ]
 

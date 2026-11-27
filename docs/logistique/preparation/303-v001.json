@@ -1,0 +1,216 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Relier la réception de marchandises aux bases du **CO** (acheteur, transporteur, dépôt)\n- Expliquer l'acceptation en vente mobilière (**donnant donnant**, comptant, facture)\n- Distinguer réception **planifiée** et **non planifiée** et citer les préparatifs utiles\n- Décrire le rôle d'un **ERP** et les infos de contrôle à l'entrée",
+  "overview": "## Aperçu du module 303\n\n- Préparer un créneau de réception, avec les documents et les moyens nécessaires.\n- Distinguer réception physique, contrôle et disponibilité de la marchandise.\n- Traiter une arrivée imprévue et transmettre les écarts observés.",
+  "replacements": [
+    {
+      "from": "| **Acceptation en tant qu'acheteur** d'un bien mobilier | Approvisionnement | Titre 6e Achat et échange · art. **184–186** (droits/obligations) · art. **187–215** (vente mobilière). Transport international : Convention de Vienne |",
+      "to": "| **Acceptation en tant qu’acheteur** d’un bien mobilier | Approvisionnement | CO, art. 184–215. Vérifier les règles applicables si la vente est internationale. |",
+      "reason": "Précise le champ de la vente internationale et retire la confusion avec le contrat de transport."
+    },
+    {
+      "from": "Règle de base : payer **immédiatement** après réception. Certains fournisseurs accordent 10 jours ou **30 jours**.",
+      "to": "Le paiement suit le contrat et les conditions convenues. Le délai figurant sur la facture est comparé aux conditions d’achat.",
+      "reason": "Distingue modalités de paiement et réception."
+    },
+    {
+      "from": "3. Acheteur confirme la réception → marchandise **acceptée** ; sous sa **garde**, pas encore pleinement en sa **possession** (au sens du paiement)",
+      "to": "3. L’acheteur enregistre la réception et les éventuelles réserves selon la procédure.",
+      "reason": "Évite d’assimiler confirmation et acceptation sans réserve."
+    },
+    {
+      "from": "5. Acheteur paie dans le délai → à partir de là, les marchandises **appartiennent** à l'acheteur",
+      "to": "5. L’acheteur paie selon les conditions applicables. Le paiement ne détermine pas à lui seul le transfert de propriété.",
+      "reason": "Corrige l’assimilation entre paiement et propriété."
+    }
+  ],
+  "summary": [
+    "Préparer un créneau de réception, avec les documents et les moyens nécessaires.",
+    "Distinguer réception physique, contrôle et disponibilité de la marchandise.",
+    "Traiter une arrivée imprévue et transmettre les écarts observés."
+  ],
+  "glossary": [
+    [
+      "Achats",
+      "Service ou activité qui commande les biens et services."
+    ],
+    [
+      "Avis d’arrivée",
+      "Information transmise avant ou lors de l’arrivée d’une livraison."
+    ],
+    [
+      "Bon de livraison",
+      "Liste des articles et quantités déclarés par l’expéditeur."
+    ],
+    [
+      "Contrôle d’entrée",
+      "Vérification effectuée à la réception selon les règles du site."
+    ],
+    [
+      "Créneau",
+      "Plage réservée à une opération."
+    ],
+    [
+      "ERP",
+      "Progiciel qui rattache le mouvement au dossier et au stock."
+    ],
+    [
+      "Écart",
+      "Différence entre valeur attendue et valeur constatée."
+    ],
+    [
+      "Mise à disposition",
+      "Moment où la marchandise devient utilisable selon les contrôles prévus."
+    ],
+    [
+      "Quai",
+      "Zone d’interface entre le véhicule et le dépôt."
+    ],
+    [
+      "Réception",
+      "Prise en charge et contrôle initial d’une livraison."
+    ],
+    [
+      "Réception imprévue",
+      "Arrivée sans créneau ou information suffisante pour la traiter comme prévue."
+    ],
+    [
+      "Stock bloqué",
+      "Marchandise tenue à part avant une décision ou une libération."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Trois fournisseurs livrent 25, 18 et 36 colis. Calculez le total attendu.",
+      "answer": "79 colis.",
+      "calculation": "25 + 18 + 36 = 79."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Sur 72 colis prévus, 69 arrivent. Calculez le manque.",
+      "answer": "Trois colis manquent.",
+      "calculation": "72 − 69 = 3."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Le quai est réservé de 7 h 45 à 9 h. Combien de minutes sont disponibles ?",
+      "answer": "75 minutes.",
+      "calculation": "45 min + 30 min = 75 min."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Le contrôle dure 12 minutes par lot pour six lots. Calculez la durée totale sans interruption.",
+      "answer": "72 minutes.",
+      "calculation": "12 × 6 = 72 min."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Sur 144 colis, 12 restent en contrôle. Calculez la part disponible, au dixième près.",
+      "answer": "91,7 %.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "(144 − 12) ÷ 144 × 100 ≈ 91,7 %."
+    },
+    {
+      "id": "maths-fiche-6",
+      "kind": "maths",
+      "prompt": "Deux créneaux de 70 min sont ouverts. Chaque réception prend 26 min et doit rester dans un créneau. Combien de réceptions planifier ?",
+      "answer": "Quatre réceptions.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "70 ÷ 26 permet 2 réceptions par créneau. 2 × 2 = 4."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quelles informations préparent la réception ?",
+      "answer": "Fournisseur, références, quantité attendue, date, moyens et destination."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Quelle est la différence entre livré et disponible ?",
+      "answer": "Livré décrit l’arrivée. Disponible suppose l’enregistrement et les contrôles requis."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Pourquoi inscrire la quantité constatée ?",
+      "answer": "Pour distinguer l’attendu du réel et documenter l’écart."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Quand une réception est-elle imprévue ?",
+      "answer": "Lorsqu’un créneau ou des informations de livraison manquent à l’arrivée."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Quels flux relie la confirmation de réception ?",
+      "answer": "Le mouvement physique et sa trace dans les documents ou le système."
+    },
+    {
+      "id": "verification-fiche-6",
+      "kind": "verification",
+      "prompt": "Pourquoi vérifier le rôle de l’entreprise avant d’accepter une livraison ?",
+      "answer": "Les tâches et responsabilités diffèrent pour un acheteur, un transporteur ou un dépositaire."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Le véhicule arrive trop tôt et le quai est occupé. Que transmettez-vous ?",
+      "answer": "Confirmer la référence, rappeler le créneau et orienter vers une attente autorisée selon les règles du site."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Vous recevez 18 colis dont deux sont en contrôle qualité. Que saisissez-vous ?",
+      "answer": "Enregistrer 18 reçus et distinguer les deux contrôlés du stock libéré."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "La référence sur le bon diffère de celle de la commande. Que faites-vous ?",
+      "answer": "Vérifier le dossier et l’identification, isoler l’écart selon la procédure et prévenir le responsable."
+    },
+    {
+      "id": "situation-fiche-4",
+      "kind": "situation",
+      "prompt": "Une livraison arrive sans annonce et la zone est pleine. Décrivez la suite.",
+      "answer": "Prévenir le poste compétent, vérifier les documents et convenir d’une prise en charge autorisée."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "3.1 Réception des marchandises",
+      "file": "log-303-notions-1-v001.svg",
+      "alt": "Arrivée. Véhicule et documents. Contrôle. Articles, état et quantité. Statut. Disponible ou bloqué.",
+      "caption": "La réception physique précède la libération prévue par le site.",
+      "sha256": "18ab92df77766bd686e8651831d237cc7b26c662afb5895e246ead40a5b0c15a",
+      "origin": "Illustration originale Doc-Prof du module 303."
+    },
+    {
+      "anchor": "3.3 Réception planifiée et non planifiée",
+      "file": "log-303-notions-2-v001.svg",
+      "alt": "Planifiée. Créneau et zone réservés. Imprévue. Identifier et coordonner.",
+      "caption": "La décision respecte les capacités et les consignes du site.",
+      "sha256": "ac0d69989411e04554a70e3ecea9e9fe58b0651a36e666e737d1030cf0412b0e",
+      "origin": "Illustration originale Doc-Prof du module 303."
+    }
+  ]
+}

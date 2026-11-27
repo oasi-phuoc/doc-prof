@@ -47,10 +47,13 @@ Référence de réalisation dans le [cahier des charges v2.12](cahier-des-charge
 | L2 — Module 902 | Révision `902-v001` active en CFC | Cours original de 40 blocs, schéma de résolution, 22 termes, sept calculs, sept vérifications et six études de cas. Le [cours original](preparation/902-v001.md) et les [données éditoriales](preparation/902-v001.json) distinguent les créations de l’archive EPCAS vide. |
 | L3c et V2.10 — Visuels | Pilote | Le schéma original du degré de transformation est rangé sous `public/assets/logistique/100/105/commun/`. Le [registre du visuel](pilote-105/visuels/registre.json) conserve l’empreinte, la révision et l’éligibilité. |
 | L4 et suivants — Généralisation | À poursuivre | Reprendre les thèmes dans l’ordre du référentiel et mesurer les unités effectivement disponibles par diplôme. Les cibles nominales de banque restent à atteindre. |
+| L4 — Module 301 | Révision `301-v001` active en CFC et AFP | 2 schémas, 12 termes, 6/4 calculs, 6 vérifications et 4/3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 301](preparation/301-v001.json). |
+| L4 — Module 302 | Révision `302-v001` active en CFC et AFP | 2 schémas, 12 termes, 6/4 calculs, 6 vérifications et 4/3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 302](preparation/302-v001.json). |
+| L4 — Module 303 | Révision `303-v001` active en CFC et AFP | 2 schémas, 12 termes, 6/4 calculs, 6 vérifications et 4 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 303](preparation/303-v001.json). |
 
 ## Reprise opérationnelle
 
-1. Les onze modules du thème 100 et les neuf modules du thème 200 disposent des six types en CFC et AFP. Reprendre le thème 300 par le module 301 « La logistique d’approvisionnement », puis le module 302 « L’achat de marchandises ». Le module 308 est déjà actif. Les cibles nominales de contenu et la recette complète restent à atteindre. Partir des [archives par thème](sources-epcas/), préparer les six types et vérifier visuels et composition ensemble avant publication.
+1. Les onze modules du thème 100 et les neuf modules du thème 200 disposent des six types en CFC et AFP. Poursuivre le thème 300 avec les modules 304 à 307 et 309 à 312. Les modules 301 à 303 et 308 sont actifs. Les cibles nominales de contenu et la recette complète restent à atteindre. Partir des [archives par thème](sources-epcas/), préparer les six types et vérifier visuels et composition ensemble avant publication.
 2. Vérifier les corrigés, la place du contenu dans le référentiel, les écarts AFP/CFC et les dépendances à des médias écartés.
 3. Enregistrer une révision de banque et la conserver pour les recettes déjà créées. Les changements de fond du 105 sont consignés dans les [données de préparation](pilote-105/preparation.generated.json) et dans le [dossier éditorial](pilote-105/relecture.md).
 4. Vérifier dans les deux diplômes le nombre d’unités disponibles, la génération, le corrigé, l’impression et la réouverture. Reporter dans ce fichier les preuves, les écarts et le prochain module retenu.
@@ -64,6 +67,12 @@ Référence de réalisation dans le [cahier des charges v2.12](cahier-des-charge
 - `npm run test:logistique` et `npm run test:logistique:browser` vérifient le catalogue, l’éligibilité, le gabarit et les recettes.
 
 ## Résultats de recette
+
+### Thèmes 300 à 600 — Publications
+
+- Modules 301 à 303, soit 36 contextes module, diplôme et type vérifiés en Chromium A4. Réserve minimale au pied de 79,64 px. Les aperçus occupent une page, les cours illustrés produisent un PDF et les suites de calcul gardent les numéros.
+
+- La recette du 302 a révélé que quatre problèmes courts pouvaient dépasser la réserve. Le calcul de pagination compte désormais la hauteur minimale du bloc de calcul. La suite de génération passe six tests.
 
 ### Thème 200 — Déploiement du 27 novembre
 

@@ -53,7 +53,11 @@ function height(item: MathItem, a5: boolean, scale: number): number {
   if (item.theoryBlock) return theoryHeight(item.theoryBlock, width, scale)
   const prompt = lineCount(item.prompt ?? '', width * 1.2) * 24 * scale
   const answer = lineCount(item.answer, width * 0.84) * 27 * scale
-  if (item.calcAnswer) return (a5 ? 145 : 174) + prompt + answer
+  if (item.calcAnswer) {
+    // Même un énoncé court conserve la grille, le trait et leurs espacements.
+    const minimum = (a5 ? 183 : 240) + (scale - 1) * 56
+    return Math.max(minimum, (a5 ? 145 : 174) + prompt + answer)
+  }
   return 48 + prompt + answer + (item.options?.length ?? 0) * 22 * scale
 }
 

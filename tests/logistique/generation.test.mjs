@@ -104,3 +104,10 @@ test('les questions restent dans l’ordre et partagent les pages sauf saut manu
   assert.deepEqual(withBreak[0].items, items.slice(0, 1))
   assert.deepEqual(withBreak.flatMap((sheet) => sheet.items), items)
 })
+
+test('les problèmes courts gardent chacun la place de leur grille et de la réponse', () => {
+  const items = Array.from({ length: 6 }, () => ({ layout: 'text', prompt: 'Calculez 2 + 3.', answer: '5', calcAnswer: '2 + 3 = 5' }))
+  const block = { title: 'Exercice 1', items, exerciseIndex: 1, exerciseType: 'log-cfc-302-maths' }
+  const pages = splitLogistiquePages({ blocks: [block], items })
+  assert.deepEqual(pages.map((page) => page.items.length), [2, 2, 2])
+})
