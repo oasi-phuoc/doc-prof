@@ -10,12 +10,12 @@ const tinyPng = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAAFEl
 
 async function open(context, data) {
   const page = await context.newPage()
-  await page.addInitScript(({ printCorrections = false, sheetFormat, ...pageConfig }) => history.replaceState({
+  await page.addInitScript(({ printCorrections = false, evalMode = false, sheetFormat, ...pageConfig }) => history.replaceState({
     ...history.state,
     clairfleFiche: {
       id: 'native-fixture', name: 'Activité témoin',
       recipe: {
-        version: 1, seed: 20261127, institutional: {}, evalMode: false, pointsPerQuestion: 1,
+        version: 1, seed: 20261127, institutional: {}, evalMode, pointsPerQuestion: 1,
         libreMode: false, libreSnapshot: null, printCorrections, sheetFormat,
         pages: [{ difficulty: 'moyen', count: 2, columns: 1, ...pageConfig }],
       },
@@ -607,13 +607,73 @@ try {
   assert(measurements.every((reserve) => reserve >= 25), JSON.stringify(measurements))
   await referenceA5.close()
 
+  const mathTheory = await open(context, {
+    domain: 'algèbre', topic: 'addition', exerciseType: 'math-theorie-addition',
+  })
+  await toggleLive(mathTheory)
+  const mathTheoryEditor = mathTheory.locator('#activity-editor').getByLabel('Contenu de la théorie', { exact: true })
+  const lesson = preview(mathTheory).locator('.math-theory-lesson')
+  assert.equal(await mathTheory.locator('.tpm-libre-editor').count(), 0)
+  await mathTheoryEditor.getByRole('textbox', { name: 'Titre', exact: true }).fill('Réunir deux quantités')
+  assert.equal(await lesson.locator('h3').innerText(), 'Réunir deux quantités')
+  await mathTheoryEditor.getByRole('textbox', { name: 'Définition 1', exact: true }).fill('On regroupe.')
+  assert.equal(await lesson.locator('dd').first().innerText(), 'On regroupe.')
+  await mathTheoryEditor.getByRole('textbox', { name: 'Exemple', exact: true }).fill('8 + 5 = 13.')
+  await mathTheoryEditor.getByRole('checkbox', { name: 'Afficher le schéma' }).uncheck()
+  assert.equal(await lesson.locator('img').count(), 0)
+  assert.equal(await lesson.locator('.math-theory-example').innerText(), '8 + 5 = 13.')
+  await button(mathTheory, 'Annuler').click()
+  assert.equal(await lesson.locator('figcaption').innerText(), '8 + 5 = 13.')
+  const initialVisual = await lesson.locator('img').getAttribute('src')
+  await mathTheoryEditor.locator('.tcf-image-field input[type=file]').setInputFiles({
+    name: 'schema.png', mimeType: 'image/png', buffer: tinyPng,
+  })
+  await lesson.locator('img[src^="data:image/"]').waitFor()
+  await button(mathTheoryEditor, 'Rétablir le schéma d’origine').click()
+  assert.equal(await lesson.locator('img').getAttribute('src'), initialVisual)
+  await button(mathTheory, 'Fermer le mode libre').click()
+  assert.equal(await lesson.locator('h3').innerText(), 'Réunir deux quantités')
+  assert.match(await mathTheory.locator('.print-only-sheets .math-theory-lesson').first().textContent(), /8 \+ 5 = 13\./)
+  await mathTheory.close()
+
+  const mathGlossary = await open(context, {
+    domain: 'géométrie', topic: 'glossaire-geometrie', exerciseType: 'glossaire-geometrie-mots', evalMode: true,
+  })
+  assert.equal(await button(mathGlossary, 'Niveau').count(), 0)
+  assert.equal(await mathGlossary.getByRole('spinbutton', { name: /Points par question/ }).count(), 0)
+  assert.equal(await mathGlossary.getByRole('spinbutton', { name: 'Nombre de notions' }).inputValue(), '2')
+  await toggleLive(mathGlossary)
+  const mathGlossaryEditor = mathGlossary.locator('#activity-editor')
+  const cards = preview(mathGlossary).locator('.glossary-card')
+  const term = mathGlossaryEditor.getByRole('textbox', { name: 'Notion', exact: true }).first()
+  const second = await cards.nth(1).locator('.glossary-term').innerText()
+  await term.fill('Notion de géométrie')
+  await mathGlossaryEditor.getByRole('textbox', { name: 'Définition', exact: true }).first().fill('Une définition personnalisée.')
+  await mathGlossaryEditor.getByRole('textbox', { name: 'Exemple', exact: true }).first().fill('Exemple sur le quadrillage.')
+  await button(mathGlossaryEditor, 'Schéma').click()
+  await mathGlossaryEditor.getByRole('option', { name: 'Sans schéma', exact: true }).click()
+  assert.equal(await cards.first().locator('.glossary-figure').count(), 0)
+  assert.match(await cards.first().innerText(), /Notion de géométrie.*Une définition personnalisée.*Exemple sur le quadrillage/s)
+  await button(mathGlossaryEditor, 'Descendre la notion Notion de géométrie').click()
+  assert.deepEqual(await cards.locator('.glossary-term').allTextContents(), [second, 'Notion de géométrie'])
+  const count = mathGlossaryEditor.getByRole('spinbutton', { name: 'Nombre de notions' })
+  await count.fill('3')
+  const terms = await cards.locator('.glossary-term').allTextContents()
+  assert.equal(terms.length, 3)
+  assert.equal(new Set(terms).size, 3)
+  assert.deepEqual(terms.slice(0, 2), [second, 'Notion de géométrie'])
+  await button(mathGlossary, 'Annuler').click()
+  assert.deepEqual(await cards.locator('.glossary-term').allTextContents(), [second, 'Notion de géométrie'])
+  assert.match(await mathGlossary.locator('.print-only-sheets .glossary-card').nth(1).textContent(), /Exemple sur le quadrillage/)
+  await mathGlossary.close()
+
   const unavailable = await open(context, {
     domain: 'soutien-fr', topic: 'soutien-consonnes-iii', exerciseType: 'soutien-x-gz-associer-image',
   })
   await unavailable.getByText('Aucun contenu disponible pour cette activité.', { exact: true }).waitFor()
   assert(await button(unavailable, 'Enregistrer').isDisabled())
   await context.close()
-  console.log('Calligraphie, cartes, Gattegno, mots illustrés, mots à compléter, Grammaire, Société, Logistique AFP/CFC et activité indisponible testés.')
+  console.log('Calligraphie, cartes, Gattegno, mots illustrés, mots à compléter, Grammaire, Société, Logistique AFP/CFC, leçons et glossaires de maths et activité indisponible testés.')
 } finally {
   await browser?.close()
   await server?.close()

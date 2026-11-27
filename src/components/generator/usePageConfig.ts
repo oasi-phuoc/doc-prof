@@ -33,6 +33,7 @@ import {
   isTransformationExercise,
 } from '@/math/coord-transformations'
 import { buildPage } from '@/math/generate'
+import { mathGlossaryBank } from '@/math/glossary-banks'
 import { createRng } from '@/math/rng'
 import { parseAlphaType } from '@/alphabetisation/kinds'
 import { parseSoutienType } from '@/francais/soutien/kinds'
@@ -198,7 +199,8 @@ export function usePageConfig({
       patch = { ...patch, grammarSnapshot: snapshot,
         grammarPageBreakAfterQuestionIds: activeBlock.grammarPageBreakAfterQuestionIds?.filter((id) => cutIds.has(id)) }
     }
-    const resizesAppliedItems = inlineArithmetic || editorProfile === 'question-simple' ||
+    const glossaryBank = mathGlossaryBank(activeBlock.exerciseType)
+    const resizesAppliedItems = glossaryBank || inlineArithmetic || editorProfile === 'question-simple' ||
       editorProfile === 'logique-visuelle' || editorProfile === 'mots-dans-l-ordre'
     if (resizesAppliedItems && count != null && patch.libreItems === undefined) {
       const lists = [activeBlock.libreItems ?? [], (doubleA5 ? activeBlock.a5RightLibre?.items : undefined) ?? []]
@@ -208,7 +210,8 @@ export function usePageConfig({
         return
       }
       if (lists.some((items) => count < items.length) &&
-        !window.confirm('Retirer les dernières questions déverrouillées de cette activité ?')) return
+        !window.confirm(glossaryBank ? 'Retirer les dernières notions de ce glossaire ?' :
+          'Retirer les dernières questions déverrouillées de cette activité ?')) return
     }
 
     setPages((current) =>
@@ -301,8 +304,15 @@ export function usePageConfig({
           function resize(items: MathItem[], localSeed: number, id?: string) {
             const kept = trimUnlockedItems(items, fixed.count)
             if (kept.length < fixed.count) {
-              const generated = buildPage(config, baseSeed + localSeed, 1, seed).items
-              kept.push(...generated.slice(kept.length, fixed.count))
+              if (glossaryBank) {
+                const sourceIds = new Set(kept.map(({ glossary }) => glossary?.sourceId ??
+                  glossaryBank.find(({ term }) => term === glossary?.term)?.id))
+                const generated = buildPage({ ...config, count: glossaryBank.length }, baseSeed + localSeed, 1, seed).items
+                kept.push(...generated.filter(({ glossary }) => !sourceIds.has(glossary?.sourceId)).slice(0, fixed.count - kept.length))
+              } else {
+                const generated = buildPage(config, baseSeed + localSeed, 1, seed).items
+                kept.push(...generated.slice(kept.length, fixed.count))
+              }
             }
             return id ? identifyItems(kept, id) : kept
           }

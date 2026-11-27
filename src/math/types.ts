@@ -535,9 +535,11 @@ export type MathItem = {
   theoryPageBreakAfter?: boolean
   /** Entrée de glossaire maths (mot + définition + schéma). */
   glossary?: {
+    sourceId?: string
     term: string
     definition: string
     figure: string
+    example?: string
   }
   /** Mode de réponse orale : QCM texte, trait libre, ou QCM images. */
   answerMode?: 'qcm' | 'text' | 'images'

@@ -1,4 +1,5 @@
 import { mathTheoryTopic } from '@/math/theory-lessons'
+import { mathGlossaryBank } from '@/math/glossary-banks'
 import { isLogistiqueReferenceType, logistiquePresentationFor, logistiqueType } from '@/logistique/catalog'
 import { isLogistiqueTablePresentation } from '@/logistique/tables'
 import { logistiqueHasSummary, logistiqueModuleCapacities } from '@/logistique/generate'
@@ -205,6 +206,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
     : null
   const hideTcmCscColumns = activeBlock.exerciseType.startsWith('tcm-csc-') && !['tcm-csc-ex07', 'tcm-csc-ex10', 'tcm-csc-ex11'].includes(activeBlock.exerciseType)
   const grammarSituations=activeBlock.grammarPresentation==='scenario-set'
+  const isMathGlossary = Boolean(mathGlossaryBank(activeBlock.exerciseType))
   const sheetBlock = activeSheet?.blocks.find((block, index) => (block.sourceBlockIndex ?? index) === safeBlockIndex)
   const sheetItems = sheetBlock?.items ?? []
   const hasOuterColumns = sheetItems.length > 1 &&
@@ -294,7 +296,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                         ? 'Lignes'
                         : isSoutienMotsCount
                           ? 'Mots'
-                          : 'QUESTIONS'}
+                          : isMathGlossary ? 'Notions' : 'QUESTIONS'}
                 </span>
                 <input
                   className={`pill-input${questionsInputOverflow ? ' is-overflow' : ''}`}
@@ -303,7 +305,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                       ? 'Nombre de lignes'
                       : isSoutienMotsCount
                         ? 'Nombre de mots'
-                        : 'Nombre de questions'
+                        : isMathGlossary ? 'Nombre de notions' : 'Nombre de questions'
                   }
                   aria-invalid={questionsInputOverflow}
                   title={

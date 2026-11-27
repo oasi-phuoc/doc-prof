@@ -23,7 +23,7 @@ import { generateTransformations, isTransformationExercise } from './coord-trans
 import { tryGenerateSoutienBatch } from '@/francais/soutien/generate'
 import { parseSoutienType } from '@/francais/soutien/kinds'
 import { parseAlphaType } from '@/alphabetisation/kinds'
-import { ALGEBRA_GLOSSARY, GEOMETRY_GLOSSARY } from './glossary-banks'
+import { mathGlossaryBank } from './glossary-banks'
 import { tryGenerateAlphabetisationBatch } from '@/alphabetisation/generate'
 import { tryGenerateLectureBatch } from '@/francais/lecture'
 import { tryGeneratePhraseBatch } from '@/francais/phrase'
@@ -225,10 +225,10 @@ function buildSingleBlock(
     const tr = generateTransformations(config, rng)
     return { title: fallbackTitle, instruction: tr.instruction, items: tr.items }
   }
-  if (config.exerciseType === 'glossaire-algebre-mots' || config.exerciseType === 'glossaire-geometrie-mots') {
-    const bank = config.exerciseType === 'glossaire-algebre-mots' ? ALGEBRA_GLOSSARY : GEOMETRY_GLOSSARY
-    const count = Math.max(1, Math.min(config.count || 8, bank.length))
-    const picked = shuffle(rng, [...bank]).slice(0, count)
+  const glossaryBank = mathGlossaryBank(config.exerciseType)
+  if (glossaryBank) {
+    const count = Math.max(1, Math.min(config.count || 8, glossaryBank.length))
+    const picked = shuffle(rng, [...glossaryBank]).slice(0, count)
     return {
       title: fallbackTitle,
       instruction: type?.instruction ?? 'Lisez chaque mot, sa définition et le schéma.',
@@ -236,10 +236,12 @@ function buildSingleBlock(
         layout: 'glossary' as const,
         prompt: entry.term,
         glossary: {
+          sourceId: entry.id,
           term: entry.term,
           definition: entry.definition,
           figure: entry.figure,
         },
+        noPoints: true,
         answer: entry.definition,
       })),
     }
@@ -467,9 +469,15 @@ export function buildPage(
     }
     const rawItems = isLogistiqueDomain(page.domain) && result.items.length === 0 ? result.items : (libre?.items ?? result.items)
     const logistics = logistiqueType(block.exerciseType)
+    const glossaryBank = mathGlossaryBank(block.exerciseType)
     const items = rawItems.map((item) => {
       const clean = sanitizeItemNumberNoise(item as Record<string, unknown>) as MathItem
       if (logistics?.kind === 'glossaire' && !clean.logistiqueGlossaryEntry) return completeLogistiqueGlossaryItem(clean, logistics.module)
+      if (glossaryBank && clean.glossary) {
+        const entry = clean.glossary
+        const sourceId = entry.sourceId ?? glossaryBank.find(({ term }) => term === entry.term)?.id
+        return { ...clean, glossary: { ...entry, sourceId }, noPoints: true }
+      }
       return block.tcfCeTextFont && clean.tcf?.kind === 'support' && clean.tcf.exercise.competence === 'CE'
         ? { ...clean, tcf: { ...clean.tcf, ceTextFont: block.tcfCeTextFont } }
         : clean

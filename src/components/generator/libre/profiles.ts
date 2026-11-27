@@ -11,6 +11,7 @@ import { logistiqueType, isLogistiqueReferenceType } from '@/logistique/catalog'
 import { isSocieteType } from '@/societe/types'
 import { isLogiqueType } from '@/logique/types'
 import { isReperageConstruire, isReperageDroites } from '@/math/coord-reperage'
+import { isMathReferenceType } from '@/math/theory-lessons'
 import type { Domain } from '@/math/types'
 import type { SheetFormat } from '../sheet-format'
 
@@ -51,6 +52,7 @@ export function liveEditorProfile(domain: Domain, exerciseType: string, format: 
     domain === 'tcm-csc' && ['tcm-csc-ex04', 'tcm-csc-ex05'].includes(exerciseType)) return 'suite-numerique'
   const logistics = logistiqueType(exerciseType)
   if (domain === 'grammaire' && isGrammaireTheoryType(exerciseType) ||
+    (domain === 'algèbre' || domain === 'géométrie') && isMathReferenceType(exerciseType) ||
     domain === 'société' && exerciseType.startsWith('societe-suisse-theorie-') ||
     logistics?.domain === domain && isLogistiqueReferenceType(exerciseType)) return 'theorie'
   if (domain === 'logique' && isLogiqueType(exerciseType)) return 'logique-visuelle'

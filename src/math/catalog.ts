@@ -1,4 +1,5 @@
 import { MATH_THEORY_PREFIX, mathTheoryLessons } from './theory-lessons'
+import { ALGEBRA_GLOSSARY, GEOMETRY_GLOSSARY } from './glossary-banks'
 import { PHRASE_THEME_DEFS } from '@/francais/phrase-themes'
 import type { Difficulty, Domain, ExerciseType, FrenchTrack, Topic } from './types'
 import {
@@ -788,8 +789,8 @@ export const exerciseTypes: ExerciseType[] = [
       preferredColumns: 1, preferredCount: 1, maxCount: 1, supportsNumberRange: false,
     }),
   ),
-  t('glossaire-algebre-mots', 'glossaire-algebre', 'Mots du glossaire', 'Définitions et schémas des termes d’algèbre (opérations, nombres…).', 'Lisez chaque mot, sa définition et le schéma.', 'texte', { preferredColumns: 2 }),
-  t('glossaire-geometrie-mots', 'glossaire-geometrie', 'Mots du glossaire', 'Définitions et schémas des termes de géométrie (droite, segment, angle…).', 'Lisez chaque mot, sa définition et le schéma.', 'texte', { preferredColumns: 2 }),
+  t('glossaire-algebre-mots', 'glossaire-algebre', 'Mots du glossaire', 'Définitions et schémas des termes d’algèbre (opérations, nombres…).', 'Lisez chaque mot, sa définition et son éventuel schéma.', 'texte', { preferredColumns: 2, maxCount: ALGEBRA_GLOSSARY.length }),
+  t('glossaire-geometrie-mots', 'glossaire-geometrie', 'Mots du glossaire', 'Définitions et schémas des termes de géométrie (droite, segment, angle…).', 'Lisez chaque mot, sa définition et son éventuel schéma.', 'texte', { preferredColumns: 2, maxCount: GEOMETRY_GLOSSARY.length }),
 
   // —— Alphabétisation (ex-Lecture) ——
   ...ALPHABETISATION_EXERCISE_TYPES,

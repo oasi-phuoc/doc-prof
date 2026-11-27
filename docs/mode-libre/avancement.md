@@ -25,7 +25,7 @@ Dans Chrome, la recette du site de production a vérifié la connexion administr
 | L0 — Inventaire exécutable | En cours | Référence de reprise `561d0a0`. [4 086 contextes](audit-types.md), [13 comparaisons écran et PDF](audit-controles.md) et [7 recettes témoins](audit-recettes.md). La reprise `03ec309` porte l’inventaire à 4 141 contextes. Les 15 erreurs de génération observées sont corrigées. Cinq variantes produisent zéro unité. Poursuivre les vérifications des profils, des droits individuels et des effets des réglages. |
 | L1 — Générateur et contrats d’état | En cours | Panneau unique, géométrie, listes identifiées et verrous vérifiés sur l’Algèbre. Historique et reprise locale par compte et par fiche. Étendre les preuves aux autres profils et aux droits individuels. |
 | L2 — Pilotes | En cours | Calcul en ligne, CE avec support commun et CO 1 avec QCM illustrés. Édition et correction testées sur les trois pilotes. Étendre les preuves de reprise et de verrouillage par forme. |
-| L3 — Mathématiques et tests | En cours | Calculs en ligne, opérations posées, conversions, repérage, comparaison, tri et choix dans la banque de Logique. Raccorder les autres familles mathématiques et les activités restantes des évaluations TPM / TCM. |
+| L3 — Mathématiques et tests | En cours | Calculs en ligne, opérations posées, conversions, repérage, comparaison, tri, leçons et glossaires de mathématiques, choix dans la banque de Logique. Raccorder les autres familles mathématiques et les activités restantes des évaluations TPM / TCM. |
 | L4 — Autres profils imprimables | En cours | Calligraphie, cartes, variantes Gattegno équipées de leur éditeur, mots illustrés et à compléter, grilles et découpage syllabiques, dictées et lecture de phrases de Soutien FR. Poursuivre les listes et associations restantes. |
 | L5 — Grammaire et TCF/TPF | En cours | Théorie et édition de données des dix présentations graduées. CE, CO, PE et PO raccordées en A4. Poursuivre les profils historiques de grammaire, les médias et verrous des activités graduées et la preuve de chaque forme et barème TCF/TPF. |
 | L6 — Société et Logistique AFP/CFC | En cours | Édition des références structurées en A4 et double A5. Édition indépendante des questions simples sur les deux moitiés. Poursuivre les formats structurés, les activités mixtes et la mesure papier sur les autres modules. |
@@ -43,6 +43,12 @@ En mode simple, une liste à une seule valeur disparaît et les réglages de qua
 `tests/mode-libre/layout-browser.mjs` couvre huit largeurs en A4 et deux en double A5, de 320 à 1 920 px. Le parcours vérifie le maintien du panneau, la visibilité des réglages selon l’activité, l’application des options d’impression et d’en-tête et leur annulation. `tests/mode-libre/structured-browser.mjs` vérifie aussi les sauts de page et l’import d’images initiés dans le panneau.
 
 L’inventaire de la version intégrée `e500ef9e` compte 4 272 contextes, dont 4 233 générables avec les pilotes, 36 masqués et trois domaines en attente de contenu. Il compte 852 contextes générables à raccorder en A4 et 2 134 en double A5. Les suites unitaires de métadonnées, de génération et de droits totalisent 47 réussites. Les dix recettes témoins conservent le contenu et les données libres après réouverture.
+
+### Références mathématiques en A4
+
+Les 23 leçons et les deux glossaires d’algèbre et de géométrie utilisent le panneau Libre. Les leçons exposent le titre, l’objectif, le vocabulaire, les étapes, l’exemple et le schéma. Le glossaire permet de modifier les notions, leurs définitions, les exemples, les schémas et l’ordre. La quantité de notions est bornée par la banque et conserve les entrées personnalisées. Les fiches de référence ne portent pas de barème et les options de difficulté sont masquées.
+
+Le scénario `tests/mode-libre/native-browser.mjs` vérifie sur la leçon d’addition et le glossaire de géométrie la mise à jour de la fiche, l’import et le rétablissement du schéma, l’annulation, la quantité et le contenu destiné à l’impression.
 
 ## Panneau unique et addition A4
 

@@ -11,16 +11,20 @@ export function MathTheoryView({ lesson }: { lesson: NonNullable<MathItem['mathT
     <article className="math-theory-lesson">
       <h3>{lesson.title}</h3>
       <p className="math-theory-goal">{lesson.goal}</p>
-      <figure>
-        <img src={visuals[`../../math/media/theory/${lesson.topic}.png`]} alt={lesson.visualAlt} />
-        <figcaption>{lesson.example}</figcaption>
-      </figure>
+      {lesson.hideVisual ? (
+        <p className="math-theory-example">{lesson.example}</p>
+      ) : (
+        <figure>
+          <img src={lesson.visualSrc || visuals[`../../math/media/theory/${lesson.topic}.png`]} alt={lesson.visualAlt} />
+          <figcaption>{lesson.example}</figcaption>
+        </figure>
+      )}
       <div className="math-theory-sections">
         <section>
           <h4>Les mots</h4>
           <dl>
-            {lesson.words.map(([word, definition]) => (
-              <div key={word}><dt>{word}</dt><dd>{definition}</dd></div>
+            {lesson.words.map(([word, definition], index) => (
+              <div key={index}><dt>{word}</dt><dd>{definition}</dd></div>
             ))}
           </dl>
         </section>

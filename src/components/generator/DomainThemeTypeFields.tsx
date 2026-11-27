@@ -1,6 +1,6 @@
 import { isWordVocabType } from '@/grammaire/exercises/word-vocab'
 import { grammarCoStatements } from '@/grammaire/exercises/co-true-false'
-import { mathTheoryTopic } from '@/math/theory-lessons'
+import { isMathReferenceType } from '@/math/theory-lessons'
 import { isMathProblemHelpType } from '@/math/problem-help'
 import { grammarOrderHasSentenceFilters } from '@/grammaire/curriculum/types'
 import { TcfCeFormatControl, TcfCeTextFontControl } from './TcfCeFormatControl'
@@ -402,7 +402,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                 onChange={(value) => {
                   const type = exerciseTypeById[value]
                   if (!type || value === activeBlock.exerciseType) return
-                  if (logisticsDomain && activeBlock.libreItems?.length &&
+                  if ((logisticsDomain || isMathReferenceType(activeBlock.exerciseType)) && activeBlock.libreItems?.length &&
                       !window.confirm('Changer de type remplacera les modifications de cette activité. Continuer ?')) return
                   if (
                     (isReperageFormes(value) && isReperageFormes(activeBlock.exerciseType)) ||
@@ -546,7 +546,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
               isCalliDomain ||
               isVocabLearn ||
               isGramTheory ||
-              mathTheoryTopic(activeBlock.exerciseType) ||
+              isMathReferenceType(activeBlock.exerciseType) ||
               isGrammaireDomain ||
               logisticsDomain ||
               isLogique ||

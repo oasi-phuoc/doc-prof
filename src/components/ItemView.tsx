@@ -370,13 +370,16 @@ export function ItemView({
           item.mathTheory ? <MathTheoryView lesson={item.mathTheory} /> : <TheoryBlockView item={item} />
         )}
         {item.layout === 'glossary' && item.glossary ? (
-          <div className="glossary-card">
-            <div className="glossary-figure-wrap">
-              <GlossaryFigure id={item.glossary.figure as GlossaryFigureId} />
-            </div>
+          <div className={item.glossary.figure ? 'glossary-card' : 'glossary-card without-figure'}>
+            {item.glossary.figure && (
+              <div className="glossary-figure-wrap">
+                <GlossaryFigure id={item.glossary.figure as GlossaryFigureId} />
+              </div>
+            )}
             <div className="glossary-text">
               <p className="glossary-term">{item.glossary.term}</p>
               <p className="glossary-definition">{item.glossary.definition}</p>
+              {item.glossary.example && <p className="glossary-example">{item.glossary.example}</p>}
             </div>
           </div>
         ) : null}

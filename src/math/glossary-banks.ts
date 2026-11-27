@@ -94,3 +94,9 @@ export const GEOMETRY_GLOSSARY: GlossaryEntry[] = [
   { id: 'axe-symetrie', term: 'Axe de symétrie', definition: 'Droite qui partage une figure en deux parties qui se superposent par pliage.', figure: 'axe-symetrie' },
   { id: 'polygone', term: 'Polygone', definition: 'Figure fermée formée de segments de droite (côtés).', figure: 'carre' },
 ]
+
+export function mathGlossaryBank(typeId: string): readonly GlossaryEntry[] | undefined {
+  if (typeId === 'glossaire-algebre-mots') return ALGEBRA_GLOSSARY
+  if (typeId === 'glossaire-geometrie-mots') return GEOMETRY_GLOSSARY
+  return undefined
+}

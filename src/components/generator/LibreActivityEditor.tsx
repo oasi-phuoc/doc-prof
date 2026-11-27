@@ -219,7 +219,7 @@ export function LibreActivityEditor({
         </div>
       )}
       {theory ? (
-        <TheoryEditor items={theory.items} onChange={(libreItems) => updatePage({ libreItems })} />
+        <TheoryEditor exerciseType={activeBlock.exerciseType} items={theory.items} onChange={(libreItems) => updatePage({ libreItems })} />
       ) : null}
       {wordListContent?.items.length ? (
         <LetterGridEditor items={wordListContent.items} instruction={wordListContent.instruction}
@@ -304,7 +304,7 @@ export function LibreActivityEditor({
             : { phraseInstruction })}
         />
       ) : null}
-      {(isNumberLibreDomain || isTpmLike) && !isDroites && !isConstruire ? (
+      {!theory && (isNumberLibreDomain || isTpmLike) && !isDroites && !isConstruire ? (
         <TpmLibreEditor
           key={editedActivityId}
           liveArithmetic={liveArithmetic}

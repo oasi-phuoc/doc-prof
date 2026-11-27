@@ -1,3 +1,5 @@
+import { mathGlossaryBank } from './glossary-banks'
+
 export type MathTheoryLesson = {
   title: string
   goal: string
@@ -5,6 +7,8 @@ export type MathTheoryLesson = {
   steps: string[]
   example: string
   visualAlt: string
+  visualSrc?: string
+  hideVisual?: boolean
 }
 
 export const mathTheoryLessons: Record<string, MathTheoryLesson> = {
@@ -200,4 +204,8 @@ export function mathTheoryTopic(typeId: string): string | undefined {
   if (!typeId.startsWith(MATH_THEORY_PREFIX)) return undefined
   const topic = typeId.slice(MATH_THEORY_PREFIX.length)
   return Object.hasOwn(mathTheoryLessons, topic) ? topic : undefined
+}
+
+export function isMathReferenceType(typeId: string): boolean {
+  return Boolean(mathTheoryTopic(typeId) || mathGlossaryBank(typeId))
 }
