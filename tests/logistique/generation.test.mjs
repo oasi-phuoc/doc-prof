@@ -47,8 +47,6 @@ test('les références actives séparent objectifs, aperçu et théorie illustr�
     const introPage = config(type.diploma, type.module, 'objectifs-apercu')
     const theory = generateLogistique(theoryPage, 7).items.map((item) => item.theoryBlock)
     const intro = generateLogistique(introPage, 7).items.map((item) => item.theoryBlock)
-    assert.equal(Boolean(theory.length), Boolean(intro.length), type.id)
-    if (!theory.length) continue
     assert.equal(validLogistiquePages(freezeLogistiquePages([introPage])), true, type.id)
     assert(intro.some((block) => block.kind === 'heading' && /^Objectifs/.test(block.text)), type.id)
     assert(intro.some((block) => block.kind === 'heading' && /^Aperçu/.test(block.text)), type.id)
@@ -61,14 +59,22 @@ test('les références actives séparent objectifs, aperçu et théorie illustr�
   assert.equal(generateLogistique(historical, 7).items.length, 98)
 })
 
-test('les quatre thèmes 300 à 600 génèrent chaque type pour les diplômes du catalogue', () => {
-  const requiredThemes = new Set(['300', '400', '500', '600'])
-  const types = catalog.logistiqueTypes.filter(({ module }) => requiredThemes.has(module[0] + '00'))
-  assert.equal(types.length, 480)
-  for (const type of types) {
+test('les 858 types des modules CFC et AFP disposent de contenu à générer', () => {
+  for (const type of catalog.logistiqueTypes) {
     const page = config(type.diploma, type.module, type.kind)
     assert(generateLogistique(page, 20261127).items.length > 0, type.id)
   }
+})
+
+test('les nouvelles publications conservent le tirage des recettes du thème 600', () => {
+  const page = { ...config('AFP', '616', 'maths'), count: 6 }
+  const historical = { ...page, logistiqueBankRevision: 'logistique-614-615-616-v001' }
+  const previous = generateLogistique(historical, 20261127)
+  assert(previous.items.length > 0)
+  assert.deepEqual(generateLogistique(page, 20261127), previous)
+  assert.deepEqual(generateLogistique({
+    ...config('CFC', '901', 'maths'), logistiqueBankRevision: historical.logistiqueBankRevision,
+  }, 20261127).items, [])
 })
 
 test('le tirage est déterministe et limité aux unités approuvées pour le diplôme', () => {

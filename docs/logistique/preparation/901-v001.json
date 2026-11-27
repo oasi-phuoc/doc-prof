@@ -1,0 +1,212 @@
+{
+  "diplomas": [
+    "CFC"
+  ],
+  "objectives": "## Objectifs\n\n- Citer les **4 phases** de gestion d'un projet logistique et le lien avec le PDCA\n- Expliquer les **objectifs / résultats** et les types de **faisabilité**\n- Décrire les principes d'une bonne **planification** et d'une **exécution** maîtrisée\n- Justifier l'importance de l'**évaluation** finale (théorie ↔ réalité, FICO)",
+  "overview": "## Aperçu du module 901\n\n- Cadrer un projet logistique et comparer les solutions selon leur faisabilité.\n- Construire un planning avec des dépendances, des responsables et une marge.\n- Suivre les écarts, puis comparer délais, coûts et résultats pour tirer des enseignements.",
+  "replacements": [
+    {
+      "from": "Activités sur un **axe temporel** : qui · quel matériel · quand. Planning **simple, clair, lisible** · marge de sécurité (réserve horaire). Bonne planification = clé du succès.",
+      "to": "Inscrire les activités sur un calendrier avec durée, responsable, ressources, dépendances et critères de fin. Repérer les tâches qui fixent le délai du projet, puis prévoir une réserve adaptée aux risques.",
+      "reason": "Expliquer le chemin critique et l'usage de la marge."
+    },
+    {
+      "from": "> « Attends-toi à l'inattendu, et rien ne pourra jamais te surprendre. »",
+      "to": "**Exemple** : après un diagnostic de 2 jours, une installation de 6 jours et une formation de 4 jours peuvent se dérouler en parallèle. Le contrôle de 2 jours attend les deux. La durée minimale de ce planning est de 10 jours.",
+      "reason": "Remplacer l'aphorisme par une lecture de planning."
+    },
+    {
+      "from": "Évaluation avec **FICO** · présentée au supérieur / direction. Idéal : planning = résultat, ou mieux que prévu.",
+      "to": "Comparer le coût réel au budget sur un périmètre identique, avec l'appui de FICO. Présenter au mandant les résultats, les écarts, leurs causes et les actions à suivre.",
+      "reason": "Préciser les livrables du bilan."
+    }
+  ],
+  "summary": [
+    "Cadrer un projet logistique et comparer les solutions selon leur faisabilité.",
+    "Construire un planning avec des dépendances, des responsables et une marge.",
+    "Suivre les écarts, puis comparer délais, coûts et résultats pour tirer des enseignements."
+  ],
+  "glossary": [
+    [
+      "Mandat",
+      "Accord qui précise le but, le périmètre, les responsabilités et les résultats attendus."
+    ],
+    [
+      "Périmètre",
+      "Ensemble des activités, sites et livrables inclus dans le projet."
+    ],
+    [
+      "Faisabilité",
+      "Capacité d'une solution à remplir les conditions fixées avec les ressources et contraintes réelles."
+    ],
+    [
+      "Livrable",
+      "Résultat vérifiable à remettre pour une étape du projet."
+    ],
+    [
+      "Partie prenante",
+      "Personne ou organisation qui contribue au projet ou subit ses effets."
+    ],
+    [
+      "Jalon",
+      "Point de validation ou de décision placé dans le calendrier."
+    ],
+    [
+      "Dépendance",
+      "Relation par laquelle le début ou la fin d'une tâche dépend d'une autre."
+    ],
+    [
+      "Réserve",
+      "Marge prévue pour absorber un aléa de coût ou de délai."
+    ],
+    [
+      "Chemin critique",
+      "Suite de tâches qui fixe la durée minimale du projet selon le planning."
+    ],
+    [
+      "Risque",
+      "Événement incertain susceptible d'influencer un objectif."
+    ],
+    [
+      "Écart budgétaire",
+      "Différence entre le montant constaté et la référence budgétaire."
+    ],
+    [
+      "Retour d'expérience",
+      "Bilan documenté qui aide à améliorer un projet ultérieur."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Le projet débute par 2 jours d'analyse. Viennent ensuite 4 jours de préparation, puis 3 jours de tests. Les étapes sont successives. Quelle durée hors réserve ?",
+      "answer": "9 jours",
+      "calculation": "2 + 4 + 3 = 9."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Après 2 jours de diagnostic, une tâche de 6 jours et une de 4 jours se font en parallèle. Il faut ensuite 2 jours pour contrôler les deux résultats. Quelle durée au plus tôt ?",
+      "answer": "10 jours",
+      "calculation": "2 + max(6, 4) + 2 = 10."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Le budget prévoit CHF 14 000. Les dépenses totalisent CHF 12 800 et un engagement restant vaut CHF 1 750. Calculez le coût final estimé et l'écart au budget.",
+      "answer": "CHF 14 550, dépassement CHF 550",
+      "calculation": "12 800 + 1 750 = 14 550. 14 550 − 14 000 = 550."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Avant changement, le processus prend 18 min par commande. Le pilote indique 15 min. Quel gain relatif au dixième ?",
+      "answer": "16,7 %",
+      "calculation": "(18 − 15) ÷ 18 × 100 ≈ 16,7."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Un investissement de CHF 9 000 procure CHF 3 600 d'économies annuelles constantes. Calculez le retour simple en années, hors actualisation.",
+      "answer": "2,5 ans",
+      "calculation": "9 000 ÷ 3 600 = 2,5."
+    },
+    {
+      "id": "maths-fiche-6",
+      "kind": "maths",
+      "prompt": "Un projet de 16 jours prévoit une réserve de délai égale à 12,5 % de cette durée. Quel délai annoncer réserve incluse ?",
+      "answer": "18 jours",
+      "calculation": "16 × 0,125 = 2. 16 + 2 = 18."
+    },
+    {
+      "id": "maths-fiche-7",
+      "kind": "maths",
+      "prompt": "On attend 95 % de commandes sans erreur sur 240. On en constate 222 sans erreur. Combien en manquent pour atteindre l'objectif ?",
+      "answer": "6 commandes",
+      "calculation": "240 × 0,95 = 228. 228 − 222 = 6."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quelles sont les quatre phases du module ?",
+      "answer": "Étude de faisabilité, planification, exécution, évaluation."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Pourquoi fixer des critères d'acceptation lors du mandat ?",
+      "answer": "Pour rendre le résultat attendu vérifiable et décider sur des éléments observables."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Donnez deux dimensions de faisabilité et une question pour chacune.",
+      "answer": "Par exemple technique : le matériel est-il compatible ? Organisationnelle : peut-on assurer le service pendant le changement ?"
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Quelles informations ajouter à une liste de tâches pour obtenir un planning utile ?",
+      "answer": "Durées et dates, dépendances, responsables, ressources, jalons et réserve appropriée."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Pourquoi identifier le chemin critique ?",
+      "answer": "Un retard sur une tâche critique peut repousser le projet si aucune adaptation ne compense ce retard."
+    },
+    {
+      "id": "verification-fiche-6",
+      "kind": "verification",
+      "prompt": "Que comparer lors de l'évaluation finale ?",
+      "answer": "Objectifs, coûts et délais prévus, résultats mesurés, qualité du service et raisons des écarts."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Le site veut déplacer la réception pendant l'exploitation. Décrivez une étude de faisabilité courte.",
+      "answer": "Comparer deux configurations, mesurer capacité et accès, vérifier sécurité et continuité, estimer coûts et ressources, puis documenter une décision et ses conditions."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "L'installation d'un rayonnage prend du retard et le test en dépend. Comment réagir ?",
+      "answer": "Revoir le planning et le chemin critique, confirmer le délai, évaluer le décalage et les tâches réalisables en parallèle, puis informer le mandant et faire valider l'ajustement."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Le projet est livré à l'heure. Les coûts dépassent le budget et les erreurs restent au niveau initial. Proposez un bilan.",
+      "answer": "Comparer les trois objectifs avec des mesures homogènes, expliquer les écarts documentés, valider les actions de suivi et conserver les enseignements pour le projet suivant."
+    },
+    {
+      "id": "situation-fiche-4",
+      "kind": "situation",
+      "prompt": "Vous remplacez une procédure de préparation et souhaitez éviter une conclusion fondée sur un seul jour. Que mesurez-vous ?",
+      "answer": "Définir une période avant et après, noter volumes et mix, suivre cadence et erreurs selon les mêmes règles, puis comparer avec les critères du mandat."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche.",
+    "L’archive ne fournit ni calculs, ni exercices de vérification, ni situations, ni glossaire pour ce module. Ces quatre familles ont été rédigées à partir des phases et exemples de projet logistique."
+  ],
+  "visuals": [
+    {
+      "anchor": "1.1 Étude de faisabilité (Feasibility Study)",
+      "file": "log-901-notions-1-v001.svg",
+      "alt": "Options. Comparer deux implantations. Critères. Capacité, sécurité et coûts. Décision. Documenter le choix.",
+      "caption": "Le choix s’appuie sur des critères observables et un mandat validé.",
+      "sha256": "540af37af5e2c8094cc82f244f54ebc691e1d7122b78a08cd38ff2499745e196",
+      "origin": "Illustration originale Doc-Prof du module 901."
+    },
+    {
+      "anchor": "1.2 Planification du projet",
+      "file": "log-901-notions-2-v001.svg",
+      "alt": "Diagnostic jours 1 et 2. Installation jours 3 à 8 et formation jours 3 à 6. Le contrôle attend les deux activités et occupe les jours 9 et 10.",
+      "caption": "L’installation fixe la date du contrôle. Les tâches s’étendent sur dix jours hors réserve.",
+      "sha256": "4e9b72285913009b8e7356fbfebd3987860d54281d063551bc432f0c300b6221",
+      "origin": "Illustration originale Doc-Prof du module 901."
+    }
+  ]
+}

@@ -76,6 +76,7 @@ import { module806 } from './banks/module-806-v001.generated.ts'
 import { module807 } from './banks/module-807-v001.generated.ts'
 import { module808 } from './banks/module-808-v001.generated.ts'
 import { module809 } from './banks/module-809-v001.generated.ts'
+import { module901 } from './banks/module-901-v001.generated.ts'
 import { module902 } from './banks/module-902-v001.generated.ts'
 import { illustratedReferences } from './banks/references-v002.generated.ts'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
@@ -174,6 +175,11 @@ const publication_801_802_803_804_v001: LogistiquePublication = {
   units: [...publication_701_702_703_704_705_v001.units, ...module801, ...module802, ...module803, ...module804],
 }
 
+const publication_806_807_808_809_v001: LogistiquePublication = {
+  revision: 'logistique-806-807-808-809-v001',
+  units: [...publication_801_802_803_804_v001.units, ...module806, ...module807, ...module808, ...module809],
+}
+
 /** Ajouter une publication après validation. Garder les versions utilisées par les recettes. */
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
@@ -225,9 +231,10 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   publication_614_615_616_v001,
   publication_701_702_703_704_705_v001,
   publication_801_802_803_804_v001,
+  publication_806_807_808_809_v001,
   {
-    revision: 'logistique-806-807-808-809-v001',
-    units: [...publication_801_802_803_804_v001.units, ...module806, ...module807, ...module808, ...module809],
+    revision: 'logistique-901-v001',
+    units: [...publication_806_807_808_809_v001.units, ...module901],
   },
 ]
 

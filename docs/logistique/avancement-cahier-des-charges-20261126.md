@@ -46,7 +46,7 @@ Référence de réalisation dans le [cahier des charges v2.12](cahier-des-charge
 | L2 — Module 805 | Révision `805-v001` active en CFC | Cours de 163 blocs, schéma des styles et du sommaire, 23 termes, cinq calculs, sept vérifications et cinq situations. Cours autonome à l’écrit après exclusion des 85 références visuelles historiques. [Préparation du 805](preparation/805-v001.json). |
 | L2 — Module 902 | Révision `902-v001` active en CFC | Cours original de 40 blocs, schéma de résolution, 22 termes, sept calculs, sept vérifications et six études de cas. Le [cours original](preparation/902-v001.md) et les [données éditoriales](preparation/902-v001.json) distinguent les créations de l’archive EPCAS vide. |
 | L3c et V2.10 — Visuels | Pilote | Le schéma original du degré de transformation est rangé sous `public/assets/logistique/100/105/commun/`. Le [registre du visuel](pilote-105/visuels/registre.json) conserve l’empreinte, la révision et l’éligibilité. |
-| L4 et suivants — Généralisation | À poursuivre | Reprendre les thèmes dans l’ordre du référentiel et mesurer les unités effectivement disponibles par diplôme. Les cibles nominales de banque restent à atteindre. |
+| L4 et suivants — Généralisation | Six types actifs pour chaque module | La révision `logistique-901-v001` couvre les 480 types CFC et les 378 types AFP. Le tableau de couverture indique les unités disponibles et les cibles nominales à atteindre. |
 | L4 — Module 301 | Révision `301-v001` active en CFC et AFP | 2 schémas, 12 termes, 6/4 calculs, 6 vérifications et 4/3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 301](preparation/301-v001.json). |
 | L4 — Module 302 | Révision `302-v001` active en CFC et AFP | 2 schémas, 12 termes, 6/4 calculs, 6 vérifications et 4/3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 302](preparation/302-v001.json). |
 | L4 — Module 303 | Révision `303-v001` active en CFC et AFP | 2 schémas, 12 termes, 6/4 calculs, 6 vérifications et 4 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 303](preparation/303-v001.json). |
@@ -102,13 +102,20 @@ Référence de réalisation dans le [cahier des charges v2.12](cahier-des-charge
 | L4 — Module 807 | Révision `807-v001` active en CFC | 2 schémas, 12 termes, 6 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 807](preparation/807-v001.json). |
 | L4 — Module 808 | Révision `808-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 808](preparation/808-v001.json). |
 | L4 — Module 809 | Révision `809-v001` active en CFC et AFP | 2 schémas, 12 termes, 6/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 809](preparation/809-v001.json). |
+| L4 — Module 901 | Révision `901-v001` active en CFC | 2 schémas, 12 termes, 7 calculs, 6 vérifications et 4 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 901](preparation/901-v001.json). |
 
 ## Reprise opérationnelle
 
-1. Les thèmes 100 à 800 disposent des six types pour tous les modules et diplômes prévus au catalogue. Poursuivre par le module 901 « Planifier et évaluer les projets logistiques ». Le 902 est déjà actif en CFC. Les cibles nominales de banque restent à atteindre. Partir des archives et vérifier visuels et composition avant publication. [Archives par thème](sources-epcas/).
-2. Vérifier les corrigés, la place du contenu dans le référentiel, les écarts AFP/CFC et les dépendances à des médias écartés.
-3. Enregistrer une révision de banque et la conserver pour les recettes déjà créées. Les changements de fond du 105 sont consignés dans les [données de préparation](pilote-105/preparation.generated.json) et dans le [dossier éditorial](pilote-105/relecture.md).
-4. Vérifier dans les deux diplômes le nombre d’unités disponibles, la génération, le corrigé, l’impression et la réouverture. Reporter dans ce fichier les preuves, les écarts et le prochain module retenu.
+La publication des modules est terminée pour les deux diplômes. La génération utilise la révision `logistique-901-v001` et conserve les révisions enregistrées dans les anciennes recettes.
+
+| Diplôme | Modules | Types actifs | Problèmes de calcul | Questions de vérification | Situations |
+|---|---:|---:|---:|---:|---:|
+| CFC | 80 | 480 | 445 | 446 | 294 |
+| AFP | 63 | 378 | 249 | 345 | 212 |
+
+Les effectifs sont dédupliqués par identifiant dans chaque diplôme. La banque commune compte 1 185 unités d’exercice distinctes au total. Les cibles nominales du §5.1 (30 calculs, 50 vérifications et 20 situations par module et diplôme) restent à atteindre. Les demandes de sélection avancée en Évaluation et en Libre figurent dans les lots L1b à L1f.
+
+Pour un enrichissement ultérieur, partir des archives et du dossier éditorial du module, vérifier les droits par diplôme, les corrigés, la composition A4 et la continuité des recettes. Enregistrer chaque nouvelle révision et ses résultats dans ce suivi. [Archives par thème](sources-epcas/).
 
 ## Commandes
 
@@ -125,6 +132,9 @@ Référence de réalisation dans le [cahier des charges v2.12](cahier-des-charge
 - Modules 701 à 705, soit 36 contextes module, diplôme et type vérifiés en Chromium A4. Réserve minimale au pied de 79,64 px. Les aperçus occupent une page, les cours illustrés produisent un PDF et les suites de calcul gardent les numéros.
 - Modules 801 à 804, soit 48 contextes module, diplôme et type vérifiés en Chromium A4. Réserve minimale au pied de 79,64 px. Les aperçus occupent une page, les cours illustrés produisent un PDF et les suites de calcul gardent les numéros.
 - Modules 806 à 809, soit 36 contextes module, diplôme et type vérifiés en Chromium A4. Réserve minimale au pied de 79,64 px. Les aperçus occupent une page, les cours illustrés produisent un PDF et les suites de calcul gardent les numéros.
+- Module 901, soit 6 contextes module, diplôme et type vérifiés en Chromium A4. Réserve minimale au pied de 79,64 px. Les aperçus occupent une page, les cours illustrés produisent un PDF et les suites de calcul gardent les numéros.
+- Les modules 805 et 902, déjà actifs, ont été revérifiés en CFC sur leurs six types. Au total, 138 parcours A4 ont été contrôlés sur les thèmes 700, 800 et 900. La réserve au pied minimale était de 79,64 px.
+- Ce lot ajoute 28 illustrations originales et 204 exercices corrigés. Les 28 fichiers d’illustration ont été contrôlés dans Chromium, y compris le placement du texte dans le cadre du visuel.
 
 ### Thèmes 300 à 600 — Publications
 
