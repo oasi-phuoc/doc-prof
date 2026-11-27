@@ -129,12 +129,15 @@ test('le tirage est déterministe et limité aux unités approuvées pour le dip
 test('les banques enrichies augmentent la capacité par diplôme et préservent les tirages enregistrés', () => {
   const additions = { CFC: { maths: 5, verification: 5, situation: 4 }, AFP: { maths: 4, verification: 5, situation: 3 } }
   const lots = [
-    [/^10[0-9]$|^110$/, 'logistique-theories-projets-v002', 'logistique-exercices-fondations-v003'],
-    [/^20[1-9]$/, 'logistique-exercices-fondations-v003', 'logistique-exercices-service-client-v003'],
+    [/^10[0-9]$|^110$/, 'logistique-theories-projets-v002', 'logistique-exercices-fondations-v003', additions],
+    [/^20[1-9]$/, 'logistique-exercices-fondations-v003', 'logistique-exercices-service-client-v003', additions],
+    [/^30[1-9]$|^31[0-2]$/, 'logistique-maths-fondations-service-v004', 'logistique-exercices-approvisionnement-v004', {
+      CFC: { ...additions.CFC, maths: 6 }, AFP: { ...additions.AFP, maths: 5 },
+    }],
   ]
-  for (const [pattern, previousRevision, expandedRevision] of lots) {
+  for (const [pattern, previousRevision, expandedRevision, expected] of lots) {
     for (const type of catalog.logistiqueTypes.filter(({ module }) => pattern.test(module))) {
-      const extra = additions[type.diploma][type.kind]
+      const extra = expected[type.diploma][type.kind]
       if (!extra) continue
       const page = { ...config(type.diploma, type.module, type.kind), count: 30 }
       const historical = { ...page, logistiqueBankRevision: previousRevision }
@@ -150,7 +153,7 @@ test('les banques enrichies augmentent la capacité par diplôme et préservent 
   }
 })
 
-test('la relecture des mathématiques des thèmes 100 et 200 rattache les problèmes à leur cours', () => {
+test('les problèmes ajoutés et relus se rattachent à une section de leur cours', () => {
   const original = logistiquePublications.find(({ revision }) => revision === 'logistique-illustrations-fico-ict-projets-v003')
   const priorMaths = original.units.filter((unit) => unit.kind === 'maths' && /^(?:fondations|service-client)-exercices-v003$/.test(unit.revision))
   const currentById = new Map(currentLogistiquePublication.units.map((unit) => [unit.id, unit]))
@@ -163,6 +166,11 @@ test('la relecture des mathématiques des thèmes 100 et 200 rattache les probl�
     assert.equal(reviewed.kind, 'maths', exercise.id)
     assert.deepEqual(reviewed.approvedFor, exercise.approvedFor, exercise.id)
     assert(sections.get(exercise.module).has(reviewed.theorySection), exercise.id)
+  }
+  const procurementMaths = currentLogistiquePublication.units.filter((unit) => unit.kind === 'maths' && unit.revision === 'approvisionnement-exercices-v004')
+  assert.equal(procurementMaths.length, 72)
+  for (const exercise of procurementMaths) {
+    assert(sections.get(exercise.module).has(exercise.theorySection), exercise.id)
   }
   const hygiene = currentById.get('log-202-maths-v003-05')
   assert.match(hygiene.prompt, /lavage des mains/)

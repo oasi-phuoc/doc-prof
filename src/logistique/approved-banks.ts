@@ -242,6 +242,7 @@ import { module809 as reviewed809 } from './banks/module-809-v003.generated.ts'
 import { module901 as reviewed901 } from './banks/module-901-v003.generated.ts'
 import { module902 as reviewed902 } from './banks/module-902-v003.generated.ts'
 import { foundationAndServiceMathReview } from './banks/relecture-maths-v004'
+import { procurementExercises } from './banks/approvisionnement-exercices-v004'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
 
@@ -504,6 +505,11 @@ const foundationsAndServiceMathPublication: LogistiquePublication = {
   }),
 }
 
+const procurementExercisePublication: LogistiquePublication = {
+  revision: 'logistique-exercices-approvisionnement-v004',
+  units: [...foundationsAndServiceMathPublication.units, ...procurementExercises],
+}
+
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
@@ -574,6 +580,7 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   productionAndDistributionIllustrations,
   financeDigitalAndProjectsIllustrations,
   foundationsAndServiceMathPublication,
+  procurementExercisePublication,
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!
