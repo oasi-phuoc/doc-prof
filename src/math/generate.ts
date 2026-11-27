@@ -4,6 +4,7 @@ import { splitLogistiquePages, type LogistiquePageLayout } from '@/logistique/pa
 import { isLogistiqueDomain, isLogistiqueReferenceType, logistiqueType } from '@/logistique/catalog'
 import { generateLogistique, logistiqueDocumentTitle } from '@/logistique/generate'
 import { completeLogistiqueGlossaryItem } from '@/logistique/glossary'
+import { validLogistiquePages } from '@/logistique/recipe'
 import { paginateCePosters } from '@/tcf/ce-poster-pages'
 import { splitTcfAudioQuestionPages } from '@/tcf/audio-question-pages'
 import { splitCscColumnPages } from '@/tcm-csc/pagination'
@@ -441,6 +442,8 @@ export function buildPage(
     if (!logistiqueEvaluation && isLogistiqueDomain(page.domain)) single.logistiqueSelection = undefined
     const local = block.contentSeed ?? 0
     const result = buildSingleBlock(single, seed + index * 10007 + local, worksheetSeed)
+    const logistics = logistiqueType(block.exerciseType)
+    const logisticsQuestions = logistics?.domain === page.domain && !isLogistiqueReferenceType(block.exerciseType)
     const isTheory = Boolean(mathTheoryTopic(block.exerciseType)) || isLogistiqueReferenceType(block.exerciseType) || isGrammarTheoryType(block.exerciseType) || isGrammaireTheoryType(block.exerciseType)
     const isJeux = block.exerciseType.startsWith('jeux-')
     const isTpmConsignes = isInfoPageType(block.exerciseType)
@@ -453,7 +456,7 @@ export function buildPage(
       block.libreItems.length > 0 &&
       block.libreItems.length < result.items.length
     const libre =
-      !libreIsPartialSlice && Array.isArray(block.libreItems) && block.libreItems.length > 0
+      !libreIsPartialSlice && Array.isArray(block.libreItems) && (logisticsQuestions || block.libreItems.length > 0)
         ? {
             items: block.libreItems,
             instruction: block.libreInstruction ?? result.instruction,
@@ -468,8 +471,10 @@ export function buildPage(
         exerciseIndex = exerciseCursor++
       }
     }
-    const rawItems = isLogistiqueDomain(page.domain) && result.items.length === 0 ? result.items : (libre?.items ?? result.items)
-    const logistics = logistiqueType(block.exerciseType)
+    const hasLocalQuestions = logisticsQuestions && result.items.length === 0 &&
+      libre?.items.some((item) => item.logistiqueLocalModule) && validLogistiquePages([single])
+    const rawItems = isLogistiqueDomain(page.domain) && result.items.length === 0 && !hasLocalQuestions
+      ? result.items : (libre?.items ?? result.items)
     const glossaryBank = mathGlossaryBank(block.exerciseType)
     const items = rawItems.map((item) => {
       const clean = sanitizeItemNumberNoise(item as Record<string, unknown>) as MathItem

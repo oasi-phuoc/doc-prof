@@ -173,3 +173,6 @@
 .a5-half.has-compact-header .doc-footer{padding-bottom:4px}
 .logistique-glossary-entry.is-diagram>figure{float:none;width:100%;max-width:102mm;margin:0 auto 2mm}
 .logistique-glossary-entry.is-diagram img{max-height:35mm}
+.is-logistique :is(.prompt-stack-text, .select-pills-prompt, .prompt-stack .filled-answer) {
+  white-space: pre-line;
+}

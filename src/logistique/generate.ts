@@ -121,8 +121,10 @@ export function logistiqueDocumentTitle(pages: readonly PageConfig[], evalMode =
     const type = logistiqueType(block.exerciseType)
     if (type?.domain !== page.domain || type.topic !== block.topic) return []
     const selected = (includeSelection && block.logistiqueSelection?.modules) || [type.module]
-    const retained = block.libreItems?.flatMap(({ logistiqueSource, logistiqueRetained }) =>
-      logistiqueRetained && logistiqueSource ? [logistiqueSource.module] : []) ?? []
+    const retained = block.libreItems?.flatMap(({ logistiqueSource, logistiqueRetained, logistiqueLocalModule }) => {
+      const code = logistiqueLocalModule ?? (logistiqueRetained ? logistiqueSource?.module : undefined)
+      return code ? [code] : []
+    }) ?? []
     return [{ type, modules: [...selected, ...retained], summary: block.logistiqueTheoryView === 'resume' }]
   }))
   const first = activities[0]?.type

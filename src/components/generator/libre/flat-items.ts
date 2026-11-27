@@ -83,14 +83,18 @@ export function rerollFlatActivity(
   const signature = ({ layout, op, a, b, missing, convert, prompt, left, right, sequence, responseAnswer, logique }: MathItem) =>
     JSON.stringify([layout, op, a, b, missing, convert, prompt, left, right, sequence, responseAnswer, logique?.id])
   const signatures = new Set(items.map(signature))
+  const sources = new Set(items.flatMap((item) => item.logistiqueSource ? [item.logistiqueSource.id] : []))
+  const alreadyPresent = (item: MathItem) => signatures.has(signature(item)) ||
+    Boolean(item.logistiqueSource && sources.has(item.logistiqueSource.id))
   const fixedSeries = ['tpm-suite', 'tpm-grandes-suites', 'tpm-suites-6'].includes(block.exerciseType)
   let cursor = 0
   const next = items.map((item, index) => {
     if (!eligible(item)) return item
-    while (!fixedSeries && cursor < generated.length && signatures.has(signature(generated[cursor]!))) cursor += 1
+    while (!fixedSeries && cursor < generated.length && alreadyPresent(generated[cursor]!)) cursor += 1
     const replacement = fixedSeries ? generated[index] : generated[cursor++]
-    if (!replacement || signatures.has(signature(replacement))) return item
+    if (!replacement || alreadyPresent(replacement)) return item
     signatures.add(signature(replacement))
+    if (replacement.logistiqueSource) sources.add(replacement.logistiqueSource.id)
     return { ...replacement, libreId: `tirage-${(pageSeed >>> 0).toString(36)}-${(newSeed >>> 0).toString(36)}-${index}` }
   })
   if (next.every((item, index) => item === items[index])) return page
