@@ -8,7 +8,7 @@ Dans le thème/sous-thème convenu, choisir **Compréhension orale**, puis la pi
 
 Se présenter et Famille réutilisent les sous-thèmes existants. Les autres lots sont classés dans leurs contextes dédiés sous les parties convenues : temps, décrire, demander/proposer, conseiller, activités, présent, aliments, espace, questions, faits divers, argumentation et entrer en contact. Les corrections A2 convenues sont conservées : « Centres d’intérêt » avec les loisirs, « Ville ou campagne » dans argumenter, « Prendre soin de soi » dans conseiller, « Entretien d’embauche » et « S’intégrer dans l’entreprise » dans demander/proposer. La table complète est dans `src/grammaire/exercises/co-themes.ts`.
 
-Chaque piste est liée au support CO du rendu TCF. **Les 127 transcriptions A1 sont conservées et les 125 transcriptions A2 sont intégrées.** Les questions restent vides et leur nombre est masqué. Les anciennes recettes identité/famille sont reconnues et migrées vers le type commun.
+Chaque piste est liée au rendu CO du TCF et possède sa transcription et ses questions. Les anciennes recettes identité/famille sont reconnues et migrées vers le type commun.
 
 ## Transcriptions et questions
 
@@ -18,16 +18,21 @@ Le 5 novembre, les 125 pistes A2 ont été comparées entre les deux moteurs et 
 
 Le rapport [transcriptions.json](transcriptions.json) conserve, pour chaque identifiant et empreinte audio, le texte retenu, les reconnaissances brutes, les corrections et les points incertains. Les conventions orthographiques et la limite du numéro de téléphone de la piste 136 restent signalées. Ce travail est une transcription automatique recoupée et relue ; aucune écoute humaine n’est attestée. Les découpes des versions TCF sont suivies séparément.
 
-La banque est `src/grammaire/exercises/co-bank.json`. Chaque entrée correspond à une piste :
+La banque `src/grammaire/exercises/co-bank.json` conserve les identifiants, enregistrements, transcriptions et recettes sauvegardées. Chaque entrée identifie son thème et son niveau. Le statut `complete` indique que les questions sont disponibles dans le générateur. Le champ `transcriptionReview` documente les contrôles de la transcription.
 
-- `theme`, `level` et `exercise.id` identifient sa destination et sa sélection ;
-- `exercise.support.audio` contient le chemin de l’enregistrement ;
-- `exercise.support.transcription` contient le texte lié à l’original ;
-- `exercise.questions` est un tableau vide à compléter au format TCF ;
-- `status` vaut `transcribed` ; `transcriptionReview` décrit le contrôle effectué sans attestation d’écoute ;
-- les originaux, les identifiants de sélection et les recettes sauvegardées sont conservés.
+## Formats disponibles au 27 novembre 2026
 
-Les trois formats de réponse (QCM texte, réponse sur trait et QCM images) sont ceux du rendu TCF. Ils apparaîtront pour les questions renseignées. Les images à préparer ou à réutiliser pourront être consignées dans [images-a-preparer.json](images-a-preparer.json). Aucune image n’a été générée.
+| Niveau | Pistes | QCM texte et réponse sur trait | Questions avec QCM image | Scènes de support |
+| --- | ---: | ---: | ---: | ---: |
+| A1 | 127 | 419 | 62 | 0 |
+| A2 | 125 | 155 | 9 | 5 |
+| **Total** | **252** | **574** | **71** | **5** |
+
+Les 100 questions déjà présentes ont été conservées. Les 474 nouvelles questions sont rattachées à un passage de la transcription. La banque réutilise les questions TCF lorsque le dialogue correspond et propose des questions rédigées pour les autres pistes. Le [relevé des passages et des réemplois](questions-verification-20261127.json) permet de retrouver chaque réponse ajoutée.
+
+Dans le générateur, les formes **Texte**, **Phrase** et **Image** correspondent au QCM texte, à la réponse sur trait et au QCM illustré. La forme Image est disponible lorsque trois illustrations distinctes correspondent aux choix. Cinq pistes A2 affichent aussi une scène de dialogue, dont quatre nouvelles illustrations et un réemploi. Les scènes et les choix intégrés ont été examinés visuellement et suivent le [référentiel graphique TCF](../../tcf/style-images.md). Le [registre des illustrations](illustrations-co-20261127.json) conserve les sources, les empreintes et les passages associés.
+
+Les questions ont été relues sur les transcriptions recoupées. Les pistes et les images ont été testées dans le navigateur sur un échantillon des deux niveaux, avec les formes disponibles et l’export PDF. L’écoute de validation et l’approbation enseignante restent à faire.
 
 ## Vérification
 
@@ -35,4 +40,4 @@ Les trois formats de réponse (QCM texte, réponse sur trait et QCM images) sont
 node scripts/audit-grammar-co-import.cjs
 ```
 
-Le contrôle vérifie les 252 fichiers et empreintes, les 38 liens du catalogue, l’accès à chaque piste, le rendu du bon audio, son niveau A1 ou A2, la conservation des transcriptions A1, la liaison des 125 transcriptions A2 à leurs originaux et l’absence de question ajoutée, la sauvegarde de la sélection et l’absence de repli entre les niveaux.
+Le contrôle vérifie les 252 fichiers et leurs empreintes, les 38 liens du catalogue, les transcriptions, la sélection et la sauvegarde de chaque piste au bon niveau, puis les formes de réponse et les références des images. Les nouvelles questions et le rapport peuvent être régénérés avec `python3 scripts/build-grammar-co-questions.py`.

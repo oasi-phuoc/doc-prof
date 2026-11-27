@@ -10,16 +10,28 @@ const {buildPage}=load(path.join(root,'src/math/generate.ts'))
 const {exerciseTypeById}=load(path.join(root,'src/math/catalog.ts'))
 const {ALL_GRAM_SUBTHEMES}=get('catalog-exercises.ts')
 const {createRng}=load(path.join(root,'src/math/rng.ts'))
+const {filledForms,resolveQuestionForm}=load(path.join(root,'src/tcf/formes.ts'))
 const {blockFromPage,pageAsConfig}=load(path.join(root,'src/math/page-model.ts'))
 const {applyType}=load(path.join(root,'src/components/generator/page-helpers.ts'))
 const {parseFicheRecipe}=load(path.join(root,'src/fiches/recipe.ts'))
 const report=JSON.parse(fs.readFileSync(path.join(root,'docs/grammaire/co-import/sources.json'),'utf8'))
 const transcripts=JSON.parse(fs.readFileSync(path.join(root,'docs/grammaire/co-import/transcriptions.json'),'utf8'))
+const media=JSON.parse(fs.readFileSync(path.join(root,'docs/grammaire/co-import/illustrations-co-20261127.json'),'utf8'))
+const editorial=JSON.parse(fs.readFileSync(path.join(root,'docs/grammaire/co-import/questions-verification-20261127.json'),'utf8'))
+const getDigest=file=>crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex')
+let illustrated=0,scenes=0
 let checks=0
 function check(value,message){assert.ok(value,message);checks++}
 check(GRAMMAR_CO_THEMES.length===new Set(report.sources.map(s=>s.theme)).size,'every imported theme has one destination')
 check(GRAMMAR_CO_BANK.length===report.source_count&&report.sources.length===report.source_count,'inventory covers every recording')
 check(new Set(GRAMMAR_CO_BANK.map(e=>e.exercise.id)).size===GRAMMAR_CO_BANK.length,'distinct stable ids')
+check(GRAMMAR_CO_BANK.every(e=>e.status==='complete'&&e.exercise.questions.length>0),'questions available on every track')
+check(editorial.human_listening===false&&editorial.teacher_approval===false,'review basis recorded')
+for (const [src,asset] of Object.entries(media.assets)){
+ check(asset.viewed&&asset.width*3===asset.height*4,'reviewed 4:3 artwork '+src)
+ check(getDigest(path.join(root,'public',src))===asset.sha256,'artwork bytes match the checked file '+src)
+}
+
 for(const level of ['A1','A2'])check(GRAMMAR_CO_BANK.filter(e=>e.level===level).length===report[level.toLowerCase()+'_sources'],'level count '+level)
 check(report.a1_sources===127&&report.a2_sources===125,'all 127 original A1 and 125 new A2 sources')
 check(transcripts.transcriptions.length===252&&new Set(transcripts.transcriptions.map(r=>r.exercise_id)).size===252,'one transcript per original A1 or A2 recording')
@@ -51,6 +63,20 @@ for(const theme of GRAMMAR_CO_THEMES){
     check(question.choix.filter(choice=>choice.correct).length===1,'one correct answer');
     check(new Set(question.choix.map(choice=>choice.texte)).size===3,'distinct choices');
     check(question.formes?.lignes?.reponse_modele===question.choix.find(choice=>choice.correct).texte,'line answer agrees with QCM');
+    check(filledForms(question).includes('qcm_texte')&&resolveQuestionForm(question,'lignes').type_reponse==='lignes','text and written forms render')
+    if (question.formes?.qcm_image){
+      const visual=resolveQuestionForm(question,'qcm_image')
+      check(visual.type_reponse==='qcm_image'&&filledForms(question).length===3,'all three forms render')
+      check(visual.choix.length===3&&new Set(visual.choix.map(choice=>choice.image)).size===3,'three distinct images')
+      check(visual.choix.filter(choice=>choice.correct).length===1&&visual.choix.find(choice=>choice.correct).id===question.choix.find(choice=>choice.correct).id,'image and text answer IDs agree')
+      check(visual.choix.every(choice=>media.assets[choice.image]),'every choice uses reviewed artwork')
+      illustrated++
+    }
+   }
+   if (entry.exercise.support.image){
+    const binding=media.bindings[entry.exercise.id]?.scene
+    check(binding?.path===entry.exercise.support.image&&Boolean(media.assets[binding.path]),'linked scene verified')
+    scenes++
    }
    check(entry.exercise.support.transcription.length>0&&entry.transcriptionReview?.sourceSha256===entry.source.sha256,'transcription bound to original source '+level)
    check(entry.exercise.niveau===(level==='A1'?'A0-A1':'A1-A2'),'TCF renderer level')
@@ -94,4 +120,6 @@ for(const [a1Available,a2Available]of [[true,false],[false,true],[true,true]]){
  const html=renderToStaticMarkup(React.createElement(GrammarCoLevelControl,{value:a1Available?'A1':'A2',a1Available,a2Available,onChange:()=>{}}))
  check((html.match(/<button/g)||[]).length===2&&(html.match(/disabled/g)||[]).length===Number(!a1Available)+Number(!a2Available),'only available levels enabled')
 }
+check(illustrated===Object.values(editorial.by_level).reduce((n,level)=>n+level.qcm_image,0),'illustrated question count')
+check(scenes===Object.values(editorial.by_level).reduce((n,level)=>n+level.illustrative_scenes,0),'support scene count')
 console.log(`${checks} contrôles réussis ; ${report.a1_sources} transcriptions A1 et ${report.a2_sources} transcriptions A2 ; ${GRAMMAR_CO_THEMES.length} thèmes ; originaux conservés ; questions et capacités vérifiées.`)

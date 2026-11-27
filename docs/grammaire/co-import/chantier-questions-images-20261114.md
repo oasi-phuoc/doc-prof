@@ -2,6 +2,8 @@
 
 Demande du 14 novembre 2026. Créer les questions des 252 supports CO de grammaire, illustrer les 150 situations de communication restantes, puis compléter les trios historiques TCF et examiner les candidatures DELF Actif.
 
+Au 27 novembre 2026, les 252 pistes CO ont des questions. Le [bilan CO](README.md) donne les formats disponibles et renvoie aux registres des réponses et des illustrations. L’état ci-dessous date du 15 novembre et couvre aussi les situations de communication, les trios historiques et DELF Actif.
+
 La demande actuelle autorise les questions CO et les générations d’images auparavant exclues du chantier de grammaire v2 par PER-02 et PER-04. Les exigences pédagogiques, les niveaux, les identifiants et les contrats de réponse du cahier des charges restent les références applicables.
 
 ## Images communes à TCF et Grammaire
