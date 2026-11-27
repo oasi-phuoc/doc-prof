@@ -1,5 +1,6 @@
 import type { Domain, ExerciseType, LogistiqueQuestionImage, Topic } from '@/math/types'
 import curriculum from './curriculum.generated.json'
+import { validLogistiqueGaps } from './gaps'
 
 export const LOGISTIQUE_DOMAINS = [
   { id: 'logistique-afp', label: 'Logistique AFP', diploma: 'AFP' },
@@ -155,7 +156,9 @@ export function validLogistiqueCataloguePages(pages: readonly CataloguePage[]): 
     return type?.domain === domain && type.topic === block.topic &&
       validLogistiqueSelection(type, selection) &&
       validLogistiqueGapMode(type, gapMode) &&
-      items.every((item) => item?.logistiqueImage === undefined || validLogistiqueQuestionImage(item.logistiqueImage, type.diploma)) &&
+      items.every((item) =>
+        (item?.logistiqueImage === undefined || validLogistiqueQuestionImage(item.logistiqueImage, type.diploma)) &&
+        (item?.logistiqueGaps === undefined || (type.kind === 'verification' && validLogistiqueGaps(item.prompt, item.logistiqueGaps)))) &&
       (view === undefined || (type.kind === 'theorie' && (view === 'complet' || view === 'resume')))
   }
   return pages.every((page) => page.domain === domain && validBlock(page) &&

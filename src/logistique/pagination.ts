@@ -123,7 +123,7 @@ function height(item: MathItem, a5: boolean, scale: number): number {
   if (item.logistiqueGaps) {
     const prompt = lineCount((item.prompt ?? '').replace(/_{3,}|_ _ _/g, '                 '), width) * 26 * scale
     const words = item.logistiqueGaps.words
-    return imageHeight + 32 + prompt + (words?.length ? 16 + lineCount(words.join(' · '), width * 0.87) * 26 * scale : 0)
+    return imageHeight + 32 + prompt + (words?.length ? 34 + lineCount(words.join(' · '), width * 0.87) * 26 * scale : 0)
   }
   const prompt = lineCount(item.prompt ?? '', width * 1.2) * 24 * scale
   const answer = lineCount(item.answer, width * 0.84) * 27 * scale

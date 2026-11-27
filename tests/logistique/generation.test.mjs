@@ -11,6 +11,7 @@ const { load, root } = require('../../scripts/gattegno-loader.cjs')
 const catalog = load(root + '/src/logistique/catalog.ts')
 const { generateLogistique, logistiqueDocumentTitle, logistiqueHasSummary, logistiqueQuestionItems, logistiqueQuestionPhotos } = load(root + '/src/logistique/generate.ts')
 const { availableLogistiqueQuestions, retainLogistiqueQuestions } = load(root + '/src/logistique/libre.ts')
+const { editLogistiqueGaps, logistiqueGapDistractors, validLogistiqueGaps } = load(root + '/src/logistique/gaps.ts')
 const { freezeLogistiquePages, validLogistiquePages } = load(root + '/src/logistique/recipe.ts')
 const { currentLogistiquePublication, logistiquePublications } = load(root + '/src/logistique/approved-banks.ts')
 const { splitLogistiquePages } = load(root + '/src/logistique/pagination.ts')
@@ -267,6 +268,20 @@ test('les deux présentations des textes à trous gardent le même tirage et la 
     }
   }
   assert(!validLogistiquePages([{ ...config('AFP', '105', 'maths'), logistiqueGapMode: 'sans-liste' }]))
+})
+
+test('l’édition des blancs assemble la liste et les réponses dans une seule mise à jour valide', () => {
+  const previous = { answers: ['bac', 'bac'], words: ['bac', 'chariot', 'bac'] }
+  assert.deepEqual(logistiqueGapDistractors(previous), ['chariot'])
+  const draft = { prompt: 'Deux ___, puis un ___.', answers: 'lots\n colis ', distractors: ' chariot ', showWords: true }
+  const { patch } = editLogistiqueGaps(draft, previous)
+  assert.equal(patch.answer, 'lots / colis')
+  assert.deepEqual(patch.logistiqueGaps.words.toSorted(), ['chariot', 'colis', 'lots'])
+  assert(validLogistiqueGaps(patch.prompt, patch.logistiqueGaps))
+  assert.equal(editLogistiqueGaps({ ...draft, showWords: false }, previous).patch.logistiqueGaps.words, undefined)
+  assert.match(editLogistiqueGaps({ ...draft, answers: 'lots' }, previous).error, /2 blanc\(s\)/)
+  assert.match(editLogistiqueGaps({ ...draft, distractors: 'COLIS' }, previous).error, /distinct/)
+  assert(!validLogistiqueGaps('___ et ___', { answers: ['lots', 'colis'], words: ['lots', 'autre'] }))
 })
 
 test('la photo d’une question reste attachée à son item et le catalogue refuse une source incompatible', () => {

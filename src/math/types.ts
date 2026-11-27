@@ -425,6 +425,7 @@ export type DivisionStep = {
 }
 
 export type LogistiqueGapMode = 'sans-liste' | 'avec-liste'
+export type LogistiqueGaps = { answers: string[]; words?: string[]; distractors?: string[] }
 export type LogistiqueGlossaryFigure = { src: string; alt: string; caption?: string }
 export type LogistiqueQuestionImage = {
   src: string
@@ -439,7 +440,7 @@ export type MathItem = {
   logistiqueSource?: { id: string; module: string; revision: string }
   /** Question ajoutée en Libre et conservée par les nouveaux tirages. */
   logistiqueRetained?: boolean
-  logistiqueGaps?: { answers: string[]; words?: string[] }
+  logistiqueGaps?: LogistiqueGaps
   logistiqueImage?: LogistiqueQuestionImage
   logistiqueGlossaryFigure?: LogistiqueGlossaryFigure
   layout: Layout

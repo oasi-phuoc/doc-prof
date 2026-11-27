@@ -39,8 +39,9 @@ function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'
     case 'verification':
       if (unit.gaps) {
         const answers = [...unit.gaps.answers]
-        const words = wordsRng ? shuffle(wordsRng, [...answers, ...(unit.gaps.distractors ?? [])]) : undefined
-        return [{ logistiqueSource, layout: 'text', prompt: unit.prompt, answer: unit.answer, logistiqueGaps: { answers, words } }]
+        const distractors = [...(unit.gaps.distractors ?? [])]
+        const words = wordsRng ? shuffle(wordsRng, [...answers, ...distractors]) : undefined
+        return [{ logistiqueSource, layout: 'text', prompt: unit.prompt, answer: unit.answer, logistiqueGaps: { answers, words, distractors } }]
       }
       if (unit.options?.length) {
         return [{ logistiqueSource, layout: 'select', prompt: unit.prompt, options: [...unit.options], answer: unit.answer }]
@@ -148,9 +149,7 @@ export function generateLogistique(
     title: logistiqueDocumentTitle([config]),
     instruction: eligible.length
       ? reference ? type.description
-        : gapMode === 'sans-liste' ? 'Complétez les textes.'
-          : gapMode === 'avec-liste' ? 'Complétez les textes avec les mots proposés. Utilisez chaque proposition une seule fois. Il peut rester des mots.'
-            : type.instruction
+        : gapMode ? 'Complétez les textes.' : type.instruction
       : modules.length ? 'Contenu à compléter pour cette sélection.' : 'Sélectionnez au moins un sous-thème.',
     items: selected.flatMap((unit) => unitItems(unit, config.logistiqueTheoryView, gapMode === 'avec-liste' ? rng : undefined)),
     bankQuestionCap: reference && eligible.length ? undefined : eligible.length,

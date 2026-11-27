@@ -630,7 +630,12 @@ export function StackedPrompt({ item, mode, showHelp = false }: { item: MathItem
         <LogistiqueIllustratedPrompt item={item} mode={mode}>
           <p className="prompt-stack-text">{renderEnonceText(prompt, show ? answers : [])}</p>
         </LogistiqueIllustratedPrompt>
-        {words?.length ? <p className="logistique-words"><strong>Mots proposés</strong> {words.join(' · ')}</p> : null}
+        {words?.length ? (
+          <p className="logistique-words">
+            <strong>Mots proposés</strong> {words.join(' · ')}
+            <small>Utilisez chaque proposition au plus une fois.</small>
+          </p>
+        ) : null}
       </div>
     )
   }
