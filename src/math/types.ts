@@ -1,3 +1,4 @@
+import type { GrammarCoStatement } from '@/grammaire/exercises/co-true-false'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 
 export type Domain =
@@ -425,6 +426,7 @@ export type DivisionStep = {
 }
 
 export type LogistiqueGapMode = 'sans-liste' | 'avec-liste'
+export type LogistiquePresentation = LogistiqueGapMode | import('@/logistique/tables').LogistiqueTablePresentation
 export type LogistiqueGaps = { answers: string[]; words?: string[]; distractors?: string[] }
 export type LogistiqueGlossaryFigure = { src: string; alt: string; caption?: string }
 export type LogistiqueQuestionImage = {
@@ -463,6 +465,7 @@ export type MathItem = {
   /** Question ajoutée en Libre et conservée par les nouveaux tirages. */
   logistiqueRetained?: boolean
   logistiqueGaps?: LogistiqueGaps
+  logistiqueTable?: import('@/logistique/tables').LogistiqueExerciseTable
   logistiqueImage?: LogistiqueQuestionImage
   logistiqueGlossaryFigure?: LogistiqueGlossaryFigure
   layout: Layout
@@ -651,6 +654,8 @@ export type MathItem = {
   menuPrices?: { label: string; cents: number }[]
   areaFigures?: RectangleGrid[]
   solidViews?: SolidViews
+  grammarWordVocab?: { id: string; label: string; image?: string; recall: boolean }
+  grammarCoTrueFalse?: GrammarCoStatement[]
   spatial?: SpatialPractice
   measureScale?: { kind: 'mass' | 'capacity' | 'duration'; unit: string; step: number; tick: number }
   lengthUnits?: { a: number; b: number }
@@ -929,6 +934,7 @@ export type ExerciseBlock = {
   /** Modules de l’activité en mode Évaluation, avec une répartition facultative. */
   logistiqueSelection?: { modules: string[]; quantities?: Record<string, number> }
   logistiqueGapMode?: LogistiqueGapMode
+  logistiquePresentation?: LogistiquePresentation
   topic: string
   exerciseType: string
   difficulty: Difficulty
@@ -1001,6 +1007,8 @@ export type ExerciseBlock = {
   /** Imported grammar listening lots: all current sources are A1; A2 is separate. */
   grammarCoLevel?: 'A1' | 'A2'
   grammarCoAudioId?: string
+  grammarCoFormat?: 'questions' | 'true-false'
+  grammarVocabRecall?: boolean
   /** Additive non-CO curriculum. Absence preserves the historical generator. */
   grammarLevel?: import('@/grammaire/curriculum/types').GrammarLevel
   grammarActivityId?: string

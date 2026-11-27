@@ -1,7 +1,7 @@
 [
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k11-qcm-verbe",
     "subthemeId": "k11",
     "topic": "gram-exprimer",
@@ -1523,12 +1523,312 @@
           }
         ],
         "explanation": "Le verbe « tente » se construit ici avec de devant l’infinitif. Modèle : Rose tente d’ouvrir la chaise pliante."
+      },
+      {
+        "id": "gram-ex-k11-qcm-verbe-a2-repetition-ouverte",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k11-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Inès tient ___ garder la dernière répétition ouverte.",
+        "cue": "Complétez la construction du verbe « tient » avec l’infinitif indiqué.",
+        "answers": [
+          "à"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-repetition-ouverte-choix-1",
+            "text": "à"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-repetition-ouverte-choix-2",
+            "text": "de"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-repetition-ouverte-choix-3",
+            "text": "pour"
+          }
+        ],
+        "explanation": "Le verbe « tient » se construit ici avec à devant l’infinitif. Modèle : Inès tient à garder la dernière répétition ouverte."
+      },
+      {
+        "id": "gram-ex-k11-qcm-verbe-a2-promesse-refuge",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k11-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Le comité se souvient ___ avoir signé une promesse devant les bénévoles.",
+        "cue": "Complétez la construction du verbe « se souvient » avec l’infinitif indiqué.",
+        "answers": [
+          "d’"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-promesse-refuge-choix-1",
+            "text": "d’"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-promesse-refuge-choix-2",
+            "text": "à"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-promesse-refuge-choix-3",
+            "text": "pour"
+          }
+        ],
+        "explanation": "Le verbe « se souvient » se construit ici avec de devant l’infinitif. Modèle : Le comité se souvient d’avoir signé une promesse devant les bénévoles."
+      },
+      {
+        "id": "gram-ex-k11-qcm-verbe-a2-carnet-frais",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k11-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Maryam s’habitue ___ noter ses frais après chaque achat.",
+        "cue": "Complétez la construction du verbe « s’habitue » avec l’infinitif indiqué.",
+        "answers": [
+          "à"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-carnet-frais-choix-1",
+            "text": "à"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-carnet-frais-choix-2",
+            "text": "de"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-carnet-frais-choix-3",
+            "text": "pour"
+          }
+        ],
+        "explanation": "Le verbe « s’habitue » se construit ici avec à devant l’infinitif. Modèle : Maryam s’habitue à noter ses frais après chaque achat."
+      },
+      {
+        "id": "gram-ex-k11-qcm-verbe-a2-aquarium-neuf",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k11-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Les guides parlent ___ installer un aquarium près du hall.",
+        "cue": "Complétez la construction du verbe « parlent » avec l’infinitif indiqué.",
+        "answers": [
+          "d’"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-aquarium-neuf-choix-1",
+            "text": "d’"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-aquarium-neuf-choix-2",
+            "text": "à"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-aquarium-neuf-choix-3",
+            "text": "pour"
+          }
+        ],
+        "explanation": "Le verbe « parlent » se construit ici avec de devant l’infinitif. Modèle : Les guides parlent d’installer un aquarium près du hall."
+      },
+      {
+        "id": "gram-ex-k11-qcm-verbe-a2-inscriptions-ete",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k11-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Le club renonce ___ lancer les inscriptions en juillet.",
+        "cue": "Complétez la construction du verbe « renonce » avec l’infinitif indiqué.",
+        "answers": [
+          "à"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-inscriptions-ete-choix-1",
+            "text": "à"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-inscriptions-ete-choix-2",
+            "text": "de"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-inscriptions-ete-choix-3",
+            "text": "pour"
+          }
+        ],
+        "explanation": "Le verbe « renonce » se construit ici avec à devant l’infinitif. Modèle : Le club renonce à lancer les inscriptions en juillet."
+      },
+      {
+        "id": "gram-ex-k11-qcm-verbe-a2-controle-wifi",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k11-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Le technicien se charge ___ vérifier la connexion.",
+        "cue": "Complétez la construction du verbe « se charge » avec l’infinitif indiqué.",
+        "answers": [
+          "de"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-controle-wifi-choix-1",
+            "text": "de"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-controle-wifi-choix-2",
+            "text": "à"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-controle-wifi-choix-3",
+            "text": "pour"
+          }
+        ],
+        "explanation": "Le verbe « se charge » se construit ici avec de devant l’infinitif. Modèle : Le technicien se charge de vérifier la connexion."
+      },
+      {
+        "id": "gram-ex-k11-qcm-verbe-a2-reunion-voisins",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k11-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Aya songe ___ prévenir ses voisins avant la réunion.",
+        "cue": "Complétez la construction du verbe « songe » avec l’infinitif indiqué.",
+        "answers": [
+          "à"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-reunion-voisins-choix-1",
+            "text": "à"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-reunion-voisins-choix-2",
+            "text": "de"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-reunion-voisins-choix-3",
+            "text": "pour"
+          }
+        ],
+        "explanation": "Le verbe « songe » se construit ici avec à devant l’infinitif. Modèle : Aya songe à prévenir ses voisins avant la réunion."
+      },
+      {
+        "id": "gram-ex-k11-qcm-verbe-a2-tenue-stage",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k11-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Les apprenties rêvent ___ porter un uniforme plus pratique.",
+        "cue": "Complétez la construction du verbe « rêvent » avec l’infinitif indiqué.",
+        "answers": [
+          "de"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-tenue-stage-choix-1",
+            "text": "de"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-tenue-stage-choix-2",
+            "text": "à"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-tenue-stage-choix-3",
+            "text": "pour"
+          }
+        ],
+        "explanation": "Le verbe « rêvent » se construit ici avec de devant l’infinitif. Modèle : Les apprenties rêvent de porter un uniforme plus pratique."
+      },
+      {
+        "id": "gram-ex-k11-qcm-verbe-a2-report-mediation",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k11-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Le formateur consent ___ repousser la séance de médiation.",
+        "cue": "Complétez la construction du verbe « consent » avec l’infinitif indiqué.",
+        "answers": [
+          "à"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-report-mediation-choix-1",
+            "text": "à"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-report-mediation-choix-2",
+            "text": "de"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-report-mediation-choix-3",
+            "text": "pour"
+          }
+        ],
+        "explanation": "Le verbe « consent » se construit ici avec à devant l’infinitif. Modèle : Le formateur consent à repousser la séance de médiation."
+      },
+      {
+        "id": "gram-ex-k11-qcm-verbe-a2-vente-affiches",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k11-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Les bénévoles discutent ___ vendre les affiches après la fête.",
+        "cue": "Complétez la construction du verbe « discutent » avec l’infinitif indiqué.",
+        "answers": [
+          "de"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-vente-affiches-choix-1",
+            "text": "de"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-vente-affiches-choix-2",
+            "text": "à"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-a2-vente-affiches-choix-3",
+            "text": "pour"
+          }
+        ],
+        "explanation": "Le verbe « discutent » se construit ici avec de devant l’infinitif. Modèle : Les bénévoles discutent de vendre les affiches après la fête."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k11-qcm-verbe",
     "subthemeId": "k11",
     "topic": "gram-exprimer",
@@ -3050,12 +3350,312 @@
           }
         ],
         "explanation": "Le verbe « tente » se construit ici avec de devant l’infinitif. Modèle : Rose tente d’ouvrir la chaise pliante."
+      },
+      {
+        "id": "gram-ex-k11-qcm-verbe-b1-repetition-ouverte",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k11-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Inès tient ___ cette répétition.",
+        "cue": "Complétez le groupe nominal avec la préposition régie par le verbe. Faites la contraction ou l’élision si nécessaire.",
+        "answers": [
+          "à"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-repetition-ouverte-choix-1",
+            "text": "à"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-repetition-ouverte-choix-2",
+            "text": "avec"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-repetition-ouverte-choix-3",
+            "text": "sans"
+          }
+        ],
+        "explanation": "Le groupe « à cette répétition » respecte le régime du verbe. Modèle : Inès tient à cette répétition."
+      },
+      {
+        "id": "gram-ex-k11-qcm-verbe-b1-promesse-refuge",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k11-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Le comité se souvient ___ cette promesse.",
+        "cue": "Complétez le groupe nominal avec la préposition régie par le verbe. Faites la contraction ou l’élision si nécessaire.",
+        "answers": [
+          "de"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-promesse-refuge-choix-1",
+            "text": "de"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-promesse-refuge-choix-2",
+            "text": "à"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-promesse-refuge-choix-3",
+            "text": "sans"
+          }
+        ],
+        "explanation": "Le groupe « de cette promesse » respecte le régime du verbe. Modèle : Le comité se souvient de cette promesse."
+      },
+      {
+        "id": "gram-ex-k11-qcm-verbe-b1-carnet-frais",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k11-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Maryam s’habitue ___ cette méthode.",
+        "cue": "Complétez le groupe nominal avec la préposition régie par le verbe. Faites la contraction ou l’élision si nécessaire.",
+        "answers": [
+          "à"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-carnet-frais-choix-1",
+            "text": "à"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-carnet-frais-choix-2",
+            "text": "avec"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-carnet-frais-choix-3",
+            "text": "sans"
+          }
+        ],
+        "explanation": "Le groupe « à cette méthode » respecte le régime du verbe. Modèle : Maryam s’habitue à cette méthode."
+      },
+      {
+        "id": "gram-ex-k11-qcm-verbe-b1-aquarium-neuf",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k11-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Les guides parlent ___ nouvel aquarium.",
+        "cue": "Complétez le groupe nominal avec la préposition régie par le verbe. Faites la contraction ou l’élision si nécessaire.",
+        "answers": [
+          "du"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-aquarium-neuf-choix-1",
+            "text": "du"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-aquarium-neuf-choix-2",
+            "text": "à"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-aquarium-neuf-choix-3",
+            "text": "sans"
+          }
+        ],
+        "explanation": "Le groupe « du nouvel aquarium » respecte le régime du verbe. Modèle : Les guides parlent du nouvel aquarium."
+      },
+      {
+        "id": "gram-ex-k11-qcm-verbe-b1-inscriptions-ete",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k11-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Le club renonce ___ lancement en juillet.",
+        "cue": "Complétez le groupe nominal avec la préposition régie par le verbe. Faites la contraction ou l’élision si nécessaire.",
+        "answers": [
+          "au"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-inscriptions-ete-choix-1",
+            "text": "au"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-inscriptions-ete-choix-2",
+            "text": "avec"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-inscriptions-ete-choix-3",
+            "text": "sans"
+          }
+        ],
+        "explanation": "Le groupe « au lancement en juillet » respecte le régime du verbe. Modèle : Le club renonce au lancement en juillet."
+      },
+      {
+        "id": "gram-ex-k11-qcm-verbe-b1-controle-wifi",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k11-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Le technicien se charge ___ la vérification.",
+        "cue": "Complétez le groupe nominal avec la préposition régie par le verbe. Faites la contraction ou l’élision si nécessaire.",
+        "answers": [
+          "de"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-controle-wifi-choix-1",
+            "text": "de"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-controle-wifi-choix-2",
+            "text": "à"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-controle-wifi-choix-3",
+            "text": "sans"
+          }
+        ],
+        "explanation": "Le groupe « de la vérification » respecte le régime du verbe. Modèle : Le technicien se charge de la vérification."
+      },
+      {
+        "id": "gram-ex-k11-qcm-verbe-b1-reunion-voisins",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k11-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Aya songe ___ cette solution.",
+        "cue": "Complétez le groupe nominal avec la préposition régie par le verbe. Faites la contraction ou l’élision si nécessaire.",
+        "answers": [
+          "à"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-reunion-voisins-choix-1",
+            "text": "à"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-reunion-voisins-choix-2",
+            "text": "avec"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-reunion-voisins-choix-3",
+            "text": "sans"
+          }
+        ],
+        "explanation": "Le groupe « à cette solution » respecte le régime du verbe. Modèle : Aya songe à cette solution."
+      },
+      {
+        "id": "gram-ex-k11-qcm-verbe-b1-tenue-stage",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k11-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Les apprenties rêvent ___ un uniforme plus pratique.",
+        "cue": "Complétez le groupe nominal avec la préposition régie par le verbe. Faites la contraction ou l’élision si nécessaire.",
+        "answers": [
+          "d’"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-tenue-stage-choix-1",
+            "text": "d’"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-tenue-stage-choix-2",
+            "text": "à"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-tenue-stage-choix-3",
+            "text": "sans"
+          }
+        ],
+        "explanation": "Le groupe « d’un uniforme plus pratique » respecte le régime du verbe. Modèle : Les apprenties rêvent d’un uniforme plus pratique."
+      },
+      {
+        "id": "gram-ex-k11-qcm-verbe-b1-report-mediation",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k11-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Le formateur consent ___ report de la séance.",
+        "cue": "Complétez le groupe nominal avec la préposition régie par le verbe. Faites la contraction ou l’élision si nécessaire.",
+        "answers": [
+          "au"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-report-mediation-choix-1",
+            "text": "au"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-report-mediation-choix-2",
+            "text": "avec"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-report-mediation-choix-3",
+            "text": "sans"
+          }
+        ],
+        "explanation": "Le groupe « au report de la séance » respecte le régime du verbe. Modèle : Le formateur consent au report de la séance."
+      },
+      {
+        "id": "gram-ex-k11-qcm-verbe-b1-vente-affiches",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k11-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Les bénévoles discutent ___ la vente des affiches.",
+        "cue": "Complétez le groupe nominal avec la préposition régie par le verbe. Faites la contraction ou l’élision si nécessaire.",
+        "answers": [
+          "de"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-vente-affiches-choix-1",
+            "text": "de"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-vente-affiches-choix-2",
+            "text": "à"
+          },
+          {
+            "id": "gram-ex-k11-qcm-verbe-b1-vente-affiches-choix-3",
+            "text": "sans"
+          }
+        ],
+        "explanation": "Le groupe « de la vente des affiches » respecte le régime du verbe. Modèle : Les bénévoles discutent de la vente des affiches."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k11-curriculum-a",
     "subthemeId": "k11",
     "topic": "gram-exprimer",
@@ -4575,12 +5175,312 @@
           "Rose tente ___ ouvrir la chaise pliante. → d’"
         ],
         "explanation": "Chaque verbe régit sa propre préposition. De devient d’ devant une voyelle."
+      },
+      {
+        "id": "gram-ex-k11-curriculum-a-a2-repetition-ouverte",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k11-curriculum-a",
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Complétez les verbes « tient » et « se souvient ».",
+        "pairs": [
+          {
+            "id": "paire-1",
+            "left": "Inès tient ___ garder la dernière répétition ouverte.",
+            "right": "à",
+            "sourceId": "repetition-ouverte-1"
+          },
+          {
+            "id": "paire-2",
+            "left": "Le comité se souvient ___ avoir signé une promesse devant les bénévoles.",
+            "right": "d’",
+            "sourceId": "repetition-ouverte-2"
+          }
+        ],
+        "answers": [
+          "Inès tient ___ garder la dernière répétition ouverte. → à",
+          "Le comité se souvient ___ avoir signé une promesse devant les bénévoles. → d’"
+        ],
+        "explanation": "Chaque verbe régit sa propre préposition. De devient d’ devant une voyelle."
+      },
+      {
+        "id": "gram-ex-k11-curriculum-a-a2-promesse-refuge",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k11-curriculum-a",
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Complétez les verbes « se souvient » et « s’habitue ».",
+        "pairs": [
+          {
+            "id": "paire-1",
+            "left": "Maryam s’habitue ___ noter ses frais après chaque achat.",
+            "right": "à",
+            "sourceId": "promesse-refuge-1"
+          },
+          {
+            "id": "paire-2",
+            "left": "Le comité se souvient ___ avoir signé une promesse devant les bénévoles.",
+            "right": "d’",
+            "sourceId": "promesse-refuge-2"
+          }
+        ],
+        "answers": [
+          "Maryam s’habitue ___ noter ses frais après chaque achat. → à",
+          "Le comité se souvient ___ avoir signé une promesse devant les bénévoles. → d’"
+        ],
+        "explanation": "Chaque verbe régit sa propre préposition. De devient d’ devant une voyelle."
+      },
+      {
+        "id": "gram-ex-k11-curriculum-a-a2-carnet-frais",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k11-curriculum-a",
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Complétez les verbes « s’habitue » et « parlent ».",
+        "pairs": [
+          {
+            "id": "paire-1",
+            "left": "Maryam s’habitue ___ noter ses frais après chaque achat.",
+            "right": "à",
+            "sourceId": "carnet-frais-1"
+          },
+          {
+            "id": "paire-2",
+            "left": "Les guides parlent ___ installer un aquarium près du hall.",
+            "right": "d’",
+            "sourceId": "carnet-frais-2"
+          }
+        ],
+        "answers": [
+          "Maryam s’habitue ___ noter ses frais après chaque achat. → à",
+          "Les guides parlent ___ installer un aquarium près du hall. → d’"
+        ],
+        "explanation": "Chaque verbe régit sa propre préposition. De devient d’ devant une voyelle."
+      },
+      {
+        "id": "gram-ex-k11-curriculum-a-a2-aquarium-neuf",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k11-curriculum-a",
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Complétez les verbes « parlent » et « renonce ».",
+        "pairs": [
+          {
+            "id": "paire-1",
+            "left": "Le club renonce ___ lancer les inscriptions en juillet.",
+            "right": "à",
+            "sourceId": "aquarium-neuf-1"
+          },
+          {
+            "id": "paire-2",
+            "left": "Les guides parlent ___ installer un aquarium près du hall.",
+            "right": "d’",
+            "sourceId": "aquarium-neuf-2"
+          }
+        ],
+        "answers": [
+          "Le club renonce ___ lancer les inscriptions en juillet. → à",
+          "Les guides parlent ___ installer un aquarium près du hall. → d’"
+        ],
+        "explanation": "Chaque verbe régit sa propre préposition. De devient d’ devant une voyelle."
+      },
+      {
+        "id": "gram-ex-k11-curriculum-a-a2-inscriptions-ete",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k11-curriculum-a",
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Complétez les verbes « renonce » et « se charge ».",
+        "pairs": [
+          {
+            "id": "paire-1",
+            "left": "Le club renonce ___ lancer les inscriptions en juillet.",
+            "right": "à",
+            "sourceId": "inscriptions-ete-1"
+          },
+          {
+            "id": "paire-2",
+            "left": "Le technicien se charge ___ vérifier la connexion.",
+            "right": "de",
+            "sourceId": "inscriptions-ete-2"
+          }
+        ],
+        "answers": [
+          "Le club renonce ___ lancer les inscriptions en juillet. → à",
+          "Le technicien se charge ___ vérifier la connexion. → de"
+        ],
+        "explanation": "Chaque verbe régit sa propre préposition. De devient d’ devant une voyelle."
+      },
+      {
+        "id": "gram-ex-k11-curriculum-a-a2-controle-wifi",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k11-curriculum-a",
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Complétez les verbes « se charge » et « songe ».",
+        "pairs": [
+          {
+            "id": "paire-1",
+            "left": "Aya songe ___ prévenir ses voisins avant la réunion.",
+            "right": "à",
+            "sourceId": "controle-wifi-1"
+          },
+          {
+            "id": "paire-2",
+            "left": "Le technicien se charge ___ vérifier la connexion.",
+            "right": "de",
+            "sourceId": "controle-wifi-2"
+          }
+        ],
+        "answers": [
+          "Aya songe ___ prévenir ses voisins avant la réunion. → à",
+          "Le technicien se charge ___ vérifier la connexion. → de"
+        ],
+        "explanation": "Chaque verbe régit sa propre préposition. De devient d’ devant une voyelle."
+      },
+      {
+        "id": "gram-ex-k11-curriculum-a-a2-reunion-voisins",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k11-curriculum-a",
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Complétez les verbes « songe » et « rêvent ».",
+        "pairs": [
+          {
+            "id": "paire-1",
+            "left": "Aya songe ___ prévenir ses voisins avant la réunion.",
+            "right": "à",
+            "sourceId": "reunion-voisins-1"
+          },
+          {
+            "id": "paire-2",
+            "left": "Les apprenties rêvent ___ porter un uniforme plus pratique.",
+            "right": "de",
+            "sourceId": "reunion-voisins-2"
+          }
+        ],
+        "answers": [
+          "Aya songe ___ prévenir ses voisins avant la réunion. → à",
+          "Les apprenties rêvent ___ porter un uniforme plus pratique. → de"
+        ],
+        "explanation": "Chaque verbe régit sa propre préposition. De devient d’ devant une voyelle."
+      },
+      {
+        "id": "gram-ex-k11-curriculum-a-a2-tenue-stage",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k11-curriculum-a",
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Complétez les verbes « rêvent » et « consent ».",
+        "pairs": [
+          {
+            "id": "paire-1",
+            "left": "Le formateur consent ___ repousser la séance de médiation.",
+            "right": "à",
+            "sourceId": "tenue-stage-1"
+          },
+          {
+            "id": "paire-2",
+            "left": "Les apprenties rêvent ___ porter un uniforme plus pratique.",
+            "right": "de",
+            "sourceId": "tenue-stage-2"
+          }
+        ],
+        "answers": [
+          "Le formateur consent ___ repousser la séance de médiation. → à",
+          "Les apprenties rêvent ___ porter un uniforme plus pratique. → de"
+        ],
+        "explanation": "Chaque verbe régit sa propre préposition. De devient d’ devant une voyelle."
+      },
+      {
+        "id": "gram-ex-k11-curriculum-a-a2-report-mediation",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k11-curriculum-a",
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Complétez les verbes « consent » et « discutent ».",
+        "pairs": [
+          {
+            "id": "paire-1",
+            "left": "Le formateur consent ___ repousser la séance de médiation.",
+            "right": "à",
+            "sourceId": "report-mediation-1"
+          },
+          {
+            "id": "paire-2",
+            "left": "Les bénévoles discutent ___ vendre les affiches après la fête.",
+            "right": "de",
+            "sourceId": "report-mediation-2"
+          }
+        ],
+        "answers": [
+          "Le formateur consent ___ repousser la séance de médiation. → à",
+          "Les bénévoles discutent ___ vendre les affiches après la fête. → de"
+        ],
+        "explanation": "Chaque verbe régit sa propre préposition. De devient d’ devant une voyelle."
+      },
+      {
+        "id": "gram-ex-k11-curriculum-a-a2-vente-affiches",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k11-curriculum-a",
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Complétez les verbes « discutent » et « pense ».",
+        "pairs": [
+          {
+            "id": "paire-1",
+            "left": "Samira pense ___ chercher un autre chemin.",
+            "right": "à",
+            "sourceId": "vente-affiches-1"
+          },
+          {
+            "id": "paire-2",
+            "left": "Les bénévoles discutent ___ vendre les affiches après la fête.",
+            "right": "de",
+            "sourceId": "vente-affiches-2"
+          }
+        ],
+        "answers": [
+          "Samira pense ___ chercher un autre chemin. → à",
+          "Les bénévoles discutent ___ vendre les affiches après la fête. → de"
+        ],
+        "explanation": "Chaque verbe régit sa propre préposition. De devient d’ devant une voyelle."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k11-curriculum-t",
     "subthemeId": "k11",
     "topic": "gram-exprimer",
@@ -5450,12 +6350,182 @@
         ],
         "responseLines": 2,
         "explanation": "Le verbe « tente » se construit ici avec de devant l’infinitif."
+      },
+      {
+        "id": "gram-ex-k11-curriculum-t-b1-repetition-ouverte",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k11-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Inès tient à cette répétition.",
+        "directive": "Remplacez le groupe introduit par la préposition par y ou en. Gardez le sujet et le temps.",
+        "answers": [
+          "Inès y tient."
+        ],
+        "responseLines": 2,
+        "explanation": "Le groupe « à cette répétition » se reprend ici par y."
+      },
+      {
+        "id": "gram-ex-k11-curriculum-t-b1-promesse-refuge",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k11-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le comité se souvient de cette promesse.",
+        "directive": "Remplacez le groupe introduit par la préposition par y ou en. Gardez le sujet et le temps.",
+        "answers": [
+          "Le comité s’en souvient."
+        ],
+        "responseLines": 2,
+        "explanation": "Le groupe « de cette promesse » se reprend ici par en."
+      },
+      {
+        "id": "gram-ex-k11-curriculum-t-b1-carnet-frais",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k11-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Maryam s’habitue à cette méthode.",
+        "directive": "Remplacez le groupe introduit par la préposition par y ou en. Gardez le sujet et le temps.",
+        "answers": [
+          "Maryam s’y habitue."
+        ],
+        "responseLines": 2,
+        "explanation": "Le groupe « à cette méthode » se reprend ici par y."
+      },
+      {
+        "id": "gram-ex-k11-curriculum-t-b1-aquarium-neuf",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k11-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les guides parlent du nouvel aquarium.",
+        "directive": "Remplacez le groupe introduit par la préposition par y ou en. Gardez le sujet et le temps.",
+        "answers": [
+          "Les guides en parlent."
+        ],
+        "responseLines": 2,
+        "explanation": "Le groupe « du nouvel aquarium » se reprend ici par en."
+      },
+      {
+        "id": "gram-ex-k11-curriculum-t-b1-inscriptions-ete",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k11-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le club renonce au lancement en juillet.",
+        "directive": "Remplacez le groupe introduit par la préposition par y ou en. Gardez le sujet et le temps.",
+        "answers": [
+          "Le club y renonce."
+        ],
+        "responseLines": 2,
+        "explanation": "Le groupe « au lancement en juillet » se reprend ici par y."
+      },
+      {
+        "id": "gram-ex-k11-curriculum-t-b1-controle-wifi",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k11-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le technicien se charge de la vérification.",
+        "directive": "Remplacez le groupe introduit par la préposition par y ou en. Gardez le sujet et le temps.",
+        "answers": [
+          "Le technicien s’en charge."
+        ],
+        "responseLines": 2,
+        "explanation": "Le groupe « de la vérification » se reprend ici par en."
+      },
+      {
+        "id": "gram-ex-k11-curriculum-t-b1-reunion-voisins",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k11-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Aya songe à cette solution.",
+        "directive": "Remplacez le groupe introduit par la préposition par y ou en. Gardez le sujet et le temps.",
+        "answers": [
+          "Aya y songe."
+        ],
+        "responseLines": 2,
+        "explanation": "Le groupe « à cette solution » se reprend ici par y."
+      },
+      {
+        "id": "gram-ex-k11-curriculum-t-b1-tenue-stage",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k11-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les apprenties rêvent d’un uniforme plus pratique.",
+        "directive": "Remplacez le groupe introduit par la préposition par y ou en. Gardez le sujet et le temps.",
+        "answers": [
+          "Les apprenties en rêvent."
+        ],
+        "responseLines": 2,
+        "explanation": "Le groupe « d’un uniforme plus pratique » se reprend ici par en."
+      },
+      {
+        "id": "gram-ex-k11-curriculum-t-b1-report-mediation",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k11-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le formateur consent au report de la séance.",
+        "directive": "Remplacez le groupe introduit par la préposition par y ou en. Gardez le sujet et le temps.",
+        "answers": [
+          "Le formateur y consent."
+        ],
+        "responseLines": 2,
+        "explanation": "Le groupe « au report de la séance » se reprend ici par y."
+      },
+      {
+        "id": "gram-ex-k11-curriculum-t-b1-vente-affiches",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k11-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les bénévoles discutent de la vente des affiches.",
+        "directive": "Remplacez le groupe introduit par la préposition par y ou en. Gardez le sujet et le temps.",
+        "answers": [
+          "Les bénévoles en discutent."
+        ],
+        "responseLines": 2,
+        "explanation": "Le groupe « de la vente des affiches » se reprend ici par en."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k11-curriculum-c",
     "subthemeId": "k11",
     "topic": "gram-exprimer",
@@ -6622,6 +7692,236 @@
           "segmentId": "prompt",
           "start": 11,
           "end": 12,
+          "text": "à"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k11-curriculum-c-b1-repetition-ouverte",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k11-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Inès tient avec cette répétition.",
+        "cue": "Complétez le groupe nominal avec la préposition régie par le verbe. Faites la contraction ou l’élision si nécessaire.",
+        "answers": [
+          "Inès tient à cette répétition."
+        ],
+        "explanation": "Le groupe « à cette répétition » respecte le régime du verbe.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 15,
+          "text": "avec"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k11-curriculum-c-b1-promesse-refuge",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k11-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Le comité se souvient à cette promesse.",
+        "cue": "Complétez le groupe nominal avec la préposition régie par le verbe. Faites la contraction ou l’élision si nécessaire.",
+        "answers": [
+          "Le comité se souvient de cette promesse."
+        ],
+        "explanation": "Le groupe « de cette promesse » respecte le régime du verbe.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 22,
+          "end": 23,
+          "text": "à"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k11-curriculum-c-b1-carnet-frais",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k11-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Maryam s’habitue avec cette méthode.",
+        "cue": "Complétez le groupe nominal avec la préposition régie par le verbe. Faites la contraction ou l’élision si nécessaire.",
+        "answers": [
+          "Maryam s’habitue à cette méthode."
+        ],
+        "explanation": "Le groupe « à cette méthode » respecte le régime du verbe.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 17,
+          "end": 21,
+          "text": "avec"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k11-curriculum-c-b1-aquarium-neuf",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k11-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Les guides parlent à nouvel aquarium.",
+        "cue": "Complétez le groupe nominal avec la préposition régie par le verbe. Faites la contraction ou l’élision si nécessaire.",
+        "answers": [
+          "Les guides parlent du nouvel aquarium."
+        ],
+        "explanation": "Le groupe « du nouvel aquarium » respecte le régime du verbe.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 19,
+          "end": 20,
+          "text": "à"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k11-curriculum-c-b1-inscriptions-ete",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k11-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Le club renonce avec lancement en juillet.",
+        "cue": "Complétez le groupe nominal avec la préposition régie par le verbe. Faites la contraction ou l’élision si nécessaire.",
+        "answers": [
+          "Le club renonce au lancement en juillet."
+        ],
+        "explanation": "Le groupe « au lancement en juillet » respecte le régime du verbe.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 16,
+          "end": 20,
+          "text": "avec"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k11-curriculum-c-b1-controle-wifi",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k11-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Le technicien se charge à la vérification.",
+        "cue": "Complétez le groupe nominal avec la préposition régie par le verbe. Faites la contraction ou l’élision si nécessaire.",
+        "answers": [
+          "Le technicien se charge de la vérification."
+        ],
+        "explanation": "Le groupe « de la vérification » respecte le régime du verbe.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 24,
+          "end": 25,
+          "text": "à"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k11-curriculum-c-b1-reunion-voisins",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k11-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Aya songe avec cette solution.",
+        "cue": "Complétez le groupe nominal avec la préposition régie par le verbe. Faites la contraction ou l’élision si nécessaire.",
+        "answers": [
+          "Aya songe à cette solution."
+        ],
+        "explanation": "Le groupe « à cette solution » respecte le régime du verbe.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 10,
+          "end": 14,
+          "text": "avec"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k11-curriculum-c-b1-tenue-stage",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k11-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Les apprenties rêvent à un uniforme plus pratique.",
+        "cue": "Complétez le groupe nominal avec la préposition régie par le verbe. Faites la contraction ou l’élision si nécessaire.",
+        "answers": [
+          "Les apprenties rêvent d’un uniforme plus pratique."
+        ],
+        "explanation": "Le groupe « d’un uniforme plus pratique » respecte le régime du verbe.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 22,
+          "end": 23,
+          "text": "à"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k11-curriculum-c-b1-report-mediation",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k11-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Le formateur consent avec report de la séance.",
+        "cue": "Complétez le groupe nominal avec la préposition régie par le verbe. Faites la contraction ou l’élision si nécessaire.",
+        "answers": [
+          "Le formateur consent au report de la séance."
+        ],
+        "explanation": "Le groupe « au report de la séance » respecte le régime du verbe.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 21,
+          "end": 25,
+          "text": "avec"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k11-curriculum-c-b1-vente-affiches",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k11.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k11-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Les bénévoles discutent à la vente des affiches.",
+        "cue": "Complétez le groupe nominal avec la préposition régie par le verbe. Faites la contraction ou l’élision si nécessaire.",
+        "answers": [
+          "Les bénévoles discutent de la vente des affiches."
+        ],
+        "explanation": "Le groupe « de la vente des affiches » respecte le régime du verbe.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 24,
+          "end": 25,
           "text": "à"
         },
         "responseLines": 2

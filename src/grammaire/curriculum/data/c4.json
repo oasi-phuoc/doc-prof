@@ -1,7 +1,7 @@
 [
   {
     "schemaVersion": 1,
-    "revision": "exclamation-2026-11-23-v1",
+    "revision": "exclamation-2026-11-27-v2",
     "activityId": "gram-ex-c4-qcm-verbe",
     "subthemeId": "c4",
     "topic": "gram-exclamation",
@@ -11,9 +11,9 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-23",
+      "date": "2026-11-27",
       "humanReview": "pending",
-      "note": "100 scènes rédigées, variantes comme/que admises, erreur initiale unique et modèles non exclusifs. Validation enseignante en attente."
+      "note": "60 scènes par niveau. Variantes comme/que admises, erreur initiale unique et modèles non exclusifs. Validation enseignante en attente."
     },
     "presentations": [
       "choice",
@@ -1723,12 +1723,352 @@
             "text": "Quels"
           }
         ]
+      },
+      {
+        "id": "gram-ex-c4-qcm-verbe-a1-silence-salle",
+        "prompt": "___ grand silence !",
+        "answers": [
+          "Quel"
+        ],
+        "explanation": "Le déterminant exclamatif s’accorde avec le nom : quel.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-qcm-verbe",
+          "position": 50,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous entrez dans une salle avec votre amie. Personne ne parle.",
+        "options": [
+          {
+            "id": "forme-695bd2eeb2",
+            "text": "Quel"
+          },
+          {
+            "id": "forme-1dd462835d",
+            "text": "Quelle"
+          },
+          {
+            "id": "forme-391dc9f5e9",
+            "text": "Quels"
+          },
+          {
+            "id": "forme-e071619da0",
+            "text": "Quelles"
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-c4-qcm-verbe-a1-chien-calme",
+        "prompt": "___ gentil chien !",
+        "answers": [
+          "Quel"
+        ],
+        "explanation": "Le déterminant exclamatif s’accorde avec le nom : quel.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-qcm-verbe",
+          "position": 51,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Un chien s’approche doucement de vous. Votre voisin le caresse et le chien remue la queue.",
+        "options": [
+          {
+            "id": "forme-b8b344507f",
+            "text": "Quel"
+          },
+          {
+            "id": "forme-b5a14a604e",
+            "text": "Quelle"
+          },
+          {
+            "id": "forme-135b682b1a",
+            "text": "Quels"
+          },
+          {
+            "id": "forme-caabf0984c",
+            "text": "Quelles"
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-c4-qcm-verbe-a1-plafond-peint",
+        "prompt": "___ beau plafond !",
+        "answers": [
+          "Quel"
+        ],
+        "explanation": "Le déterminant exclamatif s’accorde avec le nom : quel.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-qcm-verbe",
+          "position": 52,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Dans le musée, vous levez la tête. Vous découvrez un plafond couvert d’étoiles peintes.",
+        "options": [
+          {
+            "id": "forme-fa994da0ed",
+            "text": "Quel"
+          },
+          {
+            "id": "forme-4ddaa05437",
+            "text": "Quelle"
+          },
+          {
+            "id": "forme-b92c1f315c",
+            "text": "Quels"
+          },
+          {
+            "id": "forme-3b1d96531b",
+            "text": "Quelles"
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-c4-qcm-verbe-a1-attente-quai",
+        "prompt": "___ longue attente !",
+        "answers": [
+          "Quelle"
+        ],
+        "explanation": "Le déterminant exclamatif s’accorde avec le nom : quelle.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-qcm-verbe",
+          "position": 53,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous êtes sur le quai avec une amie depuis vingt minutes. Le train n’est toujours pas arrivé.",
+        "options": [
+          {
+            "id": "forme-7365459e6a",
+            "text": "Quelle"
+          },
+          {
+            "id": "forme-04f3cb5e94",
+            "text": "Quel"
+          },
+          {
+            "id": "forme-2b6ba953c7",
+            "text": "Quels"
+          },
+          {
+            "id": "forme-a06388a641",
+            "text": "Quelles"
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-c4-qcm-verbe-a1-lumiere-lampe",
+        "prompt": "___ douce lumière !",
+        "answers": [
+          "Quelle"
+        ],
+        "explanation": "Le déterminant exclamatif s’accorde avec le nom : quelle.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-qcm-verbe",
+          "position": 54,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Une amie allume une petite lampe pour lire. Sa lumière est douce.",
+        "options": [
+          {
+            "id": "forme-de42e6834b",
+            "text": "Quelle"
+          },
+          {
+            "id": "forme-75ea76005b",
+            "text": "Quel"
+          },
+          {
+            "id": "forme-23f5e9fe82",
+            "text": "Quels"
+          },
+          {
+            "id": "forme-17891baaaf",
+            "text": "Quelles"
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-c4-qcm-verbe-a1-corde-salle",
+        "prompt": "___ longue corde !",
+        "answers": [
+          "Quelle"
+        ],
+        "explanation": "Le déterminant exclamatif s’accorde avec le nom : quelle.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-qcm-verbe",
+          "position": 55,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Vous aidez à ranger une corde à la salle de sport. Elle va d’un mur à l’autre.",
+        "options": [
+          {
+            "id": "forme-ca30bc92e3",
+            "text": "Quelle"
+          },
+          {
+            "id": "forme-a84ff34492",
+            "text": "Quel"
+          },
+          {
+            "id": "forme-5d03663aa8",
+            "text": "Quels"
+          },
+          {
+            "id": "forme-1c18eb5b54",
+            "text": "Quelles"
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-c4-qcm-verbe-a1-gants-hiver",
+        "prompt": "___ beaux gants !",
+        "answers": [
+          "Quels"
+        ],
+        "explanation": "Le déterminant exclamatif s’accorde avec le nom : quels.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-qcm-verbe",
+          "position": 56,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre ami vous montre ses gants neufs. Vous aimez le bleu et le vert des gants.",
+        "options": [
+          {
+            "id": "forme-8e4e435dd7",
+            "text": "Quels"
+          },
+          {
+            "id": "forme-59f51984bd",
+            "text": "Quel"
+          },
+          {
+            "id": "forme-137560716f",
+            "text": "Quelle"
+          },
+          {
+            "id": "forme-19def4d23f",
+            "text": "Quelles"
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-c4-qcm-verbe-a1-sacs-tour",
+        "prompt": "___ gros sacs !",
+        "answers": [
+          "Quels"
+        ],
+        "explanation": "Le déterminant exclamatif s’accorde avec le nom : quels.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-qcm-verbe",
+          "position": 57,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Deux voisins reviennent du marché avec des sacs très gros.",
+        "options": [
+          {
+            "id": "forme-0fcc1ebae5",
+            "text": "Quels"
+          },
+          {
+            "id": "forme-96c17cb41b",
+            "text": "Quel"
+          },
+          {
+            "id": "forme-64159de1e9",
+            "text": "Quelle"
+          },
+          {
+            "id": "forme-157c5c8aa7",
+            "text": "Quelles"
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-c4-qcm-verbe-a1-serviettes-colorees",
+        "prompt": "___ jolies serviettes !",
+        "answers": [
+          "Quelles"
+        ],
+        "explanation": "Le déterminant exclamatif s’accorde avec le nom : quelles.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-qcm-verbe",
+          "position": 58,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Au pique-nique, une amie pose des serviettes à fleurs sur la table. Vous les trouvez jolies.",
+        "options": [
+          {
+            "id": "forme-9e86ab6a39",
+            "text": "Quelles"
+          },
+          {
+            "id": "forme-b8d7bfe12a",
+            "text": "Quel"
+          },
+          {
+            "id": "forme-40ab6149c5",
+            "text": "Quelle"
+          },
+          {
+            "id": "forme-5dcc5e2973",
+            "text": "Quels"
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-c4-qcm-verbe-a1-grandes-lunettes",
+        "prompt": "___ grandes lunettes !",
+        "answers": [
+          "Quelles"
+        ],
+        "explanation": "Le déterminant exclamatif s’accorde avec le nom : quelles.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-qcm-verbe",
+          "position": 59,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "cue": "Votre camarade essaie des lunettes qui couvrent une grande partie de son visage.",
+        "options": [
+          {
+            "id": "forme-4fe0abc8a1",
+            "text": "Quelles"
+          },
+          {
+            "id": "forme-a500d57bfb",
+            "text": "Quel"
+          },
+          {
+            "id": "forme-05a1b86572",
+            "text": "Quelle"
+          },
+          {
+            "id": "forme-6f51e35b76",
+            "text": "Quels"
+          }
+        ]
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "exclamation-2026-11-23-v1",
+    "revision": "exclamation-2026-11-27-v2",
     "activityId": "gram-ex-c4-qcm-verbe",
     "subthemeId": "c4",
     "topic": "gram-exclamation",
@@ -1738,9 +2078,9 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-23",
+      "date": "2026-11-27",
       "humanReview": "pending",
-      "note": "100 scènes rédigées, variantes comme/que admises, erreur initiale unique et modèles non exclusifs. Validation enseignante en attente."
+      "note": "60 scènes par niveau. Variantes comme/que admises, erreur initiale unique et modèles non exclusifs. Validation enseignante en attente."
     },
     "presentations": [
       "choice",
@@ -3488,12 +3828,359 @@
             "text": "Quels"
           }
         ]
+      },
+      {
+        "id": "gram-ex-c4-qcm-verbe-a2-couloir-lumineux",
+        "prompt": "___ ce couloir est lumineux !",
+        "answers": [
+          "Comme",
+          "Que"
+        ],
+        "explanation": "Formulations recevables : Comme ce couloir est lumineux ! / Que ce couloir est lumineux ! Que devient qu’ devant une voyelle ; l’apostrophe reste attachée au mot suivant.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-qcm-verbe",
+          "position": 50,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "cue": "Les lampes du couloir viennent d’être changées. Vous entrez avec une collègue.",
+        "options": [
+          {
+            "id": "forme-5c7200ae0b",
+            "text": "Comme"
+          },
+          {
+            "id": "forme-d27fd9c7ce",
+            "text": "Comment"
+          },
+          {
+            "id": "forme-139c416274",
+            "text": "Quel"
+          },
+          {
+            "id": "forme-c64f1616ef",
+            "text": "Quelle"
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-c4-qcm-verbe-a2-travail-pace",
+        "prompt": "___ vous avez travaillé vite !",
+        "answers": [
+          "Comme",
+          "Que"
+        ],
+        "explanation": "Formulations recevables : Comme vous avez travaillé vite ! / Que vous avez travaillé vite ! Que devient qu’ devant une voyelle ; l’apostrophe reste attachée au mot suivant.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-qcm-verbe",
+          "position": 51,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "cue": "Deux bénévoles ont fini de trier cent enveloppes avant la pause. Vous les félicitez.",
+        "options": [
+          {
+            "id": "forme-48195a9ad5",
+            "text": "Comme"
+          },
+          {
+            "id": "forme-aef3beb4b2",
+            "text": "Comment"
+          },
+          {
+            "id": "forme-73c9b421ea",
+            "text": "Quel"
+          },
+          {
+            "id": "forme-a53b3411e8",
+            "text": "Quelle"
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-c4-qcm-verbe-a2-plan-precis",
+        "prompt": "___ ce plan est précis !",
+        "answers": [
+          "Que",
+          "Comme"
+        ],
+        "explanation": "Formulations recevables : Que ce plan est précis ! / Comme ce plan est précis ! Que devient qu’ devant une voyelle ; l’apostrophe reste attachée au mot suivant.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-qcm-verbe",
+          "position": 52,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "cue": "Un camarade dessine le chemin jusqu’à la gare et indique chaque rue à prendre.",
+        "options": [
+          {
+            "id": "forme-c529a3b342",
+            "text": "Que"
+          },
+          {
+            "id": "forme-d1ef49ab86",
+            "text": "Comment"
+          },
+          {
+            "id": "forme-f44c991a0f",
+            "text": "Quel"
+          },
+          {
+            "id": "forme-b30ac2f9b7",
+            "text": "Quelle"
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-c4-qcm-verbe-a2-patience-montage",
+        "prompt": "___ tu es patient !",
+        "answers": [
+          "Que",
+          "Comme"
+        ],
+        "explanation": "Formulations recevables : Que tu es patient ! / Comme tu es patient ! Que devient qu’ devant une voyelle ; l’apostrophe reste attachée au mot suivant.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-qcm-verbe",
+          "position": 53,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "cue": "Votre frère recommence calmement le montage d’une étagère. Il vous montre où placer chaque pièce.",
+        "options": [
+          {
+            "id": "forme-8c26ad4e21",
+            "text": "Que"
+          },
+          {
+            "id": "forme-3442c80caa",
+            "text": "Comment"
+          },
+          {
+            "id": "forme-3c4b6d2113",
+            "text": "Quel"
+          },
+          {
+            "id": "forme-ad9e2c6a36",
+            "text": "Quelle"
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-c4-qcm-verbe-a2-guide-parole",
+        "prompt": "___ elle parle clairement !",
+        "answers": [
+          "Comme",
+          "Qu’"
+        ],
+        "explanation": "Formulations recevables : Qu’elle parle clairement ! / Comme elle parle clairement ! Que devient qu’ devant une voyelle ; l’apostrophe reste attachée au mot suivant.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-qcm-verbe",
+          "position": 54,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "cue": "Pendant la visite, la guide donne les consignes avant l’entrée dans la salle. Vous parlez d’elle à un ami.",
+        "options": [
+          {
+            "id": "forme-0897786721",
+            "text": "Comme"
+          },
+          {
+            "id": "forme-e51e83f863",
+            "text": "Comment"
+          },
+          {
+            "id": "forme-0e6cba5de6",
+            "text": "Quel"
+          },
+          {
+            "id": "forme-80dad8a16f",
+            "text": "Quelle"
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-c4-qcm-verbe-a2-galet-plage",
+        "prompt": "___ il est lisse !",
+        "answers": [
+          "Comme",
+          "Qu’"
+        ],
+        "explanation": "Formulations recevables : Qu’il est lisse ! / Comme il est lisse ! Que devient qu’ devant une voyelle ; l’apostrophe reste attachée au mot suivant.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-qcm-verbe",
+          "position": 55,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "cue": "Vous faites rouler un galet poli entre vos doigts et le montrez à une amie.",
+        "options": [
+          {
+            "id": "forme-fde9eedfe0",
+            "text": "Comme"
+          },
+          {
+            "id": "forme-765e9a47c8",
+            "text": "Comment"
+          },
+          {
+            "id": "forme-713e7c691c",
+            "text": "Quel"
+          },
+          {
+            "id": "forme-bb78b105e5",
+            "text": "Quelle"
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-c4-qcm-verbe-a2-pause-arbres",
+        "prompt": "___ on respire bien sous les arbres !",
+        "answers": [
+          "Comme",
+          "Qu’"
+        ],
+        "explanation": "Formulations recevables : Qu’on respire bien sous les arbres ! / Comme on respire bien sous les arbres ! Que devient qu’ devant une voyelle ; l’apostrophe reste attachée au mot suivant.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-qcm-verbe",
+          "position": 56,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "cue": "Vous quittez une rue animée pour faire une pause à l’ombre des arbres du parc.",
+        "options": [
+          {
+            "id": "forme-ad03547f0c",
+            "text": "Comme"
+          },
+          {
+            "id": "forme-6e3286ab29",
+            "text": "Comment"
+          },
+          {
+            "id": "forme-42a35fb701",
+            "text": "Quel"
+          },
+          {
+            "id": "forme-5475f572d5",
+            "text": "Quelle"
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-c4-qcm-verbe-a2-bruit-mixeur",
+        "prompt": "___ terrible bruit !",
+        "answers": [
+          "Quel"
+        ],
+        "explanation": "Accordez la forme de quel avec le nom « bruit ».",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-qcm-verbe",
+          "position": 57,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "cue": "Dans la cuisine du centre, le mixeur fait un bruit qui couvre la voix des personnes.",
+        "options": [
+          {
+            "id": "forme-5269f2039a",
+            "text": "Quel"
+          },
+          {
+            "id": "forme-49b726b63b",
+            "text": "Quelle"
+          },
+          {
+            "id": "forme-1764bcebe1",
+            "text": "Quels"
+          },
+          {
+            "id": "forme-1b68510605",
+            "text": "Quelles"
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-c4-qcm-verbe-a2-memoire-recit",
+        "prompt": "___ excellente mémoire !",
+        "answers": [
+          "Quelle"
+        ],
+        "explanation": "Accordez la forme de quel avec le nom « mémoire ».",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-qcm-verbe",
+          "position": 58,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "cue": "Votre grand-mère raconte avec précision une fête qui a eu lieu il y a vingt ans.",
+        "options": [
+          {
+            "id": "forme-19b6901860",
+            "text": "Quelle"
+          },
+          {
+            "id": "forme-a8698896be",
+            "text": "Quel"
+          },
+          {
+            "id": "forme-38c2363b83",
+            "text": "Quels"
+          },
+          {
+            "id": "forme-131b8278a5",
+            "text": "Quelles"
+          }
+        ]
+      },
+      {
+        "id": "gram-ex-c4-qcm-verbe-a2-sons-canard",
+        "prompt": "___ drôles de sons !",
+        "answers": [
+          "Quels"
+        ],
+        "explanation": "Accordez la forme de quel avec le nom « sons ».",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-qcm-verbe",
+          "position": 59,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "cue": "Vous écoutez avec une amie un musicien qui imite des canards avec son instrument.",
+        "options": [
+          {
+            "id": "forme-b3df9d9a5d",
+            "text": "Quels"
+          },
+          {
+            "id": "forme-1f70dd54c2",
+            "text": "Quel"
+          },
+          {
+            "id": "forme-b2b87e3817",
+            "text": "Quelle"
+          },
+          {
+            "id": "forme-09945dd39a",
+            "text": "Quelles"
+          }
+        ]
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "exclamation-2026-11-23-v1",
+    "revision": "exclamation-2026-11-27-v2",
     "activityId": "gram-ex-c4-curriculum-o",
     "subthemeId": "c4",
     "topic": "gram-exclamation",
@@ -3503,9 +4190,9 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-23",
+      "date": "2026-11-27",
       "humanReview": "pending",
-      "note": "100 scènes rédigées, variantes comme/que admises, erreur initiale unique et modèles non exclusifs. Validation enseignante en attente."
+      "note": "60 scènes par niveau. Variantes comme/que admises, erreur initiale unique et modèles non exclusifs. Validation enseignante en attente."
     },
     "presentations": [
       "order"
@@ -5163,12 +5850,342 @@
           }
         ],
         "cue": "Votre famille fictive annonce deux bonnes nouvelles : une naissance et un nouveau travail."
+      },
+      {
+        "id": "gram-ex-c4-curriculum-o-a1-silence-salle",
+        "prompt": "Formez une exclamation.",
+        "answers": [
+          "Quel grand silence !"
+        ],
+        "explanation": "Tous les mots sont utilisés ; terminez par un point d’exclamation.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-curriculum-o",
+          "position": 50,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "tokens": [
+          {
+            "id": "mot-1",
+            "text": "Quel",
+            "category": "determinant"
+          },
+          {
+            "id": "mot-2",
+            "text": "grand",
+            "category": "adjectif"
+          },
+          {
+            "id": "mot-3",
+            "text": "silence",
+            "category": "nom"
+          }
+        ],
+        "cue": "Vous entrez dans une salle avec votre amie. Personne ne parle."
+      },
+      {
+        "id": "gram-ex-c4-curriculum-o-a1-chien-calme",
+        "prompt": "Formez une exclamation.",
+        "answers": [
+          "Quel gentil chien !"
+        ],
+        "explanation": "Tous les mots sont utilisés ; terminez par un point d’exclamation.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-curriculum-o",
+          "position": 51,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "tokens": [
+          {
+            "id": "mot-1",
+            "text": "Quel",
+            "category": "determinant"
+          },
+          {
+            "id": "mot-2",
+            "text": "gentil",
+            "category": "adjectif"
+          },
+          {
+            "id": "mot-3",
+            "text": "chien",
+            "category": "nom"
+          }
+        ],
+        "cue": "Un chien s’approche doucement de vous. Votre voisin le caresse et le chien remue la queue."
+      },
+      {
+        "id": "gram-ex-c4-curriculum-o-a1-plafond-peint",
+        "prompt": "Formez une exclamation.",
+        "answers": [
+          "Quel beau plafond !"
+        ],
+        "explanation": "Tous les mots sont utilisés ; terminez par un point d’exclamation.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-curriculum-o",
+          "position": 52,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "tokens": [
+          {
+            "id": "mot-1",
+            "text": "Quel",
+            "category": "determinant"
+          },
+          {
+            "id": "mot-2",
+            "text": "beau",
+            "category": "adjectif"
+          },
+          {
+            "id": "mot-3",
+            "text": "plafond",
+            "category": "nom"
+          }
+        ],
+        "cue": "Dans le musée, vous levez la tête. Vous découvrez un plafond couvert d’étoiles peintes."
+      },
+      {
+        "id": "gram-ex-c4-curriculum-o-a1-attente-quai",
+        "prompt": "Formez une exclamation.",
+        "answers": [
+          "Quelle longue attente !"
+        ],
+        "explanation": "Tous les mots sont utilisés ; terminez par un point d’exclamation.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-curriculum-o",
+          "position": 53,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "tokens": [
+          {
+            "id": "mot-1",
+            "text": "Quelle",
+            "category": "determinant"
+          },
+          {
+            "id": "mot-2",
+            "text": "longue",
+            "category": "adjectif"
+          },
+          {
+            "id": "mot-3",
+            "text": "attente",
+            "category": "nom"
+          }
+        ],
+        "cue": "Vous êtes sur le quai avec une amie depuis vingt minutes. Le train n’est toujours pas arrivé."
+      },
+      {
+        "id": "gram-ex-c4-curriculum-o-a1-lumiere-lampe",
+        "prompt": "Formez une exclamation.",
+        "answers": [
+          "Quelle douce lumière !"
+        ],
+        "explanation": "Tous les mots sont utilisés ; terminez par un point d’exclamation.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-curriculum-o",
+          "position": 54,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "tokens": [
+          {
+            "id": "mot-1",
+            "text": "Quelle",
+            "category": "determinant"
+          },
+          {
+            "id": "mot-2",
+            "text": "douce",
+            "category": "adjectif"
+          },
+          {
+            "id": "mot-3",
+            "text": "lumière",
+            "category": "nom"
+          }
+        ],
+        "cue": "Une amie allume une petite lampe pour lire. Sa lumière est douce."
+      },
+      {
+        "id": "gram-ex-c4-curriculum-o-a1-corde-salle",
+        "prompt": "Formez une exclamation.",
+        "answers": [
+          "Quelle longue corde !"
+        ],
+        "explanation": "Tous les mots sont utilisés ; terminez par un point d’exclamation.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-curriculum-o",
+          "position": 55,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "tokens": [
+          {
+            "id": "mot-1",
+            "text": "Quelle",
+            "category": "determinant"
+          },
+          {
+            "id": "mot-2",
+            "text": "longue",
+            "category": "adjectif"
+          },
+          {
+            "id": "mot-3",
+            "text": "corde",
+            "category": "nom"
+          }
+        ],
+        "cue": "Vous aidez à ranger une corde à la salle de sport. Elle va d’un mur à l’autre."
+      },
+      {
+        "id": "gram-ex-c4-curriculum-o-a1-gants-hiver",
+        "prompt": "Formez une exclamation.",
+        "answers": [
+          "Quels beaux gants !"
+        ],
+        "explanation": "Tous les mots sont utilisés ; terminez par un point d’exclamation.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-curriculum-o",
+          "position": 56,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "tokens": [
+          {
+            "id": "mot-1",
+            "text": "Quels",
+            "category": "determinant"
+          },
+          {
+            "id": "mot-2",
+            "text": "beaux",
+            "category": "adjectif"
+          },
+          {
+            "id": "mot-3",
+            "text": "gants",
+            "category": "nom"
+          }
+        ],
+        "cue": "Votre ami vous montre ses gants neufs. Vous aimez le bleu et le vert des gants."
+      },
+      {
+        "id": "gram-ex-c4-curriculum-o-a1-sacs-tour",
+        "prompt": "Formez une exclamation.",
+        "answers": [
+          "Quels gros sacs !"
+        ],
+        "explanation": "Tous les mots sont utilisés ; terminez par un point d’exclamation.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-curriculum-o",
+          "position": 57,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "tokens": [
+          {
+            "id": "mot-1",
+            "text": "Quels",
+            "category": "determinant"
+          },
+          {
+            "id": "mot-2",
+            "text": "gros",
+            "category": "adjectif"
+          },
+          {
+            "id": "mot-3",
+            "text": "sacs",
+            "category": "nom"
+          }
+        ],
+        "cue": "Deux voisins reviennent du marché avec des sacs très gros."
+      },
+      {
+        "id": "gram-ex-c4-curriculum-o-a1-serviettes-colorees",
+        "prompt": "Formez une exclamation.",
+        "answers": [
+          "Quelles jolies serviettes !"
+        ],
+        "explanation": "Tous les mots sont utilisés ; terminez par un point d’exclamation.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-curriculum-o",
+          "position": 58,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "tokens": [
+          {
+            "id": "mot-1",
+            "text": "Quelles",
+            "category": "determinant"
+          },
+          {
+            "id": "mot-2",
+            "text": "jolies",
+            "category": "adjectif"
+          },
+          {
+            "id": "mot-3",
+            "text": "serviettes",
+            "category": "nom"
+          }
+        ],
+        "cue": "Au pique-nique, une amie pose des serviettes à fleurs sur la table. Vous les trouvez jolies."
+      },
+      {
+        "id": "gram-ex-c4-curriculum-o-a1-grandes-lunettes",
+        "prompt": "Formez une exclamation.",
+        "answers": [
+          "Quelles grandes lunettes !"
+        ],
+        "explanation": "Tous les mots sont utilisés ; terminez par un point d’exclamation.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-curriculum-o",
+          "position": 59,
+          "partition": "a1"
+        },
+        "kind": "order",
+        "tokens": [
+          {
+            "id": "mot-1",
+            "text": "Quelles",
+            "category": "determinant"
+          },
+          {
+            "id": "mot-2",
+            "text": "grandes",
+            "category": "adjectif"
+          },
+          {
+            "id": "mot-3",
+            "text": "lunettes",
+            "category": "nom"
+          }
+        ],
+        "cue": "Votre camarade essaie des lunettes qui couvrent une grande partie de son visage."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "exclamation-2026-11-23-v1",
+    "revision": "exclamation-2026-11-27-v2",
     "activityId": "gram-ex-c4-curriculum-t",
     "subthemeId": "c4",
     "topic": "gram-exclamation",
@@ -5178,9 +6195,9 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-23",
+      "date": "2026-11-27",
       "humanReview": "pending",
-      "note": "100 scènes rédigées, variantes comme/que admises, erreur initiale unique et modèles non exclusifs. Validation enseignante en attente."
+      "note": "60 scènes par niveau. Variantes comme/que admises, erreur initiale unique et modèles non exclusifs. Validation enseignante en attente."
     },
     "presentations": [
       "transform"
@@ -6038,12 +7055,182 @@
         "kind": "transform",
         "directive": "Commencez par une forme de [[em]]quel[[/em]] et utilisez le nom « vagues ».",
         "responseLines": 2
+      },
+      {
+        "id": "gram-ex-c4-curriculum-t-a2-couloir-lumineux",
+        "prompt": "Ce couloir est très lumineux.",
+        "answers": [
+          "Comme ce couloir est lumineux !"
+        ],
+        "explanation": "Modèle possible : conservez les faits, les personnes et la construction demandée. Une intensité équivalente est recevable.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-t",
+          "position": 50,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "directive": "Commencez par [[em]]comme[[/em]].",
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-c4-curriculum-t-a2-travail-pace",
+        "prompt": "Vous avez travaillé très vite.",
+        "answers": [
+          "Comme vous avez travaillé vite !"
+        ],
+        "explanation": "Modèle possible : conservez les faits, les personnes et la construction demandée. Une intensité équivalente est recevable.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-t",
+          "position": 51,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "directive": "Commencez par [[em]]comme[[/em]].",
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-c4-curriculum-t-a2-plan-precis",
+        "prompt": "Ce plan est très précis.",
+        "answers": [
+          "Que ce plan est précis !"
+        ],
+        "explanation": "Modèle possible : conservez les faits, les personnes et la construction demandée. Une intensité équivalente est recevable.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-t",
+          "position": 52,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "directive": "Commencez par [[em]]que[[/em]], avec l’élision si nécessaire.",
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-c4-curriculum-t-a2-patience-montage",
+        "prompt": "Tu es très patient.",
+        "answers": [
+          "Que tu es patient !"
+        ],
+        "explanation": "Modèle possible : conservez les faits, les personnes et la construction demandée. Une intensité équivalente est recevable.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-t",
+          "position": 53,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "directive": "Commencez par [[em]]que[[/em]], avec l’élision si nécessaire.",
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-c4-curriculum-t-a2-guide-parole",
+        "prompt": "Elle parle très clairement.",
+        "answers": [
+          "Qu’elle parle clairement !"
+        ],
+        "explanation": "Modèle possible : conservez les faits, les personnes et la construction demandée. Une intensité équivalente est recevable.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-t",
+          "position": 54,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "directive": "Commencez par [[em]]que[[/em]], avec l’élision si nécessaire.",
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-c4-curriculum-t-a2-galet-plage",
+        "prompt": "Ce galet est très lisse.",
+        "answers": [
+          "Qu’il est lisse !"
+        ],
+        "explanation": "Modèle possible : conservez les faits, les personnes et la construction demandée. Une intensité équivalente est recevable.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-t",
+          "position": 55,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "directive": "Commencez par [[em]]que[[/em]], avec l’élision si nécessaire.",
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-c4-curriculum-t-a2-pause-arbres",
+        "prompt": "On respire très bien sous les arbres.",
+        "answers": [
+          "Qu’on respire bien sous les arbres !"
+        ],
+        "explanation": "Modèle possible : conservez les faits, les personnes et la construction demandée. Une intensité équivalente est recevable.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-t",
+          "position": 56,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "directive": "Commencez par [[em]]que[[/em]], avec l’élision si nécessaire.",
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-c4-curriculum-t-a2-bruit-mixeur",
+        "prompt": "Le mixeur fait un bruit terrible.",
+        "answers": [
+          "Quel terrible bruit !"
+        ],
+        "explanation": "Modèle possible : conservez les faits, les personnes et la construction demandée. Une intensité équivalente est recevable.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-t",
+          "position": 57,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "directive": "Commencez par une forme de [[em]]quel[[/em]] et utilisez le nom « bruit ».",
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-c4-curriculum-t-a2-memoire-recit",
+        "prompt": "Ta mémoire est excellente.",
+        "answers": [
+          "Quelle excellente mémoire !"
+        ],
+        "explanation": "Modèle possible : conservez les faits, les personnes et la construction demandée. Une intensité équivalente est recevable.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-t",
+          "position": 58,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "directive": "Commencez par une forme de [[em]]quel[[/em]] et utilisez le nom « mémoire ».",
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-c4-curriculum-t-a2-sons-canard",
+        "prompt": "Cet instrument produit des sons amusants et étranges.",
+        "answers": [
+          "Quels drôles de sons !"
+        ],
+        "explanation": "Modèle possible : conservez les faits, les personnes et la construction demandée. Une intensité équivalente est recevable.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-t",
+          "position": 59,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "directive": "Commencez par une forme de [[em]]quel[[/em]] et utilisez le nom « sons ».",
+        "responseLines": 2
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "exclamation-2026-11-23-v1",
+    "revision": "exclamation-2026-11-27-v2",
     "activityId": "gram-ex-c4-curriculum-c",
     "subthemeId": "c4",
     "topic": "gram-exclamation",
@@ -6053,9 +7240,9 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-23",
+      "date": "2026-11-27",
       "humanReview": "pending",
-      "note": "100 scènes rédigées, variantes comme/que admises, erreur initiale unique et modèles non exclusifs. Validation enseignante en attente."
+      "note": "60 scènes par niveau. Variantes comme/que admises, erreur initiale unique et modèles non exclusifs. Validation enseignante en attente."
     },
     "presentations": [
       "correct"
@@ -7201,12 +8388,239 @@
           "end": 6,
           "text": "Quels "
         }
+      },
+      {
+        "id": "gram-ex-c4-curriculum-c-a2-couloir-lumineux",
+        "prompt": "Comment ce couloir est lumineux !",
+        "answers": [
+          "Comme ce couloir est lumineux !",
+          "Que ce couloir est lumineux !"
+        ],
+        "explanation": "Corrigez le début de l’exclamation : accord du déterminant, comme au lieu de comment, ou élision de que. Les formulations équivalentes indiquées sont recevables.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-c",
+          "position": 50,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 8,
+          "text": "Comment "
+        }
+      },
+      {
+        "id": "gram-ex-c4-curriculum-c-a2-travail-pace",
+        "prompt": "Comment vous avez travaillé vite !",
+        "answers": [
+          "Comme vous avez travaillé vite !",
+          "Que vous avez travaillé vite !"
+        ],
+        "explanation": "Corrigez le début de l’exclamation : accord du déterminant, comme au lieu de comment, ou élision de que. Les formulations équivalentes indiquées sont recevables.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-c",
+          "position": 51,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 8,
+          "text": "Comment "
+        }
+      },
+      {
+        "id": "gram-ex-c4-curriculum-c-a2-plan-precis",
+        "prompt": "Qu’ce plan est précis !",
+        "answers": [
+          "Que ce plan est précis !",
+          "Comme ce plan est précis !"
+        ],
+        "explanation": "Corrigez le début de l’exclamation : accord du déterminant, comme au lieu de comment, ou élision de que. Les formulations équivalentes indiquées sont recevables.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-c",
+          "position": 52,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 3,
+          "text": "Qu’"
+        }
+      },
+      {
+        "id": "gram-ex-c4-curriculum-c-a2-patience-montage",
+        "prompt": "Qu’tu es patient !",
+        "answers": [
+          "Que tu es patient !",
+          "Comme tu es patient !"
+        ],
+        "explanation": "Corrigez le début de l’exclamation : accord du déterminant, comme au lieu de comment, ou élision de que. Les formulations équivalentes indiquées sont recevables.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-c",
+          "position": 53,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 3,
+          "text": "Qu’"
+        }
+      },
+      {
+        "id": "gram-ex-c4-curriculum-c-a2-guide-parole",
+        "prompt": "Que elle parle clairement !",
+        "answers": [
+          "Qu’elle parle clairement !",
+          "Comme elle parle clairement !"
+        ],
+        "explanation": "Corrigez le début de l’exclamation : accord du déterminant, comme au lieu de comment, ou élision de que. Les formulations équivalentes indiquées sont recevables.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-c",
+          "position": 54,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 4,
+          "text": "Que "
+        }
+      },
+      {
+        "id": "gram-ex-c4-curriculum-c-a2-galet-plage",
+        "prompt": "Que il est lisse !",
+        "answers": [
+          "Qu’il est lisse !",
+          "Comme il est lisse !"
+        ],
+        "explanation": "Corrigez le début de l’exclamation : accord du déterminant, comme au lieu de comment, ou élision de que. Les formulations équivalentes indiquées sont recevables.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-c",
+          "position": 55,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 4,
+          "text": "Que "
+        }
+      },
+      {
+        "id": "gram-ex-c4-curriculum-c-a2-pause-arbres",
+        "prompt": "Que on respire bien sous les arbres !",
+        "answers": [
+          "Qu’on respire bien sous les arbres !",
+          "Comme on respire bien sous les arbres !"
+        ],
+        "explanation": "Corrigez le début de l’exclamation : accord du déterminant, comme au lieu de comment, ou élision de que. Les formulations équivalentes indiquées sont recevables.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-c",
+          "position": 56,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 4,
+          "text": "Que "
+        }
+      },
+      {
+        "id": "gram-ex-c4-curriculum-c-a2-bruit-mixeur",
+        "prompt": "Quelle terrible bruit !",
+        "answers": [
+          "Quel terrible bruit !"
+        ],
+        "explanation": "Corrigez le début de l’exclamation : accord du déterminant, comme au lieu de comment, ou élision de que. Les formulations équivalentes indiquées sont recevables.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-c",
+          "position": 57,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 7,
+          "text": "Quelle "
+        }
+      },
+      {
+        "id": "gram-ex-c4-curriculum-c-a2-memoire-recit",
+        "prompt": "Quel excellente mémoire !",
+        "answers": [
+          "Quelle excellente mémoire !"
+        ],
+        "explanation": "Corrigez le début de l’exclamation : accord du déterminant, comme au lieu de comment, ou élision de que. Les formulations équivalentes indiquées sont recevables.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-c",
+          "position": 58,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 5,
+          "text": "Quel "
+        }
+      },
+      {
+        "id": "gram-ex-c4-curriculum-c-a2-sons-canard",
+        "prompt": "Quelles drôles de sons !",
+        "answers": [
+          "Quels drôles de sons !"
+        ],
+        "explanation": "Corrigez le début de l’exclamation : accord du déterminant, comme au lieu de comment, ou élision de que. Les formulations équivalentes indiquées sont recevables.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-c",
+          "position": 59,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "responseLines": 2,
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 8,
+          "text": "Quelles "
+        }
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "exclamation-2026-11-23-v1",
+    "revision": "exclamation-2026-11-27-v2",
     "activityId": "gram-ex-c4-curriculum-p",
     "subthemeId": "c4",
     "topic": "gram-exclamation",
@@ -7216,9 +8630,9 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-23",
+      "date": "2026-11-27",
       "humanReview": "pending",
-      "note": "100 scènes rédigées, variantes comme/que admises, erreur initiale unique et modèles non exclusifs. Validation enseignante en attente."
+      "note": "60 scènes par niveau. Variantes comme/que admises, erreur initiale unique et modèles non exclusifs. Validation enseignante en attente."
     },
     "presentations": [
       "open-oral"
@@ -9226,12 +10640,412 @@
           }
         ],
         "writeLines": 0
+      },
+      {
+        "id": "gram-ex-c4-curriculum-p-a1-silence-salle",
+        "prompt": "Vous entrez dans une salle avec votre amie. Personne ne parle.",
+        "answers": [
+          "Quel grand silence !\nOn n’entend personne."
+        ],
+        "explanation": "Exemple possible ; d’autres réactions pertinentes et respectueuses sont recevables. Échangez ensuite les rôles.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-curriculum-p",
+          "position": 50,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "task": "Réagissez par une exclamation simple. Votre partenaire demande pourquoi : donnez une raison courte.",
+        "rubric": [
+          {
+            "id": "1",
+            "label": "Exclamation adaptée à la situation."
+          },
+          {
+            "id": "2",
+            "label": "Construction et accords compréhensibles."
+          },
+          {
+            "id": "3",
+            "label": "Intonation expressive et respectueuse."
+          },
+          {
+            "id": "4",
+            "label": "Réponse cohérente avec le rôle et les faits."
+          },
+          {
+            "id": "5",
+            "label": "Raison simple donnée lorsque la consigne la demande."
+          }
+        ],
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-c4-curriculum-p-a1-chien-calme",
+        "prompt": "Un chien s’approche doucement de vous. Votre voisin le caresse et le chien remue la queue.",
+        "answers": [
+          "Quel gentil chien !\nIl est calme avec nous."
+        ],
+        "explanation": "Exemple possible ; d’autres réactions pertinentes et respectueuses sont recevables. Échangez ensuite les rôles.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-curriculum-p",
+          "position": 51,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "task": "Réagissez par une exclamation simple. Votre partenaire demande pourquoi : donnez une raison courte.",
+        "rubric": [
+          {
+            "id": "1",
+            "label": "Exclamation adaptée à la situation."
+          },
+          {
+            "id": "2",
+            "label": "Construction et accords compréhensibles."
+          },
+          {
+            "id": "3",
+            "label": "Intonation expressive et respectueuse."
+          },
+          {
+            "id": "4",
+            "label": "Réponse cohérente avec le rôle et les faits."
+          },
+          {
+            "id": "5",
+            "label": "Raison simple donnée lorsque la consigne la demande."
+          }
+        ],
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-c4-curriculum-p-a1-plafond-peint",
+        "prompt": "Dans le musée, vous levez la tête. Vous découvrez un plafond couvert d’étoiles peintes.",
+        "answers": [
+          "Quel beau plafond !\nJ’aime les étoiles peintes."
+        ],
+        "explanation": "Exemple possible ; d’autres réactions pertinentes et respectueuses sont recevables. Échangez ensuite les rôles.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-curriculum-p",
+          "position": 52,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "task": "Réagissez par une exclamation simple. Votre partenaire demande pourquoi : donnez une raison courte.",
+        "rubric": [
+          {
+            "id": "1",
+            "label": "Exclamation adaptée à la situation."
+          },
+          {
+            "id": "2",
+            "label": "Construction et accords compréhensibles."
+          },
+          {
+            "id": "3",
+            "label": "Intonation expressive et respectueuse."
+          },
+          {
+            "id": "4",
+            "label": "Réponse cohérente avec le rôle et les faits."
+          },
+          {
+            "id": "5",
+            "label": "Raison simple donnée lorsque la consigne la demande."
+          }
+        ],
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-c4-curriculum-p-a1-attente-quai",
+        "prompt": "Vous êtes sur le quai avec une amie depuis vingt minutes. Le train n’est toujours pas arrivé.",
+        "answers": [
+          "Quelle longue attente !\nNous sommes ici depuis vingt minutes."
+        ],
+        "explanation": "Exemple possible ; d’autres réactions pertinentes et respectueuses sont recevables. Échangez ensuite les rôles.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-curriculum-p",
+          "position": 53,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "task": "Réagissez par une exclamation simple. Votre partenaire demande pourquoi : donnez une raison courte.",
+        "rubric": [
+          {
+            "id": "1",
+            "label": "Exclamation adaptée à la situation."
+          },
+          {
+            "id": "2",
+            "label": "Construction et accords compréhensibles."
+          },
+          {
+            "id": "3",
+            "label": "Intonation expressive et respectueuse."
+          },
+          {
+            "id": "4",
+            "label": "Réponse cohérente avec le rôle et les faits."
+          },
+          {
+            "id": "5",
+            "label": "Raison simple donnée lorsque la consigne la demande."
+          }
+        ],
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-c4-curriculum-p-a1-lumiere-lampe",
+        "prompt": "Une amie allume une petite lampe pour lire. Sa lumière est douce.",
+        "answers": [
+          "Quelle douce lumière !\nElle n’est pas trop forte."
+        ],
+        "explanation": "Exemple possible ; d’autres réactions pertinentes et respectueuses sont recevables. Échangez ensuite les rôles.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-curriculum-p",
+          "position": 54,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "task": "Réagissez par une exclamation simple. Votre partenaire demande pourquoi : donnez une raison courte.",
+        "rubric": [
+          {
+            "id": "1",
+            "label": "Exclamation adaptée à la situation."
+          },
+          {
+            "id": "2",
+            "label": "Construction et accords compréhensibles."
+          },
+          {
+            "id": "3",
+            "label": "Intonation expressive et respectueuse."
+          },
+          {
+            "id": "4",
+            "label": "Réponse cohérente avec le rôle et les faits."
+          },
+          {
+            "id": "5",
+            "label": "Raison simple donnée lorsque la consigne la demande."
+          }
+        ],
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-c4-curriculum-p-a1-corde-salle",
+        "prompt": "Vous aidez à ranger une corde à la salle de sport. Elle va d’un mur à l’autre.",
+        "answers": [
+          "Quelle longue corde !\nElle est aussi longue que la salle."
+        ],
+        "explanation": "Exemple possible ; d’autres réactions pertinentes et respectueuses sont recevables. Échangez ensuite les rôles.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-curriculum-p",
+          "position": 55,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "task": "Réagissez par une exclamation simple. Votre partenaire demande pourquoi : donnez une raison courte.",
+        "rubric": [
+          {
+            "id": "1",
+            "label": "Exclamation adaptée à la situation."
+          },
+          {
+            "id": "2",
+            "label": "Construction et accords compréhensibles."
+          },
+          {
+            "id": "3",
+            "label": "Intonation expressive et respectueuse."
+          },
+          {
+            "id": "4",
+            "label": "Réponse cohérente avec le rôle et les faits."
+          },
+          {
+            "id": "5",
+            "label": "Raison simple donnée lorsque la consigne la demande."
+          }
+        ],
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-c4-curriculum-p-a1-gants-hiver",
+        "prompt": "Votre ami vous montre ses gants neufs. Vous aimez le bleu et le vert des gants.",
+        "answers": [
+          "Quels beaux gants !\nLe bleu et le vert vont bien ensemble."
+        ],
+        "explanation": "Exemple possible ; d’autres réactions pertinentes et respectueuses sont recevables. Échangez ensuite les rôles.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-curriculum-p",
+          "position": 56,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "task": "Réagissez par une exclamation simple. Votre partenaire demande pourquoi : donnez une raison courte.",
+        "rubric": [
+          {
+            "id": "1",
+            "label": "Exclamation adaptée à la situation."
+          },
+          {
+            "id": "2",
+            "label": "Construction et accords compréhensibles."
+          },
+          {
+            "id": "3",
+            "label": "Intonation expressive et respectueuse."
+          },
+          {
+            "id": "4",
+            "label": "Réponse cohérente avec le rôle et les faits."
+          },
+          {
+            "id": "5",
+            "label": "Raison simple donnée lorsque la consigne la demande."
+          }
+        ],
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-c4-curriculum-p-a1-sacs-tour",
+        "prompt": "Deux voisins reviennent du marché avec des sacs très gros.",
+        "answers": [
+          "Quels gros sacs !\nIls ont fait beaucoup d’achats."
+        ],
+        "explanation": "Exemple possible ; d’autres réactions pertinentes et respectueuses sont recevables. Échangez ensuite les rôles.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-curriculum-p",
+          "position": 57,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "task": "Réagissez par une exclamation simple. Votre partenaire demande pourquoi : donnez une raison courte.",
+        "rubric": [
+          {
+            "id": "1",
+            "label": "Exclamation adaptée à la situation."
+          },
+          {
+            "id": "2",
+            "label": "Construction et accords compréhensibles."
+          },
+          {
+            "id": "3",
+            "label": "Intonation expressive et respectueuse."
+          },
+          {
+            "id": "4",
+            "label": "Réponse cohérente avec le rôle et les faits."
+          },
+          {
+            "id": "5",
+            "label": "Raison simple donnée lorsque la consigne la demande."
+          }
+        ],
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-c4-curriculum-p-a1-serviettes-colorees",
+        "prompt": "Au pique-nique, une amie pose des serviettes à fleurs sur la table. Vous les trouvez jolies.",
+        "answers": [
+          "Quelles jolies serviettes !\nJ’aime les fleurs dessinées dessus."
+        ],
+        "explanation": "Exemple possible ; d’autres réactions pertinentes et respectueuses sont recevables. Échangez ensuite les rôles.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-curriculum-p",
+          "position": 58,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "task": "Réagissez par une exclamation simple. Votre partenaire demande pourquoi : donnez une raison courte.",
+        "rubric": [
+          {
+            "id": "1",
+            "label": "Exclamation adaptée à la situation."
+          },
+          {
+            "id": "2",
+            "label": "Construction et accords compréhensibles."
+          },
+          {
+            "id": "3",
+            "label": "Intonation expressive et respectueuse."
+          },
+          {
+            "id": "4",
+            "label": "Réponse cohérente avec le rôle et les faits."
+          },
+          {
+            "id": "5",
+            "label": "Raison simple donnée lorsque la consigne la demande."
+          }
+        ],
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-c4-curriculum-p-a1-grandes-lunettes",
+        "prompt": "Votre camarade essaie des lunettes qui couvrent une grande partie de son visage.",
+        "answers": [
+          "Quelles grandes lunettes !\nElles couvrent presque tout ton visage."
+        ],
+        "explanation": "Exemple possible ; d’autres réactions pertinentes et respectueuses sont recevables. Échangez ensuite les rôles.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a1.tsv",
+          "typeId": "gram-ex-c4-curriculum-p",
+          "position": 59,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "task": "Réagissez par une exclamation simple. Votre partenaire demande pourquoi : donnez une raison courte.",
+        "rubric": [
+          {
+            "id": "1",
+            "label": "Exclamation adaptée à la situation."
+          },
+          {
+            "id": "2",
+            "label": "Construction et accords compréhensibles."
+          },
+          {
+            "id": "3",
+            "label": "Intonation expressive et respectueuse."
+          },
+          {
+            "id": "4",
+            "label": "Réponse cohérente avec le rôle et les faits."
+          },
+          {
+            "id": "5",
+            "label": "Raison simple donnée lorsque la consigne la demande."
+          }
+        ],
+        "writeLines": 0
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "exclamation-2026-11-23-v1",
+    "revision": "exclamation-2026-11-27-v2",
     "activityId": "gram-ex-c4-curriculum-p",
     "subthemeId": "c4",
     "topic": "gram-exclamation",
@@ -9241,9 +11055,9 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-23",
+      "date": "2026-11-27",
       "humanReview": "pending",
-      "note": "100 scènes rédigées, variantes comme/que admises, erreur initiale unique et modèles non exclusifs. Validation enseignante en attente."
+      "note": "60 scènes par niveau. Variantes comme/que admises, erreur initiale unique et modèles non exclusifs. Validation enseignante en attente."
     },
     "presentations": [
       "open-oral"
@@ -11223,6 +13037,406 @@
           "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
           "typeId": "gram-ex-c4-curriculum-p",
           "position": 49,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "task": "Réagissez par une exclamation adaptée, puis expliquez votre émotion. Votre partenaire propose une autre réaction ; répondez-lui.",
+        "rubric": [
+          {
+            "id": "1",
+            "label": "Exclamation adaptée à la situation."
+          },
+          {
+            "id": "2",
+            "label": "Construction et accords compréhensibles."
+          },
+          {
+            "id": "3",
+            "label": "Intonation expressive et respectueuse."
+          },
+          {
+            "id": "4",
+            "label": "Réponse cohérente avec le rôle et les faits."
+          },
+          {
+            "id": "5",
+            "label": "Raison simple donnée lorsque la consigne la demande."
+          }
+        ],
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-c4-curriculum-p-a2-couloir-lumineux",
+        "prompt": "Les lampes du couloir viennent d’être changées. Vous entrez avec une collègue.",
+        "answers": [
+          "Comme ce couloir est lumineux !\nOn peut lire les affiches depuis l’entrée."
+        ],
+        "explanation": "Exemple possible ; d’autres réactions pertinentes et respectueuses sont recevables. Échangez ensuite les rôles.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-p",
+          "position": 50,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "task": "Réagissez par une exclamation adaptée, puis expliquez votre émotion. Votre partenaire propose une autre réaction ; répondez-lui.",
+        "rubric": [
+          {
+            "id": "1",
+            "label": "Exclamation adaptée à la situation."
+          },
+          {
+            "id": "2",
+            "label": "Construction et accords compréhensibles."
+          },
+          {
+            "id": "3",
+            "label": "Intonation expressive et respectueuse."
+          },
+          {
+            "id": "4",
+            "label": "Réponse cohérente avec le rôle et les faits."
+          },
+          {
+            "id": "5",
+            "label": "Raison simple donnée lorsque la consigne la demande."
+          }
+        ],
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-c4-curriculum-p-a2-travail-pace",
+        "prompt": "Deux bénévoles ont fini de trier cent enveloppes avant la pause. Vous les félicitez.",
+        "answers": [
+          "Comme vous avez travaillé vite !\nTout est déjà trié alors qu’il reste vingt minutes."
+        ],
+        "explanation": "Exemple possible ; d’autres réactions pertinentes et respectueuses sont recevables. Échangez ensuite les rôles.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-p",
+          "position": 51,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "task": "Réagissez par une exclamation adaptée, puis expliquez votre émotion. Votre partenaire propose une autre réaction ; répondez-lui.",
+        "rubric": [
+          {
+            "id": "1",
+            "label": "Exclamation adaptée à la situation."
+          },
+          {
+            "id": "2",
+            "label": "Construction et accords compréhensibles."
+          },
+          {
+            "id": "3",
+            "label": "Intonation expressive et respectueuse."
+          },
+          {
+            "id": "4",
+            "label": "Réponse cohérente avec le rôle et les faits."
+          },
+          {
+            "id": "5",
+            "label": "Raison simple donnée lorsque la consigne la demande."
+          }
+        ],
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-c4-curriculum-p-a2-plan-precis",
+        "prompt": "Un camarade dessine le chemin jusqu’à la gare et indique chaque rue à prendre.",
+        "answers": [
+          "Que ce plan est précis !\nLe nom de chaque rue y figure."
+        ],
+        "explanation": "Exemple possible ; d’autres réactions pertinentes et respectueuses sont recevables. Échangez ensuite les rôles.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-p",
+          "position": 52,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "task": "Réagissez par une exclamation adaptée, puis expliquez votre émotion. Votre partenaire propose une autre réaction ; répondez-lui.",
+        "rubric": [
+          {
+            "id": "1",
+            "label": "Exclamation adaptée à la situation."
+          },
+          {
+            "id": "2",
+            "label": "Construction et accords compréhensibles."
+          },
+          {
+            "id": "3",
+            "label": "Intonation expressive et respectueuse."
+          },
+          {
+            "id": "4",
+            "label": "Réponse cohérente avec le rôle et les faits."
+          },
+          {
+            "id": "5",
+            "label": "Raison simple donnée lorsque la consigne la demande."
+          }
+        ],
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-c4-curriculum-p-a2-patience-montage",
+        "prompt": "Votre frère recommence calmement le montage d’une étagère. Il vous montre où placer chaque pièce.",
+        "answers": [
+          "Que tu es patient !\nTu prends le temps de tout expliquer."
+        ],
+        "explanation": "Exemple possible ; d’autres réactions pertinentes et respectueuses sont recevables. Échangez ensuite les rôles.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-p",
+          "position": 53,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "task": "Réagissez par une exclamation adaptée, puis expliquez votre émotion. Votre partenaire propose une autre réaction ; répondez-lui.",
+        "rubric": [
+          {
+            "id": "1",
+            "label": "Exclamation adaptée à la situation."
+          },
+          {
+            "id": "2",
+            "label": "Construction et accords compréhensibles."
+          },
+          {
+            "id": "3",
+            "label": "Intonation expressive et respectueuse."
+          },
+          {
+            "id": "4",
+            "label": "Réponse cohérente avec le rôle et les faits."
+          },
+          {
+            "id": "5",
+            "label": "Raison simple donnée lorsque la consigne la demande."
+          }
+        ],
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-c4-curriculum-p-a2-guide-parole",
+        "prompt": "Pendant la visite, la guide donne les consignes avant l’entrée dans la salle. Vous parlez d’elle à un ami.",
+        "answers": [
+          "Qu’elle parle clairement !\nJ’ai compris chaque étape de la visite."
+        ],
+        "explanation": "Exemple possible ; d’autres réactions pertinentes et respectueuses sont recevables. Échangez ensuite les rôles.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-p",
+          "position": 54,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "task": "Réagissez par une exclamation adaptée, puis expliquez votre émotion. Votre partenaire propose une autre réaction ; répondez-lui.",
+        "rubric": [
+          {
+            "id": "1",
+            "label": "Exclamation adaptée à la situation."
+          },
+          {
+            "id": "2",
+            "label": "Construction et accords compréhensibles."
+          },
+          {
+            "id": "3",
+            "label": "Intonation expressive et respectueuse."
+          },
+          {
+            "id": "4",
+            "label": "Réponse cohérente avec le rôle et les faits."
+          },
+          {
+            "id": "5",
+            "label": "Raison simple donnée lorsque la consigne la demande."
+          }
+        ],
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-c4-curriculum-p-a2-galet-plage",
+        "prompt": "Vous faites rouler un galet poli entre vos doigts et le montrez à une amie.",
+        "answers": [
+          "Qu’il est lisse !\nJe ne sens aucune aspérité."
+        ],
+        "explanation": "Exemple possible ; d’autres réactions pertinentes et respectueuses sont recevables. Échangez ensuite les rôles.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-p",
+          "position": 55,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "task": "Réagissez par une exclamation adaptée, puis expliquez votre émotion. Votre partenaire propose une autre réaction ; répondez-lui.",
+        "rubric": [
+          {
+            "id": "1",
+            "label": "Exclamation adaptée à la situation."
+          },
+          {
+            "id": "2",
+            "label": "Construction et accords compréhensibles."
+          },
+          {
+            "id": "3",
+            "label": "Intonation expressive et respectueuse."
+          },
+          {
+            "id": "4",
+            "label": "Réponse cohérente avec le rôle et les faits."
+          },
+          {
+            "id": "5",
+            "label": "Raison simple donnée lorsque la consigne la demande."
+          }
+        ],
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-c4-curriculum-p-a2-pause-arbres",
+        "prompt": "Vous quittez une rue animée pour faire une pause à l’ombre des arbres du parc.",
+        "answers": [
+          "Qu’on respire bien sous les arbres !\nL’air paraît plus frais ici."
+        ],
+        "explanation": "Exemple possible ; d’autres réactions pertinentes et respectueuses sont recevables. Échangez ensuite les rôles.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-p",
+          "position": 56,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "task": "Réagissez par une exclamation adaptée, puis expliquez votre émotion. Votre partenaire propose une autre réaction ; répondez-lui.",
+        "rubric": [
+          {
+            "id": "1",
+            "label": "Exclamation adaptée à la situation."
+          },
+          {
+            "id": "2",
+            "label": "Construction et accords compréhensibles."
+          },
+          {
+            "id": "3",
+            "label": "Intonation expressive et respectueuse."
+          },
+          {
+            "id": "4",
+            "label": "Réponse cohérente avec le rôle et les faits."
+          },
+          {
+            "id": "5",
+            "label": "Raison simple donnée lorsque la consigne la demande."
+          }
+        ],
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-c4-curriculum-p-a2-bruit-mixeur",
+        "prompt": "Dans la cuisine du centre, le mixeur fait un bruit qui couvre la voix des personnes.",
+        "answers": [
+          "Quel terrible bruit !\nNous devons parler plus fort pour nous entendre."
+        ],
+        "explanation": "Exemple possible ; d’autres réactions pertinentes et respectueuses sont recevables. Échangez ensuite les rôles.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-p",
+          "position": 57,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "task": "Réagissez par une exclamation adaptée, puis expliquez votre émotion. Votre partenaire propose une autre réaction ; répondez-lui.",
+        "rubric": [
+          {
+            "id": "1",
+            "label": "Exclamation adaptée à la situation."
+          },
+          {
+            "id": "2",
+            "label": "Construction et accords compréhensibles."
+          },
+          {
+            "id": "3",
+            "label": "Intonation expressive et respectueuse."
+          },
+          {
+            "id": "4",
+            "label": "Réponse cohérente avec le rôle et les faits."
+          },
+          {
+            "id": "5",
+            "label": "Raison simple donnée lorsque la consigne la demande."
+          }
+        ],
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-c4-curriculum-p-a2-memoire-recit",
+        "prompt": "Votre grand-mère raconte avec précision une fête qui a eu lieu il y a vingt ans.",
+        "answers": [
+          "Quelle excellente mémoire !\nTu te souviens encore des dates et des prénoms."
+        ],
+        "explanation": "Exemple possible ; d’autres réactions pertinentes et respectueuses sont recevables. Échangez ensuite les rôles.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-p",
+          "position": 58,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "task": "Réagissez par une exclamation adaptée, puis expliquez votre émotion. Votre partenaire propose une autre réaction ; répondez-lui.",
+        "rubric": [
+          {
+            "id": "1",
+            "label": "Exclamation adaptée à la situation."
+          },
+          {
+            "id": "2",
+            "label": "Construction et accords compréhensibles."
+          },
+          {
+            "id": "3",
+            "label": "Intonation expressive et respectueuse."
+          },
+          {
+            "id": "4",
+            "label": "Réponse cohérente avec le rôle et les faits."
+          },
+          {
+            "id": "5",
+            "label": "Raison simple donnée lorsque la consigne la demande."
+          }
+        ],
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-c4-curriculum-p-a2-sons-canard",
+        "prompt": "Vous écoutez avec une amie un musicien qui imite des canards avec son instrument.",
+        "answers": [
+          "Quels drôles de sons !\nOn dirait un groupe de canards."
+        ],
+        "explanation": "Exemple possible ; d’autres réactions pertinentes et respectueuses sont recevables. Échangez ensuite les rôles.",
+        "source": {
+          "path": "scripts/grammar_curriculum/exclamation-a2.tsv",
+          "typeId": "gram-ex-c4-curriculum-p",
+          "position": 59,
           "partition": "a2"
         },
         "kind": "production",

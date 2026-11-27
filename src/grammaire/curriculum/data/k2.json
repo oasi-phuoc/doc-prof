@@ -1406,7 +1406,7 @@
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k2-communication-pe",
     "subthemeId": "k2",
     "topic": "gram-argumenter",
@@ -3026,12 +3026,332 @@
         ],
         "explanation": "En effet introduit ici une justification. Les reformulations fidèles sont recevables.",
         "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k2-communication-pe-b1-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k2-communication-pe",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Des visiteurs ont demandé où commençait le parcours. Le groupe guidé avait reçu un plan lisible.\nAutre information : L’affiche était illisible à plusieurs mètres.",
+        "task": "Présentez les deux informations à un membre du groupe et employez un connecteur adapté à leur relation. Mettez les deux faits en contraste.",
+        "answers": [
+          "Des visiteurs ont demandé où commençait le parcours. En revanche, le groupe guidé avait reçu un plan lisible."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "En revanche signale un contraste entre deux faits. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k2-communication-pe-b1-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k2-communication-pe",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le musée a limité les écoutes des originaux. Une archiviste a numérisé les cassettes.\nAutre information : Les bandes magnétiques se détérioraient.",
+        "task": "Présentez les deux informations à un membre du groupe et employez un connecteur adapté à leur relation. Ajoutez un autre fait sans le présenter comme une conséquence.",
+        "answers": [
+          "Le musée a limité les écoutes des originaux. De plus, une archiviste a numérisé les cassettes."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "De plus ajoute un argument ou une information. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k2-communication-pe-b1-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k2-communication-pe",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Des sacs gênaient le passage. Le personnel a demandé aux élèves de ranger leurs sacs.",
+        "task": "Présentez les deux informations à un membre du groupe et employez un connecteur adapté à leur relation. Présentez la conséquence du fait précédent.",
+        "answers": [
+          "Des sacs gênaient le passage. Par conséquent, le personnel a demandé aux élèves de ranger leurs sacs."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "Par conséquent annonce le résultat du fait précédent. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k2-communication-pe-b1-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k2-communication-pe",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Les bacs ont été déplacés près du mur. Le soleil desséchait la terre en surface.",
+        "task": "Présentez les deux informations à un membre du groupe et employez un connecteur adapté à leur relation. Justifiez la décision par le deuxième fait.",
+        "answers": [
+          "Les bacs ont été déplacés près du mur. En effet, le soleil desséchait la terre en surface."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "En effet introduit ici une justification. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k2-communication-pe-b1-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k2-communication-pe",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Les visiteurs ont attendu leur tour près du bureau. Le numéro du guichet voisin s’affichait à l’écran.\nAutre information : Le micro du guichet était en panne.",
+        "task": "Présentez les deux informations à un membre du groupe et employez un connecteur adapté à leur relation. Mettez les deux faits en contraste.",
+        "answers": [
+          "Les visiteurs ont attendu leur tour près du bureau. En revanche, le numéro du guichet voisin s’affichait à l’écran."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "En revanche signale un contraste entre deux faits. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k2-communication-pe-b1-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k2-communication-pe",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le groupe a quitté le hall principal. La guide a distribué des protections auditives.\nAutre information : Les machines faisaient trop de bruit.",
+        "task": "Présentez les deux informations à un membre du groupe et employez un connecteur adapté à leur relation. Ajoutez un autre fait sans le présenter comme une conséquence.",
+        "answers": [
+          "Le groupe a quitté le hall principal. De plus, la guide a distribué des protections auditives."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "De plus ajoute un argument ou une information. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k2-communication-pe-b1-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k2-communication-pe",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le réseau de l’école était inaccessible. La classe a reçu une version papier.",
+        "task": "Présentez les deux informations à un membre du groupe et employez un connecteur adapté à leur relation. Présentez la conséquence du fait précédent.",
+        "answers": [
+          "Le réseau de l’école était inaccessible. Par conséquent, la classe a reçu une version papier."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "Par conséquent annonce le résultat du fait précédent. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k2-communication-pe-b1-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k2-communication-pe",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Plusieurs clients ont demandé combien coûtait une seule pêche. Le prix était affiché seulement par kilo.",
+        "task": "Présentez les deux informations à un membre du groupe et employez un connecteur adapté à leur relation. Justifiez la décision par le deuxième fait.",
+        "answers": [
+          "Plusieurs clients ont demandé combien coûtait une seule pêche. En effet, le prix était affiché seulement par kilo."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "En effet introduit ici une justification. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k2-communication-pe-b1-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k2-communication-pe",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "L’équipage a aidé les voyageurs à descendre. Le ponton voisin était déjà équipé d’une rampe.\nAutre information : La marche du quai était trop haute.",
+        "task": "Présentez les deux informations à un membre du groupe et employez un connecteur adapté à leur relation. Mettez les deux faits en contraste.",
+        "answers": [
+          "L’équipage a aidé les voyageurs à descendre. En revanche, le ponton voisin était déjà équipé d’une rampe."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "En revanche signale un contraste entre deux faits. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k2-communication-pe-b1-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k2-communication-pe",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Les élèves ont choisi un autre endroit pour les journaux. Deux élèves ont déplacé la boîte sous le porche.\nAutre information : Plusieurs numéros avaient pris l’eau.",
+        "task": "Présentez les deux informations à un membre du groupe et employez un connecteur adapté à leur relation. Ajoutez un autre fait sans le présenter comme une conséquence.",
+        "answers": [
+          "Les élèves ont choisi un autre endroit pour les journaux. De plus, deux élèves ont déplacé la boîte sous le porche."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "De plus ajoute un argument ou une information. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k2-communication-po",
     "subthemeId": "k2",
     "topic": "gram-argumenter",
@@ -4651,12 +4971,332 @@
         ],
         "explanation": "En effet introduit ici une justification. Les reformulations fidèles sont recevables.",
         "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k2-communication-po-b1-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k2-communication-po",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Des visiteurs ont demandé où commençait le parcours. Le groupe guidé avait reçu un plan lisible.\nAutre information : L’affiche était illisible à plusieurs mètres.",
+        "task": "Présentez les deux informations à un membre du groupe et employez un connecteur adapté à leur relation. Mettez les deux faits en contraste. Relance : « Quel fait explique la décision ? »",
+        "answers": [
+          "Des visiteurs ont demandé où commençait le parcours. En revanche, le groupe guidé avait reçu un plan lisible.\nRéponse possible à la relance : L’affiche était illisible à plusieurs mètres."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "En revanche signale un contraste entre deux faits. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k2-communication-po-b1-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k2-communication-po",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le musée a limité les écoutes des originaux. Une archiviste a numérisé les cassettes.\nAutre information : Les bandes magnétiques se détérioraient.",
+        "task": "Présentez les deux informations à un membre du groupe et employez un connecteur adapté à leur relation. Ajoutez un autre fait sans le présenter comme une conséquence. Relance : « Quel fait explique la décision ? »",
+        "answers": [
+          "Le musée a limité les écoutes des originaux. De plus, une archiviste a numérisé les cassettes.\nRéponse possible à la relance : Les bandes magnétiques se détérioraient."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "De plus ajoute un argument ou une information. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k2-communication-po-b1-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k2-communication-po",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Des sacs gênaient le passage. Le personnel a demandé aux élèves de ranger leurs sacs.",
+        "task": "Présentez les deux informations à un membre du groupe et employez un connecteur adapté à leur relation. Présentez la conséquence du fait précédent. Relance : « Quel fait explique la décision ? »",
+        "answers": [
+          "Des sacs gênaient le passage. Par conséquent, le personnel a demandé aux élèves de ranger leurs sacs.\nRéponse possible à la relance : Des sacs gênaient le passage."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Par conséquent annonce le résultat du fait précédent. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k2-communication-po-b1-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k2-communication-po",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Les bacs ont été déplacés près du mur. Le soleil desséchait la terre en surface.",
+        "task": "Présentez les deux informations à un membre du groupe et employez un connecteur adapté à leur relation. Justifiez la décision par le deuxième fait. Relance : « Quel fait explique la décision ? »",
+        "answers": [
+          "Les bacs ont été déplacés près du mur. En effet, le soleil desséchait la terre en surface.\nRéponse possible à la relance : Le soleil desséchait la terre en surface."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "En effet introduit ici une justification. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k2-communication-po-b1-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k2-communication-po",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Les visiteurs ont attendu leur tour près du bureau. Le numéro du guichet voisin s’affichait à l’écran.\nAutre information : Le micro du guichet était en panne.",
+        "task": "Présentez les deux informations à un membre du groupe et employez un connecteur adapté à leur relation. Mettez les deux faits en contraste. Relance : « Quel fait explique la décision ? »",
+        "answers": [
+          "Les visiteurs ont attendu leur tour près du bureau. En revanche, le numéro du guichet voisin s’affichait à l’écran.\nRéponse possible à la relance : Le micro du guichet était en panne."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "En revanche signale un contraste entre deux faits. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k2-communication-po-b1-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k2-communication-po",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le groupe a quitté le hall principal. La guide a distribué des protections auditives.\nAutre information : Les machines faisaient trop de bruit.",
+        "task": "Présentez les deux informations à un membre du groupe et employez un connecteur adapté à leur relation. Ajoutez un autre fait sans le présenter comme une conséquence. Relance : « Quel fait explique la décision ? »",
+        "answers": [
+          "Le groupe a quitté le hall principal. De plus, la guide a distribué des protections auditives.\nRéponse possible à la relance : Les machines faisaient trop de bruit."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "De plus ajoute un argument ou une information. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k2-communication-po-b1-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k2-communication-po",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le réseau de l’école était inaccessible. La classe a reçu une version papier.",
+        "task": "Présentez les deux informations à un membre du groupe et employez un connecteur adapté à leur relation. Présentez la conséquence du fait précédent. Relance : « Quel fait explique la décision ? »",
+        "answers": [
+          "Le réseau de l’école était inaccessible. Par conséquent, la classe a reçu une version papier.\nRéponse possible à la relance : Le réseau de l’école était inaccessible."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Par conséquent annonce le résultat du fait précédent. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k2-communication-po-b1-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k2-communication-po",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Plusieurs clients ont demandé combien coûtait une seule pêche. Le prix était affiché seulement par kilo.",
+        "task": "Présentez les deux informations à un membre du groupe et employez un connecteur adapté à leur relation. Justifiez la décision par le deuxième fait. Relance : « Quel fait explique la décision ? »",
+        "answers": [
+          "Plusieurs clients ont demandé combien coûtait une seule pêche. En effet, le prix était affiché seulement par kilo.\nRéponse possible à la relance : Le prix était affiché seulement par kilo."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "En effet introduit ici une justification. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k2-communication-po-b1-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k2-communication-po",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "L’équipage a aidé les voyageurs à descendre. Le ponton voisin était déjà équipé d’une rampe.\nAutre information : La marche du quai était trop haute.",
+        "task": "Présentez les deux informations à un membre du groupe et employez un connecteur adapté à leur relation. Mettez les deux faits en contraste. Relance : « Quel fait explique la décision ? »",
+        "answers": [
+          "L’équipage a aidé les voyageurs à descendre. En revanche, le ponton voisin était déjà équipé d’une rampe.\nRéponse possible à la relance : La marche du quai était trop haute."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "En revanche signale un contraste entre deux faits. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k2-communication-po-b1-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k2-communication-po",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Les élèves ont choisi un autre endroit pour les journaux. Deux élèves ont déplacé la boîte sous le porche.\nAutre information : Plusieurs numéros avaient pris l’eau.",
+        "task": "Présentez les deux informations à un membre du groupe et employez un connecteur adapté à leur relation. Ajoutez un autre fait sans le présenter comme une conséquence. Relance : « Quel fait explique la décision ? »",
+        "answers": [
+          "Les élèves ont choisi un autre endroit pour les journaux. De plus, deux élèves ont déplacé la boîte sous le porche.\nRéponse possible à la relance : Plusieurs numéros avaient pris l’eau."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "De plus ajoute un argument ou une information. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k2-qcm-verbe",
     "subthemeId": "k2",
     "topic": "gram-argumenter",
@@ -6178,12 +6818,312 @@
           }
         ],
         "explanation": "Et permet d’ajouter un deuxième fait. Modèle : Les trains sont partis du quai quatre et un agent a annoncé le quai par haut-parleur."
+      },
+      {
+        "id": "gram-ex-k2-qcm-verbe-a2-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k2-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Des visiteurs ont demandé où commençait le parcours ___ l’affiche était illisible à plusieurs mètres.",
+        "cue": "Reliez la décision à sa cause.",
+        "answers": [
+          "parce que"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-atelier-braille-choix-1",
+            "text": "parce que"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-atelier-braille-choix-2",
+            "text": "pour que"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-atelier-braille-choix-3",
+            "text": "bien que"
+          }
+        ],
+        "explanation": "Parce que introduit la cause de la décision. Modèle : Des visiteurs ont demandé où commençait le parcours parce que l’affiche était illisible à plusieurs mètres."
+      },
+      {
+        "id": "gram-ex-k2-qcm-verbe-a2-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k2-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Le musée a limité les écoutes des originaux, ___ les fichiers numériques sont restés accessibles en ligne.",
+        "cue": "Marquez le contraste entre les deux faits.",
+        "answers": [
+          "mais"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-archives-sonores-choix-1",
+            "text": "mais"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-archives-sonores-choix-2",
+            "text": "parce que"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-archives-sonores-choix-3",
+            "text": "pour que"
+          }
+        ],
+        "explanation": "Mais met ici deux décisions en contraste. Modèle : Le musée a limité les écoutes des originaux, mais les fichiers numériques sont restés accessibles en ligne."
+      },
+      {
+        "id": "gram-ex-k2-qcm-verbe-a2-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k2-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Des sacs gênaient le passage. ___, le personnel a demandé aux élèves de ranger leurs sacs.",
+        "cue": "Introduisez la conséquence du premier fait.",
+        "answers": [
+          "Donc"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-casiers-cantine-choix-1",
+            "text": "Donc"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-casiers-cantine-choix-2",
+            "text": "Pourtant"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-casiers-cantine-choix-3",
+            "text": "D’abord"
+          }
+        ],
+        "explanation": "Donc introduit la conséquence. Modèle : Des sacs gênaient le passage. Donc, le personnel a demandé aux élèves de ranger leurs sacs."
+      },
+      {
+        "id": "gram-ex-k2-qcm-verbe-a2-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k2-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Le soleil desséchait la terre en surface. ___, les bacs ont été déplacés près du mur.",
+        "cue": "Indiquez ce qui se passe après le premier fait.",
+        "answers": [
+          "Ensuite"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-atelier-ombre-choix-1",
+            "text": "Ensuite"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-atelier-ombre-choix-2",
+            "text": "Pourtant"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-atelier-ombre-choix-3",
+            "text": "En effet"
+          }
+        ],
+        "explanation": "Ensuite place la décision après le premier fait. Modèle : Le soleil desséchait la terre en surface. Ensuite, les bacs ont été déplacés près du mur."
+      },
+      {
+        "id": "gram-ex-k2-qcm-verbe-a2-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k2-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Les visiteurs ont attendu leur tour près du bureau ___ la responsable a installé un petit écran.",
+        "cue": "Ajoutez une deuxième information sans indiquer de cause.",
+        "answers": [
+          "et"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-guichet-sourdine-choix-1",
+            "text": "et"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-guichet-sourdine-choix-2",
+            "text": "pour que"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-guichet-sourdine-choix-3",
+            "text": "bien que"
+          }
+        ],
+        "explanation": "Et permet d’ajouter un deuxième fait. Modèle : Les visiteurs ont attendu leur tour près du bureau et la responsable a installé un petit écran."
+      },
+      {
+        "id": "gram-ex-k2-qcm-verbe-a2-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k2-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Le groupe a quitté le hall principal ___ les machines faisaient trop de bruit.",
+        "cue": "Reliez la décision à sa cause.",
+        "answers": [
+          "parce que"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-protecteurs-oreilles-choix-1",
+            "text": "parce que"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-protecteurs-oreilles-choix-2",
+            "text": "pour que"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-protecteurs-oreilles-choix-3",
+            "text": "bien que"
+          }
+        ],
+        "explanation": "Parce que introduit la cause de la décision. Modèle : Le groupe a quitté le hall principal parce que les machines faisaient trop de bruit."
+      },
+      {
+        "id": "gram-ex-k2-qcm-verbe-a2-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k2-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "La classe a reçu une version papier, ___ une autre classe avait déjà téléchargé le document.",
+        "cue": "Marquez le contraste entre les deux faits.",
+        "answers": [
+          "mais"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-reseau-ecole-choix-1",
+            "text": "mais"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-reseau-ecole-choix-2",
+            "text": "parce que"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-reseau-ecole-choix-3",
+            "text": "pour que"
+          }
+        ],
+        "explanation": "Mais met ici deux décisions en contraste. Modèle : La classe a reçu une version papier, mais une autre classe avait déjà téléchargé le document."
+      },
+      {
+        "id": "gram-ex-k2-qcm-verbe-a2-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k2-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Le prix était affiché seulement par kilo. ___, plusieurs clients ont demandé combien coûtait une seule pêche.",
+        "cue": "Introduisez la conséquence du premier fait.",
+        "answers": [
+          "Donc"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-panneau-comptoir-choix-1",
+            "text": "Donc"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-panneau-comptoir-choix-2",
+            "text": "Pourtant"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-panneau-comptoir-choix-3",
+            "text": "D’abord"
+          }
+        ],
+        "explanation": "Donc introduit la conséquence. Modèle : Le prix était affiché seulement par kilo. Donc, plusieurs clients ont demandé combien coûtait une seule pêche."
+      },
+      {
+        "id": "gram-ex-k2-qcm-verbe-a2-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k2-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "La marche du quai était trop haute. ___, l’équipage a aidé les voyageurs à descendre.",
+        "cue": "Indiquez ce qui se passe après le premier fait.",
+        "answers": [
+          "Ensuite"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-bateau-rampe-choix-1",
+            "text": "Ensuite"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-bateau-rampe-choix-2",
+            "text": "Pourtant"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-bateau-rampe-choix-3",
+            "text": "En effet"
+          }
+        ],
+        "explanation": "Ensuite place la décision après le premier fait. Modèle : La marche du quai était trop haute. Ensuite, l’équipage a aidé les voyageurs à descendre."
+      },
+      {
+        "id": "gram-ex-k2-qcm-verbe-a2-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k2-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Les élèves ont choisi un autre endroit pour les journaux ___ deux élèves ont déplacé la boîte sous le porche.",
+        "cue": "Ajoutez une deuxième information sans indiquer de cause.",
+        "answers": [
+          "et"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-abri-journal-choix-1",
+            "text": "et"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-abri-journal-choix-2",
+            "text": "pour que"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-a2-abri-journal-choix-3",
+            "text": "bien que"
+          }
+        ],
+        "explanation": "Et permet d’ajouter un deuxième fait. Modèle : Les élèves ont choisi un autre endroit pour les journaux et deux élèves ont déplacé la boîte sous le porche."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k2-qcm-verbe",
     "subthemeId": "k2",
     "topic": "gram-argumenter",
@@ -7705,12 +8645,312 @@
           }
         ],
         "explanation": "En effet introduit ici une justification. Modèle : Les trains sont partis du quai quatre. En effet, le quai principal était en travaux."
+      },
+      {
+        "id": "gram-ex-k2-qcm-verbe-b1-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k2-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Des visiteurs ont demandé où commençait le parcours. ___, le groupe guidé avait reçu un plan lisible.",
+        "cue": "Mettez les deux faits en contraste.",
+        "answers": [
+          "En revanche"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-atelier-braille-choix-1",
+            "text": "En revanche"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-atelier-braille-choix-2",
+            "text": "Par conséquent"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-atelier-braille-choix-3",
+            "text": "En effet"
+          }
+        ],
+        "explanation": "En revanche signale un contraste entre deux faits. Modèle : Des visiteurs ont demandé où commençait le parcours. En revanche, le groupe guidé avait reçu un plan lisible."
+      },
+      {
+        "id": "gram-ex-k2-qcm-verbe-b1-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k2-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Le musée a limité les écoutes des originaux. ___, une archiviste a numérisé les cassettes.",
+        "cue": "Ajoutez un autre fait sans le présenter comme une conséquence.",
+        "answers": [
+          "De plus"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-archives-sonores-choix-1",
+            "text": "De plus"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-archives-sonores-choix-2",
+            "text": "C’est pourquoi"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-archives-sonores-choix-3",
+            "text": "En revanche"
+          }
+        ],
+        "explanation": "De plus ajoute un argument ou une information. Modèle : Le musée a limité les écoutes des originaux. De plus, une archiviste a numérisé les cassettes."
+      },
+      {
+        "id": "gram-ex-k2-qcm-verbe-b1-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k2-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Des sacs gênaient le passage. ___, le personnel a demandé aux élèves de ranger leurs sacs.",
+        "cue": "Présentez la conséquence du fait précédent.",
+        "answers": [
+          "Par conséquent"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-casiers-cantine-choix-1",
+            "text": "Par conséquent"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-casiers-cantine-choix-2",
+            "text": "En revanche"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-casiers-cantine-choix-3",
+            "text": "Par exemple"
+          }
+        ],
+        "explanation": "Par conséquent annonce le résultat du fait précédent. Modèle : Des sacs gênaient le passage. Par conséquent, le personnel a demandé aux élèves de ranger leurs sacs."
+      },
+      {
+        "id": "gram-ex-k2-qcm-verbe-b1-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k2-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Les bacs ont été déplacés près du mur. ___, le soleil desséchait la terre en surface.",
+        "cue": "Justifiez la décision par le deuxième fait.",
+        "answers": [
+          "En effet"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-atelier-ombre-choix-1",
+            "text": "En effet"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-atelier-ombre-choix-2",
+            "text": "En revanche"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-atelier-ombre-choix-3",
+            "text": "Par conséquent"
+          }
+        ],
+        "explanation": "En effet introduit ici une justification. Modèle : Les bacs ont été déplacés près du mur. En effet, le soleil desséchait la terre en surface."
+      },
+      {
+        "id": "gram-ex-k2-qcm-verbe-b1-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k2-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Les visiteurs ont attendu leur tour près du bureau. ___, le numéro du guichet voisin s’affichait à l’écran.",
+        "cue": "Mettez les deux faits en contraste.",
+        "answers": [
+          "En revanche"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-guichet-sourdine-choix-1",
+            "text": "En revanche"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-guichet-sourdine-choix-2",
+            "text": "Par conséquent"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-guichet-sourdine-choix-3",
+            "text": "En effet"
+          }
+        ],
+        "explanation": "En revanche signale un contraste entre deux faits. Modèle : Les visiteurs ont attendu leur tour près du bureau. En revanche, le numéro du guichet voisin s’affichait à l’écran."
+      },
+      {
+        "id": "gram-ex-k2-qcm-verbe-b1-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k2-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Le groupe a quitté le hall principal. ___, la guide a distribué des protections auditives.",
+        "cue": "Ajoutez un autre fait sans le présenter comme une conséquence.",
+        "answers": [
+          "De plus"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-protecteurs-oreilles-choix-1",
+            "text": "De plus"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-protecteurs-oreilles-choix-2",
+            "text": "C’est pourquoi"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-protecteurs-oreilles-choix-3",
+            "text": "En revanche"
+          }
+        ],
+        "explanation": "De plus ajoute un argument ou une information. Modèle : Le groupe a quitté le hall principal. De plus, la guide a distribué des protections auditives."
+      },
+      {
+        "id": "gram-ex-k2-qcm-verbe-b1-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k2-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Le réseau de l’école était inaccessible. ___, la classe a reçu une version papier.",
+        "cue": "Présentez la conséquence du fait précédent.",
+        "answers": [
+          "Par conséquent"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-reseau-ecole-choix-1",
+            "text": "Par conséquent"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-reseau-ecole-choix-2",
+            "text": "En revanche"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-reseau-ecole-choix-3",
+            "text": "Par exemple"
+          }
+        ],
+        "explanation": "Par conséquent annonce le résultat du fait précédent. Modèle : Le réseau de l’école était inaccessible. Par conséquent, la classe a reçu une version papier."
+      },
+      {
+        "id": "gram-ex-k2-qcm-verbe-b1-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k2-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Plusieurs clients ont demandé combien coûtait une seule pêche. ___, le prix était affiché seulement par kilo.",
+        "cue": "Justifiez la décision par le deuxième fait.",
+        "answers": [
+          "En effet"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-panneau-comptoir-choix-1",
+            "text": "En effet"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-panneau-comptoir-choix-2",
+            "text": "En revanche"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-panneau-comptoir-choix-3",
+            "text": "Par conséquent"
+          }
+        ],
+        "explanation": "En effet introduit ici une justification. Modèle : Plusieurs clients ont demandé combien coûtait une seule pêche. En effet, le prix était affiché seulement par kilo."
+      },
+      {
+        "id": "gram-ex-k2-qcm-verbe-b1-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k2-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "L’équipage a aidé les voyageurs à descendre. ___, le ponton voisin était déjà équipé d’une rampe.",
+        "cue": "Mettez les deux faits en contraste.",
+        "answers": [
+          "En revanche"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-bateau-rampe-choix-1",
+            "text": "En revanche"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-bateau-rampe-choix-2",
+            "text": "Par conséquent"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-bateau-rampe-choix-3",
+            "text": "En effet"
+          }
+        ],
+        "explanation": "En revanche signale un contraste entre deux faits. Modèle : L’équipage a aidé les voyageurs à descendre. En revanche, le ponton voisin était déjà équipé d’une rampe."
+      },
+      {
+        "id": "gram-ex-k2-qcm-verbe-b1-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k2-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Les élèves ont choisi un autre endroit pour les journaux. ___, deux élèves ont déplacé la boîte sous le porche.",
+        "cue": "Ajoutez un autre fait sans le présenter comme une conséquence.",
+        "answers": [
+          "De plus"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-abri-journal-choix-1",
+            "text": "De plus"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-abri-journal-choix-2",
+            "text": "C’est pourquoi"
+          },
+          {
+            "id": "gram-ex-k2-qcm-verbe-b1-abri-journal-choix-3",
+            "text": "En revanche"
+          }
+        ],
+        "explanation": "De plus ajoute un argument ou une information. Modèle : Les élèves ont choisi un autre endroit pour les journaux. De plus, deux élèves ont déplacé la boîte sous le porche."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k2-curriculum-o",
     "subthemeId": "k2",
     "topic": "gram-argumenter",
@@ -9130,12 +10370,292 @@
           "D’abord, le quai principal était en travaux. Ensuite, les trains sont partis du quai quatre."
         ],
         "explanation": "D’abord présente le premier fait. Ensuite annonce le fait qui suit."
+      },
+      {
+        "id": "gram-ex-k2-curriculum-o-a2-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k2-curriculum-o",
+          "partition": "a2"
+        },
+        "kind": "order",
+        "tokenUnit": "clause",
+        "prompt": "Placez la situation initiale avant la décision.",
+        "tokens": [
+          {
+            "id": "element-1",
+            "text": "D’abord, l’affiche était illisible à plusieurs mètres.",
+            "category": "verbe"
+          },
+          {
+            "id": "element-2",
+            "text": "Ensuite, des visiteurs ont demandé où commençait le parcours.",
+            "category": "verbe"
+          }
+        ],
+        "answers": [
+          "D’abord, l’affiche était illisible à plusieurs mètres. Ensuite, des visiteurs ont demandé où commençait le parcours."
+        ],
+        "explanation": "D’abord présente le premier fait. Ensuite annonce le fait qui suit."
+      },
+      {
+        "id": "gram-ex-k2-curriculum-o-a2-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k2-curriculum-o",
+          "partition": "a2"
+        },
+        "kind": "order",
+        "tokenUnit": "clause",
+        "prompt": "Placez la situation initiale avant la décision.",
+        "tokens": [
+          {
+            "id": "element-1",
+            "text": "D’abord, les bandes magnétiques se détérioraient.",
+            "category": "verbe"
+          },
+          {
+            "id": "element-2",
+            "text": "Ensuite, le musée a limité les écoutes des originaux.",
+            "category": "verbe"
+          }
+        ],
+        "answers": [
+          "D’abord, les bandes magnétiques se détérioraient. Ensuite, le musée a limité les écoutes des originaux."
+        ],
+        "explanation": "D’abord présente le premier fait. Ensuite annonce le fait qui suit."
+      },
+      {
+        "id": "gram-ex-k2-curriculum-o-a2-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k2-curriculum-o",
+          "partition": "a2"
+        },
+        "kind": "order",
+        "tokenUnit": "clause",
+        "prompt": "Placez la situation initiale avant la décision.",
+        "tokens": [
+          {
+            "id": "element-1",
+            "text": "D’abord, des sacs gênaient le passage.",
+            "category": "verbe"
+          },
+          {
+            "id": "element-2",
+            "text": "Ensuite, le personnel a demandé aux élèves de ranger leurs sacs.",
+            "category": "verbe"
+          }
+        ],
+        "answers": [
+          "D’abord, des sacs gênaient le passage. Ensuite, le personnel a demandé aux élèves de ranger leurs sacs."
+        ],
+        "explanation": "D’abord présente le premier fait. Ensuite annonce le fait qui suit."
+      },
+      {
+        "id": "gram-ex-k2-curriculum-o-a2-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k2-curriculum-o",
+          "partition": "a2"
+        },
+        "kind": "order",
+        "tokenUnit": "clause",
+        "prompt": "Placez la situation initiale avant la décision.",
+        "tokens": [
+          {
+            "id": "element-1",
+            "text": "D’abord, le soleil desséchait la terre en surface.",
+            "category": "verbe"
+          },
+          {
+            "id": "element-2",
+            "text": "Ensuite, les bacs ont été déplacés près du mur.",
+            "category": "verbe"
+          }
+        ],
+        "answers": [
+          "D’abord, le soleil desséchait la terre en surface. Ensuite, les bacs ont été déplacés près du mur."
+        ],
+        "explanation": "D’abord présente le premier fait. Ensuite annonce le fait qui suit."
+      },
+      {
+        "id": "gram-ex-k2-curriculum-o-a2-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k2-curriculum-o",
+          "partition": "a2"
+        },
+        "kind": "order",
+        "tokenUnit": "clause",
+        "prompt": "Placez la situation initiale avant la décision.",
+        "tokens": [
+          {
+            "id": "element-1",
+            "text": "D’abord, le micro du guichet était en panne.",
+            "category": "verbe"
+          },
+          {
+            "id": "element-2",
+            "text": "Ensuite, les visiteurs ont attendu leur tour près du bureau.",
+            "category": "verbe"
+          }
+        ],
+        "answers": [
+          "D’abord, le micro du guichet était en panne. Ensuite, les visiteurs ont attendu leur tour près du bureau."
+        ],
+        "explanation": "D’abord présente le premier fait. Ensuite annonce le fait qui suit."
+      },
+      {
+        "id": "gram-ex-k2-curriculum-o-a2-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k2-curriculum-o",
+          "partition": "a2"
+        },
+        "kind": "order",
+        "tokenUnit": "clause",
+        "prompt": "Placez la situation initiale avant la décision.",
+        "tokens": [
+          {
+            "id": "element-1",
+            "text": "D’abord, les machines faisaient trop de bruit.",
+            "category": "verbe"
+          },
+          {
+            "id": "element-2",
+            "text": "Ensuite, le groupe a quitté le hall principal.",
+            "category": "verbe"
+          }
+        ],
+        "answers": [
+          "D’abord, les machines faisaient trop de bruit. Ensuite, le groupe a quitté le hall principal."
+        ],
+        "explanation": "D’abord présente le premier fait. Ensuite annonce le fait qui suit."
+      },
+      {
+        "id": "gram-ex-k2-curriculum-o-a2-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k2-curriculum-o",
+          "partition": "a2"
+        },
+        "kind": "order",
+        "tokenUnit": "clause",
+        "prompt": "Placez la situation initiale avant la décision.",
+        "tokens": [
+          {
+            "id": "element-1",
+            "text": "D’abord, le réseau de l’école était inaccessible.",
+            "category": "verbe"
+          },
+          {
+            "id": "element-2",
+            "text": "Ensuite, la classe a reçu une version papier.",
+            "category": "verbe"
+          }
+        ],
+        "answers": [
+          "D’abord, le réseau de l’école était inaccessible. Ensuite, la classe a reçu une version papier."
+        ],
+        "explanation": "D’abord présente le premier fait. Ensuite annonce le fait qui suit."
+      },
+      {
+        "id": "gram-ex-k2-curriculum-o-a2-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k2-curriculum-o",
+          "partition": "a2"
+        },
+        "kind": "order",
+        "tokenUnit": "clause",
+        "prompt": "Placez la situation initiale avant la décision.",
+        "tokens": [
+          {
+            "id": "element-1",
+            "text": "D’abord, le prix était affiché seulement par kilo.",
+            "category": "verbe"
+          },
+          {
+            "id": "element-2",
+            "text": "Ensuite, plusieurs clients ont demandé combien coûtait une seule pêche.",
+            "category": "verbe"
+          }
+        ],
+        "answers": [
+          "D’abord, le prix était affiché seulement par kilo. Ensuite, plusieurs clients ont demandé combien coûtait une seule pêche."
+        ],
+        "explanation": "D’abord présente le premier fait. Ensuite annonce le fait qui suit."
+      },
+      {
+        "id": "gram-ex-k2-curriculum-o-a2-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k2-curriculum-o",
+          "partition": "a2"
+        },
+        "kind": "order",
+        "tokenUnit": "clause",
+        "prompt": "Placez la situation initiale avant la décision.",
+        "tokens": [
+          {
+            "id": "element-1",
+            "text": "D’abord, la marche du quai était trop haute.",
+            "category": "verbe"
+          },
+          {
+            "id": "element-2",
+            "text": "Ensuite, l’équipage a aidé les voyageurs à descendre.",
+            "category": "verbe"
+          }
+        ],
+        "answers": [
+          "D’abord, la marche du quai était trop haute. Ensuite, l’équipage a aidé les voyageurs à descendre."
+        ],
+        "explanation": "D’abord présente le premier fait. Ensuite annonce le fait qui suit."
+      },
+      {
+        "id": "gram-ex-k2-curriculum-o-a2-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k2-curriculum-o",
+          "partition": "a2"
+        },
+        "kind": "order",
+        "tokenUnit": "clause",
+        "prompt": "Placez la situation initiale avant la décision.",
+        "tokens": [
+          {
+            "id": "element-1",
+            "text": "D’abord, plusieurs numéros avaient pris l’eau.",
+            "category": "verbe"
+          },
+          {
+            "id": "element-2",
+            "text": "Ensuite, les élèves ont choisi un autre endroit pour les journaux.",
+            "category": "verbe"
+          }
+        ],
+        "answers": [
+          "D’abord, plusieurs numéros avaient pris l’eau. Ensuite, les élèves ont choisi un autre endroit pour les journaux."
+        ],
+        "explanation": "D’abord présente le premier fait. Ensuite annonce le fait qui suit."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k2-curriculum-t",
     "subthemeId": "k2",
     "topic": "gram-argumenter",
@@ -10005,6 +11525,176 @@
         ],
         "responseLines": 2,
         "explanation": "En effet introduit ici une justification."
+      },
+      {
+        "id": "gram-ex-k2-curriculum-t-b1-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k2-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Des visiteurs ont demandé où commençait le parcours. Le groupe guidé avait reçu un plan lisible.",
+        "directive": "Reliez les informations avec la construction « En revanche ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Des visiteurs ont demandé où commençait le parcours. En revanche, le groupe guidé avait reçu un plan lisible."
+        ],
+        "responseLines": 2,
+        "explanation": "En revanche signale un contraste entre deux faits."
+      },
+      {
+        "id": "gram-ex-k2-curriculum-t-b1-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k2-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le musée a limité les écoutes des originaux. Une archiviste a numérisé les cassettes.",
+        "directive": "Reliez les informations avec la construction « De plus ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Le musée a limité les écoutes des originaux. De plus, une archiviste a numérisé les cassettes."
+        ],
+        "responseLines": 2,
+        "explanation": "De plus ajoute un argument ou une information."
+      },
+      {
+        "id": "gram-ex-k2-curriculum-t-b1-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k2-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Des sacs gênaient le passage. Le personnel a demandé aux élèves de ranger leurs sacs.",
+        "directive": "Reliez les informations avec la construction « Par conséquent ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Des sacs gênaient le passage. Par conséquent, le personnel a demandé aux élèves de ranger leurs sacs."
+        ],
+        "responseLines": 2,
+        "explanation": "Par conséquent annonce le résultat du fait précédent."
+      },
+      {
+        "id": "gram-ex-k2-curriculum-t-b1-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k2-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les bacs ont été déplacés près du mur. Le soleil desséchait la terre en surface.",
+        "directive": "Reliez les informations avec la construction « En effet ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Les bacs ont été déplacés près du mur. En effet, le soleil desséchait la terre en surface."
+        ],
+        "responseLines": 2,
+        "explanation": "En effet introduit ici une justification."
+      },
+      {
+        "id": "gram-ex-k2-curriculum-t-b1-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k2-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les visiteurs ont attendu leur tour près du bureau. Le numéro du guichet voisin s’affichait à l’écran.",
+        "directive": "Reliez les informations avec la construction « En revanche ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Les visiteurs ont attendu leur tour près du bureau. En revanche, le numéro du guichet voisin s’affichait à l’écran."
+        ],
+        "responseLines": 2,
+        "explanation": "En revanche signale un contraste entre deux faits."
+      },
+      {
+        "id": "gram-ex-k2-curriculum-t-b1-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k2-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le groupe a quitté le hall principal. La guide a distribué des protections auditives.",
+        "directive": "Reliez les informations avec la construction « De plus ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Le groupe a quitté le hall principal. De plus, la guide a distribué des protections auditives."
+        ],
+        "responseLines": 2,
+        "explanation": "De plus ajoute un argument ou une information."
+      },
+      {
+        "id": "gram-ex-k2-curriculum-t-b1-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k2-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le réseau de l’école était inaccessible. La classe a reçu une version papier.",
+        "directive": "Reliez les informations avec la construction « Par conséquent ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Le réseau de l’école était inaccessible. Par conséquent, la classe a reçu une version papier."
+        ],
+        "responseLines": 2,
+        "explanation": "Par conséquent annonce le résultat du fait précédent."
+      },
+      {
+        "id": "gram-ex-k2-curriculum-t-b1-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k2-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Plusieurs clients ont demandé combien coûtait une seule pêche. Le prix était affiché seulement par kilo.",
+        "directive": "Reliez les informations avec la construction « En effet ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Plusieurs clients ont demandé combien coûtait une seule pêche. En effet, le prix était affiché seulement par kilo."
+        ],
+        "responseLines": 2,
+        "explanation": "En effet introduit ici une justification."
+      },
+      {
+        "id": "gram-ex-k2-curriculum-t-b1-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k2-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "L’équipage a aidé les voyageurs à descendre. Le ponton voisin était déjà équipé d’une rampe.",
+        "directive": "Reliez les informations avec la construction « En revanche ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "L’équipage a aidé les voyageurs à descendre. En revanche, le ponton voisin était déjà équipé d’une rampe."
+        ],
+        "responseLines": 2,
+        "explanation": "En revanche signale un contraste entre deux faits."
+      },
+      {
+        "id": "gram-ex-k2-curriculum-t-b1-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k2-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les élèves ont choisi un autre endroit pour les journaux. Deux élèves ont déplacé la boîte sous le porche.",
+        "directive": "Reliez les informations avec la construction « De plus ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Les élèves ont choisi un autre endroit pour les journaux. De plus, deux élèves ont déplacé la boîte sous le porche."
+        ],
+        "responseLines": 2,
+        "explanation": "De plus ajoute un argument ou une information."
       }
     ]
   }

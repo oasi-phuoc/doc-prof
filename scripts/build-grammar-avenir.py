@@ -6,7 +6,8 @@ import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-REV = 'avenir-2026-11-24-v1'
+READING_REVISION = 'avenir-2026-11-24-v1'
+EXERCISE_REVISION = 'avenir-2026-11-27-v2'
 LEVELS = {'futur-proche': 'A1', 'futur-simple': 'A2', 'futur-proche-ou-simple': 'A2',
           'futur-anterieur': 'B1', 'hypothese-futur': 'A2'}
 PLANS = {'futur-proche': ['q', 'ce', 'pe', 'po', 't', 's'],
@@ -29,7 +30,7 @@ def read(sub):
     path = f'scripts/grammar_curriculum/avenir-{sub}-{LEVELS[sub].lower()}.tsv'
     rows = [r for r in csv.reader((ROOT / path).read_text().splitlines(), delimiter='|') if r and not r[0].startswith('#')]
     keys = ['slug', 'context', 'verb', 'prompt', 'answer', 'wrong1', 'wrong2', 'neutral', 'target', 'reason', 'opening', 'follow', 'reply']
-    assert len(rows) == 50 and len({r[0] for r in rows}) == 50
+    assert len(rows) == 60 and len({r[0] for r in rows}) == 60
     assert all(len(r) == 13 and all(unicodedata.normalize('NFC', s) == s for s in r) for r in rows)
     return [dict(zip(keys, r), path=path, position=i) for i, r in enumerate(rows)]
 
@@ -117,9 +118,11 @@ def emit(sub, m, units):
         label = {'ce': 'Lire une situation', 'd': 'Lire et répondre', 'pe': 'Écrire un projet', 'e': 'Écrire en contexte',
                  'po': 'Annoncer un projet à l’oral', 'p': 'Dire une phrase en contexte', 't': 'Transformer une phrase',
                  'c': 'Corriger l’erreur', 's': 'Jouer une situation'}[m]
-    return dict(schemaVersion=1, revision=REV, activityId=aid_for(sub, m), subthemeId=sub, topic='gram-avenir', level=LEVELS[sub],
+    reading = m in ('ce', 'd')
+    return dict(schemaVersion=1, revision=READING_REVISION if reading else EXERCISE_REVISION,
+        activityId=aid_for(sub, m), subthemeId=sub, topic='gram-avenir', level=LEVELS[sub],
         label=label, objective=OBJECTIVES[sub], editorialStatus='reviewed',
-        review=dict(reviewer='Codex — revue linguistique et fonctionnelle', date='2026-11-24', humanReview='pending',
+        review=dict(reviewer='Codex — revue linguistique et fonctionnelle', date='2026-11-24' if reading else '2026-11-27', humanReview='pending',
             note='Sources et références relues. Situations partagées entre mécaniques ; documents adaptés avec faits explicites. Modèles ouverts non exclusifs. Aucune approbation enseignante déclarée.'),
         presentations=list(ins), instructions=ins, units=units)
 
@@ -200,9 +203,10 @@ for sub, mechanics in PLANS.items():
         banks.append(emit(sub, m, units))
 
 assert len(banks) == 22 and sum(len(b['presentations']) for b in banks) == 27
-assert sum(len(b['units']) for b in banks) == 1010
+units = sum(len(b['units']) for b in banks)
+assert units == 1200
 variants = sum(len(b['presentations']) * sum(len(u['questions']) if u['kind'] == 'reading' else 1 for u in b['units']) for b in banks)
-assert variants == 1380
+assert variants == 1620
 for sub in PLANS:
     (ROOT / f'src/grammaire/curriculum/data/{sub}.json').write_text(json.dumps([b for b in banks if b['subthemeId'] == sub], ensure_ascii=False, indent=2) + '\n')
-print(json.dumps(dict(activities=22, banks=22, offerings=27, units=1010, variants=variants, authoredSourceRows=250, documents=60, readingQuestions=180, mediaGenerated=0)))
+print(json.dumps(dict(activities=22, banks=22, offerings=27, units=units, variants=variants, authoredSourceRows=sum(map(len, R.values())), documents=60, readingQuestions=180)))

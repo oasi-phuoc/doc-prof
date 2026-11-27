@@ -21,17 +21,20 @@ const targetRegistry=load(root+'/docs/grammaire/implementation/target-registry.j
 let variants=0
 for (const bank of banks) {
  const reading=bank.presentations.includes('document-set')
- assert.equal(bank.units.length,reading?20:50)
+ if(reading)assert.equal(bank.units.length,20)
+ const drawCount=reading?20:50
  assert.equal(bank.review.humanReview,'pending')
  for (const presentation of bank.presentations) {
-  assert.equal(targetRegistry.offerings.filter(o=>o.activityId===bank.activityId&&o.level===bank.level&&o.presentation===presentation).length,1,'A pilot offering must belong to the agreed curriculum.')
+  const offers=targetRegistry.offerings.filter(o=>o.activityId===bank.activityId&&o.level===bank.level&&o.presentation===presentation)
+  assert.equal(offers.length,1,'A pilot offering must belong to the agreed curriculum.')
+  assert.equal(offers[0].reviewedDistinctCount,reading?bank.units.reduce((n,unit)=>n+unit.questions.length,0):bank.units.length)
   const hasNegative=presentation==='order'&&bank.units.some(u=>u.kind==='order'&&u.tokens.some(t=>t.category==='negation'))
   const hasPositive=presentation==='order'&&bank.units.some(u=>u.kind==='order'&&!u.tokens.some(t=>t.category==='negation'))
   const block={...base(bank.activityId),topic:bank.topic??'gram-present',count:reading?1:50,grammarDocumentCount:reading?20:undefined,grammarLevel:bank.level,grammarBankRevision:bank.revision,grammarPresentation:presentation,...(hasNegative?{phrasePolarity:hasPositive?'mixed':'negative'}:{})}
   const selected=select(block,839)
   assert(isGrammarSnapshot(selected))
-  assert.equal(selected.questions.length,bank.units.length)
-  assert.equal(new Set(selected.questions.map(q=>q.id)).size,bank.units.length)
+  assert.equal(selected.questions.length,drawCount)
+  assert.equal(new Set(selected.questions.map(q=>q.id)).size,drawCount)
   assert.deepEqual(select(block,839),selected)
   assert.notDeepEqual(select(block,840).questions.map(q=>q.id),selected.questions.map(q=>q.id))
   assert(selected.questions.every(q=>q.presentation===presentation))
@@ -223,7 +226,9 @@ assert.deepEqual(select(subjBlock,839).questions.map(q=>q.unit),select({...subjB
 const subjUnits=subjBanks[0].units
 const implementedOffers=new Set(banks.flatMap(b=>b.presentations.map(p=>`${b.activityId}@${b.level}@${p}`)))
 assert(targetRegistry.offerings.filter(o=>o.phase==='G2').every(o=>implementedOffers.has(o.offeringId)),'Every offering in the five agreed pilot notions must be implemented.')
-assert.deepEqual(Object.fromEntries(['volonte','sentiment','necessite','doute'].map(f=>[f,subjUnits.filter(u=>u.source.partition.startsWith(f+'-')).length])),{volonte:13,sentiment:13,necessite:12,doute:12})
+assert.deepEqual(Object.fromEntries(['volonte','sentiment','necessite','doute'].map(f=>[f,subjUnits.filter(u=>u.source.partition.startsWith(f+'-')).length])),{volonte:16,sentiment:15,necessite:15,doute:14})
+assert(banks.filter(b=>b.activityId.startsWith(subjPrefix)).every(b=>b.units.length===60))
+assert.equal(subjUnits.find(u=>u.prompt.startsWith('Il faut qu’Inès')).answers[0],'aille')
 // Whole negative and pronominal groups are accepted, not just their endings.
 assert(subjUnits.some(u=>u.answers[0]==='ne comprennes pas'))
 assert(subjUnits.some(u=>u.answers[0]==='te souviennes'))

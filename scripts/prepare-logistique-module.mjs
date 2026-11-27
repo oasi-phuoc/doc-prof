@@ -53,10 +53,11 @@ const figureDirectory = `assets/logistique/${catalogEntry.theme}/${code}/${scope
 const course = insertLogistiqueFigures(reference, figures, publicDirectory, figureDirectory)
 const summarySource = editorial.summaryTheory ? theoryBlocks(editorial.summaryTheory)
   : editorial.keepBaseFigures ? baseUnit?.summaryBlocks : undefined
+const summaryFigures = editorial.summaryVisuals
+  ? (editorial.keepBaseFigures ? editorial.summaryVisuals.toReversed() : editorial.summaryVisuals)
+  : figures.map(({ summaryAnchor, ...figure }) => ({ ...figure, anchor: summaryAnchor ?? figure.anchor }))
 const summary = summarySource
-  ? insertLogistiqueFigures(summarySource,
-    figures.map(({ summaryAnchor, ...figure }) => ({ ...figure, anchor: summaryAnchor ?? figure.anchor })),
-    publicDirectory, figureDirectory)
+  ? insertLogistiqueFigures(summarySource, summaryFigures, publicDirectory, figureDirectory)
   : undefined
 const theory = { id: 'theorie-source', kind: 'theorie', blocks: course, ...(summary ? { summaryBlocks: summary } : {}) }
 const kinds = ['maths', 'verification', 'situation']

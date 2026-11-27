@@ -1,7 +1,7 @@
 [
   {
     "schemaVersion": 1,
-    "revision": "k10-b1-qcm-conj-2026-11-12.1",
+    "revision": "k10-b1-qcm-conj-2026-11-27-v2",
     "activityId": "gram-ex-k10-qcm-conj",
     "subthemeId": "k10",
     "topic": "gram-exprimer",
@@ -11,7 +11,7 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-12",
+      "date": "2026-11-27",
       "humanReview": "pending",
       "note": "Pilote B1 guidé : expressions introductrices, formes verbales, élisions et modèles relus. Le subjonctif passé appartient à une autre notion. Validation enseignant attendue."
     },
@@ -1573,12 +1573,322 @@
           "position": 49,
           "partition": "doute-050"
         }
+      },
+      {
+        "id": "gp-k10-b1-ql-051",
+        "kind": "completion",
+        "prompt": "La responsable souhaite que nous ___ le tracé bleu jusqu’au local des archives.",
+        "givenVerb": "suivre",
+        "cue": "Volonté ou préférence.",
+        "answers": [
+          "suivions"
+        ],
+        "explanation": "Après « La responsable souhaite que », on emploie ici le subjonctif présent. La forme attendue est « suivions ».",
+        "options": [
+          {
+            "id": "o1",
+            "text": "suivions"
+          },
+          {
+            "id": "o2",
+            "text": "suivons"
+          },
+          {
+            "id": "o3",
+            "text": "suivent"
+          }
+        ],
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-qcm-conj",
+          "position": 50,
+          "partition": "volonte-051"
+        }
+      },
+      {
+        "id": "gp-k10-b1-ql-052",
+        "kind": "completion",
+        "prompt": "Le chef de chœur préfère que vous ___ sans accompagnement pendant le premier essai.",
+        "givenVerb": "chanter",
+        "cue": "Volonté ou préférence.",
+        "answers": [
+          "chantiez"
+        ],
+        "explanation": "Après « Le chef de chœur préfère que », on emploie ici le subjonctif présent. La forme attendue est « chantiez ».",
+        "options": [
+          {
+            "id": "o1",
+            "text": "chantiez"
+          },
+          {
+            "id": "o2",
+            "text": "chantez"
+          },
+          {
+            "id": "o3",
+            "text": "chantent"
+          }
+        ],
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-qcm-conj",
+          "position": 51,
+          "partition": "volonte-052"
+        }
+      },
+      {
+        "id": "gp-k10-b1-ql-053",
+        "kind": "completion",
+        "prompt": "Les habitantes demandent que la commune ___ une permanence le samedi matin.",
+        "givenVerb": "maintenir",
+        "cue": "Volonté ou préférence.",
+        "answers": [
+          "maintienne"
+        ],
+        "explanation": "Après « Les habitantes demandent que », on emploie ici le subjonctif présent. La forme attendue est « maintienne ».",
+        "options": [
+          {
+            "id": "o1",
+            "text": "maintienne"
+          },
+          {
+            "id": "o2",
+            "text": "maintient"
+          },
+          {
+            "id": "o3",
+            "text": "maintiennent"
+          }
+        ],
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-qcm-conj",
+          "position": 52,
+          "partition": "volonte-053"
+        }
+      },
+      {
+        "id": "gp-k10-b1-ql-054",
+        "kind": "completion",
+        "prompt": "Nous sommes ravis que tu ___ présenter la maquette aux familles.",
+        "givenVerb": "pouvoir",
+        "cue": "Sentiment ou appréciation.",
+        "answers": [
+          "puisses"
+        ],
+        "explanation": "Après « Nous sommes ravis que », on emploie ici le subjonctif présent. La forme attendue est « puisses ».",
+        "options": [
+          {
+            "id": "o1",
+            "text": "puisses"
+          },
+          {
+            "id": "o2",
+            "text": "peux"
+          },
+          {
+            "id": "o3",
+            "text": "puissions"
+          }
+        ],
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-qcm-conj",
+          "position": 53,
+          "partition": "sentiment-054"
+        }
+      },
+      {
+        "id": "gp-k10-b1-ql-055",
+        "kind": "completion",
+        "prompt": "Les élèves regrettent que le vidéoprojecteur ___ autant de bruit pendant la lecture.",
+        "givenVerb": "faire",
+        "cue": "Sentiment ou appréciation.",
+        "answers": [
+          "fasse"
+        ],
+        "explanation": "Après « Les élèves regrettent que », on emploie ici le subjonctif présent. La forme attendue est « fasse ».",
+        "options": [
+          {
+            "id": "o1",
+            "text": "fasse"
+          },
+          {
+            "id": "o2",
+            "text": "fait"
+          },
+          {
+            "id": "o3",
+            "text": "fassent"
+          }
+        ],
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-qcm-conj",
+          "position": 54,
+          "partition": "sentiment-055"
+        }
+      },
+      {
+        "id": "gp-k10-b1-ql-056",
+        "kind": "completion",
+        "prompt": "Il est indispensable que ces deux câbles ___ assez longs pour atteindre la table.",
+        "givenVerb": "être",
+        "cue": "Nécessité ou obligation.",
+        "answers": [
+          "soient"
+        ],
+        "explanation": "Après « Il est indispensable que », on emploie ici le subjonctif présent. La forme attendue est « soient ».",
+        "options": [
+          {
+            "id": "o1",
+            "text": "soient"
+          },
+          {
+            "id": "o2",
+            "text": "sont"
+          },
+          {
+            "id": "o3",
+            "text": "soit"
+          }
+        ],
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-qcm-conj",
+          "position": 55,
+          "partition": "necessite-056"
+        }
+      },
+      {
+        "id": "gp-k10-b1-ql-057",
+        "kind": "completion",
+        "prompt": "Il faut qu’Inès ___ chercher les étiquettes au secrétariat.",
+        "givenVerb": "aller",
+        "cue": "Nécessité ou obligation.",
+        "answers": [
+          "aille"
+        ],
+        "explanation": "Après « Il faut que », on emploie ici le subjonctif présent. La forme attendue est « aille ».",
+        "options": [
+          {
+            "id": "o1",
+            "text": "aille"
+          },
+          {
+            "id": "o2",
+            "text": "va"
+          },
+          {
+            "id": "o3",
+            "text": "ailles"
+          }
+        ],
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-qcm-conj",
+          "position": 56,
+          "partition": "necessite-057"
+        }
+      },
+      {
+        "id": "gp-k10-b1-ql-058",
+        "kind": "completion",
+        "prompt": "Il est nécessaire que vous ___ où se trouve le point de rassemblement.",
+        "givenVerb": "savoir",
+        "cue": "Nécessité ou obligation.",
+        "answers": [
+          "sachiez"
+        ],
+        "explanation": "Après « Il est nécessaire que », on emploie ici le subjonctif présent. La forme attendue est « sachiez ».",
+        "options": [
+          {
+            "id": "o1",
+            "text": "sachiez"
+          },
+          {
+            "id": "o2",
+            "text": "savez"
+          },
+          {
+            "id": "o3",
+            "text": "sachent"
+          }
+        ],
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-qcm-conj",
+          "position": 57,
+          "partition": "necessite-058"
+        }
+      },
+      {
+        "id": "gp-k10-b1-ql-059",
+        "kind": "completion",
+        "prompt": "Il est possible qu’un deuxième groupe ___ aider à déplacer les bancs.",
+        "givenVerb": "venir",
+        "cue": "Doute ou possibilité.",
+        "answers": [
+          "vienne"
+        ],
+        "explanation": "Après « Il est possible que », on emploie ici le subjonctif présent. La forme attendue est « vienne ».",
+        "options": [
+          {
+            "id": "o1",
+            "text": "vienne"
+          },
+          {
+            "id": "o2",
+            "text": "vient"
+          },
+          {
+            "id": "o3",
+            "text": "viennent"
+          }
+        ],
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-qcm-conj",
+          "position": 58,
+          "partition": "doute-059"
+        }
+      },
+      {
+        "id": "gp-k10-b1-ql-060",
+        "kind": "completion",
+        "prompt": "La gardienne doute que le nouveau lecteur ___ les anciens badges.",
+        "givenVerb": "reconnaître",
+        "cue": "Doute ou possibilité.",
+        "answers": [
+          "reconnaisse"
+        ],
+        "explanation": "Après « La gardienne doute que », on emploie ici le subjonctif présent. La forme attendue est « reconnaisse ».",
+        "options": [
+          {
+            "id": "o1",
+            "text": "reconnaisse"
+          },
+          {
+            "id": "o2",
+            "text": "reconnaît"
+          },
+          {
+            "id": "o3",
+            "text": "reconnaissent"
+          }
+        ],
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-qcm-conj",
+          "position": 59,
+          "partition": "doute-060"
+        }
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "k10-b1-curriculum-t-2026-11-12.1",
+    "revision": "k10-b1-curriculum-t-2026-11-27-v2",
     "activityId": "gram-ex-k10-curriculum-t",
     "subthemeId": "k10",
     "topic": "gram-exprimer",
@@ -1588,7 +1898,7 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-12",
+      "date": "2026-11-27",
       "humanReview": "pending",
       "note": "Pilote B1 guidé : expressions introductrices, formes verbales, élisions et modèles relus. Le subjonctif passé appartient à une autre notion. Validation enseignant attendue."
     },
@@ -2498,12 +2808,192 @@
           "position": 49,
           "partition": "doute-050"
         }
+      },
+      {
+        "id": "gp-k10-b1-t-051",
+        "kind": "transform",
+        "prompt": "Nous suivons le tracé bleu jusqu’au local des archives.",
+        "givenVerb": "suivre",
+        "responseLines": 2,
+        "directive": "Commencez par « La responsable souhaite que ». Gardez le sujet et les informations de la proposition. Faites les élisions nécessaires.",
+        "answers": [
+          "La responsable souhaite que nous suivions le tracé bleu jusqu’au local des archives."
+        ],
+        "explanation": "Après « La responsable souhaite que », on emploie ici le subjonctif présent. La forme attendue est « suivions ».",
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-t",
+          "position": 50,
+          "partition": "volonte-051"
+        }
+      },
+      {
+        "id": "gp-k10-b1-t-052",
+        "kind": "transform",
+        "prompt": "Vous chantez sans accompagnement pendant le premier essai.",
+        "givenVerb": "chanter",
+        "responseLines": 2,
+        "directive": "Commencez par « Le chef de chœur préfère que ». Gardez le sujet et les informations de la proposition. Faites les élisions nécessaires.",
+        "answers": [
+          "Le chef de chœur préfère que vous chantiez sans accompagnement pendant le premier essai."
+        ],
+        "explanation": "Après « Le chef de chœur préfère que », on emploie ici le subjonctif présent. La forme attendue est « chantiez ».",
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-t",
+          "position": 51,
+          "partition": "volonte-052"
+        }
+      },
+      {
+        "id": "gp-k10-b1-t-053",
+        "kind": "transform",
+        "prompt": "La commune maintient une permanence le samedi matin.",
+        "givenVerb": "maintenir",
+        "responseLines": 2,
+        "directive": "Commencez par « Les habitantes demandent que ». Gardez le sujet et les informations de la proposition. Faites les élisions nécessaires.",
+        "answers": [
+          "Les habitantes demandent que la commune maintienne une permanence le samedi matin."
+        ],
+        "explanation": "Après « Les habitantes demandent que », on emploie ici le subjonctif présent. La forme attendue est « maintienne ».",
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-t",
+          "position": 52,
+          "partition": "volonte-053"
+        }
+      },
+      {
+        "id": "gp-k10-b1-t-054",
+        "kind": "transform",
+        "prompt": "Tu peux présenter la maquette aux familles.",
+        "givenVerb": "pouvoir",
+        "responseLines": 2,
+        "directive": "Commencez par « Nous sommes ravis que ». Gardez le sujet et les informations de la proposition. Faites les élisions nécessaires.",
+        "answers": [
+          "Nous sommes ravis que tu puisses présenter la maquette aux familles."
+        ],
+        "explanation": "Après « Nous sommes ravis que », on emploie ici le subjonctif présent. La forme attendue est « puisses ».",
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-t",
+          "position": 53,
+          "partition": "sentiment-054"
+        }
+      },
+      {
+        "id": "gp-k10-b1-t-055",
+        "kind": "transform",
+        "prompt": "Le vidéoprojecteur fait autant de bruit pendant la lecture.",
+        "givenVerb": "faire",
+        "responseLines": 2,
+        "directive": "Commencez par « Les élèves regrettent que ». Gardez le sujet et les informations de la proposition. Faites les élisions nécessaires.",
+        "answers": [
+          "Les élèves regrettent que le vidéoprojecteur fasse autant de bruit pendant la lecture."
+        ],
+        "explanation": "Après « Les élèves regrettent que », on emploie ici le subjonctif présent. La forme attendue est « fasse ».",
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-t",
+          "position": 54,
+          "partition": "sentiment-055"
+        }
+      },
+      {
+        "id": "gp-k10-b1-t-056",
+        "kind": "transform",
+        "prompt": "Ces deux câbles sont assez longs pour atteindre la table.",
+        "givenVerb": "être",
+        "responseLines": 2,
+        "directive": "Commencez par « Il est indispensable que ». Gardez le sujet et les informations de la proposition. Faites les élisions nécessaires.",
+        "answers": [
+          "Il est indispensable que ces deux câbles soient assez longs pour atteindre la table."
+        ],
+        "explanation": "Après « Il est indispensable que », on emploie ici le subjonctif présent. La forme attendue est « soient ».",
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-t",
+          "position": 55,
+          "partition": "necessite-056"
+        }
+      },
+      {
+        "id": "gp-k10-b1-t-057",
+        "kind": "transform",
+        "prompt": "Inès va chercher les étiquettes au secrétariat.",
+        "givenVerb": "aller",
+        "responseLines": 2,
+        "directive": "Commencez par « Il faut que ». Gardez le sujet et les informations de la proposition. Faites les élisions nécessaires.",
+        "answers": [
+          "Il faut qu’Inès aille chercher les étiquettes au secrétariat."
+        ],
+        "explanation": "Après « Il faut que », on emploie ici le subjonctif présent. La forme attendue est « aille ».",
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-t",
+          "position": 56,
+          "partition": "necessite-057"
+        }
+      },
+      {
+        "id": "gp-k10-b1-t-058",
+        "kind": "transform",
+        "prompt": "Vous savez où se trouve le point de rassemblement.",
+        "givenVerb": "savoir",
+        "responseLines": 2,
+        "directive": "Commencez par « Il est nécessaire que ». Gardez le sujet et les informations de la proposition. Faites les élisions nécessaires.",
+        "answers": [
+          "Il est nécessaire que vous sachiez où se trouve le point de rassemblement."
+        ],
+        "explanation": "Après « Il est nécessaire que », on emploie ici le subjonctif présent. La forme attendue est « sachiez ».",
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-t",
+          "position": 57,
+          "partition": "necessite-058"
+        }
+      },
+      {
+        "id": "gp-k10-b1-t-059",
+        "kind": "transform",
+        "prompt": "Un deuxième groupe vient aider à déplacer les bancs.",
+        "givenVerb": "venir",
+        "responseLines": 2,
+        "directive": "Commencez par « Il est possible que ». Gardez le sujet et les informations de la proposition. Faites les élisions nécessaires.",
+        "answers": [
+          "Il est possible qu’un deuxième groupe vienne aider à déplacer les bancs."
+        ],
+        "explanation": "Après « Il est possible que », on emploie ici le subjonctif présent. La forme attendue est « vienne ».",
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-t",
+          "position": 58,
+          "partition": "doute-059"
+        }
+      },
+      {
+        "id": "gp-k10-b1-t-060",
+        "kind": "transform",
+        "prompt": "Le nouveau lecteur reconnaît les anciens badges.",
+        "givenVerb": "reconnaître",
+        "responseLines": 2,
+        "directive": "Commencez par « La gardienne doute que ». Gardez le sujet et les informations de la proposition. Faites les élisions nécessaires.",
+        "answers": [
+          "La gardienne doute que le nouveau lecteur reconnaisse les anciens badges."
+        ],
+        "explanation": "Après « La gardienne doute que », on emploie ici le subjonctif présent. La forme attendue est « reconnaisse ».",
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-t",
+          "position": 59,
+          "partition": "doute-060"
+        }
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "k10-b1-curriculum-c-2026-11-12.1",
+    "revision": "k10-b1-curriculum-c-2026-11-27-v2",
     "activityId": "gram-ex-k10-curriculum-c",
     "subthemeId": "k10",
     "topic": "gram-exprimer",
@@ -2513,7 +3003,7 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-12",
+      "date": "2026-11-27",
       "humanReview": "pending",
       "note": "Pilote B1 guidé : expressions introductrices, formes verbales, élisions et modèles relus. Le subjonctif passé appartient à une autre notion. Validation enseignant attendue."
     },
@@ -3723,12 +4213,252 @@
           "position": 49,
           "partition": "doute-050"
         }
+      },
+      {
+        "id": "gp-k10-b1-c-051",
+        "kind": "correct",
+        "prompt": "La responsable souhaite que nous suivons le tracé bleu jusqu’au local des archives.",
+        "cue": "Volonté ou préférence.",
+        "givenVerb": "suivre",
+        "responseLines": 2,
+        "answers": [
+          "La responsable souhaite que nous suivions le tracé bleu jusqu’au local des archives."
+        ],
+        "explanation": "Après « La responsable souhaite que », on emploie ici le subjonctif présent. La forme attendue est « suivions ».",
+        "error": {
+          "segmentId": "prompt",
+          "start": 33,
+          "end": 40,
+          "text": "suivons"
+        },
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-c",
+          "position": 50,
+          "partition": "volonte-051"
+        }
+      },
+      {
+        "id": "gp-k10-b1-c-052",
+        "kind": "correct",
+        "prompt": "Le chef de chœur préfère que vous chantez sans accompagnement pendant le premier essai.",
+        "cue": "Volonté ou préférence.",
+        "givenVerb": "chanter",
+        "responseLines": 2,
+        "answers": [
+          "Le chef de chœur préfère que vous chantiez sans accompagnement pendant le premier essai."
+        ],
+        "explanation": "Après « Le chef de chœur préfère que », on emploie ici le subjonctif présent. La forme attendue est « chantiez ».",
+        "error": {
+          "segmentId": "prompt",
+          "start": 34,
+          "end": 41,
+          "text": "chantez"
+        },
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-c",
+          "position": 51,
+          "partition": "volonte-052"
+        }
+      },
+      {
+        "id": "gp-k10-b1-c-053",
+        "kind": "correct",
+        "prompt": "Les habitantes demandent que la commune maintient une permanence le samedi matin.",
+        "cue": "Volonté ou préférence.",
+        "givenVerb": "maintenir",
+        "responseLines": 2,
+        "answers": [
+          "Les habitantes demandent que la commune maintienne une permanence le samedi matin."
+        ],
+        "explanation": "Après « Les habitantes demandent que », on emploie ici le subjonctif présent. La forme attendue est « maintienne ».",
+        "error": {
+          "segmentId": "prompt",
+          "start": 40,
+          "end": 49,
+          "text": "maintient"
+        },
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-c",
+          "position": 52,
+          "partition": "volonte-053"
+        }
+      },
+      {
+        "id": "gp-k10-b1-c-054",
+        "kind": "correct",
+        "prompt": "Nous sommes ravis que tu peux présenter la maquette aux familles.",
+        "cue": "Sentiment ou appréciation.",
+        "givenVerb": "pouvoir",
+        "responseLines": 2,
+        "answers": [
+          "Nous sommes ravis que tu puisses présenter la maquette aux familles."
+        ],
+        "explanation": "Après « Nous sommes ravis que », on emploie ici le subjonctif présent. La forme attendue est « puisses ».",
+        "error": {
+          "segmentId": "prompt",
+          "start": 25,
+          "end": 29,
+          "text": "peux"
+        },
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-c",
+          "position": 53,
+          "partition": "sentiment-054"
+        }
+      },
+      {
+        "id": "gp-k10-b1-c-055",
+        "kind": "correct",
+        "prompt": "Les élèves regrettent que le vidéoprojecteur fait autant de bruit pendant la lecture.",
+        "cue": "Sentiment ou appréciation.",
+        "givenVerb": "faire",
+        "responseLines": 2,
+        "answers": [
+          "Les élèves regrettent que le vidéoprojecteur fasse autant de bruit pendant la lecture."
+        ],
+        "explanation": "Après « Les élèves regrettent que », on emploie ici le subjonctif présent. La forme attendue est « fasse ».",
+        "error": {
+          "segmentId": "prompt",
+          "start": 45,
+          "end": 49,
+          "text": "fait"
+        },
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-c",
+          "position": 54,
+          "partition": "sentiment-055"
+        }
+      },
+      {
+        "id": "gp-k10-b1-c-056",
+        "kind": "correct",
+        "prompt": "Il est indispensable que ces deux câbles sont assez longs pour atteindre la table.",
+        "cue": "Nécessité ou obligation.",
+        "givenVerb": "être",
+        "responseLines": 2,
+        "answers": [
+          "Il est indispensable que ces deux câbles soient assez longs pour atteindre la table."
+        ],
+        "explanation": "Après « Il est indispensable que », on emploie ici le subjonctif présent. La forme attendue est « soient ».",
+        "error": {
+          "segmentId": "prompt",
+          "start": 41,
+          "end": 45,
+          "text": "sont"
+        },
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-c",
+          "position": 55,
+          "partition": "necessite-056"
+        }
+      },
+      {
+        "id": "gp-k10-b1-c-057",
+        "kind": "correct",
+        "prompt": "Il faut qu’Inès va chercher les étiquettes au secrétariat.",
+        "cue": "Nécessité ou obligation.",
+        "givenVerb": "aller",
+        "responseLines": 2,
+        "answers": [
+          "Il faut qu’Inès aille chercher les étiquettes au secrétariat."
+        ],
+        "explanation": "Après « Il faut que », on emploie ici le subjonctif présent. La forme attendue est « aille ».",
+        "error": {
+          "segmentId": "prompt",
+          "start": 16,
+          "end": 18,
+          "text": "va"
+        },
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-c",
+          "position": 56,
+          "partition": "necessite-057"
+        }
+      },
+      {
+        "id": "gp-k10-b1-c-058",
+        "kind": "correct",
+        "prompt": "Il est nécessaire que vous savez où se trouve le point de rassemblement.",
+        "cue": "Nécessité ou obligation.",
+        "givenVerb": "savoir",
+        "responseLines": 2,
+        "answers": [
+          "Il est nécessaire que vous sachiez où se trouve le point de rassemblement."
+        ],
+        "explanation": "Après « Il est nécessaire que », on emploie ici le subjonctif présent. La forme attendue est « sachiez ».",
+        "error": {
+          "segmentId": "prompt",
+          "start": 27,
+          "end": 32,
+          "text": "savez"
+        },
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-c",
+          "position": 57,
+          "partition": "necessite-058"
+        }
+      },
+      {
+        "id": "gp-k10-b1-c-059",
+        "kind": "correct",
+        "prompt": "Il est possible qu’un deuxième groupe vient aider à déplacer les bancs.",
+        "cue": "Doute ou possibilité.",
+        "givenVerb": "venir",
+        "responseLines": 2,
+        "answers": [
+          "Il est possible qu’un deuxième groupe vienne aider à déplacer les bancs."
+        ],
+        "explanation": "Après « Il est possible que », on emploie ici le subjonctif présent. La forme attendue est « vienne ».",
+        "error": {
+          "segmentId": "prompt",
+          "start": 38,
+          "end": 43,
+          "text": "vient"
+        },
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-c",
+          "position": 58,
+          "partition": "doute-059"
+        }
+      },
+      {
+        "id": "gp-k10-b1-c-060",
+        "kind": "correct",
+        "prompt": "La gardienne doute que le nouveau lecteur reconnaît les anciens badges.",
+        "cue": "Doute ou possibilité.",
+        "givenVerb": "reconnaître",
+        "responseLines": 2,
+        "answers": [
+          "La gardienne doute que le nouveau lecteur reconnaisse les anciens badges."
+        ],
+        "explanation": "Après « La gardienne doute que », on emploie ici le subjonctif présent. La forme attendue est « reconnaisse ».",
+        "error": {
+          "segmentId": "prompt",
+          "start": 42,
+          "end": 51,
+          "text": "reconnaît"
+        },
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-c",
+          "position": 59,
+          "partition": "doute-060"
+        }
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "k10-b1-curriculum-e-2026-11-12.1",
+    "revision": "k10-b1-curriculum-e-2026-11-27-v2",
     "activityId": "gram-ex-k10-curriculum-e",
     "subthemeId": "k10",
     "topic": "gram-exprimer",
@@ -3738,7 +4468,7 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-12",
+      "date": "2026-11-27",
       "humanReview": "pending",
       "note": "Pilote B1 guidé : expressions introductrices, formes verbales, élisions et modèles relus. Le subjonctif passé appartient à une autre notion. Validation enseignant attendue."
     },
@@ -5747,6 +6477,406 @@
           "typeId": "gram-ex-k10-curriculum-e",
           "position": 49,
           "partition": "doute-050"
+        }
+      },
+      {
+        "id": "gp-k10-b1-e-051",
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Suivre le tracé bleu\nDes cartons occupent le couloir des archives. La responsable veut que votre groupe suive le tracé bleu pour accéder au local.",
+        "task": "Dans un message à votre groupe, rapportez ce souhait. Écrivez deux phrases, dont une au subjonctif présent avec « La responsable souhaite que ». Ajoutez une explication ou une suite adaptée à la situation.",
+        "writeLines": 6,
+        "answers": [
+          "La responsable souhaite que nous suivions le tracé bleu jusqu’au local des archives. Les autres accès sont encombrés par des cartons."
+        ],
+        "explanation": "Les reformulations sont recevables si elles respectent le sens, l’amorce et le destinataire.",
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "La réponse correspond à la situation et au destinataire."
+          },
+          {
+            "id": "r2",
+            "label": "L’expression introductrice demandée est employée."
+          },
+          {
+            "id": "r3",
+            "label": "Le verbe de la proposition est au subjonctif présent et s’accorde avec son sujet."
+          },
+          {
+            "id": "r4",
+            "label": "La construction avec que ou qu’ et les élisions sont correctes."
+          },
+          {
+            "id": "r5",
+            "label": "La seconde phrase apporte une explication ou une suite cohérente."
+          }
+        ],
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-e",
+          "position": 50,
+          "partition": "volonte-051"
+        }
+      },
+      {
+        "id": "gp-k10-b1-e-052",
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Un premier essai sans piano\nLe chef de chœur prépare une répétition. Il aimerait entendre le groupe sans piano pour repérer les entrées hésitantes.",
+        "task": "Dans un message aux choristes que vous vouvoyez, rapportez cette préférence. Écrivez deux phrases, dont une au subjonctif présent avec « Le chef de chœur préfère que ». Ajoutez une explication ou une suite adaptée à la situation.",
+        "writeLines": 6,
+        "answers": [
+          "Le chef de chœur préfère que vous chantiez sans accompagnement pendant le premier essai. Il pourra ainsi mieux entendre les entrées."
+        ],
+        "explanation": "Les reformulations sont recevables si elles respectent le sens, l’amorce et le destinataire.",
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "La réponse correspond à la situation et au destinataire."
+          },
+          {
+            "id": "r2",
+            "label": "L’expression introductrice demandée est employée."
+          },
+          {
+            "id": "r3",
+            "label": "Le verbe de la proposition est au subjonctif présent et s’accorde avec son sujet."
+          },
+          {
+            "id": "r4",
+            "label": "La construction avec que ou qu’ et les élisions sont correctes."
+          },
+          {
+            "id": "r5",
+            "label": "La seconde phrase apporte une explication ou une suite cohérente."
+          }
+        ],
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-e",
+          "position": 51,
+          "partition": "volonte-052"
+        }
+      },
+      {
+        "id": "gp-k10-b1-e-053",
+        "kind": "production",
+        "mode": "written",
+        "prompt": "La permanence du samedi\nDes habitantes travaillent pendant les heures d’ouverture habituelles. Elles demandent à la commune de garder une permanence le samedi matin.",
+        "task": "Dans le compte rendu de la réunion, indiquez ce que demandent ces habitantes. Écrivez deux phrases, dont une au subjonctif présent avec « Les habitantes demandent que ». Ajoutez une explication ou une suite adaptée à la situation.",
+        "writeLines": 6,
+        "answers": [
+          "Les habitantes demandent que la commune maintienne une permanence le samedi matin. Certaines ne peuvent pas venir en semaine."
+        ],
+        "explanation": "Les reformulations sont recevables si elles respectent le sens, l’amorce et le destinataire.",
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "La réponse correspond à la situation et au destinataire."
+          },
+          {
+            "id": "r2",
+            "label": "L’expression introductrice demandée est employée."
+          },
+          {
+            "id": "r3",
+            "label": "Le verbe de la proposition est au subjonctif présent et s’accorde avec son sujet."
+          },
+          {
+            "id": "r4",
+            "label": "La construction avec que ou qu’ et les élisions sont correctes."
+          },
+          {
+            "id": "r5",
+            "label": "La seconde phrase apporte une explication ou une suite cohérente."
+          }
+        ],
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-e",
+          "position": 52,
+          "partition": "volonte-053"
+        }
+      },
+      {
+        "id": "gp-k10-b1-e-054",
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Présenter la maquette\nUne élève connaît bien la maquette. Votre groupe est content qu’elle soit libre pour venir la présenter aux familles.",
+        "task": "Écrivez à cette élève au nom du groupe, en la tutoyant. Écrivez deux phrases, dont une au subjonctif présent avec « Nous sommes ravis que ». Ajoutez une explication ou une suite adaptée à la situation.",
+        "writeLines": 6,
+        "answers": [
+          "Nous sommes ravis que tu puisses présenter la maquette aux familles. Tu pourras aussi répondre à leurs questions."
+        ],
+        "explanation": "Les reformulations sont recevables si elles respectent le sens, l’amorce et le destinataire.",
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "La réponse correspond à la situation et au destinataire."
+          },
+          {
+            "id": "r2",
+            "label": "L’expression introductrice demandée est employée."
+          },
+          {
+            "id": "r3",
+            "label": "Le verbe de la proposition est au subjonctif présent et s’accorde avec son sujet."
+          },
+          {
+            "id": "r4",
+            "label": "La construction avec que ou qu’ et les élisions sont correctes."
+          },
+          {
+            "id": "r5",
+            "label": "La seconde phrase apporte une explication ou une suite cohérente."
+          }
+        ],
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-e",
+          "position": 53,
+          "partition": "sentiment-054"
+        }
+      },
+      {
+        "id": "gp-k10-b1-e-055",
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Lire dans le calme\nLe vidéoprojecteur couvre par moments la voix de la personne qui lit. Les élèves se plaignent de son bruit.",
+        "task": "Dans la note de fin de séance, rapportez ce regret. Écrivez deux phrases, dont une au subjonctif présent avec « Les élèves regrettent que ». Ajoutez une explication ou une suite adaptée à la situation.",
+        "writeLines": 6,
+        "answers": [
+          "Les élèves regrettent que le vidéoprojecteur fasse autant de bruit pendant la lecture. Par moments, on entend mal la voix de la personne qui lit."
+        ],
+        "explanation": "Les reformulations sont recevables si elles respectent le sens, l’amorce et le destinataire.",
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "La réponse correspond à la situation et au destinataire."
+          },
+          {
+            "id": "r2",
+            "label": "L’expression introductrice demandée est employée."
+          },
+          {
+            "id": "r3",
+            "label": "Le verbe de la proposition est au subjonctif présent et s’accorde avec son sujet."
+          },
+          {
+            "id": "r4",
+            "label": "La construction avec que ou qu’ et les élisions sont correctes."
+          },
+          {
+            "id": "r5",
+            "label": "La seconde phrase apporte une explication ou une suite cohérente."
+          }
+        ],
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-e",
+          "position": 54,
+          "partition": "sentiment-055"
+        }
+      },
+      {
+        "id": "gp-k10-b1-e-056",
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Brancher les deux câbles\nLe matériel doit rester près de la prise fixe. Les deux câbles doivent atteindre la table placée au milieu de la salle.",
+        "task": "Dans une note à l’équipe, indiquez la condition à respecter avant l’installation. Écrivez deux phrases, dont une au subjonctif présent avec « Il est indispensable que ». Ajoutez une explication ou une suite adaptée à la situation.",
+        "writeLines": 6,
+        "answers": [
+          "Il est indispensable que ces deux câbles soient assez longs pour atteindre la table. La prise ne peut pas être déplacée."
+        ],
+        "explanation": "Les reformulations sont recevables si elles respectent le sens, l’amorce et le destinataire.",
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "La réponse correspond à la situation et au destinataire."
+          },
+          {
+            "id": "r2",
+            "label": "L’expression introductrice demandée est employée."
+          },
+          {
+            "id": "r3",
+            "label": "Le verbe de la proposition est au subjonctif présent et s’accorde avec son sujet."
+          },
+          {
+            "id": "r4",
+            "label": "La construction avec que ou qu’ et les élisions sont correctes."
+          },
+          {
+            "id": "r5",
+            "label": "La seconde phrase apporte une explication ou une suite cohérente."
+          }
+        ],
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-e",
+          "position": 55,
+          "partition": "necessite-056"
+        }
+      },
+      {
+        "id": "gp-k10-b1-e-057",
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Récupérer les étiquettes\nLes étiquettes du matériel sont prêtes au secrétariat. Inès doit passer les prendre avant la distribution.",
+        "task": "Notez la tâche d’Inès dans la liste transmise à l’équipe. Écrivez deux phrases, dont une au subjonctif présent avec « Il faut que ». Ajoutez une explication ou une suite adaptée à la situation.",
+        "writeLines": 6,
+        "answers": [
+          "Il faut qu’Inès aille chercher les étiquettes au secrétariat. La distribution commence ensuite."
+        ],
+        "explanation": "Les reformulations sont recevables si elles respectent le sens, l’amorce et le destinataire.",
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "La réponse correspond à la situation et au destinataire."
+          },
+          {
+            "id": "r2",
+            "label": "L’expression introductrice demandée est employée."
+          },
+          {
+            "id": "r3",
+            "label": "Le verbe de la proposition est au subjonctif présent et s’accorde avec son sujet."
+          },
+          {
+            "id": "r4",
+            "label": "La construction avec que ou qu’ et les élisions sont correctes."
+          },
+          {
+            "id": "r5",
+            "label": "La seconde phrase apporte une explication ou une suite cohérente."
+          }
+        ],
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-e",
+          "position": 56,
+          "partition": "necessite-057"
+        }
+      },
+      {
+        "id": "gp-k10-b1-e-058",
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Connaître le point de rassemblement\nUn exercice d’évacuation est prévu. Les membres de l’équipe doivent pouvoir rejoindre le point de rassemblement sans attendre d’indication.",
+        "task": "Dans un message adressé aux membres de l’équipe, rappelez cette exigence. Écrivez deux phrases, dont une au subjonctif présent avec « Il est nécessaire que ». Ajoutez une explication ou une suite adaptée à la situation.",
+        "writeLines": 6,
+        "answers": [
+          "Il est nécessaire que vous sachiez où se trouve le point de rassemblement. L’exercice aura lieu cet après-midi."
+        ],
+        "explanation": "Les reformulations sont recevables si elles respectent le sens, l’amorce et le destinataire.",
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "La réponse correspond à la situation et au destinataire."
+          },
+          {
+            "id": "r2",
+            "label": "L’expression introductrice demandée est employée."
+          },
+          {
+            "id": "r3",
+            "label": "Le verbe de la proposition est au subjonctif présent et s’accorde avec son sujet."
+          },
+          {
+            "id": "r4",
+            "label": "La construction avec que ou qu’ et les élisions sont correctes."
+          },
+          {
+            "id": "r5",
+            "label": "La seconde phrase apporte une explication ou une suite cohérente."
+          }
+        ],
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-e",
+          "position": 57,
+          "partition": "necessite-058"
+        }
+      },
+      {
+        "id": "gp-k10-b1-e-059",
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Un renfort possible\nUn deuxième groupe a proposé de venir déplacer des bancs, mais il n’a pas encore confirmé sa disponibilité.",
+        "task": "Dans un message à la personne qui prépare la salle, formulez cette possibilité. Écrivez deux phrases, dont une au subjonctif présent avec « Il est possible que ». Ajoutez une explication ou une suite adaptée à la situation.",
+        "writeLines": 6,
+        "answers": [
+          "Il est possible qu’un deuxième groupe vienne aider à déplacer les bancs. Nous attendons encore sa confirmation."
+        ],
+        "explanation": "Les reformulations sont recevables si elles respectent le sens, l’amorce et le destinataire.",
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "La réponse correspond à la situation et au destinataire."
+          },
+          {
+            "id": "r2",
+            "label": "L’expression introductrice demandée est employée."
+          },
+          {
+            "id": "r3",
+            "label": "Le verbe de la proposition est au subjonctif présent et s’accorde avec son sujet."
+          },
+          {
+            "id": "r4",
+            "label": "La construction avec que ou qu’ et les élisions sont correctes."
+          },
+          {
+            "id": "r5",
+            "label": "La seconde phrase apporte une explication ou une suite cohérente."
+          }
+        ],
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-e",
+          "position": 58,
+          "partition": "doute-059"
+        }
+      },
+      {
+        "id": "gp-k10-b1-e-060",
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Essayer un ancien badge\nUn nouveau lecteur de badges vient d’être installé. La gardienne ne pense pas que les anciens badges soient compatibles. Un essai est prévu le lendemain.",
+        "task": "Dans une note au secrétariat, rapportez ce doute. Écrivez deux phrases, dont une au subjonctif présent avec « La gardienne doute que ». Ajoutez une explication ou une suite adaptée à la situation.",
+        "writeLines": 6,
+        "answers": [
+          "La gardienne doute que le nouveau lecteur reconnaisse les anciens badges. Un essai est prévu demain."
+        ],
+        "explanation": "Les reformulations sont recevables si elles respectent le sens, l’amorce et le destinataire.",
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "La réponse correspond à la situation et au destinataire."
+          },
+          {
+            "id": "r2",
+            "label": "L’expression introductrice demandée est employée."
+          },
+          {
+            "id": "r3",
+            "label": "Le verbe de la proposition est au subjonctif présent et s’accorde avec son sujet."
+          },
+          {
+            "id": "r4",
+            "label": "La construction avec que ou qu’ et les élisions sont correctes."
+          },
+          {
+            "id": "r5",
+            "label": "La seconde phrase apporte une explication ou une suite cohérente."
+          }
+        ],
+        "source": {
+          "path": "src/grammaire/curriculum/data/k10.json",
+          "typeId": "gram-ex-k10-curriculum-e",
+          "position": 59,
+          "partition": "doute-060"
         }
       }
     ]

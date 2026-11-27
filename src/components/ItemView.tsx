@@ -68,6 +68,8 @@ import {
   WordSearchBlock,
 } from './item-view/vocab'
 
+import { GrammarWordVocab } from './item-view/grammar-word-vocab'
+import { GrammarCoTrueFalse } from './item-view/grammar-co-true-false'
 import { SpatialPracticeView } from './item-view/spatial-practice'
 import { TableAndGraph } from './item-view/function-practice'
 import { AreaFigures, SolidViewChoices } from './item-view/geometry-practice'
@@ -478,12 +480,14 @@ export function ItemView({
         {item.lengthUnits && <LengthUnitComparison lengths={item.lengthUnits} mode={mode} />}
         {item.areaFigures && <AreaFigures figures={item.areaFigures} />}
         {item.solidViews && <SolidViewChoices solid={item.solidViews} />}
+        {item.grammarWordVocab && <GrammarWordVocab card={item.grammarWordVocab} mode={mode} />}
+        {item.grammarCoTrueFalse && <GrammarCoTrueFalse statements={item.grammarCoTrueFalse} mode={mode} />}
         {item.spatial && <SpatialPracticeView practice={item.spatial} mode={mode} />}
         {item.measureScale && <MeasurementScale scale={item.measureScale} />}
         {item.numberLine && <NumberLinePractice line={item.numberLine} />}
         {item.graphPractice && <TableAndGraph graph={item.graphPractice} prompt={item.prompt ?? ''} mode={mode} />}
         {item.functionPairs && <FunctionValueTable pairs={item.functionPairs} />}
-        {isStackedText && !item.convert && !item.graphPractice && !item.spatial && <StackedPrompt item={item} mode={mode} showHelp={problemHelp} />}
+        {isStackedText && !item.convert && !item.graphPractice && !item.spatial && !item.grammarCoTrueFalse && !item.grammarWordVocab && <StackedPrompt item={item} mode={mode} showHelp={problemHelp} />}
         {!isProblem &&
           !isStackedText &&
           item.layout === 'inline' &&

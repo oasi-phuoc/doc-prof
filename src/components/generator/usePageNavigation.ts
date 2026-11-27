@@ -1,3 +1,4 @@
+import { grammarCoTypeId } from '@/grammaire/exercises/co-themes'
 import type { Dispatch, SetStateAction } from 'react'
 import { useEffect } from 'react'
 import {
@@ -163,6 +164,8 @@ export function usePageNavigation({
       phraseImageShownCategories: activeBlock.phraseImageShownCategories,
       grammarCoLevel: fields.grammarCoLevel,
       grammarCoAudioId: fields.grammarCoAudioId,
+      grammarCoFormat: fields.grammarCoFormat,
+      grammarVocabRecall: fields.grammarVocabRecall,
       problemDraftGrids: isProblemExercise(nextType.id)
         ? Array.from({ length: count }, () => true)
         : undefined,
@@ -531,9 +534,9 @@ export function usePageNavigation({
       resolveGramSubthemeAll(activeBlock.topic, `gram-ex-${subId}-fill-conj`)
     if (!found || found.id !== subId) return
     const theoryId = found.theoryTypeIds[0]
-    const firstPractice = GRAM_EXERCISE_KINDS.map((k) =>
-      gramExerciseTypeId(found.id, k.id),
-    ).find((id) => exerciseTypeById[id])
+    const firstPractice = [grammarCoTypeId(found.id), ...GRAM_EXERCISE_KINDS.map((kind) =>
+      gramExerciseTypeId(found.id, kind.id),
+    )].find((id) => exerciseTypeById[id])
     const type =
       (theoryId ? exerciseTypeById[theoryId] : undefined) ??
       (firstPractice ? exerciseTypeById[firstPractice] : undefined)

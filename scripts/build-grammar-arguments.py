@@ -10,17 +10,21 @@ from grammar_curriculum.arguments_content import (
 
 THEMES = ('gram-argumenter', 'gram-exprimer')
 DATE = '2026-11-27'
+READING_VERSIONS = {'k3': 2, 'k4': 2, 'k6': 2, 'k12': 2, 'k13': 3}
+INITIAL_SOURCE_COUNT = 50
+SOURCE_COUNT = 60
 REGISTRY = ROOT / 'docs/grammaire/implementation/target-registry.json'
 DATA = ROOT / 'src/grammaire/curriculum/data'
 SITUATIONS = read_source('situations', ('slug', 'proposal', 'cause', 'nominal', 'result', 'contrast',
-                                       'overcame', 'action', 'goal'))
-PRONOUNS = read_source('k9', ('slug', 'base', 'directive', 'prompt', 'answer', 'wrong1', 'wrong2'))
-PREPOSITIONS = read_source('k11', ('slug', 'subject', 'verb', 'preposition', 'infinitive', 'nominal', 'replacement'))
+                                       'overcame', 'action', 'goal'), SOURCE_COUNT)
+PRONOUNS = read_source('k9', ('slug', 'base', 'directive', 'prompt', 'answer', 'wrong1', 'wrong2'), SOURCE_COUNT)
+PREPOSITIONS = read_source('k11', ('slug', 'subject', 'verb', 'preposition', 'infinitive', 'nominal', 'replacement'), SOURCE_COUNT)
 MODES = read_source('modes', ('slug', 'subject', 'verb', 'indicative', 'subjunctive', 'indicative_past',
-                              'subjunctive_past', 'action', 'situation'))
+                              'subjunctive_past', 'action', 'situation'), SOURCE_COUNT)
 LINK_DOCUMENTS = read_source('lectures-liens', ('slug', 'title', 'genre', 'intro', 'question', 'answer', 'evidence'), 20)
 MODE_DOCUMENTS = read_source('lectures-modes', ('slug', 'title', 'genre', 'text', 'trigger_sub', 'accomplished',
-                                                'event', 'trigger_ind', 'confirmed', 'question', 'answer', 'evidence'), 20)
+                                                'event', 'trigger_ind', 'confirmed', 'question', 'answer', 'evidence',
+                                                'question_k13', 'answer_k13', 'evidence_k13'), 20)
 BY_SLUG = {row['slug']: row for row in SITUATIONS}
 
 
@@ -110,9 +114,10 @@ def matching(ref, record, subtheme):
         reason = 'D’accord signale l’approbation. Pas d’accord signale le désaccord.'
     else:
         # Each problem includes a distinct use of the current verb plus an example of the opposite construction.
-        counterpart = next(PREPOSITIONS[(row['position'] + step) % len(PREPOSITIONS)]
-                           for step in range(1, len(PREPOSITIONS))
-                           if PREPOSITIONS[(row['position'] + step) % len(PREPOSITIONS)]['preposition'] != row['preposition'])
+        # The original situations retain their same partners when the source collection grows.
+        pool = PREPOSITIONS[:INITIAL_SOURCE_COUNT] if row['position'] < INITIAL_SOURCE_COUNT else PREPOSITIONS
+        following_rows = pool[row['position'] + 1:] + pool[:row['position']]
+        counterpart = next(item for item in following_rows if item['preposition'] != row['preposition'])
         ordered_rows = sorted((row, counterpart), key=lambda item: item['preposition'] != 'à')
         pairs = [(f'{item["subject"]} {item["verb"]} ___ {item["infinitive"]}.',
                   ('d’' if begins_vowel(item['infinitive']) else 'de') if item['preposition'] == 'de' else 'à')
@@ -236,11 +241,11 @@ def mode_reading(doc, ref, subtheme):
                  'Indicatif', [doc['trigger_ind'], doc['confirmed']], ['Subjonctif', 'Impératif'])
         second = ('Quelle information le texte présente-t-il comme confirmée ?',
                   capital(doc['confirmed']) + '.', [doc['confirmed']])
-    return text, [
-        make_question(ref['id'], 1, *first),
-        make_question(ref['id'], 2, *second),
-        make_question(ref['id'], 3, doc['question'], doc['answer'], [doc['evidence']]),
-    ]
+    questions = [first, second, (doc['question'], doc['answer'], [doc['evidence']])]
+    if subtheme == 'k13':
+        questions.append((doc['question_k13'], doc['answer_k13'], [doc['evidence_k13']]))
+    return text, [make_question(ref['id'], index, *question)
+                  for index, question in enumerate(questions, 1)]
 
 
 def reading_bank(bank):
@@ -294,7 +299,7 @@ def build():
         notion = notions[subtheme, level]
         presentations = [offer['presentation'] for offer in offers]
         primary = presentations[0]
-        version = 2 if primary == 'document-set' and subtheme in {'k3', 'k4', 'k6', 'k12', 'k13'} else 1
+        version = READING_VERSIONS.get(subtheme, 1) if primary == 'document-set' else 2
         bank = dict(schemaVersion=1, revision=f'arguments-{DATE}-v{version}', activityId=activity, subthemeId=subtheme,
                     topic=topic, level=level, label=activities[activity]['label'],
                     objective=first.get('objective') or notion['label'], editorialStatus='reviewed',

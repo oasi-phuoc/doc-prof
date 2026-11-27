@@ -335,7 +335,11 @@ export const glossaryIllustrations: Readonly<Record<string, readonly (readonly [
   ],
 }
 
-export function illustrateLogistiqueGlossaries(units: readonly LogistiqueUnit[]): LogistiqueUnit[] {
+export function illustrateLogistiqueGlossaries(
+  units: readonly LogistiqueUnit[],
+  entriesByModule = glossaryIllustrations,
+  revision = 'v003',
+): LogistiqueUnit[] {
   const byFile = new Map<string, LogistiqueGlossaryFigure>()
   const byModule = new Map<string, Map<string, LogistiqueGlossaryFigure>>()
   for (const unit of units) {
@@ -354,18 +358,18 @@ export function illustrateLogistiqueGlossaries(units: readonly LogistiqueUnit[])
 
   return units.map((unit) => {
     if (unit.kind !== 'glossaire') return unit
-    const entries = glossaryIllustrations[unit.module]
+    const entries = entriesByModule[unit.module]
     if (!entries) return unit
     return {
-      ...unit, revision: `${unit.module}-glossaire-illustre-v003`,
-      illustrations: Object.fromEntries(entries.map(([term, file, caption]) => {
+      ...unit, revision: `${unit.module}-glossaire-illustre-${revision}`,
+      illustrations: { ...unit.illustrations, ...Object.fromEntries(entries.map(([term, file, caption]) => {
         const figure = byModule.get(unit.module)?.get(file) ?? byFile.get(file)
         if (!figure || !unit.approvedFor.every((diploma) =>
           figure.src.includes('/commun/') || figure.src.includes(`/${diploma.toLowerCase()}/`))) {
           throw new Error(`Image autorisée introuvable pour le glossaire ${unit.module} : ${file}`)
         }
         return [term, { ...figure, caption }]
-      })),
+      })) },
     }
   })
 }

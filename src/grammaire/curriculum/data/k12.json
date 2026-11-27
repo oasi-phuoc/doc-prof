@@ -1,7 +1,7 @@
 [
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k12-qcm-conj",
     "subthemeId": "k12",
     "topic": "gram-exprimer",
@@ -1573,12 +1573,322 @@
         ],
         "explanation": "« On ne s’attendait pas à ce que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Modèle : On ne s’attendait pas à ce que vous ayez essayé la sonnette à l’entrée.",
         "givenVerb": "essayer"
+      },
+      {
+        "id": "gram-ex-k12-qcm-conj-b1-mode-guide-tactile",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k12-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Le groupe se réjouit que les médiatrices ___ les consignes à voix haute.",
+        "cue": "Le groupe accueille de nouveaux visiteurs. L’action est antérieure à la réaction ou à l’annonce. Complétez au subjonctif passé.",
+        "answers": [
+          "aient lu"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-guide-tactile-choix-1",
+            "text": "aient lu"
+          },
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-guide-tactile-choix-2",
+            "text": "ont lu"
+          },
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-guide-tactile-choix-3",
+            "text": "lire"
+          }
+        ],
+        "explanation": "« Le groupe se réjouit que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Modèle : Le groupe se réjouit que les médiatrices aient lu les consignes à voix haute.",
+        "givenVerb": "lire"
+      },
+      {
+        "id": "gram-ex-k12-qcm-conj-b1-mode-casier",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k12-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "On s’étonne que Nora ___ le casier de prêt avec le nouveau code.",
+        "cue": "L’atelier change son système de prêt. L’action est antérieure à la réaction ou à l’annonce. Complétez au subjonctif passé.",
+        "answers": [
+          "ait ouvert"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-casier-choix-1",
+            "text": "ait ouvert"
+          },
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-casier-choix-2",
+            "text": "a ouvert"
+          },
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-casier-choix-3",
+            "text": "ouvrir"
+          }
+        ],
+        "explanation": "« On s’étonne que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Modèle : On s’étonne que Nora ait ouvert le casier de prêt avec le nouveau code.",
+        "givenVerb": "ouvrir"
+      },
+      {
+        "id": "gram-ex-k12-qcm-conj-b1-mode-alarme",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k12-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "La personne responsable apprécie que le technicien ___ le signal d’alarme du tableau.",
+        "cue": "Un signal sonore retentit près de l’entrée. L’action est antérieure à la réaction ou à l’annonce. Complétez au subjonctif passé.",
+        "answers": [
+          "ait reconnu"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-alarme-choix-1",
+            "text": "ait reconnu"
+          },
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-alarme-choix-2",
+            "text": "a reconnu"
+          },
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-alarme-choix-3",
+            "text": "reconnaître"
+          }
+        ],
+        "explanation": "« La personne responsable apprécie que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Modèle : La personne responsable apprécie que le technicien ait reconnu le signal d’alarme du tableau.",
+        "givenVerb": "reconnaître"
+      },
+      {
+        "id": "gram-ex-k12-qcm-conj-b1-mode-violoncelle",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k12-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "On est soulagé que les musiciens ___ répéter le duo dans la petite salle.",
+        "cue": "Le grand studio est occupé. L’action est antérieure à la réaction ou à l’annonce. Complétez au subjonctif passé.",
+        "answers": [
+          "aient pu"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-violoncelle-choix-1",
+            "text": "aient pu"
+          },
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-violoncelle-choix-2",
+            "text": "ont pu"
+          },
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-violoncelle-choix-3",
+            "text": "pouvoir"
+          }
+        ],
+        "explanation": "« On est soulagé que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Modèle : On est soulagé que les musiciens aient pu répéter le duo dans la petite salle.",
+        "givenVerb": "pouvoir"
+      },
+      {
+        "id": "gram-ex-k12-qcm-conj-b1-mode-cagettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k12-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "On ne s’attendait pas à ce qu’Yara ___ les cagettes destinées au marché du samedi.",
+        "cue": "Le stand attend une livraison. L’action est antérieure à la réaction ou à l’annonce. Complétez au subjonctif passé.",
+        "answers": [
+          "ait reçu"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-cagettes-choix-1",
+            "text": "ait reçu"
+          },
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-cagettes-choix-2",
+            "text": "a reçu"
+          },
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-cagettes-choix-3",
+            "text": "recevoir"
+          }
+        ],
+        "explanation": "« On ne s’attendait pas à ce que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Modèle : On ne s’attendait pas à ce qu’Yara ait reçu les cagettes destinées au marché du samedi.",
+        "givenVerb": "recevoir"
+      },
+      {
+        "id": "gram-ex-k12-qcm-conj-b1-mode-berge",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k12-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Le groupe se réjouit que les volontaires ___ à l’abri par le chemin du canal.",
+        "cue": "Le niveau de l’eau monte près de la berge. L’action est antérieure à la réaction ou à l’annonce. Complétez au subjonctif passé.",
+        "answers": [
+          "soient revenus"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-berge-choix-1",
+            "text": "soient revenus"
+          },
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-berge-choix-2",
+            "text": "sont revenus"
+          },
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-berge-choix-3",
+            "text": "revenir"
+          }
+        ],
+        "explanation": "« Le groupe se réjouit que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Modèle : Le groupe se réjouit que les volontaires soient revenus à l’abri par le chemin du canal.",
+        "givenVerb": "revenir"
+      },
+      {
+        "id": "gram-ex-k12-qcm-conj-b1-mode-projection",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k12-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "On s’étonne que nous ___ changer de salle pour la projection.",
+        "cue": "L’écran de la grande salle est en panne. L’action est antérieure à la réaction ou à l’annonce. Complétez au subjonctif passé.",
+        "answers": [
+          "ayons dû"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-projection-choix-1",
+            "text": "ayons dû"
+          },
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-projection-choix-2",
+            "text": "avons dû"
+          },
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-projection-choix-3",
+            "text": "devoir"
+          }
+        ],
+        "explanation": "« On s’étonne que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Modèle : On s’étonne que nous ayons dû changer de salle pour la projection.",
+        "givenVerb": "devoir"
+      },
+      {
+        "id": "gram-ex-k12-qcm-conj-b1-mode-atelier-mobile",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k12-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "La personne responsable apprécie que vous ___ où retrouver les boîtes à outils.",
+        "cue": "L’atelier mobile a déplacé son matériel. L’action est antérieure à la réaction ou à l’annonce. Complétez au subjonctif passé.",
+        "answers": [
+          "ayez su"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-atelier-mobile-choix-1",
+            "text": "ayez su"
+          },
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-atelier-mobile-choix-2",
+            "text": "avez su"
+          },
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-atelier-mobile-choix-3",
+            "text": "savoir"
+          }
+        ],
+        "explanation": "« La personne responsable apprécie que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Modèle : La personne responsable apprécie que vous ayez su où retrouver les boîtes à outils.",
+        "givenVerb": "savoir"
+      },
+      {
+        "id": "gram-ex-k12-qcm-conj-b1-mode-volets",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k12-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "On est soulagé que la gardienne ___ les volets de la salle avant l’averse.",
+        "cue": "Un orage est annoncé pour le quartier. L’action est antérieure à la réaction ou à l’annonce. Complétez au subjonctif passé.",
+        "answers": [
+          "ait fermé"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-volets-choix-1",
+            "text": "ait fermé"
+          },
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-volets-choix-2",
+            "text": "a fermé"
+          },
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-volets-choix-3",
+            "text": "fermer"
+          }
+        ],
+        "explanation": "« On est soulagé que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Modèle : On est soulagé que la gardienne ait fermé les volets de la salle avant l’averse.",
+        "givenVerb": "fermer"
+      },
+      {
+        "id": "gram-ex-k12-qcm-conj-b1-mode-lecture-salle",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k12-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "On ne s’attendait pas à ce que les lectrices ___ à lire leur texte malgré la panne de micro.",
+        "cue": "La rencontre avec le public a lieu dans la grande salle. L’action est antérieure à la réaction ou à l’annonce. Complétez au subjonctif passé.",
+        "answers": [
+          "soient parvenues"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-lecture-salle-choix-1",
+            "text": "soient parvenues"
+          },
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-lecture-salle-choix-2",
+            "text": "sont parvenues"
+          },
+          {
+            "id": "gram-ex-k12-qcm-conj-b1-mode-lecture-salle-choix-3",
+            "text": "parvenir"
+          }
+        ],
+        "explanation": "« On ne s’attendait pas à ce que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Modèle : On ne s’attendait pas à ce que les lectrices soient parvenues à lire leur texte malgré la panne de micro.",
+        "givenVerb": "parvenir"
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k12-curriculum-t",
     "subthemeId": "k12",
     "topic": "gram-exprimer",
@@ -2445,6 +2755,176 @@
         "directive": "Reformulez avec « On ne s’attendait pas à ce que ». Conservez les faits et le repère temporel.",
         "answers": [
           "On ne s’attendait pas à ce que vous ayez essayé la sonnette à l’entrée."
+        ],
+        "responseLines": 2,
+        "explanation": "« On ne s’attendait pas à ce que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle."
+      },
+      {
+        "id": "gram-ex-k12-curriculum-t-b1-mode-guide-tactile",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k12-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le groupe accueille de nouveaux visiteurs.\nFait : les médiatrices ont lu les consignes à voix haute.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "directive": "Reformulez avec « Le groupe se réjouit que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "Le groupe se réjouit que les médiatrices aient lu les consignes à voix haute."
+        ],
+        "responseLines": 2,
+        "explanation": "« Le groupe se réjouit que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle."
+      },
+      {
+        "id": "gram-ex-k12-curriculum-t-b1-mode-casier",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k12-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "L’atelier change son système de prêt.\nFait : Nora a ouvert le casier de prêt avec le nouveau code.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "directive": "Reformulez avec « On s’étonne que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "On s’étonne que Nora ait ouvert le casier de prêt avec le nouveau code."
+        ],
+        "responseLines": 2,
+        "explanation": "« On s’étonne que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle."
+      },
+      {
+        "id": "gram-ex-k12-curriculum-t-b1-mode-alarme",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k12-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Un signal sonore retentit près de l’entrée.\nFait : le technicien a reconnu le signal d’alarme du tableau.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "directive": "Reformulez avec « La personne responsable apprécie que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "La personne responsable apprécie que le technicien ait reconnu le signal d’alarme du tableau."
+        ],
+        "responseLines": 2,
+        "explanation": "« La personne responsable apprécie que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle."
+      },
+      {
+        "id": "gram-ex-k12-curriculum-t-b1-mode-violoncelle",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k12-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le grand studio est occupé.\nFait : les musiciens ont pu répéter le duo dans la petite salle.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "directive": "Reformulez avec « On est soulagé que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "On est soulagé que les musiciens aient pu répéter le duo dans la petite salle."
+        ],
+        "responseLines": 2,
+        "explanation": "« On est soulagé que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle."
+      },
+      {
+        "id": "gram-ex-k12-curriculum-t-b1-mode-cagettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k12-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le stand attend une livraison.\nFait : Yara a reçu les cagettes destinées au marché du samedi.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "directive": "Reformulez avec « On ne s’attendait pas à ce que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "On ne s’attendait pas à ce qu’Yara ait reçu les cagettes destinées au marché du samedi."
+        ],
+        "responseLines": 2,
+        "explanation": "« On ne s’attendait pas à ce que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle."
+      },
+      {
+        "id": "gram-ex-k12-curriculum-t-b1-mode-berge",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k12-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le niveau de l’eau monte près de la berge.\nFait : les volontaires sont revenus à l’abri par le chemin du canal.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "directive": "Reformulez avec « Le groupe se réjouit que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "Le groupe se réjouit que les volontaires soient revenus à l’abri par le chemin du canal."
+        ],
+        "responseLines": 2,
+        "explanation": "« Le groupe se réjouit que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle."
+      },
+      {
+        "id": "gram-ex-k12-curriculum-t-b1-mode-projection",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k12-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "L’écran de la grande salle est en panne.\nFait : nous avons dû changer de salle pour la projection.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "directive": "Reformulez avec « On s’étonne que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "On s’étonne que nous ayons dû changer de salle pour la projection."
+        ],
+        "responseLines": 2,
+        "explanation": "« On s’étonne que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle."
+      },
+      {
+        "id": "gram-ex-k12-curriculum-t-b1-mode-atelier-mobile",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k12-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "L’atelier mobile a déplacé son matériel.\nFait : vous avez su où retrouver les boîtes à outils.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "directive": "Reformulez avec « La personne responsable apprécie que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "La personne responsable apprécie que vous ayez su où retrouver les boîtes à outils."
+        ],
+        "responseLines": 2,
+        "explanation": "« La personne responsable apprécie que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle."
+      },
+      {
+        "id": "gram-ex-k12-curriculum-t-b1-mode-volets",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k12-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Un orage est annoncé pour le quartier.\nFait : la gardienne a fermé les volets de la salle avant l’averse.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "directive": "Reformulez avec « On est soulagé que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "On est soulagé que la gardienne ait fermé les volets de la salle avant l’averse."
+        ],
+        "responseLines": 2,
+        "explanation": "« On est soulagé que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle."
+      },
+      {
+        "id": "gram-ex-k12-curriculum-t-b1-mode-lecture-salle",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k12-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "La rencontre avec le public a lieu dans la grande salle.\nFait : les lectrices sont parvenues à lire leur texte malgré la panne de micro.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "directive": "Reformulez avec « On ne s’attendait pas à ce que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "On ne s’attendait pas à ce que les lectrices soient parvenues à lire leur texte malgré la panne de micro."
         ],
         "responseLines": 2,
         "explanation": "« On ne s’attendait pas à ce que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle."
@@ -3838,7 +4318,7 @@
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k12-curriculum-e",
     "subthemeId": "k12",
     "topic": "gram-exprimer",
@@ -5441,6 +5921,326 @@
         "task": "Décrivez la réaction indiquée à un membre de votre groupe. Employez le subjonctif passé pour le fait accompli. Reformulez avec « On ne s’attendait pas à ce que ». Conservez les faits et le repère temporel.",
         "answers": [
           "On ne s’attendait pas à ce que vous ayez essayé la sonnette à l’entrée."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "« On ne s’attendait pas à ce que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k12-curriculum-e-b1-mode-guide-tactile",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k12-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le groupe accueille de nouveaux visiteurs.\nFait : les médiatrices ont lu les consignes à voix haute.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "task": "Décrivez la réaction indiquée à un membre de votre groupe. Employez le subjonctif passé pour le fait accompli. Reformulez avec « Le groupe se réjouit que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "Le groupe se réjouit que les médiatrices aient lu les consignes à voix haute."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "« Le groupe se réjouit que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k12-curriculum-e-b1-mode-casier",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k12-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "L’atelier change son système de prêt.\nFait : Nora a ouvert le casier de prêt avec le nouveau code.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "task": "Décrivez la réaction indiquée à un membre de votre groupe. Employez le subjonctif passé pour le fait accompli. Reformulez avec « On s’étonne que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "On s’étonne que Nora ait ouvert le casier de prêt avec le nouveau code."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "« On s’étonne que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k12-curriculum-e-b1-mode-alarme",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k12-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Un signal sonore retentit près de l’entrée.\nFait : le technicien a reconnu le signal d’alarme du tableau.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "task": "Décrivez la réaction indiquée à un membre de votre groupe. Employez le subjonctif passé pour le fait accompli. Reformulez avec « La personne responsable apprécie que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "La personne responsable apprécie que le technicien ait reconnu le signal d’alarme du tableau."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "« La personne responsable apprécie que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k12-curriculum-e-b1-mode-violoncelle",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k12-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le grand studio est occupé.\nFait : les musiciens ont pu répéter le duo dans la petite salle.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "task": "Décrivez la réaction indiquée à un membre de votre groupe. Employez le subjonctif passé pour le fait accompli. Reformulez avec « On est soulagé que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "On est soulagé que les musiciens aient pu répéter le duo dans la petite salle."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "« On est soulagé que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k12-curriculum-e-b1-mode-cagettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k12-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le stand attend une livraison.\nFait : Yara a reçu les cagettes destinées au marché du samedi.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "task": "Décrivez la réaction indiquée à un membre de votre groupe. Employez le subjonctif passé pour le fait accompli. Reformulez avec « On ne s’attendait pas à ce que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "On ne s’attendait pas à ce qu’Yara ait reçu les cagettes destinées au marché du samedi."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "« On ne s’attendait pas à ce que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k12-curriculum-e-b1-mode-berge",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k12-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le niveau de l’eau monte près de la berge.\nFait : les volontaires sont revenus à l’abri par le chemin du canal.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "task": "Décrivez la réaction indiquée à un membre de votre groupe. Employez le subjonctif passé pour le fait accompli. Reformulez avec « Le groupe se réjouit que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "Le groupe se réjouit que les volontaires soient revenus à l’abri par le chemin du canal."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "« Le groupe se réjouit que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k12-curriculum-e-b1-mode-projection",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k12-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "L’écran de la grande salle est en panne.\nFait : nous avons dû changer de salle pour la projection.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "task": "Décrivez la réaction indiquée à un membre de votre groupe. Employez le subjonctif passé pour le fait accompli. Reformulez avec « On s’étonne que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "On s’étonne que nous ayons dû changer de salle pour la projection."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "« On s’étonne que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k12-curriculum-e-b1-mode-atelier-mobile",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k12-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "L’atelier mobile a déplacé son matériel.\nFait : vous avez su où retrouver les boîtes à outils.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "task": "Décrivez la réaction indiquée à un membre de votre groupe. Employez le subjonctif passé pour le fait accompli. Reformulez avec « La personne responsable apprécie que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "La personne responsable apprécie que vous ayez su où retrouver les boîtes à outils."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "« La personne responsable apprécie que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k12-curriculum-e-b1-mode-volets",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k12-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Un orage est annoncé pour le quartier.\nFait : la gardienne a fermé les volets de la salle avant l’averse.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "task": "Décrivez la réaction indiquée à un membre de votre groupe. Employez le subjonctif passé pour le fait accompli. Reformulez avec « On est soulagé que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "On est soulagé que la gardienne ait fermé les volets de la salle avant l’averse."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "« On est soulagé que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k12-curriculum-e-b1-mode-lecture-salle",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k12-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "La rencontre avec le public a lieu dans la grande salle.\nFait : les lectrices sont parvenues à lire leur texte malgré la panne de micro.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "task": "Décrivez la réaction indiquée à un membre de votre groupe. Employez le subjonctif passé pour le fait accompli. Reformulez avec « On ne s’attendait pas à ce que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "On ne s’attendait pas à ce que les lectrices soient parvenues à lire leur texte malgré la panne de micro."
         ],
         "rubric": [
           {

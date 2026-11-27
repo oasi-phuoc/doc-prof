@@ -1386,7 +1386,7 @@
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k3-communication-pe",
     "subthemeId": "k3",
     "topic": "gram-exprimer",
@@ -3006,12 +3006,332 @@
         ],
         "explanation": "La conjonction car introduit ici une cause. Les reformulations fidèles sont recevables.",
         "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k3-communication-pe-a2-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k3-communication-pe",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Des visiteurs ont demandé où commençait le parcours. L’affiche était illisible à plusieurs mètres.",
+        "task": "Expliquez la raison de la décision à une personne qui n’était pas présente.",
+        "answers": [
+          "Des visiteurs ont demandé où commençait le parcours parce que l’affiche était illisible à plusieurs mètres."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "Parce que relie une action à sa cause. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k3-communication-pe-a2-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k3-communication-pe",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le musée a limité les écoutes des originaux. Les bandes magnétiques se détérioraient.",
+        "task": "Expliquez la raison de la décision à une personne qui n’était pas présente.",
+        "answers": [
+          "Le musée a limité les écoutes des originaux à cause de l’usure des bandes."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "« à cause de l’usure des bandes » indique la cause de la décision. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k3-communication-pe-a2-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k3-communication-pe",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le personnel a demandé aux élèves de ranger leurs sacs. Des sacs gênaient le passage.",
+        "task": "Expliquez la raison de la décision à une personne qui n’était pas présente.",
+        "answers": [
+          "Le personnel a demandé aux élèves de ranger leurs sacs, car des sacs gênaient le passage."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "La conjonction car introduit ici une cause. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k3-communication-pe-a2-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k3-communication-pe",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Les bacs ont été déplacés près du mur. Le soleil desséchait la terre en surface.",
+        "task": "Expliquez la raison de la décision à une personne qui n’était pas présente.",
+        "answers": [
+          "Les bacs ont été déplacés près du mur parce que le soleil desséchait la terre en surface."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "Parce que relie une action à sa cause. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k3-communication-pe-a2-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k3-communication-pe",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Les visiteurs ont attendu leur tour près du bureau. Le micro du guichet était en panne.",
+        "task": "Expliquez la raison de la décision à une personne qui n’était pas présente.",
+        "answers": [
+          "Les visiteurs ont attendu leur tour près du bureau à cause de la panne du micro."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "« à cause de la panne du micro » indique la cause de la décision. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k3-communication-pe-a2-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k3-communication-pe",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le groupe a quitté le hall principal. Les machines faisaient trop de bruit.",
+        "task": "Expliquez la raison de la décision à une personne qui n’était pas présente.",
+        "answers": [
+          "Le groupe a quitté le hall principal, car les machines faisaient trop de bruit."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "La conjonction car introduit ici une cause. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k3-communication-pe-a2-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k3-communication-pe",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "La classe a reçu une version papier. Le réseau de l’école était inaccessible.",
+        "task": "Expliquez la raison de la décision à une personne qui n’était pas présente.",
+        "answers": [
+          "La classe a reçu une version papier parce que le réseau de l’école était inaccessible."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "Parce que relie une action à sa cause. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k3-communication-pe-a2-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k3-communication-pe",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Plusieurs clients ont demandé combien coûtait une seule pêche. Le prix était affiché seulement par kilo.",
+        "task": "Expliquez la raison de la décision à une personne qui n’était pas présente.",
+        "answers": [
+          "Plusieurs clients ont demandé combien coûtait une seule pêche à cause du mode d’affichage du prix."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "« à cause du mode d’affichage du prix » indique la cause de la décision. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k3-communication-pe-a2-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k3-communication-pe",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "L’équipage a aidé les voyageurs à descendre. La marche du quai était trop haute.",
+        "task": "Expliquez la raison de la décision à une personne qui n’était pas présente.",
+        "answers": [
+          "L’équipage a aidé les voyageurs à descendre, car la marche du quai était trop haute."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "La conjonction car introduit ici une cause. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k3-communication-pe-a2-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k3-communication-pe",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Les élèves ont choisi un autre endroit pour les journaux. Plusieurs numéros avaient pris l’eau.",
+        "task": "Expliquez la raison de la décision à une personne qui n’était pas présente.",
+        "answers": [
+          "Les élèves ont choisi un autre endroit pour les journaux parce que plusieurs numéros avaient pris l’eau."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "Parce que relie une action à sa cause. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k3-communication-po",
     "subthemeId": "k3",
     "topic": "gram-exprimer",
@@ -4631,12 +4951,332 @@
         ],
         "explanation": "La conjonction car introduit ici une cause. Les reformulations fidèles sont recevables.",
         "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k3-communication-po-a2-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k3-communication-po",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Des visiteurs ont demandé où commençait le parcours. L’affiche était illisible à plusieurs mètres.",
+        "task": "Expliquez la raison de la décision à une personne qui n’était pas présente. Relance : « Quelle décision est expliquée ? »",
+        "answers": [
+          "Des visiteurs ont demandé où commençait le parcours parce que l’affiche était illisible à plusieurs mètres.\nRéponse possible à la relance : Des visiteurs ont demandé où commençait le parcours."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Parce que relie une action à sa cause. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k3-communication-po-a2-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k3-communication-po",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le musée a limité les écoutes des originaux. Les bandes magnétiques se détérioraient.",
+        "task": "Expliquez la raison de la décision à une personne qui n’était pas présente. Relance : « Quelle décision est expliquée ? »",
+        "answers": [
+          "Le musée a limité les écoutes des originaux à cause de l’usure des bandes.\nRéponse possible à la relance : Le musée a limité les écoutes des originaux."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "« à cause de l’usure des bandes » indique la cause de la décision. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k3-communication-po-a2-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k3-communication-po",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le personnel a demandé aux élèves de ranger leurs sacs. Des sacs gênaient le passage.",
+        "task": "Expliquez la raison de la décision à une personne qui n’était pas présente. Relance : « Quelle décision est expliquée ? »",
+        "answers": [
+          "Le personnel a demandé aux élèves de ranger leurs sacs, car des sacs gênaient le passage.\nRéponse possible à la relance : Le personnel a demandé aux élèves de ranger leurs sacs."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "La conjonction car introduit ici une cause. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k3-communication-po-a2-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k3-communication-po",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Les bacs ont été déplacés près du mur. Le soleil desséchait la terre en surface.",
+        "task": "Expliquez la raison de la décision à une personne qui n’était pas présente. Relance : « Quelle décision est expliquée ? »",
+        "answers": [
+          "Les bacs ont été déplacés près du mur parce que le soleil desséchait la terre en surface.\nRéponse possible à la relance : Les bacs ont été déplacés près du mur."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Parce que relie une action à sa cause. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k3-communication-po-a2-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k3-communication-po",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Les visiteurs ont attendu leur tour près du bureau. Le micro du guichet était en panne.",
+        "task": "Expliquez la raison de la décision à une personne qui n’était pas présente. Relance : « Quelle décision est expliquée ? »",
+        "answers": [
+          "Les visiteurs ont attendu leur tour près du bureau à cause de la panne du micro.\nRéponse possible à la relance : Les visiteurs ont attendu leur tour près du bureau."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "« à cause de la panne du micro » indique la cause de la décision. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k3-communication-po-a2-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k3-communication-po",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le groupe a quitté le hall principal. Les machines faisaient trop de bruit.",
+        "task": "Expliquez la raison de la décision à une personne qui n’était pas présente. Relance : « Quelle décision est expliquée ? »",
+        "answers": [
+          "Le groupe a quitté le hall principal, car les machines faisaient trop de bruit.\nRéponse possible à la relance : Le groupe a quitté le hall principal."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "La conjonction car introduit ici une cause. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k3-communication-po-a2-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k3-communication-po",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "La classe a reçu une version papier. Le réseau de l’école était inaccessible.",
+        "task": "Expliquez la raison de la décision à une personne qui n’était pas présente. Relance : « Quelle décision est expliquée ? »",
+        "answers": [
+          "La classe a reçu une version papier parce que le réseau de l’école était inaccessible.\nRéponse possible à la relance : La classe a reçu une version papier."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Parce que relie une action à sa cause. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k3-communication-po-a2-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k3-communication-po",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Plusieurs clients ont demandé combien coûtait une seule pêche. Le prix était affiché seulement par kilo.",
+        "task": "Expliquez la raison de la décision à une personne qui n’était pas présente. Relance : « Quelle décision est expliquée ? »",
+        "answers": [
+          "Plusieurs clients ont demandé combien coûtait une seule pêche à cause du mode d’affichage du prix.\nRéponse possible à la relance : Plusieurs clients ont demandé combien coûtait une seule pêche."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "« à cause du mode d’affichage du prix » indique la cause de la décision. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k3-communication-po-a2-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k3-communication-po",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "L’équipage a aidé les voyageurs à descendre. La marche du quai était trop haute.",
+        "task": "Expliquez la raison de la décision à une personne qui n’était pas présente. Relance : « Quelle décision est expliquée ? »",
+        "answers": [
+          "L’équipage a aidé les voyageurs à descendre, car la marche du quai était trop haute.\nRéponse possible à la relance : L’équipage a aidé les voyageurs à descendre."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "La conjonction car introduit ici une cause. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k3-communication-po-a2-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k3-communication-po",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Les élèves ont choisi un autre endroit pour les journaux. Plusieurs numéros avaient pris l’eau.",
+        "task": "Expliquez la raison de la décision à une personne qui n’était pas présente. Relance : « Quelle décision est expliquée ? »",
+        "answers": [
+          "Les élèves ont choisi un autre endroit pour les journaux parce que plusieurs numéros avaient pris l’eau.\nRéponse possible à la relance : Les élèves ont choisi un autre endroit pour les journaux."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Parce que relie une action à sa cause. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k3-qcm-verbe",
     "subthemeId": "k3",
     "topic": "gram-exprimer",
@@ -6158,12 +6798,312 @@
           }
         ],
         "explanation": "La conjonction car introduit ici une cause. Modèle : Les trains sont partis du quai quatre, car le quai principal était en travaux."
+      },
+      {
+        "id": "gram-ex-k3-qcm-verbe-a2-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k3-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Des visiteurs ont demandé où commençait le parcours ___ l’affiche était illisible à plusieurs mètres.",
+        "cue": "Introduisez une cause dans une phrase subordonnée.",
+        "answers": [
+          "parce que"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-atelier-braille-choix-1",
+            "text": "parce que"
+          },
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-atelier-braille-choix-2",
+            "text": "afin de"
+          },
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-atelier-braille-choix-3",
+            "text": "même si"
+          }
+        ],
+        "explanation": "Parce que relie une action à sa cause. Modèle : Des visiteurs ont demandé où commençait le parcours parce que l’affiche était illisible à plusieurs mètres."
+      },
+      {
+        "id": "gram-ex-k3-qcm-verbe-a2-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k3-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Le musée a limité les écoutes des originaux ___ l’usure des bandes.",
+        "cue": "Indiquez une cause négative (qui pose un problème) avec le groupe de mots donné.",
+        "answers": [
+          "à cause de"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-archives-sonores-choix-1",
+            "text": "à cause de"
+          },
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-archives-sonores-choix-2",
+            "text": "afin de"
+          },
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-archives-sonores-choix-3",
+            "text": "pour que"
+          }
+        ],
+        "explanation": "« à cause de l’usure des bandes » indique la cause de la décision. Modèle : Le musée a limité les écoutes des originaux à cause de l’usure des bandes."
+      },
+      {
+        "id": "gram-ex-k3-qcm-verbe-a2-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k3-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Le personnel a demandé aux élèves de ranger leurs sacs, ___ des sacs gênaient le passage.",
+        "cue": "Introduisez la cause avec une conjonction de coordination.",
+        "answers": [
+          "car"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-casiers-cantine-choix-1",
+            "text": "car"
+          },
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-casiers-cantine-choix-2",
+            "text": "malgré"
+          },
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-casiers-cantine-choix-3",
+            "text": "pour que"
+          }
+        ],
+        "explanation": "La conjonction car introduit ici une cause. Modèle : Le personnel a demandé aux élèves de ranger leurs sacs, car des sacs gênaient le passage."
+      },
+      {
+        "id": "gram-ex-k3-qcm-verbe-a2-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k3-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Les bacs ont été déplacés près du mur ___ le soleil desséchait la terre en surface.",
+        "cue": "Introduisez une cause dans une phrase subordonnée.",
+        "answers": [
+          "parce que"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-atelier-ombre-choix-1",
+            "text": "parce que"
+          },
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-atelier-ombre-choix-2",
+            "text": "afin de"
+          },
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-atelier-ombre-choix-3",
+            "text": "même si"
+          }
+        ],
+        "explanation": "Parce que relie une action à sa cause. Modèle : Les bacs ont été déplacés près du mur parce que le soleil desséchait la terre en surface."
+      },
+      {
+        "id": "gram-ex-k3-qcm-verbe-a2-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k3-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Les visiteurs ont attendu leur tour près du bureau ___ la panne du micro.",
+        "cue": "Indiquez une cause négative (qui pose un problème) avec le groupe de mots donné.",
+        "answers": [
+          "à cause de"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-guichet-sourdine-choix-1",
+            "text": "à cause de"
+          },
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-guichet-sourdine-choix-2",
+            "text": "afin de"
+          },
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-guichet-sourdine-choix-3",
+            "text": "pour que"
+          }
+        ],
+        "explanation": "« à cause de la panne du micro » indique la cause de la décision. Modèle : Les visiteurs ont attendu leur tour près du bureau à cause de la panne du micro."
+      },
+      {
+        "id": "gram-ex-k3-qcm-verbe-a2-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k3-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Le groupe a quitté le hall principal, ___ les machines faisaient trop de bruit.",
+        "cue": "Introduisez la cause avec une conjonction de coordination.",
+        "answers": [
+          "car"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-protecteurs-oreilles-choix-1",
+            "text": "car"
+          },
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-protecteurs-oreilles-choix-2",
+            "text": "malgré"
+          },
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-protecteurs-oreilles-choix-3",
+            "text": "pour que"
+          }
+        ],
+        "explanation": "La conjonction car introduit ici une cause. Modèle : Le groupe a quitté le hall principal, car les machines faisaient trop de bruit."
+      },
+      {
+        "id": "gram-ex-k3-qcm-verbe-a2-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k3-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "La classe a reçu une version papier ___ le réseau de l’école était inaccessible.",
+        "cue": "Introduisez une cause dans une phrase subordonnée.",
+        "answers": [
+          "parce que"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-reseau-ecole-choix-1",
+            "text": "parce que"
+          },
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-reseau-ecole-choix-2",
+            "text": "afin de"
+          },
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-reseau-ecole-choix-3",
+            "text": "même si"
+          }
+        ],
+        "explanation": "Parce que relie une action à sa cause. Modèle : La classe a reçu une version papier parce que le réseau de l’école était inaccessible."
+      },
+      {
+        "id": "gram-ex-k3-qcm-verbe-a2-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k3-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Plusieurs clients ont demandé combien coûtait une seule pêche ___ mode d’affichage du prix.",
+        "cue": "Indiquez une cause négative (qui pose un problème) avec le groupe de mots donné.",
+        "answers": [
+          "à cause du"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-panneau-comptoir-choix-1",
+            "text": "à cause du"
+          },
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-panneau-comptoir-choix-2",
+            "text": "afin de"
+          },
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-panneau-comptoir-choix-3",
+            "text": "pour que"
+          }
+        ],
+        "explanation": "« à cause du mode d’affichage du prix » indique la cause de la décision. Modèle : Plusieurs clients ont demandé combien coûtait une seule pêche à cause du mode d’affichage du prix."
+      },
+      {
+        "id": "gram-ex-k3-qcm-verbe-a2-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k3-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "L’équipage a aidé les voyageurs à descendre, ___ la marche du quai était trop haute.",
+        "cue": "Introduisez la cause avec une conjonction de coordination.",
+        "answers": [
+          "car"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-bateau-rampe-choix-1",
+            "text": "car"
+          },
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-bateau-rampe-choix-2",
+            "text": "malgré"
+          },
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-bateau-rampe-choix-3",
+            "text": "pour que"
+          }
+        ],
+        "explanation": "La conjonction car introduit ici une cause. Modèle : L’équipage a aidé les voyageurs à descendre, car la marche du quai était trop haute."
+      },
+      {
+        "id": "gram-ex-k3-qcm-verbe-a2-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k3-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Les élèves ont choisi un autre endroit pour les journaux ___ plusieurs numéros avaient pris l’eau.",
+        "cue": "Introduisez une cause dans une phrase subordonnée.",
+        "answers": [
+          "parce que"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-abri-journal-choix-1",
+            "text": "parce que"
+          },
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-abri-journal-choix-2",
+            "text": "afin de"
+          },
+          {
+            "id": "gram-ex-k3-qcm-verbe-a2-abri-journal-choix-3",
+            "text": "même si"
+          }
+        ],
+        "explanation": "Parce que relie une action à sa cause. Modèle : Les élèves ont choisi un autre endroit pour les journaux parce que plusieurs numéros avaient pris l’eau."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k3-curriculum-t",
     "subthemeId": "k3",
     "topic": "gram-exprimer",
@@ -7033,6 +7973,176 @@
         ],
         "responseLines": 2,
         "explanation": "La conjonction car introduit ici une cause."
+      },
+      {
+        "id": "gram-ex-k3-curriculum-t-a2-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k3-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Des visiteurs ont demandé où commençait le parcours. L’affiche était illisible à plusieurs mètres.",
+        "directive": "Reliez les informations avec la construction « parce que ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Des visiteurs ont demandé où commençait le parcours parce que l’affiche était illisible à plusieurs mètres."
+        ],
+        "responseLines": 2,
+        "explanation": "Parce que relie une action à sa cause."
+      },
+      {
+        "id": "gram-ex-k3-curriculum-t-a2-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k3-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Le musée a limité les écoutes des originaux. Les bandes magnétiques se détérioraient.",
+        "directive": "Reliez les informations avec la construction « à cause de ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Le musée a limité les écoutes des originaux à cause de l’usure des bandes."
+        ],
+        "responseLines": 2,
+        "explanation": "« à cause de l’usure des bandes » indique la cause de la décision."
+      },
+      {
+        "id": "gram-ex-k3-curriculum-t-a2-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k3-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Le personnel a demandé aux élèves de ranger leurs sacs. Des sacs gênaient le passage.",
+        "directive": "Reliez les informations avec la construction « car ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Le personnel a demandé aux élèves de ranger leurs sacs, car des sacs gênaient le passage."
+        ],
+        "responseLines": 2,
+        "explanation": "La conjonction car introduit ici une cause."
+      },
+      {
+        "id": "gram-ex-k3-curriculum-t-a2-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k3-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Les bacs ont été déplacés près du mur. Le soleil desséchait la terre en surface.",
+        "directive": "Reliez les informations avec la construction « parce que ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Les bacs ont été déplacés près du mur parce que le soleil desséchait la terre en surface."
+        ],
+        "responseLines": 2,
+        "explanation": "Parce que relie une action à sa cause."
+      },
+      {
+        "id": "gram-ex-k3-curriculum-t-a2-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k3-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Les visiteurs ont attendu leur tour près du bureau. Le micro du guichet était en panne.",
+        "directive": "Reliez les informations avec la construction « à cause de ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Les visiteurs ont attendu leur tour près du bureau à cause de la panne du micro."
+        ],
+        "responseLines": 2,
+        "explanation": "« à cause de la panne du micro » indique la cause de la décision."
+      },
+      {
+        "id": "gram-ex-k3-curriculum-t-a2-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k3-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Le groupe a quitté le hall principal. Les machines faisaient trop de bruit.",
+        "directive": "Reliez les informations avec la construction « car ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Le groupe a quitté le hall principal, car les machines faisaient trop de bruit."
+        ],
+        "responseLines": 2,
+        "explanation": "La conjonction car introduit ici une cause."
+      },
+      {
+        "id": "gram-ex-k3-curriculum-t-a2-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k3-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "La classe a reçu une version papier. Le réseau de l’école était inaccessible.",
+        "directive": "Reliez les informations avec la construction « parce que ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "La classe a reçu une version papier parce que le réseau de l’école était inaccessible."
+        ],
+        "responseLines": 2,
+        "explanation": "Parce que relie une action à sa cause."
+      },
+      {
+        "id": "gram-ex-k3-curriculum-t-a2-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k3-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Plusieurs clients ont demandé combien coûtait une seule pêche. Le prix était affiché seulement par kilo.",
+        "directive": "Reliez les informations avec la construction « à cause du ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Plusieurs clients ont demandé combien coûtait une seule pêche à cause du mode d’affichage du prix."
+        ],
+        "responseLines": 2,
+        "explanation": "« à cause du mode d’affichage du prix » indique la cause de la décision."
+      },
+      {
+        "id": "gram-ex-k3-curriculum-t-a2-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k3-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "L’équipage a aidé les voyageurs à descendre. La marche du quai était trop haute.",
+        "directive": "Reliez les informations avec la construction « car ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "L’équipage a aidé les voyageurs à descendre, car la marche du quai était trop haute."
+        ],
+        "responseLines": 2,
+        "explanation": "La conjonction car introduit ici une cause."
+      },
+      {
+        "id": "gram-ex-k3-curriculum-t-a2-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k3-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Les élèves ont choisi un autre endroit pour les journaux. Plusieurs numéros avaient pris l’eau.",
+        "directive": "Reliez les informations avec la construction « parce que ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Les élèves ont choisi un autre endroit pour les journaux parce que plusieurs numéros avaient pris l’eau."
+        ],
+        "responseLines": 2,
+        "explanation": "Parce que relie une action à sa cause."
       }
     ]
   }

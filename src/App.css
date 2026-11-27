@@ -2084,6 +2084,38 @@ html.is-margin-symmetric .print-only-sheets .worksheet-sheet.sheet-even .draft-g
 .logistique-words strong{display:block}
 .logistique-words small{display:block}
 .logistique-gap-editor{display:grid;gap:6px}
+.logistique-table-editor>summary{cursor:pointer;font-weight:600}
+.logistique-table-editor fieldset{display:grid;gap:6px;min-width:0;margin:8px 0 0;padding:6px;border:1px solid var(--line)}
+.logistique-exercise-table{
+  --theory-size:calc(12pt * var(--app-font-scale,1));table-layout:fixed;break-inside:avoid;overflow-wrap:anywhere
+}
+.logistique-table-blank{display:block;min-height:1.2em}
+.logistique-table-note{font-size:calc(13px * var(--app-font-scale,1));line-height:1.4}
+.a5-half .exercise-block:has(.logistique-exercise-table){
+  --app-font-scale:min(var(--sheet-font-scale,1),1.125);font-size:calc(11pt * var(--app-font-scale,1))
+}
+.a5-half .logistique-exercise-table{--theory-size:calc(10.5pt * var(--app-font-scale,1));line-height:1.22}
+.a5-half .logistique-exercise-table th,.a5-half .logistique-exercise-table td{padding:2px 5px}
+.a5-half .exercise-block:has(.has-logistique-table) .exercise-heading{margin-bottom:8px}
+.a5-half .exercise-item:has(.has-logistique-table){padding-bottom:6px;margin-bottom:0}
+.a5-half .has-logistique-table{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:6px 12px}
+.a5-half .has-logistique-table>:not(.problem-field,.problem-response-line){grid-column:1 / -1}
+.a5-half .has-logistique-table .draft-pad{min-height:56px}
+.a5-half .has-logistique-table .draft-pad:has(.draft-pad-answer){
+  aspect-ratio:auto;overflow:visible
+}
+.a5-half .has-logistique-table .draft-pad-answer{
+  padding:4px 5px;font-size:calc(12px * var(--app-font-scale,1));line-height:1.25
+}
+.a5-half .has-logistique-table .problem-response-line{
+  flex-direction:column;align-items:stretch;gap:4px;margin:0;padding:0
+}
+.a5-half .has-logistique-table .response-value{
+  flex:0 0 auto;font-size:calc(13px * var(--app-font-scale,1));line-height:1.35
+}
+.a5-half .has-logistique-table .problem-response-line .answer-line-field{
+  flex:0 0 auto;min-height:43px;background:linear-gradient(to bottom,var(--ink),var(--ink)) no-repeat 0 50% / 100% 1px
+}
 .logistique-image-fields>summary{cursor:pointer;font-weight:600}
 .logistique-image-fields[open]>:not(summary){margin-top:8px}
 .logistique-image-thumbnail{display:block;max-width:120px;max-height:74px;object-fit:contain}
@@ -6690,3 +6722,16 @@ textarea.pill-input,
 .math-spatial-questions p{text-align:justify}
 .math-spatial-view-list.is-solids img{width:29mm;border:0}
 .math-spatial-stack-list .math-square-grid td{width:3.7mm;height:3.7mm}
+
+.grammar-co-true-false{width:100%;border-collapse:collapse;margin-top:3mm;font-size:.91em}
+.grammar-co-true-false thead{display:table-header-group}
+.grammar-co-true-false tr{break-inside:avoid}
+.grammar-co-true-false th,.grammar-co-true-false td{border:.25mm solid #78818a;padding:2mm}
+.grammar-co-true-false tbody th{font-weight:400;text-align:left}
+.grammar-co-true-false tbody small{display:block;color:#394758;line-height:1.35;margin-top:1mm}
+.grammar-co-true-false td,.grammar-co-true-false thead th:not(:first-child){width:14mm;text-align:center}
+.grammar-co-checkbox{display:inline-grid;place-items:center;width:5mm;height:5mm;border:.3mm solid #444b56;font-weight:700;line-height:1}
+
+.grammar-word-vocab{width:100%;margin:0;text-align:center}
+.grammar-word-vocab img{width:100%;height:30mm;object-fit:contain}
+.grammar-word-vocab figcaption{overflow-wrap:anywhere;font-size:.9em}

@@ -1,6 +1,7 @@
 import type { MathItem } from '@/math/types'
 import { LogistiqueImageFields, type LogistiquePhotoChoice } from './LogistiqueImageFields'
 import { LogistiqueGapEditor } from './LogistiqueGapEditor'
+import { LogistiqueTableEditor } from './LogistiqueTableEditor'
 
 /**
  * Éditeur libre générique : consigne + énoncé / réponse / choix pour chaque item.
@@ -79,6 +80,8 @@ export function GenericLibreEditor({
                   />
                 </label>
               </div>}
+              {item.logistiqueTable && <LogistiqueTableEditor table={item.logistiqueTable}
+                onChange={(logistiqueTable) => patchItem(index, { logistiqueTable })} />}
               {editableCalculation && (
                 <label className="libre-field is-line">
                   <span>Calcul du corrigé</span>

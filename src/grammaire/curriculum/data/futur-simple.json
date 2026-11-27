@@ -1,7 +1,7 @@
 [
   {
     "schemaVersion": 1,
-    "revision": "avenir-2026-11-24-v1",
+    "revision": "avenir-2026-11-27-v2",
     "activityId": "gram-ex-futur-simple-qcm-conj",
     "subthemeId": "futur-simple",
     "topic": "gram-avenir",
@@ -11,7 +11,7 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-24",
+      "date": "2026-11-27",
       "humanReview": "pending",
       "note": "Sources et références relues. Situations partagées entre mécaniques ; documents adaptés avec faits explicites. Modèles ouverts non exclusifs. Aucune approbation enseignante déclarée."
     },
@@ -1575,12 +1575,322 @@
           }
         ],
         "explanation": "Falloir est impersonnel : il faudra au singulier. Modèle : Il faudra vérifier les billets avant l’entrée."
+      },
+      {
+        "id": "gram-ex-futur-simple-qcm-conj-a2-timbre-aide",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-qcm-conj",
+          "position": 50,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Lundi, tu ___ à coller les timbres.",
+        "cue": "Une permanence ouvre lundi. Tu annonces que tu aideras à coller des timbres sur les lettres. Employez le futur simple.",
+        "givenVerb": "aider",
+        "answers": [
+          "aideras"
+        ],
+        "options": [
+          {
+            "id": "timbre-aide-choix-1",
+            "text": "aideras"
+          },
+          {
+            "id": "timbre-aide-choix-2",
+            "text": "aidera"
+          },
+          {
+            "id": "timbre-aide-choix-3",
+            "text": "aidais"
+          }
+        ],
+        "explanation": "Aider garde son infinitif. Avec tu, la terminaison est -as. Modèle : Lundi, tu aideras à coller les timbres."
+      },
+      {
+        "id": "gram-ex-futur-simple-qcm-conj-a2-panneau-chantier",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-qcm-conj",
+          "position": 51,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "La commune ___ un panneau la semaine prochaine.",
+        "cue": "La commune annonce un nouveau panneau dès la semaine prochaine. Employez le futur simple.",
+        "givenVerb": "installer",
+        "answers": [
+          "installera"
+        ],
+        "options": [
+          {
+            "id": "panneau-chantier-choix-1",
+            "text": "installera"
+          },
+          {
+            "id": "panneau-chantier-choix-2",
+            "text": "installeront"
+          },
+          {
+            "id": "panneau-chantier-choix-3",
+            "text": "installait"
+          }
+        ],
+        "explanation": "Avec la commune, on ajoute -a au radical installer-. Modèle : La commune installera un panneau la semaine prochaine."
+      },
+      {
+        "id": "gram-ex-futur-simple-qcm-conj-a2-score-piscine",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-qcm-conj",
+          "position": 52,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Les équipes ___ les résultats par courriel.",
+        "cue": "Après les épreuves, le club a prévu d’envoyer les résultats aux équipes par courrier électronique. Employez le futur simple.",
+        "givenVerb": "recevoir",
+        "answers": [
+          "recevront"
+        ],
+        "options": [
+          {
+            "id": "score-piscine-choix-1",
+            "text": "recevront"
+          },
+          {
+            "id": "score-piscine-choix-2",
+            "text": "receveront"
+          },
+          {
+            "id": "score-piscine-choix-3",
+            "text": "recevraient"
+          }
+        ],
+        "explanation": "Le radical est recevr-. Avec les équipes, la terminaison est -ont. Modèle : Les équipes recevront les résultats par courriel."
+      },
+      {
+        "id": "gram-ex-futur-simple-qcm-conj-a2-abri-bus",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-qcm-conj",
+          "position": 53,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ la maquette après les travaux.",
+        "cue": "Après les travaux, le groupe pourra observer la nouvelle maquette à l’arrêt de bus. Employez le futur simple.",
+        "givenVerb": "voir",
+        "answers": [
+          "verrons"
+        ],
+        "options": [
+          {
+            "id": "abri-bus-choix-1",
+            "text": "verrons"
+          },
+          {
+            "id": "abri-bus-choix-2",
+            "text": "voirons"
+          },
+          {
+            "id": "abri-bus-choix-3",
+            "text": "verriez"
+          }
+        ],
+        "explanation": "Voir donne le radical verr-. Nous prend la terminaison -ons. Modèle : Nous verrons la maquette après les travaux."
+      },
+      {
+        "id": "gram-ex-futur-simple-qcm-conj-a2-badge-retrait",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-qcm-conj",
+          "position": 54,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Vous ___ retirer votre badge demain à midi.",
+        "cue": "Un nouveau badge sera prêt demain. Vous annoncez à une personne la possibilité de le retirer à midi. Employez le futur simple.",
+        "givenVerb": "pouvoir",
+        "answers": [
+          "pourrez"
+        ],
+        "options": [
+          {
+            "id": "badge-retrait-choix-1",
+            "text": "pourrez"
+          },
+          {
+            "id": "badge-retrait-choix-2",
+            "text": "pouvez"
+          },
+          {
+            "id": "badge-retrait-choix-3",
+            "text": "pourront"
+          }
+        ],
+        "explanation": "Au futur, pouvoir a le radical pourr-. Vous prend -ez. Modèle : Vous pourrez retirer votre badge demain à midi."
+      },
+      {
+        "id": "gram-ex-futur-simple-qcm-conj-a2-arbres-sentier",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-qcm-conj",
+          "position": 55,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Les jardiniers ___ attendre l’automne.",
+        "cue": "Les jardiniers devront attendre l’automne avant de déplacer de jeunes arbres. Employez le futur simple.",
+        "givenVerb": "devoir",
+        "answers": [
+          "devront"
+        ],
+        "options": [
+          {
+            "id": "arbres-sentier-choix-1",
+            "text": "devront"
+          },
+          {
+            "id": "arbres-sentier-choix-2",
+            "text": "deveront"
+          },
+          {
+            "id": "arbres-sentier-choix-3",
+            "text": "devraient"
+          }
+        ],
+        "explanation": "Devoir a le radical devr-. Avec ce sujet, la terminaison est -ont. Modèle : Les jardiniers devront attendre l’automne."
+      },
+      {
+        "id": "gram-ex-futur-simple-qcm-conj-a2-courrier-lanterne",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-qcm-conj",
+          "position": 56,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Léonie ___ à l’atelier de lanternes demain.",
+        "cue": "Vous confirmez que Léonie participera demain à l’atelier de lanternes. Employez le futur simple.",
+        "givenVerb": "venir",
+        "answers": [
+          "viendra"
+        ],
+        "options": [
+          {
+            "id": "courrier-lanterne-choix-1",
+            "text": "viendra"
+          },
+          {
+            "id": "courrier-lanterne-choix-2",
+            "text": "venira"
+          },
+          {
+            "id": "courrier-lanterne-choix-3",
+            "text": "venait"
+          }
+        ],
+        "explanation": "Venir prend le radical viendr-. Avec Léonie, on ajoute -a. Modèle : Léonie viendra à l’atelier de lanternes demain."
+      },
+      {
+        "id": "gram-ex-futur-simple-qcm-conj-a2-musique-fenetre",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-qcm-conj",
+          "position": 57,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Ma collègue ___ ses gammes pendant la pause.",
+        "cue": "Une collègue vous indique qu’elle travaillera ses gammes pendant la pause de midi. Employez le futur simple.",
+        "givenVerb": "travailler",
+        "answers": [
+          "travaillera"
+        ],
+        "options": [
+          {
+            "id": "musique-fenetre-choix-1",
+            "text": "travaillera"
+          },
+          {
+            "id": "musique-fenetre-choix-2",
+            "text": "travailleront"
+          },
+          {
+            "id": "musique-fenetre-choix-3",
+            "text": "travaillait"
+          }
+        ],
+        "explanation": "On emploie le radical travailler- avec la terminaison -a. Modèle : Ma collègue travaillera ses gammes pendant la pause."
+      },
+      {
+        "id": "gram-ex-futur-simple-qcm-conj-a2-draps-maison",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-qcm-conj",
+          "position": 58,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Dès dix heures, je ___ les draps au centre.",
+        "cue": "Le centre organise une collecte de draps samedi. Vous participez au rangement dès dix heures. Employez le futur simple.",
+        "givenVerb": "plier",
+        "answers": [
+          "plierai"
+        ],
+        "options": [
+          {
+            "id": "draps-maison-choix-1",
+            "text": "plierai"
+          },
+          {
+            "id": "draps-maison-choix-2",
+            "text": "plieras"
+          },
+          {
+            "id": "draps-maison-choix-3",
+            "text": "pliais"
+          }
+        ],
+        "explanation": "Plier garde son infinitif et reçoit -ai avec je. Modèle : Dès dix heures, je plierai les draps au centre."
+      },
+      {
+        "id": "gram-ex-futur-simple-qcm-conj-a2-registre-bureau",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-qcm-conj",
+          "position": 59,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Vous ___ les noms du registre avant de le rendre.",
+        "cue": "Vous avez prévu de vérifier les noms du registre avant de le remettre à l’accueil. Employez le futur simple.",
+        "givenVerb": "vérifier",
+        "answers": [
+          "vérifierez"
+        ],
+        "options": [
+          {
+            "id": "registre-bureau-choix-1",
+            "text": "vérifierez"
+          },
+          {
+            "id": "registre-bureau-choix-2",
+            "text": "vérifieront"
+          },
+          {
+            "id": "registre-bureau-choix-3",
+            "text": "vérifiiez"
+          }
+        ],
+        "explanation": "Vérifier garde son infinitif. La terminaison avec vous est -ez. Modèle : Vous vérifierez les noms du registre avant de le rendre."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "avenir-2026-11-24-v1",
+    "revision": "avenir-2026-11-27-v2",
     "activityId": "gram-ex-futur-simple-curriculum-t",
     "subthemeId": "futur-simple",
     "topic": "gram-avenir",
@@ -1590,7 +1900,7 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-24",
+      "date": "2026-11-27",
       "humanReview": "pending",
       "note": "Sources et références relues. Situations partagées entre mécaniques ; documents adaptés avec faits explicites. Modèles ouverts non exclusifs. Aucune approbation enseignante déclarée."
     },
@@ -2502,12 +2812,192 @@
         ],
         "responseLines": 2,
         "explanation": "Falloir est impersonnel : il faudra au singulier. Modèle non exclusif : Il faudra vérifier les billets avant l’entrée."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-t-a2-timbre-aide",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-t",
+          "position": 50,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Lundi, tu aides à coller les timbres.",
+        "cue": "Une permanence ouvre lundi. Tu annonces que tu aideras à coller des timbres sur les lettres. Verbe ciblé : aider.",
+        "directive": "Employez le futur simple.",
+        "answers": [
+          "Lundi, tu aideras à coller les timbres."
+        ],
+        "responseLines": 2,
+        "explanation": "Aider garde son infinitif. Avec tu, la terminaison est -as. Modèle non exclusif : Lundi, tu aideras à coller les timbres."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-t-a2-panneau-chantier",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-t",
+          "position": 51,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "La commune installe un panneau la semaine prochaine.",
+        "cue": "La commune annonce un nouveau panneau dès la semaine prochaine. Verbe ciblé : installer.",
+        "directive": "Employez le futur simple.",
+        "answers": [
+          "La commune installera un panneau la semaine prochaine."
+        ],
+        "responseLines": 2,
+        "explanation": "Avec la commune, on ajoute -a au radical installer-. Modèle non exclusif : La commune installera un panneau la semaine prochaine."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-t-a2-score-piscine",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-t",
+          "position": 52,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Après les épreuves, les équipes reçoivent les résultats par courriel.",
+        "cue": "Après les épreuves, le club a prévu d’envoyer les résultats aux équipes par courrier électronique. Verbe ciblé : recevoir.",
+        "directive": "Employez le futur simple.",
+        "answers": [
+          "Les équipes recevront les résultats par courriel."
+        ],
+        "responseLines": 2,
+        "explanation": "Le radical est recevr-. Avec les équipes, la terminaison est -ont. Modèle non exclusif : Les équipes recevront les résultats par courriel."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-t-a2-abri-bus",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-t",
+          "position": 53,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Après les travaux, nous voyons la maquette à l’arrêt de bus.",
+        "cue": "Après les travaux, le groupe pourra observer la nouvelle maquette à l’arrêt de bus. Verbe ciblé : voir.",
+        "directive": "Employez le futur simple.",
+        "answers": [
+          "Nous verrons la maquette après les travaux."
+        ],
+        "responseLines": 2,
+        "explanation": "Voir donne le radical verr-. Nous prend la terminaison -ons. Modèle non exclusif : Nous verrons la maquette après les travaux."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-t-a2-badge-retrait",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-t",
+          "position": 54,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Demain à midi, vous pouvez retirer votre badge.",
+        "cue": "Un nouveau badge sera prêt demain. Vous annoncez à une personne la possibilité de le retirer à midi. Verbe ciblé : pouvoir.",
+        "directive": "Employez le futur simple.",
+        "answers": [
+          "Vous pourrez retirer votre badge demain à midi."
+        ],
+        "responseLines": 2,
+        "explanation": "Au futur, pouvoir a le radical pourr-. Vous prend -ez. Modèle non exclusif : Vous pourrez retirer votre badge demain à midi."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-t-a2-arbres-sentier",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-t",
+          "position": 55,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Les jardiniers doivent attendre l’automne pour déplacer les jeunes arbres.",
+        "cue": "Les jardiniers devront attendre l’automne avant de déplacer de jeunes arbres. Verbe ciblé : devoir.",
+        "directive": "Employez le futur simple.",
+        "answers": [
+          "Les jardiniers devront attendre l’automne."
+        ],
+        "responseLines": 2,
+        "explanation": "Devoir a le radical devr-. Avec ce sujet, la terminaison est -ont. Modèle non exclusif : Les jardiniers devront attendre l’automne."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-t-a2-courrier-lanterne",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-t",
+          "position": 56,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Léonie vient à l’atelier de lanternes demain.",
+        "cue": "Vous confirmez que Léonie participera demain à l’atelier de lanternes. Verbe ciblé : venir.",
+        "directive": "Employez le futur simple.",
+        "answers": [
+          "Léonie viendra à l’atelier de lanternes demain."
+        ],
+        "responseLines": 2,
+        "explanation": "Venir prend le radical viendr-. Avec Léonie, on ajoute -a. Modèle non exclusif : Léonie viendra à l’atelier de lanternes demain."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-t-a2-musique-fenetre",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-t",
+          "position": 57,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Ma collègue travaille ses gammes pendant la pause de midi.",
+        "cue": "Une collègue vous indique qu’elle travaillera ses gammes pendant la pause de midi. Verbe ciblé : travailler.",
+        "directive": "Employez le futur simple.",
+        "answers": [
+          "Ma collègue travaillera ses gammes pendant la pause."
+        ],
+        "responseLines": 2,
+        "explanation": "On emploie le radical travailler- avec la terminaison -a. Modèle non exclusif : Ma collègue travaillera ses gammes pendant la pause."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-t-a2-draps-maison",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-t",
+          "position": 58,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Dès dix heures samedi, je plie les draps au centre.",
+        "cue": "Le centre organise une collecte de draps samedi. Vous participez au rangement dès dix heures. Verbe ciblé : plier.",
+        "directive": "Employez le futur simple.",
+        "answers": [
+          "Dès dix heures, je plierai les draps au centre."
+        ],
+        "responseLines": 2,
+        "explanation": "Plier garde son infinitif et reçoit -ai avec je. Modèle non exclusif : Dès dix heures, je plierai les draps au centre."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-t-a2-registre-bureau",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-t",
+          "position": 59,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Vous vérifiez les noms du registre avant de le rendre.",
+        "cue": "Vous avez prévu de vérifier les noms du registre avant de le remettre à l’accueil. Verbe ciblé : vérifier.",
+        "directive": "Employez le futur simple.",
+        "answers": [
+          "Vous vérifierez les noms du registre avant de le rendre."
+        ],
+        "responseLines": 2,
+        "explanation": "Vérifier garde son infinitif. La terminaison avec vous est -ez. Modèle non exclusif : Vous vérifierez les noms du registre avant de le rendre."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "avenir-2026-11-24-v1",
+    "revision": "avenir-2026-11-27-v2",
     "activityId": "gram-ex-futur-simple-curriculum-e",
     "subthemeId": "futur-simple",
     "topic": "gram-avenir",
@@ -2517,7 +3007,7 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-24",
+      "date": "2026-11-27",
       "humanReview": "pending",
       "note": "Sources et références relues. Situations partagées entre mécaniques ; documents adaptés avec faits explicites. Modèles ouverts non exclusifs. Aucune approbation enseignante déclarée."
     },
@@ -4129,12 +4619,332 @@
           }
         ],
         "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Falloir est impersonnel : il faudra au singulier."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-e-a2-timbre-aide",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-e",
+          "position": 50,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Une permanence ouvre lundi. Tu annonces que tu aideras à coller des timbres sur les lettres.\nFaits : Lundi, tu aides à coller les timbres.",
+        "answers": [
+          "Lundi, tu aideras à coller les timbres."
+        ],
+        "task": "Employez le futur simple. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Aider garde son infinitif. Avec tu, la terminaison est -as."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-e-a2-panneau-chantier",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-e",
+          "position": 51,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "La commune annonce un nouveau panneau dès la semaine prochaine.\nFaits : La commune installe un panneau la semaine prochaine.",
+        "answers": [
+          "La commune installera un panneau la semaine prochaine."
+        ],
+        "task": "Employez le futur simple. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Avec la commune, on ajoute -a au radical installer-."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-e-a2-score-piscine",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-e",
+          "position": 52,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Après les épreuves, le club a prévu d’envoyer les résultats aux équipes par courrier électronique.\nFaits : Après les épreuves, les équipes reçoivent les résultats par courriel.",
+        "answers": [
+          "Les équipes recevront les résultats par courriel."
+        ],
+        "task": "Employez le futur simple. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Le radical est recevr-. Avec les équipes, la terminaison est -ont."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-e-a2-abri-bus",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-e",
+          "position": 53,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Après les travaux, le groupe pourra observer la nouvelle maquette à l’arrêt de bus.\nFaits : Après les travaux, nous voyons la maquette à l’arrêt de bus.",
+        "answers": [
+          "Nous verrons la maquette après les travaux."
+        ],
+        "task": "Employez le futur simple. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Voir donne le radical verr-. Nous prend la terminaison -ons."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-e-a2-badge-retrait",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-e",
+          "position": 54,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Un nouveau badge sera prêt demain. Vous annoncez à une personne la possibilité de le retirer à midi.\nFaits : Demain à midi, vous pouvez retirer votre badge.",
+        "answers": [
+          "Vous pourrez retirer votre badge demain à midi."
+        ],
+        "task": "Employez le futur simple. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Au futur, pouvoir a le radical pourr-. Vous prend -ez."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-e-a2-arbres-sentier",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-e",
+          "position": 55,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Les jardiniers devront attendre l’automne avant de déplacer de jeunes arbres.\nFaits : Les jardiniers doivent attendre l’automne pour déplacer les jeunes arbres.",
+        "answers": [
+          "Les jardiniers devront attendre l’automne."
+        ],
+        "task": "Employez le futur simple. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Devoir a le radical devr-. Avec ce sujet, la terminaison est -ont."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-e-a2-courrier-lanterne",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-e",
+          "position": 56,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Vous confirmez que Léonie participera demain à l’atelier de lanternes.\nFaits : Léonie vient à l’atelier de lanternes demain.",
+        "answers": [
+          "Léonie viendra à l’atelier de lanternes demain."
+        ],
+        "task": "Employez le futur simple. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Venir prend le radical viendr-. Avec Léonie, on ajoute -a."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-e-a2-musique-fenetre",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-e",
+          "position": 57,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Une collègue vous indique qu’elle travaillera ses gammes pendant la pause de midi.\nFaits : Ma collègue travaille ses gammes pendant la pause de midi.",
+        "answers": [
+          "Ma collègue travaillera ses gammes pendant la pause."
+        ],
+        "task": "Employez le futur simple. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. On emploie le radical travailler- avec la terminaison -a."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-e-a2-draps-maison",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-e",
+          "position": 58,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le centre organise une collecte de draps samedi. Vous participez au rangement dès dix heures.\nFaits : Dès dix heures samedi, je plie les draps au centre.",
+        "answers": [
+          "Dès dix heures, je plierai les draps au centre."
+        ],
+        "task": "Employez le futur simple. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Plier garde son infinitif et reçoit -ai avec je."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-e-a2-registre-bureau",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-e",
+          "position": 59,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Vous avez prévu de vérifier les noms du registre avant de le remettre à l’accueil.\nFaits : Vous vérifiez les noms du registre avant de le rendre.",
+        "answers": [
+          "Vous vérifierez les noms du registre avant de le rendre."
+        ],
+        "task": "Employez le futur simple. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Vérifier garde son infinitif. La terminaison avec vous est -ez."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "avenir-2026-11-24-v1",
+    "revision": "avenir-2026-11-27-v2",
     "activityId": "gram-ex-futur-simple-curriculum-p",
     "subthemeId": "futur-simple",
     "topic": "gram-avenir",
@@ -4144,7 +4954,7 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-24",
+      "date": "2026-11-27",
       "humanReview": "pending",
       "note": "Sources et références relues. Situations partagées entre mécaniques ; documents adaptés avec faits explicites. Modèles ouverts non exclusifs. Aucune approbation enseignante déclarée."
     },
@@ -5754,6 +6564,326 @@
           }
         ],
         "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Falloir est impersonnel : il faudra au singulier."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-p-a2-timbre-aide",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-p",
+          "position": 50,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Une permanence ouvre lundi. Tu annonces que tu aideras à coller des timbres sur les lettres.\nFaits : Lundi, tu aides à coller les timbres.",
+        "answers": [
+          "Lundi, tu aideras à coller les timbres.\nRéponse à la relance : De timbres."
+        ],
+        "task": "Employez le futur simple. Formulez une phrase complète. Puis répondez à la relance : « De quoi le groupe a-t-il besoin ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Aider garde son infinitif. Avec tu, la terminaison est -as."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-p-a2-panneau-chantier",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-p",
+          "position": 51,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "La commune annonce un nouveau panneau dès la semaine prochaine.\nFaits : La commune installe un panneau la semaine prochaine.",
+        "answers": [
+          "La commune installera un panneau la semaine prochaine.\nRéponse à la relance : La semaine prochaine."
+        ],
+        "task": "Employez le futur simple. Formulez une phrase complète. Puis répondez à la relance : « Quand le panneau sera-t-il posé ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Avec la commune, on ajoute -a au radical installer-."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-p-a2-score-piscine",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-p",
+          "position": 52,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Après les épreuves, le club a prévu d’envoyer les résultats aux équipes par courrier électronique.\nFaits : Après les épreuves, les équipes reçoivent les résultats par courriel.",
+        "answers": [
+          "Les équipes recevront les résultats par courriel.\nRéponse à la relance : Des résultats des épreuves."
+        ],
+        "task": "Employez le futur simple. Formulez une phrase complète. Puis répondez à la relance : « De quoi les équipes seront-elles informées ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Le radical est recevr-. Avec les équipes, la terminaison est -ont."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-p-a2-abri-bus",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-p",
+          "position": 53,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Après les travaux, le groupe pourra observer la nouvelle maquette à l’arrêt de bus.\nFaits : Après les travaux, nous voyons la maquette à l’arrêt de bus.",
+        "answers": [
+          "Nous verrons la maquette après les travaux.\nRéponse à la relance : À l’arrêt de bus."
+        ],
+        "task": "Employez le futur simple. Formulez une phrase complète. Puis répondez à la relance : « Où se trouvera la maquette ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Voir donne le radical verr-. Nous prend la terminaison -ons."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-p-a2-badge-retrait",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-p",
+          "position": 54,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Un nouveau badge sera prêt demain. Vous annoncez à une personne la possibilité de le retirer à midi.\nFaits : Demain à midi, vous pouvez retirer votre badge.",
+        "answers": [
+          "Vous pourrez retirer votre badge demain à midi.\nRéponse à la relance : Un badge."
+        ],
+        "task": "Employez le futur simple. Formulez une phrase complète. Puis répondez à la relance : « Que pourra-t-on retirer ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Au futur, pouvoir a le radical pourr-. Vous prend -ez."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-p-a2-arbres-sentier",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-p",
+          "position": 55,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Les jardiniers devront attendre l’automne avant de déplacer de jeunes arbres.\nFaits : Les jardiniers doivent attendre l’automne pour déplacer les jeunes arbres.",
+        "answers": [
+          "Les jardiniers devront attendre l’automne.\nRéponse à la relance : De jeunes arbres."
+        ],
+        "task": "Employez le futur simple. Formulez une phrase complète. Puis répondez à la relance : « Qu’est-ce que les jardiniers déplaceront ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Devoir a le radical devr-. Avec ce sujet, la terminaison est -ont."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-p-a2-courrier-lanterne",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-p",
+          "position": 56,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Vous confirmez que Léonie participera demain à l’atelier de lanternes.\nFaits : Léonie vient à l’atelier de lanternes demain.",
+        "answers": [
+          "Léonie viendra à l’atelier de lanternes demain.\nRéponse à la relance : Des lanternes."
+        ],
+        "task": "Employez le futur simple. Formulez une phrase complète. Puis répondez à la relance : « Qu’est-ce qu’on fabriquera ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Venir prend le radical viendr-. Avec Léonie, on ajoute -a."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-p-a2-musique-fenetre",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-p",
+          "position": 57,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Une collègue vous indique qu’elle travaillera ses gammes pendant la pause de midi.\nFaits : Ma collègue travaille ses gammes pendant la pause de midi.",
+        "answers": [
+          "Ma collègue travaillera ses gammes pendant la pause.\nRéponse à la relance : De la pause de midi."
+        ],
+        "task": "Employez le futur simple. Formulez une phrase complète. Puis répondez à la relance : « De quelle pause s’agit-il ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. On emploie le radical travailler- avec la terminaison -a."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-p-a2-draps-maison",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-p",
+          "position": 58,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le centre organise une collecte de draps samedi. Vous participez au rangement dès dix heures.\nFaits : Dès dix heures samedi, je plie les draps au centre.",
+        "answers": [
+          "Dès dix heures, je plierai les draps au centre.\nRéponse à la relance : Samedi."
+        ],
+        "task": "Employez le futur simple. Formulez une phrase complète. Puis répondez à la relance : « Quel jour aura lieu la collecte ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Plier garde son infinitif et reçoit -ai avec je."
+      },
+      {
+        "id": "gram-ex-futur-simple-curriculum-p-a2-registre-bureau",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-simple-a2.tsv",
+          "typeId": "gram-ex-futur-simple-curriculum-p",
+          "position": 59,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Vous avez prévu de vérifier les noms du registre avant de le remettre à l’accueil.\nFaits : Vous vérifiez les noms du registre avant de le rendre.",
+        "answers": [
+          "Vous vérifierez les noms du registre avant de le rendre.\nRéponse à la relance : À l’accueil."
+        ],
+        "task": "Employez le futur simple. Formulez une phrase complète. Puis répondez à la relance : « Où faut-il le remettre ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Vérifier garde son infinitif. La terminaison avec vous est -ez."
       }
     ]
   }

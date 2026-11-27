@@ -76,6 +76,20 @@
       "gaps": { "answers": ["cadre", "couvercle"], "distractors": ["plot"] }
     },
     {
+      "id": "fixture-306-tableau",
+      "module": "306",
+      "kind": "verification",
+      "revision": "v1",
+      "approvedFor": ["CFC", "AFP"],
+      "prompt": "Complétez les dimensions du support.",
+      "answer": "Vérifiez les dimensions en millimètres.",
+      "table": {
+        "presentation": "tableau-donnees",
+        "headers": ["Support", "Largeur"],
+        "rows": [["Palette EUR", { "answer": "800 mm" }]]
+      }
+    },
+    {
       "id": "fixture-105-glossaire",
       "module": "105",
       "revision": "v1",
