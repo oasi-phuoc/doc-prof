@@ -13,6 +13,7 @@ Référence de réalisation dans le [cahier des charges v2.13](cahier-des-charge
 
 - Proposer Complet et Résumé à la place des colonnes pour la théorie. Reformuler les notions pour les 15–21 ans en conservant les termes techniques, les unités et les consignes.
 - Reprendre tous les modules avec des photos, des schémas et des mises en scène en couleur. Placer chaque visuel auprès du passage traité et relire la mise en page des deux versions.
+- Habiller les photos encadrées avec le texte du cours quand la place le permet. Conserver une largeur de lecture suffisante pour les schémas, tableaux et frises.
 
 ## Avancement par lot
 
@@ -139,6 +140,10 @@ Le passage de contrôle réexamine les chapitres du cours complet et du résumé
 | 701–705, 801–809 et 901–902 | Valeur d’un chariot, salaire brut et net, RFID, rapport de réception, références Excel, effets PowerPoint et organisation du bloc-notes. | Révision `logistique-illustrations-fico-ict-projets-v003`. 16 insertions supplémentaires dans 16 modules. 46 parcours A4 et PDF vérifiés. |
 
 Le deuxième passage couvre les 80 modules CFC et les 63 modules AFP. Il porte le cours complet à 292 insertions, soit 116 de plus que le premier passage. Les deux versions utilisent 62 nouveaux visuels en couleur, dont 48 scènes photoréalistes et 14 schémas. Les 286 combinaisons de module, diplôme et version ont été vérifiées dans le gabarit A4 et exportées en PDF. Les 80 préparations `v003` reproduisent les contenus publiés avec leurs légendes et les empreintes des visuels.
+
+## Habillage des photos dans la théorie
+
+Dans les cours et résumés, les photos en couleur suivies d’un paragraphe suffisamment long s’affichent à droite dans un cadre qui contient aussi la légende. Le texte reprend toute la largeur sous le cadre. La pagination réunit la photo et le paragraphe sur la même feuille. Un saut manuel explicite ou une largeur de texte insuffisante donne une composition verticale. Les tableaux et les frises, dont ceux du 101, gardent leur disposition de lecture.
 
 ## Enrichissement des exercices
 

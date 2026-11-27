@@ -251,3 +251,27 @@ test('les problèmes courts gardent chacun la place de leur grille et de la rép
   const pages = splitLogistiquePages({ blocks: [block], items })
   assert.deepEqual(pages.map((page) => page.items.length), [2, 2, 2])
 })
+
+test('le texte habille la photo sur la même page et un saut manuel reste prioritaire', () => {
+  const items = [
+    { kind: 'heading', text: 'Supports de charge' },
+    { kind: 'paragraph', text: 'Consigne de contrôle. '.repeat(54) },
+    { kind: 'heading', sub: true, text: 'Comparer les deux supports' },
+    { kind: 'image', src: '/assets/logistique/log-306-supports-photo-v004.webp', alt: 'Deux supports', caption: 'Palette et box-palette.' },
+    { kind: 'paragraph', text: 'Vérifiez le type de marchandise et le mode de prise avant de choisir le support de charge. '.repeat(3) },
+  ].map((theoryBlock) => ({ layout: 'theory', theoryBlock, answer: '' }))
+  const block = { title: 'Théorie', items, exerciseIndex: 1, exerciseType: 'log-afp-306-theorie' }
+  for (const a5 of [false, true]) {
+    const sheets = splitLogistiquePages({ items, blocks: [block] }, { a5 })
+    assert.deepEqual(sheets.flatMap((sheet) => sheet.items), items)
+    const wrapped = sheets.find(({ items: pageItems }) => pageItems.includes(items[3])).blocks[0]
+    assert.deepEqual(wrapped.logistiqueWrappedFigures.map((index) => wrapped.items.slice(index, index + 2)), [items.slice(3)])
+    assert(wrapped.items.includes(items[2]), 'Le titre reste avec la photo')
+  }
+
+  const withBreak = { ...block, tcfPageBreakAfter: [false, false, false, true] }
+  const sheets = splitLogistiquePages({ items, blocks: [withBreak] })
+  assert.equal(sheets.find(({ items: pageItems }) => pageItems.includes(items[3])).items.at(-1), items[3])
+  assert(sheets.every(({ blocks }) => blocks.every(({ logistiqueWrappedFigures }) => !logistiqueWrappedFigures?.length)))
+  assert.deepEqual(sheets.flatMap((sheet) => sheet.items), items)
+})

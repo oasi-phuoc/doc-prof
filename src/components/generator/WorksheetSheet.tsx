@@ -83,6 +83,22 @@ function coAudioInBanner(block: WorksheetBlock): boolean {
   })
 }
 
+function wrapLogistiqueFigures(indices: number[] | undefined, items: ReactElement[]): ReactElement[] {
+  if (!indices?.length) return items
+  const starts = new Set(indices)
+  const result: ReactElement[] = []
+  for (const [index, item] of items.entries()) {
+    if (starts.has(index - 1)) continue
+    result.push(starts.has(index) ? (
+      <div className="logistique-theory-wrap" key={item.key}>
+        {item}
+        {items[index + 1]}
+      </div>
+    ) : item)
+  }
+  return result
+}
+
 function WorksheetItems({groupedOperations=false,children,...props}:HTMLAttributes<HTMLDivElement>&{groupedOperations?:boolean}) {
   if(!groupedOperations)return <div {...props}>{children}</div>
   const items=Children.toArray(children) as ReactElement<{item:MathItem}>[]
@@ -243,7 +259,8 @@ export function WorksheetSheet({
     : page.columns
   const isSoutienFr = page.domain === 'soutien-fr'
   const isAlphabetisation = page.domain === 'alphabetisation'
-  const domainClass = page.domain === 'tcm-csc' ? ' is-tcm-csc' : page.domain === 'tcm-cfr' ? ' is-tcm-cfr' : page.domain === 'tpm' ? ' is-tpm' : ''
+  const domainClass = isLogistiqueDomain(page.domain) ? ' is-logistique'
+    : page.domain === 'tcm-csc' ? ' is-tcm-csc' : page.domain === 'tcm-cfr' ? ' is-tcm-cfr' : page.domain === 'tpm' ? ' is-tpm' : ''
   const Root = asHalf ? 'div' : 'article'
   const rootClass = asHalf
     ? `a5-half is-${asHalf}${isJeuxSheet ? ' is-jeux' : ''}${isSoutienFr ? ' is-soutien-fr' : ''}${isAlphabetisation ? ' is-alphabetisation' : ''}${evalMode ? ' is-eval' : ''}`
@@ -490,7 +507,7 @@ export function WorksheetSheet({
                   } as CSSProperties
                 }
               >
-                {block.items.map((item, index) => {
+                {wrapLogistiqueFigures(block.logistiqueWrappedFigures, block.items.map((item, index) => {
                   const padLeft =
                     item.layout === 'algebra' ? Math.max(0, maxTokens - tokenizeAlgebra(item.prompt ?? '').length) : 0
                   const draftGrid = isLogistiqueDomain(page.domain) ||
@@ -623,7 +640,7 @@ export function WorksheetSheet({
                       coordEdit={coordEdit}
                     />
                   )
-                })}
+                }))}
               </WorksheetItems>
             </section>
           )

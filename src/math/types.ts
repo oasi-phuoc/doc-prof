@@ -1177,6 +1177,8 @@ export type WorksheetBlock = {
   items: MathItem[]
   columns: number
   exerciseType: string
+  /** Index des photos à habiller avec le paragraphe suivant sur cette feuille. */
+  logistiqueWrappedFigures?: number[]
   /** Points par question (propagé depuis ExerciseBlock). */
   pointsPerQuestion?: number
   /**
