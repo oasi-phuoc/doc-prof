@@ -8,12 +8,13 @@ const fixture = require('./fixture.json')
 const palletPhoto = require('../../docs/logistique/preparation/306-v004.json').visuals[0]
 const { load, root } = require('../../scripts/gattegno-loader.cjs')
 const catalog = load(root + '/src/logistique/catalog.ts')
-const { generateLogistique, logistiqueDocumentTitle, logistiqueHasSummary, logistiqueQuestionItems } = load(root + '/src/logistique/generate.ts')
+const { generateLogistique, logistiqueDocumentTitle, logistiqueHasSummary, logistiqueQuestionItems, logistiqueQuestionPhotos } = load(root + '/src/logistique/generate.ts')
 const { availableLogistiqueQuestions, retainLogistiqueQuestions } = load(root + '/src/logistique/libre.ts')
 const { freezeLogistiquePages, validLogistiquePages } = load(root + '/src/logistique/recipe.ts')
 const { currentLogistiquePublication, logistiquePublications } = load(root + '/src/logistique/approved-banks.ts')
 const { splitLogistiquePages } = load(root + '/src/logistique/pagination.ts')
 const { blockItemsForConfig } = load(root + '/src/components/generator/sheet-items.ts')
+const { pageForA5Half } = load(root + '/src/components/generator/sheet-format.ts')
 
 function config(diploma, module, kind) {
   const tag = diploma.toLowerCase()
@@ -240,6 +241,24 @@ test('les deux présentations des textes à trous gardent le même tirage et la 
     }
   }
   assert(!validLogistiquePages([{ ...config('AFP', '105', 'maths'), logistiqueGapMode: 'sans-liste' }]))
+})
+
+test('la photo d’une question reste attachée à son item et le catalogue refuse une source incompatible', () => {
+  const page = config('AFP', '105', 'maths')
+  const type = catalog.logistiqueType(page.exerciseType)
+  const photos = logistiqueQuestionPhotos(type, ['105']).get('105')
+  assert(photos.length > 1)
+  assert(photos.every(({ src }) => catalog.logistiquePhotoPath(src, 'AFP')))
+  const item = generateLogistique(page, 11).items[0]
+  const image = { ...photos[0], caption: 'Photo de contrôle', width: 140, placement: 'droite', visibility: 'answers' }
+  const attached = { ...page, libreItems: [{ ...item, logistiqueImage: image }] }
+  assert(validLogistiquePages(freezeLogistiquePages([attached])))
+  for (const half of ['left', 'right']) {
+    assert.deepEqual(pageForA5Half(attached, half).libreItems, attached.libreItems)
+  }
+  for (const src of ['https://example.com/photo.webp', 'blob:temporary', '/assets/logistique/900/901/cfc/log-901-photo-v001.webp']) {
+    assert(!validLogistiquePages([{ ...page, libreItems: [{ ...item, logistiqueImage: { ...image, src } }] }]))
+  }
 })
 
 test('les banques enrichies augmentent la capacité par diplôme et préservent les tirages enregistrés', () => {

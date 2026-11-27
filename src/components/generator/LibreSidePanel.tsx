@@ -21,6 +21,7 @@ import { DEFAULT_GAME_FONT_SIZE } from '@/jeux/font-size'
 import { TcfExerciseEditor } from '@/tcf/TcfExerciseEditor'
 import type { TcfExercise, TcfNiveau } from '@/tcf/types'
 import { isLogistiqueReferenceType, logistiqueType } from '@/logistique/catalog'
+import { logistiqueQuestionPhotos } from '@/logistique/generate'
 import { LogistiqueLibreBank } from './LogistiqueLibreBank'
 
 function tcfSupportExercise(items: MathItem[] | undefined): TcfExercise | undefined {
@@ -103,6 +104,12 @@ export function LibreSidePanel({
 }: LibreSidePanelProps) {
   const logistics = logistiqueType(activeBlock.exerciseType)
   const genericItems = activeBlock.libreItems ?? logistiqueActiveItems ?? activeSheet?.blocks[safeBlockIndex]?.items ?? []
+  const logistiquePhotos = logistics && !isLogistiqueReferenceType(logistics.id) ? {
+    defaultModule: logistics.module,
+    byModule: logistiqueQuestionPhotos(logistics,
+      [...new Set(genericItems.map((item) => item.logistiqueSource?.module ?? logistics.module))],
+      activeBlock.logistiqueBankRevision),
+  } : undefined
   return (
     <aside className="side-tool-panel is-libre no-print" aria-label="Mode libre">
       <div className="side-tool-panel-head is-libre-head">
@@ -350,6 +357,7 @@ export function LibreSidePanel({
               }
               items={genericItems}
               editableCalculation={logistics?.kind === 'maths'}
+              logistiquePhotos={logistiquePhotos}
               onChangeInstruction={(libreInstruction) => updatePage({ libreInstruction })}
               onChangeItems={(libreItems) => updatePage({ libreItems })}
             />

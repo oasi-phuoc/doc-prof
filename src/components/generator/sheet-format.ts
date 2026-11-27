@@ -1,5 +1,6 @@
 import { pageBlocks, setPageBlock } from '@/math/page-model'
 import type { ExerciseBlock, PageConfig } from '@/math/types'
+import { isLogistiqueDomain } from '@/logistique/catalog'
 
 /** Format de la feuille imprimable. */
 export type SheetFormat = 'a4-portrait' | 'a5-double-landscape'
@@ -15,11 +16,12 @@ export function isA5DoubleFormat(format: SheetFormat | undefined): boolean {
 
 /**
  * Prépare une PageConfig pour une moitié A5.
- * Chaque moitié tire depuis sa propre graine ; le contenu figé partagé
- * (mode libre) est ignoré pour que le refresh d’un côté n’écrase pas l’autre.
+ * Les tirages utilisent la graine de leur moitié. Les fiches libres de
+ * Logistique reproduisent leurs questions et leurs médias sur les deux moitiés.
  */
 export function pageForA5Half(page: PageConfig, half: 'left' | 'right'): PageConfig {
   const blocks = pageBlocks(page)
+  const logistics = isLogistiqueDomain(page.domain)
   let next = page
   blocks.forEach((block, index) => {
     const seed =
@@ -34,8 +36,8 @@ export function pageForA5Half(page: PageConfig, half: 'left' | 'right'): PageCon
       gameSelectedIds: undefined,
       phraseItems: undefined,
       phraseInstruction: undefined,
-      libreItems: undefined,
-      libreInstruction: undefined,
+      libreItems: logistics ? block.libreItems : undefined,
+      libreInstruction: logistics ? block.libreInstruction : undefined,
     })
   })
   return next

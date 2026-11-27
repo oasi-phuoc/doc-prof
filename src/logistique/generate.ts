@@ -2,7 +2,7 @@ import { pageBlocks } from '@/math/page-model'
 import { createRng, shuffle, type Rng } from '@/math/rng'
 import type { LogistiqueGapMode, MathItem, PageConfig } from '@/math/types'
 import { currentLogistiquePublication, logistiquePublication, type LogistiqueUnit } from './approved-banks'
-import { isLogistiqueReferenceType, logistiqueType, validLogistiqueGapMode, validLogistiqueSelection, type LogistiqueType } from './catalog'
+import { isLogistiqueReferenceType, logistiquePhotoPath, logistiqueType, validLogistiqueGapMode, validLogistiqueSelection, type LogistiqueType } from './catalog'
 
 function withAssetBase<T extends { src: string }>(figure: T): T {
   return { ...figure, src: import.meta.env.BASE_URL + figure.src.replace(/^\//, '') }
@@ -73,6 +73,20 @@ export function logistiqueQuestionItems(type: LogistiqueType, modules: string[],
   const wordsRng = gapMode === 'avec-liste' ? createRng(20261127) : undefined
   return eligibleUnits(type, logistiquePublication(revision)?.units ?? [], modules, gapMode)
     .flatMap((unit) => unitItems(unit, undefined, wordsRng))
+}
+
+export function logistiqueQuestionPhotos(type: LogistiqueType, modules: string[], revision?: string) {
+  const publication = logistiquePublication(revision)
+  type Photo = { src: string; alt: string; caption: string }
+  const catalogues = new Map<string, Photo[]>()
+  for (const unit of publication?.units ?? []) {
+    if (!modules.includes(unit.module) || unit.kind !== 'theorie' || !unit.approvedFor.includes(type.diploma)) continue
+    const photos = unit.blocks.flatMap((block) => block.kind === 'image' ? [block] : block.kind === 'image-row' ? block.cells : [])
+    const valid = photos.filter(({ src }) => logistiquePhotoPath(src, type.diploma))
+      .map(({ src, alt, caption }) => ({ src, alt, caption }))
+    catalogues.set(unit.module, [...new Map(valid.map((photo) => [photo.src, photo])).values()])
+  }
+  return catalogues
 }
 
 export function logistiqueHasSummary(typeId: string, revision?: string): boolean {

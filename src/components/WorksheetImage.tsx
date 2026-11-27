@@ -53,10 +53,11 @@ export function WorksheetImageProvider({ enabled, overrides, onChange, children 
 }
 
 /** Même balise img et mêmes dimensions : seule sa source change. */
-export function WorksheetImage({ editable = true, src, alt, onClick, onKeyDown, className, ...props }: ImgHTMLAttributes<HTMLImageElement> & { editable?: boolean }) {
+export function WorksheetImage({ editable = true, applyOverrides = true, src, alt, onClick, onKeyDown, className, ...props }:
+  ImgHTMLAttributes<HTMLImageElement> & { editable?: boolean; applyOverrides?: boolean }) {
   const editor = useContext(ImageContext)
   const canEdit = editor.enabled && editable && Boolean(src) && !/^Audio\b/i.test(alt ?? '') && !/qr|game-card-border/.test(className ?? '')
-  return <img {...props} src={src ? editor.replacements[src] ?? src : src} alt={alt}
+  return <img {...props} src={src && applyOverrides ? editor.replacements[src] ?? src : src} alt={alt}
     className={`${className ?? ''}${canEdit ? ' is-editable-word-image' : ''}`.trim() || undefined}
     tabIndex={canEdit ? 0 : props.tabIndex} role={canEdit ? 'button' : props.role}
     aria-label={canEdit ? `Modifier l’image${alt ? ` : ${alt}` : ''}` : props['aria-label']}

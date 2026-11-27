@@ -1,4 +1,4 @@
-import type { Domain, ExerciseType, Topic } from '@/math/types'
+import type { Domain, ExerciseType, LogistiqueQuestionImage, Topic } from '@/math/types'
 import curriculum from './curriculum.generated.json'
 
 export const LOGISTIQUE_DOMAINS = [
@@ -118,6 +118,23 @@ export function validLogistiqueGapMode(type: LogistiqueType, mode: unknown): boo
   return mode === undefined || (type.kind === 'verification' && (mode === 'sans-liste' || mode === 'avec-liste'))
 }
 
+export function logistiquePhotoPath(src: unknown, diploma?: LogistiqueDiploma): src is string {
+  if (typeof src !== 'string') return false
+  const path = /^\/assets\/logistique\/\d{3}\/\d{3}\/(commun|afp|cfc)\/[a-z0-9-]+-photo-v\d+\.webp$/.exec(src)
+  return Boolean(path && (!diploma || path[1] === 'commun' || path[1] === diploma.toLowerCase()))
+}
+
+function validLogistiqueQuestionImage(image: unknown, diploma: LogistiqueDiploma): image is LogistiqueQuestionImage {
+  if (!image || typeof image !== 'object' || Array.isArray(image)) return false
+  const { src, alt, caption, placement, visibility, width } = image as Partial<LogistiqueQuestionImage>
+  return logistiquePhotoPath(src, diploma) &&
+    typeof alt === 'string' && alt.length <= 180 &&
+    typeof caption === 'string' && caption.length <= 160 &&
+    (width === 100 || width === 140 || width === 180) &&
+    (placement === 'avant' || placement === 'apres' || placement === 'droite') &&
+    (visibility === 'both' || visibility === 'answers')
+}
+
 type CataloguePage = {
   domain?: unknown
   exerciseType?: unknown
@@ -134,9 +151,11 @@ export function validLogistiqueCataloguePages(pages: readonly CataloguePage[]): 
     const view = 'logistiqueTheoryView' in block ? block.logistiqueTheoryView : undefined
     const selection = 'logistiqueSelection' in block ? block.logistiqueSelection : undefined
     const gapMode = 'logistiqueGapMode' in block ? block.logistiqueGapMode : undefined
+    const items = 'libreItems' in block && Array.isArray(block.libreItems) ? block.libreItems : []
     return type?.domain === domain && type.topic === block.topic &&
       validLogistiqueSelection(type, selection) &&
       validLogistiqueGapMode(type, gapMode) &&
+      items.every((item) => item?.logistiqueImage === undefined || validLogistiqueQuestionImage(item.logistiqueImage, type.diploma)) &&
       (view === undefined || (type.kind === 'theorie' && (view === 'complet' || view === 'resume')))
   }
   return pages.every((page) => page.domain === domain && validBlock(page) &&

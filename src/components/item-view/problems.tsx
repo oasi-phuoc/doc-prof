@@ -1,6 +1,7 @@
 import { WorksheetImage } from '@/components/WorksheetImage'
 import { renderEnonceText } from '@/components/tcf/TcfQuestions'
-import { Fragment } from 'react'
+import { Fragment, type ReactNode } from 'react'
+import { logistiquePhotoPath } from '@/logistique/catalog'
 import { theorySpacerDivisor, type GrammarTheoryBlock } from '@/francais/grammar-theory'
 import {
   TheoryFlow,
@@ -33,6 +34,24 @@ import {
   tokenizeAlgebra,
   tokenIsFrac,
 } from './algebra'
+
+function LogistiqueIllustratedPrompt({ item, mode, children }: { item: MathItem; mode: PreviewMode; children: ReactNode }) {
+  const image = item.logistiqueImage
+  if (!image || (image.visibility === 'answers' && mode !== 'answers') || !logistiquePhotoPath(image.src)) return children
+  const figure = (
+    <figure className="logistique-question-image" style={{ width: image.width }}>
+      <WorksheetImage editable={false} applyOverrides={false} src={import.meta.env.BASE_URL + image.src.slice(1)} alt={image.alt} />
+      {image.caption && <figcaption>{image.caption}</figcaption>}
+    </figure>
+  )
+  return (
+    <div className={`logistique-illustrated-prompt is-${image.placement}`}>
+      {image.placement !== 'apres' && figure}
+      {children}
+      {image.placement === 'apres' && figure}
+    </div>
+  )
+}
 
 export function SelectPillsRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const options = item.options ?? []
@@ -130,10 +149,12 @@ export function SelectPillsRow({ item, mode }: { item: MathItem; mode: PreviewMo
     )
   }
 
-  const stacked = (item.prompt?.length ?? 0) > 28
+  const stacked = Boolean(item.logistiqueImage) || (item.prompt?.length ?? 0) > 28
   return (
     <div className={`select-pills-row${stacked ? ' stacked' : ''}`} aria-label="Choix">
-      <span className="select-pills-prompt">{item.prompt}</span>
+      <LogistiqueIllustratedPrompt item={item} mode={mode}>
+        <span className="select-pills-prompt">{item.prompt}</span>
+      </LogistiqueIllustratedPrompt>
       <div className="select-pills" role="group">
         {options.map((option) => {
           const selected = mode === 'answers' && selectedSet.has(option)
@@ -593,7 +614,9 @@ export function StackedPrompt({ item, mode, showHelp = false }: { item: MathItem
     const { answers, words } = item.logistiqueGaps
     return (
       <div className="prompt-stack logistique-gaps">
-        <p className="prompt-stack-text">{renderEnonceText(prompt, show ? answers : [])}</p>
+        <LogistiqueIllustratedPrompt item={item} mode={mode}>
+          <p className="prompt-stack-text">{renderEnonceText(prompt, show ? answers : [])}</p>
+        </LogistiqueIllustratedPrompt>
         {words?.length ? <p className="logistique-words"><strong>Mots proposés</strong> {words.join(' · ')}</p> : null}
       </div>
     )
@@ -633,7 +656,9 @@ export function StackedPrompt({ item, mode, showHelp = false }: { item: MathItem
   const line = item.labels?.includes('societe-line')
   return (
     <div className={`prompt-stack${line ? ' societe-line' : ''}`}>
-      <p className="prompt-stack-text">{prompt}</p>
+      <LogistiqueIllustratedPrompt item={item} mode={mode}>
+        <p className="prompt-stack-text">{prompt}</p>
+      </LogistiqueIllustratedPrompt>
       {showHelp && <ProblemHelp item={item} />}
       {item.areaFigures && !show && <span className="answer-line-field">{'\u00a0'}</span>}
       <span className={`answer-line-field ${show ? 'filled' : ''}`}>
@@ -820,9 +845,11 @@ export function ProblemBlock({
   const parts = /^(.*[.!?]\s+)([^.!?]+\?)$/s.exec(prompt.trim())
   return (
     <div className="problem-block">
-      <p className="problem-prompt">
-        {parts ? <>{parts[1]}<strong>{parts[2]}</strong></> : prompt}
-      </p>
+      <LogistiqueIllustratedPrompt item={item} mode={mode}>
+        <p className="problem-prompt">
+          {parts ? <>{parts[1]}<strong>{parts[2]}</strong></> : prompt}
+        </p>
+      </LogistiqueIllustratedPrompt>
       {showHelp && <ProblemHelp item={item} />}
       {showHelp && item.labels?.includes('sketch-change') ? (
         <MoneyChangeBoard parts={item.changeParts ?? []} mode={mode} />

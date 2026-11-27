@@ -425,12 +425,21 @@ export type DivisionStep = {
 }
 
 export type LogistiqueGapMode = 'sans-liste' | 'avec-liste'
+export type LogistiqueQuestionImage = {
+  src: string
+  alt: string
+  caption: string
+  width: 100 | 140 | 180
+  placement: 'avant' | 'apres' | 'droite'
+  visibility: 'both' | 'answers'
+}
 
 export type MathItem = {
   logistiqueSource?: { id: string; module: string; revision: string }
   /** Question ajoutée en Libre et conservée par les nouveaux tirages. */
   logistiqueRetained?: boolean
   logistiqueGaps?: { answers: string[]; words?: string[] }
+  logistiqueImage?: LogistiqueQuestionImage
   layout: Layout
   grammar?: import('@/grammaire/curriculum/types').GrammarQuestion
   cscTask?: import('@/tcm-csc/task-types').CscTask

@@ -22,7 +22,7 @@ Référence de réalisation dans le [cahier des charges v2.13](cahier-des-charge
 | L0 — Existant et inventaire | Réalisé | Les 9 thèmes et 80 modules CFC, les 7 thèmes et 63 modules AFP et les 715 types sont générés depuis la référence EPCAS. 540 déclarations source archivées, parmi lesquelles 149 références historiques exclues. L’[inventaire](inventaire-epcas.generated.json) repère 16 types sans déclaration en CFC et 7 en AFP. |
 | L1 — Générateur commun | Pilote actif | Sélecteurs communs, feuille, activités, élève, corrigé, grille, titres, impression, Libre générique et recettes versionnées. Les contrôles de catalogue empêchent les recettes incompatibles avec le diplôme ou mélangeant les diplômes. |
 | L1b — Sélection en Évaluation et Libre | Sélection active | Plusieurs sous-thèmes peuvent alimenter une activité en Évaluation. Le panneau Libre permet de rechercher des questions, consulter leurs corrigés et ajouter une sélection ou un lot. |
-| L1c et L1d — Édition et formats | Partiel | L’éditeur commun, les questions ouvertes, les QCM, les calculs et les cas simples sont pris en charge. Les textes à trous avec et sans liste sont actifs sur cinq modules pilotes. Les autres formats structurés et les médias par question restent à compléter. |
+| L1c et L1d — Édition et formats | Partiel | L’éditeur commun permet d’associer une photo de la bibliothèque à une question. Les textes à trous avec et sans liste sont actifs sur cinq modules pilotes. Les imports privés, l’édition des formats complexes et les autres formats structurés restent à compléter. |
 | L1e — Pagination et titres | A4 et double A5 vérifiés | Enchaînement des questions dans l’espace disponible, numérotation continue et sauts manuels. En double A5, les tableaux et listes longs se poursuivent ligne par ligne. Étendre la mesure aux réglages et aux contenus libres atypiques. |
 | V2.12 — Objectifs, aperçu et cours illustrés | Révision `logistique-references-v002` | 17 modules actifs préparés, avec 31 nouveaux schémas originaux en complément des 17 déjà publiés. Les anciens types et versions de banque restent accessibles aux recettes historiques. [Registre des figures et des introductions](preparation/references-illustrees-v002.json). |
 | L1f — Évaluation | À poursuivre | Les modes communs sont accessibles. Le récit adaptatif, la durée indicative, le barème Bloom et les modèles de nouveau tirage ne sont pas réalisés. |
@@ -151,7 +151,7 @@ Chromium a contrôlé l’habillage et le pied de page sur les 286 parcours A4 d
 
 Le module 306 ajoute une mise en scène des supports spéciaux aux versions Complet et Résumé, en CFC et AFP. Le passage explique le choix entre une palette synthétique et une box-palette destinée au vrac et rappelle que la couleur seule ne permet pas d’identifier un support CHEP. La nouvelle figure et son paragraphe sont publiés dans la révision `logistique-theorie-306-v004`. Les quatre parcours A4 et PDF du 306 ont été vérifiés avec la nouvelle photo encadrée. [Préparation du 306](preparation/306-v004.json).
 
-En double A5, les tableaux répètent leurs en-têtes et les listes reprennent à l’entrée suivante. Chaque ligne de tableau et chaque entrée de liste restent entières. La coupure de mise en page conserve le bloc original dans la fiche Libre et les sauts manuels s’appliquent après sa dernière partie. La grille de calcul comporte quatre lignes en double A5 pour réserver de la place à la réponse et au pied de page. La campagne de mesure a couvert 286 parcours de théorie. Les 50 parcours de vérification ciblés après ajustement ont conservé au moins 25,78 px avant le pied.
+En double A5, les tableaux répètent leurs en-têtes et les listes reprennent à l’entrée suivante. Chaque ligne de tableau et chaque entrée de liste restent entières. La coupure de mise en page conserve le bloc original dans la fiche Libre et les sauts manuels s’appliquent après sa dernière partie. La grille de calcul comporte quatre lignes en double A5 pour réserver de la place à la réponse et au pied de page. La campagne de mesure après ajustement a couvert les 286 combinaisons de module, diplôme et version de théorie dans Chromium. Avec le réglage de texte de 16 px, les 3 038 demi-feuilles contrôlées ont conservé au moins 25,78 px avant le pied.
 
 ## Glossaires des supports et de la manutention
 
@@ -248,14 +248,16 @@ Dans Libre, la banque utilise le type de l’activité, le diplôme et la révis
 
 La révision `logistique-textes-a-trous-v006` publie 15 exercices de vérification répartis entre les 101, 105, 306, 308 et 409 dans les deux diplômes. Le choix Avec liste ou Sans liste garde le même énoncé, les mêmes blancs et le même corrigé. Le matériel est rattaché aux sections correspondantes du cours. Chromium a vérifié les 20 parcours A4 et les quatre PDF du 306. La réserve minimale était de 102,44 px. L’édition de l’énoncé et des réponses d’un texte à trous reste à raccorder au contrôle de cohérence des blancs. [Exercices pilotes](../../src/logistique/banks/textes-a-trous-v006.ts).
 
+La carte Libre d’une question de calcul, de vérification ou de mise en situation permet de choisir une photo de la bibliothèque du module source. Les réglages de taille, de placement, de légende et de visibilité sont enregistrés dans la question. À droite, le texte habille le cadre et la grille de calcul commence sous l’énoncé et l’image. Le choix Corrigé seulement masque la photo sur la fiche élève. Le double A5 reprend les questions Libre enregistrées sur les deux moitiés. La recette navigateur a vérifié la sauvegarde simulée et la réouverture d’un problème AFP illustré, ainsi que ses PDF A4 et double A5. L’import privé et les galeries de plusieurs images restent à réaliser.
+
 La publication des modules est terminée pour les deux diplômes. La publication `logistique-901-v001` a clôturé le premier passage sur le catalogue. La révision `logistique-illustrations-fico-ict-projets-v003` rassemble les cours et les résumés du deuxième passage illustré. Chaque recette conserve sa révision de banque.
 
 | Diplôme | Modules | Types actifs | Problèmes de calcul | Questions de vérification | Situations |
 |---|---:|---:|---:|---:|---:|
-| CFC | 80 | 480 | 2529 | 4011 | 1657 |
-| AFP | 63 | 378 | 1890 | 3150 | 1260 |
+| CFC | 80 | 480 | 2529 | 4026 | 1657 |
+| AFP | 63 | 378 | 1890 | 3165 | 1260 |
 
-Les effectifs sont dédupliqués par identifiant dans chaque diplôme. La banque compte 8 197 unités d’exercice distinctes. Chaque module atteint la cible du §5.1 dans son diplôme, avec au moins 30 calculs, 50 vérifications et 20 mises en situation. Les demandes de sélection avancée en Évaluation et en Libre figurent dans les lots L1b à L1f.
+Les effectifs sont dédupliqués par identifiant dans chaque diplôme. La banque compte 8 212 unités d’exercice distinctes. Chaque module atteint la cible du §5.1 dans son diplôme, avec au moins 30 calculs, 50 vérifications et 20 mises en situation. Les formats structurés et la conception avancée des évaluations figurent dans les lots L1c à L1f.
 
 Pour un enrichissement ultérieur, partir des archives et du dossier éditorial du module, vérifier les droits par diplôme, les corrigés, la composition A4 et la continuité des recettes. Enregistrer chaque nouvelle révision et ses résultats dans ce suivi. [Archives par thème](sources-epcas/).
 

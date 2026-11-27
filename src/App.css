@@ -2082,6 +2082,16 @@ html.is-margin-symmetric .print-only-sheets .worksheet-sheet.sheet-even .draft-g
 .logistique-gaps .prompt-stack-text{white-space:pre-wrap;line-height:1.7}
 .logistique-words{margin:0;font-size:.9em;line-height:1.55}
 .logistique-words strong{display:block}
+.logistique-image-fields>summary{cursor:pointer;font-weight:600}
+.logistique-image-fields[open]>:not(summary){margin-top:8px}
+.logistique-image-thumbnail{display:block;max-width:120px;max-height:74px;object-fit:contain}
+.logistique-illustrated-prompt{display:flow-root;min-width:0;width:100%}
+.logistique-question-image{max-width:100%;margin:4px auto 6px;padding:1.3mm;border:1px solid #a8a29e;border-radius:1.7mm}
+.logistique-illustrated-prompt.is-droite .logistique-question-image{float:right;max-width:40%;margin-inline-start:3mm}
+.logistique-question-image img{display:block;width:100%;max-height:115px;object-fit:contain}
+.logistique-question-image figcaption{margin-top:4px;font-size:.78em;line-height:1.22;overflow-wrap:anywhere}
+.a5-half .logistique-question-image{margin-block:0 2px;padding:.8mm}
+.a5-half .logistique-question-image img{max-height:62px}
 .mode-toggle-block>b,.custom-header-form>b{font-size:calc(13px * var(--app-font-scale, 1))}
 .mode-toggle{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:4px;border-radius:12px;background:#f4f2ef}
 .mode-toggle button{border:0;border-radius:9px;padding:10px 8px;background:transparent;color:var(--muted);font-size:calc(13px * var(--app-font-scale, 1));font-weight:700}
