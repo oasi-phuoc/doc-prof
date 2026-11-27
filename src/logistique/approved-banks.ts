@@ -89,6 +89,15 @@ import { module107 as theory107 } from './banks/module-107-v002.generated.ts'
 import { module108 as theory108 } from './banks/module-108-v002.generated.ts'
 import { module109 as theory109 } from './banks/module-109-v002.generated.ts'
 import { module110 as theory110 } from './banks/module-110-v002.generated.ts'
+import { module201 as theory201 } from './banks/module-201-v002.generated.ts'
+import { module202 as theory202 } from './banks/module-202-v002.generated.ts'
+import { module203 as theory203 } from './banks/module-203-v002.generated.ts'
+import { module204 as theory204 } from './banks/module-204-v002.generated.ts'
+import { module205 as theory205 } from './banks/module-205-v002.generated.ts'
+import { module206 as theory206 } from './banks/module-206-v002.generated.ts'
+import { module207 as theory207 } from './banks/module-207-v002.generated.ts'
+import { module208 as theory208 } from './banks/module-208-v002.generated.ts'
+import { module209 as theory209 } from './banks/module-209-v002.generated.ts'
 import { module101 as theory101 } from './banks/module-101-v002.generated.ts'
 import { module306 as theory306 } from './banks/module-306-v002.generated.ts'
 import { module407 as theory407 } from './banks/module-407-v002.generated.ts'
@@ -211,6 +220,15 @@ const remainingFoundationTheories = [
   ...theory107, ...theory108, ...theory109, ...theory110,
 ]
 const foundationTheoryIds = new Set<string>(remainingFoundationTheories.map(({ id }) => id))
+const foundationPhotoPublication: LogistiquePublication = {
+  revision: 'logistique-theories-fondations-v002',
+  units: [...firstPhotoPublication.units.filter(({ id }) => !foundationTheoryIds.has(id)), ...remainingFoundationTheories],
+}
+const serviceTheories = [
+  ...theory201, ...theory202, ...theory203, ...theory204, ...theory205,
+  ...theory206, ...theory207, ...theory208, ...theory209,
+]
+const serviceTheoryIds = new Set<string>(serviceTheories.map(({ id }) => id))
 
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
@@ -265,9 +283,10 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   publication_806_807_808_809_v001,
   publication_901_v001,
   firstPhotoPublication,
+  foundationPhotoPublication,
   {
-    revision: 'logistique-theories-fondations-v002',
-    units: [...firstPhotoPublication.units.filter(({ id }) => !foundationTheoryIds.has(id)), ...remainingFoundationTheories],
+    revision: 'logistique-theories-service-client-v002',
+    units: [...foundationPhotoPublication.units.filter(({ id }) => !serviceTheoryIds.has(id)), ...serviceTheories],
   },
 ]
 

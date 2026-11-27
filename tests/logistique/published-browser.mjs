@@ -5,11 +5,13 @@ import { createServer } from 'vite'
 
 const plan = JSON.parse(await readFile(new URL('../../docs/logistique/preparation/references-illustrees-v002.json', import.meta.url), 'utf8'))
 const curriculum = JSON.parse(await readFile(new URL('../../src/logistique/curriculum.generated.json', import.meta.url), 'utf8'))
-const photoModules = [...Array.from({ length: 11 }, (_, index) => String(100 + index)), '306', '407', '409']
+const photoModules = [...Array.from({ length: 11 }, (_, index) => String(100 + index)), ...Array.from({ length: 9 }, (_, index) => String(201 + index)), '306', '407', '409']
 const photoPlans = new Map(await Promise.all(photoModules.map(async (module) => [
   module,
   JSON.parse(await readFile(new URL('../../docs/logistique/preparation/' + module + '-v002.json', import.meta.url), 'utf8')),
 ])))
+const requestedModules = process.argv.slice(2)
+assert(requestedModules.every((module) => photoPlans.has(module)), 'Module illustré inconnu')
 const externalUrl = process.env.LOGISTIQUE_TEST_URL
 const base = externalUrl ?? 'http://127.0.0.1:5190'
 const server = externalUrl ? null : await createServer({ server: { host: '127.0.0.1', port: 5190, strictPort: true } })
@@ -70,7 +72,7 @@ try {
   for (const diploma of ['CFC', 'AFP']) {
     await select('Domaine', 'Logistique ' + diploma)
     let currentTheme = '100'
-    for (const { module, figures } of plan.modules) {
+    for (const { module, figures } of requestedModules.length ? [] : plan.modules) {
       const { title, theme, year } = curriculum.modules.find(({ code }) => code === module)
       if (!year[diploma]) continue
       if (theme !== currentTheme) {
@@ -97,33 +99,36 @@ try {
         assert.match(theory.printText, /5\.7\.2 La manutention des marchandises/)
       }
     }
-    console.log(`Logistique ${diploma} : objectifs, aperçus et théories illustrées vérifiés sur les modules actifs.`)
+    if (!requestedModules.length) {
+      console.log(`Logistique ${diploma} : objectifs, aperçus et théories illustrées vérifiés sur les modules actifs.`)
 
-    await select('Thème', '100 — ' + curriculum.themes.find(({ code }) => code === '100').title)
-    await select('Sous-thème', '105 — Marchandises')
-    await select('Type d’exercice', 'Glossaires')
-    const glossary = await inspectPrint('Glossaire ' + diploma)
-    assert.equal(glossary.pages.reduce((sum, item) => sum + item.count, 0), 45)
-    await select('Type d’exercice', 'Mathématiques')
-    const calculations = await inspectPrint('Mathématiques ' + diploma)
-    assert.equal(calculations.pages.reduce((sum, item) => sum + item.count, 0), diploma === 'CFC' ? 8 : 4)
-    assert(calculations.pages.every(({ count }) => count >= 2))
-    assert.match(calculations.printText, /1 200 CHF/)
-    await select('Type d’exercice', 'Vérification des connaissances')
-    await inspectPrint('Vérification ' + diploma)
-    await select('Type d’exercice', 'Mises en situation')
-    await inspectPrint('Situations ' + diploma)
+      await select('Thème', '100 — ' + curriculum.themes.find(({ code }) => code === '100').title)
+      await select('Sous-thème', '105 — Marchandises')
+      await select('Type d’exercice', 'Glossaires')
+      const glossary = await inspectPrint('Glossaire ' + diploma)
+      assert.equal(glossary.pages.reduce((sum, item) => sum + item.count, 0), 45)
+      await select('Type d’exercice', 'Mathématiques')
+      const calculations = await inspectPrint('Mathématiques ' + diploma)
+      assert.equal(calculations.pages.reduce((sum, item) => sum + item.count, 0), diploma === 'CFC' ? 8 : 4)
+      assert(calculations.pages.every(({ count }) => count >= 2))
+      assert.match(calculations.printText, /1 200 CHF/)
+      await select('Type d’exercice', 'Vérification des connaissances')
+      await inspectPrint('Vérification ' + diploma)
+      await select('Type d’exercice', 'Mises en situation')
+      await inspectPrint('Situations ' + diploma)
 
-    await select('Sous-thème', '110 — ' + curriculum.modules.find(({ code }) => code === '110').title)
-    await select('Type d’exercice', 'Mathématiques')
-    const warehouse = await inspectPrint('Mathématiques 110 ' + diploma)
-    const count = diploma === 'CFC' ? 6 : 4
-    const numbers = Array.from({ length: count }, (_, index) => index + 1)
-    assert.deepEqual(warehouse.pages.flatMap((sheet) => sheet.numbers), [...numbers, ...numbers])
-    assert(warehouse.pages.every((sheet) => sheet.count >= 2))
-    console.log(`Modules 105 et 110 ${diploma} : questions groupées dans la fiche élève et le corrigé.`)
+      await select('Sous-thème', '110 — ' + curriculum.modules.find(({ code }) => code === '110').title)
+      await select('Type d’exercice', 'Mathématiques')
+      const warehouse = await inspectPrint('Mathématiques 110 ' + diploma)
+      const count = diploma === 'CFC' ? 6 : 4
+      const numbers = Array.from({ length: count }, (_, index) => index + 1)
+      assert.deepEqual(warehouse.pages.flatMap((sheet) => sheet.numbers), [...numbers, ...numbers])
+      assert(warehouse.pages.every((sheet) => sheet.count >= 2))
+      console.log(`Modules 105 et 110 ${diploma} : questions groupées dans la fiche élève et le corrigé.`)
+    }
 
     for (const [code, { visuals }] of photoPlans) {
+      if (requestedModules.length && !requestedModules.includes(code)) continue
       const caption = visuals[0].summaryAnchor
       const photos = visuals.length
       const { title, theme } = curriculum.modules.find(({ code: module }) => code === module)
@@ -132,12 +137,12 @@ try {
       await select('Type d’exercice', 'Théorie')
       assert.equal(await page.getByRole('group', { name: 'Nombre de colonnes', exact: true }).count(), 0)
       const complete = await inspectPrint(`${code} ${diploma} complet`)
-      assert.equal(await page.locator('.print-only-sheets img[src$="-photo-v002.webp"]').count(), photos)
+      assert.equal(await page.locator('.print-only-sheets img[src*="/assets/logistique/"][src$="-v002.webp"]').count(), photos)
       await page.getByRole('button', { name: 'Résumé', exact: true }).click()
       const summary = await inspectPrint(`${code} ${diploma} résumé`)
       assert(summary.printText.includes(caption))
       assert.notEqual(summary.printText, complete.printText)
-      assert.equal(await page.locator('.print-only-sheets img[src$="-photo-v002.webp"]').count(), photos)
+      assert.equal(await page.locator('.print-only-sheets img[src*="/assets/logistique/"][src$="-v002.webp"]').count(), photos)
       assert(summary.pages.length <= complete.pages.length)
       const pdf = await page.pdf({ preferCSSPageSize: true })
       assert.equal(pdf.subarray(0, 4).toString(), '%PDF')
@@ -145,7 +150,7 @@ try {
       const restored = await inspectPrint(`${code} ${diploma} complet restauré`)
       assert.equal(restored.printText, complete.printText)
     }
-    console.log(`Logistique ${diploma} : photos intégrées au cours et au résumé des ${photoPlans.size} modules révisés.`)
+    console.log(`Logistique ${diploma} : photos intégrées au cours et au résumé des ${requestedModules.length || photoPlans.size} modules révisés.`)
   }
   assert.deepEqual(errors, [])
 } finally {
