@@ -114,7 +114,8 @@ def build():
     additions = {**authored, **reused}
     media = json.loads(MEDIA.read_text(encoding='utf-8'))
     bindings, assets = media['bindings'], media['assets']
-    assert len(entries) == 252 and len(additions) == 233 and set(bindings) <= set(additions)
+    assert len(entries) == 252 and len(additions) == 233
+    assert set(bindings) <= {entry['exercise']['id'] for entry in entries}
     for path, asset in assets.items():
         assert path.startswith('/lib/images/tcf/')
         assert 3 * asset['width'] == 4 * asset['height']
