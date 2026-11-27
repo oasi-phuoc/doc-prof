@@ -19,7 +19,6 @@ import {
   resolveAxesGrid,
   sceneFromAxesLibre,
 } from '@/math/coord-reperage'
-import { TRANSFORM_MAX_POINTS } from '@/math/coord-transformations'
 import type { CoordAxis, ExerciseBlock, PageConfig, WorksheetPage } from '@/math/types'
 import type { CoordTool } from '@/components/generator/useCoordEditing'
 import type { Dispatch, SetStateAction } from 'react'
@@ -34,9 +33,6 @@ export type CoordLibreSettingsProps = {
   isComposer: boolean
   isDroites: boolean
   isConstruire: boolean
-  isTransform: boolean
-  isTransformCentrale: boolean
-  isTransformPlacer: boolean
   axesGrid: ReturnType<typeof resolveAxesGrid>
   updateAxesGrid: (patch: Partial<ExerciseBlock>) => void
   coordTool: CoordTool
@@ -58,9 +54,6 @@ export function CoordLibreSettings({
   isComposer,
   isDroites,
   isConstruire,
-  isTransform,
-  isTransformCentrale,
-  isTransformPlacer,
   axesGrid,
   updateAxesGrid,
   coordTool,
@@ -338,111 +331,39 @@ export function CoordLibreSettings({
                     </p>
                   )}
                 </div>
-              ) : isDroites || isConstruire || isTransform ? (
+              ) : isDroites || isConstruire ? (
                 <div className="coord-libre-panel">
-                  <b>
-                    {isDroites
-                      ? 'Repère (droites)'
-                      : isTransform
-                        ? 'Repère (transformations)'
-                        : 'Repère (construction)'}
-                  </b>
-                  {isTransform || isDroites || isConstruire ? (
-                    <div
-                      className="mode-toggle"
-                      role="group"
-                      aria-label={
-                        isTransform
-                          ? 'Mode de la figure'
-                          : 'Mode des questions'
-                      }
+                  <b>{isDroites ? 'Repère (droites)' : 'Repère (construction)'}</b>
+                  <div className="mode-toggle" role="group" aria-label="Mode des questions">
+                    <button
+                      type="button"
+                      className={!activeBlock.coordLibre ? 'active' : ''}
+                      onClick={() => {
+                        if (activeBlock.coordQuestionsLibre?.some((question) => question.libreId) &&
+                          !window.confirm('Revenir aux questions automatiques et remplacer les modifications de cette activité ?')) return
+                        updatePage({ coordLibre: false, coordQuestionsLibre: undefined })
+                      }}
                     >
-                      <button
-                        type="button"
-                        className={!activeBlock.coordLibre ? 'active' : ''}
-                        onClick={() => {
-                          if (activeBlock.coordQuestionsLibre?.some((question) => question.libreId) &&
-                            !window.confirm('Revenir aux questions automatiques et remplacer les modifications de cette activité ?')) return
-                          updatePage({
-                            coordLibre: false,
-                            coordMarks: isTransform ? [] : activeBlock.coordMarks,
-                            coordQuestionsLibre: undefined,
-                          })
-                        }}
-                      >
-                        Automatique
-                      </button>
-                      <button
-                        type="button"
-                        className={activeBlock.coordLibre ? 'active' : ''}
-                        onClick={() => {
-                          if (isTransform) {
-                            const sceneMarks =
-                              activeSheet?.blocks[safeBlockIndex]?.items[0]?.coordScene?.marks ?? []
-                            const fromScene = sceneMarks
-                              .filter(
-                                (mark) =>
-                                  mark.kind === 'point' &&
-                                  mark.label &&
-                                  !String(mark.label).endsWith('′'),
-                              )
-                              .map((mark) => ({
-                                x: mark.x,
-                                y: mark.y,
-                                kind: 'point' as const,
-                                label: mark.label,
-                                given: mark.label === 'Ω' ? true : undefined,
-                                showCoord: mark.label === 'Ω' ? true : undefined,
-                              }))
-                            const seed =
-                              activeBlock.coordMarks?.length ? activeBlock.coordMarks : fromScene
-                            const hasOmega = seed.some((mark) => mark.label === 'Ω')
-                            updatePage({
-                              coordLibre: true,
-                              coordMarks:
-                                isTransformCentrale && !hasOmega
-                                  ? [
-                                      ...seed,
-                                      {
-                                        x: 0,
-                                        y: 0,
-                                        kind: 'point',
-                                        label: 'Ω',
-                                        given: true,
-                                        showCoord: true,
-                                      },
-                                    ]
-                                  : seed,
-                              count: Math.max(
-                                3,
-                                Math.min(
-                                  TRANSFORM_MAX_POINTS,
-                                  seed.filter((mark) => mark.label !== 'Ω').length ||
-                                    activeBlock.count,
-                                ),
-                              ),
-                            })
-                            setCoordTool(isTransformCentrale ? 'points' : 'points')
-                            return
-                          }
-                          const fromSheet =
-                            activeSheet?.blocks[safeBlockIndex]?.items[0]?.coordQuestions
-                          updatePage({
-                            coordLibre: true,
-                            coordQuestionsLibre: resizeCoordQuestionsLibre(
-                              activeBlock.coordQuestionsLibre?.length
-                                ? activeBlock.coordQuestionsLibre
-                                : fromSheet,
-                              activeBlock.count,
-                              defaultCoordQuestionReply(activeBlock.exerciseType),
-                            ),
-                          })
-                        }}
-                      >
-                        Libre
-                      </button>
-                    </div>
-                  ) : null}
+                      Automatique
+                    </button>
+                    <button
+                      type="button"
+                      className={activeBlock.coordLibre ? 'active' : ''}
+                      onClick={() => {
+                        const fromSheet = activeSheet?.blocks[safeBlockIndex]?.items[0]?.coordQuestions
+                        updatePage({
+                          coordLibre: true,
+                          coordQuestionsLibre: resizeCoordQuestionsLibre(
+                            activeBlock.coordQuestionsLibre?.length ? activeBlock.coordQuestionsLibre : fromSheet,
+                            activeBlock.count,
+                            defaultCoordQuestionReply(activeBlock.exerciseType),
+                          ),
+                        })
+                      }}
+                    >
+                      Libre
+                    </button>
+                  </div>
                   <ReperageAxesFields
                     cols={activeBlock.coordCols ?? axesGrid.cols}
                     rows={activeBlock.coordRows ?? axesGrid.rows}
@@ -452,68 +373,7 @@ export function CoordLibreSettings({
                     onLiveCols={(n) => updatePage({ coordCols: n })}
                     onLiveRows={(n) => updatePage({ coordRows: n })}
                   />
-                  {isTransform && activeBlock.coordLibre ? (
-                    <>
-                      {isTransformCentrale ? (
-                        <div className="mode-toggle" role="group" aria-label="Outil de placement">
-                          <button
-                            type="button"
-                            className={coordTool === 'points' ? 'active' : ''}
-                            onClick={() => setCoordTool('points')}
-                          >
-                            Points
-                          </button>
-                          <button
-                            type="button"
-                            className={coordTool === 'center' ? 'active' : ''}
-                            onClick={() => setCoordTool('center')}
-                          >
-                            Centre Ω
-                          </button>
-                        </div>
-                      ) : null}
-                      <p className="type-hint muted">
-                        {isTransformCentrale
-                          ? 'Cliquez sur l’aperçu pour placer les sommets (A, B, C…) ou le centre Ω. Cliquez un point pour le retirer. Jusqu’à 10 points.'
-                          : 'Cliquez sur l’aperçu pour placer les sommets de la figure (A, B, C…). Cliquez un point pour le retirer. Jusqu’à 10 points.'}
-                      </p>
-                      <p className="type-hint muted">
-                        {(activeBlock.coordMarks ?? []).filter((mark) => mark.label !== 'Ω').length} /{' '}
-                        {Math.min(activeBlock.count, TRANSFORM_MAX_POINTS)} point
-                        {activeBlock.count > 1 ? 's' : ''}
-                        {isTransformCentrale
-                          ? (activeBlock.coordMarks ?? []).some((mark) => mark.label === 'Ω')
-                            ? ' · centre Ω placé'
-                            : ' · centre Ω manquant'
-                          : ''}
-                      </p>
-                      {(activeBlock.coordMarks?.length ?? 0) > 0 ? (
-                        <button
-                          type="button"
-                          className="button secondary"
-                          onClick={() =>
-                            updatePage({
-                              coordMarks: isTransformCentrale
-                                ? [
-                                    {
-                                      x: 0,
-                                      y: 0,
-                                      kind: 'point',
-                                      label: 'Ω',
-                                      given: true,
-                                      showCoord: true,
-                                    },
-                                  ]
-                                : [],
-                            })
-                          }
-                        >
-                          Vider les points
-                        </button>
-                      ) : null}
-                    </>
-                  ) : null}
-                  {(isDroites || isConstruire) && (activeBlock.coordLibre || liveCoordQuestions) ? (
+                  {activeBlock.coordLibre || liveCoordQuestions ? (
                     <CoordQuestionsLibreEditor
                       questions={
                         activeBlock.coordQuestionsLibre ??
@@ -541,15 +401,7 @@ export function CoordLibreSettings({
                       ? activeBlock.coordLibre
                         ? 'Mode libre : le repère (droites) reste généré ; vous rédigez ou modifiez les questions et les réponses du corrigé.'
                         : 'Une seule grille centrée. Colonnes et lignes (nombres pairs) font grandir le tableau ; les carrés restent à 3, 4 ou 5 mm (56, 42 ou 34 colonnes au plus). Chaque droite a une couleur et un tracé distinct, lisible en noir et blanc.'
-                      : isTransform
-                        ? activeBlock.coordLibre
-                          ? isTransformPlacer
-                            ? 'Mode libre : placez jusqu’à 10 sommets. Sur la fiche : colonne 1 = points à placer, colonne 2 = coordonnées des images. Pas de bloc questions.'
-                            : 'Mode libre : placez les sommets de la figure (et Ω en symétrie centrale). Pas de bloc questions : la consigne suffit.'
-                          : isTransformPlacer
-                            ? 'Types 3 et 4 : un point est donné sur le repère. Colonne 1 = points à placer, colonne 2 = coordonnées des nouveaux points. Jusqu’à 10 sommets.'
-                            : 'Types 1 et 2 : figure fermée déjà tracée. Construisez l’image (pas de liste de questions).'
-                        : activeBlock.coordLibre
+                      : activeBlock.coordLibre
                           ? 'Mode libre : la figure du repère reste générée ; vous rédigez ou modifiez les questions et les réponses du corrigé.'
                           : 'Une grille vide centrée, avec deux points donnés. Colonnes et lignes (nombres pairs) font grandir le tableau ; les carrés restent à 3, 4 ou 5 mm (56, 42 ou 34 colonnes au plus). Le corrigé montre les tracés.'}
                   </p>

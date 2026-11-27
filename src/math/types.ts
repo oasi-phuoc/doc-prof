@@ -235,6 +235,7 @@ export type CoordScene = {
   axis: CoordAxis
   marks: CoordMark[]
   vertices?: CoordVertex[]
+  symmetryAxis?: 'x' | 'y'
   /** Étendue du repère (−range à +range) pour le variant `axes` (carré). */
   range?: number
   /** Demi-largeur en unités (repère rectangulaire). */
@@ -1066,6 +1067,7 @@ export type ExerciseBlock = {
   coordCols?: number
   coordRows?: number
   coordAxis?: CoordAxis
+  coordSymmetryAxis?: 'x' | 'y'
   coordMarks?: CoordMark[]
   /** Étendue à 4 cadrans (−n à +n) ; maximum positif de chaque axe pour le TCM CFR 28. */
   coordRange?: number

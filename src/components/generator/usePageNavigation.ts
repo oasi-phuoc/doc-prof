@@ -1,5 +1,6 @@
 import { isInlineArithmetic } from '@/components/generator/libre/profiles'
 import { isMathReferenceType } from '@/math/theory-lessons'
+import { isTransformationExercise } from '@/math/coord-transformations'
 import { hasLockedItems } from '@/components/generator/libre/flat-items'
 import type { SpacingPreferences } from '@/components/generator/libre/preferences'
 import { grammarCoTypeId } from '@/grammaire/exercises/co-themes'
@@ -431,7 +432,9 @@ export function usePageNavigation({
   }, [activePage.domain, activeBlock.topic, activeBlock.exerciseType])
 
   function changeTopic(topic: string) {
-    if (topic !== activeBlock.topic && isMathReferenceType(activeBlock.exerciseType) && activeBlock.libreItems?.length &&
+    const editedReference = isMathReferenceType(activeBlock.exerciseType) && activeBlock.libreItems?.length
+    const editedFigure = isTransformationExercise(activeBlock.exerciseType) && activeBlock.coordLibre && activeBlock.coordMarks?.length
+    if (topic !== activeBlock.topic && (editedReference || editedFigure) &&
         !window.confirm('Changer de thème remplacera les modifications de cette activité. Continuer ?')) return
     if (isLogistiqueDomain(activePage.domain)) {
       const subtheme = logistiqueSubthemes(topic).find((entry) => entry.domain === activePage.domain)

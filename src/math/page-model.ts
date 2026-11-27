@@ -54,6 +54,7 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     coordCols: page.coordCols,
     coordRows: page.coordRows,
     coordAxis: page.coordAxis,
+    coordSymmetryAxis: page.coordSymmetryAxis,
     coordMarks: page.coordMarks,
     coordRange: page.coordRange,
     coordCellMm: page.coordCellMm,

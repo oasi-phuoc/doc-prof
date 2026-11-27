@@ -771,7 +771,7 @@ function AxesScene({
           ? `${found.label ?? ''}${found.label ? ' ' : ''}${formatAxesCoord(found.x, found.y)}`
           : found.label
         return (
-          <g key={`m-${found.label ?? i}-${found.x}-${found.y}`}>
+          <g key={`m-${found.label ?? i}-${found.x}-${found.y}`} pointerEvents={editable ? 'none' : undefined}>
             <circle cx={p.cx} cy={p.cy} r={Math.max(0.85, decorationCellMm * 0.22)} className="grid-point" />
             {caption ? (
               <text
