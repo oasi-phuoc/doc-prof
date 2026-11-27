@@ -26,11 +26,11 @@ async function open(context, data) {
   return page
 }
 
-async function toggleLive(page) {
-  const text = await preview(page).innerText()
+async function toggleLive(page, readContent = () => preview(page).innerText()) {
+  const text = await readContent()
   await button(page, 'Mode libre').click()
   assert.equal(await button(page, 'Valider les changements').count(), 0)
-  assert.equal(await preview(page).innerText(), text)
+  assert.equal(await readContent(), text)
 }
 
 try {
@@ -553,7 +553,15 @@ try {
   const glossary = await open(context, {
     domain: 'logistique-cfc', topic: 'log-cfc-theme-100', exerciseType: 'log-cfc-105-glossaire',
   })
-  await toggleLive(glossary)
+  const glossaryBody = preview(glossary).locator('.logistique-glossary-table tbody')
+  const glossaryRows = glossaryBody.locator('tr')
+  const rowCount = await glossaryRows.count()
+  assert(rowCount > 1)
+  await toggleLive(glossary, () => glossaryBody.evaluate((body) => {
+    const content = body.cloneNode(true)
+    content.querySelectorAll('.no-print').forEach((element) => element.remove())
+    return content.textContent
+  }))
   const glossaryPanel = glossary.locator('#activity-editor')
   const glossaryTerm = glossaryPanel.getByRole('textbox', { name: 'Notion', exact: true }).first()
   const originalTerm = await glossaryTerm.inputValue()
@@ -562,8 +570,9 @@ try {
   assert.match(await preview(glossary).locator('.logistique-glossary-table').innerText(), /Notion personnalisée.*Définition de l’atelier/s)
   await glossaryPanel.getByText('Présentation du contenu', { exact: true }).click()
   await button(glossaryPanel, 'Saut de page après Notion personnalisée').click()
-  await glossary.locator('.a4-frame').nth(1).waitFor()
+  assert.equal(await glossaryRows.count(), 1)
   await button(glossary, 'Annuler').click()
+  assert.equal(await glossaryRows.count(), rowCount)
   await button(glossary, 'Annuler').click()
   await button(glossary, 'Annuler').click()
   assert.equal(await glossaryTerm.inputValue(), originalTerm)
