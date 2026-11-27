@@ -58,6 +58,12 @@ Les quatre exercices de symétrie sur repère donnent accès aux sommets, à l�
 
 L’inventaire sur `0974f642` raccorde les quatre variantes. Sur 4 269 contextes de sélection, il reste 580 profils à raccorder en A4 et aucune erreur de génération n’est relevée.
 
+### Périmètres des figures simples en A4
+
+Les 17 types de périmètres donnent accès aux cotes connues, au périmètre donné lorsqu’une cote est à trouver, à l’unité et à la valeur de π. Les exercices mixtes et ceux sur les quadrilatères permettent aussi de choisir une figure. Les modifications recalculent la figure, l’énoncé et le corrigé. Les cotes en cours de saisie s’appliquent ensemble dès qu’elles forment une figure valide.
+
+Le test `node tests/mode-libre/perimeter-browser.mjs` couvre le calcul du périmètre, la cote inconnue, le changement d’unité et de figure, le rejet d’un triangle dégénéré, le verrou, l’annulation et le passage en double A5. Les 153 tirages automatiques comparés à `54fcc3b3` gardent les mêmes figures et résultats. L’inventaire sur `ebb8c54b` compte 523 contextes A4 à raccorder sur 4 269. Il ne relève aucune erreur de génération.
+
 ### Écoute de mots en Soutien FR et Alphabétisation
 
 Le panneau Libre permet de changer les mots des activités d’écoute avec QR et des activités d’écoute illustrées. La banque fournit les médias associés et le son de la leçon détermine la coche proposée dans le corrigé. La case reste modifiable pour une prononciation particulière. Un changement de quantité ou de colonnes conserve les mots personnalisés et leurs médias.
