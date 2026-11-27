@@ -57,7 +57,8 @@ function LogistiqueIllustratedPrompt({ item, mode, children }: { item: MathItem;
 export function SelectPillsRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const options = item.options ?? []
   const selectedSet = new Set(
-    (item.labels?.length ? item.labels : item.answer.split(/\s*·\s*|\s*,\s*/)).map((s) => s.trim()).filter(Boolean),
+    item.logistiqueLocalModule ? [item.answer] :
+      (item.labels?.length ? item.labels : item.answer.split(/\s*·\s*|\s*,\s*/)).map((s) => s.trim()).filter(Boolean),
   )
   const answerMode = item.answerMode ?? 'qcm'
   const isOral = item.selectVariant === 'oral'
@@ -157,10 +158,10 @@ export function SelectPillsRow({ item, mode }: { item: MathItem; mode: PreviewMo
         <span className="select-pills-prompt">{item.prompt}</span>
       </LogistiqueIllustratedPrompt>
       <div className="select-pills" role="group">
-        {options.map((option) => {
+        {options.map((option, index) => {
           const selected = mode === 'answers' && selectedSet.has(option)
           return (
-            <span key={option} className={`select-pill ${selected ? 'selected' : ''}`}>
+            <span key={`${option}-${index}`} className={`select-pill ${selected ? 'selected' : ''}`}>
               {option}
             </span>
           )

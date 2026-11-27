@@ -36,10 +36,11 @@ try {
     const request = route.request()
     assert.equal(request.headers().authorization, 'Bearer logistique-browser-fixture')
     if (request.method() === 'POST') {
+      const payload = request.postDataJSON()
       saved = {
-        ...request.postDataJSON(),
+        ...payload,
         id: 'logistique-test',
-        domains: ['logistique-afp'],
+        domains: [payload.recipe.pages[0].domain],
         createdAt: '2026-11-26T00:00:00Z',
         updatedAt: '2026-11-26T00:00:00Z',
       }
@@ -94,7 +95,9 @@ try {
 
     await page.getByRole('button', { name: 'Type d’exercice', exact: true }).click()
     const check = page.getByRole('option', { name: /^Vérification des connaissances/ })
-    assert.equal(await check.isDisabled(), diploma === 'AFP')
+    assert.equal(await check.isDisabled(), false)
+    assert.equal(await check.innerText(), diploma === 'AFP'
+      ? 'Vérification des connaissances (à compléter)' : 'Vérification des connaissances')
     await page.keyboard.press('Escape')
     if (diploma === 'CFC') {
       await select('Type d’exercice', 'Vérification des connaissances')
@@ -166,6 +169,7 @@ try {
   assert.equal(await editor.getByRole('button', { name: 'Ajouter un lot', exact: true }).isDisabled(), true)
   const alternativeCorrection = '180 kg + 28 kg = 208 kg'
   await editor.getByLabel('Calcul du corrigé').last().fill(alternativeCorrection)
+  await editor.getByRole('button', { name: 'Corrigé vérifié', exact: true }).click()
   await sheet.getByText(/^La palette pèse 28 kg/).waitFor()
   await editor.getByRole('button', { name: 'Régénérer les questions tirées', exact: true }).click()
   assert.equal(await editor.getByLabel('Calcul du corrigé').last().inputValue(), alternativeCorrection)
@@ -187,7 +191,8 @@ try {
   await dialog.getByRole('button', { name: 'Enregistrer une nouvelle fiche', exact: true }).click()
   await saveLibre
   await dialog.waitFor({ state: 'hidden' })
-  const manual = saved.recipe.pages[0].libreItems.find((item) => item.logistiqueRetained)
+  const manual = saved.recipe.pages[0].libreItems.find((item) => item.logistiqueSource?.id === 'fixture-308-maths')
+  assert.equal(manual.logistiqueRetained, true)
   assert.equal(manual.logistiqueSource.id, 'fixture-308-maths')
   assert.equal(manual.calcAnswer, alternativeCorrection)
   const firstItem = saved.recipe.pages[0].libreItems[0]
@@ -284,6 +289,48 @@ try {
   assert(!await table.getByText('800 millimètres').count())
   await page.emulateMedia({ media: 'print' })
   assert.deepEqual(await page.locator('.print-only-sheets .logistique-table-answer .filled-answer').allTextContents(), ['800 millimètres'])
+
+  await page.emulateMedia({ media: 'screen' })
+  await page.getByRole('button', { name: 'Fermer le mode libre', exact: true }).click()
+  for (const diploma of ['CFC', 'AFP']) {
+    await select('Domaine', 'Logistique ' + diploma)
+    await select('Sous-thème', '100 — Introduction aux modules')
+    await select('Type d’exercice', 'Mathématiques (à compléter)')
+    await page.getByRole('heading', { name: 'Contenu à compléter.' }).waitFor()
+    await page.getByRole('button', { name: 'Mode libre', exact: true }).click()
+    await editor.getByText('Ajouter une question libre', { exact: true }).click()
+    await editor.getByRole('button', { name: 'Ajouter à la fiche', exact: true }).click()
+    const localQuestion = 'Un transporteur livre 12 colis.\nLe tri en écarte 4. Combien en reste-t-il ?'
+    await editor.getByLabel('Énoncé', { exact: true }).fill(localQuestion)
+    await sheet.locator('[aria-label="Zone de calcul"]').waitFor()
+    assert(!await sheet.getByText('8 colis', { exact: true }).count())
+    await editor.getByLabel('Calcul du corrigé').fill('12 − 4 = 8')
+    await editor.getByLabel('Réponse', { exact: true }).fill('8 colis')
+    await editor.getByRole('button', { name: 'Corrigé vérifié', exact: true }).click()
+    await editor.getByRole('button', { name: 'Dupliquer la question 1', exact: true }).click()
+    await editor.getByLabel('Énoncé', { exact: true }).last().fill('Contrôlez le nombre de colis du deuxième envoi.')
+    await editor.getByRole('button', { name: 'Monter la question 2', exact: true }).click()
+    assert.equal(await editor.getByLabel('Énoncé', { exact: true }).last().inputValue(), localQuestion)
+    await editor.getByRole('button', { name: 'Supprimer la question 1', exact: true }).click()
+    assert.equal(await editor.getByLabel('Énoncé', { exact: true }).count(), 1)
+    const saveLocal = page.waitForResponse((response) =>
+      new URL(response.url()).pathname === '/__logistique_test/fiches' && response.request().method() === 'POST',
+    )
+    await page.getByRole('button', { name: 'Enregistrer', exact: true }).click()
+    await dialog.getByRole('button', { name: 'Enregistrer une nouvelle fiche', exact: true }).click()
+    await saveLocal
+    await dialog.waitFor({ state: 'hidden' })
+    const [item] = saved.recipe.pages[0].libreItems
+    assert.equal(item.logistiqueLocalModule, '100')
+    assert.equal(item.logistiqueSource, undefined)
+    assert.equal(item.prompt, localQuestion)
+    await page.goto(base + '/fiches')
+    await page.getByRole('button', { name: 'Ouvrir', exact: true }).click()
+    await page.waitForURL('**/generateur')
+    await sheet.getByText(/Un transporteur livre 12 colis/).waitFor()
+    assert.equal(await sheet.locator('.draft-pad').count(), 1)
+    await page.getByRole('button', { name: 'Fermer le mode libre', exact: true }).click()
+  }
   assert.deepEqual(errors, [])
   console.log('Pilotes CFC et AFP : sélection, édition Libre des photos, textes à trous et tableaux, enregistrement et PDF.')
 } finally {

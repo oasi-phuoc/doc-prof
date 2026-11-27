@@ -10,7 +10,8 @@ const palletPhoto = require('../../docs/logistique/preparation/306-v004.json').v
 const { load, root } = require('../../scripts/gattegno-loader.cjs')
 const catalog = load(root + '/src/logistique/catalog.ts')
 const { generateLogistique, logistiqueDocumentTitle, logistiqueHasSummary, logistiqueQuestionItems, logistiqueQuestionPhotos } = load(root + '/src/logistique/generate.ts')
-const { availableLogistiqueQuestions, retainLogistiqueQuestions } = load(root + '/src/logistique/libre.ts')
+const { availableLogistiqueQuestions, retainLogistiqueQuestions, newLogistiqueQuestion, reviewableLogistiqueAnswer } = load(root + '/src/logistique/libre.ts')
+const { buildPage } = load(root + '/src/math/generate.ts')
 const { editLogistiqueGaps, logistiqueGapDistractors, validLogistiqueGaps } = load(root + '/src/logistique/gaps.ts')
 const { validLogistiqueExerciseTable } = load(root + '/src/logistique/tables.ts')
 const { freezeLogistiquePages, validLogistiquePages } = load(root + '/src/logistique/recipe.ts')
@@ -550,6 +551,29 @@ test('les titres et les recettes conservent les modules, le diplôme et la révi
   assert.equal(validLogistiquePages([config('AFP', '902', 'theorie')]), false)
   assert.equal(validLogistiquePages([{ ...a, extraBlocks: [null] }]), false)
   assert.equal(validLogistiquePages([{ ...a, logistiqueBankRevision: 'inconnue' }]), false)
+})
+
+test('les questions locales sont imprimables et protégées même avec un filtre sans banque', () => {
+  for (const diploma of ['AFP', 'CFC']) {
+    const page = { ...config(diploma, '100', 'maths'), logistiqueSelection: { modules: [] } }
+    const draft = newLogistiqueQuestion('100', 'maths', false)
+    assert(draft.libreId && draft.libreCorrectionPending)
+    assert(!reviewableLogistiqueAnswer(draft))
+    assert.equal(draft.logistiqueSource, undefined)
+    const completed = { ...draft, prompt: 'De 12 colis, 4 sont expédiés.\nCombien en reste-t-il ?',
+      calcAnswer: '12 − 4 = 8', answer: '8 colis', responseAnswer: '8 colis', libreCorrectionPending: false }
+    assert(reviewableLogistiqueAnswer(completed))
+    const local = { ...page, libreId: 'log-activity', libreItems: [completed] }
+    assert.equal(validLogistiquePages([local]), true)
+    assert.deepEqual(buildPage(local, 7).items, [completed])
+    assert.deepEqual(retainLogistiqueQuestions(local, 7, true).libreItems, [completed])
+    assert.equal(validLogistiquePages([{ ...local, libreItems: [{ ...completed, logistiqueLocalModule: '000' }] }]), false)
+    const selected = config(diploma, '100', 'maths')
+    assert.deepEqual(buildPage({ ...selected, libreItems: [] }, 7).items, [])
+  }
+  const qcm = newLogistiqueQuestion('100', 'verification', true)
+  assert(!reviewableLogistiqueAnswer({ ...qcm, prompt: 'Quel colis reste en réserve ?', answer: 'A' }))
+  assert(reviewableLogistiqueAnswer({ ...qcm, prompt: 'Quel colis reste en réserve ?', options: ['Le bleu, fermé', 'Le rouge'], answer: 'Le bleu, fermé' }))
 })
 
 test('les questions restent dans l’ordre et partagent les pages sauf saut manuel', () => {

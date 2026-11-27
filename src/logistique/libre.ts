@@ -1,7 +1,34 @@
 import { createRng, shuffle } from '@/math/rng'
 import type { ExerciseBlock, MathItem, PageConfig } from '@/math/types'
-import { isLogistiqueDomain } from './catalog'
+import { isLogistiqueDomain, type LogistiqueType } from './catalog'
 import { generateLogistique } from './generate'
+
+export function newLogistiqueQuestion(module: string, kind: LogistiqueType['kind'], qcm: boolean): MathItem {
+  return {
+    libreId: `log-question-${crypto.randomUUID()}`,
+    logistiqueLocalModule: module,
+    logistiqueRetained: true,
+    libreCorrectionPending: true,
+    layout: qcm ? 'select' : 'text',
+    prompt: '',
+    answer: '',
+    ...(qcm ? { options: ['', '', '', ''] } : {}),
+    ...(kind === 'maths' ? { calcAnswer: '', responseAnswer: '' } : {}),
+  }
+}
+
+export function completeLogistiquePrompt(item: MathItem): boolean {
+  if (!item.prompt?.trim()) return false
+  if (item.layout !== 'select') return true
+  const choices = item.options?.map((option) => option.trim()) ?? []
+  return choices.length >= 2 && choices.every(Boolean) && new Set(choices).size === choices.length
+}
+
+export function reviewableLogistiqueAnswer(item: MathItem): boolean {
+  return completeLogistiquePrompt(item) && Boolean(item.answer.trim()) &&
+    (item.calcAnswer === undefined || Boolean(item.calcAnswer.trim())) &&
+    (item.layout !== 'select' || Boolean(item.options?.includes(item.answer)))
+}
 
 export function availableLogistiqueQuestions(candidates: readonly MathItem[], existing: readonly MathItem[]): MathItem[] {
   const ids = new Set<string>()
@@ -20,7 +47,7 @@ export function selectLogistiqueLot(candidates: MathItem[], count: number, seed:
 
 export function retainLogistiqueQuestions(config: PageConfig, seed: number, evaluation: boolean): Partial<ExerciseBlock> {
   if (!isLogistiqueDomain(config.domain)) return {}
-  const retained = config.libreItems?.filter((item) => item.logistiqueRetained)
+  const retained = config.libreItems?.filter((item) => item.logistiqueRetained || item.libreLocked)
   if (!retained?.length) return {}
   const excluded = new Set(retained.flatMap((item) => item.logistiqueSource ? [item.logistiqueSource.id] : []))
   const draw = generateLogistique(evaluation ? config : { ...config, logistiqueSelection: undefined }, seed, undefined, excluded)

@@ -1,5 +1,6 @@
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import { headingForSlice } from '@/math/page-break-heading'
+import { isWrittenProblem } from '@/math/problem-help'
 import type { MathItem, WorksheetBlock, WorksheetPage } from '@/math/types'
 
 export type LogistiquePageLayout = {
@@ -160,10 +161,11 @@ function height(item: MathItem, a5: boolean, scale: number): number {
     const lines = row.map((cell) => lineCount(typeof cell === 'string' ? cell : cell.answer, columnWidth))
     return sum + (a5 ? 5 : 9) + (a5 ? 20 : 23) * scale * Math.max(...lines)
   }, 0) + (a5 ? 0 : Math.max(0, scale - 1) * 100) : 0
-  if (item.calcAnswer) {
+  if (isWrittenProblem(item)) {
     // Même un énoncé court conserve la grille, le trait et leurs espacements.
     const minimum = (a5 ? 183 : 248) + (scale - 1) * 56
-    const calculations = table ? lineCount(item.calcAnswer, width) * 18 * scale : 0
+    const calculations = item.calcAnswer && (table || item.logistiqueLocalModule)
+      ? lineCount(item.calcAnswer, width) * 18 * scale : 0
     return imageHeight + tableHeight + Math.max(minimum, (a5 ? 145 : 174) + prompt + answer, calculations + prompt + answer + 36)
   }
   const spacing = a5 || table ? 48 : 58

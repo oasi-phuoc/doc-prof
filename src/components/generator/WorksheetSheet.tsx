@@ -1,4 +1,5 @@
 import { isLogistiqueDomain, LOGISTIQUE_DOMAINS } from '@/logistique/catalog'
+import { isWrittenProblem } from '@/math/problem-help'
 import epcaLogo from '@/assets/logos/epca.svg'
 import { grammarPageBreakQuestionId } from '@/grammaire/curriculum/pagination'
 import { Children, type CSSProperties, type HTMLAttributes, type ReactElement } from 'react'
@@ -237,7 +238,7 @@ export function WorksheetSheet({
       item.layout === 'equation' ||
       item.layout === 'algebra' ||
       (item.layout === 'geo' && Boolean(item.calcAnswer || item.responseAnswer)) ||
-      (item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)),
+      isWrittenProblem(item),
   )
   /** Soutien FR : Colonnes = grille interne ; la feuille A4 reste 1 colonne. */
   const sheetColumns = page.items.some((item) =>
@@ -315,7 +316,7 @@ export function WorksheetSheet({
               item.layout === 'equation' ||
               item.layout === 'algebra' ||
               (item.layout === 'geo' && Boolean(item.calcAnswer || item.responseAnswer)) ||
-              (item.layout === 'text' && Boolean(item.calcAnswer || item.responseAnswer)),
+              isWrittenProblem(item),
           )
           const blockHeading = block.title
           const sideProblemInstruction = cfrSideProblemInstruction(block)
