@@ -180,16 +180,43 @@ La révision `logistique-exercices-service-client-v003` ajoute 126 exercices cor
 
 Les 54 parcours A4 et PDF couvrent la capacité complète des trois types, avec corrigé et numérotation continue. La réserve minimale mesurée au pied était de 58,80 px.
 
+### Relecture des mathématiques — thèmes 100 et 200
+
+Les 100 problèmes ajoutés lors de l’enrichissement des deux thèmes ont été relus avec la théorie, l’énoncé, les unités et le calcul. Chaque problème est rattaché à un titre du cours. La révision `logistique-maths-fondations-service-v004` reformule ou remplace 35 problèmes. Les exercices de calendrier et de quantités du 101 renvoient aux routes commerciales et au ravitaillement. Le 201 distingue chiffre d’affaires et encaissement, le 202 applique les contrôles d’hygiène et le 205 calcule un passage à l’action dans le modèle AIDA. [Références et retouches par problème](../../src/logistique/banks/relecture-maths-v004.ts).
+
+Les 40 parcours A4 et PDF de mathématiques ont été vérifiés sur la banque complète, dans les deux diplômes. La réserve minimale mesurée était de 39,95 px. Les recettes vers les révisions précédentes restent résolubles.
+
+### Approvisionnement — 301 à 312
+
+La révision `logistique-exercices-approvisionnement-v004` ajoute 180 exercices corrigés, dont 72 calculs, 60 vérifications et 48 mises en situation. L’AFP partage 156 de ces unités, dont 60 calculs. Chaque nouveau problème de mathématiques est lié à une section du cours. Les calculs portent notamment sur le coût complet et le besoin net, les écarts de réception, les formats de palettes, la tare, les tolérances, la formule d’Andler et le cycle de stock. [Banque Approvisionnement](../../src/logistique/banks/approvisionnement-exercices-v004.ts).
+
+| Module | Calculs CFC / AFP | Vérifications CFC / AFP | Situations CFC / AFP |
+|---|---:|---:|---:|
+| 301 | 12 / 9 | 11 / 11 | 8 / 6 |
+| 302 | 12 / 9 | 11 / 11 | 8 / 6 |
+| 303 | 12 / 9 | 11 / 11 | 8 / 7 |
+| 304 | 12 / 9 | 11 / 11 | 8 / 6 |
+| 305 | 12 / 9 | 11 / 11 | 8 / 6 |
+| 306 | 12 / 9 | 11 / 11 | 8 / 7 |
+| 307 | 12 / 9 | 11 / 11 | 8 / 6 |
+| 308 | 11 / 9 | 12 / 12 | 10 / 7 |
+| 309 | 12 / 9 | 11 / 11 | 8 / 6 |
+| 310 | 12 / 9 | 11 / 11 | 8 / 7 |
+| 311 | 12 / 9 | 11 / 11 | 8 / 6 |
+| 312 | 12 / 9 | 11 / 11 | 8 / 7 |
+
+Les 72 parcours A4 et PDF couvrent les banques complètes de calculs, de vérifications et de situations en CFC et AFP, avec leurs corrigés et une numérotation continue. La réserve minimale au pied est de 39,95 px. Les tests de génération vérifient l’existence de chaque section citée et la conservation des tirages enregistrés.
+
 ## Reprise opérationnelle
 
 La publication des modules est terminée pour les deux diplômes. La publication `logistique-901-v001` a clôturé le premier passage sur le catalogue. La révision `logistique-illustrations-fico-ict-projets-v003` rassemble les cours et les résumés du deuxième passage illustré. Chaque recette conserve sa révision de banque.
 
 | Diplôme | Modules | Types actifs | Problèmes de calcul | Questions de vérification | Situations |
 |---|---:|---:|---:|---:|---:|
-| CFC | 80 | 480 | 545 | 546 | 374 |
-| AFP | 63 | 378 | 329 | 445 | 272 |
+| CFC | 80 | 480 | 617 | 606 | 422 |
+| AFP | 63 | 378 | 389 | 505 | 308 |
 
-Les effectifs sont dédupliqués par identifiant dans chaque diplôme. La banque commune compte 1 465 unités d’exercice distinctes au total. Les cibles nominales du §5.1 (30 calculs, 50 vérifications et 20 situations par module et diplôme) restent à atteindre. Les demandes de sélection avancée en Évaluation et en Libre figurent dans les lots L1b à L1f.
+Les effectifs sont dédupliqués par identifiant dans chaque diplôme. La banque commune compte 1 645 unités d’exercice distinctes au total. Les cibles nominales du §5.1 (30 calculs, 50 vérifications et 20 situations par module et diplôme) restent à atteindre. Les demandes de sélection avancée en Évaluation et en Libre figurent dans les lots L1b à L1f.
 
 Pour un enrichissement ultérieur, partir des archives et du dossier éditorial du module, vérifier les droits par diplôme, les corrigés, la composition A4 et la continuité des recettes. Enregistrer chaque nouvelle révision et ses résultats dans ce suivi. [Archives par thème](sources-epcas/).
 

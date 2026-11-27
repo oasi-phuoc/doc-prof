@@ -602,6 +602,8 @@ Objectif nominal : **14 300 occurrences d’unités tirables** dans les deux cat
 
 Pour chaque banque, établir une matrice : objectif de cours → notion → forme → difficulté → identifiants des unités. Chaque notion essentielle possède au moins une question de compréhension et une question d'application quand pertinent. Répartition cible : 40 % fondamentaux, 40 % application, 20 % approfondissement (ajustable selon le module). Tous les objectifs sont couverts, pas seulement les notions les plus faciles à générer.
 
+Rattacher chaque problème de mathématiques ajouté ou repris à une section précise de la théorie du même module. Le calcul doit servir une décision, un contrôle ou une mesure du métier expliqués dans cette section. Donner les hypothèses et les unités utiles dans l’énoncé. Dans le corrigé, nommer la méthode, montrer les étapes et interpréter le résultat lorsque la situation le demande. La relecture des problèmes déjà publiés applique les mêmes critères. Le rattachement est conservé dans les données éditoriales de la banque.
+
 ### 5.2 Vérification des connaissances
 
 Cible indicative de 50 unités : 20 questions ouvertes, 10 QCM à quatre propositions (simples ou multiples explicitement signalés), 5 vrai/faux justifiés, 5 textes à trous, 5 associations, 5 classements/ordonnancements, comparaisons ou analyses de documents. Adapter à la nature du module ; les formes sont des réglages internes, pas des types supplémentaires. Chaque unité doit inclure un énoncé autonome, une notion ciblée, une difficulté, une réponse attendue, une explication, les variantes acceptables ou critères d'appréciation, et éventuellement des points et références.

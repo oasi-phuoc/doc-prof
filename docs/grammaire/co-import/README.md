@@ -24,13 +24,13 @@ La banque `src/grammaire/exercises/co-bank.json` conserve les identifiants, enre
 
 | Niveau | Pistes | QCM texte et réponse sur trait | Questions avec QCM image | Scènes de support |
 | --- | ---: | ---: | ---: | ---: |
-| A1 | 127 | 419 | 94 | 2 |
-| A2 | 125 | 155 | 34 | 9 |
-| **Total** | **252** | **574** | **128** | **11** |
+| A1 | 127 | 419 | 108 | 2 |
+| A2 | 125 | 155 | 37 | 9 |
+| **Total** | **252** | **574** | **145** | **11** |
 
 Les 100 questions déjà présentes ont été conservées. Les 474 nouvelles questions sont rattachées à un passage de la transcription. La banque réutilise les questions TCF lorsque le dialogue correspond et propose des questions rédigées pour les autres pistes. Le [relevé des passages et des réemplois](questions-verification-20261127.json) permet de retrouver chaque réponse ajoutée.
 
-Dans le générateur, les formes **Texte**, **Phrase** et **Image** correspondent au QCM texte, à la réponse sur trait et au QCM illustré. La forme Image est disponible lorsque trois illustrations distinctes correspondent aux choix. Le dernier lot a ajouté 14 QCM image, dont les nouvelles illustrations des pruneaux et du phare. Onze pistes affichent aussi une scène de dialogue, dont deux ajoutées dans ce lot sur la visite d’un studio et les conseils professionnels. Chaque scène montre les deux interlocuteurs. Les scènes et les choix intégrés ont été examinés visuellement selon le [référentiel graphique TCF](../../tcf/style-images.md). Le [registre des illustrations](illustrations-co-20261127.json) conserve les sources, les empreintes et les passages associés.
+Dans le générateur, les formes **Texte**, **Phrase** et **Image** correspondent au QCM texte, à la réponse sur trait et au QCM illustré. La forme Image est disponible lorsque trois illustrations distinctes correspondent aux choix. Le dernier lot ajoute 17 QCM image. Les choix nouvellement dessinés ont été générés dans des fichiers individuels, notamment pour les métiers, les médicaments et la randonnée en rollers, à cheval ou à vélo. Onze pistes affichent aussi une scène de dialogue qui montre les deux interlocuteurs. Les scènes et les choix intégrés ont été examinés visuellement selon le [référentiel graphique TCF](../../tcf/style-images.md). Le [registre des illustrations](illustrations-co-20261127.json) conserve les sources, les empreintes et les passages associés.
 
 Les questions ont été relues sur les transcriptions recoupées. Lors de la première passe, les pistes et les images ont été testées dans le navigateur sur un échantillon des deux niveaux, avec les formes disponibles et l’export PDF. L’écoute de validation et l’approbation enseignante restent à faire.
 
