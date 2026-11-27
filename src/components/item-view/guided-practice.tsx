@@ -1,5 +1,5 @@
 import { columnItem, fmt } from '@/math/column-arith'
-import { ADDITION_CARRY_TYPE, RULER_SEGMENT_TYPE } from '@/math/guided-practice'
+import { ADDITION_CARRY_TYPE, RULER_SEGMENT_TYPE, SUBTRACTION_EXCHANGE_TYPE, subtractionExchangeItem } from '@/math/guided-practice'
 import type { MathItem } from '@/math/types'
 import { ColumnOp } from './columns'
 
@@ -53,8 +53,10 @@ const carryExample: MathItem = {
   ...columnItem('+', 27, 15, 27 + 15, false),
   additionCarryPractice: 'guided',
 }
+const exchangeExample = { ...subtractionExchangeItem(42, 17, true), prompt: undefined }
+const exchangeAcrossZeroExample = { ...subtractionExchangeItem(302, 67, true), prompt: undefined }
 
-export function MathWorkedExample({ exerciseType }: { exerciseType: string }) {
+export function MathWorkedExample({ exerciseType, subtractionAcrossZero = false }: { exerciseType: string; subtractionAcrossZero?: boolean }) {
   if (exerciseType === ADDITION_CARRY_TYPE) {
     return (
       <figure className="math-worked-example math-worked-addition">
@@ -76,6 +78,27 @@ export function MathWorkedExample({ exerciseType }: { exerciseType: string }) {
         <figcaption><strong>Exemple</strong></figcaption>
         <RulerSegmentFigure segment={{ startMm: 20, endMm: 70, guided: true }} showPositions />
         <p><b className="math-worked-result">7 − 2 = 5 cm</b>.</p>
+      </figure>
+    )
+  }
+  if (exerciseType === SUBTRACTION_EXCHANGE_TYPE) {
+    return (
+      <figure className="math-worked-example math-worked-addition">
+        <ColumnOp item={subtractionAcrossZero ? exchangeAcrossZeroExample : exchangeExample} mode="answers" />
+        <figcaption>
+          <strong>Exemple</strong>
+          {subtractionAcrossZero ? <>
+            <p>J’échange 1 centaine contre 10 dizaines.</p>
+            <p>J’échange 1 dizaine contre 10 unités.</p>
+            <p>J’écris <b className="math-worked-step">2 centaines, 9 dizaines et 12 unités</b>.</p>
+            <p>La <b className="math-worked-result">différence</b> est 235.</p>
+          </> : <>
+            <p>Je prends <b className="math-worked-step">1 dizaine</b>.</p>
+            <p>Je l’échange contre <b className="math-worked-step">10 unités</b>.</p>
+            <p>Il reste 3 dizaines. J’ai 12 unités.</p>
+            <p>La <b className="math-worked-result">différence</b> est 25.</p>
+          </>}
+        </figcaption>
       </figure>
     )
   }

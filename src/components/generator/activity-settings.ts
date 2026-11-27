@@ -1,4 +1,5 @@
 import { exerciseTypeById } from '@/math/catalog'
+import { TRANSLATION_PRACTICE_TYPE } from '@/math/guided-practice'
 
 // Les générateurs de ces séries utilisent leurs propres bornes et règles de tirage.
 const fixedDifficultyTypes = new Set([
@@ -22,6 +23,7 @@ const fixedDifficultyTypes = new Set([
 ])
 
 export function supportsActivityDifficulty(type: string, count: number) {
+  if (type === TRANSLATION_PRACTICE_TYPE) return true
   return !fixedDifficultyTypes.has(type) && !/^(transformations-|societe-suisse-)/.test(type) &&
     (type !== 'conversions-longueur' || count < 2)
 }

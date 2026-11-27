@@ -18,9 +18,10 @@ import {
 } from '@/components/math/PrintDocumentChrome'
 import { DecomposeExample } from '@/components/item-view/decompose'
 import { MathWorkedExample } from '@/components/item-view/guided-practice'
+import { MathGeometryExample } from '@/components/item-view/guided-geometry'
 import { LogistiqueGlossaryTable } from '@/components/item-view/logistique-glossary'
 import { isDraftPadExercise } from '@/math/catalog'
-import { ADDITION_CARRY_TYPE } from '@/math/guided-practice'
+import { isGuidedColumnType, isSingleColumnPractice } from '@/math/guided-practice'
 import { blockPointsTotal, formatPointsLabel, sumPointWeights } from '@/tpm/test'
 import { isReperageConstruire } from '@/math/coord-reperage'
 import type {
@@ -235,7 +236,7 @@ export function WorksheetSheet({
     !hideChrome && !isJeuxSheet && (Boolean(asHalf) || forceHeader || pageNumber === 1)
   const showFooter = !hideChrome && !isJeuxSheet
   const compactMathTheoryHeader = Boolean(asHalf) && page.items.some((item) => item.mathTheory)
-  const compactMathHeader = compactMathTheoryHeader || (Boolean(asHalf) && page.items.some((item) => item.rulerSegment || item.additionCarryPractice))
+  const compactMathHeader = Boolean(asHalf) && (compactMathTheoryHeader || page.blocks.some(({ exerciseType }) => isGuidedColumnType(exerciseType) || isSingleColumnPractice(exerciseType)))
   const parity = sheetIndex % 2 === 1 ? 'sheet-odd' : 'sheet-even'
   const isDraftPadPage = page.items.some(
     (item) =>
@@ -327,7 +328,7 @@ export function WorksheetSheet({
           const cscCopy = sideProblemInstruction == null && block.instruction && (/^tcm-c(?:sc|fr)-/.test(block.exerciseType) || block.exerciseType.startsWith('tpm-decompose')) ? cscSheetCopy(block.exerciseType, block.instruction) : null
           const instructionText = sideProblemInstruction ?? (cscCopy ? cscCopy.text : block.instruction)
           const isTheoryBlock = block.items.some((item) => item.layout === 'theory')
-          const blockColumns = block.exerciseType === ADDITION_CARRY_TYPE ? Math.min(block.columns ?? 2, 2) : (block.columns ?? 1)
+          const blockColumns = isGuidedColumnType(block.exerciseType) ? Math.min(block.columns ?? 2, 2) : (block.columns ?? 1)
           const perQ = block.pointsPerQuestion ?? pointsPerQuestion
           const blockPts = block.pointsWeights
             ? sumPointWeights(block.pointsWeights, perQ)
@@ -371,7 +372,7 @@ export function WorksheetSheet({
           return (
             <WorksheetSettingsScope target={activitySettingsTarget} key={`${block.exerciseType}-${block.exerciseIndex}`}>
             <section
-              className="exercise-block"
+              className={`exercise-block${evalMode ? ' is-evaluation' : ''}`}
               data-exercise-type={block.exerciseType}
               style={
                 blankPx != null
@@ -495,7 +496,8 @@ export function WorksheetSheet({
                   )}
                 </div>
               ) : null}
-              {!evalMode && <MathWorkedExample exerciseType={block.exerciseType} />}
+              {!evalMode && <MathWorkedExample exerciseType={block.exerciseType} subtractionAcrossZero={block.items[0]?.subtractionExchange?.digits.length === 3} />}
+              {!evalMode && <MathGeometryExample exerciseType={block.exerciseType} />}
               <WorksheetItems
                 groupedOperations={/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType)}
                 className={`exercise-grid${block.exerciseType === 'transformations-tracer-axes' ? ' coord-grid-columns' : ''}${
@@ -512,8 +514,8 @@ export function WorksheetSheet({
                     rowGap: block.questionGapPx,
                     columnGap: block.columns > 1 ? block.columnGapPx : undefined,
                     /* Soutien FR : Colonnes = grille interne ; la feuille reste 1 col. */
-                    '--sheet-columns': block.items.some((item) =>
-                      item.rulerSegment || [
+                    '--sheet-columns': isSingleColumnPractice(block.exerciseType) || block.items.some((item) =>
+                      [
                         'vocab-table',
                         'letter-grid',
                         'syllable-table',

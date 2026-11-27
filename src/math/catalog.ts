@@ -1,6 +1,13 @@
 import { MATH_THEORY_PREFIX, mathTheoryLessons } from './theory-lessons'
 import { ALGEBRA_GLOSSARY, GEOMETRY_GLOSSARY } from './glossary-banks'
-import { ADDITION_CARRY_TYPE, RULER_SEGMENT_TYPE } from './guided-practice'
+import {
+  ADDITION_CARRY_TYPE,
+  REAL_MAP_TYPE,
+  RECTANGLE_MEASURES_TYPE,
+  RULER_SEGMENT_TYPE,
+  SUBTRACTION_EXCHANGE_TYPE,
+  TRANSLATION_PRACTICE_TYPE,
+} from './guided-practice'
 import { PHRASE_THEME_DEFS } from '@/francais/phrase-themes'
 import type { Difficulty, Domain, ExerciseType, FrenchTrack, Topic } from './types'
 import {
@@ -501,6 +508,7 @@ export const exerciseTypes: ExerciseType[] = [
   t('soustraction-trou', 'soustraction', 'En ligne avec des trous', 'Compléter 83 − ? = 46 ou ? − 37 = 46.', 'Complétez le nombre manquant.', 'trou'),
   t('soustraction-colonne', 'soustraction', 'En colonnes (nombres posés)', 'Les nombres sont déjà alignés dans le tableau.', 'Effectuez les soustractions en colonnes. Écrivez le résultat et les emprunts.', 'colonne', { preferredColumns: 2 }),
   t('soustraction-colonne-poser', 'soustraction', 'En colonnes (à poser)', 'Poser soi-même les nombres dans le tableau.', 'Posez les nombres, puis calculez.', 'colonne-vide', { preferredColumns: 2 }),
+  t(SUBTRACTION_EXCHANGE_TYPE, 'soustraction', 'Soustraction avec échange, pas à pas', 'Calculer une différence en échangeant une dizaine ou une centaine.', 'Calculez chaque soustraction.', 'colonne', { preferredColumns: 2, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
   t('soustraction-comparer', 'soustraction', 'Comparer des différences', 'Comparer 90 − 12 et 88 − 8.', 'Coloriez la pastille correcte.', 'ligne', { preferredColumns: 2 }),
   t(
     'soustraction-tableau',
@@ -688,6 +696,7 @@ export const exerciseTypes: ExerciseType[] = [
 
   t('aires-carre', 'aires', 'Carré', 'Aire d’un carré.', 'Calculez l’aire.', 'geo', { figure: 'square', preferredColumns: 2 }),
   t('aires-rectangle', 'aires', 'Rectangle', 'Aire d’un rectangle.', 'Calculez l’aire.', 'geo', { figure: 'rectangle', preferredColumns: 2 }),
+  t(RECTANGLE_MEASURES_TYPE, 'aires', 'Périmètre et aire du même rectangle', 'Distinguer le tour en cm et la surface en cm².', 'Calculez les deux mesures de chaque rectangle.', 'texte', { preferredColumns: 1, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
   t('aires-triangle', 'aires', 'Triangle', 'Aire = (b × h) / 2 (tous types).', 'Calculez l’aire.', 'geo', { figure: 'triangle', preferredColumns: 2 }),
   t('aires-parallelogramme', 'aires', 'Parallélogramme', 'Aire = b × h.', 'Calculez l’aire.', 'geo', { figure: 'parallelogram', preferredColumns: 2 }),
   t('aires-losange', 'aires', 'Losange', 'Aire = c × h.', 'Calculez l’aire.', 'geo', { figure: 'rhombus', preferredColumns: 2 }),
@@ -787,6 +796,8 @@ export const exerciseTypes: ExerciseType[] = [
   t('transformations-symetrie-quadrillage', 'transformations', 'Compléter une silhouette par symétrie', 'Tracer le reflet d’une silhouette sur un quadrillage.', 'Dessinez le reflet de la silhouette de l’autre côté de l’axe.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
   t('transformations-translation', 'transformations', 'Construire l’image par translation', 'Déplacer chaque sommet d’une figure selon le même déplacement.', 'Construisez l’image de la figure en suivant le déplacement indiqué.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
   t('transformations-quart-tour', 'transformations', 'Faire pivoter une figure d’un quart de tour', 'Tourner une silhouette de 90° sur un quadrillage.', 'Suivez le sens indiqué pour reproduire la figure après un quart de tour.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
+  t(TRANSLATION_PRACTICE_TYPE, 'transformations', 'Translation, pas à pas', 'Déplacer les sommets d’un triangle sur un quadrillage.', 'Faites glisser le triangle.', 'texte', { preferredColumns: 1, preferredCount: 1, maxCount: 1, supportsNumberRange: false }),
+  t(REAL_MAP_TYPE, 'reperage', 'Lire une photo aérienne de Sion', 'Repérer des lieux de Sion sur une orthophoto quadrillée.', 'Repérez les lieux grâce aux points et aux cases.', 'texte', { preferredColumns: 1, preferredCount: 1, maxCount: 1, supportsNumberRange: false }),
   ...Object.entries(mathTheoryLessons).map(([topic, lesson]) =>
     t(`${MATH_THEORY_PREFIX}${topic}`, topic, 'Théorie', lesson.title, '', 'texte', {
       preferredColumns: 1, preferredCount: 1, maxCount: 1, supportsNumberRange: false,
@@ -1024,7 +1035,7 @@ export function isDraftPadExercise(typeId: string): boolean {
     logistiqueType(typeId)?.kind === 'maths' ||
     typeId.startsWith('equations-') ||
     typeId.startsWith('perimetres-') ||
-    (typeId.startsWith('aires-') && typeId !== 'aires-composees-quadrillage' && typeId !== 'aires-perimetres-comparer') ||
+    (typeId.startsWith('aires-') && typeId !== 'aires-composees-quadrillage' && typeId !== 'aires-perimetres-comparer' && typeId !== RECTANGLE_MEASURES_TYPE) ||
     typeId.startsWith('volumes-') ||
     // TPM : géométrie périmètre/aire, priorité, réduction, évaluation, équations.
     // Pas de grille pour ops décimales / puissances / relatifs / fractions (ex. 26, 27, 29, 30).

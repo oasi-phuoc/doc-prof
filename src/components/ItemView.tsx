@@ -77,6 +77,7 @@ import { TableAndGraph } from './item-view/function-practice'
 import { AreaFigures, SolidViewChoices } from './item-view/geometry-practice'
 import { MeasurementScale } from './item-view/measurement-practice'
 import { RulerSegmentFigure } from './item-view/guided-practice'
+import { RectangleMeasuresPractice, SionMapPractice, TranslationPractice } from './item-view/guided-geometry'
 import { MathTheoryView } from './item-view/math-theory'
 import { BaseTenCollection, LengthUnitComparison, MenuPriceTable } from './item-view/foundations-practice'
 import { FunctionValueTable, NumberLinePractice } from './item-view/number-representations'
@@ -181,7 +182,7 @@ export function ItemView({
   /** Inline (ex. substitution) : brouillon seulement si le chip grille est branché. */
   const isInlineDraft = item.layout === 'inline' && Boolean(onToggleDraftGrid)
   const isDraftPad = isProblem || isEquation || isGeoCalc || isAlgebraDraft || isInlineDraft
-  const isStackedText = item.layout === 'text' && !isProblem
+  const isStackedText = item.layout === 'text' && !isProblem && !item.rectangleMeasures && !item.translationPractice && !item.sionMap
   const isOralSelect = item.layout === 'select' && item.selectVariant === 'oral'
   const resolvedOralMode = oralAnswerMode ?? item.answerMode ?? 'qcm'
   const oralItem = isOralSelect ? { ...item, answerMode: resolvedOralMode } : item
@@ -496,6 +497,9 @@ export function ItemView({
         {item.spatial && <SpatialPracticeView practice={item.spatial} mode={mode} />}
         {item.measureScale && <MeasurementScale scale={item.measureScale} />}
         {item.rulerSegment && <RulerSegmentFigure segment={item.rulerSegment} />}
+        {item.rectangleMeasures && <RectangleMeasuresPractice rectangle={item.rectangleMeasures} mode={mode} />}
+        {item.translationPractice && <TranslationPractice practice={item.translationPractice} mode={mode} />}
+        {item.sionMap && <SionMapPractice item={item} mode={mode} />}
         {item.numberLine && <NumberLinePractice line={item.numberLine} />}
         {item.graphPractice && <TableAndGraph graph={item.graphPractice} prompt={item.prompt ?? ''} mode={mode} />}
         {item.functionPairs && <FunctionValueTable pairs={item.functionPairs} />}

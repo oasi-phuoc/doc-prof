@@ -10,7 +10,7 @@ Ajouter dans le générateur des exercices imprimables qui prolongent les suppor
 
 [Existant](#existant-et-sources) · [Théorie FALC](#théorie-falc-et-repères-visuels) · [Algèbre](#compléments-en-algèbre) · [Géométrie](#compléments-en-géométrie) · [Recette](#critères-de-réception) · [Suivi d’avancement](avancement.md)
 
-La première réalisation locale de la théorie couvre les 23 thèmes, avec 31 pages illustrées. La liste des types présente **Théorie** en premier lorsqu’une leçon existe. Le contrôle de rendu couvre ces 31 pages en PDF A4 et double A5. La relecture par le public visé et la mise en place des exercices d’application suivent l’ordre de réalisation ci-dessous.
+La refonte de la théorie couvre les 23 thèmes, avec 31 pages illustrées. La liste des types présente **Théorie** en premier lorsqu’une leçon existe. Le contrôle de rendu couvre ces 31 pages en PDF A4 et double A5. Le suivi indique les exercices d’application intégrés et les retours à recueillir auprès des élèves. [Suivi d’avancement](avancement.md)
 
 ## Existant et sources
 

@@ -49,7 +49,7 @@ function DigitRow({
 export function ColumnOp({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const empty = item.blankOperands || item.layout === 'column-empty'
   const show = mode === 'answers'
-  const carries = item.carries ?? item.digitsA?.map(() => '') ?? []
+  const carries = item.subtractionExchange?.digits ?? item.carries ?? item.digitsA?.map(() => '') ?? []
   const partials = item.digitsPartials ?? []
   const hasPartials = partials.length > 0
   const decimalPlaces = item.decimalPlaces ?? 0
@@ -92,10 +92,10 @@ export function ColumnOp({ item, mode }: { item: MathItem; mode: PreviewMode }) 
   lines.push({ kind: 'digits', digits: item.digitsResult, blank: true, comma: decimalPlaces > 0 })
 
   return (
-    <div className={`column-op${hasPartials ? ' has-partials' : ''}${item.strongColumnRule ? ' has-strong-rule' : ''}${item.additionCarryPractice ? ' has-carry-practice' : ''}`}>
+    <div className={`column-op${hasPartials ? ' has-partials' : ''}${item.strongColumnRule ? ' has-strong-rule' : ''}${item.additionCarryPractice || item.subtractionExchange ? ' has-carry-practice' : ''}`}>
       {item.prompt && <p className="column-prompt">{item.prompt}</p>}
       <div className="column-grid school">
-        {item.additionCarryPractice === 'guided' && (
+        {(item.additionCarryPractice === 'guided' || item.subtractionExchange?.guided) && (
           <div className="column-line column-place-labels">
             <span className="column-line-sign" aria-hidden />
             <div className="digit-row" aria-label="Colonnes des nombres">

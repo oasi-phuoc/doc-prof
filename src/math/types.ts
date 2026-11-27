@@ -684,6 +684,10 @@ export type MathItem = {
   measureScale?: { kind: 'mass' | 'capacity' | 'duration'; unit: string; step: number; tick: number }
   rulerSegment?: { startMm: number; endMm: number; guided: boolean }
   additionCarryPractice?: 'guided' | 'independent'
+  subtractionExchange?: { guided: boolean; digits: string[] }
+  rectangleMeasures?: { length: number; width: number; guided: boolean }
+  translationPractice?: { figure: Array<readonly [number, number]>; vector: readonly [number, number]; guided: boolean }
+  sionMap?: { target: number }
   lengthUnits?: { a: number; b: number }
   functionPairs?: { x: number; y: number }[]
   graphPractice?: { pairs: { x: number; y: number }[]; task: 'read' | 'plot'; yStep: number }

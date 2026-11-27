@@ -6803,6 +6803,43 @@ textarea.pill-input,
 .a5-half .math-ruler-segment { width: min(100%, 97mm); }
 .a5-half .math-worked-ruler { margin-bottom: 2mm; padding-bottom: 1mm; }
 
+.math-geometry-pilot { font-size: 14pt; line-height: 1.3; text-align: left; }
+.math-geometry-pilot p { margin: 0; }
+.math-rectangle-question, .math-rectangle-example {
+  display: grid;
+  grid-template-columns: minmax(23mm, 34mm) minmax(0, 1fr);
+  align-items: center;
+  gap: 4mm;
+}
+.math-rectangle-question .answer-line-field + p { margin-top: 1mm; }
+.math-rectangle-measures { display: block; width: 100%; height: auto; font-size: 14px; }
+.math-rectangle-measures text { fill: currentColor; }
+.math-dense-hatch { fill: none; stroke: #155e40; }
+.math-perimeter-example { color: #174a7e; }
+.math-translation-example img { display: block; width: min(100%, 105mm); height: auto; }
+.math-translation-practice svg { display: block; width: min(100%, 87mm); height: auto; margin-top: 2mm; }
+.math-translation-grid { stroke: #939fac; stroke-width: .7; }
+.math-translation-start { color: #874515; }
+.math-translation-image { color: #155e40; }
+.math-translation-practice polygon { fill: none; stroke: currentColor; stroke-width: 2; }
+.math-translation-image polygon { stroke-dasharray: 5 2; }
+.math-translation-practice text { fill: currentColor; font-size: 12px; font-weight: 700; }
+.math-translation-guide { stroke: #174a7e; stroke-width: 1.6; }
+.math-sion-map figure { margin: 2mm 0; width: min(100%, 130mm); }
+.math-sion-map svg { display: block; width: 100%; height: auto; font-size: 14px; font-weight: 700; }
+.math-sion-map figcaption { font-size: 9pt; text-align: right; }
+.math-sion-question { white-space: pre-line; }
+.exercise-block.is-evaluation .math-sion-example { display: none; }
+.math-sion-grid { stroke: #fff; stroke-width: 1.3; opacity: .83; }
+.math-sion-place circle { fill: #fff; stroke: #152435; stroke-width: 1.8; }
+.math-sion-place line { stroke: #fff; stroke-width: 1.2; }
+.math-sion-place text, .math-sion-north text { fill: #152435; stroke: #fff; stroke-width: 3.5; paint-order: stroke; }
+.math-sion-north path { stroke: #fff; stroke-width: 2; fill: none; }
+.math-sion-answer-cell { fill: none; stroke: #fff; stroke-width: 4; stroke-dasharray: 7 3; }
+.a5-half .math-rectangle-question, .a5-half .math-rectangle-example { gap: 2mm; }
+.a5-half .math-translation-practice svg { width: min(100%, 68mm); }
+.a5-half .math-sion-map figure { width: min(100%, 111mm); }
+
 .math-square-figures,.math-solid-choices{display:grid;justify-items:center;gap:2mm;margin-block:1mm}
 .math-square-figures-row{display:flex;flex-wrap:wrap;align-items:end;justify-content:center;gap:3mm}
 .math-square-figures-row figure{margin:0;text-align:center}
