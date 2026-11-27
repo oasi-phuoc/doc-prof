@@ -238,7 +238,9 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
     ...(grammarUsesGradedDefault(type.id) ? defaultGrammarPilot(type.id) : {}),
     columns: type.preferredColumns ?? 2,
     ...clearLibreContentFreeze(),
-    ...(logisticsKind
+    ...(type.preferredCount != null
+      ? { count: type.preferredCount }
+      : logisticsKind
       ? { count: Math.max(1, Math.min(
           { 'objectifs-apercu': 1, theorie: 1, glossaire: 1, maths: 6, verification: 10, situation: 2 }[logisticsKind],
           logistiqueEligibleCount(type.id),

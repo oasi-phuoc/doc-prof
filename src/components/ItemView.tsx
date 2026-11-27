@@ -68,6 +68,14 @@ import {
   WordSearchBlock,
 } from './item-view/vocab'
 
+import { FunctionValueTable, NumberLinePractice } from './item-view/number-representations'
+
+const exerciseImages = import.meta.glob<string>('../math/media/*/*.png', {
+  eager: true,
+  import: 'default',
+  query: '?url',
+})
+
 export type { AlgebraFracToken, AlgebraTokenPart } from './item-view/algebra'
 export { AlgebraRow, tokenizeAlgebra } from './item-view/algebra'
 
@@ -448,6 +456,15 @@ export function ItemView({
             Écoutez l’enregistrement.
           </audio>
         ) : null}
+        {item.exerciseImage && (
+          <img
+            className="math-exercise-image"
+            src={exerciseImages[`../math/media/${item.exerciseImage.kind}/${item.exerciseImage.id}.png`]}
+            alt={item.exerciseImage.kind === 'angles' ? 'Angle à classer' : 'Assemblage de six carrés'}
+          />
+        )}
+        {item.numberLine && <NumberLinePractice line={item.numberLine} />}
+        {item.functionPairs && <FunctionValueTable pairs={item.functionPairs} />}
         {isStackedText && !item.convert && <StackedPrompt item={item} mode={mode} />}
         {!isProblem &&
           !isStackedText &&

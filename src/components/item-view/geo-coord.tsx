@@ -291,6 +291,7 @@ export function CoordBlock({
           </div>
         </div>
       ) : null}
+      {isConstruct && scene?.hideAxes && item.prompt && <p className="column-prompt">{item.prompt}</p>}
       <CoordGrid
         cellScale={csc ? 2 : 1}
         paddedLabels={csc}

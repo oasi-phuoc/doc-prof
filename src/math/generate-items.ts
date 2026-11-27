@@ -29,10 +29,13 @@ import { generatePerimetreCompose } from './perimetre-compose'
 import { generateLengthConversionBatch, tryGenerateConversion } from './conversions'
 import { tryGenerateTpmItems } from '@/tpm/items'
 import { tryGenerateFigure } from './figures-school'
+import { generateFractionDecimals, generateFractionFigures } from './fraction-shapes'
+import { tryGenerateGeometryPractice } from './geometry-practice'
 import { tryGenerateMesure } from './mesures'
 import { makeWordProblem } from './problems'
 import { tryGenerateTcmCfrItems } from '@/tcm-cfr/items'
 import { tryGenerateTcmCscItems } from '@/tcm-csc/items'
+import { tryGenerateNumberRepresentations } from './number-representations'
 import { generateCountIcons } from '@/math/count-icons'
 import { int, pick, shuffle, type Rng } from './rng'
 import type {
@@ -91,6 +94,14 @@ export function generateItems(
   if (tcmCsc) return tcmCsc
   const tcmCfr = tryGenerateTcmCfrItems(typeId, count, rng, worksheetSeed, orderAscending, coordOptions)
   if (tcmCfr) return tcmCfr
+  if (typeId === 'fractions-colorier' || typeId === 'fractions-lire-figure') {
+    return generateFractionFigures(rng, count, typeId === 'fractions-colorier' ? 'color' : 'read')
+  }
+  if (typeId === 'fractions-vers-decimal') return generateFractionDecimals(rng, count)
+  const geometryPractice = tryGenerateGeometryPractice(typeId, rng, count)
+  if (geometryPractice) return geometryPractice
+  const numberRepresentations = tryGenerateNumberRepresentations(typeId, rng, count, difficulty, range)
+  if (numberRepresentations) return numberRepresentations
   if (typeId === 'conversions-longueur' && count >= 2) {
     // Lot unique (pas deux fois mm→cm) ; Q5–Q6 en décimal si count ≥ 5.
     return generateLengthConversionBatch(rng, count, range)

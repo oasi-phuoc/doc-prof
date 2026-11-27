@@ -364,7 +364,7 @@ function buildSingleBlock(
     : null
   const generated = generateItems(
     config.exerciseType,
-    config.count,
+    Math.min(config.count, type?.maxCount ?? config.count),
     rng,
     difficulty,
     numberRangeFrom(config),

@@ -368,6 +368,8 @@ export type ExerciseType = {
   visual: 'ligne' | 'trou' | 'colonne' | 'colonne-vide' | 'texte' | 'geo' | 'suite'
   figure?: Figure
   preferredColumns?: number
+  preferredCount?: number
+  maxCount?: number
   /** Filtre Voc / Gram / Com du domaine français. */
   track?: FrenchTrack
 }
@@ -586,7 +588,11 @@ export type MathItem = {
     /** Points marqués (œil, pompon…) sur des intersections. */
     dots?: Array<{ x: number; y: number }>
   }
-  /** Segments à mesurer (TCM CFR). */
+  gridRotation?: 'clockwise' | 'counterclockwise'
+  exerciseImage?: { kind: 'angles' | 'cube-nets'; id: string }
+  numberLine?: { start: number; step: number; intervals: number; target: number; labelAt: number }
+  functionPairs?: { x: number; y: number }[]
+  /** Segments à mesurer à taille réelle. */
   segments?: Array<{ mm: number; unit: 'mm' | 'cm'; display: string; slope?: number }>
   /** Plan de métro (TCM CFR). */
   metroMap?: {
