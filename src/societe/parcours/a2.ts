@@ -18,7 +18,6 @@ export const unitesA2: SocieteUnite[] = [
       ['la Constitution', 'Le texte qui fixe les règles principales d’un État.'],
       ['le droit de vote', 'La possibilité de voter selon certaines règles.'],
     ],
-    tableau: { entetes: ['Année', 'Repère'], lignes: [['1291', 'Un pacte'], ['1848', 'L’État fédéral'], ['1971', 'Le droit de vote fédéral des femmes'], ['1979', 'Le canton du Jura']] },
     document: {
       titre: 'Quatre repères pour une visite',
       lignes: [

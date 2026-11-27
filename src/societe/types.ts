@@ -32,7 +32,6 @@ export type SocieteUnite = {
   explication: readonly string[]
   lexique: readonly (readonly [string, string])[]
   image?: SocieteImage
-  tableau?: { entetes: string[]; lignes: string[][] }
   document: { titre: string; lignes: readonly string[]; image?: SocieteImage; questions: readonly SocieteQuestion[] }
   ecoute: { transcription: string; questions: readonly SocieteQuestion[] }
   oral: SocieteProduction

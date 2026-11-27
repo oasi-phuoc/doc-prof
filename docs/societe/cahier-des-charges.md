@@ -45,6 +45,12 @@ Chaque thème présente une **théorie**, un **lexique** et une activité par co
 
 La théorie présente une notion à la fois en FALC. Elle part d’une situation et montre chaque mot important près de ce qu’il désigne. Les phrases sont courtes, le vocabulaire reste constant et chaque mot difficile est expliqué. Une aide FALC reste disponible en B1. Les documents de compréhension B1 gardent la richesse utile à la tâche. Le pré-A1 utilise une carte, l’oral et une sélection de mots des premières unités. Les futures relectures avec le public visé sont consignées dans le suivi. [Cadre ClairFLE](../../.claude/skills/falc/SKILL.md) · [Repères FALC suisses](https://insieme.ch/fr/falc/)
 
+### Théorie illustrée
+
+Chaque thème comporte deux pages. La première donne un objectif, une situation et un visuel à observer. La seconde montre un exemple, puis propose une vérification courte avec sa réponse. Les mots importants restent lisibles en texte dans la fiche. Les cartes, schémas et documents fictifs ont un texte alternatif et une légende. Les flèches, les nombres et les libellés gardent leur sens en noir et blanc.
+
+Les images montrent l’information utile à l’endroit où elle sert. Sur un horaire, trois flèches relient les heures à l’arrivée du train, au départ du bus et à l’arrivée au centre. Sur un décompte, les flèches distinguent la franchise de la quote-part. Deux schémas séparés présentent les niveaux politiques et les pouvoirs. Les illustrations de situation existantes sont réutilisées lorsqu’elles correspondent à l’action. Les scènes à produire sont consignées dans le suivi. [Avancement](avancement.md#théorie-illustrée) · [Cahier de Sciences et santé](../sciences-sante/cahier-des-charges.md)
+
 ### Formats de classe
 
 - **Théorie et lexique**. Prévoir un exemple visible, un tableau ou un repère sur une image. Les cartes utilisent une légende, des formes distinctes et des libellés lisibles en noir et blanc.

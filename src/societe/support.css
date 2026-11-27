@@ -23,3 +23,23 @@
 .societe-writing-line {
   min-height: 1.4em;
 }
+
+.worksheet-sheet [data-exercise-type^="societe-"][data-exercise-type*="-theorie"] .grammar-support-image {
+  margin-block: 1.5mm;
+  text-align: left;
+}
+.worksheet-sheet [data-exercise-type^="societe-"][data-exercise-type*="-theorie"] .grammar-support-image img {
+  display: block;
+  max-height: 54mm;
+  margin-inline: auto;
+}
+.worksheet-sheet [data-exercise-type^="societe-"][data-exercise-type*="-theorie"] .grammar-support-image figcaption {
+  font-size: 12pt;
+  line-height: 1.25;
+}
+.a5-half [data-exercise-type^="societe-"][data-exercise-type*="-theorie"] .grammar-support-image img {
+  max-height: 37mm;
+}
+.a5-half [data-exercise-type^="societe-"][data-exercise-type*="-theorie"] .grammar-support-image figcaption {
+  font-size: 11pt;
+}

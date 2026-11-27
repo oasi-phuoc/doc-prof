@@ -223,7 +223,6 @@ export const unitesA1: SocieteUnite[] = [
       ['le code postal', 'Les chiffres écrits avant le nom de la localité.'],
       ['l’accueil', 'Le lieu où un service reçoit les personnes.'],
     ],
-    tableau: { entetes: ['Exemple', 'Ce que je lis'], lignes: [['Rue des Ateliers 8', 'La rue et le numéro'], ['2502 Bienne', 'Le code postal et la ville']] },
     document: {
       titre: 'Carte fictive d’un point d’accueil',
       lignes: ['Point d’accueil des cours', 'Rue des Ateliers 8', '2502 Bienne', 'Accueil en français et en allemand.'],

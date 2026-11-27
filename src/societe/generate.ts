@@ -3,7 +3,8 @@ import type { MathItem, PageConfig } from '@/math/types'
 import { SOCIETE_KINDS } from './catalog'
 import { normalizeSocieteBlock } from './legacy'
 import { SOCIETE_UNITS } from './parcours'
-import { isSocieteType, type SocieteQuestion, type SocieteSupport, type SocieteUnite } from './types'
+import { theoriesIllustrees } from './parcours/theorie-illustree'
+import { isSocieteType, type SocieteImage, type SocieteQuestion, type SocieteSupport, type SocieteUnite } from './types'
 
 const units = new Map(SOCIETE_UNITS.map((unit) => [unit.id, unit]))
 
@@ -11,17 +12,29 @@ function theory(block: GrammarTheoryBlock): MathItem {
   return { layout: 'theory', answer: '', noPoints: true, theoryBlock: block, grammarTheoryFalc: true }
 }
 
+function theoryImage(image: SocieteImage): MathItem {
+  return theory({ kind: 'image', ...image })
+}
+
 function theoryItems(unit: SocieteUnite): MathItem[] {
-  const items = [
+  const lecon = theoriesIllustrees[unit.id]
+  const contexte = unit.image ? [unit.image, ...lecon.contexte] : lecon.contexte
+  // Les notions restent en texte sélectionnable, en regard des images.
+  const notionsVisibles = contexte.length > 1 ? Math.ceil(unit.explication.length / 2) : unit.explication.length
+  const debut = [
     theory({ kind: 'heading', text: unit.titre }),
     theory({ kind: 'paragraph', text: unit.objectif }),
     theory({ kind: 'examples', label: 'Je regarde', items: [unit.situation] }),
+    ...contexte.map(theoryImage),
+    { ...theory({ kind: 'examples', label: 'J’explique', items: [...unit.explication.slice(0, notionsVisibles)], marker: 'puces' }), theoryPageBreakAfter: true },
   ]
-  if (unit.image) items.push(theory({ kind: 'image', ...unit.image }))
-  if (unit.tableau) items.push(theory({ kind: 'table', headers: unit.tableau.entetes, rows: unit.tableau.lignes }))
-  return [...items,
-    theory({ kind: 'heading', text: 'Je retiens', sub: true }),
-    theory({ kind: 'examples', items: [...unit.explication], marker: 'puces' }),
+  const complement = unit.explication.slice(notionsVisibles)
+  return [
+    ...debut,
+    theory({ kind: 'heading', text: `${unit.titre} · Un exemple pas à pas`, sub: true }),
+    ...lecon.exemple.map(theoryImage),
+    ...(complement.length ? [theory({ kind: 'examples', label: 'Je retiens', items: [...complement], marker: 'puces' })] : []),
+    theory({ kind: 'examples', label: 'Je vérifie', items: [lecon.essai, lecon.reponse] }),
   ]
 }
 

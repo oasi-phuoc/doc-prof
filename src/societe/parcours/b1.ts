@@ -21,7 +21,6 @@ export const unitesB1: SocieteUnite[] = [
       ['la quote-part', 'La part des frais concernés que tu paies après la franchise.'],
       ['la réduction des primes', 'Une aide dont les conditions sont fixées par le canton.'],
     ],
-    tableau: { entetes: ['Document', 'Exemple'], lignes: [['Bulletin de prime', 'La prime du mois'], ['Décompte de soins', 'La franchise et la quote-part']] },
     document: {
       titre: 'Décompte fictif · Référence A17',
       lignes: [
@@ -75,7 +74,6 @@ export const unitesB1: SocieteUnite[] = [
       ['le 3a et le 3b', 'Deux formes de prévoyance privée. Leurs conditions diffèrent.'],
       ['la cotisation', 'Une somme versée à une assurance ou à une institution.'],
     ],
-    tableau: { entetes: ['Pilier', 'Exemple'], lignes: [['1 · Prévoyance publique', 'L’AVS et l’AI'], ['2 · Prévoyance professionnelle', 'La caisse de pension'], ['3 · Prévoyance privée', 'Un compte 3a']] },
     document: {
       titre: 'Trois documents fictifs à classer',
       lignes: [
@@ -126,7 +124,6 @@ export const unitesB1: SocieteUnite[] = [
       ['le pouvoir exécutif', 'La fonction qui consiste à gouverner et mettre en œuvre les décisions.'],
       ['le pouvoir judiciaire', 'La fonction qui consiste à juger selon le droit.'],
     ],
-    tableau: { entetes: ['Fonction', 'Exemple au niveau fédéral'], lignes: [['Législatif', 'Le Parlement fédéral'], ['Exécutif', 'Le Conseil fédéral'], ['Judiciaire', 'Le Tribunal fédéral']] },
     document: {
       titre: 'Qui peut vous répondre ?',
       lignes: [

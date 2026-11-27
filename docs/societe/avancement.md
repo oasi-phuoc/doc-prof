@@ -13,6 +13,17 @@
 
 La génération a produit les 90 fiches à partir du point d’entrée du générateur. Les 26 anciens identifiants ouvrent un thème correspondant et les données personnalisées restent attachées à leur fiche. Les 15 enregistrements se décodent et durent de 10 à 27 secondes environ. Les cartes ont été relues visuellement.
 
+## Théorie illustrée
+
+Les 15 théories produisent chacune deux pages. Le parcours contient 44 visuels utilisables et deux emplacements réservés. Les 44 visuels comprennent 34 nouveaux schémas ou documents de classe, 4 cartes et dessins de repérage déjà présents, et 6 scènes semi-réalistes du catalogue PO. Chaque page de théorie présente au moins un visuel, avec une légende et un texte alternatif.
+
+| Scène à produire | Emplacement | Action à rendre lisible |
+|---|---|---|
+| Demander une explication à la caisse maladie | [Auprès de la caisse](../../public/lib/images/societe/theorie/scene-caisse-maladie.webp) | Deux adultes regardent un décompte fictif. La personne assurée montre la ligne qui pose question. |
+| Participer à une consultation de quartier | [Une séance de quartier](../../public/lib/images/societe/theorie/scene-consultation.webp) | Des habitants autour d’une table discutent d’un plan de place. Au premier plan, une personne présente une proposition. |
+
+Pour chaque remplacement, utiliser un visuel individuel 4:3 dans le style semi-réaliste de la banque PO. Conserver l’adresse du média et actualiser le texte alternatif dans [la théorie illustrée](../../src/societe/parcours/theorie-illustree.ts). Les schémas du décompte et de la consultation sont déjà intégrés aux fiches.
+
 ## Médias
 
 - Les pistes sont des voix françaises de synthèse, à partir des transcriptions de [la banque](../../src/societe/parcours/). Le corrigé affiche la transcription pour une lecture par l’enseignant.
