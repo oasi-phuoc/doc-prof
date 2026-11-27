@@ -41,6 +41,7 @@ import { tryGenerateFunctionPractice } from './function-practice'
 import { tryGenerateGeometryMeasurement } from './geometry-measurement'
 import { tryGenerateGeometryConstructions } from './geometry-constructions'
 import { tryGenerateMeasurementPractice } from './measurement-practice'
+import { tryGenerateGuidedPractice } from './guided-practice'
 import { tryGenerateMathFoundations } from './foundations-practice'
 import { tryGenerateNumberRepresentations } from './number-representations'
 import { generateCountIcons } from '@/math/count-icons'
@@ -117,6 +118,8 @@ export function generateItems(
   if (constructions) return constructions
   const measurements = tryGenerateMeasurementPractice(typeId, rng, count, difficulty)
   if (measurements) return measurements
+  const guidedPractice = tryGenerateGuidedPractice(typeId, rng, count, difficulty)
+  if (guidedPractice) return guidedPractice
   const foundations = tryGenerateMathFoundations(typeId, rng, count, difficulty, range)
   if (foundations) return foundations
   const geometryPractice = tryGenerateGeometryPractice(typeId, rng, count)

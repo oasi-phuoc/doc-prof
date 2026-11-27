@@ -682,6 +682,8 @@ export type MathItem = {
   grammarCoTrueFalse?: GrammarCoStatement[]
   spatial?: SpatialPractice
   measureScale?: { kind: 'mass' | 'capacity' | 'duration'; unit: string; step: number; tick: number }
+  rulerSegment?: { startMm: number; endMm: number; guided: boolean }
+  additionCarryPractice?: 'guided' | 'independent'
   lengthUnits?: { a: number; b: number }
   functionPairs?: { x: number; y: number }[]
   graphPractice?: { pairs: { x: number; y: number }[]; task: 'read' | 'plot'; yStep: number }

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState, type FormEvent } from 'react'
-import { ACCESS_DOMAIN_OPTIONS, readAccessAccount } from '@/access'
+import { ACTIVE_DOMAIN_OPTIONS, readAccessAccount } from '@/access'
 import { FichesApiError, request, storeSyncPassword } from '@/fiches/api'
 import { readAccessPassword } from '@/fiches/password'
 import { Header } from './Header'
@@ -54,7 +54,7 @@ export function AccountsPage({ onOpenGenerator, onLogout }: { onOpenGenerator: (
   } catch (e) { handleRequestError(e, 'La création a échoué.') }
   finally { setBusy(null) }
  }
- const options = (selected: string[], change: (next: string[]) => void) => ACCESS_DOMAIN_OPTIONS.map(d => <label key={d.id}><input type="checkbox" checked={BASE.includes(d.id) || selected.includes(d.id)} disabled={BASE.includes(d.id)} onChange={e => change(e.target.checked ? [...selected, d.id] : selected.filter(x => x !== d.id))}/>{d.label}</label>)
+ const options = (selected: string[], change: (next: string[]) => void) => ACTIVE_DOMAIN_OPTIONS.map(d => <label key={d.id}><input type="checkbox" checked={BASE.includes(d.id) || selected.includes(d.id)} disabled={BASE.includes(d.id)} onChange={e => change(e.target.checked ? [...selected, d.id] : selected.filter(x => x !== d.id))}/>{d.label}</label>)
  return <div><Header onCreate={onOpenGenerator} rightSlot={<CatalogPageTools onLogout={onLogout}/>}/><main className="fiches-main">
   <h1>Comptes enseignants</h1><p>Créez les comptes et choisissez les accès de chaque personne. Algèbre, Géométrie et Alphabétisation sont incluses pour tous. Chaque personne retrouve ses propres fiches.</p>
   {error && <p role="alert" className="access-error">{error}</p>}{message && <p role="status">{message}</p>}{busy === 'load' && <p role="status">Chargement des comptes…</p>}

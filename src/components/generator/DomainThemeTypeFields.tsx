@@ -17,9 +17,7 @@ import { grammarCoThemeForType } from '@/grammaire/exercises/co-themes'
 import { defaultGrammarCoLevel, grammarCoEntries, hasGrammarCoTheme } from '@/grammaire/exercises/co-bank'
 import { isNegativePhraseTheme, isPhraseThemeId } from '@/francais/phrase-themes'
 import { phraseSelection } from '@/francais/phrase-options'
-import {
-  ACCESS_DOMAIN_OPTIONS,
-} from '@/access'
+import { ACCESS_DOMAIN_OPTIONS, ACTIVE_DOMAIN_OPTIONS } from '@/access'
 import { SelectBox } from '@/components/generator/SelectBox'
 import { applyType, clearLibreContentFreeze } from '@/components/generator/page-helpers'
 import { DIFFICULTY_OPTIONS } from '@/math/difficulty'
@@ -241,9 +239,10 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
               )}
 
               {allowedDomains.length > 1 && <SelectBox label="Domaine" value={activePage.domain} onChange={(value) => changeDomain(value as Domain)}>
-                {ACCESS_DOMAIN_OPTIONS.filter((domain) => allowedDomains.includes(domain.id)).map(
+                {(activePage.domain === 'vocabulaire' ? ACCESS_DOMAIN_OPTIONS : ACTIVE_DOMAIN_OPTIONS)
+                  .filter((domain) => allowedDomains.includes(domain.id)).map(
                   (domain) => (
-                    <option value={domain.id} key={domain.id}>
+                    <option value={domain.id} key={domain.id} disabled={domain.id === 'vocabulaire'}>
                       {domain.label}
                     </option>
                   ),

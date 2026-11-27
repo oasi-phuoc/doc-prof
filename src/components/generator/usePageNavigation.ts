@@ -139,7 +139,10 @@ export function usePageNavigation({
   /** Prochain type du même thème (même logique que « + Exercice »). */
   const createNextExerciseBlock = (): ExerciseBlock | null => {
     const currentTypes =
-      activePage.domain === 'grammaire' || isLogistiqueDomain(activePage.domain)
+      activePage.domain === 'grammaire' ||
+      activePage.domain === 'algèbre' ||
+      activePage.domain === 'géométrie' ||
+      isLogistiqueDomain(activePage.domain)
         ? typeChoicesForBlock(activePage.domain, activeBlock)
         : typesForTopic(
             activeBlock.topic,

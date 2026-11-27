@@ -50,11 +50,13 @@ export const ADMIN_ONLY_DOMAINS: readonly Domain[] = ADMIN_ONLY_DOMAIN_OPTIONS.m
 /** Accès TCF / TCM garanti au compte full, y compris avec une ancienne liste env. */
 const FULL_TEST_DOMAINS: readonly Domain[] = ['tcf-csc', 'tcf-cfr', 'tcm-csc', 'tcm-cfr']
 
-/** Tous les domaines sélectionnables (ordre d’affichage final). */
+/** Tous les domaines des droits d’accès, y compris les fiches historiques. */
 export const ACCESS_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = [
   ...REGULAR_DOMAIN_OPTIONS,
   ...ADMIN_ONLY_DOMAIN_OPTIONS,
 ]
+
+export const ACTIVE_DOMAIN_OPTIONS = ACCESS_DOMAIN_OPTIONS.filter(({ id }) => id !== 'vocabulaire')
 
 const REGULAR_DOMAIN_IDS: Domain[] = REGULAR_DOMAIN_OPTIONS.map((d) => d.id)
 const ALL_DOMAIN_IDS: Domain[] = ACCESS_DOMAIN_OPTIONS.map((d) => d.id)

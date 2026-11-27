@@ -149,10 +149,10 @@ function MathTheoryFields({ lesson, update }: { lesson: MathLesson; update: (pat
       )}
       <fieldset>
         <legend>Les mots</legend>
-        {lesson.words.map(([word, definition], index) => (
+        {lesson.words.map(([word, definition, role], index) => (
           <div key={index}>
-            <TextField label={`Mot ${index + 1}`} value={word} onChange={(text) => update({ words: replaceAt(lesson.words, index, [text, definition]) })} />
-            <TextField label={`Définition ${index + 1}`} value={definition} onChange={(text) => update({ words: replaceAt(lesson.words, index, [word, text]) })} multiline />
+            <TextField label={`Mot ${index + 1}`} value={word} onChange={(text) => update({ words: replaceAt(lesson.words, index, [text, definition, role]) })} />
+            <TextField label={`Définition ${index + 1}`} value={definition} onChange={(text) => update({ words: replaceAt(lesson.words, index, [word, text, role]) })} multiline />
           </div>
         ))}
       </fieldset>

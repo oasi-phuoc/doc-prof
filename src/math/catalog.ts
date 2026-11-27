@@ -1,5 +1,6 @@
 import { MATH_THEORY_PREFIX, mathTheoryLessons } from './theory-lessons'
 import { ALGEBRA_GLOSSARY, GEOMETRY_GLOSSARY } from './glossary-banks'
+import { ADDITION_CARRY_TYPE, RULER_SEGMENT_TYPE } from './guided-practice'
 import { PHRASE_THEME_DEFS } from '@/francais/phrase-themes'
 import type { Difficulty, Domain, ExerciseType, FrenchTrack, Topic } from './types'
 import {
@@ -457,6 +458,7 @@ export const exerciseTypes: ExerciseType[] = [
   t('addition-trou', 'addition', 'En ligne avec des trous', 'Compléter 46 + ? = 83 ou ? + 37 = 83.', 'Complétez le nombre manquant.', 'trou'),
   t('addition-colonne', 'addition', 'En colonnes (nombres posés)', 'Les nombres sont déjà alignés dans le tableau.', 'Effectuez les additions en colonnes. Écrivez le résultat et les retenues.', 'colonne', { preferredColumns: 2 }),
   t('addition-colonne-poser', 'addition', 'En colonnes (à poser)', 'Poser soi-même les nombres dans le tableau.', 'Posez les nombres dans le tableau, puis calculez.', 'colonne-vide', { preferredColumns: 2 }),
+  t(ADDITION_CARRY_TYPE, 'addition', 'Addition avec retenue, pas à pas', 'Compléter des additions posées après un exemple illustré.', 'Calculez chaque addition.', 'colonne', { preferredColumns: 2, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
   t('addition-comparer', 'addition', 'Comparer des sommes', 'Comparer 12 + 8 et 15 + 4.', 'Coloriez la pastille correcte.', 'ligne', { preferredColumns: 2 }),
   t(
     'addition-tableau',
@@ -638,6 +640,7 @@ export const exerciseTypes: ExerciseType[] = [
   t('figures-reproduire', 'figures', 'Reproduire sur quadrillage', 'Recopier une silhouette en s’aidant du quadrillage.', 'Reproduisez le modèle en comptant les carreaux.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
   t('figures-agrandir', 'figures', 'Agrandir sur quadrillage', 'Reproduire une silhouette en doublant les longueurs en carreaux.', 'Reproduisez le modèle. Chaque longueur mesurée en carreaux doit être doublée.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
   t('mesures-segments', 'conversions', 'Mesurer des segments à la règle', 'Mesurer des segments à taille réelle puis comparer leurs longueurs.', 'Imprimez à 100 %, puis mesurez chaque segment et répondez aux questions.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 1 }),
+  t(RULER_SEGMENT_TYPE, 'conversions', 'Lire un segment sur une règle', 'Calculer une longueur avec les deux graduations d’une règle dessinée.', 'Trouvez la longueur de chaque segment.', 'geo', { preferredColumns: 1, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
   t('conversions-longueur', 'conversions', 'Longueurs', 'km, hm, dam, m, dm, cm, mm.', 'Convertissez.', 'ligne', { preferredColumns: 2 }),
   t('mesures-lire-instrument', 'conversions', 'Lire un instrument gradué', 'Lire une balance, un verre doseur ou un minuteur.', 'Lisez la mesure. Écrivez le nombre et son unité.', 'geo', { preferredColumns: 2, preferredCount: 3, maxCount: 4, supportsNumberRange: false }),
   t('mesures-comparer-grandeurs', 'conversions', 'Comparer des mesures', 'Comparer des masses, des capacités ou des durées exprimées dans deux unités.', 'Comparez les mesures avec <, = ou >.', 'ligne', { preferredColumns: 2, preferredCount: 9, maxCount: 12, supportsNumberRange: false }),

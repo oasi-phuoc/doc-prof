@@ -125,11 +125,16 @@ function buildSingleBlock(
   const fallbackTitle = type?.label ?? topic?.label ?? 'Exercices'
   const theoryTopic = mathTheoryTopic(config.exerciseType)
   if (theoryTopic && (config.domain === 'algèbre' || config.domain === 'géométrie' || isTpmDomain(config.domain))) {
-    const lesson = mathTheoryLessons[theoryTopic]!
+    const { continuation = [], ...lesson } = mathTheoryLessons[theoryTopic]!
     return {
       title: lesson.title,
       instruction: `Théorie — ${lesson.title}`,
-      items: [{ layout: 'theory', mathTheory: { ...lesson, topic: theoryTopic }, answer: '', noPoints: true }],
+      items: [lesson, ...continuation].map((part) => ({
+        layout: 'theory',
+        mathTheory: { ...part, topic: theoryTopic },
+        answer: '',
+        noPoints: true,
+      })),
     }
   }
   if (config.exerciseType === 'tpm-consignes') {
@@ -621,7 +626,9 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
       exerciseNo = Math.max(...scoredBlocks.map((block) => block.exerciseIndex)) + 1
     }
 
-    if (worksheet.blocks.some((block) => block.problemHelp)) {
+    const hasFullPageContent = (block: WorksheetBlock) =>
+      block.problemHelp || block.items.some((item) => item.mathTheory)
+    if (worksheet.blocks.some(hasFullPageContent)) {
       let continuation = false
       const append = (blocks: WorksheetBlock[]) => {
         if (blocks.length === 0) return
@@ -636,13 +643,13 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
       }
       let preceding: WorksheetBlock[] = []
       worksheet.blocks.forEach((block, sourceBlockIndex) => {
-        if (!block.problemHelp) {
+        if (!hasFullPageContent(block)) {
           preceding.push({ ...block, sourceBlockIndex })
           return
         }
         append(preceding)
         preceding = []
-        const capacity = block.exerciseType === 'problemes-donnees-utiles' ? 2 : 1
+        const capacity = block.problemHelp && block.exerciseType === 'problemes-donnees-utiles' ? 2 : 1
         for (let offset = 0; offset < block.items.length; offset += capacity) {
           const end = offset + capacity
           append([{

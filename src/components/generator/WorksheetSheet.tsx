@@ -17,8 +17,10 @@ import {
   type InstitutionalHeader,
 } from '@/components/math/PrintDocumentChrome'
 import { DecomposeExample } from '@/components/item-view/decompose'
+import { MathWorkedExample } from '@/components/item-view/guided-practice'
 import { LogistiqueGlossaryTable } from '@/components/item-view/logistique-glossary'
 import { isDraftPadExercise } from '@/math/catalog'
+import { ADDITION_CARRY_TYPE } from '@/math/guided-practice'
 import { blockPointsTotal, formatPointsLabel, sumPointWeights } from '@/tpm/test'
 import { isReperageConstruire } from '@/math/coord-reperage'
 import type {
@@ -232,6 +234,8 @@ export function WorksheetSheet({
   const showHeader =
     !hideChrome && !isJeuxSheet && (Boolean(asHalf) || forceHeader || pageNumber === 1)
   const showFooter = !hideChrome && !isJeuxSheet
+  const compactMathTheoryHeader = Boolean(asHalf) && page.items.some((item) => item.mathTheory)
+  const compactMathHeader = compactMathTheoryHeader || (Boolean(asHalf) && page.items.some((item) => item.rulerSegment || item.additionCarryPractice))
   const parity = sheetIndex % 2 === 1 ? 'sheet-odd' : 'sheet-even'
   const isDraftPadPage = page.items.some(
     (item) =>
@@ -275,7 +279,7 @@ export function WorksheetSheet({
     : `worksheet-sheet ${parity}${isJeuxSheet ? ' is-jeux' : ''}${isSoutienFr ? ' is-soutien-fr' : ''}${isAlphabetisation ? ' is-alphabetisation' : ''}${evalMode ? ' is-eval' : ''}`
   return (
     <Root
-      className={rootClass + domainClass + (compactHeader ? ' has-compact-header' : '')}
+      className={rootClass + domainClass + (compactMathHeader ? ' has-compact-math-header' : compactHeader ? ' has-compact-header' : '')}
       style={{ '--sheet-columns': sheetColumns, ...(page.domain === 'tcm-csc' ? { '--csc-exercise-gap': `${page.exerciseGapPx ?? 50}px` } : {}) } as CSSProperties}
     >
       {showHeader ? (
@@ -287,7 +291,7 @@ export function WorksheetSheet({
           } : institutional}
           evalMode={evalMode}
           totalPoints={evalMode ? documentTotalPoints : undefined}
-          fallbackTitle={page.title}
+          fallbackTitle={compactMathTheoryHeader ? undefined : page.title}
         />
       ) : null}
       <SheetBody>
@@ -323,6 +327,7 @@ export function WorksheetSheet({
           const cscCopy = sideProblemInstruction == null && block.instruction && (/^tcm-c(?:sc|fr)-/.test(block.exerciseType) || block.exerciseType.startsWith('tpm-decompose')) ? cscSheetCopy(block.exerciseType, block.instruction) : null
           const instructionText = sideProblemInstruction ?? (cscCopy ? cscCopy.text : block.instruction)
           const isTheoryBlock = block.items.some((item) => item.layout === 'theory')
+          const blockColumns = block.exerciseType === ADDITION_CARRY_TYPE ? Math.min(block.columns ?? 2, 2) : (block.columns ?? 1)
           const perQ = block.pointsPerQuestion ?? pointsPerQuestion
           const blockPts = block.pointsWeights
             ? sumPointWeights(block.pointsWeights, perQ)
@@ -490,6 +495,7 @@ export function WorksheetSheet({
                   )}
                 </div>
               ) : null}
+              {!evalMode && <MathWorkedExample exerciseType={block.exerciseType} />}
               <WorksheetItems
                 groupedOperations={/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType)}
                 className={`exercise-grid${block.exerciseType === 'transformations-tracer-axes' ? ' coord-grid-columns' : ''}${
@@ -507,7 +513,7 @@ export function WorksheetSheet({
                     columnGap: block.columns > 1 ? block.columnGapPx : undefined,
                     /* Soutien FR : Colonnes = grille interne ; la feuille reste 1 col. */
                     '--sheet-columns': block.items.some((item) =>
-                      [
+                      item.rulerSegment || [
                         'vocab-table',
                         'letter-grid',
                         'syllable-table',
@@ -528,7 +534,7 @@ export function WorksheetSheet({
                       ].includes(item.layout),
                     )
                       ? 1
-                      : (block.columns ?? 1),
+                      : blockColumns,
                   } as CSSProperties
                 }
               >

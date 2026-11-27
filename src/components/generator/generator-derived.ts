@@ -48,6 +48,7 @@ import { GRAM_EXERCISE_KINDS } from '@/grammaire/exercises/kinds'
 import { GRAMMAR_NEW_PILOT_TYPES, GRAMMAR_PILOT_BANKS, grammarBanksForType } from '@/grammaire/curriculum/registry'
 import { COORD_LETTER_MAX, COORD_SHAPES } from '@/math/coord-reperage'
 import { TRANSFORM_MAX_POINTS } from '@/math/coord-transformations'
+import { MATH_THEORY_PREFIX } from '@/math/theory-lessons'
 import { isLogistiqueDomain, logistiqueTopics, logistiqueTypeChoices } from '@/logistique/catalog'
 import type { Domain, ExerciseBlock, WorksheetPage } from '@/math/types'
 
@@ -154,10 +155,15 @@ export function typeChoicesForBlock(
     }
     return choices
   }
-  return typesForTopic(
+  const choices = typesForTopic(
     block.topic,
     domain === 'français' ? (block.track ?? 'voc') : undefined,
   )
+  if (domain !== 'algèbre' && domain !== 'géométrie') return choices
+
+  const theoryId = `${MATH_THEORY_PREFIX}${block.topic}`
+  const theory = choices.find((type) => type.id === theoryId)
+  return theory ? [theory, ...choices.filter((type) => type.id !== theoryId)] : choices
 }
 
 type MaxQuestionsFlags = {

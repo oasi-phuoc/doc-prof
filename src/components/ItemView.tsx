@@ -76,6 +76,7 @@ import { SpatialPracticeView } from './item-view/spatial-practice'
 import { TableAndGraph } from './item-view/function-practice'
 import { AreaFigures, SolidViewChoices } from './item-view/geometry-practice'
 import { MeasurementScale } from './item-view/measurement-practice'
+import { RulerSegmentFigure } from './item-view/guided-practice'
 import { MathTheoryView } from './item-view/math-theory'
 import { BaseTenCollection, LengthUnitComparison, MenuPriceTable } from './item-view/foundations-practice'
 import { FunctionValueTable, NumberLinePractice } from './item-view/number-representations'
@@ -494,6 +495,7 @@ export function ItemView({
         {item.grammarCoTrueFalse && <GrammarCoTrueFalse statements={item.grammarCoTrueFalse} mode={mode} />}
         {item.spatial && <SpatialPracticeView practice={item.spatial} mode={mode} />}
         {item.measureScale && <MeasurementScale scale={item.measureScale} />}
+        {item.rulerSegment && <RulerSegmentFigure segment={item.rulerSegment} />}
         {item.numberLine && <NumberLinePractice line={item.numberLine} />}
         {item.graphPractice && <TableAndGraph graph={item.graphPractice} prompt={item.prompt ?? ''} mode={mode} />}
         {item.functionPairs && <FunctionValueTable pairs={item.functionPairs} />}

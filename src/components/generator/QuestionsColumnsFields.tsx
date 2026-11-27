@@ -1,5 +1,6 @@
 import { mathTheoryTopic } from '@/math/theory-lessons'
 import { mathGlossaryBank } from '@/math/glossary-banks'
+import { ADDITION_CARRY_TYPE, RULER_SEGMENT_TYPE } from '@/math/guided-practice'
 import { isLogistiqueReferenceType, logistiquePresentationFor, logistiqueType } from '@/logistique/catalog'
 import { logistiqueHasSummary, logistiqueModuleCapacities } from '@/logistique/generate'
 import { SelectBox } from './SelectBox'
@@ -1057,6 +1058,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
               isVocabPool ||
               isGramTheory ||
               mathTheoryTopic(activeBlock.exerciseType) ||
+              activeBlock.exerciseType === RULER_SEGMENT_TYPE ||
               isGrammaireDomain ||
               isLogique ||
               isJeuxDomain ||
@@ -1075,7 +1077,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
               <div className="mode-toggle-block">
                 <b>Colonnes</b>
                 <div className="mode-toggle is-3" role="group" aria-label="Nombre de colonnes">
-                  {[1, 2, 3].map((value) => (
+                  {(activeBlock.exerciseType === ADDITION_CARRY_TYPE ? [1, 2] : [1, 2, 3]).map((value) => (
                     <button
                       key={value}
                       type="button"

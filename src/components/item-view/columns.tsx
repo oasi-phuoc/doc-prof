@@ -1,6 +1,8 @@
 import { Fragment } from 'react'
 import type { MathItem, PreviewMode } from '@/math/types'
 
+const placeLabels = ['Unités', 'Dizaines', 'Centaines']
+
 function DigitRow({
   digits,
   empty,
@@ -90,9 +92,17 @@ export function ColumnOp({ item, mode }: { item: MathItem; mode: PreviewMode }) 
   lines.push({ kind: 'digits', digits: item.digitsResult, blank: true, comma: decimalPlaces > 0 })
 
   return (
-    <div className={`column-op${hasPartials ? ' has-partials' : ''}${item.strongColumnRule ? ' has-strong-rule' : ''}`}>
+    <div className={`column-op${hasPartials ? ' has-partials' : ''}${item.strongColumnRule ? ' has-strong-rule' : ''}${item.additionCarryPractice ? ' has-carry-practice' : ''}`}>
       {item.prompt && <p className="column-prompt">{item.prompt}</p>}
       <div className="column-grid school">
+        {item.additionCarryPractice === 'guided' && (
+          <div className="column-line column-place-labels">
+            <span className="column-line-sign" aria-hidden />
+            <div className="digit-row" aria-label="Colonnes des nombres">
+              {carries.map((_, index) => <span className="digit-cell" key={index}>{placeLabels[carries.length - index - 1]}</span>)}
+            </div>
+          </div>
+        )}
         {lines.map((line, index) => {
           if (line.kind === 'rule') {
             return (
