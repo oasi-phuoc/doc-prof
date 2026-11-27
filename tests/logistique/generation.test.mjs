@@ -214,7 +214,7 @@ test('le râtelier vertical et le stockage en épis ont une illustration dans le
 })
 
 test('les glossaires repris fournissent une photo individuelle pour chaque notion', () => {
-  const photoGlossaries = [['100', 13], ['101', 16], ['103', 15], ['306', 34], ['403', 27], ['404', 12]]
+  const photoGlossaries = [['100', 13], ['101', 16], ['102', 25], ['103', 15], ['306', 34], ['403', 27], ['404', 12]]
   for (const [code, count] of photoGlossaries) for (const diploma of ['CFC', 'AFP']) {
     const page = config(diploma, code, 'glossaire')
     for (const logistiqueBankRevision of [undefined, 'logistique-glossaires-tableaux-v006']) {
