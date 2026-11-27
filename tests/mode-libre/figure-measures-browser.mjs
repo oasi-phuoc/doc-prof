@@ -8,9 +8,9 @@ const button = (scope, name) => scope.getByRole('button', { name, exact: true })
 
 async function open(context, exerciseType, overrides = {}) {
   const page = await context.newPage()
-  const area = exerciseType.startsWith('aires-')
-  const title = area ? 'Aires' : 'Périmètres'
-  await page.addInitScript(({ exerciseType, overrides, area }) => history.replaceState({
+  const topic = exerciseType.split('-')[0]
+  const title = { aires: 'Aires', perimetres: 'Périmètres', volumes: 'Volumes' }[topic]
+  await page.addInitScript(({ exerciseType, overrides, topic }) => history.replaceState({
     ...history.state,
     clairfleFiche: {
       id: 'perimetre-fixture', name: 'Périmètre témoin',
@@ -18,12 +18,12 @@ async function open(context, exerciseType, overrides = {}) {
         version: 1, seed: 20261127, institutional: {}, evalMode: false, pointsPerQuestion: 1,
         libreMode: false, libreSnapshot: null, printCorrections: true,
         pages: [{
-          domain: 'géométrie', topic: area ? 'aires' : 'perimetres', exerciseType, difficulty: 'moyen',
+          domain: 'géométrie', topic, exerciseType, difficulty: 'moyen',
           count: 2, columns: 1, ...overrides,
         }],
       },
     },
-  }, ''), { exerciseType, overrides, area })
+  }, ''), { exerciseType, overrides, topic })
   await page.goto('/generateur')
   const preview = page.locator('.a4-frame .worksheet-sheet').first()
   const print = page.locator('.print-only-sheets .worksheet-sheet')
@@ -158,8 +158,35 @@ try {
   await height.fill('4')
   assert.equal(await answer(areaRhombus.print), '32 cm²')
   await areaRhombus.page.close()
+  const volumeCube = await open(context, 'volumes-cube-manquant')
+  const cubeRow = question(volumeCube.editor, 1)
+  await field(cubeRow, 'Volume donné').fill('64')
+  assert.match(await volumeCube.print.first().textContent(), /Le volume mesure 64 cm³/)
+  assert.equal(await answer(volumeCube.print), '4 cm')
+  assert.equal(await volumeCube.print.last().locator('.draft-pad-answer').first().textContent(), '∛64')
+  await volumeCube.page.close()
+
+  const volumeCone = await open(context, 'volumes-cone-manquant')
+  const coneRow = question(volumeCone.editor, 1)
+  await field(coneRow, 'Rayon').fill('2')
+  await field(coneRow, 'Volume donné').fill('20')
+  await field(coneRow, 'Valeur de π').fill('3')
+  assert.equal(await answer(volumeCone.print), '5 cm')
+  assert.equal(await volumeCone.print.last().locator('.draft-pad-answer').first().textContent(), '(20 × 3) ÷ (3 × 2²)')
+  await field(coneRow, 'Volume donné').fill('0')
+  assert.equal(await field(coneRow, 'Volume donné').getAttribute('aria-invalid'), 'true')
+  assert.equal(await answer(volumeCone.print), '5 cm')
+  await volumeCone.page.close()
+
+  const volumeSphere = await open(context, 'volumes-sphere')
+  const sphereRow = question(volumeSphere.editor, 1)
+  await field(sphereRow, 'Rayon').fill('3')
+  await field(sphereRow, 'Valeur de π').fill('3')
+  await sphereRow.getByRole('combobox', { name: 'Unité des cotes', exact: true }).selectOption('mm')
+  assert.equal(await answer(volumeSphere.print), '108 mm³')
+  await volumeSphere.page.close()
   await context.close()
-  console.log('Périmètres et aires A4 vérifiés avec cote manquante, unité, π, contraintes, verrou et conversion double A5.')
+  console.log('Périmètres, aires et volumes A4 vérifiés avec cote manquante, unité, π, contraintes, verrou et conversion double A5.')
 } finally {
   await browser?.close()
   await server?.close()

@@ -61,7 +61,7 @@ import { useGenerateActions } from '@/components/generator/useGenerateActions'
 import { useCoordEditing } from '@/components/generator/useCoordEditing'
 import { TransformationEditor } from '@/components/generator/libre/TransformationEditor'
 import { arithmeticActivityId, worksheetActivityIds } from '@/components/generator/libre/flat-items'
-import { isCalculationProfile, isInlineArithmetic, isTcfLiveProfile, isWordListProfile, liveEditorProfile, opensWithoutOverlay, usesIndependentHalves } from '@/components/generator/libre/profiles'
+import { isCalculationProfile, isFigureMeasureProfile, isInlineArithmetic, isTcfLiveProfile, isWordListProfile, liveEditorProfile, opensWithoutOverlay, usesIndependentHalves } from '@/components/generator/libre/profiles'
 import { readSpacingPreferences, spacingPreferenceKey } from '@/components/generator/libre/preferences'
 import { hasTcfCorrectionsToReview, isTcfSubjectIncomplete } from '@/tcf/libre-questions'
 import { canRerollGrammarSelection, generateGrammarSelection } from '@/grammaire/curriculum/generate'
@@ -711,7 +711,7 @@ export function GeneratorPage({
 
   const settingsPanelProps = {
     liveCoordQuestions: libreMode && activeProfile === 'questions-de-reperage',
-    supportsBlockSpacing: libreMode && (arithmetic || activeProfile === 'perimetre' || activeProfile === 'aire') && !isA5DoubleFormat(sheetFormat),
+    supportsBlockSpacing: libreMode && (arithmetic || isFigureMeasureProfile(activeProfile)) && !isA5DoubleFormat(sheetFormat),
     spacingPreferenceKey: spacingKey,
     recovery: draftOwner ? (
       <DraftRecovery
@@ -1045,7 +1045,7 @@ export function GeneratorPage({
                 evalMode={evalMode}
                 livePhrase={activeProfile === 'phrase'}
                 theory={activeProfile === 'theorie' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
-                measuredFigures={activeProfile === 'perimetre' || activeProfile === 'aire' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
+                measuredFigures={isFigureMeasureProfile(activeProfile) ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
                 textExercise={activeProfile === 'question-simple' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
                 letterGrid={isWordListProfile(activeProfile) ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
                 logic={activeProfile === 'logique-visuelle' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}

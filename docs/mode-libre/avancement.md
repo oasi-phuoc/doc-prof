@@ -68,6 +68,12 @@ Le test `node tests/mode-libre/figure-measures-browser.mjs` couvre le calcul du 
 
 Les 17 types d’aires partagent le panneau des mesures. Les champs disponibles suivent la figure et la question posée. Une aire donnée recalcule la cote cherchée, et l’unité s’affiche au carré pour l’aire et en unité de longueur pour une cote. Le navigateur vérifie le côté décimal d’un carré, la hauteur d’un triangle, le rayon d’un disque et le rejet d’une hauteur incompatible avec un losange. Les 153 tirages automatiques comparés à `13091c87` gardent leurs figures et leurs résultats.
 
+L’inventaire sur `32a4f080` relève 506 raccordements A4 en attente sur 4 269 contextes et aucune erreur de génération.
+
+### Volumes des solides en A4
+
+Les 12 types de volumes reprennent les champs de cotes, l’unité, la valeur de π et le volume donné lorsque l’exercice demande une cote. Le choix du solide est disponible pour les exercices mixtes et les prismes à faces quadrilatères. Le navigateur vérifie le calcul de l’arête du cube, la hauteur du cône, le volume de la sphère et le rejet d’un volume nul. Les 108 tirages automatiques comparés à `32a4f080` gardent les mêmes données et résultats.
+
 ### Écoute de mots en Soutien FR et Alphabétisation
 
 Le panneau Libre permet de changer les mots des activités d’écoute avec QR et des activités d’écoute illustrées. La banque fournit les médias associés et le son de la leçon détermine la coche proposée dans le corrigé. La case reste modifiable pour une prononciation particulière. Un changement de quantité ou de colonnes conserve les mots personnalisés et leurs médias.

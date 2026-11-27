@@ -10,7 +10,7 @@ import {
   resizeDraftGrids,
   resizeOralAnswerModes,
 } from '@/components/generator/page-helpers'
-import { isInlineArithmetic, isIndependentListProfile, liveEditorProfile, opensWithoutOverlay, writesNativePayload } from '@/components/generator/libre/profiles'
+import { isFigureMeasureProfile, isInlineArithmetic, isIndependentListProfile, liveEditorProfile, opensWithoutOverlay, writesNativePayload } from '@/components/generator/libre/profiles'
 import { hasLockedItems, identifyItems, trimUnlockedItems } from '@/components/generator/libre/flat-items'
 import { gridCells, withGridCells } from '@/components/generator/libre/word-list'
 import { listenRows, replaceListenRows, resizeListenRows } from '@/components/generator/libre/listen-rows'
@@ -275,7 +275,7 @@ export function usePageConfig({
         grammarPageBreakAfterQuestionIds: activeBlock.grammarPageBreakAfterQuestionIds?.filter((id) => cutIds.has(id)) }
     }
     const glossaryBank = mathGlossaryBank(activeBlock.exerciseType)
-    const resizesAppliedItems = glossaryBank || inlineArithmetic || editorProfile === 'question-simple' || editorProfile === 'perimetre' || editorProfile === 'aire' ||
+    const resizesAppliedItems = glossaryBank || inlineArithmetic || editorProfile === 'question-simple' || isFigureMeasureProfile(editorProfile) ||
       editorProfile === 'logique-visuelle' || editorProfile === 'mots-dans-l-ordre'
     if (resizesAppliedItems && count != null && patch.libreItems === undefined) {
       const lists = [activeBlock.libreItems ?? [], (doubleA5 ? activeBlock.a5RightLibre?.items : undefined) ?? []]

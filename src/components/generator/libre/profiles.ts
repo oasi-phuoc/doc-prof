@@ -12,7 +12,7 @@ import { isSocieteType } from '@/societe/types'
 import { isLogiqueType } from '@/logique/types'
 import { isReperageConstruire, isReperageDroites } from '@/math/coord-reperage'
 import { isTransformationExercise } from '@/math/coord-transformations'
-import { isAreaExercise, isPerimeterExercise } from '@/math/mesures'
+import { isAreaExercise, isPerimeterExercise, isVolumeExercise } from '@/math/mesures'
 import { isMathReferenceType } from '@/math/theory-lessons'
 import type { Domain } from '@/math/types'
 import type { SheetFormat } from '../sheet-format'
@@ -45,6 +45,7 @@ export function isInlineArithmetic(domain: Domain, exerciseType: string): boolea
 export function liveEditorProfile(domain: Domain, exerciseType: string, format: SheetFormat, grammarPresentation?: GrammarPresentation) {
   if (domain === 'géométrie' && isPerimeterExercise(exerciseType)) return 'perimetre'
   if (domain === 'géométrie' && isAreaExercise(exerciseType)) return 'aire'
+  if (domain === 'géométrie' && isVolumeExercise(exerciseType)) return 'volume'
   if (isInlineArithmetic(domain, exerciseType)) return 'calcul-en-ligne'
   if ((domain === 'algèbre' || domain === 'tpm') && COLUMN_TYPES.has(exerciseType)) return 'calcul-en-colonnes'
   if ((domain === 'géométrie' || domain === 'tpm') && CONVERSION_TYPES.has(exerciseType)) return 'conversion'
@@ -115,9 +116,13 @@ export function isCalculationProfile(profile: LiveEditorProfile): boolean {
     profile === 'ordre-numerique' || profile === 'notation-numerique' || profile === 'suite-numerique'
 }
 
+export function isFigureMeasureProfile(profile: LiveEditorProfile): boolean {
+  return profile === 'perimetre' || profile === 'aire' || profile === 'volume'
+}
+
 export function hasFlatRegeneration(profile: LiveEditorProfile): boolean {
   return isCalculationProfile(profile) || profile === 'logique-visuelle' || profile === 'question-simple' ||
-    profile === 'mots-dans-l-ordre' || profile === 'perimetre' || profile === 'aire'
+    profile === 'mots-dans-l-ordre' || isFigureMeasureProfile(profile)
 }
 
 export function usesIndependentHalves(profile: LiveEditorProfile): boolean {

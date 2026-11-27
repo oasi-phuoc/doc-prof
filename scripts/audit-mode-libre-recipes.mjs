@@ -5,12 +5,32 @@ export async function auditRecipes(server, profile, seed) {
   const { buildWorksheets } = await server.ssrLoadModule('/src/math/generate.ts')
   const { pageForA5Half } = await server.ssrLoadModule('/src/components/generator/sheet-format.ts')
   const { parseFicheRecipe, buildFicheRecipe } = await server.ssrLoadModule('/src/fiches/recipe.ts')
+  const { editArea, editPerimeter, editVolume } = await server.ssrLoadModule('/src/math/mesures.ts')
   const addition = defaultPage('algèbre')
   const items = buildWorksheets([addition], seed)[0].items
   const edited = { ...items[0], a: 17, b: 25, result: 42, prompt: '17 + 25 = □', answer: '42' }
   const right = { ...edited, libreId: 'droite-1', libreLocked: true }
   const a5RightLibre = { id: 'activite-droite', items: [right] }
   const imageOverrides = { '/lib/images/témoin.webp': '/lib/images/témoin-remplacement.webp' }
+  const geometry = defaultPage('géométrie')
+  const measured = [
+    ['perimetres', 'perimetres-cercle', editPerimeter, { radius: 10, perimeterPi: 3.1416 }, '62,83 cm'],
+    ['aires', 'aires-triangle-manquant', editArea, { base: 5, area: 30 }, '12 cm'],
+    ['volumes', 'volumes-cone-manquant', editVolume, { radius: 2, volume: 20, volumePi: 3 }, '5 cm'],
+  ].map(([topic, exerciseType, edit, values, answer]) => {
+    const page = { ...geometry, topic, exerciseType, count: 1 }
+    const initial = buildWorksheets([page], seed)[0].items[0]
+    const item = edit(initial, values)
+    if (!item) throw new Error(`Impossible de modifier le témoin ${exerciseType}`)
+    const libreItems = [{ ...item, libreId: 'temoin-mesure-1', libreLocked: true }]
+    const libreId = 'temoin-mesure'
+    return {
+      id: `${exerciseType}-libre`,
+      page: { ...page, libreId, libreItems },
+      expected: { libreId, libreItems },
+      verify: (sheets) => sheets[0].items.some(({ responseAnswer, libreLocked }) => responseAnswer === answer && libreLocked),
+    }
+  })
   const witnesses = [
     {
       id: 'tcm-vers-tpm',
@@ -41,6 +61,18 @@ export async function auditRecipes(server, profile, seed) {
       page: { ...defaultPage('calligraphie'), exerciseType },
       expected: { exerciseType },
     })),
+    ...measured,
+    {
+      id: 'symetrie-axiale-libre',
+      page: { ...geometry, topic: 'transformations', exerciseType: 'transformations-axiale-figure', count: 3,
+        coordLibre: true, coordSymmetryAxis: 'y', coordMarks: [
+          { label: 'A', kind: 'point', x: -4, y: -1 },
+          { label: 'B', kind: 'point', x: 2, y: -1 },
+          { label: 'C', kind: 'point', x: 0, y: 3 },
+        ] },
+      expected: { coordSymmetryAxis: 'y' },
+      verify: (sheets) => sheets[0].items[0]?.coordScene?.marks.some(({ label, x, y }) => label === 'A′' && x === 4 && y === -1),
+    },
     {
       id: 'libre-instantane-et-image',
       page: { ...addition, libreItems: [edited, ...items.slice(1)] },

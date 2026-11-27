@@ -1,9 +1,16 @@
 import {
-  areaChoices, areaInputs, editArea, editPerimeter, isAreaExercise,
-  perimeterChoices, perimeterInputs, withAreaFigure, withPerimeterFigure, type FigureMeasureValues,
+  areaChoices, areaInputs, editArea, editPerimeter, editVolume,
+  perimeterChoices, perimeterInputs, volumeChoices, volumeInputs,
+  withAreaFigure, withPerimeterFigure, withVolumeFigure, type FigureMeasureValues,
 } from '@/math/mesures'
 import { createRng, randomSeed } from '@/math/rng'
 import type { Difficulty, MathItem } from '@/math/types'
+
+const editors = {
+  aires: { title: 'Aires', choices: areaChoices, inputs: areaInputs, edit: editArea, choose: withAreaFigure },
+  perimetres: { title: 'Périmètres', choices: perimeterChoices, inputs: perimeterInputs, edit: editPerimeter, choose: withPerimeterFigure },
+  volumes: { title: 'Volumes', choices: volumeChoices, inputs: volumeInputs, edit: editVolume, choose: withVolumeFigure },
+}
 
 export function FigureMeasureEditor({ type, difficulty, items, instruction, fields, writeField, onInstruction, onChange, onRegenerate }: {
   type: string
@@ -16,11 +23,9 @@ export function FigureMeasureEditor({ type, difficulty, items, instruction, fiel
   onChange: (items: MathItem[]) => void
   onRegenerate: (id?: string) => void
 }) {
-  const area = isAreaExercise(type)
-  const figures = area ? areaChoices(type) : perimeterChoices(type)
-  const readInputs = area ? areaInputs : perimeterInputs
-  const edit = area ? editArea : editPerimeter
-  const chooseFigure = area ? withAreaFigure : withPerimeterFigure
+  const family = type.startsWith('aires-') ? 'aires' : type.startsWith('volumes-') ? 'volumes' : 'perimetres'
+  const { title, choices, inputs: readInputs, edit, choose: chooseFigure } = editors[family]
+  const figures = choices(type)
   function update(index: number, item: MathItem) {
     onChange(items.map((current, position) => position === index ? item : current))
   }
@@ -34,7 +39,7 @@ export function FigureMeasureEditor({ type, difficulty, items, instruction, fiel
   }
 
   return (
-    <section className="quad-libre-block" aria-label={area ? 'Aires' : 'Périmètres'}>
+    <section className="quad-libre-block" aria-label={title}>
       <label className="libre-field is-line">
         <span>Consigne</span>
         <textarea className="libre-line-input is-textarea" rows={2} value={instruction}
@@ -82,7 +87,7 @@ export function FigureMeasureEditor({ type, difficulty, items, instruction, fiel
                         for (const { key: name } of inputs) {
                           const candidate = (name === key ? text : fields[`${id}:${name}`])?.trim()
                           if (candidate === undefined) continue
-                          const pattern = name.endsWith('Pi') ? /^\d{1,7}(?:[.,]\d{1,6})?$/ : /^\d{1,7}(?:[.,]\d{1,2})?$/
+                          const pattern = name.endsWith('Pi') ? /^\d{1,7}(?:[.,]\d{1,6})?$/ : /^\d{1,12}(?:[.,]\d{1,2})?$/
                           if (pattern.test(candidate)) values[name] = Number(candidate.replace(',', '.'))
                         }
                         const edited = values[key] === undefined ? undefined : edit(item, values)

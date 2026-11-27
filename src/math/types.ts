@@ -414,6 +414,8 @@ export type FigureDims = {
   perimeterPi?: number
   area?: number
   areaPi?: number
+  volume?: number
+  volumePi?: number
   unit?: string
   triangleKind?: 'equilateral' | 'isosceles' | 'scalene' | 'right'
   trapezoidKind?: 'rectangle' | 'isosceles' | 'scalene'

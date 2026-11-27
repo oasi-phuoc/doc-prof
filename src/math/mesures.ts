@@ -226,7 +226,7 @@ const areaTools = {
 
 type AreaKey = (typeof areaTools)[PlanarMeasureFigure]['keys'][number] | 'area' | 'areaPi'
 type AreaValues = Partial<Record<AreaKey, number>> & { unit?: string }
-export type FigureMeasureValues = PerimeterValues & AreaValues
+export type FigureMeasureValues = PerimeterValues & AreaValues & VolumeValues
 
 const areaNames: Record<AreaKey, string> = {
   side: 'Côté', length: 'Longueur', width: 'Largeur', base: 'Base', height: 'Hauteur',
@@ -362,104 +362,140 @@ function areaDisk(rng: Rng, difficulty: Difficulty, missing: boolean, range?: Nu
   return areaItem('circle', { radius: val(rng, difficulty, range) }, missing)
 }
 
-function volCube(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
-  const s = val(rng, difficulty, range)
-  const v = round2(s * s * s)
-  if (!missing) {
-    return geo({
-      prompt: 'Calculez le volume.',
-      figure: 'cube',
-      dims: { side: s, unit: 'cm' },
-      calc: `${fmt(s)}³`,
-      response: `${fmt(v)} cm³`,
-    })
+const volumeTools = {
+  cube: { keys: ['side'], unknown: 'side' },
+  cuboid: { keys: ['length', 'width', 'height'], unknown: 'height' },
+  cylinder: { keys: ['radius', 'height'], unknown: 'height' },
+  cone: { keys: ['radius', 'height'], unknown: 'height' },
+  sphere: { keys: ['radius'], unknown: 'radius' },
+} satisfies Partial<Record<Figure, { keys: (keyof FigureDims)[]; unknown: FigureDims['ask'] }>>
+
+type VolumeFigure = keyof typeof volumeTools
+type VolumeKey = (typeof volumeTools)[VolumeFigure]['keys'][number] | 'volume' | 'volumePi'
+type VolumeValues = Partial<Record<VolumeKey, number>> & { unit?: string }
+
+const volumeNames: Record<VolumeKey, string> = {
+  side: 'Arête', length: 'Longueur', width: 'Largeur', height: 'Hauteur',
+  radius: 'Rayon', volume: 'Volume donné', volumePi: 'Valeur de π',
+}
+
+export function isVolumeExercise(type: string): boolean {
+  return /^volumes-(?:cube|pave|quadrilatere|cylindre|cone)(?:-manquant)?$/.test(type) ||
+    type === 'volumes-sphere' || type === 'volumes-melange'
+}
+
+function volumeFigure(item: MathItem): VolumeFigure | undefined {
+  const figure = item.figure
+  return item.layout === 'geo' && figure && Object.hasOwn(volumeTools, figure) ? figure as VolumeFigure : undefined
+}
+
+function volumeGiven(item: MathItem): number {
+  const match = item.prompt?.match(/Le volume mesure ([0-9]+(?:[,.][0-9]+)?)/u)
+  return item.dims?.volume ?? Number(match?.[1]?.replace(',', '.'))
+}
+
+function volumeUsesPi(figure: VolumeFigure): boolean {
+  return figure === 'cylinder' || figure === 'cone' || figure === 'sphere'
+}
+
+export function volumeInputs(item: MathItem): { key: VolumeKey; label: string; value: number }[] {
+  const figure = volumeFigure(item)
+  const dims = item.dims
+  if (!figure || !dims) return []
+  const keys: VolumeKey[] = volumeTools[figure].keys.filter((key) => key !== dims.ask)
+  if (dims.ask) keys.unshift('volume')
+  if (volumeUsesPi(figure)) keys.push('volumePi')
+  return keys.map((key) => ({
+    key, label: volumeNames[key],
+    value: key === 'volume' ? volumeGiven(item) : key === 'volumePi' ? dims.volumePi ?? PI : dims[key]!,
+  }))
+}
+
+function volumeBase(figure: VolumeFigure, dims: FigureDims): number {
+  if (figure === 'cuboid') return dims.length! * dims.width!
+  const pi = dims.volumePi ?? PI
+  if (figure === 'sphere') return (4 / 3) * pi
+  if (figure === 'cylinder' || figure === 'cone') return pi * dims.radius! * dims.radius!
+  return 1
+}
+
+function volumeSize(figure: VolumeFigure, dims: FigureDims, given?: number): number {
+  if (given === undefined) return dims[volumeTools[figure].unknown]!
+  if (figure === 'cube') return Math.cbrt(given)
+  return given * (figure === 'cone' ? 3 : 1) / volumeBase(figure, dims)
+}
+
+function volumeItem(figure: VolumeFigure, dims: FigureDims, missing: boolean, given?: number): MathItem {
+  const { unknown } = volumeTools[figure]
+  const unit = dims.unit ?? 'cm'
+  const base = volumeBase(figure, dims)
+  const size = volumeSize(figure, dims, given)
+  const cube = figure === 'cube'
+  const cone = figure === 'cone'
+  const cuboid = figure === 'cuboid'
+  const sphere = figure === 'sphere'
+  const total = given ?? round2(cube || sphere ? base * size * size * size : base * size / (cone ? 3 : 1))
+  const piLabel = String(dims.volumePi ?? PI).replace('.', ',')
+  const piText = volumeUsesPi(figure) ? ` Prenez π = ${piLabel}.` : ''
+  const baseLine = cube || sphere ? '' : cuboid ? `${fmt(dims.length!)} × ${fmt(dims.width!)}`
+    : `${piLabel} × ${fmt(dims.radius!)}²`
+  const labeled: FigureDims = { ...dims, unit }
+  let calculation: string
+  let prompt: string
+  if (missing) {
+    delete labeled[unknown]
+    labeled.ask = unknown
+    const start = cone ? `(${fmt(total)} × 3)` : fmt(total)
+    calculation = cube ? `∛${fmt(total)}` : `${start} ÷ (${baseLine})`
+    const directive = cube ? 'Calculez l’arête.'
+      : cuboid ? `La longueur mesure ${fmt(dims.length!)} ${unit} et la largeur ${fmt(dims.width!)} ${unit}. Calculez la hauteur.`
+      : `Le rayon mesure ${fmt(dims.radius!)} ${unit}. Calculez la hauteur.`
+    prompt = `Le volume mesure ${fmt(total)} ${unit}³. ${directive}${piText}`
+  } else {
+    const product = `${baseLine} × ${fmt(size)}`
+    calculation = cube ? `${fmt(size)}³`
+      : sphere ? `(4 ÷ 3) × ${piLabel} × ${fmt(size)}³`
+      : cone ? `(${product}) ÷ 3` : product
+    prompt = `Calculez le volume.${piText}`
   }
-  return geo({
-    prompt: `Le volume mesure ${fmt(v)} cm³. Calculez l’arête.`,
-    figure: 'cube',
-    dims: { ask: 'side', unit: 'cm' },
-    calc: `∛${fmt(v)}`,
-    response: `${fmt(s)} cm`,
-  })
+  return geo({ prompt, figure, dims: labeled, calc: calculation, response: missing ? `${fmt(size)} ${unit}` : `${fmt(total)} ${unit}³` })
+}
+
+export function editVolume(item: MathItem, values: VolumeValues): MathItem | undefined {
+  const figure = volumeFigure(item)
+  if (!figure || !item.dims) return undefined
+  const missing = Boolean(item.dims.ask) && figure !== 'sphere'
+  const dims = { ...item.dims, ...values }
+  const given = missing ? values.volume ?? volumeGiven(item) : undefined
+  const pi = dims.volumePi ?? PI
+  const { unknown, keys } = volumeTools[figure]
+  const size = volumeSize(figure, dims, given)
+  const dimensions = keys.map((key) => key === unknown ? size : dims[key]!)
+  if (volumeUsesPi(figure) && !(pi >= 3 && pi <= 4)) return undefined
+  if (dimensions.some((value) => !Number.isFinite(value) || round2(value) <= 0)) return undefined
+  return { ...item, ...volumeItem(figure, dims, missing, given) }
+}
+
+function volCube(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
+  return volumeItem('cube', { side: val(rng, difficulty, range) }, missing)
 }
 
 function volCuboid(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
-  const length = val(rng, difficulty, range)
-  const width = val(rng, difficulty, range)
-  const height = val(rng, difficulty, range)
-  const v = round2(length * width * height)
-  if (!missing) {
-    return geo({
-      prompt: 'Calculez le volume.',
-      figure: 'cuboid',
-      dims: { length, width, height, unit: 'cm' },
-      calc: `${fmt(length)} × ${fmt(width)} × ${fmt(height)}`,
-      response: `${fmt(v)} cm³`,
-    })
-  }
-  return geo({
-    prompt: `Le volume mesure ${fmt(v)} cm³. La longueur mesure ${fmt(length)} cm et la largeur ${fmt(width)} cm. Calculez la hauteur.`,
-    figure: 'cuboid',
-    dims: { length, width, ask: 'height', unit: 'cm' },
-    calc: `${fmt(v)} ÷ (${fmt(length)} × ${fmt(width)})`,
-    response: `${fmt(height)} cm`,
-  })
+  return volumeItem('cuboid', {
+    length: val(rng, difficulty, range), width: val(rng, difficulty, range), height: val(rng, difficulty, range),
+  }, missing)
 }
 
 function volCylinder(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
-  const r = val(rng, difficulty, range)
-  const h = val(rng, difficulty, range)
-  const v = round2(PI * r * r * h)
-  if (!missing) {
-    return geo({
-      prompt: 'Calculez le volume. Prenez π = 3,14.',
-      figure: 'cylinder',
-      dims: { radius: r, height: h, unit: 'cm' },
-      calc: `3,14 × ${fmt(r)}² × ${fmt(h)}`,
-      response: `${fmt(v)} cm³`,
-    })
-  }
-  return geo({
-    prompt: `Le volume mesure ${fmt(v)} cm³. Le rayon mesure ${fmt(r)} cm. Calculez la hauteur. Prenez π = 3,14.`,
-    figure: 'cylinder',
-    dims: { radius: r, ask: 'height', unit: 'cm' },
-    calc: `${fmt(v)} ÷ (3,14 × ${fmt(r)}²)`,
-    response: `${fmt(h)} cm`,
-  })
+  return volumeItem('cylinder', { radius: val(rng, difficulty, range), height: val(rng, difficulty, range) }, missing)
 }
 
 function volCone(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
-  const r = val(rng, difficulty, range)
-  const h = val(rng, difficulty, range)
-  const v = round2((PI * r * r * h) / 3)
-  if (!missing) {
-    return geo({
-      prompt: 'Calculez le volume. Prenez π = 3,14.',
-      figure: 'cone',
-      dims: { radius: r, height: h, unit: 'cm' },
-      calc: `(3,14 × ${fmt(r)}² × ${fmt(h)}) ÷ 3`,
-      response: `${fmt(v)} cm³`,
-    })
-  }
-  return geo({
-    prompt: `Le volume mesure ${fmt(v)} cm³. Le rayon mesure ${fmt(r)} cm. Calculez la hauteur. Prenez π = 3,14.`,
-    figure: 'cone',
-    dims: { radius: r, ask: 'height', unit: 'cm' },
-    calc: `(${fmt(v)} × 3) ÷ (3,14 × ${fmt(r)}²)`,
-    response: `${fmt(h)} cm`,
-  })
+  return volumeItem('cone', { radius: val(rng, difficulty, range), height: val(rng, difficulty, range) }, missing)
 }
 
 function volSphere(rng: Rng, difficulty: Difficulty, range?: NumberRange): MathItem {
-  const r = val(rng, difficulty, range)
-  const v = round2((4 / 3) * PI * r * r * r)
-  return geo({
-    prompt: 'Calculez le volume. Prenez π = 3,14.',
-    figure: 'sphere',
-    dims: { radius: r, unit: 'cm' },
-    calc: `(4 ÷ 3) × 3,14 × ${fmt(r)}³`,
-    response: `${fmt(v)} cm³`,
-  })
+  return volumeItem('sphere', { radius: val(rng, difficulty, range) }, false)
 }
 
 const perimeterGenerators: Record<PlanarMeasureFigure, MeasureFn> = {
@@ -500,9 +536,29 @@ export function withAreaFigure(item: MathItem, figure: Figure, rng: Rng, difficu
   return { ...item, ...(editArea(next, { unit: item.dims?.unit ?? 'cm' }) ?? next) }
 }
 
-const VOL_QUAD: Partial<Record<Figure, MeasureFn>> = {
-  cube: volCube,
-  cuboid: volCuboid,
+const volumeGenerators: Record<VolumeFigure, MeasureFn> = {
+  cube: volCube, cuboid: volCuboid, cylinder: volCylinder, cone: volCone,
+  sphere: (rng, difficulty, _missing, range) => volSphere(rng, difficulty, range),
+}
+
+export function volumeChoices(type: string): { figure: Figure; label: string }[] {
+  if (type.startsWith('volumes-quadrilatere')) {
+    return VOLUME_QUAD_FIGURES.map((figure) => ({ figure, label: QUAD_SHAPE_LABELS[figure]! }))
+  }
+  if (type !== 'volumes-melange') return []
+  return [
+    { figure: 'cube', label: 'Cube' },
+    { figure: 'cuboid', label: 'Pavé' },
+    { figure: 'cylinder', label: 'Cylindre' },
+    { figure: 'cone', label: 'Cône' },
+    { figure: 'sphere', label: 'Sphère' },
+  ]
+}
+
+export function withVolumeFigure(item: MathItem, figure: Figure, rng: Rng, difficulty: Difficulty): MathItem {
+  if (!Object.hasOwn(volumeGenerators, figure) || figure === item.figure) return item
+  const next = volumeGenerators[figure as VolumeFigure](rng, difficulty, Boolean(item.dims?.ask))
+  return { ...item, ...(editVolume(next, { unit: item.dims?.unit ?? 'cm' }) ?? next) }
 }
 
 function allowedFigures(all: Figure[], chosen?: Figure[]): Figure[] {
@@ -540,7 +596,7 @@ export function tryGenerateMesure(
     return pickQuad(rng, areaGenerators, AREA_QUAD_FIGURES, shapes, d, typeId.endsWith('-manquant'), range)
   }
   if (typeId === 'volumes-quadrilatere' || typeId === 'volumes-quadrilatere-manquant') {
-    return pickQuad(rng, VOL_QUAD, VOLUME_QUAD_FIGURES, shapes, d, typeId.endsWith('-manquant'), range)
+    return pickQuad(rng, volumeGenerators, VOLUME_QUAD_FIGURES, shapes, d, typeId.endsWith('-manquant'), range)
   }
   if (typeId === 'perimetres-melange') {
     const fn = pick(rng, Object.values(perimeterGenerators))
