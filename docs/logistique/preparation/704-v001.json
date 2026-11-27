@@ -1,0 +1,194 @@
+{
+  "diplomas": [
+    "CFC"
+  ],
+  "objectives": "## Objectifs\n\n- Calculer un **stock moyen** selon les 3 formules et justifier le choix\n- Calculer **rotation** et **durée de stockage** et en tirer des conclusions\n- Interpréter **couverture** et **taux de service** (dont logique ABC, module 311)\n- Calculer le **taux d'erreur** de livraison et citer des mesures de prévention (fournisseur / destinataire)",
+  "overview": "## Aperçu du module 704\n\n- Déterminer un stock moyen avec un rythme de relevé adapté à ses variations.\n- Calculer rotation, durée et couverture en écrivant l'unité et la période.\n- Interpréter taux de service et taux d'erreur pour identifier des mesures concrètes.",
+  "replacements": [
+    {
+      "from": "Les indicateurs (KPI) permettent à EnterSite AG de stocker à **moindre coût**. On peut les calculer pour l'entreprise entière, un **groupe d'articles** ou un **article**.",
+      "to": "Les indicateurs logistiques décrivent la qualité du service et l'utilisation des ressources. On peut les calculer pour un article, un groupe d'articles ou un périmètre d'entrepôt.",
+      "reason": "Présenter les deux familles d'indicateurs."
+    },
+    {
+      "from": "- **F3 :** (2000 + 300 + 750 + 900 + 1100 + 200 + 850 + 700 + 1700 + 1400 + 600 + 800 + 1500) / 13 = **984** pièces  ",
+      "to": "- **F3 :** (2000 + 300 + 750 + 900 + 1100 + 200 + 850 + 700 + 1700 + 1400 + 600 + 800 + 1500) / 13 ≈ **985** pièces.",
+      "reason": "Corriger l'arrondi de 984,615 pièces."
+    }
+  ],
+  "summary": [
+    "Déterminer un stock moyen avec un rythme de relevé adapté à ses variations.",
+    "Calculer rotation, durée et couverture en écrivant l'unité et la période.",
+    "Interpréter taux de service et taux d'erreur pour identifier des mesures concrètes."
+  ],
+  "glossary": [
+    [
+      "Indicateur",
+      "Mesure choisie pour suivre un résultat selon une définition stable."
+    ],
+    [
+      "Stock moyen",
+      "Niveau représentatif d'une période, estimé à partir des relevés."
+    ],
+    [
+      "Rotation",
+      "Rapport entre la consommation d'une période et son stock moyen."
+    ],
+    [
+      "Durée moyenne de stockage",
+      "Durée de la période divisée par la rotation sur cette même période."
+    ],
+    [
+      "Couverture",
+      "Nombre de jours de consommation que le stock courant peut assurer selon l'hypothèse retenue."
+    ],
+    [
+      "Taux de service",
+      "Part des demandes satisfaites, mesurée selon une règle déclarée."
+    ],
+    [
+      "Taux d'erreur",
+      "Part des livraisons non conformes dans le total observé."
+    ],
+    [
+      "Non-conformité",
+      "Écart aux caractéristiques attendues d'une livraison ou d'un article."
+    ],
+    [
+      "Tolérance",
+      "Écart admissible dans les conditions fixées."
+    ],
+    [
+      "Série comparable",
+      "Mesures obtenues avec le même périmètre, la même unité et la même méthode."
+    ],
+    [
+      "Rupture",
+      "Absence de stock disponible pour satisfaire une demande."
+    ],
+    [
+      "Analyse ABC",
+      "Classement en groupes selon un critère, notamment la valeur consommée."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Le stock passe de 140 à 100 unités. Calculez sa moyenne avec les deux bornes.",
+      "answer": "120 unités",
+      "calculation": "(140 + 100) ÷ 2 = 120."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Les stocks de début d'année et de fin de trimestre valent 180, 120, 90, 110 puis 100. Calculez la moyenne de ces relevés.",
+      "answer": "120 unités",
+      "calculation": "(180 + 120 + 90 + 110 + 100) ÷ 5 = 120."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Sur 360 jours, la consommation est de 2 400 unités et le stock moyen de 300. Trouvez la rotation et la durée moyenne.",
+      "answer": "8 rotations, 45 jours",
+      "calculation": "2 400 ÷ 300 = 8. 360 ÷ 8 = 45."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Il reste 168 unités et les sorties moyennes sont de 24 unités par jour ouvré. Quelle couverture reste-t-il ?",
+      "answer": "7 jours ouvrés",
+      "calculation": "168 ÷ 24 = 7."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Le site satisfait 236 des 250 commandes dans le délai convenu. Calculez le taux selon ce critère.",
+      "answer": "94,4 %",
+      "calculation": "236 ÷ 250 × 100 = 94,4."
+    },
+    {
+      "id": "maths-fiche-6",
+      "kind": "maths",
+      "prompt": "Sur 420 livraisons, 15 sont non conformes dont 3 présentent plusieurs défauts. Calculez le taux d'erreur par livraison, au dixième.",
+      "answer": "3,6 %",
+      "calculation": "15 ÷ 420 × 100 ≈ 3,6. Une livraison est comptée une fois."
+    },
+    {
+      "id": "maths-fiche-7",
+      "kind": "maths",
+      "prompt": "Deux quais ont respectivement 2 erreurs sur 50 livraisons et 8 sur 350. Quel est le taux global ?",
+      "answer": "2,5 %",
+      "calculation": "(2 + 8) ÷ (50 + 350) × 100 = 2,5."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Pourquoi faut-il plusieurs relevés lorsque le stock est très saisonnier ?",
+      "answer": "Les deux bornes peuvent masquer des pics ou des creux importants."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Pourquoi préciser « jour ouvré » ou « jour civil » dans une couverture ?",
+      "answer": "La consommation moyenne et le délai doivent utiliser une base comparable."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Quelle différence existe entre rotation et couverture ?",
+      "answer": "La rotation décrit la consommation passée par rapport au stock moyen. La couverture estime l'autonomie à partir du stock courant."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Peut-on comparer directement un taux calculé par ligne et un taux calculé par commande ?",
+      "answer": "Il faut d'abord harmoniser l'unité d'observation et le critère de satisfaction."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Donnez un contrôle pour prévenir une erreur d'article sur le quai de départ.",
+      "answer": "Scanner la référence de l'article et la comparer au document de préparation avant fermeture."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Un stock moyen baisse et le taux de service baisse aussi. Quels éléments faut-il examiner avant de conclure à un progrès ?",
+      "answer": "Vérifier la disponibilité par référence, la demande, les délais fournisseurs et le coût des ruptures, puis comparer avec les économies de stock."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Les erreurs du fournisseur se concentrent sur des quantités trop faibles. Proposez un contrôle et un suivi.",
+      "answer": "Contrôler les quantités à la réception, consigner les écarts avec le bon, et suivre le taux par fournisseur sur une période stable."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "La couverture est de 4 jours ouvrés alors qu'une livraison est prévue dans 6 jours ouvrés. Que proposez-vous ?",
+      "answer": "Vérifier les besoins et les réservations, confirmer le délai et organiser un dépannage ou prioriser les commandes concernées."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "4.2 La rotation des stocks",
+      "file": "log-704-notions-1-v001.svg",
+      "alt": "Stock moyen. 300 unités. Rotation. 2 400 ÷ 300 = 8. Durée. 360 ÷ 8 = 45 jours.",
+      "caption": "Exemple annuel sur une base conventionnelle de 360 jours.",
+      "sha256": "5b7b7f2f86993cd9a49b7c34b60a6068efb5bfe2c2b40e1b097a9088e84722da",
+      "origin": "Illustration originale Doc-Prof du module 704."
+    },
+    {
+      "anchor": "4.4 La capacité de livraison (taux de service)",
+      "file": "log-704-notions-2-v001.svg",
+      "alt": "Taux de service. Demandes satisfaites sur demandes totales. Taux d'erreur. Livraisons défectueuses sur livraisons totales.",
+      "caption": "Les numérateurs et dénominateurs adoptent la même unité.",
+      "sha256": "b951c88e7b835376453e4d49b3ad3d3eeffd2822d1e831e7264f4ee236a1211a",
+      "origin": "Illustration originale Doc-Prof du module 704."
+    }
+  ]
+}

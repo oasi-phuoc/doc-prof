@@ -62,6 +62,11 @@ import { module613 } from './banks/module-613-v001.generated.ts'
 import { module614 } from './banks/module-614-v001.generated.ts'
 import { module615 } from './banks/module-615-v001.generated.ts'
 import { module616 } from './banks/module-616-v001.generated.ts'
+import { module701 } from './banks/module-701-v001.generated.ts'
+import { module702 } from './banks/module-702-v001.generated.ts'
+import { module703 } from './banks/module-703-v001.generated.ts'
+import { module704 } from './banks/module-704-v001.generated.ts'
+import { module705 } from './banks/module-705-v001.generated.ts'
 import { module805 } from './banks/module-805-v001.generated.ts'
 import { module902 } from './banks/module-902-v001.generated.ts'
 import { illustratedReferences } from './banks/references-v002.generated.ts'
@@ -146,6 +151,11 @@ const publication_607_608_609_610_611_612_v001: LogistiquePublication = {
   units: [...publication_601_602_603_604_605_606_v001.units, ...module607, ...module608, ...module609, ...module610, ...module611, ...module612],
 }
 
+const publication_614_615_616_v001: LogistiquePublication = {
+  revision: 'logistique-614-615-616-v001',
+  units: [...publication_607_608_609_610_611_612_v001.units, ...module614, ...module615, ...module616],
+}
+
 /** Ajouter une publication après validation. Garder les versions utilisées par les recettes. */
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
@@ -194,9 +204,10 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   publication_501_502_503_504_505_506_v001,
   publication_601_602_603_604_605_606_v001,
   publication_607_608_609_610_611_612_v001,
+  publication_614_615_616_v001,
   {
-    revision: 'logistique-614-615-616-v001',
-    units: [...publication_607_608_609_610_611_612_v001.units, ...module614, ...module615, ...module616],
+    revision: 'logistique-701-702-703-704-705-v001',
+    units: [...publication_614_615_616_v001.units, ...module701, ...module702, ...module703, ...module704, ...module705],
   },
 ]
 

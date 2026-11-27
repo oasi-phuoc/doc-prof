@@ -1,0 +1,194 @@
+{
+  "diplomas": [
+    "CFC"
+  ],
+  "objectives": "## Objectifs\n\n- Nommer les **5 catégories** de coûts de stockage\n- Distinguer **coûts fixes** et **coûts variables**\n- Calculer la **valeur du stock**, les **intérêts** et les **frais fixes** par emplacement\n- Argumenter des mesures de **réduction des stocks** et le remplacement d'**équipements**",
+  "overview": "## Aperçu du module 702\n\n- Repérer les grandes familles de dépenses d'un entrepôt et leurs facteurs.\n- Classer les coûts selon leur comportement et mesurer les ressources immobilisées par le stock.\n- Comparer des solutions de stockage ou de manutention sur des bases similaires.",
+  "replacements": [
+    {
+      "from": "### 2.1 Les cinq catégories de coûts (EnterSite)",
+      "to": "### 2.1 Les cinq catégories de coûts",
+      "reason": "Intitulé autonome."
+    },
+    {
+      "from": "**Valeur résiduelle** = valeur à neuf − somme des amortissements annuels.",
+      "to": "**Amortissement annuel** = (coût d'acquisition − valeur résiduelle estimée) ÷ durée d'utilisation. **Valeur nette comptable** = coût d'acquisition − amortissements cumulés.",
+      "reason": "Distinguer la valeur de fin d'utilisation et la valeur au bilan."
+    }
+  ],
+  "summary": [
+    "Repérer les grandes familles de dépenses d'un entrepôt et leurs facteurs.",
+    "Classer les coûts selon leur comportement et mesurer les ressources immobilisées par le stock.",
+    "Comparer des solutions de stockage ou de manutention sur des bases similaires."
+  ],
+  "glossary": [
+    [
+      "Coût fixe",
+      "Dépense qui varie peu avec le volume pendant une période et dans une plage d'activité donnée."
+    ],
+    [
+      "Coût variable",
+      "Dépense qui change avec le volume ou un autre facteur mesurable d'activité."
+    ],
+    [
+      "Coût total",
+      "Somme des coûts fixes et variables du périmètre étudié."
+    ],
+    [
+      "Prix de revient",
+      "Coût unitaire retenu pour valoriser un bien."
+    ],
+    [
+      "Valeur du stock",
+      "Somme des quantités multipliées par les prix de revient correspondants."
+    ],
+    [
+      "Capital immobilisé",
+      "Fonds engagés dans des biens qui ne sont pas disponibles en trésorerie."
+    ],
+    [
+      "Coût d'opportunité",
+      "Valeur à laquelle on renonce en consacrant le capital à un usage donné."
+    ],
+    [
+      "Consommable",
+      "Fourniture utilisée ou épuisée par l'exploitation."
+    ],
+    [
+      "Amortissement linéaire",
+      "Répartition régulière de la valeur amortissable sur la durée retenue."
+    ],
+    [
+      "Valeur nette comptable",
+      "Valeur d'acquisition diminuée des amortissements cumulés."
+    ],
+    [
+      "Valeur résiduelle",
+      "Valeur estimée d'un bien en fin d'utilisation."
+    ],
+    [
+      "Coût de possession",
+      "Dépenses à considérer pour détenir et utiliser un stock ou un équipement."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Un stock contient 60 bacs à CHF 22 et 45 couvercles à CHF 8. Calculez sa valeur.",
+      "answer": "CHF 1 680",
+      "calculation": "60 × 22 + 45 × 8 = 1 680."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Calculez l'intérêt annuel à 3 % sur un stock moyen de CHF 54 000.",
+      "answer": "CHF 1 620",
+      "calculation": "54 000 × 0,03 = 1 620."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "L'entrepôt paie CHF 32 400 de frais fixes annuels pour 180 emplacements. Quel est le coût fixe annuel moyen par emplacement ?",
+      "answer": "CHF 180 par emplacement",
+      "calculation": "32 400 ÷ 180 = 180."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Calculez le coût mensuel de 640 commandes si les frais fixes sont CHF 4 200 et l'emballage coûte CHF 1,75 par commande.",
+      "answer": "CHF 5 320",
+      "calculation": "4 200 + 640 × 1,75 = 5 320."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Un appareil de CHF 24 000 sera revendu CHF 4 000 après 5 ans. Calculez son amortissement annuel linéaire.",
+      "answer": "CHF 4 000 par an",
+      "calculation": "(24 000 − 4 000) ÷ 5 = 4 000."
+    },
+    {
+      "id": "maths-fiche-6",
+      "kind": "maths",
+      "prompt": "Un chariot coûte CHF 32 000. Il est amorti sur 5 ans sans valeur résiduelle. Quelle est sa valeur nette après 3 ans ?",
+      "answer": "CHF 12 800",
+      "calculation": "32 000 − 3 × (32 000 ÷ 5) = 12 800."
+    },
+    {
+      "id": "maths-fiche-7",
+      "kind": "maths",
+      "prompt": "Le stock moyen passe de CHF 80 000 à CHF 64 000. À 2,5 % par an, calculez l'économie théorique d'intérêts.",
+      "answer": "CHF 400 par an",
+      "calculation": "(80 000 − 64 000) × 0,025 = 400."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Citez les cinq catégories de dépenses du cours.",
+      "answer": "Personnel, marchandises stockées, locaux, moyens de manutention et auxiliaires, consommables."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Un loyer mensuel reste identique malgré une baisse des commandes. Comment le classer ?",
+      "answer": "Coût fixe dans les conditions et la période considérées."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Pourquoi l'énergie peut-elle combiner une part fixe et une part variable ?",
+      "answer": "Un abonnement ou un équipement de base coûte même à faible activité, tandis que certains usages croissent avec le volume."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Quel intérêt présente le calcul du coût fixe par emplacement ?",
+      "answer": "Il répartit un coût commun et aide à comparer des capacités sur des bases homogènes."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Pourquoi intégrer l'entretien dans la comparaison de deux chariots ?",
+      "answer": "Il influence les dépenses totales et la disponibilité pendant l'utilisation."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Un fournisseur propose une remise si vous doublez la quantité achetée. Quels éléments comparez-vous avant d'accepter ?",
+      "answer": "L'économie d'achat et les intérêts, places, risques de dégradation ou d'invendus, ainsi que les conséquences sur la disponibilité."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Les cartons jetables coûtent moins cher à l'achat que des bacs réutilisables. Comment comparer ?",
+      "answer": "Choisir un même nombre de rotations; inclure achats, retours, nettoyage, pertes et fin d'usage."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Après une hausse des frais du bâtiment, on envisage de déménager. Quelles données demandez-vous ?",
+      "answer": "Loyer, équipements et déménagement, énergie, capacité utile, distances internes et conséquences sur les délais."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "2.2 Coûts fixes vs variables",
+      "file": "log-702-notions-1-v001.svg",
+      "alt": "Fixes. CHF 4 200 par mois. Variables. 640 × CHF 1,75. Total. CHF 5 320.",
+      "caption": "Les frais d’emballage augmentent avec le nombre de commandes.",
+      "sha256": "93064a336292a8cabc3bee10e01aebb3c970fbb69dfd6254967c9c6fda59a5e3",
+      "origin": "Illustration originale Doc-Prof du module 702."
+    },
+    {
+      "anchor": "2.5 Amortissement linéaire",
+      "file": "log-702-notions-2-v001.svg",
+      "alt": "Prix d'achat. CHF 24 000. Valeur amortissable. 24 000 − 4 000. Amortissement annuel. CHF 4 000.",
+      "caption": "Exemple sur cinq ans avec une valeur résiduelle prévue.",
+      "sha256": "09c0d9e846a9f2b18d6a500215657fbf2f8469d871a445123a5cab8ce4b96dc0",
+      "origin": "Illustration originale Doc-Prof du module 702."
+    }
+  ]
+}

@@ -89,10 +89,15 @@ Référence de réalisation dans le [cahier des charges v2.12](cahier-des-charge
 | L4 — Module 614 | Révision `614-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 614](preparation/614-v001.json). |
 | L4 — Module 615 | Révision `615-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 615](preparation/615-v001.json). |
 | L4 — Module 616 | Révision `616-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 616](preparation/616-v001.json). |
+| L4 — Module 701 | Révision `701-v001` active en CFC et AFP | 2 schémas, 12 termes, 6/4 calculs, 6/5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 701](preparation/701-v001.json). |
+| L4 — Module 702 | Révision `702-v001` active en CFC | 2 schémas, 12 termes, 7 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 702](preparation/702-v001.json). |
+| L4 — Module 703 | Révision `703-v001` active en CFC | 2 schémas, 12 termes, 6 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 703](preparation/703-v001.json). |
+| L4 — Module 704 | Révision `704-v001` active en CFC | 2 schémas, 12 termes, 7 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 704](preparation/704-v001.json). |
+| L4 — Module 705 | Révision `705-v001` active en CFC | 2 schémas, 12 termes, 7 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 705](preparation/705-v001.json). |
 
 ## Reprise opérationnelle
 
-1. Les thèmes 100 à 600 disposent des six types pour tous les modules et diplômes prévus au catalogue. Reprendre la généralisation par le module 701 « L’inventaire ». Les cibles nominales de banque restent à atteindre. Partir des archives et vérifier visuels et composition avant publication. [Archives par thème](sources-epcas/).
+1. Les thèmes 100 à 700 disposent des six types pour tous les modules et diplômes prévus au catalogue. Poursuivre par le module 801 « L’identification des marchandises ». Les cibles nominales de banque restent à atteindre. Partir des archives et vérifier visuels et composition avant publication. [Archives par thème](sources-epcas/).
 2. Vérifier les corrigés, la place du contenu dans le référentiel, les écarts AFP/CFC et les dépendances à des médias écartés.
 3. Enregistrer une révision de banque et la conserver pour les recettes déjà créées. Les changements de fond du 105 sont consignés dans les [données de préparation](pilote-105/preparation.generated.json) et dans le [dossier éditorial](pilote-105/relecture.md).
 4. Vérifier dans les deux diplômes le nombre d’unités disponibles, la génération, le corrigé, l’impression et la réouverture. Reporter dans ce fichier les preuves, les écarts et le prochain module retenu.
@@ -106,6 +111,10 @@ Référence de réalisation dans le [cahier des charges v2.12](cahier-des-charge
 - `npm run test:logistique` et `npm run test:logistique:browser` vérifient le catalogue, l’éligibilité, le gabarit et les recettes.
 
 ## Résultats de recette
+
+### Thèmes 700 à 900 — Publications
+
+- Modules 701 à 705, soit 36 contextes module, diplôme et type vérifiés en Chromium A4. Réserve minimale au pied de 79,64 px. Les aperçus occupent une page, les cours illustrés produisent un PDF et les suites de calcul gardent les numéros.
 
 ### Thèmes 300 à 600 — Publications
 

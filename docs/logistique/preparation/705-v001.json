@@ -1,0 +1,224 @@
+{
+  "diplomas": [
+    "CFC"
+  ],
+  "objectives": "## Objectifs\n\n- Distinguer **coûts totaux**, fixes et variables et calculer le **taux de couverture**\n- Identifier les composants des coûts de stockage et calculer amortissement / coût d'un équipement\n- Calculer **point de commande**, stock max et expliquer min / sécurité\n- Calculer **taux d'intérêt de stockage** et **taux des coûts de possession** et citer des leviers de minimisation",
+  "overview": "## Aperçu du module 705\n\n- Comparer les coûts de l'entrepôt avec l'activité et le revenu correspondant.\n- Suivre un réapprovisionnement, du seuil de commande à la réception.\n- Mesurer les charges liées au stock et comparer des méthodes pour les réduire.",
+  "replacements": [
+    {
+      "from": "| **< 100 %** | Coûts couverts par le CA → **gains** (rentable) |",
+      "to": "| **< 100 %** | Coûts couverts par le CA → **gains** (rentable) |\n| **= 100 %** | Recettes et coûts égaux → **équilibre** |",
+      "reason": "Ajouter le cas d'équilibre."
+    },
+    {
+      "from": "👉 Structure EnterSite : totaux = fixes + variables · rentable si couverture **< 100 %**.",
+      "to": "Ce ratio indique la part du chiffre d'affaires absorbée par les coûts. Sa définition doit rester identique entre les périodes comparées.",
+      "reason": "Clarifier le sens du ratio."
+    },
+    {
+      "from": "**Ex.** Chariot Fr. 18 000.– / 5 ans = **Fr. 3 600.–**/an. An 2 au bilan : 18 000 − 3 600 = **Fr. 14 400.–**.",
+      "to": "**Ex.** Chariot Fr. 18 000.– / 5 ans = **Fr. 3 600.–**/an. Après deux annuités : 18 000 − 2 × 3 600 = **Fr. 10 800.–** au bilan.",
+      "reason": "Préciser le nombre d'annuités."
+    },
+    {
+      "from": "**Stock maximum = cote d'alerte + quantité optimale de commande**",
+      "to": "À la réception, le stock remonte d'une quantité égale à la commande reçue. Dans le scénario nominal ci-dessous, **stock après réception = stock de sécurité + quantité commandée**.",
+      "reason": "Utiliser la même hypothèse que dans l'exemple."
+    },
+    {
+      "from": "| Taux intérêt stockage | 2,5 % × 120 / 360 | **0,84 %** |",
+      "to": "| Taux intérêt stockage | 2,5 % × 120 / 360 | **≈ 0,83 %** |",
+      "reason": "Corriger l'arrondi."
+    },
+    {
+      "from": "| Coût capital immobilisé | 0,84 × 20 × 71 | **Fr. 1 192,80** |",
+      "to": "| Coût capital immobilisé sur 120 jours | (2,5 / 100) × (120 / 360) × 20 × 71 | **Fr. 11,83** |",
+      "reason": "Convertir le taux et conserver sa précision jusqu'au résultat."
+    },
+    {
+      "from": "**Taux (%) = (coûts de stockage / valeur moy. du stock × 100) + intérêts du marché**",
+      "to": "**Taux (%) = (coûts de stockage hors intérêts / valeur moy. du stock × 100) + taux d'intérêt du marché (%)**",
+      "reason": "Éviter le double comptage des intérêts."
+    },
+    {
+      "from": "25 000 / 335 000 × 100 = **7,45 %** + 2,5 % = **9,95 %**.",
+      "to": "25 000 / 335 000 × 100 ≈ **7,46 %**. Avec 2,5 % d'intérêts, le total vaut environ **9,96 %**.",
+      "reason": "Corriger les arrondis."
+    }
+  ],
+  "summary": [
+    "Comparer les coûts de l'entrepôt avec l'activité et le revenu correspondant.",
+    "Suivre un réapprovisionnement, du seuil de commande à la réception.",
+    "Mesurer les charges liées au stock et comparer des méthodes pour les réduire."
+  ],
+  "glossary": [
+    [
+      "Chiffre d'affaires",
+      "Produit des ventes rattachées à une période et à un périmètre."
+    ],
+    [
+      "Résultat",
+      "Différence entre les produits et les charges retenus dans l'analyse."
+    ],
+    [
+      "Seuil d'équilibre",
+      "Niveau où les recettes couvrent exactement les coûts considérés."
+    ],
+    [
+      "Ratio coûts sur chiffre d'affaires",
+      "Part du chiffre d'affaires absorbée par les coûts."
+    ],
+    [
+      "Coût du capital",
+      "Charge réelle ou conventionnelle liée au financement des ressources."
+    ],
+    [
+      "Valeur moyenne du stock",
+      "Stock moyen valorisé au prix de revient."
+    ],
+    [
+      "Taux de possession",
+      "Rapport des coûts de détention du stock à sa valeur moyenne, selon les postes inclus."
+    ],
+    [
+      "Stock de couverture",
+      "Quantité prévue pour répondre aux besoins pendant le délai de réapprovisionnement."
+    ],
+    [
+      "Stock de sécurité",
+      "Réserve pour absorber les aléas de demande et d'approvisionnement."
+    ],
+    [
+      "Point de commande",
+      "Niveau de stock qui déclenche le réapprovisionnement."
+    ],
+    [
+      "Stock maximum",
+      "Niveau plafond retenu dans la politique de réapprovisionnement."
+    ],
+    [
+      "Délai d'approvisionnement",
+      "Temps entre le déclenchement de la commande et la disponibilité de la réception."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Les coûts fixes sont CHF 18 000, les variables CHF 24 000 et le chiffre d'affaires CHF 50 000. Calculez résultat et ratio coûts sur chiffre d'affaires.",
+      "answer": "CHF 8 000 et 84 %",
+      "calculation": "Coûts 42 000. Résultat 50 000 − 42 000 = 8 000. Ratio 42 000 ÷ 50 000 × 100 = 84."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Un article sort à raison de 14 pièces par jour ouvré. Le délai est de 5 jours ouvrés et la réserve de 30 pièces. Calculez le point de commande.",
+      "answer": "100 pièces",
+      "calculation": "14 × 5 + 30 = 100."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "L'arrivée est prévue lorsque le stock atteint 30 pièces et la commande contient 105 pièces. Quel stock obtient-on juste après réception ?",
+      "answer": "135 pièces",
+      "calculation": "30 + 105 = 135."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Calculez le coût annuel d'un appareil amorti CHF 5 600 par an, avec CHF 850 d'entretien, CHF 760 d'énergie, CHF 280 d'assurance et CHF 690 d'intérêt.",
+      "answer": "CHF 8 180 par an",
+      "calculation": "5 600 + 850 + 760 + 280 + 690 = 8 180."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "À 3 % par an, calculez le coût du capital pour 60 jours sur une base 360 et une valeur de CHF 12 000.",
+      "answer": "Taux sur 60 jours 0,5 %, soit CHF 60",
+      "calculation": "3 % × 60 ÷ 360 = 0,5 %. 12 000 × 0,005 = 60."
+    },
+    {
+      "id": "maths-fiche-6",
+      "kind": "maths",
+      "prompt": "Les coûts de stockage annuels hors intérêt valent CHF 9 000 et le stock moyen CHF 150 000. Le taux annuel du capital est 2 %. Calculez le taux de possession.",
+      "answer": "8 %",
+      "calculation": "9 000 ÷ 150 000 × 100 + 2 = 8."
+    },
+    {
+      "id": "maths-fiche-7",
+      "kind": "maths",
+      "prompt": "Avec 6 rotations annuelles, calculez la durée moyenne sur 360 jours. À 4 % par an, quel taux appliquer pendant cette durée ?",
+      "answer": "60 jours et environ 0,67 %",
+      "calculation": "360 ÷ 6 = 60. 4 % × 60 ÷ 360 ≈ 0,67 %."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Que signifie un ratio coûts sur chiffre d'affaires de 100 % ?",
+      "answer": "L'activité est à l'équilibre sur le périmètre considéré."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Pourquoi préciser si les intérêts sont déjà inclus dans les charges de stockage ?",
+      "answer": "Pour éviter de les compter deux fois dans le taux de possession."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Quand le stock de sécurité doit-il être consommé ?",
+      "answer": "En cas d'aléa, par exemple si la demande dépasse la prévision ou si le fournisseur prend du retard."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Quel effet produit une hausse du délai à demande et réserve stables ?",
+      "answer": "Le niveau qui déclenche la commande augmente."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Pourquoi examiner le taux de service en même temps que les coûts de détention ?",
+      "answer": "La réduction du stock peut générer des ruptures et compromettre l'activité."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Le délai varie et l'entrepôt commande encore sur la base d'une durée fixe. Que mettez-vous à jour ?",
+      "answer": "Mesurer les délais réels, revoir les prévisions et la réserve par criticité, recalculer le seuil et suivre les ruptures après modification."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Un responsable choisit le chariot le moins cher à l'achat. Comment préparer une comparaison des offres ?",
+      "answer": "Comparer sur la même durée les coûts de financement, énergie, entretien, assurance et temps d'arrêt, y compris la valeur finale prévue."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Le ratio coûts sur chiffre d'affaires passe de 85 % à 92 % alors que le CA augmente. Comment examiner l'écart ?",
+      "answer": "Comparer volumes, coûts fixes, coûts variables unitaires et mix d'activité; vérifier les périmètres puis identifier les postes dont les coûts ont augmenté."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "5.1.2 Taux de couverture des coûts",
+      "file": "log-705-notions-1-v001.svg",
+      "alt": "Sous 100 %. Le revenu couvre les coûts. À 100 %. Le résultat est nul. Au-dessus de 100 %. Les coûts dépassent le revenu.",
+      "caption": "Le calcul de ce module exprime les coûts en part des ventes.",
+      "sha256": "d657aaa058917fab92304a046cf524ccaae5a5928f855db2a88451522c6cba01",
+      "origin": "Illustration originale Doc-Prof du module 705."
+    },
+    {
+      "anchor": "5.3.4 Point de commande (cote d'alerte)",
+      "file": "log-705-notions-2-v001.svg",
+      "alt": "Commander. 100 pièces en stock. Pendant le délai. 70 pièces consommées. Réceptionner. 30 + 105 = 135 pièces.",
+      "caption": "Exemple à 14 pièces par jour et 5 jours de délai.",
+      "sha256": "ab886e6566145a02d6106e3e0b6756f060e24d610e8fd3fd2294bec29c6c33a2",
+      "origin": "Illustration originale Doc-Prof du module 705."
+    }
+  ]
+}
