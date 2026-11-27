@@ -67,6 +67,7 @@ export function liveEditorProfile(domain: Domain, exerciseType: string, format: 
   if (wordKind === 'compter') return 'sons-a-compter'
   if (wordKind === 'determinants') return 'determinants'
   if (wordKind === 'lettres-phrase') return 'lettres-dans-phrase'
+  if (wordKind === 'relier') return 'syllabes-a-relier'
   if (audioOrderKind(wordKind)) return 'association-audio'
   if (wordKind === 'syllabe-son' || wordKind === 'syllabe-son-qr' || wordKind === 'syllabes-prononcer') return 'syllabes-audio'
   if (wordKind === 'ecouter' || wordKind === 'ecouter-image') return 'ecoute-de-mots'
@@ -131,7 +132,8 @@ export function isWordListProfile(profile: LiveEditorProfile): boolean {
 
 export function isIndependentListProfile(profile: LiveEditorProfile): boolean {
   return isWordListProfile(profile) || profile === 'syllabes-audio' || profile === 'sons-a-compter' ||
-    profile === 'determinants' || profile === 'ecoute-de-mots' || profile === 'lettres-dans-phrase'
+    profile === 'determinants' || profile === 'ecoute-de-mots' || profile === 'lettres-dans-phrase' ||
+    profile === 'syllabes-a-relier'
 }
 
 export function writesNativePayload(profile: LiveEditorProfile, patch: object): boolean {

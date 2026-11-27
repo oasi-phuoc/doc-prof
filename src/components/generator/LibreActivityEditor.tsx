@@ -32,6 +32,7 @@ import { LetterGridEditor } from '@/components/generator/libre/LetterGridEditor'
 import { LogicEditor } from '@/components/generator/libre/LogicEditor'
 import { SyllableEditor } from '@/components/generator/libre/SyllableEditor'
 import { ListenCheckEditor } from '@/components/generator/libre/ListenCheckEditor'
+import { SyllableMatchEditor } from '@/components/generator/libre/SyllableMatchEditor'
 import { SoutienPhraseRowsEditor } from '@/components/generator/libre/SoutienPhraseRowsEditor'
 import { AudioOrderEditor } from '@/components/generator/libre/AudioOrderEditor'
 import { audioOrderKind } from '@/francais/soutien/audio-order'
@@ -59,6 +60,7 @@ type LibreActivityEditorProps = {
   phraseOrder: SheetBlockItems | null
   syllableContent: SheetBlockItems | null
   listenContent: SheetBlockItems | null
+  syllableMatchContent: SheetBlockItems | null
   soutienPhrases: SheetBlockItems | null
   audioOrderContent: SheetBlockItems | null
   syllableBank: SoutienVowelBank | null | undefined
@@ -117,6 +119,7 @@ export function LibreActivityEditor({
   phraseOrder,
   syllableContent,
   listenContent,
+  syllableMatchContent,
   soutienPhrases,
   audioOrderContent,
   syllableBank,
@@ -174,6 +177,7 @@ export function LibreActivityEditor({
   const orderedPhrases = phraseOrder && (halfEditor?.content ?? phraseOrder)
   const syllables = syllableContent && (halfEditor?.content ?? syllableContent)
   const listening = listenContent && (halfEditor?.content ?? listenContent)
+  const syllableMatches = syllableMatchContent && (halfEditor?.content ?? syllableMatchContent)
   const soutienPhraseContent = soutienPhrases && (halfEditor?.content ?? soutienPhrases)
   const audioSeries = audioOrderContent && (halfEditor?.content ?? audioOrderContent)
   const arithmeticInstruction = halfEditor?.content?.instruction ?? activeBlock.libreInstruction ??
@@ -259,6 +263,12 @@ export function LibreActivityEditor({
           id={`${editedActivityId}:${activeBlock.exerciseType}:${index}`} fields={transientFields} writeField={onTransientField}
           onChange={(next) => editActivityItems(listening.items.map((current, position) =>
             position === index ? next : current), listening.instruction, true)} />
+      ))}
+      {syllableMatches?.items.map((item, index) => (
+        <SyllableMatchEditor key={`${editedActivityId}:${index}`} item={item}
+          id={`${editedActivityId}:${activeBlock.exerciseType}:${index}`} fields={transientFields} writeField={onTransientField}
+          onChange={(next) => editActivityItems(syllableMatches.items.map((current, position) =>
+            position === index ? next : current), syllableMatches.instruction, true)} />
       ))}
       {soutienPhraseContent && syllableBank && soutienPhraseContent.items.map((item, index) => (
         <SoutienPhraseRowsEditor key={`${editedActivityId}:${index}`} item={item} bank={syllableBank}
@@ -494,6 +504,7 @@ export function LibreActivityEditor({
       !phraseOrder &&
       !syllableContent &&
       !listenContent &&
+      !syllableMatchContent &&
       !soutienPhrases &&
       !audioOrderContent &&
       soutienKind !== 'mots' &&

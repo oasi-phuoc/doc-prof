@@ -25,12 +25,13 @@ import { buildWordSearch, wordSearchHitCells } from './word-search'
 import { resolveGameImageSrc } from '@/jeux/image-resolve'
 import { isSoutienType1Word, type1WordPool, type1Words } from './type1-words'
 import { syllabifyFr } from './syllabify-fr'
-import type { SoutienGenerateOptions } from './generate-options'
+import type { SoutienBatch, SoutienGenerateOptions } from './generate-options'
 import { soutienPhrasesForSonOrAll, type SoutienLevelFilter } from './phrases-data'
 import { buildType10DetsFromWords } from './det-plurals'
 import {
   AUDIO_ORDER_CLIPS,
   SOUTIEN_LISTEN_MAX,
+  SOUTIEN_SYLLABLE_PAIR_MAX,
   buildSyllableReadingList,
   countSoundInPhrase,
   joinSoutienOrder,
@@ -69,7 +70,7 @@ export function genKind(
   rng: Rng,
   _difficulty: Difficulty,
   options?: SoutienGenerateOptions,
-): { items: MathItem[]; instruction: string; preferredColumns?: number } {
+): SoutienBatch {
   const n = Math.max(1, count)
 
   switch (kind) {
@@ -175,7 +176,7 @@ export function genKind(
        * Uniquement les mots du type 1 (même banque / tirage Voc) ;
        * défaut 12 mots en 2 colonnes.
        */
-      const want = Math.max(1, Math.min(16, n))
+      const want = Math.max(1, Math.min(SOUTIEN_SYLLABLE_PAIR_MAX, n))
       const colCount = options?.columns === 1 ? 1 : 2
       // Tirage type 1 élargi, puis composés seulement sur ces mots (pas d’autres).
       const type1 = type1Words(bank, rng, Math.max(16, want))
@@ -202,6 +203,7 @@ export function genKind(
       return {
         instruction: 'Reliez les parties et formez un mot.',
         preferredColumns: 1,
+        bankQuestionCap: Math.min(SOUTIEN_SYLLABLE_PAIR_MAX, pool.length),
         items: [
           {
             layout: 'vocab-match',

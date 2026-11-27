@@ -1039,6 +1039,7 @@ export function GeneratorPage({
                 phraseOrder={activeProfile === 'mots-dans-l-ordre' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
                 syllableContent={activeProfile === 'syllabes-audio' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
                 listenContent={activeProfile === 'ecoute-de-mots' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
+                syllableMatchContent={activeProfile === 'syllabes-a-relier' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
                 soutienPhrases={activeProfile === 'sons-a-compter' || activeProfile === 'determinants' || activeProfile === 'lettres-dans-phrase'
                   ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
                 audioOrderContent={activeProfile === 'association-audio' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}

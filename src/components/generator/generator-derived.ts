@@ -34,7 +34,7 @@ import {
 import { SOUTIEN_KINDS, parseSoutienType } from '@/francais/soutien/kinds'
 import { soutienBankById } from '@/francais/soutien/banks'
 import { audioOrderKind, defaultAudioOrderCapacity } from '@/francais/soutien/audio-order'
-import { SOUTIEN_LISTEN_MAX } from '@/francais/soutien/gen-kind-helpers'
+import { SOUTIEN_LISTEN_MAX, SOUTIEN_SYLLABLE_PAIR_MAX } from '@/francais/soutien/gen-kind-helpers'
 import {
   resolveSoutienSelection,
   soutienExerciseTypeId,
@@ -191,7 +191,7 @@ export function maxQuestionsFor({
   ) {
     return 16
   }
-  if (soutienKind === 'relier') return 16
+  if (soutienKind === 'relier') return SOUTIEN_SYLLABLE_PAIR_MAX
   if (
     soutienKind === 'completer' ||
     soutienKind === 'syllabe-son' ||

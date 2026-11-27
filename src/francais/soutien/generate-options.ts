@@ -5,6 +5,7 @@ export type SoutienBatch = {
   items: MathItem[]
   instruction: string
   preferredColumns?: number
+  bankQuestionCap?: number
 }
 
 export type SoutienCompleterEntry = {

@@ -266,6 +266,7 @@ function buildSingleBlock(
       title: fallbackTitle,
       instruction: soutien.instruction ?? type?.instruction ?? 'Complétez.',
       items: soutien.items,
+      bankQuestionCap: soutien.bankQuestionCap,
     }
   }
   const alphabetisation = tryGenerateAlphabetisationBatch(
