@@ -596,6 +596,7 @@ export type MathItem = {
   numberLine?: { start: number; step: number; intervals: number; target: number; labelAt: number }
   baseTen?: { hundreds: number; tens: number; ones: number }
   menuPrices?: { label: string; cents: number }[]
+  measureScale?: { kind: 'mass' | 'capacity' | 'duration'; unit: string; step: number; tick: number }
   lengthUnits?: { a: number; b: number }
   functionPairs?: { x: number; y: number }[]
   /** Segments à mesurer à taille réelle. */
