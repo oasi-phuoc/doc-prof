@@ -74,6 +74,8 @@ L’inventaire sur `32a4f080` relève 506 raccordements A4 en attente sur 4 269 
 
 Les 12 types de volumes reprennent les champs de cotes, l’unité, la valeur de π et le volume donné lorsque l’exercice demande une cote. Le choix du solide est disponible pour les exercices mixtes et les prismes à faces quadrilatères. Le navigateur vérifie le calcul de l’arête du cube, la hauteur du cône, le volume de la sphère et le rejet d’un volume nul. Les 108 tirages automatiques comparés à `32a4f080` gardent les mêmes données et résultats.
 
+L’inventaire relève 494 raccordements A4 en attente sur 4 269 contextes et aucune erreur de génération. Les 14 recettes témoins se réécrivent et se rouvrent avec leur contenu. Les quatre nouveaux témoins couvrent l’axe choisi et les périmètres, aires et volumes personnalisés avec leur verrou.
+
 ### Écoute de mots en Soutien FR et Alphabétisation
 
 Le panneau Libre permet de changer les mots des activités d’écoute avec QR et des activités d’écoute illustrées. La banque fournit les médias associés et le son de la leçon détermine la coche proposée dans le corrigé. La case reste modifiable pour une prononciation particulière. Un changement de quantité ou de colonnes conserve les mots personnalisés et leurs médias.
