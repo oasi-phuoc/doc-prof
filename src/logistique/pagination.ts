@@ -89,8 +89,8 @@ function theoryHeight(block: GrammarTheoryBlock, width: number, scale: number, a
     case 'image-row': {
       const cellWidth = width * 0.9 / block.cells.length
       const captionHeight = block.caption ? 4 + lines(block.caption) : 0
-      return (a5 ? 151 : 143) + captionHeight + Math.max(...block.cells.map(({ caption, description }) =>
-        lines(caption, cellWidth) + (description ? lines(description, cellWidth) : 0)))
+      return (a5 ? 151 : 143) + captionHeight + Math.max(...block.cells.map(({ caption, description, example }) =>
+        lines(caption, cellWidth) + (description ? lines(description, cellWidth) : 0) + (example ? lines(example, cellWidth) : 0)))
     }
     case 'paragraph':
     case 'note':
@@ -101,6 +101,9 @@ function theoryHeight(block: GrammarTheoryBlock, width: number, scale: number, a
       return 12 + lines(block.text)
     case 'list':
       return 16 + block.items.reduce((sum, item) => sum + lines(item, width * 0.9), 0)
+    case 'practice':
+      return 22 + lines(block.instruction) + block.items.reduce((sum, item) => sum +
+        lines(item.prompt, width * 0.9) + lines(item.explanation, width * 0.9), 0)
     case 'table':
       return 18 + [block.headers, ...block.rows].reduce((sum, row) => sum + 14 +
         Math.max(...row.map((cell) => lines(cell, width * 0.84 / row.length))), 0)

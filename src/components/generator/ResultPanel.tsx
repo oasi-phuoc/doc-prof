@@ -552,7 +552,7 @@ export function ResultPanel({
                 ) : null}
               </div>
             </div>
-            {grammarTheoryItems.length > 0 && <GrammarTheoryReading key={activeConfig} items={grammarTheoryItems} />}
+            {grammarTheoryItems.length > 0 && <GrammarTheoryReading key={activeConfig} items={grammarTheoryItems} mode={sheetProps.mode} />}
             <div className="sheet-preview-wrap no-print-nav">
               <div className="sheet-preview-cluster">
                 <div className={`sheet-preview-row${jeuxPreviewSheets && jeuxPreviewSheets.length > 1 ? ' is-jeux-duplex' : ''}${showCorrectionFollow || showTranscriptionPreview ? ' is-po-stack' : ''}${showPageStack ? ' is-page-stack' : ''}`}>

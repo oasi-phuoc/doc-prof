@@ -375,7 +375,7 @@ export function ItemView({
         {item.layout === 'encadrement' && <EncadrementRow item={item} mode={mode} />}
         {item.layout === 'select' && <SelectPillsRow item={oralItem} mode={mode} />}
         {item.layout === 'theory' && (
-          item.mathTheory ? <MathTheoryView lesson={item.mathTheory} /> : <TheoryBlockView item={item} />
+          item.mathTheory ? <MathTheoryView lesson={item.mathTheory} /> : <TheoryBlockView item={item} mode={mode} />
         )}
         {item.layout === 'glossary' && item.glossary ? (
           <div className={item.glossary.figure ? 'glossary-card' : 'glossary-card without-figure'}>

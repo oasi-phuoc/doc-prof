@@ -6665,8 +6665,8 @@ textarea.pill-input,
 .theory-image-table figure { margin: 0; }
 .theory-image-table img { display: block; width: 100%; height: 30mm; object-fit: contain; background: #f6f6f6; }
 .theory-image-table figcaption { margin-top: 1.5mm; line-height: 1.25; }
-.theory-image-table figcaption strong, .theory-image-table figcaption span { display: block; }
-.theory-image-table figcaption strong { margin-bottom: 0.6mm; }
+.theory-image-table figcaption > strong, .theory-image-table figcaption > span { display: block; }
+.theory-image-table figcaption > strong { margin-bottom: 0.6mm; }
 .grammar-production .grammar-support-image img { max-height: 35mm; }
 .grammar-production-profile { display: grid; grid-template-columns: 36mm minmax(0, 1fr); gap: 6mm; align-items: start; margin: 2mm 0; }
 .grammar-production-profile .grammar-support-images { margin: 0; }
@@ -6771,6 +6771,33 @@ textarea.pill-input,
 .grammar-theory-item.is-falc .theory-tab[aria-hidden] { min-width: .7em !important; width: .7em !important; }
 .grammar-theory-item.is-falc :is(.theory-table, .theory-image-table) { font-size: var(--theory-size); }
 .grammar-theory-item.is-falc .theory-image-table figcaption { line-height: 1.5; }
+.theory-image-placeholder {
+  display: grid;
+  place-items: center;
+  min-height: 30mm;
+  border: 1px dashed #68727b;
+  color: #4b5561;
+  background: #f7f8fa;
+  font-size: .9em;
+  text-align: center;
+}
+.grammar-theory-item .theory-scene-example { margin-top: .25em; }
+.theory-practice { border: 1px solid #8996a4; padding: .5em .7em; border-radius: .25em; }
+.theory-practice-instruction { margin: 0 0 .35em; font-weight: 700; }
+.theory-practice ol { margin: 0; padding-left: 1.2em; }
+.theory-practice li + li { margin-top: .35em; }
+.theory-practice-blank { display: inline-block; min-width: 4em; border-bottom: 1px solid currentColor; }
+.theory-practice-explanation { margin: 0; }
+.a5-half .is-grammar-scenario .tcf-qcm-texte {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px 12px;
+}
+.a5-half .is-grammar-scenario .tcf-audio-cadre-body { gap: 8px; }
+.a5-half .is-grammar-scenario .tcf-annonce { padding: 4px 8px; line-height: 1.4; }
+.a5-half .is-grammar-scenario .tcf-annonce-body p { margin-block: 0; }
+.a5-half .is-grammar-scenario .exercise-heading { margin-bottom: 4px; }
+.a5-half .is-grammar-scenario .exercise-instruction { margin-bottom: 5px; }
 .grammar-theory-item.is-falc .theory-table :is(th, td) { overflow-wrap: anywhere; }
 .grammar-theory-item.is-falc .theory-attention-label { color: #874515; }
 .grammar-theory-item.is-falc .theory-attention-box:empty { display: none; }

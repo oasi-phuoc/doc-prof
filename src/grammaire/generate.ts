@@ -5,6 +5,7 @@ import { tryGenerateGrammaireExerciseBlock } from './exercises/generate'
 import { isGrammaireExerciseType } from './exercises/types'
 import { theoryDocByTypeId } from './theory'
 import { falcLessonBlocks } from './theory/falc-lesson'
+import { buildGrammarScenario, grammarScenarioFor } from './exercises/parcours'
 import { isGrammaireTheoryType } from './types'
 import { generateGradedGrammarBlock } from './curriculum/generate'
 import { GrammarCurriculumError } from './curriculum/types'
@@ -27,6 +28,8 @@ export function tryGenerateGrammaireBlock(
   const typeId = config.exerciseType
   const vocabulary = buildWordVocab(config, seed)
   if (vocabulary) return vocabulary
+  const scenario = grammarScenarioFor(typeId)
+  if (scenario) return buildGrammarScenario(scenario, seed)
   try {
     const graded=generateGradedGrammarBlock(config,seed)
     if (graded) return graded

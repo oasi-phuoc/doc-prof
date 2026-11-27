@@ -1,5 +1,6 @@
 import { exerciseTypeById } from '@/math/catalog'
 import { TRANSLATION_PRACTICE_TYPE } from '@/math/guided-practice'
+import { grammarScenarioFor } from '@/grammaire/exercises/parcours'
 
 // Les générateurs de ces séries utilisent leurs propres bornes et règles de tirage.
 const fixedDifficultyTypes = new Set([
@@ -38,7 +39,7 @@ const fixedQuestionCounts = new Set([
 ])
 
 export function supportsActivityQuestionCount(type: string, min: number, max: number) {
-  return max > min && !fixedQuestionCounts.has(type)
+  return max > min && !fixedQuestionCounts.has(type) && !grammarScenarioFor(type)
 }
 
 

@@ -1,6 +1,10 @@
 import { normalizeTheoryBlocks, theorySpacerDivisor, type GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { GrammaireTheoryDoc } from '../types'
 import { falcOpenings } from './falc-openings'
+import { falcContextualLessons } from './falc-contextes'
+import { falcPractices } from './falc-exercices'
+import { falcVisualPlans } from './falc-visuels'
+import { falcDiagrams } from './falc-schemas'
 import { falcA4Cuts, falcA5Cuts } from './falc-pagination'
 import { falcRevisions } from './falc-revisions'
 
@@ -33,19 +37,45 @@ function readingBlocks(blocks: GrammarTheoryBlock[], revise: (text: string) => s
 }
 
 export function falcLessonBlocks(doc: GrammaireTheoryDoc, paper: 'a4' | 'a5' = 'a4'): GrammarTheoryBlock[] | undefined {
+  const contextual = falcContextualLessons[doc.id]
+  if (contextual) {
+    return [
+      { kind: 'heading', text: doc.title },
+      contextual.comparison,
+      ...contextual.repere.map(text => ({ kind: 'paragraph', text } as const)),
+      ...(paper === 'a5' ? [{ kind: 'page' } as const] : []),
+      contextual.practice,
+      ...(contextual.reference.length ? [{ kind: 'page' } as const, ...contextual.reference] : []),
+    ]
+  }
   const opening = falcOpenings[doc.id]
   const [title, ...source] = doc.blocks
   if (!opening || title?.kind !== 'heading') return undefined
   const revisions = falcRevisions[doc.id]
 
   const cuts = (paper === 'a5' ? falcA5Cuts : falcA4Cuts)[doc.id]
+  const visuals = falcVisualPlans[doc.id]
+  const openingExample: GrammarTheoryBlock = doc.id === 'e6' ? placeIllustration : visuals ? {
+    kind: 'image-row',
+    label: doc.title,
+    cells: visuals.map(({ caption, brief, exampleIndex, src }, index) => ({
+      src: src ?? '',
+      alt: brief,
+      caption,
+      example: visuals.length === 1 && exampleIndex === undefined
+        ? opening.examples.join('/n')
+        : opening.examples[exampleIndex ?? index],
+    })),
+  } : falcDiagrams[doc.id] ?? { kind: 'examples', items: opening.examples, marker: 'border' }
+  const practice = falcPractices[doc.id]
   const blocks: GrammarTheoryBlock[] = [
     title,
-    doc.id === 'e6' ? placeIllustration : { kind: 'examples', items: opening.examples, marker: 'border' },
+    openingExample,
     { kind: 'paragraph', text: opening.lines.join('/n') },
     ...readingBlocks(source, text => revisions?.[text] ?? text).flatMap<GrammarTheoryBlock>(block => block.kind === 'page'
       ? [...(cuts ? [] : [block]), { kind: 'heading', text: opening.reference, sub: true }]
       : [block]),
+    ...(practice ? [practice] : []),
   ]
   return cuts ? blocks.flatMap<GrammarTheoryBlock>((block, index) => cuts.includes(index)
     ? [{ kind: 'page' }, block]

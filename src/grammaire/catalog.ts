@@ -4,6 +4,7 @@ import { ALL_GRAM_SUBTHEMES, buildGrammairePracticeTypes } from './exercises/cat
 import { grammarCoSubthemes } from './exercises/co-bank'
 import { wordVocabTypeId } from './exercises/word-vocab'
 import { grammarCoTypeId } from './exercises/co-themes'
+import { grammarScenarios } from './exercises/parcours'
 
 export const GRAMMAIRE_DOMAIN = 'grammaire' as const
 
@@ -44,6 +45,7 @@ const GRAMMAIRE_THEORY_TYPES: ExerciseType[] = GRAMMAIRE_THEORY_DOCS.map((doc) =
 export const GRAMMAIRE_EXERCISE_TYPES: ExerciseType[] = [
   ...GRAMMAIRE_THEORY_TYPES,
   ...buildGrammairePracticeTypes(),
+  ...grammarScenarios.map(scenario => scenario.type),
 ]
 
 /** Vérifie la cohérence catalogue ↔ banques théorie. */

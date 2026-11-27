@@ -39,6 +39,7 @@ import { resolveTcfExercise, tryGenerateTcfBlock } from '@/tcf/generate'
 import { isTcfAudioDomain, isTcfConsignesType, isTpfFamilyDomain } from '@/tcf/catalog'
 import { splitMultiDocumentAnnonce } from '@/tcf/split-documents'
 import { collectCorrigeAudioSrcs } from '@/tcf/download-audios'
+import { grammarScenarioFor, paginateGrammarScenario } from '@/grammaire/exercises/parcours'
 import { tryGenerateGrammaireBlock } from '@/grammaire/generate'
 import { isGrammaireTheoryType } from '@/grammaire/types'
 import { splitGradedGrammarPages } from '@/grammaire/curriculum/pagination'
@@ -645,7 +646,8 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
     }
 
     const hasFullPageContent = (block: WorksheetBlock) =>
-      block.problemHelp || block.items.some((item) => item.mathTheory || item.grammarTheoryFalc) ||
+      block.problemHelp || Boolean(grammarScenarioFor(block.exerciseType)) ||
+      block.items.some((item) => item.mathTheory || item.grammarTheoryFalc) ||
       (worksheet.blocks.length > 1 && isGrammaireTheoryType(block.exerciseType))
     if (worksheet.blocks.some(hasFullPageContent)) {
       let continuation = false
@@ -668,6 +670,12 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
         }
         append(preceding)
         preceding = []
+        const scenario = grammarScenarioFor(block.exerciseType)
+        if (scenario) {
+          const stages = paginateGrammarScenario(block, scenario)
+          for (const stage of stages.length ? stages : [block]) append([{ ...stage, sourceBlockIndex }])
+          return
+        }
         if (isGrammaireTheoryType(block.exerciseType) || block.items.some(item => item.grammarTheoryFalc)) {
           let itemOffset = 0
           for (const items of theoryPageSlices(block.items, block.tcfPageBreakAfter, page.continueOnNextPage)) {

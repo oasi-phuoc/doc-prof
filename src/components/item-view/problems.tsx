@@ -249,7 +249,7 @@ function TheoryExamplesView({
   )
 }
 
-export function TheoryBlockView({ item }: { item: MathItem }) {
+export function TheoryBlockView({ item, mode = 'student' }: { item: MathItem; mode?: PreviewMode }) {
   const block = item.theoryBlock
   if (!block) return null
   const figure = item.logistiqueGlossaryFigure
@@ -261,11 +261,11 @@ export function TheoryBlockView({ item }: { item: MathItem }) {
           <WorksheetImage src={figure.src} alt={figure.alt} />
           {figure.caption && <figcaption>{figure.caption}</figcaption>}
         </figure>
-        <TheoryBlockContent block={block} />
+        <TheoryBlockContent block={block} mode={mode} />
       </div>
     )
   }
-  return <TheoryBlockContent block={block} />
+  return <TheoryBlockContent block={block} mode={mode} />
 }
 
 function InfoNoticeIcon() {
@@ -294,7 +294,7 @@ function AttentionNoticeIcon() {
   )
 }
 
-function TheoryBlockContent({ block }: { block: GrammarTheoryBlock }) {
+function TheoryBlockContent({ block, mode }: { block: GrammarTheoryBlock; mode: PreviewMode }) {
   if (block.kind === 'section') {
     const sectionLabels = {
       regarder: 'Je regarde',
@@ -319,7 +319,7 @@ function TheoryBlockContent({ block }: { block: GrammarTheoryBlock }) {
         <div className="theory-section-content">
           <h4 className="theory-heading is-sub">{sectionLabels[block.role]}</h4>
           {block.blocks.map((child, index) => (
-            <TheoryBlockContent key={`${child.kind}-${index}`} block={child} />
+            <TheoryBlockContent key={`${child.kind}-${index}`} block={child} mode={mode} />
           ))}
         </div>
       </section>
@@ -340,13 +340,18 @@ function TheoryBlockContent({ block }: { block: GrammarTheoryBlock }) {
         {block.caption && <caption>{block.caption}</caption>}
         <tbody>
           <tr>
-            {block.cells.map(({ src, alt, caption, description }) => (
+            {block.cells.map(({ src, alt, caption, description, example }) => (
               <td key={caption}>
                 <figure>
-                  <WorksheetImage src={src} alt={alt} />
+                  {src ? <WorksheetImage src={src} alt={alt} /> : (
+                    <div className="theory-image-placeholder" aria-label={`Image à ajouter. ${alt}`} role="img">
+                      <span>Image à ajouter</span>
+                    </div>
+                  )}
                   <figcaption>
                     <strong>{caption}</strong>
                     {description && <span>{description}</span>}
+                    {example && <span className="theory-scene-example"><TheoryRichText text={example} /></span>}
                   </figcaption>
                 </figure>
               </td>
@@ -354,6 +359,22 @@ function TheoryBlockContent({ block }: { block: GrammarTheoryBlock }) {
           </tr>
         </tbody>
       </table>
+    )
+  }
+  if (block.kind === 'practice') {
+    return (
+      <div className="theory-practice">
+        <p className="theory-practice-instruction">{block.instruction}</p>
+        <ol>
+          {block.items.map(({ prompt, answer, explanation }, index) => {
+            const [before, after] = prompt.split('___', 2)
+            return <li key={index}>
+              <span>{before}{mode === 'answers' ? <strong>{answer}</strong> : <span className="theory-practice-blank" aria-label="mot à compléter" role="img" />}{after}</span>
+              {mode === 'answers' && <p className="theory-practice-explanation">{explanation}</p>}
+            </li>
+          })}
+        </ol>
+      </div>
     )
   }
   if (block.kind === 'heading') {

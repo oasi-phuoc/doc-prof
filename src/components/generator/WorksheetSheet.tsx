@@ -2,6 +2,7 @@ import { isLogistiqueDomain, LOGISTIQUE_DOMAINS } from '@/logistique/catalog'
 import { isWrittenProblem } from '@/math/problem-help'
 import epcaLogo from '@/assets/logos/epca.svg'
 import { grammarPageBreakQuestionId } from '@/grammaire/curriculum/pagination'
+import { grammarScenarioFor } from '@/grammaire/exercises/parcours'
 import { isGrammaireTheoryType } from '@/grammaire/types'
 import { Children, type CSSProperties, type HTMLAttributes, type ReactElement } from 'react'
 import './worksheet-typography.css'
@@ -340,7 +341,8 @@ export function WorksheetSheet({
             ? sumPointWeights(block.pointsWeights, perQ)
             : blockPointsTotal(block.items, perQ)
           const pointsBadge = formatPointsLabel(blockPts)
-          const continuedSlice = (block.itemOffset ?? 0) > 0
+          const isGrammarScenario = Boolean(grammarScenarioFor(block.exerciseType))
+          const continuedSlice = (block.itemOffset ?? 0) > 0 && !isGrammarScenario
           const dualForm = isGramDualFormExercise(block.exerciseType)
           const marginForm = isGramMarginFormExercise(block.exerciseType)
           const firstQuestion = block.items.find(
@@ -378,7 +380,7 @@ export function WorksheetSheet({
           return (
             <WorksheetSettingsScope target={activitySettingsTarget} key={`${block.exerciseType}-${block.exerciseIndex}`}>
             <section
-              className={`exercise-block${evalMode ? ' is-evaluation' : ''}`}
+              className={`exercise-block${evalMode ? ' is-evaluation' : ''}${isGrammarScenario ? ' is-grammar-scenario' : ''}`}
               data-exercise-type={block.exerciseType}
               style={
                 blankPx != null

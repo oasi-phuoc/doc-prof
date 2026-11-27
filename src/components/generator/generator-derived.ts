@@ -1,3 +1,4 @@
+import { grammarScenarios } from '@/grammaire/exercises/parcours'
 import {
   algebraTopics,
   calligraphieTopics,
@@ -147,7 +148,8 @@ export function typeChoicesForBlock(
       const ids=[...new Set(GRAMMAR_PILOT_BANKS.filter(b=>b.subthemeId===sub.id).map(b=>b.activityId))]
       return [...theory,...ids.map(id=>exerciseTypeById[id]).filter((t):t is NonNullable<typeof t>=>Boolean(t))]
     }
-    const choices=[...theory, ...practice, ...graded]
+    const scenarios = grammarScenarios.filter(scenario => scenario.subthemeId === sub.id).map(scenario => scenario.type)
+    const choices=[...theory, ...scenarios, ...practice, ...graded]
     if(sub.id==='famille'){
       // Family readings use Photo de famille; writing remains last.
       const available=choices.filter(t=>t.id!=='gram-ex-famille-fam-recit')

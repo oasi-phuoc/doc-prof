@@ -5,7 +5,7 @@ import { ImageField } from '@/tcf/fields'
 import { SelectBox } from '../SelectBox'
 
 const labels: Record<GrammarTheoryBlock['kind'], string> = {
-  section: 'Section', image: 'Image', 'image-row': 'Images', heading: 'Titre',
+  section: 'Section', image: 'Image', 'image-row': 'Images', practice: 'Phrases à compléter', heading: 'Titre',
   paragraph: 'Paragraphe', note: 'Note', rule: 'Règle', examples: 'Exemples',
   tab: 'Colonnes de texte', list: 'Liste', table: 'Tableau', attention: 'Attention',
   astuce: 'Astuce', notice: 'Consigne', page: 'Saut de page',
@@ -44,6 +44,7 @@ function ImageFields({ image, onChange, description }: {
       <TextField label="Texte alternatif" value={image.alt} onChange={(alt) => onChange({ alt })} />
       <TextField label="Légende" value={image.caption} onChange={(caption) => onChange({ caption })} />
       {description && <TextField label="Description" value={image.description ?? ''} onChange={(text) => onChange({ description: text })} />}
+      {description && <TextField label="Phrase de la scène" value={image.example ?? ''} onChange={(example) => onChange({ example })} />}
     </>
   )
 }
@@ -83,6 +84,21 @@ function BlockFields({ block, update }: { block: GrammarTheoryBlock; update: (ne
               ))}
             </fieldset>
           ))}
+        </>
+      )
+    case 'practice':
+      return (
+        <>
+          <TextField label="Consigne" value={block.instruction} onChange={instruction => update({ ...block, instruction })} />
+          {block.items.map((item, index) => {
+            const edit = (patch: Partial<typeof item>) => update({ ...block, items: replaceAt(block.items, index, { ...item, ...patch }) })
+            return <fieldset key={index}>
+              <legend>Phrase {index + 1}</legend>
+              <TextField label="Phrase avec ___" value={item.prompt} onChange={prompt => edit({ prompt })} />
+              <TextField label="Mot attendu" value={item.answer} onChange={answer => edit({ answer })} />
+              <TextField label="Explication du corrigé" value={item.explanation} onChange={explanation => edit({ explanation })} />
+            </fieldset>
+          })}
         </>
       )
     case 'list':

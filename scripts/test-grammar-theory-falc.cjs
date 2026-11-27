@@ -6,12 +6,16 @@ const { load, root } = require('./gattegno-loader.cjs')
 const { GRAMMAIRE_THEORY_DOCS: docs, theoryDocByTypeId } = load(root + '/src/grammaire/theory/index.ts')
 const { falcOpenings } = load(root + '/src/grammaire/theory/falc-openings.ts')
 const { falcLessonBlocks } = load(root + '/src/grammaire/theory/falc-lesson.ts')
+const { falcContextualLessons } = load(root + '/src/grammaire/theory/falc-contextes.ts')
 const { falcRevisions } = load(root + '/src/grammaire/theory/falc-revisions.ts')
 const { tryGenerateGrammaireBlock } = load(root + '/src/grammaire/generate.ts')
 const { theorySpacerDivisor } = load(root + '/src/francais/grammar-theory.ts')
 const { buildWorksheets } = load(root + '/src/math/generate.ts')
 const { defaultPage } = load(root + '/src/math/catalog.ts')
 const { pageForA5Half } = load(root + '/src/components/generator/sheet-format.ts')
+const { grammarScenarios } = load(root + '/src/grammaire/exercises/parcours.ts')
+const { validateTcfExercise } = load(root + '/src/tcf/validate.ts')
+const { collectWorksheetTranscriptions } = load(root + '/src/tcf/transcriptions.ts')
 
 function leaves(blocks) {
   return blocks.flatMap(block => {
@@ -39,27 +43,55 @@ assert.equal(theoryDocByTypeId['gram-a5-theorie'], theoryDocByTypeId['gram-a4-th
 
 let sourceBlocks = 0
 let revisedTexts = 0
+let contextualLessons = 0
+let imagePlaceholders = 0
+let illustrationCount = 0
+let diagrams = 0
 for (const doc of docs) {
   const config = configFor(doc)
   const revisions = falcRevisions[doc.id] ?? {}
   const blocks = falcLessonBlocks(doc)
   const printed = blocks.filter(block => block.kind !== 'page')
   assert(!blocks.some(block => block.kind === 'section'), doc.typeId)
-  assert(printed[1].kind === 'examples' || printed[1].kind === 'image-row', doc.typeId)
+  assert(printed[1].kind === 'table' || printed[1].kind === 'image-row', doc.typeId)
   assert(printed[2].text.trim(), doc.typeId)
+  if (printed[1].kind === 'table') diagrams++
+  const practices = printed.filter(block => block.kind === 'practice')
+  assert.equal(practices.length, 1, doc.typeId)
+  for (const item of practices[0].items) {
+    assert(item.prompt.split('___').length === 2 && item.answer && item.explanation, doc.typeId)
+  }
+  for (const visual of printed.filter(block => block.kind === 'image-row')) {
+    for (const scene of visual.cells) {
+      assert(scene.alt && scene.caption, doc.typeId)
+      if (scene.src) illustrationCount++
+      else {
+        assert(scene.example, doc.typeId)
+        imagePlaceholders++
+      }
+    }
+  }
 
-  const source = leaves(doc.blocks)
-  const retained = printed.filter((block, index) => index !== 1 && index !== 2 &&
-    !(block.kind === 'heading' && block.sub && block.text === falcOpenings[doc.id].reference))
-  assert.equal(retained.length, source.length, doc.typeId)
-  const originalStrings = new Set(source.flatMap(unitTexts))
-  for (const key of Object.keys(revisions)) assert(originalStrings.has(key), `reformulation sans source dans ${doc.typeId}: ${key}`)
-  revisedTexts += Object.keys(revisions).length
-  sourceBlocks += source.length
-  for (const [index, old] of source.entries()) {
-    const active = retained[index]
-    const expected = unitTexts(old).map(text => (revisions[text] ?? text).replace(/^\{c\}Attention\s*:\s*\{\/c\}\s*/u, ''))
-    assert.deepEqual(unitTexts(active), expected, `${doc.typeId} bloc ${index}`)
+  const contextual = falcContextualLessons[doc.id]
+  if (contextual) {
+    contextualLessons++
+    assert.deepEqual(printed[1], contextual.comparison)
+    assert.deepEqual(printed.find(block => block.kind === 'practice'), contextual.practice)
+    assert.equal(contextual.comparison.cells.length, 2)
+  } else {
+    const source = leaves(doc.blocks)
+    const retained = printed.filter((block, index) => index !== 1 && index !== 2 && block.kind !== 'practice' &&
+      !(block.kind === 'heading' && block.sub && block.text === falcOpenings[doc.id].reference))
+    assert.equal(retained.length, source.length, doc.typeId)
+    const originalStrings = new Set(source.flatMap(unitTexts))
+    for (const key of Object.keys(revisions)) assert(originalStrings.has(key), `reformulation sans source dans ${doc.typeId}: ${key}`)
+    revisedTexts += Object.keys(revisions).length
+    sourceBlocks += source.length
+    for (const [index, old] of source.entries()) {
+      const active = retained[index]
+      const expected = unitTexts(old).map(text => (revisions[text] ?? text).replace(/^\{c\}Attention\s*:\s*\{\/c\}\s*/u, ''))
+      assert.deepEqual(unitTexts(active), expected, `${doc.typeId} bloc ${index}`)
+    }
   }
 
   const readBlocks = sheets => sheets.flatMap(sheet => sheet.items.map(item => item.theoryBlock))
@@ -95,6 +127,13 @@ const reopened = buildWorksheets([{
 assert.deepEqual(reopened.flatMap(sheet => sheet.items), JSON.parse(JSON.stringify(libreItems)))
 assert.equal(reopened.length, 2)
 
+const greetings = configFor(theoryDocByTypeId['gram-b2-theorie'])
+const withImage = JSON.parse(JSON.stringify(buildWorksheets([greetings], 1).flatMap(sheet => sheet.items)))
+const scene = withImage.find(item => item.theoryBlock.kind === 'image-row').theoryBlock.cells[1]
+assert.equal(scene.src, '')
+scene.src = '/lib/images/exemple-de-remplacement.png'
+assert.deepEqual(buildWorksheets([{ ...greetings, libreItems: withImage }], 1).flatMap(sheet => sheet.items), withImage)
+
 const practice = { ...etre, topic: 'gram-espace', exerciseType: 'gram-ex-e1-qcm-verbe' }
 const mixed = buildWorksheets([{ ...practice, tcfPageBreakAfter: [false, false], extraBlocks: [etre, practice] }], 1)
 const mixedTheory = mixed.filter(sheet => sheet.blocks[0].sourceBlockIndex === 1)
@@ -102,4 +141,15 @@ assert.deepEqual(mixedTheory.flatMap(sheet => sheet.items), buildWorksheets([etr
 assert.equal(mixed[0].blocks[0].sourceBlockIndex, 0)
 assert.equal(mixed.at(-1).blocks[0].sourceBlockIndex, 2)
 
-console.log(JSON.stringify({ fiches: docs.length, sourceBlocks, revisedTexts, compatibility: 'catalogue, double A5, ancien Libre et fiche mixte' }))
+for (const { type, stages } of grammarScenarios) {
+  assert.deepEqual(stages.map(({ exercise }) => exercise.competence), ['CE', 'CO', 'PE', 'PO'])
+  for (const { exercise } of stages) assert.deepEqual(validateTcfExercise(exercise).errors, [])
+  const config = { ...defaultPage('grammaire'), topic: type.topic, exerciseType: type.id, count: 1 }
+  const pages = buildWorksheets([config], 2)
+  assert.deepEqual(pages.map(page => page.blocks[0].title), stages.map(stage => stage.title))
+  assert.equal(pages[1].items.filter(item => item.audioSrc).length, 1)
+  assert.equal(collectWorksheetTranscriptions(pages).length, 1)
+  assert.deepEqual(buildWorksheets([pageForA5Half(config, 'left')], 2).map(page => page.items), pages.map(page => page.items))
+}
+
+console.log(JSON.stringify({ fiches: docs.length, contextualLessons, diagrams, illustrationCount, imagePlaceholders, sourceBlocks, revisedTexts, compatibility: 'catalogue, double A5, ancien Libre, image Libre et fiche mixte' }))

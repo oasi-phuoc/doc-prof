@@ -6,6 +6,8 @@ Un élève allophone doit pouvoir lire une fiche, comprendre à quoi sert la not
 
 Le chantier couvre les fiches du catalogue Grammaire, les fiches associant théorie et exercices, leurs aperçus, le mode Libre et les formats d’impression proposés. Les banques d’exercices, de vocabulaire, de compréhension et de production servent à vérifier les liens pédagogiques. Le chantier éditorial porte sur les contenus de théorie. [Catalogue et niveaux](../../src/grammaire/catalog.ts) · [Cahier des charges des banques graduées](implementation/cahier-des-charges-v2.md)
 
+Les parcours en situation peuvent mobiliser une notion de la théorie dans une démarche de la vie quotidienne. La fiche FALC reste accessible dans le même sous-thème. [Parcours de grammaire en situation](implementation/parcours-situations.md)
+
 ### Inventaire de départ
 
 Le catalogue compte **98 fiches actives dans 19 thèmes**. L’archive contient 99 entrées. L’ancienne fiche « Les destinations » (`gram-a5-theorie`) a rejoint « Le verbe aller » (`gram-a4-theorie`). Son identifiant de compatibilité et le contenu pédagogique correspondant entrent dans la vérification. [Registre actif](../../src/grammaire/theory/index.ts) · [Archive de théorie](../../scripts/grammar_curriculum/theory-source.json)
@@ -36,7 +38,7 @@ Le catalogue compte **98 fiches actives dans 19 thèmes**. L’archive contient 
 ### Conservation du contenu
 
 - Pour chaque fiche, relever l’identifiant, le niveau, l’objectif et les renvois. Inventorier les règles, les formes des tableaux, les exemples distincts, les distinctions de sens ou de registre, les exceptions, les erreurs expliquées et les médias utiles.
-- Relier chaque élément source à sa nouvelle place dans un registre de suivi. Indiquer si l’élément a été repris, reformulé, déplacé, fusionné avec un doublon identique ou corrigé. En cas de correction, consigner le passage d’origine et le motif grammatical. Un exemple reformulé garde la construction ou le contraste qui le rend utile.
+- Garder l’objectif et les distinctions nécessaires pour appliquer la règle. Les exemples peuvent être remplacés, déplacés ou réunis pour mieux faire comprendre la notion. Conserver la source pour retrouver les détails et documenter une correction de règle.
 - Si la théorie devient trop dense, répartir les notions sur plusieurs pages courtes sous la même entrée. Donner un titre précis à chaque page. Les variantes, les tableaux complets et les exceptions gardent une place identifiable dans la fiche. Vérifier les correspondances avec les niveaux et les exercices associés.
 
 ## 2. Rédaction pour les élèves allophones
@@ -132,7 +134,7 @@ Dans une phrase annotée, reprendre le code du projet quand il aide à repérer 
 ## 4. Illustrations utiles et personnages variés
 
 - Ajouter une image, un dessin simple ou un schéma quand il répond à une question de lecture. Un dessin montre la place d’un objet. Une frise montre l’ordre de deux actions. Un dialogue court et ses interlocuteurs aident à comprendre « tu » et « vous ». Un tableau suffit quand le point à observer est une terminaison.
-- Reprendre les visuels existants qui conviennent. Préparer un fichier par scène utile, avec un sujet principal et un cadrage lisible au format final. Garder le même décor, les mêmes objets et les mêmes personnages quand une paire d’images sert à observer un seul changement.
+- Reprendre les visuels existants qui conviennent. Préparer un fichier par scène utile, avec un sujet principal et un cadrage lisible au format final. Garder le même décor, les mêmes objets et les mêmes personnages quand une paire d’images sert à observer un seul changement. Quand une image reste à produire, donner la légende et conserver une description précise du futur dessin dans l’emplacement modifiable.
 - À l’échelle d’un thème et du catalogue, varier les personnages, prénoms, âges, genres, carnations, morphologies et situations de vie. Représenter aussi des personnes en situation de handicap dans des scènes ordinaires. Quand une nationalité, une origine ou une langue fait partie de la notion, l’indiquer explicitement dans une légende ou un dialogue. Répartir les rôles et vérifier l’ensemble des scènes pour éviter de reproduire le même couple de personnages ou d’associer systématiquement une origine à un rôle.
 - Mettre le visuel près de sa phrase et prévoir une légende courte. Donner une alternative textuelle à l’image informative. Si la légende fournit déjà toute l’information de l’image, utiliser une alternative vide pour éviter la répétition à la lecture. Garder la règle et les exemples en texte dans la fiche. Vérifier que l’élève peut répondre même si le visuel est indisponible.
 - Associer chaque nouveau visuel à l’identifiant de la fiche, au bloc illustré, à son texte alternatif et à sa provenance. Relire les images une par une, puis par thème, à l’écran et en impression noir et blanc.
@@ -151,7 +153,7 @@ Les aides bilingues déjà associées à une fiche suivent ses blocs révisés. 
 
 | Contrôle | Critère de réception |
 |---|---|
-| Couverture | Chaque fiche active et l’alias des destinations figurent dans le registre. Toutes les unités pédagogiques recensées ont une destination vérifiée, avec une explication écrite pour chaque correction ou fusion. |
+| Couverture | Chaque fiche active et l’alias des destinations figurent dans le registre. La fiche garde ses objectifs, reformule les règles utiles et conserve une référence à la source. |
 | Qualité du français | Une personne enseignante relit chaque fiche en suivant les niveaux et les objectifs. Elle vérifie les règles, exemples, exceptions, cas de registre et liens vers les exercices. Chaque notion a un exemple résolu lisible sans aide. |
 | Compréhension par les élèves | Associer des élèves allophones à la rédaction et à la relecture dès le pilote. Pour chaque lot, faire lire des fiches aux publics concernés, dont des lecteurs débutants pour le pré-A1/A1. Noter les mots ou images qui demandent une explication. Vérifier que l’élève peut dire à quoi sert la fiche, repérer la forme et appliquer la règle à une phrase nouvelle. Reprendre et refaire lire les passages qui bloquent. Suivre la validation par fiche et par niveau. |
 | Écran et accès au texte | Vérifier l’ordre de lecture, les titres, les intitulés de tableau et les textes alternatifs. À 320 px CSS de largeur, puis au zoom à 200 %, vérifier que le texte courant se lit sans défilement horizontal et que les images, phrases et légendes restent entières. |

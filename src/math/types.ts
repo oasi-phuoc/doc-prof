@@ -550,6 +550,8 @@ export type MathItem = {
   theoryPageBreakAfter?: boolean
   /** Style des fiches FALC révisées du catalogue Grammaire, y compris en mode Libre. */
   grammarTheoryFalc?: boolean
+  /** Étape du parcours, conservée avec l’activité dans la fiche enregistrée. */
+  grammarScenarioStage?: number
   /** Entrée de glossaire maths (mot + définition + schéma). */
   glossary?: {
     sourceId?: string

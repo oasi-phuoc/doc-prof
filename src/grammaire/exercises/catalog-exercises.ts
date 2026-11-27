@@ -22,6 +22,7 @@ import { QUEL_QUESTION_KIND_IDS } from './quel-questions'
 import { GRAMMAR_CO_THEMES, grammarCoTypeId } from './co-themes'
 import { GRAMMAR_NEW_PILOT_TYPES, grammarBanksForType } from '../curriculum/registry'
 import { grammarCoSubthemes, hasGrammarCoTheme } from './co-bank'
+import { grammarScenarioFor } from './parcours'
 
 /** Sous-thèmes dérivés des fiches théorie (PDF / notions hors conjugaison listée). */
 function theoryDerivedSubthemes(): Array<{
@@ -157,6 +158,8 @@ export function subthemesForTopicAll(topic: string) {
 export function resolveGramSubthemeAll(topic: string, exerciseType: string) {
   const list = subthemesForTopicAll(topic)
   if (!list.length) return undefined
+  const scenario = grammarScenarioFor(exerciseType)
+  if (scenario) return list.find(sub => sub.id === scenario.subthemeId)
   const graded=grammarBanksForType(exerciseType)[0]
   if(graded)return list.find(s=>s.id===graded.subthemeId)??ALL_GRAM_SUBTHEMES.find(s=>s.id===graded.subthemeId)
   const parsed = parseGramExerciseType(exerciseType)
