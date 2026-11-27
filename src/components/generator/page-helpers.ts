@@ -216,6 +216,7 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
   const coordSize = coordSizeFor('moyen')
   return {
     exerciseType: type.id,
+    sionMapBackground: prev?.exerciseType === type.id ? prev.sionMapBackground : undefined,
     libreId: undefined,
     logistiqueBankRevision: undefined,
     logistiqueTheoryView: undefined,

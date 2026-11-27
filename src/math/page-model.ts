@@ -32,6 +32,7 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     phraseInstruction: page.phraseInstruction,
     problemDraftGrids: page.problemDraftGrids,
     problemHelp: page.problemHelp,
+    sionMapBackground: page.sionMapBackground,
     formulaireLetterGrid: page.formulaireLetterGrid,
     inlineBlankPx: page.inlineBlankPx,
     oralAnswerModes: page.oralAnswerModes,

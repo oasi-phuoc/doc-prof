@@ -483,6 +483,9 @@ export function buildPage(
     const glossaryBank = mathGlossaryBank(block.exerciseType)
     const items = rawItems.map((item) => {
       const clean = sanitizeItemNumberNoise(item as Record<string, unknown>) as MathItem
+      if (clean.sionMap && block.sionMapBackground) {
+        return { ...clean, sionMap: { ...clean.sionMap, background: block.sionMapBackground } }
+      }
       if (logistics?.kind === 'glossaire' && !clean.logistiqueGlossaryEntry) return completeLogistiqueGlossaryItem(clean, logistics.module)
       if (glossaryBank && clean.glossary) {
         const entry = clean.glossary

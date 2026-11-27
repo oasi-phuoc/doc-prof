@@ -88,6 +88,25 @@ try {
       }
     }
   })
+
+  await test('Sion backgrounds are a per-exercise setting and preserve the question', () => {
+    const page = {
+      ...defaultPage('géométrie'), topic: 'reperage', exerciseType: practice.REAL_MAP_TYPE, count: 1,
+    }
+    const [original] = buildPage(page, 41).items
+    const [simplified] = buildPage({ ...page, sionMapBackground: 'simplified' }, 41).items
+    assert.equal(original.sionMap.background, undefined)
+    assert.deepEqual(simplified, { ...original, sionMap: { ...original.sionMap, background: 'simplified' } })
+    const [annotated] = buildPage({ ...page, sionMapBackground: 'annotated' }, 41).items
+    assert.deepEqual(annotated, { ...original, sionMap: { ...original.sionMap, background: 'annotated' } })
+
+    const mixed = buildPage({ ...page, sionMapBackground: 'simplified', extraBlocks: [page] }, 41)
+    assert.equal(mixed.blocks[0].items[0].sionMap.background, 'simplified')
+    assert.equal(mixed.blocks[1].items[0].sionMap.background, undefined)
+
+    const [frozen] = buildPage({ ...page, libreItems: [simplified], sionMapBackground: 'photo' }, 41).items
+    assert.deepEqual(frozen, { ...original, sionMap: { ...original.sionMap, background: 'photo' } })
+  })
 } finally {
   await server.close()
 }

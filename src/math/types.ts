@@ -687,7 +687,7 @@ export type MathItem = {
   subtractionExchange?: { guided: boolean; digits: string[] }
   rectangleMeasures?: { length: number; width: number; guided: boolean }
   translationPractice?: { figure: Array<readonly [number, number]>; vector: readonly [number, number]; guided: boolean }
-  sionMap?: { target: number }
+  sionMap?: { target: number; background?: SionMapBackground }
   lengthUnits?: { a: number; b: number }
   functionPairs?: { x: number; y: number }[]
   graphPractice?: { pairs: { x: number; y: number }[]; task: 'read' | 'plot'; yStep: number }
@@ -960,6 +960,8 @@ export type CompositeScene = {
   rights?: CompositeRight[]
 }
 
+export type SionMapBackground = 'photo' | 'annotated' | 'simplified'
+
 export type ExerciseBlock = {
   /** Identité locale de l’activité éditée. */
   libreId?: string
@@ -1032,6 +1034,7 @@ export type ExerciseBlock = {
    */
   problemDraftGrids?: boolean[]
   problemHelp?: boolean
+  sionMapBackground?: SionMapBackground
   /** Formulaire grammaire / TPF : cases lettre à la place des traits. */
   formulaireLetterGrid?: boolean
   /**

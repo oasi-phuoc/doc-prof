@@ -6836,6 +6836,24 @@ textarea.pill-input,
 .math-sion-place text, .math-sion-north text { fill: #152435; stroke: #fff; stroke-width: 3.5; paint-order: stroke; }
 .math-sion-north path { stroke: #fff; stroke-width: 2; fill: none; }
 .math-sion-answer-cell { fill: none; stroke: #fff; stroke-width: 4; stroke-dasharray: 7 3; }
+.math-sion-map.is-simplified .math-sion-grid { stroke: #666; stroke-dasharray: 2 2; opacity: .8; }
+.math-sion-map.is-simplified .math-sion-place line,
+.math-sion-map.is-simplified .math-sion-north path,
+.math-sion-map.is-simplified .math-sion-answer-cell { stroke: #151515; }
+.math-sion-map.is-simplified .math-sion-answer-cell { fill: #1111; }
+.math-sion-map:not(.is-photo) figcaption { display: flex; justify-content: space-between; gap: 5px; }
+.math-sion-legend { display: flex; flex-wrap: wrap; gap: 2px 8px; }
+.math-sion-legend > span::before {
+  display: inline-block;
+  width: 13px;
+  margin-right: 3px;
+  content: '';
+  vertical-align: middle;
+}
+.math-sion-road-key::before { border-block: 1px solid currentColor; height: 4px; }
+.math-sion-path-key::before { border-top: 1.5px dashed currentColor; }
+.math-sion-map.is-annotated .math-sion-road-key::before { border: 1px solid #302b24; background: #fff9e9; }
+.math-sion-map.is-annotated .math-sion-path-key::before { border-top-color: #865a00; }
 .a5-half .math-rectangle-question, .a5-half .math-rectangle-example { gap: 2mm; }
 .a5-half .math-translation-practice svg { width: min(100%, 68mm); }
 .a5-half .math-sion-map figure { width: min(100%, 111mm); }

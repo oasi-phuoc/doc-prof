@@ -129,6 +129,8 @@ Prendre comme fond une seule image cohérente montrant un lieu dans son ensemble
 
 Le quadrillage forme un calque visible par-dessus l’image. Poser des lignes fines ou translucides et placer les lettres, chiffres et flèche du nord sur des zones lisibles. Placer les points d’intérêt à leur position exacte dans l’image, par exemple un point « Entrée de l’école » sur l’entrée et un point « Arrêt du bus » au bord de la route. L’image, le quadrillage et les points partagent le même cadrage à l’aperçu et à l’impression. Les lieux occupent leur surface réelle sur le plan et peuvent traverser plusieurs cases. Les illustrations actuelles à pictogrammes par case servent de référence fonctionnelle pour les exercices existants. [Données des plans](../../src/math/spatial-practice.ts) · [Rendu des plans](../../src/components/item-view/spatial-practice.tsx)
 
+Proposer trois images pour un même lieu. La photo aérienne montre le lieu réel. Une deuxième version surligne les routes principales et les chemins à pied sur la photo. Le plan en noir et blanc simplifie les bâtiments en blocs et conserve les tracés essentiels. Utiliser la même emprise pour que le quadrillage, les points et les réponses gardent leur position. Le plan de Sion sert de premier exemple. [Suivi d’avancement](avancement.md)
+
 Dans une question de case, indiquer le point précis qui doit être repéré. Une question avec une réponse unique vise un point à l’intérieur d’une case. Lorsque deux points occupent la même case, les distinguer par leur nom ou demander toutes les réponses. Pour un trajet par cases, expliciter les déplacements autorisés. Pour un trajet qui suit les rues, utiliser les rues et croisements visibles dans l’image. Le trajet de solution se superpose au fond dans le corrigé.
 
 ## Mise en œuvre dans le générateur
@@ -165,7 +167,7 @@ Dans une question de case, indiquer le point précis qui doit être repéré. Un
 | REC-09 | Pour une paire de séries A/B, vérifier la même compétence, le même nombre d’étapes, les mêmes aides, des valeurs de difficulté comparable et le même barème. |
 | REC-10 | Afficher la liste « Type d’exercice » pour chacun des thèmes de mathématiques avec une leçon. Vérifier que **Théorie** est le premier choix dans le panneau normal et le mode Libre. |
 | REC-11 | Ouvrir la théorie des transformations. Pour chaque méthode, vérifier que le dessin initial, le premier geste, les autres étapes et le résultat sont illustrés et reliés aux bons mots. Les pages de suite conservent le titre de la notion et un ordre de lecture clair. |
-| REC-12 | Ouvrir un plan à deux tailles d’aperçu puis le PDF. Vérifier que chaque point reste ancré à son lieu, que les noms et le quadrillage restent lisibles et que la case correcte correspond au point. Le corrigé place son trajet sur le même fond. |
+| REC-12 | Ouvrir les trois fonds à deux tailles d’aperçu puis dans le PDF. Vérifier que chaque point reste ancré à son lieu, que les noms et le quadrillage restent lisibles et que la case correcte correspond au point. Le corrigé utilise le fond choisi pour la fiche. |
 | REC-13 | Vérifier le retrait du domaine autonome Vocabulaire des menus de création. Ouvrir une fiche historique autorisée et un exercice d’un autre domaine utilisant la bibliothèque lexicale. |
 
 Chaque lot consigne les types touchés, leurs sources pédagogiques, les captures ou PDF vérifiés et les décisions de relecture. Les exemples élèves restent courts et lisibles. Les détails de génération, de contrôle et de barème restent dans la documentation destinée au formateur.

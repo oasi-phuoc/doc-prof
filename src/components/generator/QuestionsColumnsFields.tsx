@@ -1,6 +1,6 @@
 import { mathTheoryTopic } from '@/math/theory-lessons'
 import { mathGlossaryBank } from '@/math/glossary-banks'
-import { isGuidedColumnType, isSingleColumnPractice } from '@/math/guided-practice'
+import { isGuidedColumnType, isSingleColumnPractice, REAL_MAP_TYPE } from '@/math/guided-practice'
 import { isLogistiqueReferenceType, logistiquePresentationFor, logistiqueType } from '@/logistique/catalog'
 import { logistiqueHasSummary, logistiqueModuleCapacities } from '@/logistique/generate'
 import { SelectBox } from './SelectBox'
@@ -255,6 +255,14 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
   })) : []
   return (
     <>
+              {activeBlock.exerciseType === REAL_MAP_TYPE && (
+                <SelectBox label="Fond du plan" value={activeBlock.sionMapBackground ?? 'photo'}
+                  onChange={(value) => updatePage({ sionMapBackground: value === 'annotated' || value === 'simplified' ? value : 'photo' })}>
+                  <option value="photo">Photo aérienne réelle</option>
+                  <option value="annotated">Photo avec routes et chemins</option>
+                  <option value="simplified">Plan simplifié en noir et blanc</option>
+                </SelectBox>
+              )}
               {supportsPresentation && (presentations.some(({ capacity }) => capacity > 0) || presentation) ? (
                 <SelectBox label="Présentation des questions" value={presentation ?? 'questions'} onChange={(value) => {
                   const option = presentations.find(({ id }) => id === value)

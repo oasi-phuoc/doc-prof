@@ -1,7 +1,9 @@
 import { useId } from 'react'
 import { RECTANGLE_MEASURES_TYPE, SION_GRID, SION_PLACES, TRANSLATION_GRID, TRANSLATION_PRACTICE_TYPE, translatePoint } from '@/math/guided-practice'
-import type { MathItem, PreviewMode } from '@/math/types'
+import type { MathItem, PreviewMode, SionMapBackground } from '@/math/types'
 import sionPhoto from '@/math/media/spatial/sion-swissimage.webp'
+import sionAnnotatedPhoto from '@/math/media/spatial/sion-photo-chemins.webp'
+import sionSimplifiedMap from '@/math/media/spatial/sion-plan-simplifie.png'
 import translationExample from '@/math/media/theory/falc/translation.png'
 
 const sionLabelOffsets = [
@@ -10,6 +12,12 @@ const sionLabelOffsets = [
   { dx: 0, dy: -12, anchor: 'middle' },
   { dx: -12, dy: 5, anchor: 'end' },
 ] as const
+
+const sionBackgrounds: Record<SionMapBackground, { src: string; alt: string; caption: string }> = {
+  photo: { src: sionPhoto, alt: 'Photo aérienne', caption: 'Sion · Photo aérienne © swisstopo' },
+  annotated: { src: sionAnnotatedPhoto, alt: 'Photo aérienne avec les routes et les chemins', caption: 'Sion · Photo © swisstopo' },
+  simplified: { src: sionSimplifiedMap, alt: 'Plan simplifié', caption: 'Sion · Dessin d’après © swisstopo' },
+}
 
 function RectangleFigure({ length, width, hatched }: { length: number; width: number; hatched: boolean }) {
   const pattern = useId()
@@ -107,18 +115,20 @@ export function TranslationPractice({ practice, mode }: {
 }
 
 export function SionMapPractice({ item, mode }: { item: MathItem; mode: PreviewMode }) {
-  const target = item.sionMap!.target
+  const { target, background } = item.sionMap!
+  const variant = background === 'annotated' || background === 'simplified' ? background : 'photo'
+  const map = sionBackgrounds[variant]
   const model = SION_PLACES[(target + 1) % SION_PLACES.length]!
   const show = mode === 'answers'
   const { columns, rows } = SION_GRID
   const w = 432
   const h = 288
   return (
-    <div className="math-geometry-pilot math-sion-map">
+    <div className={`math-geometry-pilot math-sion-map is-${variant}`}>
       <p className="math-sion-example"><strong>Exemple.</strong> {model.name} se trouve en {model.code}.</p>
       <figure>
-        <svg viewBox={`-20 -22 ${w + 20} ${h + 22}`} role="img" aria-label={`Photo aérienne de Sion avec colonnes A à D et lignes 1 à 3. ${SION_PLACES.map(({ name, code }) => `${name}, case ${code}`).join('. ')}.`}>
-          <image href={sionPhoto} width={w} height={h} />
+        <svg viewBox={`-20 -22 ${w + 20} ${h + 22}`} role="img" aria-label={`${map.alt} de Sion avec colonnes A à D et lignes 1 à 3. ${SION_PLACES.map(({ name, code }) => `${name}, case ${code}`).join('. ')}.`}>
+          <image href={map.src} width={w} height={h} />
           <g className="math-sion-grid">
             {Array.from({ length: columns - 1 }, (_, index) => <line key={index} x1={(index + 1) * w / columns} x2={(index + 1) * w / columns} y1="0" y2={h} />)}
             {Array.from({ length: rows - 1 }, (_, index) => <line key={index} x1="0" x2={w} y1={(index + 1) * h / rows} y2={(index + 1) * h / rows} />)}
@@ -142,7 +152,15 @@ export function SionMapPractice({ item, mode }: { item: MathItem; mode: PreviewM
             )
           })}
         </svg>
-        <figcaption>Sion · Photo aérienne © swisstopo</figcaption>
+        <figcaption>
+          {variant !== 'photo' && (
+            <span className="math-sion-legend">
+              <span className="math-sion-road-key">Route</span>
+              <span className="math-sion-path-key">Chemin à pied</span>
+            </span>
+          )}
+          <span>{map.caption}</span>
+        </figcaption>
       </figure>
       <p className="math-sion-question">{item.prompt}</p>
       <span className={`answer-line-field${show ? ' filled' : ''}`}>{show ? item.answer : '\u00a0'}</span>

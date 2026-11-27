@@ -797,7 +797,7 @@ export const exerciseTypes: ExerciseType[] = [
   t('transformations-translation', 'transformations', 'Construire l’image par translation', 'Déplacer chaque sommet d’une figure selon le même déplacement.', 'Construisez l’image de la figure en suivant le déplacement indiqué.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
   t('transformations-quart-tour', 'transformations', 'Faire pivoter une figure d’un quart de tour', 'Tourner une silhouette de 90° sur un quadrillage.', 'Suivez le sens indiqué pour reproduire la figure après un quart de tour.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
   t(TRANSLATION_PRACTICE_TYPE, 'transformations', 'Translation, pas à pas', 'Déplacer les sommets d’un triangle sur un quadrillage.', 'Faites glisser le triangle.', 'texte', { preferredColumns: 1, preferredCount: 1, maxCount: 1, supportsNumberRange: false }),
-  t(REAL_MAP_TYPE, 'reperage', 'Lire une photo aérienne de Sion', 'Repérer des lieux de Sion sur une orthophoto quadrillée.', 'Repérez les lieux grâce aux points et aux cases.', 'texte', { preferredColumns: 1, preferredCount: 1, maxCount: 1, supportsNumberRange: false }),
+  t(REAL_MAP_TYPE, 'reperage', 'Lire un plan de Sion', 'Repérer des lieux sur une photo aérienne, une photo avec les routes ou un plan simplifié.', 'Repérez les lieux grâce aux points et aux cases.', 'texte', { preferredColumns: 1, preferredCount: 1, maxCount: 1, supportsNumberRange: false }),
   ...Object.entries(mathTheoryLessons).map(([topic, lesson]) =>
     t(`${MATH_THEORY_PREFIX}${topic}`, topic, 'Théorie', lesson.title, '', 'texte', {
       preferredColumns: 1, preferredCount: 1, maxCount: 1, supportsNumberRange: false,
