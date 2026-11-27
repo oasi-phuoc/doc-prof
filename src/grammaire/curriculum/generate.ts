@@ -51,13 +51,13 @@ export function grammarCutIds(snapshot: GrammarSnapshot): Set<string> {
 }
 
 export function canRerollGrammarSelection(snapshot: GrammarSnapshot, block: ExerciseBlock): boolean {
-  const bank = grammarBankFor(snapshot.activityId, snapshot.level)
-  return Boolean(bank?.revision === snapshot.bankRevision && eligible(bank, block).length > snapshot.questions.length)
+  const bank = grammarBankFor(snapshot.activityId, snapshot.level, snapshot.bankRevision)
+  return Boolean(bank && eligible(bank, block).length > snapshot.questions.length)
 }
 
 export function rerollGrammarSelection(snapshot: GrammarSnapshot, block: ExerciseBlock, seed: number, targets?: ReadonlySet<string>): GrammarSnapshot {
-  const bank = grammarBankFor(snapshot.activityId, snapshot.level)
-  if (!bank || bank.revision !== snapshot.bankRevision) return snapshot
+  const bank = grammarBankFor(snapshot.activityId, snapshot.level, snapshot.bankRevision)
+  if (!bank) return snapshot
   const used = new Set(snapshot.questions.map(({ id }) => id))
   const locked = new Set(snapshot.libreLockedQuestionIds)
   const candidates = shuffle(createRng(seed), eligible(bank, block).filter(({ id }) => !used.has(id)))

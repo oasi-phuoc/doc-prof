@@ -127,10 +127,30 @@ export function TheoryEditor({ items, onChange }: { items: MathItem[]; onChange:
   return (
     <div className="quad-libre-block" aria-label="Contenu de la théorie">
       <b>Contenu de la théorie</b>
-      {items.map((item, index) => item.theoryBlock && (
-        <BlockEditor key={item.libreId ?? index} block={item.theoryBlock} index={index}
-          update={(theoryBlock) => onChange(replaceAt(items, index, { ...item, theoryBlock }))} />
-      ))}
+      {items.map((item, index) => {
+        const entry = item.logistiqueGlossaryEntry
+        if (entry && item.theoryBlock?.kind === 'paragraph') {
+          const paragraph = item.theoryBlock
+          function update(term: string, definition: string) {
+            onChange(replaceAt(items, index, {
+              ...item,
+              logistiqueGlossaryEntry: { term, definition },
+              theoryBlock: { ...paragraph, text: `{g}${term}{/g} — ${definition}` },
+            }))
+          }
+          return (
+            <details className="libre-theory-block" key={item.libreId ?? index} open={index === 0}>
+              <summary>{entry.term || `Notion ${index + 1}`}</summary>
+              <TextField label="Notion" value={entry.term} onChange={(term) => update(term, entry.definition)} />
+              <TextField label="Définition" value={entry.definition} onChange={(definition) => update(entry.term, definition)} multiline />
+            </details>
+          )
+        }
+        return item.theoryBlock && (
+          <BlockEditor key={item.libreId ?? index} block={item.theoryBlock} index={index}
+            update={(theoryBlock) => onChange(replaceAt(items, index, { ...item, theoryBlock }))} />
+        )
+      })}
     </div>
   )
 }

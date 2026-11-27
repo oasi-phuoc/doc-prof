@@ -979,7 +979,7 @@ export function GeneratorPage({
             presentation={libreMode && (
               <div className="libre-sheet-settings">
                 <details className="libre-theory-block worksheet-settings">
-                  <summary>Présentation des questions</summary>
+                  <summary>Présentation du contenu</summary>
                   <div className="worksheet-settings-list" ref={setWorksheetSettingsTarget} />
                 </details>
                 {ctx.isFormes && activeBlock.coordLibre && (

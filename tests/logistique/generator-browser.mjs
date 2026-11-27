@@ -225,9 +225,9 @@ try {
   assert((await page.pdf()).subarray(0, 4).equals(Buffer.from('%PDF')))
 
   await page.emulateMedia({ media: 'screen' })
-  await page.getByRole('button', { name: 'Paramètres', exact: true }).click()
-  await page.getByRole('radio', { name: /Portrait A4/ }).click()
-  await page.keyboard.press('Escape')
+  await layout.click()
+  await editor.getByRole('radio', { name: /Portrait A4/ }).click()
+  await layout.click()
   await page.getByRole('button', { name: 'Fermer le mode libre', exact: true }).click()
   page.on('dialog', (confirmation) => confirmation.accept())
   await select('Thème', '300 — Procurement Management')
@@ -245,10 +245,8 @@ try {
   await editor.getByLabel('Réponses, une par ligne dans l’ordre des blancs').fill('palette\ncaisson')
   await editor.getByRole('checkbox', { name: 'Afficher la liste de mots' }).check()
   await editor.getByLabel('Mots supplémentaires, un par ligne').fill('couvercle')
-  await page.getByRole('button', { name: 'Valider les changements', exact: true }).click()
   await sheet.locator('.logistique-words').getByText(/couvercle/).waitFor()
   await editor.getByRole('checkbox', { name: 'Afficher la liste de mots' }).uncheck()
-  await page.getByRole('button', { name: 'Valider les changements', exact: true }).click()
   assert.equal(await sheet.locator('.logistique-words').count(), 0)
 
   const saveGap = page.waitForResponse((response) =>
@@ -258,7 +256,7 @@ try {
   await dialog.getByRole('button', { name: 'Enregistrer une nouvelle fiche', exact: true }).click()
   await saveGap
   await dialog.waitFor({ state: 'hidden' })
-  const savedGap = saved.recipe.libreSnapshot[0].libreItems[0].logistiqueGaps
+  const savedGap = saved.recipe.pages[0].libreItems[0].logistiqueGaps
   assert.deepEqual(savedGap, { answers: ['palette', 'caisson'], distractors: ['couvercle'] })
   await page.goto(base + '/fiches')
   await page.getByRole('button', { name: 'Ouvrir', exact: true }).click()
@@ -282,7 +280,6 @@ try {
   await tableAnswer.fill('')
   await editor.getByRole('status').getByText(/Remplissez les en-têtes et les réponses/).waitFor()
   await tableAnswer.fill('800 millimètres')
-  await page.getByRole('button', { name: 'Valider les changements', exact: true }).click()
   await table.getByRole('columnheader', { name: 'Type de palette' }).waitFor()
   assert(!await table.getByText('800 millimètres').count())
   await page.emulateMedia({ media: 'print' })

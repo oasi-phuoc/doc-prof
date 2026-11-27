@@ -62,7 +62,7 @@ async function documentPilot(page) {
   const panel = page.locator('#activity-editor .tcf-editor')
   assert.equal(await page.locator('#activity-editor .tcf-question-editor').count(), 2)
   const settings = page.locator('#activity-editor .worksheet-settings')
-  await settings.getByText('Présentation des questions', { exact: true }).click()
+  await settings.getByText('Présentation du contenu', { exact: true }).click()
   const secondQuestion = settings.getByRole('group', { name: 'Question 2', exact: true })
   const pageBreak = button(secondQuestion, 'Passer cette question et les suivantes sur une nouvelle page')
   await pageBreak.waitFor()
@@ -234,7 +234,7 @@ async function worksheetImage(page) {
   const firstImage = worksheet(page).locator('.vocab-card-image img[role=button]').first()
   const original = await firstImage.getAttribute('src')
   const settings = page.locator('#activity-editor .worksheet-settings')
-  await settings.getByText('Présentation des questions', { exact: true }).click()
+  await settings.getByText('Présentation du contenu', { exact: true }).click()
   await button(settings, 'Remplacer l’image').first().click()
   const picker = page.getByRole('dialog', { name: 'Choisir une image vocabulaire', exact: true })
   await picker.getByLabel('Importer une image', { exact: true }).setInputFiles({

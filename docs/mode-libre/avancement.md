@@ -40,6 +40,8 @@ En mode simple, une liste à une seule valeur disparaît et les réglages de qua
 
 `tests/mode-libre/layout-browser.mjs` couvre huit largeurs en A4 et deux en double A5, de 320 à 1 920 px. Le parcours vérifie le maintien du panneau, la visibilité des réglages selon l’activité, l’application des options d’impression et d’en-tête et leur annulation. `tests/mode-libre/structured-browser.mjs` vérifie aussi les sauts de page et l’import d’images initiés dans le panneau.
 
+L’inventaire de la version intégrée `e500ef9e` compte 4 272 contextes, dont 4 233 générables avec les pilotes, 36 masqués et trois domaines en attente de contenu. Il compte 852 contextes générables à raccorder en A4 et 2 134 en double A5. Les suites unitaires de métadonnées, de génération et de droits totalisent 47 réussites. Les dix recettes témoins conservent le contenu et les données libres après réouverture.
+
 ## Panneau unique et addition A4
 
 Le commit `03ec309`, basé sur `6cd8c38`, intègre les réglages et les éditeurs spécialisés dans le panneau gauche du mode Libre. L’en-tête et le pied de page utilisent le même emplacement. La bascule Édition / Aperçu apparaît jusqu’à 550 px et rend le focus au dernier champ utilisé.

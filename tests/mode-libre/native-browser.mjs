@@ -550,6 +550,25 @@ try {
   assert.match(await preview(civics).innerText(), /Donnez un exemple de devoir civique/)
   await civics.close()
 
+  const glossary = await open(context, {
+    domain: 'logistique-cfc', topic: 'log-cfc-theme-100', exerciseType: 'log-cfc-105-glossaire',
+  })
+  await toggleLive(glossary)
+  const glossaryPanel = glossary.locator('#activity-editor')
+  const glossaryTerm = glossaryPanel.getByRole('textbox', { name: 'Notion', exact: true }).first()
+  const originalTerm = await glossaryTerm.inputValue()
+  await glossaryTerm.fill('Notion personnalisée')
+  await glossaryPanel.getByRole('textbox', { name: 'Définition', exact: true }).first().fill('Définition de l’atelier.')
+  assert.match(await preview(glossary).locator('.logistique-glossary-table').innerText(), /Notion personnalisée.*Définition de l’atelier/s)
+  await glossaryPanel.getByText('Présentation du contenu', { exact: true }).click()
+  await button(glossaryPanel, 'Saut de page après Notion personnalisée').click()
+  await glossary.locator('.a4-frame').nth(1).waitFor()
+  await button(glossary, 'Annuler').click()
+  await button(glossary, 'Annuler').click()
+  await button(glossary, 'Annuler').click()
+  assert.equal(await glossaryTerm.inputValue(), originalTerm)
+  await glossary.close()
+
   const mathsA5 = await open(context, {
     domain: 'logistique-cfc', topic: 'log-cfc-theme-100', exerciseType: 'log-cfc-101-maths',
     sheetFormat: 'a5-double-landscape', printCorrections: true,
