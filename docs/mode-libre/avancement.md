@@ -84,6 +84,12 @@ Les cinq variantes de lecture, de placement et de composition reprennent les for
 
 `node tests/mode-libre/reperage-browser.mjs` vérifie le maintien du tirage des cinq variantes, l’ajout et le retrait de formes, le changement de quantité, le déplacement de l’origine et l’annulation. La recette des symétries est aussi repassée avec le ciblage du repère de l’activité active.
 
+### Réutilisation des éditeurs mathématiques dans le TPM
+
+Le panneau du TPM permet de modifier ses 46 exercices de mesures, ses 11 variantes de repérage et de symétrie et ses 25 références mathématiques. Les types de leçons produisent désormais leur fiche de théorie et le barème les exclut. Les 117 blocs des sujets standard comparés au relevé précédent gardent leur contenu.
+
+Le navigateur vérifie l’aire d’un rectangle, le repérage, la symétrie, la modification d’une leçon et celle d’une notion de glossaire dans le TPM. L’inventaire de `5635e356` compte 407 raccordements A4 en attente sur 4 269 contextes et aucune erreur de génération.
+
 ### Écoute de mots en Soutien FR et Alphabétisation
 
 Le panneau Libre permet de changer les mots des activités d’écoute avec QR et des activités d’écoute illustrées. La banque fournit les médias associés et le son de la leçon détermine la coche proposée dans le corrigé. La case reste modifiable pour une prononciation particulière. Un changement de quantité ou de colonnes conserve les mots personnalisés et leurs médias.
