@@ -162,6 +162,25 @@ import { module902 as theory902 } from './banks/module-902-v002.generated.ts'
 import { foundationExercises } from './banks/fondations-exercices-v003'
 import { serviceClientExercises } from './banks/service-client-exercices-v003'
 import { module101 as illustratedHistory } from './banks/module-101-v003.generated.ts'
+import { module100 as reviewed100 } from './banks/module-100-v003.generated.ts'
+import { module102 as reviewed102 } from './banks/module-102-v003.generated.ts'
+import { module103 as reviewed103 } from './banks/module-103-v003.generated.ts'
+import { module104 as reviewed104 } from './banks/module-104-v003.generated.ts'
+import { module105 as reviewed105 } from './banks/module-105-v003.generated.ts'
+import { module106 as reviewed106 } from './banks/module-106-v003.generated.ts'
+import { module107 as reviewed107 } from './banks/module-107-v003.generated.ts'
+import { module108 as reviewed108 } from './banks/module-108-v003.generated.ts'
+import { module109 as reviewed109 } from './banks/module-109-v003.generated.ts'
+import { module110 as reviewed110 } from './banks/module-110-v003.generated.ts'
+import { module201 as reviewed201 } from './banks/module-201-v003.generated.ts'
+import { module202 as reviewed202 } from './banks/module-202-v003.generated.ts'
+import { module203 as reviewed203 } from './banks/module-203-v003.generated.ts'
+import { module204 as reviewed204 } from './banks/module-204-v003.generated.ts'
+import { module205 as reviewed205 } from './banks/module-205-v003.generated.ts'
+import { module206 as reviewed206 } from './banks/module-206-v003.generated.ts'
+import { module207 as reviewed207 } from './banks/module-207-v003.generated.ts'
+import { module208 as reviewed208 } from './banks/module-208-v003.generated.ts'
+import { module209 as reviewed209 } from './banks/module-209-v003.generated.ts'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
 
@@ -373,6 +392,26 @@ const serviceClientExercisePublication: LogistiquePublication = {
   units: [...foundationExercisePublication.units, ...serviceClientExercises],
 }
 
+function reviewedIllustrationPublication(previous: LogistiquePublication, revision: string, theories: readonly LogistiqueUnit[]): LogistiquePublication {
+  const reviewedIds = new Set(theories.map(({ id }) => id))
+  return { revision, units: [...previous.units.filter(({ id }) => !reviewedIds.has(id)), ...theories] }
+}
+
+const historyIllustrationPublication: LogistiquePublication = {
+  revision: 'logistique-theorie-101-v003',
+  units: [
+    ...serviceClientExercisePublication.units.filter((unit) => unit.kind !== 'theorie' || unit.module !== '101'),
+    ...illustratedHistory,
+  ],
+}
+
+const foundationsAndServiceIllustrations = reviewedIllustrationPublication(historyIllustrationPublication, 'logistique-illustrations-fondations-service-v003', [
+  ...reviewed100, ...reviewed102, ...reviewed103, ...reviewed104, ...reviewed105, ...reviewed106,
+  ...reviewed107, ...reviewed108, ...reviewed109, ...reviewed110, ...reviewed201, ...reviewed202,
+  ...reviewed203, ...reviewed204, ...reviewed205, ...reviewed206, ...reviewed207, ...reviewed208,
+  ...reviewed209,
+])
+
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
@@ -437,13 +476,8 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   publication_projets_v002,
   foundationExercisePublication,
   serviceClientExercisePublication,
-  {
-    revision: 'logistique-theorie-101-v003',
-    units: [
-      ...serviceClientExercisePublication.units.filter((unit) => unit.kind !== 'theorie' || unit.module !== '101'),
-      ...illustratedHistory,
-    ],
-  },
+  historyIllustrationPublication,
+  foundationsAndServiceIllustrations,
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!

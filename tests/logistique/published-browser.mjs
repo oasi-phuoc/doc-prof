@@ -7,7 +7,9 @@ import { readLogistiqueGeneratedBank } from '../../scripts/logistique-reference-
 const plan = JSON.parse(await readFile(new URL('../../docs/logistique/preparation/references-illustrees-v002.json', import.meta.url), 'utf8'))
 const curriculum = JSON.parse(await readFile(new URL('../../src/logistique/curriculum.generated.json', import.meta.url), 'utf8'))
 const preparation = new URL('../../docs/logistique/preparation/', import.meta.url)
-const photoFiles = (await readdir(preparation)).filter((file) => /^\d{3}-v00[23]\.json$/.test(file)).sort()
+const requestedModules = process.argv.slice(2)
+const photoFiles = (await readdir(preparation)).filter((file) => /^\d{3}-v00[23]\.json$/.test(file)
+  && (!requestedModules.length || requestedModules.includes(file.slice(0, 3)))).sort()
 const photoPlans = new Map(await Promise.all(photoFiles.map(async (file) => [
   file.slice(0, 3),
   JSON.parse(await readFile(new URL(file, preparation), 'utf8')),
@@ -19,11 +21,10 @@ const theories = new Map(photoFiles.map((file) => {
   const modules = readLogistiqueGeneratedBank(bank)
   return [file.slice(0, 3), modules.find(({ kind }) => kind === 'theorie')]
 }))
-const requestedModules = process.argv.slice(2)
 assert(requestedModules.every((module) => photoPlans.has(module)), 'Module illustré inconnu')
 const externalUrl = process.env.LOGISTIQUE_TEST_URL
 const base = externalUrl ?? 'http://127.0.0.1:5190'
-const server = externalUrl ? null : await createServer({ server: { host: '127.0.0.1', port: 5190, strictPort: true } })
+const server = externalUrl ? null : await createServer({ server: { host: '127.0.0.1', port: 5190, strictPort: true, hmr: false, watch: null } })
 let browser
 try {
   await server?.listen()
@@ -76,9 +77,20 @@ try {
     return { pages, printText }
   }
 
-  async function verifyPdf() {
-    const pdf = await page.pdf({ preferCSSPageSize: true })
-    assert.equal(pdf.subarray(0, 4).toString(), '%PDF')
+  async function verifyPdf(label) {
+    await page.emulateMedia({ media: 'print' })
+    try {
+      await page.evaluate(async () => {
+        await document.fonts.ready
+        await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)))
+      })
+      const pdf = await page.pdf({ preferCSSPageSize: true })
+      assert.equal(pdf.subarray(0, 4).toString(), '%PDF')
+    } catch (error) {
+      throw new Error(`Impression PDF du ${label}`, { cause: error })
+    } finally {
+      await page.emulateMedia({ media: 'screen' })
+    }
   }
 
   async function verifyHistoryTable() {
@@ -129,6 +141,7 @@ try {
       console.log(`Logistique ${diploma} : objectifs, aperçus et théories illustrées vérifiés sur les modules actifs.`)
 
       await select('Thème', '100 — ' + curriculum.themes.find(({ code }) => code === '100').title)
+      currentTheme = '100'
       await select('Sous-thème', '105 — Marchandises')
       await select('Type d’exercice', 'Glossaires')
       const glossary = await inspectPrint('Glossaire ' + diploma)
@@ -163,7 +176,10 @@ try {
       const theory = theories.get(code)
       const { title, theme, year } = curriculum.modules.find(({ code: module }) => code === module)
       if (!year[diploma]) continue
-      await select('Thème', theme + ' — ' + curriculum.themes.find(({ code }) => code === theme).title)
+      if (theme !== currentTheme) {
+        await select('Thème', theme + ' — ' + curriculum.themes.find(({ code }) => code === theme).title)
+        currentTheme = theme
+      }
       await select('Sous-thème', code + ' — ' + title)
       await select('Type d’exercice', 'Théorie')
       assert.equal(await page.getByRole('group', { name: 'Nombre de colonnes', exact: true }).count(), 0)
@@ -171,7 +187,7 @@ try {
       const images = page.locator('.print-only-sheets .exercise-item img[src*="/assets/logistique/"][src$=".webp"]')
       assert.equal(await images.count(), imageCount(theory.blocks))
       if (code === '101') await verifyHistoryTable()
-      await verifyPdf()
+      await verifyPdf(`${code} ${diploma} complet`)
       await page.getByRole('button', { name: 'Résumé', exact: true }).click()
       const summary = await inspectPrint(`${code} ${diploma} résumé`)
       assert(summary.printText.includes(caption))
@@ -179,7 +195,7 @@ try {
       assert.equal(await images.count(), imageCount(theory.summaryBlocks))
       if (code === '101') await verifyHistoryTable()
       assert(summary.pages.length <= complete.pages.length)
-      await verifyPdf()
+      await verifyPdf(`${code} ${diploma} résumé`)
       await page.getByRole('button', { name: 'Complet', exact: true }).click()
       checkedModules += 1
       const restored = await inspectPrint(`${code} ${diploma} complet restauré`)

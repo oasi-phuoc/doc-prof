@@ -43,7 +43,9 @@ const reference = baseTheory
   ? baseUnit?.blocks.filter((block) => editorial.keepBaseFigures || (block.kind !== 'image' && block.kind !== 'image-row'))
   : legacyCombinedReference ? Object.values(pages).filter(Boolean).flatMap(theoryBlocks) : theoryBlocks(pages.theorie)
 if (!reference?.length) throw new Error('Cours de départ introuvable : ' + code)
-const figures = editorial.visuals ?? (editorial.visual ? [editorial.visual] : [])
+const declaredFigures = editorial.visuals ?? (editorial.visual ? [editorial.visual] : [])
+// Chaque insertion après un titre précède la précédente. Les ajouts gardent l’ordre du dossier éditorial.
+const figures = editorial.keepBaseFigures ? declaredFigures.toReversed() : declaredFigures
 if (!legacyCombinedReference && figures.length === 0) throw new Error('Illustrations de la théorie absentes : ' + code)
 const scope = editorial.diplomas.length === 1 ? editorial.diplomas[0].toLowerCase() : 'commun'
 const publicDirectory = new URL('public/', root)
