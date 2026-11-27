@@ -1781,7 +1781,7 @@ Modèle de production — Le cours commence mardi à dix-huit heures.
 
 ### La visite
 
-![Un visiteur montre un billet dans une galerie](../../public/lib/images/grammaire/communication/e2-04-un-visiteur-montre-un-billet-dans-une-galerie.webp)
+![Deux personnes parlent d’un billet devant un musée](../../public/lib/images/tcf/co/scenes/reprises/dialogue-invitation-musee-en-pied.png)
 
 **Lire la situation**
 
@@ -4376,7 +4376,7 @@ Modèle de production — Je les lave avant le repas.
 
 ### Le vélo
 
-![Deux adultes examinent le frein d’un vélo dans un atelier](../../public/lib/images/grammaire/communication/i4-07-deux-adultes-examinent-le-frein-dun-velo-dans-un-atelier.webp)
+![Deux adultes examinent une roue dans un atelier de vélos](../../public/lib/images/tcf/co/scenes/vie-quotidienne/les-nouvelles-leurre-2.webp)
 
 **Lire la situation**
 
@@ -5942,7 +5942,7 @@ Modèle de production — Je prends la salade car je veux un repas léger.
 
 ### Le livre
 
-![Une lectrice présente un roman à la bibliothèque](../../public/lib/images/grammaire/communication/k2-05-une-lectrice-presente-un-roman-a-la-bibliotheque.webp)
+![Deux lectrices discutent de leur choix de livre](../../public/lib/images/tcf/co/scenes/reprises/dialogue-roman-bibliotheque-en-pied.png)
 
 **Lire la situation**
 
@@ -6395,7 +6395,7 @@ Modèle de production — Je ne prends pas de dessert parce que je n’ai plus f
 
 ### La bibliothèque
 
-![Un lecteur demande de l’aide avec un catalogue](../../public/lib/images/grammaire/communication/k3-06-un-lecteur-demande-de-laide-avec-un-catalogue.webp)
+![Un lecteur échange avec une bibliothécaire au comptoir](../../public/lib/images/tcf/qcm-audit/co-personnages-20261112-2.png)
 
 **Lire la situation**
 
