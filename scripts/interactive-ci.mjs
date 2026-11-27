@@ -49,6 +49,7 @@ try {
   await run('loto-browser')
   await run('loto-extended-browser')
   await run('local-preload-browser')
+  await run('pool-transfer-browser')
   await run('memory-browser')
   await run('image-annotations-browser')
   await run('mascot-energy-browser')

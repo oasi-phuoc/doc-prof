@@ -11,7 +11,8 @@ import './pool.css'
 
 const FicheChooser=lazy(()=>import('../components/FicheChooser'))
 const PrintCards=lazy(()=>import('../components/PrintCards').then(module=>({default:module.PrintCards})))
-const go=(path:string)=>{window.history.pushState({},'',path);window.dispatchEvent(new PopStateEvent('popstate'))}
+const PoolSessionImport = lazy(() => import('./PoolSessionImport'))
+const go=(path:string,state:Record<string,unknown>={})=>{window.history.pushState(state,'',path);window.dispatchEvent(new PopStateEvent('popstate'))}
 const fold=(text:string)=>text.normalize('NFD').replace(/\p{M}/gu,'').toLocaleLowerCase('fr')
 const label=(type:PoolType)=>fold(type.label).includes(fold(type.context))?type.label:`${type.label} · ${type.context}`
 const levels={facile:'Facile',moyen:'Moyen',avance:'Avancé'}
@@ -19,7 +20,7 @@ export default function PoolPage({initialPreferences,initialWarning}:{initialPre
  const preferences=initialPreferences
  const [warning,setWarning]=useState(initialWarning),[domain,setDomain]=useState('all'),[search,setSearch]=useState(''),[entries,setEntries]=useState<PoolEntry[]>([]),[shuffle,setShuffle]=useState(true),[name,setName]=useState('Pool d’exercices'),[recent,setRecent]=useState<LocalPool[]>([]),[busy,setBusy]=useState(false),[error,setError]=useState('')
  const active=useRef(true),editId=new URLSearchParams(window.location.search).get('edit')
- const [panel,setPanel]=useState<'content'|'print'|null>(()=>editId?'content':null)
+ const [panel,setPanel]=useState<'content'|'print'|'import'|null>(()=>editId?'content':null)
  const [sourceTab,setSourceTab]=useState<'exercises'|'fiches'>('exercises'),[fichesOpened,setFichesOpened]=useState(false)
  const allowed=useMemo(()=>new Set(domainsForAccount(readAccessAccount())),[])
  const available=useMemo(()=>POOL_TYPES.filter(type=>allowed.has(type.domain)),[allowed])
@@ -41,6 +42,7 @@ export default function PoolPage({initialPreferences,initialWarning}:{initialPre
    </div>
    {panel==='content'&&<SetupDialog title="Contenu" onClose={()=>setPanel(null)} wide>
     <div className="ci-source-tabs" role="group" aria-label="Choisir la source des questions"><button type="button" aria-pressed={sourceTab==='exercises'} onClick={()=>setSourceTab('exercises')}>Exercices</button><button type="button" aria-pressed={sourceTab==='fiches'} onClick={()=>{setFichesOpened(true);setSourceTab('fiches')}}>Fiches enregistrées</button></div>
+    <div className="ci-toolbar"><button type="button" onClick={() => setPanel('import')}>Importer une séance</button></div>
     {fichesOpened&&<div hidden={sourceTab!=='fiches'}><Suspense fallback={<LoadingScreen variant="inline" title="Chargement des fiches…"/>}><FicheChooser onChoose={id=>go(`/interactif/${encodeURIComponent(id)}`)}/></Suspense></div>}
     <div hidden={sourceTab!=='exercises'}>
     {!!recent.length&&<details className="ci-settings-extra"><summary>Pools enregistrés sur cet appareil</summary><section className="ci-panel ci-pool-recent"><h2>Pools sur cet appareil</h2>{recent.map(pool=><div key={pool.poolId}><b>{pool.name}</b><span>{pool.config.entries.length} type(s)</span><a href={`/interactif?pool=${pool.poolId}`} onClick={event=>{if(!event.ctrlKey&&!event.metaKey){event.preventDefault();go(`/interactif?pool=${pool.poolId}`)}}}>Ouvrir</a><a href={`/interactif?edit=${pool.poolId}`} onClick={event=>{if(!event.ctrlKey&&!event.metaKey){event.preventDefault();go(`/interactif?edit=${pool.poolId}`)}}}>Modifier</a></div>)}</section></details>}
@@ -61,6 +63,9 @@ export default function PoolPage({initialPreferences,initialWarning}:{initialPre
     </div>
    </SetupDialog>}
    {panel==='print'&&<SetupDialog title="Imprimer les cartes" onClose={()=>setPanel(null)}><PrintCards colors={preferences.colors} shapes={preferences.shapes}/></SetupDialog>}
+   {panel==='import'&&<SetupDialog title="Importer une séance" onClose={() => setPanel('content')}>
+     <PoolSessionImport onOpen={({ poolId, sessionId }) => go(`/interactif?${new URLSearchParams({ pool: poolId, s: sessionId })}`, { clairfleOpenSession: sessionId })} />
+   </SetupDialog>}
   </main>
  </div>
 }

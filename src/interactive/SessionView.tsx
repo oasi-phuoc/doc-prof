@@ -240,7 +240,19 @@ function ActiveSessionView({
       flushClock()
       void writes.current.then(callback).catch((error: unknown) => setStorageWarning(error instanceof Error ? error.message : STORAGE_WARNING))
     }
-    const exportSession = () => { flushClock(); void writes.current.then(async () => { const latest = await record.current; const transfer = await makeTransfer(game, { ...latest, source: context.current ?? latest.source }, current.current); downloadTransfer(transfer) }).catch((error: unknown) => setStorageWarning(error instanceof Error ? error.message : 'Export impossible.')) }
+    const exportSession = (withPool = false) => {
+      flushClock()
+      void writes.current.then(async () => {
+        const latest = await record.current
+        const snapshot = { ...latest, source: context.current ?? latest.source }
+        if (withPool) {
+          if (snapshot.source?.reference.kind !== 'pool') throw new Error('Le pool de cette séance est indisponible.')
+          const [{ loadPool }, { makePoolTransfer, downloadPoolTransfer }] = await Promise.all([import('./pools/storage'), import('./pools/transfer')])
+          const pool = await loadPool(snapshot.source.reference.id)
+          downloadPoolTransfer(await makePoolTransfer(pool, snapshot, current.current))
+        } else downloadTransfer(await makeTransfer(game, snapshot, current.current))
+      }).catch((error: unknown) => setStorageWarning(error instanceof Error ? error.message : 'Export impossible.'))
+    }
     const difficult = [...new Set([...state.history
       .filter((a) => a.correct === false || a.manual === 'retry' || a.skipped)
       .map((a) => a.questionId), ...game.questions.filter((q) => state.teacherMarks[q.id] === 'review' || state.manualVotes[q.id]?.quick === 'majority-review').map((q) => q.id)])]
@@ -313,7 +325,8 @@ function ActiveSessionView({
           {state.mode === 'class' && <SessionObservations note={state.note} onSave={(note) => dispatch({ type: 'SESSION_NOTE_SET', note })} />}
           <section className="ci-summary-print-only">{state.note && <><h2>Observations</h2><p>{state.note}</p></>}{game.questions.filter((q) => state.manualVotes[q.id]).map((q) => <div key={q.id}><h2>{playPrompt(q.prompt)}</h2><ManualVoteView question={q} vote={state.manualVotes[q.id]!} /></div>)}</section>
           <div className="ci-toolbar">
-            <button onClick={exportSession}>Exporter la séance</button>
+            <button onClick={() => exportSession()}>Exporter la séance</button>
+            {context.current?.reference.kind === 'pool' && <button onClick={() => exportSession(true)}>Exporter avec le pool</button>}
             <button onClick={() => window.requestAnimationFrame(() => window.print())}>Imprimer le bilan</button>
             {state.mode === 'class' && <button onClick={() => dispatch({ type: 'REOPEN', index: 0 })}>Revoir les questions</button>}
             {onNewPart && <button className="ci-primary" onClick={() => finish(onNewPart)}>Nouvelle partie</button>}

@@ -45,7 +45,7 @@ export async function validateTransfer(game: Game, transfer: SessionTransfer, no
   if (!resumed || canonicalJson(sessionReport(resumed.state, game.questions.length)) !== canonicalJson(transfer.bilan)) throw new Error('Le bilan ne correspond pas à l’état de la séance.')
   return { ...resumed, record: { ...compactSession(resumed.record, resumed.state), revision: 0 } }
 }
-async function withOwnership<T>(gameId: string, work: () => Promise<T>): Promise<T> {
+export async function withSessionOwnership<T>(gameId: string, work: () => Promise<T>): Promise<T> {
   const controller = new AbortController()
   let pending: Promise<unknown> = Promise.resolve()
   const lease = await acquireSessionLease(gameId, { signal: controller.signal, onYield: () => pending.then(() => undefined, () => undefined) })
@@ -54,7 +54,7 @@ async function withOwnership<T>(gameId: string, work: () => Promise<T>): Promise
 }
 export async function importTransfer(game: Game, transfer: SessionTransfer): Promise<SavedSession> {
   const validated = await validateTransfer(game, transfer)
-  return withOwnership(game.id, async () => {
+  return withSessionOwnership(game.id, async () => {
     const existing = await requestLocal('sessions', 'readonly', (store) => store.get(game.id))
     if (existing !== undefined) throw new Error('Cette partie existe déjà sur cet appareil. Sa sauvegarde est conservée ; supprimez-la explicitement avant de la remplacer.')
     const sameId = await requestLocal('sessions', 'readonly', (store) => store.index('sessionId').getAll(transfer.session.sessionId))
@@ -63,11 +63,14 @@ export async function importTransfer(game: Game, transfer: SessionTransfer): Pro
   })
 }
 export async function removeLocalRun(record: SavedSession): Promise<void> {
-  await withOwnership(record.gameId, () => deleteSession({ id: record.gameId }, record))
+  await withSessionOwnership(record.gameId, () => deleteSession({ id: record.gameId }, record))
 }
 export function downloadTransfer(transfer: SessionTransfer) {
-  const url = URL.createObjectURL(new Blob([JSON.stringify(transfer, null, 2)], { type: 'application/json;charset=utf-8' }))
-  const link = document.createElement('a'); link.href = url; link.download = `clairfle-seance-${transfer.session.sessionId}.json`; link.click()
+  downloadSessionFile(JSON.stringify(transfer, null, 2), `clairfle-seance-${transfer.session.sessionId}.json`)
+}
+export function downloadSessionFile(json: string, filename: string) {
+  const url = URL.createObjectURL(new Blob([json], { type: 'application/json;charset=utf-8' }))
+  const link = document.createElement('a'); link.href = url; link.download = filename; link.click()
   setTimeout(() => URL.revokeObjectURL(url), 1000)
 }
 export async function eraseInteractiveData(): Promise<void> {

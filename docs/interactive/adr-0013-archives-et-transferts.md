@@ -19,3 +19,9 @@ La fiche d’origine doit rester accessible et inchangée, avec ses médias néc
 Le bilan peut être imprimé en A4 avec observations et comptages. Les commandes et champs de saisie sont masqués ; les cartes physiques et le rendu A4 des fiches gardent leur impression propre.
 
 Validation : six tests de domaine supplémentaires et [archives-results.json](archives-results.json) couvrent deux parties successives, ouverture d’un ancien bilan, export, PDF, import dans un navigateur vierge, annulation sans écriture, doublon, fichiers invalides, propriété entre onglets, suppression et effacement. Les parcours de navigation, brouillons avec migration 1 → 4, reprise durable et comparaison A4 passent aussi.
+
+## Export avec un pool
+
+Le bilan et l’historique proposent **Exporter avec le pool**. Le format `clairfle-pool-session` version 1 regroupe la configuration du pool et le document `clairfle-session`. La limite de 2 Mio s’applique au fichier complet. Le jeu reconstruit les questions et leur corrigé depuis le catalogue et vérifie le plan, le bilan et les domaines disponibles sur le compte de destination.
+
+L’import depuis l’accueil accorde une nouvelle période locale de sept jours à la séance. Le pool et la séance sont enregistrés dans une seule transaction IndexedDB. Un pool identique peut être réutilisé. Les conflits de pool et les doublons de séance annulent la transaction. Les exports simples et les fiches d’origine continuent à utiliser le format `clairfle-session`.

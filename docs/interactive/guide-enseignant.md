@@ -54,6 +54,10 @@ Le bilan distingue les activités traitées, passées et les appréciations huma
 
 Pour importer, ouvrez la fiche d’origine puis choisissez le fichier JSON et vérifiez l’aperçu. L’import conserve état, durées et observations ; il ne remplace aucune sauvegarde existante. Si la fiche ou le corrigé a changé, l’import est refusé. Le fichier n’embarque pas la recette : un brouillon local doit déjà exister sur l’appareil, et les médias doivent rester accessibles. Dans **Données locales du jeu**, l’effacement confirmé retire parties, brouillons, préréglages et préférences du jeu, sans supprimer les fiches serveur ni votre accès.
 
+### Transférer une séance de pool vers un autre appareil
+
+Dans le bilan ou dans **Parties et bilans sur cet appareil**, sélectionnez **Exporter avec le pool**. Sur l’autre appareil, ouvrez l’accueil du jeu, puis **Contenu → Importer une séance**. Choisissez le fichier JSON, vérifiez le nom du pool et le bilan, puis sélectionnez **Importer et ouvrir**. Le jeu recrée le pool et reprend la séance en Classe ou en Solo. Le compte utilisé doit avoir accès aux exercices du pool.
+
 ## Préparer une séance sans connexion
 
 Ouvrez la fiche avec une connexion, sélectionnez les questions, puis choisissez **Précharger toute la séance** dans la préparation. Le poids téléchargé et la progression s’affichent. Attendez **Prêt à jouer sans connexion**, puis gardez cette page ouverte : vous pouvez couper Internet et jouer en Classe ou Solo. Les pistes composées, les images, leur zoom et les 30 mascottes sont inclus. Le préchargement ne consomme aucune écoute.

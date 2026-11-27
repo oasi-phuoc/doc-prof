@@ -30,6 +30,12 @@ export function SessionArchive({ reference, template, title, onOpen, onErased }:
   const close = () => { if (!busy) { setDeleting(null); setErasing(false); setIncoming(null) } }
   const run = (work: () => Promise<void>) => { setBusy(true); setMessage(''); void work().catch((error: unknown) => setMessage(error instanceof Error ? error.message : 'Action impossible.')).finally(() => setBusy(false)) }
   const exportRun = (entry: LocalRun) => run(async () => { const transfer = await makeTransfer(sourcePlan(template, title, entry.source, entry.mode), entry.record); downloadTransfer(transfer); setMessage('Séance exportée en JSON.') })
+  const exportWithPool = (entry: LocalRun) => run(async () => {
+    const [{ loadPool }, { makePoolTransfer, downloadPoolTransfer }] = await Promise.all([import('../pools/storage'), import('../pools/transfer')])
+    const source = await loadPool(reference.id)
+    downloadPoolTransfer(await makePoolTransfer(source, entry.record))
+    setMessage('Séance et pool exportés en JSON.')
+  })
   const pick = (file?: File) => {
     if (!file) return
     run(async () => {
@@ -44,10 +50,18 @@ export function SessionArchive({ reference, template, title, onOpen, onErased }:
   }
   return <section className="ci-panel ci-no-print ci-archives">
     <h2>Parties et bilans sur cet appareil</h2>
-    <p>Les parties sont conservées pendant sept jours après leur dernière utilisation. L’export contient l’état, les comptages et vos observations. {pool?'Le pool d’origine doit rester disponible sur cet appareil pour importer ou reprendre.':'Il ne contient ni la fiche ni son corrigé ; la fiche d’origine doit rester accessible pour importer ou reprendre.'}</p>
+    <p>Les parties sont conservées pendant sept jours après leur dernière utilisation. L’export contient l’état, les comptages et vos observations. {pool ? 'Pour transférer la séance vers un autre appareil, choisissez « Exporter avec le pool ». À destination, ouvrez « Contenu », puis « Importer une séance » depuis l’accueil du jeu.' : 'Ouvrez la fiche d’origine pour importer ou reprendre la séance.'}</p>
     <div className="ci-toolbar"><button type="button" disabled={busy} onClick={() => run(refresh)}>Actualiser les parties</button><label className="ci-import-file">Importer une séance<input type="file" accept="application/json,.json" disabled={busy} onChange={(event) => { pick(event.target.files?.[0]); event.target.value = '' }} /></label></div>
     {runs.length === 0 && <p>Aucune partie conservée pour {pool?'ce pool':'cette fiche'}.</p>}
-    <ol className="ci-archive-list">{runs.slice(0, limit).map((entry) => <li key={entry.gameId} data-session-id={entry.sessionId}><div><b>{entry.completed ? 'Bilan terminé' : 'Partie en cours'} · {entry.mode === 'class' ? 'Classe' : 'Solo'}</b><time dateTime={new Date(entry.updatedAt).toISOString()}>{new Date(entry.updatedAt).toLocaleString('fr-CH')}</time></div><div className="ci-toolbar"><button type="button" disabled={busy} onClick={() => onOpen(entry)}>{entry.completed ? 'Ouvrir ce bilan' : 'Ouvrir cette partie'}</button><button type="button" disabled={busy} onClick={() => exportRun(entry)}>Exporter</button><button type="button" disabled={busy} onClick={() => { setMessage(''); setDeleting(entry) }}>Supprimer</button></div></li>)}</ol>
+    <ol className="ci-archive-list">{runs.slice(0, limit).map(entry => <li key={entry.gameId} data-session-id={entry.sessionId}>
+      <div><b>{entry.completed ? 'Bilan terminé' : 'Partie en cours'} · {entry.mode === 'class' ? 'Classe' : 'Solo'}</b><time dateTime={new Date(entry.updatedAt).toISOString()}>{new Date(entry.updatedAt).toLocaleString('fr-CH')}</time></div>
+      <div className="ci-toolbar">
+        <button type="button" disabled={busy} onClick={() => onOpen(entry)}>{entry.completed ? 'Ouvrir ce bilan' : 'Ouvrir cette partie'}</button>
+        <button type="button" disabled={busy} onClick={() => exportRun(entry)}>Exporter</button>
+        {pool && <button type="button" disabled={busy} onClick={() => exportWithPool(entry)}>Exporter avec le pool</button>}
+        <button type="button" disabled={busy} onClick={() => { setMessage(''); setDeleting(entry) }}>Supprimer</button>
+      </div>
+    </li>)}</ol>
     {runs.length > limit && <button type="button" onClick={() => setLimit((count) => count + 10)}>Afficher dix parties de plus</button>}
     {unavailable > 0 && <p role="status">{unavailable} sauvegarde(s) d’une version non prise en charge sont conservées sans modification.</p>}
     {message && !deleting && !erasing && !incoming && <p role="status">{message}</p>}
