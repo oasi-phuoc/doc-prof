@@ -24,7 +24,7 @@ const fixedDifficultyTypes = new Set([
 
 export function supportsActivityDifficulty(type: string, count: number) {
   if (type === TRANSLATION_PRACTICE_TYPE) return true
-  return !fixedDifficultyTypes.has(type) && !/^(transformations-|societe-suisse-)/.test(type) &&
+  return !fixedDifficultyTypes.has(type) && !/^(transformations-|societe-)/.test(type) &&
     (type !== 'conversions-longueur' || count < 2)
 }
 

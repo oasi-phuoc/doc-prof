@@ -46,6 +46,7 @@ import { tryGenerateAcmBlock } from '@/acm/generate'
 import { tryGenerateLogiqueBlock } from '@/logique/generate'
 import { tryGenerateSanteBlock } from '@/sante/generate'
 import { tryGenerateSocieteBlock } from '@/societe/generate'
+import { isSocieteTheoryType } from '@/societe/types'
 import { isTcmCfrConsignesType, TCM_CFR_MAX_SCORE } from '@/tcm-cfr/test'
 import { tryGenerateTcmCscBlock } from '@/tcm-csc/generate'
 import { isTcmCscConsignesType, TCM_CSC_MAX_SCORE } from '@/tcm-csc/test'
@@ -449,7 +450,7 @@ export function buildPage(
     const result = buildSingleBlock(single, seed + index * 10007 + local, worksheetSeed)
     const logistics = logistiqueType(block.exerciseType)
     const logisticsQuestions = logistics?.domain === page.domain && !isLogistiqueReferenceType(block.exerciseType)
-    const isTheory = Boolean(mathTheoryTopic(block.exerciseType)) || isLogistiqueReferenceType(block.exerciseType) || isGrammarTheoryType(block.exerciseType) || isGrammaireTheoryType(block.exerciseType)
+    const isTheory = Boolean(mathTheoryTopic(block.exerciseType)) || isLogistiqueReferenceType(block.exerciseType) || isGrammarTheoryType(block.exerciseType) || isGrammaireTheoryType(block.exerciseType) || isSocieteTheoryType(block.exerciseType)
     const isJeux = block.exerciseType.startsWith('jeux-')
     const isTpmConsignes = isInfoPageType(block.exerciseType)
     // Une feuille « suite » ne doit pas figer seulement sa tranche : sinon le mode

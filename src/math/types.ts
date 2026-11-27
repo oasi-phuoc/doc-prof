@@ -125,6 +125,7 @@ export type Layout =
   | 'fraction-shape'
   | 'tcf'
   | 'logique'
+  | 'societe-support'
 
 /** Icône à compter (SVG N&B plein) — 16 styles TPM ex. 1. */
 export type CountIconKind =
@@ -473,6 +474,7 @@ export type SpatialPractice =
   }
 
 export type MathItem = {
+  societeSupport?: import('@/societe/types').SocieteSupport
   logistiqueSource?: { id: string; module: string; revision: string }
   /** Module choisi pour une question rédigée dans la fiche. */
   logistiqueLocalModule?: string

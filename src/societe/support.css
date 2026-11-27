@@ -1,0 +1,25 @@
+.societe-support {
+  display: grid;
+  gap: 0.35em;
+  width: 100%;
+  text-align: left;
+}
+.societe-support :is(p, figure, ul) {
+  margin: 0;
+}
+.societe-support ul {
+  padding-left: 1.4em;
+}
+.societe-support img {
+  display: block;
+  width: min(100%, 118mm);
+  max-height: 62mm;
+  object-fit: contain;
+  object-position: left;
+}
+.societe-support figcaption {
+  font-size: 0.9em;
+}
+.societe-writing-line {
+  min-height: 1.4em;
+}

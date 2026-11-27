@@ -80,6 +80,7 @@ import { RulerSegmentFigure } from './item-view/guided-practice'
 import { RectangleMeasuresPractice, SionMapPractice, TranslationPractice } from './item-view/guided-geometry'
 import { FundamentalLength, FundamentalShape } from './item-view/fundamental-practice'
 import { MathTheoryView } from './item-view/math-theory'
+import { SocieteSupportView } from '@/societe/SupportView'
 import { BaseTenCollection, LengthUnitComparison, MenuPriceTable } from './item-view/foundations-practice'
 import { FunctionValueTable, NumberLinePractice } from './item-view/number-representations'
 
@@ -263,7 +264,8 @@ export function ItemView({
     item.layout === 'metro-map' ||
     item.layout === 'symmetry-grid' ||
     item.layout === 'segment-measure' ||
-    item.layout === 'audio-dictation'
+    item.layout === 'audio-dictation' ||
+    item.layout === 'societe-support'
     || item.layout === 'csc-task' && item.cscTask?.kind !== 'operator'
   return (
     <div
@@ -473,13 +475,14 @@ export function ItemView({
           />
         )}
         {item.layout === 'logique' && (seriesNumber===undefined ? <LogiqueBlock item={item} mode={mode} /> : <ExerciseFrame title={`Série ${seriesNumber}`} className="csc-logic-series"><LogiqueBlock item={item} mode={mode}/></ExerciseFrame>)}
+        {item.societeSupport && <SocieteSupportView support={item.societeSupport} mode={mode} />}
         {item.layout === 'audio-dictation' && <AudioDictationBlock item={item} mode={mode} />}
         {item.layout === 'symmetry-grid' && <SymmetryGridBlock item={item} mode={mode} />}
         {item.layout === 'segment-measure' && <SegmentMeasureBlock item={item} mode={mode} />}
         {item.layout === 'metro-map' && <MetroMapBlock item={item} mode={mode} />}
         {item.menuPrices && <MenuPriceTable prices={item.menuPrices} />}
         {isProblem && <ProblemBlock item={item} mode={mode} draftGrid={draftGrid} showHelp={problemHelp} />}
-        {item.audioSrc && item.layout !== 'audio-dictation' ? (
+        {item.audioSrc && item.layout !== 'audio-dictation' && item.layout !== 'societe-support' ? (
           <audio className="oral-audio" controls preload="none" src={item.audioSrc}>
             Écoutez l’enregistrement.
           </audio>

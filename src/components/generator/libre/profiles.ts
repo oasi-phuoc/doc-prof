@@ -8,7 +8,7 @@ import { audioOrderKind } from '@/francais/soutien/audio-order'
 import { isGrammaireExerciseType, isGrammaireTheoryType } from '@/grammaire/types'
 import { isProtectedGrammarCo, type GrammarPresentation } from '@/grammaire/curriculum/types'
 import { logistiqueType, isLogistiqueReferenceType } from '@/logistique/catalog'
-import { isSocieteType } from '@/societe/types'
+import { isSocieteTheoryType, isSocieteType } from '@/societe/types'
 import { isLogiqueType } from '@/logique/types'
 import { isReperageCadrans, isReperageConstruire, isReperageDroites, isReperageFormes } from '@/math/coord-reperage'
 import { isTransformationExercise } from '@/math/coord-transformations'
@@ -59,7 +59,7 @@ export function liveEditorProfile(domain: Domain, exerciseType: string, format: 
   const logistics = logistiqueType(exerciseType)
   if (domain === 'grammaire' && isGrammaireTheoryType(exerciseType) ||
     (domain === 'algèbre' || geometry) && isMathReferenceType(exerciseType) ||
-    domain === 'société' && exerciseType.startsWith('societe-suisse-theorie-') ||
+    domain === 'société' && (isSocieteTheoryType(exerciseType) || exerciseType.endsWith('-lexique')) ||
     logistics?.domain === domain && isLogistiqueReferenceType(exerciseType)) return 'theorie'
   if (domain === 'logique' && isLogiqueType(exerciseType)) return 'logique-visuelle'
   const wordKind = domain === 'alphabetisation' ? parseAlphaType(exerciseType)?.kind

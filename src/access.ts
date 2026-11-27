@@ -27,7 +27,7 @@ export const REGULAR_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = 
   { id: 'logique', label: 'Logique' },
   ...LOGISTIQUE_DOMAINS,
   { id: 'santé', label: 'Sciences et santé' },
-  { id: 'société', label: 'Société' },
+  { id: 'société', label: 'Société suisse' },
   { id: 'soutien-fr', label: 'Soutien FR' },
   { id: 'vocabulaire', label: 'Vocabulaire' },
 ]

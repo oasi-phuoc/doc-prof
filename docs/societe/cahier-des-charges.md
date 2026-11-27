@@ -2,7 +2,7 @@
 
 27 novembre 2026 · ClairFLE
 
-Le domaine **Société** accueille le parcours **Société suisse**, du pré-A1 accompagné au B1. Il s’adresse aux jeunes et aux adultes allophones, y compris aux personnes peu à l’aise avec l’écrit. On commence par se situer. On apprend ensuite à utiliser les services du quotidien. Au B1, on explique une démarche, on compare des possibilités et on donne un avis avec des raisons.
+Le domaine **Société suisse** propose un parcours du pré-A1 accompagné au B1. Il s’adresse aux jeunes et aux adultes allophones, y compris aux personnes peu à l’aise avec l’écrit. On commence par se situer. On apprend ensuite à utiliser les services du quotidien. Au B1, on explique une démarche, on compare des possibilités et on donne un avis avec des raisons.
 
 Le nouveau catalogue remplace **La Suisse**, ancien thème unique de 12 théories et 14 exercices. Les notions utiles reviennent dans des supports réécrits. Les anciens identifiants servent à rouvrir les fiches et les contenus personnalisés restent dans les documents de leurs auteurs. [Ancien catalogue](https://github.com/oasi-phuoc/doc-prof/blob/74270cf8/src/societe/suisse.ts) · [Suivi](avancement.md)
 

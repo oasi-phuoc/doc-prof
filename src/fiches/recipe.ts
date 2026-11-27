@@ -6,6 +6,7 @@ import type { SheetFormat } from '@/components/generator/sheet-format'
 import type { Domain, PageConfig } from '@/math/types'
 import { normalizeLegacyPhraseBlock } from '@/francais/phrase-themes'
 import { normalizeGrammarCoBlock } from '@/grammaire/exercises/co-themes'
+import { normalizeSocieteBlock } from '@/societe/legacy'
 import { freezeGrammarPages, validGrammarRecipePages } from '@/grammaire/curriculum/recipe'
 import { readSessionUser } from '@/fiches/session'
 import { validLibreMetadata, validLibreRaster } from '@/fiches/libre-metadata'
@@ -109,7 +110,8 @@ function migratePage(page: PageConfig): PageConfig {
       exerciseType: migrateDomainToken(block.exerciseType),
     }
     return page.domain === 'gattegno' ? normalizeLegacyPhraseBlock(migrated)
-      : page.domain === 'grammaire' ? normalizeGrammarCoBlock(migrated) : migrated
+      : page.domain === 'grammaire' ? normalizeGrammarCoBlock(migrated)
+      : page.domain === 'société' ? normalizeSocieteBlock(migrated) : migrated
   })
   const migrated = {
     ...page,
@@ -119,7 +121,8 @@ function migratePage(page: PageConfig): PageConfig {
     extraBlocks: extra,
   }
   return migrated.domain === 'gattegno' ? normalizeLegacyPhraseBlock(migrated)
-    : migrated.domain === 'grammaire' ? normalizeGrammarCoBlock(migrated) : migrated
+    : migrated.domain === 'grammaire' ? normalizeGrammarCoBlock(migrated)
+    : migrated.domain === 'société' ? normalizeSocieteBlock(migrated) : migrated
 }
 
 export function parseFicheRecipe(value: unknown): FicheRecipe | null {

@@ -29,7 +29,7 @@ import { logistiqueEligibleCount } from '@/logistique/generate'
 import { isLogistiqueDomain, logistiqueTopics, logistiqueType, logistiqueTypes } from '@/logistique/catalog'
 import { LOGIQUE_EXERCISE_TYPES, LOGIQUE_TOPICS } from '@/logique/catalog'
 import { SANTE_EXERCISE_TYPES, SANTE_TOPICS } from '@/sante/catalog'
-import { SOCIETE_EXERCISE_TYPES, SOCIETE_TOPICS } from '@/societe/catalog'
+import { SOCIETE_EXERCISE_TYPES, SOCIETE_FIRST_TOPIC, SOCIETE_TOPICS } from '@/societe/catalog'
 import {
   TCF_EXERCISE_TYPES,
   TCF_TOPICS,
@@ -1085,7 +1085,7 @@ export function firstTypeFor(domain: Domain, topic?: string, track?: FrenchTrack
               : domain === 'vocabulaire'
                 ? 'vocabulaire-a-venir'
                 : domain === 'société'
-                  ? 'societe-suisse'
+                  ? SOCIETE_FIRST_TOPIC
                   : domain === 'santé'
                     ? 'sante-a-venir'
                     : domain === 'acm'
