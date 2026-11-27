@@ -199,7 +199,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
   const grammarCoLevel = activeBlock.grammarCoLevel ?? (grammarCoTheme ? defaultGrammarCoLevel(grammarCoTheme.id) : 'A1')
   const grammarCoAudios = grammarCoTheme ? grammarCoEntries(grammarCoTheme.id,grammarCoLevel) : []
   const selectedGrammarCoAudio = grammarCoAudios.find(entry => entry.exercise.id === activeBlock.grammarCoAudioId) ?? grammarCoAudios[0]
-  const availableTrueFalse = selectedGrammarCoAudio ? grammarCoStatements(selectedGrammarCoAudio.exercise.id).length : 0
+  const availableTrueFalse = selectedGrammarCoAudio ? grammarCoStatements(selectedGrammarCoAudio.exercise).length : 0
   return (
     <>
               {isJeuxDomain || isCalliDomain ? null : (
@@ -523,7 +523,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   a1Available={grammarCoEntries(grammarCoTheme.id,'A1').length>0}
                   a2Available={grammarCoEntries(grammarCoTheme.id,'A2').length>0}
                   onChange={grammarCoLevel=>updatePage({
-                    ...clearLibreContentFreeze(),grammarCoLevel,grammarCoAudioId:undefined,grammarCoFormat:undefined,tcfExercise:undefined,
+                    ...clearLibreContentFreeze(),grammarCoLevel,grammarCoAudioId:undefined,tcfExercise:undefined,
                     tcfBankId:undefined,tcfFormModes:undefined,tcfPageBreakAfter:undefined,
                   })}
                 />
@@ -532,7 +532,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
               {isGrammaireDomain && showGrammarCoLevel && grammarCoAudios.length>0 ? (
                 <SelectBox label="Audio" value={activeBlock.grammarCoAudioId??grammarCoAudios[0]!.exercise.id}
                   onChange={grammarCoAudioId=>updatePage({
-                    ...clearLibreContentFreeze(),grammarCoAudioId,grammarCoFormat:undefined,tcfExercise:undefined,
+                    ...clearLibreContentFreeze(),grammarCoAudioId,tcfExercise:undefined,
                     tcfBankId:undefined,tcfFormModes:undefined,tcfPageBreakAfter:undefined,
                   })}>
                   {grammarCoAudios.map(entry=>(

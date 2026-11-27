@@ -1,6 +1,10 @@
+import { createRng, pick, shuffle, type Rng } from '@/math/rng'
+import type { TcfCoComplet } from '@/tcf/types'
+
 export type GrammarCoStatement = {
   id: string
   text: string
+  proposedAnswer?: string
   correct: boolean
   evidence: string
 }
@@ -120,9 +124,38 @@ const statementsByAudio = {
   ],
 } satisfies Record<string, readonly (readonly [string, string, boolean, string])[]>
 
-/** Les affirmations utilisent les transcriptions des pistes déjà versionnées.
- *  L’inventaire Word du complément grammaire identifie les reprises par piste. */
-export function grammarCoStatements(audioId: string): GrammarCoStatement[] {
-  const rows = statementsByAudio[audioId as keyof typeof statementsByAudio]
-  return rows?.map(([id, text, correct, evidence]) => ({ id, text, correct, evidence })) ?? []
+const MAX_STATEMENTS = 5
+
+/** Les affirmations rédigées priment. Les autres pistes réutilisent leurs QCM texte. */
+export function grammarCoStatements(
+  exercise: Pick<TcfCoComplet, 'id' | 'questions'>,
+  rng: Rng = createRng(1),
+): GrammarCoStatement[] {
+  const rows = statementsByAudio[exercise.id as keyof typeof statementsByAudio]
+  if (rows) return rows.map(([id, text, correct, evidence]) => ({ id, text, correct, evidence }))
+
+  const questions = exercise.questions.flatMap((question, index) => {
+    if (question.type_reponse !== 'qcm_texte') return []
+    const text = question.enonce.trim()
+    const correct = question.choix.filter((choice) => choice.correct === true)
+    const expected = correct[0]?.texte.trim()
+    if (!text || correct.length !== 1 || !expected) return []
+    const alternatives = question.choix
+      .filter((choice) => !choice.correct)
+      .map((choice) => choice.texte.trim())
+      .filter((answer) => answer && answer.toLocaleLowerCase('fr') !== expected.toLocaleLowerCase('fr'))
+    if (!alternatives.length) return []
+    return [{ id: `qcm-${index + 1}`, text, expected, alternatives }]
+  }).slice(0, MAX_STATEMENTS)
+
+  const trueCount = Math.floor(questions.length / 2) + (questions.length % 2 === 1 && rng() < 0.5 ? 1 : 0)
+  const outcomes = shuffle(rng, questions.map((_, index) => index < trueCount))
+  return questions.map(({ id, text, expected, alternatives }, index) => {
+    const correct = outcomes[index]!
+    return {
+      id, text, correct,
+      proposedAnswer: correct ? expected : pick(rng, alternatives),
+      evidence: `Réponse attendue : ${expected}`,
+    }
+  })
 }

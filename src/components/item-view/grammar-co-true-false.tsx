@@ -3,16 +3,18 @@ import type { PreviewMode } from '../../math/types'
 
 export function GrammarCoTrueFalse({ statements, mode }: { statements: GrammarCoStatement[]; mode: PreviewMode }) {
   const show = mode === 'answers'
+  const hasProposedAnswers = statements.some((statement) => statement.proposedAnswer)
   return (
     <table className="grammar-co-true-false">
       <thead>
-        <tr><th scope="col">Affirmation</th><th scope="col">Vrai</th><th scope="col">Faux</th></tr>
+        <tr><th scope="col">{hasProposedAnswers ? 'Question et réponse proposée' : 'Affirmation'}</th><th scope="col">Vrai</th><th scope="col">Faux</th></tr>
       </thead>
       <tbody>
         {statements.map((statement, index) => (
           <tr key={statement.id}>
             <th scope="row">
               <span>{index + 1}. {statement.text}</span>
+              {statement.proposedAnswer && <div><strong>Réponse proposée</strong> · {statement.proposedAnswer}</div>}
               {show && <small>{statement.evidence}</small>}
             </th>
             {[true, false].map((answer) => (

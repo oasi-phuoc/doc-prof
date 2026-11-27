@@ -20,12 +20,14 @@ export function buildImportedGrammarCo(config: PageConfig, rng: Rng, bank?: read
   }
   const entry = entries.find(item=>item.exercise.id===config.grammarCoAudioId)??entries[0]!
   if (config.grammarCoFormat === 'true-false') {
-    const statements = grammarCoStatements(entry.exercise.id)
+    const statements = grammarCoStatements(entry.exercise, rng)
     const audio = entry.exercise.support.audio || entry.exercise.support.audios?.[0]
     if (statements.length && audio) {
       const selected = statements.slice(0, Math.max(1, config.count))
       return {
-        instruction: 'Écoutez l’enregistrement. Pour chaque phrase, cochez Vrai ou Faux.',
+        instruction: selected.some((statement) => statement.proposedAnswer)
+          ? 'Écoutez l’enregistrement. Cochez Vrai si la réponse proposée correspond à ce que vous entendez. Sinon, cochez Faux.'
+          : 'Écoutez l’enregistrement. Pour chaque phrase, cochez Vrai ou Faux.',
         bankQuestionCap: statements.length,
         items: [{
           layout: 'text', audioSrc: audio, grammarCoTrueFalse: selected, hideItemNumber: true, points: selected.length,
