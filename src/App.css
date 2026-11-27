@@ -5859,6 +5859,14 @@ textarea.pill-input,
 .math-base-ten-plate img{width:9mm;height:9mm}
 .math-base-ten-rod img{width:9mm;height:.9mm}
 .math-base-ten-cube img{width:.9mm;height:.9mm}
+.math-problem-help{font-size:.8em;margin-block:1.5mm}
+.math-problem-pictures{display:flex;flex-wrap:wrap;gap:2mm 3mm}
+.math-problem-pictures figure{display:grid;justify-items:center;max-width:30mm;margin:0;text-align:center;line-height:1.2}
+.math-problem-pictures img{display:block;width:15mm;height:12mm;object-fit:contain}
+.math-problem-pictures figcaption{margin-top:1mm}
+.math-problem-facts{display:flex;flex-wrap:wrap;gap:.5mm 3mm;margin:1mm 0 0}
+.math-problem-facts div{display:flex;align-items:baseline;gap:1mm}
+.math-problem-facts dd{font-weight:700;margin:0}
 .math-menu-prices{
   width:100%;table-layout:fixed;border-collapse:collapse;margin-bottom:var(--ex-prompt-gap);font-size:.9em
 }

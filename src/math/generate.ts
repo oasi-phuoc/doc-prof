@@ -1,3 +1,4 @@
+import { isMathProblemHelpType } from './problem-help'
 import { splitLogistiquePages, type LogistiquePageLayout } from '@/logistique/pagination'
 import { isLogistiqueDomain, isLogistiqueReferenceType } from '@/logistique/catalog'
 import { generateLogistique, logistiqueDocumentTitle } from '@/logistique/generate'
@@ -482,6 +483,7 @@ export function buildPage(
       givens: libreGivens ?? result.givens,
       document: result.document,
       problemDraftGrids: block.problemDraftGrids,
+      problemHelp: isMathProblemHelpType(block.exerciseType) ? block.problemHelp : undefined,
       formulaireLetterGrid: block.formulaireLetterGrid,
       geoFigureHelp: block.geoFigureHelp,
       deniseRate: block.deniseRate,

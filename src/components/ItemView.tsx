@@ -89,6 +89,7 @@ export function ItemView({
   hideNumber: hideNumberOverride = false,
   algebraPadLeft = 0,
   draftGrid = true,
+  problemHelp = false,
   onToggleDraftGrid,
   oralAnswerMode,
   onCycleOralAnswerMode,
@@ -123,6 +124,7 @@ export function ItemView({
   algebraPadLeft?: number
   /** Zone de brouillon avec grille 4×4 mm (problèmes). */
   draftGrid?: boolean
+  problemHelp?: boolean
   onToggleDraftGrid?: () => void
   oralAnswerMode?: 'qcm' | 'text' | 'images'
   onCycleOralAnswerMode?: () => void
@@ -452,7 +454,7 @@ export function ItemView({
         {item.layout === 'segment-measure' && <SegmentMeasureBlock item={item} mode={mode} />}
         {item.layout === 'metro-map' && <MetroMapBlock item={item} mode={mode} />}
         {item.menuPrices && <MenuPriceTable prices={item.menuPrices} />}
-        {isProblem && <ProblemBlock item={item} mode={mode} draftGrid={draftGrid} />}
+        {isProblem && <ProblemBlock item={item} mode={mode} draftGrid={draftGrid} showHelp={problemHelp} />}
         {item.audioSrc && item.layout !== 'audio-dictation' ? (
           <audio className="oral-audio" controls preload="none" src={item.audioSrc}>
             Écoutez l’enregistrement.
@@ -469,7 +471,7 @@ export function ItemView({
         {item.lengthUnits && <LengthUnitComparison lengths={item.lengthUnits} mode={mode} />}
         {item.numberLine && <NumberLinePractice line={item.numberLine} />}
         {item.functionPairs && <FunctionValueTable pairs={item.functionPairs} />}
-        {isStackedText && !item.convert && <StackedPrompt item={item} mode={mode} />}
+        {isStackedText && !item.convert && <StackedPrompt item={item} mode={mode} showHelp={problemHelp} />}
         {!isProblem &&
           !isStackedText &&
           item.layout === 'inline' &&

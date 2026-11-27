@@ -13,7 +13,7 @@ import {
   theoryTabRows,
   theoryTableColWidths,
 } from './theory-marks'
-import { fmt } from '@/math/column-arith'
+import { problemAid } from '@/math/problem-help'
 import { MoneyChangeBoard } from './money-change'
 import type { MathItem, PreviewMode } from '@/math/types'
 import {
@@ -585,7 +585,7 @@ function stackedLineAnswer(item: MathItem): string {
   return item.answer ?? ''
 }
 
-export function StackedPrompt({ item, mode }: { item: MathItem; mode: PreviewMode }) {
+export function StackedPrompt({ item, mode, showHelp = false }: { item: MathItem; mode: PreviewMode; showHelp?: boolean }) {
   const show = mode === 'answers'
   const prompt = item.prompt ?? ''
   const lines = prompt.split('\n')
@@ -623,6 +623,7 @@ export function StackedPrompt({ item, mode }: { item: MathItem; mode: PreviewMod
   return (
     <div className={`prompt-stack${line ? ' societe-line' : ''}`}>
       <p className="prompt-stack-text">{prompt}</p>
+      {showHelp && <ProblemHelp item={item} />}
       <span className={`answer-line-field ${show ? 'filled' : ''}`}>
         {show ? lineAnswer : '\u00a0'}
       </span>
@@ -765,41 +766,53 @@ export function InlinePrompt({ item, mode }: { item: MathItem; mode: PreviewMode
   )
 }
 
+function ProblemHelp({ item }: { item: MathItem }) {
+  const { pictures, facts } = problemAid(item)
+  if (!pictures.length && !facts.length) return null
+  return (
+    <aside className="math-problem-help" aria-label="Aide illustrée">
+      {pictures.length > 0 && (
+        <div className="math-problem-pictures">
+          {pictures.map(({ image, label, quantity }, index) => (
+            <figure key={`${image}-${index}`}>
+              <img src={image} alt="" />
+              <figcaption>{quantity ? `${quantity} ${label.toLocaleLowerCase('fr-CH')}` : label}</figcaption>
+            </figure>
+          ))}
+        </div>
+      )}
+      {facts.length > 0 && (
+        <dl className="math-problem-facts">
+          {facts.map(({ label, value }, index) => (
+            <div key={index}><dt>{label}</dt><dd>{value}</dd></div>
+          ))}
+        </dl>
+      )}
+    </aside>
+  )
+}
+
 export function ProblemBlock({
   item,
   mode,
   draftGrid = true,
+  showHelp = false,
 }: {
   item: MathItem
   mode: PreviewMode
   draftGrid?: boolean
+  showHelp?: boolean
 }) {
   const show = mode === 'answers'
-  const promptParts = (item.prompt ?? '').split('\n\n')
-  const question = item.problemTemplateId ? promptParts.pop() : undefined
-  const sketch = item.labels?.includes('sketch-vars') ? item.problemVarDefs ?? [] : []
+  const prompt = item.prompt ?? ''
+  const parts = /^(.*[.!?]\s+)([^.!?]+\?)$/s.exec(prompt.trim())
   return (
     <div className="problem-block">
-      {sketch.length > 0 ? (
-        <div className="problem-sketch" aria-label="Données du problème">
-          {sketch.map((def) => (
-            <div key={def.key}>
-              <b>{def.label}</b>
-              <span>{fmt(item.problemVars?.[def.key] ?? 0)}</span>
-            </div>
-          ))}
-        </div>
-      ) : null}
       <p className="problem-prompt">
-        {question ? (
-          <>
-            {promptParts.join('\n\n')}
-            {promptParts.length > 0 ? '\n\n' : ''}
-            <strong>{question}</strong>
-          </>
-        ) : item.prompt}
+        {parts ? <>{parts[1]}<strong>{parts[2]}</strong></> : prompt}
       </p>
-      {item.labels?.includes('sketch-change') ? (
+      {showHelp && <ProblemHelp item={item} />}
+      {showHelp && item.labels?.includes('sketch-change') ? (
         <MoneyChangeBoard parts={item.changeParts ?? []} mode={mode} />
       ) : null}
       <div className="problem-field">

@@ -24,6 +24,7 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     phraseItems: page.phraseItems,
     phraseInstruction: page.phraseInstruction,
     problemDraftGrids: page.problemDraftGrids,
+    problemHelp: page.problemHelp,
     formulaireLetterGrid: page.formulaireLetterGrid,
     inlineBlankPx: page.inlineBlankPx,
     oralAnswerModes: page.oralAnswerModes,

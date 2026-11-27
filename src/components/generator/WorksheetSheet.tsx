@@ -109,6 +109,7 @@ export function fallbackBlocks(page: WorksheetPage): WorksheetBlock[] {
       exerciseType: page.exerciseType,
       givens: page.givens,
       problemDraftGrids: page.problemDraftGrids,
+      problemHelp: page.problemHelp,
       formulaireLetterGrid: page.formulaireLetterGrid,
       inlineBlankPx: page.inlineBlankPx,
       oralAnswerModes: page.oralAnswerModes,
@@ -559,6 +560,7 @@ export function WorksheetSheet({
                       index={isLogistiqueDomain(page.domain) || page.domain === 'grammaire' || /^tcm-csc-ex(?:10|11)$/.test(block.exerciseType) ? sourceIndex : index}
                       algebraPadLeft={padLeft}
                       draftGrid={draftGrid}
+                      problemHelp={block.problemHelp ?? false}
                       stackGeo={/^tcm-cfr-ex2[2-6]$/.test(block.exerciseType) || block.exerciseType.includes('peri-aire')}
                       readableGeo={/^tcm-cfr-ex2[2-6]$/.test(block.exerciseType)}
                       showGeoFigure={block.geoFigureHelp !== false}

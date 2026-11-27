@@ -926,6 +926,7 @@ export type ExerciseBlock = {
    * `true` = avec grille, `false` = cadre blanc seul. Index = n° de question.
    */
   problemDraftGrids?: boolean[]
+  problemHelp?: boolean
   /** Formulaire grammaire / TPF : cases lettre à la place des traits. */
   formulaireLetterGrid?: boolean
   /**
@@ -1187,6 +1188,7 @@ export type WorksheetBlock = {
   givens?: AlgebraGiven[]
   document?: WorksheetDocument
   problemDraftGrids?: boolean[]
+  problemHelp?: boolean
   formulaireLetterGrid?: boolean
   /** TCM CFR exercices 26 et 27 : forme affichée comme aide. */
   geoFigureHelp?: boolean

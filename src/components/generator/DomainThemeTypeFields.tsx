@@ -1,3 +1,4 @@
+import { isMathProblemHelpType } from '@/math/problem-help'
 import { grammarOrderHasSentenceFilters } from '@/grammaire/curriculum/types'
 import { TcfCeFormatControl, TcfCeTextFontControl } from './TcfCeFormatControl'
 import { PhrasePolarityControl } from './PhrasePolarityControl'
@@ -603,6 +604,16 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                 <FreeNumberControls activeBlock={activeBlock} updatePage={updatePage} />
               ) : null}
               </>
+              )}
+              {isNumberLibreDomain && isMathProblemHelpType(activeBlock.exerciseType) && (
+                <button
+                  type="button"
+                  className="button small secondary"
+                  aria-pressed={Boolean(activeBlock.problemHelp)}
+                  onClick={() => updatePage({ problemHelp: !activeBlock.problemHelp })}
+                >
+                  {activeBlock.problemHelp ? 'Masquer l’aide illustrée' : 'Afficher l’aide illustrée'}
+                </button>
               )}
               {isQuadType ? (
                 <div className="quad-libre-block">
