@@ -1,19 +1,17 @@
 # Lots d’images TCF du 24 novembre 2026
 
+Reprise du27 novembre après récupération de main : **43 nouveaux PNG natifs validés**, reprise du rayon frais terminée, **72 trios historiques prêts**. Le quota annoncé le24 novembre n’empêche plus la génération observée ce27 novembre. [Empreintes et contrôles](reprise-20261127-controle.json).
+
 Demande : terminer les **21 candidats DELF Actif**, puis les **261 trios historiques** par lots de **100, 100 et 61**. Les fichiers restent séparés de ceux des lots anciens et gardent les sources, questions, corrigés et empreintes de départ.
 
 | Lot | Cible | Activés | Prêts après revue comparative | Trios avec briefs | Nouvelles images publiées | Images à finaliser |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | [DELF — reliquat final](delf-final21-preparation.json) | 21 | 21 | 21 | 21 | 50 | 0 |
-| [Historique — lot 1](historique-lot01-preparation.json) | 100 | 0 | 56 | 100 | 171 | 98 |
+| [Historique — lot 1](historique-lot01-preparation.json) | 100 | 0 | 72 | 100 | 214 | 56 |
 | [Historique — lot 2](historique-lot02-preparation.json) | 100 | 0 | 0 | 0 | 0 | À définir |
 | [Historique — lot 3](historique-lot03-preparation.json) | 61 | 0 | 0 | 0 | 0 | À définir |
 
 **Reste : 0 candidat DELF et 261 trios historiques.** Les briefs et les images publiées d’un lot incomplet ne sont pas comptés comme des trios activés.
-
-**Reprise prioritaire — question 39.** Les trois images du rayon frais « au fond », « à l’entrée » et « devant les caisses » sont écartées des choix prêts à la demande de l’utilisateur. Le magasin doit avoir un agencement naturel, des frigos intégrés aux rayons et une circulation dégagée. Les premières images restent dans la banque ; les trois nouvelles variantes sont à produire puis à revoir ensemble. [Consignes et chemins de remplacement](reprise-question39.json).
-
-**Génération suspendue par le quota du service.** Réouverture annoncée le 24/11/2026 à 21 h 18, heure suisse. [Réponse du service et demandes concernées](generation-blocker-20261124.json). Les revues déjà terminées sont conservées ; aucun lot incomplet n’est activé.
 
 Les 21 derniers DELF sont illustrés par 50 nouveaux PNG natifs 1448 × 1086 et 13 images existantes réutilisées. Le catalogue et les métadonnées visuelles sont actualisés. Les objets ont un fond ivoire contrôlé par mesure ; les variantes relationnelles partagent leur sujet et leur cadrage. Les propositions trop photographiques ont été reprises et leurs sources conservées hors catalogue dans le dossier de preuves.
 
