@@ -298,6 +298,20 @@ try {
   assert.deepEqual(await displayedSyllables.allTextContents(), ['dom', 'i', 'no'])
   await pronounce.close()
 
+  const pronounceA5 = await open(context, {
+    domain: 'alphabetisation', topic: 'alpha-voyelles', exerciseType: 'alpha-a-syllabes-prononcer',
+    sheetFormat: 'a5-double-landscape', contentSeedTwin: 191,
+  })
+  await toggleLive(pronounceA5)
+  const leftSyllables = preview(pronounceA5).locator('.a5-half.is-left')
+  const initialLeftSyllables = await leftSyllables.innerText()
+  await button(pronounceA5, 'Droite').click()
+  await pronounceA5.getByRole('textbox', { name: 'Mot 1', exact: true }).fill('domino')
+  assert.deepEqual(await preview(pronounceA5).locator('.a5-half.is-right .syllable-pronounce-row').first()
+    .locator('.syllable-pronounce-cell').allTextContents(), ['do', 'mi', 'no'])
+  assert.equal(await leftSyllables.innerText(), initialLeftSyllables)
+  await pronounceA5.close()
+
   const grammar = await open(context, {
     domain: 'grammaire', topic: 'gram-present', exerciseType: 'gram-ex-etre-qcm-conj',
     grammarActivityId: 'gram-ex-etre-qcm-conj', grammarLevel: 'A1', grammarPresentation: 'choice',

@@ -20,10 +20,31 @@ function validId(id: unknown): id is string {
 }
 
 function validTcfMetadata(value: unknown): boolean {
-  if (!record(value) || !Array.isArray(value.questions)) return true
-  if (value.libreSupportEdited !== undefined && (value.libreSupportEdited !== true || value.competence !== 'PE' || !record(value.support))) return false
+  if (!record(value)) return true
+  if (value.libreSupportEdited !== undefined && (value.libreSupportEdited !== true || !record(value.support) ||
+    !Array.isArray(value.questions) || !(value.competence === 'PE' || value.competence === 'PO' ||
+      value.competence === 'CO' && ['association_images', 'images_a_reconnaitre'].includes(String(value.type_exercice))))) return false
   if (value.libreSupportReview !== undefined && (value.libreSupportEdited !== true || typeof value.libreSupportReview !== 'boolean')) return false
-  const source = (image: unknown) => typeof image !== 'string' || !image.startsWith('data:') || validLibreRaster(image)
+  if (!Array.isArray(value.questions)) return true
+  const source = (image: unknown) => typeof image !== 'string' || !/^\s*(blob:|data:)/i.test(image) || validLibreRaster(image)
+  if (value.libreSupportEdited && record(value.support)) {
+    function sources(images: unknown, withId = false) {
+      if (!Array.isArray(images)) return true
+      const ids = new Set<string>()
+      return images.every((image: unknown) => {
+        if (!record(image)) return !withId && source(image)
+        if (withId) {
+          if (!validId(image.id) || ids.has(image.id)) return false
+          ids.add(image.id)
+        }
+        return source(image.image)
+      })
+    }
+    if (!source(value.support.image) || !sources(value.support.images) || !sources(value.support.mots) ||
+      !sources(value.situations, true) || !sources(value.images, true)) return false
+    if (Array.isArray(value.support.themes) &&
+      value.support.themes.some((theme: unknown) => record(theme) && !sources(theme.images))) return false
+  }
   const ids = new Set<string>()
   for (const question of value.questions as unknown[]) {
     if (!record(question)) continue
@@ -39,7 +60,7 @@ function validTcfMetadata(value: unknown): boolean {
     if (question.libreLocked !== undefined && typeof question.libreLocked !== 'boolean') return false
     if (question.correctionARevoir !== undefined && typeof question.correctionARevoir !== 'boolean') return false
     if (question.libreSourceKey !== undefined && typeof question.libreSourceKey !== 'string') return false
-    if (!source(question.image)) return false
+    if (!source(question.image) || Array.isArray(question.images) && !question.images.every(source)) return false
     if (Array.isArray(question.choix) && question.choix.some((choice: unknown) => record(choice) && !source(choice.image))) return false
     if (record(question.formes) && record(question.formes.qcm_image) && Array.isArray(question.formes.qcm_image.choix) &&
       question.formes.qcm_image.choix.some((choice: unknown) => record(choice) && !source(choice.image))) return false

@@ -48,3 +48,22 @@ test('le contenu et les verrous de droite restent distincts dans une recette A5'
   assert(!validLibreMetadata([{ ...worksheet, a5RightLibre: { id: 'droite', items: [] } }]))
   assert(!validLibreMetadata([{ ...worksheet, a5RightLibre: { id: 'droite', items: [{ libreLocked: true }] } }]))
 })
+
+test('les supports TCF édités conservent leurs états et refusent les médias éphémères', () => {
+  const association = {
+    competence: 'CO', type_exercice: 'association_images', questions: [],
+    libreSupportEdited: true, libreSupportReview: true, support: { audio: '/audio/dialogues.mp3', nb_dialogues: 1 },
+    situations: [{ id: 'a', image: '/images/atelier.webp', dialogue: 1 }, { id: 'b', image: '/images/ecole.webp', dialogue: null }],
+  }
+  assert(validLibreMetadata([{ ...page, tcfExercise: association }]))
+  assert(!validLibreMetadata([{ ...page, tcfExercise: {
+    ...association, situations: [association.situations[0], association.situations[0]],
+  } }]))
+  assert(!validLibreMetadata([{ ...page, tcfExercise: {
+    ...association, situations: [{ ...association.situations[0], image: 'blob:https://exemple.invalid/image' }],
+  } }]))
+  assert(validLibreMetadata([{ ...page, tcfExercise: {
+    competence: 'PO', type_exercice: 'mots_theme', questions: [], support: {},
+    libreSupportEdited: true, libreSupportReview: false,
+  } }]))
+})

@@ -28,7 +28,7 @@ import {
 } from './ce-questions'
 import { drawTcfSeries } from './draw-series'
 import { tcfBank, tcfBankAllLevels, tcfExerciseById, tcfSlotBank } from './loader'
-import { checkTcfSupport, hasTcfLockedQuestions, identifyTcfQuestions } from './libre-questions'
+import { checkTcfSupport, hasTcfLockedQuestions, identifyTcfQuestions, isTcfStructuredCorrectionComplete, usesTcfStructuredCorrection } from './libre-questions'
 import { QuestionEditor } from './QuestionEditor'
 import { tcfScenarioGroups, type TcfScenarioGroup } from './sources'
 import { emptyTcfExercise, emptyTcfQuestion, tcfExerciseId } from './templates'
@@ -72,9 +72,11 @@ function NbMotsFields({ value, onChange }: { value: TcfNbMots; onChange: (next: 
 export function TexteImagesEditor({
   ex,
   set,
+  live = false,
 }: {
   ex: Extract<TcfExercise, { type_exercice: 'texte_images' }>
   set: (next: TcfExercise) => void
+  live?: boolean
 }) {
   const areaRef = useRef<HTMLTextAreaElement>(null)
   const selection = useRef<{ start: number; end: number } | null>(null)
@@ -151,6 +153,7 @@ export function TexteImagesEditor({
             }
           />
           <ImageField
+            durable={live}
             label="Image"
             value={m.image}
             onChange={(image) =>
@@ -302,6 +305,7 @@ function SupportEditor({
             {ex.images.map((img, i) => (
               <li key={img.id} className="tcf-choix-row">
                 <ImageField
+                  durable={live}
                   label={`Image ${i + 1}`}
                   value={img.image}
                   onChange={(image) =>
@@ -564,16 +568,19 @@ function SupportEditor({
           ? audioEntries.filter((e) => tcfAudioHasTag(e.tags, TCF_AUDIO_TAG_SCENARIO))
           : undefined
       const slotAudios = Array.from({ length: n }, (_, i) => ex.support.audios?.[i] ?? '')
+      const continuous = live && !ex.support.audios?.length && Boolean(ex.support.audio)
       const pickScenarioSlot = (slotIndex: number) => (entry: TcfAudioEntry) =>
         set(applyAssociationDialogueSlot(ex, entry, slotIndex))
       return (
         <>
-          <p className="tcf-vocab-picker-theme" style={{ margin: 0 }}>
+          {!live && <p className="tcf-vocab-picker-theme" style={{ margin: 0 }}>
             Audios tagués « scénario » (une piste = une situation). Un même audio peut aussi
             porter « court » / « moyen » / « long » s’il a des questions, et rester sélectionnable
             dans les autres exercices CO.
-          </p>
-          {slotAudios.map((audio, i) => (
+          </p>}
+          {continuous && <AudioField label="Audio des dialogues" value={ex.support.audio!}
+            onChange={(audio) => set(withSupport(ex, { audio }))} />}
+          {!continuous && slotAudios.map((audio, i) => (
             <AudioField
               key={i}
               label={`Dialogue / audio ${i + 1}`}
@@ -599,8 +606,12 @@ function SupportEditor({
             max={8}
             onChange={(nb_dialogues) => {
               const nextN = nb_dialogues ?? 1
-              const audios = Array.from({ length: nextN }, (_, i) => ex.support.audios?.[i] ?? '')
-              set(withSupport(ex, { nb_dialogues: nextN, audios, audio: undefined }))
+              if (live && nextN < n && !window.confirm('Retirer les derniers dialogues et leurs associations ?')) return
+              const audios = continuous ? undefined : Array.from({ length: nextN }, (_, i) => ex.support.audios?.[i] ?? '')
+              set({
+                ...withSupport(ex, { nb_dialogues: nextN, audios, audio: continuous ? ex.support.audio : undefined }),
+                situations: ex.situations.map((s) => s.dialogue != null && s.dialogue > nextN ? { ...s, dialogue: null } : s),
+              })
             }}
           />
           {slotAudios.map((_, i) => {
@@ -632,6 +643,7 @@ function SupportEditor({
             {ex.situations.map((s, i) => (
               <li key={s.id} className="tcf-choix-row">
                 <ImageField
+                  durable={live}
                   label={`Situation ${i + 1}`}
                   value={s.image}
                   onChange={(image) =>
@@ -650,7 +662,7 @@ function SupportEditor({
                   >
                     <option value="">Aucun</option>
                     {Array.from({ length: n }, (_, k) => (
-                      <option key={k} value={k + 1}>
+                      <option key={k} value={k + 1} disabled={live && ex.situations.some((other) => other.id !== s.id && other.dialogue === k + 1)}>
                         {k + 1}
                       </option>
                     ))}
@@ -748,11 +760,11 @@ function SupportEditor({
       )
     }
     case 'texte_images':
-      return <TexteImagesEditor ex={ex} set={set} />
+      return <TexteImagesEditor ex={ex} set={set} live={live} />
     case 'image_question':
       return (
         <>
-          <ImageField label="Image" value={ex.support.image} onChange={(image) => set(withSupport(ex, { image }))} />
+          <ImageField durable={live} label="Image" value={ex.support.image} onChange={(image) => set(withSupport(ex, { image }))} />
           <TextField label="Question / consigne" value={ex.support.consigne} multiline rows={2} onChange={(consigne) => set(withSupport(ex, { consigne }))} />
           <NbMotsFields value={ex.support.nb_mots} onChange={(nb_mots) => set(withSupport(ex, { nb_mots }))} />
           <TextField label="Réponse modèle (corrigé)" value={ex.support.reponse_modele ?? ''} multiline rows={2} onChange={(reponse_modele) => set(withSupport(ex, { reponse_modele }))} />
@@ -864,6 +876,7 @@ function SupportEditor({
         <>
           {ex.support.images.map((img, i) => (
             <ImageField
+              durable={live}
               key={i}
               label={ex.support.images.length > 1 ? `Image ${i + 1}` : 'Image'}
               value={img}
@@ -898,6 +911,7 @@ function SupportEditor({
         <>
           {ex.support.images.map((img, i) => (
             <ImageField
+              durable={live}
               key={i}
               label={`Image ${i + 1}`}
               value={img}
@@ -910,7 +924,7 @@ function SupportEditor({
     case 'image_unique':
       return (
         <>
-          <ImageField label="Image" value={ex.support.image} onChange={(image) => set(withSupport(ex, { image }))} />
+          <ImageField durable={live} label="Image" value={ex.support.image} onChange={(image) => set(withSupport(ex, { image }))} />
           <LinesField
             label="Questions guides (une par ligne, optionnel)"
             values={ex.support.questions ?? []}
@@ -1277,7 +1291,7 @@ export function TcfExerciseEditor({
       !window.confirm('Remplacer ce support et ses questions verrouillées ?')) return
     const total = tcfBank(niveau, slot.competence).length
     const blank = emptyTcfExercise(niveau, slot.competence, typeExercice, tcfExerciseId(niveau, slot.competence, total + 1))
-    onChange({ tcfExercise: live && blank.competence === 'PE'
+    onChange({ tcfExercise: live && usesTcfStructuredCorrection(blank)
       ? { ...blank, libreSupportEdited: true, libreSupportReview: true } : blank })
   }
 
@@ -1299,6 +1313,9 @@ export function TcfExerciseEditor({
   }
 
   const exercise = current
+  const selectableTypes = live && bank.length
+    ? types.filter((type) => type.typeExercice === exercise.type_exercice || bank.some((entry) => entry.type_exercice === type.typeExercice))
+    : types
   const usesQuestions = (meta?.reponses.length ?? 0) > 0
   const isSixCourts = exercise.type_exercice === 'six_courts'
   const audioCount =
@@ -1344,7 +1361,7 @@ export function TcfExerciseEditor({
             <button type="button" className="tcf-btn" disabled={!edited || (live && hasTcfLockedQuestions(exercise))} onClick={() => onChange({ tcfExercise: undefined })}>
               Revenir à la banque
             </button>
-            <button type="button" className="tcf-btn" onClick={() => startBlank()}>
+            <button type="button" className="tcf-btn" onClick={() => startBlank(exercise.type_exercice)}>
               Nouvel exercice vide
             </button>
           </div>
@@ -1358,7 +1375,7 @@ export function TcfExerciseEditor({
         </>
       ) : null}
       <>
-          <SelectBox
+          {(!live || selectableTypes.length > 1) && <SelectBox
             label="Type d’exercice"
             value={exercise.type_exercice}
             onChange={(value) => {
@@ -1373,12 +1390,12 @@ export function TcfExerciseEditor({
               if (slot) set(drawTcfSeries(niveau, slot.competence, nextType))
             }}
           >
-            {types.map((t) => (
+            {selectableTypes.map((t) => (
               <option key={t.typeId} value={t.typeExercice}>
                 {t.label}
               </option>
             ))}
-          </SelectBox>
+          </SelectBox>}
           {!isSixCourts && !live ? (
             <small className="muted">Choisissez un type : un audio est tiré au hasard, avec ses questions.</small>
           ) : null}
@@ -1423,7 +1440,8 @@ export function TcfExerciseEditor({
           {live && exercise.libreSupportReview && (
             <div className="libre-unit-actions">
               <span>Corrigé du support à vérifier</span>
-              <button type="button" className="tcf-btn" disabled={(validation?.errors.length ?? 0) > 0}
+              <button type="button" className="tcf-btn"
+                disabled={(validation?.errors.length ?? 0) > 0 || !isTcfStructuredCorrectionComplete(exercise)}
                 onClick={() => set({ ...exercise, libreSupportReview: false })}>Confirmer le corrigé du support</button>
             </div>
           )}

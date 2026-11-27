@@ -77,8 +77,8 @@ export function rerollFlatActivity(
     ...block, count: Math.max(items.length * 2, 4), libreItems: undefined, libreInstruction: undefined,
   })
   const generated = buildPage(template, pageSeed + newSeed, 1, seed).items
-  const signature = ({ layout, op, a, b, missing, convert, prompt, left, right, sequence, logique }: MathItem) =>
-    JSON.stringify([layout, op, a, b, missing, convert, prompt, left, right, sequence, logique?.id])
+  const signature = ({ layout, op, a, b, missing, convert, prompt, left, right, sequence, responseAnswer, logique }: MathItem) =>
+    JSON.stringify([layout, op, a, b, missing, convert, prompt, left, right, sequence, responseAnswer, logique?.id])
   const signatures = new Set(items.map(signature))
   let cursor = 0
   const next = items.map((item, index) => {

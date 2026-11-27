@@ -176,6 +176,8 @@ export function LibreSidePanel({
   const logicContent = logic && (halfEditor?.content ?? logic)
   const questions = textExercise && (halfEditor?.content ?? textExercise)
   const wordListContent = letterGrid && (halfEditor?.content ?? letterGrid)
+  const orderedPhrases = phraseOrder && (halfEditor?.content ?? phraseOrder)
+  const syllables = syllableContent && (halfEditor?.content ?? syllableContent)
   const arithmeticInstruction = halfEditor?.content?.instruction ?? activeBlock.libreInstruction ??
     activeSheet?.blocks[safeBlockIndex]?.instruction ?? ''
   function editActivityItems(items: MathItem[], instruction: string) {
@@ -264,19 +266,20 @@ export function LibreSidePanel({
             onInstruction={(instruction) => editActivityItems(identifyItems(logicContent.items, editedActivityId), instruction)}
             onRegenerate={(id) => onRegenerateBlock?.(safeBlockIndex, halfEditor?.value, id)} />
         ) : null}
-        {phraseOrder?.items.length ? (
-          <PhraseLibreEditor reviewOrder exerciseType={activeBlock.exerciseType} instruction={phraseOrder.instruction}
-            items={identifyItems(phraseOrder.items, arithmeticId)}
-            onChangeItems={(libreItems) => updatePage({ libreId: arithmeticId, libreItems, libreInstruction: phraseOrder.instruction })}
-            onChangeInstruction={(libreInstruction) => updatePage({ libreId: arithmeticId, libreInstruction, libreItems: identifyItems(phraseOrder.items, arithmeticId) })} />
+        {orderedPhrases?.items.length ? (
+          <PhraseLibreEditor key={editedActivityId} reviewOrder exerciseType={activeBlock.exerciseType} instruction={orderedPhrases.instruction}
+            items={identifyItems(orderedPhrases.items, editedActivityId)}
+            onChangeItems={(items) => editActivityItems(items, orderedPhrases.instruction)}
+            onChangeInstruction={(instruction) => editActivityItems(identifyItems(orderedPhrases.items, editedActivityId), instruction)} />
         ) : null}
-        {syllableContent && syllableBank && syllableContent.items.map((item, index) => (
-          <SyllableEditor key={index} item={item} bank={syllableBank}
+        {syllables && syllableBank && syllables.items.map((item, index) => (
+          <SyllableEditor key={`${editedActivityId}:${index}`} item={item} bank={syllableBank}
             activityId={`${editedActivityId}:${activeBlock.exerciseType}:${index}`} fields={transientFields} writeField={onTransientField}
-            onChange={(next) => updatePage({
-              libreItems: syllableContent.items.map((current, position) => position === index ? next : current),
-              libreInstruction: syllableContent.instruction,
-            })} />
+            onChange={(next) => {
+              const items = syllables.items.map((current, position) => position === index ? next : current)
+              if (halfEditor) editActivityItems(items, syllables.instruction)
+              else updatePage({ libreItems: items, libreInstruction: syllables.instruction })
+            }} />
         ))}
         {questions?.items.length ? (
           <GenericLibreEditor

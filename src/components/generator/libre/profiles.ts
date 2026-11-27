@@ -51,6 +51,8 @@ export function liveEditorProfile(domain: Domain, exerciseType: string, format: 
   if (wordKind === 'syllabes' || wordKind === 'syllabes-cv' || wordKind === 'syllabes-long') return 'grille-syllabique'
   if (wordKind === 'dictee') return 'dictee-de-mots'
   if (wordKind === 'lire') return 'lecture-de-phrases'
+  if (wordKind === 'ordre') return 'mots-dans-l-ordre'
+  if (wordKind === 'syllabe-son' || wordKind === 'syllabe-son-qr' || wordKind === 'syllabes-prononcer') return 'syllabes-audio'
   if (logistics?.domain === domain || domain === 'société' && isSocieteType(exerciseType)) return 'question-simple'
   if (format === 'a4-portrait') {
     if (domain === 'tpm' && (NUMERIC_ORDER_TYPES.has(exerciseType) || exerciseType === 'tpm-comparer' || exerciseType === 'tpm-ranger') ||
@@ -63,34 +65,38 @@ export function liveEditorProfile(domain: Domain, exerciseType: string, format: 
     if (domain === 'grammaire' && isGrammaireExerciseType(exerciseType) && grammarPresentation) return 'grammaire-graduee'
     if (wordKind === 'mots') return 'mots-illustres'
     if (wordKind === 'completer') return 'mot-a-trou'
-    if (wordKind === 'ordre') return 'mots-dans-l-ordre'
-    if (wordKind === 'syllabe-son' || wordKind === 'syllabe-son-qr' || wordKind === 'syllabes-prononcer') return 'syllabes-audio'
   }
   if (format === 'a4-portrait' && isTpfFamilyDomain(domain)) {
     const slot = tcfSlotByTypeId[exerciseType]
     if (slot?.competence === 'CE') return 'document'
-    if (slot?.competence === 'CO' && slot.numero != null && slot.numero <= 4) return 'audio-qcm'
-    if (slot?.competence === 'PE' && slot.numero === 4) return 'production-ecrite'
+    if (slot?.competence === 'CO') return 'audio-qcm'
+    if (slot?.competence === 'PE') return 'production-ecrite'
+    if (slot?.competence === 'PO') return 'production-orale'
   }
   return null
 }
 
 type LiveEditorProfile = ReturnType<typeof liveEditorProfile>
 
+export function isTcfLiveProfile(profile: LiveEditorProfile): boolean {
+  return profile === 'document' || profile === 'audio-qcm' || profile === 'production-ecrite' || profile === 'production-orale'
+}
+
 export function isCalculationProfile(profile: LiveEditorProfile): boolean {
   return profile === 'calcul-en-ligne' || profile === 'calcul-en-colonnes' || profile === 'conversion' || profile === 'ordre-numerique'
 }
 
 export function hasFlatRegeneration(profile: LiveEditorProfile): boolean {
-  return isCalculationProfile(profile) || profile === 'logique-visuelle' || profile === 'question-simple'
+  return isCalculationProfile(profile) || profile === 'logique-visuelle' || profile === 'question-simple' ||
+    profile === 'mots-dans-l-ordre'
 }
 
 export function usesIndependentHalves(profile: LiveEditorProfile): boolean {
-  return hasFlatRegeneration(profile) || isWordListProfile(profile)
+  return hasFlatRegeneration(profile) || isIndependentListProfile(profile)
 }
 
 export function opensWithoutOverlay(profile: LiveEditorProfile): boolean {
-  return hasFlatRegeneration(profile) || profile === 'calligraphie' || profile === 'cartes' || profile === 'phrase' ||
+  return isTcfLiveProfile(profile) || hasFlatRegeneration(profile) || profile === 'calligraphie' || profile === 'cartes' || profile === 'phrase' ||
     profile === 'mots-illustres' || profile === 'mot-a-trou' || profile === 'theorie' ||
     profile === 'question-simple' || profile === 'grammaire-graduee' || profile === 'questions-de-reperage' || profile === 'mots-dans-l-ordre' ||
     profile === 'syllabes-audio' || isWordListProfile(profile)
@@ -101,7 +107,12 @@ export function isWordListProfile(profile: LiveEditorProfile): boolean {
     profile === 'dictee-de-mots' || profile === 'lecture-de-phrases'
 }
 
+export function isIndependentListProfile(profile: LiveEditorProfile): boolean {
+  return isWordListProfile(profile) || profile === 'syllabes-audio'
+}
+
 export function writesNativePayload(profile: LiveEditorProfile, patch: object): boolean {
+  if (isTcfLiveProfile(profile)) return Object.hasOwn(patch, 'tcfExercise')
   if (profile === 'calligraphie') return Object.hasOwn(patch, 'calliText')
   if (profile === 'cartes') return Object.hasOwn(patch, 'gameEntries') || Object.hasOwn(patch, 'gameText') ||
     Object.hasOwn(patch, 'gameSeriesName') || Object.hasOwn(patch, 'gameSource')

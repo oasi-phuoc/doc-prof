@@ -11,7 +11,7 @@ import {
   resizeDraftGrids,
   resizeOralAnswerModes,
 } from '@/components/generator/page-helpers'
-import { isInlineArithmetic, isWordListProfile, liveEditorProfile, opensWithoutOverlay, writesNativePayload } from '@/components/generator/libre/profiles'
+import { isInlineArithmetic, isIndependentListProfile, liveEditorProfile, opensWithoutOverlay, writesNativePayload } from '@/components/generator/libre/profiles'
 import { hasLockedItems, identifyItems, trimUnlockedItems } from '@/components/generator/libre/flat-items'
 import { gridCells, withGridCells } from '@/components/generator/libre/word-list'
 import { syllableRows, replaceSyllableRows } from '@/components/generator/libre/syllable-rows'
@@ -99,7 +99,7 @@ export function usePageConfig({
     }
     const count = patch.count
     const rightGrid = doubleA5 ? activeBlock.a5RightLibre : undefined
-    if ((isWordListProfile(editorProfile) || editorProfile === 'syllabes-audio') &&
+    if (isIndependentListProfile(editorProfile) &&
       activeSheet && (activeBlock.libreItems?.length || rightGrid?.items.length) && !patch.libreItems && !patch.exerciseType &&
       (count !== undefined || patch.columns !== undefined)) {
       const nextBlock = { ...activeBlock, ...patch, libreItems: undefined }

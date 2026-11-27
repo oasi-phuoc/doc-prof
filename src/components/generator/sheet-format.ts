@@ -1,4 +1,4 @@
-import { isWordListProfile, liveEditorProfile, usesIndependentHalves } from './libre/profiles'
+import { isIndependentListProfile, liveEditorProfile, usesIndependentHalves } from './libre/profiles'
 import { pageBlocks, setPageBlock } from '@/math/page-model'
 import type { ExerciseBlock, PageConfig } from '@/math/types'
 import { isLogistiqueDomain } from '@/logistique/catalog'
@@ -34,7 +34,7 @@ export function pageForA5Half(page: PageConfig, half: 'left' | 'right'): PageCon
     /** Une référence a le même contenu dans les deux exemplaires. */
     const sharedReference = profile === 'theorie'
     const rightLibre = independent && half === 'right' ? block.a5RightLibre : undefined
-    const keepCustomized = independent && half === 'left' && (isWordListProfile(profile)
+    const keepCustomized = independent && half === 'left' && (isIndependentListProfile(profile)
       ? Boolean(block.libreItems?.length) : block.libreItems?.some(({ libreId }) => libreId))
     next = setPageBlock(next, index, {
       contentSeed: seed,

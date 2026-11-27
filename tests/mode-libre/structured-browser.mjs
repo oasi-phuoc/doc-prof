@@ -188,6 +188,52 @@ async function writing(page) {
   assert.match(await worksheet(page).innerText(), /Prévenez votre responsable/)
 }
 
+async function pictureRecognition(page) {
+  await openFiche(page, recipe('tcf-co-ex-5', 'tcf-co', {
+    id: 'libre-images-temoin', niveau: 'A0-A1', competence: 'CO', type_exercice: 'images_a_reconnaitre', questions: [],
+    support: { audio: '/lib/audio/test-fixture-audio.mp3' }, melanger: false,
+    images: ['a', 'b', 'c', 'd', 'e'].map((id) => ({ id, image, correct: id === 'a' })),
+  }), false)
+  const images = page.locator('#activity-editor .tcf-choix-row')
+  const review = button(page, 'Confirmer le corrigé du support')
+  await images.first().getByRole('checkbox', { name: 'à cocher', exact: true }).uncheck()
+  assert(await review.isDisabled())
+  await images.nth(2).getByRole('checkbox', { name: 'à cocher', exact: true }).check()
+  assert(await review.isEnabled())
+  await images.nth(2).locator('input[type=file]').setInputFiles({ name: 'temoin.png', mimeType: 'image/png', buffer: Buffer.from(png, 'base64') })
+  await worksheet(page).locator('img[src^="data:image/webp"]').waitFor()
+  assert.equal(await worksheet(page).locator('img[src^="data:image/webp"]').count(), 1)
+  await review.click()
+  assert.equal(await review.count(), 0)
+}
+
+async function formAndOral(context) {
+  const form = await context.newPage()
+  await openFiche(form, recipe('tcf-pe-ex-1', 'tcf-pe', {
+    id: 'libre-formulaire-temoin', niveau: 'A0-A1', competence: 'PE', type_exercice: 'formulaire', questions: [],
+    support: { titre: 'Inscriptions', champs: [{ label: 'Prénom', type: 'texte', corrige: 'Alicia' }] },
+  }), false)
+  await form.getByRole('textbox', { name: 'Libellé', exact: true }).fill('Prénom de la personne à joindre')
+  assert.match(await worksheet(form).innerText(), /Prénom de la personne à joindre/)
+  assert.doesNotMatch(await worksheet(form).innerText(), /Alicia/)
+  await form.getByRole('textbox', { name: 'Corrigé', exact: true }).fill('')
+  assert(await button(form, 'Confirmer le corrigé du support').isDisabled())
+  await form.close()
+
+  const oral = await context.newPage()
+  await openFiche(oral, recipe('tcf-po', 'tcf-po', {
+    id: 'libre-oral-temoin', niveau: 'A0-A1', competence: 'PO', type_exercice: 'mots_theme', questions: [],
+    support: { theme: 'Courses', mots: ['pain', 'lait'], exemples_questions: ['Qu’avez-vous acheté ?'] },
+  }), false)
+  await oral.getByRole('textbox', { name: 'Thème', exact: true }).fill('L’atelier de français')
+  assert.match(await worksheet(oral).innerText(), /L’atelier de français/)
+  assert.doesNotMatch(await worksheet(oral).innerText(), /Qu’avez-vous acheté/)
+  await button(oral, 'Confirmer le corrigé du support').click()
+  await button(oral, 'Fermer le mode libre').click()
+  assert.match(await worksheet(oral).innerText(), /L’atelier de français/)
+  await oral.close()
+}
+
 try {
   await server?.listen()
   const baseURL = process.env.BASE_URL ?? 'http://127.0.0.1:' + server.httpServer.address().port
@@ -204,8 +250,10 @@ try {
   await audioGroups(audioPage)
   await audioPage.close()
   await writing(await context.newPage())
+  await pictureRecognition(await context.newPage())
+  await formAndOral(context)
   await context.close()
-  console.log('Document partagé, corrigés à vérifier, QCM illustré, réouverture et liaison audio testés.')
+  console.log('Document partagé, QCM illustré, liaison audio, reconnaissance d’images, formulaire et oral vérifiés.')
 } finally {
   await browser?.close()
   await server?.close()

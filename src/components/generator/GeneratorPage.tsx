@@ -58,7 +58,7 @@ import { useGeneratorAudio } from '@/components/generator/useGeneratorAudio'
 import { useGenerateActions } from '@/components/generator/useGenerateActions'
 import { useCoordEditing } from '@/components/generator/useCoordEditing'
 import { arithmeticActivityId, worksheetActivityIds } from '@/components/generator/libre/flat-items'
-import { isCalculationProfile, isInlineArithmetic, isWordListProfile, liveEditorProfile, opensWithoutOverlay, usesIndependentHalves } from '@/components/generator/libre/profiles'
+import { isCalculationProfile, isInlineArithmetic, isTcfLiveProfile, isWordListProfile, liveEditorProfile, opensWithoutOverlay, usesIndependentHalves } from '@/components/generator/libre/profiles'
 import { readSpacingPreferences, spacingPreferenceKey } from '@/components/generator/libre/preferences'
 import { hasTcfCorrectionsToReview, isTcfSubjectIncomplete } from '@/tcf/libre-questions'
 import { generateGrammarSelection } from '@/grammaire/curriculum/generate'
@@ -292,7 +292,7 @@ export function GeneratorPage({
   const spacingForType = (type: string) => readSpacingPreferences(spacingPreferenceKey(draftOwner, activePage.domain, type, sheetFormat))
   const arithmetic = isCalculationProfile(activeProfile)
   const liveArithmetic = libreMode && arithmetic
-  const liveTcf = libreMode && (activeProfile === 'document' || activeProfile === 'audio-qcm' || activeProfile === 'production-ecrite')
+  const liveTcf = libreMode && isTcfLiveProfile(activeProfile)
 
   /** Les exercices encore ouverts avec validation conservent leur dernière version appliquée. */
   const previewSource = useMemo(() => {
