@@ -609,6 +609,7 @@ export function StackedPrompt({ item, mode, showHelp = false }: { item: MathItem
             {line}
           </p>
         ))}
+        {showHelp && <ProblemHelp item={item} />}
         <div className="proportion-kg-question" aria-label="Question">
           <span className="prompt-stack-text">{last}</span>
           <span className={`answer-line-field ${show ? 'filled' : ''}`}>

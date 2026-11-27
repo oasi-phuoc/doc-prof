@@ -86,12 +86,31 @@ const assets = [
   ['enfants?', 'famille-personnes/enfant', 'Enfants'],
   ['blocs?', 'formes/cube', 'Blocs'],
   ['trajets?', 'nature/sentier', 'Trajet'],
+  ['vignettes?', '@vignettes', 'Vignettes'],
+  ['quelle est la taille', '@taille', 'Comparer les tailles'],
+  ['fossiles?', '@fossile', 'Fossile'],
+  ['broches?', '/lib/images/tcf/catalogue/quotidien/accessoires/broche.webp', 'Broches'],
+  ['caillou(?:x)?', '/lib/images/tcf/qcm-audit/qcm-delf2-pierres.png', 'Cailloux'],
+  ['bâtonnets?', '@batonnets', 'Bâtonnets'],
+  ['fléchettes?', '/lib/images/tcf/qcm-audit/co306-jeu-flechettes-dessine.webp', 'Fléchettes'],
+  ['bûches?', '@buches', 'Bûches'],
+  ['tesselles?|mosaïques?', '@mosaique', 'Mosaïque'],
+  ['briques?', '@briques', 'Briques'],
+  ['villages?', '@village', 'Village'],
+  ['traversées?', '@traversee', 'Traversée'],
 ] as const
+
+const customImages = import.meta.glob<string>('./media/problem-aids/*.png', {
+  eager: true,
+  import: 'default',
+  query: '?url',
+})
 
 const imageRoot = '/lib/images/vocabulaire/'
 const numberPattern = String.raw`\d+(?:[,.]\d+)?`
 const assetPatterns = assets.map(([noun, path, label]) => ({
-  image: `${imageRoot}${path}.webp`,
+  image: path.startsWith('@') ? customImages[`./media/problem-aids/${path.slice(1)}.png`]!
+    : path.startsWith('/') ? path : `${imageRoot}${path}.webp`,
   label,
   context: new RegExp(`(?<!\\p{L})(?:${noun})(?!\\p{L})`, 'iu'),
   quantity: new RegExp(`(${numberPattern})[ \\u202f]+((?:${noun}))(?!\\p{L})`, 'giu'),

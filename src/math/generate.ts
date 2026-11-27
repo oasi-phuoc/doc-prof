@@ -600,6 +600,45 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
       exerciseNo = Math.max(...scoredBlocks.map((block) => block.exerciseIndex)) + 1
     }
 
+    if (worksheet.blocks.some((block) => block.problemHelp)) {
+      let continuation = false
+      const append = (blocks: WorksheetBlock[]) => {
+        if (blocks.length === 0) return
+        out.push({
+          ...worksheet,
+          blocks,
+          items: blocks.flatMap((block) => block.items),
+          configIndex: index,
+          isContinuation: continuation,
+        })
+        continuation = true
+      }
+      let preceding: WorksheetBlock[] = []
+      worksheet.blocks.forEach((block, sourceBlockIndex) => {
+        if (!block.problemHelp) {
+          preceding.push({ ...block, sourceBlockIndex })
+          return
+        }
+        append(preceding)
+        preceding = []
+        const capacity = block.exerciseType === 'problemes-donnees-utiles' ? 2 : 1
+        for (let offset = 0; offset < block.items.length; offset += capacity) {
+          const end = offset + capacity
+          append([{
+            ...block,
+            ...headingForSlice(block, offset, block.items),
+            sourceBlockIndex,
+            itemOffset: offset,
+            document: offset === 0 ? block.document : undefined,
+            items: block.items.slice(offset, end),
+            problemDraftGrids: block.problemDraftGrids?.slice(offset, end),
+          }])
+        }
+      })
+      append(preceding)
+      return
+    }
+
     const isCom =
       page.exerciseType.includes('-com-orale') || page.exerciseType.includes('-com-ecrite')
     const isTheory =
