@@ -60,6 +60,12 @@ for(const [i,u]of requests.units.entries()){
 const order=banks.find(b=>b.activityId==='gram-ex-f3-curriculum-o')
 const cfg={domain:'grammaire',topic:'gram-demander',exerciseType:order.activityId,difficulty:'facile',count:50,columns:1,...defaultGrammarPilot(order.activityId)}
 assert.equal(cfg.phrasePolarity,'mixed');assert.equal(grammarEligibleCount(cfg),50);for(const phrasePolarity of ['positive','negative'])assert.equal(grammarEligibleCount({...cfg,phrasePolarity}),25)
+const mixedWithoutPrepositions={...cfg,phraseCategories:{preposition:false},count:12}
+assert.equal(grammarEligibleCount(mixedWithoutPrepositions),12)
+const filteredOrder=generateGrammarSelection(mixedWithoutPrepositions,839).questions.map(q=>q.unit)
+assert.equal(new Set(filteredOrder.map(u=>u.id)).size,12)
+assert.equal(filteredOrder.filter(u=>u.tokens.some(t=>t.category==='negation')).length,8)
+assert(filteredOrder.every(u=>!u.tokens.some(t=>t.category==='preposition')))
 assert.equal(applyType(types.find(t=>t.id===order.activityId),{...cfg,phrasePolarity:'positive'}).phrasePolarity,'mixed')
 assert(order.units.every(u=>u.tokens.length>=6&&u.tokens.length<=32));assert(order.units.some(u=>u.tokens.some(t=>t.text==='d’')&&u.answers[0].includes('d’accord')))
 const scenarios=banks.flatMap(b=>b.units).filter(u=>u.kind==='scenario');assert.equal(scenarios.length,100)

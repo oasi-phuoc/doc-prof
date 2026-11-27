@@ -25,9 +25,7 @@ export function blockItemsForConfig(
   }> = []
   worksheets.forEach((sheet, index) => {
     if ((sheet.configIndex ?? index) !== configIndex) return
-    const block =
-      sheet.blocks.find((entry, i) => (entry.sourceBlockIndex ?? i) === blockIndex) ??
-      sheet.blocks[blockIndex]
+    const block = sheet.blocks.find((entry, i) => (entry.sourceBlockIndex ?? i) === blockIndex)
     if (!block) return
     parts.push({
       offset: block.itemOffset ?? 0,

@@ -1,15 +1,19 @@
-import { grammarOrderHasSentenceFilters } from '@/grammaire/curriculum/types'
+import { grammarOrderHasSentenceFilters, isNegativeGrammarOrder } from '@/grammaire/curriculum/types'
 import type { ExerciseBlock } from '@/math/types'
 import { grammarBanksForType, grammarUsesGradedDefault } from '@/grammaire/curriculum/registry'
 import { clearLibreContentFreeze } from './page-helpers'
 import { SelectBox } from './SelectBox'
 
-export function GrammarLevelControl({block,onChange}:{block:ExerciseBlock;onChange:(patch:Partial<ExerciseBlock>)=>void}) {
+export function GrammarLevelControl({block,readingQuestionCount,onChange}:{
+  block: ExerciseBlock
+  readingQuestionCount?: number
+  onChange: (patch: Partial<ExerciseBlock>) => void
+}) {
   const banks=grammarBanksForType(block.exerciseType)
   if (!banks.length) return null
   const bank=banks.find(b=>b.level===block.grammarLevel)
   const orderUnits=bank?.units.filter(u=>u.kind==='order')??[]
-  const negativeCount=orderUnits.filter(u=>u.kind==='order'&&u.tokens.some(t=>t.category==='negation')).length
+  const negativeCount=orderUnits.filter(isNegativeGrammarOrder).length
   const change=(patch:Partial<ExerciseBlock>)=>{
     if (block.libreItems?.length && !window.confirm('Ce changement remplacera les modifications manuelles de cet exercice. Continuer ?')) return
     onChange({...clearLibreContentFreeze(),grammarSnapshot:undefined,grammarPageBreakAfterQuestionIds:undefined,...patch})
@@ -29,12 +33,19 @@ export function GrammarLevelControl({block,onChange}:{block:ExerciseBlock;onChan
       {banks.map(b=><option key={b.level} value={b.level}>{b.level}{b.editorialStatus!=='approved'?' — pilote':''}</option>)}
     </SelectBox>
     {bank?<>
-      {block.grammarPresentation==='document-set'?<label className="select-shell">
-        <span>Textes</span>
-        <input className="pill-input" type="number" aria-label="Nombre de textes" min={1} max={Math.min(20,bank.units.length)} value={block.grammarDocumentCount??1}
-          onChange={event=>change({grammarDocumentCount:Math.max(1,Math.min(20,bank.units.length,Number(event.target.value)||1))})}/>
-        <small className="grammar-level-note">Chaque texte conserve toutes ses questions.</small>
-      </label>:null}
+      {block.grammarPresentation==='document-set'?<>
+        <label className="select-shell">
+          <span>Nombre de textes</span>
+          <input className="pill-input" type="number" min={1} max={Math.min(20,bank.units.length)} step={1} value={block.grammarDocumentCount??1}
+            onChange={event=>{
+              const count = Math.max(1, Math.min(20, bank.units.length, Math.trunc(event.currentTarget.valueAsNumber) || 1))
+              if (count !== block.grammarDocumentCount) change({grammarDocumentCount:count})
+            }}/>
+        </label>
+        {readingQuestionCount != null && <small className="grammar-level-note" role="status">
+          {readingQuestionCount} {readingQuestionCount === 1 ? 'question' : 'questions'}
+        </small>}
+      </>:null}
       {bank.presentations.includes('choice')&&bank.presentations.includes('gap')?<div className="mode-toggle-block">
         <b>Réponse</b><div className="mode-toggle" role="group" aria-label="Réponse grammaticale">
           {(['choice','gap'] as const).map(p=><button type="button" key={p} aria-pressed={block.grammarPresentation===p} className={block.grammarPresentation===p?'active':''} onClick={()=>change({grammarPresentation:p,tcfFormModes:undefined})}>{p==='choice'?'QCM':'Lacune'}</button>)}

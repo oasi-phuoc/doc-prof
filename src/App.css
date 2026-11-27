@@ -2096,6 +2096,7 @@ html.is-margin-symmetric .print-only-sheets .worksheet-sheet.sheet-even .draft-g
 .mode-toggle{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:4px;border-radius:12px;background:#f4f2ef}
 .mode-toggle button{border:0;border-radius:9px;padding:10px 8px;background:transparent;color:var(--muted);font-size:calc(13px * var(--app-font-scale, 1));font-weight:700}
 .mode-toggle button.active{background:var(--purple);color:var(--theme-on,#fff);box-shadow:none}
+.phrase-polarity-toggle button:disabled{opacity:.45;cursor:not-allowed}
 .mode-toggle.is-tabs{
   display:flex;flex-wrap:wrap;grid-template-columns:unset;
   align-items:center;width:fit-content;max-width:100%;gap:6px
