@@ -4,6 +4,8 @@ Les activités par niveau sont suivies dans le [bilan des banques graduées](imp
 
 Le **Vocabulaire illustré** apparaît à la suite de la théorie dans les sous-thèmes concernés. Le complément ajoute 32 cartes dans 22 sous-thèmes, avec 14 nouvelles scènes du quotidien et 18 réemplois contrôlés. Chaque nouvelle scène est peinte d’après les références TCF validées, au format paysage 4:3 et à sa définition native, avec un contrôle du geste, des mains et des objets. Les illustrations réemployées conservent leur fichier d’origine. La provenance se trouve dans la [banque de vocabulaire](../../src/grammaire/media/word-vocab/bank.json).
 
+Un lot de 18 nouvelles scènes complète neuf sous-thèmes. Cinq ouvrent leur première banque de vocabulaire illustré : problèmes domestiques, règlement d’immeuble, cuisine, vacances et entretien d’embauche. Les autres cartes enrichissent le logement, l’aéroport, le travail et les déplacements.
+
 ## Bilan historique de la reprise
 
 La théorie a été rétablie dans son état antérieur au commit `b04247cb`. Les types d’exercices et les banques actuels sont conservés.
