@@ -555,7 +555,7 @@ test('le texte habille la photo sur la même page et un saut manuel reste priori
     const sheets = splitLogistiquePages({ items, blocks: [block] }, { a5 })
     assert.deepEqual(sheets.flatMap((sheet) => sheet.items), items)
     const wrapped = sheets.find(({ items: pageItems }) => pageItems.includes(items[3])).blocks[0]
-    assert.deepEqual(wrapped.logistiqueWrappedFigures.map((index) => wrapped.items.slice(index, index + 2)), [items.slice(3)])
+    assert.deepEqual(wrapped.logistiqueWrappedFigures.map(({ start, end }) => wrapped.items.slice(start, end)), [items.slice(3)])
     assert(wrapped.items.includes(items[2]), 'Le titre reste avec la photo')
   }
 
@@ -564,6 +564,39 @@ test('le texte habille la photo sur la même page et un saut manuel reste priori
   assert.equal(sheets.find(({ items: pageItems }) => pageItems.includes(items[3])).items.at(-1), items[3])
   assert(sheets.every(({ blocks }) => blocks.every(({ logistiqueWrappedFigures }) => !logistiqueWrappedFigures?.length)))
   assert.deepEqual(sheets.flatMap((sheet) => sheet.items), items)
+})
+
+test('le 101 présente trois vues distinctes de la chaîne moderne et une carte pour chaque route', () => {
+  for (const diploma of ['CFC', 'AFP']) for (const logistiqueTheoryView of ['complet', 'resume']) {
+    const page = { ...config(diploma, '101', 'theorie'), logistiqueTheoryView }
+    const blocks = generateLogistique(page, 7).items.map(({ theoryBlock }) => theoryBlock)
+    const previous = generateLogistique({ ...page, logistiqueBankRevision: 'logistique-glossaires-tableaux-v006' }, 7)
+      .items.map(({ theoryBlock }) => theoryBlock)
+    const chain = blocks.find((block) => block.kind === 'image-row' && block.label === 'Approvisionnement, production, distribution')
+    assert.deepEqual(chain?.cells.map(({ caption }) => caption), ['Approvisionnement', 'Production', 'Distribution'])
+    assert.equal(new Set(chain.cells.map(({ src }) => src)).size, 3)
+    for (const [route, word] of [['soie', 'Soie'], ['ambre', 'ambre']]) {
+      const index = blocks.findIndex((block) => block.src?.endsWith(`log-101-carte-${route}-v004.webp`))
+      assert(index > 0 && blocks[index - 1].kind === 'paragraph', route)
+      assert(blocks.slice(0, index).findLast((block) => block.kind === 'heading')?.text.includes(word), route)
+    }
+    assert(previous.some((block) => block.src?.endsWith('log-101-chaine-moderne-photo-v002.webp')))
+  }
+})
+
+test('les paragraphes continuent à habiller la même photo jusqu’au saut de page explicite', () => {
+  const items = [
+    { kind: 'image', src: '/assets/logistique/log-101-ambre-photo-v003.webp', alt: 'Ambre', caption: 'Échange d’ambre sur la côte baltique.' },
+    { kind: 'paragraph', text: 'Des marchands examinent l’ambre sur les plages de la côte baltique. ' },
+    { kind: 'paragraph', text: 'La résine est utilisée pour faire des bijoux et se vend plus au sud.' },
+    { kind: 'heading', text: 'Suivre la route' },
+  ].map((theoryBlock) => ({ layout: 'theory', theoryBlock, answer: '' }))
+  const block = { title: 'Théorie', items, exerciseIndex: 1, exerciseType: 'log-afp-101-theorie' }
+  const [sheet] = splitLogistiquePages({ items, blocks: [block] })
+  assert.deepEqual(sheet.blocks[0].logistiqueWrappedFigures, [{ start: 0, end: 3 }])
+  const pages = splitLogistiquePages({ items, blocks: [{ ...block, tcfPageBreakAfter: [false, true] }] })
+  assert.deepEqual(pages[0].items, items.slice(0, 2))
+  assert.deepEqual(pages[1].items, items.slice(2))
 })
 
 test('les tableaux longs répètent leurs en-têtes en A5 et restent entiers dans les données de la fiche', () => {

@@ -1247,8 +1247,8 @@ export type WorksheetBlock = {
   items: MathItem[]
   columns: number
   exerciseType: string
-  /** Index des photos à habiller avec le paragraphe suivant sur cette feuille. */
-  logistiqueWrappedFigures?: number[]
+  /** Photo et paragraphes successifs qui l’habillent, dans la tranche de la feuille. */
+  logistiqueWrappedFigures?: { start: number; end: number }[]
   /** Nombre de notions de la source, avant pagination du tableau du glossaire. */
   logistiqueGlossaryLength?: number
   /** Disposition imprimée des listes et tableaux A5, avec l’index du bloc d’origine. */

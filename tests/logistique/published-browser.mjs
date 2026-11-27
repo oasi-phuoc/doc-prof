@@ -111,6 +111,12 @@ try {
     const stages = tables.filter({ has: page.locator('figcaption strong', { hasText: /^Chasser$/ }) })
     assert.deepEqual(await stages.locator('figcaption strong').allTextContents(), ['Chasser', 'Transformer', 'Consommer'])
     assert.equal(await stages.locator('img').count(), 3)
+    const chain = tables.filter({ has: page.locator('figcaption strong', { hasText: /^Approvisionnement$/ }) })
+    assert.deepEqual(await chain.locator('figcaption strong').allTextContents(), ['Approvisionnement', 'Production', 'Distribution'])
+    assert.equal(await chain.locator('img').count(), 3)
+    for (const route of ['soie', 'ambre']) {
+      assert.equal(await page.locator(`.print-only-sheets img[src$="log-101-carte-${route}-v004.webp"]`).count(), 1)
+    }
     const dates = (await tables.locator('figcaption strong').allTextContents()).filter((label) => /\d{4}/.test(label))
     assert.deepEqual(dates, [
       '1804', 'Années 1870', '1896', '1907', '1944', '1948', '1949', 'Années 1950',

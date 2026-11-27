@@ -44,8 +44,12 @@ const reference = baseTheory
   : legacyCombinedReference ? Object.values(pages).filter(Boolean).flatMap(theoryBlocks) : theoryBlocks(pages.theorie)
 if (!reference?.length) throw new Error('Cours de départ introuvable : ' + code)
 const declaredFigures = editorial.visuals ?? (editorial.visual ? [editorial.visual] : [])
-// Chaque insertion après un titre précède la précédente. Les ajouts gardent l’ordre du dossier éditorial.
-const figures = editorial.keepBaseFigures ? declaredFigures.toReversed() : declaredFigures
+// Les figures ajoutées juste après un titre se décalent vers le bas à chaque insertion.
+const insertionOrder = (figures) => editorial.keepBaseFigures ? [
+  ...figures.filter(({ endOfSection }) => !endOfSection).reverse(),
+  ...figures.filter(({ endOfSection }) => endOfSection),
+] : figures
+const figures = insertionOrder(declaredFigures)
 if (!legacyCombinedReference && figures.length === 0) throw new Error('Illustrations de la théorie absentes : ' + code)
 const scope = editorial.diplomas.length === 1 ? editorial.diplomas[0].toLowerCase() : 'commun'
 const publicDirectory = new URL('public/', root)
@@ -54,7 +58,7 @@ const course = insertLogistiqueFigures(reference, figures, publicDirectory, figu
 const summarySource = editorial.summaryTheory ? theoryBlocks(editorial.summaryTheory)
   : editorial.keepBaseFigures ? baseUnit?.summaryBlocks : undefined
 const summaryFigures = editorial.summaryVisuals
-  ? (editorial.keepBaseFigures ? editorial.summaryVisuals.toReversed() : editorial.summaryVisuals)
+  ? insertionOrder(editorial.summaryVisuals)
   : figures.map(({ summaryAnchor, ...figure }) => ({ ...figure, anchor: summaryAnchor ?? figure.anchor }))
 const summary = summarySource
   ? insertLogistiqueFigures(summarySource, summaryFigures, publicDirectory, figureDirectory)
