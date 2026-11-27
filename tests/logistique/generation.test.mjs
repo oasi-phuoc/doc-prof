@@ -68,7 +68,7 @@ test('les 858 types des modules CFC et AFP disposent de contenu à générer', (
 
 test('les résumés illustrés sont distincts du cours et figés dans la recette', () => {
   for (const diploma of ['CFC', 'AFP']) {
-    for (const code of ['101', '306', '407', '409']) {
+    for (const code of [...Array.from({ length: 11 }, (_, index) => String(100 + index)), '306', '407', '409']) {
       const full = config(diploma, code, 'theorie')
       const [summary] = freezeLogistiquePages([{ ...full, logistiqueTheoryView: 'resume' }])
       assert(logistiqueHasSummary(full.exerciseType))
@@ -78,7 +78,7 @@ test('les résumés illustrés sont distincts du cours et figés dans la recette
       const fullBlocks = generateLogistique(full, 7).items.map((item) => item.theoryBlock)
       assert(blocks.length < fullBlocks.length)
       const photos = blocks.filter((block) => block.kind === 'image')
-      assert(photos.length >= 3)
+      assert(photos.length >= 2)
       assert(photos.every((photo) => photo.src.endsWith('.webp') && photo.alt && photo.caption))
       const historical = { ...full, logistiqueBankRevision: 'logistique-901-v001' }
       assert(!logistiqueHasSummary(full.exerciseType, historical.logistiqueBankRevision))

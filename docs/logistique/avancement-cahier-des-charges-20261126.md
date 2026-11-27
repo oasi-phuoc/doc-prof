@@ -112,9 +112,10 @@ Référence de réalisation dans le [cahier des charges v2.13](cahier-des-charge
 | Modules | État | Détail |
 |---|---|---|
 | 101, 306, 407 et 409 | Complet et Résumé actifs en CFC et AFP | Le 101 met en regard les deux chaînes d’activités avec des scènes en couleur. Le 306 compare les palettes EUR et CHEP, les autres formats et leurs circuits de retour. Les 407 et 409 montrent les organes et usages des engins. [101](preparation/101-v002.json), [306](preparation/306-v002.json), [407](preparation/407-v002.json), [409](preparation/409-v002.json). |
-| 76 autres modules | Reprise des visuels et résumés à poursuivre | Les cours complets publiés restent disponibles. Le résumé devient sélectionnable à mesure que la version relue est publiée. |
+| 100 à 110 | Thème Fondations repris en CFC et AFP | Chaque cours et son résumé intègrent deux scènes en couleur ou plus. Les modules montrent entre autres la réception, le transbordement, le tri et les mouvements enregistrés. [Préparations](preparation/). |
+| 66 autres modules | Reprise des visuels et résumés à poursuivre | Les cours complets publiés restent disponibles. Le résumé devient sélectionnable à mesure que la version relue est publiée. |
 
-Révision `logistique-theories-101-306-407-409-v002`. Les 17 insertions WebP en couleur et les textes associés ont été vérifiés dans les deux versions et les deux diplômes, soit 16 parcours A4. Les recettes antérieures conservent leur contenu. Reprendre ensuite les autres modules Fondations, puis les thèmes suivants.
+Révision `logistique-theories-101-306-407-409-v002`. Les 17 insertions WebP en couleur et les textes associés ont été vérifiés dans les deux versions et les deux diplômes, soit 16 parcours A4. Les recettes antérieures conservent leur contenu. La révision `logistique-theories-fondations-v002` ajoute dix mises en scène originales et les réutilise pour expliquer 20 passages. Les deux versions des 14 modules repris ont été contrôlées en CFC et AFP, soit 56 parcours A4. Reprendre le thème Service client (201 à 209).
 
 ## Reprise opérationnelle
 

@@ -5,6 +5,11 @@ import { createServer } from 'vite'
 
 const plan = JSON.parse(await readFile(new URL('../../docs/logistique/preparation/references-illustrees-v002.json', import.meta.url), 'utf8'))
 const curriculum = JSON.parse(await readFile(new URL('../../src/logistique/curriculum.generated.json', import.meta.url), 'utf8'))
+const photoModules = [...Array.from({ length: 11 }, (_, index) => String(100 + index)), '306', '407', '409']
+const photoPlans = new Map(await Promise.all(photoModules.map(async (module) => [
+  module,
+  JSON.parse(await readFile(new URL('../../docs/logistique/preparation/' + module + '-v002.json', import.meta.url), 'utf8')),
+])))
 const externalUrl = process.env.LOGISTIQUE_TEST_URL
 const base = externalUrl ?? 'http://127.0.0.1:5190'
 const server = externalUrl ? null : await createServer({ server: { host: '127.0.0.1', port: 5190, strictPort: true } })
@@ -84,7 +89,8 @@ try {
       await select('Type d’exercice', 'Théorie')
       await sheet.getByText('Théorie : module ' + module, { exact: true }).waitFor()
       const theory = await inspectPrint(`${module} ${diploma} théorie`)
-      assert(theory.pages.reduce((sum, item) => sum + item.images, 0) >= figures.length + 1)
+      const expectedImages = photoPlans.get(module)?.visuals.length ?? (figures.length + 1)
+      assert(theory.pages.reduce((sum, item) => sum + item.images, 0) >= expectedImages, `${module} ${diploma} illustrations`)
       assert.doesNotMatch(theory.printText, /Aperçu du module|Objectifs du module/)
       if (module === '105') {
         assert.match(theory.printText, /L’humidité relative est le rapport/)
@@ -117,12 +123,9 @@ try {
     assert(warehouse.pages.every((sheet) => sheet.count >= 2))
     console.log(`Modules 105 et 110 ${diploma} : questions groupées dans la fiche élève et le corrigé.`)
 
-    for (const [code, caption, photos] of [
-      ['101', 'Chasser, transformer, consommer', 3],
-      ['306', '6.5 Reconnaître une palette CHEP', 4],
-      ['407', '7.1 Déplacer les marchandises sur un site', 3],
-      ['409', '9.2 Reconnaître les engins au sol', 7],
-    ]) {
+    for (const [code, { visuals }] of photoPlans) {
+      const caption = visuals[0].summaryAnchor
+      const photos = visuals.length
       const { title, theme } = curriculum.modules.find(({ code: module }) => code === module)
       await select('Thème', theme + ' — ' + curriculum.themes.find(({ code }) => code === theme).title)
       await select('Sous-thème', code + ' — ' + title)
@@ -142,7 +145,7 @@ try {
       const restored = await inspectPrint(`${code} ${diploma} complet restauré`)
       assert.equal(restored.printText, complete.printText)
     }
-    console.log(`Logistique ${diploma} : photos intégrées au cours et au résumé des modules 101, 306, 407 et 409.`)
+    console.log(`Logistique ${diploma} : photos intégrées au cours et au résumé des ${photoPlans.size} modules révisés.`)
   }
   assert.deepEqual(errors, [])
 } finally {

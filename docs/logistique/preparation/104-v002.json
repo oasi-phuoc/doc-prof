@@ -1,0 +1,31 @@
+{
+  "theoryOnly": true,
+  "baseTheory": "references-v002",
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "replacements": [],
+  "summaryTheory": "## 4. Flux des marchandises\n\n### Chaîne de processus (rappel)\n\nLe **flux de marchandises** est le déplacement et parfois la transformation des biens, depuis l’**approvisionnement** jusqu’à la **distribution** et au traitement des résidus. Les documents et scans forment le **flux d’informations** qui permet de suivre le parcours.\n\n### 4.1 Approvisionnement\n\nL’**acheteur** cherche une offre adaptée au besoin. La réception vérifie les références, quantités et états. Si la livraison ne correspond pas à ce qui est prévu, l’équipe garde une trace de l’écart avant de décider du rangement.\n\n### 4.2 Production\n\nL’atelier transforme ou assemble des matières. Dans l’exemple, des planches entrent, deviennent des caisses et laissent des chutes. Le suivi distingue les composants, le produit fini et les déchets.\n\n### 4.3 et 4.4 Distribution et élimination\n\nLa **distribution** amène les biens au client ou au point de vente. Une palette vide peut revenir pour le **réemploi**. Les chutes et les supports hors d’usage suivent une filière de **valorisation** ou d’**élimination**.\n\n### 4.5 Fonctions TTS\n\nLe **transport** réalise le trajet. Le **transbordement** transfère une unité, par exemple du wagon au camion. Le **stockage** garde la marchandise disponible. Un même colis peut passer plusieurs fois par ces opérations. Chaque étape doit être liée au bon lot et au bon document.\n\n### 4.6 et 4.7 Acteurs et échelles\n\nLe **prestataire** peut transporter, garder ou redistribuer un bien. Le **producteur** le transforme. La **micrologistique** couvre les flux internes, la **métalogistique** la coopération entre entreprises, et la **macrologistique** les flux à grande échelle.",
+  "visuals": [
+    {
+      "anchor": "4.2 Production",
+      "summaryAnchor": "4.2 Production",
+      "file": "log-104-tri-chutes-photo-v002.webp",
+      "alt": "Un opérateur assemble une caisse en bois. Des planches et des chutes se trouvent près du poste.",
+      "caption": "Les planches entrent dans l’atelier. Les caisses et les chutes suivent ensuite des flux différents.",
+      "sha256": "72c5ac77d388c93e1e54aa3e6177412a237e85a5a9657f1c96dab2f0263fb098",
+      "origin": "Mise en scène photoréaliste originale générée pour Doc-Prof."
+    },
+    {
+      "anchor": "4.5.2 TTS — Transbordement (manutention)",
+      "summaryAnchor": "4.5 Fonctions TTS",
+      "file": "log-102-plateforme-photo-v002.webp",
+      "path": "assets/logistique/100/102/commun/log-102-plateforme-photo-v002.webp",
+      "alt": "Un engin porte un conteneur au-dessus d’un wagon de fret.",
+      "caption": "Le transbordement transfère l’unité de charge entre deux moyens de transport.",
+      "sha256": "40f32fe9f04e6c53d3af1fb96d697f92ad5a695cc046215a936b4bddff1ca4c5",
+      "origin": "Mise en scène photoréaliste originale générée pour Doc-Prof."
+    }
+  ]
+}

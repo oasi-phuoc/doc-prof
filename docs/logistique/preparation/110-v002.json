@@ -1,0 +1,31 @@
+{
+  "theoryOnly": true,
+  "baseTheory": "references-v002",
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "replacements": [],
+  "summaryTheory": "## 10. Définition de la gestion des marchandises\n\n### 10.1 et 10.2 Les tâches de l’entrepôt\n\nLa **gestion des marchandises** suit les références, les quantités et les emplacements. Les équipes réceptionnent, contrôlent, rangent, préparent et remettent les unités. Les **6B** aident à vérifier la bonne marchandise, quantité, qualité, destination, heure et coût. La disponibilité doit être compatible avec la place, le travail et le budget.\n\n### 10.3 Importance des données\n\nUn article et ses mouvements doivent rester traçables. Une erreur d’unité entre pièce et carton peut créer un écart au moment de préparer. L’**ERP** ou le **WMS** associe références, documents, stock et emplacements.\n\n### 10.4 Données statiques et dynamiques (ERP)\n\nLes **données de base** décrivent ce qui change peu, comme le numéro d’article et son unité. Les **données de mouvement** décrivent un événement, par exemple une réception de 24 pièces à une date donnée. Un **transfert** change l’emplacement même si le nombre de pièces du site reste identique.\n\n### 10.5 Domaines de la gestion des matières\n\nL’**approvisionnement** cherche à couvrir les besoins. Le **stockage** garde les pièces disponibles. L’**intralogistique** organise leur circulation dans le site. La **production** transforme ou assemble, tandis que la **distribution** remet le produit au client. Les retours et déchets sont orientés vers la filière prévue.\n\n### 10.6 Indicateurs (KPI)\n\nUn **indicateur clé de performance (KPI)** sert à comparer des résultats sur un périmètre défini. Le **taux de service** suit les demandes satisfaites. La **rotation des stocks** compare sorties et stock moyen. Le **taux de rebut** mesure la part écartée. Un **besoin net** tient compte du stock utilisable et des entrées attendues à temps. Par exemple 50 pièces demandées, 20 disponibles et une réception confirmée de 10 donnent un besoin net de 20 pièces.",
+  "visuals": [
+    {
+      "anchor": "10.2 Objectifs et tâches",
+      "summaryAnchor": "10.1 et 10.2 Les tâches de l’entrepôt",
+      "file": "log-103-preparation-photo-v002.webp",
+      "path": "assets/logistique/100/103/commun/log-103-preparation-photo-v002.webp",
+      "alt": "Une préparatrice contrôle la pièce et le bon associés à la commande.",
+      "caption": "En préparation, rapprocher le produit physique des informations de la commande.",
+      "sha256": "5e3fa2d9a2ac170e487329e7c996e180ee4b4fdeb9050e7f5803402f77eb2e50",
+      "origin": "Mise en scène photoréaliste originale générée pour Doc-Prof."
+    },
+    {
+      "anchor": "10.4.2 Données de mouvement (Transaction Data) — dynamiques",
+      "summaryAnchor": "10.4 Données statiques et dynamiques (ERP)",
+      "file": "log-110-mouvement-photo-v002.webp",
+      "alt": "Le terminal de l’opératrice enregistre dans quel rayon elle range le colis.",
+      "caption": "Le rangement produit une donnée de mouvement. La référence article reste la même.",
+      "sha256": "bdf4d5dfa197fb3866ace522f2353e666afc580962d6d94cf0609af941dc611d",
+      "origin": "Mise en scène photoréaliste originale générée pour Doc-Prof."
+    }
+  ]
+}

@@ -79,6 +79,16 @@ import { module809 } from './banks/module-809-v001.generated.ts'
 import { module901 } from './banks/module-901-v001.generated.ts'
 import { module902 } from './banks/module-902-v001.generated.ts'
 import { illustratedReferences } from './banks/references-v002.generated.ts'
+import { module100 as theory100 } from './banks/module-100-v002.generated.ts'
+import { module102 as theory102 } from './banks/module-102-v002.generated.ts'
+import { module103 as theory103 } from './banks/module-103-v002.generated.ts'
+import { module104 as theory104 } from './banks/module-104-v002.generated.ts'
+import { module105 as theory105 } from './banks/module-105-v002.generated.ts'
+import { module106 as theory106 } from './banks/module-106-v002.generated.ts'
+import { module107 as theory107 } from './banks/module-107-v002.generated.ts'
+import { module108 as theory108 } from './banks/module-108-v002.generated.ts'
+import { module109 as theory109 } from './banks/module-109-v002.generated.ts'
+import { module110 as theory110 } from './banks/module-110-v002.generated.ts'
 import { module101 as theory101 } from './banks/module-101-v002.generated.ts'
 import { module306 as theory306 } from './banks/module-306-v002.generated.ts'
 import { module407 as theory407 } from './banks/module-407-v002.generated.ts'
@@ -192,6 +202,15 @@ const publication_901_v001: LogistiquePublication = {
 }
 const photoTheories = [...theory101, ...theory306, ...theory407, ...theory409]
 const photoTheoryIds = new Set<string>(photoTheories.map(({ id }) => id))
+const firstPhotoPublication: LogistiquePublication = {
+  revision: 'logistique-theories-101-306-407-409-v002',
+  units: [...publication_901_v001.units.filter(({ id }) => !photoTheoryIds.has(id)), ...photoTheories],
+}
+const remainingFoundationTheories = [
+  ...theory100, ...theory102, ...theory103, ...theory104, ...theory105, ...theory106,
+  ...theory107, ...theory108, ...theory109, ...theory110,
+]
+const foundationTheoryIds = new Set<string>(remainingFoundationTheories.map(({ id }) => id))
 
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
@@ -245,9 +264,10 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   publication_801_802_803_804_v001,
   publication_806_807_808_809_v001,
   publication_901_v001,
+  firstPhotoPublication,
   {
-    revision: 'logistique-theories-101-306-407-409-v002',
-    units: [...publication_901_v001.units.filter(({ id }) => !photoTheoryIds.has(id)), ...photoTheories],
+    revision: 'logistique-theories-fondations-v002',
+    units: [...firstPhotoPublication.units.filter(({ id }) => !foundationTheoryIds.has(id)), ...remainingFoundationTheories],
   },
 ]
 

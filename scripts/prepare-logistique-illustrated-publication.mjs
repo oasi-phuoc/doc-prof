@@ -1,5 +1,5 @@
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
-import { insertLogistiqueFigures, moduleIntroduction } from './logistique-reference-blocks.mjs'
+import { insertLogistiqueFigures, moduleIntroduction, readLogistiqueGeneratedBank } from './logistique-reference-blocks.mjs'
 
 const root = new URL('../', import.meta.url)
 const read = (path) => readFileSync(new URL(path, root), 'utf8')
@@ -8,11 +8,7 @@ const catalogue = JSON.parse(read('src/logistique/curriculum.generated.json'))
 
 const units = modules.flatMap(({ module, base, overview, figures }) => {
   const path = 'src/logistique/banks/module-' + base + '.generated.ts'
-  const raw = read(path)
-  const start = raw.indexOf(' = [')
-  const stop = raw.lastIndexOf('] satisfies readonly LogistiqueUnit[]')
-  if (start < 0 || stop < 0) throw new Error('Banque de départ illisible : ' + path)
-  const theory = JSON.parse(raw.slice(start + 3, stop + 1)).find((unit) => unit.kind === 'theorie')
+  const theory = readLogistiqueGeneratedBank(new URL(path, root)).find((unit) => unit.kind === 'theorie')
   const course = theory?.blocks.findIndex((block) => block.kind === 'heading' && /^\d+\.\s/.test(block.text))
   if (theory?.module !== module || course < 1) throw new Error('Début du cours introuvable : ' + module)
 

@@ -1,6 +1,6 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { theoryBlocks } from './logistique-theory-blocks.mjs'
-import { insertLogistiqueFigures, moduleIntroduction } from './logistique-reference-blocks.mjs'
+import { insertLogistiqueFigures, moduleIntroduction, readLogistiqueGeneratedBank } from './logistique-reference-blocks.mjs'
 
 const root = new URL('../', import.meta.url)
 const revision = process.argv[2] ?? ''
@@ -14,13 +14,17 @@ const catalogEntry = curriculum.modules.find((entry) => entry.code === code)
 if (!catalogEntry) throw new Error(`Module absent du catalogue : ${code}`)
 
 const editorial = readJson(`docs/logistique/preparation/${revision}.json`)
+const baseTheory = editorial.baseTheory
+if (baseTheory && (!editorial.theoryOnly || editorial.replacements.length || !/^[a-z0-9-]+$/.test(baseTheory))) {
+  throw new Error('La théorie de départ doit désigner une banque publiée sans remplacement textuel : ' + code)
+}
 const archive = readJson(`docs/logistique/sources-epcas/${catalogEntry.theme}.generated.json`)
 const source = archive.modules.find((entry) => entry.module === code)
 const original = new URL(`docs/logistique/preparation/${revision}.md`, root)
 const pages = source?.pages.theorie
   ? Object.fromEntries(['objectifs', 'apercu', 'theorie'].map((page) => [page, source.pages[page]?.full ?? '']))
   : { theorie: existsSync(original) ? readFileSync(original, 'utf8').trim() : '' }
-if (!pages.theorie) throw new Error(`Théorie source ou cours original absent : ${code}`)
+if (!baseTheory && !pages.theorie) throw new Error(`Théorie source ou cours original absent : ${code}`)
 for (const { page = 'theorie', from, to, reason } of editorial.replacements) {
   if (!reason || !from || pages[page]?.split(from).length !== 2) {
     throw new Error(`Correction introuvable ou ambiguë dans ${code} / ${page} : ${from}`)
@@ -29,11 +33,15 @@ for (const { page = 'theorie', from, to, reason } of editorial.replacements) {
 }
 
 const legacyCombinedReference = editorial.legacyCombinedReference === true
-const introduction = legacyCombinedReference ? [] : [moduleIntroduction(
+const introduction = editorial.theoryOnly || legacyCombinedReference ? [] : [moduleIntroduction(
   theoryBlocks(editorial.objectives ?? pages.objectifs ?? ''),
   theoryBlocks(editorial.overview ?? pages.apercu ?? ''),
 )]
-const reference = legacyCombinedReference ? Object.values(pages).filter(Boolean).flatMap(theoryBlocks) : theoryBlocks(pages.theorie)
+const reference = baseTheory
+  ? readLogistiqueGeneratedBank(new URL(`src/logistique/banks/${baseTheory}.generated.ts`, root))
+    .find((unit) => unit.module === code && unit.kind === 'theorie')?.blocks.filter((block) => block.kind !== 'image')
+  : legacyCombinedReference ? Object.values(pages).filter(Boolean).flatMap(theoryBlocks) : theoryBlocks(pages.theorie)
+if (!reference?.length) throw new Error('Cours de départ introuvable : ' + code)
 const figures = editorial.visuals ?? (editorial.visual ? [editorial.visual] : [])
 if (!legacyCombinedReference && figures.length === 0) throw new Error('Illustrations de la théorie absentes : ' + code)
 const scope = editorial.diplomas.length === 1 ? editorial.diplomas[0].toLowerCase() : 'commun'
