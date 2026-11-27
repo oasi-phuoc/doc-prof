@@ -309,7 +309,8 @@ test('les tableaux de données et de dates renvoient au cours et gardent le tira
 test('les exercices des acquis couvrent tous les modules avec des questions distinctes et une référence au cours', () => {
   const kinds = ['maths', 'verification', 'situation']
   const previous = logistiquePublications.find(({ revision }) => revision === 'logistique-palettes-et-stockage-v005')
-  const added = currentLogistiquePublication.units.filter(({ revision }) => revision === 'acquis-v008')
+  const publication = logistiquePublications.find(({ revision }) => revision === 'logistique-exercices-acquis-v008')
+  const added = publication.units.filter(({ revision }) => revision === 'acquis-v008')
   assert.equal(added.length, 286)
   const normalize = (text) => text.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase()
     .replace(/[^a-z0-9]+/g, ' ').trim()
@@ -328,7 +329,7 @@ test('les exercices des acquis couvrent tous les modules avec des questions dist
     const relevant = added.filter((unit) => unit.module === module && unit.kind === kind && unit.approvedFor.includes(diploma))
     assert(relevant.length, `${diploma} ${module} ${kind}`)
     const page = { ...config(diploma, module, kind), count: 999 }
-    const { items, bankQuestionCap } = generateLogistique(page, 20261127)
+    const { items, bankQuestionCap } = generateLogistique({ ...page, logistiqueBankRevision: publication.revision }, 20261127)
     const old = generateLogistique({ ...page, logistiqueBankRevision: previous.revision }, 20261127)
     assert.equal(items.length, bankQuestionCap)
     assert.equal(items.length, old.items.length + relevant.length)
@@ -574,6 +575,52 @@ test('les questions locales sont imprimables et protégées même avec un filtre
   const qcm = newLogistiqueQuestion('100', 'verification', true)
   assert(!reviewableLogistiqueAnswer({ ...qcm, prompt: 'Quel colis reste en réserve ?', answer: 'A' }))
   assert(reviewableLogistiqueAnswer({ ...qcm, prompt: 'Quel colis reste en réserve ?', options: ['Le bleu, fermé', 'Le rouge'], answer: 'Le bleu, fermé' }))
+})
+
+test('les réponses simples, les listes numérotées et les QCM tirent les unités compatibles du diplôme', () => {
+  const authored = currentLogistiquePublication.units.filter((unit) => unit.revision === 'reponses-v009')
+  assert.equal(authored.length, 22)
+  for (const unit of authored) {
+    const course = currentLogistiquePublication.units.find(({ module, kind }) => module === unit.module && kind === 'theorie')
+    assert(course?.blocks.some((block) => block.kind === 'heading' && block.text === unit.theorySection), unit.id)
+    for (const diploma of unit.approvedFor) {
+      const presentation = unit.options ? 'qcm' : 'lignes-numerotees'
+      const page = { ...config(diploma, unit.module, 'verification'), logistiquePresentation: presentation }
+      const result = generateLogistique(page, 37)
+      assert.equal(result.bankQuestionCap, 1)
+      assert.equal(result.items[0].logistiqueSource.id, unit.id)
+      if (presentation === 'qcm') {
+        assert.equal(new Set(result.items[0].options).size, 4)
+        assert(result.items[0].options.includes(result.items[0].answer), unit.id)
+      } else {
+        assert.deepEqual(result.items[0].logistiqueResponseLines.answers, unit.numberedAnswers)
+        assert.equal(result.items[0].logistiqueResponseLines.ordered, unit.orderedAnswers)
+      }
+      assert(validLogistiquePages([{ ...page, libreItems: result.items }]))
+      assert.equal(generateLogistique({ ...page, logistiqueBankRevision: 'logistique-theorie-103-v004' }, 37).bankQuestionCap, 0)
+    }
+  }
+  const simple = { ...config('AFP', '105', 'verification'), logistiquePresentation: 'lignes-simples', count: 4 }
+  assert(generateLogistique(simple, 7).items.every((item) =>
+    item.layout === 'text' && item.logistiqueResponseLines.count === 2 && !item.logistiqueGaps && !item.logistiqueTable))
+  assert.equal(validLogistiquePages([{ ...config('AFP', '105', 'maths'), logistiquePresentation: 'qcm' }]), false)
+})
+
+test('les formats de comparaison, classement et ordre conservent les données et la correction du tableau', () => {
+  const authored = currentLogistiquePublication.units.filter((unit) => unit.revision === 'structures-v009')
+  assert.equal(authored.length, 9)
+  for (const unit of authored) {
+    const course = currentLogistiquePublication.units.find(({ module, kind }) => module === unit.module && kind === 'theorie')
+    assert(course?.blocks.some((block) => block.kind === 'heading' && block.text === unit.theorySection), unit.id)
+    assert(validLogistiqueExerciseTable(unit.table), unit.id)
+    for (const diploma of unit.approvedFor) {
+      const page = { ...config(diploma, unit.module, unit.kind), logistiquePresentation: unit.table.presentation }
+      const draw = generateLogistique(page, 23)
+      assert.equal(draw.bankQuestionCap, 1, unit.id)
+      assert.deepEqual(draw.items[0].logistiqueTable, unit.table)
+      assert(validLogistiquePages([{ ...page, libreItems: draw.items }]))
+    }
+  }
 })
 
 test('les questions restent dans l’ordre et partagent les pages sauf saut manuel', () => {

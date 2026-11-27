@@ -1,4 +1,5 @@
-export type LogistiqueTablePresentation = 'tableau-donnees' | 'tableau-dates'
+export type LogistiqueTablePresentation =
+  | 'tableau-donnees' | 'tableau-dates' | 'tableau-comparaison' | 'tableau-classement' | 'tableau-ordre'
 export type LogistiqueTableCell = string | { answer: string }
 
 export type LogistiqueExerciseTable = {
@@ -8,7 +9,8 @@ export type LogistiqueExerciseTable = {
 }
 
 export function isLogistiqueTablePresentation(value: unknown): value is LogistiqueTablePresentation {
-  return value === 'tableau-donnees' || value === 'tableau-dates'
+  return value === 'tableau-donnees' || value === 'tableau-dates' ||
+    value === 'tableau-comparaison' || value === 'tableau-classement' || value === 'tableau-ordre'
 }
 
 function isLogistiqueTableCell(value: unknown): value is LogistiqueTableCell {

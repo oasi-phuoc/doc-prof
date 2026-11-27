@@ -429,7 +429,11 @@ export type DivisionStep = {
 }
 
 export type LogistiqueGapMode = 'sans-liste' | 'avec-liste'
-export type LogistiquePresentation = LogistiqueGapMode | import('@/logistique/tables').LogistiqueTablePresentation
+export type LogistiqueResponsePresentation = 'qcm' | 'lignes-simples' | 'lignes-numerotees'
+export type LogistiquePresentation = LogistiqueGapMode | LogistiqueResponsePresentation | import('@/logistique/tables').LogistiqueTablePresentation
+export type LogistiqueResponseLines =
+  | { kind: 'simple'; count: number }
+  | { kind: 'numbered'; answers: string[]; ordered?: boolean }
 export type LogistiqueGaps = { answers: string[]; words?: string[]; distractors?: string[] }
 export type LogistiqueGlossaryFigure = { src: string; alt: string; caption?: string }
 export type LogistiqueQuestionImage = {
@@ -470,6 +474,7 @@ export type MathItem = {
   /** Question ajoutée en Libre et conservée par les nouveaux tirages. */
   logistiqueRetained?: boolean
   logistiqueGaps?: LogistiqueGaps
+  logistiqueResponseLines?: LogistiqueResponseLines
   logistiqueTable?: import('@/logistique/tables').LogistiqueExerciseTable
   logistiqueImage?: LogistiqueQuestionImage
   logistiqueGlossaryFigure?: LogistiqueGlossaryFigure

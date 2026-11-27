@@ -180,7 +180,10 @@ export function LibreActivityEditor({
       const source = item.logistiqueSource
       if (!source) return undefined
       const presentation = item.logistiqueTable?.presentation ??
-        (item.logistiqueGaps ? item.logistiqueGaps.words ? 'avec-liste' : 'sans-liste' : undefined)
+        (item.logistiqueGaps ? item.logistiqueGaps.words ? 'avec-liste' : 'sans-liste'
+          : item.logistiqueResponseLines?.kind === 'simple' ? 'lignes-simples'
+          : item.logistiqueResponseLines?.kind === 'numbered' ? 'lignes-numerotees'
+          : item.options?.length ? 'qcm' : undefined)
       return logistiqueQuestionItems(logistiqueQuestionType, [source.module], activeBlock.logistiqueBankRevision, presentation)
         .find((entry) => entry.logistiqueSource?.id === source.id)
     },

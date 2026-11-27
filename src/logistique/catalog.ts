@@ -1,4 +1,4 @@
-import type { Domain, ExerciseBlock, ExerciseType, LogistiqueQuestionImage, Topic } from '@/math/types'
+import type { Domain, ExerciseBlock, ExerciseType, LogistiqueQuestionImage, LogistiqueResponseLines, Topic } from '@/math/types'
 import curriculum from './curriculum.generated.json'
 import { validLogistiqueGaps } from './gaps'
 import { isLogistiqueTablePresentation, validLogistiqueExerciseTable } from './tables'
@@ -125,9 +125,21 @@ export function logistiquePresentationFor(block: Pick<ExerciseBlock, 'logistique
 }
 
 export function validLogistiquePresentation(type: LogistiqueType, presentation: unknown): boolean {
-  return isLogistiqueTablePresentation(presentation)
-    ? type.kind === 'maths' || type.kind === 'verification'
-    : validLogistiqueGapMode(type, presentation)
+  if (isLogistiqueTablePresentation(presentation)) return type.kind === 'verification' || type.kind === 'situation' ||
+    (type.kind === 'maths' && (presentation === 'tableau-donnees' || presentation === 'tableau-dates'))
+  if (presentation === 'qcm' || presentation === 'lignes-simples' || presentation === 'lignes-numerotees') {
+    return type.kind === 'verification'
+  }
+  return validLogistiqueGapMode(type, presentation)
+}
+
+function validResponseLines(value: unknown): value is LogistiqueResponseLines {
+  if (!value || typeof value !== 'object') return false
+  const lines = value as LogistiqueResponseLines
+  if (lines.kind === 'simple') return Number.isInteger(lines.count) && lines.count >= 1 && lines.count <= 8
+  return lines.kind === 'numbered' && Array.isArray(lines.answers) && lines.answers.length >= 2 && lines.answers.length <= 8 &&
+    lines.answers.every((text) => typeof text === 'string') &&
+    (lines.ordered === undefined || typeof lines.ordered === 'boolean')
 }
 
 export function logistiquePhotoPath(src: unknown, diploma?: LogistiqueDiploma): src is string {
@@ -180,8 +192,11 @@ export function validLogistiqueCataloguePages(pages: readonly CataloguePage[]): 
           subthemes.some(({ code, diploma }) =>
             code === item.logistiqueLocalModule && diploma === type.diploma))) &&
         (item?.logistiqueImage === undefined || validLogistiqueQuestionImage(item.logistiqueImage, type.diploma)) &&
+        (item?.logistiqueResponseLines === undefined || (type.kind === 'verification' && item.layout === 'text' &&
+          !item.logistiqueGaps && !item.logistiqueTable && validResponseLines(item.logistiqueResponseLines))) &&
         (item?.logistiqueTable === undefined || (
-          (type.kind === 'maths' || type.kind === 'verification') && !item.logistiqueGaps && validLogistiqueExerciseTable(item.logistiqueTable))) &&
+          !item.logistiqueGaps && validLogistiqueExerciseTable(item.logistiqueTable) &&
+          validLogistiquePresentation(type, item.logistiqueTable.presentation))) &&
         (item?.logistiqueGaps === undefined || (type.kind === 'verification' && validLogistiqueGaps(item.prompt, item.logistiqueGaps)))) &&
       (view === undefined || (type.kind === 'theorie' && (view === 'complet' || view === 'resume')))
   }

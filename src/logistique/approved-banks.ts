@@ -268,6 +268,7 @@ import {
   palletAndStorageFigures, palletAndStorageTerms, storageArrangementFigures, storageArrangementTerms,
 } from './banks/glossaires-palettes-stockage-v004'
 import { logistiqueAcquisitionExercises } from './banks/acquis-v008'
+import { logistiqueResponseExercises, logistiqueStructuredExercises } from './banks/reponses-v009'
 import type { LogistiqueExerciseTable } from './tables'
 import type { LogistiqueGlossaryFigure } from '@/math/types'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
@@ -282,8 +283,9 @@ type UnitContent =
   | { kind: 'theorie'; blocks: ReferenceBlock[]; summaryBlocks?: ReferenceBlock[] }
   | { kind: 'maths'; prompt: string; calculation: string; answer: string; theorySection?: string; table?: LogistiqueExerciseTable }
   | { kind: 'verification'; prompt: string; answer: string; options?: readonly string[]; theorySection?: string;
-      gaps?: { answers: readonly string[]; distractors?: readonly string[] }; table?: LogistiqueExerciseTable }
-  | { kind: 'situation'; prompt: string; answer: string; theorySection?: string }
+      gaps?: { answers: readonly string[]; distractors?: readonly string[] }; table?: LogistiqueExerciseTable;
+      numberedAnswers?: readonly string[]; orderedAnswers?: boolean }
+  | { kind: 'situation'; prompt: string; answer: string; theorySection?: string; table?: LogistiqueExerciseTable }
 
 export type LogistiqueUnit = UnitContent & {
   id: string
@@ -754,6 +756,10 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   glossaryTablesPublication,
   historyMapsPublication,
   illustratedObjectivesPublication,
+  {
+    revision: 'logistique-reponses-v009',
+    units: [...illustratedObjectivesPublication.units, ...logistiqueResponseExercises, ...logistiqueStructuredExercises],
+  },
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!
