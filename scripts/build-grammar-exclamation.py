@@ -1,22 +1,22 @@
-"""Compile the complete c4 A1/A2 pilot from 100 individually authored scenes."""
+"""Compile the c4 A1/A2 pilot from authored scenes."""
 import csv,json,hashlib
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'scripts/grammar_curriculum'
-REV='exclamation-2026-11-23-v1'
+REV='exclamation-2026-11-27-v2'
 RUBRIC=[{'id':str(i+1),'label':t} for i,t in enumerate(['Exclamation adaptée à la situation.','Construction et accords compréhensibles.','Intonation expressive et respectueuse.','Réponse cohérente avec le rôle et les faits.','Raison simple donnée lorsque la consigne la demande.'])]
 def rows(name,width):
  result=list(csv.reader((SOURCE/name).read_text().splitlines(),delimiter='|'))
  result=[r for r in result if r and not r[0].startswith('#')]
- assert len(result)==50 and len({r[0] for r in result})==50
+ assert len(result)==60 and len({r[0] for r in result})==60
  assert all(len(r)==width for r in result)
  return result
 A1=rows('exclamation-a1.tsv',4);A2=rows('exclamation-a2.tsv',6)
 def unit(aid,level,slug,index,prompt,answers,explanation,**extra):
  return dict(id=f'{aid}-{level.lower()}-{slug}',prompt=prompt,answers=answers,explanation=explanation,source=dict(path=f'scripts/grammar_curriculum/exclamation-{level.lower()}.tsv',typeId=aid,position=index,partition=level.lower()),**extra)
 def make_bank(aid,level,label,forms,instructions,units):
- assert len(units)==50
- return dict(schemaVersion=1,revision=REV,activityId=aid,subthemeId='c4',topic='gram-exclamation',level=level,label=label,objective='Reconnaître l’exclamation, accorder quel et réagir avec une formule simple.' if level=='A1' else 'Reformuler pour exprimer une émotion, choisir une construction et expliquer sa réaction.',editorialStatus='reviewed',review=dict(reviewer='Codex — revue linguistique et fonctionnelle',date='2026-11-23',humanReview='pending',note='100 scènes rédigées, variantes comme/que admises, erreur initiale unique et modèles non exclusifs. Validation enseignante en attente.'),presentations=forms,instructions=instructions,units=units)
+ assert len(units)==60
+ return dict(schemaVersion=1,revision=REV,activityId=aid,subthemeId='c4',topic='gram-exclamation',level=level,label=label,objective='Reconnaître l’exclamation, accorder quel et réagir avec une formule simple.' if level=='A1' else 'Reformuler pour exprimer une émotion, choisir une construction et expliquer sa réaction.',editorialStatus='reviewed',review=dict(reviewer='Codex — revue linguistique et fonctionnelle',date='2026-11-27',humanReview='pending',note='60 scènes par niveau. Variantes comme/que admises, erreur initiale unique et modèles non exclusifs. Validation enseignante en attente.'),presentations=forms,instructions=instructions,units=units)
 def options(answer,others,identity):
  # IDs carry no fixed correct-answer position across the bank.
  return [dict(id='forme-'+hashlib.sha256((identity+'|'+t).encode()).hexdigest()[:10],text=t) for t in [answer]+[t for t in others if t!=answer]]

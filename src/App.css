@@ -2083,6 +2083,57 @@ html.is-margin-symmetric .print-only-sheets .worksheet-sheet.sheet-even .draft-g
 .logistique-gaps .prompt-stack-text{white-space:pre-wrap;line-height:1.7}
 .logistique-words{margin:0;font-size:.9em;line-height:1.55}
 .logistique-words strong{display:block}
+.logistique-words small{display:block}
+.logistique-gap-editor{display:grid;gap:6px}
+.logistique-glossary-table{
+  --theory-size:calc(12pt * var(--app-font-scale,1));table-layout:fixed;line-height:1.4;overflow-wrap:anywhere
+}
+.logistique-glossary-table .logistique-glossary-image-col{width:25%}
+.logistique-glossary-table .logistique-glossary-term-col{width:23%}
+.logistique-glossary-table tbody th,.logistique-glossary-table tbody td{vertical-align:middle}
+.logistique-glossary-table tbody tr{break-inside:avoid}
+.logistique-glossary-table figure{margin:0}
+.logistique-glossary-table img{display:block;width:100%;height:76px;object-fit:contain}
+.logistique-glossary-table figcaption{font-size:.78em;line-height:1.24;margin-top:3px}
+.logistique-glossary-table tbody th{position:relative}
+.logistique-glossary-break{position:absolute;inset:auto 4px 3px auto}
+.logistique-glossary-break[aria-pressed='true']{color:var(--purple);background:var(--lavender)}
+.a5-half .logistique-glossary-table{--theory-size:calc(10.5pt * var(--app-font-scale,1))}
+.a5-half .logistique-glossary-table .logistique-glossary-image-col{width:26%}
+.a5-half .logistique-glossary-table th,.a5-half .logistique-glossary-table td{padding:3px 5px}
+.a5-half .logistique-glossary-table img{height:61px}
+.logistique-table-editor>summary{cursor:pointer;font-weight:600}
+.logistique-table-editor fieldset{display:grid;gap:6px;min-width:0;margin:8px 0 0;padding:6px;border:1px solid var(--line)}
+.logistique-exercise-table{
+  --theory-size:calc(12pt * var(--app-font-scale,1));table-layout:fixed;break-inside:avoid;overflow-wrap:anywhere
+}
+.logistique-table-blank{display:block;min-height:1.2em}
+.logistique-table-note{font-size:calc(13px * var(--app-font-scale,1));line-height:1.4}
+.a5-half .exercise-block:has(.logistique-exercise-table){
+  --app-font-scale:min(var(--sheet-font-scale,1),1.125);font-size:calc(11pt * var(--app-font-scale,1))
+}
+.a5-half .logistique-exercise-table{--theory-size:calc(10.5pt * var(--app-font-scale,1));line-height:1.22}
+.a5-half .logistique-exercise-table th,.a5-half .logistique-exercise-table td{padding:2px 5px}
+.a5-half .exercise-block:has(.has-logistique-table) .exercise-heading{margin-bottom:8px}
+.a5-half .exercise-item:has(.has-logistique-table){padding-bottom:6px;margin-bottom:0}
+.a5-half .has-logistique-table{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:6px 12px}
+.a5-half .has-logistique-table>:not(.problem-field,.problem-response-line){grid-column:1 / -1}
+.a5-half .has-logistique-table .draft-pad{min-height:56px}
+.a5-half .has-logistique-table .draft-pad:has(.draft-pad-answer){
+  aspect-ratio:auto;overflow:visible
+}
+.a5-half .has-logistique-table .draft-pad-answer{
+  padding:4px 5px;font-size:calc(12px * var(--app-font-scale,1));line-height:1.25
+}
+.a5-half .has-logistique-table .problem-response-line{
+  flex-direction:column;align-items:stretch;gap:4px;margin:0;padding:0
+}
+.a5-half .has-logistique-table .response-value{
+  flex:0 0 auto;font-size:calc(13px * var(--app-font-scale,1));line-height:1.35
+}
+.a5-half .has-logistique-table .problem-response-line .answer-line-field{
+  flex:0 0 auto;min-height:43px;background:linear-gradient(to bottom,var(--ink),var(--ink)) no-repeat 0 50% / 100% 1px
+}
 .logistique-image-fields>summary{cursor:pointer;font-weight:600}
 .logistique-image-fields[open]>:not(summary){margin-top:8px}
 .logistique-image-thumbnail{display:block;max-width:120px;max-height:74px;object-fit:contain}
@@ -2097,6 +2148,7 @@ html.is-margin-symmetric .print-only-sheets .worksheet-sheet.sheet-even .draft-g
 .mode-toggle{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:4px;border-radius:12px;background:#f4f2ef}
 .mode-toggle button{border:0;border-radius:9px;padding:10px 8px;background:transparent;color:var(--muted);font-size:calc(13px * var(--app-font-scale, 1));font-weight:700}
 .mode-toggle button.active{background:var(--purple);color:var(--theme-on,#fff);box-shadow:none}
+.phrase-polarity-toggle button:disabled{opacity:.45;cursor:not-allowed}
 .mode-toggle.is-tabs{
   display:flex;flex-wrap:wrap;grid-template-columns:unset;
   align-items:center;width:fit-content;max-width:100%;gap:6px
@@ -5344,7 +5396,7 @@ textarea.pill-input,
 .worksheet-settings-list{display:grid;gap:6px}
 .worksheet-settings-row{display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap}
 .worksheet-settings-row>div{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
-.worksheet-settings-row .draft-grid-chip-margin{position:static;transform:none;max-width:none}
+.worksheet-settings-row :is(.draft-grid-chip-margin,.logistique-glossary-break){position:static;transform:none;max-width:none}
 .worksheet-settings-row .draft-grid-chip-margin.tcf-margin-form-icons{flex-direction:row;max-width:none}
 .worksheet-settings-row button{min-width:32px;min-height:32px}
 /* Fermer panneau latéral (pied / libre). */
@@ -6686,3 +6738,51 @@ textarea.pill-input,
 .math-graph-series polyline{fill:none;stroke:#263e70;stroke-width:1.6}
 .math-graph-series circle{fill:#263e70}
 .math-table-and-graph table{margin:0;font-size:.84em}
+
+.math-spatial-practice{display:grid;gap:2.5mm}
+.math-spatial-practice figure,.math-spatial-practice p{margin:0}
+.math-spatial-figure{width:min(97mm,100%);justify-self:center;padding-left:4mm}
+.math-spatial-figure>figcaption{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5mm;gap:4mm}
+.math-spatial-figure>figcaption span{font-size:.8em}
+.math-spatial-map{position:relative;isolation:isolate;aspect-ratio:6/5;border:.25mm solid #53636f}
+.math-spatial-map>img{width:100%;height:100%;display:block;print-color-adjust:exact}
+.math-spatial-grid,.math-spatial-overlay{position:absolute;inset:0;pointer-events:none}
+.math-spatial-grid{display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(5,1fr)}
+.math-spatial-grid>div{min-width:0;display:flex;align-items:flex-end;justify-content:center;border-right:.2mm solid #53636f;border-bottom:.2mm solid #53636f;padding-bottom:.7mm}
+.math-spatial-grid>div span{padding:0 .5mm;color:#182638;background:#fff;font-size:8pt;line-height:1.18;text-align:center;max-width:100%;overflow-wrap:anywhere;print-color-adjust:exact}
+.math-spatial-cols,.math-spatial-rows{position:absolute;display:grid;text-align:center;font-size:8.5pt;font-weight:700}
+.math-spatial-cols{inset:auto 0 100%;grid-template-columns:repeat(6,1fr)}
+.math-spatial-rows{inset:0 100% 0 auto;width:4mm;align-items:center;grid-template-rows:repeat(5,1fr)}
+.math-spatial-camera{position:absolute;line-height:1.2;padding:.3mm .9mm;border:.25mm solid #242b35;background:#fff;color:#131e30;font-size:8pt;font-weight:700;z-index:1;white-space:nowrap;print-color-adjust:exact}
+.math-spatial-camera.point-A{top:1%;left:50%;transform:translateX(-50%)}
+.math-spatial-camera.point-B{top:50%;right:1%;transform:translateY(-50%)}
+.math-spatial-camera.point-C{bottom:1%;left:50%;transform:translateX(-50%)}
+.math-spatial-camera.point-D{top:50%;left:1%;transform:translateY(-50%)}
+.math-spatial-route,.math-spatial-route-end,.math-spatial-mark{position:absolute;z-index:1}
+.math-spatial-route.horizontal{width:calc(100% / 6);border-top:.7mm dashed #1d3455;transform:translateY(-50%)}
+.math-spatial-route.vertical{height:20%;border-left:.7mm dashed #1d3455;transform:translateX(-50%)}
+.math-spatial-route-end{width:2mm;height:2mm;border:.6mm solid #1d3455;border-radius:50%;background:#fff;transform:translate(-50%,-50%);print-color-adjust:exact}
+.math-spatial-mark{transform:translate(-50%,-50%);color:#172a45;font-size:24pt;line-height:1;text-shadow:0 0 2px #fff}
+.math-spatial-view-list,.math-spatial-stack-list{display:flex;justify-content:center;gap:3mm;flex-wrap:wrap}
+.math-spatial-view-list figure,.math-spatial-stack-list figure{text-align:center;font-size:.83em}
+.math-spatial-view-list img{width:42mm;height:auto;display:block;border:.2mm solid #53636f}
+.math-spatial-stacks{border-collapse:collapse;margin:0 auto}
+.math-spatial-stacks td{border:.2mm solid #53636f;width:6mm;height:6mm;text-align:center;padding:0}
+.math-spatial-stacks td.is-occupied{background:#d4dce6;print-color-adjust:exact}
+.math-spatial-questions{display:grid;gap:1.5mm}
+.math-spatial-questions p{text-align:justify}
+.math-spatial-view-list.is-solids img{width:29mm;border:0}
+.math-spatial-stack-list .math-square-grid td{width:3.7mm;height:3.7mm}
+
+.grammar-co-true-false{width:100%;border-collapse:collapse;margin-top:3mm;font-size:.91em}
+.grammar-co-true-false thead{display:table-header-group}
+.grammar-co-true-false tr{break-inside:avoid}
+.grammar-co-true-false th,.grammar-co-true-false td{border:.25mm solid #78818a;padding:2mm}
+.grammar-co-true-false tbody th{font-weight:400;text-align:left}
+.grammar-co-true-false tbody small{display:block;color:#394758;line-height:1.35;margin-top:1mm}
+.grammar-co-true-false td,.grammar-co-true-false thead th:not(:first-child){width:14mm;text-align:center}
+.grammar-co-checkbox{display:inline-grid;place-items:center;width:5mm;height:5mm;border:.3mm solid #444b56;font-weight:700;line-height:1}
+
+.grammar-word-vocab{width:100%;margin:0;text-align:center}
+.grammar-word-vocab img{width:100%;height:30mm;object-fit:contain}
+.grammar-word-vocab figcaption{overflow-wrap:anywhere;font-size:.9em}

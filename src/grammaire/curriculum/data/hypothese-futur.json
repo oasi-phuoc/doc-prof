@@ -1,7 +1,7 @@
 [
   {
     "schemaVersion": 1,
-    "revision": "avenir-2026-11-24-v1",
+    "revision": "avenir-2026-11-27-v2",
     "activityId": "gram-ex-hypothese-futur-qcm-verbe",
     "subthemeId": "hypothese-futur",
     "topic": "gram-avenir",
@@ -11,7 +11,7 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-24",
+      "date": "2026-11-27",
       "humanReview": "pending",
       "note": "Sources et références relues. Situations partagées entre mécaniques ; documents adaptés avec faits explicites. Modèles ouverts non exclusifs. Aucune approbation enseignante déclarée."
     },
@@ -1573,12 +1573,322 @@
           }
         ],
         "explanation": "J’achèterai est le futur simple ; la condition contient j’ai au présent. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé. Modèle : Si j’ai assez d’argent, j’achèterai le livre."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-qcm-verbe-a2-place-covoiturage",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-qcm-verbe",
+          "position": 50,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "S’il ___ une place, je lui proposerai de venir avec nous.",
+        "cue": "Un voisin cherche une place dans la voiture de notre groupe. S’il reste une place, je lui proposerai de venir avec nous. Employez le présent après si de condition et le futur simple dans la conséquence.",
+        "givenVerb": "rester",
+        "answers": [
+          "reste"
+        ],
+        "options": [
+          {
+            "id": "place-covoiturage-choix-1",
+            "text": "reste"
+          },
+          {
+            "id": "place-covoiturage-choix-2",
+            "text": "restera"
+          },
+          {
+            "id": "place-covoiturage-choix-3",
+            "text": "restait"
+          }
+        ],
+        "explanation": "Si s’élide devant il. Le verbe rester est ici au présent. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé. Modèle : S’il reste une place, je lui proposerai de venir avec nous."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-qcm-verbe-a2-reservation-salle",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-qcm-verbe",
+          "position": 51,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Si la commune nous ___ la salle, nous installerons les tables le matin.",
+        "cue": "Un concours se prépare. Nous installerons les tables le matin si la commune nous prête la salle. Employez le présent après si de condition et le futur simple dans la conséquence.",
+        "givenVerb": "prêter",
+        "answers": [
+          "prête"
+        ],
+        "options": [
+          {
+            "id": "reservation-salle-choix-1",
+            "text": "prête"
+          },
+          {
+            "id": "reservation-salle-choix-2",
+            "text": "prêtera"
+          },
+          {
+            "id": "reservation-salle-choix-3",
+            "text": "prêtait"
+          }
+        ],
+        "explanation": "Le présent prête exprime ici une condition qui peut se réaliser. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé. Modèle : Si la commune nous prête la salle, nous installerons les tables le matin."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-qcm-verbe-a2-dessin-expo",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-qcm-verbe",
+          "position": 52,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Si le centre ___ de les exposer, les artistes apporteront leurs dessins.",
+        "cue": "Des artistes attendent la réponse du centre. Ils apporteront leurs dessins si le centre accepte de les exposer. Employez le présent après si de condition et le futur simple dans la conséquence.",
+        "givenVerb": "accepter",
+        "answers": [
+          "accepte"
+        ],
+        "options": [
+          {
+            "id": "dessin-expo-choix-1",
+            "text": "accepte"
+          },
+          {
+            "id": "dessin-expo-choix-2",
+            "text": "acceptera"
+          },
+          {
+            "id": "dessin-expo-choix-3",
+            "text": "acceptait"
+          }
+        ],
+        "explanation": "Après si, le présent accepte exprime la condition possible. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé. Modèle : Si le centre accepte de les exposer, les artistes apporteront leurs dessins."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-qcm-verbe-a2-arrivee-donneur",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-qcm-verbe",
+          "position": 53,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Si la livraison ___ ce matin, la responsable distribuera le matériel avant la pause.",
+        "cue": "La responsable attend du matériel. Si la livraison arrive ce matin, elle le distribuera avant la pause. Employez le présent après si de condition et le futur simple dans la conséquence.",
+        "givenVerb": "arriver",
+        "answers": [
+          "arrive"
+        ],
+        "options": [
+          {
+            "id": "arrivee-donneur-choix-1",
+            "text": "arrive"
+          },
+          {
+            "id": "arrivee-donneur-choix-2",
+            "text": "arrivera"
+          },
+          {
+            "id": "arrivee-donneur-choix-3",
+            "text": "arrivait"
+          }
+        ],
+        "explanation": "Arrive est au présent dans la condition. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé. Modèle : Si la livraison arrive ce matin, la responsable distribuera le matériel avant la pause."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-qcm-verbe-a2-tri-apres-midi",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-qcm-verbe",
+          "position": 54,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Si le local ___ ouvert, nous reprendrons l’inventaire cet après-midi.",
+        "cue": "Nous reprendrons l’inventaire des outils cet après-midi, à condition que le local reste ouvert. Employez le présent après si de condition et le futur simple dans la conséquence.",
+        "givenVerb": "rester",
+        "answers": [
+          "reste"
+        ],
+        "options": [
+          {
+            "id": "tri-apres-midi-choix-1",
+            "text": "reste"
+          },
+          {
+            "id": "tri-apres-midi-choix-2",
+            "text": "restera"
+          },
+          {
+            "id": "tri-apres-midi-choix-3",
+            "text": "restait"
+          }
+        ],
+        "explanation": "Reste exprime une condition présente, encore possible. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé. Modèle : Si le local reste ouvert, nous reprendrons l’inventaire cet après-midi."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-qcm-verbe-a2-sortie-patinage",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-qcm-verbe",
+          "position": 55,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Si le club ouvre la petite patinoire, les jeunes ___ patiner dimanche.",
+        "cue": "Le groupe de jeunes pourra patiner dimanche si le club ouvre la petite patinoire. Employez le présent après si de condition et le futur simple dans la conséquence.",
+        "givenVerb": "pouvoir",
+        "answers": [
+          "pourront"
+        ],
+        "options": [
+          {
+            "id": "sortie-patinage-choix-1",
+            "text": "pourront"
+          },
+          {
+            "id": "sortie-patinage-choix-2",
+            "text": "peuvent"
+          },
+          {
+            "id": "sortie-patinage-choix-3",
+            "text": "pourraient"
+          }
+        ],
+        "explanation": "Pourront est au futur simple dans la conséquence. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé. Modèle : Si le club ouvre la petite patinoire, les jeunes pourront patiner dimanche."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-qcm-verbe-a2-sachet-etiquettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-qcm-verbe",
+          "position": 56,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Si les étiquettes sont imprimées avant midi, je ___ de préparer les sachets dans l’après-midi.",
+        "cue": "Si les étiquettes sont imprimées avant midi, je finirai de préparer les sachets dans l’après-midi. Employez le présent après si de condition et le futur simple dans la conséquence.",
+        "givenVerb": "finir",
+        "answers": [
+          "finirai"
+        ],
+        "options": [
+          {
+            "id": "sachet-etiquettes-choix-1",
+            "text": "finirai"
+          },
+          {
+            "id": "sachet-etiquettes-choix-2",
+            "text": "finis"
+          },
+          {
+            "id": "sachet-etiquettes-choix-3",
+            "text": "finirais"
+          }
+        ],
+        "explanation": "Finirai exprime la conséquence future avec je. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé. Modèle : Si les étiquettes sont imprimées avant midi, je finirai de préparer les sachets dans l’après-midi."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-qcm-verbe-a2-report-musique",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-qcm-verbe",
+          "position": 57,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Si le vent se lève, les musiciens ___ leur concert dans la salle du centre.",
+        "cue": "Le vent pourrait se lever. Dans ce cas, les musiciens déplaceront leur concert dans la salle du centre. Employez le présent après si de condition et le futur simple dans la conséquence.",
+        "givenVerb": "déplacer",
+        "answers": [
+          "déplaceront"
+        ],
+        "options": [
+          {
+            "id": "report-musique-choix-1",
+            "text": "déplaceront"
+          },
+          {
+            "id": "report-musique-choix-2",
+            "text": "déplacent"
+          },
+          {
+            "id": "report-musique-choix-3",
+            "text": "déplaceraient"
+          }
+        ],
+        "explanation": "Avec les musiciens, le futur de déplacer se termine par -ont. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé. Modèle : Si le vent se lève, les musiciens déplaceront leur concert dans la salle du centre."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-qcm-verbe-a2-file-restaurant",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-qcm-verbe",
+          "position": 58,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Si la table se libère, nous ___ notre repas près de la fenêtre.",
+        "cue": "Nous attendons une table près de la fenêtre. Si elle se libère, nous prendrons notre repas à cet endroit. Employez le présent après si de condition et le futur simple dans la conséquence.",
+        "givenVerb": "prendre",
+        "answers": [
+          "prendrons"
+        ],
+        "options": [
+          {
+            "id": "file-restaurant-choix-1",
+            "text": "prendrons"
+          },
+          {
+            "id": "file-restaurant-choix-2",
+            "text": "prenons"
+          },
+          {
+            "id": "file-restaurant-choix-3",
+            "text": "prendrions"
+          }
+        ],
+        "explanation": "Prendrons exprime une action future qui dépend d’une condition. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé. Modèle : Si la table se libère, nous prendrons notre repas près de la fenêtre."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-qcm-verbe-a2-passage-phare",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-qcm-verbe",
+          "position": 59,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Si le brouillard se dissipe, la guide ___ le phare pendant la visite.",
+        "cue": "La météo peut changer. Si le brouillard se dissipe, la guide montrera le phare pendant la visite. Employez le présent après si de condition et le futur simple dans la conséquence.",
+        "givenVerb": "montrer",
+        "answers": [
+          "montrera"
+        ],
+        "options": [
+          {
+            "id": "passage-phare-choix-1",
+            "text": "montrera"
+          },
+          {
+            "id": "passage-phare-choix-2",
+            "text": "montre"
+          },
+          {
+            "id": "passage-phare-choix-3",
+            "text": "montrerait"
+          }
+        ],
+        "explanation": "Montrera est au futur dans la conséquence. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé. Modèle : Si le brouillard se dissipe, la guide montrera le phare pendant la visite."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "avenir-2026-11-24-v1",
+    "revision": "avenir-2026-11-27-v2",
     "activityId": "gram-ex-hypothese-futur-curriculum-t",
     "subthemeId": "hypothese-futur",
     "topic": "gram-avenir",
@@ -1588,7 +1898,7 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-24",
+      "date": "2026-11-27",
       "humanReview": "pending",
       "note": "Sources et références relues. Situations partagées entre mécaniques ; documents adaptés avec faits explicites. Modèles ouverts non exclusifs. Aucune approbation enseignante déclarée."
     },
@@ -2498,12 +2808,192 @@
         ],
         "responseLines": 2,
         "explanation": "J’achèterai est le futur simple ; la condition contient j’ai au présent. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé. Modèle non exclusif : Si j’ai assez d’argent, j’achèterai le livre."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-t-a2-place-covoiturage",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-t",
+          "position": 50,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Condition possible : il reste une place. Conséquence prévue : je propose au voisin de venir avec nous.",
+        "cue": "Un voisin cherche une place dans la voiture de notre groupe. S’il reste une place, je lui proposerai de venir avec nous. Verbe ciblé : rester.",
+        "directive": "Employez le présent après si de condition et le futur simple dans la conséquence. Reliez la condition et sa conséquence par si, sans présenter la condition comme certaine.",
+        "answers": [
+          "S’il reste une place, je lui proposerai de venir avec nous."
+        ],
+        "responseLines": 2,
+        "explanation": "Si s’élide devant il. Le verbe rester est ici au présent. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé. Modèle non exclusif : S’il reste une place, je lui proposerai de venir avec nous."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-t-a2-reservation-salle",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-t",
+          "position": 51,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Condition possible : la commune nous prête la salle. Conséquence prévue : nous installons les tables le matin.",
+        "cue": "Un concours se prépare. Nous installerons les tables le matin si la commune nous prête la salle. Verbe ciblé : prêter.",
+        "directive": "Employez le présent après si de condition et le futur simple dans la conséquence. Reliez la condition et sa conséquence par si, sans présenter la condition comme certaine.",
+        "answers": [
+          "Si la commune nous prête la salle, nous installerons les tables le matin."
+        ],
+        "responseLines": 2,
+        "explanation": "Le présent prête exprime ici une condition qui peut se réaliser. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé. Modèle non exclusif : Si la commune nous prête la salle, nous installerons les tables le matin."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-t-a2-dessin-expo",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-t",
+          "position": 52,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Condition possible : le centre accepte d’exposer les dessins. Conséquence prévue : les artistes apportent leurs dessins.",
+        "cue": "Des artistes attendent la réponse du centre. Ils apporteront leurs dessins si le centre accepte de les exposer. Verbe ciblé : accepter.",
+        "directive": "Employez le présent après si de condition et le futur simple dans la conséquence. Reliez la condition et sa conséquence par si, sans présenter la condition comme certaine.",
+        "answers": [
+          "Si le centre accepte de les exposer, les artistes apporteront leurs dessins."
+        ],
+        "responseLines": 2,
+        "explanation": "Après si, le présent accepte exprime la condition possible. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé. Modèle non exclusif : Si le centre accepte de les exposer, les artistes apporteront leurs dessins."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-t-a2-arrivee-donneur",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-t",
+          "position": 53,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Condition possible : la livraison arrive ce matin. Conséquence prévue : la responsable distribue le matériel avant la pause.",
+        "cue": "La responsable attend du matériel. Si la livraison arrive ce matin, elle le distribuera avant la pause. Verbe ciblé : arriver.",
+        "directive": "Employez le présent après si de condition et le futur simple dans la conséquence. Reliez la condition et sa conséquence par si, sans présenter la condition comme certaine.",
+        "answers": [
+          "Si la livraison arrive ce matin, la responsable distribuera le matériel avant la pause."
+        ],
+        "responseLines": 2,
+        "explanation": "Arrive est au présent dans la condition. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé. Modèle non exclusif : Si la livraison arrive ce matin, la responsable distribuera le matériel avant la pause."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-t-a2-tri-apres-midi",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-t",
+          "position": 54,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Condition possible : le local reste ouvert. Conséquence prévue : nous reprenons l’inventaire des outils cet après-midi.",
+        "cue": "Nous reprendrons l’inventaire des outils cet après-midi, à condition que le local reste ouvert. Verbe ciblé : rester.",
+        "directive": "Employez le présent après si de condition et le futur simple dans la conséquence. Reliez la condition et sa conséquence par si, sans présenter la condition comme certaine.",
+        "answers": [
+          "Si le local reste ouvert, nous reprendrons l’inventaire cet après-midi."
+        ],
+        "responseLines": 2,
+        "explanation": "Reste exprime une condition présente, encore possible. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé. Modèle non exclusif : Si le local reste ouvert, nous reprendrons l’inventaire cet après-midi."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-t-a2-sortie-patinage",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-t",
+          "position": 55,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Condition possible : le club ouvre la petite patinoire. Conséquence prévue : les jeunes peuvent patiner dimanche.",
+        "cue": "Le groupe de jeunes pourra patiner dimanche si le club ouvre la petite patinoire. Verbe ciblé : pouvoir.",
+        "directive": "Employez le présent après si de condition et le futur simple dans la conséquence. Reliez la condition et sa conséquence par si, sans présenter la condition comme certaine.",
+        "answers": [
+          "Si le club ouvre la petite patinoire, les jeunes pourront patiner dimanche."
+        ],
+        "responseLines": 2,
+        "explanation": "Pourront est au futur simple dans la conséquence. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé. Modèle non exclusif : Si le club ouvre la petite patinoire, les jeunes pourront patiner dimanche."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-t-a2-sachet-etiquettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-t",
+          "position": 56,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Condition possible : les étiquettes sont imprimées avant midi. Conséquence prévue : je finis de préparer les sachets dans l’après-midi.",
+        "cue": "Si les étiquettes sont imprimées avant midi, je finirai de préparer les sachets dans l’après-midi. Verbe ciblé : finir.",
+        "directive": "Employez le présent après si de condition et le futur simple dans la conséquence. Reliez la condition et sa conséquence par si, sans présenter la condition comme certaine.",
+        "answers": [
+          "Si les étiquettes sont imprimées avant midi, je finirai de préparer les sachets dans l’après-midi."
+        ],
+        "responseLines": 2,
+        "explanation": "Finirai exprime la conséquence future avec je. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé. Modèle non exclusif : Si les étiquettes sont imprimées avant midi, je finirai de préparer les sachets dans l’après-midi."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-t-a2-report-musique",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-t",
+          "position": 57,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Condition possible : le vent se lève. Conséquence prévue : les musiciens déplacent leur concert dans la salle du centre.",
+        "cue": "Le vent pourrait se lever. Dans ce cas, les musiciens déplaceront leur concert dans la salle du centre. Verbe ciblé : déplacer.",
+        "directive": "Employez le présent après si de condition et le futur simple dans la conséquence. Reliez la condition et sa conséquence par si, sans présenter la condition comme certaine.",
+        "answers": [
+          "Si le vent se lève, les musiciens déplaceront leur concert dans la salle du centre."
+        ],
+        "responseLines": 2,
+        "explanation": "Avec les musiciens, le futur de déplacer se termine par -ont. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé. Modèle non exclusif : Si le vent se lève, les musiciens déplaceront leur concert dans la salle du centre."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-t-a2-file-restaurant",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-t",
+          "position": 58,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Condition possible : la table se libère. Conséquence prévue : nous prenons notre repas près de la fenêtre.",
+        "cue": "Nous attendons une table près de la fenêtre. Si elle se libère, nous prendrons notre repas à cet endroit. Verbe ciblé : prendre.",
+        "directive": "Employez le présent après si de condition et le futur simple dans la conséquence. Reliez la condition et sa conséquence par si, sans présenter la condition comme certaine.",
+        "answers": [
+          "Si la table se libère, nous prendrons notre repas près de la fenêtre."
+        ],
+        "responseLines": 2,
+        "explanation": "Prendrons exprime une action future qui dépend d’une condition. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé. Modèle non exclusif : Si la table se libère, nous prendrons notre repas près de la fenêtre."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-t-a2-passage-phare",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-t",
+          "position": 59,
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Condition possible : le brouillard se dissipe. Conséquence prévue : la guide montre le phare pendant la visite.",
+        "cue": "La météo peut changer. Si le brouillard se dissipe, la guide montrera le phare pendant la visite. Verbe ciblé : montrer.",
+        "directive": "Employez le présent après si de condition et le futur simple dans la conséquence. Reliez la condition et sa conséquence par si, sans présenter la condition comme certaine.",
+        "answers": [
+          "Si le brouillard se dissipe, la guide montrera le phare pendant la visite."
+        ],
+        "responseLines": 2,
+        "explanation": "Montrera est au futur dans la conséquence. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé. Modèle non exclusif : Si le brouillard se dissipe, la guide montrera le phare pendant la visite."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "avenir-2026-11-24-v1",
+    "revision": "avenir-2026-11-27-v2",
     "activityId": "gram-ex-hypothese-futur-curriculum-s",
     "subthemeId": "hypothese-futur",
     "topic": "gram-avenir",
@@ -2513,7 +3003,7 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-24",
+      "date": "2026-11-27",
       "humanReview": "pending",
       "note": "Sources et références relues. Situations partagées entre mécaniques ; documents adaptés avec faits explicites. Modèles ouverts non exclusifs. Aucune approbation enseignante déclarée."
     },
@@ -5273,12 +5763,562 @@
           }
         ],
         "explanation": "Modèle non exclusif ; les reformulations fidèles aux faits et à la construction sont recevables. J’achèterai est le futur simple ; la condition contient j’ai au présent. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-s-a2-place-covoiturage",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-s",
+          "position": 50,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Envisager une condition possible",
+        "situation": "Un voisin cherche une place dans la voiture de notre groupe. S’il reste une place, je lui proposerai de venir avec nous.",
+        "answers": [
+          "Personne B : Que ferez-vous si une place reste libre ?\nPersonne A : S’il reste une place, je lui proposerai de venir avec nous.\nPersonne B : À qui proposerez-vous cette place ?\nPersonne A : À un voisin."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Présentez les faits et répondez."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que ferez-vous si une place reste libre ?"
+          }
+        ],
+        "task": "Reliez la condition possible et sa conséquence : si + présent, puis futur simple. Répondez à la relance, puis échangez les rôles.",
+        "followUps": [
+          "À qui proposerez-vous cette place ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction verbale demandée et sujet corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations fidèles aux faits et à la construction sont recevables. Si s’élide devant il. Le verbe rester est ici au présent. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-s-a2-reservation-salle",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-s",
+          "position": 51,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Envisager une condition possible",
+        "situation": "Un concours se prépare. Nous installerons les tables le matin si la commune nous prête la salle.",
+        "answers": [
+          "Personne B : Quand installerez-vous les tables si la salle est prêtée ?\nPersonne A : Si la commune nous prête la salle, nous installerons les tables le matin.\nPersonne B : Qui doit prêter la salle ?\nPersonne A : La commune."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Présentez les faits et répondez."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quand installerez-vous les tables si la salle est prêtée ?"
+          }
+        ],
+        "task": "Reliez la condition possible et sa conséquence : si + présent, puis futur simple. Répondez à la relance, puis échangez les rôles.",
+        "followUps": [
+          "Qui doit prêter la salle ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction verbale demandée et sujet corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations fidèles aux faits et à la construction sont recevables. Le présent prête exprime ici une condition qui peut se réaliser. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-s-a2-dessin-expo",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-s",
+          "position": 52,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Envisager une condition possible",
+        "situation": "Des artistes attendent la réponse du centre. Ils apporteront leurs dessins si le centre accepte de les exposer.",
+        "answers": [
+          "Personne B : Que feront les artistes si le centre accepte ?\nPersonne A : Si le centre accepte de les exposer, les artistes apporteront leurs dessins.\nPersonne B : Que veulent-ils exposer ?\nPersonne A : Leurs dessins."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Présentez les faits et répondez."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que feront les artistes si le centre accepte ?"
+          }
+        ],
+        "task": "Reliez la condition possible et sa conséquence : si + présent, puis futur simple. Répondez à la relance, puis échangez les rôles.",
+        "followUps": [
+          "Que veulent-ils exposer ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction verbale demandée et sujet corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations fidèles aux faits et à la construction sont recevables. Après si, le présent accepte exprime la condition possible. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-s-a2-arrivee-donneur",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-s",
+          "position": 53,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Envisager une condition possible",
+        "situation": "La responsable attend du matériel. Si la livraison arrive ce matin, elle le distribuera avant la pause.",
+        "answers": [
+          "Personne B : Dans quel cas le matériel sera-t-il distribué avant la pause ?\nPersonne A : Si la livraison arrive ce matin, la responsable distribuera le matériel avant la pause.\nPersonne B : À quel moment la livraison doit-elle arriver ?\nPersonne A : Ce matin."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Présentez les faits et répondez."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Dans quel cas le matériel sera-t-il distribué avant la pause ?"
+          }
+        ],
+        "task": "Reliez la condition possible et sa conséquence : si + présent, puis futur simple. Répondez à la relance, puis échangez les rôles.",
+        "followUps": [
+          "À quel moment la livraison doit-elle arriver ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction verbale demandée et sujet corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations fidèles aux faits et à la construction sont recevables. Arrive est au présent dans la condition. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-s-a2-tri-apres-midi",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-s",
+          "position": 54,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Envisager une condition possible",
+        "situation": "Nous reprendrons l’inventaire des outils cet après-midi, à condition que le local reste ouvert.",
+        "answers": [
+          "Personne B : Quand reprendrez-vous l’inventaire ?\nPersonne A : Si le local reste ouvert, nous reprendrons l’inventaire cet après-midi.\nPersonne B : Sur quels objets porte l’inventaire ?\nPersonne A : Sur les outils."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Présentez les faits et répondez."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quand reprendrez-vous l’inventaire ?"
+          }
+        ],
+        "task": "Reliez la condition possible et sa conséquence : si + présent, puis futur simple. Répondez à la relance, puis échangez les rôles.",
+        "followUps": [
+          "Sur quels objets porte l’inventaire ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction verbale demandée et sujet corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations fidèles aux faits et à la construction sont recevables. Reste exprime une condition présente, encore possible. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-s-a2-sortie-patinage",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-s",
+          "position": 55,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Envisager une condition possible",
+        "situation": "Le groupe de jeunes pourra patiner dimanche si le club ouvre la petite patinoire.",
+        "answers": [
+          "Personne B : Que pourront faire les jeunes en cas d’ouverture ?\nPersonne A : Si le club ouvre la petite patinoire, les jeunes pourront patiner dimanche.\nPersonne B : Quel jour iront-ils patiner ?\nPersonne A : Dimanche."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Présentez les faits et répondez."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que pourront faire les jeunes en cas d’ouverture ?"
+          }
+        ],
+        "task": "Reliez la condition possible et sa conséquence : si + présent, puis futur simple. Répondez à la relance, puis échangez les rôles.",
+        "followUps": [
+          "Quel jour iront-ils patiner ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction verbale demandée et sujet corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations fidèles aux faits et à la construction sont recevables. Pourront est au futur simple dans la conséquence. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-s-a2-sachet-etiquettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-s",
+          "position": 56,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Envisager une condition possible",
+        "situation": "Si les étiquettes sont imprimées avant midi, je finirai de préparer les sachets dans l’après-midi.",
+        "answers": [
+          "Personne B : Que ferez-vous si les étiquettes sont prêtes à midi ?\nPersonne A : Si les étiquettes sont imprimées avant midi, je finirai de préparer les sachets dans l’après-midi.\nPersonne B : Que faut-il imprimer ?\nPersonne A : Les étiquettes des sachets."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Présentez les faits et répondez."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que ferez-vous si les étiquettes sont prêtes à midi ?"
+          }
+        ],
+        "task": "Reliez la condition possible et sa conséquence : si + présent, puis futur simple. Répondez à la relance, puis échangez les rôles.",
+        "followUps": [
+          "Que faut-il imprimer ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction verbale demandée et sujet corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations fidèles aux faits et à la construction sont recevables. Finirai exprime la conséquence future avec je. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-s-a2-report-musique",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-s",
+          "position": 57,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Envisager une condition possible",
+        "situation": "Le vent pourrait se lever. Dans ce cas, les musiciens déplaceront leur concert dans la salle du centre.",
+        "answers": [
+          "Personne B : Que feront les musiciens si le vent se lève ?\nPersonne A : Si le vent se lève, les musiciens déplaceront leur concert dans la salle du centre.\nPersonne B : Où le concert aura-t-il lieu ?\nPersonne A : Dans la salle du centre."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Présentez les faits et répondez."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que feront les musiciens si le vent se lève ?"
+          }
+        ],
+        "task": "Reliez la condition possible et sa conséquence : si + présent, puis futur simple. Répondez à la relance, puis échangez les rôles.",
+        "followUps": [
+          "Où le concert aura-t-il lieu ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction verbale demandée et sujet corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations fidèles aux faits et à la construction sont recevables. Avec les musiciens, le futur de déplacer se termine par -ont. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-s-a2-file-restaurant",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-s",
+          "position": 58,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Envisager une condition possible",
+        "situation": "Nous attendons une table près de la fenêtre. Si elle se libère, nous prendrons notre repas à cet endroit.",
+        "answers": [
+          "Personne B : Où mangerez-vous si la table se libère ?\nPersonne A : Si la table se libère, nous prendrons notre repas près de la fenêtre.\nPersonne B : Quelle place attendez-vous ?\nPersonne A : La table près de la fenêtre."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Présentez les faits et répondez."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Où mangerez-vous si la table se libère ?"
+          }
+        ],
+        "task": "Reliez la condition possible et sa conséquence : si + présent, puis futur simple. Répondez à la relance, puis échangez les rôles.",
+        "followUps": [
+          "Quelle place attendez-vous ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction verbale demandée et sujet corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations fidèles aux faits et à la construction sont recevables. Prendrons exprime une action future qui dépend d’une condition. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-s-a2-passage-phare",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-s",
+          "position": 59,
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Envisager une condition possible",
+        "situation": "La météo peut changer. Si le brouillard se dissipe, la guide montrera le phare pendant la visite.",
+        "answers": [
+          "Personne B : Quel monument la guide montrera-t-elle si le temps s’éclaircit ?\nPersonne A : Si le brouillard se dissipe, la guide montrera le phare pendant la visite.\nPersonne B : Qu’est-ce qui peut gêner la visite ?\nPersonne A : Le brouillard."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Présentez les faits et répondez."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quel monument la guide montrera-t-elle si le temps s’éclaircit ?"
+          }
+        ],
+        "task": "Reliez la condition possible et sa conséquence : si + présent, puis futur simple. Répondez à la relance, puis échangez les rôles.",
+        "followUps": [
+          "Qu’est-ce qui peut gêner la visite ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction verbale demandée et sujet corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations fidèles aux faits et à la construction sont recevables. Montrera est au futur dans la conséquence. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "avenir-2026-11-24-v1",
+    "revision": "avenir-2026-11-27-v2",
     "activityId": "gram-ex-hypothese-futur-curriculum-p",
     "subthemeId": "hypothese-futur",
     "topic": "gram-avenir",
@@ -5288,7 +6328,7 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-24",
+      "date": "2026-11-27",
       "humanReview": "pending",
       "note": "Sources et références relues. Situations partagées entre mécaniques ; documents adaptés avec faits explicites. Modèles ouverts non exclusifs. Aucune approbation enseignante déclarée."
     },
@@ -6898,6 +7938,326 @@
           }
         ],
         "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. J’achèterai est le futur simple ; la condition contient j’ai au présent. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-p-a2-place-covoiturage",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-p",
+          "position": 50,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Un voisin cherche une place dans la voiture de notre groupe. S’il reste une place, je lui proposerai de venir avec nous.\nFaits : Condition possible : il reste une place. Conséquence prévue : je propose au voisin de venir avec nous.",
+        "answers": [
+          "S’il reste une place, je lui proposerai de venir avec nous.\nRéponse à la relance : À un voisin."
+        ],
+        "task": "Employez le présent après si de condition et le futur simple dans la conséquence. Formulez une phrase complète. Puis répondez à la relance : « À qui proposerez-vous cette place ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Si s’élide devant il. Le verbe rester est ici au présent. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-p-a2-reservation-salle",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-p",
+          "position": 51,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Un concours se prépare. Nous installerons les tables le matin si la commune nous prête la salle.\nFaits : Condition possible : la commune nous prête la salle. Conséquence prévue : nous installons les tables le matin.",
+        "answers": [
+          "Si la commune nous prête la salle, nous installerons les tables le matin.\nRéponse à la relance : La commune."
+        ],
+        "task": "Employez le présent après si de condition et le futur simple dans la conséquence. Formulez une phrase complète. Puis répondez à la relance : « Qui doit prêter la salle ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Le présent prête exprime ici une condition qui peut se réaliser. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-p-a2-dessin-expo",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-p",
+          "position": 52,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Des artistes attendent la réponse du centre. Ils apporteront leurs dessins si le centre accepte de les exposer.\nFaits : Condition possible : le centre accepte d’exposer les dessins. Conséquence prévue : les artistes apportent leurs dessins.",
+        "answers": [
+          "Si le centre accepte de les exposer, les artistes apporteront leurs dessins.\nRéponse à la relance : Leurs dessins."
+        ],
+        "task": "Employez le présent après si de condition et le futur simple dans la conséquence. Formulez une phrase complète. Puis répondez à la relance : « Que veulent-ils exposer ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Après si, le présent accepte exprime la condition possible. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-p-a2-arrivee-donneur",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-p",
+          "position": 53,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "La responsable attend du matériel. Si la livraison arrive ce matin, elle le distribuera avant la pause.\nFaits : Condition possible : la livraison arrive ce matin. Conséquence prévue : la responsable distribue le matériel avant la pause.",
+        "answers": [
+          "Si la livraison arrive ce matin, la responsable distribuera le matériel avant la pause.\nRéponse à la relance : Ce matin."
+        ],
+        "task": "Employez le présent après si de condition et le futur simple dans la conséquence. Formulez une phrase complète. Puis répondez à la relance : « À quel moment la livraison doit-elle arriver ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Arrive est au présent dans la condition. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-p-a2-tri-apres-midi",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-p",
+          "position": 54,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Nous reprendrons l’inventaire des outils cet après-midi, à condition que le local reste ouvert.\nFaits : Condition possible : le local reste ouvert. Conséquence prévue : nous reprenons l’inventaire des outils cet après-midi.",
+        "answers": [
+          "Si le local reste ouvert, nous reprendrons l’inventaire cet après-midi.\nRéponse à la relance : Sur les outils."
+        ],
+        "task": "Employez le présent après si de condition et le futur simple dans la conséquence. Formulez une phrase complète. Puis répondez à la relance : « Sur quels objets porte l’inventaire ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Reste exprime une condition présente, encore possible. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-p-a2-sortie-patinage",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-p",
+          "position": 55,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le groupe de jeunes pourra patiner dimanche si le club ouvre la petite patinoire.\nFaits : Condition possible : le club ouvre la petite patinoire. Conséquence prévue : les jeunes peuvent patiner dimanche.",
+        "answers": [
+          "Si le club ouvre la petite patinoire, les jeunes pourront patiner dimanche.\nRéponse à la relance : Dimanche."
+        ],
+        "task": "Employez le présent après si de condition et le futur simple dans la conséquence. Formulez une phrase complète. Puis répondez à la relance : « Quel jour iront-ils patiner ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Pourront est au futur simple dans la conséquence. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-p-a2-sachet-etiquettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-p",
+          "position": 56,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Si les étiquettes sont imprimées avant midi, je finirai de préparer les sachets dans l’après-midi.\nFaits : Condition possible : les étiquettes sont imprimées avant midi. Conséquence prévue : je finis de préparer les sachets dans l’après-midi.",
+        "answers": [
+          "Si les étiquettes sont imprimées avant midi, je finirai de préparer les sachets dans l’après-midi.\nRéponse à la relance : Les étiquettes des sachets."
+        ],
+        "task": "Employez le présent après si de condition et le futur simple dans la conséquence. Formulez une phrase complète. Puis répondez à la relance : « Que faut-il imprimer ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Finirai exprime la conséquence future avec je. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-p-a2-report-musique",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-p",
+          "position": 57,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le vent pourrait se lever. Dans ce cas, les musiciens déplaceront leur concert dans la salle du centre.\nFaits : Condition possible : le vent se lève. Conséquence prévue : les musiciens déplacent leur concert dans la salle du centre.",
+        "answers": [
+          "Si le vent se lève, les musiciens déplaceront leur concert dans la salle du centre.\nRéponse à la relance : Dans la salle du centre."
+        ],
+        "task": "Employez le présent après si de condition et le futur simple dans la conséquence. Formulez une phrase complète. Puis répondez à la relance : « Où le concert aura-t-il lieu ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Avec les musiciens, le futur de déplacer se termine par -ont. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-p-a2-file-restaurant",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-p",
+          "position": 58,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Nous attendons une table près de la fenêtre. Si elle se libère, nous prendrons notre repas à cet endroit.\nFaits : Condition possible : la table se libère. Conséquence prévue : nous prenons notre repas près de la fenêtre.",
+        "answers": [
+          "Si la table se libère, nous prendrons notre repas près de la fenêtre.\nRéponse à la relance : La table près de la fenêtre."
+        ],
+        "task": "Employez le présent après si de condition et le futur simple dans la conséquence. Formulez une phrase complète. Puis répondez à la relance : « Quelle place attendez-vous ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Prendrons exprime une action future qui dépend d’une condition. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé."
+      },
+      {
+        "id": "gram-ex-hypothese-futur-curriculum-p-a2-passage-phare",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-hypothese-futur-a2.tsv",
+          "typeId": "gram-ex-hypothese-futur-curriculum-p",
+          "position": 59,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "La météo peut changer. Si le brouillard se dissipe, la guide montrera le phare pendant la visite.\nFaits : Condition possible : le brouillard se dissipe. Conséquence prévue : la guide montre le phare pendant la visite.",
+        "answers": [
+          "Si le brouillard se dissipe, la guide montrera le phare pendant la visite.\nRéponse à la relance : Le brouillard."
+        ],
+        "task": "Employez le présent après si de condition et le futur simple dans la conséquence. Formulez une phrase complète. Puis répondez à la relance : « Qu’est-ce qui peut gêner la visite ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Montrera est au futur dans la conséquence. Il s’agit de si conditionnel. D’autres constructions de conséquence sont possibles en français ; le futur simple est ici demandé."
       }
     ]
   }

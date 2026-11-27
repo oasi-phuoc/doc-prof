@@ -36,13 +36,18 @@ function compareAreas(rng: Rng, index: number): MathItem {
 
 const directions = ['Face', 'Côté', 'Dessus'] as const
 
-function solidViews(heights: number[][], index: number, rng: Rng): MathItem {
+export function solidProjections(heights: number[][]) {
   const levels = [3, 2, 1]
   const columns = [0, 1, 2]
   const face = levels.map((level) => columns.map((col) => heights.some((row) => row[col]! >= level)))
   const side = levels.map((level) => [...heights].reverse().map((row) => row.some((n) => n >= level)))
   const top = heights.map((row) => row.map((n) => n > 0))
-  const ordered = shuffle(rng, [face, side, top])
+  return [face, side, top]
+}
+
+function solidViews(heights: number[][], index: number, rng: Rng): MathItem {
+  const [face, side, top] = solidProjections(heights)
+  const ordered = shuffle(rng, [face!, side!, top!])
   const labels = ['A', 'B', 'C']
   return {
     layout: 'text',
@@ -51,7 +56,7 @@ function solidViews(heights: number[][], index: number, rng: Rng): MathItem {
       views: ordered.map((cells, i) => ({ label: labels[i]!, cells })),
     },
     prompt: 'Écrivez la lettre de chaque vue du solide : de face, de côté et de dessus.',
-    answer: [face, side, top].map((cells, i) => `${directions[i]} : ${labels[ordered.indexOf(cells)]}`).join(' · '),
+    answer: [face, side, top].map((cells, i) => `${directions[i]} : ${labels[ordered.indexOf(cells!)]}`).join(' · '),
   }
 }
 
@@ -64,7 +69,7 @@ export function tryGenerateGeometryMeasurement(typeId: string, rng: Rng, count: 
       return Array.from({ length: count }, (_, index) => compareAreas(rng, start + index))
     }
     case 'figures-vues-solide': {
-      const models = shuffle(rng, solidModels.map((heights, index) => ({ heights, index })))
+      const models = shuffle(rng, solidModels.slice(0, 6).map((heights, index) => ({ heights, index })))
       return Array.from({ length: count }, (_, i) => {
         const { heights, index } = models[i % models.length]!
         return solidViews(heights, index, rng)

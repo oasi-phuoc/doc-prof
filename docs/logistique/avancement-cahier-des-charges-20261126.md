@@ -22,7 +22,7 @@ Référence de réalisation dans le [cahier des charges v2.13](cahier-des-charge
 | L0 — Existant et inventaire | Réalisé | Les 9 thèmes et 80 modules CFC, les 7 thèmes et 63 modules AFP et les 715 types sont générés depuis la référence EPCAS. 540 déclarations source archivées, parmi lesquelles 149 références historiques exclues. L’[inventaire](inventaire-epcas.generated.json) repère 16 types sans déclaration en CFC et 7 en AFP. |
 | L1 — Générateur commun | Pilote actif | Sélecteurs communs, feuille, activités, élève, corrigé, grille, titres, impression, Libre générique et recettes versionnées. Les contrôles de catalogue empêchent les recettes incompatibles avec le diplôme ou mélangeant les diplômes. |
 | L1b — Sélection en Évaluation et Libre | Sélection active | Plusieurs sous-thèmes peuvent alimenter une activité en Évaluation. Le panneau Libre permet de rechercher des questions, consulter leurs corrigés et ajouter une sélection ou un lot. |
-| L1c et L1d — Édition et formats | Partiel | L’éditeur commun permet d’associer une photo de la bibliothèque à une question. Les textes à trous avec et sans liste sont actifs sur cinq modules pilotes. Les imports privés, l’édition des formats complexes et les autres formats structurés restent à compléter. |
+| L1c et L1d — Édition et formats | Partiel | L’éditeur commun permet d’associer une photo de la bibliothèque à une question. Les textes à trous sont actifs sur cinq modules pilotes et les tableaux de données ou de dates dans les 306, 308 et 406. Ces formats sont modifiables en mode Libre. Les imports privés et les autres formats structurés restent à compléter. |
 | L1e — Pagination et titres | A4 et double A5 vérifiés | Enchaînement des questions dans l’espace disponible, numérotation continue et sauts manuels. En double A5, les tableaux et listes longs se poursuivent ligne par ligne. Étendre la mesure aux réglages et aux contenus libres atypiques. |
 | V2.12 — Objectifs, aperçu et cours illustrés | Révision `logistique-references-v002` | 17 modules actifs préparés, avec 31 nouveaux schémas originaux en complément des 17 déjà publiés. Les anciens types et versions de banque restent accessibles aux recettes historiques. [Registre des figures et des introductions](preparation/references-illustrees-v002.json). |
 | L1f — Évaluation | À poursuivre | Les modes communs sont accessibles. Le récit adaptatif, la durée indicative, le barème Bloom et les modèles de nouveau tirage ne sont pas réalisés. |
@@ -151,9 +151,17 @@ Chromium a contrôlé l’habillage et le pied de page sur les 286 parcours A4 d
 
 Le module 306 ajoute une mise en scène des supports spéciaux aux versions Complet et Résumé, en CFC et AFP. Le passage explique le choix entre une palette synthétique et une box-palette destinée au vrac et rappelle que la couleur seule ne permet pas d’identifier un support CHEP. La nouvelle figure et son paragraphe sont publiés dans la révision `logistique-theorie-306-v004`. Les quatre parcours A4 et PDF du 306 ont été vérifiés avec la nouvelle photo encadrée. [Préparation du 306](preparation/306-v004.json).
 
+La révision `logistique-palettes-et-stockage-v005` met en regard les supports spéciaux du §6.6 et ajoute des vues distinctes aux formes de stockage. Le 306 présente huit nouveaux supports, dont la palette-réservoir de type Varitainer, le cadre grillagé, la palette à fûts, la palette INKA et la box à claire-voie. Le 403 montre notamment le bloc à plat, le compartimentage, les rayonnages à palettes, à double entrée et push-back, ainsi que les carrousels, navettes et transstockeurs. Le 404 compare les installations à ciel ouvert, couvertes et fermées. Les 23 nouvelles reconstitutions en couleur apparaissent dans les deux versions du cours. Les glossaires des trois modules reprennent les vues adaptées et ajoutent 18 définitions. Les 36 parcours cours, résumé et glossaire en CFC et AFP ont été exportés en PDF A4 et double A5. La réserve minimale mesurée était de 76,23 px en A4 et de 25,78 px en double A5. [Préparation du 306](preparation/306-v005.json), [du 403](preparation/403-v005.json) et [du 404](preparation/404-v005.json).
+
+La révision `logistique-implantations-stockage-v006` illustre aussi le râtelier vertical pour panneaux et profilés au §3.1.6 du 403 et le stockage en épis au §8.4.3 du 408. Les visuels figurent dans le cours, le résumé et le glossaire CFC et AFP. Les photos montrent comment les séparations maintiennent les produits debout et comment les places en biais s’implantent par rapport à l’allée. Les 24 parcours et PDF ont été vérifiés en A4 et double A5. La réserve minimale était de 87,17 px en A4 et de 43,63 px en double A5. [Préparation du 403](preparation/403-v006.json) et [du 408](preparation/408-v005.json).
+
 En double A5, les tableaux répètent leurs en-têtes et les listes reprennent à l’entrée suivante. Chaque ligne de tableau et chaque entrée de liste restent entières. La coupure de mise en page conserve le bloc original dans la fiche Libre et les sauts manuels s’appliquent après sa dernière partie. La grille de calcul comporte quatre lignes en double A5 pour réserver de la place à la réponse et au pied de page. La campagne de mesure après ajustement a couvert les 286 combinaisons de module, diplôme et version de théorie dans Chromium. Avec le réglage de texte de 16 px, les 3 038 demi-feuilles contrôlées ont conservé au moins 25,78 px avant le pied.
 
-## Glossaires des supports et de la manutention
+## Glossaires illustrés
+
+La révision `logistique-glossaires-tableaux-v006` couvre les 1 170 entrées des 80 modules CFC et des 63 modules AFP qui en partagent le contenu. La fiche présente les colonnes Image, Notion et Explication / définition. Chaque notion dispose d’un fichier d’image distinct dans son glossaire, avec un texte alternatif. Le lot publie 967 schémas en couleur et neuf reconstitutions photographiques individuelles, dont cinq pour les supports du 306. Les définitions et leur ordre proviennent de la révision enregistrée. Les en-têtes sont répétés après chaque saut en A4 et en double A5. [Registre des visuels](../../src/logistique/banks/glossaires-visuels-v006.json).
+
+Chromium a contrôlé les 286 combinaisons de module, diplôme et format avec le réglage de 16 px, puis 22 combinaisons à 24 px. Les contrôles vérifient une image chargée par ligne, l’ordre des notions et la répétition des en-têtes. À 16 px, la réserve minimale au pied était de 27,34 px en A4 et de 14,17 px en double A5. Le saut manuel après la deuxième notion du 306 a aussi été vérifié dans le générateur et dans les PDF des deux formats.
 
 La révision `logistique-glossaires-illustres-v003` associe une photo ou un schéma en couleur à 171 définitions. Elle couvre les 80 modules CFC et les 63 modules AFP. La photo est encadrée à côté de la définition. Les schémas disposent de la largeur nécessaire pour lire leurs indications. Le 306 compare notamment les palettes EUR, CHEP et synthétiques et les formats de palettes. Les 403, 407, 409 et 410 illustrent les rayonnages, moyens de transport, engins et convoyeurs. Chromium a contrôlé les 286 combinaisons de module, diplôme et format, et les PDF des 306, 409 et 806. La réserve minimale était de 92,38 px en A4 et 56,61 px en double A5. [Associations entre termes et illustrations](../../src/logistique/banks/glossaires-illustres-v003.ts).
 
@@ -242,13 +250,37 @@ Les 72 parcours A4 et PDF couvrent les banques complètes de calculs, de vérifi
 
 Les neuf lots ont ajouté 6 552 exercices corrigés. Les 448 dossiers décrivent les données de métier et les sections du cours qui les expliquent. Les problèmes portent sur des méthodes distinctes, dont le calcul direct, la comparaison, le calcul inverse et l’interprétation. Les cas accompagnent le travail de préparation, le traitement des écarts et le contrôle après changement. Les 429 parcours A4 et PDF couvrent les trois activités des 80 modules CFC et 63 modules AFP aux quantités proposées par le générateur. La réserve minimale mesurée est de 33,36 px.
 
+### Vérification des acquis, mises en situation et calculs
+
+La révision `logistique-exercices-acquis-v008` ajoute 286 exercices corrigés aux banques actives des neuf thèmes. Chaque module reçoit de nouvelles vérifications des acquis, mises en situation et questions de calcul. Les 63 modules AFP partagent 235 de ces exercices. Les questions partent de sections précises du cours. La relecture a comparé les nouveaux énoncés à la banque active et remplacé les formulations qui portaient sur un acquis déjà contrôlé de la même manière. Le 306 ajoute le choix des supports à fûts, à claire-voie et à réservoir. Le 403 distingue les accès et la rotation du drive-through et du push-back et applique le calcul à un magasin grande hauteur. [Banque des acquis](../../src/logistique/banks/acquis-v008.json).
+
+| Thème | Vérifications | Situations | Calculs |
+|---|---:|---:|---:|
+| 100 | 22 | 22 | 11 |
+| 200 | 18 | 18 | 9 |
+| 300 | 14 | 13 | 12 |
+| 400 | 12 | 11 | 10 |
+| 500 | 6 | 6 | 6 |
+| 600 | 16 | 16 | 16 |
+| 700 | 5 | 5 | 5 |
+| 800 | 9 | 9 | 9 |
+| 900 | 2 | 2 | 2 |
+
+Le nombre maximal proposé dans le générateur correspond à la capacité du module ou de la sélection, du diplôme, de la présentation et de la révision de banque. Le tirage du maximum utilise chaque identifiant une fois et la numérotation se poursuit sur les pages suivantes. Les recettes enregistrées gardent leur révision et leur tirage.
+
+Les 429 parcours à capacité complète ont été contrôlés dans Chromium en A4, en fiche élève et en corrigé. La réserve minimale au pied était de 23,11 px pour la fiche élève et de 29,11 px pour le corrigé. Les six tirages au maximum du 105 ont aussi été vérifiés dans le générateur et en PDF, dans les deux diplômes.
+
 ## Reprise opérationnelle
 
 En Évaluation, le sélecteur Sous-thème permet de composer une activité de calcul, de vérification ou de mise en situation avec des modules de plusieurs thèmes. Le tirage utilise une quantité totale ou les quotas de chaque module. Une pénurie dans un module ne reporte pas son quota sur un autre. Le passage en Exercice rétablit le module principal et le retour en Évaluation rappelle la sélection. Les recettes enregistrent les codes, les quantités et la révision. Les questions conservent l’identifiant et le module de leur unité source.
 
 Dans Libre, la banque utilise le type de l’activité, le diplôme et la révision de la fiche. Le formateur peut rechercher des énoncés dans un module, consulter leur corrigé, puis ajouter des questions cochées ou tirer un lot. Les ajouts écartent les questions déjà présentes dans la fiche. Le renouvellement du tirage conserve les ajouts et leurs retouches. L’édition des problèmes permet de reprendre séparément l’énoncé, le calcul du corrigé et la réponse.
 
-La révision `logistique-textes-a-trous-v006` publie 15 exercices de vérification répartis entre les 101, 105, 306, 308 et 409 dans les deux diplômes. Le choix Avec liste ou Sans liste garde le même énoncé, les mêmes blancs et le même corrigé. Le matériel est rattaché aux sections correspondantes du cours. Chromium a vérifié les 20 parcours A4 et les quatre PDF du 306. La réserve minimale était de 102,44 px. L’édition de l’énoncé et des réponses d’un texte à trous reste à raccorder au contrôle de cohérence des blancs. [Exercices pilotes](../../src/logistique/banks/textes-a-trous-v006.ts).
+La révision `logistique-textes-a-trous-v006` publie 15 exercices de vérification répartis entre les 101, 105, 306, 308 et 409 dans les deux diplômes. Le choix Avec liste ou Sans liste garde le même énoncé, les mêmes blancs et le même corrigé. Le matériel est rattaché aux sections correspondantes du cours. Chromium a vérifié les 20 parcours A4 et les quatre PDF du 306. La réserve minimale était de 102,44 px. En mode Libre, on peut modifier l’énoncé, les réponses dans l’ordre des blancs, les mots supplémentaires et l’affichage de la liste. L’aperçu conserve le dernier texte valide pendant la saisie. La recette Chromium a vérifié la sauvegarde, la réouverture et les réponses dans le PDF corrigé. [Exercices pilotes](../../src/logistique/banks/textes-a-trous-v006.ts).
+
+La révision `logistique-tableaux-v007` ajoute 12 exercices pour les deux diplômes. En vérification des connaissances, le 306 fait compléter les formats, les supports et leurs accessoires. En mathématiques, le 308 fait calculer des écarts de réception, des masses et des quantités à partir de tableaux. Le 406 applique FIFO et LIFO aux dates d’entrée et de sortie, notamment au changement de mois ou d’année. Chaque exercice est rattaché à une section du cours. Les cases sont vides sur la fiche élève et remplies dans le corrigé. Le mode Libre permet de modifier les en-têtes, les données et les réponses. Les exercices sont accessibles avec le réglage Présentation des questions. [Exercices sur tableaux](../../src/logistique/banks/tableaux-v007.ts).
+
+Chromium a contrôlé les 72 combinaisons de module, diplôme, format, vue et taille de texte (16, 18 et 24 px), ainsi que 24 PDF. La réserve minimale était de 40,42 px en A4 et de 31,28 px en double A5. En double A5, les activités sur tableaux utilisent au plus l’échelle du réglage 18 px. Dans les activités de calcul, la grille et la zone de réponse sont côte à côte sous le tableau.
 
 La carte Libre d’une question de calcul, de vérification ou de mise en situation permet de choisir une photo de la bibliothèque du module source. Les réglages de taille, de placement, de légende et de visibilité sont enregistrés dans la question. À droite, le texte habille le cadre et la grille de calcul commence sous l’énoncé et l’image. Le choix Corrigé seulement masque la photo sur la fiche élève. Le double A5 reprend les questions Libre enregistrées sur les deux moitiés. La recette navigateur a vérifié la sauvegarde simulée et la réouverture d’un problème AFP illustré, ainsi que ses PDF A4 et double A5. L’import privé et les galeries de plusieurs images restent à réaliser.
 
@@ -256,10 +288,10 @@ La publication des modules est terminée pour les deux diplômes. La publication
 
 | Diplôme | Modules | Types actifs | Problèmes de calcul | Questions de vérification | Situations |
 |---|---:|---:|---:|---:|---:|
-| CFC | 80 | 480 | 2529 | 4026 | 1657 |
-| AFP | 63 | 378 | 1890 | 3165 | 1260 |
+| CFC | 80 | 480 | 2617 | 4134 | 1759 |
+| AFP | 63 | 378 | 1961 | 3256 | 1345 |
 
-Les effectifs sont dédupliqués par identifiant dans chaque diplôme. La banque compte 8 212 unités d’exercice distinctes. Chaque module atteint la cible du §5.1 dans son diplôme, avec au moins 30 calculs, 50 vérifications et 20 mises en situation. Les formats structurés et la conception avancée des évaluations figurent dans les lots L1c à L1f.
+Les effectifs sont dédupliqués par identifiant dans chaque diplôme. La banque compte 8 510 unités d’exercice distinctes. Chaque module dépasse la cible du §5.1 dans son diplôme, avec au moins 31 calculs, 51 vérifications et 21 mises en situation. Les formats structurés et la conception avancée des évaluations figurent dans les lots L1c à L1f.
 
 Pour un enrichissement ultérieur, partir des archives et du dossier éditorial du module, vérifier les droits par diplôme, les corrigés, la composition A4 et la continuité des recettes. Enregistrer chaque nouvelle révision et ses résultats dans ce suivi. [Archives par thème](sources-epcas/).
 
@@ -267,6 +299,7 @@ Pour un enrichissement ultérieur, partir des archives et du dossier éditorial 
 
 - `node scripts/import-logistique-epcas.mjs /chemin/vers/epcas` produit le catalogue et les archives à partir des objets Git de référence.
 - `node scripts/prepare-logistique-module.mjs 101-v001` reconstitue la banque du 101 à partir de l’archive et de sa préparation éditoriale. La même commande accepte une révision de la [préparation éditoriale](preparation/), par exemple `104-v001`.
+- `node scripts/prepare-logistique-glossaire.mjs` reconstitue les schémas WebP et le registre des images des glossaires à partir des [scènes](preparation/glossaires-scenes-v006.txt) et des [photos](preparation/glossaires-photos-v006.txt). La génération utilise Python, Pillow et DejaVu Sans.
 - `node scripts/prepare-logistique-dossiers.mjs 400` vérifie les sections citées et reconstitue le complément d’exercices du thème 400. `node scripts/report-logistique-exercise-coverage.mjs` calcule la couverture du catalogue. Ajouter un ou plusieurs codes de thème à la commande pour limiter le relevé.
 - `node scripts/prepare-logistique-105.mjs` reproduit la révision historique du 105.
 - `node scripts/prepare-logistique-illustrated-publication.mjs` reconstitue les objectifs, aperçus et théories de la V2.12. Pour les nouveaux modules, le compilateur standard sépare ces contenus à partir des champs source ou des textes éditoriaux `objectives` et `overview`. Les illustrations se déclarent dans `visuals` avec leurs ancrages et empreintes.

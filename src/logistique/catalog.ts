@@ -1,5 +1,7 @@
-import type { Domain, ExerciseType, LogistiqueQuestionImage, Topic } from '@/math/types'
+import type { Domain, ExerciseBlock, ExerciseType, LogistiqueQuestionImage, Topic } from '@/math/types'
 import curriculum from './curriculum.generated.json'
+import { validLogistiqueGaps } from './gaps'
+import { isLogistiqueTablePresentation, validLogistiqueExerciseTable } from './tables'
 
 export const LOGISTIQUE_DOMAINS = [
   { id: 'logistique-afp', label: 'Logistique AFP', diploma: 'AFP' },
@@ -118,6 +120,16 @@ export function validLogistiqueGapMode(type: LogistiqueType, mode: unknown): boo
   return mode === undefined || (type.kind === 'verification' && (mode === 'sans-liste' || mode === 'avec-liste'))
 }
 
+export function logistiquePresentationFor(block: Pick<ExerciseBlock, 'logistiquePresentation' | 'logistiqueGapMode'>) {
+  return block.logistiquePresentation ?? block.logistiqueGapMode
+}
+
+export function validLogistiquePresentation(type: LogistiqueType, presentation: unknown): boolean {
+  return isLogistiqueTablePresentation(presentation)
+    ? type.kind === 'maths' || type.kind === 'verification'
+    : validLogistiqueGapMode(type, presentation)
+}
+
 export function logistiquePhotoPath(src: unknown, diploma?: LogistiqueDiploma): src is string {
   if (typeof src !== 'string') return false
   const path = /^\/assets\/logistique\/\d{3}\/\d{3}\/(commun|afp|cfc)\/[a-z0-9-]+-photo-v\d+\.webp$/.exec(src)
@@ -151,11 +163,18 @@ export function validLogistiqueCataloguePages(pages: readonly CataloguePage[]): 
     const view = 'logistiqueTheoryView' in block ? block.logistiqueTheoryView : undefined
     const selection = 'logistiqueSelection' in block ? block.logistiqueSelection : undefined
     const gapMode = 'logistiqueGapMode' in block ? block.logistiqueGapMode : undefined
+    const presentation = 'logistiquePresentation' in block ? block.logistiquePresentation : undefined
     const items = 'libreItems' in block && Array.isArray(block.libreItems) ? block.libreItems : []
     return type?.domain === domain && type.topic === block.topic &&
       validLogistiqueSelection(type, selection) &&
       validLogistiqueGapMode(type, gapMode) &&
-      items.every((item) => item?.logistiqueImage === undefined || validLogistiqueQuestionImage(item.logistiqueImage, type.diploma)) &&
+      validLogistiquePresentation(type, presentation) &&
+      (gapMode === undefined || presentation === undefined) &&
+      items.every((item) =>
+        (item?.logistiqueImage === undefined || validLogistiqueQuestionImage(item.logistiqueImage, type.diploma)) &&
+        (item?.logistiqueTable === undefined || (
+          (type.kind === 'maths' || type.kind === 'verification') && !item.logistiqueGaps && validLogistiqueExerciseTable(item.logistiqueTable))) &&
+        (item?.logistiqueGaps === undefined || (type.kind === 'verification' && validLogistiqueGaps(item.prompt, item.logistiqueGaps)))) &&
       (view === undefined || (type.kind === 'theorie' && (view === 'complet' || view === 'resume')))
   }
   return pages.every((page) => page.domain === domain && validBlock(page) &&

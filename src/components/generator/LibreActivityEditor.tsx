@@ -17,7 +17,7 @@ import { GameContentPanel } from '@/jeux/GameContentPanel'
 import { DEFAULT_GAME_FONT_SIZE } from '@/jeux/font-size'
 import { TcfExerciseEditor } from '@/tcf/TcfExerciseEditor'
 import type { TcfExercise, TcfNiveau } from '@/tcf/types'
-import { isLogistiqueReferenceType, logistiqueType } from '@/logistique/catalog'
+import { isLogistiqueReferenceType, logistiquePresentationFor, logistiqueType } from '@/logistique/catalog'
 import { logistiqueQuestionPhotos } from '@/logistique/generate'
 import { LogistiqueLibreBank } from './LogistiqueLibreBank'
 
@@ -263,7 +263,7 @@ export function LibreActivityEditor({
       ) : null}
       {logistics && !isLogistiqueReferenceType(logistics.id) && (
         <LogistiqueLibreBank key={logistics.id} type={logistics} revision={activeBlock.logistiqueBankRevision}
-          gapMode={activeBlock.logistiqueGapMode}
+          presentation={logistiquePresentationFor(activeBlock)}
           items={logistiqueItemsOnSheet ?? genericItems}
           onReroll={onRegenerateBlock ? () => onRegenerateBlock(safeBlockIndex) : undefined}
           onAdd={(added) => {

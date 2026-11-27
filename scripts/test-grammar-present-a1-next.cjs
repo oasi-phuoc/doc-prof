@@ -53,11 +53,11 @@ for(const u of bank('a8','corriger-erreur').units) {
 }
 for(const sub of ['a8','a9']) {
  const b=bank(sub,'ordre'),block=cfg(b)
+ assert.equal(block.phrasePolarity,'negative')
  assert.equal(grammarEligibleCount({...block,phrasePolarity:'positive'}),0)
  assert.equal(grammarEligibleCount({...block,phrasePolarity:'mixed'}),0)
- assert.equal(grammarEligibleCount({...block,phrasePolarity:'negative'}),50)
- assert.throws(()=>select(block,1103),e=>e.code==='GRAMMAR_CAPACITY_EXCEEDED')
- assert.equal(new Set(select({...block,phrasePolarity:'negative'},1103).questions.map(q=>q.id)).size,50)
+ assert.equal(grammarEligibleCount(block),50)
+ assert.equal(new Set(select(block,1103).questions.map(q=>q.id)).size,50)
 }
 const a9=bank('a9','qcm-verbe')
 for(const u of a9.units) {

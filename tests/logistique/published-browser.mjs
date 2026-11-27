@@ -8,7 +8,7 @@ const plan = JSON.parse(await readFile(new URL('../../docs/logistique/preparatio
 const curriculum = JSON.parse(await readFile(new URL('../../src/logistique/curriculum.generated.json', import.meta.url), 'utf8'))
 const preparation = new URL('../../docs/logistique/preparation/', import.meta.url)
 const requestedModules = process.argv.slice(2)
-const photoFiles = (await readdir(preparation)).filter((file) => /^\d{3}-v00[234]\.json$/.test(file)
+const photoFiles = (await readdir(preparation)).filter((file) => /^\d{3}-v00[23456]\.json$/.test(file)
   && (!requestedModules.length || requestedModules.includes(file.slice(0, 3)))).sort()
 const photoPlans = new Map(await Promise.all(photoFiles.map(async (file) => [
   file.slice(0, 3),
@@ -57,7 +57,7 @@ try {
       await Promise.all(elements.flatMap((element) => [...element.querySelectorAll('img')]).map((img) => img.decode()))
       return elements.map((element) => {
         const bounds = element.getBoundingClientRect()
-        const items = [...element.querySelectorAll('.exercise-item')]
+        const items = [...element.querySelectorAll('.exercise-item, .logistique-glossary-table tbody tr')]
         const body = element.querySelector('.sheet-body').getBoundingClientRect()
         const lastBottom = Math.max(...items.map((item) => item.getBoundingClientRect().bottom))
         const footer = element.querySelector('.doc-footer')
@@ -159,18 +159,30 @@ try {
       await select('Type d’exercice', 'Glossaires')
       const glossary = await inspectPrint('Glossaire ' + diploma)
       assert.equal(glossary.pages.reduce((sum, item) => sum + item.count, 0), 45)
+      const glossaries = page.locator('.print-only-sheets .logistique-glossary-table')
+      assert.deepEqual(await glossaries.first().locator('thead th').allTextContents(), ['Image', 'Notion', 'Explication / définition'])
+      assert.equal(await glossaries.locator('tbody figure img').count(), 45)
       await select('Type d’exercice', 'Mathématiques')
       const questionCount = page.getByRole('spinbutton', { name: 'Nombre de questions', exact: true })
       const max = Number(await questionCount.getAttribute('max'))
+      assert(max > 30, 'La limite de calcul provient de la banque Logistique')
       await questionCount.fill(String(max))
       const calculations = await inspectPrint('Mathématiques ' + diploma)
       assert.equal(calculations.pages.reduce((sum, item) => sum + item.count, 0), max * 2)
       assert(calculations.pages.some(({ count }) => count >= 2))
       assert.match(calculations.printText, /1 200 CHF/)
       await select('Type d’exercice', 'Vérification des connaissances')
-      await inspectPrint('Vérification ' + diploma)
+      const maxVerification = Number(await questionCount.getAttribute('max'))
+      assert(maxVerification >= 50)
+      await questionCount.fill(String(maxVerification))
+      const verification = await inspectPrint('Vérification ' + diploma)
+      assert.equal(verification.pages.reduce((sum, item) => sum + item.count, 0), maxVerification * 2)
       await select('Type d’exercice', 'Mises en situation')
-      await inspectPrint('Situations ' + diploma)
+      const maxSituations = Number(await questionCount.getAttribute('max'))
+      assert(maxSituations >= 20)
+      await questionCount.fill(String(maxSituations))
+      const situations = await inspectPrint('Situations ' + diploma)
+      assert.equal(situations.pages.reduce((sum, item) => sum + item.count, 0), maxSituations * 2)
 
       await select('Sous-thème', '110 — ' + curriculum.modules.find(({ code }) => code === '110').title)
       await select('Type d’exercice', 'Mathématiques')
@@ -183,9 +195,9 @@ try {
     }
 
     let checkedModules = 0
-    for (const [code, { visuals }] of photoPlans) {
+    for (const [code, { visuals, summaryVisuals }] of photoPlans) {
       if (requestedModules.length && !requestedModules.includes(code)) continue
-      const caption = visuals[0].summaryAnchor
+      const caption = visuals[0].summaryAnchor ?? summaryVisuals?.[0]?.cells?.[0]?.caption ?? summaryVisuals?.[0]?.caption
       const theory = theories.get(code)
       const { title, theme, year } = curriculum.modules.find(({ code: module }) => code === module)
       if (!year[diploma]) continue

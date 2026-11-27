@@ -115,8 +115,20 @@ function theoryHeight(block: GrammarTheoryBlock, width: number, scale: number, a
 }
 
 function height(item: MathItem, a5: boolean, scale: number): number {
+  const table = item.logistiqueTable
+  if (a5 && table) scale = Math.min(1.125, scale)
   const width = (a5 ? 53 : 72) / scale
   const glossaryFigure = item.logistiqueGlossaryFigure
+  const entry = item.logistiqueGlossaryEntry
+  if (entry) {
+    const lines = (text: string, columns: number) => lineCount(text.replace(/\{\/?g\}/g, ''), columns / scale)
+    const termHeight = lines(entry.term, a5 ? 15 : 17) * (a5 ? 20 : 23) * scale
+    const definitionHeight = lines(entry.definition, a5 ? 33 : 42) * (a5 ? 20 : 23) * scale
+    const caption = glossaryFigure?.caption
+    const captionHeight = caption ? 4 + lines(caption, a5 ? 18 : 21) * (a5 ? 14 : 16) * scale : 0
+    const wrappingReserve = Math.max(0, scale - 1) * 24
+    return (a5 ? 10 : 11) + wrappingReserve + Math.max(termHeight, definitionHeight, (a5 ? 61 : 76) + captionHeight)
+  }
   if (glossaryFigure && item.theoryBlock) {
     const diagram = glossaryFigure.src.includes('-schema-')
     const textHeight = theoryHeight(item.theoryBlock, width * (diagram ? 1 : 0.67), scale, a5)
@@ -135,16 +147,24 @@ function height(item: MathItem, a5: boolean, scale: number): number {
   if (item.logistiqueGaps) {
     const prompt = lineCount((item.prompt ?? '').replace(/_{3,}|_ _ _/g, '                 '), width) * 26 * scale
     const words = item.logistiqueGaps.words
-    return imageHeight + 32 + prompt + (words?.length ? 16 + lineCount(words.join(' · '), width * 0.87) * 26 * scale : 0)
+    return imageHeight + 32 + prompt + (words?.length ? 34 + lineCount(words.join(' · '), width * 0.87) * 26 * scale : 0)
   }
-  const prompt = lineCount(item.prompt ?? '', width * 1.2) * 24 * scale
+  const promptWidth = a5 || item.calcAnswer || table ? width * 1.2 : width
+  const prompt = lineCount(item.prompt ?? '', promptWidth) * 24 * scale
   const answer = lineCount(item.answer, width * 0.84) * 27 * scale
+  const columnWidth = table ? Math.max(4, width / table.headers.length - 2) : 1
+  const tableHeight = table ? 8 + [table.headers, ...table.rows].reduce((sum, row) => {
+    const lines = row.map((cell) => lineCount(typeof cell === 'string' ? cell : cell.answer, columnWidth))
+    return sum + (a5 ? 5 : 9) + (a5 ? 20 : 23) * scale * Math.max(...lines)
+  }, 0) + (a5 ? 0 : Math.max(0, scale - 1) * 100) : 0
   if (item.calcAnswer) {
     // Même un énoncé court conserve la grille, le trait et leurs espacements.
-    const minimum = (a5 ? 183 : 240) + (scale - 1) * 56
-    return imageHeight + Math.max(minimum, (a5 ? 145 : 174) + prompt + answer)
+    const minimum = (a5 ? 183 : 248) + (scale - 1) * 56
+    const calculations = table ? lineCount(item.calcAnswer, width) * 18 * scale : 0
+    return imageHeight + tableHeight + Math.max(minimum, (a5 ? 145 : 174) + prompt + answer, calculations + prompt + answer + 36)
   }
-  return imageHeight + 48 + prompt + answer + (item.options?.length ?? 0) * 22 * scale
+  const spacing = a5 || table ? 48 : 58
+  return imageHeight + tableHeight + spacing + prompt + answer + (item.options?.length ?? 0) * 22 * scale
 }
 
 /** Enchaîne les questions dans l’espace disponible et respecte les sauts manuels. */
@@ -169,6 +189,8 @@ export function splitLogistiquePages(
   }
   const a5ItemLimit = budget(0) - 56
   for (const [blockIndex, block] of page.blocks.entries()) {
+    const glossary = block.items.length > 0 && block.items.every((item) => item.logistiqueGlossaryEntry)
+    const glossaryHeadingHeight = glossary ? (a5 ? 29 : 34) + (fontScale - 1) * 45 : 0
     const slices = block.items.flatMap<TheoryLayoutSlice>((item, sourceIndex) => {
       const theory = item.theoryBlock
       if (a5 && (theory?.kind === 'table' || theory?.kind === 'list' || theory?.kind === 'examples' && theory.marker !== 'numeros')) {
@@ -183,7 +205,7 @@ export function splitLogistiquePages(
     const breakAfter = ({ item, sourceIndex, isLast }: TheoryLayoutSlice) =>
       isLast && (item.theoryPageBreakAfter || block.tcfPageBreakAfter?.[sourceIndex])
     let start = 0
-    let overhead = block.items.some((item) => item.layout === 'theory') ? 16 : 84 * fontScale
+    let overhead = glossary ? glossaryHeadingHeight : block.items.some((item) => item.layout === 'theory') ? 16 : 84 * fontScale
     const append = (end: number) => {
       const slice = slices.slice(start, end)
       const offset = slice[0]?.sourceIndex ?? 0
@@ -194,6 +216,7 @@ export function splitLogistiquePages(
         logistiqueSourceItemCount: block.items.length,
         itemOffset: offset,
         items: slice.map(({ item }) => item),
+        ...(glossary ? { logistiqueGlossaryLength: block.items.length } : {}),
         ...(hasSlices ? {
           logistiqueTheorySlices: slice.map(({ sourceIndex, theoryBlock, isLast }) => ({ sourceIndex, theoryBlock, isLast })),
         } : {}),
@@ -234,6 +257,7 @@ export function splitLogistiquePages(
           && previousHeight + itemHeight <= budget(pages.length + 1)
         if (index > start) append(balanceLastQuestion ? index - 1 : index)
         flush()
+        overhead = glossary ? glossaryHeadingHeight : overhead
         if (balanceLastQuestion) used = previousHeight
       }
       used += overhead + itemHeight
@@ -241,6 +265,7 @@ export function splitLogistiquePages(
       if (breakAfter(slice)) {
         append(index + 1)
         flush()
+        overhead = glossaryHeadingHeight
       }
     }
     if (start < slices.length || slices.length === 0) append(slices.length)

@@ -2,6 +2,7 @@ import type { ExerciseType, Topic } from '@/math/types'
 import { GRAMMAIRE_THEORY_DOCS } from './theory'
 import { ALL_GRAM_SUBTHEMES, buildGrammairePracticeTypes } from './exercises/catalog-exercises'
 import { grammarCoSubthemes } from './exercises/co-bank'
+import { wordVocabTypeId } from './exercises/word-vocab'
 import { grammarCoTypeId } from './exercises/co-themes'
 
 export const GRAMMAIRE_DOMAIN = 'grammaire' as const
@@ -65,7 +66,8 @@ export function assertGrammaireCatalog(): void {
   for (const sub of ALL_GRAM_SUBTHEMES) {
     const hasLinkedAudio = listeningContexts.has(sub.id) && GRAMMAIRE_EXERCISE_TYPES.some(type=>
       type.id===grammarCoTypeId(sub.id)&&type.topic===sub.topic)
-    if (sub.theoryTypeIds.length === 0 && !hasLinkedAudio) {
+    const hasVocab = GRAMMAIRE_EXERCISE_TYPES.some(type=>type.id===wordVocabTypeId(sub.id)&&type.topic===sub.topic)
+    if (sub.theoryTypeIds.length === 0 && !hasLinkedAudio && !hasVocab) {
       throw new Error(`Sous-thème sans fiche théorie: ${sub.id}`)
     }
     for (const typeId of sub.theoryTypeIds) {

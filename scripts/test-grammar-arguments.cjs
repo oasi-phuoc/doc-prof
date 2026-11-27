@@ -36,7 +36,7 @@ for (const bank of banks) {
   assert.equal(bank.editorialStatus, 'reviewed')
   assert.equal(isRetiredGrammarType(bank.activityId), true)
   assert.equal(bankForType(bank.activityId).length, 0)
-  assert.equal(bank.units.length, bank.presentations.includes('document-set') ? 20 : 50)
+  assert.equal(bank.units.length, bank.presentations.includes('document-set') ? 20 : 60)
   for (const presentation of bank.presentations) {
     const document = presentation === 'document-set'
     const config = {
@@ -52,7 +52,8 @@ for (const bank of banks) {
     assert.notDeepEqual(selected.questions.map(question => question.id),
       generateGrammarSelection(config, seed + 1).questions.map(question => question.id))
     assert.equal(grammarEligibleCount(config), bank.units.length)
-    assert.equal(selected.questions.length, bank.units.length)
+    assert.equal(selected.questions.length, document ? 20 : 50)
+    if (!document) assert(selected.questions.some(question => question.unit.source.position >= 50))
     const input = {
       pages: [config], seed, institutional: {}, evalMode: false, pointsPerQuestion: 1,
       libreMode: false, libreSnapshot: null,
@@ -66,7 +67,7 @@ for (const bank of banks) {
       assert.deepEqual(adapted.issues, [])
       return adapted.items
     })
-    assert.equal(projected.length, document ? 60 : presentation === 'match' ? 100 : 50)
+    assert.equal(projected.length, document ? (bank.subthemeId === 'k13' ? 80 : 60) : presentation === 'match' ? 100 : 50)
     if (presentation === 'choice') {
       assert(projected.every(item => item.choices.length === 3 && item.choices.some(choice => choice.id === item.correctId)))
     } else if (['gap', 'transform', 'correct', 'order', 'open-written', 'open-oral', 'scenario-set'].includes(presentation)) {
@@ -80,7 +81,7 @@ for (const bank of banks) {
       assert.notEqual(unit.prompt, unit.answers[0])
       errorSpans++
     } else if (unit.kind === 'reading') {
-      assert.equal(unit.questions.length, 3)
+      assert.equal(unit.questions.length, bank.subthemeId === 'k13' ? 4 : 3)
       assert(unit.questions.every(question => question.evidence.every(quote => unit.text.includes(quote))))
       documents++
     } else if (unit.kind === 'scenario') {
@@ -92,10 +93,10 @@ for (const bank of banks) {
   }
 }
 
-assert.equal(variants, 3710)
-assert.equal(errorSpans, 250)
+assert.equal(variants, 4400)
+assert.equal(errorSpans, 300)
 assert.equal(documents, 120)
-assert.equal(scenarios, 100)
+assert.equal(scenarios, 120)
 const unit = (subtheme, level, slug, presentation = 'choice') => banks
   .find(bank => bank.subthemeId === subtheme && bank.level === level && bank.presentations.includes(presentation))
   .units.find(item => item.id.endsWith('-' + slug))
@@ -105,6 +106,23 @@ assert.equal(unit('k11', 'B1', 'chariot', 'transform').answers[0], 'Je m’en co
 assert.equal(unit('k12', 'B1', 'tournee').answers[0], 'soient venus')
 assert.equal(unit('k13', 'B1', 'panier').answers[0], 'prend')
 assert.equal(unit('k7', 'B1', 'cour').answers[0], 'Bien que')
+for (const [subtheme, level, marker] of [
+  ['k3', 'A2', ', car la cour était inondée.'],
+  ['k4', 'A2', 'C’est pourquoi les élèves ont pris leur pause sous le préau.'],
+  ['k6', 'B1', 'En revanche, les élèves du bâtiment B sont rentrés en classe.'],
+]) {
+  const reading = unit(subtheme, level, 'cour', 'document-set')
+  assert(reading.questions[0].evidence.some(passage => passage.includes(marker)))
+}
+for (const subtheme of ['k12', 'k13']) {
+  const reading = unit(subtheme, 'B1', 'panier', 'document-set')
+  assert.equal(reading.questions[2].answers[0], 'Pour les poires.')
+  assert(reading.questions[2].evidence[0].includes('trop petits pour les poires'))
+}
+const condition = unit('k13', 'B1', 'cable', 'document-set').questions[3]
+assert.equal(condition.response, 'short')
+assert.equal(condition.answers[0], 'Il faut l’examiner.')
+assert(condition.evidence[0].includes('tant qu’il n’aura pas été examiné'))
 assert.deepEqual(require('../src/grammaire/curriculum/data/k10.json'), GRAMMAR_PILOT_BANKS.filter(bank => bank.subthemeId === 'k10'))
 
 const files = [...new Set(banks.map(bank => bank.subthemeId))].map(subtheme =>

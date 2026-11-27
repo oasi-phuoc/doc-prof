@@ -116,3 +116,7 @@ export function isContextualGrammarMatch(typeId: string): boolean {
 export function grammarOrderHasSentenceFilters(units: GrammarUnit[]): boolean {
   return !units.every(u=>u.kind==='order'&&(u.tokenUnit==='clause'||u.orderScope==='noun-group'))
 }
+
+export function isNegativeGrammarOrder(unit: GrammarUnit): boolean {
+  return unit.kind === 'order' && unit.tokens.some(token => token.category === 'negation')
+}

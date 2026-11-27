@@ -1,4 +1,5 @@
-import { isLogistiqueDomain } from '@/logistique/catalog'
+import { isLogistiqueReferenceType, logistiquePresentationFor, logistiqueType } from '@/logistique/catalog'
+import { logistiqueModuleCapacities } from '@/logistique/generate'
 import { isOralComprehensionExercise } from '@/components/generator/page-helpers'
 import { grammarEligibleCount } from '@/grammaire/curriculum/generate'
 import { maxQuestionsFor } from '@/components/generator/generator-derived'
@@ -256,15 +257,21 @@ const baseMaxQuestions = maxQuestionsFor({
   soutienKind,
 })
 const activeSheetBlock = worksheets[safeSheetIndex]?.blocks[safeBlockIndex]
-const bankQuestionCap = activeSheetBlock?.bankQuestionCap
+const logistics = logistiqueType(activeBlock.exerciseType)
+const logisticsCap = logistics && !isLogistiqueReferenceType(logistics.id) ? [...logistiqueModuleCapacities(
+  logistics, activeBlock.logistiqueSelection?.modules ?? [logistics.module], activeBlock.logistiqueBankRevision,
+  logistiquePresentationFor(activeBlock),
+).values()].reduce((sum, count) => sum + count, 0) : undefined
+const bankQuestionCap = logisticsCap ?? activeSheetBlock?.bankQuestionCap
 const audioSeriesCap = soutienBank && audioOrderKind(soutienKind) ? Math.max(1, defaultAudioOrderCapacity(soutienBank, soutienKind)) : undefined
-const maxQuestions = exerciseTypeById[activeBlock.exerciseType]?.maxCount
+const maxQuestions = (logisticsCap === undefined ? undefined : Math.max(1, logisticsCap))
+  ?? exerciseTypeById[activeBlock.exerciseType]?.maxCount
   ?? cscQuestionLimit(activeBlock.exerciseType)
   ?? audioSeriesCap
   ?? (isGrammaireDomain && activeBlock.grammarLevel
   ? Math.max(1,Math.min(50,grammarEligibleCount(activeBlock)))
-  : (activePage.domain === 'gattegno' || isLogistiqueDomain(activePage.domain)) && bankQuestionCap != null
-  ? Math.min(baseMaxQuestions, isLogistiqueDomain(activePage.domain) ? Math.max(1, bankQuestionCap) : bankQuestionCap)
+  : activePage.domain === 'gattegno' && bankQuestionCap != null
+  ? Math.min(baseMaxQuestions, bankQuestionCap)
   : baseMaxQuestions)
 const bankOverflow =
   Boolean(bankQuestionCap != null) &&

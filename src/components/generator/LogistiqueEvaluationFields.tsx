@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { logistiqueModules, type LogistiqueType } from '@/logistique/catalog'
+import { logistiqueModules, logistiquePresentationFor, type LogistiqueType } from '@/logistique/catalog'
 import { logistiqueModuleCapacities } from '@/logistique/generate'
 import type { ExerciseBlock, Topic } from '@/math/types'
 import { SelectBox } from './SelectBox'
@@ -12,9 +12,10 @@ export function LogistiqueEvaluationFields({ type, activeBlock, themes, updatePa
 }) {
   const [theme, setTheme] = useState(type.topic)
   const modules = useMemo(() => logistiqueModules(type.domain), [type.domain])
+  const presentation = logistiquePresentationFor(activeBlock)
   const capacities = useMemo(() =>
-    logistiqueModuleCapacities(type, modules.map(({ code }) => code), activeBlock.logistiqueBankRevision, activeBlock.logistiqueGapMode),
-  [type, modules, activeBlock.logistiqueBankRevision, activeBlock.logistiqueGapMode])
+    logistiqueModuleCapacities(type, modules.map(({ code }) => code), activeBlock.logistiqueBankRevision, presentation),
+  [type, modules, activeBlock.logistiqueBankRevision, presentation])
   const visible = modules.filter(({ topic }) => topic === theme)
   const selection = activeBlock.logistiqueSelection?.modules ?? [type.module]
   const quantities = activeBlock.logistiqueSelection?.quantities

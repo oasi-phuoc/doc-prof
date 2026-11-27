@@ -1,3 +1,4 @@
+import { wordVocabSubthemes, wordVocabTypes } from './word-vocab'
 import {isRetiredGrammarType} from '../curriculum/retirement'
 import type { ExerciseType } from '@/math/types'
 import { GRAMMAIRE_THEORY_DOCS } from '../theory'
@@ -50,7 +51,7 @@ function theoryDerivedSubthemes(): Array<{
   return out
 }
 
-export const ALL_GRAM_SUBTHEMES = [...GRAM_SUBTHEMES, ...theoryDerivedSubthemes(), ...grammarCoSubthemes()]
+export const ALL_GRAM_SUBTHEMES = [...GRAM_SUBTHEMES, ...theoryDerivedSubthemes(), ...grammarCoSubthemes(), ...wordVocabSubthemes]
 
 /** Ordre du menu « Sous-thème » — Se présenter. */
 const SE_PRESENTER_SUBORDER = ['a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'famille'] as const
@@ -140,7 +141,7 @@ export function buildGrammairePracticeTypes(): ExerciseType[] {
     if (familyWriting>=0) types.splice(familyWriting,0,importedType)
     else types.push(importedType)
   }
-  return [...types,...GRAMMAR_NEW_PILOT_TYPES].filter(type=>!isRetiredGrammarType(type.id)||grammarBanksForType(type.id).length>0)
+  return [...wordVocabTypes(),...types,...GRAMMAR_NEW_PILOT_TYPES].filter(type=>!isRetiredGrammarType(type.id)||grammarBanksForType(type.id).length>0)
 }
 
 export function subthemesForTopicAll(topic: string) {

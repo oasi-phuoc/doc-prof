@@ -1,5 +1,6 @@
 import { mathTheoryTopic } from '@/math/theory-lessons'
-import { isLogistiqueReferenceType, logistiqueType } from '@/logistique/catalog'
+import { isLogistiqueReferenceType, logistiquePresentationFor, logistiqueType } from '@/logistique/catalog'
+import { isLogistiqueTablePresentation } from '@/logistique/tables'
 import { logistiqueHasSummary, logistiqueModuleCapacities } from '@/logistique/generate'
 import { SelectBox } from './SelectBox'
 import { supportsActivityQuestionCount } from './activity-settings'
@@ -226,31 +227,46 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
   const isLogistiqueTheory = logistics?.kind === 'theorie'
   const theoryView = activeBlock.logistiqueTheoryView ?? 'complet'
   const hasSummary = isLogistiqueTheory && logistiqueHasSummary(activeBlock.exerciseType, activeBlock.logistiqueBankRevision)
-  const gapMode = activeBlock.logistiqueGapMode
-  const selectedModules = logistics?.kind === 'verification'
+  const presentation = logistiquePresentationFor(activeBlock)
+  const supportsPresentation = logistics?.kind === 'verification' || logistics?.kind === 'maths'
+  const selectedModules = supportsPresentation
     ? (evalMode ? activeBlock.logistiqueSelection?.modules : undefined) ?? [logistics.module] : []
-  const gapCapacity = logistics?.kind === 'verification' ? [...logistiqueModuleCapacities(
-    logistics, selectedModules, activeBlock.logistiqueBankRevision, 'sans-liste',
-  ).values()].reduce((total, stock) => total + stock, 0) : 0
+  const presentations = supportsPresentation ? ([
+    ...(logistics.kind === 'verification' ? [
+      { id: 'sans-liste', label: 'Texte à trous sans liste' },
+      { id: 'avec-liste', label: 'Texte à trous avec liste' },
+    ] as const : []),
+    { id: 'tableau-donnees', label: 'Tableau de données à compléter' },
+    { id: 'tableau-dates', label: 'Tableau de dates à compléter' },
+  ] as const).map(({ id, label }) => ({
+    id, label, capacity: [...logistiqueModuleCapacities(
+      logistics, selectedModules, activeBlock.logistiqueBankRevision, id,
+    ).values()].reduce((total, stock) => total + stock, 0),
+  })) : []
   return (
     <>
-              {logistics?.kind === 'verification' && (gapCapacity > 0 || gapMode) ? (
-                <SelectBox label="Présentation des questions" value={gapMode ?? 'questions'} onChange={(value) => {
-                  const next = value === 'avec-liste' || value === 'sans-liste' ? value : undefined
-                  if (next === gapMode) return
+              {supportsPresentation && (presentations.some(({ capacity }) => capacity > 0) || presentation) ? (
+                <SelectBox label="Présentation des questions" value={presentation ?? 'questions'} onChange={(value) => {
+                  const option = presentations.find(({ id }) => id === value)
+                  const next = option?.id
+                  if (next === presentation) return
                   if (activeBlock.libreItems?.length &&
                       !window.confirm('Changer de présentation remplacera le contenu libre de cette activité. Continuer ?')) return
+                  const sameGaps = presentation && next &&
+                    !isLogistiqueTablePresentation(presentation) && !isLogistiqueTablePresentation(next)
                   updatePage({
-                    logistiqueGapMode: next,
+                    logistiqueGapMode: undefined,
+                    logistiquePresentation: next,
                     libreItems: undefined,
                     libreInstruction: undefined,
-                    ...(next && activeBlock.count > gapCapacity ? { count: Math.max(1, gapCapacity) } : {}),
-                    ...(Boolean(next) === Boolean(gapMode) ? {} : { tcfPageBreakAfter: undefined }),
+                    ...(option && activeBlock.count > option.capacity ? { count: Math.max(1, option.capacity) } : {}),
+                    ...(sameGaps ? {} : { tcfPageBreakAfter: undefined }),
                   })
                 }}>
                   <option value="questions">Questions habituelles</option>
-                  <option value="sans-liste" disabled={!gapCapacity}>Texte à trous sans liste</option>
-                  <option value="avec-liste" disabled={!gapCapacity}>Texte à trous avec liste</option>
+                  {presentations.map(({ id, label, capacity }) => (
+                    <option key={id} value={id} disabled={!capacity}>{label}{!capacity ? ' (indisponible)' : ''}</option>
+                  ))}
                 </SelectBox>
               ) : null}
               {!supportsActivityQuestionCount(activeBlock.exerciseType, questionMin, maxQuestions) ||

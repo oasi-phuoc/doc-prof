@@ -57,6 +57,39 @@
       "answer": "L’état de l’emballage et la référence du colis concerné."
     },
     {
+      "id": "fixture-306-verification",
+      "module": "306",
+      "kind": "verification",
+      "revision": "v1",
+      "approvedFor": ["CFC", "AFP"],
+      "prompt": "Que vérifiez-vous avant un échange de palettes ?",
+      "answer": "Le marquage et l’état de la palette."
+    },
+    {
+      "id": "fixture-306-texte-a-trous",
+      "module": "306",
+      "kind": "verification",
+      "revision": "v1",
+      "approvedFor": ["CFC", "AFP"],
+      "prompt": "Un ___ rehausse les parois. Le ___ ferme le dessus.",
+      "answer": "cadre / couvercle",
+      "gaps": { "answers": ["cadre", "couvercle"], "distractors": ["plot"] }
+    },
+    {
+      "id": "fixture-306-tableau",
+      "module": "306",
+      "kind": "verification",
+      "revision": "v1",
+      "approvedFor": ["CFC", "AFP"],
+      "prompt": "Complétez les dimensions du support.",
+      "answer": "Vérifiez les dimensions en millimètres.",
+      "table": {
+        "presentation": "tableau-donnees",
+        "headers": ["Support", "Largeur"],
+        "rows": [["Palette EUR", { "answer": "800 mm" }]]
+      }
+    },
+    {
       "id": "fixture-105-glossaire",
       "module": "105",
       "revision": "v1",

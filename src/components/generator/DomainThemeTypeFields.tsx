@@ -1,3 +1,5 @@
+import { isWordVocabType } from '@/grammaire/exercises/word-vocab'
+import { grammarCoStatements } from '@/grammaire/exercises/co-true-false'
 import { mathTheoryTopic } from '@/math/theory-lessons'
 import { isMathProblemHelpType } from '@/math/problem-help'
 import { grammarOrderHasSentenceFilters } from '@/grammaire/curriculum/types'
@@ -93,7 +95,6 @@ export type DomainThemeTypeFieldsProps = {
   isPhraseChart: boolean
   libreMode: boolean
   setVerbGroup: (next: PhraseVerbGroup) => void
-  activeSheet: WorksheetPage | undefined
   safeBlockIndex: number
   updatePage: (patch: Partial<ExerciseBlock>) => void
   typeChoices: Array<{ id: string; label: string }>
@@ -142,7 +143,6 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
     isPhraseChart,
     libreMode,
     setVerbGroup,
-    activeSheet,
     safeBlockIndex,
     updatePage,
     typeChoices,
@@ -154,6 +154,10 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
     isQuadType,
     quadPool,
   } = p
+  const readingQuestionCount = isGrammaireDomain && activeBlock.grammarPresentation === 'document-set'
+    ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex)?.items
+      .filter(item => item.grammar?.readingPart?.kind === 'question').length
+    : undefined
   const logisticsDomain = isLogistiqueDomain(activePage.domain)
   const logisticsSubthemes = logisticsDomain ? logistiqueSubthemes(activeBlock.topic) : []
   const logisticsType = logistiqueType(activeBlock.exerciseType)
@@ -188,6 +192,8 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
   const showDocumentPoints = evalMode && !isTpmLike && !isTcf && worksheets.some(({ blocks }) =>
     blocks.some(({ items, pointsPerQuestion }) => pointsPerQuestion == null && items.some((item) =>
       item.layout !== 'theory' && !item.noPoints && item.points == null)))
+  const selectedGrammarCoAudio = grammarCoAudios.find(entry => entry.exercise.id === activeBlock.grammarCoAudioId) ?? grammarCoAudios[0]
+  const availableTrueFalse = selectedGrammarCoAudio ? grammarCoStatements(selectedGrammarCoAudio.exercise).length : 0
   return (
     <>
               {isJeuxDomain || isCalliDomain ? null : (
@@ -351,6 +357,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
               {showPhraseParameters ? (
                 <PhrasePolarityControl
                   value={activeBlock.phrasePolarity ?? (isPhraseDomain && isNegativePhraseTheme(activeBlock.topic) ? 'negative' : 'positive')}
+                  canSelect={isGrammarOrder ? phrasePolarity => grammarEligibleCount({...activeBlock,phrasePolarity}) > 0 : undefined}
                   onChange={phrasePolarity => {
                     if (activeBlock.grammarLevel && activeBlock.libreItems?.length && !window.confirm('Ces filtres remplaceront les modifications manuelles de cet exercice. Continuer ?')) return
                     const countCap = isGrammarOrder
@@ -465,7 +472,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   })}
                 />
               ) : null}
-              {isGrammaireDomain ? <GrammarLevelControl block={activeBlock} onChange={updatePage}/> : null}
+              {isGrammaireDomain ? <GrammarLevelControl block={activeBlock} readingQuestionCount={readingQuestionCount} onChange={updatePage}/> : null}
               {isGrammaireDomain && showGrammarCoLevel && grammarCoAudios.length > 1 ? (
                 <SelectBox label="Audio" value={activeBlock.grammarCoAudioId??grammarCoAudios[0]!.exercise.id}
                   onChange={grammarCoAudioId=>updatePage({
@@ -475,6 +482,25 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   {grammarCoAudios.map(entry=>(
                     <option key={entry.exercise.id} value={entry.exercise.id}>{entry.source.filename.replace('.mp3','').replace(/^piste_?/,'Piste ')}</option>
                   ))}
+                </SelectBox>
+              ) : null}
+              {isGrammaireDomain && isWordVocabType(activeBlock.exerciseType) ? (
+                <SelectBox label="Présentation" value={activeBlock.grammarVocabRecall ? 'recall' : 'learn'}
+                  onChange={(value) => updatePage({ ...clearLibreContentFreeze(), grammarVocabRecall: value === 'recall' })}>
+                  <option value="learn">Lire les mots</option>
+                  <option value="recall">Retrouver les mots</option>
+                </SelectBox>
+              ) : null}
+              {isGrammaireDomain && availableTrueFalse > 0 ? (
+                <SelectBox label="Présentation" value={activeBlock.grammarCoFormat ?? 'questions'}
+                  onChange={(value) => updatePage({
+                    ...clearLibreContentFreeze(),
+                    grammarCoFormat: value === 'true-false' ? 'true-false' : 'questions',
+                    count: Math.min(activeBlock.count, value === 'true-false' ? availableTrueFalse : (selectedGrammarCoAudio?.exercise.questions.length ?? 1)),
+                    tcfPageBreakAfter: undefined,
+                  })}>
+                  <option value="questions">Questions</option>
+                  <option value="true-false">Vrai/Faux</option>
                 </SelectBox>
               ) : null}
               {libreMode && ceSupport && !ceShowsImage ? <TcfCeTextFontControl value={activeBlock.tcfCeTextFont ?? 'arial'} onChange={tcfCeTextFont => updatePage({ tcfCeTextFont })} /> : null}

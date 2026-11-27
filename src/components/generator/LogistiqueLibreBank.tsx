@@ -3,7 +3,8 @@ import { logistiqueModules, type LogistiqueType } from '@/logistique/catalog'
 import { logistiqueQuestionItems } from '@/logistique/generate'
 import { availableLogistiqueQuestions, selectLogistiqueLot } from '@/logistique/libre'
 import { randomSeed } from '@/math/rng'
-import type { LogistiqueGapMode, MathItem } from '@/math/types'
+import type { LogistiquePresentation, MathItem } from '@/math/types'
+import { LogistiqueTableView } from '@/components/item-view/logistique-table'
 import { SelectBox } from './SelectBox'
 
 const PAGE_SIZE = 6
@@ -12,10 +13,10 @@ function searchText(value: string) {
   return value.normalize('NFD').replace(/\p{Mark}/gu, '').toLowerCase().trim()
 }
 
-export function LogistiqueLibreBank({ type, revision, gapMode, items, onAdd, onReroll }: {
+export function LogistiqueLibreBank({ type, revision, presentation, items, onAdd, onReroll }: {
   type: LogistiqueType
   revision?: string
-  gapMode?: LogistiqueGapMode
+  presentation?: LogistiquePresentation
   items: readonly MathItem[]
   onAdd: (items: MathItem[]) => void
   onReroll?: () => void
@@ -27,7 +28,7 @@ export function LogistiqueLibreBank({ type, revision, gapMode, items, onAdd, onR
   const [quantity, setQuantity] = useState(1)
   const [notice, setNotice] = useState('')
   const modules = useMemo(() => logistiqueModules(type.domain), [type.domain])
-  const bank = useMemo(() => logistiqueQuestionItems(type, [module], revision, gapMode), [type, module, revision, gapMode])
+  const bank = useMemo(() => logistiqueQuestionItems(type, [module], revision, presentation), [type, module, revision, presentation])
   const available = useMemo(() => availableLogistiqueQuestions(bank, items), [bank, items])
   const selected = available.filter((item) => checked.includes(item.logistiqueSource!.id))
   const label = modules.find(({ code }) => code === module)?.label ?? module
@@ -79,6 +80,7 @@ export function LogistiqueLibreBank({ type, revision, gapMode, items, onAdd, onR
                 </label>
                 <details>
                   <summary>Corrigé</summary>
+                  {item.logistiqueTable && <LogistiqueTableView table={item.logistiqueTable} mode="answers" />}
                   {item.calcAnswer && <p>{item.calcAnswer}</p>}
                   <p>{item.answer}</p>
                 </details>

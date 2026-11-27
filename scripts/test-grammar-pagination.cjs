@@ -35,6 +35,18 @@ const mixed={...a,extraBlocks:[blockFromPage(b)]},plain=buildWorksheets([mixed],
 assert.equal(plain.length,1);assert.equal(plain[0].blocks.length,2)
 const firstKeys=plain[0].blocks[0].items.map(key),atBoundary=buildWorksheets([{...mixed,grammarPageBreakAfterQuestionIds:[firstKeys.at(-1)]}],seed)
 assert.equal(atBoundary.length,2);assert.equal(atBoundary[1].blocks[0].sourceBlockIndex,1);assert.equal(atBoundary[1].blocks[0].itemOffset,0)
+assert.deepEqual(blockItemsForConfig(atBoundary,0,0).items,plain[0].blocks[0].items)
+const reading=(subtheme)=>config(banks.find(b=>b.subthemeId===subtheme&&b.presentations.includes('document-set')),'document-set')
+const twoReadings={...reading('e2'),extraBlocks:[blockFromPage(reading('e5'))]}
+const unsplitReadings=buildWorksheets([twoReadings],seed)
+const firstReadingCut=questions(unsplitReadings).at(0)
+const splitReadings=buildWorksheets([{...twoReadings,grammarPageBreakAfterQuestionIds:[firstReadingCut]}],seed)
+assert.equal(splitReadings.length,2)
+for(const [blockIndex,total] of [8,6].entries()){
+ const items=blockItemsForConfig(splitReadings,0,blockIndex).items
+ assert.deepEqual(items,unsplitReadings[0].blocks[blockIndex].items)
+ assert.equal(items.filter(item=>item.grammar?.readingPart?.kind==='question').length,total)
+}
 const legacyItems=Array.from({length:6},(_,index)=>({layout:'texte',prompt:'Question '+(index+1),answer:'Réponse'}))
 const legacyBlock={exerciseType:'gram-ex-k1-qcm-verbe',instruction:'Répondez.',items:legacyItems}
 const legacy={domain:'grammaire',blocks:[legacyBlock],items:legacyItems}

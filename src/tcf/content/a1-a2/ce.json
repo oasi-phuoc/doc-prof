@@ -91,7 +91,25 @@
           { "id": "c", "texte": "La montre de l’inspecteur" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 2, "reponse_modele": "La couronne de la reine" }
+          "lignes": { "nb_lignes": 2, "reponse_modele": "La couronne de la reine" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-couronne-royale.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-cle-ancienne.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co834-montre-dessinee.webp"
+              }
+            ]
+          }
         }
       },
       {
@@ -416,7 +434,25 @@
           { "id": "c", "texte": "Dans la poubelle" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 2, "reponse_modele": "Sur le radiateur" }
+          "lignes": { "nb_lignes": 2, "reponse_modele": "Sur le radiateur" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-serviettes-radiateur.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-serviettes-placard.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-serviettes-poubelle.png"
+              }
+            ]
+          }
         }
       },
       {

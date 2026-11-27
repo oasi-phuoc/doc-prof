@@ -1,6 +1,6 @@
 # Galerie d’images
 
-État du 27 novembre : **8 499 images indexées**, dont **4 774 TCF avec titres et mots-clés revus sur les pixels**, aucun fichier TCF en attente de cette revue. Le reliquat DELF ajoute 50 images et la préparation historique en ajoute 214. Les originaux et les illustrations de grammaire reçues depuis restent conservés. [Suivi TCF](../tcf/lots-images-20261124/README.md).
+État du 27 novembre : **8 918 images indexées**, dont **5 075 TCF avec titres et mots-clés revus sur les pixels**, aucun fichier TCF publié en attente de cette revue. Le premier lot historique de100 trios est activé. Le deuxième dispose de20 trios prêts, avec53 nouvelles illustrations et sept réemplois contrôlés. Les originaux, propositions écartées et illustrations reçues par le pull sont conservés. [Suivi TCF](../tcf/lots-images-20261124/README.md).
 
 La rubrique `/images` est accessible par l’icône image du menu supérieur. Elle partage l’accès du créateur de fiches, mais reste une page indépendante : elle ne génère aucune fiche.
 

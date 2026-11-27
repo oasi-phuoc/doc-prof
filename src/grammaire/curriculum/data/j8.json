@@ -1,7 +1,7 @@
 [
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j8-qcm-conj",
     "subthemeId": "j8",
     "topic": "gram-faits",
@@ -1580,12 +1580,322 @@
         ],
         "explanation": "Ici, le conditionnel présent permet d’exprimer un souhait ou une préférence. Modèle : J’aimerais emprunter un parapluie.",
         "givenVerb": "aimer"
+      },
+      {
+        "id": "gram-ex-j8-qcm-conj-a2-manteau-refuge",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j8-qcm-conj",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ attendre au café.",
+        "cue": "Votre ami attend le bus dehors et il fait très froid. Un café est encore ouvert. Exprimez un conseil au conditionnel présent.",
+        "answers": [
+          "pourrais"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-manteau-refuge-choix-1",
+            "text": "pourrais"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-manteau-refuge-choix-2",
+            "text": "pourrait"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-manteau-refuge-choix-3",
+            "text": "pourrons"
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un conseil. Modèle : Tu pourrais attendre au café.",
+        "givenVerb": "pouvoir"
+      },
+      {
+        "id": "gram-ex-j8-qcm-conj-a2-volume-podcast",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j8-qcm-conj",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Vous ___ baisser un peu le volume.",
+        "cue": "Un voisin écoute un podcast très fort. Vous le vouvoyez et vous voulez rester poli. Exprimez un conseil au conditionnel présent.",
+        "answers": [
+          "pourriez"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-volume-podcast-choix-1",
+            "text": "pourriez"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-volume-podcast-choix-2",
+            "text": "pourrait"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-volume-podcast-choix-3",
+            "text": "pourrons"
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un conseil. Modèle : Vous pourriez baisser un peu le volume.",
+        "givenVerb": "pouvoir"
+      },
+      {
+        "id": "gram-ex-j8-qcm-conj-a2-afficheurs",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j8-qcm-conj",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "J’___ préparer des affiches pour donner les horaires.",
+        "cue": "Vous accueillez un groupe d’amis. Vous souhaitez leur indiquer les horaires de la semaine. Exprimez un souhait ou une préférence au conditionnel présent.",
+        "answers": [
+          "aimerais"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-afficheurs-choix-1",
+            "text": "aimerais"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-afficheurs-choix-2",
+            "text": "aimerait"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-afficheurs-choix-3",
+            "text": "aimerons"
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un souhait ou une préférence. Modèle : J’aimerais préparer des affiches pour donner les horaires.",
+        "givenVerb": "aimer"
+      },
+      {
+        "id": "gram-ex-j8-qcm-conj-a2-billet-vestiaire",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j8-qcm-conj",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ trouver le vestiaire avant le spectacle.",
+        "cue": "Vous êtes avec votre classe au théâtre. Vous voudriez savoir où laisser les manteaux. Exprimez un souhait ou une préférence au conditionnel présent.",
+        "answers": [
+          "voudrions"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-billet-vestiaire-choix-1",
+            "text": "voudrions"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-billet-vestiaire-choix-2",
+            "text": "voudrait"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-billet-vestiaire-choix-3",
+            "text": "voudra"
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un souhait ou une préférence. Modèle : Nous voudrions trouver le vestiaire avant le spectacle.",
+        "givenVerb": "vouloir"
+      },
+      {
+        "id": "gram-ex-j8-qcm-conj-a2-lettre-lecture",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j8-qcm-conj",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ agrandir le texte sur ton écran.",
+        "cue": "Votre amie trouve la lettre difficile à lire. Vous voyez qu’elle a une version numérique. Exprimez un conseil au conditionnel présent.",
+        "answers": [
+          "devrais"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-lettre-lecture-choix-1",
+            "text": "devrais"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-lettre-lecture-choix-2",
+            "text": "devrait"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-lettre-lecture-choix-3",
+            "text": "devrons"
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un conseil. Modèle : Tu devrais agrandir le texte sur ton écran.",
+        "givenVerb": "devoir"
+      },
+      {
+        "id": "gram-ex-j8-qcm-conj-a2-route-brouillard",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j8-qcm-conj",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Vous ___ allumer vos feux avant de partir.",
+        "cue": "Vous parlez à un cycliste que vous vouvoyez. Il y a beaucoup de brouillard sur la route. Exprimez un conseil au conditionnel présent.",
+        "answers": [
+          "devriez"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-route-brouillard-choix-1",
+            "text": "devriez"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-route-brouillard-choix-2",
+            "text": "devrait"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-route-brouillard-choix-3",
+            "text": "devrons"
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un conseil. Modèle : Vous devriez allumer vos feux avant de partir.",
+        "givenVerb": "devoir"
+      },
+      {
+        "id": "gram-ex-j8-qcm-conj-a2-atelier-guitare",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j8-qcm-conj",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je ___ essayer la guitare pendant un cours.",
+        "cue": "Vous parlez à la responsable du centre. Vous désirez essayer un instrument avant de vous inscrire. Exprimez un souhait ou une préférence au conditionnel présent.",
+        "answers": [
+          "voudrais"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-atelier-guitare-choix-1",
+            "text": "voudrais"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-atelier-guitare-choix-2",
+            "text": "voudrait"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-atelier-guitare-choix-3",
+            "text": "voudrons"
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un souhait ou une préférence. Modèle : Je voudrais essayer la guitare pendant un cours.",
+        "givenVerb": "vouloir"
+      },
+      {
+        "id": "gram-ex-j8-qcm-conj-a2-repas-chaud",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j8-qcm-conj",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ déjeuner dans la petite salle.",
+        "cue": "Vous mangez avec des camarades au centre. Il pleut et vous souhaitez rester dans le bâtiment. Exprimez un souhait ou une préférence au conditionnel présent.",
+        "answers": [
+          "aimerions"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-repas-chaud-choix-1",
+            "text": "aimerions"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-repas-chaud-choix-2",
+            "text": "aimerait"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-repas-chaud-choix-3",
+            "text": "aimera"
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un souhait ou une préférence. Modèle : Nous aimerions déjeuner dans la petite salle.",
+        "givenVerb": "aimer"
+      },
+      {
+        "id": "gram-ex-j8-qcm-conj-a2-sac-fermeture",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j8-qcm-conj",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ prendre le sac de secours.",
+        "cue": "Votre ami part en randonnée avec un sac qui ferme mal. Un autre sac est libre. Exprimez un conseil au conditionnel présent.",
+        "answers": [
+          "pourrais"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-sac-fermeture-choix-1",
+            "text": "pourrais"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-sac-fermeture-choix-2",
+            "text": "pourrait"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-sac-fermeture-choix-3",
+            "text": "pourrons"
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un conseil. Modèle : Tu pourrais prendre le sac de secours.",
+        "givenVerb": "pouvoir"
+      },
+      {
+        "id": "gram-ex-j8-qcm-conj-a2-chaises-place",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j8-qcm-conj",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Vous ___ placer deux chaises contre le mur.",
+        "cue": "Vous conseillez à un collègue que vous vouvoyez de libérer le passage devant l’accueil. Exprimez un conseil au conditionnel présent.",
+        "answers": [
+          "pourriez"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-chaises-place-choix-1",
+            "text": "pourriez"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-chaises-place-choix-2",
+            "text": "pourrait"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-a2-chaises-place-choix-3",
+            "text": "pourrons"
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un conseil. Modèle : Vous pourriez placer deux chaises contre le mur.",
+        "givenVerb": "pouvoir"
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j8-curriculum-s",
     "subthemeId": "j8",
     "topic": "gram-faits",
@@ -4355,12 +4665,562 @@
           }
         ],
         "explanation": "Ici, le conditionnel présent permet d’exprimer un souhait ou une préférence. Le dialogue proposé est un modèle possible."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-s-a2-manteau-refuge",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j8-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Conseiller ou exprimer un souhait",
+        "situation": "Votre ami attend le bus dehors et il fait très froid. Un café est encore ouvert.\nIdée à exprimer : attendre au café.",
+        "roles": [
+          {
+            "id": "speaker",
+            "label": "Personne qui conseille",
+            "goal": "Formulez la première réponse et répondez à la relance."
+          },
+          {
+            "id": "partner",
+            "label": "Personne conseillée",
+            "goal": "Posez la question puis poursuivez avec la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "partner",
+            "text": "Que me conseilles-tu ?"
+          }
+        ],
+        "task": "Exprimez un conseil avec le verbe « pouvoir » au conditionnel présent. Répondez à la relance puis échangez les rôles.",
+        "answers": [
+          "Personne conseillée : Que me conseilles-tu ?\nPersonne qui conseille : Tu pourrais attendre au café.\nPersonne conseillée : Pourquoi ?\nPersonne qui conseille : Il fait chaud à l’intérieur."
+        ],
+        "followUps": [
+          "Pourquoi ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Conseil ou souhait exprimé au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un conseil. Le dialogue proposé est un modèle possible."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-s-a2-volume-podcast",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j8-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Conseiller ou exprimer un souhait",
+        "situation": "Un voisin écoute un podcast très fort. Vous le vouvoyez et vous voulez rester poli.\nIdée à exprimer : baisser un peu le volume.",
+        "roles": [
+          {
+            "id": "speaker",
+            "label": "Personne qui conseille",
+            "goal": "Formulez la première réponse et répondez à la relance."
+          },
+          {
+            "id": "partner",
+            "label": "Personne conseillée",
+            "goal": "Posez la question puis poursuivez avec la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "partner",
+            "text": "Que me conseillez-vous ?"
+          }
+        ],
+        "task": "Exprimez un conseil avec le verbe « pouvoir » au conditionnel présent. Répondez à la relance puis échangez les rôles.",
+        "answers": [
+          "Personne conseillée : Que me conseillez-vous ?\nPersonne qui conseille : Vous pourriez baisser un peu le volume.\nPersonne conseillée : Vous travaillez ?\nPersonne qui conseille : Oui, je dois finir un devoir."
+        ],
+        "followUps": [
+          "Vous travaillez ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Conseil ou souhait exprimé au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un conseil. Le dialogue proposé est un modèle possible."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-s-a2-afficheurs",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j8-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Conseiller ou exprimer un souhait",
+        "situation": "Vous accueillez un groupe d’amis. Vous souhaitez leur indiquer les horaires de la semaine.\nIdée à exprimer : préparer des affiches pour donner les horaires.",
+        "roles": [
+          {
+            "id": "speaker",
+            "label": "Personne qui exprime son souhait",
+            "goal": "Formulez la première réponse et répondez à la relance."
+          },
+          {
+            "id": "partner",
+            "label": "Interlocuteur",
+            "goal": "Posez la question puis poursuivez avec la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "partner",
+            "text": "Que souhaitez-vous faire ou obtenir ?"
+          }
+        ],
+        "task": "Exprimez un souhait ou une préférence avec le verbe « aimer » au conditionnel présent. Répondez à la relance puis échangez les rôles.",
+        "answers": [
+          "Interlocuteur : Que souhaitez-vous faire ou obtenir ?\nPersonne qui exprime son souhait : J’aimerais préparer des affiches pour donner les horaires.\nInterlocuteur : Que faut-il afficher ?\nPersonne qui exprime son souhait : Les horaires de la semaine."
+        ],
+        "followUps": [
+          "Que faut-il afficher ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Conseil ou souhait exprimé au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un souhait ou une préférence. Le dialogue proposé est un modèle possible."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-s-a2-billet-vestiaire",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j8-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Conseiller ou exprimer un souhait",
+        "situation": "Vous êtes avec votre classe au théâtre. Vous voudriez savoir où laisser les manteaux.\nIdée à exprimer : trouver le vestiaire avant le spectacle.",
+        "roles": [
+          {
+            "id": "speaker",
+            "label": "Personne qui exprime son souhait",
+            "goal": "Formulez la première réponse et répondez à la relance."
+          },
+          {
+            "id": "partner",
+            "label": "Interlocuteur",
+            "goal": "Posez la question puis poursuivez avec la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "partner",
+            "text": "Que souhaitez-vous faire ou obtenir ?"
+          }
+        ],
+        "task": "Exprimez un souhait ou une préférence avec le verbe « vouloir » au conditionnel présent. Répondez à la relance puis échangez les rôles.",
+        "answers": [
+          "Interlocuteur : Que souhaitez-vous faire ou obtenir ?\nPersonne qui exprime son souhait : Nous voudrions trouver le vestiaire avant le spectacle.\nInterlocuteur : Quand commence le spectacle ?\nPersonne qui exprime son souhait : Dans vingt minutes."
+        ],
+        "followUps": [
+          "Quand commence le spectacle ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Conseil ou souhait exprimé au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un souhait ou une préférence. Le dialogue proposé est un modèle possible."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-s-a2-lettre-lecture",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j8-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Conseiller ou exprimer un souhait",
+        "situation": "Votre amie trouve la lettre difficile à lire. Vous voyez qu’elle a une version numérique.\nIdée à exprimer : agrandir le texte sur ton écran.",
+        "roles": [
+          {
+            "id": "speaker",
+            "label": "Personne qui conseille",
+            "goal": "Formulez la première réponse et répondez à la relance."
+          },
+          {
+            "id": "partner",
+            "label": "Personne conseillée",
+            "goal": "Posez la question puis poursuivez avec la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "partner",
+            "text": "Que me conseilles-tu ?"
+          }
+        ],
+        "task": "Exprimez un conseil avec le verbe « devoir » au conditionnel présent. Répondez à la relance puis échangez les rôles.",
+        "answers": [
+          "Personne conseillée : Que me conseilles-tu ?\nPersonne qui conseille : Tu devrais agrandir le texte sur ton écran.\nPersonne conseillée : Comment cela aidera-t-il ?\nPersonne qui conseille : Les caractères seront plus grands."
+        ],
+        "followUps": [
+          "Comment cela aidera-t-il ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Conseil ou souhait exprimé au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un conseil. Le dialogue proposé est un modèle possible."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-s-a2-route-brouillard",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j8-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Conseiller ou exprimer un souhait",
+        "situation": "Vous parlez à un cycliste que vous vouvoyez. Il y a beaucoup de brouillard sur la route.\nIdée à exprimer : allumer vos feux avant de partir.",
+        "roles": [
+          {
+            "id": "speaker",
+            "label": "Personne qui conseille",
+            "goal": "Formulez la première réponse et répondez à la relance."
+          },
+          {
+            "id": "partner",
+            "label": "Personne conseillée",
+            "goal": "Posez la question puis poursuivez avec la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "partner",
+            "text": "Que me conseillez-vous ?"
+          }
+        ],
+        "task": "Exprimez un conseil avec le verbe « devoir » au conditionnel présent. Répondez à la relance puis échangez les rôles.",
+        "answers": [
+          "Personne conseillée : Que me conseillez-vous ?\nPersonne qui conseille : Vous devriez allumer vos feux avant de partir.\nPersonne conseillée : Pourquoi maintenant ?\nPersonne qui conseille : On vous verra mieux."
+        ],
+        "followUps": [
+          "Pourquoi maintenant ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Conseil ou souhait exprimé au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un conseil. Le dialogue proposé est un modèle possible."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-s-a2-atelier-guitare",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j8-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Conseiller ou exprimer un souhait",
+        "situation": "Vous parlez à la responsable du centre. Vous désirez essayer un instrument avant de vous inscrire.\nIdée à exprimer : essayer la guitare pendant un cours.",
+        "roles": [
+          {
+            "id": "speaker",
+            "label": "Personne qui exprime son souhait",
+            "goal": "Formulez la première réponse et répondez à la relance."
+          },
+          {
+            "id": "partner",
+            "label": "Interlocuteur",
+            "goal": "Posez la question puis poursuivez avec la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "partner",
+            "text": "Que souhaitez-vous faire ou obtenir ?"
+          }
+        ],
+        "task": "Exprimez un souhait ou une préférence avec le verbe « vouloir » au conditionnel présent. Répondez à la relance puis échangez les rôles.",
+        "answers": [
+          "Interlocuteur : Que souhaitez-vous faire ou obtenir ?\nPersonne qui exprime son souhait : Je voudrais essayer la guitare pendant un cours.\nInterlocuteur : Pourquoi avant de vous inscrire ?\nPersonne qui exprime son souhait : Pour savoir si le cours me plaît."
+        ],
+        "followUps": [
+          "Pourquoi avant de vous inscrire ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Conseil ou souhait exprimé au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un souhait ou une préférence. Le dialogue proposé est un modèle possible."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-s-a2-repas-chaud",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j8-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Conseiller ou exprimer un souhait",
+        "situation": "Vous mangez avec des camarades au centre. Il pleut et vous souhaitez rester dans le bâtiment.\nIdée à exprimer : déjeuner dans la petite salle.",
+        "roles": [
+          {
+            "id": "speaker",
+            "label": "Personne qui exprime son souhait",
+            "goal": "Formulez la première réponse et répondez à la relance."
+          },
+          {
+            "id": "partner",
+            "label": "Interlocuteur",
+            "goal": "Posez la question puis poursuivez avec la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "partner",
+            "text": "Que souhaitez-vous faire ou obtenir ?"
+          }
+        ],
+        "task": "Exprimez un souhait ou une préférence avec le verbe « aimer » au conditionnel présent. Répondez à la relance puis échangez les rôles.",
+        "answers": [
+          "Interlocuteur : Que souhaitez-vous faire ou obtenir ?\nPersonne qui exprime son souhait : Nous aimerions déjeuner dans la petite salle.\nInterlocuteur : Où est cette salle ?\nPersonne qui exprime son souhait : À côté de la cuisine."
+        ],
+        "followUps": [
+          "Où est cette salle ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Conseil ou souhait exprimé au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un souhait ou une préférence. Le dialogue proposé est un modèle possible."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-s-a2-sac-fermeture",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j8-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Conseiller ou exprimer un souhait",
+        "situation": "Votre ami part en randonnée avec un sac qui ferme mal. Un autre sac est libre.\nIdée à exprimer : prendre le sac de secours.",
+        "roles": [
+          {
+            "id": "speaker",
+            "label": "Personne qui conseille",
+            "goal": "Formulez la première réponse et répondez à la relance."
+          },
+          {
+            "id": "partner",
+            "label": "Personne conseillée",
+            "goal": "Posez la question puis poursuivez avec la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "partner",
+            "text": "Que me conseilles-tu ?"
+          }
+        ],
+        "task": "Exprimez un conseil avec le verbe « pouvoir » au conditionnel présent. Répondez à la relance puis échangez les rôles.",
+        "answers": [
+          "Personne conseillée : Que me conseilles-tu ?\nPersonne qui conseille : Tu pourrais prendre le sac de secours.\nPersonne conseillée : Où est-il ?\nPersonne qui conseille : Près de la porte."
+        ],
+        "followUps": [
+          "Où est-il ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Conseil ou souhait exprimé au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un conseil. Le dialogue proposé est un modèle possible."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-s-a2-chaises-place",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j8-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Conseiller ou exprimer un souhait",
+        "situation": "Vous conseillez à un collègue que vous vouvoyez de libérer le passage devant l’accueil.\nIdée à exprimer : placer deux chaises contre le mur.",
+        "roles": [
+          {
+            "id": "speaker",
+            "label": "Personne qui conseille",
+            "goal": "Formulez la première réponse et répondez à la relance."
+          },
+          {
+            "id": "partner",
+            "label": "Personne conseillée",
+            "goal": "Posez la question puis poursuivez avec la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "partner",
+            "text": "Que me conseillez-vous ?"
+          }
+        ],
+        "task": "Exprimez un conseil avec le verbe « pouvoir » au conditionnel présent. Répondez à la relance puis échangez les rôles.",
+        "answers": [
+          "Personne conseillée : Que me conseillez-vous ?\nPersonne qui conseille : Vous pourriez placer deux chaises contre le mur.\nPersonne conseillée : Quel passage doit rester libre ?\nPersonne qui conseille : Celui devant l’accueil."
+        ],
+        "followUps": [
+          "Quel passage doit rester libre ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Conseil ou souhait exprimé au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un conseil. Le dialogue proposé est un modèle possible."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j8-curriculum-p",
     "subthemeId": "j8",
     "topic": "gram-faits",
@@ -5980,12 +6840,332 @@
           }
         ],
         "explanation": "Ici, le conditionnel présent permet d’exprimer un souhait ou une préférence. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-p-a2-manteau-refuge",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j8-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Votre ami attend le bus dehors et il fait très froid. Un café est encore ouvert.\nIdée à exprimer : attendre au café.",
+        "mode": "oral",
+        "task": "Exprimez un conseil avec le verbe « pouvoir » au conditionnel présent. Relance : « Pourquoi ? »",
+        "answers": [
+          "Tu pourrais attendre au café.\nRéponse possible à la relance : Il fait chaud à l’intérieur."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Conseil ou souhait exprimé au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un conseil. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-p-a2-volume-podcast",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j8-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Un voisin écoute un podcast très fort. Vous le vouvoyez et vous voulez rester poli.\nIdée à exprimer : baisser un peu le volume.",
+        "mode": "oral",
+        "task": "Exprimez un conseil avec le verbe « pouvoir » au conditionnel présent. Relance : « Vous travaillez ? »",
+        "answers": [
+          "Vous pourriez baisser un peu le volume.\nRéponse possible à la relance : Oui, je dois finir un devoir."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Conseil ou souhait exprimé au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un conseil. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-p-a2-afficheurs",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j8-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Vous accueillez un groupe d’amis. Vous souhaitez leur indiquer les horaires de la semaine.\nIdée à exprimer : préparer des affiches pour donner les horaires.",
+        "mode": "oral",
+        "task": "Exprimez un souhait ou une préférence avec le verbe « aimer » au conditionnel présent. Relance : « Que faut-il afficher ? »",
+        "answers": [
+          "J’aimerais préparer des affiches pour donner les horaires.\nRéponse possible à la relance : Les horaires de la semaine."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Conseil ou souhait exprimé au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un souhait ou une préférence. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-p-a2-billet-vestiaire",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j8-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Vous êtes avec votre classe au théâtre. Vous voudriez savoir où laisser les manteaux.\nIdée à exprimer : trouver le vestiaire avant le spectacle.",
+        "mode": "oral",
+        "task": "Exprimez un souhait ou une préférence avec le verbe « vouloir » au conditionnel présent. Relance : « Quand commence le spectacle ? »",
+        "answers": [
+          "Nous voudrions trouver le vestiaire avant le spectacle.\nRéponse possible à la relance : Dans vingt minutes."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Conseil ou souhait exprimé au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un souhait ou une préférence. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-p-a2-lettre-lecture",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j8-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Votre amie trouve la lettre difficile à lire. Vous voyez qu’elle a une version numérique.\nIdée à exprimer : agrandir le texte sur ton écran.",
+        "mode": "oral",
+        "task": "Exprimez un conseil avec le verbe « devoir » au conditionnel présent. Relance : « Comment cela aidera-t-il ? »",
+        "answers": [
+          "Tu devrais agrandir le texte sur ton écran.\nRéponse possible à la relance : Les caractères seront plus grands."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Conseil ou souhait exprimé au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un conseil. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-p-a2-route-brouillard",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j8-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Vous parlez à un cycliste que vous vouvoyez. Il y a beaucoup de brouillard sur la route.\nIdée à exprimer : allumer vos feux avant de partir.",
+        "mode": "oral",
+        "task": "Exprimez un conseil avec le verbe « devoir » au conditionnel présent. Relance : « Pourquoi maintenant ? »",
+        "answers": [
+          "Vous devriez allumer vos feux avant de partir.\nRéponse possible à la relance : On vous verra mieux."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Conseil ou souhait exprimé au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un conseil. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-p-a2-atelier-guitare",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j8-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Vous parlez à la responsable du centre. Vous désirez essayer un instrument avant de vous inscrire.\nIdée à exprimer : essayer la guitare pendant un cours.",
+        "mode": "oral",
+        "task": "Exprimez un souhait ou une préférence avec le verbe « vouloir » au conditionnel présent. Relance : « Pourquoi avant de vous inscrire ? »",
+        "answers": [
+          "Je voudrais essayer la guitare pendant un cours.\nRéponse possible à la relance : Pour savoir si le cours me plaît."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Conseil ou souhait exprimé au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un souhait ou une préférence. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-p-a2-repas-chaud",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j8-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Vous mangez avec des camarades au centre. Il pleut et vous souhaitez rester dans le bâtiment.\nIdée à exprimer : déjeuner dans la petite salle.",
+        "mode": "oral",
+        "task": "Exprimez un souhait ou une préférence avec le verbe « aimer » au conditionnel présent. Relance : « Où est cette salle ? »",
+        "answers": [
+          "Nous aimerions déjeuner dans la petite salle.\nRéponse possible à la relance : À côté de la cuisine."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Conseil ou souhait exprimé au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un souhait ou une préférence. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-p-a2-sac-fermeture",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j8-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Votre ami part en randonnée avec un sac qui ferme mal. Un autre sac est libre.\nIdée à exprimer : prendre le sac de secours.",
+        "mode": "oral",
+        "task": "Exprimez un conseil avec le verbe « pouvoir » au conditionnel présent. Relance : « Où est-il ? »",
+        "answers": [
+          "Tu pourrais prendre le sac de secours.\nRéponse possible à la relance : Près de la porte."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Conseil ou souhait exprimé au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un conseil. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-p-a2-chaises-place",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-a2.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j8-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "prompt": "Vous conseillez à un collègue que vous vouvoyez de libérer le passage devant l’accueil.\nIdée à exprimer : placer deux chaises contre le mur.",
+        "mode": "oral",
+        "task": "Exprimez un conseil avec le verbe « pouvoir » au conditionnel présent. Relance : « Quel passage doit rester libre ? »",
+        "answers": [
+          "Vous pourriez placer deux chaises contre le mur.\nRéponse possible à la relance : Celui devant l’accueil."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Conseil ou souhait exprimé au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Ici, le conditionnel présent permet d’exprimer un conseil. Les reformulations fidèles à la consigne sont recevables."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j8-qcm-conj",
     "subthemeId": "j8",
     "topic": "gram-faits",
@@ -7557,12 +8737,322 @@
         ],
         "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Modèle : Le musée présenterait l’objet dans la vitrine centrale.",
         "givenVerb": "présenter"
+      },
+      {
+        "id": "gram-ex-j8-qcm-conj-b1-archives-local",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j8-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Les archives ___ leur local actuel cet hiver.",
+        "cue": "Une association évoque un déménagement dans un message. La commune n’a publié aucune décision. Signalez que l’information est incertaine avec le conditionnel présent.",
+        "answers": [
+          "quitteraient"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-archives-local-choix-1",
+            "text": "quitteraient"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-archives-local-choix-2",
+            "text": "quitterait"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-archives-local-choix-3",
+            "text": "quitterons"
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Modèle : Les archives quitteraient leur local actuel cet hiver.",
+        "givenVerb": "quitter"
+      },
+      {
+        "id": "gram-ex-j8-qcm-conj-b1-isolant-toiture",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j8-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "L’équipe de maintenance ___ un isolant sous la toiture en juillet.",
+        "cue": "Un entrepreneur a parlé d’une intervention au journal local. Le programme officiel n’est pas encore disponible. Signalez que l’information est incertaine avec le conditionnel présent.",
+        "answers": [
+          "poserait"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-isolant-toiture-choix-1",
+            "text": "poserait"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-isolant-toiture-choix-2",
+            "text": "poseraient"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-isolant-toiture-choix-3",
+            "text": "poserons"
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Modèle : L’équipe de maintenance poserait un isolant sous la toiture en juillet.",
+        "givenVerb": "poser"
+      },
+      {
+        "id": "gram-ex-j8-qcm-conj-b1-terrasse-bancs",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j8-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Trois bancs ___ sur la terrasse avant la fin du mois.",
+        "cue": "Une personne du comité a évoqué une installation. Le compte rendu de la réunion n’est pas signé. Signalez que l’information est incertaine avec le conditionnel présent.",
+        "answers": [
+          "arriveraient"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-terrasse-bancs-choix-1",
+            "text": "arriveraient"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-terrasse-bancs-choix-2",
+            "text": "arriverait"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-terrasse-bancs-choix-3",
+            "text": "arriverons"
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Modèle : Trois bancs arriveraient sur la terrasse avant la fin du mois.",
+        "givenVerb": "arriver"
+      },
+      {
+        "id": "gram-ex-j8-qcm-conj-b1-randonnee-essai",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j8-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Le nouveau sentier ___ un groupe d’essai pendant les vacances.",
+        "cue": "Une randonneuse dit avoir aperçu des barrières neuves. La mairie n’a annoncé aucune ouverture. Signalez que l’information est incertaine avec le conditionnel présent.",
+        "answers": [
+          "accueillerait"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-randonnee-essai-choix-1",
+            "text": "accueillerait"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-randonnee-essai-choix-2",
+            "text": "accueilleraient"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-randonnee-essai-choix-3",
+            "text": "accueillerons"
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Modèle : Le nouveau sentier accueillerait un groupe d’essai pendant les vacances.",
+        "givenVerb": "accueillir"
+      },
+      {
+        "id": "gram-ex-j8-qcm-conj-b1-projecteur-remplacement",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j8-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "La salle ___ un projecteur de remplacement demain.",
+        "cue": "Un membre du public a entendu une proposition dans le hall. La direction n’a pas encore répondu. Signalez que l’information est incertaine avec le conditionnel présent.",
+        "answers": [
+          "recevrait"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-projecteur-remplacement-choix-1",
+            "text": "recevrait"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-projecteur-remplacement-choix-2",
+            "text": "recevraient"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-projecteur-remplacement-choix-3",
+            "text": "recevrons"
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Modèle : La salle recevrait un projecteur de remplacement demain.",
+        "givenVerb": "recevoir"
+      },
+      {
+        "id": "gram-ex-j8-qcm-conj-b1-bus-marche",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j8-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Deux bus supplémentaires ___ le marché du dimanche.",
+        "cue": "Un commerçant a appris la nouvelle d’un chauffeur. Les horaires affichés restent les mêmes. Signalez que l’information est incertaine avec le conditionnel présent.",
+        "answers": [
+          "desserviraient"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-bus-marche-choix-1",
+            "text": "desserviraient"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-bus-marche-choix-2",
+            "text": "desservirait"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-bus-marche-choix-3",
+            "text": "desservirons"
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Modèle : Deux bus supplémentaires desserviraient le marché du dimanche.",
+        "givenVerb": "desservir"
+      },
+      {
+        "id": "gram-ex-j8-qcm-conj-b1-conservatoire-locaux",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j8-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Le conservatoire ___ une salle de répétition au sous-sol.",
+        "cue": "Un délégué a évoqué une piste de travail. La commission n’a rendu aucun rapport public. Signalez que l’information est incertaine avec le conditionnel présent.",
+        "answers": [
+          "ouvrirait"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-conservatoire-locaux-choix-1",
+            "text": "ouvrirait"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-conservatoire-locaux-choix-2",
+            "text": "ouvriraient"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-conservatoire-locaux-choix-3",
+            "text": "ouvrirons"
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Modèle : Le conservatoire ouvrirait une salle de répétition au sous-sol.",
+        "givenVerb": "ouvrir"
+      },
+      {
+        "id": "gram-ex-j8-qcm-conj-b1-laboratoire-cours",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j8-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Les élèves de première année ___ la visite du laboratoire le matin.",
+        "cue": "Une personne du lycée rapporte un changement d’horaires. Le planning partagé ne le montre pas. Signalez que l’information est incertaine avec le conditionnel présent.",
+        "answers": [
+          "feraient"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-laboratoire-cours-choix-1",
+            "text": "feraient"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-laboratoire-cours-choix-2",
+            "text": "ferait"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-laboratoire-cours-choix-3",
+            "text": "ferons"
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Modèle : Les élèves de première année feraient la visite du laboratoire le matin.",
+        "givenVerb": "faire"
+      },
+      {
+        "id": "gram-ex-j8-qcm-conj-b1-berge-sable",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j8-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "La ville ___ la berge avec des sacs de sable.",
+        "cue": "Un riverain évoque un projet de la ville. Le service technique ne l’a pas confirmé. Signalez que l’information est incertaine avec le conditionnel présent.",
+        "answers": [
+          "renforcerait"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-berge-sable-choix-1",
+            "text": "renforcerait"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-berge-sable-choix-2",
+            "text": "renforceraient"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-berge-sable-choix-3",
+            "text": "renforcerons"
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Modèle : La ville renforcerait la berge avec des sacs de sable.",
+        "givenVerb": "renforcer"
+      },
+      {
+        "id": "gram-ex-j8-qcm-conj-b1-entree-inventaire",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j8-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Les portes principales ___ à midi pour l’inventaire.",
+        "cue": "Un avis non signé circule parmi les usagers. L’équipe d’accueil attend la décision de la cheffe de service. Signalez que l’information est incertaine avec le conditionnel présent.",
+        "answers": [
+          "fermeraient"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-entree-inventaire-choix-1",
+            "text": "fermeraient"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-entree-inventaire-choix-2",
+            "text": "fermerait"
+          },
+          {
+            "id": "gram-ex-j8-qcm-conj-b1-entree-inventaire-choix-3",
+            "text": "fermerons"
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Modèle : Les portes principales fermeraient à midi pour l’inventaire.",
+        "givenVerb": "fermer"
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j8-curriculum-t",
     "subthemeId": "j8",
     "topic": "gram-faits",
@@ -8432,12 +9922,182 @@
         ],
         "responseLines": 2,
         "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Modèle possible : D’après la source, le musée présenterait l’objet dans la vitrine centrale. Cette information reste à vérifier."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-t-b1-archives-local",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j8-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Une association évoque un déménagement dans un message. La commune n’a publié aucune décision.\nInformation à vérifier : Les archives (« quitter ») leur local actuel cet hiver.",
+        "directive": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent.",
+        "answers": [
+          "D’après la source, les archives quitteraient leur local actuel cet hiver. Cette information reste à vérifier."
+        ],
+        "responseLines": 2,
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Modèle possible : D’après la source, les archives quitteraient leur local actuel cet hiver. Cette information reste à vérifier."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-t-b1-isolant-toiture",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j8-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Un entrepreneur a parlé d’une intervention au journal local. Le programme officiel n’est pas encore disponible.\nInformation à vérifier : L’équipe de maintenance (« poser ») un isolant sous la toiture en juillet.",
+        "directive": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent.",
+        "answers": [
+          "D’après la source, l’équipe de maintenance poserait un isolant sous la toiture en juillet. Cette information reste à vérifier."
+        ],
+        "responseLines": 2,
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Modèle possible : D’après la source, l’équipe de maintenance poserait un isolant sous la toiture en juillet. Cette information reste à vérifier."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-t-b1-terrasse-bancs",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j8-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Une personne du comité a évoqué une installation. Le compte rendu de la réunion n’est pas signé.\nInformation à vérifier : Trois bancs (« arriver ») sur la terrasse avant la fin du mois.",
+        "directive": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent.",
+        "answers": [
+          "D’après la source, trois bancs arriveraient sur la terrasse avant la fin du mois. Cette information reste à vérifier."
+        ],
+        "responseLines": 2,
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Modèle possible : D’après la source, trois bancs arriveraient sur la terrasse avant la fin du mois. Cette information reste à vérifier."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-t-b1-randonnee-essai",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j8-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Une randonneuse dit avoir aperçu des barrières neuves. La mairie n’a annoncé aucune ouverture.\nInformation à vérifier : Le nouveau sentier (« accueillir ») un groupe d’essai pendant les vacances.",
+        "directive": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent.",
+        "answers": [
+          "D’après la source, le nouveau sentier accueillerait un groupe d’essai pendant les vacances. Cette information reste à vérifier."
+        ],
+        "responseLines": 2,
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Modèle possible : D’après la source, le nouveau sentier accueillerait un groupe d’essai pendant les vacances. Cette information reste à vérifier."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-t-b1-projecteur-remplacement",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j8-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Un membre du public a entendu une proposition dans le hall. La direction n’a pas encore répondu.\nInformation à vérifier : La salle (« recevoir ») un projecteur de remplacement demain.",
+        "directive": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent.",
+        "answers": [
+          "D’après la source, la salle recevrait un projecteur de remplacement demain. Cette information reste à vérifier."
+        ],
+        "responseLines": 2,
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Modèle possible : D’après la source, la salle recevrait un projecteur de remplacement demain. Cette information reste à vérifier."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-t-b1-bus-marche",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j8-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Un commerçant a appris la nouvelle d’un chauffeur. Les horaires affichés restent les mêmes.\nInformation à vérifier : Deux bus supplémentaires (« desservir ») le marché du dimanche.",
+        "directive": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent.",
+        "answers": [
+          "D’après la source, deux bus supplémentaires desserviraient le marché du dimanche. Cette information reste à vérifier."
+        ],
+        "responseLines": 2,
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Modèle possible : D’après la source, deux bus supplémentaires desserviraient le marché du dimanche. Cette information reste à vérifier."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-t-b1-conservatoire-locaux",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j8-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Un délégué a évoqué une piste de travail. La commission n’a rendu aucun rapport public.\nInformation à vérifier : Le conservatoire (« ouvrir ») une salle de répétition au sous-sol.",
+        "directive": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent.",
+        "answers": [
+          "D’après la source, le conservatoire ouvrirait une salle de répétition au sous-sol. Cette information reste à vérifier."
+        ],
+        "responseLines": 2,
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Modèle possible : D’après la source, le conservatoire ouvrirait une salle de répétition au sous-sol. Cette information reste à vérifier."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-t-b1-laboratoire-cours",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j8-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Une personne du lycée rapporte un changement d’horaires. Le planning partagé ne le montre pas.\nInformation à vérifier : Les élèves de première année (« faire ») la visite du laboratoire le matin.",
+        "directive": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent.",
+        "answers": [
+          "D’après la source, les élèves de première année feraient la visite du laboratoire le matin. Cette information reste à vérifier."
+        ],
+        "responseLines": 2,
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Modèle possible : D’après la source, les élèves de première année feraient la visite du laboratoire le matin. Cette information reste à vérifier."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-t-b1-berge-sable",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j8-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Un riverain évoque un projet de la ville. Le service technique ne l’a pas confirmé.\nInformation à vérifier : La ville (« renforcer ») la berge avec des sacs de sable.",
+        "directive": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent.",
+        "answers": [
+          "D’après la source, la ville renforcerait la berge avec des sacs de sable. Cette information reste à vérifier."
+        ],
+        "responseLines": 2,
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Modèle possible : D’après la source, la ville renforcerait la berge avec des sacs de sable. Cette information reste à vérifier."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-t-b1-entree-inventaire",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j8-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Un avis non signé circule parmi les usagers. L’équipe d’accueil attend la décision de la cheffe de service.\nInformation à vérifier : Les portes principales (« fermer ») à midi pour l’inventaire.",
+        "directive": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent.",
+        "answers": [
+          "D’après la source, les portes principales fermeraient à midi pour l’inventaire. Cette information reste à vérifier."
+        ],
+        "responseLines": 2,
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Modèle possible : D’après la source, les portes principales fermeraient à midi pour l’inventaire. Cette information reste à vérifier."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j8-curriculum-s",
     "subthemeId": "j8",
     "topic": "gram-faits",
@@ -11207,12 +12867,562 @@
           }
         ],
         "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Le dialogue proposé est un modèle possible."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-s-b1-archives-local",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j8-curriculum-s",
+          "partition": "b1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Vérifier une information",
+        "situation": "Une association évoque un déménagement dans un message. La commune n’a publié aucune décision.\nInformation à vérifier : Les archives (« quitter ») leur local actuel cet hiver.",
+        "roles": [
+          {
+            "id": "speaker",
+            "label": "Journaliste",
+            "goal": "Formulez la première réponse et répondez à la relance."
+          },
+          {
+            "id": "partner",
+            "label": "Collègue de la rédaction",
+            "goal": "Posez la question puis poursuivez avec la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "partner",
+            "text": "Que sait-on pour l’instant ?"
+          }
+        ],
+        "task": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent. Répondez à la relance puis échangez les rôles.",
+        "answers": [
+          "Collègue de la rédaction : Que sait-on pour l’instant ?\nJournaliste : D’après la source, les archives quitteraient leur local actuel cet hiver. Cette information reste à vérifier.\nCollègue de la rédaction : Qui peut confirmer le changement ?\nJournaliste : Le service communal chargé des archives."
+        ],
+        "followUps": [
+          "Qui peut confirmer le changement ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Information attribuée à la source, au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Le dialogue proposé est un modèle possible."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-s-b1-isolant-toiture",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j8-curriculum-s",
+          "partition": "b1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Vérifier une information",
+        "situation": "Un entrepreneur a parlé d’une intervention au journal local. Le programme officiel n’est pas encore disponible.\nInformation à vérifier : L’équipe de maintenance (« poser ») un isolant sous la toiture en juillet.",
+        "roles": [
+          {
+            "id": "speaker",
+            "label": "Journaliste",
+            "goal": "Formulez la première réponse et répondez à la relance."
+          },
+          {
+            "id": "partner",
+            "label": "Collègue de la rédaction",
+            "goal": "Posez la question puis poursuivez avec la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "partner",
+            "text": "Que sait-on pour l’instant ?"
+          }
+        ],
+        "task": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent. Répondez à la relance puis échangez les rôles.",
+        "answers": [
+          "Collègue de la rédaction : Que sait-on pour l’instant ?\nJournaliste : D’après la source, l’équipe de maintenance poserait un isolant sous la toiture en juillet. Cette information reste à vérifier.\nCollègue de la rédaction : Quel document faut-il demander ?\nJournaliste : Le calendrier officiel du chantier."
+        ],
+        "followUps": [
+          "Quel document faut-il demander ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Information attribuée à la source, au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Le dialogue proposé est un modèle possible."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-s-b1-terrasse-bancs",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j8-curriculum-s",
+          "partition": "b1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Vérifier une information",
+        "situation": "Une personne du comité a évoqué une installation. Le compte rendu de la réunion n’est pas signé.\nInformation à vérifier : Trois bancs (« arriver ») sur la terrasse avant la fin du mois.",
+        "roles": [
+          {
+            "id": "speaker",
+            "label": "Journaliste",
+            "goal": "Formulez la première réponse et répondez à la relance."
+          },
+          {
+            "id": "partner",
+            "label": "Collègue de la rédaction",
+            "goal": "Posez la question puis poursuivez avec la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "partner",
+            "text": "Que sait-on pour l’instant ?"
+          }
+        ],
+        "task": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent. Répondez à la relance puis échangez les rôles.",
+        "answers": [
+          "Collègue de la rédaction : Que sait-on pour l’instant ?\nJournaliste : D’après la source, trois bancs arriveraient sur la terrasse avant la fin du mois. Cette information reste à vérifier.\nCollègue de la rédaction : À qui demander une confirmation ?\nJournaliste : Au comité qui commande le mobilier."
+        ],
+        "followUps": [
+          "À qui demander une confirmation ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Information attribuée à la source, au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Le dialogue proposé est un modèle possible."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-s-b1-randonnee-essai",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j8-curriculum-s",
+          "partition": "b1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Vérifier une information",
+        "situation": "Une randonneuse dit avoir aperçu des barrières neuves. La mairie n’a annoncé aucune ouverture.\nInformation à vérifier : Le nouveau sentier (« accueillir ») un groupe d’essai pendant les vacances.",
+        "roles": [
+          {
+            "id": "speaker",
+            "label": "Journaliste",
+            "goal": "Formulez la première réponse et répondez à la relance."
+          },
+          {
+            "id": "partner",
+            "label": "Collègue de la rédaction",
+            "goal": "Posez la question puis poursuivez avec la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "partner",
+            "text": "Que sait-on pour l’instant ?"
+          }
+        ],
+        "task": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent. Répondez à la relance puis échangez les rôles.",
+        "answers": [
+          "Collègue de la rédaction : Que sait-on pour l’instant ?\nJournaliste : D’après la source, le nouveau sentier accueillerait un groupe d’essai pendant les vacances. Cette information reste à vérifier.\nCollègue de la rédaction : Pourquoi vérifier auprès de la mairie ?\nJournaliste : Aucune ouverture n’a été annoncée."
+        ],
+        "followUps": [
+          "Pourquoi vérifier auprès de la mairie ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Information attribuée à la source, au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Le dialogue proposé est un modèle possible."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-s-b1-projecteur-remplacement",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j8-curriculum-s",
+          "partition": "b1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Vérifier une information",
+        "situation": "Un membre du public a entendu une proposition dans le hall. La direction n’a pas encore répondu.\nInformation à vérifier : La salle (« recevoir ») un projecteur de remplacement demain.",
+        "roles": [
+          {
+            "id": "speaker",
+            "label": "Journaliste",
+            "goal": "Formulez la première réponse et répondez à la relance."
+          },
+          {
+            "id": "partner",
+            "label": "Collègue de la rédaction",
+            "goal": "Posez la question puis poursuivez avec la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "partner",
+            "text": "Que sait-on pour l’instant ?"
+          }
+        ],
+        "task": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent. Répondez à la relance puis échangez les rôles.",
+        "answers": [
+          "Collègue de la rédaction : Que sait-on pour l’instant ?\nJournaliste : D’après la source, la salle recevrait un projecteur de remplacement demain. Cette information reste à vérifier.\nCollègue de la rédaction : Quel élément faudrait-il vérifier ?\nJournaliste : La date annoncée par la direction."
+        ],
+        "followUps": [
+          "Quel élément faudrait-il vérifier ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Information attribuée à la source, au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Le dialogue proposé est un modèle possible."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-s-b1-bus-marche",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j8-curriculum-s",
+          "partition": "b1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Vérifier une information",
+        "situation": "Un commerçant a appris la nouvelle d’un chauffeur. Les horaires affichés restent les mêmes.\nInformation à vérifier : Deux bus supplémentaires (« desservir ») le marché du dimanche.",
+        "roles": [
+          {
+            "id": "speaker",
+            "label": "Journaliste",
+            "goal": "Formulez la première réponse et répondez à la relance."
+          },
+          {
+            "id": "partner",
+            "label": "Collègue de la rédaction",
+            "goal": "Posez la question puis poursuivez avec la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "partner",
+            "text": "Que sait-on pour l’instant ?"
+          }
+        ],
+        "task": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent. Répondez à la relance puis échangez les rôles.",
+        "answers": [
+          "Collègue de la rédaction : Que sait-on pour l’instant ?\nJournaliste : D’après la source, deux bus supplémentaires desserviraient le marché du dimanche. Cette information reste à vérifier.\nCollègue de la rédaction : Quel document doit être mis à jour ?\nJournaliste : Les horaires officiels."
+        ],
+        "followUps": [
+          "Quel document doit être mis à jour ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Information attribuée à la source, au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Le dialogue proposé est un modèle possible."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-s-b1-conservatoire-locaux",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j8-curriculum-s",
+          "partition": "b1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Vérifier une information",
+        "situation": "Un délégué a évoqué une piste de travail. La commission n’a rendu aucun rapport public.\nInformation à vérifier : Le conservatoire (« ouvrir ») une salle de répétition au sous-sol.",
+        "roles": [
+          {
+            "id": "speaker",
+            "label": "Journaliste",
+            "goal": "Formulez la première réponse et répondez à la relance."
+          },
+          {
+            "id": "partner",
+            "label": "Collègue de la rédaction",
+            "goal": "Posez la question puis poursuivez avec la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "partner",
+            "text": "Que sait-on pour l’instant ?"
+          }
+        ],
+        "task": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent. Répondez à la relance puis échangez les rôles.",
+        "answers": [
+          "Collègue de la rédaction : Que sait-on pour l’instant ?\nJournaliste : D’après la source, le conservatoire ouvrirait une salle de répétition au sous-sol. Cette information reste à vérifier.\nCollègue de la rédaction : Auprès de qui vérifier cette information ?\nJournaliste : De la commission ou de la direction."
+        ],
+        "followUps": [
+          "Auprès de qui vérifier cette information ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Information attribuée à la source, au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Le dialogue proposé est un modèle possible."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-s-b1-laboratoire-cours",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j8-curriculum-s",
+          "partition": "b1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Vérifier une information",
+        "situation": "Une personne du lycée rapporte un changement d’horaires. Le planning partagé ne le montre pas.\nInformation à vérifier : Les élèves de première année (« faire ») la visite du laboratoire le matin.",
+        "roles": [
+          {
+            "id": "speaker",
+            "label": "Journaliste",
+            "goal": "Formulez la première réponse et répondez à la relance."
+          },
+          {
+            "id": "partner",
+            "label": "Collègue de la rédaction",
+            "goal": "Posez la question puis poursuivez avec la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "partner",
+            "text": "Que sait-on pour l’instant ?"
+          }
+        ],
+        "task": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent. Répondez à la relance puis échangez les rôles.",
+        "answers": [
+          "Collègue de la rédaction : Que sait-on pour l’instant ?\nJournaliste : D’après la source, les élèves de première année feraient la visite du laboratoire le matin. Cette information reste à vérifier.\nCollègue de la rédaction : Qui peut confirmer le créneau ?\nJournaliste : La personne chargée de la visite."
+        ],
+        "followUps": [
+          "Qui peut confirmer le créneau ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Information attribuée à la source, au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Le dialogue proposé est un modèle possible."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-s-b1-berge-sable",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j8-curriculum-s",
+          "partition": "b1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Vérifier une information",
+        "situation": "Un riverain évoque un projet de la ville. Le service technique ne l’a pas confirmé.\nInformation à vérifier : La ville (« renforcer ») la berge avec des sacs de sable.",
+        "roles": [
+          {
+            "id": "speaker",
+            "label": "Journaliste",
+            "goal": "Formulez la première réponse et répondez à la relance."
+          },
+          {
+            "id": "partner",
+            "label": "Collègue de la rédaction",
+            "goal": "Posez la question puis poursuivez avec la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "partner",
+            "text": "Que sait-on pour l’instant ?"
+          }
+        ],
+        "task": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent. Répondez à la relance puis échangez les rôles.",
+        "answers": [
+          "Collègue de la rédaction : Que sait-on pour l’instant ?\nJournaliste : D’après la source, la ville renforcerait la berge avec des sacs de sable. Cette information reste à vérifier.\nCollègue de la rédaction : Quel indice serait plus fiable ?\nJournaliste : Un communiqué du service technique."
+        ],
+        "followUps": [
+          "Quel indice serait plus fiable ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Information attribuée à la source, au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Le dialogue proposé est un modèle possible."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-s-b1-entree-inventaire",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j8-curriculum-s",
+          "partition": "b1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Vérifier une information",
+        "situation": "Un avis non signé circule parmi les usagers. L’équipe d’accueil attend la décision de la cheffe de service.\nInformation à vérifier : Les portes principales (« fermer ») à midi pour l’inventaire.",
+        "roles": [
+          {
+            "id": "speaker",
+            "label": "Journaliste",
+            "goal": "Formulez la première réponse et répondez à la relance."
+          },
+          {
+            "id": "partner",
+            "label": "Collègue de la rédaction",
+            "goal": "Posez la question puis poursuivez avec la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "partner",
+            "text": "Que sait-on pour l’instant ?"
+          }
+        ],
+        "task": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent. Répondez à la relance puis échangez les rôles.",
+        "answers": [
+          "Collègue de la rédaction : Que sait-on pour l’instant ?\nJournaliste : D’après la source, les portes principales fermeraient à midi pour l’inventaire. Cette information reste à vérifier.\nCollègue de la rédaction : Que demandez-vous à l’accueil ?\nJournaliste : Si la fermeture de midi est confirmée."
+        ],
+        "followUps": [
+          "Que demandez-vous à l’accueil ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Information attribuée à la source, au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Le dialogue proposé est un modèle possible."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j8-curriculum-p",
     "subthemeId": "j8",
     "topic": "gram-faits",
@@ -12815,6 +15025,326 @@
         "task": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent. Relance : « Qui peut le confirmer ? »",
         "answers": [
           "D’après la source, le musée présenterait l’objet dans la vitrine centrale. Cette information reste à vérifier.\nRéponse possible à la relance : La personne responsable de l’exposition."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Information attribuée à la source, au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-p-b1-archives-local",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j8-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Une association évoque un déménagement dans un message. La commune n’a publié aucune décision.\nInformation à vérifier : Les archives (« quitter ») leur local actuel cet hiver.",
+        "mode": "oral",
+        "task": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent. Relance : « Qui peut confirmer le changement ? »",
+        "answers": [
+          "D’après la source, les archives quitteraient leur local actuel cet hiver. Cette information reste à vérifier.\nRéponse possible à la relance : Le service communal chargé des archives."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Information attribuée à la source, au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-p-b1-isolant-toiture",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j8-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Un entrepreneur a parlé d’une intervention au journal local. Le programme officiel n’est pas encore disponible.\nInformation à vérifier : L’équipe de maintenance (« poser ») un isolant sous la toiture en juillet.",
+        "mode": "oral",
+        "task": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent. Relance : « Quel document faut-il demander ? »",
+        "answers": [
+          "D’après la source, l’équipe de maintenance poserait un isolant sous la toiture en juillet. Cette information reste à vérifier.\nRéponse possible à la relance : Le calendrier officiel du chantier."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Information attribuée à la source, au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-p-b1-terrasse-bancs",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j8-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Une personne du comité a évoqué une installation. Le compte rendu de la réunion n’est pas signé.\nInformation à vérifier : Trois bancs (« arriver ») sur la terrasse avant la fin du mois.",
+        "mode": "oral",
+        "task": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent. Relance : « À qui demander une confirmation ? »",
+        "answers": [
+          "D’après la source, trois bancs arriveraient sur la terrasse avant la fin du mois. Cette information reste à vérifier.\nRéponse possible à la relance : Au comité qui commande le mobilier."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Information attribuée à la source, au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-p-b1-randonnee-essai",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j8-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Une randonneuse dit avoir aperçu des barrières neuves. La mairie n’a annoncé aucune ouverture.\nInformation à vérifier : Le nouveau sentier (« accueillir ») un groupe d’essai pendant les vacances.",
+        "mode": "oral",
+        "task": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent. Relance : « Pourquoi vérifier auprès de la mairie ? »",
+        "answers": [
+          "D’après la source, le nouveau sentier accueillerait un groupe d’essai pendant les vacances. Cette information reste à vérifier.\nRéponse possible à la relance : Aucune ouverture n’a été annoncée."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Information attribuée à la source, au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-p-b1-projecteur-remplacement",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j8-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Un membre du public a entendu une proposition dans le hall. La direction n’a pas encore répondu.\nInformation à vérifier : La salle (« recevoir ») un projecteur de remplacement demain.",
+        "mode": "oral",
+        "task": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent. Relance : « Quel élément faudrait-il vérifier ? »",
+        "answers": [
+          "D’après la source, la salle recevrait un projecteur de remplacement demain. Cette information reste à vérifier.\nRéponse possible à la relance : La date annoncée par la direction."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Information attribuée à la source, au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-p-b1-bus-marche",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j8-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Un commerçant a appris la nouvelle d’un chauffeur. Les horaires affichés restent les mêmes.\nInformation à vérifier : Deux bus supplémentaires (« desservir ») le marché du dimanche.",
+        "mode": "oral",
+        "task": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent. Relance : « Quel document doit être mis à jour ? »",
+        "answers": [
+          "D’après la source, deux bus supplémentaires desserviraient le marché du dimanche. Cette information reste à vérifier.\nRéponse possible à la relance : Les horaires officiels."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Information attribuée à la source, au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-p-b1-conservatoire-locaux",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j8-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Un délégué a évoqué une piste de travail. La commission n’a rendu aucun rapport public.\nInformation à vérifier : Le conservatoire (« ouvrir ») une salle de répétition au sous-sol.",
+        "mode": "oral",
+        "task": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent. Relance : « Auprès de qui vérifier cette information ? »",
+        "answers": [
+          "D’après la source, le conservatoire ouvrirait une salle de répétition au sous-sol. Cette information reste à vérifier.\nRéponse possible à la relance : De la commission ou de la direction."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Information attribuée à la source, au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-p-b1-laboratoire-cours",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j8-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Une personne du lycée rapporte un changement d’horaires. Le planning partagé ne le montre pas.\nInformation à vérifier : Les élèves de première année (« faire ») la visite du laboratoire le matin.",
+        "mode": "oral",
+        "task": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent. Relance : « Qui peut confirmer le créneau ? »",
+        "answers": [
+          "D’après la source, les élèves de première année feraient la visite du laboratoire le matin. Cette information reste à vérifier.\nRéponse possible à la relance : La personne chargée de la visite."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Information attribuée à la source, au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-p-b1-berge-sable",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j8-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Un riverain évoque un projet de la ville. Le service technique ne l’a pas confirmé.\nInformation à vérifier : La ville (« renforcer ») la berge avec des sacs de sable.",
+        "mode": "oral",
+        "task": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent. Relance : « Quel indice serait plus fiable ? »",
+        "answers": [
+          "D’après la source, la ville renforcerait la berge avec des sacs de sable. Cette information reste à vérifier.\nRéponse possible à la relance : Un communiqué du service technique."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Information attribuée à la source, au conditionnel présent."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Dans ce compte rendu, le conditionnel signale qu’une source avance une information encore non confirmée. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j8-curriculum-p-b1-entree-inventaire",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j8-b1.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j8-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Un avis non signé circule parmi les usagers. L’équipe d’accueil attend la décision de la cheffe de service.\nInformation à vérifier : Les portes principales (« fermer ») à midi pour l’inventaire.",
+        "mode": "oral",
+        "task": "Rapportez l’information à la rédaction en indiquant sa source et son statut incertain. Employez le conditionnel présent. Relance : « Que demandez-vous à l’accueil ? »",
+        "answers": [
+          "D’après la source, les portes principales fermeraient à midi pour l’inventaire. Cette information reste à vérifier.\nRéponse possible à la relance : Si la fermeture de midi est confirmée."
         ],
         "writeLines": 0,
         "rubric": [

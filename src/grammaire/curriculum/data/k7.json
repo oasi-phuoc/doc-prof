@@ -1,7 +1,7 @@
 [
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k7-qcm-verbe",
     "subthemeId": "k7",
     "topic": "gram-exprimer",
@@ -1541,12 +1541,320 @@
           }
         ],
         "explanation": "Même si introduit un fait à l’indicatif. Modèle : Même si le quai principal était en travaux, les voyageurs ont rejoint leur train à temps."
+      },
+      {
+        "id": "gram-ex-k7-qcm-verbe-b1-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k7-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "L’affiche était illisible à plusieurs mètres. ___, des visiteurs ont trouvé leur chemin grâce à un agent.",
+        "cue": "Présentez le résultat inattendu malgré l’obstacle.",
+        "answers": [
+          "Pourtant",
+          "Cependant",
+          "Néanmoins"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-atelier-braille-choix-1",
+            "text": "Pourtant"
+          },
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-atelier-braille-choix-2",
+            "text": "Par conséquent"
+          },
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-atelier-braille-choix-3",
+            "text": "En effet"
+          }
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle. Modèle : L’affiche était illisible à plusieurs mètres. Pourtant, des visiteurs ont trouvé leur chemin grâce à un agent."
+      },
+      {
+        "id": "gram-ex-k7-qcm-verbe-b1-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k7-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "___ l’usure des bandes, le public a entendu les témoignages.",
+        "cue": "Présentez l’obstacle exprimé par le groupe nominal.",
+        "answers": [
+          "Malgré"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-archives-sonores-choix-1",
+            "text": "Malgré"
+          },
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-archives-sonores-choix-2",
+            "text": "Parce que"
+          },
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-archives-sonores-choix-3",
+            "text": "Alors que"
+          }
+        ],
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle. Modèle : Malgré l’usure des bandes, le public a entendu les témoignages."
+      },
+      {
+        "id": "gram-ex-k7-qcm-verbe-b1-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k7-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "___ des sacs gênaient le passage, les élèves ont pu atteindre la cantine à l’heure.",
+        "cue": "Reliez l’obstacle au résultat inattendu en tenant compte du mode verbal.",
+        "answers": [
+          "Même si"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-casiers-cantine-choix-1",
+            "text": "Même si"
+          },
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-casiers-cantine-choix-2",
+            "text": "Bien que"
+          },
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-casiers-cantine-choix-3",
+            "text": "Malgré"
+          }
+        ],
+        "explanation": "Même si introduit un fait à l’indicatif. Modèle : Même si des sacs gênaient le passage, les élèves ont pu atteindre la cantine à l’heure."
+      },
+      {
+        "id": "gram-ex-k7-qcm-verbe-b1-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k7-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Le soleil desséchait la terre en surface. ___, les enfants ont réussi à sauver plusieurs plants.",
+        "cue": "Présentez le résultat inattendu malgré l’obstacle.",
+        "answers": [
+          "Pourtant",
+          "Cependant",
+          "Néanmoins"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-atelier-ombre-choix-1",
+            "text": "Pourtant"
+          },
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-atelier-ombre-choix-2",
+            "text": "Par conséquent"
+          },
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-atelier-ombre-choix-3",
+            "text": "En effet"
+          }
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle. Modèle : Le soleil desséchait la terre en surface. Pourtant, les enfants ont réussi à sauver plusieurs plants."
+      },
+      {
+        "id": "gram-ex-k7-qcm-verbe-b1-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k7-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "___ la panne du micro, tous les dossiers ont été remis à temps.",
+        "cue": "Présentez l’obstacle exprimé par le groupe nominal.",
+        "answers": [
+          "Malgré"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-guichet-sourdine-choix-1",
+            "text": "Malgré"
+          },
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-guichet-sourdine-choix-2",
+            "text": "Parce que"
+          },
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-guichet-sourdine-choix-3",
+            "text": "Alors que"
+          }
+        ],
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle. Modèle : Malgré la panne du micro, tous les dossiers ont été remis à temps."
+      },
+      {
+        "id": "gram-ex-k7-qcm-verbe-b1-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k7-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "___ les machines faisaient trop de bruit, les élèves ont pu suivre la démonstration depuis le couloir.",
+        "cue": "Reliez l’obstacle au résultat inattendu en tenant compte du mode verbal.",
+        "answers": [
+          "Même si"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-protecteurs-oreilles-choix-1",
+            "text": "Même si"
+          },
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-protecteurs-oreilles-choix-2",
+            "text": "Bien que"
+          },
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-protecteurs-oreilles-choix-3",
+            "text": "Malgré"
+          }
+        ],
+        "explanation": "Même si introduit un fait à l’indicatif. Modèle : Même si les machines faisaient trop de bruit, les élèves ont pu suivre la démonstration depuis le couloir."
+      },
+      {
+        "id": "gram-ex-k7-qcm-verbe-b1-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k7-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Le réseau de l’école était inaccessible. ___, les élèves ont pu commencer à l’heure.",
+        "cue": "Présentez le résultat inattendu malgré l’obstacle.",
+        "answers": [
+          "Pourtant",
+          "Cependant",
+          "Néanmoins"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-reseau-ecole-choix-1",
+            "text": "Pourtant"
+          },
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-reseau-ecole-choix-2",
+            "text": "Par conséquent"
+          },
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-reseau-ecole-choix-3",
+            "text": "En effet"
+          }
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle. Modèle : Le réseau de l’école était inaccessible. Pourtant, les élèves ont pu commencer à l’heure."
+      },
+      {
+        "id": "gram-ex-k7-qcm-verbe-b1-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k7-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "___ le mode d’affichage du prix, la vendeuse a terminé toutes les commandes.",
+        "cue": "Présentez l’obstacle exprimé par le groupe nominal.",
+        "answers": [
+          "Malgré"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-panneau-comptoir-choix-1",
+            "text": "Malgré"
+          },
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-panneau-comptoir-choix-2",
+            "text": "Parce que"
+          },
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-panneau-comptoir-choix-3",
+            "text": "Alors que"
+          }
+        ],
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle. Modèle : Malgré le mode d’affichage du prix, la vendeuse a terminé toutes les commandes."
+      },
+      {
+        "id": "gram-ex-k7-qcm-verbe-b1-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k7-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "___ la marche du quai était trop haute, les passagers ont tous gagné la rive.",
+        "cue": "Reliez l’obstacle au résultat inattendu en tenant compte du mode verbal.",
+        "answers": [
+          "Même si"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-bateau-rampe-choix-1",
+            "text": "Même si"
+          },
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-bateau-rampe-choix-2",
+            "text": "Bien que"
+          },
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-bateau-rampe-choix-3",
+            "text": "Malgré"
+          }
+        ],
+        "explanation": "Même si introduit un fait à l’indicatif. Modèle : Même si la marche du quai était trop haute, les passagers ont tous gagné la rive."
+      },
+      {
+        "id": "gram-ex-k7-qcm-verbe-b1-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k7-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Plusieurs numéros avaient pris l’eau. ___, l’équipe a distribué les exemplaires restés secs.",
+        "cue": "Présentez le résultat inattendu malgré l’obstacle.",
+        "answers": [
+          "Pourtant",
+          "Cependant",
+          "Néanmoins"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-abri-journal-choix-1",
+            "text": "Pourtant"
+          },
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-abri-journal-choix-2",
+            "text": "Par conséquent"
+          },
+          {
+            "id": "gram-ex-k7-qcm-verbe-b1-abri-journal-choix-3",
+            "text": "En effet"
+          }
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle. Modèle : Plusieurs numéros avaient pris l’eau. Pourtant, l’équipe a distribué les exemplaires restés secs."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k7-curriculum-t",
     "subthemeId": "k7",
     "topic": "gram-exprimer",
@@ -2416,12 +2724,182 @@
         ],
         "responseLines": 2,
         "explanation": "Même si introduit un fait à l’indicatif."
+      },
+      {
+        "id": "gram-ex-k7-curriculum-t-b1-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k7-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "L’affiche était illisible à plusieurs mètres. Des visiteurs ont trouvé leur chemin grâce à un agent.",
+        "directive": "Reliez les informations avec la construction « Pourtant ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "L’affiche était illisible à plusieurs mètres. Pourtant, des visiteurs ont trouvé leur chemin grâce à un agent."
+        ],
+        "responseLines": 2,
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle."
+      },
+      {
+        "id": "gram-ex-k7-curriculum-t-b1-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k7-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les bandes magnétiques se détérioraient. Le public a entendu les témoignages.",
+        "directive": "Reliez les informations avec la construction « Malgré ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Malgré l’usure des bandes, le public a entendu les témoignages."
+        ],
+        "responseLines": 2,
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle."
+      },
+      {
+        "id": "gram-ex-k7-curriculum-t-b1-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k7-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Des sacs gênaient le passage. Les élèves ont pu atteindre la cantine à l’heure.",
+        "directive": "Reliez les informations avec la construction « Même si ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Même si des sacs gênaient le passage, les élèves ont pu atteindre la cantine à l’heure."
+        ],
+        "responseLines": 2,
+        "explanation": "Même si introduit un fait à l’indicatif."
+      },
+      {
+        "id": "gram-ex-k7-curriculum-t-b1-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k7-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le soleil desséchait la terre en surface. Les enfants ont réussi à sauver plusieurs plants.",
+        "directive": "Reliez les informations avec la construction « Pourtant ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Le soleil desséchait la terre en surface. Pourtant, les enfants ont réussi à sauver plusieurs plants."
+        ],
+        "responseLines": 2,
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle."
+      },
+      {
+        "id": "gram-ex-k7-curriculum-t-b1-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k7-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le micro du guichet était en panne. Tous les dossiers ont été remis à temps.",
+        "directive": "Reliez les informations avec la construction « Malgré ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Malgré la panne du micro, tous les dossiers ont été remis à temps."
+        ],
+        "responseLines": 2,
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle."
+      },
+      {
+        "id": "gram-ex-k7-curriculum-t-b1-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k7-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les machines faisaient trop de bruit. Les élèves ont pu suivre la démonstration depuis le couloir.",
+        "directive": "Reliez les informations avec la construction « Même si ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Même si les machines faisaient trop de bruit, les élèves ont pu suivre la démonstration depuis le couloir."
+        ],
+        "responseLines": 2,
+        "explanation": "Même si introduit un fait à l’indicatif."
+      },
+      {
+        "id": "gram-ex-k7-curriculum-t-b1-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k7-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le réseau de l’école était inaccessible. Les élèves ont pu commencer à l’heure.",
+        "directive": "Reliez les informations avec la construction « Pourtant ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Le réseau de l’école était inaccessible. Pourtant, les élèves ont pu commencer à l’heure."
+        ],
+        "responseLines": 2,
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle."
+      },
+      {
+        "id": "gram-ex-k7-curriculum-t-b1-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k7-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le prix était affiché seulement par kilo. La vendeuse a terminé toutes les commandes.",
+        "directive": "Reliez les informations avec la construction « Malgré ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Malgré le mode d’affichage du prix, la vendeuse a terminé toutes les commandes."
+        ],
+        "responseLines": 2,
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle."
+      },
+      {
+        "id": "gram-ex-k7-curriculum-t-b1-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k7-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "La marche du quai était trop haute. Les passagers ont tous gagné la rive.",
+        "directive": "Reliez les informations avec la construction « Même si ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Même si la marche du quai était trop haute, les passagers ont tous gagné la rive."
+        ],
+        "responseLines": 2,
+        "explanation": "Même si introduit un fait à l’indicatif."
+      },
+      {
+        "id": "gram-ex-k7-curriculum-t-b1-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k7-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Plusieurs numéros avaient pris l’eau. L’équipe a distribué les exemplaires restés secs.",
+        "directive": "Reliez les informations avec la construction « Pourtant ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Plusieurs numéros avaient pris l’eau. Pourtant, l’équipe a distribué les exemplaires restés secs."
+        ],
+        "responseLines": 2,
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k7-curriculum-c",
     "subthemeId": "k7",
     "topic": "gram-exprimer",
@@ -3591,12 +4069,242 @@
           "text": "Bien que"
         },
         "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k7-curriculum-c-b1-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k7-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "L’affiche était illisible à plusieurs mètres. Par conséquent, des visiteurs ont trouvé leur chemin grâce à un agent.",
+        "cue": "Présentez le résultat inattendu malgré l’obstacle.",
+        "answers": [
+          "L’affiche était illisible à plusieurs mètres. Pourtant, des visiteurs ont trouvé leur chemin grâce à un agent."
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 46,
+          "end": 60,
+          "text": "Par conséquent"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k7-curriculum-c-b1-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k7-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Parce que l’usure des bandes, le public a entendu les témoignages.",
+        "cue": "Présentez l’obstacle exprimé par le groupe nominal.",
+        "answers": [
+          "Malgré l’usure des bandes, le public a entendu les témoignages."
+        ],
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 9,
+          "text": "Parce que"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k7-curriculum-c-b1-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k7-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Bien que des sacs gênaient le passage, les élèves ont pu atteindre la cantine à l’heure.",
+        "cue": "Reliez l’obstacle au résultat inattendu en tenant compte du mode verbal.",
+        "answers": [
+          "Même si des sacs gênaient le passage, les élèves ont pu atteindre la cantine à l’heure."
+        ],
+        "explanation": "Même si introduit un fait à l’indicatif.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 8,
+          "text": "Bien que"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k7-curriculum-c-b1-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k7-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Le soleil desséchait la terre en surface. Par conséquent, les enfants ont réussi à sauver plusieurs plants.",
+        "cue": "Présentez le résultat inattendu malgré l’obstacle.",
+        "answers": [
+          "Le soleil desséchait la terre en surface. Pourtant, les enfants ont réussi à sauver plusieurs plants."
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 42,
+          "end": 56,
+          "text": "Par conséquent"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k7-curriculum-c-b1-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k7-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Parce que la panne du micro, tous les dossiers ont été remis à temps.",
+        "cue": "Présentez l’obstacle exprimé par le groupe nominal.",
+        "answers": [
+          "Malgré la panne du micro, tous les dossiers ont été remis à temps."
+        ],
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 9,
+          "text": "Parce que"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k7-curriculum-c-b1-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k7-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Bien que les machines faisaient trop de bruit, les élèves ont pu suivre la démonstration depuis le couloir.",
+        "cue": "Reliez l’obstacle au résultat inattendu en tenant compte du mode verbal.",
+        "answers": [
+          "Même si les machines faisaient trop de bruit, les élèves ont pu suivre la démonstration depuis le couloir."
+        ],
+        "explanation": "Même si introduit un fait à l’indicatif.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 8,
+          "text": "Bien que"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k7-curriculum-c-b1-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k7-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Le réseau de l’école était inaccessible. Par conséquent, les élèves ont pu commencer à l’heure.",
+        "cue": "Présentez le résultat inattendu malgré l’obstacle.",
+        "answers": [
+          "Le réseau de l’école était inaccessible. Pourtant, les élèves ont pu commencer à l’heure."
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 41,
+          "end": 55,
+          "text": "Par conséquent"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k7-curriculum-c-b1-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k7-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Parce que le mode d’affichage du prix, la vendeuse a terminé toutes les commandes.",
+        "cue": "Présentez l’obstacle exprimé par le groupe nominal.",
+        "answers": [
+          "Malgré le mode d’affichage du prix, la vendeuse a terminé toutes les commandes."
+        ],
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 9,
+          "text": "Parce que"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k7-curriculum-c-b1-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k7-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Bien que la marche du quai était trop haute, les passagers ont tous gagné la rive.",
+        "cue": "Reliez l’obstacle au résultat inattendu en tenant compte du mode verbal.",
+        "answers": [
+          "Même si la marche du quai était trop haute, les passagers ont tous gagné la rive."
+        ],
+        "explanation": "Même si introduit un fait à l’indicatif.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 0,
+          "end": 8,
+          "text": "Bien que"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k7-curriculum-c-b1-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k7-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Plusieurs numéros avaient pris l’eau. Par conséquent, l’équipe a distribué les exemplaires restés secs.",
+        "cue": "Présentez le résultat inattendu malgré l’obstacle.",
+        "answers": [
+          "Plusieurs numéros avaient pris l’eau. Pourtant, l’équipe a distribué les exemplaires restés secs."
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 38,
+          "end": 52,
+          "text": "Par conséquent"
+        },
+        "responseLines": 2
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k7-curriculum-e",
     "subthemeId": "k7",
     "topic": "gram-exprimer",
@@ -5216,12 +5924,332 @@
         ],
         "explanation": "Même si introduit un fait à l’indicatif. Les reformulations fidèles sont recevables.",
         "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k7-curriculum-e-b1-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k7-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "L’affiche était illisible à plusieurs mètres. Des visiteurs ont trouvé leur chemin grâce à un agent.",
+        "task": "Expliquez à un camarade ce qui s’est produit malgré l’obstacle. Marquez la concession.",
+        "answers": [
+          "L’affiche était illisible à plusieurs mètres. Pourtant, des visiteurs ont trouvé leur chemin grâce à un agent."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k7-curriculum-e-b1-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k7-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Les bandes magnétiques se détérioraient. Le public a entendu les témoignages.",
+        "task": "Expliquez à un camarade ce qui s’est produit malgré l’obstacle. Marquez la concession.",
+        "answers": [
+          "Malgré l’usure des bandes, le public a entendu les témoignages."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k7-curriculum-e-b1-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k7-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Des sacs gênaient le passage. Les élèves ont pu atteindre la cantine à l’heure.",
+        "task": "Expliquez à un camarade ce qui s’est produit malgré l’obstacle. Marquez la concession.",
+        "answers": [
+          "Même si des sacs gênaient le passage, les élèves ont pu atteindre la cantine à l’heure."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "Même si introduit un fait à l’indicatif. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k7-curriculum-e-b1-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k7-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le soleil desséchait la terre en surface. Les enfants ont réussi à sauver plusieurs plants.",
+        "task": "Expliquez à un camarade ce qui s’est produit malgré l’obstacle. Marquez la concession.",
+        "answers": [
+          "Le soleil desséchait la terre en surface. Pourtant, les enfants ont réussi à sauver plusieurs plants."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k7-curriculum-e-b1-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k7-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le micro du guichet était en panne. Tous les dossiers ont été remis à temps.",
+        "task": "Expliquez à un camarade ce qui s’est produit malgré l’obstacle. Marquez la concession.",
+        "answers": [
+          "Malgré la panne du micro, tous les dossiers ont été remis à temps."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k7-curriculum-e-b1-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k7-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Les machines faisaient trop de bruit. Les élèves ont pu suivre la démonstration depuis le couloir.",
+        "task": "Expliquez à un camarade ce qui s’est produit malgré l’obstacle. Marquez la concession.",
+        "answers": [
+          "Même si les machines faisaient trop de bruit, les élèves ont pu suivre la démonstration depuis le couloir."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "Même si introduit un fait à l’indicatif. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k7-curriculum-e-b1-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k7-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le réseau de l’école était inaccessible. Les élèves ont pu commencer à l’heure.",
+        "task": "Expliquez à un camarade ce qui s’est produit malgré l’obstacle. Marquez la concession.",
+        "answers": [
+          "Le réseau de l’école était inaccessible. Pourtant, les élèves ont pu commencer à l’heure."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k7-curriculum-e-b1-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k7-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le prix était affiché seulement par kilo. La vendeuse a terminé toutes les commandes.",
+        "task": "Expliquez à un camarade ce qui s’est produit malgré l’obstacle. Marquez la concession.",
+        "answers": [
+          "Malgré le mode d’affichage du prix, la vendeuse a terminé toutes les commandes."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k7-curriculum-e-b1-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k7-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "La marche du quai était trop haute. Les passagers ont tous gagné la rive.",
+        "task": "Expliquez à un camarade ce qui s’est produit malgré l’obstacle. Marquez la concession.",
+        "answers": [
+          "Même si la marche du quai était trop haute, les passagers ont tous gagné la rive."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "Même si introduit un fait à l’indicatif. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k7-curriculum-e-b1-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k7-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Plusieurs numéros avaient pris l’eau. L’équipe a distribué les exemplaires restés secs.",
+        "task": "Expliquez à un camarade ce qui s’est produit malgré l’obstacle. Marquez la concession.",
+        "answers": [
+          "Plusieurs numéros avaient pris l’eau. Pourtant, l’équipe a distribué les exemplaires restés secs."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k7-curriculum-p",
     "subthemeId": "k7",
     "topic": "gram-exprimer",
@@ -6840,6 +7868,326 @@
           }
         ],
         "explanation": "Même si introduit un fait à l’indicatif. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k7-curriculum-p-b1-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k7-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "L’affiche était illisible à plusieurs mètres. Des visiteurs ont trouvé leur chemin grâce à un agent.",
+        "task": "Expliquez à un camarade ce qui s’est produit malgré l’obstacle. Marquez la concession. Relance : « Quel obstacle fallait-il surmonter ? »",
+        "answers": [
+          "L’affiche était illisible à plusieurs mètres. Pourtant, des visiteurs ont trouvé leur chemin grâce à un agent.\nRéponse possible à la relance : L’affiche était illisible à plusieurs mètres."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k7-curriculum-p-b1-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k7-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Les bandes magnétiques se détérioraient. Le public a entendu les témoignages.",
+        "task": "Expliquez à un camarade ce qui s’est produit malgré l’obstacle. Marquez la concession. Relance : « Quel obstacle fallait-il surmonter ? »",
+        "answers": [
+          "Malgré l’usure des bandes, le public a entendu les témoignages.\nRéponse possible à la relance : Les bandes magnétiques se détérioraient."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k7-curriculum-p-b1-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k7-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Des sacs gênaient le passage. Les élèves ont pu atteindre la cantine à l’heure.",
+        "task": "Expliquez à un camarade ce qui s’est produit malgré l’obstacle. Marquez la concession. Relance : « Quel obstacle fallait-il surmonter ? »",
+        "answers": [
+          "Même si des sacs gênaient le passage, les élèves ont pu atteindre la cantine à l’heure.\nRéponse possible à la relance : Des sacs gênaient le passage."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Même si introduit un fait à l’indicatif. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k7-curriculum-p-b1-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k7-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le soleil desséchait la terre en surface. Les enfants ont réussi à sauver plusieurs plants.",
+        "task": "Expliquez à un camarade ce qui s’est produit malgré l’obstacle. Marquez la concession. Relance : « Quel obstacle fallait-il surmonter ? »",
+        "answers": [
+          "Le soleil desséchait la terre en surface. Pourtant, les enfants ont réussi à sauver plusieurs plants.\nRéponse possible à la relance : Le soleil desséchait la terre en surface."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k7-curriculum-p-b1-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k7-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le micro du guichet était en panne. Tous les dossiers ont été remis à temps.",
+        "task": "Expliquez à un camarade ce qui s’est produit malgré l’obstacle. Marquez la concession. Relance : « Quel obstacle fallait-il surmonter ? »",
+        "answers": [
+          "Malgré la panne du micro, tous les dossiers ont été remis à temps.\nRéponse possible à la relance : Le micro du guichet était en panne."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k7-curriculum-p-b1-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k7-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Les machines faisaient trop de bruit. Les élèves ont pu suivre la démonstration depuis le couloir.",
+        "task": "Expliquez à un camarade ce qui s’est produit malgré l’obstacle. Marquez la concession. Relance : « Quel obstacle fallait-il surmonter ? »",
+        "answers": [
+          "Même si les machines faisaient trop de bruit, les élèves ont pu suivre la démonstration depuis le couloir.\nRéponse possible à la relance : Les machines faisaient trop de bruit."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Même si introduit un fait à l’indicatif. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k7-curriculum-p-b1-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k7-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le réseau de l’école était inaccessible. Les élèves ont pu commencer à l’heure.",
+        "task": "Expliquez à un camarade ce qui s’est produit malgré l’obstacle. Marquez la concession. Relance : « Quel obstacle fallait-il surmonter ? »",
+        "answers": [
+          "Le réseau de l’école était inaccessible. Pourtant, les élèves ont pu commencer à l’heure.\nRéponse possible à la relance : Le réseau de l’école était inaccessible."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k7-curriculum-p-b1-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k7-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le prix était affiché seulement par kilo. La vendeuse a terminé toutes les commandes.",
+        "task": "Expliquez à un camarade ce qui s’est produit malgré l’obstacle. Marquez la concession. Relance : « Quel obstacle fallait-il surmonter ? »",
+        "answers": [
+          "Malgré le mode d’affichage du prix, la vendeuse a terminé toutes les commandes.\nRéponse possible à la relance : Le prix était affiché seulement par kilo."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k7-curriculum-p-b1-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k7-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "La marche du quai était trop haute. Les passagers ont tous gagné la rive.",
+        "task": "Expliquez à un camarade ce qui s’est produit malgré l’obstacle. Marquez la concession. Relance : « Quel obstacle fallait-il surmonter ? »",
+        "answers": [
+          "Même si la marche du quai était trop haute, les passagers ont tous gagné la rive.\nRéponse possible à la relance : La marche du quai était trop haute."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Même si introduit un fait à l’indicatif. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k7-curriculum-p-b1-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k7-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Plusieurs numéros avaient pris l’eau. L’équipe a distribué les exemplaires restés secs.",
+        "task": "Expliquez à un camarade ce qui s’est produit malgré l’obstacle. Marquez la concession. Relance : « Quel obstacle fallait-il surmonter ? »",
+        "answers": [
+          "Plusieurs numéros avaient pris l’eau. Pourtant, l’équipe a distribué les exemplaires restés secs.\nRéponse possible à la relance : Plusieurs numéros avaient pris l’eau."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle. Les reformulations fidèles sont recevables.",
         "writeLines": 0
       }
     ]

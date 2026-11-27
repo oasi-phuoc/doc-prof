@@ -1,7 +1,7 @@
 [
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k9-qcm-verbe",
     "subthemeId": "k9",
     "topic": "gram-exprimer",
@@ -1523,12 +1523,312 @@
           }
         ],
         "explanation": "Y précède en. La quantité et la négation éventuelles restent en place. Modèle : On peut y en louer."
+      },
+      {
+        "id": "gram-ex-k9-qcm-verbe-b1-formulaires-stage",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k9-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Je ___ remettrai demain.",
+        "cue": "Je remettrai les formulaires de stage à la coordinatrice demain. Remplacez les formulaires de stage et à la coordinatrice par deux pronoms. Gardez demain.",
+        "answers": [
+          "les lui"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-formulaires-stage-choix-1",
+            "text": "les lui"
+          },
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-formulaires-stage-choix-2",
+            "text": "lui les"
+          },
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-formulaires-stage-choix-3",
+            "text": "les leur"
+          }
+        ],
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit. Modèle : Je les lui remettrai demain."
+      },
+      {
+        "id": "gram-ex-k9-qcm-verbe-b1-porte-cles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k9-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Malik ___ apporte.",
+        "cue": "Malik apporte le porte-clés aux responsables. Remplacez le porte-clés et aux responsables par deux pronoms.",
+        "answers": [
+          "le leur"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-porte-cles-choix-1",
+            "text": "le leur"
+          },
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-porte-cles-choix-2",
+            "text": "leur le"
+          },
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-porte-cles-choix-3",
+            "text": "le lui"
+          }
+        ],
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit. Modèle : Malik le leur apporte."
+      },
+      {
+        "id": "gram-ex-k9-qcm-verbe-b1-casiers-skis",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k9-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Ils ___ ont rangé quatre.",
+        "cue": "Ils ont rangé quatre paires de skis dans le grand casier. Remplacez dans le grand casier et paires de skis par deux pronoms. Gardez quatre.",
+        "answers": [
+          "y en"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-casiers-skis-choix-1",
+            "text": "y en"
+          },
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-casiers-skis-choix-2",
+            "text": "en y"
+          },
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-casiers-skis-choix-3",
+            "text": "les y"
+          }
+        ],
+        "explanation": "Y précède en. La quantité et la négation éventuelles restent en place. Modèle : Ils y en ont rangé quatre."
+      },
+      {
+        "id": "gram-ex-k9-qcm-verbe-b1-audio-chorale",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k9-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Noé doit ___ faire écouter.",
+        "cue": "Noé doit faire écouter la maquette aux choristes. Remplacez la maquette et aux choristes par deux pronoms. Gardez doit faire écouter.",
+        "answers": [
+          "la leur"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-audio-chorale-choix-1",
+            "text": "la leur"
+          },
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-audio-chorale-choix-2",
+            "text": "leur la"
+          },
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-audio-chorale-choix-3",
+            "text": "la lui"
+          }
+        ],
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit. Modèle : Noé doit la leur faire écouter."
+      },
+      {
+        "id": "gram-ex-k9-qcm-verbe-b1-denrees",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k9-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Fatou n’___ a pas déposé.",
+        "cue": "Fatou n’a pas déposé de conserves dans la boîte de collecte. Remplacez dans la boîte de collecte et de conserves par deux pronoms. Gardez la négation.",
+        "answers": [
+          "y en"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-denrees-choix-1",
+            "text": "y en"
+          },
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-denrees-choix-2",
+            "text": "en y"
+          },
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-denrees-choix-3",
+            "text": "les y"
+          }
+        ],
+        "explanation": "Y précède en. La quantité et la négation éventuelles restent en place. Modèle : Fatou n’y en a pas déposé."
+      },
+      {
+        "id": "gram-ex-k9-qcm-verbe-b1-code-invite",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k9-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Nous pouvons ___ envoyer.",
+        "cue": "Nous pouvons envoyer le code à ces deux invités. Remplacez le code et à ces deux invités par deux pronoms. Gardez pouvons.",
+        "answers": [
+          "le leur"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-code-invite-choix-1",
+            "text": "le leur"
+          },
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-code-invite-choix-2",
+            "text": "leur le"
+          },
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-code-invite-choix-3",
+            "text": "le lui"
+          }
+        ],
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit. Modèle : Nous pouvons le leur envoyer."
+      },
+      {
+        "id": "gram-ex-k9-qcm-verbe-b1-catalogues",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k9-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "La libraire ___ distribue.",
+        "cue": "La libraire distribue les catalogues à la bibliothécaire. Remplacez les catalogues et à la bibliothécaire par deux pronoms.",
+        "answers": [
+          "les lui"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-catalogues-choix-1",
+            "text": "les lui"
+          },
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-catalogues-choix-2",
+            "text": "lui les"
+          },
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-catalogues-choix-3",
+            "text": "les leur"
+          }
+        ],
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit. Modèle : La libraire les lui distribue."
+      },
+      {
+        "id": "gram-ex-k9-qcm-verbe-b1-billets-imprimerie",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k9-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "On peut ___ imprimer.",
+        "cue": "On peut imprimer des billets à l’accueil. Remplacez à l’accueil et des billets par deux pronoms. Gardez peut.",
+        "answers": [
+          "y en"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-billets-imprimerie-choix-1",
+            "text": "y en"
+          },
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-billets-imprimerie-choix-2",
+            "text": "en y"
+          },
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-billets-imprimerie-choix-3",
+            "text": "les y"
+          }
+        ],
+        "explanation": "Y précède en. La quantité et la négation éventuelles restent en place. Modèle : On peut y en imprimer."
+      },
+      {
+        "id": "gram-ex-k9-qcm-verbe-b1-revue-dessins",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k9-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Les élèves ___ ont présentés.",
+        "cue": "Les élèves ont présenté leurs dessins à leur correspondante. Remplacez leurs dessins et à leur correspondante par deux pronoms.",
+        "answers": [
+          "les lui"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-revue-dessins-choix-1",
+            "text": "les lui"
+          },
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-revue-dessins-choix-2",
+            "text": "lui les"
+          },
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-revue-dessins-choix-3",
+            "text": "les leur"
+          }
+        ],
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit. Modèle : Les élèves les lui ont présentés."
+      },
+      {
+        "id": "gram-ex-k9-qcm-verbe-b1-sac-correspondance",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k9-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Inès ___ rapportera.",
+        "cue": "Inès rapportera la pochette à ses voisins. Remplacez la pochette et à ses voisins par deux pronoms.",
+        "answers": [
+          "la leur"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-sac-correspondance-choix-1",
+            "text": "la leur"
+          },
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-sac-correspondance-choix-2",
+            "text": "leur la"
+          },
+          {
+            "id": "gram-ex-k9-qcm-verbe-b1-sac-correspondance-choix-3",
+            "text": "la lui"
+          }
+        ],
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit. Modèle : Inès la leur rapportera."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k9-curriculum-o",
     "subthemeId": "k9",
     "topic": "gram-exprimer",
@@ -3453,12 +3753,402 @@
           "On peut y en louer."
         ],
         "explanation": "Y précède en. La quantité et la négation éventuelles restent en place."
+      },
+      {
+        "id": "gram-ex-k9-curriculum-o-b1-formulaires-stage",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k9-curriculum-o",
+          "partition": "b1"
+        },
+        "kind": "order",
+        "tokenUnit": "clause",
+        "prompt": "Je remettrai les formulaires de stage à la coordinatrice demain.\nRemplacez les formulaires de stage et à la coordinatrice par deux pronoms. Gardez demain.",
+        "tokens": [
+          {
+            "id": "element-1",
+            "text": "Je",
+            "category": "verbe"
+          },
+          {
+            "id": "element-2",
+            "text": "les",
+            "category": "pronom"
+          },
+          {
+            "id": "element-3",
+            "text": "lui",
+            "category": "pronom"
+          },
+          {
+            "id": "element-4",
+            "text": "remettrai demain.",
+            "category": "verbe"
+          }
+        ],
+        "answers": [
+          "Je les lui remettrai demain."
+        ],
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit."
+      },
+      {
+        "id": "gram-ex-k9-curriculum-o-b1-porte-cles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k9-curriculum-o",
+          "partition": "b1"
+        },
+        "kind": "order",
+        "tokenUnit": "clause",
+        "prompt": "Malik apporte le porte-clés aux responsables.\nRemplacez le porte-clés et aux responsables par deux pronoms.",
+        "tokens": [
+          {
+            "id": "element-1",
+            "text": "Malik",
+            "category": "verbe"
+          },
+          {
+            "id": "element-2",
+            "text": "le",
+            "category": "pronom"
+          },
+          {
+            "id": "element-3",
+            "text": "leur",
+            "category": "pronom"
+          },
+          {
+            "id": "element-4",
+            "text": "apporte.",
+            "category": "verbe"
+          }
+        ],
+        "answers": [
+          "Malik le leur apporte."
+        ],
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit."
+      },
+      {
+        "id": "gram-ex-k9-curriculum-o-b1-casiers-skis",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k9-curriculum-o",
+          "partition": "b1"
+        },
+        "kind": "order",
+        "tokenUnit": "clause",
+        "prompt": "Ils ont rangé quatre paires de skis dans le grand casier.\nRemplacez dans le grand casier et paires de skis par deux pronoms. Gardez quatre.",
+        "tokens": [
+          {
+            "id": "element-1",
+            "text": "Ils",
+            "category": "verbe"
+          },
+          {
+            "id": "element-2",
+            "text": "y",
+            "category": "pronom"
+          },
+          {
+            "id": "element-3",
+            "text": "en",
+            "category": "pronom"
+          },
+          {
+            "id": "element-4",
+            "text": "ont rangé quatre.",
+            "category": "verbe"
+          }
+        ],
+        "answers": [
+          "Ils y en ont rangé quatre."
+        ],
+        "explanation": "Y précède en. La quantité et la négation éventuelles restent en place."
+      },
+      {
+        "id": "gram-ex-k9-curriculum-o-b1-audio-chorale",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k9-curriculum-o",
+          "partition": "b1"
+        },
+        "kind": "order",
+        "tokenUnit": "clause",
+        "prompt": "Noé doit faire écouter la maquette aux choristes.\nRemplacez la maquette et aux choristes par deux pronoms. Gardez doit faire écouter.",
+        "tokens": [
+          {
+            "id": "element-1",
+            "text": "Noé doit",
+            "category": "verbe"
+          },
+          {
+            "id": "element-2",
+            "text": "la",
+            "category": "pronom"
+          },
+          {
+            "id": "element-3",
+            "text": "leur",
+            "category": "pronom"
+          },
+          {
+            "id": "element-4",
+            "text": "faire écouter.",
+            "category": "verbe"
+          }
+        ],
+        "answers": [
+          "Noé doit la leur faire écouter."
+        ],
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit."
+      },
+      {
+        "id": "gram-ex-k9-curriculum-o-b1-denrees",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k9-curriculum-o",
+          "partition": "b1"
+        },
+        "kind": "order",
+        "tokenUnit": "clause",
+        "prompt": "Fatou n’a pas déposé de conserves dans la boîte de collecte.\nRemplacez dans la boîte de collecte et de conserves par deux pronoms. Gardez la négation.",
+        "tokens": [
+          {
+            "id": "element-1",
+            "text": "Fatou",
+            "category": "verbe"
+          },
+          {
+            "id": "element-2",
+            "text": "n’y",
+            "category": "pronom"
+          },
+          {
+            "id": "element-3",
+            "text": "en",
+            "category": "pronom"
+          },
+          {
+            "id": "element-4",
+            "text": "a",
+            "category": "verbe"
+          },
+          {
+            "id": "element-5",
+            "text": "pas",
+            "category": "verbe"
+          },
+          {
+            "id": "element-6",
+            "text": "déposé.",
+            "category": "verbe"
+          }
+        ],
+        "answers": [
+          "Fatou n’y en a pas déposé."
+        ],
+        "explanation": "Y précède en. La quantité et la négation éventuelles restent en place."
+      },
+      {
+        "id": "gram-ex-k9-curriculum-o-b1-code-invite",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k9-curriculum-o",
+          "partition": "b1"
+        },
+        "kind": "order",
+        "tokenUnit": "clause",
+        "prompt": "Nous pouvons envoyer le code à ces deux invités.\nRemplacez le code et à ces deux invités par deux pronoms. Gardez pouvons.",
+        "tokens": [
+          {
+            "id": "element-1",
+            "text": "Nous pouvons",
+            "category": "verbe"
+          },
+          {
+            "id": "element-2",
+            "text": "le",
+            "category": "pronom"
+          },
+          {
+            "id": "element-3",
+            "text": "leur",
+            "category": "pronom"
+          },
+          {
+            "id": "element-4",
+            "text": "envoyer.",
+            "category": "verbe"
+          }
+        ],
+        "answers": [
+          "Nous pouvons le leur envoyer."
+        ],
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit."
+      },
+      {
+        "id": "gram-ex-k9-curriculum-o-b1-catalogues",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k9-curriculum-o",
+          "partition": "b1"
+        },
+        "kind": "order",
+        "tokenUnit": "clause",
+        "prompt": "La libraire distribue les catalogues à la bibliothécaire.\nRemplacez les catalogues et à la bibliothécaire par deux pronoms.",
+        "tokens": [
+          {
+            "id": "element-1",
+            "text": "La libraire",
+            "category": "verbe"
+          },
+          {
+            "id": "element-2",
+            "text": "les",
+            "category": "pronom"
+          },
+          {
+            "id": "element-3",
+            "text": "lui",
+            "category": "pronom"
+          },
+          {
+            "id": "element-4",
+            "text": "distribue.",
+            "category": "verbe"
+          }
+        ],
+        "answers": [
+          "La libraire les lui distribue."
+        ],
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit."
+      },
+      {
+        "id": "gram-ex-k9-curriculum-o-b1-billets-imprimerie",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k9-curriculum-o",
+          "partition": "b1"
+        },
+        "kind": "order",
+        "tokenUnit": "clause",
+        "prompt": "On peut imprimer des billets à l’accueil.\nRemplacez à l’accueil et des billets par deux pronoms. Gardez peut.",
+        "tokens": [
+          {
+            "id": "element-1",
+            "text": "On peut",
+            "category": "verbe"
+          },
+          {
+            "id": "element-2",
+            "text": "y",
+            "category": "pronom"
+          },
+          {
+            "id": "element-3",
+            "text": "en",
+            "category": "pronom"
+          },
+          {
+            "id": "element-4",
+            "text": "imprimer.",
+            "category": "verbe"
+          }
+        ],
+        "answers": [
+          "On peut y en imprimer."
+        ],
+        "explanation": "Y précède en. La quantité et la négation éventuelles restent en place."
+      },
+      {
+        "id": "gram-ex-k9-curriculum-o-b1-revue-dessins",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k9-curriculum-o",
+          "partition": "b1"
+        },
+        "kind": "order",
+        "tokenUnit": "clause",
+        "prompt": "Les élèves ont présenté leurs dessins à leur correspondante.\nRemplacez leurs dessins et à leur correspondante par deux pronoms.",
+        "tokens": [
+          {
+            "id": "element-1",
+            "text": "Les élèves",
+            "category": "verbe"
+          },
+          {
+            "id": "element-2",
+            "text": "les",
+            "category": "pronom"
+          },
+          {
+            "id": "element-3",
+            "text": "lui",
+            "category": "pronom"
+          },
+          {
+            "id": "element-4",
+            "text": "ont présentés.",
+            "category": "verbe"
+          }
+        ],
+        "answers": [
+          "Les élèves les lui ont présentés."
+        ],
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit."
+      },
+      {
+        "id": "gram-ex-k9-curriculum-o-b1-sac-correspondance",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k9-curriculum-o",
+          "partition": "b1"
+        },
+        "kind": "order",
+        "tokenUnit": "clause",
+        "prompt": "Inès rapportera la pochette à ses voisins.\nRemplacez la pochette et à ses voisins par deux pronoms.",
+        "tokens": [
+          {
+            "id": "element-1",
+            "text": "Inès",
+            "category": "verbe"
+          },
+          {
+            "id": "element-2",
+            "text": "la",
+            "category": "pronom"
+          },
+          {
+            "id": "element-3",
+            "text": "leur",
+            "category": "pronom"
+          },
+          {
+            "id": "element-4",
+            "text": "rapportera.",
+            "category": "verbe"
+          }
+        ],
+        "answers": [
+          "Inès la leur rapportera."
+        ],
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k9-curriculum-t",
     "subthemeId": "k9",
     "topic": "gram-exprimer",
@@ -4328,12 +5018,182 @@
         ],
         "responseLines": 2,
         "explanation": "Y précède en. La quantité et la négation éventuelles restent en place."
+      },
+      {
+        "id": "gram-ex-k9-curriculum-t-b1-formulaires-stage",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k9-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Je remettrai les formulaires de stage à la coordinatrice demain.",
+        "directive": "Remplacez les formulaires de stage et à la coordinatrice par deux pronoms. Gardez demain.",
+        "answers": [
+          "Je les lui remettrai demain."
+        ],
+        "responseLines": 2,
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit."
+      },
+      {
+        "id": "gram-ex-k9-curriculum-t-b1-porte-cles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k9-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Malik apporte le porte-clés aux responsables.",
+        "directive": "Remplacez le porte-clés et aux responsables par deux pronoms.",
+        "answers": [
+          "Malik le leur apporte."
+        ],
+        "responseLines": 2,
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit."
+      },
+      {
+        "id": "gram-ex-k9-curriculum-t-b1-casiers-skis",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k9-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Ils ont rangé quatre paires de skis dans le grand casier.",
+        "directive": "Remplacez dans le grand casier et paires de skis par deux pronoms. Gardez quatre.",
+        "answers": [
+          "Ils y en ont rangé quatre."
+        ],
+        "responseLines": 2,
+        "explanation": "Y précède en. La quantité et la négation éventuelles restent en place."
+      },
+      {
+        "id": "gram-ex-k9-curriculum-t-b1-audio-chorale",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k9-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Noé doit faire écouter la maquette aux choristes.",
+        "directive": "Remplacez la maquette et aux choristes par deux pronoms. Gardez doit faire écouter.",
+        "answers": [
+          "Noé doit la leur faire écouter."
+        ],
+        "responseLines": 2,
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit."
+      },
+      {
+        "id": "gram-ex-k9-curriculum-t-b1-denrees",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k9-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Fatou n’a pas déposé de conserves dans la boîte de collecte.",
+        "directive": "Remplacez dans la boîte de collecte et de conserves par deux pronoms. Gardez la négation.",
+        "answers": [
+          "Fatou n’y en a pas déposé."
+        ],
+        "responseLines": 2,
+        "explanation": "Y précède en. La quantité et la négation éventuelles restent en place."
+      },
+      {
+        "id": "gram-ex-k9-curriculum-t-b1-code-invite",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k9-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Nous pouvons envoyer le code à ces deux invités.",
+        "directive": "Remplacez le code et à ces deux invités par deux pronoms. Gardez pouvons.",
+        "answers": [
+          "Nous pouvons le leur envoyer."
+        ],
+        "responseLines": 2,
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit."
+      },
+      {
+        "id": "gram-ex-k9-curriculum-t-b1-catalogues",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k9-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "La libraire distribue les catalogues à la bibliothécaire.",
+        "directive": "Remplacez les catalogues et à la bibliothécaire par deux pronoms.",
+        "answers": [
+          "La libraire les lui distribue."
+        ],
+        "responseLines": 2,
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit."
+      },
+      {
+        "id": "gram-ex-k9-curriculum-t-b1-billets-imprimerie",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k9-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "On peut imprimer des billets à l’accueil.",
+        "directive": "Remplacez à l’accueil et des billets par deux pronoms. Gardez peut.",
+        "answers": [
+          "On peut y en imprimer."
+        ],
+        "responseLines": 2,
+        "explanation": "Y précède en. La quantité et la négation éventuelles restent en place."
+      },
+      {
+        "id": "gram-ex-k9-curriculum-t-b1-revue-dessins",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k9-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les élèves ont présenté leurs dessins à leur correspondante.",
+        "directive": "Remplacez leurs dessins et à leur correspondante par deux pronoms.",
+        "answers": [
+          "Les élèves les lui ont présentés."
+        ],
+        "responseLines": 2,
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit."
+      },
+      {
+        "id": "gram-ex-k9-curriculum-t-b1-sac-correspondance",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k9-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Inès rapportera la pochette à ses voisins.",
+        "directive": "Remplacez la pochette et à ses voisins par deux pronoms.",
+        "answers": [
+          "Inès la leur rapportera."
+        ],
+        "responseLines": 2,
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k9-curriculum-c",
     "subthemeId": "k9",
     "topic": "gram-exprimer",
@@ -5501,6 +6361,236 @@
           "start": 8,
           "end": 12,
           "text": "en y"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k9-curriculum-c-b1-formulaires-stage",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k9-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Je lui les remettrai demain.",
+        "cue": "Je remettrai les formulaires de stage à la coordinatrice demain. Remplacez les formulaires de stage et à la coordinatrice par deux pronoms. Gardez demain.",
+        "answers": [
+          "Je les lui remettrai demain."
+        ],
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 10,
+          "text": "lui les"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k9-curriculum-c-b1-porte-cles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k9-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Malik leur le apporte.",
+        "cue": "Malik apporte le porte-clés aux responsables. Remplacez le porte-clés et aux responsables par deux pronoms.",
+        "answers": [
+          "Malik le leur apporte."
+        ],
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 6,
+          "end": 13,
+          "text": "leur le"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k9-curriculum-c-b1-casiers-skis",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k9-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Ils en y ont rangé quatre.",
+        "cue": "Ils ont rangé quatre paires de skis dans le grand casier. Remplacez dans le grand casier et paires de skis par deux pronoms. Gardez quatre.",
+        "answers": [
+          "Ils y en ont rangé quatre."
+        ],
+        "explanation": "Y précède en. La quantité et la négation éventuelles restent en place.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 4,
+          "end": 8,
+          "text": "en y"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k9-curriculum-c-b1-audio-chorale",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k9-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Noé doit leur la faire écouter.",
+        "cue": "Noé doit faire écouter la maquette aux choristes. Remplacez la maquette et aux choristes par deux pronoms. Gardez doit faire écouter.",
+        "answers": [
+          "Noé doit la leur faire écouter."
+        ],
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 16,
+          "text": "leur la"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k9-curriculum-c-b1-denrees",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k9-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Fatou n’en y a pas déposé.",
+        "cue": "Fatou n’a pas déposé de conserves dans la boîte de collecte. Remplacez dans la boîte de collecte et de conserves par deux pronoms. Gardez la négation.",
+        "answers": [
+          "Fatou n’y en a pas déposé."
+        ],
+        "explanation": "Y précède en. La quantité et la négation éventuelles restent en place.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 12,
+          "text": "en y"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k9-curriculum-c-b1-code-invite",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k9-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Nous pouvons leur le envoyer.",
+        "cue": "Nous pouvons envoyer le code à ces deux invités. Remplacez le code et à ces deux invités par deux pronoms. Gardez pouvons.",
+        "answers": [
+          "Nous pouvons le leur envoyer."
+        ],
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 13,
+          "end": 20,
+          "text": "leur le"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k9-curriculum-c-b1-catalogues",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k9-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "La libraire lui les distribue.",
+        "cue": "La libraire distribue les catalogues à la bibliothécaire. Remplacez les catalogues et à la bibliothécaire par deux pronoms.",
+        "answers": [
+          "La libraire les lui distribue."
+        ],
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 19,
+          "text": "lui les"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k9-curriculum-c-b1-billets-imprimerie",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k9-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "On peut en y imprimer.",
+        "cue": "On peut imprimer des billets à l’accueil. Remplacez à l’accueil et des billets par deux pronoms. Gardez peut.",
+        "answers": [
+          "On peut y en imprimer."
+        ],
+        "explanation": "Y précède en. La quantité et la négation éventuelles restent en place.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 12,
+          "text": "en y"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k9-curriculum-c-b1-revue-dessins",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k9-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Les élèves lui les ont présentés.",
+        "cue": "Les élèves ont présenté leurs dessins à leur correspondante. Remplacez leurs dessins et à leur correspondante par deux pronoms.",
+        "answers": [
+          "Les élèves les lui ont présentés."
+        ],
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 18,
+          "text": "lui les"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k9-curriculum-c-b1-sac-correspondance",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-k9.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k9-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Inès leur la rapportera.",
+        "cue": "Inès rapportera la pochette à ses voisins. Remplacez la pochette et à ses voisins par deux pronoms.",
+        "answers": [
+          "Inès la leur rapportera."
+        ],
+        "explanation": "Le, la ou les précède lui ou leur. Les pronoms se placent devant le verbe qui les régit.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 12,
+          "text": "leur la"
         },
         "responseLines": 2
       }

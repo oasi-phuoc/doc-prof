@@ -1,7 +1,7 @@
 [
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k13-qcm-verbe",
     "subthemeId": "k13",
     "topic": "gram-exprimer",
@@ -1573,12 +1573,322 @@
         ],
         "explanation": "« Le service confirme que » appelle ici le indicatif. Le temps composé situe l’action avant le moment dont on parle. Modèle : Le service confirme que vous avez essayé la sonnette à l’entrée.",
         "givenVerb": "essayer"
+      },
+      {
+        "id": "gram-ex-k13-qcm-verbe-b1-mode-guide-tactile",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k13-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Il est possible que les médiatrices ___ les consignes à voix haute.",
+        "cue": "Le groupe accueille de nouveaux visiteurs. L’action est antérieure à la réaction ou à l’annonce. Choisissez le mode d’après l’expression introductrice.",
+        "answers": [
+          "aient lu"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-guide-tactile-choix-1",
+            "text": "aient lu"
+          },
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-guide-tactile-choix-2",
+            "text": "ont lu"
+          },
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-guide-tactile-choix-3",
+            "text": "lire"
+          }
+        ],
+        "explanation": "« Il est possible que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Modèle : Il est possible que les médiatrices aient lu les consignes à voix haute.",
+        "givenVerb": "lire"
+      },
+      {
+        "id": "gram-ex-k13-qcm-verbe-b1-mode-casier",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k13-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "On est certain que Nora ___ le casier de prêt avec le nouveau code.",
+        "cue": "L’atelier change son système de prêt. L’action est antérieure à la réaction ou à l’annonce. Choisissez le mode d’après l’expression introductrice.",
+        "answers": [
+          "a ouvert"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-casier-choix-1",
+            "text": "a ouvert"
+          },
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-casier-choix-2",
+            "text": "ait ouvert"
+          },
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-casier-choix-3",
+            "text": "ouvrir"
+          }
+        ],
+        "explanation": "« On est certain que » appelle ici le indicatif. Le temps composé situe l’action avant le moment dont on parle. Modèle : On est certain que Nora a ouvert le casier de prêt avec le nouveau code.",
+        "givenVerb": "ouvrir"
+      },
+      {
+        "id": "gram-ex-k13-qcm-verbe-b1-mode-alarme",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k13-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "La personne responsable souhaite que le technicien ___ le signal d’alarme du tableau.",
+        "cue": "Un signal sonore retentit près de l’entrée. Il s’agit de la situation au moment où l’on parle. Choisissez le mode d’après l’expression introductrice.",
+        "answers": [
+          "reconnaisse"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-alarme-choix-1",
+            "text": "reconnaisse"
+          },
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-alarme-choix-2",
+            "text": "reconnaît"
+          },
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-alarme-choix-3",
+            "text": "reconnaître"
+          }
+        ],
+        "explanation": "« La personne responsable souhaite que » appelle ici le subjonctif. Modèle : La personne responsable souhaite que le technicien reconnaisse le signal d’alarme du tableau.",
+        "givenVerb": "reconnaître"
+      },
+      {
+        "id": "gram-ex-k13-qcm-verbe-b1-mode-violoncelle",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k13-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Il est évident que les musiciens ___ répéter le duo dans la petite salle.",
+        "cue": "Le grand studio est occupé. L’action est antérieure à la réaction ou à l’annonce. Choisissez le mode d’après l’expression introductrice.",
+        "answers": [
+          "ont pu"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-violoncelle-choix-1",
+            "text": "ont pu"
+          },
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-violoncelle-choix-2",
+            "text": "aient pu"
+          },
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-violoncelle-choix-3",
+            "text": "pouvoir"
+          }
+        ],
+        "explanation": "« Il est évident que » appelle ici le indicatif. Le temps composé situe l’action avant le moment dont on parle. Modèle : Il est évident que les musiciens ont pu répéter le duo dans la petite salle.",
+        "givenVerb": "pouvoir"
+      },
+      {
+        "id": "gram-ex-k13-qcm-verbe-b1-mode-cagettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k13-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Le groupe doute qu’Yara ___ les cagettes destinées au marché du samedi.",
+        "cue": "Le stand attend une livraison. L’action est antérieure à la réaction ou à l’annonce. Choisissez le mode d’après l’expression introductrice.",
+        "answers": [
+          "ait reçu"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-cagettes-choix-1",
+            "text": "ait reçu"
+          },
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-cagettes-choix-2",
+            "text": "a reçu"
+          },
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-cagettes-choix-3",
+            "text": "recevoir"
+          }
+        ],
+        "explanation": "« Le groupe doute que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Modèle : Le groupe doute qu’Yara ait reçu les cagettes destinées au marché du samedi.",
+        "givenVerb": "recevoir"
+      },
+      {
+        "id": "gram-ex-k13-qcm-verbe-b1-mode-berge",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k13-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Le service confirme que les volontaires ___ à l’abri par le chemin du canal.",
+        "cue": "Le niveau de l’eau monte près de la berge. L’action est antérieure à la réaction ou à l’annonce. Choisissez le mode d’après l’expression introductrice.",
+        "answers": [
+          "sont revenus"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-berge-choix-1",
+            "text": "sont revenus"
+          },
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-berge-choix-2",
+            "text": "soient revenus"
+          },
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-berge-choix-3",
+            "text": "revenir"
+          }
+        ],
+        "explanation": "« Le service confirme que » appelle ici le indicatif. Le temps composé situe l’action avant le moment dont on parle. Modèle : Le service confirme que les volontaires sont revenus à l’abri par le chemin du canal.",
+        "givenVerb": "revenir"
+      },
+      {
+        "id": "gram-ex-k13-qcm-verbe-b1-mode-projection",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k13-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Il est possible que nous ___ changer de salle pour la projection.",
+        "cue": "L’écran de la grande salle est en panne. Il s’agit de la situation au moment où l’on parle. Choisissez le mode d’après l’expression introductrice.",
+        "answers": [
+          "devions"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-projection-choix-1",
+            "text": "devions"
+          },
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-projection-choix-2",
+            "text": "devons"
+          },
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-projection-choix-3",
+            "text": "devoir"
+          }
+        ],
+        "explanation": "« Il est possible que » appelle ici le subjonctif. Modèle : Il est possible que nous devions changer de salle pour la projection.",
+        "givenVerb": "devoir"
+      },
+      {
+        "id": "gram-ex-k13-qcm-verbe-b1-mode-atelier-mobile",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k13-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "On est certain que vous ___ où retrouver les boîtes à outils.",
+        "cue": "L’atelier mobile a déplacé son matériel. Il s’agit de la situation au moment où l’on parle. Choisissez le mode d’après l’expression introductrice.",
+        "answers": [
+          "savez"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-atelier-mobile-choix-1",
+            "text": "savez"
+          },
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-atelier-mobile-choix-2",
+            "text": "sachiez"
+          },
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-atelier-mobile-choix-3",
+            "text": "savoir"
+          }
+        ],
+        "explanation": "« On est certain que » appelle ici le indicatif. Modèle : On est certain que vous savez où retrouver les boîtes à outils.",
+        "givenVerb": "savoir"
+      },
+      {
+        "id": "gram-ex-k13-qcm-verbe-b1-mode-volets",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k13-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "La personne responsable regrette que la gardienne ___ les volets de la salle avant l’averse.",
+        "cue": "Un orage est annoncé pour le quartier. L’action est antérieure à la réaction ou à l’annonce. Choisissez le mode d’après l’expression introductrice.",
+        "answers": [
+          "ait fermé"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-volets-choix-1",
+            "text": "ait fermé"
+          },
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-volets-choix-2",
+            "text": "a fermé"
+          },
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-volets-choix-3",
+            "text": "fermer"
+          }
+        ],
+        "explanation": "« La personne responsable regrette que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Modèle : La personne responsable regrette que la gardienne ait fermé les volets de la salle avant l’averse.",
+        "givenVerb": "fermer"
+      },
+      {
+        "id": "gram-ex-k13-qcm-verbe-b1-mode-lecture-salle",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k13-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Il est évident que les lectrices ___ à lire leur texte malgré la panne de micro.",
+        "cue": "La rencontre avec le public a lieu dans la grande salle. L’action est antérieure à la réaction ou à l’annonce. Choisissez le mode d’après l’expression introductrice.",
+        "answers": [
+          "sont parvenues"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-lecture-salle-choix-1",
+            "text": "sont parvenues"
+          },
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-lecture-salle-choix-2",
+            "text": "soient parvenues"
+          },
+          {
+            "id": "gram-ex-k13-qcm-verbe-b1-mode-lecture-salle-choix-3",
+            "text": "parvenir"
+          }
+        ],
+        "explanation": "« Il est évident que » appelle ici le indicatif. Le temps composé situe l’action avant le moment dont on parle. Modèle : Il est évident que les lectrices sont parvenues à lire leur texte malgré la panne de micro.",
+        "givenVerb": "parvenir"
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k13-curriculum-c",
     "subthemeId": "k13",
     "topic": "gram-exprimer",
@@ -2748,12 +3058,242 @@
           "text": "ayez essayé"
         },
         "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k13-curriculum-c-b1-mode-guide-tactile",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k13-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Il est possible que les médiatrices ont lu les consignes à voix haute.",
+        "cue": "Le groupe accueille de nouveaux visiteurs. L’action est antérieure à la réaction ou à l’annonce. Choisissez le mode d’après l’expression introductrice.",
+        "answers": [
+          "Il est possible que les médiatrices aient lu les consignes à voix haute."
+        ],
+        "explanation": "« Il est possible que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 36,
+          "end": 42,
+          "text": "ont lu"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k13-curriculum-c-b1-mode-casier",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k13-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "On est certain que Nora ait ouvert le casier de prêt avec le nouveau code.",
+        "cue": "L’atelier change son système de prêt. L’action est antérieure à la réaction ou à l’annonce. Choisissez le mode d’après l’expression introductrice.",
+        "answers": [
+          "On est certain que Nora a ouvert le casier de prêt avec le nouveau code."
+        ],
+        "explanation": "« On est certain que » appelle ici le indicatif. Le temps composé situe l’action avant le moment dont on parle.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 24,
+          "end": 34,
+          "text": "ait ouvert"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k13-curriculum-c-b1-mode-alarme",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k13-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "La personne responsable souhaite que le technicien reconnaît le signal d’alarme du tableau.",
+        "cue": "Un signal sonore retentit près de l’entrée. Il s’agit de la situation au moment où l’on parle. Choisissez le mode d’après l’expression introductrice.",
+        "answers": [
+          "La personne responsable souhaite que le technicien reconnaisse le signal d’alarme du tableau."
+        ],
+        "explanation": "« La personne responsable souhaite que » appelle ici le subjonctif.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 51,
+          "end": 60,
+          "text": "reconnaît"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k13-curriculum-c-b1-mode-violoncelle",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k13-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Il est évident que les musiciens aient pu répéter le duo dans la petite salle.",
+        "cue": "Le grand studio est occupé. L’action est antérieure à la réaction ou à l’annonce. Choisissez le mode d’après l’expression introductrice.",
+        "answers": [
+          "Il est évident que les musiciens ont pu répéter le duo dans la petite salle."
+        ],
+        "explanation": "« Il est évident que » appelle ici le indicatif. Le temps composé situe l’action avant le moment dont on parle.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 33,
+          "end": 41,
+          "text": "aient pu"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k13-curriculum-c-b1-mode-cagettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k13-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Le groupe doute qu’Yara a reçu les cagettes destinées au marché du samedi.",
+        "cue": "Le stand attend une livraison. L’action est antérieure à la réaction ou à l’annonce. Choisissez le mode d’après l’expression introductrice.",
+        "answers": [
+          "Le groupe doute qu’Yara ait reçu les cagettes destinées au marché du samedi."
+        ],
+        "explanation": "« Le groupe doute que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 24,
+          "end": 30,
+          "text": "a reçu"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k13-curriculum-c-b1-mode-berge",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k13-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Le service confirme que les volontaires soient revenus à l’abri par le chemin du canal.",
+        "cue": "Le niveau de l’eau monte près de la berge. L’action est antérieure à la réaction ou à l’annonce. Choisissez le mode d’après l’expression introductrice.",
+        "answers": [
+          "Le service confirme que les volontaires sont revenus à l’abri par le chemin du canal."
+        ],
+        "explanation": "« Le service confirme que » appelle ici le indicatif. Le temps composé situe l’action avant le moment dont on parle.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 40,
+          "end": 54,
+          "text": "soient revenus"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k13-curriculum-c-b1-mode-projection",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k13-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Il est possible que nous devons changer de salle pour la projection.",
+        "cue": "L’écran de la grande salle est en panne. Il s’agit de la situation au moment où l’on parle. Choisissez le mode d’après l’expression introductrice.",
+        "answers": [
+          "Il est possible que nous devions changer de salle pour la projection."
+        ],
+        "explanation": "« Il est possible que » appelle ici le subjonctif.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 25,
+          "end": 31,
+          "text": "devons"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k13-curriculum-c-b1-mode-atelier-mobile",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k13-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "On est certain que vous sachiez où retrouver les boîtes à outils.",
+        "cue": "L’atelier mobile a déplacé son matériel. Il s’agit de la situation au moment où l’on parle. Choisissez le mode d’après l’expression introductrice.",
+        "answers": [
+          "On est certain que vous savez où retrouver les boîtes à outils."
+        ],
+        "explanation": "« On est certain que » appelle ici le indicatif.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 24,
+          "end": 31,
+          "text": "sachiez"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k13-curriculum-c-b1-mode-volets",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k13-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "La personne responsable regrette que la gardienne a fermé les volets de la salle avant l’averse.",
+        "cue": "Un orage est annoncé pour le quartier. L’action est antérieure à la réaction ou à l’annonce. Choisissez le mode d’après l’expression introductrice.",
+        "answers": [
+          "La personne responsable regrette que la gardienne ait fermé les volets de la salle avant l’averse."
+        ],
+        "explanation": "« La personne responsable regrette que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 50,
+          "end": 57,
+          "text": "a fermé"
+        },
+        "responseLines": 2
+      },
+      {
+        "id": "gram-ex-k13-curriculum-c-b1-mode-lecture-salle",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k13-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Il est évident que les lectrices soient parvenues à lire leur texte malgré la panne de micro.",
+        "cue": "La rencontre avec le public a lieu dans la grande salle. L’action est antérieure à la réaction ou à l’annonce. Choisissez le mode d’après l’expression introductrice.",
+        "answers": [
+          "Il est évident que les lectrices sont parvenues à lire leur texte malgré la panne de micro."
+        ],
+        "explanation": "« Il est évident que » appelle ici le indicatif. Le temps composé situe l’action avant le moment dont on parle.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 33,
+          "end": 49,
+          "text": "soient parvenues"
+        },
+        "responseLines": 2
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k13-curriculum-t",
     "subthemeId": "k13",
     "topic": "gram-exprimer",
@@ -3623,12 +4163,182 @@
         ],
         "responseLines": 2,
         "explanation": "« Le service confirme que » appelle ici le indicatif. Le temps composé situe l’action avant le moment dont on parle."
+      },
+      {
+        "id": "gram-ex-k13-curriculum-t-b1-mode-guide-tactile",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k13-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le groupe accueille de nouveaux visiteurs.\nInformation envisagée : les médiatrices ont lu les consignes à voix haute.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "directive": "Reformulez avec « Il est possible que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "Il est possible que les médiatrices aient lu les consignes à voix haute."
+        ],
+        "responseLines": 2,
+        "explanation": "« Il est possible que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle."
+      },
+      {
+        "id": "gram-ex-k13-curriculum-t-b1-mode-casier",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k13-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "L’atelier change son système de prêt.\nFait : Nora a ouvert le casier de prêt avec le nouveau code.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "directive": "Reformulez avec « On est certain que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "On est certain que Nora a ouvert le casier de prêt avec le nouveau code."
+        ],
+        "responseLines": 2,
+        "explanation": "« On est certain que » appelle ici le indicatif. Le temps composé situe l’action avant le moment dont on parle."
+      },
+      {
+        "id": "gram-ex-k13-curriculum-t-b1-mode-alarme",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k13-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Un signal sonore retentit près de l’entrée.\nInformation envisagée : le technicien reconnaît le signal d’alarme du tableau.\nIl s’agit de la situation au moment où l’on parle.",
+        "directive": "Reformulez avec « La personne responsable souhaite que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "La personne responsable souhaite que le technicien reconnaisse le signal d’alarme du tableau."
+        ],
+        "responseLines": 2,
+        "explanation": "« La personne responsable souhaite que » appelle ici le subjonctif."
+      },
+      {
+        "id": "gram-ex-k13-curriculum-t-b1-mode-violoncelle",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k13-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le grand studio est occupé.\nFait : les musiciens ont pu répéter le duo dans la petite salle.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "directive": "Reformulez avec « Il est évident que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "Il est évident que les musiciens ont pu répéter le duo dans la petite salle."
+        ],
+        "responseLines": 2,
+        "explanation": "« Il est évident que » appelle ici le indicatif. Le temps composé situe l’action avant le moment dont on parle."
+      },
+      {
+        "id": "gram-ex-k13-curriculum-t-b1-mode-cagettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k13-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le stand attend une livraison.\nInformation envisagée : Yara a reçu les cagettes destinées au marché du samedi.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "directive": "Reformulez avec « Le groupe doute que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "Le groupe doute qu’Yara ait reçu les cagettes destinées au marché du samedi."
+        ],
+        "responseLines": 2,
+        "explanation": "« Le groupe doute que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle."
+      },
+      {
+        "id": "gram-ex-k13-curriculum-t-b1-mode-berge",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k13-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le niveau de l’eau monte près de la berge.\nFait : les volontaires sont revenus à l’abri par le chemin du canal.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "directive": "Reformulez avec « Le service confirme que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "Le service confirme que les volontaires sont revenus à l’abri par le chemin du canal."
+        ],
+        "responseLines": 2,
+        "explanation": "« Le service confirme que » appelle ici le indicatif. Le temps composé situe l’action avant le moment dont on parle."
+      },
+      {
+        "id": "gram-ex-k13-curriculum-t-b1-mode-projection",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k13-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "L’écran de la grande salle est en panne.\nInformation envisagée : nous devons changer de salle pour la projection.\nIl s’agit de la situation au moment où l’on parle.",
+        "directive": "Reformulez avec « Il est possible que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "Il est possible que nous devions changer de salle pour la projection."
+        ],
+        "responseLines": 2,
+        "explanation": "« Il est possible que » appelle ici le subjonctif."
+      },
+      {
+        "id": "gram-ex-k13-curriculum-t-b1-mode-atelier-mobile",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k13-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "L’atelier mobile a déplacé son matériel.\nFait : vous savez où retrouver les boîtes à outils.\nIl s’agit de la situation au moment où l’on parle.",
+        "directive": "Reformulez avec « On est certain que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "On est certain que vous savez où retrouver les boîtes à outils."
+        ],
+        "responseLines": 2,
+        "explanation": "« On est certain que » appelle ici le indicatif."
+      },
+      {
+        "id": "gram-ex-k13-curriculum-t-b1-mode-volets",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k13-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Un orage est annoncé pour le quartier.\nFait : la gardienne a fermé les volets de la salle avant l’averse.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "directive": "Reformulez avec « La personne responsable regrette que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "La personne responsable regrette que la gardienne ait fermé les volets de la salle avant l’averse."
+        ],
+        "responseLines": 2,
+        "explanation": "« La personne responsable regrette que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle."
+      },
+      {
+        "id": "gram-ex-k13-curriculum-t-b1-mode-lecture-salle",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k13-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "La rencontre avec le public a lieu dans la grande salle.\nFait : les lectrices sont parvenues à lire leur texte malgré la panne de micro.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "directive": "Reformulez avec « Il est évident que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "Il est évident que les lectrices sont parvenues à lire leur texte malgré la panne de micro."
+        ],
+        "responseLines": 2,
+        "explanation": "« Il est évident que » appelle ici le indicatif. Le temps composé situe l’action avant le moment dont on parle."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v3",
     "activityId": "gram-ex-k13-curriculum-d",
     "subthemeId": "k13",
     "topic": "gram-exprimer",
@@ -3713,6 +4423,18 @@
             ],
             "response": "short",
             "explanation": "Les passages cités permettent de répondre."
+          },
+          {
+            "id": "gram-ex-k13-curriculum-d-b1-plans-q4",
+            "prompt": "Que comptent faire les conseillers s’ils voient des voyageurs hésiter sur le trajet ?",
+            "answers": [
+              "Noter les endroits où ils hésitent et envisager une mise à jour du plan."
+            ],
+            "evidence": [
+              "Ils noteront les endroits où ces personnes hésitent, puis pourront mettre à jour le plan."
+            ],
+            "response": "short",
+            "explanation": "Les passages cités permettent de répondre."
           }
         ],
         "responseLines": 1,
@@ -3773,12 +4495,24 @@
           },
           {
             "id": "gram-ex-k13-curriculum-d-b1-panier-q3",
-            "prompt": "Que contiennent les sachets difficiles à utiliser ?",
+            "prompt": "Pour quels fruits les sachets habituels sont-ils trop petits ?",
             "answers": [
-              "Des poires."
+              "Pour les poires."
             ],
             "evidence": [
               "Les sachets habituels sont trop petits pour les poires."
+            ],
+            "response": "short",
+            "explanation": "Les passages cités permettent de répondre."
+          },
+          {
+            "id": "gram-ex-k13-curriculum-d-b1-panier-q4",
+            "prompt": "Pourquoi le responsable a-t-il posé les cagettes près du mur ?",
+            "answers": [
+              "Pour libérer un passage au milieu du stand."
+            ],
+            "evidence": [
+              "Il a mis les petites cagettes près du mur pour libérer un passage au milieu du stand."
             ],
             "response": "short",
             "explanation": "Les passages cités permettent de répondre."
@@ -3851,6 +4585,18 @@
             ],
             "response": "short",
             "explanation": "Les passages cités permettent de répondre."
+          },
+          {
+            "id": "gram-ex-k13-curriculum-d-b1-travaux-q4",
+            "prompt": "Quelles mesures la commune envisage-t-elle si le détour devient trop étroit ?",
+            "answers": [
+              "Déplacer une barrière et publier un nouveau plan."
+            ],
+            "evidence": [
+              "Si le passage du côté des archives devient trop étroit, la commune déplacera une barrière et publiera un nouveau plan."
+            ],
+            "response": "short",
+            "explanation": "Les passages cités permettent de répondre."
           }
         ],
         "responseLines": 1,
@@ -3917,6 +4663,18 @@
             ],
             "evidence": [
               "n’a pas apporté de cadenas de rechange"
+            ],
+            "response": "short",
+            "explanation": "Les passages cités permettent de répondre."
+          },
+          {
+            "id": "gram-ex-k13-curriculum-d-b1-pont-q4",
+            "prompt": "Quel inconvénient présente le trajet à vélo par l’autre entrée ?",
+            "answers": [
+              "Il ajoute dix minutes à la balade."
+            ],
+            "evidence": [
+              "Maya propose de faire le trajet à vélo par l’autre entrée, même si cela ajoute dix minutes à la balade."
             ],
             "response": "short",
             "explanation": "Les passages cités permettent de répondre."
@@ -3989,6 +4747,18 @@
             ],
             "response": "short",
             "explanation": "Les passages cités permettent de répondre."
+          },
+          {
+            "id": "gram-ex-k13-curriculum-d-b1-tournee-q4",
+            "prompt": "Pourquoi les guides n’ont-ils pas pris l’un des deux cars ?",
+            "answers": [
+              "Ils étaient réservés pour un autre groupe."
+            ],
+            "evidence": [
+              "Les deux cars étaient réservés pour un autre groupe."
+            ],
+            "response": "short",
+            "explanation": "Les passages cités permettent de répondre."
           }
         ],
         "responseLines": 1,
@@ -4058,6 +4828,18 @@
             ],
             "response": "short",
             "explanation": "Les passages cités permettent de répondre."
+          },
+          {
+            "id": "gram-ex-k13-curriculum-d-b1-enveloppe-q4",
+            "prompt": "Quelle précision la secrétaire demande-t-elle d’ajouter après le numéro de la porte ?",
+            "answers": [
+              "Le nom de la personne responsable."
+            ],
+            "evidence": [
+              "Elle m’a demandé d’écrire aussi le nom de la personne responsable après le numéro de la porte."
+            ],
+            "response": "short",
+            "explanation": "Les passages cités permettent de répondre."
           }
         ],
         "responseLines": 1,
@@ -4118,12 +4900,24 @@
           },
           {
             "id": "gram-ex-k13-curriculum-d-b1-dossier-q3",
-            "prompt": "Pourquoi Nadir doit-il demander une nouvelle adresse à deux élèves ?",
+            "prompt": "Pourquoi Nadir va-t-il redemander l’adresse aux élèves concernés ?",
             "answers": [
               "Deux lignes portaient le même code."
             ],
             "evidence": [
               "deux lignes portaient le même code"
+            ],
+            "response": "short",
+            "explanation": "Les passages cités permettent de répondre."
+          },
+          {
+            "id": "gram-ex-k13-curriculum-d-b1-dossier-q4",
+            "prompt": "Quelle solution est prévue pour les personnes qui ne peuvent pas utiliser le site ?",
+            "answers": [
+              "Le bureau gardera une feuille papier à leur disposition."
+            ],
+            "evidence": [
+              "Le bureau gardera une feuille papier pour les personnes qui ne peuvent pas utiliser le site."
             ],
             "response": "short",
             "explanation": "Les passages cités permettent de répondre."
@@ -4196,6 +4990,18 @@
             ],
             "response": "short",
             "explanation": "Les passages cités permettent de répondre."
+          },
+          {
+            "id": "gram-ex-k13-curriculum-d-b1-cable-q4",
+            "prompt": "Que faut-il faire avant de pouvoir rebrancher l’appareil ?",
+            "answers": [
+              "Il faut l’examiner."
+            ],
+            "evidence": [
+              "Un appareil restera cependant débranché tant qu’il n’aura pas été examiné."
+            ],
+            "response": "short",
+            "explanation": "Les passages cités permettent de répondre."
           }
         ],
         "responseLines": 1,
@@ -4262,6 +5068,18 @@
             ],
             "evidence": [
               "seront prises à la petite table"
+            ],
+            "response": "short",
+            "explanation": "Les passages cités permettent de répondre."
+          },
+          {
+            "id": "gram-ex-k13-curriculum-d-b1-liste-q4",
+            "prompt": "Comment le groupe compte-t-il limiter le bruit du couloir pendant l’enregistrement ?",
+            "answers": [
+              "Une seule personne restera près de la porte."
+            ],
+            "evidence": [
+              "Une seule personne restera près de la porte pour éviter que le bruit du couloir gêne l’enregistrement."
             ],
             "response": "short",
             "explanation": "Les passages cités permettent de répondre."
@@ -4334,6 +5152,18 @@
             ],
             "response": "short",
             "explanation": "Les passages cités permettent de répondre."
+          },
+          {
+            "id": "gram-ex-k13-curriculum-d-b1-carton-q4",
+            "prompt": "Que doit-on expliquer dans sa recommandation sans dévoiler la fin du livre ?",
+            "answers": [
+              "Pourquoi on a choisi ce livre."
+            ],
+            "evidence": [
+              "chaque personne écrira une phrase pour expliquer son choix, sans raconter la fin du livre"
+            ],
+            "response": "short",
+            "explanation": "Les passages cités permettent de répondre."
           }
         ],
         "responseLines": 1,
@@ -4400,6 +5230,18 @@
             ],
             "evidence": [
               "avec celles du lendemain matin"
+            ],
+            "response": "short",
+            "explanation": "Les passages cités permettent de répondre."
+          },
+          {
+            "id": "gram-ex-k13-curriculum-d-b1-digue-q4",
+            "prompt": "Quelle décision dépendra de la comparaison des mesures ?",
+            "answers": [
+              "Changer ou non le secteur des visites de vendredi."
+            ],
+            "evidence": [
+              "Cette comparaison aidera à décider si les visites prévues vendredi doivent être déplacées dans un autre secteur."
             ],
             "response": "short",
             "explanation": "Les passages cités permettent de répondre."
@@ -4472,6 +5314,18 @@
             ],
             "response": "short",
             "explanation": "Les passages cités permettent de répondre."
+          },
+          {
+            "id": "gram-ex-k13-curriculum-d-b1-contrat-q4",
+            "prompt": "À quel moment les horaires seront-ils expliqués le premier jour ?",
+            "answers": [
+              "Avant la pause du matin."
+            ],
+            "evidence": [
+              "La formatrice expliquera les horaires avant la pause du matin."
+            ],
+            "response": "short",
+            "explanation": "Les passages cités permettent de répondre."
           }
         ],
         "responseLines": 1,
@@ -4538,6 +5392,18 @@
             ],
             "evidence": [
               "dans une petite armoire à l’accueil"
+            ],
+            "response": "short",
+            "explanation": "Les passages cités permettent de répondre."
+          },
+          {
+            "id": "gram-ex-k13-curriculum-d-b1-lampes-q4",
+            "prompt": "Sur quoi portera le contrôle prévu demain ?",
+            "answers": [
+              "Sur les lampes du couloir et la porte de la cuisine."
+            ],
+            "evidence": [
+              "Il portera sur les lampes du couloir et sur la porte de la cuisine."
             ],
             "response": "short",
             "explanation": "Les passages cités permettent de répondre."
@@ -4610,6 +5476,18 @@
             ],
             "response": "short",
             "explanation": "Les passages cités permettent de répondre."
+          },
+          {
+            "id": "gram-ex-k13-curriculum-d-b1-retour-q4",
+            "prompt": "Que craignait la coordinatrice avant le retour de Daria ?",
+            "answers": [
+              "Que Daria soit encore près du stade après l’extinction des lampes."
+            ],
+            "evidence": [
+              "Elle craignait que Daria soit encore près du stade après l’extinction des lampes."
+            ],
+            "response": "short",
+            "explanation": "Les passages cités permettent de répondre."
           }
         ],
         "responseLines": 1,
@@ -4676,6 +5554,18 @@
             ],
             "evidence": [
               "garde ton sac près de la table"
+            ],
+            "response": "short",
+            "explanation": "Les passages cités permettent de répondre."
+          },
+          {
+            "id": "gram-ex-k13-curriculum-d-b1-permis-q4",
+            "prompt": "Qui doit se rendre au bureau du matériel ?",
+            "answers": [
+              "Les personnes qui ont réservé du matériel."
+            ],
+            "evidence": [
+              "Ceux qui ont réservé du matériel iront ensuite au bureau du matériel"
             ],
             "response": "short",
             "explanation": "Les passages cités permettent de répondre."
@@ -4748,6 +5638,18 @@
             ],
             "response": "short",
             "explanation": "Les passages cités permettent de répondre."
+          },
+          {
+            "id": "gram-ex-k13-curriculum-d-b1-horaire-q4",
+            "prompt": "Quel point reste à vérifier si le panneau est déplacé ?",
+            "answers": [
+              "S’il restera visible depuis le trottoir."
+            ],
+            "evidence": [
+              "Les agents doivent encore vérifier si le panneau restera visible depuis le trottoir."
+            ],
+            "response": "short",
+            "explanation": "Les passages cités permettent de répondre."
           }
         ],
         "responseLines": 1,
@@ -4814,6 +5716,18 @@
             ],
             "evidence": [
               "pris leur petit-déjeuner dans la petite grange"
+            ],
+            "response": "short",
+            "explanation": "Les passages cités permettent de répondre."
+          },
+          {
+            "id": "gram-ex-k13-curriculum-d-b1-tente-q4",
+            "prompt": "Que doit faire le gardien avant de laisser les nouveaux groupes s’installer ?",
+            "answers": [
+              "Remettre le passage en état."
+            ],
+            "evidence": [
+              "Il doit remettre le passage en état avant de laisser les nouveaux groupes s’installer."
             ],
             "response": "short",
             "explanation": "Les passages cités permettent de répondre."
@@ -4886,6 +5800,18 @@
             ],
             "response": "short",
             "explanation": "Les passages cités permettent de répondre."
+          },
+          {
+            "id": "gram-ex-k13-curriculum-d-b1-horloge-q4",
+            "prompt": "Où peut-on attendre avant l’arrivée du groupe ?",
+            "answers": [
+              "Dans la salle voisine."
+            ],
+            "evidence": [
+              "La salle voisine reste ouverte en attendant l’arrivée du groupe."
+            ],
+            "response": "short",
+            "explanation": "Les passages cités permettent de répondre."
           }
         ],
         "responseLines": 1,
@@ -4955,6 +5881,18 @@
             ],
             "response": "short",
             "explanation": "Les passages cités permettent de répondre."
+          },
+          {
+            "id": "gram-ex-k13-curriculum-d-b1-poteau-q4",
+            "prompt": "Pourquoi l’accès par le portail est-il important cet après-midi ?",
+            "answers": [
+              "Deux camionnettes doivent venir livrer le matériel."
+            ],
+            "evidence": [
+              "les ouvrières aient déplacé le poteau devant le portail. Deux camionnettes doivent livrer le matériel cet après-midi."
+            ],
+            "response": "short",
+            "explanation": "Les passages cités permettent de répondre."
           }
         ],
         "responseLines": 1,
@@ -5015,12 +5953,24 @@
           },
           {
             "id": "gram-ex-k13-curriculum-d-b1-photo-q3",
-            "prompt": "Qu’a demandé le journal avant de publier un nom ?",
+            "prompt": "De quoi le journal a-t-il besoin pour publier le nom du photographe ?",
             "answers": [
-              "L’accord du photographe."
+              "De l’accord du photographe."
             ],
             "evidence": [
               "l’accord du photographe avant de publier son nom"
+            ],
+            "response": "short",
+            "explanation": "Les passages cités permettent de répondre."
+          },
+          {
+            "id": "gram-ex-k13-curriculum-d-b1-photo-q4",
+            "prompt": "Qu’est-ce qui n’apparaît pas sur l’épreuve précédente ?",
+            "answers": [
+              "Le nouvel abri."
+            ],
+            "evidence": [
+              "L’épreuve précédente montrait la place sans le nouvel abri."
             ],
             "response": "short",
             "explanation": "Les passages cités permettent de répondre."
@@ -5033,7 +5983,7 @@
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k13-curriculum-e",
     "subthemeId": "k13",
     "topic": "gram-exprimer",
@@ -6652,6 +7602,326 @@
           }
         ],
         "explanation": "« Le service confirme que » appelle ici le indicatif. Le temps composé situe l’action avant le moment dont on parle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k13-curriculum-e-b1-mode-guide-tactile",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k13-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le groupe accueille de nouveaux visiteurs.\nInformation envisagée : les médiatrices ont lu les consignes à voix haute.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "task": "Présentez l’information selon l’expression demandée. Choisissez le mode et le temps appropriés. Reformulez avec « Il est possible que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "Il est possible que les médiatrices aient lu les consignes à voix haute."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "« Il est possible que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k13-curriculum-e-b1-mode-casier",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k13-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "L’atelier change son système de prêt.\nFait : Nora a ouvert le casier de prêt avec le nouveau code.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "task": "Présentez l’information selon l’expression demandée. Choisissez le mode et le temps appropriés. Reformulez avec « On est certain que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "On est certain que Nora a ouvert le casier de prêt avec le nouveau code."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "« On est certain que » appelle ici le indicatif. Le temps composé situe l’action avant le moment dont on parle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k13-curriculum-e-b1-mode-alarme",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k13-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Un signal sonore retentit près de l’entrée.\nInformation envisagée : le technicien reconnaît le signal d’alarme du tableau.\nIl s’agit de la situation au moment où l’on parle.",
+        "task": "Présentez l’information selon l’expression demandée. Choisissez le mode et le temps appropriés. Reformulez avec « La personne responsable souhaite que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "La personne responsable souhaite que le technicien reconnaisse le signal d’alarme du tableau."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "« La personne responsable souhaite que » appelle ici le subjonctif. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k13-curriculum-e-b1-mode-violoncelle",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k13-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le grand studio est occupé.\nFait : les musiciens ont pu répéter le duo dans la petite salle.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "task": "Présentez l’information selon l’expression demandée. Choisissez le mode et le temps appropriés. Reformulez avec « Il est évident que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "Il est évident que les musiciens ont pu répéter le duo dans la petite salle."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "« Il est évident que » appelle ici le indicatif. Le temps composé situe l’action avant le moment dont on parle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k13-curriculum-e-b1-mode-cagettes",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k13-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le stand attend une livraison.\nInformation envisagée : Yara a reçu les cagettes destinées au marché du samedi.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "task": "Présentez l’information selon l’expression demandée. Choisissez le mode et le temps appropriés. Reformulez avec « Le groupe doute que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "Le groupe doute qu’Yara ait reçu les cagettes destinées au marché du samedi."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "« Le groupe doute que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k13-curriculum-e-b1-mode-berge",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k13-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le niveau de l’eau monte près de la berge.\nFait : les volontaires sont revenus à l’abri par le chemin du canal.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "task": "Présentez l’information selon l’expression demandée. Choisissez le mode et le temps appropriés. Reformulez avec « Le service confirme que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "Le service confirme que les volontaires sont revenus à l’abri par le chemin du canal."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "« Le service confirme que » appelle ici le indicatif. Le temps composé situe l’action avant le moment dont on parle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k13-curriculum-e-b1-mode-projection",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k13-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "L’écran de la grande salle est en panne.\nInformation envisagée : nous devons changer de salle pour la projection.\nIl s’agit de la situation au moment où l’on parle.",
+        "task": "Présentez l’information selon l’expression demandée. Choisissez le mode et le temps appropriés. Reformulez avec « Il est possible que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "Il est possible que nous devions changer de salle pour la projection."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "« Il est possible que » appelle ici le subjonctif. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k13-curriculum-e-b1-mode-atelier-mobile",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k13-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "L’atelier mobile a déplacé son matériel.\nFait : vous savez où retrouver les boîtes à outils.\nIl s’agit de la situation au moment où l’on parle.",
+        "task": "Présentez l’information selon l’expression demandée. Choisissez le mode et le temps appropriés. Reformulez avec « On est certain que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "On est certain que vous savez où retrouver les boîtes à outils."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "« On est certain que » appelle ici le indicatif. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k13-curriculum-e-b1-mode-volets",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k13-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Un orage est annoncé pour le quartier.\nFait : la gardienne a fermé les volets de la salle avant l’averse.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "task": "Présentez l’information selon l’expression demandée. Choisissez le mode et le temps appropriés. Reformulez avec « La personne responsable regrette que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "La personne responsable regrette que la gardienne ait fermé les volets de la salle avant l’averse."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "« La personne responsable regrette que » appelle ici le subjonctif. Le temps composé situe l’action avant le moment dont on parle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k13-curriculum-e-b1-mode-lecture-salle",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-modes.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k13-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "La rencontre avec le public a lieu dans la grande salle.\nFait : les lectrices sont parvenues à lire leur texte malgré la panne de micro.\nL’action est antérieure à la réaction ou à l’annonce.",
+        "task": "Présentez l’information selon l’expression demandée. Choisissez le mode et le temps appropriés. Reformulez avec « Il est évident que ». Conservez les faits et le repère temporel.",
+        "answers": [
+          "Il est évident que les lectrices sont parvenues à lire leur texte malgré la panne de micro."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "« Il est évident que » appelle ici le indicatif. Le temps composé situe l’action avant le moment dont on parle. Les reformulations fidèles sont recevables.",
         "writeLines": 4
       }
     ]

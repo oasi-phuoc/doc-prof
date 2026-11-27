@@ -1,7 +1,7 @@
 [
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k1-qcm-verbe",
     "subthemeId": "k1",
     "topic": "gram-argumenter",
@@ -1523,12 +1523,312 @@
           }
         ],
         "explanation": "L’expression choisie doit correspondre à la position indiquée. Modèle : Je suis en désaccord avec cette proposition."
+      },
+      {
+        "id": "gram-ex-k1-qcm-verbe-a2-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k1-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je suis ___ avec cette proposition.",
+        "cue": "Proposition : mettre un plan tactile à l’entrée. Vous soutenez cette proposition.",
+        "answers": [
+          "d’accord"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-atelier-braille-choix-1",
+            "text": "d’accord"
+          },
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-atelier-braille-choix-2",
+            "text": "en désaccord"
+          },
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-atelier-braille-choix-3",
+            "text": "en charge"
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Modèle : Je suis d’accord avec cette proposition."
+      },
+      {
+        "id": "gram-ex-k1-qcm-verbe-a2-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k1-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je suis ___ avec cette proposition.",
+        "cue": "Proposition : transférer deux cassettes sur un support numérique. Vous vous opposez à cette proposition.",
+        "answers": [
+          "en désaccord"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-archives-sonores-choix-1",
+            "text": "en désaccord"
+          },
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-archives-sonores-choix-2",
+            "text": "d’accord"
+          },
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-archives-sonores-choix-3",
+            "text": "en charge"
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Modèle : Je suis en désaccord avec cette proposition."
+      },
+      {
+        "id": "gram-ex-k1-qcm-verbe-a2-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k1-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je suis ___ avec cette proposition.",
+        "cue": "Proposition : donner un numéro à chaque casier. Vous soutenez cette proposition.",
+        "answers": [
+          "d’accord"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-casiers-cantine-choix-1",
+            "text": "d’accord"
+          },
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-casiers-cantine-choix-2",
+            "text": "en désaccord"
+          },
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-casiers-cantine-choix-3",
+            "text": "en charge"
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Modèle : Je suis d’accord avec cette proposition."
+      },
+      {
+        "id": "gram-ex-k1-qcm-verbe-a2-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k1-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je suis ___ avec cette proposition.",
+        "cue": "Proposition : prévoir de l’ombre pour les semis. Vous vous opposez à cette proposition.",
+        "answers": [
+          "en désaccord"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-atelier-ombre-choix-1",
+            "text": "en désaccord"
+          },
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-atelier-ombre-choix-2",
+            "text": "d’accord"
+          },
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-atelier-ombre-choix-3",
+            "text": "en charge"
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Modèle : Je suis en désaccord avec cette proposition."
+      },
+      {
+        "id": "gram-ex-k1-qcm-verbe-a2-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k1-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je suis ___ avec cette proposition.",
+        "cue": "Proposition : afficher les appels de passage sur un écran. Vous soutenez cette proposition.",
+        "answers": [
+          "d’accord"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-guichet-sourdine-choix-1",
+            "text": "d’accord"
+          },
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-guichet-sourdine-choix-2",
+            "text": "en désaccord"
+          },
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-guichet-sourdine-choix-3",
+            "text": "en charge"
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Modèle : Je suis d’accord avec cette proposition."
+      },
+      {
+        "id": "gram-ex-k1-qcm-verbe-a2-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k1-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je suis ___ avec cette proposition.",
+        "cue": "Proposition : prêter des protections auditives pendant la visite. Vous vous opposez à cette proposition.",
+        "answers": [
+          "en désaccord"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-protecteurs-oreilles-choix-1",
+            "text": "en désaccord"
+          },
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-protecteurs-oreilles-choix-2",
+            "text": "d’accord"
+          },
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-protecteurs-oreilles-choix-3",
+            "text": "en charge"
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Modèle : Je suis en désaccord avec cette proposition."
+      },
+      {
+        "id": "gram-ex-k1-qcm-verbe-a2-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k1-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je suis ___ avec cette proposition.",
+        "cue": "Proposition : imprimer les consignes avant l’évaluation. Vous soutenez cette proposition.",
+        "answers": [
+          "d’accord"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-reseau-ecole-choix-1",
+            "text": "d’accord"
+          },
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-reseau-ecole-choix-2",
+            "text": "en désaccord"
+          },
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-reseau-ecole-choix-3",
+            "text": "en charge"
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Modèle : Je suis d’accord avec cette proposition."
+      },
+      {
+        "id": "gram-ex-k1-qcm-verbe-a2-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k1-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je suis ___ avec cette proposition.",
+        "cue": "Proposition : indiquer le prix à l’unité sur les étiquettes. Vous vous opposez à cette proposition.",
+        "answers": [
+          "en désaccord"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-panneau-comptoir-choix-1",
+            "text": "en désaccord"
+          },
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-panneau-comptoir-choix-2",
+            "text": "d’accord"
+          },
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-panneau-comptoir-choix-3",
+            "text": "en charge"
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Modèle : Je suis en désaccord avec cette proposition."
+      },
+      {
+        "id": "gram-ex-k1-qcm-verbe-a2-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k1-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je suis ___ avec cette proposition.",
+        "cue": "Proposition : installer une rampe pour l’arrivée du bateau. Vous soutenez cette proposition.",
+        "answers": [
+          "d’accord"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-bateau-rampe-choix-1",
+            "text": "d’accord"
+          },
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-bateau-rampe-choix-2",
+            "text": "en désaccord"
+          },
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-bateau-rampe-choix-3",
+            "text": "en charge"
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Modèle : Je suis d’accord avec cette proposition."
+      },
+      {
+        "id": "gram-ex-k1-qcm-verbe-a2-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k1-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Je suis ___ avec cette proposition.",
+        "cue": "Proposition : mettre la boîte du journal sous le porche. Vous vous opposez à cette proposition.",
+        "answers": [
+          "en désaccord"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-abri-journal-choix-1",
+            "text": "en désaccord"
+          },
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-abri-journal-choix-2",
+            "text": "d’accord"
+          },
+          {
+            "id": "gram-ex-k1-qcm-verbe-a2-abri-journal-choix-3",
+            "text": "en charge"
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Modèle : Je suis en désaccord avec cette proposition."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k1-curriculum-a",
     "subthemeId": "k1",
     "topic": "gram-argumenter",
@@ -3048,12 +3348,312 @@
           "Désapprouver : prévenir les voyageurs avant un changement de quai → Je ne suis pas d’accord. Cherchons une autre façon de réduire les déplacements de dernière minute."
         ],
         "explanation": "D’accord signale l’approbation. Pas d’accord signale le désaccord."
+      },
+      {
+        "id": "gram-ex-k1-curriculum-a-a2-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k1-curriculum-a",
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Proposition : mettre un plan tactile à l’entrée.",
+        "pairs": [
+          {
+            "id": "paire-1",
+            "left": "Approuver : mettre un plan tactile à l’entrée",
+            "right": "Je suis d’accord. Cela peut aider à aider les visiteurs à se repérer.",
+            "sourceId": "atelier-braille-1"
+          },
+          {
+            "id": "paire-2",
+            "left": "Désapprouver : mettre un plan tactile à l’entrée",
+            "right": "Je ne suis pas d’accord. Cherchons une autre façon d’aider les visiteurs à se repérer.",
+            "sourceId": "atelier-braille-2"
+          }
+        ],
+        "answers": [
+          "Approuver : mettre un plan tactile à l’entrée → Je suis d’accord. Cela peut aider à aider les visiteurs à se repérer.",
+          "Désapprouver : mettre un plan tactile à l’entrée → Je ne suis pas d’accord. Cherchons une autre façon d’aider les visiteurs à se repérer."
+        ],
+        "explanation": "D’accord signale l’approbation. Pas d’accord signale le désaccord."
+      },
+      {
+        "id": "gram-ex-k1-curriculum-a-a2-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k1-curriculum-a",
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Proposition : transférer deux cassettes sur un support numérique.",
+        "pairs": [
+          {
+            "id": "paire-1",
+            "left": "Approuver : transférer deux cassettes sur un support numérique",
+            "right": "Je suis d’accord. Cela peut aider à préserver les anciens témoignages.",
+            "sourceId": "archives-sonores-1"
+          },
+          {
+            "id": "paire-2",
+            "left": "Désapprouver : transférer deux cassettes sur un support numérique",
+            "right": "Je ne suis pas d’accord. Cherchons une autre façon de préserver les anciens témoignages.",
+            "sourceId": "archives-sonores-2"
+          }
+        ],
+        "answers": [
+          "Approuver : transférer deux cassettes sur un support numérique → Je suis d’accord. Cela peut aider à préserver les anciens témoignages.",
+          "Désapprouver : transférer deux cassettes sur un support numérique → Je ne suis pas d’accord. Cherchons une autre façon de préserver les anciens témoignages."
+        ],
+        "explanation": "D’accord signale l’approbation. Pas d’accord signale le désaccord."
+      },
+      {
+        "id": "gram-ex-k1-curriculum-a-a2-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k1-curriculum-a",
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Proposition : donner un numéro à chaque casier.",
+        "pairs": [
+          {
+            "id": "paire-1",
+            "left": "Approuver : donner un numéro à chaque casier",
+            "right": "Je suis d’accord. Cela peut aider à laisser le couloir libre.",
+            "sourceId": "casiers-cantine-1"
+          },
+          {
+            "id": "paire-2",
+            "left": "Désapprouver : donner un numéro à chaque casier",
+            "right": "Je ne suis pas d’accord. Cherchons une autre façon de laisser le couloir libre.",
+            "sourceId": "casiers-cantine-2"
+          }
+        ],
+        "answers": [
+          "Approuver : donner un numéro à chaque casier → Je suis d’accord. Cela peut aider à laisser le couloir libre.",
+          "Désapprouver : donner un numéro à chaque casier → Je ne suis pas d’accord. Cherchons une autre façon de laisser le couloir libre."
+        ],
+        "explanation": "D’accord signale l’approbation. Pas d’accord signale le désaccord."
+      },
+      {
+        "id": "gram-ex-k1-curriculum-a-a2-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k1-curriculum-a",
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Proposition : prévoir de l’ombre pour les semis.",
+        "pairs": [
+          {
+            "id": "paire-1",
+            "left": "Approuver : prévoir de l’ombre pour les semis",
+            "right": "Je suis d’accord. Cela peut aider à empêcher les jeunes pousses de sécher.",
+            "sourceId": "atelier-ombre-1"
+          },
+          {
+            "id": "paire-2",
+            "left": "Désapprouver : prévoir de l’ombre pour les semis",
+            "right": "Je ne suis pas d’accord. Cherchons une autre façon d’empêcher les jeunes pousses de sécher.",
+            "sourceId": "atelier-ombre-2"
+          }
+        ],
+        "answers": [
+          "Approuver : prévoir de l’ombre pour les semis → Je suis d’accord. Cela peut aider à empêcher les jeunes pousses de sécher.",
+          "Désapprouver : prévoir de l’ombre pour les semis → Je ne suis pas d’accord. Cherchons une autre façon d’empêcher les jeunes pousses de sécher."
+        ],
+        "explanation": "D’accord signale l’approbation. Pas d’accord signale le désaccord."
+      },
+      {
+        "id": "gram-ex-k1-curriculum-a-a2-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k1-curriculum-a",
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Proposition : afficher les appels de passage sur un écran.",
+        "pairs": [
+          {
+            "id": "paire-1",
+            "left": "Approuver : afficher les appels de passage sur un écran",
+            "right": "Je suis d’accord. Cela peut aider à signaler le prochain numéro.",
+            "sourceId": "guichet-sourdine-1"
+          },
+          {
+            "id": "paire-2",
+            "left": "Désapprouver : afficher les appels de passage sur un écran",
+            "right": "Je ne suis pas d’accord. Cherchons une autre façon de signaler le prochain numéro.",
+            "sourceId": "guichet-sourdine-2"
+          }
+        ],
+        "answers": [
+          "Approuver : afficher les appels de passage sur un écran → Je suis d’accord. Cela peut aider à signaler le prochain numéro.",
+          "Désapprouver : afficher les appels de passage sur un écran → Je ne suis pas d’accord. Cherchons une autre façon de signaler le prochain numéro."
+        ],
+        "explanation": "D’accord signale l’approbation. Pas d’accord signale le désaccord."
+      },
+      {
+        "id": "gram-ex-k1-curriculum-a-a2-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k1-curriculum-a",
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Proposition : prêter des protections auditives pendant la visite.",
+        "pairs": [
+          {
+            "id": "paire-1",
+            "left": "Approuver : prêter des protections auditives pendant la visite",
+            "right": "Je suis d’accord. Cela peut aider à atténuer le bruit.",
+            "sourceId": "protecteurs-oreilles-1"
+          },
+          {
+            "id": "paire-2",
+            "left": "Désapprouver : prêter des protections auditives pendant la visite",
+            "right": "Je ne suis pas d’accord. Cherchons une autre façon d’atténuer le bruit.",
+            "sourceId": "protecteurs-oreilles-2"
+          }
+        ],
+        "answers": [
+          "Approuver : prêter des protections auditives pendant la visite → Je suis d’accord. Cela peut aider à atténuer le bruit.",
+          "Désapprouver : prêter des protections auditives pendant la visite → Je ne suis pas d’accord. Cherchons une autre façon d’atténuer le bruit."
+        ],
+        "explanation": "D’accord signale l’approbation. Pas d’accord signale le désaccord."
+      },
+      {
+        "id": "gram-ex-k1-curriculum-a-a2-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k1-curriculum-a",
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Proposition : imprimer les consignes avant l’évaluation.",
+        "pairs": [
+          {
+            "id": "paire-1",
+            "left": "Approuver : imprimer les consignes avant l’évaluation",
+            "right": "Je suis d’accord. Cela peut aider à permettre à chacun de lire le sujet.",
+            "sourceId": "reseau-ecole-1"
+          },
+          {
+            "id": "paire-2",
+            "left": "Désapprouver : imprimer les consignes avant l’évaluation",
+            "right": "Je ne suis pas d’accord. Cherchons une autre façon de permettre à chacun de lire le sujet.",
+            "sourceId": "reseau-ecole-2"
+          }
+        ],
+        "answers": [
+          "Approuver : imprimer les consignes avant l’évaluation → Je suis d’accord. Cela peut aider à permettre à chacun de lire le sujet.",
+          "Désapprouver : imprimer les consignes avant l’évaluation → Je ne suis pas d’accord. Cherchons une autre façon de permettre à chacun de lire le sujet."
+        ],
+        "explanation": "D’accord signale l’approbation. Pas d’accord signale le désaccord."
+      },
+      {
+        "id": "gram-ex-k1-curriculum-a-a2-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k1-curriculum-a",
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Proposition : indiquer le prix à l’unité sur les étiquettes.",
+        "pairs": [
+          {
+            "id": "paire-1",
+            "left": "Approuver : indiquer le prix à l’unité sur les étiquettes",
+            "right": "Je suis d’accord. Cela peut aider à permettre aux clients de comparer les prix.",
+            "sourceId": "panneau-comptoir-1"
+          },
+          {
+            "id": "paire-2",
+            "left": "Désapprouver : indiquer le prix à l’unité sur les étiquettes",
+            "right": "Je ne suis pas d’accord. Cherchons une autre façon de permettre aux clients de comparer les prix.",
+            "sourceId": "panneau-comptoir-2"
+          }
+        ],
+        "answers": [
+          "Approuver : indiquer le prix à l’unité sur les étiquettes → Je suis d’accord. Cela peut aider à permettre aux clients de comparer les prix.",
+          "Désapprouver : indiquer le prix à l’unité sur les étiquettes → Je ne suis pas d’accord. Cherchons une autre façon de permettre aux clients de comparer les prix."
+        ],
+        "explanation": "D’accord signale l’approbation. Pas d’accord signale le désaccord."
+      },
+      {
+        "id": "gram-ex-k1-curriculum-a-a2-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k1-curriculum-a",
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Proposition : installer une rampe pour l’arrivée du bateau.",
+        "pairs": [
+          {
+            "id": "paire-1",
+            "left": "Approuver : installer une rampe pour l’arrivée du bateau",
+            "right": "Je suis d’accord. Cela peut aider à faciliter le débarquement.",
+            "sourceId": "bateau-rampe-1"
+          },
+          {
+            "id": "paire-2",
+            "left": "Désapprouver : installer une rampe pour l’arrivée du bateau",
+            "right": "Je ne suis pas d’accord. Cherchons une autre façon de faciliter le débarquement.",
+            "sourceId": "bateau-rampe-2"
+          }
+        ],
+        "answers": [
+          "Approuver : installer une rampe pour l’arrivée du bateau → Je suis d’accord. Cela peut aider à faciliter le débarquement.",
+          "Désapprouver : installer une rampe pour l’arrivée du bateau → Je ne suis pas d’accord. Cherchons une autre façon de faciliter le débarquement."
+        ],
+        "explanation": "D’accord signale l’approbation. Pas d’accord signale le désaccord."
+      },
+      {
+        "id": "gram-ex-k1-curriculum-a-a2-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k1-curriculum-a",
+          "partition": "a2"
+        },
+        "kind": "match",
+        "prompt": "Proposition : mettre la boîte du journal sous le porche.",
+        "pairs": [
+          {
+            "id": "paire-1",
+            "left": "Approuver : mettre la boîte du journal sous le porche",
+            "right": "Je suis d’accord. Cela peut aider à mettre les journaux à l’abri.",
+            "sourceId": "abri-journal-1"
+          },
+          {
+            "id": "paire-2",
+            "left": "Désapprouver : mettre la boîte du journal sous le porche",
+            "right": "Je ne suis pas d’accord. Cherchons une autre façon de mettre les journaux à l’abri.",
+            "sourceId": "abri-journal-2"
+          }
+        ],
+        "answers": [
+          "Approuver : mettre la boîte du journal sous le porche → Je suis d’accord. Cela peut aider à mettre les journaux à l’abri.",
+          "Désapprouver : mettre la boîte du journal sous le porche → Je ne suis pas d’accord. Cherchons une autre façon de mettre les journaux à l’abri."
+        ],
+        "explanation": "D’accord signale l’approbation. Pas d’accord signale le désaccord."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k1-curriculum-s",
     "subthemeId": "k1",
     "topic": "gram-argumenter",
@@ -5823,12 +6423,562 @@
           "Personne B : Quel est votre avis ?\nPersonne A : Je ne suis pas d’accord avec cette proposition. Je préférerais d’abord discuter d’autres solutions pour réduire les déplacements de dernière minute.\nPersonne B : De quelle proposition parlez-vous ?\nPersonne A : De la proposition suivante : prévenir les voyageurs avant un changement de quai."
         ],
         "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables."
+      },
+      {
+        "id": "gram-ex-k1-curriculum-s-a2-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k1-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Un échange à deux",
+        "situation": "Proposition : mettre un plan tactile à l’entrée.\nL’affiche était illisible à plusieurs mètres. Le but est d’aider les visiteurs à se repérer.",
+        "task": "Vous soutenez cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition. Répondez à la relance puis échangez les rôles.",
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Formulez la réponse et précisez-la."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez les questions puis écoutez la réponse."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quel est votre avis ?"
+          }
+        ],
+        "followUps": [
+          "De quelle proposition parlez-vous ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "answers": [
+          "Personne B : Quel est votre avis ?\nPersonne A : Je suis d’accord avec cette proposition. Le but est d’aider les visiteurs à se repérer.\nPersonne B : De quelle proposition parlez-vous ?\nPersonne A : De la proposition suivante : mettre un plan tactile à l’entrée."
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables."
+      },
+      {
+        "id": "gram-ex-k1-curriculum-s-a2-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k1-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Un échange à deux",
+        "situation": "Proposition : transférer deux cassettes sur un support numérique.\nLes bandes magnétiques se détérioraient. Le but est de préserver les anciens témoignages.",
+        "task": "Vous vous opposez à cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition. Répondez à la relance puis échangez les rôles.",
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Formulez la réponse et précisez-la."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez les questions puis écoutez la réponse."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quel est votre avis ?"
+          }
+        ],
+        "followUps": [
+          "De quelle proposition parlez-vous ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "answers": [
+          "Personne B : Quel est votre avis ?\nPersonne A : Je ne suis pas d’accord avec cette proposition. Je préférerais d’abord discuter d’autres solutions pour préserver les anciens témoignages.\nPersonne B : De quelle proposition parlez-vous ?\nPersonne A : De la proposition suivante : transférer deux cassettes sur un support numérique."
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables."
+      },
+      {
+        "id": "gram-ex-k1-curriculum-s-a2-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k1-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Un échange à deux",
+        "situation": "Proposition : donner un numéro à chaque casier.\nDes sacs gênaient le passage. Le but est de laisser le couloir libre.",
+        "task": "Vous soutenez cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition. Répondez à la relance puis échangez les rôles.",
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Formulez la réponse et précisez-la."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez les questions puis écoutez la réponse."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quel est votre avis ?"
+          }
+        ],
+        "followUps": [
+          "De quelle proposition parlez-vous ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "answers": [
+          "Personne B : Quel est votre avis ?\nPersonne A : Je suis d’accord avec cette proposition. Le but est de laisser le couloir libre.\nPersonne B : De quelle proposition parlez-vous ?\nPersonne A : De la proposition suivante : donner un numéro à chaque casier."
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables."
+      },
+      {
+        "id": "gram-ex-k1-curriculum-s-a2-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k1-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Un échange à deux",
+        "situation": "Proposition : prévoir de l’ombre pour les semis.\nLe soleil desséchait la terre en surface. Le but est d’empêcher les jeunes pousses de sécher.",
+        "task": "Vous vous opposez à cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition. Répondez à la relance puis échangez les rôles.",
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Formulez la réponse et précisez-la."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez les questions puis écoutez la réponse."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quel est votre avis ?"
+          }
+        ],
+        "followUps": [
+          "De quelle proposition parlez-vous ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "answers": [
+          "Personne B : Quel est votre avis ?\nPersonne A : Je ne suis pas d’accord avec cette proposition. Je préférerais d’abord discuter d’autres solutions pour empêcher les jeunes pousses de sécher.\nPersonne B : De quelle proposition parlez-vous ?\nPersonne A : De la proposition suivante : prévoir de l’ombre pour les semis."
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables."
+      },
+      {
+        "id": "gram-ex-k1-curriculum-s-a2-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k1-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Un échange à deux",
+        "situation": "Proposition : afficher les appels de passage sur un écran.\nLe micro du guichet était en panne. Le but est de signaler le prochain numéro.",
+        "task": "Vous soutenez cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition. Répondez à la relance puis échangez les rôles.",
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Formulez la réponse et précisez-la."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez les questions puis écoutez la réponse."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quel est votre avis ?"
+          }
+        ],
+        "followUps": [
+          "De quelle proposition parlez-vous ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "answers": [
+          "Personne B : Quel est votre avis ?\nPersonne A : Je suis d’accord avec cette proposition. Le but est de signaler le prochain numéro.\nPersonne B : De quelle proposition parlez-vous ?\nPersonne A : De la proposition suivante : afficher les appels de passage sur un écran."
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables."
+      },
+      {
+        "id": "gram-ex-k1-curriculum-s-a2-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k1-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Un échange à deux",
+        "situation": "Proposition : prêter des protections auditives pendant la visite.\nLes machines faisaient trop de bruit. Le but est d’atténuer le bruit.",
+        "task": "Vous vous opposez à cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition. Répondez à la relance puis échangez les rôles.",
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Formulez la réponse et précisez-la."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez les questions puis écoutez la réponse."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quel est votre avis ?"
+          }
+        ],
+        "followUps": [
+          "De quelle proposition parlez-vous ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "answers": [
+          "Personne B : Quel est votre avis ?\nPersonne A : Je ne suis pas d’accord avec cette proposition. Je préférerais d’abord discuter d’autres solutions pour atténuer le bruit.\nPersonne B : De quelle proposition parlez-vous ?\nPersonne A : De la proposition suivante : prêter des protections auditives pendant la visite."
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables."
+      },
+      {
+        "id": "gram-ex-k1-curriculum-s-a2-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k1-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Un échange à deux",
+        "situation": "Proposition : imprimer les consignes avant l’évaluation.\nLe réseau de l’école était inaccessible. Le but est de permettre à chacun de lire le sujet.",
+        "task": "Vous soutenez cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition. Répondez à la relance puis échangez les rôles.",
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Formulez la réponse et précisez-la."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez les questions puis écoutez la réponse."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quel est votre avis ?"
+          }
+        ],
+        "followUps": [
+          "De quelle proposition parlez-vous ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "answers": [
+          "Personne B : Quel est votre avis ?\nPersonne A : Je suis d’accord avec cette proposition. Le but est de permettre à chacun de lire le sujet.\nPersonne B : De quelle proposition parlez-vous ?\nPersonne A : De la proposition suivante : imprimer les consignes avant l’évaluation."
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables."
+      },
+      {
+        "id": "gram-ex-k1-curriculum-s-a2-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k1-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Un échange à deux",
+        "situation": "Proposition : indiquer le prix à l’unité sur les étiquettes.\nLe prix était affiché seulement par kilo. Le but est de permettre aux clients de comparer les prix.",
+        "task": "Vous vous opposez à cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition. Répondez à la relance puis échangez les rôles.",
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Formulez la réponse et précisez-la."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez les questions puis écoutez la réponse."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quel est votre avis ?"
+          }
+        ],
+        "followUps": [
+          "De quelle proposition parlez-vous ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "answers": [
+          "Personne B : Quel est votre avis ?\nPersonne A : Je ne suis pas d’accord avec cette proposition. Je préférerais d’abord discuter d’autres solutions pour permettre aux clients de comparer les prix.\nPersonne B : De quelle proposition parlez-vous ?\nPersonne A : De la proposition suivante : indiquer le prix à l’unité sur les étiquettes."
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables."
+      },
+      {
+        "id": "gram-ex-k1-curriculum-s-a2-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k1-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Un échange à deux",
+        "situation": "Proposition : installer une rampe pour l’arrivée du bateau.\nLa marche du quai était trop haute. Le but est de faciliter le débarquement.",
+        "task": "Vous soutenez cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition. Répondez à la relance puis échangez les rôles.",
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Formulez la réponse et précisez-la."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez les questions puis écoutez la réponse."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quel est votre avis ?"
+          }
+        ],
+        "followUps": [
+          "De quelle proposition parlez-vous ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "answers": [
+          "Personne B : Quel est votre avis ?\nPersonne A : Je suis d’accord avec cette proposition. Le but est de faciliter le débarquement.\nPersonne B : De quelle proposition parlez-vous ?\nPersonne A : De la proposition suivante : installer une rampe pour l’arrivée du bateau."
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables."
+      },
+      {
+        "id": "gram-ex-k1-curriculum-s-a2-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k1-curriculum-s",
+          "partition": "a2"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Un échange à deux",
+        "situation": "Proposition : mettre la boîte du journal sous le porche.\nPlusieurs numéros avaient pris l’eau. Le but est de mettre les journaux à l’abri.",
+        "task": "Vous vous opposez à cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition. Répondez à la relance puis échangez les rôles.",
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Formulez la réponse et précisez-la."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez les questions puis écoutez la réponse."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Quel est votre avis ?"
+          }
+        ],
+        "followUps": [
+          "De quelle proposition parlez-vous ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "answers": [
+          "Personne B : Quel est votre avis ?\nPersonne A : Je ne suis pas d’accord avec cette proposition. Je préférerais d’abord discuter d’autres solutions pour mettre les journaux à l’abri.\nPersonne B : De quelle proposition parlez-vous ?\nPersonne A : De la proposition suivante : mettre la boîte du journal sous le porche."
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k1-curriculum-e",
     "subthemeId": "k1",
     "topic": "gram-argumenter",
@@ -7448,12 +8598,332 @@
         ],
         "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables.",
         "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k1-curriculum-e-a2-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k1-curriculum-e",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Proposition : mettre un plan tactile à l’entrée.\nL’affiche était illisible à plusieurs mètres. Le but est d’aider les visiteurs à se repérer.",
+        "task": "Vous soutenez cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition.",
+        "answers": [
+          "Je suis d’accord avec cette proposition. Le but est d’aider les visiteurs à se repérer."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k1-curriculum-e-a2-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k1-curriculum-e",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Proposition : transférer deux cassettes sur un support numérique.\nLes bandes magnétiques se détérioraient. Le but est de préserver les anciens témoignages.",
+        "task": "Vous vous opposez à cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition.",
+        "answers": [
+          "Je ne suis pas d’accord avec cette proposition. Je préférerais d’abord discuter d’autres solutions pour préserver les anciens témoignages."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k1-curriculum-e-a2-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k1-curriculum-e",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Proposition : donner un numéro à chaque casier.\nDes sacs gênaient le passage. Le but est de laisser le couloir libre.",
+        "task": "Vous soutenez cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition.",
+        "answers": [
+          "Je suis d’accord avec cette proposition. Le but est de laisser le couloir libre."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k1-curriculum-e-a2-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k1-curriculum-e",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Proposition : prévoir de l’ombre pour les semis.\nLe soleil desséchait la terre en surface. Le but est d’empêcher les jeunes pousses de sécher.",
+        "task": "Vous vous opposez à cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition.",
+        "answers": [
+          "Je ne suis pas d’accord avec cette proposition. Je préférerais d’abord discuter d’autres solutions pour empêcher les jeunes pousses de sécher."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k1-curriculum-e-a2-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k1-curriculum-e",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Proposition : afficher les appels de passage sur un écran.\nLe micro du guichet était en panne. Le but est de signaler le prochain numéro.",
+        "task": "Vous soutenez cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition.",
+        "answers": [
+          "Je suis d’accord avec cette proposition. Le but est de signaler le prochain numéro."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k1-curriculum-e-a2-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k1-curriculum-e",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Proposition : prêter des protections auditives pendant la visite.\nLes machines faisaient trop de bruit. Le but est d’atténuer le bruit.",
+        "task": "Vous vous opposez à cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition.",
+        "answers": [
+          "Je ne suis pas d’accord avec cette proposition. Je préférerais d’abord discuter d’autres solutions pour atténuer le bruit."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k1-curriculum-e-a2-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k1-curriculum-e",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Proposition : imprimer les consignes avant l’évaluation.\nLe réseau de l’école était inaccessible. Le but est de permettre à chacun de lire le sujet.",
+        "task": "Vous soutenez cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition.",
+        "answers": [
+          "Je suis d’accord avec cette proposition. Le but est de permettre à chacun de lire le sujet."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k1-curriculum-e-a2-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k1-curriculum-e",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Proposition : indiquer le prix à l’unité sur les étiquettes.\nLe prix était affiché seulement par kilo. Le but est de permettre aux clients de comparer les prix.",
+        "task": "Vous vous opposez à cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition.",
+        "answers": [
+          "Je ne suis pas d’accord avec cette proposition. Je préférerais d’abord discuter d’autres solutions pour permettre aux clients de comparer les prix."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k1-curriculum-e-a2-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k1-curriculum-e",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Proposition : installer une rampe pour l’arrivée du bateau.\nLa marche du quai était trop haute. Le but est de faciliter le débarquement.",
+        "task": "Vous soutenez cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition.",
+        "answers": [
+          "Je suis d’accord avec cette proposition. Le but est de faciliter le débarquement."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k1-curriculum-e-a2-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k1-curriculum-e",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Proposition : mettre la boîte du journal sous le porche.\nPlusieurs numéros avaient pris l’eau. Le but est de mettre les journaux à l’abri.",
+        "task": "Vous vous opposez à cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition.",
+        "answers": [
+          "Je ne suis pas d’accord avec cette proposition. Je préférerais d’abord discuter d’autres solutions pour mettre les journaux à l’abri."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k1-curriculum-p",
     "subthemeId": "k1",
     "topic": "gram-argumenter",
@@ -9056,6 +10526,326 @@
         "task": "Vous vous opposez à cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition. Relance : « De quelle proposition parlez-vous ? »",
         "answers": [
           "Je ne suis pas d’accord avec cette proposition. Je préférerais d’abord discuter d’autres solutions pour réduire les déplacements de dernière minute.\nRéponse possible à la relance : De la proposition suivante : prévenir les voyageurs avant un changement de quai."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k1-curriculum-p-a2-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k1-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Proposition : mettre un plan tactile à l’entrée.\nL’affiche était illisible à plusieurs mètres. Le but est d’aider les visiteurs à se repérer.",
+        "task": "Vous soutenez cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition. Relance : « De quelle proposition parlez-vous ? »",
+        "answers": [
+          "Je suis d’accord avec cette proposition. Le but est d’aider les visiteurs à se repérer.\nRéponse possible à la relance : De la proposition suivante : mettre un plan tactile à l’entrée."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k1-curriculum-p-a2-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k1-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Proposition : transférer deux cassettes sur un support numérique.\nLes bandes magnétiques se détérioraient. Le but est de préserver les anciens témoignages.",
+        "task": "Vous vous opposez à cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition. Relance : « De quelle proposition parlez-vous ? »",
+        "answers": [
+          "Je ne suis pas d’accord avec cette proposition. Je préférerais d’abord discuter d’autres solutions pour préserver les anciens témoignages.\nRéponse possible à la relance : De la proposition suivante : transférer deux cassettes sur un support numérique."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k1-curriculum-p-a2-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k1-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Proposition : donner un numéro à chaque casier.\nDes sacs gênaient le passage. Le but est de laisser le couloir libre.",
+        "task": "Vous soutenez cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition. Relance : « De quelle proposition parlez-vous ? »",
+        "answers": [
+          "Je suis d’accord avec cette proposition. Le but est de laisser le couloir libre.\nRéponse possible à la relance : De la proposition suivante : donner un numéro à chaque casier."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k1-curriculum-p-a2-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k1-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Proposition : prévoir de l’ombre pour les semis.\nLe soleil desséchait la terre en surface. Le but est d’empêcher les jeunes pousses de sécher.",
+        "task": "Vous vous opposez à cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition. Relance : « De quelle proposition parlez-vous ? »",
+        "answers": [
+          "Je ne suis pas d’accord avec cette proposition. Je préférerais d’abord discuter d’autres solutions pour empêcher les jeunes pousses de sécher.\nRéponse possible à la relance : De la proposition suivante : prévoir de l’ombre pour les semis."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k1-curriculum-p-a2-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k1-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Proposition : afficher les appels de passage sur un écran.\nLe micro du guichet était en panne. Le but est de signaler le prochain numéro.",
+        "task": "Vous soutenez cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition. Relance : « De quelle proposition parlez-vous ? »",
+        "answers": [
+          "Je suis d’accord avec cette proposition. Le but est de signaler le prochain numéro.\nRéponse possible à la relance : De la proposition suivante : afficher les appels de passage sur un écran."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k1-curriculum-p-a2-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k1-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Proposition : prêter des protections auditives pendant la visite.\nLes machines faisaient trop de bruit. Le but est d’atténuer le bruit.",
+        "task": "Vous vous opposez à cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition. Relance : « De quelle proposition parlez-vous ? »",
+        "answers": [
+          "Je ne suis pas d’accord avec cette proposition. Je préférerais d’abord discuter d’autres solutions pour atténuer le bruit.\nRéponse possible à la relance : De la proposition suivante : prêter des protections auditives pendant la visite."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k1-curriculum-p-a2-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k1-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Proposition : imprimer les consignes avant l’évaluation.\nLe réseau de l’école était inaccessible. Le but est de permettre à chacun de lire le sujet.",
+        "task": "Vous soutenez cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition. Relance : « De quelle proposition parlez-vous ? »",
+        "answers": [
+          "Je suis d’accord avec cette proposition. Le but est de permettre à chacun de lire le sujet.\nRéponse possible à la relance : De la proposition suivante : imprimer les consignes avant l’évaluation."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k1-curriculum-p-a2-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k1-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Proposition : indiquer le prix à l’unité sur les étiquettes.\nLe prix était affiché seulement par kilo. Le but est de permettre aux clients de comparer les prix.",
+        "task": "Vous vous opposez à cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition. Relance : « De quelle proposition parlez-vous ? »",
+        "answers": [
+          "Je ne suis pas d’accord avec cette proposition. Je préférerais d’abord discuter d’autres solutions pour permettre aux clients de comparer les prix.\nRéponse possible à la relance : De la proposition suivante : indiquer le prix à l’unité sur les étiquettes."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k1-curriculum-p-a2-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k1-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Proposition : installer une rampe pour l’arrivée du bateau.\nLa marche du quai était trop haute. Le but est de faciliter le débarquement.",
+        "task": "Vous soutenez cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition. Relance : « De quelle proposition parlez-vous ? »",
+        "answers": [
+          "Je suis d’accord avec cette proposition. Le but est de faciliter le débarquement.\nRéponse possible à la relance : De la proposition suivante : installer une rampe pour l’arrivée du bateau."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "L’expression choisie doit correspondre à la position indiquée. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k1-curriculum-p-a2-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k1-curriculum-p",
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Proposition : mettre la boîte du journal sous le porche.\nPlusieurs numéros avaient pris l’eau. Le but est de mettre les journaux à l’abri.",
+        "task": "Vous vous opposez à cette proposition. Donnez votre avis en citant un fait ou l’objectif de la proposition. Relance : « De quelle proposition parlez-vous ? »",
+        "answers": [
+          "Je ne suis pas d’accord avec cette proposition. Je préférerais d’abord discuter d’autres solutions pour mettre les journaux à l’abri.\nRéponse possible à la relance : De la proposition suivante : mettre la boîte du journal sous le porche."
         ],
         "rubric": [
           {

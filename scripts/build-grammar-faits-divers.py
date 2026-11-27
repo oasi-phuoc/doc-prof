@@ -9,7 +9,8 @@ ROOT = Path(__file__).resolve().parents[1]
 SOURCES = Path('scripts/grammar_curriculum')
 DATA = ROOT / 'src/grammaire/curriculum/data'
 DATE = '2026-11-27'
-REVISION = f'faits-divers-{DATE}-v1'
+READING_REVISION = f'faits-divers-{DATE}-v1'
+EXERCISE_REVISION = f'faits-divers-{DATE}-v2'
 PLANS = {
     ('j6', 'B1'): ('q', 't', 'c', 'd'),
     ('j7', 'B1'): ('q', 't', 'c', 'ce', 'pe', 'po'),
@@ -81,7 +82,7 @@ CRITERIA_FACTS = 'Faits, personnes et repères conservés.'
 CRITERIA_ORAL = 'Réponse intelligible et cohérente à la relance.'
 
 
-def read_source(name, columns, count=50):
+def read_source(name, columns, count=60):
     path = SOURCES / f'faits-{name}.tsv'
     with (ROOT / path).open(encoding='utf-8', newline='') as handle:
         rows = [row for row in csv.reader(handle, delimiter='|') if row and not row[0].startswith('#')]
@@ -442,7 +443,8 @@ def build():
             else:
                 presentation, label, instruction = PRESENTATIONS[mechanic]
                 instructions = {presentation: instruction}
-            bank = dict(schemaVersion=1, revision=REVISION, activityId=activity, subthemeId=subtheme,
+            revision = READING_REVISION if mechanic in ('ce', 'd') else EXERCISE_REVISION
+            bank = dict(schemaVersion=1, revision=revision, activityId=activity, subthemeId=subtheme,
                         topic='gram-faits', level=level, label=label, objective=OBJECTIVES[subtheme, level],
                         editorialStatus='reviewed', presentations=list(instructions), instructions=instructions,
                         review=dict(reviewer='Codex — revue linguistique et fonctionnelle', date=DATE,

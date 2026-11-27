@@ -1,7 +1,7 @@
 [
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k6-qcm-verbe",
     "subthemeId": "k6",
     "topic": "gram-exprimer",
@@ -1623,12 +1623,332 @@
           }
         ],
         "explanation": "Le lien souligne une différence entre les deux faits. Modèle : Les trains sont partis du quai quatre, alors que les cars sont partis de la même gare routière."
+      },
+      {
+        "id": "gram-ex-k6-qcm-verbe-a2-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k6-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Des visiteurs ont demandé où commençait le parcours, ___ le groupe guidé avait reçu un plan lisible.",
+        "cue": "Mettez en contraste les deux comportements.",
+        "answers": [
+          "tandis que",
+          "mais",
+          "alors que"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-atelier-braille-choix-1",
+            "text": "tandis que"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-atelier-braille-choix-2",
+            "text": "pour que"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-atelier-braille-choix-3",
+            "text": "parce que"
+          }
+        ],
+        "explanation": "Le lien souligne une différence entre les deux faits. Modèle : Des visiteurs ont demandé où commençait le parcours, tandis que le groupe guidé avait reçu un plan lisible."
+      },
+      {
+        "id": "gram-ex-k6-qcm-verbe-a2-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k6-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Le musée a limité les écoutes des originaux, ___ les fichiers numériques sont restés accessibles en ligne.",
+        "cue": "Mettez en contraste les deux comportements.",
+        "answers": [
+          "mais",
+          "alors que",
+          "tandis que"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-archives-sonores-choix-1",
+            "text": "mais"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-archives-sonores-choix-2",
+            "text": "pour que"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-archives-sonores-choix-3",
+            "text": "parce que"
+          }
+        ],
+        "explanation": "Le lien souligne une différence entre les deux faits. Modèle : Le musée a limité les écoutes des originaux, mais les fichiers numériques sont restés accessibles en ligne."
+      },
+      {
+        "id": "gram-ex-k6-qcm-verbe-a2-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k6-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Le personnel a demandé aux élèves de ranger leurs sacs, ___ les classes du bâtiment B avaient déjà un vestiaire.",
+        "cue": "Mettez en contraste les deux comportements.",
+        "answers": [
+          "alors que",
+          "mais",
+          "tandis que"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-casiers-cantine-choix-1",
+            "text": "alors que"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-casiers-cantine-choix-2",
+            "text": "pour que"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-casiers-cantine-choix-3",
+            "text": "parce que"
+          }
+        ],
+        "explanation": "Le lien souligne une différence entre les deux faits. Modèle : Le personnel a demandé aux élèves de ranger leurs sacs, alors que les classes du bâtiment B avaient déjà un vestiaire."
+      },
+      {
+        "id": "gram-ex-k6-qcm-verbe-a2-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k6-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Les bacs ont été déplacés près du mur, ___ les plantes de la serre ont gardé leur place.",
+        "cue": "Mettez en contraste les deux comportements.",
+        "answers": [
+          "tandis que",
+          "mais",
+          "alors que"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-atelier-ombre-choix-1",
+            "text": "tandis que"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-atelier-ombre-choix-2",
+            "text": "pour que"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-atelier-ombre-choix-3",
+            "text": "parce que"
+          }
+        ],
+        "explanation": "Le lien souligne une différence entre les deux faits. Modèle : Les bacs ont été déplacés près du mur, tandis que les plantes de la serre ont gardé leur place."
+      },
+      {
+        "id": "gram-ex-k6-qcm-verbe-a2-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k6-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Les visiteurs ont attendu leur tour près du bureau, ___ le numéro du guichet voisin s’affichait à l’écran.",
+        "cue": "Mettez en contraste les deux comportements.",
+        "answers": [
+          "mais",
+          "alors que",
+          "tandis que"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-guichet-sourdine-choix-1",
+            "text": "mais"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-guichet-sourdine-choix-2",
+            "text": "pour que"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-guichet-sourdine-choix-3",
+            "text": "parce que"
+          }
+        ],
+        "explanation": "Le lien souligne une différence entre les deux faits. Modèle : Les visiteurs ont attendu leur tour près du bureau, mais le numéro du guichet voisin s’affichait à l’écran."
+      },
+      {
+        "id": "gram-ex-k6-qcm-verbe-a2-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k6-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Le groupe a quitté le hall principal, ___ les deux mécaniciens sont restés à leur poste.",
+        "cue": "Mettez en contraste les deux comportements.",
+        "answers": [
+          "alors que",
+          "mais",
+          "tandis que"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-protecteurs-oreilles-choix-1",
+            "text": "alors que"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-protecteurs-oreilles-choix-2",
+            "text": "pour que"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-protecteurs-oreilles-choix-3",
+            "text": "parce que"
+          }
+        ],
+        "explanation": "Le lien souligne une différence entre les deux faits. Modèle : Le groupe a quitté le hall principal, alors que les deux mécaniciens sont restés à leur poste."
+      },
+      {
+        "id": "gram-ex-k6-qcm-verbe-a2-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k6-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "La classe a reçu une version papier, ___ une autre classe avait déjà téléchargé le document.",
+        "cue": "Mettez en contraste les deux comportements.",
+        "answers": [
+          "tandis qu’",
+          "mais",
+          "alors qu’"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-reseau-ecole-choix-1",
+            "text": "tandis qu’"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-reseau-ecole-choix-2",
+            "text": "pour que"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-reseau-ecole-choix-3",
+            "text": "parce que"
+          }
+        ],
+        "explanation": "Le lien souligne une différence entre les deux faits. Modèle : La classe a reçu une version papier, tandis qu’une autre classe avait déjà téléchargé le document."
+      },
+      {
+        "id": "gram-ex-k6-qcm-verbe-a2-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k6-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Plusieurs clients ont demandé combien coûtait une seule pêche, ___ les clients du stand voisin connaissaient le prix à la pièce.",
+        "cue": "Mettez en contraste les deux comportements.",
+        "answers": [
+          "mais",
+          "alors que",
+          "tandis que"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-panneau-comptoir-choix-1",
+            "text": "mais"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-panneau-comptoir-choix-2",
+            "text": "pour que"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-panneau-comptoir-choix-3",
+            "text": "parce que"
+          }
+        ],
+        "explanation": "Le lien souligne une différence entre les deux faits. Modèle : Plusieurs clients ont demandé combien coûtait une seule pêche, mais les clients du stand voisin connaissaient le prix à la pièce."
+      },
+      {
+        "id": "gram-ex-k6-qcm-verbe-a2-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k6-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "L’équipage a aidé les voyageurs à descendre, ___ le ponton voisin était déjà équipé d’une rampe.",
+        "cue": "Mettez en contraste les deux comportements.",
+        "answers": [
+          "alors que",
+          "mais",
+          "tandis que"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-bateau-rampe-choix-1",
+            "text": "alors que"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-bateau-rampe-choix-2",
+            "text": "pour que"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-bateau-rampe-choix-3",
+            "text": "parce que"
+          }
+        ],
+        "explanation": "Le lien souligne une différence entre les deux faits. Modèle : L’équipage a aidé les voyageurs à descendre, alors que le ponton voisin était déjà équipé d’une rampe."
+      },
+      {
+        "id": "gram-ex-k6-qcm-verbe-a2-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k6-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Les élèves ont choisi un autre endroit pour les journaux, ___ les fiches de la bibliothèque étaient protégées à l’intérieur.",
+        "cue": "Mettez en contraste les deux comportements.",
+        "answers": [
+          "tandis que",
+          "mais",
+          "alors que"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-abri-journal-choix-1",
+            "text": "tandis que"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-abri-journal-choix-2",
+            "text": "pour que"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-a2-abri-journal-choix-3",
+            "text": "parce que"
+          }
+        ],
+        "explanation": "Le lien souligne une différence entre les deux faits. Modèle : Les élèves ont choisi un autre endroit pour les journaux, tandis que les fiches de la bibliothèque étaient protégées à l’intérieur."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k6-qcm-verbe",
     "subthemeId": "k6",
     "topic": "gram-exprimer",
@@ -3168,12 +3488,320 @@
           }
         ],
         "explanation": "En revanche met en évidence un contraste entre les deux situations. Modèle : Les trains sont partis du quai quatre. En revanche, les cars sont partis de la même gare routière."
+      },
+      {
+        "id": "gram-ex-k6-qcm-verbe-b1-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k6-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "L’affiche était illisible à plusieurs mètres. ___, des visiteurs ont trouvé leur chemin grâce à un agent.",
+        "cue": "Présentez le résultat inattendu malgré l’obstacle.",
+        "answers": [
+          "Pourtant",
+          "Cependant",
+          "Néanmoins"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-atelier-braille-choix-1",
+            "text": "Pourtant"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-atelier-braille-choix-2",
+            "text": "Par conséquent"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-atelier-braille-choix-3",
+            "text": "En effet"
+          }
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle. Modèle : L’affiche était illisible à plusieurs mètres. Pourtant, des visiteurs ont trouvé leur chemin grâce à un agent."
+      },
+      {
+        "id": "gram-ex-k6-qcm-verbe-b1-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k6-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "___ l’usure des bandes, le public a entendu les témoignages.",
+        "cue": "Présentez l’obstacle exprimé par le groupe nominal.",
+        "answers": [
+          "Malgré"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-archives-sonores-choix-1",
+            "text": "Malgré"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-archives-sonores-choix-2",
+            "text": "Parce que"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-archives-sonores-choix-3",
+            "text": "Alors que"
+          }
+        ],
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle. Modèle : Malgré l’usure des bandes, le public a entendu les témoignages."
+      },
+      {
+        "id": "gram-ex-k6-qcm-verbe-b1-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k6-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Le personnel a demandé aux élèves de ranger leurs sacs. ___, les classes du bâtiment B avaient déjà un vestiaire.",
+        "cue": "Comparez les deux situations en soulignant leur différence.",
+        "answers": [
+          "En revanche"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-casiers-cantine-choix-1",
+            "text": "En revanche"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-casiers-cantine-choix-2",
+            "text": "Par conséquent"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-casiers-cantine-choix-3",
+            "text": "En effet"
+          }
+        ],
+        "explanation": "En revanche met en évidence un contraste entre les deux situations. Modèle : Le personnel a demandé aux élèves de ranger leurs sacs. En revanche, les classes du bâtiment B avaient déjà un vestiaire."
+      },
+      {
+        "id": "gram-ex-k6-qcm-verbe-b1-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k6-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Le soleil desséchait la terre en surface. ___, les enfants ont réussi à sauver plusieurs plants.",
+        "cue": "Présentez le résultat inattendu malgré l’obstacle.",
+        "answers": [
+          "Pourtant",
+          "Cependant",
+          "Néanmoins"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-atelier-ombre-choix-1",
+            "text": "Pourtant"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-atelier-ombre-choix-2",
+            "text": "Par conséquent"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-atelier-ombre-choix-3",
+            "text": "En effet"
+          }
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle. Modèle : Le soleil desséchait la terre en surface. Pourtant, les enfants ont réussi à sauver plusieurs plants."
+      },
+      {
+        "id": "gram-ex-k6-qcm-verbe-b1-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k6-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "___ la panne du micro, tous les dossiers ont été remis à temps.",
+        "cue": "Présentez l’obstacle exprimé par le groupe nominal.",
+        "answers": [
+          "Malgré"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-guichet-sourdine-choix-1",
+            "text": "Malgré"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-guichet-sourdine-choix-2",
+            "text": "Parce que"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-guichet-sourdine-choix-3",
+            "text": "Alors que"
+          }
+        ],
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle. Modèle : Malgré la panne du micro, tous les dossiers ont été remis à temps."
+      },
+      {
+        "id": "gram-ex-k6-qcm-verbe-b1-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k6-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Le groupe a quitté le hall principal. ___, les deux mécaniciens sont restés à leur poste.",
+        "cue": "Comparez les deux situations en soulignant leur différence.",
+        "answers": [
+          "En revanche"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-protecteurs-oreilles-choix-1",
+            "text": "En revanche"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-protecteurs-oreilles-choix-2",
+            "text": "Par conséquent"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-protecteurs-oreilles-choix-3",
+            "text": "En effet"
+          }
+        ],
+        "explanation": "En revanche met en évidence un contraste entre les deux situations. Modèle : Le groupe a quitté le hall principal. En revanche, les deux mécaniciens sont restés à leur poste."
+      },
+      {
+        "id": "gram-ex-k6-qcm-verbe-b1-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k6-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Le réseau de l’école était inaccessible. ___, les élèves ont pu commencer à l’heure.",
+        "cue": "Présentez le résultat inattendu malgré l’obstacle.",
+        "answers": [
+          "Pourtant",
+          "Cependant",
+          "Néanmoins"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-reseau-ecole-choix-1",
+            "text": "Pourtant"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-reseau-ecole-choix-2",
+            "text": "Par conséquent"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-reseau-ecole-choix-3",
+            "text": "En effet"
+          }
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle. Modèle : Le réseau de l’école était inaccessible. Pourtant, les élèves ont pu commencer à l’heure."
+      },
+      {
+        "id": "gram-ex-k6-qcm-verbe-b1-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k6-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "___ le mode d’affichage du prix, la vendeuse a terminé toutes les commandes.",
+        "cue": "Présentez l’obstacle exprimé par le groupe nominal.",
+        "answers": [
+          "Malgré"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-panneau-comptoir-choix-1",
+            "text": "Malgré"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-panneau-comptoir-choix-2",
+            "text": "Parce que"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-panneau-comptoir-choix-3",
+            "text": "Alors que"
+          }
+        ],
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle. Modèle : Malgré le mode d’affichage du prix, la vendeuse a terminé toutes les commandes."
+      },
+      {
+        "id": "gram-ex-k6-qcm-verbe-b1-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k6-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "L’équipage a aidé les voyageurs à descendre. ___, le ponton voisin était déjà équipé d’une rampe.",
+        "cue": "Comparez les deux situations en soulignant leur différence.",
+        "answers": [
+          "En revanche"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-bateau-rampe-choix-1",
+            "text": "En revanche"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-bateau-rampe-choix-2",
+            "text": "Par conséquent"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-bateau-rampe-choix-3",
+            "text": "En effet"
+          }
+        ],
+        "explanation": "En revanche met en évidence un contraste entre les deux situations. Modèle : L’équipage a aidé les voyageurs à descendre. En revanche, le ponton voisin était déjà équipé d’une rampe."
+      },
+      {
+        "id": "gram-ex-k6-qcm-verbe-b1-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k6-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Plusieurs numéros avaient pris l’eau. ___, l’équipe a distribué les exemplaires restés secs.",
+        "cue": "Présentez le résultat inattendu malgré l’obstacle.",
+        "answers": [
+          "Pourtant",
+          "Cependant",
+          "Néanmoins"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-abri-journal-choix-1",
+            "text": "Pourtant"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-abri-journal-choix-2",
+            "text": "Par conséquent"
+          },
+          {
+            "id": "gram-ex-k6-qcm-verbe-b1-abri-journal-choix-3",
+            "text": "En effet"
+          }
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle. Modèle : Plusieurs numéros avaient pris l’eau. Pourtant, l’équipe a distribué les exemplaires restés secs."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k6-curriculum-t",
     "subthemeId": "k6",
     "topic": "gram-exprimer",
@@ -4043,12 +4671,182 @@
         ],
         "responseLines": 2,
         "explanation": "Le lien souligne une différence entre les deux faits."
+      },
+      {
+        "id": "gram-ex-k6-curriculum-t-a2-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k6-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Des visiteurs ont demandé où commençait le parcours. Le groupe guidé avait reçu un plan lisible.",
+        "directive": "Reliez les informations avec la construction « tandis que ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Des visiteurs ont demandé où commençait le parcours, tandis que le groupe guidé avait reçu un plan lisible."
+        ],
+        "responseLines": 2,
+        "explanation": "Le lien souligne une différence entre les deux faits."
+      },
+      {
+        "id": "gram-ex-k6-curriculum-t-a2-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k6-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Le musée a limité les écoutes des originaux. Les fichiers numériques sont restés accessibles en ligne.",
+        "directive": "Reliez les informations avec la construction « mais ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Le musée a limité les écoutes des originaux, mais les fichiers numériques sont restés accessibles en ligne."
+        ],
+        "responseLines": 2,
+        "explanation": "Le lien souligne une différence entre les deux faits."
+      },
+      {
+        "id": "gram-ex-k6-curriculum-t-a2-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k6-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Le personnel a demandé aux élèves de ranger leurs sacs. Les classes du bâtiment B avaient déjà un vestiaire.",
+        "directive": "Reliez les informations avec la construction « alors que ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Le personnel a demandé aux élèves de ranger leurs sacs, alors que les classes du bâtiment B avaient déjà un vestiaire."
+        ],
+        "responseLines": 2,
+        "explanation": "Le lien souligne une différence entre les deux faits."
+      },
+      {
+        "id": "gram-ex-k6-curriculum-t-a2-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k6-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Les bacs ont été déplacés près du mur. Les plantes de la serre ont gardé leur place.",
+        "directive": "Reliez les informations avec la construction « tandis que ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Les bacs ont été déplacés près du mur, tandis que les plantes de la serre ont gardé leur place."
+        ],
+        "responseLines": 2,
+        "explanation": "Le lien souligne une différence entre les deux faits."
+      },
+      {
+        "id": "gram-ex-k6-curriculum-t-a2-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k6-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Les visiteurs ont attendu leur tour près du bureau. Le numéro du guichet voisin s’affichait à l’écran.",
+        "directive": "Reliez les informations avec la construction « mais ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Les visiteurs ont attendu leur tour près du bureau, mais le numéro du guichet voisin s’affichait à l’écran."
+        ],
+        "responseLines": 2,
+        "explanation": "Le lien souligne une différence entre les deux faits."
+      },
+      {
+        "id": "gram-ex-k6-curriculum-t-a2-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k6-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Le groupe a quitté le hall principal. Les deux mécaniciens sont restés à leur poste.",
+        "directive": "Reliez les informations avec la construction « alors que ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Le groupe a quitté le hall principal, alors que les deux mécaniciens sont restés à leur poste."
+        ],
+        "responseLines": 2,
+        "explanation": "Le lien souligne une différence entre les deux faits."
+      },
+      {
+        "id": "gram-ex-k6-curriculum-t-a2-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k6-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "La classe a reçu une version papier. Une autre classe avait déjà téléchargé le document.",
+        "directive": "Reliez les informations avec la construction « tandis qu’ ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "La classe a reçu une version papier, tandis qu’une autre classe avait déjà téléchargé le document."
+        ],
+        "responseLines": 2,
+        "explanation": "Le lien souligne une différence entre les deux faits."
+      },
+      {
+        "id": "gram-ex-k6-curriculum-t-a2-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k6-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Plusieurs clients ont demandé combien coûtait une seule pêche. Les clients du stand voisin connaissaient le prix à la pièce.",
+        "directive": "Reliez les informations avec la construction « mais ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Plusieurs clients ont demandé combien coûtait une seule pêche, mais les clients du stand voisin connaissaient le prix à la pièce."
+        ],
+        "responseLines": 2,
+        "explanation": "Le lien souligne une différence entre les deux faits."
+      },
+      {
+        "id": "gram-ex-k6-curriculum-t-a2-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k6-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "L’équipage a aidé les voyageurs à descendre. Le ponton voisin était déjà équipé d’une rampe.",
+        "directive": "Reliez les informations avec la construction « alors que ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "L’équipage a aidé les voyageurs à descendre, alors que le ponton voisin était déjà équipé d’une rampe."
+        ],
+        "responseLines": 2,
+        "explanation": "Le lien souligne une différence entre les deux faits."
+      },
+      {
+        "id": "gram-ex-k6-curriculum-t-a2-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k6-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Les élèves ont choisi un autre endroit pour les journaux. Les fiches de la bibliothèque étaient protégées à l’intérieur.",
+        "directive": "Reliez les informations avec la construction « tandis que ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Les élèves ont choisi un autre endroit pour les journaux, tandis que les fiches de la bibliothèque étaient protégées à l’intérieur."
+        ],
+        "responseLines": 2,
+        "explanation": "Le lien souligne une différence entre les deux faits."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k6-curriculum-t",
     "subthemeId": "k6",
     "topic": "gram-exprimer",
@@ -4918,12 +5716,182 @@
         ],
         "responseLines": 2,
         "explanation": "En revanche met en évidence un contraste entre les deux situations."
+      },
+      {
+        "id": "gram-ex-k6-curriculum-t-b1-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k6-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "L’affiche était illisible à plusieurs mètres. Des visiteurs ont trouvé leur chemin grâce à un agent.",
+        "directive": "Reliez les informations avec la construction « Pourtant ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "L’affiche était illisible à plusieurs mètres. Pourtant, des visiteurs ont trouvé leur chemin grâce à un agent."
+        ],
+        "responseLines": 2,
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle."
+      },
+      {
+        "id": "gram-ex-k6-curriculum-t-b1-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k6-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les bandes magnétiques se détérioraient. Le public a entendu les témoignages.",
+        "directive": "Reliez les informations avec la construction « Malgré ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Malgré l’usure des bandes, le public a entendu les témoignages."
+        ],
+        "responseLines": 2,
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle."
+      },
+      {
+        "id": "gram-ex-k6-curriculum-t-b1-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k6-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le personnel a demandé aux élèves de ranger leurs sacs. Les classes du bâtiment B avaient déjà un vestiaire.",
+        "directive": "Reliez les informations avec la construction « En revanche ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Le personnel a demandé aux élèves de ranger leurs sacs. En revanche, les classes du bâtiment B avaient déjà un vestiaire."
+        ],
+        "responseLines": 2,
+        "explanation": "En revanche met en évidence un contraste entre les deux situations."
+      },
+      {
+        "id": "gram-ex-k6-curriculum-t-b1-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k6-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le soleil desséchait la terre en surface. Les enfants ont réussi à sauver plusieurs plants.",
+        "directive": "Reliez les informations avec la construction « Pourtant ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Le soleil desséchait la terre en surface. Pourtant, les enfants ont réussi à sauver plusieurs plants."
+        ],
+        "responseLines": 2,
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle."
+      },
+      {
+        "id": "gram-ex-k6-curriculum-t-b1-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k6-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le micro du guichet était en panne. Tous les dossiers ont été remis à temps.",
+        "directive": "Reliez les informations avec la construction « Malgré ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Malgré la panne du micro, tous les dossiers ont été remis à temps."
+        ],
+        "responseLines": 2,
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle."
+      },
+      {
+        "id": "gram-ex-k6-curriculum-t-b1-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k6-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le groupe a quitté le hall principal. Les deux mécaniciens sont restés à leur poste.",
+        "directive": "Reliez les informations avec la construction « En revanche ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Le groupe a quitté le hall principal. En revanche, les deux mécaniciens sont restés à leur poste."
+        ],
+        "responseLines": 2,
+        "explanation": "En revanche met en évidence un contraste entre les deux situations."
+      },
+      {
+        "id": "gram-ex-k6-curriculum-t-b1-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k6-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le réseau de l’école était inaccessible. Les élèves ont pu commencer à l’heure.",
+        "directive": "Reliez les informations avec la construction « Pourtant ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Le réseau de l’école était inaccessible. Pourtant, les élèves ont pu commencer à l’heure."
+        ],
+        "responseLines": 2,
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle."
+      },
+      {
+        "id": "gram-ex-k6-curriculum-t-b1-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k6-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le prix était affiché seulement par kilo. La vendeuse a terminé toutes les commandes.",
+        "directive": "Reliez les informations avec la construction « Malgré ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Malgré le mode d’affichage du prix, la vendeuse a terminé toutes les commandes."
+        ],
+        "responseLines": 2,
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle."
+      },
+      {
+        "id": "gram-ex-k6-curriculum-t-b1-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k6-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "L’équipage a aidé les voyageurs à descendre. Le ponton voisin était déjà équipé d’une rampe.",
+        "directive": "Reliez les informations avec la construction « En revanche ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "L’équipage a aidé les voyageurs à descendre. En revanche, le ponton voisin était déjà équipé d’une rampe."
+        ],
+        "responseLines": 2,
+        "explanation": "En revanche met en évidence un contraste entre les deux situations."
+      },
+      {
+        "id": "gram-ex-k6-curriculum-t-b1-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k6-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Plusieurs numéros avaient pris l’eau. L’équipe a distribué les exemplaires restés secs.",
+        "directive": "Reliez les informations avec la construction « Pourtant ». Conservez le lien et le sens des faits.",
+        "answers": [
+          "Plusieurs numéros avaient pris l’eau. Pourtant, l’équipe a distribué les exemplaires restés secs."
+        ],
+        "responseLines": 2,
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k6-curriculum-d",
     "subthemeId": "k6",
     "topic": "gram-exprimer",
@@ -4955,7 +5923,7 @@
         "kind": "reading",
         "prompt": "Où prendre la pause ?",
         "genre": "Journal d’école",
-        "text": "Mardi, les surveillants ont fait sortir les élèves par la porte de la cantine. Des traces d’eau étaient visibles près du terrain de sport. Le conseil des élèves cherchait une solution pour les jours de pluie.\nLa cour était inondée. Les élèves ont pris leur pause sous le préau. Les élèves du bâtiment B sont rentrés en classe.\nLa prof a ouvert le préau. L’objectif est le suivant : offrir un abri aux élèves.",
+        "text": "Mardi, les surveillants ont fait sortir les élèves par la porte de la cantine. Des traces d’eau étaient visibles près du terrain de sport. Le conseil des élèves cherchait une solution pour les jours de pluie.\nLa cour était inondée. Les élèves ont pris leur pause sous le préau. En revanche, les élèves du bâtiment B sont rentrés en classe.\nLa prof a ouvert le préau. L’objectif est le suivant : offrir un abri aux élèves.",
         "answers": [],
         "questions": [
           {
@@ -4966,7 +5934,7 @@
             ],
             "evidence": [
               "Les élèves ont pris leur pause sous le préau.",
-              "Les élèves du bâtiment B sont rentrés en classe."
+              "En revanche, les élèves du bâtiment B sont rentrés en classe."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -4987,7 +5955,7 @@
           },
           {
             "id": "gram-ex-k6-curriculum-d-b1-cour-q2",
-            "prompt": "Quelle action a été prévue pour répondre à la situation ?",
+            "prompt": "Quelle action a été menée pour répondre à la situation ?",
             "answers": [
               "La prof a ouvert le préau."
             ],
@@ -5024,7 +5992,7 @@
         "kind": "reading",
         "prompt": "Une autre ligne le matin",
         "genre": "Info voyageurs",
-        "text": "Les travaux durent jusqu’à vendredi. À la gare du haut, la navette part devant le kiosque. Le premier conducteur attend les passagers du train de 7 h 50.\nLa ligne de tram était coupée. Les voyageurs ont pris la navette. Les cyclistes ont suivi la route du lac.\nLa régie a ajouté un départ à huit heures. L’objectif est le suivant : réduire l’attente.",
+        "text": "Les travaux durent jusqu’à vendredi. À la gare du haut, la navette part devant le kiosque. Le premier conducteur attend les passagers du train de 7 h 50.\nLa ligne de tram était coupée. Les voyageurs ont pris la navette. En revanche, les cyclistes ont suivi la route du lac.\nLa régie a ajouté un départ à huit heures. L’objectif est le suivant : réduire l’attente.",
         "answers": [],
         "questions": [
           {
@@ -5035,7 +6003,7 @@
             ],
             "evidence": [
               "Les voyageurs ont pris la navette.",
-              "Les cyclistes ont suivi la route du lac."
+              "En revanche, les cyclistes ont suivi la route du lac."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -5056,7 +6024,7 @@
           },
           {
             "id": "gram-ex-k6-curriculum-d-b1-tram-q2",
-            "prompt": "Quelle action a été prévue pour répondre à la situation ?",
+            "prompt": "Quelle action a été menée pour répondre à la situation ?",
             "answers": [
               "La régie a ajouté un départ à huit heures."
             ],
@@ -5093,7 +6061,7 @@
         "kind": "reading",
         "prompt": "Une sonnette à portée de main",
         "genre": "Courriel aux visiteurs",
-        "text": "Bonjour, l’entrée latérale donne sur la cour du musée. Elle est ouverte de dix heures à seize heures. Les personnes qui arrivent par cette porte peuvent attendre à l’abri.\nLe bouton était trop haut. Les visiteurs ont demandé de l’aide. La porte arrière avait une sonnette basse.\nLa concierge a installé un bouton plus bas. L’objectif est le suivant : faciliter l’accès.",
+        "text": "Bonjour, l’entrée latérale donne sur la cour du musée. Elle est ouverte de dix heures à seize heures. Les personnes qui arrivent par cette porte peuvent attendre à l’abri.\nLe bouton était trop haut. Les visiteurs ont demandé de l’aide. En revanche, la porte arrière avait une sonnette basse.\nLa concierge a installé un bouton plus bas. L’objectif est le suivant : faciliter l’accès.",
         "answers": [],
         "questions": [
           {
@@ -5104,7 +6072,7 @@
             ],
             "evidence": [
               "Les visiteurs ont demandé de l’aide.",
-              "La porte arrière avait une sonnette basse."
+              "En revanche, la porte arrière avait une sonnette basse."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -5125,7 +6093,7 @@
           },
           {
             "id": "gram-ex-k6-curriculum-d-b1-porte-q2",
-            "prompt": "Quelle action a été prévue pour répondre à la situation ?",
+            "prompt": "Quelle action a été menée pour répondre à la situation ?",
             "answers": [
               "La concierge a installé un bouton plus bas."
             ],
@@ -5162,7 +6130,7 @@
         "kind": "reading",
         "prompt": "Les premiers livres du hameau",
         "genre": "Brève",
-        "text": "Vendredi après-midi, une trentaine de personnes se sont réunies près du four communal. C’était la première fois que le hameau participait à la tournée. Les habitants avaient annoncé leur choix par un vote.\nLe village a prêté une place de stationnement. Le bibliobus s’est arrêté au hameau. Le car scolaire a conservé son trajet habituel.\nLe conducteur a préparé un itinéraire plus court. L’objectif est le suivant : desservir le hameau à temps.",
+        "text": "Vendredi après-midi, une trentaine de personnes se sont réunies près du four communal. C’était la première fois que le hameau participait à la tournée. Les habitants avaient annoncé leur choix par un vote.\nLe village a prêté une place de stationnement. Le bibliobus s’est arrêté au hameau. En revanche, le car scolaire a conservé son trajet habituel.\nLe conducteur a préparé un itinéraire plus court. L’objectif est le suivant : desservir le hameau à temps.",
         "answers": [],
         "questions": [
           {
@@ -5173,7 +6141,7 @@
             ],
             "evidence": [
               "Le bibliobus s’est arrêté au hameau.",
-              "Le car scolaire a conservé son trajet habituel."
+              "En revanche, le car scolaire a conservé son trajet habituel."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -5194,7 +6162,7 @@
           },
           {
             "id": "gram-ex-k6-curriculum-d-b1-bibliobus-q2",
-            "prompt": "Quelle action a été prévue pour répondre à la situation ?",
+            "prompt": "Quelle action a été menée pour répondre à la situation ?",
             "answers": [
               "Le conducteur a préparé un itinéraire plus court."
             ],
@@ -5231,7 +6199,7 @@
         "kind": "reading",
         "prompt": "Le service continue dans le hall",
         "genre": "Message à l’équipe",
-        "text": "L’équipe d’ouverture a trouvé une flaque sous l’étagère du fond. Elle a coupé le courant dans la réserve. Les personnes chargées des prêts sont arrivées quelques minutes plus tard.\nUne fuite a mouillé le plafond. La bibliothécaire a fermé la réserve. La salle de lecture est restée ouverte.\nLes employés ont sorti les cartons. L’objectif est le suivant : protéger les documents.",
+        "text": "L’équipe d’ouverture a trouvé une flaque sous l’étagère du fond. Elle a coupé le courant dans la réserve. Les personnes chargées des prêts sont arrivées quelques minutes plus tard.\nUne fuite a mouillé le plafond. La bibliothécaire a fermé la réserve. En revanche, la salle de lecture est restée ouverte.\nLes employés ont sorti les cartons. L’objectif est le suivant : protéger les documents.",
         "answers": [],
         "questions": [
           {
@@ -5242,7 +6210,7 @@
             ],
             "evidence": [
               "La bibliothécaire a fermé la réserve.",
-              "La salle de lecture est restée ouverte."
+              "En revanche, la salle de lecture est restée ouverte."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -5263,7 +6231,7 @@
           },
           {
             "id": "gram-ex-k6-curriculum-d-b1-fuite-q2",
-            "prompt": "Quelle action a été prévue pour répondre à la situation ?",
+            "prompt": "Quelle action a été menée pour répondre à la situation ?",
             "answers": [
               "Les employés ont sorti les cartons."
             ],
@@ -5300,7 +6268,7 @@
         "kind": "reading",
         "prompt": "Le premier jour du détour",
         "genre": "Récit",
-        "text": "Nous sommes arrivés du côté du bois vers onze heures. Le père de Lila avait prévu de rejoindre les autres à la plage avant le repas. Les plus jeunes voulaient savoir combien de temps il restait à marcher.\nLa passerelle était fermée. Les familles ont suivi le sentier du bois. Les marcheurs du matin avaient traversé par le pont.\nLa commune a posé une flèche au croisement. L’objectif est le suivant : guider les familles.",
+        "text": "Nous sommes arrivés du côté du bois vers onze heures. Le père de Lila avait prévu de rejoindre les autres à la plage avant le repas. Les plus jeunes voulaient savoir combien de temps il restait à marcher.\nLa passerelle était fermée. Les familles ont suivi le sentier du bois. En revanche, les marcheurs du matin avaient traversé par le pont.\nLa commune a posé une flèche au croisement. L’objectif est le suivant : guider les familles.",
         "answers": [],
         "questions": [
           {
@@ -5311,7 +6279,7 @@
             ],
             "evidence": [
               "Les familles ont suivi le sentier du bois.",
-              "Les marcheurs du matin avaient traversé par le pont."
+              "En revanche, les marcheurs du matin avaient traversé par le pont."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -5332,7 +6300,7 @@
           },
           {
             "id": "gram-ex-k6-curriculum-d-b1-plage-q2",
-            "prompt": "Quelle action a été prévue pour répondre à la situation ?",
+            "prompt": "Quelle action a été menée pour répondre à la situation ?",
             "answers": [
               "La commune a posé une flèche au croisement."
             ],
@@ -5369,7 +6337,7 @@
         "kind": "reading",
         "prompt": "Mieux entendre depuis le fond",
         "genre": "Compte rendu",
-        "text": "Des élèves assis au dernier rang ont demandé une pause pendant la répétition. Les musiciens ont attendu sur la scène pendant les essais. Un parent leur avait signalé le même problème à la fin du premier morceau.\nLe public du fond entendait mal. Le technicien a déplacé un haut-parleur. Le public des premiers rangs entendait bien.\nLa régie a fait un essai avant l’ouverture. L’objectif est le suivant : vérifier le son au dernier rang.",
+        "text": "Des élèves assis au dernier rang ont demandé une pause pendant la répétition. Les musiciens ont attendu sur la scène pendant les essais. Un parent leur avait signalé le même problème à la fin du premier morceau.\nLe public du fond entendait mal. Le technicien a déplacé un haut-parleur. En revanche, le public des premiers rangs entendait bien.\nLa régie a fait un essai avant l’ouverture. L’objectif est le suivant : vérifier le son au dernier rang.",
         "answers": [],
         "questions": [
           {
@@ -5380,7 +6348,7 @@
             ],
             "evidence": [
               "Le technicien a déplacé un haut-parleur.",
-              "Le public des premiers rangs entendait bien."
+              "En revanche, le public des premiers rangs entendait bien."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -5401,7 +6369,7 @@
           },
           {
             "id": "gram-ex-k6-curriculum-d-b1-concert-q2",
-            "prompt": "Quelle action a été prévue pour répondre à la situation ?",
+            "prompt": "Quelle action a été menée pour répondre à la situation ?",
             "answers": [
               "La régie a fait un essai avant l’ouverture."
             ],
@@ -5438,7 +6406,7 @@
         "kind": "reading",
         "prompt": "Un rendez-vous après les cours",
         "genre": "Note de secrétariat",
-        "text": "Pour remettre un dossier, munissez-vous de votre carte. Le bureau se trouve au bout du couloir, après l’escalier. Les élèves peuvent demander l’aide d’une personne de l’accueil pour écrire leur nom.\nLe guichet fermait à seize heures. Plusieurs élèves ont dû revenir mardi. Leurs formateurs ont pu passer pendant la pause.\nLe secrétariat a proposé un rendez-vous à dix-sept heures. L’objectif est le suivant : recevoir les élèves après les cours.",
+        "text": "Pour remettre un dossier, munissez-vous de votre carte. Le bureau se trouve au bout du couloir, après l’escalier. Les élèves peuvent demander l’aide d’une personne de l’accueil pour écrire leur nom.\nLe guichet fermait à seize heures. Plusieurs élèves ont dû revenir mardi. En revanche, leurs formateurs ont pu passer pendant la pause.\nLe secrétariat a proposé un rendez-vous à dix-sept heures. L’objectif est le suivant : recevoir les élèves après les cours.",
         "answers": [],
         "questions": [
           {
@@ -5449,7 +6417,7 @@
             ],
             "evidence": [
               "Plusieurs élèves ont dû revenir mardi.",
-              "Leurs formateurs ont pu passer pendant la pause."
+              "En revanche, leurs formateurs ont pu passer pendant la pause."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -5470,7 +6438,7 @@
           },
           {
             "id": "gram-ex-k6-curriculum-d-b1-courrier-q2",
-            "prompt": "Quelle action a été prévue pour répondre à la situation ?",
+            "prompt": "Quelle action a été menée pour répondre à la situation ?",
             "answers": [
               "Le secrétariat a proposé un rendez-vous à dix-sept heures."
             ],
@@ -5507,7 +6475,7 @@
         "kind": "reading",
         "prompt": "À qui appartient ce sac ?",
         "genre": "Carnet d’activité",
-        "text": "Le groupe a emprunté un sac par personne. Avant de partir, une monitrice a pris une photo des sacs posés devant la porte. La photo permet de voir où se trouvait chaque paire de chaussures.\nLes sacs étaient presque identiques. Les moniteurs ont confondu deux affaires. Les vestes portaient toutes un prénom.\nLe club a cousu des étiquettes. L’objectif est le suivant : rendre chaque sac à la bonne personne.",
+        "text": "Le groupe a emprunté un sac par personne. Avant de partir, une monitrice a pris une photo des sacs posés devant la porte. La photo permet de voir où se trouvait chaque paire de chaussures.\nLes sacs étaient presque identiques. Les moniteurs ont confondu deux affaires. En revanche, les vestes portaient toutes un prénom.\nLe club a cousu des étiquettes. L’objectif est le suivant : rendre chaque sac à la bonne personne.",
         "answers": [],
         "questions": [
           {
@@ -5518,7 +6486,7 @@
             ],
             "evidence": [
               "Les moniteurs ont confondu deux affaires.",
-              "Les vestes portaient toutes un prénom."
+              "En revanche, les vestes portaient toutes un prénom."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -5539,7 +6507,7 @@
           },
           {
             "id": "gram-ex-k6-curriculum-d-b1-sacs-q2",
-            "prompt": "Quelle action a été prévue pour répondre à la situation ?",
+            "prompt": "Quelle action a été menée pour répondre à la situation ?",
             "answers": [
               "Le club a cousu des étiquettes."
             ],
@@ -5576,7 +6544,7 @@
         "kind": "reading",
         "prompt": "La protection du mur peint",
         "genre": "Article local",
-        "text": "La fresque représente le lac en hiver. Le jour du marché, les artistes travaillaient près de la grande fontaine. Un visiteur a demandé pourquoi la première partie du mur était encore couverte.\nDes taches sont apparues près de la fresque. Le musée a déplacé un stand. Le stand des livres n’a pas bougé.\nUne bénévole a fixé une bâche. L’objectif est le suivant : éviter de nouvelles taches.",
+        "text": "La fresque représente le lac en hiver. Le jour du marché, les artistes travaillaient près de la grande fontaine. Un visiteur a demandé pourquoi la première partie du mur était encore couverte.\nDes taches sont apparues près de la fresque. Le musée a déplacé un stand. En revanche, le stand des livres n’a pas bougé.\nUne bénévole a fixé une bâche. L’objectif est le suivant : éviter de nouvelles taches.",
         "answers": [],
         "questions": [
           {
@@ -5587,7 +6555,7 @@
             ],
             "evidence": [
               "Le musée a déplacé un stand.",
-              "Le stand des livres n’a pas bougé."
+              "En revanche, le stand des livres n’a pas bougé."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -5608,7 +6576,7 @@
           },
           {
             "id": "gram-ex-k6-curriculum-d-b1-fresque-q2",
-            "prompt": "Quelle action a été prévue pour répondre à la situation ?",
+            "prompt": "Quelle action a été menée pour répondre à la situation ?",
             "answers": [
               "Une bénévole a fixé une bâche."
             ],
@@ -5645,7 +6613,7 @@
         "kind": "reading",
         "prompt": "Les nouveaux horaires de la gare",
         "genre": "Annonce",
-        "text": "L’horaire change lundi à cinq heures. Le bureau de vente reste au même endroit. Les voyageurs qui ne connaissent pas le bâtiment trouveront l’entrée en suivant les flèches bleues.\nLe texte était trop petit. Des voyageurs ont demandé l’heure au guichet. Les personnes qui utilisaient l’application ont vu le nouvel horaire.\nLa gare a imprimé un nouvel horaire. L’objectif est le suivant : rendre les heures lisibles de loin.",
+        "text": "L’horaire change lundi à cinq heures. Le bureau de vente reste au même endroit. Les voyageurs qui ne connaissent pas le bâtiment trouveront l’entrée en suivant les flèches bleues.\nLe texte était trop petit. Des voyageurs ont demandé l’heure au guichet. En revanche, les personnes qui utilisaient l’application ont vu le nouvel horaire.\nLa gare a imprimé un nouvel horaire. L’objectif est le suivant : rendre les heures lisibles de loin.",
         "answers": [],
         "questions": [
           {
@@ -5656,7 +6624,7 @@
             ],
             "evidence": [
               "Des voyageurs ont demandé l’heure au guichet.",
-              "Les personnes qui utilisaient l’application ont vu le nouvel horaire."
+              "En revanche, les personnes qui utilisaient l’application ont vu le nouvel horaire."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -5677,7 +6645,7 @@
           },
           {
             "id": "gram-ex-k6-curriculum-d-b1-horaire-q2",
-            "prompt": "Quelle action a été prévue pour répondre à la situation ?",
+            "prompt": "Quelle action a été menée pour répondre à la situation ?",
             "answers": [
               "La gare a imprimé un nouvel horaire."
             ],
@@ -5714,7 +6682,7 @@
         "kind": "reading",
         "prompt": "Un inventaire au musée",
         "genre": "Fiche de visite",
-        "text": "La salle des objets prêtés se trouve derrière l’accueil. Vous pouvez demander une feuille à la première table. Notez d’abord le nom de l’objet qui vous intéresse, puis cherchez son origine.\nLe musée a reçu une liste d’inventaire. Les bénévoles ont identifié les objets. Les documents papier sont restés à l’atelier.\nLa conservatrice a placé les étiquettes sous les objets. L’objectif est le suivant : indiquer l’origine des objets.",
+        "text": "La salle des objets prêtés se trouve derrière l’accueil. Vous pouvez demander une feuille à la première table. Notez d’abord le nom de l’objet qui vous intéresse, puis cherchez son origine.\nLe musée a reçu une liste d’inventaire. Les bénévoles ont identifié les objets. En revanche, les documents papier sont restés à l’atelier.\nLa conservatrice a placé les étiquettes sous les objets. L’objectif est le suivant : indiquer l’origine des objets.",
         "answers": [],
         "questions": [
           {
@@ -5725,7 +6693,7 @@
             ],
             "evidence": [
               "Les bénévoles ont identifié les objets.",
-              "Les documents papier sont restés à l’atelier."
+              "En revanche, les documents papier sont restés à l’atelier."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -5746,7 +6714,7 @@
           },
           {
             "id": "gram-ex-k6-curriculum-d-b1-vitrine-q2",
-            "prompt": "Quelle action a été prévue pour répondre à la situation ?",
+            "prompt": "Quelle action a été menée pour répondre à la situation ?",
             "answers": [
               "La conservatrice a placé les étiquettes sous les objets."
             ],
@@ -5783,7 +6751,7 @@
         "kind": "reading",
         "prompt": "Le tournoi du samedi",
         "genre": "Message d’une capitaine",
-        "text": "Notre équipe avait rendez-vous à huit heures devant le terrain. J’ai demandé aux joueuses d’apporter les deux maillots car plusieurs équipes portent du bleu. Le premier match devait commencer à neuf heures.\nLe terrain était détrempé. Le club a déplacé les matchs au gymnase. Le club voisin a reporté son tournoi.\nLe club a réservé le gymnase. L’objectif est le suivant : jouer même en cas de pluie.",
+        "text": "Notre équipe avait rendez-vous à huit heures devant le terrain. J’ai demandé aux joueuses d’apporter les deux maillots car plusieurs équipes portent du bleu. Le premier match devait commencer à neuf heures.\nLe terrain était détrempé. Le club a déplacé les matchs au gymnase. En revanche, le club voisin a reporté son tournoi.\nLe club a réservé le gymnase. L’objectif est le suivant : jouer même en cas de pluie.",
         "answers": [],
         "questions": [
           {
@@ -5794,7 +6762,7 @@
             ],
             "evidence": [
               "Le club a déplacé les matchs au gymnase.",
-              "Le club voisin a reporté son tournoi."
+              "En revanche, le club voisin a reporté son tournoi."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -5815,7 +6783,7 @@
           },
           {
             "id": "gram-ex-k6-curriculum-d-b1-tournoi-q2",
-            "prompt": "Quelle action a été prévue pour répondre à la situation ?",
+            "prompt": "Quelle action a été menée pour répondre à la situation ?",
             "answers": [
               "Le club a réservé le gymnase."
             ],
@@ -5852,7 +6820,7 @@
         "kind": "reading",
         "prompt": "La table de midi",
         "genre": "Témoignage",
-        "text": "Nous avions apporté de l’eau, des fruits et deux grandes nappes. Mon amie voulait s’asseoir près des jeux pour garder les sacs en vue. Quand le groupe est arrivé, nous avons cherché où installer le repas.\nLe soleil chauffait les bancs. Le groupe a mangé sous les arbres. Les coureurs ont pris leur pause dans la salle.\nUne animatrice a déplacé une table. L’objectif est le suivant : trouver de l’ombre.",
+        "text": "Nous avions apporté de l’eau, des fruits et deux grandes nappes. Mon amie voulait s’asseoir près des jeux pour garder les sacs en vue. Quand le groupe est arrivé, nous avons cherché où installer le repas.\nLe soleil chauffait les bancs. Le groupe a mangé sous les arbres. En revanche, les coureurs ont pris leur pause dans la salle.\nUne animatrice a déplacé une table. L’objectif est le suivant : trouver de l’ombre.",
         "answers": [],
         "questions": [
           {
@@ -5863,7 +6831,7 @@
             ],
             "evidence": [
               "Le groupe a mangé sous les arbres.",
-              "Les coureurs ont pris leur pause dans la salle."
+              "En revanche, les coureurs ont pris leur pause dans la salle."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -5884,7 +6852,7 @@
           },
           {
             "id": "gram-ex-k6-curriculum-d-b1-pique-nique-q2",
-            "prompt": "Quelle action a été prévue pour répondre à la situation ?",
+            "prompt": "Quelle action a été menée pour répondre à la situation ?",
             "answers": [
               "Une animatrice a déplacé une table."
             ],
@@ -5921,7 +6889,7 @@
         "kind": "reading",
         "prompt": "Une autre entrée pour la réunion",
         "genre": "Lettre aux familles",
-        "text": "Nous vous attendons dans la salle des associations. La réunion commence à dix-huit heures. Si vous avez besoin d’aide, une personne portant un badge jaune vous accueillera devant le parking.\nL’ascenseur était en panne. La directrice a ouvert l’entrée de la cour. L’entrée principale était plus proche du parking.\nLa directrice a annoncé le nouvel accès à l’entrée. L’objectif est le suivant : informer les familles.",
+        "text": "Nous vous attendons dans la salle des associations. La réunion commence à dix-huit heures. Si vous avez besoin d’aide, une personne portant un badge jaune vous accueillera devant le parking.\nL’ascenseur était en panne. La directrice a ouvert l’entrée de la cour. En revanche, l’entrée principale était plus proche du parking.\nLa directrice a annoncé le nouvel accès à l’entrée. L’objectif est le suivant : informer les familles.",
         "answers": [],
         "questions": [
           {
@@ -5932,7 +6900,7 @@
             ],
             "evidence": [
               "La directrice a ouvert l’entrée de la cour.",
-              "L’entrée principale était plus proche du parking."
+              "En revanche, l’entrée principale était plus proche du parking."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -5953,7 +6921,7 @@
           },
           {
             "id": "gram-ex-k6-curriculum-d-b1-ascenseur-q2",
-            "prompt": "Quelle action a été prévue pour répondre à la situation ?",
+            "prompt": "Quelle action a été menée pour répondre à la situation ?",
             "answers": [
               "La directrice a annoncé le nouvel accès à l’entrée."
             ],
@@ -5990,7 +6958,7 @@
         "kind": "reading",
         "prompt": "Le retour des livres en soirée",
         "genre": "Message de la bibliothèque",
-        "text": "Les livres sont normalement à rendre dans les trois semaines. Sur le reçu, la date figure sous le titre. Le car scolaire ramène les élèves dans le quartier en début de soirée.\nLa bibliothèque fermait avant le retour du car. Le personnel a décalé la date de retour. Les habitants du centre ont rendu les livres le samedi.\nLa mairie a fixé une boîte à côté du portail. L’objectif est le suivant : permettre les retours le soir.",
+        "text": "Les livres sont normalement à rendre dans les trois semaines. Sur le reçu, la date figure sous le titre. Le car scolaire ramène les élèves dans le quartier en début de soirée.\nLa bibliothèque fermait avant le retour du car. Le personnel a décalé la date de retour. En revanche, les habitants du centre ont rendu les livres le samedi.\nLa mairie a fixé une boîte à côté du portail. L’objectif est le suivant : permettre les retours le soir.",
         "answers": [],
         "questions": [
           {
@@ -6001,7 +6969,7 @@
             ],
             "evidence": [
               "Le personnel a décalé la date de retour.",
-              "Les habitants du centre ont rendu les livres le samedi."
+              "En revanche, les habitants du centre ont rendu les livres le samedi."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -6022,7 +6990,7 @@
           },
           {
             "id": "gram-ex-k6-curriculum-d-b1-livres-q2",
-            "prompt": "Quelle action a été prévue pour répondre à la situation ?",
+            "prompt": "Quelle action a été menée pour répondre à la situation ?",
             "answers": [
               "La mairie a fixé une boîte à côté du portail."
             ],
@@ -6059,7 +7027,7 @@
         "kind": "reading",
         "prompt": "Un gilet pour chaque enfant",
         "genre": "Extrait d’entretien",
-        "text": "Le guide travaille avec les groupes du mercredi. Il explique que chaque personne doit essayer son matériel avant de monter sur l’eau. Une autre équipe arrive en général à midi avec des tailles différentes.\nLes gilets étaient trop grands. Les enfants ont emprunté ceux d’un autre groupe. Les adultes ont gardé les gilets du club.\nLe guide a classé les gilets par taille. L’objectif est le suivant : trouver rapidement un gilet adapté.",
+        "text": "Le guide travaille avec les groupes du mercredi. Il explique que chaque personne doit essayer son matériel avant de monter sur l’eau. Une autre équipe arrive en général à midi avec des tailles différentes.\nLes gilets étaient trop grands. Les enfants ont emprunté ceux d’un autre groupe. En revanche, les adultes ont gardé les gilets du club.\nLe guide a classé les gilets par taille. L’objectif est le suivant : trouver rapidement un gilet adapté.",
         "answers": [],
         "questions": [
           {
@@ -6070,7 +7038,7 @@
             ],
             "evidence": [
               "Les enfants ont emprunté ceux d’un autre groupe.",
-              "Les adultes ont gardé les gilets du club."
+              "En revanche, les adultes ont gardé les gilets du club."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -6091,7 +7059,7 @@
           },
           {
             "id": "gram-ex-k6-curriculum-d-b1-gilets-q2",
-            "prompt": "Quelle action a été prévue pour répondre à la situation ?",
+            "prompt": "Quelle action a été menée pour répondre à la situation ?",
             "answers": [
               "Le guide a classé les gilets par taille."
             ],
@@ -6128,7 +7096,7 @@
         "kind": "reading",
         "prompt": "La séance sans chauffage",
         "genre": "Journal du club",
-        "text": "Les joueurs sont arrivés avec leurs vêtements habituels. Une joueuse a prêté son blouson à une nouvelle personne. L’entraînement de la semaine suivante doit avoir lieu dans un autre bâtiment.\nLes radiateurs ne fonctionnaient plus. L’entraîneuse a déplacé l’échauffement. Les équipes du haut ont gardé leur ancienne salle.\nLe gardien a apporté des couvertures. L’objectif est le suivant : éviter que les joueurs aient froid.",
+        "text": "Les joueurs sont arrivés avec leurs vêtements habituels. Une joueuse a prêté son blouson à une nouvelle personne. L’entraînement de la semaine suivante doit avoir lieu dans un autre bâtiment.\nLes radiateurs ne fonctionnaient plus. L’entraîneuse a déplacé l’échauffement. En revanche, les équipes du haut ont gardé leur ancienne salle.\nLe gardien a apporté des couvertures. L’objectif est le suivant : éviter que les joueurs aient froid.",
         "answers": [],
         "questions": [
           {
@@ -6139,7 +7107,7 @@
             ],
             "evidence": [
               "L’entraîneuse a déplacé l’échauffement.",
-              "Les équipes du haut ont gardé leur ancienne salle."
+              "En revanche, les équipes du haut ont gardé leur ancienne salle."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -6160,7 +7128,7 @@
           },
           {
             "id": "gram-ex-k6-curriculum-d-b1-froid-q2",
-            "prompt": "Quelle action a été prévue pour répondre à la situation ?",
+            "prompt": "Quelle action a été menée pour répondre à la situation ?",
             "answers": [
               "Le gardien a apporté des couvertures."
             ],
@@ -6197,7 +7165,7 @@
         "kind": "reading",
         "prompt": "Une balise avant le virage",
         "genre": "Rapport de course",
-        "text": "Les participants ont retiré leur dossard à l’entrée du stade. Le départ a été donné près du banc vert. Le jury avait demandé un essai avant l’arrivée des plus jeunes.\nLe vent avait emporté une flèche. Les organisateurs ont ajouté une marque au sol. Les marcheurs disposaient déjà d’un plan.\nUne bénévole a montré le parcours sur un plan. L’objectif est le suivant : éviter les erreurs au croisement.",
+        "text": "Les participants ont retiré leur dossard à l’entrée du stade. Le départ a été donné près du banc vert. Le jury avait demandé un essai avant l’arrivée des plus jeunes.\nLe vent avait emporté une flèche. Les organisateurs ont ajouté une marque au sol. En revanche, les marcheurs disposaient déjà d’un plan.\nUne bénévole a montré le parcours sur un plan. L’objectif est le suivant : éviter les erreurs au croisement.",
         "answers": [],
         "questions": [
           {
@@ -6208,7 +7176,7 @@
             ],
             "evidence": [
               "Les organisateurs ont ajouté une marque au sol.",
-              "Les marcheurs disposaient déjà d’un plan."
+              "En revanche, les marcheurs disposaient déjà d’un plan."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -6229,7 +7197,7 @@
           },
           {
             "id": "gram-ex-k6-curriculum-d-b1-piste-q2",
-            "prompt": "Quelle action a été prévue pour répondre à la situation ?",
+            "prompt": "Quelle action a été menée pour répondre à la situation ?",
             "answers": [
               "Une bénévole a montré le parcours sur un plan."
             ],
@@ -6266,7 +7234,7 @@
         "kind": "reading",
         "prompt": "Deux chemins autour du parc",
         "genre": "Bulletin municipal",
-        "text": "La mairie ouvre le parc à huit heures. Les chiens doivent être tenus en laisse près du lac. À l’entrée nord, les familles peuvent consulter une carte avant de choisir leur balade.\nLe chemin de la digue était barré. Les cyclistes ont contourné le parc. Les piétons sont passés devant la mairie.\nLa commune a prévenu le club. L’objectif est le suivant : faciliter le trajet des cyclistes.",
+        "text": "La mairie ouvre le parc à huit heures. Les chiens doivent être tenus en laisse près du lac. À l’entrée nord, les familles peuvent consulter une carte avant de choisir leur balade.\nLe chemin de la digue était barré. Les cyclistes ont contourné le parc. En revanche, les piétons sont passés devant la mairie.\nLa commune a prévenu le club. L’objectif est le suivant : faciliter le trajet des cyclistes.",
         "answers": [],
         "questions": [
           {
@@ -6277,7 +7245,7 @@
             ],
             "evidence": [
               "Les cyclistes ont contourné le parc.",
-              "Les piétons sont passés devant la mairie."
+              "En revanche, les piétons sont passés devant la mairie."
             ],
             "response": "choice",
             "explanation": "Les passages cités permettent de répondre.",
@@ -6298,7 +7266,7 @@
           },
           {
             "id": "gram-ex-k6-curriculum-d-b1-digue-q2",
-            "prompt": "Quelle action a été prévue pour répondre à la situation ?",
+            "prompt": "Quelle action a été menée pour répondre à la situation ?",
             "answers": [
               "La commune a prévenu le club."
             ],
@@ -6328,7 +7296,7 @@
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k6-curriculum-e",
     "subthemeId": "k6",
     "topic": "gram-exprimer",
@@ -7948,12 +8916,332 @@
         ],
         "explanation": "En revanche met en évidence un contraste entre les deux situations. Les reformulations fidèles sont recevables.",
         "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k6-curriculum-e-b1-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k6-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "L’affiche était illisible à plusieurs mètres. Des visiteurs ont trouvé leur chemin grâce à un agent.\nAutre information : Le groupe guidé avait reçu un plan lisible.",
+        "task": "Présentez les deux faits à une personne de votre groupe et mettez-les en contraste.",
+        "answers": [
+          "L’affiche était illisible à plusieurs mètres. Pourtant, des visiteurs ont trouvé leur chemin grâce à un agent."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k6-curriculum-e-b1-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k6-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Les bandes magnétiques se détérioraient. Le public a entendu les témoignages.\nAutre information : Les fichiers numériques sont restés accessibles en ligne.",
+        "task": "Présentez les deux faits à une personne de votre groupe et mettez-les en contraste.",
+        "answers": [
+          "Malgré l’usure des bandes, le public a entendu les témoignages."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k6-curriculum-e-b1-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k6-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le personnel a demandé aux élèves de ranger leurs sacs. Les classes du bâtiment B avaient déjà un vestiaire.",
+        "task": "Présentez les deux faits à une personne de votre groupe et mettez-les en contraste.",
+        "answers": [
+          "Le personnel a demandé aux élèves de ranger leurs sacs. En revanche, les classes du bâtiment B avaient déjà un vestiaire."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "En revanche met en évidence un contraste entre les deux situations. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k6-curriculum-e-b1-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k6-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le soleil desséchait la terre en surface. Les enfants ont réussi à sauver plusieurs plants.\nAutre information : Les plantes de la serre ont gardé leur place.",
+        "task": "Présentez les deux faits à une personne de votre groupe et mettez-les en contraste.",
+        "answers": [
+          "Le soleil desséchait la terre en surface. Pourtant, les enfants ont réussi à sauver plusieurs plants."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k6-curriculum-e-b1-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k6-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le micro du guichet était en panne. Tous les dossiers ont été remis à temps.\nAutre information : Le numéro du guichet voisin s’affichait à l’écran.",
+        "task": "Présentez les deux faits à une personne de votre groupe et mettez-les en contraste.",
+        "answers": [
+          "Malgré la panne du micro, tous les dossiers ont été remis à temps."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k6-curriculum-e-b1-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k6-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le groupe a quitté le hall principal. Les deux mécaniciens sont restés à leur poste.",
+        "task": "Présentez les deux faits à une personne de votre groupe et mettez-les en contraste.",
+        "answers": [
+          "Le groupe a quitté le hall principal. En revanche, les deux mécaniciens sont restés à leur poste."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "En revanche met en évidence un contraste entre les deux situations. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k6-curriculum-e-b1-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k6-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le réseau de l’école était inaccessible. Les élèves ont pu commencer à l’heure.\nAutre information : Une autre classe avait déjà téléchargé le document.",
+        "task": "Présentez les deux faits à une personne de votre groupe et mettez-les en contraste.",
+        "answers": [
+          "Le réseau de l’école était inaccessible. Pourtant, les élèves ont pu commencer à l’heure."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k6-curriculum-e-b1-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k6-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le prix était affiché seulement par kilo. La vendeuse a terminé toutes les commandes.\nAutre information : Les clients du stand voisin connaissaient le prix à la pièce.",
+        "task": "Présentez les deux faits à une personne de votre groupe et mettez-les en contraste.",
+        "answers": [
+          "Malgré le mode d’affichage du prix, la vendeuse a terminé toutes les commandes."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k6-curriculum-e-b1-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k6-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "L’équipage a aidé les voyageurs à descendre. Le ponton voisin était déjà équipé d’une rampe.",
+        "task": "Présentez les deux faits à une personne de votre groupe et mettez-les en contraste.",
+        "answers": [
+          "L’équipage a aidé les voyageurs à descendre. En revanche, le ponton voisin était déjà équipé d’une rampe."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "En revanche met en évidence un contraste entre les deux situations. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
+      },
+      {
+        "id": "gram-ex-k6-curriculum-e-b1-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k6-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Plusieurs numéros avaient pris l’eau. L’équipe a distribué les exemplaires restés secs.\nAutre information : Les fiches de la bibliothèque étaient protégées à l’intérieur.",
+        "task": "Présentez les deux faits à une personne de votre groupe et mettez-les en contraste.",
+        "answers": [
+          "Plusieurs numéros avaient pris l’eau. Pourtant, l’équipe a distribué les exemplaires restés secs."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Message complet et compréhensible pour son destinataire."
+          }
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 4
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "arguments-2026-11-27-v1",
+    "revision": "arguments-2026-11-27-v2",
     "activityId": "gram-ex-k6-curriculum-p",
     "subthemeId": "k6",
     "topic": "gram-exprimer",
@@ -9572,6 +10860,326 @@
           }
         ],
         "explanation": "En revanche met en évidence un contraste entre les deux situations. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k6-curriculum-p-b1-atelier-braille",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 50,
+          "typeId": "gram-ex-k6-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "L’affiche était illisible à plusieurs mètres. Des visiteurs ont trouvé leur chemin grâce à un agent.\nAutre information : Le groupe guidé avait reçu un plan lisible.",
+        "task": "Présentez les deux faits à une personne de votre groupe et mettez-les en contraste. Relance : « Quelle situation différente peut-on aussi observer ? »",
+        "answers": [
+          "L’affiche était illisible à plusieurs mètres. Pourtant, des visiteurs ont trouvé leur chemin grâce à un agent.\nRéponse possible à la relance : Le groupe guidé avait reçu un plan lisible."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k6-curriculum-p-b1-archives-sonores",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 51,
+          "typeId": "gram-ex-k6-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Les bandes magnétiques se détérioraient. Le public a entendu les témoignages.\nAutre information : Les fichiers numériques sont restés accessibles en ligne.",
+        "task": "Présentez les deux faits à une personne de votre groupe et mettez-les en contraste. Relance : « Quelle situation différente peut-on aussi observer ? »",
+        "answers": [
+          "Malgré l’usure des bandes, le public a entendu les témoignages.\nRéponse possible à la relance : Les fichiers numériques sont restés accessibles en ligne."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k6-curriculum-p-b1-casiers-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 52,
+          "typeId": "gram-ex-k6-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le personnel a demandé aux élèves de ranger leurs sacs. Les classes du bâtiment B avaient déjà un vestiaire.",
+        "task": "Présentez les deux faits à une personne de votre groupe et mettez-les en contraste. Relance : « Quelle situation différente peut-on aussi observer ? »",
+        "answers": [
+          "Le personnel a demandé aux élèves de ranger leurs sacs. En revanche, les classes du bâtiment B avaient déjà un vestiaire.\nRéponse possible à la relance : Les classes du bâtiment B avaient déjà un vestiaire."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "En revanche met en évidence un contraste entre les deux situations. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k6-curriculum-p-b1-atelier-ombre",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 53,
+          "typeId": "gram-ex-k6-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le soleil desséchait la terre en surface. Les enfants ont réussi à sauver plusieurs plants.\nAutre information : Les plantes de la serre ont gardé leur place.",
+        "task": "Présentez les deux faits à une personne de votre groupe et mettez-les en contraste. Relance : « Quelle situation différente peut-on aussi observer ? »",
+        "answers": [
+          "Le soleil desséchait la terre en surface. Pourtant, les enfants ont réussi à sauver plusieurs plants.\nRéponse possible à la relance : Les plantes de la serre ont gardé leur place."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k6-curriculum-p-b1-guichet-sourdine",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 54,
+          "typeId": "gram-ex-k6-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le micro du guichet était en panne. Tous les dossiers ont été remis à temps.\nAutre information : Le numéro du guichet voisin s’affichait à l’écran.",
+        "task": "Présentez les deux faits à une personne de votre groupe et mettez-les en contraste. Relance : « Quelle situation différente peut-on aussi observer ? »",
+        "answers": [
+          "Malgré la panne du micro, tous les dossiers ont été remis à temps.\nRéponse possible à la relance : Le numéro du guichet voisin s’affichait à l’écran."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k6-curriculum-p-b1-protecteurs-oreilles",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 55,
+          "typeId": "gram-ex-k6-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le groupe a quitté le hall principal. Les deux mécaniciens sont restés à leur poste.",
+        "task": "Présentez les deux faits à une personne de votre groupe et mettez-les en contraste. Relance : « Quelle situation différente peut-on aussi observer ? »",
+        "answers": [
+          "Le groupe a quitté le hall principal. En revanche, les deux mécaniciens sont restés à leur poste.\nRéponse possible à la relance : Les deux mécaniciens sont restés à leur poste."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "En revanche met en évidence un contraste entre les deux situations. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k6-curriculum-p-b1-reseau-ecole",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 56,
+          "typeId": "gram-ex-k6-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le réseau de l’école était inaccessible. Les élèves ont pu commencer à l’heure.\nAutre information : Une autre classe avait déjà téléchargé le document.",
+        "task": "Présentez les deux faits à une personne de votre groupe et mettez-les en contraste. Relance : « Quelle situation différente peut-on aussi observer ? »",
+        "answers": [
+          "Le réseau de l’école était inaccessible. Pourtant, les élèves ont pu commencer à l’heure.\nRéponse possible à la relance : Une autre classe avait déjà téléchargé le document."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k6-curriculum-p-b1-panneau-comptoir",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 57,
+          "typeId": "gram-ex-k6-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le prix était affiché seulement par kilo. La vendeuse a terminé toutes les commandes.\nAutre information : Les clients du stand voisin connaissaient le prix à la pièce.",
+        "task": "Présentez les deux faits à une personne de votre groupe et mettez-les en contraste. Relance : « Quelle situation différente peut-on aussi observer ? »",
+        "answers": [
+          "Malgré le mode d’affichage du prix, la vendeuse a terminé toutes les commandes.\nRéponse possible à la relance : Les clients du stand voisin connaissaient le prix à la pièce."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Malgré introduit un groupe nominal qui présente un obstacle. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k6-curriculum-p-b1-bateau-rampe",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 58,
+          "typeId": "gram-ex-k6-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "L’équipage a aidé les voyageurs à descendre. Le ponton voisin était déjà équipé d’une rampe.",
+        "task": "Présentez les deux faits à une personne de votre groupe et mettez-les en contraste. Relance : « Quelle situation différente peut-on aussi observer ? »",
+        "answers": [
+          "L’équipage a aidé les voyageurs à descendre. En revanche, le ponton voisin était déjà équipé d’une rampe.\nRéponse possible à la relance : Le ponton voisin était déjà équipé d’une rampe."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "En revanche met en évidence un contraste entre les deux situations. Les reformulations fidèles sont recevables.",
+        "writeLines": 0
+      },
+      {
+        "id": "gram-ex-k6-curriculum-p-b1-abri-journal",
+        "source": {
+          "path": "scripts/grammar_curriculum/arguments-situations.tsv",
+          "position": 59,
+          "typeId": "gram-ex-k6-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Plusieurs numéros avaient pris l’eau. L’équipe a distribué les exemplaires restés secs.\nAutre information : Les fiches de la bibliothèque étaient protégées à l’intérieur.",
+        "task": "Présentez les deux faits à une personne de votre groupe et mettez-les en contraste. Relance : « Quelle situation différente peut-on aussi observer ? »",
+        "answers": [
+          "Plusieurs numéros avaient pris l’eau. Pourtant, l’équipe a distribué les exemplaires restés secs.\nRéponse possible à la relance : Les fiches de la bibliothèque étaient protégées à l’intérieur."
+        ],
+        "rubric": [
+          {
+            "id": "faits",
+            "label": "Informations et personnes de la situation respectées."
+          },
+          {
+            "id": "construction",
+            "label": "Construction demandée et lien entre les faits clairement exprimés."
+          },
+          {
+            "id": "message",
+            "label": "Réponse claire à la question et à la relance."
+          }
+        ],
+        "explanation": "Pourtant marque un résultat inattendu malgré l’obstacle. Les reformulations fidèles sont recevables.",
         "writeLines": 0
       }
     ]

@@ -11,4 +11,4 @@ with tempfile.TemporaryDirectory(prefix='clairfle-avenir-') as tmp:
  subprocess.run(['python3',str(target/'scripts/build-grammar-avenir.py')],check=True,capture_output=True)
  for sub in subs:
   p=Path(f'src/grammaire/curriculum/data/{sub}.json');assert (root/p).read_bytes()==(target/p).read_bytes(),str(p)
- print(json.dumps(dict(status='passed',authoredSourceRows=250,documents=60,banks=22,bankFiles=5,deterministic=True,isolatedRebuild=True)))
+ print(json.dumps(dict(status='passed',authoredSourceRows=300,documents=60,banks=22,bankFiles=5,deterministic=True,isolatedRebuild=True)))

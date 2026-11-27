@@ -237,7 +237,6 @@ function ActivitySettings(p: SettingsPanelProps) {
           isPhraseChart={p.isPhraseChart}
           libreMode={p.libreMode}
           setVerbGroup={p.setVerbGroup}
-          activeSheet={p.activeSheet}
           safeBlockIndex={p.safeBlockIndex}
           updatePage={p.updatePage}
           typeChoices={p.typeChoices}

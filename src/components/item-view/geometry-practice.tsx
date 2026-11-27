@@ -4,7 +4,7 @@ const solidImages = import.meta.glob<string>('../../math/media/solid-views/*.png
   eager: true, import: 'default', query: '?url',
 })
 
-function SquareGrid({ cells, label }: { cells: boolean[][]; label: string }) {
+export function SquareGrid({ cells, label }: { cells: boolean[][]; label: string }) {
   return (
     <table className="math-square-grid" aria-label={label}>
       <tbody>
@@ -40,11 +40,15 @@ export function AreaFigures({ figures }: { figures: RectangleGrid[] }) {
   )
 }
 
+export function solidImageUrl(id: string) {
+  return solidImages[`../../math/media/solid-views/${id}.png`]
+}
+
 export function SolidViewChoices({ solid }: { solid: SolidViews }) {
   return (
     <div className="math-solid-choices">
       <img
-        src={solidImages[`../../math/media/solid-views/${solid.image}.png`]}
+        src={solidImageUrl(solid.image)}
         alt="Solide en cubes. La face est à droite du dessin et le côté est à gauche."
       />
       <div className="math-square-figures-row">

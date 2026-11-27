@@ -1,3 +1,4 @@
+import type { GrammarCoStatement } from '@/grammaire/exercises/co-true-false'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 
 export type Domain =
@@ -427,6 +428,8 @@ export type DivisionStep = {
 }
 
 export type LogistiqueGapMode = 'sans-liste' | 'avec-liste'
+export type LogistiquePresentation = LogistiqueGapMode | import('@/logistique/tables').LogistiqueTablePresentation
+export type LogistiqueGaps = { answers: string[]; words?: string[]; distractors?: string[] }
 export type LogistiqueGlossaryFigure = { src: string; alt: string; caption?: string }
 export type LogistiqueQuestionImage = {
   src: string
@@ -437,13 +440,37 @@ export type LogistiqueQuestionImage = {
   visibility: 'both' | 'answers'
 }
 
+export type SpatialPoint = { x: number; y: number }
+export type SpatialCamera = 'A' | 'B' | 'C' | 'D'
+export type SpatialPractice =
+  | {
+    map: string
+    questions: { prompt: string; answer: string }[]
+    mark?: SpatialPoint
+    path?: SpatialPoint[]
+    cameras?: SpatialCamera[]
+    views?: SpatialCamera[]
+  }
+  | {
+    stacks: number[][]
+    questions: { prompt: string; answer: string }[]
+    drawFootprint: boolean
+  }
+  | {
+    models: string[]
+    projections: { label: string; cells: boolean[][] }[]
+    questions: { prompt: string; answer: string }[]
+  }
+
 export type MathItem = {
   logistiqueSource?: { id: string; module: string; revision: string }
   /** Question ajoutée en Libre et conservée par les nouveaux tirages. */
   logistiqueRetained?: boolean
-  logistiqueGaps?: { answers: string[]; words?: string[] }
+  logistiqueGaps?: LogistiqueGaps
+  logistiqueTable?: import('@/logistique/tables').LogistiqueExerciseTable
   logistiqueImage?: LogistiqueQuestionImage
   logistiqueGlossaryFigure?: LogistiqueGlossaryFigure
+  logistiqueGlossaryEntry?: { term: string; definition: string }
   /** Identité locale d’une occurrence éditée, distincte des identifiants de banque. */
   libreId?: string
   /** Protège l’occurrence du tirage. */
@@ -636,6 +663,9 @@ export type MathItem = {
   menuPrices?: { label: string; cents: number }[]
   areaFigures?: RectangleGrid[]
   solidViews?: SolidViews
+  grammarWordVocab?: { id: string; label: string; image?: string; recall: boolean }
+  grammarCoTrueFalse?: GrammarCoStatement[]
+  spatial?: SpatialPractice
   measureScale?: { kind: 'mass' | 'capacity' | 'duration'; unit: string; step: number; tick: number }
   lengthUnits?: { a: number; b: number }
   functionPairs?: { x: number; y: number }[]
@@ -918,6 +948,7 @@ export type ExerciseBlock = {
   /** Modules de l’activité en mode Évaluation, avec une répartition facultative. */
   logistiqueSelection?: { modules: string[]; quantities?: Record<string, number> }
   logistiqueGapMode?: LogistiqueGapMode
+  logistiquePresentation?: LogistiquePresentation
   topic: string
   exerciseType: string
   difficulty: Difficulty
@@ -990,6 +1021,8 @@ export type ExerciseBlock = {
   /** Imported grammar listening lots: all current sources are A1; A2 is separate. */
   grammarCoLevel?: 'A1' | 'A2'
   grammarCoAudioId?: string
+  grammarCoFormat?: 'questions' | 'true-false'
+  grammarVocabRecall?: boolean
   /** Additive non-CO curriculum. Absence preserves the historical generator. */
   grammarLevel?: import('@/grammaire/curriculum/types').GrammarLevel
   grammarActivityId?: string
@@ -1235,6 +1268,8 @@ export type WorksheetBlock = {
   exerciseType: string
   /** Index des photos à habiller avec le paragraphe suivant sur cette feuille. */
   logistiqueWrappedFigures?: number[]
+  /** Nombre de notions de la source, avant pagination du tableau du glossaire. */
+  logistiqueGlossaryLength?: number
   /** Disposition imprimée des listes et tableaux A5, avec l’index du bloc d’origine. */
   logistiqueSourceItemCount?: number
   logistiqueTheorySlices?: { sourceIndex: number; theoryBlock?: GrammarTheoryBlock; isLast: boolean }[]

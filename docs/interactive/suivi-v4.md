@@ -20,6 +20,8 @@ Ce registre complète les anciennes checklists de livraison. Il distingue les fo
 
 ## Priorités P0
 
+Le jeu reprend le **Vrai/Faux de compréhension orale en grammaire** depuis la fiche. Classe et Solo présentent chaque question sur son propre écran, avec A pour Vrai et B pour Faux. La piste d’origine reste accessible, la justification apparaît au corrigé et la transcription complète devient consultable après la correction de toutes les questions retenues pour cette piste. [Contrôles des 252 pistes A1 et A2](../../tests/interactive/transcripts.test.mjs)
+
 Complément du 15 novembre : le [Loto collectif M12](adr-0059-loto-collectif.md) ajoute des grilles interactives de deux à six cases, des tirages mélangés et les objectifs « Une ligne » ou « Grille complète ». Les validations Classe restent explicites ; le Solo ne coche que les bonnes réponses. Les grilles complètes sont sélectionnées ensemble, leurs marques et bilans sont repris. Les grilles élèves imprimées et les salles synchronisées restent hors de ce lot.
 
 Complément du 15 novembre : le [Mémory M11 avec retournement](adr-0058-memory-cartes-retournees.md) est disponible en option pour Vocabulaire et Mémory. Les plateaux de quatre ou six cartes conservent les paires source, les essais et la reprise ; validation enseignante en Classe, vérification et suite automatiques en Solo. Les autres familles de paires et les plateaux synchronisés restent ouverts.
