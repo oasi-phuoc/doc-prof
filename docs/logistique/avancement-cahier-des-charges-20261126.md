@@ -36,6 +36,8 @@ Référence de réalisation dans le [cahier des charges v2.12](cahier-des-charge
 | L4 — Module 202 | Révision `202-v001` active | Cours de 50 blocs, schéma de préparation d’un contact, 14 termes, cinq calculs CFC dont quatre AFP, six vérifications communes et cinq situations CFC dont quatre AFP. La [préparation du 202](preparation/202-v001.json) relie la tenue et l’hygiène aux tâches et aux consignes du poste. |
 | L4 — Module 203 | Révision `203-v001` active | Cours de 46 blocs, fenêtre de Johari et schéma d’accord d’équipe, 14 termes. Sept calculs CFC dont cinq AFP, sept vérifications CFC dont six AFP et cinq situations CFC dont quatre AFP. [Préparation du 203](preparation/203-v001.json). |
 | L4 — Module 204 | Révision `204-v001` active | Cours de 31 blocs, schéma de périmètre et matrice des structures de marché, 14 termes. Sept calculs CFC dont quatre AFP, sept vérifications CFC dont six AFP et cinq situations CFC dont quatre AFP. [Préparation du 204](preparation/204-v001.json). |
+| L4 — Module 205 | Révision `205-v001` active | Cours de 52 blocs, courbes d’offre et de demande, schémas des quatre P et d’AIDA, 14 termes. Sept calculs CFC dont quatre AFP, sept vérifications CFC dont six AFP et cinq situations CFC dont quatre AFP. [Préparation du 205](preparation/205-v001.json). |
+| L4 — Module 206 | Révision `206-v001` active | Cours de 67 blocs, trois schémas sur la transmission, l’écoute et les questions, 14 termes. Sept calculs CFC dont cinq AFP, sept vérifications CFC dont six AFP et cinq situations CFC dont quatre AFP. [Préparation du 206](preparation/206-v001.json). |
 | L2 — Module 308 | Révision `308-v001` active | Cours de 51 blocs, schéma brut–tare–net et 25 termes. Cinq problèmes CFC dont quatre AFP, sept vérifications et six situations CFC dont quatre AFP. Les écarts sur le comptage par pesage et la métrologie suisse figurent dans la [préparation du 308](preparation/308-v001.json). |
 | L2 — Module 613 | Révision `613-v001` active | Cours de 35 blocs, schéma des trois flux et 21 termes. Les catégories absentes du Git source sont renseignées par cinq calculs CFC dont quatre AFP et huit vérifications communes. Six situations CFC dont cinq AFP. Le catalogue conserve les années 3 CFC et 2 AFP. [Préparation du 613](preparation/613-v001.json). |
 | L2 — Module 805 | Révision `805-v001` active en CFC | Cours de 163 blocs, schéma des styles et du sommaire, 23 termes, cinq calculs, sept vérifications et cinq situations. Cours autonome à l’écrit après exclusion des 85 références visuelles historiques. [Préparation du 805](preparation/805-v001.json). |
@@ -45,7 +47,7 @@ Référence de réalisation dans le [cahier des charges v2.12](cahier-des-charge
 
 ## Reprise opérationnelle
 
-1. Les onze modules du thème 100 disposent des six types en CFC et AFP. Poursuivre le thème 200 avec le module 205 « Le marketing », puis le 206 « La communication ». Les cibles nominales de contenu et la recette complète restent à atteindre. Partir des [archives par thème](sources-epcas/), préparer les six types et vérifier visuels et composition ensemble avant publication.
+1. Les onze modules du thème 100 disposent des six types en CFC et AFP. Poursuivre le thème 200 avec les modules 207 à 209 sur l’avant-vente, la vente et le service après-vente. Les cibles nominales de contenu et la recette complète restent à atteindre. Partir des [archives par thème](sources-epcas/), préparer les six types et vérifier visuels et composition ensemble avant publication.
 2. Vérifier les corrigés, la place du contenu dans le référentiel, les écarts AFP/CFC et les dépendances à des médias écartés.
 3. Enregistrer une révision de banque et la conserver pour les recettes déjà créées. Les changements de fond du 105 sont consignés dans les [données de préparation](pilote-105/preparation.generated.json) et dans le [dossier éditorial](pilote-105/relecture.md).
 4. Vérifier dans les deux diplômes le nombre d’unités disponibles, la génération, le corrigé, l’impression et la réouverture. Reporter dans ce fichier les preuves, les écarts et le prochain module retenu.
@@ -63,6 +65,8 @@ Référence de réalisation dans le [cahier des charges v2.12](cahier-des-charge
 ### Thème 200 — Déploiement du 27 novembre
 
 - `logistique-203-204-v001` ajoute 24 contextes générables en comptant les deux diplômes et les six types. Couverture active de 114 types sur 480 en CFC et 102 sur 378 en AFP. Chromium a contrôlé les 24 parcours A4, les aperçus d’une page, les cours illustrés en PDF et les suites de calculs élève et corrigé numérotées dans l’ordre. Réserve minimale au pied de 79,64 px. `npm run test:logistique` donne 5 réussites.
+
+- `logistique-205-206-v001` ajoute 24 contextes générables. Couverture active de 126 types sur 480 en CFC et 114 sur 378 en AFP. Chromium a vérifié les 24 parcours A4, dont les nouveaux schémas et la numérotation continue des calculs, avec une réserve minimale au pied de 79,64 px. Les 5 tests de génération passent.
 
 ### Publication V2.12
 

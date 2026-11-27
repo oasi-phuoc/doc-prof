@@ -13,6 +13,8 @@ import { module201 } from './banks/module-201-v001.generated.ts'
 import { module202 } from './banks/module-202-v001.generated.ts'
 import { module203 } from './banks/module-203-v001.generated.ts'
 import { module204 } from './banks/module-204-v001.generated.ts'
+import { module205 } from './banks/module-205-v001.generated.ts'
+import { module206 } from './banks/module-206-v001.generated.ts'
 import { module308 } from './banks/module-308-v001.generated.ts'
 import { module613 } from './banks/module-613-v001.generated.ts'
 import { module805 } from './banks/module-805-v001.generated.ts'
@@ -59,6 +61,10 @@ const serviceOrganisationPublication: LogistiquePublication = {
   revision: 'logistique-203-204-v001',
   units: [...illustratedPublication.units, ...module203, ...module204],
 }
+const serviceCommunicationPublication: LogistiquePublication = {
+  revision: 'logistique-205-206-v001',
+  units: [...serviceOrganisationPublication.units, ...module205, ...module206],
+}
 
 /** Ajouter une publication après validation. Garder les versions utilisées par les recettes. */
 export const logistiquePublications: readonly LogistiquePublication[] = [
@@ -100,6 +106,7 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   serviceClientPublication,
   illustratedPublication,
   serviceOrganisationPublication,
+  serviceCommunicationPublication,
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!
