@@ -1,0 +1,854 @@
+[
+  {
+    "id": "quartier",
+    "title": "Un quartier",
+    "landmarks": [
+      {
+        "name": "École",
+        "x": 1,
+        "y": 0
+      },
+      {
+        "name": "Place",
+        "x": 4,
+        "y": 1
+      },
+      {
+        "name": "Gare",
+        "x": 2,
+        "y": 2
+      },
+      {
+        "name": "Parc",
+        "x": 3,
+        "y": 3
+      },
+      {
+        "name": "Mairie",
+        "x": 0,
+        "y": 3
+      }
+    ],
+    "blocked": [
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "views": {
+      "A": [
+        "Place",
+        "Parc",
+        "Gare",
+        "École"
+      ],
+      "B": [
+        "Parc",
+        "Gare",
+        "Place",
+        "École"
+      ],
+      "C": [
+        "École",
+        "Gare",
+        "Parc",
+        "Place"
+      ],
+      "D": [
+        "École",
+        "Place",
+        "Gare",
+        "Parc"
+      ]
+    }
+  },
+  {
+    "id": "musee",
+    "title": "Un musée",
+    "landmarks": [
+      {
+        "name": "Statue",
+        "x": 1,
+        "y": 1
+      },
+      {
+        "name": "Vase",
+        "x": 4,
+        "y": 0
+      },
+      {
+        "name": "Tableau",
+        "x": 2,
+        "y": 3
+      },
+      {
+        "name": "Banc",
+        "x": 3,
+        "y": 2
+      },
+      {
+        "name": "Entrée",
+        "x": 0,
+        "y": 3
+      }
+    ],
+    "blocked": [
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "views": {
+      "A": [
+        "Vase",
+        "Banc",
+        "Tableau",
+        "Statue"
+      ],
+      "B": [
+        "Tableau",
+        "Banc",
+        "Statue",
+        "Vase"
+      ],
+      "C": [
+        "Statue",
+        "Tableau",
+        "Banc",
+        "Vase"
+      ],
+      "D": [
+        "Vase",
+        "Statue",
+        "Banc",
+        "Tableau"
+      ]
+    }
+  },
+  {
+    "id": "zoo",
+    "title": "Un parc animalier",
+    "landmarks": [
+      {
+        "name": "Girafe",
+        "x": 2,
+        "y": 0
+      },
+      {
+        "name": "Éléphant",
+        "x": 4,
+        "y": 2
+      },
+      {
+        "name": "Étang",
+        "x": 3,
+        "y": 3
+      },
+      {
+        "name": "Oiseaux",
+        "x": 1,
+        "y": 1
+      },
+      {
+        "name": "Kiosque",
+        "x": 0,
+        "y": 3
+      }
+    ],
+    "blocked": [
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    "views": {
+      "A": [
+        "Éléphant",
+        "Étang",
+        "Girafe",
+        "Oiseaux"
+      ],
+      "B": [
+        "Étang",
+        "Éléphant",
+        "Oiseaux",
+        "Girafe"
+      ],
+      "C": [
+        "Oiseaux",
+        "Girafe",
+        "Étang",
+        "Éléphant"
+      ],
+      "D": [
+        "Girafe",
+        "Oiseaux",
+        "Éléphant",
+        "Étang"
+      ]
+    }
+  },
+  {
+    "id": "camping",
+    "title": "Un camping",
+    "landmarks": [
+      {
+        "name": "Tente",
+        "x": 1,
+        "y": 1
+      },
+      {
+        "name": "Borne",
+        "x": 3,
+        "y": 0
+      },
+      {
+        "name": "Chalet",
+        "x": 4,
+        "y": 3
+      },
+      {
+        "name": "Feu",
+        "x": 2,
+        "y": 2
+      },
+      {
+        "name": "Accueil",
+        "x": 5,
+        "y": 3
+      }
+    ],
+    "blocked": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    "views": {
+      "A": [
+        "Chalet",
+        "Borne",
+        "Feu",
+        "Tente"
+      ],
+      "B": [
+        "Chalet",
+        "Feu",
+        "Tente",
+        "Borne"
+      ],
+      "C": [
+        "Tente",
+        "Feu",
+        "Borne",
+        "Chalet"
+      ],
+      "D": [
+        "Borne",
+        "Tente",
+        "Feu",
+        "Chalet"
+      ]
+    }
+  },
+  {
+    "id": "port",
+    "title": "Un port",
+    "landmarks": [
+      {
+        "name": "Phare",
+        "x": 1,
+        "y": 2
+      },
+      {
+        "name": "Voilier",
+        "x": 4,
+        "y": 1
+      },
+      {
+        "name": "Hangar",
+        "x": 2,
+        "y": 0
+      },
+      {
+        "name": "Grue",
+        "x": 3,
+        "y": 3
+      },
+      {
+        "name": "Plage",
+        "x": 5,
+        "y": 3
+      }
+    ],
+    "blocked": [
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "views": {
+      "A": [
+        "Voilier",
+        "Grue",
+        "Hangar",
+        "Phare"
+      ],
+      "B": [
+        "Grue",
+        "Phare",
+        "Voilier",
+        "Hangar"
+      ],
+      "C": [
+        "Phare",
+        "Hangar",
+        "Grue",
+        "Voilier"
+      ],
+      "D": [
+        "Hangar",
+        "Voilier",
+        "Phare",
+        "Grue"
+      ]
+    }
+  },
+  {
+    "id": "ecole",
+    "title": "Une cour d’école",
+    "landmarks": [
+      {
+        "name": "Panier",
+        "x": 2,
+        "y": 1
+      },
+      {
+        "name": "Toboggan",
+        "x": 4,
+        "y": 0
+      },
+      {
+        "name": "Fontaine",
+        "x": 3,
+        "y": 3
+      },
+      {
+        "name": "Arbre",
+        "x": 1,
+        "y": 2
+      },
+      {
+        "name": "Préau",
+        "x": 0,
+        "y": 3
+      }
+    ],
+    "blocked": [
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    "views": {
+      "A": [
+        "Toboggan",
+        "Fontaine",
+        "Panier",
+        "Arbre"
+      ],
+      "B": [
+        "Fontaine",
+        "Arbre",
+        "Panier",
+        "Toboggan"
+      ],
+      "C": [
+        "Arbre",
+        "Panier",
+        "Fontaine",
+        "Toboggan"
+      ],
+      "D": [
+        "Toboggan",
+        "Panier",
+        "Arbre",
+        "Fontaine"
+      ]
+    }
+  },
+  {
+    "id": "ferme",
+    "title": "Une ferme",
+    "landmarks": [
+      {
+        "name": "Grange",
+        "x": 1,
+        "y": 0
+      },
+      {
+        "name": "Silo",
+        "x": 3,
+        "y": 1
+      },
+      {
+        "name": "Tracteur",
+        "x": 4,
+        "y": 2
+      },
+      {
+        "name": "Verger",
+        "x": 2,
+        "y": 3
+      },
+      {
+        "name": "Mare",
+        "x": 5,
+        "y": 3
+      }
+    ],
+    "blocked": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    "views": {
+      "A": [
+        "Tracteur",
+        "Silo",
+        "Verger",
+        "Grange"
+      ],
+      "B": [
+        "Verger",
+        "Tracteur",
+        "Silo",
+        "Grange"
+      ],
+      "C": [
+        "Grange",
+        "Verger",
+        "Silo",
+        "Tracteur"
+      ],
+      "D": [
+        "Grange",
+        "Silo",
+        "Tracteur",
+        "Verger"
+      ]
+    }
+  },
+  {
+    "id": "festival",
+    "title": "Une fête de village",
+    "landmarks": [
+      {
+        "name": "Scène",
+        "x": 1,
+        "y": 2
+      },
+      {
+        "name": "Manège",
+        "x": 4,
+        "y": 0
+      },
+      {
+        "name": "Stand",
+        "x": 2,
+        "y": 1
+      },
+      {
+        "name": "Ballons",
+        "x": 3,
+        "y": 3
+      },
+      {
+        "name": "Entrée",
+        "x": 0,
+        "y": 3
+      }
+    ],
+    "blocked": [
+      [
+        3,
+        0
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "views": {
+      "A": [
+        "Manège",
+        "Ballons",
+        "Stand",
+        "Scène"
+      ],
+      "B": [
+        "Ballons",
+        "Scène",
+        "Stand",
+        "Manège"
+      ],
+      "C": [
+        "Scène",
+        "Stand",
+        "Ballons",
+        "Manège"
+      ],
+      "D": [
+        "Manège",
+        "Stand",
+        "Scène",
+        "Ballons"
+      ]
+    }
+  },
+  {
+    "id": "station",
+    "title": "Une station de montagne",
+    "landmarks": [
+      {
+        "name": "Refuge",
+        "x": 2,
+        "y": 1
+      },
+      {
+        "name": "Téléphérique",
+        "x": 4,
+        "y": 2
+      },
+      {
+        "name": "Sommet",
+        "x": 3,
+        "y": 3
+      },
+      {
+        "name": "Sapin",
+        "x": 1,
+        "y": 0
+      },
+      {
+        "name": "Luge",
+        "x": 0,
+        "y": 3
+      }
+    ],
+    "blocked": [
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    "views": {
+      "A": [
+        "Téléphérique",
+        "Sommet",
+        "Refuge",
+        "Sapin"
+      ],
+      "B": [
+        "Sommet",
+        "Téléphérique",
+        "Refuge",
+        "Sapin"
+      ],
+      "C": [
+        "Sapin",
+        "Refuge",
+        "Sommet",
+        "Téléphérique"
+      ],
+      "D": [
+        "Sapin",
+        "Refuge",
+        "Téléphérique",
+        "Sommet"
+      ]
+    }
+  },
+  {
+    "id": "stade",
+    "title": "Un stade",
+    "landmarks": [
+      {
+        "name": "But",
+        "x": 1,
+        "y": 1
+      },
+      {
+        "name": "Podium",
+        "x": 3,
+        "y": 2
+      },
+      {
+        "name": "Tribune",
+        "x": 4,
+        "y": 3
+      },
+      {
+        "name": "Vestiaire",
+        "x": 2,
+        "y": 0
+      },
+      {
+        "name": "Buvette",
+        "x": 5,
+        "y": 3
+      }
+    ],
+    "blocked": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    "views": {
+      "A": [
+        "Tribune",
+        "Podium",
+        "Vestiaire",
+        "But"
+      ],
+      "B": [
+        "Tribune",
+        "Podium",
+        "But",
+        "Vestiaire"
+      ],
+      "C": [
+        "But",
+        "Vestiaire",
+        "Podium",
+        "Tribune"
+      ],
+      "D": [
+        "Vestiaire",
+        "But",
+        "Podium",
+        "Tribune"
+      ]
+    }
+  },
+  {
+    "id": "bibliotheque",
+    "title": "Une bibliothèque",
+    "landmarks": [
+      {
+        "name": "Livres",
+        "x": 1,
+        "y": 3
+      },
+      {
+        "name": "Fauteuil",
+        "x": 4,
+        "y": 1
+      },
+      {
+        "name": "Horloge",
+        "x": 2,
+        "y": 2
+      },
+      {
+        "name": "Bureau",
+        "x": 3,
+        "y": 0
+      },
+      {
+        "name": "Entrée",
+        "x": 0,
+        "y": 3
+      }
+    ],
+    "blocked": [
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "views": {
+      "A": [
+        "Fauteuil",
+        "Bureau",
+        "Horloge",
+        "Livres"
+      ],
+      "B": [
+        "Livres",
+        "Horloge",
+        "Fauteuil",
+        "Bureau"
+      ],
+      "C": [
+        "Livres",
+        "Horloge",
+        "Bureau",
+        "Fauteuil"
+      ],
+      "D": [
+        "Bureau",
+        "Fauteuil",
+        "Horloge",
+        "Livres"
+      ]
+    }
+  },
+  {
+    "id": "ile",
+    "title": "Une île",
+    "landmarks": [
+      {
+        "name": "Pont",
+        "x": 2,
+        "y": 1
+      },
+      {
+        "name": "Cabane",
+        "x": 4,
+        "y": 2
+      },
+      {
+        "name": "Palmier",
+        "x": 3,
+        "y": 3
+      },
+      {
+        "name": "Barque",
+        "x": 1,
+        "y": 0
+      },
+      {
+        "name": "Rocher",
+        "x": 0,
+        "y": 3
+      }
+    ],
+    "blocked": [
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    "views": {
+      "A": [
+        "Cabane",
+        "Palmier",
+        "Pont",
+        "Barque"
+      ],
+      "B": [
+        "Palmier",
+        "Cabane",
+        "Pont",
+        "Barque"
+      ],
+      "C": [
+        "Barque",
+        "Pont",
+        "Palmier",
+        "Cabane"
+      ],
+      "D": [
+        "Barque",
+        "Pont",
+        "Cabane",
+        "Palmier"
+      ]
+    }
+  }
+]

@@ -436,6 +436,28 @@ export type LogistiqueQuestionImage = {
   visibility: 'both' | 'answers'
 }
 
+export type SpatialPoint = { x: number; y: number }
+export type SpatialCamera = 'A' | 'B' | 'C' | 'D'
+export type SpatialPractice =
+  | {
+    map: string
+    questions: { prompt: string; answer: string }[]
+    mark?: SpatialPoint
+    path?: SpatialPoint[]
+    cameras?: SpatialCamera[]
+    views?: SpatialCamera[]
+  }
+  | {
+    stacks: number[][]
+    questions: { prompt: string; answer: string }[]
+    drawFootprint: boolean
+  }
+  | {
+    models: string[]
+    projections: { label: string; cells: boolean[][] }[]
+    questions: { prompt: string; answer: string }[]
+  }
+
 export type MathItem = {
   logistiqueSource?: { id: string; module: string; revision: string }
   /** Question ajoutée en Libre et conservée par les nouveaux tirages. */
@@ -629,6 +651,7 @@ export type MathItem = {
   menuPrices?: { label: string; cents: number }[]
   areaFigures?: RectangleGrid[]
   solidViews?: SolidViews
+  spatial?: SpatialPractice
   measureScale?: { kind: 'mass' | 'capacity' | 'duration'; unit: string; step: number; tick: number }
   lengthUnits?: { a: number; b: number }
   functionPairs?: { x: number; y: number }[]
