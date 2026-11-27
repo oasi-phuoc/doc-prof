@@ -43,7 +43,7 @@ const qcm = {
   ],
 }
 
-async function openFiche(page, data) {
+async function openFiche(page, data, expectQuestions = true) {
   await page.addInitScript((recipe) => {
     localStorage.setItem('clairfle-fiche-sync', 'libre-test-only')
     if (!history.state?.clairfleFiche) history.replaceState({
@@ -53,7 +53,7 @@ async function openFiche(page, data) {
   await page.goto('/generateur')
   await worksheet(page).waitFor()
   await button(page, 'Mode libre').click()
-  await liveQuestion(page).waitFor()
+  if (expectQuestions) await liveQuestion(page).waitFor()
   assert.equal(await button(page, 'Valider les changements').count(), 0)
 }
 
@@ -165,6 +165,29 @@ async function audioGroups(page) {
   assert.match(await worksheet(page).innerText(), /Premier dialogue/)
 }
 
+async function writing(page) {
+  await openFiche(page, recipe('tcf-pe-ex-4', 'tcf-pe', {
+    id: 'libre-ecriture-temoin', niveau: 'A0-A1', competence: 'PE', type_exercice: 'question_texte', questions: [],
+    support: { consigne: 'Décrivez votre journée.', nb_mots: { min: 10, max: 30 }, reponse_modele: 'Je me lève tôt.' },
+  }), false)
+  const prompt = page.getByRole('textbox', { name: 'Question / texte', exact: true })
+  await prompt.fill('Prévenez votre responsable que vous serez en retard.')
+  assert.match(await worksheet(page).innerText(), /Prévenez votre responsable/)
+  assert.doesNotMatch(await worksheet(page).innerText(), /Je me lève tôt/)
+  const review = button(page, 'Confirmer le corrigé du support')
+  await review.waitFor()
+  await prompt.blur()
+  await prompt.fill('')
+  assert(await review.isDisabled())
+  await button(page, 'Annuler').click()
+  assert.match(await worksheet(page).innerText(), /Prévenez votre responsable/)
+  await page.getByRole('textbox', { name: 'Réponse modèle (corrigé)', exact: true }).fill('Bonjour, je serai en retard de dix minutes.')
+  await review.click()
+  assert.equal(await review.count(), 0)
+  await button(page, 'Fermer le mode libre').click()
+  assert.match(await worksheet(page).innerText(), /Prévenez votre responsable/)
+}
+
 try {
   await server?.listen()
   const baseURL = process.env.BASE_URL ?? 'http://127.0.0.1:' + server.httpServer.address().port
@@ -177,7 +200,10 @@ try {
   const qcmPage = await context.newPage()
   await qcmPilot(qcmPage)
   await qcmPage.close()
-  await audioGroups(await context.newPage())
+  const audioPage = await context.newPage()
+  await audioGroups(audioPage)
+  await audioPage.close()
+  await writing(await context.newPage())
   await context.close()
   console.log('Document partagé, corrigés à vérifier, QCM illustré, réouverture et liaison audio testés.')
 } finally {

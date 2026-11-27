@@ -25,7 +25,7 @@ export function useLibreImages<T extends { id: string; imageSrc?: string }>(entr
         const current = latest.current.entries.find((entry) => entry.id === id)
         if (!current || current.imageSrc !== previous?.imageSrc) return
         latest.current.onChange(latest.current.entries.map((entry) => entry === current
-          ? { ...entry, imageSrc, libreImage: true }
+          ? { ...entry, imageSrc, imageHidden: undefined, libreImage: true }
           : entry))
       }
       setError(null)

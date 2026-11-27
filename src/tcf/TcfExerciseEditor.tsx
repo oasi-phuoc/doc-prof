@@ -1276,7 +1276,9 @@ export function TcfExerciseEditor({
     if (live && hasTcfLockedQuestions(current) &&
       !window.confirm('Remplacer ce support et ses questions verrouillées ?')) return
     const total = tcfBank(niveau, slot.competence).length
-    onChange({ tcfExercise: emptyTcfExercise(niveau, slot.competence, typeExercice, tcfExerciseId(niveau, slot.competence, total + 1)) })
+    const blank = emptyTcfExercise(niveau, slot.competence, typeExercice, tcfExerciseId(niveau, slot.competence, total + 1))
+    onChange({ tcfExercise: live && blank.competence === 'PE'
+      ? { ...blank, libreSupportEdited: true, libreSupportReview: true } : blank })
   }
 
   async function exportJson(kind: 'copy' | 'download') {
@@ -1418,6 +1420,13 @@ export function TcfExerciseEditor({
           ) : null}
 
           <SupportEditor ex={exercise} set={set} audioEntries={coAudioEntries} live={live} scored={scored} />
+          {live && exercise.libreSupportReview && (
+            <div className="libre-unit-actions">
+              <span>Corrigé du support à vérifier</span>
+              <button type="button" className="tcf-btn" disabled={(validation?.errors.length ?? 0) > 0}
+                onClick={() => set({ ...exercise, libreSupportReview: false })}>Confirmer le corrigé du support</button>
+            </div>
+          )}
 
           {hasConsigneSupp ? (
             <TextField

@@ -127,6 +127,9 @@ type TcfBase<C extends TcfCompetence, T extends string, S> = {
   /** Pastilles de mots / verbes au-dessus des questions. */
   mots_banque?: string[]
   support: S
+  /** Le support ou la consigne a été modifié dans la fiche locale. */
+  libreSupportEdited?: true
+  libreSupportReview?: boolean
   questions: TcfQuestion[]
   /** PE sms / email / question : petit bloc sous le texte. */
   consigne_supplementaire?: string | null

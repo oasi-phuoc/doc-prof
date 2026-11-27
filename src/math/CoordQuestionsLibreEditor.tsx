@@ -9,8 +9,7 @@ export function resizeCoordQuestionsLibre(
     const existing = prev?.[index]
     if (existing) {
       return {
-        prompt: existing.prompt,
-        answer: existing.answer,
+        ...existing,
         reply: existing.reply ?? defaultReply,
       }
     }
@@ -33,7 +32,7 @@ const REPLY_OPTIONS: Array<{ value: CoordReply; label: string }> = [
 ]
 
 export function CoordQuestionsLibreEditor({
-  questions,
+  questions: sourceQuestions,
   defaultReply = 'text',
   maxCount = 10,
   onChange,
@@ -43,10 +42,21 @@ export function CoordQuestionsLibreEditor({
   maxCount?: number
   onChange: (next: CoordQuestion[]) => void
 }) {
+  const occupied = new Set(sourceQuestions.flatMap((question) => question.libreId ? [question.libreId] : []))
+  const questions = sourceQuestions.map((question, index) => {
+    if (question.libreId) return question
+    let libreId = `repere-${index + 1}`
+    while (occupied.has(libreId)) libreId += '-b'
+    occupied.add(libreId)
+    return { ...question, libreId }
+  })
   const updateAt = (index: number, patch: Partial<CoordQuestion>) => {
     onChange(
       questions.map((question, i) => (i === index ? { ...question, ...patch } : question)),
     )
+  }
+  function authored(next: CoordQuestion[]) {
+    onChange(next.map((question) => question.libreId ? question : { ...question, libreId: crypto.randomUUID() }))
   }
 
   return (
@@ -57,7 +67,7 @@ export function CoordQuestionsLibreEditor({
       </p>
       <div className="phrase-libre-list">
         {questions.map((question, index) => (
-          <div className="phrase-libre-card" key={`coord-q-${index}`}>
+          <div className="phrase-libre-card" key={question.libreId ?? index}>
             <span className="phrase-libre-index">{index + 1}.</span>
             <div className="libre-item-body">
             <label className="libre-field is-line">
@@ -66,7 +76,7 @@ export function CoordQuestionsLibreEditor({
                 className="libre-line-input is-textarea"
                 value={question.prompt}
                 rows={2}
-                onChange={(event) => updateAt(index, { prompt: event.target.value })}
+                onChange={(event) => updateAt(index, { prompt: event.target.value, correctionPending: true })}
                 aria-label={`Énoncé de la question ${index + 1}`}
               />
             </label>
@@ -87,7 +97,7 @@ export function CoordQuestionsLibreEditor({
                 className="libre-line-input is-select"
                 value={question.reply ?? defaultReply}
                 onChange={(event) =>
-                  updateAt(index, { reply: event.target.value as CoordReply })
+                  updateAt(index, { reply: event.target.value as CoordReply, correctionPending: true })
                 }
                 aria-label={`Type de réponse de la question ${index + 1}`}
               >
@@ -99,12 +109,20 @@ export function CoordQuestionsLibreEditor({
               </select>
             </label>
             </div>
+            {question.correctionPending && (
+              <div className="libre-unit-actions">
+                <span>Corrigé à vérifier</span>
+                <button type="button" className="button secondary small"
+                  disabled={!question.prompt.trim() || question.reply !== 'draw' && !question.answer.trim()}
+                  onClick={() => updateAt(index, { correctionPending: false })}>Corrigé vérifié</button>
+              </div>
+            )}
             <div className="phrase-libre-actions">
               <button
                 type="button"
                 className="phrase-libre-icon-btn"
                 disabled={index === 0}
-                onClick={() => onChange(moveIndex(questions, index, index - 1))}
+                onClick={() => authored(moveIndex(questions, index, index - 1))}
                 aria-label={`Monter la question ${index + 1}`}
               >
                 ↑
@@ -113,7 +131,7 @@ export function CoordQuestionsLibreEditor({
                 type="button"
                 className="phrase-libre-icon-btn"
                 disabled={index >= questions.length - 1}
-                onClick={() => onChange(moveIndex(questions, index, index + 1))}
+                onClick={() => authored(moveIndex(questions, index, index + 1))}
                 aria-label={`Descendre la question ${index + 1}`}
               >
                 ↓
@@ -122,7 +140,7 @@ export function CoordQuestionsLibreEditor({
                 type="button"
                 className="phrase-libre-icon-btn is-danger"
                 disabled={questions.length <= 1}
-                onClick={() => onChange(questions.filter((_, i) => i !== index))}
+                onClick={() => authored(questions.filter((_, i) => i !== index))}
                 aria-label={`Supprimer la question ${index + 1}`}
               >
                 ×
@@ -137,9 +155,9 @@ export function CoordQuestionsLibreEditor({
         className="phrase-libre-add"
         disabled={questions.length >= maxCount}
         onClick={() =>
-          onChange([
+          authored([
             ...questions,
-            { prompt: '', answer: '', reply: defaultReply },
+            { prompt: '', answer: '', reply: defaultReply, correctionPending: true },
           ])
         }
       >

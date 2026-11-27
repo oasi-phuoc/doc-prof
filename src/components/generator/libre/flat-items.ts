@@ -4,8 +4,23 @@ import { buildPage } from '@/math/generate'
 import { pageAsConfig, pageBlocks, setPageBlock } from '@/math/page-model'
 import type { ExerciseBlock, MathItem, PageConfig } from '@/math/types'
 
-export function arithmeticActivityId(block: ExerciseBlock, seed: number, pageIndex: number, blockIndex: number) {
-  return block.libreId ?? `addition-${(seed >>> 0).toString(36)}-${pageIndex}-${blockIndex}`
+export function worksheetActivityIds(pages: readonly PageConfig[]): Set<string> {
+  return new Set(pages.flatMap((page) => pageBlocks(page).flatMap((block) =>
+    [block.libreId, block.a5RightLibre?.id].filter((id): id is string => Boolean(id)))))
+}
+
+export function arithmeticActivityId(
+  block: ExerciseBlock, seed: number, pageIndex: number, blockIndex: number,
+  reserved: ReadonlySet<string>, half?: 'left' | 'right',
+) {
+  if (half === 'right' && block.a5RightLibre) return block.a5RightLibre.id
+  if (half !== 'right' && block.libreId) return block.libreId
+  const base = block.libreId ?? `addition-${(seed >>> 0).toString(36)}-${pageIndex}-${blockIndex}`
+  const proposed = half === 'right' ? `${base.slice(0, 108)}-droite` : base
+  let id = proposed
+  let suffix = 1
+  while (reserved.has(id)) id = `${proposed}-${++suffix}`
+  return id
 }
 
 export function identifyItems(items: MathItem[], activityId: string): MathItem[] {
@@ -39,6 +54,7 @@ export function rerollFlatActivity(
   blockIndex: number,
   seed: number,
   newSeed: number,
+  reserved: ReadonlySet<string>,
   target?: string | readonly string[],
   half?: 'left' | 'right',
 ): PageConfig {
@@ -46,9 +62,7 @@ export function rerollFlatActivity(
   if (!block || !hasFlatRegeneration(liveEditorProfile(page.domain, block.exerciseType, half ? 'a5-double-landscape' : 'a4-portrait'))) return page
   const right = half === 'right'
   const rightLibre = right ? block.a5RightLibre : undefined
-  const activityId = right
-    ? rightLibre?.id ?? `${arithmeticActivityId(block, seed, pageIndex, blockIndex)}-droite`
-    : arithmeticActivityId(block, seed, pageIndex, blockIndex)
+  const activityId = arithmeticActivityId(block, seed, pageIndex, blockIndex, reserved, half)
   const currentItems = right ? rightLibre?.items : block.libreItems
   const instruction = right ? rightLibre?.instruction : block.libreInstruction
   const pageSeed = seed + pageIndex * 7919 + blockIndex * 10007
@@ -63,8 +77,8 @@ export function rerollFlatActivity(
     ...block, count: Math.max(items.length * 2, 4), libreItems: undefined, libreInstruction: undefined,
   })
   const generated = buildPage(template, pageSeed + newSeed, 1, seed).items
-  const signature = ({ layout, op, a, b, missing, convert, prompt, logique }: MathItem) =>
-    JSON.stringify([layout, op, a, b, missing, convert, prompt, logique?.id])
+  const signature = ({ layout, op, a, b, missing, convert, prompt, left, right, sequence, logique }: MathItem) =>
+    JSON.stringify([layout, op, a, b, missing, convert, prompt, left, right, sequence, logique?.id])
   const signatures = new Set(items.map(signature))
   let cursor = 0
   const next = items.map((item, index) => {

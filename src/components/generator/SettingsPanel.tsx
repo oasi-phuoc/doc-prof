@@ -9,6 +9,7 @@ import { SoutienVocabFields } from '@/components/generator/SoutienVocabFields'
 import { QuestionsColumnsFields } from '@/components/generator/QuestionsColumnsFields'
 import { CoordLibreSettings } from '@/components/generator/CoordLibreSettings'
 import { DraftGridControls } from '@/components/generator/DraftGridControls'
+import { rememberSpacingPreferences, rememberSpacingSection, spacingSectionOpen } from '@/components/generator/libre/preferences'
 import type { InstitutionalHeader } from '@/components/math/PrintDocumentChrome'
 import type { CoordTool } from '@/components/generator/useCoordEditing'
 import type { VocabWordEntry } from '@/francais/vocab-learn'
@@ -30,6 +31,8 @@ import type {
 export type SettingsPanelProps = {
   recovery?: ReactNode
   supportsBlockSpacing?: boolean
+  spacingPreferenceKey?: string
+  liveCoordQuestions?: boolean
   worksheets: WorksheetPage[]
   pages: PageConfig[]
   safeSheetIndex: number
@@ -308,15 +311,24 @@ export function ActivitySettings(p: SettingsPanelProps) {
           sheetTotalPoints={p.sheetTotalPoints}
         />
         {spacing && (
-          <details className="libre-theory-block">
+          <details className="libre-theory-block" key={p.spacingPreferenceKey}
+            open={spacingSectionOpen(p.spacingPreferenceKey)}
+            onToggle={(event) => rememberSpacingSection(p.spacingPreferenceKey, event.currentTarget.open)}>
             <summary>Espacement de l’activité</summary>
             {itemCount > columns && <SpacingField name="Entre les lignes de questions" value={p.activeBlock.questionGapPx}
-              onChange={(questionGapPx) => p.updatePage({ questionGapPx })} />}
+              onChange={(questionGapPx) => {
+                p.updatePage({ questionGapPx })
+                rememberSpacingPreferences(p.spacingPreferenceKey, { questionGapPx })
+              }} />}
             {columns > 1 && <SpacingField name="Entre les colonnes" value={p.activeBlock.columnGapPx}
-              onChange={(columnGapPx) => p.updatePage({ columnGapPx })} />}
+              onChange={(columnGapPx) => {
+                p.updatePage({ columnGapPx })
+                rememberSpacingPreferences(p.spacingPreferenceKey, { columnGapPx })
+              }} />}
           </details>
         )}
         <CoordLibreSettings
+          liveCoordQuestions={p.liveCoordQuestions}
           activeBlock={p.activeBlock}
           activeAsPage={p.activeAsPage}
           updatePage={p.updatePage}

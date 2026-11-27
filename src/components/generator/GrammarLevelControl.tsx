@@ -33,7 +33,7 @@ export function GrammarLevelControl({block,onChange}:{block:ExerciseBlock;onChan
       {block.grammarPresentation==='document-set'?<label className="select-shell">
         <span>Textes</span>
         <input className="pill-input" type="number" aria-label="Nombre de textes" min={1} max={Math.min(20,bank.units.length)} value={block.grammarDocumentCount??1}
-          onChange={event=>change({grammarDocumentCount:Math.max(1,Math.min(20,bank.units.length,Number(event.target.value)||1))})}/>
+          onChange={event=>onChange({grammarDocumentCount:Math.max(1,Math.min(20,bank.units.length,Number(event.target.value)||1))})}/>
         <small className="grammar-level-note">Chaque texte conserve toutes ses questions.</small>
       </label>:null}
       {bank.presentations.includes('choice')&&bank.presentations.includes('gap')?<div className="mode-toggle-block">

@@ -12,6 +12,7 @@ export type SoutienCompleterEntry = {
   after: string
   word: string
   imageSrc?: string
+  imageHidden?: true
   libreImage?: true
 }
 
@@ -116,6 +117,7 @@ export function SoutienCompleterLibreEditor({
           const w = entry.word
           return (
             <li className="soutien-completer-row" key={entry.id}>
+              <div className="vocab-occurrence-image">
               <button
                 type="button"
                 className={`game-entry-thumb${entry.imageSrc ? ' has-image' : ''}`}
@@ -124,6 +126,11 @@ export function SoutienCompleterLibreEditor({
               >
                 {entry.imageSrc ? <img src={entry.imageSrc} alt="" /> : <span aria-hidden>+</span>}
               </button>
+              {entry.imageSrc && !entry.imageHidden && (
+                <button type="button" className="game-entry-clear" aria-label={`Supprimer l’image du mot ${index + 1}`}
+                  onClick={() => updateAt(index, { imageSrc: undefined, imageHidden: true, libreImage: undefined })}>×</button>
+              )}
+              </div>
               <input
                 ref={(el) => {
                   fileRefs.current[index] = el
@@ -159,7 +166,7 @@ export function SoutienCompleterLibreEditor({
                   updateAt(index, {
                     word,
                     ...parts,
-                    imageSrc: entry.imageSrc?.startsWith('data:')
+                    imageSrc: entry.imageHidden ? undefined : entry.imageSrc?.startsWith('data:')
                       ? entry.imageSrc
                       : soutienImageFor(word) ?? entry.imageSrc,
                   })

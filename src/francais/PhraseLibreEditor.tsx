@@ -45,6 +45,14 @@ function rebuildOrderItem(item: MathItem, tokens: PhraseToken[], correct?: strin
   }
 }
 
+function orderedWords(text: string): string[] {
+  return (text.normalize('NFC').toLocaleLowerCase('fr').match(/[\p{L}\p{N}]+/gu) ?? []).sort()
+}
+
+function usesSameWords(first: string, second: string): boolean {
+  return JSON.stringify(orderedWords(first)) === JSON.stringify(orderedWords(second))
+}
+
 function rebuildBuildItem(
   item: MathItem,
   pastilles: PhraseCategory[],
@@ -112,12 +120,14 @@ export function PhraseLibreEditor({
   instruction,
   onChangeItems,
   onChangeInstruction,
+  reviewOrder = false,
 }: {
   exerciseType: string
   items: MathItem[]
   instruction: string
   onChangeItems: (items: MathItem[]) => void
   onChangeInstruction: (instruction: string) => void
+  reviewOrder?: boolean
 }) {
   const kind = parsePhraseKind(exerciseType)
   if (!kind) return null
@@ -190,7 +200,12 @@ export function PhraseLibreEditor({
     const item = items[itemIndex]
     if (!item) return
     if (item.layout === 'phrase-order' || kind === 'ordre') {
-      updateItem(itemIndex, rebuildOrderItem(item, tokens, correct))
+      const next = rebuildOrderItem(item, tokens, correct)
+      if (reviewOrder && (tokens.some(({ text }) => !text.trim()) ||
+        !usesSameWords(tokens.map(({ text }) => text).join(' '), next.responseAnswer ?? next.answer))) {
+        next.libreCorrectionPending = true
+      }
+      updateItem(itemIndex, next)
     } else {
       updateItem(itemIndex, rebuildColorItem(item, tokens))
     }
@@ -427,22 +442,31 @@ export function PhraseLibreEditor({
                 <button type="button" className="phrase-libre-add" onClick={() => addToken(itemIndex)}>
                   + Mot
                 </button>
-                {kind === 'ordre' ? (
+                {kind === 'ordre' ? <>
                   <label className="phrase-libre-field">
                     <span>Phrase correcte</span>
                     <input
                       type="text"
                       value={item.responseAnswer ?? item.answer ?? ''}
-                      onChange={(event) =>
-                        updateItem(
-                          itemIndex,
-                          rebuildOrderItem(item, item.tokens ?? [], event.target.value),
-                        )
-                      }
+                      onChange={(event) => {
+                        const answer = event.target.value
+                        updateItem(itemIndex, reviewOrder ? {
+                          ...item, answer, responseAnswer: answer, libreCorrectionPending: true,
+                        } : rebuildOrderItem(item, item.tokens ?? [], answer))
+                      }}
                       aria-label={`Phrase correcte ${itemIndex + 1}`}
                     />
                   </label>
-                ) : null}
+                  {reviewOrder && item.libreCorrectionPending && (
+                    <div className="libre-unit-actions">
+                      <span>Corrigé à vérifier</span>
+                      <button type="button" className="button secondary small"
+                        disabled={!item.tokens?.every(({ text }) => text.trim()) ||
+                          !usesSameWords(item.tokens.map(({ text }) => text).join(' '), item.responseAnswer ?? item.answer)}
+                        onClick={() => updateItem(itemIndex, { ...item, libreCorrectionPending: false })}>Corrigé vérifié</button>
+                    </div>
+                  )}
+                </> : null}
               </>
             )}
           </div>

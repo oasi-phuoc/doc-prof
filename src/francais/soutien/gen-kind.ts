@@ -85,7 +85,7 @@ export function genKind(
               return {
                 id: e.id || `soutien-libre-${index}`,
                 label,
-                imageSrc: e.imageSrc || soutienImageFor(raw) || soutienImageFor(label),
+                imageSrc: e.imageHidden ? undefined : e.imageSrc || soutienImageFor(raw) || soutienImageFor(label),
                 audioSrc: soutienAudioFor(raw) ?? soutienAudioFor(label),
               }
             })
@@ -236,7 +236,7 @@ export function genKind(
                 blank: row.blank.slice(0, 2),
                 after: row.after,
                 word,
-                imageSrc: row.imageSrc || soutienImageFor(raw) || soutienImageFor(word),
+                imageSrc: row.imageHidden ? undefined : row.imageSrc || soutienImageFor(raw) || soutienImageFor(word),
                 audioSrc: soutienAudioFor(raw) ?? soutienAudioFor(word),
               }
             })

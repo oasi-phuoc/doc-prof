@@ -110,11 +110,11 @@ async function checkStructuredCalculations(context) {
       config: { domain: 'algèbre', topic: 'division', exerciseType: 'division-colonne-poser', libreItems: [
         { layout: 'division-column', a: 12, b: 3, dividend: 12, divisor: 3, quotient: 4, op: '÷', blankOperands: true, answer: '4', prompt: '12 ÷ 3' },
       ] },
-      async check(page) {
+      async check(page, scope) {
         const calculation = page.getByRole('group', { name: 'Calcul colonne 1', exact: true })
         await calculation.getByRole('textbox', { name: 'Premier nombre' }).fill('14')
         assert.equal(await calculation.getByRole('status', { name: 'Corrigé 1' }).textContent(), '4 reste 2')
-        const grid = page.locator('.a4-frame .division-column').first()
+        const grid = scope.locator('.division-column').first()
         assert.match(await grid.innerText(), /14 ÷ 3/)
         const divisor = calculation.getByRole('textbox', { name: 'Second nombre' })
         await divisor.fill('0')
@@ -126,11 +126,11 @@ async function checkStructuredCalculations(context) {
       config: { domain: 'géométrie', topic: 'conversions', exerciseType: 'conversions-longueur', libreItems: [
         { layout: 'inline', convert: { value: '2', from: 'm', to: 'cm', family: 'longueur' }, prompt: '2 m =', answer: '200 cm' },
       ] },
-      async check(page) {
+      async check(page, scope) {
         await page.getByRole('textbox', { name: 'Valeur 1', exact: true }).fill('2,5')
         const panel = page.getByRole('group', { name: 'Conversion 1', exact: true })
         assert.equal(await panel.getByRole('status', { name: 'Corrigé conversion 1' }).textContent(), '250 cm')
-        const row = page.locator('.a4-frame .convert-row').first()
+        const row = scope.locator('.convert-row').first()
         assert.match(await row.innerText(), /2,5/)
         assert.doesNotMatch(await row.innerText(), /250/)
         await page.getByRole('button', { name: 'Fiche élève (cliquer pour corrigé)', exact: true }).click()
@@ -139,19 +139,33 @@ async function checkStructuredCalculations(context) {
     },
   ]
   for (const { config, check } of fixtures) {
-    const page = await context.newPage()
-    const recipe = state(operations[0], false)
-    recipe.pages = [{ ...recipe.pages[0], ...config }]
-    await page.addInitScript((value) => history.replaceState({
-      ...history.state, clairfleFiche: { id: 'structured-math-fixture', name: 'Calcul témoin', recipe: value },
-    }, ''), recipe)
-    try {
-      await page.goto('/generateur')
-      await page.getByRole('button', { name: 'Mode libre', exact: true }).click()
-      assert.equal(await page.getByRole('button', { name: 'Valider les changements', exact: true }).count(), 0)
-      await check(page)
-    } finally {
-      await page.close()
+    for (const sheetFormat of ['a4-portrait', 'a5-double-landscape']) {
+      const page = await context.newPage()
+      const recipe = state(operations[0], false)
+      const twin = sheetFormat === 'a5-double-landscape'
+      recipe.sheetFormat = sheetFormat
+      recipe.pages = [{ ...recipe.pages[0], ...config }]
+      if (twin) {
+        recipe.pages[0].libreId = 'gauche'
+        recipe.pages[0].libreItems = config.libreItems.map((item) => ({ ...item, libreId: 'calcul-gauche' }))
+        recipe.pages[0].a5RightLibre = { id: 'droite', items: config.libreItems.map((item) => ({ ...item, libreId: 'calcul-droite' })) }
+      }
+      await page.addInitScript((value) => history.replaceState({
+        ...history.state, clairfleFiche: { id: 'structured-math-fixture', name: 'Calcul témoin', recipe: value },
+      }, ''), recipe)
+      try {
+        await page.goto('/generateur')
+        await page.getByRole('button', { name: 'Mode libre', exact: true }).click()
+        assert.equal(await page.getByRole('button', { name: 'Valider les changements', exact: true }).count(), 0)
+        if (twin) await page.getByRole('button', { name: 'Droite', exact: true }).click()
+        const left = page.locator('.a4-frame .a5-half.is-left .exercise-item').first()
+        const input = twin ? left.locator('.column-prompt, .convert-value').first() : null
+        const original = await input?.textContent()
+        await check(page, page.locator(twin ? '.a4-frame .a5-half.is-right' : '.a4-frame'))
+        if (input) assert.equal(await input.textContent(), original)
+      } finally {
+        await page.close()
+      }
     }
   }
 }
@@ -210,6 +224,62 @@ async function checkBatch(context) {
   }
 }
 
+async function checkNumericTests(context) {
+  async function open(config) {
+    const page = await context.newPage()
+    const recipe = { ...state(operations[0], false), evalMode: true, printCorrections: false,
+      pages: [{ difficulty: 'moyen', columns: 1, count: 1, ...config }] }
+    await page.addInitScript((value) => history.replaceState({
+      ...history.state, clairfleFiche: { id: 'numeric-test-fixture', name: 'Comparaison et tri', recipe: value },
+    }, ''), recipe)
+    await page.goto('/generateur')
+    const printItems = page.locator('.print-only-sheets .exercise-item')
+    await printItems.first().waitFor({ state: 'attached' })
+    const baseline = await printItems.allTextContents()
+    await page.getByRole('button', { name: 'Mode libre', exact: true }).click()
+    assert.equal(await page.getByRole('button', { name: 'Valider les changements', exact: true }).count(), 0)
+    assert.deepEqual(await printItems.allTextContents(), baseline)
+    return { page, printItems }
+  }
+  const { page: csc, printItems } = await open({
+    domain: 'tcm-csc', topic: 'tcm-csc-test', exerciseType: 'tcm-csc-ex07', pointsPerQuestion: 0.5, count: 2,
+  })
+  try {
+    const first = csc.getByRole('textbox', { name: 'Gauche 1', exact: true })
+    const second = csc.getByRole('textbox', { name: 'Droite 1', exact: true })
+    const initial = await first.getAttribute('data-applied-value')
+    await first.fill('101')
+    assert.equal(await first.getAttribute('aria-invalid'), 'true')
+    assert.equal(await first.getAttribute('data-applied-value'), initial)
+    await first.fill('27')
+    await second.fill('8')
+    assert.equal(await csc.getByRole('status', { name: 'Corrigé signe 1', exact: true }).innerText(), '>')
+    assert.match(await printItems.first().textContent(), /27/)
+    assert.equal(await printItems.count(), 2)
+    assert.equal(await csc.getByRole('button', { name: 'Actions de la question 1', exact: true }).count(), 0)
+  } finally {
+    await csc.close()
+  }
+
+  const { page: cfr } = await open({
+    domain: 'tcm-cfr', topic: 'tcm-cfr-test', exerciseType: 'tcm-cfr-ex03', pointsPerQuestion: 2, orderAscending: false,
+  })
+  try {
+    const numbers = cfr.getByRole('group', { name: 'Nombres 1', exact: true })
+    const input = numbers.getByRole('textbox', { name: 'Nombres 1 1', exact: true })
+    const other = await numbers.getByRole('textbox', { name: 'Nombres 1 2', exact: true }).inputValue()
+    await input.fill(other)
+    assert.equal(await input.getAttribute('aria-invalid'), 'true')
+    await input.fill('750,25')
+    assert.equal(await input.getAttribute('aria-invalid'), null)
+    assert.match(await cfr.getByRole('status', { name: 'Corrigé 1', exact: true }).innerText(), /750,25/)
+    assert.equal(await cfr.getByRole('button', { name: 'Ajouter un nombre', exact: true }).count(), 0)
+    assert.equal(await cfr.getByRole('combobox', { name: 'Ordre 1', exact: true }).count(), 0)
+  } finally {
+    await cfr.close()
+  }
+}
+
 try {
   await server?.listen()
   const baseURL = process.env.BASE_URL ?? 'http://127.0.0.1:' + server.httpServer.address().port
@@ -224,7 +294,11 @@ try {
   await checkStructuredCalculations(context)
   await checkBatch(context)
   await context.close()
-  console.log('Opérations en ligne et posées, divisions, conversions et édition indépendante des deux moitiés A5 vérifiées.')
+  const teacher = await browser.newContext({ baseURL, viewport: { width: 1366, height: 900 } })
+  await teacher.addCookies([{ name: 'clairfle-fiche-access', value: 'admin', url: baseURL }])
+  await checkNumericTests(teacher)
+  await teacher.close()
+  console.log('Calculs en ligne et posés, conversions, double A5 et contraintes des tests de comparaison et de tri vérifiés.')
 } finally {
   await browser?.close()
   await server?.close()

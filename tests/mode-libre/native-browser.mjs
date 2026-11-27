@@ -10,13 +10,13 @@ const tinyPng = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAAFEl
 
 async function open(context, data) {
   const page = await context.newPage()
-  await page.addInitScript(({ printCorrections = false, ...pageConfig }) => history.replaceState({
+  await page.addInitScript(({ printCorrections = false, sheetFormat, ...pageConfig }) => history.replaceState({
     ...history.state,
     clairfleFiche: {
       id: 'native-fixture', name: 'Activité témoin',
       recipe: {
         version: 1, seed: 20261127, institutional: {}, evalMode: false, pointsPerQuestion: 1,
-        libreMode: false, libreSnapshot: null, printCorrections,
+        libreMode: false, libreSnapshot: null, printCorrections, sheetFormat,
         pages: [{ difficulty: 'moyen', count: 2, columns: 1, ...pageConfig }],
       },
     },
@@ -104,6 +104,10 @@ try {
     assert.deepEqual(await cards.nth(1).locator('img').evaluateAll((images) => images.map((img) => img.getAttribute('src'))), neighborImage)
     await upload.setInputFiles({ name: 'mot.svg', mimeType: 'image/svg+xml', buffer: Buffer.from('<svg/>') })
     await words.getByText('Choisissez une image JPG, PNG ou WebP.', { exact: true }).waitFor()
+    await button(words, 'Supprimer l’image du mot 1').click()
+    assert.equal(await cards.first().locator('img').count(), 0)
+    await button(words, 'Annuler').click()
+    assert.equal(await cards.first().locator('img[src^="data:image/"]').count(), 1)
     await button(words, 'Fermer le mode libre').click()
     assert.deepEqual((await labels()).filter(Boolean), ['atelier', ...before.slice(1)])
     await words.close()
@@ -122,6 +126,22 @@ try {
   await button(completion, 'Ajouter le mot').click()
   assert.equal(await completion.getByRole('combobox', { name: 'Partie cachée du mot 3', exact: true }).inputValue(), '0:2')
   await completion.close()
+
+  const order = await open(context, {
+    domain: 'soutien-fr', topic: 'soutien-voyelles', exerciseType: 'soutien-a-ordre',
+  })
+  await toggleLive(order)
+  const firstPhrase = order.locator('#activity-editor .phrase-libre-card').first()
+  const tokens = firstPhrase.getByRole('textbox', { name: /^Mot \d+ de la phrase 1$/ })
+  await tokens.first().fill('atelier')
+  assert.match(await preview(order).innerText(), /atelier/)
+  const verified = button(firstPhrase, 'Corrigé vérifié')
+  assert(await verified.isDisabled())
+  const words = await tokens.evaluateAll((fields) => fields.map((field) => field.value))
+  await firstPhrase.getByRole('textbox', { name: 'Phrase correcte 1', exact: true }).fill(words.join(' '))
+  await verified.click()
+  assert.equal(await verified.count(), 0)
+  await order.close()
 
   const letters = await open(context, {
     domain: 'alphabetisation', topic: 'alpha-voyelles', exerciseType: 'alpha-a-lettres-maj', count: 2,
@@ -144,6 +164,25 @@ try {
   assert.equal(await letterCells.count(), 24)
   assert.equal(await letterCells.nth(changedCell).textContent(), 'A')
   await letters.close()
+
+  const lettersA5 = await open(context, {
+    domain: 'alphabetisation', topic: 'alpha-voyelles', exerciseType: 'alpha-a-lettres-maj', count: 2,
+    contentSeedTwin: 62, sheetFormat: 'a5-double-landscape',
+  })
+  const cellsA5 = (half) => preview(lettersA5).locator(`.a5-half.is-${half} .letter-table-cell`)
+  const leftLetters = await cellsA5('left').allTextContents()
+  const oldRightLetter = await cellsA5('right').first().textContent()
+  await toggleLive(lettersA5)
+  await button(lettersA5, 'Droite').click()
+  const letter = oldRightLetter === 'Z' ? 'W' : 'Z'
+  await lettersA5.getByRole('textbox', { name: 'Case 1', exact: true }).fill(letter)
+  assert.deepEqual(await cellsA5('left').allTextContents(), leftLetters)
+  assert.equal(await cellsA5('right').first().textContent(), letter)
+  await lettersA5.getByRole('spinbutton', { name: 'Nombre de lignes', exact: true }).fill('3')
+  assert.equal(await cellsA5('left').count(), 24)
+  assert.equal(await cellsA5('right').count(), 24)
+  assert.equal(await cellsA5('right').first().textContent(), letter)
+  await lettersA5.close()
 
   const syllables = await open(context, {
     domain: 'soutien-fr', topic: 'soutien-voyelles', exerciseType: 'soutien-a-syllabes', count: 2,
@@ -179,6 +218,48 @@ try {
   assert.equal(await puzzle.locator('.logique-stem img').first().getAttribute('src'), changedPuzzle)
   await logic.close()
 
+  const logicA5 = await open(context, {
+    domain: 'logique', topic: 'logique-suite-graphique', exerciseType: 'logique-suite-graphique',
+    contentSeedTwin: 62, sheetFormat: 'a5-double-landscape',
+  })
+  const scene = (half) => preview(logicA5).locator(`.a5-half.is-${half} .logique-stem img`).first().getAttribute('src')
+  const leftScene = await scene('left')
+  const rightScene = await scene('right')
+  await toggleLive(logicA5)
+  await button(logicA5, 'Droite').click()
+  const rightBank = logicA5.getByRole('combobox', { name: 'Question de la banque', exact: true }).first()
+  const bankId = await rightBank.inputValue()
+  const otherBankId = await rightBank.locator('option').evaluateAll((options, current) =>
+    options.find(({ value }) => value && value !== current).value, bankId)
+  await rightBank.selectOption(otherBankId)
+  assert.equal(await scene('left'), leftScene)
+  assert.notEqual(await scene('right'), rightScene)
+  await logicA5.close()
+
+  const coordinates = await open(context, {
+    domain: 'géométrie', topic: 'reperage', exerciseType: 'reperage-droites', count: 3,
+  })
+  const axes = preview(coordinates).locator('svg.coord-grid.scene-axes')
+  const linesBefore = await axes.locator('line.coord-line').evaluateAll((lines) => lines.map((line) => line.outerHTML))
+  assert(linesBefore.length > 0)
+  await toggleLive(coordinates)
+  assert.equal(await coordinates.locator('#activity-editor .coord-questions-libre').count(), 1)
+  await coordinates.getByRole('textbox', { name: 'Énoncé de la question 1', exact: true }).fill('Observez la première droite.')
+  await coordinates.getByRole('textbox', { name: 'Réponse de la question 1', exact: true }).fill('Elle est horizontale.')
+  assert.match(await preview(coordinates).innerText(), /Observez la première droite/)
+  assert.doesNotMatch(await preview(coordinates).innerText(), /Elle est horizontale/)
+  assert.deepEqual(await axes.locator('line.coord-line').evaluateAll((lines) => lines.map((line) => line.outerHTML)), linesBefore)
+  await button(coordinates, 'Corrigé vérifié').click()
+  await button(coordinates, 'Fiche élève (cliquer pour corrigé)').click()
+  assert.match(await preview(coordinates).innerText(), /Elle est horizontale/)
+  await coordinates.emulateMedia({ media: 'print' })
+  const measured = await coordinates.locator('.print-only-sheets svg.coord-grid.scene-axes').first().evaluate((svg) => ({
+    writtenMm: Number.parseFloat(svg.getAttribute('width')),
+    renderedMm: svg.getBoundingClientRect().width * 25.4 / 96,
+  }))
+  assert(Math.abs(measured.writtenMm - measured.renderedMm) < 0.6)
+  await coordinates.close()
+
   const theory = await open(context, {
     domain: 'grammaire', topic: 'gram-entrer-contact', exerciseType: 'gram-b1-theorie',
   })
@@ -198,6 +279,24 @@ try {
   await button(theory, 'Annuler').click()
   assert.equal(await printedTheory.nth(1).textContent(), originalTheory[1])
   await theory.close()
+
+  const pronounce = await open(context, {
+    domain: 'alphabetisation', topic: 'alpha-voyelles', exerciseType: 'alpha-a-syllabes-prononcer',
+  })
+  await toggleLive(pronounce)
+  const syllableField = pronounce.getByRole('textbox', { name: 'Syllabes du mot 1', exact: true })
+  const initialSyllables = await syllableField.inputValue()
+  await syllableField.fill('dé-cou-page-incorrect')
+  assert.equal(await syllableField.getAttribute('aria-invalid'), 'true')
+  assert.equal(await syllableField.getAttribute('data-applied-value'), initialSyllables)
+  await pronounce.getByRole('textbox', { name: 'Mot 1', exact: true }).fill('domino')
+  const displayedSyllables = preview(pronounce).locator('.syllable-pronounce-row').first().locator('.syllable-pronounce-cell')
+  assert.deepEqual(await displayedSyllables.allTextContents(), ['do', 'mi', 'no'])
+  await syllableField.fill('dom-i-no')
+  assert.deepEqual(await displayedSyllables.allTextContents(), ['dom', 'i', 'no'])
+  await button(pronounce, 'Fermer le mode libre').click()
+  assert.deepEqual(await displayedSyllables.allTextContents(), ['dom', 'i', 'no'])
+  await pronounce.close()
 
   const grammar = await open(context, {
     domain: 'grammaire', topic: 'gram-present', exerciseType: 'gram-ex-etre-qcm-conj',
@@ -223,6 +322,54 @@ try {
   await button(grammar, 'Fermer le mode libre').click()
   assert.match(await preview(grammar).innerText(), /Dans cet atelier, je/)
   await grammar.close()
+
+  const gradedCases = [
+    { topic: 'gram-entrer-contact', subtheme: 'b1', id: 'gram-ex-b1-curriculum-a', presentation: 'match',
+      revision: 'b1-a1-curriculum-a-2026-11-14.1', field: 'Droite 1', value: 'Partenaire de l’atelier' },
+    { topic: 'gram-entrer-contact', subtheme: 'b2', id: 'gram-ex-b2-curriculum-o', presentation: 'order',
+      revision: 'b2-a1-curriculum-o-2026-11-14.1', field: 'Élément 1 de la solution', value: 'Camarades' },
+    { topic: 'gram-entrer-contact', subtheme: 'b2', id: 'gram-ex-b2-ecrire', presentation: 'open-written',
+      revision: 'b2-a1-ecrire-2026-11-14.1', field: 'Tâche', value: 'Présentez votre projet à l’atelier.' },
+    { topic: 'gram-entrer-contact', subtheme: 'b1', id: 'gram-ex-b1-curriculum-s', presentation: 'scenario-set',
+      revision: 'b1-a1-curriculum-s-2026-11-14.1', field: 'Situation', value: 'Un échange au début de l’atelier.' },
+    { topic: 'gram-présent', subtheme: 'etre', id: 'gram-ex-etre-corriger-erreur', presentation: 'correct',
+      revision: 'etre-a1-2026-11-11.1', field: 'Texte à corriger', value: 'Mes collègues est à l’atelier.' },
+  ]
+  for (const { topic, subtheme, id, presentation, revision, field, value } of gradedCases) {
+    const activity = await open(context, {
+      domain: 'grammaire', topic, gramSubtheme: subtheme, exerciseType: id,
+      grammarActivityId: id, grammarLevel: 'A1', grammarPresentation: presentation,
+      grammarBankRevision: revision, grammarPreview: true,
+    })
+    await toggleLive(activity)
+    const group = activity.getByRole('group', { name: 'Question 1', exact: true })
+    const editor = group.getByRole('textbox', { name: field, exact: true })
+    assert.notEqual(await editor.inputValue(), value, id)
+    await editor.fill(value)
+    assert((await preview(activity).innerText()).includes(value), id)
+    assert.equal(await group.getByText('Corrigé à vérifier', { exact: true }).isVisible(), true, id)
+    await button(group, 'Corrigé vérifié').click()
+    await activity.close()
+  }
+
+  const document = await open(context, {
+    domain: 'grammaire', topic: 'gram-se-presenter', gramSubtheme: 'a1', exerciseType: 'gram-ex-a1-ce-texte',
+    grammarActivityId: 'gram-ex-a1-ce-texte', grammarLevel: 'A1', grammarPresentation: 'document-set',
+    grammarBankRevision: 'a1-ce-texte-2026-11-21.1', grammarPreview: true, grammarDocumentCount: 1,
+  })
+  await toggleLive(document)
+  const text = document.getByRole('textbox', { name: 'Texte du document', exact: true })
+  const originalText = await text.inputValue()
+  const addition = 'Nous nous retrouvons à l’atelier, à quinze heures.'
+  await text.fill(addition)
+  assert.equal(await text.getAttribute('aria-invalid'), 'true')
+  await text.fill(`${originalText}\n\n${addition}`)
+  assert.equal(await text.getAttribute('aria-invalid'), 'false')
+  const numberOfTexts = document.getByRole('spinbutton', { name: 'Nombre de textes', exact: true })
+  await numberOfTexts.fill('2')
+  assert.equal(await numberOfTexts.inputValue(), '2')
+  assert((await document.locator('.print-only-sheets .worksheet-sheet').allTextContents()).join('\n').includes(addition))
+  await document.close()
 
   for (const diploma of ['afp', 'cfc']) {
     const course = await open(context, {
@@ -276,6 +423,55 @@ try {
   await civics.getByRole('textbox', { name: 'Énoncé', exact: true }).first().fill('Donnez un exemple de devoir civique.')
   assert.match(await preview(civics).innerText(), /Donnez un exemple de devoir civique/)
   await civics.close()
+
+  const mathsA5 = await open(context, {
+    domain: 'logistique-cfc', topic: 'log-cfc-theme-100', exerciseType: 'log-cfc-101-maths',
+    sheetFormat: 'a5-double-landscape', printCorrections: true,
+  })
+  await toggleLive(mathsA5)
+  const halfText = async (half) => (await mathsA5.locator(`.print-only-sheets .a5-half.is-${half}`).allTextContents()).join('\n')
+  const leftLogistics = await halfText('left')
+  await button(mathsA5, 'Droite').click()
+  const rightQuestions = mathsA5.getByRole('list', { name: 'Questions', exact: true })
+  const protectedQuestion = rightQuestions.getByRole('listitem').first()
+  await protectedQuestion.getByRole('textbox', { name: 'Énoncé', exact: true }).fill('Calculez le nombre de colis à droite.')
+  await protectedQuestion.getByRole('textbox', { name: 'Réponse', exact: true }).fill('42 colis')
+  await button(protectedQuestion, 'Corrigé vérifié').click()
+  await button(protectedQuestion, 'Verrou de la question 1').click()
+  const replacement = rightQuestions.getByRole('listitem').nth(1)
+  const replacementText = await replacement.getByRole('textbox', { name: 'Énoncé', exact: true }).inputValue()
+  await button(replacement, 'Régénérer la question').click()
+  assert.notEqual(await replacement.getByRole('textbox', { name: 'Énoncé', exact: true }).inputValue(), replacementText)
+  assert.equal(await halfText('left'), leftLogistics)
+  assert.match(await halfText('right'), /Calculez le nombre de colis à droite/)
+  assert.match(await halfText('right'), /42 colis/)
+  await mathsA5.close()
+
+  const referenceA5 = await open(context, {
+    domain: 'logistique-afp', topic: 'log-afp-theme-100', exerciseType: 'log-afp-101-theorie',
+    logistiqueTheoryView: 'resume', sheetFormat: 'a5-double-landscape',
+  })
+  await toggleLive(referenceA5)
+  await referenceA5.getByLabel('Contenu de la théorie', { exact: true })
+    .getByRole('textbox', { name: 'Titre', exact: true }).first().fill('Logistique au quotidien')
+  for (const half of ['left', 'right']) {
+    assert.match(await preview(referenceA5).locator(`.a5-half.is-${half}`).innerText(), /Logistique au quotidien/)
+  }
+  await referenceA5.emulateMedia({ media: 'print' })
+  const halves = referenceA5.locator('.print-only-sheets .a5-half')
+  const measurements = await halves.evaluateAll(async (sheets) => {
+    await document.fonts.ready
+    await Promise.all(sheets.flatMap((sheet) => [...sheet.querySelectorAll('img')]).map((image) => image.decode()))
+    return sheets.map((sheet) => {
+      const body = sheet.querySelector('.sheet-body').getBoundingClientRect()
+      const footer = sheet.querySelector('.doc-footer').getBoundingClientRect()
+      const last = Math.max(...[...sheet.querySelectorAll('.exercise-item')].map((item) => item.getBoundingClientRect().bottom))
+      return Math.min(body.bottom, footer.top) - last
+    })
+  })
+  assert(measurements.length >= 2)
+  assert(measurements.every((reserve) => reserve >= 25), JSON.stringify(measurements))
+  await referenceA5.close()
 
   const unavailable = await open(context, {
     domain: 'soutien-fr', topic: 'soutien-consonnes-iii', exerciseType: 'soutien-x-gz-associer-image',

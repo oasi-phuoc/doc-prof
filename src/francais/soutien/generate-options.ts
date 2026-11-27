@@ -15,12 +15,13 @@ export type SoutienCompleterEntry = {
   after: string
   word: string
   imageSrc?: string
+  imageHidden?: true
 }
 
 export type SoutienGenerateOptions = {
   /** Type 1 : mode libre (mots / images saisis). */
   soutienMotsLibre?: boolean
-  soutienMotsEntries?: ReadonlyArray<{ id: string; label: string; imageSrc?: string }>
+  soutienMotsEntries?: ReadonlyArray<{ id: string; label: string; imageSrc?: string; imageHidden?: true }>
   /**
    * Colonnes : type 4 → 1–2 ; types 5/6/8 → 1–3 ; type 7 → 3–5.
    * (Mélange indépendant par colonne pour le type 4.)

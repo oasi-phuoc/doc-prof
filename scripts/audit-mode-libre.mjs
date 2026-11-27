@@ -17,13 +17,15 @@ const commit = execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).
 const tree = execFileSync('git', ['rev-parse', 'HEAD^{tree}'], { encoding: 'utf8' }).trim()
 const seed = 20261126
 const root = await mkdtemp(join(tmpdir(), 'doc-prof-audit-libre-'))
-const server = await createServer({
+const externalUrl = section === 'controles' ? process.env.LIBRE_TEST_URL : undefined
+const server = externalUrl ? null : await createServer({
   cacheDir: join(root, 'vite'),
   server: { host: '127.0.0.1', port: 0, strictPort: true, hmr: false },
 })
 let base
 const profile = {
   commit, tree, node: process.version,
+  workingTreeModified: Boolean(execFileSync('git', ['status', '--porcelain'], { encoding: 'utf8' }).trim()),
   vite: JSON.parse(await readFile(new URL('../node_modules/vite/package.json', import.meta.url), 'utf8')).version,
 }
 let browser
@@ -136,6 +138,27 @@ async function auditAdditionControls(page) {
       beforeCommit.includes(expected) && afterCommit.includes(expected)) ? 'réussi' : 'échoué',
     observations,
   })
+  const timings = []
+  for (let value = 31; value < 55; value++) {
+    const start = performance.now()
+    await operand.fill(String(value))
+    const rendered = (await items.first().innerText()).replace(/\s/g, '')
+    timings.push({ value, elapsedMs: round(performance.now() - start),
+      applied: rendered.includes(`${value}+${other}=${value + other}`),
+      focusKept: await operand.evaluate((field) => field.ownerDocument.activeElement === field),
+    })
+  }
+  const ordered = timings.map(({ elapsedMs }) => elapsedMs).sort((a, b) => a - b)
+  const p95 = ordered[Math.ceil(ordered.length * 0.95) - 1]
+  rows.push({
+    control: 'Temps de saisie et rendu d’une addition',
+    status: p95 <= 150 && timings.every(({ applied, focusKept }) => applied && focusKept) ? 'réussi' : 'échoué',
+    thresholdMs: 150,
+    p95Ms: p95,
+    quantity: await items.count(),
+    method: 'Playwright, du remplissage du champ à la lecture du corrigé',
+    timings,
+  })
   return rows
 }
 
@@ -224,8 +247,8 @@ async function auditControls() {
 }
 
 try {
-  await server.listen()
-  base = `http://127.0.0.1:${server.httpServer.address().port}`
+  await server?.listen()
+  base = externalUrl ?? `http://127.0.0.1:${server.httpServer.address().port}`
   await mkdir(output, { recursive: true })
   const reports = [
     ['audit-types', () => auditTypes(server, profile, seed)],
@@ -240,6 +263,6 @@ try {
   }
 } finally {
   await browser?.close()
-  await server.close()
+  await server?.close()
   await rm(root, { recursive: true, force: true })
 }

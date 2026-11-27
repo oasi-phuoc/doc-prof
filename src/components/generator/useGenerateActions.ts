@@ -23,8 +23,8 @@ import type {
   PreviewMode,
 } from '@/math/types'
 import type { InstitutionalHeader } from '@/components/math/PrintDocumentChrome'
-import { hasFlatRegeneration, liveEditorProfile } from '@/components/generator/libre/profiles'
-import { hasLockedItems, rerollFlatActivity } from '@/components/generator/libre/flat-items'
+import { hasFlatRegeneration, isWordListProfile, liveEditorProfile } from '@/components/generator/libre/profiles'
+import { hasLockedItems, rerollFlatActivity, worksheetActivityIds } from '@/components/generator/libre/flat-items'
 import { clearLibreContentFreeze } from '@/components/generator/page-helpers'
 import { blockItemsForConfig } from '@/components/generator/sheet-items'
 import { patchBlockSeedForHalf } from '@/components/generator/sheet-format'
@@ -308,13 +308,19 @@ export function useGenerateActions({
         const block = pageBlocks(page)[targetBlock]
         if (!block || hasTcfLockedQuestions(block.tcfExercise)) return page
         const profile = liveEditorProfile(page.domain, block.exerciseType, half ? 'a5-double-landscape' : 'a4-portrait')
+        if (half && isWordListProfile(profile)) {
+          return setPageBlock(page, targetBlock, {
+            ...patchBlockSeedForHalf(block, half, nextSeed),
+            ...(half === 'right' ? { a5RightLibre: undefined } : { libreItems: undefined, libreInstruction: undefined }),
+          })
+        }
         if (hasFlatRegeneration(profile)) {
           const customizedArithmetic = block.libreItems?.some(({ libreId }) => libreId)
           if (half === 'right' && !libreMode && !block.a5RightLibre) {
             return setPageBlock(page, targetBlock, patchBlockSeedForHalf(block, half, nextSeed))
           }
           if (libreMode || customizedArithmetic && half !== 'right' || half === 'right' && block.a5RightLibre) {
-            return rerollFlatActivity(page, pageIndex, targetBlock, seed, nextSeed, target, half)
+            return rerollFlatActivity(page, pageIndex, targetBlock, seed, nextSeed, worksheetActivityIds(current), target, half)
           }
           if (half === 'left' && block.a5RightLibre) {
             return setPageBlock(page, targetBlock, {

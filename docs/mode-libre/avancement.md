@@ -23,11 +23,11 @@ Dans Chrome, la recette du site de production a vérifié la connexion administr
 | L0 — Inventaire exécutable | En cours | Référence de reprise `561d0a0`. [4 086 contextes](audit-types.md), [13 comparaisons écran et PDF](audit-controles.md) et [7 recettes témoins](audit-recettes.md). La reprise `03ec309` porte l’inventaire à 4 141 contextes. Les 15 erreurs de génération observées sont corrigées. Cinq variantes produisent zéro unité. Poursuivre les vérifications des profils, des droits individuels et des effets des réglages. |
 | L1 — Générateur et contrats d’état | En cours | Panneau unique, géométrie, listes identifiées et verrous vérifiés sur l’Algèbre. Historique et reprise locale par compte et par fiche. Étendre les preuves aux autres profils et aux droits individuels. |
 | L2 — Pilotes | En cours | Calcul en ligne, CE avec support commun et CO 1 avec QCM illustrés. Édition et correction testées sur les trois pilotes. Étendre les preuves de reprise et de verrouillage par forme. |
-| L3 — Mathématiques et tests | En cours | Les huit calculs en ligne directs et à trou recalculent leur résultat. Raccorder les autres familles d’Algèbre, la Géométrie, la Logique et les exercices TPM / TCM. |
-| L4 — Autres profils imprimables | En cours | Calligraphie, cartes, variantes Gattegno équipées de leur éditeur, mots illustrés et mots à compléter. Poursuivre les listes, associations, dictées et grilles restantes. |
-| L5 — Grammaire et TCF/TPF | En cours | Édition de la théorie grammaticale et pilotes TCF/TPF CE et CO 1. Les banques graduées, supports audio hors pilote, productions et barèmes restent à recevoir. |
-| L6 — Société et Logistique AFP/CFC | En cours | Éditeurs des références structurées et questions simples A4. Étendre la preuve de chaque variante, les activités mixtes, le contrôle de la réserve papier et les droits AFP/CFC individuels. |
-| L7 — Cas d’échec et ergonomie avancée | En cours | Récupération, isolation entre comptes et résolution de versions concurrentes vérifiées. Reste à vérifier les quotas, la durée, les médias de chaque profil, les préférences et les actions en série. |
+| L3 — Mathématiques et tests | En cours | Calculs en ligne, opérations posées, conversions, repérage, comparaison, tri et choix dans la banque de Logique. Raccorder les autres familles mathématiques et les activités restantes des évaluations TPM / TCM. |
+| L4 — Autres profils imprimables | En cours | Calligraphie, cartes, variantes Gattegno équipées de leur éditeur, mots illustrés et à compléter, grilles et découpage syllabiques, dictées et lecture de phrases de Soutien FR. Poursuivre les listes et associations restantes. |
+| L5 — Grammaire et TCF/TPF | En cours | Théorie et édition de données des dix présentations graduées. TCF/TPF CE, CO 1 à 4 et PE 4 raccordés. Poursuivre les profils de grammaire historiques, les médias et verrous des activités graduées, CO 5, les autres productions et les barèmes. |
+| L6 — Société et Logistique AFP/CFC | En cours | Édition des références structurées en A4 et double A5. Édition indépendante des questions simples sur les deux moitiés. Poursuivre les formats structurés, les activités mixtes et la mesure papier sur les autres modules. |
+| L7 — Cas d’échec et ergonomie avancée | En cours | Reprise, isolation, conflit entre onglets et quota vérifiés. Sélection et espacements par activité sur les calculs, préférences d’espacement pour les profils compatibles. Poursuivre les médias et les autres contrôles de présentation. |
 | L8 — Réception complète | À lancer après la couverture | Critères de réception, preuves par contexte, accessibilité, performances et revue. |
 
 À chaque lot, inscrire le commit vérifié, les commandes et leurs résultats, les liens vers les preuves et les éventuels cas bloqués. L’état « validé » correspond à une condition de sortie démontrée.
@@ -82,4 +82,32 @@ La suite des banques de Logistique génère les 858 types. La recette navigateur
 node tests/mode-libre/native-browser.mjs
 node tests/logistique/published-browser.mjs
 node --test tests/mode-libre/arithmetic.test.mjs tests/mode-libre/metadata.test.mjs tests/logistique/generation.test.mjs tests/interactive/fiches-access.test.mjs
+```
+
+## Couverture et recettes du 27 novembre
+
+L’inventaire sur `123af49` compte 4 141 contextes de sélection, dont 4 097 générables et 5 sans unité. Le registre attribue un profil d’édition directe à 2 356 contextes en A4 et à 8 en double A5. Il reste 1 741 contextes générables à raccorder en A4 et 4 089 en double A5 dans l’inventaire par format. La présence d’un profil indique son raccordement logiciel. Les essais ci-dessous établissent les parcours vérifiés.
+
+- Les 13 comparaisons de l’audit Algèbre et Logistique AFP/CFC gardent le contenu, le PDF et les dimensions du cadre à l’ouverture de Libre. Les trois effets vérifiés sont le nombre de questions, l’absence du contrôle audio en addition et le recalcul du premier opérande.
+- Les dix recettes témoins passent après réécriture et réouverture. Elles comprennent les recettes historiques Logistique AFP et CFC et le verrou de la demi-feuille droite en double A5.
+- Les tests des calculs vérifient le reste de la division posée, la conversion de longueur et l’isolement des espacements entre deux activités. La sélection filtrée conserve toutes les questions sur le papier. Le verrouillage et le tirage de la sélection s’annulent chacun en une opération.
+- Les essais navigateur vérifient la modification d’une cellule, la casse et la correction de la grille, la portée d’un fichier image et le refus d’un SVG importé. Ils vérifient également le choix d’une figure en Logique, l’instantané d’une question de grammaire et le rattachement de la question à la piste audio après suppression d’une autre piste.
+- Le test de quota IndexedDB conserve à la fois la révision précédente sur l’appareil et la nouvelle saisie dans la fiche ouverte quand l’écriture échoue. Les suites de Grammaire vérifient les contrats et la pagination sur 601 offres.
+
+Les essais complémentaires du repère vérifient un seul éditeur de questions, la conservation des droites et une largeur SVG imprimée à moins de 0,6 mm de la largeur déclarée. Les suites Worker en base SQLite locale vérifient la conservation du double A5 et de ses verrous après lecture et écriture client, le rejet des identifiants dupliqués et l’isolation entre deux enseignants dotés de droits Logistique AFP et CFC distincts.
+
+Les nouveaux parcours Chromium vérifient les syllabes saisies dans un mot, l’édition des associations de grammaire, l’ordre des tokens, la production écrite, les dialogues, les textes à corriger et la conservation d’un document modifié lors de l’ajout d’un second. Ils vérifient aussi le verrou d’une question de calcul Logistique CFC sur la moitié droite et un tirage ciblé qui laisse la moitié gauche intacte.
+
+La pagination du résumé AFP 101 en double A5 utilise une estimation adaptée à sa largeur et à la hauteur réellement disponible. La recette imprime les deux moitiés et contrôle les 25 px de réserve après chargement des images.
+
+```sh
+node scripts/audit-mode-libre.mjs /tmp/doc-prof-libre types
+node scripts/audit-mode-libre.mjs /tmp/doc-prof-libre recettes
+node scripts/audit-mode-libre.mjs /tmp/doc-prof-libre controles
+node tests/mode-libre/arithmetic-browser.mjs
+node tests/mode-libre/native-browser.mjs
+node tests/mode-libre/structured-browser.mjs
+node tests/mode-libre/draft-browser.mjs
+node scripts/test-grammar-contracts.cjs
+node scripts/test-grammar-pagination.cjs
 ```

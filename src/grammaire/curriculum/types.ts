@@ -71,6 +71,7 @@ export type GrammarQuestion = {
   id: string
   presentation: GrammarPresentation
   unit: GrammarUnit
+  libreSegmentShown?: true
   options?: GrammarChoice[]
   tokens?: Array<{ id: string; text: string; category: PhraseCategory }>
   rightOptions?: GrammarChoice[]

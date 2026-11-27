@@ -21,6 +21,8 @@ function validId(id: unknown): id is string {
 
 function validTcfMetadata(value: unknown): boolean {
   if (!record(value) || !Array.isArray(value.questions)) return true
+  if (value.libreSupportEdited !== undefined && (value.libreSupportEdited !== true || value.competence !== 'PE' || !record(value.support))) return false
+  if (value.libreSupportReview !== undefined && (value.libreSupportEdited !== true || typeof value.libreSupportReview !== 'boolean')) return false
   const source = (image: unknown) => typeof image !== 'string' || !image.startsWith('data:') || validLibreRaster(image)
   const ids = new Set<string>()
   for (const question of value.questions as unknown[]) {
@@ -72,10 +74,22 @@ export function validLibreMetadata(pages: readonly unknown[]): boolean {
     for (const gap of [block.questionGapPx, block.columnGapPx]) {
       if (gap !== undefined && (typeof gap !== 'number' || !Number.isInteger(gap) || gap < 0 || gap > 32)) return false
     }
+    if (Array.isArray(block.coordQuestionsLibre)) {
+      const questions = new Set<string>()
+      for (const question of block.coordQuestionsLibre as unknown[]) {
+        if (!record(question) || (question.libreId === undefined && question.correctionPending === undefined)) continue
+        if (!validId(question.libreId) || questions.has(question.libreId) ||
+          typeof question.prompt !== 'string' || typeof question.answer !== 'string' ||
+          (question.correctionPending !== undefined && typeof question.correctionPending !== 'boolean')) return false
+        questions.add(question.libreId)
+      }
+    }
     if (block.libreId !== undefined && !registerActivity(block.libreId)) return false
     for (const entries of [block.soutienMotsEntries, block.soutienCompleterEntries]) {
       if (Array.isArray(entries) && entries.some((entry: unknown) => record(entry) && entry.libreImage !== undefined &&
         (entry.libreImage !== true || typeof entry.id !== 'string' || !validLibreRaster(entry.imageSrc)))) return false
+      if (Array.isArray(entries) && entries.some((entry: unknown) => record(entry) && entry.imageHidden !== undefined &&
+        (entry.imageHidden !== true || entry.imageSrc !== undefined || entry.libreImage !== undefined))) return false
     }
     if (block.a5RightLibre !== undefined) {
       const right = block.a5RightLibre

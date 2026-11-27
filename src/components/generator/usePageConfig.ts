@@ -1,5 +1,6 @@
 import { grammarPageBreakQuestionId } from '@/grammaire/curriculum/pagination'
-import { generateGrammarSelection, grammarRequestKey } from '@/grammaire/curriculum/generate'
+import { generateGrammarSelection, grammarRequestKey, grammarSelectionCount } from '@/grammaire/curriculum/generate'
+import { grammarGroups } from '@/grammaire/curriculum/scenario'
 import { GrammarCurriculumError } from '@/grammaire/curriculum/types'
 import { useEffect, type Dispatch, type SetStateAction } from 'react'
 import {
@@ -13,6 +14,8 @@ import {
 import { isInlineArithmetic, isWordListProfile, liveEditorProfile, opensWithoutOverlay, writesNativePayload } from '@/components/generator/libre/profiles'
 import { hasLockedItems, identifyItems, trimUnlockedItems } from '@/components/generator/libre/flat-items'
 import { gridCells, withGridCells } from '@/components/generator/libre/word-list'
+import { syllableRows, replaceSyllableRows } from '@/components/generator/libre/syllable-rows'
+import type { SpacingPreferences } from '@/components/generator/libre/preferences'
 import { blockItemsForConfig } from '@/components/generator/sheet-items'
 import { defaultCoordQuestionReply } from '@/components/generator/WorksheetSheet'
 import { isPhraseLibreEditable } from '@/francais/PhraseLibreEditor'
@@ -60,6 +63,7 @@ export type UsePageConfigParams = {
   inlineArithmetic: boolean
   doubleA5: boolean
   editorProfile: ReturnType<typeof liveEditorProfile>
+  spacingForType: (type: string) => SpacingPreferences
   isPhraseDomain: boolean
   isCalliDomain: boolean
   isJeuxDomain: boolean
@@ -79,6 +83,7 @@ export function usePageConfig({
   inlineArithmetic,
   doubleA5,
   editorProfile,
+  spacingForType,
   isPhraseDomain,
   isCalliDomain,
   isJeuxDomain,
@@ -93,49 +98,68 @@ export function usePageConfig({
       if (!window.confirm('Remplacer cette activité et ses questions verrouillées ?')) return
     }
     const count = patch.count
-    if (isWordListProfile(editorProfile) &&
-      activeSheet && activeBlock.libreItems?.length && !patch.libreItems && !patch.exerciseType &&
+    const rightGrid = doubleA5 ? activeBlock.a5RightLibre : undefined
+    if ((isWordListProfile(editorProfile) || editorProfile === 'syllabes-audio') &&
+      activeSheet && (activeBlock.libreItems?.length || rightGrid?.items.length) && !patch.libreItems && !patch.exerciseType &&
       (count !== undefined || patch.columns !== undefined)) {
-      const previous = activeBlock.libreItems
       const nextBlock = { ...activeBlock, ...patch, libreItems: undefined }
-      const localSeed = seed + pageIndex * 7919 + safeBlockIndex * 10007 + (nextBlock.contentSeed ?? 0)
-      const generated = buildPage(pageAsConfig(activeSheet, nextBlock), localSeed, 1, seed).items
-      const removed = previous.some((item, index) => gridCells(item).length > (generated[index] ? gridCells(generated[index]!).length : 0))
-      if (removed && !window.confirm('Réduire la grille et retirer les dernières cases ?')) return
-      patch = { ...patch, libreItems: generated.map((item, index) => {
-        const old = previous[index]
-        if (!old || item.layout !== old.layout) return item
-        const newCells = gridCells(item).map((cell, position) => gridCells(old)[position] ?? cell)
-        return withGridCells({ ...old, letterGridCols: item.letterGridCols }, newCells)
-      }) }
+      const pageSeed = seed + pageIndex * 7919 + safeBlockIndex * 10007
+      const config = pageAsConfig(activeSheet, nextBlock)
+      function resizeGrid(previous: MathItem[], localSeed: number) {
+        const generated = buildPage(config, pageSeed + localSeed, 1, seed).items
+        const readRows = editorProfile === 'syllabes-audio' ? syllableRows : gridCells
+        const removed = previous.some((item, index) => readRows(item).length > (generated[index] ? readRows(generated[index]!).length : 0))
+        const items = generated.map((item, index) => {
+          const old = previous[index]
+          if (!old || item.layout !== old.layout) return item
+          if (editorProfile === 'syllabes-audio') {
+            const existing = syllableRows(old)
+            return replaceSyllableRows({ ...old, letterGridCols: item.letterGridCols },
+              syllableRows(item).map((row, position) => existing[position] ?? row))
+          }
+          const existing = gridCells(old)
+          return withGridCells({ ...old, letterGridCols: item.letterGridCols }, gridCells(item).map((cell, position) => existing[position] ?? cell))
+        })
+        return { items, removed }
+      }
+      const localSeed = nextBlock.contentSeed ?? 0
+      const left = activeBlock.libreItems?.length ? resizeGrid(activeBlock.libreItems, localSeed) : undefined
+      const right = rightGrid ? resizeGrid(rightGrid.items, nextBlock.contentSeedTwin ?? localSeed) : undefined
+      if ((left?.removed || right?.removed) && !window.confirm('Réduire la grille et retirer les dernières cases ?')) return
+      patch = { ...patch,
+        ...(left ? { libreItems: left.items } : {}),
+        ...(rightGrid && right ? { a5RightLibre: { ...rightGrid, items: right.items } } : {}),
+      }
     }
     const grammar = activeBlock.grammarSnapshot
-    if (editorProfile === 'grammaire-lacune' && grammar?.editedInLibre && count != null &&
-      Object.keys(patch).length === 1 && count !== grammar.questions.length) {
-      const questions = grammar.questions.slice(0, count)
-      if (count < grammar.questions.length && !window.confirm('Retirer les dernières questions de grammaire ?')) return
-      const nextBlock = { ...activeBlock, count, grammarSnapshot: undefined }
-      if (questions.length < count) {
+    if (editorProfile === 'grammaire-graduee' && grammar?.editedInLibre &&
+      Object.keys(patch).length === 1 && (count !== undefined || patch.grammarDocumentCount !== undefined)) {
+      const nextBlock = { ...activeBlock, ...patch, grammarSnapshot: undefined }
+      const target = grammarSelectionCount(nextBlock)
+      const questions = grammar.questions.slice(0, target)
+      if (target < grammar.questions.length && !window.confirm('Retirer les dernières unités de grammaire ?')) return
+      if (questions.length < target) {
         try {
           const generated = generateGrammarSelection(nextBlock, grammar.seed)
           const existing = new Set(questions.map(({ id }) => id))
-          questions.push(...generated.questions.filter(({ id }) => !existing.has(id)).slice(0, count - questions.length))
+          questions.push(...generated.questions.filter(({ id }) => !existing.has(id)).slice(0, target - questions.length))
         } catch (error) {
           if (!(error instanceof GrammarCurriculumError)) throw error
           window.alert(error.message)
           return
         }
       }
-      if (questions.length !== count) {
+      if (questions.length !== target) {
         window.alert('Cette banque ne fournit pas assez de nouvelles questions pour conserver la sélection actuelle.')
         return
       }
       patch = { ...patch, grammarSnapshot: {
-        ...grammar, requestKey: grammarRequestKey(nextBlock), questions,
+        ...grammar, requestKey: grammarRequestKey(nextBlock), questions, groups: grammarGroups(questions, grammar.presentation),
         libreCorrectionsPending: grammar.libreCorrectionsPending?.filter((id) => questions.some((question) => question.id === id)),
       } }
     }
-    const resizesAppliedItems = inlineArithmetic || editorProfile === 'question-simple' || editorProfile === 'logique-visuelle'
+    const resizesAppliedItems = inlineArithmetic || editorProfile === 'question-simple' ||
+      editorProfile === 'logique-visuelle' || editorProfile === 'mots-dans-l-ordre'
     if (resizesAppliedItems && count != null && patch.libreItems === undefined) {
       const lists = [activeBlock.libreItems ?? [], (doubleA5 ? activeBlock.a5RightLibre?.items : undefined) ?? []]
       const locked = Math.max(...lists.map((items) => items.filter(({ libreLocked }) => libreLocked).length))
@@ -180,6 +204,7 @@ export function usePageConfig({
             // Changement de type → lever le contenu figé (sinon refresh / type restent bloqués après le mode libre).
             ...(patch.exerciseType != null ? {
               ...clearLibreContentFreeze(), libreId: undefined, questionGapPx: undefined, columnGapPx: undefined,
+              ...spacingForType(patch.exerciseType),
             } : {}),
             phraseItems: patch.phraseItems!==undefined ? patch.phraseItems : undefined,
             phraseInstruction:

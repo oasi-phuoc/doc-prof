@@ -25,6 +25,7 @@ import type { CoordTool } from '@/components/generator/useCoordEditing'
 import type { Dispatch, SetStateAction } from 'react'
 
 export type CoordLibreSettingsProps = {
+  liveCoordQuestions?: boolean
   activeBlock: ExerciseBlock
   activeAsPage: PageConfig
   updatePage: (patch: Partial<ExerciseBlock>) => void
@@ -48,6 +49,7 @@ export type CoordLibreSettingsProps = {
 }
 
 export function CoordLibreSettings({
+  liveCoordQuestions,
   activeBlock,
   activeAsPage,
   updatePage,
@@ -358,13 +360,15 @@ export function CoordLibreSettings({
                       <button
                         type="button"
                         className={!activeBlock.coordLibre ? 'active' : ''}
-                        onClick={() =>
+                        onClick={() => {
+                          if (activeBlock.coordQuestionsLibre?.some((question) => question.libreId) &&
+                            !window.confirm('Revenir aux questions automatiques et remplacer les modifications de cette activité ?')) return
                           updatePage({
                             coordLibre: false,
                             coordMarks: isTransform ? [] : activeBlock.coordMarks,
                             coordQuestionsLibre: undefined,
                           })
-                        }
+                        }}
                       >
                         Automatique
                       </button>
@@ -509,12 +513,13 @@ export function CoordLibreSettings({
                       ) : null}
                     </>
                   ) : null}
-                  {(isDroites || isConstruire) && activeBlock.coordLibre ? (
+                  {(isDroites || isConstruire) && (activeBlock.coordLibre || liveCoordQuestions) ? (
                     <CoordQuestionsLibreEditor
                       questions={
                         activeBlock.coordQuestionsLibre ??
                         resizeCoordQuestionsLibre(
-                          undefined,
+                          activeSheet?.blocks.find((block, index) => (block.sourceBlockIndex ?? index) === safeBlockIndex)
+                            ?.items[0]?.coordQuestions,
                           activeBlock.count,
                           defaultCoordQuestionReply(activeBlock.exerciseType),
                         )
@@ -524,6 +529,7 @@ export function CoordLibreSettings({
                       onChange={(next) => {
                         const capped = next.slice(0, isConstruire ? 8 : 10)
                         updatePage({
+                          coordLibre: true,
                           coordQuestionsLibre: capped,
                           count: Math.max(1, capped.length),
                         })

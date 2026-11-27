@@ -289,14 +289,21 @@ function NumberListEditor({
   ariaLabel,
   min = 1,
   max = 12,
+  live,
 }: {
   values: string[]
   onChange: (next: string[]) => void
   ariaLabel: string
   min?: number
   max?: number
+  live?: {
+    fixedLength: boolean
+    field: (index: number) => ReturnType<typeof transientInput>
+    validate: (value: number, index: number) => string | undefined
+  }
 }) {
   const list = values.length > 0 ? values : ['']
+  const numbers = new Set(list.map(parseFrNumber))
   return (
     <div className="libre-number-list" role="group" aria-label={ariaLabel}>
       {list.map((v, i) => (
@@ -305,32 +312,42 @@ function NumberListEditor({
             compact
             value={v}
             ariaLabel={`${ariaLabel} ${i + 1}`}
+            applyWhileTyping={Boolean(live)}
+            transient={live?.field(i)}
+            validate={live ? (value) => live.validate(value, i) : undefined}
             onCommit={(next) => {
               const copy = [...list]
               copy[i] = next
               onChange(copy)
             }}
           />
-          <button
+          {!live?.fixedLength && <button
             type="button"
             className="libre-num-remove"
             aria-label={`Supprimer le nombre ${i + 1}`}
             disabled={list.length <= min}
-            onClick={() => onChange(list.filter((_, j) => j !== i))}
+            onClick={() => {
+              list.forEach((_, position) => live?.field(position)?.write(null))
+              onChange(list.filter((_, j) => j !== i))
+            }}
           >
             ×
-          </button>
+          </button>}
         </span>
       ))}
-      <button
+      {!live?.fixedLength && <button
         type="button"
         className="libre-num-add"
         aria-label="Ajouter un nombre"
         disabled={list.length >= max}
-        onClick={() => onChange([...list, ''])}
+        onClick={() => {
+          let fresh = 0
+          if (live) while (numbers.has(fresh)) fresh += 1
+          onChange([...list, live ? String(fresh) : ''])
+        }}
       >
         +
-      </button>
+      </button>}
     </div>
   )
 }
@@ -569,6 +586,7 @@ export function TpmLibreEditor({
   items,
   exerciseType,
   liveArithmetic = false,
+  fixedTest = false,
   onRegenerate,
   maxQuestions,
   transient,
@@ -579,6 +597,7 @@ export function TpmLibreEditor({
   items: MathItem[]
   exerciseType: string
   liveArithmetic?: boolean
+  fixedTest?: boolean
   onRegenerate?: (target?: string | readonly string[]) => void
   maxQuestions?: number
   transient?: TransientArithmeticInputs
@@ -715,14 +734,14 @@ export function TpmLibreEditor({
                 Régénérer la sélection déverrouillée
               </button>
             )}
-            <button type="button" className="button secondary small" disabled={!unlocked.length || items.length === unlocked.length}
+            {!fixedTest && <button type="button" className="button secondary small" disabled={!unlocked.length || items.length === unlocked.length}
               onClick={() => {
                 if (!window.confirm(`Supprimer ${unlocked.length} question${unlocked.length === 1 ? '' : 's'} déverrouillée${unlocked.length === 1 ? '' : 's'} ?`)) return
                 const removed = new Set(unlocked)
                 onChangeItems(items.filter((item) => !removed.has(item)))
               }}>
               Supprimer la sélection déverrouillée
-            </button>
+            </button>}
           </div>
         </details>
       )}
@@ -749,7 +768,7 @@ export function TpmLibreEditor({
               </button>
             </div>
             <div className="libre-item-body">
-              {renderFields(item, index, patch, withProps, exerciseType, onChangeItems, items, liveArithmetic, transient)}
+              {renderFields(item, index, patch, withProps, exerciseType, onChangeItems, items, liveArithmetic, transient, fixedTest)}
               {liveArithmetic && (
                 <div className="libre-unit-actions">
                   <button
@@ -761,7 +780,7 @@ export function TpmLibreEditor({
                   >
                     {item.libreLocked ? 'Verrouillée' : 'Verrouiller'}
                   </button>
-                  <details>
+                  {!fixedTest && <details>
                     <summary aria-label={`Actions de la question ${index + 1}`}>⋯</summary>
                     <div>
                       <button type="button" disabled={index === 0} onClick={() => moveItem(index, -1)}>Monter</button>
@@ -775,7 +794,7 @@ export function TpmLibreEditor({
                         Supprimer
                       </button>
                     </div>
-                  </details>
+                  </details>}
                 </div>
               )}
             </div>
@@ -840,6 +859,7 @@ function renderFields(
   items: MathItem[] = [],
   liveArithmetic = false,
   transient?: TransientArithmeticInputs,
+  fixedTest = false,
 ) {
   if (hasCscFields(item, exerciseType)) return <TcmCscFields item={item} typeId={exerciseType} change={(next) => patch(index, next)} />
   if (item.decompose) {
@@ -1809,18 +1829,33 @@ function renderFields(
   }
 
   if (item.layout === 'order') {
+    const sequence = item.sequence ?? []
+    const apply = (next: MathItem) => patch(index, liveArithmetic ? recalcTpmLibreItem(next, exerciseType) : next)
+    const isCscOrder = exerciseType === 'tcm-csc-ex06' || exerciseType === 'tcm-csc-ex25'
     return (
       <>
         <Field label="Nombres (dans le désordre)">
           <NumberListEditor
-            values={item.sequence ?? []}
+            values={sequence}
             ariaLabel={`Nombres ${index + 1}`}
             min={2}
             max={12}
-            onChange={(sequence) => patch(index, { ...item, sequence })}
+            live={liveArithmetic ? {
+              fixedLength: fixedTest,
+              field: (position) => transientInput(transient, item, `nombre-${position}`),
+              validate: (value, position) => {
+                if (value < 0 || (isCscOrder && (!Number.isInteger(value) || value > 100))) {
+                  return isCscOrder ? 'Saisissez un entier entre 0 et 100.' : 'Saisissez un nombre positif ou nul.'
+                }
+                if (sequence.some((text, other) => other !== position && parseFrNumber(text) === value)) return 'Les nombres doivent être distincts.'
+                return undefined
+              },
+            } : undefined}
+            onChange={(values) => apply({ ...item, sequence: liveArithmetic && isCscOrder
+              ? values.map((value) => String(parseFrNumber(value))) : values })}
           />
         </Field>
-        <Field label="Ordre">
+        {(!fixedTest || !liveArithmetic) && <Field label="Ordre">
           <LineSelect
             value={item.orderOp ?? '<'}
             ariaLabel={`Ordre ${index + 1}`}
@@ -1829,7 +1864,7 @@ function renderFields(
               { value: '>', label: 'décroissant (>)' },
             ]}
             onChange={(orderOp) =>
-              patch(index, {
+              apply({
                 ...item,
                 orderOp: orderOp as '<' | '>',
                 prompt:
@@ -1839,7 +1874,7 @@ function renderFields(
               })
             }
           />
-        </Field>
+        </Field>}
         <Field label="Corrigé">
           <LineInput
             answer
@@ -1854,13 +1889,27 @@ function renderFields(
   }
 
   if (item.layout === 'compare') {
+    const isCscCompare = exerciseType === 'tcm-csc-ex07'
+    const validate = (value: number) => {
+      if (isCscCompare && (!Number.isInteger(value) || value < 0 || value > 100)) return 'Saisissez un entier entre 0 et 100.'
+      if (value < 0 && exerciseType !== 'relatifs-comparer') return 'Saisissez un nombre positif ou nul.'
+      return undefined
+    }
+    function change(side: 'left' | 'right', raw: string) {
+      const text = liveArithmetic && isCscCompare ? String(parseFrNumber(raw)) : raw
+      const updated = { ...item, [side]: text, ...(side === 'left' ? { prompt: text } : {}) }
+      patch(index, liveArithmetic ? recalcTpmLibreItem(updated, exerciseType) : updated)
+    }
     return (
       <div className="libre-inline-triple is-compare">
         <NumInput
           compact
           value={item.left ?? ''}
           ariaLabel={`Gauche ${index + 1}`}
-          onCommit={(left) => patch(index, { ...item, left, prompt: left })}
+          applyWhileTyping={liveArithmetic}
+          transient={transientInput(transient, item, 'gauche')}
+          validate={validate}
+          onCommit={(value) => change('left', value)}
         />
         <CorrigeBox
           compact
@@ -1871,7 +1920,10 @@ function renderFields(
           compact
           value={item.right ?? ''}
           ariaLabel={`Droite ${index + 1}`}
-          onCommit={(right) => patch(index, { ...item, right })}
+          applyWhileTyping={liveArithmetic}
+          transient={transientInput(transient, item, 'droite')}
+          validate={validate}
+          onCommit={(value) => change('right', value)}
         />
       </div>
     )

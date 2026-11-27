@@ -101,6 +101,7 @@ export function assertGrammarBank(bank: GrammarBank): void {
 export function isGrammarQuestion(q: unknown): q is GrammarQuestion {
   if (!record(q) || !validGrammarUnit(q.unit) || q.id!==q.unit.id) return false
   const u=q.unit
+  if(q.libreSegmentShown!==undefined&&(q.libreSegmentShown!==true||u.kind!=='correct'||!u.error))return false
   if (q.presentation==='scenario-set') {
     if(u.kind!=='scenario'||q.readingPart!==undefined)return false
     if(u.contract==='open')return q.scenarioPart===undefined&&q.scenarioOptions===undefined

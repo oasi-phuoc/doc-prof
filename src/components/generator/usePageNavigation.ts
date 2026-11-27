@@ -1,5 +1,6 @@
 import { isInlineArithmetic } from '@/components/generator/libre/profiles'
 import { hasLockedItems } from '@/components/generator/libre/flat-items'
+import type { SpacingPreferences } from '@/components/generator/libre/preferences'
 import type { Dispatch, SetStateAction } from 'react'
 import { useEffect } from 'react'
 import {
@@ -78,6 +79,7 @@ export type UsePageNavigationParams = {
   activeBlock: ExerciseBlock
   pageIndex: number
   pageExerciseBlocks: ExerciseBlock[]
+  spacingForType: (type: string) => SpacingPreferences
   worksheets: WorksheetPage[]
   soutienSelection:
     | ReturnType<typeof resolveSoutienSelection>
@@ -102,6 +104,7 @@ export function usePageNavigation({
   activeBlock,
   pageIndex,
   pageExerciseBlocks,
+  spacingForType,
   worksheets,
   soutienSelection,
   soutienParsed,
@@ -156,6 +159,7 @@ export function usePageNavigation({
       exerciseType: nextType.id,
       difficulty: activeBlock.difficulty,
       count,
+      ...spacingForType(nextType.id),
       columns: fields.columns ?? nextType.preferredColumns ?? 2,
       track: nextType.track,
       verbGroup: activeBlock.verbGroup,

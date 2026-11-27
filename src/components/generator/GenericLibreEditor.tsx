@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import type { MathItem } from '@/math/types'
 import { LogistiqueImageFields, type LogistiquePhotoChoice } from './LogistiqueImageFields'
 
@@ -14,6 +13,9 @@ export function GenericLibreEditor({
   onChangeInstruction,
   onChangeItems,
   direct = false,
+  fields,
+  writeField,
+  onRegenerate,
 }: {
   instruction: string
   items: MathItem[]
@@ -22,8 +24,10 @@ export function GenericLibreEditor({
   onChangeInstruction: (value: string) => void
   onChangeItems: (items: MathItem[]) => void
   direct?: boolean
+  fields?: Record<string, string>
+  writeField?: (id: string, value: string | null) => void
+  onRegenerate?: (itemId: string) => void
 }) {
-  const [invalidChoice, setInvalidChoice] = useState<{ id: string; index: number; text: string } | null>(null)
   const patchItem = (index: number, patch: Partial<MathItem>) => {
     onChangeItems(items.map((item, i) => (i === index ? { ...item, ...patch } : item)))
   }
@@ -31,9 +35,9 @@ export function GenericLibreEditor({
   return (
     <div className="quad-libre-block generic-libre-editor">
       <b>Contenu de la fiche</b>
-      <p className="type-hint muted">
+      {!direct && <p className="type-hint muted">
         La consigne est en haut. Chaque question a son énoncé, puis la réponse du corrigé.
-      </p>
+      </p>}
       <label className="libre-field is-line">
         <span>Consigne</span>
         <textarea
@@ -93,29 +97,32 @@ export function GenericLibreEditor({
               {item.options && item.options.length > 0 ? (
                 <div className="libre-options">
                   <b>Choix</b>
-                  {item.options.map((opt, oi) => (
-                    <label key={oi} className="libre-field is-line">
+                  {item.options.map((opt, oi) => {
+                    const id = `${item.libreId}:choix:${oi}`
+                    const invalid = fields?.[id]
+                    return <label key={oi} className="libre-field is-line">
                       <span>{`Choix ${String.fromCharCode(65 + oi)}`}</span>
                       <input
                         className="libre-line-input"
                         type="text"
-                        value={invalidChoice && invalidChoice.id === item.libreId && invalidChoice.index === oi ? invalidChoice.text : opt}
-                        aria-invalid={Boolean(invalidChoice && invalidChoice.id === item.libreId && invalidChoice.index === oi)}
+                        value={invalid ?? opt}
+                        aria-invalid={invalid !== undefined}
                         data-applied-value={direct ? opt : undefined}
                         onChange={(event) => {
                           const options = [...(item.options ?? [])]
                           const text = event.target.value
                           if (direct && item.libreId && (!text.trim() || options.some((option, i) => i !== oi && option.trim() === text.trim()))) {
-                            setInvalidChoice({ id: item.libreId, index: oi, text })
+                            writeField?.(id, text)
                             return
                           }
                           options[oi] = text
-                          setInvalidChoice(null)
+                          writeField?.(id, null)
                           patchItem(index, { options, ...(direct && item.answer === opt ? { answer: text } : {}) })
                         }}
                       />
+                      {invalid !== undefined && <span role="alert" className="libre-field-error">Saisissez un choix distinct et non vide.</span>}
                     </label>
-                  ))}
+                  })}
                   {direct && item.layout === 'select' ? (
                     <label className="libre-field is-line">
                       <span>Bonne réponse</span>
@@ -125,9 +132,6 @@ export function GenericLibreEditor({
                         {item.options.map((option) => <option key={option} value={option}>{option}</option>)}
                       </select>
                     </label>
-                  ) : null}
-                  {invalidChoice?.id === item.libreId && invalidChoice ? (
-                    <p role="alert" className="questions-overflow-hint">Saisissez un choix distinct et non vide.</p>
                   ) : null}
                 </div>
               ) : null}
@@ -142,6 +146,20 @@ export function GenericLibreEditor({
                 photos={logistiquePhotos.byModule.get(item.logistiqueSource?.module ?? logistiquePhotos.defaultModule) ?? []}
                 image={item.logistiqueImage}
                 onChange={(logistiqueImage) => patchItem(index, { logistiqueImage })} />}
+              {direct && item.libreId && onRegenerate ? (
+                <div className="libre-unit-actions">
+                  <button type="button" className="button" aria-pressed={Boolean(item.libreLocked)}
+                    aria-label={`Verrou de la question ${index + 1}`}
+                    onClick={() => patchItem(index, { libreLocked: !item.libreLocked })}>
+                    {item.libreLocked ? 'Verrouillée' : 'Verrouiller'}
+                  </button>
+                  <button type="button" className="button" disabled={item.libreLocked}
+                    onClick={() => {
+                      item.options?.forEach((_, position) => writeField?.(`${item.libreId}:choix:${position}`, null))
+                      onRegenerate(item.libreId!)
+                    }}>Régénérer la question</button>
+                </div>
+              ) : null}
             </div>
           </li>
         ))}

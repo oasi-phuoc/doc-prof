@@ -60,6 +60,23 @@ async function waitForDraft(page, worksheet, count, owner = 'alice') {
   }
 }
 
+async function openSpacingFixture(context, owner, id) {
+  const page = await context.newPage()
+  await page.addInitScript(storeAccount, owner)
+  await page.addInitScript(({ owner, id }) => history.replaceState({ ...history.state, clairfleFiche: {
+    id, name: 'Espacements témoins', sessionOwner: owner,
+    recipe: {
+      version: 1, seed: 20261127, institutional: {}, evalMode: false, pointsPerQuestion: 1,
+      libreMode: false, libreSnapshot: null, printCorrections: false,
+      pages: [{ domain: 'algèbre', topic: 'addition', exerciseType: 'addition-ligne',
+        difficulty: 'moyen', count: 3, columns: 1, questionGapPx: 8 }],
+    },
+  } }, ''), { owner, id })
+  await page.goto('/generateur')
+  await page.getByRole('button', { name: 'Mode libre', exact: true }).click()
+  return page
+}
+
 try {
   await server?.listen()
   const baseURL = process.env.BASE_URL ?? 'http://127.0.0.1:' + server.httpServer.address().port
@@ -131,8 +148,30 @@ try {
   await other.getByText(/Le stockage local est plein/).waitFor()
   assert.equal(await firstNumber(other).inputValue(), '84')
   assert.equal((await waitForDraft(other, bobWorksheet, 1, 'bob'))[0].operand, 17)
+
+  const teacher = await openSpacingFixture(context, 'alice', 'preferences-source')
+  const fieldName = 'Entre les lignes de questions'
+  const openSpacing = (tab) => tab.getByText('Espacement de l’activité', { exact: true }).click()
+  const gap = (tab) => tab.getByRole('combobox', { name: fieldName, exact: true })
+  const addExercise = (tab) => tab.getByRole('button', { name: '+ Exercice', exact: true }).click()
+  await openSpacing(teacher)
+  await gap(teacher).selectOption('24')
+  await teacher.close()
+  const reopened = await openSpacingFixture(context, 'alice', 'preferences-reopen')
+  assert.equal(await gap(reopened).inputValue(), '8')
+  await addExercise(reopened)
+  assert.equal(await gap(reopened).inputValue(), '24')
+  await reopened.close()
+  const separate = await openSpacingFixture(context, 'bob', 'preferences-separate')
+  assert.equal(await gap(separate).count(), 0)
+  await openSpacing(separate)
+  assert.equal(await gap(separate).inputValue(), '8')
+  await addExercise(separate)
+  assert.equal(await gap(separate).inputValue(), '')
+  await separate.close()
+
   await context.close()
-  console.log('Reprise, valeurs transitoires, divergence entre onglets, quota et isolation de compte vérifiés.')
+  console.log('Reprise, saisies transitoires, quotas, préférences et isolation entre comptes vérifiés.')
 } finally {
   await browser?.close()
   await server?.close()

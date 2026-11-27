@@ -318,6 +318,8 @@ export type CoordQuestion = {
   answer: string
   kind?: CoordShape
   reply?: CoordReply
+  libreId?: string
+  correctionPending?: boolean
 }
 
 /** Deux colonnes de données (transformations types 3–4), sans bloc questions. */
@@ -1111,7 +1113,7 @@ export type ExerciseBlock = {
    */
   soutienMotsLibre?: boolean
   /** Entrées libre type 1 — mot + image (max. 16). */
-  soutienMotsEntries?: Array<{ id: string; label: string; imageSrc?: string }>
+  soutienMotsEntries?: Array<{ id: string; label: string; imageSrc?: string; imageHidden?: true }>
   /** Soutien FR type 5 : édition libre. */
   soutienCompleterLibre?: boolean
   /** Entrées libre type 5 — article + parties + image. */
@@ -1123,6 +1125,7 @@ export type ExerciseBlock = {
     after: string
     word: string
     imageSrc?: string
+    imageHidden?: true
   }>
   /**
    * Soutien FR type 9 / 15 : mots à exclure (déjà tirés en types 1 et 5

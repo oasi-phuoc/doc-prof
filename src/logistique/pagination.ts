@@ -12,7 +12,7 @@ export type LogistiquePageLayout = {
 // Espace imprimable après marges, pied de page et réserve de bas de page.
 const A4_CONTENT = 946
 const A4_HEADER = 287
-const A5_CONTENT = 665
+const A5_CONTENT = 654
 const A5_HEADER = 275
 
 function lineCount(text: string, width: number): number {
@@ -68,16 +68,16 @@ function wrappedFigureHeight(image: GrammarTheoryBlock, prose: GrammarTheoryBloc
   return 12 + Math.max(figure, Math.max(flow, lineCount(text, width)) * lineHeight)
 }
 
-function theoryHeight(block: GrammarTheoryBlock, width: number, scale: number): number {
+function theoryHeight(block: GrammarTheoryBlock, width: number, scale: number, a5: boolean): number {
   const lines = (text: string, columns = width) => lineCount(text.replace(/\{\/?g\}/g, ''), columns) * 26 * scale
   switch (block.kind) {
     case 'heading':
       return 12 + (block.sub ? 28 : 32) * scale * lineCount(block.text, width * 0.8)
     case 'image':
-      return 184 + lines(block.caption)
+      return (a5 ? 190 : 184) + lines(block.caption, a5 ? width * 0.9 : width)
     case 'image-row': {
       const cellWidth = width * 0.9 / block.cells.length
-      return 143 + Math.max(...block.cells.map(({ caption, description }) =>
+      return (a5 ? 151 : 143) + Math.max(...block.cells.map(({ caption, description }) =>
         lines(caption, cellWidth) + (description ? lines(description, cellWidth) : 0)))
     }
     case 'paragraph':
@@ -93,7 +93,7 @@ function theoryHeight(block: GrammarTheoryBlock, width: number, scale: number): 
       return 18 + [block.headers, ...block.rows].reduce((sum, row) => sum + 14 +
         Math.max(...row.map((cell) => lines(cell, width * 0.84 / row.length))), 0)
     case 'section':
-      return 58 + block.blocks.reduce((sum, child) => sum + theoryHeight(child, width, scale), 0)
+      return 58 + block.blocks.reduce((sum, child) => sum + theoryHeight(child, width, scale, a5), 0)
     case 'examples':
       return 30 + block.items.reduce((sum, item) => sum + lines(typeof item === 'string' ? item : item.text), 0)
     case 'tab':
@@ -108,7 +108,7 @@ function height(item: MathItem, a5: boolean, scale: number): number {
   const glossaryFigure = item.logistiqueGlossaryFigure
   if (glossaryFigure && item.theoryBlock) {
     const diagram = glossaryFigure.src.includes('-schema-')
-    const textHeight = theoryHeight(item.theoryBlock, width * (diagram ? 1 : 0.67), scale)
+    const textHeight = theoryHeight(item.theoryBlock, width * (diagram ? 1 : 0.67), scale, a5)
     const caption = glossaryFigure.caption
     const captionHeight = caption ? lineCount(caption, width * (diagram ? 0.65 : 0.24)) * 18 * scale : 0
     return diagram ? 153 + textHeight + captionHeight : Math.max(a5 ? 84 : 105, textHeight) + captionHeight
@@ -116,7 +116,7 @@ function height(item: MathItem, a5: boolean, scale: number): number {
   if (a5 && (item.theoryBlock?.kind === 'table' || item.theoryBlock?.kind === 'list')) {
     return a5TheoryHeight(item.theoryBlock, scale)
   }
-  if (item.theoryBlock) return theoryHeight(item.theoryBlock, width, scale)
+  if (item.theoryBlock) return theoryHeight(item.theoryBlock, a5 ? width * 0.9 : width, scale, a5)
   const image = item.logistiqueImage
   const captionColumns = image ? Math.max(8, (image.width - 12) / (7 * scale)) : 1
   const imageHeight = image ? (a5 ? 99 : 136) + (image.caption ? lineCount(image.caption, captionColumns) * 17 * scale : 0) : 0

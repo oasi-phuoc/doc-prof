@@ -38,7 +38,8 @@ try {
       },
     } }
     return { close: () => db.close(), async request(method, path = '/fiches', body, role = 'full') {
-      const headers = { 'Content-Type': 'application/json', ...(role ? { Authorization: `Bearer ${role}-fixture` } : {}) }
+      const token = role?.startsWith('cfu_') ? role : role ? `${role}-fixture` : ''
+      const headers = { 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}) }
       const response = await worker.fetch(new Request(`https://fiches.example${path}`, { method, headers, ...(body ? { body: JSON.stringify(body) } : {}) }), env)
       return { status: response.status, body: await response.json() }
     } }
@@ -113,6 +114,68 @@ try {
       assert.deepEqual((await h.request('GET')).body.fiches, [])
       assert.equal((await h.request('POST', '/fiches', data('tcf-csc', 'tpf'))).status, 403)
       assert.equal((await h.request('PUT', `/fiches/${restricted.body.fiche.id}`, data('tcf-csc'))).status, 403)
+    } finally { h.close() }
+  })
+
+  await test('le client retrouve le double A5 et les verrous après un aller-retour Worker', async () => {
+    const { parseFicheRecipe, buildFicheRecipe } = await vite.ssrLoadModule('/src/fiches/recipe.ts')
+    const h = harness()
+    try {
+      const base = data('algèbre')
+      const original = await h.request('POST', '/fiches', base, 'partial')
+      assert.equal(original.status, 201)
+      assert(parseFicheRecipe(original.body.fiche.recipe))
+      const half = {
+        id: 'droite-temoin', instruction: 'Calculez.', items: [
+          { layout: 'inline', op: '+', a: 9, b: 7, result: 16, answer: '16', libreId: 'addition-temoin', libreLocked: true },
+        ],
+      }
+      const enriched = parseFicheRecipe({ ...base.recipe, sheetFormat: 'a5-double-landscape', pages: [{
+        domain: 'algèbre', topic: 'addition', exerciseType: 'addition-ligne', difficulty: 'moyen', count: 1, columns: 1,
+        a5RightLibre: half,
+      }] })
+      assert(enriched)
+      const route = `/fiches/${original.body.fiche.id}`
+      const saved = await h.request('PUT', route, { ...base, recipe: buildFicheRecipe(enriched) }, 'partial')
+      assert.equal(saved.status, 200)
+      const listed = await h.request('GET', '/fiches', undefined, 'partial')
+      const parsed = parseFicheRecipe(listed.body.fiches[0].recipe)
+      assert.equal(parsed.sheetFormat, enriched.sheetFormat)
+      assert.deepEqual(parsed.pages[0].a5RightLibre, half)
+      const invalid = structuredClone(saved.body.fiche.recipe)
+      invalid.pages[0].a5RightLibre.items.push(half.items[0])
+      assert.equal(parseFicheRecipe(invalid), null)
+      assert.equal((await h.request('PUT', route, { ...base, recipe: invalid }, 'partial')).status, 400)
+    } finally { h.close() }
+  })
+
+  await test('les comptes enseignants AFP et CFC gardent leurs droits et fiches distincts', async () => {
+    const h = harness()
+    try {
+      const create = async (diploma) => {
+        const credentials = { email: `test-libre-${diploma}@admin.vs.ch`, password: 'Temoin-2026!' }
+        const account = await h.request('POST', '/users', { ...credentials, givenName: 'Enseignant', familyName: diploma, domains: [`logistique-${diploma}`] }, 'admin')
+        assert.equal(account.status, 201)
+        const login = await h.request('POST', '/auth/login', credentials, null)
+        assert.equal(login.status, 200)
+        return login.body.token
+      }
+      const [afp, cfc] = await Promise.all([create('afp'), create('cfc')])
+      const load = (diploma) => ({ ...data(`logistique-${diploma}`), recipe: {
+        ...data(`logistique-${diploma}`).recipe,
+        pages: [{
+          domain: `logistique-${diploma}`, topic: `log-${diploma}-theme-100`, exerciseType: `log-${diploma}-101-theorie`,
+          difficulty: 'moyen', count: 1, columns: 1,
+          libreItems: [{ layout: 'theory', answer: '', theoryBlock: { kind: 'heading', text: `Cours ${diploma}` } }],
+        }],
+      } })
+      const own = await h.request('POST', '/fiches', load('afp'), afp)
+      assert.equal(own.status, 201)
+      assert.equal((await h.request('POST', '/fiches', load('cfc'), afp)).status, 403)
+      assert.equal((await h.request('POST', '/fiches', load('cfc'), cfc)).status, 201)
+      const other = await h.request('GET', '/fiches', undefined, cfc)
+      assert.deepEqual(other.body.fiches.map((fiche) => fiche.domains), [['logistique-cfc']])
+      assert.equal((await h.request('PUT', `/fiches/${own.body.fiche.id}`, load('afp'), cfc)).status, 404)
     } finally { h.close() }
   })
 } finally {

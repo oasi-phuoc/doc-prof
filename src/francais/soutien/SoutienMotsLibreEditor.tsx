@@ -7,6 +7,7 @@ export type SoutienMotEntry = {
   id: string
   label: string
   imageSrc?: string
+  imageHidden?: true
   libreImage?: true
 }
 
@@ -125,6 +126,7 @@ export function SoutienMotsLibreEditor({
           const inputId = `${baseId}-img-${index}`
           return (
             <li className="game-entry-row" key={entry.id}>
+              <div className="vocab-occurrence-image">
               <button
                 type="button"
                 className={`game-entry-thumb${entry.imageSrc ? ' has-image' : ''}`}
@@ -137,6 +139,11 @@ export function SoutienMotsLibreEditor({
               >
                 {entry.imageSrc ? <img src={entry.imageSrc} alt="" /> : <span aria-hidden>+</span>}
               </button>
+              {entry.imageSrc && !entry.imageHidden && (
+                <button type="button" className="game-entry-clear" aria-label={`Supprimer l’image du mot ${index + 1}`}
+                  onClick={() => updateAt(index, { imageSrc: undefined, imageHidden: true, libreImage: undefined })}>×</button>
+              )}
+              </div>
               <input
                 ref={(el) => {
                   fileRefs.current[index] = el
@@ -162,8 +169,8 @@ export function SoutienMotsLibreEditor({
                   updateAt(index, {
                     label,
                     // Si pas d’image perso (data URL), retenter la banque sur le nouveau libellé.
-                    imageSrc:
-                      entry.imageSrc?.startsWith('data:')
+                    imageSrc: entry.imageHidden ? undefined
+                      : entry.imageSrc?.startsWith('data:')
                         ? entry.imageSrc
                         : soutienImageFor(label) ?? entry.imageSrc,
                   })

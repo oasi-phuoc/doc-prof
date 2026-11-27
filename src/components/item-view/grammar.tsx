@@ -37,7 +37,7 @@ export function GrammarQuestionView({ question:q, mode }: {question:GrammarQuest
         <ol type="A">{q.rightOptions?.map((o,index)=><li key={o.id}><b className="grammar-match-option-letter">{String.fromCharCode(65+index)}.</b> {o.text}</li>)}</ol>
       </div>
     </>:u.kind==='order'?<PhraseOrderBlock item={{layout:'phrase-order',tokens:q.tokens,answer:u.answers[0]!,responseAnswer:u.answers[0],responseVerb:u.givenVerb}} mode={mode} colorTokens={u.tokenUnit!=='clause'&&u.source.typeId!=='gram-ex-f11-curriculum-o'}/>:<>
-      <p><GrammarTextHints text={u.prompt}/></p>
+      <p>{corrected&&q.libreSegmentShown&&u.kind==='correct'&&u.error?<><GrammarTextHints text={u.prompt.slice(0,u.error.start)}/><mark>{u.error.text}</mark><GrammarTextHints text={u.prompt.slice(u.error.end)}/></>:<GrammarTextHints text={u.prompt}/>}</p>
       {u.kind==='transform'&&u.directiveDisplay!=='heading'?u.targetSubject?<p className="grammar-target-subject">Sujet à utiliser : <strong>{u.targetSubject}</strong></p>:<p className="grammar-transform-directive"><GrammarTextHints text={u.directive??''}/></p>:null}
       <div className="grammar-written-response">
         <span className={`answer-line-field${corrected?' filled':''}`}>{corrected?u.answers.join(' / '):'\u00a0'}</span>
