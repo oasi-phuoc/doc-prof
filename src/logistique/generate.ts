@@ -14,14 +14,19 @@ function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'
     case 'objectifs-apercu':
     case 'theorie':
     case 'glossaire':
-      return (unit.kind === 'theorie' && view === 'resume' ? unit.summaryBlocks ?? [] : unit.blocks).map((block, index) => ({
-        layout: 'theory',
-        prompt: `${unit.id}:${index}`,
-        answer: '',
-        theoryBlock: block.kind === 'image' ? withAssetBase(block)
-          : block.kind === 'image-row' ? { ...block, cells: block.cells.map(withAssetBase) }
-            : block,
-      }))
+      return (unit.kind === 'theorie' && view === 'resume' ? unit.summaryBlocks ?? [] : unit.blocks).map((block, index) => {
+        const term = unit.kind === 'glossaire' && block.kind === 'paragraph' ? block.text.match(/^\{g\}(.+?)\{\/g\}/)?.[1] : undefined
+        const figure = term && unit.kind === 'glossaire' ? unit.illustrations?.[term] : undefined
+        return {
+          layout: 'theory',
+          prompt: `${unit.id}:${index}`,
+          answer: '',
+          theoryBlock: block.kind === 'image' ? withAssetBase(block)
+            : block.kind === 'image-row' ? { ...block, cells: block.cells.map(withAssetBase) }
+              : block,
+          ...(figure ? { logistiqueGlossaryFigure: withAssetBase(figure) } : {}),
+        }
+      })
     case 'maths':
       return [{
         logistiqueSource,
@@ -34,8 +39,9 @@ function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'
     case 'verification':
       if (unit.gaps) {
         const answers = [...unit.gaps.answers]
-        const words = wordsRng ? shuffle(wordsRng, [...answers, ...(unit.gaps.distractors ?? [])]) : undefined
-        return [{ logistiqueSource, layout: 'text', prompt: unit.prompt, answer: unit.answer, logistiqueGaps: { answers, words } }]
+        const distractors = [...(unit.gaps.distractors ?? [])]
+        const words = wordsRng ? shuffle(wordsRng, [...answers, ...distractors]) : undefined
+        return [{ logistiqueSource, layout: 'text', prompt: unit.prompt, answer: unit.answer, logistiqueGaps: { answers, words, distractors } }]
       }
       if (unit.options?.length) {
         return [{ logistiqueSource, layout: 'select', prompt: unit.prompt, options: [...unit.options], answer: unit.answer }]
@@ -143,9 +149,7 @@ export function generateLogistique(
     title: logistiqueDocumentTitle([config]),
     instruction: eligible.length
       ? reference ? type.description
-        : gapMode === 'sans-liste' ? 'Complétez les textes.'
-          : gapMode === 'avec-liste' ? 'Complétez les textes avec les mots proposés. Utilisez chaque proposition une seule fois. Il peut rester des mots.'
-            : type.instruction
+        : gapMode ? 'Complétez les textes.' : type.instruction
       : modules.length ? 'Contenu à compléter pour cette sélection.' : 'Sélectionnez au moins un sous-thème.',
     items: selected.flatMap((unit) => unitItems(unit, config.logistiqueTheoryView, gapMode === 'avec-liste' ? rng : undefined)),
     bankQuestionCap: reference && eligible.length ? undefined : eligible.length,

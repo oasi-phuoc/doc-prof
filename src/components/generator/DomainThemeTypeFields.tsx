@@ -166,6 +166,10 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
   } = p
   const showNumberRange = !libreMode && isNumberLibreDomain &&
     exerciseTypeById[activeBlock.exerciseType]?.supportsNumberRange !== false
+  const readingQuestionCount = isGrammaireDomain && activeBlock.grammarPresentation === 'document-set'
+    ? blockItemsForConfig(worksheets, pages.indexOf(activePage), safeBlockIndex)?.items
+      .filter(item => item.grammar?.readingPart?.kind === 'question').length
+    : undefined
   const logisticsDomain = isLogistiqueDomain(activePage.domain)
   const logisticsSubthemes = logisticsDomain ? logistiqueSubthemes(activeBlock.topic) : []
   const logisticsType = logistiqueType(activeBlock.exerciseType)
@@ -360,6 +364,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
               {showPhraseParameters ? (
                 <PhrasePolarityControl
                   value={activeBlock.phrasePolarity ?? (isPhraseDomain && isNegativePhraseTheme(activeBlock.topic) ? 'negative' : 'positive')}
+                  canSelect={isGrammarOrder ? phrasePolarity => grammarEligibleCount({...activeBlock,phrasePolarity}) > 0 : undefined}
                   onChange={phrasePolarity => {
                     if (activeBlock.grammarLevel && activeBlock.libreItems?.length && !window.confirm('Ces filtres remplaceront les modifications manuelles de cet exercice. Continuer ?')) return
                     const countCap = isGrammarOrder
@@ -519,7 +524,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   })}
                 />
               ) : null}
-              {isGrammaireDomain ? <GrammarLevelControl block={activeBlock} onChange={updatePage}/> : null}
+              {isGrammaireDomain ? <GrammarLevelControl block={activeBlock} readingQuestionCount={readingQuestionCount} onChange={updatePage}/> : null}
               {isGrammaireDomain && showGrammarCoLevel && grammarCoAudios.length>0 ? (
                 <SelectBox label="Audio" value={activeBlock.grammarCoAudioId??grammarCoAudios[0]!.exercise.id}
                   onChange={grammarCoAudioId=>updatePage({

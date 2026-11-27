@@ -255,13 +255,16 @@ import { dossierExercises300 } from './banks/dossiers-300-v005.generated.ts'
 import { module306 as illustrated306 } from './banks/module-306-v004.generated.ts'
 import { supportsGlossaryAdditions } from './banks/supports-glossaires-v002'
 import { logistiqueGapExercises } from './banks/textes-a-trous-v006'
+import { illustrateLogistiqueGlossaries } from './banks/glossaires-illustres-v003'
+import type { LogistiqueGlossaryFigure } from '@/math/types'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
 
 type ReferenceBlock = Exclude<GrammarTheoryBlock, { kind: 'page' }>
 
 type UnitContent =
-  | { kind: 'objectifs-apercu' | 'glossaire'; blocks: ReferenceBlock[] }
+  | { kind: 'objectifs-apercu'; blocks: ReferenceBlock[] }
+  | { kind: 'glossaire'; blocks: ReferenceBlock[]; illustrations?: Record<string, LogistiqueGlossaryFigure> }
   | { kind: 'theorie'; blocks: ReferenceBlock[]; summaryBlocks?: ReferenceBlock[] }
   | { kind: 'maths'; prompt: string; calculation: string; answer: string; theorySection?: string }
   | { kind: 'verification'; prompt: string; answer: string; options?: readonly string[]; theorySection?: string;
@@ -597,6 +600,11 @@ const gapExercisesPublication: LogistiquePublication = {
   units: [...supportsGlossariesPublication.units, ...logistiqueGapExercises],
 }
 
+const illustratedGlossariesPublication: LogistiquePublication = {
+  revision: 'logistique-glossaires-illustres-v003',
+  units: illustrateLogistiqueGlossaries(gapExercisesPublication.units),
+}
+
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
@@ -680,6 +688,7 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   palletSupportsTheoryPublication,
   supportsGlossariesPublication,
   gapExercisesPublication,
+  illustratedGlossariesPublication,
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!

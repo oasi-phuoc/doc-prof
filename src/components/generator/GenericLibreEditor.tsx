@@ -1,5 +1,6 @@
 import type { MathItem } from '@/math/types'
 import { LogistiqueImageFields, type LogistiquePhotoChoice } from './LogistiqueImageFields'
+import { LogistiqueGapEditor } from './LogistiqueGapEditor'
 
 /**
  * Éditeur libre générique : consigne + énoncé / réponse / choix pour chaque item.
@@ -44,13 +45,15 @@ export function GenericLibreEditor({
           <li key={`libre-item-${index}`} className="libre-item-card is-libre-row">
             <span className="libre-item-num is-accent">{index + 1}.</span>
             <div className="libre-item-body">
-              <div className="libre-pair">
+              {item.logistiqueGaps ? (
+                <LogistiqueGapEditor prompt={item.prompt ?? ''} gaps={item.logistiqueGaps}
+                  onChange={(patch) => patchItem(index, patch)} />
+              ) : <div className="libre-pair">
                 <label className="libre-field is-line">
                   <span>Énoncé</span>
                   <input
                     className="libre-line-input"
                     type="text"
-                    readOnly={Boolean(item.logistiqueGaps)}
                     value={item.prompt ?? item.left ?? ''}
                     onChange={(event) =>
                       patchItem(index, {
@@ -65,18 +68,17 @@ export function GenericLibreEditor({
                   <input
                     className="libre-line-input"
                     type="text"
-                    readOnly={Boolean(item.logistiqueGaps)}
                     value={item.answer ?? ''}
                     onChange={(event) => {
-                    const answer = event.target.value
-                    patchItem(index, {
-                      answer,
-                      ...(item.responseAnswer != null ? { responseAnswer: answer } : {}),
-                    })
-                  }}
+                      const answer = event.target.value
+                      patchItem(index, {
+                        answer,
+                        ...(item.responseAnswer != null ? { responseAnswer: answer } : {}),
+                      })
+                    }}
                   />
                 </label>
-              </div>
+              </div>}
               {editableCalculation && (
                 <label className="libre-field is-line">
                   <span>Calcul du corrigé</span>

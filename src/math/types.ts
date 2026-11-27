@@ -425,6 +425,8 @@ export type DivisionStep = {
 }
 
 export type LogistiqueGapMode = 'sans-liste' | 'avec-liste'
+export type LogistiqueGaps = { answers: string[]; words?: string[]; distractors?: string[] }
+export type LogistiqueGlossaryFigure = { src: string; alt: string; caption?: string }
 export type LogistiqueQuestionImage = {
   src: string
   alt: string
@@ -434,12 +436,35 @@ export type LogistiqueQuestionImage = {
   visibility: 'both' | 'answers'
 }
 
+export type SpatialPoint = { x: number; y: number }
+export type SpatialCamera = 'A' | 'B' | 'C' | 'D'
+export type SpatialPractice =
+  | {
+    map: string
+    questions: { prompt: string; answer: string }[]
+    mark?: SpatialPoint
+    path?: SpatialPoint[]
+    cameras?: SpatialCamera[]
+    views?: SpatialCamera[]
+  }
+  | {
+    stacks: number[][]
+    questions: { prompt: string; answer: string }[]
+    drawFootprint: boolean
+  }
+  | {
+    models: string[]
+    projections: { label: string; cells: boolean[][] }[]
+    questions: { prompt: string; answer: string }[]
+  }
+
 export type MathItem = {
   logistiqueSource?: { id: string; module: string; revision: string }
   /** Question ajoutée en Libre et conservée par les nouveaux tirages. */
   logistiqueRetained?: boolean
-  logistiqueGaps?: { answers: string[]; words?: string[] }
+  logistiqueGaps?: LogistiqueGaps
   logistiqueImage?: LogistiqueQuestionImage
+  logistiqueGlossaryFigure?: LogistiqueGlossaryFigure
   layout: Layout
   grammar?: import('@/grammaire/curriculum/types').GrammarQuestion
   cscTask?: import('@/tcm-csc/task-types').CscTask
@@ -626,6 +651,7 @@ export type MathItem = {
   menuPrices?: { label: string; cents: number }[]
   areaFigures?: RectangleGrid[]
   solidViews?: SolidViews
+  spatial?: SpatialPractice
   measureScale?: { kind: 'mass' | 'capacity' | 'duration'; unit: string; step: number; tick: number }
   lengthUnits?: { a: number; b: number }
   functionPairs?: { x: number; y: number }[]

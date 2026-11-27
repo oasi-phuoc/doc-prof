@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import { existsSync } from 'node:fs'
 import { createRequire } from 'node:module'
 import { test } from 'node:test'
 import { dossierMaths } from '../../scripts/logistique-dossier-maths.mjs'
@@ -10,6 +11,7 @@ const { load, root } = require('../../scripts/gattegno-loader.cjs')
 const catalog = load(root + '/src/logistique/catalog.ts')
 const { generateLogistique, logistiqueDocumentTitle, logistiqueHasSummary, logistiqueQuestionItems, logistiqueQuestionPhotos } = load(root + '/src/logistique/generate.ts')
 const { availableLogistiqueQuestions, retainLogistiqueQuestions } = load(root + '/src/logistique/libre.ts')
+const { editLogistiqueGaps, logistiqueGapDistractors, validLogistiqueGaps } = load(root + '/src/logistique/gaps.ts')
 const { freezeLogistiquePages, validLogistiquePages } = load(root + '/src/logistique/recipe.ts')
 const { currentLogistiquePublication, logistiquePublications } = load(root + '/src/logistique/approved-banks.ts')
 const { splitLogistiquePages } = load(root + '/src/logistique/pagination.ts')
@@ -86,6 +88,31 @@ test('les glossaires de manutention incluent leurs nouveaux termes dans les deux
       assert(before.every((text) => blocks.includes(text)))
     }
   }
+})
+
+test('les illustrations des glossaires sont reliées à des définitions et gardent les anciennes recettes', () => {
+  let combinations = 0
+  for (const type of catalog.logistiqueTypes.filter(({ kind }) => kind === 'glossaire')) {
+    const page = config(type.diploma, type.module, type.kind)
+    const { items } = generateLogistique(page, 7)
+    const previous = generateLogistique({ ...page, logistiqueBankRevision: 'logistique-textes-a-trous-v006' }, 7)
+    const figures = items.filter((item) => item.logistiqueGlossaryFigure)
+    const unit = currentLogistiquePublication.units.find((entry) =>
+      entry.kind === 'glossaire' && entry.module === type.module)
+    assert(figures.length > 0, type.id)
+    assert.equal(figures.length, Object.keys(unit.illustrations).length, type.id)
+    assert.deepEqual(items.map(({ theoryBlock }) => theoryBlock), previous.items.map(({ theoryBlock }) => theoryBlock))
+    assert(previous.items.every((item) => !item.logistiqueGlossaryFigure))
+    for (const { theoryBlock, logistiqueGlossaryFigure } of figures) {
+      const term = theoryBlock.text.match(/^\{g\}(.+?)\{\/g\}/)?.[1]
+      const { src, alt } = logistiqueGlossaryFigure
+      assert(alt && src.endsWith('.webp') && existsSync(root + '/public/' + src.replace(/^\//, '')), term)
+      assert(src.includes('/commun/') || src.includes('/' + type.diploma.toLowerCase() + '/'), type.id)
+      assert(src.endsWith(unit.illustrations[term].src), term)
+    }
+    combinations += 1
+  }
+  assert.equal(combinations, 143)
 })
 
 test('les résumés illustrés sont distincts du cours et figés dans la recette', () => {
@@ -241,6 +268,20 @@ test('les deux présentations des textes à trous gardent le même tirage et la 
     }
   }
   assert(!validLogistiquePages([{ ...config('AFP', '105', 'maths'), logistiqueGapMode: 'sans-liste' }]))
+})
+
+test('l’édition des blancs assemble la liste et les réponses dans une seule mise à jour valide', () => {
+  const previous = { answers: ['bac', 'bac'], words: ['bac', 'chariot', 'bac'] }
+  assert.deepEqual(logistiqueGapDistractors(previous), ['chariot'])
+  const draft = { prompt: 'Deux ___, puis un ___.', answers: 'lots\n colis ', distractors: ' chariot ', showWords: true }
+  const { patch } = editLogistiqueGaps(draft, previous)
+  assert.equal(patch.answer, 'lots / colis')
+  assert.deepEqual(patch.logistiqueGaps.words.toSorted(), ['chariot', 'colis', 'lots'])
+  assert(validLogistiqueGaps(patch.prompt, patch.logistiqueGaps))
+  assert.equal(editLogistiqueGaps({ ...draft, showWords: false }, previous).patch.logistiqueGaps.words, undefined)
+  assert.match(editLogistiqueGaps({ ...draft, answers: 'lots' }, previous).error, /2 blanc\(s\)/)
+  assert.match(editLogistiqueGaps({ ...draft, distractors: 'COLIS' }, previous).error, /distinct/)
+  assert(!validLogistiqueGaps('___ et ___', { answers: ['lots', 'colis'], words: ['lots', 'autre'] }))
 })
 
 test('la photo d’une question reste attachée à son item et le catalogue refuse une source incompatible', () => {

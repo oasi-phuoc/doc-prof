@@ -247,6 +247,19 @@ function TheoryExamplesView({
 export function TheoryBlockView({ item }: { item: MathItem }) {
   const block = item.theoryBlock
   if (!block) return null
+  const figure = item.logistiqueGlossaryFigure
+  if (figure) {
+    const diagram = figure.src.includes('-schema-')
+    return (
+      <div className={`logistique-glossary-entry${diagram ? ' is-diagram' : ''}`}>
+        <figure>
+          <WorksheetImage src={figure.src} alt={figure.alt} />
+          {figure.caption && <figcaption>{figure.caption}</figcaption>}
+        </figure>
+        <TheoryBlockContent block={block} />
+      </div>
+    )
+  }
   return <TheoryBlockContent block={block} />
 }
 
@@ -617,7 +630,12 @@ export function StackedPrompt({ item, mode, showHelp = false }: { item: MathItem
         <LogistiqueIllustratedPrompt item={item} mode={mode}>
           <p className="prompt-stack-text">{renderEnonceText(prompt, show ? answers : [])}</p>
         </LogistiqueIllustratedPrompt>
-        {words?.length ? <p className="logistique-words"><strong>Mots proposés</strong> {words.join(' · ')}</p> : null}
+        {words?.length ? (
+          <p className="logistique-words">
+            <strong>Mots proposés</strong> {words.join(' · ')}
+            <small>Utilisez chaque proposition au plus une fois.</small>
+          </p>
+        ) : null}
       </div>
     )
   }
