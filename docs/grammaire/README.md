@@ -25,7 +25,9 @@ La théorie a été rétablie dans son état antérieur au commit `b04247cb`. Le
 
 ## Théorie
 
-Les 99 fiches retrouvent leur contenu antérieur, avec leurs identifiants et leur mise en forme. Le thème Aide-mémoire n’est plus proposé. La reconstruction des banques d’exercices ne modifie plus la théorie.
+La refonte de la théorie pour les élèves allophones est définie dans le [cahier des charges de la théorie en FALC](cahier-des-charges-theorie-falc.md).
+
+Les 99 entrées de l’archive documentent le contenu rétabli. Le catalogue actuel compte 98 fiches après le regroupement des destinations et du verbe aller. Les anciennes recettes de la fiche des destinations ouvrent la fiche du verbe aller. Le thème Aide-mémoire a été retiré du catalogue lors de la reprise historique. Les banques d’exercices et les fiches de théorie se reconstruisent séparément.
 
 ## Exercices
 
