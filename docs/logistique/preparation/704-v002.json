@@ -1,0 +1,30 @@
+{
+  "theoryOnly": true,
+  "baseTheory": "module-704-v001",
+  "diplomas": [
+    "CFC"
+  ],
+  "replacements": [],
+  "summaryTheory": "## 4. Les indicateurs logistiques\n\n### 4.1 Le stock moyen\n\nLe **stock moyen** représente le niveau de stock pendant une période. On peut prendre les valeurs de début et de fin, ou plusieurs relevés à intervalles réguliers. Avec le début et quatre fins de trimestre, divisez par 5. Avec le début et douze fins de mois, divisez par 13. Utilisez des unités et dates comparables.\n\n### 4.2 La rotation des stocks\n\n**Rotation = consommation ÷ stock moyen**. Les valeurs couvrent la même période et utilisent la même unité. La **durée moyenne** se calcule avec la durée de la période divisée par la rotation. Avec 2 400 unités sorties, un stock moyen de 300 et une base de 360 jours, on obtient 8 rotations et 45 jours.\n\n### 4.3 La couverture des stocks\n\nLa **couverture** estime combien de jours le stock actuel peut soutenir. Divisez ce stock par la consommation moyenne par jour. Choisissez la même base en jours ouvrés ou civils pour la demande et le délai.\n\n### 4.4 et 4.5 Service et erreurs\n\n**Taux de service = demandes satisfaites ÷ demandes totales × 100**. **Taux d’erreur = livraisons non conformes ÷ livraisons totales × 100**. Définissez si vous comptez des pièces, des lignes ou des commandes. Suivez les écarts de référence, quantité ou état pour agir à l’émission ou à la réception.",
+  "visuals": [
+    {
+      "anchor": "4.4 La capacité de livraison (taux de service)",
+      "summaryAnchor": "4.4 et 4.5 Service et erreurs",
+      "file": "log-704-indicateurs-photo-v002.webp",
+      "alt": "Deux superviseurs examinent un graphique et les données devant une allée.",
+      "caption": "Une valeur de suivi s’interprète selon la période, la base du calcul et l’objectif choisi.",
+      "sha256": "c7917e6a242deb5164379cdaa38c110c541e71378cb7cd58d9801b0918071be4",
+      "origin": "Mise en scène photoréaliste originale générée pour Doc-Prof."
+    },
+    {
+      "anchor": "4.1 Le stock moyen",
+      "summaryAnchor": "4.1 Le stock moyen",
+      "file": "log-701-inventaire-photo-v002.webp",
+      "path": "assets/logistique/700/701/commun/log-701-inventaire-photo-v002.webp",
+      "alt": "Une personne effectue un relevé physique des quantités.",
+      "caption": "La moyenne s’appuie sur des relevés définis et comparables.",
+      "sha256": "0066c77c1cc167ba6a361286927a6999116980ea405630289e8343b8a0abb1dd",
+      "origin": "Mise en scène photoréaliste originale générée pour Doc-Prof."
+    }
+  ]
+}

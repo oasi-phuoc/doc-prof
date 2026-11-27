@@ -978,13 +978,22 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                         className={theoryView === view ? 'active' : ''}
                         aria-pressed={theoryView === view}
                         disabled={view === 'resume' && !hasSummary}
-                        onClick={() => updatePage({ logistiqueTheoryView: view, columns: 1, libreItems: undefined, libreInstruction: undefined, tcfPageBreakAfter: undefined })}
+                        onClick={() => {
+                          if (view === theoryView) return
+                          updatePage({
+                            logistiqueTheoryView: view,
+                            columns: 1,
+                            libreItems: undefined,
+                            libreInstruction: undefined,
+                            tcfPageBreakAfter: undefined,
+                          })
+                        }}
                       >
                         {view === 'complet' ? 'Complet' : 'Résumé'}
                       </button>
                     ))}
                   </div>
-                  {!hasSummary && <small className="muted">Résumé en préparation.</small>}
+                  {!hasSummary && <small className="muted">Résumé indisponible dans cette révision.</small>}
                 </div>
               )}
               {isLogistiqueReferenceType(activeBlock.exerciseType) ||

@@ -68,6 +68,11 @@ try {
     return { pages, printText }
   }
 
+  async function verifyPdf() {
+    const pdf = await page.pdf({ preferCSSPageSize: true })
+    assert.equal(pdf.subarray(0, 4).toString(), '%PDF')
+  }
+
   await page.goto(base + '/generateur')
   await sheet.waitFor()
   for (const diploma of ['CFC', 'AFP']) {
@@ -141,14 +146,14 @@ try {
       assert.equal(await page.getByRole('group', { name: 'Nombre de colonnes', exact: true }).count(), 0)
       const complete = await inspectPrint(`${code} ${diploma} complet`)
       assert.equal(await page.locator('.print-only-sheets img[src*="/assets/logistique/"][src$="-v002.webp"]').count(), photos)
+      await verifyPdf()
       await page.getByRole('button', { name: 'Résumé', exact: true }).click()
       const summary = await inspectPrint(`${code} ${diploma} résumé`)
       assert(summary.printText.includes(caption))
       assert.notEqual(summary.printText, complete.printText)
       assert.equal(await page.locator('.print-only-sheets img[src*="/assets/logistique/"][src$="-v002.webp"]').count(), photos)
       assert(summary.pages.length <= complete.pages.length)
-      const pdf = await page.pdf({ preferCSSPageSize: true })
-      assert.equal(pdf.subarray(0, 4).toString(), '%PDF')
+      await verifyPdf()
       await page.getByRole('button', { name: 'Complet', exact: true }).click()
       checkedModules += 1
       const restored = await inspectPrint(`${code} ${diploma} complet restauré`)
