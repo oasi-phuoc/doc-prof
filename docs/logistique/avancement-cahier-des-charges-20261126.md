@@ -159,6 +159,10 @@ En double A5, les tableaux répètent leurs en-têtes et les listes reprennent �
 
 La révision `logistique-theorie-101-v004` compare l’approvisionnement, la production et la distribution dans un tableau à trois colonnes avec une photo distincte par étape. Deux cartes montrent des exemples de tracés de la route de la soie et de la route de l’ambre. Les paragraphes successifs peuvent suivre le contour d’une photo encadrée jusqu’au bas du cadre. Les 572 combinaisons de diplôme, module, version et format ont été contrôlées dans Chromium, et les huit fiches du 101 ont été exportées en PDF. [Préparation du 101](preparation/101-v004.json) · [Fond cartographique Natural Earth](https://www.naturalearthdata.com/downloads/50m-physical-vectors/50m-land/).
 
+La révision `logistique-theorie-103-v004` insère le schéma en couleur des trois objectifs sous le titre du même nom, avant le passage sur les activités de la logistique. Chaque libellé tient dans la zone propre à son cercle. Les 6 B et les 2 B complémentaires sont illustrés par huit reconstitutions photographiques distinctes qui suivent une même commande de caisses. Les deux groupes sont nommés dans la fiche imprimée. [Préparation du 103](preparation/103-v004.json).
+
+Les huit sorties du 103 ont été vérifiées dans Chromium et en PDF, en CFC et AFP, en Complet et Résumé, en A4 et double A5. Le schéma est centré dans les deux formats. En double A5, le texte qui le suit reprend sur la demi-feuille suivante. La réserve minimale mesurée était de 98,66 px en A4 et de 34,55 px en double A5.
+
 ## Glossaires illustrés
 
 La révision `logistique-glossaires-tableaux-v006` couvre les 1 170 entrées des 80 modules CFC et des 63 modules AFP qui en partagent le contenu. La fiche présente les colonnes Image, Notion et Explication / définition. Chaque notion dispose d’un fichier d’image distinct dans son glossaire, avec un texte alternatif. Le lot publie 967 schémas en couleur et neuf reconstitutions photographiques individuelles, dont cinq pour les supports du 306. Les définitions et leur ordre proviennent de la révision enregistrée. Les en-têtes sont répétés après chaque saut en A4 et en double A5. [Registre des visuels](../../src/logistique/banks/glossaires-visuels-v006.json).
@@ -301,6 +305,7 @@ Pour un enrichissement ultérieur, partir des archives et du dossier éditorial 
 
 - `node scripts/import-logistique-epcas.mjs /chemin/vers/epcas` produit le catalogue et les archives à partir des objets Git de référence.
 - `node scripts/prepare-logistique-module.mjs 101-v001` reconstitue la banque du 101 à partir de l’archive et de sa préparation éditoriale. La même commande accepte une révision de la [préparation éditoriale](preparation/), par exemple `104-v001`.
+- `python scripts/draw-logistique-103.py` redessine le schéma des trois objectifs en WebP. `node scripts/prepare-logistique-module.mjs 103-v004` vérifie les empreintes des neuf visuels et reconstitue le cours et le résumé.
 - `node scripts/prepare-logistique-glossaire.mjs` reconstitue les schémas WebP et le registre des images des glossaires à partir des [scènes](preparation/glossaires-scenes-v006.txt) et des [photos](preparation/glossaires-photos-v006.txt). La génération utilise Python, Pillow et DejaVu Sans.
 - `node scripts/prepare-logistique-dossiers.mjs 400` vérifie les sections citées et reconstitue le complément d’exercices du thème 400. `node scripts/report-logistique-exercise-coverage.mjs` calcule la couverture du catalogue. Ajouter un ou plusieurs codes de thème à la commande pour limiter le relevé.
 - `node scripts/prepare-logistique-105.mjs` reproduit la révision historique du 105.

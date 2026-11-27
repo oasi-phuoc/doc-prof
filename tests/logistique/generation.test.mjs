@@ -584,6 +584,31 @@ test('le 101 présente trois vues distinctes de la chaîne moderne et une carte 
   }
 })
 
+test('le 103 place les objectifs avant les activités et illustre les 6 + 2 B séparément', () => {
+  for (const diploma of ['CFC', 'AFP']) for (const logistiqueTheoryView of ['complet', 'resume']) {
+    const page = { ...config(diploma, '103', 'theorie'), logistiqueTheoryView }
+    const blocks = generateLogistique(page, 7).items.map(({ theoryBlock }) => theoryBlock)
+    const objectives = blocks.findIndex((block) => block.kind === 'heading' && block.text === 'Objectifs de la logistique')
+    assert(objectives >= 0)
+    assert(blocks[objectives + 1].src.endsWith('log-103-objectifs-schema-v004.webp'))
+    assert.match(blocks[objectives + 2].text, logistiqueTheoryView === 'complet' ? /^Les principales activités/ : /^Un dépôt cherche/)
+
+    const rows = blocks.filter((block) => block.kind === 'image-row')
+    assert.deepEqual(rows.map(({ cells }) => cells.length), [3, 3, 2])
+    assert.equal(rows[0].caption, 'Les 6 B de la logistique')
+    assert.equal(rows[2].caption, 'Les 2 B complémentaires')
+    const cells = rows.flatMap((row) => row.cells)
+    assert.deepEqual(cells.map(({ caption }) => caption), [
+      'Bonne marchandise', 'Bonne quantité', 'Bonne qualité', 'Bon moment',
+      'Bon endroit', 'Bon prix / coût', 'Bonnes informations', 'Bon client',
+    ])
+    assert.equal(new Set(cells.map(({ src }) => src)).size, 8)
+    assert(cells.every(({ src, alt, description }) => src.endsWith('.webp') && alt && description))
+    const previous = generateLogistique({ ...page, logistiqueBankRevision: 'logistique-theorie-101-v004' }, 7)
+    assert(!previous.items.some(({ theoryBlock }) => theoryBlock.kind === 'image-row'))
+  }
+})
+
 test('les paragraphes continuent à habiller la même photo jusqu’au saut de page explicite', () => {
   const items = [
     { kind: 'image', src: '/assets/logistique/log-101-ambre-photo-v003.webp', alt: 'Ambre', caption: 'Échange d’ambre sur la côte baltique.' },

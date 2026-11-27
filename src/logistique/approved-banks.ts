@@ -166,6 +166,7 @@ import { module101 as historyMaps } from './banks/module-101-v004.generated.ts'
 import { module100 as reviewed100 } from './banks/module-100-v003.generated.ts'
 import { module102 as reviewed102 } from './banks/module-102-v003.generated.ts'
 import { module103 as reviewed103 } from './banks/module-103-v003.generated.ts'
+import { module103 as illustratedObjectives } from './banks/module-103-v004.generated.ts'
 import { module104 as reviewed104 } from './banks/module-104-v003.generated.ts'
 import { module105 as reviewed105 } from './banks/module-105-v003.generated.ts'
 import { module106 as reviewed106 } from './banks/module-106-v003.generated.ts'
@@ -659,6 +660,9 @@ const glossaryTablesPublication: LogistiquePublication = {
 const historyMapsPublication = reviewedIllustrationPublication(glossaryTablesPublication,
   'logistique-theorie-101-v004', historyMaps)
 
+const illustratedObjectivesPublication = reviewedIllustrationPublication(historyMapsPublication,
+  'logistique-theorie-103-v004', illustratedObjectives)
+
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
@@ -749,6 +753,7 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   storageArrangementsPublication,
   glossaryTablesPublication,
   historyMapsPublication,
+  illustratedObjectivesPublication,
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!

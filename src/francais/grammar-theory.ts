@@ -10,7 +10,7 @@ export type TheoryImageCell = { src: string; alt: string; caption: string; descr
 export type GrammarTheoryBlock =
   | { kind: 'section'; role: 'regarder' | 'expliquer' | 'retenir'; blocks: GrammarTheoryBlock[] }
   | { kind: 'image'; src: string; alt: string; caption: string }
-  | { kind: 'image-row'; label: string; cells: TheoryImageCell[] }
+  | { kind: 'image-row'; label: string; caption?: string; cells: TheoryImageCell[] }
   | { kind: 'heading'; text: string; sub?: boolean }
   | { kind: 'paragraph'; text: string }
   | { kind: 'note'; text: string }

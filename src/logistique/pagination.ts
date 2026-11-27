@@ -73,10 +73,12 @@ function theoryHeight(block: GrammarTheoryBlock, width: number, scale: number, a
     case 'heading':
       return 12 + (block.sub ? 28 : 32) * scale * lineCount(block.text, width * 0.8)
     case 'image':
+      if (block.src.includes('log-103-objectifs-schema-')) return (a5 ? 250 : 295) + lines(block.caption)
       return (block.src.includes('-carte-') ? (a5 ? 219 : 265) : 184) + lines(block.caption)
     case 'image-row': {
       const cellWidth = width * 0.9 / block.cells.length
-      return 143 + Math.max(...block.cells.map(({ caption, description }) =>
+      const captionHeight = block.caption ? 4 + lines(block.caption) : 0
+      return 143 + captionHeight + Math.max(...block.cells.map(({ caption, description }) =>
         lines(caption, cellWidth) + (description ? lines(description, cellWidth) : 0)))
     }
     case 'paragraph':

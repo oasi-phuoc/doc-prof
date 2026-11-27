@@ -96,6 +96,30 @@
   max-height: 54mm;
 }
 
+.is-logistique .theory-grid .grammar-support-image:has(> img[src*="log-103-objectifs-schema-"]) {
+  width: min(100%, 104mm);
+}
+
+.is-logistique .theory-grid .grammar-support-image img[src*="log-103-objectifs-schema-"] {
+  display: block;
+  margin-inline: auto;
+  max-height: 74mm;
+}
+
+.a5-half.is-logistique .theory-grid .grammar-support-image:has(> img[src*="log-103-objectifs-schema-"]) {
+  width: min(100%, 88mm);
+}
+
+.a5-half.is-logistique .theory-grid .grammar-support-image img[src*="log-103-objectifs-schema-"] {
+  max-height: 62mm;
+}
+
+.theory-image-table > caption {
+  padding-bottom: 1mm;
+  font-weight: 700;
+  text-align: left;
+}
+
 .a5-half.is-logistique .theory-table {
   table-layout: fixed;
   font-size: calc(var(--theory-size) * .9);

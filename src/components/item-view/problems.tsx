@@ -333,6 +333,7 @@ function TheoryBlockContent({ block }: { block: GrammarTheoryBlock }) {
   if (block.kind === 'image-row') {
     return (
       <table className="theory-image-table" aria-label={block.label}>
+        {block.caption && <caption>{block.caption}</caption>}
         <tbody>
           <tr>
             {block.cells.map(({ src, alt, caption, description }) => (
