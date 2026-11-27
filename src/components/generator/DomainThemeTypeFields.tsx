@@ -160,6 +160,8 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
     isQuadType,
     quadPool,
   } = p
+  const showNumberRange = !libreMode && isNumberLibreDomain &&
+    exerciseTypeById[activeBlock.exerciseType]?.supportsNumberRange !== false
   const logisticsDomain = isLogistiqueDomain(activePage.domain)
   const logisticsSubthemes = logisticsDomain ? logistiqueSubthemes(activeBlock.topic) : []
   const logisticsModule = logistiqueType(activeBlock.exerciseType)?.module
@@ -565,7 +567,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
               isTcf ||
               isTpmLike ? null : (
               <>
-              <div className={`niveau-row${activeBlock.numberLibre ? ' is-libre' : ''}`}>
+              <div className={`niveau-row${showNumberRange && activeBlock.numberLibre ? ' is-libre' : ''}`}>
                 <SelectBox
                   label="Niveau"
                   value={activeBlock.difficulty ?? 'moyen'}
@@ -577,7 +579,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                     </option>
                   ))}
                 </SelectBox>
-                {!libreMode && isNumberLibreDomain ? (
+                {showNumberRange ? (
                   <button
                     type="button"
                     className={`niveau-libre-btn${activeBlock.numberLibre ? ' active' : ''}`}
@@ -596,7 +598,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   </button>
                 ) : null}
               </div>
-              {!libreMode && isNumberLibreDomain && activeBlock.numberLibre ? (
+              {showNumberRange && activeBlock.numberLibre ? (
                 <div className="number-libre-fields">
                   <label className="select-shell">
                     <span>De</span>

@@ -5849,6 +5849,26 @@ textarea.pill-input,
 }
 .tcm-cfr-audio-btn:disabled{opacity:.5;cursor:default}
 .math-exercise-image{display:block;width:100%;height:23mm;object-fit:contain;object-position:center;margin-bottom:var(--ex-prompt-gap)}
+.math-base-ten{
+  display:grid;grid-template-columns:minmax(0, 4fr) minmax(0, 2fr) minmax(0, 1.4fr);
+  gap:1.5mm;margin-bottom:var(--ex-prompt-gap);font-size:.85em
+}
+.math-base-ten-tiles{display:flex;align-items:flex-start;flex-wrap:wrap;gap:.65mm;margin-top:1mm}
+.math-base-ten-tiles img{display:block;flex:none;object-fit:fill}
+.math-base-ten-plate img{width:9mm;height:9mm}
+.math-base-ten-rod img{width:9mm;height:.9mm}
+.math-base-ten-cube img{width:.9mm;height:.9mm}
+.math-menu-prices{
+  width:100%;table-layout:fixed;border-collapse:collapse;margin-bottom:var(--ex-prompt-gap);font-size:.9em
+}
+.math-menu-prices :is(th,td){padding:.5mm 2mm;border-bottom:1px solid var(--line);text-align:center}
+.math-menu-prices td{font-variant-numeric:tabular-nums;white-space:nowrap}
+.item-content:has(> .math-menu-prices) .draft-pad{--grid-rows:calc(3 * var(--sheet-columns, 1))}
+.math-length-units{display:grid;gap:2mm;margin:0 0 var(--ex-prompt-gap);font-size:.85em}
+.math-length-row{display:grid;grid-template-columns:4em minmax(0, 1fr);align-items:center;gap:1mm}
+.math-length-strip{display:grid;height:4mm;outline:1px solid var(--ink);outline-offset:-1px}
+.math-length-strip span+span{border-left:1px dashed var(--ink)}
+
 .math-number-line{display:grid;margin:0 1.5ch var(--ex-prompt-gap);text-align:center;color:var(--ink)}
 .math-number-tick{position:relative;display:grid;justify-items:center;min-width:0;grid-template-rows:1.2em 8px 1.4em}
 .math-number-tick::before{content:"";position:absolute;inset:calc(1.2em + 3px) 0 auto;border-top:1px solid currentColor}

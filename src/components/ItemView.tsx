@@ -68,9 +68,10 @@ import {
   WordSearchBlock,
 } from './item-view/vocab'
 
+import { BaseTenCollection, LengthUnitComparison, MenuPriceTable } from './item-view/foundations-practice'
 import { FunctionValueTable, NumberLinePractice } from './item-view/number-representations'
 
-const exerciseImages = import.meta.glob<string>('../math/media/*/*.png', {
+const exerciseImages = import.meta.glob<string>(['../math/media/angles/*.png', '../math/media/cube-nets/*.png'], {
   eager: true,
   import: 'default',
   query: '?url',
@@ -450,6 +451,7 @@ export function ItemView({
         {item.layout === 'symmetry-grid' && <SymmetryGridBlock item={item} mode={mode} />}
         {item.layout === 'segment-measure' && <SegmentMeasureBlock item={item} mode={mode} />}
         {item.layout === 'metro-map' && <MetroMapBlock item={item} mode={mode} />}
+        {item.menuPrices && <MenuPriceTable prices={item.menuPrices} />}
         {isProblem && <ProblemBlock item={item} mode={mode} draftGrid={draftGrid} />}
         {item.audioSrc && item.layout !== 'audio-dictation' ? (
           <audio className="oral-audio" controls preload="none" src={item.audioSrc}>
@@ -463,6 +465,8 @@ export function ItemView({
             alt={item.exerciseImage.kind === 'angles' ? 'Angle à classer' : 'Assemblage de six carrés'}
           />
         )}
+        {item.baseTen && <BaseTenCollection collection={item.baseTen} />}
+        {item.lengthUnits && <LengthUnitComparison lengths={item.lengthUnits} mode={mode} />}
         {item.numberLine && <NumberLinePractice line={item.numberLine} />}
         {item.functionPairs && <FunctionValueTable pairs={item.functionPairs} />}
         {isStackedText && !item.convert && <StackedPrompt item={item} mode={mode} />}

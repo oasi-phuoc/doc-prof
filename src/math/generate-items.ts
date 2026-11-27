@@ -35,6 +35,7 @@ import { tryGenerateMesure } from './mesures'
 import { makeWordProblem } from './problems'
 import { tryGenerateTcmCfrItems } from '@/tcm-cfr/items'
 import { tryGenerateTcmCscItems } from '@/tcm-csc/items'
+import { tryGenerateMathFoundations } from './foundations-practice'
 import { tryGenerateNumberRepresentations } from './number-representations'
 import { generateCountIcons } from '@/math/count-icons'
 import { int, pick, shuffle, type Rng } from './rng'
@@ -98,6 +99,8 @@ export function generateItems(
     return generateFractionFigures(rng, count, typeId === 'fractions-colorier' ? 'color' : 'read')
   }
   if (typeId === 'fractions-vers-decimal') return generateFractionDecimals(rng, count)
+  const foundations = tryGenerateMathFoundations(typeId, rng, count, difficulty, range)
+  if (foundations) return foundations
   const geometryPractice = tryGenerateGeometryPractice(typeId, rng, count)
   if (geometryPractice) return geometryPractice
   const numberRepresentations = tryGenerateNumberRepresentations(typeId, rng, count, difficulty, range)

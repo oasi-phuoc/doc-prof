@@ -370,6 +370,7 @@ export type ExerciseType = {
   preferredColumns?: number
   preferredCount?: number
   maxCount?: number
+  supportsNumberRange?: false
   /** Filtre Voc / Gram / Com du domaine français. */
   track?: FrenchTrack
 }
@@ -591,6 +592,9 @@ export type MathItem = {
   gridRotation?: 'clockwise' | 'counterclockwise'
   exerciseImage?: { kind: 'angles' | 'cube-nets'; id: string }
   numberLine?: { start: number; step: number; intervals: number; target: number; labelAt: number }
+  baseTen?: { hundreds: number; tens: number; ones: number }
+  menuPrices?: { label: string; cents: number }[]
+  lengthUnits?: { a: number; b: number }
   functionPairs?: { x: number; y: number }[]
   /** Segments à mesurer à taille réelle. */
   segments?: Array<{ mm: number; unit: 'mm' | 'cm'; display: string; slope?: number }>

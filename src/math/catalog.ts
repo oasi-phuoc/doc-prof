@@ -439,6 +439,8 @@ export const exerciseTypes: ExerciseType[] = [
     'geo',
     { preferredColumns: 2 },
   ),
+  t('nombres-groupements', 'nombres', 'Compter par groupements', 'Lire une collection organisée en plaques, barres et cubes.', 'Écrivez le total d’unités et le nombre de dizaines complètes.', 'geo', { preferredColumns: 2, preferredCount: 4, maxCount: 4 }),
+  t('nombres-intercaler', 'nombres', 'Intercaler un nombre', 'Trouver un nombre strictement compris entre deux bornes.', 'Écrivez un nombre strictement compris entre les deux bornes.', 'texte', { preferredColumns: 2, preferredCount: 6, maxCount: 10 }),
   t('nombres-position', 'nombres', 'Valeur positionnelle', 'Retrouver le chiffre des unités, dizaines, centaines…', 'Indiquez le chiffre demandé.', 'texte', { preferredColumns: 1 }),
   t('nombres-decompose', 'nombres', 'Décomposer', 'Écrire un nombre en sommes de puissances de 10 (milliers… unités).', 'Décomposez chaque nombre.', 'ligne', { preferredColumns: 1 }),
   t('nombres-comparer', 'nombres', 'Comparer', 'Choisir le symbole correct : <, = ou >.', 'Coloriez la pastille correcte.', 'ligne', { preferredColumns: 2 }),
@@ -558,6 +560,9 @@ export const exerciseTypes: ExerciseType[] = [
   t('problemes-division', 'problemes', 'Division', 'Problèmes de division.', 'Lisez le problème. Écrivez le calcul et la réponse.', 'texte', { preferredColumns: 1 }),
   t('problemes-melange', 'problemes', 'Tout mélanger', 'Problèmes avec les quatre opérations.', 'Lisez le problème. Écrivez le calcul et la réponse.', 'texte', { preferredColumns: 1 }),
 
+  t('problemes-donnees-utiles', 'problemes', 'Choisir les données et l’opération', 'Repérer les données utiles à la question et proposer une opération.', 'Notez les deux données utiles. Écrivez l’opération qui permet de répondre, sans l’effectuer.', 'texte', { preferredColumns: 1, preferredCount: 4, maxCount: 5, supportsNumberRange: false }),
+  t('problemes-lire-menu', 'problemes', 'Lire un menu et calculer en CHF', 'Prélever les prix d’une commande puis calculer le total ou la monnaie à rendre.', 'Utilisez les prix du menu pour calculer. Écrivez votre démarche.', 'texte', { preferredColumns: 1, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
+
   t('multiples-reconnaitre', 'multiples', 'Reconnaître un multiple', 'Dire si un nombre est multiple d’un autre.', 'Répondez par oui ou non.', 'ligne'),
   t('multiples-diviseurs', 'multiples', 'Lister les diviseurs', 'Trouver tous les diviseurs d’un nombre.', 'Écrivez tous les diviseurs, du plus petit au plus grand.', 'texte'),
   t('multiples-pgcd', 'multiples', 'PGCD', 'Plus grand commun diviseur de deux nombres.', 'Calculez le PGCD.', 'ligne'),
@@ -625,6 +630,7 @@ export const exerciseTypes: ExerciseType[] = [
   t('figures-agrandir', 'figures', 'Agrandir sur quadrillage', 'Reproduire une silhouette en doublant les longueurs en carreaux.', 'Reproduisez le modèle. Chaque longueur mesurée en carreaux doit être doublée.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
   t('mesures-segments', 'conversions', 'Mesurer des segments à la règle', 'Mesurer des segments à taille réelle puis comparer leurs longueurs.', 'Imprimez à 100 %, puis mesurez chaque segment et répondez aux questions.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 1 }),
   t('conversions-longueur', 'conversions', 'Longueurs', 'km, hm, dam, m, dm, cm, mm.', 'Convertissez.', 'ligne', { preferredColumns: 2 }),
+  t('mesures-etalon', 'conversions', 'Comparer avec un étalon', 'Reporter un étalon de longueur et comparer les mesures obtenues.', 'Reportez le modèle le long des bandes A et B, par exemple avec une bande de papier.', 'geo', { preferredColumns: 2, preferredCount: 4, maxCount: 4, supportsNumberRange: false }),
   t('conversions-aire', 'conversions', 'Aires', 'km², hm², dam², m², dm², cm², mm².', 'Convertissez.', 'ligne', { preferredColumns: 2 }),
   t('conversions-volume', 'conversions', 'Volumes', 'km³, hm³, dam³, m³, dm³, cm³, mm³.', 'Convertissez.', 'ligne', { preferredColumns: 2 }),
   t('conversions-capacite', 'conversions', 'Capacités', 'L, dL, cL, mL.', 'Convertissez.', 'ligne', { preferredColumns: 2 }),
