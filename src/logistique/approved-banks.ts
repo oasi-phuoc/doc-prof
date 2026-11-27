@@ -127,6 +127,22 @@ import { module503 as theory503 } from './banks/module-503-v002.generated.ts'
 import { module504 as theory504 } from './banks/module-504-v002.generated.ts'
 import { module505 as theory505 } from './banks/module-505-v002.generated.ts'
 import { module506 as theory506 } from './banks/module-506-v002.generated.ts'
+import { module601 as theory601 } from './banks/module-601-v002.generated.ts'
+import { module602 as theory602 } from './banks/module-602-v002.generated.ts'
+import { module603 as theory603 } from './banks/module-603-v002.generated.ts'
+import { module604 as theory604 } from './banks/module-604-v002.generated.ts'
+import { module605 as theory605 } from './banks/module-605-v002.generated.ts'
+import { module606 as theory606 } from './banks/module-606-v002.generated.ts'
+import { module607 as theory607 } from './banks/module-607-v002.generated.ts'
+import { module608 as theory608 } from './banks/module-608-v002.generated.ts'
+import { module609 as theory609 } from './banks/module-609-v002.generated.ts'
+import { module610 as theory610 } from './banks/module-610-v002.generated.ts'
+import { module611 as theory611 } from './banks/module-611-v002.generated.ts'
+import { module612 as theory612 } from './banks/module-612-v002.generated.ts'
+import { module613 as theory613 } from './banks/module-613-v002.generated.ts'
+import { module614 as theory614 } from './banks/module-614-v002.generated.ts'
+import { module615 as theory615 } from './banks/module-615-v002.generated.ts'
+import { module616 as theory616 } from './banks/module-616-v002.generated.ts'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
 
@@ -284,6 +300,17 @@ const theories_production = [
 ]
 const theoryIds_production = new Set<string>(theories_production.map(({ id }) => id))
 
+const publication_production_v002: LogistiquePublication = {
+  revision: 'logistique-theories-production-v002',
+  units: [...publication_stockage_v002.units.filter(({ id }) => !theoryIds_production.has(id)), ...theories_production],
+}
+const theories_distribution = [
+  ...theory601, ...theory602, ...theory603, ...theory604, ...theory605, ...theory606,
+  ...theory607, ...theory608, ...theory609, ...theory610, ...theory611, ...theory612,
+  ...theory613, ...theory614, ...theory615, ...theory616,
+]
+const theoryIds_distribution = new Set<string>(theories_distribution.map(({ id }) => id))
+
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
@@ -341,9 +368,10 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   publication_service_client_v002,
   publication_approvisionnement_v002,
   publication_stockage_v002,
+  publication_production_v002,
   {
-    revision: 'logistique-theories-production-v002',
-    units: [...publication_stockage_v002.units.filter(({ id }) => !theoryIds_production.has(id)), ...theories_production],
+    revision: 'logistique-theories-distribution-v002',
+    units: [...publication_production_v002.units.filter(({ id }) => !theoryIds_distribution.has(id)), ...theories_distribution],
   },
 ]
 

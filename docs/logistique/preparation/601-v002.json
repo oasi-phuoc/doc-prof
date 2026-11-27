@@ -1,0 +1,31 @@
+{
+  "theoryOnly": true,
+  "baseTheory": "module-601-v001",
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "replacements": [],
+  "summaryTheory": "## 1. La préparation de commandes\n\n### 1.1 Stratégies et notions\n\nLe **picking** consiste à prélever des articles pour une commande. Une préparation **statique** amène la personne vers l’article. Une solution **dynamique** amène l’article au poste. On peut préparer commande par commande, réunir des lignes de plusieurs commandes ou répartir les prélèvements par zone. Dans ce cas, vérifiez la **consolidation** pour rendre chaque commande complète.\n\n### 1.2 Techniques spéciales (sans papier)\n\nUn terminal peut indiquer l’emplacement et confirmer le scan. Le **pick-by-light** guide avec des lumières. Le **pick-by-voice** donne des indications par la voix et demande une confirmation. Ces aides réduisent certaines recherches, tout en exigeant des données à jour et un contrôle.\n\n### 1.3 Pick-and-Pack\n\nEn **Pick-and-Pack**, les articles sont placés directement dans le colis d’expédition. Vérifiez référence, quantité et conditionnement. Avant de fermer, confirmez que le colis respecte le bon de commande, la protection nécessaire et l’étiquette.",
+  "visuals": [
+    {
+      "anchor": "1.3 Pick-and-Pack",
+      "summaryAnchor": "1.3 Pick-and-Pack",
+      "file": "log-601-pick-photo-v002.webp",
+      "alt": "Une personne place un article pris en rayonnage directement dans un carton.",
+      "caption": "En Pick-and-Pack, les articles vont dans le colis de départ. Contrôlez toute la commande avant de fermer.",
+      "sha256": "0c316207e10bb4e7e3f224ad787fd420216fe1553184737ba0f76a6764b635e1",
+      "origin": "Mise en scène photoréaliste originale générée pour Doc-Prof."
+    },
+    {
+      "anchor": "1.1 Stratégies et notions",
+      "summaryAnchor": "1.1 Stratégies et notions",
+      "file": "log-103-preparation-photo-v002.webp",
+      "path": "assets/logistique/100/103/commun/log-103-preparation-photo-v002.webp",
+      "alt": "La préparatrice compare l’article et les données de la commande.",
+      "caption": "Le prélèvement suit la référence, la quantité et l’emplacement attendus.",
+      "sha256": "5e3fa2d9a2ac170e487329e7c996e180ee4b4fdeb9050e7f5803402f77eb2e50",
+      "origin": "Mise en scène photoréaliste originale générée pour Doc-Prof."
+    }
+  ]
+}

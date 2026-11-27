@@ -68,7 +68,7 @@ test('les 858 types des modules CFC et AFP disposent de contenu à générer', (
 
 test('les résumés illustrés sont distincts du cours et figés dans la recette', () => {
   const publishedTheories = currentLogistiquePublication.units.filter((unit) => unit.kind === 'theorie' && unit.summaryBlocks)
-  assert.equal(publishedTheories.length, 48)
+  assert.equal(publishedTheories.length, 64)
   for (const { module: code, approvedFor } of publishedTheories) {
     for (const diploma of approvedFor) {
       const full = config(diploma, code, 'theorie')
