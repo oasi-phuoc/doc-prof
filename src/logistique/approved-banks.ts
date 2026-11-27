@@ -148,6 +148,15 @@ import { module702 as theory702 } from './banks/module-702-v002.generated.ts'
 import { module703 as theory703 } from './banks/module-703-v002.generated.ts'
 import { module704 as theory704 } from './banks/module-704-v002.generated.ts'
 import { module705 as theory705 } from './banks/module-705-v002.generated.ts'
+import { module801 as theory801 } from './banks/module-801-v002.generated.ts'
+import { module802 as theory802 } from './banks/module-802-v002.generated.ts'
+import { module803 as theory803 } from './banks/module-803-v002.generated.ts'
+import { module804 as theory804 } from './banks/module-804-v002.generated.ts'
+import { module805 as theory805 } from './banks/module-805-v002.generated.ts'
+import { module806 as theory806 } from './banks/module-806-v002.generated.ts'
+import { module807 as theory807 } from './banks/module-807-v002.generated.ts'
+import { module808 as theory808 } from './banks/module-808-v002.generated.ts'
+import { module809 as theory809 } from './banks/module-809-v002.generated.ts'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
 
@@ -325,6 +334,16 @@ const theories_fico = [
 ]
 const theoryIds_fico = new Set<string>(theories_fico.map(({ id }) => id))
 
+const publication_fico_v002: LogistiquePublication = {
+  revision: 'logistique-theories-fico-v002',
+  units: [...publication_distribution_v002.units.filter(({ id }) => !theoryIds_fico.has(id)), ...theories_fico],
+}
+const theories_ict = [
+  ...theory801, ...theory802, ...theory803, ...theory804, ...theory805, ...theory806,
+  ...theory807, ...theory808, ...theory809,
+]
+const theoryIds_ict = new Set<string>(theories_ict.map(({ id }) => id))
+
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
@@ -384,9 +403,10 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   publication_stockage_v002,
   publication_production_v002,
   publication_distribution_v002,
+  publication_fico_v002,
   {
-    revision: 'logistique-theories-fico-v002',
-    units: [...publication_distribution_v002.units.filter(({ id }) => !theoryIds_fico.has(id)), ...theories_fico],
+    revision: 'logistique-theories-ict-v002',
+    units: [...publication_fico_v002.units.filter(({ id }) => !theoryIds_ict.has(id)), ...theories_ict],
   },
 ]
 

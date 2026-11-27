@@ -1,0 +1,40 @@
+{
+  "theoryOnly": true,
+  "baseTheory": "module-802-v001",
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "replacements": [],
+  "summaryTheory": "## 2. Le transport\n\n### 2.1 Surveillance du transport\n\nUn **indicateur** signale par exemple un choc, un basculement ou un dépassement. Un **enregistreur** garde plusieurs mesures horodatées. Pour la **chaîne du froid**, comparez les mesures aux conditions prévues pour la marchandise et signalez l’écart selon la procédure.\n\n### 2.2 Track and Trace\n\nLe **Track & Trace** relie les événements à un identifiant. Le **statut** indique le dernier événement connu, par exemple dépôt, tri ou remise. Les événements peuvent provenir d’un scan de code-barres ou d’une lecture **RFID**. La **quittance** atteste le dépôt selon ses indications et aide à rechercher un colis.\n\n### 2.3 Planification du transport\n\nUne **tournée** organise les arrêts, créneaux et trajets. Contrôlez masse, volume, accès, répartition, arrimage et durées. Pour un seul accès arrière, le **LIFO** peut faciliter une tournée : la première unité à livrer est chargée en dernier si les contraintes le permettent. Les logiciels aident à comparer le parcours, l’utilisation des véhicules, le chargement et la transmission des données.",
+  "visuals": [
+    {
+      "anchor": "2.1 Surveillance du transport",
+      "summaryAnchor": "2.1 Surveillance du transport",
+      "file": "log-802-mesure-photo-v002.webp",
+      "alt": "Un enregistreur de température est vérifié à côté d’un bac isolé.",
+      "caption": "Un enregistreur garde une suite de mesures datées. Rattachez les résultats à l’envoi.",
+      "sha256": "ee4f906eed8538076ef09a1fd7c9de0080ed47071793bb36e9cd3ef1361435c2",
+      "origin": "Mise en scène photoréaliste originale générée pour Doc-Prof."
+    },
+    {
+      "anchor": "2.2 Track and Trace",
+      "summaryAnchor": "2.2 Track and Trace",
+      "file": "log-303-quai-photo-v002.webp",
+      "path": "assets/logistique/300/303/commun/log-303-quai-photo-v002.webp",
+      "alt": "Au quai, une équipe rapproche des unités des documents de réception.",
+      "caption": "Le statut indique quel événement a été enregistré pour l’unité identifiée.",
+      "sha256": "f5471d584d9f5e544453e7beade341e5d678d18da020392309f14dc0ac5ffe01",
+      "origin": "Mise en scène photoréaliste originale générée pour Doc-Prof."
+    },
+    {
+      "file": "log-802-lifo-tournee-schema-v002.webp",
+      "anchor": "2.3.1 Principe des tournées",
+      "summaryAnchor": "2.3 Planification du transport",
+      "alt": "Compartiment de véhicule vu de dessus, lots C, B et A de gauche à droite. Le lot A est près de la porte arrière.",
+      "caption": "Le premier lot à livrer reste près de la porte. Vérifiez la charge, les accès et l’arrimage avant de retenir cet ordre.",
+      "sha256": "4ff9cb93c09d21eb565e1ed2fd272b7a6e9f9e85a9e892ef5a305c4f704ea9cb",
+      "origin": "Schéma original Doc-Prof."
+    }
+  ]
+}

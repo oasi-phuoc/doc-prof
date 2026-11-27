@@ -1,0 +1,40 @@
+{
+  "theoryOnly": true,
+  "baseTheory": "module-806-v001",
+  "diplomas": [
+    "CFC"
+  ],
+  "replacements": [],
+  "summaryTheory": "## 6. Excel Microsoft 365\n\n### 6.1 et 6.2 Le classeur\n\nUn **classeur** contient des feuilles. Une **cellule** est repérée par colonne et ligne, par exemple B2. Une **plage** réunit plusieurs cellules. Saisissez les quantités, dates et unités dans les colonnes prévues. Un **format** modifie l’affichage : 0,945 en format pourcentage donne 94,5 %. Un code avec zéro initial peut devoir rester en texte.\n\n### 6.3 Calculs simples\n\nUne **formule** commence par =. Les parenthèses précisent la priorité. La **référence relative** évolue quand on copie la formule. La **référence absolue**, par exemple $E$1, reste fixe. Pour valoriser plusieurs lignes au même taux, utilisez par exemple =B2*$E$1 puis vérifiez le résultat.\n\n### 6.4 et 6.5 Fonctions et vérification\n\n**SOMME**, **MOYENNE**, **NB**, **MIN** et **MAX** résument des données. **SI** applique une condition. **NB.SI** compte selon un critère. **RECHERCHX** ou **RECHERCHV** retrouve une référence selon les réglages. **ARRONDI** ajuste le nombre de décimales. Affichez et relisez les formules en cas d’écart.\n\n### 6.6 Créer un graphique\n\nChoisissez les colonnes pour comparer des mois et une courbe pour suivre une évolution. Indiquez **axes**, **unité** et période. Pour préparer un **publipostage**, fournissez une ligne par destinataire et une colonne par champ. Vérifiez les données avant de fusionner.",
+  "visuals": [
+    {
+      "anchor": "6.2 Saisir des données",
+      "summaryAnchor": "6.1 et 6.2 Le classeur",
+      "file": "log-803-erp-photo-v002.webp",
+      "path": "assets/logistique/800/803/commun/log-803-erp-photo-v002.webp",
+      "alt": "Une opératrice confronte son tableau et les données de la livraison.",
+      "caption": "Distinguez en colonnes les références, les quantités et les unités avant de calculer.",
+      "sha256": "35153536ab1b49e25a4c9e8552b05f23bccb3a8c62c7f6f0275c684bedd27ad2",
+      "origin": "Mise en scène photoréaliste originale générée pour Doc-Prof."
+    },
+    {
+      "anchor": "6.6 Créer un graphique",
+      "summaryAnchor": "6.6 Créer un graphique",
+      "file": "log-704-indicateurs-photo-v002.webp",
+      "path": "assets/logistique/700/704/cfc/log-704-indicateurs-photo-v002.webp",
+      "alt": "Une équipe compare des colonnes sur un graphique imprimé.",
+      "caption": "Pour être lisible, le graphique donne la période, l’unité et un type adapté au message.",
+      "sha256": "c7917e6a242deb5164379cdaa38c110c541e71378cb7cd58d9801b0918071be4",
+      "origin": "Mise en scène photoréaliste originale générée pour Doc-Prof."
+    },
+    {
+      "file": "log-806-receptions-mensuelles-schema-v002.webp",
+      "anchor": "6.6 Créer un graphique",
+      "summaryAnchor": "6.6 Créer un graphique",
+      "alt": "Histogramme avec 50 palettes en janvier, 30 en février et 60 en mars. Axe vertical commençant à zéro.",
+      "caption": "Dans ce graphique, la colonne de mars est la plus haute. Écrivez les mois et l’unité de mesure sur le graphique.",
+      "sha256": "9ef3a082f758a57ea9260022fa1bb26d3770363e899dd6ec755a3ba9f6be9828",
+      "origin": "Schéma original Doc-Prof."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "theoryOnly": true,
+  "baseTheory": "module-801-v001",
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "replacements": [],
+  "summaryTheory": "## 1. Identification des marchandises\n\n### 1.1 SSCC (Serial Shipping Container Code)\n\nLe **SSCC** identifie une unité d’expédition précise. Il comporte **18 chiffres**. Deux palettes du même article ont des SSCC différents. Le symbole **GS1-128** peut porter le SSCC sous l’identifiant d’application **(00)**.\n\n### 1.2 à 1.4 GTIN, ISBN et GS1-128\n\nLe **GTIN** identifie une référence commerciale. Le **GTIN-8** et le **GTIN-13** ont un nombre de chiffres différent. Un **ISBN** identifie une édition de livre. Un code **UPC** courant à 12 chiffres peut être représenté sur 13 positions avec un zéro initial. Le chiffre de contrôle aide à vérifier la lecture. Un préfixe GS1 ne prouve pas le pays de fabrication. Le **GS1-128** permet d’encoder plusieurs données typées.\n\n### 1.5 et 1.6 QR et Data Matrix\n\nLe **QR** se reconnaît notamment à ses trois grands repères carrés. Le **Data Matrix** a deux bordures adjacentes pleines. Ces codes à deux dimensions permettent de porter des informations selon la syntaxe utilisée. Le **lot** aide à isoler les marchandises concernées par un rappel.\n\n### 1.7 Placement des codes\n\nPlacez l’étiquette sur une surface accessible. Sur une unité palettisée de hauteur suffisante, le symbole de l’étiquette logistique GS1 se place habituellement entre **400 et 800 mm** de la base et à au moins **50 mm** du bord vertical. Suivez les consignes adaptées au type de support. Vérifiez la lecture après filmage.\n\n### 1.8 RFID (Radio Frequency Identification)\n\nLa **RFID** relie une étiquette à un lecteur par radio. Elle peut lire sans contact visuel direct selon le matériel et les conditions. **Tracking** suit les événements récents. Le **tracing** reconstruit le parcours enregistré.",
+  "visuals": [
+    {
+      "anchor": "1.7 Placement des codes",
+      "summaryAnchor": "1.7 Placement des codes",
+      "file": "log-801-etiquette-photo-v002.webp",
+      "alt": "Une étiquette logistique est placée à plat sur une palette filmée près d’un lecteur.",
+      "caption": "Le symbole doit rester lisible après filmage. Mesurez la position sur l’unité avec les critères du site.",
+      "sha256": "6908b2486e05024f6f21f9d562f7601f2a2315f71c763316f45222f00e6d1555",
+      "origin": "Mise en scène photoréaliste originale générée pour Doc-Prof."
+    },
+    {
+      "anchor": "1.1 SSCC (Serial Shipping Container Code)",
+      "summaryAnchor": "1.1 SSCC (Serial Shipping Container Code)",
+      "file": "log-100-reception-photo-v002.webp",
+      "path": "assets/logistique/100/100/commun/log-100-reception-photo-v002.webp",
+      "alt": "Une équipe lit un identifiant associé à un envoi.",
+      "caption": "L’identifiant de l’unité relie les événements des différents points de passage.",
+      "sha256": "66ce87a4c02c06a75f65f3afc2aee59ca2617f72fff07cec3d3eeb2b9ebc2e0b",
+      "origin": "Mise en scène photoréaliste originale générée pour Doc-Prof."
+    },
+    {
+      "file": "log-801-pose-etiquette-schema-v002.webp",
+      "anchor": "1.7 Placement des codes",
+      "summaryAnchor": "1.7 Placement des codes",
+      "alt": "Vue de face d’une charge palettisée suffisamment haute. La zone de pose du symbole est comprise entre 400 et 800 mm de la base et le symbole reste à au moins 50 mm du bord.",
+      "caption": "Repérez la base et le bord vertical avant la pose. Schéma de principe hors échelle pour une unité de hauteur suffisante.",
+      "sha256": "6653bf5dd9f90fc1c35480cf1e09cc213e5d6564c26f6d601c0e11f1aec1db42",
+      "origin": "Schéma original Doc-Prof."
+    }
+  ]
+}
