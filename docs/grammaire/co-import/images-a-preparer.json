@@ -1,13 +1,1367 @@
 {
   "schema_version": 1,
   "generation_enabled": false,
-  "status": "awaiting_verified_transcripts_and_questions",
+  "status": "illustrations_individuelles_a_preparer",
   "reuse_collection": "public/lib/images/tcf/",
+  "qcm_image_disponibles": 194,
+  "questions_avec_choix_a_preparer": 52,
   "requirements": [
-    "Only describe images after verifying the audio and its questions.",
-    "List three distinct answer concepts and their correct answer.",
-    "Record suitable existing CO TCF image candidates, or a description to generate later.",
-    "Do not activate image choices until every image has been verified."
+    "Vérifier la transcription et les trois choix de la question.",
+    "Générer chaque nouvelle illustration dans un fichier individuel ou réutiliser une illustration TCF contrôlée.",
+    "Vérifier la lisibilité des trois choix et la concordance de la réponse avant activation."
   ],
-  "items": []
+  "items": [
+    {
+      "piste": "gram-co-presenter-piste005",
+      "niveau": "A1",
+      "index": 7,
+      "question": "Quel numéro Paolo donne-t-il oralement ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Son numéro de portable",
+          "correct": true,
+          "sujet": "a smartphone with blank keypad"
+        },
+        {
+          "id": "b",
+          "texte": "Son numéro de passeport",
+          "correct": false,
+          "sujet": "a closed travel passport"
+        },
+        {
+          "id": "c",
+          "texte": "Son numéro de bureau",
+          "correct": false,
+          "sujet": "an office desk telephone beside a blank office notepad"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-presenter-piste012",
+      "niveau": "A1",
+      "index": 1,
+      "question": "Quel type d’enregistrement entend-on ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Un message de répondeur",
+          "correct": true,
+          "sujet": "a smartphone showing a recorded voice message with audio waveform unlettered"
+        },
+        {
+          "id": "b",
+          "texte": "Une annonce de gare",
+          "correct": false,
+          "sujet": "a train station announcer with microphone beside platforms"
+        },
+        {
+          "id": "c",
+          "texte": "Un bulletin météo",
+          "correct": false,
+          "sujet": "a weather presenter in front of a partly cloudy weather graphic"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-presenter-piste012",
+      "niveau": "A1",
+      "index": 3,
+      "question": "Quelle information faut-il laisser en plus du nom et du prénom ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Un numéro de téléphone",
+          "correct": true,
+          "sujet": "a smartphone and telephone handset symbol, no numbers"
+        },
+        {
+          "id": "b",
+          "texte": "Une adresse postale",
+          "correct": false,
+          "sujet": "an addressed postal envelope with blank abstract address lines"
+        },
+        {
+          "id": "c",
+          "texte": "Une adresse électronique",
+          "correct": false,
+          "sujet": "an email on a simple monitor, envelope symbol and empty address field no letters"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-presenter-piste015",
+      "niveau": "A1",
+      "index": 4,
+      "question": "Que fait Felipe ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Il est étudiant",
+          "correct": true,
+          "sujet": "a male adult student studying at an open notebook in a classroom"
+        },
+        {
+          "id": "b",
+          "texte": "Il est professeur",
+          "correct": false,
+          "sujet": "a male adult professor teaching at a blackboard"
+        },
+        {
+          "id": "c",
+          "texte": "Il est ingénieur",
+          "correct": false,
+          "sujet": "a male engineer in safety helmet checking a drawing on a structural work site"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-presenter-piste227",
+      "niveau": "A1",
+      "index": 5,
+      "question": "À quoi les amis veulent-ils inviter Yann et Rosa ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "À un apéritif",
+          "correct": true,
+          "sujet": "several adults standing at an informal reception with refreshments"
+        },
+        {
+          "id": "b",
+          "texte": "À un mariage",
+          "correct": false,
+          "sujet": "couple exchanging rings at a wedding ceremony with guests"
+        },
+        {
+          "id": "c",
+          "texte": "À un concert",
+          "correct": false,
+          "sujet": "two performers on a music stage before a small audience"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-famille-piste023",
+      "niveau": "A1",
+      "index": 0,
+      "question": "À quelle occasion la photo a-t-elle été prise ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Un anniversaire",
+          "correct": true,
+          "sujet": "adult family celebrates a birthday with a candle cake; no lettering"
+        },
+        {
+          "id": "b",
+          "texte": "Un mariage",
+          "correct": false,
+          "sujet": "couple up front during their wedding ceremony with small group of guests"
+        },
+        {
+          "id": "c",
+          "texte": "Une remise de diplôme",
+          "correct": false,
+          "sujet": "graduate in gown and cap holds blank diploma at a graduation ceremony"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-famille-piste026",
+      "niveau": "A1",
+      "index": 6,
+      "question": "Combien d’enfants Megan a-t-elle ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Deux",
+          "correct": true,
+          "sujet": "a mother accompanied by exactly two distinct children, girls and boys, full figures"
+        },
+        {
+          "id": "b",
+          "texte": "Un",
+          "correct": false,
+          "sujet": "a mother accompanied by exactly one child"
+        },
+        {
+          "id": "c",
+          "texte": "Trois",
+          "correct": false,
+          "sujet": "a mother accompanied by exactly three distinct children"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-fetes-piste033",
+      "niveau": "A1",
+      "index": 2,
+      "question": "Que doivent apporter les voisins pour le buffet ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Des plats à partager",
+          "correct": true,
+          "sujet": "several serving dishes with different savoury foods on plain cream backdrop"
+        },
+        {
+          "id": "b",
+          "texte": "Des cadeaux pour les enfants",
+          "correct": false,
+          "sujet": "three wrapped gifts in different sizes on the same plain cream backdrop"
+        },
+        {
+          "id": "c",
+          "texte": "Des jeux de société",
+          "correct": false,
+          "sujet": "three board games with dice and board pieces on the same plain cream backdrop"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-logement-piste228",
+      "niveau": "A1",
+      "index": 3,
+      "question": "Quel problème y a-t-il dans la salle de bains ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Une fuite d’eau",
+          "correct": true,
+          "sujet": "small bathroom with water dripping visibly from a leaking exposed pipe into a puddle"
+        },
+        {
+          "id": "b",
+          "texte": "Une panne d’électricité",
+          "correct": false,
+          "sujet": "same dry bathroom with a switched-on wall switch but unlit fixture and closed intact window, portable flashlight illuminating the electrical panel"
+        },
+        {
+          "id": "c",
+          "texte": "Une fenêtre cassée",
+          "correct": false,
+          "sujet": "same dry bathroom with one visibly shattered windowpane and broken glass, lighting intact"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-logement-piste228",
+      "niveau": "A1",
+      "index": 4,
+      "question": "Comment l’âge de l’immeuble est-il décrit ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Il est ancien",
+          "correct": true,
+          "sujet": "well-kept older residential building with ornate historic facade and aged stone"
+        },
+        {
+          "id": "b",
+          "texte": "Il est neuf",
+          "correct": false,
+          "sujet": "recent completed apartment building with clean new contemporary surfaces"
+        },
+        {
+          "id": "c",
+          "texte": "Il est en construction",
+          "correct": false,
+          "sujet": "an unfinished apartment building under construction with partial walls and work scaffold"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-reglement-immeuble-piste068",
+      "niveau": "A1",
+      "index": 2,
+      "question": "Comment le couloir est-il décrit ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Sale",
+          "correct": true,
+          "sujet": "upright eye-level image of indoor residential corridor with litter and visible grime, otherwise well lit"
+        },
+        {
+          "id": "b",
+          "texte": "Propre",
+          "correct": false,
+          "sujet": "same indoor corridor clean and well lit"
+        },
+        {
+          "id": "c",
+          "texte": "Sombre",
+          "correct": false,
+          "sujet": "same visibly tidy corridor much darker with lights off"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-universite-ecole-piste080",
+      "niveau": "A1",
+      "index": 2,
+      "question": "Qu’organise l’association après les révisions ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Des fêtes",
+          "correct": true,
+          "sujet": "adults celebrating an informal party indoors"
+        },
+        {
+          "id": "b",
+          "texte": "Des voyages",
+          "correct": false,
+          "sujet": "young adults with luggage boarding a coach for a trip"
+        },
+        {
+          "id": "c",
+          "texte": "Des compétitions",
+          "correct": false,
+          "sujet": "students running in a race on a sports track with other competitors"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-universite-ecole-piste081",
+      "niveau": "A1",
+      "index": 0,
+      "question": "Que cherche le premier étudiant ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Le bureau du professeur Martin",
+          "correct": true,
+          "sujet": "ordinary university professor working in his private office beside books and a desk"
+        },
+        {
+          "id": "b",
+          "texte": "La bibliothèque universitaire",
+          "correct": false,
+          "sujet": "university library with bookcases and tables for quiet reading"
+        },
+        {
+          "id": "c",
+          "texte": "Le restaurant universitaire",
+          "correct": false,
+          "sujet": "university cafeteria with trays and students eating at tables"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-universite-ecole-piste082",
+      "niveau": "A1",
+      "index": 1,
+      "question": "En quoi l’épreuve orale consiste-t-elle ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Une présentation devant la classe",
+          "correct": true,
+          "sujet": "adult student standing and speaking in front of seated peers"
+        },
+        {
+          "id": "b",
+          "texte": "Une dictée individuelle",
+          "correct": false,
+          "sujet": "adult learner writing quietly as a teacher dictates, with blank notebook"
+        },
+        {
+          "id": "c",
+          "texte": "Une lecture silencieuse",
+          "correct": false,
+          "sujet": "adult learner silently reading a book alone"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-quotidien-piste083",
+      "niveau": "A1",
+      "index": 1,
+      "question": "Que fait Anaïs après le dîner selon Sacha ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Elle regarde des séries",
+          "correct": true,
+          "sujet": "a young woman watches a streaming series on television at home"
+        },
+        {
+          "id": "b",
+          "texte": "Elle fait du sport",
+          "correct": false,
+          "sujet": "the same young woman does sport at home"
+        },
+        {
+          "id": "c",
+          "texte": "Elle joue du piano",
+          "correct": false,
+          "sujet": "the same young woman plays piano at home"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-travail-piste094",
+      "niveau": "A1",
+      "index": 0,
+      "question": "Quel problème l’empêche de préparer sa présentation ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Un problème d’ordinateur",
+          "correct": true,
+          "sujet": "adult at a computer with unlit monitor and a loose cable"
+        },
+        {
+          "id": "b",
+          "texte": "Une panne de voiture",
+          "correct": false,
+          "sujet": "adult beside an automobile with an open hood trying to get it started"
+        },
+        {
+          "id": "c",
+          "texte": "Une coupure d’eau",
+          "correct": false,
+          "sujet": "adult turning a dry tap over a basin, no water coming out"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-travail-piste100",
+      "niveau": "A1",
+      "index": 1,
+      "question": "Pour quelle tâche vient-il aider le groupe ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Organiser les fichiers",
+          "correct": true,
+          "sujet": "organizing computer folders on a desktop screen with simple colored folders and no text"
+        },
+        {
+          "id": "b",
+          "texte": "Réparer les téléphones",
+          "correct": false,
+          "sujet": "adult repairing smartphones at a work bench"
+        },
+        {
+          "id": "c",
+          "texte": "Nettoyer les bureaux",
+          "correct": false,
+          "sujet": "adult cleaning a shared open-plan office with a mop"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-travail-piste102",
+      "niveau": "A1",
+      "index": 1,
+      "question": "Quelle façon de travailler faut-il apprécier ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "En équipe",
+          "correct": true,
+          "sujet": "workers collaborate around a shared office table"
+        },
+        {
+          "id": "b",
+          "texte": "Seul",
+          "correct": false,
+          "sujet": "one worker alone at an ordinary office desk"
+        },
+        {
+          "id": "c",
+          "texte": "À distance uniquement",
+          "correct": false,
+          "sujet": "one worker at home in an online meeting at their computer showing tiny video faces"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-magasin-vetements-piste115",
+      "niveau": "A1",
+      "index": 1,
+      "question": "Pourquoi faut-il des vêtements chauds ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Pour partir à la montagne",
+          "correct": true,
+          "sujet": "person with a warm jacket at a mountain trailhead with mountain scenery"
+        },
+        {
+          "id": "b",
+          "texte": "Pour aller à la plage",
+          "correct": false,
+          "sujet": "person carrying a light summer bag by the beach"
+        },
+        {
+          "id": "c",
+          "texte": "Pour travailler dans un bureau climatisé",
+          "correct": false,
+          "sujet": "person at a workplace office desk with overhead air conditioner"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-medecin-piste138",
+      "niveau": "A1",
+      "index": 1,
+      "question": "Que le médecin lui conseille-t-il d’abord ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Rester à la maison",
+          "correct": true,
+          "sujet": "person resting at home in a living room"
+        },
+        {
+          "id": "b",
+          "texte": "Aller travailler",
+          "correct": false,
+          "sujet": "the same person arriving at work carrying a briefcase"
+        },
+        {
+          "id": "c",
+          "texte": "Partir en voyage",
+          "correct": false,
+          "sujet": "the same person leaving for a trip with a suitcase in a train or airport hall"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-medecin-piste147",
+      "niveau": "A1",
+      "index": 0,
+      "question": "Pour quel problème peut-on consulter le docteur Martin ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Pour les dents",
+          "correct": true,
+          "sujet": "adult dental consultation with dentist examining mouth"
+        },
+        {
+          "id": "b",
+          "texte": "Pour les yeux",
+          "correct": false,
+          "sujet": "adult vision consultation with optometrist using eye chart shapes only"
+        },
+        {
+          "id": "c",
+          "texte": "Pour le dos",
+          "correct": false,
+          "sujet": "adult back consultation with clinician examining lower back through clothing"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-pharmacie-piste157",
+      "niveau": "A1",
+      "index": 0,
+      "question": "Qu’est-ce que la publicité présente ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Des pastilles contre la toux",
+          "correct": true,
+          "sujet": "unbranded throat lozenges in a blister pack and two loose lozenges beside it"
+        },
+        {
+          "id": "b",
+          "texte": "Un savon pour les mains",
+          "correct": false,
+          "sujet": "plain bar of hand soap beside a soap dish"
+        },
+        {
+          "id": "c",
+          "texte": "Un jus d’orange",
+          "correct": false,
+          "sujet": "small glass of orange juice and half orange"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-se-deplacer-piste160",
+      "niveau": "A1",
+      "index": 0,
+      "question": "Où la personne veut-elle aller ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "À la place de la Mairie",
+          "correct": true,
+          "sujet": "a town square dominated by a recognizable town hall facade"
+        },
+        {
+          "id": "b",
+          "texte": "À la place de la Gare",
+          "correct": false,
+          "sujet": "a town square dominated by the recognizable facade of a railway station"
+        },
+        {
+          "id": "c",
+          "texte": "À la place du Marché",
+          "correct": false,
+          "sujet": "a town square occupied by open market stalls"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-se-deplacer-piste160",
+      "niveau": "A1",
+      "index": 5,
+      "question": "Où se trouve la station de métro ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "En face de la gare",
+          "correct": true,
+          "sujet": "station metro stairs directly opposite a rail station building across a street"
+        },
+        {
+          "id": "b",
+          "texte": "Derrière la mairie",
+          "correct": false,
+          "sujet": "metro entrance behind a town hall"
+        },
+        {
+          "id": "c",
+          "texte": "À côté de la poste",
+          "correct": false,
+          "sujet": "metro entrance immediately alongside a post office counter facade and mailbox"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-se-deplacer-piste167",
+      "niveau": "A1",
+      "index": 1,
+      "question": "Comment peut-on payer l’e-ticket ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Par SMS",
+          "correct": true,
+          "sujet": "hand holding a smartphone with blank chat bubble icons for text messaging"
+        },
+        {
+          "id": "b",
+          "texte": "Par chèque",
+          "correct": false,
+          "sujet": "unlettered signed cheque with handwriting represented by short abstract lines"
+        },
+        {
+          "id": "c",
+          "texte": "En espèces",
+          "correct": false,
+          "sujet": "paper banknotes and coins together without visible denomination, used as payment"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-se-deplacer-piste168",
+      "niveau": "A1",
+      "index": 2,
+      "question": "Quels transports sont conseillés ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Un vélo ou une trottinette électrique",
+          "correct": true,
+          "sujet": "one ordinary bicycle and a standing electric kick scooter side by side"
+        },
+        {
+          "id": "b",
+          "texte": "Un bus ou un métro",
+          "correct": false,
+          "sujet": "one city bus and a metro train side by side"
+        },
+        {
+          "id": "c",
+          "texte": "Une voiture ou une moto",
+          "correct": false,
+          "sujet": "one passenger car and a motorcycle side by side"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-se-deplacer-piste170",
+      "niveau": "A1",
+      "index": 4,
+      "question": "Où se trouve la station de métro ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "En face du commissariat",
+          "correct": true,
+          "sujet": "metro entrance across a narrow street opposite the police station with a simple emblem"
+        },
+        {
+          "id": "b",
+          "texte": "Derrière la mairie",
+          "correct": false,
+          "sujet": "a subway staircase behind a town hall, shown clearly from side"
+        },
+        {
+          "id": "c",
+          "texte": "À côté du parc",
+          "correct": false,
+          "sujet": "subway stairs next to fenced green public park and its entrance"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-gare-piste180",
+      "niveau": "A1",
+      "index": 0,
+      "question": "Quel moyen de transport la personne prend-elle finalement ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Le TGV",
+          "correct": true,
+          "sujet": "high speed railway train at a station platform"
+        },
+        {
+          "id": "b",
+          "texte": "Le covoiturage",
+          "correct": false,
+          "sujet": "several adults share a private car driving away, clearly private vehicle"
+        },
+        {
+          "id": "c",
+          "texte": "L’avion",
+          "correct": false,
+          "sujet": "passenger airplane parked at a boarding gate"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-aeroport-piste192",
+      "niveau": "A1",
+      "index": 1,
+      "question": "Que demande l’agent au voyageur de faire avec sa valise ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "L’ouvrir",
+          "correct": true,
+          "sujet": "traveller opens his own suitcase on a baggage table, fully open clearly visible"
+        },
+        {
+          "id": "b",
+          "texte": "La peser",
+          "correct": false,
+          "sujet": "same traveller places his closed suitcase on a weighing scale"
+        },
+        {
+          "id": "c",
+          "texte": "La fermer",
+          "correct": false,
+          "sujet": "same traveller presses down to close the lid of his suitcase with the zipper in reach"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-hotel-piste204",
+      "niveau": "A1",
+      "index": 0,
+      "question": "Quels équipements sont dans la salle de bains ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Une baignoire et un sèche-cheveux",
+          "correct": true,
+          "sujet": "bathtub and hand-held hair dryer in a bathroom"
+        },
+        {
+          "id": "b",
+          "texte": "Une douche et un lave-linge",
+          "correct": false,
+          "sujet": "walk-in shower and washing machine in a bathroom"
+        },
+        {
+          "id": "c",
+          "texte": "Un sauna et un jacuzzi",
+          "correct": false,
+          "sujet": "wood sauna and a separate bubbling jacuzzi in a spa room"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-lieux-culturels-piste216",
+      "niveau": "A1",
+      "index": 1,
+      "question": "Quel lieu veulent-ils visiter après le musée ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Le château d’Arnajon",
+          "correct": true,
+          "sujet": "a historical stone castle in a garden"
+        },
+        {
+          "id": "b",
+          "texte": "Le théâtre de la ville",
+          "correct": false,
+          "sujet": "an urban theatre auditorium with stage and seats"
+        },
+        {
+          "id": "c",
+          "texte": "Le parc zoologique",
+          "correct": false,
+          "sujet": "zoo visitor path beside a clearly fenced animal enclosure"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-fetes-a2-piste_058",
+      "niveau": "A2",
+      "index": 1,
+      "question": "Où se dérouleront le repas et la danse ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Dehors",
+          "correct": true,
+          "sujet": "wedding meal tables and a small area for dancing outside in a garden"
+        },
+        {
+          "id": "b",
+          "texte": "Dans une salle de la mairie",
+          "correct": false,
+          "sujet": "same type wedding meal and dance in a municipal hall room"
+        },
+        {
+          "id": "c",
+          "texte": "Dans le hall de la gare",
+          "correct": false,
+          "sujet": "same event in a big recognizable rail station hall with platform visible behind a window"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-fetes-a2-piste_064",
+      "niveau": "A2",
+      "index": 0,
+      "question": "Que permet de créer le site pour préparer une fête ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Un blog avec des photos",
+          "correct": true,
+          "sujet": "web page design showing a vertical photo blog with several personal pictures and no labels"
+        },
+        {
+          "id": "b",
+          "texte": "Une chaîne de radio",
+          "correct": false,
+          "sujet": "a lively radio studio with microphone and headphones"
+        },
+        {
+          "id": "c",
+          "texte": "Une application de paiement",
+          "correct": false,
+          "sujet": "smartphone screen depicting digital payment by simple coin icon and secure checkout"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-universite-ecole-a2-piste_066",
+      "niveau": "A2",
+      "index": 0,
+      "question": "Où les parents ont-ils signé l’autorisation ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Dans le cahier de liaison",
+          "correct": true,
+          "sujet": "adult hand signing a school-to-home notebook with abstract non-legible strokes"
+        },
+        {
+          "id": "b",
+          "texte": "Sur un billet de train",
+          "correct": false,
+          "sujet": "same hand marks a small paper train ticket with tiny train symbol"
+        },
+        {
+          "id": "c",
+          "texte": "Au dos d’une photo",
+          "correct": false,
+          "sujet": "same hand signs the visible back of a printed photograph that is turning face-up along one edge"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-universite-ecole-a2-piste_066",
+      "niveau": "A2",
+      "index": 1,
+      "question": "Quel événement l’école organise-t-elle en fin d’année ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Une kermesse",
+          "correct": true,
+          "sujet": "a school fair in a playground with tables, booths and simple games"
+        },
+        {
+          "id": "b",
+          "texte": "Une réunion de rentrée",
+          "correct": false,
+          "sujet": "parents attend ordinary back-to-school meeting in a classroom with teacher"
+        },
+        {
+          "id": "c",
+          "texte": "Une compétition de natation",
+          "correct": false,
+          "sujet": "children in a swimming competition in lanes with an adult official"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-sport-a2-piste_122",
+      "niveau": "A2",
+      "index": 0,
+      "question": "Où Christophe a-t-il fait son parcours de santé ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Dans la nature",
+          "correct": true,
+          "sujet": "adult exercises by an outdoor nature trail between trees"
+        },
+        {
+          "id": "b",
+          "texte": "Dans la piscine municipale",
+          "correct": false,
+          "sujet": "adult exercises in indoor municipal swimming pool, lifeguard window"
+        },
+        {
+          "id": "c",
+          "texte": "Dans un stade couvert",
+          "correct": false,
+          "sujet": "adult exercises in an enclosed sports stadium under a visible stadium roof and seating"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-faire-achats-a2-piste_007",
+      "niveau": "A2",
+      "index": 0,
+      "question": "Pourquoi le client appelle-t-il le service après-vente ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Son téléphone ne s’allume plus",
+          "correct": true,
+          "sujet": "person tries to switch on a phone with dark screen, no icons, and small finger on power switch"
+        },
+        {
+          "id": "b",
+          "texte": "Son colis n’est pas arrivé",
+          "correct": false,
+          "sujet": "same person checks an open empty delivery mailbox in front of house, expecting a parcel"
+        },
+        {
+          "id": "c",
+          "texte": "Il a oublié le prix payé",
+          "correct": false,
+          "sujet": "same person looks at a receipt with a puzzled expression and rubs head, receipt has no amount"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-demarches-administratives-a2-piste_030",
+      "niveau": "A2",
+      "index": 0,
+      "question": "Que reçoit-on après l’envoi d’une lettre recommandée ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Un accusé de réception",
+          "correct": true,
+          "sujet": "proof-of-delivery receipt with a courier handing a paper acknowledgment to recipient, no legible text"
+        },
+        {
+          "id": "b",
+          "texte": "Un nouveau carnet de timbres",
+          "correct": false,
+          "sujet": "unopened booklet of postage stamps with decorative postage designs only"
+        },
+        {
+          "id": "c",
+          "texte": "Un formulaire de changement d’adresse",
+          "correct": false,
+          "sujet": "official change-of-address form with abstract lines and house icons"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-actualite-a2-piste_033",
+      "niveau": "A2",
+      "index": 0,
+      "question": "Comment la personne suit-elle surtout l’actualité ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Elle lit la presse en ligne",
+          "correct": true,
+          "sujet": "adult reads news articles on a tablet, abstract heading and article pictures only"
+        },
+        {
+          "id": "b",
+          "texte": "Elle regarde le journal télévisé chaque soir",
+          "correct": false,
+          "sujet": "same adult watches a newscast on a television at home"
+        },
+        {
+          "id": "c",
+          "texte": "Elle achète tous ses journaux à la gare",
+          "correct": false,
+          "sujet": "same adult buys printed newspapers at a railway station's news kiosk"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-actualite-a2-piste_037",
+      "niveau": "A2",
+      "index": 0,
+      "question": "Quel sujet est associé au magazine Télérama ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "L’actualité culturelle",
+          "correct": true,
+          "sujet": "a magazine cover collage showing people in cinema, theatre and museum, textless"
+        },
+        {
+          "id": "b",
+          "texte": "La mode",
+          "correct": false,
+          "sujet": "magazine showing clothes and a fashion runway, textless"
+        },
+        {
+          "id": "c",
+          "texte": "Le sport",
+          "correct": false,
+          "sujet": "magazine showing athletes and stadium sports, textless"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-inviter-a2-piste_049",
+      "niveau": "A2",
+      "index": 0,
+      "question": "Que peut faire l’invité avec ses chaussures ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Les garder dans l’appartement",
+          "correct": true,
+          "sujet": "visitor keeps shoes on while entering an apartment"
+        },
+        {
+          "id": "b",
+          "texte": "Les mettre sur la table",
+          "correct": false,
+          "sujet": "visitor puts shoes on top of a table"
+        },
+        {
+          "id": "c",
+          "texte": "Les laisser obligatoirement dans la rue",
+          "correct": false,
+          "sujet": "visitor takes shoes off and leaves them outside next to street pavement"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-vie-associative-a2-piste_078",
+      "niveau": "A2",
+      "index": 0,
+      "question": "Quel type d’aide l’association demande-t-elle aux bénévoles ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "De l’aide pour les devoirs ou les études",
+          "correct": true,
+          "sujet": "adult volunteer helps a learner do homework at a desk with books"
+        },
+        {
+          "id": "b",
+          "texte": "De l’aide pour conduire un bus",
+          "correct": false,
+          "sujet": "adult instructor helps a driver at the controls of a city bus"
+        },
+        {
+          "id": "c",
+          "texte": "De l’aide pour vendre des vélos",
+          "correct": false,
+          "sujet": "adult volunteer helps sell bicycles to customers in a shop"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-loisirs-a2-piste_097",
+      "niveau": "A2",
+      "index": 0,
+      "question": "Que faut-il envoyer en plus de la photo ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Un petit texte de présentation",
+          "correct": true,
+          "sujet": "one short presentation sheet with plain decorative abstract rows, no legible letters"
+        },
+        {
+          "id": "b",
+          "texte": "Une copie de sa carte d’identité",
+          "correct": false,
+          "sujet": "printed photocopy of a small identity card with thumbnail portrait and blank lines"
+        },
+        {
+          "id": "c",
+          "texte": "Un appareil photo",
+          "correct": false,
+          "sujet": "one compact camera isolated on ivory"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-sante-a2-piste_118",
+      "niveau": "A2",
+      "index": 0,
+      "question": "Que doit faire Bianca si elle veut fumer ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Sortir",
+          "correct": true,
+          "sujet": "same adult steps out through a doorway onto pavement"
+        },
+        {
+          "id": "b",
+          "texte": "Ouvrir seulement la fenêtre",
+          "correct": false,
+          "sujet": "same adult opens a window while remaining inside the room"
+        },
+        {
+          "id": "c",
+          "texte": "Changer de place dans la pièce",
+          "correct": false,
+          "sujet": "same adult moves between two seats inside the room, window stays closed"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-sante-a2-piste_121",
+      "niveau": "A2",
+      "index": 0,
+      "question": "Quel spécialiste la mère peut-elle appeler si elle est inquiète ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Le pédiatre",
+          "correct": true,
+          "sujet": "paediatrician examines a small child with their parent nearby"
+        },
+        {
+          "id": "b",
+          "texte": "Le dentiste",
+          "correct": false,
+          "sujet": "dentist examines adult patient's teeth using dental equipment"
+        },
+        {
+          "id": "c",
+          "texte": "L’ophtalmologue",
+          "correct": false,
+          "sujet": "eye specialist checks adult patient's eyes through ophthalmology instrument"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-sante-a2-piste_198",
+      "niveau": "A2",
+      "index": 1,
+      "question": "Quel exercice est conseillé après le travail ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Courir",
+          "correct": true,
+          "sujet": "adult running on a park path for exercise"
+        },
+        {
+          "id": "b",
+          "texte": "Nager dans un lac",
+          "correct": false,
+          "sujet": "adult swimming in an outdoor lake"
+        },
+        {
+          "id": "c",
+          "texte": "Participer à un tournoi",
+          "correct": false,
+          "sujet": "adults playing an organized tournament game with opponents on a sports court"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-ville-campagne-a2-piste_139",
+      "niveau": "A2",
+      "index": 1,
+      "question": "Quelle solution en ville est présentée comme verte et calme ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Vivre dans un écoquartier",
+          "correct": true,
+          "sujet": "sustainable urban residential neighborhood with gardens, solar rooftops and pedestrian paths"
+        },
+        {
+          "id": "b",
+          "texte": "Habiter à côté d’une autoroute",
+          "correct": false,
+          "sujet": "urban apartment building right next to busy motorway"
+        },
+        {
+          "id": "c",
+          "texte": "S’installer au-dessus d’un parking",
+          "correct": false,
+          "sujet": "living apartment building above an open parking garage lined with cars, visible structural stack"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-prendre-soin-a2-piste_152",
+      "niveau": "A2",
+      "index": 0,
+      "question": "Où Thomas a-t-il vu le déodorant ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Avec le maquillage",
+          "correct": true,
+          "sujet": "deodorant sticks placed alongside brushes and cosmetics products"
+        },
+        {
+          "id": "b",
+          "texte": "Dans la pharmacie",
+          "correct": false,
+          "sujet": "deodorant placed on a shelf in a pharmacy with professional shelves and pharmacist nearby"
+        },
+        {
+          "id": "c",
+          "texte": "À côté des serviettes",
+          "correct": false,
+          "sujet": "deodorant on display right beside a shelf of folded towels"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-prendre-soin-a2-piste_153",
+      "niveau": "A2",
+      "index": 0,
+      "question": "Quel cadeau propose-t-on après avoir écarté le week-end ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Un soin pour le visage",
+          "correct": true,
+          "sujet": "a client receiving a cosmetic facial treatment in a spa"
+        },
+        {
+          "id": "b",
+          "texte": "Un équipement de sport",
+          "correct": false,
+          "sujet": "sport equipment arranged together, dumbbells, mat and shoes"
+        },
+        {
+          "id": "c",
+          "texte": "Un flacon de parfum",
+          "correct": false,
+          "sujet": "a single perfume bottle on plain ivory"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-candidater-a2-piste_177",
+      "niveau": "A2",
+      "index": 0,
+      "question": "Qu’est-ce que Julien préfère dans son métier ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Le contact avec les clients",
+          "correct": true,
+          "sujet": "employee speaking to a customer at a retail counter"
+        },
+        {
+          "id": "b",
+          "texte": "Le rangement de la réserve",
+          "correct": false,
+          "sujet": "employee arranging stock on shelves in a warehouse back room"
+        },
+        {
+          "id": "c",
+          "texte": "L’organisation des livraisons",
+          "correct": false,
+          "sujet": "employee organizes delivery parcels alongside a delivery vehicle"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-entretien-embauche-a2-piste_179",
+      "niveau": "A2",
+      "index": 0,
+      "question": "Que fera la personne candidate au début de l’entretien ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Elle se présentera",
+          "correct": true,
+          "sujet": "at a meeting, a candidate introducing herself and making eye contact with interviewer"
+        },
+        {
+          "id": "b",
+          "texte": "Elle visitera l’entreprise",
+          "correct": false,
+          "sujet": "same candidate touring a workplace with an escort"
+        },
+        {
+          "id": "c",
+          "texte": "Elle signera le contrat",
+          "correct": false,
+          "sujet": "same candidate signing a contract at a desk with a pen"
+        }
+      ]
+    },
+    {
+      "piste": "gram-co-entretien-embauche-a2-piste_185",
+      "niveau": "A2",
+      "index": 0,
+      "question": "Quel était le travail de Madame Durand ?",
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Accueillir et conseiller les clients",
+          "correct": true,
+          "sujet": "woman welcomes and helps shoppers at an information counter"
+        },
+        {
+          "id": "b",
+          "texte": "Préparer les journaux",
+          "correct": false,
+          "sujet": "woman preparing newspapers in an editorial or print office"
+        },
+        {
+          "id": "c",
+          "texte": "Organiser les transports",
+          "correct": false,
+          "sujet": "woman organizing transport next to freight vehicles and route sheet"
+        }
+      ]
+    }
+  ]
 }

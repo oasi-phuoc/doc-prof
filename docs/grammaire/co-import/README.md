@@ -24,15 +24,15 @@ La banque `src/grammaire/exercises/co-bank.json` conserve les identifiants, enre
 
 | Niveau | Pistes | QCM texte et réponse sur trait | Questions avec QCM image | Scènes de support |
 | --- | ---: | ---: | ---: | ---: |
-| A1 | 127 | 419 | 108 | 2 |
-| A2 | 125 | 155 | 37 | 9 |
-| **Total** | **252** | **574** | **145** | **11** |
+| A1 | 127 | 419 | 147 | 2 |
+| A2 | 125 | 155 | 47 | 13 |
+| **Total** | **252** | **574** | **194** | **15** |
 
 Les 100 questions déjà présentes ont été conservées. Les 474 nouvelles questions sont rattachées à un passage de la transcription. La banque réutilise les questions TCF lorsque le dialogue correspond et propose des questions rédigées pour les autres pistes. Le [relevé des passages et des réemplois](questions-verification-20261127.json) permet de retrouver chaque réponse ajoutée.
 
-Dans le générateur, les formes **Texte**, **Phrase** et **Image** correspondent au QCM texte, à la réponse sur trait et au QCM illustré. La forme Image est disponible lorsque trois illustrations distinctes correspondent aux choix. Le dernier lot ajoute 17 QCM image. Les choix nouvellement dessinés ont été générés dans des fichiers individuels, notamment pour les métiers, les médicaments et la randonnée en rollers, à cheval ou à vélo. Onze pistes affichent aussi une scène de dialogue qui montre les deux interlocuteurs. Les scènes et les choix intégrés ont été examinés visuellement selon le [référentiel graphique TCF](../../tcf/style-images.md). Le [registre des illustrations](illustrations-co-20261127.json) conserve les sources, les empreintes et les passages associés.
+Dans le générateur, les formes **Texte**, **Phrase** et **Image** correspondent au QCM texte, à la réponse sur trait et au QCM illustré. Les 574 questions proposent les deux premiers formats. Le QCM image est disponible pour 194 questions, dont 66 ajoutées lors de cette reprise. Chaque nouvelle illustration est générée dans son propre fichier. Des images TCF existantes sont réutilisées lorsque leur contenu correspond au choix. 15 pistes affichent aussi une scène de dialogue. Les scènes et les choix publiés ont été examinés visuellement selon le [référentiel graphique TCF](../../tcf/style-images.md). Les empreintes et passages associés figurent dans le [registre des illustrations](illustrations-co-20261127.json). Le [registre des choix à illustrer](images-a-preparer.json) rassemble 52 questions repérées lors de la revue des transcriptions.
 
-Les questions ont été relues sur les transcriptions recoupées. Lors de la première passe, les pistes et les images ont été testées dans le navigateur sur un échantillon des deux niveaux, avec les formes disponibles et l’export PDF. L’écoute de validation et l’approbation enseignante restent à faire.
+Les questions ont été relues sur les transcriptions recoupées. Lors de la première passe, les pistes et les images ont été testées dans le navigateur sur un échantillon des deux niveaux, avec les formes disponibles et l’export PDF. Les 252 pistes ont été décodées intégralement sans erreur. L’écoute de validation et l’approbation enseignante restent à faire.
 
 ## Vérification
 
