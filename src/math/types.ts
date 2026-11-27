@@ -820,6 +820,8 @@ export type MathItem = {
     size: number
     grid: string[][]
     words: string[]
+    directions?: import('@/francais/soutien/word-search').WordSearchDirection[]
+    placements?: import('@/francais/soutien/word-search').WordSearchPlacement[]
     /** Cellules du corrigé : « r,c ». */
     hitCells?: string[]
   }

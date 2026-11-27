@@ -17,12 +17,16 @@ export type WordSearchPuzzle = {
   placements: WordSearchPlacement[]
 }
 
-const DIRS: ReadonlyArray<readonly [number, number]> = [
-  [0, 1],
-  [0, -1],
-  [1, 0],
-  [-1, 0],
-]
+export const WORD_SEARCH_DIRECTIONS = {
+  droite: [0, 1],
+  gauche: [0, -1],
+  bas: [1, 0],
+  haut: [-1, 0],
+} as const
+
+export type WordSearchDirection = keyof typeof WORD_SEARCH_DIRECTIONS
+export const DEFAULT_WORD_SEARCH_DIRECTIONS = Object.keys(WORD_SEARCH_DIRECTIONS) as WordSearchDirection[]
+export const WORD_SEARCH_WORD_COUNT = 12
 
 /** Majuscules pour la grille : sans accents ni ligatures (Æ/Œ → AE/OE). */
 export function toGridLetters(word: string): string {
@@ -82,7 +86,7 @@ export function buildWordSearch(
   rng: Rng,
   sourceWords: readonly string[],
   size = 15,
-  count = 12,
+  count = WORD_SEARCH_WORD_COUNT,
 ): WordSearchPuzzle {
   const picked = shuffle(rng, [...sourceWords])
     .map((w) => w.trim())
@@ -96,19 +100,42 @@ export function buildWordSearch(
     else break
   }
 
+  return placeWords(rng, words, size, DEFAULT_WORD_SEARCH_DIRECTIONS)!
+}
+
+function placeWords(
+  rng: Rng,
+  words: readonly string[],
+  size: number,
+  directions: readonly WordSearchDirection[],
+  fixed: readonly WordSearchPlacement[] = [],
+): WordSearchPuzzle | null {
+  const vectors = directions.map((direction) => WORD_SEARCH_DIRECTIONS[direction])
   const grid: (string | null)[][] = Array.from({ length: size }, () =>
     Array.from({ length: size }, () => null),
   )
   const placements: WordSearchPlacement[] = []
   const placedWords: string[] = []
+  const fixedWords = new Set<string>()
+  for (const { word, row, col, dRow, dCol } of fixed) {
+    const gridWord = toGridLetters(word)
+    if (!words.includes(word) || fixedWords.has(word) ||
+        !Number.isInteger(row) || !Number.isInteger(col) ||
+        !vectors.some(([dr, dc]) => dr === dRow && dc === dCol) ||
+        !canPlace(grid, size, gridWord, row, col, dRow, dCol)) return null
+    placeWord(grid, gridWord, row, col, dRow, dCol)
+    placements.push({ word, gridWord, row, col, dRow, dCol })
+    fixedWords.add(word)
+    placedWords.push(word)
+  }
 
-  for (const word of shuffle(rng, words)) {
+  for (const word of shuffle(rng, words.filter((candidate) => !fixedWords.has(candidate)))) {
     const gridWord = toGridLetters(word)
     if (gridWord.length < 3 || gridWord.length > size) continue
     let placed = false
     const attempts = 80
     for (let a = 0; a < attempts && !placed; a++) {
-      const [dRow, dCol] = pick(rng, DIRS)
+      const [dRow, dCol] = pick(rng, vectors)
       const maxR = dRow === 0 ? size - 1 : dRow === 1 ? size - gridWord.length : gridWord.length - 1
       const maxC = dCol === 0 ? size - 1 : dCol === 1 ? size - gridWord.length : gridWord.length - 1
       const minR = dRow === -1 ? gridWord.length - 1 : 0
@@ -134,6 +161,49 @@ export function buildWordSearch(
     words: placedWords,
     placements,
   }
+}
+
+export function buildEditedWordSearch(
+  rng: Rng,
+  words: string[],
+  size: number,
+  directions: WordSearchDirection[],
+  fixed?: readonly WordSearchPlacement[],
+): WordSearchPuzzle | null {
+  const spellings = words.map(toGridLetters)
+  if (!Number.isInteger(size) || size < 3 || !directions.length ||
+      directions.some((direction) => !Object.hasOwn(WORD_SEARCH_DIRECTIONS, direction)) ||
+      !words.length || words.length > WORD_SEARCH_WORD_COUNT || new Set(spellings).size !== words.length ||
+      spellings.some((word) => word.length < 3 || word.length > size)) return null
+  for (let attempt = 0; attempt < 5; attempt++) {
+    const puzzle = placeWords(rng, words, size, directions, fixed)
+    if (!puzzle) return null
+    if (puzzle.words.length === words.length) return { ...puzzle, words }
+  }
+  return null
+}
+
+export function findWordSearchPositions(words: string[], grid: string[][], hitCells: string[]): WordSearchPlacement[] {
+  const hits = new Set(hitCells)
+  return words.flatMap((word) => {
+    const gridWord = toGridLetters(word)
+    const letters = [...gridWord]
+    if (letters.length < 3) return []
+    for (const [row, line] of grid.entries()) {
+      for (const [col, cell] of line.entries()) {
+        if (cell !== letters[0] || !hits.has(`${row},${col}`)) continue
+        for (const [dRow, dCol] of Object.values(WORD_SEARCH_DIRECTIONS)) {
+          const matches = letters.every((letter, index) => {
+            const r = row + index * dRow
+            const c = col + index * dCol
+            return grid[r]?.[c] === letter && hits.has(`${r},${c}`)
+          })
+          if (matches) return [{ word, gridWord, row, col, dRow, dCol }]
+        }
+      }
+    }
+    return []
+  })
 }
 
 /** Ensemble des cellules (r,c) couvertes par les placements. */

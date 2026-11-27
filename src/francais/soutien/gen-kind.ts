@@ -765,7 +765,7 @@ export function genKind(
         ...bank.wordSearchWords.map(displayVocabLabel),
         ...textPool,
       ]
-      const puzzle = buildWordSearch(rng, searchPool, 15, 12)
+      const puzzle = buildWordSearch(rng, searchPool)
       const hits = [...wordSearchHitCells(puzzle.placements)]
       return {
         instruction: 'Entourez les mots dans la grille.',
@@ -774,9 +774,7 @@ export function genKind(
           {
             layout: 'word-search',
             wordSearch: {
-              size: puzzle.size,
-              grid: puzzle.grid,
-              words: puzzle.words,
+              ...puzzle,
               hitCells: hits,
             },
             answer: puzzle.words.join(' · '),
