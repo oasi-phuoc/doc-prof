@@ -207,16 +207,24 @@ La révision `logistique-exercices-approvisionnement-v004` ajoute 180 exercices 
 
 Les 72 parcours A4 et PDF couvrent les banques complètes de calculs, de vérifications et de situations en CFC et AFP, avec leurs corrigés et une numérotation continue. La réserve minimale au pied est de 39,95 px. Les tests de génération vérifient l’existence de chaque section citée et la conservation des tirages enregistrés.
 
+### Complément aux cibles de banque
+
+| Thème | Unités ajoutées | Couverture et contrôle |
+|---|---:|---|
+| 400 — Stockage | 880 | Les dix modules atteignent les trois cibles en CFC et AFP. Les calculs sont ancrés dans les chapitres sur la réserve, les formes de stockage, la capacité, la rotation et la manutention. Les 60 parcours A4 et PDF utilisent la capacité proposée par le sélecteur existant, avec une réserve minimale de 33,36 px. [Dossiers de stockage](preparation/dossiers-400-v005.txt). |
+
+Les révisions `v005` ajoutent des problèmes à partir de données de métier, des vérifications et des cas portant sur la préparation, l’écart constaté et le contrôle après changement. Chaque unité conserve son rattachement au chapitre. Le relevé par diplôme décompte les unités et le reste à produire pour chaque module.
+
 ## Reprise opérationnelle
 
 La publication des modules est terminée pour les deux diplômes. La publication `logistique-901-v001` a clôturé le premier passage sur le catalogue. La révision `logistique-illustrations-fico-ict-projets-v003` rassemble les cours et les résumés du deuxième passage illustré. Chaque recette conserve sa révision de banque.
 
 | Diplôme | Modules | Types actifs | Problèmes de calcul | Questions de vérification | Situations |
 |---|---:|---:|---:|---:|---:|
-| CFC | 80 | 480 | 617 | 606 | 422 |
-| AFP | 63 | 378 | 389 | 505 | 308 |
+| CFC | 80 | 480 | 877 | 1056 | 592 |
+| AFP | 63 | 378 | 649 | 955 | 478 |
 
-Les effectifs sont dédupliqués par identifiant dans chaque diplôme. La banque commune compte 1 645 unités d’exercice distinctes au total. Les cibles nominales du §5.1 (30 calculs, 50 vérifications et 20 situations par module et diplôme) restent à atteindre. Les demandes de sélection avancée en Évaluation et en Libre figurent dans les lots L1b à L1f.
+Les effectifs sont dédupliqués par identifiant dans chaque diplôme. La banque compte 2 525 unités d’exercice distinctes. Le tableau de complément trace la progression vers les cibles nominales du §5.1 (30 calculs, 50 vérifications et 20 situations par module et diplôme). Les demandes de sélection avancée en Évaluation et en Libre figurent dans les lots L1b à L1f.
 
 Pour un enrichissement ultérieur, partir des archives et du dossier éditorial du module, vérifier les droits par diplôme, les corrigés, la composition A4 et la continuité des recettes. Enregistrer chaque nouvelle révision et ses résultats dans ce suivi. [Archives par thème](sources-epcas/).
 
@@ -224,6 +232,7 @@ Pour un enrichissement ultérieur, partir des archives et du dossier éditorial 
 
 - `node scripts/import-logistique-epcas.mjs /chemin/vers/epcas` produit le catalogue et les archives à partir des objets Git de référence.
 - `node scripts/prepare-logistique-module.mjs 101-v001` reconstitue la banque du 101 à partir de l’archive et de sa préparation éditoriale. La même commande accepte une révision de la [préparation éditoriale](preparation/), par exemple `104-v001`.
+- `node scripts/prepare-logistique-dossiers.mjs 400` vérifie les sections citées et reconstitue le complément d’exercices du thème 400. `node scripts/report-logistique-exercise-coverage.mjs` calcule la couverture du catalogue. Ajouter un ou plusieurs codes de thème à la commande pour limiter le relevé.
 - `node scripts/prepare-logistique-105.mjs` reproduit la révision historique du 105.
 - `node scripts/prepare-logistique-illustrated-publication.mjs` reconstitue les objectifs, aperçus et théories de la V2.12. Pour les nouveaux modules, le compilateur standard sépare ces contenus à partir des champs source ou des textes éditoriaux `objectives` et `overview`. Les illustrations se déclarent dans `visuals` avec leurs ancrages et empreintes.
 - `npm run test:logistique` et `npm run test:logistique:browser` vérifient le catalogue, l’éligibilité, le gabarit et les recettes.

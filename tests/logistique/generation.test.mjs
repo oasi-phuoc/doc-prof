@@ -180,6 +180,29 @@ test('les problèmes ajoutés et relus se rattachent à une section de leur cour
   assert(generateLogistique(frozen, 7).items.some(({ prompt }) => prompt.includes('CHF 58 par veste')))
 })
 
+test('les thèmes dont les dossiers sont publiés atteignent les cibles de banque pour chaque diplôme', () => {
+  const targets = { maths: 30, verification: 50, situation: 20 }
+  const units = currentLogistiquePublication.units
+  const activeThemes = new Set(units.flatMap(({ revision }) => revision.match(/^dossiers-(\d00)-v005$/)?.[1] ?? []))
+  const sectionsByModule = new Map(units.filter(({ kind }) => kind === 'theorie').map((unit) => [
+    unit.module, new Set(unit.blocks.filter(({ kind }) => kind === 'heading').map(({ text }) => text)),
+  ]))
+  assert(activeThemes.has('400'))
+  for (const module of new Set(units.map((unit) => unit.module))) {
+    if (!activeThemes.has(module[0] + '00')) continue
+    const additions = units.filter((unit) => unit.module === module && unit.revision.startsWith('dossiers-'))
+    assert(additions.length > 0, module)
+    for (const unit of additions) assert(sectionsByModule.get(module).has(unit.theorySection), unit.id)
+  }
+  for (const type of catalog.logistiqueTypes) {
+    if (!activeThemes.has(type.module[0] + '00') || !targets[type.kind]) continue
+    const page = { ...config(type.diploma, type.module, type.kind), count: 50 }
+    const bank = generateLogistique(page, 20261127)
+    assert(bank.bankQuestionCap >= targets[type.kind], type.id)
+    assert.equal(new Set(bank.items.map(({ prompt }) => prompt)).size, bank.items.length, type.id)
+  }
+})
+
 test('les titres et les recettes conservent les modules, le diplôme et la révision', () => {
   const a = config('CFC', '105', 'maths')
   const b = config('CFC', '101', 'verification')
