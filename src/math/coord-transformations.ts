@@ -56,8 +56,8 @@ function keyOf(p: Pt): string {
   return `${p.x},${p.y}`
 }
 
-function inside(p: Pt, range: number, margin = 0): boolean {
-  return Math.abs(p.x) <= range - margin && Math.abs(p.y) <= range - margin
+function inside(p: Pt, rangeX: number, rangeY = rangeX): boolean {
+  return Math.abs(p.x) <= rangeX && Math.abs(p.y) <= rangeY
 }
 
 function flipX(p: Pt): Pt {
@@ -68,6 +68,62 @@ function flipY(p: Pt): Pt {
 }
 function flipCenter(p: Pt, c: Pt): Pt {
   return { x: 2 * c.x - p.x, y: 2 * c.y - p.y }
+}
+
+function imageThrough(axis: 'x' | 'y' | undefined, center: Pt): (p: Pt) => Pt {
+  if (axis === 'x') return flipX
+  if (axis === 'y') return flipY
+  return (p) => flipCenter(p, center)
+}
+
+export function transformationPoints(scene: CoordScene): CoordMark[] {
+  return scene.marks.filter(({ kind, label }) => kind === 'point' && label && !label.endsWith('′'))
+}
+
+export function transformationAxis(type: string, item: MathItem): 'x' | 'y' | undefined {
+  if (!isTransformationAxiale(type)) return undefined
+  return item.coordScene?.symmetryAxis ?? (item.prompt?.includes('(Oy)') ? 'y' : 'x')
+}
+
+export function validTransformationPoints(
+  points: readonly CoordMark[], axis: 'x' | 'y' | undefined,
+  { rangeX, rangeY, unitSquares = 1 }: { rangeX: number; rangeY: number; unitSquares?: number },
+): boolean {
+  const center = points.find(({ label }) => label === 'Ω')
+  if (!axis && (!center || !inside(center, rangeX, rangeY))) return false
+  if (points.some(({ x, y }) => !Number.isInteger(x * unitSquares) || !Number.isInteger(y * unitSquares))) return false
+  const vertices = points.filter(({ label }) => label !== 'Ω')
+  if (vertices.length < 3 || new Set(vertices.map(keyOf)).size !== vertices.length) return false
+  const map = imageThrough(axis, center ?? { x: 0, y: 0 })
+  const area = vertices.reduce((sum, point, index) => {
+    const next = vertices[(index + 1) % vertices.length]!
+    return sum + point.x * next.y - point.y * next.x
+  }, 0)
+  return area !== 0 && vertices.every((p) => inside(p, rangeX, rangeY) && inside(map(p), rangeX, rangeY))
+}
+
+export function resizeTransformationPoints(
+  points: readonly CoordMark[], count: number, axis: 'x' | 'y' | undefined,
+  grid: { rangeX: number; rangeY: number; unitSquares?: number },
+): CoordMark[] | undefined {
+  const center = points.find(({ label }) => label === 'Ω')
+  const vertices = points.filter(({ label }) => label !== 'Ω').slice(0, count)
+  const marks = center ? [...vertices, center] : vertices
+  if (!validTransformationPoints(marks, axis, grid)) return undefined
+  const map = imageThrough(axis, center ?? { x: 0, y: 0 })
+  const used = new Set(marks.map(keyOf))
+  const { rangeX, rangeY } = grid
+  for (let y = -Math.floor(rangeY); y <= rangeY && vertices.length < count; y++) {
+    for (let x = -Math.floor(rangeX); x <= rangeX && vertices.length < count; x++) {
+      const point = { x, y }
+      if (used.has(keyOf(point)) || !inside(map(point), rangeX, rangeY)) continue
+      const candidate = [...vertices, mark(point, TRANSFORM_LABELS[vertices.length]!)]
+      if (!validTransformationPoints(center ? [...candidate, center] : candidate, axis, grid)) continue
+      vertices.push(candidate.at(-1)!)
+    }
+  }
+  if (vertices.length !== count) return undefined
+  return center ? [...vertices, center] : vertices
 }
 
 function mark(p: Pt, label: string, reveal: 'always' | 'answer' = 'always'): CoordMark {
@@ -123,8 +179,7 @@ function ensureImagesInside(pts: Pt[], map: (p: Pt) => Pt, range: number): boole
   return pts.every((p) => inside(map(p), range))
 }
 
-function pickCenter(rng: Rng, range: number, libreCenter?: Pt): Pt {
-  if (libreCenter && inside(libreCenter, range)) return libreCenter
+function pickCenter(rng: Rng, range: number): Pt {
   const pool: Pt[] = []
   for (let x = -Math.min(3, range - 2); x <= Math.min(3, range - 2); x++) {
     for (let y = -Math.min(3, range - 2); y <= Math.min(3, range - 2); y++) {
@@ -176,13 +231,12 @@ export function generateTransformations(
   const placer = isTransformationPlacer(typeId)
   const n = pointCountFor(config, difficulty, placer)
 
-  const axis: 'x' | 'y' = pick(rng, ['x', 'y'])
-  const center = pickCenter(rng, range, libreCenterFromConfig(config))
-  const map = axiale
-    ? axis === 'x'
-      ? flipX
-      : flipY
-    : (p: Pt) => flipCenter(p, center)
+  const drawnAxis: 'x' | 'y' = pick(rng, ['x', 'y'])
+  const configuredAxis = config.coordSymmetryAxis
+  const axis = config.coordLibre && (configuredAxis === 'x' || configuredAxis === 'y') ? configuredAxis : drawnAxis
+  const libreCenter = libreCenterFromConfig(config)
+  const center = libreCenter && inside(libreCenter, grid.rangeX, grid.rangeY) ? libreCenter : pickCenter(rng, range)
+  const map = imageThrough(axiale ? axis : undefined, center)
 
   const librePts = libreFigureFromConfig(config)
   let pts: Pt[] | null = librePts
@@ -288,6 +342,7 @@ export function generateTransformations(
     cols: grid.cols,
     rows: grid.rows,
     axis: 'numeric',
+    symmetryAxis: axiale ? axis : undefined,
     range: Math.max(grid.rangeX, grid.rangeY),
     rangeX: grid.rangeX,
     rangeY: grid.rangeY,

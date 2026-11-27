@@ -16,9 +16,14 @@ import {
 import {
   TRANSFORM_LABELS,
   TRANSFORM_MAX_POINTS,
+  transformationAxis,
+  transformationPoints,
+  validTransformationPoints,
 } from '@/math/coord-transformations'
 import type {
+  CoordMark,
   CoordShape,
+  MathItem,
   Difficulty,
   ExerciseBlock,
   PageConfig,
@@ -33,6 +38,7 @@ export type UseCoordEditingParams = {
   isCadrans: boolean
   isComposer: boolean
   isTransform: boolean
+  transformItem?: MathItem
   isTransformCentrale: boolean
 }
 
@@ -43,6 +49,7 @@ export function useCoordEditing({
   isCadrans,
   isComposer,
   isTransform,
+  transformItem,
   isTransformCentrale,
 }: UseCoordEditingParams) {
   const [coordTool, setCoordTool] = useState<CoordTool>('origin')
@@ -97,54 +104,32 @@ export function useCoordEditing({
     })
   }
 
+  function updateTransformation(points: CoordMark[]) {
+    if (!transformItem) return
+    const axis = transformationAxis(activeBlock.exerciseType, transformItem)
+    if (!validTransformationPoints(points, axis, axesGrid)) return
+    updatePage({
+      coordLibre: true,
+      coordMarks: points,
+      coordSymmetryAxis: axis,
+      count: points.filter(({ label }) => label !== 'Ω').length,
+    })
+  }
+
   const placeCoordMark = (x: number, y: number, kind: CoordShape) => {
-    if (isTransform && activeBlock.coordLibre) {
-      const grid = resolveAxesGrid(activeAsPage, activeBlock.difficulty)
-      const origin = { col: grid.cols / 2, row: grid.rows / 2 }
-      if (!markOnGrid({ x, y, kind: 'point' }, origin, grid.cols, grid.rows, grid.unitSquares)) return
-      const current = activeBlock.coordMarks ?? []
-      const omega = current.find((mark) => mark.label === 'Ω')
-      const figure = current.filter((mark) => mark.label !== 'Ω')
-      const maxPts = Math.min(activeBlock.count, TRANSFORM_MAX_POINTS)
-      const placeCenter = isTransformCentrale && coordTool === 'center'
-
-      if (placeCenter) {
-        const withoutOmega = figure.filter((mark) => !(mark.x === x && mark.y === y))
-        updatePage({
-          coordLibre: true,
-          coordCols: grid.cols,
-          coordRows: grid.rows,
-          coordCellMm: grid.cellMm,
-          coordUnitSquares: grid.unitSquares,
-          coordMarks: [
-            ...withoutOmega,
-            { x, y, kind: 'point', label: 'Ω', given: true, showCoord: true },
-          ],
-        })
+    if (isTransform) {
+      const scene = transformItem?.coordScene
+      if (!scene) return
+      const current = transformationPoints(scene)
+      if (isTransformCentrale && coordTool === 'center') {
+        if (current.some((mark) => mark.label !== 'Ω' && mark.x === x && mark.y === y)) return
+        updateTransformation(current.map((mark) => mark.label === 'Ω' ? { ...mark, x, y } : mark))
         return
       }
-
-      const hit = current.find((mark) => mark.x === x && mark.y === y)
-      if (hit) {
-        updatePage({
-          coordLibre: true,
-          coordMarks: current.filter((mark) => !(mark.x === x && mark.y === y)),
-        })
-        return
-      }
-      if (figure.length >= maxPts) return
-      const used = new Set(figure.map((mark) => mark.label))
-      const label = TRANSFORM_LABELS.find((name) => !used.has(name)) ?? `P${figure.length + 1}`
-      const nextFigure = [...figure, { x, y, kind: 'point' as const, label }]
-      updatePage({
-        coordLibre: true,
-        coordCols: grid.cols,
-        coordRows: grid.rows,
-        coordCellMm: grid.cellMm,
-        coordUnitSquares: grid.unitSquares,
-        coordMarks: omega ? [...nextFigure, omega] : nextFigure,
-        count: Math.max(activeBlock.count, nextFigure.length),
-      })
+      const vertices = current.filter(({ label }) => label !== 'Ω')
+      if (vertices.length >= TRANSFORM_MAX_POINTS || current.some((mark) => mark.x === x && mark.y === y)) return
+      const point = { x, y, kind: 'point' as const, label: TRANSFORM_LABELS[vertices.length] }
+      updateTransformation([...current, point])
       return
     }
     if (isCadrans) {
@@ -205,6 +190,16 @@ export function useCoordEditing({
   }
 
   const removeCoordMark = (x: number, y: number) => {
+    if (isTransform) {
+      const scene = transformItem?.coordScene
+      if (!scene || (isTransformCentrale && coordTool === 'center')) return
+      const points = transformationPoints(scene)
+      const vertices = points.filter((mark) => mark.label === 'Ω' || mark.x !== x || mark.y !== y)
+      if (points.length === vertices.length) return
+      let index = 0
+      updateTransformation(vertices.map((mark) => mark.label === 'Ω' ? mark : { ...mark, label: TRANSFORM_LABELS[index++] }))
+      return
+    }
     updatePage({
       coordMarks: (activeBlock.coordMarks ?? []).filter((mark) => !(mark.x === x && mark.y === y)),
     })

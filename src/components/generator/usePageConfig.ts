@@ -35,10 +35,13 @@ import {
   isReperageComposer,
   isReperageConstruire,
   isReperageDroites,
+  resolveAxesGrid,
 } from '@/math/coord-reperage'
 import {
-  TRANSFORM_MAX_POINTS,
   isTransformationExercise,
+  resizeTransformationPoints,
+  transformationAxis,
+  transformationPoints,
 } from '@/math/coord-transformations'
 import { buildPage } from '@/math/generate'
 import { mathGlossaryBank } from '@/math/glossary-banks'
@@ -113,6 +116,22 @@ export function usePageConfig({
       if (!window.confirm('Remplacer cette activité et ses questions verrouillées ?')) return
     }
     const count = patch.count
+    if (count !== undefined && !patch.exerciseType && !Object.hasOwn(patch, 'coordMarks') &&
+        activeBlock.coordLibre && isTransformationExercise(activeBlock.exerciseType)) {
+      const item = blockItemsForConfig(worksheets, pageIndex, safeBlockIndex)?.items[0]
+      if (item?.coordScene && activeSheet) {
+        const points = transformationPoints(item.coordScene)
+        const axis = transformationAxis(activeBlock.exerciseType, item)
+        const grid = resolveAxesGrid(pageAsConfig(activeSheet, activeBlock))
+        const next = resizeTransformationPoints(points, count, axis, grid)
+        if (!next) {
+          window.alert('Cette quantité ne permet pas de garder une figure valide et son image dans le repère.')
+          return
+        }
+        if (next.length < points.length && !window.confirm('Retirer les derniers sommets de la figure ?')) return
+        patch = { ...patch, coordMarks: next, coordSymmetryAxis: axis, libreItems: undefined, libreInstruction: undefined }
+      }
+    }
     const rightGrid = doubleA5 ? activeBlock.a5RightLibre : undefined
     if (editorProfile === 'association-audio' && activeSheet && count !== undefined &&
       !patch.exerciseType && !patch.libreItems && (activeBlock.libreItems?.length || rightGrid?.items.length)) {
@@ -276,6 +295,7 @@ export function usePageConfig({
             // Changement de type → lever le contenu figé (sinon refresh / type restent bloqués après le mode libre).
             ...(patch.exerciseType != null ? {
               ...clearLibreContentFreeze(), libreId: undefined, questionGapPx: undefined, columnGapPx: undefined,
+              coordSymmetryAxis: undefined,
               ...spacingForType(patch.exerciseType),
             } : {}),
             phraseItems: patch.phraseItems!==undefined ? patch.phraseItems : undefined,
@@ -310,21 +330,6 @@ export function usePageConfig({
               fixed.count,
               defaultCoordQuestionReply(fixed.exerciseType),
             ),
-          }
-        }
-        if (
-          fixed.coordLibre &&
-          isTransformationExercise(fixed.exerciseType) &&
-          patch.count != null &&
-          fixed.coordMarks?.length
-        ) {
-          const omega = fixed.coordMarks.find((mark) => mark.label === 'Ω')
-          const figure = fixed.coordMarks
-            .filter((mark) => mark.label !== 'Ω')
-            .slice(0, Math.min(fixed.count, TRANSFORM_MAX_POINTS))
-          fixed = {
-            ...fixed,
-            coordMarks: omega ? [...figure, omega] : figure,
           }
         }
         if (resizesAppliedItems && count != null) {

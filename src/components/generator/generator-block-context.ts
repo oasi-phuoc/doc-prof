@@ -46,7 +46,6 @@ import {
 import {
   isTransformationCentrale,
   isTransformationExercise,
-  isTransformationPlacer,
 } from '@/math/coord-transformations'
 import { DIFFICULTY_OPTIONS } from '@/math/difficulty'
 import { exerciseTypeById, isQuadExercise } from '@/math/catalog'
@@ -167,6 +166,7 @@ const isAlphaPrononcerCols = isAlphabetisation && soutienKind === 'syllabes-pron
 /** Types sans option colonnes (lettre / souligner). */
 const hideColumnsOption =
   isPhraseDomain ||
+  isTransformationExercise(activeBlock.exerciseType) ||
   Boolean(isGrammaireDomain && activeBlock.grammarLevel) ||
   soutienKind === 'lettres-maj' ||
   soutienKind === 'lettres-min' ||
@@ -248,7 +248,6 @@ const isDroites = isReperageDroites(activeBlock.exerciseType)
 const isConstruire = isReperageConstruire(activeBlock.exerciseType)
 const isTransform = isTransformationExercise(activeBlock.exerciseType)
 const isTransformCentrale = isTransformationCentrale(activeBlock.exerciseType)
-const isTransformPlacer = isTransformationPlacer(activeBlock.exerciseType)
 const baseMaxQuestions = maxQuestionsFor({
   isComposer,
   isFormes,
@@ -352,7 +351,6 @@ const questionsInputOverflow = questionsOverflow || bankOverflow
     isConstruire,
     isTransform,
     isTransformCentrale,
-    isTransformPlacer,
     maxQuestions,
     activeSheetBlock,
     bankQuestionCap,

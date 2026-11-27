@@ -196,7 +196,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
     sheetTotalPoints,
   } = props
   const grammarAudioOnly = isAudioOnlyGrammarCo(activeBlock.exerciseType,activeBlock.grammarCoLevel,activeBlock.grammarCoAudioId)
-  const questionMin = activeBlock.exerciseType === 'tcm-csc-ex14' ? 2 : 1
+  const questionMin = isTransform ? 3 : activeBlock.exerciseType === 'tcm-csc-ex14' ? 2 : 1
   const cscQuestionHint = activeBlock.exerciseType === 'tcm-csc-ex03' ? 'Nombres à entourer, 1 point chacun.'
     : activeBlock.exerciseType === 'tcm-csc-ex14' ? 'Segments à mesurer. Le tableau ajoute une colonne par segment.'
     : activeBlock.exerciseType === 'tcm-csc-ex15' ? 'Paires de points, 5 au plus.'
@@ -289,7 +289,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
               <label className="select-shell">
                 <span>
                   {grammarSituations?'SITUATIONS':isTransform
-                    ? 'Points'
+                    ? 'Sommets'
                     : isReperage
                       ? 'Questions'
                       : isSoutienLignes
@@ -301,7 +301,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                 <input
                   className={`pill-input${questionsInputOverflow ? ' is-overflow' : ''}`}
                   aria-label={
-                    grammarSituations?'Nombre de situations':isSoutienLignes
+                    isTransform ? 'Nombre de sommets' : grammarSituations?'Nombre de situations':isSoutienLignes
                       ? 'Nombre de lignes'
                       : isSoutienMotsCount
                         ? 'Nombre de mots'

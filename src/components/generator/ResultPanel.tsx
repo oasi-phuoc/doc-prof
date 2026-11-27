@@ -238,7 +238,7 @@ export function ResultPanel({
   const coordEdit =
     (isFormes && activeBlock.coordLibre) ||
     (isCadrans && activeBlock.coordLibre) ||
-    (isTransform && activeBlock.coordLibre)
+    (isTransform && libreMode)
       ? {
           selectedKind: selectedCoordShape,
           placingOrigin: isComposer && coordTool === 'origin',

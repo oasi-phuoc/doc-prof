@@ -11,6 +11,7 @@ import { logistiqueType, isLogistiqueReferenceType } from '@/logistique/catalog'
 import { isSocieteType } from '@/societe/types'
 import { isLogiqueType } from '@/logique/types'
 import { isReperageConstruire, isReperageDroites } from '@/math/coord-reperage'
+import { isTransformationExercise } from '@/math/coord-transformations'
 import { isMathReferenceType } from '@/math/theory-lessons'
 import type { Domain } from '@/math/types'
 import type { SheetFormat } from '../sheet-format'
@@ -90,6 +91,7 @@ export function liveEditorProfile(domain: Domain, exerciseType: string, format: 
     domain === 'tcm-cfr' && (exerciseType === 'tcm-cfr-ex03' || exerciseType === 'tcm-cfr-ex04')) return 'ordre-numerique'
   if (format === 'a4-portrait') {
     if (domain === 'géométrie' && (isReperageConstruire(exerciseType) || isReperageDroites(exerciseType))) return 'questions-de-reperage'
+    if (domain === 'géométrie' && isTransformationExercise(exerciseType)) return 'symetrie'
     if (domain === 'calligraphie' && isCalligraphieType(exerciseType)) return 'calligraphie'
     if (domain === 'jeux' && isJeuxType(exerciseType)) return 'cartes'
   }
@@ -121,7 +123,7 @@ export function opensWithoutOverlay(profile: LiveEditorProfile): boolean {
   return isTcfLiveProfile(profile) || hasFlatRegeneration(profile) || profile === 'calligraphie' || profile === 'cartes' || profile === 'phrase' ||
     profile === 'mots-illustres' || profile === 'mot-a-trou' || profile === 'theorie' ||
     profile === 'question-simple' || profile === 'grammaire-graduee' || profile === 'questions-de-reperage' || profile === 'mots-dans-l-ordre' ||
-    isIndependentListProfile(profile) || profile === 'association-audio'
+    isIndependentListProfile(profile) || profile === 'association-audio' || profile === 'symetrie'
 }
 
 export function isWordListProfile(profile: LiveEditorProfile): boolean {
@@ -142,5 +144,6 @@ export function writesNativePayload(profile: LiveEditorProfile, patch: object): 
   if (profile === 'mots-illustres') return Object.hasOwn(patch, 'soutienMotsEntries')
   if (profile === 'mot-a-trou') return Object.hasOwn(patch, 'soutienCompleterEntries')
   if (profile === 'questions-de-reperage') return Object.hasOwn(patch, 'coordQuestionsLibre')
+  if (profile === 'symetrie') return Object.hasOwn(patch, 'coordMarks')
   return profile === 'phrase' && (Object.hasOwn(patch, 'phraseItems') || Object.hasOwn(patch, 'phraseInstruction'))
 }

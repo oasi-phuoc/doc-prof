@@ -58,6 +58,7 @@ import { useQuestionsOverflow } from '@/components/generator/useQuestionsOverflo
 import { useGeneratorAudio } from '@/components/generator/useGeneratorAudio'
 import { useGenerateActions } from '@/components/generator/useGenerateActions'
 import { useCoordEditing } from '@/components/generator/useCoordEditing'
+import { TransformationEditor } from '@/components/generator/libre/TransformationEditor'
 import { arithmeticActivityId, worksheetActivityIds } from '@/components/generator/libre/flat-items'
 import { isCalculationProfile, isInlineArithmetic, isTcfLiveProfile, isWordListProfile, liveEditorProfile, opensWithoutOverlay, usesIndependentHalves } from '@/components/generator/libre/profiles'
 import { readSpacingPreferences, spacingPreferenceKey } from '@/components/generator/libre/preferences'
@@ -307,7 +308,7 @@ export function GeneratorPage({
 
   /** Les exercices encore ouverts avec validation conservent leur dernière version appliquée. */
   const previewSource = useMemo(() => {
-    if (!libreMode || (activeBlock.coordLibre && activeProfile !== 'questions-de-reperage') ||
+    if (!libreMode || (activeBlock.coordLibre && activeProfile !== 'questions-de-reperage' && activeProfile !== 'symetrie') ||
       !libreSnapshot || libreSnapshot.length !== pages.length) return null
     return libreSnapshot.map((page, index) => {
       const live = pages[index] ?? page
@@ -446,6 +447,8 @@ export function GeneratorPage({
     }
   })()
 
+  const transformItem = libreMode && activeProfile === 'symetrie'
+    ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex)?.items[0] : undefined
   const {
     coordTool,
     setCoordTool,
@@ -461,6 +464,7 @@ export function GeneratorPage({
     isCadrans: ctx.isCadrans,
     isComposer: ctx.isComposer,
     isTransform: ctx.isTransform,
+    transformItem,
     isTransformCentrale: ctx.isTransformCentrale,
   })
 
@@ -1018,7 +1022,13 @@ export function GeneratorPage({
               <p role="alert" className="libre-field-error">Le contenu dépasse une demi-feuille A5. Répartissez-le sur plusieurs pages ou réduisez le contenu.</p>
             ) : null}
           >
-            {libreMode && (
+            {transformItem && (
+              <TransformationEditor key={`${pageIndex}:${safeBlockIndex}:${activeBlock.exerciseType}`}
+                config={activeAsPage} item={transformItem} tool={coordTool} onTool={setCoordTool} update={updatePage}
+                id={`${arithmeticActivityId(activeBlock, seed, pageIndex, safeBlockIndex, reservedActivityIds)}:${activeBlock.exerciseType}`}
+                fields={transientFields} writeField={writeTransientField} />
+            )}
+            {libreMode && activeProfile !== 'symetrie' && (
               <LibreActivityEditor
                 activeBlock={activeBlock}
                 activeSheet={activeSheet}

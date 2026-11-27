@@ -1,6 +1,7 @@
 import { isWordVocabType } from '@/grammaire/exercises/word-vocab'
 import { grammarCoStatements } from '@/grammaire/exercises/co-true-false'
 import { isMathReferenceType } from '@/math/theory-lessons'
+import { isTransformationExercise } from '@/math/coord-transformations'
 import { isMathProblemHelpType } from '@/math/problem-help'
 import { grammarOrderHasSentenceFilters } from '@/grammaire/curriculum/types'
 import { TcfCeFormatControl, TcfCeTextFontControl } from './TcfCeFormatControl'
@@ -402,7 +403,9 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                 onChange={(value) => {
                   const type = exerciseTypeById[value]
                   if (!type || value === activeBlock.exerciseType) return
-                  if ((logisticsDomain || isMathReferenceType(activeBlock.exerciseType)) && activeBlock.libreItems?.length &&
+                  const editedReference = (logisticsDomain || isMathReferenceType(activeBlock.exerciseType)) && activeBlock.libreItems?.length
+                  const editedFigure = isTransformationExercise(activeBlock.exerciseType) && activeBlock.coordLibre && activeBlock.coordMarks?.length
+                  if ((editedReference || editedFigure) &&
                       !window.confirm('Changer de type remplacera les modifications de cette activité. Continuer ?')) return
                   if (
                     (isReperageFormes(value) && isReperageFormes(activeBlock.exerciseType)) ||

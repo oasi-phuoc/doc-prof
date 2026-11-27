@@ -135,8 +135,6 @@ export type SettingsPanelProps = {
   isComposer: boolean
   isDroites: boolean
   isConstruire: boolean
-  isTransformCentrale: boolean
-  isTransformPlacer: boolean
   axesGrid: ReturnType<typeof resolveAxesGrid>
   updateAxesGrid: (patch: Partial<ExerciseBlock>) => void
   coordTool: CoordTool
@@ -343,9 +341,6 @@ function ActivitySettings(p: SettingsPanelProps) {
           isComposer={p.isComposer}
           isDroites={p.isDroites}
           isConstruire={p.isConstruire}
-          isTransform={p.isTransform}
-          isTransformCentrale={p.isTransformCentrale}
-          isTransformPlacer={p.isTransformPlacer}
           axesGrid={p.axesGrid}
           updateAxesGrid={p.updateAxesGrid}
           coordTool={p.coordTool}
