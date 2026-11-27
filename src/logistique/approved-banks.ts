@@ -181,6 +181,28 @@ import { module206 as reviewed206 } from './banks/module-206-v003.generated.ts'
 import { module207 as reviewed207 } from './banks/module-207-v003.generated.ts'
 import { module208 as reviewed208 } from './banks/module-208-v003.generated.ts'
 import { module209 as reviewed209 } from './banks/module-209-v003.generated.ts'
+import { module301 as reviewed301 } from './banks/module-301-v003.generated.ts'
+import { module302 as reviewed302 } from './banks/module-302-v003.generated.ts'
+import { module303 as reviewed303 } from './banks/module-303-v003.generated.ts'
+import { module304 as reviewed304 } from './banks/module-304-v003.generated.ts'
+import { module305 as reviewed305 } from './banks/module-305-v003.generated.ts'
+import { module306 as reviewed306 } from './banks/module-306-v003.generated.ts'
+import { module307 as reviewed307 } from './banks/module-307-v003.generated.ts'
+import { module308 as reviewed308 } from './banks/module-308-v003.generated.ts'
+import { module309 as reviewed309 } from './banks/module-309-v003.generated.ts'
+import { module310 as reviewed310 } from './banks/module-310-v003.generated.ts'
+import { module311 as reviewed311 } from './banks/module-311-v003.generated.ts'
+import { module312 as reviewed312 } from './banks/module-312-v003.generated.ts'
+import { module401 as reviewed401 } from './banks/module-401-v003.generated.ts'
+import { module402 as reviewed402 } from './banks/module-402-v003.generated.ts'
+import { module403 as reviewed403 } from './banks/module-403-v003.generated.ts'
+import { module404 as reviewed404 } from './banks/module-404-v003.generated.ts'
+import { module405 as reviewed405 } from './banks/module-405-v003.generated.ts'
+import { module406 as reviewed406 } from './banks/module-406-v003.generated.ts'
+import { module407 as reviewed407 } from './banks/module-407-v003.generated.ts'
+import { module408 as reviewed408 } from './banks/module-408-v003.generated.ts'
+import { module409 as reviewed409 } from './banks/module-409-v003.generated.ts'
+import { module410 as reviewed410 } from './banks/module-410-v003.generated.ts'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
 
@@ -412,6 +434,13 @@ const foundationsAndServiceIllustrations = reviewedIllustrationPublication(histo
   ...reviewed209,
 ])
 
+const procurementAndStorageIllustrations = reviewedIllustrationPublication(foundationsAndServiceIllustrations, 'logistique-illustrations-approvisionnement-stockage-v003', [
+  ...reviewed301, ...reviewed302, ...reviewed303, ...reviewed304, ...reviewed305, ...reviewed306,
+  ...reviewed307, ...reviewed308, ...reviewed309, ...reviewed310, ...reviewed311, ...reviewed312,
+  ...reviewed401, ...reviewed402, ...reviewed403, ...reviewed404, ...reviewed405, ...reviewed406,
+  ...reviewed407, ...reviewed408, ...reviewed409, ...reviewed410,
+])
+
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
@@ -478,6 +507,7 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   serviceClientExercisePublication,
   historyIllustrationPublication,
   foundationsAndServiceIllustrations,
+  procurementAndStorageIllustrations,
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!
