@@ -83,8 +83,12 @@ for (const [level, folder, count] of [['a0-a1', 'a1', 76], ['a1-a2', 'a2', 99]])
     folder === 'a1' ? 308 : 99)
   assert.ok(!existsSync(`public/lib/images/comprehension/po-${folder}`), 'old image folder removed')
 }
-const grammar = readFileSync('src/grammaire/exercises/qui-suis-je.ts', 'utf8')
-for (let i = 1; i <= 4; i++) assert.ok(grammar.includes(`/lib/images/tcf/po/a1/classe-presentation-${i}.webp`))
+// The former grammar sequence remains available to saved worksheets.
+for (let step = 1; step <= 4; step++) {
+  const image = byPath.get(`/lib/images/tcf/po/a1/classe-presentation-${step}.webp`)
+  assert.equal(image?.exercise, 'grammaire-qui-suis-je-po-images')
+  assert.equal(image.step, step)
+}
 
 // An existing saved worksheet must resolve the moved files too.
 const vite = await createServer({ server: { middlewareMode: true, hmr: false, ws: false }, appType: 'custom' })
