@@ -61,6 +61,16 @@ test('les références actives séparent objectifs, aperçu et théorie illustr�
   assert.equal(generateLogistique(historical, 7).items.length, 98)
 })
 
+test('les quatre thèmes 300 à 600 génèrent chaque type pour les diplômes du catalogue', () => {
+  const requiredThemes = new Set(['300', '400', '500', '600'])
+  const types = catalog.logistiqueTypes.filter(({ module }) => requiredThemes.has(module[0] + '00'))
+  assert.equal(types.length, 480)
+  for (const type of types) {
+    const page = config(type.diploma, type.module, type.kind)
+    assert(generateLogistique(page, 20261127).items.length > 0, type.id)
+  }
+})
+
 test('le tirage est déterministe et limité aux unités approuvées pour le diplôme', () => {
   const maths = config('AFP', '105', 'maths')
   const result = generateLogistique({ ...maths, count: 9 }, 109, [...fixture.units, ...fixture.units])

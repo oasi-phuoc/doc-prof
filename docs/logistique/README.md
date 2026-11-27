@@ -12,7 +12,7 @@ Le [cahier des charges consolidé](cahier-des-charges.md) reprend la v2.10 fourn
 
 Le générateur commun propose les neuf thèmes et 80 modules du CFC, ainsi que les sept thèmes et 63 modules de l’AFP. Chaque module présente six types. Objectifs et aperçu précède Théorie dans le sélecteur standard. La génération, les titres, le corrigé, la grille de calcul et les sauts manuels passent par les feuilles standard. Les recettes enregistrent la révision de la banque et contrôlent le diplôme à la lecture. L’en-tête de la fiche utilise le visuel EPCA déjà fourni et le libellé du diplôme.
 
-La [banque active](../../src/logistique/approved-banks.ts) fournit les onze modules du thème Fondations (100 à 110), ainsi que les neuf modules du thème Service client (201 à 209) les douze modules de l’approvisionnement (301 à 312) les dix modules du stockage et de la manutention (401 à 410), ainsi que le module 613 dans les deux diplômes et les modules 501 à 506, 805 et 902 en CFC. Les modules ou types sans contenu exploitable portent l’indication « à compléter ». Le [suivi d’avancement](avancement-cahier-des-charges-20261126.md) décrit les révisions, la couverture et le travail restant.
+La [banque active](../../src/logistique/approved-banks.ts) fournit les thèmes Fondations (100 à 110), Service client (201 à 209), Approvisionnement (301 à 312), Stockage et manutention (401 à 410) et Distribution et transports (601 à 616) pour les diplômes prévus au catalogue. Le thème Production (501 à 506) et les modules 604, 612, 805 et 902 relèvent du CFC. Les modules ou types sans contenu exploitable portent l’indication « à compléter ». Le [suivi d’avancement](avancement-cahier-des-charges-20261126.md) décrit les révisions, la couverture et le travail restant.
 
 ## Sources et pilote
 
@@ -26,4 +26,4 @@ L’extraction se reproduit avec `node scripts/import-logistique-epcas.mjs /chem
 ## Contrôles
 
 - `npm run test:logistique` contrôle les effectifs, l’ordre des types, l’éligibilité, la déduplication et les révisions de recettes.
-- `npm run test:logistique:browser` démarre un Vite local et contrôle le parcours des deux diplômes en Chromium, dont les dimensions du gabarit, la grille, le corrigé, le PDF et la réouverture d’une recette. La seconde vérification parcourt les objectifs, aperçus et cours illustrés de chaque module actif. Elle contrôle la réserve au pied de la fiche, les cinq autres types du pilote 105 et l’enchaînement des calculs du 110 dans les deux diplômes.
+- `npm run test:logistique:browser` démarre un Vite local et contrôle le parcours des deux diplômes en Chromium, dont les dimensions du gabarit, la grille, le corrigé, le PDF et la réouverture d’une recette. La seconde vérification parcourt les objectifs, aperçus et cours illustrés du lot de reprise V2.12. Elle contrôle la réserve au pied de la fiche, les cinq autres types du pilote 105 et l’enchaînement des calculs du 110 dans les deux diplômes.

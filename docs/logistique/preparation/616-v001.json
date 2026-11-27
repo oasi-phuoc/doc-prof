@@ -1,0 +1,189 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Distinguer **tri de dépôt**, **tri de distribution** et **GFS**\n- Décrire les flux **lettres** et **colis** en centre (entrée → sortie)\n- Citer machines clés et mesures de **sécurité**\n- Relier NPA / IATA / MIL et les outils de **logistique de site** (WB, grue, double pont)",
+  "overview": "## Aperçu du module 616\n\n- Suivre un envoi de l’entrée au tri primaire puis secondaire.\n- Distinguer la région de desserte, le routage et l’ordre de la tournée.\n- Documenter les écarts et respecter les consignes de sécurité du centre.",
+  "replacements": [
+    {
+      "from": "**MIL** : adresse campagne · franc de port ≤ **5 kg** (sans presta payante) · code MIL · Poste seule · remise poste de campagne / sous-officier.",
+      "to": "Les envois adressés à un service particulier suivent les conditions publiées pour cette destination. Vérifier le canal et l’adressage avec le prestataire.",
+      "reason": "Retire un seuil et des modalités qui dépendent du service."
+    },
+    {
+      "from": "| **Grue de terminal** | Portique · WB sur wagons · max ~**20 t** |",
+      "to": "| **Grue de terminal** | Transfert de supports compatibles, dans les limites de l’équipement. |",
+      "reason": "Retire une valeur générique de charge."
+    },
+    {
+      "from": "| **Camions double pont** | Jusqu'à **36** RX vs 24 (2×12 WB) · plancher hydraulique |",
+      "to": "| **Camions double pont** | Organisation de transport selon le plan, les unités et la capacité validés. |",
+      "reason": "Évite les nombres de supports présentés comme capacité universelle."
+    }
+  ],
+  "summary": [
+    "Suivre un envoi de l’entrée au tri primaire puis secondaire.",
+    "Distinguer la région de desserte, le routage et l’ordre de la tournée.",
+    "Documenter les écarts et respecter les consignes de sécurité du centre."
+  ],
+  "glossary": [
+    [
+      "Base de distribution",
+      "Site à partir duquel part la tournée ou le service de remise."
+    ],
+    [
+      "Centre de distribution",
+      "Site qui réceptionne, trie et réachemine des envois."
+    ],
+    [
+      "Commissionnement",
+      "Regroupement des envois selon les destinations et la suite du réseau."
+    ],
+    [
+      "Contrôle de sortie",
+      "Vérification des dossiers et des unités avant départ."
+    ],
+    [
+      "Écart de tri",
+      "Affectation ou résultat différent de la destination ou du traitement prévu."
+    ],
+    [
+      "Identifiant d’envoi",
+      "Référence qui relie l’envoi à ses événements."
+    ],
+    [
+      "Région de desserte",
+      "Zone servie par un site ou un départ."
+    ],
+    [
+      "Routage",
+      "Attribution d’un trajet ou d’un point de traitement selon les règles du réseau."
+    ],
+    [
+      "Tri de dépôt",
+      "Premier tri qui répartit les envois entre destinations ou centres."
+    ],
+    [
+      "Tri de distribution",
+      "Répartition interne qui prépare les zones ou bases de distribution."
+    ],
+    [
+      "Tri séquentiel",
+      "Classement dans l’ordre prévu d’une tournée."
+    ],
+    [
+      "Vidéocodage",
+      "Lecture assistée d’une image de données d’adresse dans un système autorisé."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Le centre reçoit 850 envois et en transfère 390 vers une autre région. Combien restent pour son flux ?",
+      "answer": "460 envois.",
+      "calculation": "850 − 390 = 460."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Trois départs prennent 240, 165 et 95 envois. Calculez le total.",
+      "answer": "500 envois.",
+      "calculation": "240 + 165 + 95 = 500."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Une ligne fictive traite 75 unités par minute pendant six minutes. Calculez le volume.",
+      "answer": "450 unités.",
+      "calculation": "75 × 6 = 450."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Sur 20 supports expédiés, 18 obtiennent une confirmation. Combien restent à vérifier ?",
+      "answer": "Deux supports.",
+      "calculation": "20 − 18 = 2."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Sur 2 000 envois, 35 exigent une correction de tri. Calculez le taux au centième.",
+      "answer": "1,75 %.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "35 ÷ 2 000 × 100 = 1,75 %."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quel est le but du premier tri ?",
+      "answer": "Orienter l’envoi vers la bonne destination régionale ou le bon centre."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "À quoi sert le tri séquentiel ?",
+      "answer": "Préparer l’ordre de remise d’une tournée."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Pourquoi distinguer lettres et colis dans les équipements ?",
+      "answer": "Leurs formats et besoins de traitement diffèrent."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Quelles données aident à expliquer un écart de tri ?",
+      "answer": "Identifiant, destination prévue, traitement observé, moment et point de passage."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Qui traite un blocage mécanique dans une zone protégée ?",
+      "answer": "Le personnel habilité selon la procédure de l’installation."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Un colis se trouve au départ d’une mauvaise région. Quelle suite ?",
+      "answer": "Vérifier le dossier puis obtenir la correction et l’enregistrement autorisés avant départ."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Une machine ne lit pas l’adresse de plusieurs lettres. Comment les orientez-vous ?",
+      "answer": "Suivre le parcours de contrôle ou traitement manuel prévu, en protégeant les données."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Un support arrive vide alors que le dossier annonce des envois. Que vérifiez-vous ?",
+      "answer": "Le dossier du support et les traces des étapes précédentes, puis transmettre l’écart au responsable."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "16.2–16.4 Flux global",
+      "file": "log-616-notions-1-v001.svg",
+      "alt": "Entrée. Réception et préparation. Premier tri. Région ou autre centre. Second tri. Base et tournée.",
+      "caption": "La destination et le statut déterminent le prochain départ.",
+      "sha256": "2be2ee5839fcc20005373c0447e9450d5c0d477629a83f76d287411e88349e16",
+      "origin": "Illustration originale Doc-Prof du module 616."
+    },
+    {
+      "anchor": "16.8–16.9 Tri colis (Poste)",
+      "file": "log-616-notions-2-v001.svg",
+      "alt": "Identifier. Données et aptitudes. Orienter. Branche déterminée. Confirmer. Sortie et destination.",
+      "caption": "Le routage doit rester lié à l’identifiant de l’envoi.",
+      "sha256": "3b5f404a338954becf4b984a6bfb6145eba0894abd23b3a610b5bd54c928d0b0",
+      "origin": "Illustration originale Doc-Prof du module 616."
+    }
+  ]
+}

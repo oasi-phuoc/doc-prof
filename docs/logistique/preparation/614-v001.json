@@ -1,0 +1,194 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Distinguer **prise en charge**, points **desservis** et **non desservis**\n- Décrire les processus de prise en charge **privée** et **commerciale**\n- Appliquer la levée des **boîtes aux lettres** (5 étapes + cas particuliers)\n- Expliquer le vidage des **automates** (ordre retirer → entreposer, catégories)",
+  "overview": "## Aperçu du module 614\n\n- Comparer la prise en charge au domicile, au point desservi ou en libre-service.\n- Vérifier les conditions de prestation et les heures de remise.\n- Suivre les dépôts et les levées à partir des enregistrements prévus.",
+  "replacements": [
+    {
+      "from": "Petites qté (≤ ~5) : souvent pendant tournée distribution · grandes qté : tournée camion dédiée (plage ~½ h).",
+      "to": "Les quantités, volumes, accès et créneaux déterminent le type de collecte selon le contrat et l’organisation en vigueur.",
+      "reason": "Retire une limite approximative."
+    },
+    {
+      "from": "1. Respecter heures de levée (lun–ven ≠ sam · **pas** d'anticipation)  \n2. Scanner code-barres **intérieur** (qualité)  \n3. Vider entièrement (coins, fond, rebord)  \n4. Bien fermer / vérifier la clé  \n5. Coup d'œil arrière avant départ (envois tombés)\n\nProtéger des intempéries et regards (**secret postal**).\n\n#",
+      "to": "Appliquer les horaires et la procédure du prestataire. Relever la collecte et tout écart, préserver la confidentialité et transmettre les constats au poste compétent.",
+      "reason": "Conserve les objectifs sans décrire l’accès à un point."
+    },
+    {
+      "from": "Versions **1.0** (écran) / **2.0** (smartphone/scanner).  \n**D'abord retirer** les envois (casiers libres) · puis entreposer.\n\n1. Login (écran ou app + Bluetooth)  \n2. « Retirer un envoi » · vider **par catégorie** (dépôt, retour…)  \n3. Comparer nb retiré ↔ total affiché · manquants → office + Masterkey  \n4. Déconnexion · charger véhicule **par catégorie**  \n5. Livraison séparée par catégorie",
+      "to": "Les automates proposent des services selon le site et le contrat. Les opérations de levée et la résolution des écarts relèvent du personnel autorisé et des procédures du prestataire.",
+      "reason": "Retire les détails d’accès et des outils internes."
+    },
+    {
+      "from": "Sales/endommagées → photo + signaler · sous-affranchis → centre / carte perception · trousseau Key Finder → supérieur · client veut récupérer lettre → description + ID = expéditeur · bulletin + billet → supérieur (argent en BA interdite).",
+      "to": "Consigner les détériorations et tout événement particulier. Une demande de récupération est traitée par le service compétent selon les règles applicables, dont la confidentialité.",
+      "reason": "Renvoie la décision au service autorisé."
+    }
+  ],
+  "summary": [
+    "Comparer la prise en charge au domicile, au point desservi ou en libre-service.",
+    "Vérifier les conditions de prestation et les heures de remise.",
+    "Suivre les dépôts et les levées à partir des enregistrements prévus."
+  ],
+  "glossary": [
+    [
+      "Automate de dépôt",
+      "Équipement qui permet une remise selon les services et conditions prévus."
+    ],
+    [
+      "Collecte",
+      "Prise en charge d’envois pour leur acheminement."
+    ],
+    [
+      "Déposant",
+      "Personne ou organisation qui remet un envoi au prestataire."
+    ],
+    [
+      "Dépôt",
+      "Remise d’un envoi dans le canal choisi."
+    ],
+    [
+      "Dépôt non desservi",
+      "Remise dans un point sans accueil permanent par une personne."
+    ],
+    [
+      "Desservi",
+      "Point où le service est assuré par du personnel pendant les horaires prévus."
+    ],
+    [
+      "Enlèvement",
+      "Prise en charge organisée à une adresse."
+    ],
+    [
+      "Expéditeur",
+      "Personne ou organisation qui envoie la marchandise."
+    ],
+    [
+      "Heure de levée",
+      "Moment annoncé pour collecter les envois d’un point."
+    ],
+    [
+      "Preuve de prise en charge",
+      "Événement ou document permettant de constater la remise."
+    ],
+    [
+      "Retour",
+      "Envoi qui revient selon le dossier et les conditions prévues."
+    ],
+    [
+      "Tournée de collecte",
+      "Séquence organisée de points à desservir."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Une prise en charge comporte 17 lettres et 26 colis. Calculez le nombre d’envois.",
+      "answer": "43 envois.",
+      "calculation": "17 + 26 = 43."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Un relevé annonce 38 envois et on en compte 36. Calculez le manque.",
+      "answer": "Deux envois.",
+      "calculation": "38 − 36 = 2."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Une tournée passe à 13 h 25, puis 46 min après au point suivant. Calculez l’heure.",
+      "answer": "14 h 11.",
+      "calculation": "13 h 25 + 46 min = 14 h 11."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Huit enlèvements durent chacun six minutes, hors déplacement. Calculez la durée.",
+      "answer": "48 minutes.",
+      "calculation": "8 × 6 = 48 min."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Sur 85 dépôts, 17 ont exigé un accueil en personne. Calculez la part.",
+      "answer": "20 %.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "17 ÷ 85 × 100 = 20 %."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Qu’est-ce qui distingue le dépôt de la collecte ?",
+      "answer": "Le client remet l’envoi, le prestataire le prend en charge."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Quels éléments vérifier avant de recommander un canal ?",
+      "answer": "Format, service, destination, preuve demandée, horaire et conditions en vigueur."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Pourquoi distinguer collecte régulière et occasionnelle ?",
+      "answer": "L’une suit des créneaux convenus, l’autre dépend d’une commande ponctuelle."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "À quoi sert la preuve de prise en charge ?",
+      "answer": "À retrouver le moment et le dossier de remise."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Que faire si le comptage diffère du relevé ?",
+      "answer": "Vérifier selon la procédure et signaler l’écart avec les références."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Le client ne peut pas se déplacer et a cinq colis. Quelles données réunissez-vous ?",
+      "answer": "Adresse, service, volumes, disponibilité et conditions d’enlèvement avant confirmation."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Un automate n’accepte pas l’envoi. Quelle suite proposez-vous ?",
+      "answer": "Vérifier le format et le service, puis orienter vers un canal autorisé compatible."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "L’expéditeur réclame une preuve après une prise en charge. Que fournissez-vous ?",
+      "answer": "La trace prévue pour le dossier, par le canal approprié au rôle et aux règles de confidentialité."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "14.3 Possibilités",
+      "file": "log-614-notions-1-v001.svg",
+      "alt": "Collecte. Enlèvement à l’adresse. Point desservi. Prise en charge au guichet. Libre-service. Disponibilité selon le point.",
+      "caption": "Le canal est choisi selon l’envoi, le service et ses conditions.",
+      "sha256": "90f3de6a7da5077bfb654db9efcd0bd4cb104f13f8c115d772dcd019d4d613f8",
+      "origin": "Illustration originale Doc-Prof du module 614."
+    },
+    {
+      "anchor": "14.5 Levée des points non desservis",
+      "file": "log-614-notions-2-v001.svg",
+      "alt": "Créneau. Horaire prévu. Collecte. Constat et quantité. Transmission. Enregistrement et suite.",
+      "caption": "Le service peut expliquer le suivi à partir des traces autorisées.",
+      "sha256": "f06e020da31bad26a11651390c30b62c4597c3f7a37c9b0d8b87da729bd01a9d",
+      "origin": "Illustration originale Doc-Prof du module 614."
+    }
+  ]
+}

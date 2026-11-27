@@ -1,0 +1,214 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Classer les **envois spéciaux** et appliquer les règles **MD / LQ**\n- Préparer lettres et colis (séparation, rollbox, signalétique)\n- Choisir et **étiqueter** les supports de charges\n- Relier **NPA**, hubs, niveaux de distribution et modes de transport",
+  "overview": "## Aperçu du module 615\n\n- Identifier le service, le format et la destination avant le tri.\n- Choisir et étiqueter le support selon les consignes du dépôt.\n- Signaler les cas spéciaux et vérifier leur acceptation auprès du service qualifié.",
+  "replacements": [
+    {
+      "from": "**Envois spéciaux** = traitement particulier (ex. vin). **MD** = danger personnes/environnement. **LQ** (*Limited Quantity*) = quantités MD autorisées en CEC.",
+      "to": "Les envois spéciaux nécessitent un traitement défini selon leurs caractéristiques. Pour une marchandise réglementée, la prise en charge dépend du contenu exact, du mode, de la réglementation et du prestataire.",
+      "reason": "Évite l’assimilation d’un régime à une autorisation automatique."
+    },
+    {
+      "from": "| Catégorie | Idée / limites |\n| --- | --- |\n| **MD** | Inflammable, toxique… · ADR · étiquette + code presta · n° ONU + poids brut |\n| **Marchandises** | > encombrants ou > **30 kg** · sur palette |\n| **Encombrants** | > colis standard (Poste **100×60×60**, 30 kg · DHL **120×60×60**, 31,5 kg) ou sans emballage |\n| **Traitement manuel** | Forme/emballage/adresse empêchent le tri auto |\n| **Liquides** | Quantités + emballage adaptés (vin…) |\n| **Précieux / fragiles / T°** | Assurance · tri manuel · signalétique froid |\n| **Animaux vivants** | Surtout **coursier** (sauf insectes alimentaires) |\n| **Militaire / cécogramme** | N° militaire · boîtes jaunes non affranchies |\n\n**Interdits CEC (ex.) :** trop grands/lourds · MD hors LQ · animaux vivants (sauf exceptions).  \n**MD interdites :** explosifs, feux d'artifice, bouteilles gaz BBQ ≥1 L, batteries Li > **100 Wh**.  \n**LQ autorisées (ex.) :** aérosols, désinfectant ≤1 L, pâte combustible ≤1 L · parfum/peinture jusqu'à ~5 L (Poste).",
+      "to": "| Situation | Traitement de référence |\n| --- | --- |\n| Envoi conforme pour le tri prévu | L’identifier et l’orienter selon le service et la destination. |\n| Envoi de taille ou de forme inhabituelle | Faire vérifier le traitement adapté et les limites applicables. |\n| Envoi réglementé ou incertain | Suspendre la remise et faire vérifier la prise en charge par le service qualifié. |",
+      "reason": "Retire les listes et quantités non vérifiées et privilégie la prévention."
+    },
+    {
+      "from": "**Lettres — critères :** à oblitérer / déjà ok · presta (A/B/B2) · auto / manuel · format **FN** (≤B5) / **GF** (≤B4) / MIX · gabarits bleu/jaune. Puis **séparation par 7** · étiquettes sur BB. Si temps : oblitérer sur place · sinon au centre.",
+      "to": "**Lettres :** vérifier service, format et traitement demandé selon la procédure du centre.",
+      "reason": "Évite une règle universelle pour un réseau particulier."
+    },
+    {
+      "from": "**Colis :** presta (Priority / Economy / Express) + type (encombrants, vin…) → même **RX**.",
+      "to": "**Colis :** regrouper selon le service, le format et le traitement prévus par le site.",
+      "reason": "Actualise l’exemple sans supposer le code interne."
+    },
+    {
+      "from": "Envoi abîmé / bruits suspects → mettre de côté · informer responsable.",
+      "to": "En cas de situation inhabituelle ou de risque, suspendre le traitement, avertir le poste responsable et suivre la procédure sans manipuler le contenu.",
+      "reason": "Évite une manipulation générale d’un envoi potentiellement dangereux."
+    },
+    {
+      "from": "| Support | Usage / limites |\n| --- | --- |\n| Contenant réutilisable | Plastique · isolé si T° |\n| **BB** (lettres) | Max **15 kg** (tapis centre) |\n| **SB** (collectifs) | Lettres/BB entre sites · max **460 kg** |\n| **RX** (rollbox) | Colis · contrôle sécurité annuel · ≤6 RX accrochés (≤3 encombrants) |\n| Palettes | En nombre / > encombrants |\n| Sacs | Internationaux (DHL Destination Bags ≤25 kg) · Poste sacs ouverts / journaux / dépôt courrier (≠ fonds / justificatifs) |\n| Conteneurs avion / **WB** | Air · rail/route (grue) |",
+      "to": "| Support | Fonction |\n| --- | --- |\n| Bac réutilisable | Regrouper des envois compatibles. |\n| Support roulant | Déplacer des unités du flux autorisé. |\n| Palette ou conteneur | Regrouper des unités selon le système prévu. |",
+      "reason": "Retire les seuils et combinaisons dépendant du support et du site."
+    },
+    {
+      "from": "Sites près **autoroute + rail** (interdiction nuit PL 22h–5h → train). Proche population · pas plein centre-ville.",
+      "to": "Les centres s’implantent selon l’accès aux modes, les volumes, les délais et les besoins régionaux. Vérifier les règles de circulation applicables au départ.",
+      "reason": "Évite un horaire sans contexte."
+    },
+    {
+      "from": "**NPA** 4 chiffres (CH pionnière) : 1 = rayon O→E · 2 = territoire · 3 = (ex-ligne ferroviaire) · 4 = localité. Secteurs urbains / NPA entreprise / isolés.  ",
+      "to": "Le NPA suisse compte quatre chiffres. Le routage précis suit les règles d’acheminement du prestataire et peut évoluer.",
+      "reason": "Distingue le code et le routage."
+    }
+  ],
+  "summary": [
+    "Identifier le service, le format et la destination avant le tri.",
+    "Choisir et étiqueter le support selon les consignes du dépôt.",
+    "Signaler les cas spéciaux et vérifier leur acceptation auprès du service qualifié."
+  ],
+  "glossary": [
+    [
+      "Canal de distribution",
+      "Lien organisé entre les acteurs et destinations de la distribution."
+    ],
+    [
+      "Catégorie de tri",
+      "Classement qui oriente l’envoi vers un traitement."
+    ],
+    [
+      "Contenant collectif",
+      "Support qui regroupe plusieurs unités identifiées."
+    ],
+    [
+      "Contrôle d’acceptation",
+      "Vérification des conditions nécessaires à la remise."
+    ],
+    [
+      "Envoi spécial",
+      "Envoi soumis à un traitement particulier selon le dossier."
+    ],
+    [
+      "Étiquette de support",
+      "Indication du contenu, du traitement ou de la destination du support."
+    ],
+    [
+      "Format de tri",
+      "Catégorie attribuée selon les exigences du traitement."
+    ],
+    [
+      "Hub",
+      "Nœud où les flux sont regroupés et redistribués."
+    ],
+    [
+      "NPA",
+      "Numéro postal d’acheminement."
+    ],
+    [
+      "Rollbox",
+      "Support roulant qui regroupe des unités dans le flux prévu."
+    ],
+    [
+      "Service qualifié",
+      "Fonction autorisée pour vérifier un traitement ou une acceptation particulière."
+    ],
+    [
+      "Tri manuel",
+      "Traitement effectué sans le circuit automatisé prévu pour la catégorie."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Le dépôt prépare 24 colis pour une destination et 31 pour une autre. Calculez le total.",
+      "answer": "55 colis.",
+      "calculation": "24 + 31 = 55."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Il faut traiter 73 unités par lots d’exercice de 12. Combien de lots complets et d’unités restantes ?",
+      "answer": "Six lots et une unité.",
+      "calculation": "73 = 6 × 12 + 1."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Vous étiquetez cinq supports, chacun avec deux étiquettes. Calculez le nombre d’étiquettes.",
+      "answer": "Dix étiquettes.",
+      "calculation": "5 × 2 = 10."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Sur 160 envois, 24 demandent un traitement manuel. Calculez la part.",
+      "answer": "15 %.",
+      "calculation": "24 ÷ 160 × 100 = 15 %."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Un hub reçoit quatre lots de 48 envois. Il en transfère 175 sur le premier départ. Calculez le solde.",
+      "answer": "17 envois.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "4 × 48 − 175 = 17."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quelles données orientent la préparation d’un envoi ?",
+      "answer": "Sa catégorie, son service, son format, sa destination et les exigences de prise en charge."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "À quoi sert une étiquette de support ?",
+      "answer": "Indiquer les données nécessaires au traitement et prévenir les erreurs de destination."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Quand faut-il demander l’avis du service qualifié ?",
+      "answer": "Quand la nature, l’acceptation ou la règle d’un envoi particulier est incertaine."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Qu’est-ce qui oriente un envoi vers le tri manuel ?",
+      "answer": "Les critères du réseau, dont une forme, une présentation ou des données non adaptées au traitement automatique."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Comment un hub contribue-t-il au flux ?",
+      "answer": "Il regroupe, répartit et organise le départ des unités."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Un envoi déformé porte une mention dont la signification n’est pas claire. Que faites-vous ?",
+      "answer": "Ne pas l’intégrer au tri et prévenir le poste qualifié selon la procédure, sans manipuler le contenu."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Le support porte une étiquette d’une autre destination. Quelle suite ?",
+      "answer": "Suspendre le départ, rapprocher contenu et référence, puis faire corriger et contrôler l’étiquette."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Un lot urgent se trouve dans un regroupement ordinaire. Comment traitez-vous l’écart ?",
+      "answer": "Identifier le dossier et demander l’affectation au bon service avant la clôture, avec une trace."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "15.7–15.11 Préparation aux points de dépôt",
+      "file": "log-615-notions-1-v001.svg",
+      "alt": "Identifier. Dossier et destination. Séparer. Service et format. Remettre. Support étiqueté.",
+      "caption": "Vérifier la catégorie et le service avant le transfert.",
+      "sha256": "792cde8d39217ea5dba720dee527ac7afd09b92bcc25d895cd46a875eba621de",
+      "origin": "Illustration originale Doc-Prof du module 615."
+    },
+    {
+      "anchor": "15.12–15.14 Supports de charges & étiquetage",
+      "file": "log-615-notions-2-v001.svg",
+      "alt": "Contenu. Unités et service. Destination. Centre ou départ. Contrôle. Identité et statut.",
+      "caption": "Le support doit correspondre au flux et à ses conditions.",
+      "sha256": "5ad06ed4519b5e1fd824aee9158dac4a71254a9d272e2921269108b1169e5c52",
+      "origin": "Illustration originale Doc-Prof du module 615."
+    }
+  ]
+}

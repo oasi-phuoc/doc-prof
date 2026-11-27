@@ -86,10 +86,13 @@ Référence de réalisation dans le [cahier des charges v2.12](cahier-des-charge
 | L4 — Module 610 | Révision `610-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 610](preparation/610-v001.json). |
 | L4 — Module 611 | Révision `611-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 611](preparation/611-v001.json). |
 | L4 — Module 612 | Révision `612-v001` active en CFC | 2 schémas, 12 termes, 5 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 612](preparation/612-v001.json). |
+| L4 — Module 614 | Révision `614-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 614](preparation/614-v001.json). |
+| L4 — Module 615 | Révision `615-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 615](preparation/615-v001.json). |
+| L4 — Module 616 | Révision `616-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 616](preparation/616-v001.json). |
 
 ## Reprise opérationnelle
 
-1. Les onze modules du thème 100 et les neuf modules du thème 200 disposent des six types en CFC et AFP. Les thèmes 300 et 400 sont actifs dans les deux diplômes et le thème 500 en CFC. Poursuivre avec les modules 614 à 616. Les modules 601 à 613 sont actifs selon le diplôme. Les cibles nominales de contenu et la recette complète restent à atteindre. Partir des [archives par thème](sources-epcas/), préparer les six types et vérifier visuels et composition ensemble avant publication.
+1. Les thèmes 100 à 600 disposent des six types pour tous les modules et diplômes prévus au catalogue. Reprendre la généralisation par le module 701 « L’inventaire ». Les cibles nominales de banque restent à atteindre. Partir des archives et vérifier visuels et composition avant publication. [Archives par thème](sources-epcas/).
 2. Vérifier les corrigés, la place du contenu dans le référentiel, les écarts AFP/CFC et les dépendances à des médias écartés.
 3. Enregistrer une révision de banque et la conserver pour les recettes déjà créées. Les changements de fond du 105 sont consignés dans les [données de préparation](pilote-105/preparation.generated.json) et dans le [dossier éditorial](pilote-105/relecture.md).
 4. Vérifier dans les deux diplômes le nombre d’unités disponibles, la génération, le corrigé, l’impression et la réouverture. Reporter dans ce fichier les preuves, les écarts et le prochain module retenu.
@@ -114,6 +117,11 @@ Référence de réalisation dans le [cahier des charges v2.12](cahier-des-charge
 - Modules 501 à 506, soit 36 contextes module, diplôme et type vérifiés en Chromium A4. Réserve minimale au pied de 79,64 px. Les aperçus occupent une page, les cours illustrés produisent un PDF et les suites de calcul gardent les numéros.
 - Modules 601 à 606, soit 66 contextes module, diplôme et type vérifiés en Chromium A4. Réserve minimale au pied de 79,64 px. Les aperçus occupent une page, les cours illustrés produisent un PDF et les suites de calcul gardent les numéros.
 - Modules 607 à 612, soit 66 contextes module, diplôme et type vérifiés en Chromium A4. Réserve minimale au pied de 79,64 px. Les aperçus occupent une page, les cours illustrés produisent un PDF et les suites de calcul gardent les numéros.
+- Modules 614 à 616, soit 36 contextes module, diplôme et type vérifiés en Chromium A4. Réserve minimale au pied de 98,48 px. Les aperçus occupent une page, les cours illustrés produisent un PDF et les suites de calcul gardent les numéros.
+
+- Les quatre thèmes comptent 44 modules distincts et 80 contextes par diplôme et module. Les 480 types correspondants sont générables. Les parcours Chromium couvrent les 480 types, y compris les 24 parcours des modules 308 et 613 déjà actifs. La réserve minimale au pied est de 39,95 px. La publication ajoute 42 modules, 84 schémas et 579 exercices distincts dans la banque canonique, dont 221 calculs, 221 questions de vérification et 137 mises en situation. Les 84 schémas ont été contrôlés dans Chromium.
+- L’ensemble du catalogue atteint 396 types actifs sur 480 en CFC et 336 sur 378 en AFP. Les tirages contrôlés des banques précédentes restent identiques à ceux de leur publication. Les 14 tests de génération et d’accès aux fiches passent. TypeScript compile.
+- Les quotas éditoriaux de la section 5.1 et les formats avancés restent des objectifs distincts du raccordement des six types. La recette d’impression consignée ici porte sur le format A4 et les réglages par défaut.
 
 ### Thème 200 — Déploiement du 27 novembre
 
