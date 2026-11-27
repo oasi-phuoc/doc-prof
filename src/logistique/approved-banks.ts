@@ -102,6 +102,17 @@ import { module101 as theory101 } from './banks/module-101-v002.generated.ts'
 import { module306 as theory306 } from './banks/module-306-v002.generated.ts'
 import { module407 as theory407 } from './banks/module-407-v002.generated.ts'
 import { module409 as theory409 } from './banks/module-409-v002.generated.ts'
+import { module301 as theory301 } from './banks/module-301-v002.generated.ts'
+import { module302 as theory302 } from './banks/module-302-v002.generated.ts'
+import { module303 as theory303 } from './banks/module-303-v002.generated.ts'
+import { module304 as theory304 } from './banks/module-304-v002.generated.ts'
+import { module305 as theory305 } from './banks/module-305-v002.generated.ts'
+import { module307 as theory307 } from './banks/module-307-v002.generated.ts'
+import { module308 as theory308 } from './banks/module-308-v002.generated.ts'
+import { module309 as theory309 } from './banks/module-309-v002.generated.ts'
+import { module310 as theory310 } from './banks/module-310-v002.generated.ts'
+import { module311 as theory311 } from './banks/module-311-v002.generated.ts'
+import { module312 as theory312 } from './banks/module-312-v002.generated.ts'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
 
@@ -230,6 +241,16 @@ const serviceTheories = [
 ]
 const serviceTheoryIds = new Set<string>(serviceTheories.map(({ id }) => id))
 
+const publication_service_client_v002: LogistiquePublication = {
+  revision: 'logistique-theories-service-client-v002',
+  units: [...foundationPhotoPublication.units.filter(({ id }) => !serviceTheoryIds.has(id)), ...serviceTheories],
+}
+const theories_approvisionnement = [
+  ...theory301, ...theory302, ...theory303, ...theory304, ...theory305, ...theory307,
+  ...theory308, ...theory309, ...theory310, ...theory311, ...theory312,
+]
+const theoryIds_approvisionnement = new Set<string>(theories_approvisionnement.map(({ id }) => id))
+
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
@@ -284,9 +305,10 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   publication_901_v001,
   firstPhotoPublication,
   foundationPhotoPublication,
+  publication_service_client_v002,
   {
-    revision: 'logistique-theories-service-client-v002',
-    units: [...foundationPhotoPublication.units.filter(({ id }) => !serviceTheoryIds.has(id)), ...serviceTheories],
+    revision: 'logistique-theories-approvisionnement-v002',
+    units: [...publication_service_client_v002.units.filter(({ id }) => !theoryIds_approvisionnement.has(id)), ...theories_approvisionnement],
   },
 ]
 

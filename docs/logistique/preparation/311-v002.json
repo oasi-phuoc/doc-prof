@@ -1,0 +1,32 @@
+{
+  "theoryOnly": true,
+  "baseTheory": "module-311-v001",
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "replacements": [],
+  "summaryTheory": "## 11. Les concepts de l'approvisionnement\n\n### 11.1 à 11.3 Choisir une stratégie\n\nLe **procurement** organise l’approvisionnement au sens large. Le **purchasing** couvre l’achat. L’entreprise peut approvisionner à l’unité, constituer un stock ou organiser des livraisons au besoin (**juste-à-temps**). Le **sourcing** peut retenir un ou plusieurs fournisseurs, proches ou lointains. Comparez dépendance, disponibilité, qualité, coût et délai.\n\n### 11.4 et 11.5 Stocks et commande\n\nLe **délai d’approvisionnement** comprend traitement, préparation, transport et arrivée. Une commande peut partir à date fixe ou quand le stock atteint un seuil. Un stock élevé coûte et occupe de la place. Un stock trop faible augmente le risque de rupture.\n\n### 11.6 Quantité de commande optimale (Qopt)\n\nLa **formule d’Andler** compare coût de commande et **coût de possession**. Qopt = √(2 × M × B ÷ (P × L)). M désigne la demande annuelle, B le coût par commande, P le prix unitaire et L le taux annuel de possession en écriture décimale. Le modèle suppose notamment une demande stable et des coûts connus. Vérifiez ensuite les contraintes de place, de lot et de livraison.\n\n### 11.7 Analyse ABC / XYZ\n\n**ABC** classe les articles selon leur importance dans le critère choisi, souvent leur valeur annuelle. **XYZ** mesure la prévisibilité de la demande. Un article **AX** de forte valeur et régulier demande un suivi précis. Un article de demande irrégulière demande une autre stratégie. Un **contrat-cadre** ou une commande sur appel peut aider à organiser les besoins.\n\n### 11.8 Conséquences sur la réception\n\nDes lots plus petits et fréquents diminuent parfois le stock, mais augmentent les opérations au quai. Vérifiez la charge de réception et le contrôle qualité prévu avec le fournisseur.",
+  "visuals": [
+    {
+      "anchor": "11.3 Concepts de sourcing",
+      "summaryAnchor": "11.1 à 11.3 Choisir une stratégie",
+      "file": "log-204-marche-photo-v002.webp",
+      "path": "assets/logistique/200/204/commun/log-204-marche-photo-v002.webp",
+      "alt": "Une personne examine des offres de plusieurs fournisseurs.",
+      "caption": "Comparez les possibilités de sourcing selon la qualité, le délai, le coût et la dépendance.",
+      "sha256": "2354fccef5444deeadbe763e96d7fee664f1ccb74c8a51ac2fd7b5d248d7cf03",
+      "origin": "Mise en scène photoréaliste originale générée pour Doc-Prof."
+    },
+    {
+      "anchor": "11.8 Conséquences sur la réception des marchandises",
+      "summaryAnchor": "11.8 Conséquences sur la réception",
+      "file": "log-303-quai-photo-v002.webp",
+      "path": "assets/logistique/300/303/commun/log-303-quai-photo-v002.webp",
+      "alt": "Une livraison est à contrôler au quai.",
+      "caption": "Une augmentation du nombre de livraisons peut augmenter le travail à chaque réception.",
+      "sha256": "f5471d584d9f5e544453e7beade341e5d678d18da020392309f14dc0ac5ffe01",
+      "origin": "Mise en scène photoréaliste originale générée pour Doc-Prof."
+    }
+  ]
+}

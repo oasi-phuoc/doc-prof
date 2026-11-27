@@ -1,14 +1,15 @@
 import assert from 'node:assert/strict'
-import { readFile } from 'node:fs/promises'
+import { readdir, readFile } from 'node:fs/promises'
 import { chromium } from 'playwright'
 import { createServer } from 'vite'
 
 const plan = JSON.parse(await readFile(new URL('../../docs/logistique/preparation/references-illustrees-v002.json', import.meta.url), 'utf8'))
 const curriculum = JSON.parse(await readFile(new URL('../../src/logistique/curriculum.generated.json', import.meta.url), 'utf8'))
-const photoModules = [...Array.from({ length: 11 }, (_, index) => String(100 + index)), ...Array.from({ length: 9 }, (_, index) => String(201 + index)), '306', '407', '409']
-const photoPlans = new Map(await Promise.all(photoModules.map(async (module) => [
-  module,
-  JSON.parse(await readFile(new URL('../../docs/logistique/preparation/' + module + '-v002.json', import.meta.url), 'utf8')),
+const preparation = new URL('../../docs/logistique/preparation/', import.meta.url)
+const photoFiles = (await readdir(preparation)).filter((file) => /^\d{3}-v002\.json$/.test(file)).sort()
+const photoPlans = new Map(await Promise.all(photoFiles.map(async (file) => [
+  file.slice(0, 3),
+  JSON.parse(await readFile(new URL(file, preparation), 'utf8')),
 ])))
 const requestedModules = process.argv.slice(2)
 assert(requestedModules.every((module) => photoPlans.has(module)), 'Module illustré inconnu')
@@ -131,7 +132,8 @@ try {
       if (requestedModules.length && !requestedModules.includes(code)) continue
       const caption = visuals[0].summaryAnchor
       const photos = visuals.length
-      const { title, theme } = curriculum.modules.find(({ code: module }) => code === module)
+      const { title, theme, year } = curriculum.modules.find(({ code: module }) => code === module)
+      if (!year[diploma]) continue
       await select('Thème', theme + ' — ' + curriculum.themes.find(({ code }) => code === theme).title)
       await select('Sous-thème', code + ' — ' + title)
       await select('Type d’exercice', 'Théorie')
@@ -150,7 +152,7 @@ try {
       const restored = await inspectPrint(`${code} ${diploma} complet restauré`)
       assert.equal(restored.printText, complete.printText)
     }
-    console.log(`Logistique ${diploma} : photos intégrées au cours et au résumé des ${requestedModules.length || photoPlans.size} modules révisés.`)
+    console.log(`Logistique ${diploma} : illustrations intégrées au cours et au résumé des ${requestedModules.length || photoPlans.size} modules révisés.`)
   }
   assert.deepEqual(errors, [])
 } finally {

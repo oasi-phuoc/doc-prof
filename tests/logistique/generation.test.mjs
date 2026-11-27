@@ -67,8 +67,10 @@ test('les 858 types des modules CFC et AFP disposent de contenu à générer', (
 })
 
 test('les résumés illustrés sont distincts du cours et figés dans la recette', () => {
-  for (const diploma of ['CFC', 'AFP']) {
-    for (const code of [...Array.from({ length: 11 }, (_, index) => String(100 + index)), ...Array.from({ length: 9 }, (_, index) => String(201 + index)), '306', '407', '409']) {
+  const publishedTheories = currentLogistiquePublication.units.filter((unit) => unit.kind === 'theorie' && unit.summaryBlocks)
+  assert.equal(publishedTheories.length, 34)
+  for (const { module: code, approvedFor } of publishedTheories) {
+    for (const diploma of approvedFor) {
       const full = config(diploma, code, 'theorie')
       const [summary] = freezeLogistiquePages([{ ...full, logistiqueTheoryView: 'resume' }])
       assert(logistiqueHasSummary(full.exerciseType))
