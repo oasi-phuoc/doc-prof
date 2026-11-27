@@ -36,6 +36,7 @@ import { makeWordProblem } from './problems'
 import { tryGenerateTcmCfrItems } from '@/tcm-cfr/items'
 import { tryGenerateTcmCscItems } from '@/tcm-csc/items'
 import { tryGenerateFreeArithmetic } from './free-arithmetic'
+import { tryGenerateGeometryConstructions } from './geometry-constructions'
 import { tryGenerateMeasurementPractice } from './measurement-practice'
 import { tryGenerateMathFoundations } from './foundations-practice'
 import { tryGenerateNumberRepresentations } from './number-representations'
@@ -103,6 +104,8 @@ export function generateItems(
   if (typeId === 'fractions-vers-decimal') return generateFractionDecimals(rng, count)
   const freeArithmetic = range?.decimals && tryGenerateFreeArithmetic(typeId, rng, count, range)
   if (freeArithmetic) return normalizeDivisionLayouts(normalizeColumnLayouts(freeArithmetic))
+  const constructions = tryGenerateGeometryConstructions(typeId, rng, count)
+  if (constructions) return constructions
   const measurements = tryGenerateMeasurementPractice(typeId, rng, count, difficulty)
   if (measurements) return measurements
   const foundations = tryGenerateMathFoundations(typeId, rng, count, difficulty, range)

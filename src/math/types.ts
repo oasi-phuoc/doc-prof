@@ -241,6 +241,8 @@ export type CoordScene = {
   originRow?: number
   /** Masquer axes, labels x/y et graduations (origine à deviner). */
   hideAxes?: boolean
+  /** Garder le cadre de construction sans lignes intérieures. */
+  hideGrid?: boolean
   /** Masquer uniquement numérotation et libellés x/y (axes visibles). */
   hideAxisLabels?: boolean
   /** Flèches aux extrémités positives des axes. */

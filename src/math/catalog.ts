@@ -626,6 +626,7 @@ export const exerciseTypes: ExerciseType[] = [
 
   t('fonctions-regle', 'fonctions', 'Retrouver la règle de calcul', 'Déduire une règle à partir de valeurs d’entrée et de sortie.', 'Écrivez la règle qui donne y à partir de x. Elle est de la forme y = ax + b.', 'texte', { preferredColumns: 2, preferredCount: 6, maxCount: 8 }),
   t('figures-patrons-cube', 'figures', 'Reconnaître un patron de cube', 'Décider si six carrés peuvent être pliés en cube sans recouvrement.', 'Indiquez si chaque figure peut être pliée pour former un cube.', 'geo', { preferredColumns: 2, preferredCount: 6, maxCount: 8 }),
+  t('figures-tracer-droites', 'figures', 'Tracer des droites à l’équerre', 'Construire une parallèle ou une perpendiculaire passant par un point donné.', 'Tracez chaque droite avec une règle et une équerre.', 'geo', { preferredColumns: 1, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
   t('figures-angles', 'figures', 'Classer les angles', 'Reconnaître des angles aigus, droits et obtus dans différentes orientations.', 'Indiquez si chaque angle est aigu, droit ou obtus.', 'geo', { preferredColumns: 2, preferredCount: 6, maxCount: 8 }),
   t('figures-reproduire', 'figures', 'Reproduire sur quadrillage', 'Recopier une silhouette en s’aidant du quadrillage.', 'Reproduisez le modèle en comptant les carreaux.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
   t('figures-agrandir', 'figures', 'Agrandir sur quadrillage', 'Reproduire une silhouette en doublant les longueurs en carreaux.', 'Reproduisez le modèle. Chaque longueur mesurée en carreaux doit être doublée.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
@@ -706,6 +707,7 @@ export const exerciseTypes: ExerciseType[] = [
   t('volumes-cone-manquant', 'volumes', 'Hauteur du cône', 'Retrouver la hauteur à partir du volume.', 'Calculez la hauteur. Prenez π = 3,14.', 'geo', { figure: 'cone', preferredColumns: 2 }),
   t('volumes-melange', 'volumes', 'Mélanger', 'Tous les solides, au hasard.', 'Calculez le volume ou la mesure demandée.', 'geo', { preferredColumns: 2 }),
 
+  t('reperage-itineraires', 'reperage', 'Suivre et décrire un trajet', 'Suivre un trajet ou le décrire avec les points cardinaux.', 'Sur le plan, le nord est en haut.', 'geo', { preferredColumns: 1, preferredCount: 2, maxCount: 2, supportsNumberRange: false }),
   t('reperage-lire', 'reperage', 'Lire des coordonnées', 'Lire les coordonnées de formes sur un tableau.', 'Écrivez les coordonnées de chaque forme.', 'geo', { preferredColumns: 2 }),
   t('reperage-placer', 'reperage', 'Placer des formes', 'Dessiner les formes sur un tableau vide à partir des coordonnées.', 'Dessinez chaque forme à l’emplacement indiqué.', 'geo', { preferredColumns: 2 }),
   t('reperage-cadrans-lire', 'reperage', 'Lire les 4 cadrans', 'Lire les coordonnées de points dans le plan (axes et cadrans).', 'Écrivez les coordonnées de chaque point.', 'geo', { preferredColumns: 1 }),
@@ -766,6 +768,7 @@ export const exerciseTypes: ExerciseType[] = [
     'geo',
     { preferredColumns: 1 },
   ),
+  t('transformations-tracer-axes', 'transformations', 'Trouver les axes de symétrie', 'Tracer tous les axes d’une figure, si elle en a.', 'Tracez les axes et écrivez leur nombre.', 'geo', { preferredColumns: 2, preferredCount: 4, maxCount: 4, supportsNumberRange: false }),
   t('transformations-symetrie-quadrillage', 'transformations', 'Compléter une silhouette par symétrie', 'Tracer le reflet d’une silhouette sur un quadrillage.', 'Dessinez le reflet de la silhouette de l’autre côté de l’axe.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
   t('transformations-translation', 'transformations', 'Construire l’image par translation', 'Déplacer chaque sommet d’une figure selon le même déplacement.', 'Construisez l’image de la figure en suivant le déplacement indiqué.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
   t('transformations-quart-tour', 'transformations', 'Faire pivoter une figure d’un quart de tour', 'Tourner une silhouette de 90° sur un quadrillage.', 'Suivez le sens indiqué pour reproduire la figure après un quart de tour.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),

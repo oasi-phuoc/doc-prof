@@ -469,7 +469,7 @@ export function WorksheetSheet({
               ) : null}
               <WorksheetItems
                 groupedOperations={/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType)}
-                className={`exercise-grid${
+                className={`exercise-grid${block.exerciseType === 'transformations-tracer-axes' ? ' coord-grid-columns' : ''}${
                   block.items.every((item) => item.layout === 'algebra')
                     ? ' algebra-grid'
                     : block.items.every((item) => item.layout === 'theory')

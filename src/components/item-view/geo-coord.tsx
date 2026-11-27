@@ -220,10 +220,10 @@ export function CoordBlock({
         : scene.hideAxes
           ? {
               ...scene,
-              showOrigin: show,
+              showOrigin: show && scene.showOrigin !== false,
               marks: scene.marks.map((mark) => ({
                 ...mark,
-                showCoord: Boolean(mark.given || show),
+                showCoord: mark.showCoord ?? Boolean(mark.given || show),
               })),
             }
           : {

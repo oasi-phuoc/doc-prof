@@ -1820,7 +1820,7 @@ html.is-margin-symmetric .print-only-sheets .worksheet-sheet.sheet-even .draft-g
   display:grid;
   grid-template-columns:repeat(var(--sheet-columns, 2), minmax(0, 1fr));
 }
-.worksheet-sheet .exercise-grid:has(.layout-coord){
+.worksheet-sheet .exercise-grid:not(.coord-grid-columns):has(.layout-coord){
   grid-template-columns:minmax(0,1fr);
 }
 /* Soutien FR (1 item pleine largeur) : les « Colonnes » du panneau
