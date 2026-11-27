@@ -1,7 +1,7 @@
 [
   {
     "schemaVersion": 1,
-    "revision": "avenir-2026-11-24-v1",
+    "revision": "avenir-2026-11-27-v2",
     "activityId": "gram-ex-futur-anterieur-qcm-conj",
     "subthemeId": "futur-anterieur",
     "topic": "gram-avenir",
@@ -11,7 +11,7 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-24",
+      "date": "2026-11-27",
       "humanReview": "pending",
       "note": "Sources et références relues. Situations partagées entre mécaniques ; documents adaptés avec faits explicites. Modèles ouverts non exclusifs. Aucune approbation enseignante déclarée."
     },
@@ -1573,12 +1573,322 @@
           }
         ],
         "explanation": "Dans ce groupe mixte, entrés est au masculin pluriel. Modèle : Quand nous serons entrés dans la salle, le cours commencera."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-qcm-conj-b1-analyse-echantillon",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-qcm-conj",
+          "position": 50,
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Quand le laboratoire ___ l’échantillon, il rendra son avis.",
+        "cue": "Le laboratoire analysera l’échantillon avant de rendre son avis. Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple.",
+        "givenVerb": "analyser",
+        "answers": [
+          "aura analysé"
+        ],
+        "options": [
+          {
+            "id": "analyse-echantillon-choix-1",
+            "text": "aura analysé"
+          },
+          {
+            "id": "analyse-echantillon-choix-2",
+            "text": "aura analysée"
+          },
+          {
+            "id": "analyse-echantillon-choix-3",
+            "text": "avait analysé"
+          }
+        ],
+        "explanation": "L’analyse sera terminée avant la remise de l’avis. Modèle : Quand le laboratoire aura analysé l’échantillon, il rendra son avis."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-qcm-conj-b1-annonce-theatre",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-qcm-conj",
+          "position": 51,
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Dès que l’équipe ___ les horaires, elle publiera le programme.",
+        "cue": "L’équipe du théâtre doit vérifier les horaires avant de publier le programme. Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple.",
+        "givenVerb": "vérifier",
+        "answers": [
+          "aura vérifié"
+        ],
+        "options": [
+          {
+            "id": "annonce-theatre-choix-1",
+            "text": "aura vérifié"
+          },
+          {
+            "id": "annonce-theatre-choix-2",
+            "text": "aura vérifiés"
+          },
+          {
+            "id": "annonce-theatre-choix-3",
+            "text": "a vérifié"
+          }
+        ],
+        "explanation": "Avoir au futur suivi de vérifié marque l’antériorité de la vérification. Modèle : Dès que l’équipe aura vérifié les horaires, elle publiera le programme."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-qcm-conj-b1-archives-boites",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-qcm-conj",
+          "position": 52,
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Une fois que nous ___ toutes les boîtes, nous les déplacerons au sous-sol.",
+        "cue": "Demain, nous inventorierons toutes les boîtes avant de les déplacer au sous-sol. Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple.",
+        "givenVerb": "inventorier",
+        "answers": [
+          "aurons inventorié"
+        ],
+        "options": [
+          {
+            "id": "archives-boites-choix-1",
+            "text": "aurons inventorié"
+          },
+          {
+            "id": "archives-boites-choix-2",
+            "text": "aurons inventoriées"
+          },
+          {
+            "id": "archives-boites-choix-3",
+            "text": "avons inventorié"
+          }
+        ],
+        "explanation": "L’inventaire sera achevé avant le déplacement. Le COD vient après le participe. Modèle : Une fois que nous aurons inventorié toutes les boîtes, nous les déplacerons au sous-sol."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-qcm-conj-b1-fiches-club",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-qcm-conj",
+          "position": 53,
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Quand les bénévoles ___ les fiches, ils les enverront aux membres.",
+        "cue": "Les bénévoles corrigeront les fiches avant l’envoi aux membres du club. Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple.",
+        "givenVerb": "corriger",
+        "answers": [
+          "auront corrigé"
+        ],
+        "options": [
+          {
+            "id": "fiches-club-choix-1",
+            "text": "auront corrigé"
+          },
+          {
+            "id": "fiches-club-choix-2",
+            "text": "auront corrigées"
+          },
+          {
+            "id": "fiches-club-choix-3",
+            "text": "ont corrigé"
+          }
+        ],
+        "explanation": "Avec les bénévoles, avoir au futur donne auront. Le COD suit corrigé. Modèle : Quand les bénévoles auront corrigé les fiches, ils les enverront aux membres."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-qcm-conj-b1-nettoyage-pinceaux",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-qcm-conj",
+          "position": 54,
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Une fois que vous ___ les pinceaux, vous les mettrez dans l’armoire.",
+        "cue": "Vous êtes responsable du rangement. Vous nettoierez les pinceaux avant de les mettre dans l’armoire. Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple.",
+        "givenVerb": "nettoyer",
+        "answers": [
+          "aurez nettoyé"
+        ],
+        "options": [
+          {
+            "id": "nettoyage-pinceaux-choix-1",
+            "text": "aurez nettoyé"
+          },
+          {
+            "id": "nettoyage-pinceaux-choix-2",
+            "text": "aurez nettoyés"
+          },
+          {
+            "id": "nettoyage-pinceaux-choix-3",
+            "text": "aviez nettoyé"
+          }
+        ],
+        "explanation": "Aurez nettoyé exprime l’action achevée avant le rangement. Modèle : Une fois que vous aurez nettoyé les pinceaux, vous les mettrez dans l’armoire."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-qcm-conj-b1-tablettes-classe",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-qcm-conj",
+          "position": 55,
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Dès que les élèves ___ les tablettes, ils ouvriront le questionnaire.",
+        "cue": "Les élèves prendront les tablettes au secrétariat, puis ouvriront le questionnaire. Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple.",
+        "givenVerb": "prendre",
+        "answers": [
+          "auront pris"
+        ],
+        "options": [
+          {
+            "id": "tablettes-classe-choix-1",
+            "text": "auront pris"
+          },
+          {
+            "id": "tablettes-classe-choix-2",
+            "text": "auront prises"
+          },
+          {
+            "id": "tablettes-classe-choix-3",
+            "text": "avaient pris"
+          }
+        ],
+        "explanation": "Auront pris situe la prise des tablettes avant l’ouverture du questionnaire. Modèle : Dès que les élèves auront pris les tablettes, ils ouvriront le questionnaire."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-qcm-conj-b1-lectrices-retour",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-qcm-conj",
+          "position": 56,
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Quand nous ___ à la bibliothèque, nous rendrons les livres.",
+        "cue": "Deux lectrices reviendront à la bibliothèque avant de rendre les livres. L’une d’elles parle à leur place. Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple.",
+        "givenVerb": "revenir",
+        "answers": [
+          "serons revenues"
+        ],
+        "options": [
+          {
+            "id": "lectrices-retour-choix-1",
+            "text": "serons revenues"
+          },
+          {
+            "id": "lectrices-retour-choix-2",
+            "text": "serons revenu"
+          },
+          {
+            "id": "lectrices-retour-choix-3",
+            "text": "aurons revenues"
+          }
+        ],
+        "explanation": "Revenir se conjugue avec être. Revenues est accordé avec les deux lectrices. Modèle : Quand nous serons revenues à la bibliothèque, nous rendrons les livres."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-qcm-conj-b1-scene-musicien",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-qcm-conj",
+          "position": 57,
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Quand le musicien ___ de la salle, il rappellera la technicienne.",
+        "cue": "Un musicien sortira de la salle de répétition avant de rappeler la technicienne. Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple.",
+        "givenVerb": "sortir",
+        "answers": [
+          "sera sorti"
+        ],
+        "options": [
+          {
+            "id": "scene-musicien-choix-1",
+            "text": "sera sorti"
+          },
+          {
+            "id": "scene-musicien-choix-2",
+            "text": "sera sortie"
+          },
+          {
+            "id": "scene-musicien-choix-3",
+            "text": "aura sorti"
+          }
+        ],
+        "explanation": "Sortir se construit ici sans COD, avec être. Sorti s’accorde avec le musicien. Modèle : Quand le musicien sera sorti de la salle, il rappellera la technicienne."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-qcm-conj-b1-pont-vehicules",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-qcm-conj",
+          "position": 58,
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Quand les deux cyclistes ___ sous le pont, ils rejoindront le quai.",
+        "cue": "Les cyclistes passeront sous le pont avant de rejoindre le quai. Le groupe est composé de deux cyclistes, une femme et un homme. Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple.",
+        "givenVerb": "passer",
+        "answers": [
+          "seront passés"
+        ],
+        "options": [
+          {
+            "id": "pont-vehicules-choix-1",
+            "text": "seront passés"
+          },
+          {
+            "id": "pont-vehicules-choix-2",
+            "text": "seront passées"
+          },
+          {
+            "id": "pont-vehicules-choix-3",
+            "text": "étaient passés"
+          }
+        ],
+        "explanation": "Avec être, passés est au masculin pluriel pour ce groupe. Modèle : Quand les deux cyclistes seront passés sous le pont, ils rejoindront le quai."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-qcm-conj-b1-salle-equipe",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-qcm-conj",
+          "position": 59,
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Quand les danseuses ___ dans la petite salle, elles retrouveront le reste de l’équipe.",
+        "cue": "Les trois danseuses s’échaufferont dans la petite salle avant de retrouver le reste de l’équipe. Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple.",
+        "givenVerb": "s’échauffer",
+        "answers": [
+          "se seront échauffées"
+        ],
+        "options": [
+          {
+            "id": "salle-equipe-choix-1",
+            "text": "se seront échauffées"
+          },
+          {
+            "id": "salle-equipe-choix-2",
+            "text": "se seront échauffés"
+          },
+          {
+            "id": "salle-equipe-choix-3",
+            "text": "se seraient échauffées"
+          }
+        ],
+        "explanation": "S’échauffer prend être. Ici, échauffées s’accorde avec les danseuses. Modèle : Quand les danseuses se seront échauffées dans la petite salle, elles retrouveront le reste de l’équipe."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "avenir-2026-11-24-v1",
+    "revision": "avenir-2026-11-27-v2",
     "activityId": "gram-ex-futur-anterieur-curriculum-t",
     "subthemeId": "futur-anterieur",
     "topic": "gram-avenir",
@@ -1588,7 +1898,7 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-24",
+      "date": "2026-11-27",
       "humanReview": "pending",
       "note": "Sources et références relues. Situations partagées entre mécaniques ; documents adaptés avec faits explicites. Modèles ouverts non exclusifs. Aucune approbation enseignante déclarée."
     },
@@ -2498,6 +2808,186 @@
         ],
         "responseLines": 2,
         "explanation": "Dans ce groupe mixte, entrés est au masculin pluriel. Modèle non exclusif : Quand nous serons entrés dans la salle, le cours commencera."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-curriculum-t-b1-analyse-echantillon",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-curriculum-t",
+          "position": 50,
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le laboratoire analysera l’échantillon, puis il rendra son avis.",
+        "cue": "Le laboratoire analysera l’échantillon avant de rendre son avis. Verbe ciblé : analyser.",
+        "directive": "Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple. Reliez les deux faits par quand, dès que ou une fois que ; respectez l’ordre des événements.",
+        "answers": [
+          "Quand le laboratoire aura analysé l’échantillon, il rendra son avis."
+        ],
+        "responseLines": 2,
+        "explanation": "L’analyse sera terminée avant la remise de l’avis. Modèle non exclusif : Quand le laboratoire aura analysé l’échantillon, il rendra son avis."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-curriculum-t-b1-annonce-theatre",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-curriculum-t",
+          "position": 51,
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "L’équipe vérifiera les horaires, puis elle publiera le programme.",
+        "cue": "L’équipe du théâtre doit vérifier les horaires avant de publier le programme. Verbe ciblé : vérifier.",
+        "directive": "Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple. Reliez les deux faits par quand, dès que ou une fois que ; respectez l’ordre des événements.",
+        "answers": [
+          "Dès que l’équipe aura vérifié les horaires, elle publiera le programme."
+        ],
+        "responseLines": 2,
+        "explanation": "Avoir au futur suivi de vérifié marque l’antériorité de la vérification. Modèle non exclusif : Dès que l’équipe aura vérifié les horaires, elle publiera le programme."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-curriculum-t-b1-archives-boites",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-curriculum-t",
+          "position": 52,
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Nous inventorierons toutes les boîtes, puis nous les déplacerons au sous-sol.",
+        "cue": "Demain, nous inventorierons toutes les boîtes avant de les déplacer au sous-sol. Verbe ciblé : inventorier.",
+        "directive": "Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple. Reliez les deux faits par quand, dès que ou une fois que ; respectez l’ordre des événements.",
+        "answers": [
+          "Une fois que nous aurons inventorié toutes les boîtes, nous les déplacerons au sous-sol."
+        ],
+        "responseLines": 2,
+        "explanation": "L’inventaire sera achevé avant le déplacement. Le COD vient après le participe. Modèle non exclusif : Une fois que nous aurons inventorié toutes les boîtes, nous les déplacerons au sous-sol."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-curriculum-t-b1-fiches-club",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-curriculum-t",
+          "position": 53,
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les bénévoles corrigeront les fiches, puis ils les enverront aux membres du club.",
+        "cue": "Les bénévoles corrigeront les fiches avant l’envoi aux membres du club. Verbe ciblé : corriger.",
+        "directive": "Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple. Reliez les deux faits par quand, dès que ou une fois que ; respectez l’ordre des événements.",
+        "answers": [
+          "Quand les bénévoles auront corrigé les fiches, ils les enverront aux membres."
+        ],
+        "responseLines": 2,
+        "explanation": "Avec les bénévoles, avoir au futur donne auront. Le COD suit corrigé. Modèle non exclusif : Quand les bénévoles auront corrigé les fiches, ils les enverront aux membres."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-curriculum-t-b1-nettoyage-pinceaux",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-curriculum-t",
+          "position": 54,
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Vous nettoierez les pinceaux, puis vous les mettrez dans l’armoire.",
+        "cue": "Vous êtes responsable du rangement. Vous nettoierez les pinceaux avant de les mettre dans l’armoire. Verbe ciblé : nettoyer.",
+        "directive": "Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple. Reliez les deux faits par quand, dès que ou une fois que ; respectez l’ordre des événements.",
+        "answers": [
+          "Une fois que vous aurez nettoyé les pinceaux, vous les mettrez dans l’armoire."
+        ],
+        "responseLines": 2,
+        "explanation": "Aurez nettoyé exprime l’action achevée avant le rangement. Modèle non exclusif : Une fois que vous aurez nettoyé les pinceaux, vous les mettrez dans l’armoire."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-curriculum-t-b1-tablettes-classe",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-curriculum-t",
+          "position": 55,
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les élèves prendront les tablettes au secrétariat, puis ils ouvriront le questionnaire.",
+        "cue": "Les élèves prendront les tablettes au secrétariat, puis ouvriront le questionnaire. Verbe ciblé : prendre.",
+        "directive": "Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple. Reliez les deux faits par quand, dès que ou une fois que ; respectez l’ordre des événements.",
+        "answers": [
+          "Dès que les élèves auront pris les tablettes, ils ouvriront le questionnaire."
+        ],
+        "responseLines": 2,
+        "explanation": "Auront pris situe la prise des tablettes avant l’ouverture du questionnaire. Modèle non exclusif : Dès que les élèves auront pris les tablettes, ils ouvriront le questionnaire."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-curriculum-t-b1-lectrices-retour",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-curriculum-t",
+          "position": 56,
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Nous reviendrons à la bibliothèque, puis nous rendrons les livres.",
+        "cue": "Deux lectrices reviendront à la bibliothèque avant de rendre les livres. L’une d’elles parle à leur place. Verbe ciblé : revenir.",
+        "directive": "Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple. Reliez les deux faits par quand, dès que ou une fois que ; respectez l’ordre des événements.",
+        "answers": [
+          "Quand nous serons revenues à la bibliothèque, nous rendrons les livres."
+        ],
+        "responseLines": 2,
+        "explanation": "Revenir se conjugue avec être. Revenues est accordé avec les deux lectrices. Modèle non exclusif : Quand nous serons revenues à la bibliothèque, nous rendrons les livres."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-curriculum-t-b1-scene-musicien",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-curriculum-t",
+          "position": 57,
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le musicien sortira de la salle, puis il rappellera la technicienne.",
+        "cue": "Un musicien sortira de la salle de répétition avant de rappeler la technicienne. Verbe ciblé : sortir.",
+        "directive": "Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple. Reliez les deux faits par quand, dès que ou une fois que ; respectez l’ordre des événements.",
+        "answers": [
+          "Quand le musicien sera sorti de la salle, il rappellera la technicienne."
+        ],
+        "responseLines": 2,
+        "explanation": "Sortir se construit ici sans COD, avec être. Sorti s’accorde avec le musicien. Modèle non exclusif : Quand le musicien sera sorti de la salle, il rappellera la technicienne."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-curriculum-t-b1-pont-vehicules",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-curriculum-t",
+          "position": 58,
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les cyclistes passeront sous le pont, puis ils rejoindront le quai.",
+        "cue": "Les cyclistes passeront sous le pont avant de rejoindre le quai. Le groupe est composé de deux cyclistes, une femme et un homme. Verbe ciblé : passer.",
+        "directive": "Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple. Reliez les deux faits par quand, dès que ou une fois que ; respectez l’ordre des événements.",
+        "answers": [
+          "Quand les deux cyclistes seront passés sous le pont, ils rejoindront le quai."
+        ],
+        "responseLines": 2,
+        "explanation": "Avec être, passés est au masculin pluriel pour ce groupe. Modèle non exclusif : Quand les deux cyclistes seront passés sous le pont, ils rejoindront le quai."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-curriculum-t-b1-salle-equipe",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-curriculum-t",
+          "position": 59,
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les danseuses s’échaufferont dans la petite salle, puis elles retrouveront l’équipe.",
+        "cue": "Les trois danseuses s’échaufferont dans la petite salle avant de retrouver le reste de l’équipe. Verbe ciblé : s’échauffer.",
+        "directive": "Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple. Reliez les deux faits par quand, dès que ou une fois que ; respectez l’ordre des événements.",
+        "answers": [
+          "Quand les danseuses se seront échauffées dans la petite salle, elles retrouveront le reste de l’équipe."
+        ],
+        "responseLines": 2,
+        "explanation": "S’échauffer prend être. Ici, échauffées s’accorde avec les danseuses. Modèle non exclusif : Quand les danseuses se seront échauffées dans la petite salle, elles retrouveront le reste de l’équipe."
       }
     ]
   },
@@ -4148,7 +4638,7 @@
   },
   {
     "schemaVersion": 1,
-    "revision": "avenir-2026-11-24-v1",
+    "revision": "avenir-2026-11-27-v2",
     "activityId": "gram-ex-futur-anterieur-curriculum-e",
     "subthemeId": "futur-anterieur",
     "topic": "gram-avenir",
@@ -4158,7 +4648,7 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-24",
+      "date": "2026-11-27",
       "humanReview": "pending",
       "note": "Sources et références relues. Situations partagées entre mécaniques ; documents adaptés avec faits explicites. Modèles ouverts non exclusifs. Aucune approbation enseignante déclarée."
     },
@@ -5768,6 +6258,326 @@
           }
         ],
         "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Dans ce groupe mixte, entrés est au masculin pluriel."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-curriculum-e-b1-analyse-echantillon",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-curriculum-e",
+          "position": 50,
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le laboratoire analysera l’échantillon avant de rendre son avis.\nFaits : Le laboratoire analysera l’échantillon, puis il rendra son avis.",
+        "answers": [
+          "Quand le laboratoire aura analysé l’échantillon, il rendra son avis."
+        ],
+        "task": "Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. L’analyse sera terminée avant la remise de l’avis."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-curriculum-e-b1-annonce-theatre",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-curriculum-e",
+          "position": 51,
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "L’équipe du théâtre doit vérifier les horaires avant de publier le programme.\nFaits : L’équipe vérifiera les horaires, puis elle publiera le programme.",
+        "answers": [
+          "Dès que l’équipe aura vérifié les horaires, elle publiera le programme."
+        ],
+        "task": "Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Avoir au futur suivi de vérifié marque l’antériorité de la vérification."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-curriculum-e-b1-archives-boites",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-curriculum-e",
+          "position": 52,
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Demain, nous inventorierons toutes les boîtes avant de les déplacer au sous-sol.\nFaits : Nous inventorierons toutes les boîtes, puis nous les déplacerons au sous-sol.",
+        "answers": [
+          "Une fois que nous aurons inventorié toutes les boîtes, nous les déplacerons au sous-sol."
+        ],
+        "task": "Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. L’inventaire sera achevé avant le déplacement. Le COD vient après le participe."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-curriculum-e-b1-fiches-club",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-curriculum-e",
+          "position": 53,
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Les bénévoles corrigeront les fiches avant l’envoi aux membres du club.\nFaits : Les bénévoles corrigeront les fiches, puis ils les enverront aux membres du club.",
+        "answers": [
+          "Quand les bénévoles auront corrigé les fiches, ils les enverront aux membres."
+        ],
+        "task": "Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Avec les bénévoles, avoir au futur donne auront. Le COD suit corrigé."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-curriculum-e-b1-nettoyage-pinceaux",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-curriculum-e",
+          "position": 54,
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Vous êtes responsable du rangement. Vous nettoierez les pinceaux avant de les mettre dans l’armoire.\nFaits : Vous nettoierez les pinceaux, puis vous les mettrez dans l’armoire.",
+        "answers": [
+          "Une fois que vous aurez nettoyé les pinceaux, vous les mettrez dans l’armoire."
+        ],
+        "task": "Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Aurez nettoyé exprime l’action achevée avant le rangement."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-curriculum-e-b1-tablettes-classe",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-curriculum-e",
+          "position": 55,
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Les élèves prendront les tablettes au secrétariat, puis ouvriront le questionnaire.\nFaits : Les élèves prendront les tablettes au secrétariat, puis ils ouvriront le questionnaire.",
+        "answers": [
+          "Dès que les élèves auront pris les tablettes, ils ouvriront le questionnaire."
+        ],
+        "task": "Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Auront pris situe la prise des tablettes avant l’ouverture du questionnaire."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-curriculum-e-b1-lectrices-retour",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-curriculum-e",
+          "position": 56,
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Deux lectrices reviendront à la bibliothèque avant de rendre les livres. L’une d’elles parle à leur place.\nFaits : Nous reviendrons à la bibliothèque, puis nous rendrons les livres.",
+        "answers": [
+          "Quand nous serons revenues à la bibliothèque, nous rendrons les livres."
+        ],
+        "task": "Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Revenir se conjugue avec être. Revenues est accordé avec les deux lectrices."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-curriculum-e-b1-scene-musicien",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-curriculum-e",
+          "position": 57,
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Un musicien sortira de la salle de répétition avant de rappeler la technicienne.\nFaits : Le musicien sortira de la salle, puis il rappellera la technicienne.",
+        "answers": [
+          "Quand le musicien sera sorti de la salle, il rappellera la technicienne."
+        ],
+        "task": "Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Sortir se construit ici sans COD, avec être. Sorti s’accorde avec le musicien."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-curriculum-e-b1-pont-vehicules",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-curriculum-e",
+          "position": 58,
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Les cyclistes passeront sous le pont avant de rejoindre le quai. Le groupe est composé de deux cyclistes, une femme et un homme.\nFaits : Les cyclistes passeront sous le pont, puis ils rejoindront le quai.",
+        "answers": [
+          "Quand les deux cyclistes seront passés sous le pont, ils rejoindront le quai."
+        ],
+        "task": "Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Avec être, passés est au masculin pluriel pour ce groupe."
+      },
+      {
+        "id": "gram-ex-futur-anterieur-curriculum-e-b1-salle-equipe",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-anterieur-b1.tsv",
+          "typeId": "gram-ex-futur-anterieur-curriculum-e",
+          "position": 59,
+          "partition": "b1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Les trois danseuses s’échaufferont dans la petite salle avant de retrouver le reste de l’équipe.\nFaits : Les danseuses s’échaufferont dans la petite salle, puis elles retrouveront l’équipe.",
+        "answers": [
+          "Quand les danseuses se seront échauffées dans la petite salle, elles retrouveront le reste de l’équipe."
+        ],
+        "task": "Exprimez le fait achevé au futur antérieur ; gardez la seconde action au futur simple. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. S’échauffer prend être. Ici, échauffées s’accorde avec les danseuses."
       }
     ]
   }

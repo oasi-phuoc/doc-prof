@@ -1,7 +1,7 @@
 [
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j10-qcm-conj",
     "subthemeId": "j10",
     "topic": "gram-faits",
@@ -1573,12 +1573,322 @@
         ],
         "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Le plus-que-parfait après si présente une autre possibilité dans le passé. Modèle : Si les guides avaient pris une boussole, les guides auraient trouvé le bon chemin plus vite.",
         "givenVerb": "trouver"
+      },
+      {
+        "id": "gram-ex-j10-qcm-conj-b1-velo-eclaire",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j10-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "J’___ prendre mes lampes.",
+        "cue": "Je suis rentré à vélo après la tombée de la nuit. J’avais laissé mes lampes au local. Exprimez le regret ou le souhait non réalisé lié à ce fait passé. Employez le conditionnel passé.",
+        "answers": [
+          "aurais dû"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-velo-eclaire-choix-1",
+            "text": "aurais dû"
+          },
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-velo-eclaire-choix-2",
+            "text": "aurait dû"
+          },
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-velo-eclaire-choix-3",
+            "text": "serais dû"
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Modèle : J’aurais dû prendre mes lampes.",
+        "givenVerb": "devoir"
+      },
+      {
+        "id": "gram-ex-j10-qcm-conj-b1-barrage-informe",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j10-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Vous ___ m’envoyer un message avant mon départ.",
+        "cue": "Votre collègue connaissait la fermeture du barrage. Vous avez appris la nouvelle en arrivant sur place. Exprimez le reproche lié à ce fait passé. Employez le conditionnel passé.",
+        "answers": [
+          "auriez pu"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-barrage-informe-choix-1",
+            "text": "auriez pu"
+          },
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-barrage-informe-choix-2",
+            "text": "aurait pu"
+          },
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-barrage-informe-choix-3",
+            "text": "seriez pu"
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Modèle : Vous auriez pu m’envoyer un message avant mon départ.",
+        "givenVerb": "pouvoir"
+      },
+      {
+        "id": "gram-ex-j10-qcm-conj-b1-tapis-groupe",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j10-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Si le groupe avait apporté des tapis, les élèves ___ faire les exercices au sol.",
+        "cue": "Le groupe n’a pas apporté de tapis. Les élèves ont suivi la séance debout. Exprimez la conséquence qui ne s’est pas réalisée. Employez le conditionnel passé.",
+        "answers": [
+          "auraient pu"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-tapis-groupe-choix-1",
+            "text": "auraient pu"
+          },
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-tapis-groupe-choix-2",
+            "text": "aurait pu"
+          },
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-tapis-groupe-choix-3",
+            "text": "seraient pu"
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Le plus-que-parfait après si présente une autre possibilité dans le passé. Modèle : Si le groupe avait apporté des tapis, les élèves auraient pu faire les exercices au sol.",
+        "givenVerb": "pouvoir"
+      },
+      {
+        "id": "gram-ex-j10-qcm-conj-b1-sortie-cinema",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j10-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Si elles étaient parties à dix-neuf heures, les deux sœurs ___ avant le début du film.",
+        "cue": "Les deux sœurs sont parties après vingt heures. Elles ont manqué le début du film. Exprimez la conséquence qui ne s’est pas réalisée. Employez le conditionnel passé.",
+        "answers": [
+          "seraient arrivées"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-sortie-cinema-choix-1",
+            "text": "seraient arrivées"
+          },
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-sortie-cinema-choix-2",
+            "text": "serait arrivées"
+          },
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-sortie-cinema-choix-3",
+            "text": "auraient arrivées"
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec être au conditionnel présent et le participe passé. Le participe s’accorde avec le sujet. Le plus-que-parfait après si présente une autre possibilité dans le passé. Modèle : Si elles étaient parties à dix-neuf heures, les deux sœurs seraient arrivées avant le début du film.",
+        "givenVerb": "arriver"
+      },
+      {
+        "id": "gram-ex-j10-qcm-conj-b1-guichet-epargne",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j10-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ apporter notre pièce d’identité.",
+        "cue": "Nous avons oublié la pièce d’identité. Le guichet a refusé d’ouvrir le compte. Exprimez le regret ou le souhait non réalisé lié à ce fait passé. Employez le conditionnel passé.",
+        "answers": [
+          "aurions dû"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-guichet-epargne-choix-1",
+            "text": "aurions dû"
+          },
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-guichet-epargne-choix-2",
+            "text": "aurait dû"
+          },
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-guichet-epargne-choix-3",
+            "text": "serions dû"
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Modèle : Nous aurions dû apporter notre pièce d’identité.",
+        "givenVerb": "devoir"
+      },
+      {
+        "id": "gram-ex-j10-qcm-conj-b1-explication-alarme",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j10-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Il ___ avertir les autres équipes avant de couper l’alarme.",
+        "cue": "Le responsable de salle a coupé l’alarme sans prévenir les autres équipes. Elles ont interrompu leur travail. Exprimez le reproche lié à ce fait passé. Employez le conditionnel passé.",
+        "answers": [
+          "aurait dû"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-explication-alarme-choix-1",
+            "text": "aurait dû"
+          },
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-explication-alarme-choix-2",
+            "text": "auraient dû"
+          },
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-explication-alarme-choix-3",
+            "text": "serait dû"
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Modèle : Il aurait dû avertir les autres équipes avant de couper l’alarme.",
+        "givenVerb": "devoir"
+      },
+      {
+        "id": "gram-ex-j10-qcm-conj-b1-aide-bateau",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j10-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Si elle avait reçu le message, Yasmine ___ aider l’équipe du port.",
+        "cue": "Yasmine n’a pas reçu le message. Elle n’est pas venue aider l’équipe du port. Exprimez la conséquence qui ne s’est pas réalisée. Employez le conditionnel passé.",
+        "answers": [
+          "serait venue"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-aide-bateau-choix-1",
+            "text": "serait venue"
+          },
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-aide-bateau-choix-2",
+            "text": "seraient venue"
+          },
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-aide-bateau-choix-3",
+            "text": "aurait venue"
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec être au conditionnel présent et le participe passé. Le participe s’accorde avec le sujet. Le plus-que-parfait après si présente une autre possibilité dans le passé. Modèle : Si elle avait reçu le message, Yasmine serait venue aider l’équipe du port.",
+        "givenVerb": "venir"
+      },
+      {
+        "id": "gram-ex-j10-qcm-conj-b1-coin-calme",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j10-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ travailler dans la petite salle.",
+        "cue": "Le groupe a réservé la grande salle. Elle était trop bruyante pour l’enregistrement. Exprimez le regret ou le souhait non réalisé lié à ce fait passé. Employez le conditionnel passé.",
+        "answers": [
+          "aurions préféré"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-coin-calme-choix-1",
+            "text": "aurions préféré"
+          },
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-coin-calme-choix-2",
+            "text": "aurait préféré"
+          },
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-coin-calme-choix-3",
+            "text": "serions préféré"
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Modèle : Nous aurions préféré travailler dans la petite salle.",
+        "givenVerb": "préférer"
+      },
+      {
+        "id": "gram-ex-j10-qcm-conj-b1-copie-ancienne",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j10-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Vous ___ envoyer la version mise à jour.",
+        "cue": "Vous saviez que le dossier partagé avait été modifié. Vous avez pourtant envoyé la version de la veille. Exprimez le reproche lié à ce fait passé. Employez le conditionnel passé.",
+        "answers": [
+          "auriez dû"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-copie-ancienne-choix-1",
+            "text": "auriez dû"
+          },
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-copie-ancienne-choix-2",
+            "text": "aurait dû"
+          },
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-copie-ancienne-choix-3",
+            "text": "seriez dû"
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Modèle : Vous auriez dû envoyer la version mise à jour.",
+        "givenVerb": "devoir"
+      },
+      {
+        "id": "gram-ex-j10-qcm-conj-b1-marche-couvert",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j10-qcm-conj",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Si le groupe avait trouvé un abri, les deux exposantes ___ jusqu’à la fin du marché.",
+        "cue": "Le groupe n’avait aucun abri. Les deux exposantes sont reparties avant la fin du marché. Exprimez la conséquence qui ne s’est pas réalisée. Employez le conditionnel passé.",
+        "answers": [
+          "seraient restées"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-marche-couvert-choix-1",
+            "text": "seraient restées"
+          },
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-marche-couvert-choix-2",
+            "text": "serait restées"
+          },
+          {
+            "id": "gram-ex-j10-qcm-conj-b1-marche-couvert-choix-3",
+            "text": "auraient restées"
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec être au conditionnel présent et le participe passé. Le participe s’accorde avec le sujet. Le plus-que-parfait après si présente une autre possibilité dans le passé. Modèle : Si le groupe avait trouvé un abri, les deux exposantes seraient restées jusqu’à la fin du marché.",
+        "givenVerb": "rester"
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j10-curriculum-t",
     "subthemeId": "j10",
     "topic": "gram-faits",
@@ -2448,12 +2758,182 @@
         ],
         "responseLines": 2,
         "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Le plus-que-parfait après si présente une autre possibilité dans le passé. Modèle possible : Si les guides avaient pris une boussole, les guides auraient trouvé le bon chemin plus vite."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-t-b1-velo-eclaire",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j10-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Je suis rentré à vélo après la tombée de la nuit. J’avais laissé mes lampes au local.\nIdée à exprimer avec « devoir » : prendre mes lampes.",
+        "directive": "Exprimez le regret ou le souhait non réalisé lié à ce fait passé. Employez le conditionnel passé.",
+        "answers": [
+          "J’aurais dû prendre mes lampes."
+        ],
+        "responseLines": 2,
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Modèle possible : J’aurais dû prendre mes lampes."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-t-b1-barrage-informe",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j10-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Votre collègue connaissait la fermeture du barrage. Vous avez appris la nouvelle en arrivant sur place.\nIdée à exprimer avec « pouvoir » : m’envoyer un message avant mon départ.",
+        "directive": "Exprimez le reproche lié à ce fait passé. Employez le conditionnel passé.",
+        "answers": [
+          "Vous auriez pu m’envoyer un message avant mon départ."
+        ],
+        "responseLines": 2,
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Modèle possible : Vous auriez pu m’envoyer un message avant mon départ."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-t-b1-tapis-groupe",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j10-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le groupe n’a pas apporté de tapis. Les élèves ont suivi la séance debout.\nIdée à exprimer avec « pouvoir » : faire les exercices au sol. Condition : Le groupe avait apporté des tapis.",
+        "directive": "Exprimez la conséquence qui ne s’est pas réalisée. Employez le conditionnel passé.",
+        "answers": [
+          "Si le groupe avait apporté des tapis, les élèves auraient pu faire les exercices au sol."
+        ],
+        "responseLines": 2,
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Le plus-que-parfait après si présente une autre possibilité dans le passé. Modèle possible : Si le groupe avait apporté des tapis, les élèves auraient pu faire les exercices au sol."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-t-b1-sortie-cinema",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j10-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les deux sœurs sont parties après vingt heures. Elles ont manqué le début du film.\nIdée à exprimer avec « arriver » : avant le début du film. Condition : Elles étaient parties à dix-neuf heures.",
+        "directive": "Exprimez la conséquence qui ne s’est pas réalisée. Employez le conditionnel passé.",
+        "answers": [
+          "Si elles étaient parties à dix-neuf heures, les deux sœurs seraient arrivées avant le début du film."
+        ],
+        "responseLines": 2,
+        "explanation": "Le conditionnel passé est formé ici avec être au conditionnel présent et le participe passé. Le participe s’accorde avec le sujet. Le plus-que-parfait après si présente une autre possibilité dans le passé. Modèle possible : Si elles étaient parties à dix-neuf heures, les deux sœurs seraient arrivées avant le début du film."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-t-b1-guichet-epargne",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j10-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Nous avons oublié la pièce d’identité. Le guichet a refusé d’ouvrir le compte.\nIdée à exprimer avec « devoir » : apporter notre pièce d’identité.",
+        "directive": "Exprimez le regret ou le souhait non réalisé lié à ce fait passé. Employez le conditionnel passé.",
+        "answers": [
+          "Nous aurions dû apporter notre pièce d’identité."
+        ],
+        "responseLines": 2,
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Modèle possible : Nous aurions dû apporter notre pièce d’identité."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-t-b1-explication-alarme",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j10-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le responsable de salle a coupé l’alarme sans prévenir les autres équipes. Elles ont interrompu leur travail.\nIdée à exprimer avec « devoir » : avertir les autres équipes avant de couper l’alarme.",
+        "directive": "Exprimez le reproche lié à ce fait passé. Employez le conditionnel passé.",
+        "answers": [
+          "Il aurait dû avertir les autres équipes avant de couper l’alarme."
+        ],
+        "responseLines": 2,
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Modèle possible : Il aurait dû avertir les autres équipes avant de couper l’alarme."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-t-b1-aide-bateau",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j10-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Yasmine n’a pas reçu le message. Elle n’est pas venue aider l’équipe du port.\nIdée à exprimer avec « venir » : aider l’équipe du port. Condition : Elle avait reçu le message.",
+        "directive": "Exprimez la conséquence qui ne s’est pas réalisée. Employez le conditionnel passé.",
+        "answers": [
+          "Si elle avait reçu le message, Yasmine serait venue aider l’équipe du port."
+        ],
+        "responseLines": 2,
+        "explanation": "Le conditionnel passé est formé ici avec être au conditionnel présent et le participe passé. Le participe s’accorde avec le sujet. Le plus-que-parfait après si présente une autre possibilité dans le passé. Modèle possible : Si elle avait reçu le message, Yasmine serait venue aider l’équipe du port."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-t-b1-coin-calme",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j10-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le groupe a réservé la grande salle. Elle était trop bruyante pour l’enregistrement.\nIdée à exprimer avec « préférer » : travailler dans la petite salle.",
+        "directive": "Exprimez le regret ou le souhait non réalisé lié à ce fait passé. Employez le conditionnel passé.",
+        "answers": [
+          "Nous aurions préféré travailler dans la petite salle."
+        ],
+        "responseLines": 2,
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Modèle possible : Nous aurions préféré travailler dans la petite salle."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-t-b1-copie-ancienne",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j10-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Vous saviez que le dossier partagé avait été modifié. Vous avez pourtant envoyé la version de la veille.\nIdée à exprimer avec « devoir » : envoyer la version mise à jour.",
+        "directive": "Exprimez le reproche lié à ce fait passé. Employez le conditionnel passé.",
+        "answers": [
+          "Vous auriez dû envoyer la version mise à jour."
+        ],
+        "responseLines": 2,
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Modèle possible : Vous auriez dû envoyer la version mise à jour."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-t-b1-marche-couvert",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j10-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le groupe n’avait aucun abri. Les deux exposantes sont reparties avant la fin du marché.\nIdée à exprimer avec « rester » : jusqu’à la fin du marché. Condition : Le groupe avait trouvé un abri.",
+        "directive": "Exprimez la conséquence qui ne s’est pas réalisée. Employez le conditionnel passé.",
+        "answers": [
+          "Si le groupe avait trouvé un abri, les deux exposantes seraient restées jusqu’à la fin du marché."
+        ],
+        "responseLines": 2,
+        "explanation": "Le conditionnel passé est formé ici avec être au conditionnel présent et le participe passé. Le participe s’accorde avec le sujet. Le plus-que-parfait après si présente une autre possibilité dans le passé. Modèle possible : Si le groupe avait trouvé un abri, les deux exposantes seraient restées jusqu’à la fin du marché."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j10-curriculum-c",
     "subthemeId": "j10",
     "topic": "gram-faits",
@@ -3623,12 +4103,242 @@
           "Si les guides avaient pris une boussole, les guides auraient trouvé le bon chemin plus vite."
         ],
         "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Le plus-que-parfait après si présente une autre possibilité dans le passé. Correction : Si les guides avaient pris une boussole, les guides auraient trouvé le bon chemin plus vite."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-c-b1-velo-eclaire",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j10-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "J’aurait dû prendre mes lampes.",
+        "cue": "Je suis rentré à vélo après la tombée de la nuit. J’avais laissé mes lampes au local. Exprimez le regret ou le souhait non réalisé lié à ce fait passé. Employez le conditionnel passé.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 2,
+          "end": 11,
+          "text": "aurait dû"
+        },
+        "responseLines": 2,
+        "answers": [
+          "J’aurais dû prendre mes lampes."
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Correction : J’aurais dû prendre mes lampes."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-c-b1-barrage-informe",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j10-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Vous aurait pu m’envoyer un message avant mon départ.",
+        "cue": "Votre collègue connaissait la fermeture du barrage. Vous avez appris la nouvelle en arrivant sur place. Exprimez le reproche lié à ce fait passé. Employez le conditionnel passé.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 14,
+          "text": "aurait pu"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Vous auriez pu m’envoyer un message avant mon départ."
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Correction : Vous auriez pu m’envoyer un message avant mon départ."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-c-b1-tapis-groupe",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j10-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Si le groupe avait apporté des tapis, les élèves aurait pu faire les exercices au sol.",
+        "cue": "Le groupe n’a pas apporté de tapis. Les élèves ont suivi la séance debout. Exprimez la conséquence qui ne s’est pas réalisée. Employez le conditionnel passé.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 49,
+          "end": 58,
+          "text": "aurait pu"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Si le groupe avait apporté des tapis, les élèves auraient pu faire les exercices au sol."
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Le plus-que-parfait après si présente une autre possibilité dans le passé. Correction : Si le groupe avait apporté des tapis, les élèves auraient pu faire les exercices au sol."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-c-b1-sortie-cinema",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j10-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Si elles étaient parties à dix-neuf heures, les deux sœurs serait arrivées avant le début du film.",
+        "cue": "Les deux sœurs sont parties après vingt heures. Elles ont manqué le début du film. Exprimez la conséquence qui ne s’est pas réalisée. Employez le conditionnel passé.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 59,
+          "end": 74,
+          "text": "serait arrivées"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Si elles étaient parties à dix-neuf heures, les deux sœurs seraient arrivées avant le début du film."
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec être au conditionnel présent et le participe passé. Le participe s’accorde avec le sujet. Le plus-que-parfait après si présente une autre possibilité dans le passé. Correction : Si elles étaient parties à dix-neuf heures, les deux sœurs seraient arrivées avant le début du film."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-c-b1-guichet-epargne",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j10-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Nous aurait dû apporter notre pièce d’identité.",
+        "cue": "Nous avons oublié la pièce d’identité. Le guichet a refusé d’ouvrir le compte. Exprimez le regret ou le souhait non réalisé lié à ce fait passé. Employez le conditionnel passé.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 14,
+          "text": "aurait dû"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Nous aurions dû apporter notre pièce d’identité."
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Correction : Nous aurions dû apporter notre pièce d’identité."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-c-b1-explication-alarme",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j10-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Il auraient dû avertir les autres équipes avant de couper l’alarme.",
+        "cue": "Le responsable de salle a coupé l’alarme sans prévenir les autres équipes. Elles ont interrompu leur travail. Exprimez le reproche lié à ce fait passé. Employez le conditionnel passé.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 14,
+          "text": "auraient dû"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Il aurait dû avertir les autres équipes avant de couper l’alarme."
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Correction : Il aurait dû avertir les autres équipes avant de couper l’alarme."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-c-b1-aide-bateau",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j10-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Si elle avait reçu le message, Yasmine seraient venue aider l’équipe du port.",
+        "cue": "Yasmine n’a pas reçu le message. Elle n’est pas venue aider l’équipe du port. Exprimez la conséquence qui ne s’est pas réalisée. Employez le conditionnel passé.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 39,
+          "end": 53,
+          "text": "seraient venue"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Si elle avait reçu le message, Yasmine serait venue aider l’équipe du port."
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec être au conditionnel présent et le participe passé. Le participe s’accorde avec le sujet. Le plus-que-parfait après si présente une autre possibilité dans le passé. Correction : Si elle avait reçu le message, Yasmine serait venue aider l’équipe du port."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-c-b1-coin-calme",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j10-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Nous aurait préféré travailler dans la petite salle.",
+        "cue": "Le groupe a réservé la grande salle. Elle était trop bruyante pour l’enregistrement. Exprimez le regret ou le souhait non réalisé lié à ce fait passé. Employez le conditionnel passé.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 19,
+          "text": "aurait préféré"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Nous aurions préféré travailler dans la petite salle."
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Correction : Nous aurions préféré travailler dans la petite salle."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-c-b1-copie-ancienne",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j10-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Vous aurait dû envoyer la version mise à jour.",
+        "cue": "Vous saviez que le dossier partagé avait été modifié. Vous avez pourtant envoyé la version de la veille. Exprimez le reproche lié à ce fait passé. Employez le conditionnel passé.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 14,
+          "text": "aurait dû"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Vous auriez dû envoyer la version mise à jour."
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Correction : Vous auriez dû envoyer la version mise à jour."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-c-b1-marche-couvert",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j10-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Si le groupe avait trouvé un abri, les deux exposantes serait restées jusqu’à la fin du marché.",
+        "cue": "Le groupe n’avait aucun abri. Les deux exposantes sont reparties avant la fin du marché. Exprimez la conséquence qui ne s’est pas réalisée. Employez le conditionnel passé.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 55,
+          "end": 69,
+          "text": "serait restées"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Si le groupe avait trouvé un abri, les deux exposantes seraient restées jusqu’à la fin du marché."
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec être au conditionnel présent et le participe passé. Le participe s’accorde avec le sujet. Le plus-que-parfait après si présente une autre possibilité dans le passé. Correction : Si le groupe avait trouvé un abri, les deux exposantes seraient restées jusqu’à la fin du marché."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j10-curriculum-e",
     "subthemeId": "j10",
     "topic": "gram-faits",
@@ -5248,12 +5958,332 @@
           }
         ],
         "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Le plus-que-parfait après si présente une autre possibilité dans le passé. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-e-b1-velo-eclaire",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j10-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Je suis rentré à vélo après la tombée de la nuit. J’avais laissé mes lampes au local.\nIdée à exprimer avec « devoir » : prendre mes lampes.",
+        "mode": "written",
+        "task": "Exprimez le regret ou le souhait non réalisé lié à ce fait passé. Employez le conditionnel passé. Adressez votre réponse à un camarade qui connaît l’événement.",
+        "answers": [
+          "J’aurais dû prendre mes lampes."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Auxiliaire au conditionnel et participe passé correctement accordé."
+          },
+          {
+            "id": "r3",
+            "label": "Regret, reproche ou hypothèse clairement exprimé."
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-e-b1-barrage-informe",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j10-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Votre collègue connaissait la fermeture du barrage. Vous avez appris la nouvelle en arrivant sur place.\nIdée à exprimer avec « pouvoir » : m’envoyer un message avant mon départ.",
+        "mode": "written",
+        "task": "Exprimez le reproche lié à ce fait passé. Employez le conditionnel passé. Adressez votre réponse à un camarade qui connaît l’événement.",
+        "answers": [
+          "Vous auriez pu m’envoyer un message avant mon départ."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Auxiliaire au conditionnel et participe passé correctement accordé."
+          },
+          {
+            "id": "r3",
+            "label": "Regret, reproche ou hypothèse clairement exprimé."
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-e-b1-tapis-groupe",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j10-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Le groupe n’a pas apporté de tapis. Les élèves ont suivi la séance debout.\nIdée à exprimer avec « pouvoir » : faire les exercices au sol. Condition : Le groupe avait apporté des tapis.",
+        "mode": "written",
+        "task": "Exprimez la conséquence qui ne s’est pas réalisée. Employez le conditionnel passé. Adressez votre réponse à un camarade qui connaît l’événement.",
+        "answers": [
+          "Si le groupe avait apporté des tapis, les élèves auraient pu faire les exercices au sol."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Auxiliaire au conditionnel et participe passé correctement accordé."
+          },
+          {
+            "id": "r3",
+            "label": "Regret, reproche ou hypothèse clairement exprimé."
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Le plus-que-parfait après si présente une autre possibilité dans le passé. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-e-b1-sortie-cinema",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j10-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Les deux sœurs sont parties après vingt heures. Elles ont manqué le début du film.\nIdée à exprimer avec « arriver » : avant le début du film. Condition : Elles étaient parties à dix-neuf heures.",
+        "mode": "written",
+        "task": "Exprimez la conséquence qui ne s’est pas réalisée. Employez le conditionnel passé. Adressez votre réponse à un camarade qui connaît l’événement.",
+        "answers": [
+          "Si elles étaient parties à dix-neuf heures, les deux sœurs seraient arrivées avant le début du film."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Auxiliaire au conditionnel et participe passé correctement accordé."
+          },
+          {
+            "id": "r3",
+            "label": "Regret, reproche ou hypothèse clairement exprimé."
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec être au conditionnel présent et le participe passé. Le participe s’accorde avec le sujet. Le plus-que-parfait après si présente une autre possibilité dans le passé. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-e-b1-guichet-epargne",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j10-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Nous avons oublié la pièce d’identité. Le guichet a refusé d’ouvrir le compte.\nIdée à exprimer avec « devoir » : apporter notre pièce d’identité.",
+        "mode": "written",
+        "task": "Exprimez le regret ou le souhait non réalisé lié à ce fait passé. Employez le conditionnel passé. Adressez votre réponse à un camarade qui connaît l’événement.",
+        "answers": [
+          "Nous aurions dû apporter notre pièce d’identité."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Auxiliaire au conditionnel et participe passé correctement accordé."
+          },
+          {
+            "id": "r3",
+            "label": "Regret, reproche ou hypothèse clairement exprimé."
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-e-b1-explication-alarme",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j10-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Le responsable de salle a coupé l’alarme sans prévenir les autres équipes. Elles ont interrompu leur travail.\nIdée à exprimer avec « devoir » : avertir les autres équipes avant de couper l’alarme.",
+        "mode": "written",
+        "task": "Exprimez le reproche lié à ce fait passé. Employez le conditionnel passé. Adressez votre réponse à un camarade qui connaît l’événement.",
+        "answers": [
+          "Il aurait dû avertir les autres équipes avant de couper l’alarme."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Auxiliaire au conditionnel et participe passé correctement accordé."
+          },
+          {
+            "id": "r3",
+            "label": "Regret, reproche ou hypothèse clairement exprimé."
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-e-b1-aide-bateau",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j10-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Yasmine n’a pas reçu le message. Elle n’est pas venue aider l’équipe du port.\nIdée à exprimer avec « venir » : aider l’équipe du port. Condition : Elle avait reçu le message.",
+        "mode": "written",
+        "task": "Exprimez la conséquence qui ne s’est pas réalisée. Employez le conditionnel passé. Adressez votre réponse à un camarade qui connaît l’événement.",
+        "answers": [
+          "Si elle avait reçu le message, Yasmine serait venue aider l’équipe du port."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Auxiliaire au conditionnel et participe passé correctement accordé."
+          },
+          {
+            "id": "r3",
+            "label": "Regret, reproche ou hypothèse clairement exprimé."
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec être au conditionnel présent et le participe passé. Le participe s’accorde avec le sujet. Le plus-que-parfait après si présente une autre possibilité dans le passé. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-e-b1-coin-calme",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j10-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Le groupe a réservé la grande salle. Elle était trop bruyante pour l’enregistrement.\nIdée à exprimer avec « préférer » : travailler dans la petite salle.",
+        "mode": "written",
+        "task": "Exprimez le regret ou le souhait non réalisé lié à ce fait passé. Employez le conditionnel passé. Adressez votre réponse à un camarade qui connaît l’événement.",
+        "answers": [
+          "Nous aurions préféré travailler dans la petite salle."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Auxiliaire au conditionnel et participe passé correctement accordé."
+          },
+          {
+            "id": "r3",
+            "label": "Regret, reproche ou hypothèse clairement exprimé."
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-e-b1-copie-ancienne",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j10-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Vous saviez que le dossier partagé avait été modifié. Vous avez pourtant envoyé la version de la veille.\nIdée à exprimer avec « devoir » : envoyer la version mise à jour.",
+        "mode": "written",
+        "task": "Exprimez le reproche lié à ce fait passé. Employez le conditionnel passé. Adressez votre réponse à un camarade qui connaît l’événement.",
+        "answers": [
+          "Vous auriez dû envoyer la version mise à jour."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Auxiliaire au conditionnel et participe passé correctement accordé."
+          },
+          {
+            "id": "r3",
+            "label": "Regret, reproche ou hypothèse clairement exprimé."
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-e-b1-marche-couvert",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j10-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Le groupe n’avait aucun abri. Les deux exposantes sont reparties avant la fin du marché.\nIdée à exprimer avec « rester » : jusqu’à la fin du marché. Condition : Le groupe avait trouvé un abri.",
+        "mode": "written",
+        "task": "Exprimez la conséquence qui ne s’est pas réalisée. Employez le conditionnel passé. Adressez votre réponse à un camarade qui connaît l’événement.",
+        "answers": [
+          "Si le groupe avait trouvé un abri, les deux exposantes seraient restées jusqu’à la fin du marché."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Auxiliaire au conditionnel et participe passé correctement accordé."
+          },
+          {
+            "id": "r3",
+            "label": "Regret, reproche ou hypothèse clairement exprimé."
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec être au conditionnel présent et le participe passé. Le participe s’accorde avec le sujet. Le plus-que-parfait après si présente une autre possibilité dans le passé. Les reformulations fidèles à la consigne sont recevables."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j10-curriculum-p",
     "subthemeId": "j10",
     "topic": "gram-faits",
@@ -6873,6 +7903,326 @@
           }
         ],
         "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Le plus-que-parfait après si présente une autre possibilité dans le passé. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-p-b1-velo-eclaire",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j10-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Je suis rentré à vélo après la tombée de la nuit. J’avais laissé mes lampes au local.\nIdée à exprimer avec « devoir » : prendre mes lampes.",
+        "mode": "oral",
+        "task": "Exprimez le regret ou le souhait non réalisé lié à ce fait passé. Employez le conditionnel passé. Adressez votre réponse à un camarade qui connaît l’événement. Relance : « Où étaient les lampes ? »",
+        "answers": [
+          "J’aurais dû prendre mes lampes.\nRéponse possible à la relance : Au local."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Auxiliaire au conditionnel et participe passé correctement accordé."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-p-b1-barrage-informe",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j10-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Votre collègue connaissait la fermeture du barrage. Vous avez appris la nouvelle en arrivant sur place.\nIdée à exprimer avec « pouvoir » : m’envoyer un message avant mon départ.",
+        "mode": "oral",
+        "task": "Exprimez le reproche lié à ce fait passé. Employez le conditionnel passé. Adressez votre réponse à un camarade qui connaît l’événement. Relance : « Quand avez-vous découvert la fermeture ? »",
+        "answers": [
+          "Vous auriez pu m’envoyer un message avant mon départ.\nRéponse possible à la relance : En arrivant au barrage."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Auxiliaire au conditionnel et participe passé correctement accordé."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-p-b1-tapis-groupe",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j10-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Le groupe n’a pas apporté de tapis. Les élèves ont suivi la séance debout.\nIdée à exprimer avec « pouvoir » : faire les exercices au sol. Condition : Le groupe avait apporté des tapis.",
+        "mode": "oral",
+        "task": "Exprimez la conséquence qui ne s’est pas réalisée. Employez le conditionnel passé. Adressez votre réponse à un camarade qui connaît l’événement. Relance : « Pourquoi sont-ils restés debout ? »",
+        "answers": [
+          "Si le groupe avait apporté des tapis, les élèves auraient pu faire les exercices au sol.\nRéponse possible à la relance : Le groupe n’avait pas de tapis."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Auxiliaire au conditionnel et participe passé correctement accordé."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Le plus-que-parfait après si présente une autre possibilité dans le passé. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-p-b1-sortie-cinema",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j10-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Les deux sœurs sont parties après vingt heures. Elles ont manqué le début du film.\nIdée à exprimer avec « arriver » : avant le début du film. Condition : Elles étaient parties à dix-neuf heures.",
+        "mode": "oral",
+        "task": "Exprimez la conséquence qui ne s’est pas réalisée. Employez le conditionnel passé. Adressez votre réponse à un camarade qui connaît l’événement. Relance : « À quelle heure sont-elles parties ? »",
+        "answers": [
+          "Si elles étaient parties à dix-neuf heures, les deux sœurs seraient arrivées avant le début du film.\nRéponse possible à la relance : Après vingt heures."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Auxiliaire au conditionnel et participe passé correctement accordé."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec être au conditionnel présent et le participe passé. Le participe s’accorde avec le sujet. Le plus-que-parfait après si présente une autre possibilité dans le passé. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-p-b1-guichet-epargne",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j10-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Nous avons oublié la pièce d’identité. Le guichet a refusé d’ouvrir le compte.\nIdée à exprimer avec « devoir » : apporter notre pièce d’identité.",
+        "mode": "oral",
+        "task": "Exprimez le regret ou le souhait non réalisé lié à ce fait passé. Employez le conditionnel passé. Adressez votre réponse à un camarade qui connaît l’événement. Relance : « Quel document manquait ? »",
+        "answers": [
+          "Nous aurions dû apporter notre pièce d’identité.\nRéponse possible à la relance : Une pièce d’identité."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Auxiliaire au conditionnel et participe passé correctement accordé."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-p-b1-explication-alarme",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j10-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Le responsable de salle a coupé l’alarme sans prévenir les autres équipes. Elles ont interrompu leur travail.\nIdée à exprimer avec « devoir » : avertir les autres équipes avant de couper l’alarme.",
+        "mode": "oral",
+        "task": "Exprimez le reproche lié à ce fait passé. Employez le conditionnel passé. Adressez votre réponse à un camarade qui connaît l’événement. Relance : « Qu’ont fait les autres équipes ? »",
+        "answers": [
+          "Il aurait dû avertir les autres équipes avant de couper l’alarme.\nRéponse possible à la relance : Elles ont interrompu leur travail."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Auxiliaire au conditionnel et participe passé correctement accordé."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-p-b1-aide-bateau",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j10-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Yasmine n’a pas reçu le message. Elle n’est pas venue aider l’équipe du port.\nIdée à exprimer avec « venir » : aider l’équipe du port. Condition : Elle avait reçu le message.",
+        "mode": "oral",
+        "task": "Exprimez la conséquence qui ne s’est pas réalisée. Employez le conditionnel passé. Adressez votre réponse à un camarade qui connaît l’événement. Relance : « Pourquoi Yasmine n’est-elle pas venue ? »",
+        "answers": [
+          "Si elle avait reçu le message, Yasmine serait venue aider l’équipe du port.\nRéponse possible à la relance : Elle n’avait pas reçu le message."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Auxiliaire au conditionnel et participe passé correctement accordé."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec être au conditionnel présent et le participe passé. Le participe s’accorde avec le sujet. Le plus-que-parfait après si présente une autre possibilité dans le passé. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-p-b1-coin-calme",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j10-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Le groupe a réservé la grande salle. Elle était trop bruyante pour l’enregistrement.\nIdée à exprimer avec « préférer » : travailler dans la petite salle.",
+        "mode": "oral",
+        "task": "Exprimez le regret ou le souhait non réalisé lié à ce fait passé. Employez le conditionnel passé. Adressez votre réponse à un camarade qui connaît l’événement. Relance : « Pourquoi la grande salle convenait-elle mal ? »",
+        "answers": [
+          "Nous aurions préféré travailler dans la petite salle.\nRéponse possible à la relance : Elle était trop bruyante."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Auxiliaire au conditionnel et participe passé correctement accordé."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-p-b1-copie-ancienne",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j10-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Vous saviez que le dossier partagé avait été modifié. Vous avez pourtant envoyé la version de la veille.\nIdée à exprimer avec « devoir » : envoyer la version mise à jour.",
+        "mode": "oral",
+        "task": "Exprimez le reproche lié à ce fait passé. Employez le conditionnel passé. Adressez votre réponse à un camarade qui connaît l’événement. Relance : « Quelle version a été envoyée ? »",
+        "answers": [
+          "Vous auriez dû envoyer la version mise à jour.\nRéponse possible à la relance : La version de la veille."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Auxiliaire au conditionnel et participe passé correctement accordé."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec avoir au conditionnel présent et le participe passé. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j10-curriculum-p-b1-marche-couvert",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j10.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j10-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Le groupe n’avait aucun abri. Les deux exposantes sont reparties avant la fin du marché.\nIdée à exprimer avec « rester » : jusqu’à la fin du marché. Condition : Le groupe avait trouvé un abri.",
+        "mode": "oral",
+        "task": "Exprimez la conséquence qui ne s’est pas réalisée. Employez le conditionnel passé. Adressez votre réponse à un camarade qui connaît l’événement. Relance : « Pourquoi sont-elles reparties ? »",
+        "answers": [
+          "Si le groupe avait trouvé un abri, les deux exposantes seraient restées jusqu’à la fin du marché.\nRéponse possible à la relance : Elles n’avaient aucun abri."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Auxiliaire au conditionnel et participe passé correctement accordé."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Le conditionnel passé est formé ici avec être au conditionnel présent et le participe passé. Le participe s’accorde avec le sujet. Le plus-que-parfait après si présente une autre possibilité dans le passé. Les reformulations fidèles à la consigne sont recevables."
       }
     ]
   }

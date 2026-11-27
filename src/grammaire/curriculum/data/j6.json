@@ -1,7 +1,7 @@
 [
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j6-qcm-verbe",
     "subthemeId": "j6",
     "topic": "gram-faits",
@@ -1573,12 +1573,322 @@
         ],
         "explanation": "Au imparfait, le passif se construit ici avec « étaient » et le participe accordé avec « les photos » (féminin pluriel). Modèle : Les photos étaient vendues par l’agence à l’accueil de l’exposition.",
         "givenVerb": "vendre"
+      },
+      {
+        "id": "gram-ex-j6-qcm-verbe-b1-chronometres",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j6-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Les chronomètres ___ par l’arbitre avant la course.",
+        "cue": "Employez la forme passive au passé composé.",
+        "answers": [
+          "ont été vérifiés"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-chronometres-choix-1",
+            "text": "ont été vérifiés"
+          },
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-chronometres-choix-2",
+            "text": "ont été vérifiées"
+          },
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-chronometres-choix-3",
+            "text": "a été vérifiés"
+          }
+        ],
+        "explanation": "Au passé composé, le passif se construit ici avec « ont été » et le participe accordé avec « les chronomètres » (masculin pluriel). Modèle : Les chronomètres ont été vérifiés par l’arbitre avant la course.",
+        "givenVerb": "vérifier"
+      },
+      {
+        "id": "gram-ex-j6-qcm-verbe-b1-mosaique",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j6-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "La mosaïque ___ par une restauratrice avec un tissu épais.",
+        "cue": "Employez la forme passive au passé composé.",
+        "answers": [
+          "a été protégée"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-mosaique-choix-1",
+            "text": "a été protégée"
+          },
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-mosaique-choix-2",
+            "text": "a été protégé"
+          },
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-mosaique-choix-3",
+            "text": "ont été protégée"
+          }
+        ],
+        "explanation": "Au passé composé, le passif se construit ici avec « a été » et le participe accordé avec « la mosaïque » (féminin singulier). Modèle : La mosaïque a été protégée par une restauratrice avec un tissu épais.",
+        "givenVerb": "protéger"
+      },
+      {
+        "id": "gram-ex-j6-qcm-verbe-b1-inscription-benevolat",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j6-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Les inscriptions ___ par les bénévoles dans un registre.",
+        "cue": "Employez la forme passive au présent.",
+        "answers": [
+          "sont notées"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-inscription-benevolat-choix-1",
+            "text": "sont notées"
+          },
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-inscription-benevolat-choix-2",
+            "text": "sont notés"
+          },
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-inscription-benevolat-choix-3",
+            "text": "est notées"
+          }
+        ],
+        "explanation": "Au présent, le passif se construit ici avec « sont » et le participe accordé avec « les inscriptions » (féminin pluriel). Modèle : Les inscriptions sont notées par les bénévoles dans un registre.",
+        "givenVerb": "noter"
+      },
+      {
+        "id": "gram-ex-j6-qcm-verbe-b1-recu-guichet",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j6-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Un reçu ___ par le guichet à chaque personne.",
+        "cue": "Employez la forme passive au présent.",
+        "answers": [
+          "est fourni"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-recu-guichet-choix-1",
+            "text": "est fourni"
+          },
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-recu-guichet-choix-2",
+            "text": "est fournie"
+          },
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-recu-guichet-choix-3",
+            "text": "sont fourni"
+          }
+        ],
+        "explanation": "Au présent, le passif se construit ici avec « est » et le participe accordé avec « un reçu » (masculin singulier). Modèle : Un reçu est fourni par le guichet à chaque personne.",
+        "givenVerb": "fournir"
+      },
+      {
+        "id": "gram-ex-j6-qcm-verbe-b1-portes-secondaires",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j6-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Les portes secondaires ___ par les techniciens avant la représentation.",
+        "cue": "Employez la forme passive au futur simple.",
+        "answers": [
+          "seront ouvertes"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-portes-secondaires-choix-1",
+            "text": "seront ouvertes"
+          },
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-portes-secondaires-choix-2",
+            "text": "seront ouverts"
+          },
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-portes-secondaires-choix-3",
+            "text": "sera ouvertes"
+          }
+        ],
+        "explanation": "Au futur simple, le passif se construit ici avec « seront » et le participe accordé avec « les portes secondaires » (féminin pluriel). Modèle : Les portes secondaires seront ouvertes par les techniciens avant la représentation.",
+        "givenVerb": "ouvrir"
+      },
+      {
+        "id": "gram-ex-j6-qcm-verbe-b1-sacs-retrouves",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j6-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Les sacs retrouvés ___ par la police municipale à leurs propriétaires.",
+        "cue": "Employez la forme passive au futur simple.",
+        "answers": [
+          "seront remis"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-sacs-retrouves-choix-1",
+            "text": "seront remis"
+          },
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-sacs-retrouves-choix-2",
+            "text": "seront remises"
+          },
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-sacs-retrouves-choix-3",
+            "text": "sera remis"
+          }
+        ],
+        "explanation": "Au futur simple, le passif se construit ici avec « seront » et le participe accordé avec « les sacs retrouvés » (masculin pluriel). Modèle : Les sacs retrouvés seront remis par la police municipale à leurs propriétaires.",
+        "givenVerb": "remettre"
+      },
+      {
+        "id": "gram-ex-j6-qcm-verbe-b1-tracteur",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j6-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Le tracteur communal ___ par un mécanicien chaque hiver.",
+        "cue": "Employez la forme passive au imparfait.",
+        "answers": [
+          "était entretenu"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-tracteur-choix-1",
+            "text": "était entretenu"
+          },
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-tracteur-choix-2",
+            "text": "était entretenue"
+          },
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-tracteur-choix-3",
+            "text": "étaient entretenu"
+          }
+        ],
+        "explanation": "Au imparfait, le passif se construit ici avec « était » et le participe accordé avec « le tracteur communal » (masculin singulier). Modèle : Le tracteur communal était entretenu par un mécanicien chaque hiver.",
+        "givenVerb": "entretenir"
+      },
+      {
+        "id": "gram-ex-j6-qcm-verbe-b1-bancs-ruelle",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j6-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Les bancs de la ruelle ___ par l’équipe de voirie pendant les travaux.",
+        "cue": "Employez la forme passive au imparfait.",
+        "answers": [
+          "étaient déplacés"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-bancs-ruelle-choix-1",
+            "text": "étaient déplacés"
+          },
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-bancs-ruelle-choix-2",
+            "text": "étaient déplacées"
+          },
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-bancs-ruelle-choix-3",
+            "text": "était déplacés"
+          }
+        ],
+        "explanation": "Au imparfait, le passif se construit ici avec « étaient » et le participe accordé avec « les bancs de la ruelle » (masculin pluriel). Modèle : Les bancs de la ruelle étaient déplacés par l’équipe de voirie pendant les travaux.",
+        "givenVerb": "déplacer"
+      },
+      {
+        "id": "gram-ex-j6-qcm-verbe-b1-banderole",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j6-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "La banderole ___ par les membres du club au-dessus de l’entrée.",
+        "cue": "Employez la forme passive au futur simple.",
+        "answers": [
+          "sera installée"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-banderole-choix-1",
+            "text": "sera installée"
+          },
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-banderole-choix-2",
+            "text": "sera installé"
+          },
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-banderole-choix-3",
+            "text": "seront installée"
+          }
+        ],
+        "explanation": "Au futur simple, le passif se construit ici avec « sera » et le participe accordé avec « la banderole » (féminin singulier). Modèle : La banderole sera installée par les membres du club au-dessus de l’entrée.",
+        "givenVerb": "installer"
+      },
+      {
+        "id": "gram-ex-j6-qcm-verbe-b1-aquariums",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j6-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Les petits aquariums ___ par la soigneuse avant la visite.",
+        "cue": "Employez la forme passive au passé composé.",
+        "answers": [
+          "ont été remplis"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-aquariums-choix-1",
+            "text": "ont été remplis"
+          },
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-aquariums-choix-2",
+            "text": "ont été remplies"
+          },
+          {
+            "id": "gram-ex-j6-qcm-verbe-b1-aquariums-choix-3",
+            "text": "a été remplis"
+          }
+        ],
+        "explanation": "Au passé composé, le passif se construit ici avec « ont été » et le participe accordé avec « les petits aquariums » (masculin pluriel). Modèle : Les petits aquariums ont été remplis par la soigneuse avant la visite.",
+        "givenVerb": "remplir"
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j6-curriculum-t",
     "subthemeId": "j6",
     "topic": "gram-faits",
@@ -2448,12 +2758,182 @@
         ],
         "responseLines": 2,
         "explanation": "Le complément d’agent devient le sujet. Le verbe reste au imparfait. Modèle possible : L’agence vendait les photos à l’accueil de l’exposition."
+      },
+      {
+        "id": "gram-ex-j6-curriculum-t-b1-chronometres",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j6-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "L’arbitre a vérifié les chronomètres avant la course.",
+        "directive": "Mettez à la forme passive. Gardez le temps, l’agent et le complément.",
+        "answers": [
+          "Les chronomètres ont été vérifiés par l’arbitre avant la course."
+        ],
+        "responseLines": 2,
+        "explanation": "Au passé composé, le passif se construit ici avec « ont été » et le participe accordé avec « les chronomètres » (masculin pluriel). Modèle possible : Les chronomètres ont été vérifiés par l’arbitre avant la course."
+      },
+      {
+        "id": "gram-ex-j6-curriculum-t-b1-mosaique",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j6-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "La mosaïque a été protégée par une restauratrice avec un tissu épais.",
+        "directive": "Mettez à la forme active. Gardez le temps et indiquez qui agit.",
+        "answers": [
+          "Une restauratrice a protégé la mosaïque avec un tissu épais."
+        ],
+        "responseLines": 2,
+        "explanation": "Le complément d’agent devient le sujet. Le verbe reste au passé composé. Modèle possible : Une restauratrice a protégé la mosaïque avec un tissu épais."
+      },
+      {
+        "id": "gram-ex-j6-curriculum-t-b1-inscription-benevolat",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j6-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les bénévoles notent les inscriptions dans un registre.",
+        "directive": "Mettez à la forme passive. Gardez le temps, l’agent et le complément.",
+        "answers": [
+          "Les inscriptions sont notées par les bénévoles dans un registre."
+        ],
+        "responseLines": 2,
+        "explanation": "Au présent, le passif se construit ici avec « sont » et le participe accordé avec « les inscriptions » (féminin pluriel). Modèle possible : Les inscriptions sont notées par les bénévoles dans un registre."
+      },
+      {
+        "id": "gram-ex-j6-curriculum-t-b1-recu-guichet",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j6-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Un reçu est fourni par le guichet à chaque personne.",
+        "directive": "Mettez à la forme active. Gardez le temps et indiquez qui agit.",
+        "answers": [
+          "Le guichet fournit un reçu à chaque personne."
+        ],
+        "responseLines": 2,
+        "explanation": "Le complément d’agent devient le sujet. Le verbe reste au présent. Modèle possible : Le guichet fournit un reçu à chaque personne."
+      },
+      {
+        "id": "gram-ex-j6-curriculum-t-b1-portes-secondaires",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j6-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les techniciens ouvriront les portes secondaires avant la représentation.",
+        "directive": "Mettez à la forme passive. Gardez le temps, l’agent et le complément.",
+        "answers": [
+          "Les portes secondaires seront ouvertes par les techniciens avant la représentation."
+        ],
+        "responseLines": 2,
+        "explanation": "Au futur simple, le passif se construit ici avec « seront » et le participe accordé avec « les portes secondaires » (féminin pluriel). Modèle possible : Les portes secondaires seront ouvertes par les techniciens avant la représentation."
+      },
+      {
+        "id": "gram-ex-j6-curriculum-t-b1-sacs-retrouves",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j6-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les sacs retrouvés seront remis par la police municipale à leurs propriétaires.",
+        "directive": "Mettez à la forme active. Gardez le temps et indiquez qui agit.",
+        "answers": [
+          "La police municipale remettra les sacs retrouvés à leurs propriétaires."
+        ],
+        "responseLines": 2,
+        "explanation": "Le complément d’agent devient le sujet. Le verbe reste au futur simple. Modèle possible : La police municipale remettra les sacs retrouvés à leurs propriétaires."
+      },
+      {
+        "id": "gram-ex-j6-curriculum-t-b1-tracteur",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j6-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Un mécanicien entretenait le tracteur communal chaque hiver.",
+        "directive": "Mettez à la forme passive. Gardez le temps, l’agent et le complément.",
+        "answers": [
+          "Le tracteur communal était entretenu par un mécanicien chaque hiver."
+        ],
+        "responseLines": 2,
+        "explanation": "Au imparfait, le passif se construit ici avec « était » et le participe accordé avec « le tracteur communal » (masculin singulier). Modèle possible : Le tracteur communal était entretenu par un mécanicien chaque hiver."
+      },
+      {
+        "id": "gram-ex-j6-curriculum-t-b1-bancs-ruelle",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j6-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les bancs de la ruelle étaient déplacés par l’équipe de voirie pendant les travaux.",
+        "directive": "Mettez à la forme active. Gardez le temps et indiquez qui agit.",
+        "answers": [
+          "L’équipe de voirie déplaçait les bancs de la ruelle pendant les travaux."
+        ],
+        "responseLines": 2,
+        "explanation": "Le complément d’agent devient le sujet. Le verbe reste au imparfait. Modèle possible : L’équipe de voirie déplaçait les bancs de la ruelle pendant les travaux."
+      },
+      {
+        "id": "gram-ex-j6-curriculum-t-b1-banderole",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j6-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les membres du club installeront la banderole au-dessus de l’entrée.",
+        "directive": "Mettez à la forme passive. Gardez le temps, l’agent et le complément.",
+        "answers": [
+          "La banderole sera installée par les membres du club au-dessus de l’entrée."
+        ],
+        "responseLines": 2,
+        "explanation": "Au futur simple, le passif se construit ici avec « sera » et le participe accordé avec « la banderole » (féminin singulier). Modèle possible : La banderole sera installée par les membres du club au-dessus de l’entrée."
+      },
+      {
+        "id": "gram-ex-j6-curriculum-t-b1-aquariums",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j6-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Les petits aquariums ont été remplis par la soigneuse avant la visite.",
+        "directive": "Mettez à la forme active. Gardez le temps et indiquez qui agit.",
+        "answers": [
+          "La soigneuse a rempli les petits aquariums avant la visite."
+        ],
+        "responseLines": 2,
+        "explanation": "Le complément d’agent devient le sujet. Le verbe reste au passé composé. Modèle possible : La soigneuse a rempli les petits aquariums avant la visite."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j6-curriculum-c",
     "subthemeId": "j6",
     "topic": "gram-faits",
@@ -3623,6 +4103,236 @@
           "Les photos étaient vendues par l’agence à l’accueil de l’exposition."
         ],
         "explanation": "Au imparfait, le passif se construit ici avec « étaient » et le participe accordé avec « les photos » (féminin pluriel). Correction : Les photos étaient vendues par l’agence à l’accueil de l’exposition."
+      },
+      {
+        "id": "gram-ex-j6-curriculum-c-b1-chronometres",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j6-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Les chronomètres ont été vérifiées par l’arbitre avant la course.",
+        "cue": "Employez la forme passive au passé composé.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 17,
+          "end": 34,
+          "text": "ont été vérifiées"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Les chronomètres ont été vérifiés par l’arbitre avant la course."
+        ],
+        "explanation": "Au passé composé, le passif se construit ici avec « ont été » et le participe accordé avec « les chronomètres » (masculin pluriel). Correction : Les chronomètres ont été vérifiés par l’arbitre avant la course."
+      },
+      {
+        "id": "gram-ex-j6-curriculum-c-b1-mosaique",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j6-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "La mosaïque a été protégé par une restauratrice avec un tissu épais.",
+        "cue": "Employez la forme passive au passé composé.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 25,
+          "text": "a été protégé"
+        },
+        "responseLines": 2,
+        "answers": [
+          "La mosaïque a été protégée par une restauratrice avec un tissu épais."
+        ],
+        "explanation": "Au passé composé, le passif se construit ici avec « a été » et le participe accordé avec « la mosaïque » (féminin singulier). Correction : La mosaïque a été protégée par une restauratrice avec un tissu épais."
+      },
+      {
+        "id": "gram-ex-j6-curriculum-c-b1-inscription-benevolat",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j6-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Les inscriptions sont notés par les bénévoles dans un registre.",
+        "cue": "Employez la forme passive au présent.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 17,
+          "end": 27,
+          "text": "sont notés"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Les inscriptions sont notées par les bénévoles dans un registre."
+        ],
+        "explanation": "Au présent, le passif se construit ici avec « sont » et le participe accordé avec « les inscriptions » (féminin pluriel). Correction : Les inscriptions sont notées par les bénévoles dans un registre."
+      },
+      {
+        "id": "gram-ex-j6-curriculum-c-b1-recu-guichet",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j6-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Un reçu est fournie par le guichet à chaque personne.",
+        "cue": "Employez la forme passive au présent.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 8,
+          "end": 19,
+          "text": "est fournie"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Un reçu est fourni par le guichet à chaque personne."
+        ],
+        "explanation": "Au présent, le passif se construit ici avec « est » et le participe accordé avec « un reçu » (masculin singulier). Correction : Un reçu est fourni par le guichet à chaque personne."
+      },
+      {
+        "id": "gram-ex-j6-curriculum-c-b1-portes-secondaires",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j6-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Les portes secondaires seront ouverts par les techniciens avant la représentation.",
+        "cue": "Employez la forme passive au futur simple.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 23,
+          "end": 37,
+          "text": "seront ouverts"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Les portes secondaires seront ouvertes par les techniciens avant la représentation."
+        ],
+        "explanation": "Au futur simple, le passif se construit ici avec « seront » et le participe accordé avec « les portes secondaires » (féminin pluriel). Correction : Les portes secondaires seront ouvertes par les techniciens avant la représentation."
+      },
+      {
+        "id": "gram-ex-j6-curriculum-c-b1-sacs-retrouves",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j6-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Les sacs retrouvés seront remises par la police municipale à leurs propriétaires.",
+        "cue": "Employez la forme passive au futur simple.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 19,
+          "end": 33,
+          "text": "seront remises"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Les sacs retrouvés seront remis par la police municipale à leurs propriétaires."
+        ],
+        "explanation": "Au futur simple, le passif se construit ici avec « seront » et le participe accordé avec « les sacs retrouvés » (masculin pluriel). Correction : Les sacs retrouvés seront remis par la police municipale à leurs propriétaires."
+      },
+      {
+        "id": "gram-ex-j6-curriculum-c-b1-tracteur",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j6-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Le tracteur communal était entretenue par un mécanicien chaque hiver.",
+        "cue": "Employez la forme passive au imparfait.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 21,
+          "end": 37,
+          "text": "était entretenue"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Le tracteur communal était entretenu par un mécanicien chaque hiver."
+        ],
+        "explanation": "Au imparfait, le passif se construit ici avec « était » et le participe accordé avec « le tracteur communal » (masculin singulier). Correction : Le tracteur communal était entretenu par un mécanicien chaque hiver."
+      },
+      {
+        "id": "gram-ex-j6-curriculum-c-b1-bancs-ruelle",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j6-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Les bancs de la ruelle étaient déplacées par l’équipe de voirie pendant les travaux.",
+        "cue": "Employez la forme passive au imparfait.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 23,
+          "end": 40,
+          "text": "étaient déplacées"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Les bancs de la ruelle étaient déplacés par l’équipe de voirie pendant les travaux."
+        ],
+        "explanation": "Au imparfait, le passif se construit ici avec « étaient » et le participe accordé avec « les bancs de la ruelle » (masculin pluriel). Correction : Les bancs de la ruelle étaient déplacés par l’équipe de voirie pendant les travaux."
+      },
+      {
+        "id": "gram-ex-j6-curriculum-c-b1-banderole",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j6-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "La banderole sera installé par les membres du club au-dessus de l’entrée.",
+        "cue": "Employez la forme passive au futur simple.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 13,
+          "end": 26,
+          "text": "sera installé"
+        },
+        "responseLines": 2,
+        "answers": [
+          "La banderole sera installée par les membres du club au-dessus de l’entrée."
+        ],
+        "explanation": "Au futur simple, le passif se construit ici avec « sera » et le participe accordé avec « la banderole » (féminin singulier). Correction : La banderole sera installée par les membres du club au-dessus de l’entrée."
+      },
+      {
+        "id": "gram-ex-j6-curriculum-c-b1-aquariums",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j6.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j6-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Les petits aquariums ont été remplies par la soigneuse avant la visite.",
+        "cue": "Employez la forme passive au passé composé.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 21,
+          "end": 37,
+          "text": "ont été remplies"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Les petits aquariums ont été remplis par la soigneuse avant la visite."
+        ],
+        "explanation": "Au passé composé, le passif se construit ici avec « ont été » et le participe accordé avec « les petits aquariums » (masculin pluriel). Correction : Les petits aquariums ont été remplis par la soigneuse avant la visite."
       }
     ]
   },

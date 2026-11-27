@@ -1,7 +1,7 @@
 [
   {
     "schemaVersion": 1,
-    "revision": "avenir-2026-11-24-v1",
+    "revision": "avenir-2026-11-27-v2",
     "activityId": "gram-ex-futur-proche-qcm-verbe",
     "subthemeId": "futur-proche",
     "topic": "gram-avenir",
@@ -11,7 +11,7 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-24",
+      "date": "2026-11-27",
       "humanReview": "pending",
       "note": "Sources et références relues. Situations partagées entre mécaniques ; documents adaptés avec faits explicites. Modèles ouverts non exclusifs. Aucune approbation enseignante déclarée."
     },
@@ -1573,6 +1573,316 @@
           }
         ],
         "explanation": "L’heure et le lieu de rencontre sont fixés. Modèle : À quinze heures, tu vas retrouver ton amie."
+      },
+      {
+        "id": "gram-ex-futur-proche-qcm-verbe-a1-borne-lecture",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-qcm-verbe",
+          "position": 50,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Ce soir, nous ___ la boîte à livres près de l’arrêt.",
+        "cue": "Votre équipe a choisi un endroit pour la boîte à livres. Elle sera près de l’arrêt de bus dès ce soir. Employez le futur proche : aller au présent + infinitif.",
+        "givenVerb": "placer",
+        "answers": [
+          "allons placer"
+        ],
+        "options": [
+          {
+            "id": "borne-lecture-choix-1",
+            "text": "allons placer"
+          },
+          {
+            "id": "borne-lecture-choix-2",
+            "text": "va placer"
+          },
+          {
+            "id": "borne-lecture-choix-3",
+            "text": "allons plaçons"
+          }
+        ],
+        "explanation": "Avec nous, aller au présent donne allons, suivi de placer. Modèle : Ce soir, nous allons placer la boîte à livres près de l’arrêt."
+      },
+      {
+        "id": "gram-ex-futur-proche-qcm-verbe-a1-tondeuse-pret",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-qcm-verbe",
+          "position": 51,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Je ___ de l’aide à mon voisin.",
+        "cue": "La tondeuse ne démarre plus. Vous avez décidé de demander de l’aide à votre voisin. Employez le futur proche : aller au présent + infinitif.",
+        "givenVerb": "demander",
+        "answers": [
+          "vais demander"
+        ],
+        "options": [
+          {
+            "id": "tondeuse-pret-choix-1",
+            "text": "vais demander"
+          },
+          {
+            "id": "tondeuse-pret-choix-2",
+            "text": "vais demande"
+          },
+          {
+            "id": "tondeuse-pret-choix-3",
+            "text": "va demander"
+          }
+        ],
+        "explanation": "Avec je, on emploie vais puis l’infinitif demander. Modèle : Je vais demander de l’aide à mon voisin."
+      },
+      {
+        "id": "gram-ex-futur-proche-qcm-verbe-a1-patins-enfant",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-qcm-verbe",
+          "position": 52,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Samedi, les enfants ___ les patins du club.",
+        "cue": "Le club prête des patins samedi. Les deux enfants ont décidé de venir à la patinoire. Employez le futur proche : aller au présent + infinitif.",
+        "givenVerb": "essayer",
+        "answers": [
+          "vont essayer"
+        ],
+        "options": [
+          {
+            "id": "patins-enfant-choix-1",
+            "text": "vont essayer"
+          },
+          {
+            "id": "patins-enfant-choix-2",
+            "text": "vont essaient"
+          },
+          {
+            "id": "patins-enfant-choix-3",
+            "text": "va essayer"
+          }
+        ],
+        "explanation": "Le sujet est au pluriel. On emploie vont suivi de essayer. Modèle : Samedi, les enfants vont essayer les patins du club."
+      },
+      {
+        "id": "gram-ex-futur-proche-qcm-verbe-a1-bocaux-cuisine",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-qcm-verbe",
+          "position": 53,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ trois petits bocaux.",
+        "cue": "Tu as fait de la confiture. Tu as décidé de la verser dans trois petits bocaux. Employez le futur proche : aller au présent + infinitif.",
+        "givenVerb": "remplir",
+        "answers": [
+          "vas remplir"
+        ],
+        "options": [
+          {
+            "id": "bocaux-cuisine-choix-1",
+            "text": "vas remplir"
+          },
+          {
+            "id": "bocaux-cuisine-choix-2",
+            "text": "vas remplis"
+          },
+          {
+            "id": "bocaux-cuisine-choix-3",
+            "text": "va remplir"
+          }
+        ],
+        "explanation": "Vas est la forme d’aller avec tu. Remplir reste à l’infinitif. Modèle : Tu vas remplir trois petits bocaux."
+      },
+      {
+        "id": "gram-ex-futur-proche-qcm-verbe-a1-banc-parc",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-qcm-verbe",
+          "position": 54,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ près de la fontaine.",
+        "cue": "Vous parlez de votre rendez-vous. Vous avez choisi le banc près de la fontaine comme lieu de rencontre. Employez le futur proche : aller au présent + infinitif.",
+        "givenVerb": "se retrouver",
+        "answers": [
+          "allons nous retrouver"
+        ],
+        "options": [
+          {
+            "id": "banc-parc-choix-1",
+            "text": "allons nous retrouver"
+          },
+          {
+            "id": "banc-parc-choix-2",
+            "text": "allons se retrouver"
+          },
+          {
+            "id": "banc-parc-choix-3",
+            "text": "allons retrouvons"
+          }
+        ],
+        "explanation": "Dans ce futur proche, nous se place devant l’infinitif retrouver. Modèle : Nous allons nous retrouver près de la fontaine."
+      },
+      {
+        "id": "gram-ex-futur-proche-qcm-verbe-a1-parapluie-hall",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-qcm-verbe",
+          "position": 55,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Aïcha ___ son parapluie.",
+        "cue": "Aïcha voit la pluie. Elle a décidé de prendre son parapluie avant de sortir. Employez le futur proche : aller au présent + infinitif.",
+        "givenVerb": "prendre",
+        "answers": [
+          "va prendre"
+        ],
+        "options": [
+          {
+            "id": "parapluie-hall-choix-1",
+            "text": "va prendre"
+          },
+          {
+            "id": "parapluie-hall-choix-2",
+            "text": "vont prendre"
+          },
+          {
+            "id": "parapluie-hall-choix-3",
+            "text": "va prend"
+          }
+        ],
+        "explanation": "Avec Aïcha, on emploie va suivi de prendre. Modèle : Aïcha va prendre son parapluie."
+      },
+      {
+        "id": "gram-ex-futur-proche-qcm-verbe-a1-lettre-merci",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-qcm-verbe",
+          "position": 56,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Ce soir, je ___ un mot de remerciement.",
+        "cue": "Vous avez reçu un cadeau. Vous avez décidé d’envoyer un petit mot à la personne ce soir. Employez le futur proche : aller au présent + infinitif.",
+        "givenVerb": "écrire",
+        "answers": [
+          "vais écrire"
+        ],
+        "options": [
+          {
+            "id": "lettre-merci-choix-1",
+            "text": "vais écrire"
+          },
+          {
+            "id": "lettre-merci-choix-2",
+            "text": "vais écris"
+          },
+          {
+            "id": "lettre-merci-choix-3",
+            "text": "vas écrire"
+          }
+        ],
+        "explanation": "Vais porte la marque de la personne. Écrire reste à l’infinitif. Modèle : Ce soir, je vais écrire un mot de remerciement."
+      },
+      {
+        "id": "gram-ex-futur-proche-qcm-verbe-a1-photos-classeur",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-qcm-verbe",
+          "position": 57,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Les élèves ___ les photos dans un classeur vert.",
+        "cue": "Les élèves ont choisi de mettre les photos de la sortie dans un classeur vert. Employez le futur proche : aller au présent + infinitif.",
+        "givenVerb": "ranger",
+        "answers": [
+          "vont ranger"
+        ],
+        "options": [
+          {
+            "id": "photos-classeur-choix-1",
+            "text": "vont ranger"
+          },
+          {
+            "id": "photos-classeur-choix-2",
+            "text": "vont rangent"
+          },
+          {
+            "id": "photos-classeur-choix-3",
+            "text": "allons ranger"
+          }
+        ],
+        "explanation": "Avec les élèves, aller devient vont. Ranger reste à l’infinitif. Modèle : Les élèves vont ranger les photos dans un classeur vert."
+      },
+      {
+        "id": "gram-ex-futur-proche-qcm-verbe-a1-lavage-mains",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-qcm-verbe",
+          "position": 58,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Les enfants ___ les mains avant le goûter.",
+        "cue": "Les enfants ont fini de jardiner. Ils vont passer au lavabo avant le goûter. Employez le futur proche : aller au présent + infinitif.",
+        "givenVerb": "se laver",
+        "answers": [
+          "vont se laver"
+        ],
+        "options": [
+          {
+            "id": "lavage-mains-choix-1",
+            "text": "vont se laver"
+          },
+          {
+            "id": "lavage-mains-choix-2",
+            "text": "se vont laver"
+          },
+          {
+            "id": "lavage-mains-choix-3",
+            "text": "vont se lavent"
+          }
+        ],
+        "explanation": "Se se place devant l’infinitif laver. Modèle : Les enfants vont se laver les mains avant le goûter."
+      },
+      {
+        "id": "gram-ex-futur-proche-qcm-verbe-a1-boites-dejeuner",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-qcm-verbe",
+          "position": 59,
+          "partition": "a1"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ le repas dans des boîtes.",
+        "cue": "Vous préparez une sortie avec des amis. Vous avez décidé d’emporter le repas dans des boîtes. Employez le futur proche : aller au présent + infinitif.",
+        "givenVerb": "emporter",
+        "answers": [
+          "allons emporter"
+        ],
+        "options": [
+          {
+            "id": "boites-dejeuner-choix-1",
+            "text": "allons emporter"
+          },
+          {
+            "id": "boites-dejeuner-choix-2",
+            "text": "allons emportons"
+          },
+          {
+            "id": "boites-dejeuner-choix-3",
+            "text": "allez emporter"
+          }
+        ],
+        "explanation": "Allons est suivi de l’infinitif emporter. Modèle : Nous allons emporter le repas dans des boîtes."
       }
     ]
   },
@@ -3223,7 +3533,7 @@
   },
   {
     "schemaVersion": 1,
-    "revision": "avenir-2026-11-24-v1",
+    "revision": "avenir-2026-11-27-v2",
     "activityId": "gram-ex-futur-proche-communication-pe",
     "subthemeId": "futur-proche",
     "topic": "gram-avenir",
@@ -3233,7 +3543,7 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-24",
+      "date": "2026-11-27",
       "humanReview": "pending",
       "note": "Sources et références relues. Situations partagées entre mécaniques ; documents adaptés avec faits explicites. Modèles ouverts non exclusifs. Aucune approbation enseignante déclarée."
     },
@@ -4843,12 +5153,332 @@
           }
         ],
         "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. L’heure et le lieu de rencontre sont fixés."
+      },
+      {
+        "id": "gram-ex-futur-proche-communication-pe-a1-borne-lecture",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-communication-pe",
+          "position": 50,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Votre équipe a choisi un endroit pour la boîte à livres. Elle sera près de l’arrêt de bus dès ce soir.\nFaits : Ce soir, nous plaçons la boîte à livres près de l’arrêt.",
+        "answers": [
+          "Ce soir, nous allons placer la boîte à livres près de l’arrêt."
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Avec nous, aller au présent donne allons, suivi de placer."
+      },
+      {
+        "id": "gram-ex-futur-proche-communication-pe-a1-tondeuse-pret",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-communication-pe",
+          "position": 51,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "La tondeuse ne démarre plus. Vous avez décidé de demander de l’aide à votre voisin.\nFaits : Je demande de l’aide à mon voisin.",
+        "answers": [
+          "Je vais demander de l’aide à mon voisin."
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Avec je, on emploie vais puis l’infinitif demander."
+      },
+      {
+        "id": "gram-ex-futur-proche-communication-pe-a1-patins-enfant",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-communication-pe",
+          "position": 52,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Le club prête des patins samedi. Les deux enfants ont décidé de venir à la patinoire.\nFaits : Samedi, les enfants essaient les patins du club.",
+        "answers": [
+          "Samedi, les enfants vont essayer les patins du club."
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Le sujet est au pluriel. On emploie vont suivi de essayer."
+      },
+      {
+        "id": "gram-ex-futur-proche-communication-pe-a1-bocaux-cuisine",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-communication-pe",
+          "position": 53,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Tu as fait de la confiture. Tu as décidé de la verser dans trois petits bocaux.\nFaits : Tu remplis trois petits bocaux avec la confiture.",
+        "answers": [
+          "Tu vas remplir trois petits bocaux."
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Vas est la forme d’aller avec tu. Remplir reste à l’infinitif."
+      },
+      {
+        "id": "gram-ex-futur-proche-communication-pe-a1-banc-parc",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-communication-pe",
+          "position": 54,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Vous parlez de votre rendez-vous. Vous avez choisi le banc près de la fontaine comme lieu de rencontre.\nFaits : Nous nous retrouvons près de la fontaine.",
+        "answers": [
+          "Nous allons nous retrouver près de la fontaine."
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Dans ce futur proche, nous se place devant l’infinitif retrouver."
+      },
+      {
+        "id": "gram-ex-futur-proche-communication-pe-a1-parapluie-hall",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-communication-pe",
+          "position": 55,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Aïcha voit la pluie. Elle a décidé de prendre son parapluie avant de sortir.\nFaits : Aïcha prend son parapluie avant de sortir.",
+        "answers": [
+          "Aïcha va prendre son parapluie."
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Avec Aïcha, on emploie va suivi de prendre."
+      },
+      {
+        "id": "gram-ex-futur-proche-communication-pe-a1-lettre-merci",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-communication-pe",
+          "position": 56,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Vous avez reçu un cadeau. Vous avez décidé d’envoyer un petit mot à la personne ce soir.\nFaits : Ce soir, j’écris un mot de remerciement.",
+        "answers": [
+          "Ce soir, je vais écrire un mot de remerciement."
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Vais porte la marque de la personne. Écrire reste à l’infinitif."
+      },
+      {
+        "id": "gram-ex-futur-proche-communication-pe-a1-photos-classeur",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-communication-pe",
+          "position": 57,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Les élèves ont choisi de mettre les photos de la sortie dans un classeur vert.\nFaits : Les élèves rangent les photos dans un classeur vert.",
+        "answers": [
+          "Les élèves vont ranger les photos dans un classeur vert."
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Avec les élèves, aller devient vont. Ranger reste à l’infinitif."
+      },
+      {
+        "id": "gram-ex-futur-proche-communication-pe-a1-lavage-mains",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-communication-pe",
+          "position": 58,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Les enfants ont fini de jardiner. Ils vont passer au lavabo avant le goûter.\nFaits : Les enfants se lavent les mains avant le goûter.",
+        "answers": [
+          "Les enfants vont se laver les mains avant le goûter."
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Se se place devant l’infinitif laver."
+      },
+      {
+        "id": "gram-ex-futur-proche-communication-pe-a1-boites-dejeuner",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-communication-pe",
+          "position": 59,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "written",
+        "prompt": "Vous préparez une sortie avec des amis. Vous avez décidé d’emporter le repas dans des boîtes.\nFaits : Nous emportons le repas dans des boîtes.",
+        "answers": [
+          "Nous allons emporter le repas dans des boîtes."
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète.",
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Allons est suivi de l’infinitif emporter."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "avenir-2026-11-24-v1",
+    "revision": "avenir-2026-11-27-v2",
     "activityId": "gram-ex-futur-proche-communication-po",
     "subthemeId": "futur-proche",
     "topic": "gram-avenir",
@@ -4858,7 +5488,7 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-24",
+      "date": "2026-11-27",
       "humanReview": "pending",
       "note": "Sources et références relues. Situations partagées entre mécaniques ; documents adaptés avec faits explicites. Modèles ouverts non exclusifs. Aucune approbation enseignante déclarée."
     },
@@ -6468,12 +7098,332 @@
           }
         ],
         "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. L’heure et le lieu de rencontre sont fixés."
+      },
+      {
+        "id": "gram-ex-futur-proche-communication-po-a1-borne-lecture",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-communication-po",
+          "position": 50,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Votre équipe a choisi un endroit pour la boîte à livres. Elle sera près de l’arrêt de bus dès ce soir.\nFaits : Ce soir, nous plaçons la boîte à livres près de l’arrêt.",
+        "answers": [
+          "Ce soir, nous allons placer la boîte à livres près de l’arrêt.\nRéponse à la relance : Près de l’arrêt de bus."
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète. Puis répondez à la relance : « Où sera la boîte ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Avec nous, aller au présent donne allons, suivi de placer."
+      },
+      {
+        "id": "gram-ex-futur-proche-communication-po-a1-tondeuse-pret",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-communication-po",
+          "position": 51,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "La tondeuse ne démarre plus. Vous avez décidé de demander de l’aide à votre voisin.\nFaits : Je demande de l’aide à mon voisin.",
+        "answers": [
+          "Je vais demander de l’aide à mon voisin.\nRéponse à la relance : Mon voisin."
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète. Puis répondez à la relance : « Qui peut vous aider ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Avec je, on emploie vais puis l’infinitif demander."
+      },
+      {
+        "id": "gram-ex-futur-proche-communication-po-a1-patins-enfant",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-communication-po",
+          "position": 52,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le club prête des patins samedi. Les deux enfants ont décidé de venir à la patinoire.\nFaits : Samedi, les enfants essaient les patins du club.",
+        "answers": [
+          "Samedi, les enfants vont essayer les patins du club.\nRéponse à la relance : Ils sont au club."
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète. Puis répondez à la relance : « À qui sont les patins ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Le sujet est au pluriel. On emploie vont suivi de essayer."
+      },
+      {
+        "id": "gram-ex-futur-proche-communication-po-a1-bocaux-cuisine",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-communication-po",
+          "position": 53,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Tu as fait de la confiture. Tu as décidé de la verser dans trois petits bocaux.\nFaits : Tu remplis trois petits bocaux avec la confiture.",
+        "answers": [
+          "Tu vas remplir trois petits bocaux.\nRéponse à la relance : Trois."
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète. Puis répondez à la relance : « Combien de bocaux ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Vas est la forme d’aller avec tu. Remplir reste à l’infinitif."
+      },
+      {
+        "id": "gram-ex-futur-proche-communication-po-a1-banc-parc",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-communication-po",
+          "position": 54,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Vous parlez de votre rendez-vous. Vous avez choisi le banc près de la fontaine comme lieu de rencontre.\nFaits : Nous nous retrouvons près de la fontaine.",
+        "answers": [
+          "Nous allons nous retrouver près de la fontaine.\nRéponse à la relance : Sur le banc."
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète. Puis répondez à la relance : « À quel endroit près de la fontaine ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Dans ce futur proche, nous se place devant l’infinitif retrouver."
+      },
+      {
+        "id": "gram-ex-futur-proche-communication-po-a1-parapluie-hall",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-communication-po",
+          "position": 55,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Aïcha voit la pluie. Elle a décidé de prendre son parapluie avant de sortir.\nFaits : Aïcha prend son parapluie avant de sortir.",
+        "answers": [
+          "Aïcha va prendre son parapluie.\nRéponse à la relance : Il pleut."
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète. Puis répondez à la relance : « Pourquoi prend-elle un parapluie ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Avec Aïcha, on emploie va suivi de prendre."
+      },
+      {
+        "id": "gram-ex-futur-proche-communication-po-a1-lettre-merci",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-communication-po",
+          "position": 56,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Vous avez reçu un cadeau. Vous avez décidé d’envoyer un petit mot à la personne ce soir.\nFaits : Ce soir, j’écris un mot de remerciement.",
+        "answers": [
+          "Ce soir, je vais écrire un mot de remerciement.\nRéponse à la relance : Un mot de remerciement."
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète. Puis répondez à la relance : « Quel genre de mot ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Vais porte la marque de la personne. Écrire reste à l’infinitif."
+      },
+      {
+        "id": "gram-ex-futur-proche-communication-po-a1-photos-classeur",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-communication-po",
+          "position": 57,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Les élèves ont choisi de mettre les photos de la sortie dans un classeur vert.\nFaits : Les élèves rangent les photos dans un classeur vert.",
+        "answers": [
+          "Les élèves vont ranger les photos dans un classeur vert.\nRéponse à la relance : Il est vert."
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète. Puis répondez à la relance : « De quelle couleur est le classeur ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Avec les élèves, aller devient vont. Ranger reste à l’infinitif."
+      },
+      {
+        "id": "gram-ex-futur-proche-communication-po-a1-lavage-mains",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-communication-po",
+          "position": 58,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Les enfants ont fini de jardiner. Ils vont passer au lavabo avant le goûter.\nFaits : Les enfants se lavent les mains avant le goûter.",
+        "answers": [
+          "Les enfants vont se laver les mains avant le goûter.\nRéponse à la relance : Leurs mains sont sales."
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète. Puis répondez à la relance : « Pourquoi ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Se se place devant l’infinitif laver."
+      },
+      {
+        "id": "gram-ex-futur-proche-communication-po-a1-boites-dejeuner",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-communication-po",
+          "position": 59,
+          "partition": "a1"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Vous préparez une sortie avec des amis. Vous avez décidé d’emporter le repas dans des boîtes.\nFaits : Nous emportons le repas dans des boîtes.",
+        "answers": [
+          "Nous allons emporter le repas dans des boîtes.\nRéponse à la relance : Le repas."
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète. Puis répondez à la relance : « Que mettez-vous dans les boîtes ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction demandée, conjugaison et accords corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Allons est suivi de l’infinitif emporter."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "avenir-2026-11-24-v1",
+    "revision": "avenir-2026-11-27-v2",
     "activityId": "gram-ex-futur-proche-curriculum-t",
     "subthemeId": "futur-proche",
     "topic": "gram-avenir",
@@ -6483,7 +7433,7 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-24",
+      "date": "2026-11-27",
       "humanReview": "pending",
       "note": "Sources et références relues. Situations partagées entre mécaniques ; documents adaptés avec faits explicites. Modèles ouverts non exclusifs. Aucune approbation enseignante déclarée."
     },
@@ -7393,12 +8343,192 @@
         ],
         "responseLines": 2,
         "explanation": "L’heure et le lieu de rencontre sont fixés. Modèle non exclusif : À quinze heures, tu vas retrouver ton amie."
+      },
+      {
+        "id": "gram-ex-futur-proche-curriculum-t-a1-borne-lecture",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-curriculum-t",
+          "position": 50,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Ce soir, nous plaçons la boîte à livres près de l’arrêt.",
+        "cue": "Votre équipe a choisi un endroit pour la boîte à livres. Elle sera près de l’arrêt de bus dès ce soir. Verbe ciblé : placer.",
+        "directive": "Employez le futur proche : aller au présent + infinitif.",
+        "answers": [
+          "Ce soir, nous allons placer la boîte à livres près de l’arrêt."
+        ],
+        "responseLines": 2,
+        "explanation": "Avec nous, aller au présent donne allons, suivi de placer. Modèle non exclusif : Ce soir, nous allons placer la boîte à livres près de l’arrêt."
+      },
+      {
+        "id": "gram-ex-futur-proche-curriculum-t-a1-tondeuse-pret",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-curriculum-t",
+          "position": 51,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Je demande de l’aide à mon voisin.",
+        "cue": "La tondeuse ne démarre plus. Vous avez décidé de demander de l’aide à votre voisin. Verbe ciblé : demander.",
+        "directive": "Employez le futur proche : aller au présent + infinitif.",
+        "answers": [
+          "Je vais demander de l’aide à mon voisin."
+        ],
+        "responseLines": 2,
+        "explanation": "Avec je, on emploie vais puis l’infinitif demander. Modèle non exclusif : Je vais demander de l’aide à mon voisin."
+      },
+      {
+        "id": "gram-ex-futur-proche-curriculum-t-a1-patins-enfant",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-curriculum-t",
+          "position": 52,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Samedi, les enfants essaient les patins du club.",
+        "cue": "Le club prête des patins samedi. Les deux enfants ont décidé de venir à la patinoire. Verbe ciblé : essayer.",
+        "directive": "Employez le futur proche : aller au présent + infinitif.",
+        "answers": [
+          "Samedi, les enfants vont essayer les patins du club."
+        ],
+        "responseLines": 2,
+        "explanation": "Le sujet est au pluriel. On emploie vont suivi de essayer. Modèle non exclusif : Samedi, les enfants vont essayer les patins du club."
+      },
+      {
+        "id": "gram-ex-futur-proche-curriculum-t-a1-bocaux-cuisine",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-curriculum-t",
+          "position": 53,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Tu remplis trois petits bocaux avec la confiture.",
+        "cue": "Tu as fait de la confiture. Tu as décidé de la verser dans trois petits bocaux. Verbe ciblé : remplir.",
+        "directive": "Employez le futur proche : aller au présent + infinitif.",
+        "answers": [
+          "Tu vas remplir trois petits bocaux."
+        ],
+        "responseLines": 2,
+        "explanation": "Vas est la forme d’aller avec tu. Remplir reste à l’infinitif. Modèle non exclusif : Tu vas remplir trois petits bocaux."
+      },
+      {
+        "id": "gram-ex-futur-proche-curriculum-t-a1-banc-parc",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-curriculum-t",
+          "position": 54,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Nous nous retrouvons près de la fontaine.",
+        "cue": "Vous parlez de votre rendez-vous. Vous avez choisi le banc près de la fontaine comme lieu de rencontre. Verbe ciblé : se retrouver.",
+        "directive": "Employez le futur proche : aller au présent + infinitif.",
+        "answers": [
+          "Nous allons nous retrouver près de la fontaine."
+        ],
+        "responseLines": 2,
+        "explanation": "Dans ce futur proche, nous se place devant l’infinitif retrouver. Modèle non exclusif : Nous allons nous retrouver près de la fontaine."
+      },
+      {
+        "id": "gram-ex-futur-proche-curriculum-t-a1-parapluie-hall",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-curriculum-t",
+          "position": 55,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Aïcha prend son parapluie avant de sortir.",
+        "cue": "Aïcha voit la pluie. Elle a décidé de prendre son parapluie avant de sortir. Verbe ciblé : prendre.",
+        "directive": "Employez le futur proche : aller au présent + infinitif.",
+        "answers": [
+          "Aïcha va prendre son parapluie."
+        ],
+        "responseLines": 2,
+        "explanation": "Avec Aïcha, on emploie va suivi de prendre. Modèle non exclusif : Aïcha va prendre son parapluie."
+      },
+      {
+        "id": "gram-ex-futur-proche-curriculum-t-a1-lettre-merci",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-curriculum-t",
+          "position": 56,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Ce soir, j’écris un mot de remerciement.",
+        "cue": "Vous avez reçu un cadeau. Vous avez décidé d’envoyer un petit mot à la personne ce soir. Verbe ciblé : écrire.",
+        "directive": "Employez le futur proche : aller au présent + infinitif.",
+        "answers": [
+          "Ce soir, je vais écrire un mot de remerciement."
+        ],
+        "responseLines": 2,
+        "explanation": "Vais porte la marque de la personne. Écrire reste à l’infinitif. Modèle non exclusif : Ce soir, je vais écrire un mot de remerciement."
+      },
+      {
+        "id": "gram-ex-futur-proche-curriculum-t-a1-photos-classeur",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-curriculum-t",
+          "position": 57,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Les élèves rangent les photos dans un classeur vert.",
+        "cue": "Les élèves ont choisi de mettre les photos de la sortie dans un classeur vert. Verbe ciblé : ranger.",
+        "directive": "Employez le futur proche : aller au présent + infinitif.",
+        "answers": [
+          "Les élèves vont ranger les photos dans un classeur vert."
+        ],
+        "responseLines": 2,
+        "explanation": "Avec les élèves, aller devient vont. Ranger reste à l’infinitif. Modèle non exclusif : Les élèves vont ranger les photos dans un classeur vert."
+      },
+      {
+        "id": "gram-ex-futur-proche-curriculum-t-a1-lavage-mains",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-curriculum-t",
+          "position": 58,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Les enfants se lavent les mains avant le goûter.",
+        "cue": "Les enfants ont fini de jardiner. Ils vont passer au lavabo avant le goûter. Verbe ciblé : se laver.",
+        "directive": "Employez le futur proche : aller au présent + infinitif.",
+        "answers": [
+          "Les enfants vont se laver les mains avant le goûter."
+        ],
+        "responseLines": 2,
+        "explanation": "Se se place devant l’infinitif laver. Modèle non exclusif : Les enfants vont se laver les mains avant le goûter."
+      },
+      {
+        "id": "gram-ex-futur-proche-curriculum-t-a1-boites-dejeuner",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-curriculum-t",
+          "position": 59,
+          "partition": "a1"
+        },
+        "kind": "transform",
+        "prompt": "Nous emportons le repas dans des boîtes.",
+        "cue": "Vous préparez une sortie avec des amis. Vous avez décidé d’emporter le repas dans des boîtes. Verbe ciblé : emporter.",
+        "directive": "Employez le futur proche : aller au présent + infinitif.",
+        "answers": [
+          "Nous allons emporter le repas dans des boîtes."
+        ],
+        "responseLines": 2,
+        "explanation": "Allons est suivi de l’infinitif emporter. Modèle non exclusif : Nous allons emporter le repas dans des boîtes."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "avenir-2026-11-24-v1",
+    "revision": "avenir-2026-11-27-v2",
     "activityId": "gram-ex-futur-proche-curriculum-s",
     "subthemeId": "futur-proche",
     "topic": "gram-avenir",
@@ -7408,7 +8538,7 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-24",
+      "date": "2026-11-27",
       "humanReview": "pending",
       "note": "Sources et références relues. Situations partagées entre mécaniques ; documents adaptés avec faits explicites. Modèles ouverts non exclusifs. Aucune approbation enseignante déclarée."
     },
@@ -10168,6 +11298,556 @@
           }
         ],
         "explanation": "Modèle non exclusif ; les reformulations fidèles aux faits et à la construction sont recevables. L’heure et le lieu de rencontre sont fixés."
+      },
+      {
+        "id": "gram-ex-futur-proche-curriculum-s-a1-borne-lecture",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-curriculum-s",
+          "position": 50,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Annoncer un projet",
+        "situation": "Votre équipe a choisi un endroit pour la boîte à livres. Elle sera près de l’arrêt de bus dès ce soir.",
+        "answers": [
+          "Personne B : Qu’est-ce que votre équipe va faire ce soir ?\nPersonne A : Ce soir, nous allons placer la boîte à livres près de l’arrêt.\nPersonne B : Où sera la boîte ?\nPersonne A : Près de l’arrêt de bus."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Présentez les faits et répondez."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qu’est-ce que votre équipe va faire ce soir ?"
+          }
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète. Répondez ensuite à la relance. Échangez les rôles.",
+        "followUps": [
+          "Où sera la boîte ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction verbale demandée et sujet corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations fidèles aux faits et à la construction sont recevables. Avec nous, aller au présent donne allons, suivi de placer."
+      },
+      {
+        "id": "gram-ex-futur-proche-curriculum-s-a1-tondeuse-pret",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-curriculum-s",
+          "position": 51,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Annoncer un projet",
+        "situation": "La tondeuse ne démarre plus. Vous avez décidé de demander de l’aide à votre voisin.",
+        "answers": [
+          "Personne B : Que comptez-vous faire ?\nPersonne A : Je vais demander de l’aide à mon voisin.\nPersonne B : Qui peut vous aider ?\nPersonne A : Mon voisin."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Présentez les faits et répondez."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que comptez-vous faire ?"
+          }
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète. Répondez ensuite à la relance. Échangez les rôles.",
+        "followUps": [
+          "Qui peut vous aider ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction verbale demandée et sujet corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations fidèles aux faits et à la construction sont recevables. Avec je, on emploie vais puis l’infinitif demander."
+      },
+      {
+        "id": "gram-ex-futur-proche-curriculum-s-a1-patins-enfant",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-curriculum-s",
+          "position": 52,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Annoncer un projet",
+        "situation": "Le club prête des patins samedi. Les deux enfants ont décidé de venir à la patinoire.",
+        "answers": [
+          "Personne B : Que vont faire les enfants samedi ?\nPersonne A : Samedi, les enfants vont essayer les patins du club.\nPersonne B : À qui sont les patins ?\nPersonne A : Ils sont au club."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Présentez les faits et répondez."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que vont faire les enfants samedi ?"
+          }
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète. Répondez ensuite à la relance. Échangez les rôles.",
+        "followUps": [
+          "À qui sont les patins ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction verbale demandée et sujet corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations fidèles aux faits et à la construction sont recevables. Le sujet est au pluriel. On emploie vont suivi de essayer."
+      },
+      {
+        "id": "gram-ex-futur-proche-curriculum-s-a1-bocaux-cuisine",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-curriculum-s",
+          "position": 53,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Annoncer un projet",
+        "situation": "Tu as fait de la confiture. Tu as décidé de la verser dans trois petits bocaux.",
+        "answers": [
+          "Personne B : Que vas-tu faire avec la confiture ?\nPersonne A : Je vais remplir trois petits bocaux.\nPersonne B : Combien de bocaux ?\nPersonne A : Trois."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Présentez les faits et répondez."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que vas-tu faire avec la confiture ?"
+          }
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète. Répondez ensuite à la relance. Échangez les rôles.",
+        "followUps": [
+          "Combien de bocaux ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction verbale demandée et sujet corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations fidèles aux faits et à la construction sont recevables. Vas est la forme d’aller avec tu. Remplir reste à l’infinitif."
+      },
+      {
+        "id": "gram-ex-futur-proche-curriculum-s-a1-banc-parc",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-curriculum-s",
+          "position": 54,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Annoncer un projet",
+        "situation": "Vous parlez de votre rendez-vous. Vous avez choisi le banc près de la fontaine comme lieu de rencontre.",
+        "answers": [
+          "Personne B : Où est prévu votre rendez-vous ?\nPersonne A : Nous allons nous retrouver près de la fontaine.\nPersonne B : À quel endroit près de la fontaine ?\nPersonne A : Sur le banc."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Présentez les faits et répondez."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Où est prévu votre rendez-vous ?"
+          }
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète. Répondez ensuite à la relance. Échangez les rôles.",
+        "followUps": [
+          "À quel endroit près de la fontaine ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction verbale demandée et sujet corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations fidèles aux faits et à la construction sont recevables. Dans ce futur proche, nous se place devant l’infinitif retrouver."
+      },
+      {
+        "id": "gram-ex-futur-proche-curriculum-s-a1-parapluie-hall",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-curriculum-s",
+          "position": 55,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Annoncer un projet",
+        "situation": "Aïcha voit la pluie. Elle a décidé de prendre son parapluie avant de sortir.",
+        "answers": [
+          "Personne B : Qu’est-ce qu’Aïcha va faire avant de sortir ?\nPersonne A : Aïcha va prendre son parapluie.\nPersonne B : Pourquoi prend-elle un parapluie ?\nPersonne A : Il pleut."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Présentez les faits et répondez."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qu’est-ce qu’Aïcha va faire avant de sortir ?"
+          }
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète. Répondez ensuite à la relance. Échangez les rôles.",
+        "followUps": [
+          "Pourquoi prend-elle un parapluie ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction verbale demandée et sujet corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations fidèles aux faits et à la construction sont recevables. Avec Aïcha, on emploie va suivi de prendre."
+      },
+      {
+        "id": "gram-ex-futur-proche-curriculum-s-a1-lettre-merci",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-curriculum-s",
+          "position": 56,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Annoncer un projet",
+        "situation": "Vous avez reçu un cadeau. Vous avez décidé d’envoyer un petit mot à la personne ce soir.",
+        "answers": [
+          "Personne B : Que voulez-vous faire après avoir reçu le cadeau ?\nPersonne A : Ce soir, je vais écrire un mot de remerciement.\nPersonne B : Quel genre de mot ?\nPersonne A : Un mot de remerciement."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Présentez les faits et répondez."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que voulez-vous faire après avoir reçu le cadeau ?"
+          }
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète. Répondez ensuite à la relance. Échangez les rôles.",
+        "followUps": [
+          "Quel genre de mot ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction verbale demandée et sujet corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations fidèles aux faits et à la construction sont recevables. Vais porte la marque de la personne. Écrire reste à l’infinitif."
+      },
+      {
+        "id": "gram-ex-futur-proche-curriculum-s-a1-photos-classeur",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-curriculum-s",
+          "position": 57,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Annoncer un projet",
+        "situation": "Les élèves ont choisi de mettre les photos de la sortie dans un classeur vert.",
+        "answers": [
+          "Personne B : Qu’allez-vous dire du projet des élèves ?\nPersonne A : Les élèves vont ranger les photos dans un classeur vert.\nPersonne B : De quelle couleur est le classeur ?\nPersonne A : Il est vert."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Présentez les faits et répondez."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Qu’allez-vous dire du projet des élèves ?"
+          }
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète. Répondez ensuite à la relance. Échangez les rôles.",
+        "followUps": [
+          "De quelle couleur est le classeur ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction verbale demandée et sujet corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations fidèles aux faits et à la construction sont recevables. Avec les élèves, aller devient vont. Ranger reste à l’infinitif."
+      },
+      {
+        "id": "gram-ex-futur-proche-curriculum-s-a1-lavage-mains",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-curriculum-s",
+          "position": 58,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Annoncer un projet",
+        "situation": "Les enfants ont fini de jardiner. Ils vont passer au lavabo avant le goûter.",
+        "answers": [
+          "Personne B : Que vont faire les enfants avant le goûter ?\nPersonne A : Les enfants vont se laver les mains avant le goûter.\nPersonne B : Pourquoi ?\nPersonne A : Leurs mains sont sales."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Présentez les faits et répondez."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Que vont faire les enfants avant le goûter ?"
+          }
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète. Répondez ensuite à la relance. Échangez les rôles.",
+        "followUps": [
+          "Pourquoi ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction verbale demandée et sujet corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations fidèles aux faits et à la construction sont recevables. Se se place devant l’infinitif laver."
+      },
+      {
+        "id": "gram-ex-futur-proche-curriculum-s-a1-boites-dejeuner",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-a1.tsv",
+          "typeId": "gram-ex-futur-proche-curriculum-s",
+          "position": 59,
+          "partition": "a1"
+        },
+        "kind": "scenario",
+        "contract": "open",
+        "prompt": "Annoncer un projet",
+        "situation": "Vous préparez une sortie avec des amis. Vous avez décidé d’emporter le repas dans des boîtes.",
+        "answers": [
+          "Personne B : Comment votre groupe prévoit-il de transporter le repas ?\nPersonne A : Nous allons emporter le repas dans des boîtes.\nPersonne B : Que mettez-vous dans les boîtes ?\nPersonne A : Le repas."
+        ],
+        "roles": [
+          {
+            "id": "a",
+            "label": "Personne A",
+            "goal": "Présentez les faits et répondez."
+          },
+          {
+            "id": "b",
+            "label": "Personne B",
+            "goal": "Posez la question initiale puis la relance."
+          }
+        ],
+        "turns": [
+          {
+            "id": "debut",
+            "roleId": "b",
+            "text": "Comment votre groupe prévoit-il de transporter le repas ?"
+          }
+        ],
+        "task": "Employez le futur proche : aller au présent + infinitif. Formulez une phrase complète. Répondez ensuite à la relance. Échangez les rôles.",
+        "followUps": [
+          "Que mettez-vous dans les boîtes ?"
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Construction verbale demandée et sujet corrects."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations fidèles aux faits et à la construction sont recevables. Allons est suivi de l’infinitif emporter."
       }
     ]
   }

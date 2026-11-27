@@ -1,7 +1,7 @@
 [
   {
     "schemaVersion": 1,
-    "revision": "avenir-2026-11-24-v1",
+    "revision": "avenir-2026-11-27-v2",
     "activityId": "gram-ex-futur-proche-ou-simple-qcm-verbe",
     "subthemeId": "futur-proche-ou-simple",
     "topic": "gram-avenir",
@@ -11,7 +11,7 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-24",
+      "date": "2026-11-27",
       "humanReview": "pending",
       "note": "Sources et références relues. Situations partagées entre mécaniques ; documents adaptés avec faits explicites. Modèles ouverts non exclusifs. Aucune approbation enseignante déclarée."
     },
@@ -1573,12 +1573,322 @@
           }
         ],
         "explanation": "Futur proche : aller au présent + infinitif. Futur simple : le verbe porte le radical et la terminaison du futur. Je formule un engagement avec la forme travaillée. Les deux futurs peuvent convenir dans de nombreux contextes ; la forme est imposée dans les exercices fermés. La distance temporelle seule ne suffit pas à exclure l’autre futur. Modèle : Je rentrerai avant vingt heures."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-qcm-verbe-a2-graines-atelier",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-qcm-verbe",
+          "position": 50,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Les participantes ___ les radis avant d’arroser.",
+        "cue": "Les participantes sont devant les bacs. Elles décident de semer les radis avant d’arroser. Employez le futur proche : aller au présent + infinitif.",
+        "givenVerb": "semer",
+        "answers": [
+          "vont semer"
+        ],
+        "options": [
+          {
+            "id": "graines-atelier-choix-1",
+            "text": "vont semer"
+          },
+          {
+            "id": "graines-atelier-choix-2",
+            "text": "vont sèmeront"
+          },
+          {
+            "id": "graines-atelier-choix-3",
+            "text": "sèmeront"
+          }
+        ],
+        "explanation": "Futur proche : aller au présent + infinitif. Futur simple : le verbe porte le radical et la terminaison du futur. Je présente une décision prise par le groupe au moment de la préparation. Les deux futurs peuvent convenir dans de nombreux contextes ; la forme est imposée dans les exercices fermés. La distance temporelle seule ne suffit pas à exclure l’autre futur. Modèle : Les participantes vont semer les radis avant d’arroser."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-qcm-verbe-a2-sirop-preparation",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-qcm-verbe",
+          "position": 51,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Samir ___ le sirop dans chaque bouteille.",
+        "cue": "Samir dispose des bouteilles et décide maintenant de verser le sirop dans chacune. Employez le futur proche : aller au présent + infinitif.",
+        "givenVerb": "verser",
+        "answers": [
+          "va verser"
+        ],
+        "options": [
+          {
+            "id": "sirop-preparation-choix-1",
+            "text": "va verser"
+          },
+          {
+            "id": "sirop-preparation-choix-2",
+            "text": "va versera"
+          },
+          {
+            "id": "sirop-preparation-choix-3",
+            "text": "versera"
+          }
+        ],
+        "explanation": "Futur proche : aller au présent + infinitif. Futur simple : le verbe porte le radical et la terminaison du futur. Je présente un projet décidé au moment de remplir les bouteilles. Les deux futurs peuvent convenir dans de nombreux contextes ; la forme est imposée dans les exercices fermés. La distance temporelle seule ne suffit pas à exclure l’autre futur. Modèle : Samir va verser le sirop dans chaque bouteille."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-qcm-verbe-a2-parc-apres-midi",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-qcm-verbe",
+          "position": 52,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Les enfants ___ leur partie de ballon.",
+        "cue": "Les enfants voient la pluie et décident ensemble de reporter leur partie de ballon. Employez le futur proche : aller au présent + infinitif.",
+        "givenVerb": "reporter",
+        "answers": [
+          "vont reporter"
+        ],
+        "options": [
+          {
+            "id": "parc-apres-midi-choix-1",
+            "text": "vont reporter"
+          },
+          {
+            "id": "parc-apres-midi-choix-2",
+            "text": "vont reporteront"
+          },
+          {
+            "id": "parc-apres-midi-choix-3",
+            "text": "reporteront"
+          }
+        ],
+        "explanation": "Futur proche : aller au présent + infinitif. Futur simple : le verbe porte le radical et la terminaison du futur. Je présente la décision que les enfants viennent de prendre. Les deux futurs peuvent convenir dans de nombreux contextes ; la forme est imposée dans les exercices fermés. La distance temporelle seule ne suffit pas à exclure l’autre futur. Modèle : Les enfants vont reporter leur partie de ballon."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-qcm-verbe-a2-bols-atelier",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-qcm-verbe",
+          "position": 53,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Nous ___ les bols avant la recette.",
+        "cue": "Vous décidez avec votre équipe de rincer les bols avant de commencer la recette. Employez le futur proche : aller au présent + infinitif.",
+        "givenVerb": "rincer",
+        "answers": [
+          "allons rincer"
+        ],
+        "options": [
+          {
+            "id": "bols-atelier-choix-1",
+            "text": "allons rincer"
+          },
+          {
+            "id": "bols-atelier-choix-2",
+            "text": "allons rincerons"
+          },
+          {
+            "id": "bols-atelier-choix-3",
+            "text": "rincerons"
+          }
+        ],
+        "explanation": "Futur proche : aller au présent + infinitif. Futur simple : le verbe porte le radical et la terminaison du futur. J’annonce une étape que le groupe vient de choisir. Les deux futurs peuvent convenir dans de nombreux contextes ; la forme est imposée dans les exercices fermés. La distance temporelle seule ne suffit pas à exclure l’autre futur. Modèle : Nous allons rincer les bols avant la recette."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-qcm-verbe-a2-appel-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-qcm-verbe",
+          "position": 54,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Tu ___ ton amie au sujet du menu.",
+        "cue": "La cantine a changé son menu. Tu décides d’appeler une amie qui doit y manger. Employez le futur proche : aller au présent + infinitif.",
+        "givenVerb": "appeler",
+        "answers": [
+          "vas appeler"
+        ],
+        "options": [
+          {
+            "id": "appel-cantine-choix-1",
+            "text": "vas appeler"
+          },
+          {
+            "id": "appel-cantine-choix-2",
+            "text": "vas appelleras"
+          },
+          {
+            "id": "appel-cantine-choix-3",
+            "text": "appelleras"
+          }
+        ],
+        "explanation": "Futur proche : aller au présent + infinitif. Futur simple : le verbe porte le radical et la terminaison du futur. J’annonce la décision prise après le changement du menu. Les deux futurs peuvent convenir dans de nombreux contextes ; la forme est imposée dans les exercices fermés. La distance temporelle seule ne suffit pas à exclure l’autre futur. Modèle : Tu vas appeler ton amie au sujet du menu."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-qcm-verbe-a2-plan-salon",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-qcm-verbe",
+          "position": 55,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Les bénévoles ___ le plan à l’entrée du salon.",
+        "cue": "Le bulletin du quartier annonce une version papier du plan pour le salon des associations. Employez le futur simple.",
+        "givenVerb": "distribuer",
+        "answers": [
+          "distribueront"
+        ],
+        "options": [
+          {
+            "id": "plan-salon-choix-1",
+            "text": "distribueront"
+          },
+          {
+            "id": "plan-salon-choix-2",
+            "text": "vont distribueront"
+          },
+          {
+            "id": "plan-salon-choix-3",
+            "text": "vont distribuer"
+          }
+        ],
+        "explanation": "Futur proche : aller au présent + infinitif. Futur simple : le verbe porte le radical et la terminaison du futur. Je présente une distribution comme un fait prévu dans le bulletin. Les deux futurs peuvent convenir dans de nombreux contextes ; la forme est imposée dans les exercices fermés. La distance temporelle seule ne suffit pas à exclure l’autre futur. Modèle : Les bénévoles distribueront le plan à l’entrée du salon."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-qcm-verbe-a2-poste-vacances",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-qcm-verbe",
+          "position": 56,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Le service postal ___ un nouveau guichet cet été.",
+        "cue": "Le journal interne annonce un nouveau guichet pour les vacances d’été. Employez le futur simple.",
+        "givenVerb": "ouvrir",
+        "answers": [
+          "ouvrira"
+        ],
+        "options": [
+          {
+            "id": "poste-vacances-choix-1",
+            "text": "ouvrira"
+          },
+          {
+            "id": "poste-vacances-choix-2",
+            "text": "va ouvrira"
+          },
+          {
+            "id": "poste-vacances-choix-3",
+            "text": "va ouvrir"
+          }
+        ],
+        "explanation": "Futur proche : aller au présent + infinitif. Futur simple : le verbe porte le radical et la terminaison du futur. Je reprends une annonce officielle pour l’été. Les deux futurs peuvent convenir dans de nombreux contextes ; la forme est imposée dans les exercices fermés. La distance temporelle seule ne suffit pas à exclure l’autre futur. Modèle : Le service postal ouvrira un nouveau guichet cet été."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-qcm-verbe-a2-maison-association",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-qcm-verbe",
+          "position": 57,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "L’association ___ la clé de la salle lundi.",
+        "cue": "Le compte rendu confirme qu’une association recevra une clé de la salle lundi. Employez le futur simple.",
+        "givenVerb": "recevoir",
+        "answers": [
+          "recevra"
+        ],
+        "options": [
+          {
+            "id": "maison-association-choix-1",
+            "text": "recevra"
+          },
+          {
+            "id": "maison-association-choix-2",
+            "text": "va recevra"
+          },
+          {
+            "id": "maison-association-choix-3",
+            "text": "va recevoir"
+          }
+        ],
+        "explanation": "Futur proche : aller au présent + infinitif. Futur simple : le verbe porte le radical et la terminaison du futur. J’annonce la remise comme un événement au programme. Les deux futurs peuvent convenir dans de nombreux contextes ; la forme est imposée dans les exercices fermés. La distance temporelle seule ne suffit pas à exclure l’autre futur. Modèle : L’association recevra la clé de la salle lundi."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-qcm-verbe-a2-histoire-radio",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-qcm-verbe",
+          "position": 58,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "La radio ___ son émission mardi à quatorze heures.",
+        "cue": "Une radio annonce une émission locale sur l’histoire du quartier, mardi à quatorze heures. Employez le futur simple.",
+        "givenVerb": "diffuser",
+        "answers": [
+          "diffusera"
+        ],
+        "options": [
+          {
+            "id": "histoire-radio-choix-1",
+            "text": "diffusera"
+          },
+          {
+            "id": "histoire-radio-choix-2",
+            "text": "va diffusera"
+          },
+          {
+            "id": "histoire-radio-choix-3",
+            "text": "va diffuser"
+          }
+        ],
+        "explanation": "Futur proche : aller au présent + infinitif. Futur simple : le verbe porte le radical et la terminaison du futur. Je reformule une annonce de programme. Les deux futurs peuvent convenir dans de nombreux contextes ; la forme est imposée dans les exercices fermés. La distance temporelle seule ne suffit pas à exclure l’autre futur. Modèle : La radio diffusera son émission mardi à quatorze heures."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-qcm-verbe-a2-bacs-compost",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-qcm-verbe",
+          "position": 59,
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Les agents ___ deux bacs de compost à l’automne.",
+        "cue": "La mairie planifie l’installation de deux bacs près du terrain de jeu à l’automne. Employez le futur simple.",
+        "givenVerb": "poser",
+        "answers": [
+          "poseront"
+        ],
+        "options": [
+          {
+            "id": "bacs-compost-choix-1",
+            "text": "poseront"
+          },
+          {
+            "id": "bacs-compost-choix-2",
+            "text": "vont poseront"
+          },
+          {
+            "id": "bacs-compost-choix-3",
+            "text": "vont poser"
+          }
+        ],
+        "explanation": "Futur proche : aller au présent + infinitif. Futur simple : le verbe porte le radical et la terminaison du futur. J’annonce un fait prévu dans le programme de la mairie. Les deux futurs peuvent convenir dans de nombreux contextes ; la forme est imposée dans les exercices fermés. La distance temporelle seule ne suffit pas à exclure l’autre futur. Modèle : Les agents poseront deux bacs de compost à l’automne."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "avenir-2026-11-24-v1",
+    "revision": "avenir-2026-11-27-v2",
     "activityId": "gram-ex-futur-proche-ou-simple-curriculum-c",
     "subthemeId": "futur-proche-ou-simple",
     "topic": "gram-avenir",
@@ -1588,7 +1898,7 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-24",
+      "date": "2026-11-27",
       "humanReview": "pending",
       "note": "Sources et références relues. Situations partagées entre mécaniques ; documents adaptés avec faits explicites. Modèles ouverts non exclusifs. Aucune approbation enseignante déclarée."
     },
@@ -2748,6 +3058,236 @@
         },
         "responseLines": 2,
         "explanation": "Futur proche : aller au présent + infinitif. Futur simple : le verbe porte le radical et la terminaison du futur. Je formule un engagement avec la forme travaillée. Les deux futurs peuvent convenir dans de nombreux contextes ; la forme est imposée dans les exercices fermés. La distance temporelle seule ne suffit pas à exclure l’autre futur. Modèle : Je rentrerai avant vingt heures."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-curriculum-c-a2-graines-atelier",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-curriculum-c",
+          "position": 50,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Les participantes vont sèmeront les radis avant d’arroser.",
+        "cue": "Les participantes sont devant les bacs. Elles décident de semer les radis avant d’arroser. Employez le futur proche : aller au présent + infinitif.",
+        "answers": [
+          "Les participantes vont semer les radis avant d’arroser."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 18,
+          "end": 31,
+          "text": "vont sèmeront"
+        },
+        "responseLines": 2,
+        "explanation": "Futur proche : aller au présent + infinitif. Futur simple : le verbe porte le radical et la terminaison du futur. Je présente une décision prise par le groupe au moment de la préparation. Les deux futurs peuvent convenir dans de nombreux contextes ; la forme est imposée dans les exercices fermés. La distance temporelle seule ne suffit pas à exclure l’autre futur. Modèle : Les participantes vont semer les radis avant d’arroser."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-curriculum-c-a2-sirop-preparation",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-curriculum-c",
+          "position": 51,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Samir va versera le sirop dans chaque bouteille.",
+        "cue": "Samir dispose des bouteilles et décide maintenant de verser le sirop dans chacune. Employez le futur proche : aller au présent + infinitif.",
+        "answers": [
+          "Samir va verser le sirop dans chaque bouteille."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 6,
+          "end": 16,
+          "text": "va versera"
+        },
+        "responseLines": 2,
+        "explanation": "Futur proche : aller au présent + infinitif. Futur simple : le verbe porte le radical et la terminaison du futur. Je présente un projet décidé au moment de remplir les bouteilles. Les deux futurs peuvent convenir dans de nombreux contextes ; la forme est imposée dans les exercices fermés. La distance temporelle seule ne suffit pas à exclure l’autre futur. Modèle : Samir va verser le sirop dans chaque bouteille."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-curriculum-c-a2-parc-apres-midi",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-curriculum-c",
+          "position": 52,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Les enfants vont reporteront leur partie de ballon.",
+        "cue": "Les enfants voient la pluie et décident ensemble de reporter leur partie de ballon. Employez le futur proche : aller au présent + infinitif.",
+        "answers": [
+          "Les enfants vont reporter leur partie de ballon."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 12,
+          "end": 28,
+          "text": "vont reporteront"
+        },
+        "responseLines": 2,
+        "explanation": "Futur proche : aller au présent + infinitif. Futur simple : le verbe porte le radical et la terminaison du futur. Je présente la décision que les enfants viennent de prendre. Les deux futurs peuvent convenir dans de nombreux contextes ; la forme est imposée dans les exercices fermés. La distance temporelle seule ne suffit pas à exclure l’autre futur. Modèle : Les enfants vont reporter leur partie de ballon."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-curriculum-c-a2-bols-atelier",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-curriculum-c",
+          "position": 53,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Nous allons rincerons les bols avant la recette.",
+        "cue": "Vous décidez avec votre équipe de rincer les bols avant de commencer la recette. Employez le futur proche : aller au présent + infinitif.",
+        "answers": [
+          "Nous allons rincer les bols avant la recette."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 5,
+          "end": 21,
+          "text": "allons rincerons"
+        },
+        "responseLines": 2,
+        "explanation": "Futur proche : aller au présent + infinitif. Futur simple : le verbe porte le radical et la terminaison du futur. J’annonce une étape que le groupe vient de choisir. Les deux futurs peuvent convenir dans de nombreux contextes ; la forme est imposée dans les exercices fermés. La distance temporelle seule ne suffit pas à exclure l’autre futur. Modèle : Nous allons rincer les bols avant la recette."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-curriculum-c-a2-appel-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-curriculum-c",
+          "position": 54,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Tu vas appelleras ton amie au sujet du menu.",
+        "cue": "La cantine a changé son menu. Tu décides d’appeler une amie qui doit y manger. Employez le futur proche : aller au présent + infinitif.",
+        "answers": [
+          "Tu vas appeler ton amie au sujet du menu."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 3,
+          "end": 17,
+          "text": "vas appelleras"
+        },
+        "responseLines": 2,
+        "explanation": "Futur proche : aller au présent + infinitif. Futur simple : le verbe porte le radical et la terminaison du futur. J’annonce la décision prise après le changement du menu. Les deux futurs peuvent convenir dans de nombreux contextes ; la forme est imposée dans les exercices fermés. La distance temporelle seule ne suffit pas à exclure l’autre futur. Modèle : Tu vas appeler ton amie au sujet du menu."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-curriculum-c-a2-plan-salon",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-curriculum-c",
+          "position": 55,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Les bénévoles vont distribueront le plan à l’entrée du salon.",
+        "cue": "Le bulletin du quartier annonce une version papier du plan pour le salon des associations. Employez le futur simple.",
+        "answers": [
+          "Les bénévoles distribueront le plan à l’entrée du salon."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 14,
+          "end": 32,
+          "text": "vont distribueront"
+        },
+        "responseLines": 2,
+        "explanation": "Futur proche : aller au présent + infinitif. Futur simple : le verbe porte le radical et la terminaison du futur. Je présente une distribution comme un fait prévu dans le bulletin. Les deux futurs peuvent convenir dans de nombreux contextes ; la forme est imposée dans les exercices fermés. La distance temporelle seule ne suffit pas à exclure l’autre futur. Modèle : Les bénévoles distribueront le plan à l’entrée du salon."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-curriculum-c-a2-poste-vacances",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-curriculum-c",
+          "position": 56,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Le service postal va ouvrira un nouveau guichet cet été.",
+        "cue": "Le journal interne annonce un nouveau guichet pour les vacances d’été. Employez le futur simple.",
+        "answers": [
+          "Le service postal ouvrira un nouveau guichet cet été."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 18,
+          "end": 28,
+          "text": "va ouvrira"
+        },
+        "responseLines": 2,
+        "explanation": "Futur proche : aller au présent + infinitif. Futur simple : le verbe porte le radical et la terminaison du futur. Je reprends une annonce officielle pour l’été. Les deux futurs peuvent convenir dans de nombreux contextes ; la forme est imposée dans les exercices fermés. La distance temporelle seule ne suffit pas à exclure l’autre futur. Modèle : Le service postal ouvrira un nouveau guichet cet été."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-curriculum-c-a2-maison-association",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-curriculum-c",
+          "position": 57,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "L’association va recevra la clé de la salle lundi.",
+        "cue": "Le compte rendu confirme qu’une association recevra une clé de la salle lundi. Employez le futur simple.",
+        "answers": [
+          "L’association recevra la clé de la salle lundi."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 14,
+          "end": 24,
+          "text": "va recevra"
+        },
+        "responseLines": 2,
+        "explanation": "Futur proche : aller au présent + infinitif. Futur simple : le verbe porte le radical et la terminaison du futur. J’annonce la remise comme un événement au programme. Les deux futurs peuvent convenir dans de nombreux contextes ; la forme est imposée dans les exercices fermés. La distance temporelle seule ne suffit pas à exclure l’autre futur. Modèle : L’association recevra la clé de la salle lundi."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-curriculum-c-a2-histoire-radio",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-curriculum-c",
+          "position": 58,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "La radio va diffusera son émission mardi à quatorze heures.",
+        "cue": "Une radio annonce une émission locale sur l’histoire du quartier, mardi à quatorze heures. Employez le futur simple.",
+        "answers": [
+          "La radio diffusera son émission mardi à quatorze heures."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 9,
+          "end": 21,
+          "text": "va diffusera"
+        },
+        "responseLines": 2,
+        "explanation": "Futur proche : aller au présent + infinitif. Futur simple : le verbe porte le radical et la terminaison du futur. Je reformule une annonce de programme. Les deux futurs peuvent convenir dans de nombreux contextes ; la forme est imposée dans les exercices fermés. La distance temporelle seule ne suffit pas à exclure l’autre futur. Modèle : La radio diffusera son émission mardi à quatorze heures."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-curriculum-c-a2-bacs-compost",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-curriculum-c",
+          "position": 59,
+          "partition": "a2"
+        },
+        "kind": "correct",
+        "prompt": "Les agents vont poseront deux bacs de compost à l’automne.",
+        "cue": "La mairie planifie l’installation de deux bacs près du terrain de jeu à l’automne. Employez le futur simple.",
+        "answers": [
+          "Les agents poseront deux bacs de compost à l’automne."
+        ],
+        "error": {
+          "segmentId": "prompt",
+          "start": 11,
+          "end": 24,
+          "text": "vont poseront"
+        },
+        "responseLines": 2,
+        "explanation": "Futur proche : aller au présent + infinitif. Futur simple : le verbe porte le radical et la terminaison du futur. J’annonce un fait prévu dans le programme de la mairie. Les deux futurs peuvent convenir dans de nombreux contextes ; la forme est imposée dans les exercices fermés. La distance temporelle seule ne suffit pas à exclure l’autre futur. Modèle : Les agents poseront deux bacs de compost à l’automne."
       }
     ]
   },
@@ -4398,7 +4938,7 @@
   },
   {
     "schemaVersion": 1,
-    "revision": "avenir-2026-11-24-v1",
+    "revision": "avenir-2026-11-27-v2",
     "activityId": "gram-ex-futur-proche-ou-simple-curriculum-p",
     "subthemeId": "futur-proche-ou-simple",
     "topic": "gram-avenir",
@@ -4408,7 +4948,7 @@
     "editorialStatus": "reviewed",
     "review": {
       "reviewer": "Codex — revue linguistique et fonctionnelle",
-      "date": "2026-11-24",
+      "date": "2026-11-27",
       "humanReview": "pending",
       "note": "Sources et références relues. Situations partagées entre mécaniques ; documents adaptés avec faits explicites. Modèles ouverts non exclusifs. Aucune approbation enseignante déclarée."
     },
@@ -6052,6 +6592,336 @@
           "Je vais rentrer avant vingt heures.\nJustification possible : j’annonce le même fait comme prévu.\nRéponse à la relance : À la maison."
         ],
         "task": "Annoncez le fait avec le futur de votre choix. Justifiez votre choix. Puis répondez à la relance : « Où rentrerez-vous ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Futur bien formé et justification pertinente du choix."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Les deux futurs sont recevables ici si la justification respecte les faits."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-curriculum-p-a2-graines-atelier",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-curriculum-p",
+          "position": 50,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Les participantes sont devant les bacs. Elles décident de semer les radis avant d’arroser.",
+        "answers": [
+          "Les participantes vont semer les radis avant d’arroser.\nJustification possible : Je présente une décision prise par le groupe au moment de la préparation.\nRéponse à la relance : Elles arroseront.",
+          "Les participantes sèmeront les radis avant d’arroser.\nJustification possible : j’annonce le même fait comme prévu.\nRéponse à la relance : Elles arroseront."
+        ],
+        "task": "Annoncez le fait avec le futur de votre choix. Justifiez votre choix. Puis répondez à la relance : « Que feront-elles après le semis ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Futur bien formé et justification pertinente du choix."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Les deux futurs sont recevables ici si la justification respecte les faits."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-curriculum-p-a2-sirop-preparation",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-curriculum-p",
+          "position": 51,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Samir dispose des bouteilles et décide maintenant de verser le sirop dans chacune.",
+        "answers": [
+          "Samir va verser le sirop dans chaque bouteille.\nJustification possible : Je présente un projet décidé au moment de remplir les bouteilles.\nRéponse à la relance : Du sirop.",
+          "Samir versera le sirop dans chaque bouteille.\nJustification possible : j’annonce le même fait comme prévu.\nRéponse à la relance : Du sirop."
+        ],
+        "task": "Annoncez le fait avec le futur de votre choix. Justifiez votre choix. Puis répondez à la relance : « Que mettra-t-il dans les bouteilles ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Futur bien formé et justification pertinente du choix."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Les deux futurs sont recevables ici si la justification respecte les faits."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-curriculum-p-a2-parc-apres-midi",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-curriculum-p",
+          "position": 52,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Les enfants voient la pluie et décident ensemble de reporter leur partie de ballon.",
+        "answers": [
+          "Les enfants vont reporter leur partie de ballon.\nJustification possible : Je présente la décision que les enfants viennent de prendre.\nRéponse à la relance : Il pleut.",
+          "Les enfants reporteront leur partie de ballon.\nJustification possible : j’annonce le même fait comme prévu.\nRéponse à la relance : Il pleut."
+        ],
+        "task": "Annoncez le fait avec le futur de votre choix. Justifiez votre choix. Puis répondez à la relance : « Pour quelle raison ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Futur bien formé et justification pertinente du choix."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Les deux futurs sont recevables ici si la justification respecte les faits."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-curriculum-p-a2-bols-atelier",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-curriculum-p",
+          "position": 53,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Vous décidez avec votre équipe de rincer les bols avant de commencer la recette.",
+        "answers": [
+          "Nous allons rincer les bols avant la recette.\nJustification possible : J’annonce une étape que le groupe vient de choisir.\nRéponse à la relance : Les bols.",
+          "Nous rincerons les bols avant la recette.\nJustification possible : j’annonce le même fait comme prévu.\nRéponse à la relance : Les bols."
+        ],
+        "task": "Annoncez le fait avec le futur de votre choix. Justifiez votre choix. Puis répondez à la relance : « Quel matériel préparez-vous ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Futur bien formé et justification pertinente du choix."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Les deux futurs sont recevables ici si la justification respecte les faits."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-curriculum-p-a2-appel-cantine",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-curriculum-p",
+          "position": 54,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "La cantine a changé son menu. Tu décides d’appeler une amie qui doit y manger.",
+        "answers": [
+          "Tu vas appeler ton amie au sujet du menu.\nJustification possible : J’annonce la décision prise après le changement du menu.\nRéponse à la relance : Le menu de la cantine.",
+          "Tu appelleras ton amie au sujet du menu.\nJustification possible : j’annonce le même fait comme prévu.\nRéponse à la relance : Le menu de la cantine."
+        ],
+        "task": "Annoncez le fait avec le futur de votre choix. Justifiez votre choix. Puis répondez à la relance : « Qu’est-ce qui a changé ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Futur bien formé et justification pertinente du choix."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Les deux futurs sont recevables ici si la justification respecte les faits."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-curriculum-p-a2-plan-salon",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-curriculum-p",
+          "position": 55,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le bulletin du quartier annonce une version papier du plan pour le salon des associations.",
+        "answers": [
+          "Les bénévoles distribueront le plan à l’entrée du salon.\nJustification possible : Je présente une distribution comme un fait prévu dans le bulletin.\nRéponse à la relance : À l’entrée du salon.",
+          "Les bénévoles vont distribuer le plan à l’entrée du salon.\nJustification possible : j’annonce le même fait comme prévu.\nRéponse à la relance : À l’entrée du salon."
+        ],
+        "task": "Annoncez le fait avec le futur de votre choix. Justifiez votre choix. Puis répondez à la relance : « Où trouver le plan ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Futur bien formé et justification pertinente du choix."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Les deux futurs sont recevables ici si la justification respecte les faits."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-curriculum-p-a2-poste-vacances",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-curriculum-p",
+          "position": 56,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le journal interne annonce un nouveau guichet pour les vacances d’été.",
+        "answers": [
+          "Le service postal ouvrira un nouveau guichet cet été.\nJustification possible : Je reprends une annonce officielle pour l’été.\nRéponse à la relance : Pendant les vacances d’été.",
+          "Le service postal va ouvrir un nouveau guichet cet été.\nJustification possible : j’annonce le même fait comme prévu.\nRéponse à la relance : Pendant les vacances d’été."
+        ],
+        "task": "Annoncez le fait avec le futur de votre choix. Justifiez votre choix. Puis répondez à la relance : « À quelle période ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Futur bien formé et justification pertinente du choix."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Les deux futurs sont recevables ici si la justification respecte les faits."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-curriculum-p-a2-maison-association",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-curriculum-p",
+          "position": 57,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Le compte rendu confirme qu’une association recevra une clé de la salle lundi.",
+        "answers": [
+          "L’association recevra la clé de la salle lundi.\nJustification possible : J’annonce la remise comme un événement au programme.\nRéponse à la relance : Lundi.",
+          "L’association va recevoir la clé de la salle lundi.\nJustification possible : j’annonce le même fait comme prévu.\nRéponse à la relance : Lundi."
+        ],
+        "task": "Annoncez le fait avec le futur de votre choix. Justifiez votre choix. Puis répondez à la relance : « Quel jour la clé sera-t-elle remise ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Futur bien formé et justification pertinente du choix."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Les deux futurs sont recevables ici si la justification respecte les faits."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-curriculum-p-a2-histoire-radio",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-curriculum-p",
+          "position": 58,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "Une radio annonce une émission locale sur l’histoire du quartier, mardi à quatorze heures.",
+        "answers": [
+          "La radio diffusera son émission mardi à quatorze heures.\nJustification possible : Je reformule une annonce de programme.\nRéponse à la relance : L’histoire du quartier.",
+          "La radio va diffuser son émission mardi à quatorze heures.\nJustification possible : j’annonce le même fait comme prévu.\nRéponse à la relance : L’histoire du quartier."
+        ],
+        "task": "Annoncez le fait avec le futur de votre choix. Justifiez votre choix. Puis répondez à la relance : « Quel sera le sujet ? »",
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et ordre des événements conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Futur bien formé et justification pertinente du choix."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse compréhensible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Modèle non exclusif ; les reformulations grammaticales fidèles aux faits et à la consigne sont recevables. Les deux futurs sont recevables ici si la justification respecte les faits."
+      },
+      {
+        "id": "gram-ex-futur-proche-ou-simple-curriculum-p-a2-bacs-compost",
+        "source": {
+          "path": "scripts/grammar_curriculum/avenir-futur-proche-ou-simple-a2.tsv",
+          "typeId": "gram-ex-futur-proche-ou-simple-curriculum-p",
+          "position": 59,
+          "partition": "a2"
+        },
+        "kind": "production",
+        "mode": "oral",
+        "prompt": "La mairie planifie l’installation de deux bacs près du terrain de jeu à l’automne.",
+        "answers": [
+          "Les agents poseront deux bacs de compost à l’automne.\nJustification possible : J’annonce un fait prévu dans le programme de la mairie.\nRéponse à la relance : Près du terrain de jeu.",
+          "Les agents vont poser deux bacs de compost à l’automne.\nJustification possible : j’annonce le même fait comme prévu.\nRéponse à la relance : Près du terrain de jeu."
+        ],
+        "task": "Annoncez le fait avec le futur de votre choix. Justifiez votre choix. Puis répondez à la relance : « À quel endroit ? »",
         "writeLines": 0,
         "rubric": [
           {

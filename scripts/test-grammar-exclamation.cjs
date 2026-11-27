@@ -12,8 +12,9 @@ const banks=GRAMMAR_PILOT_BANKS.filter(b=>b.subthemeId==='c4')
 const source=level=>fs.readFileSync(root+'/scripts/grammar_curriculum/exclamation-'+level.toLowerCase()+'.tsv','utf8').trim().split('\n').filter(l=>!l.startsWith('#')).map(l=>l.split('|'))
 const input=pages=>({pages,seed:839,institutional:{},evalMode:false,pointsPerQuestion:1,libreMode:false,libreSnapshot:null})
 assert.equal(banks.length,7);assert.equal(banks.reduce((n,b)=>n+b.presentations.length,0),9)
-assert.equal(banks.reduce((n,b)=>n+b.units.length,0),350)
-assert.equal(banks.reduce((n,b)=>n+b.units.length*b.presentations.length,0),450)
+assert(banks.every(bank=>bank.units.length===60))
+assert.equal(banks.reduce((n,b)=>n+b.units.length,0),420)
+assert.equal(banks.reduce((n,b)=>n+b.units.length*b.presentations.length,0),540)
 const types=buildGrammairePracticeTypes().filter(t=>t.topic==='gram-exclamation');assert.equal(types.length,5)
 for(const b of banks){
  assert.equal(resolveGramSubthemeAll(b.topic,b.activityId).id,'c4')
@@ -21,12 +22,13 @@ for(const b of banks){
  for(const presentation of b.presentations){
   const cfg={domain:'grammaire',topic:b.topic,exerciseType:b.activityId,difficulty:'facile',columns:1,count:50,...defaultGrammarPilot(b.activityId),grammarLevel:b.level,grammarPresentation:presentation,grammarBankRevision:b.revision}
   const s=generateGrammarSelection(cfg,839);assert(isGrammarSnapshot(s));assert.deepEqual(generateGrammarSelection(cfg,839),s)
+  assert(s.questions.some(question=>question.unit.source.position>=50))
   const recipe=buildFicheRecipe(input([cfg]));assert(parseFicheRecipe(JSON.parse(JSON.stringify(recipe))))
   const game=convertRecipe(recipe);assert.equal(game.questions.length,50);assert(game.questions.every(q=>!('answer' in q)&&!('model' in q)&&!('correctId' in q)))
   if(presentation!=='choice')assert(game.questions.every(q=>q.compatibility==='teacher-led'))
   if(presentation==='gap')assert(Object.values(game.corrections).every(c=>!c.text.includes('___')),'Revealed examples must be complete sentences')
   if(presentation==='gap'&&b.level==='A2'){
-   const models=Object.values(game.corrections).map(c=>c.text).join('\n');assert(models.includes('Qu’il fait froid !'));assert(!/Qu’\s+(?:il|elle|ils|elles|on)\b/u.test(models))
+   const models=Object.values(game.corrections).map(c=>c.text).join('\n');assert.match(models,/Qu’(?:il|elle|ils|elles|on)\b/u);assert(!/Qu’\s+(?:il|elle|ils|elles|on)\b/u.test(models))
   }
  }
  for(const u of b.units){
@@ -39,7 +41,7 @@ for(const b of banks){
  }
 }
 const a1=banks.find(b=>b.level==='A1'&&b.presentations.includes('choice'))
-assert.deepEqual(Object.fromEntries(['Quel','Quelle','Quels','Quelles'].map(form=>[form,a1.units.filter(u=>u.answers[0]===form).length])),{Quel:13,Quelle:13,Quels:12,Quelles:12})
+assert.deepEqual(Object.fromEntries(['Quel','Quelle','Quels','Quelles'].map(form=>[form,a1.units.filter(u=>u.answers[0]===form).length])),{Quel:16,Quelle:16,Quels:14,Quelles:14})
 const order=banks.find(b=>b.presentations.includes('order'))
 for(const u of order.units){assert.equal(u.tokens.map(t=>t.text).join(' ')+' !',u.answers[0]);assert.deepEqual(u.tokens.map(t=>t.category),['determinant','adjectif','nom'])}
 const correction=banks.find(b=>b.presentations.includes('correct')),rows=source('A2')
@@ -59,4 +61,4 @@ assert.deepEqual(cases.map(hasRetiredGrammarRecipe),[true,true,true,false,false,
 const sql=fs.readFileSync(root+'/api/fiches/maintenance/purge-retired-grammar.sql','utf8')
 const python="import json,sqlite3,sys\nx=json.load(sys.stdin);d=sqlite3.connect(':memory:');d.execute('CREATE TABLE fiches (id TEXT, recipe TEXT)');d.executemany('INSERT INTO fiches VALUES (?, ?)',[(str(i),json.dumps(r)) for i,r in enumerate(x['cases'])]);d.executescript(x['sql']);print(json.dumps([r[0] for r in d.execute('SELECT id FROM fiches ORDER BY id')]))"
 assert.deepEqual(JSON.parse(cp.execFileSync('python3',['-c',python],{input:JSON.stringify({cases,sql}),encoding:'utf8'})),['3','4','5','6'])
-console.log(JSON.stringify({status:'passed',banks:7,offerings:9,units:350,variants:450,sourceScenes:100,retirement:'app and D1 query agree',levels:['A1','A2']}))
+console.log(JSON.stringify({status:'passed',banks:7,offerings:9,units:420,variants:540,sourceScenes:120,retirement:'app and D1 query agree',levels:['A1','A2']}))

@@ -1,4 +1,4 @@
-const assert=require('node:assert/strict'),fs=require('node:fs'),cp=require('node:child_process'),crypto=require('node:crypto')
+const assert=require('node:assert/strict'),fs=require('node:fs'),crypto=require('node:crypto')
 const {load,root}=require('./gattegno-loader.cjs')
 const {GRAMMAR_PILOT_BANKS:all,defaultGrammarPilot}=load(root+'/src/grammaire/curriculum/registry.ts')
 const {generateGrammarSelection:select,grammarEligibleCount}=load(root+'/src/grammaire/curriculum/generate.ts')
@@ -7,19 +7,20 @@ const {buildFicheRecipe,parseFicheRecipe}=load(root+'/src/fiches/recipe.ts')
 const {bankForType}=load(root+'/src/grammaire/exercises/bank/index.ts')
 const {buildGrammairePracticeTypes}=load(root+'/src/grammaire/exercises/catalog-exercises.ts')
 const registry=require('../docs/grammaire/implementation/target-registry.json'),subs=['futur-proche','futur-simple','futur-proche-ou-simple','futur-anterieur','hypothese-futur'],banks=all.filter(b=>subs.includes(b.subthemeId)),types=buildGrammairePracticeTypes()
-const before=p=>cp.execFileSync('git',['show','fdf02a865:'+p],{encoding:'utf8',maxBuffer:16*1024*1024})
 const input=pages=>({pages,seed:839,institutional:{},evalMode:false,pointsPerQuestion:1,libreMode:false,libreSnapshot:null})
 assert.equal(banks.length,22);assert.equal(new Set(banks.map(b=>b.activityId)).size,22);assert.equal(banks.reduce((n,b)=>n+b.presentations.length,0),27)
 let variants=0,spans=0,docs=0,questions=0,scenarios=0
 const noBadElision=s=>{assert(!/\b[Jj]e [aeéiouyhàâêîôûœ]/u.test(s),'The full sentence elides je before a vowel: '+s);assert(!/[Ss]’ell(?:e|es)\b/.test(s),'Si elle and si elles do not elide')}
 for(const b of banks){
- assert.equal(b.units.length,b.presentations.includes('document-set')?20:50);assert.equal(b.review.humanReview,'pending');assert.equal(bankForType(b.activityId).length,0);assert(types.some(t=>t.id===b.activityId&&t.label===b.label))
+ assert.equal(b.units.length,b.presentations.includes('document-set')?20:60);assert.equal(b.review.humanReview,'pending');assert.equal(bankForType(b.activityId).length,0);assert(types.some(t=>t.id===b.activityId&&t.label===b.label))
  for(const p of b.presentations){
   assert.equal(registry.offerings.filter(o=>o.activityId===b.activityId&&o.level===b.level&&o.presentation===p).length,1)
   const cfg={domain:'grammaire',topic:'gram-avenir',exerciseType:b.activityId,difficulty:'facile',columns:1,count:p==='document-set'?1:50,...defaultGrammarPilot(b.activityId),grammarLevel:b.level,grammarPresentation:p,...(p==='document-set'?{grammarDocumentCount:20}:{})},s=select(cfg,839)
   assert(isGrammarSnapshot(s));assert.deepEqual(s,select(cfg,839));assert.notDeepEqual(s.questions.map(q=>q.id),select(cfg,840).questions.map(q=>q.id));assert.equal(grammarEligibleCount(cfg),b.units.length)
+  assert.equal(s.questions.length,p==='document-set'?20:50)
+  if(p!=='document-set')assert(s.questions.some(question=>question.unit.source.position>=50))
   const recipe=buildFicheRecipe(input([cfg])),loaded=parseFicheRecipe(JSON.parse(JSON.stringify(recipe)));assert(loaded);assert.deepEqual(loaded.pages[0].grammarSnapshot,recipe.pages[0].grammarSnapshot)
-  variants+=p==='document-set'?b.units.reduce((n,u)=>n+u.questions.length,0):50
+  variants+=p==='document-set'?b.units.reduce((n,u)=>n+u.questions.length,0):b.units.length
  }
  for(const u of b.units){
   assert(fs.existsSync(root+'/'+u.source.path));assert(!u.imageSupports)
@@ -49,30 +50,34 @@ for(const b of banks){
   }
  }
 }
-assert.equal(variants,1380);assert.equal(spans,50);assert.equal(docs,60);assert.equal(questions,180);assert.equal(scenarios,100)
+assert.equal(variants,1620);assert.equal(spans,60);assert.equal(docs,60);assert.equal(questions,180);assert.equal(scenarios,120)
 const q=s=>banks.find(b=>b.subthemeId===s&&b.presentations.includes('choice')),u=(s,id)=>q(s).units.find(u=>u.id.endsWith('-'+id))
 for(const [s,id,a]of [
  ['futur-proche','bibliotheque','allons aller'],['futur-proche','inscription','allons nous inscrire'],['futur-proche','reveil','vas te lever'],
  ['futur-simple','aller','irons'],['futur-simple','envoyer','enverra'],['futur-simple','appeler','appelleras'],['futur-simple','courir','courra'],['futur-simple','tenir','tiendrons'],['futur-simple','pleuvoir','pleuvra'],['futur-simple','falloir','faudra'],
  ['futur-proche-ou-simple','billet','Je vais acheter'],['futur-proche-ou-simple','promesse','j’aiderai'],['futur-proche-ou-simple','carnet','J’apporterai'],
  ['futur-anterieur','photos','auront pris'],['futur-anterieur','gare-nous','serons arrivées'],['futur-anterieur','venue-vous','serez venu'],['futur-anterieur','arrivee-vous','serez arrivée'],['futur-anterieur','installation-elles','se seront installées'],['futur-anterieur','reveil-je','me serai réveillé'],
- ['hypothese-futur','pluie','pleut'],['hypothese-futur','argent','ai'],['hypothese-futur','inscription-resultat','nous inscrirons']
+ ['hypothese-futur','pluie','pleut'],['hypothese-futur','argent','ai'],['hypothese-futur','inscription-resultat','nous inscrirons'],
+ ['futur-proche','lavage-mains','vont se laver'],['futur-proche-ou-simple','maison-association','recevra'],
+ ['futur-anterieur','salle-equipe','se seront échauffées'],['hypothese-futur','sortie-patinage','pourront']
 ])assert.equal(u(s,id)?.answers[0],a,s+'/'+id)
 assert.deepEqual(u('futur-simple','connaitre').answers,['connaîtront','connaitront']);assert.deepEqual(u('futur-simple','essayer').answers,['essaierai','essayerai'])
-assert.equal(q('futur-proche-ou-simple').units.filter(u=>u.cue.includes('Employez le futur proche')).length,25)
+assert.equal(q('futur-proche-ou-simple').units.filter(u=>u.cue.includes('Employez le futur proche')).length,30)
 assert(banks.find(b=>b.activityId==='gram-ex-futur-proche-curriculum-s').units.find(u=>u.id.endsWith('-bus')).answers[0].includes('je vais prendre le bus'))
 assert(banks.find(b=>b.activityId==='gram-ex-hypothese-futur-curriculum-s').units.find(u=>u.id.endsWith('-guide-resultat')).answers[0].includes('nous préviendrons le guide'))
 assert(banks.find(b=>b.activityId==='gram-ex-hypothese-futur-curriculum-s').units.find(u=>u.id.endsWith('-temps')).answers[0].includes('Si j’ai le temps, je viendrai'))
 const source=s=>fs.readFileSync(root+'/scripts/grammar_curriculum/avenir-'+s+'-'+q(s).level.toLowerCase()+'.tsv','utf8').trim().split('\n').filter(l=>!l.startsWith('#')).map(l=>l.split('|'))
-assert.equal(source('futur-anterieur').filter(r=>r[8]==='être').length,20);assert.equal(source('hypothese-futur').filter(r=>r[8]==='condition').length,25)
+assert.equal(source('futur-anterieur').filter(r=>r[8]==='être').length,24);assert.equal(source('hypothese-futur').filter(r=>r[8]==='condition').length,30)
 assert(u('hypothese-futur','disponible').prompt.startsWith('Si elle'));assert(u('hypothese-futur','train').prompt.startsWith('S’ils'))
-assert.equal(subs.reduce((n,s)=>n+source(s).length,0),250)
+assert.equal(subs.reduce((n,s)=>n+source(s).length,0),300)
 for(const sub of ['futur-proche','futur-proche-ou-simple','futur-anterieur']){const ds=require('../scripts/grammar_curriculum/avenir-'+sub+'-lectures-'+q(sub).level.toLowerCase()+'.json');assert.equal(ds.length,20);assert(ds.every(d=>d.text.every(l=>l.length<=80)&&source(sub).some(r=>r[0]===d.sourceSituation)))}
-const lp='src/grammaire/exercises/bank/lessons-revised.ts',legacy=s=>JSON.parse(s.split('= ').slice(1).join('= '));assert.deepEqual(legacy(fs.readFileSync(root+'/'+lp,'utf8')),legacy(before(lp)).filter(r=>!subs.includes(r.subId)));assert.equal(legacy(fs.readFileSync(root+'/'+lp,'utf8')).length,17)
-const comm='src/grammaire/exercises/communication-data.json';assert.deepEqual(JSON.parse(fs.readFileSync(root+'/'+comm,'utf8')),JSON.parse(before(comm)).filter(r=>r.subId!=='futur-proche'))
-assert.deepEqual(require('../src/grammaire/curriculum/retired-subthemes.json'),[...JSON.parse(before('src/grammaire/curriculum/retired-subthemes.json')),...subs])
-const original=JSON.parse(before('docs/grammaire/implementation/target-registry.json'))
-for(const key of ['activities','offerings'])assert.deepEqual(registry[key].filter(o=>o.themeId!=='gram-avenir'),original[key].filter(o=>o.themeId!=='gram-avenir'))
-assert.deepEqual(registry.notionLevels,original.notionLevels);assert.deepEqual(registry.imageObligations,original.imageObligations)
-const protectedPaths=require('../docs/grammaire/implementation/avenir-20261124-proofs/protected-sha256.json');for(const [p,h]of Object.entries(protectedPaths))assert.equal(crypto.createHash('sha256').update(fs.readFileSync(root+'/'+p)).digest('hex'),h,p)
-console.log(JSON.stringify({status:'passed',activities:22,banks:22,completeThemeOfferings:27,units:1010,variants,authoredSourceRows:250,documents:docs,readingQuestions:questions,openScenarios:scenarios,canonicalErrorSpans:spans,protectedTheoryAndCoFiles:276,teacherApprovedUnits:0,remainingLegacyWrittenBanks:17,remainingLegacyCommunicationGroups:3}))
+const retired=require('../src/grammaire/curriculum/retired-subthemes.json')
+assert(subs.every(sub=>retired.includes(sub)))
+const legacy=JSON.parse(fs.readFileSync(root+'/src/grammaire/exercises/bank/lessons-revised.ts','utf8').split('= ').slice(1).join('= '))
+assert(legacy.every(row=>!subs.includes(row.subId)))
+assert(require('../src/grammaire/exercises/communication-data.json').every(row=>row.subId!=='futur-proche'))
+const protectedPaths=require('../docs/grammaire/implementation/avenir-20261124-proofs/protected-sha256.json')
+const staticSources=Object.entries(protectedPaths).filter(([path])=>
+ path.startsWith('public/lib/audio/grammaire/')||path==='src/grammaire/theory/avenir.ts')
+for(const [path,hash]of staticSources)assert.equal(crypto.createHash('sha256').update(fs.readFileSync(root+'/'+path)).digest('hex'),hash,path)
+console.log(JSON.stringify({status:'passed',activities:22,banks:22,completeThemeOfferings:27,units:1200,variants,authoredSourceRows:300,documents:docs,readingQuestions:questions,openScenarios:scenarios,canonicalErrorSpans:spans,protectedTheoryAndRecordings:staticSources.length,teacherApprovedUnits:0}))

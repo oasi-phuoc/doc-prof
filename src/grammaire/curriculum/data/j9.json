@@ -1,7 +1,7 @@
 [
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j9-qcm-verbe",
     "subthemeId": "j9",
     "topic": "gram-faits",
@@ -1573,12 +1573,322 @@
         ],
         "explanation": "La condition est possible : si + présent, suivi ici du futur simple dans la conséquence. Modèle : Si la ville autorise le passage, les cyclistes rouleront par le pont.",
         "givenVerb": "rouler"
+      },
+      {
+        "id": "gram-ex-j9-qcm-verbe-a2-versement-club",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j9-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Si le club reçoit la subvention, il ___ des lampes pour le terrain.",
+        "cue": "La condition peut se réaliser. Employez le futur simple dans la conséquence.",
+        "answers": [
+          "achètera"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-versement-club-choix-1",
+            "text": "achètera"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-versement-club-choix-2",
+            "text": "achèterait"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-versement-club-choix-3",
+            "text": "acheter"
+          }
+        ],
+        "explanation": "La condition est possible : si + présent, suivi ici du futur simple dans la conséquence. Modèle : Si le club reçoit la subvention, il achètera des lampes pour le terrain.",
+        "givenVerb": "acheter"
+      },
+      {
+        "id": "gram-ex-j9-qcm-verbe-a2-conges-trio",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j9-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Si les trois musiciennes sont libres samedi, elles ___ pour la fête du quartier.",
+        "cue": "La condition peut se réaliser. Employez le futur simple dans la conséquence.",
+        "answers": [
+          "joueront"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-conges-trio-choix-1",
+            "text": "joueront"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-conges-trio-choix-2",
+            "text": "joueraient"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-conges-trio-choix-3",
+            "text": "jouer"
+          }
+        ],
+        "explanation": "La condition est possible : si + présent, suivi ici du futur simple dans la conséquence. Modèle : Si les trois musiciennes sont libres samedi, elles joueront pour la fête du quartier.",
+        "givenVerb": "jouer"
+      },
+      {
+        "id": "gram-ex-j9-qcm-verbe-a2-bibliotheque-bac",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j9-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Si la bibliothèque installe un bac de retour, les lecteurs ___ leurs livres après la fermeture.",
+        "cue": "La condition peut se réaliser. Employez le futur simple dans la conséquence.",
+        "answers": [
+          "déposeront"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-bibliotheque-bac-choix-1",
+            "text": "déposeront"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-bibliotheque-bac-choix-2",
+            "text": "déposeraient"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-bibliotheque-bac-choix-3",
+            "text": "déposer"
+          }
+        ],
+        "explanation": "La condition est possible : si + présent, suivi ici du futur simple dans la conséquence. Modèle : Si la bibliothèque installe un bac de retour, les lecteurs déposeront leurs livres après la fermeture.",
+        "givenVerb": "déposer"
+      },
+      {
+        "id": "gram-ex-j9-qcm-verbe-a2-prix-energie",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j9-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Si le prix de l’électricité baisse, nous ___ moins pour chauffer la salle.",
+        "cue": "La condition peut se réaliser. Employez le futur simple dans la conséquence.",
+        "answers": [
+          "dépenserons"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-prix-energie-choix-1",
+            "text": "dépenserons"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-prix-energie-choix-2",
+            "text": "dépenserions"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-prix-energie-choix-3",
+            "text": "dépenser"
+          }
+        ],
+        "explanation": "La condition est possible : si + présent, suivi ici du futur simple dans la conséquence. Modèle : Si le prix de l’électricité baisse, nous dépenserons moins pour chauffer la salle.",
+        "givenVerb": "dépenser"
+      },
+      {
+        "id": "gram-ex-j9-qcm-verbe-a2-travaux-piste",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j9-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Si la piste est élargie, les deux groupes ___ en même temps.",
+        "cue": "La condition peut se réaliser. Employez le futur simple dans la conséquence.",
+        "answers": [
+          "s’entraîneront"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-travaux-piste-choix-1",
+            "text": "s’entraîneront"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-travaux-piste-choix-2",
+            "text": "s’entraîneraient"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-travaux-piste-choix-3",
+            "text": "s’entraîner"
+          }
+        ],
+        "explanation": "La condition est possible : si + présent, suivi ici du futur simple dans la conséquence. Modèle : Si la piste est élargie, les deux groupes s’entraîneront en même temps.",
+        "givenVerb": "s’entraîner"
+      },
+      {
+        "id": "gram-ex-j9-qcm-verbe-a2-telecommande",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j9-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Si tu retrouves la télécommande, tu ___ le projecteur depuis le fond de la salle.",
+        "cue": "La condition peut se réaliser. Employez le futur simple dans la conséquence.",
+        "answers": [
+          "allumeras"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-telecommande-choix-1",
+            "text": "allumeras"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-telecommande-choix-2",
+            "text": "allumerais"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-telecommande-choix-3",
+            "text": "allumer"
+          }
+        ],
+        "explanation": "La condition est possible : si + présent, suivi ici du futur simple dans la conséquence. Modèle : Si tu retrouves la télécommande, tu allumeras le projecteur depuis le fond de la salle.",
+        "givenVerb": "allumer"
+      },
+      {
+        "id": "gram-ex-j9-qcm-verbe-a2-stock-toiles",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j9-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "S’il reste assez de toiles, les deux groupes ___ le même après-midi.",
+        "cue": "La condition peut se réaliser. Employez le futur simple dans la conséquence.",
+        "answers": [
+          "peindront"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-stock-toiles-choix-1",
+            "text": "peindront"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-stock-toiles-choix-2",
+            "text": "peindraient"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-stock-toiles-choix-3",
+            "text": "peindre"
+          }
+        ],
+        "explanation": "La condition est possible : si + présent, suivi ici du futur simple dans la conséquence. Modèle : S’il reste assez de toiles, les deux groupes peindront le même après-midi.",
+        "givenVerb": "peindre"
+      },
+      {
+        "id": "gram-ex-j9-qcm-verbe-a2-sous-titres",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j9-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Si le film est sous-titré, le public ___ mieux les dialogues.",
+        "cue": "La condition peut se réaliser. Employez le futur simple dans la conséquence.",
+        "answers": [
+          "comprendra"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-sous-titres-choix-1",
+            "text": "comprendra"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-sous-titres-choix-2",
+            "text": "comprendrait"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-sous-titres-choix-3",
+            "text": "comprendre"
+          }
+        ],
+        "explanation": "La condition est possible : si + présent, suivi ici du futur simple dans la conséquence. Modèle : Si le film est sous-titré, le public comprendra mieux les dialogues.",
+        "givenVerb": "comprendre"
+      },
+      {
+        "id": "gram-ex-j9-qcm-verbe-a2-travail-matin",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j9-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Si je termine mon travail avant midi, je ___ pour la visite de treize heures.",
+        "cue": "La condition peut se réaliser. Employez le futur simple dans la conséquence.",
+        "answers": [
+          "viendrai"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-travail-matin-choix-1",
+            "text": "viendrai"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-travail-matin-choix-2",
+            "text": "viendrais"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-travail-matin-choix-3",
+            "text": "venir"
+          }
+        ],
+        "explanation": "La condition est possible : si + présent, suivi ici du futur simple dans la conséquence. Modèle : Si je termine mon travail avant midi, je viendrai pour la visite de treize heures.",
+        "givenVerb": "venir"
+      },
+      {
+        "id": "gram-ex-j9-qcm-verbe-a2-verre-terrasse",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j9-qcm-verbe",
+          "partition": "a2"
+        },
+        "kind": "completion",
+        "prompt": "Si l’atelier possède des bacs solides, l’équipe ___ trier le verre sur place.",
+        "cue": "La condition peut se réaliser. Employez le futur simple dans la conséquence.",
+        "answers": [
+          "pourra"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-verre-terrasse-choix-1",
+            "text": "pourra"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-verre-terrasse-choix-2",
+            "text": "pourrait"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-a2-verre-terrasse-choix-3",
+            "text": "pouvoir"
+          }
+        ],
+        "explanation": "La condition est possible : si + présent, suivi ici du futur simple dans la conséquence. Modèle : Si l’atelier possède des bacs solides, l’équipe pourra trier le verre sur place.",
+        "givenVerb": "pouvoir"
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j9-curriculum-t",
     "subthemeId": "j9",
     "topic": "gram-faits",
@@ -2448,12 +2758,182 @@
         ],
         "responseLines": 2,
         "explanation": "La condition est possible : si + présent, suivi ici du futur simple dans la conséquence. Modèle possible : Si la ville autorise le passage, les cyclistes rouleront par le pont."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-t-a2-versement-club",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j9-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Condition envisagée : Le club reçoit la subvention.\nConséquence à exprimer : Il (acheter) des lampes pour le terrain.",
+        "directive": "Reliez les deux faits avec si, au présent dans la condition et au futur simple dans la conséquence.",
+        "answers": [
+          "Si le club reçoit la subvention, il achètera des lampes pour le terrain."
+        ],
+        "responseLines": 2,
+        "explanation": "La condition est possible : si + présent, suivi ici du futur simple dans la conséquence. Modèle possible : Si le club reçoit la subvention, il achètera des lampes pour le terrain."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-t-a2-conges-trio",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j9-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Condition envisagée : Les trois musiciennes sont libres samedi.\nConséquence à exprimer : Elles (jouer) pour la fête du quartier.",
+        "directive": "Reliez les deux faits avec si, au présent dans la condition et au futur simple dans la conséquence.",
+        "answers": [
+          "Si les trois musiciennes sont libres samedi, elles joueront pour la fête du quartier."
+        ],
+        "responseLines": 2,
+        "explanation": "La condition est possible : si + présent, suivi ici du futur simple dans la conséquence. Modèle possible : Si les trois musiciennes sont libres samedi, elles joueront pour la fête du quartier."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-t-a2-bibliotheque-bac",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j9-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Condition envisagée : La bibliothèque installe un bac de retour.\nConséquence à exprimer : Les lecteurs (déposer) leurs livres après la fermeture.",
+        "directive": "Reliez les deux faits avec si, au présent dans la condition et au futur simple dans la conséquence.",
+        "answers": [
+          "Si la bibliothèque installe un bac de retour, les lecteurs déposeront leurs livres après la fermeture."
+        ],
+        "responseLines": 2,
+        "explanation": "La condition est possible : si + présent, suivi ici du futur simple dans la conséquence. Modèle possible : Si la bibliothèque installe un bac de retour, les lecteurs déposeront leurs livres après la fermeture."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-t-a2-prix-energie",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j9-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Condition envisagée : Le prix de l’électricité baisse.\nConséquence à exprimer : Nous (dépenser) moins pour chauffer la salle.",
+        "directive": "Reliez les deux faits avec si, au présent dans la condition et au futur simple dans la conséquence.",
+        "answers": [
+          "Si le prix de l’électricité baisse, nous dépenserons moins pour chauffer la salle."
+        ],
+        "responseLines": 2,
+        "explanation": "La condition est possible : si + présent, suivi ici du futur simple dans la conséquence. Modèle possible : Si le prix de l’électricité baisse, nous dépenserons moins pour chauffer la salle."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-t-a2-travaux-piste",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j9-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Condition envisagée : La piste est élargie.\nConséquence à exprimer : Les deux groupes (s’entraîner) en même temps.",
+        "directive": "Reliez les deux faits avec si, au présent dans la condition et au futur simple dans la conséquence.",
+        "answers": [
+          "Si la piste est élargie, les deux groupes s’entraîneront en même temps."
+        ],
+        "responseLines": 2,
+        "explanation": "La condition est possible : si + présent, suivi ici du futur simple dans la conséquence. Modèle possible : Si la piste est élargie, les deux groupes s’entraîneront en même temps."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-t-a2-telecommande",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j9-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Condition envisagée : Tu retrouves la télécommande.\nConséquence à exprimer : Tu (allumer) le projecteur depuis le fond de la salle.",
+        "directive": "Reliez les deux faits avec si, au présent dans la condition et au futur simple dans la conséquence.",
+        "answers": [
+          "Si tu retrouves la télécommande, tu allumeras le projecteur depuis le fond de la salle."
+        ],
+        "responseLines": 2,
+        "explanation": "La condition est possible : si + présent, suivi ici du futur simple dans la conséquence. Modèle possible : Si tu retrouves la télécommande, tu allumeras le projecteur depuis le fond de la salle."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-t-a2-stock-toiles",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j9-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Condition envisagée : Il reste assez de toiles.\nConséquence à exprimer : Les deux groupes (peindre) le même après-midi.",
+        "directive": "Reliez les deux faits avec si, au présent dans la condition et au futur simple dans la conséquence.",
+        "answers": [
+          "S’il reste assez de toiles, les deux groupes peindront le même après-midi."
+        ],
+        "responseLines": 2,
+        "explanation": "La condition est possible : si + présent, suivi ici du futur simple dans la conséquence. Modèle possible : S’il reste assez de toiles, les deux groupes peindront le même après-midi."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-t-a2-sous-titres",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j9-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Condition envisagée : Le film est sous-titré.\nConséquence à exprimer : Le public (comprendre) mieux les dialogues.",
+        "directive": "Reliez les deux faits avec si, au présent dans la condition et au futur simple dans la conséquence.",
+        "answers": [
+          "Si le film est sous-titré, le public comprendra mieux les dialogues."
+        ],
+        "responseLines": 2,
+        "explanation": "La condition est possible : si + présent, suivi ici du futur simple dans la conséquence. Modèle possible : Si le film est sous-titré, le public comprendra mieux les dialogues."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-t-a2-travail-matin",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j9-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Condition envisagée : Je termine mon travail avant midi.\nConséquence à exprimer : Je (venir) pour la visite de treize heures.",
+        "directive": "Reliez les deux faits avec si, au présent dans la condition et au futur simple dans la conséquence.",
+        "answers": [
+          "Si je termine mon travail avant midi, je viendrai pour la visite de treize heures."
+        ],
+        "responseLines": 2,
+        "explanation": "La condition est possible : si + présent, suivi ici du futur simple dans la conséquence. Modèle possible : Si je termine mon travail avant midi, je viendrai pour la visite de treize heures."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-t-a2-verre-terrasse",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j9-curriculum-t",
+          "partition": "a2"
+        },
+        "kind": "transform",
+        "prompt": "Condition envisagée : L’atelier possède des bacs solides.\nConséquence à exprimer : L’équipe (pouvoir) trier le verre sur place.",
+        "directive": "Reliez les deux faits avec si, au présent dans la condition et au futur simple dans la conséquence.",
+        "answers": [
+          "Si l’atelier possède des bacs solides, l’équipe pourra trier le verre sur place."
+        ],
+        "responseLines": 2,
+        "explanation": "La condition est possible : si + présent, suivi ici du futur simple dans la conséquence. Modèle possible : Si l’atelier possède des bacs solides, l’équipe pourra trier le verre sur place."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j9-qcm-verbe",
     "subthemeId": "j9",
     "topic": "gram-faits",
@@ -4025,12 +4505,322 @@
         ],
         "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Modèle : Si la ville autorisait le passage, les cyclistes rouleraient par le pont.",
         "givenVerb": "rouler"
+      },
+      {
+        "id": "gram-ex-j9-qcm-verbe-b1-versement-club",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j9-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Si le club recevait la subvention, il ___ des lampes pour le terrain.",
+        "cue": "Le club n’a reçu aucune subvention cette année. Employez le conditionnel présent dans la conséquence.",
+        "answers": [
+          "achèterait"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-versement-club-choix-1",
+            "text": "achèterait"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-versement-club-choix-2",
+            "text": "achètera"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-versement-club-choix-3",
+            "text": "acheter"
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Modèle : Si le club recevait la subvention, il achèterait des lampes pour le terrain.",
+        "givenVerb": "acheter"
+      },
+      {
+        "id": "gram-ex-j9-qcm-verbe-b1-conges-trio",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j9-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Si les trois musiciennes étaient libres samedi, elles ___ pour la fête du quartier.",
+        "cue": "Les trois musiciennes ne sont pas libres samedi. Employez le conditionnel présent dans la conséquence.",
+        "answers": [
+          "joueraient"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-conges-trio-choix-1",
+            "text": "joueraient"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-conges-trio-choix-2",
+            "text": "joueront"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-conges-trio-choix-3",
+            "text": "jouer"
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Modèle : Si les trois musiciennes étaient libres samedi, elles joueraient pour la fête du quartier.",
+        "givenVerb": "jouer"
+      },
+      {
+        "id": "gram-ex-j9-qcm-verbe-b1-bibliotheque-bac",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j9-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Si la bibliothèque installait un bac de retour, les lecteurs ___ leurs livres après la fermeture.",
+        "cue": "La bibliothèque n’a pas de bac de retour à l’extérieur. Employez le conditionnel présent dans la conséquence.",
+        "answers": [
+          "déposeraient"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-bibliotheque-bac-choix-1",
+            "text": "déposeraient"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-bibliotheque-bac-choix-2",
+            "text": "déposeront"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-bibliotheque-bac-choix-3",
+            "text": "déposer"
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Modèle : Si la bibliothèque installait un bac de retour, les lecteurs déposeraient leurs livres après la fermeture.",
+        "givenVerb": "déposer"
+      },
+      {
+        "id": "gram-ex-j9-qcm-verbe-b1-prix-energie",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j9-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Si le prix de l’électricité baissait, nous ___ moins pour chauffer la salle.",
+        "cue": "Le prix de l’électricité ne baisse pas cette année. Employez le conditionnel présent dans la conséquence.",
+        "answers": [
+          "dépenserions"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-prix-energie-choix-1",
+            "text": "dépenserions"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-prix-energie-choix-2",
+            "text": "dépenserons"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-prix-energie-choix-3",
+            "text": "dépenser"
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Modèle : Si le prix de l’électricité baissait, nous dépenserions moins pour chauffer la salle.",
+        "givenVerb": "dépenser"
+      },
+      {
+        "id": "gram-ex-j9-qcm-verbe-b1-travaux-piste",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j9-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Si la piste était élargie, les deux groupes ___ en même temps.",
+        "cue": "La piste est trop étroite pour deux groupes. Employez le conditionnel présent dans la conséquence.",
+        "answers": [
+          "s’entraîneraient"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-travaux-piste-choix-1",
+            "text": "s’entraîneraient"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-travaux-piste-choix-2",
+            "text": "s’entraîneront"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-travaux-piste-choix-3",
+            "text": "s’entraîner"
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Modèle : Si la piste était élargie, les deux groupes s’entraîneraient en même temps.",
+        "givenVerb": "s’entraîner"
+      },
+      {
+        "id": "gram-ex-j9-qcm-verbe-b1-telecommande",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j9-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Si tu retrouvais la télécommande, tu ___ le projecteur depuis le fond de la salle.",
+        "cue": "Tu n’as pas retrouvé la télécommande. Employez le conditionnel présent dans la conséquence.",
+        "answers": [
+          "allumerais"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-telecommande-choix-1",
+            "text": "allumerais"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-telecommande-choix-2",
+            "text": "allumeras"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-telecommande-choix-3",
+            "text": "allumer"
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Modèle : Si tu retrouvais la télécommande, tu allumerais le projecteur depuis le fond de la salle.",
+        "givenVerb": "allumer"
+      },
+      {
+        "id": "gram-ex-j9-qcm-verbe-b1-stock-toiles",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j9-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "S’il restait assez de toiles, les deux groupes ___ le même après-midi.",
+        "cue": "Il ne reste aucune toile en réserve. Employez le conditionnel présent dans la conséquence.",
+        "answers": [
+          "peindraient"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-stock-toiles-choix-1",
+            "text": "peindraient"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-stock-toiles-choix-2",
+            "text": "peindront"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-stock-toiles-choix-3",
+            "text": "peindre"
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Modèle : S’il restait assez de toiles, les deux groupes peindraient le même après-midi.",
+        "givenVerb": "peindre"
+      },
+      {
+        "id": "gram-ex-j9-qcm-verbe-b1-sous-titres",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j9-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Si le film était sous-titré, le public ___ mieux les dialogues.",
+        "cue": "Pour le moment, le film n’a pas de sous-titres. Employez le conditionnel présent dans la conséquence.",
+        "answers": [
+          "comprendrait"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-sous-titres-choix-1",
+            "text": "comprendrait"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-sous-titres-choix-2",
+            "text": "comprendra"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-sous-titres-choix-3",
+            "text": "comprendre"
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Modèle : Si le film était sous-titré, le public comprendrait mieux les dialogues.",
+        "givenVerb": "comprendre"
+      },
+      {
+        "id": "gram-ex-j9-qcm-verbe-b1-travail-matin",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j9-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Si je terminais mon travail avant midi, je ___ pour la visite de treize heures.",
+        "cue": "Je ne peux pas terminer mon travail avant midi. Employez le conditionnel présent dans la conséquence.",
+        "answers": [
+          "viendrais"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-travail-matin-choix-1",
+            "text": "viendrais"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-travail-matin-choix-2",
+            "text": "viendrai"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-travail-matin-choix-3",
+            "text": "venir"
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Modèle : Si je terminais mon travail avant midi, je viendrais pour la visite de treize heures.",
+        "givenVerb": "venir"
+      },
+      {
+        "id": "gram-ex-j9-qcm-verbe-b1-verre-terrasse",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j9-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Si l’atelier possédait des bacs solides, l’équipe ___ trier le verre sur place.",
+        "cue": "L’atelier ne possède pas de bacs solides pour le verre. Employez le conditionnel présent dans la conséquence.",
+        "answers": [
+          "pourrait"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-verre-terrasse-choix-1",
+            "text": "pourrait"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-verre-terrasse-choix-2",
+            "text": "pourra"
+          },
+          {
+            "id": "gram-ex-j9-qcm-verbe-b1-verre-terrasse-choix-3",
+            "text": "pouvoir"
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Modèle : Si l’atelier possédait des bacs solides, l’équipe pourrait trier le verre sur place.",
+        "givenVerb": "pouvoir"
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j9-curriculum-t",
     "subthemeId": "j9",
     "topic": "gram-faits",
@@ -4900,12 +5690,182 @@
         ],
         "responseLines": 2,
         "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Modèle possible : Si la ville autorisait le passage, les cyclistes rouleraient par le pont."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-t-b1-versement-club",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j9-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Fait réel : Le club n’a reçu aucune subvention cette année.\nCondition envisagée : Le club reçoit la subvention.\nConséquence à exprimer : Il (acheter) des lampes pour le terrain.",
+        "directive": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent.",
+        "answers": [
+          "Si le club recevait la subvention, il achèterait des lampes pour le terrain."
+        ],
+        "responseLines": 2,
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Modèle possible : Si le club recevait la subvention, il achèterait des lampes pour le terrain."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-t-b1-conges-trio",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j9-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Fait réel : Les trois musiciennes ne sont pas libres samedi.\nCondition envisagée : Les trois musiciennes sont libres samedi.\nConséquence à exprimer : Elles (jouer) pour la fête du quartier.",
+        "directive": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent.",
+        "answers": [
+          "Si les trois musiciennes étaient libres samedi, elles joueraient pour la fête du quartier."
+        ],
+        "responseLines": 2,
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Modèle possible : Si les trois musiciennes étaient libres samedi, elles joueraient pour la fête du quartier."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-t-b1-bibliotheque-bac",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j9-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Fait réel : La bibliothèque n’a pas de bac de retour à l’extérieur.\nCondition envisagée : La bibliothèque installe un bac de retour.\nConséquence à exprimer : Les lecteurs (déposer) leurs livres après la fermeture.",
+        "directive": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent.",
+        "answers": [
+          "Si la bibliothèque installait un bac de retour, les lecteurs déposeraient leurs livres après la fermeture."
+        ],
+        "responseLines": 2,
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Modèle possible : Si la bibliothèque installait un bac de retour, les lecteurs déposeraient leurs livres après la fermeture."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-t-b1-prix-energie",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j9-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Fait réel : Le prix de l’électricité ne baisse pas cette année.\nCondition envisagée : Le prix de l’électricité baisse.\nConséquence à exprimer : Nous (dépenser) moins pour chauffer la salle.",
+        "directive": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent.",
+        "answers": [
+          "Si le prix de l’électricité baissait, nous dépenserions moins pour chauffer la salle."
+        ],
+        "responseLines": 2,
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Modèle possible : Si le prix de l’électricité baissait, nous dépenserions moins pour chauffer la salle."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-t-b1-travaux-piste",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j9-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Fait réel : La piste est trop étroite pour deux groupes.\nCondition envisagée : La piste est élargie.\nConséquence à exprimer : Les deux groupes (s’entraîner) en même temps.",
+        "directive": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent.",
+        "answers": [
+          "Si la piste était élargie, les deux groupes s’entraîneraient en même temps."
+        ],
+        "responseLines": 2,
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Modèle possible : Si la piste était élargie, les deux groupes s’entraîneraient en même temps."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-t-b1-telecommande",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j9-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Fait réel : Tu n’as pas retrouvé la télécommande.\nCondition envisagée : Tu retrouves la télécommande.\nConséquence à exprimer : Tu (allumer) le projecteur depuis le fond de la salle.",
+        "directive": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent.",
+        "answers": [
+          "Si tu retrouvais la télécommande, tu allumerais le projecteur depuis le fond de la salle."
+        ],
+        "responseLines": 2,
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Modèle possible : Si tu retrouvais la télécommande, tu allumerais le projecteur depuis le fond de la salle."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-t-b1-stock-toiles",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j9-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Fait réel : Il ne reste aucune toile en réserve.\nCondition envisagée : Il reste assez de toiles.\nConséquence à exprimer : Les deux groupes (peindre) le même après-midi.",
+        "directive": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent.",
+        "answers": [
+          "S’il restait assez de toiles, les deux groupes peindraient le même après-midi."
+        ],
+        "responseLines": 2,
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Modèle possible : S’il restait assez de toiles, les deux groupes peindraient le même après-midi."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-t-b1-sous-titres",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j9-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Fait réel : Pour le moment, le film n’a pas de sous-titres.\nCondition envisagée : Le film est sous-titré.\nConséquence à exprimer : Le public (comprendre) mieux les dialogues.",
+        "directive": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent.",
+        "answers": [
+          "Si le film était sous-titré, le public comprendrait mieux les dialogues."
+        ],
+        "responseLines": 2,
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Modèle possible : Si le film était sous-titré, le public comprendrait mieux les dialogues."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-t-b1-travail-matin",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j9-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Fait réel : Je ne peux pas terminer mon travail avant midi.\nCondition envisagée : Je termine mon travail avant midi.\nConséquence à exprimer : Je (venir) pour la visite de treize heures.",
+        "directive": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent.",
+        "answers": [
+          "Si je terminais mon travail avant midi, je viendrais pour la visite de treize heures."
+        ],
+        "responseLines": 2,
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Modèle possible : Si je terminais mon travail avant midi, je viendrais pour la visite de treize heures."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-t-b1-verre-terrasse",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j9-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Fait réel : L’atelier ne possède pas de bacs solides pour le verre.\nCondition envisagée : L’atelier possède des bacs solides.\nConséquence à exprimer : L’équipe (pouvoir) trier le verre sur place.",
+        "directive": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent.",
+        "answers": [
+          "Si l’atelier possédait des bacs solides, l’équipe pourrait trier le verre sur place."
+        ],
+        "responseLines": 2,
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Modèle possible : Si l’atelier possédait des bacs solides, l’équipe pourrait trier le verre sur place."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j9-curriculum-e",
     "subthemeId": "j9",
     "topic": "gram-faits",
@@ -6525,12 +7485,332 @@
           }
         ],
         "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-e-b1-versement-club",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j9-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Fait réel : Le club n’a reçu aucune subvention cette année.\nCondition envisagée : Le club reçoit la subvention.\nConséquence à exprimer : Il (acheter) des lampes pour le terrain.",
+        "mode": "written",
+        "task": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent. Présentez cette situation à un camarade.",
+        "answers": [
+          "Si le club recevait la subvention, il achèterait des lampes pour le terrain."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Imparfait après si et conditionnel présent dans la conséquence."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et distinction claire entre réalité et hypothèse."
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-e-b1-conges-trio",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j9-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Fait réel : Les trois musiciennes ne sont pas libres samedi.\nCondition envisagée : Les trois musiciennes sont libres samedi.\nConséquence à exprimer : Elles (jouer) pour la fête du quartier.",
+        "mode": "written",
+        "task": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent. Présentez cette situation à un camarade.",
+        "answers": [
+          "Si les trois musiciennes étaient libres samedi, elles joueraient pour la fête du quartier."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Imparfait après si et conditionnel présent dans la conséquence."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et distinction claire entre réalité et hypothèse."
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-e-b1-bibliotheque-bac",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j9-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Fait réel : La bibliothèque n’a pas de bac de retour à l’extérieur.\nCondition envisagée : La bibliothèque installe un bac de retour.\nConséquence à exprimer : Les lecteurs (déposer) leurs livres après la fermeture.",
+        "mode": "written",
+        "task": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent. Présentez cette situation à un camarade.",
+        "answers": [
+          "Si la bibliothèque installait un bac de retour, les lecteurs déposeraient leurs livres après la fermeture."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Imparfait après si et conditionnel présent dans la conséquence."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et distinction claire entre réalité et hypothèse."
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-e-b1-prix-energie",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j9-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Fait réel : Le prix de l’électricité ne baisse pas cette année.\nCondition envisagée : Le prix de l’électricité baisse.\nConséquence à exprimer : Nous (dépenser) moins pour chauffer la salle.",
+        "mode": "written",
+        "task": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent. Présentez cette situation à un camarade.",
+        "answers": [
+          "Si le prix de l’électricité baissait, nous dépenserions moins pour chauffer la salle."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Imparfait après si et conditionnel présent dans la conséquence."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et distinction claire entre réalité et hypothèse."
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-e-b1-travaux-piste",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j9-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Fait réel : La piste est trop étroite pour deux groupes.\nCondition envisagée : La piste est élargie.\nConséquence à exprimer : Les deux groupes (s’entraîner) en même temps.",
+        "mode": "written",
+        "task": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent. Présentez cette situation à un camarade.",
+        "answers": [
+          "Si la piste était élargie, les deux groupes s’entraîneraient en même temps."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Imparfait après si et conditionnel présent dans la conséquence."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et distinction claire entre réalité et hypothèse."
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-e-b1-telecommande",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j9-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Fait réel : Tu n’as pas retrouvé la télécommande.\nCondition envisagée : Tu retrouves la télécommande.\nConséquence à exprimer : Tu (allumer) le projecteur depuis le fond de la salle.",
+        "mode": "written",
+        "task": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent. Présentez cette situation à un camarade.",
+        "answers": [
+          "Si tu retrouvais la télécommande, tu allumerais le projecteur depuis le fond de la salle."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Imparfait après si et conditionnel présent dans la conséquence."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et distinction claire entre réalité et hypothèse."
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-e-b1-stock-toiles",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j9-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Fait réel : Il ne reste aucune toile en réserve.\nCondition envisagée : Il reste assez de toiles.\nConséquence à exprimer : Les deux groupes (peindre) le même après-midi.",
+        "mode": "written",
+        "task": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent. Présentez cette situation à un camarade.",
+        "answers": [
+          "S’il restait assez de toiles, les deux groupes peindraient le même après-midi."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Imparfait après si et conditionnel présent dans la conséquence."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et distinction claire entre réalité et hypothèse."
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-e-b1-sous-titres",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j9-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Fait réel : Pour le moment, le film n’a pas de sous-titres.\nCondition envisagée : Le film est sous-titré.\nConséquence à exprimer : Le public (comprendre) mieux les dialogues.",
+        "mode": "written",
+        "task": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent. Présentez cette situation à un camarade.",
+        "answers": [
+          "Si le film était sous-titré, le public comprendrait mieux les dialogues."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Imparfait après si et conditionnel présent dans la conséquence."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et distinction claire entre réalité et hypothèse."
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-e-b1-travail-matin",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j9-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Fait réel : Je ne peux pas terminer mon travail avant midi.\nCondition envisagée : Je termine mon travail avant midi.\nConséquence à exprimer : Je (venir) pour la visite de treize heures.",
+        "mode": "written",
+        "task": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent. Présentez cette situation à un camarade.",
+        "answers": [
+          "Si je terminais mon travail avant midi, je viendrais pour la visite de treize heures."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Imparfait après si et conditionnel présent dans la conséquence."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et distinction claire entre réalité et hypothèse."
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-e-b1-verre-terrasse",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j9-curriculum-e",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Fait réel : L’atelier ne possède pas de bacs solides pour le verre.\nCondition envisagée : L’atelier possède des bacs solides.\nConséquence à exprimer : L’équipe (pouvoir) trier le verre sur place.",
+        "mode": "written",
+        "task": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent. Présentez cette situation à un camarade.",
+        "answers": [
+          "Si l’atelier possédait des bacs solides, l’équipe pourrait trier le verre sur place."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Imparfait après si et conditionnel présent dans la conséquence."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et distinction claire entre réalité et hypothèse."
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Les reformulations fidèles à la consigne sont recevables."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j9-curriculum-p",
     "subthemeId": "j9",
     "topic": "gram-faits",
@@ -8133,6 +9413,326 @@
         "task": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent. Présentez cette situation à un camarade. Relance : « Pourquoi les cyclistes font-ils un détour ? »",
         "answers": [
           "Si la ville autorisait le passage, les cyclistes rouleraient par le pont.\nRéponse possible à la relance : Le passage est interdit."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Imparfait après si et conditionnel présent dans la conséquence."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-p-b1-versement-club",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j9-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Fait réel : Le club n’a reçu aucune subvention cette année.\nCondition envisagée : Le club reçoit la subvention.\nConséquence à exprimer : Il (acheter) des lampes pour le terrain.",
+        "mode": "oral",
+        "task": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent. Présentez cette situation à un camarade. Relance : « Que faut-il attendre ? »",
+        "answers": [
+          "Si le club recevait la subvention, il achèterait des lampes pour le terrain.\nRéponse possible à la relance : La décision sur la subvention."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Imparfait après si et conditionnel présent dans la conséquence."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-p-b1-conges-trio",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j9-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Fait réel : Les trois musiciennes ne sont pas libres samedi.\nCondition envisagée : Les trois musiciennes sont libres samedi.\nConséquence à exprimer : Elles (jouer) pour la fête du quartier.",
+        "mode": "oral",
+        "task": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent. Présentez cette situation à un camarade. Relance : « Pourquoi ne jouent-elles pas samedi ? »",
+        "answers": [
+          "Si les trois musiciennes étaient libres samedi, elles joueraient pour la fête du quartier.\nRéponse possible à la relance : Elles ne sont pas libres."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Imparfait après si et conditionnel présent dans la conséquence."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-p-b1-bibliotheque-bac",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j9-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Fait réel : La bibliothèque n’a pas de bac de retour à l’extérieur.\nCondition envisagée : La bibliothèque installe un bac de retour.\nConséquence à exprimer : Les lecteurs (déposer) leurs livres après la fermeture.",
+        "mode": "oral",
+        "task": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent. Présentez cette situation à un camarade. Relance : « Quelle installation manque ? »",
+        "answers": [
+          "Si la bibliothèque installait un bac de retour, les lecteurs déposeraient leurs livres après la fermeture.\nRéponse possible à la relance : Un bac de retour extérieur."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Imparfait après si et conditionnel présent dans la conséquence."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-p-b1-prix-energie",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j9-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Fait réel : Le prix de l’électricité ne baisse pas cette année.\nCondition envisagée : Le prix de l’électricité baisse.\nConséquence à exprimer : Nous (dépenser) moins pour chauffer la salle.",
+        "mode": "oral",
+        "task": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent. Présentez cette situation à un camarade. Relance : « Pourquoi ne prévoyez-vous pas d’économie ? »",
+        "answers": [
+          "Si le prix de l’électricité baissait, nous dépenserions moins pour chauffer la salle.\nRéponse possible à la relance : Le prix ne baisse pas."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Imparfait après si et conditionnel présent dans la conséquence."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-p-b1-travaux-piste",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j9-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Fait réel : La piste est trop étroite pour deux groupes.\nCondition envisagée : La piste est élargie.\nConséquence à exprimer : Les deux groupes (s’entraîner) en même temps.",
+        "mode": "oral",
+        "task": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent. Présentez cette situation à un camarade. Relance : « Quel est l’obstacle actuel ? »",
+        "answers": [
+          "Si la piste était élargie, les deux groupes s’entraîneraient en même temps.\nRéponse possible à la relance : La piste est trop étroite."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Imparfait après si et conditionnel présent dans la conséquence."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-p-b1-telecommande",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j9-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Fait réel : Tu n’as pas retrouvé la télécommande.\nCondition envisagée : Tu retrouves la télécommande.\nConséquence à exprimer : Tu (allumer) le projecteur depuis le fond de la salle.",
+        "mode": "oral",
+        "task": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent. Présentez cette situation à un camarade. Relance : « Que cherches-tu ? »",
+        "answers": [
+          "Si tu retrouvais la télécommande, tu allumerais le projecteur depuis le fond de la salle.\nRéponse possible à la relance : La télécommande."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Imparfait après si et conditionnel présent dans la conséquence."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-p-b1-stock-toiles",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j9-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Fait réel : Il ne reste aucune toile en réserve.\nCondition envisagée : Il reste assez de toiles.\nConséquence à exprimer : Les deux groupes (peindre) le même après-midi.",
+        "mode": "oral",
+        "task": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent. Présentez cette situation à un camarade. Relance : « Qu’est-ce qui manque ? »",
+        "answers": [
+          "S’il restait assez de toiles, les deux groupes peindraient le même après-midi.\nRéponse possible à la relance : Des toiles."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Imparfait après si et conditionnel présent dans la conséquence."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-p-b1-sous-titres",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j9-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Fait réel : Pour le moment, le film n’a pas de sous-titres.\nCondition envisagée : Le film est sous-titré.\nConséquence à exprimer : Le public (comprendre) mieux les dialogues.",
+        "mode": "oral",
+        "task": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent. Présentez cette situation à un camarade. Relance : « Qu’est-ce qui rend le film difficile à suivre ? »",
+        "answers": [
+          "Si le film était sous-titré, le public comprendrait mieux les dialogues.\nRéponse possible à la relance : L’absence de sous-titres."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Imparfait après si et conditionnel présent dans la conséquence."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-p-b1-travail-matin",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j9-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Fait réel : Je ne peux pas terminer mon travail avant midi.\nCondition envisagée : Je termine mon travail avant midi.\nConséquence à exprimer : Je (venir) pour la visite de treize heures.",
+        "mode": "oral",
+        "task": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent. Présentez cette situation à un camarade. Relance : « Pourquoi ne viens-tu pas ? »",
+        "answers": [
+          "Si je terminais mon travail avant midi, je viendrais pour la visite de treize heures.\nRéponse possible à la relance : Je dois encore terminer mon travail."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Imparfait après si et conditionnel présent dans la conséquence."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "La condition est contraire à la situation actuelle : si + imparfait, puis conditionnel présent. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j9-curriculum-p-b1-verre-terrasse",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j9.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j9-curriculum-p",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Fait réel : L’atelier ne possède pas de bacs solides pour le verre.\nCondition envisagée : L’atelier possède des bacs solides.\nConséquence à exprimer : L’équipe (pouvoir) trier le verre sur place.",
+        "mode": "oral",
+        "task": "Imaginez la conséquence de cette condition contraire aux faits. Employez si + imparfait et le conditionnel présent. Présentez cette situation à un camarade. Relance : « Que faudrait-il acheter ? »",
+        "answers": [
+          "Si l’atelier possédait des bacs solides, l’équipe pourrait trier le verre sur place.\nRéponse possible à la relance : Des bacs solides pour le verre."
         ],
         "writeLines": 0,
         "rubric": [

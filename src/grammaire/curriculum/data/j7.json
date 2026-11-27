@@ -1,7 +1,7 @@
 [
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j7-qcm-verbe",
     "subthemeId": "j7",
     "topic": "gram-faits",
@@ -1537,12 +1537,312 @@
           }
         ],
         "explanation": "Une demande d’action peut être rapportée avec demander à quelqu’un de + infinitif. Modèle : Le directeur a demandé aux enfants de laisser leurs chaussures sur le tapis."
+      },
+      {
+        "id": "gram-ex-j7-qcm-verbe-b1-timbres",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j7-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Elsa a dit qu’elle ___ les timbres de la collection.",
+        "cue": "Vendredi, Elsa a dit : « Je classe les timbres de la collection. » Elle parlait pendant le classement.",
+        "answers": [
+          "classait"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-timbres-choix-1",
+            "text": "classait"
+          },
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-timbres-choix-2",
+            "text": "classerait"
+          },
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-timbres-choix-3",
+            "text": "avait classé"
+          }
+        ],
+        "explanation": "Dans cette parole au passé, l’imparfait marque un fait en cours au moment où la personne parlait. Modèle : Elsa a dit qu’elle classait les timbres de la collection."
+      },
+      {
+        "id": "gram-ex-j7-qcm-verbe-b1-cabine",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j7-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Jeudi, l’inspectrice a expliqué qu’elle ___ la cabine le matin même.",
+        "cue": "L’inspectrice a expliqué jeudi : « J’ai déjà examiné la cabine ce matin. » L’examen était terminé au moment de l’entretien.",
+        "answers": [
+          "avait déjà examiné"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-cabine-choix-1",
+            "text": "avait déjà examiné"
+          },
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-cabine-choix-2",
+            "text": "examinerait"
+          },
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-cabine-choix-3",
+            "text": "examinait encore"
+          }
+        ],
+        "explanation": "Le plus-que-parfait situe le fait avant les paroles rapportées au passé. Modèle : Jeudi, l’inspectrice a expliqué qu’elle avait déjà examiné la cabine le matin même."
+      },
+      {
+        "id": "gram-ex-j7-qcm-verbe-b1-balances",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j7-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Lundi, les responsables ont annoncé qu’ils ___ les balances le lendemain.",
+        "cue": "Lundi, les responsables ont annoncé : « Nous vérifierons les balances demain. » Rapportez cette annonce le jeudi suivant.",
+        "answers": [
+          "vérifieraient"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-balances-choix-1",
+            "text": "vérifieraient"
+          },
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-balances-choix-2",
+            "text": "vérifiaient"
+          },
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-balances-choix-3",
+            "text": "avaient vérifié"
+          }
+        ],
+        "explanation": "Le conditionnel présent marque ici un événement prévu après les paroles rapportées au passé. Modèle : Lundi, les responsables ont annoncé qu’ils vérifieraient les balances le lendemain."
+      },
+      {
+        "id": "gram-ex-j7-qcm-verbe-b1-echarpe",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j7-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Mina a affirmé qu’elle avait laissé son écharpe au club ___.",
+        "cue": "Mercredi, Mina a affirmé : « J’ai laissé mon écharpe au club hier. » Rapportez ses paroles le vendredi suivant en utilisant un repère relatif au mercredi.",
+        "answers": [
+          "la veille"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-echarpe-choix-1",
+            "text": "la veille"
+          },
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-echarpe-choix-2",
+            "text": "le lendemain"
+          },
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-echarpe-choix-3",
+            "text": "le jour même"
+          }
+        ],
+        "explanation": "Le repère se calcule depuis le moment ou le lieu de la parole d’origine. Modèle : Mina a affirmé qu’elle avait laissé son écharpe au club la veille."
+      },
+      {
+        "id": "gram-ex-j7-qcm-verbe-b1-guichet-nuit",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j7-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Le reporter a demandé ___ le guichet restait ouvert après dix-huit heures.",
+        "cue": "Après la modification des horaires, le reporter a demandé : « Le guichet reste-t-il ouvert après dix-huit heures ? »",
+        "answers": [
+          "si"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-guichet-nuit-choix-1",
+            "text": "si"
+          },
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-guichet-nuit-choix-2",
+            "text": "où"
+          },
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-guichet-nuit-choix-3",
+            "text": "quelle heure"
+          }
+        ],
+        "explanation": "Une question à laquelle on peut répondre par oui ou non est introduite par si, élidé en s’ devant il ou ils. Modèle : Le reporter a demandé si le guichet restait ouvert après dix-huit heures."
+      },
+      {
+        "id": "gram-ex-j7-qcm-verbe-b1-carte-lecture",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j7-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Le conseiller a demandé à Malik ___ il avait refusé la nouvelle carte.",
+        "cue": "Le conseiller a demandé à Malik : « Pourquoi avez-vous refusé la nouvelle carte ? »",
+        "answers": [
+          "pourquoi"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-carte-lecture-choix-1",
+            "text": "pourquoi"
+          },
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-carte-lecture-choix-2",
+            "text": "où"
+          },
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-carte-lecture-choix-3",
+            "text": "ce que"
+          }
+        ],
+        "explanation": "Gardez l’interrogatif adapté et l’ordre d’une phrase indirecte. Qu’est-ce qui et qu’est-ce que deviennent ce qui et ce que. Modèle : Le conseiller a demandé à Malik pourquoi il avait refusé la nouvelle carte."
+      },
+      {
+        "id": "gram-ex-j7-qcm-verbe-b1-grondement",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j7-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "La journaliste a demandé ___ avait provoqué ce grondement.",
+        "cue": "Après un bruit dans l’atelier, la journaliste a demandé : « Qu’est-ce qui a provoqué ce grondement ? »",
+        "answers": [
+          "ce qui"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-grondement-choix-1",
+            "text": "ce qui"
+          },
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-grondement-choix-2",
+            "text": "ce que"
+          },
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-grondement-choix-3",
+            "text": "quand"
+          }
+        ],
+        "explanation": "Gardez l’interrogatif adapté et l’ordre d’une phrase indirecte. Qu’est-ce qui et qu’est-ce que deviennent ce qui et ce que. Modèle : La journaliste a demandé ce qui avait provoqué ce grondement."
+      },
+      {
+        "id": "gram-ex-j7-qcm-verbe-b1-draps-stage",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j7-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Le moniteur a demandé aux stagiaires ___ les draps dans l’armoire.",
+        "cue": "Avant de fermer le local, le moniteur a dit aux stagiaires : « Rangez les draps dans l’armoire, s’il vous plaît. »",
+        "answers": [
+          "de ranger"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-draps-stage-choix-1",
+            "text": "de ranger"
+          },
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-draps-stage-choix-2",
+            "text": "qu’ils rangeaient"
+          },
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-draps-stage-choix-3",
+            "text": "s’ils rangeaient"
+          }
+        ],
+        "explanation": "Une demande d’action peut être rapportée avec demander à quelqu’un de + infinitif. Modèle : Le moniteur a demandé aux stagiaires de ranger les draps dans l’armoire."
+      },
+      {
+        "id": "gram-ex-j7-qcm-verbe-b1-route-pluie",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j7-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "La directrice leur a demandé ___ ils pouvaient passer par la route du lac.",
+        "cue": "En voyant les travaux, la directrice a demandé à deux conducteurs : « Pouvez-vous passer par la route du lac ? » Elle voulait savoir si ce trajet était possible.",
+        "answers": [
+          "s’"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-route-pluie-choix-1",
+            "text": "s’"
+          },
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-route-pluie-choix-2",
+            "text": "si"
+          },
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-route-pluie-choix-3",
+            "text": "qu’"
+          }
+        ],
+        "explanation": "Une question à laquelle on peut répondre par oui ou non est introduite par si, élidé en s’ devant il ou ils. Modèle : La directrice leur a demandé s’ils pouvaient passer par la route du lac."
+      },
+      {
+        "id": "gram-ex-j7-qcm-verbe-b1-estrade",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j7-qcm-verbe",
+          "partition": "b1"
+        },
+        "kind": "completion",
+        "prompt": "Le régisseur a demandé aux techniciens ___ l’estrade pendant la répétition.",
+        "cue": "Le régisseur a ordonné aux deux techniciens : « Ne déplacez pas l’estrade pendant la répétition. »",
+        "answers": [
+          "de ne pas déplacer"
+        ],
+        "options": [
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-estrade-choix-1",
+            "text": "de ne pas déplacer"
+          },
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-estrade-choix-2",
+            "text": "de déplacer"
+          },
+          {
+            "id": "gram-ex-j7-qcm-verbe-b1-estrade-choix-3",
+            "text": "s’ils déplaçaient"
+          }
+        ],
+        "explanation": "Une demande d’action peut être rapportée avec demander à quelqu’un de + infinitif. Modèle : Le régisseur a demandé aux techniciens de ne pas déplacer l’estrade pendant la répétition."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j7-curriculum-t",
     "subthemeId": "j7",
     "topic": "gram-faits",
@@ -2412,12 +2712,182 @@
         ],
         "responseLines": 2,
         "explanation": "Une demande d’action peut être rapportée avec demander à quelqu’un de + infinitif. Modèle possible : Le directeur a demandé aux enfants de laisser leurs chaussures sur le tapis."
+      },
+      {
+        "id": "gram-ex-j7-curriculum-t-b1-timbres",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j7-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Vendredi, Elsa a dit : « Je classe les timbres de la collection. » Elle parlait pendant le classement.",
+        "directive": "Rapportez cette parole au discours indirect. Gardez le sens et les repères.",
+        "answers": [
+          "Elsa a dit qu’elle classait les timbres de la collection."
+        ],
+        "responseLines": 2,
+        "explanation": "Dans cette parole au passé, l’imparfait marque un fait en cours au moment où la personne parlait. Modèle possible : Elsa a dit qu’elle classait les timbres de la collection."
+      },
+      {
+        "id": "gram-ex-j7-curriculum-t-b1-cabine",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j7-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "L’inspectrice a expliqué jeudi : « J’ai déjà examiné la cabine ce matin. » L’examen était terminé au moment de l’entretien.",
+        "directive": "Rapportez cette parole au discours indirect. Gardez le sens et les repères.",
+        "answers": [
+          "Jeudi, l’inspectrice a expliqué qu’elle avait déjà examiné la cabine le matin même."
+        ],
+        "responseLines": 2,
+        "explanation": "Le plus-que-parfait situe le fait avant les paroles rapportées au passé. Modèle possible : Jeudi, l’inspectrice a expliqué qu’elle avait déjà examiné la cabine le matin même."
+      },
+      {
+        "id": "gram-ex-j7-curriculum-t-b1-balances",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j7-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Lundi, les responsables ont annoncé : « Nous vérifierons les balances demain. » Rapportez cette annonce le jeudi suivant.",
+        "directive": "Rapportez cette parole au discours indirect. Gardez le sens et les repères.",
+        "answers": [
+          "Lundi, les responsables ont annoncé qu’ils vérifieraient les balances le lendemain."
+        ],
+        "responseLines": 2,
+        "explanation": "Le conditionnel présent marque ici un événement prévu après les paroles rapportées au passé. Modèle possible : Lundi, les responsables ont annoncé qu’ils vérifieraient les balances le lendemain."
+      },
+      {
+        "id": "gram-ex-j7-curriculum-t-b1-echarpe",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j7-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Mercredi, Mina a affirmé : « J’ai laissé mon écharpe au club hier. » Rapportez ses paroles le vendredi suivant en utilisant un repère relatif au mercredi.",
+        "directive": "Rapportez cette parole au discours indirect. Gardez le sens et les repères.",
+        "answers": [
+          "Mina a affirmé qu’elle avait laissé son écharpe au club la veille."
+        ],
+        "responseLines": 2,
+        "explanation": "Le repère se calcule depuis le moment ou le lieu de la parole d’origine. Modèle possible : Mina a affirmé qu’elle avait laissé son écharpe au club la veille."
+      },
+      {
+        "id": "gram-ex-j7-curriculum-t-b1-guichet-nuit",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j7-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Après la modification des horaires, le reporter a demandé : « Le guichet reste-t-il ouvert après dix-huit heures ? »",
+        "directive": "Rapportez cette parole au discours indirect. Gardez le sens et les repères.",
+        "answers": [
+          "Le reporter a demandé si le guichet restait ouvert après dix-huit heures."
+        ],
+        "responseLines": 2,
+        "explanation": "Une question à laquelle on peut répondre par oui ou non est introduite par si, élidé en s’ devant il ou ils. Modèle possible : Le reporter a demandé si le guichet restait ouvert après dix-huit heures."
+      },
+      {
+        "id": "gram-ex-j7-curriculum-t-b1-carte-lecture",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j7-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le conseiller a demandé à Malik : « Pourquoi avez-vous refusé la nouvelle carte ? »",
+        "directive": "Rapportez cette parole au discours indirect. Gardez le sens et les repères.",
+        "answers": [
+          "Le conseiller a demandé à Malik pourquoi il avait refusé la nouvelle carte."
+        ],
+        "responseLines": 2,
+        "explanation": "Gardez l’interrogatif adapté et l’ordre d’une phrase indirecte. Qu’est-ce qui et qu’est-ce que deviennent ce qui et ce que. Modèle possible : Le conseiller a demandé à Malik pourquoi il avait refusé la nouvelle carte."
+      },
+      {
+        "id": "gram-ex-j7-curriculum-t-b1-grondement",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j7-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Après un bruit dans l’atelier, la journaliste a demandé : « Qu’est-ce qui a provoqué ce grondement ? »",
+        "directive": "Rapportez cette parole au discours indirect. Gardez le sens et les repères.",
+        "answers": [
+          "La journaliste a demandé ce qui avait provoqué ce grondement."
+        ],
+        "responseLines": 2,
+        "explanation": "Gardez l’interrogatif adapté et l’ordre d’une phrase indirecte. Qu’est-ce qui et qu’est-ce que deviennent ce qui et ce que. Modèle possible : La journaliste a demandé ce qui avait provoqué ce grondement."
+      },
+      {
+        "id": "gram-ex-j7-curriculum-t-b1-draps-stage",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j7-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Avant de fermer le local, le moniteur a dit aux stagiaires : « Rangez les draps dans l’armoire, s’il vous plaît. »",
+        "directive": "Rapportez cette parole au discours indirect. Gardez le sens et les repères.",
+        "answers": [
+          "Le moniteur a demandé aux stagiaires de ranger les draps dans l’armoire."
+        ],
+        "responseLines": 2,
+        "explanation": "Une demande d’action peut être rapportée avec demander à quelqu’un de + infinitif. Modèle possible : Le moniteur a demandé aux stagiaires de ranger les draps dans l’armoire."
+      },
+      {
+        "id": "gram-ex-j7-curriculum-t-b1-route-pluie",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j7-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "En voyant les travaux, la directrice a demandé à deux conducteurs : « Pouvez-vous passer par la route du lac ? » Elle voulait savoir si ce trajet était possible.",
+        "directive": "Rapportez cette parole au discours indirect. Gardez le sens et les repères.",
+        "answers": [
+          "La directrice leur a demandé s’ils pouvaient passer par la route du lac."
+        ],
+        "responseLines": 2,
+        "explanation": "Une question à laquelle on peut répondre par oui ou non est introduite par si, élidé en s’ devant il ou ils. Modèle possible : La directrice leur a demandé s’ils pouvaient passer par la route du lac."
+      },
+      {
+        "id": "gram-ex-j7-curriculum-t-b1-estrade",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j7-curriculum-t",
+          "partition": "b1"
+        },
+        "kind": "transform",
+        "prompt": "Le régisseur a ordonné aux deux techniciens : « Ne déplacez pas l’estrade pendant la répétition. »",
+        "directive": "Rapportez cette parole au discours indirect. Gardez le sens et les repères.",
+        "answers": [
+          "Le régisseur a demandé aux techniciens de ne pas déplacer l’estrade pendant la répétition."
+        ],
+        "responseLines": 2,
+        "explanation": "Une demande d’action peut être rapportée avec demander à quelqu’un de + infinitif. Modèle possible : Le régisseur a demandé aux techniciens de ne pas déplacer l’estrade pendant la répétition."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j7-curriculum-c",
     "subthemeId": "j7",
     "topic": "gram-faits",
@@ -3587,6 +4057,236 @@
           "Le directeur a demandé aux enfants de laisser leurs chaussures sur le tapis."
         ],
         "explanation": "Une demande d’action peut être rapportée avec demander à quelqu’un de + infinitif. Correction : Le directeur a demandé aux enfants de laisser leurs chaussures sur le tapis."
+      },
+      {
+        "id": "gram-ex-j7-curriculum-c-b1-timbres",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j7-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Elsa a dit qu’elle classerait les timbres de la collection.",
+        "cue": "Vendredi, Elsa a dit : « Je classe les timbres de la collection. » Elle parlait pendant le classement.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 19,
+          "end": 29,
+          "text": "classerait"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Elsa a dit qu’elle classait les timbres de la collection."
+        ],
+        "explanation": "Dans cette parole au passé, l’imparfait marque un fait en cours au moment où la personne parlait. Correction : Elsa a dit qu’elle classait les timbres de la collection."
+      },
+      {
+        "id": "gram-ex-j7-curriculum-c-b1-cabine",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j7-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Jeudi, l’inspectrice a expliqué qu’elle examinerait la cabine le matin même.",
+        "cue": "L’inspectrice a expliqué jeudi : « J’ai déjà examiné la cabine ce matin. » L’examen était terminé au moment de l’entretien.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 40,
+          "end": 51,
+          "text": "examinerait"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Jeudi, l’inspectrice a expliqué qu’elle avait déjà examiné la cabine le matin même."
+        ],
+        "explanation": "Le plus-que-parfait situe le fait avant les paroles rapportées au passé. Correction : Jeudi, l’inspectrice a expliqué qu’elle avait déjà examiné la cabine le matin même."
+      },
+      {
+        "id": "gram-ex-j7-curriculum-c-b1-balances",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j7-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Lundi, les responsables ont annoncé qu’ils vérifiaient les balances le lendemain.",
+        "cue": "Lundi, les responsables ont annoncé : « Nous vérifierons les balances demain. » Rapportez cette annonce le jeudi suivant.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 43,
+          "end": 54,
+          "text": "vérifiaient"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Lundi, les responsables ont annoncé qu’ils vérifieraient les balances le lendemain."
+        ],
+        "explanation": "Le conditionnel présent marque ici un événement prévu après les paroles rapportées au passé. Correction : Lundi, les responsables ont annoncé qu’ils vérifieraient les balances le lendemain."
+      },
+      {
+        "id": "gram-ex-j7-curriculum-c-b1-echarpe",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j7-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Mina a affirmé qu’elle avait laissé son écharpe au club le lendemain.",
+        "cue": "Mercredi, Mina a affirmé : « J’ai laissé mon écharpe au club hier. » Rapportez ses paroles le vendredi suivant en utilisant un repère relatif au mercredi.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 56,
+          "end": 68,
+          "text": "le lendemain"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Mina a affirmé qu’elle avait laissé son écharpe au club la veille."
+        ],
+        "explanation": "Le repère se calcule depuis le moment ou le lieu de la parole d’origine. Correction : Mina a affirmé qu’elle avait laissé son écharpe au club la veille."
+      },
+      {
+        "id": "gram-ex-j7-curriculum-c-b1-guichet-nuit",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j7-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Le reporter a demandé où le guichet restait ouvert après dix-huit heures.",
+        "cue": "Après la modification des horaires, le reporter a demandé : « Le guichet reste-t-il ouvert après dix-huit heures ? »",
+        "error": {
+          "segmentId": "prompt",
+          "start": 22,
+          "end": 24,
+          "text": "où"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Le reporter a demandé si le guichet restait ouvert après dix-huit heures."
+        ],
+        "explanation": "Une question à laquelle on peut répondre par oui ou non est introduite par si, élidé en s’ devant il ou ils. Correction : Le reporter a demandé si le guichet restait ouvert après dix-huit heures."
+      },
+      {
+        "id": "gram-ex-j7-curriculum-c-b1-carte-lecture",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j7-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Le conseiller a demandé à Malik où il avait refusé la nouvelle carte.",
+        "cue": "Le conseiller a demandé à Malik : « Pourquoi avez-vous refusé la nouvelle carte ? »",
+        "error": {
+          "segmentId": "prompt",
+          "start": 32,
+          "end": 34,
+          "text": "où"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Le conseiller a demandé à Malik pourquoi il avait refusé la nouvelle carte."
+        ],
+        "explanation": "Gardez l’interrogatif adapté et l’ordre d’une phrase indirecte. Qu’est-ce qui et qu’est-ce que deviennent ce qui et ce que. Correction : Le conseiller a demandé à Malik pourquoi il avait refusé la nouvelle carte."
+      },
+      {
+        "id": "gram-ex-j7-curriculum-c-b1-grondement",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j7-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "La journaliste a demandé ce que avait provoqué ce grondement.",
+        "cue": "Après un bruit dans l’atelier, la journaliste a demandé : « Qu’est-ce qui a provoqué ce grondement ? »",
+        "error": {
+          "segmentId": "prompt",
+          "start": 25,
+          "end": 31,
+          "text": "ce que"
+        },
+        "responseLines": 2,
+        "answers": [
+          "La journaliste a demandé ce qui avait provoqué ce grondement."
+        ],
+        "explanation": "Gardez l’interrogatif adapté et l’ordre d’une phrase indirecte. Qu’est-ce qui et qu’est-ce que deviennent ce qui et ce que. Correction : La journaliste a demandé ce qui avait provoqué ce grondement."
+      },
+      {
+        "id": "gram-ex-j7-curriculum-c-b1-draps-stage",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j7-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Le moniteur a demandé aux stagiaires qu’ils rangeaient les draps dans l’armoire.",
+        "cue": "Avant de fermer le local, le moniteur a dit aux stagiaires : « Rangez les draps dans l’armoire, s’il vous plaît. »",
+        "error": {
+          "segmentId": "prompt",
+          "start": 37,
+          "end": 54,
+          "text": "qu’ils rangeaient"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Le moniteur a demandé aux stagiaires de ranger les draps dans l’armoire."
+        ],
+        "explanation": "Une demande d’action peut être rapportée avec demander à quelqu’un de + infinitif. Correction : Le moniteur a demandé aux stagiaires de ranger les draps dans l’armoire."
+      },
+      {
+        "id": "gram-ex-j7-curriculum-c-b1-route-pluie",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j7-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "La directrice leur a demandé si ils pouvaient passer par la route du lac.",
+        "cue": "En voyant les travaux, la directrice a demandé à deux conducteurs : « Pouvez-vous passer par la route du lac ? » Elle voulait savoir si ce trajet était possible.",
+        "error": {
+          "segmentId": "prompt",
+          "start": 29,
+          "end": 31,
+          "text": "si"
+        },
+        "responseLines": 2,
+        "answers": [
+          "La directrice leur a demandé s’ils pouvaient passer par la route du lac."
+        ],
+        "explanation": "Une question à laquelle on peut répondre par oui ou non est introduite par si, élidé en s’ devant il ou ils. Correction : La directrice leur a demandé s’ils pouvaient passer par la route du lac."
+      },
+      {
+        "id": "gram-ex-j7-curriculum-c-b1-estrade",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j7-curriculum-c",
+          "partition": "b1"
+        },
+        "kind": "correct",
+        "prompt": "Le régisseur a demandé aux techniciens de déplacer l’estrade pendant la répétition.",
+        "cue": "Le régisseur a ordonné aux deux techniciens : « Ne déplacez pas l’estrade pendant la répétition. »",
+        "error": {
+          "segmentId": "prompt",
+          "start": 39,
+          "end": 50,
+          "text": "de déplacer"
+        },
+        "responseLines": 2,
+        "answers": [
+          "Le régisseur a demandé aux techniciens de ne pas déplacer l’estrade pendant la répétition."
+        ],
+        "explanation": "Une demande d’action peut être rapportée avec demander à quelqu’un de + infinitif. Correction : Le régisseur a demandé aux techniciens de ne pas déplacer l’estrade pendant la répétition."
       }
     ]
   },
@@ -4977,7 +5677,7 @@
   },
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j7-communication-pe",
     "subthemeId": "j7",
     "topic": "gram-faits",
@@ -6597,12 +7297,332 @@
           }
         ],
         "explanation": "Une demande d’action peut être rapportée avec demander à quelqu’un de + infinitif. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j7-communication-pe-b1-timbres",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j7-communication-pe",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Vendredi, Elsa a dit : « Je classe les timbres de la collection. » Elle parlait pendant le classement.",
+        "mode": "written",
+        "task": "Rapportez cette parole au discours indirect à une personne qui ne l’a pas entendue.",
+        "answers": [
+          "Elsa a dit qu’elle classait les timbres de la collection."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Discours indirect et changements de personne, de temps ou de repère adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible pour la personne destinataire."
+          }
+        ],
+        "explanation": "Dans cette parole au passé, l’imparfait marque un fait en cours au moment où la personne parlait. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j7-communication-pe-b1-cabine",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j7-communication-pe",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "L’inspectrice a expliqué jeudi : « J’ai déjà examiné la cabine ce matin. » L’examen était terminé au moment de l’entretien.",
+        "mode": "written",
+        "task": "Rapportez cette parole au discours indirect à une personne qui ne l’a pas entendue.",
+        "answers": [
+          "Jeudi, l’inspectrice a expliqué qu’elle avait déjà examiné la cabine le matin même."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Discours indirect et changements de personne, de temps ou de repère adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible pour la personne destinataire."
+          }
+        ],
+        "explanation": "Le plus-que-parfait situe le fait avant les paroles rapportées au passé. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j7-communication-pe-b1-balances",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j7-communication-pe",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Lundi, les responsables ont annoncé : « Nous vérifierons les balances demain. » Rapportez cette annonce le jeudi suivant.",
+        "mode": "written",
+        "task": "Rapportez cette parole au discours indirect à une personne qui ne l’a pas entendue.",
+        "answers": [
+          "Lundi, les responsables ont annoncé qu’ils vérifieraient les balances le lendemain."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Discours indirect et changements de personne, de temps ou de repère adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible pour la personne destinataire."
+          }
+        ],
+        "explanation": "Le conditionnel présent marque ici un événement prévu après les paroles rapportées au passé. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j7-communication-pe-b1-echarpe",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j7-communication-pe",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Mercredi, Mina a affirmé : « J’ai laissé mon écharpe au club hier. » Rapportez ses paroles le vendredi suivant en utilisant un repère relatif au mercredi.",
+        "mode": "written",
+        "task": "Rapportez cette parole au discours indirect à une personne qui ne l’a pas entendue.",
+        "answers": [
+          "Mina a affirmé qu’elle avait laissé son écharpe au club la veille."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Discours indirect et changements de personne, de temps ou de repère adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible pour la personne destinataire."
+          }
+        ],
+        "explanation": "Le repère se calcule depuis le moment ou le lieu de la parole d’origine. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j7-communication-pe-b1-guichet-nuit",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j7-communication-pe",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Après la modification des horaires, le reporter a demandé : « Le guichet reste-t-il ouvert après dix-huit heures ? »",
+        "mode": "written",
+        "task": "Rapportez cette parole au discours indirect à une personne qui ne l’a pas entendue.",
+        "answers": [
+          "Le reporter a demandé si le guichet restait ouvert après dix-huit heures."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Discours indirect et changements de personne, de temps ou de repère adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible pour la personne destinataire."
+          }
+        ],
+        "explanation": "Une question à laquelle on peut répondre par oui ou non est introduite par si, élidé en s’ devant il ou ils. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j7-communication-pe-b1-carte-lecture",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j7-communication-pe",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Le conseiller a demandé à Malik : « Pourquoi avez-vous refusé la nouvelle carte ? »",
+        "mode": "written",
+        "task": "Rapportez cette parole au discours indirect à une personne qui ne l’a pas entendue.",
+        "answers": [
+          "Le conseiller a demandé à Malik pourquoi il avait refusé la nouvelle carte."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Discours indirect et changements de personne, de temps ou de repère adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible pour la personne destinataire."
+          }
+        ],
+        "explanation": "Gardez l’interrogatif adapté et l’ordre d’une phrase indirecte. Qu’est-ce qui et qu’est-ce que deviennent ce qui et ce que. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j7-communication-pe-b1-grondement",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j7-communication-pe",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Après un bruit dans l’atelier, la journaliste a demandé : « Qu’est-ce qui a provoqué ce grondement ? »",
+        "mode": "written",
+        "task": "Rapportez cette parole au discours indirect à une personne qui ne l’a pas entendue.",
+        "answers": [
+          "La journaliste a demandé ce qui avait provoqué ce grondement."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Discours indirect et changements de personne, de temps ou de repère adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible pour la personne destinataire."
+          }
+        ],
+        "explanation": "Gardez l’interrogatif adapté et l’ordre d’une phrase indirecte. Qu’est-ce qui et qu’est-ce que deviennent ce qui et ce que. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j7-communication-pe-b1-draps-stage",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j7-communication-pe",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Avant de fermer le local, le moniteur a dit aux stagiaires : « Rangez les draps dans l’armoire, s’il vous plaît. »",
+        "mode": "written",
+        "task": "Rapportez cette parole au discours indirect à une personne qui ne l’a pas entendue.",
+        "answers": [
+          "Le moniteur a demandé aux stagiaires de ranger les draps dans l’armoire."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Discours indirect et changements de personne, de temps ou de repère adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible pour la personne destinataire."
+          }
+        ],
+        "explanation": "Une demande d’action peut être rapportée avec demander à quelqu’un de + infinitif. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j7-communication-pe-b1-route-pluie",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j7-communication-pe",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "En voyant les travaux, la directrice a demandé à deux conducteurs : « Pouvez-vous passer par la route du lac ? » Elle voulait savoir si ce trajet était possible.",
+        "mode": "written",
+        "task": "Rapportez cette parole au discours indirect à une personne qui ne l’a pas entendue.",
+        "answers": [
+          "La directrice leur a demandé s’ils pouvaient passer par la route du lac."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Discours indirect et changements de personne, de temps ou de repère adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible pour la personne destinataire."
+          }
+        ],
+        "explanation": "Une question à laquelle on peut répondre par oui ou non est introduite par si, élidé en s’ devant il ou ils. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j7-communication-pe-b1-estrade",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j7-communication-pe",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Le régisseur a ordonné aux deux techniciens : « Ne déplacez pas l’estrade pendant la répétition. »",
+        "mode": "written",
+        "task": "Rapportez cette parole au discours indirect à une personne qui ne l’a pas entendue.",
+        "answers": [
+          "Le régisseur a demandé aux techniciens de ne pas déplacer l’estrade pendant la répétition."
+        ],
+        "writeLines": 4,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Discours indirect et changements de personne, de temps ou de repère adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Phrase complète et compréhensible pour la personne destinataire."
+          }
+        ],
+        "explanation": "Une demande d’action peut être rapportée avec demander à quelqu’un de + infinitif. Les reformulations fidèles à la consigne sont recevables."
       }
     ]
   },
   {
     "schemaVersion": 1,
-    "revision": "faits-divers-2026-11-27-v1",
+    "revision": "faits-divers-2026-11-27-v2",
     "activityId": "gram-ex-j7-communication-po",
     "subthemeId": "j7",
     "topic": "gram-faits",
@@ -8205,6 +9225,326 @@
         "task": "Rapportez cette parole au discours indirect à une personne qui ne l’a pas entendue. Relance : « Quel emplacement leur a-t-il indiqué ? »",
         "answers": [
           "Le directeur a demandé aux enfants de laisser leurs chaussures sur le tapis.\nRéponse possible à la relance : Le tapis."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Discours indirect et changements de personne, de temps ou de repère adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Une demande d’action peut être rapportée avec demander à quelqu’un de + infinitif. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j7-communication-po-b1-timbres",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 50,
+          "typeId": "gram-ex-j7-communication-po",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Vendredi, Elsa a dit : « Je classe les timbres de la collection. » Elle parlait pendant le classement.",
+        "mode": "oral",
+        "task": "Rapportez cette parole au discours indirect à une personne qui ne l’a pas entendue. Relance : « Qu’était-elle en train de classer ? »",
+        "answers": [
+          "Elsa a dit qu’elle classait les timbres de la collection.\nRéponse possible à la relance : Les timbres de la collection."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Discours indirect et changements de personne, de temps ou de repère adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Dans cette parole au passé, l’imparfait marque un fait en cours au moment où la personne parlait. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j7-communication-po-b1-cabine",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 51,
+          "typeId": "gram-ex-j7-communication-po",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "L’inspectrice a expliqué jeudi : « J’ai déjà examiné la cabine ce matin. » L’examen était terminé au moment de l’entretien.",
+        "mode": "oral",
+        "task": "Rapportez cette parole au discours indirect à une personne qui ne l’a pas entendue. Relance : « L’examen avait-il commencé après l’entretien ? »",
+        "answers": [
+          "Jeudi, l’inspectrice a expliqué qu’elle avait déjà examiné la cabine le matin même.\nRéponse possible à la relance : Non, il était déjà terminé."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Discours indirect et changements de personne, de temps ou de repère adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Le plus-que-parfait situe le fait avant les paroles rapportées au passé. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j7-communication-po-b1-balances",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 52,
+          "typeId": "gram-ex-j7-communication-po",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Lundi, les responsables ont annoncé : « Nous vérifierons les balances demain. » Rapportez cette annonce le jeudi suivant.",
+        "mode": "oral",
+        "task": "Rapportez cette parole au discours indirect à une personne qui ne l’a pas entendue. Relance : « Quel jour était prévu pour la vérification ? »",
+        "answers": [
+          "Lundi, les responsables ont annoncé qu’ils vérifieraient les balances le lendemain.\nRéponse possible à la relance : Le mardi."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Discours indirect et changements de personne, de temps ou de repère adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Le conditionnel présent marque ici un événement prévu après les paroles rapportées au passé. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j7-communication-po-b1-echarpe",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 53,
+          "typeId": "gram-ex-j7-communication-po",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Mercredi, Mina a affirmé : « J’ai laissé mon écharpe au club hier. » Rapportez ses paroles le vendredi suivant en utilisant un repère relatif au mercredi.",
+        "mode": "oral",
+        "task": "Rapportez cette parole au discours indirect à une personne qui ne l’a pas entendue. Relance : « Quel jour a-t-elle affirmé cela ? »",
+        "answers": [
+          "Mina a affirmé qu’elle avait laissé son écharpe au club la veille.\nRéponse possible à la relance : Le mercredi."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Discours indirect et changements de personne, de temps ou de repère adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Le repère se calcule depuis le moment ou le lieu de la parole d’origine. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j7-communication-po-b1-guichet-nuit",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 54,
+          "typeId": "gram-ex-j7-communication-po",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Après la modification des horaires, le reporter a demandé : « Le guichet reste-t-il ouvert après dix-huit heures ? »",
+        "mode": "oral",
+        "task": "Rapportez cette parole au discours indirect à une personne qui ne l’a pas entendue. Relance : « Sur quelle heure portait sa question ? »",
+        "answers": [
+          "Le reporter a demandé si le guichet restait ouvert après dix-huit heures.\nRéponse possible à la relance : Dix-huit heures."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Discours indirect et changements de personne, de temps ou de repère adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Une question à laquelle on peut répondre par oui ou non est introduite par si, élidé en s’ devant il ou ils. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j7-communication-po-b1-carte-lecture",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 55,
+          "typeId": "gram-ex-j7-communication-po",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Le conseiller a demandé à Malik : « Pourquoi avez-vous refusé la nouvelle carte ? »",
+        "mode": "oral",
+        "task": "Rapportez cette parole au discours indirect à une personne qui ne l’a pas entendue. Relance : « De quel document parle-t-il ? »",
+        "answers": [
+          "Le conseiller a demandé à Malik pourquoi il avait refusé la nouvelle carte.\nRéponse possible à la relance : De la nouvelle carte."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Discours indirect et changements de personne, de temps ou de repère adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Gardez l’interrogatif adapté et l’ordre d’une phrase indirecte. Qu’est-ce qui et qu’est-ce que deviennent ce qui et ce que. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j7-communication-po-b1-grondement",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 56,
+          "typeId": "gram-ex-j7-communication-po",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Après un bruit dans l’atelier, la journaliste a demandé : « Qu’est-ce qui a provoqué ce grondement ? »",
+        "mode": "oral",
+        "task": "Rapportez cette parole au discours indirect à une personne qui ne l’a pas entendue. Relance : « Que voulait-elle connaître ? »",
+        "answers": [
+          "La journaliste a demandé ce qui avait provoqué ce grondement.\nRéponse possible à la relance : L’origine du bruit."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Discours indirect et changements de personne, de temps ou de repère adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Gardez l’interrogatif adapté et l’ordre d’une phrase indirecte. Qu’est-ce qui et qu’est-ce que deviennent ce qui et ce que. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j7-communication-po-b1-draps-stage",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 57,
+          "typeId": "gram-ex-j7-communication-po",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Avant de fermer le local, le moniteur a dit aux stagiaires : « Rangez les draps dans l’armoire, s’il vous plaît. »",
+        "mode": "oral",
+        "task": "Rapportez cette parole au discours indirect à une personne qui ne l’a pas entendue. Relance : « Où devaient-ils mettre les draps ? »",
+        "answers": [
+          "Le moniteur a demandé aux stagiaires de ranger les draps dans l’armoire.\nRéponse possible à la relance : Dans l’armoire."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Discours indirect et changements de personne, de temps ou de repère adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Une demande d’action peut être rapportée avec demander à quelqu’un de + infinitif. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j7-communication-po-b1-route-pluie",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 58,
+          "typeId": "gram-ex-j7-communication-po",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "En voyant les travaux, la directrice a demandé à deux conducteurs : « Pouvez-vous passer par la route du lac ? » Elle voulait savoir si ce trajet était possible.",
+        "mode": "oral",
+        "task": "Rapportez cette parole au discours indirect à une personne qui ne l’a pas entendue. Relance : « Quel trajet la directrice envisageait-elle ? »",
+        "answers": [
+          "La directrice leur a demandé s’ils pouvaient passer par la route du lac.\nRéponse possible à la relance : La route du lac."
+        ],
+        "writeLines": 0,
+        "rubric": [
+          {
+            "id": "r1",
+            "label": "Faits, personnes et repères conservés."
+          },
+          {
+            "id": "r2",
+            "label": "Discours indirect et changements de personne, de temps ou de repère adaptés."
+          },
+          {
+            "id": "r3",
+            "label": "Réponse intelligible et cohérente à la relance."
+          }
+        ],
+        "explanation": "Une question à laquelle on peut répondre par oui ou non est introduite par si, élidé en s’ devant il ou ils. Les reformulations fidèles à la consigne sont recevables."
+      },
+      {
+        "id": "gram-ex-j7-communication-po-b1-estrade",
+        "source": {
+          "path": "scripts/grammar_curriculum/faits-j7.tsv",
+          "position": 59,
+          "typeId": "gram-ex-j7-communication-po",
+          "partition": "b1"
+        },
+        "kind": "production",
+        "prompt": "Le régisseur a ordonné aux deux techniciens : « Ne déplacez pas l’estrade pendant la répétition. »",
+        "mode": "oral",
+        "task": "Rapportez cette parole au discours indirect à une personne qui ne l’a pas entendue. Relance : « Quand ne fallait-il pas déplacer l’estrade ? »",
+        "answers": [
+          "Le régisseur a demandé aux techniciens de ne pas déplacer l’estrade pendant la répétition.\nRéponse possible à la relance : Pendant la répétition."
         ],
         "writeLines": 0,
         "rubric": [
