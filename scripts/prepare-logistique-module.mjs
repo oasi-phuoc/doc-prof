@@ -37,9 +37,10 @@ const introduction = editorial.theoryOnly || legacyCombinedReference ? [] : [mod
   theoryBlocks(editorial.objectives ?? pages.objectifs ?? ''),
   theoryBlocks(editorial.overview ?? pages.apercu ?? ''),
 )]
+const baseUnit = baseTheory && readLogistiqueGeneratedBank(new URL(`src/logistique/banks/${baseTheory}.generated.ts`, root))
+  .find((unit) => unit.module === code && unit.kind === 'theorie')
 const reference = baseTheory
-  ? readLogistiqueGeneratedBank(new URL(`src/logistique/banks/${baseTheory}.generated.ts`, root))
-    .find((unit) => unit.module === code && unit.kind === 'theorie')?.blocks.filter((block) => block.kind !== 'image')
+  ? baseUnit?.blocks.filter((block) => editorial.keepBaseFigures || (block.kind !== 'image' && block.kind !== 'image-row'))
   : legacyCombinedReference ? Object.values(pages).filter(Boolean).flatMap(theoryBlocks) : theoryBlocks(pages.theorie)
 if (!reference?.length) throw new Error('Cours de départ introuvable : ' + code)
 const figures = editorial.visuals ?? (editorial.visual ? [editorial.visual] : [])
@@ -48,8 +49,10 @@ const scope = editorial.diplomas.length === 1 ? editorial.diplomas[0].toLowerCas
 const publicDirectory = new URL('public/', root)
 const figureDirectory = `assets/logistique/${catalogEntry.theme}/${code}/${scope}`
 const course = insertLogistiqueFigures(reference, figures, publicDirectory, figureDirectory)
-const summary = editorial.summaryTheory
-  ? insertLogistiqueFigures(theoryBlocks(editorial.summaryTheory),
+const summarySource = editorial.summaryTheory ? theoryBlocks(editorial.summaryTheory)
+  : editorial.keepBaseFigures ? baseUnit?.summaryBlocks : undefined
+const summary = summarySource
+  ? insertLogistiqueFigures(summarySource,
     figures.map(({ summaryAnchor, ...figure }) => ({ ...figure, anchor: summaryAnchor ?? figure.anchor })),
     publicDirectory, figureDirectory)
   : undefined

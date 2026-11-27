@@ -25,6 +25,11 @@ function theoryHeight(block: GrammarTheoryBlock, width: number, scale: number): 
       return 12 + (block.sub ? 28 : 32) * scale * lineCount(block.text, width * 0.8)
     case 'image':
       return 184 + lines(block.caption)
+    case 'image-row': {
+      const cellWidth = width * 0.9 / block.cells.length
+      return 143 + Math.max(...block.cells.map(({ caption, description }) =>
+        lines(caption, cellWidth) + (description ? lines(description, cellWidth) : 0)))
+    }
     case 'paragraph':
     case 'note':
     case 'rule':

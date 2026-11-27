@@ -294,6 +294,27 @@ function TheoryBlockContent({ block }: { block: GrammarTheoryBlock }) {
       </figure>
     )
   }
+  if (block.kind === 'image-row') {
+    return (
+      <table className="theory-image-table" aria-label={block.label}>
+        <tbody>
+          <tr>
+            {block.cells.map(({ src, alt, caption, description }) => (
+              <td key={caption}>
+                <figure>
+                  <WorksheetImage src={src} alt={alt} />
+                  <figcaption>
+                    <strong>{caption}</strong>
+                    {description && <span>{description}</span>}
+                  </figcaption>
+                </figure>
+              </td>
+            ))}
+          </tr>
+        </tbody>
+      </table>
+    )
+  }
   if (block.kind === 'heading') {
     const Tag = block.sub ? 'h4' : 'h3'
     return <Tag className={`theory-heading${block.sub ? ' is-sub' : ''}`}>{block.text}</Tag>

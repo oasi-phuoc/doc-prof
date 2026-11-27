@@ -4,6 +4,10 @@ import type { MathItem, PageConfig } from '@/math/types'
 import { currentLogistiquePublication, logistiquePublication, type LogistiqueUnit } from './approved-banks'
 import { isLogistiqueReferenceType, logistiqueType, type LogistiqueType } from './catalog'
 
+function withAssetBase<T extends { src: string }>(figure: T): T {
+  return { ...figure, src: import.meta.env.BASE_URL + figure.src.replace(/^\//, '') }
+}
+
 function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView']): MathItem[] {
   switch (unit.kind) {
     case 'objectifs-apercu':
@@ -13,9 +17,9 @@ function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'
         layout: 'theory',
         prompt: `${unit.id}:${index}`,
         answer: '',
-        theoryBlock: block.kind === 'image'
-          ? { ...block, src: import.meta.env.BASE_URL + block.src.replace(/^\//, '') }
-          : block,
+        theoryBlock: block.kind === 'image' ? withAssetBase(block)
+          : block.kind === 'image-row' ? { ...block, cells: block.cells.map(withAssetBase) }
+            : block,
       }))
     case 'maths':
       return [{

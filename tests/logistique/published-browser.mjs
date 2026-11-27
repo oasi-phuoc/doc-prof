@@ -2,15 +2,23 @@ import assert from 'node:assert/strict'
 import { readdir, readFile } from 'node:fs/promises'
 import { chromium } from 'playwright'
 import { createServer } from 'vite'
+import { readLogistiqueGeneratedBank } from '../../scripts/logistique-reference-blocks.mjs'
 
 const plan = JSON.parse(await readFile(new URL('../../docs/logistique/preparation/references-illustrees-v002.json', import.meta.url), 'utf8'))
 const curriculum = JSON.parse(await readFile(new URL('../../src/logistique/curriculum.generated.json', import.meta.url), 'utf8'))
 const preparation = new URL('../../docs/logistique/preparation/', import.meta.url)
-const photoFiles = (await readdir(preparation)).filter((file) => /^\d{3}-v002\.json$/.test(file)).sort()
+const photoFiles = (await readdir(preparation)).filter((file) => /^\d{3}-v00[23]\.json$/.test(file)).sort()
 const photoPlans = new Map(await Promise.all(photoFiles.map(async (file) => [
   file.slice(0, 3),
   JSON.parse(await readFile(new URL(file, preparation), 'utf8')),
 ])))
+const imageCount = (blocks) => blocks.reduce((total, block) =>
+  total + (block.kind === 'image' ? 1 : block.kind === 'image-row' ? block.cells.length : 0), 0)
+const theories = new Map(photoFiles.map((file) => {
+  const bank = new URL('../../src/logistique/banks/module-' + file.replace(/\.json$/, '.generated.ts'), import.meta.url)
+  const modules = readLogistiqueGeneratedBank(bank)
+  return [file.slice(0, 3), modules.find(({ kind }) => kind === 'theorie')]
+}))
 const requestedModules = process.argv.slice(2)
 assert(requestedModules.every((module) => photoPlans.has(module)), 'Module illustré inconnu')
 const externalUrl = process.env.LOGISTIQUE_TEST_URL
@@ -73,6 +81,18 @@ try {
     assert.equal(pdf.subarray(0, 4).toString(), '%PDF')
   }
 
+  async function verifyHistoryTable() {
+    const tables = page.locator('.print-only-sheets .theory-image-table')
+    const stages = tables.filter({ has: page.locator('figcaption strong', { hasText: /^Chasser$/ }) })
+    assert.deepEqual(await stages.locator('figcaption strong').allTextContents(), ['Chasser', 'Transformer', 'Consommer'])
+    assert.equal(await stages.locator('img').count(), 3)
+    const dates = (await tables.locator('figcaption strong').allTextContents()).filter((label) => /\d{4}/.test(label))
+    assert.deepEqual(dates, [
+      '1804', 'Années 1870', '1896', '1907', '1944', '1948', '1949', 'Années 1950',
+      'Milieu des années 1950', '1956', 'Années 1960', '1980', '1992', 'Décembre 2020',
+    ])
+  }
+
   await page.goto(base + '/generateur')
   await sheet.waitFor()
   for (const diploma of ['CFC', 'AFP']) {
@@ -97,7 +117,7 @@ try {
       await select('Type d’exercice', 'Théorie')
       await sheet.getByText('Théorie : module ' + module, { exact: true }).waitFor()
       const theory = await inspectPrint(`${module} ${diploma} théorie`)
-      const expectedImages = photoPlans.get(module)?.visuals.length ?? (figures.length + 1)
+      const expectedImages = theories.has(module) ? imageCount(theories.get(module).blocks) : figures.length + 1
       assert(theory.pages.reduce((sum, item) => sum + item.images, 0) >= expectedImages, `${module} ${diploma} illustrations`)
       assert.doesNotMatch(theory.printText, /Aperçu du module|Objectifs du module/)
       if (module === '105') {
@@ -140,7 +160,7 @@ try {
     for (const [code, { visuals }] of photoPlans) {
       if (requestedModules.length && !requestedModules.includes(code)) continue
       const caption = visuals[0].summaryAnchor
-      const photos = visuals.length
+      const theory = theories.get(code)
       const { title, theme, year } = curriculum.modules.find(({ code: module }) => code === module)
       if (!year[diploma]) continue
       await select('Thème', theme + ' — ' + curriculum.themes.find(({ code }) => code === theme).title)
@@ -148,13 +168,16 @@ try {
       await select('Type d’exercice', 'Théorie')
       assert.equal(await page.getByRole('group', { name: 'Nombre de colonnes', exact: true }).count(), 0)
       const complete = await inspectPrint(`${code} ${diploma} complet`)
-      assert.equal(await page.locator('.print-only-sheets img[src*="/assets/logistique/"][src$="-v002.webp"]').count(), photos)
+      const images = page.locator('.print-only-sheets .exercise-item img[src*="/assets/logistique/"][src$=".webp"]')
+      assert.equal(await images.count(), imageCount(theory.blocks))
+      if (code === '101') await verifyHistoryTable()
       await verifyPdf()
       await page.getByRole('button', { name: 'Résumé', exact: true }).click()
       const summary = await inspectPrint(`${code} ${diploma} résumé`)
       assert(summary.printText.includes(caption))
       assert.notEqual(summary.printText, complete.printText)
-      assert.equal(await page.locator('.print-only-sheets img[src*="/assets/logistique/"][src$="-v002.webp"]').count(), photos)
+      assert.equal(await images.count(), imageCount(theory.summaryBlocks))
+      if (code === '101') await verifyHistoryTable()
       assert(summary.pages.length <= complete.pages.length)
       await verifyPdf()
       await page.getByRole('button', { name: 'Complet', exact: true }).click()

@@ -161,6 +161,7 @@ import { module901 as theory901 } from './banks/module-901-v002.generated.ts'
 import { module902 as theory902 } from './banks/module-902-v002.generated.ts'
 import { foundationExercises } from './banks/fondations-exercices-v003'
 import { serviceClientExercises } from './banks/service-client-exercices-v003'
+import { module101 as illustratedHistory } from './banks/module-101-v003.generated.ts'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
 
@@ -367,6 +368,11 @@ const foundationExercisePublication: LogistiquePublication = {
   units: [...publication_projets_v002.units, ...foundationExercises],
 }
 
+const serviceClientExercisePublication: LogistiquePublication = {
+  revision: 'logistique-exercices-service-client-v003',
+  units: [...foundationExercisePublication.units, ...serviceClientExercises],
+}
+
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
@@ -430,9 +436,13 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   publication_ict_v002,
   publication_projets_v002,
   foundationExercisePublication,
+  serviceClientExercisePublication,
   {
-    revision: 'logistique-exercices-service-client-v003',
-    units: [...foundationExercisePublication.units, ...serviceClientExercises],
+    revision: 'logistique-theorie-101-v003',
+    units: [
+      ...serviceClientExercisePublication.units.filter((unit) => unit.kind !== 'theorie' || unit.module !== '101'),
+      ...illustratedHistory,
+    ],
   },
 ]
 

@@ -126,6 +126,14 @@ Révision `logistique-theories-101-306-407-409-v002`. Les 17 insertions WebP en 
 
 Les 80 modules CFC et 63 modules AFP ont chacun un cours **Complet** et un **Résumé**. Les dossiers éditoriaux `*-v002.json` recensent les titres d’ancrage, légendes et textes alternatifs des 176 insertions. Elles utilisent 73 mises en scène photoréalistes distinctes et sept schémas en couleur. Les contrôles Chromium couvrent 286 parcours A4 dans les deux versions, en tenant compte de l’éligibilité de chaque diplôme. Les 715 combinaisons des autres types conservent le contenu de la publication `logistique-901-v001`.
 
+## Relecture des illustrations par chapitre
+
+Le passage de contrôle réexamine les chapitres du cours complet et du résumé pour ajouter des vues qui manquaient. Les tableaux d’images gardent les légendes et les dates en texte sous les images. Les scènes historiques sont des reconstitutions.
+
+| Modules | Sujet illustré | Contrôle |
+|---|---|---|
+| 101 | Tableau Chasser, Transformer, Consommer. Ravitaillement napoléonien, Gizeh, ambre et soie. 14 repères historiques et trois étapes du registre papier au scan. | Révision `logistique-theorie-101-v003`. 25 insertions, dont 22 images originales supplémentaires. Cours complet et résumé vérifiés en A4 et PDF, CFC et AFP. [Préparation 101](preparation/101-v003.json). |
+
 ## Enrichissement des exercices
 
 ### Fondations — 100 à 110
