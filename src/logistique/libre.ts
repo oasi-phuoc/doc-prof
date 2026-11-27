@@ -27,6 +27,7 @@ export function completeLogistiquePrompt(item: MathItem): boolean {
 export function reviewableLogistiqueAnswer(item: MathItem): boolean {
   return completeLogistiquePrompt(item) && Boolean(item.answer.trim()) &&
     (item.calcAnswer === undefined || Boolean(item.calcAnswer.trim())) &&
+    (item.logistiqueResponseLines?.kind !== 'numbered' || item.logistiqueResponseLines.answers.every((answer) => answer.trim())) &&
     (item.layout !== 'select' || Boolean(item.options?.includes(item.answer)))
 }
 

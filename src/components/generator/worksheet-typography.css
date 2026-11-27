@@ -138,10 +138,18 @@
   --app-font-scale: min(var(--sheet-font-scale, 1), 1.125);
 }
 
-.a5-half.is-logistique :is(.prompt-stack > .answer-line-field.filled, .problem-response-line .response-value, .problem-block .draft-pad-answer) {
+.a5-half.is-logistique :is(.prompt-stack .answer-line-field.filled, .problem-response-line .response-value, .problem-block .draft-pad-answer) {
   font-size: calc(14px * var(--app-font-scale, 1));
   line-height: 1.35;
   overflow-wrap: anywhere;
+}
+
+.a5-half.is-logistique .prompt-stack:has(> .logistique-exercise-table) .prompt-stack-text {
+  font-size: calc(13.5px * var(--app-font-scale, 1));
+}
+
+.a5-half.is-logistique .logistique-exercise-table .filled-answer {
+  font-size: inherit;
 }
 
 .is-logistique .theory-grid .grammar-support-image figcaption {
@@ -183,6 +191,16 @@
 .a5-half.has-compact-header .doc-footer{padding-bottom:4px}
 .logistique-glossary-entry.is-diagram>figure{float:none;width:100%;max-width:102mm;margin:0 auto 2mm}
 .logistique-glossary-entry.is-diagram img{max-height:35mm}
-.is-logistique :is(.prompt-stack-text, .select-pills-prompt, .prompt-stack .filled-answer) {
+.is-logistique :is(.prompt-stack-text, .select-pills-prompt, .oral-qcm-prompt, .prompt-stack .filled-answer, .prompt-stack .answer-line-field.filled) {
   white-space: pre-line;
+}
+
+.logistique-numbered-lines {
+  margin: 0;
+  padding-inline-start: 1.6em;
+  list-style: decimal;
+}
+
+.logistique-numbered-lines > li + li {
+  margin-block-start: .18em;
 }

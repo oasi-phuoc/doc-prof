@@ -169,7 +169,12 @@ function height(item: MathItem, a5: boolean, scale: number): number {
     return imageHeight + tableHeight + Math.max(minimum, (a5 ? 145 : 174) + prompt + answer, calculations + prompt + answer + 36)
   }
   const spacing = a5 || table ? 48 : 58
-  return imageHeight + tableHeight + spacing + prompt + answer + (item.options?.length ?? 0) * 22 * scale
+  const lines = item.logistiqueResponseLines
+  const responseHeight = lines?.kind === 'numbered'
+    ? lines.answers.reduce((total, text) => total + (8 + 26 * lineCount(text, width * 0.83)) * scale, 0)
+    : lines?.kind === 'simple' ? Math.max(lines.count * 27 * scale, answer) : answer
+  const choicesHeight = item.options?.reduce((total, text) => total + (9 + 23 * lineCount(text, width * 0.8)) * scale, 0) ?? 0
+  return imageHeight + tableHeight + spacing + prompt + responseHeight + choicesHeight
 }
 
 /** Enchaîne les questions dans l’espace disponible et respecte les sauts manuels. */

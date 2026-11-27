@@ -1,7 +1,6 @@
 import { mathTheoryTopic } from '@/math/theory-lessons'
 import { mathGlossaryBank } from '@/math/glossary-banks'
 import { isLogistiqueReferenceType, logistiquePresentationFor, logistiqueType } from '@/logistique/catalog'
-import { isLogistiqueTablePresentation } from '@/logistique/tables'
 import { logistiqueHasSummary, logistiqueModuleCapacities } from '@/logistique/generate'
 import { SelectBox } from './SelectBox'
 import { supportsActivityQuestionCount } from './activity-settings'
@@ -230,16 +229,24 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
   const theoryView = activeBlock.logistiqueTheoryView ?? 'complet'
   const hasSummary = isLogistiqueTheory && logistiqueHasSummary(activeBlock.exerciseType, activeBlock.logistiqueBankRevision)
   const presentation = logistiquePresentationFor(activeBlock)
-  const supportsPresentation = logistics?.kind === 'verification' || logistics?.kind === 'maths'
+  const supportsPresentation = logistics?.kind === 'verification' || logistics?.kind === 'maths' || logistics?.kind === 'situation'
   const selectedModules = supportsPresentation
     ? (evalMode ? activeBlock.logistiqueSelection?.modules : undefined) ?? [logistics.module] : []
   const presentations = supportsPresentation ? ([
     ...(logistics.kind === 'verification' ? [
+      { id: 'qcm', label: 'QCM à réponse unique' },
+      { id: 'lignes-simples', label: 'Lignes simples' },
+      { id: 'lignes-numerotees', label: 'Lignes numérotées' },
       { id: 'sans-liste', label: 'Texte à trous sans liste' },
       { id: 'avec-liste', label: 'Texte à trous avec liste' },
     ] as const : []),
     { id: 'tableau-donnees', label: 'Tableau de données à compléter' },
     { id: 'tableau-dates', label: 'Tableau de dates à compléter' },
+    ...(logistics.kind !== 'maths' ? [
+      { id: 'tableau-comparaison', label: 'Tableau de comparaison' },
+      { id: 'tableau-classement', label: 'Classement par catégorie' },
+      { id: 'tableau-ordre', label: 'Ordre des étapes' },
+    ] as const : []),
   ] as const).map(({ id, label }) => ({
     id, label, capacity: [...logistiqueModuleCapacities(
       logistics, selectedModules, activeBlock.logistiqueBankRevision, id,
@@ -254,8 +261,8 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                   if (next === presentation) return
                   if (activeBlock.libreItems?.length &&
                       !window.confirm('Changer de présentation remplacera le contenu libre de cette activité. Continuer ?')) return
-                  const sameGaps = presentation && next &&
-                    !isLogistiqueTablePresentation(presentation) && !isLogistiqueTablePresentation(next)
+                  const sameGaps = (presentation === 'sans-liste' || presentation === 'avec-liste') &&
+                    (next === 'sans-liste' || next === 'avec-liste')
                   updatePage({
                     logistiqueGapMode: undefined,
                     logistiquePresentation: next,
