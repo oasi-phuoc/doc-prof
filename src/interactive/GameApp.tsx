@@ -24,6 +24,7 @@ import { displayThemeClass, useDisplayTheme } from './display-theme'
 import { MediaCheck } from './components/MediaCheck'
 import { FullPreload } from './components/FullPreload'
 import { useFullPreload } from './media/useFullPreload'
+import { useLocalPreload } from './media/useLocalPreload'
 import { PreparedMediaContext } from './media/prepared-context'
 import {
   type ShapeId,
@@ -196,13 +197,15 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
     () => (game ? prepareGame(game, selected, mode, source?.options.cardRulesVersion === 2 ? source.options.maxChoices : undefined) : null),
     [game, selected, mode, source?.options.cardRulesVersion, source?.options.maxChoices],
   )
-  const media = useMediaPreflight(selectedGame, !playing)
+  const localMedia = useLocalPreload()
+  const media = useMediaPreflight(selectedGame, !playing && !localMedia.loading, localMedia.resolve)
   const activeGame = useMemo(() => {
     if (!selectedGame) return null
     if (source?.resolvedKeys && !selectionModified) return excludeQuestions(selectedGame, new Set(selectedGame.questions.filter((q) => !source.resolvedKeys!.includes(questionSourceKey(q))).map((q) => q.id)))
     return excludeUnavailable ? excludeQuestions(selectedGame, media.excluded) : selectedGame
   }, [selectedGame, excludeUnavailable, media.excluded, source, selectionModified])
-  const preload = useFullPreload(activeGame, media.manager)
+  const preload = useFullPreload(activeGame, media.manager, localMedia.resolve)
+  const preparedFiles = preload.pack?.files
   const readabilityPlan = useMemo(() => activeGame ? { id: activeGame.id, questions: activeGame.questions, rounds: activeGame.rounds } : null, [activeGame])
   const readabilityOptions = useMemo(() => ({ mode, colors, shapes, timer, mascot, theme }), [mode, colors, shapes, timer, mascot, theme])
   const readability = useReadabilityPreflight(readabilityPlan, readabilityOptions, !playing && !competitionOpen && media.complete, preload.resolve)
@@ -578,7 +581,9 @@ export default function GameApp({ initialPreferences, initialWarning }: { initia
                 {source && <PresetPanel key={source.reference ? `${source.reference.kind}:${source.reference.id}` : source.sourceKey} sourceKey={source.reference ? `${source.reference.kind}:${source.reference.id}` : source.sourceKey} contentHash={String(hash(canonicalJson(source.template)))} questions={game.questions} selected={selectedSources} options={source.options} timer={timer} mode={mode} onOptions={changePlanOptions} onApply={applyPreset} activePresetId={source.presetId} paletteVersion={paletteVersion} />}
                     </details>
                     <details className="ci-settings-extra"><summary>Jouer sans connexion</summary>
-                    <FullPreload phase={preload.phase} progress={preload.progress} error={preload.error} disabled={!media.complete || !activeGame.questions.length} onStart={preload.start} onCancel={preload.release} onRelease={preload.release} />
+                    <FullPreload phase={preload.phase} progress={preload.progress} error={preload.error} disabled={!media.complete || !activeGame.questions.length} onStart={preload.start} onCancel={preload.release} onRelease={preload.release}
+                      local={{ stored: localMedia.stored, pending: localMedia.pending, message: localMedia.message, using: localMedia.using, onUse: localMedia.useStoredMedia, onForget: localMedia.forget,
+                        onKeep: preparedFiles && localMedia.canKeep(preparedFiles) ? () => localMedia.keep(preparedFiles) : undefined }} />
                     </details>
                     <button type="button" aria-pressed={fullscreen} onClick={header.onFullscreen}>{fullscreen ? 'Quitter le plein écran' : 'Plein écran'}</button>
                   </SessionSettings>

@@ -58,6 +58,8 @@ Pour importer, ouvrez la fiche d’origine puis choisissez le fichier JSON et v�
 
 Ouvrez la fiche avec une connexion, sélectionnez les questions, puis choisissez **Précharger toute la séance** dans la préparation. Le poids téléchargé et la progression s’affichent. Attendez **Prêt à jouer sans connexion**, puis gardez cette page ouverte : vous pouvez couper Internet et jouer en Classe ou Solo. Les pistes composées, les images, leur zoom et les 30 mascottes sont inclus. Le préchargement ne consomme aucune écoute.
 
+Après le préchargement, **Conserver les médias sur cet appareil** enregistre le dernier lot de médias publics pendant sept jours. À la prochaine ouverture du jeu, retrouvez ce lot dans **Jouer sans connexion**. **Utiliser les médias conservés** permet de reprendre si les fichiers sont inaccessibles. Quand le navigateur détecte déjà une absence de réseau, il utilise les médias conservés dès que le jeu s’ouvre. **Supprimer les médias conservés** libère ce stockage. Le site et les fiches enregistrées peuvent demander une connexion à l’ouverture.
+
 Pour utiliser la console enseignant sans réseau, ouvrez aussi sa fenêtre avant de couper la connexion. Gardez les deux fenêtres ouvertes.
 
 Une erreur empêche d’annoncer la séance prête. Réessayez le préchargement ou réduisez la sélection ; **Annuler le préchargement** rend le lancement habituel disponible. Si la sélection nécessite d’autres fichiers, préchargez à nouveau. **Libérer les médias chargés** retire la préparation sans connexion. Fermer ou recharger la page nécessite une connexion pour ouvrir la fiche et préparer de nouveau les médias.

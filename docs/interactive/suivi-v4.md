@@ -90,7 +90,9 @@ Les trente mascottes et leurs six poses animées sont communes à Classe, Solo, 
 
 ## Préchargement manuel F40
 
-La préparation Classe et Solo propose **Précharger toute la séance** : progression, poids total, contrôle complet des images et audios, extraits composés et 30 mascottes. La page ouverte peut ensuite jouer sans réseau, avec les mêmes références de source et sauvegardes. Les erreurs et annulations libèrent les fichiers temporaires ; la reprise après rechargement nécessite une nouvelle préparation. Le démarrage à froid reste ouvert. Voir [ADR 0044](adr-0044-prechargement-complet.md).
+Après préchargement, l’enseignant peut conserver le dernier lot de médias publics pendant sept jours. Quand le jeu est ouvert à nouveau, les médias redeviennent disponibles sur le même appareil et le même navigateur, même si leur téléchargement échoue. Ce parcours est distinct du démarrage de l’application sans réseau, encore ouvert. Le test `local-preload-browser.mjs` couvre la fermeture, la réouverture, le décodage des images, la lecture audio, l’expiration et l’effacement.
+
+La préparation Classe et Solo propose **Précharger toute la séance** : progression, poids total, contrôle complet des images et audios, extraits composés et 30 mascottes. La page ouverte peut ensuite jouer sans réseau, avec les mêmes références de source et sauvegardes. Les erreurs et annulations libèrent les fichiers temporaires ; la reprise des médias après rechargement est possible pour le lot conservé sur cet appareil. Le démarrage de l’application sans réseau reste ouvert. Voir [ADR 0044](adr-0044-prechargement-complet.md).
 
 ## Duels demandés par le propriétaire
 

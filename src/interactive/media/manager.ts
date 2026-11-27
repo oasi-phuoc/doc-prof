@@ -10,6 +10,7 @@ import type {
   PublicMediaPlan,
 } from './types'
 import type { MediaResolver } from './prepared-context'
+import { originalMedia } from './prepared-context'
 import { loadFractionDrawing } from './fraction-drawing'
 
 type Cached = { result: MediaResult; checkedAt: number }
@@ -17,7 +18,12 @@ export class MediaManager {
   private readonly cache = new Map<string, Cached>()
   private readonly deps: MediaProbeDependencies
   private readonly options: MediaProbeOptions
-  private prepared: MediaResolver = source => source
+  private prepared: MediaResolver = originalMedia
+  private stored: MediaResolver = originalMedia
+  private resolve: MediaResolver = source => {
+    const temporary = this.prepared(source)
+    return temporary === source ? this.stored(source) : temporary
+  }
   constructor(options: MediaProbeOptions, deps?: MediaProbeDependencies) {
     this.options = options
     this.deps = deps ?? browserDependencies()
@@ -29,6 +35,12 @@ export class MediaManager {
 
   usePrepared(resolve: MediaResolver): void {
     this.prepared = resolve
+    this.cache.clear()
+  }
+
+  useStored(resolve: MediaResolver): void {
+    if (this.stored === resolve) return
+    this.stored = resolve
     this.cache.clear()
   }
 
@@ -55,7 +67,7 @@ export class MediaManager {
           cached &&
           this.deps.now() - cached.checkedAt < 300000
         const source = mediaUrl(asset.url, this.options)
-        const prepared = source ? mediaUrl(this.prepared(source), this.options) : null
+        const prepared = source ? mediaUrl(this.resolve(source), this.options) : null
         const target = prepared && prepared !== asset.url ? { ...asset, url: prepared } : asset
         const result = useCache
           ? { ...cached.result, asset }
@@ -77,7 +89,7 @@ export class MediaManager {
   }
 
   /** Warm every asset of the next screen equally. Never inspect a correction. */
-  async preload(plan: PublicMediaPlan, signal: AbortSignal, resolve: MediaResolver = this.prepared): Promise<void> {
+  async preload(plan: PublicMediaPlan, signal: AbortSignal, resolve: MediaResolver = this.resolve): Promise<void> {
     const assets = this.assets(plan)
     let next = 0
     const worker = async () => {

@@ -5,6 +5,7 @@ const vite=await createServer({server:{middlewareMode:true,hmr:false},appType:'c
 try{
   const {preloadSession,preloadIdentity,sessionAssets,mascotMedia}=await vite.ssrLoadModule('/src/interactive/media/full-preload.ts')
   const {MediaManager}=await vite.ssrLoadModule('/src/interactive/media/manager.ts')
+  const {canKeepMedia}=await vite.ssrLoadModule('/src/interactive/media/local-preload.ts')
   const {loadGrammarImage}=await vite.ssrLoadModule('/src/grammaire/curriculum/image-support.ts')
   const options={baseUrl:'https://class.test/interactif'},signal=()=>new AbortController().signal
   const question=(more={})=>({id:'q1',prompt:'Quel mot ?',images:['/picture.webp'],choices:[{id:'yes',text:'Oui',image:'/yes.webp'},{id:'no',text:'Non',image:'/no.webp'}],...more})
@@ -21,6 +22,27 @@ try{
     }
     return {deps,created,revoked,fetched,decoded,blobs}
   }
+  await test('local retention accepts only bounded public media from the game origin', () => {
+    const audio = new Blob([new Uint8Array(8)], { type: 'audio/wav' })
+    const trusted = 'https://class.test/lib/audio/phrase.wav'
+    assert.equal(canKeepMedia(new Map([[trusted, audio]]), options.baseUrl), true)
+    for (const source of ['https://other.test/lib/audio/phrase.wav', 'https://class.test/api/read', `${trusted}?edition=2`, 'blob:https://class.test/source', 'data:audio/wav,test']) {
+      assert.equal(canKeepMedia(new Map([[source, audio]]), options.baseUrl), false)
+    }
+    for (const blob of [new Blob([], { type: 'audio/wav' }), new Blob(['page'], { type: 'text/html' })]) {
+      assert.equal(canKeepMedia(new Map([[trusted, blob]]), options.baseUrl), false)
+    }
+  })
+  await test('restored sources are decoded as usual and keep their original references', async () => {
+    const source = plan(question()), f = fixture()
+    const pack = await preloadSession(source, { ...options, resolve: url => url.endsWith('/picture.webp') ? 'blob:https://class.test/restored' : url }, signal(), undefined, f.deps)
+    assert.ok(f.fetched.some(({ url }) => url === 'blob:https://class.test/restored'))
+    assert.ok(pack.files.has('https://class.test/picture.webp'))
+    assert.ok(!pack.files.has('blob:https://class.test/restored'))
+    assert.equal(pack.files.get('https://class.test/picture.webp').size, 4)
+    pack.dispose()
+    assert.equal(pack.files.size, 0)
+  })
   const grammarSupport=async bytes=>{
     const digest=await crypto.subtle.digest('SHA-256',bytes),sha256=Array.from(new Uint8Array(digest),v=>v.toString(16).padStart(2,'0')).join('')
     return {id:'source-visual-'+sha256,src:`/lib/images/grammaire/curriculum/sha256/${sha256}.webp`,sha256,alt:'Personne qui travaille',width:30,height:20,source:{path:'/lib/images/source.webp',manifest:'docs/source.json',rights:'permitted-reuse',note:'Source de test'}}

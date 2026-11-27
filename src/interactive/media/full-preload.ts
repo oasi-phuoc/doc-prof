@@ -12,9 +12,9 @@ export const MAX_PRELOAD_BYTES = 128 * 1024 * 1024
 export const MAX_PRELOAD_FILE_BYTES = 32 * 1024 * 1024
 export const mascotMedia = MASCOT_IMAGES
 export type PreloadProgress = { completed: number; total: number; bytes: number }
-export type PreparedMedia = PreloadProgress & { resolve: MediaResolver; dispose: () => void }
+export type PreparedMedia = PreloadProgress & { resolve: MediaResolver; dispose: () => void; files: ReadonlyMap<string, Blob> }
 type Dependencies = Pick<MediaProbeDependencies, 'fetch' | 'decodeImage' | 'decodeAudio'> & { createUrl: (blob: Blob) => string; revokeUrl: (url: string) => void }
-type Options = MediaPolicy & { timeoutMs?: number; maxBytes?: number; maxFileBytes?: number }
+type Options = MediaPolicy & { timeoutMs?: number; maxBytes?: number; maxFileBytes?: number; resolve?: MediaResolver }
 
 export function sessionAssets(plan: PublicMediaPlan, policy: MediaPolicy): MediaAsset[] {
   const assets = collectMedia(plan.questions, policy)
@@ -71,7 +71,8 @@ export async function preloadSession(plan: PublicMediaPlan, options: Options, si
   if (plan.questions.some(question => question.fractionFigure)) await abortable(loadFractionDrawing(), signal)
   const deps=dependencies??{fetch:globalThis.fetch.bind(globalThis),decodeImage,decodeAudio,createUrl:URL.createObjectURL.bind(URL),revokeUrl:URL.revokeObjectURL.bind(URL)}
   const controller=new AbortController(), stop=()=>controller.abort(), urls=new Map<string,string>()
-  const dispose=()=>{for(const url of urls.values())deps.revokeUrl(url);urls.clear()}
+  const files = new Map<string, Blob>()
+  const dispose=()=>{for(const url of urls.values())deps.revokeUrl(url);urls.clear();files.clear()}
   signal.addEventListener('abort',stop,{once:true})
   let next=0,completed=0,totalBytes=0
   const report=()=>onProgress?.({completed,total:assets.length,bytes:totalBytes})
@@ -83,7 +84,9 @@ export async function preloadSession(plan: PublicMediaPlan, options: Options, si
       controller.signal.addEventListener('abort',cancel,{once:true})
       const timeout=setTimeout(cancel,options.timeoutMs??8000)
       try{
-        const response=await abortable(deps.fetch(asset.url,{signal:download.signal,credentials:'same-origin',redirect:'error',cache:'force-cache'}),download.signal)
+        const source = options.resolve?.(asset.url) ?? asset.url
+        const target = mediaUrl(source, options) ?? asset.url
+        const response=await abortable(deps.fetch(target,{signal:download.signal,credentials:'same-origin',redirect:'error',cache:'force-cache'}),download.signal)
         if(!response.ok||!acceptableMime(asset.kind,response.headers.get('content-type')))throw new PreloadError('Un média est absent ou illisible. Réessayez le chargement avec une connexion.')
         const blob=await readBlob(response,options.maxFileBytes??MAX_PRELOAD_FILE_BYTES,download.signal,received)
         for(const image of grammar.filter(image=>mediaUrl(image.src,options)===asset.url)){
@@ -95,6 +98,7 @@ export async function preloadSession(plan: PublicMediaPlan, options: Options, si
         const url=deps.createUrl(blob);urls.set(asset.url,url)
         await abortable(asset.kind==='image'?deps.decodeImage(url,download.signal):deps.decodeAudio(url,download.signal),download.signal)
         if(download.signal.aborted)throw aborted()
+        files.set(asset.url, blob)
         completed++;report()
       }finally{clearTimeout(timeout);controller.signal.removeEventListener('abort',cancel)}
     }
@@ -103,7 +107,7 @@ export async function preloadSession(plan: PublicMediaPlan, options: Options, si
   try{
     await Promise.all(tasks)
     if(signal.aborted)throw aborted()
-    return {completed,total:assets.length,bytes:totalBytes,resolve:source=>urls.get(mediaUrl(source,options)??'')??source,dispose}
+    return {completed,total:assets.length,bytes:totalBytes,resolve:source=>urls.get(mediaUrl(source,options)??'')??source,dispose,files}
   }catch(error){controller.abort();await Promise.allSettled(tasks);dispose();throw error}
   finally{signal.removeEventListener('abort',stop)}
 }
