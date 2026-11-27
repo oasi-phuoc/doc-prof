@@ -2,6 +2,13 @@
 
 export const GRAM_EXERCISE_KINDS = [
   {
+    id: 'vocab-illustre',
+    label: 'Vocabulaire illustré',
+    description: 'Associer des mots à des images.',
+    instruction: 'Regardez les images et lisez les mots.',
+    layout: 'write' as const,
+  },
+  {
     id: 'communication-ce',
     label: 'Lire une situation',
     description: 'Documents du quotidien avec des questions courtes.',

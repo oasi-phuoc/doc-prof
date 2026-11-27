@@ -1,3 +1,4 @@
+import type { GrammarCoStatement } from '@/grammaire/exercises/co-true-false'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 
 export type Domain =
@@ -653,6 +654,8 @@ export type MathItem = {
   menuPrices?: { label: string; cents: number }[]
   areaFigures?: RectangleGrid[]
   solidViews?: SolidViews
+  grammarWordVocab?: { id: string; label: string; image?: string; recall: boolean }
+  grammarCoTrueFalse?: GrammarCoStatement[]
   spatial?: SpatialPractice
   measureScale?: { kind: 'mass' | 'capacity' | 'duration'; unit: string; step: number; tick: number }
   lengthUnits?: { a: number; b: number }
@@ -1004,6 +1007,8 @@ export type ExerciseBlock = {
   /** Imported grammar listening lots: all current sources are A1; A2 is separate. */
   grammarCoLevel?: 'A1' | 'A2'
   grammarCoAudioId?: string
+  grammarCoFormat?: 'questions' | 'true-false'
+  grammarVocabRecall?: boolean
   /** Additive non-CO curriculum. Absence preserves the historical generator. */
   grammarLevel?: import('@/grammaire/curriculum/types').GrammarLevel
   grammarActivityId?: string

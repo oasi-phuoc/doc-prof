@@ -13799,6 +13799,33 @@
               ]
             }
           }
+        },
+        {
+          "enonce": "Pour combien de personnes le client demande-t-il une tarte au citron ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Pour six personnes",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Pour deux personnes"
+            },
+            {
+              "id": "c",
+              "texte": "Pour huit personnes"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Pour six personnes"
+            }
+          }
         }
       ]
     },
@@ -14011,6 +14038,51 @@
               ]
             }
           }
+        },
+        {
+          "enonce": "Quel produit faut-il ajouter à la commande ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Un pain au chocolat",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Une brioche"
+            },
+            {
+              "id": "c",
+              "texte": "Un croissant"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Un pain au chocolat"
+            },
+            "qcm_image": {
+              "melanger": true,
+              "choix": [
+                {
+                  "id": "a",
+                  "image": "/lib/images/tcf/qcm-audit/co306-pain-chocolat-dessine.webp",
+                  "correct": true
+                },
+                {
+                  "id": "b",
+                  "image": "/lib/images/tcf/qcm-audit/co306-brioche-dessine.webp"
+                },
+                {
+                  "id": "c",
+                  "image": "/lib/images/tcf/qcm-audit/co306-croissant-singulier-dessine.webp"
+                }
+              ]
+            }
+          }
         }
       ]
     },
@@ -14075,6 +14147,87 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "Le Macaron doré"
+            }
+          }
+        },
+        {
+          "enonce": "Qui laisse le message ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "La mère de Léa",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Léa"
+            },
+            {
+              "id": "c",
+              "texte": "La sœur de Léa"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "La mère de Léa"
+            }
+          }
+        },
+        {
+          "enonce": "Que propose la mère de Léa ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Acheter un gâteau",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Faire un gâteau elle-même"
+            },
+            {
+              "id": "c",
+              "texte": "Demander à Léa d’acheter le gâteau"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Acheter un gâteau"
+            }
+          }
+        },
+        {
+          "enonce": "Pour quelle occasion faut-il un gâteau ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Pour l’anniversaire de Léa",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Pour un mariage"
+            },
+            {
+              "id": "c",
+              "texte": "Pour le Nouvel An"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Pour l’anniversaire de Léa"
             }
           }
         }
@@ -17224,6 +17377,33 @@
               "reponse_modele": "La ligne 7"
             }
           }
+        },
+        {
+          "enonce": "Le trajet en métro est-il direct ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Non, il faut changer à Opéra",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Oui, il faut garder la même ligne"
+            },
+            {
+              "id": "c",
+              "texte": "Non, il faut changer à la gare"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Non, il faut changer à Opéra"
+            }
+          }
         }
       ]
     },
@@ -18128,6 +18308,33 @@
                   "image": "/lib/images/tcf/qcm-audit/grammaire-train-place-porte.webp"
                 }
               ]
+            }
+          }
+        },
+        {
+          "enonce": "Comment les personnes disent-elles acheter leurs billets ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Sur l’application de la SNCF",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Au guichet de la gare"
+            },
+            {
+              "id": "c",
+              "texte": "Par téléphone"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Sur l’application de la SNCF"
             }
           }
         }
@@ -20441,6 +20648,60 @@
               "reponse_modele": "Du canyoning et de l’escalade"
             }
           }
+        },
+        {
+          "enonce": "Combien de jours dure le festival ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Quatre jours",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Deux jours"
+            },
+            {
+              "id": "c",
+              "texte": "Sept jours"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Quatre jours"
+            }
+          }
+        },
+        {
+          "enonce": "Que fait la première famille dans la journée ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Des visites guidées",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Du canyoning"
+            },
+            {
+              "id": "c",
+              "texte": "De l’escalade"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Des visites guidées"
+            }
+          }
         }
       ]
     },
@@ -22443,6 +22704,87 @@
             "lignes": {
               "nb_lignes": 1,
               "reponse_modele": "La promenade des Anglais"
+            }
+          }
+        },
+        {
+          "enonce": "Combien de musées sont cités dans le dialogue ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Deux musées",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Un musée"
+            },
+            {
+              "id": "c",
+              "texte": "Trois musées"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Deux musées"
+            }
+          }
+        },
+        {
+          "enonce": "Quel type de lieu est l’Acropolis ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "Une salle de spectacles",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Une bibliothèque"
+            },
+            {
+              "id": "c",
+              "texte": "Une gare"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "Une salle de spectacles"
+            }
+          }
+        },
+        {
+          "enonce": "À quel lieu peut-on aller pour voir du théâtre ?",
+          "type_reponse": "qcm_texte",
+          "points": 1,
+          "melanger": true,
+          "choix": [
+            {
+              "id": "a",
+              "texte": "À la Comédie",
+              "correct": true
+            },
+            {
+              "id": "b",
+              "texte": "Au musée Matisse"
+            },
+            {
+              "id": "c",
+              "texte": "Au musée Chagall"
+            }
+          ],
+          "formes": {
+            "lignes": {
+              "nb_lignes": 1,
+              "reponse_modele": "À la Comédie"
             }
           }
         }

@@ -1,3 +1,5 @@
+import { isWordVocabType } from '@/grammaire/exercises/word-vocab'
+import { grammarCoStatements } from '@/grammaire/exercises/co-true-false'
 import { mathTheoryTopic } from '@/math/theory-lessons'
 import { isMathProblemHelpType } from '@/math/problem-help'
 import { grammarOrderHasSentenceFilters } from '@/grammaire/curriculum/types'
@@ -196,6 +198,8 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
   const showGrammarCoLevel = grammarCoTheme && (activeBlock.exerciseType.endsWith('-co-theme') || hasGrammarCoTheme(grammarCoTheme.id))
   const grammarCoLevel = activeBlock.grammarCoLevel ?? (grammarCoTheme ? defaultGrammarCoLevel(grammarCoTheme.id) : 'A1')
   const grammarCoAudios = grammarCoTheme ? grammarCoEntries(grammarCoTheme.id,grammarCoLevel) : []
+  const selectedGrammarCoAudio = grammarCoAudios.find(entry => entry.exercise.id === activeBlock.grammarCoAudioId) ?? grammarCoAudios[0]
+  const availableTrueFalse = selectedGrammarCoAudio ? grammarCoStatements(selectedGrammarCoAudio.exercise.id).length : 0
   return (
     <>
               {isJeuxDomain || isCalliDomain ? null : (
@@ -519,7 +523,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   a1Available={grammarCoEntries(grammarCoTheme.id,'A1').length>0}
                   a2Available={grammarCoEntries(grammarCoTheme.id,'A2').length>0}
                   onChange={grammarCoLevel=>updatePage({
-                    ...clearLibreContentFreeze(),grammarCoLevel,grammarCoAudioId:undefined,tcfExercise:undefined,
+                    ...clearLibreContentFreeze(),grammarCoLevel,grammarCoAudioId:undefined,grammarCoFormat:undefined,tcfExercise:undefined,
                     tcfBankId:undefined,tcfFormModes:undefined,tcfPageBreakAfter:undefined,
                   })}
                 />
@@ -528,12 +532,31 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
               {isGrammaireDomain && showGrammarCoLevel && grammarCoAudios.length>0 ? (
                 <SelectBox label="Audio" value={activeBlock.grammarCoAudioId??grammarCoAudios[0]!.exercise.id}
                   onChange={grammarCoAudioId=>updatePage({
-                    ...clearLibreContentFreeze(),grammarCoAudioId,tcfExercise:undefined,
+                    ...clearLibreContentFreeze(),grammarCoAudioId,grammarCoFormat:undefined,tcfExercise:undefined,
                     tcfBankId:undefined,tcfFormModes:undefined,tcfPageBreakAfter:undefined,
                   })}>
                   {grammarCoAudios.map(entry=>(
                     <option key={entry.exercise.id} value={entry.exercise.id}>{entry.source.filename.replace('.mp3','').replace(/^piste_?/,'Piste ')}</option>
                   ))}
+                </SelectBox>
+              ) : null}
+              {isGrammaireDomain && isWordVocabType(activeBlock.exerciseType) ? (
+                <SelectBox label="Présentation" value={activeBlock.grammarVocabRecall ? 'recall' : 'learn'}
+                  onChange={(value) => updatePage({ ...clearLibreContentFreeze(), grammarVocabRecall: value === 'recall' })}>
+                  <option value="learn">Lire les mots</option>
+                  <option value="recall">Retrouver les mots</option>
+                </SelectBox>
+              ) : null}
+              {isGrammaireDomain && availableTrueFalse > 0 ? (
+                <SelectBox label="Présentation" value={activeBlock.grammarCoFormat ?? 'questions'}
+                  onChange={(value) => updatePage({
+                    ...clearLibreContentFreeze(),
+                    grammarCoFormat: value === 'true-false' ? 'true-false' : 'questions',
+                    count: Math.min(activeBlock.count, value === 'true-false' ? availableTrueFalse : (selectedGrammarCoAudio?.exercise.questions.length ?? 1)),
+                    tcfPageBreakAfter: undefined,
+                  })}>
+                  <option value="questions">Questions</option>
+                  <option value="true-false">Vrai/Faux</option>
                 </SelectBox>
               ) : null}
               {isTcf && activeBlock.exerciseType.startsWith('tcf-ce') ? <TcfCeTextFontControl value={activeBlock.tcfCeTextFont ?? 'arial'} onChange={tcfCeTextFont => updatePage({ tcfCeTextFont })} /> : null}

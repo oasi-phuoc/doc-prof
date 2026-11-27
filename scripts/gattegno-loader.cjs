@@ -11,7 +11,7 @@ function load(file) {
   const module = { exports: {} }; cache.set(file, module)
   if (file.endsWith('.json')) { const raw=JSON.parse(fs.readFileSync(file,'utf8')); module.exports=/\/src\/(?:tcf\/content\/[^/]+\/(?:ce|co)\.json|grammaire\/exercises\/co-bank\.json)$/.test(file)?load(path.join(root,'src/tcf/editorial-json.mjs')).normalizeEditorialBank(raw):raw; return module.exports }
   if (/\.(?:webp|svg|png|jpg)$/.test(file)) { module.exports=file; return file }
-  const source = fs.readFileSync(file, 'utf8').replace(/import\.meta\.glob\('([^']+)',\s*\{[^}]*\}\)/g, (_match,pattern) => `require(${JSON.stringify('__eager_glob__:'+pattern)})`)
+  const source = fs.readFileSync(file, 'utf8').replace(/import\.meta\.glob(?:<[^>]+>)?\('([^']+)',\s*\{[^}]*\}\)/g, (_match,pattern) => `require(${JSON.stringify('__eager_glob__:'+pattern)})`)
     .replace(/\bimport\.meta\.env\b/g, '__testViteEnv')
   const code = ts.transpileModule(source, { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022, jsx: ts.JsxEmit.ReactJSX, esModuleInterop: true } }).outputText
   const env = Object.fromEntries(Object.entries(process.env).filter(([name])=>name.startsWith('VITE_')))

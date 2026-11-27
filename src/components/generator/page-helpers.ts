@@ -229,6 +229,8 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
     phraseImageLabels: type.id.endsWith('-images') ? prev?.phraseImageLabels : undefined,
     phraseImageShownCategories: type.id.endsWith('-images') ? prev?.phraseImageShownCategories : undefined,
     grammarCoLevel,
+    grammarVocabRecall: prev?.exerciseType === type.id ? prev.grammarVocabRecall : undefined,
+    grammarCoFormat: isGrammarCoType(type.id) && prev?.exerciseType === type.id ? prev.grammarCoFormat : undefined,
     grammarCoAudioId: isGrammarCoType(type.id) && prev?.exerciseType===type.id ? prev.grammarCoAudioId : undefined,
     grammarLevel: undefined,
     grammarActivityId: undefined,

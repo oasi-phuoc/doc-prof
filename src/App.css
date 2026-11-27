@@ -6722,3 +6722,16 @@ textarea.pill-input,
 .math-spatial-questions p{text-align:justify}
 .math-spatial-view-list.is-solids img{width:29mm;border:0}
 .math-spatial-stack-list .math-square-grid td{width:3.7mm;height:3.7mm}
+
+.grammar-co-true-false{width:100%;border-collapse:collapse;margin-top:3mm;font-size:.91em}
+.grammar-co-true-false thead{display:table-header-group}
+.grammar-co-true-false tr{break-inside:avoid}
+.grammar-co-true-false th,.grammar-co-true-false td{border:.25mm solid #78818a;padding:2mm}
+.grammar-co-true-false tbody th{font-weight:400;text-align:left}
+.grammar-co-true-false tbody small{display:block;color:#394758;line-height:1.35;margin-top:1mm}
+.grammar-co-true-false td,.grammar-co-true-false thead th:not(:first-child){width:14mm;text-align:center}
+.grammar-co-checkbox{display:inline-grid;place-items:center;width:5mm;height:5mm;border:.3mm solid #444b56;font-weight:700;line-height:1}
+
+.grammar-word-vocab{width:100%;margin:0;text-align:center}
+.grammar-word-vocab img{width:100%;height:30mm;object-fit:contain}
+.grammar-word-vocab figcaption{overflow-wrap:anywhere;font-size:.9em}

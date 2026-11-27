@@ -22,7 +22,7 @@ export const activiteDocs: GrammaireTheoryDoc[] = [
       expliquer: [
         p('J’utilise {c}faire{/c} au présent + un article.'),
         p('Masculin : {c}du{/c}. Féminin : {c}de la{/c}. Voyelle : {c}de l’{/c}.'),
-        p('Je ne mets pas le ou la devant le sport ou l’instrument.'),
+        p('Pour dire non : {c}ne … pas de{/c} ou {c}pas d’{/c}. Je fais du ski → Je ne fais pas de ski.'),
         ligne,
         ex([
           '{tab:+2++}{g}Nom{/g} | {g}Article{/g} | {g}Exemple{/g}',

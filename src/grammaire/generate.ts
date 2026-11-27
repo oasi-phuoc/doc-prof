@@ -1,5 +1,6 @@
 import { normalizeTheoryBlocks, type GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { MathItem, PageConfig } from '@/math/types'
+import { buildWordVocab } from './exercises/word-vocab'
 import { tryGenerateGrammaireExerciseBlock } from './exercises/generate'
 import { isGrammaireExerciseType } from './exercises/types'
 import { theoryDocByTypeId } from './theory'
@@ -22,6 +23,8 @@ export function tryGenerateGrammaireBlock(
   seed: number,
 ): { instruction: string; items: MathItem[]; bankQuestionCap?: number } | null {
   const typeId = config.exerciseType
+  const vocabulary = buildWordVocab(config, seed)
+  if (vocabulary) return vocabulary
   try {
     const graded=generateGradedGrammarBlock(config,seed)
     if (graded) return graded
