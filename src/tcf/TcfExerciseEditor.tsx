@@ -28,6 +28,7 @@ import {
 } from './ce-questions'
 import { drawTcfSeries } from './draw-series'
 import { tcfBank, tcfBankAllLevels, tcfExerciseById, tcfSlotBank } from './loader'
+import { checkTcfSupport, hasTcfLockedQuestions, identifyTcfQuestions } from './libre-questions'
 import { QuestionEditor } from './QuestionEditor'
 import { tcfScenarioGroups, type TcfScenarioGroup } from './sources'
 import { emptyTcfExercise, emptyTcfQuestion, tcfExerciseId } from './templates'
@@ -235,9 +236,13 @@ function SupportEditor({
   ex,
   set,
   audioEntries,
+  live = false,
+  scored = true,
 }: {
   ex: TcfExercise
   set: (next: TcfExercise) => void
+  live?: boolean
+  scored?: boolean
   /** Audios CO de la banque : choix → recharge questions + transcription. */
   audioEntries?: readonly TcfAudioEntry[]
 }) {
@@ -270,6 +275,7 @@ function SupportEditor({
           <TextField label="Texte" value={ex.support.texte} multiline rows={5} onChange={(texte) => set(withSupport(ex, { texte }))} />
           <ImageField
             label="Image (optionnelle)"
+            durable={live}
             value={ex.support.image ?? ''}
             onChange={(image) => set(withSupport(ex, { image: image || null }))}
           />
@@ -428,7 +434,9 @@ function SupportEditor({
                 ) : null}
                 {group.map(({ question, questionIndex }) => (
                   <QuestionEditor
-                    key={questionIndex}
+                    key={question.libreId ?? questionIndex}
+                    live={live}
+                    scored={scored}
                     index={questionIndex}
                     question={question}
                     reponses={reponses}
@@ -1142,6 +1150,8 @@ export function TcfExerciseEditor({
   questionCount,
   fallbackExercise,
   variant = 'tcf',
+  live = false,
+  scored = true,
   onChange,
   onReroll,
 }: {
@@ -1156,6 +1166,8 @@ export function TcfExerciseEditor({
   /** Grammaire : exercice généré (support TCF) si le panneau n’a pas encore d’édition. */
   fallbackExercise?: TcfExercise
   variant?: 'tcf' | 'grammaire'
+  live?: boolean
+  scored?: boolean
   onChange: (patch: EditorPatch) => void
   onReroll?: () => void
 }) {
@@ -1191,7 +1203,11 @@ export function TcfExerciseEditor({
     const first = TCF_TYPES.find((t) => t.competence === slot.competence)!
     return emptyTcfExercise(niveau, slot.competence, first.typeExercice, tcfExerciseId(niveau, slot.competence, 1))
   }, [slot, bankId, shownId, bank, niveau, isGrammaire, fallbackExercise, questionCount])
-  const current = edited ? edits : fallback
+  const selected = edited ? edits : fallback
+  const current = useMemo(
+    () => live && selected ? identifyTcfQuestions(selected, bankSource) : selected,
+    [selected, live, bankSource],
+  )
   const isCeBankPicker = !isGrammaire && slot?.competence === 'CE' && Boolean(bankSource)
   /** Tous les audios CO, tous niveaux : choisir un audio recharge questions + transcription. */
   const coAudioEntries = useMemo(
@@ -1231,7 +1247,17 @@ export function TcfExerciseEditor({
 
   if (!current || (!isGrammaire && !slot)) return null
 
-  const set = (next: TcfExercise) => onChange({ tcfExercise: { ...next, niveau: next.niveau ?? niveau } })
+  function set(next: TcfExercise) {
+    if (live) {
+      const remaining = new Set(next.questions.map(({ libreId }) => libreId))
+      if (current?.questions.some(({ libreId, libreLocked }) => libreLocked && !remaining.has(libreId)) &&
+        !window.confirm('Remplacer les questions verrouillées liées à ce support ?')) return
+      const identified = identifyTcfQuestions(next, bankSource)
+      onChange({ tcfExercise: current ? checkTcfSupport(current, identified) : identified })
+      return
+    }
+    onChange({ tcfExercise: { ...next, niveau: next.niveau ?? niveau } })
+  }
 
   function startBlank(typeExercice: TcfTypeExercice = types[0]!.typeExercice) {
     const meta = TCF_TYPES.find((t) => t.typeExercice === typeExercice)
@@ -1247,6 +1273,8 @@ export function TcfExerciseEditor({
       return
     }
     if (!slot) return
+    if (live && hasTcfLockedQuestions(current) &&
+      !window.confirm('Remplacer ce support et ses questions verrouillées ?')) return
     const total = tcfBank(niveau, slot.competence).length
     onChange({ tcfExercise: emptyTcfExercise(niveau, slot.competence, typeExercice, tcfExerciseId(niveau, slot.competence, total + 1)) })
   }
@@ -1291,7 +1319,12 @@ export function TcfExerciseEditor({
           className="libre-item-reroll no-print"
           aria-label="Autre série au hasard"
           title="Autre série au hasard"
+          disabled={live && hasTcfLockedQuestions(exercise)}
           onClick={() => {
+            if (live && onReroll) {
+              onReroll()
+              return
+            }
             if (isGrammaire) {
               onChange({ tcfExercise: undefined })
               onReroll?.()
@@ -1306,20 +1339,20 @@ export function TcfExerciseEditor({
       {!isSixCourts ? (
         <>
           <div className="tcf-row">
-            <button type="button" className="tcf-btn" disabled={!edited} onClick={() => onChange({ tcfExercise: undefined })}>
+            <button type="button" className="tcf-btn" disabled={!edited || (live && hasTcfLockedQuestions(exercise))} onClick={() => onChange({ tcfExercise: undefined })}>
               Revenir à la banque
             </button>
             <button type="button" className="tcf-btn" onClick={() => startBlank()}>
               Nouvel exercice vide
             </button>
           </div>
-          <small className="muted">
+          {!live && <small className="muted">
             {edited
               ? 'Exercice modifié : la fiche affiche cette version.'
               : isGrammaire
                 ? 'Exercice de la banque Grammaire : toute modification crée une version libre.'
                 : 'Exercice de la banque : toute modification crée une version libre.'}
-          </small>
+          </small>}
         </>
       ) : null}
       <>
@@ -1344,7 +1377,7 @@ export function TcfExerciseEditor({
               </option>
             ))}
           </SelectBox>
-          {!isSixCourts ? (
+          {!isSixCourts && !live ? (
             <small className="muted">Choisissez un type : un audio est tiré au hasard, avec ses questions.</small>
           ) : null}
           {exercise.type_exercice !== 'images_a_reconnaitre' ? (
@@ -1373,7 +1406,7 @@ export function TcfExerciseEditor({
             )
           ) : null}
 
-          {!usesQuestions ? (
+          {!usesQuestions && (!live || scored) ? (
             <NumberField
               label="Points de l’exercice (0 = page)"
               value={exercise.points ?? 0}
@@ -1384,7 +1417,7 @@ export function TcfExerciseEditor({
             />
           ) : null}
 
-          <SupportEditor ex={exercise} set={set} audioEntries={coAudioEntries} />
+          <SupportEditor ex={exercise} set={set} audioEntries={coAudioEntries} live={live} scored={scored} />
 
           {hasConsigneSupp ? (
             <TextField
@@ -1433,6 +1466,7 @@ export function TcfExerciseEditor({
                   )
                 })}
               </ul>
+              {!live && <>
               <b>Questions libres ({tcfFreeQuestions(exercise, bankSource).length})</b>
               {tcfFreeQuestions(exercise, bankSource).map((q, freeIndex) => {
                 const absoluteIndex = exercise.questions.findIndex(
@@ -1473,14 +1507,17 @@ export function TcfExerciseEditor({
               >
                 + ajouter une question libre
               </button>
+              </>}
             </>
           ) : null}
-          {usesQuestions && !isCeBankPicker && !isSixCourts ? (
+          {usesQuestions && (live || !isCeBankPicker) && !isSixCourts ? (
             <>
               <b>Questions ({exercise.questions.length})</b>
               {exercise.questions.map((q, i) => (
                 <QuestionEditor
-                  key={i}
+                  key={q.libreId ?? i}
+                  live={live}
+                  scored={scored}
                   index={i}
                   question={q}
                   reponses={questionReponses}

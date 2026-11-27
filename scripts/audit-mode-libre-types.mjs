@@ -144,6 +144,7 @@ export async function auditTypes(server, profile, seed) {
     definitions: 'math/catalog.ts',
     catalogue: 'components/generator/generator-derived.ts',
     pageHelpers: 'components/generator/page-helpers.ts',
+    editors: 'components/generator/libre/profiles.ts',
     generation: 'math/generate.ts',
     alpha: 'alphabetisation/themes.ts',
     soutien: 'francais/soutien/themes.ts',
@@ -181,6 +182,7 @@ export async function auditTypes(server, profile, seed) {
   const keys = new Set()
   const reachedTypes = new Set()
   const byDomain = {}
+  const liveProfiles = {}
   for (const { id: domain } of ACCESS_DOMAIN_OPTIONS) {
     const roles = Object.keys(access).filter((role) => access[role].includes(domain))
     const defaults = defaultPage(domain)
@@ -199,7 +201,15 @@ export async function auditTypes(server, profile, seed) {
           result = measureGeneration({ ...defaults, ...applyType(type, defaults), ...patch, domain, topic }, modules, seed)
           if (result.status === 'générable' && pilot) result.status = 'générable en aperçu pilote'
         }
-        rows.push({ domain, topic, id: type.id, selection, dimensions, roles, ...result })
+        const editorProfiles = {
+          'a4-portrait': modules.editors.liveEditorProfile(domain, type.id, 'a4-portrait'),
+          'a5-double-landscape': modules.editors.liveEditorProfile(domain, type.id, 'a5-double-landscape'),
+        }
+        if (result.status.startsWith('générable')) {
+          const key = editorProfiles['a4-portrait'] ?? 'à raccorder'
+          liveProfiles[key] = (liveProfiles[key] ?? 0) + 1
+        }
+        rows.push({ domain, topic, id: type.id, selection, dimensions, roles, editorProfiles, ...result })
         counts[result.status] = (counts[result.status] ?? 0) + 1
       }
     }
@@ -225,6 +235,7 @@ export async function auditTypes(server, profile, seed) {
       unmatchedDeclarations: unmatchedDeclarations.length,
       contexts: rows.length,
       byDomain,
+      liveProfiles,
     },
     access,
     rows,

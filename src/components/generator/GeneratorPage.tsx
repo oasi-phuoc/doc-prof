@@ -1,3 +1,4 @@
+import { flushSync } from 'react-dom'
 import { isLogistiqueDomain } from '@/logistique/catalog'
 import { logistiqueDocumentTitle } from '@/logistique/generate'
 import { AudioProgressDialog } from '@/components/AudioProgressDialog'
@@ -57,6 +58,8 @@ import { useGeneratorAudio } from '@/components/generator/useGeneratorAudio'
 import { useGenerateActions } from '@/components/generator/useGenerateActions'
 import { useCoordEditing } from '@/components/generator/useCoordEditing'
 import { additionActivityId } from '@/components/generator/libre/flat-items'
+import { liveEditorProfile } from '@/components/generator/libre/profiles'
+import { hasTcfCorrectionsToReview, isTcfSubjectIncomplete } from '@/tcf/libre-questions'
 import { DraftRecovery } from '@/components/generator/libre/DraftRecovery'
 import { useLibreDraft } from '@/components/generator/libre/useLibreDraft'
 import { useLibreHistory } from '@/components/generator/libre/useLibreHistory'
@@ -132,6 +135,7 @@ export function GeneratorPage({
   const [hideChrome, setHideChrome] = useState(
     () => openedFiche?.recipe.hideChrome ?? false,
   )
+  const [printStudentOnly, setPrintStudentOnly] = useState(false)
   const [printCorrections, setPrintCorrections] = useState(
     () => openedFiche?.recipe.printCorrections ?? true,
   )
@@ -277,8 +281,10 @@ export function GeneratorPage({
   const safeBlockIndex = Math.min(blockIndex, Math.max(0, pageExerciseBlocks.length - 1))
   const activeBlock = pageExerciseBlocks[safeBlockIndex] ?? blockFromPage(activePage)
   const isAdditionPilot = activePage.domain === 'algèbre' && activeBlock.exerciseType === 'addition-ligne'
-  const additionA4 = isAdditionPilot && !isA5DoubleFormat(sheetFormat)
+  const activeProfile = liveEditorProfile(activePage.domain, activeBlock.exerciseType, sheetFormat)
+  const additionA4 = activeProfile === 'addition'
   const liveAddition = libreMode && additionA4
+  const liveTcf = libreMode && (activeProfile === 'document' || activeProfile === 'audio-qcm')
 
   /** Les exercices encore ouverts avec validation conservent leur dernière version appliquée. */
   const previewSource = useMemo(() => {
@@ -288,19 +294,16 @@ export function GeneratorPage({
       if (live.domain !== page.domain) return live
       const liveBlocks = pageBlocks(live)
       if (liveBlocks.some((block) => block.exerciseType === 'tcm-csc-ex18')) return live
-      if (live.domain === 'algèbre' && !isA5DoubleFormat(sheetFormat)) {
-        const savedBlocks = pageBlocks(page)
-        const includesAddition = [...savedBlocks, ...liveBlocks].some(({ exerciseType }) =>
-          exerciseType === 'addition-ligne',
-        )
-        if (includesAddition) {
-          if (savedBlocks.length !== liveBlocks.length) return live
-          return liveBlocks.reduce<PageConfig>((applied, block, index) =>
-            block.exerciseType === 'addition-ligne' || savedBlocks[index]?.exerciseType === 'addition-ligne'
-              ? replacePageBlock(applied, index, block)
-              : applied,
-          page)
-        }
+      const oldBlocks = pageBlocks(page)
+      const liveEditor = ({ exerciseType }: { exerciseType: string }) =>
+        Boolean(liveEditorProfile(live.domain, exerciseType, sheetFormat))
+      if (liveBlocks.some(liveEditor) || oldBlocks.some(liveEditor)) {
+        if (oldBlocks.length !== liveBlocks.length || liveBlocks.every(liveEditor)) return live
+        return liveBlocks.reduce<PageConfig>((applied, block, index) =>
+          liveEditor(block) || (oldBlocks[index] && liveEditor(oldBlocks[index]))
+            ? replacePageBlock(applied, index, block)
+            : applied,
+        page)
       }
       return live.domain === 'tcm-csc' && live.exerciseGapPx !== page.exerciseGapPx
         ? { ...page, exerciseGapPx: live.exerciseGapPx }
@@ -555,14 +558,26 @@ export function GeneratorPage({
     return false
   }
 
+  const correctionsToReview = pages.some((page) => pageBlocks(page)
+    .some(({ tcfExercise }) => hasTcfCorrectionsToReview(tcfExercise)))
+
   async function printAll() {
     if (!confirmAdditionOutput('imprimer')) return
+    if (pages.some((page) => pageBlocks(page).some(({ tcfExercise }) => isTcfSubjectIncomplete(tcfExercise)))) {
+      window.alert('Une question ou un support est incomplet. Complétez le contenu concerné avant d’imprimer.')
+      return
+    }
+    const studentOnly = correctionsToReview && printCorrections
+    if (studentOnly && !window.confirm('Un corrigé est à vérifier. Voulez-vous imprimer la fiche élève seule ?')) return
+    if (studentOnly) flushSync(() => setPrintStudentOnly(true))
     try {
-      const printRoot=document.querySelector<HTMLElement>('.print-only-sheets')
-      if(printRoot)await waitForGrammarPrintImages(printRoot)
+      const printRoot = document.querySelector<HTMLElement>('.print-only-sheets')
+      if (printRoot) await waitForGrammarPrintImages(printRoot)
       window.print()
-    } catch(error) {
-      window.alert(error instanceof Error?error.message:'Les images de la fiche ne sont pas prêtes pour l’impression.')
+    } catch (error) {
+      window.alert(error instanceof Error ? error.message : 'Les images de la fiche ne sont pas prêtes pour l’impression.')
+    } finally {
+      if (studentOnly) setPrintStudentOnly(false)
     }
   }
 
@@ -704,7 +719,8 @@ export function GeneratorPage({
   const resultPanelProps = {
     ...ctx,
     libreMode,
-    validateManual: liveAddition ? undefined : validateManual,
+    validateManual: liveAddition || liveTcf ? undefined : validateManual,
+    correctionsToReview,
     downloadActiveTcfAudios: audio.downloadActiveTcfAudios,
     downloadActiveTcmCfrAudios: audio.downloadActiveTcmCfrAudios,
     downloadActiveTcmCscAudios: audio.downloadActiveTcmCscAudios,
@@ -719,7 +735,7 @@ export function GeneratorPage({
     drawAlphaSeries,
     generate,
     printAll,
-    printCorrections,
+    printCorrections: printCorrections && !printStudentOnly,
     onSaveFiche: () => {
       if (confirmAdditionOutput('enregistrer')) setSaveOpen(true)
     },
@@ -921,6 +937,8 @@ export function GeneratorPage({
               isPhraseDomain={ctx.isPhraseDomain}
               isNumberLibreDomain={ctx.isNumberLibreDomain}
               liveAddition={liveAddition}
+              liveTcf={liveTcf}
+              evalMode={evalMode}
               additionId={additionActivityId(activeBlock, seed, pageIndex, safeBlockIndex)}
               maxQuestions={ctx.maxQuestions}
               transientFields={transientFields}

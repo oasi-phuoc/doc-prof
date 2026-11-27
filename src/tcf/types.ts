@@ -32,6 +32,11 @@ export type TcfQuestionFormes = {
 }
 
 type TcfQuestionBase = {
+  /** Occurrence locale de la question dans une fiche en édition. */
+  libreId?: string
+  libreSourceKey?: string
+  libreLocked?: boolean
+  correctionARevoir?: boolean
   /** Énoncé affiché au-dessus de la réponse. */
   enonce: string
   /** CO multi-pistes (six_courts / trois_moyens / complet découpé) : n° d’audio 1-based. */

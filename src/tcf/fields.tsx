@@ -1,4 +1,5 @@
-import { useEffect } from 'react'
+import { useEffect, useLayoutEffect } from 'react'
+import { readLibreImage } from './libre-media'
 import { AudioProgressDialog } from '@/components/AudioProgressDialog'
 import { useRef, useState } from 'react'
 import { GAME_IMAGE_ACCEPT, readGameImageFile } from '@/jeux/image'
@@ -115,15 +116,21 @@ export function ImageField({
   label,
   value,
   onChange,
+  durable = false,
 }: {
   label: string
   value: string
   onChange: (value: string) => void
+  durable?: boolean
 }) {
   const fileRef = useRef<HTMLInputElement | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [pickerOpen, setPickerOpen] = useState(false)
   const src = tcfImageSrc(value)
+  const updateNumber = useRef(0)
+  const latest = useRef({ value, onChange })
+  useLayoutEffect(() => { latest.current = { value, onChange } }, [value, onChange])
+  useLayoutEffect(() => () => { updateNumber.current += 1 }, [])
   return (
     <div className="tcf-field tcf-image-field">
       <span>{label}</span>
@@ -141,17 +148,21 @@ export function ImageField({
           ref={fileRef}
           className="visually-hidden"
           type="file"
-          accept={GAME_IMAGE_ACCEPT}
+          accept={durable ? "image/jpeg,image/png,image/webp" : GAME_IMAGE_ACCEPT}
           onChange={(event) => {
             const file = event.target.files?.[0]
             event.target.value = ''
             if (!file) return
-            readGameImageFile(file)
-              .then((dataUrl) => {
-                onChange(dataUrl)
-                setError(null)
-              })
-              .catch((err: unknown) => setError(err instanceof Error ? err.message : 'Image refusée.'))
+            const update = ++updateNumber.current
+            const source = value
+            const read = durable ? readLibreImage : readGameImageFile
+            read(file).then((dataUrl) => {
+              if (update !== updateNumber.current || latest.current.value !== source) return
+              latest.current.onChange(dataUrl)
+              setError(null)
+            }).catch((err: unknown) => {
+              if (update === updateNumber.current) setError(err instanceof Error ? err.message : 'Image refusée.')
+            })
           }}
         />
         <input
@@ -160,6 +171,7 @@ export function ImageField({
           value={value.startsWith('data:') ? '' : value}
           placeholder={value.startsWith('data:') ? 'Image importée' : '/lib/images/vocabulaire/…'}
           aria-label={`Fichier : ${label}`}
+          readOnly={durable}
           onChange={(event) => onChange(event.target.value)}
           onClick={() => setPickerOpen(true)}
           onFocus={(event) => {
@@ -184,6 +196,7 @@ export function ImageField({
         open={pickerOpen}
         onClose={() => setPickerOpen(false)}
         onPick={(path) => {
+          updateNumber.current += 1
           onChange(path)
           setError(null)
         }}

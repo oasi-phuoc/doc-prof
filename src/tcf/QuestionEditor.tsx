@@ -3,6 +3,7 @@ import { ImageField, NumberField, TextField } from './fields'
 import { filledForms, switchQuestionForm, TCF_FORME_LABELS } from './formes'
 import { hasInlineBlank } from './inline-blank'
 import { TCF_LETTRES, TCF_QCM_MAX, TCF_QCM_MIN } from './templates'
+import { editTcfQuestion, isTcfCorrectionComplete } from './libre-questions'
 import type { TcfQuestion, TcfTypeReponse } from './types'
 
 const CHOICE_IDS = ['a', 'b', 'c', 'd'] as const
@@ -21,7 +22,9 @@ export function QuestionEditor({
   hideQuestionImage = false,
   hideFormsHint = false,
   hideQuestionRemove = false,
-  onChange,
+  live = false,
+  scored = true,
+  onChange: updateQuestion,
   onRemove,
 }: {
   index: number
@@ -35,9 +38,12 @@ export function QuestionEditor({
   hideFormsHint?: boolean
   /** Pour garder une question obligatoire par audio. */
   hideQuestionRemove?: boolean
+  live?: boolean
+  scored?: boolean
   onChange: (next: TcfQuestion) => void
   onRemove: () => void
 }) {
+  const onChange = (next: TcfQuestion) => updateQuestion(live ? editTcfQuestion(q, next) : next)
   function changeType(type: TcfTypeReponse) {
     if (type === q.type_reponse) return
     onChange(switchQuestionForm(q, type))
@@ -49,7 +55,7 @@ export function QuestionEditor({
       <legend>
         <span className="tcf-q-legend-title">
           Question {index + 1}
-          {!hideQuestionRemove ? (
+          {!hideQuestionRemove && !q.libreLocked ? (
             <button
               type="button"
               className="calli-field-remove"
@@ -60,6 +66,16 @@ export function QuestionEditor({
             </button>
           ) : null}
         </span>
+        {live && (
+          <button
+            type="button"
+            className="tcf-btn"
+            aria-pressed={Boolean(q.libreLocked)}
+            onClick={() => updateQuestion({ ...q, libreLocked: !q.libreLocked })}
+          >
+            {q.libreLocked ? 'Question verrouillée' : 'Verrouiller la question'}
+          </button>
+        )}
         <div className="mode-toggle is-3" role="group" aria-label="Type de réponse">
           {TCF_REPONSES.filter((r) => reponses.includes(r.id)).map((r) => (
             <button
@@ -79,12 +95,21 @@ export function QuestionEditor({
           ))}
         </div>
       </legend>
-      {!hideFormsHint ? (
+      {!hideFormsHint && !live ? (
         <p className="muted" style={{ margin: 0, fontSize: 'calc(11px * var(--app-font-scale, 1))' }}>
           Trois formes (Texte / Image / Phrase) : basculez pour les remplir. Sur la fiche, les
           icônes sont en colonne dans la marge gauche ; seules les formes remplies sont actives.
         </p>
       ) : null}
+      {live && (q.correctionARevoir || !isTcfCorrectionComplete(q)) && (
+        <div className="tcf-row">
+          <span role="status">Corrigé à vérifier</span>
+          <button type="button" className="tcf-btn" disabled={!isTcfCorrectionComplete(q)}
+            onClick={() => updateQuestion({ ...q, correctionARevoir: undefined })}>
+            Confirmer le corrigé
+          </button>
+        </div>
+      )}
       {audioCount ? (
         <label className="tcf-field is-number">
           <span>Audio n°</span>
@@ -103,17 +128,18 @@ export function QuestionEditor({
       ) : null}
       <TextField label="Énoncé" value={q.enonce} multiline rows={2} onChange={(enonce) => onChange({ ...q, enonce })} />
       <div className="tcf-row">
-        <NumberField
+        {(!live || scored) && <NumberField
           label="Points (0 = page)"
           value={q.points ?? 0}
           min={0}
           max={20}
           step={0.5}
           onChange={(points) => onChange({ ...q, points: points > 0 ? points : undefined })}
-        />
+        />}
         {!hideQuestionImage ? (
           <ImageField
             label="Image sous l’énoncé (optionnelle)"
+            durable={live}
             value={q.image ?? ''}
             onChange={(image) => onChange({ ...q, image: image || undefined })}
           />
@@ -196,6 +222,7 @@ export function QuestionEditor({
                   ) : (
                     <ImageField
                       label={`Image ${TCF_LETTRES[i]}`}
+                      durable={live}
                       value={c.image}
                       onChange={(image) => setChoice({ image })}
                     />
@@ -208,7 +235,7 @@ export function QuestionEditor({
                     />
                     fixe
                   </label>
-                  {i >= TCF_QCM_MIN ? (
+                  {(live ? q.choix.length > TCF_QCM_MIN : i >= TCF_QCM_MIN) ? (
                     <button
                       type="button"
                       className="calli-field-remove"
@@ -217,11 +244,11 @@ export function QuestionEditor({
                         const removedCorrect = c.correct === true
                         if (q.type_reponse === 'qcm_texte') {
                           const choix = q.choix.filter((_, k) => k !== i)
-                          if (removedCorrect) choix[0] = { ...choix[0]!, correct: true }
+                          if (removedCorrect && !live) choix[0] = { ...choix[0]!, correct: true }
                           onChange({ ...q, choix })
                         } else {
                           const choix = q.choix.filter((_, k) => k !== i)
-                          if (removedCorrect) choix[0] = { ...choix[0]!, correct: true }
+                          if (removedCorrect && !live) choix[0] = { ...choix[0]!, correct: true }
                           onChange({ ...q, choix })
                         }
                       }}
@@ -240,7 +267,7 @@ export function QuestionEditor({
               disabled={q.choix.length >= TCF_QCM_MAX}
               onClick={() => {
                 const used = new Set(q.choix.map((c) => c.id))
-                const id = CHOICE_IDS.find((x) => !used.has(x)) ?? `c${q.choix.length + 1}`
+                const id = live ? crypto.randomUUID() : CHOICE_IDS.find((x) => !used.has(x)) ?? `c${q.choix.length + 1}`
                 if (q.type_reponse === 'qcm_texte') onChange({ ...q, choix: [...q.choix, { id, texte: '' }] })
                 else onChange({ ...q, choix: [...q.choix, { id, image: '' }] })
               }}

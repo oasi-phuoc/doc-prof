@@ -52,6 +52,8 @@ export type LibreSidePanelProps = {
   isPhraseDomain: boolean
   isNumberLibreDomain: boolean
   liveAddition: boolean
+  liveTcf: boolean
+  evalMode: boolean
   additionId: string
   maxQuestions: number
   transientFields: Record<string, string>
@@ -97,6 +99,8 @@ export function LibreSidePanel({
   isPhraseDomain,
   isNumberLibreDomain,
   liveAddition,
+  liveTcf,
+  evalMode,
   additionId,
   maxQuestions,
   transientFields,
@@ -330,6 +334,8 @@ export function LibreSidePanel({
         ) : null}
         {isTcf ? (
           <TcfExerciseEditor
+            live={liveTcf}
+            scored={evalMode}
             niveau={tcfNiveau}
             typeId={activeBlock.exerciseType}
             exercise={activeBlock.tcfExercise}
@@ -337,6 +343,7 @@ export function LibreSidePanel({
             shownId={activeSheet?.blocks[safeBlockIndex]?.items.find((item) => item.tcfExerciseId)?.tcfExerciseId}
             questionCount={activeBlock.tcfQuestionCount}
             fallbackExercise={renderedExercise ?? tcfSupportExercise(activeSheet?.blocks[safeBlockIndex]?.items)}
+            onReroll={() => onRegenerateBlock?.(safeBlockIndex)}
             onChange={(patch) => updatePage(patch)}
           />
         ) : null}

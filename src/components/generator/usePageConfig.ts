@@ -76,7 +76,8 @@ export function usePageConfig({
   isTcf,
 }: UsePageConfigParams) {
   const updatePage = (patch: Partial<PageConfig>) => {
-    if (hasLockedItems(activeBlock) && patch.exerciseType !== undefined) {
+    const releasesTcf = Object.hasOwn(patch, 'tcfExercise') && patch.tcfExercise === undefined
+    if (hasLockedItems(activeBlock) && (patch.exerciseType !== undefined || releasesTcf)) {
       if (!window.confirm('Remplacer cette activité et ses questions verrouillées ?')) return
     }
     if (additionA4 && patch.count != null && patch.libreItems === undefined && activeBlock.libreItems) {

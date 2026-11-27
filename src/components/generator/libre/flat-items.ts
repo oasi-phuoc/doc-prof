@@ -1,3 +1,4 @@
+import { hasTcfLockedQuestions } from '@/tcf/libre-questions'
 import { buildPage } from '@/math/generate'
 import { pageAsConfig, pageBlocks, setPageBlock } from '@/math/page-model'
 import type { ExerciseBlock, MathItem, PageConfig } from '@/math/types'
@@ -18,7 +19,7 @@ export function identifyItems(items: MathItem[], activityId: string): MathItem[]
 }
 
 export function hasLockedItems(block: ExerciseBlock): boolean {
-  return Boolean(block.libreItems?.some(({ libreLocked }) => libreLocked))
+  return Boolean(block.libreItems?.some(({ libreLocked }) => libreLocked)) || hasTcfLockedQuestions(block.tcfExercise)
 }
 
 export function trimUnlockedItems(items: MathItem[], count: number): MathItem[] {

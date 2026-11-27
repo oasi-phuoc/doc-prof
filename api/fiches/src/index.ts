@@ -1,4 +1,4 @@
-import { validLibreMetadata } from '../../../src/fiches/libre-metadata'
+import { FICHE_BODY_MAX_CHARS, validLibreMetadata } from '../../../src/fiches/libre-metadata'
 import { validLogistiqueCataloguePages } from '../../../src/logistique/catalog'
 import { createPersonalAccount, handleAccounts, personalUser, type AccountsEnv } from './accounts'
 import { handleCompetitionRequest, type CompetitionEnv } from './competition'
@@ -89,7 +89,7 @@ const ALL_DOMAINS = [
   'tcf-cfr',
 ] as const
 
-const MAX_BODY = 800_000
+const MAX_BODY = FICHE_BODY_MAX_CHARS
 
 function corsHeaders(request: Request): Headers {
   const headers = new Headers()

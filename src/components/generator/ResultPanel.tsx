@@ -29,6 +29,7 @@ import type { TcfTypeReponse } from '@/tcf/types'
 
 export type ResultPanelProps = {
   libreMode: boolean
+  correctionsToReview?: boolean
   validateManual?: () => void
   isTcf: boolean
   isGrammaireExercise?: boolean
@@ -109,6 +110,7 @@ export type ResultPanelProps = {
 
 export function ResultPanel({
   libreMode,
+  correctionsToReview,
   validateManual,
   isTcf,
   isGrammaireExercise,
@@ -177,6 +179,12 @@ export function ResultPanel({
   )
   const unavailableLogistique = previewWorksheets.some((sheet) =>
     isLogistiqueDomain(sheet.domain) && sheet.blocks.some((block) => block.bankQuestionCap === 0),
+  )
+  const unavailableActivity = Boolean(previewSheet?.blocks.length && previewSheet.blocks.every(
+    (block) => block.items.length === 0 && !block.document,
+  ))
+  const unavailableDocument = unavailableLogistique || previewWorksheets.every((sheet) =>
+    sheet.blocks.every((block) => block.items.length === 0 && !block.document),
   )
   const logisticsReferenceOnly = previewWorksheets.length > 0 && previewWorksheets.every((sheet) =>
     isLogistiqueDomain(sheet.domain) && sheet.blocks.every((block) => isLogistiqueReferenceType(block.exerciseType)),
@@ -283,7 +291,12 @@ export function ResultPanel({
             <div className="result-head">
               <div>
                 <p className="eyebrow">Aperçu</p>
-                <h2>{unavailableLogistique ? 'Contenu à compléter.' : 'Votre activité est prête.'}</h2>
+                <h2>
+                  {unavailableLogistique ? 'Contenu à compléter.'
+                    : unavailableActivity ? 'Aucun contenu disponible pour cette activité.'
+                    : 'Votre activité est prête.'}
+                </h2>
+                {correctionsToReview && <p role="status" className="no-print">Corrigé à vérifier</p>}
                 {libreMode ? <p className="no-print">Cliquez sur une image de la fiche pour la remplacer.</p> : null}
               </div>
               <div className="result-head-actions no-print">
@@ -291,7 +304,7 @@ export function ResultPanel({
                   className="print-chip is-icon"
                   type="button"
                   onClick={onSaveFiche}
-                  disabled={unavailableLogistique}
+                  disabled={unavailableDocument}
                   aria-label="Enregistrer"
                   title="Enregistrer"
                 >
@@ -438,7 +451,7 @@ export function ResultPanel({
                   className="print-chip is-icon is-generate"
                   type="button"
                   onClick={printAll}
-                  disabled={unavailableLogistique}
+                  disabled={unavailableDocument}
                   aria-label={printLabel}
                   title={printLabel}
                 >

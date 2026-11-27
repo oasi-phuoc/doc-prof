@@ -1,3 +1,4 @@
+import { FICHE_BODY_MAX_CHARS } from '@/fiches/libre-metadata'
 import { clearAccessPassword, readAccessPassword, rememberAccessPassword } from '@/fiches/password'
 import { migrateDomainToken, parseFicheRecipe, type FicheRecipe, type SavedFiche } from '@/fiches/recipe'
 import type { Domain } from '@/math/types'
@@ -114,10 +115,18 @@ export async function listFiches(): Promise<SavedFiche[]> {
   return body.fiches.map(parseSaved).filter((fiche): fiche is SavedFiche => fiche !== null)
 }
 
+function ficheRequestBody(name: string, recipe: FicheRecipe) {
+  const body = JSON.stringify({ name, recipe })
+  if (body.length > FICHE_BODY_MAX_CHARS) {
+    throw new FichesApiError('validation', 'La fiche est trop volumineuse pour être synchronisée. Réduisez la taille ou le nombre des images importées.')
+  }
+  return body
+}
+
 export async function createFiche(name: string, recipe: FicheRecipe): Promise<SavedFiche> {
   const body = await request('/fiches', {
     method: 'POST',
-    body: JSON.stringify({ name, recipe }),
+    body: ficheRequestBody(name, recipe),
   })
   const saved = isRecord(body) ? parseSaved(body.fiche) : null
   if (!saved) throw new FichesApiError('validation', 'La fiche enregistrée est illisible.')
@@ -127,7 +136,7 @@ export async function createFiche(name: string, recipe: FicheRecipe): Promise<Sa
 export async function updateFiche(id: string, name: string, recipe: FicheRecipe): Promise<SavedFiche> {
   const body = await request(`/fiches/${encodeURIComponent(id)}`, {
     method: 'PUT',
-    body: JSON.stringify({ name, recipe }),
+    body: ficheRequestBody(name, recipe),
   })
   const saved = isRecord(body) ? parseSaved(body.fiche) : null
   if (!saved) throw new FichesApiError('validation', 'La fiche enregistrée est illisible.')

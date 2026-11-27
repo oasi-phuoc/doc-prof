@@ -4,7 +4,7 @@ export const TCF_CE_DEFAULT_QUESTIONS = 5
 
 /** Empreinte stable pour reconnaître une question de banque dans l’édition libre. */
 export function tcfQuestionKey(q: TcfQuestion): string {
-  return `${q.type_reponse}|${q.enonce.trim()}`
+  return q.libreSourceKey ?? `${q.type_reponse}|${q.enonce.trim()}`
 }
 
 /**
@@ -57,6 +57,9 @@ export function toggleTcfBankQuestion(
   )
   if (enable) selectedKeys.add(key)
   else selectedKeys.delete(key)
-  const selected = bank.questions.filter((q) => selectedKeys.has(tcfQuestionKey(q)))
+  const existing = new Map(exercise.questions.map((question) => [tcfQuestionKey(question), question]))
+  const selected = bank.questions
+    .filter((q) => selectedKeys.has(tcfQuestionKey(q)))
+    .map((question) => existing.get(tcfQuestionKey(question)) ?? question)
   return [...selected, ...free]
 }

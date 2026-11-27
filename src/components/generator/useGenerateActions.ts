@@ -11,6 +11,7 @@ import {
 import { parseCalliLines } from '@/calligraphie/defaults'
 import { reshuffleGameContent } from '@/jeux/bank'
 import { isJeuxType } from '@/jeux/templates'
+import { hasTcfLockedQuestions } from '@/tcf/libre-questions'
 import { tcfNiveauForConfig } from '@/tcf/catalog'
 import { buildTpfFamilyTestPages, nextLastPoExercise } from '@/tcf/generate'
 import { buildWorksheets } from '@/math/generate'
@@ -22,7 +23,7 @@ import type {
   PreviewMode,
 } from '@/math/types'
 import type { InstitutionalHeader } from '@/components/math/PrintDocumentChrome'
-import { rerollAddition } from '@/components/generator/libre/flat-items'
+import { hasLockedItems, rerollAddition } from '@/components/generator/libre/flat-items'
 import { clearLibreContentFreeze } from '@/components/generator/page-helpers'
 import { blockItemsForConfig } from '@/components/generator/sheet-items'
 import { patchBlockSeedForHalf } from '@/components/generator/sheet-format'
@@ -177,6 +178,8 @@ export function useGenerateActions({
 
   /** TPF / TCF : Générer tire un test complet (niveaux du domaine, banque commune). */
   function drawTcfTest() {
+    if (pages.some((page) => pageBlocks(page).some(hasLockedItems)) &&
+      !window.confirm('Créer un nouveau test et remplacer la fiche qui contient des questions verrouillées ?')) return
     const nextSeed = randomSeed()
     setSeed(nextSeed)
     setMode('student')
@@ -229,6 +232,7 @@ export function useGenerateActions({
   }
 
   function generate() {
+    if (hasTcfLockedQuestions(activeBlock.tcfExercise)) return
     if (activeBlock.exerciseType === 'addition-ligne' && activeBlock.libreItems?.some(({ libreId }) => libreId)) {
       regenerateBlock(safeBlockIndex)
       return
@@ -300,7 +304,7 @@ export function useGenerateActions({
       current.map((page, index) => {
         if (index !== pageIndex) return page
         const block = pageBlocks(page)[targetBlock]
-        if (!block) return page
+        if (!block || hasTcfLockedQuestions(block.tcfExercise)) return page
         if (!half && page.domain === 'algèbre' && block.exerciseType === 'addition-ligne' && (libreMode || block.libreItems?.some(({ libreId }) => libreId))) {
           return rerollAddition(page, pageIndex, targetBlock, seed, nextSeed, itemId)
         }
