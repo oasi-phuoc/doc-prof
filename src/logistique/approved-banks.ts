@@ -243,6 +243,7 @@ import { module901 as reviewed901 } from './banks/module-901-v003.generated.ts'
 import { module902 as reviewed902 } from './banks/module-902-v003.generated.ts'
 import { foundationAndServiceMathReview } from './banks/relecture-maths-v004'
 import { procurementExercises } from './banks/approvisionnement-exercices-v004'
+import { dossierExercises400 } from './banks/dossiers-400-v005.generated.ts'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
 
@@ -252,8 +253,8 @@ type UnitContent =
   | { kind: 'objectifs-apercu' | 'glossaire'; blocks: ReferenceBlock[] }
   | { kind: 'theorie'; blocks: ReferenceBlock[]; summaryBlocks?: ReferenceBlock[] }
   | { kind: 'maths'; prompt: string; calculation: string; answer: string; theorySection?: string }
-  | { kind: 'verification'; prompt: string; answer: string; options?: readonly string[] }
-  | { kind: 'situation'; prompt: string; answer: string }
+  | { kind: 'verification'; prompt: string; answer: string; options?: readonly string[]; theorySection?: string }
+  | { kind: 'situation'; prompt: string; answer: string; theorySection?: string }
 
 export type LogistiqueUnit = UnitContent & {
   id: string
@@ -510,6 +511,11 @@ const procurementExercisePublication: LogistiquePublication = {
   units: [...foundationsAndServiceMathPublication.units, ...procurementExercises],
 }
 
+const storageExercisePublication: LogistiquePublication = {
+  revision: 'logistique-exercices-stockage-v005',
+  units: [...procurementExercisePublication.units, ...dossierExercises400],
+}
+
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
@@ -581,6 +587,7 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   financeDigitalAndProjectsIllustrations,
   foundationsAndServiceMathPublication,
   procurementExercisePublication,
+  storageExercisePublication,
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!
