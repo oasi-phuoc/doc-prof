@@ -6,6 +6,8 @@ export type IconName =
   | 'user'
   | 'mascot'
   | 'contrast'
+  | 'moon'
+  | 'screen-off'
   | 'expand'
   | 'folder'
   | 'skip'
@@ -44,6 +46,8 @@ const paths: Record<IconName, React.ReactNode> = {
       <path d="M12 3a9 9 0 0 1 0 18Z" fill="currentColor" />
     </>
   ),
+  moon: <path d="M20.9 13.3A9 9 0 0 1 10.7 3.1a9 9 0 1 0 10.2 10.2Z" />,
+  'screen-off': <path d="M8 4h12a1 1 0 0 1 1 1v10m-4 2H4a1 1 0 0 1-1-1V5m6 16h6m-3-4v4M2 2l20 20" />,
   expand: <path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5" />,
   folder: <path d="M3 7V5h6l2 2h10v13H3Z" />,
   skip: (

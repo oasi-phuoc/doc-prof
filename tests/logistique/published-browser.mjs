@@ -111,11 +111,27 @@ try {
     const stages = tables.filter({ has: page.locator('figcaption strong', { hasText: /^Chasser$/ }) })
     assert.deepEqual(await stages.locator('figcaption strong').allTextContents(), ['Chasser', 'Transformer', 'Consommer'])
     assert.equal(await stages.locator('img').count(), 3)
+    const chain = tables.filter({ has: page.locator('figcaption strong', { hasText: /^Approvisionnement$/ }) })
+    assert.deepEqual(await chain.locator('figcaption strong').allTextContents(), ['Approvisionnement', 'Production', 'Distribution'])
+    assert.equal(await chain.locator('img').count(), 3)
+    for (const route of ['soie', 'ambre']) {
+      assert.equal(await page.locator(`.print-only-sheets img[src$="log-101-carte-${route}-v004.webp"]`).count(), 1)
+    }
     const dates = (await tables.locator('figcaption strong').allTextContents()).filter((label) => /\d{4}/.test(label))
     assert.deepEqual(dates, [
       '1804', 'Années 1870', '1896', '1907', '1944', '1948', '1949', 'Années 1950',
       'Milieu des années 1950', '1956', 'Années 1960', '1980', '1992', 'Décembre 2020',
     ])
+  }
+
+  async function verifyObjectives() {
+    const printed = page.locator('.print-only-sheets')
+    const diagram = printed.locator('img[src$="log-103-objectifs-schema-v004.webp"]')
+    assert.equal(await diagram.count(), 1)
+    assert.match(await diagram.getAttribute('alt'), /disponibilité de livraison.*exigences de capital.*minimisation des coûts/)
+    const rows = printed.locator('.theory-image-table[aria-label*="B de la logistique"]')
+    assert.deepEqual(await rows.locator('caption').allTextContents(), ['Les 6 B de la logistique', 'Les 2 B complémentaires'])
+    assert.equal(await rows.locator('img[src$=".webp"]').count(), 8)
   }
 
   await page.goto(base + '/generateur')
@@ -214,6 +230,7 @@ try {
       assert.equal(await images.count(), imageCount(theory.blocks))
       if (code === '306') assert.equal(await page.locator('.print-only-sheets .logistique-theory-wrap img[src$="log-306-supports-speciaux-photo-v004.webp"]').count(), 1)
       if (code === '101') await verifyHistoryTable()
+      if (code === '103') await verifyObjectives()
       await verifyPdf(`${code} ${diploma} complet`)
       await page.getByRole('button', { name: 'Résumé', exact: true }).click()
       const summary = await inspectPrint(`${code} ${diploma} résumé`)
@@ -222,6 +239,7 @@ try {
       assert.equal(await images.count(), imageCount(theory.summaryBlocks))
       if (code === '306') assert.equal(await page.locator('.print-only-sheets .logistique-theory-wrap img[src$="log-306-supports-speciaux-photo-v004.webp"]').count(), 1)
       if (code === '101') await verifyHistoryTable()
+      if (code === '103') await verifyObjectives()
       assert(summary.pages.length <= complete.pages.length)
       await verifyPdf(`${code} ${diploma} résumé`)
       await page.getByRole('button', { name: 'Complet', exact: true }).click()

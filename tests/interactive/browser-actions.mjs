@@ -19,6 +19,15 @@ export function gameControl(root,name) {
   }})
 }
 
+export async function chooseSixCards(page) {
+  await page.getByRole('button', { name: /^Préparer la séance/ }).click()
+  const settings = page.getByRole('dialog', { name: 'Préparer la séance', exact: true })
+  await settings.getByText('Ordre des questions et préréglages', { exact: true }).click()
+  await settings.getByRole('combobox', { name: 'Nombre maximal de choix' }).selectOption('6')
+  await settings.getByRole('button', { name: 'Fermer · Préparer la séance', exact: true }).click()
+  await page.locator('.ci-launch:enabled').waitFor()
+}
+
 /** Playwright's synchronous predicate poll treats a Promise as truthy, even
  * when it later resolves false. Await each storage read on the test side.
  * The deadline uses Node's real clock, independent of a frozen page clock. */

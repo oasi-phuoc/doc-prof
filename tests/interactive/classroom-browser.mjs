@@ -1,4 +1,4 @@
-import {gameControl} from './browser-actions.mjs'
+import {gameControl, chooseSixCards} from './browser-actions.mjs'
 import { skipQuestion } from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { mkdir, writeFile } from 'node:fs/promises'
@@ -30,6 +30,7 @@ async function openFixture(page) {
     dispatchEvent(new PopStateEvent('popstate'))
   }, recipe)
   await page.getByRole('button', { name: /Commencer la séance/ }).waitFor()
+  await chooseSixCards(page)
 }
 async function fit(page, height) {
   const box = await page.locator('.ci-controls').boundingBox()

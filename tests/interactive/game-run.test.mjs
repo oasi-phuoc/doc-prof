@@ -11,6 +11,14 @@ try {
   recipe.libreMode = false
   const stored = new Map()
   globalThis.sessionStorage = { getItem: (key) => stored.get(key) ?? null, setItem: (key, value) => stored.set(key, value) }
+  await test('new parties default to three cards and remember a later six-card selection', () => {
+    const source = createGameSource({ recipe, name: 'Cartes' }, 'draft')
+    assert.equal(source.options.maxChoices, 3)
+    const legacy = { ...source, options: { ...source.options, maxChoices: 6, cardRulesVersion: undefined } }
+    assert.equal(renewGameSource(legacy, null).options.maxChoices, 3)
+    assert.equal(renewGameSource({ ...legacy, presetId: 'six-cards' }, null).options.maxChoices, 6)
+    assert.equal(renewGameSource({ ...source, options: { ...source.options, maxChoices: 6 } }, null).options.maxChoices, 6)
+  })
   await test('new saved-template games vary questions within the original range and keep the template untouched', () => {
     const original = structuredClone(recipe)
     let source = createGameSource({ recipe, name: 'Additions de 1 à 10' }, 'saved', 'range-template')

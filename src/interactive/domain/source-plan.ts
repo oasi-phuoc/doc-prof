@@ -15,7 +15,8 @@ export function sourcePlan(template: FicheRecipe, title: string, source: Session
   if (source.sourceKey !== expected) throw new Error(PLAN_CHANGED)
   const converted = (source.reference.kind==='pool'?convertPoolRecipe:convertRecipe)({ ...template, seed: source.seed }, title)
   const replayed = source.replay ? { ...converted, id: `${converted.id}-replay-${source.replay}`, seed: deriveSeed({ originalSeed: source.seed, sourceKey: source.sourceKey, purpose: 'replay', attempt: source.replay }) } : converted
-  const configured = applyPlanOptions(replayed, readPlanOptions(source.options))
-  const prepared = prepareGame(configured, configured.questions.filter((q) => source.selectedKeys.includes(positionOf(q))).map((q) => q.id), mode)
+  const options = readPlanOptions(source.options)
+  const configured = applyPlanOptions(replayed, options)
+  const prepared = prepareGame(configured, configured.questions.filter((q) => source.selectedKeys.includes(positionOf(q))).map((q) => q.id), mode, options.cardRulesVersion === 2 ? options.maxChoices : undefined)
   return source.resolvedKeys ? excludeQuestions(prepared, new Set(prepared.questions.filter((q) => !source.resolvedKeys!.includes(positionOf(q))).map((q) => q.id))) : prepared
 }

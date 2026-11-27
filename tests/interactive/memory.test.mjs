@@ -33,6 +33,28 @@ try{
   for(const mutate of [g=>{g.questions[1].images=[g.questions[0].images[0]]},g=>{g.questions[1].mode='oral'},g=>{g.questions[0].images=[]},g=>{delete g.corrections[g.questions[0].id].choiceId},g=>{g.questions[0].choices.find(c=>c.id===g.corrections[g.questions[0].id].choiceId).text='x'.repeat(121)}]){const g=structuredClone(source);mutate(g);const next=memoryGame(g);assert.deepEqual(next.questions,g.questions);assert.ok(next.issues.length>g.issues.length)}
   const malformed=structuredClone(game);malformed.questions[0].memoryBoard.cards[0]=null;assert.equal(validMemoryQuestion(malformed,malformed.questions[0]),false)
  })
+ await test('Dominos and Loto reuse verified pairs while old presets and the Loto grid keep their formats', () => {
+  const extended = readPlanOptions({ ...DEFAULT_PLAN_OPTIONS, memory: 'decks' })
+  assert.equal(extended.memory, 'decks')
+  for (const type of ['jeux-dominos', 'jeux-loto']) {
+   for (const seed of [1, 42, 20261127]) {
+    const original = convertRecipe(recipe(type, seed))
+    assert.ok(original.questions.length > 1)
+    assert.equal(memoryGame(original), original)
+    const next = applyPlanOptions(original, extended)
+    assert.deepEqual(next.questions.flatMap(q => q.memoryBoard.sourceKeys).sort(), original.questions.map(positionOf).sort())
+    assert.ok(next.questions.every(q => validMemoryQuestion(next, q)))
+    const sourceKey = positionOf(original.questions[1])
+    const [boardKey] = memorySelection([sourceKey], original, true, 'decks')
+    assert.ok(memorySelection([boardKey], next, false).includes(sourceKey))
+    if (type === 'jeux-loto') {
+     const loto = applyPlanOptions(original, { ...extended, loto: 'board' })
+     assert.ok(loto.questions.every(q => q.lotoBoard && !q.memoryBoard))
+     assert.deepEqual(memorySelection([sourceKey], original, true, 'decks', true), [sourceKey])
+    }
+   }
+  }
+ })
  await test('option-off identity stays compatible; caps never discard a memory card and selections map entire boards in both directions',()=>{
   assert.equal(applyPlanOptions(source,DEFAULT_PLAN_OPTIONS),source);assert.deepEqual(readPlanOptions({...DEFAULT_PLAN_OPTIONS,memory:false}),DEFAULT_PLAN_OPTIONS)
   for(const maxChoices of [2,3,4,5,6]){const next=applyPlanOptions(source,{...DEFAULT_PLAN_OPTIONS,memory:true,maxChoices});assert.ok(next.questions.every(q=>q.memoryBoard.cards.length===6))}

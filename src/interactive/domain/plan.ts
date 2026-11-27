@@ -60,6 +60,7 @@ export function prepareGame(
   game: Game,
   selected = game.questions.map((q) => q.id),
   mode: PlayMode = 'class',
+  cardsPerScreen?: number,
 ): Game {
   const selectedBoards=new Set(game.questions.filter(q=>selected.includes(q.id)&&q.lotoBoard).map(q=>q.lotoBoard!.groupId))
   const source = game.questions.filter((q) => selected.includes(q.id)||!!q.lotoBoard&&selectedBoards.has(q.lotoBoard.groupId))
@@ -99,12 +100,13 @@ export function prepareGame(
     const peers = q.audio
       ? questions.filter((other) => audioGroup(other) === audioGroup(q))
       : [q]
+    const canShareCards = cardsPerScreen === undefined || cardsPerScreen === 6 && peers.every(other => other.choices.length <= 3)
     // Open productions stay teacher-led; grouping never invents answer cards.
     const group =
-      mode === 'class' && peers.length === 2 && peers.every((other) => other.mode === 'choice' && (other.choices.length <= 3 || !['fixed', 'pin-last'].includes(choiceOrderPolicy(other))))
+      canShareCards && mode === 'class' && peers.length === 2 && peers.every((other) => other.mode === 'choice' && (other.choices.length <= 3 || !['fixed', 'pin-last'].includes(choiceOrderPolicy(other))))
         ? peers
         : [q]
-    if (mode === 'class' && peers.length === 2 && group.length === 1 && q.id === peers[0]?.id && peers.every((other) => other.mode === 'choice')) issues.push({ source: 'Document audio', reason: 'Ces questions restent séparées pour conserver leurs références et tous leurs choix source.' })
+    if (canShareCards && mode === 'class' && peers.length === 2 && group.length === 1 && q.id === peers[0]?.id && peers.every((other) => other.mode === 'choice')) issues.push({ source: 'Document audio', reason: 'Ces questions restent séparées pour conserver leurs références et tous leurs choix source.' })
     if (group.length === 2) {
       for (const member of group) {
         if (member.choices.length <= 3) continue

@@ -1,4 +1,4 @@
-import {gameControl} from './browser-actions.mjs'
+import {gameControl, chooseSixCards} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { readFile, writeFile } from 'node:fs/promises'
 import { createServer } from 'vite'
@@ -43,6 +43,7 @@ try {
     const page = await context.newPage(); page.on('pageerror', (error) => errors.push(error.message))
     await page.goto(`${base}/interactif/${saved.id}`)
     await page.locator('.ci-launch:enabled').waitFor({ timeout: 120000 })
+    await chooseSixCards(page)
     assert.equal(await page.locator('.ci-question-list fieldset > label').count(), 11)
     await page.locator('.ci-launch').click()
     await page.locator('.ci-answer').first().waitFor()

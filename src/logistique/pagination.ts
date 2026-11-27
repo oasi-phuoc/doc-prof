@@ -61,33 +61,34 @@ function splitA5Theory(block: A5TheoryBlock, maxHeight: number, scale: number): 
   return fragments
 }
 
-function wrappedFigureHeight(image: GrammarTheoryBlock, prose: GrammarTheoryBlock, a5: boolean, scale: number) {
-  if (image.kind !== 'image' || prose.kind !== 'paragraph') return undefined
-  if (!/-photo-v\d+\.webp$/i.test(image.src)) return undefined
-  const text = prose.text.replace(/\{\/?g\}/g, '')
-  if (text.length < 85 || (a5 && scale > 1.15)) return undefined
+function measureWrappedFigure(caption: string, paragraphs: string[], a5: boolean, scale: number) {
   const width = (a5 ? 53 : 72) / scale
-  const figure = (a5 ? 132 : 155) + lineCount(image.caption, width * 0.45) * 19 * scale
+  const figure = (a5 ? 127 : 149) + lineCount(caption, width * 0.39) * 17 * scale
   const lineHeight = 26 * scale
-  const beside = Math.floor(figure / lineHeight)
-  const narrowWidth = width * 0.6
-  const below = Math.max(0, text.length - beside * narrowWidth)
-  const flow = below
-    ? beside + lineCount(text.slice(-below), width)
-    : lineCount(text, narrowWidth)
-  return 12 + Math.max(figure, Math.max(flow, lineCount(text, width)) * lineHeight)
+  const narrowWidth = width * 0.64
+  let textHeight = 0
+  paragraphs.forEach((text, index) => {
+    if (index > 0) textHeight += 6 * scale
+    const remainingLines = Math.max(0, Math.ceil((figure - textHeight) / lineHeight))
+    const beside = Math.min(remainingLines, lineCount(text, narrowWidth))
+    const below = text.slice(Math.floor(beside * narrowWidth))
+    textHeight += (beside + (below ? lineCount(below, width) : 0)) * lineHeight
+  })
+  return { height: 12 + Math.max(figure, textHeight), roomBeside: textHeight < figure + lineHeight }
 }
 
-function theoryHeight(block: GrammarTheoryBlock, width: number, scale: number, a5: boolean): number {
+function theoryHeight(block: GrammarTheoryBlock, width: number, scale: number, a5 = false): number {
   const lines = (text: string, columns = width) => lineCount(text.replace(/\{\/?g\}/g, ''), columns) * 26 * scale
   switch (block.kind) {
     case 'heading':
       return 12 + (block.sub ? 28 : 32) * scale * lineCount(block.text, width * 0.8)
     case 'image':
-      return (a5 ? 190 : 184) + lines(block.caption, a5 ? width * 0.9 : width)
+      if (block.src.includes('log-103-objectifs-schema-')) return (a5 ? 250 : 295) + lines(block.caption)
+      return (block.src.includes('-carte-') ? (a5 ? 219 : 265) : a5 ? 190 : 184) + lines(block.caption, a5 ? width * 0.9 : width)
     case 'image-row': {
       const cellWidth = width * 0.9 / block.cells.length
-      return (a5 ? 151 : 143) + Math.max(...block.cells.map(({ caption, description }) =>
+      const captionHeight = block.caption ? 4 + lines(block.caption) : 0
+      return (a5 ? 151 : 143) + captionHeight + Math.max(...block.cells.map(({ caption, description }) =>
         lines(caption, cellWidth) + (description ? lines(description, cellWidth) : 0)))
     }
     case 'paragraph':
@@ -127,7 +128,9 @@ function height(item: MathItem, a5: boolean, scale: number): number {
     const caption = glossaryFigure?.caption
     const captionHeight = caption ? 4 + lines(caption, a5 ? 18 : 21) * (a5 ? 14 : 16) * scale : 0
     const wrappingReserve = Math.max(0, scale - 1) * 24
-    return (a5 ? 10 : 11) + wrappingReserve + Math.max(termHeight, definitionHeight, (a5 ? 61 : 76) + captionHeight)
+    const photo = glossaryFigure?.src.includes('-photo-')
+    const imageHeight = a5 ? (photo ? 86 : 61) : (photo ? 116 : 76)
+    return (a5 ? 10 : 11) + wrappingReserve + Math.max(termHeight, definitionHeight, imageHeight + captionHeight)
   }
   if (glossaryFigure && item.theoryBlock) {
     const diagram = glossaryFigure.src.includes('-schema-')
@@ -220,9 +223,9 @@ export function splitLogistiquePages(
         ...(hasSlices ? {
           logistiqueTheorySlices: slice.map(({ sourceIndex, theoryBlock, isLast }) => ({ sourceIndex, theoryBlock, isLast })),
         } : {}),
-        ...(wrappedFigures.size ? {
-          logistiqueWrappedFigures: [...wrappedFigures].filter((index) => index >= start && index + 1 < end)
-            .map((index) => index - start),
+        ...(wrappedFigures.length ? {
+          logistiqueWrappedFigures: wrappedFigures.filter((figure) => figure.start >= start && figure.end <= end)
+            .map((figure) => ({ start: figure.start - start, end: figure.end - start })),
         } : {}),
         problemDraftGrids: block.problemDraftGrids?.slice(offset, (slice.at(-1)?.sourceIndex ?? -1) + 1),
       })
@@ -230,17 +233,35 @@ export function splitLogistiquePages(
       overhead = 0
     }
     const heights = slices.map(({ item, theoryBlock }) => height(theoryBlock ? { ...item, theoryBlock } : item, a5, fontScale))
-    const wrappedFigures = new Set<number>()
+    const wrappedFigures: { start: number; end: number }[] = []
+    const wrappedParagraphs = new Set<number>()
     for (let index = 0; index + 1 < slices.length; index++) {
       const slice = slices[index]!
       const image = slice.item.theoryBlock
-      const prose = slices[index + 1]!.item.theoryBlock
-      if (!image || !prose || breakAfter(slice)) continue
-      const wrapped = wrappedFigureHeight(image, prose, a5, fontScale)
-      if (wrapped === undefined || (a5 && wrapped > a5ItemLimit)) continue
-      wrappedFigures.add(index)
-      heights[index] = wrapped
-      heights[++index] = 0
+      if (image?.kind !== 'image' || !/-photo-v\d+\.webp$/i.test(image.src) || breakAfter(slice) || (a5 && fontScale > 1.15)) continue
+      const paragraphs: string[] = []
+      let estimate: number | undefined
+      for (let next = index + 1; next < slices.length && !breakAfter(slices[next - 1]!); next++) {
+        const prose = slices[next]!.item.theoryBlock
+        if (prose?.kind !== 'paragraph') break
+        paragraphs.push(prose.text.replace(/\{\/?g\}/g, ''))
+        const measure = measureWrappedFigure(image.caption, paragraphs, a5, fontScale)
+        if (a5 && measure.height > a5ItemLimit) {
+          paragraphs.pop()
+          break
+        }
+        estimate = measure.height
+        if (!measure.roomBeside) break
+      }
+      if (estimate === undefined || paragraphs.join('').length < 85) continue
+      const end = index + 1 + paragraphs.length
+      wrappedFigures.push({ start: index, end })
+      heights[index] = estimate
+      for (let next = index + 1; next < end; next++) {
+        wrappedParagraphs.add(next)
+        heights[next] = 0
+      }
+      index = end - 1
     }
     const withFollowing = [...heights]
     for (let index = slices.length - 2; index >= 0; index--) {
@@ -251,7 +272,7 @@ export function splitLogistiquePages(
     }
     for (const [index, slice] of slices.entries()) {
       const itemHeight = heights[index]!
-      if (!wrappedFigures.has(index - 1) && used > 0 && used + overhead + withFollowing[index]! > budget()) {
+      if (!wrappedParagraphs.has(index) && used > 0 && used + overhead + withFollowing[index]! > budget()) {
         const previousHeight = heights[index - 1] ?? 0
         const balanceLastQuestion = !slice.item.theoryBlock && index === slices.length - 1 && index - start >= 3
           && previousHeight + itemHeight <= budget(pages.length + 1)

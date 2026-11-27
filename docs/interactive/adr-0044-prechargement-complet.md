@@ -21,3 +21,11 @@ La validité du lot dépend des ressources publiques nécessaires, indépendamme
 Dix tests de domaine couvrent les ressources publiques et les alternatives fausses, les extraits composés, les 30 mascottes, les tailles réelles, les quatre travailleurs, les limites déclarées et diffusées, les erreurs de type, les réponses vides, l’annulation et les réponses tardives, les références de grammaire, l’expiration du cache et la libération des ressources. Les suites existantes des médias et séquences audio sont conservées.
 
 `full-preload-browser.mjs` utilise des fichiers image et audio existants et une situation technique de grammaire explicitement hors banque publiée. Il vérifie Classe et Solo sur trois tailles d’écran, avec une coupure réseau après préparation : lecture effective des nombres et d’une addition, zoom, changement de mascotte, correction, bilan, reprise et feuille enseignant autonome. Le parcours est intégré à l’orchestrateur commun. Voir `full-preload-results.json` et `quality-full-preload-results.json` pour les contrôles réellement exécutés.
+
+## Conservation locale après fermeture
+
+Une fois le préchargement complet, **Conserver les médias sur cet appareil** permet de stocker volontairement un seul lot dans IndexedDB. Il reste disponible sept jours dans le même navigateur. Le contrôle retire les lots expirés à la prochaine ouverture. La préparation permet d’effacer ce lot et l’effacement global des données du jeu le retire aussi.
+
+Le lot contient les fichiers déjà décodés et leurs adresses publiques. La limite de 128 Mio s’applique à l’ensemble et celle de 32 Mio à chaque fichier. Un lot peut inclure uniquement des médias publics provenant de ClairFLE. Les documents, les plans, les corrigés et les informations de connexion suivent leurs parcours propres.
+
+À l’ouverture du jeu, le navigateur peut activer le lot lorsque sa connexion est coupée. Avec une connexion détectée, les adresses ordinaires sont utilisées par défaut et **Utiliser les médias conservés** permet de basculer pour la visite. Une fiche enregistrée peut encore demander une connexion pour être ouverte. Le test Chromium conserve l’accès à l’application locale et coupe les requêtes de médias après fermeture. L’ouverture de l’application entièrement hors ligne reste une étape séparée.

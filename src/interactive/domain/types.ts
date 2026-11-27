@@ -21,7 +21,7 @@ export type MemoryCard={id:string;image?:string;text?:string}
 export type MemoryBoardData={cards:MemoryCard[];sourceKeys:string[];group:number;total:number}
 export type MemoryRuntime={open:string[];found:string[];turns:number;misses:number;checked:boolean}
 export type LotoGoal='line'|'board'
-export type LotoBoardData={groupId:string;number:number;total:number;columns:2|3;goal:LotoGoal;sourceKeys:string[];cells:{id:string;text:string}[]}
+export type LotoBoardData={groupId:string;number:number;total:number;columns:2|3|4|5;goal:LotoGoal;sourceKeys:string[];cells:{id:string;text:string}[];layout?:'extended'}
 /** Projection data never contains the solution or a correctness flag. */
 export type Question = {
   id: string
@@ -116,6 +116,7 @@ export type PreviousAttempt = {
   results: Attempt[]
   manualVotes: Record<string, ManualVote>
   teacherMarks: Record<string, 'success' | 'review' | 'unassessed'>
+  teacherBadges?: Record<string, true>
   audioListens?: number
   extraListens?: number
   memoryBoards?: Record<string,MemoryRuntime>
@@ -132,6 +133,7 @@ export type Session = {
   history: Attempt[]
   manualVotes: Record<string, ManualVote>
   teacherMarks: Record<string, 'success' | 'review' | 'unassessed'>
+  teacherBadges?: Record<string, true>
   note: string
   teacherLocked?: boolean
   revealedAt?: number
@@ -163,6 +165,7 @@ export type Action = (
   | { type: 'ASSESS'; value: 'acquired' | 'retry'; questionId?: string }
   | { type: 'MANUAL_VOTE_SET'; questionId: string; vote: ManualVote | null }
   | { type: 'TEACHER_MARK_SET'; questionId: string; value: 'success' | 'review' | 'unassessed' }
+  | { type: 'TEACHER_BADGE'; questionId: string; badge: 'well-explained'; on: boolean }
   | { type: 'SESSION_NOTE_SET'; note: string }
   | { type: 'NEXT' | 'PREVIOUS' | 'SKIP' | 'PAUSE' | 'RESUME' }
 ) & { roundId?: string }

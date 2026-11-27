@@ -38,19 +38,32 @@ export function insertLogistiqueFigures(blocks, figures, publicDirectory, direct
   for (const figure of figures) {
     const indices = inserted.flatMap((block, index) => block.kind === 'heading' && block.text === figure.anchor ? [index] : [])
     if (indices.length !== 1) throw new Error('Ancrage de figure introuvable ou ambigu : ' + figure.anchor)
+    const start = indices[0] + 1
     let block
     if (figure.cells) {
-      const { cells, label } = figure
+      const { cells, label, tableCaption } = figure
       if (!label?.trim() || cells.length < 2 || cells.length > 3 || new Set(cells.map(({ caption }) => caption)).size !== cells.length) {
         throw new Error('Tableau d’images invalide : ' + figure.anchor)
       }
-      block = { kind: 'image-row', label, cells: cells.map((cell) => figureImage(cell, publicDirectory, directory)) }
+      block = {
+        kind: 'image-row', label, ...(tableCaption?.trim() ? { caption: tableCaption.trim() } : {}),
+        cells: cells.map((cell) => figureImage(cell, publicDirectory, directory)),
+      }
     } else {
       block = { kind: 'image', ...figureImage(figure, publicDirectory, directory) }
     }
     const additions = [block]
     if (figure.prose?.trim()) additions.push({ kind: 'paragraph', text: figure.prose.trim() })
-    inserted.splice(indices[0] + 1, 0, ...additions)
+    if (figure.replaces || figure.endOfSection) {
+      const nextHeading = inserted.findIndex((entry, index) => index >= start && entry.kind === 'heading')
+      const end = nextHeading < 0 ? inserted.length : nextHeading
+      if (figure.replaces) {
+        const matches = inserted.slice(start, end).flatMap((entry, index) =>
+          entry.kind === 'image' && entry.src.endsWith('/' + figure.replaces) ? [start + index] : [])
+        if (matches.length !== 1) throw new Error('Figure à remplacer introuvable ou ambiguë : ' + figure.replaces)
+        inserted.splice(matches[0], 1, ...additions)
+      } else inserted.splice(end, 0, ...additions)
+    } else inserted.splice(start, 0, ...additions)
   }
   return inserted
 }

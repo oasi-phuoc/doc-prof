@@ -1,4 +1,4 @@
-import {gameControl} from './browser-actions.mjs'
+import {gameControl, chooseSixCards} from './browser-actions.mjs'
 import assert from 'node:assert/strict'
 import { readFile, writeFile } from 'node:fs/promises'
 import { createHash } from 'node:crypto'
@@ -32,6 +32,7 @@ async function setup(width, height) {
   await context.route('**/__test_api/fiches', route => { methods.push(route.request().method()); return route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ fiches: [saved] }) }) })
   const page = await context.newPage(); page.setDefaultTimeout(30000); page.on('pageerror', e => errors.push(e.message))
   await page.goto(base + '/interactif/' + saved.id); await page.locator('.ci-launch:enabled').waitFor({ timeout: 120000 })
+  await chooseSixCards(page)
   return { context, page }
 }
 async function navigate(page, index) {

@@ -3,7 +3,7 @@ import { Fragment, useCallback, useEffect, useLayoutEffect, useRef, useState } f
 import { questionsForRound, roundsFor } from './domain/plan'
 import { matchingSummary, usedMatchingChoices } from './domain/matching'
 import { startSession, transition } from './domain/session'
-import type { Action, Game, Session } from './domain/types'
+import type { Action, Game, Question, Session } from './domain/types'
 import type { ShapeId } from './domain/palette'
 import { Mascot } from './components/Mascot'
 import { QuestionStage } from './components/QuestionStage'
@@ -291,11 +291,25 @@ function ActiveSessionView({
                 </p>
                 {vote && (vote.shared ? <section className="ci-vote-summary" aria-label={`Vote compté manuellement : ${playPrompt(q.prompt)}`}>{voteDetails}</section> : <details className="ci-vote-summary"><summary>Vote compté manuellement · afficher sur cet écran</summary>{voteDetails}</details>)}
                 {state.mode === 'class' && <div className="ci-teacher-marks" role="group" aria-label={`Marque enseignant : ${playPrompt(q.prompt)}`}>{([{ value: 'success', label: 'Réussi' }, { value: 'review', label: 'À revoir' }, { value: 'unassessed', label: 'Non évalué' }] as const).map((mark) => <button key={mark.value} aria-pressed={state.teacherMarks[q.id] === mark.value} onClick={() => dispatch({ type: 'TEACHER_MARK_SET', questionId: q.id, value: mark.value })}>{mark.label}</button>)}</div>}
+                {state.mode === 'class' && header.teacherBadges && !a.skipped && <TeacherBadgeButton question={q} granted={!!state.teacherBadges?.[q.id]} dispatch={dispatch} />}
                 </Fragment>
               )
             })}
           </div>
-          {!!state.previousAttempts?.length && <details className="ci-panel ci-attempt-history"><summary>Tentatives précédentes ({state.previousAttempts.length})</summary>{state.previousAttempts.map((attempt, i) => <section key={`${attempt.roundId}:${attempt.attempt}`}><b>Tentative {attempt.attempt + 1} · écran {rounds.findIndex((round) => round.id === attempt.roundId) + 1}</b><p>{attempt.results.length ? attempt.results.map((result) => `${game.questions.find((q) => q.id === result.questionId)?.prompt} · ${result.skipped ? 'passée' : result.manual === 'retry' ? 'à revoir' : 'corrigée'}`).join(' ; ') : 'Tentative relancée avant correction.'}</p>{Object.keys(attempt.manualVotes).length > 0 && <p>Comptage de cet essai conservé.</p>}<span className="ci-sr-only">Essai archivé {i + 1}</span></section>)}</details>}
+          {!!state.previousAttempts?.length && <details className="ci-panel ci-attempt-history">
+            <summary>Tentatives précédentes ({state.previousAttempts.length})</summary>
+            {state.previousAttempts.map((attempt, i) => <section key={`${attempt.roundId}:${attempt.attempt}`}>
+              <b>Tentative {attempt.attempt + 1} · écran {rounds.findIndex(round => round.id === attempt.roundId) + 1}</b>
+              {attempt.results.length ? attempt.results.map(result => {
+                const question = game.questions.find(q => q.id === result.questionId)
+                const resultLabel = result.skipped ? 'passée' : result.manual === 'retry' ? 'à revoir' : 'corrigée'
+                const badge = header.teacherBadges && attempt.teacherBadges?.[result.questionId]
+                return <p key={result.questionId}>{question?.prompt} · {resultLabel}{badge && ' · Bien expliqué'}</p>
+              }) : <p>Tentative relancée avant correction.</p>}
+              {Object.keys(attempt.manualVotes).length > 0 && <p>Comptage de cet essai conservé.</p>}
+              <span className="ci-sr-only">Essai archivé {i + 1}</span>
+            </section>)}
+          </details>}
           {state.mode === 'class' && <SessionObservations note={state.note} onSave={(note) => dispatch({ type: 'SESSION_NOTE_SET', note })} />}
           <section className="ci-summary-print-only">{state.note && <><h2>Observations</h2><p>{state.note}</p></>}{game.questions.filter((q) => state.manualVotes[q.id]).map((q) => <div key={q.id}><h2>{playPrompt(q.prompt)}</h2><ManualVoteView question={q} vote={state.manualVotes[q.id]!} /></div>)}</section>
           <div className="ci-toolbar">
@@ -361,7 +375,7 @@ function PlayingRound({
   showTranscripts = true,
   header,
   onExit,
-  suspended,
+  suspended: sessionSuspended,
   initialClock,
   onClock,
   teacherConsole,
@@ -396,7 +410,9 @@ function PlayingRound({
   const [navigating, setNavigating] = useState(false)
   const [readingTranscript, setReadingTranscript] = useState(false)
   const [readingModel, setReadingModel] = useState<string|null>(null)
+  const [masked, setMasked] = useState(false)
   const [annotationOpen,setAnnotationOpen]=useState(false)
+  const suspended = sessionSuspended || masked
   const modelQuestion=state.phase==='revealed'?questions.find(question=>question.id===readingModel&&question.mode!=='choice'):undefined
   const transcript = showTranscripts ? reviewTranscript(game, state) : undefined
   const controls = useRef<HTMLElement>(null)
@@ -407,7 +423,7 @@ function PlayingRound({
   const solo = state.mode === 'solo'
   const roundId = rounds[state.index]!.id
   const guidedOral=questions.length===1&&((questions[0]?.mode==='sequence'&&!questions[0].words)||(questions[0]?.mode==='oral'&&questions[0].images.length>0))
-  const consoleBlocked = confirmation !== null || navigating || counting || readingTranscript || !!readingModel || annotationOpen
+  const consoleBlocked = masked || confirmation !== null || navigating || counting || readingTranscript || !!readingModel || annotationOpen
   useLayoutEffect(() => { teacherConsole.setBlocked(consoleBlocked); return () => teacherConsole.setBlocked(true) }, [teacherConsole, consoleBlocked])
   // A withdrawn or suspended review must stay closed when controls return.
   if (readingTranscript && (!transcript || suspended || locked || confirmation !== null || navigating)) setReadingTranscript(false)
@@ -467,6 +483,7 @@ function PlayingRound({
           teacherLocked: locked,
           onNavigate: solo ? undefined : () => setNavigating(true),
           onConsole: solo ? undefined : teacherConsole.open,
+          onMask: solo ? undefined : () => setMasked(true),
         }}
       />
       <main
@@ -556,6 +573,7 @@ function PlayingRound({
                     }
                   />
                   {!solo && state.manualVotes[q.id]?.shared && <ManualVoteView question={q} vote={state.manualVotes[q.id]!} offset={i * 3} />}
+                  {!solo && reveal && header.teacherBadges && <TeacherBadgeButton question={q} granted={!!state.teacherBadges?.[q.id]} disabled={blocked} dispatch={dispatch} />}
                   {reveal && q.mode !== 'choice' && q.mode!=='memory' && (
                     <CorrectionView
                       placement="model"
@@ -647,8 +665,31 @@ function PlayingRound({
         {navigating && !locked && <QuestionNavigator game={game} state={state} onClose={() => setNavigating(false)} onGo={(index) => { setNavigating(false); dispatch({ type: 'NAVIGATE', index }) }} onRetry={() => { setNavigating(false); setConfirmation('retry') }} />}
         {confirmation && !locked && <TeacherConfirmation action={confirmation} questionCount={questions.length} remaining={game.questions.filter((q) => !state.history.some((attempt) => attempt.questionId === q.id && !attempt.skipped)).length} onCancel={() => setConfirmation(null)} onConfirm={() => { setConfirmation(null); dispatch(confirmation === 'retry' ? { type: 'RETRY_QUESTION', roundId } : { type: confirmation === 'skip' ? 'SKIP' : 'FINISH' }) }} />}
       </main>
+      {masked && <ProjectionMask onClose={() => setMasked(false)} />}
     </>
   )
+}
+
+function ProjectionMask({ onClose }: { onClose: () => void }) {
+  const dialog = useRef<HTMLDialogElement>(null)
+  useLayoutEffect(() => {
+    const opener = document.activeElement
+    const element = dialog.current!
+    element.showModal()
+    return () => {
+      element.close()
+      const target = opener instanceof HTMLElement && opener.getClientRects().length ? opener : document.querySelector<HTMLButtonElement>('.ci-clean-header button[aria-label="Options du jeu"]')
+      target?.focus({ preventScroll: true })
+    }
+  }, [])
+  return <dialog ref={dialog} className="ci-projection-mask ci-no-print" aria-label="Écran masqué" onCancel={event => { event.preventDefault(); onClose() }}>
+    <button type="button" onClick={onClose}>Afficher la séance</button>
+  </dialog>
+}
+
+function TeacherBadgeButton({ question, granted, disabled, dispatch }: { question: Question; granted: boolean; disabled?: boolean; dispatch: (action: Parameters<typeof transition>[2]) => void }) {
+  return <button type="button" className="ci-teacher-badge" aria-description={playPrompt(question.prompt)} aria-pressed={granted} disabled={disabled}
+    onClick={() => dispatch({ type: 'TEACHER_BADGE', questionId: question.id, badge: 'well-explained', on: !granted })}>Bien expliqué</button>
 }
 
 function BetweenQuestionsTimer({ seconds, roundId, attempt, initialClock, suspended, onClock, onNext }: { seconds: number; roundId: string; attempt: number; initialClock?: SessionClock; suspended: boolean; onClock: (clock: SessionClock) => void; onNext: () => void }) {

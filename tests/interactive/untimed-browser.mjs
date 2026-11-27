@@ -19,7 +19,7 @@ try {
   await page.getByText('Sans minuteur', { exact: true }).waitFor()
   await page.clock.runFor(61000)
   assert.equal(await page.locator('.ci-reveal').count(), 0)
-  assert.equal(await page.locator('.ci-answer:enabled').count(), 6)
+  assert.equal(await page.locator('.ci-answer:enabled').count(), 3)
   assert.match(await page.locator('.ci-controls').innerText(), /à ton rythme/)
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false)
   await page.getByRole('button', { name: /1.?559/ }).click()

@@ -24,6 +24,7 @@ import { sourceTranscript } from './transcripts'
 import { GRAMMAR_CO_BANK } from '@/grammaire/exercises/co-bank'
 import { adaptWordClassification } from './word-classification'
 import { adaptGuidedOral } from './guided-oral'
+import { adaptLogistics } from './logistics'
 import {PHRASE_COLORS} from '@/francais/phrase-banks'
 import {MAX_PHRASE_IMAGE_CLUES} from '@/francais/phrase-images'
 export { hash } from './seeds'
@@ -468,6 +469,21 @@ export function convertRecipe(
               audio: item.optionAudioSrcs?.[i],
             }))
             add(q, item.answer, `c${matches[0]}`)
+            return
+          }
+          const logistics = config.domain === 'logistique-afp' || config.domain === 'logistique-cfc' ? adaptLogistics(item) : undefined
+          if (logistics) {
+            if ('reason' in logistics) {
+              reject(logistics.reason)
+              return
+            }
+            const q = base()
+            q.mode = 'oral'
+            q.compatibility = 'teacher-led'
+            const image = item.logistiqueImage?.visibility === 'both' ? item.logistiqueImage : undefined
+            if (image) q.images = [image.src]
+            q.context = [q.context, image?.caption, logistics.context].filter(Boolean).join('\n\n') || undefined
+            add(q, logistics.model)
             return
           }
           const result = verifiedArithmetic(item)

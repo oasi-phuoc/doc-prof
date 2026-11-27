@@ -77,9 +77,38 @@
   .ci-app .ci-word-session .ci-model-answer { padding: 12px 18px; }
   .ci-app .ci-word-session .ci-model-answer p { margin: 8px 0; }
 }
-.ci-app .ci-answer:not(.ci-answer-key):not(.ci-answer-muted) { border: 3px solid #182238; }
+.ci-app .ci-answer:not(.ci-answer-key):not(.ci-answer-muted) { border: 3px solid var(--ci-answer-line, #182238); }
 .ci-app .ci-answer.ci-answer-muted { border-color: #657084; }
-.ci-app .ci-answer.ci-chosen:not(.ci-answer-key):not(.ci-answer-muted), .ci-app .ci-answer:focus-visible { outline: 4px solid #182238; outline-offset: 3px; box-shadow: 0 0 0 3px #fff; }
+.ci-app .ci-answer.ci-chosen:not(.ci-answer-key):not(.ci-answer-muted), .ci-app .ci-answer:focus-visible { outline: 4px solid var(--ci-answer-focus, #182238); outline-offset: 3px; box-shadow: 0 0 0 3px var(--ci-paper); }
+.ci-app .ci-teacher-badge {
+  min-height: 44px;
+  margin: 6px 0;
+  padding: 4px 12px;
+  font-size: 15px;
+}
+.ci-app .ci-teacher-badge[aria-pressed='true'] {
+  border-color: var(--ci-accent);
+  background: var(--ci-soft);
+}
+.ci-app .ci-projection-mask {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 16px;
+  border: 0;
+  background: #000;
+}
+.ci-app .ci-projection-mask[open] {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+.ci-app .ci-projection-mask::backdrop { background: #000; }
+.ci-app .ci-projection-mask button { background: #101010; color: #fff; border-color: #aaa; }
+.ci-app .ci-projection-mask button:focus-visible { outline-color: #fff; }
 @media print {
   .ci-ink-saving .ci-paper-card[data-card-slot="A"] { --ci-paper-pattern: radial-gradient(#aaa .35mm, transparent .45mm); --ci-paper-pattern-size: 4mm 4mm; }
   .ci-ink-saving .ci-paper-card[data-card-slot="B"] { --ci-paper-pattern: repeating-linear-gradient(45deg, transparent 0 3mm, #bbb 3mm 3.3mm); }

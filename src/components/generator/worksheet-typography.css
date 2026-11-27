@@ -52,10 +52,14 @@
   display: block !important;
 }
 
+.logistique-theory-wrap > .exercise-item.layout-theory:nth-child(n + 3) {
+  margin-block-start: .32em;
+}
+
 .logistique-theory-wrap > .exercise-item.layout-theory:first-child {
   float: right;
-  width: 38%;
-  max-width: 55mm;
+  width: 35%;
+  max-width: 51mm;
   margin: 0 0 1mm 3mm;
 }
 
@@ -82,6 +86,38 @@
 
 .a5-half .logistique-theory-wrap .grammar-support-image img {
   max-height: 29mm;
+}
+
+.is-logistique .theory-grid .grammar-support-image img[src*="-carte-"] {
+  max-height: 66mm;
+}
+
+.a5-half.is-logistique .theory-grid .grammar-support-image img[src*="-carte-"] {
+  max-height: 54mm;
+}
+
+.is-logistique .theory-grid .grammar-support-image:has(> img[src*="log-103-objectifs-schema-"]) {
+  width: min(100%, 104mm);
+}
+
+.is-logistique .theory-grid .grammar-support-image img[src*="log-103-objectifs-schema-"] {
+  display: block;
+  margin-inline: auto;
+  max-height: 74mm;
+}
+
+.a5-half.is-logistique .theory-grid .grammar-support-image:has(> img[src*="log-103-objectifs-schema-"]) {
+  width: min(100%, 88mm);
+}
+
+.a5-half.is-logistique .theory-grid .grammar-support-image img[src*="log-103-objectifs-schema-"] {
+  max-height: 62mm;
+}
+
+.theory-image-table > caption {
+  padding-bottom: 1mm;
+  font-weight: 700;
+  text-align: left;
 }
 
 .a5-half.is-logistique .theory-table {

@@ -23,7 +23,7 @@ try {
     await page.clock.pauseAt(new Date(Date.now() + 1000))
     await page.getByRole('button', { name: /Commencer la séance/ }).click()
     await page.locator('.ci-controls').waitFor()
-    assert.equal(await page.locator('.ci-answer:enabled').count(), 6)
+    assert.equal(await page.locator('.ci-answer:enabled').count(), 3)
     assert.equal(await page.getByRole('button', { name: /Signal|Discuter|Enseignant : révéler/ }).count(), 0)
     // A correct response reveals immediately; no extra click is required.
     await page.getByRole('button', { name: /1.?559/ }).click()
@@ -55,7 +55,7 @@ try {
     await page.screenshot({ path: `/tmp/clairfle-solo-incorrect-${width}.png`, fullPage: true })
     assert.equal(await page.locator('.ci-margin-answer').count(), 0)
     assert.equal(await page.locator('.ci-answer-key').count(), 1)
-    assert.equal(await page.locator('.ci-answer-muted').count(), 5)
+    assert.equal(await page.locator('.ci-answer-muted').count(), 2)
     // Pause also freezes the five seconds of correction.
     await page.getByRole('button', { name: 'Pause', exact: true }).click()
     await page.clock.runFor(10000)

@@ -8,12 +8,13 @@ import {LotoBoard} from '../components/LotoBoard'
 import { PhaseBanner } from '../components/PhaseBanner'
 import { mascotStyle } from '../domain/mascot'
 import { usePreparedMedia } from '../media/prepared-context'
+import { displayThemeClass } from '../display-theme'
 const noop = () => {}
 
 export function ReadabilityPreview({ questions, options, total }: { questions: Question[]; options: ReadabilityOptions; total: number }) {
   const resolve=usePreparedMedia()
-  return <div className={`ci-app ci-playing${options.contrast ? ' ci-high-contrast' : ''}`} data-mascot={options.mascot} style={mascotStyle(options.mascot,resolve)}>
-    <ClassroomHeader {...options} playing fullscreen={false} onContrast={noop} onMode={noop} onMascot={noop} onTimer={noop} onFullscreen={noop} onFiches={noop}
+  return <div className={`ci-app ci-playing${displayThemeClass(options.theme)}`} data-mascot={options.mascot} style={mascotStyle(options.mascot,resolve)}>
+    <ClassroomHeader {...options} playing fullscreen={false} onMode={noop} onMascot={noop} onTimer={noop} onFullscreen={noop} onFiches={noop}
       session={{ progress: `Question 1 / ${total}`, paused: false, canSkip: true, onSkip: noop, onPause: noop, onExit: noop,
         audio: questions.some((q) => q.audio) ? <div className="ci-audio"><audio controls preload="none" aria-label="Extrait audio" /><small>Écoute 1 / 2</small></div> : undefined }} />
     <main className={`ci-session${options.mode === 'solo' ? ' ci-solo-session' : ''}${questions.length === 2 ? ' ci-dual-session' : ''}${questions[0]?.mode === 'sequence' ? ' ci-sequence-session' : ''}${((questions[0]?.mode==='sequence'&&!questions[0].words)||(questions[0]?.mode==='oral'&&questions[0].images.length>0))?' ci-guided-oral-session':''}${questions[0]?.words ? ' ci-word-session' : ''}${questions[0]?.wordSorting ? ' ci-sorting-session' : ''}${questions[0]?.wordBlank ? ' ci-word-drop-session' : ''}${questions[0]?.mode==='memory'?' ci-memory-session':''}${questions[0]?.lotoBoard?' ci-loto-session':''}`}>

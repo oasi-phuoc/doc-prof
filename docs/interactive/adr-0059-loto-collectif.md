@@ -25,3 +25,11 @@ Le bilan présente les cases cochées et l’objectif de chaque grille, séparé
 Les grilles interactives sont construites depuis le lot animateur, avec les groupes de six existants. Elles ne remplacent pas les combinaisons des grilles élèves imprimées. Les images partagées, les mots répétés, les paires non vérifiées ou les libellés dépassant 24 caractères conservent les questions source avec un signalement, sans association inventée ni texte tronqué. Les autres grilles M12, les salles synchronisées et le démarrage à froid hors ligne restent ouverts. Désactiver cette option retrouve les associations compatibles avec les duels et la compétition.
 
 Les [tests de domaine](../../tests/interactive/loto.test.mjs) vérifient 200 configurations, les objectifs, les gardes, les sélections, les graines, les cases fixes, les reprises et la fidélité du papier. Les [résultats natifs](loto-results.json), la [revue visuelle](loto-proofs/index.html) et le [relevé qualité](quality-loto-results.json) consignent les contrôles réellement exécutés. Les essais sur téléphone physique et ENI restent à effectuer.
+
+## Grille séparée jusqu’à 25 cases
+
+La préparation propose désormais ce format lorsqu’un nouveau Loto est activé. Chaque lot animateur est regroupé par fiche, avec au plus 25 paires image–mot par grille. Avec 27 paires, le jeu crée une grille de 25 et une de 2. Les mots et les images ambigus restent signalés dans la préparation.
+
+Les positions dans la grille et l’ordre des tirages sont déterministes pour une séance donnée. Un tirage garde la bonne réponse et utilise les autres mots vérifiés de la grille selon le plafond de cartes. Les lettres A–C par défaut identifient les choix du tirage. **Voir la grille** présente les cases et leur progression. L’objectif **Une ligne** exige une rangée horizontale complète.
+
+Les archives et les préréglages existants reprennent le format compact. La préparation peut aussi le sélectionner pour une nouvelle partie. La grille séparée reprend les contrôles de révélation et les données de séance du format compact. Elle reste locale en Classe et en Solo.

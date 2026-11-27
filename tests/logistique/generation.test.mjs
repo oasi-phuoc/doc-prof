@@ -213,6 +213,27 @@ test('le râtelier vertical et le stockage en épis ont une illustration dans le
   }
 })
 
+test('les glossaires repris fournissent une photo individuelle pour chaque notion', () => {
+  const photoGlossaries = [
+    ['100', 13], ['101', 16], ['102', 25], ['103', 15], ['104', 20], ['105', 45], ['106', 14], ['107', 15],
+    ['108', 13], ['109', 15], ['110', 16], ['201', 14], ['202', 14], ['203', 14],
+    ['204', 14], ['205', 14], ['206', 14],
+    ['207', 14], ['208', 14], ['209', 14],
+    ['301', 12], ['302', 12], ['303', 12], ['304', 12], ['305', 12],
+    ['306', 34], ['307', 12], ['308', 25], ['309', 12], ['403', 27], ['404', 12],
+  ]
+  for (const [code, count] of photoGlossaries) for (const diploma of ['CFC', 'AFP']) {
+    const page = config(diploma, code, 'glossaire')
+    for (const logistiqueBankRevision of [undefined, 'logistique-glossaires-tableaux-v006']) {
+      const { items } = generateLogistique({ ...page, logistiqueBankRevision }, 7)
+      const photos = items.map(({ logistiqueGlossaryFigure }) => logistiqueGlossaryFigure)
+      assert.equal(photos.length, count)
+      assert(photos.every((photo) => photo?.alt.trim() && /-photo-v\d+\.webp$/.test(photo.src) && existsSync(root + '/public' + photo.src)))
+      assert.equal(new Set(photos.map(({ src }) => src)).size, photos.length)
+    }
+  }
+})
+
 test('les nouvelles publications conservent le tirage des recettes du thème 600', () => {
   const page = { ...config('AFP', '616', 'maths'), count: 6 }
   const historical = { ...page, logistiqueBankRevision: 'logistique-614-615-616-v001' }
@@ -555,7 +576,7 @@ test('le texte habille la photo sur la même page et un saut manuel reste priori
     const sheets = splitLogistiquePages({ items, blocks: [block] }, { a5 })
     assert.deepEqual(sheets.flatMap((sheet) => sheet.items), items)
     const wrapped = sheets.find(({ items: pageItems }) => pageItems.includes(items[3])).blocks[0]
-    assert.deepEqual(wrapped.logistiqueWrappedFigures.map((index) => wrapped.items.slice(index, index + 2)), [items.slice(3)])
+    assert.deepEqual(wrapped.logistiqueWrappedFigures.map(({ start, end }) => wrapped.items.slice(start, end)), [items.slice(3)])
     assert(wrapped.items.includes(items[2]), 'Le titre reste avec la photo')
   }
 
@@ -564,6 +585,64 @@ test('le texte habille la photo sur la même page et un saut manuel reste priori
   assert.equal(sheets.find(({ items: pageItems }) => pageItems.includes(items[3])).items.at(-1), items[3])
   assert(sheets.every(({ blocks }) => blocks.every(({ logistiqueWrappedFigures }) => !logistiqueWrappedFigures?.length)))
   assert.deepEqual(sheets.flatMap((sheet) => sheet.items), items)
+})
+
+test('le 101 présente trois vues distinctes de la chaîne moderne et une carte pour chaque route', () => {
+  for (const diploma of ['CFC', 'AFP']) for (const logistiqueTheoryView of ['complet', 'resume']) {
+    const page = { ...config(diploma, '101', 'theorie'), logistiqueTheoryView }
+    const blocks = generateLogistique(page, 7).items.map(({ theoryBlock }) => theoryBlock)
+    const previous = generateLogistique({ ...page, logistiqueBankRevision: 'logistique-glossaires-tableaux-v006' }, 7)
+      .items.map(({ theoryBlock }) => theoryBlock)
+    const chain = blocks.find((block) => block.kind === 'image-row' && block.label === 'Approvisionnement, production, distribution')
+    assert.deepEqual(chain?.cells.map(({ caption }) => caption), ['Approvisionnement', 'Production', 'Distribution'])
+    assert.equal(new Set(chain.cells.map(({ src }) => src)).size, 3)
+    for (const [route, word] of [['soie', 'Soie'], ['ambre', 'ambre']]) {
+      const index = blocks.findIndex((block) => block.src?.endsWith(`log-101-carte-${route}-v004.webp`))
+      assert(index > 0 && blocks[index - 1].kind === 'paragraph', route)
+      assert(blocks.slice(0, index).findLast((block) => block.kind === 'heading')?.text.includes(word), route)
+    }
+    assert(previous.some((block) => block.src?.endsWith('log-101-chaine-moderne-photo-v002.webp')))
+  }
+})
+
+test('le 103 place les objectifs avant les activités et illustre les 6 + 2 B séparément', () => {
+  for (const diploma of ['CFC', 'AFP']) for (const logistiqueTheoryView of ['complet', 'resume']) {
+    const page = { ...config(diploma, '103', 'theorie'), logistiqueTheoryView }
+    const blocks = generateLogistique(page, 7).items.map(({ theoryBlock }) => theoryBlock)
+    const objectives = blocks.findIndex((block) => block.kind === 'heading' && block.text === 'Objectifs de la logistique')
+    assert(objectives >= 0)
+    assert(blocks[objectives + 1].src.endsWith('log-103-objectifs-schema-v004.webp'))
+    assert.match(blocks[objectives + 2].text, logistiqueTheoryView === 'complet' ? /^Les principales activités/ : /^Un dépôt cherche/)
+
+    const rows = blocks.filter((block) => block.kind === 'image-row')
+    assert.deepEqual(rows.map(({ cells }) => cells.length), [3, 3, 2])
+    assert.equal(rows[0].caption, 'Les 6 B de la logistique')
+    assert.equal(rows[2].caption, 'Les 2 B complémentaires')
+    const cells = rows.flatMap((row) => row.cells)
+    assert.deepEqual(cells.map(({ caption }) => caption), [
+      'Bonne marchandise', 'Bonne quantité', 'Bonne qualité', 'Bon moment',
+      'Bon endroit', 'Bon prix / coût', 'Bonnes informations', 'Bon client',
+    ])
+    assert.equal(new Set(cells.map(({ src }) => src)).size, 8)
+    assert(cells.every(({ src, alt, description }) => src.endsWith('.webp') && alt && description))
+    const previous = generateLogistique({ ...page, logistiqueBankRevision: 'logistique-theorie-101-v004' }, 7)
+    assert(!previous.items.some(({ theoryBlock }) => theoryBlock.kind === 'image-row'))
+  }
+})
+
+test('les paragraphes continuent à habiller la même photo jusqu’au saut de page explicite', () => {
+  const items = [
+    { kind: 'image', src: '/assets/logistique/log-101-ambre-photo-v003.webp', alt: 'Ambre', caption: 'Échange d’ambre sur la côte baltique.' },
+    { kind: 'paragraph', text: 'Des marchands examinent l’ambre sur les plages de la côte baltique. ' },
+    { kind: 'paragraph', text: 'La résine est utilisée pour faire des bijoux et se vend plus au sud.' },
+    { kind: 'heading', text: 'Suivre la route' },
+  ].map((theoryBlock) => ({ layout: 'theory', theoryBlock, answer: '' }))
+  const block = { title: 'Théorie', items, exerciseIndex: 1, exerciseType: 'log-afp-101-theorie' }
+  const [sheet] = splitLogistiquePages({ items, blocks: [block] })
+  assert.deepEqual(sheet.blocks[0].logistiqueWrappedFigures, [{ start: 0, end: 3 }])
+  const pages = splitLogistiquePages({ items, blocks: [{ ...block, tcfPageBreakAfter: [false, true] }] })
+  assert.deepEqual(pages[0].items, items.slice(0, 2))
+  assert.deepEqual(pages[1].items, items.slice(2))
 })
 
 test('les tableaux longs répètent leurs en-têtes en A5 et restent entiers dans les données de la fiche', () => {

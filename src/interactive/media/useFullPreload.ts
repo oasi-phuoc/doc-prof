@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { PreloadError, preloadIdentity, preloadSession, sessionAssets, type PreparedMedia, type PreloadProgress } from './full-preload'
-import { originalMedia } from './prepared-context'
+import { originalMedia, type MediaResolver } from './prepared-context'
 import type { PublicMediaPlan } from './types'
 import type { MediaManager } from './manager'
 
 type Run = { key: string; phase: 'idle' | 'loading' | 'ready' | 'error'; progress: PreloadProgress; pack?: PreparedMedia; error?: string }
 const policy = () => ({baseUrl:window.location.href})
-export function useFullPreload(plan: PublicMediaPlan | null, manager: MediaManager) {
+export function useFullPreload(plan: PublicMediaPlan | null, manager: MediaManager, stored: MediaResolver = originalMedia) {
   const {key,total}=useMemo(()=>({key:plan?preloadIdentity(plan,policy()):'',total:plan?sessionAssets(plan,policy()).length:0}),[plan])
   const empty={completed:0,total,bytes:0}
   const [run,setRun]=useState<Run>({key,phase:'idle',progress:empty})
@@ -28,7 +28,7 @@ export function useFullPreload(plan: PublicMediaPlan | null, manager: MediaManag
     current.current?.controller?.abort();current.current?.pack?.dispose()
     const controller=new AbortController();current.current={key,controller}
     setRun({key,phase:'loading',progress:empty})
-    void preloadSession(plan,policy(),controller.signal,progress=>{
+    void preloadSession(plan,{...policy(),resolve:stored},controller.signal,progress=>{
       if(!controller.signal.aborted&&current.current?.controller===controller)setRun({key,phase:'loading',progress})
     }).then(pack=>{
       if(controller.signal.aborted||current.current?.controller!==controller){pack.dispose();return}
@@ -40,5 +40,5 @@ export function useFullPreload(plan: PublicMediaPlan | null, manager: MediaManag
     })
   }
   const active=run.key===key?run:{key,phase:'idle' as const,progress:empty}
-  return {...active,start,release,resolve:active.phase==='ready'&&active.pack?active.pack.resolve:originalMedia}
+  return {...active,start,release,resolve:active.phase==='ready'&&active.pack?active.pack.resolve:stored}
 }

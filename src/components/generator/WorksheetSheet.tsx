@@ -86,20 +86,19 @@ function coAudioInBanner(block: WorksheetBlock): boolean {
   })
 }
 
-function wrapLogistiqueFigures(indices: number[] | undefined, items: ReactElement[]): ReactElement[] {
-  if (!indices?.length) return items
-  const starts = new Set(indices)
+function wrapLogistiqueFigures(figures: WorksheetBlock['logistiqueWrappedFigures'], items: ReactElement[]): ReactElement[] {
+  if (!figures?.length) return items
   const result: ReactElement[] = []
-  for (const [index, item] of items.entries()) {
-    if (starts.has(index - 1)) continue
-    result.push(starts.has(index) ? (
-      <div className="logistique-theory-wrap" key={item.key}>
-        {item}
-        {items[index + 1]}
-      </div>
-    ) : item)
+  let offset = 0
+  for (const { start, end } of figures) {
+    result.push(...items.slice(offset, start),
+      <div className="logistique-theory-wrap" key={items[start]?.key}>
+        {items.slice(start, end)}
+      </div>,
+    )
+    offset = end
   }
-  return result
+  return [...result, ...items.slice(offset)]
 }
 
 function WorksheetItems({groupedOperations=false,children,...props}:HTMLAttributes<HTMLDivElement>&{groupedOperations?:boolean}) {

@@ -55,6 +55,7 @@ try {
       fullPage: true,
     })
     // Each physical sheet has six cards, with adjacent front and back pages.
+    await page.getByRole('combobox', { name: 'Cartes par jeu', exact: true }).selectOption('6')
     await page.getByRole('spinbutton', { name: 'Jeux de cartes' }).fill('2')
     await page.emulateMedia({ media: 'print' })
     assert.equal(await page.locator('.ci-card-sheet').count(), 4)
@@ -75,7 +76,7 @@ try {
     await page.locator('.ci-controls').waitFor()
     assert.equal(await page.locator('.ci-reveal').count(), 0)
     assert.equal(await page.getByRole('button', { name: /révéler/ }).count(), 0)
-    assert.equal(await page.locator('.ci-answer:disabled').count(), 6)
+    assert.equal(await page.locator('.ci-answer:disabled').count(), 3)
     await page.screenshot({ path: `${output}/02-thinking-${width}.png` })
     await page
       .getByRole('button', { name: 'Signal : levez vos cartes' })

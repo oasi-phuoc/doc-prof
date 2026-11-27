@@ -48,6 +48,17 @@ function reduce(game: Game, state: Session, action: Action, at?: number): Sessio
       (state.finished || state.phase === 'revealed' && questionsForRound(game, state.index).some((q) => q.id === action.questionId))
     return allowed && state.teacherMarks[action.questionId] !== action.value ? { ...state, teacherMarks: { ...state.teacherMarks, [action.questionId]: action.value } } : state
   }
+  if (action.type === 'TEACHER_BADGE') {
+    const { questionId, on } = action
+    if (state.mode !== 'class' || state.paused || action.badge !== 'well-explained' || typeof on !== 'boolean' ||
+      !state.history.some(attempt => attempt.questionId === questionId && !attempt.skipped) ||
+      !state.finished && (state.phase !== 'revealed' || !questionsForRound(game, state.index).some(q => q.id === questionId)) ||
+      !!state.teacherBadges?.[questionId] === on) return state
+    const teacherBadges = { ...state.teacherBadges }
+    if (on) teacherBadges[questionId] = true
+    else delete teacherBadges[questionId]
+    return { ...state, teacherBadges }
+  }
   if (action.type === 'REOPEN') return state.finished && state.mode === 'class' ? navigateToRound(game, state, action.index) : state
   if (state.finished) return state
   if (action.type === 'FINISH') {
@@ -128,10 +139,21 @@ function reduce(game: Game, state: Session, action: Action, at?: number): Sessio
     case 'RETRY_QUESTION': {
       if (state.mode !== 'class' || action.roundId !== roundId || !['discussion', 'revealed'].includes(state.phase) || (state.previousAttempts?.length ?? 0) >= 5000) return state
       const ids = new Set(questions.map((q) => q.id))
-      const previous = { ...(runtime.memoryBoards?{memoryBoards:copyMemoryBoards(runtime.memoryBoards)}:{}), roundId, attempt: runtime.attempt, results: state.history.filter((a) => ids.has(a.questionId)).map((a) => ({ ...a })), manualVotes: Object.fromEntries(Object.entries(state.manualVotes).filter(([id]) => ids.has(id)).map(([id, vote]) => [id, { ...vote, counts: { ...vote.counts } }])), teacherMarks: Object.fromEntries(Object.entries(state.teacherMarks).filter(([id]) => ids.has(id))), ...(runtime.audioListens !== undefined ? { audioListens: runtime.audioListens, extraListens: runtime.extraListens ?? 0 } : {}) }
+      const badges = Object.entries(state.teacherBadges ?? {})
+      const previous = {
+        roundId,
+        attempt: runtime.attempt,
+        results: state.history.filter(a => ids.has(a.questionId)).map(a => ({ ...a })),
+        manualVotes: Object.fromEntries(Object.entries(state.manualVotes).filter(([id]) => ids.has(id)).map(([id, vote]) => [id, { ...vote, counts: { ...vote.counts } }])),
+        teacherMarks: Object.fromEntries(Object.entries(state.teacherMarks).filter(([id]) => ids.has(id))),
+        ...(state.teacherBadges ? { teacherBadges: Object.fromEntries(badges.filter(([id]) => ids.has(id))) } : {}),
+        ...(runtime.memoryBoards ? { memoryBoards: copyMemoryBoards(runtime.memoryBoards) } : {}),
+        ...(runtime.audioListens !== undefined ? { audioListens: runtime.audioListens, extraListens: runtime.extraListens ?? 0 } : {}),
+      }
       return { ...state, phase: 'thinking', selections: {}, selected: undefined, revealedAt: undefined,
         history: state.history.filter((a) => !ids.has(a.questionId)),
         manualVotes: Object.fromEntries(Object.entries(state.manualVotes).filter(([id]) => !ids.has(id))), teacherMarks: Object.fromEntries(Object.entries(state.teacherMarks).filter(([id]) => !ids.has(id))),
+        ...(state.teacherBadges ? { teacherBadges: Object.fromEntries(badges.filter(([id]) => !ids.has(id))) } : {}),
         previousAttempts: [...state.previousAttempts ?? [], previous],
         roundStates: { ...state.roundStates, [roundId]: { phase: 'thinking', selections: {}, attempt: runtime.attempt + 1, hintsShown: {}, imageOrders: {}, audioComplete: false, audioOverride: false } } }
     }
@@ -181,6 +203,7 @@ function reduce(game: Game, state: Session, action: Action, at?: number): Sessio
       for (const q of questions) retractions[q.id] = Math.min(Number.MAX_SAFE_INTEGER, (retractions[q.id] ?? 0) + 1)
       return { ...state, phase: 'discussion', revealedAt: undefined,
         history: state.history.filter((attempt) => !questions.some((q) => q.id === attempt.questionId)),
+        ...(state.teacherBadges ? { teacherBadges: Object.fromEntries(Object.entries(state.teacherBadges).filter(([id]) => !questions.some(q => q.id === id))) } : {}),
         revealRetractions: retractions }
     }
     case 'ASSESS':

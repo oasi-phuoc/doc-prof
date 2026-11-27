@@ -56,6 +56,7 @@ try {
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false)
     await page.screenshot({ path: `docs/interactive/screenshots/calibration-${width}.png`, fullPage: true })
 
+    await page.getByRole('combobox', { name: 'Cartes par jeu', exact: true }).selectOption('6')
     await page.getByRole('checkbox', { name: 'Économiser l’encre', exact: true }).check()
     await page.getByRole('spinbutton', { name: 'Jeux de cartes', exact: true }).fill('2')
     await page.emulateMedia({ media: 'print' })

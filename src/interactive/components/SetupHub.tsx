@@ -5,6 +5,8 @@ import { Mascot } from './Mascot'
 import { MASCOTS } from '../domain/mascot'
 import { validSeconds, validFeedbackSeconds } from '../domain/settings'
 import type { ClassroomHeaderProps } from './ClassroomHeader'
+import { useDisplayTheme } from '../display-theme'
+import type { DisplayTheme } from '../preferences'
 import '../setup.css'
 
 export function SetupDialog({ title, onClose, children, wide = false }: { title: string; onClose: () => void; children: ReactNode; wide?: boolean }) {
@@ -37,9 +39,10 @@ export function SetupAction({ icon, title, detail, onClick, disabled = false, op
   </button>
 }
 
-type SettingsProps = Pick<ClassroomHeaderProps, 'mode' | 'onMode' | 'mascot' | 'onMascot' | 'timer' | 'onTimer' | 'contrast' | 'onContrast'> & { children?: ReactNode }
-export function SessionSettings({ mode, onMode, mascot, onMascot, timer, onTimer, contrast, onContrast, children }: SettingsProps) {
+type SettingsProps = Pick<ClassroomHeaderProps, 'mode' | 'onMode' | 'mascot' | 'onMascot' | 'timer' | 'onTimer'> & { children?: ReactNode }
+export function SessionSettings({ mode, onMode, mascot, onMascot, timer, onTimer, children }: SettingsProps) {
   const [mascotsOpen, setMascotsOpen] = useState(false)
+  const { theme, setTheme, warning } = useDisplayTheme()
   return <div className="ci-session-settings">
     <fieldset><legend>Mode de jeu</legend><div className="ci-settings-modes"><button type="button" aria-pressed={mode === 'class'} onClick={() => onMode('class')}><Icon name="users" />Classe</button><button type="button" aria-pressed={mode === 'solo'} onClick={() => onMode('solo')}><Icon name="user" />Solo</button></div></fieldset>
     <fieldset><legend>Minuteur</legend><label className="ci-settings-toggle"><input type="checkbox" checked={timer.enabled} onChange={event => onTimer({ ...timer, enabled: event.target.checked })} />Activer le minuteur</label>
@@ -49,7 +52,8 @@ export function SessionSettings({ mode, onMode, mascot, onMascot, timer, onTimer
     <details className="ci-settings-mascots" onToggle={event => setMascotsOpen(event.currentTarget.open)}><summary><span>Mascotte</span><Mascot kind={mascot} pose="thinking" label={MASCOTS.find(item => item.id === mascot)?.label ?? 'Mascotte choisie'} /></summary>
       {mascotsOpen && <div className="ci-settings-mascot-grid">{MASCOTS.map(item => <button type="button" key={item.id} aria-label={item.label} aria-pressed={mascot === item.id} onClick={event => { onMascot(item.id); const details = event.currentTarget.closest('details'); if (details) details.open = false }}><Mascot kind={item.id} pose="thinking" label={item.label} /></button>)}</div>}
     </details>
-    <label className="ci-settings-toggle"><input type="checkbox" checked={contrast} onChange={onContrast} />Contraste renforcé</label>
+    <label className="ci-settings-toggle">Thème<select value={theme} onChange={event => setTheme(event.target.value as DisplayTheme)}><option value="light">Clair</option><option value="high-contrast">Contraste renforcé</option><option value="dark">Sombre</option></select></label>
+    {warning && <p role="status">{warning}</p>}
     {children}
   </div>
 }

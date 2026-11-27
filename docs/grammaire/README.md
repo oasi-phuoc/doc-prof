@@ -2,7 +2,7 @@
 
 Les activités par niveau sont suivies dans le [bilan des banques graduées](implementation/README.md). Les 160 situations de la première banque de communication sont conservées dans le [registre des scènes](images-a-preparer.json). Les situations illustrées sont disponibles en [fiches de lecture, d’écrit et d’oral](fiches-communication-illustrees.md). La [compréhension orale](co-import/README.md) garde sa banque dans le générateur.
 
-Le **Vocabulaire illustré** apparaît à la suite de la théorie dans les sous-thèmes concernés. Les nouvelles cartes associent des expressions à des scènes du quotidien. Chaque nouvelle scène est peinte d’après les références TCF validées, au format paysage 4:3 et à sa définition native, avec un contrôle du geste, des mains et des objets. Les illustrations réemployées conservent leur fichier d’origine. La provenance se trouve dans la [banque de vocabulaire](../../src/grammaire/media/word-vocab/bank.json).
+Le **Vocabulaire illustré** apparaît à la suite de la théorie dans les sous-thèmes concernés. La provenance des cartes est indiquée dans la [banque de vocabulaire](../../src/grammaire/media/word-vocab/bank.json).
 
 ## Bilan historique de la reprise
 
