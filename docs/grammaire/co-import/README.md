@@ -24,15 +24,15 @@ La banque `src/grammaire/exercises/co-bank.json` conserve les identifiants, enre
 
 | Niveau | Pistes | QCM texte et réponse sur trait | Questions avec QCM image | Scènes de support |
 | --- | ---: | ---: | ---: | ---: |
-| A1 | 127 | 431 | 179 | 4 |
-| A2 | 125 | 188 | 70 | 13 |
-| **Total** | **252** | **619** | **249** | **17** |
+| A1 | 127 | 431 | 176 | 2 |
+| A2 | 125 | 188 | 63 | 13 |
+| **Total** | **252** | **619** | **239** | **15** |
 
 Les 100 questions initiales ont été relues et associées à leur passage. Vingt pistes A2 qui avaient une seule question en ont maintenant deux. Les ajouts portent notamment sur les consignes de visite, les billets pendant les travaux, la procédure de retour et le contenu d’un message sur un forum. Les questions qui demandaient d’identifier certains noms non épelés portent désormais sur un fait du dialogue. Le [relevé des passages et des réemplois](questions-verification-20261127.json) documente les 607 questions de cette première passe. Le [complément Word](complement-word-20261127.md) a ajouté 12 questions A1.
 
 Whisper large-v3 en français a recoupé des passages ciblés des pistes A1 005, 013, 016 et 116. La comparaison des voix dans la piste 005 attribue les 25 ans à Paolo et les 35 ans à Nicole. La piste 016 confirme le nombre d’enfants, qui devient la réponse attendue. La commande de deux tartes aux fraises de la piste 116 apparaît dans les trois reconnaissances disponibles.
 
-Dans le générateur, les formes **Texte**, **Phrase** et **Image** correspondent au QCM texte, à la réponse sur trait et au QCM illustré. Les 619 questions proposent les deux premières formes et 249 proposent la forme Image. Les 10 trios en attente ont été générés et intégrés. Deux scènes de support supplémentaires illustrent une conversation à la boulangerie et une rencontre dans le couloir d’un train, sans montrer les éléments demandés dans les réponses. Les scènes de support sont facultatives. Les 30 choix et les deux scènes de ce lot sont peints d’après le [référentiel graphique TCF](../../tcf/style-images.md). Chaque illustration a été générée séparément en 1 448 × 1 086 pixels (4:3), à sa définition native et en WebP sans perte, puis contrôlée visuellement avant intégration. Les fichiers, empreintes et passages associés figurent dans le [registre des illustrations](illustrations-co-20261127.json) et l’état de chaque trio figure dans le [suivi des choix illustrés](images-a-preparer.json).
+Dans le générateur, les formes **Texte**, **Phrase** et **Image** correspondent au QCM texte, à la réponse sur trait et au QCM illustré. Les 619 questions proposent les deux premières formes et 239 proposent la forme Image. Quinze pistes disposent d’une scène de support. Le [registre des illustrations](illustrations-co-20261127.json) conserve les empreintes et passages associés. Dix trios sont en attente dans le [suivi des choix illustrés](images-a-preparer.json).
 
 Les questions ont été relues sur les transcriptions recoupées. Lors de la première passe, les pistes et les images ont été testées dans le navigateur sur un échantillon des deux niveaux, avec les formes disponibles et l’export PDF. Les 252 pistes ont été décodées intégralement sans erreur. L’écoute de validation et l’approbation enseignante restent à faire.
 
