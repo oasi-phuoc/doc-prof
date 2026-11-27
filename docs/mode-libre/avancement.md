@@ -4,6 +4,8 @@
 
 Le mode Libre est réservé au format A4. Les chiffres de raccordement en double A5 figurant dans l’historique décrivent les versions antérieures. Les contrôles actuels de ce format portent sur l’aperçu, l’impression, l’ouverture des recettes existantes et la conservation du contenu lors du passage d’A4 à double A5.
 
+Les commandes de composition du repérage et leurs zones interactives s’activent avec le panneau Libre. Trois recettes historiques de double A5 vérifient la fermeture du panneau, l’absence de commande d’édition et la conservation des formes, des points et des questions dans le document imprimable.
+
 - [Cahier des charges validé — V1.2](cahier-des-charges.md)
 - [Référence du code consulté pour la publication](https://github.com/oasi-phuoc/doc-prof/commit/c24a995b76c68c284b2614e113120cdb2873ba81)
 - [Cahier des charges Logistique V2.13](../logistique/cahier-des-charges.md) et [suivi Logistique](../logistique/avancement-cahier-des-charges-20261126.md)

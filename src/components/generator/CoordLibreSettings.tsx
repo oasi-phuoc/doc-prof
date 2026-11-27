@@ -197,8 +197,8 @@ export function CoordLibreSettings({
                   {activeBlock.coordLibre ? (
                     <>
                       <p className="type-hint muted">
-                        Les formes sont à droite de la fiche. Cliquez une forme puis une case, ou glissez-la sur le
-                        tableau. Chaque forme n’apparaît qu’une fois.
+                        Choisissez une forme puis cliquez sur une case du tableau, ou faites-la glisser sur cette case.
+                        Chaque forme n’apparaît qu’une fois.
                       </p>
                       <p className="type-hint muted">
                         {(activeBlock.coordMarks?.length ?? 0)} / {COORD_SHAPES.length} forme

@@ -8,7 +8,6 @@ import { isGrammarReadingType } from '@/grammaire/exercises/reading-types'
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { isGrammaireTheoryType } from '@/grammaire/types'
 import { A4Frame } from '@/components/generator/A4Frame'
-import { FormesPalette } from '@/components/generator/FormesPalette'
 import type { A5WorksheetPair } from '@/components/generator/sheet-format'
 import { DualA5Sheet, WorksheetSheet } from '@/components/generator/WorksheetSheet'
 import { InteractionCorrigeSheet } from '@/components/tcf/InteractionCorrigeSheet'
@@ -101,7 +100,6 @@ export type ResultPanelProps = {
   isComposer: boolean
   coordTool: string
   selectedCoordShape: CoordShape | null
-  setSelectedCoordShape: (kind: CoordShape | null) => void
   placeCoordMark: (x: number, y: number, kind: CoordShape) => void
   placeOrigin: (col: number, row: number) => void
   removeCoordMark: (x: number, y: number) => void
@@ -164,7 +162,6 @@ export function ResultPanel({
   isComposer,
   coordTool,
   selectedCoordShape,
-  setSelectedCoordShape,
   placeCoordMark,
   placeOrigin,
   removeCoordMark,
@@ -235,10 +232,7 @@ export function ResultPanel({
   const showCorrectionFollow = sheetProps.mode === 'answers' && onLastPage && correctionFollow.length > 0
   const showTranscriptionPreview =
     sheetProps.mode === 'answers' && transcriptionPacks.length > 0 && onLastPage
-  const coordEdit =
-    (isFormes && activeBlock.coordLibre) ||
-    (isCadrans && activeBlock.coordLibre) ||
-    (isTransform && libreMode)
+  const coordEdit = libreMode && (isTransform || ((isFormes || isCadrans) && activeBlock.coordLibre))
       ? {
           selectedKind: selectedCoordShape,
           placingOrigin: isComposer && coordTool === 'origin',
@@ -602,7 +596,6 @@ export function ResultPanel({
                             onToggleFormulaireLetterGrid={toggleFormulaireLetterGrid}
                             onToggleTcfPageBreak={(itemIndex, block, question, sheet) =>
                               toggleTcfPageBreak(itemIndex, block, undefined, question, sheet)}
-                            coordEdit={coordEdit}
                             {...sheetProps}
                           />
                         </A4Frame>
@@ -657,16 +650,6 @@ export function ResultPanel({
                       : null}
                   </div>
                   )}
-                  {!libreMode && isFormes && activeBlock.coordLibre ? (
-                    <aside className="coord-page-palette no-print">
-                      <b>Formes</b>
-                      <FormesPalette
-                        marks={activeBlock.coordMarks ?? []}
-                        selectedKind={selectedCoordShape}
-                        onSelect={setSelectedCoordShape}
-                      />
-                    </aside>
-                  ) : null}
                 </div>
               </div>
             </div>

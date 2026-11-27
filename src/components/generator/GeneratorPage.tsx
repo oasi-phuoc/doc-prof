@@ -861,7 +861,6 @@ export function GeneratorPage({
     toggleTcfPageBreak,
     coordTool,
     selectedCoordShape,
-    setSelectedCoordShape,
     placeCoordMark,
     placeOrigin,
     removeCoordMark,

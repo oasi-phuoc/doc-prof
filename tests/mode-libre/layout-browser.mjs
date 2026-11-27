@@ -252,6 +252,34 @@ async function checkAddition(page) {
   assert.equal(number(await correction.textContent()), 29 + right)
 }
 
+async function checkLegacyCoordinateLock(context) {
+  const recipes = [
+    { exerciseType: 'reperage-lire', coordMarks: [{ x: 2, y: 2, kind: 'triangle' }], expected: /triangle/i },
+    { exerciseType: 'reperage-cadrans-lire', coordMarks: [{ x: 2, y: 3, kind: 'point', label: 'A' }], expected: /coordonnées de chaque point/i },
+    { exerciseType: 'reperage-droites', coordQuestionsLibre: [{ prompt: 'Repérez la droite témoin.', answer: 'd', reply: 'text' }], expected: /droite témoin/ },
+  ]
+  for (const { expected, ...data } of recipes) {
+    const page = await context.newPage()
+    await page.addInitScript((data) => history.replaceState({ ...history.state, clairfleFiche: {
+      id: 'repere-double-a5', name: 'Repère historique', recipe: {
+        version: 1, seed: 41, institutional: {}, evalMode: false, pointsPerQuestion: 1,
+        sheetFormat: 'a5-double-landscape', libreMode: true, libreSnapshot: null,
+        pages: [{ ...data, domain: 'géométrie', topic: 'reperage', count: 1, columns: 1,
+          difficulty: 'moyen', coordLibre: true, coordCols: 10, coordRows: 10 }],
+      },
+    } }, ''), data)
+    await page.goto('/generateur')
+    await page.locator('.a4-frame .coord-grid').first().waitFor()
+    assert(await button(page, 'Mode libre').isDisabled())
+    assert.equal(await page.locator(editor).count(), 0)
+    assert.equal(await page.locator('.a4-frame .coord-hit').count(), 0)
+    assert.equal(await button(page, 'Libre').count(), 0)
+    assert.equal(await page.getByRole('listbox', { name: 'Formes à placer', exact: true }).count(), 0)
+    assert.match(await page.locator('.print-only-sheets .a5-half').first().textContent(), expected)
+    await page.close()
+  }
+}
+
 async function checkRelevantSettings(page) {
   await page.goto('/generateur')
   const settings = page.locator('.settings-panel')
@@ -348,6 +376,11 @@ try {
   await checkLocks(page)
   await checkRelevantSettings(page)
   await context.close()
+  const coordinateContext = await browser.newContext({ baseURL, viewport: { width: 1366, height: 900 } })
+  await coordinateContext.addCookies([{ name: 'clairfle-fiche-access', value: 'admin', url: baseURL }])
+  await checkLegacyCoordinateLock(coordinateContext)
+  await coordinateContext.close()
+  console.log('3 recettes historiques de repérage vérifiées en double A5.')
   console.log('10 configurations de présentation, édition, historique et verrous testés.')
 } finally {
   await browser?.close()

@@ -174,6 +174,7 @@ export function SettingsPanel({ settings, header, presentation, children }: {
 }
 
 function ActivitySettings(p: SettingsPanelProps) {
+  const libre = p.libreMode
   const rendered = p.activeSheet?.blocks.find((block, index) => (block.sourceBlockIndex ?? index) === p.safeBlockIndex)
   const itemCount = rendered?.items.length ?? 0
   const columns = rendered?.columns ?? 1
@@ -336,11 +337,11 @@ function ActivitySettings(p: SettingsPanelProps) {
           activeBlock={p.activeBlock}
           activeAsPage={p.activeAsPage}
           updatePage={p.updatePage}
-          isFormes={p.isFormes}
-          isCadrans={p.isCadrans}
+          isFormes={libre && p.isFormes}
+          isCadrans={libre && p.isCadrans}
           isComposer={p.isComposer}
-          isDroites={p.isDroites}
-          isConstruire={p.isConstruire}
+          isDroites={libre && p.isDroites}
+          isConstruire={libre && p.isConstruire}
           axesGrid={p.axesGrid}
           updateAxesGrid={p.updateAxesGrid}
           coordTool={p.coordTool}
