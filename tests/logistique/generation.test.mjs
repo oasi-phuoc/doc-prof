@@ -116,8 +116,26 @@ test('le tirage est déterministe et limité aux unités approuvées pour le dip
   assert.deepEqual(generateLogistique({
     ...config('AFP', '100', 'maths'), logistiqueBankRevision: 'logistique-initiale',
   }, 109).items, [], 'une révision sans banque ne produit pas d’exercice')
-  assert.equal(generateLogistique(maths, 109).bankQuestionCap, 2)
+  assert.equal(generateLogistique({ ...maths, logistiqueBankRevision: 'logistique-theories-projets-v002' }, 109).bankQuestionCap, 2)
   assert.deepEqual(generateLogistique({ ...maths, domain: 'logistique-cfc' }, 109, fixture.units).items, [])
+})
+
+test('les banques Fondations augmentent la capacité par diplôme et préservent les tirages enregistrés', () => {
+  const additions = { CFC: { maths: 5, verification: 5, situation: 4 }, AFP: { maths: 4, verification: 5, situation: 3 } }
+  for (const type of catalog.logistiqueTypes.filter(({ module }) => /^10[0-9]$|^110$/.test(module))) {
+    const extra = additions[type.diploma][type.kind]
+    if (!extra) continue
+    const page = { ...config(type.diploma, type.module, type.kind), count: 30 }
+    const historical = { ...page, logistiqueBankRevision: 'logistique-theories-projets-v002' }
+    const expanded = { ...page, logistiqueBankRevision: 'logistique-exercices-fondations-v003' }
+    const before = generateLogistique(historical, 20261127)
+    const after = generateLogistique(expanded, 20261127)
+    assert.equal(after.bankQuestionCap, before.bankQuestionCap + extra, type.id)
+    const prompts = new Set(after.items.map(({ prompt }) => prompt))
+    assert.equal(prompts.size, after.items.length, type.id)
+    assert(before.items.every(({ prompt }) => prompts.has(prompt)), type.id)
+    assert.deepEqual(generateLogistique(freezeLogistiquePages([historical])[0], 20261127), before, type.id)
+  }
 })
 
 test('les titres et les recettes conservent les modules, le diplôme et la révision', () => {

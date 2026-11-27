@@ -126,16 +126,38 @@ Révision `logistique-theories-101-306-407-409-v002`. Les 17 insertions WebP en 
 
 Les 80 modules CFC et 63 modules AFP ont chacun un cours **Complet** et un **Résumé**. Les dossiers éditoriaux `*-v002.json` recensent les titres d’ancrage, légendes et textes alternatifs des 176 insertions. Elles utilisent 73 mises en scène photoréalistes distinctes et sept schémas en couleur. Les contrôles Chromium couvrent 286 parcours A4 dans les deux versions, en tenant compte de l’éligibilité de chaque diplôme. Les 715 combinaisons des autres types conservent le contenu de la publication `logistique-901-v001`.
 
+## Enrichissement des exercices
+
+### Fondations — 100 à 110
+
+La révision `logistique-exercices-fondations-v003` ajoute 154 exercices corrigés, dont 55 calculs, 55 vérifications et 44 situations. Le CFC peut tirer les 154 unités. L’AFP en partage 132. Les énoncés prennent en compte les situations du cours, dont le transbordement, les propriétés des marchandises, la remise des déchets et les données de stock. [Banque Fondations](../../src/logistique/banks/fondations-exercices-v003.ts).
+
+| Module | Calculs CFC / AFP | Vérifications CFC / AFP | Situations CFC / AFP |
+|---|---:|---:|---:|
+| 100 | 10 / 8 | 11 / 11 | 8 / 7 |
+| 101 | 9 / 7 | 12 / 12 | 8 / 7 |
+| 102 | 9 / 7 | 12 / 12 | 10 / 8 |
+| 103 | 12 / 7 | 11 / 11 | 8 / 7 |
+| 104 | 10 / 8 | 11 / 11 | 9 / 7 |
+| 105 | 9 / 6 | 9 / 7 | 6 / 5 |
+| 106 | 10 / 7 | 10 / 10 | 8 / 6 |
+| 107 | 10 / 7 | 10 / 10 | 8 / 6 |
+| 108 | 10 / 8 | 10 / 10 | 8 / 6 |
+| 109 | 10 / 8 | 11 / 11 | 8 / 7 |
+| 110 | 11 / 8 | 11 / 10 | 9 / 7 |
+
+Les 66 parcours A4 et PDF ont été vérifiés sur la banque complète de chaque type dans les deux diplômes. Le corrigé accompagne la fiche élève et les questions restent numérotées en continu. La réserve minimale au pied était de 38,73 px. La révision antérieure reste accessible aux recettes déjà enregistrées. Poursuivre avec le thème Service client.
+
 ## Reprise opérationnelle
 
 La publication des modules est terminée pour les deux diplômes. La publication `logistique-901-v001` a clôturé le premier passage sur le catalogue. La révision `logistique-theories-projets-v002` rassemble les cours illustrés et leurs résumés. Chaque recette conserve sa révision de banque.
 
 | Diplôme | Modules | Types actifs | Problèmes de calcul | Questions de vérification | Situations |
 |---|---:|---:|---:|---:|---:|
-| CFC | 80 | 480 | 445 | 446 | 294 |
-| AFP | 63 | 378 | 249 | 345 | 212 |
+| CFC | 80 | 480 | 500 | 501 | 338 |
+| AFP | 63 | 378 | 293 | 400 | 245 |
 
-Les effectifs sont dédupliqués par identifiant dans chaque diplôme. La banque commune compte 1 185 unités d’exercice distinctes au total. Les cibles nominales du §5.1 (30 calculs, 50 vérifications et 20 situations par module et diplôme) restent à atteindre. Les demandes de sélection avancée en Évaluation et en Libre figurent dans les lots L1b à L1f.
+Les effectifs sont dédupliqués par identifiant dans chaque diplôme. La banque commune compte 1 339 unités d’exercice distinctes au total. Les cibles nominales du §5.1 (30 calculs, 50 vérifications et 20 situations par module et diplôme) restent à atteindre. Les demandes de sélection avancée en Évaluation et en Libre figurent dans les lots L1b à L1f.
 
 Pour un enrichissement ultérieur, partir des archives et du dossier éditorial du module, vérifier les droits par diplôme, les corrigés, la composition A4 et la continuité des recettes. Enregistrer chaque nouvelle révision et ses résultats dans ce suivi. [Archives par thème](sources-epcas/).
 
