@@ -2,6 +2,7 @@ import type { SoutienVowelBank } from '@/francais/soutien/banks'
 import { countSoundInPhrase } from '@/francais/soutien/gen-kind-helpers'
 import type { MathItem } from '@/math/types'
 import { countSoundRows, determinantRows, replaceCountSoundRows, replaceDeterminantRows, withDeterminantParts } from './soutien-phrase-rows'
+import { PhraseScrambleEditor } from './PhraseScrambleEditor'
 
 const DETERMINANTS = ['le', 'la', 'l’', 'les']
 
@@ -13,6 +14,9 @@ export function SoutienPhraseRowsEditor({ item, bank, id, fields, writeField, on
   writeField: (id: string, value: string | null) => void
   onChange: (item: MathItem) => void
 }) {
+  if (item.layout === 'phrase-scramble') {
+    return <PhraseScrambleEditor item={item} id={id} fields={fields} writeField={writeField} onChange={onChange} />
+  }
   if (item.layout === 'count-sound') {
     const rows = countSoundRows(item)
     return (

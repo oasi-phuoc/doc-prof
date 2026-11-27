@@ -15,7 +15,14 @@ import { hasLockedItems, identifyItems, trimUnlockedItems } from '@/components/g
 import { gridCells, withGridCells } from '@/components/generator/libre/word-list'
 import { listenRows, replaceListenRows, resizeListenRows } from '@/components/generator/libre/listen-rows'
 import { syllableRows, replaceSyllableRows } from '@/components/generator/libre/syllable-rows'
-import { countSoundRows, determinantRows, replaceCountSoundRows, replaceDeterminantRows } from '@/components/generator/libre/soutien-phrase-rows'
+import {
+  countSoundRows,
+  determinantRows,
+  phraseScrambleRows,
+  replaceCountSoundRows,
+  replaceDeterminantRows,
+  replacePhraseScrambleRows,
+} from '@/components/generator/libre/soutien-phrase-rows'
 import type { SpacingPreferences } from '@/components/generator/libre/preferences'
 import { blockItemsForConfig } from '@/components/generator/sheet-items'
 import { defaultCoordQuestionReply } from '@/components/generator/WorksheetSheet'
@@ -152,7 +159,9 @@ export function usePageConfig({
         }
         const generated = buildPage(config, pageSeed + localSeed, 1, seed).items
         const readRows = editorProfile === 'syllabes-audio' ? syllableRows
-          : editorProfile === 'sons-a-compter' ? countSoundRows : editorProfile === 'determinants' ? determinantRows : gridCells
+          : editorProfile === 'sons-a-compter' ? countSoundRows
+          : editorProfile === 'determinants' ? determinantRows
+          : editorProfile === 'lettres-dans-phrase' ? phraseScrambleRows : gridCells
         const removed = previous.some((item, index) => readRows(item).length > (generated[index] ? readRows(generated[index]!).length : 0))
         const items = generated.map((item, index) => {
           const old = previous[index]
@@ -165,6 +174,7 @@ export function usePageConfig({
           if (editorProfile === 'syllabes-audio') return keepRows(syllableRows, replaceSyllableRows)
           if (editorProfile === 'sons-a-compter') return keepRows(countSoundRows, replaceCountSoundRows)
           if (editorProfile === 'determinants') return keepRows(determinantRows, replaceDeterminantRows)
+          if (editorProfile === 'lettres-dans-phrase') return keepRows(phraseScrambleRows, replacePhraseScrambleRows)
           return keepRows(gridCells, withGridCells)
         })
         return { items, removed }

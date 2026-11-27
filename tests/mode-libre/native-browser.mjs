@@ -722,13 +722,49 @@ try {
     await sounds.close()
   }
 
+  const scrambled = await open(context, {
+    domain: 'soutien-fr', topic: 'soutien-voyelles', exerciseType: 'soutien-a-lettres-phrase', printCorrections: true,
+  })
+  await toggleLive(scrambled)
+  const scrambleSettings = scrambled.locator('#activity-editor')
+  const scrambleEditor = scrambleSettings.getByLabel('Mots à retrouver dans les phrases', { exact: true })
+  const firstScrambledPhrase = scrambleEditor.getByRole('group', { name: 'Phrase 1', exact: true })
+  const target = firstScrambledPhrase.getByRole('textbox', { name: 'Mot à retrouver', exact: true })
+  await firstScrambledPhrase.getByRole('textbox', { name: 'Texte avant le blanc', exact: true }).fill('Nous construisons une ')
+  await target.fill('cabane')
+  await firstScrambledPhrase.getByRole('textbox', { name: 'Texte après le blanc', exact: true }).fill(' au jardin.')
+  const scrambleStudent = preview(scrambled).locator('.phrase-scramble-table tr').first()
+  const scrambleCorrection = scrambled.locator('.print-only-sheets .phrase-scramble-table').last().locator('tr').first()
+  assert.match(await scrambleStudent.innerText(), /Nous construisons une.*au jardin\./s)
+  assert.doesNotMatch(await scrambleStudent.locator('.phrase-scramble-blank').textContent(), /cabane/)
+  assert.equal(await scrambleCorrection.locator('.phrase-scramble-blank').textContent(), 'cabane')
+  const mixedLetters = firstScrambledPhrase.getByRole('textbox', { name: 'Lettres proposées', exact: true })
+  const previousLetters = await scrambleStudent.locator('.phrase-scramble-letters').textContent()
+  await mixedLetters.fill('A B D')
+  assert.equal(await mixedLetters.getAttribute('aria-invalid'), 'true')
+  assert.equal(await scrambleStudent.locator('.phrase-scramble-letters').textContent(), previousLetters)
+  await mixedLetters.fill('B A N E C A')
+  assert.equal(await mixedLetters.getAttribute('aria-invalid'), 'false')
+  assert.equal(await scrambleStudent.locator('.phrase-scramble-letters').textContent(), '(B A N E C A)')
+  await firstScrambledPhrase.locator('.tcf-image-field input[type=file]').setInputFiles({
+    name: 'cabane.png', mimeType: 'image/png', buffer: tinyPng,
+  })
+  await scrambleStudent.locator('.phrase-scramble-image img[src^="data:image/"]').waitFor()
+  await scrambleSettings.getByRole('spinbutton', { name: 'Nombre de mots', exact: true }).fill('3')
+  assert.equal(await preview(scrambled).locator('.phrase-scramble-table tr').count(), 3)
+  assert.equal(await target.inputValue(), 'cabane')
+  await button(scrambled, 'Annuler').click()
+  assert.equal(await preview(scrambled).locator('.phrase-scramble-table tr').count(), 2)
+  assert.equal(await target.inputValue(), 'cabane')
+  await scrambled.close()
+
   const unavailable = await open(context, {
     domain: 'soutien-fr', topic: 'soutien-consonnes-iii', exerciseType: 'soutien-x-gz-associer-image',
   })
   await unavailable.getByText('Aucun contenu disponible pour cette activité.', { exact: true }).waitFor()
   assert(await button(unavailable, 'Enregistrer').isDisabled())
   await context.close()
-  console.log('Calligraphie, cartes, Gattegno, mots illustrés, mots à compléter, Grammaire, Société, Logistique AFP/CFC, références de maths, écoute de mots et activité indisponible testés.')
+  console.log('Calligraphie, cartes, Gattegno, mots illustrés, mots à compléter, Grammaire, Société, Logistique AFP/CFC, références de maths, écoute de mots, lettres mélangées et activité indisponible testés.')
 } finally {
   await browser?.close()
   await server?.close()

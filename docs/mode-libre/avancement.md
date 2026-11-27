@@ -26,7 +26,7 @@ Dans Chrome, la recette du site de production a vérifié la connexion administr
 | L1 — Générateur et contrats d’état | En cours | Panneau unique, géométrie, listes identifiées et verrous vérifiés sur l’Algèbre. Historique et reprise locale par compte et par fiche. Étendre les preuves aux autres profils et aux droits individuels. |
 | L2 — Pilotes | En cours | Calcul en ligne, CE avec support commun et CO 1 avec QCM illustrés. Édition et correction testées sur les trois pilotes. Étendre les preuves de reprise et de verrouillage par forme. |
 | L3 — Mathématiques et tests | En cours | Calculs en ligne, opérations posées, conversions, repérage, comparaison, tri, leçons et glossaires de mathématiques, choix dans la banque de Logique. Raccorder les autres familles mathématiques et les activités restantes des évaluations TPM / TCM. |
-| L4 — Autres profils imprimables | En cours | Calligraphie, cartes, variantes Gattegno équipées de leur éditeur, mots illustrés et à compléter, grilles et découpage syllabiques, dictées, écoute de mots et lecture de phrases. Poursuivre les listes et associations restantes. |
+| L4 — Autres profils imprimables | En cours | Calligraphie, cartes, variantes Gattegno équipées de leur éditeur, mots illustrés et à compléter, grilles et découpage syllabiques, dictées, écoute de mots, lettres mélangées et lecture de phrases. Poursuivre les listes et associations restantes. |
 | L5 — Grammaire et TCF/TPF | En cours | Théorie et édition de données des dix présentations graduées. CE, CO, PE et PO raccordées en A4. Poursuivre les profils historiques de grammaire, les médias et verrous des activités graduées et la preuve de chaque forme et barème TCF/TPF. |
 | L6 — Société et Logistique AFP/CFC | En cours | Édition des références structurées et questions simples en A4. Conservation des références modifiées au passage en double A5. Poursuivre les formats structurés, les activités mixtes et la mesure papier sur les autres modules. |
 | L7 — Cas d’échec et ergonomie avancée | En cours | Reprise, isolation, conflit entre onglets et quota vérifiés. Sélection et espacements par activité sur les calculs, préférences d’espacement pour les profils compatibles. Poursuivre les médias et les autres contrôles de présentation. |
@@ -61,6 +61,12 @@ node tests/mode-libre/native-browser.mjs
 node --test tests/interactive/sound-check.test.mjs
 node scripts/audit-mode-libre.mjs /tmp/doc-prof-libre-ecoute-audit types
 ```
+
+### Lettres mélangées dans les phrases de Soutien FR
+
+Le panneau permet de modifier le texte avant et après le blanc, le mot attendu, l’ordre des lettres et l’illustration. Les lettres sont recalculées après un changement de mot. Une permutation invalide conserve la dernière version imprimable. Le navigateur vérifie le sujet, le corrigé, l’import d’image, le changement de quantité et l’annulation. Le PDF témoin contient une page élève et une page de corrigé au format A4, toutes deux avec la phrase et les lettres modifiées.
+
+L’inventaire raccorde les 40 contextes de cette famille. Le relevé de 4 269 contextes compte 624 raccordements A4 en attente et aucune erreur de génération.
 
 ## Panneau unique et addition A4
 

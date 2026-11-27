@@ -1,5 +1,13 @@
 import type { MathItem } from '@/math/types'
 
+export function phraseScrambleRows(item: MathItem) {
+  return item.phraseScrambles ?? []
+}
+
+export function replacePhraseScrambleRows(item: MathItem, rows: NonNullable<MathItem['phraseScrambles']>): MathItem {
+  return { ...item, phraseScrambles: rows, answer: rows.map(({ word }) => word).join(' · ') }
+}
+
 export function countSoundRows(item: MathItem) {
   return item.countSoundItems ?? []
 }
