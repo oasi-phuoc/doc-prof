@@ -1,5 +1,9 @@
 # Reprise de la grammaire
 
+Les activités par niveau sont suivies dans le [bilan des banques graduées](implementation/README.md). Les 160 situations de la première banque de communication sont conservées dans le [registre des scènes](images-a-preparer.json). Les situations illustrées sont disponibles en [fiches de lecture, d’écrit et d’oral](fiches-communication-illustrees.md). La [compréhension orale](co-import/README.md) garde sa banque dans le générateur.
+
+## Bilan historique de la reprise
+
 La théorie a été rétablie dans son état antérieur au commit `b04247cb`. Les types d’exercices et les banques actuels sont conservés.
 
 | Contenu | Résultat |
@@ -31,13 +35,13 @@ Les sept banques ordinaires des thèmes d’introduction ont été complétées 
 
 ## Communication
 
-Les 16 thèmes de communication proposent chacun dix fiches de situation du quotidien : transports, rendez-vous, logement, démarches, achats, activités et échanges sociaux. Chaque situation fournit :
+La première banque proposait dix fiches de situation du quotidien pour chacun des seize thèmes de communication. Elles couvraient les transports, les rendez-vous, le logement, les démarches, les achats, les activités et les échanges sociaux. Chaque situation fournit les éléments suivants.
 
 - un document court de CE avec cinq questions simples et leurs réponses présentes dans le support ;
 - une tâche de PE demandant une seule phrase ;
 - une tâche de PO demandant une seule prise de parole courte, avec modèle réservé au corrigé.
 
-Dix illustrations du sous-thème « Demander une possibilité » ont été régénérées individuellement dans le style dessiné CE/CO, contrôlées puis intégrées aux variantes CE, PE et PO correspondantes. La première planche au rendu photographique est écartée. Le registre [illustrations.json](illustrations.json) conserve les chemins, empreintes et contrôles. Les 150 autres descriptions restent dans [images-a-preparer.json](images-a-preparer.json). Les activités continuent de fonctionner avec leurs informations écrites et aucune image future manquante n’est référencée.
+Dix illustrations du sous-thème « Demander une possibilité » ont été régénérées individuellement dans le style dessiné CE/CO. Le [registre des illustrations](illustrations.json) conserve les chemins, empreintes et contrôles. Le [registre des scènes](images-a-preparer.json) donne l’état de chacune des 160 situations.
 
 ## Vérification et entretien
 

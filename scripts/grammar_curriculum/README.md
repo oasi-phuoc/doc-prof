@@ -7,7 +7,7 @@ Lancer `python scripts/grammar_curriculum/build.py` depuis la racine du dépôt.
 - `lexicon.py` contient les formes françaises et les contextes rédigés.
 - `banks_*.py` construisent les banques par notion ; `curate.py` ajoute les cas particuliers relus.
 - `protected-source.json` conserve les sept banques d’introduction, complétées par `protected_banks.py`.
-- `communications.py` contient les 160 situations et leurs questions/modèles.
+- `communications.py` conserve les 160 situations de communication et leurs questions et modèles. `python3 scripts/grammar_curriculum/communication_resources.py` vérifie les images et reconstruit les fiches illustrées et leur registre.
 - `build.py` écrit uniquement les banques d’exercices, les situations et les rapports dans `docs/grammaire/`.
 
 Les changements éditoriaux se font dans ces sources, puis le générateur et `node scripts/test-grammar-curriculum.cjs` sont relancés. Les anciennes banques Word/cumulées ne sont plus utilisées.
