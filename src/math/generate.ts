@@ -1,3 +1,4 @@
+import { mathTheoryLessons, mathTheoryTopic } from './theory-lessons'
 import { isMathProblemHelpType } from './problem-help'
 import { splitLogistiquePages, type LogistiquePageLayout } from '@/logistique/pagination'
 import { isLogistiqueDomain, isLogistiqueReferenceType } from '@/logistique/catalog'
@@ -120,6 +121,15 @@ function buildSingleBlock(
   const type = exerciseTypeById[config.exerciseType]
   const difficulty = config.difficulty ?? 'moyen'
   const fallbackTitle = type?.label ?? topic?.label ?? 'Exercices'
+  const theoryTopic = mathTheoryTopic(config.exerciseType)
+  if (theoryTopic && (config.domain === 'algèbre' || config.domain === 'géométrie')) {
+    const lesson = mathTheoryLessons[theoryTopic]!
+    return {
+      title: lesson.title,
+      instruction: `Théorie — ${lesson.title}`,
+      items: [{ layout: 'theory', mathTheory: { ...lesson, topic: theoryTopic }, answer: '' }],
+    }
+  }
   if (config.exerciseType === 'tpm-consignes') {
     return {
       title: 'Informations',
@@ -425,7 +435,7 @@ export function buildPage(
     const single = pageAsConfig(page, block)
     const local = block.contentSeed ?? 0
     const result = buildSingleBlock(single, seed + index * 10007 + local, worksheetSeed)
-    const isTheory = isLogistiqueReferenceType(block.exerciseType) || isGrammarTheoryType(block.exerciseType) || isGrammaireTheoryType(block.exerciseType)
+    const isTheory = Boolean(mathTheoryTopic(block.exerciseType)) || isLogistiqueReferenceType(block.exerciseType) || isGrammarTheoryType(block.exerciseType) || isGrammaireTheoryType(block.exerciseType)
     const isJeux = block.exerciseType.startsWith('jeux-')
     const isTpmConsignes = isInfoPageType(block.exerciseType)
     // Une feuille « suite » ne doit pas figer seulement sa tranche : sinon le mode

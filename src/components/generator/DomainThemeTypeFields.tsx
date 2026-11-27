@@ -1,3 +1,4 @@
+import { mathTheoryTopic } from '@/math/theory-lessons'
 import { isMathProblemHelpType } from '@/math/problem-help'
 import { grammarOrderHasSentenceFilters } from '@/grammaire/curriculum/types'
 import { TcfCeFormatControl, TcfCeTextFontControl } from './TcfCeFormatControl'
@@ -561,6 +562,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
               isCalliDomain ||
               isVocabLearn ||
               isGramTheory ||
+              mathTheoryTopic(activeBlock.exerciseType) ||
               isGrammaireDomain ||
               logisticsDomain ||
               isLogique ||

@@ -68,6 +68,7 @@ import {
   WordSearchBlock,
 } from './item-view/vocab'
 
+import { MathTheoryView } from './item-view/math-theory'
 import { BaseTenCollection, LengthUnitComparison, MenuPriceTable } from './item-view/foundations-practice'
 import { FunctionValueTable, NumberLinePractice } from './item-view/number-representations'
 
@@ -353,7 +354,9 @@ export function ItemView({
         {item.layout === 'compare' && <CompareRow item={item} mode={mode} />}
         {item.layout === 'encadrement' && <EncadrementRow item={item} mode={mode} />}
         {item.layout === 'select' && <SelectPillsRow item={oralItem} mode={mode} />}
-        {item.layout === 'theory' && <TheoryBlockView item={item} />}
+        {item.layout === 'theory' && (
+          item.mathTheory ? <MathTheoryView lesson={item.mathTheory} /> : <TheoryBlockView item={item} />
+        )}
         {item.layout === 'glossary' && item.glossary ? (
           <div className="glossary-card">
             <div className="glossary-figure-wrap">

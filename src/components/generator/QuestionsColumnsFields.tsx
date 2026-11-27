@@ -1,3 +1,4 @@
+import { mathTheoryTopic } from '@/math/theory-lessons'
 import { isLogistiqueReferenceType, logistiqueType } from '@/logistique/catalog'
 import { logistiqueHasSummary } from '@/logistique/generate'
 import {
@@ -223,6 +224,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
               {activeBlock.grammarPresentation==='document-set' || grammarAudioOnly || isPhraseChart ||
               isVocabLearn ||
               isGramTheory ||
+              mathTheoryTopic(activeBlock.exerciseType) ||
               isLogistiqueReferenceType(activeBlock.exerciseType) ||
               isJeuxDomain ||
               isCalliDomain ||
@@ -1001,6 +1003,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
               isVocabLearn ||
               isVocabPool ||
               isGramTheory ||
+              mathTheoryTopic(activeBlock.exerciseType) ||
               isGrammaireDomain ||
               isLogique ||
               isJeuxDomain ||

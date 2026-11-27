@@ -465,6 +465,7 @@ export type MathItem = {
   selectVariant?: 'pills' | 'oral' | 'cards'
   /** Bloc de théorie grammaticale (fiche lecture seule). */
   theoryBlock?: GrammarTheoryBlock
+  mathTheory?: import('./theory-lessons').MathTheoryLesson & { topic: string }
   /** Coupure de page initiale après cette section de théorie, modifiable dans l’aperçu. */
   theoryPageBreakAfter?: boolean
   /** Entrée de glossaire maths (mot + définition + schéma). */

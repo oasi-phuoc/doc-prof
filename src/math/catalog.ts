@@ -1,3 +1,4 @@
+import { MATH_THEORY_PREFIX, mathTheoryLessons } from './theory-lessons'
 import { PHRASE_THEME_DEFS } from '@/francais/phrase-themes'
 import type { Difficulty, Domain, ExerciseType, FrenchTrack, Topic } from './types'
 import {
@@ -766,6 +767,11 @@ export const exerciseTypes: ExerciseType[] = [
   t('transformations-symetrie-quadrillage', 'transformations', 'Compléter une silhouette par symétrie', 'Tracer le reflet d’une silhouette sur un quadrillage.', 'Dessinez le reflet de la silhouette de l’autre côté de l’axe.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
   t('transformations-translation', 'transformations', 'Construire l’image par translation', 'Déplacer chaque sommet d’une figure selon le même déplacement.', 'Construisez l’image de la figure en suivant le déplacement indiqué.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
   t('transformations-quart-tour', 'transformations', 'Faire pivoter une figure d’un quart de tour', 'Tourner une silhouette de 90° sur un quadrillage.', 'Suivez le sens indiqué pour reproduire la figure après un quart de tour.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
+  ...Object.entries(mathTheoryLessons).map(([topic, lesson]) =>
+    t(`${MATH_THEORY_PREFIX}${topic}`, topic, 'Théorie', lesson.title, '', 'texte', {
+      preferredColumns: 1, preferredCount: 1, maxCount: 1, supportsNumberRange: false,
+    }),
+  ),
   t('glossaire-algebre-mots', 'glossaire-algebre', 'Mots du glossaire', 'Définitions et schémas des termes d’algèbre (opérations, nombres…).', 'Lisez chaque mot, sa définition et le schéma.', 'texte', { preferredColumns: 2 }),
   t('glossaire-geometrie-mots', 'glossaire-geometrie', 'Mots du glossaire', 'Définitions et schémas des termes de géométrie (droite, segment, angle…).', 'Lisez chaque mot, sa définition et le schéma.', 'texte', { preferredColumns: 2 }),
 

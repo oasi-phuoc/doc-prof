@@ -6589,3 +6589,16 @@ textarea.pill-input,
 
 /* Guided question-writing corrections retain the complete rubric on A4. */
 .grammar-reading-writing .grammar-rubric li { margin: 1mm 0; }
+
+.math-theory-lesson h3{font-size:calc(20pt * var(--app-font-scale, 1));margin:0 0 2mm;line-height:1.2}
+.math-theory-goal{margin:0 0 2mm}
+.math-theory-lesson figure{margin:0 0 4mm;text-align:center}
+.math-theory-lesson figure img{width:100%;height:43mm;display:block;object-fit:contain}
+.math-theory-lesson figcaption{font-weight:700;margin-top:1mm}
+.math-theory-lesson h4{font-size:1em;color:var(--purple);margin:0 0 1.5mm}
+.math-theory-sections{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:5mm}
+.math-theory-sections dl,.math-theory-sections ol{margin:0}
+.math-theory-sections ol{padding-left:1.4em}
+.math-theory-sections dt{font-weight:700}
+.math-theory-sections dd{margin:0 0 1.8mm}
+.math-theory-sections li{margin-bottom:1.4mm}
