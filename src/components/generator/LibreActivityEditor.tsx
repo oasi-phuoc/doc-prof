@@ -28,6 +28,7 @@ function tcfSupportExercise(items: MathItem[] | undefined): TcfExercise | undefi
 import { GenericLibreEditor } from '@/components/generator/GenericLibreEditor'
 import { identifyItems } from '@/components/generator/libre/flat-items'
 import { TheoryEditor } from '@/components/generator/libre/TheoryEditor'
+import { PerimeterEditor } from '@/components/generator/libre/PerimeterEditor'
 import { LetterGridEditor } from '@/components/generator/libre/LetterGridEditor'
 import { LogicEditor } from '@/components/generator/libre/LogicEditor'
 import { SyllableEditor } from '@/components/generator/libre/SyllableEditor'
@@ -54,6 +55,7 @@ type LibreActivityEditorProps = {
   evalMode: boolean
   livePhrase: boolean
   theory: SheetBlockItems | null
+  perimeters: SheetBlockItems | null
   textExercise: SheetBlockItems | null
   letterGrid: SheetBlockItems | null
   logic: SheetBlockItems | null
@@ -113,6 +115,7 @@ export function LibreActivityEditor({
   evalMode,
   livePhrase,
   theory,
+  perimeters,
   textExercise,
   letterGrid,
   logic,
@@ -255,6 +258,14 @@ export function LibreActivityEditor({
       {theory ? (
         <TheoryEditor exerciseType={activeBlock.exerciseType} items={theory.items} onChange={(libreItems) => updatePage({ libreItems })} />
       ) : null}
+      {perimeters?.items.length ? (
+        <PerimeterEditor type={activeBlock.exerciseType} difficulty={activeBlock.difficulty}
+          items={identifyItems(perimeters.items, editedActivityId)} instruction={perimeters.instruction}
+          fields={transientFields} writeField={onTransientField}
+          onInstruction={(instruction) => editActivityItems(identifyItems(perimeters.items, editedActivityId), instruction)}
+          onChange={(items) => editActivityItems(items, perimeters.instruction)}
+          onRegenerate={(id) => onRegenerateBlock?.(safeBlockIndex, undefined, id)} />
+      ) : null}
       {wordListContent?.items.length ? (
         <LetterGridEditor items={wordListContent.items} instruction={wordListContent.instruction}
           activityId={`${editedActivityId}:${activeBlock.exerciseType}`} fields={transientFields} writeField={onTransientField}
@@ -351,7 +362,7 @@ export function LibreActivityEditor({
             : { phraseInstruction })}
         />
       ) : null}
-      {!theory && (isNumberLibreDomain || isTpmLike) && !isDroites && !isConstruire ? (
+      {!theory && !perimeters && (isNumberLibreDomain || isTpmLike) && !isDroites && !isConstruire ? (
         <TpmLibreEditor
           key={editedActivityId}
           liveArithmetic={liveArithmetic}

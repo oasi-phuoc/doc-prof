@@ -65,157 +65,153 @@ function triangleSides(rng: Rng, difficulty: Difficulty, range?: NumberRange): [
   return difficulty === 'facile' ? [3, 4, 5] : [30, 40, 50]
 }
 
-function periSquare(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
-  const s = val(rng, difficulty, range)
-  const p = round2(4 * s)
-  if (!missing) {
-    return geo({
-      prompt: 'Calculez le périmètre.',
-      figure: 'square',
-      dims: { side: s, unit: 'cm' },
-      calc: `4 × ${fmt(s)}`,
-      response: `${fmt(p)} cm`,
-    })
+const perimeterTools = {
+  square: { keys: ['side'], unknown: 'side', factor: 4 },
+  rectangle: { keys: ['length', 'width'], unknown: 'width', factor: 2 },
+  triangle: { keys: ['a', 'b', 'c'], unknown: 'c', factor: 1 },
+  parallelogram: { keys: ['base', 'side'], unknown: 'side', factor: 2 },
+  rhombus: { keys: ['side'], unknown: 'side', factor: 4 },
+  trapezoid: { keys: ['top', 'bottom', 'a', 'b'], unknown: 'b', factor: 1 },
+  circle: { keys: ['radius'], unknown: 'radius', factor: 2 },
+} satisfies Partial<Record<Figure, { keys: (keyof FigureDims)[]; unknown: FigureDims['ask']; factor: number }>>
+
+type PerimeterFigure = keyof typeof perimeterTools
+type PerimeterDimension = (typeof perimeterTools)[PerimeterFigure]['keys'][number]
+type PerimeterKey = PerimeterDimension | 'perimeter' | 'perimeterPi'
+export type PerimeterValues = Partial<Record<PerimeterKey, number>> & { unit?: string }
+const perimeterNames: Record<PerimeterKey, string> = {
+  side: 'Côté', length: 'Longueur', width: 'Largeur', a: 'Côté A', b: 'Côté B', c: 'Côté C',
+  base: 'Base', top: 'Base supérieure', bottom: 'Base inférieure', radius: 'Rayon',
+  perimeter: 'Périmètre donné', perimeterPi: 'Valeur de π',
+}
+
+export function isPerimeterExercise(type: string): boolean {
+  return /^perimetres-(?:carre|rectangle|triangle|parallelogramme|losange|trapeze|quadrilatere|cercle)(?:-manquant)?$/.test(type) ||
+    type === 'perimetres-melange'
+}
+
+function perimeterFigure(item: MathItem): PerimeterFigure | undefined {
+  const figure = item.figure
+  return item.layout === 'geo' && figure && Object.hasOwn(perimeterTools, figure) ? figure as PerimeterFigure : undefined
+}
+
+function perimeterGiven(item: MathItem): number {
+  const match = item.prompt?.match(/Le périmètre mesure ([0-9]+(?:[,.][0-9]+)?)/u)
+  return item.dims?.perimeter ?? Number(match?.[1]?.replace(',', '.'))
+}
+
+export function perimeterInputs(item: MathItem): { key: PerimeterKey; label: string; value: number }[] {
+  const figure = perimeterFigure(item)
+  const dims = item.dims
+  if (!figure || !dims) return []
+  const keys: PerimeterKey[] = perimeterTools[figure].keys.filter((key) => key !== dims.ask)
+  if (dims.ask) keys.unshift('perimeter')
+  if (figure === 'circle') keys.push('perimeterPi')
+  return keys.map((key) => ({
+    key, label: perimeterNames[key],
+    value: key === 'perimeter' ? perimeterGiven(item) : key === 'perimeterPi' ? dims.perimeterPi ?? PI : dims[key]!,
+  }))
+}
+
+function perimeterItem(figure: PerimeterFigure, dims: FigureDims, missing: boolean, given?: number): MathItem {
+  const { keys, unknown, factor } = perimeterTools[figure]
+  const pi = dims.perimeterPi ?? PI
+  const unit = dims.unit ?? 'cm'
+  const circle = figure === 'circle'
+  const coefficient = factor * (circle ? pi : 1)
+  const piLabel = String(pi).replace('.', ',')
+  const known = keys.filter((key) => key !== unknown)
+  const sum = (dimensions: PerimeterDimension[]) => dimensions.map((key) => fmt(dims[key]!)).join(' + ')
+  const fixed = known.reduce((total, key) => total + (dims[key] ?? 0), 0)
+  const size = given === undefined ? dims[unknown]! : given / coefficient - fixed
+  const total = given ?? round2((fixed + size) * coefficient)
+  const piText = circle ? ` Prenez π = ${piLabel}.` : ''
+  const result = missing ? size : total
+  const labeled: FigureDims = { ...dims, unit }
+  if (figure === 'triangle') labeled.triangleKind = 'scalene'
+  let calculation: string
+  let prompt: string
+  if (missing) {
+    delete labeled[unknown]
+    labeled.ask = unknown
+    const base = coefficient === 1 ? fmt(total) : `${fmt(total)} ÷ ${circle ? `(2 × ${piLabel})` : factor}`
+    calculation = [base, ...known.map((key) => fmt(dims[key]!))].join(' − ')
+    const directive = figure === 'rectangle' ? `La longueur mesure ${fmt(dims.length!)} ${unit}. Calculez la largeur.`
+      : figure === 'parallelogram' ? `La base mesure ${fmt(dims.base!)} ${unit}. Calculez l’autre côté.`
+      : circle ? 'Calculez le rayon.'
+      : known.length ? 'Calculez le côté marqué ?.'
+      : 'Calculez le côté.'
+    prompt = `Le périmètre mesure ${fmt(total)} ${unit}. ${directive}${piText}`
+  } else {
+    const parts = sum(keys)
+    calculation = circle ? `2 × ${piLabel} × ${parts}`
+      : factor === 1 ? parts : `${factor} × ${keys.length > 1 ? `(${parts})` : parts}`
+    prompt = `Calculez le périmètre.${piText}`
   }
-  return geo({
-    prompt: `Le périmètre mesure ${fmt(p)} cm. Calculez le côté.`,
-    figure: 'square',
-    dims: { ask: 'side', unit: 'cm' },
-    calc: `${fmt(p)} ÷ 4`,
-    response: `${fmt(s)} cm`,
-  })
+  return geo({ prompt, figure, dims: labeled, calc: calculation, response: `${fmt(result)} ${unit}` })
+}
+
+export function editPerimeter(item: MathItem, values: PerimeterValues): MathItem | undefined {
+  const figure = perimeterFigure(item)
+  if (!figure || !item.dims) return undefined
+  const { keys, unknown, factor } = perimeterTools[figure]
+  const missing = Boolean(item.dims.ask)
+  const dims = { ...item.dims, ...values }
+  const given = missing ? values.perimeter ?? perimeterGiven(item) : undefined
+  if (Object.keys(values).length === 1 && values.unit !== undefined) {
+    return { ...item, ...perimeterItem(figure, dims, missing, given) }
+  }
+  const pi = dims.perimeterPi ?? PI
+  if (figure === 'circle' && !(pi >= 3 && pi <= 4)) return undefined
+  const fixed = keys.filter((key) => key !== unknown).reduce((total, key) => total + (dims[key] ?? 0), 0)
+  const dimensions = keys.map((key) => key === unknown && given !== undefined
+    ? given / (factor * (figure === 'circle' ? pi : 1)) - fixed : dims[key]!)
+  if (dimensions.some((value) => !Number.isFinite(value) || round2(value) <= 0)) return undefined
+  if (figure === 'triangle' && Math.max(...dimensions) * 2 >= dimensions.reduce((sum, value) => sum + value, 0)) return undefined
+  if (figure === 'trapezoid') {
+    const [top, bottom, left, right] = dimensions as [number, number, number, number]
+    const difference = Math.abs(top - bottom)
+    if (difference >= left + right || difference < Math.abs(left - right) || (difference > 0 && difference === Math.abs(left - right))) return undefined
+  }
+  return { ...item, ...perimeterItem(figure, dims, missing, given) }
+}
+
+function periSquare(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
+  return perimeterItem('square', { side: val(rng, difficulty, range) }, missing)
 }
 
 function periRectangle(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
   const length = val(rng, difficulty, range)
   let width = val(rng, difficulty, range)
   if (width === length) width = round2(width + (difficulty === 'avance' ? 0.5 : 1))
-  const p = round2(2 * (length + width))
-  if (!missing) {
-    return geo({
-      prompt: 'Calculez le périmètre.',
-      figure: 'rectangle',
-      dims: { length, width, unit: 'cm' },
-      calc: `2 × (${fmt(length)} + ${fmt(width)})`,
-      response: `${fmt(p)} cm`,
-    })
-  }
-  return geo({
-    prompt: `Le périmètre mesure ${fmt(p)} cm. La longueur mesure ${fmt(length)} cm. Calculez la largeur.`,
-    figure: 'rectangle',
-    dims: { length, ask: 'width', unit: 'cm' },
-    calc: `${fmt(p)} ÷ 2 − ${fmt(length)}`,
-    response: `${fmt(width)} cm`,
-  })
+  return perimeterItem('rectangle', { length, width }, missing)
 }
 
 function periTriangle(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
   const [a, b, c] = triangleSides(rng, difficulty, range)
-  const p = round2(a + b + c)
-  if (!missing) {
-    return geo({
-      prompt: 'Calculez le périmètre.',
-      figure: 'triangle',
-      dims: { a, b, c, triangleKind: 'scalene', unit: 'cm' },
-      calc: `${fmt(a)} + ${fmt(b)} + ${fmt(c)}`,
-      response: `${fmt(p)} cm`,
-    })
-  }
-  return geo({
-    prompt: `Le périmètre mesure ${fmt(p)} cm. Calculez le côté marqué ?.`,
-    figure: 'triangle',
-    dims: { a, b, ask: 'c', triangleKind: 'scalene', unit: 'cm' },
-    calc: `${fmt(p)} − ${fmt(a)} − ${fmt(b)}`,
-    response: `${fmt(c)} cm`,
-  })
+  return perimeterItem('triangle', { a, b, c }, missing)
 }
 
 function periParallelogram(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
   const base = val(rng, difficulty, range)
   const side = val(rng, difficulty, range)
-  const p = round2(2 * (base + side))
-  if (!missing) {
-    return geo({
-      prompt: 'Calculez le périmètre.',
-      figure: 'parallelogram',
-      dims: { base, side, unit: 'cm' },
-      calc: `2 × (${fmt(base)} + ${fmt(side)})`,
-      response: `${fmt(p)} cm`,
-    })
-  }
-  return geo({
-    prompt: `Le périmètre mesure ${fmt(p)} cm. La base mesure ${fmt(base)} cm. Calculez l’autre côté.`,
-    figure: 'parallelogram',
-    dims: { base, ask: 'side', unit: 'cm' },
-    calc: `${fmt(p)} ÷ 2 − ${fmt(base)}`,
-    response: `${fmt(side)} cm`,
-  })
+  return perimeterItem('parallelogram', { base, side }, missing)
 }
 
 function periRhombus(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
-  const s = val(rng, difficulty, range)
-  const p = round2(4 * s)
-  if (!missing) {
-    return geo({
-      prompt: 'Calculez le périmètre.',
-      figure: 'rhombus',
-      dims: { side: s, unit: 'cm' },
-      calc: `4 × ${fmt(s)}`,
-      response: `${fmt(p)} cm`,
-    })
-  }
-  return geo({
-    prompt: `Le périmètre mesure ${fmt(p)} cm. Calculez le côté.`,
-    figure: 'rhombus',
-    dims: { ask: 'side', unit: 'cm' },
-    calc: `${fmt(p)} ÷ 4`,
-    response: `${fmt(s)} cm`,
-  })
+  return perimeterItem('rhombus', { side: val(rng, difficulty, range) }, missing)
 }
 
 function periTrapezoid(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
   const top = val(rng, difficulty, range)
   const bottom = val(rng, difficulty, range)
-  const left = val(rng, difficulty, range)
-  const right = val(rng, difficulty, range)
-  const p = round2(top + bottom + left + right)
-  if (!missing) {
-    return geo({
-      prompt: 'Calculez le périmètre.',
-      figure: 'trapezoid',
-      dims: { top, bottom, a: left, b: right, unit: 'cm' },
-      calc: `${fmt(top)} + ${fmt(bottom)} + ${fmt(left)} + ${fmt(right)}`,
-      response: `${fmt(p)} cm`,
-    })
-  }
-  return geo({
-    prompt: `Le périmètre mesure ${fmt(p)} cm. Calculez le côté marqué ?.`,
-    figure: 'trapezoid',
-    dims: { top, bottom, a: left, ask: 'b', unit: 'cm' },
-    calc: `${fmt(p)} − ${fmt(top)} − ${fmt(bottom)} − ${fmt(left)}`,
-    response: `${fmt(right)} cm`,
-  })
+  const a = val(rng, difficulty, range)
+  const b = val(rng, difficulty, range)
+  return perimeterItem('trapezoid', { top, bottom, a, b }, missing)
 }
 
 function periCircle(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
-  const r = val(rng, difficulty, range)
-  const p = round2(2 * PI * r)
-  if (!missing) {
-    return geo({
-      prompt: 'Calculez le périmètre. Prenez π = 3,14.',
-      figure: 'circle',
-      dims: { radius: r, unit: 'cm' },
-      calc: `2 × 3,14 × ${fmt(r)}`,
-      response: `${fmt(p)} cm`,
-    })
-  }
-  return geo({
-    prompt: `Le périmètre mesure ${fmt(p)} cm. Calculez le rayon. Prenez π = 3,14.`,
-    figure: 'circle',
-    dims: { ask: 'radius', unit: 'cm' },
-    calc: `${fmt(p)} ÷ (2 × 3,14)`,
-    response: `${fmt(r)} cm`,
-  })
+  return perimeterItem('circle', { radius: val(rng, difficulty, range) }, missing)
 }
 
 function areaSquare(rng: Rng, difficulty: Difficulty, missing: boolean, range?: NumberRange): MathItem {
@@ -471,15 +467,10 @@ function volSphere(rng: Rng, difficulty: Difficulty, range?: NumberRange): MathI
   })
 }
 
-const PERI = [
-  periSquare,
-  periRectangle,
-  periTriangle,
-  periParallelogram,
-  periRhombus,
-  periTrapezoid,
-  periCircle,
-] as const
+const perimeterGenerators: Record<PerimeterFigure, MeasureFn> = {
+  square: periSquare, rectangle: periRectangle, triangle: periTriangle, parallelogram: periParallelogram,
+  rhombus: periRhombus, trapezoid: periTrapezoid, circle: periCircle,
+}
 
 const AREA = [areaSquare, areaRectangle, areaTriangle, areaParallelogram, areaRhombus, areaTrapezoid, areaDisk] as const
 
@@ -487,12 +478,16 @@ const VOL = [volCube, volCuboid, volCylinder, volCone] as const
 
 type MeasureFn = (rng: Rng, d: Difficulty, missing: boolean, range?: NumberRange) => MathItem
 
-const PERI_QUAD: Partial<Record<Figure, MeasureFn>> = {
-  square: periSquare,
-  rectangle: periRectangle,
-  parallelogram: periParallelogram,
-  rhombus: periRhombus,
-  trapezoid: periTrapezoid,
+export function perimeterChoices(type: string): { figure: Figure; label: string }[] {
+  const figures = type === 'perimetres-melange' ? Object.keys(perimeterGenerators) as PerimeterFigure[]
+    : type.startsWith('perimetres-quadrilatere') ? PERI_QUAD_FIGURES : []
+  return figures.map((figure) => ({ figure, label: QUAD_SHAPE_LABELS[figure] ?? (figure === 'triangle' ? 'Triangle' : 'Cercle') }))
+}
+
+export function withPerimeterFigure(item: MathItem, figure: Figure, rng: Rng, difficulty: Difficulty): MathItem {
+  if (!Object.hasOwn(perimeterGenerators, figure) || figure === item.figure) return item
+  const next = perimeterGenerators[figure as PerimeterFigure](rng, difficulty, Boolean(item.dims?.ask))
+  return { ...item, ...(editPerimeter(next, { unit: item.dims?.unit ?? 'cm' }) ?? next) }
 }
 
 const AREA_QUAD: Partial<Record<Figure, MeasureFn>> = {
@@ -537,7 +532,7 @@ export function tryGenerateMesure(
 ): MathItem | null {
   const d = difficulty
   if (typeId === 'perimetres-quadrilatere' || typeId === 'perimetres-quadrilatere-manquant') {
-    return pickQuad(rng, PERI_QUAD, PERI_QUAD_FIGURES, shapes, d, typeId.endsWith('-manquant'), range)
+    return pickQuad(rng, perimeterGenerators, PERI_QUAD_FIGURES, shapes, d, typeId.endsWith('-manquant'), range)
   }
   if (typeId === 'aires-quadrilatere' || typeId === 'aires-quadrilatere-manquant') {
     return pickQuad(rng, AREA_QUAD, AREA_QUAD_FIGURES, shapes, d, typeId.endsWith('-manquant'), range)
@@ -546,7 +541,7 @@ export function tryGenerateMesure(
     return pickQuad(rng, VOL_QUAD, VOLUME_QUAD_FIGURES, shapes, d, typeId.endsWith('-manquant'), range)
   }
   if (typeId === 'perimetres-melange') {
-    const fn = pick(rng, [...PERI])
+    const fn = pick(rng, Object.values(perimeterGenerators))
     return fn(rng, d, rng() < 0.45, range)
   }
   if (typeId === 'aires-melange') {
