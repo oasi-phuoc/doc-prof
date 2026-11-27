@@ -14,11 +14,11 @@ const fixture = [
   { x: -3, y: 2, label: 'D', kind: 'point' },
 ]
 
-async function open(context, exerciseType, automatic = false) {
+async function open(context, exerciseType, automatic = false, domain = 'géométrie') {
   const page = await context.newPage()
   const axial = exerciseType.includes('-axiale-')
   const coordMarks = axial ? fixture : [...fixture, { x: 1, y: 0, label: 'Ω', kind: 'point' }]
-  await page.addInitScript(({ exerciseType, edit }) => history.replaceState({
+  await page.addInitScript(({ exerciseType, edit, domain }) => history.replaceState({
     ...history.state,
     clairfleFiche: {
       id: 'symetrie-fixture', name: 'Symétrie témoin',
@@ -26,13 +26,14 @@ async function open(context, exerciseType, automatic = false) {
         version: 1, seed: 20261127, institutional: {}, evalMode: false, pointsPerQuestion: 1,
         libreMode: false, libreSnapshot: null, printCorrections: true,
         pages: [{
-          domain: 'géométrie', topic: 'transformations', exerciseType, difficulty: 'moyen',
+          domain, topic: 'transformations', exerciseType, difficulty: 'moyen',
           count: 4, columns: 1, coordCols: 24, coordRows: 24, coordCellMm: 4, ...edit,
         }],
       },
     },
   }, ''), {
     exerciseType,
+    domain,
     edit: automatic ? {} : { coordLibre: true, coordMarks, coordSymmetryAxis: axial ? 'x' : undefined },
   })
   await page.goto('/generateur')
@@ -126,7 +127,7 @@ try {
     assert(Math.abs(renderedMm - (widthBefore + 24)) < 0.6)
     await page.close()
   }
-  const automatic = await open(context, 'transformations-axiale-figure', true)
+  const automatic = await open(context, 'transformations-axiale-figure', true, 'tpm')
   const autoPreview = automatic.locator('.a4-frame .worksheet-sheet').first()
   const initial = await autoPreview.innerText()
   await button(automatic, 'Mode libre').click()

@@ -185,6 +185,13 @@ try {
   await sphereRow.getByRole('combobox', { name: 'Unité des cotes', exact: true }).selectOption('mm')
   assert.equal(await answer(volumeSphere.print), '108 mm³')
   await volumeSphere.page.close()
+
+  const tpm = await open(context, 'aires-rectangle', { domain: 'tpm', count: 1 })
+  const tpmArea = question(tpm.editor, 1)
+  await field(tpmArea, 'Longueur').fill('10')
+  await field(tpmArea, 'Largeur').fill('3')
+  assert.equal(await answer(tpm.print), '30 cm²')
+  await tpm.page.close()
   await context.close()
   console.log('Périmètres, aires et volumes A4 vérifiés avec cote manquante, unité, π, contraintes, verrou et conversion double A5.')
 } finally {

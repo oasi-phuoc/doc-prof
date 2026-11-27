@@ -667,6 +667,24 @@ try {
   assert.match(await mathGlossary.locator('.print-only-sheets .glossary-card').nth(1).textContent(), /Exemple sur le quadrillage/)
   await mathGlossary.close()
 
+  const tpmLesson = await open(context, {
+    domain: 'tpm', topic: 'addition', exerciseType: 'math-theorie-addition', evalMode: true,
+  })
+  await preview(tpmLesson).locator('.math-theory-lesson').waitFor()
+  await toggleLive(tpmLesson)
+  await tpmLesson.locator('#activity-editor').getByLabel('Contenu de la théorie', { exact: true })
+    .getByRole('textbox', { name: 'Objectif', exact: true }).fill('Vérifier une addition au TPM.')
+  assert.match(await tpmLesson.locator('.print-only-sheets .math-theory-goal').first().textContent(), /Vérifier une addition au TPM/)
+  await tpmLesson.close()
+
+  const tpmGlossary = await open(context, {
+    domain: 'tpm', topic: 'glossaire-algebre', exerciseType: 'glossaire-algebre-mots',
+  })
+  await toggleLive(tpmGlossary)
+  await tpmGlossary.locator('#activity-editor').getByRole('textbox', { name: 'Notion', exact: true }).first().fill('Notion du TPM')
+  assert.equal(await preview(tpmGlossary).locator('.glossary-term').first().textContent(), 'Notion du TPM')
+  await tpmGlossary.close()
+
   for (const illustrated of [false, true]) {
     const sounds = await open(context, illustrated ? {
       domain: 'alphabetisation', topic: 'alpha-voyelles', exerciseType: 'alpha-a-ecouter-image',

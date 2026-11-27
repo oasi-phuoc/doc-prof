@@ -12,10 +12,13 @@ try {
   browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH ?? '/usr/bin/chromium' })
   const context = await browser.newContext({ baseURL, viewport: { width: 1366, height: 900 } })
   await context.addCookies([{ name: 'clairfle-fiche-access', value: 'admin', url: baseURL }])
-  for (const exerciseType of ['reperage-lire', 'reperage-placer', 'reperage-cadrans-lire', 'reperage-cadrans-placer', 'reperage-cadrans-libre']) {
+  const variants = ['reperage-lire', 'reperage-placer', 'reperage-cadrans-lire', 'reperage-cadrans-placer', 'reperage-cadrans-libre']
+  const fixtures = variants.map((exerciseType) => ({ exerciseType, domain: 'géométrie' }))
+  fixtures.push({ exerciseType: 'reperage-cadrans-lire', domain: 'tpm' })
+  for (const { exerciseType, domain } of fixtures) {
     const shapes = !exerciseType.includes('cadrans')
     const page = await context.newPage()
-    await page.addInitScript((exerciseType) => history.replaceState({
+    await page.addInitScript(({ exerciseType, domain }) => history.replaceState({
       ...history.state,
       clairfleFiche: {
         id: 'repere-a4', name: 'Repérage témoin',
@@ -23,12 +26,12 @@ try {
           version: 1, seed: 20261127, institutional: {}, evalMode: false, pointsPerQuestion: 1,
           libreMode: false, libreSnapshot: null, printCorrections: true,
           pages: [{
-            domain: 'géométrie', topic: 'reperage', exerciseType, difficulty: 'moyen',
+            domain, topic: 'reperage', exerciseType, difficulty: 'moyen',
             count: 2, columns: 1, coordCols: 10, coordRows: 10,
           }],
         },
       },
-    }, ''), exerciseType)
+    }, ''), { exerciseType, domain })
     await page.goto('/generateur')
     const printed = page.locator('.print-only-sheets .worksheet-sheet').last().locator('svg.coord-grid').first()
     const preview = page.locator('.a4-frame svg.coord-grid').first()
@@ -84,7 +87,7 @@ try {
     await page.close()
   }
   await context.close()
-  console.log('Cinq repérages A4 testés avec maintien du tirage, composition, quantité et annulation.')
+  console.log('Repérages de Géométrie et TPM vérifiés en A4 avec maintien du tirage, quantité et annulation.')
 } finally {
   await browser?.close()
   await server?.close()

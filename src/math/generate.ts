@@ -33,7 +33,7 @@ import {splitPhraseImagePages} from '@/francais/phrase-image-pages'
 import { tryGenerateCalligraphieBatch } from '@/calligraphie/generate'
 import { tryGenerateJeuxBatch } from '@/jeux/generate'
 import { pageAsConfig, pageBlocks } from './page-model'
-import { TPM_MAX_SCORE } from '@/tpm/test'
+import { isTpmDomain, TPM_MAX_SCORE } from '@/tpm/test'
 import { generateTpmInformations } from '@/tpm/informations'
 import { resolveTcfExercise, tryGenerateTcfBlock } from '@/tcf/generate'
 import { isTcfAudioDomain, isTcfConsignesType, isTpfFamilyDomain } from '@/tcf/catalog'
@@ -124,12 +124,12 @@ function buildSingleBlock(
   const difficulty = config.difficulty ?? 'moyen'
   const fallbackTitle = type?.label ?? topic?.label ?? 'Exercices'
   const theoryTopic = mathTheoryTopic(config.exerciseType)
-  if (theoryTopic && (config.domain === 'algèbre' || config.domain === 'géométrie')) {
+  if (theoryTopic && (config.domain === 'algèbre' || config.domain === 'géométrie' || isTpmDomain(config.domain))) {
     const lesson = mathTheoryLessons[theoryTopic]!
     return {
       title: lesson.title,
       instruction: `Théorie — ${lesson.title}`,
-      items: [{ layout: 'theory', mathTheory: { ...lesson, topic: theoryTopic }, answer: '' }],
+      items: [{ layout: 'theory', mathTheory: { ...lesson, topic: theoryTopic }, answer: '', noPoints: true }],
     }
   }
   if (config.exerciseType === 'tpm-consignes') {

@@ -43,12 +43,13 @@ export function isInlineArithmetic(domain: Domain, exerciseType: string): boolea
 }
 
 export function liveEditorProfile(domain: Domain, exerciseType: string, format: SheetFormat, grammarPresentation?: GrammarPresentation) {
-  if (domain === 'géométrie' && isPerimeterExercise(exerciseType)) return 'perimetre'
-  if (domain === 'géométrie' && isAreaExercise(exerciseType)) return 'aire'
-  if (domain === 'géométrie' && isVolumeExercise(exerciseType)) return 'volume'
+  const geometry = domain === 'géométrie' || domain === 'tpm'
+  if (geometry && isPerimeterExercise(exerciseType)) return 'perimetre'
+  if (geometry && isAreaExercise(exerciseType)) return 'aire'
+  if (geometry && isVolumeExercise(exerciseType)) return 'volume'
   if (isInlineArithmetic(domain, exerciseType)) return 'calcul-en-ligne'
   if ((domain === 'algèbre' || domain === 'tpm') && COLUMN_TYPES.has(exerciseType)) return 'calcul-en-colonnes'
-  if ((domain === 'géométrie' || domain === 'tpm') && CONVERSION_TYPES.has(exerciseType)) return 'conversion'
+  if (geometry && CONVERSION_TYPES.has(exerciseType)) return 'conversion'
   if (domain === 'algèbre' && NUMERIC_ORDER_TYPES.has(exerciseType)) return 'ordre-numerique'
   if ((domain === 'algèbre' || domain === 'tpm') && NUMBER_NOTATION_TYPES.has(exerciseType) ||
     domain === 'tpm' && (exerciseType === 'tpm-decompose-99' || exerciseType === 'tpm-decompose-9999')) return 'notation-numerique'
@@ -57,7 +58,7 @@ export function liveEditorProfile(domain: Domain, exerciseType: string, format: 
     domain === 'tcm-csc' && ['tcm-csc-ex04', 'tcm-csc-ex05'].includes(exerciseType)) return 'suite-numerique'
   const logistics = logistiqueType(exerciseType)
   if (domain === 'grammaire' && isGrammaireTheoryType(exerciseType) ||
-    (domain === 'algèbre' || domain === 'géométrie') && isMathReferenceType(exerciseType) ||
+    (domain === 'algèbre' || geometry) && isMathReferenceType(exerciseType) ||
     domain === 'société' && exerciseType.startsWith('societe-suisse-theorie-') ||
     logistics?.domain === domain && isLogistiqueReferenceType(exerciseType)) return 'theorie'
   if (domain === 'logique' && isLogiqueType(exerciseType)) return 'logique-visuelle'
@@ -96,9 +97,9 @@ export function liveEditorProfile(domain: Domain, exerciseType: string, format: 
     domain === 'tcm-csc' && ['tcm-csc-ex06', 'tcm-csc-ex07', 'tcm-csc-ex25'].includes(exerciseType) ||
     domain === 'tcm-cfr' && (exerciseType === 'tcm-cfr-ex03' || exerciseType === 'tcm-cfr-ex04')) return 'ordre-numerique'
   if (format === 'a4-portrait') {
-    if (domain === 'géométrie' && (isReperageConstruire(exerciseType) || isReperageDroites(exerciseType))) return 'questions-de-reperage'
-    if (domain === 'géométrie' && (isReperageFormes(exerciseType) || isReperageCadrans(exerciseType))) return 'points-de-reperage'
-    if (domain === 'géométrie' && isTransformationExercise(exerciseType)) return 'symetrie'
+    if (geometry && (isReperageConstruire(exerciseType) || isReperageDroites(exerciseType))) return 'questions-de-reperage'
+    if (geometry && (isReperageFormes(exerciseType) || isReperageCadrans(exerciseType))) return 'points-de-reperage'
+    if (geometry && isTransformationExercise(exerciseType)) return 'symetrie'
     if (domain === 'calligraphie' && isCalligraphieType(exerciseType)) return 'calligraphie'
     if (domain === 'jeux' && isJeuxType(exerciseType)) return 'cartes'
   }
