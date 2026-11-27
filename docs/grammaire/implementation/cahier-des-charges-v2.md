@@ -1276,6 +1276,8 @@ Chaque ligne du tableau est une activité, pas une présentation. Tous les IDs e
 
 ### Parler des faits divers — activités
 
+Le [bilan du 27 novembre](avancement-20261127-faits-divers.md) décrit les 35 offres implémentées en pilote A2 et B1 et la validation enseignante attendue.
+
 | Sous-thème | Activité | ID de type / activité | Niveaux et présentations | Origine |
 |---|---|---|---|---|
 | j6 | Former le passif | `gram-ex-j6-qcm-verbe` | B1: choice, gap | Existant |

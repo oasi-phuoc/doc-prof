@@ -10,6 +10,8 @@ import {sourceWordBlank} from './word-drop'
 
 type Adaptation = { part: number; prompt: string; instruction: string; choices: Choice[]; correctId?: string; model: string; mode?: Question['mode']; audio?: string; images?: string[]; grammarImages?: Question['grammarImages']; grammarCountryGender?: Question['grammarCountryGender']; words?: string[]; wordBlank?: Question['wordBlank']; wordSorting?: Question['wordSorting']; sortingTargets?: string[]; teacherLed?: boolean; choiceOrderPolicy?: Question['choiceOrderPolicy']; context?: string; documentId?: string; scenarioId?: string }
 type Result = { items: Adaptation[]; issues: string[] }
+const fillGrammarBlank = (prompt: string, answer: string) =>
+  prompt.replace(/___(\s*)/, (_, space: string) => answer + (answer.endsWith('’') ? '' : space))
 const textKey = (value: string) => value.normalize('NFC').trim().replace(/\s+/g, ' ').toLocaleLowerCase('fr')
 const letters = (value: string) => textKey(value).replace(/[^\p{L}\p{N}]/gu, '')
 const sameBag = (a: string[], b: string[]) => JSON.stringify(a.map(textKey).sort()) === JSON.stringify(b.map(textKey).sort())
@@ -34,7 +36,7 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
     const comparisonContext=u.source.typeId.startsWith('gram-ex-f9-')&&u.source.partition==='a2'?(u.kind==='completion'?u.cue:u.kind==='production'||u.kind==='transform'?u.prompt:undefined):undefined
     const descriptionContext=comparisonContext??(u.source.typeId.startsWith('gram-ex-f12-')?u.cue:undefined)
     const imageSupport={...(descriptionContext?{context:descriptionContext}:{}),...(u.imageSupports?{grammarImages:u.imageSupports}:{}),...(u.countryGender?{grammarCountryGender:u.countryGender}:{})}
-    const models=u.kind==='completion'&&['gram-ex-c4-qcm-verbe','gram-ex-d1-qcm-verbe','gram-ex-d2-qcm-conj','gram-ex-d3-qcm-verbe','gram-ex-e1-qcm-verbe','gram-ex-e6-qcm-verbe','gram-ex-e7-qcm-verbe','gram-ex-e2-qcm-verbe','gram-ex-e3-qcm-verbe','gram-ex-e4-qcm-verbe','gram-ex-e5-qcm-verbe','gram-ex-f1-qcm-verbe','gram-ex-f2-qcm-conj','gram-ex-f3-qcm-verbe','gram-ex-f4-qcm-verbe','gram-ex-f5-qcm-verbe','gram-ex-f6-qcm-verbe','gram-ex-f7-qcm-verbe','gram-ex-f8-qcm-verbe','gram-ex-f9-qcm-verbe','gram-ex-f12-qcm-verbe'].includes(u.source.typeId)?u.answers.map(answer=>u.prompt.replace(/___(\s*)/,(_,space:string)=>answer+(answer.endsWith('’')?'':space))):u.answers
+    const models=u.kind==='completion'&&['gram-ex-c4-qcm-verbe','gram-ex-d1-qcm-verbe','gram-ex-d2-qcm-conj','gram-ex-d3-qcm-verbe','gram-ex-e1-qcm-verbe','gram-ex-e6-qcm-verbe','gram-ex-e7-qcm-verbe','gram-ex-e2-qcm-verbe','gram-ex-e3-qcm-verbe','gram-ex-e4-qcm-verbe','gram-ex-e5-qcm-verbe','gram-ex-f1-qcm-verbe','gram-ex-f2-qcm-conj','gram-ex-f3-qcm-verbe','gram-ex-f4-qcm-verbe','gram-ex-f5-qcm-verbe','gram-ex-f6-qcm-verbe','gram-ex-f7-qcm-verbe','gram-ex-f8-qcm-verbe','gram-ex-f9-qcm-verbe','gram-ex-f12-qcm-verbe'].includes(u.source.typeId)?u.answers.map(answer=>fillGrammarBlank(u.prompt, answer)):u.answers
     const model=models.join(' / ')+'\n'+u.explanation
     const rawPrompt=u.kind==='completion' && u.agreementHint?u.prompt.replace('___',`___ (${u.agreementHint})`):u.kind==='completion' && u.countryGender?u.prompt.replace('___',`___ (${u.countryGender}) `):
       u.kind==='completion' && u.givenVerb?u.prompt.replace('___',`___ (${u.givenVerb})`):u.prompt
@@ -69,7 +71,7 @@ export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInst
     if (u.kind==='completion' && q.presentation==='choice') {
       const correct=q.options!.find(option=>u.answers.includes(option.text))!
       return {items:[{...imageSupport,part:0,prompt,instruction:'',choices:q.options!,wordBlank:sourceWordBlank(prompt,q.options!),correctId:correct.id,choiceOrderPolicy:'fixed',
-        model:u.prompt.replace('___',correct.text)+'\n'+u.explanation}],issues:[]}
+        model:fillGrammarBlank(u.prompt, correct.text)+'\n'+u.explanation}],issues:[]}
     }
     if(u.kind==='match'&&isContextualGrammarMatch(exerciseType)){
       const categoryId=(id:string)=>`relation-${hash(`${u.id}:${id}`)}`

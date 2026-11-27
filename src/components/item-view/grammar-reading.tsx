@@ -16,7 +16,7 @@ export function GrammarReadingView({question:q,mode}:{question:GrammarQuestion;m
     </>}
   </div>
   const options=q.readingOptions?.[child.id]
-  return <div className={`grammar-question grammar-reading-question grammar-two-lines${child.writingTask?' grammar-reading-writing':''}`} data-reading-question-id={child.id}>
+  return <div className={`grammar-question grammar-reading-question${u.responseLines===1?'':' grammar-two-lines'}${child.writingTask?' grammar-reading-writing':''}`} data-reading-question-id={child.id}>
     <p><GrammarSentence text={child.prompt} answer={corrected?child.answers[0]:undefined}/></p>
     {child.response==='choice'?<ul className="grammar-choices" aria-label="Propositions">{options?.map((o,index)=><li key={o.id}>
       <span className="grammar-choice-box" aria-hidden="true">{corrected&&child.answers.includes(o.text)?'✓':'\u00a0'}</span> <b>{String.fromCharCode(65+index)}.</b> {o.text}

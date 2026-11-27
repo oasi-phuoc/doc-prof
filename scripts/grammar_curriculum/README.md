@@ -80,3 +80,9 @@ Les cinq fichiers `avenir-*.tsv` contiennent 250 lignes sources partagées entre
 `python3 scripts/build-grammar-avenir.py` compile exclusivement les cinq banques graduées de futur proche, futur simple, comparaison des futurs, futur antérieur et hypothèse sur le futur : 22 banques et 27 offres. Les textes modifiables gardent des lignes courtes. Aucune génération ou modification de média. Les exercices fermés imposent la forme ; l’oral comparatif admet les deux futurs avec justification. Les modèles ouverts ne sont pas exclusifs.
 
 `npm run test:grammar:avenir` vérifie réponses, élisions, accords, chronologies, recettes, capacités et intervalles de correction, puis reconstruit les banques en isolation. `npm run test:grammar:avenir:browser` utilise un aperçu de production sur le port 5191 et conserve les mesures et PDF dans `docs/grammaire/implementation/avenir-20261124-proofs`. Après les preuves, `node scripts/update-grammar-decrire-progress.cjs --theme=gram-avenir --subthemes=futur-proche,futur-simple,futur-proche-ou-simple,futur-anterieur,hypothese-futur --date=2026-11-24 --verified` actualise le registre sans déclarer une approbation enseignante.
+
+### Parler des faits divers — 27 novembre 2026
+
+Les six fichiers de situations \`faits-*.tsv\` contiennent 300 contextes. Les deux fichiers \`faits-*-lectures.tsv\` portent les 40 documents B1, leurs questions et les preuves dans les textes. \`python3 scripts/build-grammar-faits-divers.py\` compile les banques de j6 à j10 à partir de ces sources. Les identifiants restent stables quand une situation est reprise entre activités.
+
+\`npm run test:grammar:faits-divers\` vérifie les 35 offres, le tirage, les snapshots de fiches, l’adaptation au tableau, les corrigés et la reconstruction des banques. \`npm run test:grammar:pagination\` contrôle les sauts manuels et la reprise des supports.

@@ -15,7 +15,7 @@ WITH pages AS (
 DELETE FROM fiches WHERE id IN (
  SELECT DISTINCT b.id FROM blocks b WHERE
  COALESCE(json_extract(b.value,'$.grammarLevel'),'')=''
- AND (EXISTS (SELECT 1 FROM json_each('["etre","er-particuliers","imparfait-ou-pc","i4","k10","avoir","aller-destination","er","ir","re-oir","modaux","pronominaux","a8","a9","b1","b2","b3","a2","a6","a1","a3","famille","c1","c2","c3","c4","d1","d2","d3","e1","e6","e7","e2","e3","e4","e5","f1","f2","f3","f4","f5","f6","f7","f8","f9","f12","f13","f14","description-physique","f10","f11","g1","g2","g3","g4","g5","g6","pc-idee","pc-avoir","pc-etre","imparfait","pqp","double-aux","pc-pronominaux","accord-pp","i1","i2","i3","i5","i6","i7","i8","i9","j1","j2","j3","futur-proche","futur-simple","futur-proche-ou-simple","futur-anterieur","hypothese-futur"]') s
+ AND (EXISTS (SELECT 1 FROM json_each('["etre","er-particuliers","imparfait-ou-pc","i4","k10","avoir","aller-destination","er","ir","re-oir","modaux","pronominaux","a8","a9","b1","b2","b3","a2","a6","a1","a3","famille","c1","c2","c3","c4","d1","d2","d3","e1","e6","e7","e2","e3","e4","e5","f1","f2","f3","f4","f5","f6","f7","f8","f9","f12","f13","f14","description-physique","f10","f11","g1","g2","g3","g4","g5","g6","pc-idee","pc-avoir","pc-etre","imparfait","pqp","double-aux","pc-pronominaux","accord-pp","i1","i2","i3","i5","i6","i7","i8","i9","j1","j2","j3","futur-proche","futur-simple","futur-proche-ou-simple","futur-anterieur","hypothese-futur","j6","j7","j8","j9","j10"]') s
  WHERE json_extract(b.value,'$.exerciseType') GLOB 'gram-ex-'||s.value||'-*')
  AND json_extract(b.value,'$.exerciseType') NOT LIKE '%-co-theme'
  AND json_extract(b.value,'$.exerciseType') NOT LIKE '%-co-audio'
