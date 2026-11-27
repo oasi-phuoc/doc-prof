@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict'
 import { createRequire } from 'node:module'
 import { test } from 'node:test'
+import { dossierMaths } from '../../scripts/logistique-dossier-maths.mjs'
 
 const require = createRequire(import.meta.url)
 const fixture = require('./fixture.json')
@@ -182,14 +183,14 @@ test('les problèmes ajoutés et relus se rattachent à une section de leur cour
   assert(generateLogistique(frozen, 7).items.some(({ prompt }) => prompt.includes('CHF 58 par veste')))
 })
 
-test('les thèmes dont les dossiers sont publiés atteignent les cibles de banque pour chaque diplôme', () => {
+test('les neuf thèmes atteignent les cibles de banque pour chacun des modules CFC et AFP', () => {
   const targets = { maths: 30, verification: 50, situation: 20 }
   const units = currentLogistiquePublication.units
   const activeThemes = new Set(units.flatMap(({ revision }) => revision.match(/^dossiers-(\d00)-v005$/)?.[1] ?? []))
   const sectionsByModule = new Map(units.filter(({ kind }) => kind === 'theorie').map((unit) => [
     unit.module, new Set(unit.blocks.filter(({ kind }) => kind === 'heading').map(({ text }) => text)),
   ]))
-  assert(activeThemes.has('400'))
+  assert.deepEqual([...activeThemes].sort(), ['100', '200', '300', '400', '500', '600', '700', '800', '900'])
   for (const module of new Set(units.map((unit) => unit.module))) {
     if (!activeThemes.has(module[0] + '00')) continue
     const additions = units.filter((unit) => unit.module === module && unit.revision.startsWith('dossiers-'))
@@ -203,6 +204,17 @@ test('les thèmes dont les dossiers sont publiés atteignent les cibles de banqu
     assert(bank.bankQuestionCap >= targets[type.kind], type.id)
     assert.equal(new Set(bank.items.map(({ prompt }) => prompt)).size, bank.items.length, type.id)
   }
+})
+
+test('les calculs des dossiers conservent les unités, les décimales et les références utilisées dans le cours', () => {
+  const [, redevance] = dossierMaths.tonneDistance('trajets', [312, 18, 0.025, 245, 22, 35])
+  assert.match(redevance[0], /0,025/)
+  assert.equal(redevance[1], 'CHF 140,4')
+  const copiedFormula = dossierMaths.spreadsheet('colis', [43, 59, 36, 62, 4, 9])[3]
+  assert.match(copiedFormula[0], /B2\*\$E\$1/)
+  assert.equal(copiedFormula[1], '=B3*$E$1, soit CHF 236')
+  const cycle = dossierMaths.cycle('pièces', [174, 12, 96, 5, 112, 40])
+  assert.deepEqual(cycle.map(([, answer]) => answer), ['7 jours', '36 pièces', '148 pièces', '-4 pièces', '12 pièces par jour'])
 })
 
 test('les titres et les recettes conservent les modules, le diplôme et la révision', () => {

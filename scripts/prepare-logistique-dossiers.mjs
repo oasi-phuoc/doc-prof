@@ -54,6 +54,7 @@ const modelQuestions = {
   saleCash: ['Quel montant appartient à l’encaissement quand une vente a été payée en partie ?', 'Seule la part effectivement versée appartient à l’encaissement. La vente et le solde dû sont suivis séparément.'],
   tolerance: ['Pourquoi comparer une tolérance et une mesure dans la même unité ?', 'Les valeurs doivent représenter une même grandeur avant de décider si la lecture se trouve entre les limites.'],
   orderSize: ['À quoi sert la quantité donnée par la formule d’Andler ?', 'Elle donne un repère dans un modèle de demande et de coûts stables. On vérifie ensuite les lots, la capacité et les conditions praticables.'],
+  cycle: ['Que représente la remontée du niveau après la baisse du stock sur un cycle de réapprovisionnement ?', 'Une réception. La différence entre le niveau juste avant et le niveau juste après donne la quantité reçue.'],
 }
 
 const followUps = {
@@ -95,6 +96,7 @@ const followUps = {
   saleCash: 'Un acompte arrive après l’établissement du premier relevé des ventes.',
   tolerance: 'Une lecture est corrigée avec une unité différente sur la nouvelle fiche.',
   orderSize: 'Le fournisseur change la taille des conditionnements qui peuvent être commandés.',
+  cycle: 'La date d’arrivée se décale et la baisse du stock se poursuit.',
 }
 
 function sections(blocks, reference) {

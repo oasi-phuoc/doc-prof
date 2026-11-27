@@ -468,9 +468,21 @@ function orderSize(_unit, [annual, order, price, rate, lot, alternate]) {
   ]
 }
 
+function cycle(unit, [initial, daily, point, waiting, delivery, safety]) {
+  const before = point - daily * waiting
+  const after = before + delivery
+  return [
+    [`Au départ, le stock contient ${initial} ${unit}. Sans arrivée, il diminue de ${daily} par jour. Après combien de jours le relevé de fin de journée atteint ou franchit le point de commande de ${point} ?`, `${Math.ceil((initial - point) / daily)} jours`, `Le stock doit baisser d’au moins ${initial} − ${point} = ${initial - point}. Divisez par la sortie journalière et arrondissez au supérieur.`],
+    [`La commande est passée à ${point} ${unit}. Elle arrive après ${waiting} jours pendant lesquels le stock baisse de ${daily} par jour. Combien d’unités restent juste avant l’arrivée ?`, `${before} ${unit}`, `Le besoin du délai vaut ${waiting} × ${daily} = ${waiting * daily}. Retranchez-le au stock du déclenchement.`],
+    [`Le relevé juste avant la livraison est de ${before} ${unit}. Le lot reçu en apporte ${delivery}. À quel niveau remonte le stock ?`, `${after} ${unit}`, `La réception augmente le solde de toute la quantité remise. ${before} + ${delivery} = ${after}.`],
+    [`La réserve de sécurité cible est de ${safety} ${unit}. Le relevé juste avant livraison en montre ${before}. Donnez l’écart signé relevé moins cible.`, `${before - safety} ${unit}`, `L’écart vaut ${before} − ${safety} = ${before - safety}. Un signe négatif indique que la réserve est entamée.`],
+    [`Sur la partie descendante du graphique, le niveau passe de ${point} à ${before} ${unit} en ${waiting} jours, sans entrée. Calculez la consommation moyenne par jour.`, `${daily} ${unit} par jour`, `Soustrayez les niveaux puis divisez la différence par la durée. (${point} − ${before}) ÷ ${waiting} = ${daily}.`],
+  ]
+}
+
 export const dossierMaths = {
   stock, series, planning, area, audit, cost, mass, levels, cadence, lever,
   route, tonneDistance, volume, tension, depreciation, payroll, indicator, result, capital, service, valuation, expense, benefits,
   codeCheck, spreadsheet, printing, files, playback, locale, layout, tableValues, environment, impact, journey, market, saleCash,
-  tolerance, orderSize,
+  tolerance, orderSize, cycle,
 }

@@ -251,6 +251,7 @@ import { dossierExercises800 } from './banks/dossiers-800-v005.generated.ts'
 import { dossierExercises900 } from './banks/dossiers-900-v005.generated.ts'
 import { dossierExercises100 } from './banks/dossiers-100-v005.generated.ts'
 import { dossierExercises200 } from './banks/dossiers-200-v005.generated.ts'
+import { dossierExercises300 } from './banks/dossiers-300-v005.generated.ts'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
 
@@ -558,6 +559,11 @@ const customerServiceExercisePublication: LogistiquePublication = {
   units: [...foundationsExercisePublication.units, ...dossierExercises200],
 }
 
+const procurementTargetsExercisePublication: LogistiquePublication = {
+  revision: 'logistique-exercices-approvisionnement-complet-v005',
+  units: [...customerServiceExercisePublication.units, ...dossierExercises300],
+}
+
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
@@ -637,6 +643,7 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   projectsExercisePublication,
   foundationsExercisePublication,
   customerServiceExercisePublication,
+  procurementTargetsExercisePublication,
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!

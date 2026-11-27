@@ -207,7 +207,7 @@ La révision `logistique-exercices-approvisionnement-v004` ajoute 180 exercices 
 
 Les 72 parcours A4 et PDF couvrent les banques complètes de calculs, de vérifications et de situations en CFC et AFP, avec leurs corrigés et une numérotation continue. La réserve minimale au pied est de 39,95 px. Les tests de génération vérifient l’existence de chaque section citée et la conservation des tirages enregistrés.
 
-### Complément aux cibles de banque
+### Banques aux cibles du cahier des charges
 
 | Thème | Unités ajoutées | Couverture et contrôle |
 |---|---:|---|
@@ -219,8 +219,9 @@ Les 72 parcours A4 et PDF couvrent les banques complètes de calculs, de vérifi
 | 900 — Projets | 163 | Les deux modules CFC atteignent les trois cibles. Les calculs mettent en pratique la faisabilité, la planification, le budget et le suivi du service. 6 parcours A4 et PDF vérifiés, avec une réserve minimale de 41,95 px. [Dossiers](preparation/dossiers-900-v005.txt). |
 | 100 — Fondations | 831 | Les onze modules atteignent les trois cibles dans les deux diplômes. Les calculs appliquent notamment les flux, le suivi du stock, les propriétés des marchandises, le réemploi et les mesures environnementales. 66 parcours A4 et PDF vérifiés, avec une réserve minimale de 35,08 px. [Dossiers](preparation/dossiers-100-v005.txt). |
 | 200 — Service client | 663 | Les neuf modules atteignent les trois cibles en CFC et AFP. Les calculs traitent notamment les encaissements, les contrôles d’hygiène, le marché, AIDA, le coût d’une offre et le suivi des demandes. 54 parcours A4 et PDF vérifiés, avec une réserve minimale de 39,95 px. [Dossiers](preparation/dossiers-200-v005.txt). |
+| 300 — Approvisionnement | 882 | Les douze modules atteignent les trois cibles dans les deux diplômes. Les calculs approfondissent les achats, la réception, les palettes, les mesures, la qualité, la formule d’Andler et le cycle de stock. 72 parcours A4 et PDF vérifiés, avec une réserve minimale de 39,95 px. [Dossiers](preparation/dossiers-300-v005.txt). |
 
-Les révisions `v005` ajoutent des problèmes à partir de données de métier, des vérifications et des cas portant sur la préparation, l’écart constaté et le contrôle après changement. Chaque unité conserve son rattachement au chapitre. Le relevé par diplôme décompte les unités et le reste à produire pour chaque module.
+Les neuf lots ont ajouté 6 552 exercices corrigés. Les 448 dossiers décrivent les données de métier et les sections du cours qui les expliquent. Les problèmes portent sur des méthodes distinctes, dont le calcul direct, la comparaison, le calcul inverse et l’interprétation. Les cas accompagnent le travail de préparation, le traitement des écarts et le contrôle après changement. Les 429 parcours A4 et PDF couvrent les trois activités des 80 modules CFC et 63 modules AFP aux quantités proposées par le générateur. La réserve minimale mesurée est de 33,36 px.
 
 ## Reprise opérationnelle
 
@@ -228,10 +229,10 @@ La publication des modules est terminée pour les deux diplômes. La publication
 
 | Diplôme | Modules | Types actifs | Problèmes de calcul | Questions de vérification | Situations |
 |---|---:|---:|---:|---:|---:|
-| CFC | 80 | 480 | 2277 | 3544 | 1494 |
-| AFP | 63 | 378 | 1638 | 2683 | 1097 |
+| CFC | 80 | 480 | 2529 | 4011 | 1657 |
+| AFP | 63 | 378 | 1890 | 3150 | 1260 |
 
-Les effectifs sont dédupliqués par identifiant dans chaque diplôme. La banque compte 7 315 unités d’exercice distinctes. Le tableau de complément trace la progression vers les cibles nominales du §5.1 (30 calculs, 50 vérifications et 20 situations par module et diplôme). Les demandes de sélection avancée en Évaluation et en Libre figurent dans les lots L1b à L1f.
+Les effectifs sont dédupliqués par identifiant dans chaque diplôme. La banque compte 8 197 unités d’exercice distinctes. Chaque module atteint la cible du §5.1 dans son diplôme, avec au moins 30 calculs, 50 vérifications et 20 mises en situation. Les demandes de sélection avancée en Évaluation et en Libre figurent dans les lots L1b à L1f.
 
 Pour un enrichissement ultérieur, partir des archives et du dossier éditorial du module, vérifier les droits par diplôme, les corrigés, la composition A4 et la continuité des recettes. Enregistrer chaque nouvelle révision et ses résultats dans ce suivi. [Archives par thème](sources-epcas/).
 
