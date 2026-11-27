@@ -15,6 +15,9 @@ import { module203 } from './banks/module-203-v001.generated.ts'
 import { module204 } from './banks/module-204-v001.generated.ts'
 import { module205 } from './banks/module-205-v001.generated.ts'
 import { module206 } from './banks/module-206-v001.generated.ts'
+import { module207 } from './banks/module-207-v001.generated.ts'
+import { module208 } from './banks/module-208-v001.generated.ts'
+import { module209 } from './banks/module-209-v001.generated.ts'
 import { module308 } from './banks/module-308-v001.generated.ts'
 import { module613 } from './banks/module-613-v001.generated.ts'
 import { module805 } from './banks/module-805-v001.generated.ts'
@@ -107,6 +110,10 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   illustratedPublication,
   serviceOrganisationPublication,
   serviceCommunicationPublication,
+  {
+    revision: 'logistique-207-208-209-v001',
+    units: [...serviceCommunicationPublication.units, ...module207, ...module208, ...module209],
+  },
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!

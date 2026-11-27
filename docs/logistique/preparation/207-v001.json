@@ -1,0 +1,255 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Clarifier un besoin et proposer une prestation avant la commande.\n- Distinguer les exigences impératives des critères de comparaison.\n- Lire une offre fournisseur et calculer son coût dans le périmètre défini.",
+  "overview": "## Aperçu du module 207\n\n- Le rôle de l’avant-vente et les informations à vérifier.\n- Les motifs d’achat et les questions qui permettent de préciser le besoin.\n- La comparaison de fournisseurs selon la qualité, le service et le coût.",
+  "replacements": [
+    {
+      "from": "L'importance des besoins peut être représentée avec la **pyramide des besoins** (Maslow). Les besoins **élémentaires** (manger, boire, dormir) constituent la base : leur satisfaction est nécessaire à la vie. Ce n'est que lorsque les besoins du niveau inférieur sont comblés que les besoins **supérieurs** entrent en ligne de compte.",
+      "to": "Le **modèle de Maslow** regroupe des besoins en catégories souvent représentées par une pyramide. Il aide à en parler. L’ordre des priorités varie selon les personnes et les situations.",
+      "reason": "Présente la hiérarchie comme un modèle."
+    },
+    {
+      "from": "**Constat :** une grande faim et une soif tenaillante évincent tous les autres besoins.",
+      "to": "**Exemple professionnel.** Une commande urgente peut être motivée par la disponibilité, la fiabilité du délai et le besoin de rassurer le client, à la fois.",
+      "reason": "Rend visible la coexistence des besoins."
+    },
+    {
+      "from": "Dans un contexte de gestion d'entreprise, la tâche principale de la vente est de générer un **chiffre d'affaires minimum** pour être rentable et assurer l'**existence** de l'entreprise.",
+      "to": "L’**avant-vente** clarifie l’usage, les contraintes et les conditions de l’offre avant l’achat. Les prestations possibles incluent une démonstration, une fiche technique, un devis ou la vérification du stock.",
+      "reason": "Précise le rôle pédagogique du module."
+    },
+    {
+      "from": "- Revenu **faible** → concentration sur les besoins **élémentaires**",
+      "to": "- Le budget disponible peut limiter les solutions. L’usage et la date convenue contribuent aussi au choix.",
+      "reason": "Évite un portrait fondé sur le revenu seul."
+    },
+    {
+      "from": "- Revenu **plus élevé** → autres motifs possibles :",
+      "to": "- Autres motifs possibles selon la situation :",
+      "reason": "Distingue des possibilités sans préjuger du public."
+    },
+    {
+      "from": "Pour trouver le **meilleur fournisseur** possible pour le produit requis, on effectue une **évaluation des fournisseurs**.",
+      "to": "Pour comparer des fournisseurs, définir les exigences indispensables, le périmètre et les critères. Une offre qui ne respecte pas une exigence impérative est écartée ou doit être clarifiée avant le classement.",
+      "reason": "Place les exigences avant la note comparée."
+    }
+  ],
+  "summary": [
+    "Avant la vente, clarifier l’usage, la quantité, la date et les contraintes, puis annoncer une offre vérifiable.",
+    "Filtrer les offres selon les exigences indispensables. Comparer ensuite le coût, la qualité et le service sur la même base.",
+    "Les notes pondérées rendent le choix explicite. Documenter les hypothèses et la date du relevé."
+  ],
+  "glossary": [
+    [
+      "avant-vente",
+      "Prestations et informations fournies avant une commande pour aider à choisir une offre."
+    ],
+    [
+      "besoin",
+      "Manque, objectif ou résultat que le client cherche à couvrir."
+    ],
+    [
+      "cahier des charges",
+      "Ensemble des exigences qui décrivent le résultat et les contraintes d’un achat."
+    ],
+    [
+      "comparaison pondérée",
+      "Moyenne ou somme de notes où chaque critère compte selon un poids annoncé."
+    ],
+    [
+      "coût total",
+      "Somme des coûts inclus dans le périmètre, par exemple prix, transport et installation."
+    ],
+    [
+      "critère éliminatoire",
+      "Exigence dont le non-respect empêche de retenir une offre."
+    ],
+    [
+      "délai proposé",
+      "Durée ou date présentée par le fournisseur, à confirmer selon les conditions de l’offre."
+    ],
+    [
+      "démonstration",
+      "Présentation pratique qui aide le client à apprécier l’usage d’un produit ou d’un service."
+    ],
+    [
+      "évaluation fournisseur",
+      "Examen d’une offre ou d’un fournisseur à partir d’exigences et de critères définis."
+    ],
+    [
+      "motif d’achat",
+      "Raison qui pousse une personne ou une organisation à choisir une offre."
+    ],
+    [
+      "offre",
+      "Proposition précisant les prestations, le prix et les conditions."
+    ],
+    [
+      "pondération",
+      "Poids attribué à un critère dans le résultat global."
+    ],
+    [
+      "quantité minimale",
+      "Quantité la plus basse à laquelle un fournisseur accepte une commande."
+    ],
+    [
+      "réservation",
+      "Mise à disposition prévue sous des conditions, une échéance et un périmètre précis."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-origine-1",
+      "kind": "maths",
+      "prompt": "Sur 15 000 personnes qui consultent une annonce, 20 % ouvrent la fiche. Parmi celles qui ouvrent la fiche, 5 % demandent une offre. Combien de demandes obtient-on ?",
+      "answer": "150 personnes demandent une offre.",
+      "calculation": "15 000 × 0,20 = 3 000. 3 000 × 0,05 = 150.",
+      "approvedFor": [
+        "CFC"
+      ]
+    },
+    {
+      "id": "maths-origine-2",
+      "kind": "maths",
+      "prompt": "Mille places peuvent être utilisées lors d’une journée portes ouvertes. Chaque place utilisée coûte 5 CHF. Quel est le coût maximal ?",
+      "answer": "Le coût maximal est de 5 000 CHF.",
+      "calculation": "1 000 × 5 = 5 000 CHF."
+    },
+    {
+      "id": "maths-origine-3",
+      "kind": "maths",
+      "prompt": "Un stand vend 500 articles à 6 CHF pièce. Le coût d’achat est de 1 CHF pièce. Calculez les recettes et le surplus avant les autres frais.",
+      "answer": "Les recettes sont de 3 000 CHF. Le surplus avant les autres frais est de 2 500 CHF.",
+      "calculation": "500 × 6 = 3 000 CHF. 3 000 − 500 × 1 = 2 500 CHF."
+    },
+    {
+      "id": "maths-origine-4",
+      "kind": "maths",
+      "prompt": "La préparation dure cinq jours de 8,25 heures. Le coût de travail retenu est de 25 CHF par heure. Calculez son montant.",
+      "answer": "Le coût retenu est de 1 031,25 CHF.",
+      "calculation": "5 × 8,25 × 25 = 1 031,25 CHF."
+    },
+    {
+      "id": "maths-creation-5",
+      "kind": "maths",
+      "prompt": "L’offre A facture 40 bacs à 12 CHF et 35 CHF de transport. L’offre B facture 40 bacs à 12,50 CHF et inclut le transport. Comparez les totaux.",
+      "answer": "L’offre B coûte 500 CHF, soit 15 CHF de moins que l’offre A.",
+      "calculation": "A : 40 × 12 + 35 = 515 CHF. B : 40 × 12,50 = 500 CHF."
+    },
+    {
+      "id": "maths-creation-6",
+      "kind": "maths",
+      "prompt": "La qualité pèse 60 % et le service 40 %. Un fournisseur a les notes 8 sur 10 et 5 sur 10. Calculez la note globale.",
+      "answer": "La note globale est de 6,8 sur 10.",
+      "calculation": "8 × 0,60 + 5 × 0,40 = 6,8.",
+      "approvedFor": [
+        "CFC"
+      ]
+    },
+    {
+      "id": "maths-creation-7",
+      "kind": "maths",
+      "prompt": "Une offre couvre 32 bacs sur les 45 requis. Combien de bacs doivent encore être trouvés ?",
+      "answer": "Il manque 13 bacs.",
+      "calculation": "45 − 32 = 13."
+    },
+    {
+      "id": "verification-origine-1",
+      "kind": "verification",
+      "prompt": "Citez deux prestations d’avant-vente utiles à un client professionnel.",
+      "answer": "Pour un équipement, proposer une démonstration et confirmer les quantités et délais possibles avant sa commande."
+    },
+    {
+      "id": "verification-origine-2",
+      "kind": "verification",
+      "prompt": "Nommez les cinq catégories de besoins du modèle présenté dans le cours.",
+      "answer": "Besoins physiologiques, sécurité, relations sociales, estime et réalisation de soi."
+    },
+    {
+      "id": "verification-origine-3",
+      "kind": "verification",
+      "prompt": "Citez deux motifs d’achat possibles et indiquez comment les vérifier.",
+      "answer": "Par exemple une contrainte de délai et une préférence de facilité d’usage. Poser des questions sur le besoin et l’échéance."
+    },
+    {
+      "id": "verification-origine-4",
+      "kind": "verification",
+      "prompt": "Donnez trois critères possibles pour évaluer des fournisseurs.",
+      "answer": "La conformité du produit, la fiabilité du délai et le coût total sur le périmètre demandé."
+    },
+    {
+      "id": "verification-creation-5",
+      "kind": "verification",
+      "prompt": "Quel est l’effet de la pondération sur une comparaison ?",
+      "answer": "Un critère de poids plus élevé contribue davantage à la note globale.",
+      "approvedFor": [
+        "CFC"
+      ]
+    },
+    {
+      "id": "verification-creation-6",
+      "kind": "verification",
+      "prompt": "Pourquoi distinguer l’indication d’un délai et l’engagement de livrer à une date ?",
+      "answer": "Un délai indicatif dépend d’hypothèses. Un engagement repose sur des conditions et une date confirmées."
+    },
+    {
+      "id": "situation-creation-1",
+      "kind": "situation",
+      "prompt": "Un client cherche des bacs empilables sans préciser la charge. Quels renseignements demandez-vous ?",
+      "answer": "Préciser dimensions, quantité, masse, hauteur d’empilage prévue, usage et date. Vérifier les caractéristiques dans le document du fournisseur."
+    },
+    {
+      "id": "situation-creation-2",
+      "kind": "situation",
+      "prompt": "L’offre la moins chère arrive après la date impérative du client. Comment présentez-vous la comparaison ?",
+      "answer": "Écarter ou signaler cette offre pour l’exigence de délai, puis comparer les offres recevables et les coûts retenus."
+    },
+    {
+      "id": "situation-creation-3",
+      "kind": "situation",
+      "prompt": "Le client demande à voir une caisse avant de commander. Organisez une suite adaptée.",
+      "answer": "Identifier le modèle et le besoin, confirmer la disponibilité d’un exemplaire ou d’une démonstration et convenir d’un lieu et d’une heure."
+    },
+    {
+      "id": "situation-creation-4",
+      "kind": "situation",
+      "prompt": "Un fournisseur propose un bon prix, mais la livraison et le montage sont facturés séparément. Que comparez-vous ?",
+      "answer": "Demander un total avec prix, livraison et montage, sur le même nombre d’articles et les mêmes conditions."
+    },
+    {
+      "id": "situation-creation-5",
+      "kind": "situation",
+      "prompt": "Deux offres ont une note globale proche. L’une a des délais moins stables. Quelles informations consolident le choix ?",
+      "answer": "Comparer les livraisons à temps sur la même période, vérifier la criticité de ce délai et consigner les conditions et la décision.",
+      "approvedFor": [
+        "CFC"
+      ]
+    }
+  ],
+  "editorialNotes": [
+    "Le modèle de besoins est présenté comme une aide de lecture dont l’ordre ne décrit pas tous les choix.",
+    "Les questions remplacent les explications par des instincts supposés par l’observation et la reformulation du besoin.",
+    "Les coûts et recettes sont distingués. La quantité et l’échéance sont précisées avant le calcul de la note."
+  ],
+  "visuals": [
+    {
+      "anchor": "7.2 Vente",
+      "file": "log-207-du-besoin-a-offre-schema-v001.svg",
+      "alt": "1. Clarifier — Quantité, usage et date. 2. Vérifier — Stock et conditions. 3. Présenter — Prix, délai et suite.",
+      "caption": "La disponibilité et le délai se vérifient avant d’annoncer la suite.",
+      "sha256": "90168823784f7f2e87bb5e9a7b1dae3a5c5cea7e53ae42c35b4fe947b16418b8",
+      "origin": "Schéma original Doc-Prof pour le module 207."
+    },
+    {
+      "anchor": "7.4 Les évaluations des fournisseurs",
+      "file": "log-207-comparer-fournisseurs-schema-v001.svg",
+      "alt": "1. Filtrer — Contrôler les exigences. 2. Comparer — Appliquer les critères. 3. Consigner — Noter la décision.",
+      "caption": "Une note globale ne compense pas une exigence impérative non respectée.",
+      "sha256": "abe822357c5ec348f3bb0b11172bf9748036d6bd6b7b7235284751c42a007abf",
+      "origin": "Schéma original Doc-Prof pour le module 207."
+    }
+  ]
+}
