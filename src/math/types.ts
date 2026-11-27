@@ -614,6 +614,7 @@ export type MathItem = {
   measureScale?: { kind: 'mass' | 'capacity' | 'duration'; unit: string; step: number; tick: number }
   lengthUnits?: { a: number; b: number }
   functionPairs?: { x: number; y: number }[]
+  graphPractice?: { pairs: { x: number; y: number }[]; task: 'read' | 'plot'; yStep: number }
   /** Segments à mesurer à taille réelle. */
   segments?: Array<{ mm: number; unit: 'mm' | 'cm'; display: string; slope?: number }>
   /** Plan de métro (TCM CFR). */

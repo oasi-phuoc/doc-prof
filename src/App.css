@@ -6614,3 +6614,14 @@ textarea.pill-input,
 .math-square-grid .is-filled{border-color:#48576a;background:#dce4ef;print-color-adjust:exact}
 .math-solid-choices img{display:block;width:40mm;height:auto;max-width:100%;object-fit:contain}
 .math-solid-choices .math-square-grid td{width:3.2mm;height:3.2mm}
+
+.math-table-and-graph{display:grid;justify-items:center;gap:1.5mm}
+.math-table-and-graph>p{justify-self:start}
+.math-temperature-graph{display:block;width:min(49mm,100%);height:auto;overflow:visible;color:#182238}
+.math-temperature-graph text{fill:currentColor;font-size:9px}
+.math-graph-grid{stroke:#a2adbb;stroke-width:.65}
+.math-graph-grid.is-minor{stroke:#c6cdd5}
+.math-graph-axes{fill:none;stroke:#101828;stroke-width:1.25}
+.math-graph-series polyline{fill:none;stroke:#263e70;stroke-width:1.6}
+.math-graph-series circle{fill:#263e70}
+.math-table-and-graph table{margin:0;font-size:.84em}

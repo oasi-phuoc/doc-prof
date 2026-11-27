@@ -68,6 +68,7 @@ import {
   WordSearchBlock,
 } from './item-view/vocab'
 
+import { TableAndGraph } from './item-view/function-practice'
 import { AreaFigures, SolidViewChoices } from './item-view/geometry-practice'
 import { MeasurementScale } from './item-view/measurement-practice'
 import { MathTheoryView } from './item-view/math-theory'
@@ -478,8 +479,9 @@ export function ItemView({
         {item.solidViews && <SolidViewChoices solid={item.solidViews} />}
         {item.measureScale && <MeasurementScale scale={item.measureScale} />}
         {item.numberLine && <NumberLinePractice line={item.numberLine} />}
+        {item.graphPractice && <TableAndGraph graph={item.graphPractice} prompt={item.prompt ?? ''} mode={mode} />}
         {item.functionPairs && <FunctionValueTable pairs={item.functionPairs} />}
-        {isStackedText && !item.convert && <StackedPrompt item={item} mode={mode} showHelp={problemHelp} />}
+        {isStackedText && !item.convert && !item.graphPractice && <StackedPrompt item={item} mode={mode} showHelp={problemHelp} />}
         {!isProblem &&
           !isStackedText &&
           item.layout === 'inline' &&

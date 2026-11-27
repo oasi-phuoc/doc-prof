@@ -123,8 +123,8 @@ export const mathTheoryLessons: Record<string, MathTheoryLesson> = {
   fonctions: {
     title: 'Entrée, règle et résultat',
     goal: 'Une fonction donne un seul résultat pour chaque entrée.',
-    words: [['x', 'Le nombre d’entrée.'], ['y', 'Le résultat après le calcul.']],
-    steps: ['Choisissez une valeur de x.', 'Appliquez la règle dans l’ordre.', 'Écrivez le résultat y.'],
+    words: [['x', 'Le nombre d’entrée. Sur le graphique, on le lit en bas.'], ['y', 'Le résultat. Sur le graphique, on le lit à gauche.'], ['Origine', 'Le point où x et y valent 0.']],
+    steps: ['Choisissez x. Faites le calcul pour trouver y.', 'Dans un tableau, écrivez x et y dans la même colonne. Sur le graphique, placez le point (x ; y).', 'Une situation proportionnelle donne une droite qui passe par l’origine. Avec des frais fixes, le prix à x = 0 est déjà plus grand que 0.'],
     example: 'Avec y = 2x + 1, si x = 3, alors y = 7.',
     visualAlt: 'La valeur 3 entre dans une boîte : multiplier par 2 puis ajouter 1. La valeur 7 sort.',
   },
