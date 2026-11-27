@@ -9,6 +9,7 @@ const { logistiquePublications } = load(root + '/src/logistique/approved-banks.t
 const baseline = logistiquePublications.find(({ revision }) => revision === 'logistique-exercices-approvisionnement-v004')
 const theme = process.argv[2]
 if (!/^[1-9]00$/.test(theme)) throw new Error('Indiquez un thème de 100 à 900.')
+const compactCases = ['100', '200', '300'].includes(theme)
 const input = new URL(`../docs/logistique/preparation/dossiers-${theme}-v005.txt`, import.meta.url)
 const destination = new URL(`../src/logistique/banks/dossiers-${theme}-v005.generated.ts`, import.meta.url)
 const groups = readFileSync(input, 'utf8').trim().split(/^# /mu).filter(Boolean)
@@ -48,6 +49,11 @@ const modelQuestions = {
   tableValues: ['Que faut-il revérifier après modification d’une ligne dans un tableau ?', 'Vérifiez l’unité, le total et toutes les valeurs de synthèse qui dépendent de la ligne modifiée.'],
   environment: ['Pourquoi rapporter la masse de déchets au nombre de visiteurs ?', 'L’indicateur par visiteur permet de comparer des événements de fréquentations différentes, avec le même périmètre de déchets.'],
   impact: ['Pourquoi vérifier le service couvert avant de comparer deux estimations d’impact ?', 'Une comparaison porte sur des parcours et quantités couvrant le même besoin, avec des facteurs calculés sur un périmètre comparable.'],
+  journey: ['Quel groupe sert de base si l’on mesure le passage d’une étape du parcours client à la suivante ?', 'Le groupe qui a atteint la première des deux étapes comparées. Le taux indique la part qui atteint ensuite la seconde.'],
+  market: ['Quelles données faut-il harmoniser pour calculer une part de marché ?', 'La zone, la période, la catégorie d’articles et l’unité des ventes. Le marché et l’entreprise doivent être mesurés de la même façon.'],
+  saleCash: ['Quel montant appartient à l’encaissement quand une vente a été payée en partie ?', 'Seule la part effectivement versée appartient à l’encaissement. La vente et le solde dû sont suivis séparément.'],
+  tolerance: ['Pourquoi comparer une tolérance et une mesure dans la même unité ?', 'Les valeurs doivent représenter une même grandeur avant de décider si la lecture se trouve entre les limites.'],
+  orderSize: ['À quoi sert la quantité donnée par la formule d’Andler ?', 'Elle donne un repère dans un modèle de demande et de coûts stables. On vérifie ensuite les lots, la capacité et les conditions praticables.'],
 }
 
 const followUps = {
@@ -84,6 +90,11 @@ const followUps = {
   tableValues: 'Une source corrige la dernière ligne du tableau présenté.',
   environment: 'La fréquentation réelle change et le bilan doit être recalculé.',
   impact: 'Un tronçon est modifié dans l’une des options de transport.',
+  journey: 'Le relevé est corrigé pour distinguer les personnes intéressées et les achats effectifs.',
+  market: 'La zone étudiée est élargie à des vendeurs supplémentaires.',
+  saleCash: 'Un acompte arrive après l’établissement du premier relevé des ventes.',
+  tolerance: 'Une lecture est corrigée avec une unité différente sur la nouvelle fiche.',
+  orderSize: 'Le fournisseur change la taille des conditionnements qui peuvent être commandés.',
 }
 
 function sections(blocks, reference) {
@@ -137,9 +148,9 @@ for (const group of groups) {
     ]
     for (const [index, pair] of facts.entries()) add('verification', `${id}-${index + 1}`, theorySection, pair)
     const cases = [
-      [`${context} Vous préparez l’opération. a) Formulez l’objectif. b) Expliquez le contrôle à prévoir. c) Indiquez la trace à préparer.`, `a) ${objective} b) ${rule} c) ${evidence}`],
-      [`${anomaly} Vous reprenez le dossier. a) Indiquez la suite immédiate. b) Justifiez-la par une conséquence possible. c) Dites ce que votre collègue doit retrouver dans la trace.`, `a) ${action} b) ${consequence} c) ${evidence}`],
-      [`${title}. ${followUps[model]} a) Indiquez le critère à vérifier sur la nouvelle donnée. b) Précisez ce que vous consignez. c) Expliquez le risque si l’ancienne conclusion est réutilisée.`, `a) ${rule} b) ${evidence} c) ${consequence}`],
+      [`${context} ${compactCases ? 'a) Donnez l’objectif. b) Que vérifiez-vous ? c) Que consignez-vous ?' : 'Vous préparez l’opération. a) Formulez l’objectif. b) Expliquez le contrôle à prévoir. c) Indiquez la trace à préparer.'}`, `a) ${objective} b) ${rule} c) ${evidence}`],
+      [`${anomaly} ${compactCases ? 'a) Décidez de la suite. b) Quel risque évitez-vous ? c) Que consignez-vous ?' : 'Vous reprenez le dossier. a) Indiquez la suite immédiate. b) Justifiez-la par une conséquence possible. c) Dites ce que votre collègue doit retrouver dans la trace.'}`, `a) ${action} b) ${consequence} c) ${evidence}`],
+      [`${title}. ${followUps[model]} ${compactCases ? 'a) Quel critère vérifiez-vous ? b) Que consignez-vous ? c) Quel risque subsiste ?' : 'a) Indiquez le critère à vérifier sur la nouvelle donnée. b) Précisez ce que vous consignez. c) Expliquez le risque si l’ancienne conclusion est réutilisée.'}`, `a) ${rule} b) ${evidence} c) ${consequence}`],
     ]
     for (const [index, pair] of cases.entries()) add('situation', `${id}-${index + 1}`, theorySection, pair)
   }

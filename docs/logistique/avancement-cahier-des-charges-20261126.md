@@ -217,6 +217,7 @@ Les 72 parcours A4 et PDF couvrent les banques complètes de calculs, de vérifi
 | 700 — Inventaire et finances | 429 | Les cinq modules CFC et le 701 AFP atteignent les trois cibles. Les problèmes appliquent la valorisation, les coûts du personnel et du stockage, l’amortissement et les KPI. 18 parcours A4 et PDF vérifiés, avec une réserve minimale de 60,80 px. [Dossiers de finance](preparation/dossiers-700-v005.txt). |
 | 800 — Informatique | 781 | Les neuf modules CFC et six modules AFP atteignent les trois cibles. Les calculs couvrent notamment les clés GTIN, les relevés de transport, les formats numériques, les références Excel et les proportions des supports. 45 parcours A4 et PDF vérifiés, avec une réserve minimale de 41,95 px. [Dossiers](preparation/dossiers-800-v005.txt). |
 | 900 — Projets | 163 | Les deux modules CFC atteignent les trois cibles. Les calculs mettent en pratique la faisabilité, la planification, le budget et le suivi du service. 6 parcours A4 et PDF vérifiés, avec une réserve minimale de 41,95 px. [Dossiers](preparation/dossiers-900-v005.txt). |
+| 100 — Fondations | 831 | Les onze modules atteignent les trois cibles dans les deux diplômes. Les calculs appliquent notamment les flux, le suivi du stock, les propriétés des marchandises, le réemploi et les mesures environnementales. 66 parcours A4 et PDF vérifiés, avec une réserve minimale de 35,08 px. [Dossiers](preparation/dossiers-100-v005.txt). |
 
 Les révisions `v005` ajoutent des problèmes à partir de données de métier, des vérifications et des cas portant sur la préparation, l’écart constaté et le contrôle après changement. Chaque unité conserve son rattachement au chapitre. Le relevé par diplôme décompte les unités et le reste à produire pour chaque module.
 
@@ -226,10 +227,10 @@ La publication des modules est terminée pour les deux diplômes. La publication
 
 | Diplôme | Modules | Types actifs | Problèmes de calcul | Questions de vérification | Situations |
 |---|---:|---:|---:|---:|---:|
-| CFC | 80 | 480 | 1834 | 2757 | 1230 |
-| AFP | 63 | 378 | 1195 | 1896 | 833 |
+| CFC | 80 | 480 | 2083 | 3192 | 1377 |
+| AFP | 63 | 378 | 1444 | 2331 | 980 |
 
-Les effectifs sont dédupliqués par identifiant dans chaque diplôme. La banque compte 5 821 unités d’exercice distinctes. Le tableau de complément trace la progression vers les cibles nominales du §5.1 (30 calculs, 50 vérifications et 20 situations par module et diplôme). Les demandes de sélection avancée en Évaluation et en Libre figurent dans les lots L1b à L1f.
+Les effectifs sont dédupliqués par identifiant dans chaque diplôme. La banque compte 6 652 unités d’exercice distinctes. Le tableau de complément trace la progression vers les cibles nominales du §5.1 (30 calculs, 50 vérifications et 20 situations par module et diplôme). Les demandes de sélection avancée en Évaluation et en Libre figurent dans les lots L1b à L1f.
 
 Pour un enrichissement ultérieur, partir des archives et du dossier éditorial du module, vérifier les droits par diplôme, les corrigés, la composition A4 et la continuité des recettes. Enregistrer chaque nouvelle révision et ses résultats dans ce suivi. [Archives par thème](sources-epcas/).
 

@@ -411,8 +411,66 @@ function impact(_unit, [firstKm, secondKm, rate, secondRate, runs, goal]) {
   ]
 }
 
+function journey(_unit, [seen, interested, requested, bought, goal, second]) {
+  return [
+    [`Sur ${seen} personnes qui voient l’offre, ${interested} s’y intéressent. Calculez le taux d’intérêt rapporté au premier groupe, au centième.`, `${percent(interested, seen)} %`, `Divisez les personnes intéressées par celles qui ont vu l’offre et multipliez par 100.`],
+    [`Parmi les ${interested} personnes intéressées, ${requested} demandent une information détaillée et ${bought} de celles-ci achètent. Calculez le taux d’achat parmi les demandes détaillées, au centième.`, `${percent(bought, requested)} %`, `Le public de départ pour ce taux est celui des ${requested} demandes détaillées. Calculez ${bought} ÷ ${requested} × 100.`],
+    [`Le suivi compte ${seen} personnes au premier contact et ${bought} achats issus de ces contacts. Calculez le taux de passage du premier contact à l’achat.`, `${percent(bought, seen)} %`, `Comparez l’action finale à l’effectif du début, en gardant les deux valeurs du même dossier.`],
+    [`Le groupe des personnes intéressées compte ${interested} personnes. On vise au moins ${goal} % d’achats dans cette base. Combien d’achats entiers faut-il ?`, `${Math.ceil(interested * goal / 100)} achats`, `Appliquez le taux cible à la base et arrondissez au supérieur si le nombre n’est pas entier.`],
+    [`Sur la même base de ${requested} demandes détaillées, les achats passent de ${bought} à ${second} après une correction du suivi. De combien de points le taux change-t-il ?`, `${percent(second - bought, requested)} points`, `Le dénominateur reste ${requested}. La variation vaut (${second} − ${bought}) ÷ ${requested} × 100.`],
+  ]
+}
+
+function market(unit, [firstSales, firstMarket, secondSales, secondMarket, otherSales, goal]) {
+  return [
+    [`L’entreprise vend ${firstSales} ${unit} sur un marché de ${firstMarket} unités pendant le trimestre. Calculez sa part de marché en volume au centième.`, `${percent(firstSales, firstMarket)} %`, `Divisez les ventes de l’entreprise par les ventes du marché dans le même périmètre.`],
+    [`Deux zones distinctes donnent ${firstSales} ventes sur ${firstMarket} et ${secondSales} sur ${secondMarket}. Calculez la part de l’entreprise sur les deux zones réunies.`, `${percent(firstSales + secondSales, firstMarket + secondMarket)} %`, `Additionnez ventes de l’entreprise et ventes du marché par zone avant de calculer le taux global.`],
+    [`La part en volume vaut ${percent(firstSales, firstMarket)} % dans une zone et ${percent(secondSales, secondMarket)} % dans l’autre. Calculez la variation signée seconde moins première, au centième à partir des taux indiqués.`, `${n(Number(percent(secondSales, secondMarket).replace(',', '.')) - Number(percent(firstSales, firstMarket).replace(',', '.')))} points`, `Soustrayez les deux pourcentages indiqués et exprimez l’écart en points de pourcentage.`],
+    [`Sur ${firstMarket} ${unit} vendues au total, deux vendeurs en vendent ${firstSales} et ${otherSales}. Combien d’unités appartiennent aux ventes des autres vendeurs ?`, `${firstMarket - firstSales - otherSales} ${unit}`, `Soustrayez les ventes des deux fournisseurs du volume total du marché.`],
+    [`Le marché reste à ${firstMarket} ${unit}. Quel volume entier minimal de ventes faut-il pour atteindre au moins ${goal} % du marché ?`, `${Math.ceil(firstMarket * goal / 100)} ${unit}`, `Appliquez le pourcentage cible à l’ensemble du marché puis arrondissez au supérieur si nécessaire.`],
+  ]
+}
+
+function saleCash(_unit, [first, second, third, deposit, shipping, refund]) {
+  const billed = first + second + third
+  return [
+    [`Trois ventes facturées valent CHF ${first}, ${second} et ${third}. Calculez le chiffre d’affaires de ces opérations avant toute correction.`, `CHF ${n(billed)}`, `Additionnez les montants des ventes du même dossier. ${first} + ${second} + ${third} = ${billed}.`],
+    [`Le prix convenu est CHF ${third} et le débiteur verse un acompte de CHF ${deposit}. Quel solde doit-il encore régler ?`, `CHF ${n(third - deposit)}`, `Déduisez l’acompte déjà versé du montant convenu.`],
+    [`Les ventes sont facturées CHF ${first}, ${second} et ${third}. Les deux premières sont payées et la dernière donne un acompte de CHF ${deposit}. Calculez le montant encaissé.`, `CHF ${n(first + second + deposit)}`, `Comptez les montants effectivement versés, sans ajouter le solde de la dernière vente.`],
+    [`Le prix des marchandises de la commande vaut CHF ${third}. L’offre prévoit CHF ${shipping} pour la livraison et le client a payé CHF ${deposit}. Quel montant reste à encaisser selon ces conditions ?`, `CHF ${n(third + shipping - deposit)}`, `Additionnez le prix et les frais facturés, puis retirez le montant déjà payé.`],
+    [`Un avoir de CHF ${refund} corrige la vente de CHF ${second}. Les deux autres ventes sont de CHF ${first} et ${third}. Calculez le chiffre d’affaires corrigé pour ces ventes.`, `CHF ${n(billed - refund)}`, `Le chiffre d’affaires d’origine vaut CHF ${billed}. Retranchez l’avoir de CHF ${refund}.`],
+  ]
+}
+
+function tolerance(_unit, [target, allowed, first, second, third, reference]) {
+  const min = target - allowed
+  const max = target + allowed
+  const measured = [first, second, third]
+  const errors = measured.filter((value) => value < min - 1e-9 || value > max + 1e-9).length
+  return [
+    [`La dimension cible est de ${n(target)} mm, avec une tolérance de ± ${n(allowed)} mm. Donnez l’intervalle accepté avec ses limites.`, `${n(min)} à ${n(max)} mm`, `Soustrayez puis ajoutez la tolérance à la dimension cible.`],
+    [`Vous mesurez ${n(first)} mm pour une cible de ${n(target)} mm. Quel écart signé, mesure moins cible, relevez-vous ?`, `${n(first - target)} mm`, `L’écart vaut ${n(first)} − ${n(target)} = ${n(first - target)} mm.`],
+    [`Le plan accepte de ${n(min)} à ${n(max)} mm, limites incluses. Les trois lectures sont ${measured.map(n).join(', ')} mm. Combien sortent de l’intervalle ?`, `${errors} lectures`, `Comparez chaque valeur aux deux limites. Le nombre de lectures hors des limites est de ${errors}.`],
+    [`Deux mesures du même format valent ${n(second)} et ${n(third)} mm. Quelle différence absolue en centimètres faut-il transmettre au millième ?`, `${n3(Math.abs(second - third) / 10)} cm`, `Calculez la différence absolue en mm, puis divisez par 10 pour l’exprimer en cm.`],
+    [`Un contrôle de référence compare ${n(reference)} mm attendus à une lecture de ${n(first)} mm. L’écart maximum admis pour ce contrôle est de ${n(allowed)} mm. Vérifiez la différence absolue et le critère.`, `${n(Math.abs(first - reference))} mm, critère ${Math.abs(first - reference) <= allowed + 1e-9 ? 'respecté' : 'dépassé'}`, `Comparez la différence absolue à la limite de ${n(allowed)} mm.`],
+  ]
+}
+
+function orderSize(_unit, [annual, order, price, rate, lot, alternate]) {
+  const holding = price * rate / 100
+  const optimal = Math.sqrt(2 * annual * order / holding)
+  return [
+    [`Le prix est de CHF ${price} par unité et le coût annuel de possession est de ${rate} % du prix. Calculez le coût de possession annuel par unité.`, `CHF ${n(holding)} par unité`, `Multipliez le prix par le taux annuel transformé en décimal.`],
+    [`La demande annuelle est de ${annual} unités et la commande coûte CHF ${order}. Avec un coût de possession de CHF ${n(holding)} par unité et par an, calculez la quantité d’Andler au centième.`, `${n(optimal)} unités`, `Le modèle donne √(2 × ${annual} × ${order} ÷ ${n(holding)}) ≈ ${n(optimal)}.`],
+    [`On prévoit de commander par lots de ${lot} pour ${annual} unités par an. Donnez le nombre de commandes du modèle théorique au centième, puis le coût annuel associé.`, `${n(annual / lot)} commandes, CHF ${n(annual / lot * order)}`, `Divisez la demande annuelle par le lot, puis multipliez ce rapport non arrondi par CHF ${order} par commande.`],
+    [`Dans le modèle, le stock moyen d’un lot de ${lot} est la moitié du lot. Avec CHF ${n(holding)} de possession par unité, calculez le coût annuel correspondant.`, `CHF ${n(lot / 2 * holding)}`, `Le stock moyen vaut ${n(lot / 2)} unités. Multipliez par le coût annuel unitaire.`],
+    [`Le modèle recommande ${n(optimal)} unités. Le poste ne peut acheter que par multiples de ${alternate}. Quels multiples immédiatement inférieur et supérieur encadrent la quantité recommandée ?`, `${Math.floor(optimal / alternate) * alternate} et ${Math.ceil(optimal / alternate) * alternate} unités`, `Repérez les deux multiples de ${alternate} qui encadrent la valeur du modèle avant de comparer les options réalisables.`],
+  ]
+}
+
 export const dossierMaths = {
   stock, series, planning, area, audit, cost, mass, levels, cadence, lever,
   route, tonneDistance, volume, tension, depreciation, payroll, indicator, result, capital, service, valuation, expense, benefits,
-  codeCheck, spreadsheet, printing, files, playback, locale, layout, tableValues, environment, impact,
+  codeCheck, spreadsheet, printing, files, playback, locale, layout, tableValues, environment, impact, journey, market, saleCash,
+  tolerance, orderSize,
 }
