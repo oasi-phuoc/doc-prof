@@ -78,6 +78,12 @@ Les 12 types de volumes reprennent les champs de cotes, l’unité, la valeur de
 
 L’inventaire relève 494 raccordements A4 en attente sur 4 269 contextes et aucune erreur de génération. Les 14 recettes témoins se réécrivent et se rouvrent avec leur contenu. Les quatre nouveaux témoins couvrent l’axe choisi et les périmètres, aires et volumes personnalisés avec leur verrou.
 
+### Repérage des formes et des points en A4
+
+Les cinq variantes de lecture, de placement et de composition reprennent les formes ou les points affichés quand leur composition manuelle commence. Le réglage de quantité garde les éléments existants. Les commandes de dimensions refusent une réduction qui retirerait un élément déjà placé.
+
+`node tests/mode-libre/reperage-browser.mjs` vérifie le maintien du tirage des cinq variantes, l’ajout et le retrait de formes, le changement de quantité, le déplacement de l’origine et l’annulation. La recette des symétries est aussi repassée avec le ciblage du repère de l’activité active.
+
 ### Écoute de mots en Soutien FR et Alphabétisation
 
 Le panneau Libre permet de changer les mots des activités d’écoute avec QR et des activités d’écoute illustrées. La banque fournit les médias associés et le son de la leçon détermine la coche proposée dans le corrigé. La case reste modifiable pour une prononciation particulière. Un changement de quantité ou de colonnes conserve les mots personnalisés et leurs médias.

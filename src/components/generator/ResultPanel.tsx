@@ -232,7 +232,7 @@ export function ResultPanel({
   const showCorrectionFollow = sheetProps.mode === 'answers' && onLastPage && correctionFollow.length > 0
   const showTranscriptionPreview =
     sheetProps.mode === 'answers' && transcriptionPacks.length > 0 && onLastPage
-  const coordEdit = libreMode && (isTransform || ((isFormes || isCadrans) && activeBlock.coordLibre))
+  const coordEdit = libreMode && (isTransform || ((isFormes || isCadrans) && activeBlock.coordLibre && !activeBlock.libreItems?.length))
       ? {
           selectedKind: selectedCoordShape,
           placingOrigin: isComposer && coordTool === 'origin',
@@ -271,7 +271,7 @@ export function ResultPanel({
       onSelectTcfFormForExercise={selectTcfFormForExercise}
       onToggleFormulaireLetterGrid={toggleFormulaireLetterGrid}
       onToggleTcfPageBreak={(itemIndex, block, question) => toggleTcfPageBreak(itemIndex, block, index, question)}
-      coordEdit={coordEdit}
+      coordEdit={(sheet.configIndex ?? index) === activeConfig ? coordEdit : undefined}
       {...sheetProps}
     />
   )

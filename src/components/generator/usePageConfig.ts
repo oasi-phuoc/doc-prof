@@ -35,7 +35,9 @@ import {
   isReperageComposer,
   isReperageConstruire,
   isReperageDroites,
+  isReperageFormes,
   resolveAxesGrid,
+  resizeReperageMarks,
 } from '@/math/coord-reperage'
 import {
   isTransformationExercise,
@@ -117,6 +119,20 @@ export function usePageConfig({
       if (!window.confirm('Remplacer cette activité et ses questions verrouillées ?')) return
     }
     const count = patch.count
+    if (count !== undefined && !patch.exerciseType && !Object.hasOwn(patch, 'coordMarks') &&
+        activeBlock.coordLibre && (isReperageFormes(activeBlock.exerciseType) || isReperageCadrans(activeBlock.exerciseType))) {
+      const scene = blockItemsForConfig(worksheets, pageIndex, safeBlockIndex)?.items[0]?.coordScene
+      if (scene) {
+        const marks = resizeReperageMarks(scene, count, isReperageComposer(activeBlock.exerciseType))
+        if (!marks) {
+          window.alert('Le repère ne contient pas assez de places disponibles.')
+          return
+        }
+        if (marks.length < scene.marks.length && !window.confirm('Retirer les derniers éléments du repère ?')) return
+        patch = { ...patch, coordMarks: marks, ...(editorProfile === 'points-de-reperage'
+          ? { libreItems: undefined, libreInstruction: undefined } : {}) }
+      }
+    }
     if (count !== undefined && !patch.exerciseType && !Object.hasOwn(patch, 'coordMarks') &&
         activeBlock.coordLibre && isTransformationExercise(activeBlock.exerciseType)) {
       const item = blockItemsForConfig(worksheets, pageIndex, safeBlockIndex)?.items[0]

@@ -667,7 +667,7 @@ export function WorksheetSheet({
                           : undefined
                       }
                       hideMotsBanque={hideBanque}
-                      coordEdit={coordEdit}
+                      coordEdit={settingsBlockIndex === undefined || blockIndex === settingsBlockIndex ? coordEdit : undefined}
                     />
                   )
                 }))}

@@ -309,7 +309,7 @@ export function GeneratorPage({
 
   /** Les exercices encore ouverts avec validation conservent leur dernière version appliquée. */
   const previewSource = useMemo(() => {
-    if (!libreMode || (activeBlock.coordLibre && activeProfile !== 'questions-de-reperage' && activeProfile !== 'symetrie') ||
+    if (!libreMode || (activeBlock.coordLibre && !activeProfile) ||
       !libreSnapshot || libreSnapshot.length !== pages.length) return null
     return libreSnapshot.map((page, index) => {
       const live = pages[index] ?? page
@@ -1000,7 +1000,7 @@ export function GeneratorPage({
                   <summary>Présentation du contenu</summary>
                   <div className="worksheet-settings-list" ref={setWorksheetSettingsTarget} />
                 </details>
-                {ctx.isFormes && activeBlock.coordLibre && (
+                {ctx.isFormes && activeBlock.coordLibre && !activeBlock.libreItems?.length && (
                   <div role="group" aria-label="Formes à placer">
                     <FormesPalette
                       marks={activeBlock.coordMarks ?? []}
@@ -1029,7 +1029,7 @@ export function GeneratorPage({
                 id={`${arithmeticActivityId(activeBlock, seed, pageIndex, safeBlockIndex, reservedActivityIds)}:${activeBlock.exerciseType}`}
                 fields={transientFields} writeField={writeTransientField} />
             )}
-            {libreMode && activeProfile !== 'symetrie' && (
+            {libreMode && activeProfile !== 'symetrie' && activeProfile !== 'points-de-reperage' && (
               <LibreActivityEditor
                 activeBlock={activeBlock}
                 activeSheet={activeSheet}

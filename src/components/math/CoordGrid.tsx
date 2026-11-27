@@ -240,7 +240,7 @@ function CellsScene({
                 />
               ) : null}
               {mark ? (
-                <g data-coord-shape={mark.kind} style={{color:shapeColors?.[mark.kind]}} fill="currentColor" stroke="currentColor" strokeWidth={0.22} strokeLinejoin="round">
+                <g data-coord-shape={mark.kind} pointerEvents={editable ? 'none' : undefined} style={{color:shapeColors?.[mark.kind]}} fill="currentColor" stroke="currentColor" strokeWidth={0.22} strokeLinejoin="round">
                   <CoordShapeGlyph kind={mark.kind} x={cx} y={cy} size={glyph} />
                   {mark.label ? (
                     <text x={cx + 1.8} y={cy - 1.6} className="point-label" fontSize={3.4}>

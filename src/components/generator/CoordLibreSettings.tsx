@@ -10,13 +10,11 @@ import {
   COORD_SHAPES,
   FORMES_CELL_MM_OPTIONS,
   clampFormesCellMm,
-  clampFormesCols,
-  clampFormesRows,
-  coordSizeFor,
   FORMES_MAX_BY_MM,
   maxFormesColsForCell,
   maxFormesRowsForCell,
   resolveAxesGrid,
+  resolveFormesGrid,
   sceneFromAxesLibre,
 } from '@/math/coord-reperage'
 import type { CoordAxis, ExerciseBlock, PageConfig, WorksheetPage } from '@/math/types'
@@ -64,7 +62,28 @@ export function CoordLibreSettings({
   activeSheet,
   safeBlockIndex,
 }: CoordLibreSettingsProps) {
-  const cfrScene = activeSheet?.blocks?.[safeBlockIndex]?.items?.[0]?.coordScene
+  const cfrScene = activeSheet?.blocks?.find((block, index) => (block.sourceBlockIndex ?? index) === safeBlockIndex)
+    ?.items[0]?.coordScene
+  const composed = Boolean(activeBlock.coordLibre && !activeBlock.libreItems?.length)
+  const formGrid = resolveFormesGrid(activeAsPage, activeBlock.difficulty)
+  const formAxis = cfrScene?.variant === 'cells' ? cfrScene.axis : activeBlock.coordAxis ?? 'letters'
+  function updateFormesGrid(patch: Partial<ExerciseBlock>) {
+    const next = resolveFormesGrid({ ...activeAsPage, ...patch }, activeBlock.difficulty)
+    const marks = composed ? activeBlock.coordMarks : activeBlock.libreItems?.length && cfrScene?.variant === 'cells' ? cfrScene.marks : undefined
+    if (marks?.some(({ x, y }) => x > next.cols || y > next.rows)) {
+      window.alert('Le tableau doit contenir toutes les formes déjà placées.')
+      return
+    }
+    updatePage({
+      ...patch, coordCols: next.cols, coordRows: next.rows, coordCellMm: next.cellMm,
+      ...(marks ? { coordLibre: true, coordMarks: marks } : {}),
+    })
+  }
+  function resetComposition() {
+    if (!activeBlock.coordLibre) return
+    if (activeBlock.coordMarks?.length && !window.confirm('Revenir à la composition automatique du repère ?')) return
+    updatePage({ coordLibre: false, coordMarks: undefined })
+  }
   const cfrUnit = activeBlock.coordUnitSquares ?? cfrScene?.unitSquares ?? 1
   const cfrMax = activeBlock.coordRange ?? cfrScene?.rangeX ?? 22 / cfrUnit
   return (
@@ -88,23 +107,24 @@ export function CoordLibreSettings({
                   <div className="mode-toggle" role="group" aria-label="Mode du tableau">
                     <button
                       type="button"
-                      className={!activeBlock.coordLibre ? 'active' : ''}
-                      onClick={() => updatePage({ coordLibre: false })}
+                      className={!composed ? 'active' : ''}
+                      onClick={resetComposition}
                     >
                       Automatique
                     </button>
                     <button
                       type="button"
-                      className={activeBlock.coordLibre ? 'active' : ''}
+                      className={composed ? 'active' : ''}
                       onClick={() => {
-                        const size = coordSizeFor(activeBlock.difficulty)
-                        const empty = !activeBlock.coordMarks?.length
+                        if (composed) return
+                        const scene = cfrScene?.variant === 'cells' ? cfrScene : undefined
                         updatePage({
                           coordLibre: true,
-                          coordCols: empty ? size.cols : (activeBlock.coordCols ?? size.cols),
-                          coordRows: empty ? size.rows : (activeBlock.coordRows ?? size.rows),
-                          coordAxis: activeBlock.coordAxis ?? 'letters',
-                          coordMarks: activeBlock.coordMarks ?? [],
+                          coordCols: scene?.cols ?? formGrid.cols,
+                          coordRows: scene?.rows ?? formGrid.rows,
+                          coordCellMm: scene?.cellMm ?? formGrid.cellMm,
+                          coordAxis: formAxis,
+                          coordMarks: scene?.marks ?? [],
                         })
                       }}
                     >
@@ -113,8 +133,8 @@ export function CoordLibreSettings({
                     </div>
                   <SelectBox
                     label="Axes"
-                    value={activeBlock.coordAxis ?? 'letters'}
-                    onChange={(value) => updatePage({ coordAxis: value as CoordAxis })}
+                    value={formAxis}
+                    onChange={(value) => updateFormesGrid({ coordAxis: value as CoordAxis })}
                   >
                     <option value="letters">Lettres en bas</option>
                     <option value="letters-y">Lettres à gauche</option>
@@ -128,16 +148,9 @@ export function CoordLibreSettings({
                         type="number"
                         min={3}
                         max={maxFormesColsForCell(clampFormesCellMm(activeBlock.coordCellMm))}
-                        value={activeBlock.coordCols ?? coordSizeFor(activeBlock.difficulty).cols}
+                        value={formGrid.cols}
                         onChange={(event) => {
-                          const cols = clampFormesCols(
-                            Number(event.target.value),
-                            clampFormesCellMm(activeBlock.coordCellMm),
-                          )
-                          updatePage({
-                            coordCols: cols,
-                            coordMarks: (activeBlock.coordMarks ?? []).filter((mark) => mark.x <= cols),
-                          })
+                          if (event.currentTarget.value) updateFormesGrid({ coordCols: event.currentTarget.valueAsNumber })
                         }}
                       />
                     </label>
@@ -148,16 +161,9 @@ export function CoordLibreSettings({
                         type="number"
                         min={3}
                         max={maxFormesRowsForCell(clampFormesCellMm(activeBlock.coordCellMm))}
-                        value={activeBlock.coordRows ?? coordSizeFor(activeBlock.difficulty).rows}
+                        value={formGrid.rows}
                         onChange={(event) => {
-                          const rows = clampFormesRows(
-                            Number(event.target.value),
-                            clampFormesCellMm(activeBlock.coordCellMm),
-                          )
-                          updatePage({
-                            coordRows: rows,
-                            coordMarks: (activeBlock.coordMarks ?? []).filter((mark) => mark.y <= rows),
-                          })
+                          if (event.currentTarget.value) updateFormesGrid({ coordRows: event.currentTarget.valueAsNumber })
                         }}
                       />
                     </label>
@@ -170,31 +176,14 @@ export function CoordLibreSettings({
                           key={mm}
                           type="button"
                           className={clampFormesCellMm(activeBlock.coordCellMm) === mm ? 'active' : ''}
-                          onClick={() => {
-                            const cols = clampFormesCols(
-                              activeBlock.coordCols ?? coordSizeFor(activeBlock.difficulty).cols,
-                              mm,
-                            )
-                            const rows = clampFormesRows(
-                              activeBlock.coordRows ?? coordSizeFor(activeBlock.difficulty).rows,
-                              mm,
-                            )
-                            updatePage({
-                              coordCellMm: mm,
-                              coordCols: cols,
-                              coordRows: rows,
-                              coordMarks: (activeBlock.coordMarks ?? []).filter(
-                                (mark) => mark.x <= cols && mark.y <= rows,
-                              ),
-                            })
-                          }}
+                          onClick={() => updateFormesGrid({ coordCellMm: mm })}
                         >
                           {mm} mm
                         </button>
                       ))}
                     </div>
                   </div>
-                  {activeBlock.coordLibre ? (
+                  {composed ? (
                     <>
                       <p className="type-hint muted">
                         Choisissez une forme puis cliquez sur une case du tableau, ou faites-la glisser sur cette case.
@@ -232,25 +221,26 @@ export function CoordLibreSettings({
                   <div className="mode-toggle" role="group" aria-label="Mode du repère">
                     <button
                       type="button"
-                      className={!activeBlock.coordLibre ? 'active' : ''}
-                      onClick={() => updatePage({ coordLibre: false })}
+                      className={!composed ? 'active' : ''}
+                      onClick={resetComposition}
                     >
                       Automatique
                     </button>
                     <button
                       type="button"
-                      className={activeBlock.coordLibre ? 'active' : ''}
+                      className={composed ? 'active' : ''}
                       onClick={() => {
-                        const grid = resolveAxesGrid(activeAsPage, activeBlock.difficulty)
+                        if (composed) return
+                        const scene = cfrScene?.variant === 'axes' ? cfrScene : undefined
                         updatePage({
                           coordLibre: true,
-                          coordCols: grid.cols,
-                          coordRows: grid.rows,
-                          coordCellMm: grid.cellMm,
-                          coordUnitSquares: grid.unitSquares,
-                          coordMarks: activeBlock.coordMarks ?? [],
-                          coordOriginCol: activeBlock.coordOriginCol ?? Math.round(grid.cols / 2),
-                          coordOriginRow: activeBlock.coordOriginRow ?? Math.round(grid.rows / 2),
+                          coordCols: scene?.cols ?? axesGrid.cols,
+                          coordRows: scene?.rows ?? axesGrid.rows,
+                          coordCellMm: scene?.cellMm ?? axesGrid.cellMm,
+                          coordUnitSquares: scene?.unitSquares ?? axesGrid.unitSquares,
+                          coordMarks: scene?.marks ?? [],
+                          coordOriginCol: scene?.originCol ?? activeBlock.coordOriginCol ?? Math.round(axesGrid.cols / 2),
+                          coordOriginRow: scene?.originRow ?? activeBlock.coordOriginRow ?? Math.round(axesGrid.rows / 2),
                         })
                       }}
                     >
@@ -263,10 +253,8 @@ export function CoordLibreSettings({
                     cellMm={axesGrid.cellMm}
                     unitSquares={axesGrid.unitSquares}
                     onChange={updateAxesGrid}
-                    onLiveCols={(n) => updatePage({ coordCols: n })}
-                    onLiveRows={(n) => updatePage({ coordRows: n })}
                   />
-                  {activeBlock.coordLibre ? (
+                  {composed ? (
                     <>
                       {isComposer ? (
                         <div className="mode-toggle is-3" role="group" aria-label="Outil de placement">

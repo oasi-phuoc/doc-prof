@@ -59,26 +59,21 @@ export function useCoordEditing({
   const updateAxesGrid = (patch: Partial<ExerciseBlock>) => {
     const next = { ...activeBlock, ...patch }
     const grid = resolveAxesGrid({ ...activeAsPage, ...next }, next.difficulty)
+    const marks = next.coordMarks ?? []
+    if (isCadrans && next.coordLibre && marks.some((mark) => !markOnGrid(mark, {
+      col: next.coordOriginCol ?? grid.cols / 2,
+      row: next.coordOriginRow ?? grid.rows / 2,
+    }, grid.cols, grid.rows, grid.unitSquares))) {
+      window.alert('Gardez suffisamment de place pour les points déjà placés.')
+      return
+    }
     updatePage({
       ...patch,
       coordCols: grid.cols,
       coordRows: grid.rows,
       coordCellMm: grid.cellMm,
       coordUnitSquares: grid.unitSquares,
-      coordMarks: isCadrans
-        ? (next.coordMarks ?? []).filter((mark) =>
-            markOnGrid(
-              mark,
-              {
-                col: next.coordOriginCol ?? grid.cols / 2,
-                row: next.coordOriginRow ?? grid.rows / 2,
-              },
-              grid.cols,
-              grid.rows,
-              grid.unitSquares,
-            ),
-          )
-        : next.coordMarks,
+      coordMarks: next.coordMarks,
     })
   }
 
@@ -144,7 +139,7 @@ export function useCoordEditing({
       const current = (activeBlock.coordMarks ?? []).find((mark) => mark.x === x && mark.y === y)
       const others = without.filter((mark) => !mark.given)
       const asGiven = isComposer && (coordTool === 'given' || !without.some((mark) => mark.given))
-      if (!current && !asGiven && others.length >= activeBlock.count) return
+      if (!current && !asGiven && others.length >= COORD_LETTER_MAX - Number(isComposer)) return
       if (!current && asGiven && without.length + 1 > COORD_LETTER_MAX) return
       const nextMarks = [
         ...without.map((mark) => (asGiven ? { ...mark, given: false, showCoord: false } : mark)),
@@ -157,6 +152,7 @@ export function useCoordEditing({
           showCoord: asGiven,
         },
       ]
+      const marks = isComposer ? ensureGivenMark(nextMarks) : nextMarks
       updatePage({
         coordLibre: true,
         coordCols: grid.cols,
@@ -165,7 +161,8 @@ export function useCoordEditing({
         coordUnitSquares: grid.unitSquares,
         coordOriginCol: isComposer ? origin.col : activeBlock.coordOriginCol,
         coordOriginRow: isComposer ? origin.row : activeBlock.coordOriginRow,
-        coordMarks: isComposer ? ensureGivenMark(nextMarks) : nextMarks,
+        coordMarks: marks,
+        count: Math.max(1, marks.filter((mark) => !isComposer || !mark.given).length),
       })
       return
     }
@@ -185,7 +182,7 @@ export function useCoordEditing({
       coordCellMm: cellMm,
       coordAxis: activeBlock.coordAxis ?? 'letters',
       coordMarks: nextMarks,
-      count: Math.max(activeBlock.count, nextMarks.length),
+      count: Math.max(1, nextMarks.length),
     })
   }
 
@@ -200,9 +197,9 @@ export function useCoordEditing({
       updateTransformation(vertices.map((mark) => mark.label === 'Ω' ? mark : { ...mark, label: TRANSFORM_LABELS[index++] }))
       return
     }
-    updatePage({
-      coordMarks: (activeBlock.coordMarks ?? []).filter((mark) => !(mark.x === x && mark.y === y)),
-    })
+    const remaining = (activeBlock.coordMarks ?? []).filter((mark) => mark.x !== x || mark.y !== y)
+    const marks = isComposer ? ensureGivenMark(remaining) : remaining
+    updatePage({ coordMarks: marks, count: Math.max(1, marks.filter((mark) => !isComposer || !mark.given).length) })
   }
 
   const placingOrigin = isComposer && coordTool === 'origin'

@@ -423,6 +423,31 @@ export function sceneFromLibre(config: PageConfig): CoordScene {
   return { variant: 'cells', cols, rows, axis, marks, cellMm }
 }
 
+export function resizeReperageMarks(scene: CoordScene, count: number, composer: boolean): CoordMark[] | undefined {
+  const given = composer ? scene.marks.find((mark) => mark.given) : undefined
+  const marks = scene.marks.filter((mark) => mark !== given).slice(0, count)
+  const next = given ? [given, ...marks] : marks
+  const target = count + Number(composer)
+  if (next.length === target) return next
+  const cells = scene.variant === 'cells'
+  const kinds = cells ? COORD_SHAPES.filter((kind) => !next.some((mark) => mark.kind === kind)) : []
+  const originCol = scene.originCol ?? scene.cols / 2
+  const originRow = scene.originRow ?? scene.rows / 2
+  const unit = scene.unitSquares ?? 1
+  const occupied = new Set(next.map(({ x, y }) => `${x},${y}`))
+  for (let row = cells ? 1 : 0; row <= scene.rows && next.length < target; row++) {
+    for (let col = cells ? 1 : 0; col <= scene.cols && next.length < target; col++) {
+      const x = cells ? col : (col - originCol) / unit
+      const y = cells ? row : (row - originRow) / unit
+      if (occupied.has(`${x},${y}`) || (composer && x === 0 && y === 0)) continue
+      const kind = cells ? kinds.shift() : 'point'
+      if (!kind) return undefined
+      next.push({ kind, x, y, ...(cells ? {} : { label: nextPointLabel(next) }) })
+    }
+  }
+  return next.length === target ? composer ? ensureGivenMark(next) : next : undefined
+}
+
 function questionsFromAxes(marks: CoordMark[]): CoordQuestion[] {
   return marks.map((mark) => ({
     prompt: mark.label ?? 'A',
