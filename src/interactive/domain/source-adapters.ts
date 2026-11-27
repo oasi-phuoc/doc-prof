@@ -8,7 +8,7 @@ import { grammarReadingChild } from '@/grammaire/curriculum/items'
 import { grammarScenarioChild, grammarScenarioContext } from '@/grammaire/curriculum/scenario'
 import {sourceWordBlank} from './word-drop'
 
-type Adaptation = { part: number; prompt: string; instruction: string; choices: Choice[]; correctId?: string; model: string; mode?: Question['mode']; audio?: string; images?: string[]; grammarImages?: Question['grammarImages']; grammarCountryGender?: Question['grammarCountryGender']; words?: string[]; wordBlank?: Question['wordBlank']; wordSorting?: Question['wordSorting']; sortingTargets?: string[]; teacherLed?: boolean; choiceOrderPolicy?: Question['choiceOrderPolicy']; context?: string; documentId?: string; scenarioId?: string }
+type Adaptation = { part: number; prompt: string; instruction: string; choices: Choice[]; correctId?: string; model: string; mode?: Question['mode']; audio?: string; audioGrouping?: Question['audioGrouping']; images?: string[]; grammarImages?: Question['grammarImages']; grammarCountryGender?: Question['grammarCountryGender']; words?: string[]; wordBlank?: Question['wordBlank']; wordSorting?: Question['wordSorting']; sortingTargets?: string[]; teacherLed?: boolean; choiceOrderPolicy?: Question['choiceOrderPolicy']; context?: string; documentId?: string; scenarioId?: string }
 type Result = { items: Adaptation[]; issues: string[] }
 const fillGrammarBlank = (prompt: string, answer: string) =>
   prompt.replace(/___(\s*)/, (_, space: string) => answer + (answer.endsWith('’') ? '' : space))
@@ -29,6 +29,28 @@ function phraseOrdering(words: string[], ordered: string[], model: string): Resu
 
 /** Explicit source relations only. Each audio/association gets its own stable source part. */
 export function adaptSourceItem(item: MathItem, exerciseType: string, sourceInstruction = ''): Result | undefined {
+  if (item.grammarCoTrueFalse !== undefined) {
+    const audio = typeof item.audioSrc === 'string' ? item.audioSrc.trim() : ''
+    const statements = item.grammarCoTrueFalse
+    if (!audio || !Array.isArray(statements) || !statements.length || Array.from(statements).some(statement =>
+      !statement || typeof statement.id !== 'string' || !statement.id.trim() ||
+      typeof statement.text !== 'string' || !statement.text.trim() ||
+      typeof statement.correct !== 'boolean' || typeof statement.evidence !== 'string' || !statement.evidence.trim() ||
+      (statement.proposedAnswer !== undefined && (typeof statement.proposedAnswer !== 'string' || !statement.proposedAnswer.trim()))
+    ) || new Set(statements.map(statement => statement.id)).size !== statements.length ||
+      statements.map(statement => statement.correct ? 'Vrai' : 'Faux').join(' · ') !== item.answer) {
+      return { items: [], issues: ['Vrai/Faux audio incomplet ou incohérent. Vérifiez l’enregistrement et le corrigé de la fiche.'] }
+    }
+    return { items: statements.map((statement, part) => ({
+      part, audio, audioGrouping: 'individual',
+      prompt: statement.proposedAnswer ? `${statement.text}\nRéponse proposée : ${statement.proposedAnswer}` : statement.text,
+      instruction: 'A correspond à Vrai. B correspond à Faux.',
+      choices: [{ id: 'true', text: 'Vrai' }, { id: 'false', text: 'Faux' }],
+      choiceOrderPolicy: 'fixed',
+      correctId: statement.correct ? 'true' : 'false',
+      model: `${statement.correct ? 'Vrai' : 'Faux'}. ${statement.evidence}`,
+    })), issues: [] }
+  }
   if (item.layout==='grammar') {
     if (!isGrammarQuestion(item.grammar)) return {items:[],issues:['Question grammaticale invalide : vérifiez la fiche source.']}
     const q=item.grammar, u=q.unit
