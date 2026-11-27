@@ -244,6 +244,7 @@ import { module902 as reviewed902 } from './banks/module-902-v003.generated.ts'
 import { foundationAndServiceMathReview } from './banks/relecture-maths-v004'
 import { procurementExercises } from './banks/approvisionnement-exercices-v004'
 import { dossierExercises400 } from './banks/dossiers-400-v005.generated.ts'
+import { dossierExercises500 } from './banks/dossiers-500-v005.generated.ts'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
 
@@ -516,6 +517,11 @@ const storageExercisePublication: LogistiquePublication = {
   units: [...procurementExercisePublication.units, ...dossierExercises400],
 }
 
+const productionExercisePublication: LogistiquePublication = {
+  revision: 'logistique-exercices-production-v005',
+  units: [...storageExercisePublication.units, ...dossierExercises500],
+}
+
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
   { revision: 'logistique-105-v001', units: module105 },
@@ -588,6 +594,7 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   foundationsAndServiceMathPublication,
   procurementExercisePublication,
   storageExercisePublication,
+  productionExercisePublication,
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!
