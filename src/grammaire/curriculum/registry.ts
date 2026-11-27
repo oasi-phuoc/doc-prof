@@ -68,6 +68,18 @@ import faitsj7 from './data/j7.json'
 import faitsj8 from './data/j8.json'
 import faitsj9 from './data/j9.json'
 import faitsj10 from './data/j10.json'
+import finalk1 from './data/k1.json'
+import finalk2 from './data/k2.json'
+import finalk3 from './data/k3.json'
+import finalk4 from './data/k4.json'
+import finalk5 from './data/k5.json'
+import finalk6 from './data/k6.json'
+import finalk7 from './data/k7.json'
+import finalk8 from './data/k8.json'
+import finalk9 from './data/k9.json'
+import finalk11 from './data/k11.json'
+import finalk12 from './data/k12.json'
+import finalk13 from './data/k13.json'
 import actionj1 from './data/j1.json'
 import actionj2 from './data/j2.json'
 import actionj3 from './data/j3.json'
@@ -90,7 +102,7 @@ import { assertGrammarBank } from './validation'
 import { isProtectedGrammarCo, type GrammarBank, type GrammarLevel } from './types'
 
 /** Editorial pilot only; publication requires a recorded teacher review. */
-export const GRAMMAR_PILOT_BANKS = [...raw, ...specialEr, ...pastContrast, ...directObjects, ...subjunctive, ...have, ...go, ...regularEr, ...ir, ...reOir, ...modals, ...reflexive, ...simpleNegation, ...otherNegations, ...addressForms, ...greetings, ...politeness, ...subjectPronouns, ...origins, ...identities, ...nationalities, ...families, ...familyCompletion,...closedQuestions,...openQuestions,...quelQuestions,...exclamations,...activities,...tonicPronouns,...locations,...directions,...locationArticles,...moments,...durations,...frequencies,...chronology,...demonstratives,...requests,...acceptances,...decriref4,...decriref5,...decriref6,...decriref7,...decriref8,...comparisons,...adjectivePosition,...superlatives,...quantityComparisons,...physicalDescriptions,...politeAdvice,...imperatives,...past0,...past1,...past2,...past3,...past4,...past5,...past6,...past7,...pronouni1,...pronouni2,...pronouni3,...pronouni5,...pronouni6,...pronouni7,...pronouni8,...pronouni9,...foodg1,...foodg2,...foodg3,...foodg4,...foodg5,...foodg6,...actionj1,...actionj2,...actionj3,...avenir0,...avenir1,...avenir2,...avenir3,...avenir4,...faitsj6,...faitsj7,...faitsj8,...faitsj9,...faitsj10,...activityDailyBanks(reflexive as GrammarBank[])] as GrammarBank[]
+export const GRAMMAR_PILOT_BANKS = [...raw, ...specialEr, ...pastContrast, ...directObjects, ...subjunctive, ...have, ...go, ...regularEr, ...ir, ...reOir, ...modals, ...reflexive, ...simpleNegation, ...otherNegations, ...addressForms, ...greetings, ...politeness, ...subjectPronouns, ...origins, ...identities, ...nationalities, ...families, ...familyCompletion,...closedQuestions,...openQuestions,...quelQuestions,...exclamations,...activities,...tonicPronouns,...locations,...directions,...locationArticles,...moments,...durations,...frequencies,...chronology,...demonstratives,...requests,...acceptances,...decriref4,...decriref5,...decriref6,...decriref7,...decriref8,...comparisons,...adjectivePosition,...superlatives,...quantityComparisons,...physicalDescriptions,...politeAdvice,...imperatives,...past0,...past1,...past2,...past3,...past4,...past5,...past6,...past7,...pronouni1,...pronouni2,...pronouni3,...pronouni5,...pronouni6,...pronouni7,...pronouni8,...pronouni9,...foodg1,...foodg2,...foodg3,...foodg4,...foodg5,...foodg6,...actionj1,...actionj2,...actionj3,...avenir0,...avenir1,...avenir2,...avenir3,...avenir4,...faitsj6,...faitsj7,...faitsj8,...faitsj9,...faitsj10,...finalk1,...finalk2,...finalk3,...finalk4,...finalk5,...finalk6,...finalk7,...finalk8,...finalk9,...finalk11,...finalk12,...finalk13,...activityDailyBanks(reflexive as GrammarBank[])] as GrammarBank[]
 GRAMMAR_PILOT_BANKS.forEach(assertGrammarBank)
 
 export function grammarBanksForType(typeId: string): GrammarBank[] {

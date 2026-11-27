@@ -139,6 +139,7 @@
     "test:grammar:pronoms:browser": "node tests/grammar/pronoms-browser.mjs && node tests/grammar/pronoms-pdf.mjs",
     "test:grammar:action": "node scripts/test-grammar-action.cjs && python3 scripts/test-grammar-action-build.py",
     "test:grammar:action:browser": "node tests/grammar/action-browser.mjs && node tests/grammar/action-pdf.mjs",
+    "test:grammar:arguments": "node scripts/test-grammar-arguments.cjs",
     "test:grammar:faits-divers": "node scripts/test-grammar-faits-divers.cjs",
     "test:grammar:avenir": "node scripts/test-grammar-avenir.cjs && python3 scripts/test-grammar-avenir-build.py",
     "test:grammar:avenir:browser": "node tests/grammar/avenir-browser.mjs && node tests/grammar/avenir-pdf.mjs",

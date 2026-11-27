@@ -2,7 +2,7 @@ const assert=require('node:assert/strict')
 const {load,root}=require('./gattegno-loader.cjs')
 const {GRAMMAR_PILOT_BANKS:banks,defaultGrammarPilot}=load(root+'/src/grammaire/curriculum/registry.ts')
 const {buildPage,buildWorksheets}=load(root+'/src/math/generate.ts')
-const {grammarPageBreakQuestionId:key}=load(root+'/src/grammaire/curriculum/pagination.ts')
+const {grammarPageBreakQuestionId:key,splitGradedGrammarPages}=load(root+'/src/grammaire/curriculum/pagination.ts')
 const {blockItemsForConfig}=load(root+'/src/components/generator/sheet-items.ts')
 const {buildFicheRecipe,parseFicheRecipe}=load(root+'/src/fiches/recipe.ts')
 const seed=839
@@ -35,9 +35,12 @@ const mixed={...a,extraBlocks:[blockFromPage(b)]},plain=buildWorksheets([mixed],
 assert.equal(plain.length,1);assert.equal(plain[0].blocks.length,2)
 const firstKeys=plain[0].blocks[0].items.map(key),atBoundary=buildWorksheets([{...mixed,grammarPageBreakAfterQuestionIds:[firstKeys.at(-1)]}],seed)
 assert.equal(atBoundary.length,2);assert.equal(atBoundary[1].blocks[0].sourceBlockIndex,1);assert.equal(atBoundary[1].blocks[0].itemOffset,0)
-const legacy={domain:'grammaire',topic:'gram-argumenter',exerciseType:'gram-ex-k1-qcm-verbe',count:6,columns:1,difficulty:'facile'}
-const old=buildWorksheets([legacy],seed),oldSplit=buildWorksheets([{...legacy,tcfPageBreakAfter:[false,false,true]}],seed)
-assert.equal(old.length,1);assert.equal(oldSplit.length,2);assert.deepEqual(oldSplit.flatMap(s=>s.items),old[0].items);assert.equal(oldSplit[1].blocks[0].itemOffset,3)
+const legacyItems=Array.from({length:6},(_,index)=>({layout:'texte',prompt:'Question '+(index+1),answer:'Réponse'}))
+const legacyBlock={exerciseType:'gram-ex-k1-qcm-verbe',instruction:'Répondez.',items:legacyItems}
+const legacy={domain:'grammaire',blocks:[legacyBlock],items:legacyItems}
+assert.equal(splitGradedGrammarPages(legacy),null)
+const oldSplit=splitGradedGrammarPages({...legacy,blocks:[{...legacyBlock,tcfPageBreakAfter:[false,false,true]}]})
+assert.equal(oldSplit.length,2);assert.deepEqual(oldSplit.flatMap(s=>s.items),legacyItems);assert.equal(oldSplit[1].blocks[0].itemOffset,3)
 const math={domain:'tcm-csc',topic:'nombres',exerciseType:'tcm-csc-ex03',count:5,columns:1,difficulty:'facile'}
 assert(!buildWorksheets([math],seed).some(s=>s.items.some(i=>i.grammar)))
 console.log(JSON.stringify({status:'passed',offerings,defaultSinglePage:true,manualCutsPreserveOrder:true,roundTrips:true,documentAndDialogueSupports:true,legacyQuestions:true,multipleBlocks:true}))

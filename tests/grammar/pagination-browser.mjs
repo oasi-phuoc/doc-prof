@@ -30,7 +30,7 @@ try{
   ['gram-ex-j1-qcm-verbe','gram-action','A1','gap'],
   ['gram-ex-futur-proche-curriculum-s','gram-avenir','A1','scenario-set'],
   ['gram-ex-futur-proche-communication-ce','gram-avenir','A1','document-set',true],
-  ['gram-ex-k1-qcm-verbe','gram-argumenter',null,null]
+  ['gram-ex-k1-qcm-verbe','gram-argumenter','A2','gap']
  ]){
   await page.emulateMedia({media:'screen'});await page.goto(base+'/generateur',{waitUntil:'domcontentloaded',timeout:120000})
   await choose('Domaine','Grammaire');await choose('Thème',GRAMMAIRE_TOPICS.find(t=>t.id===topic).label)

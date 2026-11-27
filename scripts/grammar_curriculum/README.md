@@ -86,3 +86,7 @@ Les cinq fichiers `avenir-*.tsv` contiennent 250 lignes sources partagées entre
 Les six fichiers de situations \`faits-*.tsv\` contiennent 300 contextes. Les deux fichiers \`faits-*-lectures.tsv\` portent les 40 documents B1, leurs questions et les preuves dans les textes. \`python3 scripts/build-grammar-faits-divers.py\` compile les banques de j6 à j10 à partir de ces sources. Les identifiants restent stables quand une situation est reprise entre activités.
 
 \`npm run test:grammar:faits-divers\` vérifie les 35 offres, le tirage, les snapshots de fiches, l’adaptation au tableau, les corrigés et la reconstruction des banques. \`npm run test:grammar:pagination\` contrôle les sauts manuels et la reprise des supports.
+
+### S’expliquer et argumenter et Exprimer quelque chose — 27 novembre 2026
+
+\`python3 scripts/build-grammar-arguments.py\` reconstruit les 73 offres à partir des sources \`arguments-*.tsv\` en suivant les identifiants du registre. La banque k10 a son propre compilateur. \`npm run test:grammar:arguments\` contrôle les offres, les tirages, les sauvegardes et les corrigés.

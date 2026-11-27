@@ -1306,6 +1306,8 @@ Le [bilan du 27 novembre](avancement-20261127-faits-divers.md) décrit les 35 of
 
 ### S'expliquer et argumenter — activités
 
+Le [bilan du 27 novembre](avancement-20261127-arguments.md) documente les offres A2 et B1 disponibles en pilote.
+
 | Sous-thème | Activité | ID de type / activité | Niveaux et présentations | Origine |
 |---|---|---|---|---|
 | k1 | Donner son avis | `gram-ex-k1-qcm-verbe` | A2: choice, gap | Existant |
@@ -1321,6 +1323,8 @@ Le [bilan du 27 novembre](avancement-20261127-faits-divers.md) décrit les 35 of
 | k2 | Transformer une phrase | `gram-ex-k2-curriculum-t` | B1: transform | À ajouter |
 
 ### Exprimer quelque chose — activités
+
+Le [bilan du 27 novembre](avancement-20261127-arguments.md) documente les offres A2 et B1 disponibles en pilote.
 
 | Sous-thème | Activité | ID de type / activité | Niveaux et présentations | Origine |
 |---|---|---|---|---|
