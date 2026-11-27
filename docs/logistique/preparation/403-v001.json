@@ -1,0 +1,173 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Décrire le stockage **au sol** et ses variantes\n- Comparer rayonnages **compartimenté**, **palettes**, **drive-in**, **dynamique**, **cantilever**\n- Expliquer rayonnages **mobiles**, **rotatifs** et stockage **suspendu**\n- Situer les solutions modernes (navettes, robots, hauts rayonnages, **Autostore**) et leurs limites",
+  "overview": "## Aperçu du module 403\n\n- Comparer le stockage au sol, en rayonnage et dans les systèmes spécialisés.\n- Vérifier l’accès à chaque unité et l’aptitude à la rotation prévue.\n- Relier les dimensions, la capacité et les limites de l’installation.",
+  "replacements": [],
+  "summary": [
+    "Comparer le stockage au sol, en rayonnage et dans les systèmes spécialisés.",
+    "Vérifier l’accès à chaque unité et l’aptitude à la rotation prévue.",
+    "Relier les dimensions, la capacité et les limites de l’installation."
+  ],
+  "glossary": [
+    [
+      "Alvéole",
+      "Emplacement formé dans un rayonnage."
+    ],
+    [
+      "Cantilever",
+      "Rayonnage à bras porteurs adapté notamment aux objets longs."
+    ],
+    [
+      "Drive-in",
+      "Rayonnage où l’accès aux unités se fait dans des canaux."
+    ],
+    [
+      "Emprise",
+      "Surface utilisée par une installation ou une zone."
+    ],
+    [
+      "Empilabilité",
+      "Possibilité d’empiler les unités selon leur état et leurs limites."
+    ],
+    [
+      "Rayonnage compartimenté",
+      "Structure à cases permettant de ranger des articles séparés."
+    ],
+    [
+      "Rayonnage dynamique",
+      "Installation où les unités avancent selon la conception du système."
+    ],
+    [
+      "Rayonnage mobile",
+      "Rayonnage dont les travées peuvent être déplacées pour ouvrir une allée."
+    ],
+    [
+      "Stockage au sol",
+      "Placement d’unités directement dans une zone de sol prévue."
+    ],
+    [
+      "Stockage en bloc",
+      "Rangement groupé d’unités, avec accès selon l’implantation."
+    ],
+    [
+      "Stockage suspendu",
+      "Forme de rangement qui maintient la marchandise suspendue."
+    ],
+    [
+      "Travée",
+      "Partie de rayonnage comprise entre deux montants."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Un rayonnage comprend six travées de quatre niveaux. Un niveau a trois places. Calculez le nombre total.",
+      "answer": "72 places.",
+      "calculation": "6 × 4 × 3 = 72."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Trois rangées disposent de 14, 12 et 16 places. Calculez le total.",
+      "answer": "42 places.",
+      "calculation": "14 + 12 + 16 = 42."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "On mesure 32 m² de stockage sur une zone de 80 m². Calculez la part utilisée pour le stockage.",
+      "answer": "40 %.",
+      "calculation": "32 ÷ 80 × 100 = 40 %."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Sur 96 cases, 68 sont utilisées. Calculez le nombre de cases libres.",
+      "answer": "28 cases.",
+      "calculation": "96 − 68 = 28."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Deux aménagements offrent 72 et 90 places pour 110 m². Calculez le gain de capacité en pourcentage.",
+      "answer": "25 % de places en plus.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "(90 − 72) ÷ 72 × 100 = 25 %."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quel avantage donne l’accès individuel d’un rayonnage à palettes ?",
+      "answer": "On peut atteindre une unité sans déplacer systématiquement les autres."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Quels articles orientent vers un cantilever ?",
+      "answer": "Les articles longs répondant aux caractéristiques et limites de l’installation."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Que limite le stockage en bloc ?",
+      "answer": "L’accès individuel, quand les unités derrière ou dessous sont masquées."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Qu’est-ce qui facilite une sortie FIFO dans un rayonnage à deux faces prévu pour cela ?",
+      "answer": "L’entrée et la sortie sont séparées et on peut prendre la première unité accessible selon le sens prévu."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Quelles vérifications précèdent l’affectation ?",
+      "answer": "Dimensions, masse, support, état et compatibilité avec les règles d’accès."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "De longs profilés ne rentrent pas dans les cases habituelles. Que faites-vous ?",
+      "answer": "Chercher une zone prévue pour ces dimensions, vérifier compatibilité et limites, et faire confirmer l’affectation."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Un article à rotation élevée est derrière d’autres lots. Quelle piste d’amélioration proposez-vous ?",
+      "answer": "Revoir l’accès ou l’implantation pour permettre la règle de sortie avec moins de déplacements."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "La plaque de charge est illisible. Quelle suite ?",
+      "answer": "Écarter la travée de l’usage concerné et demander la vérification au responsable."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "3.1 Stockage au sol",
+      "file": "log-403-notions-1-v001.svg",
+      "alt": "Bloc au sol. Unités regroupées. Rayonnage. Positions séparées.",
+      "caption": "Une capacité élevée ne garantit pas l’accès individuel.",
+      "sha256": "b6e5547fd30113c226783e127f01ec0be0a2ce09955b4ef077e01340c0ac85a1",
+      "origin": "Illustration originale Doc-Prof du module 403."
+    },
+    {
+      "anchor": "3.7 Rayonnage cantilever (porte-à-faux)",
+      "file": "log-403-notions-2-v001.svg",
+      "alt": "Petits articles. Cases et bacs adaptés. Unités sur palette. Alvéoles compatibles. Articles longs. Supports conçus pour eux.",
+      "caption": "Utiliser une installation validée pour les caractéristiques de la charge.",
+      "sha256": "7207b938753ed1fa72611c61b0b652e65336520949c10dce4c19067b0ad6479c",
+      "origin": "Illustration originale Doc-Prof du module 403."
+    }
+  ]
+}

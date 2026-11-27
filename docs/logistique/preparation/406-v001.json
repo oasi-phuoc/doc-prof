@@ -1,0 +1,184 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Comparer **lotissement par case** et stockage **chaotique**\n- Expliquer pourquoi le chaotique exige un **SGS**\n- Appliquer les principes **FIFO** et **LIFO** et citer les formes adaptées\n- Situer le **HIFO** comme méthode de valorisation",
+  "overview": "## Aperçu du module 406\n\n- Distinguer l’emplacement fixe et l’affectation dynamique des positions.\n- Lire les dates de lot avant de choisir le prélèvement selon la règle prévue.\n- Distinguer l’ordre physique des sorties et une méthode de valorisation.",
+  "replacements": [
+    {
+      "from": "« Chaos » ≠ désordre ici. N'importe quel **emplacement libre** peut être attribué → meilleure exploitation de l'espace (pas de réservation du max par article).",
+      "to": "Le stockage dynamique attribue une place libre et compatible avec l’article. Le système doit conserver la position réelle du lot.",
+      "reason": "Ajoute la compatibilité de l’emplacement."
+    },
+    {
+      "from": "Toujours sortir l'unité de chargement la **plus ancienne**. Évite que les marchandises restent trop longtemps. Surtout **périssables** / DLC (comme le réfrigérateur à la maison).",
+      "to": "En FIFO, sortir d’abord le lot entré en premier selon la règle de l’article. Si l’échéance est prioritaire, appliquer le FEFO défini par le site.",
+      "reason": "Distingue date d’entrée et date d’expiration."
+    }
+  ],
+  "summary": [
+    "Distinguer l’emplacement fixe et l’affectation dynamique des positions.",
+    "Lire les dates de lot avant de choisir le prélèvement selon la règle prévue.",
+    "Distinguer l’ordre physique des sorties et une méthode de valorisation."
+  ],
+  "glossary": [
+    [
+      "Affectation dynamique",
+      "Allocation d’une position libre compatible au moment de l’entrée."
+    ],
+    [
+      "Date d’entrée",
+      "Date d’enregistrement de l’arrivée ou de l’entrée dans le périmètre considéré."
+    ],
+    [
+      "Date limite",
+      "Échéance utilisée pour décider d’un usage ou d’une sortie selon la procédure."
+    ],
+    [
+      "Emplacement fixe",
+      "Position attribuée durablement à une référence."
+    ],
+    [
+      "FEFO",
+      "Le lot dont l’échéance est la plus proche sort en premier."
+    ],
+    [
+      "FIFO",
+      "L’unité entrée la première sort la première."
+    ],
+    [
+      "HIFO",
+      "Convention où les unités au coût le plus haut sont réputées sortir en premier."
+    ],
+    [
+      "LIFO",
+      "L’unité entrée le plus récemment sort la première dans le contexte étudié."
+    ],
+    [
+      "Lot",
+      "Ensemble identifiable d’unités pour le suivi."
+    ],
+    [
+      "Ordre de sortie",
+      "Priorité appliquée lors du prélèvement."
+    ],
+    [
+      "Position compatible",
+      "Emplacement conforme aux propriétés et limites nécessaires pour l’article."
+    ],
+    [
+      "Traçabilité de stock",
+      "Lien entre la référence, la position, le lot et les mouvements."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Le rayon A a 14 places et en utilise neuf. Combien de positions sont libres ?",
+      "answer": "Cinq positions.",
+      "calculation": "14 − 9 = 5."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Le plus ancien lot contient 16 pièces. Une demande en exige 25. Combien prélevez-vous sur le lot suivant après avoir utilisé le premier ?",
+      "answer": "Neuf pièces.",
+      "calculation": "25 − 16 = 9."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Une zone mobile compte 30 positions et en utilise 24. Calculez son taux d’occupation.",
+      "answer": "80 %.",
+      "calculation": "24 ÷ 30 × 100 = 80 %."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Quatre sites attribuent chacun cinq nouveaux emplacements. Combien d’affectations faut-il enregistrer ?",
+      "answer": "20 affectations.",
+      "calculation": "4 × 5 = 20."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Deux lots totalisent 30 pièces à 8 CHF et 20 à 10 CHF. Calculez la valeur totale et le coût moyen.",
+      "answer": "440 CHF au total et 8,80 CHF par pièce.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "30 × 8 + 20 × 10 = 440 CHF. 440 ÷ 50 = 8,80 CHF."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quelle différence entre emplacement fixe et affectation dynamique ?",
+      "answer": "Le premier est dédié. La seconde choisit une position libre et compatible lors de l’entrée."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Comment choisir entre FIFO et FEFO ?",
+      "answer": "Vérifier la règle applicable. FIFO suit l’entrée, FEFO l’échéance."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Pourquoi enregistrer la position réelle en dynamique ?",
+      "answer": "L’article peut se trouver à des positions différentes après chaque entrée."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Que distingue LIFO de FIFO ?",
+      "answer": "LIFO met le dernier entré en priorité. FIFO met le premier entré en priorité."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Un ordre comptable détermine-t-il toujours l’emplacement à prélever ?",
+      "answer": "La règle physique du site et la convention de valorisation doivent être distinguées."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Deux lots ont été entrés dans un ordre opposé à celui de leurs échéances. Que vérifiez-vous ?",
+      "answer": "Lire les dates et choisir le lot selon la procédure de la référence."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Une place libre est trop petite pour le support. Que faites-vous ?",
+      "answer": "Chercher ou demander une autre position compatible, puis l’enregistrer."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Un article n’est plus dans la position du système. Quelle suite ?",
+      "answer": "Vérifier le mouvement récent et le lot, puis corriger ou signaler l’écart selon le rôle."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "6.1 Lotissement par case (emplacement fixe)",
+      "file": "log-406-notions-1-v001.svg",
+      "alt": "Fixe. Une place réservée à l’article. Dynamique. Une place libre et compatible.",
+      "caption": "Chaque mouvement est rattaché à la position réellement utilisée.",
+      "sha256": "5ee6ec736d79e7b73ff420a162ced5f6d1829edc21c025dd7115c9c23288f9fd",
+      "origin": "Illustration originale Doc-Prof du module 406."
+    },
+    {
+      "anchor": "6.3 FIFO — First In, First Out",
+      "file": "log-406-notions-2-v001.svg",
+      "alt": "FIFO. Priorité à l’entrée la plus ancienne. FEFO. Priorité à l’échéance la plus proche.",
+      "caption": "Lire la consigne de l’article avant le prélèvement.",
+      "sha256": "e77c420f2427dd75539e72b718fc0d2d730ccc2a8bfc2dce9d3875fed1ce775c",
+      "origin": "Illustration originale Doc-Prof du module 406."
+    }
+  ]
+}

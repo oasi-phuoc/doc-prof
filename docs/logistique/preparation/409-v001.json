@@ -1,0 +1,173 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Définir un **engin de manutention au sol** et citer les principaux types (timon, préparateurs, élévateurs, transstockeur…)\n- Comparer les **entraînements** (diesel, gaz, élec., hybride) selon intérieur/extérieur\n- Décrire mâts, **levées libres**, fourches et **outils portés**, en tenant compte du **centre de gravité**\n- Expliquer AGV/FTS, **transstockeurs** (manuel → auto) et le principe **Autostore**",
+  "overview": "## Aperçu du module 409\n\n- Identifier le rôle des engins au sol, des systèmes guidés et du transstockage.\n- Comparer les usages attendus et vérifier la documentation de la configuration.\n- Reconnaître les limites d’une intervention sur un équipement automatisé.",
+  "replacements": [],
+  "summary": [
+    "Identifier le rôle des engins au sol, des systèmes guidés et du transstockage.",
+    "Comparer les usages attendus et vérifier la documentation de la configuration.",
+    "Reconnaître les limites d’une intervention sur un équipement automatisé."
+  ],
+  "glossary": [
+    [
+      "Accessoire porté",
+      "Équipement ajouté à l’engin avec son propre champ d’usage."
+    ],
+    [
+      "AGV",
+      "Véhicule guidé automatiquement sur des itinéraires ou selon une logique prévue."
+    ],
+    [
+      "Chariot de manutention",
+      "Engin qui déplace ou lève des charges selon sa conception."
+    ],
+    [
+      "Configuration",
+      "Ensemble du modèle, des accessoires et des conditions retenues."
+    ],
+    [
+      "Contrepoids",
+      "Masse intégrée dans une conception de stabilité."
+    ],
+    [
+      "Énergie d’entraînement",
+      "Énergie qui alimente la motorisation."
+    ],
+    [
+      "Gerbeur",
+      "Engin conçu pour transporter et gerber dans ses limites."
+    ],
+    [
+      "Levée libre",
+      "Course pendant laquelle la levée se fait sans modifier certaines dimensions du mât."
+    ],
+    [
+      "Mât",
+      "Structure de levage d’un engin selon sa conception."
+    ],
+    [
+      "Transpalette",
+      "Appareil destiné à déplacer un support compatible au niveau de travail prévu."
+    ],
+    [
+      "Transstockeur",
+      "Machine qui dessert des emplacements selon un système défini."
+    ],
+    [
+      "Zone automatisée",
+      "Partie du site dont certains mouvements sont pilotés automatiquement."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Un cycle fictif dure quatre minutes. Combien de cycles complets tiennent dans une heure sans interruption ?",
+      "answer": "Quinze cycles.",
+      "calculation": "60 ÷ 4 = 15."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Deux engins effectuent neuf et onze trajets. Combien de trajets sont enregistrés ?",
+      "answer": "20 trajets.",
+      "calculation": "9 + 11 = 20."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Une batterie est hors service 35 min sur 120 min observées. Combien de minutes restent disponibles ?",
+      "answer": "85 minutes.",
+      "calculation": "120 − 35 = 85 min."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Un appareil automatisé traite 20 bacs par séquence, pendant six séquences identiques. Donnez le total.",
+      "answer": "120 bacs.",
+      "calculation": "20 × 6 = 120."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Une tournée utilise 5,6 kWh pour 28 mouvements. Calculez la consommation moyenne par mouvement.",
+      "answer": "0,20 kWh par mouvement.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "5,6 ÷ 28 = 0,20 kWh."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Que distingue un transpalette et un gerbeur ?",
+      "answer": "Le gerbeur est prévu pour gerber dans ses limites. Le transpalette est d’abord un moyen de déplacement de supports."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Pourquoi vérifier l’accessoire dans une configuration ?",
+      "answer": "Il peut modifier les limites, la géométrie et les usages autorisés."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Que fait un transstockeur ?",
+      "answer": "Il dépose et prélève des unités au sein d’un système de stockage conçu pour lui."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Quand intervient du personnel dans une zone automatisée ?",
+      "answer": "Selon l’autorisation et la procédure contrôlée applicables."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Que comparez-vous pour choisir un entraînement ?",
+      "answer": "Usage prévu, environnement, énergie disponible et restrictions du site."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Le marquage d’un accessoire ne correspond pas au dossier de l’engin. Que faites-vous ?",
+      "answer": "Suspendre son usage et faire vérifier la compatibilité documentaire."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Un AGV est arrêté dans un passage. Quelle suite ?",
+      "answer": "Appliquer la consigne de circulation, signaler et attendre la prise en charge habilitée."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "L’équipe compare deux moyens pour des produits longs. Quelles données relève-t-elle ?",
+      "answer": "Dimensions, masse, orientation, parcours, accès et conditions de stockage."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "9.2 Types d'engins au sol",
+      "file": "log-409-notions-1-v001.svg",
+      "alt": "Transpalette. Déplacement du support. Gerbeur. Transport et stockage. Transstockeur. Desserte du rayonnage.",
+      "caption": "Les fonctions indiquent une famille. La documentation fixe les conditions d’usage.",
+      "sha256": "2651a8e43c2ccf109327cda866a1d924107a44ecaf286b68e38f4249b20f687f",
+      "origin": "Illustration originale Doc-Prof du module 409."
+    },
+    {
+      "anchor": "9.6 FTS / AGV",
+      "file": "log-409-notions-2-v001.svg",
+      "alt": "Parcours. Trajet défini. Surveillance. État du flux. Écart. Signalement prévu.",
+      "caption": "Une panne est traitée par la procédure et le personnel autorisé.",
+      "sha256": "07994959894f87ed18729c7a7656d6969ec5edabaaa30c206ab893c523644789",
+      "origin": "Illustration originale Doc-Prof du module 409."
+    }
+  ]
+}

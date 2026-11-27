@@ -1,0 +1,173 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Distinguer les entrepôts selon les **marchandises** (MP, self-service, finis)\n- Expliquer les entrepôts de **production**, **distribution** et **commerce**\n- Comparer stockage **centralisé** et **décentralisé**\n- Décrire transbordement, **consignation**, entrepôts **temporaires** et de **maturation**",
+  "overview": "## Aperçu du module 402\n\n- Classer les entrepôts selon la marchandise, le secteur et la place dans le flux.\n- Distinguer réserve durable, transbordement et stockage de maturation.\n- Comparer des sites sur délai, capacité et service.",
+  "replacements": [],
+  "summary": [
+    "Classer les entrepôts selon la marchandise, le secteur et la place dans le flux.",
+    "Distinguer réserve durable, transbordement et stockage de maturation.",
+    "Comparer des sites sur délai, capacité et service."
+  ],
+  "glossary": [
+    [
+      "Approvisionnement",
+      "Flux vers le site qui consomme ou transforme la marchandise."
+    ],
+    [
+      "Centre de distribution",
+      "Site qui regroupe, prépare et répartit les arrivées vers plusieurs destinataires."
+    ],
+    [
+      "Emplacement temporaire",
+      "Position utilisée pendant une étape ou attente définie."
+    ],
+    [
+      "Entrepôt intermédiaire",
+      "Stock placé entre deux étapes d’un processus."
+    ],
+    [
+      "Entrepôt de maturation",
+      "Site où le produit évolue sous des conditions contrôlées."
+    ],
+    [
+      "Entrepôt de réserve",
+      "Site ou zone destinée à conserver les biens jusqu’au besoin."
+    ],
+    [
+      "Entrepôt de transbordement",
+      "Site de transfert et regroupement entre trajets."
+    ],
+    [
+      "Entrepôt régional",
+      "Site servant un périmètre territorial défini."
+    ],
+    [
+      "Marchandise en vrac",
+      "Marchandise qui n’est pas conditionnée en unités individuelles équivalentes."
+    ],
+    [
+      "Maturation",
+      "Évolution du produit recherchée pendant le stockage."
+    ],
+    [
+      "Séjour moyen",
+      "Durée moyenne passée dans la zone considérée."
+    ],
+    [
+      "Site géographique",
+      "Localisation choisie en fonction des flux et contraintes."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Trois zones temporaires permettent de traiter 18 unités chacune. Donnez leur capacité totale.",
+      "answer": "54 unités.",
+      "calculation": "3 × 18 = 54."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Un lot passe 35 minutes au transbordement puis 25 minutes au contrôle. Calculez le séjour cumulé.",
+      "answer": "60 minutes.",
+      "calculation": "35 + 25 = 60 min."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Deux sites se trouvent à 18 et à 32 km du client. Calculez l’écart sur un aller-retour.",
+      "answer": "28 km.",
+      "calculation": "(32 − 18) × 2 = 28 km."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "La production a 35 bacs en attente. Seize passent à l’étape suivante. Quel solde reste ?",
+      "answer": "19 bacs.",
+      "calculation": "35 − 16 = 19."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Trois lots de même taille ont séjourné 2, 4 et 9 jours. Donnez le séjour moyen.",
+      "answer": "Cinq jours.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "(2 + 4 + 9) ÷ 3 = 5 jours."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quel rôle joue l’entrepôt intermédiaire ?",
+      "answer": "Découpler deux opérations en conservant temporairement les unités en attente."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Qu’est-ce qui caractérise un site de transbordement ?",
+      "answer": "Un séjour bref et une réorientation vers le transport ou la destination suivante."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Pourquoi distribuer depuis un site régional ?",
+      "answer": "Pour rapprocher le stock de la demande et tenir un délai de service adapté."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Comment un entrepôt de maturation se distingue-t-il ?",
+      "answer": "Les conditions visent une évolution contrôlée du produit."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Quelles caractéristiques du bien influencent le genre de stockage ?",
+      "answer": "Dimensions, état, sensibilité, rotation et exigences de contrôle."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Deux livraisons doivent partir dans l’heure vers des clients différents. Quelle zone convient ?",
+      "answer": "Une zone de transbordement avec séparation par départ et trace de la destination."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Une étape ralentit et les semi-finis s’accumulent. Que relevez-vous ?",
+      "answer": "Quantité, capacité tampon, durée du séjour et impact sur le flux amont et aval."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Vous hésitez entre un site central et deux régionaux. Quels éléments comparez-vous ?",
+      "answer": "Temps de service, volumes, coûts, capacités et possibilités de regroupement."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "2.3 Choix du site géographique",
+      "file": "log-402-notions-1-v001.svg",
+      "alt": "Origines. Fournisseurs et production. Site. Capacité et accès. Destinations. Clients et délais.",
+      "caption": "Les volumes, délais et coûts se comparent sur le même périmètre.",
+      "sha256": "944b52da1f1539601a7baf62f510fb32dfae95aec9f9a6e6da3ed5fd214a7090",
+      "origin": "Illustration originale Doc-Prof du module 402."
+    },
+    {
+      "anchor": "2.4 Entrepôt temporaire",
+      "file": "log-402-notions-2-v001.svg",
+      "alt": "Transbordement. Transférer vers le départ. Réserve. Conserver jusqu’au besoin.",
+      "caption": "La durée du séjour dépend de la fonction du site.",
+      "sha256": "eb40040901fa82450f8546e851dfbd77e2cae119610b105c4850a8b34e9c1547",
+      "origin": "Illustration originale Doc-Prof du module 402."
+    }
+  ]
+}

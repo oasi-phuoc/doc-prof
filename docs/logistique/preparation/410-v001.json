@@ -1,0 +1,179 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Distinguer convoyage **fixe** et engins **mobiles**, et citer les convoyeurs **verticaux**\n- Décrire ponts / portiques / **Container-Carrier** et appliquer les **règles de levage** (dont angle β)\n- Expliquer les convoyeurs **continus** (rouleaux, chaînes) et les **éléments de transfert**\n- Décrire le principe du convoyeur à **accumulation** et de la **table à billes**",
+  "overview": "## Aperçu du module 410\n\n- Relier les convoyeurs verticaux ou continus à leur fonction dans le flux.\n- Identifier les zones de transfert, d’accumulation et de sortie.\n- Reconnaître les limites d’accès et transmettre les incidents au poste qualifié.",
+  "replacements": [
+    {
+      "from": "Suite modules **407 / 409**. Contrairement au discontinu : se déplace **en boucle**, toujours dans le **même sens** (pas de marche arrière) · virages et obstacles possibles.",
+      "to": "Un convoyeur continu dessert un parcours défini par sa conception. Son mode de mouvement dépend du dispositif.",
+      "reason": "Retire une règle universelle sur le sens et la boucle."
+    }
+  ],
+  "summary": [
+    "Relier les convoyeurs verticaux ou continus à leur fonction dans le flux.",
+    "Identifier les zones de transfert, d’accumulation et de sortie.",
+    "Reconnaître les limites d’accès et transmettre les incidents au poste qualifié."
+  ],
+  "glossary": [
+    [
+      "Accumulation",
+      "Attente contrôlée d’unités sur une section prévue."
+    ],
+    [
+      "Consigne d’accès",
+      "Règle qui détermine où et quand une personne peut entrer."
+    ],
+    [
+      "Convoyeur à bande",
+      "Installation qui transporte les unités sur une bande mobile."
+    ],
+    [
+      "Convoyeur à rouleaux",
+      "Installation dont les rouleaux supportent le mouvement des unités."
+    ],
+    [
+      "Convoyeur continu",
+      "Installation assurant un flux successif sur un parcours prévu."
+    ],
+    [
+      "Convoyeur vertical",
+      "Dispositif destiné à relier des hauteurs ou niveaux."
+    ],
+    [
+      "Débit",
+      "Quantité traitée par unité de temps."
+    ],
+    [
+      "Engin de levage",
+      "Équipement qui soulève une charge dans le cadre de sa conception."
+    ],
+    [
+      "Élément de transfert",
+      "Dispositif qui change le sens ou la trajectoire d’une unité."
+    ],
+    [
+      "Palier",
+      "Niveau ou zone de prise en charge d’une installation."
+    ],
+    [
+      "Point de transfert",
+      "Interface entre deux parties du flux."
+    ],
+    [
+      "Zone protégée",
+      "Secteur dont les accès sont maîtrisés pour limiter l’exposition."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "La ligne traite 30 bacs par minute pendant quatre minutes. Calculez le volume.",
+      "answer": "120 bacs.",
+      "calculation": "30 × 4 = 120."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Une section permet d’attendre 22 bacs et en contient 16. Combien de positions restent libres ?",
+      "answer": "Six positions.",
+      "calculation": "22 − 16 = 6."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Un passage vertical prend 42 secondes par lot. Calculez la durée de cinq passages successifs.",
+      "answer": "210 secondes, soit 3 min 30 s.",
+      "calculation": "42 × 5 = 210 s = 3 min 30 s."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Trois sections reçoivent 8, 12 et 14 unités. Calculez le total.",
+      "answer": "34 unités.",
+      "calculation": "8 + 12 + 14 = 34."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Une ligne traite 360 unités en 18 minutes effectives sur 24 minutes observées. Comparez les deux débits moyens.",
+      "answer": "20 unités/min en fonctionnement et 15 sur la période.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "360 ÷ 18 = 20. 360 ÷ 24 = 15."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Que permet un convoyeur vertical ?",
+      "answer": "Relier des niveaux définis pour des unités compatibles."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "À quoi sert une zone d’accumulation ?",
+      "answer": "Absorber temporairement un écart de cadence dans les limites prévues."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Qu’est-ce qu’un élément de transfert ?",
+      "answer": "Un dispositif qui oriente les unités entre tronçons selon le processus."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Que signifie une hausse de débit ?",
+      "answer": "Davantage d’unités par unité de temps dans le même périmètre."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Qui intervient après un blocage dans une zone protégée ?",
+      "answer": "Une personne habilitée selon la procédure de l’installation."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Un colis reste bloqué dans une zone inaccessible. Comment réagissez-vous ?",
+      "answer": "Identifier le lieu et le risque, signaler au poste compétent et ne pas pénétrer dans la zone."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "La section aval est pleine alors que l’amont accélère. Que vérifiez-vous ?",
+      "answer": "Valeurs de cadence, état de la zone, limite d’accumulation et consignes de régulation."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Un colis est orienté vers la mauvaise branche. Que consignez-vous ?",
+      "answer": "Identifiant, lieu, heure et destination prévue, puis faire appliquer la correction autorisée."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "10.3 Convoyeurs continus",
+      "file": "log-410-notions-1-v001.svg",
+      "alt": "Entrée. Identification du bac. Transfert. Choix de la branche. Sortie. Contrôle de destination.",
+      "caption": "Les zones et leur capacité permettent de comprendre le déplacement.",
+      "sha256": "afa9790a668b727f0ec1e7556ef84326ea8de435870d004868dfeaa79b0b6642",
+      "origin": "Illustration originale Doc-Prof du module 410."
+    },
+    {
+      "anchor": "10.1 Convoyeur vertical",
+      "file": "log-410-notions-2-v001.svg",
+      "alt": "Niveau départ. Zone de remise. Mouvement. Transfert prévu. Niveau arrivée. Zone de reprise.",
+      "caption": "Le convoyeur transporte les seules unités prévues par la conception.",
+      "sha256": "2d67c22d9d736b1025a1e11c06e4d121a7be82ae40422ff19ef3244b63bc0b8f",
+      "origin": "Illustration originale Doc-Prof du module 410."
+    }
+  ]
+}

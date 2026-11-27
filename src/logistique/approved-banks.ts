@@ -30,6 +30,16 @@ import { module309 } from './banks/module-309-v001.generated.ts'
 import { module310 } from './banks/module-310-v001.generated.ts'
 import { module311 } from './banks/module-311-v001.generated.ts'
 import { module312 } from './banks/module-312-v001.generated.ts'
+import { module401 } from './banks/module-401-v001.generated.ts'
+import { module402 } from './banks/module-402-v001.generated.ts'
+import { module403 } from './banks/module-403-v001.generated.ts'
+import { module404 } from './banks/module-404-v001.generated.ts'
+import { module405 } from './banks/module-405-v001.generated.ts'
+import { module406 } from './banks/module-406-v001.generated.ts'
+import { module407 } from './banks/module-407-v001.generated.ts'
+import { module408 } from './banks/module-408-v001.generated.ts'
+import { module409 } from './banks/module-409-v001.generated.ts'
+import { module410 } from './banks/module-410-v001.generated.ts'
 import { module613 } from './banks/module-613-v001.generated.ts'
 import { module805 } from './banks/module-805-v001.generated.ts'
 import { module902 } from './banks/module-902-v001.generated.ts'
@@ -90,6 +100,11 @@ const publication_301_302_303_v001: LogistiquePublication = {
   units: [...publication_207_208_209_v001.units, ...module301, ...module302, ...module303],
 }
 
+const publication_304_305_306_307_309_310_311_312_v001: LogistiquePublication = {
+  revision: 'logistique-304-305-306-307-309-310-311-312-v001',
+  units: [...publication_301_302_303_v001.units, ...module304, ...module305, ...module306, ...module307, ...module309, ...module310, ...module311, ...module312],
+}
+
 /** Ajouter une publication après validation. Garder les versions utilisées par les recettes. */
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
@@ -133,9 +148,10 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   serviceCommunicationPublication,
   publication_207_208_209_v001,
   publication_301_302_303_v001,
+  publication_304_305_306_307_309_310_311_312_v001,
   {
-    revision: 'logistique-304-305-306-307-309-310-311-312-v001',
-    units: [...publication_301_302_303_v001.units, ...module304, ...module305, ...module306, ...module307, ...module309, ...module310, ...module311, ...module312],
+    revision: 'logistique-401-402-403-404-405-406-407-408-409-410-v001',
+    units: [...publication_304_305_306_307_309_310_311_312_v001.units, ...module401, ...module402, ...module403, ...module404, ...module405, ...module406, ...module407, ...module408, ...module409, ...module410],
   },
 ]
 

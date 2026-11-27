@@ -1,0 +1,173 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Définir le **stockage** (local et biens) et la fonction de **réserve**\n- Expliquer la fonction de **sécurité** (stock de sécurité / tampon)\n- Citer et illustrer les fonctions de **transformation**, **contrôle-tri**, **spéculation** et **affinage/maturation**",
+  "overview": "## Aperçu du module 401\n\n- Relier le stockage à la disponibilité des articles, au délai et aux besoins.\n- Distinguer réserve, sécurité, transformation et contrôle.\n- Comparer coûts et bénéfices avant d’augmenter un stock.",
+  "replacements": [],
+  "summary": [
+    "Relier le stockage à la disponibilité des articles, au délai et aux besoins.",
+    "Distinguer réserve, sécurité, transformation et contrôle.",
+    "Comparer coûts et bénéfices avant d’augmenter un stock."
+  ],
+  "glossary": [
+    [
+      "Affinage",
+      "Évolution organisée des caractéristiques d’un produit pendant le séjour."
+    ],
+    [
+      "Capital immobilisé",
+      "Moyens financiers engagés dans la marchandise en stock."
+    ],
+    [
+      "Contrôle",
+      "Vérification de l’identification, de l’état ou d’une exigence de stockage."
+    ],
+    [
+      "Coût de stockage",
+      "Coût associé à l’espace, aux opérations ou au financement des stocks."
+    ],
+    [
+      "Disponibilité",
+      "Possibilité d’utiliser ou de fournir l’article au moment requis."
+    ],
+    [
+      "Fonction de réserve",
+      "Conservation d’une quantité pour un besoin ultérieur."
+    ],
+    [
+      "Période de couverture",
+      "Durée pendant laquelle le stock répond à une consommation définie."
+    ],
+    [
+      "Réassort",
+      "Action de compléter une quantité ou un emplacement."
+    ],
+    [
+      "Rupture",
+      "Situation où la quantité utilisable ne couvre pas le besoin voulu."
+    ],
+    [
+      "Stock de sécurité",
+      "Réserve destinée à certains imprévus de demande ou d’arrivée."
+    ],
+    [
+      "Stock saisonnier",
+      "Quantité prévue pour un besoin lié à une saison."
+    ],
+    [
+      "Transformation",
+      "Modification physique ou de conditionnement réalisée pendant le flux."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Un stock de 96 pièces couvre une consommation constante de 12 pièces par jour. Combien de jours couvre-t-il ?",
+      "answer": "Huit jours.",
+      "calculation": "96 ÷ 12 = 8 jours."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Avant une période chargée, le stock passe de 130 à 175 pièces. Calculez l’augmentation.",
+      "answer": "45 pièces.",
+      "calculation": "175 − 130 = 45."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Le stockage de 40 bacs coûte 3 CHF par bac et par mois. Calculez le coût pour deux mois.",
+      "answer": "240 CHF.",
+      "calculation": "40 × 3 × 2 = 240 CHF."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Sur 80 emplacements, 68 sont occupés. Combien sont libres ?",
+      "answer": "12 emplacements.",
+      "calculation": "80 − 68 = 12."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Sur 180 pièces, 24 sont dédiées à la sécurité. Calculez leur part, au dixième près.",
+      "answer": "13,3 %.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "24 ÷ 180 × 100 ≈ 13,3 %."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Pourquoi conserver un stock de réserve ?",
+      "answer": "Pour couvrir un besoin avant la prochaine disponibilité."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Quels coûts peuvent augmenter avec le stock ?",
+      "answer": "L’espace, les opérations, le capital immobilisé et la perte de valeur."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Quel rôle remplit une réserve lors d’un retard ?",
+      "answer": "Elle couvre un aléa dans les limites prévues."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Qu’est-ce qui différencie contrôle et transformation ?",
+      "answer": "Le contrôle vérifie. La transformation modifie le produit ou son conditionnement."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Pourquoi tenir compte de la demande saisonnière ?",
+      "answer": "Elle peut changer les quantités nécessaires et dates d’entrée."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Un retard de deux jours survient. Quelles données comparez-vous ?",
+      "answer": "Stock utilisable, besoins jusqu’à l’arrivée confirmée et réserve disponible."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Un excédent encombre une zone nécessaire dès demain. Quelle suite proposez-vous ?",
+      "answer": "Identifier son statut, informer le responsable et proposer un emplacement autorisé ou un ajustement."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "L’équipe envisage d’acheter très tôt pour profiter d’un prix. Quels coûts comparez-vous ?",
+      "answer": "L’économie d’achat et les coûts de stockage, de manutention et d’obsolescence."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "1.1 La fonction de réserve",
+      "file": "log-401-notions-1-v001.svg",
+      "alt": "Arrivée. Articles utilisables. Réserve. Stock mesuré. Besoin. Moment du prélèvement.",
+      "caption": "Le délai et la demande fixent la couverture nécessaire.",
+      "sha256": "6746b93e30d45d917412e50825acc51ffde1458740fcbc4f8c86459e390bf1d1",
+      "origin": "Illustration originale Doc-Prof du module 401."
+    },
+    {
+      "anchor": "1.2 Aperçu des fonctions de stockage",
+      "file": "log-401-notions-2-v001.svg",
+      "alt": "Réserve. Couvrir un besoin futur. Sécurité. Absorber un aléa. Transformation. Modifier la présentation.",
+      "caption": "La même zone peut remplir plusieurs fonctions selon le flux.",
+      "sha256": "c6449917d274ddac093590834000038d79b111a559844bf62fa644fcbbd985f6",
+      "origin": "Illustration originale Doc-Prof du module 401."
+    }
+  ]
+}

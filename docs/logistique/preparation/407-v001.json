@@ -1,0 +1,173 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Distinguer transport interne et types de **moyens** (fixes / mobiles)\n- Classer et **choisir** un moyen selon critères (marchandise, trajet, automatisation…)\n- Expliquer le rôle du **chariot élévateur** et du **transstockeur**\n- Appliquer la **loi du levier** et lire un **diagramme de capacité de charge**",
+  "overview": "## Aperçu du module 407\n\n- Comparer un moyen mobile et un moyen fixe selon la tâche et le parcours.\n- Identifier les données de la charge et de l’installation à vérifier.\n- Lire un principe de levier ou une capacité fournie comme donnée de fiche.",
+  "replacements": [],
+  "summary": [
+    "Comparer un moyen mobile et un moyen fixe selon la tâche et le parcours.",
+    "Identifier les données de la charge et de l’installation à vérifier.",
+    "Lire un principe de levier ou une capacité fournie comme donnée de fiche."
+  ],
+  "glossary": [
+    [
+      "Capacité admissible",
+      "Limite donnée pour une configuration et des conditions définies."
+    ],
+    [
+      "Centre de gravité",
+      "Point de référence utilisé pour représenter la répartition du poids."
+    ],
+    [
+      "Convoyeur",
+      "Installation destinée à déplacer les unités le long d’un parcours."
+    ],
+    [
+      "Distance de charge",
+      "Distance référencée dans le diagramme ou la documentation de l’équipement."
+    ],
+    [
+      "Engin fixe",
+      "Équipement rattaché à une installation ou un parcours déterminé."
+    ],
+    [
+      "Engin mobile",
+      "Moyen qui peut se déplacer entre des zones autorisées."
+    ],
+    [
+      "Flux continu",
+      "Déplacement récurrent sur une installation selon le processus."
+    ],
+    [
+      "Flux discontinu",
+      "Transfert effectué par trajets ou opérations séparés."
+    ],
+    [
+      "Guidage",
+      "Dispositif ou forme de pilotage qui définit une trajectoire."
+    ],
+    [
+      "Levier",
+      "Modèle reliant une force, une distance et un effet autour d’un point d’appui."
+    ],
+    [
+      "Parcours",
+      "Trajet défini de l’origine vers la destination."
+    ],
+    [
+      "Transstockeur",
+      "Équipement desservant les positions d’un ensemble de rayonnages."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Un convoyeur fictif traite 24 bacs par minute. Combien traite-t-il en cinq minutes continues ?",
+      "answer": "120 bacs.",
+      "calculation": "24 × 5 = 120."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Un engin effectue six allers-retours de 48 m par trajet simple. Donnez la distance.",
+      "answer": "576 m.",
+      "calculation": "6 × 2 × 48 = 576 m."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Un transfert dure 18 minutes et l’attente 7 minutes. Calculez le délai total.",
+      "answer": "25 minutes.",
+      "calculation": "18 + 7 = 25 min."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "On répartit 132 unités en lots de 12. Combien de lots prépare-t-on ?",
+      "answer": "Onze lots.",
+      "calculation": "132 ÷ 12 = 11."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Dans un modèle de levier de table, une force de 40 N agit à 0,5 m. Calculez le moment.",
+      "answer": "20 N·m.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "40 × 0,5 = 20 N·m."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quel intérêt donne un convoyeur à un flux fréquent ?",
+      "answer": "Il organise un parcours répétitif, dans les limites de sa conception."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Pourquoi utiliser un moyen mobile pour des trajets variés ?",
+      "answer": "Il peut desservir plusieurs zones autorisées selon le planning."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Que relie le principe de levier ?",
+      "answer": "La force, sa distance au point d’appui et le moment correspondant."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Un calcul de cours suffit-il à autoriser l’usage réel d’un moyen ?",
+      "answer": "Les limites et procédures de l’installation réelle et l’autorisation doivent être vérifiées."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Quelles données servent à comparer deux solutions de déplacement ?",
+      "answer": "Parcours, types de charges, fréquence, capacité, durée, risques et coûts."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Les destinations changent toutes les heures. Quelle comparaison proposez-vous ?",
+      "answer": "Examiner la souplesse nécessaire, le volume et les accès pour comparer moyen mobile et installation fixe."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Le document reçu correspond à un autre modèle d’engin. Quelle suite ?",
+      "answer": "Suspendre la décision, relever la référence exacte et faire vérifier le document applicable."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Le flux dépasse souvent le débit prévu. Que mesurez-vous ?",
+      "answer": "Cadence réelle, périodes de saturation, durée des arrêts et volume en attente."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "7.2 Moyens de transport dans la logistique",
+      "file": "log-407-notions-1-v001.svg",
+      "alt": "Moyen mobile. Parcours variables autorisés. Moyen fixe. Trajet défini par l’installation.",
+      "caption": "Le choix dépend du flux et de la compatibilité avec le site.",
+      "sha256": "ad05108af44593680ebf6e78d4a6038112e7ae1e1b7084fbf505820a149aec53",
+      "origin": "Illustration originale Doc-Prof du module 407."
+    },
+    {
+      "anchor": "7.4 Diagrammes de capacité de charge",
+      "file": "log-407-notions-2-v001.svg",
+      "alt": "Identifier. Engin et configuration. Vérifier. Données de la charge. Décider. Selon documentation.",
+      "caption": "Un diagramme de cours ne valide pas une opération réelle.",
+      "sha256": "f49b7705e6827ef3c228d83bc9e6b48877277d0a3ad397b2425c252c28f20986",
+      "origin": "Illustration originale Doc-Prof du module 407."
+    }
+  ]
+}

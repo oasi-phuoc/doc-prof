@@ -1,0 +1,184 @@
+{
+  "diplomas": [
+    "CFC",
+    "AFP"
+  ],
+  "objectives": "## Objectifs\n\n- Expliquer la **planification** et l'agencement d'un entrepôt\n- Distinguer les entrepôts par **fonction** et les formes au sol\n- Calculer / interpréter **charge au sol**, **Ast**, taux d'**occupation** surface et espace\n- Décrire charges de rayonnage, **numérotation**, **flux** interne et **images de stock**",
+  "overview": "## Aperçu du module 408\n\n- Distinguer surfaces brutes, utiles et occupées dans un dépôt.\n- Lire les coordonnées d’emplacement et organiser des flux compréhensibles.\n- Interpréter un ratio d’utilisation et vérifier les contraintes locales.",
+  "replacements": [
+    {
+      "from": "2. 45×25 m, 20 000 N/m², palettes 500 kg → max **4500** palettes",
+      "to": "2. Un calcul de charge moyenne ne détermine pas le nombre admissible de palettes. L’implantation, les charges ponctuelles et les données de l’installation restent à vérifier.",
+      "reason": "Retire une extrapolation à une limite réelle."
+    },
+    {
+      "from": "**Formule :** L1 (chariot jusqu'à base fourche) + L2 (longueur charge) + **20 cm**.",
+      "to": "La largeur d’allée se vérifie à partir du diagramme du modèle, de la charge et des exigences du site.",
+      "reason": "Remplace une marge générique inapplicable à tous les modèles."
+    }
+  ],
+  "summary": [
+    "Distinguer surfaces brutes, utiles et occupées dans un dépôt.",
+    "Lire les coordonnées d’emplacement et organiser des flux compréhensibles.",
+    "Interpréter un ratio d’utilisation et vérifier les contraintes locales."
+  ],
+  "glossary": [
+    [
+      "Adresse de stock",
+      "Suite de repères qui identifie une position de rangement."
+    ],
+    [
+      "Allée",
+      "Voie utilisée selon les déplacements admis et le plan du site."
+    ],
+    [
+      "Capacité utile",
+      "Nombre de positions ou volume exploitable sous les contraintes spécifiées."
+    ],
+    [
+      "Charge ponctuelle",
+      "Effort concentré sur une petite surface."
+    ],
+    [
+      "Flux interne",
+      "Déplacement des marchandises entre zones du site."
+    ],
+    [
+      "Implantation",
+      "Position relative des zones, accès, équipements et emplacements."
+    ],
+    [
+      "Surface brute",
+      "Aire totale du périmètre mesuré."
+    ],
+    [
+      "Surface nette",
+      "Aire restante ou utilisée selon les exclusions définies."
+    ],
+    [
+      "Taux d’exploitation",
+      "Part d’une ressource employée selon un quotient dont le périmètre est précisé."
+    ],
+    [
+      "Taux d’occupation",
+      "Rapport entre les positions utilisées et les positions disponibles."
+    ],
+    [
+      "Travée",
+      "Partie d’un rayonnage comprise entre des montants."
+    ],
+    [
+      "Zone de transit",
+      "Espace prévu pour un passage ou un séjour limité."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Un bâtiment fictif mesure 28 m sur 18 m. Calculez la surface brute.",
+      "answer": "504 m².",
+      "calculation": "28 × 18 = 504 m²."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Sur 500 m², 330 m² servent au stockage. Calculez la part de surface.",
+      "answer": "66 %.",
+      "calculation": "330 ÷ 500 × 100 = 66 %."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Six allées ont chacune deux côtés de 15 positions. Calculez le total.",
+      "answer": "180 positions.",
+      "calculation": "6 × 2 × 15 = 180."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "La position 2 d’un niveau contient huit bacs et la position 3 en contient douze. Calculez le total compté.",
+      "answer": "20 bacs.",
+      "calculation": "8 + 12 = 20."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Un modèle répartit 8 000 N sur 4 m² de manière uniforme. Calculez l’effort surfacique moyen.",
+      "answer": "2 000 N/m² dans le modèle.",
+      "approvedFor": [
+        "CFC"
+      ],
+      "calculation": "8 000 ÷ 4 = 2 000 N/m²."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Pourquoi distinguer surface brute et surface de stockage ?",
+      "answer": "Les voies, services et zones non stockantes peuvent être inclus dans la surface brute."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Que manque-t-il à un taux d’occupation sans dénominateur ?",
+      "answer": "La capacité de référence et le périmètre, nécessaires pour l’interpréter."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Comment reconnaître une adresse d’emplacement ?",
+      "answer": "Décomposer les éléments indiqués par le système, par exemple allée, travée, niveau et position."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Pourquoi la charge moyenne ne suffit-elle pas sur le terrain ?",
+      "answer": "Des efforts locaux ou dynamiques peuvent être plus contraignants que la moyenne."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Quel intérêt donne la séparation des flux ?",
+      "answer": "Elle facilite une circulation claire et limite les croisements indésirables."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Le plan indique une capacité théorique mais une zone est réservée à la circulation. Quel chiffre utilisez-vous ?",
+      "answer": "Relever les positions réellement utilisables et documenter l’exclusion."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Deux articles portent des codes ressemblants. Comment réduire les erreurs de rangement ?",
+      "answer": "Vérifier référence et adresse lors du mouvement, puis prévoir un repère distinct selon le système."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "L’occupation baisse après un nouveau découpage. Que vérifiez-vous avant de conclure ?",
+      "answer": "Que le même stock et des capacités comparables sont mesurés et que le périmètre est le même."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "8.2 Planification d'un entrepôt",
+      "file": "log-408-notions-1-v001.svg",
+      "alt": "Réception. Contrôle d’entrée. Stock. Adresses et circulation. Expédition. Préparation et départ.",
+      "caption": "Le plan prend aussi en compte les accès et la circulation.",
+      "sha256": "6aa1be5f9f12f1d1a35bed0232c18090b3b7c222177d97b6e5d1d956ea27919f",
+      "origin": "Illustration originale Doc-Prof du module 408."
+    },
+    {
+      "anchor": "8.7 Utilisation des surfaces",
+      "file": "log-408-notions-2-v001.svg",
+      "alt": "Brute. Ensemble du périmètre. Nette. Après exclusions.",
+      "caption": "Préciser ce que le dénominateur inclut.",
+      "sha256": "8873635398cff33420a84d87d221b9d656cb9551c916443b4a3ea0a4bcc80a92",
+      "origin": "Illustration originale Doc-Prof du module 408."
+    }
+  ]
+}

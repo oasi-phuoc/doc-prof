@@ -58,10 +58,20 @@ Référence de réalisation dans le [cahier des charges v2.12](cahier-des-charge
 | L4 — Module 310 | Révision `310-v001` active en CFC et AFP | 2 schémas, 12 termes, 6/4 calculs, 6 vérifications et 4 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 310](preparation/310-v001.json). |
 | L4 — Module 311 | Révision `311-v001` active en CFC et AFP | 2 schémas, 12 termes, 6/4 calculs, 6 vérifications et 4/3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 311](preparation/311-v001.json). |
 | L4 — Module 312 | Révision `312-v001` active en CFC et AFP | 2 schémas, 12 termes, 6/4 calculs, 6 vérifications et 4 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 312](preparation/312-v001.json). |
+| L4 — Module 401 | Révision `401-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 401](preparation/401-v001.json). |
+| L4 — Module 402 | Révision `402-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 402](preparation/402-v001.json). |
+| L4 — Module 403 | Révision `403-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 403](preparation/403-v001.json). |
+| L4 — Module 404 | Révision `404-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 404](preparation/404-v001.json). |
+| L4 — Module 405 | Révision `405-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 405](preparation/405-v001.json). |
+| L4 — Module 406 | Révision `406-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 406](preparation/406-v001.json). |
+| L4 — Module 407 | Révision `407-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 407](preparation/407-v001.json). |
+| L4 — Module 408 | Révision `408-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 408](preparation/408-v001.json). |
+| L4 — Module 409 | Révision `409-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 409](preparation/409-v001.json). |
+| L4 — Module 410 | Révision `410-v001` active en CFC et AFP | 2 schémas, 12 termes, 5/4 calculs, 5 vérifications et 3 situations. Les paires donnent les quantités CFC puis AFP. [Préparation du 410](preparation/410-v001.json). |
 
 ## Reprise opérationnelle
 
-1. Les onze modules du thème 100 et les neuf modules du thème 200 disposent des six types en CFC et AFP. Le thème 300 est actif dans les deux diplômes. Poursuivre avec le thème 400 et ses modules 401 à 410. Les cibles nominales de contenu et la recette complète restent à atteindre. Partir des [archives par thème](sources-epcas/), préparer les six types et vérifier visuels et composition ensemble avant publication.
+1. Les onze modules du thème 100 et les neuf modules du thème 200 disposent des six types en CFC et AFP. Les thèmes 300 et 400 sont actifs dans les deux diplômes. Poursuivre avec les modules 501 à 506 en CFC. Les cibles nominales de contenu et la recette complète restent à atteindre. Partir des [archives par thème](sources-epcas/), préparer les six types et vérifier visuels et composition ensemble avant publication.
 2. Vérifier les corrigés, la place du contenu dans le référentiel, les écarts AFP/CFC et les dépendances à des médias écartés.
 3. Enregistrer une révision de banque et la conserver pour les recettes déjà créées. Les changements de fond du 105 sont consignés dans les [données de préparation](pilote-105/preparation.generated.json) et dans le [dossier éditorial](pilote-105/relecture.md).
 4. Vérifier dans les deux diplômes le nombre d’unités disponibles, la génération, le corrigé, l’impression et la réouverture. Reporter dans ce fichier les preuves, les écarts et le prochain module retenu.
@@ -82,6 +92,7 @@ Référence de réalisation dans le [cahier des charges v2.12](cahier-des-charge
 
 - La recette du 302 a révélé que quatre problèmes courts pouvaient dépasser la réserve. Le calcul de pagination compte désormais la hauteur minimale du bloc de calcul. La suite de génération passe six tests.
 - Modules 304 à 312, soit 96 contextes module, diplôme et type vérifiés en Chromium A4. Réserve minimale au pied de 53,14 px. Les aperçus occupent une page, les cours illustrés produisent un PDF et les suites de calcul gardent les numéros.
+- Modules 401 à 410, soit 120 contextes module, diplôme et type vérifiés en Chromium A4. Réserve minimale au pied de 79,64 px. Les aperçus occupent une page, les cours illustrés produisent un PDF et les suites de calcul gardent les numéros.
 
 ### Thème 200 — Déploiement du 27 novembre
 
