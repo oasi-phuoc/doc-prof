@@ -1,0 +1,169 @@
+{
+  "diplomas": [
+    "CFC"
+  ],
+  "objectives": "## Objectifs\n\n- Situer la **logistique de production** entre approvisionnement et distribution\n- Citer ses **objectifs** et les relier aux **6B**\n- Distinguer les **types de stocks** (amont, intermédiaire, aval, proximité)\n- Décrire les tâches de la logistique d'**élimination** et l'ordre prévention → valorisation → élimination",
+  "overview": "## Aperçu du module 502\n\n- Organiser les mouvements entre les achats, la production et la distribution.\n- Distinguer réserves, encours et produits terminés.\n- Rattacher les sorties de produits et de rebuts au flux prévu.",
+  "replacements": [],
+  "summary": [
+    "Organiser les mouvements entre les achats, la production et la distribution.",
+    "Distinguer réserves, encours et produits terminés.",
+    "Rattacher les sorties de produits et de rebuts au flux prévu."
+  ],
+  "glossary": [
+    [
+      "Approvisionnement de poste",
+      "Mise à disposition des ressources au poste de production."
+    ],
+    [
+      "Déchet",
+      "Matière ou objet orienté vers une filière selon sa classification."
+    ],
+    [
+      "Encours",
+      "Produit dont le traitement a commencé et reste incomplet."
+    ],
+    [
+      "Entrée matière",
+      "Réception ou mise à disposition d’un intrant pour le processus."
+    ],
+    [
+      "Flux interne",
+      "Mouvement entre les zones d’un même site."
+    ],
+    [
+      "Logistique de production",
+      "Organisation des mouvements et informations entre les opérations de production."
+    ],
+    [
+      "Poste",
+      "Emplacement ou fonction où une opération est effectuée."
+    ],
+    [
+      "Produit fini",
+      "Unité qui a terminé les étapes prévues."
+    ],
+    [
+      "Rebut",
+      "Sortie écartée des produits acceptés, selon la décision."
+    ],
+    [
+      "Stock intermédiaire",
+      "Quantité entre deux étapes successives."
+    ],
+    [
+      "Transfert",
+      "Mouvement enregistré entre deux emplacements ou périmètres."
+    ],
+    [
+      "Valorisation",
+      "Utilisation ou traitement d’une matière selon les filières applicables."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Une zone contient 28 bacs. Elle en reçoit 17 et en envoie 22. Calculez le solde.",
+      "answer": "23 bacs.",
+      "calculation": "28 + 17 − 22 = 23."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Trois lignes consomment chacune 16 kg. Calculez la quantité totale.",
+      "answer": "48 kg.",
+      "calculation": "3 × 16 = 48 kg."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Sur 200 pièces, 12 sont rebutées. Calculez le taux.",
+      "answer": "6 %.",
+      "calculation": "12 ÷ 200 × 100 = 6 %."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Une unité attend 25 minutes puis est traitée en 8 minutes. Calculez le temps total.",
+      "answer": "33 minutes.",
+      "calculation": "25 + 8 = 33 min."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Un lot de 90 pièces est réparti entre 72 conformes, 8 rebutées et des unités à contrôler. Combien restent à contrôler ?",
+      "answer": "Dix pièces.",
+      "calculation": "90 − 72 − 8 = 10."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Où se situe la logistique de production dans le flux ?",
+      "answer": "Entre l’approvisionnement et la mise à disposition des sorties à la distribution."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "À quoi sert un stock intermédiaire ?",
+      "answer": "À couvrir une transition entre opérations lorsque la cadence ou le délai diffère."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Que distingue un encours d’un produit fini ?",
+      "answer": "Une opération du processus reste à réaliser pour l’encours."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Pourquoi suivre aussi les rebuts ?",
+      "answer": "Pour conserver le bilan de quantité et appliquer la filière définie."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Quel document peut confirmer un transfert interne ?",
+      "answer": "L’ordre ou enregistrement qui précise quantité, référence, origine et destination."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Les bacs s’accumulent avant une étape. Quelles mesures relevez-vous ?",
+      "answer": "Quantité en attente, capacité, cadence et durée de séjour."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Un lot non conforme arrive en zone de produits finis. Quelle décision prenez-vous ?",
+      "answer": "Suspendre son utilisation, préserver sa trace et transmettre selon la procédure."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Deux ateliers comptent la même matière dans des unités différentes. Comment éviter un écart ?",
+      "answer": "Utiliser une unité commune à partir d’une conversion vérifiée."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "2.2 Objectifs et tâches",
+      "file": "log-502-notions-1-v001.svg",
+      "alt": "Approvisionner. Matières et composants. Desservir. Postes et encours. Remettre. Sorties conformes.",
+      "caption": "Les mouvements physiques et leur enregistrement se suivent.",
+      "sha256": "1767cb358824ca4cf8066d1bf743fc65a30efa8a6ef9004f4ec469b81f2e6f4e",
+      "origin": "Illustration originale Doc-Prof du module 502."
+    },
+    {
+      "anchor": "2.4 Logistique opérationnelle d'élimination",
+      "file": "log-502-notions-2-v001.svg",
+      "alt": "Conforme. Transfert vers l’aval. Écart. Contrôle ou filière désignée.",
+      "caption": "Chaque sortie suit son statut et sa destination prévue.",
+      "sha256": "dd2e3b5619f34c2c028f4e6858decdfcd2616d1de1fccd769150a59f478736fe",
+      "origin": "Illustration originale Doc-Prof du module 502."
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "diplomas": [
+    "CFC"
+  ],
+  "objectives": "## Objectifs\n\n- Distinguer **MQ** et **AQ** (et du contrôle qualité produit)\n- Expliquer **Kaizen**, le cycle **PDCA** et le **PAC**\n- Citer les **7 mudas** et le principe **ISO 9001** (audits inclus)\n- Relier **traçabilité**, **économie circulaire** et **IP** à la qualité / sécurité",
+  "overview": "## Aperçu du module 506\n\n- Distinguer management, assurance et contrôle de la qualité.\n- Documenter une non-conformité et retrouver le lot concerné.\n- Interpréter un indicateur avant et après une action d’amélioration.",
+  "replacements": [
+    {
+      "from": "Contrairement au **contrôle qualité** (produit), l'AQ contrôle **activités et processus**. Si le niveau n'est pas atteint → retrait / cycle d'amélioration.",
+      "to": "L’assurance qualité organise la confiance dans le respect des exigences. Le contrôle qualité vérifie leur réalisation selon le plan prévu.",
+      "reason": "Clarifie la distinction entre organisation et vérification."
+    },
+    {
+      "from": "Suivre le produit : MP → production → distribution → utilisateur → élimination. Exigée (ex. ISO 9001) · auto, électronique, alimentaire, pharma.",
+      "to": "Identifier le produit et les étapes nécessaires à la traçabilité. Les exigences dépendent du produit, du secteur et du périmètre du système de management.",
+      "reason": "Évite de présenter une exigence uniforme."
+    }
+  ],
+  "summary": [
+    "Distinguer management, assurance et contrôle de la qualité.",
+    "Documenter une non-conformité et retrouver le lot concerné.",
+    "Interpréter un indicateur avant et après une action d’amélioration."
+  ],
+  "glossary": [
+    [
+      "Action corrective",
+      "Action sur une cause pour prévenir une répétition d’écart."
+    ],
+    [
+      "Assurance qualité",
+      "Partie du management qui donne confiance dans le respect des exigences."
+    ],
+    [
+      "Audit",
+      "Vérification structurée à partir de critères et de preuves."
+    ],
+    [
+      "Critère",
+      "Exigence ou condition qui aide à juger un résultat."
+    ],
+    [
+      "Instruction",
+      "Document qui précise les règles d’une opération et son champ d’application."
+    ],
+    [
+      "Management de la qualité",
+      "Pilotage de l’organisation concernant la qualité."
+    ],
+    [
+      "Non-conformité",
+      "Non-satisfaction d’une exigence spécifiée."
+    ],
+    [
+      "Pareto",
+      "Mise en ordre des contributions pour distinguer les catégories dominantes."
+    ],
+    [
+      "PDCA",
+      "Cycle planifier, réaliser, vérifier et ajuster."
+    ],
+    [
+      "Traçabilité",
+      "Possibilité de suivre un lot au moyen des identifiants et événements enregistrés."
+    ],
+    [
+      "Contrôle qualité",
+      "Vérification du respect des exigences prévues."
+    ],
+    [
+      "Version",
+      "État identifié d’un document, d’une donnée ou d’une procédure."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Sur 250 pièces inspectées, dix présentent un écart. Calculez le taux.",
+      "answer": "4 %.",
+      "calculation": "10 ÷ 250 × 100 = 4 %."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Trois causes recensent 12, 7 et 1 cas. Calculez la part de la première.",
+      "answer": "60 %.",
+      "calculation": "12 ÷ (12 + 7 + 1) × 100 = 60 %."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Une unité est tracée dans 8 dossiers distincts. Quatre restent à vérifier. Combien ont été vérifiés ?",
+      "answer": "Quatre dossiers.",
+      "calculation": "8 − 4 = 4."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "L’énergie consommée passe de 90 à 81 kWh pour le même volume. Calculez la baisse.",
+      "answer": "9 kWh, soit 10 %.",
+      "calculation": "90 − 81 = 9 kWh. 9 ÷ 90 × 100 = 10 %."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Deux séries donnent 4 écarts sur 100 et 18 écarts sur 300. Calculez le taux cumulé.",
+      "answer": "5,5 %.",
+      "calculation": "(4 + 18) ÷ (100 + 300) × 100 = 5,5 %."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Que permet la traçabilité d’un défaut ?",
+      "answer": "Retrouver les lots et opérations potentiellement concernés grâce aux identifiants."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Que vérifie le contrôle qualité ?",
+      "answer": "La conformité selon le critère, la méthode et la décision prévue."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Que signifient les étapes PDCA ?",
+      "answer": "Planifier, réaliser, vérifier et ajuster."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Quel est le lien entre action corrective et non-conformité ?",
+      "answer": "L’action vise une cause identifiée pour éviter la répétition."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Pourquoi vérifier la version d’une instruction ?",
+      "answer": "Pour appliquer la règle valable dans le périmètre et à la date concernés."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Un lot est lié à une mesure non conforme. Quelle suite ?",
+      "answer": "Repérer la trace, sécuriser le statut et transmettre les faits selon la procédure."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Deux causes représentent la majorité des reprises. Comment utilisez-vous ce résultat ?",
+      "answer": "Comparer fréquence et impact, choisir l’action prioritaire et suivre son résultat."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Une instruction change après l’ouverture d’un ordre. Que vérifiez-vous ?",
+      "answer": "L’application de la révision à cet ordre et la diffusion aux postes concernés."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "6.4 Traçabilité",
+      "file": "log-506-notions-1-v001.svg",
+      "alt": "Composants. Références et lots. Opérations. Dates et contrôles. Sorties. Dossiers de destination.",
+      "caption": "Les liens entre étapes aident à délimiter un écart.",
+      "sha256": "7d64466929030d335baca7f8c13a1b486f28d3841dcb325a1b4bafd2f6d66552",
+      "origin": "Illustration originale Doc-Prof du module 506."
+    },
+    {
+      "anchor": "6.2 Méthodes MQ / AQ",
+      "file": "log-506-notions-2-v001.svg",
+      "alt": "Constater. Exigence et résultat. Agir. Cause et action. Vérifier. Effet dans le temps.",
+      "caption": "Le suivi porte sur le critère mesuré et sa méthode.",
+      "sha256": "218f68415d566f9a7ef1d1ca6eb6690be419a131bb2c064428c170497f4b4551",
+      "origin": "Illustration originale Doc-Prof du module 506."
+    }
+  ]
+}

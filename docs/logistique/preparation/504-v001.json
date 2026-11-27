@@ -1,0 +1,169 @@
+{
+  "diplomas": [
+    "CFC"
+  ],
+  "objectives": "## Objectifs\n\n- Distinguer flux de matériel **externe** et **interne**\n- Expliquer **Kanban**, **Two-Bin** et la commande **optique**\n- Comparer **JIT** et **JIS** (avantages, risques, contrats)\n- Décrire **LCA** et **Jidoka** dans une logique lean / qualité",
+  "overview": "## Aperçu du module 504\n\n- Lire les flux de matériel externe et interne jusqu’aux postes.\n- Comprendre le signal Kanban et les deux bacs.\n- Comparer la synchronisation JIT et JIS et repérer les anomalies.",
+  "replacements": [],
+  "summary": [
+    "Lire les flux de matériel externe et interne jusqu’aux postes.",
+    "Comprendre le signal Kanban et les deux bacs.",
+    "Comparer la synchronisation JIT et JIS et repérer les anomalies."
+  ],
+  "glossary": [
+    [
+      "Deux bacs",
+      "Organisation où l’épuisement du premier bac déclenche son réapprovisionnement."
+    ],
+    [
+      "Flux externe",
+      "Mouvement entre sites ou organisations."
+    ],
+    [
+      "Flux interne",
+      "Mouvement entre les zones du site."
+    ],
+    [
+      "Flux tiré",
+      "Flux dont le réapprovisionnement est déclenché par la consommation ou un besoin aval."
+    ],
+    [
+      "Jidoka",
+      "Principe de détection et d’arrêt face à une anomalie selon l’organisation."
+    ],
+    [
+      "JIS",
+      "Livraison synchronisée selon le moment et l’ordre requis."
+    ],
+    [
+      "JIT",
+      "Mise à disposition à la date ou heure du besoin."
+    ],
+    [
+      "Kanban",
+      "Signal utilisé pour déclencher ou suivre un réapprovisionnement."
+    ],
+    [
+      "LCA",
+      "Automatisation par moyens simples et ciblés selon l’étude du poste."
+    ],
+    [
+      "Séquence",
+      "Ordre déterminé dans lequel les unités doivent être présentées."
+    ],
+    [
+      "Signal de réassort",
+      "Information qui déclenche l’action de réapprovisionnement."
+    ],
+    [
+      "Stock de poste",
+      "Quantité conservée près du poste en usage."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Un bac de réserve contient 48 pièces. La consommation est de 12 pièces par heure. Combien d’heures couvre-t-il ?",
+      "answer": "Quatre heures.",
+      "calculation": "48 ÷ 12 = 4 h."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Quatre postes demandent neuf composants chacun. Calculez l’envoi total.",
+      "answer": "36 composants.",
+      "calculation": "4 × 9 = 36."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Un lot est demandé à 10 h 12 et reçu à 10 h 48. Calculez son délai.",
+      "answer": "36 minutes.",
+      "calculation": "48 − 12 = 36 min."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Une séquence de 26 pièces comporte trois écarts. Quel nombre est conforme à cette vérification ?",
+      "answer": "23 pièces.",
+      "calculation": "26 − 3 = 23."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "À huit pièces par heure, quel stock couvre un délai de trois heures avec une réserve de six pièces ?",
+      "answer": "30 pièces.",
+      "calculation": "8 × 3 + 6 = 30."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quel rôle joue le signal Kanban ?",
+      "answer": "Il organise le réapprovisionnement à partir du besoin ou de la consommation."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Quand le bac de réserve est-il utilisé ?",
+      "answer": "Selon le dispositif prévu, quand le premier bac est vide et que son réassort est demandé."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Que rajoute JIS à la contrainte de temps ?",
+      "answer": "La livraison dans le bon ordre d’utilisation."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Quels deux trajets distingue-t-on dans le cours ?",
+      "answer": "Le flux externe jusqu’au site et le flux interne dans le site."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Quel est le rôle du signalement dans Jidoka ?",
+      "answer": "Détecter et traiter une anomalie avant qu’elle se propage."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Le bac consommé n’a pas déclenché d’ordre visible. Que vérifiez-vous ?",
+      "answer": "La référence, l’état du signal et le besoin, puis agir selon la procédure."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "La livraison arrive à temps mais dans le mauvais ordre. Quel écart notez-vous ?",
+      "answer": "Le délai est tenu. Documenter l’écart de séquence et avertir le poste aval."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Le délai augmente et le bac de réserve ne couvre plus le besoin. Quelle information remontez-vous ?",
+      "answer": "Délai réel, cadence de consommation et quantité manquante avant le réassort."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "4.3 Système Two-Bin",
+      "file": "log-504-notions-1-v001.svg",
+      "alt": "Premier bac. Prélever jusqu’au signal. Réserve. Couvrir la consommation. Retour. Réapprovisionnement suivi.",
+      "caption": "Le bac de réserve couvre l’attente jusqu’au réassort.",
+      "sha256": "afbe6c050089ff9b1c5be6e2fa96f87557bed87cad2306e2c8026f56a41428ea",
+      "origin": "Illustration originale Doc-Prof du module 504."
+    },
+    {
+      "anchor": "4.6 Just in Sequence (JIS)",
+      "file": "log-504-notions-2-v001.svg",
+      "alt": "JIT. Au moment prévu. JIS. Au moment et dans l’ordre.",
+      "caption": "Dans les deux cas, vérifier la quantité attendue.",
+      "sha256": "014f35ed46d9ea5dc5ba620a0a88c7200319125b111c3e39f66d0344075ce4ed",
+      "origin": "Illustration originale Doc-Prof du module 504."
+    }
+  ]
+}

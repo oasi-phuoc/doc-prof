@@ -1,0 +1,169 @@
+{
+  "diplomas": [
+    "CFC"
+  ],
+  "objectives": "## Objectifs\n\n- Citer les **critères** qui influencent le type de fabrication\n- Distinguer fabrication **unitaire**, **masse**, **série**, **variété** et **lots**\n- Comparer les organisations **établi**, **atelier**, **chaîne** et **chantier**\n- Expliquer le principe de la **Lean Production**",
+  "overview": "## Aperçu du module 503\n\n- Comparer production unitaire, par lots et de masse.\n- Distinguer organisation par ateliers et organisation par flux.\n- Repérer les attentes et autres pertes de temps avec les notions du Lean.",
+  "replacements": [],
+  "summary": [
+    "Comparer production unitaire, par lots et de masse.",
+    "Distinguer organisation par ateliers et organisation par flux.",
+    "Repérer les attentes et autres pertes de temps avec les notions du Lean."
+  ],
+  "glossary": [
+    [
+      "Atelier",
+      "Groupe de postes avec une fonction ou technique commune."
+    ],
+    [
+      "Cadence",
+      "Quantité réalisée par unité de temps."
+    ],
+    [
+      "Changement de série",
+      "Transition entre deux fabrications selon le processus."
+    ],
+    [
+      "Flux",
+      "Parcours des matières, unités ou informations."
+    ],
+    [
+      "Goulot",
+      "Étape dont la capacité limite le débit du processus."
+    ],
+    [
+      "Lean",
+      "Organisation d’amélioration visant à réduire les activités inutiles et améliorer le flux."
+    ],
+    [
+      "Lot",
+      "Groupe d’unités traité dans un même ensemble."
+    ],
+    [
+      "Poste",
+      "Lieu ou fonction d’une opération de fabrication."
+    ],
+    [
+      "Production de masse",
+      "Réalisation répétée d’un grand volume d’unités standardisées."
+    ],
+    [
+      "Production unitaire",
+      "Réalisation isolée d’un produit ou petit nombre très spécifique."
+    ],
+    [
+      "Temps de passage",
+      "Temps entre l’entrée et la sortie du périmètre considéré."
+    ],
+    [
+      "Temps de réglage",
+      "Durée consacrée à préparer les conditions d’une série."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Quatre lots contiennent chacun 45 unités. Calculez le volume total.",
+      "answer": "180 unités.",
+      "calculation": "4 × 45 = 180."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "Le réglage dure 25 min et la série dure 95 min. Calculez le temps total.",
+      "answer": "120 minutes.",
+      "calculation": "25 + 95 = 120 min."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Deux étapes peuvent traiter 24 et 18 unités par heure. Dans un modèle en série, quel débit maximal indique l’étape limitante ?",
+      "answer": "18 unités par heure.",
+      "calculation": "Le minimum entre 24 et 18 vaut 18."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Un parcours est raccourci de 80 à 60 m. Calculez le gain relatif.",
+      "answer": "25 %.",
+      "calculation": "(80 − 60) ÷ 80 × 100 = 25 %."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Sur deux heures, il y a 35 minutes d’attente et 70 de travail. Calculez le temps restant.",
+      "answer": "15 minutes.",
+      "calculation": "120 − 35 − 70 = 15."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Quand une fabrication unitaire est-elle pertinente ?",
+      "answer": "Lorsqu’un bien doit être réalisé avec des caractéristiques spécifiques et en quantité faible."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Quel intérêt donne une ligne organisée dans l’ordre du flux ?",
+      "answer": "Elle facilite l’enchaînement des opérations répétitives."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Pourquoi mesurer les attentes ?",
+      "answer": "Pour comprendre les écarts de cadence, réglages, files et contraintes."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Qu’est-ce qu’un goulot ?",
+      "answer": "L’étape qui limite le débit du processus pour la charge étudiée."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "Pourquoi documenter un essai d’amélioration ?",
+      "answer": "Pour vérifier son effet sur les mêmes indicateurs et préserver la qualité."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "Un poste est rapide mais l’aval sature. Quelle action étudiez-vous ?",
+      "answer": "Examiner l’étape limitante et ajuster l’organisation sans multiplier l’encours inutile."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Les commandes deviennent plus variées. Que comparez-vous ?",
+      "answer": "Temps et coûts de réglage, tailles de lot, flexibilité et délai."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Une modification réduit les déplacements mais augmente les erreurs. Que faites-vous ?",
+      "answer": "Comparer les deux effets et revoir l’organisation avant généralisation."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "3.2 Types de fabrication",
+      "file": "log-503-notions-1-v001.svg",
+      "alt": "Unitaire. Faible volume et besoin précis. Par lots. Séries alternées. Masse. Volume élevé et répétable.",
+      "caption": "Le type de fabrication se choisit avec les contraintes du produit.",
+      "sha256": "42568a44b089adc4d8be4e1fb521206397a51e86509f6a0c8927975316616b98",
+      "origin": "Illustration originale Doc-Prof du module 503."
+    },
+    {
+      "anchor": "3.5 Lean Production",
+      "file": "log-503-notions-2-v001.svg",
+      "alt": "Observer. Attente et déplacements. Adapter. Essai sur une étape. Contrôler. Mêmes indicateurs.",
+      "caption": "Suivre aussi la qualité et les écarts.",
+      "sha256": "79b7cd233394596cef42eab06ff682f8a2156a8bd15b261b7b7b41c70262f585",
+      "origin": "Illustration originale Doc-Prof du module 503."
+    }
+  ]
+}

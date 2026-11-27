@@ -1,0 +1,169 @@
+{
+  "diplomas": [
+    "CFC"
+  ],
+  "objectives": "## Objectifs\n\n- Décrire les étapes de la **PCP** (programme → suivi)\n- Comparer production **push** et **pull**\n- Expliquer la production en **vrac** et le calcul **besoin primaire / secondaire / net**\n- Distinguer les types de **nomenclature** (quantitative, structurelle, modulaire, variantes)",
+  "overview": "## Aperçu du module 505\n\n- Relier le programme de production aux composants et à la capacité.\n- Distinguer pilotage par anticipation et déclenchement selon la demande.\n- Vérifier que l’ordre et la nomenclature sont à jour.",
+  "replacements": [],
+  "summary": [
+    "Relier le programme de production aux composants et à la capacité.",
+    "Distinguer pilotage par anticipation et déclenchement selon la demande.",
+    "Vérifier que l’ordre et la nomenclature sont à jour."
+  ],
+  "glossary": [
+    [
+      "BOM",
+      "Liste structurée des composants, appelée nomenclature."
+    ],
+    [
+      "Besoin de composant",
+      "Quantité de composants nécessaire selon le programme de fabrication."
+    ],
+    [
+      "Capacité",
+      "Quantité ou charge réalisable pendant une période selon les moyens."
+    ],
+    [
+      "Charge",
+      "Travail demandé à une ressource dans la période considérée."
+    ],
+    [
+      "Contrôle d’avancement",
+      "Vérification de la réalisation par rapport au plan."
+    ],
+    [
+      "Ordonnancement",
+      "Affectation et enchaînement des travaux dans le temps."
+    ],
+    [
+      "Ordre de fabrication",
+      "Instruction de fabriquer une quantité d’un article selon un dossier."
+    ],
+    [
+      "PCP",
+      "Planification et contrôle de la production."
+    ],
+    [
+      "Programme de production",
+      "Prévision ou engagement de fabrication par période et article."
+    ],
+    [
+      "Pull",
+      "Déclenchement du flux par un besoin aval."
+    ],
+    [
+      "Push",
+      "Déclenchement à partir du plan ou des quantités anticipées."
+    ],
+    [
+      "Révision de nomenclature",
+      "Version qui fixe les composants applicables à un ordre."
+    ]
+  ],
+  "exercises": [
+    {
+      "id": "maths-fiche-1",
+      "kind": "maths",
+      "prompt": "Un ordre de 25 produits exige trois clips et deux faces par unité. Calculez les besoins.",
+      "answer": "75 clips et 50 faces.",
+      "calculation": "25 × 3 = 75. 25 × 2 = 50."
+    },
+    {
+      "id": "maths-fiche-2",
+      "kind": "maths",
+      "prompt": "La capacité est de 480 min. Les ordres prennent 175 et 220 min. Calculez la capacité restante.",
+      "answer": "85 minutes.",
+      "calculation": "480 − 175 − 220 = 85 min."
+    },
+    {
+      "id": "maths-fiche-3",
+      "kind": "maths",
+      "prompt": "Une commande de 80 modules en exige deux par kit. Combien de kits sont couverts ?",
+      "answer": "40 kits.",
+      "calculation": "80 ÷ 2 = 40."
+    },
+    {
+      "id": "maths-fiche-4",
+      "kind": "maths",
+      "prompt": "Il reste 55 composants pour un besoin de 72. Calculez le besoin net sans entrée attendue.",
+      "answer": "17 composants.",
+      "calculation": "72 − 55 = 17."
+    },
+    {
+      "id": "maths-fiche-5",
+      "kind": "maths",
+      "prompt": "Un ordre prévu de 200 unités donne 170 unités conformes à l’heure du relevé. Calculez le taux réalisé.",
+      "answer": "85 %.",
+      "calculation": "170 ÷ 200 × 100 = 85 %."
+    },
+    {
+      "id": "verification-fiche-1",
+      "kind": "verification",
+      "prompt": "Qu’est-ce qu’une nomenclature ?",
+      "answer": "La liste structurée des composants et de leurs quantités ou relations."
+    },
+    {
+      "id": "verification-fiche-2",
+      "kind": "verification",
+      "prompt": "Quel est le déclencheur d’un système pull ?",
+      "answer": "Un besoin exprimé ou une consommation de l’aval."
+    },
+    {
+      "id": "verification-fiche-3",
+      "kind": "verification",
+      "prompt": "Pourquoi comparer charge et capacité ?",
+      "answer": "Pour détecter une surcharge ou une capacité exploitable dans la période."
+    },
+    {
+      "id": "verification-fiche-4",
+      "kind": "verification",
+      "prompt": "Quelles données rattacher à l’ordre ?",
+      "answer": "Article, version, quantité, étapes, date et éléments prévus de suivi."
+    },
+    {
+      "id": "verification-fiche-5",
+      "kind": "verification",
+      "prompt": "À quoi sert le contrôle d’avancement ?",
+      "answer": "À repérer les écarts et ajuster ou signaler le plan."
+    },
+    {
+      "id": "situation-fiche-1",
+      "kind": "situation",
+      "prompt": "La nomenclature affichée diffère de la version de l’ordre. Quelle action précède la préparation ?",
+      "answer": "Suspendre la préparation et faire confirmer la version applicable."
+    },
+    {
+      "id": "situation-fiche-2",
+      "kind": "situation",
+      "prompt": "Deux ordres dépassent la capacité prévue. Que présentez-vous au responsable ?",
+      "answer": "Charge, capacité manquante, délais, contraintes et possibilités de replanification."
+    },
+    {
+      "id": "situation-fiche-3",
+      "kind": "situation",
+      "prompt": "Le plan prévoit 60 produits mais les composants n’en couvrent que 45. Que transmettez-vous ?",
+      "answer": "Quantité réalisable, pièce limitante et besoin restant."
+    }
+  ],
+  "editorialNotes": [
+    "Les situations et données numériques sont des exemples autonomes. Les valeurs tarifaires ou limites utilisées pour les calculs sont des hypothèses de fiche."
+  ],
+  "visuals": [
+    {
+      "anchor": "Tâches de la PCP",
+      "file": "log-505-notions-1-v001.svg",
+      "alt": "Prévoir. Quantités et dates. Attribuer. Charge et ressources. Contrôler. Avancement et écarts.",
+      "caption": "Le contrôle compare la réalisation au programme validé.",
+      "sha256": "6c47fb2309e0640a848f46d7e87a1fd15807902797a338a6030e6bafecaede13",
+      "origin": "Illustration originale Doc-Prof du module 505."
+    },
+    {
+      "anchor": "5.3 Liste des pièces / nomenclature",
+      "file": "log-505-notions-2-v001.svg",
+      "alt": "Produit. Référence de l’ordre. Sous-ensemble. Nombre par produit. Composant. Quantité de la pièce.",
+      "caption": "La quantité de chaque pièce se calcule à partir de la version et de l’ordre.",
+      "sha256": "ccbc0e0accac57d50ca93e0a1693737d119687c9400d7e2dcf127202d0b0d49f",
+      "origin": "Illustration originale Doc-Prof du module 505."
+    }
+  ]
+}

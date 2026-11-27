@@ -40,6 +40,12 @@ import { module407 } from './banks/module-407-v001.generated.ts'
 import { module408 } from './banks/module-408-v001.generated.ts'
 import { module409 } from './banks/module-409-v001.generated.ts'
 import { module410 } from './banks/module-410-v001.generated.ts'
+import { module501 } from './banks/module-501-v001.generated.ts'
+import { module502 } from './banks/module-502-v001.generated.ts'
+import { module503 } from './banks/module-503-v001.generated.ts'
+import { module504 } from './banks/module-504-v001.generated.ts'
+import { module505 } from './banks/module-505-v001.generated.ts'
+import { module506 } from './banks/module-506-v001.generated.ts'
 import { module613 } from './banks/module-613-v001.generated.ts'
 import { module805 } from './banks/module-805-v001.generated.ts'
 import { module902 } from './banks/module-902-v001.generated.ts'
@@ -105,6 +111,11 @@ const publication_304_305_306_307_309_310_311_312_v001: LogistiquePublication = 
   units: [...publication_301_302_303_v001.units, ...module304, ...module305, ...module306, ...module307, ...module309, ...module310, ...module311, ...module312],
 }
 
+const publication_401_402_403_404_405_406_407_408_409_410_v001: LogistiquePublication = {
+  revision: 'logistique-401-402-403-404-405-406-407-408-409-410-v001',
+  units: [...publication_304_305_306_307_309_310_311_312_v001.units, ...module401, ...module402, ...module403, ...module404, ...module405, ...module406, ...module407, ...module408, ...module409, ...module410],
+}
+
 /** Ajouter une publication après validation. Garder les versions utilisées par les recettes. */
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
@@ -149,9 +160,10 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   publication_207_208_209_v001,
   publication_301_302_303_v001,
   publication_304_305_306_307_309_310_311_312_v001,
+  publication_401_402_403_404_405_406_407_408_409_410_v001,
   {
-    revision: 'logistique-401-402-403-404-405-406-407-408-409-410-v001',
-    units: [...publication_304_305_306_307_309_310_311_312_v001.units, ...module401, ...module402, ...module403, ...module404, ...module405, ...module406, ...module407, ...module408, ...module409, ...module410],
+    revision: 'logistique-501-502-503-504-505-506-v001',
+    units: [...publication_401_402_403_404_405_406_407_408_409_410_v001.units, ...module501, ...module502, ...module503, ...module504, ...module505, ...module506],
   },
 ]
 
