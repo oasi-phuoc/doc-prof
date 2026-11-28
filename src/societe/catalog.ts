@@ -1,5 +1,6 @@
 import type { ExerciseType, Topic } from '@/math/types'
 import { SOCIETE_UNITS } from './parcours'
+import { ATLAS_EXERCISE_TYPES } from './atlas'
 
 export const SOCIETE_DOMAIN = 'société' as const
 export const SOCIETE_FIRST_TOPIC = 'societe-voisins'
@@ -19,7 +20,7 @@ export const SOCIETE_TOPICS: Topic[] = SOCIETE_UNITS.map((unite) => ({
   domain: SOCIETE_DOMAIN,
 }))
 
-export const SOCIETE_EXERCISE_TYPES: ExerciseType[] = SOCIETE_UNITS.flatMap((unite) => {
+const parcours: ExerciseType[] = SOCIETE_UNITS.flatMap((unite) => {
   const topic = `societe-${unite.id}`
   return SOCIETE_KINDS.map(([kind, label, instruction]) => ({
     id: `${topic}-${kind}`,
@@ -34,3 +35,5 @@ export const SOCIETE_EXERCISE_TYPES: ExerciseType[] = SOCIETE_UNITS.flatMap((uni
     supportsNumberRange: false,
   }))
 })
+
+export const SOCIETE_EXERCISE_TYPES: ExerciseType[] = [...parcours, ...ATLAS_EXERCISE_TYPES]

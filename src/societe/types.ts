@@ -18,10 +18,20 @@ export type SocieteProduction = {
   exemple: string
 }
 
+export type SocieteCanton = {
+  sigle: string
+  nom: string
+  chefLieu: string
+  ancienDemiCanton: boolean
+  ecusson: string
+  vue: string
+}
+
 export type SocieteSupport =
-  | { kind: 'document'; titre: string; lignes: readonly string[]; image?: SocieteImage }
-  | { kind: 'ecoute'; transcription: string; audioSrc: string }
-  | { kind: 'production'; production: SocieteProduction; lignes: number }
+  | { kind: 'document'; titre: string; lignes: readonly string[]; image?: SocieteImage; correction?: SocieteImage }
+  | { kind: 'ecoute'; transcription: string; audioSrc: string; image?: SocieteImage }
+  | { kind: 'production'; production: SocieteProduction; lignes: number; image?: SocieteImage }
+  | { kind: 'cantons'; cantons: readonly SocieteCanton[] }
 
 export type SocieteUnite = {
   id: string
@@ -43,5 +53,5 @@ export function isSocieteType(typeId: string): boolean {
 }
 
 export function isSocieteTheoryType(typeId: string): boolean {
-  return isSocieteType(typeId) && (typeId.endsWith('-theorie') || typeId.startsWith('societe-suisse-theorie-'))
+  return isSocieteType(typeId) && (typeId.endsWith('-theorie') || typeId.endsWith('-atlas') || typeId.startsWith('societe-suisse-theorie-'))
 }
