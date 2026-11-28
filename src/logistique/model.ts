@@ -8,6 +8,7 @@ import { isLogistiqueDomain, isLogistiqueReferenceType, logistiquePresentationFo
 import { applyLogistiqueStoryChange, logistiqueStoryVariant, validLogistiqueStory, type LogistiqueStory } from './evaluation'
 import { generateLogistique, logistiqueQuestionItems } from './generate'
 import { validLogistiquePages } from './recipe'
+import { logistiqueWordingMode } from './wording'
 
 export function canReuseLogistiqueEvaluation(recipe: Pick<FicheRecipe, 'evalMode' | 'pages'>): boolean {
   return recipe.evalMode && recipe.pages.length > 0 && recipe.pages.every(({ domain }) => isLogistiqueDomain(domain)) &&
@@ -25,7 +26,8 @@ function newIndependentQuestions(block: ExerciseBlock, items: MathItem[], seed: 
   const sourceIds = new Set(items.map(({ logistiqueSource }) => logistiqueSource?.id))
   const promptKey = (item: MathItem) => item.prompt?.normalize('NFKC').replace(/\s+/g, ' ').trim().toLowerCase()
   const printed = new Set(items.map(promptKey))
-  const pool = shuffle(createRng(seed), logistiqueQuestionItems(type, codes, block.logistiqueBankRevision, logistiquePresentationFor(block)))
+  const pool = shuffle(createRng(seed), logistiqueQuestionItems(type, codes, block.logistiqueBankRevision,
+    logistiquePresentationFor(block), logistiqueWordingMode(block, type.diploma)))
   let replaced = 0
   let limited = 0
   const next = items.map((previous) => {

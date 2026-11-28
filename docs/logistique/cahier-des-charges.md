@@ -1,6 +1,6 @@
 # Cahier des charges — Logistique CFC et Logistique AFP dans Doc-Prof
 
-**Version 2.13 — 27 novembre 2026**
+**Version 2.14 — 28 novembre 2026**
 **Produit cible :** [Doc-Prof / ClairFLE](https://github.com/oasi-phuoc/doc-prof)
 **Source pédagogique :** [EPCAS Logistique](https://github.com/oasi-phuoc/epcas) — contenus pédagogiques originaux de l’auteur du projet ; EnterSite est une entreprise fictive créée pour enseigner la logistique, parcours CFC et AFP.
 **Statut :** spécification de réalisation ; les contenus exploitables sont activés après relecture de réalisation selon le §0. Ce document ne constitue ni une migration déjà exécutée, ni une validation des banques, ni une modification des dépôts.
@@ -793,6 +793,14 @@ Exemple original de structure, à vérifier contre le cours concerné :
 Ne pas confondre AFP avec « facile » ou un niveau de français A1/A2. Les trois difficultés existent dans les deux formations, selon les connaissances attendues dans chacune. Ne pas retirer une compétence AFP réellement prévue pour rendre une fiche plus simple. Les exercices communs conservent la même précision et le même corrigé, sous réserve d'une double validation d'éligibilité.
 
 **Exemple original de différenciation — 105 Marchandises :** AFP : un carton de 60 × 40 × 30 cm ; calculer son volume en litres à partir des dimensions, puis expliquer pourquoi une indication « fragile » doit être respectée. Corrigé : 72 L ; la fragilité nécessite des précautions adaptées. CFC : deux cartons de mêmes dimensions, de masses 12 kg et 18 kg ; comparer leurs masses volumiques moyennes calculées sur le volume extérieur, puis expliquer pourquoi cette valeur apparente ne permet pas de conclure sur la densité du matériau contenu. Corrigé : 12/0,072 ≈ 166,7 kg/m³ et 18/0,072 = 250 kg/m³ ; les volumes extérieurs comprennent le contenu, l'emballage et les espaces vides. Les chiffres sont des exemples inventés, non des exercices récupérés.
+
+#### 5.6.1 Formulation des questions en français clair
+
+Le mode **Normal** du CFC utilise un français direct et des consignes cohérentes avec la situation de travail. Les paramètres de l’activité permettent de choisir **Normal** ou **FALC** lorsque la banque contient des formulations dans les deux modes. En AFP, le générateur utilise automatiquement la formulation FALC relue quand elle est disponible.
+
+La formulation FALC sépare les données, la tâche et les étapes de réponse par des phrases courtes. Elle conserve les termes techniques nécessaires. Elle peut expliquer un terme de contexte quand sa définition ne fait pas partie de l’acquis évalué. Les deux versions gardent le même exercice, les données et unités, les documents, le corrigé et le barème. Les variantes de formulation partagent le même identifiant et le même tirage.
+
+Les révisions de banque précédentes restent disponibles pour les fiches enregistrées. Changer de formulation garde les corrections et les énoncés modifiés manuellement dans Libre. La recette conserve le choix de l’activité, y compris en double A5. Pour chaque nouveau lot, contrôler le français et la cohérence pédagogique, les deux formulations, la lisibilité des documents imprimés et le nombre de questions traitées par diplôme dans le suivi.
 
 ### 5.7 Méthode d'enrichissement par sous-module
 

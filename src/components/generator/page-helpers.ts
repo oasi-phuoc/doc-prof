@@ -230,6 +230,7 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
     logistiqueEvaluation: undefined,
     logistiqueGapMode: undefined,
     logistiquePresentation: undefined,
+    logistiqueWordingMode: undefined,
     topic: type.topic,
     track: type.track,
     phrasePolarity: isPhrase ? prev?.phrasePolarity : undefined,

@@ -5,6 +5,7 @@ import { logistiqueVerdicts, validLogistiqueChoice } from './choices'
 import { generateLogistique, logistiqueQuestionItems } from './generate'
 import { validLogistiqueMatching } from './matching'
 import { validLogistiqueExerciseTable } from './tables'
+import type { LogistiqueWordingMode } from './wording'
 
 export type LogistiqueQuestionFormat = 'open' | 'qcm' | 'qcm-multiple' | 'vrai-faux' | 'associer-textes'
 
@@ -74,13 +75,14 @@ export function logistiqueItemPresentation(item: MathItem): LogistiquePresentati
       : item.options?.length ? 'qcm' : undefined)
 }
 
-export function logistiqueReplacementChoices(type: LogistiqueType, previous: MathItem, existing: readonly MathItem[], revision?: string) {
+export function logistiqueReplacementChoices(type: LogistiqueType, previous: MathItem, existing: readonly MathItem[], revision?: string,
+  wording?: LogistiqueWordingMode) {
   if (previous.libreLocked) return []
   const module = previous.logistiqueSource?.module ?? previous.logistiqueLocalModule ?? type.module
   const presentation = logistiqueItemPresentation(previous)
   const promptKey = (item: MathItem) => item.prompt?.normalize('NFKC').replace(/\s+/g, ' ').trim().toLowerCase()
   const used = new Set(existing.map(promptKey))
-  const candidates = logistiqueQuestionItems(type, [module], revision, presentation)
+  const candidates = logistiqueQuestionItems(type, [module], revision, presentation, wording)
   return availableLogistiqueQuestions(candidates, existing).filter((candidate) => {
     const prompt = promptKey(candidate)
     if (used.has(prompt) || logistiqueItemPresentation(candidate) !== presentation ||

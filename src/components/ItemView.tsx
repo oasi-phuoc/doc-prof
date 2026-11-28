@@ -271,11 +271,14 @@ export function ItemView({
     item.layout === 'audio-dictation' ||
     item.layout === 'societe-support'
     || item.layout === 'csc-task' && item.cscTask?.kind !== 'operator'
+  const hasFalcWording = (item.logistiqueWording && item.logistiqueWording.falc === item.prompt) ||
+    item.logistiqueTable?.questions?.some(({ wording, prompt }) => wording?.falc === prompt && wording.falc !== wording.normal)
   return (
     <div
       className={`exercise-item layout-${item.layout}${isDraftPad ? ' is-problem' : ''}${
         isOralSelect ? ' is-oral' : ''
       }${tcfFullWidth ? ' is-tcf-full' : ''}${grammarTheory || item.grammarTheoryFalc ? ' grammar-theory-item' : ''}${item.grammarTheoryFalc ? ' is-falc' : ''}`}
+      data-logistique-falc={hasFalcWording ? '' : undefined}
     >
       <WorksheetSettings label={settingsLabel}>
       {isDraftPad && onToggleDraftGrid ? (

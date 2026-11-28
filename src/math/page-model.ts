@@ -10,6 +10,7 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     logistiqueEvaluation: page.logistiqueEvaluation,
     logistiqueGapMode: page.logistiqueGapMode,
     logistiquePresentation: page.logistiquePresentation,
+    logistiqueWordingMode: page.logistiqueWordingMode,
     topic: page.topic,
     exerciseType: page.exerciseType,
     mathTheoryStepNumbering: page.mathTheoryStepNumbering,
@@ -126,7 +127,7 @@ export function pageBlocks(page: PageConfig): ExerciseBlock[] {
 }
 
 export function pageAsConfig(page: PageConfig, block: ExerciseBlock): PageConfig {
-  return { ...page, ...block, logistiqueBankRevision: block.logistiqueBankRevision, logistiqueTheoryView: block.logistiqueTheoryView, logistiqueSelection: block.logistiqueSelection, logistiqueEvaluation: block.logistiqueEvaluation, logistiqueGapMode: block.logistiqueGapMode, logistiquePresentation: block.logistiquePresentation, phraseCategories: block.phraseCategories, phraseImageLabels:block.phraseImageLabels, phraseImageShownCategories:block.phraseImageShownCategories, phraseSentenceType:block.phraseSentenceType, phraseVoice:block.phraseVoice, grammarCoLevel: block.grammarCoLevel, grammarCoAudioId: block.grammarCoAudioId,
+  return { ...page, ...block, logistiqueBankRevision: block.logistiqueBankRevision, logistiqueTheoryView: block.logistiqueTheoryView, logistiqueSelection: block.logistiqueSelection, logistiqueEvaluation: block.logistiqueEvaluation, logistiqueGapMode: block.logistiqueGapMode, logistiquePresentation: block.logistiquePresentation, logistiqueWordingMode: block.logistiqueWordingMode, phraseCategories: block.phraseCategories, phraseImageLabels:block.phraseImageLabels, phraseImageShownCategories:block.phraseImageShownCategories, phraseSentenceType:block.phraseSentenceType, phraseVoice:block.phraseVoice, grammarCoLevel: block.grammarCoLevel, grammarCoAudioId: block.grammarCoAudioId,
     grammarCoFormat: block.grammarCoFormat, grammarVocabRecall: block.grammarVocabRecall, completionPresentation: block.completionPresentation,
     grammarLevel:block.grammarLevel,grammarActivityId:block.grammarActivityId,grammarPresentation:block.grammarPresentation,
     grammarBankRevision:block.grammarBankRevision,grammarSnapshot:block.grammarSnapshot,grammarPreview:block.grammarPreview,

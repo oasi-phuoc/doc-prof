@@ -1,9 +1,11 @@
+import { validLogistiqueWording, type LogistiqueWording } from './wording'
+
 export type LogistiqueTablePresentation =
   | 'tableau-donnees' | 'tableau-dates' | 'tableau-comparaison' | 'tableau-classement' | 'tableau-ordre'
   | 'lire-document' | 'corriger-erreurs' | 'justifier-decision' | 'frise-chronologique' | 'cas-mixte' | 'processus-a-completer'
   | 'lire-graphique' | 'completer-graphique'
 export type LogistiqueTableCell = string | { answer: string }
-export type LogistiqueDocumentQuestion = { prompt: string; answer: string; points?: number } & (
+export type LogistiqueDocumentQuestion = { prompt: string; answer: string; points?: number; wording?: LogistiqueWording } & (
   | { kind?: 'redaction' }
   | { kind: 'choix'; options: string[] }
   | { kind: 'calcul'; calculation: string }
@@ -40,6 +42,7 @@ function isLogistiqueDocumentQuestion(value: unknown, mixed: boolean): value is 
   if (!value || typeof value !== 'object') return false
   const question = value as LogistiqueDocumentQuestion
   if (typeof question.prompt !== 'string' || !question.prompt.trim() || typeof question.answer !== 'string' || !question.answer.trim()) return false
+  if (question.wording !== undefined && !validLogistiqueWording(question.wording)) return false
   if (!mixed) return question.kind === undefined && question.points === undefined
   if (typeof question.points !== 'number' || question.points < 0.5 || question.points > 20 || !Number.isInteger(question.points * 2)) return false
   if (question.kind === 'choix') {

@@ -195,6 +195,10 @@
   white-space: pre-line;
 }
 
+.is-logistique [data-logistique-falc] :is(.problem-prompt, .logistique-document-questions p) {
+  white-space: pre-line;
+}
+
 .logistique-numbered-lines {
   margin: 0;
   padding-inline-start: 1.6em;

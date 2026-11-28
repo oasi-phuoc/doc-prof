@@ -4,7 +4,8 @@ import { isGuidedColumnType, isSingleColumnPractice, REAL_MAP_TYPE } from '@/mat
 import { isFundamentalPractice, SHAPE_PRACTICE } from '@/math/fundamental-practice'
 import { realMapPlan, realMapPlans } from '@/math/real-map-catalog'
 import { isLogistiqueReferenceType, logistiquePresentationFor, logistiquePresentationLabels, logistiqueType } from '@/logistique/catalog'
-import { logistiqueHasSummary, logistiqueModuleCapacities } from '@/logistique/generate'
+import { logistiqueHasSummary, logistiqueHasWording, logistiqueModuleCapacities } from '@/logistique/generate'
+import { applyLogistiqueWording, logistiqueWordingMode } from '@/logistique/wording'
 import { SelectBox } from './SelectBox'
 import { supportsActivityQuestionCount } from './activity-settings'
 import { isSocieteType } from '@/societe/types'
@@ -244,6 +245,10 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
     !(evalMode && activeBlock.logistiqueEvaluation?.mode === 'histoire')
   const selectedModules = supportsPresentation
     ? (evalMode ? activeBlock.logistiqueSelection?.modules : undefined) ?? [logistics.module] : []
+  const showWording = supportsPresentation && logistics.diploma === 'CFC' && (
+    logistiqueHasWording(logistics, selectedModules, activeBlock.logistiqueBankRevision, presentation) ||
+    [...activeBlock.libreItems ?? [], ...activeBlock.a5RightLibre?.items ?? []].some((item) =>
+      item.logistiqueWording || item.logistiqueTable?.questions?.some((question) => question.wording)))
   const presentations = supportsPresentation ? ([
     ...(logistics.kind === 'verification' ? [
       'qcm', 'qcm-multiple', 'vrai-faux', 'associer-textes',
@@ -300,6 +305,18 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                   ))}
                 </SelectBox>
               ) : null}
+              {showWording && <SelectBox label="Formulation des questions" value={logistiqueWordingMode(activeBlock, 'CFC')}
+                onChange={(wording) => {
+                  if (wording !== 'normal' && wording !== 'falc') return
+                  const right = activeBlock.a5RightLibre
+                  updatePage({ logistiqueWordingMode: wording,
+                    libreItems: activeBlock.libreItems?.map((item) => applyLogistiqueWording(item, wording)),
+                    ...(right ? { a5RightLibre: { ...right, items: right.items.map((item) => applyLogistiqueWording(item, wording)) } } : {}),
+                  })
+                }}>
+                <option value="normal">Normal</option>
+                <option value="falc">FALC</option>
+              </SelectBox>}
               {!supportsActivityQuestionCount(activeBlock.exerciseType, questionMin, maxQuestions) ||
               activeBlock.grammarPresentation==='document-set' || grammarAudioOnly || isPhraseChart ||
               isVocabLearn ||

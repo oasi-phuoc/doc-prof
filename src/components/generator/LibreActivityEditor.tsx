@@ -18,6 +18,7 @@ import type { TcfExercise, TcfNiveau } from '@/tcf/types'
 import { isLogistiqueReferenceType, logistiqueModules, logistiquePresentationFor, logistiqueType } from '@/logistique/catalog'
 import { logistiqueQuestionItems, logistiqueQuestionPhotos } from '@/logistique/generate'
 import { logistiqueItemPresentation, logistiqueReplacementChoices } from '@/logistique/libre'
+import { logistiqueWordingMode } from '@/logistique/wording'
 import { isLogistiqueStoryQuestion, logistiqueStoryQuestions } from '@/logistique/evaluation'
 import { LogistiqueLibreBank } from './LogistiqueLibreBank'
 
@@ -167,6 +168,7 @@ export function LibreActivityEditor({
   const logistics = logistiqueType(activeBlock.exerciseType)
   const storyEvaluation = evalMode && activeBlock.logistiqueEvaluation?.mode === 'histoire'
   const logistiqueQuestionType = logistics && !isLogistiqueReferenceType(logistics.id) ? logistics : undefined
+  const wording = logistiqueQuestionType ? logistiqueWordingMode(activeBlock, logistiqueQuestionType.diploma) : undefined
   const genericItems = activeBlock.libreItems ?? logistiqueActiveItems ?? activeSheet?.blocks[safeBlockIndex]?.items ?? []
   const logistiquePhotos = logistiqueQuestionType ? {
     defaultModule: logistiqueQuestionType.module,
@@ -190,7 +192,7 @@ export function LibreActivityEditor({
           activeBlock.logistiqueSelection?.modules ?? [logistiqueQuestionType.module])
           .find((entry) => entry.logistiqueSource?.id === source.id)
       }
-      return logistiqueQuestionItems(logistiqueQuestionType, [source.module], activeBlock.logistiqueBankRevision, logistiqueItemPresentation(item))
+      return logistiqueQuestionItems(logistiqueQuestionType, [source.module], activeBlock.logistiqueBankRevision, logistiqueItemPresentation(item), wording)
         .find((entry) => entry.logistiqueSource?.id === source.id)
     },
   } : undefined
@@ -327,6 +329,7 @@ export function LibreActivityEditor({
       {logistiqueQuestionType && !storyEvaluation && (
         <LogistiqueLibreBank key={logistiqueQuestionType.id} type={logistiqueQuestionType} revision={activeBlock.logistiqueBankRevision}
           presentation={logistiquePresentationFor(activeBlock)}
+          wording={wording}
           items={logistiqueItemsOnSheet ?? genericItems}
           onReroll={onRegenerateBlock ? () => onRegenerateBlock(safeBlockIndex) : undefined}
           onAdd={(added) => {
@@ -343,7 +346,7 @@ export function LibreActivityEditor({
           editableCalculation={logistics?.kind === 'maths'}
           logistique={logistiqueEditor}
           logistiqueReplacements={logistiqueQuestionType && !storyEvaluation ? (item, existing) =>
-            logistiqueReplacementChoices(logistiqueQuestionType, item, existing, activeBlock.logistiqueBankRevision) : undefined}
+            logistiqueReplacementChoices(logistiqueQuestionType, item, existing, activeBlock.logistiqueBankRevision, wording) : undefined}
           logistiquePhotos={logistiquePhotos}
           fields={transientFields}
           writeField={onTransientField}

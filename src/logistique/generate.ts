@@ -6,6 +6,7 @@ import { logistiqueVerdicts } from './choices'
 import { logistiqueMatchContent } from './matching'
 import { logistiqueCasePoints } from './tables'
 import { completeLogistiqueGlossaryItem } from './glossary'
+import { applyLogistiqueWording, logistiqueWordingMode, type LogistiqueWordingMode } from './wording'
 import { logistiqueStoryModules, logistiqueStoryQuestions, logistiqueStorySelectionCompatible, validLogistiqueEvaluation,
   type LogistiqueEvaluation } from './evaluation'
 import {
@@ -17,7 +18,7 @@ function withAssetBase<T extends { src: string }>(figure: T): T {
   return { ...figure, src: import.meta.env.BASE_URL + figure.src.replace(/^\//, '') }
 }
 
-function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'],
+function materializeUnit(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'],
   presentation?: LogistiquePresentation, presentationRng?: Rng): MathItem[] {
   const logistiqueSource = { id: unit.id, module: unit.module, revision: unit.revision }
   if (unit.kind === 'verification' && unit.photoTask) {
@@ -97,6 +98,13 @@ function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'
   }
 }
 
+function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'], presentation: LogistiquePresentation | undefined,
+  presentationRng: Rng | undefined, wording: LogistiqueWordingMode): MathItem[] {
+  const items = materializeUnit(unit, view, presentation, presentationRng)
+  if (!unit.wording && !('table' in unit && unit.table?.questions?.some((question) => question.wording))) return items
+  return items.map((item) => applyLogistiqueWording({ ...item, logistiqueWording: unit.wording }, wording))
+}
+
 function hasPresentation(unit: LogistiqueUnit, presentation?: LogistiquePresentation): boolean {
   if (unit.kind === 'verification' && unit.photoTask) return unit.photoTask.presentation === presentation
   if ('table' in unit && unit.table) return unit.table.presentation === presentation
@@ -140,12 +148,18 @@ export function logistiqueModuleCapacities(
   return counts
 }
 
-export function logistiqueQuestionItems(type: LogistiqueType, modules: string[], revision?: string, presentation?: LogistiquePresentation): MathItem[] {
+export function logistiqueQuestionItems(type: LogistiqueType, modules: string[], revision?: string, presentation?: LogistiquePresentation,
+  wording = logistiqueWordingMode({}, type.diploma)): MathItem[] {
   if (!validLogistiqueSelection(type, { modules }) || !validLogistiquePresentation(type, presentation)) return []
   const presentationRng = presentation === 'avec-liste' || presentation === 'qcm' || presentation === 'qcm-multiple' ||
     presentation === 'associer-textes' ? createRng(20261127) : undefined
   return eligibleUnits(type, logistiquePublication(revision)?.units ?? [], modules, presentation)
-    .flatMap((unit) => unitItems(unit, undefined, presentation, presentationRng))
+    .flatMap((unit) => unitItems(unit, undefined, presentation, presentationRng, wording))
+}
+
+export function logistiqueHasWording(type: LogistiqueType, modules: string[], revision?: string, presentation?: LogistiquePresentation) {
+  return eligibleUnits(type, logistiquePublication(revision)?.units ?? [], modules, presentation).some((unit) =>
+    unit.wording || ('table' in unit && unit.table?.questions?.some((question) => question.wording)))
 }
 
 export function logistiqueQuestionPhotos(type: LogistiqueType, modules: string[], revision?: string) {
@@ -237,7 +251,8 @@ export function generateLogistique(
         : presentation === 'sans-liste' || presentation === 'avec-liste' ? 'Complétez les textes.' : type.instruction
       : modules.length ? 'Contenu à compléter pour cette sélection.' : 'Sélectionnez au moins un sous-thème.',
     items: selected.flatMap((unit) => unitItems(unit, config.logistiqueTheoryView, presentation,
-      presentation === 'avec-liste' || presentation === 'qcm' || presentation === 'qcm-multiple' || presentation === 'associer-textes' ? rng : undefined)),
+      presentation === 'avec-liste' || presentation === 'qcm' || presentation === 'qcm-multiple' || presentation === 'associer-textes' ? rng : undefined,
+      logistiqueWordingMode(config, type.diploma))),
     bankQuestionCap: reference && eligible.length ? undefined : eligible.length,
   }
 }

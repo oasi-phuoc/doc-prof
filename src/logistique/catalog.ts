@@ -5,6 +5,7 @@ import { validLogistiqueChoice } from './choices'
 import { validLogistiqueMatching } from './matching'
 import { isLogistiqueTablePresentation, logistiqueCasePoints, validLogistiqueExerciseTable } from './tables'
 import { logistiqueStorySelectionCompatible, validLogistiqueAssessment, validLogistiqueEvaluation } from './evaluation'
+import { validLogistiqueWording } from './wording'
 
 export const LOGISTIQUE_DOMAINS = [
   { id: 'logistique-afp', label: 'Logistique AFP', diploma: 'AFP' },
@@ -213,6 +214,7 @@ export function validLogistiqueCataloguePages(pages: readonly CataloguePage[]): 
     const gapMode = 'logistiqueGapMode' in block ? block.logistiqueGapMode : undefined
     const presentation = 'logistiquePresentation' in block ? block.logistiquePresentation : undefined
     const evaluation = 'logistiqueEvaluation' in block ? block.logistiqueEvaluation : undefined
+    const wordingMode = 'logistiqueWordingMode' in block ? block.logistiqueWordingMode : undefined
     const leftItems = 'libreItems' in block && Array.isArray(block.libreItems) ? block.libreItems : []
     const right = 'a5RightLibre' in block ? block.a5RightLibre : undefined
     const items = right && typeof right === 'object' && 'items' in right && Array.isArray(right.items)
@@ -221,6 +223,7 @@ export function validLogistiqueCataloguePages(pages: readonly CataloguePage[]): 
       validLogistiqueSelection(type, selection) &&
       validLogistiqueGapMode(type, gapMode) &&
       validLogistiquePresentation(type, presentation) &&
+      (wordingMode === undefined || (!isLogistiqueReferenceType(type.id) && (wordingMode === 'normal' || wordingMode === 'falc'))) &&
       (gapMode === undefined || presentation === undefined) &&
       (evaluation === undefined || (!isLogistiqueReferenceType(type.id) && validLogistiqueEvaluation(evaluation) &&
         (evaluation.mode !== 'histoire' || (type.kind === 'maths' && gapMode === undefined && presentation === undefined &&
@@ -228,6 +231,7 @@ export function validLogistiqueCataloguePages(pages: readonly CataloguePage[]): 
             (selection as ExerciseBlock['logistiqueSelection'])?.modules ?? [type.module],
             (selection as ExerciseBlock['logistiqueSelection'])?.quantities, evaluation.story))))) &&
       items.every((item) =>
+        (item?.logistiqueWording === undefined || (!isLogistiqueReferenceType(type.id) && validLogistiqueWording(item.logistiqueWording))) &&
         (item?.logistiqueAssessment === undefined || (!isLogistiqueReferenceType(type.id) &&
           validLogistiqueAssessment(item.logistiqueAssessment))) &&
         (item?.logistiqueNarrative === undefined || (!isLogistiqueReferenceType(type.id) &&

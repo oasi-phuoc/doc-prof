@@ -284,9 +284,9 @@ export function WorksheetSheet({
   const compactHeader = asHalf && (page.domain === 'grammaire' || page.domain === 'société' || page.domain === 'vie-scolaire' || isTpfFamilyDomain(page.domain))
   const hasLogistiqueStory = isLogistiqueDomain(page.domain) && page.blocks.some((block) =>
     block.logistiqueDetachedNarratives?.length || block.items.some((item) => item.logistiqueNarrative))
-  const hasCompactLogistiqueActivity = Boolean(asHalf && page.items.some(({ logistiqueTable }) =>
+  const hasCompactLogistiqueActivity = Boolean(asHalf && (page.logistiqueCompactWording || page.items.some(({ logistiqueTable }) =>
     logistiqueTable?.presentation === 'cas-mixte' || logistiqueTable?.presentation === 'processus-a-completer' ||
-    isLogistiqueChartPresentation(logistiqueTable?.presentation)))
+    isLogistiqueChartPresentation(logistiqueTable?.presentation))))
   const domainClass = isLogistiqueDomain(page.domain) ? ' is-logistique'
     : page.domain === 'tcm-csc' ? ' is-tcm-csc' : page.domain === 'tcm-cfr' ? ' is-tcm-cfr' : page.domain === 'tpm' ? ' is-tpm' : ''
   const posterClass = page.cePosterSheet

@@ -35,6 +35,7 @@ const { currentLogistiquePublication, logistiquePublications } = load(root + '/s
 const { splitLogistiquePages } = load(root + '/src/logistique/pagination.ts')
 const { blockItemsForConfig } = load(root + '/src/components/generator/sheet-items.ts')
 const { pageForA5Half } = load(root + '/src/components/generator/sheet-format.ts')
+const { applyLogistiqueWording } = load(root + '/src/logistique/wording.ts')
 
 function config(diploma, module, kind) {
   const tag = diploma.toLowerCase()
@@ -911,6 +912,64 @@ test('les questions sur photo imposent un support élève et conservent leur pr�
       assert(!validLogistiquePages([{ ...frozen, a5RightLibre: { id: 'droite', items: [hidden] } }]))
     }
   }
+})
+
+test('les formulations relues gardent les données, le corrigé et les droits des mêmes exercices', () => {
+  const previous = new Map(logistiquePublications.find(({ revision }) => revision === 'logistique-supports-4-3-v024').units
+    .map((unit) => [unit.id, unit]))
+  const units = currentLogistiquePublication.units.filter((unit) => unit.wording)
+  const values = (text) => (text.match(/\d+(?:[’'.,]\d+)*/g) ?? []).sort()
+  assert(units.length >= 600)
+  assert.equal(new Set(units.filter(({ approvedFor }) => approvedFor.includes('AFP')).map(({ module }) => module)).size, 63)
+  for (const unit of units) {
+    const old = previous.get(unit.id)
+    assert.deepEqual([unit.module, unit.kind, unit.answer, unit.calculation, unit.approvedFor],
+      [old.module, old.kind, old.answer, old.calculation, old.approvedFor], unit.id)
+    assert.equal(unit.prompt, unit.wording.normal)
+    assert.notEqual(unit.wording.normal, unit.wording.falc, unit.id)
+    assert.deepEqual(values(unit.wording.normal), values(old.prompt), unit.id)
+    assert.deepEqual(values(unit.wording.falc), values(old.prompt), unit.id)
+    for (const [index, question] of (unit.table?.questions ?? []).entries()) {
+      const { wording, ...unchanged } = question
+      assert.deepEqual(unchanged, old.table.questions[index], unit.id)
+      if (wording) assert.deepEqual(values(wording.falc), values(unchanged.prompt), unit.id)
+    }
+  }
+})
+
+test('le choix Normal ou FALC garde le tirage, les deux moitiés et les changements locaux', () => {
+  const page = { ...config('CFC', '301', 'maths'), count: 40 }
+  const normal = generateLogistique(page, 17).items
+  const falc = generateLogistique({ ...page, logistiqueWordingMode: 'falc' }, 17).items
+  const afp = generateLogistique({ ...page, ...config('AFP', '301', 'maths'), count: 40 }, 17).items
+  assert.deepEqual(falc.map(({ logistiqueSource, answer, calcAnswer }) => [logistiqueSource, answer, calcAnswer]),
+    normal.map(({ logistiqueSource, answer, calcAnswer }) => [logistiqueSource, answer, calcAnswer]))
+  const sample = falc.find((item) => item.logistiqueWording)
+  assert(sample)
+  assert.equal(sample.prompt, sample.logistiqueWording.falc)
+  assert.equal(afp.find((item) => item.logistiqueSource.id === sample.logistiqueSource.id)?.prompt, sample.prompt)
+  assert.equal(normal.find((item) => item.logistiqueSource.id === sample.logistiqueSource.id)?.prompt, sample.logistiqueWording.normal)
+  const historical = generateLogistique({ ...page, logistiqueWordingMode: 'falc', logistiqueBankRevision: 'logistique-supports-4-3-v024' }, 17).items
+  assert.equal(historical.find((item) => item.logistiqueSource.id === sample.logistiqueSource.id)?.logistiqueWording, undefined)
+
+  const left = { ...sample, libreId: 'question-a', points: 3.5, libreLocked: true }
+  const right = { ...left, libreId: 'question-b', prompt: 'Énoncé personnalisé par le formateur.', libreCorrectionPending: true }
+  const [frozen] = freezeLogistiquePages([{ ...page, libreId: 'exercice-a', logistiqueWordingMode: 'falc', libreItems: [left],
+    a5RightLibre: { id: 'exercice-b', items: [right] } }])
+  assert(validLogistiquePages([frozen]))
+  assert.equal(buildPage(pageForA5Half(frozen, 'left'), 17).items[0].prompt, left.prompt)
+  assert.equal(buildPage(pageForA5Half(frozen, 'right'), 17).items[0].prompt, right.prompt)
+  assert.deepEqual(applyLogistiqueWording(left, 'normal'), { ...left, prompt: left.logistiqueWording.normal })
+  assert.strictEqual(applyLogistiqueWording(right, 'normal'), right)
+  assert(!validLogistiquePages([{ ...frozen, logistiqueWordingMode: 'simplifie' }]))
+
+  const casePage = { ...config('CFC', '308', 'situation'), logistiquePresentation: 'cas-mixte' }
+  const [mixed] = generateLogistique(casePage, 17).items
+  const simplified = applyLogistiqueWording(mixed, 'falc')
+  assert.notEqual(simplified.prompt, mixed.prompt)
+  assert.deepEqual(simplified.logistiqueTable.questions.map(({ prompt, wording, ...question }) => question),
+    mixed.logistiqueTable.questions.map(({ prompt, wording, ...question }) => question))
+  assert.equal(simplified.points, 6)
 })
 
 test('les deux présentations de graphiques gardent les valeurs, les repères et le corrigé', () => {

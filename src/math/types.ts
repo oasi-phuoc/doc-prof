@@ -497,6 +497,7 @@ export type MathItem = {
   logistiqueSubquestionOffset?: number
   logistiqueImage?: LogistiqueQuestionImage
   logistiquePhotoPresentation?: LogistiquePhotoPresentation
+  logistiqueWording?: import('@/logistique/wording').LogistiqueWording
   logistiqueGlossaryFigure?: LogistiqueGlossaryFigure
   logistiqueGlossaryEntry?: { term: string; definition: string }
   /** Identité locale d’une occurrence éditée, distincte des identifiants de banque. */
@@ -1007,6 +1008,7 @@ export type ExerciseBlock = {
   logistiqueEvaluation?: import('@/logistique/evaluation').LogistiqueEvaluation
   logistiqueGapMode?: LogistiqueGapMode
   logistiquePresentation?: LogistiquePresentation
+  logistiqueWordingMode?: import('@/logistique/wording').LogistiqueWordingMode
   topic: string
   exerciseType: string
   mathTheoryStepNumbering?: MathTheoryStepNumbering
@@ -1381,6 +1383,7 @@ export type WorksheetBlock = {
 }
 
 export type WorksheetPage = PageConfig & {
+  logistiqueCompactWording?: true
   title: string
   instruction: string
   items: MathItem[]

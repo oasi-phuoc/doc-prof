@@ -243,7 +243,9 @@ export function splitLogistiquePages(
   { a5 = false, hideChrome = false, fontScale = 1, evaluation = false, firstPageHasHeader = true }:
     LogistiquePageLayout & { firstPageHasHeader?: boolean } = {},
 ): WorksheetPage[] {
-  if (a5 && evaluation && page.items.some((item) => item.logistiqueNarrative)) {
+  const compactWording = a5 && page.blocks.some((block) => block.exerciseType.endsWith('-situation') &&
+    block.items.some((item) => item.logistiqueWording && !item.logistiqueTable))
+  if (compactWording || a5 && evaluation && page.items.some((item) => item.logistiqueNarrative)) {
     fontScale = Math.min(fontScale, 1)
   }
   const pages: WorksheetPage[] = []
@@ -256,7 +258,9 @@ export function splitLogistiquePages(
   }
   const flush = () => {
     if (!blocks.length) return
-    pages.push({ ...page, blocks, items: blocks.flatMap((block) => block.items), isContinuation: pages.length > 0 })
+    pages.push({ ...page, blocks, items: blocks.flatMap((block) => block.items), isContinuation: pages.length > 0,
+      ...(compactWording ? { logistiqueCompactWording: true } : {}),
+    })
     blocks = []
     used = 0
   }

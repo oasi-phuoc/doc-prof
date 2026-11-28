@@ -2,7 +2,7 @@
 
 **Mis à jour le 28 novembre 2026**
 
-Référence de réalisation dans le [cahier des charges v2.13](cahier-des-charges.md). Révision Doc-Prof de départ `0a23f9287`. Révision EPCAS `ac2ceeae3ba7944fb4d24a7de103d41d3da98e1f`.
+Référence de réalisation dans le [cahier des charges v2.14](cahier-des-charges.md). Révision Doc-Prof de départ `0a23f9287`. Révision EPCAS `ac2ceeae3ba7944fb4d24a7de103d41d3da98e1f`.
 
 ## Décisions du responsable
 
@@ -385,6 +385,19 @@ La publication des modules est terminée pour les deux diplômes. La publication
 Les effectifs sont dédupliqués par identifiant dans chaque diplôme. La banque compte 8 608 unités d’exercice distinctes. Chaque module dépasse la cible du §5.1 dans son diplôme, avec au moins 31 calculs, 51 vérifications et 21 mises en situation. Les formats structurés et la conception avancée des évaluations figurent dans les lots L1c à L1f.
 
 Pour un enrichissement ultérieur, partir des archives et du dossier éditorial du module, vérifier les droits par diplôme, les corrigés, la composition A4 et la continuité des recettes. Enregistrer chaque nouvelle révision et ses résultats dans ce suivi. [Archives par thème](sources-epcas/).
+
+## Reformulation en français clair
+
+La révision `logistique-formulations-v025` révise les formulations du stock, du planning, du coût unitaire et d’autres calculs fréquents, ainsi que des consignes de vérification et de mise en situation. Elle adapte aussi les questions sur photo et les sous-questions de quatre cas mixtes. Les deux formulations gardent les chiffres, les conditions, les documents, les réponses et les points. Les dossiers utilisent des modèles de phrase relus appliqués aux formulations reconnues. [Formulations et cas](../../src/logistique/banks/formulations-v025.ts).
+
+Le CFC affiche le choix Normal ou FALC dans les paramètres des activités qui proposent une reformulation. L’AFP utilise par défaut la formulation FALC disponible. Le changement de formulation garde le tirage et préserve les énoncés saisis manuellement dans Libre. Les fiches de mise en situation avec des énoncés ouverts reformulés utilisent une échelle maximale correspondant au réglage 16 px en double A5 pour garder la place du corrigé. Chromium a vérifié le changement en CFC, la réouverture après sauvegarde, la reprise d’une question modifiée et l’affichage FALC automatique en AFP. Les 256 configurations contrôlées incluent 48 PDF, avec une réserve minimale de 25,03 px.
+
+| Diplôme | Modules concernés | Problèmes de calcul reformulés | Vérifications reformulées | Situations reformulées | Total |
+|---|---:|---:|---:|---:|---:|
+| CFC | 80 | 600 | 2 547 | 1 239 | 4 386 |
+| AFP | 63 | 475 | 1 974 | 956 | 3 405 |
+
+Les 4 222 autres unités du catalogue conservent leur formulation actuelle et restent à relire. Les deux formulations d’un exercice comptent pour une seule unité. Les trames d’histoire suivie et les formats encore ouverts figurent dans les lots L1c à L1f.
 
 ## Commandes
 

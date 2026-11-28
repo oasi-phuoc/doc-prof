@@ -289,6 +289,7 @@ import { logistiquePhotoExercises } from './banks/questions-photo-v023'
 import { module306 as independentPalletPhotos306 } from './banks/module-306-v006.generated.ts'
 import { module403 as independentStoragePhotos403 } from './banks/module-403-v007.generated.ts'
 import { module404 as independentStoragePhotos404 } from './banks/module-404-v006.generated.ts'
+import { reviewLogistiqueWording } from './banks/formulations-v025'
 import type { LogistiquePair } from './matching'
 import type { LogistiqueChoice } from './choices'
 import type { LogistiqueExerciseTable } from './tables'
@@ -296,6 +297,7 @@ import type { LogistiqueGlossaryFigure, LogistiquePhotoPresentation, LogistiqueQ
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
 import { logistiqueGlossaryFigures } from './glossary'
+import type { LogistiqueWording } from './wording'
 
 type ReferenceBlock = Exclude<GrammarTheoryBlock, { kind: 'page' }>
 
@@ -315,6 +317,7 @@ export type LogistiqueUnit = UnitContent & {
   module: string
   revision: string
   approvedFor: readonly LogistiqueDiploma[]
+  wording?: LogistiqueWording
 }
 
 export type LogistiquePublication = {
@@ -727,6 +730,9 @@ const photoExercisesPublication: LogistiquePublication = {
 }
 const independentSupportPhotosPublication = reviewedIllustrationPublication(photoExercisesPublication,
   'logistique-supports-4-3-v024', [...independentPalletPhotos306, ...independentStoragePhotos403, ...independentStoragePhotos404])
+const clearWordingPublication: LogistiquePublication = {
+  revision: 'logistique-formulations-v025', units: reviewLogistiqueWording(independentSupportPhotosPublication.units),
+}
 
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
@@ -833,6 +839,7 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   illustratedDistributionPublication,
   photoExercisesPublication,
   independentSupportPhotosPublication,
+  clearWordingPublication,
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!
