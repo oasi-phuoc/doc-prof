@@ -17,7 +17,7 @@ Domaine dédié pour les **fiches de théorie** FALC et les **exercices** liés 
 | `exercises/bank/lessons-revised.ts` | 90 banques de 50 phrases, une par sous-thème repris |
 | `exercises/bank/lessons-protected.ts` | 7 banques d’introduction conservées et complétées à 50 |
 | `exercises/communication-data.json` | 160 situations, dix variantes de CE/PE/PO par thème communicatif |
-| `curriculum/` | Banques pilotes par niveau, contrats canoniques, validation, snapshots et pagination |
+| `curriculum/` | Banques par niveau, contrats, validation, sélections sauvegardées et pagination |
 | `scripts/grammar_curriculum/` | Sources éditoriales et reconstruction des contenus |
 | `generate.ts` | Théorie **ou** exercices selon le type |
 
