@@ -1,0 +1,111 @@
+{
+  "id": "qcm-hist3-002-centre-evasion-gare-1",
+  "prompt": "Une seule illustration complète, PNG natif 1448 × 1086, paysage 4:3 exact. Contours fins et volumes doux du style TCF validé. Sujet entier et composition lisible. Aucun emplacement, personnage, nombre, texte, prix ou marque inventé. Un repère court explicitement prévu dans ce choix peut apparaître. Toute la scène, y compris les meubles, les murs et l’arrière-plan, suit le rendu peint mat et semi-réaliste des références. Les références de style ne fournissent ni personnages ni accessoires. Si une variante reprend une scène du même trio, garder précisément ses personnages, ses objets, leur échelle et leur apparence. Vérifier les pieds, les sièges, les surfaces d’appui et les objets occultés par le mobilier. Même gare en pierre claire, même porte du local de jeux d’évasion, avec un petit symbole de clé. Montrer les volumes et l’emplacement depuis une vue trois quarts adaptée, sans nom de rue ni numéro. La gare et le local sont sur les deux trottoirs opposés d’une même rue visible. Leurs façades se font face. Une illustration individuelle pour un seul choix. Jamais de planche des trois choix ni de nom du style TCF écrit dans le décor. Les références de style donnent seulement le rendu peint, jamais leurs personnages, instruments, textes ou accessoires. Aucun prix, montant, date, jour ou mois.",
+  "refs": [
+    "/tmp/tcf-work/public/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+    "/tmp/tcf-work/public/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp"
+  ],
+  "packet": "docs/tcf/lots-images-20261124/historique-lot03-preparation.json",
+  "job_spec": {
+    "id": "qcm-hist3-002-centre-evasion-gare-1",
+    "desc": "La gare et le local sont sur les deux trottoirs opposés d’une même rue visible. Leurs façades se font face.",
+    "type": "Scène",
+    "seed": null,
+    "path": "/lib/images/tcf/qcm-audit/qcm-hist3-002-centre-evasion-gare-1.png",
+    "refs": [
+      "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+      "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+    ],
+    "prompt": "Une seule illustration complète, PNG natif 1448 × 1086, paysage 4:3 exact. Contours fins et volumes doux du style TCF validé. Sujet entier et composition lisible. Aucun emplacement, personnage, nombre, texte, prix ou marque inventé. Un repère court explicitement prévu dans ce choix peut apparaître. Toute la scène, y compris les meubles, les murs et l’arrière-plan, suit le rendu peint mat et semi-réaliste des références. Les références de style ne fournissent ni personnages ni accessoires. Si une variante reprend une scène du même trio, garder précisément ses personnages, ses objets, leur échelle et leur apparence. Vérifier les pieds, les sièges, les surfaces d’appui et les objets occultés par le mobilier. Même gare en pierre claire, même porte du local de jeux d’évasion, avec un petit symbole de clé. Montrer les volumes et l’emplacement depuis une vue trois quarts adaptée, sans nom de rue ni numéro. La gare et le local sont sur les deux trottoirs opposés d’une même rue visible. Leurs façades se font face.",
+    "status": "pending_generation",
+    "question_key": "tcf-ss-a2-s51-co-2#9",
+    "choice": 1
+  },
+  "question_context": {
+    "key": "tcf-ss-a2-s51-co-2#9",
+    "bank": "/workspace/doc-prof/src/tcf/content/a1-a2/co.json",
+    "exercise": "tcf-ss-a2-s51-co-2",
+    "question": 9,
+    "level": "A1-A2",
+    "source": "Bonjour, ici le centre Futur Évasion, vous avez réservé pour notre jeu d'évasion Opération Paris le 6 janvier à 18h. Merci de venir à 17h30. Nous pourrons vous accueillir et vous expliquer les règles du jeu. Nous sommes au 8, rue Thiers à Nice. Pour nous retrouver, c'est très facile. Nous sommes en face de la gare des trains. Nous vous rappelons que le jeu « Opération Paris » est limité à 4 personnes. Vous allez passer un bon moment avec \"Future Évasion\". Notre centre a obtenu la note de 9 sur 10 dans la revue française des jeux d'évasion.",
+    "source_sha256": "3f2db67dedd80baf72641e8622da0355bf399087d4d085d31eb83abc8cddf0b3",
+    "semantic_sha256": "7d96fa08539d2598a7bf36fcda646266b02373af340022e5225e18d45afedb94",
+    "audio": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-23.mp3",
+    "audio_sha256": "e90a827337b8294fd064f1ef613fa345af7961a47ad53f4a8c842d233502a870",
+    "question_snapshot": {
+      "enonce": "Où se trouve le centre par rapport à la gare ?",
+      "type_reponse": "qcm_texte",
+      "points": 1,
+      "melanger": true,
+      "choix": [
+        {
+          "id": "a",
+          "texte": "En face",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "À l'intérieur"
+        },
+        {
+          "id": "c",
+          "texte": "Derrière"
+        }
+      ],
+      "formes": {
+        "lignes": {
+          "nb_lignes": 1,
+          "reponse_modele": "En face"
+        }
+      }
+    },
+    "prior_context_review": {
+      "key": "tcf-ss-a2-s51-co-2#9",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s51-co-2",
+      "question": 9,
+      "enonce": "Où se trouve le centre par rapport à la gare ?",
+      "labels": [
+        "En face",
+        "À l'intérieur",
+        "Derrière"
+      ],
+      "status": "artwork_needed_contextual_locations",
+      "source_sha256": "3f2db67dedd80baf72641e8622da0355bf399087d4d085d31eb83abc8cddf0b3",
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/vie-quotidienne-23.mp3",
+      "review_index": 636,
+      "semantic_sha256": "7d96fa08539d2598a7bf36fcda646266b02373af340022e5225e18d45afedb94",
+      "reviewed": true,
+      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
+      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "brief": {
+        "context_question": "Où se trouve le centre par rapport à la gare ?",
+        "choices_to_illustrate": [
+          "En face",
+          "À l'intérieur",
+          "Derrière"
+        ],
+        "source_bank": "src/tcf/content/a1-a2/co.json",
+        "source_exercise": "tcf-ss-a2-s51-co-2",
+        "source_question": 9,
+        "source_sha256": "3f2db67dedd80baf72641e8622da0355bf399087d4d085d31eb83abc8cddf0b3",
+        "constraints": [
+          "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
+          "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
+          "Style peint semi-réaliste validé, contours fins, paysage 4:3 exact, sujets entiers.",
+          "Réutiliser les images existantes seulement si le sens entier correspond ; aucune activation partielle.",
+          "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
+          "Revue visuelle et corrigé synchronisé avant toute activation."
+        ]
+      }
+    }
+  },
+  "source_sha256": "3e5fc0fe71726d7d4873783687a0a33f6076ebd6f56fa85b65a54f6c5800a350",
+  "native_dimensions": [
+    1448,
+    1086
+  ],
+  "visual_review_status": "rejected",
+  "original_bytes_preserved": true,
+  "rejection_reason": "Le bâtiment opposé porte MAIRIE au lieu de GARE ; le repère de la source est faux. Reprendre avec une façade de gare et train reconnaissables."
+}
