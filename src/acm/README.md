@@ -8,6 +8,8 @@ Le catalogue compte **210 activités**. Le quilling, le paper layering, les cart
 
 Chaque entrée de `stepImages` correspond à la consigne de même position dans `steps`. Les photos déjà intégrées restent en place. Les entrées avec un champ `brief` affichent **Photo à générer** avec la description du geste ou de l’état à photographier. Les pages gardent la numérotation des étapes et la liste du matériel figure sur la première page.
 
+Les dix fiches d’origami, les dix fiches de dessin au crayon et les dix fiches de collage ont maintenant une image à chaque étape. Les descriptions des autres photos à produire figurent dans `activities.json`.
+
 Pour une nouvelle série, choisir une lumière naturelle diffuse et garder le même matériel, les mêmes couleurs et les mêmes mains d’une étape à l’autre. Un fond mat ivoire convient quand le plan de travail aide à comprendre la prise de vue. Pour l’origami, les cartes pop-up et les autres réalisations qui se lisent seules, le fond peut être transparent. Centrer le pliage ou l’objet dans le cadre et laisser une marge pour voir les bords, les pointes et les rabats. Garder les mains ou le support dans le cadre quand ils expliquent le geste.
 
 Privilégier la vue de dessus pour les tracés, découpes et plis. Passer à une vue oblique pour montrer l’épaisseur, un mécanisme ou une ombre portée. Garder le même type de fond et les mêmes repères au long d’une série. Montrer l’état exact décrit dans la fiche. La dernière vue présente le résultat de cette même série.
