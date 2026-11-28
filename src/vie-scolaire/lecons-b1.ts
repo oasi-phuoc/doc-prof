@@ -38,7 +38,7 @@ export const SCHOOL_B1_LESSONS: readonly SchoolLesson[] = [
     words: [
       word('une convocation', 'Un document qui demande de venir à une épreuve.', examens[0], true),
       word('une épreuve', 'Une partie d’un examen, à l’écrit ou à l’oral.'),
-      word('une pièce d’identité', 'Un document officiel qui donne ton identité.', examens[1], true),
+      { label: 'une pièce d’identité', clue: 'Un document officiel qui donne ton identité.', image: '/lib/images/tcf/qcm-audit/vocab-carte-identite.webp' },
       word('une note', 'Un résultat chiffré.'),
       word('un rattrapage', 'Une possibilité de repasser une épreuve si le règlement le prévoit.'),
       word('un délai', 'Le temps accordé pour faire une démarche.'),

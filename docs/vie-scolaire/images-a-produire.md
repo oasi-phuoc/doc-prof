@@ -1,6 +1,6 @@
 # Vie scolaire · inventaire des visuels
 
-Les 72 scènes ont un emplacement dans les fiches. 35 reprennent une illustration du catalogue ClairFLE et 28 illustrations originales complètent le parcours. Sur les 72 scènes, 9 restent provisoires. Les huit cadrans et les quatre modèles de consignes sont définitifs. Les chemins ci-dessous sont relatifs à `public/lib/images/vie-scolaire/`. Les scènes disponibles gardent leur cadrage 4:3 et leur définition d’origine. Le registre conserve leur texte alternatif et, pour les réemplois, leur chemin source. Le catalogue affiche chaque image à son chemin d’origine. [Registre des illustrations](../../src/vie-scolaire/illustrations.json)
+Les 72 scènes ont un emplacement dans les fiches. 35 reprennent une illustration du catalogue ClairFLE et 37 illustrations originales complètent le parcours. Sur les 72 scènes, toutes sont disponibles. Les huit cadrans et les quatre modèles de consignes sont définitifs. Les chemins ci-dessous sont relatifs à `public/lib/images/vie-scolaire/`. Les scènes disponibles gardent leur cadrage 4:3 et leur définition d’origine. Le registre conserve leur texte alternatif et, pour les réemplois, leur chemin source. Le catalogue affiche chaque image à son chemin d’origine. [Registre des illustrations](../../src/vie-scolaire/illustrations.json)
 
 Les images de lexique montrent un objet ou un geste identifiable. Une scène de théorie met l’action en évidence et garde un décor simple. Dans une activité de compréhension, les éléments utiles à la question sont lisibles dans le document ou l’audio. Les illustrations définitives respectent le style semi-réaliste de ClairFLE. [Cahier des charges](cahier-des-charges.md)
 
@@ -93,17 +93,17 @@ Vérifier visuellement le cadrage et la lisibilité avant d’affecter une image
 |---|---|---|---|
 | `vie-de-classe/lire-au-calme.webp` | Disponible | CE, PO | Une personne lit une fiche dans un espace calme de la classe. |
 | `vie-de-classe/pratiquer-a-loral.webp` | Disponible | CE, PO | Deux personnes travaillent à l’oral avec une fiche de dialogue. |
-| `vie-de-classe/discuter-dune-regle.webp` | À produire | Théorie, PO | Un groupe examine une proposition. Une personne parle, les autres écoutent. |
+| `vie-de-classe/discuter-dune-regle.webp` | Disponible | Théorie, PO | Un groupe examine une proposition. Une personne parle, les autres écoutent. |
 | `sortie/comparer-deux-offres.webp` | Disponible | Théorie | Deux élèves comparent des programmes sur une table. Les textes utiles sont fournis dans la fiche. |
 | `sortie/visiter-un-musee.webp` | Disponible | CE, PO | Entrée de musée avec un accès de plain-pied et un groupe qui arrive. |
 | `sortie/choisir-la-balade.webp` | Disponible | CE, PO | Petit groupe à l’entrée d’un parc, avec un chemin et un panneau de départ. |
-| `sortie/accueillir-le-groupe.webp` | À produire | PO, PE | À un point de rendez-vous, une personne vérifie la liste du groupe. |
+| `sortie/accueillir-le-groupe.webp` | Disponible | PO, PE | À un point de rendez-vous, une personne vérifie la liste du groupe. |
 
 ### École, université et quotidien à la maison
 
 | Chemin prévu | État | Support | Action ou repère attendu |
 |---|---|---|---|
-| `lieux/chercher-une-salle.webp` | À produire | Théorie, PO | Une élève compare le numéro lu sur sa note avec celui de la porte. |
+| `lieux/chercher-une-salle.webp` | Disponible | Théorie, PO | Une élève compare le numéro lu sur sa note avec celui de la porte. |
 | `lieux/demander-au-secretariat.webp` | Disponible | CE, PO | Une personne demande où aller au secrétariat de l’école. |
 | `lieux/entrer-a-la-bibliotheque.webp` | Disponible | Lexique, théorie | Une personne arrive devant le comptoir de prêt de la bibliothèque. |
 | `quotidien/se-lever.webp` | Disponible | Théorie | Une personne éteint son réveil le matin. |
@@ -112,15 +112,15 @@ Vérifier visuellement le cadrage et la lisibilité avant d’affecter une image
 | `devoirs/noter-un-devoir.webp` | Disponible | Théorie, CE | Une personne note le travail du lendemain dans son agenda ouvert. |
 | `devoirs/demander-une-explication.webp` | Disponible | PO | Une personne montre une ligne de son exercice et demande de l’aide. |
 | `devoirs/reviser-a-deux.webp` | Disponible | Théorie, PO | Deux élèves comparent leurs notes à la bibliothèque. |
-| `inscription/preparer-son-dossier.webp` | À produire | Théorie, CE | Une personne rassemble un formulaire et des pièces fictives. Le document lisible est fourni à part. |
+| `inscription/preparer-son-dossier.webp` | Disponible | Théorie, CE | Une personne rassemble un formulaire et des pièces fictives. Le document lisible est fourni à part. |
 | `inscription/deposer-le-dossier.webp` | Disponible | PO | Une personne présente son dossier au guichet d’une université. |
-| `inscription/recevoir-sa-carte.webp` | À produire | Théorie, PE | Une étudiante reçoit une carte sans données lisibles. |
+| `inscription/recevoir-sa-carte.webp` | Disponible | Théorie, PE | Une étudiante reçoit une carte sans données lisibles. |
 | `foyer/ranger-une-piece.webp` | Disponible | Théorie, lexique | Une personne range des objets par type dans une pièce. |
-| `foyer/faire-la-vaisselle.webp` | À produire | Lexique, PO | Une personne lave une assiette dans l’évier. |
-| `foyer/repartir-les-taches.webp` | À produire | Théorie, PO | Deux personnes se mettent d’accord en regardant un tableau de tâches. |
+| `foyer/faire-la-vaisselle.webp` | Disponible | Lexique, PO | Une personne lave une assiette dans l’évier. |
+| `foyer/repartir-les-taches.webp` | Disponible | Théorie, PO | Deux personnes se mettent d’accord en regardant un tableau de tâches. |
 | `examens/lire-la-convocation.webp` | Disponible | Théorie, CE | Une personne vérifie la salle et l’heure. La convocation lisible est fournie à part. |
-| `examens/se-presenter-a-lecrit.webp` | À produire | Théorie, PO | Une personne présente sa convocation à l’entrée de la salle d’examen. |
-| `examens/poser-une-question-sur-le-resultat.webp` | À produire | PO, PE | Une personne demande au secrétariat quelle démarche faire après un résultat. |
+| `examens/se-presenter-a-lecrit.webp` | Disponible | Théorie, PO | Une personne présente sa convocation à l’entrée de la salle d’examen. |
+| `examens/poser-une-question-sur-le-resultat.webp` | Disponible | PO, PE | Une personne demande au secrétariat quelle démarche faire après un résultat. |
 
 ## Documents et schémas à réaliser à l’intégration
 

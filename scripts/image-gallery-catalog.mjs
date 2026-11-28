@@ -151,7 +151,7 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
     if (familyImageCopies.has(file) || ['docs/', 'scripts/', 'tmp/'].some(prefix => file.startsWith(prefix))) return false
     if (!file.startsWith(schoolFolder)) return true
     const visual = schoolVisuals[file.slice(schoolFolder.length, -'.webp'.length)]
-    const hasOriginal = visual && indexedFiles.has('public' + visual.source)
+    const hasOriginal = visual?.source && indexedFiles.has('public' + visual.source)
     if (!schoolPlaceholder && !hasOriginal) return true
     const contents = readFileSync(path.join(root, file))
     if (schoolPlaceholder?.equals(contents)) return false
