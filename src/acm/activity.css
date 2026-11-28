@@ -9,6 +9,7 @@
 
 .acm-activity {
   --acm-accent: #26596f;
+  --acm-photo-height: 138px;
   color: #253437;
   line-height: 1.35;
 }
@@ -67,12 +68,12 @@
   font-weight: 700;
 }
 
-.acm-steps.has-photos {
+.acm-steps.has-visuals {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px 28px;
 }
 
-.acm-steps.has-photos:has(> li:nth-child(5)) {
+.acm-steps.has-visuals:has(> li:nth-child(5)) {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -80,8 +81,66 @@
   display: block;
   width: 100%;
   height: auto;
-  max-height: 138px;
+  max-height: var(--acm-photo-height);
   object-fit: contain;
   object-position: left center;
   margin-top: 5px;
+}
+
+.acm-fold-photo {
+  position: relative;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.acm-fold-photo > .acm-step-photo {
+  margin-top: 0;
+}
+
+.acm-fold-label {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  padding: 1px 4px;
+  border-radius: 3px;
+  background: #fff;
+  color: #542144;
+  font-size: .7em;
+  font-weight: 700;
+}
+
+.acm-fold-arrow {
+  position: absolute;
+  height: 0;
+  color: #162b45;
+  border-top: 3px solid currentColor;
+  filter: drop-shadow(0 1px 0 white) drop-shadow(0 -1px 0 white);
+  transform-origin: 0 0;
+  pointer-events: none;
+}
+
+.acm-fold-arrow::after {
+  content: '';
+  position: absolute;
+  right: 1px;
+  top: -6px;
+  width: 8px;
+  height: 8px;
+  border-top: 3px solid currentColor;
+  border-right: 3px solid currentColor;
+  transform: rotate(45deg);
+}
+
+.acm-photo-placeholder {
+  display: grid;
+  align-content: center;
+  gap: 4px;
+  min-height: 90px;
+  margin-top: 5px;
+  padding: 8px 10px;
+  border: 1px dashed #aab7b9;
+  border-radius: 4px;
+  color: #3c5157;
+  font-size: .84em;
+  overflow-wrap: anywhere;
 }

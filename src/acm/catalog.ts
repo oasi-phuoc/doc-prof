@@ -10,6 +10,14 @@ export const ACM_TOPICS: Topic[] = [
   { id: 'acm-peinture', label: 'Peinture', domain: ACM_DOMAIN },
   { id: 'acm-collage', label: 'Collage', domain: ACM_DOMAIN },
   { id: 'acm-dessin', label: 'Dessin au crayon', domain: ACM_DOMAIN },
+  { id: 'acm-quilling', label: 'Quilling', domain: ACM_DOMAIN },
+  { id: 'acm-paper-layering', label: 'Paper layering', domain: ACM_DOMAIN },
+  { id: 'acm-cartes-pop-up', label: 'Cartes pop-up', domain: ACM_DOMAIN },
+  { id: 'acm-pate-a-sel', label: 'Pâte à sel', domain: ACM_DOMAIN },
+  { id: 'acm-creations-saisonnieres', label: 'Créations saisonnières', domain: ACM_DOMAIN },
+  { id: 'acm-perspective-espace', label: 'Perspective et espace', domain: ACM_DOMAIN },
+  { id: 'acm-ombrage-volume-lumiere', label: 'Ombrage, volume et lumière', domain: ACM_DOMAIN },
+  { id: 'acm-paysage-papier-dechire', label: 'Paysage en papier déchiré', domain: ACM_DOMAIN },
 ]
 
 const acmActivities = activities as AcmActivity[]

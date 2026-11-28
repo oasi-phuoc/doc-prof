@@ -21,6 +21,7 @@ import {
 } from '@/components/math/PrintDocumentChrome'
 import { DecomposeExample } from '@/components/item-view/decompose'
 import { MathWorkedExample } from '@/components/item-view/guided-practice'
+import { CfrGuidedExample } from '@/components/item-view/cfr-guided'
 import { MathGeometryExample } from '@/components/item-view/guided-geometry'
 import { FundamentalExample } from '@/components/item-view/fundamental-practice'
 import { LogistiqueGlossaryTable } from '@/components/item-view/logistique-glossary'
@@ -523,6 +524,7 @@ export function WorksheetSheet({
                 </div>
               ) : null}
               {!evalMode && <MathWorkedExample exerciseType={block.exerciseType} subtractionAcrossZero={block.items[0]?.subtractionExchange?.digits.length === 3} />}
+              {!evalMode && block.items[0]?.cfrGuided && <CfrGuidedExample practice={block.items[0].cfrGuided} />}
               {!evalMode && <MathGeometryExample exerciseType={block.exerciseType} />}
               {!evalMode && <FundamentalExample exerciseType={block.exerciseType} />}
               <WorksheetItems

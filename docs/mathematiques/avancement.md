@@ -19,10 +19,12 @@
 | M2 · Formes | Intégré | **Figures → Reconnaître une forme tournée.** Compter les côtés et nommer un triangle, un rectangle ou un carré dans différentes orientations. |
 | M2 · Mesures | Intégré | **Conversions d’unités → Additionner des cm et des mm.** Choisir les millimètres comme unité commune avant de calculer le total. |
 | M2 · Problèmes courts | À compléter | Décliner les démarches illustrées dans les horaires, les prix et les distances. |
-| M3 · Progression CFR | Prévu | Fractions d’une quantité, graphiques contextualisés, équations guidées et transformations. |
+| M3 · Progression CFR | Six exercices guidés intégrés | **Algèbre** propose une fraction d’une quantité, une lecture de graphique et une équation. **Géométrie → Transformations géométriques** propose la rotation d’un quart de tour et les deux symétries. Chaque série commence par un exemple résolu et donne une aide sur la première question. |
 | M4 · Évaluations | Prévu | Séries comparables et mini-évaluations après les essais avec les élèves. |
 
 Pour les prochaines complétions de théorie, l’inventaire relève la comparaison et le calcul avec les fractions, les opérations avec les nombres relatifs, les priorités de calcul, et la conversion des masses et capacités. La relecture avec les élèves reste prévue pour les théories et les exercices FALC.
+
+Les exercices CFR partent d’un partage de jetons, de températures à midi, d’emprunts de livres ou d’une figure sur quadrillage. Au niveau avancé, l’élève compare deux barres du graphique, isole x en deux étapes ou applique la transformation à un nouveau triangle. Le corrigé reprend les données de la fiche, indique le calcul ou trace l’image du triangle. Les contrôles de génération couvrent 128 graines pour chacun des trois niveaux. Les fiches élève et les corrigés du niveau avancé ont été vérifiés en A4 et en double A5.
 
 ## Vérifications des premiers exercices
 

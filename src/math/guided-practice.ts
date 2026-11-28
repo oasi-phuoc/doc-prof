@@ -1,6 +1,7 @@
 import { columnItem, fmt } from './column-arith'
 import { int, type Rng } from './rng'
 import { DEFAULT_REAL_MAP_ID, realMapPlan } from './real-map-catalog'
+import { isCfrGuidedType, tryGenerateCfrGuided } from './cfr-guided-practice'
 import type { Difficulty, MathItem } from './types'
 
 export { SION_GRID, SION_PLACES } from './real-map-catalog'
@@ -18,7 +19,7 @@ export function isGuidedColumnType(typeId: string): boolean {
 
 export function isSingleColumnPractice(typeId: string): boolean {
   return typeId === RULER_SEGMENT_TYPE || typeId === RECTANGLE_MEASURES_TYPE ||
-    typeId === TRANSLATION_PRACTICE_TYPE || typeId === REAL_MAP_TYPE
+    typeId === TRANSLATION_PRACTICE_TYPE || typeId === REAL_MAP_TYPE || isCfrGuidedType(typeId)
 }
 
 function additionWithCarry(rng: Rng, difficulty: Difficulty, index: number): MathItem {
@@ -155,5 +156,5 @@ export function tryGenerateGuidedPractice(
   }
   if (typeId === TRANSLATION_PRACTICE_TYPE) return [translationPractice(rng, difficulty)]
   if (typeId === REAL_MAP_TYPE) return [readRealMap(rng, difficulty, realMapId)]
-  return undefined
+  return tryGenerateCfrGuided(typeId, rng, count, difficulty)
 }

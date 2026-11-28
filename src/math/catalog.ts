@@ -1,6 +1,7 @@
 import { MATH_THEORY_PREFIX, mathTheoryLessons } from './theory-lessons'
 import { DECIMAL_LINE_PRACTICE, LENGTH_PRACTICE, PLACE_VALUE_PRACTICE, SHAPE_PRACTICE } from './fundamental-practice'
 import { ALGEBRA_GLOSSARY, GEOMETRY_GLOSSARY } from './glossary-banks'
+import { CFR_GUIDED_TYPES } from './cfr-guided-practice'
 import {
   ADDITION_CARRY_TYPE,
   REAL_MAP_TYPE,
@@ -807,6 +808,7 @@ export const exerciseTypes: ExerciseType[] = [
   t('transformations-quart-tour', 'transformations', 'Faire pivoter une figure d’un quart de tour', 'Tourner une silhouette de 90° sur un quadrillage.', 'Suivez le sens indiqué pour reproduire la figure après un quart de tour.', 'geo', { preferredColumns: 1, preferredCount: 1, maxCount: 2 }),
   t(TRANSLATION_PRACTICE_TYPE, 'transformations', 'Translation, pas à pas', 'Déplacer les sommets d’un triangle sur un quadrillage.', 'Faites glisser le triangle.', 'texte', { preferredColumns: 1, preferredCount: 1, maxCount: 1, supportsNumberRange: false }),
   t(REAL_MAP_TYPE, 'reperage', 'Lire un plan de ville ou de village', 'Repérer des lieux sur une photo aérienne, une photo avec les routes ou un plan simplifié.', 'Repérez les lieux grâce aux points et aux cases.', 'texte', { preferredColumns: 1, preferredCount: 1, maxCount: 1, supportsNumberRange: false }),
+  ...CFR_GUIDED_TYPES,
   ...Object.entries(mathTheoryLessons).map(([topic, lesson]) =>
     t(`${MATH_THEORY_PREFIX}${topic}`, topic, 'Théorie', lesson.title, '', 'texte', {
       preferredColumns: 1, preferredCount: 1, maxCount: 1, supportsNumberRange: false,

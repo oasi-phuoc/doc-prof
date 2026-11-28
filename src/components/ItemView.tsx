@@ -78,6 +78,7 @@ import { TableAndGraph } from './item-view/function-practice'
 import { AreaFigures, SolidViewChoices } from './item-view/geometry-practice'
 import { MeasurementScale } from './item-view/measurement-practice'
 import { RulerSegmentFigure } from './item-view/guided-practice'
+import { CfrGuidedView } from './item-view/cfr-guided'
 import { RectangleMeasuresPractice, SionMapPractice, TranslationPractice } from './item-view/guided-geometry'
 import { FundamentalLength, FundamentalShape } from './item-view/fundamental-practice'
 import { MathTheoryView } from './item-view/math-theory'
@@ -189,7 +190,7 @@ export function ItemView({
   /** Inline (ex. substitution) : brouillon seulement si le chip grille est branché. */
   const isInlineDraft = item.layout === 'inline' && Boolean(onToggleDraftGrid)
   const isDraftPad = isProblem || isEquation || isGeoCalc || isAlgebraDraft || isInlineDraft
-  const isStackedText = item.layout === 'text' && !isProblem && !item.rectangleMeasures && !item.translationPractice && !item.sionMap
+  const isStackedText = item.layout === 'text' && !isProblem && !item.rectangleMeasures && !item.translationPractice && !item.sionMap && !item.cfrGuided
   const isOralSelect = item.layout === 'select' && item.selectVariant === 'oral'
   const resolvedOralMode = oralAnswerMode ?? item.answerMode ?? 'qcm'
   const oralItem = isOralSelect ? { ...item, answerMode: resolvedOralMode } : item
@@ -503,6 +504,7 @@ export function ItemView({
         {item.baseTen && <BaseTenCollection collection={item.baseTen} />}
         {item.shapePractice && <FundamentalShape shape={item.shapePractice} />}
         {item.lengthPractice && <FundamentalLength length={item.lengthPractice} />}
+        {item.cfrGuided && <CfrGuidedView practice={item.cfrGuided} mode={mode} />}
         {item.lengthUnits && <LengthUnitComparison lengths={item.lengthUnits} mode={mode} />}
         {item.areaFigures && <AreaFigures figures={item.areaFigures} />}
         {item.solidViews && <SolidViewChoices solid={item.solidViews} />}

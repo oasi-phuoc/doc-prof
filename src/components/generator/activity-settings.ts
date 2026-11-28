@@ -1,6 +1,7 @@
 import { exerciseTypeById } from '@/math/catalog'
 import { parseAlphaType } from '@/alphabetisation/kinds'
 import { TRANSLATION_PRACTICE_TYPE } from '@/math/guided-practice'
+import { isCfrGuidedType } from '@/math/cfr-guided-practice'
 import { grammarScenarioFor } from '@/grammaire/exercises/parcours'
 
 // Les générateurs de ces séries utilisent leurs propres bornes et règles de tirage.
@@ -25,7 +26,7 @@ const fixedDifficultyTypes = new Set([
 ])
 
 export function supportsActivityDifficulty(type: string, count: number) {
-  if (type === TRANSLATION_PRACTICE_TYPE) return true
+  if (type === TRANSLATION_PRACTICE_TYPE || isCfrGuidedType(type)) return true
   return !fixedDifficultyTypes.has(type) && !/^(transformations-|societe-)/.test(type) &&
     (type !== 'conversions-longueur' || count < 2)
 }

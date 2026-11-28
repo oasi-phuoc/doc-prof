@@ -698,6 +698,7 @@ export type MathItem = {
   baseTen?: { hundreds: number; tens: number; ones: number }
   shapePractice?: { kind: 'triangle' | 'carre' | 'rectangle'; angle: number }
   lengthPractice?: { cm: number; mm: number }
+  cfrGuided?: import('./cfr-guided-practice').CfrGuidedPractice
   menuPrices?: { label: string; cents: number }[]
   areaFigures?: RectangleGrid[]
   solidViews?: SolidViews

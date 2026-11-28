@@ -1,0 +1,59 @@
+.math-cfr-practice {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  align-items: center;
+  gap: 3mm;
+  width: 100%;
+  text-align: left;
+  font-size: 14pt;
+  line-height: 1.24;
+}
+
+.math-cfr-practice :is(p, figure) { margin: 0; }
+.math-cfr-practice p + p { margin-top: 1mm; }
+.math-cfr-practice figcaption { font-weight: 700; }
+.math-cfr-practice svg { display: block; width: 100%; }
+.math-cfr-practice .math-cfr-transform { max-height: 38mm; }
+.math-cfr-practice :is(.math-cfr-fraction, .math-cfr-graph) { font-size: .85em; }
+.math-cfr-practice .answer-line-field { margin-top: 1mm; }
+.math-cfr-practice .math-cfr-hint { color: #174a7e; }
+.math-cfr-practice .math-cfr-equation { font-weight: 700; text-align: center; }
+.a5-half .math-cfr-practice.is-equation { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
+
+.math-cfr-parts {
+  display: flex;
+  gap: .6mm;
+  margin: 1mm 0;
+}
+
+.math-cfr-parts span {
+  flex: 1;
+  min-height: 6mm;
+  border: 1px solid currentColor;
+  text-align: center;
+}
+
+.math-cfr-parts .is-picked {
+  border-width: 2px;
+  background: #e8f1f9;
+  font-weight: 700;
+}
+
+.math-cfr-practice text { font-size: 12px; fill: currentColor; }
+.math-cfr-practice .math-cfr-transform text {
+  font-size: 14px;
+  font-weight: 700;
+  paint-order: stroke;
+  stroke: white;
+  stroke-width: 1.2px;
+}
+.math-cfr-grid { stroke: #8995a1; stroke-width: .65; }
+.math-cfr-bar { fill: #d5dee6; stroke: currentColor; stroke-width: 1; }
+.math-cfr-bar.is-target { fill: #cadff0; stroke-width: 2.5; }
+.math-cfr-original polygon { fill: none; stroke: currentColor; stroke-width: 1.6; }
+.math-cfr-image polygon { fill: none; stroke: #174a7e; stroke-width: 2; stroke-dasharray: 4 2; }
+.math-cfr-axis { stroke: currentColor; stroke-width: 2; stroke-dasharray: 4 3; }
+.math-cfr-path { fill: none; stroke: #174a7e; stroke-width: 1.6; stroke-dasharray: 2 2; }
+
+.a5-half .math-cfr-practice .math-cfr-transform { max-height: 31mm; }
+.a5-half .math-cfr-practice .math-cfr-graph svg { max-height: 21mm; }

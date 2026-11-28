@@ -48,6 +48,7 @@ import {
   isTransformationExercise,
 } from '@/math/coord-transformations'
 import { DIFFICULTY_OPTIONS } from '@/math/difficulty'
+import { isCfrGuidedType } from '@/math/cfr-guided-practice'
 import { exerciseTypeById, isQuadExercise } from '@/math/catalog'
 import {
   AREA_QUAD_FIGURES,
@@ -72,7 +73,7 @@ export function deriveBlockContext(
   safeBlockIndex: number,
   questionsOverflow: boolean,
 ) {
-const isReperage = isReperagePage(activeBlock.exerciseType)
+const isReperage = isReperagePage(activeBlock.exerciseType) && !isCfrGuidedType(activeBlock.exerciseType)
 const isPhraseChart =
   activeBlock.topic === 'phrase-tableaux' || activeBlock.exerciseType.startsWith('phrase-tableau-')
 const isVocabLearn = isVocabLearnType(activeBlock.exerciseType)
