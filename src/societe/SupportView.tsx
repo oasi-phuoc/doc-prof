@@ -39,16 +39,21 @@ export function SocieteSupportView({ support, mode }: { support: SocieteSupport;
     return (
       <table className="societe-cantons-table">
         <thead>
-          <tr><th scope="col">Canton</th><th scope="col">Chef-lieu</th></tr>
+          <tr>
+            <th scope="col">Écusson</th>
+            <th scope="col">Sigle</th>
+            <th scope="col">Nom du canton</th>
+            <th scope="col">Chef-lieu</th>
+          </tr>
         </thead>
         <tbody>
           {support.cantons.map((canton) => (
             <tr key={canton.sigle}>
+              <td><img className="societe-ecusson" src={canton.ecusson} alt="" /></td>
+              <td>{canton.sigle}</td>
               <th scope="row">
-                <span className="societe-canton">
-                  <img className="societe-ecusson" src={canton.ecusson} alt="" />
-                  <span><strong>{canton.nom}</strong><small>{canton.sigle}{canton.ancienDemiCanton ? ' · ancien demi-canton' : ''}</small></span>
-                </span>
+                {canton.nom}
+                {canton.ancienDemiCanton && <small>Ancien demi-canton</small>}
               </th>
               <td>
                 <span className="societe-chef-lieu">
