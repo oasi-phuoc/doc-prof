@@ -19,6 +19,7 @@ import { TcfExerciseEditor } from '@/tcf/TcfExerciseEditor'
 import type { TcfExercise, TcfNiveau } from '@/tcf/types'
 import { isLogistiqueReferenceType, logistiqueModules, logistiquePresentationFor, logistiqueType } from '@/logistique/catalog'
 import { logistiqueQuestionItems, logistiqueQuestionPhotos } from '@/logistique/generate'
+import { logistiqueItemPresentation, logistiqueReplacementChoices } from '@/logistique/libre'
 import { isLogistiqueStoryQuestion, logistiqueStoryQuestions } from '@/logistique/evaluation'
 import { LogistiqueLibreBank } from './LogistiqueLibreBank'
 
@@ -191,15 +192,7 @@ export function LibreActivityEditor({
           activeBlock.logistiqueSelection?.modules ?? [logistiqueQuestionType.module])
           .find((entry) => entry.logistiqueSource?.id === source.id)
       }
-      const presentation = item.logistiqueTable?.presentation ??
-        (item.logistiqueGaps ? item.logistiqueGaps.words ? 'avec-liste' : 'sans-liste'
-          : item.logistiqueResponseLines?.kind === 'simple' ? 'lignes-simples'
-          : item.logistiqueResponseLines?.kind === 'numbered' ? 'lignes-numerotees'
-          : item.logistiqueChoice?.kind === 'multiple' ? 'qcm-multiple'
-          : item.logistiqueChoice?.kind === 'true-false' ? 'vrai-faux'
-          : item.logistiqueMatching ? 'associer-textes'
-          : item.options?.length ? 'qcm' : undefined)
-      return logistiqueQuestionItems(logistiqueQuestionType, [source.module], activeBlock.logistiqueBankRevision, presentation)
+      return logistiqueQuestionItems(logistiqueQuestionType, [source.module], activeBlock.logistiqueBankRevision, logistiqueItemPresentation(item))
         .find((entry) => entry.logistiqueSource?.id === source.id)
     },
   } : undefined
@@ -210,10 +203,8 @@ export function LibreActivityEditor({
   const arithmeticItems = liveArithmetic ? identifyItems(halfEditor?.content?.items ?? activeItems, editedActivityId) : activeItems
   const logicContent = logic && (halfEditor?.content ?? logic)
   const questions = textExercise ? halfEditor?.content ?? textExercise :
-    logistiqueQuestionType ? { items: genericItems, instruction: logistiqueQuestionType.instruction } : null
-  const questionInstruction = questions?.items.length || !logistiqueQuestionType
-    ? questions?.instruction ?? ''
-    : activeBlock.libreInstruction ?? logistiqueQuestionType.instruction
+    logistiqueQuestionType ? { items: genericItems, instruction: activeBlock.libreInstruction ?? logistiqueQuestionType.instruction } : null
+  const questionInstruction = questions?.instruction ?? ''
   const wordListContent = letterGrid && (halfEditor?.content ?? letterGrid)
   const orderedPhrases = phraseOrder && (halfEditor?.content ?? phraseOrder)
   const syllables = syllableContent && (halfEditor?.content ?? syllableContent)
@@ -369,6 +360,8 @@ export function LibreActivityEditor({
           items={identifyItems(questions.items, editedActivityId)}
           editableCalculation={logistics?.kind === 'maths'}
           logistique={logistiqueEditor}
+          logistiqueReplacements={logistiqueQuestionType && !storyEvaluation ? (item, existing) =>
+            logistiqueReplacementChoices(logistiqueQuestionType, item, existing, activeBlock.logistiqueBankRevision) : undefined}
           logistiquePhotos={logistiquePhotos}
           fields={transientFields}
           writeField={onTransientField}

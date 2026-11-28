@@ -10,7 +10,8 @@ const palletPhoto = require('../../docs/logistique/preparation/306-v004.json').v
 const { load, root } = require('../../scripts/gattegno-loader.cjs')
 const catalog = load(root + '/src/logistique/catalog.ts')
 const { generateLogistique, logistiqueDocumentTitle, logistiqueHasSummary, logistiqueQuestionItems, logistiqueQuestionPhotos } = load(root + '/src/logistique/generate.ts')
-const { availableLogistiqueQuestions, retainLogistiqueQuestions, newLogistiqueQuestion, reviewableLogistiqueAnswer } = load(root + '/src/logistique/libre.ts')
+const { assignLogistiqueReplacement, availableLogistiqueQuestions, logistiqueReplacementChoices,
+  retainLogistiqueQuestions, newLogistiqueQuestion, reviewableLogistiqueAnswer } = load(root + '/src/logistique/libre.ts')
 const { buildPage } = load(root + '/src/math/generate.ts')
 const { initialLogistiqueStory, allocateLogistiquePoints, applyLogistiqueStoryChange, logistiqueDuration,
   logistiqueStoryVariant, validLogistiqueStory } = load(root + '/src/logistique/evaluation.ts')
@@ -384,6 +385,33 @@ test('le choix en Libre écarte les doublons et conserve les questions retouché
     assert.equal(draw.libreInstruction, editable.libreInstruction)
     assert.equal(new Set(draw.libreItems.map((item) => item.logistiqueSource.id)).size, 5)
     if (!evalMode) assert(draw.libreItems.slice(0, -1).every((item) => item.logistiqueSource.module === '105'))
+  }
+})
+
+test('le remplacement manuel conserve la place et le barème dans le module et le format de la question', () => {
+  for (const diploma of ['CFC', 'AFP']) {
+    const page = config(diploma, '306', 'verification')
+    const type = catalog.logistiqueType(page.exerciseType)
+    const bank = logistiqueQuestionItems(type, ['306'], 'logistique-choix-v011')
+    const [original, alreadyUsed] = bank.filter((item) => item.layout === 'text' && !item.logistiqueResponseLines)
+    const previous = { ...original, libreId: 'question-2', points: 3.5,
+      logistiqueAssessment: { minutes: 5, pointsLocked: true }, libreCorrectionPending: true }
+    const otherItems = [alreadyUsed, previous, { prompt: bank[2].prompt.toUpperCase().replace(/ /g, '  ') }]
+    const candidates = logistiqueReplacementChoices(type, previous, otherItems, 'logistique-choix-v011')
+    assert(candidates.length > 0, diploma)
+    assert(candidates.every((item) => item.logistiqueSource.module === '306' && item.layout === 'text' &&
+      !item.logistiqueResponseLines && !otherItems.some((used) => used.logistiqueSource?.id === item.logistiqueSource.id)))
+    assert(!candidates.some((item) => item.prompt === bank[2].prompt))
+    assert.deepEqual(logistiqueReplacementChoices(type, { ...previous, libreLocked: true }, otherItems), [])
+    assert.deepEqual(logistiqueReplacementChoices(type, previous, otherItems, 'revision-inconnue'), [])
+    const replacement = assignLogistiqueReplacement(previous, candidates[0], true)
+    assert.equal(replacement.libreId, 'question-2')
+    assert.equal(replacement.points, 3.5)
+    assert.equal(replacement.libreLocked, true)
+    assert.equal(replacement.libreCorrectionPending, undefined)
+    assert.deepEqual(replacement.logistiqueAssessment, { minutes: 5, pointsLocked: true })
+    assert.equal(replacement.answer, candidates[0].answer)
+    assert(validLogistiquePages([{ ...page, logistiqueBankRevision: 'logistique-choix-v011', libreItems: [replacement] }]))
   }
 })
 
