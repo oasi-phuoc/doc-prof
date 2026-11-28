@@ -41,6 +41,8 @@ Les sept banques ordinaires des thèmes d’introduction ont été complétées 
 
 Les parcours en situation relient les quatre compétences autour d’une même démarche. Le premier parcours A2 porte sur le déplacement d’un rendez-vous au cabinet dentaire. [Méthode et parcours intégré](implementation/parcours-situations.md)
 
+Dans **Grammaire → Conjuguer au présent → Verbes modaux**, le menu **Type** propose **Production orale · Image unique** et **Production orale · 4 images en séquence**. Les deux formats proposent de changer un billet de train ou de s’inscrire à un cours de français. L’image unique revient en deuxième position dans chaque séquence, avec les mêmes personnages et le même décor. Les images numérotées reprennent le rendu TCF CSC et le récit modèle apparaît au corrigé. [Situations et modèles](../../src/grammaire/exercises/communication.ts)
+
 La première banque proposait dix fiches de situation du quotidien pour chacun des seize thèmes de communication. Elles couvraient les transports, les rendez-vous, le logement, les démarches, les achats, les activités et les échanges sociaux. Chaque situation fournit les éléments suivants.
 
 - un document court de CE avec cinq questions simples et leurs réponses présentes dans le support ;

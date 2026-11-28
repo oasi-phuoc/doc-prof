@@ -30,6 +30,20 @@ export const GRAM_EXERCISE_KINDS = [
     layout: 'write' as const,
   },
   {
+    id: 'communication-po-image',
+    label: 'Production orale · Image unique',
+    description: 'Décrivez une situation du quotidien à partir d’une image.',
+    instruction: 'Regardez l’image. Dites où sont les personnes et ce qu’elles font.',
+    layout: 'write' as const,
+  },
+  {
+    id: 'communication-po-sequence',
+    label: 'Production orale · 4 images en séquence',
+    description: 'Racontez la même situation en quatre moments.',
+    instruction: 'Regardez les quatre images. Racontez l’histoire dans l’ordre.',
+    layout: 'write' as const,
+  },
+  {
     id: 'question-est-ce-que',
     label: 'Poser des questions avec est-ce que',
     description: 'Transformez une phrase affirmative en question avec est-ce que.',

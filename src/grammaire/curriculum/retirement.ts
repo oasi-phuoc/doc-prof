@@ -1,10 +1,13 @@
 import subthemes from './retired-subthemes.json'
+import {isGrammarOralVisualType} from '../exercises/communication'
 import {isWordVocabType} from '../exercises/word-vocab'
 import {isProtectedGrammarCo} from './types'
 
 /** Historical written banks replaced by the graded base, per owner instruction. */
 export function isRetiredGrammarType(typeId:string):boolean {
-  return typeId==='gram-ex-a3-nat-co'||!isProtectedGrammarCo(typeId)&&!isWordVocabType(typeId)&&subthemes.some(sub=>typeId.startsWith(`gram-ex-${sub}-`))
+  if (typeId==='gram-ex-a3-nat-co') return true
+  if (isProtectedGrammarCo(typeId)||isWordVocabType(typeId)||isGrammarOralVisualType(typeId)) return false
+  return subthemes.some(sub=>typeId.startsWith(`gram-ex-${sub}-`))
 }
 export function hasRetiredGrammarRecipe(value:unknown):boolean {
   if(!value||typeof value!=='object')return false
