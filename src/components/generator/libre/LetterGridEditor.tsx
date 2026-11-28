@@ -21,10 +21,12 @@ export function LetterGridEditor({ items, onChange, instruction, onInstruction, 
       {items.map((item, index) => {
         const words = item.layout === 'mark-letter'
         const letters = item.layout === 'letter-grid'
-        const label = item.layout === 'read-phrases' || item.readingText ? 'Phrase' : item.layout === 'dictee-grid' ? 'Mot dicté' : 'Case'
+        const singleText = item.layout === 'text'
+        const label = item.layout === 'read-phrases' || item.readingText ? 'Phrase'
+          : item.layout === 'dictee-grid' || singleText ? 'Mot dicté' : 'Case'
         const cells = gridCells(item)
         const targets = letters ? item.labels : words ? item.themeGraphemes : undefined
-        const columns = item.letterGridCols ?? (label === 'Phrase' ? 1 : label === 'Mot dicté' ? 2 : 4)
+        const columns = item.letterGridCols ?? (label === 'Phrase' || singleText ? 1 : label === 'Mot dicté' ? 2 : 4)
         const updateItem = (next: MathItem) => onChange(items.map((current, i) => i === index ? next : current))
         const currentCase = letters && cells.every((cell) => cell === cell.toLocaleUpperCase('fr')) ? 'upper'
           : letters && cells.every((cell) => cell === cell.toLocaleLowerCase('fr')) ? 'lower' : null
@@ -42,14 +44,14 @@ export function LetterGridEditor({ items, onChange, instruction, onInstruction, 
         }
         return (
           <fieldset key={index} className="libre-grid-fields">
-            <legend>{item.readingText ? `Phrase ${index + 1}`
+            <legend>{singleText ? `${label} ${index + 1}`
               : items.length === 1 ? (label === 'Phrase' ? 'Phrases à lire' : label === 'Mot dicté' ? 'Mots dictés' : 'Cases') : `Grille ${index + 1}`}</legend>
             {targets?.length ? <p>Cible imprimée {targets.join(', ')}</p> : null}
             <div className="libre-grid-inputs" style={{ gridTemplateColumns: `repeat(${Math.min(4, columns)}, minmax(0, 1fr))` }}>
               {cells.map((cell, position) => {
                 const key = `${activityId}:grille-${index}:${position}`
                 const raw = fields[key]
-                const cellLabel = `${label} ${item.readingText ? index + 1 : position + 1}`
+                const cellLabel = `${label} ${singleText ? index + 1 : position + 1}`
                 return (
                   <label key={position} className="libre-field is-line">
                     <span>{cellLabel}</span>

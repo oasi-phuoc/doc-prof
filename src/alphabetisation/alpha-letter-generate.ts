@@ -5,6 +5,7 @@ export type AlphaBatch = {
   items: MathItem[]
   instruction: string
   preferredColumns?: number
+  bankQuestionCap?: number
 }
 
 import { displayVocabLabel } from '@/francais/display-vocab-label'

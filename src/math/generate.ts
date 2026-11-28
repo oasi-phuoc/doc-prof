@@ -300,6 +300,7 @@ function buildSingleBlock(
       title: fallbackTitle,
       instruction: alphabetisation.instruction ?? type?.instruction ?? 'Complétez.',
       items: alphabetisation.items,
+      bankQuestionCap: alphabetisation.bankQuestionCap,
     }
   }
   const lecture = tryGenerateLectureBatch(config.exerciseType, config.count, rng, difficulty)

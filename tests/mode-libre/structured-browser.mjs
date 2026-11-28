@@ -457,6 +457,37 @@ async function alphaStoryReading(context) {
   }
 }
 
+async function alphaDictation(context) {
+  for (const [topic, exerciseType, word] of [
+    ['alpha-syllabes', 'alpha-syll-a-dictee-mots', 'pla'],
+    ['alpha-phrases', 'alpha-phrase-le-chat-dictee-mots', 'gouttière'],
+  ]) {
+    const page = await context.newPage()
+    const data = theoryRecipe({ domain: 'alphabetisation', topic, exerciseType, count: 2 })
+    data.printCorrections = true
+    await openFiche(page, data, false)
+    const panel = page.locator('#activity-editor')
+    const first = panel.getByRole('textbox', { name: 'Mot dicté 1', exact: true })
+    const quantity = panel.getByRole('spinbutton', { name: 'Nombre de mots', exact: true })
+    const correction = page.locator('.print-only-sheets .worksheet-sheet').last()
+    await first.fill(word)
+    assert.equal(await worksheet(page).locator('.answer-line-field').count(), 2)
+    assert.equal(await correction.locator('.answer-line-field').first().textContent(), word)
+    assert.equal((await worksheet(page).locator('.answer-line-field').allTextContents()).includes(word), false)
+    await first.fill('')
+    assert.equal(await first.getAttribute('aria-invalid'), 'true')
+    assert.equal(await correction.locator('.answer-line-field').first().textContent(), word)
+    await first.fill(word)
+    await quantity.fill('3')
+    assert.equal(await correction.locator('.answer-line-field').count(), 3)
+    assert.equal(await correction.locator('.answer-line-field').first().textContent(), word)
+    await button(page, 'Annuler').click()
+    assert.equal(await correction.locator('.answer-line-field').count(), 2)
+    assert.equal(await first.inputValue(), word)
+    await page.close()
+  }
+}
+
 try {
   await server?.listen()
   const baseURL = process.env.BASE_URL ?? 'http://127.0.0.1:' + server.httpServer.address().port
@@ -481,8 +512,9 @@ try {
   await worksheetImage(await context.newPage())
   await removeTheoryParts(context)
   await alphaStoryReading(context)
+  await alphaDictation(context)
   await context.close()
-  console.log('Document partagé, QCM illustré, liaison audio, reconnaissance d’images, formulaire, oral, retrait en théorie et lecture de récits vérifiés.')
+  console.log('Document partagé, QCM illustré, liaison audio, reconnaissance d’images, formulaire, oral, retrait en théorie, lecture de récits et dictées vérifiés.')
 } finally {
   await browser?.close()
   await server?.close()

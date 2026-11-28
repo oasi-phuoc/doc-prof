@@ -1,7 +1,7 @@
 import type { MathItem } from '@/math/types'
 
 export function gridCells(item: MathItem): string[] {
-  if (item.readingText) return [item.prompt ?? item.answer]
+  if (item.layout === 'text') return [item.readingText ? item.prompt ?? item.answer : item.answer]
   if (item.layout === 'mark-letter') return item.markLetterWords ?? []
   if (item.layout === 'dictee-grid') return item.dicteeWords ?? []
   if (item.layout === 'read-phrases') return item.readPhrases ?? []
@@ -9,9 +9,9 @@ export function gridCells(item: MathItem): string[] {
 }
 
 export function withGridCells(item: MathItem, cells: string[]): MathItem {
-  if (item.readingText) {
+  if (item.layout === 'text') {
     const text = cells[0] ?? ''
-    return { ...item, prompt: text, answer: text }
+    return { ...item, ...(item.readingText ? { prompt: text } : {}), answer: text }
   }
   if (item.layout === 'mark-letter') return { ...item, markLetterWords: cells, answer: cells.join(' · ') }
   if (item.layout === 'dictee-grid') return { ...item, dicteeWords: cells, answer: cells.join(' · ') }

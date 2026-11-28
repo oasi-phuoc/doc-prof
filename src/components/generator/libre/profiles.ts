@@ -71,7 +71,7 @@ export function liveEditorProfile(domain: Domain, exerciseType: string, format: 
   if (wordKind === 'lettres' || wordKind === 'lettres-maj' || wordKind === 'lettres-min' ||
     wordKind === 'souligner-maj' || wordKind === 'souligner-min') return 'lettres-et-graphèmes'
   if (wordKind === 'syllabes' || wordKind === 'syllabes-cv' || wordKind === 'syllabes-long') return 'grille-syllabique'
-  if (wordKind === 'dictee') return 'dictee-de-mots'
+  if (wordKind === 'dictee' || wordKind === 'dictee-mots') return 'dictee-de-mots'
   if (wordKind === 'lire' || wordKind === 'lire-phrases') return 'lecture-de-phrases'
   if (wordKind === 'ordre') return 'mots-dans-l-ordre'
   if (wordKind === 'compter') return 'sons-a-compter'

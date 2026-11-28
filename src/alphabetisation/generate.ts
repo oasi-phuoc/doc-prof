@@ -225,10 +225,12 @@ function genClasser(bankId: string, count: number, rng: Rng): AlphaBatch {
 }
 
 function genDictee(bankId: string, count: number, rng: Rng): AlphaBatch {
-  const pool = shuffle(rng, poolForBank(bankId)).slice(0, count)
+  const bank = poolForBank(bankId)
+  const pool = shuffle(rng, bank).slice(0, count)
   return {
     instruction: 'Écrivez correctement.',
     preferredColumns: 1,
+    bankQuestionCap: bank.length,
     items: pool.map((w, i) => ({
       layout: 'text',
       prompt: `${i + 1}.`,

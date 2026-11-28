@@ -64,6 +64,12 @@ Les 15 récits donnent accès à la consigne et au texte de chaque phrase dans l
 
 Le parcours Chromium vérifie un récit généré, une ancienne recette, l’annulation et la mise à jour du texte imprimable. L’inventaire relève 468 contextes A4 à raccorder sur 4 420 et aucune erreur de génération.
 
+### Dictées de mots et de syllabes en Alphabétisation
+
+Le panneau Libre permet de modifier les éléments dictés et leur consigne. Le réglage de quantité suit la capacité de la banque. Un changement de quantité conserve les éléments déjà modifiés. La fiche élève garde les lignes d’écriture et les mots attendus apparaissent au corrigé.
+
+Le parcours Chromium couvre une dictée de syllabes et une dictée de mots issue d’un récit. Il vérifie le corrigé, la saisie vide, la quantité et l’annulation. L’inventaire raccorde 24 contextes et relève 444 contextes A4 en attente sur 4 420, sans erreur de génération.
+
 ### Symétries axiales et centrales en A4
 
 Les quatre exercices de symétrie sur repère donnent accès aux sommets, à l’axe ou au centre Ω, à la taille et à la graduation du repère dans le panneau Libre. L’édition au clavier et le placement sur le repère recalculent le sujet et le corrigé. Une valeur hors du repère conserve la dernière figure applicable. Les contrôles avancés restent dans le panneau Libre.
