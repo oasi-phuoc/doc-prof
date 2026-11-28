@@ -14,6 +14,7 @@ const { availableLogistiqueQuestions, retainLogistiqueQuestions, newLogistiqueQu
 const { buildPage } = load(root + '/src/math/generate.ts')
 const { initialLogistiqueStory, allocateLogistiquePoints, applyLogistiqueStoryChange, logistiqueDuration,
   logistiqueStoryVariant, validLogistiqueStory } = load(root + '/src/logistique/evaluation.ts')
+const { initialInventoryStory } = load(root + '/src/logistique/inventory-story.ts')
 const { editLogistiqueGaps, logistiqueGapDistractors, validLogistiqueGaps } = load(root + '/src/logistique/gaps.ts')
 const { validLogistiqueExerciseTable } = load(root + '/src/logistique/tables.ts')
 const { freezeLogistiquePages, validLogistiquePages } = load(root + '/src/logistique/recipe.ts')
@@ -844,6 +845,36 @@ test('un nouveau tirage narratif respecte les passages protégés et laisse l’
   const blocked = { ...page, logistiqueEvaluation: { mode: 'histoire', story: { ...story, introductionLocked: true } } }
   assert.match(reuseLogistiqueEvaluation({ ...recipe, pages: [blocked] }, 20261128).error, /Déverrouillez l’introduction/)
   assert.match(reuseLogistiqueEvaluation({ ...recipe, pages: [{ ...page, logistiqueBankRevision: 'absente' }] }, 25).error, /révision de banque/)
+})
+
+test('la trame inventaire, FIFO et préparation recalcule les seules questions liées', () => {
+  for (const diploma of ['CFC', 'AFP']) {
+    const story = initialInventoryStory
+    const page = { ...config(diploma, '701', 'maths'), count: 3,
+      logistiqueSelection: { modules: ['601', '701', '406'], quantities: { 601: 1, 701: 1, 406: 1 } },
+      logistiqueEvaluation: { mode: 'histoire', story } }
+    const items = generateLogistique(page, 25).items
+    assert.deepEqual(items.map((item) => item.logistiqueSource.module), ['701', '406', '601'])
+    assert.equal(items[0].calcAnswer, '84 − 88 = -4')
+    assert.match(items[1].answer, /24 unités.*34 unités/)
+    assert.match(items[2].answer, /58 unités.*26 unités.*0 unité/)
+    const changed = applyLogistiqueStoryChange(story, { ...story, held: 28 }, page.logistiqueSelection.modules, items)
+    assert.strictEqual(changed.items[0], items[0])
+    assert.match(changed.items[1].answer, /28 unités.*30 unités/)
+    assert.strictEqual(changed.items[2], items[2])
+    const enlarged = generateLogistique({ ...page, logistiqueEvaluation: { ...page.logistiqueEvaluation,
+      story: { ...story, ordered: 100 } } }, 25).items
+    assert.match(enlarged[1].answer, /24 unités.*60 unités/)
+    assert.match(enlarged[2].answer, /84 unités.*0 unité.*16 unités/)
+    const intendedOrder = { ...story, passages: { 406: { text: 'Le lot ancien sort d’abord.', locked: true } } }
+    assert(applyLogistiqueStoryChange(intendedOrder, { ...intendedOrder, held: 20 }, page.logistiqueSelection.modules).conflict)
+    assert(!applyLogistiqueStoryChange(intendedOrder, { ...intendedOrder, expected: 81 }, page.logistiqueSelection.modules).conflict)
+    assert(validLogistiquePages([page]))
+    assert(!validLogistiquePages([{ ...page, logistiqueSelection: { modules: ['312'] } }]))
+    assert(!validLogistiqueStory({ ...story, passages: { 303: { text: 'Au quai.' } } }))
+    const [frozen] = freezeLogistiquePages([page], true)
+    assert.deepEqual(buildPage(frozen, 77).items, items)
+  }
 })
 
 test('le barème atteint la cible par demi-points et la durée compte une seule lecture commune', () => {

@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import { logistiqueModules, logistiquePresentationFor, type LogistiqueType } from '@/logistique/catalog'
 import { logistiqueModuleCapacities } from '@/logistique/generate'
 import { allocateLogistiquePoints, applyLogistiqueStoryChange, initialLogistiqueStory, logistiqueBloomLevels, logistiqueDuration,
-  logistiqueStoryModules, logistiqueStoryVariant,
+  logistiqueStoryQuestions, logistiqueStoryTemplates, logistiqueStoryVariant,
   logistiqueStorySelectionCompatible, type LogistiqueEvaluation, type LogistiqueStory } from '@/logistique/evaluation'
 import type { ExerciseBlock, MathItem, Topic } from '@/math/types'
 import { randomSeed } from '@/math/rng'
@@ -55,7 +55,8 @@ export function LogistiqueEvaluationFields({ type, activeBlock, themes, items, d
   ] as const
 
   function update(codes: string[], allocation?: Record<string, number>) {
-    if (story && !logistiqueStorySelectionCompatible(codes, allocation)) {
+    const requested = story ? Object.fromEntries(codes.map((code) => [code, 1])) : allocation
+    if (story && !logistiqueStorySelectionCompatible(codes, requested, story)) {
       setNotice('Choisissez au moins un module de la trame et une question pour chacun des modules retenus.')
       return
     }
@@ -67,7 +68,7 @@ export function LogistiqueEvaluationFields({ type, activeBlock, themes, items, d
         !window.confirm('Modifier la sélection remplacera le contenu libre de cette activité. Continuer ?')) return
     setNotice('')
     updatePage({
-      logistiqueSelection: { modules: codes, quantities: allocation },
+      logistiqueSelection: { modules: codes, quantities: requested },
       libreItems: undefined,
       tcfPageBreakAfter: undefined,
     })
@@ -81,20 +82,26 @@ export function LogistiqueEvaluationFields({ type, activeBlock, themes, items, d
     select(selection.includes(code) ? selection.filter((entry) => entry !== code) : [...selection, code])
   }
 
-  function startStory(codes: string[]) {
-    if (type.kind !== 'maths' || !logistiqueStorySelectionCompatible(codes)) return
+  function startStory(codes: string[], initial = evaluation.story ?? initialLogistiqueStory) {
+    if (type.kind !== 'maths' || !logistiqueStorySelectionCompatible(codes, undefined, initial)) return
     if (activeBlock.libreItems?.some(({ libreLocked }) => libreLocked)) {
       setNotice('Déverrouillez les questions protégées avant d’appliquer la trame.')
       return
     }
-    const sameStoryQuestions = activeBlock.libreItems?.length === codes.length &&
-      codes.every((code) => activeBlock.libreItems!.some((item) =>
-        item.logistiqueSource?.revision === 'evaluation-v010' && item.logistiqueSource.module === code))
+    const switching = (evaluation.story?.template ?? 'reception') !== (initial.template ?? 'reception')
+    if (switching && (evaluation.story?.introductionLocked || Object.values(evaluation.story?.passages ?? {}).some(({ locked }) => locked))) {
+      setNotice('Déverrouillez l’introduction et les transitions protégées avant de changer de trame.')
+      return
+    }
+    const nextStory = switching ? initial : evaluation.story ?? initial
+    const questions = logistiqueStoryQuestions(nextStory, codes)
+    const sameStoryQuestions = activeBlock.libreItems?.length === questions.length && questions.every((question) =>
+      activeBlock.libreItems!.some((item) => item.logistiqueSource?.id === question.logistiqueSource?.id))
     if (activeBlock.libreItems?.length && !sameStoryQuestions &&
       !window.confirm('Appliquer cette histoire remplacera les questions actuelles de cette activité. Continuer ?')) return
     setNotice('')
     updatePage({
-      logistiqueEvaluation: { ...evaluation, mode: 'histoire', story: evaluation.story ?? initialLogistiqueStory },
+      logistiqueEvaluation: { ...evaluation, mode: 'histoire', story: nextStory },
       logistiqueSelection: { modules: codes, quantities: Object.fromEntries(codes.map((code) => [code, 1])) },
       logistiqueGapMode: undefined, logistiquePresentation: undefined,
       count: codes.length,
@@ -118,8 +125,11 @@ export function LogistiqueEvaluationFields({ type, activeBlock, themes, items, d
       {type.kind === 'maths' && <SelectBox label="Format de l’évaluation" value={evaluation.mode} onChange={(mode) => {
         if (mode === evaluation.mode) return
         if (mode === 'histoire') {
-          if (logistiqueStorySelectionCompatible(selection)) startStory(selection)
-          else setNotice('La trame de réception et de préparation utilise les modules 303, 312 et 601.')
+          const available = Object.values(logistiqueStoryTemplates).find(({ initial }) =>
+            logistiqueStorySelectionCompatible(selection, undefined, initial) && initial.template === evaluation.story?.template)
+            ?? Object.values(logistiqueStoryTemplates).find(({ initial }) => logistiqueStorySelectionCompatible(selection, undefined, initial))
+          if (available) startStory(selection, available.initial)
+          else setNotice('Choisissez ci-dessous une trame qui propose les modules liés.')
         } else {
           setNotice('')
           updatePage({
@@ -132,10 +142,19 @@ export function LogistiqueEvaluationFields({ type, activeBlock, themes, items, d
         <option value="independantes">Questions indépendantes</option>
         <option value="histoire">Histoire suivie</option>
       </SelectBox>}
-      {type.kind === 'maths' && !story && !logistiqueStorySelectionCompatible(selection) &&
-        <button type="button" className="button small secondary" onClick={() => startStory([...logistiqueStoryModules])}>
-          Utiliser la trame de la réception à l’expédition
-        </button>}
+      {type.kind === 'maths' && !story && Object.entries(logistiqueStoryTemplates).map(([id, template]) => (
+        <button key={id} type="button" className="button small secondary"
+          onClick={() => startStory([...template.modules], template.initial)}>
+          Utiliser la trame {template.label.toLocaleLowerCase('fr')}
+        </button>
+      ))}
+      {story && <SelectBox label="Trame de l’évaluation" value={story.template ?? 'reception'} onChange={(value) => {
+        if (value === (story.template ?? 'reception')) return
+        const template = logistiqueStoryTemplates[value === 'inventaire' ? 'inventaire' : 'reception']
+        startStory([...template.modules], template.initial)
+      }}>
+        {Object.entries(logistiqueStoryTemplates).map(([id, { label }]) => <option key={id} value={id}>{label}</option>)}
+      </SelectBox>}
       {story && <LogistiqueStoryFields story={story} modules={selection} onChange={changeStory} />}
       {story && <button type="button" className="button small secondary" onClick={() => {
         setNotice(changeStory(logistiqueStoryVariant(story, randomSeed())) ?? '')
@@ -159,21 +178,21 @@ export function LogistiqueEvaluationFields({ type, activeBlock, themes, items, d
         </div>
         {selection.length ? (
           <>
-            <div className="mode-toggle is-2" role="group" aria-label="Répartition des questions">
+            {!story && <div className="mode-toggle is-2" role="group" aria-label="Répartition des questions">
               <button type="button" aria-pressed={!quantities} className={!quantities ? 'active' : ''}
                 onClick={() => quantities && update(selection)}>Total</button>
               <button type="button" aria-pressed={Boolean(quantities)} className={quantities ? 'active' : ''}
                 onClick={() => quantities || update(selection, Object.fromEntries(selection.map((code) => [code, 1])))}>
                 Par module
               </button>
-            </div>
+            </div>}
             <ul className="logistique-selection-list" aria-label="Modules retenus">
               {selected.map(({ code, label }) => {
                 const available = capacities.get(code) ?? 0
                 return (
                   <li key={code}>
                     <span>{label}</span>
-                    {quantities && <input className="pill-input" type="number" min={1} max={available}
+                    {quantities && !story && <input className="pill-input" type="number" min={1} max={available}
                       disabled={!available} aria-label={`Nombre de questions du module ${code}`}
                       value={quantities[code]} onChange={(event) => {
                         const quantity = Math.min(available, Math.max(1, Math.floor(Number(event.target.value) || 1)))

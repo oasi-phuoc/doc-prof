@@ -1,8 +1,10 @@
 import { createRng } from '@/math/rng'
 import type { Difficulty, MathItem } from '@/math/types'
+import { initialInventoryStory, inventoryStoryModules, inventoryStorySteps, type LogistiqueStoryStep } from './inventory-story'
 
-export const logistiqueStoryModules = ['303', '312', '601'] as const
-type StoryModule = (typeof logistiqueStoryModules)[number]
+const receptionStoryModules = ['303', '312', '601'] as const
+type StoryModule = (typeof receptionStoryModules | typeof inventoryStoryModules)[number]
+export type LogistiqueStoryTemplate = 'reception' | 'inventaire'
 
 export const logistiqueBloomLevels = {
   memoriser: 'Mémoriser', comprendre: 'Comprendre', appliquer: 'Appliquer',
@@ -19,6 +21,7 @@ export type LogistiqueAssessment = {
 }
 
 export type LogistiqueStory = {
+  template?: LogistiqueStoryTemplate
   company: string
   article: string
   expected: number
@@ -43,18 +46,33 @@ export const initialLogistiqueStory: LogistiqueStory = {
   company: 'EnterSite', article: 'bacs de pièces', expected: 60, received: 56, held: 5, ordered: 44,
 }
 
+export const logistiqueStoryTemplates = {
+  reception: { label: 'De la réception à l’expédition', modules: receptionStoryModules, initial: initialLogistiqueStory },
+  inventaire: { label: 'De l’inventaire à la préparation', modules: inventoryStoryModules, initial: initialInventoryStory },
+} as const
+
+export function logistiqueStoryModules(story?: LogistiqueStory): readonly StoryModule[] {
+  return logistiqueStoryTemplates[story?.template ?? 'reception'].modules
+}
+
+export function isLogistiqueStoryQuestion(revision?: string): boolean {
+  return revision === 'evaluation-v010' || revision === 'evaluation-inventaire-v014'
+}
+
 export function validLogistiqueStory(value: unknown): value is LogistiqueStory {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return false
-  const { company, article, expected, received, held, ordered, introduction, introductionLocked, passages } = value as LogistiqueStory
+  const story = value as LogistiqueStory
+  const { template, company, article, expected, received, held, ordered, introduction, introductionLocked, passages } = story
   const text = (input: unknown, maximum: number) => typeof input === 'string' && input.trim() && input.length <= maximum
-  return Boolean(text(company, 70) && text(article, 70)) &&
+  return (template === undefined || template === 'reception' || template === 'inventaire') &&
+    Boolean(text(company, 70) && text(article, 70)) &&
     [expected, received, held, ordered].every((quantity) =>
       Number.isSafeInteger(quantity) && quantity >= 0 && quantity <= 1_000_000) &&
     held <= received &&
     (introduction === undefined || (typeof introduction === 'string' && introduction.length <= 500)) &&
     (introductionLocked === undefined || typeof introductionLocked === 'boolean') &&
     (passages === undefined || (passages !== null && typeof passages === 'object' && !Array.isArray(passages) &&
-      Object.entries(passages).every(([code, passage]) => logistiqueStoryModules.some((module) => module === code) &&
+      Object.entries(passages).every(([code, passage]) => logistiqueStoryModules(story).some((module) => module === code) &&
         passage !== null && typeof passage === 'object' && typeof passage.text === 'string' && passage.text.length <= 500 &&
         (passage.locked === undefined || typeof passage.locked === 'boolean'))))
 }
@@ -104,17 +122,21 @@ export function logistiqueDuration(items: readonly MathItem[], evaluation: Logis
 export function logistiqueStorySelectionCompatible(
   modules: readonly string[],
   quantities?: Record<string, number>,
+  story?: LogistiqueStory,
 ): boolean {
   return modules.length > 0 && modules.every((code) =>
-    logistiqueStoryModules.some((module) => module === code) && (!quantities || quantities[code] === 1))
+    logistiqueStoryModules(story).some((module) => module === code) && (!quantities || quantities[code] === 1))
 }
 
 export function logistiqueStoryIntro(story: LogistiqueStory): string {
+  if (story.template === 'inventaire') {
+    return story.introduction?.trim() || `Vous comptez des ${story.article} chez ${story.company}.`
+  }
   return story.introduction?.trim() ||
     `Chez ${story.company.trim()}, vous suivez une livraison de ${story.article.trim()}.`
 }
 
-export function logistiqueStoryQuestions(story: LogistiqueStory, modules: readonly string[]): MathItem[] {
+function receptionStorySteps(story: LogistiqueStory): Record<(typeof receptionStoryModules)[number], LogistiqueStoryStep> {
   const gap = story.received - story.expected
   const available = story.received - story.held
   const served = Math.min(available, story.ordered)
@@ -123,8 +145,7 @@ export function logistiqueStoryQuestions(story: LogistiqueStory, modules: readon
   const units = (quantity: number) => `${quantity} unité${quantity === 1 ? '' : 's'}`
   const difference = gap < 0 ? `${units(Math.abs(gap))} de moins que prévu.`
     : gap > 0 ? `${units(gap)} de plus que prévu.` : 'Les quantités reçue et annoncée concordent.'
-  const steps: Record<StoryModule, { passage: string; prompt: string; calculation: string; answer: string;
-    points: number; assessment: LogistiqueAssessment }> = {
+  return {
     '303': {
       passage: 'Au quai, vous vérifiez le bon de livraison.',
       prompt: `Le bon annonce ${units(story.expected)}. Vous en comptez ${story.received}. Calculez et interprétez l’écart selon la règle « quantité reçue moins quantité annoncée ».`,
@@ -153,14 +174,20 @@ export function logistiqueStoryQuestions(story: LogistiqueStory, modules: readon
         criteria: 'Disponible exact, quantité préparée réaliste et chacun des deux restes correct.' },
     },
   }
-  return logistiqueStoryModules.filter((module) => modules.includes(module)).map((module, index) => {
-    const step = steps[module]
+}
+
+export function logistiqueStoryQuestions(story: LogistiqueStory, modules: readonly string[]): MathItem[] {
+  const inventory = story.template === 'inventaire'
+  const steps: Partial<Record<StoryModule, LogistiqueStoryStep>> = inventory ? inventoryStorySteps(story) : receptionStorySteps(story)
+  return logistiqueStoryModules(story).filter((module) => modules.includes(module)).map((module, index) => {
+    const step = steps[module]!
     const passage = story.passages?.[module]?.text.trim() || step.passage
     return {
       layout: 'text', prompt: step.prompt, calcAnswer: step.calculation, answer: step.answer, responseAnswer: step.answer,
       points: step.points, logistiqueAssessment: step.assessment,
       logistiqueNarrative: index === 0 ? `${logistiqueStoryIntro(story)}\n${passage}` : passage,
-      logistiqueSource: { id: `log-histoire-${module}-v010`, module, revision: 'evaluation-v010' },
+      logistiqueSource: inventory ? { id: `log-histoire-inventaire-${module}-v014`, module, revision: 'evaluation-inventaire-v014' }
+        : { id: `log-histoire-${module}-v010`, module, revision: 'evaluation-v010' },
     }
   })
 }
@@ -169,14 +196,18 @@ export function logistiqueStoryVariant(story: LogistiqueStory, seed: number): Lo
   const rng = createRng(seed)
   const expected = 30 + 5 * Math.floor(rng() * 15)
   const received = expected - 6 + Math.floor(rng() * 13)
-  const held = 2 + Math.floor(rng() * 8)
-  const ordered = received - held - 7 + Math.floor(rng() * 15)
+  const inventory = story.template === 'inventaire'
+  const held = 2 + Math.floor(rng() * (inventory ? Math.floor(received / 2) : 8))
+  const ordered = received - (inventory ? 0 : held) - 7 + Math.floor(rng() * 15)
   return { ...story, expected, received, held, ordered }
 }
 
 export function applyLogistiqueStoryChange(
   before: LogistiqueStory, after: LogistiqueStory, modules: readonly string[], items?: readonly MathItem[],
 ): { items?: MathItem[]; conflict?: string } {
+  if ((before.template ?? 'reception') !== (after.template ?? 'reception')) {
+    return { conflict: 'Choisissez la nouvelle trame dans les paramètres de l’évaluation.' }
+  }
   const generalChange = before.company !== after.company || before.article !== after.article
   const expectedChanged = before.expected !== after.expected
   const receivedChanged = before.received !== after.received
@@ -186,22 +217,19 @@ export function applyLogistiqueStoryChange(
     (generalChange || expectedChanged || receivedChanged || heldChanged || orderedChanged)) {
     return { conflict: 'Déverrouillez l’introduction pour modifier les données de la trame.' }
   }
-  const affected = new Map<StoryModule, boolean>([
-    ['303', generalChange || expectedChanged || receivedChanged],
-    ['312', generalChange || receivedChanged || heldChanged],
-    ['601', generalChange || receivedChanged || heldChanged || orderedChanged],
-  ])
-  for (const module of logistiqueStoryModules) {
-    if (affected.get(module) && before.passages?.[module]?.locked && after.passages?.[module]?.locked) {
-      return { conflict: `Déverrouillez le passage du module ${module} pour modifier les données liées.` }
-    }
+  const sameContent = (first: MathItem, second: MathItem) =>
+    first.prompt === second.prompt && first.answer === second.answer && first.calcAnswer === second.calcAnswer &&
+    first.responseAnswer === second.responseAnswer && first.logistiqueNarrative === second.logistiqueNarrative
+  const protectedModules = logistiqueStoryModules(before).filter((code) => before.passages?.[code]?.locked && after.passages?.[code]?.locked)
+  if (protectedModules.length) {
+    const originals = logistiqueStoryQuestions({ ...before, introduction: ' ', passages: undefined }, protectedModules)
+    const candidates = logistiqueStoryQuestions({ ...after, introduction: ' ', passages: undefined }, protectedModules)
+    const affected = originals.find((item, i) => generalChange || !sameContent(item, candidates[i]!))
+    if (affected) return { conflict: `Déverrouillez le passage du module ${affected.logistiqueSource?.module} pour modifier les données liées.` }
   }
   if (!items) return {}
   const baseline = new Map(logistiqueStoryQuestions(before, modules).map((item) => [item.logistiqueSource!.id, item]))
   const updated = new Map(logistiqueStoryQuestions(after, modules).map((item) => [item.logistiqueSource!.id, item]))
-  const sameContent = (first: MathItem, second: MathItem) =>
-    first.prompt === second.prompt && first.answer === second.answer && first.calcAnswer === second.calcAnswer &&
-    first.responseAnswer === second.responseAnswer && first.logistiqueNarrative === second.logistiqueNarrative
   const next: MathItem[] = []
   for (const item of items) {
     const id = item.logistiqueSource?.id

@@ -191,7 +191,7 @@ export function validLogistiqueCataloguePages(pages: readonly CataloguePage[]): 
         (evaluation.mode !== 'histoire' || (type.kind === 'maths' && gapMode === undefined && presentation === undefined &&
           logistiqueStorySelectionCompatible(
             (selection as ExerciseBlock['logistiqueSelection'])?.modules ?? [type.module],
-            (selection as ExerciseBlock['logistiqueSelection'])?.quantities))))) &&
+            (selection as ExerciseBlock['logistiqueSelection'])?.quantities, evaluation.story))))) &&
       items.every((item) =>
         (item?.logistiqueAssessment === undefined || (!isLogistiqueReferenceType(type.id) &&
           validLogistiqueAssessment(item.logistiqueAssessment))) &&

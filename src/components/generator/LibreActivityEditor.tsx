@@ -19,7 +19,7 @@ import { TcfExerciseEditor } from '@/tcf/TcfExerciseEditor'
 import type { TcfExercise, TcfNiveau } from '@/tcf/types'
 import { isLogistiqueReferenceType, logistiqueModules, logistiquePresentationFor, logistiqueType } from '@/logistique/catalog'
 import { logistiqueQuestionItems, logistiqueQuestionPhotos } from '@/logistique/generate'
-import { logistiqueStoryQuestions } from '@/logistique/evaluation'
+import { isLogistiqueStoryQuestion, logistiqueStoryQuestions } from '@/logistique/evaluation'
 import { LogistiqueLibreBank } from './LogistiqueLibreBank'
 
 function tcfSupportExercise(items: MathItem[] | undefined): TcfExercise | undefined {
@@ -186,7 +186,7 @@ export function LibreActivityEditor({
     original(item: MathItem) {
       const source = item.logistiqueSource
       if (!source) return undefined
-      if (source.revision === 'evaluation-v010' && activeBlock.logistiqueEvaluation?.story) {
+      if (isLogistiqueStoryQuestion(source.revision) && activeBlock.logistiqueEvaluation?.story) {
         return logistiqueStoryQuestions(activeBlock.logistiqueEvaluation.story,
           activeBlock.logistiqueSelection?.modules ?? [logistiqueQuestionType.module])
           .find((entry) => entry.logistiqueSource?.id === source.id)
