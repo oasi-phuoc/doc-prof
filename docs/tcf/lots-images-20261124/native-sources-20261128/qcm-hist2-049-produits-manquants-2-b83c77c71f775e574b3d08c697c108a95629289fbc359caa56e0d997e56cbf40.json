@@ -1,0 +1,116 @@
+{
+  "id": "qcm-hist2-049-produits-manquants-2",
+  "prompt": "Une seule illustration complète, PNG natif 1448 × 1086, paysage 4:3 exact. Contours fins et volumes doux du style TCF validé. Sujet entier et composition lisible. Aucun emplacement, personnage, nombre, texte, prix ou marque inventé. Un repère court explicitement prévu dans ce choix peut apparaître. Toute la scène, y compris les meubles, les murs et l’arrière-plan, suit le rendu peint mat et semi-réaliste des références. Les références de style ne fournissent ni personnages ni accessoires. Si une variante reprend une scène du même trio, garder précisément ses personnages, ses objets, leur échelle et leur apparence. Vérifier les pieds, les sièges, les surfaces d’appui et les objets occultés par le mobilier. Petits emballages neufs neutres et chariot d’approvisionnement entier. Pas de déduction sur la nature exacte des produits. Conserver EXACTEMENT la même employée anonyme que dans la référence de sujet : femme âgée aux cheveux gris courts ondulés, peau brune, gilet bleu marine sur chemisier beige, mêmes traits et mêmes vêtements. Les trois flacons ont les mêmes couleurs vert, crème et ambré, avec pompes noires. Ne pas la remplacer par la jeune femme décrite dans le premier brief. Les produits sont posés sur le chariot dans la salle d’attente des clients, parmi sièges et magazines, sans comptoir d’accueil dans le cadre. Un seul fichier pour une seule réponse, sans panneaux ni regroupement des trois choix. Corps principal entier, appuis naturels et chariot stable. Aucun prix, montant, date, jour, mois, chiffre ou plaque lisible.",
+  "refs": [
+    "/tmp/tcf-work/public/lib/images/tcf/qcm-audit/qcm-hist2-049-produits-manquants-1.png",
+    "/tmp/tcf-work/public/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+    "/tmp/tcf-work/public/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+  ],
+  "packet": "docs/tcf/lots-images-20261124/historique-lot02-preparation.json",
+  "job_spec": {
+    "id": "qcm-hist2-049-produits-manquants-2",
+    "desc": "Les produits sont posés sur le chariot dans la salle d’attente des clients, parmi sièges et magazines, sans comptoir d’accueil dans le cadre.",
+    "type": "Scène",
+    "seed": "qcm-hist2-049-produits-manquants-1",
+    "path": "/lib/images/tcf/qcm-audit/qcm-hist2-049-produits-manquants-2.png",
+    "refs": [
+      "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+      "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+    ],
+    "prompt": "Une seule illustration complète, PNG natif 1448 × 1086, paysage 4:3 exact. Contours fins et volumes doux du style TCF validé. Sujet entier et composition lisible. Aucun emplacement, personnage, nombre, texte, prix ou marque inventé. Un repère court explicitement prévu dans ce choix peut apparaître. Toute la scène, y compris les meubles, les murs et l’arrière-plan, suit le rendu peint mat et semi-réaliste des références. Les références de style ne fournissent ni personnages ni accessoires. Si une variante reprend une scène du même trio, garder précisément ses personnages, ses objets, leur échelle et leur apparence. Vérifier les pieds, les sièges, les surfaces d’appui et les objets occultés par le mobilier. Petits emballages neufs neutres et chariot d’approvisionnement entier. Pas de déduction sur la nature exacte des produits. Conserver EXACTEMENT la même employée anonyme que dans la référence de sujet : femme âgée aux cheveux gris courts ondulés, peau brune, gilet bleu marine sur chemisier beige, mêmes traits et mêmes vêtements. Les trois flacons ont les mêmes couleurs vert, crème et ambré, avec pompes noires. Ne pas la remplacer par la jeune femme décrite dans le premier brief. Les produits sont posés sur le chariot dans la salle d’attente des clients, parmi sièges et magazines, sans comptoir d’accueil dans le cadre. Un seul fichier pour une seule réponse, sans panneaux ni regroupement des trois choix. Corps principal entier, appuis naturels et chariot stable. Aucun prix, montant, date, jour, mois, chiffre ou plaque lisible.",
+    "status": "pending_generation",
+    "question_key": "delf-a2r-ce-036#6",
+    "choice": 2,
+    "cast_reference_review": {
+      "path": "/lib/images/tcf/qcm-audit/qcm-hist2-049-produits-manquants-1.png",
+      "sha256": "6bfe07cd7b04d6681bcbeadd6bf7b0eb6f34482a4781e85cbc2f5550871cdf99",
+      "note": "Le casting décrit dans le brief est réaligné sur l’illustration de référence effectivement publiée, après inspection visuelle ; pas de nouvelle écoute audio."
+    }
+  },
+  "question_context": {
+    "key": "delf-a2r-ce-036#6",
+    "bank": "/workspace/doc-prof/src/tcf/content/a1-a2/ce.json",
+    "exercise": "delf-a2r-ce-036",
+    "question": 6,
+    "level": "A1-A2",
+    "source": "Quand vous arrivez au travail :\n• Lavez-vous les mains avec de l’eau et du savon.\n• Mettez votre tenue de travail (blouse, pantalon, chaussures).\n• Nettoyez votre table après le passage de chaque client.\n• S’il vous manque des produits, vous pouvez en trouver à l’accueil.\n• Les toilettes de l’institut sont réservées au personnel.\n• Évitez de manger en dehors de la salle de repos.",
+    "source_sha256": "92700620fae8f7a33ebd7230b0ea5ae10ef1eb203249f351ba1be57ae8799bfb",
+    "semantic_sha256": "ded8f203954eb3b8d461bb200046eceb7cd48a1684c663b584fb3f3a4693dff7",
+    "audio": null,
+    "audio_sha256": null,
+    "question_snapshot": {
+      "enonce": "Où trouve-t-on les produits manquants ?",
+      "type_reponse": "qcm_texte",
+      "points": 1,
+      "melanger": true,
+      "choix": [
+        {
+          "id": "a",
+          "texte": "À l’accueil",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Dans la salle d’attente des clients"
+        },
+        {
+          "id": "c",
+          "texte": "Dans le parking"
+        }
+      ],
+      "formes": {
+        "lignes": {
+          "nb_lignes": 2,
+          "reponse_modele": "À l’accueil"
+        }
+      }
+    },
+    "prior_context_review": {
+      "key": "delf-a2r-ce-036#6",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2r-ce-036",
+      "question": 6,
+      "enonce": "Où trouve-t-on les produits manquants ?",
+      "labels": [
+        "À l’accueil",
+        "Dans la salle d’attente des clients",
+        "Dans le parking"
+      ],
+      "status": "artwork_needed_contextual_locations",
+      "source_sha256": "92700620fae8f7a33ebd7230b0ea5ae10ef1eb203249f351ba1be57ae8799bfb",
+      "audio": null,
+      "review_index": 508,
+      "semantic_sha256": "ded8f203954eb3b8d461bb200046eceb7cd48a1684c663b584fb3f3a4693dff7",
+      "reviewed": true,
+      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
+      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "brief": {
+        "context_question": "Où trouve-t-on les produits manquants ?",
+        "choices_to_illustrate": [
+          "À l’accueil",
+          "Dans la salle d’attente des clients",
+          "Dans le parking"
+        ],
+        "source_bank": "src/tcf/content/a1-a2/ce.json",
+        "source_exercise": "delf-a2r-ce-036",
+        "source_question": 6,
+        "source_sha256": "92700620fae8f7a33ebd7230b0ea5ae10ef1eb203249f351ba1be57ae8799bfb",
+        "constraints": [
+          "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
+          "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
+          "Style peint semi-réaliste validé, contours fins, paysage 4:3 exact, sujets entiers.",
+          "Réutiliser les images existantes seulement si le sens entier correspond ; aucune activation partielle.",
+          "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
+          "Revue visuelle et corrigé synchronisé avant toute activation."
+        ]
+      }
+    }
+  },
+  "source_sha256": "b83c77c71f775e574b3d08c697c108a95629289fbc359caa56e0d997e56cbf40",
+  "native_dimensions": [
+    1448,
+    1086
+  ],
+  "visual_review_status": "unreviewed",
+  "original_bytes_preserved": true
+}
