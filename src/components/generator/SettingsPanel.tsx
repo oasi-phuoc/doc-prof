@@ -164,16 +164,16 @@ export function SettingsPanel({ settings, header, presentation, children }: {
       {header}
       <div className={libre ? 'side-tool-panel-body' : undefined}>
         <div className="activity-settings">
-          <ActivitySettings {...settings} />
+          <ActivitySettings {...settings} presentation={presentation} />
         </div>
-        {presentation}
+        {!libre && presentation}
         {children}
       </div>
     </aside>
   )
 }
 
-function ActivitySettings(p: SettingsPanelProps) {
+function ActivitySettings(p: SettingsPanelProps & { presentation?: ReactNode }) {
   const libre = p.libreMode
   const rendered = p.activeSheet?.blocks.find((block, index) => (block.sourceBlockIndex ?? index) === p.safeBlockIndex)
   const itemCount = rendered?.items.length ?? 0
@@ -195,6 +195,7 @@ function ActivitySettings(p: SettingsPanelProps) {
         activeSheet={p.activeSheet}
         firstExerciseNo={p.firstExerciseNo}
         isTpmLike={p.isTpmLike}
+        libreMode={libre}
         addPage={p.addPage}
         addExerciseOnPage={p.addExerciseOnPage}
         removePage={p.removePage}
@@ -315,23 +316,6 @@ function ActivitySettings(p: SettingsPanelProps) {
           firstExerciseNo={p.firstExerciseNo}
           sheetTotalPoints={p.sheetTotalPoints}
         />
-        {spacing && (
-          <details className="libre-theory-block" key={p.spacingPreferenceKey}
-            open={spacingSectionOpen(p.spacingPreferenceKey)}
-            onToggle={(event) => rememberSpacingSection(p.spacingPreferenceKey, event.currentTarget.open)}>
-            <summary>Espacement de l’activité</summary>
-            {itemCount > columns && <SpacingField name="Entre les lignes de questions" value={p.activeBlock.questionGapPx}
-              onChange={(questionGapPx) => {
-                p.updatePage({ questionGapPx })
-                rememberSpacingPreferences(p.spacingPreferenceKey, { questionGapPx })
-              }} />}
-            {columns > 1 && <SpacingField name="Entre les colonnes" value={p.activeBlock.columnGapPx}
-              onChange={(columnGapPx) => {
-                p.updatePage({ columnGapPx })
-                rememberSpacingPreferences(p.spacingPreferenceKey, { columnGapPx })
-              }} />}
-          </details>
-        )}
         <CoordLibreSettings
           liveCoordQuestions={p.liveCoordQuestions}
           activeBlock={p.activeBlock}
@@ -360,6 +344,28 @@ function ActivitySettings(p: SettingsPanelProps) {
           setAllDraftGrids={p.setAllDraftGrids}
         />
       </div>
+      {libre && (
+        <div className="libre-sheet-settings">
+          {spacing && (
+            <details className="libre-theory-block" key={p.spacingPreferenceKey}
+              open={spacingSectionOpen(p.spacingPreferenceKey)}
+              onToggle={(event) => rememberSpacingSection(p.spacingPreferenceKey, event.currentTarget.open)}>
+              <summary>Espacement de l’activité</summary>
+              {itemCount > columns && <SpacingField name="Entre les lignes de questions" value={p.activeBlock.questionGapPx}
+                onChange={(questionGapPx) => {
+                  p.updatePage({ questionGapPx })
+                  rememberSpacingPreferences(p.spacingPreferenceKey, { questionGapPx })
+                }} />}
+              {columns > 1 && <SpacingField name="Entre les colonnes" value={p.activeBlock.columnGapPx}
+                onChange={(columnGapPx) => {
+                  p.updatePage({ columnGapPx })
+                  rememberSpacingPreferences(p.spacingPreferenceKey, { columnGapPx })
+                }} />}
+            </details>
+          )}
+          {p.presentation}
+        </div>
+      )}
     </>
   )
 }

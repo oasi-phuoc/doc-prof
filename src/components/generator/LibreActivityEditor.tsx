@@ -1,5 +1,3 @@
-import { FreeNumberControls } from './FreeNumberControls'
-import { supportsActivityNumberRange } from './activity-settings'
 import type { ExerciseBlock, MathItem, WorksheetPage } from '@/math/types'
 import type { GameTemplate } from '@/jeux/templates'
 import { PhraseLibreEditor, isPhraseLibreEditable } from '@/francais/PhraseLibreEditor'
@@ -239,22 +237,6 @@ export function LibreActivityEditor({
     })) : undefined
   return (
     <>
-      {isNumberLibreDomain && supportsActivityNumberRange(activeBlock.exerciseType) && (
-        <details className="libre-theory-block libre-number-generation">
-          <summary>Valeurs du prochain tirage</summary>
-          <label className="libre-field">
-            <input type="checkbox" checked={Boolean(activeBlock.numberLibre)} onChange={(event) =>
-              updatePage({ numberLibre: event.target.checked })} />
-            Utiliser des valeurs personnalisées
-          </label>
-          {activeBlock.numberLibre && <FreeNumberControls activeBlock={activeBlock} updatePage={updatePage} />}
-          {activeBlock.numberLibre && onRegenerateBlock && (
-            <button type="button" className="button small secondary" onClick={() => onRegenerateBlock(safeBlockIndex)}>
-              Générer avec ces valeurs
-            </button>
-          )}
-        </details>
-      )}
       {halfEditor && (
         <div className="mode-toggle is-2" role="group" aria-label="Demi-feuille à modifier">
           {(['left', 'right'] as const).map((half) => (

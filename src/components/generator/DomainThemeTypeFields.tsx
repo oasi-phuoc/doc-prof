@@ -213,12 +213,13 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
   return (
     <>
               {activePage.domain === 'acm' || activePage.domain === 'société' || isJeuxDomain || isCalliDomain ? null : (
-              <div className="mode-toggle-block">
+              <div className="mode-toggle-block activity-document-mode">
                 <b>Mode de la fiche</b>
-                <div className="mode-toggle">
+                <div className="mode-toggle" role="group" aria-label="Mode de la fiche">
                   <button
                     type="button"
                     className={!evalMode ? 'active' : ''}
+                    aria-pressed={!evalMode}
                     onClick={() => setEvalMode(false)}
                   >
                     Exercice
@@ -226,6 +227,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   <button
                     type="button"
                     className={evalMode ? 'active' : ''}
+                    aria-pressed={evalMode}
                     onClick={() => {
                       const modules = activeBlock.logistiqueSelection?.modules ?? (logisticsType ? [logisticsType.module] : [])
                       const story = Object.values(logistiqueStoryTemplates).find(({ initial }) =>
@@ -267,6 +269,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
               </div>
               )}
 
+              <div className="activity-route-fields">
               {allowedDomains.length > 1 && <SelectBox label="Domaine" value={activePage.domain} onChange={(value) => changeDomain(value as Domain)}>
                 {(activePage.domain === 'vocabulaire' ? ACCESS_DOMAIN_OPTIONS : ACTIVE_DOMAIN_OPTIONS)
                   .filter((domain) => allowedDomains.includes(domain.id)).map(
@@ -511,6 +514,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   })}
               </SelectBox>
               )}
+              </div>
               {isGrammaireDomain && showGrammarCoLevel ? (
                 <GrammarCoLevelControl
                   value={grammarCoLevel}

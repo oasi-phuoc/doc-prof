@@ -110,7 +110,7 @@ body { font-size: 16px; }
 .niveau-row.is-libre .select-control{opacity:.55}
 .number-libre-fields{display:grid;grid-template-columns:1fr 1fr;gap:8px 10px;align-items:end}
 .number-libre-fields .mode-toggle-block{grid-column:1 / -1}
-.libre-number-generation{display:grid;gap:8px;margin-bottom:12px}
+.libre-number-generation[open]{display:grid;gap:8px;justify-items:start}
 .quad-libre-block{display:flex;flex-direction:column;gap:10px}
 .quad-libre-block>b{font-size:calc(12px * var(--app-font-scale, 1))}
 .quad-shape-list{display:flex;flex-wrap:wrap;gap:6px}
@@ -5335,6 +5335,7 @@ textarea.pill-input,
     grid-template-columns:none;
     overflow:hidden
   }
+  .workspace.has-libre-panel{max-width:calc(66rem + 562px);margin-inline:auto}
   .settings-panel{
     flex:0 0 300px;width:300px;max-width:300px;
     height:100%;max-height:100%;
@@ -5408,12 +5409,58 @@ textarea.pill-input,
 .libre-grid-inputs input{width:100%;min-width:0}
 .vocab-occurrence-image{display:flex;align-items:center;flex-wrap:wrap;gap:4px}
 .libre-mobile-switch.mode-toggle{display:none}
+.activity-route-fields,.page-navigation-controls{display:contents}
 .side-tool-panel.is-libre .activity-settings{
-  min-width:0;border-bottom:1px solid var(--line)
+  min-width:0;gap:12px;border-bottom:1px solid var(--line)
 }
-.libre-sheet-settings{display:grid;gap:8px;min-width:0}
-.libre-sheet-settings .settings-section{padding:9px 4px}
+.side-tool-panel.is-libre .page-navigation-controls{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.side-tool-panel.is-libre .mode-toggle.is-tabs.page-tabs{display:flex;width:fit-content;align-self:start;margin:0;order:0}
+.side-tool-panel.is-libre .mode-toggle.is-tabs.page-tabs button{width:auto;min-width:36px}
+.side-tool-panel.is-libre .page-structure-actions{margin:0}
+.side-tool-panel.is-libre .page-structure-actions .button{flex:0 1 auto}
+.side-tool-panel.is-libre .activity-settings>.field-group,
+.side-tool-panel.is-libre .activity-route-fields{
+  display:grid;grid-template-columns:var(--libre-field-columns,minmax(0,1fr));gap:12px;align-items:start
+}
+.side-tool-panel.is-libre .activity-settings>.field-group{padding:0}
+.side-tool-panel.is-libre :is(.activity-settings>.field-group,.activity-route-fields)>*{grid-column:1 / -1;min-width:0}
+.side-tool-panel.is-libre :is(.activity-settings>.field-group,.activity-route-fields)>:is(.select-shell,.activity-columns-field){grid-column:auto}
+.side-tool-panel.is-libre .activity-settings>.field-group>button{justify-self:start}
+.side-tool-panel.is-libre .activity-settings>.field-group>.select-shell>input[type="number"]{max-width:9rem}
+.side-tool-panel.is-libre .activity-document-mode{
+  flex-direction:row;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:0
+}
+.side-tool-panel.is-libre .activity-document-mode>label{
+  display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:calc(13px * var(--app-font-scale, 1))
+}
+.side-tool-panel.is-libre .activity-document-mode input{width:5em;padding-inline:10px}
+.side-tool-panel.is-libre .mode-toggle-block>.mode-toggle:not(.is-tabs){align-self:start;max-width:100%}
+.side-tool-panel.is-libre .mode-toggle-block>.mode-toggle:not(.is-tabs)>button{padding-inline:12px}
+.side-tool-panel.is-libre .activity-columns-field{padding:0;gap:8px}
+.side-tool-panel.is-libre .activity-columns-field>b{
+  color:var(--muted);font-size:calc(12px * var(--app-font-scale, 1));text-transform:uppercase;letter-spacing:.08em
+}
+.libre-sheet-settings,.libre-question-tools{
+  display:flex;flex-wrap:wrap;align-items:flex-start;gap:8px;min-width:0
+}
+.libre-sheet-settings{order:4;padding:0 0 12px}
+:is(.libre-sheet-settings,.libre-question-tools)>details{max-width:100%;padding:0 10px;background:#fff}
+:is(.libre-sheet-settings,.libre-question-tools)>details[open]{flex:1 0 100%;padding-bottom:10px}
+:is(.libre-sheet-settings,.libre-question-tools)>details>summary{
+  min-height:42px;padding-block:11px;font-size:calc(13px * var(--app-font-scale, 1));font-weight:600
+}
+.libre-sheet-settings>:not(details){flex:1 0 100%}
+.libre-page-controls,.libre-sheet-chrome>.settings-section,.libre-sheet-settings .custom-header-form{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px;align-items:start
+}
+.libre-sheet-settings .settings-section{padding:8px 4px;min-width:0}
 .libre-sheet-settings .custom-header-form{padding:8px 4px;border-top:0}
+.libre-sheet-settings .custom-header-form>*{min-width:0}
+.libre-selection-filters{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:end;margin-bottom:10px}
+.libre-selection-filters>.libre-field{flex:1 1 240px;max-width:360px;min-width:0}
+.libre-selection-filters>label:not(.libre-field),.libre-selection-filters>[role="status"]{
+  min-height:40px;display:flex;align-items:center;gap:6px
+}
 .worksheet-settings:not(:has(.worksheet-settings-row)){display:none}
 .worksheet-settings-list{display:grid;gap:6px}
 .worksheet-settings-row{display:flex;align-items:center;justify-content:space-between;gap:6px;flex-wrap:wrap}
@@ -5681,7 +5728,7 @@ textarea.pill-input,
 .libre-options{display:flex;flex-direction:column;gap:6px}
 .libre-options>b{font-size:calc(12px * var(--app-font-scale, 1));color:var(--ink)}
 /* TPM libre : n° à gauche, champs à droite ; traits (pas pastilles). */
-.libre-item-list.is-tpm{display:flex!important;flex-direction:column;gap:10px}
+.libre-item-list.is-tpm{gap:10px}
 .libre-item-card.is-tpm-row{
   display:grid!important;grid-template-columns:2.2em minmax(0,1fr);gap:8px 10px;
   align-items:start;padding:8px 10px;
@@ -5940,8 +5987,19 @@ textarea.pill-input,
 .side-tool-panel.is-libre .tcf-row>.tcf-field{flex:1 1 200px}
 .side-tool-panel.is-libre .libre-textarea,
 .side-tool-panel.is-libre .tcf-textarea{max-width:900px}
+@container libre (min-width:390px){
+  .side-tool-panel.is-libre .activity-settings{--libre-field-columns:repeat(2,minmax(0,1fr))}
+}
 @container libre (min-width:620px){
+  .side-tool-panel.is-libre .activity-settings{--libre-field-columns:repeat(3,minmax(0,1fr))}
   .side-tool-panel.is-libre .tcf-editor>.tcf-field:not(:has(textarea)){grid-column:auto}
+}
+@container libre (min-width:690px){
+  .tpm-libre-editor>.libre-item-list.is-inline-calculations{
+    display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start
+  }
+  .is-inline-calculations .libre-inline-triple.is-eq-line{column-gap:6px}
+  .is-inline-calculations .libre-seq-chip{flex-basis:22%;min-width:3.8em;max-width:5.5em}
 }
 /* Panneau libre étroit (tablette / split) : mêmes assouplissements que mobile. */
 @container libre (max-width:420px){

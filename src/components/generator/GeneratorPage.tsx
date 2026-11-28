@@ -25,6 +25,8 @@ import { FooterFields, FooterSidePanel } from '@/components/generator/FooterSide
 import { Header } from '@/components/generator/Header'
 import { LibreActivityEditor, LibrePanelHeader } from '@/components/generator/LibreActivityEditor'
 import { SettingsPanel } from '@/components/generator/SettingsPanel'
+import { FreeNumberControls } from '@/components/generator/FreeNumberControls'
+import { supportsActivityNumberRange } from '@/components/generator/activity-settings'
 import { ResultPanel } from '@/components/generator/ResultPanel'
 import { FormesPalette } from '@/components/generator/FormesPalette'
 import { contrastOnTheme, readThemeColor, theorySectionColors } from '@/components/generator/theme'
@@ -851,7 +853,6 @@ export function GeneratorPage({
     toggleFormulaireLetterGrid,
     toggleTcfPageBreak,
     coordTool,
-    setSelectedCoordShape,
     selectedCoordShape,
     placeCoordMark,
     placeOrigin,
@@ -988,7 +989,7 @@ export function GeneratorPage({
             settings={settingsPanelProps}
             header={libreMode && <LibrePanelHeader history={libreHistory} onClose={closeLibre} />}
             presentation={libreMode ? (
-              <div className="libre-sheet-settings">
+              <>
                 <details className="libre-theory-block worksheet-settings">
                   <summary>Présentation du contenu</summary>
                   <div className="worksheet-settings-list" ref={setWorksheetSettingsTarget} />
@@ -1004,14 +1005,32 @@ export function GeneratorPage({
                 )}
                 <details className="libre-theory-block">
                   <summary>Mise en page de la fiche</summary>
-                  <SheetSettings {...sheetSettings} showChromeControls={false} />
+                  <div className="libre-page-controls">
+                    <SheetSettings {...sheetSettings} showChromeControls={false} />
+                  </div>
                 </details>
-                <details className="libre-theory-block">
+                <details className="libre-theory-block libre-sheet-chrome">
                   <summary>En-tête et pied de page</summary>
                   <SheetChromeSettings hideChrome={hideChrome} onChange={setHideChrome} heading={false} />
                   <FooterFields {...footerFields} />
                 </details>
-              </div>
+                {ctx.isNumberLibreDomain && supportsActivityNumberRange(activeBlock.exerciseType) && (
+                  <details className="libre-theory-block libre-number-generation">
+                    <summary>Valeurs du prochain tirage</summary>
+                    <label className="libre-field">
+                      <input type="checkbox" checked={Boolean(activeBlock.numberLibre)} onChange={(event) =>
+                        updatePage({ numberLibre: event.target.checked })} />
+                      Utiliser des valeurs personnalisées
+                    </label>
+                    {activeBlock.numberLibre && <FreeNumberControls activeBlock={activeBlock} updatePage={updatePage} />}
+                    {activeBlock.numberLibre && (
+                      <button type="button" className="button small secondary" onClick={() => regenerateBlock(safeBlockIndex)}>
+                        Générer avec ces valeurs
+                      </button>
+                    )}
+                  </details>
+                )}
+              </>
             ) : a5Pairs && questionsOverflow ? (
               <p role="alert" className="libre-field-error">Le contenu dépasse une demi-feuille A5. Répartissez-le sur plusieurs pages ou réduisez le contenu.</p>
             ) : null}

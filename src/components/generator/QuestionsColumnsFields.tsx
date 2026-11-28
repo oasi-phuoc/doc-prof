@@ -862,7 +862,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                 </div>
               ) : null}
               {isSoutienRelier ? (
-                <div className="mode-toggle-block">
+                <div className="mode-toggle-block activity-columns-field">
                   <b>Colonnes</b>
                   <div className="mode-toggle is-2" role="group" aria-label="Nombre de colonnes">
                     {[1, 2].map((value) => (
@@ -882,7 +882,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                 </div>
               ) : null}
               {isAlphaMotsCols ? (
-                <div className="mode-toggle-block">
+                <div className="mode-toggle-block activity-columns-field">
                   <b>Colonnes</b>
                   <div className="mode-toggle is-2" role="group" aria-label="Nombre de colonnes">
                     {[3, 4].map((value) => (
@@ -907,7 +907,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                 </div>
               ) : null}
               {isAlphaSyllabeTableCols ? (
-                <div className="mode-toggle-block">
+                <div className="mode-toggle-block activity-columns-field">
                   <b>Colonnes</b>
                   <div className="mode-toggle is-3" role="group" aria-label="Nombre de colonnes">
                     {[4, 5, 6].map((value) => (
@@ -924,7 +924,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                 </div>
               ) : null}
               {isAlphaPrononcerCols ? (
-                <div className="mode-toggle-block">
+                <div className="mode-toggle-block activity-columns-field">
                   <b>Colonnes</b>
                   <div className="mode-toggle is-2" role="group" aria-label="Nombre de colonnes">
                     {[1, 2].map((value) => (
@@ -945,7 +945,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
               !isAlphaSyllabeTableCols &&
               !isAlphaPrononcerCols &&
               !hideColumnsOption ? (
-                <div className="mode-toggle-block">
+                <div className="mode-toggle-block activity-columns-field">
                   <b>Colonnes</b>
                   <div
                     className={`mode-toggle${soutienKind === 'ecouter' ? ' is-2' : ' is-3'}`}
@@ -975,7 +975,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                 </div>
               ) : null}
               {isSoutienCols345 ? (
-                <div className="mode-toggle-block">
+                <div className="mode-toggle-block activity-columns-field">
                   <b>Colonnes</b>
                   <div className="mode-toggle is-3" role="group" aria-label="Nombre de colonnes">
                     {[3, 4, 5].map((value) => (
@@ -992,7 +992,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                 </div>
               ) : null}
               {isGrammaireExercise && !isGramTheory && !hideColumnsOption && hasOuterColumns && hasTcfQuestionColumns ? (
-                <div className="mode-toggle-block">
+                <div className="mode-toggle-block activity-columns-field">
                   <b>Colonnes</b>
                   <div className="mode-toggle is-2" role="group" aria-label="Nombre de colonnes">
                     {[1, 2].map((value) => (
@@ -1097,7 +1097,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
               isAlphaMotsCols ||
               isAlphaSyllabeTableCols ||
               isAlphaPrononcerCols ? null : (
-              <div className="mode-toggle-block">
+              <div className="mode-toggle-block activity-columns-field">
                 <b>Colonnes</b>
                 <div className="mode-toggle is-3" role="group" aria-label="Nombre de colonnes">
                   {(isGuidedColumnType(activeBlock.exerciseType) || activeBlock.exerciseType === SHAPE_PRACTICE ? [1, 2] : [1, 2, 3]).map((value) => (

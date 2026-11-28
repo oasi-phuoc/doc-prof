@@ -34,7 +34,7 @@ async function checkCalculation(context, operation, hole) {
   try {
     await page.goto('/generateur')
     await button('Mode libre').click()
-    assert.equal(await button('Valider les changements').count(), 0)
+    assert.equal(await page.locator('#activity-editor').getByRole('button', { name: 'Valider les changements', exact: true }).count(), 0)
     await button('Fiche élève (cliquer pour corrigé)').click()
     const calculation = page.getByRole('group', { name: 'Calcul 1', exact: true })
     const updated = calculation.getByRole('textbox', { name: hole ? 'Résultat' : '1ʳᵉ', exact: true })
@@ -141,7 +141,7 @@ async function checkStructuredCalculations(context) {
     try {
       await page.goto('/generateur')
       await page.getByRole('button', { name: 'Mode libre', exact: true }).click()
-      assert.equal(await page.getByRole('button', { name: 'Valider les changements', exact: true }).count(), 0)
+      assert.equal(await page.locator('#activity-editor').getByRole('button', { name: 'Valider les changements', exact: true }).count(), 0)
       await check(page, page.locator('.a4-frame'))
     } finally {
       await page.close()
@@ -216,7 +216,7 @@ async function checkNumericTests(context) {
     await printItems.first().waitFor({ state: 'attached' })
     const baseline = await printItems.allTextContents()
     await page.getByRole('button', { name: 'Mode libre', exact: true }).click()
-    assert.equal(await page.getByRole('button', { name: 'Valider les changements', exact: true }).count(), 0)
+    assert.equal(await page.locator('#activity-editor').getByRole('button', { name: 'Valider les changements', exact: true }).count(), 0)
     assert.deepEqual(await printItems.allTextContents(), baseline)
     return { page, printItems }
   }

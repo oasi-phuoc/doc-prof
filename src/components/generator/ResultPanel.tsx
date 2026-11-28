@@ -2,7 +2,6 @@ import { isLogistiqueDomain, isLogistiqueReferenceType } from '@/logistique/cata
 import { Fragment, useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode, type RefObject } from 'react'
 import { flushSync } from 'react-dom'
 import { useWorksheetImageSources, WorksheetPrintImages } from '@/components/WorksheetImage'
-import { FormesPalette } from '@/components/generator/FormesPalette'
 import { PeEvaluationSheet } from '@/components/tcf/PeEvaluationSheet'
 import { peEvaluationsOf, type PeEvaluation } from '@/tcf/pe-evaluation'
 import { isGrammarReadingType } from '@/grammaire/exercises/reading-types'
@@ -101,7 +100,6 @@ export type ResultPanelProps = {
   isTransform: boolean
   isComposer: boolean
   coordTool: string
-  setSelectedCoordShape: (kind: CoordShape | null) => void
   selectedCoordShape: CoordShape | null
   placeCoordMark: (x: number, y: number, kind: CoordShape) => void
   placeOrigin: (col: number, row: number) => void
@@ -164,7 +162,6 @@ export function ResultPanel({
   isTransform,
   isComposer,
   coordTool,
-  setSelectedCoordShape,
   selectedCoordShape,
   placeCoordMark,
   placeOrigin,
@@ -671,16 +668,6 @@ export function ResultPanel({
                         ))
                       : null}
                   </div>
-                  {isFormes && activeBlock.coordLibre ? (
-                    <aside className="coord-page-palette no-print">
-                      <b>Formes</b>
-                      <FormesPalette
-                        marks={activeBlock.coordMarks ?? []}
-                        selectedKind={selectedCoordShape}
-                        onSelect={setSelectedCoordShape}
-                      />
-                    </aside>
-                  ) : null}
                 </div>
               </div>
             </div>

@@ -45,7 +45,7 @@ try {
     assert(original.length >= 2)
     await button(page, 'Mode libre').click()
     const panel = page.locator('#activity-editor')
-    assert.equal(await button(page, 'Valider les changements').count(), 0)
+    assert.equal(await button(panel, 'Valider les changements').count(), 0)
     assert.deepEqual(await marks(printed), original)
     const composition = panel.getByRole('group', { name: shapes ? 'Mode du tableau' : 'Mode du repère', exact: true })
     await button(composition, 'Libre').click()

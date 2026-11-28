@@ -584,6 +584,14 @@ function transientInput(transient: TransientArithmeticInputs | undefined, item: 
   return { value: transient.fields[id], write: (value: string | null) => transient.write(id, value) }
 }
 
+function isInlineOperation(item: MathItem, exerciseType: string): item is MathItem & Required<Pick<MathItem, 'op' | 'a' | 'b'>> {
+  return item.layout === 'inline' && Boolean(item.op) && item.a != null && item.b != null &&
+    !exerciseType.includes('ex11') && !item.labels?.includes('relatif') &&
+    !item.labels?.some((label) => label.startsWith('frac-')) &&
+    exerciseType !== 'tpm-relatifs-ops' && exerciseType !== 'tpm-fractions-mixte' &&
+    !/\/\s*\d/.test(item.prompt ?? '')
+}
+
 export function TpmLibreEditor({
   instruction,
   items,
@@ -679,15 +687,13 @@ export function TpmLibreEditor({
   }
 
   const withProps = exerciseType.includes('ex16')
+  const canRegenerate = onRegenerate && items.some(({ libreLocked }) => !libreLocked)
+  const canSelect = liveArithmetic && items.length > 1
+  const inlineCalculations = items.every((item) => isInlineOperation(item, exerciseType))
 
   return (
     <div className="quad-libre-block tpm-libre-editor">
       <b>Contenu de la fiche</b>
-      {onRegenerate && items.some(({ libreLocked }) => !libreLocked) && (
-        <button type="button" className="button secondary small" onClick={() => onRegenerate()}>
-          Régénérer les questions déverrouillées
-        </button>
-      )}
       {!liveArithmetic && (
         <p className="type-hint muted">
           Modifiez les nombres puis validez (✓). Les corrigés se recalculent.
@@ -713,42 +719,53 @@ export function TpmLibreEditor({
           onChange={(e) => onChangeInstruction(e.target.value)}
         />
       </label>
-      {liveArithmetic && items.length > 1 && (
-        <details className="libre-theory-block" onToggle={(event) => setSelecting(event.currentTarget.open)}>
-          <summary>Sélectionner des questions</summary>
-          <div className="libre-unit-actions" role="group" aria-label="Sélection de questions">
-            <label className="libre-field is-line">
-              <span>Rechercher par numéro ou énoncé</span>
-              <input className="libre-line-input" type="search" value={search} onChange={(event) => setSearch(event.target.value)} />
-            </label>
-            <label>
-              <input type="checkbox" checked={lockedOnly} onChange={(event) => setLockedOnly(event.target.checked)} />
-              Questions verrouillées
-            </label>
-            <button type="button" className="button secondary small" onClick={() => selectItems(items)}>Toutes les questions de l’activité</button>
-            <button type="button" className="button secondary small" disabled={!visible.length} onClick={() => selectItems(visible.map(({ item }) => item))}>Questions visibles</button>
-            <button type="button" className="button secondary small" disabled={!selected.length} onClick={() => setSelection([])}>Vider la sélection</button>
-            <span role="status">{selected.length} sélectionnée{selected.length === 1 ? '' : 's'} sur {items.length}</span>
-            <button type="button" className="button secondary small" disabled={!unlocked.length} onClick={() => lockSelection(true)}>Verrouiller la sélection</button>
-            <button type="button" className="button secondary small" disabled={selected.length === unlocked.length} onClick={() => lockSelection(false)}>Déverrouiller la sélection</button>
-            {onRegenerate && (
-              <button type="button" className="button secondary small" disabled={!unlocked.length}
-                onClick={() => onRegenerate(unlocked.map(({ libreId }) => libreId!))}>
-                Régénérer la sélection déverrouillée
-              </button>
-            )}
-            {!fixedTest && <button type="button" className="button secondary small" disabled={!unlocked.length || items.length === unlocked.length}
-              onClick={() => {
-                if (!window.confirm(`Supprimer ${unlocked.length} question${unlocked.length === 1 ? '' : 's'} déverrouillée${unlocked.length === 1 ? '' : 's'} ?`)) return
-                const removed = new Set(unlocked)
-                onChangeItems(items.filter((item) => !removed.has(item)))
-              }}>
-              Supprimer la sélection déverrouillée
-            </button>}
-          </div>
-        </details>
+      {(canRegenerate || canSelect) && (
+        <div className="libre-question-tools">
+          {canRegenerate && (
+            <button type="button" className="button secondary small" onClick={() => onRegenerate?.()}>
+              Régénérer les questions déverrouillées
+            </button>
+          )}
+          {canSelect && (
+            <details className="libre-theory-block" onToggle={(event) => setSelecting(event.currentTarget.open)}>
+              <summary>Sélectionner des questions</summary>
+              <div className="libre-selection-filters">
+                <label className="libre-field is-line">
+                  <span>Rechercher par numéro ou énoncé</span>
+                  <input className="libre-line-input" type="search" value={search} onChange={(event) => setSearch(event.target.value)} />
+                </label>
+                <label>
+                  <input type="checkbox" checked={lockedOnly} onChange={(event) => setLockedOnly(event.target.checked)} />
+                  Questions verrouillées
+                </label>
+                <span role="status">{selected.length} sélectionnée{selected.length === 1 ? '' : 's'} sur {items.length}</span>
+              </div>
+              <div className="libre-unit-actions" role="group" aria-label="Sélection de questions">
+                <button type="button" className="button secondary small" onClick={() => selectItems(items)}>Toutes les questions de l’activité</button>
+                <button type="button" className="button secondary small" disabled={!visible.length} onClick={() => selectItems(visible.map(({ item }) => item))}>Questions visibles</button>
+                <button type="button" className="button secondary small" disabled={!selected.length} onClick={() => setSelection([])}>Vider la sélection</button>
+                <button type="button" className="button secondary small" disabled={!unlocked.length} onClick={() => lockSelection(true)}>Verrouiller la sélection</button>
+                <button type="button" className="button secondary small" disabled={selected.length === unlocked.length} onClick={() => lockSelection(false)}>Déverrouiller la sélection</button>
+                {onRegenerate && (
+                  <button type="button" className="button secondary small" disabled={!unlocked.length}
+                    onClick={() => onRegenerate(unlocked.map(({ libreId }) => libreId!))}>
+                    Régénérer la sélection déverrouillée
+                  </button>
+                )}
+                {!fixedTest && <button type="button" className="button secondary small" disabled={!unlocked.length || items.length === unlocked.length}
+                  onClick={() => {
+                    if (!window.confirm(`Supprimer ${unlocked.length} question${unlocked.length === 1 ? '' : 's'} déverrouillée${unlocked.length === 1 ? '' : 's'} ?`)) return
+                    const removed = new Set(unlocked)
+                    onChangeItems(items.filter((item) => !removed.has(item)))
+                  }}>
+                  Supprimer la sélection déverrouillée
+                </button>}
+              </div>
+            </details>
+          )}
+        </div>
       )}
-      <ul className="libre-item-list is-tpm" aria-label="Questions">
+      <ul className={`libre-item-list is-tpm${inlineCalculations ? ' is-inline-calculations' : ''}`} aria-label="Questions">
         {visible.map(({ item, index }) => (
           <li key={item.libreId ?? `tpm-libre-${index}`} data-libre-id={item.libreId} className="libre-item-card is-tpm-row">
             <div className="libre-item-num-col">
@@ -1715,18 +1732,7 @@ function renderFields(
     )
   }
 
-  if (
-    item.layout === 'inline' &&
-    item.op &&
-    item.a != null &&
-    item.b != null &&
-    !exerciseType.includes('ex11') &&
-    !item.labels?.includes('relatif') &&
-    !item.labels?.some((l) => l.startsWith('frac-')) &&
-    exerciseType !== 'tpm-relatifs-ops' &&
-    exerciseType !== 'tpm-fractions-mixte' &&
-    !/\/\s*\d/.test(item.prompt ?? '')
-  ) {
+  if (isInlineOperation(item, exerciseType)) {
     const op = (item.op ?? '+') as ArithOp
     const missing = (item.missing ?? 'result') as MissingPos
     const a = item.a

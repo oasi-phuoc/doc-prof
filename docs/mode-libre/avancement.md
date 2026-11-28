@@ -6,6 +6,8 @@ Le mode Libre est réservé au format A4. Les chiffres de raccordement en double
 
 Les commandes de composition du repérage et leurs zones interactives s’activent avec le panneau Libre. Trois recettes historiques de double A5 vérifient la fermeture du panneau, l’absence de commande d’édition et la conservation des formes, des points et des questions dans le document imprimable.
 
+Sur grand écran, le panneau Libre regroupe Domaine, Thème et Type d’exercice sur une ligne, puis Niveau, Questions et Colonnes sur la suivante lorsqu’ils sont disponibles. Les réglages avancés et les actions sur les questions sont regroupés sous ces champs. Les calculs en ligne s’affichent par deux lorsque le panneau est assez large. La recette de présentation vérifie les dispositions de 320 à 2 560 px, avec la fiche à droite sur ordinateur et un accès séparé à l’aperçu sur téléphone.
+
 - [Cahier des charges validé — V1.2](cahier-des-charges.md)
 - [Référence du code consulté pour la publication](https://github.com/oasi-phuoc/doc-prof/commit/c24a995b76c68c284b2614e113120cdb2873ba81)
 - [Cahier des charges Logistique V2.13](../logistique/cahier-des-charges.md) et [suivi Logistique](../logistique/avancement-cahier-des-charges-20261126.md)

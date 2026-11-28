@@ -18,6 +18,7 @@ export type PageStructureTabsProps = {
   activeSheet: WorksheetPage | undefined
   firstExerciseNo: number
   isTpmLike: boolean
+  libreMode: boolean
   addPage: () => void
   addExerciseOnPage: () => void
   removePage: (configIdx: number) => void
@@ -36,6 +37,7 @@ export function PageStructureTabs({
   activeSheet,
   firstExerciseNo,
   isTpmLike,
+  libreMode,
   addPage,
   addExerciseOnPage,
   removePage,
@@ -43,9 +45,10 @@ export function PageStructureTabs({
   const placement = pages[pageIndex]?.domain === 'tpf' && pages.some((page) => tpfPlacementTask(page.exerciseType))
   return (
     <>
-            <div className="panel-title">
+            {!libreMode && <div className="panel-title">
               <h3>Paramètres de l’activité</h3>
-            </div>
+            </div>}
+            <div className="page-navigation-controls">
             <div className={`mode-toggle is-tabs page-tabs${activeSheet?.domain === 'jeux' ? ' is-card-tabs' : ''}`} role="tablist" aria-label="Feuilles">
               {worksheets.map((sheet, index) => {
                 if (sheet.isContinuation) return null
@@ -96,6 +99,7 @@ export function PageStructureTabs({
                 ) : null}
               </div>
             )}
+            </div>
             {pageExerciseBlocks.length > 1 ? (
               <div className="mode-toggle is-tabs page-tabs exercise-tabs" role="tablist" aria-label="Exercices de la page">
                 {pageExerciseBlocks.map((_, index) => {

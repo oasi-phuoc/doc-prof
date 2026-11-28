@@ -57,6 +57,44 @@ async function assertNoHorizontalOverflow(page) {
   assert(fits, 'Le document déborde horizontalement.')
 }
 
+async function checkDesktopEditor(page, width) {
+  const panel = page.locator(editor)
+  const body = await panel.locator('.side-tool-panel-body').boundingBox()
+  const sameRow = async (...controls) => {
+    const boxes = await Promise.all(controls.map((control) => control.boundingBox()))
+    assert(boxes.every((box, index) => index === 0 || (
+      Math.abs(box.y - boxes[0].y) <= 5 && box.x >= boxes[index - 1].x + boxes[index - 1].width
+    )), JSON.stringify(boxes))
+  }
+
+  assert((await panel.boundingBox()).width <= 1060)
+  await sameRow(...['Domaine', 'Thème', 'Type d’exercice'].map((name) => button(panel, name)))
+  await sameRow(
+    button(panel, 'Niveau'),
+    panel.getByRole('spinbutton', { name: 'Nombre de questions', exact: true }),
+    panel.getByRole('group', { name: 'Nombre de colonnes', exact: true }).getByRole('button', { name: '1', exact: true }),
+  )
+  assert((await panel.getByRole('group', { name: 'Mode de la fiche' }).boundingBox()).width < body.width / 2)
+  const spacing = panel.getByText('Espacement de l’activité', { exact: true })
+  if (width >= 1920) {
+    await sameRow(spacing, ...[
+      'Mise en page de la fiche', 'En-tête et pied de page', 'Valeurs du prochain tirage',
+    ].map((name) => panel.getByText(name, { exact: true })))
+  }
+  await spacing.click()
+  assert((await spacing.boundingBox()).width > body.width * 0.9)
+  await spacing.click()
+  await sameRow(
+    button(panel, 'Régénérer les questions déverrouillées'),
+    panel.getByText('Sélectionner des questions', { exact: true }),
+  )
+  const questions = panel.getByRole('list', { name: 'Questions', exact: true }).getByRole('listitem')
+  await sameRow(questions.first(), questions.nth(1))
+  await sameRow(...await questions.first().locator('.libre-seq-chip').all())
+  assert((await questions.nth(2).boundingBox()).y > (await questions.first().boundingBox()).y)
+  assert(await panel.locator('.side-tool-panel-body').evaluate((element) => element.scrollWidth <= element.clientWidth + 1))
+}
+
 async function checkLayout(page, width) {
   await page.setViewportSize({ width, height: 900 })
   await page.goto('/generateur')
@@ -78,6 +116,8 @@ async function checkLayout(page, width) {
 
   if (width <= 550) {
     assert(!(await page.locator('.result-panel').isVisible()))
+    const questions = page.locator(editor).getByRole('list', { name: 'Questions', exact: true }).getByRole('listitem')
+    assert.equal((await questions.first().boundingBox()).x, (await questions.nth(1).boundingBox()).x)
     const instruction = page.locator(editor).getByRole('textbox', { name: 'Consigne' })
     await instruction.focus()
     await button(page, 'Aperçu').click()
@@ -88,6 +128,7 @@ async function checkLayout(page, width) {
     const left = await page.locator(editor).boundingBox()
     const right = await page.locator('.result-panel').boundingBox()
     if (width >= 851) assert(left.x + left.width <= right.x + 1)
+    if (width >= 1366) await checkDesktopEditor(page, width)
     if (width === 1366) {
       const panel = page.locator(editor)
       const layout = panel.getByText('Mise en page de la fiche', { exact: true })
@@ -173,7 +214,7 @@ async function checkAddition(page) {
   await page.setViewportSize({ width: 1366, height: 900 })
   await page.goto('/generateur')
   await button(page, 'Mode libre').click()
-  assert.equal(await button(page, 'Valider les changements').count(), 0)
+  assert.equal(await button(page.locator(editor), 'Valider les changements').count(), 0)
   const quantity = page.getByRole('spinbutton', { name: 'Nombre de questions', exact: true })
   await quantity.fill('2')
   await page.waitForFunction((selector) => document.querySelectorAll(selector).length === 2, items)
@@ -364,7 +405,7 @@ try {
   await context.addCookies([{ name: 'clairfle-fiche-access', value: 'partial', url: baseURL }])
   const page = await context.newPage()
   page.setDefaultTimeout(15000)
-  for (const width of [320, 390, 768, 851, 1024, 1366, 1440, 1920]) {
+  for (const width of [320, 390, 768, 851, 1024, 1366, 1440, 1920, 2560]) {
     await checkLayout(page, width)
     console.log(`A4 à ${width} px`)
   }
@@ -381,7 +422,7 @@ try {
   await checkLegacyCoordinateLock(coordinateContext)
   await coordinateContext.close()
   console.log('3 recettes historiques de repérage vérifiées en double A5.')
-  console.log('10 configurations de présentation, édition, historique et verrous testés.')
+  console.log('11 configurations de présentation, édition, historique et verrous testés.')
 } finally {
   await browser?.close()
   await server?.close()
