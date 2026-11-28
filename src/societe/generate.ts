@@ -1,7 +1,9 @@
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
+import type { Rng } from '@/math/rng'
 import type { MathItem, PageConfig } from '@/math/types'
 import { CANTONS, CARTE_ACTIVITES, GALERIES_ATLAS, LISTE_CANTONS_ID, imageVue } from './atlas'
 import { SOCIETE_KINDS } from './catalog'
+import { societeCommunicationItems } from './communication'
 import { normalizeSocieteBlock } from './legacy'
 import { SOCIETE_UNITS } from './parcours'
 import { theoriesIllustrees } from './parcours/theorie-illustree'
@@ -24,9 +26,9 @@ function theoryItems(unit: SocieteUnite): MathItem[] {
   const notionsVisibles = contexte.length > 1 ? Math.ceil(unit.explication.length / 2) : unit.explication.length
   const debut = [
     theory({ kind: 'heading', text: unit.titre }),
-    theory({ kind: 'paragraph', text: unit.objectif }),
-    theory({ kind: 'examples', label: 'Je regarde', items: [unit.situation] }),
     ...contexte.map(theoryImage),
+    theory({ kind: 'examples', label: 'Je regarde', items: [unit.situation], marker: 'border' }),
+    theory({ kind: 'paragraph', text: unit.objectif }),
     { ...theory({ kind: 'examples', label: 'J’explique', items: [...unit.explication.slice(0, notionsVisibles)], marker: 'puces' }), theoryPageBreakAfter: true },
   ]
   const complement = unit.explication.slice(notionsVisibles)
@@ -35,7 +37,7 @@ function theoryItems(unit: SocieteUnite): MathItem[] {
     theory({ kind: 'heading', text: `${unit.titre} · Un exemple pas à pas`, sub: true }),
     ...lecon.exemple.map(theoryImage),
     ...(complement.length ? [theory({ kind: 'examples', label: 'Je retiens', items: [...complement], marker: 'puces' })] : []),
-    theory({ kind: 'examples', label: 'Je vérifie', items: [lecon.essai, lecon.reponse] }),
+    theory({ kind: 'practice', instruction: 'J’essaie', items: [{ prompt: lecon.essai, answer: lecon.reponse, explanation: '' }] }),
   ]
 }
 
@@ -105,7 +107,7 @@ function questions(entries: readonly SocieteQuestion[]): MathItem[] {
     : { layout: 'text', prompt, answer })
 }
 
-export function tryGenerateSocieteBlock(config: PageConfig): { instruction: string; items: MathItem[] } | null {
+export function tryGenerateSocieteBlock(config: PageConfig, rng: Rng): { instruction: string; items: MathItem[] } | null {
   if (!isSocieteType(config.exerciseType)) return null
   const { exerciseType } = normalizeSocieteBlock(config)
   const atlas = atlasBlock(exerciseType)
@@ -116,7 +118,10 @@ export function tryGenerateSocieteBlock(config: PageConfig): { instruction: stri
   const unit = units.get(id)
   const type = SOCIETE_KINDS.find(([candidate]) => candidate === kind)
   if (!unit || !type) return null
-  const instruction = kind === 'theorie' ? unit.titre : type[2]
+  const formatVraiFaux = kind === 'co' && config.grammarCoFormat === 'true-false'
+  const instruction = kind === 'theorie' ? unit.titre : formatVraiFaux
+    ? 'Écoutez l’enregistrement. Pour chaque phrase, cochez Vrai ou Faux.'
+    : type[2]
   const lecon = theoriesIllustrees[id]
   const imageActivite = lecon.contexte[0] ?? unit.image ?? lecon.exemple[0]
   let items: MathItem[]
@@ -127,30 +132,21 @@ export function tryGenerateSocieteBlock(config: PageConfig): { instruction: stri
     case 'lexique':
       items = [
         theory({ kind: 'heading', text: `Lexique · ${unit.titre}` }),
+        ...(imageActivite ? [theoryImage(imageActivite)] : []),
         theory({ kind: 'table', headers: ['Mot', 'Sens'], rows: unit.lexique.map(([mot, sens]) => [mot, sens]) }),
       ]
       break
     case 'ce':
-      items = [support({ kind: 'document', titre: unit.document.titre, lignes: unit.document.lignes, image: unit.document.image ?? lecon.exemple[0] }), ...questions(unit.document.questions)]
-      break
     case 'co':
-      items = [support({
-        kind: 'ecoute',
-        transcription: unit.ecoute.transcription,
-        audioSrc: `/lib/audio/societe/${unit.id}.mp3`,
-        image: contexteEcoute.has(id) ? imageActivite : undefined,
-      }), ...questions(unit.ecoute.questions)]
-      break
     case 'po':
-      items = [support({ kind: 'production', production: unit.oral, lignes: 0, image: imageActivite })]
+    case 'pe':
+      items = societeCommunicationItems(
+        unit, kind, config, rng, imageActivite, unit.document.image ?? lecon.exemple[0],
+        contexteEcoute.has(id) ? imageActivite : undefined,
+      )
       break
     default:
-      items = [support({
-        kind: 'production',
-        production: unit.ecrit,
-        image: imageActivite,
-        lignes: unit.niveau === 'B1' ? 9 : unit.niveau === 'A2' ? 6 : 4,
-      })]
+      return null
   }
   return { instruction, items }
 }

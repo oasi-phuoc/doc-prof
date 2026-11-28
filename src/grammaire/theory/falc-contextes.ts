@@ -8,7 +8,7 @@ type ContextualLesson = {
   reference: GrammarTheoryBlock[]
 }
 
-function scene(caption: string, description: string, example: string, alt: string, src = ''): TheoryImageCell {
+function scene(caption: string, description: string, example: string, alt: string, src: string): TheoryImageCell {
   return { src, caption, description, example, alt }
 }
 
@@ -47,9 +47,9 @@ export const falcContextualLessons: Readonly<Record<string, ContextualLesson | u
 
   a3: lesson('Lire deux présentations avec la même nationalité', [
     scene('Rui se présente', 'Rui montre son pays sur la carte.', '« Je suis {c}portugais{/c}. »',
-      'Carte du Portugal aux couleurs de son drapeau.', '/lib/images/vocabulaire/pays/portugal.webp'),
+      'Rui montre le Portugal en vert sur une carte affichée en classe.', '/lib/images/grammaire/theorie/se-presenter-en-disant-portugais.webp'),
     scene('Inês se présente', 'Inês montre le même pays.', '« Je suis {c}portugaise{/c}. »',
-      'La même carte du Portugal, le pays d’Inês et de Rui.', '/lib/images/vocabulaire/pays/portugal.webp'),
+      'Inês montre le Portugal en vert sur une carte posée sur la table.', '/lib/images/grammaire/theorie/se-presenter-en-disant-portugaise.webp'),
   ], ['« Portugais » et « portugaise » indiquent la même nationalité.', 'Dans ces phrases, la forme change avec la personne.', 'Écris l’adjectif de nationalité avec une minuscule.'],
   'Complète avec « portugais » ou « portugaise ».', [
     exercise('C’est Ana. Elle dit « Je suis ___. »', 'portugaise', 'Ana utilise ici la forme féminine.'),
@@ -59,10 +59,10 @@ export const falcContextualLessons: Readonly<Record<string, ContextualLesson | u
   ])),
 
   a6: lesson('Dire d’où on vient', [
-    scene('Une ville', 'Sara montre la ville de Sion.', '« Je viens {c}de{/c} Sion. »',
-      'À dessiner. Sara, une jeune femme avec une veste jaune, montre le point de Sion sur une carte locale simple.'),
-    scene('Un pays', 'Mateus montre le Portugal.', '« Je viens {c}du{/c} Portugal. »',
-      'À dessiner. Mateus montre le Portugal en couleur sur une carte d’Europe. Éviter les détails qui détournent du pays.'),
+    scene('Une ville', 'Sara montre la ville de Sion sur une carte de la Suisse.', '« Je viens {c}de{/c} Sion. »',
+      'Sara montre le point qui situe Sion dans le sud-ouest de la Suisse.', '/lib/images/grammaire/theorie/carte-sion-en-suisse.webp'),
+    scene('Un pays', 'Mateus montre le Portugal sur une carte.', '« Je viens {c}du{/c} Portugal. »',
+      'Mateus montre le Portugal en vert, à l’ouest de l’Espagne.', '/lib/images/grammaire/theorie/carte-portugal-en-europe.webp'),
   ], ['« Je viens de » indique un lieu de départ ou d’origine.', 'Devant le nom « le Portugal », {c}du{/c} réunit « de » et « le ».'],
   'Complète avec « de » ou « du ».', [
     exercise('Lina vient ___ Lausanne.', 'de', 'Lausanne est une ville. On dit « de Lausanne ». '),
@@ -173,7 +173,7 @@ export const falcContextualLessons: Readonly<Record<string, ContextualLesson | u
       scene('Un métier', 'Amir travaille le bois dans un atelier. Il présente son métier.', '« Je {verbe}suis{/verbe} {c}menuisier{/c}. »',
         'Amir travaille une planche avec un rabot dans un atelier.', '/lib/images/tcf/catalogue/metiers/menuisier.webp'),
       scene('Une nationalité', 'Au guichet, Mauro donne sa nationalité.', '« Je {verbe}suis{/verbe} {c}suisse{/c}. »',
-        'Carte de la Suisse, rouge avec une croix blanche.', '/lib/images/vocabulaire/pays/suisse.webp'),
+      'Au guichet, Mauro montre un passeport rouge avec une croix blanche.', '/lib/images/grammaire/theorie/montrer-son-passeport-suisse.webp'),
     ] },
     { kind: 'paragraph', text: 'Le mot après « je suis » donne l’information. Par exemple, « menuisier » donne le métier.' },
     { kind: 'page' },
@@ -239,10 +239,10 @@ export const falcContextualLessons: Readonly<Record<string, ContextualLesson | u
   ])),
 
   c2: lesson('Demander une confirmation ou une information', [
-    scene('Je veux savoir si c’est ouvert', 'Eva demande une confirmation à l’accueil.', '« La poste est ouverte ? » « {c}Oui{/c}. »',
-      'À dessiner. Eva et un employé se parlent à l’accueil de la poste. Les paroles seront écrites en dehors de l’image.'),
-    scene('Je veux une heure', 'Eva demande l’heure de fermeture.', '« {c}À quelle heure{/c} fermez-vous ? » « À 18 heures. »',
-      'À dessiner. Même accueil de la poste. L’employé montre une horloge simple réglée à 18 heures.'),
+    scene('Je veux savoir si c’est ouvert', 'Eva veut savoir si elle peut encore entrer à la poste.', '« La poste est ouverte ? » « {c}Oui{/c}. »',
+      'Eva parle à un employé au comptoir de la poste. La porte d’entrée est ouverte.', '/lib/images/grammaire/theorie/demander-si-la-poste-est-ouverte.webp'),
+    scene('Je veux une heure', 'Eva demande l’heure de fermeture. L’employé lui indique l’horloge.', '« {c}À quelle heure{/c} fermez-vous ? » « À 18 heures. »',
+      'Au même comptoir, l’employé indique l’horloge. La grande aiguille est en haut et la petite en bas.', '/lib/images/grammaire/theorie/demander-lheure-de-fermeture.webp'),
   ], ['Une question fermée permet souvent de répondre oui ou non.', 'Une question ouverte demande une information.', '« Où » demande un lieu. « Quand » demande un moment.'],
   'Complète avec « Où » ou « Quand ».', [
     exercise('Je demande un lieu. « ___ se trouve la poste ? »', 'Où', 'Le lieu indique l’endroit où se trouve la poste.'),
@@ -270,7 +270,7 @@ export const falcContextualLessons: Readonly<Record<string, ContextualLesson | u
     scene('Une heure', 'L’horloge indique 9 heures.', 'Je viens {c}à{/c} 9 heures.',
       'La grande aiguille de l’horloge pointe sur le 12 et la petite sur le 9. Il est 9 heures.', '/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp'),
     scene('Une date', 'Le calendrier indique le 14 mars.', 'Je viens {c}le{/c} 14 mars.',
-      'Une page de calendrier portant le mot « Mars » montre le nombre 14 entouré.', '/lib/images/grammaire/theorie/calendrier-14-mars.webp'),
+      'Une main montre le numéro 14 sur la page du calendrier.', '/lib/images/grammaire/theorie/calendrier-14-mars.webp'),
   ], ['Pour une heure, dis {c}à{/c} 9 heures.', 'Pour une date, dis {c}le{/c} 14 mars.', 'Pour un mois seul, dis {c}en{/c} mars.'],
   'Complète avec « à », « le » ou « en ».', [
     exercise('Le cours commence ___ 8 heures.', 'à', '8 heures indique une heure.'),
@@ -282,9 +282,9 @@ export const falcContextualLessons: Readonly<Record<string, ContextualLesson | u
 
   e3: lesson('Dire quand une action commence ou combien de temps elle dure', [
     scene('Le début', 'Aïcha a commencé lundi. Elle travaille encore ici.', 'Je travaille ici {c}depuis{/c} lundi.',
-      'Une flèche part de « Lundi » et arrive à « Aujourd’hui ».', '/lib/images/grammaire/theorie/frise-depuis-lundi.webp'),
+      'Aïcha range des cahiers sur une étagère dans la papeterie où elle travaille.', '/lib/images/grammaire/theorie/frise-depuis-lundi.webp'),
     scene('La durée', 'Aïcha travaille de 9 heures à 11 heures demain.', 'Je travaille {c}pendant{/c} deux heures.',
-      'Un trait relie 9 heures et 11 heures. L’intervalle dure deux heures.', '/lib/images/grammaire/theorie/duree-de-neuf-a-onze-heures.webp'),
+      'Aïcha montre un créneau dans son agenda, au comptoir de la papeterie.', '/lib/images/grammaire/theorie/duree-de-neuf-a-onze-heures.webp'),
   ], ['Avec {c}depuis{/c}, l’action a commencé et continue au moment dont tu parles.', '{c}Pendant{/c} donne la durée de l’action, au passé, au présent ou au futur.'],
   'Complète avec « depuis » ou « pendant ».', [
     exercise('J’habite ici ___ juin. J’habite toujours ici.', 'depuis', 'Juin indique le début et j’habite encore ici.'),

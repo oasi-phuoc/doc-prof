@@ -15,6 +15,7 @@ import type {
 } from '@/tcf/types'
 import { TcfFormMarginIcons } from './TcfFormIcons'
 import { TcfImage } from './TexteSupport'
+import { PlayerAudio } from './PlayerAudio'
 import { WorksheetSettings } from '@/components/generator/WorksheetSettings'
 
 const INLINE_BLANK_RE = /_{3,}|_ _ _/g
@@ -167,11 +168,11 @@ function Enonce({
   )
 }
 
-function AudioFrameHead({ label, audioSrc }: { label: string; audioSrc?: string }) {
+function AudioFrameHead({ label, audioSrc, withQr }: { label: string; audioSrc?: string; withQr?: boolean }) {
   return (
     <div className={`tcf-audio-frame-head${audioSrc ? ' has-player' : ''}`}>
       <span className={`tcf-audio-frame-label${label.startsWith('Audio ') ? ' is-audio' : ''}`}>{label}</span>
-      {audioSrc ? (
+      {audioSrc && withQr ? <PlayerAudio src={audioSrc} /> : audioSrc ? (
         <audio className="tcf-audio-frame-player no-print" aria-label={`Enregistrement — ${label}`} controls preload="none" src={audioSrc}>
           Écoutez l’enregistrement.
         </audio>
@@ -397,7 +398,9 @@ export function QuestionLignes({
 export function AudioCadre({
   audioLabel,
   audioSrc,
+  showAudioInStudent,
   questions,
+  children,
   mode,
   onSelectForm,
   blankStyle,
@@ -408,7 +411,9 @@ export function AudioCadre({
   blankStyle?: 'line' | 'dots'
   audioLabel: string
   audioSrc?: string
+  showAudioInStudent?: boolean
   questions: TcfCadreQuestion[]
+  children?: ReactNode
   mode: PreviewMode
   onSelectForm?: (modeIndex: number, form: TcfTypeReponse) => void
   pageBreakBefore?: number[]
@@ -417,8 +422,9 @@ export function AudioCadre({
 }) {
   return (
     <div className="tcf-question is-audio-frame is-audio-cadre">
-      <AudioFrameHead label={audioLabel} audioSrc={mode === 'answers' ? audioSrc : undefined} />
+      <AudioFrameHead label={audioLabel} audioSrc={mode === 'answers' || showAudioInStudent ? audioSrc : undefined} withQr={showAudioInStudent} />
       <div className="tcf-audio-frame-body tcf-audio-cadre-body">
+        {children}
         {questions.map((q, questionIndex) => {
           const formSelect = q.formSelect
           const active = formSelect?.active

@@ -27,7 +27,7 @@ export function splitTcfAudioQuestionPages(page: WorksheetPage, includeItemCuts 
     }
     block.items.forEach((item, itemIndex) => {
       const frame = item.tcf
-      if (frame?.kind === 'audio_cadre') {
+      if (frame?.kind === 'audio_cadre' && frame.questions.length) {
         let questions: typeof frame.questions = []
         const appendFrame = () => {
           if (!questions.length) return

@@ -31,6 +31,20 @@ Pour chaque remplacement, utiliser un visuel individuel 4:3 dans le style semi-r
 - Les autres emplacements couvrent trois villes, sept lacs, sept cours d’eau et trois paysages. Les 46 vues géographiques et les deux scènes B1 restent à compléter. [Images à produire](images-a-produire.md)
 - Les supports de compréhension écrite et de production ont été illustrés. Les exercices d’écoute utilisent un visuel de contexte lorsqu’il laisse l’information à trouver dans l’audio. [Sources de l’atlas](sources-atlas.md)
 
+## Refonte des formats
+
+| Périmètre | État |
+|---|---|
+| Théorie et lexique | Les 15 thèmes ouvrent les théories par un exemple illustré et terminent par un essai. Les lexiques présentent un visuel de contexte. |
+| CO | Les 15 activités reprennent le cadre audio de TCF. Toutes proposent le tableau Vrai ou faux de Grammaire avec trois affirmations et leur correction. La piste garde son lecteur, son QR et sa transcription. |
+| CE | Les 15 documents et leurs questions utilisent le rendu TCF. |
+| PO | Les 15 activités utilisent la présentation TCF des situations orales. Le modèle apparaît dans le corrigé. |
+| PE | Les 15 activités reprennent le cadre d’écriture et la grille de correction de TCF. |
+| Atlas et recettes | Les cartes, le tableau des 26 cantons et les galeries restent accessibles. Les identifiants existants et les contenus personnalisés sont conservés. |
+| Réception | La vérification d’impression A4 et double A5 et l’essai en classe restent à faire. |
+
+[Formats des fiches](formats-fiches.md)
+
 ## Médias
 
 - Les pistes sont des voix françaises de synthèse, à partir des transcriptions de [la banque](../../src/societe/parcours/). Le corrigé affiche la transcription pour une lecture par l’enseignant.

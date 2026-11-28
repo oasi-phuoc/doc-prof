@@ -175,7 +175,7 @@ function buildSingleBlock(
       items: vocabulaire.items,
     }
   }
-  const societe = tryGenerateSocieteBlock(config)
+  const societe = tryGenerateSocieteBlock(config, rng)
   if (societe) {
     return {
       title: fallbackTitle,
@@ -823,7 +823,9 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
       return
     }
 
-    const audioQuestionPages = isTpfFamilyDomain(page.domain) ? splitTcfAudioQuestionPages(worksheet) : null
+    const audioQuestionPages = page.domain === 'société'
+      ? splitTcfAudioQuestionPages(worksheet, true)
+      : isTpfFamilyDomain(page.domain) ? splitTcfAudioQuestionPages(worksheet) : null
     if (audioQuestionPages) {
       out.push(...audioQuestionPages.map(sheet => ({ ...sheet, configIndex: index })))
       return

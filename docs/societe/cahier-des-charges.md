@@ -34,7 +34,7 @@ La géographie vient en premier. Une courte histoire arrive en A2, quand l’él
 
 ## Fiches et compétences
 
-Chaque thème présente une **théorie**, un **lexique** et une activité par compétence. Les tâches forment un scénario inspiré de fide. L’élève peut écouter un message, lire une confirmation, poser une question et écrire une réponse. Chaque étape peut aussi être travaillée séparément. Les formats de compréhension et de production s’inspirent du DELF. [Scénarios fide](https://fide-info.ch/fr/ressources-didactiques/scenarios) · [DELF tout public](https://www.france-education-international.fr/en/node/105)
+Chaque thème présente une **théorie**, un **lexique** et une activité par compétence. Les tâches forment un scénario inspiré de fide. L’élève peut écouter un message, lire une confirmation, poser une question et écrire une réponse. Chaque étape peut aussi être travaillée séparément. Les formats de compréhension et de production s’inspirent du DELF. Dans le générateur, ils reprennent les vues TCF. La théorie et le réglage des présentations suivent les fiches de Grammaire. [Formats des fiches](formats-fiches.md) [Scénarios fide](https://fide-info.ch/fr/ressources-didactiques/scenarios) · [DELF tout public](https://www.france-education-international.fr/en/node/105)
 
 | Compétence | A1 | A2 | B1 |
 |---|---|---|---|
