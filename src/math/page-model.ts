@@ -41,6 +41,9 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     oralAnswerModes: page.oralAnswerModes,
     grammarCoLevel: page.grammarCoLevel,
     grammarCoAudioId: page.grammarCoAudioId,
+    grammarCoFormat: page.grammarCoFormat,
+    grammarVocabRecall: page.grammarVocabRecall,
+    completionPresentation: page.completionPresentation,
     grammarLevel: page.grammarLevel,
     grammarActivityId: page.grammarActivityId,
     grammarPresentation: page.grammarPresentation,
@@ -124,6 +127,7 @@ export function pageBlocks(page: PageConfig): ExerciseBlock[] {
 
 export function pageAsConfig(page: PageConfig, block: ExerciseBlock): PageConfig {
   return { ...page, ...block, logistiqueBankRevision: block.logistiqueBankRevision, logistiqueTheoryView: block.logistiqueTheoryView, logistiqueSelection: block.logistiqueSelection, logistiqueEvaluation: block.logistiqueEvaluation, logistiqueGapMode: block.logistiqueGapMode, logistiquePresentation: block.logistiquePresentation, phraseCategories: block.phraseCategories, phraseImageLabels:block.phraseImageLabels, phraseImageShownCategories:block.phraseImageShownCategories, phraseSentenceType:block.phraseSentenceType, phraseVoice:block.phraseVoice, grammarCoLevel: block.grammarCoLevel, grammarCoAudioId: block.grammarCoAudioId,
+    grammarCoFormat: block.grammarCoFormat, grammarVocabRecall: block.grammarVocabRecall, completionPresentation: block.completionPresentation,
     grammarLevel:block.grammarLevel,grammarActivityId:block.grammarActivityId,grammarPresentation:block.grammarPresentation,
     grammarBankRevision:block.grammarBankRevision,grammarSnapshot:block.grammarSnapshot,grammarPreview:block.grammarPreview,
     grammarDocumentCount:block.grammarDocumentCount,grammarPageBreakAfterQuestionIds:block.grammarPageBreakAfterQuestionIds,

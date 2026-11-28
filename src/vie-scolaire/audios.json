@@ -891,5 +891,1361 @@
         }
       ]
     }
+  ],
+  "devoirs": [
+    {
+      "id": "devoirs-1",
+      "label": "Vérifier pour quel jour faire l’exercice et où l’écrire",
+      "bankId": "tcf-ss-a2-s8b-co-2",
+      "src": "/lib/audio/tcf/co/ecole/28-école-demander-explication-devoir.mp3",
+      "transcript": "Monsieur, excusez-moi, pour quand devons nous faire ces exercices? Pour mercredi. Nous devons les faire sur le livre ou sur le cahier? Sur le cahier, bien sûr.",
+      "questions": [
+        {
+          "prompt": "Pour quel jour faut-il faire les exercices ?",
+          "answer": "Mercredi",
+          "options": [
+            "Mardi",
+            "Mercredi",
+            "Jeudi"
+          ]
+        },
+        {
+          "prompt": "Où faut-il écrire les réponses ?",
+          "answer": "Dans le cahier",
+          "options": [
+            "Dans le livre",
+            "Dans le cahier",
+            "Sur une feuille à rendre"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "devoirs-1-1",
+          "text": "Un élève demande pour quand faire les exercices.",
+          "correct": true,
+          "evidence": "« Pour quand devons-nous faire ces exercices ? »"
+        },
+        {
+          "id": "devoirs-1-2",
+          "text": "Le professeur demande d’écrire dans le livre.",
+          "correct": false,
+          "evidence": "« Sur le cahier, bien sûr. »"
+        }
+      ]
+    },
+    {
+      "id": "devoirs-2",
+      "label": "Identifier le devoir difficile et la demande d’aide",
+      "bankId": "delf-a2-2021-co-ex4-45",
+      "src": "/lib/audio/tcf/co/temporaire/DELF_A2_2021_Piste_45-2.mp3",
+      "transcript": "– Thibault, est-ce que tu as fait tes devoirs ? – Je n’ai pas tout fait, les maths, c’est difficile pour moi... – Éteins la télévision, et viens ici. – Pfff... – Allez, au travail !",
+      "questions": [
+        {
+          "prompt": "Quelle matière pose problème à Thibault ?",
+          "answer": "Les maths",
+          "options": [
+            "Le français",
+            "Les maths",
+            "L’histoire"
+          ]
+        },
+        {
+          "prompt": "Que lui demande-t-on d’éteindre ?",
+          "answer": "La télévision",
+          "options": [
+            "La lampe",
+            "La télévision",
+            "L’ordinateur"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "devoirs-2-1",
+          "text": "Thibault a déjà fait une partie de ses devoirs.",
+          "correct": true,
+          "evidence": "« Je n’ai pas tout fait. »"
+        },
+        {
+          "id": "devoirs-2-2",
+          "text": "On lui propose d’attendre demain pour travailler.",
+          "correct": false,
+          "evidence": "« Éteins la télévision, et viens ici. »"
+        }
+      ]
+    },
+    {
+      "id": "devoirs-3",
+      "label": "Organiser une séance de révision à deux",
+      "bankId": "tcf-ss-a2-s15-co-1",
+      "src": "/lib/audio/tcf/co/vie-quotidienne/excuse-moi-eric-ai-3.mp3",
+      "transcript": "Astrid, tu veux réviser l'examen de mercredi avec moi ? D'accord. On peut se voir ce soir si tu veux. Je suis libre à partir de 17h. Je ne suis pas disponible ce soir. Demain après-midi, ça te va ? D'accord. Mais à 15h alors. Rendez-vous à la bibliothèque.",
+      "questions": [
+        {
+          "prompt": "Quand les deux personnes vont-elles réviser ensemble ?",
+          "answer": "Demain à 15 h",
+          "options": [
+            "Aujourd’hui à 17 h",
+            "Demain à 15 h",
+            "Mercredi à 15 h"
+          ]
+        },
+        {
+          "prompt": "Où se donnent-elles rendez-vous ?",
+          "answer": "À la bibliothèque",
+          "options": [
+            "À la cantine",
+            "À la bibliothèque",
+            "Au café"
+          ]
+        },
+        {
+          "prompt": "Quel jour a lieu l’examen ?",
+          "answer": "Mercredi",
+          "options": [
+            "Mardi",
+            "Mercredi",
+            "Vendredi"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "devoirs-3-1",
+          "text": "Les deux personnes sont libres ce soir.",
+          "correct": false,
+          "evidence": "« Je ne suis pas disponible ce soir. »"
+        },
+        {
+          "id": "devoirs-3-2",
+          "text": "Le rendez-vous est le lendemain après-midi.",
+          "correct": true,
+          "evidence": "« Demain après-midi, ça te va ? […] Mais à 15 h alors. »"
+        }
+      ]
+    }
+  ],
+  "inscription": [
+    {
+      "id": "inscription-1",
+      "label": "Préparer le dossier d’inscription à l’université",
+      "bankId": "tcf-ss-a1-s5-co-3",
+      "src": "/lib/audio/tcf/co/ecole/03-école-inscription-à-l-université.mp3",
+      "transcript": "Pour l'inscription à l'université, il faut ramener vos relevés de notes, une carte d'identité et un chèque. Vous allez recevoir un message de confirmation quand votre dossier sera validé. N'oubliez pas de ramener une photo pour la fabrication de votre carte d'étudiant. Elle est à récupérer au guichet 320.",
+      "questions": [
+        {
+          "prompt": "Quel document scolaire faut-il apporter ?",
+          "answer": "Des relevés de notes",
+          "options": [
+            "Un emploi du temps",
+            "Des relevés de notes",
+            "Une liste de manuels"
+          ]
+        },
+        {
+          "prompt": "À quoi sert la photo ?",
+          "answer": "À fabriquer la carte d’étudiant",
+          "options": [
+            "À réserver une salle de cours",
+            "À fabriquer la carte d’étudiant",
+            "À confirmer le paiement"
+          ]
+        },
+        {
+          "prompt": "Où faut-il récupérer la carte ?",
+          "answer": "Au guichet 320",
+          "options": [
+            "Au guichet 230",
+            "Au guichet 320",
+            "Dans la salle 320"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "inscription-1-1",
+          "text": "L’université prévoit d’envoyer une confirmation.",
+          "correct": true,
+          "evidence": "« Vous allez recevoir un message de confirmation quand votre dossier sera validé. »"
+        },
+        {
+          "id": "inscription-1-2",
+          "text": "La carte d’étudiant sera expédiée à domicile.",
+          "correct": false,
+          "evidence": "« Elle est à récupérer au guichet 320. »"
+        },
+        {
+          "id": "inscription-1-3",
+          "text": "Une pièce d’identité fait partie des justificatifs.",
+          "correct": true,
+          "evidence": "« Une carte d’identité. »"
+        }
+      ]
+    },
+    {
+      "id": "inscription-2",
+      "label": "Demander une carte et trouver l’amphithéâtre",
+      "bankId": "gram-co-universite-ecole-piste072",
+      "src": "/lib/audio/grammaire/co/universite-ecole/piste072.mp3",
+      "transcript": "Leçon 7, page 47 A l'université Document A. Bonjour monsieur, je suis une nouvelle étudiante. Bonjour. Vous vous appelez comment ? Je m'appelle Yoko Sumida. Vous avez votre carte d'étudiant ? Non. C'est quoi ? C'est la carte pour entrer à la faculté. Vous inscrire à la bibliothèque. Ah oui ! J'ai le formulaire de demande. Très bien. Et excusez-moi. Je cherche le cours d'économie. Où est la salle, s'il vous plaît ? Aujourd'hui, le cours a lieu dans l'Amphi A12. Venez chercher votre carte demain à 10h. Merci. Euh. Je peux venir plus tard ? Vous pouvez venir quand ? Demain, je commence à 9h et je finis à 11h. Venez à 11h alors.",
+      "questions": [
+        {
+          "prompt": "Où a lieu le cours d’économie aujourd’hui ?",
+          "answer": "À l’amphi A12",
+          "options": [
+            "À la bibliothèque",
+            "À l’amphi A12",
+            "À l’amphi B12"
+          ]
+        },
+        {
+          "prompt": "À quelle heure l’étudiante viendra-t-elle finalement chercher sa carte ?",
+          "answer": "11 h",
+          "options": [
+            "10 h",
+            "11 h",
+            "9 h"
+          ]
+        },
+        {
+          "prompt": "Quel document a-t-elle déjà en main ?",
+          "answer": "Un formulaire de demande",
+          "options": [
+            "Sa carte d’étudiante",
+            "Un formulaire de demande",
+            "Un certificat de scolarité"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "inscription-2-1",
+          "text": "La carte permet de s’inscrire à la bibliothèque.",
+          "correct": true,
+          "evidence": "« Vous inscrire à la bibliothèque. »"
+        },
+        {
+          "id": "inscription-2-2",
+          "text": "Son cours finit à 10 h.",
+          "correct": false,
+          "evidence": "« Demain, je commence à 9 h et je finis à 11 h. »"
+        },
+        {
+          "id": "inscription-2-3",
+          "text": "L’étudiante demande de passer plus tard.",
+          "correct": true,
+          "evidence": "« Je peux venir plus tard ? »"
+        }
+      ]
+    },
+    {
+      "id": "inscription-3",
+      "label": "Demander et récupérer un certificat de scolarité",
+      "bankId": "tcf-delf-actif-a1-030-03",
+      "src": "/lib/audio/tcf/co/delf-actif-a1/a1-030-03.mp3",
+      "transcript": "Bonjour Madame. Ma famille a besoin d’un certificat de scolarité au collège. À quel nom ? Carlos Garcia. Très bien, passe à la fin des cours, je prépare ton certificat.",
+      "questions": [
+        {
+          "prompt": "Quel document la famille demande-t-elle ?",
+          "answer": "Un certificat de scolarité",
+          "options": [
+            "Une carte d’étudiant",
+            "Un certificat de scolarité",
+            "Un relevé de notes"
+          ]
+        },
+        {
+          "prompt": "Quand Carlos peut-il récupérer le document ?",
+          "answer": "À la fin des cours",
+          "options": [
+            "Avant le premier cours",
+            "À la fin des cours",
+            "À midi au guichet"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "inscription-3-1",
+          "text": "La personne lui demande son nom.",
+          "correct": true,
+          "evidence": "« À quel nom ? »"
+        },
+        {
+          "id": "inscription-3-2",
+          "text": "Le document est déjà prêt.",
+          "correct": false,
+          "evidence": "« Je prépare ton certificat. »"
+        }
+      ]
+    }
+  ],
+  "papeterie": [
+    {
+      "id": "papeterie-1",
+      "label": "Comprendre l’annonce et la condition pour recevoir une trousse",
+      "bankId": "tcf-ss-a2-s3-co-3",
+      "src": "/lib/audio/tcf/co/magasins/magasins-3-6.mp3",
+      "transcript": "Ton magasin Tipeee te propose tout ce dont tu as besoin pour une rentrée réussie. Cahier, cartable, stylo et si tu présentes ta carte de fidélité au vendeur, il t'offrira une trousse.",
+      "questions": [
+        {
+          "prompt": "Que donne le magasin en cadeau ?",
+          "answer": "Une trousse",
+          "options": [
+            "Un cartable",
+            "Une trousse",
+            "Un cahier"
+          ]
+        },
+        {
+          "prompt": "Que faut-il présenter pour recevoir le cadeau ?",
+          "answer": "Une carte de fidélité",
+          "options": [
+            "La liste de l’école",
+            "Une carte de fidélité",
+            "Le ticket d’un autre magasin"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "papeterie-1-1",
+          "text": "L’annonce cite des stylos.",
+          "correct": true,
+          "evidence": "« Cahier, cartable, stylo. »"
+        },
+        {
+          "id": "papeterie-1-2",
+          "text": "Il suffit de présenter une carte d’identité pour avoir le cadeau.",
+          "correct": false,
+          "evidence": "« Si tu présentes ta carte de fidélité au vendeur. »"
+        }
+      ]
+    },
+    {
+      "id": "papeterie-2",
+      "label": "Trouver le rayon et le prix dans une annonce de rentrée",
+      "bankId": "tcf-delf-actif-a1-013-01",
+      "src": "/lib/audio/tcf/co/delf-actif-a1/a1-013-01.mp3",
+      "transcript": "Pour la rentrée des classes, à partir du 16 août notre magasin offre à notre clientèle des promotions au rayon papeterie situé à droite de l’entrée. Vous avez un large choix d’articles scolaires proposés à moins de 10%. Profitez de cette semaine pour acheter des sacs à dos à 30 €.",
+      "questions": [
+        {
+          "prompt": "Où se trouve le rayon papeterie ?",
+          "answer": "À droite de l’entrée",
+          "options": [
+            "À gauche de l’entrée",
+            "À droite de l’entrée",
+            "Au premier étage"
+          ]
+        },
+        {
+          "prompt": "Combien coûtent les sacs à dos annoncés ?",
+          "answer": "30 €",
+          "options": [
+            "16 €",
+            "30 €",
+            "10 €"
+          ]
+        },
+        {
+          "prompt": "À partir de quelle date commence la promotion ?",
+          "answer": "Le 16 août",
+          "options": [
+            "Le 10 août",
+            "Le 16 août",
+            "Le 30 août"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "papeterie-2-1",
+          "text": "L’annonce concerne la rentrée scolaire.",
+          "correct": true,
+          "evidence": "« Pour la rentrée des classes. »"
+        },
+        {
+          "id": "papeterie-2-2",
+          "text": "Le prix annoncé est de 30 CHF.",
+          "correct": false,
+          "evidence": "« Des sacs à dos à 30 €. »"
+        }
+      ]
+    },
+    {
+      "id": "papeterie-3",
+      "label": "Repérer les fournitures d’une autre annonce de rentrée",
+      "bankId": "tcf-delf-actif-a2-007-05",
+      "src": "/lib/audio/tcf/co/delf-actif-a2/a2-007-05.mp3",
+      "transcript": "En raison de la rentrée des classes notre magasin vous offre des promotions au rayon papeterie. Profitez de nos prix sur les cahiers, les classeurs et les trousses",
+      "questions": [
+        {
+          "prompt": "Quel rayon annonce des promotions ?",
+          "answer": "La papeterie",
+          "options": [
+            "Les vêtements",
+            "La papeterie",
+            "L’informatique"
+          ]
+        },
+        {
+          "prompt": "Quels articles sont cités ensemble ?",
+          "answer": "Des cahiers, des classeurs et des trousses",
+          "options": [
+            "Des stylos, des sacs et des livres",
+            "Des cahiers, des classeurs et des trousses",
+            "Des ciseaux, des règles et de la colle"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "papeterie-3-1",
+          "text": "La rentrée est la raison de la promotion.",
+          "correct": true,
+          "evidence": "« En raison de la rentrée des classes. »"
+        },
+        {
+          "id": "papeterie-3-2",
+          "text": "L’annonce cite des ordinateurs.",
+          "correct": false,
+          "evidence": "« Les cahiers, les classeurs et les trousses. »"
+        }
+      ]
+    }
+  ],
+  "foyer": [
+    {
+      "id": "foyer-1",
+      "label": "Comprendre un message sur la poubelle et les lumières",
+      "bankId": "tcf-ss-a1-s16-co-4",
+      "src": "/lib/audio/tcf/co/maison/les-cles-voiture-sont.mp3",
+      "transcript": "Les clés de la voiture sont posées sur la table du salon à côté du pot de fleurs. N'oublie pas de sortir la poubelle, elle est dans la cuisine à droite du frigo. Éteins toutes les lumières avant de partir et fais attention sur la route, il y a des averses.",
+      "questions": [
+        {
+          "prompt": "Où sont les clés de la voiture ?",
+          "answer": "Sur la table du salon",
+          "options": [
+            "Dans le frigo",
+            "Sur la table du salon",
+            "Près de la poubelle"
+          ]
+        },
+        {
+          "prompt": "Où se trouve la poubelle ?",
+          "answer": "À droite du frigo",
+          "options": [
+            "Sous la table du salon",
+            "À droite du frigo",
+            "À gauche de l’évier"
+          ]
+        },
+        {
+          "prompt": "Que faut-il éteindre avant de partir ?",
+          "answer": "Toutes les lumières",
+          "options": [
+            "Le chauffage",
+            "Toutes les lumières",
+            "La télévision"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "foyer-1-1",
+          "text": "Il pleut par moments.",
+          "correct": true,
+          "evidence": "« Il y a des averses. »"
+        },
+        {
+          "id": "foyer-1-2",
+          "text": "La poubelle est dans le salon.",
+          "correct": false,
+          "evidence": "« Elle est dans la cuisine. »"
+        },
+        {
+          "id": "foyer-1-3",
+          "text": "La personne doit sortir la poubelle.",
+          "correct": true,
+          "evidence": "« N’oublie pas de sortir la poubelle. »"
+        }
+      ]
+    },
+    {
+      "id": "foyer-2",
+      "label": "Répartir les courses, le repas et le dessert",
+      "bankId": "gram-co-loisirs-a2-piste_103",
+      "src": "/lib/audio/grammaire/co/loisirs/a2/piste_103.mp3",
+      "transcript": "Page 87. Exercice 2. C'est bon Clément, j'ai fait les courses pour samedi, mais tu pourrais apporter un dessert parce que je suis nul en pâtisserie. Bien sûr, et merci beaucoup de préparer le repas Benjamin. Avec plaisir, j'adore cuisiner, ça me détend.",
+      "questions": [
+        {
+          "prompt": "Que demande Benjamin à Clément ?",
+          "answer": "D’apporter le dessert",
+          "options": [
+            "De faire les courses",
+            "D’apporter le dessert",
+            "De préparer tout le repas"
+          ]
+        },
+        {
+          "prompt": "Que fait Benjamin pour samedi ?",
+          "answer": "Il prépare le repas",
+          "options": [
+            "Il achète le dessert",
+            "Il prépare le repas",
+            "Il commande au restaurant"
+          ]
+        },
+        {
+          "prompt": "Pourquoi Benjamin aime-t-il cuisiner ?",
+          "answer": "Ça le détend",
+          "options": [
+            "Ça lui prend peu de temps",
+            "Ça le détend",
+            "Ça lui évite de faire les courses"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "foyer-2-1",
+          "text": "Les courses sont déjà faites.",
+          "correct": true,
+          "evidence": "« J’ai fait les courses pour samedi. »"
+        },
+        {
+          "id": "foyer-2-2",
+          "text": "Benjamin dit qu’il est fort en pâtisserie.",
+          "correct": false,
+          "evidence": "« Je suis nul en pâtisserie. »"
+        }
+      ]
+    },
+    {
+      "id": "foyer-3",
+      "label": "Identifier la tâche à faire avant un rendez-vous",
+      "bankId": "tcf-ssx-a2-conversation-32-co-4",
+      "src": "/lib/audio/tcf/co/presenter/moyen-a2__conversation-32-3.mp3",
+      "transcript": "Kévin, range ta chambre tout de suite. Mais maman, j'ai rendez-vous avec mes amis. Non, d'abord, tu fais le ménage dans ta chambre.",
+      "questions": [
+        {
+          "prompt": "Quelle tâche doit faire Kévin ?",
+          "answer": "Ranger sa chambre",
+          "options": [
+            "Laver la vaisselle",
+            "Ranger sa chambre",
+            "Sortir la poubelle"
+          ]
+        },
+        {
+          "prompt": "Pourquoi veut-il partir ?",
+          "answer": "Il a rendez-vous avec des amis",
+          "options": [
+            "Il doit faire des courses",
+            "Il a rendez-vous avec des amis",
+            "Il part à l’école"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "foyer-3-1",
+          "text": "Le ménage passe avant le rendez-vous.",
+          "correct": true,
+          "evidence": "« D’abord, tu fais le ménage dans ta chambre. »"
+        },
+        {
+          "id": "foyer-3-2",
+          "text": "La mère lui dit qu’il peut ranger demain.",
+          "correct": false,
+          "evidence": "« Range ta chambre tout de suite. »"
+        }
+      ]
+    }
+  ],
+  "immeuble": [
+    {
+      "id": "immeuble-1",
+      "label": "Signaler des vélos et des bouteilles dans les espaces communs",
+      "bankId": "gram-co-reglement-immeuble-piste071",
+      "src": "/lib/audio/grammaire/co/reglement-immeuble/piste071.mp3",
+      "transcript": "Page 45. Exercice 5. Bonjour Monsieur Garant. Vous allez bien ? Ça va, merci. Et vous ? Ça va, mais il y a des vélos dans le hall. Et on ne peut plus passer. Ah bon ? Mais nous avons un local à vélo. Oui. Et puis il y a aussi des bouteilles dans les escaliers. Mais nous avons un local à poubelle. Et une poubelle pour le verre. Et il y a le chien de Madame Martin. Il n'est pas en laisse. Il est gros, mais il n'est pas méchant. Et puis... Elle fume dans les couloirs. Ouh là là. Et le règlement, alors ?",
+      "questions": [
+        {
+          "prompt": "Pourquoi les vélos posent-ils problème ?",
+          "answer": "Ils bloquent le passage dans le hall",
+          "options": [
+            "Ils sont sales",
+            "Ils bloquent le passage dans le hall",
+            "Ils occupent toutes les places du garage"
+          ]
+        },
+        {
+          "prompt": "Où trouve-t-on les bouteilles ?",
+          "answer": "Dans les escaliers",
+          "options": [
+            "Dans le garage",
+            "Dans les escaliers",
+            "Dans l’ascenseur"
+          ]
+        },
+        {
+          "prompt": "Où faut-il jeter le verre ?",
+          "answer": "Dans un bac pour le verre",
+          "options": [
+            "Avec les vélos",
+            "Dans un bac pour le verre",
+            "Dans le hall"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "immeuble-1-1",
+          "text": "L’immeuble dispose d’un local à vélos.",
+          "correct": true,
+          "evidence": "« Nous avons un local à vélo. »"
+        },
+        {
+          "id": "immeuble-1-2",
+          "text": "Le chien de Madame Martin est tenu en laisse.",
+          "correct": false,
+          "evidence": "« Il n’est pas en laisse. »"
+        },
+        {
+          "id": "immeuble-1-3",
+          "text": "Une voisine fume dans les couloirs.",
+          "correct": true,
+          "evidence": "« Elle fume dans les couloirs. »"
+        }
+      ]
+    },
+    {
+      "id": "immeuble-2",
+      "label": "Identifier le local à vélos et l’affichage du règlement",
+      "bankId": "gram-co-reglement-immeuble-piste061",
+      "src": "/lib/audio/grammaire/co/reglement-immeuble/piste061.mp3",
+      "transcript": "Leçon 6, page 41. Le règlement de l'immeuble. Document A. Bonjour monsieur. Bonjour, madame. Vous êtes nouvelle dans l'immeuble, non ? Oui. Je suis votre nouvelle voisine. Est-ce que votre nom est déjà sur la boîte aux lettres ? Oui, regardez. Catherine Sol Bienvenue. C'est un immeuble calme. Oui, j'ai un chien. Mais il ne fait pas de bruit. Très bien. Mais vous le tenez en laisse. Bien sûr. Et j'ai une question. On peut ranger vélos où il y a un local à vélo à côté du garage. Merci. Et il y a un règlement pour l'immeuble ? Oui, regardez, dans le hall d'entrée. Et il y a un mot dans l'ascenseur. Merci. A bientôt.",
+      "questions": [
+        {
+          "prompt": "Où se trouve le local à vélos ?",
+          "answer": "À côté du garage",
+          "options": [
+            "Dans l’ascenseur",
+            "À côté du garage",
+            "À côté des boîtes aux lettres"
+          ]
+        },
+        {
+          "prompt": "Où est affiché le règlement ?",
+          "answer": "Dans le hall d’entrée",
+          "options": [
+            "Devant la porte du garage",
+            "Dans le hall d’entrée",
+            "Dans le local à vélos"
+          ]
+        },
+        {
+          "prompt": "Que doit faire la voisine avec son chien ?",
+          "answer": "Le tenir en laisse",
+          "options": [
+            "Le laisser dans le garage",
+            "Le tenir en laisse",
+            "Lui mettre une clochette"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "immeuble-2-1",
+          "text": "Le nom de la voisine est sur la boîte aux lettres.",
+          "correct": true,
+          "evidence": "« Oui, regardez. Catherine Sol. »"
+        },
+        {
+          "id": "immeuble-2-2",
+          "text": "Le voisin dit que l’immeuble est bruyant.",
+          "correct": false,
+          "evidence": "« C’est un immeuble calme. »"
+        },
+        {
+          "id": "immeuble-2-3",
+          "text": "Il y a aussi un mot dans l’ascenseur.",
+          "correct": true,
+          "evidence": "« Il y a un mot dans l’ascenseur. »"
+        }
+      ]
+    },
+    {
+      "id": "immeuble-3",
+      "label": "Reconnaître une plainte liée au bruit",
+      "bankId": "gram-co-reglement-immeuble-piste069",
+      "src": "/lib/audio/grammaire/co/reglement-immeuble/piste069.mp3",
+      "transcript": "Page 45. Exercice 3. Allô, Manon, c'est Flo. Ça va ? Non. Mon voisin n'est pas content. J'écoute la musique trop fort et je fais du bruit. Et alors ? Alors je ne respecte pas le règlement et le calme.",
+      "questions": [
+        {
+          "prompt": "Quel bruit gêne le voisin ?",
+          "answer": "La musique trop forte",
+          "options": [
+            "Un chien qui aboie",
+            "La musique trop forte",
+            "Des travaux"
+          ]
+        },
+        {
+          "prompt": "À qui Flo parle-t-elle ?",
+          "answer": "À Manon",
+          "options": [
+            "À la propriétaire",
+            "À Manon",
+            "Au voisin concerné"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "immeuble-3-1",
+          "text": "Flo reconnaît qu’elle gêne le voisin.",
+          "correct": true,
+          "evidence": "« Je fais du bruit. »"
+        },
+        {
+          "id": "immeuble-3-2",
+          "text": "Flo explique qu’elle respecte toujours le calme.",
+          "correct": false,
+          "evidence": "« Je ne respecte pas le règlement et le calme. »"
+        }
+      ]
+    }
+  ],
+  "clubs": [
+    {
+      "id": "clubs-1",
+      "label": "Se renseigner par téléphone sur un essai",
+      "bankId": "gram-co-sport-a2-piste_130",
+      "src": "/lib/audio/grammaire/co/sport/a2/piste_130.mp3",
+      "transcript": "Page 105. Exercice 4. Zen et Fit, bonjour. Bonjour, je voudrais me renseigner sur votre club de fitness. Vous avez des cours de yoga ? Bien sûr. Des cours collectifs, particuliers. Quel type de cours vous intéresse ? Je ne sais pas. Venez essayer. Le premier cours est gratuit. Peut-être. Et pour faire de la musculation ? Nous avons beaucoup de machines dans la salle. Vous vous entraînez quand vous voulez. Nous sommes ouverts de 8h à 22h tous les jours. Bien, je pense prendre un abonnement mensuel. C'est possible ? Bien sûr, mais l'abonnement annuel est plus intéressant.",
+      "questions": [
+        {
+          "prompt": "Quel cours peut-on essayer gratuitement ?",
+          "answer": "Le premier cours de yoga",
+          "options": [
+            "Tous les cours du premier mois",
+            "Le premier cours de yoga",
+            "Un entraînement privé de musculation"
+          ]
+        },
+        {
+          "prompt": "Quels types de cours de yoga sont proposés ?",
+          "answer": "En groupe et en cours particulier",
+          "options": [
+            "En groupe uniquement",
+            "En groupe et en cours particulier",
+            "En ligne uniquement"
+          ]
+        },
+        {
+          "prompt": "À quelle heure ferme le club ?",
+          "answer": "À 22 h",
+          "options": [
+            "À 20 h",
+            "À 22 h",
+            "À 18 h"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "clubs-1-1",
+          "text": "Le club ouvre tous les jours.",
+          "correct": true,
+          "evidence": "« Nous sommes ouverts de 8 h à 22 h tous les jours. »"
+        },
+        {
+          "id": "clubs-1-2",
+          "text": "La personne demande un abonnement annuel au début.",
+          "correct": false,
+          "evidence": "« Je pense prendre un abonnement mensuel. »"
+        },
+        {
+          "id": "clubs-1-3",
+          "text": "Le club a une salle avec des machines.",
+          "correct": true,
+          "evidence": "« Nous avons beaucoup de machines dans la salle. »"
+        }
+      ]
+    },
+    {
+      "id": "clubs-2",
+      "label": "Organiser des cours de guitare selon son niveau",
+      "bankId": "gram-co-loisirs-a2-piste_102",
+      "src": "/lib/audio/grammaire/co/loisirs/a2/piste_102.mp3",
+      "transcript": "Page 87. Exercice 1. Salut Isa, c'est Marine. J'ai téléphoné à ton prof de guitare, et je lui ai expliqué mon niveau. Il va me donner des cours à partir de la semaine prochaine. Et me prêter un instrument. J'ai hâte de recommencer à jouer de la guitare.",
+      "questions": [
+        {
+          "prompt": "De quel instrument Marine va-t-elle jouer ?",
+          "answer": "De la guitare",
+          "options": [
+            "Du piano",
+            "De la guitare",
+            "De la flûte"
+          ]
+        },
+        {
+          "prompt": "Quand commencent les cours ?",
+          "answer": "La semaine prochaine",
+          "options": [
+            "Cet après-midi",
+            "La semaine prochaine",
+            "Dans un mois"
+          ]
+        },
+        {
+          "prompt": "Comment Marine va-t-elle obtenir un instrument ?",
+          "answer": "Le professeur va lui en prêter un",
+          "options": [
+            "Elle va en acheter un",
+            "Le professeur va lui en prêter un",
+            "Elle va prendre celui d’Isa"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "clubs-2-1",
+          "text": "Marine a expliqué son niveau au professeur.",
+          "correct": true,
+          "evidence": "« Je lui ai expliqué mon niveau. »"
+        },
+        {
+          "id": "clubs-2-2",
+          "text": "Marine veut arrêter la musique.",
+          "correct": false,
+          "evidence": "« J’ai hâte de recommencer à jouer de la guitare. »"
+        }
+      ]
+    },
+    {
+      "id": "clubs-3",
+      "label": "Comparer des clubs gratuits proposés par l’école",
+      "bankId": "tcf-ss-a1-s14-co-1",
+      "src": "/lib/audio/tcf/co/vie-quotidienne/salut-c-est-jonathan.mp3",
+      "transcript": "Salut, c'est Jonathan. L'école propose des activités gratuites. Il y a un club photo le lundi midi, ou un cours de gym le mardi soir. Il y a aussi un club musique le jeudi à 17 h 30, mais j'ai mon cours de tennis ce jour-là. On mange ensemble à la cantine demain et on choisit.",
+      "questions": [
+        {
+          "prompt": "Quelle activité a lieu lundi à midi ?",
+          "answer": "Le club photo",
+          "options": [
+            "Le cours de gym",
+            "Le club photo",
+            "Le club musique"
+          ]
+        },
+        {
+          "prompt": "Pourquoi Jonathan ne peut-il pas aller au club musique ?",
+          "answer": "Il a un cours de tennis le même jour",
+          "options": [
+            "Le club est trop cher",
+            "Il a un cours de tennis le même jour",
+            "Il est à la cantine à cette heure"
+          ]
+        },
+        {
+          "prompt": "Où les personnes vont-elles choisir une activité ?",
+          "answer": "À la cantine",
+          "options": [
+            "Au club photo",
+            "À la cantine",
+            "Au gymnase"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "clubs-3-1",
+          "text": "L’école propose des activités gratuites.",
+          "correct": true,
+          "evidence": "« L’école propose des activités gratuites. »"
+        },
+        {
+          "id": "clubs-3-2",
+          "text": "Le cours de gym est le jeudi soir.",
+          "correct": false,
+          "evidence": "« Un cours de gym le mardi soir. »"
+        }
+      ]
+    }
+  ],
+  "sport": [
+    {
+      "id": "sport-1",
+      "label": "Noter l’heure du cours et ce qu’il faut apporter",
+      "bankId": "tcf-ss-a2-s8-co-2",
+      "src": "/lib/audio/tcf/co/loisirs/07-loisirs-cours-de-tennis.mp3",
+      "transcript": "Bonjour, c'est Nathan, ton professeur de tennis. Le cours de mercredi commence à 14 heures car on organise une fête après pour la fin des cours. Le club fournit les gâteaux et les bonbons. Est-ce que tu pourrais apporter à boire ? Les parents peuvent venir à 13 h 30 pour aider à installer les décorations. Un photographe sera là pour faire des photos souvenirs et nous organisons aussi une grande vente de raquettes de tennis. Avec l'argent, on pourra payer les travaux du gymnase.",
+      "questions": [
+        {
+          "prompt": "À quelle heure commence le cours mercredi ?",
+          "answer": "14 h",
+          "options": [
+            "13 h 30",
+            "14 h",
+            "15 h"
+          ]
+        },
+        {
+          "prompt": "Que demande Nathan d’apporter ?",
+          "answer": "De quoi boire",
+          "options": [
+            "Des bonbons",
+            "De quoi boire",
+            "Des décorations"
+          ]
+        },
+        {
+          "prompt": "À quoi servira l’argent de la vente ?",
+          "answer": "À payer des travaux dans le gymnase",
+          "options": [
+            "À acheter des gâteaux",
+            "À payer des travaux dans le gymnase",
+            "À payer un voyage de classe"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "sport-1-1",
+          "text": "Les parents peuvent venir aider à 13 h 30.",
+          "correct": true,
+          "evidence": "« Les parents peuvent venir à 13 h 30 pour aider à installer les décorations. »"
+        },
+        {
+          "id": "sport-1-2",
+          "text": "Les élèves doivent apporter les gâteaux.",
+          "correct": false,
+          "evidence": "« Le club fournit les gâteaux et les bonbons. »"
+        },
+        {
+          "id": "sport-1-3",
+          "text": "Un photographe est prévu.",
+          "correct": true,
+          "evidence": "« Un photographe sera là pour faire des photos souvenirs. »"
+        }
+      ]
+    },
+    {
+      "id": "sport-2",
+      "label": "Se mettre d’accord sur le trajet pour un tournoi",
+      "bankId": "tcf-ss-a2-s8b-co-3",
+      "src": "/lib/audio/tcf/co/ecole/29-école-tournoi-basketball.mp3",
+      "transcript": "Qui est-ce qui t'accompagne mercredi au tournoi de basket ? C'est mon père qui m'accompagne. Tu crois que je pourrais venir avec vous ? Oui, pas de problème. Il y a de la place dans la voiture.",
+      "questions": [
+        {
+          "prompt": "À quel événement les élèves vont-ils ?",
+          "answer": "Un tournoi de basket",
+          "options": [
+            "Un entraînement de tennis",
+            "Un tournoi de basket",
+            "Une compétition de natation"
+          ]
+        },
+        {
+          "prompt": "Quel trajet est proposé ?",
+          "answer": "En voiture avec le père d’un élève",
+          "options": [
+            "En bus avec l’équipe",
+            "En voiture avec le père d’un élève",
+            "À pied avec le professeur"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "sport-2-1",
+          "text": "Le tournoi est mercredi.",
+          "correct": true,
+          "evidence": "« Mercredi au tournoi de basket. »"
+        },
+        {
+          "id": "sport-2-2",
+          "text": "Il n’y a plus de place dans la voiture.",
+          "correct": false,
+          "evidence": "« Il y a de la place dans la voiture. »"
+        }
+      ]
+    },
+    {
+      "id": "sport-3",
+      "label": "Distinguer le début du match et le rendez-vous",
+      "bankId": "tcf-a2j-s2-co-3",
+      "src": "/lib/audio/tcf/co/loisirs/le-sport-2.mp3",
+      "transcript": "Salut, c’est Léa. Demain, je vais voir un match de rugby avec mon frère au stade Gallo. C’est à 15 h 30. Tu veux venir ? Rendez-vous à 15 h chez moi. Mon père va nous accompagner avec sa nouvelle voiture. Et après, on ira à pied au parc pour prendre notre goûter. Il y a de très bonnes glaces. Appelle-moi ce soir avant 18 h pour me donner ta réponse.",
+      "questions": [
+        {
+          "prompt": "À quelle heure est le rendez-vous chez Léa ?",
+          "answer": "15 h",
+          "options": [
+            "15 h 30",
+            "15 h",
+            "18 h"
+          ]
+        },
+        {
+          "prompt": "Quel sport Léa veut-elle aller voir ?",
+          "answer": "Le rugby",
+          "options": [
+            "Le tennis",
+            "Le rugby",
+            "Le basket"
+          ]
+        },
+        {
+          "prompt": "Avant quelle heure faut-il donner sa réponse ?",
+          "answer": "18 h ce soir",
+          "options": [
+            "15 h demain",
+            "18 h ce soir",
+            "15 h 30 demain"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "sport-3-1",
+          "text": "Le père les emmène en voiture.",
+          "correct": true,
+          "evidence": "« Mon père va nous accompagner avec sa nouvelle voiture. »"
+        },
+        {
+          "id": "sport-3-2",
+          "text": "Le goûter est prévu au stade.",
+          "correct": false,
+          "evidence": "« On ira à pied au parc pour prendre notre goûter. »"
+        },
+        {
+          "id": "sport-3-3",
+          "text": "Le match commence à 15 h 30.",
+          "correct": true,
+          "evidence": "« Au stade Gallo. C’est à 15 h 30. »"
+        }
+      ]
+    }
+  ],
+  "weekend": [
+    {
+      "id": "weekend-1",
+      "label": "Raconter une promenade du dimanche",
+      "bankId": "gram-co-vie-associative-a2-piste_081",
+      "src": "/lib/audio/grammaire/co/vie-associative/a2/piste_081.mp3",
+      "transcript": "Page 69. exercice 4. Dimanche, je me suis promené en montagne avec le club Alpin. Tu es sportif, je vois. Non, pas vraiment. Je me suis investi dans ce club parce que j'aime la nature et la vie associative. Mais alors, tu fais quoi ? Avec d'autres bénévoles, on organise les randonnées, on informe les membres du club, on prend les inscriptions. Mais ce n'est pas amusant ! Si ! Je rencontre de nouvelles personnes toutes les semaines. On partage nos idées, on fait des projets. J'adore !",
+      "questions": [
+        {
+          "prompt": "Qu’a fait la personne dimanche ?",
+          "answer": "Elle s’est promenée en montagne",
+          "options": [
+            "Elle est allée à la piscine",
+            "Elle s’est promenée en montagne",
+            "Elle a joué au tennis"
+          ]
+        },
+        {
+          "prompt": "Que font les bénévoles pour le club ?",
+          "answer": "Ils organisent les randonnées",
+          "options": [
+            "Ils réparent des vélos",
+            "Ils organisent les randonnées",
+            "Ils tiennent un restaurant"
+          ]
+        },
+        {
+          "prompt": "Qu’est-ce qui plaît à la personne dans le club ?",
+          "answer": "Rencontrer de nouvelles personnes",
+          "options": [
+            "Se préparer pour une compétition",
+            "Rencontrer de nouvelles personnes",
+            "Gagner de l’argent"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "weekend-1-1",
+          "text": "La personne aime la nature et la vie associative.",
+          "correct": true,
+          "evidence": "« J’aime la nature et la vie associative. »"
+        },
+        {
+          "id": "weekend-1-2",
+          "text": "Les bénévoles ne s’occupent jamais des inscriptions.",
+          "correct": false,
+          "evidence": "« On prend les inscriptions. »"
+        }
+      ]
+    },
+    {
+      "id": "weekend-2",
+      "label": "Distinguer le film vu hier et la proposition pour demain",
+      "bankId": "gram-co-loisirs-a2-piste_095",
+      "src": "/lib/audio/grammaire/co/loisirs/a2/piste_095.mp3",
+      "transcript": "Page 81. Exercice 2. Salut Thomas ! Ça te dit de voir un film en plein air ? Hier, j'ai vu « Intouchables » au Jardin public et j'ai adoré. Demain, le film, c'est \"Hors normes\" et j'aimerais bien le voir. C'est gratuit et on peut réserver les places en ligne. Je peux les prendre si tu veux. Rappelle-moi pour me dire.",
+      "questions": [
+        {
+          "prompt": "Quel film la personne a-t-elle vu hier ?",
+          "answer": "Intouchables",
+          "options": [
+            "Hors normes",
+            "Intouchables",
+            "Un documentaire"
+          ]
+        },
+        {
+          "prompt": "À quoi invite-t-elle Thomas ?",
+          "answer": "À voir un film en plein air",
+          "options": [
+            "À réserver une table",
+            "À voir un film en plein air",
+            "À regarder un film chez elle"
+          ]
+        },
+        {
+          "prompt": "Comment peut-on réserver ?",
+          "answer": "En ligne",
+          "options": [
+            "Par lettre",
+            "En ligne",
+            "Au guichet de l’école"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "weekend-2-1",
+          "text": "Le film proposé est gratuit.",
+          "correct": true,
+          "evidence": "« C’est gratuit. »"
+        },
+        {
+          "id": "weekend-2-2",
+          "text": "Thomas est invité à la séance d’hier.",
+          "correct": false,
+          "evidence": "« Demain, le film, c’est Hors normes. »"
+        }
+      ]
+    },
+    {
+      "id": "weekend-3",
+      "label": "Reconstituer les activités d’une sortie passée",
+      "bankId": "gram-co-sport-a2-piste_122",
+      "src": "/lib/audio/grammaire/co/sport/a2/piste_122.mp3",
+      "transcript": "Leçon 16 page 101. Faire du sport. Document A. Ah, te voilà Christophe. Alors, le parcours de santé, c'était comment ? Génial ! C'était formidable, même s'il faisait un peu froid. C'est vrai ? Oui. J'ai passé une journée dans une salle de gym parfaite. La nature. Et qu'est-ce que tu as fait, alors ? J'ai fait du sport en plein air, j'ai couru, j'ai sauté, j'ai marché. Sympa ! C'était excellent. Je me sens en pleine forme aujourd'hui. Et toi, Sylvie ? Ben, tu sais, j'adore danser. Alors, je me suis inscrite à un stage d'initiation à la Zumba. Et c'était nul. En plus, maintenant j'ai des courbatures. Dommage. Tu veux découvrir le parcours de santé avec moi ? Les deux monitrices sont vraiment sympas. Oui, peut-être. Je ne suis pas très sportive, tu sais. Mais tu fais bien du tennis. Oui, je joue au tennis avec mes enfants. Tu skis en hiver, tu fais de la natation. Allez, t'es une vraie championne ! Je n'ai pas gagné de médaille aux Jeux Olympiques quand même !",
+      "questions": [
+        {
+          "prompt": "Qu’a fait Christophe pendant sa sortie ?",
+          "answer": "Il a couru, sauté et marché",
+          "options": [
+            "Il a fait de la Zumba",
+            "Il a couru, sauté et marché",
+            "Il a joué au tennis avec ses enfants"
+          ]
+        },
+        {
+          "prompt": "Quelle activité Sylvie a-t-elle essayée ?",
+          "answer": "La Zumba",
+          "options": [
+            "Le ski",
+            "La Zumba",
+            "La natation"
+          ]
+        },
+        {
+          "prompt": "Comment Christophe se sent-il aujourd’hui ?",
+          "answer": "En pleine forme",
+          "options": [
+            "Fatigué et déçu",
+            "En pleine forme",
+            "Inquiet pour son prochain cours"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "weekend-3-1",
+          "text": "Christophe a aimé son parcours de santé.",
+          "correct": true,
+          "evidence": "« C’était formidable. »"
+        },
+        {
+          "id": "weekend-3-2",
+          "text": "Sylvie a apprécié son cours de Zumba.",
+          "correct": false,
+          "evidence": "« Et c’était nul. »"
+        },
+        {
+          "id": "weekend-3-3",
+          "text": "Christophe propose à Sylvie de découvrir le parcours.",
+          "correct": true,
+          "evidence": "« Tu veux découvrir le parcours de santé avec moi ? »"
+        }
+      ]
+    }
+  ],
+  "vacances": [
+    {
+      "id": "vacances-1",
+      "label": "Préparer une balade pendant les vacances",
+      "bankId": "gram-co-vacances-a2-piste_110",
+      "src": "/lib/audio/grammaire/co/vacances/a2/piste_110.mp3",
+      "transcript": "Page 93. exercice 1. Les enfants, on va au phare de Grave à vélo. C'est une balade de 45 minutes dans la forêt. Si vous voulez, on peut visiter le phare. Il y a une plage à côté. Donc, prenez vos maillots et serviettes pour vous baigner.",
+      "questions": [
+        {
+          "prompt": "Comment le groupe va-t-il au phare ?",
+          "answer": "À vélo",
+          "options": [
+            "En bus",
+            "À vélo",
+            "À pied"
+          ]
+        },
+        {
+          "prompt": "Combien de temps dure la balade ?",
+          "answer": "45 minutes",
+          "options": [
+            "30 minutes",
+            "45 minutes",
+            "Une heure"
+          ]
+        },
+        {
+          "prompt": "Que faut-il prendre pour se baigner ?",
+          "answer": "Des maillots et des serviettes",
+          "options": [
+            "Des bottes et des vestes",
+            "Des maillots et des serviettes",
+            "Des livres et des crayons"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "vacances-1-1",
+          "text": "Une plage est près du phare.",
+          "correct": true,
+          "evidence": "« Il y a une plage à côté. »"
+        },
+        {
+          "id": "vacances-1-2",
+          "text": "Le groupe doit obligatoirement visiter le phare.",
+          "correct": false,
+          "evidence": "« Si vous voulez, on peut visiter le phare. »"
+        }
+      ]
+    },
+    {
+      "id": "vacances-2",
+      "label": "Comparer les activités et repérer celle qui demande une réservation",
+      "bankId": "gram-co-vacances-a2-piste_106",
+      "src": "/lib/audio/grammaire/co/vacances/a2/piste_106.mp3",
+      "transcript": "Leçon 14, page 89. Passer des vacances à la mer. Document A. Bonjour madame, bonjour monsieur, je peux vous renseigner? Bonjour monsieur, on est ici pour une semaine de vacances et on voudrait savoir ce qu'il y a à faire dans la région. Alors, si vous aimez l'histoire, je vous recommande de visiter l'Église. Nous proposons aussi une visite guidée du village tous les jours. Si vous souhaitez y participer, il faudra réserver. Qu'est-ce qu'on peut faire à vélo ? À vélo, vous pouvez aller au phare de Grave. Il y a deux magasins de location de vélo dans la rue de la plage, si vous voulez. Qu'est-ce que vous nous conseillez pour les enfants ? Ils ont 9 et 12 ans. La plage, bien sûr. Et si vos enfants aiment le sport, CAP33 organise beaucoup d'activités. Char à voile, surf, équitation... Ah ! Ça pourrait les intéresser. Vous avez une brochure ? Oui, monsieur. Tenez.",
+      "questions": [
+        {
+          "prompt": "Pour quelle activité faut-il réserver ?",
+          "answer": "La visite guidée du village",
+          "options": [
+            "La sortie à la plage",
+            "La visite guidée du village",
+            "La balade à vélo au phare"
+          ]
+        },
+        {
+          "prompt": "Où peut-on louer des vélos ?",
+          "answer": "Dans la rue de la plage",
+          "options": [
+            "À côté de l’église",
+            "Dans la rue de la plage",
+            "Dans le phare"
+          ]
+        },
+        {
+          "prompt": "Que propose CAP33 ?",
+          "answer": "Des activités sportives",
+          "options": [
+            "Des leçons d’histoire",
+            "Des activités sportives",
+            "Des locations de chambres"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "vacances-2-1",
+          "text": "La famille vient pour une semaine.",
+          "correct": true,
+          "evidence": "« On est ici pour une semaine de vacances. »"
+        },
+        {
+          "id": "vacances-2-2",
+          "text": "La personne propose la piscine pour les enfants.",
+          "correct": false,
+          "evidence": "« La plage, bien sûr. »"
+        },
+        {
+          "id": "vacances-2-3",
+          "text": "Il est possible d’aller au phare à vélo.",
+          "correct": true,
+          "evidence": "« À vélo, vous pouvez aller au phare de Grave. »"
+        }
+      ]
+    },
+    {
+      "id": "vacances-3",
+      "label": "Comprendre les conditions d’un cours de surf pour débutants",
+      "bankId": "gram-co-vacances-a2-piste_112",
+      "src": "/lib/audio/grammaire/co/vacances/a2/piste_112.mp3",
+      "transcript": "Page 93. Exercice 3. Bonjour, je suis ici pour une semaine et je voudrais prendre des cours de surf, mais je suis débutante. Aucun problème. Vous savez nager ? Oui, mais s'il y a des grosses vagues, j'ai peur. Ne vous inquiétez pas, c'est calme en ce moment. Alors, on a un groupe débutant le matin de 9h à 10h. C'est 100€ pour la semaine et on vous prête la combinaison et la planche de surf.",
+      "questions": [
+        {
+          "prompt": "À quelle heure a lieu le groupe débutant ?",
+          "answer": "De 9 h à 10 h",
+          "options": [
+            "De 10 h à 11 h",
+            "De 9 h à 10 h",
+            "De 16 h à 17 h"
+          ]
+        },
+        {
+          "prompt": "Combien coûte la semaine de cours ?",
+          "answer": "100 €",
+          "options": [
+            "90 €",
+            "100 €",
+            "100 CHF"
+          ]
+        },
+        {
+          "prompt": "Quel équipement le centre prête-t-il ?",
+          "answer": "La combinaison et la planche",
+          "options": [
+            "Le maillot et la serviette",
+            "La combinaison et la planche",
+            "Le vélo et le casque"
+          ]
+        }
+      ],
+      "statements": [
+        {
+          "id": "vacances-3-1",
+          "text": "La personne sait déjà nager.",
+          "correct": true,
+          "evidence": "« Vous savez nager ? Oui. »"
+        },
+        {
+          "id": "vacances-3-2",
+          "text": "Les cours se passent l’après-midi.",
+          "correct": false,
+          "evidence": "« Un groupe débutant le matin. »"
+        }
+      ]
+    }
   ]
 }

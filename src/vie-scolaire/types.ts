@@ -8,6 +8,7 @@ export const VIE_SCOLAIRE_FIRST_TOPIC = 'vie-scolaire-reglement'
 
 export type SchoolPicture = { src: string; alt: string; caption: string }
 export type SchoolWord = { label: string; clue: string; image?: string; pending?: boolean }
+export type SchoolLevel = 'A1' | 'A2' | 'B1'
 export type SchoolAudio = {
   id: string
   label: string
@@ -20,6 +21,7 @@ export type SchoolAudio = {
 
 export type SchoolLesson = {
   id: string
+  level: SchoolLevel
   title: string
   objective: string
   situation: string

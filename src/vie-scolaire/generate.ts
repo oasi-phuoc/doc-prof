@@ -4,13 +4,15 @@ import { completionFicheItems } from '@/grammaire/exercises/completion-fiche'
 import { grammarWordCards } from '@/grammaire/exercises/word-vocab'
 import { shuffle, type Rng } from '@/math/rng'
 import type { MathItem, PageConfig } from '@/math/types'
-import type { TcfExercise } from '@/tcf/types'
+import type { TcfExercise, TcfNiveau } from '@/tcf/types'
 import audioBank from './audios.json'
 import { SCHOOL_KINDS, isSchoolKind } from './catalog'
 import { SCHOOL_LESSONS } from './lecons'
-import { isVieScolaireType, type SchoolAudio, type SchoolLesson, type SchoolPicture } from './types'
+import { isVieScolaireType, type SchoolAudio, type SchoolLesson, type SchoolLevel, type SchoolPicture } from './types'
 
-const reference = 'src/vie-scolaire/lecons.ts'
+const lessonSources = { A1: 'lecons.ts', A2: 'lecons-a2.ts', B1: 'lecons-b1.ts' }
+const levels: Record<SchoolLevel, TcfNiveau> = { A1: 'A0-A1', A2: 'A1-A2', B1: 'A2-B1' }
+const writingLines: Record<SchoolLevel, number> = { A1: 4, A2: 6, B1: 9 }
 const lessons = new Map(SCHOOL_LESSONS.map((lesson) => [lesson.id, lesson]))
 const audios: Record<string, readonly SchoolAudio[]> = audioBank
 
@@ -52,7 +54,7 @@ function theoryItems(lesson: SchoolLesson): MathItem[] {
 function communication(lesson: SchoolLesson, kind: 'ce' | 'co' | 'po' | 'pe', audio?: SchoolAudio): TcfExercise | undefined {
   const common = {
     id: `vie-scolaire-${lesson.id}-${kind}${audio ? `-${audio.id}` : ''}`,
-    niveau: 'A0-A1' as const,
+    niveau: levels[lesson.level],
     theme: lesson.title,
     scene: lesson.title,
     questions: [],
@@ -115,7 +117,7 @@ export function tryGenerateVieScolaireBlock(config: PageConfig, rng: Rng) {
     case 'pratique':
       return {
         instruction: config.completionPresentation === 'gap' ? instruction : 'Choisissez une réponse par phrase.',
-        items: completionFicheItems(lesson.completion.slice(0, Math.max(1, config.count)), config, reference, rng),
+        items: completionFicheItems(lesson.completion.slice(0, Math.max(1, config.count)), config, `src/vie-scolaire/${lessonSources[lesson.level]}`, rng),
       }
     case 'ce':
     case 'co':
@@ -131,7 +133,7 @@ export function tryGenerateVieScolaireBlock(config: PageConfig, rng: Rng) {
           : instruction,
         items: ficheCommunicationItems(exercise, config, rng, {
           reference: 'Vie scolaire',
-          writingLines: 4,
+          writingLines: writingLines[lesson.level],
           statements: audio?.statements,
         }),
       }
