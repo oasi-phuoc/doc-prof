@@ -523,6 +523,66 @@ async function alphaSentenceOrder(context) {
   await page.close()
 }
 
+async function alphaWordGrids(context) {
+  const reading = await context.newPage()
+  await openFiche(reading, theoryRecipe({
+    domain: 'alphabetisation', topic: 'alpha-mots', exerciseType: 'alpha-mots-outils-lire-grille', count: 2,
+  }), false)
+  const settings = reading.locator('#activity-editor')
+  const firstGrid = settings.getByRole('group', { name: 'Grille 1', exact: true })
+  await firstGrid.getByRole('textbox', { name: 'Case 1', exact: true }).fill('aujourd’hui')
+  await firstGrid.getByRole('textbox', { name: 'Titre de la grille', exact: true }).fill('Mots pour lire une histoire')
+  await firstGrid.getByRole('combobox', { name: 'Écriture de la grille', exact: true }).selectOption('cursive')
+  await firstGrid.getByRole('combobox', { name: 'Colonnes de la grille', exact: true }).selectOption('4')
+  const grids = worksheet(reading).locator('.letter-grid-block')
+  assert.match(await grids.first().innerText(), /Mots pour lire une histoire.*aujourd’hui/s)
+  assert.match(await grids.first().locator('.letter-cell').first().evaluate((cell) => getComputedStyle(cell).fontFamily), /Calli Playwrite/)
+  assert.match(await grids.first().locator('.letter-grid').getAttribute('style'), /repeat\(4,/)
+  await settings.getByRole('spinbutton', { name: 'Nombre de grilles', exact: true }).fill('3')
+  assert.equal(await grids.count(), 3)
+  assert.equal(await firstGrid.getByRole('textbox', { name: 'Case 1', exact: true }).inputValue(), 'aujourd’hui')
+  await button(firstGrid, 'Majuscules').click()
+  assert.equal(await grids.first().locator('.letter-cell').first().textContent(), 'AUJOURD’HUI')
+  assert.equal(await reading.locator('.print-only-sheets .letter-cell.selected').count(), 0)
+  await reading.close()
+
+  const cursive = await context.newPage()
+  await openFiche(cursive, theoryRecipe({
+    domain: 'alphabetisation', topic: 'alpha-syllabes', exerciseType: 'alpha-syll-a-lire-cursive',
+    libreItems: [{ layout: 'letter-grid', options: ['ma', 'pa'], labels: ['ma', 'pa'], answer: 'ma · pa' }],
+  }), false)
+  const cursiveGrid = worksheet(cursive).locator('.letter-grid-block')
+  assert.match(await cursiveGrid.getAttribute('class'), /is-cursive/)
+  await cursive.locator('#activity-editor').getByRole('combobox', { name: 'Écriture de la grille', exact: true }).selectOption('script')
+  assert.doesNotMatch(await cursiveGrid.getAttribute('class'), /is-cursive/)
+  await button(cursive, 'Annuler').click()
+  assert.match(await cursiveGrid.getAttribute('class'), /is-cursive/)
+  await cursive.close()
+
+  const circle = await context.newPage()
+  const data = theoryRecipe({
+    domain: 'alphabetisation', topic: 'alpha-phrases', exerciseType: 'alpha-phrase-le-chat-entourer',
+  })
+  data.printCorrections = true
+  await openFiche(circle, data, false)
+  const panel = circle.locator('#activity-editor')
+  await panel.getByRole('textbox', { name: 'Mot ou syllabe à entourer', exact: true }).fill('maison')
+  const printed = circle.locator('.print-only-sheets .letter-grid-block')
+  assert.match(await printed.first().textContent(), /Entourez « maison »/)
+  assert.equal(await printed.first().locator('.letter-cell.selected').count(), 0)
+  const cells = await printed.last().locator('.letter-cell').allTextContents()
+  const targets = cells.flatMap((word, index) => word.toLowerCase() === 'maison' ? [index] : [])
+  assert(targets.length >= 2)
+  for (const position of targets.slice(0, -1)) {
+    await panel.getByRole('textbox', { name: `Case ${position + 1}`, exact: true }).fill('coquillage')
+  }
+  const lastTarget = panel.getByRole('textbox', { name: `Case ${targets.at(-1) + 1}`, exact: true })
+  await lastTarget.fill('verger')
+  assert.equal(await lastTarget.getAttribute('aria-invalid'), 'true')
+  assert.deepEqual(await printed.last().locator('.letter-cell.selected').allTextContents(), ['maison'])
+  await circle.close()
+}
+
 try {
   await server?.listen()
   const baseURL = process.env.BASE_URL ?? 'http://127.0.0.1:' + server.httpServer.address().port
@@ -549,8 +609,9 @@ try {
   await alphaStoryReading(context)
   await alphaDictation(context)
   await alphaSentenceOrder(context)
+  await alphaWordGrids(context)
   await context.close()
-  console.log('Document partagé, QCM illustré, liaison audio, reconnaissance d’images, formulaire, oral, retrait en théorie, lecture, dictées et ordre des phrases vérifiés.')
+  console.log('Document partagé, QCM illustré, liaison audio, reconnaissance d’images, formulaire, oral, retrait en théorie, lecture, dictées, ordre des phrases et grilles vérifiés.')
 } finally {
   await browser?.close()
   await server?.close()

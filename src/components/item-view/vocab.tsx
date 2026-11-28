@@ -356,16 +356,17 @@ export function AudioMatchBlock({ item, mode }: { item: MathItem; mode: PreviewM
 
 export function LetterGridRow({ item, mode }: { item: MathItem; mode: PreviewMode }) {
   const options = item.options ?? []
+  const reading = item.letterGridPurpose === 'reading'
   const targets = new Set(
-    (item.labels ?? []).map((s) => s.toLowerCase()).filter(Boolean),
+    (reading ? [] : item.labels ?? []).map((s) => s.normalize('NFC').toLowerCase()).filter(Boolean),
   )
-  if (targets.size === 0 && item.answer) {
+  if (!reading && targets.size === 0 && item.answer) {
     for (const ch of item.answer) {
       if (/[A-Za-zÀ-ÿ]/.test(ch)) targets.add(ch.toLowerCase())
     }
   }
   const isTable = item.letterGridVariant === 'table'
-  const cols = Math.max(1, item.letterGridCols ?? (isTable ? 8 : 8))
+  const cols = Math.max(1, item.letterGridCols ?? 8)
 
   if (isTable) {
     const rows: string[][] = []
@@ -410,11 +411,12 @@ export function LetterGridRow({ item, mode }: { item: MathItem; mode: PreviewMod
   }
 
   return (
-    <div className="letter-grid-block" aria-label="Grille de lettres">
+    <div className={`letter-grid-block${item.letterGridPurpose ? ' is-word-grid' : ''}${item.letterGridFont === 'cursive' ? ' is-cursive' : ''}`}
+      aria-label={reading ? 'Grille de lecture' : item.letterGridPurpose === 'circle' ? 'Grille de mots à entourer' : 'Grille de lettres'}>
       {item.prompt && <p className="column-prompt">{item.prompt}</p>}
       <div className="letter-grid" role="group" style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}>
         {options.map((letter, index) => {
-          const hit = mode === 'answers' && targets.has(letter.toLowerCase())
+          const hit = mode === 'answers' && targets.has(letter.normalize('NFC').toLowerCase())
           return (
             <span key={`${letter}-${index}`} className={`letter-cell ${hit ? 'selected' : ''}`}>
               {letter}

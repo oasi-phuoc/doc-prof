@@ -495,6 +495,13 @@ export function buildPage(
       const sanitized = sanitizeItemNumberNoise(item as Record<string, unknown>) as MathItem
       const clean = sanitized.logistiqueNarrative && single.logistiqueEvaluation?.mode !== 'histoire'
         ? { ...sanitized, logistiqueNarrative: undefined } : sanitized
+      if (clean.layout === 'letter-grid') {
+        if (alphaKind === 'lire-grille' || alphaKind === 'lire-cursive') {
+          return { ...clean, letterGridPurpose: 'reading' as const, noPoints: true,
+            letterGridFont: clean.letterGridFont ?? (alphaKind === 'lire-cursive' ? 'cursive' : 'script') }
+        }
+        if (alphaKind === 'entourer') return { ...clean, letterGridPurpose: 'circle' as const }
+      }
       if (alphaKind === 'lire-phrases' && clean.layout === 'text') {
         const sentence = clean.prompt ?? clean.answer
         return { ...clean, prompt: sentence, answer: sentence, readingText: true as const, noPoints: true }

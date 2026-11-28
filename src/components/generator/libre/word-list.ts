@@ -13,6 +13,7 @@ export function withGridCells(item: MathItem, cells: string[]): MathItem {
     const text = cells[0] ?? ''
     return { ...item, ...(item.readingText ? { prompt: text } : {}), answer: text }
   }
+  if (item.letterGridPurpose === 'reading') return { ...item, options: cells, labels: cells, answer: cells.join(' · ') }
   if (item.layout === 'mark-letter') return { ...item, markLetterWords: cells, answer: cells.join(' · ') }
   if (item.layout === 'dictee-grid') return { ...item, dicteeWords: cells, answer: cells.join(' · ') }
   if (item.layout === 'read-phrases') return { ...item, readPhrases: cells, answer: cells.join(' · ') }

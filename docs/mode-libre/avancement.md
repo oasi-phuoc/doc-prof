@@ -76,6 +76,12 @@ Le panneau Libre permet de modifier et déplacer les mots proposés, d’ajuster
 
 Le parcours Chromium vérifie le tirage, la reprise d’une ancienne recette, le déplacement des mots et la confirmation du corrigé. L’inventaire raccorde 15 contextes et relève 429 contextes A4 en attente sur 4 430, sans erreur de génération.
 
+### Grilles de lecture et mots à entourer en Alphabétisation
+
+Les grilles de lecture permettent de modifier les cases, le titre, l’écriture script ou cursive, la casse et le nombre de colonnes. Les grilles à entourer proposent le choix de la cible et des autres cases. Le corrigé marque les occurrences de la cible. Le réglage de quantité conserve les grilles personnalisées.
+
+Le parcours Chromium couvre une grille de mots-outils, une ancienne grille de syllabes et une activité à entourer issue d’un récit. L’inventaire raccorde 18 contextes de lecture en grille et 24 contextes à entourer. Sur 4 430 contextes, 387 raccordements A4 restent en attente, dont 15 en Alphabétisation. Aucune erreur de génération n’est relevée.
+
 ### Symétries axiales et centrales en A4
 
 Les quatre exercices de symétrie sur repère donnent accès aux sommets, à l’axe ou au centre Ω, à la taille et à la graduation du repère dans le panneau Libre. L’édition au clavier et le placement sur le repère recalculent le sujet et le corrigé. Une valeur hors du repère conserve la dernière figure applicable. Les contrôles avancés restent dans le panneau Libre.

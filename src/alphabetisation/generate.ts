@@ -74,6 +74,7 @@ function genLireGrille(bankId: string, count: number, rng: Rng, cursive: boolean
         ? 'Lisez les syllabes (écriture cursive).'
         : 'Lisez les syllabes ci-dessous.',
       preferredColumns: 1,
+      bankQuestionCap: blocks.length,
       items: chosen.map((b) =>
         gridItem(b.title, shuffle(rng, [...b.items]).slice(0, 15)),
       ),
@@ -93,6 +94,7 @@ function genLireGrille(bankId: string, count: number, rng: Rng, cursive: boolean
     return {
       instruction: cursive ? 'Lisez les mots-outils (cursive).' : 'Lisez les mots-outils.',
       preferredColumns: 1,
+      bankQuestionCap: cats.length,
       items,
     }
   }
@@ -106,6 +108,7 @@ function genLireGrille(bankId: string, count: number, rng: Rng, cursive: boolean
     return {
       instruction: cursive ? 'Lisez les mots (cursive).' : 'Lisez les mots.',
       preferredColumns: 1,
+      bankQuestionCap: pools.length,
       items: pools.slice(0, count).map((p) =>
         gridItem(p.title, shuffle(rng, p.words).slice(0, 12)),
       ),

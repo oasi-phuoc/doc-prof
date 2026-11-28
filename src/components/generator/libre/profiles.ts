@@ -70,6 +70,8 @@ export function liveEditorProfile(domain: Domain, exerciseType: string, format: 
     : domain === 'soutien-fr' ? parseSoutienType(exerciseType)?.kind : undefined
   if (wordKind === 'lettres' || wordKind === 'lettres-maj' || wordKind === 'lettres-min' ||
     wordKind === 'souligner-maj' || wordKind === 'souligner-min') return 'lettres-et-graphèmes'
+  if (wordKind === 'lire-grille' || wordKind === 'lire-cursive') return 'lecture-en-grille'
+  if (wordKind === 'entourer') return 'mots-a-entourer'
   if (wordKind === 'syllabes' || wordKind === 'syllabes-cv' || wordKind === 'syllabes-long') return 'grille-syllabique'
   if (wordKind === 'dictee' || wordKind === 'dictee-mots') return 'dictee-de-mots'
   if (wordKind === 'lire' || wordKind === 'lire-phrases') return 'lecture-de-phrases'
@@ -144,7 +146,11 @@ export function opensWithoutOverlay(profile: LiveEditorProfile): boolean {
 
 export function isWordListProfile(profile: LiveEditorProfile): boolean {
   return profile === 'lettres-et-graphèmes' || profile === 'grille-syllabique' ||
-    profile === 'dictee-de-mots' || profile === 'lecture-de-phrases'
+    profile === 'dictee-de-mots' || profile === 'lecture-de-phrases' || isAlphaWordGridProfile(profile)
+}
+
+export function isAlphaWordGridProfile(profile: LiveEditorProfile): boolean {
+  return profile === 'lecture-en-grille' || profile === 'mots-a-entourer'
 }
 
 export function isIndependentListProfile(profile: LiveEditorProfile): boolean {

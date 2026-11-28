@@ -212,6 +212,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
   const grammarSituations=activeBlock.grammarPresentation==='scenario-set'
   const isMathGlossary = Boolean(mathGlossaryBank(activeBlock.exerciseType))
   const isAlphaPhraseOrder = soutienKind === 'ordre-phrases'
+  const isAlphaWordGrid = soutienKind === 'lire-grille' || soutienKind === 'lire-cursive' || soutienKind === 'entourer'
   const sheetBlock = activeSheet?.blocks.find((block, index) => (block.sourceBlockIndex ?? index) === safeBlockIndex)
   const sheetItems = sheetBlock?.items ?? []
   const hasOuterColumns = sheetItems.length > 1 &&
@@ -325,7 +326,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                         ? 'Lignes'
                         : isSoutienMotsCount
                           ? 'Mots'
-                          : isMathGlossary ? 'Notions' : isAlphaPhraseOrder ? 'Phrases' : 'QUESTIONS'}
+                          : isMathGlossary ? 'Notions' : isAlphaPhraseOrder ? 'Phrases' : isAlphaWordGrid ? 'Grilles' : 'QUESTIONS'}
                 </span>
                 <input
                   className={`pill-input${questionsInputOverflow ? ' is-overflow' : ''}`}
@@ -334,7 +335,8 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
                       ? 'Nombre de lignes'
                       : isSoutienMotsCount
                         ? 'Nombre de mots'
-                        : isMathGlossary ? 'Nombre de notions' : isAlphaPhraseOrder ? 'Nombre de phrases' : 'Nombre de questions'
+                        : isMathGlossary ? 'Nombre de notions' : isAlphaPhraseOrder ? 'Nombre de phrases'
+                          : isAlphaWordGrid ? 'Nombre de grilles' : 'Nombre de questions'
                   }
                   aria-invalid={questionsInputOverflow}
                   title={

@@ -544,6 +544,8 @@ export type MathItem = {
   letterGridCols?: number
   /** Rendu cercles (lecture) ou tableau sans bordure (Soutien FR). */
   letterGridVariant?: 'circles' | 'table'
+  letterGridPurpose?: 'reading' | 'circle'
+  letterGridFont?: 'script' | 'cursive'
   /** Variante de rendu pour les QCM (orale empilée, cartes vocabulaire). */
   selectVariant?: 'pills' | 'oral' | 'cards'
   /** Bloc de théorie grammaticale (fiche lecture seule). */

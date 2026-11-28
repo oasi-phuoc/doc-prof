@@ -268,7 +268,8 @@ const logisticsCap = logistics && !isLogistiqueReferenceType(logistics.id) ?
   : undefined
 const bankQuestionCap = logisticsCap ?? activeSheetBlock?.bankQuestionCap
 const syllablePairCap = isSoutienRelier && bankQuestionCap !== undefined ? Math.max(1, bankQuestionCap) : undefined
-const alphaWordBankCap = (soutienKind === 'dictee-mots' || soutienKind === 'ordre-phrases') && bankQuestionCap !== undefined
+const alphaWordBankCap = (soutienKind === 'dictee-mots' || soutienKind === 'ordre-phrases' ||
+  soutienKind === 'lire-grille' || soutienKind === 'lire-cursive') && bankQuestionCap !== undefined
   ? Math.max(1, Math.min(baseMaxQuestions, bankQuestionCap)) : undefined
 const audioSeriesCap = soutienBank && audioOrderKind(soutienKind) ? Math.max(1, defaultAudioOrderCapacity(soutienBank, soutienKind)) : undefined
 const maxQuestions = (logisticsCap === undefined ? undefined : Math.max(1, logisticsCap))
