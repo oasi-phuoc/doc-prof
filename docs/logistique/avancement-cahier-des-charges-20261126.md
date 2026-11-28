@@ -418,7 +418,14 @@ La révision `logistique-fondations-formulations-v028` termine la double formula
 | CFC | 80 | 1 420 | 3 444 | 1 259 | 6 123 |
 | AFP | 63 | 1 120 | 2 682 | 974 | 4 776 |
 
-La relecture des 2 485 autres exercices reste ouverte. Les deux formulations d’un exercice comptent pour une seule unité. Les trames d’histoire suivie et les formats encore ouverts figurent dans les lots L1c à L1f.
+La révision `logistique-capacites-formulations-v029` ajoute 346 problèmes reformulés en CFC, dont 292 accessibles en AFP. Elle couvre notamment la capacité d’une zone selon l’orientation, les limites de charge et de position d’un rayonnage, la masse nette, les stocks, les coûts fixes et variables, la facturation et la lecture de données. La recette des modules 402, 403, 408, 602 et 704 couvre 144 configurations et 40 PDF, avec une réserve minimale de 25,03 px. [Formulations des capacités et de la facturation](../../src/logistique/banks/capacites-formulations-v029.ts).
+
+| Diplôme | Modules concernés | Problèmes de calcul reformulés | Vérifications reformulées | Situations reformulées | Total cumulé |
+|---|---:|---:|---:|---:|---:|
+| CFC | 80 | 1 766 | 3 444 | 1 259 | 6 469 |
+| AFP | 63 | 1 412 | 2 682 | 974 | 5 068 |
+
+La relecture des 2 139 autres exercices reste ouverte. Les deux formulations d’un exercice comptent pour une seule unité. Les trames d’histoire suivie et les formats encore ouverts figurent dans les lots L1c à L1f.
 
 ## Commandes
 

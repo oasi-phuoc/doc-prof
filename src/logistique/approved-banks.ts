@@ -290,6 +290,7 @@ import { module306 as independentPalletPhotos306 } from './banks/module-306-v006
 import { module403 as independentStoragePhotos403 } from './banks/module-403-v007.generated.ts'
 import { module404 as independentStoragePhotos404 } from './banks/module-404-v006.generated.ts'
 import { logistiqueMathsWordingRules } from './banks/calculs-formulations-v026'
+import { logistiqueCapacityWordingRules } from './banks/capacites-formulations-v029'
 import { reviewLogistiqueFoundationWording } from './banks/fondations-formulations-v028'
 import { reviewLogistiqueMathsWording, reviewLogistiqueWording } from './banks/formulations-v025'
 import { reviewLogistiqueVerificationWording } from './banks/verification-formulations-v027'
@@ -748,6 +749,10 @@ const clearFoundationWordingPublication: LogistiquePublication = {
   revision: 'logistique-fondations-formulations-v028',
   units: reviewLogistiqueFoundationWording(clearVerificationWordingPublication.units),
 }
+const clearCapacityWordingPublication: LogistiquePublication = {
+  revision: 'logistique-capacites-formulations-v029',
+  units: reviewLogistiqueMathsWording(clearFoundationWordingPublication.units, logistiqueCapacityWordingRules),
+}
 
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
@@ -858,6 +863,7 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   clearMathsWordingPublication,
   clearVerificationWordingPublication,
   clearFoundationWordingPublication,
+  clearCapacityWordingPublication,
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!
