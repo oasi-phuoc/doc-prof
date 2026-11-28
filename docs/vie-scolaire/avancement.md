@@ -12,16 +12,16 @@ Le programme couvre 19 thèmes. Le registre recense 230 pistes de compréhension
 | 4 | Règlement, consignes, matériel, heure, horaires, lieux et routine | Intégré. Théorie FALC, vocabulaire, phrases à compléter et les quatre compétences pour chaque thème. |
 | 5 | Devoirs, inscription, papeterie, tâches domestiques, immeuble, activités extrascolaires, sport, week-end et vacances | Intégré. 63 activités et 27 pistes. |
 | 6 | Examens, vie de classe et sortie au B1 | Intégré. 21 activités et 9 pistes. |
-| 7 | Illustrations définitives | 35 scènes illustrées, 37 à produire et 12 schémas terminés. |
+| 7 | Illustrations définitives | 49 scènes illustrées, 23 à produire et 12 schémas terminés. |
 | 8 | Réception en classe et vérification des impressions | PDF A4 et double A5 contrôlés. L’essai papier et la réception en classe restent à faire. |
 
 ## Détail par thème
 
 | Niveau | Thème | Programme | Banque de la piste pilote | Pistes repérées | Scènes illustrées | Générateur |
 |---|---|---|---|---:|---:|---|
-| A1 | Règlement de l’école | Rédigé | TCF | 8 | 3 / 8 | 7 activités, 3 pistes |
-| A1 | Consignes de classe | Rédigé | TCF | 8 | 3 / 8 | 7 activités, 3 pistes |
-| A1 | Matériel scolaire | Rédigé | TCF | 9 | 1 / 3 | 7 activités, 3 pistes |
+| A1 | Règlement de l’école | Rédigé | TCF | 8 | 8 / 8 | 7 activités, 3 pistes |
+| A1 | Consignes de classe | Rédigé | TCF | 8 | 7 / 8 | 7 activités, 3 pistes |
+| A1 | Matériel scolaire | Rédigé | TCF | 9 | 3 / 3 | 7 activités, 3 pistes |
 | A1 | Lire et dire l’heure | Rédigé | TCF | 8 | 1 / 2 | 7 activités, 3 pistes |
 | A1 | Horaires de l’école | Rédigé | TCF | 21 | 3 / 4 | 7 activités, 3 pistes |
 | A1 | Se repérer dans l’école | Rédigé | TCF | 31 | 2 / 3 | 7 activités, 3 pistes |
@@ -33,13 +33,13 @@ Le programme couvre 19 thèmes. Le registre recense 230 pistes de compréhension
 | A2 | Règlement de l’immeuble | Rédigé | Grammaire | 6 | 3 / 4 | 7 activités, 3 pistes |
 | A2 | Après l’école et les activités extrascolaires | Rédigé | Grammaire | 21 | 3 / 3 | 7 activités, 3 pistes |
 | A2 | Faire du sport | Rédigé | TCF | 12 | 3 / 4 | 7 activités, 3 pistes |
-| A2 | Raconter son week-end | Rédigé | Grammaire | 6 | 1 / 4 | 7 activités, 3 pistes |
+| A2 | Raconter son week-end | Rédigé | Grammaire | 6 | 4 / 4 | 7 activités, 3 pistes |
 | A2 | Les vacances | Rédigé | Grammaire | 8 | 1 / 4 | 7 activités, 3 pistes |
 | B1 | Examens et résultats | Rédigé | TCF | 15 | 1 / 3 | 7 activités, 3 pistes |
 | B1 | Mieux vivre ensemble en classe | Rédigé | Grammaire | 9 | 1 / 3 | 7 activités, 3 pistes |
 | B1 | Organiser une sortie | Rédigé | TCF | 14 | 3 / 4 | 7 activités, 3 pistes |
 
-Les 72 scènes prévues sont en place dans les fiches. 35 utilisent des illustrations existantes du catalogue, avec un texte alternatif adapté. Les 37 emplacements provisoires sont signalés dans l’inventaire, y compris les suites du week-end, de la journée à la maison et du prêt de matériel. Les 8 cadrans et les 4 modèles de consignes sont disponibles. Les tableaux lisibles couvrent aussi les horaires, les devoirs, le budget de papeterie, les tâches, les ateliers, le week-end, les vacances, les examens et le choix d’une sortie. Le matériel scolaire reprend les images existantes. [Banque CO A1–B1](../../src/vie-scolaire/audios.json)
+Les 72 scènes prévues sont en place dans les fiches. 35 utilisent des illustrations existantes du catalogue et 14 ont été créées pour Vie scolaire. 23 emplacements restent provisoires. Les 8 cadrans, les 4 modèles de consignes et les tableaux de classe sont disponibles. [Inventaire des visuels](images-a-produire.md) · [Banque CO A1–B1](../../src/vie-scolaire/audios.json)
 
 Le contrôle du générateur couvre les 133 activités, les deux formats des 57 pistes, leurs transcriptions, leurs chemins média, les corrigés et la relecture d’une recette enregistrée. Les 57 fichiers MP3 ont été décodés et rapprochés de leurs transcriptions sources. L’écoute intégrale reste à faire. [Inventaire des visuels](images-a-produire.md)
 

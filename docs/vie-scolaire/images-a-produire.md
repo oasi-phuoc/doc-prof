@@ -1,6 +1,6 @@
 # Vie scolaire · inventaire des visuels
 
-Les 72 scènes ont un emplacement dans les fiches. 35 scènes reprennent une illustration du catalogue ClairFLE et 37 restent provisoires. Les huit cadrans et les quatre modèles de consignes sont définitifs. Les chemins ci-dessous sont relatifs à `public/lib/images/vie-scolaire/`. Les réemplois gardent le cadrage 4:3 et la définition d’origine. Le registre donne le chemin source et le texte alternatif de chaque scène disponible. Le catalogue affiche le visuel à son chemin d’origine. [Registre des réemplois](../../src/vie-scolaire/illustrations.json)
+Les 72 scènes ont un emplacement dans les fiches. 35 reprennent une illustration du catalogue ClairFLE et 14 illustrations originales complètent le parcours. Sur les 72 scènes, 23 restent provisoires. Les huit cadrans et les quatre modèles de consignes sont définitifs. Les chemins ci-dessous sont relatifs à `public/lib/images/vie-scolaire/`. Les scènes disponibles gardent leur cadrage 4:3 et leur définition d’origine. Le registre conserve leur texte alternatif et, pour les réemplois, leur chemin source. Le catalogue affiche chaque image à son chemin d’origine. [Registre des illustrations](../../src/vie-scolaire/illustrations.json)
 
 Les images de lexique montrent un objet ou un geste identifiable. Une scène de théorie met l’action en évidence et garde un décor simple. Dans une activité de compréhension, les éléments utiles à la question sont lisibles dans le document ou l’audio. Les illustrations définitives respectent le style semi-réaliste de ClairFLE. [Cahier des charges](cahier-des-charges.md)
 
@@ -25,24 +25,24 @@ Vérifier visuellement le cadrage et la lisibilité avant d’affecter une image
 | Chemin prévu | État | Support | Action ou repère attendu |
 |---|---|---|---|
 | `reglement/attendre-son-tour.webp` | Disponible | Théorie, PO | Une élève lève la main et attend pendant qu’un camarade parle. |
-| `reglement/ecouter-un-camarade.webp` | À produire | Théorie | Un élève parle et ses camarades l’écoutent calmement. |
-| `reglement/manger-pendant-la-pause.webp` | À produire | Théorie, CE | Deux élèves mangent leur collation dans l’espace de pause. |
-| `reglement/ranger-le-telephone.webp` | À produire | Lexique, théorie | Une personne range son téléphone dans son sac avant le cours. |
-| `reglement/demander-de-repeter.webp` | À produire | Théorie, PO | Une personne s’adresse à l’enseignante après avoir levé la main, avec un livre ouvert. |
+| `reglement/ecouter-un-camarade.webp` | Disponible | Théorie | Un élève parle et ses camarades l’écoutent calmement. |
+| `reglement/manger-pendant-la-pause.webp` | Disponible | Théorie, CE | Deux élèves mangent leur collation dans l’espace de pause. |
+| `reglement/ranger-le-telephone.webp` | Disponible | Lexique, théorie | Une personne range son téléphone dans son sac avant le cours. |
+| `reglement/demander-de-repeter.webp` | Disponible | Théorie, PO | Une personne s’adresse à l’enseignante après avoir levé la main, avec un livre ouvert. |
 | `reglement/conversation-en-francais.webp` | Disponible | Théorie | Deux personnes font une activité de dialogue en français, avec une fiche structurée entre elles. |
-| `reglement/ranger-sa-place.webp` | À produire | Théorie | Une personne ramasse ses feuilles et rend le matériel partagé. |
+| `reglement/ranger-sa-place.webp` | Disponible | Théorie | Une personne ramasse ses feuilles et rend le matériel partagé. |
 | `reglement/marcher-dans-le-couloir.webp` | Disponible | Théorie, CE | Des élèves marchent dans le couloir en laissant le passage libre. |
 | `consignes/ecouter.webp` | Disponible | Lexique | Une personne regarde celle qui parle et laisse ses affaires posées. |
 | `consignes/regarder.webp` | Disponible | Lexique | Une personne suit avec les yeux le repère que montre l’enseignant. |
-| `consignes/repeter.webp` | À produire | Lexique | Une personne prononce à son tour le mot montré par l’enseignante. |
+| `consignes/repeter.webp` | Disponible | Lexique | Une personne prononce à son tour le mot montré par l’enseignante. |
 | `consignes/lire.webp` | Disponible | Lexique | Une personne lit une ligne, le doigt placé sous le début de la ligne. |
-| `consignes/ouvrir-le-cahier.webp` | À produire | Lexique, théorie | Un cahier s’ouvre. Le geste et la couverture se voient. |
-| `consignes/copier.webp` | À produire | Lexique | Une personne recopie un modèle depuis le tableau sur sa feuille. |
-| `consignes/completer.webp` | À produire | Lexique, théorie | Une personne écrit dans un blanc. La différence entre le modèle et le blanc se voit. |
+| `consignes/ouvrir-le-cahier.webp` | Disponible | Lexique, théorie | Un cahier s’ouvre. Le geste et la couverture se voient. |
+| `consignes/copier.webp` | Disponible | Lexique | Une personne recopie un modèle depuis le tableau sur sa feuille. |
+| `consignes/completer.webp` | Disponible | Lexique, théorie | Une personne écrit dans un blanc. La différence entre le modèle et le blanc se voit. |
 | `consignes/ranger-la-feuille.webp` | À produire | Lexique | Une personne glisse une feuille dans un classeur ouvert. |
 | `materiel/preparer-le-cartable.webp` | Disponible | Théorie | Un sac ouvert près d’une liste de matériel, avec les objets bien séparés. |
-| `materiel/preter-une-regle.webp` | À produire | Théorie, PO | Une personne tend une règle à une autre. |
-| `materiel/rendre-le-materiel.webp` | À produire | Théorie, PO | Les mêmes personnes se rendent la règle après l’activité. |
+| `materiel/preter-une-regle.webp` | Disponible | Théorie, PO | Une personne tend une règle à une autre. |
+| `materiel/rendre-le-materiel.webp` | Disponible | Théorie, PO | Les mêmes personnes se rendent la règle après l’activité. |
 
 ### A1 · Heure et horaires
 
@@ -78,9 +78,9 @@ Vérifier visuellement le cadrage et la lisibilité avant d’affecter une image
 
 | Chemin prévu | État | Support | Action ou repère attendu |
 |---|---|---|---|
-| `week-end/faire-les-courses.webp` | À produire | Théorie, CE | Le personnage du récit choisit des produits avec une liste le samedi matin. |
-| `week-end/jouer-en-salle.webp` | À produire | CE | Le même personnage joue en intérieur, dans l’étape suivante du récit. |
-| `week-end/se-promener-au-parc.webp` | À produire | CE, PO | Le même personnage marche au parc avec sa sœur. |
+| `week-end/faire-les-courses.webp` | Disponible | Théorie, CE | Le personnage du récit choisit des produits avec une liste le samedi matin. |
+| `week-end/jouer-en-salle.webp` | Disponible | CE | Le même personnage joue en intérieur, dans l’étape suivante du récit. |
+| `week-end/se-promener-au-parc.webp` | Disponible | CE, PO | Le même personnage marche au parc avec sa sœur. |
 | `week-end/se-reposer-a-la-maison.webp` | Disponible | Théorie, PE | Une autre personne se repose à la maison, avec un livre à proximité. |
 | `vacances/preparer-le-sac.webp` | À produire | Théorie, lexique | Sac ouvert avec chapeau, serviette, gourde et vêtement léger. |
 | `vacances/sortie-pres-du-lac.webp` | Disponible | CE, PO | Petit groupe en promenade près d’un lac avec un sac de pique-nique. |
