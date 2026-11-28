@@ -102,7 +102,7 @@ import type { ExerciseType } from '@/math/types'
 import { assertGrammarBank } from './validation'
 import { isNegativeGrammarOrder, isProtectedGrammarCo, type GrammarBank, type GrammarLevel } from './types'
 
-/** Editorial pilot only; publication requires a recorded teacher review. */
+/** Banques graduées et historique de leurs relectures. */
 const originalBanks = [...raw, ...specialEr, ...pastContrast, ...directObjects, ...subjunctive, ...have, ...go, ...regularEr, ...ir, ...reOir, ...modals, ...reflexive, ...simpleNegation, ...otherNegations, ...addressForms, ...greetings, ...politeness, ...subjectPronouns, ...origins, ...identities, ...nationalities, ...families, ...familyCompletion,...closedQuestions,...openQuestions,...quelQuestions,...exclamations,...activities,...tonicPronouns,...locations,...directions,...locationArticles,...moments,...durations,...frequencies,...chronology,...demonstratives,...requests,...acceptances,...decriref4,...decriref5,...decriref6,...decriref7,...decriref8,...comparisons,...adjectivePosition,...superlatives,...quantityComparisons,...physicalDescriptions,...politeAdvice,...imperatives,...past0,...past1,...past2,...past3,...past4,...past5,...past6,...past7,...pronouni1,...pronouni2,...pronouni3,...pronouni5,...pronouni6,...pronouni7,...pronouni8,...pronouni9,...foodg1,...foodg2,...foodg3,...foodg4,...foodg5,...foodg6,...actionj1,...actionj2,...actionj3,...avenir0,...avenir1,...avenir2,...avenir3,...avenir4,...faitsj6,...faitsj7,...faitsj8,...faitsj9,...faitsj10,...finalk1,...finalk2,...finalk3,...finalk4,...finalk5,...finalk6,...finalk7,...finalk8,...finalk9,...finalk11,...finalk12,...finalk13,...activityDailyBanks(reflexive as GrammarBank[])] as GrammarBank[]
 export const GRAMMAR_PILOT_BANKS = banksWithWordExercises(originalBanks)
 GRAMMAR_PILOT_BANKS.forEach(assertGrammarBank)
@@ -123,7 +123,7 @@ export function defaultGrammarPilot(typeId: string) {
   const mixedByDefault = ['gram-ex-e4-curriculum-o','gram-ex-f3-curriculum-o','gram-ex-pc-pronominaux-curriculum-o'].includes(typeId)
   const phrasePolarity = negativeOnly ? 'negative' as const : mixedByDefault ? 'mixed' as const : undefined
   return {grammarActivityId:bank.activityId,grammarLevel:bank.level,
-    grammarPresentation:bank.presentations[0]!,grammarBankRevision:bank.revision,grammarPreview:true,
+    grammarPresentation:bank.presentations[0]!,grammarBankRevision:bank.revision,
     ...(phrasePolarity ? { phrasePolarity } : {}),
     ...(bank.presentations.includes('document-set')?{grammarDocumentCount:1}:{})}
 }

@@ -99,9 +99,6 @@ export function generateGrammarSelection(block: ExerciseBlock, seed: number): Gr
   const bank=grammarBankFor(block.exerciseType,block.grammarLevel,block.grammarBankRevision)
   if (!bank)
     throw new GrammarCurriculumError('GRAMMAR_BANK_REVISION_MISSING','Cette révision de banque n’est plus disponible. Choisissez explicitement la banque actuelle pour régénérer.')
-  const pilot=bank.editorialStatus!=='approved'
-  if (pilot && block.grammarPreview!==true)
-    throw new GrammarCurriculumError('GRAMMAR_ACTIVITY_UNAVAILABLE','Cette banque est un pilote. Sélectionnez le niveau pilote pour la relire avant diffusion.')
   const pool=eligible(bank,block)
   if (count>pool.length) throw new GrammarCurriculumError('GRAMMAR_CAPACITY_EXCEEDED',
     `Ces paramètres permettent ${pool.length} ${documents?'texte':'question'}${pool.length===1?'':'s'}. Réduisez le nombre ou modifiez explicitement les filtres.`)
@@ -115,7 +112,7 @@ export function generateGrammarSelection(block: ExerciseBlock, seed: number): Gr
   }
   const questions=selected.map(unit=>createGrammarQuestion(unit,block.grammarPresentation!,seed))
   return {schemaVersion:1,activityId:bank.activityId,level:bank.level,presentation:block.grammarPresentation,
-    bankRevision:bank.revision,seed,requestKey:key,instruction:bank.instructions[block.grammarPresentation]!,pilot,questions,
+    bankRevision:bank.revision,seed,requestKey:key,instruction:bank.instructions[block.grammarPresentation]!,pilot:false,questions,
     ...(documents||block.grammarPresentation==='scenario-set'?{groups:grammarGroups(questions,block.grammarPresentation)}:{})}
 }
 

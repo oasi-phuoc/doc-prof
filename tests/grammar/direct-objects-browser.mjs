@@ -40,14 +40,14 @@ try {
  await choose('Domaine','Grammaire');await choose('Thème','Les pronoms');await choose('Sous-thème','Les pronoms COD')
  await choose('Type d’exercice','Remplacer le COD')
  const level=page.getByLabel('Niveau de grammaire',{exact:true}).locator('.select-control-value')
- assert.equal(await level.textContent(),'A2 — pilote')
+ assert.equal(await level.textContent(),'A2')
  for(const [type,presentation,label] of [
   ['qcm-verbe','choice','Remplacer le COD'],['qcm-verbe','gap','Remplacer le COD'],
   ['curriculum-t','transform','Transformer une phrase'],['curriculum-c','correct','Corriger l’erreur'],
   ['communication-pe','open-written','Écrire une phrase utile'],['communication-po','open-oral','Dire une phrase utile'],
  ]) {
   await page.emulateMedia({media:'screen'});await choose('Type d’exercice',label)
-  if(await level.textContent()!=='A2 — pilote')await choose('Niveau de grammaire','A2 — pilote')
+  if(await level.textContent()!=='A2')await choose('Niveau de grammaire','A2')
   if(presentation==='choice'||presentation==='gap')await page.getByRole('button',{name:presentation==='choice'?'QCM':'Lacune',exact:true}).click()
   await setCount('Nombre de questions',50)
   assert.equal(await page.locator('.a4-frame .grammar-answer-inline.is-attached').count(),0,'Student blanks stay empty.')
@@ -66,7 +66,7 @@ try {
   await page.emulateMedia({media:'screen'})
   if(presentation==='correct')await page.locator('.a4-frame').first().screenshot({path:join(evidence,'i4-a2-correction.png')})
  }
- await choose('Type d’exercice','Lire une situation');await choose('Niveau de grammaire','A2 — pilote')
+ await choose('Type d’exercice','Lire une situation');await choose('Niveau de grammaire','A2')
  assert.equal(await page.getByLabel('Nombre de questions',{exact:true}).count(),0)
  await setCount('Nombre de textes',20)
  const sheets=await checkPrint(120)

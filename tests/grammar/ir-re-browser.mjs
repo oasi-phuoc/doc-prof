@@ -26,12 +26,12 @@ try {
  await choose('Sous-thème',subLabel)
  await choose('Type d’exercice',qLabel)
  const level=page.getByLabel('Niveau de grammaire',{exact:true}).locator('.select-control-value')
- assert.equal(await level.textContent(),'A1 — pilote')
- await choose('Niveau de grammaire','A1 — pilote')
+ assert.equal(await level.textContent(),'A1')
+ await choose('Niveau de grammaire','A1')
  await page.getByRole('button',{name:'Lacune',exact:true}).click()
- await choose('Niveau de grammaire','A2 — pilote')
+ await choose('Niveau de grammaire','A2')
  assert.equal(await page.getByRole('button',{name:'Lacune',exact:true}).getAttribute('aria-pressed'),'true')
- await choose('Niveau de grammaire','A1 — pilote')
+ await choose('Niveau de grammaire','A1')
  assert.equal(await page.getByRole('button',{name:'Lacune',exact:true}).getAttribute('aria-pressed'),'true')
  results.push({levelSwitch:'A1 ↔ A2 preserves the response mode'})
  for(const [type,label,grade,presentation] of [
@@ -46,11 +46,11 @@ try {
  ]) {
   await page.emulateMedia({media:'screen'})
   await choose('Type d’exercice',label)
-  if(await level.textContent()!==grade+' — pilote')await choose('Niveau de grammaire',grade+' — pilote')
+  if(await level.textContent()!==grade)await choose('Niveau de grammaire',grade)
   if(presentation==='choice'||presentation==='gap')await page.getByRole('button',{name:presentation==='choice'?'QCM':'Lacune',exact:true}).click()
   if(presentation==='transform'||presentation==='correct') {
    await page.getByRole('button',{name:'Niveau de grammaire',exact:true}).click()
-   assert.equal(await page.getByRole('option',{name:'A1 — pilote',exact:true}).count(),0)
+   assert.equal(await page.getByRole('option',{name:'A1',exact:true}).count(),0)
    await page.keyboard.press('Escape')
   }
   if(presentation==='order') {

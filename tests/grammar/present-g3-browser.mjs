@@ -26,12 +26,12 @@ try {
   await choose('Sous-thème',subLabel)
   await choose('Type d’exercice',qLabel)
   const level=page.getByLabel('Niveau de grammaire',{exact:true}).locator('.select-control-value')
-  assert.equal(await level.textContent(),'A1 — pilote')
+  assert.equal(await level.textContent(),'A1')
   const offerings=[['choice',qLabel],['gap',qLabel],['correct','Corriger l’erreur'],['order','Mots dans l’ordre'],['transform','Transformer une phrase']]
   if(sub==='aller-destination')offerings.push(['open-oral','Dire où l’on va'])
   for(const [presentation,label] of offerings) {
    await page.emulateMedia({media:'screen'});await choose('Type d’exercice',label)
-   if(await level.textContent()!=='A1 — pilote')await choose('Niveau de grammaire','A1 — pilote')
+   if(await level.textContent()!=='A1')await choose('Niveau de grammaire','A1')
    if(presentation==='choice'||presentation==='gap')await page.getByRole('button',{name:presentation==='choice'?'QCM':'Lacune',exact:true}).click()
    const count=page.getByLabel('Nombre de questions',{exact:true})
    await count.fill('50');await count.blur()

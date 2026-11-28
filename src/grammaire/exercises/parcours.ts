@@ -1,25 +1,15 @@
 import { createRng } from '@/math/rng'
 import type { ExerciseType, MathItem, WorksheetBlock } from '@/math/types'
 import { tcfAudioSrc } from '@/tcf/media'
-import type { TcfExercise, TcfQuestion } from '@/tcf/types'
+import type { TcfExercise } from '@/tcf/types'
 import { collectCorrigeAudioSrcs } from '@/tcf/download-audios'
 import { grammarExerciseItems } from './to-tcf'
+import { choice, dailyGrammarScenarios } from './parcours-quotidien'
 
-type GrammarScenario = {
+export type GrammarScenario = {
   type: ExerciseType
   subthemeId: string
-  stages: { title: string; exercise: TcfExercise }[]
-}
-
-function choice(enonce: string, answer: string, distractors: [string, string]): TcfQuestion {
-  return {
-    enonce,
-    type_reponse: 'qcm_texte',
-    melanger: true,
-    choix: [answer, ...distractors].map((texte, index) => ({
-      id: String(index + 1), texte, correct: index === 0,
-    })),
-  }
+  stages: { title: string; exercise: TcfExercise; audioLabel?: string }[]
 }
 
 const title = 'Déplacer un rendez-vous au cabinet dentaire'
@@ -58,6 +48,7 @@ const cabinet: GrammarScenario = {
     },
     {
       title: 'Compréhension orale · Écouter le message',
+      audioLabel: 'Message du cabinet',
       exercise: {
         ...source, id: `${scenarioId}-co`, competence: 'CO', type_exercice: 'complet',
         consigne: 'Écoutez le message du cabinet deux fois. Cochez une réponse par question.',
@@ -110,7 +101,7 @@ const cabinet: GrammarScenario = {
   ],
 }
 
-export const grammarScenarios: readonly GrammarScenario[] = [cabinet]
+export const grammarScenarios: readonly GrammarScenario[] = [cabinet, ...dailyGrammarScenarios]
 
 export function grammarScenarioFor(typeId: string) {
   return grammarScenarios.find(scenario => scenario.type.id === typeId)
@@ -119,7 +110,7 @@ export function grammarScenarioFor(typeId: string) {
 export function buildGrammarScenario(scenario: GrammarScenario, seed: number) {
   return {
     instruction: scenario.type.instruction,
-    items: scenario.stages.flatMap(({ exercise }, stageIndex) =>
+    items: scenario.stages.flatMap(({ exercise, audioLabel }, stageIndex) =>
       grammarExerciseItems(exercise, createRng(seed + stageIndex)).map((item): MathItem => {
         const staged = { ...item, grammarScenarioStage: stageIndex }
         if (exercise.type_exercice !== 'complet') return staged
@@ -128,7 +119,7 @@ export function buildGrammarScenario(scenario: GrammarScenario, seed: number) {
           return { ...staged, audioSrc: tcfAudioSrc(exercise.support.audio) || exercise.support.audio }
         }
         if (tcf?.kind === 'audio_cadre') {
-          return { ...staged, tcf: { ...tcf, audioSrc: undefined, audioLabel: 'Message du cabinet' } }
+          return { ...staged, tcf: { ...tcf, audioSrc: undefined, audioLabel: audioLabel ?? 'Enregistrement' } }
         }
         return staged
       })),

@@ -47,7 +47,7 @@ try {
  ]) {
   await choose('Type d’exercice',label)
   const level=page.getByLabel('Niveau de grammaire',{exact:true}).locator('.select-control-value')
-  if(await level.textContent()!=='A2 — pilote')await choose('Niveau de grammaire','A2 — pilote')
+  if(await level.textContent()!=='A2')await choose('Niveau de grammaire','A2')
   if(presentation==='choice'||presentation==='gap')await page.getByRole('button',{name:presentation==='choice'?'QCM':'Lacune',exact:true}).click()
   await setCount('Nombre de questions',50)
   const sheets=await checkPrint(100)
@@ -60,7 +60,7 @@ try {
   console.log(`A2 ${presentation}: 50 unités, ${sheets} feuilles élève/corrigé, aucun débordement.`)
   if(presentation==='open-written')await page.locator('.a4-frame').first().screenshot({path:join(evidence,'h8-a2-production-ecrite.png')})
  }
- await choose('Type d’exercice','Lire une situation');await choose('Niveau de grammaire','A2 — pilote')
+ await choose('Type d’exercice','Lire une situation');await choose('Niveau de grammaire','A2')
  assert.equal(await page.getByLabel('Nombre de questions',{exact:true}).count(),0)
  assert.equal(await page.getByLabel('Nombre de textes',{exact:true}).inputValue(),'1')
  await setCount('Nombre de textes',20)

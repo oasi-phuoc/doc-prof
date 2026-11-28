@@ -22,14 +22,14 @@ try {
  await choose('Domaine','Grammaire');await choose('Thème','Conjuguer au présent');await choose('Sous-thème','Avoir')
  await choose('Type d’exercice','Conjuguer avoir')
  const level=page.getByLabel('Niveau de grammaire',{exact:true}).locator('.select-control-value')
- assert.equal(await level.textContent(),'A1 — pilote')
+ assert.equal(await level.textContent(),'A1')
  for(const [suffix,presentation,label] of [
   ['qcm-conj','choice','Conjuguer avoir'],['qcm-conj','gap','Conjuguer avoir'],
   ['corriger-erreur','correct','Corriger l’erreur'],['ordre','order','Mots dans l’ordre'],
   ['curriculum-a','match','Associer les sujets et les formes'],
  ]) {
   await page.emulateMedia({media:'screen'});await choose('Type d’exercice',label)
-  if(await level.textContent()!=='A1 — pilote')await choose('Niveau de grammaire','A1 — pilote')
+  if(await level.textContent()!=='A1')await choose('Niveau de grammaire','A1')
   if(presentation==='choice'||presentation==='gap')await page.getByRole('button',{name:presentation==='choice'?'QCM':'Lacune',exact:true}).click()
   await page.getByLabel('Nombre de questions',{exact:true}).fill('50');await page.getByLabel('Nombre de questions',{exact:true}).blur()
   assert.equal(await page.getByLabel('Nombre de questions',{exact:true}).inputValue(),'50')
@@ -54,7 +54,7 @@ try {
   results.push({type:'gram-ex-avoir-'+suffix,level:'A1',presentation,sheets:boxes.length,printedQuestions:100,overflow:false})
   console.log(`Avoir A1 ${presentation}: 50 unités, ${boxes.length} feuilles élève/corrigé, aucun débordement.`)
  }
- await page.emulateMedia({media:'screen'});await choose('Type d’exercice','Conjuguer avoir');await choose('Niveau de grammaire','A1 — pilote')
+ await page.emulateMedia({media:'screen'});await choose('Type d’exercice','Conjuguer avoir');await choose('Niveau de grammaire','A1')
  await page.getByRole('button',{name:'QCM',exact:true}).click()
  await page.getByLabel('Nombre de questions',{exact:true}).fill('3');await page.getByLabel('Nombre de questions',{exact:true}).blur()
  await page.locator('.a4-frame').first().screenshot({path:join(evidence,'avoir-a1-qcm.png')})

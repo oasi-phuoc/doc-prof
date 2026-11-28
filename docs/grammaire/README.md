@@ -39,7 +39,7 @@ Les sept banques ordinaires des thèmes d’introduction ont été complétées 
 
 ## Communication
 
-Les parcours en situation relient les quatre compétences autour d’une même démarche. Le premier parcours A2 porte sur le déplacement d’un rendez-vous au cabinet dentaire. [Méthode et parcours intégré](implementation/parcours-situations.md)
+Les parcours en situation relient les quatre compétences autour d’une même démarche. Cinq parcours sont disponibles en A1 ou A2. Ils couvrent le cabinet dentaire, le règlement d’un immeuble, un changement de trajet, un retour au service après-vente et un projet de formation. [Méthode et accès aux parcours](implementation/parcours-situations.md)
 
 Dans **Grammaire → Conjuguer au présent → Verbes modaux**, le menu **Type** propose **Production orale · Image unique** et **Production orale · 4 images en séquence**. Les deux formats proposent de changer un billet de train ou de s’inscrire à un cours de français. L’image unique revient en deuxième position dans chaque séquence, avec les mêmes personnages et le même décor. Les images numérotées reprennent le rendu TCF CSC et le récit modèle apparaît au corrigé. [Situations et modèles](../../src/grammaire/exercises/communication.ts)
 
@@ -51,7 +51,7 @@ La première banque proposait dix fiches de situation du quotidien pour chacun d
 
 Chacune des 160 situations a sa propre illustration dans le style dessiné CE/CO. Le [registre des illustrations](illustrations.json) conserve les chemins, empreintes et contrôles. Le [registre des scènes](images-a-preparer.json) donne l’état de chacune des 160 situations.
 
-La revue des personnages a remplacé huit scènes. Les remplacements concernent le musée, l’atelier vélo, la bibliothèque, la cantine et la gare. La revue des autres groupes de communication et des scènes de compréhension orale reste ouverte. [Critères graphiques et diversité des personnages](../tcf/style-images.md)
+Les 160 scènes de communication ont été revues le 28 novembre. Quatorze illustrations individuelles remplacent les personnages trop ressemblants entre plusieurs fiches. Elles montrent des personnes d’âges, d’apparences et de mobilités variés, dans les rôles de client, de collègue et de professionnel. Chaque scène garde le geste et l’objet utiles à l’activité. Le registre détaille ces contrôles par illustration. [Critères graphiques](../tcf/style-images.md)
 
 En compréhension écrite graduée, « Se situer dans le temps → Le moment → Lire une situation » propose 80 questions sur 20 documents A1. Quatre documents réemploient un visuel TCF. [Relecture et sources](implementation/temps-a1-a2-relecture.md)
 

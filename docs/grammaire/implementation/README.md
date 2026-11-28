@@ -1,8 +1,10 @@
-# Implémentation du curriculum Grammaire — pilotes A1, A2 et B1
+# Banques graduées de grammaire A1, A2 et B1
+
+**28 novembre.** Les **601 offres des 19 thèmes** sont accessibles directement. Le menu affiche **A1**, **A2** ou **B1** selon la notion. Les fiches enregistrées et les corrections faites en mode Libre se rouvrent avec leur sélection. La mise à disposition permet les corrections manuelles au fil de l’usage. Les relectures enregistrées restent dans le dossier éditorial. [Suivi des offres](reste-a-faire-20261127.csv)
 
 **24 novembre — questions groupées et pagination manuelle :** toutes les questions restent sur la page de l’exercice, même en cas de dépassement. Le bouton de marge ajoute ou annule un saut après chaque question. Cette demande du propriétaire remplace l’ancienne pagination automatique des pilotes. Voir [la règle et les vérifications actuelles](pagination-manuelle-20261124.md).
 
-**État courant — 27 novembre.** « S’expliquer et argumenter » (15 offres) et « Exprimer quelque chose » (63 offres) terminent la couverture des **601 offres en pilote des 19 thèmes**. Les deux thèmes ajoutent 73 offres aux 528 précédentes et conservent le pilote du subjonctif. Voir [le bilan](avancement-20261127-arguments.md) et [les vérifications](verification-arguments-20261127.json). La validation enseignante et la recette sur matériel de classe restent à faire.
+**Livraison du 27 novembre.** « S’expliquer et argumenter » (15 offres) et « Exprimer quelque chose » (63 offres) terminent la couverture des 19 thèmes. Les deux thèmes ajoutent 73 offres aux 528 précédentes et intègrent le subjonctif. [Bilan](avancement-20261127-arguments.md) · [Vérifications](verification-arguments-20261127.json)
 
 **Vérification des pilotes — 27 novembre.** Les 601 offres ont été générées à partir du catalogue, puis sauvegardées et rechargées avec deux tirages par offre. Les trois offres A1/A2 de remise en ordre sur la négation proposent les phrases négatives dès l’ouverture. Un tirage mixte utilise toutes les phrases éligibles si leur nombre correspond à la demande. En compréhension écrite, le compteur affiche les questions de la sélection, y compris quand l’exercice est réparti sur plusieurs feuilles.
 

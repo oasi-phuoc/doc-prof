@@ -23,11 +23,11 @@ try {
  await choose('Domaine','Grammaire');await choose('Thème','Conjuguer au présent');await choose('Sous-thème','Autres négations')
  await choose('Type d’exercice','Choisir une autre négation')
  const level=page.getByLabel('Niveau de grammaire',{exact:true}).locator('.select-control-value')
- assert.equal(await level.textContent(),'A1 — pilote')
- await choose('Niveau de grammaire','A1 — pilote');await page.getByRole('button',{name:'Lacune',exact:true}).click()
- await choose('Niveau de grammaire','A2 — pilote')
+ assert.equal(await level.textContent(),'A1')
+ await choose('Niveau de grammaire','A1');await page.getByRole('button',{name:'Lacune',exact:true}).click()
+ await choose('Niveau de grammaire','A2')
  assert.equal(await page.getByRole('button',{name:'Lacune',exact:true}).getAttribute('aria-pressed'),'true')
- await choose('Niveau de grammaire','A1 — pilote')
+ await choose('Niveau de grammaire','A1')
  assert.equal(await page.getByRole('button',{name:'Lacune',exact:true}).getAttribute('aria-pressed'),'true')
  results.push({levelSwitch:'A1 ↔ A2 keeps the presentation; only graded banks remain available'})
  for(const [grade,presentation,label] of [
@@ -36,12 +36,12 @@ try {
   ['A2','correct','Corriger l’erreur'],['A2','transform','Transformer une phrase'],
  ]) {
   await page.emulateMedia({media:'screen'});await choose('Type d’exercice',label)
-  if(await level.textContent()!==grade+' — pilote')await choose('Niveau de grammaire',grade+' — pilote')
+  if(await level.textContent()!==grade)await choose('Niveau de grammaire',grade)
   if(['choice','gap'].includes(presentation))await page.getByRole('button',{name:presentation==='choice'?'QCM':'Lacune',exact:true}).click()
   if(presentation==='order')await page.getByRole('group',{name:'Forme des phrases',exact:true}).getByRole('button',{name:'Négative',exact:true}).click()
   if(['correct','transform'].includes(presentation)) {
    await page.getByRole('button',{name:'Niveau de grammaire',exact:true}).click()
-   assert.equal(await page.getByRole('option',{name:'A1 — pilote',exact:true}).count(),0)
+   assert.equal(await page.getByRole('option',{name:'A1',exact:true}).count(),0)
    await page.keyboard.press('Escape')
   }
   const count=page.getByLabel('Nombre de questions',{exact:true});await count.fill('50');await count.blur()
