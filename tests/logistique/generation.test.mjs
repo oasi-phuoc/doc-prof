@@ -12,7 +12,8 @@ const catalog = load(root + '/src/logistique/catalog.ts')
 const { generateLogistique, logistiqueDocumentTitle, logistiqueHasSummary, logistiqueQuestionItems, logistiqueQuestionPhotos } = load(root + '/src/logistique/generate.ts')
 const { availableLogistiqueQuestions, retainLogistiqueQuestions, newLogistiqueQuestion, reviewableLogistiqueAnswer } = load(root + '/src/logistique/libre.ts')
 const { buildPage } = load(root + '/src/math/generate.ts')
-const { initialLogistiqueStory, applyLogistiqueStoryChange, logistiqueStoryVariant, validLogistiqueStory } = load(root + '/src/logistique/evaluation.ts')
+const { initialLogistiqueStory, allocateLogistiquePoints, applyLogistiqueStoryChange, logistiqueDuration,
+  logistiqueStoryVariant, validLogistiqueStory } = load(root + '/src/logistique/evaluation.ts')
 const { editLogistiqueGaps, logistiqueGapDistractors, validLogistiqueGaps } = load(root + '/src/logistique/gaps.ts')
 const { validLogistiqueExerciseTable } = load(root + '/src/logistique/tables.ts')
 const { freezeLogistiquePages, validLogistiquePages } = load(root + '/src/logistique/recipe.ts')
@@ -714,6 +715,32 @@ test('une introduction longue se poursuit avant les calculs sans dupliquer les q
     page.items[0].logistiqueNarrative.replace(/\s+/g, ' '))
   assert(sheets.slice(0, contexts.length).every((sheet) => !sheet.items.length))
   assert.deepEqual(sheets[contexts.length].blocks[0].logistiqueDetachedNarratives, [0])
+})
+
+test('le barème atteint la cible par demi-points et la durée compte une seule lecture commune', () => {
+  const page = { ...config('AFP', '303', 'maths'), count: 3,
+    logistiqueSelection: { modules: ['303', '312', '601'], quantities: { 303: 1, 312: 1, 601: 1 } },
+    logistiqueEvaluation: { mode: 'histoire', story: initialLogistiqueStory, targetPoints: 10, readingMinutes: 3.5, reviewMinutes: 1.5 },
+  }
+  const [first, second, third] = generateLogistique(page, 7).items
+  const locked = { ...first, logistiqueAssessment: { ...first.logistiqueAssessment, pointsLocked: true } }
+  const ungraded = { layout: 'text', prompt: 'Rappel', answer: '', noPoints: true }
+  const items = [locked, second, third, ungraded]
+  const result = allocateLogistiquePoints(items, 10, 1)
+  assert.deepEqual(result.items.slice(0, 3).map(({ points }) => points), [3, 2.5, 4.5])
+  assert.strictEqual(result.items[0], locked)
+  assert.strictEqual(result.items[3], ungraded)
+  assert(result.items[1].logistiqueRetained)
+  assert(allocateLogistiquePoints(items, 3.5, 1).conflict)
+  assert(allocateLogistiquePoints(items, 10, 0).conflict)
+  assert(allocateLogistiquePoints([locked, { ...third, libreLocked: true }], 12, 1).conflict)
+  const [frozen] = freezeLogistiquePages([{ ...page, libreItems: result.items }], true)
+  assert(validLogistiquePages([frozen]))
+  assert.deepEqual(buildPage(frozen, 23).items, result.items)
+  assert.deepEqual(logistiqueDuration(items.slice(0, 3), page.logistiqueEvaluation, 'AFP'),
+    { questions: 10.5, reading: 3.5, review: 1.5, total: 16 })
+  assert.equal(logistiqueDuration(items.slice(0, 3), { mode: 'histoire' }, 'AFP').total, 14)
+  assert.equal(validLogistiquePages([{ ...page, logistiqueEvaluation: { ...page.logistiqueEvaluation, readingMinutes: '2' } }]), false)
 })
 
 test('les questions restent dans l’ordre et partagent les pages sauf saut manuel', () => {

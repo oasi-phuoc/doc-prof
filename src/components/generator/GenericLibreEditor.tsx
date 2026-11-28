@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react'
 import type { MathItem } from '@/math/types'
 import { newLogistiqueQuestion, reviewableLogistiqueAnswer, type LogistiqueQuestionFormat } from '@/logistique/libre'
-import { logistiqueBloomLevels, type LogistiqueAssessment } from '@/logistique/evaluation'
+import { logistiqueBloomLevels, logistiqueQuestionMinutes, type LogistiqueAssessment } from '@/logistique/evaluation'
 import type { LogistiqueType } from '@/logistique/catalog'
 import { LogistiqueImageFields, type LogistiquePhotoChoice } from './LogistiqueImageFields'
 import { LogistiqueGapEditor } from './LogistiqueGapEditor'
@@ -30,6 +30,7 @@ export function GenericLibreEditor({
   editableCalculation?: boolean
   logistique?: {
     kind: LogistiqueType['kind']
+    diploma: LogistiqueType['diploma']
     evaluation: boolean
     defaultModule: string
     modules: readonly { code: string; label: string }[]
@@ -286,6 +287,10 @@ export function GenericLibreEditor({
                     onChangeItems(items.with(index, {
                       ...original, libreId: item.libreId, libreLocked: item.libreLocked,
                       logistiqueRetained: item.logistiqueRetained,
+                      ...(item.logistiqueAssessment?.pointsLocked ? {
+                        points: item.points,
+                        logistiqueAssessment: { ...original.logistiqueAssessment, pointsLocked: true },
+                      } : {}),
                     }))
                   }}>Restaurer</button>}
                 <button type="button" className="button small secondary" aria-label={`Supprimer la question ${index + 1}`}
@@ -312,6 +317,10 @@ export function GenericLibreEditor({
                       }
                     }} />
                 </label>
+                <label>
+                  <input type="checkbox" checked={Boolean(item.logistiqueAssessment?.pointsLocked)}
+                    onChange={(event) => patchAssessment(index, { pointsLocked: event.target.checked })} /> Verrouiller les points de cette question
+                </label>
                 <SelectBox label="Niveau de Bloom" value={item.logistiqueAssessment?.bloom ?? ''} onChange={(bloom) =>
                   patchAssessment(index, { bloom: bloom ? bloom as LogistiqueAssessment['bloom'] : undefined })}>
                   <option value="">À renseigner</option>
@@ -328,6 +337,7 @@ export function GenericLibreEditor({
                   <span>Durée indicative en minutes</span>
                   <input type="number" className="libre-line-input" min={0.5} max={120} step={0.5}
                     value={item.logistiqueAssessment?.minutes ?? ''}
+                    placeholder={String(logistiqueQuestionMinutes(item, logistique.diploma))}
                     onChange={(event) => {
                       const minutes = event.target.valueAsNumber
                       if (!event.target.value || minutes >= 0.5 && minutes <= 120 && minutes * 2 % 1 === 0) {

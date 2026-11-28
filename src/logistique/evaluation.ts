@@ -15,6 +15,7 @@ export type LogistiqueAssessment = {
   minutes?: number
   objective?: string
   criteria?: string
+  pointsLocked?: boolean
 }
 
 export type LogistiqueStory = {
@@ -34,6 +35,8 @@ export type LogistiqueEvaluation = {
   story?: LogistiqueStory
   targetMinutes?: number
   targetPoints?: number
+  readingMinutes?: number
+  reviewMinutes?: number
 }
 
 export const initialLogistiqueStory: LogistiqueStory = {
@@ -58,21 +61,42 @@ export function validLogistiqueStory(value: unknown): value is LogistiqueStory {
 
 export function validLogistiqueEvaluation(value: unknown): value is LogistiqueEvaluation {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return false
-  const { mode, story, targetMinutes, targetPoints } = value as LogistiqueEvaluation
+  const { mode, story, targetMinutes, targetPoints, readingMinutes, reviewMinutes } = value as LogistiqueEvaluation
+  const validTime = (minutes?: number) => minutes === undefined ||
+    (typeof minutes === 'number' && Number.isInteger(minutes * 2) && minutes >= 0 && minutes <= 120)
   return (mode === 'histoire' || mode === 'independantes') &&
     (story === undefined ? mode === 'independantes' : validLogistiqueStory(story)) &&
+    validTime(readingMinutes) && validTime(reviewMinutes) &&
     (targetMinutes === undefined || (Number.isInteger(targetMinutes) && targetMinutes >= 1 && targetMinutes <= 480)) &&
     (targetPoints === undefined || (Number.isFinite(targetPoints) && targetPoints > 0 && targetPoints <= 1000 && targetPoints * 2 % 1 === 0))
 }
 
 export function validLogistiqueAssessment(value: unknown): value is LogistiqueAssessment {
   if (!value || typeof value !== 'object' || Array.isArray(value)) return false
-  const { bloom, difficulty, minutes, objective, criteria } = value as LogistiqueAssessment
+  const { bloom, difficulty, minutes, objective, criteria, pointsLocked } = value as LogistiqueAssessment
   return (bloom === undefined || Object.hasOwn(logistiqueBloomLevels, bloom)) &&
     (difficulty === undefined || ['facile', 'moyen', 'avance'].includes(difficulty)) &&
     (minutes === undefined || (Number.isFinite(minutes) && minutes >= 0.5 && minutes <= 120 && minutes * 2 % 1 === 0)) &&
     (objective === undefined || (typeof objective === 'string' && objective.length <= 100)) &&
+    (pointsLocked === undefined || typeof pointsLocked === 'boolean') &&
     (criteria === undefined || (typeof criteria === 'string' && criteria.length <= 400))
+}
+
+export function logistiqueQuestionMinutes(item: MathItem, diploma: 'CFC' | 'AFP'): number {
+  if (item.logistiqueAssessment?.minutes !== undefined) return item.logistiqueAssessment.minutes
+  if (item.calcAnswer !== undefined) return item.calcAnswer.split('\n').length > 2 ? 5 : 3
+  if (item.logistiqueChoice?.kind === 'true-false') return item.logistiqueChoice.justification === undefined ? 1 : 2
+  if (item.logistiqueChoice?.kind === 'multiple') return 1.5
+  if (item.layout === 'select') return 1
+  if (item.logistiqueTable || item.logistiqueResponseLines?.kind === 'numbered') return diploma === 'AFP' ? 4 : 3
+  return diploma === 'AFP' ? 3 : 2.5
+}
+
+export function logistiqueDuration(items: readonly MathItem[], evaluation: LogistiqueEvaluation, diploma: 'CFC' | 'AFP') {
+  const questions = items.reduce((total, item) => total + logistiqueQuestionMinutes(item, diploma), 0)
+  const reading = evaluation.readingMinutes ?? (evaluation.mode === 'histoire' ? 2 : 0)
+  const review = evaluation.reviewMinutes ?? Math.ceil((questions + reading) * 0.2) / 2
+  return { questions, reading, review, total: Math.ceil(questions + reading + review) }
 }
 
 export function logistiqueStorySelectionCompatible(
@@ -194,4 +218,39 @@ export function applyLogistiqueStoryChange(
     })
   }
   return { items: next }
+}
+
+export function allocateLogistiquePoints(
+  items: readonly MathItem[], target: number, fallback: number,
+): { items: MathItem[] } | { conflict: string } {
+  if (!fallback) return { conflict: 'Rétablissez un barème actif dans les paramètres de l’activité.' }
+  if (!Number.isFinite(target) || target < 0.5 || target > 1000 || !Number.isInteger(target * 2)) {
+    return { conflict: 'Indiquez un total compris entre 0,5 et 1 000 points, par demi-point.' }
+  }
+  const scored = items.flatMap((item, index) => item.noPoints || item.layout === 'theory'
+    ? [] : [{ item, index, points: item.points ?? fallback }])
+  if (scored.some(({ points }) => !Number.isFinite(points) || points < 0)) {
+    return { conflict: 'Corrigez les valeurs invalides du barème avant la répartition.' }
+  }
+  const adjustable = scored.filter(({ item, points }) => points > 0 && !item.libreLocked && !item.logistiqueAssessment?.pointsLocked)
+  if (!adjustable.length) return { conflict: 'Aucune question notée ne possède de barème modifiable.' }
+  const allPoints = scored.reduce((sum, entry) => sum + entry.points, 0)
+  const adjustablePoints = adjustable.reduce((sum, entry) => sum + entry.points, 0)
+  const units = (target - (allPoints - adjustablePoints)) * 2
+  if (!Number.isInteger(units)) return { conflict: 'Les points protégés empêchent d’atteindre la cible par demi-point.' }
+  if (units < adjustable.length) {
+    return { conflict: 'La cible ne laisse pas un demi-point par question modifiable après déduction des points protégés.' }
+  }
+  const shares = adjustable.map(({ index, points }) => {
+    const share = (units - adjustable.length) * points / adjustablePoints
+    return { index, units: 1 + Math.floor(share), remainder: share - Math.floor(share) }
+  })
+  shares.sort((left, right) => right.remainder - left.remainder || left.index - right.index)
+  const extra = units - shares.reduce((sum, entry) => sum + entry.units, 0)
+  const distribution = new Map(shares.map((entry, index) => [entry.index, (entry.units + Number(index < extra)) / 2]))
+  return { items: items.map((item, index) => {
+    const points = distribution.get(index)
+    return points === undefined || points === (item.points ?? fallback)
+      ? item : { ...item, points, logistiqueRetained: true }
+  }) }
 }
