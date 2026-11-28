@@ -11,6 +11,8 @@ const illustratedRevisions = new Map([
   ['405', require('../../docs/logistique/preparation/405-v004.json')],
   ['406', require('../../docs/logistique/preparation/406-v004.json')],
   ['408', require('../../docs/logistique/preparation/408-v006.json')],
+  ['503', require('../../docs/logistique/preparation/503-v004.json')],
+  ['504', require('../../docs/logistique/preparation/504-v004.json')],
 ])
 const { load, root } = require('../../scripts/gattegno-loader.cjs')
 const catalog = load(root + '/src/logistique/catalog.ts')
