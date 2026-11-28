@@ -58,12 +58,18 @@ Les trois niveaux de chaque série ont été vérifiés en A4 et en double A5, a
 
 Les 142 pages ont été contrôlées dans le rendu A4 et double A5. Le contrôle couvre les illustrations, les titres propres aux leçons, la taille commune de la question et des rubriques, et la tenue de chaque page dans son format.
 
-| Éléments graphiques à préparer pour les fiches suivantes | Contenu du visuel PNG |
+## Règles et figures en PNG pour l’impression
+
+| Support | Visuels intégrés |
 |---|---|
-| Mesure à la règle | Graduations, nombres, deux extrémités du segment. Conserver la cote physique à l’impression. |
-| Périmètre et aire | Contour épaissi, surface hachurée et cotes, à partir des dimensions générées. |
-| Translation | Quadrillage, figure de départ, flèches de déplacement et figure du corrigé, calculés sur les mêmes sommets. |
-| Plan de ville | Les fonds sont déjà des images. Les éléments à préparer sont le quadrillage, les lettres, les chiffres et les points nommés. |
+| Règles et mesures | Règle de 0 à 10 cm, segments droits et inclinés, instruments gradués et points à relier. Les dimensions physiques du dessin sont exprimées en millimètres. |
+| Périmètres, aires et volumes | Figures planes, figures composées et solides avec aplats discrets et traits foncés. Les cotes reprennent les valeurs du générateur et restent lisibles comme du texte autour de la figure. |
+| Transformations et repérage | Quadrillages, repères, flèches, modèle et corrigé redessinés à partir des mêmes points, y compris pour la rotation et les symétries guidées du CFR. Les repères ordinaires s’ajustent à la largeur de la fiche. La saisie de points en mode Libre reste interactive. |
+| Plans | Les photos, les routes et le plan simplifié gardent la même emprise. Les repères nommés, le quadrillage, les lettres et les chiffres se superposent dans un calque PNG transparent. |
+
+Les PNG reprennent les données de chaque tirage, avec un fond transparent. Les dessins à taille réelle utilisent 18 pixels par millimètre dans les formats courants. Sur papier, choisir l’échelle **100 %** pour les exercices à mesurer à la règle. Le bouton d’impression attend que les images de la fiche et du corrigé soient chargées. [Rendu des figures](../../src/components/math/RasterDiagram.tsx)
+
+Dans les PDF de contrôle A4 et double A5, la distance entre les graduations 0 et 10 cm mesure 99,98 mm. Les segments de 38, 76 et 118 mm ont été vérifiés dans les deux formats. L’écart maximal observé est inférieur à 0,2 mm.
 
 ## Sources du plan de Sion
 

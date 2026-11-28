@@ -2,6 +2,7 @@
  * Photo d’une feuille déjà rendue, avec les mêmes règles que l’impression
  * (marges miroir, pas de réduction d’aperçu).
  */
+import { waitForWorksheetDiagrams } from '@/components/math/diagram-print'
 
 let frame: HTMLIFrameElement | null = null
 let stylesReady: Promise<void> | null = null
@@ -117,6 +118,7 @@ export function closePrintFrame() {
 }
 
 export async function rasterWorksheet(sheet: HTMLElement): Promise<HTMLCanvasElement> {
+  await waitForWorksheetDiagrams(sheet)
   const doc = await ensureFrame()
   doc.body.innerHTML = `<div class="sheet-stage print-only-sheets">${sheet.outerHTML}</div>`
   const node = doc.querySelector('.worksheet-sheet')

@@ -4,6 +4,7 @@ import {
   equationHelp, equationText, transformedPoint, type CfrGuidedPractice,
 } from '@/math/cfr-guided-practice'
 import type { PreviewMode } from '@/math/types'
+import { RasterDiagram } from '@/components/math/RasterDiagram'
 import './cfr-guided.css'
 
 type Graph = Extract<CfrGuidedPractice, { kind: 'graph' }>
@@ -39,7 +40,7 @@ function CfrGraph({ practice, show }: { practice: Graph; show: boolean }) {
   return (
     <figure className="math-cfr-graph">
       <figcaption>{description}</figcaption>
-      <svg viewBox="0 0 248 125" role="img" aria-label={`${description}. ${accessibleValues}.`}>
+      <RasterDiagram className="math-cfr-chart" viewBox="0 0 248 125" role="img" aria-label={`${description}. ${accessibleValues}.`}>
         {Array.from({ length: 6 }, (_, index) => (
           <g key={index}>
             <text x="29" y={y(index * step) + 4} textAnchor="end">{index * step}</text>
@@ -54,7 +55,7 @@ function CfrGraph({ practice, show }: { practice: Graph; show: boolean }) {
             <text x={x(i)} y="119" textAnchor="middle">{CFR_DAYS[i]!.slice(0, 3)}.</text>
           </g>
         ))}
-      </svg>
+      </RasterDiagram>
     </figure>
   )
 }
@@ -85,7 +86,7 @@ function CfrTransform({ practice, show }: { practice: Transformation; show: bool
   )).join(' ')
 
   return (
-    <svg className="math-cfr-transform" viewBox={`0 0 ${px(columns) + 11} ${px(rows) + 11}`}
+    <RasterDiagram className="math-cfr-transform" viewBox={`0 0 ${px(columns) + 11} ${px(rows) + 11}`}
       role="img" aria-label={`Triangle sur un quadrillage. ${describePoints(points)} ${show ? describePoints(images, '′') : ''}`}>
       <defs>
         <marker id={marker} markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
@@ -115,7 +116,7 @@ function CfrTransform({ practice, show }: { practice: Transformation; show: bool
         </g>
       )}
       {show && drawTriangle(images, true)}
-    </svg>
+    </RasterDiagram>
   )
 }
 

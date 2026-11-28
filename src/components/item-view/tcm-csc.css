@@ -16,11 +16,11 @@
 .csc-connect-line { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; font-weight: 700; line-height: 1.15; color: var(--ink); }
 .csc-connect-letter,
 .csc-connect-point { color: var(--purple); fill: var(--purple); font-weight: 700; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-.csc-connect svg { display: block; width: 100%; height: auto; }
+.csc-connect :is(svg, .worksheet-diagram-png) { display: block; width: 100%; height: auto; }
 .csc-copy { display: flex; align-items: flex-start; justify-content: center; gap: 6mm; width: 100%; }
 .csc-copy > div { flex: 0 0 auto; text-align: center; }
 .csc-copy p { margin: 2px 0 5px; font-size: calc(11pt * var(--app-font-scale, 1)); }
-.csc-copy svg { display: block; }
+.csc-copy :is(svg, .worksheet-diagram-png) { display: block; }
 .csc-copy-grid { stroke: #9aa5b8; stroke-width: .025; }
 .csc-length-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
 .csc-length-table th, .csc-length-table td { border: 1px solid var(--muted); padding: 6px 10px; text-align: center; }

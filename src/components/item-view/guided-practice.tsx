@@ -2,9 +2,13 @@ import { columnItem, fmt } from '@/math/column-arith'
 import { ADDITION_CARRY_TYPE, RULER_SEGMENT_TYPE, SUBTRACTION_EXCHANGE_TYPE, subtractionExchangeItem } from '@/math/guided-practice'
 import type { MathItem } from '@/math/types'
 import { ColumnOp } from './columns'
+import { RasterDiagram } from '@/components/math/RasterDiagram'
 
 const millimetreTicks = Array.from({ length: 101 }, (_, index) => index)
-const rulerX = (millimetres: number) => 22 + 3.4 * millimetres
+const rulerUnitsPerMm = 3.4
+const rulerWidthMm = 113
+const rulerHeight = 70
+const rulerX = (millimetres: number) => 16 + rulerUnitsPerMm * millimetres
 
 export function RulerSegmentFigure({ segment, showPositions = false }: {
   segment: NonNullable<MathItem['rulerSegment']>
@@ -14,13 +18,15 @@ export function RulerSegmentFigure({ segment, showPositions = false }: {
   const start = rulerX(startMm)
   const end = rulerX(endMm)
   return (
-    <svg
+    <RasterDiagram
       className="math-ruler-segment"
-      viewBox="0 0 400 70"
+      viewBox={`0 0 ${rulerUnitsPerMm * rulerWidthMm} ${rulerHeight}`}
+      width={`${rulerWidthMm}mm`}
+      height={`${rulerHeight / rulerUnitsPerMm}mm`}
       role="img"
       aria-label={`Sur la règle, le segment part de ${fmt(startMm / 10)} cm et arrive à ${fmt(endMm / 10)} cm.`}
     >
-      <rect x="8" y="32" width="388" height="36" fill="none" stroke="currentColor" />
+      <rect x="3" y="32" width="378" height="36" rx="3" fill="#f9efd9" stroke="currentColor" />
       {millimetreTicks.map((mm) => {
         const x = rulerX(mm)
         const wholeCm = mm % 10 === 0
@@ -31,7 +37,7 @@ export function RulerSegmentFigure({ segment, showPositions = false }: {
           </g>
         )
       })}
-      <text x="374" y="62">cm</text>
+      <text x="375" y="24" textAnchor="end">cm</text>
       <line className="math-ruler-guide" x1={start} x2={end} y1="21" y2="21" strokeWidth="2.5" />
       {[start, end].map((x, index) => (
         <g key={x}>
@@ -45,7 +51,7 @@ export function RulerSegmentFigure({ segment, showPositions = false }: {
           )}
         </g>
       ))}
-    </svg>
+    </RasterDiagram>
   )
 }
 

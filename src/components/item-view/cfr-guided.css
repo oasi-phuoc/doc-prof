@@ -12,7 +12,7 @@
 .math-cfr-practice :is(p, figure) { margin: 0; }
 .math-cfr-practice p + p { margin-top: 1mm; }
 .math-cfr-practice figcaption { font-weight: 700; }
-.math-cfr-practice svg { display: block; width: 100%; }
+.math-cfr-practice :is(.math-cfr-chart, .math-cfr-transform) { display: block; width: 100%; height: auto; }
 .math-cfr-practice .math-cfr-transform { max-height: 38mm; }
 .math-cfr-practice :is(.math-cfr-fraction, .math-cfr-graph) { font-size: .85em; }
 .math-cfr-practice .answer-line-field { margin-top: 1mm; }
@@ -56,4 +56,4 @@
 .math-cfr-path { fill: none; stroke: #174a7e; stroke-width: 1.6; stroke-dasharray: 2 2; }
 
 .a5-half .math-cfr-practice .math-cfr-transform { max-height: 31mm; }
-.a5-half .math-cfr-practice .math-cfr-graph svg { max-height: 21mm; }
+.a5-half .math-cfr-practice .math-cfr-chart { max-height: 21mm; }

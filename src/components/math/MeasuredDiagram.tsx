@@ -1,4 +1,5 @@
-import { Children, cloneElement, isValidElement, useLayoutEffect, useRef, useState, type ReactNode } from 'react'
+import { Children, cloneElement, isValidElement, type ReactNode } from 'react'
+import { RasterDiagram } from './RasterDiagram'
 
 type MeasureProps = {
   x: number; y: number; children: ReactNode
@@ -22,27 +23,16 @@ export function MeasuredDiagram({ children, viewBox, className = 'geometry-figur
     })
   }
   const drawing = extract(children)
-  const svg = useRef<SVGSVGElement>(null)
-  const [cropped, setCropped] = useState<string | null>(null)
-  useLayoutEffect(() => {
-    if (!measures.length || overlay || !svg.current) return
-    const b = svg.current.getBBox()
-    if (b.width <= 0 || b.height <= 0) return
-    // Les anciens viewBox réservaient la place des cotes SVG. Elle est maintenant
-    // en HTML : recadrer le dessin permet de garder une forme assez grande.
-    const next = `${b.x - 8} ${b.y - 8} ${b.width + 16} ${b.height + 16}`
-    setCropped(current => current === next ? current : next)
-  }, [children, overlay, viewBox, measures.length])
-  if (!measures.length) return <svg className={className} viewBox={viewBox} role="img" aria-label={label}>{drawing}</svg>
+  if (!measures.length) return <RasterDiagram className={className} viewBox={viewBox} role="img" aria-label={label}>{drawing}</RasterDiagram>
   const [, , width, height] = viewBox.split(/\s+/).map(Number)
   const side = (m: MeasureProps) => m.y < 45 ? 'top' : m.y >= 145 ? 'bottom' : m.x < 130 ? 'left' : 'right'
   return (
     <div className={`${className} measured-diagram${overlay ? ' has-positioned-measures' : ''}`}>
       {overlay ? <div className="positioned-measures-plot" style={{aspectRatio:`${width} / ${height}`}}>
-        <svg ref={svg} className="measured-diagram-shape" viewBox={viewBox} role="img" aria-label={label}>{drawing}</svg>
+        <RasterDiagram className="measured-diagram-shape" viewBox={viewBox} role="img" aria-label={label}>{drawing}</RasterDiagram>
         {measures.map((m, i) => <span key={i} className="dim-label geometry-measure-label" style={{ left: `${m.x / width * 100}%`, top: `${m.y / height * 100}%`, transform: `translate(${m.anchor === 'start' ? '0' : m.anchor === 'end' ? '-100%' : '-50%'}, -50%)` }}>{m.children}</span>)}
       </div> : <>
-        <svg ref={svg} className="measured-diagram-shape" viewBox={cropped ?? viewBox} role="img" aria-label={label}>{drawing}</svg>
+        <RasterDiagram crop className="measured-diagram-shape" viewBox={viewBox} role="img" aria-label={label}>{drawing}</RasterDiagram>
         {(['top', 'left', 'right', 'bottom'] as const).map(s => <div key={s} className={`geometry-measures is-${s}`}>{measures.filter(m => side(m) === s).map((m, i) => <span key={i} className="dim-label geometry-measure-label">{m.children}</span>)}</div>)}
       </>}
 

@@ -1,5 +1,6 @@
 import { fmt } from '@/math/column-arith'
 import type { MathItem } from '@/math/types'
+import { RasterDiagram } from '@/components/math/RasterDiagram'
 
 export function MeasurementScale({ scale }: { scale: NonNullable<MathItem['measureScale']> }) {
   const ticks = Array.from({ length: 9 }, (_, index) => index)
@@ -15,9 +16,9 @@ export function MeasurementScale({ scale }: { scale: NonNullable<MathItem['measu
   if (kind === 'capacity') {
     return (
       <div className="math-scale">
-        <svg viewBox="0 0 260 158" role="img" aria-label={label}>
+        <RasterDiagram viewBox="0 0 260 158" role="img" aria-label={label}>
           <path d="M96 15 L96 143 H162 V15" fill="none" stroke="currentColor" strokeWidth="2" />
-          <rect x="97" y={136 - tick * 14} width="64" height={tick * 14} fill="#e5dcec" />
+          <rect x="97" y={136 - tick * 14} width="64" height={tick * 14} fill="#bedbe8" />
           <line x1="97" x2="162" y1={136 - tick * 14} y2={136 - tick * 14} stroke="currentColor" strokeWidth="2" />
           {ticks.map(i => (
             <g key={i}>
@@ -26,14 +27,14 @@ export function MeasurementScale({ scale }: { scale: NonNullable<MathItem['measu
             </g>
           ))}
           <text x="173" y="13" fontSize="10">{unit}</text>
-        </svg>
+        </RasterDiagram>
       </div>
     )
   }
   return (
     <div className="math-scale">
-      <svg viewBox="0 0 260 158" role="img" aria-label={label}>
-        <path d="M39 128 A91 91 0 0 1 221 128" fill="none" stroke="currentColor" strokeWidth="2" />
+      <RasterDiagram viewBox="0 0 260 158" role="img" aria-label={label}>
+        <path d="M39 128 A91 91 0 0 1 221 128" fill="#f9efd9" stroke="currentColor" strokeWidth="2" />
         {ticks.map(i => {
           const inner = point(i, i % 2 ? 85 : 78)
           const outer = point(i, 91)
@@ -48,7 +49,7 @@ export function MeasurementScale({ scale }: { scale: NonNullable<MathItem['measu
         <line x1="130" y1="128" x2={tip.x} y2={tip.y} stroke="currentColor" strokeWidth="2.5" />
         <circle cx="130" cy="128" r="4" fill="currentColor" />
         <text x="130" y="149" textAnchor="middle" fontSize="12">{unit}</text>
-      </svg>
+      </RasterDiagram>
     </div>
   )
 }

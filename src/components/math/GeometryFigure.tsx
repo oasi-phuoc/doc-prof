@@ -115,7 +115,7 @@ export function GeometryFigure({ type, dims }: { type?: Figure; dims?: FigureDim
       viewBox={viewBox}
       label="Figure géométrique"
     >
-      <g fill="currentColor" fillOpacity="0.08" stroke="currentColor" strokeWidth="2.4" strokeLinejoin="round">
+      <g fill="#a7c9da" fillOpacity="0.28" stroke="currentColor" strokeWidth="2.4" strokeLinejoin="round">
         {type === 'square' && (
           <>
             <rect x="75" y="42" width="110" height="110" />

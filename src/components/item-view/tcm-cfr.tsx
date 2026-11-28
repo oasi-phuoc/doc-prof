@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import type { MathItem, PreviewMode } from '@/math/types'
 import { mirrorPoint, type GridPt } from '@/tcm-cfr/symetrie'
 import { GridReproductionBlock, CscLengthBlock } from './tcm-csc'
+import { RasterDiagram } from '@/components/math/RasterDiagram'
 
 /**
  * Dictée audio TCM CFR (ex. 1–2) : uniquement la zone de réponse sur la fiche.
@@ -80,7 +81,7 @@ export function SymmetryGridBlock({
   return (
     <div className="tcm-cfr-symmetry">
       {item.prompt ? <p className="column-prompt">{item.prompt}</p> : null}
-      <svg
+      <RasterDiagram
         className="tcm-cfr-symmetry-svg"
         viewBox={`0 0 ${size} ${size * (tpl.rows / tpl.cols)}`}
         role="img"
@@ -128,12 +129,12 @@ export function SymmetryGridBlock({
         {show
           ? mirrorDots.map((p, i) => drawDot(p, `img-dot-${i}`, 'tcm-cfr-figure-dot-image'))
           : null}
-      </svg>
+      </RasterDiagram>
     </div>
   )
 }
 
-function SegmentSlope({ mm, slope, color, showLength }: { mm: number; slope: number; color: string; showLength: boolean }) {
+function MeasuredSegment({ mm, slope, color, showLength }: { mm: number; slope: number; color: string; showLength: boolean }) {
   const angle = Math.atan(slope)
   const dx = mm * Math.cos(angle)
   const dy = mm * Math.sin(angle)
@@ -141,10 +142,12 @@ function SegmentSlope({ mm, slope, color, showLength }: { mm: number; slope: num
   const height = Math.abs(dy) + pad * 2
   const y1 = dy >= 0 ? height - pad : pad
   const y2 = dy >= 0 ? pad : height - pad
+  const label = showLength ? `Segment de ${mm} millimètres` : 'Segment à mesurer'
   return (
-    <svg className="tcm-cfr-segment-line is-sloped" data-length-mm={mm} viewBox={`0 0 ${dx} ${height}`} style={{ width: `${dx}mm`, height: `${height}mm` }} role="img" aria-label={showLength ? `Segment incliné de ${mm} millimètres` : 'Segment incliné à mesurer'}>
+    <RasterDiagram className={`tcm-cfr-segment-line${slope ? ' is-sloped' : ''}`} data-length-mm={mm}
+      viewBox={`0 0 ${dx} ${height}`} width={`${dx}mm`} height={`${height}mm`} role="img" aria-label={label}>
       <line x1="0" y1={y1} x2={dx} y2={y2} stroke={color} strokeWidth="0.7" strokeLinecap="butt" />
-    </svg>
+    </RasterDiagram>
   )
 }
 
@@ -165,13 +168,16 @@ export function SegmentMeasureBlock({
   const drawing = (
       <div className="tcm-cfr-segment-frame">
         {segments.map((seg, i) => {
-          const widthMm = Math.min(160, seg.mm)
-          const letter = item.cscTask?.kind === 'length-table' ? String.fromCharCode(65 + i) : SEGMENT_LETTERS[i] ?? String.fromCharCode(97 + i)
+          const cscLength = item.cscTask?.kind === 'length-table' ? item.cscTask : undefined
+          const letter = cscLength ? String.fromCharCode(65 + i) : SEGMENT_LETTERS[i] ?? String.fromCharCode(97 + i)
+          const palette = ['#23723b', '#174eae', '#b52335', '#aa5811']
+          const colorIndex = cscLength?.colors?.[i] ?? i
+          const color = cscLength ? `var(--csc-segment-${colorIndex}, ${palette[colorIndex % palette.length]})` : 'var(--ink)'
           return (
             <div className="tcm-cfr-segment-row" key={`seg-${i}`}>
               <span className="tcm-cfr-segment-num">{letter}.</span>
               <div className="tcm-cfr-segment-line-wrap">
-                {seg.slope ? <SegmentSlope showLength={show} mm={widthMm} slope={seg.slope} color={item.cscTask?.kind==='length-table' ? `var(--csc-segment-${item.cscTask.colors?.[i]??i}, ${['#23723b','#174eae','#b52335','#aa5811'][(item.cscTask.colors?.[i]??i)%4]})` : 'var(--ink)'} /> : <div className="tcm-cfr-segment-line" style={{ width: `${widthMm}mm`, ...(item.cscTask?.kind==='length-table'?{borderColor:`var(--csc-segment-${item.cscTask.colors?.[i]??i}, ${['#23723b','#174eae','#b52335','#aa5811'][(item.cscTask.colors?.[i]??i)%4]})`}:{}) }} />}
+                <MeasuredSegment showLength={show} mm={seg.mm} slope={seg.slope ?? 0} color={color} />
               </div>
               <span className="tcm-cfr-segment-answer">
                 <span className={`answer-line-field compact ${show ? 'filled' : ''}`}>
@@ -295,7 +301,7 @@ export function MetroMapBlock({
 
   return (
     <div className="tcm-cfr-metro">
-      {map ? <svg className="tcm-cfr-metro-svg" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Plan de métro">
+      {map ? <RasterDiagram className="tcm-cfr-metro-svg" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Plan de métro">
         {/* Grille */}
         {map.cols.map((col, ci) => {
           const x = pad + (ci + 0.5) * ((width - 2 * pad) / map.cols.length)
@@ -364,7 +370,7 @@ export function MetroMapBlock({
             </g>
           )
         })}
-      </svg> : null}
+      </RasterDiagram> : null}
       {questions.length > 0 ? <ol className="tcm-cfr-metro-questions">
         {questions.map((q, i) => (
           <li key={`mq-${i}`}>

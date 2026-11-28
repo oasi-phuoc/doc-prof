@@ -1,6 +1,7 @@
 import { clipLineToRange, STROKE_DASH, STROKE_LABEL } from '@/math/coord-droites'
 import { COORD_SHAPE_LABEL, axisTickLabel, columnLetter, formatAxesCoord, formatAxesNum } from '@/math/coord-reperage'
 import type { CoordLine, CoordScene, CoordShape } from '@/math/types'
+import { RasterDiagram } from './RasterDiagram'
 
 type Pt = { x: number; y: number; label?: string }
 
@@ -169,9 +170,11 @@ function CellsScene({
   const svgH = padT + gridH + padB
   const markAt = (x: number, y: number) => scene.marks.find((m) => m.x === x && m.y === y)
   const glyph = Math.max(1.4, cellMm * 0.32)
+  const Diagram = editable ? 'svg' : RasterDiagram
 
   return (
-    <svg
+    <Diagram
+      {...(editable ? {} : { fit: true })}
       className="coord-grid scene-cells is-fixed-mm"
       data-column-direction={reverseColumns?'rtl':'ltr'}
       data-row-direction={reverseRows?'top-down':'bottom-up'}
@@ -253,7 +256,7 @@ function CellsScene({
           )
         }),
       )}
-    </svg>
+    </Diagram>
   )
 }
 
@@ -272,7 +275,7 @@ function PolygonScene({ scene }: { scene: CoordScene }) {
   }).join(' ')
 
   return (
-    <svg className="coord-grid scene-polygon" viewBox={`0 0 ${size} ${size}`} role="img" aria-label="Figure sur quadrillage">
+    <RasterDiagram className="coord-grid scene-polygon" viewBox={`0 0 ${size} ${size}`} role="img" aria-label="Figure sur quadrillage">
       {Array.from({ length: scene.rows + 1 }, (_, i) => {
         const y = scene.rows - i
         const gy = pad + (i / scene.rows) * inner
@@ -308,7 +311,7 @@ function PolygonScene({ scene }: { scene: CoordScene }) {
           </g>
         )
       })}
-    </svg>
+    </RasterDiagram>
   )
 }
 
@@ -327,7 +330,7 @@ function PolarScene({ scene }: { scene: CoordScene }) {
   }
 
   return (
-    <svg className="coord-grid scene-polar" viewBox={`0 0 ${size} ${size}`} role="img" aria-label="Repère polaire">
+    <RasterDiagram className="coord-grid scene-polar" viewBox={`0 0 ${size} ${size}`} role="img" aria-label="Repère polaire">
       {Array.from({ length: rings }, (_, i) => (
         <circle key={i} cx={cx} cy={cy} r={((i + 1) / rings) * maxR} className="grid-line" fill="none" />
       ))}
@@ -352,7 +355,7 @@ function PolarScene({ scene }: { scene: CoordScene }) {
           </g>
         )
       })}
-    </svg>
+    </RasterDiagram>
   )
 }
 
@@ -424,9 +427,11 @@ function AxesScene({
   const axisOvershoot = scene.originZeroInNegCell ? Math.max(arrowLen + 0.4, decorationCellMm * 0.55) : 0
   const axisTipX = colX(cols) + axisOvershoot
   const axisTipY = rowY(rows) - axisOvershoot
+  const Diagram = editable || placingOrigin ? 'svg' : RasterDiagram
 
   return (
-    <svg
+    <Diagram
+      {...(editable || placingOrigin ? {} : { fit: true })}
       className={`coord-grid scene-axes is-fixed-mm${scene.fineGrid ? ' is-fine' : ''}${placingOrigin ? ' is-placing-origin' : ''}`}
       width={`${svgW}mm`}
       height={`${svgH}mm`}
@@ -787,7 +792,7 @@ function AxesScene({
           </g>
         )
       })}
-    </svg>
+    </Diagram>
   )
 }
 
@@ -796,7 +801,7 @@ function CoordLineLegend({ lines }: { lines: CoordLine[] }) {
     <ul className="coord-line-legend">
       {lines.map((line) => (
         <li key={line.id}>
-          <svg className="coord-line-swatch" viewBox="0 0 28 10" aria-hidden>
+          <RasterDiagram className="coord-line-swatch" viewBox="0 0 28 10" aria-hidden>
             <line
               x1="1"
               y1="5"
@@ -805,7 +810,7 @@ function CoordLineLegend({ lines }: { lines: CoordLine[] }) {
               className={`coord-line line-${line.color}`}
               strokeDasharray={STROKE_DASH[line.stroke]}
             />
-          </svg>
+          </RasterDiagram>
           <span>
             droite {line.name}
             <small> · {STROKE_LABEL[line.stroke]}</small>
@@ -874,7 +879,7 @@ export function CoordGrid({
 
   const ticks = Array.from({ length: 2 * RANGE + 1 }, (_, i) => i - RANGE)
   return (
-    <svg className="coord-grid" viewBox={`0 0 ${SIZE} ${SIZE}`} role="img" aria-label="Repère orthonormé">
+    <RasterDiagram className="coord-grid" viewBox={`0 0 ${SIZE} ${SIZE}`} role="img" aria-label="Repère orthonormé">
       {ticks.map((t) => {
         const h = toSvg(t, 0)
         const v = toSvg(0, t)
@@ -918,7 +923,7 @@ export function CoordGrid({
           </text>
         </g>
       )}
-    </svg>
+    </RasterDiagram>
   )
 }
 

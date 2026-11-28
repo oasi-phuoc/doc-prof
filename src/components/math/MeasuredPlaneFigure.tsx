@@ -1,7 +1,8 @@
 import type { Figure, FigureDims } from '@/math/types'
 import { fmt } from '@/math/column-arith'
+import { RasterDiagram } from './RasterDiagram'
 
-/** Les cotes HTML gardent la taille de lecture choisie, indépendamment du SVG. */
+/** Les cotes HTML gardent la taille de lecture choisie. */
 export function MeasuredPlaneFigure({ type, dims = {} }: { type?: Figure; dims?: FigureDims }) {
   const unit = dims.unit ?? 'cm'
   const measure = (value?: number) => value == null ? '' : `${fmt(value)} ${unit}`
@@ -21,14 +22,14 @@ export function MeasuredPlaneFigure({ type, dims = {} }: { type?: Figure; dims?:
     return (
       <div className="cfr-measured-figure is-triangle">
         <div className="cfr-triangle-diagram">
-          <svg className="cfr-measured-shape" viewBox="0 0 300 160" role="img" aria-label="Triangle scalène avec hauteur extérieure en pointillés">
-            <polygon points={`${apexX},${apexY} ${left},${bottom} ${right},${bottom}`} fill="currentColor" fillOpacity=".08" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
+          <RasterDiagram className="cfr-measured-shape" viewBox="0 0 300 160" role="img" aria-label="Triangle scalène avec hauteur extérieure en pointillés">
+            <polygon points={`${apexX},${apexY} ${left},${bottom} ${right},${bottom}`} fill="#a7c9da" fillOpacity=".28" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
             <g className="cfr-external-height" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d={`M${apexX} ${apexY}V${bottom}H${right}`} strokeDasharray="5 4" />
               <path d={`M${apexX - 7} ${bottom}V${bottom - 7}H${apexX}`} />
             </g>
             <path d={`M${bAnchorX + 4} ${bLabelY}H${apexX + 8}`} fill="none" stroke="currentColor" strokeWidth=".8" />
-          </svg>
+          </RasterDiagram>
           <span className="cfr-measure-label is-side-c" style={label((left + apexX) / 2 - 20, (bottom + apexY) / 2 - 16)}>{measure(dims.c)}</span>
           <span className="cfr-measure-label is-side-b" style={label(apexX + 14, bLabelY)}>{measure(dims.b)}</span>
           <span className="cfr-measure-label is-base" style={label((left + right) / 2, bottom + 15)}>{measure(dims.a)}</span>
@@ -41,12 +42,12 @@ export function MeasuredPlaneFigure({ type, dims = {} }: { type?: Figure; dims?:
   return (
     <div className={`cfr-measured-figure is-${type}`}>
       {top != null && <span className="cfr-measure-label is-top">{measure(top)}</span>}
-      <svg className="cfr-measured-shape" viewBox={type === 'square' ? '0 0 120 120' : '0 0 190 110'} role="img" aria-label={type === 'square' ? 'Carré' : 'Rectangle'}>
-        <g fill="currentColor" fillOpacity=".08" stroke="currentColor" strokeWidth="2" strokeLinejoin="round">
+      <RasterDiagram className="cfr-measured-shape" viewBox={type === 'square' ? '0 0 120 120' : '0 0 190 110'} role="img" aria-label={type === 'square' ? 'Carré' : 'Rectangle'}>
+        <g fill="#a7c9da" fillOpacity=".28" stroke="currentColor" strokeWidth="2" strokeLinejoin="round">
           {type === 'square' && <rect x="8" y="8" width="104" height="104" />}
           {type === 'rectangle' && <rect x="10" y="5" width="170" height="100" />}
         </g>
-      </svg>
+      </RasterDiagram>
       {type === 'rectangle' && dims.width != null && <span className="cfr-measure-label is-right">{measure(dims.width)}</span>}
     </div>
   )

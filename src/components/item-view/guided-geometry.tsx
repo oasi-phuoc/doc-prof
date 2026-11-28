@@ -6,6 +6,7 @@ import sionPhoto from '@/math/media/spatial/sion-swissimage.webp'
 import sionAnnotatedPhoto from '@/math/media/spatial/sion-photo-chemins.webp'
 import sionSimplifiedMap from '@/math/media/spatial/sion-plan-simplifie.png'
 import translationExample from '@/math/media/theory/falc/translation.png'
+import { RasterDiagram } from '@/components/math/RasterDiagram'
 
 const sionLabelOffsets = [
   { dx: -24, dy: 26, anchor: 'start' },
@@ -46,7 +47,7 @@ function RectangleFigure({ length, width, hatched }: { length: number; width: nu
   const w = length * scale
   const h = width * scale
   return (
-    <svg className="math-rectangle-measures" viewBox={`0 0 ${w + 48} ${h + 29}`} role="img"
+    <RasterDiagram className="math-rectangle-measures" viewBox={`0 0 ${w + 48} ${h + 29}`} role="img"
       aria-label={`Rectangle de ${length} cm sur ${width} cm. Les carreaux font 1 cm de côté.`}>
       <defs>
         <pattern id={pattern} width={scale} height={scale} patternUnits="userSpaceOnUse" x="8" y="20">
@@ -58,7 +59,7 @@ function RectangleFigure({ length, width, hatched }: { length: number; width: nu
         fill={`url(#${pattern})`} strokeWidth={hatched ? 2.4 : 1.2} stroke="currentColor" />
       <text x={8 + w / 2} y="13" textAnchor="middle">{length} cm</text>
       <text x={w + 13} y={24 + h / 2}>{width} cm</text>
-    </svg>
+    </RasterDiagram>
   )
 }
 
@@ -112,7 +113,7 @@ export function TranslationPractice({ practice, mode }: {
       <p>Déplacez chaque sommet.</p>
       <p>Allez de {moveText(vector, 0)}, puis de {moveText(vector, 1)}.</p>
       <p>Reliez les trois nouveaux points.</p>
-      <svg viewBox={`0 0 ${px(columns) + 14} ${px(rows) + 14}`} role="img" aria-label={`Triangle ABC sur quadrillage. Déplacement de ${moveText(vector, 0)} et de ${moveText(vector, 1)}.${show ? ' Le triangle A′B′C′ montre le résultat.' : ''}`}>
+      <RasterDiagram className="math-translation-drawing" viewBox={`0 0 ${px(columns) + 14} ${px(rows) + 14}`} role="img" aria-label={`Triangle ABC sur quadrillage. Déplacement de ${moveText(vector, 0)} et de ${moveText(vector, 1)}.${show ? ' Le triangle A′B′C′ montre le résultat.' : ''}`}>
         <defs>
           <marker id={marker} markerWidth="5" markerHeight="5" refX="5" refY="2.5" orient="auto">
             <path d="M0 0L5 2.5L0 5Z" fill="#174a7e" />
@@ -130,7 +131,7 @@ export function TranslationPractice({ practice, mode }: {
           </g>
         )}
         {show && drawTriangle(images, true)}
-      </svg>
+      </RasterDiagram>
     </div>
   )
 }
@@ -147,6 +148,8 @@ export function SionMapPractice({ item, mode }: { item: MathItem; mode: PreviewM
   const { columns, rows } = plan.grid
   const w = 432
   const h = 288
+  const left = 20
+  const top = 22
   const labels = historic ? plan.places.map(({ x, y }, index) => {
     const offset = sionLabelOffsets[index]!
     return { x: x * w + offset.dx, y: y * h + offset.dy, anchor: offset.anchor }
@@ -155,8 +158,9 @@ export function SionMapPractice({ item, mode }: { item: MathItem; mode: PreviewM
     <div className={`math-geometry-pilot math-sion-map is-${variant}${historic ? '' : ' is-regional'}`}>
       <p className="math-sion-example"><strong>Exemple.</strong> {model.name} se trouve en {model.code}.</p>
       <figure>
-        <svg viewBox={`-20 -22 ${w + 20} ${h + 22}`} role="img" aria-label={`${map.alt}. ${plan.label}. Colonnes A à ${REAL_MAP_COLUMNS[columns - 1]} et lignes 1 à ${rows}. ${plan.places.map(({ name, code }) => `${name}, case ${code}`).join('. ')}.`}>
-          <image href={image} width={w} height={h} />
+        <div className="math-sion-plot">
+          <img className="math-sion-background" src={image} alt="" style={{ left: `${100 * left / (w + left)}%`, top: `${100 * top / (h + top)}%`, width: `${100 * w / (w + left)}%`, height: `${100 * h / (h + top)}%` }} />
+          <RasterDiagram className="math-sion-overlay" viewBox={`${-left} ${-top} ${w + left} ${h + top}`} role="img" aria-label={`${map.alt}. ${plan.label}. Colonnes A à ${REAL_MAP_COLUMNS[columns - 1]} et lignes 1 à ${rows}. ${plan.places.map(({ name, code }) => `${name}, case ${code}`).join('. ')}.`}>
           <g className="math-sion-grid">
             {Array.from({ length: columns - 1 }, (_, index) => <line key={index} x1={(index + 1) * w / columns} x2={(index + 1) * w / columns} y1="0" y2={h} />)}
             {Array.from({ length: rows - 1 }, (_, index) => <line key={index} x1="0" x2={w} y1={(index + 1) * h / rows} y2={(index + 1) * h / rows} />)}
@@ -179,7 +183,8 @@ export function SionMapPractice({ item, mode }: { item: MathItem; mode: PreviewM
               </g>
             )
           })}
-        </svg>
+          </RasterDiagram>
+        </div>
         <figcaption>
           {variant !== 'photo' && (
             <span className="math-sion-legend">

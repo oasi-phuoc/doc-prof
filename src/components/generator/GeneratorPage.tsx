@@ -5,6 +5,7 @@ import { AudioProgressDialog } from '@/components/AudioProgressDialog'
 import { openInteractive } from '@/interactive/navigation'
 import { GrammarCurriculumError } from '@/grammaire/curriculum/types'
 import { waitForGrammarPrintImages } from '@/components/grammar/print-media'
+import { waitForWorksheetDiagrams } from '@/components/math/diagram-print'
 import { WorksheetImageProvider } from '@/components/WorksheetImage'
 import {
   useEffect,
@@ -631,7 +632,7 @@ export function GeneratorPage({
     try {
       const printRoot = document.querySelector<HTMLElement>('.print-only-sheets')
       if (printRoot) {
-        await Promise.all([document.fonts.ready, waitForGrammarPrintImages(printRoot)])
+        await Promise.all([document.fonts.ready, waitForGrammarPrintImages(printRoot), waitForWorksheetDiagrams(printRoot)])
         if (printRoot.isConnected) window.print()
       }
     } catch (error) {
