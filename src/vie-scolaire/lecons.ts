@@ -1,4 +1,5 @@
 import { SCHOOL_A2_LESSONS } from './lecons-a2'
+import { SCHOOL_B1_LESSONS } from './lecons-b1'
 import { blank, choice, picture, word } from './lecon-supports'
 import type { SchoolLesson, SchoolWord } from './types'
 
@@ -361,4 +362,4 @@ const a1Lessons: readonly SchoolLesson[] = [
   },
 ]
 
-export const SCHOOL_LESSONS = [...a1Lessons, ...SCHOOL_A2_LESSONS]
+export const SCHOOL_LESSONS = [...a1Lessons, ...SCHOOL_A2_LESSONS, ...SCHOOL_B1_LESSONS]

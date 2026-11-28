@@ -14,4 +14,3 @@ export function choice(prompt: string, answer: string, first: string, second: st
 export function blank(prompt: string, answer: string, first: string, second: string, explanation: string): CompletionFiche {
   return { prompt, answer, distractors: [first, second], explanation }
 }
-
