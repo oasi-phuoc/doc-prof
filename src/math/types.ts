@@ -435,7 +435,7 @@ export type DivisionStep = {
 }
 
 export type LogistiqueGapMode = 'sans-liste' | 'avec-liste'
-export type LogistiqueResponsePresentation = 'qcm' | 'lignes-simples' | 'lignes-numerotees'
+export type LogistiqueResponsePresentation = 'qcm' | 'qcm-multiple' | 'vrai-faux' | 'lignes-simples' | 'lignes-numerotees'
 export type LogistiquePresentation = LogistiqueGapMode | LogistiqueResponsePresentation | import('@/logistique/tables').LogistiqueTablePresentation
 export type LogistiqueResponseLines =
   | { kind: 'simple'; count: number }
@@ -484,6 +484,7 @@ export type MathItem = {
   logistiqueRetained?: boolean
   logistiqueGaps?: LogistiqueGaps
   logistiqueResponseLines?: LogistiqueResponseLines
+  logistiqueChoice?: import('@/logistique/choices').LogistiqueChoice
   logistiqueTable?: import('@/logistique/tables').LogistiqueExerciseTable
   logistiqueImage?: LogistiqueQuestionImage
   logistiqueGlossaryFigure?: LogistiqueGlossaryFigure

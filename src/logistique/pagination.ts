@@ -189,6 +189,16 @@ function height(item: MathItem, a5: boolean, scale: number): number {
       Math.max(minimum, (a5 ? 145 : 174) + prompt + answer, calculations + prompt + answer + 36)
   }
   const spacing = a5 || table ? 48 : 58
+  const choice = item.logistiqueChoice
+  if (choice?.kind === 'multiple') {
+    const choicesHeight = item.options?.reduce((total, text) => total + (13 + 19 * lineCount(text, width * 0.8)) * scale, 0) ?? 0
+    return imageHeight + spacing + prompt + choicesHeight + 21 * scale
+  }
+  if (choice?.kind === 'true-false') {
+    const justification = choice.justification === undefined ? 0
+      : Math.max(3, lineCount(choice.justification, width)) * 25 * scale
+    return imageHeight + spacing + prompt + 37 * scale + justification
+  }
   const lines = item.logistiqueResponseLines
   const responseHeight = lines?.kind === 'numbered'
     ? lines.answers.reduce((total, text) => total + (8 + 26 * lineCount(text, width * 0.83)) * scale, 0)

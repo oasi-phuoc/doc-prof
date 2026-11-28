@@ -2,6 +2,7 @@ import { pageBlocks } from '@/math/page-model'
 import { createRng, shuffle, type Rng } from '@/math/rng'
 import type { LogistiquePresentation, MathItem, PageConfig } from '@/math/types'
 import { currentLogistiquePublication, logistiquePublication, type LogistiqueUnit } from './approved-banks'
+import { logistiqueVerdicts } from './choices'
 import { completeLogistiqueGlossaryItem } from './glossary'
 import { logistiqueStoryModules, logistiqueStoryQuestions, logistiqueStorySelectionCompatible, validLogistiqueEvaluation,
   type LogistiqueEvaluation } from './evaluation'
@@ -45,6 +46,12 @@ function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'
         ...(unit.table ? { logistiqueTable: unit.table } : {}),
       }]
     case 'verification':
+      if (unit.choice) {
+        const options = unit.choice.kind === 'true-false' ? [...logistiqueVerdicts] : [...unit.options ?? []]
+        return [{ logistiqueSource, layout: 'select', prompt: unit.prompt, answer: unit.answer,
+          options: unit.choice.kind === 'multiple' && presentationRng ? shuffle(presentationRng, options) : options,
+          logistiqueChoice: unit.choice }]
+      }
       if (unit.table) {
         return [{ logistiqueSource, layout: 'text', prompt: unit.prompt, answer: unit.answer, logistiqueTable: unit.table }]
       }
@@ -74,6 +81,7 @@ function hasPresentation(unit: LogistiqueUnit, presentation?: LogistiquePresenta
   if ('table' in unit && unit.table) return unit.table.presentation === presentation
   if (unit.kind === 'verification' && unit.gaps) return presentation === 'sans-liste' || presentation === 'avec-liste'
   if (unit.kind === 'verification') {
+    if (unit.choice) return presentation === (unit.choice.kind === 'multiple' ? 'qcm-multiple' : 'vrai-faux')
     if (presentation === 'qcm') return Boolean(unit.options?.length && unit.options.includes(unit.answer))
     if (presentation === 'lignes-numerotees') return Boolean(unit.numberedAnswers?.length)
     if (presentation === 'lignes-simples') return !unit.options?.length && !unit.numberedAnswers?.length
@@ -111,7 +119,7 @@ export function logistiqueModuleCapacities(
 
 export function logistiqueQuestionItems(type: LogistiqueType, modules: string[], revision?: string, presentation?: LogistiquePresentation): MathItem[] {
   if (!validLogistiqueSelection(type, { modules }) || !validLogistiquePresentation(type, presentation)) return []
-  const presentationRng = presentation === 'avec-liste' || presentation === 'qcm' ? createRng(20261127) : undefined
+  const presentationRng = presentation === 'avec-liste' || presentation === 'qcm' || presentation === 'qcm-multiple' ? createRng(20261127) : undefined
   return eligibleUnits(type, logistiquePublication(revision)?.units ?? [], modules, presentation)
     .flatMap((unit) => unitItems(unit, undefined, presentation, presentationRng))
 }
@@ -205,7 +213,7 @@ export function generateLogistique(
         : presentation === 'sans-liste' || presentation === 'avec-liste' ? 'Complétez les textes.' : type.instruction
       : modules.length ? 'Contenu à compléter pour cette sélection.' : 'Sélectionnez au moins un sous-thème.',
     items: selected.flatMap((unit) => unitItems(unit, config.logistiqueTheoryView, presentation,
-      presentation === 'avec-liste' || presentation === 'qcm' ? rng : undefined)),
+      presentation === 'avec-liste' || presentation === 'qcm' || presentation === 'qcm-multiple' ? rng : undefined)),
     bankQuestionCap: reference && eligible.length ? undefined : eligible.length,
   }
 }

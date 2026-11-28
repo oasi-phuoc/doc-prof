@@ -1,6 +1,7 @@
 import type { Domain, ExerciseBlock, ExerciseType, LogistiqueQuestionImage, LogistiqueResponseLines, Topic } from '@/math/types'
 import curriculum from './curriculum.generated.json'
 import { validLogistiqueGaps } from './gaps'
+import { validLogistiqueChoice } from './choices'
 import { isLogistiqueTablePresentation, validLogistiqueExerciseTable } from './tables'
 import { logistiqueStorySelectionCompatible, validLogistiqueAssessment, validLogistiqueEvaluation } from './evaluation'
 
@@ -128,7 +129,8 @@ export function logistiquePresentationFor(block: Pick<ExerciseBlock, 'logistique
 export function validLogistiquePresentation(type: LogistiqueType, presentation: unknown): boolean {
   if (isLogistiqueTablePresentation(presentation)) return type.kind === 'verification' || type.kind === 'situation' ||
     (type.kind === 'maths' && (presentation === 'tableau-donnees' || presentation === 'tableau-dates'))
-  if (presentation === 'qcm' || presentation === 'lignes-simples' || presentation === 'lignes-numerotees') {
+  if (presentation === 'qcm' || presentation === 'qcm-multiple' || presentation === 'vrai-faux' ||
+      presentation === 'lignes-simples' || presentation === 'lignes-numerotees') {
     return type.kind === 'verification'
   }
   return validLogistiqueGapMode(type, presentation)
@@ -203,6 +205,7 @@ export function validLogistiqueCataloguePages(pages: readonly CataloguePage[]): 
           subthemes.some(({ code, diploma }) =>
             code === item.logistiqueLocalModule && diploma === type.diploma))) &&
         (item?.logistiqueImage === undefined || validLogistiqueQuestionImage(item.logistiqueImage, type.diploma)) &&
+        (item?.logistiqueChoice === undefined || (type.kind === 'verification' && validLogistiqueChoice(item))) &&
         (item?.logistiqueResponseLines === undefined || (type.kind === 'verification' && item.layout === 'text' &&
           !item.logistiqueGaps && !item.logistiqueTable && validResponseLines(item.logistiqueResponseLines))) &&
         (item?.logistiqueTable === undefined || (

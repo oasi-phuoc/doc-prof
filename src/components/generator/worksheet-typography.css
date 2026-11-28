@@ -226,6 +226,34 @@
   overflow-wrap: anywhere;
 }
 
+.is-logistique .logistique-choices.is-multiple .oral-qcm-options {
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: none;
+  grid-auto-flow: row;
+}
+
+.is-logistique .logistique-choices.is-true-false .oral-qcm-options {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.logistique-choice-instruction,
+.logistique-choice-justification {
+  font-size: calc(13px * var(--app-font-scale, 1));
+  line-height: 1.35;
+}
+
+.logistique-choice-justification .answer-line-field {
+  display: block;
+  width: 100%;
+}
+
+.logistique-choice-justification p {
+  margin: 4px 0 0;
+  font-weight: 400;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
 .logistique-assessment-points {
   margin: 0 0 .15em;
   font-size: calc(11px * var(--app-font-scale, 1));
