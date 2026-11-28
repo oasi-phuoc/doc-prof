@@ -1,0 +1,112 @@
+{
+  "id": "qcm-hist2-051-reglement-piscine-3",
+  "prompt": "Une seule illustration complète, PNG natif 1448 × 1086, paysage 4:3 exact. Contours fins et volumes doux du style TCF validé. Sujet entier et composition lisible. Aucun emplacement, personnage, nombre, texte, prix ou marque inventé. Un repère court explicitement prévu dans ce choix peut apparaître. Toute la scène, y compris les meubles, les murs et l’arrière-plan, suit le rendu peint mat et semi-réaliste des références. Les références de style ne fournissent ni personnages ni accessoires. Si une variante reprend une scène du même trio, garder précisément ses personnages, ses objets, leur échelle et leur apparence. Vérifier les pieds, les sièges, les surfaces d’appui et les objets occultés par le mobilier. Même feuille entière avec pictogrammes de baignade indiquant un règlement, aucun mot ni tarif, dans un décor peint. Les trois lieux sont entièrement distincts, sans reprise de visages. La même feuille est affichée sur un panneau au bord du parking, places et voitures au-delà du panneau. Une illustration individuelle pour un seul choix. Jamais de planche des trois choix ni de nom du style TCF écrit dans le décor. Les références de style donnent seulement le rendu peint, jamais leurs personnages, instruments, textes ou accessoires. Aucun prix, montant, date, jour ou mois. La PREMIÈRE référence est la scène de sujet déjà publiée : conserver son visage, sa coiffure et les vêtements réels du personnage plutôt qu’une description approximative différente dans le brief ; garder les objets demandés et changer leur lieu selon ce seul choix. Aucun emplacement concurrent du parent ne doit rester visible par erreur.",
+  "refs": [
+    "/tmp/tcf-work/public/lib/images/tcf/qcm-audit/qcm-hist2-051-reglement-piscine-1.png",
+    "/tmp/tcf-work/public/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+    "/tmp/tcf-work/public/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+  ],
+  "packet": "docs/tcf/lots-images-20261124/historique-lot02-preparation.json",
+  "job_spec": {
+    "id": "qcm-hist2-051-reglement-piscine-3",
+    "desc": "La même feuille est affichée sur un panneau au bord du parking, places et voitures au-delà du panneau.",
+    "type": "Scène",
+    "seed": "qcm-hist2-051-reglement-piscine-1",
+    "path": "/lib/images/tcf/qcm-audit/qcm-hist2-051-reglement-piscine-3.png",
+    "refs": [
+      "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+      "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+    ],
+    "prompt": "Une seule illustration complète, PNG natif 1448 × 1086, paysage 4:3 exact. Contours fins et volumes doux du style TCF validé. Sujet entier et composition lisible. Aucun emplacement, personnage, nombre, texte, prix ou marque inventé. Un repère court explicitement prévu dans ce choix peut apparaître. Toute la scène, y compris les meubles, les murs et l’arrière-plan, suit le rendu peint mat et semi-réaliste des références. Les références de style ne fournissent ni personnages ni accessoires. Si une variante reprend une scène du même trio, garder précisément ses personnages, ses objets, leur échelle et leur apparence. Vérifier les pieds, les sièges, les surfaces d’appui et les objets occultés par le mobilier. Même feuille entière avec pictogrammes de baignade indiquant un règlement, aucun mot ni tarif, dans un décor peint. Les trois lieux sont entièrement distincts, sans reprise de visages. La même feuille est affichée sur un panneau au bord du parking, places et voitures au-delà du panneau.",
+    "status": "pending_generation",
+    "question_key": "delf-a2r-ce-043#1",
+    "choice": 3
+  },
+  "question_context": {
+    "key": "delf-a2r-ce-043#1",
+    "bank": "/workspace/doc-prof/src/tcf/content/a1-a2/ce.json",
+    "exercise": "delf-a2r-ce-043",
+    "question": 1,
+    "level": "A1-A2",
+    "source": "Le règlement se trouve à l’accueil.\n• Le maillot de bain est obligatoire (shorts et bermudas interdits).\n• Déposez vos affaires dans un casier, dans les vestiaires.\n• Rincez-vous d’abord à la douche avant d’entrer dans la piscine.\n• Il est interdit de courir, de boire et de manger autour des bassins.",
+    "source_sha256": "3891cfa9512313d1e4072f0fad8b9273ea670c438ad95ba2bccb096179e06186",
+    "semantic_sha256": "aa44f0fc22078e0ffe92aab4e116ae0b8f519b009271a17360b75e9e1fdba292",
+    "audio": null,
+    "audio_sha256": null,
+    "question_snapshot": {
+      "enonce": "Où le règlement est-il disponible ?",
+      "type_reponse": "qcm_texte",
+      "points": 1,
+      "melanger": true,
+      "choix": [
+        {
+          "id": "a",
+          "texte": "À l’accueil",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Au restaurant"
+        },
+        {
+          "id": "c",
+          "texte": "Sur le parking"
+        }
+      ],
+      "formes": {
+        "lignes": {
+          "nb_lignes": 2,
+          "reponse_modele": "À l’accueil"
+        }
+      }
+    },
+    "prior_context_review": {
+      "key": "delf-a2r-ce-043#1",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "exercise": "delf-a2r-ce-043",
+      "question": 1,
+      "enonce": "Où le règlement est-il disponible ?",
+      "labels": [
+        "À l’accueil",
+        "Au restaurant",
+        "Sur le parking"
+      ],
+      "status": "artwork_needed_contextual_locations",
+      "source_sha256": "3891cfa9512313d1e4072f0fad8b9273ea670c438ad95ba2bccb096179e06186",
+      "audio": null,
+      "review_index": 514,
+      "semantic_sha256": "aa44f0fc22078e0ffe92aab4e116ae0b8f519b009271a17360b75e9e1fdba292",
+      "reviewed": true,
+      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
+      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "brief": {
+        "context_question": "Où le règlement est-il disponible ?",
+        "choices_to_illustrate": [
+          "À l’accueil",
+          "Au restaurant",
+          "Sur le parking"
+        ],
+        "source_bank": "src/tcf/content/a1-a2/ce.json",
+        "source_exercise": "delf-a2r-ce-043",
+        "source_question": 1,
+        "source_sha256": "3891cfa9512313d1e4072f0fad8b9273ea670c438ad95ba2bccb096179e06186",
+        "constraints": [
+          "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
+          "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
+          "Style peint semi-réaliste validé, contours fins, paysage 4:3 exact, sujets entiers.",
+          "Réutiliser les images existantes seulement si le sens entier correspond ; aucune activation partielle.",
+          "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
+          "Revue visuelle et corrigé synchronisé avant toute activation."
+        ]
+      }
+    }
+  },
+  "source_sha256": "e4169a1c56bcebbfba0123c6a46a57455a2f984c1c47b0b2c274bd373161d9fe",
+  "native_dimensions": [
+    1448,
+    1086
+  ],
+  "visual_review_status": "rejected",
+  "original_bytes_preserved": true,
+  "rejection_reason": "La feuille à bouclier et lignes du parent a été remplacée par un panneau de pictogrammes différent ; personnage ajouté depuis la référence de style. Reprendre le même règlement sans personnage."
+}

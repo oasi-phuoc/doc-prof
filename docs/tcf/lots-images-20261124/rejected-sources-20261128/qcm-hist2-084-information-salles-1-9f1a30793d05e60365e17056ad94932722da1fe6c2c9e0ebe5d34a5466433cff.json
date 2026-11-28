@@ -1,0 +1,115 @@
+{
+  "id": "qcm-hist2-084-information-salles-1",
+  "prompt": "Une seule illustration complète, PNG natif 1448 × 1086, paysage 4:3 exact. Contours fins et volumes doux du style TCF validé. Sujet entier et composition lisible. Aucun emplacement, personnage, nombre, texte, prix ou marque inventé. Un repère court explicitement prévu dans ce choix peut apparaître. Toute la scène, y compris les meubles, les murs et l’arrière-plan, suit le rendu peint mat et semi-réaliste des références. Les références de style ne fournissent ni personnages ni accessoires. Si une variante reprend une scène du même trio, garder précisément ses personnages, ses objets, leur échelle et leur apparence. Vérifier les pieds, les sièges, les surfaces d’appui et les objets occultés par le mobilier. Même plan de localisation des salles, composé de formes non légendées et d’un schéma de tracé clairement visible. L’information reste sur un seul support distinct, décor scolaire et couleurs peintes comparables. Le plan figure sur un tableau d’informations placé juste à l’entrée de l’école, principal accès et hall ensemble. Une illustration individuelle pour un seul choix. Jamais de planche des trois choix ni de nom du style TCF écrit dans le décor. Les références de style donnent seulement le rendu peint, jamais leurs personnages, instruments, textes ou accessoires. Aucun prix, montant, date, jour ou mois.",
+  "refs": [
+    "/tmp/tcf-work/public/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+    "/tmp/tcf-work/public/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+  ],
+  "packet": "docs/tcf/lots-images-20261124/historique-lot02-preparation.json",
+  "job_spec": {
+    "id": "qcm-hist2-084-information-salles-1",
+    "desc": "Le plan figure sur un tableau d’informations placé juste à l’entrée de l’école, principal accès et hall ensemble.",
+    "type": "Scène",
+    "seed": null,
+    "path": "/lib/images/tcf/qcm-audit/qcm-hist2-084-information-salles-1.png",
+    "refs": [
+      "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp",
+      "/lib/images/tcf/qcm-audit/co834-club-photo-dessine.webp"
+    ],
+    "prompt": "Une seule illustration complète, PNG natif 1448 × 1086, paysage 4:3 exact. Contours fins et volumes doux du style TCF validé. Sujet entier et composition lisible. Aucun emplacement, personnage, nombre, texte, prix ou marque inventé. Un repère court explicitement prévu dans ce choix peut apparaître. Toute la scène, y compris les meubles, les murs et l’arrière-plan, suit le rendu peint mat et semi-réaliste des références. Les références de style ne fournissent ni personnages ni accessoires. Si une variante reprend une scène du même trio, garder précisément ses personnages, ses objets, leur échelle et leur apparence. Vérifier les pieds, les sièges, les surfaces d’appui et les objets occultés par le mobilier. Même plan de localisation des salles, composé de formes non légendées et d’un schéma de tracé clairement visible. L’information reste sur un seul support distinct, décor scolaire et couleurs peintes comparables. Le plan figure sur un tableau d’informations placé juste à l’entrée de l’école, principal accès et hall ensemble.",
+    "status": "pending_generation",
+    "question_key": "tcf-ss-a2-s7-co-2#3",
+    "choice": 1
+  },
+  "question_context": {
+    "key": "tcf-ss-a2-s7-co-2#3",
+    "bank": "/workspace/doc-prof/src/tcf/content/a1-a2/co.json",
+    "exercise": "tcf-ss-a2-s7-co-2",
+    "question": 3,
+    "level": "A1-A2",
+    "source": "Le bâtiment C de l’école est fermé du 14 au 26 janvier pour travaux. Vos nouvelles salles de classe pendant cette période sont indiquées sur le tableau d’information à l’entrée.\nL’association des parents d’élèves organise le concours « Dessine ton école idéale ». Pour participer, vous devez envoyer votre dessin avant le 12 mars à l’adresse parents@lycee.fr.\nChers élèves, lundi 23 avril, nous avons la chance d’accueillir l’auteur Bernard Werber dans l’auditorium du collège. Il donnera une conférence sur son métier à l’occasion de la Journée internationale du livre.\nCeci est une simulation d’alerte au feu. Nous vous demandons de sortir du bâtiment dans le calme. Merci de laisser vos affaires dans la classe et de ne pas courir. Nous allons tous nous retrouver dans la cour.\nVotre professeur d’italien, monsieur Damiani, est absent cette semaine. Il est remplacé à partir de mercredi par monsieur Biancardi. L’examen d’italien a bien lieu vendredi. Il est surveillé par madame Blanchard.\nUne vente de livres est organisée mardi 22 mai par les élèves de 4e B dans la salle B 116. L’argent de la vente est pour l’association Sourire d’enfants, qui aide les enfants malades à l’hôpital.",
+    "source_sha256": "14ec5681797e79fca362aef06906e44a6a0f49193615ef2c0c5730c75da1fb7a",
+    "semantic_sha256": "81c9cba7511afc13a21851be0b57ac807f9b6298250cebaa0ef084bfff7c49df",
+    "audio": "/lib/audio/tcf/co/ecole/ecole-4.mp3",
+    "audio_sha256": "ecdba2dcbe94f4bd7f5eab8199f0af086a03961d14e885e688b07ba82e214d13",
+    "question_snapshot": {
+      "enonce": "Où peut-on trouver les nouvelles salles de classe ?",
+      "type_reponse": "qcm_texte",
+      "points": 1,
+      "melanger": true,
+      "choix": [
+        {
+          "id": "a",
+          "texte": "Sur le tableau d’informations à l’entrée",
+          "correct": true
+        },
+        {
+          "id": "b",
+          "texte": "Dans le cahier de musique"
+        },
+        {
+          "id": "c",
+          "texte": "Sur la porte du gymnase"
+        }
+      ],
+      "formes": {
+        "lignes": {
+          "nb_lignes": 1,
+          "reponse_modele": "Sur le tableau d’informations à l’entrée"
+        }
+      }
+    },
+    "prior_context_review": {
+      "key": "tcf-ss-a2-s7-co-2#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "exercise": "tcf-ss-a2-s7-co-2",
+      "question": 3,
+      "enonce": "Où peut-on trouver les nouvelles salles de classe ?",
+      "labels": [
+        "Sur le tableau d’informations à l’entrée",
+        "Dans le cahier de musique",
+        "Sur la porte du gymnase"
+      ],
+      "status": "artwork_needed_contextual_locations",
+      "source_sha256": "14ec5681797e79fca362aef06906e44a6a0f49193615ef2c0c5730c75da1fb7a",
+      "audio": "/lib/audio/tcf/co/ecole/ecole-4.mp3",
+      "review_index": 586,
+      "semantic_sha256": "81c9cba7511afc13a21851be0b57ac807f9b6298250cebaa0ef084bfff7c49df",
+      "reviewed": true,
+      "review_method": "Énoncé et trois choix relus ; source liée à la revue contextuelle existante, empreinte exacte vérifiée. Sans nouvelle écoute audio.",
+      "reason": "Le lieu, la position et les éventuels objets repères doivent être représentés ensemble. Une image du seul meuble ou du seul bâtiment ne suffit pas pour une relation spatiale.",
+      "brief": {
+        "context_question": "Où peut-on trouver les nouvelles salles de classe ?",
+        "choices_to_illustrate": [
+          "Sur le tableau d’informations à l’entrée",
+          "Dans le cahier de musique",
+          "Sur la porte du gymnase"
+        ],
+        "source_bank": "src/tcf/content/a1-a2/co.json",
+        "source_exercise": "tcf-ss-a2-s7-co-2",
+        "source_question": 3,
+        "source_sha256": "14ec5681797e79fca362aef06906e44a6a0f49193615ef2c0c5730c75da1fb7a",
+        "constraints": [
+          "Relire la source complète liée avant génération et identifier précisément le sujet/objet du récit.",
+          "Trois illustrations distinctes ; mêmes objets et repères quand la relation spatiale change.",
+          "Style peint semi-réaliste validé, contours fins, paysage 4:3 exact, sujets entiers.",
+          "Réutiliser les images existantes seulement si le sens entier correspond ; aucune activation partielle.",
+          "Pas de prix, dates, jours ou mois ; pas de propriété privée ou de lien familial déduit de l’apparence.",
+          "Revue visuelle et corrigé synchronisé avant toute activation."
+        ]
+      },
+      "source_refresh_review": {
+        "date": "2026-11-12",
+        "note": "Relecture éditoriale du 12 novembre : réponse et référent vérifiés dans la transcription actuelle après les corrections audio. Aucun nouveau changement de corrigé et aucune écoute humaine revendiquée."
+      }
+    }
+  },
+  "source_sha256": "9f1a30793d05e60365e17056ad94932722da1fe6c2c9e0ebe5d34a5466433cff",
+  "native_dimensions": [
+    1448,
+    1086
+  ],
+  "visual_review_status": "rejected",
+  "original_bytes_preserved": true,
+  "rejection_reason": "Personnages et/ou instruments des références de style recopiés sans être demandés dans la question ; régénérer un décor sans personne et sans instruments."
+}
