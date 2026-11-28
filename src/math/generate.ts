@@ -6,12 +6,13 @@ import { splitTcfAudioQuestionPages } from '@/tcf/audio-question-pages'
 import { splitCscColumnPages } from '@/tcm-csc/pagination'
 import { ceArtFor } from '@/tcf/ce-art'
 import { withTcfInformationTotals } from '@/tcf/information-totals'
+import { tpfPlacementTask } from '@/tcf/tpf-placement'
 /**
  * Orchestrateur de fiches : buildPage / buildWorksheets.
  * Tirage maths purs → `./generate-items` ; colonnes → `./column-arith`.
  */
 import { tryGenerateAlgebraBatch } from './algebra'
-import { exerciseTypeById, topicById } from './catalog'
+import { defaultPage, exerciseTypeById, topicById } from './catalog'
 import { numberRangeFrom } from './difficulty'
 import { generateConstruire } from './coord-construire'
 import { generateDroites } from './coord-droites'
@@ -39,8 +40,10 @@ import { tryGenerateGrammaireBlock } from '@/grammaire/generate'
 import { isGrammaireTheoryType } from '@/grammaire/types'
 import { splitGradedGrammarPages } from '@/grammaire/curriculum/pagination'
 import { tryGenerateAcmBlock } from '@/acm/generate'
+import { paginateAcmWorksheet } from '@/acm/pagination'
 import { tryGenerateLogiqueBlock } from '@/logique/generate'
 import { tryGenerateSanteBlock } from '@/sante/generate'
+import { paginateSanteWorksheet } from '@/sante/pagination'
 import { tryGenerateSocieteBlock } from '@/societe/generate'
 import { isTcmCfrConsignesType, TCM_CFR_MAX_SCORE } from '@/tcm-cfr/test'
 import { tryGenerateTcmCscBlock } from '@/tcm-csc/generate'
@@ -157,12 +160,12 @@ function buildSingleBlock(
   const societe = tryGenerateSocieteBlock(config)
   if (societe) {
     return {
-      title: fallbackTitle,
+      title: societe.title,
       instruction: societe.instruction,
       items: societe.items,
     }
   }
-  const sante = tryGenerateSanteBlock(config)
+  const sante = tryGenerateSanteBlock(config, rng)
   if (sante) {
     return {
       title: fallbackTitle,
@@ -173,7 +176,7 @@ function buildSingleBlock(
   const acm = tryGenerateAcmBlock(config)
   if (acm) {
     return {
-      title: fallbackTitle,
+      title: acm.title,
       instruction: acm.instruction,
       items: acm.items,
     }
@@ -417,7 +420,9 @@ export function buildPage(
   worksheetSeed = seed,
 ): WorksheetPage {
   // CE « Lire des instructions » : 1 document = 1 exercice (pas 2 docs dans le même).
-  const page = expandTcfInstructionDocuments(config, seed)
+  const page: PageConfig = config.domain === 'société'
+    ? defaultPage('société')
+    : expandTcfInstructionDocuments(config, seed)
   const blocksIn = pageBlocks(page)
   let exerciseCursor = startExercise
   const built: WorksheetBlock[] = blocksIn.map((block, index) => {
@@ -460,9 +465,14 @@ export function buildPage(
     })
     const libreGivens = givensFromEvaluerLibre(rawItems)
     const corrigeAudios = collectCorrigeAudioSrcs(items, result.document?.audioSrc)
+    // En CE TPF, garder le document et les trois premières questions sur la même feuille.
+    const placementReadingBreaks = tpfPlacementTask(block.exerciseType)?.competence === 'CE' && items.length > 4
+      ? items.map((_, index) => index === 3)
+      : undefined
     const tcfPageBreakAfter =
       block.tcfPageBreakAfter ??
       page.tcfPageBreakAfter ??
+      placementReadingBreaks ??
       (isTheory ? items.map((item) => Boolean(item.theoryPageBreakAfter)) : undefined)
     return {
       exerciseIndex,
@@ -472,7 +482,7 @@ export function buildPage(
           ? ((libre?.instruction ?? result.instruction)?.replace(/^Théorie — /, '') || `Théorie`)
           : isJeux
             ? (exerciseTypeById[block.exerciseType]?.label ?? `Jeu ${exerciseIndex}`)
-            : (block.sheetTitle ?? `Exercice ${exerciseIndex}`),
+            : (block.sheetTitle ?? tpfPlacementTask(block.exerciseType)?.label ?? `Exercice ${exerciseIndex}`),
       instruction: libre?.instruction ?? result.instruction,
       // Filet anti bruit binaire (7,2700000000000005) sur toutes les fiches.
       items,
@@ -674,9 +684,21 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
       return
     }
 
+    if (page.domain === 'acm') {
+      out.push(...paginateAcmWorksheet(worksheet).map((sheet) => ({ ...sheet, configIndex: index })))
+      return
+    }
+
+    if (page.domain === 'santé') {
+      out.push(...paginateSanteWorksheet(worksheet).map((sheet) => ({ ...sheet, configIndex: index })))
+      return
+    }
+
     const audioQuestionPages = isTpfFamilyDomain(page.domain) ? splitTcfAudioQuestionPages(worksheet) : null
     if (audioQuestionPages) {
-      out.push(...audioQuestionPages.map(sheet => ({ ...sheet, configIndex: index })))
+      out.push(...audioQuestionPages
+        .flatMap(sheet => paginateCePosters(sheet) ?? [sheet])
+        .map(sheet => ({ ...sheet, configIndex: index })))
       return
     }
     const cePosterPages = paginateCePosters(worksheet)

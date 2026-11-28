@@ -39,7 +39,13 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('packet', type=Path)
     parser.add_argument('--historical', action='store_true')
+    parser.add_argument('--previous-activation', action='append', default=[], type=Path,
+                        help='Receipt for a completed batch still present in the working tree, oldest first')
+    parser.add_argument('--revisions', action='append', default=[], type=Path,
+                        help='Receipt for corrections applied after the original activation')
     args = parser.parse_args()
+    if args.revisions and not args.previous_activation:
+        parser.error('--revisions requires --previous-activation')
     path = args.packet.resolve()
     packet = read(path)
     assert packet['summary']['activated_trios'] == 0
@@ -55,15 +61,27 @@ def main():
     register_path = path.with_name(path.stem.replace('-preparation', '-activation') + '.json')
     register = str(register_path.relative_to(ROOT))
     assert not register_path.exists()
-    baseline = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
+    bank_sha = {}
+    if args.previous_activation:
+        # Prove the working tree contains only the previously recorded edits before adding forms.
+        checker = ROOT / 'scripts/check-tcf-image-batch-20261124.py'
+        command = [sys.executable, str(checker), *map(str, args.previous_activation)]
+        for revision in args.revisions:
+            command.extend(['--revisions', str(revision)])
+        subprocess.run(command, cwd=ROOT, check=True)
+        previous = read(args.previous_activation[0])
+        baseline = previous['baseline_commit']
+        bank_sha = previous['source_bank_sha256']
+    else:
+        baseline = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
     render = module('image_form_insertion', 'activate-delf-actif-lot2-20261123.py').add_forms_preserving_source
-    banks, proofs, bank_sha = {}, [], {}
+    banks, proofs = {}, []
     for bank in BANKS:
         relative = str(bank.relative_to(ROOT))
         original = bank.read_text()
-        # Each completed packet is committed before another packet is activated.
-        assert bank.read_bytes() == subprocess.check_output(['git', 'show', baseline + ':' + relative], cwd=ROOT)
-        bank_sha[relative] = sha(bank)
+        if not args.previous_activation:
+            assert bank.read_bytes() == subprocess.check_output(['git', 'show', baseline + ':' + relative], cwd=ROOT)
+            bank_sha[relative] = sha(bank)
         forms = {}
         for exercise in editorial_loads(original):
             for index, question in enumerate(exercise.get('questions', []), 1):
@@ -171,6 +189,10 @@ def main():
             new_image_usages=sum(image in new_paths for image in uses),
             reused_image_usages=sum(image not in new_paths for image in uses)),
         new_images=packet['published_images'], existing_reuses=packet['existing_reuses'], trios=proofs)
+    if args.previous_activation:
+        result['previous_activations'] = [str(receipt.resolve().relative_to(ROOT))
+                                          for receipt in args.previous_activation]
+        result['revisions'] = [str(receipt.resolve().relative_to(ROOT)) for receipt in args.revisions]
     # All source, answer, image and restoration checks precede any bank mutation.
     for bank, rendered in banks.items():
         bank.write_text(rendered)

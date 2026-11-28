@@ -5067,19 +5067,25 @@
       ],
       "active_images": [
         {
-          "id": "a",
           "path": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
-          "sha256": "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64"
+          "sha256": "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+          "label": "En voiture",
+          "id": "a",
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-routes-39-2-qcm-deplacement-marche-ivoire.png",
+          "sha256": "981bcea4dc3903bc93598f25a2c33e73cbcddfe2afc4251c2aaac8fd6b40263b",
+          "label": "À pied",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png",
-          "sha256": "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8"
+          "correct": false
         },
         {
-          "id": "c",
           "path": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
-          "sha256": "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
+          "sha256": "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+          "label": "À vélo",
+          "id": "c",
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -5095,8 +5101,9 @@
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
       ],
       "visual_review": {
-        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
-        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "La marche reste lisible en pied, avec un nouveau visage, une silhouette propre et une tenue distincte. Le fond ivoire et l’ombre de contact légère sont conformes au trio de transport.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -21992,19 +21999,25 @@
       ],
       "active_images": [
         {
-          "id": "a",
           "path": "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
-          "sha256": "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085"
+          "sha256": "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085",
+          "label": "Un vélo",
+          "id": "a",
+          "correct": true
         },
         {
-          "id": "b",
           "path": "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
-          "sha256": "0975b4d983b9e0896f2bd09e2ddbb38bab9d3244e28a84c359e13db6f8a7fd42"
+          "sha256": "0975b4d983b9e0896f2bd09e2ddbb38bab9d3244e28a84c359e13db6f8a7fd42",
+          "label": "Un ordinateur",
+          "id": "b",
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-lot20c-telephone-eteint.png",
+          "sha256": "c356e9eaa12ef828f30db4f45534a91803a38bf1c2962e08353c6fa6df49c89e",
+          "label": "Un téléphone",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
-          "sha256": "0720a4239b45116cfd5bf748a207e2739a022f81bfd469b29b201e7ba465ef63"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -22020,10 +22033,10 @@
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
       ],
       "visual_review": {
-        "date": "2026-11-13",
-        "register": "docs/tcf/revue-trios-documents-desserts-transports-20261113.json",
+        "date": "2026-11-26",
+        "register": "docs/tcf/corrections-transports-20261126.json",
         "reason": "Sébastien a reçu un vélo de ses parents. La montre vient de ses grands-parents et le bracelet de sa sœur. Ni ordinateur ni téléphone n'est cité comme cadeau des parents.",
-        "note": "Vélo bleu isolé entier, ordinateur complet et téléphone existants examinés. Trois objets au singulier ; aucune marque, couleur imposée ou relation familiale n'est inventée par une scène de personnages."
+        "note": "Le téléphone entier est isolé sur l’ivoire de référence et présenté comme les deux autres cadeaux."
       }
     },
     {
@@ -37637,19 +37650,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-a1a2-08-1-qcm-lot20b-classe-devant.png",
+          "sha256": "2ba77bd85062d6cfb15247b25bd77ad1f4a76bff3d66c3c99ab3317ece66f5cd",
+          "label": "Devant",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-classe-devant.png",
-          "sha256": "05b6e5596cde6413ee1791b36c2b4a623aff60acda253ecf85039c7c2a2a5eea"
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-a1a2-08-2-qcm-lot20b-classe-fond.png",
+          "sha256": "a3dae2a8f33997f9e2adbebe37e8ce5582bc12c607bd1872ca8cc63bd2ebc168",
+          "label": "Au fond",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-classe-fond.png",
-          "sha256": "b3f50fe3dde753e7d844514122b73294bf142f6c709a9f64f0619d0bf94af0ca"
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-a1a2-08-3-qcm-lot20b-classe-couloir.png",
+          "sha256": "d44d4099cddef0e7ebc9b3e6627aecd5c77277e5ed012be1c19455688430d003",
+          "label": "Dans le couloir",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20b-classe-couloir.png",
-          "sha256": "9e9d18b6e1f2898bf8610c22a4239d0def913db50dfde1c13866d6b3a9f51d53"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -37672,8 +37691,9 @@
         "note": "Même classe avec place devant, au fond ou dans le couloir ; ne pas ajouter les lunettes qui n’arrivent que demain."
       },
       "visual_review": {
-        "register": "docs/tcf/lot20-a1-a2-suite-20261121.json",
-        "note": "Réemploi des trois vues cohérentes de classe : mêmes élèves installés devant, au fond ou dans le couloir, sans lunettes ajoutées. Le tableau et le bureau définissent l’avant ; la porte et le mur définissent le couloir. Images de positions, sans prétendre identifier l’élève de la voix."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Les élèves et l’enseignant sont redessinés. Dans ces variantes, la place au premier rang et le banc dans le couloir demeurent distincts. Les élèves et le professeur reprennent leurs nouvelles couleurs et coiffures. Leur place au fond de la classe est lisible avec la même disposition des rangs. Les élèves et l’enseignant sont redessinés. Dans ces variantes, la place au premier rang et le banc dans le couloir demeurent distincts.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -38793,19 +38813,25 @@
       ],
       "active_images": [
         {
-          "id": "a",
           "path": "/lib/images/tcf/qcm-audit/qcm-a1-lot20-filmer-spectacle.png",
-          "sha256": "364f5d59899f9e0d6c0ac6ea5c2419d65c6f9d00b23f8a84b5c3e6c94e1fdd4e"
+          "sha256": "364f5d59899f9e0d6c0ac6ea5c2419d65c6f9d00b23f8a84b5c3e6c94e1fdd4e",
+          "label": "Filmer",
+          "id": "a",
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-a1a2-09-2-qcm-a1-lot20-photographier-eleves.png",
+          "sha256": "21b49ac454d067539a32f17af63dbef6a477c81cea00835fc9c2a42ba27b9560",
+          "label": "Photographier",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-a1-lot20-photographier-eleves.png",
-          "sha256": "5fc37b989c95fb8e0489b1fc8b242c000cce44639c893bba83a0c146575b9f8c"
+          "correct": false
         },
         {
-          "id": "c",
           "path": "/lib/images/tcf/qcm-audit/communication-appeler.webp",
-          "sha256": "623ea14df2d82d1b6e6eb2e7727a444ff52346cdfec5cf7069fcead5cc8e2cbe"
+          "sha256": "623ea14df2d82d1b6e6eb2e7727a444ff52346cdfec5cf7069fcead5cc8e2cbe",
+          "label": "Téléphoner",
+          "id": "c",
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -38828,8 +38854,9 @@
         "note": "Filmer, photographier et téléphoner avec fonctions visibles et distinctes ; l’interdiction figure dans l’énoncé, pas dans une identité de personnage."
       },
       "visual_review": {
-        "register": "docs/tcf/lot20-a1-a2-suite-20261121.json",
-        "note": "Filmer avec téléphone montrant la scène cadrée et commande vidéo ; photographier avec appareil dirigé vers les élèves ; fonction d’appel téléphonique identifiée par un combiné vert. Aucun pictogramme d’interdiction dans le seul choix correct, afin de conserver la question d’écoute."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "La photographe et le groupe de jeunes ont des visages, des coiffures et des vêtements distincts. L’appareil, l’atelier et les travaux sur la table restent visibles.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -39334,19 +39361,25 @@
       ],
       "active_images": [
         {
-          "id": "a",
           "path": "/lib/images/tcf/qcm-audit/co834-spectacle-danse-dessine.webp",
-          "sha256": "fc353d71260b5fda25ac64659d0fb8dd8c3db8e7f60be0b1eae0eadfdaf25aa0"
+          "sha256": "fc353d71260b5fda25ac64659d0fb8dd8c3db8e7f60be0b1eae0eadfdaf25aa0",
+          "label": "Un spectacle",
+          "id": "a",
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-a1a2-10-2-qcm-a1-lot20-cours-sciences.png",
+          "sha256": "09dcaab0b79f0ab090002d41f6d801b38dec4f6c8c93201045b2ee6d064f1f9c",
+          "label": "Un cours",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-a1-lot20-cours-sciences.png",
-          "sha256": "c3bbc6bf6ae128f51a1ac1a7ccdbe2009fe2a5f434285c2aafe0025c6be6819d"
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-a1a2-10-3-reunion.png",
+          "sha256": "9971760f29f37d3bbb366301314b8f66e9e608cd61a056368fad7f47bf1a0ce7",
+          "label": "Une réunion",
           "id": "c",
-          "path": "/lib/images/tcf/catalogue/actions/reunion.webp",
-          "sha256": "51fa824d52db68cba50fabdf8d1113bb1d67e985609c06c7b70a87863229242a"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -39369,8 +39402,9 @@
         "note": "Spectacle, cours et réunion : activités collectives distinctes, sans inventer le genre précis du spectacle."
       },
       "visual_review": {
-        "register": "docs/tcf/lot20-a1-a2-suite-20261121.json",
-        "note": "Spectacle devant public, cours de sciences avec enseignante et élèves, réunion autour d’une table. Situations collectives distinctes ; la danse est un exemple de spectacle, son genre n’est pas présenté comme une information de la source."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Les personnes proches de la table de sciences sont redessinées. Leur attention va vers la démonstration et le matériel de laboratoire. Les personnes de la réunion ont leurs nouveaux visages et tenues. Les sièges et le matériel professionnel continuent de distinguer la réunion.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -41562,19 +41596,25 @@
       ],
       "active_images": [
         {
-          "id": "a",
           "path": "/lib/images/tcf/catalogue/actions/dedicace.webp",
-          "sha256": "761f520af462370db7607395c4b8f51efac60d8524d6b5da2f3850ecded7ba44"
+          "sha256": "761f520af462370db7607395c4b8f51efac60d8524d6b5da2f3850ecded7ba44",
+          "label": "Signer des dédicaces",
+          "id": "a",
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-a2-05-2-co834-concert-dessine.png",
+          "sha256": "21b347efa312e1de1c0c0c180c129bf9e8c09aad5980a8e8a3beff9a485757e2",
+          "label": "Donner un concert",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp",
-          "sha256": "6e7fc0caa04c97366c04925bd97ec2e919e8405a26cec083de4c5e3a1570b924"
+          "correct": false
         },
         {
-          "id": "c",
           "path": "/lib/images/tcf/qcm-audit/qcm-lot20c-presenter-films.png",
-          "sha256": "4f7ea3d7efeb939c485cef392dad182f282d7feccfe78caedd04b08e8a72ebdb"
+          "sha256": "4f7ea3d7efeb939c485cef392dad182f282d7feccfe78caedd04b08e8a72ebdb",
+          "label": "Présenter des films",
+          "id": "c",
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -41597,8 +41637,9 @@
         "note": "Auteur signant un livre, concert et présentation de film ; pas un auteur fictif attribué à une personne réelle."
       },
       "visual_review": {
-        "register": "docs/tcf/lot20-a2-20261121.json",
-        "note": "Dédicace d’un livre avec auteur homme et lectrice visibles se regardant, concert devant public et présentation de films avec présentatrice et écran. Trois actions complètes distinctes. Les personnages illustrent les activités, sans prétendre identifier les auteurs annoncés."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "La chanteuse et le guitariste ont des silhouettes, visages et tenues distincts. La scène et l’activité musicale gardent leurs indices.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -41729,19 +41770,25 @@
       ],
       "active_images": [
         {
-          "id": "a",
           "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-bordure-quai.png",
-          "sha256": "01d38dc7d95bbc39e89ac05b3963f7eae122d2221495a7830d7d29d532048065"
+          "sha256": "01d38dc7d95bbc39e89ac05b3963f7eae122d2221495a7830d7d29d532048065",
+          "label": "La bordure du quai",
+          "id": "a",
+          "correct": true
         },
         {
-          "id": "b",
           "path": "/lib/images/tcf/qcm-audit/co57-guichet-gare.webp",
-          "sha256": "d368a9fe753d72f75166488c2866531e74590e69224c63b1f8a582684a2cfb79"
+          "sha256": "d368a9fe753d72f75166488c2866531e74590e69224c63b1f8a582684a2cfb79",
+          "label": "Le guichet",
+          "id": "b",
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-a2suite-04-3-qcm-lot20d-attente-gare.png",
+          "sha256": "59ab1b6997292beefac44fdd567fd75520c72b5682d81281185e346c40b459ac",
+          "label": "La salle d’attente",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-attente-gare.png",
-          "sha256": "8be94cca8c9d11ba8219d2bc78604956178af43dc9d40062ed67ae6bb47f3770"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -41764,8 +41811,9 @@
         "note": "Bord de quai, guichet et salle d’attente ; montrer précisément la limite proche des voies, pas une gare générique."
       },
       "visual_review": {
-        "register": "docs/tcf/lot20-a2-suite-20261121.json",
-        "note": "La bordure du quai est mise au premier plan avec bande tactile, dénivelé et voies en contrebas ; le guichet est identifié par un comptoir et la salle d’attente par ses bancs et sa vitre sur le train. Le choix correct représente une partie précise du quai, pas seulement une gare entière."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Le groupe en salle d’attente a de nouveaux visages, vêtements et morphologies. Les sièges, la valise et le train restent visibles.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -41956,19 +42004,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-reperes-02-1-qcm-lot20f-bus-arriere.png",
+          "sha256": "d7cdc89f373225b1dfa0d37e3d95dd9525c25910a73597f6e0ae7044badf3157",
+          "label": "À l’arrière",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20f-bus-arriere.png",
-          "sha256": "c1f1248f8c53052a141cf79e434d8de19e77c7fe8f02585e5a3ce8363d3be285"
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-reperes-02-2-qcm-lot20f-bus-avant.png",
+          "sha256": "a78cecd2071a0afa4799dcb0a65cc30877802042d1df9cc726a78b4bcb2c4213",
+          "label": "À l’avant",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20f-bus-avant.png",
-          "sha256": "6d8dd96eefadb2fc63a7065c20a6f2d9a9969e20d760ce4eba1471eb028fd3dc"
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-reperes-02-3-qcm-lot20f-bus-milieu.png",
+          "sha256": "ef23889883b176d424670d1a6ebc7bd62a4a7a08d829a94dfcce480d2e870b36",
+          "label": "Au milieu",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20f-bus-milieu.png",
-          "sha256": "4a844ed59b418a54d44e1996c5e10590f69ee7db4d18477017309ce1ed3669db"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -41991,8 +42045,9 @@
         "note": "Même bus avec avant repéré par le conducteur, zone arrière, avant ou milieu mise en évidence ; conserver le point de vue."
       },
       "visual_review": {
-        "register": "docs/tcf/lot20-a2-reperes-20261122.json",
-        "note": "Même bus et mêmes deux passagers debout déplacés entre arrière, avant et milieu. Le poste de conduite fixe repère l’avant ; les trois zones sont comparables."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Les personnes assises ont des visages, âges et silhouettes distincts. L’emplacement du duo debout diffère selon le choix entre l’arrière, l’avant et le milieu du bus. Les personnes assises ont des visages, âges et silhouettes distincts. L’emplacement du duo debout diffère selon le choix entre l’arrière, l’avant et le milieu du bus. Les personnes assises ont des visages, âges et silhouettes distincts. L’emplacement du duo debout diffère selon le choix entre l’arrière, l’avant et le milieu du bus.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -43421,19 +43476,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-a2-09-1-qcm-lot20c-sol-ronds-jaunes.png",
+          "sha256": "15735fb1622a80a53df036a37c6a67276cc69d568b16ef4475363cd0d29bcc2c",
+          "label": "Des ronds jaunes",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20c-sol-ronds-jaunes.png",
-          "sha256": "a87cb040924e0b5a5c7acba08a34362910918cab5019b3c4248d48d089cf4cd7"
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-a2-09-2-qcm-lot20c-sol-fleches-bleues.png",
+          "sha256": "47e51aec5947472ffc2c5215e3647dad04f67bcb4989a2b0534d60e523d9c4bd",
+          "label": "Des flèches bleues",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20c-sol-fleches-bleues.png",
-          "sha256": "a3412ad0c99e866da4b72f1359dd0029b23b4eae98f860185dfdb74168c0a40b"
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-a2-09-3-qcm-lot20c-sol-lignes-rouges.png",
+          "sha256": "331e7fd730a15778ad653ea950419f04e764e8e576de4f44c9b40bade57f8548",
+          "label": "Des lignes rouges",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20c-sol-lignes-rouges.png",
-          "sha256": "f7d92672711b13a870fe53b345eb47822f19b9bf7dba3bf09119bbee0aa8e1dc"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -43456,8 +43517,9 @@
         "note": "Ronds jaunes, flèches bleues et lignes rouges sur le même sol ; formes et couleurs des trois choix conservées."
       },
       "visual_review": {
-        "register": "docs/tcf/lot20-a2-20261121.json",
-        "note": "Même office du tourisme, même accueil et mêmes visiteurs dans les trois vues. Seuls les repères au sol changent : ronds jaunes, flèches bleues ou deux lignes rouges. Forme ET couleur vérifiées ; aucun autre repère concurrent dans chaque vue. Le parcours mène au comptoir."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "La distribution reste la même que dans les deux autres variantes. Les cercles jaunes suivent le trajet d’origine. Les silhouettes au premier plan sont renouvelées. Les flèches bleues gardent leurs emplacements, leur forme et la direction du trajet. Les mêmes personnes que dans la variante des flèches suivent le trajet. Les deux bandes rouges gardent leur position et leur continuité.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -45695,19 +45757,25 @@
       ],
       "active_images": [
         {
-          "id": "a",
           "path": "/lib/images/tcf/qcm-audit/co834-spectacle-danse-dessine.webp",
-          "sha256": "fc353d71260b5fda25ac64659d0fb8dd8c3db8e7f60be0b1eae0eadfdaf25aa0"
+          "sha256": "fc353d71260b5fda25ac64659d0fb8dd8c3db8e7f60be0b1eae0eadfdaf25aa0",
+          "label": "Un spectacle",
+          "id": "a",
+          "correct": true
         },
         {
-          "id": "b",
           "path": "/lib/images/tcf/qcm-audit/qcm-a1-match-stade.png",
-          "sha256": "b95c91e7dec4e85839dc6c269aa0425b8f4c322f7971c971d339ff85b0365961"
+          "sha256": "b95c91e7dec4e85839dc6c269aa0425b8f4c322f7971c971d339ff85b0365961",
+          "label": "Une compétition",
+          "id": "b",
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-a1a2-15-3-qcm-a1-lot20-cours-sciences.png",
+          "sha256": "7c29c09f0b555622ce30245c66828329f069f619a7df844a14bbfe6b25f8b058",
+          "label": "Un cours",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-a1-lot20-cours-sciences.png",
-          "sha256": "c3bbc6bf6ae128f51a1ac1a7ccdbe2009fe2a5f434285c2aafe0025c6be6819d"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -45730,8 +45798,9 @@
         "note": "Représentation, compétition et cours ; trois situations collectives distinctes, pas une salle vide commune."
       },
       "visual_review": {
-        "register": "docs/tcf/lot20-a1-a2-suite-20261121.json",
-        "note": "Spectacle devant public, match illustrant une compétition sportive et cours avec enseignante et élèves. Ce sont des exemples de catégories ; aucune compétition particulière ou discipline n’est attribuée à l’annonce."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Les élèves et le professeur ont de nouveaux visages et tenues. Le groupe suit la démonstration et le microscope ainsi que le matériel de sciences restent visibles.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -50229,19 +50298,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-a2suite-10-1-dedicace.png",
+          "sha256": "cb927f996deec53ea1d7b9c1956b7aa685e60f8af33826950c739f20dcc777dc",
+          "label": "Des auteurs",
           "id": "a",
-          "path": "/lib/images/tcf/catalogue/actions/dedicace.webp",
-          "sha256": "761f520af462370db7607395c4b8f51efac60d8524d6b5da2f3850ecded7ba44"
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-a2suite-10-2-co834-concert-dessine.png",
+          "sha256": "20fd31c33beb52775fce89441484d216acafd659a080e366ae27d6567f1b3fc1",
+          "label": "Des chanteurs",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp",
-          "sha256": "6e7fc0caa04c97366c04925bd97ec2e919e8405a26cec083de4c5e3a1570b924"
+          "correct": false
         },
         {
-          "id": "c",
           "path": "/lib/images/tcf/qcm-audit/vocab-medecins.webp",
-          "sha256": "7825fdc1d43c4d31b83aadd4bb0bbb45b8eeaa302264a4b75770912703cf2162"
+          "sha256": "7825fdc1d43c4d31b83aadd4bb0bbb45b8eeaa302264a4b75770912703cf2162",
+          "label": "Des médecins",
+          "id": "c",
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -50264,8 +50339,9 @@
         "note": "Auteurs en dédicace, chanteurs et médecins en activité ; pas de portraits nommés ou de personnes distinguées seulement par leurs visages."
       },
       "visual_review": {
-        "register": "docs/tcf/lot20-a2-suite-20261121.json",
-        "note": "Auteur signant un livre pour une lectrice, chanteuse sur scène devant public, et deux médecins au travail. Les deux premières images donnent des exemples reconnaissables des catégories de personnes au pluriel, pas leur nombre exact à l’événement. Aucun nom réel, identité de voix ou détail de programme ajouté."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Les personnes sont redessinées dans chaque activité. Le geste de dédicace et la prestation musicale conservent leurs accessoires et leurs décors propres. Les personnes sont redessinées dans chaque activité. Le geste de dédicace et la prestation musicale conservent leurs accessoires et leurs décors propres.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -50860,19 +50936,25 @@
       ],
       "active_images": [
         {
-          "id": "a",
           "path": "/lib/images/tcf/qcm-audit/qcm-lot20c-journaliste-sportif.png",
-          "sha256": "7206105b7d01bc4551e50d000bd6118266a9880204c86316234b53802f61cba9"
+          "sha256": "7206105b7d01bc4551e50d000bd6118266a9880204c86316234b53802f61cba9",
+          "label": "Un journaliste sportif",
+          "id": "a",
+          "correct": true
         },
         {
-          "id": "b",
           "path": "/lib/images/tcf/qcm-audit/vocab-professeur.webp",
-          "sha256": "0f0155e9a59dafb28ef9fe1d5cd22ba0c34f5db594cf81b3abbe46b0fbe1d395"
+          "sha256": "0f0155e9a59dafb28ef9fe1d5cd22ba0c34f5db594cf81b3abbe46b0fbe1d395",
+          "label": "Un professeur",
+          "id": "b",
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-a2-15-3-co834-medecin-dessine.png",
+          "sha256": "6ce0ef0c5fc9b75202331727b8c858ab1b717c782c8c5a2709de0753cf75ee04",
+          "label": "Un médecin",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp",
-          "sha256": "bca4d8bb519046e3bd3c8a526d46621de86017ce9e0ebb65e0f59c4f5c378903"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -50888,8 +50970,9 @@
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
       ],
       "visual_review": {
-        "register": "docs/tcf/lot20-a2-20261121.json",
-        "note": "Journaliste sportif homme commentant un match avec micro-casque dans une cabine sur le stade, professeur homme avec élèves et médecin homme avec patiente. Métier, action et environnement lisibles. Stade générique sans inscription géographique : l’image ne certifie pas la localisation problématique de la transcription. Aucun portrait réel ou nom de journaliste."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "La soignante et le patient ont des morphologies, des vêtements et des cheveux distincts. Le geste et le stéthoscope indiquent toujours l’examen médical.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -52976,19 +53059,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-a2suite-15-1-qcm-lot20d-soiree-crepes.png",
+          "sha256": "9ef5c7cad56d2387d3eac31e86bbea06f56995927e7e79b35a340ad7e9e68ba3",
+          "label": "Une soirée crêpes",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-soiree-crepes.png",
-          "sha256": "0fccc0a75a5b0d9ccee6aa46d7fa910645f4d724f63d2bccd83f0efa47561360"
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-a2suite-15-2-qcm-lot20d-soiree-pizza.png",
+          "sha256": "21d27b591433ed82b2624b276a1097bdfd4ab91682088c3a7272489ea848a291",
+          "label": "Une soirée pizza",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-soiree-pizza.png",
-          "sha256": "52f3d4cd5b2c4337a164a104bccde5ae02c52cc0a1aa3b360f19d87bebb0843d"
+          "correct": false
         },
         {
-          "id": "c",
           "path": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
-          "sha256": "adc515d9fc36b54ddc69488999f2ccaf16f18ebfa441a2c1e481552e0b298303"
+          "sha256": "adc515d9fc36b54ddc69488999f2ccaf16f18ebfa441a2c1e481552e0b298303",
+          "label": "Une soirée cinéma",
+          "id": "c",
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -53004,8 +53093,9 @@
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
       ],
       "visual_review": {
-        "register": "docs/tcf/lot20-a2-suite-20261121.json",
-        "note": "Soirée à domicile avec amis partageant des crêpes, autre soirée partageant une pizza, et séance de cinéma avec public devant l’écran. Les piles de crêpes ou pizzas isolées ont été écartées : les repas montrent aussi la réunion entre amis et le soir. Personnages variés, assises et regards cohérents, sans fête calendaire illustrée."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Les quatre convives ont des visages, des coiffures, des âges et des vêtements distincts. Leurs assises autour de la table et leurs gestes restent lisibles. Les crêpes ou la pizza sont au centre selon le choix. Les quatre convives ont des visages, des coiffures, des âges et des vêtements distincts. Leurs assises autour de la table et leurs gestes restent lisibles. Les crêpes ou la pizza sont au centre selon le choix.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -55386,19 +55476,25 @@
       ],
       "active_images": [
         {
-          "id": "a",
           "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-dania-apporte-cahier.png",
-          "sha256": "ce501acd3390edeca99c17403188154b721379146a11beab5c8d19a9c97bc220"
+          "sha256": "ce501acd3390edeca99c17403188154b721379146a11beab5c8d19a9c97bc220",
+          "label": "Apporter quelque chose",
+          "id": "a",
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-meteo-07-2-qcm-lot20d-fermer-porte.png",
+          "sha256": "2974b9127b9d65741e5399feec8ccdda6c24dcb6e49102e8ae27b83904e75130",
+          "label": "Fermer une porte",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-fermer-porte.png",
-          "sha256": "c825d637bda94bcc06173955d11035127386f6aadf50920a208d838ad443a49f"
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-meteo-07-3-qcm-lot20e-allumer-appareil.png",
+          "sha256": "0e1727bff635316a02953be832c5e97e006b202f48227979c7b0e918c478967e",
+          "label": "Allumer un appareil",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-allumer-appareil.png",
-          "sha256": "f48b114573c34efbbd407f94bff885ce33a3b86b64cef89c27a0df5a0d730cff"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -55421,8 +55517,9 @@
         "note": "Apporter un objet générique, fermer une porte et allumer un appareil sont trois actions ; ne pas prétendre que l’objet non précisé était un livre ou un cadeau particulier."
       },
       "visual_review": {
-        "register": "docs/tcf/lot20-a2-meteo-couleurs-20261121.json",
-        "note": "Apporter un cahier à une autre personne, fermer une porte et mettre en marche une radio. Le cahier et la radio sont des exemples d’objets pour les formules génériques, sans prétendre que la source nomme ces objets. Les deux interlocutrices de l’apport se parlent et se regardent ; gestes de porte et bouton visibles. Geste de radio repris pour placer le doigt sur le bouton de mise en marche et non sur la grille du haut-parleur."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "La même femme aux cheveux gris courts et aux lunettes rouges garde ses gestes sur la porte et sur la commande de l’appareil. La même femme aux cheveux gris courts et aux lunettes rouges garde ses gestes sur la porte et sur la commande de l’appareil.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -57990,19 +58087,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-meteo-09-1-qcm-lot20e-marcher-vite.png",
+          "sha256": "eb4121d507d67b58786481933220267e99e20ac32d4e8185473b93a6e54119a0",
+          "label": "Il marche vite",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-marcher-vite.png",
-          "sha256": "1aa5ae7da221e7a8838cee99ef14d2c4aa9cfb7c00ef510e56c455fd268505f2"
+          "correct": true
         },
         {
-          "id": "b",
           "path": "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp",
-          "sha256": "299331908fcf190bedb6e4781b62e3688613e83b2da55ac462171e6de75cde7a"
+          "sha256": "299331908fcf190bedb6e4781b62e3688613e83b2da55ac462171e6de75cde7a",
+          "label": "Il prend un taxi",
+          "id": "b",
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-meteo-09-3-qcm-lot20e-velo-lycee.png",
+          "sha256": "2afabbad80065c3c60e541478e7342b70b19c4f4877f84cb5522ee36ab36abae",
+          "label": "Il emprunte un vélo",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-velo-lycee.png",
-          "sha256": "0c38bf56150187b66988c5f3cf848d2c62bc4781ab36b39f1b980012559c342d"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -58025,8 +58128,9 @@
         "note": "Marche rapide, taxi et vélo ; montrer le déplacement à pied sans le transformer en course ou en train."
       },
       "visual_review": {
-        "register": "docs/tcf/lot20-a2-meteo-couleurs-20261121.json",
-        "note": "Garçon avec sac à dos marchant d’un pas rapide, taxi générique et garçon à vélo vers un établissement scolaire. Les deux actions humaines sont au masculin, compatibles avec l’élève de la question, et la marche garde un pied au sol. Le taxi est un exemple du mode de transport, pas une course réellement prise par l’élève."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Le même homme aux cheveux courts et à la veste rouille marche devant la gare ou pédale avec un casque, selon le choix. Le même homme aux cheveux courts et à la veste rouille marche devant la gare ou pédale avec un casque, selon le choix.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -61483,19 +61587,25 @@
       ],
       "active_images": [
         {
-          "id": "a",
           "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-chateau-interieur.png",
-          "sha256": "eca0122b28650c68b97d3fe1e234bb265a0fa6ec0a7e64d25aabbc01b6cb2933"
+          "sha256": "eca0122b28650c68b97d3fe1e234bb265a0fa6ec0a7e64d25aabbc01b6cb2933",
+          "label": "L’intérieur",
+          "id": "a",
+          "correct": true
         },
         {
-          "id": "b",
           "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-chateau-jardin.png",
-          "sha256": "9bd667918ab4d356fc171aaf6dedc090a5f273cd339fc062146c2a82a7934cdb"
+          "sha256": "9bd667918ab4d356fc171aaf6dedc090a5f273cd339fc062146c2a82a7934cdb",
+          "label": "Le jardin",
+          "id": "b",
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-meteo-17-3-qcm-lot20e-chateau-parking.png",
+          "sha256": "3438f307303de937e42eb6362c98c3403a0bfa87c38e707c6dc75d1681bf5f0e",
+          "label": "Le parking",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-chateau-parking.png",
-          "sha256": "e3f441813e72d1992b389598ce7a327f52d721180ca728056a0c7cb43bd151fe"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -61518,8 +61628,9 @@
         "note": "Intérieur, jardin et parking ; conserver le contexte de château et des références exactes si Versailles est représenté."
       },
       "visual_review": {
-        "register": "docs/tcf/lot20-a2-meteo-couleurs-20261121.json",
-        "note": "Intérieur de château avec galerie et œuvres, jardin formel avec château en arrière-plan, parking de visiteurs devant château. Chaque vue montre la partie demandée et son contexte. Ce sont des illustrations génériques des parties d’un château, sans prétendre reconstruire exactement Versailles ni une pièce particulière."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Trois nouveaux profils vus de dos se dirigent vers le bâtiment. Les véhicules et les emplacements matérialisent le parking.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -62509,19 +62620,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-23-1-scenario-a2-ceder-place-femmes.png",
+          "sha256": "9aa3338adebe4cf6bbdbf9f86440897c5e6812300d4190999b2cbea7923f7c1c",
+          "label": "Elle cède sa place",
           "id": "a",
-          "path": "/lib/images/tcf/co/scenes/delf-actif/scenario-a2-ceder-place-femmes.png",
-          "sha256": "c38ea79d862d0c7cb57f7005e9a5cf3fab44332217de813b50cd2bdffc4d609f"
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-23-2-qcm-delf100-fille-porte-sac.png",
+          "sha256": "b707e95b3b4fe384e5d246b2df8e04cf45b5d512f429cf4f15d245895bffa968",
+          "label": "Elle porte un sac",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf100-fille-porte-sac.png",
-          "sha256": "6e5778563a365d6780e1c9c06da4aec4d5ce5b1a254ea82d883168490cf536a5"
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-23-3-qcm-delf100-fille-achete-billet.png",
+          "sha256": "648af856cfe222ba566a7483e662709fe9c3da40692e5247d57fcaf8cbe0b50b",
+          "label": "Elle achète un billet",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf100-fille-achete-billet.png",
-          "sha256": "ae7d730eb5f25005149e81078d41482143813ae2eb7ae59bb6edfcc500b6a627"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -62544,8 +62661,9 @@
         "note": "Séquence courte de cession de siège, portage de sac et achat de billet ; une personne debout près d’une autre ne suffit pas à montrer la cession."
       },
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot100-20261122.json",
-        "note": "Réemploi de la scène à deux femmes où la jeune cède son siège à une dame âgée ; porter le sac et acheter un billet figurent deux autres actions complètes."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "La même jeune femme aux boucles courtes rousses et la même voyageuse âgée distinguent les actions entre variantes. La main désigne le siège libre vers lequel s’avance la voyageuse. La jeune femme est identifiable par ses boucles rousses et sa veste bleue. Le sac porté et l’achat du billet correspondent aux deux actions distinctes. La jeune femme est identifiable par ses boucles rousses et sa veste bleue. Le sac porté et l’achat du billet correspondent aux deux actions distinctes.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -65591,19 +65709,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-reperes-07-1-qcm-lot20f-prendre-notes.png",
+          "sha256": "3f8a99ffb9f710833f80b50f80fd2573a613617c6271cb0e820ca514d470c334",
+          "label": "Prendre des notes",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20f-prendre-notes.png",
-          "sha256": "3a49799a8d388ca5b0acd64883321ff4e7905b4a5866f2dcbf71d79fa11fce18"
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-reperes-07-2-qcm-lot20f-enregistrer-voix.png",
+          "sha256": "75a23f4bc15366f0e2d4a575102211dabd09b6f6b180fbb4dc28d8899cd1893e",
+          "label": "Enregistrer sa voix",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20f-enregistrer-voix.png",
-          "sha256": "8c1c4f9e49361d370a83080982d5f9c02fd33c3231179091fe2a93787107235f"
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-reperes-07-3-qcm-lot20f-chercher-internet.png",
+          "sha256": "8522b90561a704c9c88a03d351c9b17b4d00758934d9812b4bdbe18835ef0928",
+          "label": "Chercher sur Internet",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20f-chercher-internet.png",
-          "sha256": "01d56d9c12f6fcc7db444e911279c78a3d3619214725fc3451e3b1dbfbd3daa0"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -65626,8 +65750,9 @@
         "note": "Prise de notes, enregistrement vocal et recherche web ; montrer les gestes et le dispositif, pas seulement trois écrans."
       },
       "visual_review": {
-        "register": "docs/tcf/lot20-a2-reperes-20261122.json",
-        "note": "Préparation d’un sujet par prise de notes, enregistrement de sa voix ou recherche Internet. Papier, micro et écran de recherche rendent les actions distinctes ; pas de calendrier utilisé pour Internet."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "La même femme aux cheveux roux et aux lunettes prend des notes ou consulte l’ordinateur. Le geste et le matériel préservent l’indice de chaque choix. La femme aux cheveux roux et aux lunettes des deux autres variantes tient le téléphone près de son visage pour enregistrer sa voix. La même femme aux cheveux roux et aux lunettes prend des notes ou consulte l’ordinateur. Le geste et le matériel préservent l’indice de chaque choix.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -65765,19 +65890,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-reperes-08-1-repondre-a-l-entretien-oral.png",
+          "sha256": "858490feefd1b742006fcce601476fc02085b50bde08b9af65dac7ce4367f5bd",
+          "label": "L’oral",
           "id": "a",
-          "path": "/lib/images/tcf/co/scenes/ecole/repondre-a-l-entretien-oral.webp",
-          "sha256": "e504d2fdd4952316cba049319183c1eadc6ee28ad1fa4b8fb3f8929aff109a12"
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-reperes-08-2-qcm-a1-lot20-dictee.png",
+          "sha256": "7c3581eac8e2329b60a32aed59b2ace8de4ce0fbe716e3611c5786a2d5cca722",
+          "label": "La dictée",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-a1-lot20-dictee.png",
-          "sha256": "7be857ee98ad80562414d5d9ed7ad285a3e94e2c8f7902747f4e1a4c73691aa6"
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-reperes-08-3-qcm-lot20f-epreuve-calcul.png",
+          "sha256": "aa63421eeb12e13831c01a5d767e0fb102871debe2d4621b5d8ed1714370bc37",
+          "label": "Le calcul",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20f-epreuve-calcul.png",
-          "sha256": "493b3f55c5bbe9270b0ab74d93854ebcd696dc702aafc3c4a6dde4dd882988af"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -65800,8 +65931,9 @@
         "note": "Entretien oral, dictée et calcul en scènes d’épreuve distinctes ; ne pas réduire la dictée et le calcul au même élève écrivant."
       },
       "visual_review": {
-        "register": "docs/tcf/lot20-a2-reperes-20261122.json",
-        "note": "Entretien oral avec deux interlocuteurs, dictée avec enseignant lecteur et élèves qui écrivent, calcul avec opérations visibles. Illustrations génériques d’épreuves, sans identification des voix."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Les trois variantes comportent des visages, physiques et vêtements renouvelés. L’entretien oral, les feuilles de la dictée et le support de calcul restent distincts. Les trois variantes comportent des visages, physiques et vêtements renouvelés. L’entretien oral, les feuilles de la dictée et le support de calcul restent distincts. Les trois variantes comportent des visages, physiques et vêtements renouvelés. L’entretien oral, les feuilles de la dictée et le support de calcul restent distincts.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -69199,19 +69331,25 @@
       ],
       "active_images": [
         {
-          "id": "a",
           "path": "/lib/images/tcf/qcm-audit/qcm-lot20f-police.png",
-          "sha256": "e4646ed572264fcbe3cf17557cf2d8bffa216af674fed37bea3173911cbaadac"
+          "sha256": "e4646ed572264fcbe3cf17557cf2d8bffa216af674fed37bea3173911cbaadac",
+          "label": "La police",
+          "id": "a",
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-reperes-10-2-qcm-lot20d-attente-gare.png",
+          "sha256": "8942b66368195924d82a7b0633116aa3f02f576aa36df649c8e6315db2824a73",
+          "label": "Les voyageurs",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20d-attente-gare.png",
-          "sha256": "8be94cca8c9d11ba8219d2bc78604956178af43dc9d40062ed67ae6bb47f3770"
+          "correct": false
         },
         {
-          "id": "c",
           "path": "/lib/images/tcf/qcm-audit/vocab-vendeurs.webp",
-          "sha256": "bbcb79f4525b0ecc5276625a80432b19fb4abf479ad7d523d98b00b29ff62405"
+          "sha256": "bbcb79f4525b0ecc5276625a80432b19fb4abf479ad7d523d98b00b29ff62405",
+          "label": "Les vendeurs",
+          "id": "c",
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -69234,8 +69372,9 @@
         "note": "Policiers prenant en charge le bagage, voyageurs et vendeurs dans leurs rôles ; aucune identité réelle ou nationalité déduite de l’uniforme."
       },
       "visual_review": {
-        "register": "docs/tcf/lot20-a2-reperes-20261122.json",
-        "note": "Police en uniforme, voyageurs avec valises et vendeurs à leur étal. Rôles génériques visibles ; pas d’image de destruction de bagage ni de portrait supposé des personnes de l’audio."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Les trois voyageurs assis ont des coupes de cheveux, des silhouettes et des vêtements renouvelés. Les valises, le train et la disposition de la salle restent lisibles.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -70381,19 +70520,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-reperes-12-1-qcm-lot20f-anniversaire-amie.png",
+          "sha256": "beb3024e695ae1e0d06e09c16716b587b163d86e50d70babea2fa2d41b2c52e4",
+          "label": "L’anniversaire de son amie",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20f-anniversaire-amie.png",
-          "sha256": "dc3d0210462257c6e3da0da6e1205deb3753306bd1e281c313639c8872ea50f0"
+          "correct": true
         },
         {
-          "id": "b",
           "path": "/lib/images/tcf/qcm-audit/co306-mariage-dessine.webp",
-          "sha256": "f663d6ee196e18497007534112ebcef05e2fb5089d13f5eea456aabad33a2ef4"
+          "sha256": "f663d6ee196e18497007534112ebcef05e2fb5089d13f5eea456aabad33a2ef4",
+          "label": "Un mariage",
+          "id": "b",
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-reperes-12-3-co306-depart-retraite-dessine.png",
+          "sha256": "d341deb8f67b6d8c040db6bfba48dfbf49e404162ccb26a871113a02ee1f22b3",
+          "label": "Un départ à la retraite",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/co306-depart-retraite-dessine.webp",
-          "sha256": "6de8c7dab780fb7751ee6a80510f974bb000a033ba6bc69662784005d324e4c3"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -70409,8 +70554,9 @@
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
       ],
       "visual_review": {
-        "register": "docs/tcf/lot20-a2-reperes-20261122.json",
-        "note": "Anniversaire d’une jeune femme adulte, mariage et départ à la retraite identifiables. Occasions génériques ; ni âge chiffré, date ou nom inventé."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Les trois personnes au gâteau ont des coiffures, silhouettes et tenues distinctes. Leurs sièges, le cadeau et le gâteau rendent la fête lisible. Les personnes autour du cadeau ont de nouveaux visages et tenues. La scène de départ à la retraite conserve son contexte et son geste.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -72135,19 +72281,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-46-1-qcm-delf100-inauguration-boutique.png",
+          "sha256": "dbf056979f902298d27d91316d16e2ebea78b42b0a998b620186c41b6fd5e657",
+          "label": "L’inauguration d’une boutique",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf100-inauguration-boutique.png",
-          "sha256": "f876984dc032a6045909b15b370cb8f40cf2c0734dc918aae15a725c2783b098"
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-46-2-qcm-delf100-anniversaire-client.png",
+          "sha256": "f8fdca47a6cdd9c78631016fa148ae8e59654d0feac32b33fcc0150e0cdd7177",
+          "label": "L’anniversaire d’un client",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf100-anniversaire-client.png",
-          "sha256": "04aebc2cb3667287ee975e3ff98c8cd9ae2d4fbe183a8761b70384845b994a0c"
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-46-3-qcm-delf100-depart-vendeur.png",
+          "sha256": "d1129b4b5a9602900ed800df48cc3e8ff15dae8979636224b5c9c770fbe2b676",
+          "label": "Le départ d’un vendeur",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf100-depart-vendeur.png",
-          "sha256": "4d20a76e9a24c7fee5cb3f3c4806beef0dd9ad98f99440ef31e4a356a87b37f6"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -72170,8 +72322,9 @@
         "note": "Ouverture de boutique avec indices d’inauguration, anniversaire et départ d’un vendeur ; ne pas inventer une retraite ou une identité de client."
       },
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot100-20261122.json",
-        "note": "Ruban coupé et boutique ouverte illustrent l’inauguration ; un client avec cadeau, chapeau et gâteau illustre son anniversaire ; un vendeur emportant un carton et saluant ses collègues illustre son départ. Les mentions d’inauguration copiées dans les leurres ont été retirées."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Les personnes de l’inauguration sont redessinées, avec plusieurs âges et morphologies. Le ruban, les ciseaux et la présentation de la boutique restent visibles. La distribution renouvelée garde les contrastes de tailles et d’âges, avec la femme aux cheveux gris dans les trois situations. Le cadeau d’anniversaire et le départ du vendeur restent lisibles. La distribution renouvelée garde les contrastes de tailles et d’âges, avec la femme aux cheveux gris dans les trois situations. Le cadeau d’anniversaire et le départ du vendeur restent lisibles.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -74963,19 +75116,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-routes-81-1-qcm-deplacement-marche-ivoire.png",
+          "sha256": "dcd7e693ff8f0ff2fc780dbda67d4278080ba9da4a95c13b9fd38704ef50e699",
+          "label": "La marche",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png",
-          "sha256": "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8"
+          "correct": true
         },
         {
-          "id": "b",
           "path": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
-          "sha256": "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
+          "sha256": "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+          "label": "Le vélo",
+          "id": "b",
+          "correct": false
         },
         {
-          "id": "c",
           "path": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
-          "sha256": "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b"
+          "sha256": "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+          "label": "Le métro",
+          "id": "c",
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -74991,8 +75150,9 @@
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
       ],
       "visual_review": {
-        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
-        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "La marche reste lisible en pied, avec un nouveau visage, une silhouette propre et une tenue distincte. Le fond ivoire et l’ombre de contact légère sont conformes au trio de transport.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -82267,19 +82427,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-86-1-qcm-delf100-bureau-information.png",
+          "sha256": "2a8e1f68f8be3e9cea6b26fdf9b44d7dd65ac896a4fa688a0f32ff55896432a4",
+          "label": "Le bureau d’information",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf100-bureau-information.png",
-          "sha256": "ac7174854bcead25bccd71cd18bade4c8032f99b7147a217b01dd92c6213a113"
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-86-2-qcm-delf100-bureau-change.png",
+          "sha256": "da0caf2d8ce973a13c9491af95f3849f69959745ddbdd7b7588089b3b22f2635",
+          "label": "Le bureau de change",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf100-bureau-change.png",
-          "sha256": "df76533f1465ac415fb4bade6fdae0f9176459a4f59715881be106bc59a6aeeb"
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-86-3-qcm-delf100-bureau-objets-trouves.png",
+          "sha256": "d120325136bcd22bdc4df53888921fba3a52fdc561518c235c1f75e76033700c",
+          "label": "Le bureau des objets trouvés",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf100-bureau-objets-trouves.png",
-          "sha256": "6f56bc9a0fa70ddfc013c3cb48ee76acac61f0e3e9805a0f1d2f7fc23eaa1730"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -82302,8 +82468,9 @@
         "note": "Bureau d’information, bureau de change et objets trouvés avec indices de fonction ; ne pas inventer de devise, montant ou identité du voyageur."
       },
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot100-20261122.json",
-        "note": "Trois comptoirs avec interactions et signes fonctionnels : information avec plan de réseau, change avec billets sans montant lisible, objets trouvés avec restitution d’un parapluie."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Le voyageur âgé et l’employée à lunettes restent les mêmes dans la série des guichets. La carte d’information et le parapluie retrouvé distinguent les services. Le voyageur et l’employée du bureau de change ont des visages et des silhouettes renouvelés. La monnaie présentée et l’enseigne distinguent le service. Le voyageur âgé et l’employée à lunettes restent les mêmes dans la série des guichets. La carte d’information et le parapluie retrouvé distinguent les services.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -83104,19 +83271,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-89-1-qcm-delf100-enregistrement-train.png",
+          "sha256": "7dd1fb729e3f70b8e512dfc5c9e0d08c4abd3850fe73382d42aaf8b2efbf2f70",
+          "label": "L’enregistrement",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf100-enregistrement-train.png",
-          "sha256": "19c0f2772710ccb50c4a4c27adb856ba9478a7e6fb7b63e839f8222878a59e16"
+          "correct": true
         },
         {
-          "id": "b",
           "path": "/lib/images/tcf/qcm-audit/qcm-delf100-service-restauration.png",
-          "sha256": "d8890feb10556d994fffa62d5a180ee4c65070db652ee98547fe92168763821c"
+          "sha256": "d8890feb10556d994fffa62d5a180ee4c65070db652ee98547fe92168763821c",
+          "label": "La restauration",
+          "id": "b",
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-89-3-qcm-delf100-location-voitures.png",
+          "sha256": "1f2a29b63e152f01db4971c12b8ccd8cec0683e4f382c104b43359e45afe2860",
+          "label": "La location de voitures",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf100-location-voitures.png",
-          "sha256": "24d9e9fe5eff0adba8eea733be1e163f41ef532ee6657768aadafbb96174fdef"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -83139,8 +83312,9 @@
         "note": "Enregistrement ferroviaire Eurostar, restauration et location de voitures ; ne pas remplacer le contrôle de train par un embarquement d’avion."
       },
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot100-20261122.json",
-        "note": "La source annonce l’ouverture de l’enregistrement ferroviaire : contrôle du titre au portillon devant un train. Les deux leurres montrent le service de restauration dans un train et la remise de clés au comptoir de location automobile. Les trois services restent visibles sans reprendre le numéro de train ni le hall indiqués dans la source."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "La voyageuse âgée au manteau rouge et la guichetière au carré roux remplacent les visages récurrents. Le bagage, le document et le portique distinguent l’enregistrement. La voyageuse âgée au manteau rouge et la même employée conservent les rôles de la série. La clé tendue et les voitures derrière le guichet distinguent la location.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -83618,19 +83792,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-93-1-qcm-delf100-bd-bulles.png",
+          "sha256": "bffd2e0e65d15956722cb1cba8bc4010ae0cf3a33dd35a9e99be2d466de1b2c4",
+          "label": "Dans les bulles",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf100-bd-bulles.png",
-          "sha256": "8d4e29a2e6c02ac4d7011e36a83d5528c0f561b44b3d17bc97fff5fd50734fb5"
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-93-2-qcm-delf100-bd-couverture.png",
+          "sha256": "bfdf34a52de87bed6fb731d7eea20491b5aafe2814a0e5c03bd11c73b3b110f9",
+          "label": "Sur la couverture",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf100-bd-couverture.png",
-          "sha256": "cdd0deec4a582903ca9a875805e91583b205ff139c19d453c0246107b7a28a1d"
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-93-3-qcm-delf100-bd-marge.png",
+          "sha256": "f87b198d5d0c1acf0a57986bb4f7a12b2c0402ced775e04061e0319937f6f71d",
+          "label": "Dans la marge",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf100-bd-marge.png",
-          "sha256": "b4b7a8fd5fa4fdf8300fdeaa0cf0a3237a4ca29e6a765d27aea4debdfa704063"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -83653,8 +83833,9 @@
         "note": "Même page de BD avec emplacement dans les bulles, sur la couverture ou dans la marge ; zones visuelles explicites, sans nouveau texte."
       },
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot100-20261122.json",
-        "note": "Le stylo touche respectivement une bulle, la couverture et la marge droite ; les autres bulles restent vides dans les deux leurres. Le matériel et le style de bande dessinée sont communs."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Les personnages imprimés de la bande dessinée ont de nouveaux visages et silhouettes. Le stylo conserve sa position dans la bulle ou dans la marge selon le choix. Les personnages imprimés reprennent les nouveaux visages et silhouettes du trio. Le stylo reste au-dessus du dessin, sur la couverture. Les personnages imprimés de la bande dessinée ont de nouveaux visages et silhouettes. Le stylo conserve sa position dans la bulle ou dans la marge selon le choix.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -83898,19 +84079,25 @@
       ],
       "active_images": [
         {
-          "id": "a",
           "path": "/lib/images/tcf/qcm-audit/qcm-delf100-jeux-video-mangas.png",
-          "sha256": "26ac72dc1b8c833f5315d39a7330985ce995168922b0fe8261c50cc4ff39a839"
+          "sha256": "26ac72dc1b8c833f5315d39a7330985ce995168922b0fe8261c50cc4ff39a839",
+          "label": "Les jeux vidéo et les mangas",
+          "id": "a",
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot100-95-2-qcm-delf100-musique-danse.png",
+          "sha256": "e0b61d78814c7172ad7819e5983892e58e3958ab100c47a616770701057b067b",
+          "label": "La musique et la danse",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf100-musique-danse.png",
-          "sha256": "0885373e321f528b6867d3da3970be99cef3931d761a0cc9b1b64f6f7bb26fc6"
+          "correct": false
         },
         {
-          "id": "c",
           "path": "/lib/images/tcf/qcm-audit/qcm-delf100-theatre-peinture.png",
-          "sha256": "f30d0fefacd62d4022fb25c00db77e00d2b8ce4ff6b8c88fc28075873d58d6bd"
+          "sha256": "f30d0fefacd62d4022fb25c00db77e00d2b8ce4ff6b8c88fc28075873d58d6bd",
+          "label": "Le théâtre et la peinture",
+          "id": "c",
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -83933,8 +84120,9 @@
         "note": "Jeux vidéo ET mangas, musique ET danse, théâtre ET peinture ; chaque image doit conserver les deux loisirs sans titre ou marque inventés."
       },
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot100-20261122.json",
-        "note": "Chacun des choix composés est représenté entièrement : écran de jeu et manette avec mangas fermés et ouvert ; guitare et couple dansant ; scène de théâtre avec masques et chevalet de peinture. Les fonds ont été harmonisés à l’ivoire uni, sans séparation verticale ni texture de papier."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Le couple dansant a de nouveaux visages et des morphologies distinctes. Les notes, la guitare et la pose du couple restent visibles. La médiane des quatre coins est de 253, 242, 226.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -89304,19 +89492,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-15-1-qcm-delf2-premiers-secours.png",
+          "sha256": "0541b8a651338d73238e4b1a188cf913f1d8c0c33c9d98c60f5db2f77adacecf",
+          "label": "Les premiers secours",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-premiers-secours.png",
-          "sha256": "16b32c50010bcec32f0d511b7aa755deca4f8e81a851c338f713637c4b4ac1bd"
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-15-2-qcm-delf2-conduite-accompagnee.png",
+          "sha256": "f525cc1c0986d62ce972226c3fe5747c329a2275fff20a97163212f596564099",
+          "label": "La conduite automobile",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-conduite-accompagnee.png",
-          "sha256": "547757203a362a29c576f56daf6537a546b9f7f5480973b56bf6130d19caa843"
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-15-3-qcm-delf2-soupe-collective.png",
+          "sha256": "c3c30d24210aa61e8b831e415c7efd1beed13b94d09da2b2b029335f5ec840f8",
+          "label": "La cuisine collective",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-soupe-collective.png",
-          "sha256": "5252c0bb344c015142e122ba281c0ebae7ac61cc7539ce6a18796df3bff977a3"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -89339,8 +89533,9 @@
         "note": "Exercice pédagogique de premiers secours avec mannequin, conduite automobile et cuisine collective ; techniques et gestes à vérifier visuellement sans inventer un accident réel."
       },
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot2-100-20261123.json",
-        "note": "Formation aux premiers secours avec mannequin et appuis plausibles, apprentissage accompagné de la conduite et préparation collective d’une soupe sur une cuisinière. Pas de casserole flottante."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Les personnes ont de nouveaux visages et tenues. Le mannequin d’entraînement et la conduite accompagnée restent lisibles grâce aux gestes et aux accessoires. Les personnes ont de nouveaux visages et tenues. Le mannequin d’entraînement et la conduite accompagnée restent lisibles grâce aux gestes et aux accessoires. Les personnes qui préparent la soupe ont de nouveaux visages et des morphologies variées. Les légumes, le geste au faitout et la cuisine restent identifiables.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -89557,19 +89752,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-16-1-qcm-delf2-regles-securite.png",
+          "sha256": "8d5b5939d9f97816d90891b06e80e78d6d47845101eb6fe3001fef01c00226e4",
+          "label": "Les règles générales de sécurité",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-regles-securite.png",
-          "sha256": "fc8207fb9e47442c89a979d10041e930c67c7931537de28ad353b8ec424e18f9"
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-16-2-qcm-delf2-regles-jeu-video.png",
+          "sha256": "9d146bb18a81413b67e914f810342aadf22d20c0e3a9d010320258baf66bbf64",
+          "label": "Les règles d’un jeu vidéo",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-regles-jeu-video.png",
-          "sha256": "1c10e9ba7ae3b69f7d0f1342136a9339f0d2758c08ca4fb724ce153e2dd6eb8d"
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-16-3-qcm-delf2-regles-concours-chant.png",
+          "sha256": "f51a65be669fb90fa06d99f65f82a266342e051c9567b1193ac615964ec85b2a",
+          "label": "Les règles d’un concours de chant",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-regles-concours-chant.png",
-          "sha256": "c52ab0638c2e501651b21ba58de6dd3ec49124d9955cd88142db89cdd3ff737b"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -89585,8 +89786,9 @@
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
       ],
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot2-100-20261123.json",
-        "note": "Consignes générales de sécurité illustrées au tableau, apprentissage d’un jeu vidéo avec manette et règles d’un concours de chant avec organisatrice, chanteurs et jury."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Les trois personnes sont renouvelées et la formatrice conserve son rôle. Son geste, les pictogrammes de sécurité et la trousse restent visibles. Le trio renouvelé garde deux de ses personnages dans le choix du jeu. L’écran et les commandes correspondent aux règles d’un jeu vidéo. Le trio renouvelé est reconnaissable dans la scène du concours. Le micro, la feuille et les notes de musique restent lisibles.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -89964,19 +90166,25 @@
       ],
       "active_images": [
         {
-          "id": "a",
           "path": "/lib/images/tcf/qcm-audit/qcm-delf2-mail-plan.png",
-          "sha256": "7a555201cdacdce67eeac1b01a9e0b43b3dc53df8cd184284d0c99c3d9e8861b"
+          "sha256": "7a555201cdacdce67eeac1b01a9e0b43b3dc53df8cd184284d0c99c3d9e8861b",
+          "label": "Par mail",
+          "id": "a",
+          "correct": true
         },
         {
-          "id": "b",
           "path": "/lib/images/tcf/qcm-audit/qcm-delf2-courrier-plan.png",
-          "sha256": "8e596dad445c4f4e0b4f05d01c8199e8cc872135eab3f3ef430f7deef2fc6ac5"
+          "sha256": "8e596dad445c4f4e0b4f05d01c8199e8cc872135eab3f3ef430f7deef2fc6ac5",
+          "label": "Par courrier postal",
+          "id": "b",
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-17-3-qcm-delf2-affiche-plan-lycee.png",
+          "sha256": "d98c05d324fc345b1b1360e7b2186ff7768af3a10a02dc4a88ecb2ca3aafd59f",
+          "label": "Par affichage au lycée",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-affiche-plan-lycee.png",
-          "sha256": "74c15cd35de5b64bd387a028a3206dedb60eb9495722b961474118336721fdf4"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -89999,8 +90207,9 @@
         "note": "Courriel avec pièce jointe de plan générique, courrier postal et panneau au lycée ; pas d’adresse, nom ou trajet réel inventé."
       },
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot2-100-20261123.json",
-        "note": "Plan joint à une enveloppe marquée @, courrier postal avec timbre et plan, et plan fixé sur le panneau d’un lycée. Moyens de réception distincts ; aucune adresse réelle."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "La personne qui consulte le plan a une silhouette plus robuste, des cheveux courts roux et une tenue vert foncé. Le doigt indique toujours le plan dans le couloir.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -91159,19 +91368,25 @@
       ],
       "active_images": [
         {
-          "id": "a",
           "path": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png",
-          "sha256": "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e"
+          "sha256": "9dae84df00a9d49c7f40955d99bcc7aab1dcd6f5c87ddf5cacaedeeca21f951e",
+          "label": "À vélo",
+          "id": "a",
+          "correct": true
         },
         {
-          "id": "b",
           "path": "/lib/images/tcf/qcm-audit/qcm-vehicule-train-ivoire.png",
-          "sha256": "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1"
+          "sha256": "44323d3166128992463163ac95ee8ccd11f4edf5ce85c1a7e30b47a7add4ddd1",
+          "label": "En train",
+          "id": "b",
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-routes-92-3-qcm-deplacement-marche-ivoire.png",
+          "sha256": "9a6e21f0d3991d9aaa2512dd72972203907038b4b996061c7ef4fc70ddfa261b",
+          "label": "À pied",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png",
-          "sha256": "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -91187,8 +91402,9 @@
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
       ],
       "visual_review": {
-        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
-        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "La marche reste lisible en pied, avec un nouveau visage, une silhouette propre et une tenue distincte. Le fond ivoire et l’ombre de contact légère sont conformes au trio de transport.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -91412,19 +91628,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-19-1-qcm-delf2-peinture-huile.png",
+          "sha256": "861d68b1ef67864604af90f1b307c7b7614977eead4e28eaf8ed57520871e061",
+          "label": "La peinture à l’huile",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-peinture-huile.png",
-          "sha256": "3d10181408e76f1cc4fe77d4ad3e47dc2bb394cb89d8952084c61b32e2ea6244"
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-19-2-qcm-delf100-photographier-rue.png",
+          "sha256": "dc81358409b34fbe6329697ae886f0e3d30f15548c27322e21ce6a3bc6a5aa21",
+          "label": "La photographie",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf100-photographier-rue.png",
-          "sha256": "4396a10c5c4830d2035cd09e7819a2a1486abb62c3faaf921b146c899c13348c"
+          "correct": false
         },
         {
-          "id": "c",
           "path": "/lib/images/tcf/catalogue/metiers/sculpteur.webp",
-          "sha256": "be8ea7507ecc4e28f00c00cd17f5934d82b04c961b9d747c22829fc037a27e7f"
+          "sha256": "be8ea7507ecc4e28f00c00cd17f5934d82b04c961b9d747c22829fc037a27e7f",
+          "label": "La sculpture",
+          "id": "c",
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -91447,8 +91669,9 @@
         "note": "Peinture à l’huile sur toile avec matériel adéquat, photographie et sculpture ; ne pas substituer une aquarelle ou un dessin à la technique donnée."
       },
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot2-100-20261123.json",
-        "note": "Peinture au chevalet avec palette et tubes d’huile, photographie dans la rue et travail d’une sculpture : activités entières, pas seulement leur outil."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "La peintre, aux cheveux courts, vêtements bordeaux et tablier, conserve la palette, le pinceau et la pose près du chevalet. Une nouvelle photographe aux cheveux châtains courts et aux lunettes garde l’appareil devant son visage. La rue et le geste restent lisibles.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -91552,19 +91775,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-20-1-qcm-delf2-chambre-murs-vides.png",
+          "sha256": "7d4f77574e433575396a19a79c78c417930f8f6e6ae780d9609572ea1e846cc2",
+          "label": "Les murs de sa chambre sont vides",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-chambre-murs-vides.png",
-          "sha256": "2e91edad47ea282bc0386d1ea54392535ee87a6ac5055635efe96f422cc37318"
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-20-2-qcm-delf2-inauguration-musee.png",
+          "sha256": "e42defbe5a86a152c53e0fd5a2881bac9b224f1a002da2c6f4c38863d06cd031",
+          "label": "Il ouvre un musée",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-inauguration-musee.png",
-          "sha256": "2baa711c0de40d7d90679198447d3a2b6f98ff5f476bb1f427f7eacfaef0903c"
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-20-3-qcm-delf2-decorer-bureau.png",
+          "sha256": "742cb764a4eb1a24fa4e1d7031648a7d85a605aebdbb2b70dde21292f4a7b180",
+          "label": "Il doit décorer son bureau",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-decorer-bureau.png",
-          "sha256": "f403d1e69b2b7b3c5e716b46f78b39d4fbb142f8b4983f1691b690bedb89355f"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -91587,8 +91816,9 @@
         "note": "Chambre aux murs vides, ouverture de musée et décoration de bureau en scènes distinctes ; le premier choix doit montrer chambre et murs sans tableaux."
       },
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot2-100-20261123.json",
-        "note": "Chambre aux murs nus et lit/bureau, inauguration d’un musée avec ruban coupé, tableau installé dans un bureau. Supports et postures contrôlés."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "La nouvelle silhouette du personnage principal est reconnaissable dans les trois choix. Les murs vides et le ruban à couper distinguent la chambre et l’inauguration. La nouvelle silhouette du personnage principal est reconnaissable dans les trois choix. Les murs vides et le ruban à couper distinguent la chambre et l’inauguration. Les deux personnes ont des coiffures et silhouettes renouvelées. Elles positionnent le tableau au-dessus du bureau et l’escabeau garde son appui au sol.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -92346,19 +92576,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-22-1-qcm-delf2-bar-salades.png",
+          "sha256": "06f8d556521063cfcce861ef8479cb8bd943c12c8873854b7b4775bded8dd6da",
+          "label": "Un bar à salades",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-bar-salades.png",
-          "sha256": "2bb1617db73d2b26d43b7ae97b11ed5c4dcf380f4b95b29cf54c5e6e19d825ff"
+          "correct": true
         },
         {
-          "id": "b",
           "path": "/lib/images/tcf/qcm-audit/qcm-delf2-creperie-peinte.png",
-          "sha256": "b193030b64665845557e547bc7b373137846950c0fd24817de58bf30d0038e4e"
+          "sha256": "b193030b64665845557e547bc7b373137846950c0fd24817de58bf30d0038e4e",
+          "label": "Une crêperie",
+          "id": "b",
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-22-3-qcm-delf2-pizzeria-peinte.png",
+          "sha256": "1fbf12c62caa8e3d73cb6959a8e783f28adb06172bf58a6be33ff71ce72c90c6",
+          "label": "Une pizzeria",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-pizzeria-peinte.png",
-          "sha256": "05500d5d2ecf389f3c02ce3eddeaa0fe3ac25f16646112b3da9729c4e3463697"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -92374,8 +92610,9 @@
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
       ],
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot2-100-20261123.json",
-        "note": "Bar à salades avec bacs de légumes et service à la pince, crêperie avec cuisson sur une plaque ronde et pizzeria avec pizza sur une pelle devant le four. Rendu peint et activités de restauration distincts."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Les personnes reconnaissables ont été renouvelées. Le comptoir de salades et le four où l’on prépare les pizzas gardent leurs indices distinctifs. Les personnes reconnaissables ont été renouvelées. Le comptoir de salades et le four où l’on prépare les pizzas gardent leurs indices distinctifs.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -93659,19 +93896,25 @@
       ],
       "active_images": [
         {
-          "id": "a",
           "path": "/lib/images/tcf/qcm-audit/qcm-delf2-conduite-accompagnee.png",
-          "sha256": "547757203a362a29c576f56daf6537a546b9f7f5480973b56bf6130d19caa843"
+          "sha256": "547757203a362a29c576f56daf6537a546b9f7f5480973b56bf6130d19caa843",
+          "label": "La conduite accompagnée",
+          "id": "a",
+          "correct": true
         },
         {
-          "id": "b",
           "path": "/lib/images/tcf/qcm-audit/qcm-vehicule-scooter-ivoire.png",
-          "sha256": "fe31794b202f9bffc5cde40db824096c20bcfb45abb015619e095b8d8c7aeed5"
+          "sha256": "fe31794b202f9bffc5cde40db824096c20bcfb45abb015619e095b8d8c7aeed5",
+          "label": "Un scooter",
+          "id": "b",
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-29-3-qcm-delf100-interieur-train.png",
+          "sha256": "c57aee246ac23149286b9ec9d0cd160a5228009ed3cb7723bf75cfa007e7d2fa",
+          "label": "Un voyage en train",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf100-interieur-train.png",
-          "sha256": "9c77e22e28b76166bd468bc3fc4af2cdebea0c67f233cac2b1ed430813b44392"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -93694,8 +93937,9 @@
         "note": "Montrer un jeune au volant avec un adulte accompagnateur dans une situation d’apprentissage, un scooter, un voyage en train ; conserver l’accompagnement et les règles de sécurité."
       },
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot2-100-20261123.json",
-        "note": "Adolescent au volant avec adulte accompagnateur et ceintures, scooter entier sur fond ivoire, voyageurs dans une voiture ferroviaire. Aucun simple véhicule ne remplace l’action de conduite accompagnée."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Les voyageurs du premier et du deuxième plan sont redessinés. Les sièges, les sacs et la vue depuis le wagon préservent le sens du voyage en train.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -94612,19 +94856,25 @@
       ],
       "active_images": [
         {
-          "id": "a",
           "path": "/lib/images/tcf/catalogue/metiers/pediatre.webp",
-          "sha256": "83131706fbaa945198346ea68339a50e401b58ddcac6f12b8f31d7b30c7a0c81"
+          "sha256": "83131706fbaa945198346ea68339a50e401b58ddcac6f12b8f31d7b30c7a0c81",
+          "label": "La pédiatrie",
+          "id": "a",
+          "correct": true
         },
         {
-          "id": "b",
           "path": "/lib/images/tcf/qcm-audit/qcm-delf2-chirurgie-cardiaque.png",
-          "sha256": "e5abb85217468acdfb1b5a2530cb6c1f3d70339828d4805c024800f7f051b83d"
+          "sha256": "e5abb85217468acdfb1b5a2530cb6c1f3d70339828d4805c024800f7f051b83d",
+          "label": "La chirurgie cardiaque",
+          "id": "b",
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-30-3-qcm-delf2-dermatologie.png",
+          "sha256": "b1659c6fae666f95e8ca7846ca0befa1b3bea6b8330b373df95dbe6d095ad5e7",
+          "label": "La dermatologie",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-dermatologie.png",
-          "sha256": "73160d4669aafb42f7c8ef7fd6b222b3d151a175752d8c863cc28496bb9a0d8f"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -94647,8 +94897,9 @@
         "note": "Trois scènes médicales précises : consultation pédiatrique, chirurgie du cœur, examen dermatologique. Les organes et activités doivent distinguer les spécialités sans diagnostic inventé."
       },
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot2-100-20261123.json",
-        "note": "Consultation pédiatrique auprès d’un enfant, bloc de chirurgie avec cœur sur le moniteur et examen dermatologique au dermatoscope avec schéma de peau. Les trois spécialités sont réellement différenciées par leur pratique."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "La patiente et la professionnelle ont de nouveaux visages et des cheveux distincts. Le geste d’examen de la peau du bras demeure visible.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -95326,19 +95577,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-35-1-qcm-delf2-famille-discussion-jeu.png",
+          "sha256": "f76270aa92039e630cc2b64c2e73a7ca91d2f1d755ac3b896fc946f0aa36ebd3",
+          "label": "Elle se réunissait pour discuter et jouer",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-famille-discussion-jeu.png",
-          "sha256": "3d8cc056acc990c01315c2a0b2ffb94e06fca0b3cd06ffeafb9c9de391b21d8e"
+          "correct": true
         },
         {
-          "id": "b",
           "path": "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
-          "sha256": "adc515d9fc36b54ddc69488999f2ccaf16f18ebfa441a2c1e481552e0b298303"
+          "sha256": "adc515d9fc36b54ddc69488999f2ccaf16f18ebfa441a2c1e481552e0b298303",
+          "label": "Elle allait chaque soir au cinéma",
+          "id": "b",
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-35-3-qcm-delf100-personnel-magasin.png",
+          "sha256": "ace29bdcf62578e0338e3e5be9fe639cddae353d8f9de5afb1914c4c33c86426",
+          "label": "Elle travaillait dans un magasin",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf100-personnel-magasin.png",
-          "sha256": "f4cade98db77a0b7996430f03d8b153d1bd37ef3bab86566c6a24617e7e68f87"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -95361,8 +95618,9 @@
         "note": "Scène domestique de discussion et jeu après le repas, sortie au cinéma, travail en magasin ; montrer les deux activités du premier choix avec un groupe familial diversifié."
       },
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot2-100-20261123.json",
-        "note": "Famille discutant et jouant aux cartes autour d’une table, séance de cinéma et personnel travaillant dans un magasin. L’image représente l’activité ; la fréquence « chaque soir » reste dans la réponse écrite et le contexte."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Quatre personnes aux âges, visages et morphologies distincts jouent aux cartes. Les quatre chaises suivent la perspective. Chaque personne repose sur sa propre assise, une main pose une carte et les jambes restent à leur place sous la table. Les deux personnes ont de nouveaux visages et des vêtements propres à cette situation. Les rayons et les marchandises signalent l’activité en magasin.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -96945,19 +97203,25 @@
       ],
       "active_images": [
         {
-          "id": "a",
           "path": "/lib/images/tcf/qcm-audit/qcm-delf2-equipage-incendie.png",
-          "sha256": "18df57cfdf5f76891954cadf06fae98aa24b9955cd4e3492229dc652630b1728"
+          "sha256": "18df57cfdf5f76891954cadf06fae98aa24b9955cd4e3492229dc652630b1728",
+          "label": "À l’équipage",
+          "id": "a",
+          "correct": true
         },
         {
-          "id": "b",
           "path": "/lib/images/tcf/qcm-audit/qcm-delf100-interieur-train.png",
-          "sha256": "9c77e22e28b76166bd468bc3fc4af2cdebea0c67f233cac2b1ed430813b44392"
+          "sha256": "9c77e22e28b76166bd468bc3fc4af2cdebea0c67f233cac2b1ed430813b44392",
+          "label": "Aux passagers d’un train",
+          "id": "b",
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-45-3-qcm-delf2-equipe-television.png",
+          "sha256": "9e20d671cfc51ab393dc0e1e4d5e565f26d69d9823d065aba0c0db8223205f0d",
+          "label": "À une équipe de télévision",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-equipe-television.png",
-          "sha256": "7a5b9b4ea8af9f8299fa1f925d89ef1167127fb7a9faf190fb080bfcb572981b"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -96980,8 +97244,9 @@
         "note": "Équipage du yacht combattant le feu, passagers d’un train, équipe de télévision : contextes et activités doivent identifier les trois groupes entiers."
       },
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot2-100-20261123.json",
-        "note": "Deux membres d’équipage à bord d’un yacht utilisant un extincteur et une couverture, passagers assis dans un train, équipe de télévision avec caméraman et journaliste. Les interlocuteurs ou groupes sont réellement visibles ; la scène d’extinction reste générique."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Les trois personnes ont des coiffures et silhouettes renouvelées. La journaliste, le micro et la caméra gardent l’indice d’une équipe de télévision.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -97318,19 +97583,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-46-1-qcm-delf2-pollution-lumineuse.png",
+          "sha256": "3e63bbfe864ca54dc5c1053268bf4cdbf55856de5b860f059644463309895c1b",
+          "label": "La pollution lumineuse",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-pollution-lumineuse.png",
-          "sha256": "e8421b548c894251328e496c2fef256b44742c86793738bbd3430e00f9faecae"
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-46-2-qcm-delf2-pollution-sonore.png",
+          "sha256": "66d66e064e68b0e820f774e66fe41fa8afc12cfcb19000f25162ff8de59f2092",
+          "label": "La pollution sonore",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-pollution-sonore.png",
-          "sha256": "06bb533c3c2272d6ca9c159edaf6b979eae48610ab0f8585fe2304a57f8be70b"
+          "correct": false
         },
         {
-          "id": "c",
           "path": "/lib/images/tcf/qcm-audit/qcm-delf2-pollution-sols.png",
-          "sha256": "e98701f97ba25c53ebf88331162d805a5bdaadb7e0df85adfaf1c808ab10d8f7"
+          "sha256": "e98701f97ba25c53ebf88331162d805a5bdaadb7e0df85adfaf1c808ab10d8f7",
+          "label": "La pollution des sols",
+          "id": "c",
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -97353,8 +97624,9 @@
         "note": "Trois schémas cohérents : lumière urbaine masquant les étoiles, nuisance sonore, sol pollué ; ne pas mélanger bruit et éclairage dans les leurres."
       },
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot2-100-20261123.json",
-        "note": "Vue nocturne avec halo d’éclairage urbain masquant les étoiles, nuisance sonore avec marteau-piqueur et circulation, sol souillé par des fûts qui fuient. Les trois catégories de pollution restent distinctes."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Les personnes au premier plan ont de nouveaux visages et silhouettes. Les éclairages urbains restent visibles au loin dans l’image nocturne. La marcheuse au bord des travaux a une nouvelle silhouette, des cheveux gris et un gilet corail. Les barrières, les engins et la circulation restent visibles.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -101003,19 +101275,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-58-1-qcm-delf2-eleves-examen-3.png",
+          "sha256": "718a85a0ebbbddba7711130f6b7cb7aa681a1ca559022fd445b906eda47dc220",
+          "label": "Trois",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-eleves-examen-3.png",
-          "sha256": "666306c62182fad0a3108ecf09fa1ff61a3dee85a816bc6788c47cacfff6d973"
+          "correct": true
         },
         {
-          "id": "b",
           "path": "/lib/images/tcf/qcm-audit/qcm-delf2-eleves-examen-2.png",
-          "sha256": "26c2973d7eedefa1b2f8d0cdf812f0e236662aca1a5b2d16b85aeb3258d9c7d1"
+          "sha256": "26c2973d7eedefa1b2f8d0cdf812f0e236662aca1a5b2d16b85aeb3258d9c7d1",
+          "label": "Deux",
+          "id": "b",
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-58-3-qcm-delf2-eleves-examen-5.png",
+          "sha256": "5a52f36adb73996525d3369c0fd1db4f07a709d00693b40ab5b279e6c02b7c8b",
+          "label": "Cinq",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-eleves-examen-5.png",
-          "sha256": "833c283525ef99f61d019d7972bc2334e7c2d5c7a1cce363957360ab622f2495"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -101038,8 +101316,9 @@
         "note": "Trois, deux et cinq élèves dans des scènes d’examen comparables ; chaque groupe doit être entier et réellement dénombrable, sans suggérer que tout élève dessiné fraude par son apparence."
       },
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot2-100-20261123.json",
-        "note": "La transcription dit trois élèves. Les images montrent exactement trois, deux et cinq candidats dans la même classe, avec silhouettes et bureaux dénombrables. Ces personnages illustrent une quantité et ne sont pas présentés comme les auteurs réels de la fraude."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Les trois élèves ont leurs nouveaux visages, coiffures et tenues. Les trois places et le geste d’écrire sont conservés. Les élèves ont de nouveaux visages et tenues. L’organisation des cinq places et le geste d’écrire restent lisibles.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -101676,19 +101955,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-59-1-qcm-delf2-tentes-montagne.png",
+          "sha256": "1fb5cd75aaef0820de39f6d2fd25b7ea0f94df9672c418cdd80cd1c99fc5c4da",
+          "label": "Sous des tentes",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-tentes-montagne.png",
-          "sha256": "7e2ac81f3e5fba5dbf97eaafc07a13d88155f18804c3a9224d1a4ce83c485487"
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-59-2-qcm-delf2-hotel-peint.png",
+          "sha256": "e87b420f4a76cd246c16e3007dd1a94d3dd14af0e0fc72a3d16e723be0497e34",
+          "label": "Dans un hôtel",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-hotel-peint.png",
-          "sha256": "f4dd3b39478bf0c6da8a76122d38cda8db42dda699fc4b4b67c0fc06c43c5a02"
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-59-3-qcm-delf2-refuge-chauffe.png",
+          "sha256": "dd835bf18d386d1f32263de742941983b6f061d10b52d1198c9c048bbed474bc",
+          "label": "Dans un refuge chauffé",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-refuge-chauffe.png",
-          "sha256": "53015fd379ef84312e22d916c8f50bb09f1ae067edc0a87701bb3ba6f7d83725"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -101711,8 +101996,9 @@
         "note": "Tentes de montagne, hôtel et refuge avec chauffage visible ; conserver la différence entre établissement hôtelier et refuge chauffé, pas trois façades de cabane."
       },
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot2-100-20261123.json",
-        "note": "La source dit que les élèves ont passé la nuit sous des tentes. Tentes, réception d’hôtel et dortoir de refuge avec poêle représentent trois hébergements distincts. Les paysages sont illustratifs, sans prétendre identifier un volcan ou un lieu précis."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Le couple renouvelé se repose au premier plan. Les tentes et le paysage montagneux gardent le sens du camping. Les voyageurs reprennent la distribution du camping. Le guichet et les valises situent l’hôtel, et le poêle ainsi que les couchages indiquent le refuge. Les voyageurs reprennent la distribution du camping. Le guichet et les valises situent l’hôtel, et le poêle ainsi que les couchages indiquent le refuge.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -102668,19 +102954,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-61-1-qcm-delf2-camping.png",
+          "sha256": "23e94034f9242cf9faa6bdc9e933b3ea260c729143c24e129eba0e0a78762b06",
+          "label": "Un camping",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-camping.png",
-          "sha256": "a768098ca9e9fc03f68b9d48dc5185c68117752122e3bfe5412333f72b0f3bdf"
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-61-2-qcm-delf2-pensionnat-ferme.png",
+          "sha256": "a2ba7946f4831a24b672bdc88864dbebf1325ee90086197d918582761c9e1e59",
+          "label": "Un pensionnat fermé",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-pensionnat-ferme.png",
-          "sha256": "4d86442a1e7b5622bc8374653a8ec3d6d4af6645a2be4ae108386814d319009e"
+          "correct": false
         },
         {
-          "id": "c",
           "path": "/lib/images/tcf/qcm-audit/qcm-delf2-maison-retraite.png",
-          "sha256": "4145841e6010934bad9549ccd82224101bb918687da5d2b32d6684cddb0df7c2"
+          "sha256": "4145841e6010934bad9549ccd82224101bb918687da5d2b32d6684cddb0df7c2",
+          "label": "Une maison de retraite",
+          "id": "c",
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -102703,8 +102995,9 @@
         "note": "Camping, pensionnat fermé et maison de retraite : cadres complets nécessaires, dont dortoir scolaire et accès fermé pour le pensionnat, résidence collective avec accompagnement pour la maison de retraite ; une tente ou un visage âgé seuls ne suffisent pas."
       },
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot2-100-20261123.json",
-        "note": "Le camping entre amis est cité dans la source. Tentes avec équipements collectifs, internat au portail fermé avec dortoir visible et résidence pour personnes âgées sont trois hébergements distincts. Les personnages restent illustratifs et ne prétendent pas représenter les adolescents de la source."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Le groupe du portail est reconnaissable au camping, avec de nouvelles coiffures, morphologies et tenues. Les tentes et l’équipement de camping sont visibles. Les trois personnes au portail sont renouvelées. Le passage, les grilles et les bâtiments restent lisibles.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -103936,19 +104229,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-63-1-qcm-delf2-petit-dejeuner-peint.png",
+          "sha256": "6ffdfea2539de84e134f337f6c2deebf7d87d15b5eaf5d00ea2344076a50daf0",
+          "label": "Le petit-déjeuner",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-petit-dejeuner-peint.png",
-          "sha256": "1f9af38f46ba5d82b59319d194e20686d398c11f38fcdb58851886984c9f905f"
+          "correct": true
         },
         {
-          "id": "b",
           "path": "/lib/images/tcf/qcm-audit/qcm-delf2-repas-noel.png",
-          "sha256": "46e24cdaea92063c1d5df3c0feb66b3a92781c3da9d6cc1b631e8f0a81aaa6ad"
+          "sha256": "46e24cdaea92063c1d5df3c0feb66b3a92781c3da9d6cc1b631e8f0a81aaa6ad",
+          "label": "Le repas de Noël",
+          "id": "b",
+          "correct": false
         },
         {
-          "id": "c",
           "path": "/lib/images/tcf/co/bg/pique-nique.webp",
-          "sha256": "bc85c3169aa61640949235d035e43618e0d9aa1377531ccd98c47c36d979f020"
+          "sha256": "bc85c3169aa61640949235d035e43618e0d9aa1377531ccd98c47c36d979f020",
+          "label": "Le pique-nique",
+          "id": "c",
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -103971,8 +104270,9 @@
         "note": "Petit-déjeuner, repas de Noël et pique-nique : trois tables ou installations complètes, avec indices de repas et de contexte ; aucune date ou inscription de mois."
       },
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot2-100-20261123.json",
-        "note": "La source identifie le petit-déjeuner comme thème apprécié. Table de petit-déjeuner, repas avec sapin de Noël et nappe de pique-nique à l’extérieur distinguent les trois contextes alimentaires. Aucun indice de calendrier ou date n’est ajouté."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Les quatre convives ont des visages, des coiffures et des silhouettes distincts. Chaque personne est assise sur sa propre chaise, tournée vers la table. Le petit-déjeuner et les gestes des convives restent lisibles.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -104956,19 +105256,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-68-1-qcm-delf2-fermer-robinet.png",
+          "sha256": "d0d73f06575ac0a5ce1d27be0c0e20cd48c9e83e45f045c82fd9d00477c056dd",
+          "label": "Fermer le robinet",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-fermer-robinet.png",
-          "sha256": "e71a36442deee68ebe27345b6d04de8db381f165dff6fa39dd74d3c0bf874a96"
+          "correct": true
         },
         {
-          "id": "b",
           "path": "/lib/images/tcf/qcm-audit/qcm-delf2-trier-papier.png",
-          "sha256": "f3b9e39b5edc06f5f4253d8383a940a1a007449b1ae6574b2d43e8bbc4199776"
+          "sha256": "f3b9e39b5edc06f5f4253d8383a940a1a007449b1ae6574b2d43e8bbc4199776",
+          "label": "Trier le papier",
+          "id": "b",
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-68-3-qcm-delf2-eteindre-chauffage.png",
+          "sha256": "b821539172f7e91e5def3d1ad2367d1d183bc6469ad1fcb1d2097ab665441dcc",
+          "label": "Éteindre le chauffage central",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-eteindre-chauffage.png",
-          "sha256": "97e8c42dcdaa89764e4d2f8afa63c27aa17e055d7a07e4a9f302ccf897188f06"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -104991,8 +105297,9 @@
         "note": "Fermer le robinet pendant le brossage, trier du papier, éteindre le chauffage central : trois gestes explicites, pas des objets simplement posés."
       },
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot2-100-20261123.json",
-        "note": "Le geste oublié pendant le brossage est fermer le robinet. Brosse à dents, main sur le robinet et absence de jet visibles ; distracteurs trier des papiers et commande de chauffage clairement distincts. La tenue illustrative ne prétend pas représenter le locuteur."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Une personne aux cheveux gris et à la chemise à carreaux est représentée dans le même miroir en train de se brosser les dents et de fermer le robinet. Le même homme aux cheveux gris, aux lunettes et à la chemise bordeaux apparaît dans les deux choix repris. Le robinet et le chauffage restent manipulés dans les situations prévues.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -109651,19 +109958,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-82-1-faire-ses-devoirs.png",
+          "sha256": "6a30d513fb46c93ec846ee44ba02a0dad81f6fe481db453efafe64b081e845a0",
+          "label": "De réviser pour un contrôle",
           "id": "a",
-          "path": "/lib/images/tcf/catalogue/actions/faire-ses-devoirs.webp",
-          "sha256": "a390b83744b566f5965958518e0ea6ce7b8c148fe5723b8e0e35c00908b2290f"
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-82-2-qcm-delf2-acheter-manuel.png",
+          "sha256": "c303884f097ffd067134164898c55576819bd53874dbe862e850ad28b8a360fc",
+          "label": "D’acheter un manuel",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-acheter-manuel.png",
-          "sha256": "d31e23b644a22fa88d0785a1c8d2ab1edc4124c1c580e5834e45100f21fa9f0a"
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-82-3-qcm-delf2-preparer-exposition.png",
+          "sha256": "04dda83c11fa1c8d76ded843e55b4bf3dca29a760c4c76bd71310b863fe91a37",
+          "label": "De préparer une exposition",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-preparer-exposition.png",
-          "sha256": "3f8cbd61d9f5898d6263fae527e69beaf3ca42f4f435a04b7a7ba4884133a9b9"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -109686,8 +109999,9 @@
         "note": "Révision orientée vers un contrôle, achat d’un manuel, préparation d’une exposition : représenter le but de révision par un support d’entraînement et une petite séquence, pas seulement un élève lisant."
       },
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot2-100-20261123.json",
-        "note": "Personne travaillant dans un cahier près de livres. La transcription demande de réviser ; aucun examen ou résultat inventé dans les métadonnées."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "La personne au haut ocre et la nouvelle distribution se distinguent des personnages récurrents. Le cahier de révision et l’accrochage des œuvres restent les indices des deux variantes. Le même élève aux cheveux courts roux se retrouve au comptoir. Le manuel ouvert et l’échange avec la libraire gardent leur place. La personne au haut ocre et la nouvelle distribution se distinguent des personnages récurrents. Le cahier de révision et l’accrochage des œuvres restent les indices des deux variantes.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -110985,19 +111299,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-routes-94-1-qcm-deplacement-marche-ivoire.png",
+          "sha256": "ae7226363dea50dbabd1200d7930afc82b6839198d6a299a1fd3c27318cf99fa",
+          "label": "La marche",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png",
-          "sha256": "34f4a2c01136cf98a50e1a2416524ae2f484e37bbce96cb3a2574bbed03ecaa8"
+          "correct": true
         },
         {
-          "id": "b",
           "path": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
-          "sha256": "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64"
+          "sha256": "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+          "label": "La voiture",
+          "id": "b",
+          "correct": false
         },
         {
-          "id": "c",
           "path": "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
-          "sha256": "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b"
+          "sha256": "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+          "label": "Le métro",
+          "id": "c",
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -111013,8 +111333,9 @@
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
       ],
       "visual_review": {
-        "register": "docs/tcf/revue-vehicules-ivoire-20261122.json",
-        "note": "Trois sujets distincts sur fond ivoire contrôlé. Les véhicules sont isolés ; la marche conserve une personne entière en action. Vélos de ville, de course, d’enfant, électrique et VTT gardent leurs caractéristiques pertinentes."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "La marche reste lisible en pied, avec un nouveau visage, une silhouette propre et une tenue distincte. Le fond ivoire et l’ombre de contact légère sont conformes au trio de transport.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -111058,19 +111379,25 @@
       ],
       "active_images": [
         {
-          "id": "a",
           "path": "/lib/images/tcf/qcm-audit/qcm-delf2-selfie.png",
-          "sha256": "bb83a60e8a824b2216b5ef1cee4fbb3f3a3f4a6e7954207a75e977ceaa6dc8e0"
+          "sha256": "bb83a60e8a824b2216b5ef1cee4fbb3f3a3f4a6e7954207a75e977ceaa6dc8e0",
+          "label": "Faire des selfies",
+          "id": "a",
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-85-2-qcm-lot20e-allumer-appareil.png",
+          "sha256": "28311226656f2bc6433183378405271fe7998f23eef6b1107213f76e19e7b0c3",
+          "label": "Écouter la radio",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-allumer-appareil.png",
-          "sha256": "f48b114573c34efbbd407f94bff885ce33a3b86b64cef89c27a0df5a0d730cff"
+          "correct": false
         },
         {
-          "id": "c",
           "path": "/lib/images/tcf/catalogue/actions/lire-dans-un-fauteuil.webp",
-          "sha256": "3e520c9d1e970d9c6b37c41631d88affe2d45268f8247c126c6cd5674b8109b9"
+          "sha256": "3e520c9d1e970d9c6b37c41631d88affe2d45268f8247c126c6cd5674b8109b9",
+          "label": "Lire des romans",
+          "id": "c",
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -111086,8 +111413,9 @@
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
       ],
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot2-100-20261123.json",
-        "note": "Lecture d’un livre dans un fauteuil. Le genre du livre est porté par le texte du choix ; il n’est pas affirmé par le titre ni les mots-clés de l’image. Personne utilisant une radio à domicile. Le personnage est une illustration générique de l’activité et non un portrait du locuteur. La main règle la radio ; la distinction écouter/allumer n’est pas utilisée comme opposition dans ces trios."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "La femme a des cheveux courts roux et une tenue vert foncé. Son geste sur la commande de l’appareil est conservé.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -112726,19 +113054,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-89-1-qcm-delf2-blogueur.png",
+          "sha256": "36b9565c26b2455e61220054f4f507ff2159b3e70d295871651b6c2c29e296b0",
+          "label": "Blogueur",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-blogueur.png",
-          "sha256": "eaf112e7a48daee62fd48a6810f43a11eeab2efabbc0da702346c3f129bb726f"
+          "correct": true
         },
         {
-          "id": "b",
           "path": "/lib/images/tcf/qcm-audit/qcm-delf2-boulanger-fournil.png",
-          "sha256": "44521459d45a7929dfc293669d1a82cb010103d59b58b39a67ef3655222e200d"
+          "sha256": "44521459d45a7929dfc293669d1a82cb010103d59b58b39a67ef3655222e200d",
+          "label": "Boulanger",
+          "id": "b",
+          "correct": false
         },
         {
-          "id": "c",
           "path": "/lib/images/tcf/catalogue/metiers/conducteur-de-train.webp",
-          "sha256": "0b2c884e678f7274526f965aaaea7f87279e99015eb18257da60118339ebd40b"
+          "sha256": "0b2c884e678f7274526f965aaaea7f87279e99015eb18257da60118339ebd40b",
+          "label": "Conducteur de train",
+          "id": "c",
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -112761,8 +113095,9 @@
         "note": "Blogueur publiant des articles dans une interface de blog, boulanger au fournil, conducteur au poste d’un train ; correction appliquée de pilote de train vers le terme conducteur de train."
       },
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot2-100-20261123.json",
-        "note": "La cabine, les commandes et les voies ferrées visibles distinguent le conducteur de train des choix blogueur et boulanger."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "La nouvelle personne porte des cheveux gris courts et une chemise bleue. L’ordinateur, la page de blog et le geste d’écriture restent visibles.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -114154,19 +114489,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-94-1-qcm-delf2-manger-produits-marins.png",
+          "sha256": "cabee0684e29883e4f8af8904ada583411dc54698025203cfef790f1790243e8",
+          "label": "En mangeant des produits marins",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-manger-produits-marins.png",
-          "sha256": "85b29a50023dbdc0564f9221336ec6eaece1afaeb929df45b54d7dc1fc73c1d5"
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-94-2-qcm-delf2-regarder-mer.png",
+          "sha256": "0d3c7b6e870cae33955f7b95bdca0855094d3d96aa98b269f87150d450948400",
+          "label": "En regardant la mer",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-regarder-mer.png",
-          "sha256": "36ad52b2d0bbd073e18fcb8e6a26a29d966ffabe2a20b6c5c7b6a327e5217121"
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-94-3-qcm-lot20e-allumer-appareil.png",
+          "sha256": "fac21acda0bebd569edb24fa2f9a0612b5d0986e1a6347a12a90255c3adfd8c5",
+          "label": "En écoutant la radio",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-lot20e-allumer-appareil.png",
-          "sha256": "f48b114573c34efbbd407f94bff885ce33a3b86b64cef89c27a0df5a0d730cff"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -114189,8 +114530,9 @@
         "note": "Manger des produits marins, regarder la mer, écouter la radio : trois actions complètes. Ne pas inventer un niveau de contamination dans le plat dessiné."
       },
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot2-100-20261123.json",
-        "note": "Personne utilisant une radio à domicile. Le personnage est une illustration générique de l’activité et non un portrait du locuteur. La main règle la radio ; la distinction écouter/allumer n’est pas utilisée comme opposition dans ces trios."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "La femme aux cheveux gris et à la chemise verte reste la même que dans la scène en bord de mer. Son geste à table conserve l’indice de repas. Une nouvelle femme aux cheveux gris et à la chemise verte se tient au même garde-corps devant la mer. La même femme à lunettes et à la chemise verte que dans les deux autres variantes allume l’appareil.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -115241,19 +115583,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-100-1-qcm-delf2-duo-bricoler-peindre.png",
+          "sha256": "2d4e25aa20a319d2129b3bafa70ce8404db9b7f7dccb1b824a4a858f9f619b41",
+          "label": "Bricoler et peindre",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-duo-bricoler-peindre.png",
-          "sha256": "4df5bfc7bb630dd9a8deed55e99ba77ad6b80ba7af6a779607980fc9826c8749"
+          "correct": true
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-100-2-qcm-delf2-duo-coudre-broder.png",
+          "sha256": "6b2ebf7e1e380012a6610e8a4039236eece97d4e7037eee6bd692c8f3c7ee7ff",
+          "label": "Coudre et broder",
           "id": "b",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-duo-coudre-broder.png",
-          "sha256": "56a7473d1e0218281bef79ffb4a20ee32cd24b59424be395d59cbc27680f5188"
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-lot2-100-3-qcm-delf2-duo-jardiner-cuisiner.png",
+          "sha256": "c1caa52034a159ce25c7748f5c42c3d681b888621f51ff5b5a4a9d281e125df9",
+          "label": "Jardiner et cuisiner",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf2-duo-jardiner-cuisiner.png",
-          "sha256": "80ebccbcad131fd1f44e85c7fd23434dcf71ba827f04b36440ff59fbdca6722e"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -115276,8 +115624,9 @@
         "note": "Trois paires complètes de gestes : bricolage et peinture sur bois, couture et broderie, jardinage et cuisine ; deux volets par image et personnes diversifiées."
       },
       "visual_review": {
-        "register": "docs/tcf/delf-actif-20261113/revue-lot2-100-20261123.json",
-        "note": "Vincent dit aimer bricoler et peindre. Chaque illustration réunit deux gestes : visser et peindre, coudre et broder, planter et cuisiner. Personnages variés ; tabouret, planche et casserole physiquement soutenus, pas une activité de la paire manquante."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Le même duo aux visages et morphologies distincts reste identifiable. La réparation du tabouret et la peinture du panneau gardent leur place. Une femme aux cheveux blonds courts et un homme âgé aux cheveux blancs remplacent le duo récurrent. Le travail à la machine et la broderie restent visibles. Le couple reprend les nouvelles silhouettes du choix couture. Le jardinage et la cuisine gardent leur place dans les deux volets.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -117408,19 +117757,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-delf-09-1-qcm-delf21-educateur.png",
+          "sha256": "8fec0a921f9bc8ec48885c4852fc3503274660a6f2a03e40401e95a4a889bb6a",
+          "label": "Éducateur",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-educateur.png",
-          "sha256": "15b7ebce21d518636c326c90cf054c674fac166c14ab9e6afbee106e106f5b26"
+          "correct": true
         },
         {
-          "id": "b",
           "path": "/lib/images/tcf/qcm-audit/co834-medecin-dessine.webp",
-          "sha256": "bca4d8bb519046e3bd3c8a526d46621de86017ce9e0ebb65e0f59c4f5c378903"
+          "sha256": "bca4d8bb519046e3bd3c8a526d46621de86017ce9e0ebb65e0f59c4f5c378903",
+          "label": "Médecin",
+          "id": "b",
+          "correct": false
         },
         {
-          "id": "c",
           "path": "/lib/images/tcf/qcm-audit/qcm-delf21-ingenieure.png",
-          "sha256": "aefad84b0886fb37c47ff387938baefefc4cf3852a9d59d458a7d88f3056e494"
+          "sha256": "aefad84b0886fb37c47ff387938baefefc4cf3852a9d59d458a7d88f3056e494",
+          "label": "Ingénieur",
+          "id": "c",
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -117443,8 +117798,9 @@
         "note": "Éducateur accompagnant un groupe de jeunes hors d’un cours magistral, médecin en consultation, ingénieur sur un projet technique ; vérifier que l’activité distingue bien éducateur et enseignant avant d’activer le trio."
       },
       "visual_review": {
-        "register": "docs/tcf/lots-images-20261124/delf-final21-activation.json",
-        "note": "Monsieur Ribot se présente comme éducateur. Les images représentent les activités professionnelles : accompagnement éducatif de jeunes, auscultation médicale et plans structurels de pont. Elles ne prétendent pas représenter les identités des personnes du document."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "L’éducatrice et les deux jeunes ont de nouveaux visages, morphologies et vêtements. La discussion en petit groupe et les supports de l’activité demeurent clairement reconnaissables.",
+        "date": "2026-11-27"
       }
     },
     {
@@ -121541,19 +121897,25 @@
       ],
       "active_images": [
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-delf-19-1-qcm-delf21-regles-hygiene.png",
+          "sha256": "008e6c7104d67f1b1a73d163732f80ec43b3d557ab8ee07017a16babc3a897c9",
+          "label": "Les règles d’hygiène",
           "id": "a",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-regles-hygiene.png",
-          "sha256": "9fa9ee318445313b6df0ac9c470d5dbecf22831875adda53bdb8cef29af32410"
+          "correct": true
         },
         {
-          "id": "b",
           "path": "/lib/images/tcf/qcm-audit/qcm-delf21-regles-stationnement.png",
-          "sha256": "22082faad66ef4f79e0b9a5afbea0bb569f75bb05b00c050caee6230eaf1c906"
+          "sha256": "22082faad66ef4f79e0b9a5afbea0bb569f75bb05b00c050caee6230eaf1c906",
+          "label": "Les règles de stationnement",
+          "id": "b",
+          "correct": false
         },
         {
+          "path": "/lib/images/tcf/qcm-audit/qcm-cast-delf-19-3-qcm-delf21-regles-examen.png",
+          "sha256": "7e2dca8cbbfd5b3ee7af2e2d70882f65cc8ec0403c4cc31b1335a8441f857a36",
+          "label": "Les règles des examens",
           "id": "c",
-          "path": "/lib/images/tcf/qcm-audit/qcm-delf21-regles-examen.png",
-          "sha256": "bb899d67d8ba53ae2ac0ab284ebfbcd1d8a97b5c9b0515353d53615e092434f7"
+          "correct": false
         }
       ],
       "candidate_review_required": false,
@@ -121569,8 +121931,9 @@
         "Ne pas activer un trio incomplet ou dont la source, les choix ou le corrigé ont changé."
       ],
       "visual_review": {
-        "register": "docs/tcf/lots-images-20261124/delf-final21-activation.json",
-        "note": "Le support évoque le renforcement de l’hygiène. Lavage des mains et nettoyage du plan de travail, règles de stationnement, puis interdiction des téléphones à l’examen matérialisent les trois familles de règles."
+        "register": "docs/tcf/reprise-personnages-20261127.json",
+        "note": "Les deux personnes ont des visages, morphologies et tenues distincts. Le lavage des mains et le nettoyage du plan de travail restent lisibles. La surveillante et les trois jeunes ont chacun une silhouette et une tenue différentes. L’interdiction des téléphones est lisible et les élèves les rangent.",
+        "date": "2026-11-27"
       }
     },
     {

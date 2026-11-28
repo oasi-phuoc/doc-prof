@@ -1,0 +1,1578 @@
+{
+  "date": "2026-11-26",
+  "baseline_commit": "e72ec7c2424ce55cc8ca56cf9a4a33924df03915",
+  "scope": "Correction de choix d’images dans des QCM de transport ou d’objets déjà actifs.",
+  "summary": {
+    "corrected_trios": 19,
+    "changed_choices": 29,
+    "new_images": 9
+  },
+  "trios": [
+    {
+      "key": "delf-a1s-ce-024#5",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "level": "A0-A1",
+      "source": "Soldes : du 12 janvier au 8 février, quatre semaines de réductions !\n\nBicyLoc, location de vélos : 1 heure 8 CHF, 1 jour 25 CHF, 1 semaine 150 CHF.",
+      "source_sha256": "f927b752183f3b30b53dbbb9036941451e8f2fa4dcc89e58951afaf2af1d087d",
+      "semantic_sha256": "eb53216e1b401008ac25b3707f5803a92798b987c9bf598a4eb8d5fa46b59ead",
+      "question": {
+        "enonce": "Quel type de véhicule peut-on louer ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des vélos",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des voitures",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des motos",
+            "correct": false
+          }
+        ],
+        "written_model": "Des vélos"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-velos.webp",
+        "/lib/images/tcf/qcm-audit/qcm-delf100-usagers-voitures.png",
+        "/lib/images/tcf/qcm-audit/vocab-motos.webp"
+      ],
+      "image_sha256": [
+        "8e93b5ef2b7c917408215e31c0407ac16e08eca00fca720344703efe70c7ea59",
+        "31c5bae9a66cfc124c21445fb0efd29f64865673c43d9b862069415d500f76cf",
+        "f48051b1f7700466e3018be8e783829a662e25c696895bc8a9bee216e784f455"
+      ],
+      "reason": "Les voitures sont désormais présentées par deux sur fond ivoire, comme les vélos et les motos.",
+      "visual_review": "Les voitures sont désormais présentées par deux sur fond ivoire, comme les vélos et les motos.",
+      "change_kind": "replaced_image_choices",
+      "before_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-velos.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-motos.webp"
+          }
+        ]
+      },
+      "after_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-velos.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-delf100-usagers-voitures.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-motos.webp"
+          }
+        ]
+      }
+    },
+    {
+      "key": "tcf-a1j-s2-co-2#7",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Vous avez entre 12 et 17 ans et vous aimez le sport? Aujourd'hui, vous pouvez essayer tous les sports gratuitement à la fête de la ville, Place de la mairie. Judo à 9h avec Damien, Tennis à 10h avec Chloé, Basket à 14h avec Anne et vous pouvez gagner un ballon!",
+      "source_sha256": "e85df35b27b6f7e0d08706318a98081557d86096fd16745ba227f90c734190eb",
+      "semantic_sha256": "ed2436f11b6116c24f17dcb3188a5d0f1db82172a58d534718711c8c59a587be",
+      "question": {
+        "enonce": "Quel objet peut-on gagner ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un ballon",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une raquette",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un vélo",
+            "correct": false
+          }
+        ],
+        "written_model": "Un ballon"
+      },
+      "audio": "/lib/audio/tcf/co/loisirs/la-fete-du-sport.mp3",
+      "audio_sha256": "d273eeaeb58db28d5191ca6065a60a248b3dc710e83bcdeea40093552bc7d56d",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-ballon-basket.webp",
+        "/lib/images/tcf/qcm-audit/vocab-raquette.webp",
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp"
+      ],
+      "image_sha256": [
+        "f6750f8cd880bd5b2967e4fc02c6cfffabbbadea743ebc7d707a5c4ab8c39ea8",
+        "dbe83597f5ae28b640c34ce9e9dbde3fd8c1db02bd7a1df5970df011f6deaf55",
+        "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085"
+      ],
+      "reason": "Le ballon de basket suit l’activité mentionnée. La raquette et le vélo sont entiers et isolés sur fond ivoire.",
+      "visual_review": "Le ballon de basket suit l’activité mentionnée. La raquette et le vélo sont entiers et isolés sur fond ivoire.",
+      "change_kind": "replaced_image_choices",
+      "before_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-ballon-football.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-raquette.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          }
+        ]
+      },
+      "after_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-ballon-basket.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-raquette.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp"
+          }
+        ]
+      }
+    },
+    {
+      "key": "tcf-a1-s1-co-4#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour, je voudrais m'inscrire s'il vous plaît. Vous avez une pièce d'identité? Oui, et j'ai aussi une carte d'étudiant.",
+      "source_sha256": "4bf177aa1043f9692787e867c0f372a6e7fc54716bd85e6d1ebf6f56e4767348",
+      "semantic_sha256": "8818453bc2b3fdbde07fbe6a498cd75ff56965e6891847181a9a1832ee76e5a8",
+      "question": {
+        "enonce": "Quel document lui demande-t-on ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une pièce d’identité",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une ordonnance",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un billet de train",
+            "correct": false
+          }
+        ],
+        "written_model": "Une pièce d’identité"
+      },
+      "audio": "/lib/audio/tcf/co/bibliotheque/03-bibliothèque-inscription.mp3",
+      "audio_sha256": "e7190738eb6290e0ad38545c6c33bb20c7956567224c674778acc82b0de715db",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-carte-identite.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-document-ordonnance.png",
+        "/lib/images/tcf/qcm-audit/qcm-b1-billet-train-ivoire.png"
+      ],
+      "image_sha256": [
+        "047a4c60989ad2fa697f656c9c0475e17c74024479bb48c4314bff347199ac4f",
+        "087e59160f47acf5ce150ac8c1f79694605a0d09fb6073b4ce79bc475734454f",
+        "f1bf7e8882c1c32e0bf75b87f740ff56b60b167fe847e443dc07a33f4dfae4ae"
+      ],
+      "reason": "Les trois documents sont montrés dans leur intégralité sur des fonds ivoire de teintes proches.",
+      "visual_review": "Les trois documents sont montrés dans leur intégralité sur des fonds ivoire de teintes proches.",
+      "change_kind": "replaced_image_choices",
+      "before_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-carte-identite.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-ordonnance.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp"
+          }
+        ]
+      },
+      "after_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-carte-identite.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-a1-document-ordonnance.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-b1-billet-train-ivoire.png"
+          }
+        ]
+      }
+    },
+    {
+      "key": "tcf-a1-sem1-co-2#7",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour, c’est José, le secrétaire du directeur. Vous avez rendez-vous avec le médecin du travail lundi prochain. Pour votre rendez-vous, venez à 10 h au deuxième étage. Vous pouvez parler de votre accident d’hier, raconter votre visite à l’hôpital et montrer votre ordonnance. Si vous avez des questions, appelez-moi vendredi. Bonne journée.",
+      "source_sha256": "c3fdd5f5481b439494d35f3bfcbc81f8a728f92c48c28c18ad489c9e279759b7",
+      "semantic_sha256": "ea01a201a1fd6f11c70fc7b2d901183e0688983a2252db11b3ff8507cb36815a",
+      "question": {
+        "enonce": "Quel document la personne peut-elle montrer au médecin ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Son ordonnance",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Son permis de conduire",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Son billet de train",
+            "correct": false
+          }
+        ],
+        "written_model": "Son ordonnance"
+      },
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/rendez-vous-medecin-travail.mp3",
+      "audio_sha256": "e00be93c017539d2aa4dd98e5f14ba674a506f081927f656028f7ca35e94b823",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-document-ordonnance.png",
+        "/lib/images/tcf/qcm-audit/audit-context-permis-conduire.webp",
+        "/lib/images/tcf/qcm-audit/qcm-b1-billet-train-ivoire.png"
+      ],
+      "image_sha256": [
+        "087e59160f47acf5ce150ac8c1f79694605a0d09fb6073b4ce79bc475734454f",
+        "ee11a9c25ce1e01918f1570be499c4f7c1bee66bf30715f8a9dff7c9c416d455",
+        "f1bf7e8882c1c32e0bf75b87f740ff56b60b167fe847e443dc07a33f4dfae4ae"
+      ],
+      "reason": "L’ordonnance, le permis et le billet sont isolés et différenciés par leur présentation.",
+      "visual_review": "L’ordonnance, le permis et le billet sont isolés et différenciés par leur présentation.",
+      "change_kind": "replaced_image_choices",
+      "before_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-ordonnance.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/audit-context-permis-conduire.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp"
+          }
+        ]
+      },
+      "after_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-a1-document-ordonnance.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/audit-context-permis-conduire.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-b1-billet-train-ivoire.png"
+          }
+        ]
+      }
+    },
+    {
+      "key": "tcf-ss-a1-s25-co-1#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "La société Allô Paul répare en 48 heures les appareils électriques : les télévisions, les frigos, les radiateurs...\nAllô Paul, la bonne adresse quand vous avez une panne !",
+      "source_sha256": "fbacd66d6ebf49fd3470577b8512181d6d8c30b52fc8e249afaf1aa984d26576",
+      "semantic_sha256": "887d0c0a6355d9ff40e2750340a5b4fb71df8e3a675124154cab176f6e30df81",
+      "question": {
+        "enonce": "Quel appareil peut-elle notamment réparer ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un réfrigérateur",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une voiture",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un vélo",
+            "correct": false
+          }
+        ],
+        "written_model": "Un réfrigérateur"
+      },
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/la-societe-allo-paul-1.mp3",
+      "audio_sha256": "d034d0c47b689a4f78276c87f268520929eddfe8670cd388e113ff51b1cda65a",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-refrigerateur.webp",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp"
+      ],
+      "image_sha256": [
+        "b866622b33f7d931d666395c951d8a69940358de84c0697e55f7a32d45abe8fa",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085"
+      ],
+      "reason": "Le réfrigérateur, la voiture et le vélo sont isolés sur fond ivoire.",
+      "visual_review": "Le réfrigérateur, la voiture et le vélo sont isolés sur fond ivoire.",
+      "change_kind": "replaced_image_choices",
+      "before_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-refrigerateur.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          }
+        ]
+      },
+      "after_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-refrigerateur.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp"
+          }
+        ]
+      }
+    },
+    {
+      "key": "tcf-ss-a1-s26-co-1#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour madame Signoret, c'est monsieur Blanc.\nVotre poubelle est dans le couloir et c'est sale.\nVous ne respectez pas le règlement.\nLes ordures, c'est dans le local à poubelles.\nMerci.",
+      "source_sha256": "397a907a8bc77e4848001b48933204e32740593b65250df5ba866b711d9cf0a7",
+      "semantic_sha256": "c013602bc69d580807aded75c4f845a311104d4c659320e945b1724e4d8b28f2",
+      "question": {
+        "enonce": "Quel objet est laissé dans le couloir ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une poubelle",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un vélo",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une chaise",
+            "correct": false
+          }
+        ],
+        "written_model": "Une poubelle"
+      },
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-signoret-c-est-blanc-1.mp3",
+      "audio_sha256": "15c4dccd70977160119995547878c9edee24ab45a928001272de1ea6fdd3ed88",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-poubelle.webp",
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-chaise.webp"
+      ],
+      "image_sha256": [
+        "dc9c1c288598cf6d7498add5baf767af76839050d1260939baca4464d42f9eb3",
+        "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085",
+        "00c76569cc1c5c224e4d9da2104dbed6fd65bf571b753324df8de05eb1d223c1"
+      ],
+      "reason": "Le vélo rejoint la poubelle et la chaise sur un fond ivoire homogène.",
+      "visual_review": "Le vélo rejoint la poubelle et la chaise sur un fond ivoire homogène.",
+      "change_kind": "replaced_image_choices",
+      "before_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-poubelle.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-chaise.webp"
+          }
+        ]
+      },
+      "after_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/vocab-poubelle.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-chaise.webp"
+          }
+        ]
+      }
+    },
+    {
+      "key": "tcf-delf-actif-a1-035-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c’est Sébastien. J’ai un superbe vélo. C’est le cadeau de mes parents pour mon anniversaire. J’ai aussi une nouvelle montre de la part de mes grands-parents et un bracelet offert par ma sœur. La fête c’est samedi à 16h00. Viens manger le gâteau d’anniversaire et passer un bel après-midi.",
+      "source_sha256": "51e1bdfb1584f9ebd950a71e98c9175bd374da4590b8a8eaf73767de07397a06",
+      "semantic_sha256": "c1757ab9a0f924467a840337eb5e9366f59351b87d47a699f0dcd9027e20759d",
+      "question": {
+        "enonce": "Quel cadeau Sébastien a-t-il reçu de ses parents ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un vélo",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un ordinateur",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un téléphone",
+            "correct": false
+          }
+        ],
+        "written_model": "Un vélo"
+      },
+      "audio": "/lib/audio/tcf/co/delf-actif-a1/a1-035-01.mp3",
+      "audio_sha256": "8253139f00025835e659cd60c15f3eb032fc8c7206b53ce267b57a0c428f21dd",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+        "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-lot20c-telephone-eteint.png"
+      ],
+      "image_sha256": [
+        "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085",
+        "0975b4d983b9e0896f2bd09e2ddbb38bab9d3244e28a84c359e13db6f8a7fd42",
+        "c356e9eaa12ef828f30db4f45534a91803a38bf1c2962e08353c6fa6df49c89e"
+      ],
+      "reason": "Le téléphone entier est isolé sur l’ivoire de référence et présenté comme les deux autres cadeaux.",
+      "visual_review": "Le téléphone entier est isolé sur l’ivoire de référence et présenté comme les deux autres cadeaux.",
+      "change_kind": "replaced_image_choices",
+      "before_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp"
+          }
+        ]
+      },
+      "after_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-lot20c-telephone-eteint.png"
+          }
+        ]
+      }
+    },
+    {
+      "key": "tcf-a2j-s2-ce-3#4",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Document 1 — Courriel de maud78@mail.fr à Lisa\nSalut Lisa !\nJe te propose de participer avec moi à une course à pied demain dans le parc du château. La course commence à 10 h. Il faut arriver à 9 h 30 pour s’inscrire, c’est à l’entrée du parc. Après, on va près du lac pour prendre le tee-shirt avec notre numéro de coureur et on s’installe pour le départ. Apporte tes nouvelles baskets ! On va courir 5 km, l’arrivée de la course est derrière le château. Il y a une montre à gagner !\nÀ samedi !\nMaud\n\nDocument 2 — Jus du sportif\nLes fruits et les légumes apportent beaucoup de vitamines. Avec cette recette de jus de fruits pour les sportifs, vous garderez la forme !\nIngrédients : une banane, une pomme, deux carottes, 1/2 concombre.\nÉpluchez la banane, mais gardez la peau des autres fruits et légumes, car c’est là que se trouvent toutes les vitamines ! S’ils sont bio, ne les lavez pas. Coupez les fruits et les légumes en morceaux, mettez-les dans un bol mixeur et mélangez pendant 30 secondes. Versez dans un grand verre.\nSi vous voulez éviter d’avoir faim dans la matinée, ajoutez du yaourt et des céréales dans votre jus : c’est parfait pour le petit-déjeuner !\n\nDocument 3 — Comment rester en forme ?\nFaire du sport tous les jours, même peu de temps, est le meilleur moyen d’être en bonne santé : course à pied, vélo, gym… Même quand on a peu d’argent, on peut trouver le sport qui nous plaît !\nBien manger est aussi très important : quand vous vous réveillez, commencez la journée avec un grand verre d’eau et mangez des fruits, du pain ou des céréales… Mangez lentement et juste la quantité qui vous convient pour ne pas avoir faim à 10 h !",
+      "source_sha256": "ed7ce84a4c562e894dde28d4b8e8ee503e8aaf4e78dc5b76077900d3e5a2c29a",
+      "semantic_sha256": "5d5b203d740fcf471a4b539a8b3456614a04f1e19a6090209c26c4f6572b17b0",
+      "question": {
+        "enonce": "Document 1 — Quel objet peut-on gagner ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une montre",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un vélo",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un téléphone",
+            "correct": false
+          }
+        ],
+        "written_model": "Une montre"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-montre-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-lot20c-telephone-eteint.png"
+      ],
+      "image_sha256": [
+        "848dec4d460520d45c51f6e90d8c6c278ab8fcce203949573b460d5130106629",
+        "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085",
+        "c356e9eaa12ef828f30db4f45534a91803a38bf1c2962e08353c6fa6df49c89e"
+      ],
+      "reason": "La montre, le vélo et le téléphone sont entiers et isolés sur des fonds ivoire comparables.",
+      "visual_review": "La montre, le vélo et le téléphone sont entiers et isolés sur des fonds ivoire comparables.",
+      "change_kind": "replaced_image_choices",
+      "before_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-montre-dessinee.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp"
+          }
+        ]
+      },
+      "after_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-montre-dessinee.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-lot20c-telephone-eteint.png"
+          }
+        ]
+      }
+    },
+    {
+      "key": "tcf-a2-sb-ce-4#4",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Un FabLab, qu’est-ce que c’est ?\nC’est un atelier de fabrication collaboratif dans lequel vous pourrez utiliser gratuitement des machines et des outils.\n\nQue trouve-t-on dans un FabLab ?\nDes imprimantes 3D, mais aussi des découpeuses laser, des soudeuses, des logiciels informatiques adaptés. Vous pouvez les utiliser sur place ou les emporter à domicile.\n\nUn FabLab, pour faire quoi ?\nPour venir utiliser ou réparer une machine, ou fabriquer vous-même un meuble ou un objet utile (une étagère, une maison pour les oiseaux…).\n\nVenir au FabLab, pourquoi ?\nParce que vous aimez le bricolage, vous aimez partager, vous voulez faire des économies.\n\nEn plus…\nVotre FabLab organise des ateliers pour les enfants et des animations avec les commerçants voisins.\n\nOù se trouve votre FabLab ?\n50, rue Lavoisier (métro St-Maurice). Ouvert tous les jours de 12 h à 21 h.",
+      "source_sha256": "8d17c9a1c433204f885a942103cfba9df70f74d479064432d6d0d36cae9f21a4",
+      "semantic_sha256": "e54a8e45008f24bd9310e824c478791b20771f9a54af8b943c35af1d2a5e184b",
+      "question": {
+        "enonce": "Que peut-on fabriquer soi-même ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une étagère",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une voiture de sport",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un téléphone portable",
+            "correct": false
+          }
+        ],
+        "written_model": "Une étagère"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-etagere.webp",
+        "/lib/images/tcf/qcm-audit/revue-20261107-df82b95b92.webp",
+        "/lib/images/tcf/qcm-audit/qcm-lot20c-telephone-eteint.png"
+      ],
+      "image_sha256": [
+        "9a07e763f2219e9f5189e904bbed9622802978dc148af0c7dcff051045a16d5d",
+        "3a91389f263597acc7825a7a2d15809bb1c36894a979ed914cd4b317a15e14cb",
+        "c356e9eaa12ef828f30db4f45534a91803a38bf1c2962e08353c6fa6df49c89e"
+      ],
+      "reason": "Le téléphone, l’étagère et la voiture de sport sont isolés sur des fonds ivoire comparables.",
+      "visual_review": "Le téléphone, l’étagère et la voiture de sport sont isolés sur des fonds ivoire comparables.",
+      "change_kind": "replaced_image_choices",
+      "before_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-etagere.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/revue-20261107-df82b95b92.webp",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+            "correct": false
+          }
+        ]
+      },
+      "after_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-etagere.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/revue-20261107-df82b95b92.webp",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-lot20c-telephone-eteint.png",
+            "correct": false
+          }
+        ]
+      }
+    },
+    {
+      "key": "tcf-a1j-s3-co-5#7",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c'est Jeanne ! On part en vacances demain, je suis super contente ! On passe te chercher à 10h. Dans ta valise, prends un maillot de bain, un chapeau et une serviette. Prends aussi des chaussures de plage. J'apporte de la crème solaire. À demain !",
+      "source_sha256": "30c05d14861663754c06cb30fcc5bda7756cacc0f0dd03cea6e25a89ff47eb34",
+      "semantic_sha256": "ca36aa476918098663324736d2fdeb84d7e2160985e656020664ec53c9d456d5",
+      "question": {
+        "enonce": "Quel accessoire faut-il prendre pour la tête ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un chapeau",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un casque de vélo",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un bonnet de laine",
+            "correct": false
+          }
+        ],
+        "written_model": "Un chapeau"
+      },
+      "audio": "/lib/audio/tcf/co/vacances/03-vacances-dans-la-valise-objets.mp3",
+      "audio_sha256": "f1edb107af8d5f7511ca1bc45f90cd3b02aef263e4d2a00677a9e0c5ab7a0ad1",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-chapeau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-transport-casque-velo-ivoire.png",
+        "/lib/images/tcf/qcm-audit/f137023c3623.webp"
+      ],
+      "image_sha256": [
+        "021727df752448f8655530fbe6b3acff8243aa0ab9bc929b860ab882f35bcd39",
+        "e5e835363401c973cc5dba5a645244b612837bdccc8fc88dff3b8b0aa0a305a8",
+        "a2034ae4e3ce02181604d53d2fad5051ec7f5f2aa56e50be2d3b892092343590"
+      ],
+      "reason": "Le casque de vélo rouge est isolé sur le même ivoire que le chapeau et le bonnet.",
+      "visual_review": "Le casque de vélo rouge est isolé sur le même ivoire que le chapeau et le bonnet.",
+      "change_kind": "replaced_image_choices",
+      "before_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-chapeau-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-casque-velo-4-3.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/f137023c3623.webp"
+          }
+        ]
+      },
+      "after_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-chapeau-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-transport-casque-velo-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/f137023c3623.webp"
+          }
+        ]
+      }
+    },
+    {
+      "key": "tcf-a1-s1-co-3#7",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour, c’est José, le secrétaire du directeur.\nVous avez rendez-vous avec le médecin du travail lundi prochain.\nPour votre rendez-vous, venez à 10 heures au deuxième étage.\nVous pouvez parler de votre accident d’hier.\nRacontez votre visite à l’hôpital et montrez votre ordonnance.\nSi vous avez des questions, appelez-moi vendredi.\nBonne journée !",
+      "source_sha256": "99673ff8182474a8c42b9edafad0552e11c01d828552ebe86a9925e9357ea221",
+      "semantic_sha256": "fd295fcad09768f0cb5482dd3e829afefb72b9c249c82cfd036b10c74b2d2bc9",
+      "question": {
+        "enonce": "Quel document faut-il montrer ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "L’ordonnance",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Le contrat de travail",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Le billet de train",
+            "correct": false
+          }
+        ],
+        "written_model": "L’ordonnance"
+      },
+      "audio": "/lib/audio/tcf/co/travail/le-medecin-du-travail.mp3",
+      "audio_sha256": "e00be93c017539d2aa4dd98e5f14ba674a506f081927f656028f7ca35e94b823",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-document-ordonnance.png",
+        "/lib/images/tcf/qcm-audit/qcm-transport-contrat-travail-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-b1-billet-train-ivoire.png"
+      ],
+      "image_sha256": [
+        "087e59160f47acf5ce150ac8c1f79694605a0d09fb6073b4ce79bc475734454f",
+        "3e6d188c9bd78a87777ceb0bb0819f6bd7ffa0094b25db8921ac66ae9c0bcc3c",
+        "f1bf7e8882c1c32e0bf75b87f740ff56b60b167fe847e443dc07a33f4dfae4ae"
+      ],
+      "reason": "Les trois documents sont entiers sur ivoire. La croix médicale, la mallette et le train permettent de les distinguer visuellement.",
+      "visual_review": "Les trois documents sont entiers sur ivoire. La croix médicale, la mallette et le train permettent de les distinguer visuellement.",
+      "change_kind": "replaced_image_choices",
+      "before_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-ordonnance.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/audit-context-contrat-travail.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp"
+          }
+        ]
+      },
+      "after_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-a1-document-ordonnance.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-transport-contrat-travail-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-b1-billet-train-ivoire.png"
+          }
+        ]
+      }
+    },
+    {
+      "key": "tcf-ss-a1-s9-co-2#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Bonjour, c'est madame Tourette, la professeur de piano.\nJe vais arriver un peu en retard pour le cours, à 18h15.\nJe suis désolé, il y a une panne dans le métro.\nTu peux commencer à travailler sans moi, à tout à l'heure.",
+      "source_sha256": "0f1fb3cea616b69b7bf2e71cc86eb7374d2527b7efc552598ae2d10ee5a0937f",
+      "semantic_sha256": "c711ffc2cb93e7243f0c1a9bd087c0ebcb232d8804be5a6cb23a737ae3771258",
+      "question": {
+        "enonce": "Quelle est la cause de son retard ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une panne de métro",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une panne de voiture",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un embouteillage",
+            "correct": false
+          }
+        ],
+        "written_model": "Une panne de métro"
+      },
+      "audio": "/lib/audio/tcf/co/loisirs/01-loisirs-leçon-de-piano.mp3",
+      "audio_sha256": "0d8f62a87adc8ec6abbb36330bb4515e7424d356ad8a6c708f18391488787420",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-transport-panne-metro-sans-texte.png",
+        "/lib/images/tcf/qcm-audit/co57-panne-voiture.webp",
+        "/lib/images/tcf/qcm-audit/co57-embouteillage.webp"
+      ],
+      "image_sha256": [
+        "47e0b327551b4c1f39a28d8871eaf2e6fb52b6d3cc09f864ab711734998ec9da",
+        "ababd3a421f03025e089e393f582b992dc9ba04a2a7f8f63fa4028315c4308fd",
+        "259e3a7ff4221116ec3d9eb0c59384951d4d3766fe4ce9c933f30b95f87e7336"
+      ],
+      "reason": "La technicienne et un pictogramme de clé identifient la panne du métro. Les trois choix montrent des incidents en situation.",
+      "visual_review": "La technicienne et un pictogramme de clé identifient la panne du métro. Les trois choix montrent des incidents en situation.",
+      "change_kind": "replaced_image_choices",
+      "before_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co57-panne-metro.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co57-panne-voiture.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co57-embouteillage.webp"
+          }
+        ]
+      },
+      "after_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-transport-panne-metro-sans-texte.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co57-panne-voiture.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co57-embouteillage.webp"
+          }
+        ]
+      }
+    },
+    {
+      "key": "tcf-ss-a1-s14-co-3#6",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "Salut, c'est Manu.\nL'école organise une sortie, jeudi.\nOn va faire une balade en forêt.\nIl faut mettre des chaussures de sport et une casquette.\nApporte un sandwich et une bouteille d'eau pour le pique-nique.\nJ'apporte une boîte de gâteau pour toute la classe.\nA jeudi !",
+      "source_sha256": "6e84c53682c736bba9e636610778005723f05e8d8397e911992d4d34d6ca26f1",
+      "semantic_sha256": "69b9da941b90cb6b5dae71bc36d9cb414b7cfa280418608ecfec415e8e6a9da9",
+      "question": {
+        "enonce": "Quel accessoire faut-il porter sur la tête ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Une casquette",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un casque de vélo",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un bonnet de laine",
+            "correct": false
+          }
+        ],
+        "written_model": "Une casquette"
+      },
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/nous-preparons-cadeau.mp3",
+      "audio_sha256": "5675e9b199c0cefec45067a96ce55d1b8c1ebba493b27677188015ccaf531cb8",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-casquette-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/qcm-transport-casque-velo-ivoire.png",
+        "/lib/images/tcf/qcm-audit/f137023c3623.webp"
+      ],
+      "image_sha256": [
+        "ba55b24905b1260c27eb35d8095788a283e42df3900ceb2b2052b30074af7f9f",
+        "e5e835363401c973cc5dba5a645244b612837bdccc8fc88dff3b8b0aa0a305a8",
+        "a2034ae4e3ce02181604d53d2fad5051ec7f5f2aa56e50be2d3b892092343590"
+      ],
+      "reason": "Le casque de vélo rouge et les deux couvre-chefs figurent sur des fonds ivoire proches.",
+      "visual_review": "Le casque de vélo rouge et les deux couvre-chefs figurent sur des fonds ivoire proches.",
+      "change_kind": "replaced_image_choices",
+      "before_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-casquette-dessinee.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-casque-velo-4-3.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/f137023c3623.webp"
+          }
+        ]
+      },
+      "after_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-casquette-dessinee.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-transport-casque-velo-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/f137023c3623.webp"
+          }
+        ]
+      }
+    },
+    {
+      "key": "tcf-ss-a1-s42-co-3#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "level": "A0-A1",
+      "source": "- Bonjour Monsieur Garant, vous allez bien ?\n- Ça va, merci.\nEt vous ?\n- Ça va, mais…\nil y a des vélos dans le hall et on ne peut plus passer !\n- Ah bon ?\nMais nous avons un local à vélos !\n- Oui !\nEt puis il y a aussi des bouteilles dans les escaliers.\n- Mais nous avons un local à poubelles…\net une poubelle pour le verre.\n- Et il y a le chien de madame Martin…\nil n'est pas en laisse.\n- Il est gros, mais il n'est pas méchant…\n- Et puis, elle fume dans les couloirs !\n- Ouh là là !\nEt le règlement alors ?\n!",
+      "source_sha256": "5b07a118055333c7a622198e54eb98f82c2df71101859200ac67f8e2bb5ed294",
+      "semantic_sha256": "4eb47c8722991c8c61a5b063b697a246dca0e85e8bca33f8ca1f6b322939fc49",
+      "question": {
+        "enonce": "Où peut-on jeter les bouteilles en verre ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Dans une poubelle pour le verre",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Dans le local à vélos",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Dans le garage",
+            "correct": false
+          }
+        ],
+        "written_model": "Dans une poubelle pour le verre"
+      },
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-garant-allez-bien-1.mp3",
+      "audio_sha256": "8b9479051ef59a7deb2a2b4c29c8c3b1be380821efe3aae3296bb6a472caa09b",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-transport-bac-verre-local.png",
+        "/lib/images/tcf/qcm-audit/co306-local-velos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-garage-dessine.webp"
+      ],
+      "image_sha256": [
+        "31781aaa63d998cb143bc110fb7e17ae326956c02bc07d58e5219cff4045356c",
+        "518b7c34a997a219bbd05274c3105446473a3fc614cdb16c2a2047b48319996c",
+        "f2af82c4d25220ebab769be403b2a6a32adbb7c920d74e50c5bafccad5ae4aaa"
+      ],
+      "reason": "Le conteneur à verre est identifiable dans son local. Les trois propositions ont maintenant un décor de lieu cohérent.",
+      "visual_review": "Le conteneur à verre est identifiable dans son local. Les trois propositions ont maintenant un décor de lieu cohérent.",
+      "change_kind": "replaced_image_choices",
+      "before_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co306-poubelle-verre-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co306-local-velos-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co306-garage-dessine.webp"
+          }
+        ]
+      },
+      "after_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-transport-bac-verre-local.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co306-local-velos-dessine.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co306-garage-dessine.webp"
+          }
+        ]
+      }
+    },
+    {
+      "key": "tcf-a2p-s4-ce-2#6",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Madame, Monsieur,\nC’est avec grand plaisir que je vous envoie ce message pour vous décrire votre voyage à Paris en notre compagnie.\nÀ votre arrivée, le 7 juin prochain, nous allons vous accueillir à l’aéroport pour vous conduire à votre hôtel. Puis, du 8 au 17 juin, vous allez visiter la capitale de notre pays accompagnés de notre guide, Hervé, qui va vous faire découvrir les musées, les rues, les boutiques mais aussi les restaurants de Paris.\nN’oubliez pas votre appareil photo !\nLes températures en ce moment à Paris sont comprises entre 20 et 24 degrés. Un climat délicieux.\nÀ très bientôt.\nL’équipe de voyagemalin.com",
+      "source_sha256": "629f2a45e1d206703a4704c7558adfa3cf2cf014e6c3f2c27f8e7af62ad97d07",
+      "semantic_sha256": "c06ef6e73a1e687c94978ef7b6d57dd14744f853126512fa5a24b8916457cf0a",
+      "question": {
+        "enonce": "Quel objet l’équipe conseille-t-elle d’apporter ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un appareil photo",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un ordinateur portable",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un casque de vélo",
+            "correct": false
+          }
+        ],
+        "written_model": "Un appareil photo"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-appareil-photo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-ordinateur-portable.webp",
+        "/lib/images/tcf/qcm-audit/qcm-transport-casque-velo-ivoire.png"
+      ],
+      "image_sha256": [
+        "1e063cce50a301dd6eba49cae24ba4bfa2096ee941a07f2d7ab764c7b153ca9d",
+        "e3ac17ccce680c76a54c22e56cdbc57dac93c4aa354e13141ed5b7c82f0a9c97",
+        "e5e835363401c973cc5dba5a645244b612837bdccc8fc88dff3b8b0aa0a305a8"
+      ],
+      "reason": "L’appareil photo, le portable et le casque entier ont des fonds ivoire comparables.",
+      "visual_review": "L’appareil photo, le portable et le casque entier ont des fonds ivoire comparables.",
+      "change_kind": "replaced_image_choices",
+      "before_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/co834-appareil-photo-dessine.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-ordinateur-portable.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-casque-velo-4-3.webp"
+          }
+        ]
+      },
+      "after_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/co834-appareil-photo-dessine.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-ordinateur-portable.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-transport-casque-velo-ivoire.png"
+          }
+        ]
+      }
+    },
+    {
+      "key": "delf-a2j-ce-062#1",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "level": "A1-A2",
+      "source": "Commencez vos journées en beauté avec le réveil de votre choix : alarme, musique, radio, météo. Design moderne et simple, existe en bleu, gris et rouge.\nIl annonce l’heure et la météo du jour quand vous le touchez du doigt : très pratique pour savoir comment s’habiller ! Il vous salue chaque matin par votre prénom.\nGrâce à sa prise USB, vous programmez les chansons ou messages de votre choix, ou vous vous réveillez avec votre radio préférée ou l’une des cinq sonneries. Le volume augmente progressivement pour un réveil tout en douceur.\n10 % de réduction en présentant cette publicité dans notre magasin, jusqu’au 15 novembre inclus.",
+      "source_sha256": "0bea6a3b88d15fc733daa27e04799a5e08a16d14f1051fbb46de5a4083fb0ab0",
+      "semantic_sha256": "20ecb00c5a454cdc1bc6d778ea8f5d16d1fa6becccb05a7a3b8dd3db8dd82111",
+      "question": {
+        "enonce": "Quel objet la publicité présente-t-elle ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un réveil",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un téléphone",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Une radio de voiture",
+            "correct": false
+          }
+        ],
+        "written_model": "Un réveil"
+      },
+      "audio": null,
+      "audio_sha256": null,
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-reveil.webp",
+        "/lib/images/tcf/qcm-audit/qcm-lot20c-telephone-eteint.png",
+        "/lib/images/tcf/qcm-audit/qcm-transport-autoradio-ivoire.png"
+      ],
+      "image_sha256": [
+        "1e48367ff177787169c730f799c7bbc18eb7cd9a81bb656f61acb94b59fa6ba6",
+        "c356e9eaa12ef828f30db4f45534a91803a38bf1c2962e08353c6fa6df49c89e",
+        "98c55f60e83fd1c7c4a81ba068bde4d26bb1e8ea941e36f2dbf1621461de1cb5"
+      ],
+      "reason": "Le réveil, le téléphone et l’autoradio sont représentés isolés et entiers, sur des fonds ivoire comparables.",
+      "visual_review": "Le réveil, le téléphone et l’autoradio sont représentés isolés et entiers, sur des fonds ivoire comparables.",
+      "change_kind": "replaced_image_choices",
+      "before_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-reveil.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/revue-20261107-9121037011.webp",
+            "correct": false
+          }
+        ]
+      },
+      "after_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/vocab-reveil.webp",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-lot20c-telephone-eteint.png",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-transport-autoradio-ivoire.png",
+            "correct": false
+          }
+        ]
+      }
+    },
+    {
+      "key": "tcf-ss-a2-s49-co-1#5",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "Mes parents m'ont offert un vélo pour mon anniversaire. Ah, super ! Il est comment ? C'est un VTT. Il est blanc et noir avec de grosses roues. Il va super vite.",
+      "source_sha256": "d7c85012a9558166771001323aa9d1ec40f384893465947a99c14107e5760619",
+      "semantic_sha256": "32b2acd47eefbbc9a342b3fbb92d77cc26eb7dbd25ffa6808b5ee6d5cc6ab0c9",
+      "question": {
+        "enonce": "Quel cadeau les parents ont-ils offert ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un vélo",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Une trottinette",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un ordinateur",
+            "correct": false
+          }
+        ],
+        "written_model": "Un vélo"
+      },
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/jacques-as-petite-2-2.mp3",
+      "audio_sha256": "ed6bad2edc284c92c5eee6e98e31d5f47f4f08da46e08525e61b7f2b1b3fd03f",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-transport-vtt-blanc-noir.png",
+        "/lib/images/tcf/qcm-audit/vocab-trottinette.webp",
+        "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp"
+      ],
+      "image_sha256": [
+        "3be6bdc1304c5909fa930faa7b013d991723f00a4012372fe8d1cc73b8548e1e",
+        "d41829d59983e7508e1fa4ce6fa6e7445d900421c62b35b8f293ca1f0bffdac6",
+        "0975b4d983b9e0896f2bd09e2ddbb38bab9d3244e28a84c359e13db6f8a7fd42"
+      ],
+      "reason": "Le VTT de la transcription est présenté sur fond ivoire, avec son cadre blanc et noir et ses grosses roues.",
+      "visual_review": "Le VTT de la transcription est présenté sur fond ivoire, avec son cadre blanc et noir et ses grosses roues.",
+      "change_kind": "replaced_image_choices",
+      "before_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-trottinette.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp"
+          }
+        ]
+      },
+      "after_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-transport-vtt-blanc-noir.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-trottinette.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp"
+          }
+        ]
+      }
+    },
+    {
+      "key": "tcf-ss-b1-s3-co-1#8",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "level": "A2-B1",
+      "source": "Bonjour Madame Thierry, déjà dans le parc avec votre petite fille, il est à peine 8h. Oui, il fait si chaud depuis deux semaines. Elle a seulement 18 mois Madame Berthet. Elle est encore bien petite. Les jeunes enfants sont fragiles. Vous avez raison, il vaut mieux la sortir tôt le matin. Je la sors aussi un peu le soir. Et quand je suis obligée de la sortir dans la journée, Je lui passe une crème solaire et je lui mets une petite robe ample et un chapeau en toile. Je fais en sorte de rester le moins longtemps possible dehors. Il ne fait pas trop chaud chez vous ? Non. Heureusement, l'appartement est frais et je la rafraîchis souvent avec un brumisateur. Je la fais boire aussi plus souvent. Je vois que vous êtes bien au courant de ce qu'il faut faire. Ce n'est pas aussi facile avec mes parents. Ils sont âgés ? Ils ont 84 et 86 ans. J'ai la chance d'habiter près de chez eux. Je peux passer les voir au moins le matin et le soir en partant et en revenant du travail. Et je les appelle dans la journée. Mais je dois parfois me fâcher. Je vous comprends. Ma grand-mère dit n'avoir jamais chaud. Les personnes âgées ne ressentent pas la chaleur comme nous et ils ne boivent pas assez. Mes parents ont enfin compris qu'il fallait fermer les volets dans la journée et aérer pendant la nuit. Ils utilisent aussi plus souvent le ventilateur. Mais je dois parfois insister pour qu'ils boivent plus souvent, mais sans exagérer. Je veille aussi à ce qu’ils continuent de s'alimenter normalement. Mais comme ma mère est assez gourmande, ce n'est pas vraiment un problème. Elle prépare de grandes salades et plus de plats de poisson que de viande, parce que c'est plus léger. Ils ont de la chance de vous avoir. Quoi qu'il en soit, espérons qu'il va faire moins chaud.",
+      "source_sha256": "490bae1174160d83b7c686bf1e15ad6d0767f0a4cbf2eb584a4b3477f2d6793c",
+      "semantic_sha256": "9f54ee105ed62a46aa6bd24369c2be455fdcd9350c2f1bfc559b9ea20c833dba",
+      "question": {
+        "enonce": "Quel vêtement Madame Thierry met-elle sur la tête de sa petite fille ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Un chapeau en toile",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Un bonnet en laine",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Un casque de vélo",
+            "correct": false
+          }
+        ],
+        "written_model": "Un chapeau en toile"
+      },
+      "audio": "/lib/audio/tcf/co/vie-quotidienne/bonjour-thierry-deja.mp3",
+      "audio_sha256": "0cff0fe6bf2a216b2e29e278b52981eae294af8dc6fc205123481f0322332859",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/7ba67fd6ded6.webp",
+        "/lib/images/tcf/qcm-audit/f137023c3623.webp",
+        "/lib/images/tcf/qcm-audit/qcm-transport-casque-velo-ivoire.png"
+      ],
+      "image_sha256": [
+        "1458a3f1384865db03b9db5ba7c8b9d6673e4f48b59bd4967c76befe6db81c3d",
+        "a2034ae4e3ce02181604d53d2fad5051ec7f5f2aa56e50be2d3b892092343590",
+        "e5e835363401c973cc5dba5a645244b612837bdccc8fc88dff3b8b0aa0a305a8"
+      ],
+      "reason": "Les trois accessoires sont isolés sur des fonds ivoire. Le chapeau en toile est distinct du bonnet et du casque.",
+      "visual_review": "Les trois accessoires sont isolés sur des fonds ivoire. Le chapeau en toile est distinct du bonnet et du casque.",
+      "change_kind": "replaced_image_choices",
+      "before_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/7ba67fd6ded6.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/f137023c3623.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/co834-casque-velo-4-3.webp"
+          }
+        ]
+      },
+      "after_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/7ba67fd6ded6.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/f137023c3623.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-transport-casque-velo-ivoire.png"
+          }
+        ]
+      }
+    },
+    {
+      "key": "tcf-a2j-s1-co-1#6",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "level": "A1-A2",
+      "source": "La ligne 9 du métro est fermée pour travaux ce week-end.\nDes bus de remplacement circulent gratuitement de samedi 7 h à dimanche 23 h.",
+      "source_sha256": "e8dd7a4c50c3e83ce16c48bd03a9363ead49e1aaded4842f0282b89a096142a8",
+      "semantic_sha256": "149e13fd6885da1c4b8e5a783cf5683a0a46c84899c666c50795646a806e06b2",
+      "question": {
+        "enonce": "Quels véhicules remplacent le métro ?",
+        "choices": [
+          {
+            "id": "a",
+            "text": "Des bus",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "text": "Des tramways",
+            "correct": false
+          },
+          {
+            "id": "c",
+            "text": "Des taxis",
+            "correct": false
+          }
+        ],
+        "written_model": "Des bus"
+      },
+      "audio": "/lib/audio/tcf/co/radio/les-annonces-publiques-1-2.mp3",
+      "audio_sha256": "c0e24c515a6665f1ddc082ac4d8a4711870d32f53b873aaf3a712d07173d7d56",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-transport-bus-pluriel-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-transport-tramways-pluriel-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-transport-taxis-pluriel-ivoire.png"
+      ],
+      "image_sha256": [
+        "e877274ca8b8578b6cad67ab67cb697bcfb76d54fc9d0502af19d73a085d524f",
+        "bf995083049d4d4ab0c79fdc028e930e70723d718e0a34e5bb29847ed39e8593",
+        "dbac3661845e417befe8722df96becdd8330110260216e492b4f627b1c704c01"
+      ],
+      "reason": "Deux bus, deux tramways et deux taxis rendent le pluriel dans chaque réponse, avec des véhicules entiers sur l’ivoire de référence.",
+      "visual_review": "Deux bus, deux tramways et deux taxis rendent le pluriel dans chaque réponse, avec des véhicules entiers sur l’ivoire de référence.",
+      "change_kind": "replaced_image_choices",
+      "before_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/vocab-tramways.webp"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/vocab-taxis.webp"
+          }
+        ]
+      },
+      "after_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "correct": true,
+            "image": "/lib/images/tcf/qcm-audit/qcm-transport-bus-pluriel-ivoire.png"
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-transport-tramways-pluriel-ivoire.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-transport-taxis-pluriel-ivoire.png"
+          }
+        ]
+      }
+    }
+  ],
+  "new_images": [
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-transport-casque-velo-ivoire.png",
+      "sha256": "e5e835363401c973cc5dba5a645244b612837bdccc8fc88dff3b8b0aa0a305a8"
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-transport-vtt-blanc-noir.png",
+      "sha256": "3be6bdc1304c5909fa930faa7b013d991723f00a4012372fe8d1cc73b8548e1e"
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-transport-contrat-travail-ivoire.png",
+      "sha256": "3e6d188c9bd78a87777ceb0bb0819f6bd7ffa0094b25db8921ac66ae9c0bcc3c"
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-transport-autoradio-ivoire.png",
+      "sha256": "98c55f60e83fd1c7c4a81ba068bde4d26bb1e8ea941e36f2dbf1621461de1cb5"
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-transport-taxis-pluriel-ivoire.png",
+      "sha256": "dbac3661845e417befe8722df96becdd8330110260216e492b4f627b1c704c01"
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-transport-panne-metro-sans-texte.png",
+      "sha256": "47e0b327551b4c1f39a28d8871eaf2e6fb52b6d3cc09f864ab711734998ec9da"
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-transport-bac-verre-local.png",
+      "sha256": "31781aaa63d998cb143bc110fb7e17ae326956c02bc07d58e5219cff4045356c"
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-transport-bus-pluriel-ivoire.png",
+      "sha256": "e877274ca8b8578b6cad67ab67cb697bcfb76d54fc9d0502af19d73a085d524f"
+    },
+    {
+      "path": "/lib/images/tcf/qcm-audit/qcm-transport-tramways-pluriel-ivoire.png",
+      "sha256": "bf995083049d4d4ab0c79fdc028e930e70723d718e0a34e5bb29847ed39e8593"
+    }
+  ]
+}

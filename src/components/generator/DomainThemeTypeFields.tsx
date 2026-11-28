@@ -23,6 +23,7 @@ import { DIFFICULTY_OPTIONS } from '@/math/difficulty'
 import { isLogistiqueDomain, logistiqueSubthemes, logistiqueType, logistiqueTypeForSubtheme } from '@/logistique/catalog'
 import { logistiqueEligibleCount } from '@/logistique/generate'
 import { exerciseTypeById } from '@/math/catalog'
+import { santeActivityLevel, santeLevelsForTopic } from '@/sante/catalog'
 import {
   centeredOrigin,
   isReperageCadrans,
@@ -38,8 +39,9 @@ import { DEFAULT_GAME_FONT_SIZE } from '@/jeux/font-size'
 import type { GameTemplate } from '@/jeux/templates'
 import { TcfCoAudioSlotsPicker, tcfCoAudioSlotCount } from '@/tcf/co-audio-slots'
 import { TcfBankPicker } from '@/tcf/TcfExerciseEditor'
-import { tcfMenuLabel, tcfSlotShownInMenu } from '@/tcf/catalog'
+import { TCF_B1_DOMAIN, tcfMenuLabel, tcfSlotShownInMenu } from '@/tcf/catalog'
 import { TcfTaggedExercisePicker, tcfTaggedSlotKind } from '@/tcf/tagged-picker'
+import { tpfPlacementTask } from '@/tcf/tpf-placement'
 import type { TcfNiveau } from '@/tcf/types'
 import type { Dispatch, SetStateAction } from 'react'
 import type {
@@ -79,7 +81,7 @@ export type DomainThemeTypeFieldsProps = {
     | ReturnType<typeof resolveSoutienSelection>
     | ReturnType<typeof resolveAlphaSelection>
   activeBlock: ExerciseBlock
-  changeTopic: (topic: string) => void
+  changeTopic: (topic: string, typeId?: string) => void
   available: Array<{ id: string; label: string }>
   isSoutienFr: boolean
   isAlphabetisation: boolean
@@ -160,6 +162,11 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
     isQuadType,
     quadPool,
   } = p
+  const santeLevels = activePage.domain === 'santé' ? santeLevelsForTopic(activeBlock.topic) : []
+  const santeLevel = santeActivityLevel(activeBlock.exerciseType) ?? santeLevels[0]
+  const visibleTypeChoices = santeLevel
+    ? typeChoices.filter((type) => santeActivityLevel(type.id) === santeLevel)
+    : typeChoices
   const logisticsDomain = isLogistiqueDomain(activePage.domain)
   const logisticsSubthemes = logisticsDomain ? logistiqueSubthemes(activeBlock.topic) : []
   const logisticsModule = logistiqueType(activeBlock.exerciseType)?.module
@@ -184,9 +191,10 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
   const showGrammarCoLevel = grammarCoTheme && (activeBlock.exerciseType.endsWith('-co-theme') || hasGrammarCoTheme(grammarCoTheme.id))
   const grammarCoLevel = activeBlock.grammarCoLevel ?? (grammarCoTheme ? defaultGrammarCoLevel(grammarCoTheme.id) : 'A1')
   const grammarCoAudios = grammarCoTheme ? grammarCoEntries(grammarCoTheme.id,grammarCoLevel) : []
+  const placementTask = activePage.domain === 'tpf' ? tpfPlacementTask(activeBlock.exerciseType) : undefined
   return (
     <>
-              {isJeuxDomain || isCalliDomain ? null : (
+              {activePage.domain === 'acm' || activePage.domain === 'société' || isJeuxDomain || isCalliDomain ? null : (
               <div className="mode-toggle-block">
                 <b>Mode de la fiche</b>
                 <div className="mode-toggle">
@@ -404,13 +412,29 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   onChangeInstruction={(phraseInstruction) => updatePage({ phraseInstruction })}
                 />
               ) : null}
-              {isTpmLike || typeChoices.length <= 1 ? null : (
+              {santeLevels.length > 0 ? (
+                <SelectBox
+                  label="Niveau"
+                  value={santeLevel ?? ''}
+                  onChange={(level) => {
+                    const next = typeChoices.find((type) => santeActivityLevel(type.id) === level)
+                    if (next) updatePage(applyType(exerciseTypeById[next.id]!, activeBlock))
+                  }}
+                >
+                  {santeLevels.map((level) => <option key={level} value={level}>{level}</option>)}
+                </SelectBox>
+              ) : null}
+              {isTpmLike || visibleTypeChoices.length <= 1 ? null : (
               <SelectBox
-                label={isTcf ? 'Exercice' : 'Type d’exercice'}
+                label={activePage.domain === 'acm' ? 'Activité' : isTcf ? 'Exercice' : 'Type d’exercice'}
                 value={activeBlock.exerciseType}
                 onChange={(value) => {
                   const type = exerciseTypeById[value]
                   if (!type) return
+                  if (placementTask && tpfPlacementTask(value)) {
+                    changeTopic(type.topic, value)
+                    return
+                  }
                   if (
                     (isReperageFormes(value) && isReperageFormes(activeBlock.exerciseType)) ||
                     (isReperageCadrans(value) && isReperageCadrans(activeBlock.exerciseType))
@@ -452,7 +476,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   updatePage(applyType(type, activeBlock))
                 }}
               >
-                {typeChoices
+                {visibleTypeChoices
                   .filter((type) => !isTcf || tcfSlotShownInMenu(type.id, tcfNiveau))
                   .map((type) => {
                     const pending = logisticsDomain && logistiqueEligibleCount(type.id) === 0
@@ -514,7 +538,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   ))}
                 </SelectBox>
               ) : null}
-              {isTcf && activeBlock.exerciseType.startsWith('tcf-ce') ? <TcfCeTextFontControl value={activeBlock.tcfCeTextFont ?? 'arial'} onChange={tcfCeTextFont => updatePage({ tcfCeTextFont })} /> : null}
+              {isTcf && (activeBlock.exerciseType.startsWith('tcf-ce') || placementTask?.competence === 'CE') ? <TcfCeTextFontControl value={activeBlock.tcfCeTextFont ?? 'arial'} onChange={tcfCeTextFont => updatePage({ tcfCeTextFont })} /> : null}
               {activePage.domain === 'tcf-csc' && activeBlock.exerciseType.startsWith('tcf-ce') ? (
                 <TcfCeFormatControl value={activeBlock.tcfCeFormat ?? 'texte'}
                   onChange={(tcfCeFormat) => updatePage({ tcfCeFormat, libreItems: undefined })} />
@@ -522,6 +546,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
               {isTcf && tcfCoAudioSlotCount(activeBlock.exerciseType) != null ? (
                 <TcfCoAudioSlotsPicker
                   niveau={tcfNiveau}
+                  sameLevel={activePage.domain === TCF_B1_DOMAIN}
                   typeId={activeBlock.exerciseType}
                   slots={activeBlock.tcfAudioSlots}
                   questionCount={activeBlock.tcfQuestionCount}
@@ -529,7 +554,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   onChange={(patch) => updatePage(patch)}
                 />
               ) : null}
-              {isTcf && tcfTaggedSlotKind(activeBlock.exerciseType) != null ? (
+              {isTcf && tcfTaggedSlotKind(activeBlock.exerciseType, tcfNiveau) != null ? (
                 <TcfTaggedExercisePicker
                   niveau={tcfNiveau}
                   typeId={activeBlock.exerciseType}
@@ -539,9 +564,9 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   onChange={(patch) => updatePage(patch)}
                 />
               ) : null}
-              {isTcf &&
+              {isTcf && !placementTask &&
               tcfCoAudioSlotCount(activeBlock.exerciseType) == null &&
-              tcfTaggedSlotKind(activeBlock.exerciseType) == null ? (
+              tcfTaggedSlotKind(activeBlock.exerciseType, tcfNiveau) == null ? (
                 <TcfBankPicker
                   niveau={tcfNiveau}
                   typeId={activeBlock.exerciseType}
@@ -551,7 +576,10 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   onChange={(patch) => updatePage(patch)}
                 />
               ) : null}
-              {isReperage ||
+              {activePage.domain === 'acm' ||
+              activePage.domain === 'santé' ||
+              activePage.domain === 'société' ||
+              isReperage ||
               isPhraseDomain ||
               isJeuxDomain ||
               isCalliDomain ||

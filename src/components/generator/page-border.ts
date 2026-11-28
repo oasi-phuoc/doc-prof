@@ -7,6 +7,7 @@ const TEST_DOMAINS = new Set<Domain>([
   'tpf',
   'tcf-csc',
   'tcf-cfr',
+  'tcf-b1',
   'tpm',
   'tcm-csc',
   'tcm-cfr',

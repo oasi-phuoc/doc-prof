@@ -6,7 +6,7 @@ import { DatabaseSync } from 'node:sqlite'
 import test from 'node:test'
 import { createServer } from 'vite'
 
-const tests = ['tcf-csc', 'tcf-cfr', 'tcm-csc', 'tcm-cfr']
+const tests = ['tcf-csc', 'tcf-cfr', 'tcf-b1', 'tcm-csc', 'tcm-cfr']
 const template = JSON.parse(await readFile('docs/interactive/demo-source-recipe.json', 'utf8'))
 const schema = (await readFile('api/fiches/migrations/0001_fiches.sql', 'utf8')) + (await readFile('api/fiches/migrations/0002_personal_accounts.sql', 'utf8') + await readFile('api/fiches/migrations/0003_admin_accounts.sql', 'utf8'))
 const originalTimingSafeEqual = Object.getOwnPropertyDescriptor(crypto.subtle, 'timingSafeEqual')
@@ -45,17 +45,18 @@ try {
   }
   const data = (...domains) => ({ name: 'Fiche de vérification', recipe: { ...template, libreMode: false, libreSnapshot: null, pages: domains.map(domain => ({ ...template.pages[0], domain })) } })
 
-  await test('full client access includes all four TCF/TCM tests without a domain environment variable', async () => {
+  await test('full client access includes all TCF/TCM tests without a domain environment variable', async () => {
     const { domainsForAccount, accountCanAccessDomain } = await clientAccess()
     const allowed = domainsForAccount('full')
     for (const domain of ['algèbre', 'grammaire', ...tests]) assert(allowed.includes(domain), domain)
     assert.equal(new Set(allowed).size, allowed.length)
     assert.equal(accountCanAccessDomain(null, 'tcf-csc'), false)
     assert.equal(accountCanAccessDomain('partial', 'tcf-csc'), false)
+    assert.equal(accountCanAccessDomain('partial', 'tcf-b1'), false)
     assert.deepEqual(new Set(domainsForAccount('partial')), new Set(['algèbre','géométrie','alphabetisation']))
   })
 
-  await test('an old full domain configuration retains its selection and gains the four requested tests', async () => {
+  await test('an old full domain configuration retains its selection and gains the TCF/TCM tests', async () => {
     const { domainsForAccount } = await clientAccess('algèbre,tcm-csc')
     assert.deepEqual(new Set(domainsForAccount('full')), new Set(['algèbre', ...tests]))
     assert(!domainsForAccount('full').includes('tpf'))
@@ -64,7 +65,7 @@ try {
   })
 
   for (const configured of [undefined, 'algèbre']) {
-    await test(`full can save, list and update all four tests with ${configured ? 'an old' : 'no'} server domain configuration`, async () => {
+    await test(`full can save, list and update all tests with ${configured ? 'an old' : 'no'} server domain configuration`, async () => {
       const h = harness(configured)
       try {
         for (const domain of tests) {

@@ -24,6 +24,7 @@ function tagLabel(tag: string): string {
   if (tag === 'dialogue') return 'dialogue'
   if (tag === 'message') return 'message'
   if (tag === 'email') return 'e-mail'
+  if (tag === 'recit') return 'récit'
   return tag
 }
 
@@ -33,6 +34,7 @@ function tagsLabel(tags: readonly string[]): string {
 
 export function tcfTaggedSlotKind(
   typeId: string,
+  niveau?: TcfNiveau,
 ): { competence: 'CE' | 'PE'; tag: TcfCeTag | TcfPeTag; tags: Array<TcfCeTag | TcfPeTag> } | null {
   const slot = tcfSlotByTypeId[typeId]
   if (!slot || slot.numero == null) return null
@@ -41,7 +43,7 @@ export function tcfTaggedSlotKind(
     return tag ? { competence: 'CE', tag, tags: [tag] } : null
   }
   if (slot.competence === 'PE') {
-    const tags = tcfPeTagsForSlot(slot.numero)
+    const tags = tcfPeTagsForSlot(slot.numero, niveau)
     const tag = tags[0]
     return tag ? { competence: 'PE', tag, tags } : null
   }
@@ -79,7 +81,7 @@ export function TcfTaggedExercisePicker({
     contentSeed?: number
   }) => void
 }) {
-  const kind = tcfTaggedSlotKind(typeId)
+  const kind = tcfTaggedSlotKind(typeId, niveau)
   const slot = tcfSlotByTypeId[typeId]
   const pool = useMemo(() => {
     if (!slot || !kind) return [] as TcfExercise[]

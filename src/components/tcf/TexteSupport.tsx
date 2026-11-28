@@ -387,6 +387,13 @@ export function TexteSupport({ exercise: ex, mode, ceFormat = 'texte', ceTextFon
           <SheetCopy text={ex.support.consigne} />
         </p>
       )
+    case 'lecture_progressive':
+      return (
+        <div className="tcf-support">
+          <h4>{ex.support.titre}</h4>
+          <Paragraphs text={ex.support.texte} />
+        </div>
+      )
     case 'entretien': {
       if (mode !== 'answers') return null
       return (

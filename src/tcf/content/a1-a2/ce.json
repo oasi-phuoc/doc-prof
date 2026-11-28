@@ -91,7 +91,25 @@
           { "id": "c", "texte": "La montre de l’inspecteur" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 2, "reponse_modele": "La couronne de la reine" }
+          "lignes": { "nb_lignes": 2, "reponse_modele": "La couronne de la reine" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-couronne-royale.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-cle-ancienne.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/co834-montre-dessinee.webp"
+              }
+            ]
+          }
         }
       },
       {
@@ -416,7 +434,25 @@
           { "id": "c", "texte": "Dans la poubelle" }
         ],
         "formes": {
-          "lignes": { "nb_lignes": 2, "reponse_modele": "Sur le radiateur" }
+          "lignes": { "nb_lignes": 2, "reponse_modele": "Sur le radiateur" },
+          "qcm_image": {
+            "melanger": true,
+            "choix": [
+              {
+                "id": "a",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-serviettes-radiateur.png",
+                "correct": true
+              },
+              {
+                "id": "b",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-serviettes-placard.png"
+              },
+              {
+                "id": "c",
+                "image": "/lib/images/tcf/qcm-audit/qcm-hist1-serviettes-poubelle.png"
+              }
+            ]
+          }
         }
       },
       {
@@ -1091,8 +1127,8 @@
           "lignes": { "nb_lignes": 2, "reponse_modele": "Une montre" },
           "qcm_image": { "melanger": true, "choix": [
               { "id": "a", "correct": true, "image": "/lib/images/tcf/qcm-audit/co834-montre-dessinee.webp" },
-              { "id": "b", "image": "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp" },
-              { "id": "c", "image": "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp" }
+              { "id": "b", "image": "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp" },
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-lot20c-telephone-eteint.png" }
             ] }
         }
       },
@@ -3428,7 +3464,7 @@
           "qcm_image": { "melanger": true, "choix": [
               { "id": "a", "image": "/lib/images/tcf/qcm-audit/co834-appareil-photo-dessine.webp", "correct": true },
               { "id": "b", "image": "/lib/images/tcf/qcm-audit/vocab-ordinateur-portable.webp" },
-              { "id": "c", "image": "/lib/images/tcf/qcm-audit/co834-casque-velo-4-3.webp" }
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-transport-casque-velo-ivoire.png" }
             ] }
         }
       },
@@ -4910,7 +4946,7 @@
           "qcm_image": { "melanger": true, "choix": [
               { "id": "a", "image": "/lib/images/tcf/qcm-audit/vocab-etagere.webp", "correct": true },
               { "id": "b", "image": "/lib/images/tcf/qcm-audit/revue-20261107-df82b95b92.webp", "correct": false },
-              { "id": "c", "image": "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp", "correct": false }
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-lot20c-telephone-eteint.png", "correct": false }
             ] }
         }
       },
@@ -8538,7 +8574,7 @@
           "qcm_image": { "melanger": true, "choix": [
               { "id": "a", "correct": true, "image": "/lib/images/tcf/qcm-audit/extension573-velo-ville-panier-lumiere.png" },
               { "id": "b", "image": "/lib/images/tcf/qcm-audit/vocab-bus-isole.webp" },
-              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-deplacement-marche-ivoire.png" }
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-cast-routes-51-3-qcm-deplacement-marche-ivoire.png" }
             ] }
         }
       },
@@ -14548,8 +14584,8 @@
           "lignes": { "nb_lignes": 2, "reponse_modele": "Un réveil" },
           "qcm_image": { "melanger": true, "choix": [
               { "id": "a", "image": "/lib/images/tcf/qcm-audit/vocab-reveil.webp", "correct": true },
-              { "id": "b", "image": "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp", "correct": false },
-              { "id": "c", "image": "/lib/images/tcf/qcm-audit/revue-20261107-9121037011.webp", "correct": false }
+              { "id": "b", "image": "/lib/images/tcf/qcm-audit/qcm-lot20c-telephone-eteint.png", "correct": false },
+              { "id": "c", "image": "/lib/images/tcf/qcm-audit/qcm-transport-autoradio-ivoire.png", "correct": false }
             ] }
         }
       },

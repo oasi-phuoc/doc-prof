@@ -1,0 +1,461 @@
+[
+  {
+    "topic": "corps",
+    "level": "A1",
+    "ce": {
+      "title": "Le jeu du corps",
+      "text": "Lina guide le jeu. Elle montre son nez et touche son menton. Sami lève le bras droit. Puis il pose sa main gauche sur sa tête. À la fin du jeu, les deux élèves plient les genoux.",
+      "questions": [
+        ["Qui guide le jeu ?", "Lina", "Sami", "Le professeur"],
+        ["Quelle partie du visage Lina touche-t-elle ?", "Le menton", "Le front", "L’oreille"],
+        ["Quel bras Sami lève-t-il ?", "Le bras droit", "Le bras gauche", "Les deux bras"],
+        ["Que font les élèves à la fin ?", "Ils plient les genoux.", "Ils touchent leurs pieds.", "Ils ferment les yeux."]
+      ]
+    },
+    "co": {
+      "title": "Les gestes de l’échauffement",
+      "slug": "les-gestes-de-l-echauffement",
+      "text": "Bonjour. On commence avec le bras gauche. Levez le bras gauche. Maintenant, posez la main droite sur la tête. Pliez les genoux. Pour finir, touchez votre nez avec un doigt.",
+      "questions": [
+        ["Quel bras faut-il lever ?", "Le bras gauche", "Le bras droit", "Les deux bras"],
+        ["Où faut-il poser la main droite ?", "Sur la tête", "Sur l’épaule", "Sur le ventre"],
+        ["Que faut-il toucher à la fin ?", "Le nez", "Le front", "Le menton"]
+      ]
+    },
+    "pe": {
+      "title": "Trois consignes pour le jeu",
+      "prompt": "Vous préparez un jeu en classe. Écrivez trois consignes courtes. Nommez une partie du visage, une partie du bras ou de la main et une partie de la jambe.",
+      "words": [12, 25],
+      "model": "Touchez votre nez. Levez la main droite. Maintenant, pliez les deux genoux."
+    },
+    "po": {
+      "title": "Montrez et nommez",
+      "prompt": "Jouez en binômes. L’élève A nomme trois parties du corps et précise une fois gauche ou droite. L’élève B montre chaque partie. Puis changez de rôle.",
+      "dialogue": [["Montre ton coude droit.", "Voici mon coude droit."], ["Et où est ton menton ?", "Il est ici, sous ma bouche."], ["Montre tes genoux.", "Voici mes genoux."]]
+    }
+  },
+  {
+    "topic": "corps",
+    "level": "A2",
+    "theory": {
+      "title": "Les organes et leurs rôles",
+      "intro": "Je reconnais quatre organes et je nomme leur rôle.",
+      "examples": ["Je respire avec mes poumons.", "Mon cœur fait circuler le sang."],
+      "words": [["le cœur", "Il fait circuler le sang."], ["les poumons", "Ils nous permettent de respirer."], ["l’estomac", "Il aide à digérer les aliments."], ["le cerveau", "Il reçoit des informations et commande des mouvements."]],
+      "recap": ["Je relie le mot « poumons » au verbe « respirer ».", "J’explique le rôle d’un autre organe."]
+    },
+    "ce": {
+      "title": "Quatre cartes sur les organes",
+      "text": "Pour la journée des sciences, la classe prépare quatre cartes. Lina écrit la carte du cœur. Elle explique que le cœur fait circuler le sang. Sami dessine les poumons. Sur sa carte, il écrit que les poumons nous permettent de respirer. Noura présente l’estomac et parle de digestion. Yacine montre le cerveau. Il explique que le cerveau reçoit des informations. Les élèves présentent les cartes par deux.",
+      "questions": [
+        ["Qui présente le cœur ?", "Lina", "Noura", "Sami"],
+        ["À quoi servent les poumons, selon la carte ?", "À respirer", "À digérer", "À faire circuler le sang"],
+        ["Quel organe Noura présente-t-elle ?", "L’estomac", "Le cœur", "Le cerveau"],
+        ["Comment les élèves présentent-ils les cartes ?", "Par deux", "Seuls", "En groupes de quatre"]
+      ]
+    },
+    "co": {
+      "title": "La visite du stand du corps",
+      "slug": "la-visite-du-stand-du-corps",
+      "text": "Bienvenue au stand sur le corps. Nous commençons par une carte sur les poumons. Les poumons nous permettent de respirer. À droite, vous trouverez une carte sur l’estomac. Elle explique la digestion. Pour finir, demandez à Maya la carte sur le cœur. Elle vous dira comment le sang circule.",
+      "questions": [
+        ["Quel organe est présenté en premier ?", "Les poumons", "Le cœur", "L’estomac"],
+        ["De quoi parle la carte située à droite ?", "De la digestion", "De la respiration", "Du sommeil"],
+        ["À qui faut-il demander la carte sur le cœur ?", "À Maya", "À Lina", "À la classe entière"]
+      ]
+    },
+    "pe": {
+      "title": "Deux légendes pour une exposition",
+      "prompt": "Écrivez un petit texte pour une exposition. Présentez deux organes et expliquez leur rôle. Donnez un exemple d’activité pendant laquelle on peut sentir son cœur battre.",
+      "words": [30, 45],
+      "model": "Les poumons nous permettent de respirer. Le cœur fait circuler le sang dans le corps. Quand je monte les escaliers, je sens parfois mon cœur battre plus vite, surtout après plusieurs étages."
+    },
+    "po": {
+      "title": "Faire visiter un stand",
+      "prompt": "En binômes, jouez le guide et la personne qui visite. Le guide nomme deux organes et explique leurs rôles. L’autre élève demande où se trouve une carte et pose une question.",
+      "dialogue": [["À quoi servent les poumons ?", "Ils nous permettent de respirer."], ["Où se trouve la carte de l’estomac ?", "À droite. Elle explique la digestion."], ["Quel organe fait circuler le sang ?", "C’est le cœur."]]
+    }
+  },
+  {
+    "topic": "douleurs",
+    "level": "A1",
+    "ce": {
+      "title": "Un mot après la chute",
+      "text": "Ce matin, Yara tombe dans la cour de l’école. Elle a mal au genou droit. À dix heures, elle va à l’accueil avec son amie Samiha. L’accueil appelle sa famille. Yara rentre à midi.",
+      "questions": [
+        ["Où Yara tombe-t-elle ?", "Dans la cour de l’école", "Au gymnase", "Dans le bus"],
+        ["Où a-t-elle mal ?", "Au genou droit", "À la main gauche", "Au pied gauche"],
+        ["Qui va à l’accueil avec Yara ?", "Samiha", "Son frère", "Sa mère"],
+        ["À quelle heure Yara rentre-t-elle ?", "À midi", "À dix heures", "À quinze heures"]
+      ]
+    },
+    "pe": {
+      "title": "Expliquer une absence",
+      "prompt": "Vous jouez le rôle de Yara. Écrivez un message à votre professeur. Dites où vous êtes tombée, où vous avez mal et à quelle heure vous partez.",
+      "words": [20, 35],
+      "model": "Bonjour, je suis tombée dans la cour de l’école. J’ai mal au genou droit. Je pars à midi avec ma famille. Merci, Yara."
+    },
+    "po": {
+      "title": "Dire où et depuis quand on a mal",
+      "prompt": "Une personne joue un élève blessé. L’autre travaille à l’accueil. Expliquez la chute, où vous avez mal et depuis quand. Jouez avec des informations inventées.",
+      "dialogue": [["Qu’est-ce qui s’est passé ?", "Je suis tombé dans la cour."], ["Où avez-vous mal ?", "J’ai mal à la main gauche."], ["Depuis quand ?", "Depuis ce matin."]]
+    }
+  },
+  {
+    "topic": "maladies",
+    "level": "A2",
+    "theory": {
+      "title": "Maladie, virus et symptômes",
+      "intro": "Je décris ce que je ressens.",
+      "examples": ["Je tousse depuis lundi.", "J’ai de la fièvre depuis hier."],
+      "words": [["un symptôme", "C’est un signe que je peux observer ou ressentir."], ["une maladie", "La grippe est un exemple de maladie."], ["un virus", "Certains virus peuvent nous rendre malades."], ["la contagion", "Une maladie contagieuse peut passer d’une personne à une autre."]],
+      "recap": ["Je nomme le symptôme et je précise depuis quand.", "Une toux est un symptôme. Plusieurs maladies peuvent provoquer une toux."]
+    },
+    "ce": {
+      "title": "La fiche pour la classe",
+      "text": "Nassim lit une fiche intitulée « La grippe ». La fiche explique que la grippe est une maladie causée par un virus. Elle peut passer d’une personne à une autre. Une personne qui a la grippe peut avoir de la fièvre, tousser ou se sentir fatiguée. Mais une toux seule ne suffit pas pour savoir quelle maladie on a. Pour s’entraîner, Nassim écrit dans son cahier le nom de la maladie et deux symptômes cités dans la fiche.",
+      "questions": [
+        ["Quelle maladie la fiche présente-t-elle ?", "La grippe", "L’angine", "L’allergie"],
+        ["Quelle est la cause de la grippe indiquée dans la fiche ?", "Un virus", "Une blessure", "Un manque de sommeil"],
+        ["Quels symptômes sont cités ?", "La fièvre et la toux", "Une coupure et un bleu", "Un doigt cassé et un mal de pied"],
+        ["Que peut-on savoir avec une toux seule ?", "La maladie reste à déterminer.", "C’est forcément la grippe.", "On connaît la durée de la maladie."]
+      ]
+    },
+    "co": {
+      "title": "Un message au sujet de symptômes",
+      "slug": "un-message-au-sujet-de-symptomes",
+      "text": "Bonjour, c’est Mariam. Depuis dimanche, je tousse et j’ai mal à la gorge. Aujourd’hui, je suis très fatiguée. Je ne connais pas la cause de ces symptômes. J’ai rendez-vous cet après-midi, à quatre heures. Je vous écris après le rendez-vous.",
+      "questions": [
+        ["Depuis quel jour Mariam tousse-t-elle ?", "Depuis dimanche", "Depuis lundi", "Depuis mardi"],
+        ["Où a-t-elle mal ?", "À la gorge", "À l’oreille", "Au ventre"],
+        ["À quelle heure est le rendez-vous ?", "À quatre heures de l’après-midi", "À deux heures de l’après-midi", "À quatre heures du matin"]
+      ]
+    },
+    "pe": {
+      "title": "Décrire les symptômes dans un message",
+      "prompt": "Vous êtes Alex. Vous manquez un cours. Écrivez un message au secrétariat. Donnez deux symptômes, indiquez depuis quand et dites quand vous donnerez des nouvelles. Signez « Alex ».",
+      "words": [40, 60],
+      "model": "Bonjour, je ne peux pas venir au cours ce matin. Depuis hier soir, je tousse et j’ai mal à la gorge. Aujourd’hui, je me sens aussi très fatigué. Je vais demander un rendez-vous. Je vous écrirai demain matin pour vous donner des nouvelles. Merci, Alex."
+    },
+    "po": {
+      "title": "Décrire des symptômes à l’accueil",
+      "prompt": "Jouez une conversation entre un personnage malade et une personne à l’accueil. Indiquez deux symptômes et leur durée. La personne à l’accueil pose une question de clarification et résume la demande.",
+      "dialogue": [["Depuis quand vous sentez-vous malade ?", "Depuis dimanche. Je tousse et j’ai mal à la gorge."], ["Vous avez mal à la gorge depuis dimanche aussi ?", "Oui, et je suis fatiguée depuis ce matin."], ["Je note donc une toux et un mal de gorge depuis dimanche.", "Oui, c’est bien cela."]]
+    }
+  },
+  {
+    "topic": "specialistes",
+    "level": "A1",
+    "ce": {
+      "title": "L’annuaire de la maison de santé",
+      "text": "Maison de santé du Parc. Au rez-de-chaussée, le docteur Ruiz est dentiste. Au premier étage, la docteure Sissoko est pédiatre. Elle reçoit les enfants. Le docteur Benali est ophtalmologue. Son cabinet se trouve au deuxième étage. L’accueil ouvre à huit heures.",
+      "questions": [
+        ["Qui est dentiste ?", "Le docteur Ruiz", "Le docteur Benali", "La docteure Sissoko"],
+        ["Qui reçoit les enfants ?", "La docteure Sissoko", "Le docteur Benali", "Le docteur Ruiz"],
+        ["Où est le cabinet de l’ophtalmologue ?", "Au deuxième étage", "Au premier étage", "Au rez-de-chaussée"],
+        ["À quelle heure ouvre l’accueil ?", "À huit heures", "À neuf heures", "À dix heures"]
+      ]
+    },
+    "pe": {
+      "title": "Écrire à un cabinet dentaire",
+      "prompt": "Écrivez un message court à un cabinet dentaire. Donnez le nom fictif de votre personnage, dites qu’il a mal aux dents et proposez un jour pour le rendez-vous.",
+      "words": [18, 32],
+      "model": "Bonjour, je m’appelle Adam Petit. J’ai mal aux dents. Je voudrais un rendez-vous chez le dentiste. Êtes-vous disponible jeudi ? Merci, Adam Petit."
+    },
+    "po": {
+      "title": "S’orienter à la maison de santé",
+      "prompt": "En binômes, jouez une personne qui cherche un cabinet et la personne à l’accueil. Le visiteur demande le nom du spécialiste et l’étage. Changez de rôle avec un autre spécialiste.",
+      "dialogue": [["Bonjour, je cherche le dentiste.", "Le dentiste s’appelle docteur Ruiz."], ["Où est son cabinet ?", "Au rez-de-chaussée, à gauche de l’accueil."], ["Il reçoit jeudi ?", "Oui, sur rendez-vous."]]
+    }
+  },
+  {
+    "topic": "soins",
+    "level": "A1",
+    "ce": {
+      "title": "Le SMS du cabinet",
+      "text": "Cabinet médical des Acacias. Bonjour Inès. Votre rendez-vous est jeudi à dix heures. Le cabinet est au premier étage. Présentez-vous à l’accueil. Si vous ne pouvez pas venir, appelez le secrétariat. Merci.",
+      "questions": [
+        ["Quel jour est le rendez-vous ?", "Jeudi", "Mardi", "Samedi"],
+        ["À quelle heure est le rendez-vous ?", "À dix heures", "À huit heures", "À midi"],
+        ["À quel étage est le cabinet ?", "Au premier étage", "Au deuxième étage", "Au rez-de-chaussée"],
+        ["Que faire si vous ne pouvez pas venir ?", "Appeler le secrétariat.", "Attendre le prochain rendez-vous.", "Écrire à la pharmacie."]
+      ]
+    }
+  },
+  {
+    "topic": "soins",
+    "level": "A2",
+    "theory": {
+      "title": "Comprendre les mots d’une ordonnance",
+      "intro": "Je repère les mots utiles. Je demande une précision.",
+      "examples": ["Je présente l’ordonnance à la pharmacienne.", "Je demande combien de temps dure le traitement."],
+      "words": [["une ordonnance", "Un professionnel de santé peut y prescrire un traitement."], ["la posologie", "Elle indique la quantité, les moments de prise et la durée."], ["la durée", "C’est le temps pendant lequel le traitement est prévu."], ["une question", "Je peux demander de répéter les instructions."]],
+      "recap": ["Je montre le mot ou la phrase que je ne comprends pas.", "Je reformule la réponse avec mes mots."]
+    },
+    "ce": {
+      "title": "Un rendez-vous au cabinet dentaire",
+      "text": "Le secrétariat du cabinet dentaire répond à M. Collet. Il peut venir aujourd’hui à quinze heures quarante-cinq, mais cet horaire ne lui convient pas. Le cabinet est complet plus tard dans la journée. La secrétaire propose alors lundi à dix-huit heures trente. M. Collet accepte et épelle son nom, C-O-L-L-E-T. C’est sa première visite. La secrétaire lui demande donc d’arriver dix minutes avant le rendez-vous.",
+      "questions": [
+        ["Quelle heure est proposée aujourd’hui ?", "15 h 45", "15 h 15", "18 h 30"],
+        ["Quel rendez-vous M. Collet accepte-t-il ?", "Lundi à 18 h 30", "Lundi à 15 h 45", "Aujourd’hui à 18 h 30"],
+        ["Pourquoi épelle-t-il son nom ?", "Pour que la secrétaire le note correctement.", "Pour annuler le rendez-vous.", "Pour demander l’adresse."],
+        ["Quand doit-il arriver ?", "Dix minutes avant le rendez-vous", "Exactement à l’heure", "Dix minutes après le rendez-vous"]
+      ]
+    },
+    "pe": {
+      "title": "Demander un autre horaire",
+      "prompt": "Vous avez rendez-vous mardi à 17 h. Vous ne pouvez pas venir. Écrivez au cabinet. Donnez votre nom fictif, rappelez le jour et l’heure, expliquez brièvement l’empêchement et proposez deux créneaux.",
+      "words": [40, 60],
+      "model": "Bonjour, je m’appelle Salomé Diallo. J’ai rendez-vous au cabinet mardi à 17 h. Mon cours se termine trop tard et je ne pourrai pas venir à cette heure. Est-il possible de déplacer le rendez-vous à mardi à 18 h ou à jeudi matin ? Merci pour votre réponse."
+    }
+  },
+  {
+    "topic": "hygiene",
+    "level": "A2",
+    "theory": {
+      "title": "Les gestes d’hygiène",
+      "intro": "Je nomme les objets. Je décris une routine.",
+      "examples": ["Je me lave les mains avec du savon.", "Je me brosse les dents avec une brosse à dents."],
+      "words": [["le savon", "Je me lave les mains avec de l’eau et du savon."], ["le dentifrice", "Je mets du dentifrice sur la brosse à dents."], ["la serviette", "Je me sèche avec une serviette."], ["le linge propre", "Je range le linge propre."]],
+      "recap": ["Pour parler de ma routine, je dis « je me lave ».", "Pour parler de Lila, je dis « elle se lave »."]
+    },
+    "ce": {
+      "title": "L’affiche du vestiaire",
+      "text": "Le centre sportif affiche les règles dans le vestiaire. Avant de manger, les élèves se lavent les mains avec de l’eau et du savon. Après le sport, ils prennent une douche et mettent des vêtements propres. Chacun apporte sa serviette. Le linge mouillé va dans un sac séparé. Si un distributeur de savon est vide, les élèves le signalent à l’accueil.",
+      "questions": [
+        ["Où se trouve l’affiche ?", "Dans le vestiaire", "À la pharmacie", "Dans le bus"],
+        ["Quel objet chacun apporte-t-il ?", "Sa serviette", "Une brosse à dents", "Une bouteille de savon"],
+        ["Où faut-il mettre le linge mouillé ?", "Dans un sac séparé", "Par terre", "Sur un banc"],
+        ["Que fait-on si le distributeur est vide ?", "On prévient l’accueil.", "On déplace l’affiche.", "On ferme le vestiaire."]
+      ]
+    },
+    "co": {
+      "title": "Préparer la trousse de toilette",
+      "slug": "preparer-la-trousse-de-toilette",
+      "text": "Pour notre sortie, pensez à préparer votre trousse de toilette. Dans la trousse, mettez une brosse à dents et du dentifrice. Prenez aussi un savon. Rangez votre serviette dans un autre sac, avec vos vêtements propres. Si vous avez oublié un objet, dites-le à l’animatrice avant le départ.",
+      "questions": [
+        ["Quel objet va dans la trousse de toilette ?", "La brosse à dents", "La serviette", "Le pull propre"],
+        ["Où faut-il ranger la serviette ?", "Avec les vêtements propres", "Avec les chaussures", "Dans la trousse"],
+        ["À qui faut-il signaler un oubli ?", "À l’animatrice", "Au chauffeur", "Au dentiste"]
+      ]
+    },
+    "pe": {
+      "title": "Préparer une affiche d’hygiène",
+      "prompt": "La classe part en sortie sportive. Rédigez une petite affiche. Donnez une consigne avant le repas, deux consignes après le sport et indiquez à qui signaler un oubli.",
+      "words": [40, 60],
+      "model": "Avant le repas, lavez-vous les mains avec de l’eau et du savon. Après le sport, prenez une douche et mettez des vêtements propres. Chaque personne prend sa propre serviette. Rangez le linge mouillé dans un sac. Si vous oubliez un objet, prévenez l’animatrice avant le départ."
+    },
+    "po": {
+      "title": "Organiser les affaires après le sport",
+      "prompt": "Jouez deux élèves qui préparent le vestiaire pour une sortie. Citez trois objets ou gestes utiles et dites quand on les utilise. Proposez une solution si le savon manque.",
+      "dialogue": [["Qu’est-ce qu’on apporte ?", "Une serviette et des vêtements propres."], ["Quand est-ce qu’on se lave les mains ?", "Avant le repas et après les toilettes."], ["Il n’y a plus de savon. Que fait-on ?", "On le signale à l’accueil."]]
+    }
+  },
+  {
+    "topic": "alimentation",
+    "level": "A2",
+    "theory": {
+      "title": "Parler de ses repas",
+      "intro": "Je dis ce que je mange et à quel moment.",
+      "examples": ["Le matin, je prends souvent du pain.", "À midi, Lina mange parfois du riz avec des légumes."],
+      "words": [["le petit-déjeuner", "C’est le repas du matin."], ["le déjeuner", "C’est souvent le repas de midi."], ["le repas du soir", "En Suisse, on dit aussi « le souper »."], ["la fréquence", "Je dis « souvent », « parfois », « rarement » ou « jamais »."]],
+      "recap": ["Je commence par l’heure ou le nom du repas.", "Je peux ajouter « avec » pour présenter un plat."]
+    },
+    "ce": {
+      "title": "Deux menus pour la semaine",
+      "text": "Ali prépare ses repas pour deux jours. Le lundi matin, il prend du pain et un yaourt. À midi, il mange du riz avec des légumes à la cantine. Le mardi, il apporte un sandwich et une pomme. Le soir, il prépare une soupe avec sa sœur. Ils choisissent ces plats parce qu’ils ont déjà les ingrédients à la maison.",
+      "questions": [
+        ["Que mange Ali à midi le lundi ?", "Du riz avec des légumes", "Une soupe", "Un sandwich et une pomme"],
+        ["Quel fruit Ali apporte-t-il le mardi ?", "Une pomme", "Une poire", "Une orange"],
+        ["Avec qui prépare-t-il la soupe ?", "Avec sa sœur", "Avec son frère", "Avec un ami"],
+        ["Pourquoi choisissent-ils ces plats ?", "Ils ont déjà les ingrédients.", "Ils veulent commander à la cantine.", "Ils n’ont pas de cuisine."]
+      ]
+    },
+    "co": {
+      "title": "Les repas de Maya en semaine",
+      "slug": "les-repas-de-maya-en-semaine",
+      "text": "En semaine, je déjeune souvent à la cantine. Le mercredi, la cantine est fermée. J’apporte alors un sandwich et une pomme. Le jeudi soir, je prépare le dîner avec mon frère. Cette semaine, nous allons faire une soupe. Il achète les légumes et je prépare le pain.",
+      "questions": [
+        ["Quel jour la cantine est-elle fermée ?", "Le mercredi", "Le jeudi", "Le vendredi"],
+        ["Qu’apporte Maya ce jour-là ?", "Un sandwich et une pomme", "Du pain et de la soupe", "Des légumes et un yaourt"],
+        ["Comment se répartissent-ils la préparation du jeudi ?", "Son frère achète les légumes et Maya prépare le pain.", "Maya achète les légumes et son frère prépare le pain.", "Son frère prépare tout le repas."]
+      ]
+    },
+    "pe": {
+      "title": "Organiser les repas de deux jours",
+      "prompt": "Préparez les repas d’un personnage pour deux jours. Décrivez son petit-déjeuner, son déjeuner et son dîner. Dites ce qu’il mange souvent ou parfois et expliquez un choix.",
+      "words": [40, 60],
+      "model": "Lundi, Maya prend du pain et un fruit le matin. À midi, elle mange des légumes et du riz. Le soir, elle prépare une soupe. Mardi, elle mange un yaourt et du pain au petit-déjeuner. Elle emporte un sandwich pour midi et prépare des pâtes le soir. Elle prend souvent un fruit."
+    },
+    "po": {
+      "title": "Comparer deux habitudes alimentaires",
+      "prompt": "Préparez deux menus simples pour des personnages fictifs. Comparez un repas dans chaque menu. Dites quelle option vous convient pour une sortie et expliquez votre choix.",
+      "dialogue": [["Que mange Lina à midi ?", "Elle prend souvent du riz avec des légumes."], ["Et Malik ?", "Il prend parfois un sandwich et une pomme."], ["Quel repas choisissez-vous pour la sortie ?", "Je prends le sandwich, parce qu’il est facile à transporter."]]
+    }
+  },
+  {
+    "topic": "alimentation",
+    "level": "B1",
+    "ce": {
+      "title": "Deux options à la cantine",
+      "text": "La cantine d’un centre de formation propose un seul plat à midi. Le conseil des élèves aimerait qu’il y ait deux options le mercredi, pour mieux tenir compte des goûts et des habitudes des élèves. Inès estime qu’un deuxième plat serait utile, surtout pour ceux qui apportent actuellement leur repas faute de choix. Samir est intéressé, mais il craint que davantage de nourriture soit jetée si la cantine ne connaît pas le nombre de personnes qui veulent chaque option.\n\nLe responsable propose un essai de trois semaines. Les élèves choisiraient leur plat la veille. Après l’essai, ils discuteraient du prix, du temps d’attente et des restes. Pour que tout le monde puisse participer, la réservation serait possible en ligne ou sur une liste à l’accueil.",
+      "questions": [
+        ["Qu’espère le conseil des élèves ?", "Mieux tenir compte des goûts et des habitudes.", "Servir les repas plus tard.", "Fermer la cantine le mercredi."],
+        ["Quelle objection Samir soulève-t-il ?", "Les plats préparés risquent d’être jetés.", "Les élèves mangent trop vite.", "Le centre manque de tables."],
+        ["Pourquoi choisir son plat la veille ?", "Pour prévoir combien de repas préparer par option.", "Pour connaître la place de chaque élève.", "Pour donner la priorité aux réservations en ligne."],
+        ["Quelle solution favorise l’accès de tous à la réservation ?", "La double possibilité en ligne ou à l’accueil", "La réservation obligatoire par téléphone", "La réservation une semaine à l’avance"]
+      ]
+    },
+    "co": {
+      "title": "Le bilan des menus du mercredi",
+      "slug": "le-bilan-des-menus-du-mercredi",
+      "text": "Pendant trois mercredis, la cantine a proposé deux plats. Au début, plusieurs élèves ont oublié de réserver. Le responsable a donc placé une fiche d’inscription à l’accueil et les réservations ont augmenté. Les deux plats ont attiré de nouveaux élèves, mais l’équipe a constaté que le service était plus lent. Pour continuer, le conseil propose deux files distinctes. Une élève suggère aussi de garder quelques portions pour les personnes qui arrivent sans réservation. Le responsable veut d’abord vérifier si ces changements sont possibles avec la place disponible.",
+      "questions": [
+        ["Pourquoi une fiche a-t-elle été placée à l’accueil ?", "Des élèves oubliaient de réserver.", "La cantine avait trop de plats.", "La cuisine fermait plus tôt."],
+        ["Quel inconvénient l’équipe a-t-elle constaté ?", "Le service est devenu plus lent.", "Le prix avait doublé.", "Les deux plats avaient le même goût."],
+        ["À quel besoin répond l’idée de garder quelques portions ?", "Permettre de manger aux personnes qui n’ont pas réservé.", "Interdire de modifier son choix.", "Éviter que les élèves prennent deux places."],
+        ["Que veut vérifier le responsable avant de poursuivre ?", "L’espace disponible pour les changements", "Le prix des cahiers", "Les horaires des cours du matin"]
+      ]
+    },
+    "pe": {
+      "title": "Donner son avis sur les menus",
+      "prompt": "Écrivez au conseil des élèves. Faut-il proposer deux plats le mercredi ? Exprimez un avis clair, donnez deux raisons et un exemple, puis répondez à une objection.",
+      "words": [80, 120],
+      "model": "Bonjour, je suis favorable à deux options le mercredi. D’abord, les élèves auraient plus de choix. Ensuite, la cantine pourrait accueillir ceux qui apportent leur repas parce que le plat unique ne leur convient pas. Par exemple, on pourrait essayer une soupe et un plat de riz le même jour. Je comprends que préparer deux recettes demande plus de temps. Pour limiter les restes, je propose que chacun puisse faire son choix la veille, sur une liste à l’accueil ou sur le site. Merci de lire mon avis."
+    },
+    "po": {
+      "title": "Débattre des choix à la cantine",
+      "prompt": "Faut-il proposer deux options à la cantine chaque mercredi ? Prenez deux minutes pour préparer votre avis. Donnez deux raisons et un exemple. Votre partenaire formule une objection. Répondez-lui, puis échangez les rôles.",
+      "dialogue": [["Quelle est votre position ?", "Je suis pour, car un choix plus large convient à plus de personnes. Par exemple, la cantine peut proposer une soupe et un plat de riz."], ["Et si beaucoup de portions restent ?", "C’est possible. Les réservations permettraient de mieux prévoir le nombre de portions."], ["Y a-t-il un autre avantage ?", "Le choix peut donner envie à certains élèves d’essayer la cantine."]]
+    }
+  },
+  {
+    "topic": "sante-mentale",
+    "level": "B1",
+    "theory": {
+      "title": "Parler de santé mentale",
+      "intro": "Je mets des mots sur une difficulté. Je demande de l’aide.",
+      "examples": ["Je me sens inquiet depuis plusieurs jours.", "J’aimerais en parler à une personne de confiance."],
+      "words": [["une émotion", "Je peux me sentir triste, en colère ou inquiet."], ["une difficulté", "Une situation peut devenir difficile à vivre."], ["une personne de confiance", "Je choisis quelqu’un à qui je peux parler."], ["un lieu d’écoute", "On peut y parler et poser des questions."], ["la confidentialité", "Je peux demander qui aura accès à mes informations."]],
+      "recap": ["Je peux dire ce que je ressens à mon rythme.", "Je peux demander où trouver de l’aide."]
+    },
+    "ce": {
+      "title": "Un lieu d’écoute au centre",
+      "text": "Dans son centre de formation, Amel voit une affiche qui annonce un nouvel espace d’écoute. Les élèves pourront y rencontrer une personne de l’équipe éducative, même s’ils ne savent pas encore comment expliquer leur situation. L’espace sera ouvert le mardi à midi et le jeudi après les cours. Amel trouve ces horaires pratiques, mais son ami Pavel pense que certaines personnes hésiteront à entrer si d’autres élèves peuvent les voir.\n\nIls proposent donc une prise de rendez-vous par message, avec la possibilité de choisir un autre moment. Le centre accepte de tester cette idée pendant un mois. Sur l’affiche, l’équipe rappelle que chacun peut choisir ce qu’il veut raconter et poser des questions sur le déroulement de l’entretien avant de décider d’y participer.",
+      "questions": [
+        ["Quel service le centre propose-t-il ?", "Un espace pour parler avec une personne de l’équipe", "Un cours obligatoire après les leçons", "Une séance de sport le jeudi"],
+        ["Pourquoi Pavel pense-t-il que certaines personnes hésiteront ?", "Elles craignent que d’autres les voient entrer.", "Elles ne savent pas que le centre est ouvert le mardi.", "Elles n’aiment pas utiliser leur téléphone."],
+        ["Quel aménagement Amel et Pavel proposent-ils ?", "Un rendez-vous par message à un autre moment", "Une prise de parole en classe", "Un entretien obligatoire à midi"],
+        ["Quel choix reste à la personne qui vient ?", "Elle choisit les informations qu’elle veut raconter.", "Elle doit déjà connaître la cause de sa difficulté.", "Elle doit d’abord expliquer sa situation à sa classe."]
+      ]
+    },
+    "co": {
+      "title": "Poser une première question au point d’écoute",
+      "slug": "poser-une-premiere-question-au-point-d-ecoute",
+      "text": "Bienvenue au point d’écoute. Certains jeunes viennent parce qu’une situation leur pèse. D’autres veulent seulement savoir à qui s’adresser. Il est possible de demander d’abord un court échange. Vous n’avez pas besoin de raconter votre histoire sur le formulaire. Donnez simplement le moyen de vous joindre et les moments où vous êtes disponible. Lors du premier échange, vous pouvez poser des questions sur la confidentialité et sur les personnes présentes. Un prochain rendez-vous est possible si vous en avez envie.",
+      "questions": [
+        ["Pourquoi certaines personnes viennent-elles au point d’écoute ?", "Elles cherchent à savoir à qui s’adresser.", "Elles doivent remettre un devoir.", "Elles veulent s’inscrire à un cours."],
+        ["Que faut-il indiquer sur le formulaire ?", "Un moyen de contact et des disponibilités", "Toute son histoire", "Les coordonnées de la classe"],
+        ["Quelle information peut-on demander lors du premier échange ?", "Comment la confidentialité fonctionne.", "La liste des personnes déjà venues.", "Le dossier des autres élèves."],
+        ["Pourquoi la personne propose-t-elle un court échange ?", "Pour que le premier contact soit possible et progressif.", "Pour obliger à prendre plusieurs rendez-vous.", "Pour remplacer le formulaire par un récit détaillé."]
+      ]
+    },
+    "pe": {
+      "title": "Proposer un espace d’écoute plus accessible",
+      "prompt": "Écrivez à la direction d’un centre fictif. Proposez deux moyens de faciliter le premier contact avec l’espace d’écoute. Justifiez-les avec une situation inventée et répondez à une objection pratique.",
+      "words": [80, 120],
+      "model": "Madame, Monsieur, je propose de donner deux possibilités pour contacter l’espace d’écoute. On pourrait prendre rendez-vous par message ou en passant directement à l’accueil. Par exemple, une personne qui se sent observée préférera peut-être écrire depuis chez elle. À l’inverse, une personne sans téléphone pourra parler à l’accueil. Je sais que répondre aux messages prend du temps. L’équipe pourrait annoncer deux moments de réponse par semaine. Il serait aussi utile d’indiquer sur l’affiche qui reçoit les messages et ce qui se passe pendant un premier entretien. Merci pour votre attention."
+    },
+    "po": {
+      "title": "Débattre de l’accès à un point d’écoute",
+      "prompt": "Le centre devrait-il réserver un créneau d’écoute pendant la pause de midi ? Donnez votre avis, deux raisons et un exemple fictif. Votre partenaire formule une objection ou propose un autre horaire. Répondez et cherchez un accord.",
+      "dialogue": [["Quel horaire proposez-vous ?", "Je garderais une possibilité à midi. Pour certains élèves, rester après les cours est difficile et une pause peut rendre la rencontre plus facile."], ["Et si des élèves craignent d’être vus ?", "On pourrait permettre de prendre rendez-vous par message et proposer aussi un créneau après les cours."], ["Pouvez-vous résumer votre proposition ?", "Oui. Deux choix, un premier contact simple et une affiche claire."]]
+    }
+  },
+  {
+    "topic": "bien-etre",
+    "level": "B1",
+    "theory": {
+      "title": "Décrire le bien-être et le mal-être",
+      "intro": "Je décris un ressenti. Je nomme un besoin.",
+      "examples": ["Je me sens à l’aise dans un endroit calme.", "Je me sens isolé. J’aimerais parler à quelqu’un."],
+      "words": [["le bien-être", "Je me sens plutôt bien dans une situation."], ["le mal-être", "Je me sens mal et la situation me pèse."], ["un besoin", "Je peux avoir besoin de calme ou de compagnie."], ["une habitude", "Je fais quelque chose régulièrement."]],
+      "recap": ["Deux personnes peuvent avoir des besoins différents.", "Je peux proposer une idée et écouter un autre avis."]
+    },
+    "ce": {
+      "title": "Deux propositions pour la pause",
+      "text": "À midi, plusieurs élèves restent près de l’entrée du centre, où il y a beaucoup de bruit. Nour propose d’ouvrir une salle calme. Elle explique qu’elle aimerait parfois lire ou se reposer un moment avant le cours suivant. De son côté, Gabriel se sent mieux quand il retrouve d’autres élèves. Il aimerait disposer d’un lieu où discuter et jouer ensemble. Les deux projets ont été présentés au conseil du centre. Le conseil envisage de diviser une salle en deux espaces, mais les élèves se demandent si les conversations resteront audibles du côté calme.\n\nPour comparer les idées, le centre organise deux essais successifs. Pendant le premier, la salle est réservée au calme. Pendant le second, elle accueille des jeux. Les élèves donneront ensuite leur avis sur les usages et les horaires.",
+      "questions": [
+        ["Quel besoin Nour exprime-t-elle ?", "Trouver un endroit pour lire ou se reposer.", "Organiser un tournoi à midi.", "Sortir du centre avant chaque cours."],
+        ["Qu’est-ce qui aide Gabriel à se sentir mieux ?", "Retrouver d’autres élèves.", "Lire seul dans le silence.", "Rentrer plus tard le soir."],
+        ["Quelle limite pourrait avoir une salle divisée en deux ?", "Le bruit d’un espace pourrait gêner l’autre.", "La salle serait ouverte trop tôt.", "Les jeux seraient toujours interdits."],
+        ["Quel est le but des deux essais ?", "Comparer les besoins avant un choix durable.", "Supprimer la pause de midi.", "Demander aux élèves d’acheter du matériel."]
+      ]
+    },
+    "co": {
+      "title": "Le retour des élèves sur la salle commune",
+      "slug": "le-retour-des-eleves-sur-la-salle-commune",
+      "text": "Après deux semaines d’essai, l’équipe a recueilli les avis. Certains élèves ont aimé le calme, surtout les jours où ils avaient plusieurs cours. D’autres sont surtout venus pendant la semaine des jeux, pour rencontrer des personnes qu’ils ne connaissaient pas. Le conseil relève que plusieurs élèves ont participé aux deux essais. Il envisage maintenant deux horaires dans la même salle, en gardant la première moitié de la pause pour le calme. Une élève demande un planning visible près de la porte, pour que chacun puisse choisir le moment qui lui convient.",
+      "questions": [
+        ["Pourquoi certains élèves sont-ils venus pendant la semaine des jeux ?", "Pour rencontrer d’autres personnes.", "Pour préparer un examen en silence.", "Pour consulter leurs résultats."],
+        ["Quel constat montre que les besoins peuvent varier ?", "Plusieurs élèves ont participé aux deux essais.", "Les jeux ont été rangés.", "La salle se trouve à côté de l’entrée."],
+        ["Quelle organisation le conseil envisage-t-il ?", "Deux horaires dans la même salle.", "Deux salles réservées à l’équipe éducative.", "Des activités identiques pendant toute la pause."],
+        ["Pourquoi afficher un planning ?", "Pour que chacun puisse choisir le moment qui lui convient.", "Pour rendre la présence obligatoire.", "Pour remplacer le conseil des élèves."]
+      ]
+    },
+    "pe": {
+      "title": "Faire une proposition pour la salle commune",
+      "prompt": "Proposez une amélioration pour la pause. Décrivez deux besoins différents, présentez une solution et expliquez comment vérifier si elle convient. Donnez un exemple.",
+      "words": [80, 120],
+      "model": "Bonjour, je propose de garder deux temps dans la salle commune. Certaines personnes veulent lire ou se reposer. D’autres préfèrent parler et jouer ensemble. Par exemple, on pourrait réserver les quinze premières minutes au calme, puis ouvrir la salle aux activités. Je comprends que ce rythme ne convient pas à tous. On pourrait tester une autre répartition la semaine suivante et demander un avis par écrit. Le planning serait affiché près de la porte, avec une explication courte. Cela permettrait de comparer les deux moments sans obliger tout le monde à venir."
+    },
+    "po": {
+      "title": "Débattre d’une salle calme à midi",
+      "prompt": "Faut-il réserver une salle au calme à midi ? Donnez votre avis avec deux raisons et un exemple. Écoutez une objection. Proposez un accord qui respecte des besoins différents.",
+      "dialogue": [["Quelle est votre position ?", "Je suis pour un temps calme. L’entrée est parfois bruyante et certains élèves aimeraient se reposer avant de retourner en classe."], ["Et ceux qui préfèrent discuter ?", "Ils ont aussi besoin d’un endroit. On peut prévoir deux horaires pour la même salle."], ["Comment savoir si l’accord fonctionne ?", "On essaie pendant deux semaines, puis on demande l’avis des deux groupes."]]
+    }
+  },
+  {
+    "topic": "stress",
+    "level": "B1",
+    "theory": {
+      "title": "Exprimer et gérer le stress",
+      "intro": "Je nomme ce qui me met sous pression.",
+      "examples": ["Je suis stressée avant mon exposé.", "Je prépare les premières phrases avec un camarade."],
+      "words": [["être sous pression", "Je me sens inquiet face à une situation."], ["un facteur de stress", "Une situation peut me mettre sous pression."], ["une pause", "J’arrête une activité pendant un court moment."], ["demander du soutien", "Je peux demander un conseil ou une aide."]],
+      "recap": ["Je dis ce qui me stresse.", "Je compare deux options et j’explique mon choix."]
+    },
+    "ce": {
+      "title": "Un essai avant les exposés",
+      "text": "La veille des exposés, plusieurs élèves disent qu’ils se sentent sous pression. Mira explique qu’elle sait quoi dire, mais qu’elle a peur de perdre ses mots devant toute la classe. Son enseignant propose cinq minutes de préparation en binômes avant le début des passages. Les élèves pourront dire leurs premières phrases à une autre personne et lui demander un retour. Salah préfère préparer ses notes en silence. Selon lui, un échange juste avant l’oral l’empêcherait de se concentrer.\n\nL’enseignant décide donc d’offrir les deux possibilités. Pendant que certains s’entraînent par deux, les autres utilisent un espace calme. Après les exposés, chacun pourra dire si le temps de préparation l’a aidé et proposer une adaptation. L’objectif est de trouver une organisation que chacun peut utiliser à sa manière.",
+      "questions": [
+        ["Que redoute Mira ?", "Perdre ses mots devant la classe.", "Oublier la date de l’exposé.", "Passer après Salah."],
+        ["Pourquoi Salah préfère-t-il préparer ses notes seul ?", "Il pense mieux se concentrer en silence.", "Il veut préparer un autre devoir.", "Il refuse de faire un exposé."],
+        ["Comment l’enseignant répond-il aux besoins opposés ?", "Il propose deux façons de se préparer.", "Il organise un entraînement obligatoire en binômes.", "Il supprime la préparation."],
+        ["À quoi sert le retour après les exposés ?", "À évaluer puis adapter l’organisation.", "À annoncer une nouvelle punition.", "À choisir le sujet de l’exposé de Mira."]
+      ]
+    },
+    "co": {
+      "title": "Deux façons de se préparer à un oral",
+      "slug": "deux-facons-de-se-preparer-a-un-oral",
+      "text": "Ce matin, plusieurs élèves ont testé un temps de préparation avant leur oral. Julie a relu ses notes dans une salle calme. Elle explique qu’elle a pu choisir trois mots-clés et se concentrer sur le début de sa présentation. Bilal a préféré répéter ses deux premières phrases avec un camarade. Il aurait aimé disposer d’une minute supplémentaire. Après les passages, certains demandent d’annoncer l’ordre plus tôt. L’équipe accepte de le publier la veille, tout en précisant qu’un changement reste possible si quelqu’un est absent.",
+      "questions": [
+        ["Comment Julie s’est-elle préparée ?", "Elle a relu ses notes au calme.", "Elle a répété devant toute la classe.", "Elle a attendu à l’accueil."],
+        ["Que Bilal aurait-il voulu changer ?", "Avoir un peu plus de temps pour répéter.", "Passer avant tous les autres.", "Supprimer l’oral."],
+        ["Pourquoi l’équipe annonce-t-elle l’ordre la veille ?", "Pour que les élèves puissent mieux anticiper.", "Pour attribuer des notes plus tôt.", "Pour qu’aucune absence ne soit possible."],
+        ["Dans quel cas l’ordre pourrait-il changer ?", "Si quelqu’un est absent.", "Si Julie relit ses mots-clés.", "Si la classe choisit des binômes."]
+      ]
+    },
+    "pe": {
+      "title": "Proposer une préparation avant un oral",
+      "prompt": "Écrivez à un enseignant. Proposez une manière de préparer un oral en classe qui tient compte de deux besoins différents. Donnez un exemple et répondez à une difficulté pratique.",
+      "words": [80, 120],
+      "model": "Bonjour, je propose de réserver cinq minutes avant notre prochain oral. On pourrait choisir de répéter avec un camarade ou de relire ses notes au calme. Par exemple, une personne peut dire ses premières phrases pour prendre confiance, alors qu’une autre préfère écrire trois mots-clés. Je comprends que le cours ne permet pas toujours de faire une longue préparation. On peut afficher l’ordre de passage la veille et utiliser seulement les cinq premières minutes du cours. Après les présentations, la classe pourrait expliquer ce qui a été utile et suggérer un changement."
+    },
+    "po": {
+      "title": "Débattre d’une pause avant un contrôle",
+      "prompt": "Faut-il prévoir cinq minutes de préparation avant un contrôle oral ? Prenez position. Donnez deux raisons et un exemple. Répondez à une objection liée au temps ou aux besoins des élèves.",
+      "dialogue": [["Qu’en pensez-vous ?", "Je suis pour, car cinq minutes peuvent aider à relire la consigne et à choisir comment commencer. Par exemple, je peux préparer trois mots-clés."], ["Le cours est déjà court. Comment trouver le temps ?", "On peut afficher l’ordre des passages la veille et garder cinq minutes au début."], ["Tout le monde doit-il répéter en binômes ?", "Je laisserais le choix entre répéter avec quelqu’un et préparer seul."]]
+    }
+  }
+]

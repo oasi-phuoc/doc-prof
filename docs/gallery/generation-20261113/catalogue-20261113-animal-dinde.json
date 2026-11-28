@@ -3,16 +3,16 @@
   "label": "dinde",
   "type": "Animal",
   "subtype": "Animaux domestiques et de la ferme",
-  "status": "generation_failed",
-  "reuse_candidates": [],
   "path": "/lib/images/tcf/catalogue/animaux/dinde.webp",
-  "prompt": "Créer une illustration pédagogique d’une DINDE FEMELLE adulte, corps entier vivant en profil trois-quarts. C’est la femelle du dindon : plumage brun sobre et finement barré, silhouette plus petite et fine, tête petite gris bleuté, caroncules discrètes, AUCUNE barbe pectorale et AUCUNE grande queue en éventail. Queue repliée vers le bas, deux pattes visibles. Peinture numérique semi-réaliste douce dans le style TCF de la référence, contours fins, fond crème opaque, ombre légère, paysage exactement 4:3 avec marges. Ni texte, ni chiffre, ni marque, ni accessoires. Ne montrer aucun dindon mâle.",
+  "source_png": "/workspace/generated_images/exec-b4df61bd-24c3-4225-9c78-61b6ffed6eec.png",
+  "prompt": "Paint one anatomically correct animal, whole body and all visible feet within a generously spaced standalone 4:3 landscape PNG. Matte hand-painted TCF classroom style from supplied references, gentle soft lighting, precise edges, warm natural volumes. Flat opaque untextured uniform ivory #FDF2E1 RGB 253 242 225, especially the four 30px corners, no backdrop or vignette. Tiny soft contact shadow under feet. No landscape, food or extras, no other animal, no marks, text or border. One adult female domestic turkey HEN, side profile facing right. Show short modest tail folded low, no long fan display, subdued grey-brown barred and subtly mottled plumage, rounded body, small grey-blue partly featherless head, modest fleshy pale pink wattles only, no dangling red snood, fine pinkish brown legs. A true recognizable hen of Meleagris gallopavo, visibly no male tom's extravagant red face or tail, no ordinary chicken comb.",
   "reference_images": [
-    "/workspace/doc-prof/public/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+    "/lib/images/tcf/catalogue/animaux/canard.webp"
   ],
   "style_references": [
-    "/lib/images/tcf/qcm-audit/co834-boissons-dessinees.webp"
+    "/lib/images/tcf/catalogue/animaux/canard.webp"
   ],
-  "revision": 2,
-  "error": "image generation failed: http 429 Too Many Requests: Some(\"{\\\"error\\\":{\\\"type\\\":\\\"usage_limit_reached\\\",\\\"message\\\":\\\"The usage limit has been reached\\\",\\\"plan_type\\\":\\\"plus\\\",\\\"resets_at\\\":1794663055,\\\"eligible_promo\\\":null,\\\"limit_window_minutes\\\":null,\\\"resets_in_seconds\\\":74789}}\")"
+  "review_note": "La femelle a une petite tête gris-bleu, un plumage brun barré et une queue repliée, avec de modestes caroncules.",
+  "status": "visually_reviewed",
+  "sha256": "c1affbed89ea18fb20b3e8d30d52d438ac0fd33b3fe1764d9060bd809c97a03b"
 }

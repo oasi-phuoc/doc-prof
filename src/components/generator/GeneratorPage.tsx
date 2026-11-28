@@ -229,15 +229,6 @@ export function GeneratorPage({
   const previewSheet = previewWorksheets[Math.min(safeSheetIndex, previewWorksheets.length - 1)]
   const a5LeftSheet = a5LeftWorksheets?.[Math.min(safeSheetIndex, a5LeftWorksheets.length - 1)]
   const a5RightSheet = a5RightWorksheets?.[Math.min(safeSheetIndex, a5RightWorksheets.length - 1)]
-  /** Jeux : aperçu de toutes les feuilles de la config (recto + verso) côte à côte / empilées. */
-  const jeuxPreviewSheets = useMemo(() => {
-    if (activePage.domain !== 'jeux') return null
-    const related = previewWorksheets
-      .map((sheet, index) => ({ sheet, index }))
-      .filter(({ sheet }) => (sheet.configIndex ?? 0) === pageIndex)
-    return related.length > 0 ? related : null
-  }, [activePage.domain, previewWorksheets, pageIndex])
-
   const available = topicsForDomain(activePage.domain)
   const typeChoices = typeChoicesForBlock(activePage.domain, activeBlock)
   const firstExerciseNo = exerciseStartIndex(pages, pageIndex)
@@ -436,7 +427,7 @@ export function GeneratorPage({
   async function printAll() {
     try {
       const printRoot=document.querySelector<HTMLElement>('.print-only-sheets')
-      if(printRoot)await waitForGrammarPrintImages(printRoot)
+      if (printRoot) await waitForGrammarPrintImages(printRoot)
       window.print()
     } catch(error) {
       window.alert(error instanceof Error?error.message:'Les images de la fiche ne sont pas prêtes pour l’impression.')
@@ -585,7 +576,6 @@ export function GeneratorPage({
         pointsPerQuestion,
         saveCopy: true,
       }),
-    jeuxPreviewSheets,
     previewFrameRef,
     seed,
     previewWorksheets,
@@ -635,7 +625,7 @@ export function GeneratorPage({
         generator
         rightSlot={
           <>
-            {!isLogistiqueDomain(activePage.domain) && (
+            {activePage.domain !== 'acm' && !isLogistiqueDomain(activePage.domain) && (
               <button type="button" className="button small" onClick={playWithClass}>Jouer cette fiche</button>
             )}
             <TopbarTools
@@ -709,7 +699,7 @@ export function GeneratorPage({
             onTogglePreviewMode={() =>
               setMode((m) => (m === 'student' ? 'answers' : 'student'))
             }
-            showPreviewToggle={!(ctx.isCalliDomain || ctx.isJeuxDomain)}
+            showPreviewToggle={!(ctx.isCalliDomain || ctx.isJeuxDomain || activePage.domain === 'acm')}
             onLogout={onLogout}
           />
           </>

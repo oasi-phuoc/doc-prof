@@ -18,6 +18,7 @@ import { buildTcfCoPlaylist } from './co-audio-playlist'
 import { tcfCompletAudioRefs } from './complet-audio'
 import { tcfExerciseById } from './loader'
 import { tcfAudioSequence, tcfAudioSrc } from './media'
+import { tpfPlacementTask, type TpfComprehensionLevel } from './tpf-placement'
 import type { TcfCompetence, TcfExercise, TcfNiveau, TcfTypeExercice } from './types'
 
 export {
@@ -80,6 +81,7 @@ export function tcfAudioDownloadUrls(refs: string[]): string[] {
 
 export type TcfAudioJob = {
   niveau: TcfNiveau
+  placementLevel?: TpfComprehensionLevel
   competence: TcfCompetence
   exerciseNo: number
   audioRefs: string[]
@@ -154,7 +156,7 @@ export function collectCorrigeAudioSrcs(
 
 /** Exercices audio de toutes les feuilles (test entier : 4–5 CO typiquement). */
 export function collectTcfAudioJobs(
-  sheets: readonly { blocks: readonly { exerciseIndex?: number; items: readonly TcfAudioItemSource[] }[] }[],
+  sheets: readonly { blocks: readonly { exerciseType?: string; exerciseIndex?: number; items: readonly TcfAudioItemSource[] }[] }[],
 ): TcfAudioJob[] {
   const jobs: TcfAudioJob[] = []
   const seen = new Set<string>()
@@ -167,8 +169,10 @@ export function collectTcfAudioJobs(
       const key = ex.id || audioRefs.join('|')
       if (seen.has(key)) continue
       seen.add(key)
+      const placement = block.exerciseType ? tpfPlacementTask(block.exerciseType) : undefined
       jobs.push({
         niveau: ex.niveau,
+        ...(placement?.competence === 'CO' ? { placementLevel: placement.placementLevel } : {}),
         competence: ex.competence,
         exerciseNo: block.exerciseIndex && block.exerciseIndex > 0 ? block.exerciseIndex : jobs.length + 1,
         audioRefs,
@@ -221,7 +225,7 @@ export function listTcfAudioDownloadFiles(
       const ext = grouped ? 'wav' : (url.match(/\.([a-z0-9]+)(?:\?|$)/i)?.[1] ?? 'mp3')
       let name = tcfAudioDownloadName({
         prefix,
-        niveau: job.niveau,
+        niveau: job.placementLevel ?? job.niveau,
         competence: job.competence,
         exerciseNo: job.exerciseNo,
         audioIndex: grouped ? 1 : i + 1,
@@ -294,7 +298,10 @@ export async function downloadTcfAudios(
             audioRefs: opts.audioRefs,
           },
         ]
-  const zipNiveau = ('jobs' in opts ? opts.niveau : undefined) ?? jobs[0]?.niveau ?? 'NIVEAU'
+  const placementLevels = jobs.flatMap((job) => job.placementLevel ? [job.placementLevel] : [])
+  const zipNiveau = placementLevels.length && placementLevels.length === jobs.length
+    ? [...new Set([placementLevels[0], placementLevels.at(-1)])].join('-')
+    : ('jobs' in opts ? opts.niveau : undefined) ?? jobs[0]?.niveau ?? 'NIVEAU'
   const base = tcfAudioZipDownloadName({ prefix, niveau: zipNiveau, date })
   if (jobs.length === 0) return { count: 0, base }
 
@@ -309,7 +316,7 @@ export async function downloadTcfAudios(
     const grouped = tcfJobUsesGroupedPlaylist(job)
     let name = tcfAudioDownloadName({
       prefix,
-      niveau: job.niveau,
+      niveau: job.placementLevel ?? job.niveau,
       competence: job.competence,
       exerciseNo: job.exerciseNo,
       audioIndex: 1,
@@ -333,7 +340,7 @@ export async function downloadTcfAudios(
           const url = rawFiles[i]!
           let partName = tcfAudioDownloadName({
             prefix,
-            niveau: job.niveau,
+            niveau: job.placementLevel ?? job.niveau,
             competence: job.competence,
             exerciseNo: job.exerciseNo,
             audioIndex: i + 1,

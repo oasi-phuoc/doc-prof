@@ -1,3 +1,6 @@
+import { isSocieteType } from '@/societe/types'
+import { isAcmType } from '@/acm/types'
+import { isSanteType } from '@/sante/types'
 import { isLogistiqueReferenceType } from '@/logistique/catalog'
 import {
   blockPointsTotal,
@@ -186,6 +189,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
     firstExerciseNo,
     sheetTotalPoints,
   } = props
+  if (isAcmType(activeBlock.exerciseType) || isSocieteType(activeBlock.exerciseType) || isSanteType(activeBlock.exerciseType)) return null
   const grammarAudioOnly = isAudioOnlyGrammarCo(activeBlock.exerciseType,activeBlock.grammarCoLevel,activeBlock.grammarCoAudioId)
   const questionMin = activeBlock.exerciseType === 'tcm-csc-ex14' ? 2 : 1
   const cscQuestionHint = activeBlock.exerciseType === 'tcm-csc-ex03' ? 'Nombres à entourer, 1 point chacun.'
@@ -206,7 +210,10 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
     }
     return false
   })
-  const peMotsClesSlot = tcfPeTagsForSlot(tcfSlotByTypeId[activeBlock.exerciseType]?.numero).includes(
+  const peMotsClesSlot = tcfPeTagsForSlot(
+    tcfSlotByTypeId[activeBlock.exerciseType]?.numero,
+    tcfNiveauFromDifficulty(activeBlock.difficulty),
+  ).includes(
     TCF_PE_TAG_MOTS_CLES,
   )
   const showInlineBlankWidth =

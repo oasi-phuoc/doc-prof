@@ -1,0 +1,87 @@
+.sheet-body .exercise-grid:has(.layout-acm) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.exercise-item.layout-acm {
+  width: 100%;
+  padding: 0;
+}
+
+.acm-activity {
+  --acm-accent: #26596f;
+  color: #253437;
+  line-height: 1.35;
+}
+
+.acm-activity.acm-peinture { --acm-accent: #884759; }
+.acm-activity.acm-collage { --acm-accent: #3f6350; }
+.acm-activity.acm-dessin { --acm-accent: #4f5173; }
+
+.acm-materials {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 0 12px;
+  border-bottom: 1px solid #d8dfdb;
+}
+
+.acm-materials h3 {
+  margin: 0 0 4px;
+  color: var(--acm-accent);
+  font-size: .94em;
+}
+
+.acm-materials ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 24px;
+  margin: 0;
+  padding-inline-start: 1.1em;
+  font-size: .8em;
+}
+
+.acm-duration {
+  flex-shrink: 0;
+  color: var(--acm-accent);
+  font-weight: 700;
+  font-size: .8em;
+}
+
+.acm-steps {
+  display: grid;
+  gap: 8px;
+  margin: 14px 0 0;
+  padding-inline-start: 1.55em;
+  font-size: .9em;
+  list-style-type: decimal;
+}
+
+.acm-steps > li {
+  padding-inline-start: 4px;
+  break-inside: avoid;
+}
+
+.acm-steps > li::marker {
+  color: var(--acm-accent);
+  font-weight: 700;
+}
+
+.acm-steps.has-photos {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px 28px;
+}
+
+.acm-steps.has-photos:has(> li:nth-child(5)) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.acm-step-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 138px;
+  object-fit: contain;
+  object-position: left center;
+  margin-top: 5px;
+}

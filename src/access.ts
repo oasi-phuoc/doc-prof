@@ -34,11 +34,12 @@ export const REGULAR_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = 
 
 /**
  * Domaines de tests, affichés après les domaines réguliers.
- * Ordre d’affichage exact : tcf-csc → tcf-cfr → tcm-csc → tcm-cfr → tpf → tpm.
+ * Les domaines TCF précèdent les domaines TCM et les tests de placement.
  */
 export const ADMIN_ONLY_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = [
   { id: 'tcf-csc', label: 'TCF CSC' },
   { id: 'tcf-cfr', label: 'TCF CFR' },
+  { id: 'tcf-b1', label: 'TCF B1' },
   { id: 'tcm-csc', label: 'TCM CSC' },
   { id: 'tcm-cfr', label: 'TCM CFR' },
   { id: 'tpf', label: 'TPF' },
@@ -48,7 +49,7 @@ export const ADMIN_ONLY_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[]
 export const ADMIN_ONLY_DOMAINS: readonly Domain[] = ADMIN_ONLY_DOMAIN_OPTIONS.map((d) => d.id)
 
 /** Accès TCF / TCM garanti au compte full, y compris avec une ancienne liste env. */
-const FULL_TEST_DOMAINS: readonly Domain[] = ['tcf-csc', 'tcf-cfr', 'tcm-csc', 'tcm-cfr']
+const FULL_TEST_DOMAINS: readonly Domain[] = ['tcf-csc', 'tcf-cfr', 'tcf-b1', 'tcm-csc', 'tcm-cfr']
 
 /** Tous les domaines sélectionnables (ordre d’affichage final). */
 export const ACCESS_DOMAIN_OPTIONS: readonly { id: Domain; label: string }[] = [

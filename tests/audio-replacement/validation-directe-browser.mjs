@@ -18,10 +18,10 @@ await server.listen()
 let browser
 const errors = [], results = []
 try {
-  const { buildTpfFamilyTestPages } = await server.ssrLoadModule('/src/tcf/generate.ts')
+  const { buildTcfRandomTestPages } = await server.ssrLoadModule('/src/tcf/generate.ts')
   const { drawAssociationCompose } = await server.ssrLoadModule('/src/tcf/draw-series.ts')
   const { createRng } = await server.ssrLoadModule('/src/math/rng.ts')
-  const configs = buildTpfFamilyTestPages('tpf', 923)
+  const configs = ['A0-A1', 'A1-A2', 'A2-B1'].flatMap(level => buildTcfRandomTestPages(level, 923))
   const remaining = [...direct.sources], pages = []
   while (remaining.length) {
     const first = remaining.shift(), pack = [first]

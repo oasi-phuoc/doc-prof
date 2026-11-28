@@ -13,7 +13,7 @@ import {
   type TcfAudioEntry,
 } from './audio-bank'
 import { TCF_SCENARIOS, TCF_SCENARIO_AUTRE, tcfSlotByTypeId } from './catalog'
-import { tcfBankAllLevels } from './loader'
+import { tcfBank, tcfBankAllLevels } from './loader'
 import { tcfGroupId, tcfScene } from './sources'
 import { TCF_LONG_DEFAULT_QUESTIONS } from './draw-series'
 import type { TcfNiveau } from './types'
@@ -75,8 +75,8 @@ export function tcfCoCanDifferentiatePoints(typeId: string): boolean {
   return tcfCoAudioKind(typeId) != null
 }
 
-function poolForKind(kind: TcfCoAudioKind): TcfAudioEntry[] {
-  const all = tcfBankAllLevels('CO')
+function poolForKind(kind: TcfCoAudioKind, niveau?: TcfNiveau): TcfAudioEntry[] {
+  const all = niveau ? tcfBank(niveau, 'CO') : tcfBankAllLevels('CO')
   if (kind === 'court') return tcfCourtAudioEntries(all)
   if (kind === 'moyen') return tcfMoyenAudioEntries(all)
   if (kind === 'scenario') return tcfScenarioAudioEntries(all)
@@ -125,7 +125,8 @@ function slotLabel(kind: TcfCoAudioKind, slotCount: number, index: number): stri
 
 export function TcfCoAudioSlotsPicker({
   typeId,
-  niveau: _niveau,
+  niveau,
+  sameLevel = false,
   slots,
   questionCount,
   pickMode = 'aleatoire',
@@ -133,6 +134,7 @@ export function TcfCoAudioSlotsPicker({
 }: {
   typeId: string
   niveau: TcfNiveau
+  sameLevel?: boolean
   slots?: Array<string | undefined>
   questionCount?: number
   /** Défaut Aléatoire : tirage selon le tag ; Libre : menus filtrés sur ce tag. */
@@ -148,7 +150,8 @@ export function TcfCoAudioSlotsPicker({
 }) {
   const kind = tcfCoAudioKind(typeId)
   const slotCount = tcfCoAudioSlotCount(typeId)
-  const pool = useMemo(() => (kind ? poolForKind(kind) : []), [kind])
+  const level = sameLevel ? niveau : undefined
+  const pool = useMemo(() => (kind ? poolForKind(kind, level) : []), [kind, level])
   const groups = useMemo(() => groupByScenario(pool), [pool])
   const isLibre = pickMode === 'libre'
 

@@ -2,11 +2,13 @@ import type { MathItem, WorksheetBlock, WorksheetPage } from '@/math/types'
 import { headingForSlice } from '@/math/page-break-heading'
 
 /** Cut inside audio frames without redrawing choices or changing question indexes. */
-export function splitTcfAudioQuestionPages(page: WorksheetPage): WorksheetPage[] | null {
+export function splitTcfAudioQuestionPages(page: WorksheetPage, includeItemCuts = false): WorksheetPage[] | null {
   const hasCuts = page.blocks.some(block => block.items.some(item =>
     item.tcf?.kind === 'audio_cadre' && item.tcf.questions.some(q =>
       q.formModeIndex != null && q.formModeIndex > 1 && block.tcfQuestionPageBreakBefore?.includes(q.formModeIndex))))
-  if (!hasCuts) return null
+  const hasItemCuts = includeItemCuts && page.blocks.some(block =>
+    block.tcfPageBreakAfter?.some((cut, index) => cut && index < block.items.length - 1))
+  if (!hasCuts && !hasItemCuts) return null
   const pages: WorksheetPage[] = []
   let blocks: WorksheetBlock[] = []
   const flushPage = () => {

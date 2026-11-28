@@ -1,13 +1,18 @@
 import type { MathItem, PageConfig } from '@/math/types'
-import { tryGenerateSuisseBlock } from './suisse'
-import { isSocieteType } from './types'
+import { SOCIETE_DOMAIN, SOCIETE_PLACEHOLDER } from './catalog'
 
-/** Fiches Société. La Suisse est un contenu fixe (pas de tirage). */
 export function tryGenerateSocieteBlock(
   config: PageConfig,
-): { instruction: string; items: MathItem[] } | null {
-  if (!isSocieteType(config.exerciseType)) return null
-  const built = tryGenerateSuisseBlock(config.exerciseType)
-  if (!built) return null
-  return { instruction: built.instruction, items: built.items }
+): { title: string; instruction: string; items: MathItem[] } | null {
+  if (config.domain !== SOCIETE_DOMAIN) return null
+  return {
+    title: SOCIETE_PLACEHOLDER.label,
+    instruction: SOCIETE_PLACEHOLDER.instruction,
+    items: [{
+      layout: 'text',
+      prompt: SOCIETE_PLACEHOLDER.description,
+      answer: '',
+      noPoints: true,
+    }],
+  }
 }

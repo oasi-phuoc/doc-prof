@@ -2,6 +2,7 @@ import { createRng, pick, shuffle, type Rng } from '@/math/rng'
 import type { MathItem, PageConfig } from '@/math/types'
 import {
   TCF_COMPETENCES,
+  TCF_B1_DOMAIN,
   TCF_CONSIGNES_TYPE,
   TCF_INFO_TOPIC,
   TCF_SLOTS,
@@ -22,6 +23,8 @@ import { isAssociationAnnonce } from './association-documents'
 import { tcfAudioSrc } from './media'
 import { threeThemeImageSrc } from './three-themes-images'
 import { limitTcfCeQuestions } from './ce-questions'
+import { drawTpfPlacementExercise } from './tpf-content'
+import { TPF_PLACEMENT_TASKS, tpfPlacementTask } from './tpf-placement'
 import { tcfCoConsigneForSlot, tcfCoConsigneForType, tcfPeConsigne } from './consignes'
 import {
   drawAssociationCompose,
@@ -476,6 +479,7 @@ export function tcfExerciseItems(
       return [tcfItem({ kind: 'support', exercise: { ...ex, support: { themes } } }, true, '', ex.points)]
     }
     case 'entretien':
+    case 'lecture_progressive':
     case 'image_interaction':
     case 'mots_theme':
     case 'sequence_4_images':
@@ -600,18 +604,23 @@ function finishTcfExercise(
 /** Exercice TCF résolu pour un bloc (banque épinglée, édition libre, ou tirage). */
 export function resolveTcfExercise(config: PageConfig, rng: Rng): TcfExercise | undefined {
   const niveau = tcfNiveauForConfig(config.domain, config.difficulty)
+  const sameLevel = config.domain === TCF_B1_DOMAIN
   if (isTcfConsignesType(config.exerciseType)) return undefined
   const slot = tcfSlotByTypeId[config.exerciseType]
   const legacy = slot ? undefined : tcfTypeByTypeId[config.exerciseType]
   if (!slot && !legacy) return undefined
   const competence = (slot ?? legacy)!.competence
-  if (config.tcfExercise && config.tcfExercise.competence === competence) {
+  if (config.tcfExercise?.competence === competence && (!sameLevel || config.tcfExercise.niveau === niveau)) {
     return finishTcfExercise(config.tcfExercise, config, true)
+  }
+  if (config.domain === TPF_DOMAIN && tpfPlacementTask(config.exerciseType)) {
+    return finishTcfExercise(drawTpfPlacementExercise(config.exerciseType, rng, config.tcfBankId), config, true)
   }
   // Libre : slots épinglés ; Aléatoire (défaut) : tirage pur dans le pool tagué.
   const composeOpts = {
     audioSlots: config.tcfAudioPickMode === 'libre' ? config.tcfAudioSlots : undefined,
     questionCount: config.tcfQuestionCount,
+    sameLevel,
   }
   // CSC / TPF CO exercice 1 (« Événement ») : 6 audios tagués `court` + 1 Q chacune.
   if (slot?.competence === 'CO' && slot.numero === 1) {
@@ -669,7 +678,7 @@ export function resolveTcfExercise(config: PageConfig, rng: Rng): TcfExercise | 
   }
 
   const pinned = tcfExerciseById(config.tcfBankId)
-  if (pinned && pinned.competence === competence) {
+  if (pinned?.competence === competence && (!sameLevel || pinned.niveau === niveau)) {
     return finishTcfExercise(pinned, config, false)
   }
   const chosen = bank.find((ex) => ex.id === config.tcfBankId)
@@ -718,7 +727,9 @@ export function tryGenerateTcfBlock(
       ? tcfCoConsigneForType(ex.type_exercice) ||
         (slot?.competence === 'CO' ? tcfCoConsigneForSlot(slot.numero) : undefined)
       : undefined
-  const customConsigne = config.tcfExercise != null ? ex.consigne?.trim() : undefined
+  const customConsigne = config.tcfExercise != null || tpfPlacementTask(config.exerciseType) || (ex.competence === 'PO' && ex.niveau === 'A2-B1')
+    ? ex.consigne?.trim()
+    : undefined
   // PE : la situation (« Vous allez en vacances… ») est le texte élève, pas la grille.
   const peConsigne = tcfPeConsigne(ex)
   const instruction =
@@ -825,12 +836,18 @@ function appendNiveauExercisePages(
   domain: TpfFamilyDomain,
 ) {
   const page = (typeId: string, ex: TcfExercise, extra: Partial<PageConfig> = {}) =>
-    tcfPage(typeId, niveau, { tcfBankId: ex.id, pointsPerQuestion: 1, ...extra }, domain)
+    tcfPage(typeId, niveau, {
+      tcfBankId: ex.id,
+      pointsPerQuestion: 1,
+      ...(domain === TCF_B1_DOMAIN ? { tcfAudioPickMode: 'libre' } : {}),
+      ...extra,
+    }, domain)
+  const sameLevel = domain === TCF_B1_DOMAIN
   const coMax = niveau === 'A0-A1' ? 5 : 4
   for (const slot of TCF_SLOTS.filter((s) => s.competence === 'CO' && (s.numero ?? 0) <= coMax)) {
     // Exercice 1 : composition déterministe (6 audios `court`), pas un pack banque figé.
     if (slot.numero === 1) {
-      const composed = drawSixCourtsCompose(niveau, rng)
+      const composed = drawSixCourtsCompose(niveau, rng, { sameLevel })
       if (composed) {
         pages.push(
           tcfPage(
@@ -845,7 +862,7 @@ function appendNiveauExercisePages(
     }
     // Exercice 2 : 3 audios `moyen` × 2 questions.
     if (slot.numero === 2) {
-      const composed = drawTroisMoyensCompose(niveau, rng)
+      const composed = drawTroisMoyensCompose(niveau, rng, { sameLevel })
       if (composed) {
         pages.push(
           tcfPage(
@@ -862,6 +879,7 @@ function appendNiveauExercisePages(
     if (slot.numero === 3) {
       const composed = drawUnLongCompose(niveau, rng, {
         questionCount: TCF_LONG_DEFAULT_QUESTIONS,
+        sameLevel,
       })
       if (composed) {
         pages.push(
@@ -882,7 +900,7 @@ function appendNiveauExercisePages(
     }
     // Exercice 4 : 4 audios `scenario` + 6 images (dont 2 leurres).
     if (slot.numero === 4) {
-      const composed = drawAssociationCompose(niveau, rng)
+      const composed = drawAssociationCompose(niveau, rng, { sameLevel })
       if (composed) {
         pages.push(
           tcfPage(
@@ -924,13 +942,14 @@ function appendNiveauExercisePages(
   for (const slot of TCF_SLOTS.filter((s) => s.competence === 'PE' && s.numero != null)) {
     const pool = numberedBank(niveau, slot)
     if (pool.length > 0) {
-      const peDefaults = tcfPeSlotDefaults(slot.typeId)
+      const peDefaults = tcfPeSlotDefaults(slot.typeId, niveau)
       pages.push(
         tcfPage(
           slot.typeId,
           niveau,
           {
             tcfBankId: pick(rng, pool).id,
+            ...(domain === TCF_B1_DOMAIN ? { tcfAudioPickMode: 'libre' } : {}),
             pointsPerQuestion: peDefaults?.pointsPerQuestion ?? 1,
             tcfPointsDetail: peDefaults?.tcfPointsDetail,
             inlineBlankPx: peDefaults?.inlineBlankPx,
@@ -942,9 +961,17 @@ function appendNiveauExercisePages(
   }
   const poSlot = TCF_SLOTS.find((s) => s.competence === 'PO')!
   const poPool = numberedBank(niveau, poSlot)
-  for (const group of TCF_PO_GROUPS.filter((g) => g.id !== 'interaction')) {
-    const inGroup = poPool.filter((ex) => tcfGroupId(ex) === group.id)
-    if (inGroup.length > 0) pages.push(page(poSlot.typeId, pick(rng, inGroup)))
+  const poGroups = niveau === 'A2-B1'
+    ? ['entretien', 'interaction', 'point-de-vue']
+    : TCF_PO_GROUPS.filter(({ id }) => id !== 'interaction' && id !== 'point-de-vue').map(({ id }) => id)
+  for (const group of poGroups) {
+    const inGroup = poPool.filter((ex) => tcfGroupId(ex) === group)
+    if (inGroup.length > 0) {
+      const exercise = pick(rng, inGroup)
+      pages.push(page(poSlot.typeId, exercise, niveau === 'A2-B1'
+        ? { tcfScenario: group, pointsPerQuestion: exercise.points ?? 1 }
+        : {}))
+    }
   }
 }
 
@@ -965,17 +992,18 @@ export function buildTcfRandomTestPages(
   return pages
 }
 
-/**
- * Recette du domaine : TCF-CSC = A0-A1, TCF-CFR = A1-A2,
- * TPF = les trois niveaux (placement, A2-B1 compris).
- */
+/** Le TPF utilise une progression dédiée. Les TCF gardent leurs tests par niveau. */
 export function buildTpfFamilyTestPages(domain: string, seed: number): PageConfig[] {
   const d = canonicalTpfFamilyDomain(domain)
-  const niveaux = tpfNiveauxForDomain(d)
-  const rng = createRng(seed)
-  const pages: PageConfig[] = [tcfConsignesPage(niveaux[0]!, d)]
-  for (const niveau of niveaux) {
-    appendNiveauExercisePages(pages, niveau, rng, d)
+  if (d !== TPF_DOMAIN) {
+    return buildTcfRandomTestPages(tpfNiveauxForDomain(d)[0]!, seed, d)
   }
-  return pages
+  const rng = createRng(seed)
+  return [
+    tcfConsignesPage('A0-A1', TPF_DOMAIN),
+    ...TPF_PLACEMENT_TASKS.map((task) => tcfPage(task.typeId, task.niveau, {
+      tcfBankId: drawTpfPlacementExercise(task.typeId, rng)?.id,
+      pointsPerQuestion: 'points' in task ? task.points : 1,
+    }, TPF_DOMAIN)),
+  ]
 }

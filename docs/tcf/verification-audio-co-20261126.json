@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-26",
+  "baseline_commit": "e72ec7c2424ce55cc8ca56cf9a4a33924df03915",
+  "scope": "Trois banques CO CE/CO des niveaux A0–A1 à A2–B1. Lecture des JSON actifs et des références au commit de départ.",
+  "summary": {
+    "co_supports": 1016,
+    "co_questions": 6587,
+    "unique_audio_paths": 1371,
+    "invalid_track_or_transcript_links": 0,
+    "absent_files_in_git_tree": 0,
+    "absent_durations": 0,
+    "audio_paths_with_differing_transcript_word_sequences": 0,
+    "audio_files_decoded": 1371,
+    "audio_decode_errors": 0
+  },
+  "invalid_track_or_transcript_links": [],
+  "absent_files_in_git_tree": [],
+  "absent_durations": [],
+  "differences_to_review": [],
+  "human_audio_listening_performed": false,
+  "audio_decode_errors": [],
+  "technical_check": "Décodage intégral de la première piste audio de chaque fichier référencé, avec arrêt sur erreur de FFmpeg."
+}

@@ -251,6 +251,10 @@ export function validateTcfExercise(ex: TcfExercise, options?: TcfValidateOption
     case 'entretien':
       if (ex.support.questions.every((q) => blank(q))) errors.push('Au moins une question d’entretien.')
       break
+    case 'lecture_progressive':
+      if (blank(ex.support.titre)) errors.push('Le titre de la lecture est vide.')
+      if (blank(ex.support.texte)) errors.push('Le texte à lire est vide.')
+      break
     case 'trois_themes': {
       const themes = ex.support.themes.filter((t) => !blank(t.theme))
       if (themes.length < 3) errors.push('Au moins 3 thèmes.')

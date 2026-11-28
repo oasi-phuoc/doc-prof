@@ -20,11 +20,11 @@ await server.listen()
 let browser
 const errors = [], results = []
 try {
-  const { buildTpfFamilyTestPages } = await server.ssrLoadModule('/src/tcf/generate.ts')
+  const { buildTcfRandomTestPages } = await server.ssrLoadModule('/src/tcf/generate.ts')
   const { drawAssociationCompose } = await server.ssrLoadModule('/src/tcf/draw-series.ts')
   const { createRng } = await server.ssrLoadModule('/src/math/rng.ts')
   const { tcfImageSrc } = await server.ssrLoadModule('/src/tcf/media.ts')
-  const configs = buildTpfFamilyTestPages('tpf', 923)
+  const configs = ['A0-A1', 'A1-A2', 'A2-B1'].flatMap(level => buildTcfRandomTestPages(level, 923))
   const sample = JSON.parse(await readFile('docs/interactive/demo-source-recipe.json', 'utf8'))
   const genderAudit = genderReviewMode ? JSON.parse(await readFile('docs/tcf/recontrole-genres-scenes-20261114.json', 'utf8')) : null
   const correction = genderAudit?.corrections[0]

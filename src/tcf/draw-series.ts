@@ -37,6 +37,12 @@ export type TcfComposeOpts = {
   audioSlots?: readonly (string | undefined)[]
   /** Nombre de questions pour un audio long (défaut 5). */
   questionCount?: number
+  /** Le domaine TCF B1 n’utilise que les audios de son niveau. */
+  sameLevel?: boolean
+}
+
+function coSources(niveau: TcfNiveau, opts: TcfComposeOpts): TcfExercise[] {
+  return opts.sameLevel ? tcfBank(niveau, 'CO') : tcfBankAllLevels('CO')
 }
 
 /**
@@ -106,9 +112,9 @@ type DialogueUnit = {
   sceneKey: string
 }
 
-function associationDialoguePool(): DialogueUnit[] {
+function associationDialoguePool(sources: readonly TcfExercise[]): DialogueUnit[] {
   const out: DialogueUnit[] = []
-  for (const entry of tcfScenarioAudioEntries(tcfBankAllLevels('CO'))) {
+  for (const entry of tcfScenarioAudioEntries(sources)) {
     const scene = entry.scenarioScene
     if (!scene) continue
     out.push({
@@ -190,7 +196,7 @@ export function drawAssociationCompose(
   rng: Rng = createRng(randomSeed()),
   opts: TcfComposeOpts = {},
 ): TcfCoAssociation | null {
-  const all = associationDialoguePool()
+  const all = associationDialoguePool(coSources(niveau, opts))
   const pool = enoughDialogueUnits(niveau, all, 4)
   let picked: DialogueUnit[] | null = null
   let leurrePool: string[] = []
@@ -253,7 +259,7 @@ export function drawSixCourtsCompose(
   rng: Rng = createRng(randomSeed()),
   opts: TcfComposeOpts = {},
 ): TcfCoSixCourts | null {
-  const all = tcfCourtAudioEntries(tcfBankAllLevels('CO'))
+  const all = tcfCourtAudioEntries(coSources(niveau, opts))
   const pool = enoughEntries(niveau, all, 6)
   const picked = pickAudioSlots(pool, 6, rng, opts.audioSlots, all)
   if (!picked) return null
@@ -288,7 +294,7 @@ export function drawTroisMoyensCompose(
   rng: Rng = createRng(randomSeed()),
   opts: TcfComposeOpts = {},
 ): TcfCoTroisMoyens | null {
-  const all = tcfMoyenAudioEntries(tcfBankAllLevels('CO'))
+  const all = tcfMoyenAudioEntries(coSources(niveau, opts))
   const pool = enoughEntries(niveau, all, 3)
   const picked = pickAudioSlots(pool, 3, rng, opts.audioSlots, all)
   if (!picked) return null
@@ -328,7 +334,7 @@ export function drawUnLongCompose(
   opts: TcfComposeOpts = {},
 ): TcfCoComplet | null {
   const want = Math.max(1, Math.min(20, opts.questionCount ?? TCF_LONG_DEFAULT_QUESTIONS))
-  const all = tcfLongAudioEntries(tcfBankAllLevels('CO'))
+  const all = tcfLongAudioEntries(coSources(niveau, opts))
   const pool = enoughEntries(niveau, all, 1)
   const picked = pickAudioSlots(pool, 1, rng, opts.audioSlots, all)
   if (!picked?.[0]) return null
@@ -366,7 +372,7 @@ export function drawObjetsCompose(
   rng: Rng = createRng(randomSeed()),
   opts: TcfComposeOpts = {},
 ): TcfCoImages | null {
-  const all = tcfObjetAudioEntries(tcfBankAllLevels('CO'))
+  const all = tcfObjetAudioEntries(coSources(niveau, opts))
   const pool = enoughEntries(niveau, all, 1)
   const picked = pickAudioSlots(pool, 1, rng, opts.audioSlots, all)
   if (!picked?.[0]) return null

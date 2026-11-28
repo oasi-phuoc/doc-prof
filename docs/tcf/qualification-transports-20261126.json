@@ -1,0 +1,3011 @@
+{
+  "date": "2026-11-26",
+  "baseline_commit": "e72ec7c2424ce55cc8ca56cf9a4a33924df03915",
+  "source_register": "docs/tcf/controle-vehicules-ivoire-20261122.json",
+  "scope": "Relecture de la source active, des trois choix et du corrigé pour les 76 questions signalées. Comparaison des trois images effectivement utilisées et mesure des fonds quand l’objet est isolé.",
+  "human_audio_listening_performed": false,
+  "summary": {
+    "context_qualified": 76,
+    "visual_reviewed": 76,
+    "visual_correction_needed": 19,
+    "visual_not_reviewed": 0,
+    "questions_by_category": {
+      "action_ou_activite": 17,
+      "vehicule": 4,
+      "objet": 12,
+      "accessoire": 4,
+      "document": 9,
+      "lieu_ou_support": 13,
+      "incident_ou_equipement_contextuel": 2,
+      "objets_au_pluriel_ou_composes": 5,
+      "vehicules_alternatifs": 1,
+      "service_ou_modalite": 4,
+      "activites_composees": 3,
+      "evenement": 2
+    },
+    "visual_retained": 38,
+    "distinct_images_reviewed": 155,
+    "visual_corrected": 19
+  },
+  "visual_criteria_by_category": {
+    "vehicule": "Montrer le type de véhicule, ses caractéristiques distinctives et le pluriel demandé sur le fond ivoire validé.",
+    "vehicules_alternatifs": "Montrer les deux véhicules de chaque alternative, à poids visuel égal sur le fond ivoire validé.",
+    "objet": "Isoler chacun des trois objets sur le fond ivoire validé et conserver les caractéristiques utiles.",
+    "accessoire": "Distinguer chaque accessoire et son usage, dans une vue entière sur fond ivoire.",
+    "document": "Distinguer les trois documents entiers sur fond ivoire par leur forme et leurs pictogrammes, sans données lisibles superflues.",
+    "objets_au_pluriel_ou_composes": "Montrer tous les éléments de la réponse, garder le pluriel demandé et les isoler sur le fond ivoire lorsque le lieu est déjà donné dans la question.",
+    "action_ou_activite": "Montrer l’action entière et les personnes effectivement en train de la faire, avec un contexte cohérent dans le style peint TCF.",
+    "activites_composees": "Montrer les deux activités de chaque choix. Les actions peintes ou les équipements symboliques conviennent si les trois choix utilisent une composition équivalente.",
+    "lieu_ou_support": "Montrer le lieu ou le support de la réponse. Les véhicules mentionnés dans les choix servent de repères lorsqu’ils constituent un lieu.",
+    "incident_ou_equipement_contextuel": "Montrer la cause du retard ou le contexte ferroviaire qui donne son sens à l’équipement, avec des décors peints.",
+    "service_ou_modalite": "Donner des indices visuels du service ou du canal correspondant dans chaque choix.",
+    "evenement": "Montrer les événements complets et les personnes en action, avec des décors peints."
+  },
+  "questions": [
+    {
+      "key": "tcf-a1p-s4-ce-1#7",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "question": "Quelle activité Thomas adore-t-il ?",
+      "labels": [
+        "Faire du vélo",
+        "Jouer au tennis",
+        "Aller au cinéma"
+      ],
+      "correct_label": "Faire du vélo",
+      "source_sha256": "01af2ac4d153c8ae9ca61076e64b2bf3d7361b4ecc328caf6627c5dd7f92950e",
+      "semantic_sha256": "43dfa64a2935e953db2e45218e40e9b1e85baf2c1ed8ac526d3932f934b479b7",
+      "category": "action_ou_activite",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/26876e2318ce.webp",
+        "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Les trois activités sont visibles dans des scènes peintes : pédaler, jouer au tennis et assister à une séance.",
+      "image_sha256": [
+        "cf547a08822a952696ecd9be9719aeaf66a72544d715419293e1aef4e158cf77",
+        "58f115a3bb9f3bc80a0a69592ad775da19b1bd86b3699030cea12ade79faa727",
+        "adc515d9fc36b54ddc69488999f2ccaf16f18ebfa441a2c1e481552e0b298303"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        221.0,
+        219.0,
+        224.0
+      ]
+    },
+    {
+      "key": "delf-a1s-ce-024#5",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "question": "Quel type de véhicule peut-on louer ?",
+      "labels": [
+        "Des vélos",
+        "Des voitures",
+        "Des motos"
+      ],
+      "correct_label": "Des vélos",
+      "source_sha256": "f927b752183f3b30b53dbbb9036941451e8f2fa4dcc89e58951afaf2af1d087d",
+      "semantic_sha256": "eb53216e1b401008ac25b3707f5803a92798b987c9bf598a4eb8d5fa46b59ead",
+      "category": "vehicule",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-velos.webp",
+        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/vocab-motos.webp"
+      ],
+      "visual_status": "corrected",
+      "image_sha256": [
+        "8e93b5ef2b7c917408215e31c0407ac16e08eca00fca720344703efe70c7ea59",
+        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
+        "f48051b1f7700466e3018be8e783829a662e25c696895bc8a9bee216e784f455"
+      ],
+      "visual_review": "Les vélos et motos sont représentés par paires sur fond clair. Le choix des voitures montre une seule voiture en décor de rue. Préparer une paire de voitures sur l’ivoire de référence et mesurer les trois fonds.",
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        5.0,
+        222.0,
+        2.0
+      ],
+      "active_image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-velos.webp",
+        "/lib/images/tcf/qcm-audit/qcm-delf100-usagers-voitures.png",
+        "/lib/images/tcf/qcm-audit/vocab-motos.webp"
+      ],
+      "active_image_sha256": [
+        "8e93b5ef2b7c917408215e31c0407ac16e08eca00fca720344703efe70c7ea59",
+        "31c5bae9a66cfc124c21445fb0efd29f64865673c43d9b862069415d500f76cf",
+        "f48051b1f7700466e3018be8e783829a662e25c696895bc8a9bee216e784f455"
+      ],
+      "correction_register": "docs/tcf/corrections-transports-20261126.json",
+      "correction_note": "Les voitures sont désormais présentées par deux sur fond ivoire, comme les vélos et les motos."
+    },
+    {
+      "key": "delf-a1-2022-ce-ex1-carte#6",
+      "bank": "src/tcf/content/a0-a1/ce.json",
+      "question": "Quelle activité Ana pratique-t-elle en plus des promenades ?",
+      "labels": [
+        "Faire du vélo",
+        "Le ski",
+        "La natation"
+      ],
+      "correct_label": "Faire du vélo",
+      "source_sha256": "a9c06a67d60e1ed0ad53e3165a2e28ee48209358c153e527abdd22c0fc06152b",
+      "semantic_sha256": "65ae7ae456f71ef2db8fbd40ef03ac89c2d250634639d88f04030d4ac4c03818",
+      "category": "action_ou_activite",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp",
+        "/lib/images/tcf/qcm-audit/eb82d6d99458.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "La cycliste, la skieuse et la nageuse montrent les activités, chacune avec son équipement et son lieu.",
+      "image_sha256": [
+        "cf547a08822a952696ecd9be9719aeaf66a72544d715419293e1aef4e158cf77",
+        "77991eaa00a37536135fc55956abe576d56a3b85640d6cd3bba28e62aeb21316",
+        "97987baa5a97169addee30579a22ea18907f2dfb2912ec7b943a139b2adcca84"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        221.0,
+        129.0,
+        200.0
+      ]
+    },
+    {
+      "key": "tcf-a1j-s2-co-2#7",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quel objet peut-on gagner ?",
+      "labels": [
+        "Un ballon",
+        "Une raquette",
+        "Un vélo"
+      ],
+      "correct_label": "Un ballon",
+      "source_sha256": "e85df35b27b6f7e0d08706318a98081557d86096fd16745ba227f90c734190eb",
+      "semantic_sha256": "ed2436f11b6116c24f17dcb3188a5d0f1db82172a58d534718711c8c59a587be",
+      "category": "objet",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-ballon-football.webp",
+        "/lib/images/tcf/qcm-audit/vocab-raquette.webp",
+        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+      ],
+      "visual_status": "corrected",
+      "visual_review": "Le ballon et la raquette sont isolés sur ivoire. Le vélo est en extérieur. Utiliser une variante de vélo isolé.",
+      "image_sha256": [
+        "9a1fd2cab3b1cc541d2ef2d8a80e5f1c7769fccde473f528467b78b8e5f63089",
+        "dbe83597f5ae28b640c34ce9e9dbde3fd8c1db02bd7a1df5970df011f6deaf55",
+        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        5.0,
+        1.0,
+        210.0
+      ],
+      "active_image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-ballon-basket.webp",
+        "/lib/images/tcf/qcm-audit/vocab-raquette.webp",
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp"
+      ],
+      "active_image_sha256": [
+        "f6750f8cd880bd5b2967e4fc02c6cfffabbbadea743ebc7d707a5c4ab8c39ea8",
+        "dbe83597f5ae28b640c34ce9e9dbde3fd8c1db02bd7a1df5970df011f6deaf55",
+        "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085"
+      ],
+      "correction_register": "docs/tcf/corrections-transports-20261126.json",
+      "correction_note": "Le ballon de basket suit l’activité mentionnée. La raquette et le vélo sont entiers et isolés sur fond ivoire."
+    },
+    {
+      "key": "tcf-a1j-s3-co-5#7",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quel accessoire faut-il prendre pour la tête ?",
+      "labels": [
+        "Un chapeau",
+        "Un casque de vélo",
+        "Un bonnet de laine"
+      ],
+      "correct_label": "Un chapeau",
+      "source_sha256": "30c05d14861663754c06cb30fcc5bda7756cacc0f0dd03cea6e25a89ff47eb34",
+      "semantic_sha256": "ca36aa476918098663324736d2fdeb84d7e2160985e656020664ec53c9d456d5",
+      "category": "accessoire",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-chapeau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-casque-velo-4-3.webp",
+        "/lib/images/tcf/qcm-audit/f137023c3623.webp"
+      ],
+      "visual_status": "corrected",
+      "visual_review": "Le casque de vélo a un fond presque blanc, visible à côté du chapeau et du bonnet sur ivoire. Harmoniser le casque et reprendre le chapeau si nécessaire.",
+      "image_sha256": [
+        "021727df752448f8655530fbe6b3acff8243aa0ab9bc929b860ab882f35bcd39",
+        "4e7c2777e0eb4a9d3208568f2ae4a6bb6c7a58fa2236c03907c0e3a4524cb828",
+        "a2034ae4e3ce02181604d53d2fad5051ec7f5f2aa56e50be2d3b892092343590"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        11.0,
+        18.0,
+        3.0
+      ],
+      "active_image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-chapeau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-transport-casque-velo-ivoire.png",
+        "/lib/images/tcf/qcm-audit/f137023c3623.webp"
+      ],
+      "active_image_sha256": [
+        "021727df752448f8655530fbe6b3acff8243aa0ab9bc929b860ab882f35bcd39",
+        "e5e835363401c973cc5dba5a645244b612837bdccc8fc88dff3b8b0aa0a305a8",
+        "a2034ae4e3ce02181604d53d2fad5051ec7f5f2aa56e50be2d3b892092343590"
+      ],
+      "correction_register": "docs/tcf/corrections-transports-20261126.json",
+      "correction_note": "Le casque de vélo rouge est isolé sur le même ivoire que le chapeau et le bonnet."
+    },
+    {
+      "key": "tcf-a1-s1-co-3#7",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quel document faut-il montrer ?",
+      "labels": [
+        "L’ordonnance",
+        "Le contrat de travail",
+        "Le billet de train"
+      ],
+      "correct_label": "L’ordonnance",
+      "source_sha256": "99673ff8182474a8c42b9edafad0552e11c01d828552ebe86a9925e9357ea221",
+      "semantic_sha256": "fd295fcad09768f0cb5482dd3e829afefb72b9c249c82cfd036b10c74b2d2bc9",
+      "category": "document",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-ordonnance.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-contrat-travail.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp"
+      ],
+      "visual_status": "corrected",
+      "visual_review": "L’ordonnance et le contrat sont montrés dans des scènes avec des titres lisibles, alors que le billet est isolé. Donner aux trois documents une présentation et un fond cohérents.",
+      "image_sha256": [
+        "e8415a7701274dd5b73e2ef39fca2f0b650eb81aa4a8e7a4037c1cb8093d2d27",
+        "315cb59f0cc9d313b858adf9ca01f3409f45acc40f711421057576a87f9b0f9e",
+        "89f410c418e846d406e133c82e5c82563b738571bca3df9b5f3860ac81919734"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        143.0,
+        98.0,
+        5.0
+      ],
+      "active_image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-document-ordonnance.png",
+        "/lib/images/tcf/qcm-audit/qcm-transport-contrat-travail-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-b1-billet-train-ivoire.png"
+      ],
+      "active_image_sha256": [
+        "087e59160f47acf5ce150ac8c1f79694605a0d09fb6073b4ce79bc475734454f",
+        "3e6d188c9bd78a87777ceb0bb0819f6bd7ffa0094b25db8921ac66ae9c0bcc3c",
+        "f1bf7e8882c1c32e0bf75b87f740ff56b60b167fe847e443dc07a33f4dfae4ae"
+      ],
+      "correction_register": "docs/tcf/corrections-transports-20261126.json",
+      "correction_note": "Les trois documents sont entiers sur ivoire. La croix médicale, la mallette et le train permettent de les distinguer visuellement."
+    },
+    {
+      "key": "tcf-a1-s1-co-4#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quel document lui demande-t-on ?",
+      "labels": [
+        "Une pièce d’identité",
+        "Une ordonnance",
+        "Un billet de train"
+      ],
+      "correct_label": "Une pièce d’identité",
+      "source_sha256": "4bf177aa1043f9692787e867c0f372a6e7fc54716bd85e6d1ebf6f56e4767348",
+      "semantic_sha256": "8818453bc2b3fdbde07fbe6a498cd75ff56965e6891847181a9a1832ee76e5a8",
+      "category": "document",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-carte-identite.webp",
+        "/lib/images/tcf/qcm-audit/vocab-ordonnance.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp"
+      ],
+      "visual_status": "corrected",
+      "visual_review": "La carte d’identité et le billet sont isolés. L’ordonnance est présentée par un médecin dans un décor. Réutiliser une ordonnance isolée.",
+      "image_sha256": [
+        "047a4c60989ad2fa697f656c9c0475e17c74024479bb48c4314bff347199ac4f",
+        "e8415a7701274dd5b73e2ef39fca2f0b650eb81aa4a8e7a4037c1cb8093d2d27",
+        "89f410c418e846d406e133c82e5c82563b738571bca3df9b5f3860ac81919734"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        7.0,
+        143.0,
+        5.0
+      ],
+      "active_image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-carte-identite.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-document-ordonnance.png",
+        "/lib/images/tcf/qcm-audit/qcm-b1-billet-train-ivoire.png"
+      ],
+      "active_image_sha256": [
+        "047a4c60989ad2fa697f656c9c0475e17c74024479bb48c4314bff347199ac4f",
+        "087e59160f47acf5ce150ac8c1f79694605a0d09fb6073b4ce79bc475734454f",
+        "f1bf7e8882c1c32e0bf75b87f740ff56b60b167fe847e443dc07a33f4dfae4ae"
+      ],
+      "correction_register": "docs/tcf/corrections-transports-20261126.json",
+      "correction_note": "Les trois documents sont montrés dans leur intégralité sur des fonds ivoire de teintes proches."
+    },
+    {
+      "key": "tcf-a1-tpbb-co-2#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Où Sammy pense-t-il avoir laissé son livre ?",
+      "labels": [
+        "Chez lui",
+        "Au restaurant",
+        "Dans le bus"
+      ],
+      "correct_label": "Chez lui",
+      "source_sha256": "06edabaea51532ad2f512152f618c661f0fd282d88b731833f67b519ee4a31ef",
+      "semantic_sha256": "ed4a710f67c32948b91f75ad89c08a43ae6a5c8b2d766e6249aa3347b7cb3a46",
+      "category": "lieu_ou_support",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-maison-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-interieur-bus.png"
+      ],
+      "visual_status": "retain",
+      "visual_review": "La maison, le restaurant et l’intérieur du bus se distinguent clairement. Une vue intérieure du bus convient à la formulation.",
+      "image_sha256": [
+        "0c404fb24adfab9187ed1b424e63e0567f456c98f4fff5447a8d8d418604c8db",
+        "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4",
+        "93dae8e8f4e2b1cf33ae451757853ac77a0114e282bf26ff7e0660553b62338f"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        196.0,
+        198.0,
+        213.0
+      ]
+    },
+    {
+      "key": "tcf-a1-sem1-co-2#7",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quel document la personne peut-elle montrer au médecin ?",
+      "labels": [
+        "Son ordonnance",
+        "Son permis de conduire",
+        "Son billet de train"
+      ],
+      "correct_label": "Son ordonnance",
+      "source_sha256": "c3fdd5f5481b439494d35f3bfcbc81f8a728f92c48c28c18ad489c9e279759b7",
+      "semantic_sha256": "ea01a201a1fd6f11c70fc7b2d901183e0688983a2252db11b3ff8507cb36815a",
+      "category": "document",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-ordonnance.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-permis-conduire.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp"
+      ],
+      "visual_status": "corrected",
+      "visual_review": "La scène du médecin signale l’ordonnance. Le permis et le billet sont isolés. Aligner les trois documents sur l’ivoire.",
+      "image_sha256": [
+        "e8415a7701274dd5b73e2ef39fca2f0b650eb81aa4a8e7a4037c1cb8093d2d27",
+        "ee11a9c25ce1e01918f1570be499c4f7c1bee66bf30715f8a9dff7c9c416d455",
+        "89f410c418e846d406e133c82e5c82563b738571bca3df9b5f3860ac81919734"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        143.0,
+        2.0,
+        5.0
+      ],
+      "active_image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-document-ordonnance.png",
+        "/lib/images/tcf/qcm-audit/audit-context-permis-conduire.webp",
+        "/lib/images/tcf/qcm-audit/qcm-b1-billet-train-ivoire.png"
+      ],
+      "active_image_sha256": [
+        "087e59160f47acf5ce150ac8c1f79694605a0d09fb6073b4ce79bc475734454f",
+        "ee11a9c25ce1e01918f1570be499c4f7c1bee66bf30715f8a9dff7c9c416d455",
+        "f1bf7e8882c1c32e0bf75b87f740ff56b60b167fe847e443dc07a33f4dfae4ae"
+      ],
+      "correction_register": "docs/tcf/corrections-transports-20261126.json",
+      "correction_note": "L’ordonnance, le permis et le billet sont isolés et différenciés par leur présentation."
+    },
+    {
+      "key": "tcf-ss-a1-s9-co-2#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quelle est la cause de son retard ?",
+      "labels": [
+        "Une panne de métro",
+        "Une panne de voiture",
+        "Un embouteillage"
+      ],
+      "correct_label": "Une panne de métro",
+      "source_sha256": "0f1fb3cea616b69b7bf2e71cc86eb7374d2527b7efc552598ae2d10ee5a0937f",
+      "semantic_sha256": "c711ffc2cb93e7243f0c1a9bd087c0ebcb232d8804be5a6cb23a737ae3771258",
+      "category": "incident_ou_equipement_contextuel",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co57-panne-metro.webp",
+        "/lib/images/tcf/qcm-audit/co57-panne-voiture.webp",
+        "/lib/images/tcf/qcm-audit/co57-embouteillage.webp"
+      ],
+      "visual_status": "corrected",
+      "visual_review": "Les trois incidents ont un contexte lisible, mais le panneau « PANNE » nomme directement le choix métro. Garder le technicien et un pictogramme sans mot.",
+      "image_sha256": [
+        "67f50d0b9ace4e5a0a0f64d915bb4c5fd286a1cd2dab1f8aea70d37a5207adfa",
+        "ababd3a421f03025e089e393f582b992dc9ba04a2a7f8f63fa4028315c4308fd",
+        "259e3a7ff4221116ec3d9eb0c59384951d4d3766fe4ce9c933f30b95f87e7336"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        107.0,
+        178.0,
+        197.0
+      ],
+      "active_image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-transport-panne-metro-sans-texte.png",
+        "/lib/images/tcf/qcm-audit/co57-panne-voiture.webp",
+        "/lib/images/tcf/qcm-audit/co57-embouteillage.webp"
+      ],
+      "active_image_sha256": [
+        "47e0b327551b4c1f39a28d8871eaf2e6fb52b6d3cc09f864ab711734998ec9da",
+        "ababd3a421f03025e089e393f582b992dc9ba04a2a7f8f63fa4028315c4308fd",
+        "259e3a7ff4221116ec3d9eb0c59384951d4d3766fe4ce9c933f30b95f87e7336"
+      ],
+      "correction_register": "docs/tcf/corrections-transports-20261126.json",
+      "correction_note": "La technicienne et un pictogramme de clé identifient la panne du métro. Les trois choix montrent des incidents en situation."
+    },
+    {
+      "key": "tcf-ss-a1-s14-co-3#6",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quel accessoire faut-il porter sur la tête ?",
+      "labels": [
+        "Une casquette",
+        "Un casque de vélo",
+        "Un bonnet de laine"
+      ],
+      "correct_label": "Une casquette",
+      "source_sha256": "6e84c53682c736bba9e636610778005723f05e8d8397e911992d4d34d6ca26f1",
+      "semantic_sha256": "69b9da941b90cb6b5dae71bc36d9cb414b7cfa280418608ecfec415e8e6a9da9",
+      "category": "accessoire",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-casquette-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-casque-velo-4-3.webp",
+        "/lib/images/tcf/qcm-audit/f137023c3623.webp"
+      ],
+      "visual_status": "corrected",
+      "visual_review": "Le casque a un fond blanchâtre par rapport à la casquette rouge et au bonnet. Réutiliser la reprise ivoire du casque.",
+      "image_sha256": [
+        "ba55b24905b1260c27eb35d8095788a283e42df3900ceb2b2052b30074af7f9f",
+        "4e7c2777e0eb4a9d3208568f2ae4a6bb6c7a58fa2236c03907c0e3a4524cb828",
+        "a2034ae4e3ce02181604d53d2fad5051ec7f5f2aa56e50be2d3b892092343590"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        8.0,
+        18.0,
+        3.0
+      ],
+      "active_image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-casquette-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/qcm-transport-casque-velo-ivoire.png",
+        "/lib/images/tcf/qcm-audit/f137023c3623.webp"
+      ],
+      "active_image_sha256": [
+        "ba55b24905b1260c27eb35d8095788a283e42df3900ceb2b2052b30074af7f9f",
+        "e5e835363401c973cc5dba5a645244b612837bdccc8fc88dff3b8b0aa0a305a8",
+        "a2034ae4e3ce02181604d53d2fad5051ec7f5f2aa56e50be2d3b892092343590"
+      ],
+      "correction_register": "docs/tcf/corrections-transports-20261126.json",
+      "correction_note": "Le casque de vélo rouge et les deux couvre-chefs figurent sur des fonds ivoire proches."
+    },
+    {
+      "key": "tcf-ss-a1-s22-co-3#7",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Dans la troisième situation, quels documents recevra-t-elle bientôt ?",
+      "labels": [
+        "Ses billets d’avion",
+        "Son passeport",
+        "Son permis de conduire"
+      ],
+      "correct_label": "Ses billets d’avion",
+      "source_sha256": "7035266578db2b042b3ed201b9d88f0855a65062571f5da4b638b86df4fb6d0c",
+      "semantic_sha256": "02f8de5cedd1e48da421d30891f45ca199b09108548601765626f800c3e86ea2",
+      "category": "document",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-billets-avion-pluriel.png",
+        "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-permis-conduire.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Les deux billets d’avion montrent le pluriel. Le passeport et le permis restent distincts sur un fond clair.",
+      "image_sha256": [
+        "0e6097b9a91dc758df8ababbb7a01e1f238baffdc83fb9a2870f46bd4f07180a",
+        "c2f0b65db0e431c49bf0c0c17fe43e7cd5cc3f195e44b7208cff5ed2b5200ac0",
+        "ee11a9c25ce1e01918f1570be499c4f7c1bee66bf30715f8a9dff7c9c416d455"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        2.0,
+        6.0,
+        2.0
+      ]
+    },
+    {
+      "key": "tcf-ss-a1-s23-co-2#6",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Où peut-on trouver des recettes ?",
+      "labels": [
+        "Sur le site Internet",
+        "Dans le train",
+        "À la poste"
+      ],
+      "correct_label": "Sur le site Internet",
+      "source_sha256": "f036de63b8517b37217c218d6d0d638e0a69e7dc627c4958bd3448de4d0752a2",
+      "semantic_sha256": "b9ebe9d93743abd1acda626526c8016ff6ac06b911a8efedbc8fe11b35f17e25",
+      "category": "lieu_ou_support",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-internet.webp",
+        "/lib/images/tcf/qcm-audit/vocab-trains.webp",
+        "/lib/images/tcf/qcm-audit/co306-bureau-poste-dessine.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Un écran consulté, l’intérieur du train et le guichet postal différencient les trois supports ou lieux.",
+      "image_sha256": [
+        "80dbb26a14fff6a874b6d24b4b219389bbc1b64289f6c00fe730f572a645c187",
+        "2c9c83522eaffe47c25e792ca04ccd724ca92ce1ba54b7ea5db12a52ff51ab55",
+        "e239ebc1942ca1f2f369b2a9e732e6af6ab890bc38d31114abfb47f0cb061326"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        129.0,
+        151.0,
+        141.0
+      ]
+    },
+    {
+      "key": "tcf-ss-a1-s25-co-1#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quel appareil peut-elle notamment réparer ?",
+      "labels": [
+        "Un réfrigérateur",
+        "Une voiture",
+        "Un vélo"
+      ],
+      "correct_label": "Un réfrigérateur",
+      "source_sha256": "fbacd66d6ebf49fd3470577b8512181d6d8c30b52fc8e249afaf1aa984d26576",
+      "semantic_sha256": "887d0c0a6355d9ff40e2750340a5b4fb71df8e3a675124154cab176f6e30df81",
+      "category": "objet",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-refrigerateur.webp",
+        "/lib/images/tcf/qcm-audit/co834-voiture-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+      ],
+      "visual_status": "corrected",
+      "visual_review": "Le réfrigérateur est isolé et les deux véhicules sont en extérieur. Mettre les trois appareils ou véhicules sur un fond ivoire commun.",
+      "image_sha256": [
+        "b866622b33f7d931d666395c951d8a69940358de84c0697e55f7a32d45abe8fa",
+        "55da4bb01d69290bbaf21e97b935c9e72f115dbbffbc0e6ae23b4374cde28b85",
+        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        3.0,
+        222.0,
+        210.0
+      ],
+      "active_image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-refrigerateur.webp",
+        "/lib/images/tcf/qcm-audit/vocab-voiture-blanche.webp",
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp"
+      ],
+      "active_image_sha256": [
+        "b866622b33f7d931d666395c951d8a69940358de84c0697e55f7a32d45abe8fa",
+        "b3d024ac52aab493bb0df3a394cff19c8537db0ec7d17211851bc86849505a64",
+        "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085"
+      ],
+      "correction_register": "docs/tcf/corrections-transports-20261126.json",
+      "correction_note": "Le réfrigérateur, la voiture et le vélo sont isolés sur fond ivoire."
+    },
+    {
+      "key": "tcf-ss-a1-s25-co-4#8",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quels objets faut-il ranger dans le local ?",
+      "labels": [
+        "Les vélos",
+        "Les chaises",
+        "Les poussettes"
+      ],
+      "correct_label": "Les vélos",
+      "source_sha256": "2652733227774f3f4426223044a912f558196d4f562d064c6c1bf2bbb151b36b",
+      "semantic_sha256": "4b0a9346bae969d842174db9a0a70de3d9368d124a185bd07a7b7440351ef3d8",
+      "category": "objets_au_pluriel_ou_composes",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-velos.webp",
+        "/lib/images/tcf/qcm-audit/vocab-chaises.webp",
+        "/lib/images/tcf/qcm-audit/extension573-poussettes-pluriel.png"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Les vélos, chaises et poussettes sont tous au pluriel et chaque ensemble est présenté sur ivoire.",
+      "image_sha256": [
+        "8e93b5ef2b7c917408215e31c0407ac16e08eca00fca720344703efe70c7ea59",
+        "066983b6ec0938ab2ce7cf8d608d2c313b05d31c62e1432d9502dc9214c68027",
+        "73073e4744c7a983734060738963df89d6b09fca5cb938f77ddb9e8d3fc71387"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        5.0,
+        8.0,
+        1.0
+      ]
+    },
+    {
+      "key": "tcf-ss-a1-s26-co-1#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quel objet est laissé dans le couloir ?",
+      "labels": [
+        "Une poubelle",
+        "Un vélo",
+        "Une chaise"
+      ],
+      "correct_label": "Une poubelle",
+      "source_sha256": "397a907a8bc77e4848001b48933204e32740593b65250df5ba866b711d9cf0a7",
+      "semantic_sha256": "c013602bc69d580807aded75c4f845a311104d4c659320e945b1724e4d8b28f2",
+      "category": "objet",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-poubelle.webp",
+        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-chaise.webp"
+      ],
+      "visual_status": "corrected",
+      "visual_review": "La poubelle et la chaise sont isolées et le vélo est en plein parc. Réutiliser un vélo isolé.",
+      "image_sha256": [
+        "dc9c1c288598cf6d7498add5baf767af76839050d1260939baca4464d42f9eb3",
+        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b",
+        "00c76569cc1c5c224e4d9da2104dbed6fd65bf571b753324df8de05eb1d223c1"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        2.0,
+        210.0,
+        5.0
+      ],
+      "active_image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-poubelle.webp",
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+        "/lib/images/tcf/qcm-audit/vocab-chaise.webp"
+      ],
+      "active_image_sha256": [
+        "dc9c1c288598cf6d7498add5baf767af76839050d1260939baca4464d42f9eb3",
+        "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085",
+        "00c76569cc1c5c224e4d9da2104dbed6fd65bf571b753324df8de05eb1d223c1"
+      ],
+      "correction_register": "docs/tcf/corrections-transports-20261126.json",
+      "correction_note": "Le vélo rejoint la poubelle et la chaise sur un fond ivoire homogène."
+    },
+    {
+      "key": "tcf-ss-a1-s32-co-3#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quel document les passagers doivent-ils avoir ?",
+      "labels": [
+        "Leur passeport",
+        "Leur carte de bibliothèque",
+        "Leur billet de train"
+      ],
+      "correct_label": "Leur passeport",
+      "source_sha256": "8503360840788eb1c4e1fd4ed3efc0da4592d4b456a7cb8717f8c6cda829b744",
+      "semantic_sha256": "79f7a09539ac5b7d790cf6e277b121a5f4c4d11ea037c4c88ef25380191b1403",
+      "category": "document",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-passeport-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-carte-bibliotheque-dessine.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Passeport, carte de bibliothèque et billet sont entiers, distincts et présentés de manière comparable.",
+      "image_sha256": [
+        "c2f0b65db0e431c49bf0c0c17fe43e7cd5cc3f195e44b7208cff5ed2b5200ac0",
+        "d5e7bed44862388d409e471ae5bbb87b7f2b02d31a5e54c9ba1e86e0ca5d8929",
+        "89f410c418e846d406e133c82e5c82563b738571bca3df9b5f3860ac81919734"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        6.0,
+        6.0,
+        5.0
+      ]
+    },
+    {
+      "key": "tcf-ss-a1-s34-co-3#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quel sport est proposé en premier ?",
+      "labels": [
+        "Le tennis",
+        "Le VTT",
+        "L’escalade"
+      ],
+      "correct_label": "Le tennis",
+      "source_sha256": "4a0376de55fc66c2ecd1cad1115d972aeea5a1655d45738bdc69ed0f353bd0c6",
+      "semantic_sha256": "a98b505ce89ee17dd5f3d0cd056755765dba90cb6fa76618fbb19986a8807414",
+      "category": "action_ou_activite",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/26876e2318ce.webp",
+        "/lib/images/tcf/qcm-audit/integration-20261107-velo-montagne.webp",
+        "/lib/images/tcf/qcm-audit/co306-escalade-dessine.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Le tennis, le VTT et l’escalade montrent des personnes en action dans trois décors peints.",
+      "image_sha256": [
+        "58f115a3bb9f3bc80a0a69592ad775da19b1bd86b3699030cea12ade79faa727",
+        "b23ae0662d4547cc07235f6ce2f4189f10e0acd4caefb8e197caefc1073dfae0",
+        "4f5aadc5f4d766ef5cc7e50a9845d7b70ea9f9abdbb638eba86ec10cb78dfe06"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        219.0,
+        207.0,
+        131.0
+      ]
+    },
+    {
+      "key": "tcf-ss-a1-s34-co-3#6",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quelle activité l’une des personnes décide-t-elle de faire aujourd’hui ?",
+      "labels": [
+        "Faire du vélo",
+        "Du tennis",
+        "De l’escalade"
+      ],
+      "correct_label": "Faire du vélo",
+      "source_sha256": "4a0376de55fc66c2ecd1cad1115d972aeea5a1655d45738bdc69ed0f353bd0c6",
+      "semantic_sha256": "d47a1930ba848b25853c5b0fb1e2815f7d445235cfa228e0785c9f968e4aae3a",
+      "category": "action_ou_activite",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/integration-20261107-velo-montagne.webp",
+        "/lib/images/tcf/qcm-audit/26876e2318ce.webp",
+        "/lib/images/tcf/qcm-audit/co306-escalade-dessine.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Le vélo, le tennis et l’escalade sont distincts, avec équipement et geste complets dans les limites du cadrage.",
+      "image_sha256": [
+        "b23ae0662d4547cc07235f6ce2f4189f10e0acd4caefb8e197caefc1073dfae0",
+        "58f115a3bb9f3bc80a0a69592ad775da19b1bd86b3699030cea12ade79faa727",
+        "4f5aadc5f4d766ef5cc7e50a9845d7b70ea9f9abdbb638eba86ec10cb78dfe06"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        207.0,
+        219.0,
+        131.0
+      ]
+    },
+    {
+      "key": "tcf-ss-a1-s42-co-3#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quel objet bloque le passage dans le hall ?",
+      "labels": [
+        "Des vélos",
+        "Des fauteuils",
+        "Des cartons"
+      ],
+      "correct_label": "Des vélos",
+      "source_sha256": "5b07a118055333c7a622198e54eb98f82c2df71101859200ac67f8e2bb5ed294",
+      "semantic_sha256": "59088f494d7738760b7e67f686476582f034a513d23e9ab65c5497a40ea5979a",
+      "category": "objets_au_pluriel_ou_composes",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-velos.webp",
+        "/lib/images/tcf/qcm-audit/extension573-fauteuils-pluriel.png",
+        "/lib/images/tcf/qcm-audit/extension573-cartons-pluriel.png"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Les vélos, fauteuils et cartons sont montrés au pluriel sur des fonds ivoire proches.",
+      "image_sha256": [
+        "8e93b5ef2b7c917408215e31c0407ac16e08eca00fca720344703efe70c7ea59",
+        "4e936ea295ad3c6aa507590b2ec8d0cd3e718ef42ac3f12299d7823f85c43d48",
+        "88b6b858914063a9e53dd5937996ea10ea410165e876a0220cb70547f70b06c0"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        5.0,
+        1.0,
+        4.0
+      ]
+    },
+    {
+      "key": "tcf-ss-a1-s42-co-3#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Où devrait-on ranger les vélos ?",
+      "labels": [
+        "Dans le local à vélos",
+        "Dans les escaliers",
+        "Dans les couloirs"
+      ],
+      "correct_label": "Dans le local à vélos",
+      "source_sha256": "5b07a118055333c7a622198e54eb98f82c2df71101859200ac67f8e2bb5ed294",
+      "semantic_sha256": "1866caa3c378be0ebbdb6f5ac9dbcda77223d6689c48fbe35991ca20b79d1856",
+      "category": "lieu_ou_support",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-local-velos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-escaliers-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-couloirs-dessine.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Le local à vélos, les escaliers et les couloirs se distinguent par leur aménagement.",
+      "image_sha256": [
+        "518b7c34a997a219bbd05274c3105446473a3fc614cdb16c2a2047b48319996c",
+        "3cc7ad966f08904610bee7dbac4d57563d6ea64114e0ab9543e7baca1d27f1d8",
+        "4a3c8afe693bdb5699c027d97b59cf21fba20ca7faeb5b82ab68c316c11728fa"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        127.0,
+        154.0,
+        149.0
+      ]
+    },
+    {
+      "key": "tcf-ss-a1-s42-co-3#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Où peut-on jeter les bouteilles en verre ?",
+      "labels": [
+        "Dans une poubelle pour le verre",
+        "Dans le local à vélos",
+        "Dans le garage"
+      ],
+      "correct_label": "Dans une poubelle pour le verre",
+      "source_sha256": "5b07a118055333c7a622198e54eb98f82c2df71101859200ac67f8e2bb5ed294",
+      "semantic_sha256": "4eb47c8722991c8c61a5b063b697a246dca0e85e8bca33f8ca1f6b322939fc49",
+      "category": "lieu_ou_support",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-poubelle-verre-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-local-velos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-garage-dessine.webp"
+      ],
+      "visual_status": "corrected",
+      "visual_review": "Le conteneur est isolé quand les deux autres choix présentent des lieux. Intégrer le conteneur de recyclage dans le même type de décor.",
+      "image_sha256": [
+        "86ed3900571cd8e43429e9c284253e730b58598cdcd099524352352777d65b06",
+        "518b7c34a997a219bbd05274c3105446473a3fc614cdb16c2a2047b48319996c",
+        "f2af82c4d25220ebab769be403b2a6a32adbb7c920d74e50c5bafccad5ae4aaa"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        1.0,
+        127.0,
+        213.0
+      ],
+      "active_image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-transport-bac-verre-local.png",
+        "/lib/images/tcf/qcm-audit/co306-local-velos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-garage-dessine.webp"
+      ],
+      "active_image_sha256": [
+        "31781aaa63d998cb143bc110fb7e17ae326956c02bc07d58e5219cff4045356c",
+        "518b7c34a997a219bbd05274c3105446473a3fc614cdb16c2a2047b48319996c",
+        "f2af82c4d25220ebab769be403b2a6a32adbb7c920d74e50c5bafccad5ae4aaa"
+      ],
+      "correction_register": "docs/tcf/corrections-transports-20261126.json",
+      "correction_note": "Le conteneur à verre est identifiable dans son local. Les trois propositions ont maintenant un décor de lieu cohérent."
+    },
+    {
+      "key": "tcf-ss-a1-s45-co-1#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quel document le client demande-t-il ?",
+      "labels": [
+        "Un plan de la ville",
+        "Un horaire de train",
+        "Un ticket de métro"
+      ],
+      "correct_label": "Un plan de la ville",
+      "source_sha256": "03adcfb9e6b37a33b0b05e8fe4c404e0b092ef57c54f8ad4b11042d3e77d4cb3",
+      "semantic_sha256": "054a90d1f14b0af5aa3b12fbd3dcdf59a60343e2afe96c2031ff517c0e328b5e",
+      "category": "document",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/audit-context-plan-ville.webp",
+        "/lib/images/tcf/qcm-audit/extension573-horaire-train.webp",
+        "/lib/images/tcf/qcm-audit/extension573-ticket-metro.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "La carte dépliée, le livret horaire et le titre de métro ont des formes et repères distincts sur fond clair.",
+      "image_sha256": [
+        "75f016378b68bfbec8d92cd8d84180fb637f7ea743b265714e952d499df110a5",
+        "e9ed5d6a6b0be644e7a39f46429c5067e20a1d3819efedbf5a081fa07643506d",
+        "60cf0dec3cfff53395821094d0e2c8c5810461e009c6760d8ec51240a3eb7096"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        6.0,
+        2.0,
+        2.0
+      ]
+    },
+    {
+      "key": "tcf-ss-a1-s45-co-1#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quels transports peut-il prendre ?",
+      "labels": [
+        "Le métro ou le bus",
+        "Le train ou le tramway",
+        "Le taxi ou le bateau"
+      ],
+      "correct_label": "Le métro ou le bus",
+      "source_sha256": "03adcfb9e6b37a33b0b05e8fe4c404e0b092ef57c54f8ad4b11042d3e77d4cb3",
+      "semantic_sha256": "27f1f1f7d79ea8a3c688f0b2bee22c55ea075210d768cae6ba01b3d067fda228",
+      "category": "vehicules_alternatifs",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-metro-bus-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-train-tramway-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-taxi-bateau-dessine.webp"
+      ],
+      "visual_status": "correction_needed",
+      "image_sha256": [
+        "4a27607f277e4432b9719712d2a527a7382e2376a6aecddd969334d5b116ea5b",
+        "104eca432faabe3fb64db8c18b4b84736522da89475342f548ab7064f88a789a",
+        "6fa2e1ef65b3071912813cf0b52ba2270c0b0b948adb0d7f6db74bcd67e00e08"
+      ],
+      "visual_review": "Chaque choix montre la paire attendue, mais sous forme de deux vignettes avec décor. Harmoniser les véhicules sur fond ivoire uni, en gardant deux éléments complets par choix.",
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        5.0,
+        8.0,
+        6.0
+      ]
+    },
+    {
+      "key": "tcf-ss-a1-s48-co-4#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quel objet ses parents lui ont-ils acheté ?",
+      "labels": [
+        "Un ballon",
+        "Un vélo",
+        "Une console"
+      ],
+      "correct_label": "Un ballon",
+      "source_sha256": "e36a1c502fc4b8ad268311de0e6b275ad422ae39ea707aff1ccc573409e81024",
+      "semantic_sha256": "b4e84114be224434584652f4f39d45817bc0783e5f6b8a297b54db4c04b32691",
+      "category": "objet",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-ballon-football.webp",
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+        "/lib/images/tcf/qcm-audit/extension573-console-jeux.png"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Ballon, vélo et console sont isolés et entiers. Les fonds restent visuellement proches.",
+      "image_sha256": [
+        "9a1fd2cab3b1cc541d2ef2d8a80e5f1c7769fccde473f528467b78b8e5f63089",
+        "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085",
+        "3bb03b7813eda1059e9716b3ffbdbbde6b47f0d325b7bebb5c76743cabbe2ee5"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        5.0,
+        5.0,
+        2.0
+      ]
+    },
+    {
+      "key": "tcf-ss-a1-s55-co-2#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Qu'est-ce qui manque en covoiturage selon elle ?",
+      "labels": [
+        "Une voiture-bar",
+        "Une fenêtre",
+        "Une radio"
+      ],
+      "correct_label": "Une voiture-bar",
+      "source_sha256": "cfefee90740bf88b2eae0b129442eac8d6b85c5ff74694367e72873c189beb58",
+      "semantic_sha256": "45e064fa61aa090e31fa7773200ab254f452c5cfc8b5b94dc959cfa1e1c76f72",
+      "category": "incident_ou_equipement_contextuel",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co57-voiture-bar.webp",
+        "/lib/images/tcf/qcm-audit/co57-fenetre.webp",
+        "/lib/images/tcf/qcm-audit/co57-radio.webp"
+      ],
+      "visual_status": "correction_needed",
+      "visual_review": "La voiture-bar est prise dans un wagon. La fenêtre est domestique et la radio est isolée. Montrer une fenêtre et une radio cohérentes avec les véhicules évoqués.",
+      "image_sha256": [
+        "aea6e6e743163ba4fbc9ef0f512b2a812302facd3d10303fdc3402f701b71a3d",
+        "bed0cd5e91b1cd1f6af5c269cc34f47c37c402b5f548d8a7a35507d8b04e8c77",
+        "f40404f0267b38ce1ff1796498b1a1c8a24c7e63c653e06a7e45b1d819b581ce"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        218.0,
+        22.0,
+        2.0
+      ]
+    },
+    {
+      "key": "delf-a1-2022-co-ex1-11#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Où Jacques travaille-t-il ?",
+      "labels": [
+        "Dans un magasin de motos",
+        "Dans un magasin de vélos",
+        "Dans un restaurant"
+      ],
+      "correct_label": "Dans un magasin de motos",
+      "source_sha256": "360382147e26dd144bee7a0ed03cf01c15617e678a531c1b019150cb6c0806ec",
+      "semantic_sha256": "25aea8be04a350af930dff4e3cd3e49a6b71cf08fab7eb0f950c6458aca08c48",
+      "category": "lieu_ou_support",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-magasin-motos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-magasin-velos-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Le magasin de motos et le magasin de vélos se distinguent par les objets exposés. Le restaurant reste un lieu reconnaissable.",
+      "image_sha256": [
+        "f048329de45d053d1deb4c975dae6fb78ec057996a6b25ef39cd35963aa309d5",
+        "465bdc06c68b82451f43c8ffe56db9341ffea6a3584aaa010771b7cdf47cc68e",
+        "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        209.0,
+        121.0,
+        198.0
+      ]
+    },
+    {
+      "key": "delf-a1-2022-co-ex1-11#4",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quelle activité propose-t-il au parc ?",
+      "labels": [
+        "Faire du vélo",
+        "Jouer au football",
+        "Courir"
+      ],
+      "correct_label": "Faire du vélo",
+      "source_sha256": "360382147e26dd144bee7a0ed03cf01c15617e678a531c1b019150cb6c0806ec",
+      "semantic_sha256": "1c08210f160e8a95934fb9ba9cf8623be0929987ba2694dd56c52a2518995184",
+      "category": "action_ou_activite",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-jouer-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-courir-dessine.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Les trois activités sont montrées par des personnes en action et des décors peints de parc.",
+      "image_sha256": [
+        "cf547a08822a952696ecd9be9719aeaf66a72544d715419293e1aef4e158cf77",
+        "976cfaf5b9a50d8fc7b45f8011e8b3cd08ed4de42b64ee5d0158e4af9ebab64a",
+        "6142a29f0c73f9657ed3373bbd5764bec7f46fd7e647331b26eb854d11e2f60b"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        221.0,
+        211.0,
+        198.0
+      ]
+    },
+    {
+      "key": "delf-a1-2022-co-ex3-66#7",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Que faut-il aussi réserver pour demain ?",
+      "labels": [
+        "Le restaurant",
+        "Un hôtel",
+        "Un taxi"
+      ],
+      "correct_label": "Le restaurant",
+      "source_sha256": "057f5a6302ef1f9fde19a49b5f70662dffabe21fc11a5b0809c2299fc16d2f3d",
+      "semantic_sha256": "b3a67cef93a340830c6f3f77da9b01c240381827c3cafb1f86be2ccfb18c0ef9",
+      "category": "service_ou_modalite",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-restaurant-dessine.webp",
+        "/lib/images/tcf/co/bg/hotel.webp",
+        "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp"
+      ],
+      "visual_status": "correction_needed",
+      "visual_review": "Restaurant et hôtel sont des lieux peints ; le taxi est isolé. Présenter un contexte de prise en charge ou de réservation comparable.",
+      "image_sha256": [
+        "2059fd4bda4dddc629accc3d1ded4327c95adb088df8a68af267de4c8500a0b4",
+        "40964c87cc6bbeb30d440f1d0a9b8709462b52f00a8ec0b6a5721d566c8ef49a",
+        "299331908fcf190bedb6e4781b62e3688613e83b2da55ac462171e6de75cde7a"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        198.0,
+        224.0,
+        7.0
+      ]
+    },
+    {
+      "key": "delf-a1-2022-co-75#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quelle activité fait-elle le samedi avant le cinéma ?",
+      "labels": [
+        "Faire du vélo",
+        "Du tennis",
+        "De la natation"
+      ],
+      "correct_label": "Faire du vélo",
+      "source_sha256": "5f08a7d7de1259005e9fa2f29ee18fd0fa0c415bf7c8a5adff705752b8734d39",
+      "semantic_sha256": "4159dbe175b2c04645413cd5bc7e6262cca5ee939e4505edc3abd1e755fa0f4c",
+      "category": "action_ou_activite",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/26876e2318ce.webp",
+        "/lib/images/tcf/qcm-audit/eb82d6d99458.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Les trois sports sont montrés en action, avec des lieux et équipements différenciés.",
+      "image_sha256": [
+        "cf547a08822a952696ecd9be9719aeaf66a72544d715419293e1aef4e158cf77",
+        "58f115a3bb9f3bc80a0a69592ad775da19b1bd86b3699030cea12ade79faa727",
+        "97987baa5a97169addee30579a22ea18907f2dfb2912ec7b943a139b2adcca84"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        221.0,
+        219.0,
+        200.0
+      ]
+    },
+    {
+      "key": "delf-a1-2022-co-ex5-58-2#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quel objet faut-il payer ?",
+      "labels": [
+        "Une carte postale",
+        "Un billet de train",
+        "Un journal"
+      ],
+      "correct_label": "Une carte postale",
+      "source_sha256": "73bfaa6298e13bd8cc2b00a7fdb6a5bffa4466847c1fb042872f1a9207b0617e",
+      "semantic_sha256": "0cd0d32af2b8fba54c9adeeef7b57fabc66683f6311086bbcde222e18c004fed",
+      "category": "document",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-carte-postale.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-journal.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "La carte postale, le billet et le journal sont entiers et isolés sur des fonds ivoire proches.",
+      "image_sha256": [
+        "7416f76caf9ccd245967701d6b1cf294b1caf16f7216f13b6872ee4103585d56",
+        "89f410c418e846d406e133c82e5c82563b738571bca3df9b5f3860ac81919734",
+        "83d43bd2e76e658026a532f524687e8f7d8b4d9d03050433ce3a1a8264d39b7f"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        1.0,
+        5.0,
+        2.0
+      ]
+    },
+    {
+      "key": "tcf-delf-actif-a1-002-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Où les amis ont-ils rendez-vous ?",
+      "labels": [
+        "À l’arrêt de bus",
+        "Devant la gare",
+        "Devant le collège"
+      ],
+      "correct_label": "À l’arrêt de bus",
+      "source_sha256": "1072af32e155d2b65bedbb1698e3ddad908f7a5dc026bf06d0a93917c46a9180",
+      "semantic_sha256": "6fde7d3dc1f2566778b43a984cbba286971d40e93197fbd1f276d40a6b194167",
+      "category": "lieu_ou_support",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-college-facade.png"
+      ],
+      "visual_status": "retain",
+      "visual_review": "L’abri, la gare et le collège montrent chacun leur accès et un repère distinctif.",
+      "image_sha256": [
+        "d245d0254030a65478dd3207cf5efdfd22e8edac9da5a7b93d05828b1f5384ac",
+        "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517",
+        "ec3be1896c404d8aabfb83d1cd233f0088b802057f0c1ba1b7597bc9149d360d"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        204.0,
+        195.0,
+        198.0
+      ]
+    },
+    {
+      "key": "tcf-delf-actif-a1-010-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Où Adam vient-il chercher son ami ?",
+      "labels": [
+        "À la gare",
+        "À l’aéroport",
+        "À l’arrêt de bus"
+      ],
+      "correct_label": "À la gare",
+      "source_sha256": "d3634f92935a48fbdc56b847f78c07605c006fa7ddd045115213f8eec0dc73e4",
+      "semantic_sha256": "5175912cb229e73cd044c2733c5a85f2358d8ee50f389455aca572d45701a47c",
+      "category": "lieu_ou_support",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-gare-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-aeroport.webp",
+        "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Le hall de gare, le comptoir aéroportuaire et l’arrêt avec abri donnent des repères de lieux distincts.",
+      "image_sha256": [
+        "90c6937e14ff3f93037ccbac70366ec8831989cde9964d64bac55b1ec8ae9570",
+        "9e8d8335ccec3b1d603e35509e6a44a5096e9afe8b7c7fddf786cbd53a75fd04",
+        "d245d0254030a65478dd3207cf5efdfd22e8edac9da5a7b93d05828b1f5384ac"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        137.0,
+        110.0,
+        204.0
+      ]
+    },
+    {
+      "key": "tcf-delf-actif-a1-011-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quel type de train arrive ?",
+      "labels": [
+        "Un TGV",
+        "Un train régional",
+        "Un train de marchandises"
+      ],
+      "correct_label": "Un TGV",
+      "source_sha256": "93cf2546cea90c6e25574c282b4c3a70514e4e47c590063f94b10f12cdf2577c",
+      "semantic_sha256": "88b45caf4fc3014c9b23fde8b20896c9299d20f3fc9f320a23e06abaffa080e2",
+      "category": "vehicule",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-20261120-train-tgv.png",
+        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-20261120-train-marchandises.png"
+      ],
+      "visual_status": "correction_needed",
+      "image_sha256": [
+        "60b00b80f7eb40ba287054696a9bb103090661a1939e713fde7a8b66f93909d9",
+        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
+        "f379de458bea6f0ad15420ed2909831dc0725b114d222e6ec69b48d9f02c3fab"
+      ],
+      "visual_review": "Les trois types de train sont distincts et les cadrages sur voie sont cohérents. Les trois fonds ont du ciel et un paysage. Préparer des véhicules entiers sur fond ivoire en conservant les silhouettes distinctives et le fret.",
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        134.0,
+        129.0,
+        136.0
+      ]
+    },
+    {
+      "key": "tcf-delf-actif-a1-014-01#5",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quel service est proposé à bord ?",
+      "labels": [
+        "Un service de restauration",
+        "Un service de coiffure",
+        "Un service de location de vélos"
+      ],
+      "correct_label": "Un service de restauration",
+      "source_sha256": "0f49aa742436dc116151a6ee435583620a00188ec2df5e40f7b552d4b2a233a0",
+      "semantic_sha256": "88b40ab13ecbf9f5cf896f04310033b37a0860812d9804f5dfc53420c13d8736",
+      "category": "service_ou_modalite",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-lot20-restauration.png",
+        "/lib/images/tcf/qcm-audit/co57-salon-coiffure.webp",
+        "/lib/images/tcf/co/scenes/scenes-courtes/23-loisirs-location-de-velos.webp"
+      ],
+      "visual_status": "correction_needed",
+      "visual_review": "Les trois services sont lisibles par l’action, mais la coiffure et la location comportent des inscriptions explicites. Retirer titres et éventuels tarifs superflus.",
+      "image_sha256": [
+        "198e5fe93aebc793b54cbafc170b18752846888d300f112c884933b5f98ae439",
+        "d26804dcc08f2ec1dc1298137a4660eb6e992ef8a07de41b9a58341dc4301e2a",
+        "7f854e97a0c558142ef0178d3262bf5e06a4a9024518b5ed7aedfbd14c4d22e7"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        153.0,
+        96.0,
+        211.0
+      ]
+    },
+    {
+      "key": "tcf-delf-actif-a1-019-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quelle activité est prévue ?",
+      "labels": [
+        "Du jogging",
+        "Du vélo",
+        "Du tennis"
+      ],
+      "correct_label": "Du jogging",
+      "source_sha256": "b601780d8699902eee8a242ccaff76b248c24f80d9cc84ca9c641da48701fbfb",
+      "semantic_sha256": "6fe46cd8a064dd93ca0477565a0c9ebccfd13d8c4d0cb5d253c00dc37cc0982d",
+      "category": "action_ou_activite",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-courir-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+        "/lib/images/tcf/co/scenes/vie-quotidienne/la-famille-2-leurre-2.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Le jogging, les déplacements à vélo et le tennis sont montrés en action avec des décors équivalents.",
+      "image_sha256": [
+        "6142a29f0c73f9657ed3373bbd5764bec7f46fd7e647331b26eb854d11e2f60b",
+        "cf547a08822a952696ecd9be9719aeaf66a72544d715419293e1aef4e158cf77",
+        "2e91648e03ea1847d24ac46f663c2f631bc703ec064de001b4f371d1b082a094"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        198.0,
+        221.0,
+        205.0
+      ]
+    },
+    {
+      "key": "tcf-delf-actif-a1-026-01#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quel titre de transport doit-elle acheter ?",
+      "labels": [
+        "Un ticket de bus",
+        "Un billet de train",
+        "Un ticket de métro"
+      ],
+      "correct_label": "Un ticket de bus",
+      "source_sha256": "881566ef5a6f40a455f38f4c6262f05c7434966a697c1a22dee40f41145ab9c0",
+      "semantic_sha256": "e9062e2201dbceb2d6399119ff2bc349a45c597664f369eea8da223827ba664e",
+      "category": "document",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-ticket-bus-dessine.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp",
+        "/lib/images/tcf/qcm-audit/extension573-ticket-metro.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Les trois titres sont entiers et leurs pictogrammes permettent de distinguer bus, train et métro.",
+      "image_sha256": [
+        "e469daf0c6fce7710af80ad5007d391edff13672bb3fae220bb84630732cb8a1",
+        "89f410c418e846d406e133c82e5c82563b738571bca3df9b5f3860ac81919734",
+        "60cf0dec3cfff53395821094d0e2c8c5810461e009c6760d8ec51240a3eb7096"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        2.0,
+        5.0,
+        2.0
+      ]
+    },
+    {
+      "key": "tcf-delf-actif-a1-032-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Pourquoi la professeure impose-t-elle de sortir ?",
+      "labels": [
+        "Pour prendre l’air",
+        "Pour prendre le bus",
+        "Pour rentrer chez soi"
+      ],
+      "correct_label": "Pour prendre l’air",
+      "source_sha256": "c4faa3a459bbde26b5797bd5fcc148c7c3e82289746ea74ae8e19e6a356b76f9",
+      "semantic_sha256": "eab2355524dceb57a4909f2862295b35a0601ab72a5852c601e93684f359c2aa",
+      "category": "action_ou_activite",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-lot20-prendre-air.png",
+        "/lib/images/tcf/qcm-audit/qcm-a1-lot20-monter-bus.png",
+        "/lib/images/tcf/catalogue/actions/rentrer-a-pied.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "La sortie à l’air libre, la montée dans le bus et le retour à pied s’appuient sur des actions et des lieux distincts.",
+      "image_sha256": [
+        "f84aad5ec45b099b7095821960ca03b42b3404d1cccbac82a1f4f5b5a1f608c2",
+        "ba5c1e1f51e488d39694102ba596c41779310e7e780a2d8be5bb69664a09bdd5",
+        "3f476402c682c04a363f79c5d9ffbd9ed9ada4b54e2893f8f99cce39fa3d1469"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        180.0,
+        198.0,
+        192.0
+      ]
+    },
+    {
+      "key": "tcf-delf-actif-a1-033-02#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quel matériel peut-on acheter ?",
+      "labels": [
+        "Des skis",
+        "Des vélos",
+        "Des raquettes"
+      ],
+      "correct_label": "Des skis",
+      "source_sha256": "852bffdf960dd2552fbd66879d005465930a98a9a109567ece5dcf2ae935ed67",
+      "semantic_sha256": "fc1365c1d7d68c588cf0c2d51e5c78fb94d7b3a45ddd45661aed9c12984144ed",
+      "category": "objets_au_pluriel_ou_composes",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-skis-pluriel.png",
+        "/lib/images/tcf/qcm-audit/vocab-velos.webp",
+        "/lib/images/tcf/qcm-audit/vocab-raquettes.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Skis, vélos et raquettes sont présentés par paires entières sur fond ivoire.",
+      "image_sha256": [
+        "92ed9ab742b42b3393a09ce7d5b1cf5c259b86dd101050ebb879a348918b2806",
+        "8e93b5ef2b7c917408215e31c0407ac16e08eca00fca720344703efe70c7ea59",
+        "78effb185fcf42217dc7c808825c48e5387c3a8f63c0729a9be250a2a5934d34"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        1.0,
+        5.0,
+        1.0
+      ]
+    },
+    {
+      "key": "tcf-delf-actif-a1-035-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quel cadeau Sébastien a-t-il reçu de ses parents ?",
+      "labels": [
+        "Un vélo",
+        "Un ordinateur",
+        "Un téléphone"
+      ],
+      "correct_label": "Un vélo",
+      "source_sha256": "51e1bdfb1584f9ebd950a71e98c9175bd374da4590b8a8eaf73767de07397a06",
+      "semantic_sha256": "c1757ab9a0f924467a840337eb5e9366f59351b87d47a699f0dcd9027e20759d",
+      "category": "objet",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+        "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp"
+      ],
+      "visual_status": "corrected",
+      "visual_review": "Les trois cadeaux sont entiers et isolés ; le fond du téléphone vire au jaune par rapport au vélo et à l’ordinateur. Harmoniser ce fond.",
+      "image_sha256": [
+        "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085",
+        "0975b4d983b9e0896f2bd09e2ddbb38bab9d3244e28a84c359e13db6f8a7fd42",
+        "0720a4239b45116cfd5bf748a207e2739a022f81bfd469b29b201e7ba465ef63"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        5.0,
+        7.0,
+        10.0
+      ],
+      "active_image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+        "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-lot20c-telephone-eteint.png"
+      ],
+      "active_image_sha256": [
+        "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085",
+        "0975b4d983b9e0896f2bd09e2ddbb38bab9d3244e28a84c359e13db6f8a7fd42",
+        "c356e9eaa12ef828f30db4f45534a91803a38bf1c2962e08353c6fa6df49c89e"
+      ],
+      "correction_register": "docs/tcf/corrections-transports-20261126.json",
+      "correction_note": "Le téléphone entier est isolé sur l’ivoire de référence et présenté comme les deux autres cadeaux."
+    },
+    {
+      "key": "tcf-delf-actif-a1-036-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Où le rendez-vous est-il fixé ?",
+      "labels": [
+        "À la gare",
+        "À l’arrêt de bus",
+        "Devant le collège"
+      ],
+      "correct_label": "À la gare",
+      "source_sha256": "72dece5739ac886c7e3e4fb00ca413ccb2e0165492d646a0713ed0e87e55a259",
+      "semantic_sha256": "51f2837ae39c9ff5cb9e2a9b05873d3e27b8d812498c28efb27b1d42c077acde",
+      "category": "lieu_ou_support",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-gare-facade.png",
+        "/lib/images/tcf/qcm-audit/co306-arret-bus-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a1-college-facade.png"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Gare, arrêt de bus et collège sont représentés par des accès distincts, au même niveau de lecture.",
+      "image_sha256": [
+        "c19c62e39a14db2f9ad53c91ffa8af7d3ecadd7759f6a127ad9f214d47032517",
+        "d245d0254030a65478dd3207cf5efdfd22e8edac9da5a7b93d05828b1f5384ac",
+        "ec3be1896c404d8aabfb83d1cd233f0088b802057f0c1ba1b7597bc9149d360d"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        195.0,
+        204.0,
+        198.0
+      ]
+    },
+    {
+      "key": "tcf-delf-actif-a1-044-04#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quelle activité la personne déteste-t-elle ?",
+      "labels": [
+        "Faire les magasins",
+        "Aller au cinéma",
+        "Faire du vélo"
+      ],
+      "correct_label": "Faire les magasins",
+      "source_sha256": "58ace409677a841c9561d46a9e951ec59d4a8fa52a09c61451716cbf0654592e",
+      "semantic_sha256": "8f030850f46e4b8ad84fa65da5ea4e91e7b2af825ea3e0c1f9b883bf79a1a144",
+      "category": "action_ou_activite",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-faire-magasins.png",
+        "/lib/images/tcf/qcm-audit/co834-seance-cinema-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Le magasin de vêtements, le public du cinéma et la cycliste rendent les trois activités identifiables.",
+      "image_sha256": [
+        "54019a839cbc2d793faaa028ac7f1473839b672ca9aa7ecd0e91a6e9ff4a08b7",
+        "adc515d9fc36b54ddc69488999f2ccaf16f18ebfa441a2c1e481552e0b298303",
+        "cf547a08822a952696ecd9be9719aeaf66a72544d715419293e1aef4e158cf77"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        170.0,
+        224.0,
+        221.0
+      ]
+    },
+    {
+      "key": "tcf-delf-actif-a1-048-01#1",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quelle activité le jeune homme faisait-il ?",
+      "labels": [
+        "Du vélo",
+        "Du football",
+        "Du ski"
+      ],
+      "correct_label": "Du vélo",
+      "source_sha256": "d37ea3f1997ab4712b96ed0bc9cd8ab797cfb3b28afb435004ec0aa78e6a6618",
+      "semantic_sha256": "ed530d26954fbdad521915e29cdb469da621e9aa48098366a68b3bfc00631618",
+      "category": "action_ou_activite",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-football-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp"
+      ],
+      "visual_status": "correction_needed",
+      "visual_review": "Le dialogue désigne un jeune homme. La cycliste représentée est une femme adulte. Reprendre le trio avec le même jeune homme dans les trois activités.",
+      "image_sha256": [
+        "cf547a08822a952696ecd9be9719aeaf66a72544d715419293e1aef4e158cf77",
+        "d952554cab4531f173addde56923d82b0c5158616a2a0eee8e87217380502593",
+        "77991eaa00a37536135fc55956abe576d56a3b85640d6cd3bba28e62aeb21316"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        221.0,
+        190.0,
+        129.0
+      ]
+    },
+    {
+      "key": "tcf-delf-actif-a1-050-04-04#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Que propose la personne qui lui parle ?",
+      "labels": [
+        "De l’accompagner",
+        "D’appeler un taxi",
+        "De lui donner un repas"
+      ],
+      "correct_label": "De l’accompagner",
+      "source_sha256": "20f554fb3de867456d24fa974359ca29060ad13a8a7c00342da26facd8a42e70",
+      "semantic_sha256": "b3d7836d2f59cb8eaf67a5428f13351b4b2960bff8c74599e8df4bffbdd5f803",
+      "category": "action_ou_activite",
+      "image_paths": [
+        "/lib/images/tcf/co/scenes/delf-actif/scenario-accompagner-diego-infirmerie.png",
+        "/lib/images/tcf/qcm-audit/qcm-lot20b-appeler-taxi.png",
+        "/lib/images/tcf/qcm-audit/qcm-lot20b-offrir-repas.png"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Les mêmes personnages permettent de distinguer le fait d’accompagner, l’appel téléphonique et la proposition de repas.",
+      "image_sha256": [
+        "35b605eff7e26d45163640637c7e729dfdd266a5ec25ac2a02f0fa9d8782c098",
+        "066b789ce4f3a4da18466bf4494f0a5aacd1e7709589db30fb84bf13179e866f",
+        "a9bc52e42046dc5bde69e673de2d2a2d07ec6223d765e80c045ada2d6d196a35"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        83.0,
+        189.0,
+        76.0
+      ]
+    },
+    {
+      "key": "tcf-delf-actif-a1-051-04-03#2",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quels sports pratique-t-il déjà ?",
+      "labels": [
+        "Le foot et le basket",
+        "Le tennis et le rugby",
+        "La natation et le vélo"
+      ],
+      "correct_label": "Le foot et le basket",
+      "source_sha256": "5d28a5b3975f87bf6abb9927133277e420b0a0974540963614439e5d0298b011",
+      "semantic_sha256": "cb4770ac9ecf2a33058cc3f3da1681574072c1da4ae558d120e0a6400ba51e62",
+      "category": "activites_composees",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-20261120-duo-foot-basket.png",
+        "/lib/images/tcf/qcm-audit/qcm-20261120-duo-tennis-rugby.png",
+        "/lib/images/tcf/qcm-audit/qcm-20261120-duo-natation-velo.png"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Les trois paires montrent l’équipement des deux sports sur fond ivoire homogène.",
+      "image_sha256": [
+        "8e7983a62521e4dc72a9f639e606f606fd10fa9ef73a17f1d9e6897fccfa7633",
+        "d3554cb695604823360fd68813ecb7a5f9392ec34f88aae9d842b5066808613d",
+        "6ee3c85cf40b6ccd988fc2b7ebc86edb6226b7c149210fe3e2a6f1b2bd9a25fd"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "key": "tcf-delf-actif-a1-052-01-01#3",
+      "bank": "src/tcf/content/a0-a1/co.json",
+      "question": "Quel cadeau est proposé ?",
+      "labels": [
+        "Un support de téléphone pour vélo",
+        "Un casque de musique",
+        "Un jeu de société"
+      ],
+      "correct_label": "Un support de téléphone pour vélo",
+      "source_sha256": "144bedf3de0f064fcd8340d9f9be956aa5b8bc0286c946020294884bce9d63bf",
+      "semantic_sha256": "4a377d2c3a9361ec4f8983bf88f772831d838f9cc8fd7235e3182b37d08220b4",
+      "category": "accessoire",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-support-telephone-velo.png",
+        "/lib/images/tcf/qcm-audit/vocab-casque-audio.webp",
+        "/lib/images/tcf/qcm-audit/extension573-jeu-societe.png"
+      ],
+      "visual_status": "retain",
+      "visual_review": "La fixation au guidon distingue le support téléphone pour vélo. Le casque audio et le jeu de société sont entiers sur le même fond.",
+      "image_sha256": [
+        "5234511afc6717ffd48a1044ff50840de718cbd95e5764b2c7682b7469bb4f00",
+        "101d2bd4433b1007d3516d042561e8c2a12144b0cb29c20239a61f1b7c635b60",
+        "952185d1618f78d792eb8a352affdf72a247e146155a9499aef91b3e2bebbf95"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        2.0,
+        3.0,
+        2.0
+      ]
+    },
+    {
+      "key": "tcf-a2j-s1-ce-1#6",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "question": "Où se trouvent les participants du jeu 5 ?",
+      "labels": [
+        "Dans un sous-marin",
+        "Dans un avion",
+        "Dans une fusée"
+      ],
+      "correct_label": "Dans un sous-marin",
+      "source_sha256": "ed8f773b18dd8d0339e7620690046a8596895de87fa52398ffd381e7dab40d82",
+      "semantic_sha256": "d3a7a1ffbf593e45cea998724708f0f56570cc337b28407e1061fc9c89edc55e",
+      "category": "lieu_ou_support",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-sous-marin.webp",
+        "/lib/images/tcf/co/scenes/voyages/passagers-d-avion.webp",
+        "/lib/images/tcf/qcm-audit/vocab-fusee.webp"
+      ],
+      "visual_status": "correction_needed",
+      "visual_review": "L’intérieur du sous-marin et celui de la fusée sont vides, alors que l’avion est peuplé. Représenter un même groupe dans des intérieurs comparables.",
+      "image_sha256": [
+        "b09dad371167eef0cdfe61490c696f34bcfa5d20b8d4280951dacc92c7cc55f1",
+        "fce5ba59ce958932030d475cf9e1774f48557adab3f82a1219d309316a17feeb",
+        "7c6f5226aad79fc72bf669fcf57b3a4bb795f32c45865d457b5dd59d0bf438d8"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        159.0,
+        209.0,
+        169.0
+      ]
+    },
+    {
+      "key": "tcf-a2j-s2-ce-3#4",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "question": "Document 1 — Quel objet peut-on gagner ?",
+      "labels": [
+        "Une montre",
+        "Un vélo",
+        "Un téléphone"
+      ],
+      "correct_label": "Une montre",
+      "source_sha256": "ed7ce84a4c562e894dde28d4b8e8ee503e8aaf4e78dc5b76077900d3e5a2c29a",
+      "semantic_sha256": "5d5b203d740fcf471a4b539a8b3456614a04f1e19a6090209c26c4f6572b17b0",
+      "category": "objet",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-montre-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp"
+      ],
+      "visual_status": "corrected",
+      "visual_review": "La montre et le téléphone sont isolés. Le choix vélo se distingue par un décor de parc, à remplacer par une version ivoire.",
+      "image_sha256": [
+        "848dec4d460520d45c51f6e90d8c6c278ab8fcce203949573b460d5130106629",
+        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b",
+        "0720a4239b45116cfd5bf748a207e2739a022f81bfd469b29b201e7ba465ef63"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        2.0,
+        210.0,
+        10.0
+      ],
+      "active_image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-montre-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/vocab-velo-isole.webp",
+        "/lib/images/tcf/qcm-audit/qcm-lot20c-telephone-eteint.png"
+      ],
+      "active_image_sha256": [
+        "848dec4d460520d45c51f6e90d8c6c278ab8fcce203949573b460d5130106629",
+        "e65db9d18d6e12f54982a3650fc68d64ecd66b11a98cb634f5e5e4c48a480085",
+        "c356e9eaa12ef828f30db4f45534a91803a38bf1c2962e08353c6fa6df49c89e"
+      ],
+      "correction_register": "docs/tcf/corrections-transports-20261126.json",
+      "correction_note": "La montre, le vélo et le téléphone sont entiers et isolés sur des fonds ivoire comparables."
+    },
+    {
+      "key": "tcf-a2p-s4-ce-2#6",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "question": "Quel objet l’équipe conseille-t-elle d’apporter ?",
+      "labels": [
+        "Un appareil photo",
+        "Un ordinateur portable",
+        "Un casque de vélo"
+      ],
+      "correct_label": "Un appareil photo",
+      "source_sha256": "629f2a45e1d206703a4704c7558adfa3cf2cf014e6c3f2c27f8e7af62ad97d07",
+      "semantic_sha256": "c06ef6e73a1e687c94978ef7b6d57dd14744f853126512fa5a24b8916457cf0a",
+      "category": "objet",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-appareil-photo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-ordinateur-portable.webp",
+        "/lib/images/tcf/qcm-audit/co834-casque-velo-4-3.webp"
+      ],
+      "visual_status": "corrected",
+      "visual_review": "Le casque apparaît sur un fond blanc-gris et le portable sur un ivoire plus pâle que l’appareil photo. Harmoniser les fonds sans sacrifier le contraste des objets.",
+      "image_sha256": [
+        "1e063cce50a301dd6eba49cae24ba4bfa2096ee941a07f2d7ab764c7b153ca9d",
+        "e3ac17ccce680c76a54c22e56cdbc57dac93c4aa354e13141ed5b7c82f0a9c97",
+        "4e7c2777e0eb4a9d3208568f2ae4a6bb6c7a58fa2236c03907c0e3a4524cb828"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        2.0,
+        7.0,
+        18.0
+      ],
+      "active_image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-appareil-photo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-ordinateur-portable.webp",
+        "/lib/images/tcf/qcm-audit/qcm-transport-casque-velo-ivoire.png"
+      ],
+      "active_image_sha256": [
+        "1e063cce50a301dd6eba49cae24ba4bfa2096ee941a07f2d7ab764c7b153ca9d",
+        "e3ac17ccce680c76a54c22e56cdbc57dac93c4aa354e13141ed5b7c82f0a9c97",
+        "e5e835363401c973cc5dba5a645244b612837bdccc8fc88dff3b8b0aa0a305a8"
+      ],
+      "correction_register": "docs/tcf/corrections-transports-20261126.json",
+      "correction_note": "L’appareil photo, le portable et le casque entier ont des fonds ivoire comparables."
+    },
+    {
+      "key": "tcf-a2-sb-ce-4#4",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "question": "Que peut-on fabriquer soi-même ?",
+      "labels": [
+        "Une étagère",
+        "Une voiture de sport",
+        "Un téléphone portable"
+      ],
+      "correct_label": "Une étagère",
+      "source_sha256": "8d17c9a1c433204f885a942103cfba9df70f74d479064432d6d0d36cae9f21a4",
+      "semantic_sha256": "e54a8e45008f24bd9310e824c478791b20771f9a54af8b943c35af1d2a5e184b",
+      "category": "objet",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-etagere.webp",
+        "/lib/images/tcf/qcm-audit/revue-20261107-df82b95b92.webp",
+        "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp"
+      ],
+      "visual_status": "corrected",
+      "visual_review": "L’étagère et la voiture de sport sont isolées sur ivoire. Le téléphone reprend la variante au fond trop jaune. Réutiliser un fond ivoire conforme.",
+      "image_sha256": [
+        "9a07e763f2219e9f5189e904bbed9622802978dc148af0c7dcff051045a16d5d",
+        "3a91389f263597acc7825a7a2d15809bb1c36894a979ed914cd4b317a15e14cb",
+        "0720a4239b45116cfd5bf748a207e2739a022f81bfd469b29b201e7ba465ef63"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        7.0,
+        3.0,
+        10.0
+      ],
+      "active_image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-etagere.webp",
+        "/lib/images/tcf/qcm-audit/revue-20261107-df82b95b92.webp",
+        "/lib/images/tcf/qcm-audit/qcm-lot20c-telephone-eteint.png"
+      ],
+      "active_image_sha256": [
+        "9a07e763f2219e9f5189e904bbed9622802978dc148af0c7dcff051045a16d5d",
+        "3a91389f263597acc7825a7a2d15809bb1c36894a979ed914cd4b317a15e14cb",
+        "c356e9eaa12ef828f30db4f45534a91803a38bf1c2962e08353c6fa6df49c89e"
+      ],
+      "correction_register": "docs/tcf/corrections-transports-20261126.json",
+      "correction_note": "Le téléphone, l’étagère et la voiture de sport sont isolés sur des fonds ivoire comparables."
+    },
+    {
+      "key": "tcf-a2-sc-ce-4#5",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "question": "Quelle activité les plus grands pratiquent-ils devant la grande roue ?",
+      "labels": [
+        "Le ski",
+        "Le patin à glace",
+        "Le vélo"
+      ],
+      "correct_label": "Le ski",
+      "source_sha256": "c76153c626491e88706e71304f7fb00516920f4642f1296ef8ee995761e38716",
+      "semantic_sha256": "ab07a21f91a3b77163761a34d2c6b4e38fd39185748b4156bc03b811bdb4ed6f",
+      "category": "action_ou_activite",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp",
+        "/lib/images/tcf/qcm-audit/revue-20261107-ea2a2daf84.webp",
+        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp"
+      ],
+      "visual_status": "correction_needed",
+      "visual_review": "La station de ski ne situe pas l’action devant la grande roue, et le vélo est vide alors que les autres choix montrent une activité. Garder la grande roue comme repère commun et montrer les gestes.",
+      "image_sha256": [
+        "77991eaa00a37536135fc55956abe576d56a3b85640d6cd3bba28e62aeb21316",
+        "963cd39dff0881dcbae0ccc0b1d68ff471666eaf942e55e7bb2b62b8f0694e5f",
+        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        129.0,
+        172.0,
+        210.0
+      ]
+    },
+    {
+      "key": "delf-a2j-ce-003#6",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "question": "Quel sport utilise un vélo ?",
+      "labels": [
+        "Le VTT",
+        "L’escalade",
+        "Le poney"
+      ],
+      "correct_label": "Le VTT",
+      "source_sha256": "d93c776c1bb9ca5c0739329d3f5a8aabe3c1225e3e478074cd1840330c7e041c",
+      "semantic_sha256": "af63c8d7c2b51666214d2638dcc7cd77b0d96081860180f1bcc3e2e8e926aeec",
+      "category": "action_ou_activite",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/integration-20261107-velo-montagne.webp",
+        "/lib/images/tcf/qcm-audit/co306-escalade-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-a2-faire-du-poney.png"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Le VTT, l’escalade et le poney sont incarnés par des personnes en action avec les matériels distinctifs.",
+      "image_sha256": [
+        "b23ae0662d4547cc07235f6ce2f4189f10e0acd4caefb8e197caefc1073dfae0",
+        "4f5aadc5f4d766ef5cc7e50a9845d7b70ea9f9abdbb638eba86ec10cb78dfe06",
+        "5939a49ef0c6387c42073489d1d85eedba98c0e5ba1c5dbebda0a9fe8fc4199e"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        207.0,
+        131.0,
+        80.0
+      ]
+    },
+    {
+      "key": "delf-a2j-ce-062#1",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "question": "Quel objet la publicité présente-t-elle ?",
+      "labels": [
+        "Un réveil",
+        "Un téléphone",
+        "Une radio de voiture"
+      ],
+      "correct_label": "Un réveil",
+      "source_sha256": "0bea6a3b88d15fc733daa27e04799a5e08a16d14f1051fbb46de5a4083fb0ab0",
+      "semantic_sha256": "20ecb00c5a454cdc1bc6d778ea8f5d16d1fa6becccb05a7a3b8dd3db8dd82111",
+      "category": "objet",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-reveil.webp",
+        "/lib/images/tcf/qcm-audit/co834-telephone-dessine.webp",
+        "/lib/images/tcf/qcm-audit/revue-20261107-9121037011.webp"
+      ],
+      "visual_status": "corrected",
+      "visual_review": "L’autoradio est cadré dans un tableau de bord alors que le réveil et le téléphone sont isolés. Montrer un autoradio reconnaissable sur ivoire et harmoniser le fond du téléphone.",
+      "image_sha256": [
+        "1e48367ff177787169c730f799c7bbc18eb7cd9a81bb656f61acb94b59fa6ba6",
+        "0720a4239b45116cfd5bf748a207e2739a022f81bfd469b29b201e7ba465ef63",
+        "5f6bdb15b38bcdddfd4c5862f50462de5f3012bc85b5f2bf73d085c75aa6108c"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        1.0,
+        10.0,
+        187.0
+      ],
+      "active_image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-reveil.webp",
+        "/lib/images/tcf/qcm-audit/qcm-lot20c-telephone-eteint.png",
+        "/lib/images/tcf/qcm-audit/qcm-transport-autoradio-ivoire.png"
+      ],
+      "active_image_sha256": [
+        "1e48367ff177787169c730f799c7bbc18eb7cd9a81bb656f61acb94b59fa6ba6",
+        "c356e9eaa12ef828f30db4f45534a91803a38bf1c2962e08353c6fa6df49c89e",
+        "98c55f60e83fd1c7c4a81ba068bde4d26bb1e8ea941e36f2dbf1621461de1cb5"
+      ],
+      "correction_register": "docs/tcf/corrections-transports-20261126.json",
+      "correction_note": "Le réveil, le téléphone et l’autoradio sont représentés isolés et entiers, sur des fonds ivoire comparables."
+    },
+    {
+      "key": "delf-a2j-ce-064#6",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "question": "Où Gaël et Jasmine se rencontrent-ils ?",
+      "labels": [
+        "À un concert",
+        "À l’école",
+        "Dans un train"
+      ],
+      "correct_label": "À un concert",
+      "source_sha256": "69f8ccdae16bafd7301bb019d9edc29d28b79aa67dca948bd14bfdaa1501be93",
+      "semantic_sha256": "b94d12ba2c3976fdf1afc0b0d11bc5bab264ce6fe458a5fb224f227e02fbe564",
+      "category": "lieu_ou_support",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-concert-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ecole-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+      ],
+      "visual_status": "correction_needed",
+      "visual_review": "Le train est vu de l’extérieur. Pour « dans un train », montrer l’intérieur et une rencontre comparable aux deux autres lieux.",
+      "image_sha256": [
+        "6e7fc0caa04c97366c04925bd97ec2e919e8405a26cec083de4c5e3a1570b924",
+        "ebf55b416eb1cc5f936fca6f7e25dc1d8598fa1e394d43c309f220fcdcbba857",
+        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        208.0,
+        178.0,
+        129.0
+      ]
+    },
+    {
+      "key": "delf-a2r-ce-031#9",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "question": "Où peut-on consulter le programme ?",
+      "labels": [
+        "Sur le site Internet du festival",
+        "Uniquement à la mairie",
+        "Uniquement dans le train"
+      ],
+      "correct_label": "Sur le site Internet du festival",
+      "source_sha256": "224ded834c8a1059e9f29647dd573fc67d0c1231ea690de853d9169d5f10454a",
+      "semantic_sha256": "10b3e8356703943a2d1daa832f185e2f3f28003a7c486a9b5c7a2f7f4f7d164e",
+      "category": "lieu_ou_support",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-a1-site-festivals.png",
+        "/lib/images/tcf/qcm-audit/co306-mairie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp"
+      ],
+      "visual_status": "correction_needed",
+      "visual_review": "Le site et la mairie sont reconnaissables, mais le choix « dans le train » montre un train de l’extérieur. Donner à chaque lieu un indice de consultation du programme.",
+      "image_sha256": [
+        "11257ad69626089696b93710df7e49ef5b69e7292ad8cf110abcda82d691b1bd",
+        "1b6f6370fc81268849496729b7152a440be59ef2b0d15921ed8fa86aa9b813b3",
+        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        115.0,
+        181.0,
+        129.0
+      ]
+    },
+    {
+      "key": "delf-a2r-ce-062#4",
+      "bank": "src/tcf/content/a1-a2/ce.json",
+      "question": "Quel moyen de transport relie Täsch à Zermatt ?",
+      "labels": [
+        "Un petit train",
+        "Un bateau",
+        "Un avion"
+      ],
+      "correct_label": "Un petit train",
+      "source_sha256": "a98ffd5bd210417065370d742b96bcf36cff38734adcabaaba8a99c3f861f0b9",
+      "semantic_sha256": "942705fbed27897633ef84a7ec4206068a9b4db5f8cab469426f217f718c7e40",
+      "category": "vehicule",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/revue-20261107-36fb5f5b7e.webp",
+        "/lib/images/tcf/qcm-audit/co834-bateau-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-avion.webp"
+      ],
+      "visual_status": "correction_needed",
+      "image_sha256": [
+        "1c9aa7357747726394c9920ecddb44d5057e1b77a790ce343764db07fbc7ad2c",
+        "85671abeca9f1cc829020d4c47f0cee3c1992c7b656533cf6f206c5379a9cae7",
+        "1e312cf1a4a4bfc617dbf5a4532511403112bb78ca54899aa42660b3b74b140f"
+      ],
+      "visual_review": "Le petit train et le bateau sont représentés en paysage, l’avion est isolé sur fond clair. Harmoniser les trois fonds en gardant un petit train régional identifiable.",
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        208.0,
+        202.0,
+        3.0
+      ]
+    },
+    {
+      "key": "tcf-a2j-s1-co-1#6",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "question": "Quels véhicules remplacent le métro ?",
+      "labels": [
+        "Des bus",
+        "Des tramways",
+        "Des taxis"
+      ],
+      "correct_label": "Des bus",
+      "source_sha256": "e8dd7a4c50c3e83ce16c48bd03a9363ead49e1aaded4842f0282b89a096142a8",
+      "semantic_sha256": "149e13fd6885da1c4b8e5a783cf5683a0a46c84899c666c50795646a806e06b2",
+      "category": "vehicule",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-tramways.webp",
+        "/lib/images/tcf/qcm-audit/vocab-taxis.webp"
+      ],
+      "visual_status": "corrected",
+      "image_sha256": [
+        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
+        "a91b761a53ad0f070eda6e05bbae608b9c0b5f4ad9da585ed9a8367f35001c87",
+        "cae7305382158614987610417fc584e93abecb377ee2a4dacbcf6207df123c19"
+      ],
+      "visual_review": "Le choix correct représente un seul bus, les deux autres choix montrent deux véhicules chacun. Harmoniser le pluriel et les trois fonds ivoire.",
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        208.0,
+        196.0,
+        220.0
+      ],
+      "active_image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-transport-bus-pluriel-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-transport-tramways-pluriel-ivoire.png",
+        "/lib/images/tcf/qcm-audit/qcm-transport-taxis-pluriel-ivoire.png"
+      ],
+      "active_image_sha256": [
+        "e877274ca8b8578b6cad67ab67cb697bcfb76d54fc9d0502af19d73a085d524f",
+        "bf995083049d4d4ab0c79fdc028e930e70723d718e0a34e5bb29847ed39e8593",
+        "dbac3661845e417befe8722df96becdd8330110260216e492b4f627b1c704c01"
+      ],
+      "correction_register": "docs/tcf/corrections-transports-20261126.json",
+      "correction_note": "Deux bus, deux tramways et deux taxis rendent le pluriel dans chaque réponse, avec des véhicules entiers sur l’ivoire de référence."
+    },
+    {
+      "key": "tcf-a2j-s1-co-1#12",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "question": "Que peut-on gagner en répondant aux questions ?",
+      "labels": [
+        "Des livres",
+        "Des vêtements",
+        "Des vélos"
+      ],
+      "correct_label": "Des livres",
+      "source_sha256": "040701b0d971fed68a240a393ea0cff03230e04ec18d9c7b869289431e6d2b36",
+      "semantic_sha256": "00349151d3287932779fdf4a3505c6d27db37f302c8b145b8281da5dd602e1eb",
+      "category": "objets_au_pluriel_ou_composes",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-livres-dessines.webp",
+        "/lib/images/tcf/qcm-audit/co834-vetements-dessines.webp",
+        "/lib/images/tcf/qcm-audit/vocab-velos.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Livres, vêtements et vélos sont montrés par groupes sur fond ivoire.",
+      "image_sha256": [
+        "1d06d1a07f1cbed1152ba0e2b88551fb6fdc0b2d52187279cb11b3d7245c7f0e",
+        "ca295f7204f681476b9c1eea1dcd37fdf283ceddd597661781fc622d209ffdcf",
+        "8e93b5ef2b7c917408215e31c0407ac16e08eca00fca720344703efe70c7ea59"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        3.0,
+        2.0,
+        5.0
+      ]
+    },
+    {
+      "key": "tcf-a2-sa-co-4#13",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "question": "Où la personne a-t-elle croisé Thomas ?",
+      "labels": [
+        "Dans le bus",
+        "Dans le train",
+        "Dans le métro"
+      ],
+      "correct_label": "Dans le bus",
+      "source_sha256": "0224cfb73fb213514fc951949f2d2fe3f6d839accb59b16eb6e6644de21e7dca",
+      "semantic_sha256": "23f1b177c9b4fde1beafa0ce5b754ad9926ab98ad0f3d8a83927a7cac520d2c9",
+      "category": "lieu_ou_support",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-bus-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-train-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-metro-dessine.webp"
+      ],
+      "visual_status": "correction_needed",
+      "visual_review": "Les trois véhicules sont vus de l’extérieur alors que la question porte sur un lieu de rencontre à bord. Préparer trois intérieurs avec les mêmes interlocuteurs.",
+      "image_sha256": [
+        "f611dcaf61711ec87048c3c84c1d683e3a0490ab40bc41488ef5416be2da9fbe",
+        "a90c1ee75deb7c73fc9a7a4a0d812e22670639d06e0930918405d15cb41bbb69",
+        "581856c7701fe4ec5aa26b284000f54d46cf6c6a79cd6245118883dcb5a0199c"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        208.0,
+        129.0,
+        196.0
+      ]
+    },
+    {
+      "key": "tcf-ss-a2-s3-co-3#12",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "question": "Quel cadeau l’annonce conseille-t-elle d’acheter ?",
+      "labels": [
+        "Une carte cadeau",
+        "Un billet de train",
+        "Un abonnement sportif"
+      ],
+      "correct_label": "Une carte cadeau",
+      "source_sha256": "431506743fc62d80a811bba14fa41f1aa1bcbdfae62ed03c05d849c2dfe7a03e",
+      "semantic_sha256": "51d6eff05c166c733380b263f3bcd7d6ee3bbc51b5fceda84483c7917ac8c231",
+      "category": "document",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/extension573-carte-cadeau.webp",
+        "/lib/images/tcf/qcm-audit/audit-context-billet-train.webp",
+        "/lib/images/tcf/qcm-audit/extension573-abonnement-sportif.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Les trois supports sont entiers et isolés. Le cadeau, le train et le sport sont distingués par leurs pictogrammes.",
+      "image_sha256": [
+        "a0745f40f12b82986745b6eeded3748fcd90d4dfdd5feb1bc54b34468b3f449d",
+        "89f410c418e846d406e133c82e5c82563b738571bca3df9b5f3860ac81919734",
+        "4ccf8cfae6f535a66b6ef7959df7c39a8a5d27930b0188d7a7462342610fea05"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        3.0,
+        5.0,
+        5.0
+      ]
+    },
+    {
+      "key": "tcf-ss-a2-s49-co-1#5",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "question": "Quel cadeau les parents ont-ils offert ?",
+      "labels": [
+        "Un vélo",
+        "Une trottinette",
+        "Un ordinateur"
+      ],
+      "correct_label": "Un vélo",
+      "source_sha256": "d7c85012a9558166771001323aa9d1ec40f384893465947a99c14107e5760619",
+      "semantic_sha256": "32b2acd47eefbbc9a342b3fbb92d77cc26eb7dbd25ffa6808b5ee6d5cc6ab0c9",
+      "category": "objet",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-velo-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-trottinette.webp",
+        "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp"
+      ],
+      "visual_status": "corrected",
+      "image_sha256": [
+        "abcd1da9a37a79008268c7f3bc97f7caf39ba675ff00b0219b6bfaf4117af41b",
+        "d41829d59983e7508e1fa4ce6fa6e7445d900421c62b35b8f293ca1f0bffdac6",
+        "0975b4d983b9e0896f2bd09e2ddbb38bab9d3244e28a84c359e13db6f8a7fd42"
+      ],
+      "visual_review": "Le vélo bleu est montré en extérieur. Le dialogue précise un VTT blanc et noir à grosses roues. Préparer ou réutiliser un VTT conforme sur fond ivoire et contrôler les fonds des trois choix.",
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        210.0,
+        3.0,
+        7.0
+      ],
+      "active_image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-transport-vtt-blanc-noir.png",
+        "/lib/images/tcf/qcm-audit/vocab-trottinette.webp",
+        "/lib/images/tcf/qcm-audit/co834-ordinateur-dessine.webp"
+      ],
+      "active_image_sha256": [
+        "3be6bdc1304c5909fa930faa7b013d991723f00a4012372fe8d1cc73b8548e1e",
+        "d41829d59983e7508e1fa4ce6fa6e7445d900421c62b35b8f293ca1f0bffdac6",
+        "0975b4d983b9e0896f2bd09e2ddbb38bab9d3244e28a84c359e13db6f8a7fd42"
+      ],
+      "correction_register": "docs/tcf/corrections-transports-20261126.json",
+      "correction_note": "Le VTT de la transcription est présenté sur fond ivoire, avec son cadre blanc et noir et ses grosses roues."
+    },
+    {
+      "key": "tcf-ss-a2-s51-co-4#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "question": "Quel sport pratique Julien ?",
+      "labels": [
+        "Le surf",
+        "Le ski",
+        "Faire du vélo"
+      ],
+      "correct_label": "Le surf",
+      "source_sha256": "5b71c4bbdaedd1df092b784f2c555b742d5d3bf1870493c61dcccc8655d5c3f4",
+      "semantic_sha256": "5cedc29e875fb9fc3aae969b34b3ad86dba4a77a24666a91682ac5d59b372c5f",
+      "category": "action_ou_activite",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-surf-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-ski-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Surf, ski et vélo montrent des personnes en action, chacune avec son équipement et son environnement.",
+      "image_sha256": [
+        "52679a4e7f57f4c66cf4ba19c350ff6c19a4fa7cd82ff38a624fc448a88150c2",
+        "77991eaa00a37536135fc55956abe576d56a3b85640d6cd3bba28e62aeb21316",
+        "cf547a08822a952696ecd9be9719aeaf66a72544d715419293e1aef4e158cf77"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        188.0,
+        129.0,
+        221.0
+      ]
+    },
+    {
+      "key": "tcf-ssx-a2-annonce-6-5-co-2#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "question": "Quel nouveau service est proposé ?",
+      "labels": [
+        "Une laverie",
+        "Une boulangerie",
+        "Un taxi"
+      ],
+      "correct_label": "Une laverie",
+      "source_sha256": "a5b23be796883d3e5f71583949ee9a4c3af715d97e22f1557d7fc185ec2ea46b",
+      "semantic_sha256": "bdfe2bb0250557fc49251b25634987413c7e7abc1f0592a628af421003df027c",
+      "category": "service_ou_modalite",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-laverie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co834-boulangerie-dessinee.webp",
+        "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp"
+      ],
+      "visual_status": "correction_needed",
+      "visual_review": "La laverie et la boulangerie montrent des services dans un décor. Le taxi est isolé. Présenter le service de taxi en situation et éviter un titre qui donne la réponse.",
+      "image_sha256": [
+        "9f9ec98bbff6708245381f102a0b687f36654592a2119d1cad31a69da97f73ef",
+        "12cbfe95e94e5d0c3eef34951f893589ca3ff0eeb99c6d343efe369c5c8f3637",
+        "299331908fcf190bedb6e4781b62e3688613e83b2da55ac462171e6de75cde7a"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        175.0,
+        145.0,
+        7.0
+      ]
+    },
+    {
+      "key": "tcf-ssx-a2-radio-17-1-co-3#2",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "question": "Quels sports sont conseillés aux plus sportifs ?",
+      "labels": [
+        "Le vélo et la natation",
+        "Le football et le tennis",
+        "La course et le ski"
+      ],
+      "correct_label": "Le vélo et la natation",
+      "source_sha256": "0824677c7866e18508abe6e69900959451228ef07d4fee3799e0efd3bdbb958f",
+      "semantic_sha256": "5f12d072348129108da37e4978415989b0d1744f55fc543353767989dc53c778",
+      "category": "activites_composees",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-velo-natation-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-football-tennis-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-course-ski-dessine.webp"
+      ],
+      "visual_status": "correction_needed",
+      "visual_review": "Les trois paires sont complètes, mais deux ont des vignettes fondues sur ivoire et la troisième est coupée en deux sans le même fond. Harmoniser les trois mises en page.",
+      "image_sha256": [
+        "e97ade74ef8f7935f449843d40c65fef5007e8244c057d9aea3527c874766249",
+        "8ab53e4fb646a9a1c99fd7d4e21305b362234d21325b03d0c26570b92bed602b",
+        "88e5dec9ca7306b2e8f1f3dfce2f82836b45690c0d5bfa3f5e88f8a5a68212b5"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        3.0,
+        5.0,
+        172.0
+      ]
+    },
+    {
+      "key": "tcf-ssx-a2-radio-14-3-co-3#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "question": "Où y a-t-il un problème de circulation ?",
+      "labels": [
+        "Dans le métro",
+        "Sur l’autoroute",
+        "À l’aéroport"
+      ],
+      "correct_label": "Dans le métro",
+      "source_sha256": "157f644ae7d61a6d6848024ded3c803af563623496e98c640bb5d7c7a2f5f84f",
+      "semantic_sha256": "3fe48d05a5870df989f3fec04e0af43765940b8515a3dc36fdf3655da80270c8",
+      "category": "lieu_ou_support",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/vocab-metro-isole.webp",
+        "/lib/images/tcf/qcm-audit/co306-autoroutes-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co57-aeroport.webp"
+      ],
+      "visual_status": "correction_needed",
+      "visual_review": "Le métro est isolé et l’aéroport montre un comptoir sans circulation. Pour comparer le lieu du problème, montrer les trois réseaux dans leur contexte et avec des indices de circulation.",
+      "image_sha256": [
+        "8331a26621d06601a525e2f234f602474af07d5f9b5cd8b55443ec8143a40c7b",
+        "2d327b14aff22e4a991ff897348f7e41c09ac88b21761b5f55aa7a9d082895bb",
+        "9e8d8335ccec3b1d603e35509e6a44a5096e9afe8b7c7fddf786cbd53a75fd04"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        0.0,
+        192.0,
+        110.0
+      ]
+    },
+    {
+      "key": "tcf-ssx-a2-radio-fete-de-la-ville-co-3#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "question": "Quel événement est annoncé ?",
+      "labels": [
+        "La fête de la ville",
+        "Un marché de Noël",
+        "Une course à pied"
+      ],
+      "correct_label": "La fête de la ville",
+      "source_sha256": "86dd85be40820791f67b6dee7b973f122fb0e0b18f6293295c31bfc70251eaf9",
+      "semantic_sha256": "31c3fd729a119aaf6921b5d51aed3bcede3e194cc6cf179efbc2a27beeedd99b",
+      "category": "evenement",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co57-fete-ville.webp",
+        "/lib/images/tcf/qcm-audit/co57-marche-noel.webp",
+        "/lib/images/tcf/qcm-audit/co57-course-pied.webp"
+      ],
+      "visual_status": "correction_needed",
+      "visual_review": "Les trois événements se distinguent, mais le titre « FÊTE DE LA VILLE » nomme directement le bon choix. Montrer la musique et l’événement par la scène seule.",
+      "image_sha256": [
+        "99a5f6a95133673b937151d915136837aa610d6a470bc95c0a2534957c154207",
+        "9052bc54b07424dbd7db0378959fb06ffdcb7f0e458a35402a873a62300520a3",
+        "66d1e5adcf059e01ed0beaec07d4618f4d2c1b13e52108424b17fee1834e7812"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        194.0,
+        187.0,
+        186.0
+      ]
+    },
+    {
+      "key": "tcf-ssx-a2-transport-comment-tu-rentres-co-4#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "question": "Que lui prête Jules ?",
+      "labels": [
+        "Un parapluie",
+        "Un ticket de bus",
+        "Une veste"
+      ],
+      "correct_label": "Un parapluie",
+      "source_sha256": "3ec1adbb9d67bf73092e8b14987b1d96a76e6dbc29a0bc9d336ea8495089a225",
+      "semantic_sha256": "605c287d7dcb5a984ccec49554baa524755777ace99d6ed214e0b406a7fc650f",
+      "category": "objet",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co834-parapluie-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-ticket-bus-dessine.webp",
+        "/lib/images/tcf/qcm-audit/a840cdfdb301.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Le parapluie, le ticket et la veste sont entiers, distincts et isolés sur des fonds clairs.",
+      "image_sha256": [
+        "fdf64ab8d755a92ec7982bd398575d9d3cd5f174c06f0eca639244a30ce6ffc3",
+        "e469daf0c6fce7710af80ad5007d391edff13672bb3fae220bb84630732cb8a1",
+        "49cbd082850684b1ea20c92b2e80caef22d576dd8626d7d7a1cb19c920a2ba92"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        7.0,
+        2.0,
+        3.0
+      ]
+    },
+    {
+      "key": "tcf-delf-actif-a2-005-01#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "question": "Que doivent faire tous les voyageurs ?",
+      "labels": [
+        "Descendre",
+        "Monter",
+        "Changer de voiture"
+      ],
+      "correct_label": "Descendre",
+      "source_sha256": "2b70b0e1f20dd38f27a5e4536d3144d9e1b1e147e5fc5f92d057dc042b8dae45",
+      "semantic_sha256": "0a7b2e097251b634db9b881370f30a5bd5bbe7b35f33565f0eebbf7c4e7b8e55",
+      "category": "action_ou_activite",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-lot20e-descendre-train.png",
+        "/lib/images/tcf/qcm-audit/qcm-lot20e-monter-train.png",
+        "/lib/images/tcf/qcm-audit/qcm-lot20e-changer-voiture.png"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Sortir sur le quai, entrer dans le train et passer d’une voiture à l’autre sont des actions visibles. Les voyageurs varient naturellement.",
+      "image_sha256": [
+        "33dfea96af942ce8e5b553310e7b74f2ffeb8c2a9d2a525df71a892719608d56",
+        "6646718edbdcad71563c76d724c01e26509aa53d77e89b5d1fc831321ec48f66",
+        "57d9311125be4679700e35b64da7995931cdad1319d03061f5124b7c4f305e44"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        183.0,
+        189.5,
+        227.0
+      ]
+    },
+    {
+      "key": "tcf-delf-actif-a2-006-05#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "question": "Qu’y trouvent-ils pour s’occuper ?",
+      "labels": [
+        "Des livres et des jeux",
+        "Des vélos et des ballons",
+        "Des instruments de musique"
+      ],
+      "correct_label": "Des livres et des jeux",
+      "source_sha256": "d8c0d25ae29ac389a16afb9f933f08d2556e356064513a3298855cf6ba01aafd",
+      "semantic_sha256": "2dfcf16777f1373bbdfd22488cdbb1dd49c26a92103083934d0f2ef2e30fac47",
+      "category": "objets_au_pluriel_ou_composes",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co306-livres-jeux-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-lot20c-velos-ballons.png",
+        "/lib/images/tcf/qcm-audit/co306-instruments-dessine.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Les livres et jeux, vélos et ballons, et instruments sont montrés en ensembles complets sur fond clair.",
+      "image_sha256": [
+        "0cbc179069dedcbfea02ecabb43c412f0537dd6932aa5abfb33b59bf3cb837d4",
+        "62dc15fde0a06dde899cbe22be1e5f4c655e475e3fbaaa5161f6ea03e3b71fc5",
+        "9195b0e0c4edb5cc02bce253f055834888188f0e3f389df36155f45f49726ccc"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        7.0,
+        3.0,
+        5.0
+      ]
+    },
+    {
+      "key": "tcf-delf-actif-a2-008-02#1",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "question": "Quel événement provoque la fermeture de l’avenue ?",
+      "labels": [
+        "Une course à pied",
+        "Une course cycliste",
+        "Un défilé"
+      ],
+      "correct_label": "Une course à pied",
+      "source_sha256": "e0733a5d82737c9be1dd140771510b0a2056bb9062339324a12853cbf3b85652",
+      "semantic_sha256": "926c48d5cd066f7e361b47be99f1109fd300e929bb2fb9f72f0650cb20a25001",
+      "category": "evenement",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/co57-course-pied.webp",
+        "/lib/images/tcf/qcm-audit/qcm-lot20d-course-cycliste.png",
+        "/lib/images/tcf/qcm-audit/qcm-lot20d-defile.png"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Course à pied, course cycliste et défilé ont des équipements, gestes et groupes distinctifs dans des décors peints.",
+      "image_sha256": [
+        "66d1e5adcf059e01ed0beaec07d4618f4d2c1b13e52108424b17fee1834e7812",
+        "0443d5e39523cdd91251452ebe89882ca0152d824f321690be6324a5ad773b24",
+        "d3c881803a87e87e933da5c3c270e5f7f599966ba2484395971fd57e764d45b8"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        186.0,
+        207.0,
+        187.0
+      ]
+    },
+    {
+      "key": "tcf-delf-actif-a2-011-03#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "question": "Comment peut-on acheter un billet ?",
+      "labels": [
+        "Sur le site Internet",
+        "À la poste",
+        "Dans le train"
+      ],
+      "correct_label": "Sur le site Internet",
+      "source_sha256": "05765f46d68183293d9d2a4915061f3d8c9997f9788d53b163b6d30d6637b5db",
+      "semantic_sha256": "56c0d3cc6b8da446d63ff605d643e83d277331f078b6342a4b96013a1bd1a023",
+      "category": "service_ou_modalite",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-lot20e-billets-salon-livre.png",
+        "/lib/images/tcf/qcm-audit/co306-bureau-poste-dessine.webp",
+        "/lib/images/tcf/qcm-audit/vocab-trains.webp"
+      ],
+      "visual_status": "correction_needed",
+      "visual_review": "L’achat en ligne montre une utilisatrice, les deux autres choix des lieux sans acheteur. Montrer l’acte d’achat ou son indice dans chacun des trois choix.",
+      "image_sha256": [
+        "bb972d5528e8656601ab43997c6bcb17c53cb33ad8801d0db9d818e8882f136c",
+        "e239ebc1942ca1f2f369b2a9e732e6af6ab890bc38d31114abfb47f0cb061326",
+        "2c9c83522eaffe47c25e792ca04ccd724ca92ce1ba54b7ea5db12a52ff51ab55"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        129.0,
+        141.0,
+        151.0
+      ]
+    },
+    {
+      "key": "tcf-delf-actif-a2-030-04#3",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "question": "Comment l’élève va-t-il de la gare au lycée ?",
+      "labels": [
+        "Il marche vite",
+        "Il prend un taxi",
+        "Il emprunte un vélo"
+      ],
+      "correct_label": "Il marche vite",
+      "source_sha256": "86dac8e2a2abe79db9eefeef776fe521bbcc8dfee3b6ff884e400a5d4b38fc79",
+      "semantic_sha256": "0efb199c8f7480e6e8b22e0c433d8a44ff3bc86a7f73a65c801c87dd65290536",
+      "category": "action_ou_activite",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-lot20e-marcher-vite.png",
+        "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp",
+        "/lib/images/tcf/qcm-audit/qcm-lot20e-velo-lycee.png"
+      ],
+      "visual_status": "correction_needed",
+      "image_sha256": [
+        "1aa5ae7da221e7a8838cee99ef14d2c4aa9cfb7c00ef510e56c455fd268505f2",
+        "299331908fcf190bedb6e4781b62e3688613e83b2da55ac462171e6de75cde7a",
+        "0c38bf56150187b66988c5f3cf848d2c62bc4781ab36b39f1b980012559c342d"
+      ],
+      "visual_review": "La marche rapide et le trajet à vélo montrent le même élève en action, mais le choix taxi montre uniquement un véhicule. Préparer la scène où l’élève prend le taxi avec un cadrage et un décor cohérents.",
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        200.0,
+        7.0,
+        213.0
+      ]
+    },
+    {
+      "key": "tcf-delf-actif-a2-035-04#4",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "question": "Quelle est sa préférence personnelle ?",
+      "labels": [
+        "Marcher",
+        "Prendre un taxi",
+        "Faire du vélo"
+      ],
+      "correct_label": "Marcher",
+      "source_sha256": "65a9cafe29cf01f13d88c3a8c87c7a89bca36ae25ba87372b59984e87d53e649",
+      "semantic_sha256": "be912279b9a643e145ebe2a9720c0bcd7899ea1ca17ba43c38de2a49865914f9",
+      "category": "action_ou_activite",
+      "image_paths": [
+        "/lib/images/tcf/catalogue/actions/marcher.webp",
+        "/lib/images/tcf/qcm-audit/co306-taxi-dessine.webp",
+        "/lib/images/tcf/qcm-audit/co306-faire-velo-dessine.webp"
+      ],
+      "visual_status": "correction_needed",
+      "image_sha256": [
+        "2438361464b2ccc25fed1f2df021613a9106d3e36543fc91dcf94850394e6002",
+        "299331908fcf190bedb6e4781b62e3688613e83b2da55ac462171e6de75cde7a",
+        "cf547a08822a952696ecd9be9719aeaf66a72544d715419293e1aef4e158cf77"
+      ],
+      "visual_review": "La marche et le vélo montrent deux personnes différentes en action. Le taxi est isolé et signale le distracteur par son traitement. Harmoniser les trois choix en gardant l’activité et le même personnage entre variantes équivalentes.",
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        193.0,
+        7.0,
+        221.0
+      ]
+    },
+    {
+      "key": "tcf-delf-actif-a2-037#9",
+      "bank": "src/tcf/content/a1-a2/co.json",
+      "question": "Quels sports pratique-t-elle ?",
+      "labels": [
+        "Le tennis et la natation",
+        "Le football et le basket",
+        "Le vélo et la course"
+      ],
+      "correct_label": "Le tennis et la natation",
+      "source_sha256": "873aebaa5191f55106b83dc2ed2d2551406016c8b42d6af4881ad748a4c891be",
+      "semantic_sha256": "4fbdbfaaa9541efbfde9e7c1781efacb93cdac8079b47efe8f7b1857ff2aca0c",
+      "category": "activites_composees",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-20261120-duo-tennis-natation.png",
+        "/lib/images/tcf/qcm-audit/qcm-20261120-duo-foot-basket.png",
+        "/lib/images/tcf/qcm-audit/qcm-20261120-duo-velo-course.png"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Chaque image montre les équipements des deux sports demandés, sur un fond ivoire comparable.",
+      "image_sha256": [
+        "190b278094ea9c61094fcd8803c267c20f2db17a75a1f018d9204d66ff8c9d3c",
+        "8e7983a62521e4dc72a9f639e606f606fd10fa9ef73a17f1d9e6897fccfa7633",
+        "2bf079e0ed2592ffe7d6a552b5a023382ad84f6980046e7173894dcabd2413c8"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        1.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "key": "tcf-ss-b1-s3-co-1#8",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "question": "Quel vêtement Madame Thierry met-elle sur la tête de sa petite fille ?",
+      "labels": [
+        "Un chapeau en toile",
+        "Un bonnet en laine",
+        "Un casque de vélo"
+      ],
+      "correct_label": "Un chapeau en toile",
+      "source_sha256": "490bae1174160d83b7c686bf1e15ad6d0767f0a4cbf2eb584a4b3477f2d6793c",
+      "semantic_sha256": "9f54ee105ed62a46aa6bd24369c2be455fdcd9350c2f1bfc559b9ea20c833dba",
+      "category": "accessoire",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/7ba67fd6ded6.webp",
+        "/lib/images/tcf/qcm-audit/f137023c3623.webp",
+        "/lib/images/tcf/qcm-audit/co834-casque-velo-4-3.webp"
+      ],
+      "visual_status": "corrected",
+      "visual_review": "Le chapeau en toile et le bonnet restent lisibles, mais le casque est presque blanc. Réutiliser le même casque repris sur fond ivoire.",
+      "image_sha256": [
+        "1458a3f1384865db03b9db5ba7c8b9d6673e4f48b59bd4967c76befe6db81c3d",
+        "a2034ae4e3ce02181604d53d2fad5051ec7f5f2aa56e50be2d3b892092343590",
+        "4e7c2777e0eb4a9d3208568f2ae4a6bb6c7a58fa2236c03907c0e3a4524cb828"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        8.0,
+        3.0,
+        18.0
+      ],
+      "active_image_paths": [
+        "/lib/images/tcf/qcm-audit/7ba67fd6ded6.webp",
+        "/lib/images/tcf/qcm-audit/f137023c3623.webp",
+        "/lib/images/tcf/qcm-audit/qcm-transport-casque-velo-ivoire.png"
+      ],
+      "active_image_sha256": [
+        "1458a3f1384865db03b9db5ba7c8b9d6673e4f48b59bd4967c76befe6db81c3d",
+        "a2034ae4e3ce02181604d53d2fad5051ec7f5f2aa56e50be2d3b892092343590",
+        "e5e835363401c973cc5dba5a645244b612837bdccc8fc88dff3b8b0aa0a305a8"
+      ],
+      "correction_register": "docs/tcf/corrections-transports-20261126.json",
+      "correction_note": "Les trois accessoires sont isolés sur des fonds ivoire. Le chapeau en toile est distinct du bonnet et du casque."
+    },
+    {
+      "key": "tcf-ss-b1-s13-co-4#10",
+      "bank": "src/tcf/content/a2-b1/co.json",
+      "question": "Quel objet le voyageur lui tend-il à la fin ?",
+      "labels": [
+        "Son paquet de biscuits",
+        "Son billet de train",
+        "Son téléphone portable"
+      ],
+      "correct_label": "Son paquet de biscuits",
+      "source_sha256": "6632147710b741f4c774946d606faef5277a5d010583270db9fe506a74201e0c",
+      "semantic_sha256": "26c63c3fdd204f55fc9bf6e9f9705f6877ef14f65cce6cc8d71fd777f9a021ea",
+      "category": "objet",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-b1-paquet-biscuits.png",
+        "/lib/images/tcf/qcm-audit/qcm-b1-billet-train-ivoire.png",
+        "/lib/images/tcf/qcm-audit/communication-appeler.webp"
+      ],
+      "visual_status": "retain",
+      "visual_review": "Le paquet entrouvert montre les biscuits. Les trois objets entiers sont isolés sur des fonds ivoire proches.",
+      "image_sha256": [
+        "ec6ab4e0215893e18623231948520ee2a2ac537969945bf1d7d50e3a8f681292",
+        "f1bf7e8882c1c32e0bf75b87f740ff56b60b167fe847e443dc07a33f4dfae4ae",
+        "623ea14df2d82d1b6e6eb2e7727a444ff52346cdfec5cf7069fcead5cc8e2cbe"
+      ],
+      "visual_aspect_ratio": [
+        "4:3",
+        "4:3",
+        "4:3"
+      ],
+      "max_corner_delta_from_ivory_rgb": [
+        3.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "visual_measurement": "Médianes RGB des carrés de 30 × 30 pixels aux quatre angles. L’écart maximal par canal est un repère de teinte pour les objets et documents isolés. Un décor de scène ne se juge pas sur cet écart."
+}

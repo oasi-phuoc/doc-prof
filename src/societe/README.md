@@ -1,18 +1,5 @@
 # Société
 
-Domaine des fiches Société ClairFLE.
+Le générateur affiche une fiche « Contenu pédagogique à venir » pour le domaine Société. Les anciennes activités du thème « La Suisse » ont été retirées du catalogue. À l’ouverture, les anciennes recettes du domaine affichent la fiche d’attente.
 
-| Fichier | Rôle |
-|---|---|
-| `catalog.ts` | Thèmes et types |
-| `suisse.ts` | Thème **La Suisse** : théorie et exercices (géographie, cantons, lacs, cours d’eau, institutions) |
-| `generate.ts` | `tryGenerateSocieteBlock` |
-| `types.ts` | `isSocieteType` |
-
-Les textes sont réécrits pour la classe. Ils ne recopient pas les pages d’un manuel ni les cartes des PDF.
-
-## Usage
-
-- Domaine UI : **Société**
-- Thème : **La Suisse**
-- Accès env : `société` (alias `societe`)
+L’autorisation d’accès au domaine utilise `société` ou son alias `societe`.

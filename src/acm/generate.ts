@@ -1,19 +1,21 @@
 import type { MathItem, PageConfig } from '@/math/types'
-import { isAcmType } from './types'
+import { getAcmActivity } from './catalog'
 
-/** Placeholder déterministe (pas de tirage). */
 export function tryGenerateAcmBlock(
   config: PageConfig,
-): { instruction: string; items: MathItem[] } | null {
-  if (!isAcmType(config.exerciseType)) return null
+): { title: string; instruction: string; items: MathItem[] } | null {
+  const activity = getAcmActivity(config.exerciseType)
+  if (!activity) return null
+
   return {
-    instruction: 'Contenu pédagogique à venir.',
-    items: [
-      {
-        layout: 'text',
-        prompt: 'Le domaine Activités créatives et manuelles sera bientôt disponible.',
-        answer: '',
-      },
-    ],
+    title: activity.title,
+    instruction: activity.description,
+    items: [{
+      layout: 'acm',
+      acm: activity,
+      answer: '',
+      hideItemNumber: true,
+      noPoints: true,
+    }],
   }
 }

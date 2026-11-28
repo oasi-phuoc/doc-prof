@@ -1,3 +1,4 @@
+import { isSanteType } from '@/sante/types'
 import { logistiqueType } from '@/logistique/catalog'
 import { logistiqueEligibleCount } from '@/logistique/generate'
 import {
@@ -64,6 +65,7 @@ import { isTransformationExercise } from '@/math/coord-transformations'
 import { isDraftPadExercise } from '@/math/catalog'
 import type { ExerciseBlock, ExerciseType } from '@/math/types'
 import { tcfPeSlotDefaults } from '@/tcf/pe-defaults'
+import { tcfNiveauFromDifficulty } from '@/tcf/catalog'
 
 /**
  * Relâche le contenu figé par le mode libre.
@@ -522,10 +524,13 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
             coordUnitSquares: undefined,
           }),
     continueOnNextPage: isComQcm || isTheory ? (prev?.continueOnNextPage ?? isTheory) : undefined,
+    ...(isSanteType(type.id) && type.id !== prev?.exerciseType
+      ? { tcfFormModes: undefined, tcfPageBreakAfter: undefined, tcfQuestionPageBreakBefore: undefined }
+      : {}),
     oralAnswerModes: type.id.includes('-com-orale')
       ? resizeOralAnswerModes(prev?.oralAnswerModes, 4)
       : undefined,
-    ...(tcfPeSlotDefaults(type.id) ?? {}),
+    ...(tcfPeSlotDefaults(type.id, tcfNiveauFromDifficulty(prev?.difficulty)) ?? {}),
   }
 }
 

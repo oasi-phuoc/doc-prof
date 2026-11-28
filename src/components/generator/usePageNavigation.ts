@@ -17,6 +17,7 @@ import {
   tpfDocumentTitle,
 } from '@/tcf/catalog'
 import { buildTpfFamilyTestPages } from '@/tcf/generate'
+import { tpfPlacementTask } from '@/tcf/tpf-placement'
 import { randomSeed } from '@/math/rng'
 import {
   buildTpmTestPages,
@@ -129,7 +130,7 @@ export function usePageNavigation({
   /** Prochain type du même thème (même logique que « + Exercice »). */
   const createNextExerciseBlock = (): ExerciseBlock | null => {
     const currentTypes =
-      activePage.domain === 'grammaire' || isLogistiqueDomain(activePage.domain)
+      activePage.domain === 'grammaire' || isLogistiqueDomain(activePage.domain) || isTpfFamilyDomain(activePage.domain)
         ? typeChoicesForBlock(activePage.domain, activeBlock)
         : typesForTopic(
             activeBlock.topic,
@@ -339,7 +340,6 @@ export function usePageNavigation({
       next === 'grammaire' ||
       next === 'vocabulaire' ||
       next === 'société' ||
-      next === 'santé' ||
       next === 'acm' ||
       next === 'jeux' ||
       next === 'calligraphie'
@@ -348,12 +348,17 @@ export function usePageNavigation({
         current.course === 'Mathématiques' ? { ...current, course: 'Français' } : current,
       )
     }
+    if (next === 'santé') {
+      setInstitutional((current) => ({ ...current, course: 'Sciences et santé' }))
+    }
     if (next === 'logique') {
       setInstitutional((current) =>
         current.course === 'Français' ? { ...current, course: 'Mathématiques' } : current,
       )
     }
     if (
+      next === 'acm' ||
+      next === 'société' ||
       next === 'jeux' ||
       next === 'calligraphie' ||
       next === 'soutien-fr' ||
@@ -407,7 +412,16 @@ export function usePageNavigation({
     // eslint-disable-next-line react-hooks/exhaustive-deps -- normalisation ponctuelle du topic
   }, [activePage.domain, activeBlock.topic, activeBlock.exerciseType])
 
-  function changeTopic(topic: string) {
+  function changeTopic(topic: string, typeId?: string) {
+    if (activePage.domain === 'tpf' && worksheets.some((sheet) => sheet.domain === 'tpf' && tpfPlacementTask(sheet.exerciseType))) {
+      const index = worksheets.findIndex((sheet) => sheet.domain === 'tpf' && sheet.topic === topic &&
+        (typeId == null || sheet.exerciseType === typeId))
+      if (index >= 0) {
+        setSheetIndex(index)
+        setBlockIndex(0)
+        return
+      }
+    }
     if (isLogistiqueDomain(activePage.domain)) {
       const subtheme = logistiqueSubthemes(topic).find((entry) => entry.domain === activePage.domain)
       const type = subtheme && logistiqueTypeForSubtheme(subtheme.id, activeBlock.exerciseType)

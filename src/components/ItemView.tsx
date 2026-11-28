@@ -1,3 +1,4 @@
+import { AcmActivityView } from '@/acm/AcmActivityView'
 import {PhraseSvcBlock} from './item-view/phrase-svc'
 import type { CoordShape, MathItem, PreviewMode } from '@/math/types'
 import type { GlossaryFigureId } from '@/math/glossary-banks'
@@ -333,6 +334,7 @@ export function ItemView({
       ) : null}
       {item.coordScene || (hideNumber && itemLabel===undefined) || seriesNumber!==undefined ? null : <div className="item-number">{itemLabel ?? (grammarPart?.kind==='question'?grammarPart.number:index + 1)}.</div>}
       <div className="item-content">
+        {item.layout === 'acm' && item.acm ? <AcmActivityView activity={item.acm} stepOffset={item.acmStepOffset} /> : null}
         {item.layout==='grammar' ? isGrammarQuestion(item.grammar) ? <GrammarQuestionView question={item.grammar} mode={mode}/> : <p>Question grammaticale à vérifier.</p> : null}
         {(item.layout === 'column' || item.layout === 'column-empty') && <ColumnOp item={item} mode={mode} />}
         {item.layout === 'division-column' && <DivisionColumn item={item} mode={mode} />}

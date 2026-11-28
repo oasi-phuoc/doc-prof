@@ -203,6 +203,8 @@ export function emptyTcfExercise(
       }
     case 'entretien':
       return { ...base, competence: 'PO', type_exercice: 'entretien', support: { questions: [''] } }
+    case 'lecture_progressive':
+      return { ...base, competence: 'PO', type_exercice: 'lecture_progressive', support: { titre: '', texte: '' } }
     case 'trois_themes':
       return {
         ...base,

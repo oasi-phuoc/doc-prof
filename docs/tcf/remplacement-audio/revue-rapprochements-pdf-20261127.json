@@ -1,0 +1,809 @@
+{
+  "date": "2026-11-27",
+  "source_register": "docs/tcf/remplacement-audio/verification-pdf-fournis-20261111.json",
+  "source_register_sha256": "abde3563a4568c815705f05015746e9c85f5754bc9bd6fe61a57885d55af8e9f",
+  "scope": "Les 52 entrées à relire dans le registre de rapprochement de novembre. Les écarts consignés sont comparés à la transcription actuellement liée à la piste.",
+  "evidence": "Relecture des transcriptions actives et des écarts extraits des PDF pour le registre de novembre. Le dossier de reprise ne contient pas les 208 fichiers PDF originaux.",
+  "human_audio_listening_performed": false,
+  "modified_audio_files": 0,
+  "modified_questions": 0,
+  "summary": {
+    "reviewed": 52,
+    "pending": 10,
+    "decisions": {
+      "graphie_a_confirmer": 3,
+      "accord_sur_les_faits": 36,
+      "correction_documentee": 6,
+      "version_a_confirmer": 6,
+      "decoupage_a_confirmer": 1
+    }
+  },
+  "review": [
+    {
+      "ref": "/lib/audio/tcf/co/fetes/02-fêtes_anniversaire-de-Gerald.mp3",
+      "active_audio_sha256": "00204a08cb10f5ce1645633c28b0aa2f49cb7dd80463b8167f50d7ca1c7ee05e",
+      "active_transcription_sha256": "e8eed22862eee943cacd5633c4df77d7870dc7c72d82d8de5b2d126b87f6dfd3",
+      "active_sources": [
+        "src/tcf/content/a0-a1/co.json · tcf-a1-s3-co-1"
+      ],
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 72,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "b3856240467836de1418636f438b5a089d11b9b05d7968ea62a463dfe56ab37a",
+      "archived_status": "strong_match_requires_review",
+      "decision": "graphie_a_confirmer",
+      "note": "Le tarif de 16 euros est le même. Le prénom Charline ou Charlène reste à confirmer avec la source de cette édition."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/radio/la-meteo.mp3",
+      "active_audio_sha256": "2d78c84245269efbfb38798169439073d68e2ed8e93769cd285dc1bbf311824d",
+      "active_transcription_sha256": "2f1fc7d807b99f89a5ad91b090cf81ad974b2fe0d9b3289383de3541f5c771e5",
+      "active_sources": [
+        "src/tcf/content/a0-a1/co.json · tcf-a1-s3-co-2"
+      ],
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 73,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "d3616608bed069078e95da22e266f9e6d62dfd6f00622378f3abc8875a8bd38e",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "Vitesse du vent et degrés identiques. La différence porte sur la notation des unités."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/maison/dans-l-immeuble.mp3",
+      "active_audio_sha256": "f17f29a775dcdaf9ba9d31a25450a4e9b6b0a3cc1fd3d6462d99cb0b7762df40",
+      "active_transcription_sha256": "c72a0b0fcf22990280368626896cb03814547bb4613968f2028fb2f2b7b9d133",
+      "active_sources": [
+        "src/tcf/content/a0-a1/co.json · tcf-a1-s3-co-3"
+      ],
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 74,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "6ee461d2c084fec47cecae468be3b42c65162215fd4c05a1b9b9b37ad3860fde",
+      "archived_status": "strong_match_requires_review",
+      "decision": "correction_documentee",
+      "note": "« Midi et demie » figure dans la transcription active et dans le registre des corrections orthographiques.",
+      "correction_register": "docs/tcf/remplacement-audio/verification-pdf-corrections-20261111.json"
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-1.mp3",
+      "active_audio_sha256": "d43633d49f744deb0b45f5dc62336e85704b869e1b49b7b34b6e5b8fab72aa02",
+      "active_transcription_sha256": "f70d9a8332e185cbc551ea1ee610e26b3bce86982748d6135b41c86fadc4cb30",
+      "active_sources": [
+        "src/tcf/content/a0-a1/co.json · tcf-a1-s3-co-4"
+      ],
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 75,
+      "pdf_section": "Situation n° 1",
+      "pdf_sha256": "a752f7193edbdb3a89ade5b8401fc97a4d728d9d0f518d7a69f32fd701ff89c2",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "Un marqueur de locuteur et une interjection du PDF laissent le verre, le jus et la situation inchangés."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/les-situations-du-quotidien-1-3.mp3",
+      "active_audio_sha256": "acef2dc9341028dc303ee860cd57dcaab56b25e6be27321a39438284c8e906a5",
+      "active_transcription_sha256": "21616a5759603eacd9e5e6fa67516a1890e52a2c010913361f457dda890c4a17",
+      "active_sources": [
+        "src/tcf/content/a0-a1/co.json · tcf-a1-s3-co-4"
+      ],
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 75,
+      "pdf_section": "Situation n° 3",
+      "pdf_sha256": "a752f7193edbdb3a89ade5b8401fc97a4d728d9d0f518d7a69f32fd701ff89c2",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "Le degré de température et le nombre sont identiques. Le PDF utilise l’abréviation de l’unité."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/achats-annonce-1.mp3",
+      "active_audio_sha256": "04aae35d84caed7159fbb80cf5d409563c3d4145d7be4acfa677aca608264f05",
+      "active_transcription_sha256": "309b71125299fb94f667777fa33a97c4e676c9e78c2b63b0f471e278107fa89f",
+      "active_sources": [
+        "src/tcf/content/a0-a1/co.json · tcf-ss-a1-s1-co-1"
+      ],
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 28,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "6e133d883378384fff535c8b079a120aaf1436f3afeeeeb17a360e0eda5e1eca",
+      "archived_status": "strong_match_requires_review",
+      "decision": "correction_documentee",
+      "note": "Le pluriel « bienvenus » figure dans la transcription active et dans le registre des corrections orthographiques.",
+      "correction_register": "docs/tcf/remplacement-audio/verification-pdf-corrections-20261111.json"
+    },
+    {
+      "ref": "/lib/audio/tcf/co/fetes/13-invitation-nouveau-cinéma.mp3",
+      "active_audio_sha256": "17019e4e5c1f9e78c63ea24b0e074251a60e91e97f103638865466a3637086ff",
+      "active_transcription_sha256": "555e94432a52db5760a2674293baaf8ba6f7ca4af881ae2feb460254669e6be7",
+      "active_sources": [
+        "src/tcf/content/a0-a1/co.json · tcf-ss-a1-s9-co-3"
+      ],
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 5,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "006923d15a7e7b42d5b7c4a9bf3b1c73ec963df7b758143fc203519d496803cc",
+      "archived_status": "possible_match_requires_review",
+      "decision": "version_a_confirmer",
+      "note": "Le trajet détaillé en bus et la fin du message divergent. Le PDF ajoute un apport de bonbons."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/radio-france.mp3",
+      "active_audio_sha256": "79bf5c1bdf32bfa436a2aee97abe502f3ee0dcc5d91f01ef4bb4821909f215ed",
+      "active_transcription_sha256": "d8d58f963bbd32d1c1634b3908522fe5759b0bf41f210955c80735244d8e8193",
+      "active_sources": [
+        "src/tcf/content/a0-a1/co.json · tcf-ss-a1-s12-co-2"
+      ],
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 21,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "1e4bf004210f4172237ec217dc8de06114075ef43014d6d4d4f9296d252b53ae",
+      "archived_status": "strong_match_requires_review",
+      "decision": "correction_documentee",
+      "note": "L’édition correcte du bulletin pour le musée a déjà été installée et vérifiée. Les horaires actuels couvrent le mardi au samedi.",
+      "correction_register": "docs/tcf/remplacement-audio/corrections-4-editions-20261111.json"
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/aujourd-hui-l-actualite-musicale-parlons.mp3",
+      "active_audio_sha256": "be36442526ff0fa1c7132ed3a2de234b00af834152ca963ca07f362213571502",
+      "active_transcription_sha256": "0a75e6d9e8c44ee152eb3418f63ec92c52425e4efc987ff252f722fe55bdb428",
+      "active_sources": [
+        "src/tcf/content/a0-a1/co.json · tcf-ss-a1-s12-co-3"
+      ],
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 23,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "1a7025095717ccfecee2851a401d877c2ce4a7b0270a9c24119919e69edf789b",
+      "archived_status": "possible_match_requires_review",
+      "decision": "version_a_confirmer",
+      "note": "Le PDF termine par une réservation en ligne. L’annonce active termine par un souhait adressé aux spectateurs."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/bonsoir-votre-commande-prete.mp3",
+      "active_audio_sha256": "d67811d811077438d2c0269b9b5816c540bc84753bcc481d3e8412bda964f7c9",
+      "active_transcription_sha256": "d5057a8533cf9035f68e07c353439bb8fb9e5edd22400f210d16b223507b5b4b",
+      "active_sources": [
+        "src/tcf/content/a0-a1/co.json · tcf-ss-a1-s12-co-4"
+      ],
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 38,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "e6afb0a3bc1f4eaa02d9e49398f13fc843db9dd00162fdc504d97d9bfeb2cbab",
+      "archived_status": "strong_match_requires_review",
+      "decision": "correction_documentee",
+      "note": "L’édition installée de l’annonce de la boulangerie précise déjà le paiement en espèces.",
+      "correction_register": "docs/tcf/remplacement-audio/corrections-4-editions-20261111.json"
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/bonsoir-c-est-cristina.mp3",
+      "active_audio_sha256": "9b2dd5ab5f1900f486d574a1743c2475cfc311a80ccf717b0a96403f6b891d1c",
+      "active_transcription_sha256": "0185ab0e9f2814fcb78a92e52c52689d146e853cc7255fdfa1a8b77a4af60960",
+      "active_sources": [
+        "src/tcf/content/a0-a1/co.json · tcf-ss-a1-s13-co-1"
+      ],
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 10,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "e4e67d3af0fb6f05cb81a6d7b5c28d9b9be116d0cd35d25e6da6612f5cd823c2",
+      "archived_status": "possible_match_requires_review",
+      "decision": "version_a_confirmer",
+      "note": "La graphie du prénom, l’heure, le numéro de ligne de bus et le moyen de contact divergent. Garder les données de l’édition active."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/maison/les-cles-voiture-sont.mp3",
+      "active_audio_sha256": "cedd53c9ea4f7e55bcf8abe8bb5b5a224ea75337da7c537c5ebc257cebf7ebfe",
+      "active_transcription_sha256": "4778d0f87ac1b8e2624f96d4fc5815b2b865f4b7e7cf2caf3299efacf1355928",
+      "active_sources": [
+        "src/tcf/content/a0-a1/co.json · tcf-ss-a1-s16-co-4"
+      ],
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 70,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "28c6a0972bd4f29eab815b0f974b1074cd0313291b45c31f7b9447d91502fe65",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "« Clés » et « clefs » désignent les mêmes objets placés au même endroit."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/le-festival-theatre-val.mp3",
+      "active_audio_sha256": "acd0c52baaad2436d2a6146e715de1cd07cb9ce27c38213f2f8628739edbb9c0",
+      "active_transcription_sha256": "5767932727cd25fc0eb34f9943bc68368bc112e59d9d4a4a7543caadb96a1498",
+      "active_sources": [
+        "src/tcf/content/a0-a1/co.json · tcf-ss-a1-s18-co-1"
+      ],
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 17,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "5ca8d2de1674b53df33e2ce0ac7e444fba787bc92fe0b98b576f1d79636c363c",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "La variation entre « au spectacle » et « aux spectacles » ne change ni les six pièces au programme ni les trois mille spectateurs."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/bienvenue-parc-asterix-1.mp3",
+      "active_audio_sha256": "131928eb367e7218078abd0c7ae310646922a1069c14fd2186459d63fa93074b",
+      "active_transcription_sha256": "dbddd00d01e76185e6bdf8b440201f2dc4918906c09136cb40fb8bc6f9b71969",
+      "active_sources": [
+        "src/tcf/content/a0-a1/co.json · tcf-ss-a1-s18-co-3"
+      ],
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 29,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "7c2b3d6dfeb3fda04aa773715a6e1137a5d49be46f998beeb03d689059b93822",
+      "archived_status": "strong_match_requires_review",
+      "decision": "correction_documentee",
+      "note": "Le nouveau fichier de l’annonce d’Astérix et son corrigé suivent déjà l’édition vérifiée. L’écart de délai avant la fermeture est résolu.",
+      "correction_register": "docs/tcf/remplacement-audio/corrections-4-editions-20261111.json"
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/nature-conversation-2.mp3",
+      "active_audio_sha256": "69fe9d71fe667fdfb756de78fc6714bf3baf402629c3904dd5dc55849f625459",
+      "active_transcription_sha256": "7c21e86ab5aa1c2b9d4ccdac58dddd10da9230be2e8ba56eb713ba19f295a1a8",
+      "active_sources": [
+        "src/tcf/content/a0-a1/co.json · tcf-ss-a1-s20-co-2"
+      ],
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 49,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "bb1f37d63319ba5a6511eb7f0b5901d1825fd2d862af334ec8440b4265ed7f7d",
+      "archived_status": "possible_match_requires_review",
+      "decision": "decoupage_a_confirmer",
+      "note": "Les trois échanges actifs se retrouvent dans le registre. Le PDF inclut un échange supplémentaire sur un vol, dont l’appartenance à l’enregistrement actif reste à vérifier."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/maison/bonjour-fruits-legumes-par-2.mp3",
+      "active_audio_sha256": "9ce44aed6ab0c01b560381fe445ce72881cafbc47afb56aeaed237c18e02f532",
+      "active_transcription_sha256": "3fcbb6aefeaf72d11f1ab18f1fb26f735d2bcae7728d7ec7a9c610524fcbbd02",
+      "active_sources": [
+        "src/tcf/content/a0-a1/co.json · tcf-ss-a1-s22-co-3"
+      ],
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 51,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "c1008c0be88e92980558ac353b05236c44967a3afd025eea5139ae627eb781d6",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "Le prix de l’aspirine reste 2,50 euros. La notation du prix et l’espacement de Radio FM expliquent les écarts."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/presenter-conversation-2.mp3",
+      "active_audio_sha256": "8b7272c3d33c48a334227b9a60c90bf1db4242ea90d187001cbd698bae914231",
+      "active_transcription_sha256": "a52673710966ec7da8a46ea58dbc6ee5e43d89e1cca72de823ece0c1d3b84f04",
+      "active_sources": [
+        "src/tcf/content/a0-a1/co.json · tcf-ss-a1-s46-co-4"
+      ],
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 46,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "085408f7533c4bb15ad1b53d1ae009a43a9ee6a853b42edeab89c91071ff722d",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "Les rayons et le total de 12,50 euros concordent. Les différences de nombre et d’écriture du prix ne changent pas l’orientation donnée."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/pour-nouveau-projet-dois.mp3",
+      "active_audio_sha256": "1e0400a9161eadd0dbe68a20d186b12a50105018dcec37121c9a6839d262aef8",
+      "active_transcription_sha256": "ac1183c74a47090016489c85ebf04037f112dd863e48a08515e64b0b19921ba7",
+      "active_sources": [
+        "src/tcf/content/a0-a1/co.json · tcf-ss-a1-s49-co-2"
+      ],
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 61,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "45ffe4bf534c3004b161b89467356d7e0f7e29cc1f1f1dbf9bc057856c45aae5",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "Le genre d’« organisé » n’est pas marqué à l’oral. Les mêmes fournitures sont mentionnées."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/mesdames-messieurs-l-embarquement-vol.mp3",
+      "active_audio_sha256": "9a5ea399d27c4c4e5299385dc1a72518fd0d38f6f9b0a8f1f683e948301f8e0c",
+      "active_transcription_sha256": "c3f750aec8570e26b4d780cd55295edef8fa4f4888051285deea510513265b30",
+      "active_sources": [
+        "src/tcf/content/a0-a1/co.json · tcf-ss-a1-s53-co-2"
+      ],
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 33,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "f49c27f128f01cdcc4c4e96d00b0b4893238a0f0679e8c052c33b9bf9de763d3",
+      "archived_status": "possible_match_requires_review",
+      "decision": "version_a_confirmer",
+      "note": "Le départ et la durée du vol divergent. Le PDF inclut une annonce de service différente. Les chiffres du document actif restent associés à son corrigé."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/madame-etes-arrive-1.mp3",
+      "active_audio_sha256": "082192c7ca32c70925a29e8f5159e8e864382e77910c1c4fc65b7b2a9d6ce9d9",
+      "active_transcription_sha256": "643c4f06979e45e44392b8e0488c1f3c7011f3cb093fc42d6c22b8bd2150c761",
+      "active_sources": [
+        "src/tcf/content/a0-a1/co.json · tcf-ss-a1-s54-co-1"
+      ],
+      "pdf_collection": "A1 tout public",
+      "pdf_track": 25,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "d6eac32b07ef1a14335f6244863a8f91e129d29af0708bb043bb0e88dab1852d",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "SuperJ ou Super J, heure accolée et symbole euro aboutissent à la même ouverture et au même seuil de 200 euros."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/waouh-sympa-ton-nouveau-2.mp3",
+      "active_audio_sha256": "4a3fd1c3756c7f01dba017bed0ae0390f5f08c059cdcf57bc5c6b311097339fa",
+      "active_transcription_sha256": "d2a7aa1493f933f71af07e26680e74c8c575acde3f9af9d3df572d6abc7c8305",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ss-a2-s2-co-4"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 48,
+      "pdf_section": "Dialogue 2",
+      "pdf_sha256": "09a6f9cabbe1c1686872c792118138f4ef36f359266f6cb1ce21741130994d08",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "« Oh » ou « ah » introduit la même réponse à la proposition de restaurant végétarien."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/waouh-sympa-ton-nouveau-4.mp3",
+      "active_audio_sha256": "c1aaf24c126b87598d5fcc3a4c94e8fc05ca47ed251bbc6ee5ee9b4b510bf6ee",
+      "active_transcription_sha256": "f9329acc37547733ad39a7fb0d584952004d7ceefd1d887f8af0ebcbfbc3397c",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ss-a2-s2-co-4"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 48,
+      "pdf_section": "Dialogue 4",
+      "pdf_sha256": "09a6f9cabbe1c1686872c792118138f4ef36f359266f6cb1ce21741130994d08",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "Le second « de » dans « carte de fidélité » varie entre les textes. La personne refuse la carte dans les deux cas."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/bonjour-ici-service-client.mp3",
+      "active_audio_sha256": "d4aaed87ef8be2f0448ea066b7e4b7e75e850ff4bbebc00987a1a1c053230e22",
+      "active_transcription_sha256": "f23981cf6ac3aeab409e3c4b5cacff84bb727b074b681f8abb218bbd88d6a1c3",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ss-a2-s3-co-1"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 30,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "9bcfae5b9dd7d162a3b6b1f8236090b545e78d5278acebf360aadaef31d805ef",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "« 500g » et « 500 grammes » représentent la même quantité pour les paquets offerts."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/bonjour-societe-fmac.mp3",
+      "active_audio_sha256": "49aaa8ae7bcf977bd77558dc5e4ab8d051668589132bcf52f34d2af8fe5bcf36",
+      "active_transcription_sha256": "acf3e906eb0972e5cb3602b6300b2a2e4eef08af987389bcfc183227df82d213",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ss-a2-s3-co-2"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 37,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "9934291935374d8fabecfddf3cc118c8871599f4f71a44853ae861b1e5fa4fba",
+      "archived_status": "strong_match_requires_review",
+      "decision": "correction_documentee",
+      "note": "La version vérifiée du concours FMAC est déjà active avec son numéro de rappel, ses produits en promotion et ses dates.",
+      "correction_register": "docs/tcf/remplacement-audio/corrections-4-editions-20261111.json"
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/alors-cette-fete-anniversaire-2-1.mp3",
+      "active_audio_sha256": "8495e44824d6f5d1d91ea2108f097ddd0ae9e253aba7dbe2324af0fc3e0b83a4",
+      "active_transcription_sha256": "d8fb350531d9dfd0097b64ecc993664323a5c8d4c0ec62da485b0d1746c1847d",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ss-a2-s10-co-1"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 46,
+      "pdf_section": "Dialogue 1",
+      "pdf_sha256": "e1ae4b628c03bca311cac99a36a64dcbe99badbbe039183a3ffcf2acdf4f546a",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "L’interjection est soudée dans le PDF. Le nombre d’invités et le déroulement de la fête concordent."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/alors-cette-fete-anniversaire-2-2.mp3",
+      "active_audio_sha256": "a5695b7568f94556b3d941c2b6a6d1dbdfbe403c2ca9787120a46350bd0aceb4",
+      "active_transcription_sha256": "28d9992be97d87e9dbe252d19f85060930d541549530eaade7c6a5c87f7ec5c8",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ss-a2-s10-co-1"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 46,
+      "pdf_section": "Dialogue 2",
+      "pdf_sha256": "e1ae4b628c03bca311cac99a36a64dcbe99badbbe039183a3ffcf2acdf4f546a",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "Le mot « oh » diffère. Hugo décline le match à cause de l’anniversaire de sa mère."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/travail/02-travail-demander-un-service.mp3",
+      "active_audio_sha256": "770a9af9ab777311de1373cae6b4c9e6df3b2d9ee40ab334acfd44ba36f5774b",
+      "active_transcription_sha256": "92a3902af3f4eb96ca1c7a02995078823abffaca09caacb43e91b394b2f0274c",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ss-a2-s12-co-2"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 32,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "f370364c67390b56f7ccb179d22cbb525c39491d16f766c33643417c52ec5a74",
+      "archived_status": "possible_match_requires_review",
+      "decision": "version_a_confirmer",
+      "note": "Le PDF ajoute un colis à la poste et présente une autre précision du cours et du rappel téléphonique. Garder les renseignements de la version active."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/excuse-moi-eric-ai-1.mp3",
+      "active_audio_sha256": "f707590f932b3fadec57064109026a4055098c3687d35173d49a42917eb15335",
+      "active_transcription_sha256": "d73a48dae8d62a0c06a70450e4df652963ba27026930b34d52ea0a6f77a3c698",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ss-a2-s15-co-1"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 49,
+      "pdf_section": "Dialogue 1",
+      "pdf_sha256": "ec36664d616ab7da570b5528f88fe307de46f0cd2377d767d4a97586f74e1334",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "Le texte reprend « la date » au lieu d’un pronom. Le jour et l’heure de l’examen concordent."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/bonjour-voudrais-sandwich-2-2.mp3",
+      "active_audio_sha256": "ab9517bc3858750d7181fbdb082f0af80aae7d6d78e13e374c02cf6e35358835",
+      "active_transcription_sha256": "3c2777c1d16d7c7bc9f5bbaeca91dae7eaa8279ab780fb154b7e6ae66efb8930",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ss-a2-s20-co-4"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 42,
+      "pdf_section": "Dialogue 2",
+      "pdf_sha256": "b087a1bdd2e3e8e995752ddeec2cb1d3ec43700f8b362d43dcab0e124fc3c136",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "« Eh bien » ou « et bien » précède la même proposition de sortie."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/bonjour-voudrais-sandwich-2-3.mp3",
+      "active_audio_sha256": "389c1d3496dedb34729fef84475419b6e95c6a2efd09fd37c04c22d0a67dfc67",
+      "active_transcription_sha256": "242830fafd772c997cee314bfd069af2e835bb0b05ff15ac4ff8fa4065e2fcec",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ss-a2-s20-co-4"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 42,
+      "pdf_section": "Dialogue 3",
+      "pdf_sha256": "b087a1bdd2e3e8e995752ddeec2cb1d3ec43700f8b362d43dcab0e124fc3c136",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "« Eh bien » ou « et bien » précède le même avis sur le livre."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/julie-dois-aller-nouveau-2-2.mp3",
+      "active_audio_sha256": "84f06a926042dbdb12ef216289391969b2413accff67d7269e6d1d72ca3c0993",
+      "active_transcription_sha256": "8f5985661409314c8ef9f8c895231ef2c62e747585855afb308e14aaec07412c",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ss-a2-s49-co-3"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 41,
+      "pdf_section": "Dialogue 2",
+      "pdf_sha256": "718034a0daddc62c14a2bf8729e3331b052a26af4f053cbbfde4ed2bbbfdcab5",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "La variation « eh » ou « et » ne change pas les nouvelles de Clémence et le projet de vacances."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/salut-julie-2-3.mp3",
+      "active_audio_sha256": "2e89fd8d1741ca95ae37a7b6dbc954c4a3d91f352712302b7e287e3fdc7084f6",
+      "active_transcription_sha256": "152a75dd052cb9d9cbd9c714ee4cb375b6c4c26da6cc7dfc09c153280f5201f7",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ss-a2-s50-co-1"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 45,
+      "pdf_section": "Dialogue 3",
+      "pdf_sha256": "4637df7abe3d01da0e8f84945eb7695e192bdf50d96a73ab27e7a52300120027",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "L’interjection « oh » varie. Valérie accepte de garder l’enfant le samedi soir."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/bonjour-leila-3.mp3",
+      "active_audio_sha256": "4745d56a2780989f3e54a5723b5669495ee6b03d6484a44aff3e03ab23f2c6b8",
+      "active_transcription_sha256": "cb8ed468026746a45d04dac895a79179f7626f0476e2b55175bcad499e29e1d0",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ss-a2-s50-co-2"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 47,
+      "pdf_section": "Dialogue 3",
+      "pdf_sha256": "2da657904254aa20f247e9cd935142d642a39e2debf38bccd17b381c261deabf",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "Les seules insertions signalées sont « ah » et « euh ». L’invitation et les genres de films concordent."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/vie-quotidienne/salut-thomas.mp3",
+      "active_audio_sha256": "f87ac529a5106b8721acfcf9113a64f0c5dfa20efb60fe903047830f02b3971b",
+      "active_transcription_sha256": "63f3e0354572edc2093e630d77203d5321cb3c3eaa3bfbb51630f449445938ac",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ss-a2-s50-co-4"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 31,
+      "pdf_section": "piste_complete",
+      "pdf_sha256": "30bbe1bee17f55eb4b148d772a5580abcaeae4d41c43427055fe8af83c52552d",
+      "archived_status": "possible_match_requires_review",
+      "decision": "version_a_confirmer",
+      "note": "La matière, la salle, des pages à réviser et le cahier diffèrent. Le PDF ne permet pas de réécrire la transcription active."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/bonjour-desirez-2-2.mp3",
+      "active_audio_sha256": "bd681ddcdb38b4c73d1fd65cb3cde71496a776d2125a1ab6f7efe039b2d8892d",
+      "active_transcription_sha256": "074e45558d8246c976241603842fa37958ded556bfec0d299cb1da2ab8d99b61",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ss-a2-s55-co-4"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 44,
+      "pdf_section": "Dialogue 2",
+      "pdf_sha256": "f9227c7aeadd4938360845ae4c58fdedf94fb4570ac21ea379671a52ef359f86",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "Un « oh » est présent dans le document. Le retour au bureau pour recevoir le client concorde."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/11-magasin-annonce-remise-sur-les-bijoux.mp3",
+      "active_audio_sha256": "804b4d66a1f2282e0f63c25037c174eb64d3a869a4ad7fa40a97db25fdf7c3da",
+      "active_transcription_sha256": "dfd2f9e985e8f9795c1349ab104373660f8d5d3b7cb9f8e12e44d57b2558acb8",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ssx-a2-annonce-1-2-co-2"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 1,
+      "pdf_section": "Document 2",
+      "pdf_sha256": "660902d4ee057348eceb2214f52a5079f20d47153c9b3f9c5391f6cba62f5f32",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "Singulier ou pluriel dans la formule d’appel. Même remise de 30 % sur les bijoux."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/02-magasin-annonce-promotion-télévision.mp3",
+      "active_audio_sha256": "5400d59b5c4171701f69e2b7405f59a752fc18b1ac593a99da77f9f024ebe6dd",
+      "active_transcription_sha256": "c3992cd764cef3e9d07fa35b64b810d2d1de965abaa66fc61a9b55723e62695f",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ssx-a2-annonce-4-4-co-2"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 4,
+      "pdf_section": "Document 4",
+      "pdf_sha256": "c194f3ef3d79e675e312376a699d2ba150eda40a47c186cb40d878871b048e35",
+      "archived_status": "strong_match_requires_review",
+      "decision": "graphie_a_confirmer",
+      "note": "Autoprix ou Atoutprix selon le texte. Les télévisions et le plafond de remise sont les mêmes."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/09-magasin-annonce-printemps-du-cinéma.mp3",
+      "active_audio_sha256": "254db67677cccfe0e11f98e89f47f4527e05710a5ff1682999cc9bcb71667d28",
+      "active_transcription_sha256": "bc6e303a9d7588135ab8890d138597b3ddbdaee284f23c5a6c36d0f1f66a2e5b",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ssx-a2-annonce-7-5-co-2"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 7,
+      "pdf_section": "Document 5",
+      "pdf_sha256": "59a6b4d1597c52f3080f493cc06f661c28f689b011a5aa03e3cdd569f4f24c7f",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "Les trois montants concordent. Le PDF emploie une notation abrégée et l’autre texte répète « euros »."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/04-loisirs-annonce-cirque.mp3",
+      "active_audio_sha256": "08d2e014295fd567b890a5b883b898d075ac765ac22a40f5793b97d71d52c6e7",
+      "active_transcription_sha256": "5346662ada33f031f336d5d062d6e5acdbc028f2912290759286d971d7bddadc",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ssx-a2-annonce-4-1-co-2"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 4,
+      "pdf_section": "Document 1",
+      "pdf_sha256": "c194f3ef3d79e675e312376a699d2ba150eda40a47c186cb40d878871b048e35",
+      "archived_status": "strong_match_requires_review",
+      "decision": "graphie_a_confirmer",
+      "note": "Pinder ou Pindet selon le texte. Une heure trente et 1 h 30 représentent la même durée."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/radio/08-radio-prévision-météo.mp3",
+      "active_audio_sha256": "d8fc12c026f9dc2852fc9ab433b65f43278b76f50e6f5f2cd6f6d3ffb433c540",
+      "active_transcription_sha256": "43f7297bcde923876f6a7e656a414cd778da16ac6d85d88146b9ea939d753d47",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ssx-a2-radio-19-3-co-3"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 19,
+      "pdf_section": "Document 3",
+      "pdf_sha256": "dc33bbeed5804dbecdc729fe696c7a2519b43e14183163182e57d43b7120b6b2",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "« Vent très fort » ou « vents très forts ». L’évolution météo et le conseil de prendre un parapluie concordent."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/moyen-a2__annonce-2.1.mp3",
+      "active_audio_sha256": "bc32643e25f4eefdc79fb9de88bd6923690f5e4cc9ca5ddf152c820abebd608d",
+      "active_transcription_sha256": "3f34d91d6386ffaa4f412488fa368a65f771df074b33e632b0139702b63be4ce",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ssx-a2-annonce-2-1-co-2"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 2,
+      "pdf_section": "Document 1",
+      "pdf_sha256": "5e4299e3b6beb6d0450df68e3a0f9dab1d5f9cd661dcabd24a5e8ca5f2043a95",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "Les deux textes indiquent une taille minimale d’un mètre vingt. La divergence est liée au placement de l’unité dans le nombre."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/loisirs/moyen-a2__radio-17.3.mp3",
+      "active_audio_sha256": "c8976e20cd31cdb3082dbb8200602a5125f423633ba2fd20d12b4ff5e372cd5a",
+      "active_transcription_sha256": "3c24ea8b85233f569163877fc36231af63993306c50c2f64f982f4357b07984b",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ssx-a2-radio-17-3-co-3"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 17,
+      "pdf_section": "Document 3",
+      "pdf_sha256": "e29a9689dce218d521ec7d5ced5fca186fd066fadbcee536093ca20b574d0e4b",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "Les graphies de Sport Radio et de basketball varient. Les résultats et horaires annoncés concordent."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/presenter/moyen-a2__radio-20.1.mp3",
+      "active_audio_sha256": "85484fe100d77b60c6a741c817f3a92fe2c2d1123b4ed7aa2b24cc0481a1d5d9",
+      "active_transcription_sha256": "4e0e6d3bc5983d5e1829502499301c25de5e52631a35d59d4d9d7f7127d5e8a8",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ssx-a2-radio-20-1-co-3"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 20,
+      "pdf_section": "Document 1",
+      "pdf_sha256": "9a5143944208cc45eba7045a1370af660610da9f655199843f124f8a0db0091b",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "Le formulaire remplace le symbole de température par le mot « degrés ». Les deux valeurs concordent."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/moyen-a2__annonce-5.2.mp3",
+      "active_audio_sha256": "9b21fa57b9ea687628ed6f0322577acc559a17c963884bac86b07806d0211267",
+      "active_transcription_sha256": "7d422913a116cdb0cdcb3e0c9169fea83520c42d5f4de314ae88e63d02b48ce7",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ssx-a2-annonce-5-2-co-2"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 5,
+      "pdf_section": "Document 2",
+      "pdf_sha256": "eca8bd138a50d806dce3b4c63492e9c894c18eb7094f7c394d6d9d2878a9c075",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "Les groupes de la plaque ont les mêmes caractères. Seuls les espaces diffèrent."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/moyen-a2__radio-15.1.mp3",
+      "active_audio_sha256": "590d47ce6f60c31f15ab5977cf04aa96a37aca4ca085572933cbe186d53e150e",
+      "active_transcription_sha256": "6b9364794ba715b64fb006211b858f141583101dba7a68f803794da3a902ad51",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ssx-a2-radio-15-1-co-3"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 15,
+      "pdf_section": "Document 1",
+      "pdf_sha256": "e4032c617fc61e07a8b1523eb75c8fec482186047ea96f31e4bf81bad7528e06",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "La lettre indiquant les degrés Celsius est omise dans un texte. La valeur de −7 degrés et la perturbation restent les mêmes."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/transports/moyen-a2__radio-20.3.mp3",
+      "active_audio_sha256": "2fbe69210404149425094083dca316761ef601f3a64e6702def35b571fc71e7f",
+      "active_transcription_sha256": "9648c59ae617519d6f91275f723575bcc76e7716b72af3761f418c311a97db3a",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ssx-a2-radio-20-3-co-3"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 20,
+      "pdf_section": "Document 3",
+      "pdf_sha256": "9a5143944208cc45eba7045a1370af660610da9f655199843f124f8a0db0091b",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "Le nom de Radio trafic change d’espacement et de graphie. L’A10 et le détour par la nationale 19 concordent."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/01-magasin-annonce-gagner-billet-cinéma.mp3",
+      "active_audio_sha256": "bf58785531f0803e9b9ae54c29f67daf8b6a43cb319d2901d31c27f769b13304",
+      "active_transcription_sha256": "13390f68d9f78fede360ffaa0fc618bd9eb669f9cdcc8bdba3ef57b2f7e8f0a9",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ssx-a2-place-de-cinema-offerte-co-2"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 3,
+      "pdf_section": "Document 6",
+      "pdf_sha256": "c1e144ae27c813957105db15a54f7f5fcb2570b7260939c1a7d8630f44c0b58c",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "Les variantes « cher client » et « chers clients », ainsi que « CD » et « CDs », ne changent pas l’offre."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/07-magasin-annonce-livraison-des-courses.mp3",
+      "active_audio_sha256": "8ca7299512eeb4008d6059830163390e0e74888cbd5473299bdae938569b4eae",
+      "active_transcription_sha256": "020e3472434b3b9e766f44c10b128a8be8e6a8b4a633104a5dd7dbc0837fbce4",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ssx-a2-livraison-des-courses-co-2"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 7,
+      "pdf_section": "Document 3",
+      "pdf_sha256": "59a6b4d1597c52f3080f493cc06f661c28f689b011a5aa03e3cdd569f4f24c7f",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "Les deux seuils de prix et la gratuité au-dessus du montant indiqué concordent. L’unité est abrégée dans le document."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/magasins/08-magasin-annonce-offre-incroyable.mp3",
+      "active_audio_sha256": "56c854fc755fa6dfbea3267f6b04130e3b0649f746962f8cc4f5e41d2ba51019",
+      "active_transcription_sha256": "6e20ec5355ba5e9baf9a32373aac634294a7401af67eb812e0f3770d54a32fb0",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ssx-a2-offres-incroyables-co-2"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 7,
+      "pdf_section": "Document 4",
+      "pdf_sha256": "59a6b4d1597c52f3080f493cc06f661c28f689b011a5aa03e3cdd569f4f24c7f",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "La distinction « multimédia » ou « multimédias » n’affecte ni la catégorie d’articles ni la réduction."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/radio/09-radio-concert-rock-guitariste.mp3",
+      "active_audio_sha256": "3bfbeb79ea00dfa4785fc5460ae462af9d53ff1f4631c6e175bcf9b65a895794",
+      "active_transcription_sha256": "b4ee3f5939f44519c44d2c7e456cd492ea0e0e7fdc8f13ab4c554dbe27fdcc7c",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ssx-a2-radio-concert-rock-co-3"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 15,
+      "pdf_section": "Document 3",
+      "pdf_sha256": "e4032c617fc61e07a8b1523eb75c8fec482186047ea96f31e4bf81bad7528e06",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "Les mêmes nom et station apparaissent avec un espacement différent. Le lieu du concert et le jeu sont identiques."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/ecole/25-école-résultat-du-concours.mp3",
+      "active_audio_sha256": "f10cfd6ffebbb89eeaa89bd46579c4b6adf8449a123ee60ff05d9b0919473cc5",
+      "active_transcription_sha256": "aca749a734419fe6f5d6c774878bac39493919718660254a0c2049d8ba5acfa0",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ssx-a2-ecole-resultat-du-concours-co-4"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 40,
+      "pdf_section": "Dialogue 4",
+      "pdf_sha256": "bd624bc8b34bbbe87c9f775c2b264b1d4cf3c5faf5c4b14d03f9662a4f7e5ac3",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "L’écart porte sur « ah » et « ça ». La réussite au concours de professeur reste la même."
+    },
+    {
+      "ref": "/lib/audio/tcf/co/famille/14-famille-trouver-un-cadeau.mp3",
+      "active_audio_sha256": "91d7c67f48c0d521bd1ab85835ec95905d875546d6d0005a3c005cd27313f841",
+      "active_transcription_sha256": "499076a5f6a182c076ff28d91fece87304422b0bde617fd450614af3fb873888",
+      "active_sources": [
+        "src/tcf/content/a1-a2/co.json · tcf-ssx-a2-famille-trouver-un-cadeau-co-4"
+      ],
+      "pdf_collection": "A2 tout public",
+      "pdf_track": 40,
+      "pdf_section": "Dialogue 2",
+      "pdf_sha256": "bd624bc8b34bbbe87c9f775c2b264b1d4cf3c5faf5c4b14d03f9662a4f7e5ac3",
+      "archived_status": "strong_match_requires_review",
+      "decision": "accord_sur_les_faits",
+      "note": "L’ajout de « ah » ne change pas le cadeau proposé pour un amateur de rugby."
+    }
+  ]
+}

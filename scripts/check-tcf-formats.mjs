@@ -60,7 +60,9 @@ try {
   const worksheets=buildWorksheets([{...config,tcfCeFormat:'image'}],42);
   if(ceArtFor(ex)) {
    const art=ceArtFor(ex);assert.equal(art.sourceKey,ceArtKey(ex));assert(existsSync(`${root}/public${art.src}`));
-   assert(art.width>=1000&&art.height>=1000);
+   assert(Math.max(art.width,art.height)>=1000&&Math.min(art.width,art.height)>0);
+   assert.equal(worksheets[0].cePosterLandscape,art.width>art.height,ex.id);
+   assert(!worksheets.slice(1).some(sheet=>sheet.cePosterLandscape),ex.id);
    if(art.engine==='document-render')assert.equal(art.fontFamily,'URW Gothic');
    assert.equal(worksheets.filter(sheet=>sheet.cePosterSheet).length,1,ex.id);
    const poster=worksheets.find(sheet=>sheet.cePosterSheet);

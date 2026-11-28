@@ -1,3 +1,6 @@
+import { createRng, randomSeed } from '@/math/rng'
+import { drawTpfPlacementExercise, tpfPlacementExercises } from './tpf-content'
+import { tpfPlacementTask } from './tpf-placement'
 import { markMotATrouver, resetMotsATrouver } from './texte-images-editing'
 import { useMemo, useRef, useState } from 'react'
 import { SelectBox } from '@/components/generator/SelectBox'
@@ -814,6 +817,13 @@ function SupportEditor({
           onChange={(questions) => set(withSupport(ex, { questions }))}
         />
       )
+    case 'lecture_progressive':
+      return (
+        <>
+          <TextField label="Titre" value={ex.support.titre} onChange={(titre) => set(withSupport(ex, { titre }))} />
+          <TextField label="Texte à lire" value={ex.support.texte} multiline rows={7} onChange={(texte) => set(withSupport(ex, { texte }))} />
+        </>
+      )
     case 'trois_themes': {
       const themes = ex.support.themes
       const setTheme = (i: number, patch: Partial<TcfPoTheme>) =>
@@ -1161,7 +1171,11 @@ export function TcfExerciseEditor({
 }) {
   const isGrammaire = variant === 'grammaire'
   const slot = tcfSlotByTypeId[typeId]
-  const bank = useMemo(() => (slot ? tcfSlotBank(niveau, slot) : []), [slot, niveau])
+  const placement = Boolean(tpfPlacementTask(typeId))
+  const bank = useMemo(
+    () => placement ? tpfPlacementExercises(typeId) : slot ? tcfSlotBank(niveau, slot) : [],
+    [placement, typeId, slot, niveau],
+  )
   const types = useMemo(
     () =>
       isGrammaire
@@ -1173,13 +1187,17 @@ export function TcfExerciseEditor({
     ? edits != null
     : edits != null && slot != null && edits.competence === slot.competence
   const bankSource = useMemo(() => {
-    if (isGrammaire || !slot || slot.competence !== 'CE') return undefined
+    if (placement || isGrammaire || !slot || slot.competence !== 'CE') return undefined
     return [tcfExerciseById(bankId), tcfExerciseById(shownId), bank[0]].find(
       (ex) => ex != null && ex.competence === 'CE',
     )
-  }, [isGrammaire, slot, bankId, shownId, bank])
+  }, [placement, isGrammaire, slot, bankId, shownId, bank])
   const fallback = useMemo(() => {
     if (isGrammaire) return fallbackExercise ? structuredClone(fallbackExercise) : undefined
+    if (placement) {
+      return fallbackExercise ? structuredClone(fallbackExercise)
+        : drawTpfPlacementExercise(typeId, createRng(0), bankId ?? shownId)
+    }
     if (!slot) return undefined
     const source = [tcfExerciseById(bankId), fallbackExercise, tcfExerciseById(shownId), bank[0]].find(
       (ex) => ex != null && ex.competence === slot.competence,
@@ -1190,14 +1208,14 @@ export function TcfExerciseEditor({
     }
     const first = TCF_TYPES.find((t) => t.competence === slot.competence)!
     return emptyTcfExercise(niveau, slot.competence, first.typeExercice, tcfExerciseId(niveau, slot.competence, 1))
-  }, [slot, bankId, shownId, bank, niveau, isGrammaire, fallbackExercise, questionCount])
+  }, [placement, typeId, slot, bankId, shownId, bank, niveau, isGrammaire, fallbackExercise, questionCount])
   const current = edited ? edits : fallback
   const isCeBankPicker = !isGrammaire && slot?.competence === 'CE' && Boolean(bankSource)
   /** Tous les audios CO, tous niveaux : choisir un audio recharge questions + transcription. */
   const coAudioEntries = useMemo(
     () =>
-      slot?.competence === 'CO' || isGrammaire ? tcfAudioEntries(tcfBankAllLevels('CO')) : [],
-    [slot?.competence, isGrammaire],
+      slot?.competence === 'CO' || isGrammaire ? tcfAudioEntries(placement ? bank : tcfBankAllLevels('CO')) : [],
+    [placement, bank, slot?.competence, isGrammaire],
   )
   const scenarioAudioPaths = useMemo(
     () =>
@@ -1285,7 +1303,7 @@ export function TcfExerciseEditor({
   return (
     <div className={`quad-libre-block tcf-editor${isSixCourts ? ' is-six-courts' : ''}`}>
       <div className="libre-item-num-col" style={{ alignItems: 'flex-start', marginBottom: 8 }}>
-        <b>{isGrammaire ? 'Mode libre' : 'Exercice TCF'}</b>
+        <b>{isGrammaire ? 'Mode libre' : placement ? 'Exercice TPF' : 'Exercice TCF'}</b>
         <button
           type="button"
           className="libre-item-reroll no-print"
@@ -1295,6 +1313,11 @@ export function TcfExerciseEditor({
             if (isGrammaire) {
               onChange({ tcfExercise: undefined })
               onReroll?.()
+              return
+            }
+            if (placement) {
+              const next = drawTpfPlacementExercise(typeId, createRng(randomSeed()))
+              if (next) set(next)
               return
             }
             if (slot) set(drawTcfSeries(niveau, slot.competence, exercise.type_exercice))
@@ -1309,9 +1332,11 @@ export function TcfExerciseEditor({
             <button type="button" className="tcf-btn" disabled={!edited} onClick={() => onChange({ tcfExercise: undefined })}>
               Revenir à la banque
             </button>
-            <button type="button" className="tcf-btn" onClick={() => startBlank()}>
-              Nouvel exercice vide
-            </button>
+            {!placement ? (
+              <button type="button" className="tcf-btn" onClick={() => startBlank()}>
+                Nouvel exercice vide
+              </button>
+            ) : null}
           </div>
           <small className="muted">
             {edited
@@ -1323,6 +1348,7 @@ export function TcfExerciseEditor({
         </>
       ) : null}
       <>
+          {!placement ? (<>
           <SelectBox
             label="Type d’exercice"
             value={exercise.type_exercice}
@@ -1347,6 +1373,7 @@ export function TcfExerciseEditor({
           {!isSixCourts ? (
             <small className="muted">Choisissez un type : un audio est tiré au hasard, avec ses questions.</small>
           ) : null}
+          </>) : null}
           {exercise.type_exercice !== 'images_a_reconnaitre' ? (
             isSixCourts ? (
               <div className="tcf-six-courts-consigne">

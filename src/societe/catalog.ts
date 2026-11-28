@@ -1,10 +1,19 @@
 import type { ExerciseType, Topic } from '@/math/types'
-import { SUISSE_EXERCISE_TYPES, SUISSE_TOPIC_ID } from './suisse'
 
 export const SOCIETE_DOMAIN = 'société' as const
+export const SOCIETE_TOPIC = 'societe-a-venir'
+export const SOCIETE_PLACEHOLDER: ExerciseType = {
+  id: 'societe-placeholder',
+  topic: SOCIETE_TOPIC,
+  label: 'Contenu à venir',
+  description: 'Le domaine Société sera bientôt disponible.',
+  instruction: 'Contenu pédagogique à venir.',
+  visual: 'texte',
+  preferredColumns: 1,
+}
 
 export const SOCIETE_TOPICS: Topic[] = [
-  { id: SUISSE_TOPIC_ID, label: 'La Suisse', domain: 'société' },
+  { id: SOCIETE_TOPIC, label: 'À venir', domain: SOCIETE_DOMAIN },
 ]
 
-export const SOCIETE_EXERCISE_TYPES: ExerciseType[] = SUISSE_EXERCISE_TYPES
+export const SOCIETE_EXERCISE_TYPES = [SOCIETE_PLACEHOLDER]

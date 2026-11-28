@@ -3,7 +3,7 @@ import { headingForSlice } from '@/math/page-break-heading'
 import { ceArtFor } from './ce-art'
 import { isAssociationAnnonce } from './association-documents'
 
-/** Paginer les documents CE en image selon les sauts de page choisis. */
+/** Séparer par défaut le document illustré de ses questions et conserver les coupures manuelles. */
 export function paginateCePosters(sheet: WorksheetPage): WorksheetPage[] | null {
   const artworkOf = (item: MathItem | undefined) => {
     const tcf = item?.tcf
@@ -17,13 +17,36 @@ export function paginateCePosters(sheet: WorksheetPage): WorksheetPage[] | null 
     if (artwork && tcf?.kind === 'support' && tcf.exercise.type_exercice === 'annonce' && isAssociationAnnonce(tcf.exercise)) {
       fullItems = [{ ...support, noPoints: true, points: 0 }, { ...support, tcf: { kind: 'ce_association_answers', exercise: tcf.exercise } }]
     }
-    const breaks = Array.from({ length: fullItems.length }, (_, i) => block.tcfPageBreakAfter?.[i] ?? false)
+    const offset = block.itemOffset ?? 0
+    const breaks = Array.from(
+      { length: Math.max(offset + fullItems.length, block.tcfPageBreakAfter?.length ?? 0) },
+      (_, i) => block.tcfPageBreakAfter?.[i] ?? (i === 0 && artwork != null && fullItems.length > 1),
+    )
     let start = 0
     for (let end = 0; end < fullItems.length; end++) {
-      if (!breaks[end] && end < fullItems.length - 1) continue
+      if (!breaks[offset + end] && end < fullItems.length - 1) continue
       const items = fullItems.slice(start, end + 1)
-      const next = { ...block, ...headingForSlice(block, start, fullItems), items, itemOffset: start, sourceBlockIndex: block.sourceBlockIndex ?? sourceIndex, tcfPageBreakAfter: breaks }
-      pages.push({ ...sheet, blocks: [next], items, isContinuation: pages.length > 0 })
+      const itemOffset = offset + start
+      const dedicatedArtwork = start === 0 && end === 0 ? artwork : undefined
+      const next = {
+        ...block,
+        ...headingForSlice(block, itemOffset, fullItems),
+        ...(itemOffset === 0 && block.pointsWeights && !artwork ? { pointsWeights: block.pointsWeights } : {}),
+        items,
+        itemOffset,
+        sourceBlockIndex: block.sourceBlockIndex ?? sourceIndex,
+        tcfPageBreakAfter: breaks,
+      }
+      pages.push({
+        ...sheet,
+        blocks: [next],
+        items,
+        isContinuation: Boolean(sheet.isContinuation) || pages.length > 0,
+        ...(dedicatedArtwork ? {
+          cePosterSheet: true,
+          cePosterLandscape: dedicatedArtwork.width > dedicatedArtwork.height,
+        } : {}),
+      })
       start = end + 1
     }
   }

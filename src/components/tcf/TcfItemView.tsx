@@ -189,6 +189,6 @@ export function TcfItemView({
     case 'ce_association_answers':
       return <CeAssociationAnswers exercise={tcf.exercise} mode={mode} />
     case 'informations':
-      return <TcfInformations niveau={tcf.niveau} pointsByCompetence={tcf.pointsByCompetence} />
+      return <TcfInformations niveau={tcf.niveau} placement={tcf.placement} pointsByCompetence={tcf.pointsByCompetence} />
   }
 }
