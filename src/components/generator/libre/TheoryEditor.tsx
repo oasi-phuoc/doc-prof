@@ -1,6 +1,10 @@
-import type { GrammarTheoryBlock, TheoryImageCell } from '@/francais/grammar-theory'
+import { isGrammarTheoryType, type GrammarTheoryBlock, type TheoryImageCell } from '@/francais/grammar-theory'
+import { logistiqueType } from '@/logistique/catalog'
 import { mathGlossaryBank, type GlossaryFigureId } from '@/math/glossary-banks'
+import { mathTheoryTopic } from '@/math/theory-lessons'
 import type { MathItem } from '@/math/types'
+import { isSanteTheoryType } from '@/sante/catalog'
+import { isSocieteTheoryType } from '@/societe/types'
 import { ImageField } from '@/tcf/fields'
 import { SelectBox } from '../SelectBox'
 
@@ -33,6 +37,16 @@ function replaceAt<T>(items: T[], index: number, item: T): T[] {
   return items.map((current, position) => position === index ? item : current)
 }
 
+function withoutAt<T>(items: T[], index: number): T[] {
+  return items.filter((_, position) => position !== index)
+}
+
+function RemovePart({ label, onClick }: { label: string; onClick: () => void }) {
+  return (
+    <button type="button" className="button small secondary" onClick={onClick}>{label}</button>
+  )
+}
+
 function ImageFields({ image, onChange, description }: {
   image: TheoryImageCell
   onChange: (patch: Partial<TheoryImageCell>) => void
@@ -49,11 +63,22 @@ function ImageFields({ image, onChange, description }: {
   )
 }
 
-function BlockFields({ block, update }: { block: GrammarTheoryBlock; update: (next: GrammarTheoryBlock) => void }) {
+type BlockEditing = {
+  block: GrammarTheoryBlock
+  update: (next: GrammarTheoryBlock) => void
+  removable: boolean
+  remove?: () => void
+}
+
+function BlockFields({ block, update, removable, remove }: BlockEditing) {
   switch (block.kind) {
     case 'section':
       return block.blocks.map((child, index) => (
-        <BlockEditor key={index} block={child} index={index} update={(next) => update({ ...block, blocks: replaceAt(block.blocks, index, next) })} />
+        <BlockEditor key={index} block={child} index={index} removable={removable}
+          update={(next) => update({ ...block, blocks: replaceAt(block.blocks, index, next) })}
+          remove={removable && block.blocks.length > 1
+            ? () => update({ ...block, blocks: withoutAt(block.blocks, index) })
+            : remove} />
       ))
     case 'image':
       return <ImageFields image={block} onChange={(patch) => update({ ...block, ...patch })} />
@@ -132,11 +157,15 @@ function BlockFields({ block, update }: { block: GrammarTheoryBlock; update: (ne
   }
 }
 
-function BlockEditor({ block, index, update }: { block: GrammarTheoryBlock; index: number; update: (next: GrammarTheoryBlock) => void }) {
+function BlockEditor({ index, ...editing }: BlockEditing & { index: number }) {
+  const name = `${labels[editing.block.kind]} ${index + 1}`
+  const removeLabel = editing.block.kind === 'section' ? 'Retirer la section'
+    : editing.block.kind === 'paragraph' ? 'Retirer le paragraphe' : 'Retirer cette partie'
   return (
     <details className="libre-theory-block" open={index === 0}>
-      <summary>{labels[block.kind]} {index + 1}</summary>
-      <BlockFields block={block} update={update} />
+      <summary>{name}</summary>
+      <BlockFields {...editing} />
+      {editing.remove && <RemovePart label={removeLabel} onClick={editing.remove} />}
     </details>
   )
 }
@@ -144,13 +173,19 @@ function BlockEditor({ block, index, update }: { block: GrammarTheoryBlock; inde
 type MathLesson = NonNullable<MathItem['mathTheory']>
 type MathGlossary = NonNullable<MathItem['glossary']>
 
-function MathTheoryFields({ lesson, update }: { lesson: MathLesson; update: (patch: Partial<MathLesson>) => void }) {
+function MathTheoryFields({ lesson, update, removable }: {
+  lesson: MathLesson
+  update: (patch: Partial<MathLesson>) => void
+  removable: boolean
+}) {
   return (
     <>
       <TextField label="Titre" value={lesson.title} onChange={(title) => update({ title })} />
       <TextField label="Titre de l’explication" value={lesson.heading ?? ''} onChange={(heading) => update({ heading })} />
       <TextField label="Objectif" value={lesson.goal} onChange={(goal) => update({ goal })} multiline />
+      {removable && lesson.goal && <RemovePart label="Retirer l’objectif" onClick={() => update({ goal: '' })} />}
       <TextField label="Exemple" value={lesson.example} onChange={(example) => update({ example })} multiline />
+      {removable && lesson.example && <RemovePart label="Retirer l’exemple" onClick={() => update({ example: '' })} />}
       <label>
         <input type="checkbox" checked={!lesson.hideVisual} onChange={(event) => update({ hideVisual: !event.target.checked })} />
         Afficher le schéma
@@ -164,21 +199,27 @@ function MathTheoryFields({ lesson, update }: { lesson: MathLesson; update: (pat
           <TextField label="Texte alternatif du schéma" value={lesson.visualAlt} onChange={(visualAlt) => update({ visualAlt })} />
         </>
       )}
-      <fieldset>
+      {lesson.words.length > 0 && <fieldset>
         <legend>Les mots</legend>
         {lesson.words.map(([word, definition, role], index) => (
           <div key={index}>
             <TextField label={`Mot ${index + 1}`} value={word} onChange={(text) => update({ words: replaceAt(lesson.words, index, [text, definition, role]) })} />
             <TextField label={`Définition ${index + 1}`} value={definition} onChange={(text) => update({ words: replaceAt(lesson.words, index, [word, text, role]) })} multiline />
+            {removable && lesson.words.length > 1 && <RemovePart label={`Retirer le mot ${index + 1}`} onClick={() => update({ words: withoutAt(lesson.words, index) })} />}
           </div>
         ))}
-      </fieldset>
-      <fieldset>
+        {removable && <RemovePart label="Retirer le vocabulaire" onClick={() => update({ words: [] })} />}
+      </fieldset>}
+      {lesson.steps.length > 0 && <fieldset>
         <legend>Les étapes</legend>
         {lesson.steps.map((step, index) => (
-          <TextField key={index} label={`Étape ${index + 1}`} value={step} onChange={(text) => update({ steps: replaceAt(lesson.steps, index, text) })} multiline />
+          <div key={index}>
+            <TextField label={`Étape ${index + 1}`} value={step} onChange={(text) => update({ steps: replaceAt(lesson.steps, index, text) })} multiline />
+            {removable && lesson.steps.length > 1 && <RemovePart label={`Retirer l’étape ${index + 1}`} onClick={() => update({ steps: withoutAt(lesson.steps, index) })} />}
+          </div>
         ))}
-      </fieldset>
+        {removable && <RemovePart label="Retirer les étapes" onClick={() => update({ steps: [] })} />}
+      </fieldset>}
     </>
   )
 }
@@ -186,8 +227,10 @@ function MathTheoryFields({ lesson, update }: { lesson: MathLesson; update: (pat
 export function TheoryEditor({ exerciseType, items, onChange }: {
   exerciseType: string
   items: MathItem[]
-  onChange: (items: MathItem[]) => void
+  onChange: (items: MathItem[], removedIndex?: number) => void
 }) {
+  const removable = Boolean(mathTheoryTopic(exerciseType)) || isGrammarTheoryType(exerciseType) ||
+    isSocieteTheoryType(exerciseType) || isSanteTheoryType(exerciseType) || logistiqueType(exerciseType)?.kind === 'theorie'
   const glossaryBank = mathGlossaryBank(exerciseType)
   const figures = new Map<GlossaryFigureId, string>()
   for (const { id, figure, term } of glossaryBank ?? []) {
@@ -197,12 +240,15 @@ export function TheoryEditor({ exerciseType, items, onChange }: {
     <div className="quad-libre-block" aria-label="Contenu de la théorie">
       <b>Contenu de la théorie</b>
       {items.map((item, index) => {
+        const remove = removable && items.length > 1 ? () => onChange(withoutAt(items, index), index) : undefined
         if (item.mathTheory) {
           const lesson = item.mathTheory
           return (
             <details className="libre-theory-block" key={item.libreId ?? index} open={index === 0}>
               <summary>{lesson.title || 'Leçon'}</summary>
-              <MathTheoryFields lesson={lesson} update={(patch) => onChange(replaceAt(items, index, { ...item, mathTheory: { ...lesson, ...patch } }))} />
+              <MathTheoryFields lesson={lesson} removable={removable}
+                update={(patch) => onChange(replaceAt(items, index, { ...item, mathTheory: { ...lesson, ...patch } }))} />
+              {remove && <RemovePart label={`Retirer la partie ${index + 1}`} onClick={remove} />}
             </details>
           )
         }
@@ -254,7 +300,7 @@ export function TheoryEditor({ exerciseType, items, onChange }: {
           )
         }
         return item.theoryBlock && (
-          <BlockEditor key={item.libreId ?? index} block={item.theoryBlock} index={index}
+          <BlockEditor key={item.libreId ?? index} block={item.theoryBlock} index={index} removable={removable} remove={remove}
             update={(theoryBlock) => onChange(replaceAt(items, index, { ...item, theoryBlock }))} />
         )
       })}

@@ -65,6 +65,10 @@ export const santeActivityByType = new Map(
   activities.map((activity) => [`sante-${activity.id}`, activity]),
 )
 
+export function isSanteTheoryType(typeId: string): boolean {
+  return /-theorie-(?:a1|a2|b1)$/.test(typeId) && santeActivityByType.has(typeId)
+}
+
 export const SANTE_EXERCISE_TYPES: ExerciseType[] = Array.from(santeActivityByType, ([id, activity]) => ({
   id,
   topic: `sante-${activity.topic}`,

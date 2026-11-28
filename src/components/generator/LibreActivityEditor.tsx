@@ -263,7 +263,15 @@ export function LibreActivityEditor({
         </div>
       )}
       {theory ? (
-        <TheoryEditor exerciseType={activeBlock.exerciseType} items={theory.items} onChange={(libreItems) => updatePage({ libreItems })} />
+        <TheoryEditor exerciseType={activeBlock.exerciseType} items={theory.items} onChange={(libreItems, removedIndex) => {
+          const breaks = activeBlock.tcfPageBreakAfter
+          updatePage({
+            libreItems,
+            ...(removedIndex === undefined || !breaks ? {} : {
+              tcfPageBreakAfter: breaks.filter((_, index) => index !== removedIndex),
+            }),
+          })
+        }} />
       ) : null}
       {measuredFigures?.items.length ? (
         <FigureMeasureEditor type={activeBlock.exerciseType} difficulty={activeBlock.difficulty}

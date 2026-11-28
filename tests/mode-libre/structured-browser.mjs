@@ -311,6 +311,117 @@ async function formAndOral(context) {
   await oral.close()
 }
 
+function theoryRecipe(config) {
+  const data = recipe(config.exerciseType, config.topic)
+  data.printCorrections = false
+  data.pages[0] = { ...data.pages[0], ...config }
+  return data
+}
+
+async function removeTheoryParts(context) {
+  const theoryItem = (theoryBlock) => ({ layout: 'theory', answer: '', theoryBlock })
+  const items = [
+    theoryItem({ kind: 'heading', text: 'Théorie témoin' }),
+    theoryItem({ kind: 'paragraph', text: 'À retirer avant la coupure.' }),
+    theoryItem({ kind: 'section', role: 'expliquer', blocks: [
+      { kind: 'paragraph', text: 'Ce paragraphe est facultatif.' },
+      { kind: 'paragraph', text: 'Le paragraphe voisin est conservé.' },
+    ] }),
+    theoryItem({ kind: 'paragraph', text: 'Début de la deuxième page.' }),
+  ]
+
+  const grammar = await context.newPage()
+  let saved
+  await grammar.route('**/fiches/fixture', async (route) => {
+    assert.equal(route.request().method(), 'PUT')
+    const { name, recipe: stored } = route.request().postDataJSON()
+    saved = stored
+    await route.fulfill({ json: { fiche: { id: 'fixture', name, domains: ['grammaire'],
+      createdAt: '2026-11-28T00:00:00Z', updatedAt: '2026-11-28T00:00:00Z', recipe: stored } } })
+  })
+  await openFiche(grammar, theoryRecipe({
+    domain: 'grammaire', topic: 'gram-entrer-contact', exerciseType: 'gram-b1-theorie',
+    libreItems: items, tcfPageBreakAfter: [false, false, true, false],
+  }), false)
+  const editor = grammar.getByLabel('Contenu de la théorie', { exact: true })
+  const blocks = editor.locator(':scope > details')
+  const sheets = grammar.locator('.print-only-sheets .worksheet-sheet')
+  assert.equal(await sheets.count(), 2)
+  await blocks.nth(2).locator(':scope > summary').click()
+  await button(blocks.nth(2), 'Retirer le paragraphe').click()
+  assert.doesNotMatch(await sheets.first().textContent(), /Ce paragraphe est facultatif/)
+  assert.match(await sheets.first().textContent(), /Le paragraphe voisin est conservé/)
+  await blocks.nth(1).locator(':scope > summary').click()
+  await button(blocks.nth(1), 'Retirer le paragraphe').click()
+  assert.equal(await sheets.count(), 2)
+  assert.match(await sheets.nth(1).textContent(), /Début de la deuxième page/)
+  assert.doesNotMatch(await sheets.first().textContent(), /À retirer avant la coupure/)
+  await button(grammar, 'Annuler').click()
+  assert.match(await sheets.first().textContent(), /À retirer avant la coupure/)
+  await button(grammar, 'Rétablir').click()
+  await button(grammar, 'Enregistrer').click()
+  const save = grammar.getByRole('dialog', { name: 'Enregistrer la fiche' })
+  await save.getByRole('textbox', { name: 'Enregistré par', exact: true }).fill('Enseignant Témoin')
+  await button(save, 'Mettre à jour').click()
+  await save.waitFor({ state: 'detached' })
+  assert.equal(saved.pages[0].libreItems.length, 3)
+  assert.deepEqual(saved.pages[0].tcfPageBreakAfter, [false, true, false])
+  await grammar.reload()
+  await sheets.nth(1).waitFor({ state: 'attached' })
+  assert.doesNotMatch((await sheets.allTextContents()).join(' '), /Ce paragraphe est facultatif|À retirer avant la coupure/)
+  await grammar.close()
+
+  for (const config of [
+    { domain: 'logistique-afp', topic: 'log-afp-theme-100', exerciseType: 'log-afp-101-theorie' },
+    { domain: 'logistique-cfc', topic: 'log-cfc-theme-100', exerciseType: 'log-cfc-101-theorie' },
+    { domain: 'société', topic: 'societe-voisins', exerciseType: 'societe-voisins-theorie' },
+    { domain: 'santé', topic: 'sante-corps', exerciseType: 'sante-corps-theorie-a1' },
+  ]) {
+    const page = await context.newPage()
+    await openFiche(page, theoryRecipe({ ...config, libreItems: items }), false)
+    const section = page.getByLabel('Contenu de la théorie', { exact: true }).locator(':scope > details').nth(2)
+    await section.locator(':scope > summary').click()
+    await button(section, 'Retirer la section').click()
+    assert.doesNotMatch((await page.locator('.print-only-sheets').allTextContents()).join(' '), /Le paragraphe voisin est conservé/)
+    assert.match(await worksheet(page).textContent(), /Théorie témoin/)
+    await button(page, 'Annuler').click()
+    assert.match((await page.locator('.print-only-sheets').allTextContents()).join(' '), /Le paragraphe voisin est conservé/)
+    await page.close()
+  }
+
+  for (const config of [
+    { domain: 'algèbre', topic: 'addition', exerciseType: 'math-theorie-addition' },
+    { domain: 'géométrie', topic: 'figures', exerciseType: 'math-theorie-figures' },
+  ]) {
+    const page = await context.newPage()
+    await openFiche(page, theoryRecipe(config), false)
+    const panel = page.getByLabel('Contenu de la théorie', { exact: true })
+    const lesson = worksheet(page).locator('.math-theory-lesson').first()
+    const vocabulary = await lesson.locator('dt').allTextContents()
+    await button(panel, 'Retirer le vocabulaire').click()
+    assert.equal(await lesson.locator('dl').count(), 0)
+    await button(panel, 'Retirer l’exemple').click()
+    assert.equal(await lesson.locator('figcaption, .math-theory-example').count(), 0)
+    assert(await lesson.locator('h3').isVisible())
+    await button(page, 'Annuler').click()
+    await button(page, 'Annuler').click()
+    assert.deepEqual(await lesson.locator('dt').allTextContents(), vocabulary)
+    await page.close()
+  }
+
+  for (const config of [
+    { domain: 'géométrie', topic: 'glossaire-geometrie', exerciseType: 'glossaire-geometrie-mots' },
+    { domain: 'logistique-afp', topic: 'log-afp-theme-100', exerciseType: 'log-afp-101-glossaire' },
+    { domain: 'société', topic: 'societe-voisins', exerciseType: 'societe-voisins-lexique' },
+  ]) {
+    const page = await context.newPage()
+    await openFiche(page, theoryRecipe(config), false)
+    const panel = page.getByLabel('Contenu de la théorie', { exact: true })
+    assert.equal(await panel.getByRole('button', { name: /^Retirer / }).count(), 0)
+    await page.close()
+  }
+}
+
 try {
   await server?.listen()
   const baseURL = process.env.BASE_URL ?? 'http://127.0.0.1:' + server.httpServer.address().port
@@ -333,8 +444,9 @@ try {
   await pictureRecognition(await context.newPage())
   await formAndOral(context)
   await worksheetImage(await context.newPage())
+  await removeTheoryParts(context)
   await context.close()
-  console.log('Document partagé, QCM illustré, liaison audio, reconnaissance d’images, formulaire et oral vérifiés.')
+  console.log('Document partagé, QCM illustré, liaison audio, reconnaissance d’images, formulaire, oral et retrait en théorie vérifiés.')
 } finally {
   await browser?.close()
   await server?.close()

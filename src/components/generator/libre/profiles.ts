@@ -1,6 +1,7 @@
 import { isCalligraphieType } from '@/calligraphie/generate'
 import { isJeuxType } from '@/jeux/templates'
 import { isPhraseLibreEditable } from '@/francais/PhraseLibreEditor'
+import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { isTpfFamilyDomain, tcfSlotByTypeId } from '@/tcf/catalog'
 import { parseAlphaType } from '@/alphabetisation/kinds'
 import { parseSoutienType } from '@/francais/soutien/kinds'
@@ -9,6 +10,7 @@ import { isGrammaireExerciseType, isGrammaireTheoryType } from '@/grammaire/type
 import { isProtectedGrammarCo, type GrammarPresentation } from '@/grammaire/curriculum/types'
 import { logistiqueType, isLogistiqueReferenceType } from '@/logistique/catalog'
 import { isSocieteTheoryType, isSocieteType } from '@/societe/types'
+import { isSanteTheoryType } from '@/sante/catalog'
 import { isLogiqueType } from '@/logique/types'
 import { isReperageCadrans, isReperageConstruire, isReperageDroites, isReperageFormes } from '@/math/coord-reperage'
 import { isTransformationExercise } from '@/math/coord-transformations'
@@ -58,6 +60,8 @@ export function liveEditorProfile(domain: Domain, exerciseType: string, format: 
     domain === 'tcm-csc' && ['tcm-csc-ex04', 'tcm-csc-ex05'].includes(exerciseType)) return 'suite-numerique'
   const logistics = logistiqueType(exerciseType)
   if (domain === 'grammaire' && isGrammaireTheoryType(exerciseType) ||
+    domain === 'français' && isGrammarTheoryType(exerciseType) ||
+    domain === 'santé' && isSanteTheoryType(exerciseType) ||
     (domain === 'algèbre' || geometry) && isMathReferenceType(exerciseType) ||
     domain === 'société' && (isSocieteTheoryType(exerciseType) || exerciseType.endsWith('-lexique')) ||
     logistics?.domain === domain && isLogistiqueReferenceType(exerciseType)) return 'theorie'
