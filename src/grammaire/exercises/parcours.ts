@@ -51,7 +51,7 @@ const cabinet: GrammarScenario = {
       audioLabel: 'Message du cabinet',
       exercise: {
         ...source, id: `${scenarioId}-co`, competence: 'CO', type_exercice: 'complet',
-        consigne: 'Écoutez le message du cabinet deux fois. Cochez une réponse par question.',
+        consigne: 'Écoutez deux fois. Cochez une réponse par question.',
         support: {
           audio: cabinetAudio,
           transcription: 'Bonjour, ici le cabinet dentaire du docteur Molaire. Je suis désolée, mais nous sommes obligés d’annuler votre rendez-vous de 15 h 30 prévu aujourd’hui. Le docteur est souffrant. Nous vous proposons de décaler votre visite à la semaine prochaine. Nous avons une place disponible jeudi 14 à 11 h 15 ou vendredi 15 à 15 h 30. Veuillez nous rappeler pour confirmer. N’oubliez pas votre carte d’assurance maladie. À bientôt !',
