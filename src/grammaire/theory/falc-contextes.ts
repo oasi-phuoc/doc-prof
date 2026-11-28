@@ -34,9 +34,9 @@ function lesson(
 export const falcContextualLessons: Readonly<Record<string, ContextualLesson | undefined>> = {
   a1: lesson('Se présenter à son premier cours', [
     scene('Dire son prénom', 'L’enseignante demande le prénom de l’élève.', '« {c}Je m’appelle{/c} Yara. »',
-      'À dessiner. Yara, une jeune adulte, se présente à une enseignante à l’entrée d’une salle de cours.'),
+      'Yara pose la main sur sa poitrine en parlant à son enseignante, à l’entrée de la salle de cours.', '/lib/images/grammaire/theorie/dire-son-prenom-au-premier-cours.webp'),
     scene('Dire où on habite', 'L’enseignante pose une deuxième question. Yara donne sa ville.', '« {c}J’habite à{/c} Sion. »',
-      'À dessiner. Les mêmes personnages consultent une carte simplifiée du Valais avec un point à Sion. La légende de la fiche donne le nom.'),
+      'Yara montre un point sur une carte de ville. L’enseignante regarde le point.', '/lib/images/grammaire/theorie/montrer-ou-on-habite.webp'),
   ], ['Pour dire ton prénom, commence par {c}je m’appelle{/c}.', 'Pour nommer ta ville, commence par {c}j’habite à{/c}.', 'Pour parler d’une langue, dis « Je parle français », par exemple.'],
   'Complète avec « m’appelle » ou « habite ».', [
     exercise('Je dis mon prénom. « Je ___ Daniel. »', 'm’appelle', 'Daniel est un prénom.'),
@@ -72,10 +72,10 @@ export const falcContextualLessons: Readonly<Record<string, ContextualLesson | u
   ])),
 
   famille: lesson('Présenter deux personnes de la famille', [
-    scene('Parler de son frère', 'Sana montre son frère à une amie.', '« Voici {c}mon{/c} frère. »',
-      'À dessiner. Sana montre un portrait de son frère adulte sur une planche de photos de famille.'),
-    scene('Parler de sa sœur', 'Sana montre sa sœur à la même amie.', '« Voici {c}ma{/c} sœur. »',
-      'À dessiner. Même planche de photos et même personne. Sana indique le portrait de sa sœur adulte.'),
+    scene('Parler de son frère', 'Sana montre la photo de son frère.', '« Voici {c}mon{/c} frère. »',
+      'Dans son album, Sana montre la photo de son frère, à gauche. Il porte une chemise bleue.', '/lib/images/grammaire/theorie/montrer-un-portrait-de-famille.webp'),
+    scene('Parler de sa sœur', 'Sana montre la photo de sa sœur.', '« Voici {c}ma{/c} sœur. »',
+      'Dans le même album, Sana montre la photo de sa sœur, à droite. Elle porte un haut violet.', '/lib/images/grammaire/theorie/montrer-un-second-portrait-de-famille.webp'),
   ], ['« Mon » et « ma » indiquent ici que je parle de ma famille.', 'Regarde le mot qui suit. On dit « un frère » et « une sœur ».', 'Avec plusieurs personnes, dis « mes parents » ou « mes sœurs ».'],
   'Complète avec « mon », « ma » ou « mes ».', [
     exercise('Je montre ma famille. Voici ___ tante.', 'ma', 'On dit « une tante ». Écris « ma tante ». '),
@@ -107,7 +107,7 @@ export const falcContextualLessons: Readonly<Record<string, ContextualLesson | u
     scene('Le matin, j’arrive', 'À 9 heures, Naïma entre à la boulangerie.', '« {c}Bonjour{/c} ! »',
       'Dans une boulangerie éclairée par le soleil, une cliente salue le boulanger.', '/lib/images/tcf/co/scenes/grammaire/a1-137-commander-a-la-boulangerie.png'),
     scene('Le soir, j’arrive', 'À 19 heures, Simran entre au restaurant.', '« {c}Bonsoir{/c} ! »',
-      'À dessiner. Simran salue une serveuse à l’entrée d’un restaurant. Dehors, le ciel est sombre et les lampes de la rue sont allumées.'),
+      'Simran salue le serveur à l’entrée. Dans la rue, les lampes sont allumées et le ciel est sombre.', '/lib/images/grammaire/theorie/saluer-le-soir.webp'),
   ], [
     'Quand tu arrives, dis {c}bonjour{/c} le matin et pendant la journée.',
     'Le soir, tu peux dire {c}bonsoir{/c}. Il n’y a pas d’heure fixe.',
@@ -123,9 +123,9 @@ export const falcContextualLessons: Readonly<Record<string, ContextualLesson | u
 
   b3: lesson('Remercier et répondre dans la même scène', [
     scene('Je remercie', 'Les cahiers de Ravi tombent. Lila les ramasse et les lui donne.', 'Ravi dit « {c}Merci{/c} ! »',
-      'À dessiner. Dans un couloir de cours, Lila, étudiante avec un foulard mauve, rend deux cahiers à Ravi, qui utilise un fauteuil roulant.'),
-    scene('Je réponds', 'Lila reçoit le merci de Ravi.', 'Lila répond « {c}De rien{/c} ! »',
-      'À dessiner. Dans le même couloir, Ravi tient ses cahiers et sourit. Lila lui répond. Garder les personnages du premier dessin.'),
+      'Dans le couloir, Lila tend deux cahiers à Ravi, assis dans son fauteuil roulant.', '/lib/images/grammaire/theorie/rendre-des-cahiers.webp'),
+    scene('Je réponds', 'Ravi remercie Lila. Elle lui répond.', 'Lila répond « {c}De rien{/c} ! »',
+      'Ravi tient les deux cahiers sur ses genoux. Lila lui sourit et ouvre les mains en lui répondant.', '/lib/images/grammaire/theorie/repondre-apres-un-remerciement.webp'),
   ], ['Dis {c}merci{/c} quand quelqu’un t’aide.', 'Quand on te dit « merci », tu peux répondre {c}de rien{/c}.'],
   'Complète avec « merci » ou « de rien ».', [
     exercise('On te prête un stylo. Tu dis « ___ ! »', 'Merci', 'Tu remercies la personne qui te prête le stylo.'),
@@ -135,10 +135,10 @@ export const falcContextualLessons: Readonly<Record<string, ContextualLesson | u
   ])),
 
   a2: lesson('La même personne parle ou devient le sujet de la phrase', [
-    scene('Je parle de moi', 'Nora montre son tablier et parle de son travail.', 'Nora dit « {c}Je{/c} travaille ici. »',
-      'À dessiner. Une employée adulte avec des lunettes, debout dans un atelier de réparation, se désigne avec la main.'),
+    scene('Je parle de moi', 'Nora pose la main sur sa poitrine. Elle parle de son travail.', 'Nora dit « {c}Je{/c} travaille ici. »',
+      'Dans l’atelier de vélos, Nora porte un tablier rouge. Elle pose la main sur sa poitrine en parlant.', '/lib/images/grammaire/theorie/indiquer-qui-travaille-dans-un-atelier.webp'),
     scene('On parle de Nora', 'Un collègue parle de Nora à une cliente.', 'Il dit « {c}Elle{/c} travaille ici. »',
-      'À dessiner. Dans le même atelier, un collègue indique Nora à une cliente. Garder le même tablier pour Nora.'),
+      'Dans le même atelier, le collègue se tourne vers la cliente et désigne Nora, qui répare le vélo.', '/lib/images/grammaire/theorie/presenter-une-collegue.webp'),
   ], ['La personne qui parle dit {c}je{/c} pour parler d’elle-même.', 'Ici, {c}elle{/c} remplace « Nora ». Le pronom indique qui travaille.'],
   'Complète avec « je », « il » ou « elle ».', [
     exercise('Karim parle de lui. « ___ travaille à la poste. »', 'Je', 'Karim parle de lui-même.'),
@@ -151,9 +151,9 @@ export const falcContextualLessons: Readonly<Record<string, ContextualLesson | u
 
   m2: lesson('Dire où je suis au téléphone', [
     scene('Je suis à la gare', 'Lina attend seule devant la gare.', '« {sujet}Je{/sujet} {verbe}suis{/verbe} à la gare. »',
-      'À dessiner. Lina attend au téléphone devant une gare et porte une veste mauve. Elle est seule au premier plan.'),
+      'En veste mauve, Lina téléphone seule devant l’entrée de la gare.', '/lib/images/grammaire/theorie/attendre-seule-devant-la-gare.webp'),
     scene('Nous sommes à la gare', 'Lina attend avec une amie devant la même gare.', '« {sujet}Nous{/sujet} {verbe}sommes{/verbe} à la gare. »',
-      'À dessiner. Même gare et même Lina. Une amie est maintenant à ses côtés. Lina téléphone toujours.'),
+      'Lina est toujours au téléphone devant la gare. Une amie se tient à ses côtés.', '/lib/images/grammaire/theorie/attendre-a-deux-devant-la-gare.webp'),
   ], ['Je parle de moi. Je dis {c}je suis{/c}.', 'Je parle de moi et d’une autre personne. Je dis {c}nous sommes{/c}.', '« Suis » et « sommes » sont deux formes du verbe être.'],
   'Complète avec « suis » ou « sommes ».', [
     exercise('J’appelle le secrétariat. « Bonjour, je ___ devant la salle. »', 'suis', 'Avec « je », écris « suis ». '),
@@ -161,12 +161,12 @@ export const falcContextualLessons: Readonly<Record<string, ContextualLesson | u
   ], [
     { kind: 'heading', sub: true, text: 'Dire comment on se sent' },
     { kind: 'image-row', label: 'Deux émotions dans des situations différentes', cells: [
-      scene('Contente', 'Lina reçoit une bonne nouvelle. Elle sourit.', 'Lina {verbe}est{/verbe} {c}contente{/c}.',
-        'Portrait de Lina avec un grand sourire.', '/lib/images/vocabulaire/famille-personnes/contente.webp'),
+      scene('Contente', 'Sofia reçoit une bonne nouvelle. Elle sourit.', 'Sofia {verbe}est{/verbe} {c}contente{/c}.',
+        'Portrait de Sofia avec un grand sourire.', '/lib/images/vocabulaire/famille-personnes/contente.webp'),
       scene('Inquiète', 'Anna attend une nouvelle importante.', 'Anna {verbe}est{/verbe} {c}inquiète{/c}.',
         'Anna attend sur un banc, les mains serrées et le visage soucieux.', '/lib/images/tcf/qcm-audit/qcm-delf2-attente-inquietude.png'),
     ] },
-    { kind: 'paragraph', text: 'Après « je suis » ou « elle est », tu peux dire une émotion. Lina dit « Je suis contente ». ' },
+    { kind: 'paragraph', text: 'Après « je suis » ou « elle est », tu peux dire une émotion. Sofia dit « Je suis contente ». ' },
     { kind: 'page' },
     { kind: 'heading', sub: true, text: 'Donner son métier ou sa nationalité' },
     { kind: 'image-row', label: 'Deux informations pour se présenter', cells: [
@@ -184,10 +184,10 @@ export const falcContextualLessons: Readonly<Record<string, ContextualLesson | u
   ]),
 
   m3: lesson('Dire ce que j’ai ou donner mon âge', [
-    scene('Un objet', 'Rayan montre son billet au contrôleur.', '« J’{c}ai{/c} un billet. »',
-      'À dessiner. Une personne tient un billet près du quai. Le papier est visible sans texte imprimé.'),
+    scene('Un objet', 'Rayan montre son billet à la contrôleuse.', '« J’{c}ai{/c} un billet. »',
+      'Sur le quai de la gare, Rayan tend un billet à la contrôleuse devant le train.', '/lib/images/grammaire/theorie/montrer-son-billet-au-controleur.webp'),
     scene('Un âge', 'Rayan remplit sa fiche. Il dit son âge.', '« J’{c}ai{/c} 25 ans. »',
-      'À dessiner. Rayan remplit une fiche à un guichet. Prévoir de la place au-dessus pour une légende indépendante.'),
+      'Au guichet de la gare, Rayan remplit une fiche. L’employée le regarde écrire.', '/lib/images/grammaire/theorie/donner-son-age-au-guichet.webp'),
   ], ['Le verbe avoir peut dire ce que tu as avec toi.', 'Pour donner ton âge, utilise aussi le verbe avoir.', 'Avec « je », on écrit « j’ai ». Avec « vous », on écrit « vous avez ».'],
   'Complète avec « ai » ou « avez ».', [
     exercise('Je montre mon sac. « J’___ un sac. »', 'ai', 'Avec « je », dis « j’ai ». '),
@@ -198,9 +198,9 @@ export const falcContextualLessons: Readonly<Record<string, ContextualLesson | u
 
   a4: lesson('Donner sa destination', [
     scene('Une ville', 'Fatima monte dans un train pour Sion.', '« Je {c}vais à{/c} Sion. »',
-      'À dessiner. Fatima avec un sac et une canne monte dans un train. Une légende indépendante donne le nom de la ville.'),
+      'Fatima prend appui sur sa canne et monte dans le train régional.', '/lib/images/grammaire/theorie/prendre-le-train-vers-sion.webp'),
     scene('Un lieu', 'Fatima se rend au marché.', '« Je {c}vais au{/c} marché. »',
-      'À dessiner. Fatima avec le même sac arrive au marché. Deux étals suffisent pour situer l’endroit.'),
+      'Avec la même canne et le même sac violet, Fatima se dirige vers les étals du marché.', '/lib/images/grammaire/theorie/arriver-au-marche.webp'),
   ], ['Avec « je », on dit {c}je vais{/c}. Avec « nous », on dit {c}nous allons{/c}.', 'Pour une ville, dis « à Sion ». Avec « le marché », dis « au marché ».', 'Pour une personne, tu peux dire « chez ». Exemple. « Je vais chez le médecin. »'],
   'Complète avec « à », « au » ou « chez ».', [
     exercise('Je vais ___ Lausanne.', 'à', 'Lausanne est une ville. On dit « à Lausanne ». '),
@@ -212,9 +212,9 @@ export const falcContextualLessons: Readonly<Record<string, ContextualLesson | u
 
   a8: lesson('Dire ce que je fais ou ce que je ne fais pas', [
     scene('Je monte dans le bus', 'Ce matin, Awa monte dans le bus.', '« Je prends le bus. »',
-      'À dessiner. Awa monte dans un bus à l’arrêt. Montrer une porte ouverte et un pied déjà sur la marche.'),
+      'Awa, en manteau vert, pose un pied sur la marche du bus dont la porte est ouverte.', '/lib/images/grammaire/theorie/monter-dans-le-bus.webp'),
     scene('Je pars à pied', 'Ce matin, Awa choisit de marcher.', '« Je {c}ne{/c} prends {c}pas{/c} le bus. »',
-      'À dessiner. Même Awa au même arrêt. Le bus est au loin et Awa marche sur le trottoir dans une autre direction.'),
+      'Avec son manteau vert et son sac orange, Awa marche sur le trottoir. Le bus est derrière elle.', '/lib/images/grammaire/theorie/partir-a-pied-pres-du-bus.webp'),
   ], ['Pour dire le contraire, mets {c}ne{/c} avant le verbe et {c}pas{/c} après.', 'Devant une voyelle ou un h muet, écris « n’ ».'],
   'Complète avec « ne », « n’ » ou « pas ».', [
     exercise('Je mange chez moi. Je ___ mange pas au café.', 'ne', '« Ne » vient avant « mange ». '),
@@ -227,9 +227,9 @@ export const falcContextualLessons: Readonly<Record<string, ContextualLesson | u
 
   c1: lesson('Poser la même question de plusieurs façons', [
     scene('Une question entre amis', 'Maël parle à une amie dans le couloir.', '« Tu viens demain {c}?{/c} »',
-      'À dessiner. Deux amis parlent au seuil d’une salle de cours. Maël doit poser une question, avec un geste simple.'),
+      'Maël parle à son amie à l’entrée de la salle de cours. Il avance une main ouverte.', '/lib/images/grammaire/theorie/bavarder-dans-le-couloir-apres-le-cours.webp'),
     scene('Une autre façon de poser la question', 'Maël pose la même question à son amie.', '« {c}Est-ce que{/c} tu viens demain ? »',
-      'À dessiner. Même paire, même couloir. Les paroles apparaîtront dans la légende, en texte sélectionnable.'),
+      'Maël parle à son amie à l’entrée de la salle de cours. Il avance une main ouverte.', '/lib/images/grammaire/theorie/bavarder-dans-le-couloir-apres-le-cours.webp'),
   ], ['Ces phrases demandent la même chose.', 'À l’oral, ta voix peut montrer que « Tu viens demain ? » est une question.', 'Tu peux aussi commencer la phrase par « est-ce que ».'],
   'Complète avec « Est-ce que » ou « ? ».', [
     exercise('___ tu travailles demain ?', 'Est-ce que', 'La question commence par « Est-ce que ». '),
@@ -254,9 +254,9 @@ export const falcContextualLessons: Readonly<Record<string, ContextualLesson | u
 
   e1: lesson('Placer une clé sur une boîte ou dans une boîte', [
     scene('Sur la boîte', 'La clé est posée sur le couvercle.', 'La clé est {c}sur{/c} la boîte.',
-      'À dessiner. Une clé jaune repose sur le couvercle d’une boîte bleue. Montrer le contact entre la clé et le couvercle.'),
+      'La clé jaune repose sur le couvercle de la boîte bleue fermée.', '/lib/images/grammaire/theorie/poser-la-cle-sur-la-boite.webp'),
     scene('Dans la boîte', 'La clé est à l’intérieur.', 'La clé est {c}dans{/c} la boîte.',
-      'À dessiner. La même clé jaune est visible à l’intérieur de la même boîte bleue, dont le couvercle est ouvert.'),
+      'La même clé jaune repose au fond de la boîte bleue ouverte. Le couvercle est à côté.', '/lib/images/grammaire/theorie/placer-la-cle-dans-la-boite.webp'),
   ], ['Repère d’abord la boîte. Elle t’aide à situer la clé.', '{c}Sur{/c} veut dire ici que la clé touche le dessus. {c}Dans{/c} veut dire à l’intérieur.'],
   'Complète avec « sur » ou « dans ».', [
     exercise('Tu ouvres ton sac. Le billet est à l’intérieur. Il est ___ ton sac.', 'dans', 'Le billet est à l’intérieur du sac.'),
@@ -268,9 +268,9 @@ export const falcContextualLessons: Readonly<Record<string, ContextualLesson | u
 
   e2: lesson('Lire l’heure ou la date d’un rendez-vous', [
     scene('Une heure', 'L’horloge indique 9 heures.', 'Je viens {c}à{/c} 9 heures.',
-      'À dessiner. Une horloge simple montre 9 heures, grande aiguille en haut et petite aiguille à gauche. Fond clair et uni.'),
+      'La grande aiguille de l’horloge pointe sur le 12 et la petite sur le 9. Il est 9 heures.', '/lib/images/tcf/qcm-audit/co834-horloge-0900-dessinee.webp'),
     scene('Une date', 'Le calendrier indique le 14 mars.', 'Je viens {c}le{/c} 14 mars.',
-      'À dessiner. Page de calendrier de mars, le 14 clairement entouré. Le mot « mars » et la date restent en texte dans la légende.'),
+      'Une page de calendrier portant le mot « Mars » montre le nombre 14 entouré.', '/lib/images/grammaire/theorie/calendrier-14-mars.webp'),
   ], ['Pour une heure, dis {c}à{/c} 9 heures.', 'Pour une date, dis {c}le{/c} 14 mars.', 'Pour un mois seul, dis {c}en{/c} mars.'],
   'Complète avec « à », « le » ou « en ».', [
     exercise('Le cours commence ___ 8 heures.', 'à', '8 heures indique une heure.'),
@@ -282,9 +282,9 @@ export const falcContextualLessons: Readonly<Record<string, ContextualLesson | u
 
   e3: lesson('Dire quand une action commence ou combien de temps elle dure', [
     scene('Le début', 'Aïcha a commencé lundi. Elle travaille encore ici.', 'Je travaille ici {c}depuis{/c} lundi.',
-      'À dessiner. Une frise montre un point de départ lundi et une flèche qui continue jusqu’à aujourd’hui.'),
+      'Une flèche part de « Lundi » et arrive à « Aujourd’hui ».', '/lib/images/grammaire/theorie/frise-depuis-lundi.webp'),
     scene('La durée', 'Aïcha travaille de 9 heures à 11 heures demain.', 'Je travaille {c}pendant{/c} deux heures.',
-      'À dessiner. Deux petites horloges, à 9 heures et à 11 heures, reliées par un trait qui montre la durée de deux heures.'),
+      'Un trait relie 9 heures et 11 heures. L’intervalle dure deux heures.', '/lib/images/grammaire/theorie/duree-de-neuf-a-onze-heures.webp'),
   ], ['Avec {c}depuis{/c}, l’action a commencé et continue au moment dont tu parles.', '{c}Pendant{/c} donne la durée de l’action, au passé, au présent ou au futur.'],
   'Complète avec « depuis » ou « pendant ».', [
     exercise('J’habite ici ___ juin. J’habite toujours ici.', 'depuis', 'Juin indique le début et j’habite encore ici.'),
@@ -295,10 +295,10 @@ export const falcContextualLessons: Readonly<Record<string, ContextualLesson | u
   ])),
 
   f1: lesson('Montrer un sac ou une valise au magasin', [
-    scene('Un sac', 'L’élève montre un sac près du comptoir.', '« Je voudrais {c}ce{/c} sac. »',
-      'À dessiner. Une jeune femme aux cheveux épais et courts montre un sac vert sur le comptoir d’une boutique.'),
-    scene('Une valise', 'L’élève montre une valise près du comptoir.', '« Je voudrais {c}cette{/c} valise. »',
-      'À dessiner. Même boutique et même personne. Elle montre une valise à roulettes au même emplacement.'),
+    scene('Un sac', 'Une cliente montre un sac sur le comptoir.', '« Je voudrais {c}ce{/c} sac. »',
+      'Dans une boutique, une cliente montre le sac vert posé sur le comptoir.', '/lib/images/grammaire/theorie/montrer-un-sac-au-comptoir.webp'),
+    scene('Une valise', 'La même cliente montre une valise sur le comptoir.', '« Je voudrais {c}cette{/c} valise. »',
+      'La même cliente montre une valise orange à roulettes sur le comptoir.', '/lib/images/grammaire/theorie/montrer-une-valise-au-comptoir.webp'),
   ], ['Regarde le nom qui vient après le mot. On dit « un sac » et « une valise ».', 'Pour montrer plusieurs objets, dis {c}ces{/c}. Exemple. « Ces sacs ».'],
   'Complète avec « ce », « cette », « cet » ou « ces ».', [
     exercise('Je montre une chaise. « Est-ce que ___ chaise est libre ? »', 'cette', '« Chaise » est un nom féminin. On dit « une chaise ». '),
@@ -309,10 +309,10 @@ export const falcContextualLessons: Readonly<Record<string, ContextualLesson | u
   ])),
 
   f4: lesson('Dire le temps qu’il fait', [
-    scene('De la pluie', 'Maya ouvre son parapluie.', '{c}Il pleut.{/c}',
-      'À dessiner. Maya, adulte aux cheveux noirs attachés, tient un parapluie sous des gouttes de pluie bien visibles.'),
+    scene('De la pluie', 'Maya tient son parapluie sous la pluie.', '{c}Il pleut.{/c}',
+      'Maya tient un parapluie bleu. On voit la pluie tomber autour d’elle.', '/lib/images/grammaire/theorie/ouvrir-un-parapluie-sous-la-pluie.webp'),
     scene('Du froid', 'Idris porte un manteau, une écharpe et des gants.', '{c}Il fait froid.{/c}',
-      'À dessiner. Idris, homme âgé, porte des gants et une écharpe un jour froid. Aucun signe de pluie.'),
+      'Idris remonte son écharpe avec ses mains gantées. Du givre couvre la rambarde au bord du lac.', '/lib/images/grammaire/theorie/sortir-quand-il-fait-froid.webp'),
   ], ['Pour parler de la pluie, dis {c}il pleut{/c}.', 'Pour parler de la température, tu peux dire {c}il fait chaud{/c} ou {c}il fait froid{/c}.'],
   'Complète avec « pleut » ou « fait froid ».', [
     exercise('Des gouttes tombent du ciel. Il ___.', 'pleut', 'Les gouttes indiquent la pluie.'),
@@ -324,9 +324,9 @@ export const falcContextualLessons: Readonly<Record<string, ContextualLesson | u
 
   g3: lesson('Parler d’une quantité à table', [
     scene('Une partie du pain', 'Éva coupe du pain. On ne dit pas combien de pain elle prend.', 'Je prends {c}du{/c} pain.',
-      'À dessiner. Éva coupe une tranche dans un pain posé sur une planche. Le pain entier et la tranche sont bien visibles.'),
+      'Éva coupe le pain sur une planche. Une tranche est déjà posée à côté du pain.', '/lib/images/grammaire/theorie/couper-une-tranche-de-pain.webp'),
     scene('Une quantité de soupe', 'Tenzin se sert. On ne dit pas combien de soupe il prend.', 'Je prends {c}de la{/c} soupe.',
-      'À dessiner. Tenzin, adulte en pull bleu, verse de la soupe d’une soupière dans un bol. Le geste et la soupe sont bien visibles.'),
+      'Tenzin remplit son bol de soupe avec une louche. La soupière est devant lui.', '/lib/images/grammaire/theorie/verser-de-la-soupe-dans-un-bol.webp'),
   ], ['« Du », « de la » et « de l’ » indiquent ici une quantité non précisée.', 'On dit {c}du{/c} pain, {c}de la{/c} soupe et {c}de l’{/c}eau.'],
   'Complète avec « du », « de la » ou « de l’ ».', [
     exercise('Tu verses une quantité de lait. « Je prends ___ lait. »', 'du', 'On dit « le lait ». Dans cette phrase, écris « du lait ». '),
