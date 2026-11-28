@@ -91,10 +91,18 @@ def main():
     assert len({row['id'] for row in inputs}) == len(inputs)
     for review in inputs:
         job = jobs[review['id']]
-        path, source = job['path'], Path(review['source']).resolve()
+        path, source = job['path'], resolve(review['source']).resolve()
         assert job['id'] in packet['remaining_asset_ids']
         assert path not in manifest and not resolve(path).exists()
-        assert source.parent == Path('/workspace/generated_images').resolve() and source.is_file()
+        assert source.is_file()
+        checksum = sha(source)
+        source_record = str(source)
+        if source.parent != Path('/workspace/generated_images').resolve():
+            archive = job['generated_source_archive']
+            assert source == (ROOT / archive['path']).resolve()
+            assert source.is_relative_to(packet_path.parent) and checksum == archive['sha256']
+            source_record = archive['path']
+            archive['status'] = 'visually_reviewed'
         assert review['label'].strip() and review['keywords'] and review['review_note'].strip()
         with Image.open(source) as image:
             assert image.format == 'PNG' and image.size == (1448, 1086), (job['id'], image.size)
@@ -111,9 +119,8 @@ def main():
         refs = [portable(ref) for ref in refs]
         style_refs = review.get('style_references', [ref for ref in refs if ref.startswith('/lib/')])
         assert style_refs
-        checksum = sha(source)
         row = dict(id=job['id'], label=review['label'], path=path, prompt=review['prompt'],
-            source_png=str(source), source_sha256=checksum, sha256=checksum, bytes=source.stat().st_size,
+            source_png=source_record, source_sha256=checksum, sha256=checksum, bytes=source.stat().st_size,
             width=1448, height=1086, aspect_ratio='4:3', original_bytes_preserved=True,
             status='visually_reviewed', domain='ce-co', batch=packet_path.stem,
             style_reference_commit=STYLE, style_references=style_refs, reference_images=refs,

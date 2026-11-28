@@ -6,7 +6,7 @@ Demande : terminer les **21 candidats DELF Actif**, puis les **261 trios histori
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | [DELF — reliquat final](delf-final21-preparation.json) | 21 | 21 | 21 | 21 | 50 | 0 |
 | [Historique — lot 1](historique-lot01-preparation.json) | 100 | 100 | 100 | 100 | 345 | 0 |
-| [Historique — lot 2](historique-lot02-preparation.json) | 100 | 0 | 58 | 100 | 181 | 88 |
+| [Historique — lot 2](historique-lot02-preparation.json) | 100 | 0 | 59 | 100 | 182 | 87 |
 | [Historique — lot 3](historique-lot03-preparation.json) | 61 | 0 | 0 | 61 | 4 | 176 |
 
 **Reste : 0 candidat DELF et 161 trios historiques.** Les briefs et les images publiées d’un lot incomplet ne sont pas comptés comme des trios activés.

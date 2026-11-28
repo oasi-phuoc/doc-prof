@@ -9977,17 +9977,19 @@
         "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
       ],
       "prompt": "ONE native landscape PNG1448x1086 exact4:3. Approved TCF soft semi-realistic TWO-DIMENSIONAL PEDAGOGICAL DIGITAL PAINTING, fine drawn contours, matte natural colours and diffuse light, no photo, CGI, glossy3D, thick cartoon outlines or paper grain. Whole meaningful objects and main people with hands and feet within generous margins, plausible anatomy and physical supports. Diverse new people, no copied musicians or props from STYLE reference. When an earlier target is supplied, preserve ONLY its requested target elements; other references supply STYLE only. No amounts, prices, digits, dates, days, months, brands or personal data. No text except the functional wording explicitly required. TARGET: Preserve SAME six guests, red-and-black outfits, dining and dancing, tables and DJ console. Relocate the party ENTIRELY OUTDOORS IN A HOUSE GARDEN, grass, trees and small garden lights, house behind, open sky, no public hall. Whole people and natural table/chair supports, no date or number.",
-      "status": "pending_generation",
+      "status": "visually_reviewed",
       "generated_source_archive": {
         "path": "docs/tcf/lots-images-20261124/historique-lot02-preparation-sources/qcm-hist2-mariage-diner-jardin-a-relire-20261128.png",
         "sha256": "32a1acb535abadb709b04cd56464ea40c728c7e0ebe0a2b80dd1fb90d5a6d9a8",
-        "status": "awaiting_visual_review",
+        "status": "visually_reviewed",
         "prompt": "ONE native landscape PNG1448x1086 exact4:3. Approved TCF soft semi-realistic TWO-DIMENSIONAL PEDAGOGICAL DIGITAL PAINTING, fine drawn contours, matte natural colours and diffuse light, no photo, CGI, glossy3D, thick cartoon outlines or paper grain. Whole meaningful objects and main people with hands and feet within generous margins, plausible anatomy and physical supports. Diverse new people, no copied musicians or props from STYLE reference. When an earlier target is supplied, preserve ONLY its requested target elements; other references supply STYLE only. No amounts, prices, digits, dates, days, months, brands or personal data. No text except the functional wording explicitly required. TARGET: Preserve SAME six guests, red-and-black outfits, dining and dancing, tables and DJ console. Relocate the party ENTIRELY OUTDOORS IN A HOUSE GARDEN, grass, trees and small garden lights, house behind, open sky, no public hall. Whole people and natural table/chair supports, no date or number.",
         "reference_images": [
           "/lib/images/tcf/qcm-audit/qcm-hist2-mariage-diner-salle-fetes.png",
           "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
         ]
-      }
+      },
+      "source": "/lib/images/tcf/qcm-audit/qcm-hist2-mariage-diner-jardin.png",
+      "sha256": "32a1acb535abadb709b04cd56464ea40c728c7e0ebe0a2b80dd1fb90d5a6d9a8"
     },
     {
       "id": "qcm-hist2-049-produits-manquants-1",
@@ -21986,6 +21988,45 @@
       "gallery_themes": [
         "Style TCF validé"
       ]
+    },
+    {
+      "id": "qcm-hist2-mariage-diner-jardin",
+      "label": "Un dîner de mariage dans un jardin",
+      "path": "/lib/images/tcf/qcm-audit/qcm-hist2-mariage-diner-jardin.png",
+      "prompt": "ONE native landscape PNG1448x1086 exact4:3. Approved TCF soft semi-realistic TWO-DIMENSIONAL PEDAGOGICAL DIGITAL PAINTING, fine drawn contours, matte natural colours and diffuse light, no photo, CGI, glossy3D, thick cartoon outlines or paper grain. Whole meaningful objects and main people with hands and feet within generous margins, plausible anatomy and physical supports. Diverse new people, no copied musicians or props from STYLE reference. When an earlier target is supplied, preserve ONLY its requested target elements; other references supply STYLE only. No amounts, prices, digits, dates, days, months, brands or personal data. No text except the functional wording explicitly required. TARGET: Preserve SAME six guests, red-and-black outfits, dining and dancing, tables and DJ console. Relocate the party ENTIRELY OUTDOORS IN A HOUSE GARDEN, grass, trees and small garden lights, house behind, open sky, no public hall. Whole people and natural table/chair supports, no date or number.",
+      "source_png": "docs/tcf/lots-images-20261124/historique-lot02-preparation-sources/qcm-hist2-mariage-diner-jardin-a-relire-20261128.png",
+      "source_sha256": "32a1acb535abadb709b04cd56464ea40c728c7e0ebe0a2b80dd1fb90d5a6d9a8",
+      "sha256": "32a1acb535abadb709b04cd56464ea40c728c7e0ebe0a2b80dd1fb90d5a6d9a8",
+      "bytes": 3174303,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "original_bytes_preserved": true,
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "historique-lot02-preparation",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/qcm-hist2-mariage-diner-salle-fetes.png",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "review_note": "Les invités en rouge et noir dînent et dansent sur la pelouse devant une maison. La table, les chaises et les pieds s’appuient naturellement au sol. Le ciel, le jardin et l’éclairage extérieur distinguent ce lieu de la salle des fêtes et de la mairie.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+        ]
+      },
+      "gallery_types": [
+        "Scène"
+      ],
+      "gallery_themes": [
+        "Style TCF validé"
+      ]
     }
   ],
   "existing_reuses": [
@@ -22258,7 +22299,8 @@
     "60": "Rechercher des informations sur un métier sur Internet. Site d’emploi contre deux lieux génériques restaurant et magasin ; les images des lieux n’attestent pas l’exclusivité exprimée seulement dans les textes des leurres.",
     "72": "Les casiers et bancs, le bassin et le comptoir d’accueil identifient chacun un espace différent du parc aquatique.",
     "75": "Les trois bâtiments sont vus depuis leur parvis dans le style peint TCF. L’établissement scolaire se distingue de la mairie et du musée. Le choix porte sur le lieu du rendez-vous.",
-    "86": "Les trois cadrans ont le même modèle. La grande aiguille est à douze sur chaque cadran. Les petites aiguilles indiquent les seuils 16 h, 14 h et 18 h dans le contexte de l’après-midi. Le mot « avant » introduit le seuil horaire dans la question."
+    "86": "Les trois cadrans ont le même modèle. La grande aiguille est à douze sur chaque cadran. Les petites aiguilles indiquent les seuils 16 h, 14 h et 18 h dans le contexte de l’après-midi. Le mot « avant » introduit le seuil horaire dans la question.",
+    "48": "Les mêmes convives en rouge et noir dînent et dansent dans les trois scènes. La salle des fêtes est reconnaissable à sa salle aménagée, la mairie à son décor municipal et le jardin à la pelouse devant la maison. Le déroulement de l’invitation situe le dîner et la danse dans la salle des fêtes."
   },
   "ready_trios": [
     {
@@ -23625,6 +23667,35 @@
       }
     },
     {
+      "index": 48,
+      "key": "delf-a2r-ce-030#6",
+      "image_paths": [
+        "/lib/images/tcf/qcm-audit/qcm-hist2-mariage-diner-salle-fetes.png",
+        "/lib/images/tcf/qcm-audit/qcm-hist2-mariage-diner-mairie.png",
+        "/lib/images/tcf/qcm-audit/qcm-hist2-mariage-diner-jardin.png"
+      ],
+      "status": "prepared_not_activated",
+      "visual_review": "Les mêmes convives en rouge et noir dînent et dansent dans les trois scènes. La salle des fêtes est reconnaissable à sa salle aménagée, la mairie à son décor municipal et le jardin à la pelouse devant la maison. Le déroulement de l’invitation situe le dîner et la danse dans la salle des fêtes.",
+      "preview_image_form": {
+        "melanger": true,
+        "choix": [
+          {
+            "id": "a",
+            "image": "/lib/images/tcf/qcm-audit/qcm-hist2-mariage-diner-salle-fetes.png",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "image": "/lib/images/tcf/qcm-audit/qcm-hist2-mariage-diner-mairie.png"
+          },
+          {
+            "id": "c",
+            "image": "/lib/images/tcf/qcm-audit/qcm-hist2-mariage-diner-jardin.png"
+          }
+        ]
+      }
+    },
+    {
       "index": 50,
       "key": "delf-a2r-ce-038#6",
       "image_paths": [
@@ -23946,16 +24017,15 @@
   ],
   "summary": {
     "target_trios": 100,
-    "prepared_trios": 58,
+    "prepared_trios": 59,
     "activated_trios": 0,
     "planned_trios": 100,
     "planned_new_images": 269,
-    "published_images": 181,
-    "images_still_to_finalize": 88,
+    "published_images": 182,
+    "images_still_to_finalize": 87,
     "existing_distinct_reuses": 26
   },
   "remaining_asset_ids": [
-    "qcm-hist2-mariage-diner-jardin",
     "qcm-hist2-049-produits-manquants-2",
     "qcm-hist2-049-produits-manquants-3",
     "qcm-hist2-051-reglement-piscine-2",
@@ -24044,7 +24114,7 @@
     "qcm-hist2-100-gros-sacs-autocar-2",
     "qcm-hist2-100-gros-sacs-autocar-3"
   ],
-  "last_updated": "2026-11-28T08:36:42.573382+00:00",
+  "last_updated": "2026-11-28T09:00:15.005666+00:00",
   "source_context_review": {
     "method": "Préparation des trois réponses par question à partir de la source et du contrôle contextuel existant.",
     "scope": "100 questions du deuxième lot historique. Les contraintes de dialogue et de placement déterminent les briefs. Les mots-clés, les coordonnées, les noms ou les sommes de la source ne deviennent pas des inscriptions décoratives.",
@@ -33619,6 +33689,55 @@
         "porte avant"
       ],
       "reviewed_at": "2026-11-28T08:08:28.464406+00:00",
+      "rejected_generations": []
+    },
+    {
+      "id": "qcm-hist2-mariage-diner-jardin",
+      "label": "Un dîner de mariage dans un jardin",
+      "path": "/lib/images/tcf/qcm-audit/qcm-hist2-mariage-diner-jardin.png",
+      "prompt": "ONE native landscape PNG1448x1086 exact4:3. Approved TCF soft semi-realistic TWO-DIMENSIONAL PEDAGOGICAL DIGITAL PAINTING, fine drawn contours, matte natural colours and diffuse light, no photo, CGI, glossy3D, thick cartoon outlines or paper grain. Whole meaningful objects and main people with hands and feet within generous margins, plausible anatomy and physical supports. Diverse new people, no copied musicians or props from STYLE reference. When an earlier target is supplied, preserve ONLY its requested target elements; other references supply STYLE only. No amounts, prices, digits, dates, days, months, brands or personal data. No text except the functional wording explicitly required. TARGET: Preserve SAME six guests, red-and-black outfits, dining and dancing, tables and DJ console. Relocate the party ENTIRELY OUTDOORS IN A HOUSE GARDEN, grass, trees and small garden lights, house behind, open sky, no public hall. Whole people and natural table/chair supports, no date or number.",
+      "source_png": "docs/tcf/lots-images-20261124/historique-lot02-preparation-sources/qcm-hist2-mariage-diner-jardin-a-relire-20261128.png",
+      "source_sha256": "32a1acb535abadb709b04cd56464ea40c728c7e0ebe0a2b80dd1fb90d5a6d9a8",
+      "sha256": "32a1acb535abadb709b04cd56464ea40c728c7e0ebe0a2b80dd1fb90d5a6d9a8",
+      "bytes": 3174303,
+      "width": 1448,
+      "height": 1086,
+      "aspect_ratio": "4:3",
+      "original_bytes_preserved": true,
+      "status": "visually_reviewed",
+      "domain": "ce-co",
+      "batch": "historique-lot02-preparation",
+      "style_reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+      "style_references": [
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "reference_images": [
+        "/lib/images/tcf/qcm-audit/qcm-hist2-mariage-diner-salle-fetes.png",
+        "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+      ],
+      "review_note": "Les invités en rouge et noir dînent et dansent sur la pelouse devant une maison. La table, les chaises et les pieds s’appuient naturellement au sol. Le ciel, le jardin et l’éclairage extérieur distinguent ce lieu de la salle des fêtes et de la mairie.",
+      "style_review": {
+        "status": "aligned",
+        "reference_commit": "48a753d8d6bd095e41968b39da88dbcb331fee11",
+        "references": [
+          "/lib/images/tcf/qcm-audit/co834-club-musique-dessine.webp"
+        ]
+      },
+      "gallery_types": [
+        "Scène"
+      ],
+      "gallery_themes": [
+        "Style TCF validé"
+      ],
+      "visual_keywords": [
+        "mariage",
+        "jardin",
+        "dîner",
+        "danse",
+        "extérieur",
+        "invités"
+      ],
+      "reviewed_at": "2026-11-28T09:00:15.005666+00:00",
       "rejected_generations": []
     }
   ],
