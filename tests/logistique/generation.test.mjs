@@ -960,6 +960,27 @@ test('les vérifications des dossiers ont une version FALC qui garde la notion e
   assert.match(units.find(({ prompt }) => prompt.includes('$E$1')).wording.falc, /\$E\$1/u)
 })
 
+test('les deux premiers modules ont les deux formulations jusque dans les frises et les textes à trous', () => {
+  const publication = logistiquePublications.find(({ revision }) => revision === 'logistique-fondations-formulations-v028')
+  const units = publication.units.filter(({ module, kind }) => ['100', '101'].includes(module) &&
+    ['maths', 'verification', 'situation'].includes(kind))
+  assert(units.every(({ wording }) => wording))
+  for (const [presentation, count] of [['avec-liste', 3], ['frise-chronologique', 2]]) {
+    const cfc = { ...config('CFC', '101', 'verification'), count, logistiquePresentation: presentation, logistiqueBankRevision: publication.revision }
+    const afp = { ...cfc, ...config('AFP', '101', 'verification'), count }
+    const normal = generateLogistique(cfc, 17).items
+    const falc = generateLogistique({ ...cfc, logistiqueWordingMode: 'falc' }, 17).items
+    assert.equal(normal.length, count)
+    const content = ({ prompt, ...item }) => item
+    assert.deepEqual(falc.map(content), normal.map(content))
+    const afpPrompts = new Map(generateLogistique(afp, 17).items.map((item) => [item.logistiqueSource.id, item.prompt]))
+    for (const item of falc) {
+      assert.equal(item.prompt, item.logistiqueWording.falc)
+      assert.equal(afpPrompts.get(item.logistiqueSource.id), item.prompt)
+    }
+  }
+})
+
 test('le choix Normal ou FALC garde le tirage, les deux moitiés et les changements locaux', () => {
   const page = { ...config('CFC', '301', 'maths'), count: 40 }
   const normal = generateLogistique(page, 17).items

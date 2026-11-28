@@ -215,7 +215,8 @@ function height(item: MathItem, a5: boolean, scale: number): number {
     const minimum = (a5 ? 183 : 248) + (scale - 1) * 56
     const calculations = item.calcAnswer && (!a5 || table || item.logistiqueLocalModule)
       ? lineCount(item.calcAnswer, width) * 18 * scale : 0
-    return imageHeight + tableHeight + narrativeHeight +
+    const wordingReserve = !a5 && item.prompt?.includes('\n') && item.prompt === item.logistiqueWording?.falc ? 12 * scale : 0
+    return imageHeight + tableHeight + narrativeHeight + wordingReserve +
       Math.max(minimum, (a5 ? 145 : 174) + prompt + answer, calculations + prompt + answer + 36)
   }
   const spacing = a5 || table ? 48 : 58

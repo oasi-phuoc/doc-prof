@@ -411,7 +411,14 @@ La révision `logistique-verification-formulations-v027` termine la double formu
 | CFC | 80 | 1 393 | 3 412 | 1 239 | 6 044 |
 | AFP | 63 | 1 097 | 2 650 | 956 | 4 703 |
 
-La relecture des 2 564 autres exercices reste ouverte. Les deux formulations d’un exercice comptent pour une seule unité. Les trames d’histoire suivie et les formats encore ouverts figurent dans les lots L1c à L1f.
+La révision `logistique-fondations-formulations-v028` termine la double formulation des modules 100 et 101. Elle reprend individuellement 79 énoncés, dont 73 accessibles en AFP. Les problèmes de la route de la soie, de la route de l’ambre, de Gizeh et du suivi numérique gardent les données et le contexte du cours. Les textes à trous conservent les mêmes mots attendus et les frises les mêmes repères. La recette couvre 256 configurations et 64 PDF en A4 et en double A5, avec une réserve minimale de 25,03 px. Un espace supplémentaire est prévu en A4 pour les corrigés des calculs FALC sur plusieurs lignes. [Formulations des modules 100 et 101](../../src/logistique/banks/fondations-formulations-v028.ts).
+
+| Diplôme | Modules concernés | Problèmes de calcul reformulés | Vérifications reformulées | Situations reformulées | Total cumulé |
+|---|---:|---:|---:|---:|---:|
+| CFC | 80 | 1 420 | 3 444 | 1 259 | 6 123 |
+| AFP | 63 | 1 120 | 2 682 | 974 | 4 776 |
+
+La relecture des 2 485 autres exercices reste ouverte. Les deux formulations d’un exercice comptent pour une seule unité. Les trames d’histoire suivie et les formats encore ouverts figurent dans les lots L1c à L1f.
 
 ## Commandes
 
