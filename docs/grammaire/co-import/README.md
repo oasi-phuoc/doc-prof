@@ -38,7 +38,11 @@ Les questions ont été relues sur les transcriptions recoupées. Lors de la pre
 
 Le 28 novembre, les 252 fichiers originaux, soit 2 h 58 d’audio, ont été décodés intégralement et reconnus de nouveau en français. Trente-sept pistes ont été reprises avec un autre réglage. Lorsque seul le début apparaissait, la reprise séparait au besoin l’annonce du corps de la piste. Les lectures ciblées de Whisper large-v3 et les reconnaissances précédentes ont permis de corriger sept transcriptions. Le relevé de cette vérification acoustique automatisée garde une lecture et son empreinte pour chaque piste, les corrections apportées et les incertitudes qui subsistent, notamment les noms non épelés et le numéro coupé de la piste 136. [Relevé des 252 pistes](validation-audio-20261128.json)
 
-La scène du conseil professionnel donné à Stéphane a été remplacée après comparaison des personnages. Les 252 pistes et leurs formats figurent aussi dans le catalogue audio de l’application.
+Les 15 scènes d’écoute ont été comparées aux références graphiques, aux dialogues transcrits et aux réponses attendues. Quatre scènes ont été reprises. Après la visite du studio, le décor montre l’immeuble et la discussion. Dans la scène familiale, le parent et l’élève se distinguent par leur âge. Au garage, le cadrage laisse les feux hors champ pour que le clignotant soit identifié à l’écoute. Le conseil à Stéphane se déroule dans un salon sobre. [Registre des scènes](illustrations-co-20261127.json)
+
+Six choix illustrés sur le règlement de l’immeuble ont été revérifiés après une mise à jour de leurs images TCF. Deux trios montrent les mêmes personnages principaux d’une image à l’autre. Dans chacun, l’élément à reconnaître à l’écoute est le lieu.
+
+Les 252 pistes et leurs formats figurent aussi dans le catalogue audio de l’application.
 
 ## Vérification
 
