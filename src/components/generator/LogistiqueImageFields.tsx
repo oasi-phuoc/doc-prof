@@ -3,10 +3,11 @@ import { SelectBox } from './SelectBox'
 
 export type LogistiquePhotoChoice = Pick<LogistiqueQuestionImage, 'src' | 'alt' | 'caption'>
 
-export function LogistiqueImageFields({ photos, image, onChange }: {
+export function LogistiqueImageFields({ photos, image, onChange, required }: {
   photos: readonly LogistiquePhotoChoice[]
   image?: LogistiqueQuestionImage
   onChange: (image: LogistiqueQuestionImage | undefined) => void
+  required?: boolean
 }) {
   if (!photos.length && !image) return null
   return (
@@ -14,7 +15,7 @@ export function LogistiqueImageFields({ photos, image, onChange }: {
       <summary>Image de la question</summary>
       <SelectBox label="Photo de la bibliothèque" value={image?.src ?? ''} onChange={(src) => {
         if (!src) {
-          onChange(undefined)
+          if (!required) onChange(undefined)
           return
         }
         const photo = photos.find((entry) => entry.src === src)
@@ -23,7 +24,8 @@ export function LogistiqueImageFields({ photos, image, onChange }: {
           placement: image?.placement ?? 'droite', visibility: image?.visibility ?? 'both',
         })
       }}>
-        <option value="">Sans image</option>
+        {!required && <option value="">Sans image</option>}
+        {image && !photos.some(({ src }) => src === image.src) && <option value={image.src}>Photo de la question</option>}
         {photos.map((photo) => <option key={photo.src} value={photo.src}>{photo.caption || photo.alt}</option>)}
       </SelectBox>
       {image && (
@@ -53,12 +55,12 @@ export function LogistiqueImageFields({ photos, image, onChange }: {
             <option value="apres">Sous l’énoncé</option>
             <option value="droite">À droite avec habillage</option>
           </SelectBox>
-          <SelectBox label="Visibilité de l’image" value={image.visibility} onChange={(visibility) => {
+          {!required && <SelectBox label="Visibilité de l’image" value={image.visibility} onChange={(visibility) => {
             if (visibility === 'both' || visibility === 'answers') onChange({ ...image, visibility })
           }}>
             <option value="both">Élève et corrigé</option>
             <option value="answers">Corrigé seulement</option>
-          </SelectBox>
+          </SelectBox>}
         </>
       )}
     </details>

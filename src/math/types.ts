@@ -441,7 +441,8 @@ export type DivisionStep = {
 
 export type LogistiqueGapMode = 'sans-liste' | 'avec-liste'
 export type LogistiqueResponsePresentation = 'qcm' | 'qcm-multiple' | 'vrai-faux' | 'lignes-simples' | 'lignes-numerotees' | 'associer-textes'
-export type LogistiquePresentation = LogistiqueGapMode | LogistiqueResponsePresentation | import('@/logistique/tables').LogistiqueTablePresentation
+export type LogistiquePhotoPresentation = 'identifier-photo' | 'decrire-photo'
+export type LogistiquePresentation = LogistiqueGapMode | LogistiqueResponsePresentation | LogistiquePhotoPresentation | import('@/logistique/tables').LogistiqueTablePresentation
 export type LogistiqueResponseLines =
   | { kind: 'simple'; count: number }
   | { kind: 'numbered'; answers: string[]; ordered?: boolean }
@@ -495,6 +496,7 @@ export type MathItem = {
   /** Position de départ d’une suite imprimée, en dehors de la recette. */
   logistiqueSubquestionOffset?: number
   logistiqueImage?: LogistiqueQuestionImage
+  logistiquePhotoPresentation?: LogistiquePhotoPresentation
   logistiqueGlossaryFigure?: LogistiqueGlossaryFigure
   logistiqueGlossaryEntry?: { term: string; definition: string }
   /** Identité locale d’une occurrence éditée, distincte des identifiants de banque. */

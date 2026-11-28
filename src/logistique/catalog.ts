@@ -1,4 +1,4 @@
-import type { Domain, ExerciseBlock, ExerciseType, LogistiquePresentation, LogistiqueQuestionImage, LogistiqueResponseLines, Topic } from '@/math/types'
+import type { Domain, ExerciseBlock, ExerciseType, LogistiquePhotoPresentation, LogistiquePresentation, LogistiqueQuestionImage, LogistiqueResponseLines, Topic } from '@/math/types'
 import curriculum from './curriculum.generated.json'
 import { validLogistiqueGaps } from './gaps'
 import { validLogistiqueChoice } from './choices'
@@ -148,11 +148,18 @@ export const logistiquePresentationLabels = {
   'processus-a-completer': 'Processus à compléter',
   'lire-graphique': 'Lecture de graphique',
   'completer-graphique': 'Graphique à compléter',
+  'identifier-photo': 'Identification sur photo',
+  'decrire-photo': 'Description d’une photo',
   'cas-mixte': 'Cas mixte',
 } as const satisfies Record<LogistiquePresentation, string>
 
+export function isLogistiquePhotoPresentation(value: unknown): value is LogistiquePhotoPresentation {
+  return value === 'identifier-photo' || value === 'decrire-photo'
+}
+
 export function validLogistiquePresentation(type: LogistiqueType, presentation: unknown): boolean {
   if (presentation === 'cas-mixte') return type.kind === 'situation'
+  if (isLogistiquePhotoPresentation(presentation)) return type.kind === 'verification'
   if (isLogistiqueTablePresentation(presentation)) return type.kind === 'verification' || type.kind === 'situation' ||
     (type.kind === 'maths' && (presentation === 'tableau-donnees' || presentation === 'tableau-dates'))
   if (presentation === 'qcm' || presentation === 'qcm-multiple' || presentation === 'vrai-faux' ||
@@ -206,7 +213,10 @@ export function validLogistiqueCataloguePages(pages: readonly CataloguePage[]): 
     const gapMode = 'logistiqueGapMode' in block ? block.logistiqueGapMode : undefined
     const presentation = 'logistiquePresentation' in block ? block.logistiquePresentation : undefined
     const evaluation = 'logistiqueEvaluation' in block ? block.logistiqueEvaluation : undefined
-    const items = 'libreItems' in block && Array.isArray(block.libreItems) ? block.libreItems : []
+    const leftItems = 'libreItems' in block && Array.isArray(block.libreItems) ? block.libreItems : []
+    const right = 'a5RightLibre' in block ? block.a5RightLibre : undefined
+    const items = right && typeof right === 'object' && 'items' in right && Array.isArray(right.items)
+      ? [...leftItems, ...right.items] : leftItems
     return type?.domain === domain && type.topic === block.topic &&
       validLogistiqueSelection(type, selection) &&
       validLogistiqueGapMode(type, gapMode) &&
@@ -232,6 +242,9 @@ export function validLogistiqueCataloguePages(pages: readonly CataloguePage[]): 
           subthemes.some(({ code, diploma }) =>
             code === item.logistiqueLocalModule && diploma === type.diploma))) &&
         (item?.logistiqueImage === undefined || validLogistiqueQuestionImage(item.logistiqueImage, type.diploma)) &&
+        (item?.logistiquePhotoPresentation === undefined || (type.kind === 'verification' && item.layout === 'text' &&
+          isLogistiquePhotoPresentation(item.logistiquePhotoPresentation) && !item.logistiqueGaps && !item.logistiqueTable && !item.options &&
+          item.logistiqueImage?.visibility === 'both' && Boolean(item.logistiqueImage.alt.trim()))) &&
         (item?.logistiqueChoice === undefined || (type.kind === 'verification' && validLogistiqueChoice(item))) &&
         (item?.logistiqueMatching === undefined || (type.kind === 'verification' && validLogistiqueMatching(item))) &&
         (item?.logistiqueResponseLines === undefined || (type.kind === 'verification' && item.layout === 'text' &&

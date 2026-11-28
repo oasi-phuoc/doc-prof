@@ -878,6 +878,37 @@ test('les applications 300 à 600 suivent le cours, le programme du diplôme et 
   }
 })
 
+test('les questions sur photo imposent un support élève et conservent leur présentation et leurs réponses', () => {
+  const units = currentLogistiquePublication.units.filter(({ revision }) => revision === 'questions-photo-v023')
+  assert.equal(units.length, 7)
+  for (const unit of units) {
+    const theory = currentLogistiquePublication.units.find(({ module, kind }) => module === unit.module && kind === 'theorie')
+    assert(theory?.blocks.some((block) => block.kind === 'heading' && block.text === unit.theorySection), unit.id)
+    const { image, lines, presentation } = unit.photoTask
+    assert(existsSync(root + '/public' + image.src), unit.id)
+    for (const diploma of ['CFC', 'AFP']) {
+      const page = { ...config(diploma, unit.module, 'verification'), logistiquePresentation: presentation }
+      const [item] = generateLogistique(page, 20).items
+      assert.equal(item?.logistiqueSource.id, unit.approvedFor.includes(diploma) ? unit.id : undefined)
+      assert.equal(generateLogistique({ ...page, logistiqueBankRevision: 'logistique-distribution-illustree-v022' }, 20).bankQuestionCap, 0)
+      if (!item) continue
+      assert.equal(item.answer, unit.answer)
+      assert.equal(item.logistiquePhotoPresentation, presentation)
+      assert.deepEqual(item.logistiqueImage, image)
+      assert.deepEqual(item.logistiqueResponseLines, { kind: 'simple', count: lines })
+      assert(reviewableLogistiqueAnswer(item))
+      const [frozen] = freezeLogistiquePages([{ ...page, libreItems: [item] }])
+      assert(validLogistiquePages([frozen]))
+      assert.deepEqual(buildPage(frozen, 30).items, [item])
+      const missing = { ...item, logistiqueImage: undefined }
+      const hidden = { ...item, logistiqueImage: { ...image, visibility: 'answers' } }
+      assert(!reviewableLogistiqueAnswer(missing))
+      assert(!validLogistiquePages([{ ...frozen, libreItems: [missing] }]))
+      assert(!validLogistiquePages([{ ...frozen, a5RightLibre: { id: 'droite', items: [hidden] } }]))
+    }
+  }
+})
+
 test('les deux présentations de graphiques gardent les valeurs, les repères et le corrigé', () => {
   const units = currentLogistiquePublication.units.filter(({ revision }) => revision === 'graphiques-v018')
   assert.equal(units.length, 4)

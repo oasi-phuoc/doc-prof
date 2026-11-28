@@ -29,6 +29,7 @@ export function newLogistiqueQuestion(module: string, kind: LogistiqueType['kind
 
 export function completeLogistiquePrompt(item: MathItem): boolean {
   if (!item.prompt?.trim()) return false
+  if (item.logistiquePhotoPresentation && (!item.logistiqueImage?.alt.trim() || item.logistiqueImage.visibility !== 'both')) return false
   if (item.logistiqueMatching) return Boolean(item.vocabPairs?.length) && validLogistiqueMatching(item)
   if (item.layout !== 'select') return true
   const choices = item.options?.map((option) => option.trim()) ?? []
@@ -63,7 +64,7 @@ export function availableLogistiqueQuestions(candidates: readonly MathItem[], ex
 }
 
 export function logistiqueItemPresentation(item: MathItem): LogistiquePresentation | undefined {
-  return item.logistiqueTable?.presentation ??
+  return item.logistiquePhotoPresentation ?? item.logistiqueTable?.presentation ??
     (item.logistiqueGaps ? item.logistiqueGaps.words ? 'avec-liste' : 'sans-liste'
       : item.logistiqueResponseLines?.kind === 'simple' ? 'lignes-simples'
       : item.logistiqueResponseLines?.kind === 'numbered' ? 'lignes-numerotees'

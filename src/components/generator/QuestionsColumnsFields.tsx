@@ -247,7 +247,7 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
   const presentations = supportsPresentation ? ([
     ...(logistics.kind === 'verification' ? [
       'qcm', 'qcm-multiple', 'vrai-faux', 'associer-textes',
-      'lignes-simples', 'lignes-numerotees', 'sans-liste', 'avec-liste',
+      'lignes-simples', 'lignes-numerotees', 'sans-liste', 'avec-liste', 'identifier-photo', 'decrire-photo',
     ] as const : []),
     'tableau-donnees', 'tableau-dates',
     ...(logistics.kind !== 'maths' ? [

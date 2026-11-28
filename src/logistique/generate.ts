@@ -20,6 +20,12 @@ function withAssetBase<T extends { src: string }>(figure: T): T {
 function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'],
   presentation?: LogistiquePresentation, presentationRng?: Rng): MathItem[] {
   const logistiqueSource = { id: unit.id, module: unit.module, revision: unit.revision }
+  if (unit.kind === 'verification' && unit.photoTask) {
+    const { presentation: photoPresentation, image, lines } = unit.photoTask
+    return [{ logistiqueSource, layout: 'text', prompt: unit.prompt, answer: unit.answer,
+      logistiquePhotoPresentation: photoPresentation, logistiqueImage: image,
+      logistiqueResponseLines: { kind: 'simple', count: lines } }]
+  }
   switch (unit.kind) {
     case 'objectifs-apercu':
     case 'theorie':
@@ -92,6 +98,7 @@ function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'
 }
 
 function hasPresentation(unit: LogistiqueUnit, presentation?: LogistiquePresentation): boolean {
+  if (unit.kind === 'verification' && unit.photoTask) return unit.photoTask.presentation === presentation
   if ('table' in unit && unit.table) return unit.table.presentation === presentation
   if (unit.kind === 'verification' && unit.gaps) return presentation === 'sans-liste' || presentation === 'avec-liste'
   if (unit.kind === 'verification') {
@@ -108,6 +115,7 @@ function eligibleUnits(type: LogistiqueType, units: readonly LogistiqueUnit[], m
   const codes = new Set(modules)
   const matching = units.filter((unit) =>
     codes.has(unit.module) && unit.kind === type.kind && unit.approvedFor.includes(type.diploma) &&
+    (unit.kind !== 'verification' || !unit.photoTask || logistiquePhotoPath(unit.photoTask.image.src, type.diploma)) &&
     hasPresentation(unit, presentation),
   )
   return [...new Map(matching.map((unit) => [unit.id, unit])).values()]

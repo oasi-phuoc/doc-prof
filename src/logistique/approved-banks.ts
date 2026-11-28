@@ -285,10 +285,11 @@ import { module504 as photoProduction504 } from './banks/module-504-v004.generat
 import { module601 as photoDistribution601 } from './banks/module-601-v004.generated.ts'
 import { module602 as photoDistribution602 } from './banks/module-602-v004.generated.ts'
 import { module603 as photoDistribution603 } from './banks/module-603-v004.generated.ts'
+import { logistiquePhotoExercises } from './banks/questions-photo-v023'
 import type { LogistiquePair } from './matching'
 import type { LogistiqueChoice } from './choices'
 import type { LogistiqueExerciseTable } from './tables'
-import type { LogistiqueGlossaryFigure } from '@/math/types'
+import type { LogistiqueGlossaryFigure, LogistiquePhotoPresentation, LogistiqueQuestionImage } from '@/math/types'
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import type { LogistiqueDiploma } from './catalog'
 import { logistiqueGlossaryFigures } from './glossary'
@@ -302,7 +303,8 @@ type UnitContent =
   | { kind: 'maths'; prompt: string; calculation: string; answer: string; theorySection?: string; table?: LogistiqueExerciseTable }
   | { kind: 'verification'; prompt: string; answer: string; options?: readonly string[]; theorySection?: string;
       gaps?: { answers: readonly string[]; distractors?: readonly string[] }; table?: LogistiqueExerciseTable;
-      numberedAnswers?: readonly string[]; orderedAnswers?: boolean; choice?: LogistiqueChoice; pairs?: readonly LogistiquePair[] }
+      numberedAnswers?: readonly string[]; orderedAnswers?: boolean; choice?: LogistiqueChoice; pairs?: readonly LogistiquePair[];
+      photoTask?: { presentation: LogistiquePhotoPresentation; image: LogistiqueQuestionImage; lines: number } }
   | { kind: 'situation'; prompt: string; answer: string; theorySection?: string; table?: LogistiqueExerciseTable }
 
 export type LogistiqueUnit = UnitContent & {
@@ -717,6 +719,9 @@ const illustratedProductionPublication = reviewedIllustrationPublication(illustr
   'logistique-production-illustree-v021', [...photoProduction503, ...photoProduction504])
 const illustratedDistributionPublication = reviewedIllustrationPublication(illustratedProductionPublication,
   'logistique-distribution-illustree-v022', [...photoDistribution601, ...photoDistribution602, ...photoDistribution603])
+const photoExercisesPublication: LogistiquePublication = {
+  revision: 'logistique-questions-photo-v023', units: [...illustratedDistributionPublication.units, ...logistiquePhotoExercises],
+}
 
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
@@ -821,6 +826,7 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   illustratedStockagePublication,
   illustratedProductionPublication,
   illustratedDistributionPublication,
+  photoExercisesPublication,
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!

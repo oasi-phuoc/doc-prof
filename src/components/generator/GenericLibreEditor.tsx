@@ -318,7 +318,11 @@ export function GenericLibreEditor({
               {logistiquePhotos && <LogistiqueImageFields
                 photos={logistiquePhotos.byModule.get(item.logistiqueSource?.module ?? item.logistiqueLocalModule ?? logistiquePhotos.defaultModule) ?? []}
                 image={item.logistiqueImage}
-                onChange={(logistiqueImage) => patchItem(index, { logistiqueImage })} />}
+                required={Boolean(item.logistiquePhotoPresentation)}
+                onChange={(logistiqueImage) => patchItem(index, { logistiqueImage,
+                  ...(item.logistiquePhotoPresentation && logistiqueImage?.src !== item.logistiqueImage?.src
+                    ? { libreCorrectionPending: true } : {}),
+                })} />}
               {logistique?.evaluation && <details>
                 <summary>Barème et objectifs</summary>
                 <label className="libre-field is-line">
