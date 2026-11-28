@@ -13,7 +13,9 @@ Dans **Grammaire**, choisir un thème, un sous-thème et le type **Théorie**. L
 | Le verbe être | Dire où l’on est, comparer deux émotions, donner son métier ou sa nationalité. La nationalité est indiquée par le texte de présentation. |
 | L’accord du participe passé | Mettre en évidence le complément avant ou après le verbe pour expliquer le changement de « mangé » à « mangée ». |
 
-Douze emplacements utilisent des images du dépôt. Les **130 emplacements à compléter** portent chacun une description de scène et des exemples en texte. En mode Libre, ouvrir le bloc **Images** de la fiche pour remplacer un emplacement par une illustration et modifier sa légende ou son texte alternatif. Les phrases à compléter se modifient aussi en mode Libre. [Fiches en situation](../../../src/grammaire/theory/falc-contextes.ts) · [Descriptions des illustrations](../../../src/grammaire/theory/falc-visuels.ts) · [Tableaux annotés](../../../src/grammaire/theory/falc-schemas.ts)
+**73 emplacements sont illustrés dans 40 fiches.** Chaque scène a son propre fichier, sa légende et son texte alternatif. Pour « je suis » et « nous sommes », Lina téléphone devant la même gare, seule puis avec une amie. Pour « sur » et « dans », on retrouve la même clé et la même boîte. Les schémas servent à lire une date, suivre un trajet ou comparer une fréquence. [Fiches en situation](../../../src/grammaire/theory/falc-contextes.ts) · [Scènes et schémas](../../../src/grammaire/theory/falc-visuels.ts) · [Fichiers des illustrations](../../../public/lib/images/grammaire/theorie)
+
+Les **69 emplacements à compléter** portent chacun une description de scène et des exemples en texte. En mode Libre, ouvrir le bloc **Images** pour ajouter une illustration, modifier sa légende ou modifier son texte alternatif. Les phrases à compléter se modifient aussi en mode Libre. [Registre des illustrations](theorie-falc.csv)
 
 ## Correspondance avec la source
 

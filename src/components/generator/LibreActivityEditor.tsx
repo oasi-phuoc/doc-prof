@@ -178,6 +178,7 @@ export function LibreActivityEditor({
   const allowedModules = evalMode ? activeBlock.logistiqueSelection?.modules : undefined
   const logistiqueEditor = logistiqueQuestionType ? {
     kind: logistiqueQuestionType.kind,
+    diploma: logistiqueQuestionType.diploma,
     evaluation: evalMode,
     defaultModule: logistiqueQuestionType.module,
     modules: logistiqueModules(logistiqueQuestionType.domain).filter(({ code }) =>
