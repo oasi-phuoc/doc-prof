@@ -26,6 +26,8 @@ export type Domain =
   | 'tcf-csc'
   | 'tcf-cfr'
 
+export type MathTheoryStepNumbering = 'circle' | 'plain'
+
 /** Catégories grammaire en couleur (Gattegno). */
 export type PhraseCategory =
   | 'pronom'
@@ -552,7 +554,7 @@ export type MathItem = {
   selectVariant?: 'pills' | 'oral' | 'cards'
   /** Bloc de théorie grammaticale (fiche lecture seule). */
   theoryBlock?: GrammarTheoryBlock
-  mathTheory?: import('./theory-lessons').MathTheoryLesson & { topic: string }
+  mathTheory?: import('./theory-lessons').MathTheoryLesson & { topic: string; stepNumbering?: MathTheoryStepNumbering }
   /** Coupure de page initiale après cette section de théorie, modifiable dans l’aperçu. */
   theoryPageBreakAfter?: boolean
   /** Style des fiches FALC révisées du catalogue Grammaire, y compris en mode Libre. */
@@ -996,6 +998,7 @@ export type ExerciseBlock = {
   logistiquePresentation?: LogistiquePresentation
   topic: string
   exerciseType: string
+  mathTheoryStepNumbering?: MathTheoryStepNumbering
   difficulty: Difficulty
   count: number
   columns: number

@@ -6711,33 +6711,77 @@ textarea.pill-input,
 .grammar-reading-writing .grammar-rubric li { margin: 1mm 0; }
 
 .math-theory-lesson {
-  color: #172336;
+  --math-theory-steps-color: color-mix(in srgb, var(--purple, #7c3aed) 44%, #20202b);
+  --math-theory-steps-fill: color-mix(in srgb, var(--purple, #7c3aed) 20%, #fff);
+  --math-theory-words-color: color-mix(in srgb, var(--theory-expliquer, #18a66a) 64%, #20202b);
+  --math-theory-panel-padding: 2.5mm;
+  --math-theory-panel-gap: 4mm;
+  color: #171717;
   font-family: var(--lesson-font-family);
   font-size: 14pt;
-  line-height: 1.3;
+  line-height: 1.45;
   text-align: left;
 }
 .math-theory-lesson h2 { font-size: 22pt; font-weight: 700; margin: 0 0 3mm; line-height: 1.15; }
-.math-theory-lesson h3, .math-theory-lesson h4 {
-  font-size: 18pt;
-  font-weight: 700;
-  margin: 0 0 1mm;
-  line-height: 1.2;
-}
+.math-theory-introduction { margin: 0 0 1mm; font-weight: 700; }
 .math-theory-goal { margin: 0 0 2mm; }
 .math-theory-lesson figure { margin: 0 0 3mm; }
 .math-theory-lesson figure img { display: block; width: 100%; max-height: 51mm; object-fit: contain; }
 .math-theory-lesson figcaption { font-weight: 700; margin-top: 1mm; }
 .math-theory-example { font-weight: 700; margin: 0 0 3mm; }
-.math-theory-sections section + section { margin-top: 2mm; }
-.math-theory-sections dl, .math-theory-sections ol { margin: 0; }
-.math-theory-sections ol { padding-left: 1.6em; list-style: decimal outside; }
-.math-theory-sections li { display: list-item; }
-.math-theory-sections li::marker { font-weight: 700; }
-.math-theory-sections dt { display: inline; font-weight: 700; }
-.math-theory-sections dd { display: inline; margin: 0; }
-.math-theory-sections dt::after { content: ' — '; color: #172336; }
-.math-theory-sections dl > div, .math-theory-sections li { margin-bottom: 1mm; }
+.math-theory-sections {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  align-items: start;
+  gap: var(--math-theory-panel-gap);
+}
+.math-theory-panel { min-width: 0; }
+.math-theory-panel:only-child { grid-column: 1 / -1; }
+.math-theory-panel.is-steps { --math-theory-panel-color: var(--math-theory-steps-color); }
+.math-theory-panel.is-words { --math-theory-panel-color: var(--math-theory-words-color); }
+.math-theory-panel h3 {
+  margin: 0 0 1.3mm;
+  color: var(--math-theory-panel-color);
+  font-size: 15pt;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.math-theory-panel-body {
+  margin: 0;
+  padding: var(--math-theory-panel-padding);
+  border: 1px solid var(--math-theory-panel-color);
+  border-radius: 2mm;
+  overflow-wrap: anywhere;
+}
+.math-theory-steps { list-style: none; }
+.math-theory-steps li {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: start;
+  gap: .42em;
+}
+.math-theory-steps li + li, .math-theory-words > div + div { margin-top: 1.5mm; }
+.math-theory-step-number {
+  display: grid;
+  place-items: center;
+  min-width: 1.65em;
+  height: 1.65em;
+  border-radius: 50%;
+  background: var(--math-theory-steps-fill);
+  color: #111;
+  font-size: .84em;
+  font-weight: 700;
+  line-height: 1;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+.math-theory-steps.is-plain .math-theory-step-number {
+  background: none;
+  color: var(--math-theory-steps-color);
+}
+.math-theory-words dt { display: inline; font-weight: 700; }
+.math-theory-words dd { display: inline; margin: 0; }
+.math-theory-words dt::after { content: ' — '; color: #171717; }
 .math-theory-word-given { color: #874515; }
 .math-theory-word-step { color: #174A7E; }
 .math-theory-word-result { color: #155E40; }
@@ -6863,8 +6907,12 @@ textarea.pill-input,
 }
 .a5-half .math-theory-lesson figure { margin-bottom: 2mm; }
 .a5-half .math-theory-lesson figure img { max-height: 32mm; }
-.a5-half .math-theory-lesson h2 { margin-bottom: 2mm; }
-.a5-half .math-theory-lesson { line-height: 1.24; }
+.a5-half .math-theory-lesson h2 { margin-bottom: 2mm; font-size: 20pt; }
+.a5-half .math-theory-lesson {
+  --math-theory-panel-padding: 1.6mm;
+  --math-theory-panel-gap: 3mm;
+  line-height: 1.27;
+}
 
 .math-worked-example {
   margin: 0 0 3mm;

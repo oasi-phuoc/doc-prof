@@ -181,8 +181,7 @@ function MathTheoryFields({ lesson, update, removable }: {
 }) {
   return (
     <>
-      <TextField label="Titre" value={lesson.title} onChange={(title) => update({ title })} />
-      <TextField label="Titre de l’explication" value={lesson.heading ?? ''} onChange={(heading) => update({ heading })} />
+      <TextField label="Texte d’introduction" value={lesson.heading ?? lesson.title} onChange={(heading) => update({ heading })} />
       <TextField label="Objectif" value={lesson.goal} onChange={(goal) => update({ goal })} multiline />
       {removable && lesson.goal && <RemovePart label="Retirer l’objectif" onClick={() => update({ goal: '' })} />}
       <TextField label="Exemple" value={lesson.example} onChange={(example) => update({ example })} multiline />
