@@ -31,7 +31,7 @@ try {
   if(process.env.GRAMMAR_A1_SUBTHEMES&&!process.env.GRAMMAR_A1_SUBTHEMES.split(',').includes(sub))continue
   await choose('Sous-thème',subLabel);await choose('Type d’exercice',qLabel)
   const level=page.getByLabel('Niveau de grammaire',{exact:true}).locator('.select-control-value')
-  assert.equal(await level.textContent(),'A1 — pilote')
+  assert.equal(await level.textContent(),'A1')
   const offers=[['choice',qLabel],['gap',qLabel],['order','Mots dans l’ordre']]
   if(sub!=='a9')offers.push(['correct','Corriger l’erreur'])
   if(['pronominaux','a8'].includes(sub))offers.push(['transform','Transformer une phrase'])
@@ -40,7 +40,7 @@ try {
   for(const [presentation,label] of offers) {
    if(process.env.GRAMMAR_A1_PRESENTATIONS&&!process.env.GRAMMAR_A1_PRESENTATIONS.split(',').includes(presentation))continue
    await page.emulateMedia({media:'screen'});await choose('Type d’exercice',label)
-   if(await level.textContent()!=='A1 — pilote')await choose('Niveau de grammaire','A1 — pilote')
+   if(await level.textContent()!=='A1')await choose('Niveau de grammaire','A1')
    if(['choice','gap'].includes(presentation))await page.getByRole('button',{name:presentation==='choice'?'QCM':'Lacune',exact:true}).click()
    if(presentation==='order')await page.getByRole('group',{name:'Forme des phrases',exact:true}).getByRole('button',{name:['a8','a9'].includes(sub)?'Négative':'Positive',exact:true}).click()
    const input=page.getByLabel(presentation==='document-set'?'Nombre de textes':presentation==='scenario-set'?'Nombre de situations':'Nombre de questions',{exact:true})
@@ -74,7 +74,7 @@ try {
   await page.emulateMedia({media:'screen'})
   const boardLabel=sub==='modaux'?'Jouer une situation':sub==='pronominaux'?'S’exprimer à l’oral':sub==='a8'?'Transformer une phrase':qLabel
   await choose('Type d’exercice',boardLabel)
-  if(await level.textContent()!=='A1 — pilote')await choose('Niveau de grammaire','A1 — pilote')
+  if(await level.textContent()!=='A1')await choose('Niveau de grammaire','A1')
   const count=page.getByLabel(sub==='modaux'?'Nombre de situations':'Nombre de questions',{exact:true});await count.fill('3');await count.blur()
   await page.waitForFunction(()=>document.querySelectorAll('.a4-frame .layout-grammar').length===3)
   await page.locator('.a4-frame').first().screenshot({path:join(evidence,`${sub}-a1-next.png`)})

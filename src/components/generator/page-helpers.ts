@@ -220,6 +220,7 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
   const coordSize = coordSizeFor('moyen')
   return {
     exerciseType: type.id,
+    mathTheoryStepNumbering: prev?.exerciseType === type.id ? prev.mathTheoryStepNumbering : undefined,
     sionMapBackground: prev?.exerciseType === type.id ? prev.sionMapBackground : undefined,
     realMapId: prev?.exerciseType === type.id ? prev.realMapId : undefined,
     libreId: undefined,

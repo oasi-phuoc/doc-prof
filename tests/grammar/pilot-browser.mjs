@@ -24,8 +24,8 @@ try {
  await choose('Sous-thème','Être')
  await choose('Type d’exercice','Conjuguer être')
  const level=page.getByLabel('Niveau de grammaire',{exact:true})
- assert.equal(await level.locator('.select-control-value').textContent(),'A1 — pilote')
- await choose('Niveau de grammaire','A1 — pilote')
+ assert.equal(await level.locator('.select-control-value').textContent(),'A1')
+ await choose('Niveau de grammaire','A1')
  await page.locator('.a4-frame .grammar-choices').first().waitFor()
  await page.getByRole('button',{name:'Lacune',exact:true}).click()
  assert.equal(await page.locator('.a4-frame .grammar-choices').count(),0)
@@ -33,7 +33,7 @@ try {
  for (const [type,presentation,label] of [['gram-ex-etre-qcm-conj','choice','Conjuguer être'],['gram-ex-etre-qcm-conj','gap','Conjuguer être'],['gram-ex-etre-corriger-erreur','correct','Corriger l’erreur'],['gram-ex-etre-ordre','order','Mots dans l’ordre'],['gram-ex-etre-curriculum-a','match','Associer les sujets et les formes']]) {
   await page.emulateMedia({media:'screen'})
   await choose('Type d’exercice',label)
-  if(await level.locator('.select-control-value').textContent()!=='A1 — pilote')await choose('Niveau de grammaire','A1 — pilote')
+  if(await level.locator('.select-control-value').textContent()!=='A1')await choose('Niveau de grammaire','A1')
   if(presentation==='choice')await page.getByRole('button',{name:'QCM',exact:true}).click()
   if(presentation==='gap')await page.getByRole('button',{name:'Lacune',exact:true}).click()
   await page.getByLabel('Nombre de questions',{exact:true}).fill('50')
@@ -63,7 +63,7 @@ try {
  }
  await page.emulateMedia({media:'screen'})
  await choose('Type d’exercice','Mots dans l’ordre')
- await choose('Niveau de grammaire','A1 — pilote')
+ await choose('Niveau de grammaire','A1')
  await page.getByRole('button',{name:'Négative',exact:true}).click()
  const unavailable=page.waitForEvent('dialog').then(async notice=>{
   assert.match(notice.message(),/0 question/)
@@ -74,7 +74,7 @@ try {
  assert(new URL(page.url()).pathname==='/generateur')
  results.push({unavailableFilters:'clear notice, no broken session'})
  await choose('Type d’exercice','Conjuguer être')
- await choose('Niveau de grammaire','A1 — pilote')
+ await choose('Niveau de grammaire','A1')
  await page.getByLabel('Nombre de questions',{exact:true}).fill('3')
  await page.getByLabel('Nombre de questions',{exact:true}).blur()
  await page.getByRole('button',{name:'Jouer avec la classe',exact:true}).click()

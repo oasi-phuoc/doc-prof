@@ -6,6 +6,7 @@ import type { LogistiqueType } from '@/logistique/catalog'
 import { LogistiqueImageFields, type LogistiquePhotoChoice } from './LogistiqueImageFields'
 import { LogistiqueGapEditor } from './LogistiqueGapEditor'
 import { LogistiqueTableEditor } from './LogistiqueTableEditor'
+import { LogistiqueMatchingEditor } from './LogistiqueMatchingEditor'
 import { SelectBox } from './SelectBox'
 
 /**
@@ -128,7 +129,7 @@ export function GenericLibreEditor({
                     }
                   />
                 </label>
-                {!(direct && item.layout === 'select') && item.logistiqueResponseLines?.kind !== 'numbered' && !item.logistiqueTable?.questions ? <label className="libre-field is-line">
+                {!(direct && item.layout === 'select') && item.logistiqueResponseLines?.kind !== 'numbered' && !item.logistiqueTable?.questions && !item.logistiqueMatching ? <label className="libre-field is-line">
                   <span>Réponse</span>
                   <TextField
                     className={logistique ? 'libre-line-input is-textarea' : 'libre-line-input'}
@@ -182,7 +183,9 @@ export function GenericLibreEditor({
                     })} />
                 </label>
               )}
-              {item.options && item.options.length > 0 ? (
+              {item.logistiqueMatching && item.vocabPairs && item.options && <LogistiqueMatchingEditor
+                pairs={item.vocabPairs} definitions={item.options} onChange={(patch) => patchItem(index, patch)} />}
+              {!item.logistiqueMatching && item.options && item.options.length > 0 ? (
                 <div className="libre-options">
                   <b>Choix</b>
                   {choice?.kind !== 'true-false' && item.options.map((opt, oi) => {
@@ -390,6 +393,7 @@ export function GenericLibreEditor({
           {logistique.kind === 'verification' && <>
             <option value="qcm-multiple">QCM à réponses multiples</option>
             <option value="vrai-faux">Vrai ou faux</option>
+            <option value="associer-textes">Associations de termes et définitions</option>
           </>}
         </SelectBox>}
         <button type="button" className="button small secondary" disabled={!module} onClick={() => {

@@ -685,12 +685,49 @@ test('les documents professionnels gardent leurs sous-questions et leur corrigé
       const longWorksheet = { ...worksheet, items: [longItem], blocks: [{ ...worksheet.blocks[0], items: [longItem] }] }
       const pages = splitLogistiquePages(longWorksheet, { a5: true, fontScale: 1.5 }).map((sheet) => ({ ...sheet, configIndex: 0 }))
       const ranges = pages.flatMap(({ blocks }) => blocks.flatMap(({ logistiqueTheorySlices }) => logistiqueTheorySlices ?? []))
-        .flatMap(({ documentRange }) => documentRange ? [documentRange] : [])
+        .flatMap(({ subquestionRange }) => subquestionRange ? [subquestionRange] : [])
       assert(ranges.length > 1)
       assert.deepEqual(ranges.flatMap(({ start, end }) => questions.slice(start, end)), questions)
       assert.deepEqual(blockItemsForConfig(pages, 0, 0).items, [longItem])
     }
   }
+})
+
+test('les associations textuelles mélangent les définitions sans perdre les paires corrigées', () => {
+  const units = currentLogistiquePublication.units.filter(({ revision }) => revision === 'associations-v013')
+  assert.equal(units.length, 8)
+  for (const unit of units) {
+    const theory = currentLogistiquePublication.units.find(({ module, kind }) => module === unit.module && kind === 'theorie')
+    assert(theory?.blocks.some((block) => block.kind === 'heading' && block.text === unit.theorySection), unit.id)
+    for (const diploma of ['CFC', 'AFP']) {
+      const page = { ...config(diploma, unit.module, 'verification'), logistiquePresentation: 'associer-textes' }
+      const [item] = buildPage(page, 201).items
+      assert.equal(item.logistiqueSource.id, unit.id)
+      assert.deepEqual(item.vocabPairs, unit.pairs)
+      const definitions = unit.pairs.map(({ right }) => right)
+      assert.notDeepEqual(item.options, definitions)
+      assert.deepEqual(new Set(item.options), new Set(definitions))
+      assert(reviewableLogistiqueAnswer(item))
+      const [frozen] = freezeLogistiquePages([{ ...page, libreItems: [item] }])
+      assert(validLogistiquePages([frozen]))
+      assert.deepEqual(buildPage(frozen, 82).items, [item])
+      assert.equal(generateLogistique({ ...page, logistiqueBankRevision: 'logistique-documents-v012' }, 23).bankQuestionCap, 0)
+    }
+  }
+  const unfinished = newLogistiqueQuestion('306', 'verification', 'associer-textes')
+  assert(validLogistiquePages([{ ...config('AFP', '306', 'verification'), libreItems: [unfinished] }]))
+  assert(!reviewableLogistiqueAnswer({ ...unfinished, prompt: 'Reliez les paires.' }))
+  const sample = buildPage({ ...config('AFP', '406', 'verification'), logistiquePresentation: 'associer-textes' }, 25)
+  const original = sample.items[0]
+  const complete = [...original.vocabPairs, { left: 'Entrée', right: 'Arrivée des articles.' }, { left: 'Sortie', right: 'Départ des articles.' }]
+  const extended = { ...original, vocabPairs: complete, labels: complete.map(({ left }) => left),
+    options: complete.map(({ right }) => right).reverse() }
+  const pages = splitLogistiquePages({ ...sample, items: [extended], blocks: [{ ...sample.blocks[0], items: [extended] }] },
+    { a5: true, fontScale: 1.5 }).map((page) => ({ ...page, configIndex: 0 }))
+  assert.equal(pages.length, 2)
+  assert.deepEqual(pages.map(({ blocks }) => blocks[0].logistiqueTheorySlices[0].subquestionRange),
+    [{ start: 0, end: 3 }, { start: 3, end: 6 }])
+  assert.deepEqual(blockItemsForConfig(pages, 0, 0).items, [extended])
 })
 
 test('la trame de réception calcule les étapes liées, respecte les protections et fige le document', () => {

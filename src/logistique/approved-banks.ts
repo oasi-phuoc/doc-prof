@@ -271,6 +271,8 @@ import { logistiqueAcquisitionExercises } from './banks/acquis-v008'
 import { logistiqueResponseExercises, logistiqueStructuredExercises } from './banks/reponses-v009'
 import { logistiqueChoiceExercises } from './banks/choix-v011'
 import { logistiqueDocumentExercises } from './banks/documents-v012'
+import { logistiqueMatchingExercises } from './banks/associations-v013'
+import type { LogistiquePair } from './matching'
 import type { LogistiqueChoice } from './choices'
 import type { LogistiqueExerciseTable } from './tables'
 import type { LogistiqueGlossaryFigure } from '@/math/types'
@@ -287,7 +289,7 @@ type UnitContent =
   | { kind: 'maths'; prompt: string; calculation: string; answer: string; theorySection?: string; table?: LogistiqueExerciseTable }
   | { kind: 'verification'; prompt: string; answer: string; options?: readonly string[]; theorySection?: string;
       gaps?: { answers: readonly string[]; distractors?: readonly string[] }; table?: LogistiqueExerciseTable;
-      numberedAnswers?: readonly string[]; orderedAnswers?: boolean; choice?: LogistiqueChoice }
+      numberedAnswers?: readonly string[]; orderedAnswers?: boolean; choice?: LogistiqueChoice; pairs?: readonly LogistiquePair[] }
   | { kind: 'situation'; prompt: string; answer: string; theorySection?: string; table?: LogistiqueExerciseTable }
 
 export type LogistiqueUnit = UnitContent & {
@@ -675,6 +677,9 @@ const responseExercisesPublication: LogistiquePublication = {
 const choiceExercisesPublication: LogistiquePublication = {
   revision: 'logistique-choix-v011', units: [...responseExercisesPublication.units, ...logistiqueChoiceExercises],
 }
+const documentExercisesPublication: LogistiquePublication = {
+  revision: 'logistique-documents-v012', units: [...choiceExercisesPublication.units, ...logistiqueDocumentExercises],
+}
 
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
@@ -769,7 +774,8 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   illustratedObjectivesPublication,
   responseExercisesPublication,
   choiceExercisesPublication,
-  { revision: 'logistique-documents-v012', units: [...choiceExercisesPublication.units, ...logistiqueDocumentExercises] },
+  documentExercisesPublication,
+  { revision: 'logistique-associations-v013', units: [...documentExercisesPublication.units, ...logistiqueMatchingExercises] },
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!

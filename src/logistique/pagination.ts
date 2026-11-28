@@ -1,6 +1,7 @@
 import type { GrammarTheoryBlock } from '@/francais/grammar-theory'
 import { headingForSlice } from '@/math/page-break-heading'
 import { isWrittenProblem } from '@/math/problem-help'
+import { sliceLogistiqueMatch } from './matching'
 import type { MathItem, WorksheetBlock, WorksheetPage } from '@/math/types'
 
 export type LogistiquePageLayout = {
@@ -36,7 +37,7 @@ function splitNarrative(text: string, width: number, limit: number): string[] {
 
 type A5TheoryBlock = Extract<GrammarTheoryBlock, { kind: 'table' | 'list' | 'examples' }>
 type TheoryLayoutSlice = { item: MathItem; sourceIndex: number; theoryBlock?: A5TheoryBlock;
-  documentRange?: { start: number; end: number }; isLast: boolean }
+  subquestionRange?: { start: number; end: number }; isLast: boolean }
 
 function a5TheoryHeight(block: A5TheoryBlock, scale: number) {
   if (block.kind === 'list') {
@@ -173,6 +174,16 @@ function height(item: MathItem, a5: boolean, scale: number): number {
     const words = item.logistiqueGaps.words
     return imageHeight + 32 + prompt + (words?.length ? 34 + lineCount(words.join(' · '), width * 0.87) * 26 * scale : 0)
   }
+  if (item.logistiqueMatching) {
+    const terms = item.labels ?? []
+    const definitions = item.options ?? []
+    const matchScale = a5 ? Math.min(scale, 1) : scale
+    const matchWidth = (a5 ? 53 : 72) / matchScale
+    const rowLines = Math.max(2,
+      ...terms.map((text) => lineCount(text, matchWidth * 0.32)),
+      ...definitions.map((text) => lineCount(text, matchWidth * 0.51)))
+    return imageHeight + (23 * lineCount(item.prompt ?? '', matchWidth) + terms.length * (8 + rowLines * 17) + 18) * matchScale
+  }
   const promptWidth = a5 || item.calcAnswer || table ? width * 1.2 : width
   const prompt = lineCount(item.prompt ?? '', promptWidth) * 24 * scale
   const answer = lineCount(item.answer, width * 0.84) * 27 * scale
@@ -243,6 +254,14 @@ export function splitLogistiquePages(
     const slices = block.items.flatMap<TheoryLayoutSlice>((item, sourceIndex) => {
       const theory = item.theoryBlock
       const table = item.logistiqueTable
+      const pairCount = item.logistiqueMatching ? item.vocabPairs?.length ?? 0 : 0
+      if (a5 && pairCount >= 4 && (pairCount > 4 || height(item, true, fontScale) > budget(0, Math.min(fontScale, 1.25)) - 55)) {
+        const middle = Math.ceil(pairCount / 2)
+        return [
+          { item, sourceIndex, subquestionRange: { start: 0, end: middle }, isLast: false },
+          { item, sourceIndex, subquestionRange: { start: middle, end: pairCount }, isLast: true },
+        ]
+      }
       if (table?.questions) {
         const { questions } = table
         const scale = a5 ? Math.min(fontScale, 1.125) : fontScale
@@ -251,11 +270,11 @@ export function splitLogistiquePages(
         let start = 0
         for (let end = 2; end <= questions.length; end++) {
           if (height({ ...item, logistiqueTable: { ...table, questions: questions.slice(start, end) } }, a5, scale) <= limit) continue
-          fragments.push({ item, sourceIndex, documentRange: { start, end: end - 1 }, isLast: false })
+          fragments.push({ item, sourceIndex, subquestionRange: { start, end: end - 1 }, isLast: false })
           start = end - 1
         }
         if (fragments.length) {
-          fragments.push({ item, sourceIndex, documentRange: { start, end: questions.length }, isLast: true })
+          fragments.push({ item, sourceIndex, subquestionRange: { start, end: questions.length }, isLast: true })
           return fragments
         }
       }
@@ -301,7 +320,7 @@ export function splitLogistiquePages(
         } : {}),
         ...(glossary ? { logistiqueGlossaryLength: block.items.length } : {}),
         ...(hasSlices ? {
-          logistiqueTheorySlices: slice.map(({ sourceIndex, theoryBlock, documentRange, isLast }) => ({ sourceIndex, theoryBlock, documentRange, isLast })),
+          logistiqueTheorySlices: slice.map(({ sourceIndex, theoryBlock, subquestionRange, isLast }) => ({ sourceIndex, theoryBlock, subquestionRange, isLast })),
         } : {}),
         ...(wrappedFigures.length ? {
           logistiqueWrappedFigures: wrappedFigures.filter((figure) => figure.start >= start && figure.end <= end)
@@ -312,10 +331,11 @@ export function splitLogistiquePages(
       start = end
       overhead = 0
     }
-    const heights = slices.map(({ item, sourceIndex, theoryBlock, documentRange }) => {
+    const heights = slices.map(({ item, sourceIndex, theoryBlock, subquestionRange }) => {
       const printable = theoryBlock ? { ...item, theoryBlock }
-        : documentRange && item.logistiqueTable ? { ...item,
-          logistiqueTable: { ...item.logistiqueTable, questions: item.logistiqueTable.questions?.slice(documentRange.start, documentRange.end) } }
+        : subquestionRange && item.logistiqueMatching ? sliceLogistiqueMatch(item, subquestionRange.start, subquestionRange.end)
+        : subquestionRange && item.logistiqueTable ? { ...item,
+          logistiqueTable: { ...item.logistiqueTable, questions: item.logistiqueTable.questions?.slice(subquestionRange.start, subquestionRange.end) } }
         : detachedNarratives.has(sourceIndex) ? { ...item, logistiqueNarrative: undefined } : item
       const base = height(printable, a5, a5 && item.logistiqueTable?.questions ? Math.min(fontScale, 1.125) : fontScale)
       if (!evaluation || item.layout === 'theory' || item.noPoints) return base
@@ -387,7 +407,7 @@ export function splitLogistiquePages(
       }
       used += overhead + itemHeight
       overhead = 0
-      if (breakAfter(slice) || (slice.documentRange && !slice.isLast)) {
+      if (breakAfter(slice) || (slice.subquestionRange && !slice.isLast)) {
         append(index + 1)
         flush()
         overhead = glossaryHeadingHeight

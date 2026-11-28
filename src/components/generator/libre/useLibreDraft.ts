@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import type { Domain } from '@/math/types'
 import { parseFicheRecipe } from '@/fiches/recipe'
 import { readSessionUser } from '@/fiches/session'
+import { isLogistiqueDomain } from '@/logistique/catalog'
 import {
   discardLibreDraft, listLibreDrafts, writeLibreDraft, type LibreDraft, type LibreDraftSnapshot,
 } from './drafts'
@@ -18,6 +19,10 @@ function draftWorksheet(owner: string | undefined, savedId: string | undefined):
 
 function rememberWorksheet(owner: string, worksheet: string) {
   window.history.replaceState({ ...window.history.state, [HISTORY_KEY]: { owner, worksheet } }, '')
+}
+
+function isLogistiqueEvaluation(revision: LibreRevision) {
+  return revision.evalMode && revision.pages.every(({ domain }) => isLogistiqueDomain(domain))
 }
 
 function usableSnapshot(draft: LibreDraft, owner: string | undefined, allowed: readonly Domain[]) {
@@ -52,6 +57,8 @@ export function useLibreDraft({
   restore: (next: LibreDraftSnapshot) => void
 }) {
   const [worksheet, setWorksheet] = useState(() => draftWorksheet(owner, savedId))
+  const [openedSavedEvaluation] = useState(() => Boolean(savedId && isLogistiqueEvaluation(snapshot.revision) &&
+    window.history.state?.[HISTORY_KEY]?.worksheet !== `fiche-${savedId}`))
   const [available, setAvailable] = useState<LibreDraft[]>([])
   const [message, setMessage] = useState('')
   const [error, setError] = useState('')
@@ -101,7 +108,10 @@ export function useLibreDraft({
       if (cancelled || readSessionUser()?.id !== owner) return
       setAvailable(drafts)
       const matches = drafts.filter((draft) => draft.worksheet === worksheet)
-      if (matches.length === 1 && last.current === initial) applyDraft(matches[0]!)
+      if (matches.length === 1 && last.current === initial) {
+        if (openedSavedEvaluation) setMessage('Un brouillon de cette évaluation est disponible.')
+        else applyDraft(matches[0]!)
+      }
       if (matches.length > 1) setMessage('Plusieurs révisions de cette fiche sont disponibles.')
       setHydrated(true)
     }).catch(() => {
@@ -119,7 +129,7 @@ export function useLibreDraft({
     if (!owner || !hydrated || changingWorksheet.current || readSessionUser()?.id !== owner) return Promise.resolve()
     const target = last.current
     if (!started.current) {
-      if (!target.libreMode) return Promise.resolve()
+      if (!target.libreMode && !isLogistiqueEvaluation(target.revision)) return Promise.resolve()
       const current = applied.current
       const edited = Object.keys(target.fields).length || Object.entries(target.revision)
         .some(([key, value]) => key !== 'libreSnapshot' && value !== current.revision[key as keyof typeof current.revision])
@@ -237,9 +247,14 @@ export function useLibreDraft({
       if (head.current?.id === draft.id) {
         head.current = null
         applied.current = last.current
+        started.current = false
         setMessage('')
       }
-      setAvailable(await listLibreDrafts(owner))
+      const remaining = await listLibreDrafts(owner)
+      setAvailable(remaining)
+      if (draft.worksheet === activeWorksheet.current && !remaining.some(({ worksheet }) => worksheet === draft.worksheet)) {
+        setMessage('')
+      }
     } catch {
       setError('Cette révision du brouillon n’a pas pu être retirée.')
     }

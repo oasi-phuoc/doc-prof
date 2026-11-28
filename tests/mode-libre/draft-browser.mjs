@@ -2,7 +2,7 @@ import assert from 'node:assert/strict'
 import { chromium } from 'playwright'
 import { createServer } from 'vite'
 
-const server = process.env.BASE_URL ? null : await createServer({ server: { host: '127.0.0.1', port: 0 } })
+const server = process.env.BASE_URL ? null : await createServer({ server: { host: '127.0.0.1', port: 0, hmr: false, watch: null } })
 let browser
 
 const firstNumber = (page) => page.getByRole('group', { name: 'Calcul 1', exact: true })
@@ -49,12 +49,12 @@ function inspectDrafts({ worksheet, owner }) {
   })
 }
 
-async function waitForDraft(page, worksheet, count, owner = 'alice') {
+async function waitForDraft(page, worksheet, count, owner = 'alice', matches = () => true) {
   // Browser-side storage is asynchronous, including the hook's debounce.
   const deadline = Date.now() + 10_000
   for (;;) {
     const result = await page.evaluate(inspectDrafts, { worksheet, owner })
-    if (result.length === count) return result
+    if (result.length === count && matches(result)) return result
     if (Date.now() >= deadline) assert.fail(`Attendu ${count} brouillons, reçu ${result.length}`)
     await new Promise((resolve) => setTimeout(resolve, 100))
   }
@@ -77,6 +77,33 @@ async function openSpacingFixture(context, owner, id) {
   return page
 }
 
+async function openLogistiqueEvaluation(context, diploma) {
+  const page = await context.newPage()
+  page.setDefaultTimeout(90_000)
+  const domain = `logistique-${diploma.toLowerCase()}`
+  await page.addInitScript(({ domain, diploma }) => {
+    const owner = 'evaluation-logistique'
+    localStorage.setItem('clairfle-fiche-sync', 'cfu_test-evaluation')
+    localStorage.setItem('clairfle-personal-session', JSON.stringify({
+      expiresAt: Date.now() + 10_000_000,
+      user: { id: owner, givenName: 'Enseignant', familyName: 'Témoin', email: 'logistique@example.test', account: 'admin', domains: [domain] },
+    }))
+    if (!history.state?.clairfleFiche) history.replaceState({ ...history.state, clairfleFiche: {
+      id: `evaluation-${diploma}`, name: `Évaluation ${diploma}`, sessionOwner: owner,
+      recipe: {
+        version: 1, seed: 20261128, institutional: {}, evalMode: true, pointsPerQuestion: 1,
+        libreMode: false, libreSnapshot: null,
+        pages: [{ domain, topic: `log-${diploma.toLowerCase()}-theme-300`, exerciseType: `log-${diploma.toLowerCase()}-303-maths`, count: 3, columns: 1,
+          logistiqueSelection: { modules: ['303', '312', '601'], quantities: { 303: 1, 312: 1, 601: 1 } },
+          logistiqueEvaluation: { mode: 'histoire', story: { company: 'Entrepôt témoin', article: 'bacs', expected: 60, received: 56, held: 5, ordered: 44 } },
+        }],
+      },
+    } }, '')
+  }, { domain, diploma })
+  await page.goto('/generateur')
+  return page
+}
+
 try {
   await server?.listen()
   const baseURL = process.env.BASE_URL ?? 'http://127.0.0.1:' + server.httpServer.address().port
@@ -91,7 +118,7 @@ try {
   await firstNumber(page).fill('-')
   await page.getByText('Brouillon conservé sur cet appareil.', { exact: true }).waitFor()
   const identity = await page.evaluate(() => history.state.clairfleLibreDraft)
-  const [first] = await waitForDraft(page, identity.worksheet, 1)
+  const [first] = await waitForDraft(page, identity.worksheet, 1, 'alice', ([entry]) => Object.values(entry.fields).includes('-'))
   assert.equal(first.operand, 29)
   assert(first.locked)
   assert(Object.values(first.fields).includes('-'))
@@ -171,6 +198,39 @@ try {
   await separate.close()
 
   await context.close()
+  const logistics = await browser.newContext({ baseURL, viewport: { width: 1366, height: 1000 } })
+  for (const diploma of ['CFC', 'AFP']) {
+    const editing = await openLogistiqueEvaluation(logistics, diploma)
+    const sheet = (tab) => tab.locator('.a4-frame .worksheet-sheet').first()
+    await sheet(editing).getByText(/Vous en comptez 56/).waitFor()
+    await editing.getByText('Données et passages de l’histoire', { exact: true }).click()
+    await editing.getByLabel('Quantité reçue', { exact: true }).fill('48')
+    await sheet(editing).getByText(/Vous en comptez 48/).waitFor()
+    await editing.getByText('Brouillon conservé sur cet appareil.', { exact: true }).waitFor()
+    assert.equal(await editing.locator('#activity-editor').count(), 0)
+    await editing.reload()
+    await editing.getByText('Brouillon récupéré.', { exact: true }).waitFor()
+    await sheet(editing).getByText(/Vous en comptez 48/).waitFor()
+    await editing.close()
+
+    const original = await openLogistiqueEvaluation(logistics, diploma)
+    await original.getByText('Un brouillon de cette évaluation est disponible.', { exact: true }).waitFor()
+    await sheet(original).getByText(/Vous en comptez 56/).waitFor()
+    await original.getByText('Brouillons sur cet appareil', { exact: true }).click()
+    await original.getByRole('button', { name: 'Reprendre', exact: true }).click()
+    await sheet(original).getByText(/Vous en comptez 48/).waitFor()
+    await original.getByRole('button', { name: 'Fiche élève (cliquer pour corrigé)', exact: true }).click()
+    await sheet(original).getByText('48 − 60 = -12', { exact: true }).waitFor()
+    original.on('dialog', (dialog) => dialog.accept())
+    await original.getByRole('button', { name: 'Abandonner', exact: true }).click()
+    await original.getByText('Brouillons sur cet appareil', { exact: true }).waitFor({ state: 'hidden' })
+    await original.close()
+    const afterDiscard = await openLogistiqueEvaluation(logistics, diploma)
+    await sheet(afterDiscard).getByText(/Vous en comptez 56/).waitFor()
+    assert.equal(await afterDiscard.getByText('Un brouillon de cette évaluation est disponible.', { exact: true }).count(), 0)
+    await afterDiscard.close()
+  }
+  await logistics.close()
   console.log('Reprise, saisies transitoires, quotas, préférences et isolation entre comptes vérifiés.')
 } finally {
   await browser?.close()

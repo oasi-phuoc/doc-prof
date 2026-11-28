@@ -19,20 +19,24 @@ assert(!typeChoicesForBlock('grammaire',{...base(),exerciseType:'gram-ex-avoir-q
 const recipeInput=pages=>({pages,seed:839,institutional:{},evalMode:false,pointsPerQuestion:1,libreMode:false,libreSnapshot:null})
 const targetRegistry=load(root+'/docs/grammaire/implementation/target-registry.json')
 let variants=0
+let availableOfferings=0
 for (const bank of banks) {
  const reading=bank.presentations.includes('document-set')
- if(reading)assert.equal(bank.units.length,20)
+ if(reading)assert(bank.units.length>=20)
  const drawCount=reading?20:50
  assert.equal(bank.review.humanReview,'pending')
  for (const presentation of bank.presentations) {
   const offers=targetRegistry.offerings.filter(o=>o.activityId===bank.activityId&&o.level===bank.level&&o.presentation===presentation)
-  assert.equal(offers.length,1,'A pilot offering must belong to the agreed curriculum.')
-  assert.equal(offers[0].reviewedDistinctCount,reading?bank.units.reduce((n,unit)=>n+unit.questions.length,0):bank.units.length)
+  assert.equal(offers.length,1,'Chaque format correspond à une offre du programme.')
+  const bankQuestionCount=reading?bank.units.reduce((n,unit)=>n+unit.questions.length,0):bank.units.length
+  assert(bankQuestionCount>=offers[0].reviewedDistinctCount,'Les ajouts ultérieurs peuvent agrandir une banque.')
   const hasNegative=presentation==='order'&&bank.units.some(u=>u.kind==='order'&&u.tokens.some(t=>t.category==='negation'))
   const hasPositive=presentation==='order'&&bank.units.some(u=>u.kind==='order'&&!u.tokens.some(t=>t.category==='negation'))
   const block={...base(bank.activityId),topic:bank.topic??'gram-present',count:reading?1:50,grammarDocumentCount:reading?20:undefined,grammarLevel:bank.level,grammarBankRevision:bank.revision,grammarPresentation:presentation,...(hasNegative?{phrasePolarity:hasPositive?'mixed':'negative'}:{})}
   const selected=select(block,839)
   assert(isGrammarSnapshot(selected))
+  assert.equal(selected.pilot,false)
+  availableOfferings++
   assert.equal(selected.questions.length,drawCount)
   assert.equal(new Set(selected.questions.map(q=>q.id)).size,drawCount)
   assert.deepEqual(select(block,839),selected)
@@ -95,6 +99,7 @@ for (const bank of banks) {
   variants+=reading?selected.questions.reduce((n,q)=>n+q.unit.questions.length,0):selected.questions.length
  }
 }
+assert.equal(availableOfferings,targetRegistry.offerings.length)
 // m5 follows the approved matrix: Q/L and order at both levels, C/T at A2.
 const m5='gram-ex-er-particuliers-'
 const m5Banks=banks.filter(b=>b.activityId.startsWith(m5))
@@ -244,10 +249,11 @@ assert(grammarBanksForType(subjPrefix+'curriculum-e')[0].units.every(u=>u.rubric
 // G3 starts with avoir A1: existing phrases, all six forms and source-linked pairs.
 const haveBanks=banks.filter(b=>b.activityId.startsWith('gram-ex-avoir-'))
 assert.equal(haveBanks.length,4)
-assert(haveBanks.every(b=>b.level==='A1'&&b.units.length===50))
+assert(haveBanks.every(b=>b.level==='A1'&&b.units.length>=50))
 const haveQuiz=grammarBanksForType('gram-ex-avoir-qcm-conj')[0]
 assert.deepEqual([...new Set(haveQuiz.units.map(u=>u.answers[0]))].sort(),['a','ai','as','avons','avez','ont'].sort())
-assert(haveBanks.flatMap(b=>b.units).every(u=>u.givenVerb===undefined),'A single-verb activity does not add redundant infinitive hints.')
+assert(haveBanks.flatMap(b=>b.units).filter(u=>u.source.partition!=='word-csc').every(u=>u.givenVerb===undefined),
+ 'The original single-verb activities have no redundant hint. Word exercises retain their given infinitive.')
 for(const u of grammarBanksForType('gram-ex-avoir-curriculum-a')[0].units)for(const pair of u.pairs) {
  const source=haveQuiz.units.find(s=>s.id===pair.sourceId)
  assert(source&&pair.left===source.prompt&&pair.right===source.answers[0])
@@ -296,7 +302,10 @@ for(const id of ['gram-ex-a3-nat-co','gram-ex-a1-co-audio','gram-ex-famille-fam-
 }
 assert(!isProtectedGrammarCo('gram-ex-a6-prov-pays'))
 assert.throws(()=>select({...base(),count:51},17),e=>e.code==='GRAMMAR_CONFIG_INVALID')
-assert.throws(()=>select({...base(),grammarPreview:false},17),e=>e.code==='GRAMMAR_ACTIVITY_UNAVAILABLE')
+assert.equal(select({...base(),grammarPreview:false},17).pilot,false)
+const legacyPreview={...base(),grammarPreview:true}
+const legacySelection={...select(legacyPreview,17),pilot:true,editedInLibre:true}
+assert.deepEqual(select({...legacyPreview,grammarSnapshot:legacySelection},17),legacySelection)
 const filtered={...base('gram-ex-etre-ordre'),phraseCategories:{preposition:false}}
 const cap=grammarEligibleCount(filtered)
 assert(cap<50)
@@ -324,4 +333,4 @@ for(const count of [2,3,4,5,6]) {
 }
 load(root+'/src/grammaire/catalog.ts').assertGrammaireCatalog()
 assert(!generate({...old,exerciseType:'gram-a5-theorie'},17).items.some(i=>i.prompt==='empty'))
-console.log(`Grammar pilot: ${variants} reviewed variants, recipes, filters, pagination, 2–6 options and board adaptations verified. Teacher approval remains pending.`)
+console.log(`Grammaire graduée : ${availableOfferings} offres disponibles et ${variants} variantes vérifiées avec les recettes, filtres, pagination, 2 à 6 options et adaptations au tableau.`)

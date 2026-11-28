@@ -31,7 +31,7 @@ try {
  ]) {
   await choose('Sous-thème',subLabel);await choose('Type d’exercice',qLabel)
   const level=page.getByLabel('Niveau de grammaire',{exact:true}).locator('.select-control-value')
-  assert.equal(await level.textContent(),'A1 — pilote')
+  assert.equal(await level.textContent(),'A1')
   const offers=[]
   if(fillLabel)offers.push(['gap-only',fillLabel])
   offers.push(['choice',qLabel],['gap',qLabel])
@@ -39,7 +39,7 @@ try {
   offers.push(['match','Associer les situations et les formes'],['open-oral','S’exprimer à l’oral'],['scenario-set','Jouer une situation'])
   for(const [presentation,label] of offers) {
    await page.emulateMedia({media:'screen'});await choose('Type d’exercice',label)
-   if(await level.textContent()!=='A1 — pilote')await choose('Niveau de grammaire','A1 — pilote')
+   if(await level.textContent()!=='A1')await choose('Niveau de grammaire','A1')
    if(['choice','gap'].includes(presentation))await page.getByRole('button',{name:presentation==='choice'?'QCM':'Lacune',exact:true}).click()
    if(presentation==='gap-only')assert.equal(await page.getByRole('group',{name:'Réponse grammaticale',exact:true}).count(),0)
    if(presentation==='order')await page.getByRole('group',{name:'Forme des phrases',exact:true}).getByRole('button',{name:'Positive',exact:true}).click()

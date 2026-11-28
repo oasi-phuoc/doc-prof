@@ -32,9 +32,9 @@ try {
  const configure=async(b,p,count)=>{
   await choose('Sous-thème',resolveGramSubthemeAll(b.topic,b.activityId).label)
   await choose('Type d’exercice',types.find(t=>t.id===b.activityId).label)
-  await choose('Niveau de grammaire',b.level+' — pilote')
-  assert.equal(await page.getByRole('button',{name:'Niveau de grammaire',exact:true}).locator('.select-control-value').innerText(),b.level+' — pilote')
-  await page.getByRole('button',{name:'Niveau de grammaire',exact:true}).click();assert.deepEqual(await page.getByRole('option').allTextContents(),banks.filter(v=>v.activityId===b.activityId).map(v=>v.level+' — pilote'));await page.keyboard.press('Escape')
+  await choose('Niveau de grammaire',b.level)
+  assert.equal(await page.getByRole('button',{name:'Niveau de grammaire',exact:true}).locator('.select-control-value').innerText(),b.level)
+  await page.getByRole('button',{name:'Niveau de grammaire',exact:true}).click();assert.deepEqual(await page.getByRole('option').allTextContents(),banks.filter(v=>v.activityId===b.activityId).map(v=>v.level));await page.keyboard.press('Escape')
   if(b.presentations.includes('choice')&&b.presentations.includes('gap'))await page.getByRole('button',{name:p==='choice'?'QCM':'Lacune',exact:true}).click()
   const label=p==='document-set'?'Nombre de textes':p==='scenario-set'?'Nombre de situations':'Nombre de questions'
   const input=page.getByLabel(label,{exact:true});await input.fill(String(count));await input.blur()

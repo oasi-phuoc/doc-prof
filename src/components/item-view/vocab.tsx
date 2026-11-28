@@ -6,6 +6,7 @@ import { displayVocabLabel } from '@/francais/display-vocab-label'
 import { soutienAudioAbsoluteUrl } from '@/francais/soutien/audio'
 import { syllableMatchOrder } from '@/francais/soutien/syllable-match'
 import { highlightThemeLetters } from './highlights'
+import { LogistiqueIllustratedPrompt } from './problems'
 
 export function VocabTable({ item }: { item: MathItem }) {
   const rows = Math.max(1, item.vocabRows ?? 4)
@@ -92,6 +93,38 @@ export function VocabMatch({ item, mode }: { item: MathItem; mode: PreviewMode }
   const imageMode = item.vocabMatchMode === 'image'
   const syllableMode = item.vocabMatchMode === 'syllables'
   const graphemes = item.themeGraphemes ?? []
+
+  if (item.logistiqueMatching) {
+    const correct = mode === 'answers'
+    const letter = (index: number) => String.fromCharCode(65 + index)
+    return <div className="vocab-match logistique-match" aria-label="Association de textes">
+      <LogistiqueIllustratedPrompt item={item} mode={mode}>
+        <p className="prompt-stack-text">{item.prompt}</p>
+      </LogistiqueIllustratedPrompt>
+      <div className="logistique-match-grid" style={{ '--match-rows': left.length } as CSSProperties}>
+        {left.map((term, index) => {
+          const destination = right.indexOf(byLeft.get(term) ?? '')
+          return <div className="logistique-match-term" key={term} style={{ gridRow: index + 1 }}>
+            <b>{index + 1 + (item.logistiqueSubquestionOffset ?? 0)}.</b> {term}
+            {correct && destination >= 0 && <strong className="logistique-match-key"> → {letter(destination)}</strong>}
+          </div>
+        })}
+        <div className="logistique-match-links" aria-hidden="true">
+          {correct && left.map((term, index) => {
+            const destination = right.indexOf(byLeft.get(term) ?? '')
+            if (destination < 0) return null
+            return <span key={term} className="logistique-match-link" style={{
+              '--match-start': (index + 0.5) / left.length,
+              '--match-change': (destination - index) / left.length,
+            } as CSSProperties} />
+          })}
+        </div>
+        {right.map((definition, index) => <div className="logistique-match-definition" key={definition} style={{ gridRow: index + 1 }}>
+          <b>{letter(index)}.</b> {definition}
+        </div>)}
+      </div>
+    </div>
+  }
 
   if (syllableMode) {
     const matchOrder = mode === 'answers' ? syllableMatchOrder(item) : []

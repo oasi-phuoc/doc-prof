@@ -22,3 +22,16 @@ Dans le générateur, choisir **Grammaire → Se situer dans le temps → Le mom
 | Production orale | Jouer l’appel de confirmation à deux, puis échanger les rôles. | Donner le motif, confirmer le jour et l’heure et rappeler la carte à apporter. |
 
 La confirmation initiale indique **15 h 30**. Le message vocal propose **jeudi 14 à 11 h 15** ou **vendredi 15 à 15 h 30**. La demande écrite porte sur le créneau du matin. L’appel permet ensuite de le confirmer. La piste est reprise de l’exercice `tcf-ss-a2-s50-co-3`, déjà présent dans le dépôt. [Piste du cabinet](../../../public/lib/audio/tcf/co/vie-quotidienne/bonjour-ici-cabinet-dentaire.mp3) · [Les quatre activités et leurs corrigés](../../../src/grammaire/exercises/parcours.ts)
+
+## Autres démarches du quotidien
+
+Chaque parcours propose un document, une écoute, un message à écrire et un jeu de rôle. Le document et l’écoute apportent des informations différentes. L’élève s’en sert pour rédiger son message, puis pour agir à l’oral. Les corrigés proposent un exemple que l’enseignant peut adapter.
+
+| Parcours | Où le trouver | Démarche et repère de grammaire |
+|---|---|---|
+| A1 · Accueillir une voisine dans l’immeuble | Conseiller quelqu’un → L’impératif | Lire le mot d’accueil, écouter le règlement, répondre au SMS et donner deux consignes à la nouvelle voisine. Utiliser « Rangez » ou « Mettez ». |
+| A2 · Adapter un trajet en métro | Se situer dans l’espace → Les articles contractés (lieu) | Lire le rendez-vous, écouter l’annonce des travaux, prévenir une amie et demander où prendre le bus de remplacement. Situer le rendez-vous « à la station » ou « à l’arrêt ». |
+| A2 · Retourner un téléphone en panne | Demander et proposer → Pouvoir, devoir, vouloir | Lire une confirmation de commande, écouter le service après-vente, écrire un courriel et demander comment renvoyer le téléphone. Formuler une demande avec « Pouvez-vous… ? ». |
+| A2 · Se renseigner sur une formation | Conjuguer au présent → Verbes modaux | Lire l’invitation, écouter l’annonce, confirmer par courriel et poser des questions sur les horaires et le financement. Exprimer un projet et une possibilité avec « je voudrais » et « je peux ». |
+
+Les quatre parcours réemploient chacun un audio de la banque de compréhension orale de Grammaire. Le lecteur et le corrigé récupèrent la transcription active de cette piste. [Supports, consignes et corrigés](../../../src/grammaire/exercises/parcours-quotidien.ts)

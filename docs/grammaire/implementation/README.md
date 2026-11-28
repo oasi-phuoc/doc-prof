@@ -1,8 +1,10 @@
-# Implémentation du curriculum Grammaire — pilotes A1, A2 et B1
+# Banques graduées de grammaire A1, A2 et B1
+
+**28 novembre.** Les **601 offres des 19 thèmes** sont accessibles directement. Le menu affiche **A1**, **A2** ou **B1** selon la notion. Les fiches enregistrées et les corrections faites en mode Libre se rouvrent avec leur sélection. La mise à disposition permet les corrections manuelles au fil de l’usage. Les relectures enregistrées restent dans le dossier éditorial. [Suivi des offres](reste-a-faire-20261127.csv)
 
 **24 novembre — questions groupées et pagination manuelle :** toutes les questions restent sur la page de l’exercice, même en cas de dépassement. Le bouton de marge ajoute ou annule un saut après chaque question. Cette demande du propriétaire remplace l’ancienne pagination automatique des pilotes. Voir [la règle et les vérifications actuelles](pagination-manuelle-20261124.md).
 
-**État courant — 27 novembre.** « S’expliquer et argumenter » (15 offres) et « Exprimer quelque chose » (63 offres) terminent la couverture des **601 offres en pilote des 19 thèmes**. Les deux thèmes ajoutent 73 offres aux 528 précédentes et conservent le pilote du subjonctif. Voir [le bilan](avancement-20261127-arguments.md) et [les vérifications](verification-arguments-20261127.json). La validation enseignante et la recette sur matériel de classe restent à faire.
+**Livraison du 27 novembre.** « S’expliquer et argumenter » (15 offres) et « Exprimer quelque chose » (63 offres) terminent la couverture des 19 thèmes. Les deux thèmes ajoutent 73 offres aux 528 précédentes et intègrent le subjonctif. [Bilan](avancement-20261127-arguments.md) · [Vérifications](verification-arguments-20261127.json)
 
 **Vérification des pilotes — 27 novembre.** Les 601 offres ont été générées à partir du catalogue, puis sauvegardées et rechargées avec deux tirages par offre. Les trois offres A1/A2 de remise en ordre sur la négation proposent les phrases négatives dès l’ouverture. Un tirage mixte utilise toutes les phrases éligibles si leur nombre correspond à la demande. En compréhension écrite, le compteur affiche les questions de la sélection, y compris quand l’exercice est réparti sur plusieurs feuilles.
 
@@ -48,7 +50,9 @@ Le [cahier détaillé du lot de 20 activités](lot-suivant-20-activites-se-prese
 
 La [suite, activités 21 à 40](lot-21-40-famille-questions.md), reste à implémenter : elle termine la famille, détaille les questions fermées et ouvertes et commence les questions avec quel, soit 21 offres A1 supplémentaires. Les deux annexes décrivent **40 activités et 45 offres** ; seuls les 20 premiers types et leurs 24 offres sont ajoutés par la tranche actuelle.
 
-## Disponible dans ce lot
+## Historique des livraisons jusqu’au 27 novembre
+
+Les mentions de pilote et les anciens libellés de niveau décrivent les versions vérifiées aux dates indiquées.
 
 ### Identité, nationalités et famille — 21 novembre 2026
 
@@ -287,13 +291,13 @@ Pour publier une banque après revue enseignant : enregistrer la personne, la da
 
 Résultats du lot : [verification.json](verification.json). Les scénarios du cahier des charges restent des critères à exécuter lors des lots concernés ; ce premier lot ne prétend pas les avoir tous réalisés.
 
-## Suite de l’implémentation
+## Prévisions de la livraison initiale
 
 G0 est capturé ; le socle G1 et le raccordement au tableau sont engagés. Les cinq notions prévues pour G2 sont utilisables en pilote : Être A1, -er particuliers A1/A2, imparfait/passé composé A2, COD A2 et subjonctif B1. Les essais techniques dialogue/situation et image sont réalisés. L’extension couvre Avoir, Aller, les verbes réguliers en -er au niveau A1, puis les verbes en -ir et -re/-oir aux niveaux A1/A2. Restent la validation enseignante et la généralisation aux autres activités, supports et niveaux. Le [bilan du 14 novembre](avancement-20261114.md) distingue les pilotes disponibles des cibles : 98 notions, 123 couples notion-niveau, 424 activités et 601 offres.
 
 Aucun audio, transcription, banque CO ou contenu des autres domaines n’est modifié par ce lot.
 
-## État vérifié du lot
+## Vérifications des premières livraisons
 
 Sur la base intégrée `0bae1726`, les 1 820 variantes et les 36 présentations passent les contrôles ciblés et Chrome : 3 640 questions imprimées élève/corrigé, sans débordement. Les cinq essais techniques ajoutent 16 réponses imprimées hors quotas. Leurs coupures, jeux de rôle, images vérifiées et erreurs médias simulées passent aussi. TypeScript, G0 (735 sorties / 256 fichiers protégés), les 36 tests des adaptateurs/TCM/CFR partagés et le contrôle de galerie passent.
 
@@ -303,7 +307,7 @@ L’intégration finale jusqu’à `e3f734b2` ajoute les derniers médias TCF et
 
 Le test historique `scripts/test-grammar-curriculum.cjs` garde une divergence antérieure : il attend 99 fiches de théorie visibles et d’anciennes références de contenu. Le catalogue comporte déjà 98 fiches avec l’alias sauvegardé a5 → a4. Aucun fichier de théorie n’est modifié pour rendre ce test vert ; cette limite est enregistrée séparément dans `verification.json`.
 
-Les banques restent en aperçu pilote, avec validation enseignante en attente. Les prototypes de situation et d’image ne constituent pas des banques de 50 unités publiées.
+Sur cette version de départ, les banques étaient en aperçu pilote et les prototypes de situation et d’image restaient hors du décompte des banques.
 
 ### Lot G3 du 13 novembre — base `220a4124`
 

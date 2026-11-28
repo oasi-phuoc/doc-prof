@@ -29,16 +29,16 @@ try {
  await choose('Sous-thème','Le subjonctif (emplois principaux)')
  await choose('Type d’exercice','Employer le subjonctif')
  const level=page.getByLabel('Niveau de grammaire',{exact:true}).locator('.select-control-value')
- assert.equal(await level.textContent(),'B1 — pilote')
+ assert.equal(await level.textContent(),'B1')
  for(const [type,presentation,label] of [
   ['qcm-conj','choice','Employer le subjonctif'],['qcm-conj','gap','Employer le subjonctif'],
   ['curriculum-t','transform','Transformer une phrase'],['curriculum-c','correct','Corriger l’erreur'],
   ['curriculum-e','open-written','Produire à l’écrit'],
  ]) {
   await page.emulateMedia({media:'screen'});await choose('Type d’exercice',label)
-  if(await level.textContent()!=='B1 — pilote')await choose('Niveau de grammaire','B1 — pilote')
+  if(await level.textContent()!=='B1')await choose('Niveau de grammaire','B1')
   await page.getByRole('button',{name:'Niveau de grammaire',exact:true}).click()
-  assert.equal(await page.getByRole('option',{name:'A2 — pilote',exact:true}).count(),0)
+  assert.equal(await page.getByRole('option',{name:'A2',exact:true}).count(),0)
   await page.keyboard.press('Escape')
   if(presentation==='choice'||presentation==='gap')await page.getByRole('button',{name:presentation==='choice'?'QCM':'Lacune',exact:true}).click()
   if(presentation==='open-written')assert.equal(await page.getByLabel('Nombre de questions',{exact:true}).inputValue(),'1','Writing starts with one task.')

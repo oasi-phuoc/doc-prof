@@ -165,6 +165,7 @@ export function usePageNavigation({
     return {
       topic: nextType.topic,
       exerciseType: nextType.id,
+      mathTheoryStepNumbering: fields.mathTheoryStepNumbering,
       difficulty: activeBlock.difficulty,
       count,
       ...spacingForType(nextType.id),

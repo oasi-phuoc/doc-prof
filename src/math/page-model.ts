@@ -12,6 +12,7 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     logistiquePresentation: page.logistiquePresentation,
     topic: page.topic,
     exerciseType: page.exerciseType,
+    mathTheoryStepNumbering: page.mathTheoryStepNumbering,
     difficulty: page.difficulty,
     count: page.count,
     columns: page.columns,
@@ -126,7 +127,7 @@ export function pageAsConfig(page: PageConfig, block: ExerciseBlock): PageConfig
     grammarLevel:block.grammarLevel,grammarActivityId:block.grammarActivityId,grammarPresentation:block.grammarPresentation,
     grammarBankRevision:block.grammarBankRevision,grammarSnapshot:block.grammarSnapshot,grammarPreview:block.grammarPreview,
     grammarDocumentCount:block.grammarDocumentCount,grammarPageBreakAfterQuestionIds:block.grammarPageBreakAfterQuestionIds,
-    realMapId: block.realMapId, extraBlocks:undefined }
+    realMapId: block.realMapId, mathTheoryStepNumbering: block.mathTheoryStepNumbering, extraBlocks:undefined }
 }
 
 export function setPageBlock(page: PageConfig, blockIndex: number, patch: Partial<ExerciseBlock>): PageConfig {

@@ -27,6 +27,8 @@ export type Domain =
   | 'tcf-cfr'
   | 'tcf-b1'
 
+export type MathTheoryStepNumbering = 'circle' | 'plain'
+
 /** Catégories grammaire en couleur (Gattegno). */
 export type PhraseCategory =
   | 'pronom'
@@ -438,7 +440,7 @@ export type DivisionStep = {
 }
 
 export type LogistiqueGapMode = 'sans-liste' | 'avec-liste'
-export type LogistiqueResponsePresentation = 'qcm' | 'qcm-multiple' | 'vrai-faux' | 'lignes-simples' | 'lignes-numerotees'
+export type LogistiqueResponsePresentation = 'qcm' | 'qcm-multiple' | 'vrai-faux' | 'lignes-simples' | 'lignes-numerotees' | 'associer-textes'
 export type LogistiquePresentation = LogistiqueGapMode | LogistiqueResponsePresentation | import('@/logistique/tables').LogistiqueTablePresentation
 export type LogistiqueResponseLines =
   | { kind: 'simple'; count: number }
@@ -488,8 +490,10 @@ export type MathItem = {
   logistiqueGaps?: LogistiqueGaps
   logistiqueResponseLines?: LogistiqueResponseLines
   logistiqueChoice?: import('@/logistique/choices').LogistiqueChoice
+  logistiqueMatching?: true
   logistiqueTable?: import('@/logistique/tables').LogistiqueExerciseTable
-  logistiqueDocumentOffset?: number
+  /** Position de départ d’une suite imprimée, en dehors de la recette. */
+  logistiqueSubquestionOffset?: number
   logistiqueImage?: LogistiqueQuestionImage
   logistiqueGlossaryFigure?: LogistiqueGlossaryFigure
   logistiqueGlossaryEntry?: { term: string; definition: string }
@@ -556,7 +560,7 @@ export type MathItem = {
   selectVariant?: 'pills' | 'oral' | 'cards'
   /** Bloc de théorie grammaticale (fiche lecture seule). */
   theoryBlock?: GrammarTheoryBlock
-  mathTheory?: import('./theory-lessons').MathTheoryLesson & { topic: string }
+  mathTheory?: import('./theory-lessons').MathTheoryLesson & { topic: string; stepNumbering?: MathTheoryStepNumbering }
   /** Coupure de page initiale après cette section de théorie, modifiable dans l’aperçu. */
   theoryPageBreakAfter?: boolean
   /** Style des fiches FALC révisées du catalogue Grammaire, y compris en mode Libre. */
@@ -1000,6 +1004,7 @@ export type ExerciseBlock = {
   logistiquePresentation?: LogistiquePresentation
   topic: string
   exerciseType: string
+  mathTheoryStepNumbering?: MathTheoryStepNumbering
   difficulty: Difficulty
   count: number
   columns: number
@@ -1328,7 +1333,7 @@ export type WorksheetBlock = {
   /** Disposition imprimée des listes et tableaux A5, avec l’index du bloc d’origine. */
   logistiqueSourceItemCount?: number
   logistiqueTheorySlices?: { sourceIndex: number; theoryBlock?: GrammarTheoryBlock;
-    documentRange?: { start: number; end: number }; isLast: boolean }[]
+    subquestionRange?: { start: number; end: number }; isLast: boolean }[]
   /** Index des questions dont le contexte figure juste avant, sur une page de suite. */
   logistiqueDetachedNarratives?: number[]
   /** Points par question (propagé depuis ExerciseBlock). */

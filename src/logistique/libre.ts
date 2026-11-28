@@ -3,34 +3,39 @@ import type { ExerciseBlock, MathItem, PageConfig } from '@/math/types'
 import { isLogistiqueDomain, type LogistiqueType } from './catalog'
 import { logistiqueVerdicts, validLogistiqueChoice } from './choices'
 import { generateLogistique } from './generate'
+import { validLogistiqueMatching } from './matching'
 
-export type LogistiqueQuestionFormat = 'open' | 'qcm' | 'qcm-multiple' | 'vrai-faux'
+export type LogistiqueQuestionFormat = 'open' | 'qcm' | 'qcm-multiple' | 'vrai-faux' | 'associer-textes'
 
 export function newLogistiqueQuestion(module: string, kind: LogistiqueType['kind'], format: LogistiqueQuestionFormat): MathItem {
-  const select = format !== 'open'
+  const match = format === 'associer-textes'
+  const select = format !== 'open' && !match
   return {
     libreId: `log-question-${crypto.randomUUID()}`,
     logistiqueLocalModule: module,
     logistiqueRetained: true,
     libreCorrectionPending: true,
-    layout: select ? 'select' : 'text',
+    layout: match ? 'vocab-match' : select ? 'select' : 'text',
     prompt: '',
     answer: '',
     ...(select ? { options: format === 'vrai-faux' ? [...logistiqueVerdicts] : ['', '', '', ''] } : {}),
     ...(format === 'qcm-multiple' ? { logistiqueChoice: { kind: 'multiple', correct: [] } } : {}),
     ...(format === 'vrai-faux' ? { logistiqueChoice: { kind: 'true-false' } } : {}),
+    ...(match ? { logistiqueMatching: true, labels: [], options: [], vocabPairs: [] } : {}),
     ...(kind === 'maths' ? { calcAnswer: '', responseAnswer: '' } : {}),
   }
 }
 
 export function completeLogistiquePrompt(item: MathItem): boolean {
   if (!item.prompt?.trim()) return false
+  if (item.logistiqueMatching) return Boolean(item.vocabPairs?.length) && validLogistiqueMatching(item)
   if (item.layout !== 'select') return true
   const choices = item.options?.map((option) => option.trim()) ?? []
   return choices.length >= 2 && choices.every(Boolean) && new Set(choices).size === choices.length
 }
 
 export function reviewableLogistiqueAnswer(item: MathItem): boolean {
+  if (item.logistiqueMatching) return completeLogistiquePrompt(item) && validLogistiqueMatching(item)
   if (item.logistiqueTable?.questions) {
     return completeLogistiquePrompt(item) && item.logistiqueTable.questions.every(({ answer }) => answer.trim())
   }

@@ -133,9 +133,10 @@ function buildSingleBlock(
   const theoryTopic = mathTheoryTopic(config.exerciseType)
   if (theoryTopic && (config.domain === 'algèbre' || config.domain === 'géométrie' || isTpmDomain(config.domain))) {
     const { continuation = [], ...lesson } = mathTheoryLessons[theoryTopic]!
+    const title = topicById[theoryTopic]?.label ?? lesson.title
     return {
-      title: lesson.title,
-      instruction: `Théorie — ${lesson.title}`,
+      title,
+      instruction: title,
       items: [lesson, ...continuation].map((part) => ({
         layout: 'theory',
         mathTheory: { ...part, topic: theoryTopic },
@@ -464,7 +465,8 @@ export function buildPage(
     const result = buildSingleBlock(single, seed + index * 10007 + local, worksheetSeed)
     const logistics = logistiqueType(block.exerciseType)
     const logisticsQuestions = logistics?.domain === page.domain && !isLogistiqueReferenceType(block.exerciseType)
-    const isTheory = Boolean(mathTheoryTopic(block.exerciseType)) || isLogistiqueReferenceType(block.exerciseType) || isGrammarTheoryType(block.exerciseType) || isGrammaireTheoryType(block.exerciseType) || isSocieteTheoryType(block.exerciseType) || isVieScolaireTheoryType(block.exerciseType)
+    const isMathTheory = Boolean(mathTheoryTopic(block.exerciseType))
+    const isTheory = isMathTheory || isLogistiqueReferenceType(block.exerciseType) || isGrammarTheoryType(block.exerciseType) || isGrammaireTheoryType(block.exerciseType) || isSocieteTheoryType(block.exerciseType) || isVieScolaireTheoryType(block.exerciseType)
     const isJeux = block.exerciseType.startsWith('jeux-')
     const isTpmConsignes = isInfoPageType(block.exerciseType)
     // Une feuille « suite » ne doit pas figer seulement sa tranche : sinon le mode
@@ -503,6 +505,9 @@ export function buildPage(
       const sanitized = sanitizeItemNumberNoise(item as Record<string, unknown>) as MathItem
       const clean = sanitized.logistiqueNarrative && single.logistiqueEvaluation?.mode !== 'histoire'
         ? { ...sanitized, logistiqueNarrative: undefined } : sanitized
+      if (clean.mathTheory) {
+        return { ...clean, mathTheory: { ...clean.mathTheory, stepNumbering: block.mathTheoryStepNumbering } }
+      }
       if (clean.layout === 'letter-grid') {
         if (alphaKind === 'lire-grille' || alphaKind === 'lire-cursive') {
           return { ...clean, letterGridPurpose: 'reading' as const, noPoints: true,
@@ -546,11 +551,13 @@ export function buildPage(
       exerciseIndex,
       title: isTpmConsignes
         ? 'Informations'
-        : isTheory
-          ? ((libre?.instruction ?? result.instruction)?.replace(/^Théorie — /, '') || `Théorie`)
-          : isJeux
-            ? (exerciseTypeById[block.exerciseType]?.label ?? `Jeu ${exerciseIndex}`)
-            : (block.sheetTitle ?? tpfPlacementTask(block.exerciseType)?.label ?? `Exercice ${exerciseIndex}`),
+        : isMathTheory
+          ? result.title
+          : isTheory
+            ? ((libre?.instruction ?? result.instruction)?.replace(/^Théorie — /, '') || `Théorie`)
+            : isJeux
+              ? (exerciseTypeById[block.exerciseType]?.label ?? `Jeu ${exerciseIndex}`)
+              : (block.sheetTitle ?? tpfPlacementTask(block.exerciseType)?.label ?? `Exercice ${exerciseIndex}`),
       instruction: libre?.instruction ?? result.instruction,
       // Filet anti bruit binaire (7,2700000000000005) sur toutes les fiches.
       items,
@@ -580,7 +587,7 @@ export function buildPage(
   const topic = topicById[config.topic]
   const type = exerciseTypeById[config.exerciseType]
   const isTheoryPage =
-    isGrammarTheoryType(config.exerciseType) || isGrammaireTheoryType(config.exerciseType)
+    mathTheoryTopic(config.exerciseType) || isGrammarTheoryType(config.exerciseType) || isGrammaireTheoryType(config.exerciseType)
   const isTpmConsignesPage = isInfoPageType(config.exerciseType)
   return {
     ...config,

@@ -3470,7 +3470,7 @@ Modèle de production — Je voudrais une bouteille d’eau.
 
 ### L’épicerie
 
-![Un vendeur présente un paquet de riz](../../public/lib/images/grammaire/communication/g4-05-un-vendeur-presente-un-paquet-de-riz.webp)
+![Une vendeuse présente un paquet de riz](../../public/lib/images/grammaire/communication/g4-05-un-vendeur-presente-un-paquet-de-riz.webp)
 
 **Lire la situation**
 

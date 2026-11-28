@@ -88,6 +88,7 @@ export function logistiqueQuestionMinutes(item: MathItem, diploma: 'CFC' | 'AFP'
   if (item.logistiqueChoice?.kind === 'true-false') return item.logistiqueChoice.justification === undefined ? 1 : 2
   if (item.logistiqueChoice?.kind === 'multiple') return 1.5
   if (item.layout === 'select') return 1
+  if (item.logistiqueMatching) return 1 + (item.vocabPairs?.length ?? 0) * 0.5
   if (item.logistiqueTable?.questions) return item.logistiqueTable.questions.length * (diploma === 'AFP' ? 1.5 : 1) + 1
   if (item.logistiqueTable || item.logistiqueResponseLines?.kind === 'numbered') return diploma === 'AFP' ? 4 : 3
   return diploma === 'AFP' ? 3 : 2.5

@@ -35,7 +35,7 @@ try{
   await page.emulateMedia({media:'screen'});await page.goto(base+'/generateur',{waitUntil:'domcontentloaded',timeout:120000})
   await choose('Domaine','Grammaire');await choose('Thème',GRAMMAIRE_TOPICS.find(t=>t.id===topic).label)
   await choose('Sous-thème',resolveGramSubthemeAll(topic,id).label);await choose('Type d’exercice',types.find(t=>t.id===id).label)
-  if(level)await choose('Niveau de grammaire',level+' — pilote')
+  if(level)await choose('Niveau de grammaire',level)
   if(p==='gap')await page.getByRole('button',{name:'Lacune',exact:true}).click()
   const count=page.getByLabel(reading?'Nombre de textes':p==='scenario-set'?'Nombre de situations':'Nombre de questions',{exact:true});await count.fill(reading?'2':'6');await count.blur()
   await page.waitForFunction(()=>document.querySelectorAll('.a4-frame button[aria-label="Ajouter un saut de page après cette question"]').length===6)

@@ -1,4 +1,5 @@
 import { isLogistiqueDomain, LOGISTIQUE_DOMAINS } from '@/logistique/catalog'
+import { sliceLogistiqueMatch } from '@/logistique/matching'
 import { isWrittenProblem } from '@/math/problem-help'
 import epcaLogo from '@/assets/logos/epca.svg'
 import { grammarPageBreakQuestionId } from '@/grammaire/curriculum/pagination'
@@ -351,7 +352,7 @@ export function WorksheetSheet({
             : blockPointsTotal(block.items, perQ)
           const pointsBadge = formatPointsLabel(blockPts)
           const isGrammarScenario = Boolean(grammarScenarioFor(block.exerciseType))
-          const continuedSlice = ((block.itemOffset ?? 0) > 0 || !!block.logistiqueTheorySlices?.[0]?.documentRange?.start) && !isGrammarScenario &&
+          const continuedSlice = ((block.itemOffset ?? 0) > 0 || !!block.logistiqueTheorySlices?.[0]?.subquestionRange?.start) && !isGrammarScenario &&
             !(block.document && block.logistiqueDetachedNarratives?.length)
           const dualForm = isGramDualFormExercise(block.exerciseType)
           const marginForm = isGramMarginFormExercise(block.exerciseType)
@@ -576,12 +577,13 @@ export function WorksheetSheet({
                     block.oralAnswerModes?.[index] ?? page.oralAnswerModes?.[index] ?? item.answerMode ?? 'qcm'
                   const theorySlice = block.logistiqueTheorySlices?.[index]
                   const sourceIndex = theorySlice?.sourceIndex ?? index + (block.itemOffset ?? 0)
-                  const documentRange = theorySlice?.documentRange
+                  const subquestionRange = theorySlice?.subquestionRange
                   const printableItem = theorySlice?.theoryBlock ? { ...item, theoryBlock: theorySlice.theoryBlock }
-                    : item.logistiqueTable && documentRange ? { ...item, logistiqueDocumentOffset: documentRange.start,
+                    : item.logistiqueMatching && subquestionRange ? sliceLogistiqueMatch(item, subquestionRange.start, subquestionRange.end)
+                    : item.logistiqueTable && subquestionRange ? { ...item, logistiqueSubquestionOffset: subquestionRange.start,
                       logistiqueTable: { ...item.logistiqueTable,
-                        title: documentRange.start ? `${item.logistiqueTable.title} (suite)` : item.logistiqueTable.title,
-                        questions: item.logistiqueTable.questions?.slice(documentRange.start, documentRange.end),
+                        title: subquestionRange.start ? `${item.logistiqueTable.title} (suite)` : item.logistiqueTable.title,
+                        questions: item.logistiqueTable.questions?.slice(subquestionRange.start, subquestionRange.end),
                       } }
                     : block.logistiqueDetachedNarratives?.includes(sourceIndex) ? { ...item, logistiqueNarrative: undefined } : item
                   const tcfFormMode =
@@ -641,7 +643,7 @@ export function WorksheetSheet({
                       grammarTheory={item.layout === 'theory' && isGrammaireTheoryType(block.exerciseType)}
                       key={`${block.exerciseType}-${block.exerciseIndex}-${index}-${item.answer}-${tcfFormMode ?? ''}`}
                       item={printableItem}
-                      assessmentPoints={isLogistiqueDomain(page.domain) && evalMode && !isTheoryBlock && !documentRange?.start && !item.noPoints && perQ > 0
+                      assessmentPoints={isLogistiqueDomain(page.domain) && evalMode && !isTheoryBlock && !subquestionRange?.start && !item.noPoints && perQ > 0
                         ? formatPointsLabel(item.points ?? perQ) : undefined}
                       settingsLabel={item.layout === 'theory' ? `Section ${sourceIndex + 1}`
                         : item.tcf?.kind === 'qcm' || item.tcf?.kind === 'lignes' ? `Question ${item.tcf.numeroLabel ?? item.tcf.numero}`

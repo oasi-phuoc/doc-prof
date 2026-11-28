@@ -4,7 +4,7 @@ import { hasSocieteAtlasQuestions } from '@/societe/atlas'
 import { isSocieteCoType, isSocieteVocabType } from '@/societe/types'
 import { isSchoolKind } from '@/vie-scolaire/catalog'
 import { vieScolaireAudiosForType } from '@/vie-scolaire/generate'
-import { isMathReferenceType } from '@/math/theory-lessons'
+import { isMathReferenceType, mathTheoryTopic } from '@/math/theory-lessons'
 import { isTransformationExercise } from '@/math/coord-transformations'
 import { isMathProblemHelpType } from '@/math/problem-help'
 import { grammarOrderHasSentenceFilters } from '@/grammaire/curriculum/types'
@@ -520,6 +520,13 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   })}
                 />
               ) : null}
+              {mathTheoryTopic(activeBlock.exerciseType) && (
+                <SelectBox label="Numérotation des étapes" value={activeBlock.mathTheoryStepNumbering ?? 'circle'}
+                  onChange={(value) => updatePage({ mathTheoryStepNumbering: value === 'plain' ? 'plain' : 'circle' })}>
+                  <option value="circle">Numéros dans des cercles</option>
+                  <option value="plain">Numéros simples en gras</option>
+                </SelectBox>
+              )}
               {isGrammaireDomain ? <GrammarLevelControl block={activeBlock} readingQuestionCount={readingQuestionCount} onChange={updatePage}/> : null}
               {isGrammaireDomain && showGrammarCoLevel && grammarCoAudios.length > 1 ? (
                 <SelectBox label="Audio" value={activeBlock.grammarCoAudioId??grammarCoAudios[0]!.exercise.id}

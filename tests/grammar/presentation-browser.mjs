@@ -36,7 +36,7 @@ try {
   await choose('Sous-thème',resolveGramSubthemeAll(b.topic,b.activityId).label)
   // The new matching/transform types use their editorial label; legacy labels are retained.
   await choose('Type d’exercice',b.label)
-  if(await page.getByLabel('Niveau de grammaire',{exact:true}).locator('.select-control-value').textContent()!=='A1 — pilote')await choose('Niveau de grammaire','A1 — pilote')
+  if(await page.getByLabel('Niveau de grammaire',{exact:true}).locator('.select-control-value').textContent()!=='A1')await choose('Niveau de grammaire','A1')
   if(b.presentations.length>1)await page.getByRole('button',{name:p==='choice'?'QCM':'Lacune',exact:true}).click()
   const field=page.getByLabel('Nombre de questions',{exact:true});await field.fill(String(count));await field.blur()
   await page.waitForFunction(n=>document.querySelectorAll('.a4-frame .layout-grammar').length===n,count)
