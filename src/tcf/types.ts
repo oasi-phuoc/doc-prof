@@ -463,8 +463,9 @@ export type TcfSheetItem =
       /** Fragment débutant à l’intérieur d’un cadre audio, après une coupure de question. */
       startsInsideAudio?: boolean
       audioLabel: string
-      /** Piste du bandeau, lue dans le corrigé. */
+      /** Piste du bandeau, lue dans le corrigé par défaut. */
       audioSrc?: string
+      showAudioInStudent?: boolean
       questions: TcfCadreQuestion[]
     }
   | {

@@ -1,4 +1,5 @@
 import { CeAssociationAnswers } from './CeAssociationAnswers'
+import { GrammarCoTrueFalse } from '@/components/item-view/grammar-co-true-false'
 import type { MathItem, PreviewMode } from '@/math/types'
 import type { TcfCadreQuestion, TcfSheetItem, TcfTypeReponse } from '@/tcf/types'
 import { TcfInformations } from './TcfInformations'
@@ -149,6 +150,7 @@ export function TcfItemView({
         <AudioCadre
           audioLabel={tcf.audioLabel}
           audioSrc={tcf.audioSrc}
+          showAudioInStudent={tcf.showAudioInStudent}
           blankStyle={blankStyle}
           questions={questions}
           pageBreakBefore={tcfQuestionPageBreakBefore}
@@ -160,7 +162,9 @@ export function TcfItemView({
               ? (modeIndex, form) => onSelectTcfFormAt(modeIndex, form)
               : undefined
           }
-        />
+        >
+          {item.grammarCoTrueFalse && <GrammarCoTrueFalse statements={item.grammarCoTrueFalse} mode={mode} />}
+        </AudioCadre>
       )
     }
     case 'images_a_cocher':

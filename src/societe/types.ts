@@ -52,6 +52,10 @@ export function isSocieteType(typeId: string): boolean {
   return typeId.startsWith('societe-')
 }
 
+export function isSocieteCoType(typeId: string): boolean {
+  return isSocieteType(typeId) && typeId.endsWith('-co')
+}
+
 export function isSocieteTheoryType(typeId: string): boolean {
-  return isSocieteType(typeId) && (typeId.endsWith('-theorie') || typeId.endsWith('-atlas') || typeId.startsWith('societe-suisse-theorie-'))
+  return isSocieteType(typeId) && (typeId.endsWith('-theorie') || typeId.endsWith('-lexique') || typeId.endsWith('-atlas') || typeId.startsWith('societe-suisse-theorie-'))
 }

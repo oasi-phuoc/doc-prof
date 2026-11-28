@@ -1,5 +1,6 @@
 import { logistiqueType } from '@/logistique/catalog'
 import { isSanteType } from '@/sante/types'
+import { isSocieteCoType } from '@/societe/types'
 import { logistiqueEligibleCount } from '@/logistique/generate'
 import {
   isCalliPhrasesType,
@@ -236,7 +237,7 @@ export function applyType(type: ExerciseType, prev?: ExerciseBlock): Partial<Exe
     phraseImageShownCategories: type.id.endsWith('-images') ? prev?.phraseImageShownCategories : undefined,
     grammarCoLevel,
     grammarVocabRecall: prev?.exerciseType === type.id ? prev.grammarVocabRecall : undefined,
-    grammarCoFormat: isGrammarCoType(type.id) && prev?.exerciseType === type.id ? prev.grammarCoFormat : undefined,
+    grammarCoFormat: (isGrammarCoType(type.id) || isSocieteCoType(type.id)) && prev?.exerciseType === type.id ? prev.grammarCoFormat : undefined,
     grammarCoAudioId: isGrammarCoType(type.id) && prev?.exerciseType===type.id ? prev.grammarCoAudioId : undefined,
     grammarLevel: undefined,
     grammarActivityId: undefined,

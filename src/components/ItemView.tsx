@@ -505,7 +505,7 @@ export function ItemView({
         {item.areaFigures && <AreaFigures figures={item.areaFigures} />}
         {item.solidViews && <SolidViewChoices solid={item.solidViews} />}
         {item.grammarWordVocab && <GrammarWordVocab card={item.grammarWordVocab} mode={mode} />}
-        {item.grammarCoTrueFalse && <GrammarCoTrueFalse statements={item.grammarCoTrueFalse} mode={mode} />}
+        {item.grammarCoTrueFalse && item.tcf?.kind !== 'audio_cadre' && <GrammarCoTrueFalse statements={item.grammarCoTrueFalse} mode={mode} />}
         {item.spatial && <SpatialPracticeView practice={item.spatial} mode={mode} />}
         {item.measureScale && <MeasurementScale scale={item.measureScale} />}
         {item.rulerSegment && <RulerSegmentFigure segment={item.rulerSegment} />}

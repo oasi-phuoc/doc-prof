@@ -1,5 +1,6 @@
 import { isWordVocabType } from '@/grammaire/exercises/word-vocab'
 import { grammarCoStatements } from '@/grammaire/exercises/co-true-false'
+import { isSocieteCoType } from '@/societe/types'
 import { isMathReferenceType } from '@/math/theory-lessons'
 import { isTransformationExercise } from '@/math/coord-transformations'
 import { isMathProblemHelpType } from '@/math/problem-help'
@@ -185,6 +186,7 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
     updatePage(applyType(type, activeBlock))
   }
   const grammarCoTheme = grammarCoThemeForType(activeBlock.exerciseType)
+  const societyListening = isSocieteCoType(activeBlock.exerciseType)
   const grammarOrderBank=activeBlock.grammarLevel?grammarBankFor(activeBlock.exerciseType,activeBlock.grammarLevel):undefined
   const isGrammarOrder = isGrammaireDomain && activeBlock.grammarPresentation==='order' && (!grammarOrderBank||grammarOrderHasSentenceFilters(grammarOrderBank.units))
   const showPhraseParameters = (isPhraseDomain && !isPhraseChart) || isGrammarOrder
@@ -526,16 +528,16 @@ export function DomainThemeTypeFields(p: DomainThemeTypeFieldsProps) {
                   <option value="recall">Retrouver les mots</option>
                 </SelectBox>
               ) : null}
-              {isGrammaireDomain && availableTrueFalse > 0 ? (
+              {(isGrammaireDomain && availableTrueFalse > 0) || societyListening ? (
                 <SelectBox label="Présentation" value={activeBlock.grammarCoFormat ?? 'questions'}
                   onChange={(value) => updatePage({
                     ...clearLibreContentFreeze(),
                     grammarCoFormat: value === 'true-false' ? 'true-false' : 'questions',
-                    count: Math.min(activeBlock.count, value === 'true-false' ? availableTrueFalse : (selectedGrammarCoAudio?.exercise.questions.length ?? 1)),
+                    count: societyListening ? activeBlock.count : Math.min(activeBlock.count, value === 'true-false' ? availableTrueFalse : (selectedGrammarCoAudio?.exercise.questions.length ?? 1)),
                     tcfPageBreakAfter: undefined,
                   })}>
                   <option value="questions">Questions</option>
-                  <option value="true-false">Vrai/Faux</option>
+                  <option value="true-false">Vrai ou faux</option>
                 </SelectBox>
               ) : null}
               {libreMode && ceSupport && !ceShowsImage ? <TcfCeTextFontControl value={activeBlock.tcfCeTextFont ?? 'arial'} onChange={tcfCeTextFont => updatePage({ tcfCeTextFont })} /> : null}

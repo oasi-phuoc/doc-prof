@@ -174,10 +174,10 @@ export function ResultPanel({
     () => paginateTranscriptions(collectWorksheetTranscriptions(renderedSheets)),
     [renderedSheets],
   )
-  const hasSanteAudio = renderedSheets.some((sheet) =>
-    sheet.domain === 'santé' && sheet.blocks.some((block) => block.corrigeAudios?.length),
+  const hasDomainAudio = renderedSheets.some((sheet) =>
+    (sheet.domain === 'santé' || sheet.domain === 'société') && sheet.blocks.some((block) => block.corrigeAudios?.length),
   )
-  const showTcfAudioDownload = isTcf || Boolean(isGrammaireExercise) || hasSanteAudio
+  const showTcfAudioDownload = isTcf || Boolean(isGrammaireExercise) || hasDomainAudio
   const unavailableLogistique = renderedSheets.some((sheet) =>
     isLogistiqueDomain(sheet.domain) && sheet.blocks.some((block) => block.bankQuestionCap === 0 && !block.items.length),
   )
@@ -260,10 +260,10 @@ export function ResultPanel({
       interactiveOralModes={isOralComprehensionExercise(activeBlock.exerciseType)}
       onCycleOralAnswerMode={(itemIndex, block) => cycleOralAnswerMode(itemIndex, block, index)}
       interactiveTcfOptions={
-        isTcf || sheet.domain === 'santé' || (Boolean(isGrammaireExercise) && activeBlock.tcfExercise == null)
+        isTcf || sheet.domain === 'santé' || sheet.domain === 'société' || (Boolean(isGrammaireExercise) && activeBlock.tcfExercise == null)
       }
       interactiveTcfPageBreaks={
-        sheet.domain==='grammaire' || isLogistiqueDomain(sheet.domain) || isTcf ||
+        sheet.domain === 'grammaire' || sheet.domain === 'société' || isLogistiqueDomain(sheet.domain) || isTcf ||
         pageExerciseBlocks.some(
           (block) =>
             block.grammarPresentation==='document-set' || block.grammarPresentation==='scenario-set' ||
@@ -593,8 +593,9 @@ export function ResultPanel({
                             interactiveOralModes={isOralComprehensionExercise(activeBlock.exerciseType)}
                             onCycleOralAnswerMode={cycleOralAnswerMode}
                             interactiveTcfOptions={isTcf || left?.domain === 'santé' || right?.domain === 'santé' ||
+                              left?.domain === 'société' || right?.domain === 'société' ||
                               (Boolean(isGrammaireExercise) && activeBlock.tcfExercise == null)}
-                            interactiveTcfPageBreaks={domain === 'grammaire' || (domain != null && isLogistiqueDomain(domain)) ||
+                            interactiveTcfPageBreaks={domain === 'grammaire' || domain === 'société' || (domain != null && isLogistiqueDomain(domain)) ||
                               isTcf || pageExerciseBlocks.some((block) => block.grammarPresentation === 'document-set' ||
                                 block.grammarPresentation === 'scenario-set' || isGrammarReadingType(block.exerciseType) ||
                                 block.exerciseType === 'tcm-cfr-ex28')}
