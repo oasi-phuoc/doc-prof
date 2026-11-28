@@ -13,7 +13,7 @@ Le programme couvre 19 thèmes. Le registre recense 230 pistes de compréhension
 | 5 | Devoirs, inscription, papeterie, tâches domestiques, immeuble, activités extrascolaires, sport, week-end et vacances | Intégré. 63 activités et 27 pistes. |
 | 6 | Examens, vie de classe et sortie au B1 | Intégré. 21 activités et 9 pistes. |
 | 7 | Illustrations définitives | Les 72 scènes et les 12 schémas sont disponibles. |
-| 8 | Réception en classe et vérification des impressions | PDF A4 et double A5 contrôlés. L’essai papier et la réception en classe restent à faire. |
+| 8 | Réception en classe et vérification des impressions | PDF A4 et double A5 contrôlés en niveaux de gris. L’essai papier et la réception en classe restent à faire. |
 
 ## Détail par thème
 
@@ -44,6 +44,8 @@ Les 72 scènes prévues sont en place dans les fiches. 35 utilisent des illustra
 Le contrôle du générateur couvre les 133 activités, les deux formats des 57 pistes, leurs transcriptions, leurs chemins média, les corrigés et la relecture d’une recette enregistrée. Les 57 fichiers MP3 ont été décodés et rapprochés de leurs transcriptions sources. L’écoute intégrale reste à faire. [Inventaire des visuels](images-a-produire.md)
 
 Les PDF de fiches A1 à B1 ont été contrôlés en A4 et en double A5 avec les réglages standard. Le contrôle de débordement en double A5 couvre les 19 thèmes et les 57 pistes dans les deux formats. Les fiches plus longues répartissent la théorie, les questions ou les cartes de vocabulaire sur plusieurs feuillets. Les annexes de correction conservent le format A4 portrait utilisé par le générateur.
+
+Un essai de génération a couvert la théorie, le vocabulaire et les quatre compétences, en fiche élève et en corrigé. Les 12 QR codes de deux enregistrements ont été lus à 150 et 300 ppp sur les PDF convertis en niveaux de gris puis en noir et blanc. Les liens décodés correspondent aux pistes de l’activité, y compris pour le fichier dont le nom contient un accent.
 
 ## Vérifications à consigner lors de l’intégration
 

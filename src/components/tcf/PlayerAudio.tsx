@@ -23,8 +23,8 @@ export function PlayerAudio({ src, label }: { src: string; label?: string }) {
     let cancelled = false
     if (!path) return
     QRCode.toDataURL(soutienAudioAbsoluteUrl(path), {
-      margin: 0,
-      width: 84,
+      margin: 4,
+      width: 256,
       errorCorrectionLevel: 'M',
       color: { dark: '#111111', light: '#ffffff' },
     })

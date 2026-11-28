@@ -93,15 +93,15 @@ export function soutienAudioFor(label: string): string | undefined {
   return resolveExistingAudio(undefined, key)
 }
 
-/** URL absolue pour QR (téléphone). */
+/** URL absolue encodée pour les QR codes, y compris les noms de fichier accentués. */
 export function soutienAudioAbsoluteUrl(audioSrc: string): string {
-  if (/^https?:\/\//i.test(audioSrc)) return audioSrc
+  if (/^https?:\/\//i.test(audioSrc)) return new URL(audioSrc).href
   const path = audioSrc.startsWith('/') ? audioSrc : `/${audioSrc}`
   if (typeof window !== 'undefined') {
     const origin = window.location.origin
     if (origin && !/localhost|127\.0\.0\.1/i.test(origin)) {
-      return `${origin}${path}`
+      return new URL(`${origin}${path}`).href
     }
   }
-  return `${SOUTIEN_AUDIO_ORIGIN}${path}`
+  return new URL(`${SOUTIEN_AUDIO_ORIGIN}${path}`).href
 }
