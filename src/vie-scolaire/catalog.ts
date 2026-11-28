@@ -16,7 +16,7 @@ export type SchoolKind = typeof SCHOOL_KINDS[number][0]
 
 export const SCHOOL_TOPICS: Topic[] = SCHOOL_LESSONS.map((lesson) => ({
   id: `vie-scolaire-${lesson.id}`,
-  label: `A1 · ${lesson.title}`,
+  label: `${lesson.level} · ${lesson.title}`,
   domain: VIE_SCOLAIRE_DOMAIN,
 }))
 

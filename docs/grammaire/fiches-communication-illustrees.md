@@ -4706,7 +4706,7 @@ Modèle de production — Omar est en train de réparer une chaise.
 
 ### Le repas
 
-![Une femme porte un plateau-repas à la cantine](../../public/lib/images/tcf/catalogue/actions/plateau-a-la-cantine.webp)
+![Une femme sert un plateau-repas à la cantine](../../public/lib/images/grammaire/communication/j1-05-une-femme-apporte-un-plateau-a-la-cantine.webp)
 
 **Lire la situation**
 

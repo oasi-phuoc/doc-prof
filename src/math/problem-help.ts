@@ -1,4 +1,5 @@
 import { fmt } from './column-arith'
+import { isShortProblemType } from './short-problems'
 import type { MathItem } from './types'
 
 export function isWrittenProblem(item: MathItem): boolean {
@@ -158,5 +159,5 @@ export function problemAid(item: MathItem): ProblemAid {
 }
 
 export function isMathProblemHelpType(typeId: string): boolean {
-  return typeId.startsWith('problemes-') || typeId === 'proportion-problemes'
+  return (typeId.startsWith('problemes-') && !isShortProblemType(typeId)) || typeId === 'proportion-problemes'
 }

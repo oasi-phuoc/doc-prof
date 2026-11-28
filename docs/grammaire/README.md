@@ -51,7 +51,9 @@ La première banque proposait dix fiches de situation du quotidien pour chacun d
 
 Chacune des 160 situations a sa propre illustration dans le style dessiné CE/CO. Le [registre des illustrations](illustrations.json) conserve les chemins, empreintes et contrôles. Le [registre des scènes](images-a-preparer.json) donne l’état de chacune des 160 situations.
 
-Les 160 scènes de communication ont été revues le 28 novembre. Quatorze illustrations individuelles remplacent les personnages trop ressemblants entre plusieurs fiches. Elles montrent des personnes d’âges, d’apparences et de mobilités variés, dans les rôles de client, de collègue et de professionnel. Chaque scène garde le geste et l’objet utiles à l’activité. Le registre détaille ces contrôles par illustration. [Critères graphiques](../tcf/style-images.md)
+Les 160 scènes de communication ont été revues le 28 novembre. Quatorze illustrations individuelles montrent des personnages d’âges, d’apparences et de mobilités variés. Leur finition a été reprise à partir des visuels précédents de chaque scène et des références TCF. Les gestes et les objets restent lisibles, les grandes surfaces sont lisses et la lumière garde le contraste des fiches existantes. Le registre détaille les références et les contrôles par illustration. [Critères graphiques](../tcf/style-images.md)
+
+La comparaison des 146 autres scènes a conduit à quatre reprises. Les personnes représentées se distinguent davantage à la bibliothèque, au consulat et au secrétariat. À la cantine, le plateau est posé devant la personne assise pour rendre le geste de service explicite.
 
 En compréhension écrite graduée, « Se situer dans le temps → Le moment → Lire une situation » propose 80 questions sur 20 documents A1. Quatre documents réemploient un visuel TCF. [Relecture et sources](implementation/temps-a1-a2-relecture.md)
 

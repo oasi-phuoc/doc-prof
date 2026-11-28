@@ -1,9 +1,10 @@
 import { useMemo, useState } from 'react'
-import { logistiqueModules, logistiquePresentationFor, type LogistiqueType } from '@/logistique/catalog'
+import { logistiqueModules, logistiquePresentationFor, logistiquePresentationLabels, type LogistiqueType } from '@/logistique/catalog'
 import { logistiqueModuleCapacities } from '@/logistique/generate'
-import { allocateLogistiquePoints, applyLogistiqueStoryChange, initialLogistiqueStory, logistiqueBloomLevels, logistiqueDuration,
+import { allocateLogistiquePoints, applyLogistiqueStoryChange, initialLogistiqueStory, logistiqueBloomLevels, logistiqueDifficultyLabels, logistiqueDuration,
   logistiqueStoryQuestions, logistiqueStoryTemplates, logistiqueStoryVariant,
   logistiqueStorySelectionCompatible, type LogistiqueEvaluation, type LogistiqueStory } from '@/logistique/evaluation'
+import { logistiqueItemPresentation } from '@/logistique/libre'
 import type { ExerciseBlock, MathItem, Topic } from '@/math/types'
 import { randomSeed } from '@/math/rng'
 import { blockPointsTotal, formatPointsLabel } from '@/tpm/test'
@@ -40,14 +41,28 @@ export function LogistiqueEvaluationFields({ type, activeBlock, themes, items, d
     ? allocateLogistiquePoints(items, evaluation.targetPoints, pointsPerQuestion) : undefined
   const duration = logistiqueDuration(items, evaluation, type.diploma)
   const minutesGap = evaluation.targetMinutes === undefined || !items.length ? 0 : duration.total - evaluation.targetMinutes
-  const covered = [...new Set(items.flatMap((item) => {
-    const code = item.logistiqueSource?.module ?? item.logistiqueLocalModule
-    return code ? [code] : []
-  }))].sort()
-  const objectives = [...new Set(items.flatMap((item) => item.logistiqueAssessment?.objective ? [item.logistiqueAssessment.objective] : []))]
-  const bloom = Object.entries(logistiqueBloomLevels).flatMap(([key, label]) => {
-    const questions = items.filter((item) => item.logistiqueAssessment?.bloom === key)
-    return questions.length ? [{ label, count: questions.length, points: blockPointsTotal(questions, pointsPerQuestion) }] : []
+  const covered = [...new Set(items.map((item) => item.logistiqueSource?.module ?? item.logistiqueLocalModule ?? type.module))].sort()
+  const missingModules = selection.filter((code) => !covered.includes(code))
+  const objectives = [...new Set(items.map((item) => item.logistiqueAssessment?.objective?.trim()).filter(Boolean))]
+  const missingObjectives = items.filter((item) => !item.logistiqueAssessment?.objective?.trim()).length
+  const distributions = [
+    { label: 'Formats', group: (item: MathItem) => {
+      const key = logistiqueItemPresentation(item)
+      return key ? logistiquePresentationLabels[key] : item.calcAnswer !== undefined ? 'Calcul' : 'Réponse ouverte'
+    } },
+    { label: 'Difficulté', group: ({ logistiqueAssessment }: MathItem) =>
+      logistiqueAssessment?.difficulty ? logistiqueDifficultyLabels[logistiqueAssessment.difficulty] : 'À renseigner' },
+    { label: 'Niveau de Bloom', group: ({ logistiqueAssessment }: MathItem) =>
+      logistiqueAssessment?.bloom ? logistiqueBloomLevels[logistiqueAssessment.bloom] : 'À renseigner' },
+  ].map(({ label, group }) => {
+    const byLabel = new Map<string, MathItem[]>()
+    for (const item of items) {
+      const key = group(item)
+      const questions = byLabel.get(key)
+      if (questions) questions.push(item)
+      else byLabel.set(key, [item])
+    }
+    return { label, groups: [...byLabel.entries()] }
   })
   const timeFields = [
     { key: 'readingMinutes', label: 'Lecture des supports et consignes en minutes', estimate: duration.reading },
@@ -217,12 +232,15 @@ export function LogistiqueEvaluationFields({ type, activeBlock, themes, items, d
         <p>{items.length} question(s) · {formatPointsLabel(points)}
           {covered.length ? ` · Modules ${covered.join(', ')}` : ''}</p>
         {items.length > 0 && <p>Durée indicative de {duration.total} min, lecture et relecture comprises.</p>}
-        {objectives.length > 0 && <ul>{objectives.map((objective) => <li key={objective}>{objective}</li>)}</ul>}
-        {bloom.length > 0 && <ul>{bloom.map((entry) =>
-          <li key={entry.label}>{entry.label} · {entry.count} question(s) · {formatPointsLabel(entry.points)}</li>)}</ul>}
-        {items.some((item) => !item.logistiqueAssessment?.bloom) && <p className="muted">
-          Niveau de Bloom à renseigner pour {items.filter((item) => !item.logistiqueAssessment?.bloom).length} question(s).
-        </p>}
+        {items.length > 0 && missingModules.length > 0 && <p className="muted">Modules retenus sans question dans le tirage actuel · {missingModules.join(', ')}.</p>}
+        {objectives.length > 0 && <ul aria-label="Objectifs couverts">{objectives.map((objective) => <li key={objective}>{objective}</li>)}</ul>}
+        {missingObjectives > 0 && <p className="muted">Objectif à renseigner pour {missingObjectives} question(s).</p>}
+        {distributions.map(({ label, groups }) => groups.length > 0 && <div key={label}>
+          <b>{label}</b>
+          <ul aria-label={label}>{groups.map(([key, questions]) => <li key={key}>
+            {key} · {questions.length} question(s) · {formatPointsLabel(blockPointsTotal(questions, pointsPerQuestion))}
+          </li>)}</ul>
+        </div>)}
         {items.some(({ libreCorrectionPending }) => libreCorrectionPending) && <p role="status">Des corrigés sont à vérifier.</p>}
         <label>
           Total de points visé

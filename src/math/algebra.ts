@@ -478,8 +478,9 @@ function equationItem(opts: {
   x: number
   y?: number
   systemBrace?: boolean
+  positiveOnly?: boolean
 }): MathItem {
-  const { equation, development, x, y, systemBrace } = opts
+  const { equation, development, x, y, systemBrace, positiveOnly } = opts
   const operations = alignOps(development, opts.operations ?? [])
   const unknowns = y === undefined ? ['x'] : ['x', 'y']
   const responseAnswer =
@@ -494,6 +495,7 @@ function equationItem(opts: {
     answer: responseAnswer,
     unknowns,
     systemBrace,
+    ...(positiveOnly ? { equationPositiveOnly: true } : {}),
   }
 }
 
@@ -645,6 +647,7 @@ function oneEquation(
         development,
         operations: ['', `+ ${constTerm}`, `: ${a}`, ''],
         x,
+        positiveOnly: true,
       })
     }
     const den = int(rng, 2, 6)

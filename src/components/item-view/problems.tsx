@@ -16,8 +16,10 @@ import {
   theoryTableColWidths,
 } from './theory-marks'
 import { problemAid } from '@/math/problem-help'
+import { ShortProblemDiagram } from './short-problems'
 import { MoneyChangeBoard } from './money-change'
 import { LogistiqueTableView } from './logistique-table'
+import { formatPointsLabel } from '@/tpm/test'
 import type { MathItem, PreviewMode } from '@/math/types'
 import {
   computeScale,
@@ -682,16 +684,25 @@ export function StackedPrompt({ item, mode, showHelp = false }: { item: MathItem
     const questions = item.logistiqueTable.questions
     const offset = item.logistiqueSubquestionOffset ?? 0
     return (
-      <div className={`prompt-stack${questions ? ' logistique-document-exercise' : ''}`}>
+      <div className={`prompt-stack${questions ? ' logistique-document-exercise' : ''}${item.logistiqueTable.presentation === 'cas-mixte' ? ' logistique-mixed-case' : ''}`}>
         <LogistiqueIllustratedPrompt item={item} mode={mode}>
           <p className="prompt-stack-text">{prompt}</p>
         </LogistiqueIllustratedPrompt>
-        <LogistiqueTableView table={item.logistiqueTable} mode={mode} />
+        <LogistiqueTableView table={item.logistiqueTable} mode={mode} offset={offset} />
         {questions ? <ol type="a" start={offset + 1} className="logistique-document-questions">
-          {questions.map((question, index) => <li key={index}>
-            <p>{question.prompt}</p>
-            <span className={`answer-line-field${show ? ' filled' : ''}`}>{show ? question.answer : '\u00a0'}</span>
-          </li>)}
+          {questions.map((question, index) => {
+            const part: MathItem = { layout: 'text', prompt: question.prompt, answer: question.answer,
+              logistiqueSource: item.logistiqueSource, logistiqueLocalModule: item.logistiqueLocalModule }
+            return <li key={index}>
+              {question.points !== undefined && <small className="logistique-subquestion-points">{formatPointsLabel(question.points)}</small>}
+              {question.kind === 'choix' ? <SelectPillsRow item={{ ...part, layout: 'select', options: question.options }} mode={mode} />
+                : question.kind === 'calcul' ? <ProblemBlock item={{ ...part, calcAnswer: question.calculation }} mode={mode} />
+                : <>
+                  <p>{question.prompt}</p>
+                  <span className={`answer-line-field${show ? ' filled' : ''}`}>{show ? question.answer : '\u00a0'}</span>
+                </>}
+            </li>
+          })}
         </ol> : show && item.answer ? <strong className="filled-answer logistique-table-note">{item.answer}</strong> : null}
       </div>
     )
@@ -935,13 +946,18 @@ export function ProblemBlock({
   const prompt = item.prompt ?? ''
   const parts = /^(.*[.!?]\s+)([^.!?]+\?)$/s.exec(prompt.trim())
   return (
-    <div className={`problem-block${item.logistiqueTable ? ' has-logistique-table' : ''}`}>
+    <div className={`problem-block${item.logistiqueTable ? ' has-logistique-table' : ''}${item.shortProblem ? ' short-problem' : ''}`}>
       <LogistiqueIllustratedPrompt item={item} mode={mode}>
         <p className="problem-prompt">
           {parts ? <>{parts[1]}<strong>{parts[2]}</strong></> : prompt}
         </p>
       </LogistiqueIllustratedPrompt>
       {item.logistiqueTable ? <LogistiqueTableView table={item.logistiqueTable} mode={mode} /> : null}
+      {item.shortProblem?.guided && (
+        <aside className="short-problem-guide" aria-label="Données utiles">
+          <ShortProblemDiagram diagram={item.shortProblem.diagram} />
+        </aside>
+      )}
       {showHelp && <ProblemHelp item={item} />}
       {showHelp && item.labels?.includes('sketch-change') ? (
         <MoneyChangeBoard parts={item.changeParts ?? []} mode={mode} />
@@ -955,7 +971,7 @@ export function ProblemBlock({
         </div>
       </div>
       <div className="problem-response-line">
-        <span className="response-label">Phrase réponse :</span>
+        <span className="response-label">{item.shortProblem ? 'Réponse' : 'Phrase réponse :'}</span>
         {show ? (
           <strong className="filled-answer response-value">{item.responseAnswer ?? item.answer}</strong>
         ) : (
@@ -1109,6 +1125,7 @@ export function EquationBlock({
           })}
         </div>
       )}
+      {item.equationPositiveOnly && <p className="equation-positive-only">Cherchez la solution positive.</p>}
       <div className="problem-field">
         <span className="field-label">{show ? 'Correction' : 'Développement'}</span>
         <div

@@ -1,12 +1,15 @@
 """Draw the exact examples used by src/math/theory-lessons.ts."""
 from functools import lru_cache
+from json import loads
 from math import cos, hypot, radians, sin
 from pathlib import Path
+from re import split
 
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'src/math/media/theory/falc'
+ELEMENTS = OUT.parent / 'elements'
 FONT = ROOT / 'public/fonts/worksheet/didact-gothic-v1.ttf'
 INK = '#172336'
 GIVEN = '#874515'
@@ -16,6 +19,7 @@ GRID = '#C8D2DC'
 BLUE_FILL = '#E8F1F9'
 GREEN_FILL = '#E6F1EA'
 AMBER_FILL = '#F5EBDD'
+SYMBOLS = '′→√─┬□▮○●'
 
 
 @lru_cache(maxsize=None)
@@ -24,12 +28,54 @@ def font(size):
 
 
 class Diagram:
-    def __init__(self):
-        self.image = Image.new('RGB', (920, 258), 'white')
+    def __init__(self, transparent=False):
+        self.image = Image.new('RGBA' if transparent else 'RGB', (920, 258), (0, 0, 0, 0) if transparent else 'white')
         self.draw = ImageDraw.Draw(self.image)
 
     def text(self, x, y, text, size=36, color=INK, anchor='mm'):
-        self.draw.text((x, y), str(text), fill=color, font=font(size), anchor=anchor)
+        value = str(text)
+        if not any(symbol in value for symbol in SYMBOLS):
+            self.draw.text((x, y), value, fill=color, font=font(size), anchor=anchor)
+            return
+        width = self.text_width(value, size)
+        left = x - width * {'m': .5, 'r': 1}.get(anchor[0], 0)
+        for segment in split(f'([{SYMBOLS}])', value):
+            if not segment:
+                continue
+            if segment in SYMBOLS:
+                self.symbol(left, y, segment, size, color)
+                left += .78 * size
+            else:
+                self.draw.text((left, y), segment, fill=color, font=font(size), anchor='lm')
+                left += self.draw.textlength(segment, font=font(size))
+
+    def text_width(self, text, size):
+        return sum(.78 * size if part and part in SYMBOLS else self.draw.textlength(part, font=font(size))
+                   for part in split(f'([{SYMBOLS}])', text))
+
+    def symbol(self, x, y, symbol, size, color):
+        middle, right = x + .39 * size, x + .78 * size
+        thickness = max(1, round(size * .06))
+        if symbol in '→─┬':
+            self.line((x, y), (right, y), color=color, width=thickness)
+            if symbol == '→':
+                self.line((middle + .1 * size, y - .18 * size), (right, y), (middle + .1 * size, y + .18 * size),
+                          color=color, width=thickness)
+            if symbol == '┬':
+                self.line((middle, y), (middle, y + .2 * size), color=color, width=thickness)
+        elif symbol == '√':
+            self.line((x + .06 * size, y), (x + .17 * size, y), (x + .29 * size, y + .29 * size),
+                      (x + .52 * size, y - .34 * size), (right, y - .34 * size), color=color, width=thickness)
+        elif symbol in '□▮':
+            side = .23 * size
+            self.draw.rectangle((middle - side, y - side, middle + side, y + side), outline=color,
+                                fill=color if symbol == '▮' else None, width=thickness)
+        elif symbol == '′':
+            self.line((x + .22 * size, y - .18 * size), (x + .33 * size, y - .46 * size), color=color, width=thickness)
+        else:
+            radius = .19 * size
+            self.draw.ellipse((middle - radius, y - radius, middle + radius, y + radius), outline=color,
+                              fill=color if symbol == '●' else None, width=thickness)
 
     def line(self, *points, color=INK, width=3):
         self.draw.line(points, fill=color, width=width, joint='curve')
@@ -684,6 +730,236 @@ def measured_strip(name, sections, total):
     d.save(name)
 
 
+def curve(points):
+    result = []
+    for segment in points:
+        for step in range(19):
+            t = step / 18
+            coefficients = ((1 - t) ** 3, 3 * t * (1 - t) ** 2, 3 * t * t * (1 - t), t ** 3)
+            result.append(tuple(sum(coef * point[axis] for coef, point in zip(coefficients, segment)) for axis in (0, 1)))
+    return result
+
+
+@lru_cache(maxsize=2)
+def apple_element(color):
+    image = Image.new('RGBA', (288, 288))
+    draw = ImageDraw.Draw(image)
+    skin, light = ('#D56558', '#EEA68D') if color == GIVEN else ('#8DB96D', '#C8DB9D')
+    body = curve([
+        [(144, 89), (101, 62), (55, 63), (41, 110)],
+        [(41, 110), (16, 169), (66, 264), (109, 253)],
+        [(109, 253), (133, 248), (146, 242), (163, 251)],
+        [(163, 251), (209, 273), (266, 186), (252, 127)],
+        [(252, 127), (244, 79), (184, 66), (144, 89)],
+    ])
+    draw.line([(145, 93), (139, 58), (158, 28)], fill=INK, width=8, joint='curve')
+    leaf = curve([
+        [(148, 60), (176, 24), (216, 31), (232, 34)],
+        [(232, 34), (215, 70), (170, 79), (148, 60)],
+    ])
+    draw.polygon(leaf, fill='#6A924D')
+    draw.line(leaf, fill=INK, width=6, joint='curve')
+    draw.polygon(body, fill=skin)
+    draw.line(body, fill=INK, width=8, joint='curve')
+    draw.arc((63, 97, 129, 178), start=151, end=259, fill=light, width=13)
+    ELEMENTS.mkdir(parents=True, exist_ok=True)
+    image.save(ELEMENTS / ('pomme.png' if color == GIVEN else 'pomme-verte.png'), optimize=True)
+    return image.resize((44, 44), Image.Resampling.LANCZOS)
+
+
+def apple(d, x, y, color=GIVEN, crossed=False):
+    d.image.alpha_composite(apple_element(color), (round(x - 22), round(y - 21)))
+    if crossed:
+        d.line((x - 18, y + 21), (x + 18, y - 15), color='white', width=8)
+        d.line((x - 18, y + 21), (x + 18, y - 15), color=INK, width=4)
+
+
+def apple_calculation(name, equation, groups, signs=()):
+    d = Diagram(transparent=True)
+    d.text(460, 51, equation, 43)
+    gap = 49 if signs else 14
+    width = (880 - (len(groups) - 1) * gap) / len(groups)
+    for index, (label, fruits) in enumerate(groups):
+        left = 20 + index * (width + gap)
+        x = left + width / 2
+        d.box((left, 94, left + width, 224), INK, (0, 0, 0, 0))
+        for place, fruit in enumerate(fruits):
+            apple(d, x + (place - (len(fruits) - 1) / 2) * 41, 143, STEP if fruit == 'b' else GIVEN,
+                  crossed=fruit == 'x')
+        d.text(x, 197, label, 29)
+        if index < len(signs):
+            d.text(left + width + gap / 2, 150, signs[index], 37)
+    d.save(name)
+
+
+def apple_comparison(name, equation, rows, difference):
+    d = Diagram(transparent=True)
+    d.text(460, 36, equation, 38)
+    for index, (person, kept, extra, empty) in enumerate(rows):
+        y = 107 + 88 * index
+        d.text(141, y + 3, person, 32, anchor='rm')
+        d.line((167, y + 36), (664, y + 36), color=GRID, width=2)
+        for place in range(kept + extra):
+            apple(d, 216 + place * 58, y, GIVEN if place < kept else STEP)
+        if extra or empty:
+            left = 216 + kept * 58 - 26
+            d.draw.rounded_rectangle((left, y - 31, left + 114, y + 32), radius=8, outline=STEP, width=3)
+            for place in range(empty):
+                x = 216 + (place + kept) * 58
+                d.point(x, y + 5, STEP, open_point=True, radius=16)
+            d.arrow((left + 123, y + 4), (660, y + 4))
+            d.text(758, y + 4, difference, 33, STEP)
+    d.save(name)
+
+
+def simple_arithmetic():
+    apple_calculation('addition-en-ligne', '2 + 3 = 5', [
+        ('2 pommes', 'aa'), ('3 pommes', 'bbb'), ('5 pommes en tout', 'aabbb')], ['+', '='])
+    apple_calculation('addition-a-trou', '2 + □ = 5', [
+        ('2 déjà là', 'aa'), ('3 à ajouter', 'bbb'), ('5 en tout', 'aabbb')], ['+', '='])
+    apple_calculation('soustraction-en-ligne', '5 − 2 = 3', [
+        ('5 au départ', 'aaaaa'), ('2 à enlever', 'xx'), ('3 qui restent', 'aaa')], ['−', '='])
+    apple_calculation('soustraction-a-trou', '5 − □ = 2', [
+        ('5 au départ', 'aaaaa'), ('3 à enlever', 'xxx'), ('2 qui restent', 'aa')], ['−', '='])
+    apple_calculation('multiplication-en-ligne', '2 × 3 = 6', [
+        ('Groupe 1', 'bbb'), ('Groupe 2', 'bbb'), ('6 en tout', 'bbbbbb')], ['+', '='])
+    apple_calculation('multiplication-a-trou', '3 × □ = 12', [
+        (f'Groupe {group}', 'bbbb') for group in range(1, 4)])
+    apple_calculation('division-en-ligne', '6 ÷ 2 = 3', [
+        ('6 à partager', 'aaaaaa'), ('Part 1', 'bbb'), ('Part 2', 'bbb')], ['→', '+'])
+    apple_calculation('division-a-trou', '12 ÷ □ = 3', [
+        (f'Part {group}', 'bbb') for group in range(1, 5)])
+    apple_comparison('problemes-de-plus', '5 + 2 = 7', [('Maya', 5, 0, 0), ('Yanis', 5, 2, 0)], '2 de plus')
+    apple_comparison('problemes-de-moins', '7 − 2 = 5', [('Yanis', 7, 0, 0), ('Maya', 5, 0, 2)], '2 de moins')
+    apple_comparison('problemes-quantite-depart', '7 − 2 = 5', [('Yanis', 5, 2, 0), ('Maya', 5, 0, 0)], '2 en plus')
+
+
+def math_stages(name, stages, sketch=None):
+    d = Diagram(transparent=True)
+    if sketch:
+        sketch(d)
+    height = min(73, 230 / len(stages))
+    top = (258 - height * len(stages)) / 2
+    for index, (action, equation) in enumerate(stages):
+        y = top + (index + .5) * height
+        last = index == len(stages) - 1
+        color, fill = (RESULT, GREEN_FILL) if last else (STEP, BLUE_FILL)
+        left = 306 if sketch else 25
+        d.box((left, y - height / 2 + 4, 895, y + height / 2 - 4), color, fill)
+        split = left + (200 if sketch else 285)
+        d.line((split, y - height / 2 + 9), (split, y + height / 2 - 9), color=color, width=2)
+        size = 27
+        while d.text_width(action, size) > split - left - 16:
+            size -= 1
+        d.text((left + split) / 2, y, action, size, color)
+        size = 33 if sketch else 37
+        while d.text_width(equation, size) > 879 - split:
+            size -= 1
+        d.text((895 + split) / 2, y, equation, size)
+    d.save(name)
+
+
+def equations():
+    for name, stages in {
+        'equation-isoler': [('Au départ', '3x − 2 = 10'), ('+2 des deux côtés', '3x = 12'), ('÷3 des deux côtés', 'x = 4')],
+        'equation-deux-cotes': [('Au départ', '3x + 2 = x + 10'), ('−x des deux côtés', '2x + 2 = 10'), ('−2 des deux côtés', '2x = 8'), ('÷2 des deux côtés', 'x = 4')],
+        'equation-fraction': [('Au départ', 'x/2 + 3 = 7'), ('−3 des deux côtés', 'x/2 = 4'), ('×2 des deux côtés', 'x = 8')],
+        'equation-racine': [('Au départ', '2x + √9 = 11'), ('√9 = 3', '2x + 3 = 11'), ('−3 des deux côtés', '2x = 8'), ('÷2 des deux côtés', 'x = 4')],
+        'equation-carre': [('Au départ', '2x² − 8 = 24'), ('+8 puis ÷2', 'x² = 16'), ('Deux nombres', '4² = 16     (−4)² = 16')],
+        'systeme-verifier': [('Le couple', '(4 ; 3)'), ('x + y = 7', '4 + 3 = 7'), ('x − y = 1', '4 − 3 = 1')],
+        'systeme-substitution': [('Isoler y', 'x + y = 7  →  y = 7 − x'), ('Remplacer y', '2x − (7 − x) = 2'), ('Résoudre', '3x − 7 = 2  →  x = 3'), ('Trouver y', 'y = 7 − 3 = 4')],
+        'systeme-addition': [('Ligne 1', 'x + y = 7'), ('Ligne 2', 'x − y = 1'), ('+y − y = 0', '2x = 8   →   x = 4'), ('Trouver y', 'y = 7 − 4 = 3')],
+        'systeme-addition-preparer': [('Ligne 1', '2x + y = 8'), ('Ligne 2 × (−2)', '−2x − 4y = −14'), ('2x − 2x = 0', '−3y = −6   →   y = 2'), ('Trouver x', '2x + 2 = 8   →   x = 3')],
+    }.items():
+        math_stages(name, stages)
+
+
+def fundamental_shapes():
+    ELEMENTS.mkdir(parents=True, exist_ok=True)
+    for name, points in {
+        'triangle': [(18, 88), (63, 18), (111, 88)],
+        'carre': [(31, 25), (97, 25), (97, 91), (31, 91)],
+        'rectangle': [(16, 36), (112, 36), (112, 80), (16, 80)],
+    }.items():
+        image = Image.new('RGBA', (768, 696))
+        draw = ImageDraw.Draw(image)
+        scaled = [(6 * x, 6 * y) for x, y in points]
+        draw.polygon(scaled, fill=BLUE_FILL)
+        draw.line([*scaled, scaled[0]], fill=STEP, width=18, joint='curve')
+        image.save(ELEMENTS / f'forme-{name}.png', optimize=True)
+
+
+def fraction_bars(d):
+    for y, pieces, colored in [(77, 2, 1), (131, 4, 2), (185, 6, 3)]:
+        for index in range(pieces):
+            left = 31 + index * 240 / pieces
+            d.draw.rectangle((left, y, left + 240 / pieces, y + 35), fill=BLUE_FILL if index < colored else 'white', outline=INK, width=2)
+
+
+def diagram_net(d):
+    for x, y in [(1, 0), (0, 1), (1, 1), (2, 1), (3, 1), (1, 2)]:
+        d.draw.rectangle((41 + 50 * x, 54 + 50 * y, 91 + 50 * x, 104 + 50 * y), fill=BLUE_FILL, outline=STEP, width=3)
+
+
+def diagram_bases(d, trapezoid=False):
+    d.polygon([(25, 189), (268, 189), (213 if trapezoid else 290, 70), (88, 70)], STEP, BLUE_FILL)
+    d.line((122, 70), (122, 189), color=GIVEN, width=4)
+    d.line((122, 170), (141, 170), (141, 189), color=GIVEN)
+    d.text(150, 222, '8 cm' if trapezoid else '6 cm', 28)
+    d.text(161, 130, '3 cm' if trapezoid else '4 cm', 28, GIVEN)
+    if trapezoid:
+        d.text(150, 44, '4 cm', 28)
+
+
+def diagram_circle(d):
+    d.draw.ellipse((43, 25, 245, 227), fill=BLUE_FILL, outline=STEP, width=4)
+    d.line((144, 126), (245, 126), color=GIVEN, width=4)
+    d.point(144, 126, GIVEN)
+    d.text(191, 104, '3 cm', 26, GIVEN)
+
+
+def diagram_cases(d):
+    at = d.grid(46, 220, 3, 3, 62)
+    for index, letter in enumerate('ABC'):
+        d.text(77 + 62 * index, 17, letter, 25)
+        d.text(25, 64 + 62 * index, str(index + 1), 25)
+    d.point(*at(1.5, .5), STEP, radius=10)
+
+
+def diagram_four_axes(d):
+    at = d.grid(38, 230, 6, 6, 36)
+    d.arrow(at(0, 3), at(6, 3), INK)
+    d.arrow(at(3, 0), at(3, 6), INK)
+    d.arrow(at(3, 3), at(1, 3), GIVEN)
+    d.arrow(at(1, 3), at(1, 6), STEP)
+    d.point(*at(1, 6), RESULT)
+
+
+def diagram_shape_axes(d):
+    d.box((52, 43, 232, 223), INK, BLUE_FILL)
+    for points in [((52, 43), (232, 223)), ((232, 43), (52, 223)), ((142, 43), (142, 223)), ((52, 133), (232, 133))]:
+        d.line(*points, color=STEP)
+
+
+def curriculum_diagrams():
+    sketches = {
+        'fractions-equivalentes-theorie': fraction_bars,
+        'figures-patron-theorie': diagram_net,
+        'aires-bases-hauteurs': diagram_bases,
+        'aires-trapeze-theorie': lambda d: diagram_bases(d, trapezoid=True),
+        'aires-disque-theorie': diagram_circle,
+        'perimetres-cercle-theorie': diagram_circle,
+        'reperage-cases-theorie': diagram_cases,
+        'reperage-quatre-cadrans': diagram_four_axes,
+        'transformations-axes-theorie': diagram_shape_axes,
+    }
+    for subject in ('algebra', 'geometry'):
+        data = loads((ROOT / 'src/math' / f'theory-{subject}.json').read_text(encoding='utf-8'))
+        for course in data.values():
+            for page in course:
+                math_stages(page['id'], page['diagram'], sketches.get(page['id']))
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     place_value()
@@ -714,6 +990,10 @@ def main():
     shapes_supplements()
     measured_strip('mesures-melangees', [(10, '10 mm'), (10, '10 mm'), (10, '10 mm'), (4, '4 mm')], '34 mm')
     measured_strip('mesures-temps', [(60, '1 heure = 60 minutes'), (15, '15 minutes')], '75 minutes')
+    simple_arithmetic()
+    equations()
+    fundamental_shapes()
+    curriculum_diagrams()
 
 
 if __name__ == '__main__':

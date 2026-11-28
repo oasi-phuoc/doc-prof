@@ -1,7 +1,8 @@
 import { Fragment, useState } from 'react'
 import type { MathItem } from '@/math/types'
-import { newLogistiqueQuestion, reviewableLogistiqueAnswer, type LogistiqueQuestionFormat } from '@/logistique/libre'
-import { logistiqueBloomLevels, logistiqueQuestionMinutes, type LogistiqueAssessment } from '@/logistique/evaluation'
+import { assignLogistiqueReplacement, newLogistiqueQuestion, reviewableLogistiqueAnswer, type LogistiqueQuestionFormat } from '@/logistique/libre'
+import { logistiqueBloomLevels, logistiqueDifficultyLabels, logistiqueQuestionMinutes, type LogistiqueAssessment } from '@/logistique/evaluation'
+import { logistiqueCasePoints } from '@/logistique/tables'
 import type { LogistiqueType } from '@/logistique/catalog'
 import { LogistiqueImageFields, type LogistiquePhotoChoice } from './LogistiqueImageFields'
 import { LogistiqueGapEditor } from './LogistiqueGapEditor'
@@ -18,6 +19,7 @@ export function GenericLibreEditor({
   items,
   editableCalculation,
   logistique,
+  logistiqueReplacements,
   logistiquePhotos,
   onChangeInstruction,
   onChangeItems,
@@ -37,6 +39,7 @@ export function GenericLibreEditor({
     modules: readonly { code: string; label: string }[]
     original: (item: MathItem) => MathItem | undefined
   }
+  logistiqueReplacements?: (item: MathItem, existing: readonly MathItem[]) => MathItem[]
   logistiquePhotos?: { defaultModule: string; byModule: ReadonlyMap<string, readonly LogistiquePhotoChoice[]> }
   onChangeInstruction: (value: string) => void
   onChangeItems: (items: MathItem[]) => void
@@ -47,6 +50,7 @@ export function GenericLibreEditor({
 }) {
   const [localModule, setLocalModule] = useState(logistique?.defaultModule)
   const [localFormat, setLocalFormat] = useState<LogistiqueQuestionFormat>('open')
+  const [replacement, setReplacement] = useState<{ slot: string; choice?: string }>()
   const questionFormat = logistique?.kind === 'verification' || localFormat === 'qcm' && logistique?.kind === 'situation'
     ? localFormat : 'open'
   const module = logistique?.modules.some(({ code }) => code === localModule)
@@ -94,6 +98,7 @@ export function GenericLibreEditor({
         <span>Consigne</span>
         <textarea
           className="libre-line-input is-textarea"
+          aria-label="Consigne"
           rows={2}
           value={instruction}
           onChange={(event) => onChangeInstruction(event.target.value)}
@@ -102,6 +107,10 @@ export function GenericLibreEditor({
       <ul className="libre-item-list" aria-label="Questions">
         {items.map((item, index) => {
           const choice = item.logistiqueChoice
+          const casePoints = logistiqueCasePoints(item.logistiqueTable)
+          const choosing = replacement && item.libreId === replacement.slot && !item.libreLocked && logistiqueReplacements
+          const candidates = choosing ? logistiqueReplacements(item, items) : []
+          const selected = candidates.find((candidate) => candidate.logistiqueSource!.id === replacement?.choice)
           return (
           <li key={item.libreId ?? index} className="libre-item-card is-libre-row">
             <span className="libre-item-num is-accent">{index + 1}.</span>
@@ -172,6 +181,7 @@ export function GenericLibreEditor({
               {item.logistiqueTable && <LogistiqueTableEditor table={item.logistiqueTable}
                 onChange={(logistiqueTable) => patchItem(index, { logistiqueTable, libreCorrectionPending: true,
                   ...(logistiqueTable.questions ? { answer: logistiqueTable.questions.map(({ answer }) => answer).join('\n') } : {}),
+                  ...(logistiqueTable.presentation === 'cas-mixte' ? { points: logistiqueCasePoints(logistiqueTable) } : {}),
                 })} />}
               {(editableCalculation || direct && item.calcAnswer != null) && (
                 <label className="libre-field is-line">
@@ -314,7 +324,7 @@ export function GenericLibreEditor({
                 <label className="libre-field is-line">
                   <span>Points de la question</span>
                   <input type="number" className="libre-line-input" min={0} max={1000} step={0.5}
-                    value={item.points ?? ''} placeholder="Barème de l’activité"
+                    value={casePoints ?? item.points ?? ''} readOnly={casePoints !== undefined} placeholder="Barème de l’activité"
                     onChange={(event) => {
                       const points = event.target.valueAsNumber
                       if (!event.target.value || points >= 0 && points <= 1000 && points * 2 % 1 === 0) {
@@ -322,10 +332,10 @@ export function GenericLibreEditor({
                       }
                     }} />
                 </label>
-                <label>
+                {casePoints === undefined && <label>
                   <input type="checkbox" checked={Boolean(item.logistiqueAssessment?.pointsLocked)}
                     onChange={(event) => patchAssessment(index, { pointsLocked: event.target.checked })} /> Verrouiller les points de cette question
-                </label>
+                </label>}
                 <SelectBox label="Niveau de Bloom" value={item.logistiqueAssessment?.bloom ?? ''} onChange={(bloom) =>
                   patchAssessment(index, { bloom: bloom ? bloom as LogistiqueAssessment['bloom'] : undefined })}>
                   <option value="">À renseigner</option>
@@ -334,9 +344,7 @@ export function GenericLibreEditor({
                 <SelectBox label="Difficulté de la question" value={item.logistiqueAssessment?.difficulty ?? ''} onChange={(difficulty) =>
                   patchAssessment(index, { difficulty: difficulty ? difficulty as LogistiqueAssessment['difficulty'] : undefined })}>
                   <option value="">À renseigner</option>
-                  <option value="facile">Facile</option>
-                  <option value="moyen">Moyenne</option>
-                  <option value="avance">Avancée</option>
+                  {Object.entries(logistiqueDifficultyLabels).map(([id, label]) => <option key={id} value={id}>{label}</option>)}
                 </SelectBox>
                 <label className="libre-field is-line">
                   <span>Durée indicative en minutes</span>
@@ -374,8 +382,29 @@ export function GenericLibreEditor({
                       item.options?.forEach((_, position) => writeField?.(`${item.libreId}:choix:${position}`, null))
                       onRegenerate(item.libreId!)
                     }}>Régénérer la question</button>}
+                  {logistiqueReplacements && <button type="button" className="button"
+                    disabled={item.libreLocked} aria-expanded={Boolean(choosing)}
+                    aria-label={`Choisir dans la banque pour la question ${index + 1}`}
+                    onClick={() => setReplacement(choosing ? undefined : { slot: item.libreId! })}>
+                    Choisir dans la banque
+                  </button>}
                 </div>
               ) : null}
+              {choosing && (candidates.length ? <div className="logistique-bank">
+                <SelectBox label="Nouvelle question" value={selected?.logistiqueSource?.id ?? ''}
+                  onChange={(value) => setReplacement({ slot: item.libreId!, choice: value })}>
+                  <option value="" disabled>Sélectionnez une question</option>
+                  {candidates.map((question) => <option key={question.logistiqueSource!.id} value={question.logistiqueSource!.id}>
+                    {question.prompt}
+                  </option>)}
+                </SelectBox>
+                <button type="button" className="button small secondary" disabled={!selected} onClick={() => {
+                  if (!selected) return
+                  item.options?.forEach((_, position) => writeField?.(`${item.libreId}:choix:${position}`, null))
+                  onChangeItems(items.with(index, assignLogistiqueReplacement(item, selected, Boolean(logistique?.evaluation))))
+                  setReplacement(undefined)
+                }}>Remplacer par cette question</button>
+              </div> : <p className="muted" role="status">Aucune autre question de ce format dans le module et la banque de la fiche.</p>)}
             </div>
           </li>
           )

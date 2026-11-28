@@ -1,9 +1,9 @@
-import type { Domain, ExerciseBlock, ExerciseType, LogistiqueQuestionImage, LogistiqueResponseLines, Topic } from '@/math/types'
+import type { Domain, ExerciseBlock, ExerciseType, LogistiquePresentation, LogistiqueQuestionImage, LogistiqueResponseLines, Topic } from '@/math/types'
 import curriculum from './curriculum.generated.json'
 import { validLogistiqueGaps } from './gaps'
 import { validLogistiqueChoice } from './choices'
 import { validLogistiqueMatching } from './matching'
-import { isLogistiqueTablePresentation, validLogistiqueExerciseTable } from './tables'
+import { isLogistiqueTablePresentation, logistiqueCasePoints, validLogistiqueExerciseTable } from './tables'
 import { logistiqueStorySelectionCompatible, validLogistiqueAssessment, validLogistiqueEvaluation } from './evaluation'
 
 export const LOGISTIQUE_DOMAINS = [
@@ -127,7 +127,32 @@ export function logistiquePresentationFor(block: Pick<ExerciseBlock, 'logistique
   return block.logistiquePresentation ?? block.logistiqueGapMode
 }
 
+export const logistiquePresentationLabels = {
+  qcm: 'QCM à réponse unique',
+  'qcm-multiple': 'QCM à réponses multiples',
+  'vrai-faux': 'Vrai ou faux',
+  'associer-textes': 'Associations de termes et définitions',
+  'lignes-simples': 'Lignes simples',
+  'lignes-numerotees': 'Lignes numérotées',
+  'sans-liste': 'Texte à trous sans liste',
+  'avec-liste': 'Texte à trous avec liste',
+  'tableau-donnees': 'Tableau de données à compléter',
+  'tableau-dates': 'Tableau de dates à compléter',
+  'tableau-comparaison': 'Tableau de comparaison',
+  'tableau-classement': 'Classement par catégorie',
+  'tableau-ordre': 'Ordre des étapes',
+  'lire-document': 'Lecture de document professionnel',
+  'corriger-erreurs': 'Repérage et correction d’erreurs',
+  'frise-chronologique': 'Frise chronologique à compléter',
+  'justifier-decision': 'Décision à justifier',
+  'processus-a-completer': 'Processus à compléter',
+  'lire-graphique': 'Lecture de graphique',
+  'completer-graphique': 'Graphique à compléter',
+  'cas-mixte': 'Cas mixte',
+} as const satisfies Record<LogistiquePresentation, string>
+
 export function validLogistiquePresentation(type: LogistiqueType, presentation: unknown): boolean {
+  if (presentation === 'cas-mixte') return type.kind === 'situation'
   if (isLogistiqueTablePresentation(presentation)) return type.kind === 'verification' || type.kind === 'situation' ||
     (type.kind === 'maths' && (presentation === 'tableau-donnees' || presentation === 'tableau-dates'))
   if (presentation === 'qcm' || presentation === 'qcm-multiple' || presentation === 'vrai-faux' ||
@@ -213,7 +238,8 @@ export function validLogistiqueCataloguePages(pages: readonly CataloguePage[]): 
           !item.logistiqueGaps && !item.logistiqueTable && validResponseLines(item.logistiqueResponseLines))) &&
         (item?.logistiqueTable === undefined || (
           !item.logistiqueGaps && validLogistiqueExerciseTable(item.logistiqueTable) &&
-          validLogistiquePresentation(type, item.logistiqueTable.presentation))) &&
+          validLogistiquePresentation(type, item.logistiqueTable.presentation) &&
+          (item.logistiqueTable.presentation !== 'cas-mixte' || item.points === logistiqueCasePoints(item.logistiqueTable)))) &&
         (item?.logistiqueGaps === undefined || (type.kind === 'verification' && validLogistiqueGaps(item.prompt, item.logistiqueGaps)))) &&
       (view === undefined || (type.kind === 'theorie' && (view === 'complet' || view === 'resume')))
   }

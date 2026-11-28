@@ -2,7 +2,6 @@ import { isIndependentListProfile, liveEditorProfile, usesIndependentHalves } fr
 import { pageBlocks, setPageBlock } from '@/math/page-model'
 import type { ExerciseBlock, PageConfig, WorksheetPage } from '@/math/types'
 import { isLogistiqueDomain } from '@/logistique/catalog'
-import { isGrammaireTheoryType } from '@/grammaire/types'
 
 /** Format de la feuille imprimable. */
 export type SheetFormat = 'a4-portrait' | 'a5-double-landscape'
@@ -44,9 +43,7 @@ export function pairA5Worksheets(left: WorksheetPage[], right: WorksheetPage[]):
 export function pageForA5Half(page: PageConfig, half: 'left' | 'right'): PageConfig {
   const blocks = pageBlocks(page)
   const logistics = isLogistiqueDomain(page.domain)
-  let next: PageConfig = blocks.some(block => isGrammaireTheoryType(block.exerciseType))
-    ? { ...page, grammarTheoryPaper: 'a5' }
-    : page
+  let next: PageConfig = { ...page, worksheetPaper: 'a5' }
   blocks.forEach((block, index) => {
     const profile = liveEditorProfile(page.domain, block.exerciseType, 'a5-double-landscape', block.grammarPresentation)
     // Les deux exemplaires d’un document grammatical personnalisé utilisent sa sélection enregistrée.

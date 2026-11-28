@@ -1,8 +1,8 @@
 import { createRng, shuffle } from '@/math/rng'
-import type { ExerciseBlock, MathItem, PageConfig } from '@/math/types'
+import type { ExerciseBlock, LogistiquePresentation, MathItem, PageConfig } from '@/math/types'
 import { isLogistiqueDomain, type LogistiqueType } from './catalog'
 import { logistiqueVerdicts, validLogistiqueChoice } from './choices'
-import { generateLogistique } from './generate'
+import { generateLogistique, logistiqueQuestionItems } from './generate'
 import { validLogistiqueMatching } from './matching'
 import { validLogistiqueExerciseTable } from './tables'
 
@@ -60,6 +60,43 @@ export function availableLogistiqueQuestions(candidates: readonly MathItem[], ex
   }
   return candidates.filter((item) => item.logistiqueSource &&
     !ids.has(item.logistiqueSource.id) && !legacyPrompts.has(item.prompt ?? ''))
+}
+
+export function logistiqueItemPresentation(item: MathItem): LogistiquePresentation | undefined {
+  return item.logistiqueTable?.presentation ??
+    (item.logistiqueGaps ? item.logistiqueGaps.words ? 'avec-liste' : 'sans-liste'
+      : item.logistiqueResponseLines?.kind === 'simple' ? 'lignes-simples'
+      : item.logistiqueResponseLines?.kind === 'numbered' ? 'lignes-numerotees'
+      : item.logistiqueChoice?.kind === 'multiple' ? 'qcm-multiple'
+      : item.logistiqueChoice?.kind === 'true-false' ? 'vrai-faux'
+      : item.logistiqueMatching ? 'associer-textes'
+      : item.options?.length ? 'qcm' : undefined)
+}
+
+export function logistiqueReplacementChoices(type: LogistiqueType, previous: MathItem, existing: readonly MathItem[], revision?: string) {
+  if (previous.libreLocked) return []
+  const module = previous.logistiqueSource?.module ?? previous.logistiqueLocalModule ?? type.module
+  const presentation = logistiqueItemPresentation(previous)
+  const promptKey = (item: MathItem) => item.prompt?.normalize('NFKC').replace(/\s+/g, ' ').trim().toLowerCase()
+  const used = new Set(existing.map(promptKey))
+  const candidates = logistiqueQuestionItems(type, [module], revision, presentation)
+  return availableLogistiqueQuestions(candidates, existing).filter((candidate) => {
+    const prompt = promptKey(candidate)
+    if (used.has(prompt) || logistiqueItemPresentation(candidate) !== presentation ||
+        presentation === 'cas-mixte' && candidate.points !== previous.points) return false
+    used.add(prompt)
+    return true
+  })
+}
+
+export function assignLogistiqueReplacement(previous: MathItem, replacement: MathItem, protect: boolean): MathItem {
+  const { pointsLocked, minutes } = previous.logistiqueAssessment ?? {}
+  return {
+    ...replacement, libreId: previous.libreId, libreLocked: protect || undefined, logistiqueRetained: protect ? undefined : true,
+    points: previous.points, noPoints: previous.noPoints,
+    logistiqueAssessment: pointsLocked || minutes !== undefined
+      ? { ...replacement.logistiqueAssessment, pointsLocked, minutes } : replacement.logistiqueAssessment,
+  }
 }
 
 export function selectLogistiqueLot(candidates: MathItem[], count: number, seed: number): MathItem[] {

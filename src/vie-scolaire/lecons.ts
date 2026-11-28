@@ -1,26 +1,14 @@
-import type { FicheQuestion } from '@/francais/fiches-communication'
-import type { CompletionFiche } from '@/grammaire/exercises/completion-fiche'
-import type { SchoolLesson, SchoolPicture, SchoolWord } from './types'
+import { SCHOOL_A2_LESSONS } from './lecons-a2'
+import { SCHOOL_B1_LESSONS } from './lecons-b1'
+import { blank, choice, picture, word } from './lecon-supports'
+import type { SchoolLesson, SchoolWord } from './types'
 
-function picture(path: string, caption: string, description?: string): SchoolPicture {
-  return { src: `/lib/images/vie-scolaire/${path}.webp`, caption, alt: description ?? `Illustration à ajouter. ${caption}` }
-}
 function clock(time: string, caption: string, description: string) {
   return picture(`cadrans/${time}`, caption, description)
-}
-function word(label: string, clue: string, image?: SchoolPicture, pending = false): SchoolWord {
-  return { label, clue, image: image?.src, pending }
 }
 function object(label: string, clue: string, path: string): SchoolWord {
   return { label, clue, image: `/lib/images/vocabulaire/ecole-bureau/${path}.webp` }
 }
-function choice(prompt: string, answer: string, first: string, second: string, image?: SchoolPicture): FicheQuestion {
-  return { prompt, answer, options: [first, answer, second], image: image?.src }
-}
-function blank(prompt: string, answer: string, first: string, second: string, explanation: string): CompletionFiche {
-  return { prompt, answer, distractors: [first, second], explanation }
-}
-
 const Regles = [
   picture('reglement/attendre-son-tour', 'Je lève la main et j’attends.'),
   picture('reglement/ecouter-un-camarade', 'J’écoute la personne qui parle.'),
@@ -83,9 +71,9 @@ const Routine = [
   picture('quotidien/preparer-les-affaires-du-lendemain', 'Le soir, je prépare mes affaires.'),
 ] as const
 
-export const SCHOOL_LESSONS: readonly SchoolLesson[] = [
+const a1Lessons: readonly SchoolLesson[] = [
   {
-    id: 'reglement', title: 'Règlement de l’école', objective: 'Je comprends et j’applique les règles de ma classe.',
+    id: 'reglement', level: 'A1', title: 'Règlement de l’école', objective: 'Je comprends et j’applique les règles de ma classe.',
     situation: 'En classe, Malik veut poser une question. Il lève la main. Il attend que sa camarade termine.',
     pictures: Regles,
     steps: [
@@ -124,7 +112,7 @@ export const SCHOOL_LESSONS: readonly SchoolLesson[] = [
     write: { prompt: 'Écris deux règles pour ta classe. Une règle explique quand manger. Une règle explique comment demander la parole.', model: 'Je mange pendant la pause. Je lève la main avant de parler.' },
   },
   {
-    id: 'consignes', title: 'Consignes de classe', objective: 'Je comprends les verbes qui disent quoi faire.',
+    id: 'consignes', level: 'A1', title: 'Consignes de classe', objective: 'Je comprends les verbes qui disent quoi faire.',
     situation: 'Le professeur dit « Ouvrez votre cahier ». Les élèves ouvrent leur cahier.',
     pictures: [Consignes[4], Consignes[6], ...Traces],
     steps: [
@@ -169,7 +157,7 @@ export const SCHOOL_LESSONS: readonly SchoolLesson[] = [
     write: { prompt: 'Écris deux consignes pour une activité. Utilise deux verbes parmi les mots « lire », « entourer » et « souligner ».', model: 'Lis la phrase. Entoure le mot école.' },
   },
   {
-    id: 'materiel', title: 'Matériel scolaire', objective: 'Je nomme les objets de la classe. Je demande à emprunter un objet.',
+    id: 'materiel', level: 'A1', title: 'Matériel scolaire', objective: 'Je nomme les objets de la classe. Je demande à emprunter un objet.',
     situation: 'Nora a oublié sa règle. Elle demande une règle à un camarade.',
     pictures: Materiel,
     steps: [
@@ -214,7 +202,7 @@ export const SCHOOL_LESSONS: readonly SchoolLesson[] = [
     write: { prompt: 'Tu ne trouves plus ton cahier. Écris un message au secrétariat. Donne la couleur de ton cahier et le lieu où tu penses l’avoir laissé.', model: 'Bonjour, je cherche mon cahier rouge. Je pense qu’il est en salle 8. Merci.' },
   },
   {
-    id: 'heure', title: 'Lire et dire l’heure', objective: 'Je lis une horloge. Je dis l’heure d’un rendez-vous.',
+    id: 'heure', level: 'A1', title: 'Lire et dire l’heure', objective: 'Je lis une horloge. Je dis l’heure d’un rendez-vous.',
     situation: 'Le cours commence à 8 h. Je regarde l’horloge pour savoir si c’est le moment d’entrer.',
     pictures: [Heure[0], Heures[0], Heures[1], Heures[2], Heures[3], Heures[4], Heures[5], Heures[6]],
     steps: [
@@ -252,7 +240,7 @@ export const SCHOOL_LESSONS: readonly SchoolLesson[] = [
     write: { prompt: 'Écris un petit message pour proposer un rendez-vous samedi. Indique une heure et un lieu.', model: 'Bonjour, on se voit samedi à 10 h 15 devant l’école ? À bientôt !', picture: Heure[1] },
   },
   {
-    id: 'horaires', title: 'Horaires de l’école', objective: 'Je trouve le jour, le début et la fin d’un cours. Je préviens en cas de retard.',
+    id: 'horaires', level: 'A1', title: 'Horaires de l’école', objective: 'Je trouve le jour, le début et la fin d’un cours. Je préviens en cas de retard.',
     situation: 'Lundi, Ada regarde son emploi du temps. Elle cherche l’heure du cours de français.',
     pictures: Horaires,
     steps: [
@@ -295,7 +283,7 @@ export const SCHOOL_LESSONS: readonly SchoolLesson[] = [
     write: { prompt: 'Écris un message au secrétariat pour annoncer un retard. Indique ton nom, ton cours et ton heure d’arrivée.', model: 'Bonjour, je suis Ada Diallo, du cours de français. Mon bus est en retard. J’arriverai à 8 h 45. Merci.', picture: Horaires[3] },
   },
   {
-    id: 'lieux', title: 'Se repérer dans l’école', objective: 'Je demande où se trouve une salle. Je suis des indications simples.',
+    id: 'lieux', level: 'A1', title: 'Se repérer dans l’école', objective: 'Je demande où se trouve une salle. Je suis des indications simples.',
     situation: 'Sam cherche la salle 12. Il demande son chemin au secrétariat.',
     pictures: Lieux,
     steps: [
@@ -334,7 +322,7 @@ export const SCHOOL_LESSONS: readonly SchoolLesson[] = [
     write: { prompt: 'Un camarade cherche la salle 12. Écris un message. Donne l’étage et un repère.', model: 'Salut, la salle 12 est au premier étage, en face de la bibliothèque.' },
   },
   {
-    id: 'quotidien', title: 'Une journée à la maison', objective: 'Je décris ce que je fais le matin, après l’école et le soir.',
+    id: 'quotidien', level: 'A1', title: 'Une journée à la maison', objective: 'Je décris ce que je fais le matin, après l’école et le soir.',
     situation: 'Le matin, Ilyes s’habille et prend son petit déjeuner. Le soir, il prépare son sac pour le lendemain.',
     pictures: Routine,
     steps: [
@@ -373,3 +361,5 @@ export const SCHOOL_LESSONS: readonly SchoolLesson[] = [
     write: { prompt: 'Écris trois phrases sur ta journée. Commence par « Le matin », « Après l’école » et « Le soir ».', model: 'Le matin, je me lève à 7 h. Après l’école, je joue dehors. Le soir, je prépare mon sac.', picture: Routine[2] },
   },
 ]
+
+export const SCHOOL_LESSONS = [...a1Lessons, ...SCHOOL_A2_LESSONS, ...SCHOOL_B1_LESSONS]

@@ -213,11 +213,11 @@
 }
 
 :root {
-  --logistique-story-a5-scale: min(var(--sheet-font-scale, 1), 1);
+  --logistique-compact-a5-scale: min(var(--sheet-font-scale, 1), 1);
 }
 
-.a5-half.is-logistique.has-logistique-story {
-  --sheet-font-scale: var(--logistique-story-a5-scale, 1);
+.a5-half.is-logistique:is(.has-logistique-story, .has-compact-logistique-activity) {
+  --sheet-font-scale: var(--logistique-compact-a5-scale, 1);
 }
 
 .has-logistique-story .exercise-document-text {
@@ -295,6 +295,127 @@
 .logistique-timeline tbody tr:first-child td:first-child::before { top: 50%; }
 .logistique-timeline tbody tr:last-child td:first-child::before { bottom: 50%; }
 
+.logistique-process-flow {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: calc(13px * var(--app-font-scale, 1));
+  line-height: 1.35;
+}
+
+.logistique-process-flow li {
+  display: grid;
+  grid-template-columns: minmax(0, 33fr) minmax(0, 67fr);
+  gap: .65em;
+  padding: .4em .6em;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  position: relative;
+  overflow-wrap: anywhere;
+}
+
+.logistique-process-flow li + li { margin-top: 12px; }
+
+.logistique-process-flow li + li::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -11px;
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid var(--purple);
+  border-bottom: 1.5px solid var(--purple);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.logistique-process-action .logistique-table-blank { border-bottom: 1px solid var(--purple); }
+
+.a5-half .logistique-process-flow li { padding-block: .3em; }
+.a5-half .logistique-process-flow li + li { margin-top: 8px; }
+.a5-half .logistique-process-flow li + li::before { top: -7.5px; width: 5px; height: 5px; }
+
+.logistique-bar-chart {
+  --chart-height: 144px;
+  margin: 0;
+  font-size: calc(13px * var(--app-font-scale, 1));
+  line-height: 1.3;
+  break-inside: avoid;
+}
+
+.logistique-bar-chart figcaption { margin-bottom: 12px; }
+.a5-half .logistique-bar-chart { --chart-height: 92px; }
+
+.a5-half .prompt-stack:has(> .logistique-bar-chart) > .prompt-stack-text {
+  font-size: calc(13.5px * var(--app-font-scale, 1));
+  line-height: 1.3;
+}
+
+.logistique-chart-grid {
+  display: grid;
+  grid-template-columns: 2.8em minmax(0, 1fr);
+  column-gap: .5em;
+}
+
+.logistique-chart-ticks,
+.logistique-chart-plot { position: relative; height: var(--chart-height); }
+
+.logistique-chart-ticks span {
+  position: absolute;
+  right: 0;
+  transform: translateY(50%);
+  font-variant-numeric: tabular-nums;
+}
+
+.logistique-chart-plot {
+  border-inline-start: 1px solid var(--ink);
+  border-block-end: 1px solid var(--ink);
+}
+
+.logistique-chart-guide {
+  position: absolute;
+  inset-inline: 0;
+  border-top: 1px dashed #a9a7b5;
+}
+
+.logistique-chart-bars,
+.logistique-chart-labels {
+  display: grid;
+  grid-template-columns: repeat(var(--chart-columns), minmax(0, 1fr));
+  text-align: center;
+}
+
+.logistique-chart-bars { position: absolute; inset: 0; }
+.logistique-chart-labels { grid-column: 2; gap: 0; margin-block-start: 6px; overflow-wrap: anywhere; }
+
+.logistique-chart-column {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  border-inline-end: 1px dotted #c4c0ca;
+}
+
+.logistique-chart-bar {
+  position: relative;
+  width: 52%;
+  background: #d8c6eb;
+  border: 1px solid var(--purple);
+  box-sizing: border-box;
+  print-color-adjust: exact;
+}
+
+.logistique-chart-value {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  color: var(--purple);
+  font-size: .92em;
+}
+
+.logistique-chart-bar[data-short] .logistique-chart-value { transform: translate(-50%, -100%); }
+.logistique-chart-bar[data-zero] { border: 0; }
+
 .logistique-document-exercise .logistique-exercise-table caption {
   padding-bottom: 4px;
   text-align: left;
@@ -321,6 +442,24 @@
 .logistique-document-questions .answer-line-field {
   display: block;
   width: 100%;
+}
+
+.logistique-subquestion-points {
+  display: none;
+}
+
+.is-eval .logistique-subquestion-points {
+  display: inline-block;
+  margin-block-end: 3px;
+  font-weight: 700;
+}
+
+.logistique-mixed-case .problem-block .draft-pad {
+  --grid-rows: 4;
+}
+
+.a5-half .logistique-mixed-case .problem-block .draft-pad {
+  --grid-rows: 2;
 }
 
 .a5-half .exercise-block:has(.logistique-document-exercise) .exercise-heading {

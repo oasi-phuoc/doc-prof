@@ -1,13 +1,13 @@
 # Suivi des exercices d’algèbre et de géométrie
 
-**Mise à jour le 27 novembre 2026**
+**Mise à jour le 28 novembre 2026**
 
 [Cahier des charges · version 1.0](cahier-des-charges.md)
 
 | Lot | État | Preuve ou étape suivante |
 |---|---|---|
 | M0 · Inventaire | Réalisé | Comparaison des deux livrets et d’un échantillon des fiches Word et PDF CSC/CFR avec les 25 thèmes et 221 entrées du catalogue. Les tableaux du cahier rattachent les compléments aux supports de cours. |
-| Théories illustrées | 49 pages pour 23 thèmes | 18 pages ont été ajoutées après comparaison au catalogue. Elles couvrent les groupements, l’échange à travers zéro, la centaine, la multiplication et la division posées, les décimaux, les formes, les angles et les mesures. Le titre de la fiche, la question qui ouvre l’explication et les titres « Les mots » et « Les étapes » ont des rôles distincts. Les numéros d’étape sont en gras. |
+| Théories illustrées | 142 pages pour 23 thèmes | Les nouvelles pages couvrent les méthodes des exercices du catalogue. Une méthode peut servir à plusieurs variantes d’exercice. Les calculs en ligne et à trou arrivent avant les opérations en colonne. Les équations et les systèmes ont des pages distinctes. |
 | M1 · Algèbre | Premier pilote intégré | **Additions → Addition avec retenue, pas à pas.** Un exemple associe la retenue et la somme à leurs chiffres par la couleur et la place dans le tableau. Puis l’élève complète un calcul avec les colonnes nommées et un calcul sans cette aide. Les niveaux font travailler une ou deux retenues. Le corrigé remplit les cases. |
 | M1 · Géométrie | Premier pilote intégré | **Conversions d’unités → Lire un segment sur une règle.** L’exemple montre un segment entre 2 et 7 cm. L’élève lit ensuite les graduations pour trouver une longueur avec puis sans les libellés de départ et d’arrivée. Les niveaux proposent des lectures au zéro et ailleurs sur la règle, en centimètres ou en millimètres. Le corrigé montre la soustraction. |
 | M1 · Soustraction | Intégrée | **Soustractions → Soustraction avec échange, pas à pas.** L’exemple montre pourquoi 42 s’écrit avec 3 dizaines et 12 unités pendant le calcul. Les niveaux moyen et avancé introduisent le passage d’une centaine aux unités à travers un zéro. |
@@ -18,11 +18,11 @@
 | M2 · Décimaux | Intégré | **Décimaux → Lire des décimaux sur une droite.** Lire un pas de 0,1 ou 0,01, puis retrouver le nombre indiqué par une flèche. |
 | M2 · Formes | Intégré | **Figures → Reconnaître une forme tournée.** Compter les côtés et nommer un triangle, un rectangle ou un carré dans différentes orientations. |
 | M2 · Mesures | Intégré | **Conversions d’unités → Additionner des cm et des mm.** Choisir les millimètres comme unité commune avant de calculer le total. |
-| M2 · Problèmes courts | À compléter | Décliner les démarches illustrées dans les horaires, les prix et les distances. |
+| M2 · Problèmes courts | Intégré | **Algèbre → Problèmes** propose **Calculer une durée**, **Calculer un prix total** et **Calculer une distance**. Chaque série commence par un exemple résolu. Le premier problème donne un schéma pour repérer les données. Le deuxième laisse l’élève retrouver les données dans le texte. |
 | M3 · Progression CFR | Six exercices guidés intégrés | **Algèbre** propose une fraction d’une quantité, une lecture de graphique et une équation. **Géométrie → Transformations géométriques** propose la rotation d’un quart de tour et les deux symétries. Chaque série commence par un exemple résolu et donne une aide sur la première question. |
 | M4 · Évaluations | Prévu | Séries comparables et mini-évaluations après les essais avec les élèves. |
 
-Pour les prochaines complétions de théorie, l’inventaire relève la comparaison et le calcul avec les fractions, les opérations avec les nombres relatifs, les priorités de calcul, et la conversion des masses et capacités. La relecture avec les élèves reste prévue pour les théories et les exercices FALC.
+La relecture avec les élèves reste prévue pour les théories et les exercices FALC.
 
 Les exercices CFR partent d’un partage de jetons, de températures à midi, d’emprunts de livres ou d’une figure sur quadrillage. Au niveau avancé, l’élève compare deux barres du graphique, isole x en deux étapes ou applique la transformation à un nouveau triangle. Le corrigé reprend les données de la fiche, indique le calcul ou trace l’image du triangle. Les contrôles de génération couvrent 128 graines pour chacun des trois niveaux. Les fiches élève et les corrigés du niveau avancé ont été vérifiés en A4 et en double A5.
 
@@ -34,7 +34,38 @@ Les quatre exercices suivants ont aussi été contrôlés en PDF A4 et double A5
 
 Les 49 pages de théorie et les quatre exercices M2 ont été contrôlés en A4 et en double A5. Le contrôle couvre les titres, le chargement des illustrations, la tenue dans chaque format et l’affichage des corrigés. Les 60 fonds ont été vérifiés en A4 avec leurs repères communs. Le changement du lieu et du fond a été testé avec Sion et Ardon, puis le corrigé d’Ardon a été contrôlé en double A5.
 
-### Sources du plan de Sion
+## Problèmes courts
+
+| Série | Exemple et progression |
+|---|---|
+| Horaires | Une frise indique le départ et l’arrivée. Au début, les deux horaires sont dans la même heure. Ensuite, l’exemple montre le passage à l’heure suivante. Le niveau avancé utilise des horaires à la minute près. |
+| Prix | Deux étiquettes indiquent les prix en CHF. La progression va des francs entiers aux centimes, puis à une addition où les centimes dépassent un franc. |
+| Distances | Un schéma montre deux parties d’un trajet. L’élève additionne des mètres, puis convertit des kilomètres en mètres. Au niveau avancé, l’élève calcule les longueurs de deux trajets et choisit le plus court. |
+
+Les énoncés utilisent des situations fictives. Les corrigés reprennent les nombres de l’énoncé, montrent les étapes du calcul et se terminent par une phrase avec l’unité. En mode Libre, la modification d’une donnée met à jour l’énoncé, le schéma et le corrigé. La relecture avec les élèves reste prévue.
+
+Les deux problèmes se suivent sur la fiche A4. En double A5, chaque problème occupe une demi-fiche pour laisser la place au calcul et à la réponse.
+
+Les trois niveaux de chaque série ont été vérifiés en A4 et en double A5, avec la fiche élève et le corrigé. Un contrôle sur 256 graines par série et par niveau vérifie les données du dessin, l’unité, le calcul et la variété des énoncés.
+
+## Théories par compétence et images pour l’impression
+
+- Les quatre opérations commencent par une manipulation de pommes dessinées. Une page montre le calcul en ligne et une autre explique comment trouver le nombre manquant. Les pages de calcul posé restent dans la suite. [Calculs en ligne](../../src/math/simple-arithmetic-theory.ts)
+- La théorie des problèmes compare deux quantités avec « de plus » et « de moins ». Elle montre aussi comment retrouver la plus petite quantité quand l’énoncé donne la plus grande en utilisant « de plus ».
+- La théorie des équations commence avec une inconnue. Elle aborde l’inconnue des deux côtés, les fractions, les carrés et les racines. Les systèmes présentent la lecture du couple, la substitution et l’addition, y compris la préparation des termes à annuler. [Équations](../../src/math/equation-theory.ts)
+- Les autres pages suivent les familles d’exercices. Elles ajoutent notamment les tableaux d’opérations, les fractions, les relatifs, les expressions, les conversions, les figures dans l’espace et les calculs de mesures manquantes. [Progression en algèbre](../../src/math/theory-algebra.json) · [Progression en géométrie](../../src/math/theory-geometry.json)
+- Les nouvelles illustrations sont des PNG. Les pommes sont des objets dessinés sur fond transparent. Les figures tournées utilisent trois PNG transparents. [Génération des illustrations](../../scripts/build-math-theory-assets.py)
+
+Les 142 pages ont été contrôlées dans le rendu A4 et double A5. Le contrôle couvre les illustrations, les titres propres aux leçons, la taille commune de la question et des rubriques, et la tenue de chaque page dans son format.
+
+| Éléments graphiques à préparer pour les fiches suivantes | Contenu du visuel PNG |
+|---|---|
+| Mesure à la règle | Graduations, nombres, deux extrémités du segment. Conserver la cote physique à l’impression. |
+| Périmètre et aire | Contour épaissi, surface hachurée et cotes, à partir des dimensions générées. |
+| Translation | Quadrillage, figure de départ, flèches de déplacement et figure du corrigé, calculés sur les mêmes sommets. |
+| Plan de ville | Les fonds sont déjà des images. Les éléments à préparer sont le quadrillage, les lettres, les chiffres et les points nommés. |
+
+## Sources du plan de Sion
 
 La photo provient de SWISSIMAGE et porte le crédit © swisstopo sur la fiche. L’emprise LV95 va de 2 593 720 E, 1 120 070 N à 2 594 660 E, 1 120 697 N. Les repères de Saint-Théodule, Valère et Tourbillon reprennent les coordonnées fédérales. Le point de l’hôtel de ville reprend le registre cantonal. [SWISSIMAGE](https://www.swisstopo.admin.ch/fr/orthophotos-swissimage-10-cm) · [Conditions d’utilisation](https://www.swisstopo.admin.ch/fr/conditions-geodonnees) · [Registre fédéral](https://www.bak.admin.ch/dam/bak/de/dokumente/kulturpflege/publikationen/verzeichnis_der_denkmaelerensemblesundarchaeologischenstaettenvo.pdf.download.pdf/verzeichnis_der_denkmaelerensemblesundarchaeologischenstaettenvo.pdf) · [Registre valaisan](https://lex.vs.ch/api/fr/versions/1935/pdf_file)
 

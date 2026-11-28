@@ -1,6 +1,6 @@
 # Vie scolaire · inventaire des visuels
 
-Cet inventaire fixe le contenu et l’emplacement de chaque illustration. À l’intégration, réserver les futurs visuels avec des fichiers WebP individuels de 1200 × 900 au minimum. Les 31 emplacements des sept thèmes A1 sont en place. Les huit cadrans et les quatre modèles de consignes sont définitifs. Le modèle provisoire commun est écarté de la galerie. Les noms ci-dessous sont relatifs à `public/lib/images/vie-scolaire/`. Le même chemin sera repris pour l’image définitive. Le texte alternatif du fichier provisoire indique l’image à ajouter. À la livraison d’une scène, remplacez l’image au même chemin et renseignez sa description réelle dans la leçon. Les cartes de vocabulaire peuvent alors utiliser la scène pour le mode « Retrouver les mots ».
+Les 72 scènes ont un emplacement dans les fiches. 35 reprennent une illustration du catalogue ClairFLE et 37 illustrations originales complètent le parcours. Sur les 72 scènes, toutes sont disponibles. Les huit cadrans et les quatre modèles de consignes sont définitifs. Les chemins ci-dessous sont relatifs à `public/lib/images/vie-scolaire/`. Les scènes disponibles gardent leur cadrage 4:3 et leur définition d’origine. Le registre conserve leur texte alternatif et, pour les réemplois, leur chemin source. Le catalogue affiche chaque image à son chemin d’origine. [Registre des illustrations](../../src/vie-scolaire/illustrations.json)
 
 Les images de lexique montrent un objet ou un geste identifiable. Une scène de théorie met l’action en évidence et garde un décor simple. Dans une activité de compréhension, les éléments utiles à la question sont lisibles dans le document ou l’audio. Les illustrations définitives respectent le style semi-réaliste de ClairFLE. [Cahier des charges](cahier-des-charges.md)
 
@@ -18,109 +18,109 @@ Vérifier visuellement le cadrage et la lisibilité avant d’affecter une image
 | Lever la main et écrire | [Lever la main](../../public/lib/images/vocabulaire/actions/lever-la-main.webp) · [Écrire](../../public/lib/images/vocabulaire/actions/ecrire.webp) | Identifier le geste avant de l’utiliser dans une situation. |
 | Horloge et montre | [Horloge](../../public/lib/images/vocabulaire/heure-horloge/horloge.webp) · [Montre](../../public/lib/images/vocabulaire/accessoires/montre.webp) | Nommer les objets. Les activités de lecture de l’heure utilisent les cadrans exacts ci-dessous. |
 
-## Illustrations provisoires à placer
+## Scènes par thème
 
 ### A1 · Règlement, consignes et matériel
 
-| Chemin prévu | Support | Action ou repère visible |
-|---|---|---|
-| `reglement/attendre-son-tour.webp` | Théorie, PO | Une élève lève la main et attend pendant qu’un camarade parle. |
-| `reglement/ecouter-un-camarade.webp` | Théorie | Un élève parle et ses camarades l’écoutent calmement. |
-| `reglement/manger-pendant-la-pause.webp` | Théorie, CE | Deux élèves mangent leur collation dans l’espace de pause. |
-| `reglement/ranger-le-telephone.webp` | Lexique, théorie | Une personne range son téléphone dans son sac avant le cours. |
-| `reglement/demander-de-repeter.webp` | Théorie, PO | Une personne s’adresse à l’enseignante après avoir levé la main, avec un livre ouvert. |
-| `reglement/conversation-en-francais.webp` | Théorie | Deux personnes font une activité de dialogue en français, avec une fiche structurée entre elles. |
-| `reglement/ranger-sa-place.webp` | Théorie | Une personne ramasse ses feuilles et rend le matériel partagé. |
-| `reglement/marcher-dans-le-couloir.webp` | Théorie, CE | Des élèves marchent dans le couloir en laissant le passage libre. |
-| `consignes/ecouter.webp` | Lexique | Une personne regarde celle qui parle et laisse ses affaires posées. |
-| `consignes/regarder.webp` | Lexique | Une personne suit avec les yeux le repère que montre l’enseignant. |
-| `consignes/repeter.webp` | Lexique | Une personne prononce à son tour le mot montré par l’enseignante. |
-| `consignes/lire.webp` | Lexique | Une personne lit une ligne, le doigt placé sous le début de la ligne. |
-| `consignes/ouvrir-le-cahier.webp` | Lexique, théorie | Un cahier s’ouvre. Le geste et la couverture se voient. |
-| `consignes/copier.webp` | Lexique | Une personne recopie un modèle depuis le tableau sur sa feuille. |
-| `consignes/completer.webp` | Lexique, théorie | Une personne écrit dans un blanc. La différence entre le modèle et le blanc se voit. |
-| `consignes/ranger-la-feuille.webp` | Lexique | Une personne glisse une feuille dans un classeur ouvert. |
-| `materiel/preparer-le-cartable.webp` | Théorie | Un sac ouvert près d’une liste de matériel, avec les objets bien séparés. |
-| `materiel/preter-une-regle.webp` | Théorie, PO | Une personne tend une règle à une autre. |
-| `materiel/rendre-le-materiel.webp` | Théorie, PO | Les mêmes personnes se rendent la règle après l’activité. |
+| Chemin prévu | État | Support | Action ou repère attendu |
+|---|---|---|---|
+| `reglement/attendre-son-tour.webp` | Disponible | Théorie, PO | Une élève lève la main et attend pendant qu’un camarade parle. |
+| `reglement/ecouter-un-camarade.webp` | Disponible | Théorie | Un élève parle et ses camarades l’écoutent calmement. |
+| `reglement/manger-pendant-la-pause.webp` | Disponible | Théorie, CE | Deux élèves mangent leur collation dans l’espace de pause. |
+| `reglement/ranger-le-telephone.webp` | Disponible | Lexique, théorie | Une personne range son téléphone dans son sac avant le cours. |
+| `reglement/demander-de-repeter.webp` | Disponible | Théorie, PO | Une personne s’adresse à l’enseignante après avoir levé la main, avec un livre ouvert. |
+| `reglement/conversation-en-francais.webp` | Disponible | Théorie | Deux personnes font une activité de dialogue en français, avec une fiche structurée entre elles. |
+| `reglement/ranger-sa-place.webp` | Disponible | Théorie | Une personne ramasse ses feuilles et rend le matériel partagé. |
+| `reglement/marcher-dans-le-couloir.webp` | Disponible | Théorie, CE | Des élèves marchent dans le couloir en laissant le passage libre. |
+| `consignes/ecouter.webp` | Disponible | Lexique | Une personne regarde celle qui parle et laisse ses affaires posées. |
+| `consignes/regarder.webp` | Disponible | Lexique | Une personne suit avec les yeux le repère que montre l’enseignant. |
+| `consignes/repeter.webp` | Disponible | Lexique | Une personne prononce à son tour le mot montré par l’enseignante. |
+| `consignes/lire.webp` | Disponible | Lexique | Une personne lit une ligne, le doigt placé sous le début de la ligne. |
+| `consignes/ouvrir-le-cahier.webp` | Disponible | Lexique, théorie | Un cahier s’ouvre. Le geste et la couverture se voient. |
+| `consignes/copier.webp` | Disponible | Lexique | Une personne recopie un modèle depuis le tableau sur sa feuille. |
+| `consignes/completer.webp` | Disponible | Lexique, théorie | Une personne écrit dans un blanc. La différence entre le modèle et le blanc se voit. |
+| `consignes/ranger-la-feuille.webp` | Disponible | Lexique | Une personne glisse une feuille dans un classeur ouvert. |
+| `materiel/preparer-le-cartable.webp` | Disponible | Théorie | Un sac ouvert près d’une liste de matériel, avec les objets bien séparés. |
+| `materiel/preter-une-regle.webp` | Disponible | Théorie, PO | Une personne tend une règle à une autre. |
+| `materiel/rendre-le-materiel.webp` | Disponible | Théorie, PO | Les mêmes personnes se rendent la règle après l’activité. |
 
 ### A1 · Heure et horaires
 
-| Chemin prévu | Support | Action ou repère visible |
-|---|---|---|
-| `heure/regarder-lhorloge.webp` | Théorie | En classe, une personne se tourne vers l’horloge. L’heure précise est donnée par un cadran préparé pour la fiche. |
-| `heure/fixer-un-rendez-vous.webp` | PO, PE | Deux personnes se mettent d’accord sur un lieu et un moment. |
-| `horaires/lire-lemploi-du-temps.webp` | Théorie | Un élève repère une ligne d’un emploi du temps affiché. Le tableau lisible est fourni séparément. |
-| `horaires/arriver-en-classe.webp` | Théorie | L’arrivée dans la salle et les affaires prêtes au début du cours sont visibles. |
-| `horaires/pause-et-reprise.webp` | Théorie | Des élèves terminent leur pause et reviennent vers l’entrée de la salle. |
-| `horaires/prevenir-le-secretariat.webp` | PO, PE | Une personne téléphone. Le secrétariat prend note de la demande. |
+| Chemin prévu | État | Support | Action ou repère attendu |
+|---|---|---|---|
+| `heure/regarder-lhorloge.webp` | Disponible | Théorie | En classe, une personne se tourne vers l’horloge. L’heure précise est donnée par un cadran préparé pour la fiche. |
+| `heure/fixer-un-rendez-vous.webp` | Disponible | PO, PE | Deux personnes se mettent d’accord sur un lieu et un moment. |
+| `horaires/lire-lemploi-du-temps.webp` | Disponible | Théorie | Un élève repère une ligne d’un emploi du temps affiché. Le tableau lisible est fourni séparément. |
+| `horaires/arriver-en-classe.webp` | Disponible | Théorie | L’arrivée dans la salle et les affaires prêtes au début du cours sont visibles. |
+| `horaires/pause-et-reprise.webp` | Disponible | Théorie | Des élèves terminent leur pause et reviennent vers l’entrée de la salle. |
+| `horaires/prevenir-le-secretariat.webp` | Disponible | PO, PE | Une personne téléphone. Le secrétariat prend note de la demande. |
 
 ### A2 · Achats, immeuble, clubs et sport
 
-| Chemin prévu | Support | Action ou repère visible |
-|---|---|---|
-| `papeterie/chercher-un-cahier.webp` | Théorie, CE | Une personne regarde des cahiers de deux formats en rayon. |
-| `papeterie/demander-au-vendeur.webp` | PO | Une personne montre le format qu’elle cherche. Le vendeur présente deux articles. |
-| `papeterie/verifier-le-ticket.webp` | Théorie, PE | La liste et le reçu sont comparés au comptoir. Le reçu lisible est fourni séparément. |
-| `immeuble/lire-lavis.webp` | Théorie, CE | Un habitant lit un avis dans le hall. |
-| `immeuble/garder-le-passage-libre.webp` | Théorie | Une personne déplace un carton pour dégager l’accès à l’escalier. |
-| `immeuble/ranger-le-velo.webp` | Théorie, lexique | Une personne conduit son vélo dans le local, avec les râteliers visibles. |
-| `immeuble/parler-avec-un-voisin.webp` | PO | Deux voisins se parlent au sujet d’un espace partagé, dans une attitude calme. |
-| `clubs/atelier-dessin.webp` | Théorie, CE | Des élèves dessinent autour d’une table dans un atelier après les cours. |
-| `clubs/atelier-theatre.webp` | Théorie, CE | Une petite troupe répète. Une personne tient son texte et une autre joue son rôle. |
-| `clubs/demander-une-seance-dessai.webp` | PO, PE | Une personne demande des renseignements à l’accueil d’un club. |
-| `sport/preparer-la-tenue.webp` | Théorie, lexique | Chaussures propres, gourde et tenue près d’un sac de sport. |
-| `sport/echauffement.webp` | Théorie | Un entraîneur guide un échauffement avec des participants différents. |
-| `sport/attendre-son-tour.webp` | Théorie, PO | Des jeunes attendent leur tour devant le panier. Une personne joue. |
-| `sport/prevenir-son-equipe.webp` | PO, PE | Une personne prépare un message au club depuis son téléphone. |
+| Chemin prévu | État | Support | Action ou repère attendu |
+|---|---|---|---|
+| `papeterie/chercher-un-cahier.webp` | Disponible | Théorie, CE | Une personne regarde des cahiers de deux formats en rayon. |
+| `papeterie/demander-au-vendeur.webp` | Disponible | PO | Une personne montre le format qu’elle cherche. Le vendeur présente deux articles. |
+| `papeterie/verifier-le-ticket.webp` | Disponible | Théorie, PE | La liste et le reçu sont comparés au comptoir. Le reçu lisible est fourni séparément. |
+| `immeuble/lire-lavis.webp` | Disponible | Théorie, CE | Un habitant lit un avis dans le hall. |
+| `immeuble/garder-le-passage-libre.webp` | Disponible | Théorie | Une personne déplace un carton pour dégager l’accès à l’escalier. |
+| `immeuble/ranger-le-velo.webp` | Disponible | Théorie, lexique | Une personne conduit son vélo dans le local, avec les râteliers visibles. |
+| `immeuble/parler-avec-un-voisin.webp` | Disponible | PO | Deux voisins se parlent au sujet d’un espace partagé, dans une attitude calme. |
+| `clubs/atelier-dessin.webp` | Disponible | Théorie, CE | Des élèves dessinent autour d’une table dans un atelier après les cours. |
+| `clubs/atelier-theatre.webp` | Disponible | Théorie, CE | Une petite troupe répète. Une personne tient son texte et une autre joue son rôle. |
+| `clubs/demander-une-seance-dessai.webp` | Disponible | PO, PE | Une personne demande des renseignements à l’accueil d’un club. |
+| `sport/preparer-la-tenue.webp` | Disponible | Théorie, lexique | Chaussures propres, gourde et tenue près d’un sac de sport. |
+| `sport/echauffement.webp` | Disponible | Théorie | Un entraîneur guide un échauffement avec des participants différents. |
+| `sport/attendre-son-tour.webp` | Disponible | Théorie, PO | Des jeunes attendent leur tour devant le panier. Une personne joue. |
+| `sport/prevenir-son-equipe.webp` | Disponible | PO, PE | Une personne prépare un message au club depuis son téléphone. |
 
 ### A2 · Week-end et vacances
 
-| Chemin prévu | Support | Action ou repère visible |
-|---|---|---|
-| `week-end/faire-les-courses.webp` | Théorie, CE | Le personnage du récit choisit des produits avec une liste le samedi matin. |
-| `week-end/jouer-en-salle.webp` | CE | Le même personnage joue en intérieur, dans l’étape suivante du récit. |
-| `week-end/se-promener-au-parc.webp` | CE, PO | Le même personnage marche au parc avec sa sœur. |
-| `week-end/se-reposer-a-la-maison.webp` | Théorie, PE | Une autre personne se repose à la maison, avec un livre à proximité. |
-| `vacances/preparer-le-sac.webp` | Théorie, lexique | Sac ouvert avec chapeau, serviette, gourde et vêtement léger. |
-| `vacances/sortie-pres-du-lac.webp` | CE, PO | Petit groupe en promenade près d’un lac avec un sac de pique-nique. |
-| `vacances/atelier-en-cas-de-pluie.webp` | Théorie, CE | Groupe en atelier à l’intérieur. La pluie est visible à la fenêtre. |
-| `vacances/attendre-au-rendez-vous.webp` | PO, PE | Une personne attend le groupe à un rendez-vous devant un bâtiment public. |
+| Chemin prévu | État | Support | Action ou repère attendu |
+|---|---|---|---|
+| `week-end/faire-les-courses.webp` | Disponible | Théorie, CE | Le personnage du récit choisit des produits avec une liste le samedi matin. |
+| `week-end/jouer-en-salle.webp` | Disponible | CE | Le même personnage joue en intérieur, dans l’étape suivante du récit. |
+| `week-end/se-promener-au-parc.webp` | Disponible | CE, PO | Le même personnage marche au parc avec sa sœur. |
+| `week-end/se-reposer-a-la-maison.webp` | Disponible | Théorie, PE | Une autre personne se repose à la maison, avec un livre à proximité. |
+| `vacances/preparer-le-sac.webp` | Disponible | Théorie, lexique | Sac ouvert avec chapeau, serviette, gourde et vêtement léger. |
+| `vacances/sortie-pres-du-lac.webp` | Disponible | CE, PO | Petit groupe en promenade près d’un lac avec un sac de pique-nique. |
+| `vacances/atelier-en-cas-de-pluie.webp` | Disponible | Théorie, CE | Groupe en atelier à l’intérieur. La pluie est visible à la fenêtre. |
+| `vacances/attendre-au-rendez-vous.webp` | Disponible | PO, PE | Une personne attend le groupe à un rendez-vous devant un bâtiment public. |
 
 ### B1 · Vie de groupe et organisation
 
-| Chemin prévu | Support | Action ou repère visible |
-|---|---|---|
-| `vie-de-classe/lire-au-calme.webp` | CE, PO | Une personne lit une fiche dans un espace calme de la classe. |
-| `vie-de-classe/pratiquer-a-loral.webp` | CE, PO | Deux personnes travaillent à l’oral avec une fiche de dialogue. |
-| `vie-de-classe/discuter-dune-regle.webp` | Théorie, PO | Un groupe examine une proposition. Une personne parle, les autres écoutent. |
-| `sortie/comparer-deux-offres.webp` | Théorie | Deux élèves comparent des programmes sur une table. Les textes utiles sont fournis dans la fiche. |
-| `sortie/visiter-un-musee.webp` | CE, PO | Entrée de musée avec un accès de plain-pied et un groupe qui arrive. |
-| `sortie/choisir-la-balade.webp` | CE, PO | Petit groupe à l’entrée d’un parc, avec un chemin et un panneau de départ. |
-| `sortie/accueillir-le-groupe.webp` | PO, PE | À un point de rendez-vous, une personne vérifie la liste du groupe. |
+| Chemin prévu | État | Support | Action ou repère attendu |
+|---|---|---|---|
+| `vie-de-classe/lire-au-calme.webp` | Disponible | CE, PO | Une personne lit une fiche dans un espace calme de la classe. |
+| `vie-de-classe/pratiquer-a-loral.webp` | Disponible | CE, PO | Deux personnes travaillent à l’oral avec une fiche de dialogue. |
+| `vie-de-classe/discuter-dune-regle.webp` | Disponible | Théorie, PO | Un groupe examine une proposition. Une personne parle, les autres écoutent. |
+| `sortie/comparer-deux-offres.webp` | Disponible | Théorie | Deux élèves comparent des programmes sur une table. Les textes utiles sont fournis dans la fiche. |
+| `sortie/visiter-un-musee.webp` | Disponible | CE, PO | Entrée de musée avec un accès de plain-pied et un groupe qui arrive. |
+| `sortie/choisir-la-balade.webp` | Disponible | CE, PO | Petit groupe à l’entrée d’un parc, avec un chemin et un panneau de départ. |
+| `sortie/accueillir-le-groupe.webp` | Disponible | PO, PE | À un point de rendez-vous, une personne vérifie la liste du groupe. |
 
 ### École, université et quotidien à la maison
 
-| Chemin prévu | Support | Action ou repère visible |
-|---|---|---|
-| `lieux/chercher-une-salle.webp` | Théorie, PO | Une élève compare le numéro lu sur sa note avec celui de la porte. |
-| `lieux/demander-au-secretariat.webp` | CE, PO | Une personne demande où aller au secrétariat de l’école. |
-| `lieux/entrer-a-la-bibliotheque.webp` | Lexique, théorie | Une personne arrive devant le comptoir de prêt de la bibliothèque. |
-| `quotidien/se-lever.webp` | Théorie | Une personne éteint son réveil le matin. |
-| `quotidien/prendre-le-petit-dejeuner.webp` | Lexique, théorie | La même personne prend son petit déjeuner. |
-| `quotidien/preparer-les-affaires-du-lendemain.webp` | PO, PE | La même personne prépare ses affaires le soir. |
-| `devoirs/noter-un-devoir.webp` | Théorie, CE | Une personne note le travail du lendemain dans son agenda ouvert. |
-| `devoirs/demander-une-explication.webp` | PO | Une personne montre une ligne de son exercice et demande de l’aide. |
-| `devoirs/reviser-a-deux.webp` | Théorie, PO | Deux élèves comparent leurs notes à la bibliothèque. |
-| `inscription/preparer-son-dossier.webp` | Théorie, CE | Une personne rassemble un formulaire et des pièces fictives. Le document lisible est fourni à part. |
-| `inscription/deposer-le-dossier.webp` | PO | Une personne présente son dossier au guichet d’une université. |
-| `inscription/recevoir-sa-carte.webp` | Théorie, PE | Une étudiante reçoit une carte sans données lisibles. |
-| `foyer/ranger-une-piece.webp` | Théorie, lexique | Une personne range des objets par type dans une pièce. |
-| `foyer/faire-la-vaisselle.webp` | Lexique, PO | Une personne lave une assiette dans l’évier. |
-| `foyer/repartir-les-taches.webp` | Théorie, PO | Deux personnes se mettent d’accord en regardant un tableau de tâches. |
-| `examens/lire-la-convocation.webp` | Théorie, CE | Une personne vérifie la salle et l’heure. La convocation lisible est fournie à part. |
-| `examens/se-presenter-a-lecrit.webp` | Théorie, PO | Une personne présente sa convocation à l’entrée de la salle d’examen. |
-| `examens/poser-une-question-sur-le-resultat.webp` | PO, PE | Une personne demande au secrétariat quelle démarche faire après un résultat. |
+| Chemin prévu | État | Support | Action ou repère attendu |
+|---|---|---|---|
+| `lieux/chercher-une-salle.webp` | Disponible | Théorie, PO | Une élève compare le numéro lu sur sa note avec celui de la porte. |
+| `lieux/demander-au-secretariat.webp` | Disponible | CE, PO | Une personne demande où aller au secrétariat de l’école. |
+| `lieux/entrer-a-la-bibliotheque.webp` | Disponible | Lexique, théorie | Une personne arrive devant le comptoir de prêt de la bibliothèque. |
+| `quotidien/se-lever.webp` | Disponible | Théorie | Une personne éteint son réveil le matin. |
+| `quotidien/prendre-le-petit-dejeuner.webp` | Disponible | Lexique, théorie | La même personne prend son petit déjeuner. |
+| `quotidien/preparer-les-affaires-du-lendemain.webp` | Disponible | PO, PE | La même personne prépare ses affaires le soir. |
+| `devoirs/noter-un-devoir.webp` | Disponible | Théorie, CE | Une personne note le travail du lendemain dans son agenda ouvert. |
+| `devoirs/demander-une-explication.webp` | Disponible | PO | Une personne montre une ligne de son exercice et demande de l’aide. |
+| `devoirs/reviser-a-deux.webp` | Disponible | Théorie, PO | Deux élèves comparent leurs notes à la bibliothèque. |
+| `inscription/preparer-son-dossier.webp` | Disponible | Théorie, CE | Une personne rassemble un formulaire et des pièces fictives. Le document lisible est fourni à part. |
+| `inscription/deposer-le-dossier.webp` | Disponible | PO | Une personne présente son dossier au guichet d’une université. |
+| `inscription/recevoir-sa-carte.webp` | Disponible | Théorie, PE | Une étudiante reçoit une carte sans données lisibles. |
+| `foyer/ranger-une-piece.webp` | Disponible | Théorie, lexique | Une personne range des objets par type dans une pièce. |
+| `foyer/faire-la-vaisselle.webp` | Disponible | Lexique, PO | Une personne lave une assiette dans l’évier. |
+| `foyer/repartir-les-taches.webp` | Disponible | Théorie, PO | Deux personnes se mettent d’accord en regardant un tableau de tâches. |
+| `examens/lire-la-convocation.webp` | Disponible | Théorie, CE | Une personne vérifie la salle et l’heure. La convocation lisible est fournie à part. |
+| `examens/se-presenter-a-lecrit.webp` | Disponible | Théorie, PO | Une personne présente sa convocation à l’entrée de la salle d’examen. |
+| `examens/poser-une-question-sur-le-resultat.webp` | Disponible | PO, PE | Une personne demande au secrétariat quelle démarche faire après un résultat. |
 
 ## Documents et schémas à réaliser à l’intégration
 

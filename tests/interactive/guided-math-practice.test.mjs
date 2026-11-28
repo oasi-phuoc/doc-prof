@@ -17,6 +17,7 @@ try {
   const { defaultPage } = await server.ssrLoadModule('/src/math/catalog.ts')
   const practice = await server.ssrLoadModule('/src/math/guided-practice.ts')
   const fundamentals = await server.ssrLoadModule('/src/math/fundamental-practice.ts')
+  const shortProblems = await server.ssrLoadModule('/src/math/short-problems.ts')
   const { realMapPlans } = await server.ssrLoadModule('/src/math/real-map-catalog.ts')
   const itemsFor = (exerciseType, topic, domain, difficulty, seed) => buildPage({
     ...defaultPage(domain), exerciseType, topic, difficulty, count: 2,
@@ -174,6 +175,59 @@ try {
         assert.equal(answer, `${cm * 10} mm + ${mm} mm = ${cm * 10 + mm} mm.`)
       }
     }
+  })
+
+  await test('short problems preserve the illustrated givens, the unit and the calculation', () => {
+    const { SHORT_PROBLEM_HOURS, SHORT_PROBLEM_PRICES, SHORT_PROBLEM_DISTANCES, rebuildShortProblem } = shortProblems
+    const prompts = new Set()
+    for (const type of [SHORT_PROBLEM_HOURS, SHORT_PROBLEM_PRICES, SHORT_PROBLEM_DISTANCES]) {
+      for (const difficulty of ['facile', 'moyen', 'avance']) {
+        const variants = new Set()
+        for (let seed = 1; seed <= 256; seed++) {
+          const items = itemsFor(type, 'problemes', 'algèbre', difficulty, seed)
+          assert.deepEqual(items.map(item => item.shortProblem.guided), [true, false])
+          assert.notEqual(items[0].prompt, items[1].prompt)
+          for (const item of items) {
+            assert(item.prompt.split('\n').at(-1).endsWith('?'))
+            assert(item.calcAnswer && item.responseAnswer)
+            for (const { facts } of item.shortProblem.diagram.rows) {
+              for (const { value } of facts) assert(item.prompt.includes(value))
+            }
+            const { duration, minute, first, second, third, fourth } = item.problemVars
+            if (type === SHORT_PROBLEM_HOURS) {
+              assert.equal(item.answer, `Le trajet dure ${duration} min.`)
+              assert.equal(minute + duration < 60, difficulty === 'facile')
+            } else if (type === SHORT_PROBLEM_PRICES) {
+              const total = (Math.round(first * 100) + Math.round(second * 100)) / 100
+              assert(item.answer.endsWith(`${total.toFixed(2).replace('.', ',')} CHF.`))
+            } else if (difficulty === 'avance') {
+              assert.notEqual(first + second, third + fourth)
+              assert.equal(item.answer, `Le trajet ${first + second < third + fourth ? 'A' : 'B'} est plus court avec ${Math.min(first + second, third + fourth)} m.`)
+            } else {
+              const metres = first * (difficulty === 'moyen' ? 1000 : 1) + second
+              assert.equal(item.answer, `Le trajet mesure ${metres} m.`)
+            }
+            variants.add(item.prompt)
+          }
+        }
+        assert(variants.size >= 100)
+        for (const prompt of variants) {
+          assert(!prompts.has(prompt))
+          prompts.add(prompt)
+        }
+      }
+    }
+
+    const context = { type: SHORT_PROBLEM_HOURS, difficulty: 'moyen', variant: 0, guided: true }
+    const edited = rebuildShortProblem(context, { hour: 9, minute: 55, duration: 20 })
+    assert.equal(edited.shortProblem.diagram.rows[0].facts[1].value, '10 h 15')
+    assert(edited.prompt.includes('10 h 15'))
+    assert(edited.calcAnswer.includes('5 min + 15 min = 20 min'))
+    assert.equal(rebuildShortProblem(context, { hour: 9, minute: 60, duration: 20 }), undefined)
+    const equalRoutes = rebuildShortProblem({ ...context, type: SHORT_PROBLEM_DISTANCES, difficulty: 'avance' }, {
+      first: 200, second: 320, third: 240, fourth: 280,
+    })
+    assert.equal(equalRoutes.answer, 'Les deux trajets mesurent 520 m.')
   })
 } finally {
   await server.close()

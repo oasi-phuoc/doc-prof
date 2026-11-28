@@ -4,13 +4,15 @@ import { completionFicheItems } from '@/grammaire/exercises/completion-fiche'
 import { grammarWordCards } from '@/grammaire/exercises/word-vocab'
 import { shuffle, type Rng } from '@/math/rng'
 import type { MathItem, PageConfig } from '@/math/types'
-import type { TcfExercise } from '@/tcf/types'
+import type { TcfExercise, TcfNiveau } from '@/tcf/types'
 import audioBank from './audios.json'
 import { SCHOOL_KINDS, isSchoolKind } from './catalog'
 import { SCHOOL_LESSONS } from './lecons'
-import { isVieScolaireType, type SchoolAudio, type SchoolLesson, type SchoolPicture } from './types'
+import { isVieScolaireType, type SchoolAudio, type SchoolLesson, type SchoolLevel, type SchoolPicture } from './types'
 
-const reference = 'src/vie-scolaire/lecons.ts'
+const lessonSources = { A1: 'lecons.ts', A2: 'lecons-a2.ts', B1: 'lecons-b1.ts' }
+const levels: Record<SchoolLevel, TcfNiveau> = { A1: 'A0-A1', A2: 'A1-A2', B1: 'A2-B1' }
+const writingLines: Record<SchoolLevel, number> = { A1: 4, A2: 6, B1: 9 }
 const lessons = new Map(SCHOOL_LESSONS.map((lesson) => [lesson.id, lesson]))
 const audios: Record<string, readonly SchoolAudio[]> = audioBank
 
@@ -18,29 +20,39 @@ export function vieScolaireAudiosForType(typeId: string): readonly SchoolAudio[]
   return isSchoolKind(typeId, 'co') ? audios[typeId.slice('vie-scolaire-'.length, -'-co'.length)] ?? [] : []
 }
 
+export function schoolA5Breaks(typeId: string, count: number, columns: number): boolean[] | undefined {
+  if (isSchoolKind(typeId, 'ce')) return count > 4 ? [true, false, true] : [true]
+  if (isSchoolKind(typeId, 'lexique')) {
+    const cardsPerPage = Math.max(1, columns) * 2
+    if (count > cardsPerPage) return Array.from({ length: count }, (_, index) => (index + 1) % cardsPerPage === 0)
+  }
+  if (isSchoolKind(typeId, 'pratique') && count > 3) return [false, true]
+}
+
 function theory(block: GrammarTheoryBlock): MathItem {
   return { layout: 'theory', answer: '', noPoints: true, theoryBlock: block, grammarTheoryFalc: true }
 }
 
-function pictureRows(pictures: readonly SchoolPicture[]): MathItem[] {
+function pictureRows(pictures: readonly SchoolPicture[], breakAfter: boolean): MathItem[] {
   const rows: MathItem[] = []
   for (let index = 0; index < pictures.length; index += 2) {
-    rows.push(theory({ kind: 'image-row', label: 'Illustrations', cells: pictures.slice(index, index + 2) }))
+    const row = theory({ kind: 'image-row', label: 'Illustrations', cells: pictures.slice(index, index + 2) })
+    rows.push(breakAfter && index + 2 >= pictures.length ? { ...row, theoryPageBreakAfter: true } : row)
   }
   return rows
 }
 
-function theoryItems(lesson: SchoolLesson): MathItem[] {
+function theoryItems(lesson: SchoolLesson, a5: boolean): MathItem[] {
   const descriptions = Math.ceil(lesson.steps.length / 2)
   const pictures = Math.ceil(lesson.pictures.length / 4) * 2
   return [
     theory({ kind: 'heading', text: lesson.title }),
     theory({ kind: 'paragraph', text: lesson.objective }),
-    ...pictureRows(lesson.pictures.slice(0, pictures)),
+    ...pictureRows(lesson.pictures.slice(0, pictures), a5),
     theory({ kind: 'examples', label: 'Je regarde', marker: 'border', items: [lesson.situation] }),
     { ...theory({ kind: 'examples', label: 'Je comprends', marker: 'puces', items: [...lesson.steps.slice(0, descriptions)] }), theoryPageBreakAfter: true },
     theory({ kind: 'heading', text: `${lesson.title} · Un exemple`, sub: true }),
-    ...pictureRows(lesson.pictures.slice(pictures)),
+    ...pictureRows(lesson.pictures.slice(pictures), a5),
     theory({ kind: 'examples', label: 'Je retiens', marker: 'puces', items: [...lesson.steps.slice(descriptions)] }),
     theory(typeof lesson.example === 'string'
       ? { kind: 'examples', label: 'Je regarde l’exemple', marker: 'border', items: [lesson.example] }
@@ -52,7 +64,7 @@ function theoryItems(lesson: SchoolLesson): MathItem[] {
 function communication(lesson: SchoolLesson, kind: 'ce' | 'co' | 'po' | 'pe', audio?: SchoolAudio): TcfExercise | undefined {
   const common = {
     id: `vie-scolaire-${lesson.id}-${kind}${audio ? `-${audio.id}` : ''}`,
-    niveau: 'A0-A1' as const,
+    niveau: levels[lesson.level],
     theme: lesson.title,
     scene: lesson.title,
     questions: [],
@@ -101,7 +113,7 @@ export function tryGenerateVieScolaireBlock(config: PageConfig, rng: Rng) {
   const instruction = type[2]
   switch (kind) {
     case 'theorie':
-      return { instruction: lesson.title, items: theoryItems(lesson) }
+      return { instruction: lesson.title, items: theoryItems(lesson, config.worksheetPaper === 'a5') }
     case 'lexique': {
       const recall = Boolean(config.grammarVocabRecall)
       const entries = shuffle(rng, lesson.words)
@@ -115,7 +127,7 @@ export function tryGenerateVieScolaireBlock(config: PageConfig, rng: Rng) {
     case 'pratique':
       return {
         instruction: config.completionPresentation === 'gap' ? instruction : 'Choisissez une réponse par phrase.',
-        items: completionFicheItems(lesson.completion.slice(0, Math.max(1, config.count)), config, reference, rng),
+        items: completionFicheItems(lesson.completion.slice(0, Math.max(1, config.count)), config, `src/vie-scolaire/${lessonSources[lesson.level]}`, rng),
       }
     case 'ce':
     case 'co':
@@ -129,9 +141,11 @@ export function tryGenerateVieScolaireBlock(config: PageConfig, rng: Rng) {
         instruction: kind === 'co' && config.grammarCoFormat === 'true-false'
           ? 'Écoutez l’enregistrement. Pour chaque phrase, cochez Vrai ou Faux.'
           : instruction,
+        tcfQuestionPageBreakBefore: kind === 'co' && config.grammarCoFormat !== 'true-false'
+          && config.worksheetPaper === 'a5' && lesson.level === 'B1' ? [3] : undefined,
         items: ficheCommunicationItems(exercise, config, rng, {
           reference: 'Vie scolaire',
-          writingLines: 4,
+          writingLines: writingLines[lesson.level],
           statements: audio?.statements,
         }),
       }

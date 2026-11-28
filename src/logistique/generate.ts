@@ -4,6 +4,7 @@ import type { LogistiquePresentation, MathItem, PageConfig } from '@/math/types'
 import { currentLogistiquePublication, logistiquePublication, type LogistiqueUnit } from './approved-banks'
 import { logistiqueVerdicts } from './choices'
 import { logistiqueMatchContent } from './matching'
+import { logistiqueCasePoints } from './tables'
 import { completeLogistiqueGlossaryItem } from './glossary'
 import { logistiqueStoryModules, logistiqueStoryQuestions, logistiqueStorySelectionCompatible, validLogistiqueEvaluation,
   type LogistiqueEvaluation } from './evaluation'
@@ -85,6 +86,7 @@ function unitItems(unit: LogistiqueUnit, view: PageConfig['logistiqueTheoryView'
       return [{ logistiqueSource, layout: 'text', prompt: unit.prompt,
         answer: unit.table?.questions?.map(({ answer }) => answer).join('\n') ?? unit.answer,
         ...(unit.table ? { logistiqueTable: unit.table } : {}),
+        ...(unit.table?.presentation === 'cas-mixte' ? { points: logistiqueCasePoints(unit.table) } : {}),
       }]
   }
 }

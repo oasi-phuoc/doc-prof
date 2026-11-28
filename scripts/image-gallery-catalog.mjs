@@ -144,10 +144,18 @@ export function buildGalleryCatalog(root, files = repositoryImages(root)) {
   }
   const placeholder = path.join(root, 'docs/vie-scolaire/illustration-provisoire.webp')
   const schoolPlaceholder = existsSync(placeholder) ? readFileSync(placeholder) : undefined
+  const schoolFolder = 'public/lib/images/vie-scolaire/'
+  const schoolVisuals = read(root, 'src/vie-scolaire/illustrations.json', {})
+  const indexedFiles = new Set(files)
   return files.filter(file => {
     if (familyImageCopies.has(file) || ['docs/', 'scripts/', 'tmp/'].some(prefix => file.startsWith(prefix))) return false
-    return !schoolPlaceholder || !file.startsWith('public/lib/images/vie-scolaire/') ||
-      !schoolPlaceholder.equals(readFileSync(path.join(root, file)))
+    if (!file.startsWith(schoolFolder)) return true
+    const visual = schoolVisuals[file.slice(schoolFolder.length, -'.webp'.length)]
+    const hasOriginal = visual?.source && indexedFiles.has('public' + visual.source)
+    if (!schoolPlaceholder && !hasOriginal) return true
+    const contents = readFileSync(path.join(root, file))
+    if (schoolPlaceholder?.equals(contents)) return false
+    return !hasOriginal || createHash('sha256').update(contents).digest('hex') !== visual.sha256
   }).map(file => {
     const src = file.startsWith('public/') ? '/' + file.slice(7) : '/' + file
     const meta = metadata.get(src) ?? { labels: [], themes: [], types: [], keywords: [] }

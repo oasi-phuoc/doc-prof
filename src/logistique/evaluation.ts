@@ -11,6 +11,8 @@ export const logistiqueBloomLevels = {
   analyser: 'Analyser', evaluer: 'Évaluer', creer: 'Créer',
 } as const
 
+export const logistiqueDifficultyLabels = { facile: 'Facile', moyen: 'Moyenne', avance: 'Avancée' } as const satisfies Record<Difficulty, string>
+
 export type LogistiqueAssessment = {
   bloom?: keyof typeof logistiqueBloomLevels
   difficulty?: Difficulty
@@ -262,7 +264,8 @@ export function allocateLogistiquePoints(
   if (scored.some(({ points }) => !Number.isFinite(points) || points < 0)) {
     return { conflict: 'Corrigez les valeurs invalides du barème avant la répartition.' }
   }
-  const adjustable = scored.filter(({ item, points }) => points > 0 && !item.libreLocked && !item.logistiqueAssessment?.pointsLocked)
+  const adjustable = scored.filter(({ item, points }) => points > 0 && !item.libreLocked && !item.logistiqueAssessment?.pointsLocked &&
+    item.logistiqueTable?.presentation !== 'cas-mixte')
   if (!adjustable.length) return { conflict: 'Aucune question notée ne possède de barème modifiable.' }
   const allPoints = scored.reduce((sum, entry) => sum + entry.points, 0)
   const adjustablePoints = adjustable.reduce((sum, entry) => sum + entry.points, 0)

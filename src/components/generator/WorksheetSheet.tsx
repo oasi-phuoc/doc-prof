@@ -1,5 +1,6 @@
 import { isLogistiqueDomain, LOGISTIQUE_DOMAINS } from '@/logistique/catalog'
 import { sliceLogistiqueMatch } from '@/logistique/matching'
+import { isLogistiqueChartPresentation } from '@/logistique/tables'
 import { isWrittenProblem } from '@/math/problem-help'
 import epcaLogo from '@/assets/logos/epca.svg'
 import { grammarPageBreakQuestionId } from '@/grammaire/curriculum/pagination'
@@ -24,6 +25,7 @@ import { MathWorkedExample } from '@/components/item-view/guided-practice'
 import { CfrGuidedExample } from '@/components/item-view/cfr-guided'
 import { MathGeometryExample } from '@/components/item-view/guided-geometry'
 import { FundamentalExample } from '@/components/item-view/fundamental-practice'
+import { ShortProblemExample } from '@/components/item-view/short-problems'
 import { LogistiqueGlossaryTable } from '@/components/item-view/logistique-glossary'
 import { isDraftPadExercise } from '@/math/catalog'
 import { isGuidedColumnType, isSingleColumnPractice } from '@/math/guided-practice'
@@ -282,6 +284,9 @@ export function WorksheetSheet({
   const compactHeader = asHalf && (page.domain === 'grammaire' || page.domain === 'société' || page.domain === 'vie-scolaire' || isTpfFamilyDomain(page.domain))
   const hasLogistiqueStory = isLogistiqueDomain(page.domain) && page.blocks.some((block) =>
     block.logistiqueDetachedNarratives?.length || block.items.some((item) => item.logistiqueNarrative))
+  const hasCompactLogistiqueActivity = Boolean(asHalf && page.items.some(({ logistiqueTable }) =>
+    logistiqueTable?.presentation === 'cas-mixte' || logistiqueTable?.presentation === 'processus-a-completer' ||
+    isLogistiqueChartPresentation(logistiqueTable?.presentation)))
   const domainClass = isLogistiqueDomain(page.domain) ? ' is-logistique'
     : page.domain === 'tcm-csc' ? ' is-tcm-csc' : page.domain === 'tcm-cfr' ? ' is-tcm-cfr' : page.domain === 'tpm' ? ' is-tpm' : ''
   const posterClass = page.cePosterSheet
@@ -294,7 +299,7 @@ export function WorksheetSheet({
   return (
     <Root
       className={rootClass + domainClass + posterClass + (compactMathHeader ? ' has-compact-math-header' : compactHeader ? ' has-compact-header' : '') +
-        (hasLogistiqueStory ? ' has-logistique-story' : '')}
+        (hasLogistiqueStory ? ' has-logistique-story' : '') + (hasCompactLogistiqueActivity ? ' has-compact-logistique-activity' : '')}
       style={{ '--sheet-columns': sheetColumns, ...(page.domain === 'tcm-csc' ? { '--csc-exercise-gap': `${page.exerciseGapPx ?? 50}px` } : {}) } as CSSProperties}
     >
       {showHeader ? (
@@ -344,6 +349,7 @@ export function WorksheetSheet({
           const sideProblemInstruction = cfrSideProblemInstruction(block)
           const cscCopy = sideProblemInstruction == null && block.instruction && (/^tcm-c(?:sc|fr)-/.test(block.exerciseType) || block.exerciseType.startsWith('tpm-decompose')) ? cscSheetCopy(block.exerciseType, block.instruction) : null
           const instructionText = sideProblemInstruction ?? (cscCopy ? cscCopy.text : block.instruction)
+          const shortProblem = block.items[0]?.shortProblem
           const isTheoryBlock = block.items.some((item) => item.layout === 'theory')
           const blockColumns = isGuidedColumnType(block.exerciseType) || block.exerciseType === SHAPE_PRACTICE
             ? Math.min(block.columns ?? 2, 2) : (block.columns ?? 1)
@@ -527,6 +533,7 @@ export function WorksheetSheet({
               {!evalMode && block.items[0]?.cfrGuided && <CfrGuidedExample practice={block.items[0].cfrGuided} />}
               {!evalMode && <MathGeometryExample exerciseType={block.exerciseType} />}
               {!evalMode && <FundamentalExample exerciseType={block.exerciseType} />}
+              {!evalMode && !block.itemOffset && shortProblem && <ShortProblemExample problem={shortProblem} />}
               <WorksheetItems
                 groupedOperations={/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType)}
                 className={`exercise-grid${block.exerciseType === 'transformations-tracer-axes' ? ' coord-grid-columns' : ''}${
@@ -583,7 +590,9 @@ export function WorksheetSheet({
                   const printableItem = theorySlice?.theoryBlock ? { ...item, theoryBlock: theorySlice.theoryBlock }
                     : item.logistiqueMatching && subquestionRange ? sliceLogistiqueMatch(item, subquestionRange.start, subquestionRange.end)
                     : item.logistiqueTable && subquestionRange ? { ...item, logistiqueSubquestionOffset: subquestionRange.start,
-                      logistiqueTable: { ...item.logistiqueTable,
+                      logistiqueTable: item.logistiqueTable.presentation === 'processus-a-completer'
+                      ? { ...item.logistiqueTable, rows: item.logistiqueTable.rows.slice(subquestionRange.start, subquestionRange.end) }
+                      : { ...item.logistiqueTable,
                         title: subquestionRange.start ? `${item.logistiqueTable.title} (suite)` : item.logistiqueTable.title,
                         questions: item.logistiqueTable.questions?.slice(subquestionRange.start, subquestionRange.end),
                       } }
@@ -654,7 +663,7 @@ export function WorksheetSheet({
                       itemLabel={/^tcm-(?:csc|cfr)-ex0[12]$/.test(block.exerciseType)?String.fromCharCode(65+index+itemOffset):undefined}
                       seriesNumber={/^tcm-csc-ex16$/.test(block.exerciseType)||/^tcm-cfr-ex16$/.test(block.exerciseType)?index+itemOffset+1:undefined}
                       hideNumber={/^tcm-csc-ex(?:10|11)$/.test(block.exerciseType)||/^tcm-cfr-ex(?:07|08|09|10|16)$/.test(block.exerciseType)}
-                      index={block.problemHelp || isLogistiqueDomain(page.domain) || page.domain === 'grammaire' || /^tcm-csc-ex(?:10|11)$/.test(block.exerciseType) ? sourceIndex : index}
+                      index={block.problemHelp || shortProblem || isLogistiqueDomain(page.domain) || page.domain === 'grammaire' || /^tcm-csc-ex(?:10|11)$/.test(block.exerciseType) ? sourceIndex : index}
                       algebraPadLeft={padLeft}
                       draftGrid={draftGrid}
                       problemHelp={block.problemHelp ?? false}

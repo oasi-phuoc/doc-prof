@@ -6750,7 +6750,8 @@ textarea.pill-input,
   text-align: left;
 }
 .math-theory-lesson h2 { font-size: 22pt; font-weight: 700; margin: 0 0 3mm; line-height: 1.15; }
-.math-theory-introduction { margin: 0 0 1mm; font-weight: 700; }
+.math-theory-introduction, .math-theory-panel h4 { font-size: 18pt; font-weight: 700; line-height: 1.2; }
+.math-theory-introduction { margin: 0 0 1mm; }
 .math-theory-goal { margin: 0 0 2mm; }
 .math-theory-lesson figure { margin: 0 0 3mm; }
 .math-theory-lesson figure img { display: block; width: 100%; max-height: 51mm; object-fit: contain; }
@@ -6766,12 +6767,9 @@ textarea.pill-input,
 .math-theory-panel:only-child { grid-column: 1 / -1; }
 .math-theory-panel.is-steps { --math-theory-panel-color: var(--math-theory-steps-color); }
 .math-theory-panel.is-words { --math-theory-panel-color: var(--math-theory-words-color); }
-.math-theory-panel h3 {
+.math-theory-panel h4 {
   margin: 0 0 1.3mm;
   color: var(--math-theory-panel-color);
-  font-size: 15pt;
-  font-weight: 700;
-  line-height: 1.2;
 }
 .math-theory-panel-body {
   margin: 0;
@@ -6874,6 +6872,17 @@ textarea.pill-input,
 .a5-half .is-grammar-scenario .tcf-annonce-body p { margin-block: 0; }
 .a5-half .is-grammar-scenario .exercise-heading { margin-bottom: 4px; }
 .a5-half .is-grammar-scenario .exercise-instruction { margin-bottom: 5px; }
+.a5-half [data-exercise-type^="vie-scolaire-"][data-exercise-type$="-theorie"] .theory-image-table img { height: 25mm; }
+.a5-half [data-exercise-type^="vie-scolaire-"][data-exercise-type$="-theorie"] .theory-table { line-height: 1.3; }
+.a5-half [data-exercise-type^="vie-scolaire-"][data-exercise-type$="-theorie"] .theory-table :is(th, td) { padding: 2px 6px; }
+.a5-half [data-exercise-type^="vie-scolaire-"] .grammar-word-vocab img { height: 25mm; }
+.a5-half [data-exercise-type^="vie-scolaire-"] .tcf-po-images.is-1 .tcf-image { height: 48mm; }
+.a5-half [data-exercise-type^="vie-scolaire-"] .tcf-audio-cadre-body { gap: 8px; }
+.a5-half [data-exercise-type^="vie-scolaire-"] .tcf-qcm-texte {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px 12px;
+}
 .grammar-theory-item.is-falc .theory-table :is(th, td) { overflow-wrap: anywhere; }
 .grammar-theory-item.is-falc .theory-attention-label { color: #874515; }
 .grammar-theory-item.is-falc .theory-attention-box:empty { display: none; }
@@ -6951,7 +6960,7 @@ textarea.pill-input,
 }
 .math-worked-example p { margin: 0; }
 .math-fundamental-example img { display: block; width: min(100%, 110mm); height: auto; }
-.math-fundamental-shape { display: block; width: min(100%, 29mm); height: auto; fill: #e8f1f9; stroke: #174a7e; stroke-width: 3; }
+.math-fundamental-shape { display: block; width: min(100%, 29mm); height: auto; }
 .math-fundamental-length { display: flex; width: min(100%, 104mm); gap: 1px; font-size: 14pt; }
 .math-fundamental-length span {
   display: grid;
@@ -6980,6 +6989,55 @@ textarea.pill-input,
   gap: 3mm;
 }
 .a5-half .math-fundamental-example img { width: 100%; }
+.short-problem-diagram {
+  display: grid;
+  gap: 1mm;
+  margin: 1mm 0;
+  font-size: 12pt;
+  line-height: 1.2;
+}
+.problem-block.short-problem { gap: 1.5mm; }
+.exercise-item:has(.short-problem) { padding-bottom: 6px; margin-bottom: 0; }
+.short-problem-diagram-row { display: flex; align-items: center; gap: 2mm; }
+.short-problem-route-label { min-width: 16mm; }
+.short-problem-fact {
+  display: grid;
+  gap: .5mm;
+  border: 1px solid currentColor;
+  border-radius: 1mm;
+  padding: .6mm 2mm;
+  text-align: center;
+  background: #edf4fa;
+}
+.short-problem-fact strong { white-space: nowrap; font-size: 14pt; }
+.short-problem-diagram-row:has(.short-problem-route-label) .short-problem-fact {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5mm;
+}
+.short-problem-connector { font-weight: 700; }
+.short-problem .problem-prompt {
+  font-size: 14pt;
+  line-height: 1.24;
+  text-align: left;
+  hyphens: none;
+}
+.short-problem .draft-pad {
+  --grid-rows: 2;
+  min-height: 11mm;
+  aspect-ratio: auto;
+}
+.short-problem .draft-pad-answer,
+.short-problem .response-value { font-size: 12pt; }
+.short-problem .draft-pad-answer { padding: 1mm 2mm; }
+.short-problem .problem-response-line { margin-top: 0; }
+.short-problem-example-calculation { white-space: pre-line; }
+.equation-positive-only { margin: 0; }
+.is-eval .short-problem-guide { display: none; }
+.a5-half .problem-block.short-problem { gap: 1mm; }
+.a5-half .short-problem .problem-response-line { padding-bottom: 0; }
+.a5-half .exercise-item:has(.short-problem) { padding-bottom: 0; margin-bottom: 0; }
+.a5-half .short-problem-example { margin-bottom: 1mm; padding-bottom: 0; }
 .math-worked-addition {
   display: grid;
   grid-template-columns: max-content minmax(0, 1fr);
@@ -7127,6 +7185,9 @@ textarea.pill-input,
 .grammar-co-true-false tbody th{font-weight:400;text-align:left}
 .grammar-co-true-false tbody small{display:block;color:#394758;line-height:1.35;margin-top:1mm}
 .grammar-co-true-false td,.grammar-co-true-false thead th:not(:first-child){width:14mm;text-align:center}
+.a5-half [data-exercise-type^="vie-scolaire-"] .grammar-co-true-false { margin-top: 1mm; }
+.a5-half [data-exercise-type^="vie-scolaire-"] .grammar-co-true-false :is(th, td) { padding: .9mm 1.5mm; }
+.a5-half [data-exercise-type^="vie-scolaire-"] .grammar-co-true-false small { line-height: 1.25; }
 .grammar-co-checkbox{display:inline-grid;place-items:center;width:5mm;height:5mm;border:.3mm solid #444b56;font-weight:700;line-height:1}
 
 .grammar-word-vocab{width:100%;margin:0;text-align:center}
