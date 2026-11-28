@@ -93,7 +93,8 @@ def building(draw, x, y, width, height, angle, major=False):
     corners = ((-width / 2, -height / 2), (width / 2, -height / 2),
                (width / 2, height / 2), (-width / 2, height / 2))
     points = scaled((x + dx * c - dy * s, y + dx * s + dy * c) for dx, dy in corners)
-    draw.polygon(points, fill=255 if major else 24, outline=0, width=5 * SUPERSAMPLING if major else SUPERSAMPLING)
+    draw.polygon(points, fill=165 if major else 192, outline=102 if major else 156,
+                 width=3 * SUPERSAMPLING if major else SUPERSAMPLING)
 
 
 def trace(drawing, points, shade, width):

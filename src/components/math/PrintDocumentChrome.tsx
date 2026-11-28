@@ -153,9 +153,11 @@ export function DocumentFooter({
   pageNumber,
   total,
   reference,
+  showPageNumber = true,
 }: {
   pageNumber: number
   total: number
+  showPageNumber?: boolean
   /** Pied : affiché à gauche sur la ligne « Imprimé le… » si non vide. */
   reference?: string
   /** @deprecated Pied fixe ; ignoré. */
@@ -168,9 +170,7 @@ export function DocumentFooter({
       <div className="doc-footer-brand">
         <strong>ClairFLE - Support imprimable</strong>
       </div>
-      <div className="doc-footer-page">
-        Page {pageNumber} / {total}
-      </div>
+      {showPageNumber && <div className="doc-footer-page">Page {pageNumber} / {total}</div>}
       <div className="doc-footer-ref">
         {ref ? <span>Référence : {ref}</span> : null}
       </div>

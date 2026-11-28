@@ -13,12 +13,13 @@ const server = await createServer({
 })
 
 try {
-  const { buildPage } = await server.ssrLoadModule('/src/math/generate.ts')
+  const { buildPage, buildWorksheets } = await server.ssrLoadModule('/src/math/generate.ts')
   const { defaultPage } = await server.ssrLoadModule('/src/math/catalog.ts')
   const practice = await server.ssrLoadModule('/src/math/guided-practice.ts')
   const fundamentals = await server.ssrLoadModule('/src/math/fundamental-practice.ts')
   const shortProblems = await server.ssrLoadModule('/src/math/short-problems.ts')
   const { realMapPlans } = await server.ssrLoadModule('/src/math/real-map-catalog.ts')
+  const { realMapPractice } = await server.ssrLoadModule('/src/math/real-map-practice.ts')
   const itemsFor = (exerciseType, topic, domain, difficulty, seed) => buildPage({
     ...defaultPage(domain), exerciseType, topic, difficulty, count: 2,
   }, seed).items
@@ -76,19 +77,22 @@ try {
     }
   })
 
-  await test('the Sion photo uses four distinct cells and both directions of reading', () => {
-    assert.deepEqual(practice.SION_PLACES.map(({ code }) => code), ['A3', 'B3', 'C3', 'D1'])
+  await test('the Sion photo defaults to eight columns and five rows, with questions in both directions', () => {
+    assert.deepEqual(practice.SION_PLACES.slice(0, 4).map(({ code }) => code), ['B4', 'C4', 'E4', 'G2'])
     const { columns, rows } = practice.SION_GRID
+    assert.deepEqual([columns, rows], [8, 5])
     for (const place of practice.SION_PLACES) {
       assert.equal(Math.floor(place.x * columns), place.column)
       assert.equal(Math.floor(place.y * rows), place.row)
-      assert(place.x * columns % 1 > 0.08 && place.y * rows % 1 > 0.08)
     }
     for (const difficulty of ['facile', 'avance']) {
       for (let seed = 1; seed <= 32; seed++) {
         const [item] = itemsFor(practice.REAL_MAP_TYPE, 'reperage', 'géométrie', difficulty, seed)
         const place = practice.SION_PLACES[item.sionMap.target]
-        assert.equal(item.answer, difficulty === 'avance' ? place.name : place.code)
+        assert.equal(item.answer, `Dans la case ${place.code}.`)
+        assert.match(item.prompt, /^(Où|Dans quelle case)/)
+        assert(item.prompt.includes(place.name))
+        assert(realMapPractice(item.sionMap).questions.some(question => question.kind === 'check'))
       }
     }
   })
@@ -108,44 +112,92 @@ try {
     assert.equal(mixed.blocks[0].items[0].sionMap.background, 'simplified')
     assert.equal(mixed.blocks[0].items[0].sionMap.planId, 'ardon')
     assert.equal(mixed.blocks[1].items[0].sionMap.background, undefined)
-    assert.equal(mixed.blocks[1].items[0].sionMap.planId, undefined)
+    assert.equal(mixed.blocks[1].items[0].sionMap.planId, 'sion-historique')
 
     const [frozen] = buildPage({ ...page, libreItems: [simplified], sionMapBackground: 'photo' }, 41).items
     assert.deepEqual(frozen, { ...original, sionMap: { ...original.sionMap, background: 'photo' } })
   })
 
-  await test('every Swiss plan has three distinct assets and unambiguous questions', async () => {
-    assert.equal(realMapPlans.length, 20)
-    assert.equal(new Set(realMapPlans.map(({ id }) => id)).size, 20)
+  await test('map and numbered questions use separate sheets and respect settings on legacy saved items', () => {
+    const page = { ...defaultPage('géométrie'), topic: 'reperage', exerciseType: practice.REAL_MAP_TYPE, count: 1,
+      libreItems: [{ layout: 'text', prompt: 'Ancienne question', answer: 'C3', sionMap: { target: 2 } }],
+      realMapColumns: 12, realMapRows: 9, realMapNotation: 'coordinates', sionMapBackground: 'annotated', realMapQuestionCount: 4,
+    }
+    const following = { ...defaultPage('géométrie'), topic: 'aires', exerciseType: practice.RECTANGLE_MEASURES_TYPE }
+    const [map, questions, next] = buildWorksheets([page, following], 41)
+    assert.deepEqual([map.blocks[0].realMapPart, questions.blocks[0].realMapPart], ['map', 'questions'])
+    assert.equal(map.blocks[0].items[0], questions.blocks[0].items[0])
+    assert.equal(map.blocks[0].exerciseIndex, 0)
+    assert.equal(next.blocks[0].exerciseIndex, 1)
+    const { sionMap, prompt } = map.items[0]
+    assert(prompt.startsWith('Placez D'))
+    assert.deepEqual({ ...sionMap }, { planId: undefined, columns: 12, rows: 9, notation: 'coordinates', background: 'annotated', target: 2, questionCount: 4 })
+    assert.equal(realMapPractice(sionMap).questions.length, 4)
+    assert.equal(realMapPractice(sionMap).plan.places.length, 10)
+    const resized = buildPage({ ...page, realMapColumns: 50, realMapRows: 2 }, 41).items[0]
+    assert.deepEqual(realMapPractice(resized.sionMap).plan.grid, { columns: 12, rows: 3 })
+  })
+
+  await test('each map has three aligned assets, consistent answers and a shorter question set', async () => {
+    assert.deepEqual(Object.fromEntries(['swiss', 'imaginary', 'europe', 'world'].map(family =>
+      [family, realMapPlans.filter(plan => plan.family === family).length])), { swiss: 25, imaginary: 25, europe: 8, world: 9 })
+    assert.equal(new Set(realMapPlans.map(({ id }) => id)).size, 67)
+    const europeanCountries = new Set(realMapPlans.filter(plan => plan.family === 'europe').flatMap(plan => plan.places.map(place => place.country)))
+    assert.equal(europeanCountries.size, 50)
+    assert(!europeanCountries.has(undefined))
     assert(['sion-ensemble', 'zermatt', 'martigny', 'ardon', 'vetroz', 'lausanne', 'berne', 'zurich', 'bale'].every(
       id => realMapPlans.some(plan => plan.id === id),
     ))
-    for (const { id, places, grid } of realMapPlans) {
+    const linkColors = new Set()
+    for (const { id, places, grid, family } of realMapPlans) {
       assert(places.length >= 2)
-      assert.equal(new Set(places.map(({ code }) => code)).size, places.length)
+      if (family === 'swiss' || family === 'imaginary') assert.equal(places.length, 10, id)
+      assert.equal(new Set(places.map(({ name }) => name)).size, places.length, id)
       for (const place of places) {
         assert(place.x > 0 && place.x < 1 && place.y > 0 && place.y < 1)
         assert.equal(Math.floor(place.x * grid.columns), place.column)
         assert.equal(Math.floor(place.y * grid.rows), place.row)
       }
       if (id !== 'sion-historique') {
+        const folder = family === 'europe' ? 'world' : family
         for (const variant of ['photo.webp', 'annotated.webp', 'simplified.png']) {
-          await access(resolve(`src/math/media/spatial/swiss/${id}-${variant}`))
+          await access(resolve(`src/math/media/spatial/${folder}/${id}-${variant}`))
         }
       }
-      for (const difficulty of ['facile', 'avance']) {
-        const page = {
-          ...defaultPage('géométrie'), topic: 'reperage', exerciseType: practice.REAL_MAP_TYPE, count: 1, difficulty,
-          realMapId: id,
-        }
-        for (let seed = 1; seed <= 12; seed++) {
-          const [item] = buildPage(page, seed).items
-          const place = places[item.sionMap.target]
-          assert.equal(item.answer, difficulty === 'avance' ? place.name : place.code)
-          assert.equal(item.sionMap.planId ?? 'sion-historique', id)
+      for (const [columns, rows] of [[4, 3], [8, 5], [12, 9]]) {
+        for (let target = 0; target < places.length; target++) {
+          const options = { planId: id, columns, rows, target }
+          const { plan, questions, route } = realMapPractice(options)
+          const place = plan.places[target]
+          assert.deepEqual(plan.grid, { columns, rows })
+          assert.deepEqual([place.x, place.y], [places[target].x, places[target].y])
+          assert.equal(questions[0].answer, `Dans la case ${place.code}.`)
+          const checked = questions[1].choices.filter(choice => choice.correct).map(choice => choice.label).sort()
+          assert.deepEqual(checked, plan.places.filter(other => other.code === place.code).map(other => other.name).sort())
+          const draw = questions.find(question => question.kind === 'draw')
+          assert(draw && draw.prompt.includes(route.color.name) && draw.answer.includes(route.color.name))
+          linkColors.add(route.color.name)
+          const distance = Math.abs(route.from.column - route.to.column) + Math.abs(route.from.row - route.to.row)
+          assert.equal(Number.parseInt(questions[5].answer), distance)
+          const last = questions.at(-1)
+          for (const { label, correct } of last.choices) {
+            assert.equal(correct, last.prompt.includes('sans repère nommé') !== plan.places.some(other => other.code === label), id)
+          }
+          const short = realMapPractice({ ...options, questionCount: 4 })
+          assert.equal(short.questions.length, 4)
+          assert.deepEqual(short.plan.places, plan.places)
+          assert.deepEqual(short.route, route)
+
+          const { posts, questions: axes } = realMapPractice({ ...options, notation: 'coordinates' })
+          assert.equal(posts.length, 10)
+          assert.equal(new Set(posts.map(post => `${post.column},${post.row}`)).size, 10)
+          assert(posts.every(post => post.column >= 0 && post.column <= columns && post.row >= 0 && post.row <= rows))
+          assert.deepEqual(axes[0].posts.map(post => post.name), ['D', 'A', 'P1', 'P3', 'P4', 'P6'])
+          assert.deepEqual(posts.filter(post => post.given), axes[1].posts)
         }
       }
     }
+    assert.equal(linkColors.size, 5)
   })
 
   await test('fundamental practice has a guided item and a consistent second answer', () => {

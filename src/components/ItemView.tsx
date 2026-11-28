@@ -79,7 +79,8 @@ import { AreaFigures, SolidViewChoices } from './item-view/geometry-practice'
 import { MeasurementScale } from './item-view/measurement-practice'
 import { RulerSegmentFigure } from './item-view/guided-practice'
 import { CfrGuidedView } from './item-view/cfr-guided'
-import { RectangleMeasuresPractice, SionMapPractice, TranslationPractice } from './item-view/guided-geometry'
+import { RectangleMeasuresPractice, TranslationPractice } from './item-view/guided-geometry'
+import { RealMapFigure, RealMapQuestions } from './item-view/real-map'
 import { FundamentalLength, FundamentalShape } from './item-view/fundamental-practice'
 import { MathTheoryView } from './item-view/math-theory'
 import { SocieteSupportView } from '@/societe/SupportView'
@@ -520,7 +521,7 @@ export function ItemView({
         {item.rulerSegment && <RulerSegmentFigure segment={item.rulerSegment} />}
         {item.rectangleMeasures && <RectangleMeasuresPractice rectangle={item.rectangleMeasures} mode={mode} />}
         {item.translationPractice && <TranslationPractice practice={item.translationPractice} mode={mode} />}
-        {item.sionMap && <SionMapPractice item={item} mode={mode} />}
+        {item.sionMap && <><RealMapFigure data={item.sionMap} mode={mode} /><RealMapQuestions data={item.sionMap} mode={mode} /></>}
         {item.numberLine && <NumberLinePractice line={item.numberLine} />}
         {item.graphPractice && <TableAndGraph graph={item.graphPractice} prompt={item.prompt ?? ''} mode={mode} />}
         {item.functionPairs && <FunctionValueTable pairs={item.functionPairs} />}

@@ -95,7 +95,7 @@ export function generateItems(
   shapes?: Figure[],
   worksheetSeed?: number,
   orderAscending?: boolean,
-  coordOptions?: { coordRange?: number; coordUnitSquares?: 1 | 2; realMapId?: string },
+  coordOptions?: { coordRange?: number; coordUnitSquares?: 1 | 2; realMap?: import('./types').RealMapSettings },
 ): MathItem[] {
   const tpm = tryGenerateTpmItems(typeId, count, rng)
   if (tpm) return tpm
@@ -119,7 +119,7 @@ export function generateItems(
   if (constructions) return constructions
   const measurements = tryGenerateMeasurementPractice(typeId, rng, count, difficulty)
   if (measurements) return measurements
-  const guidedPractice = tryGenerateGuidedPractice(typeId, rng, count, difficulty, coordOptions?.realMapId)
+  const guidedPractice = tryGenerateGuidedPractice(typeId, rng, count, difficulty, coordOptions?.realMap)
   if (guidedPractice) return guidedPractice
   const fundamentalPractice = tryGenerateFundamentalPractice(typeId, rng, count, difficulty)
   if (fundamentalPractice) return fundamentalPractice

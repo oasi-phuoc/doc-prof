@@ -21,6 +21,12 @@ WIDTH, HEIGHT = 1080, 720
 RADIUS = 6378137
 ROWS = 3
 EXTRA_COLUMNS = {'sion-ensemble': 7, 'ardon': 5}
+LANDMARK_COUNT = 10
+SION_LV95 = (2593720, 1120697, 940, 627)
+SION_LANDMARKS = (
+    ('Église Saint-Théodule', 2593858, 1120236), ('Hôtel de ville', 2593980, 1120260),
+    ('Basilique de Valère', 2594266, 1120249), ('Château de Tourbillon', 2594469, 1120560),
+)
 PREFERRED_PLACES = {
     'sion-ensemble': (
         ('Gare de Sion', 46.227462, 7.359330), ('Château de Tourbillon', 46.236492, 7.367183),
@@ -95,6 +101,11 @@ TOWNS = (
     ('berne', 'Berne', 46.9485, 7.4498, 2600),
     ('zurich', 'Zurich', 47.3711, 8.5424, 2450),
     ('bale', 'Bâle', 47.5562, 7.5894, 2550),
+    ('geneve', 'Genève', 46.2184, 6.1455, 3750),
+    ('bienne', 'Bienne', 47.1402, 7.2492, 2750),
+    ('fribourg', 'Fribourg', 46.8053, 7.1630, 2860),
+    ('neuchatel', 'Neuchâtel', 46.9939, 6.9338, 2660),
+    ('lucerne', 'Lucerne', 47.0502, 8.3088, 2700),
 )
 
 
@@ -104,6 +115,15 @@ def mercator(lat, lon):
 
 def geographic(x, y):
     return math.degrees(math.atan(math.sinh(y / RADIUS))), math.degrees(x / RADIUS)
+
+
+def lv95(lat, lon):
+    # https://www.swisstopo.admin.ch/dam/en/sd-web/KLRCX9XIdXDu/ch1903wgs84-EN.pdf
+    p = (lat * 3600 - 169028.66) / 10000
+    l = (lon * 3600 - 26782.5) / 10000
+    easting = 2600072.37 + 211455.93 * l - 10938.51 * l * p - 0.36 * l * p**2 - 44.54 * l**3
+    northing = 1200147.07 + 308807.95 * p + 3745.25 * l**2 + 76.63 * p**2 - 194.56 * l**2 * p + 119.79 * p**3
+    return easting, northing
 
 
 def fetch_cached(path, urls):
@@ -222,7 +242,54 @@ def select_landmarks(key, town, elements, project):
         raise RuntimeError(f'{town}: seulement {len(selected)} lieux sélectionnés')
     for place in selected:
         place.pop('cell')
+    return extend_landmarks(town, elements, project, selected)
+
+
+def extend_landmarks(town, elements, project, selected):
+    candidates = []
+    for element in elements:
+        tags = element.get('tags', {})
+        name, weight = names_for(town, tags)
+        point = location(element)
+        if not name and tags.get('name') and (tags.get('building') in (
+            'civic', 'public', 'school', 'church', 'chapel', 'train_station', 'museum', 'sports_hall',
+        ) or tags.get('leisure') in ('sports_centre', 'pitch')):
+            name, weight = tags['name'], 5
+        geometry = element.get('geometry')
+        if not name and geometry and tags.get('name') and tags.get('highway'):
+            name, weight = tags['name'], 2
+            route_points = [(node['lat'], node['lon']) for node in geometry]
+            inside = [point for point in route_points if all(0.07 < coordinate < 0.93 for coordinate in project(*point))]
+            point = inside[len(inside) // 2] if inside else None
+        if not name or not point or len(name) > 36 or not re.search(r'[A-Za-zÀ-ÿ]', name) or re.fullmatch(r'[A-Z]*\d+', name):
+            continue
+        x, y = project(*point)
+        if 0.05 < x < 0.95 and 0.05 < y < 0.95:
+            candidates.append((weight, name, x, y))
+    while len(selected) < LANDMARK_COUNT:
+        viable = []
+        for weight, name, x, y in candidates:
+            nearest = min(math.hypot(x - place['x'], y - place['y']) for place in selected)
+            if nearest > 0.045 and all(name.casefold() != place['name'].casefold() for place in selected):
+                viable.append((weight * 0.055 + nearest, name, x, y))
+        if not viable:
+            raise RuntimeError(f'{town}: seulement {len(selected)} lieux sélectionnés')
+        _, name, x, y = max(viable)
+        selected.append({'name': name, 'x': round(x, 6), 'y': round(y, 6)})
     return selected
+
+
+def historic_sion_landmarks():
+    west, north, width, height = SION_LV95
+
+    def normalize(easting, northing):
+        return (easting - west) / width, (north - northing) / height
+
+    selected = [dict(name=name, x=x, y=y) for name, east, northing in SION_LANDMARKS
+                for x, y in [normalize(east, northing)]]
+    # The larger Sion source already contains the entire historic district.
+    elements = json.loads((CACHE / 'sion-ensemble.json').read_bytes())['elements']
+    return extend_landmarks('Sion', elements, lambda lat, lon: normalize(*lv95(lat, lon)), selected)
 
 
 def dashed_path(draw, pts, color, width):
@@ -269,7 +336,7 @@ def render(key, photo, elements, project):
         if tags.get('building') and len(pts) > 2:
             block = building_block(pts)
             if block:
-                simple.polygon(block, fill=26)
+                simple.polygon(block, fill=192)
         elif tags.get('waterway'):
             simple.line(pts, fill=186, width=7, joint='curve')
         elif tags.get('highway') in ('footway', 'path', 'steps', 'pedestrian'):
@@ -337,6 +404,8 @@ def main():
     (ASSETS / 'towns.json').write_text(json.dumps(rows, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     if len(rows) != len(TOWNS):
         raise SystemExit(f'{len(rows)} des {len(TOWNS)} nouveaux lieux générés.')
+    historic = historic_sion_landmarks()
+    (ASSETS / 'sion-historique-reperes.json').write_text(json.dumps(historic, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
 
 if __name__ == '__main__':

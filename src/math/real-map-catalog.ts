@@ -1,52 +1,76 @@
 import towns from './media/spatial/swiss/towns.json'
+import historicSion from './media/spatial/swiss/sion-historique-reperes.json'
+import capitalPlans from './media/spatial/world/plans.json'
+import imaginaryPlans from './media/spatial/imaginary/plans.json'
 
-type MapPoint = { name: string; x: number; y: number }
-type GridPoint = MapPoint & { column: number; row: number; code: string }
+export type MapPoint = { name: string; x: number; y: number; country?: string }
+export type GridPoint = MapPoint & { column: number; row: number; code: string }
+export type RealMapGrid = { columns: number; rows: number }
+export const realMapFamilies = [
+  { id: 'swiss', label: 'Suisse · villes et villages' },
+  { id: 'europe', label: 'Europe · capitales' },
+  { id: 'world', label: 'Monde · capitales' },
+  { id: 'imaginary', label: 'Plans imaginaires' },
+] as const
+export type RealMapFamily = (typeof realMapFamilies)[number]['id']
 
 export type RealMapPlan = {
   id: string
   label: string
-  grid: { columns: number; rows: number }
+  family: RealMapFamily
+  grid: RealMapGrid
   places: GridPoint[]
 }
 
-export const SION_GRID = { columns: 4, rows: 3 }
+export const SION_GRID = { columns: 8, rows: 5 }
 export const DEFAULT_REAL_MAP_ID = 'sion-historique'
-export const REAL_MAP_COLUMNS = 'ABCDEFG'
+export const REAL_MAP_COLUMNS = 'ABCDEFGHIJKL'
+export const REAL_MAP_GRID_LIMITS = { minColumns: 4, maxColumns: 12, minRows: 3, maxRows: 9 }
 
-const sionLandmarks = [
-  { name: 'Église Saint-Théodule', easting: 2593858, northing: 1120236 },
-  { name: 'Hôtel de ville', easting: 2593980, northing: 1120260 },
-  { name: 'Basilique de Valère', easting: 2594266, northing: 1120249 },
-  { name: 'Château de Tourbillon', easting: 2594469, northing: 1120560 },
-] as const
-
-function withGrid({ name, x, y }: MapPoint, columns: number): GridPoint {
-  const column = Math.floor(x * columns)
-  const row = Math.floor(y * SION_GRID.rows)
-  return { name, x, y, column, row, code: `${REAL_MAP_COLUMNS[column]}${row + 1}` }
+export function realMapGrid(columns?: number, rows?: number): RealMapGrid {
+  const { minColumns, maxColumns, minRows, maxRows } = REAL_MAP_GRID_LIMITS
+  const clamp = (value: number | undefined, min: number, max: number, fallback: number) =>
+    typeof value === 'number' && Number.isFinite(value) ? Math.min(max, Math.max(min, Math.round(value))) : fallback
+  return { columns: clamp(columns, minColumns, maxColumns, SION_GRID.columns), rows: clamp(rows, minRows, maxRows, SION_GRID.rows) }
 }
 
-export const SION_PLACES = sionLandmarks.map(({ name, easting, northing }) => withGrid({
-  name, x: (easting - 2593720) / 940, y: (1120697 - northing) / 627,
-}, SION_GRID.columns))
+export function mapBackgroundLabels(family: RealMapFamily) {
+  if (family === 'imaginary') return { photo: 'Vue aérienne dessinée', annotated: 'Dessin avec routes et chemins', simplified: 'Plan simplifié en noir et blanc' }
+  if (family === 'europe' || family === 'world') return { photo: 'Image satellite', annotated: 'Image satellite avec les frontières', simplified: 'Carte simplifiée en noir et blanc' }
+  return { photo: 'Photo aérienne réelle', annotated: 'Photo avec routes et chemins', simplified: 'Plan simplifié en noir et blanc' }
+}
+
+function withGrid(place: MapPoint, { columns, rows }: RealMapGrid): GridPoint {
+  const { x, y } = place
+  const column = Math.max(0, Math.min(columns - 1, Math.floor(x * columns)))
+  const row = Math.max(0, Math.min(rows - 1, Math.floor(y * rows)))
+  return { ...place, column, row, code: `${REAL_MAP_COLUMNS[column]}${row + 1}` }
+}
+
+export const SION_PLACES = historicSion.map(place => withGrid(place, SION_GRID))
 
 const sion: RealMapPlan = {
   id: DEFAULT_REAL_MAP_ID,
   label: 'Sion · centre historique',
+  family: 'swiss',
   grid: SION_GRID,
   places: SION_PLACES,
 }
 
-const downloadedTowns: Array<{ id: string; label: string; columns?: number; places: MapPoint[] }> = towns
+function cataloguePlans(entries: Array<{ id: string; label: string; places: MapPoint[] }>, family: RealMapFamily): RealMapPlan[] {
+  return entries.map(({ id, label, places }) => ({ id, label, family, grid: SION_GRID, places: places.map(place => withGrid(place, SION_GRID)) }))
+}
 
 export const realMapPlans: RealMapPlan[] = [
   sion,
-  ...downloadedTowns.map(({ id, label, columns = 4, places }) => ({
-    id, label, grid: { columns, rows: SION_GRID.rows }, places: places.map((place) => withGrid(place, columns)),
-  })),
+  ...cataloguePlans(towns, 'swiss'),
+  ...cataloguePlans(capitalPlans.filter(plan => plan.family === 'europe'), 'europe'),
+  ...cataloguePlans(capitalPlans.filter(plan => plan.family === 'world'), 'world'),
+  ...cataloguePlans(imaginaryPlans, 'imaginary'),
 ]
 
-export function realMapPlan(id?: string): RealMapPlan {
-  return realMapPlans.find((plan) => plan.id === id) ?? sion
+export function realMapPlan(id?: string, grid = SION_GRID): RealMapPlan {
+  const plan = realMapPlans.find((plan) => plan.id === id) ?? sion
+  if (grid.columns === plan.grid.columns && grid.rows === plan.grid.rows) return plan
+  return { ...plan, grid, places: plan.places.map(place => withGrid(place, grid)) }
 }

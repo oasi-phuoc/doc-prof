@@ -716,7 +716,7 @@ export type MathItem = {
   subtractionExchange?: { guided: boolean; digits: string[] }
   rectangleMeasures?: { length: number; width: number; guided: boolean }
   translationPractice?: { figure: Array<readonly [number, number]>; vector: readonly [number, number]; guided: boolean }
-  sionMap?: { target: number; background?: SionMapBackground; planId?: string }
+  sionMap?: RealMapSettings & { target: number; background?: SionMapBackground }
   lengthUnits?: { a: number; b: number }
   functionPairs?: { x: number; y: number }[]
   graphPractice?: { pairs: { x: number; y: number }[]; task: 'read' | 'plot'; yStep: number }
@@ -994,6 +994,13 @@ export type CompositeScene = {
 }
 
 export type SionMapBackground = 'photo' | 'annotated' | 'simplified'
+export type RealMapSettings = {
+  planId?: string
+  columns?: number
+  rows?: number
+  notation?: 'cases' | 'coordinates'
+  questionCount?: number
+}
 
 export type ExerciseBlock = {
   /** Identité locale de l’activité éditée. */
@@ -1072,6 +1079,10 @@ export type ExerciseBlock = {
   problemHelp?: boolean
   sionMapBackground?: SionMapBackground
   realMapId?: string
+  realMapColumns?: number
+  realMapRows?: number
+  realMapNotation?: RealMapSettings['notation']
+  realMapQuestionCount?: number
   /** Formulaire grammaire / TPF : cases lettre à la place des traits. */
   formulaireLetterGrid?: boolean
   /**
@@ -1323,6 +1334,7 @@ export type WorksheetDocument = {
 }
 
 export type WorksheetBlock = {
+  realMapPart?: 'map' | 'questions'
   /** Original block index when manual page breaks distribute exercises across sheets. */
   sourceBlockIndex?: number
   exerciseIndex: number

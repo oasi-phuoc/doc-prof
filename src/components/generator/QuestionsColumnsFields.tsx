@@ -2,7 +2,8 @@ import { mathTheoryTopic } from '@/math/theory-lessons'
 import { mathGlossaryBank } from '@/math/glossary-banks'
 import { isGuidedColumnType, isSingleColumnPractice, REAL_MAP_TYPE } from '@/math/guided-practice'
 import { isFundamentalPractice, SHAPE_PRACTICE } from '@/math/fundamental-practice'
-import { realMapPlan, realMapPlans } from '@/math/real-map-catalog'
+import { mapBackgroundLabels, REAL_MAP_GRID_LIMITS, realMapFamilies, realMapGrid, realMapPlan, realMapPlans } from '@/math/real-map-catalog'
+import { mapQuestionCount, mapQuestionLimit } from '@/math/real-map-practice'
 import { isLogistiqueReferenceType, logistiquePresentationFor, logistiquePresentationLabels, logistiqueType } from '@/logistique/catalog'
 import { logistiqueHasSummary, logistiqueHasWording, logistiqueModuleCapacities } from '@/logistique/generate'
 import { applyLogistiqueWording, logistiqueWordingMode } from '@/logistique/wording'
@@ -265,19 +266,44 @@ export function QuestionsColumnsFields(props: QuestionsColumnsFieldsProps) {
       logistics, selectedModules, activeBlock.logistiqueBankRevision, id,
     ).values()].reduce((total, stock) => total + stock, 0),
   })) : []
+  const mapPlan = activeBlock.exerciseType === REAL_MAP_TYPE ? realMapPlan(activeBlock.realMapId) : undefined
   return (
     <>
-              {activeBlock.exerciseType === REAL_MAP_TYPE && (
+              {mapPlan && (
                 <>
-                  <SelectBox label="Lieu du plan" value={realMapPlan(activeBlock.realMapId).id}
+                  <SelectBox label="Série de plans" value={mapPlan.family} onChange={(family) => {
+                    const first = realMapPlans.find(plan => plan.family === family)
+                    if (first) updatePage({ realMapId: first.id, libreItems: undefined, libreInstruction: undefined })
+                  }}>
+                    {realMapFamilies.map(({ id, label }) => <option key={id} value={id}>{label}</option>)}
+                  </SelectBox>
+                  <SelectBox label="Lieu du plan" value={mapPlan.id}
                     onChange={(value) => updatePage({ realMapId: realMapPlan(value).id, libreItems: undefined, libreInstruction: undefined })}>
-                    {realMapPlans.map(({ id, label }) => <option key={id} value={id}>{label}</option>)}
+                    {realMapPlans.filter(plan => plan.family === mapPlan.family).map(({ id, label }) => <option key={id} value={id}>{label}</option>)}
                   </SelectBox>
                   <SelectBox label="Fond du plan" value={activeBlock.sionMapBackground ?? 'photo'}
                     onChange={(value) => updatePage({ sionMapBackground: value === 'annotated' || value === 'simplified' ? value : 'photo' })}>
-                    <option value="photo">Photo aérienne réelle</option>
-                    <option value="annotated">Photo avec routes et chemins</option>
-                    <option value="simplified">Plan simplifié en noir et blanc</option>
+                    {Object.entries(mapBackgroundLabels(mapPlan.family)).map(([value, label]) => <option key={value} value={value}>{label}</option>)}
+                  </SelectBox>
+                  <SelectBox label="Colonnes du plan" value={String(realMapGrid(activeBlock.realMapColumns).columns)}
+                    onChange={(value) => updatePage({ realMapColumns: Number(value) })}>
+                    {Array.from({ length: REAL_MAP_GRID_LIMITS.maxColumns - REAL_MAP_GRID_LIMITS.minColumns + 1 }, (_, index) => index + REAL_MAP_GRID_LIMITS.minColumns)
+                      .map(count => <option key={count} value={count}>{count}</option>)}
+                  </SelectBox>
+                  <SelectBox label="Lignes du plan" value={String(realMapGrid(undefined, activeBlock.realMapRows).rows)}
+                    onChange={(value) => updatePage({ realMapRows: Number(value) })}>
+                    {Array.from({ length: REAL_MAP_GRID_LIMITS.maxRows - REAL_MAP_GRID_LIMITS.minRows + 1 }, (_, index) => index + REAL_MAP_GRID_LIMITS.minRows)
+                      .map(count => <option key={count} value={count}>{count}</option>)}
+                  </SelectBox>
+                  <SelectBox label="Type de repérage" value={activeBlock.realMapNotation ?? 'cases'}
+                    onChange={(value) => updatePage({ realMapNotation: value === 'coordinates' ? 'coordinates' : 'cases' })}>
+                    <option value="cases">Cases (B3)</option>
+                    <option value="coordinates">Coordonnées (2 ; 3)</option>
+                  </SelectBox>
+                  <SelectBox label="Questions du plan" value={String(mapQuestionCount(activeBlock.realMapNotation, activeBlock.realMapQuestionCount))}
+                    onChange={(value) => updatePage({ realMapQuestionCount: Number(value) })}>
+                    {Array.from({ length: mapQuestionLimit(activeBlock.realMapNotation) - 3 }, (_, index) => index + 4)
+                      .map(count => <option key={count} value={count}>{count}</option>)}
                   </SelectBox>
                 </>
               )}

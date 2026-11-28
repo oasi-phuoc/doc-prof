@@ -37,6 +37,10 @@ export function blockFromPage(page: PageConfig): ExerciseBlock {
     problemHelp: page.problemHelp,
     sionMapBackground: page.sionMapBackground,
     realMapId: page.realMapId,
+    realMapColumns: page.realMapColumns,
+    realMapRows: page.realMapRows,
+    realMapNotation: page.realMapNotation,
+    realMapQuestionCount: page.realMapQuestionCount,
     formulaireLetterGrid: page.formulaireLetterGrid,
     inlineBlankPx: page.inlineBlankPx,
     oralAnswerModes: page.oralAnswerModes,
@@ -132,7 +136,9 @@ export function pageAsConfig(page: PageConfig, block: ExerciseBlock): PageConfig
     grammarLevel:block.grammarLevel,grammarActivityId:block.grammarActivityId,grammarPresentation:block.grammarPresentation,
     grammarBankRevision:block.grammarBankRevision,grammarSnapshot:block.grammarSnapshot,grammarPreview:block.grammarPreview,
     grammarDocumentCount:block.grammarDocumentCount,grammarPageBreakAfterQuestionIds:block.grammarPageBreakAfterQuestionIds,
-    realMapId: block.realMapId, mathTheoryStepNumbering: block.mathTheoryStepNumbering, extraBlocks:undefined }
+    realMapId: block.realMapId, realMapColumns: block.realMapColumns, realMapRows: block.realMapRows,
+    realMapNotation: block.realMapNotation, realMapQuestionCount: block.realMapQuestionCount,
+    mathTheoryStepNumbering: block.mathTheoryStepNumbering, extraBlocks:undefined }
 }
 
 export function setPageBlock(page: PageConfig, blockIndex: number, patch: Partial<ExerciseBlock>): PageConfig {

@@ -1,8 +1,9 @@
 import { columnItem, fmt } from './column-arith'
 import { int, type Rng } from './rng'
-import { DEFAULT_REAL_MAP_ID, realMapPlan } from './real-map-catalog'
+import { realMapGrid, realMapPlan } from './real-map-catalog'
+import { mapPracticeItem } from './real-map-practice'
 import { isCfrGuidedType, tryGenerateCfrGuided } from './cfr-guided-practice'
-import type { Difficulty, MathItem } from './types'
+import type { Difficulty, MathItem, RealMapSettings } from './types'
 
 export { SION_GRID, SION_PLACES } from './real-map-catalog'
 
@@ -126,21 +127,8 @@ function translationPractice(rng: Rng, difficulty: Difficulty): MathItem {
   }).join(' · ') }
 }
 
-function readRealMap(rng: Rng, difficulty: Difficulty, id?: string): MathItem {
-  const plan = realMapPlan(id)
-  const target = int(rng, 0, plan.places.length - 1)
-  const place = plan.places[target]!
-  const reverse = difficulty === 'avance'
-  return {
-    layout: 'text',
-    sionMap: { target, ...(plan.id !== DEFAULT_REAL_MAP_ID ? { planId: plan.id } : {}) },
-    prompt: reverse ? `Quel lieu est dans la case ${place.code} ?` : `Dans quelle case se trouve ce lieu ?\n${place.name}`,
-    answer: reverse ? place.name : place.code,
-  }
-}
-
 export function tryGenerateGuidedPractice(
-  typeId: string, rng: Rng, count: number, difficulty: Difficulty, realMapId?: string,
+  typeId: string, rng: Rng, count: number, difficulty: Difficulty, realMap?: RealMapSettings,
 ): MathItem[] | undefined {
   if (typeId === ADDITION_CARRY_TYPE) {
     return Array.from({ length: count }, (_, index) => additionWithCarry(rng, difficulty, index))
@@ -155,6 +143,10 @@ export function tryGenerateGuidedPractice(
     return Array.from({ length: count }, (_, index) => rectangleMeasures(rng, difficulty, index))
   }
   if (typeId === TRANSLATION_PRACTICE_TYPE) return [translationPractice(rng, difficulty)]
-  if (typeId === REAL_MAP_TYPE) return [readRealMap(rng, difficulty, realMapId)]
+  if (typeId === REAL_MAP_TYPE) {
+    const grid = realMapGrid(realMap?.columns, realMap?.rows)
+    const plan = realMapPlan(realMap?.planId, grid)
+    return [mapPracticeItem({ ...realMap, ...grid, planId: plan.id, target: int(rng, 0, plan.places.length - 1) })]
+  }
   return tryGenerateCfrGuided(typeId, rng, count, difficulty)
 }

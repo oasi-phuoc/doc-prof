@@ -1,6 +1,8 @@
 import { mathTheoryLessons, mathTheoryTopic } from './theory-lessons'
 import { isMathProblemHelpType } from './problem-help'
 import { isShortProblemType } from './short-problems'
+import { REAL_MAP_TYPE } from './guided-practice'
+import { mapPracticeItem } from './real-map-practice'
 import { splitLogistiquePages, type LogistiquePageLayout } from '@/logistique/pagination'
 import { isLogistiqueDomain, isLogistiqueReferenceType, logistiqueType } from '@/logistique/catalog'
 import { generateLogistique, logistiqueDocumentTitle } from '@/logistique/generate'
@@ -406,7 +408,9 @@ function buildSingleBlock(
     config.quadLibre ? config.quadShapes : undefined,
     worksheetSeed,
     config.orderAscending,
-    { coordRange: config.coordRange, coordUnitSquares: config.coordUnitSquares, realMapId: config.realMapId },
+    { coordRange: config.coordRange, coordUnitSquares: config.coordUnitSquares,
+      realMap: { planId: config.realMapId, columns: config.realMapColumns, rows: config.realMapRows,
+        notation: config.realMapNotation, questionCount: config.realMapQuestionCount } },
   )
   const tpmCompareLine = config.domain === 'tpm' && config.exerciseType === 'nombres-comparer'
   return {
@@ -443,6 +447,10 @@ function isInfoPageType(typeId: string): boolean {
     isTcmCscConsignesType(typeId) ||
     isTcfConsignesType(typeId)
   )
+}
+
+function isUnnumberedExercise(typeId: string): boolean {
+  return typeId === REAL_MAP_TYPE || isInfoPageType(typeId)
 }
 
 export function buildPage(
@@ -489,7 +497,7 @@ export function buildPage(
           }
         : null
     let exerciseIndex = 0
-    if (!isTpmConsignes) {
+    if (!isUnnumberedExercise(block.exerciseType)) {
       if (block.exerciseNo != null) {
         exerciseIndex = block.exerciseNo
         exerciseCursor = Math.max(exerciseCursor, block.exerciseNo + 1)
@@ -527,8 +535,14 @@ export function buildPage(
         const words = clean.sequence ?? clean.placeParts ?? clean.answer.split(/\s+/).filter(Boolean)
         return { ...clean, ...alphaPhraseOrderItem(clean.answer, words) }
       }
-      if (clean.sionMap && block.sionMapBackground) {
-        return { ...clean, sionMap: { ...clean.sionMap, background: block.sionMapBackground } }
+      if (clean.sionMap && block.exerciseType === REAL_MAP_TYPE) {
+        const { planId, columns, rows, notation, background, target, questionCount } = clean.sionMap
+        return { ...clean, ...mapPracticeItem({
+          planId: block.realMapId ?? planId, columns: block.realMapColumns ?? columns,
+          rows: block.realMapRows ?? rows, notation: block.realMapNotation ?? notation,
+          background: block.sionMapBackground ?? background, target,
+          questionCount: block.realMapQuestionCount ?? questionCount,
+        }) }
       }
       if (logistics?.kind === 'glossaire' && !clean.logistiqueGlossaryEntry) return completeLogistiqueGlossaryItem(clean, logistics.module)
       if (glossaryBank && clean.glossary) {
@@ -559,7 +573,7 @@ export function buildPage(
       exerciseIndex,
       title: isTpmConsignes
         ? 'Informations'
-        : isMathTheory
+        : isMathTheory || block.exerciseType === REAL_MAP_TYPE
           ? result.title
           : isTheory
             ? ((libre?.instruction ?? result.instruction)?.replace(/^Théorie — /, '') || `Théorie`)
@@ -692,12 +706,13 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
 
   pagesWithExclude.forEach((page, index) => {
     const worksheet = buildPage(page, seed + index * 7919, exerciseNo, seed, logisticsLayout?.evaluation)
-    const scoredBlocks = worksheet.blocks.filter((block) => !isInfoPageType(block.exerciseType))
+    const scoredBlocks = worksheet.blocks.filter((block) => !isUnnumberedExercise(block.exerciseType))
     if (scoredBlocks.length) {
       exerciseNo = Math.max(...scoredBlocks.map((block) => block.exerciseIndex)) + 1
     }
 
     const hasFullPageContent = (block: WorksheetBlock) =>
+      (block.exerciseType === REAL_MAP_TYPE && block.items[0]?.sionMap) ||
       block.problemHelp || isShortProblemType(block.exerciseType) || Boolean(grammarScenarioFor(block.exerciseType)) ||
       block.items.some((item) => item.mathTheory || item.grammarTheoryFalc) ||
       (worksheet.blocks.length > 1 && isGrammaireTheoryType(block.exerciseType))
@@ -726,6 +741,11 @@ export function buildWorksheets(pages: PageConfig[], seed: number, defaultPoints
         }
         append(preceding)
         preceding = []
+        if (block.exerciseType === REAL_MAP_TYPE && block.items[0]?.sionMap) {
+          append([{ ...block, sourceBlockIndex, realMapPart: 'map' }])
+          append([{ ...block, sourceBlockIndex, realMapPart: 'questions' }])
+          return
+        }
         const scenario = grammarScenarioFor(block.exerciseType)
         if (scenario) {
           const stages = paginateGrammarScenario(block, scenario)

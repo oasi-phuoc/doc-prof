@@ -22,6 +22,7 @@ import {
 } from '@/components/math/PrintDocumentChrome'
 import { DecomposeExample } from '@/components/item-view/decompose'
 import { MathWorkedExample } from '@/components/item-view/guided-practice'
+import { RealMapFigure, RealMapQuestions } from '@/components/item-view/real-map'
 import { CfrGuidedExample } from '@/components/item-view/cfr-guided'
 import { MathGeometryExample } from '@/components/item-view/guided-geometry'
 import { FundamentalExample } from '@/components/item-view/fundamental-practice'
@@ -239,9 +240,10 @@ export function WorksheetSheet({
   coordEdit,
 }: WorksheetSheetProps) {
   const isJeuxSheet = page.domain === 'jeux'
-  /** A5 : chaque moitié a toujours son en-tête (mini-contrôle autonome), sauf chrome masqué. */
+  const realMapPart = page.blocks[0]?.realMapPart
+  /** Les mini-fiches A5 ont leur en-tête. La page de questions d’un plan reprend son titre. */
   const showHeader =
-    !hideChrome && !isJeuxSheet && !page.cePosterSheet && (Boolean(asHalf) || forceHeader || pageNumber === 1)
+    !hideChrome && !isJeuxSheet && !page.cePosterSheet && realMapPart !== 'questions' && (Boolean(asHalf) || forceHeader || pageNumber === 1)
   const showFooter = !hideChrome && !isJeuxSheet
   const hasMathTheory = page.items.some((item) => item.mathTheory)
   const compactMathTheoryHeader = Boolean(asHalf) && hasMathTheory
@@ -311,7 +313,7 @@ export function WorksheetSheet({
           } : institutional}
           evalMode={evalMode}
           totalPoints={evalMode ? documentTotalPoints : undefined}
-          fallbackTitle={hasMathTheory ? undefined : page.title}
+          fallbackTitle={hasMathTheory || realMapPart ? undefined : page.title}
         />
       ) : null}
       <SheetBody>
@@ -319,6 +321,15 @@ export function WorksheetSheet({
           const blockIndex = block.sourceBlockIndex ?? renderedBlockIndex
           const activitySettingsTarget = settingsTarget === undefined ? undefined
             : blockIndex === settingsBlockIndex ? settingsTarget : null
+          const map = block.items[0]?.sionMap
+          if (block.realMapPart && map) {
+            return (
+              <section key={`plan-${blockIndex}-${block.realMapPart}`} className="exercise-block real-map-sheet"
+                data-exercise-type={block.exerciseType} data-real-map-part={block.realMapPart}>
+                {block.realMapPart === 'map' ? <RealMapFigure data={map} mode={mode} /> : <RealMapQuestions data={map} mode={mode} />}
+              </section>
+            )
+          }
           if (block.items.length && block.items.every((item) => item.logistiqueGlossaryEntry)) {
             return (
               <WorksheetSettingsScope target={activitySettingsTarget} key={`glossaire-${blockIndex}`}>
@@ -742,6 +753,7 @@ export function WorksheetSheet({
         <DocumentFooter
           pageNumber={pageNumber}
           total={total}
+          showPageNumber={!realMapPart}
           reference={
             isAlphaSoutienDomain(page.domain) ? ALPHA_SOUTIEN_REFERENCE : institutional.reference
           }

@@ -7156,25 +7156,23 @@ svg[data-diagram-source='ready'] { display: none !important; }
 .math-translation-image polygon { stroke-dasharray: 5 2; }
 .math-translation-practice text { fill: currentColor; font-size: 12px; font-weight: 700; }
 .math-translation-guide { stroke: #174a7e; stroke-width: 1.6; }
-.math-sion-map figure { margin: 2mm 0; width: min(100%, 130mm); }
+.math-sion-map figure { margin: 2mm 0; width: 100%; }
 .math-sion-plot { position: relative; }
 .math-sion-background { position: absolute; display: block; object-fit: fill; }
-.math-sion-overlay { position: relative; display: block; width: 100%; height: auto; font-size: 14px; font-weight: 700; }
-.math-sion-map figcaption { font-size: 9pt; text-align: right; }
-.math-sion-question { white-space: pre-line; }
-.exercise-block.is-evaluation .math-sion-example { display: none; }
-.math-sion-grid { stroke: #fff; stroke-width: 1.3; opacity: .83; }
-.math-sion-place circle { fill: #fff; stroke: #152435; stroke-width: 1.8; }
-.math-sion-place line { stroke: #fff; stroke-width: 1.2; }
-.math-sion-place text, .math-sion-north text { fill: #152435; stroke: #fff; stroke-width: 3.5; paint-order: stroke; }
-.math-sion-north path { stroke: #fff; stroke-width: 2; fill: none; }
-.math-sion-answer-cell { fill: none; stroke: #fff; stroke-width: 4; stroke-dasharray: 7 3; }
-.math-sion-map.is-simplified .math-sion-grid { stroke: #666; stroke-dasharray: 2 2; opacity: .8; }
-.math-sion-map.is-simplified .math-sion-place line,
-.math-sion-map.is-simplified .math-sion-north path,
-.math-sion-map.is-simplified .math-sion-answer-cell { stroke: #151515; }
-.math-sion-map.is-simplified .math-sion-answer-cell { fill: #1111; }
-.math-sion-map:not(.is-photo) figcaption { display: flex; justify-content: space-between; gap: 5px; }
+.math-sion-overlay { position: relative; display: block; width: 100%; height: auto; font-size: 13px; font-weight: 700; }
+.math-sion-overlay text { fill: var(--purple); }
+.math-sion-map figcaption { color: var(--purple); font-size: 9pt; text-align: right; }
+.math-sion-grid { stroke: #fff; stroke-width: 1.2; opacity: .84; }
+.math-sion-border, .math-sion-axes { fill: none; stroke: var(--purple); stroke-width: 1.2; }
+.math-sion-place circle { fill: var(--purple); stroke: #fff; stroke-width: 1.6; }
+.math-sion-place line { stroke: #fff; stroke-width: 1; }
+.math-sion-place text, .math-sion-north text { stroke: #fff; stroke-width: 3; paint-order: stroke; }
+.math-sion-north path { stroke: #fff; stroke-width: 1.8; stroke-linecap: round; fill: none; }
+.math-map-route { fill: none; stroke-linecap: round; }
+.math-sion-map.is-simplified .math-sion-grid { stroke: #585858; stroke-width: .9; }
+.math-sion-map.is-simplified .math-sion-place line { stroke: #626262; }
+.math-sion-map.is-simplified .math-sion-north path { stroke: var(--purple); }
+.math-sion-map:not(.is-photo) figcaption { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2px 6px; }
 .math-sion-legend { display: flex; flex-wrap: wrap; gap: 2px 8px; }
 .math-sion-legend > span::before {
   display: inline-block;
@@ -7184,15 +7182,36 @@ svg[data-diagram-source='ready'] { display: none !important; }
   vertical-align: middle;
 }
 .math-sion-road-key::before { border-block: 1px solid currentColor; height: 4px; }
+.math-sion-border-key::before { border-top: 1px solid currentColor; }
 .math-sion-path-key::before { border-top: 1.5px dashed currentColor; }
 .math-sion-map.is-annotated .math-sion-road-key::before { border: 1px solid #302b24; background: #fff9e9; }
 .math-sion-map.is-annotated .math-sion-path-key::before { border-top-color: #865a00; }
-.math-sion-map.is-regional .math-sion-place text { font-size: 12.5px; }
-.math-sion-map.is-regional figcaption { flex-wrap: wrap; }
-.math-region-attribution { flex-basis: 100%; font-size: 8pt; }
+.real-map-sheet { margin-top: 0; }
+.real-map-title { font-size: 17pt; color: var(--purple); margin: 0 0 2mm; }
+.real-map-questions { font-size: 12pt; line-height: 1.3; }
+.real-map-questions .real-map-title { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 1mm 3mm; }
+.real-map-questions .real-map-title span { font-size: .72em; }
+.real-map-questions p { margin: 0; }
+.real-map-questions > ol { list-style: decimal outside; margin: 3mm 0 0; padding-inline-start: 7mm; }
+.real-map-questions > ol > li { padding-inline-start: 1mm; margin-bottom: 3mm; break-inside: avoid; }
+.real-map-questions > ol > li::marker, .real-map-questions strong { color: var(--purple); font-weight: 700; }
+.real-map-capitals { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1mm 4mm; margin: 2mm 0 0; padding: 0; font-size: 10pt; }
+.real-map-capitals strong { color: var(--purple); }
+.a5-half .real-map-capitals { font-size: 9pt; }
+.real-map-questions small { font-size: .92em; }
+.real-map-answer { display: flex; align-items: baseline; gap: 2mm; min-height: 7mm; margin-top: 1mm; font-size: .93em; }
+.real-map-answer span:last-child { flex: 1; min-height: 1em; border-bottom: 1px solid #707780; }
+.real-map-answer.is-corrected { color: var(--purple); font-weight: 600; min-height: 0; }
+.real-map-options, .real-map-posts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1mm 3mm; margin: 1mm 0 0; padding: 0; list-style: none; }
+.real-map-options li { display: flex; gap: 1.5mm; align-items: baseline; }
+.real-map-checkbox { flex: 0 0 3.7mm; height: 3.7mm; border: 1px solid currentColor; border-radius: .5mm; color: var(--purple); line-height: 1; text-align: center; }
+.a5-half .real-map-title { font-size: 15pt; }
+.a5-half .real-map-questions { font-size: 10.5pt; line-height: 1.23; }
+.a5-half .real-map-questions > ol { margin-top: 2mm; }
+.a5-half .real-map-questions > ol > li { margin-bottom: 1.8mm; }
+.a5-half .real-map-answer:not(.is-corrected) { min-height: 5mm; }
 .a5-half .math-rectangle-question, .a5-half .math-rectangle-example { gap: 2mm; }
 .a5-half .math-translation-practice svg { width: min(100%, 68mm); }
-.a5-half .math-sion-map figure { width: min(100%, 111mm); }
 
 .math-square-figures,.math-solid-choices{display:grid;justify-items:center;gap:2mm;margin-block:1mm}
 .math-square-figures-row{display:flex;flex-wrap:wrap;align-items:end;justify-content:center;gap:3mm}
