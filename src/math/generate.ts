@@ -452,9 +452,10 @@ export function buildPage(
   worksheetSeed = seed,
   logistiqueEvaluation = true,
 ): WorksheetPage {
+  const societyDefault = config.domain === 'société' ? defaultPage('société') : undefined
   // CE « Lire des instructions » : 1 document = 1 exercice (pas 2 docs dans le même).
-  const page: PageConfig = config.domain === 'société'
-    ? defaultPage('société')
+  const page: PageConfig = societyDefault && config.exerciseType !== societyDefault.exerciseType
+    ? societyDefault
     : expandTcfInstructionDocuments(config, seed)
   const blocksIn = pageBlocks(page)
   let exerciseCursor = startExercise

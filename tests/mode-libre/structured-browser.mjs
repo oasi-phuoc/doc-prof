@@ -54,7 +54,7 @@ async function openFiche(page, data, expectQuestions = true) {
   await worksheet(page).waitFor()
   await button(page, 'Mode libre').click()
   if (expectQuestions) await liveQuestion(page).waitFor()
-  assert.equal(await button(page, 'Valider les changements').count(), 0)
+  assert.equal(await button(page.locator('#activity-editor'), 'Valider les changements').count(), 0)
 }
 
 async function documentPilot(page) {
