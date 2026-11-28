@@ -199,6 +199,20 @@
       }
     },
     {
+      "id": "fixture-306-processus",
+      "module": "306",
+      "kind": "situation",
+      "revision": "v1",
+      "approvedFor": ["CFC", "AFP"],
+      "prompt": "Complétez les étapes de l’échange.",
+      "answer": "",
+      "table": {
+        "presentation": "processus-a-completer",
+        "headers": ["Étape", "Action"],
+        "rows": [["Identifier", "Relever le marquage."], ["Vérifier", { "answer": "Contrôler l’état des supports." }], ["Remettre", "Remettre des supports conformes."]]
+      }
+    },
+    {
       "id": "fixture-105-glossaire",
       "module": "105",
       "revision": "v1",

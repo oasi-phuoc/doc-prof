@@ -137,7 +137,7 @@ function theoryHeight(block: GrammarTheoryBlock, width: number, scale: number, a
 
 function height(item: MathItem, a5: boolean, scale: number): number {
   const table = item.logistiqueTable
-  if (a5 && table) scale = Math.min(table.presentation === 'cas-mixte' ? 1 : 1.125, scale)
+  if (a5 && table) scale = Math.min(table.presentation === 'cas-mixte' || table.presentation === 'processus-a-completer' ? 1 : 1.125, scale)
   const width = (a5 ? 53 : 72) / scale
   const glossaryFigure = item.logistiqueGlossaryFigure
   const entry = item.logistiqueGlossaryEntry
@@ -187,6 +187,11 @@ function height(item: MathItem, a5: boolean, scale: number): number {
   const promptWidth = a5 || item.calcAnswer || table ? width * 1.2 : width
   const prompt = lineCount(item.prompt ?? '', promptWidth) * 24 * scale
   const answer = lineCount(item.answer, width * 0.84) * 27 * scale
+  if (table?.presentation === 'processus-a-completer') {
+    const rows = table.rows.reduce((sum, [label, action]) => sum + 21 + 19 * scale * Math.max(
+      lineCount(String(label), width * .3), lineCount(typeof action === 'string' ? action : action?.answer ?? '', width * .62)), 0)
+    return imageHeight + prompt + rows + 22
+  }
   const columnWidth = table ? Math.max(4, width / table.headers.length - 2) : 1
   const tableHeight = table ? 8 + [table.headers, ...table.rows].reduce((sum, row) => {
     const lines = row.map((cell) => lineCount(typeof cell === 'string' ? cell : cell.answer, columnWidth))
@@ -259,6 +264,14 @@ export function splitLogistiquePages(
       const theory = item.theoryBlock
       const table = item.logistiqueTable
       const pairCount = item.logistiqueMatching ? item.vocabPairs?.length ?? 0 : 0
+      if (table?.presentation === 'processus-a-completer' && table.rows.length > 4 &&
+          height(item, a5, fontScale) > budget(0, a5 ? Math.min(fontScale, 1) : fontScale) - 70) {
+        const middle = Math.ceil(table.rows.length / 2)
+        return [
+          { item, sourceIndex, subquestionRange: { start: 0, end: middle }, isLast: false },
+          { item, sourceIndex, subquestionRange: { start: middle, end: table.rows.length }, isLast: true },
+        ]
+      }
       if (a5 && pairCount >= 4 && (pairCount > 4 || height(item, true, fontScale) > budget(0, Math.min(fontScale, 1.25)) - 55)) {
         const middle = Math.ceil(pairCount / 2)
         return [
@@ -341,7 +354,9 @@ export function splitLogistiquePages(
       const printable = theoryBlock ? { ...item, theoryBlock }
         : subquestionRange && item.logistiqueMatching ? sliceLogistiqueMatch(item, subquestionRange.start, subquestionRange.end)
         : subquestionRange && item.logistiqueTable ? { ...item,
-          logistiqueTable: { ...item.logistiqueTable, questions: item.logistiqueTable.questions?.slice(subquestionRange.start, subquestionRange.end) } }
+          logistiqueTable: item.logistiqueTable.presentation === 'processus-a-completer'
+            ? { ...item.logistiqueTable, rows: item.logistiqueTable.rows.slice(subquestionRange.start, subquestionRange.end) }
+            : { ...item.logistiqueTable, questions: item.logistiqueTable.questions?.slice(subquestionRange.start, subquestionRange.end) } }
         : detachedNarratives.has(sourceIndex) ? { ...item, logistiqueNarrative: undefined } : item
       const base = height(printable, a5, a5 && item.logistiqueTable?.questions ? Math.min(fontScale, 1.125) : fontScale)
       if (!evaluation || item.layout === 'theory' || item.noPoints) return base

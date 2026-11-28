@@ -1,6 +1,6 @@
 export type LogistiqueTablePresentation =
   | 'tableau-donnees' | 'tableau-dates' | 'tableau-comparaison' | 'tableau-classement' | 'tableau-ordre'
-  | 'lire-document' | 'corriger-erreurs' | 'justifier-decision' | 'frise-chronologique' | 'cas-mixte'
+  | 'lire-document' | 'corriger-erreurs' | 'justifier-decision' | 'frise-chronologique' | 'cas-mixte' | 'processus-a-completer'
 export type LogistiqueTableCell = string | { answer: string }
 export type LogistiqueDocumentQuestion = { prompt: string; answer: string; points?: number } & (
   | { kind?: 'redaction' }
@@ -19,7 +19,7 @@ export type LogistiqueExerciseTable = {
 export function isLogistiqueTablePresentation(value: unknown): value is LogistiqueTablePresentation {
   return value === 'tableau-donnees' || value === 'tableau-dates' ||
     value === 'tableau-comparaison' || value === 'tableau-classement' || value === 'tableau-ordre' ||
-    value === 'frise-chronologique' || isLogistiqueDocumentPresentation(value)
+    value === 'frise-chronologique' || value === 'processus-a-completer' || isLogistiqueDocumentPresentation(value)
 }
 
 export function isLogistiqueDocumentPresentation(value: unknown): value is 'lire-document' | 'corriger-erreurs' | 'justifier-decision' | 'cas-mixte' {
@@ -65,6 +65,15 @@ export function validLogistiqueExerciseTable(value: unknown): value is Logistiqu
       Array.isArray(questions) && questions.length >= 3 && questions.length <= 8 && questions.every((question) =>
         isLogistiqueDocumentQuestion(question, mixed)) &&
       (!mixed || new Set(questions.map(({ kind }) => kind ?? 'redaction')).size >= 2)
+  }
+  if (presentation === 'processus-a-completer') {
+    return title === undefined && questions === undefined && headers.length === 2 && rows.length >= 3 && rows.length <= 6 &&
+      rows.every(([label, action]) => {
+        const text = typeof action === 'string' ? action : action?.answer
+        return typeof label === 'string' && Boolean(label.trim()) && label.length <= 58 &&
+          typeof text === 'string' && Boolean(text.trim()) && text.length <= 120
+      }) &&
+      rows.some(([, action]) => typeof action !== 'string')
   }
   return title === undefined && questions === undefined && rows.some((row) => row.some((cell) => typeof cell !== 'string'))
 }

@@ -281,7 +281,8 @@ export function WorksheetSheet({
   const compactHeader = asHalf && (page.domain === 'grammaire' || page.domain === 'société' || page.domain === 'vie-scolaire' || isTpfFamilyDomain(page.domain))
   const hasLogistiqueStory = isLogistiqueDomain(page.domain) && page.blocks.some((block) =>
     block.logistiqueDetachedNarratives?.length || block.items.some((item) => item.logistiqueNarrative))
-  const hasLogistiqueMixedCase = Boolean(asHalf && page.items.some(({ logistiqueTable }) => logistiqueTable?.presentation === 'cas-mixte'))
+  const hasCompactLogistiqueActivity = Boolean(asHalf && page.items.some(({ logistiqueTable }) =>
+    logistiqueTable?.presentation === 'cas-mixte' || logistiqueTable?.presentation === 'processus-a-completer'))
   const domainClass = isLogistiqueDomain(page.domain) ? ' is-logistique'
     : page.domain === 'tcm-csc' ? ' is-tcm-csc' : page.domain === 'tcm-cfr' ? ' is-tcm-cfr' : page.domain === 'tpm' ? ' is-tpm' : ''
   const posterClass = page.cePosterSheet
@@ -294,7 +295,7 @@ export function WorksheetSheet({
   return (
     <Root
       className={rootClass + domainClass + posterClass + (compactMathHeader ? ' has-compact-math-header' : compactHeader ? ' has-compact-header' : '') +
-        (hasLogistiqueStory ? ' has-logistique-story' : '') + (hasLogistiqueMixedCase ? ' has-logistique-mixed-case' : '')}
+        (hasLogistiqueStory ? ' has-logistique-story' : '') + (hasCompactLogistiqueActivity ? ' has-compact-logistique-activity' : '')}
       style={{ '--sheet-columns': sheetColumns, ...(page.domain === 'tcm-csc' ? { '--csc-exercise-gap': `${page.exerciseGapPx ?? 50}px` } : {}) } as CSSProperties}
     >
       {showHeader ? (
@@ -582,7 +583,9 @@ export function WorksheetSheet({
                   const printableItem = theorySlice?.theoryBlock ? { ...item, theoryBlock: theorySlice.theoryBlock }
                     : item.logistiqueMatching && subquestionRange ? sliceLogistiqueMatch(item, subquestionRange.start, subquestionRange.end)
                     : item.logistiqueTable && subquestionRange ? { ...item, logistiqueSubquestionOffset: subquestionRange.start,
-                      logistiqueTable: { ...item.logistiqueTable,
+                      logistiqueTable: item.logistiqueTable.presentation === 'processus-a-completer'
+                      ? { ...item.logistiqueTable, rows: item.logistiqueTable.rows.slice(subquestionRange.start, subquestionRange.end) }
+                      : { ...item.logistiqueTable,
                         title: subquestionRange.start ? `${item.logistiqueTable.title} (suite)` : item.logistiqueTable.title,
                         questions: item.logistiqueTable.questions?.slice(subquestionRange.start, subquestionRange.end),
                       } }

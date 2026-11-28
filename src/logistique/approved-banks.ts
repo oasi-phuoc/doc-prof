@@ -274,6 +274,7 @@ import { logistiqueDocumentExercises } from './banks/documents-v012'
 import { logistiqueMatchingExercises } from './banks/associations-v013'
 import { logistiqueComplementaryFormats } from './banks/complementaires-v015'
 import { logistiqueMixedCases } from './banks/cas-mixtes-v016'
+import { logistiqueProcessExercises } from './banks/processus-v017'
 import type { LogistiquePair } from './matching'
 import type { LogistiqueChoice } from './choices'
 import type { LogistiqueExerciseTable } from './tables'
@@ -688,6 +689,9 @@ const matchingExercisesPublication: LogistiquePublication = {
 const complementaryFormatsPublication: LogistiquePublication = {
   revision: 'logistique-complementaires-v015', units: [...matchingExercisesPublication.units, ...logistiqueComplementaryFormats],
 }
+const mixedCasesPublication: LogistiquePublication = {
+  revision: 'logistique-cas-mixtes-v016', units: [...complementaryFormatsPublication.units, ...logistiqueMixedCases],
+}
 
 export const logistiquePublications: readonly LogistiquePublication[] = [
   { revision: 'logistique-initiale', units: [] },
@@ -785,7 +789,8 @@ export const logistiquePublications: readonly LogistiquePublication[] = [
   documentExercisesPublication,
   matchingExercisesPublication,
   complementaryFormatsPublication,
-  { revision: 'logistique-cas-mixtes-v016', units: [...complementaryFormatsPublication.units, ...logistiqueMixedCases] },
+  mixedCasesPublication,
+  { revision: 'logistique-processus-v017', units: [...mixedCasesPublication.units, ...logistiqueProcessExercises] },
 ]
 
 export const currentLogistiquePublication = logistiquePublications[logistiquePublications.length - 1]!

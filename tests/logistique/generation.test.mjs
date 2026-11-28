@@ -780,6 +780,35 @@ test('les cas mixtes réunissent les trois réponses et dérivent le barème des
   }
 })
 
+test('les processus gardent les étapes, les réponses et les suites dans l’ordre du cours', () => {
+  const units = currentLogistiquePublication.units.filter(({ revision }) => revision === 'processus-v017')
+  assert.equal(units.length, 6)
+  for (const unit of units) {
+    const theory = currentLogistiquePublication.units.find(({ module, kind }) => module === unit.module && kind === 'theorie')
+    assert(theory?.blocks.some((block) => block.kind === 'heading' && block.text === unit.theorySection), unit.id)
+    assert(validLogistiqueExerciseTable(unit.table), unit.id)
+    for (const diploma of unit.approvedFor) {
+      const page = { ...config(diploma, unit.module, unit.kind), logistiquePresentation: 'processus-a-completer' }
+      const worksheet = buildPage(page, 40)
+      const [item] = worksheet.items
+      assert.deepEqual(item.logistiqueTable, unit.table)
+      assert(reviewableLogistiqueAnswer(item))
+      const [frozen] = freezeLogistiquePages([{ ...page, libreItems: [item] }])
+      assert(validLogistiquePages([frozen]))
+      assert.equal(generateLogistique({ ...page, logistiqueBankRevision: 'logistique-cas-mixtes-v016' }, 20).bankQuestionCap, 0)
+      const rows = [...unit.table.rows, ['Tracer', 'Enregistrer le résultat.'], ['Confirmer', { answer: 'Informer le prochain poste.' }]]
+      const long = { ...item, logistiqueTable: { ...unit.table, rows } }
+      assert(validLogistiqueExerciseTable(long.logistiqueTable))
+      const pages = splitLogistiquePages({ ...worksheet, items: [long], blocks: [{ ...worksheet.blocks[0], items: [long] }] },
+        { a5: true, fontScale: 1.5 }).map((sheet) => ({ ...sheet, configIndex: 0 }))
+      assert.equal(pages.length, 2)
+      assert.deepEqual(pages.flatMap(({ blocks }) => blocks[0].logistiqueTheorySlices ?? [])
+        .flatMap(({ subquestionRange }) => rows.slice(subquestionRange.start, subquestionRange.end)), rows)
+      assert.deepEqual(blockItemsForConfig(pages, 0, 0).items, [long])
+    }
+  }
+})
+
 test('la trame de réception calcule les étapes liées, respecte les protections et fige le document', () => {
   const scenario = initialLogistiqueStory
   for (const diploma of ['CFC', 'AFP']) {

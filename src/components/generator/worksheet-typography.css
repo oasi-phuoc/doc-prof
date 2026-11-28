@@ -216,7 +216,7 @@
   --logistique-compact-a5-scale: min(var(--sheet-font-scale, 1), 1);
 }
 
-.a5-half.is-logistique:is(.has-logistique-story, .has-logistique-mixed-case) {
+.a5-half.is-logistique:is(.has-logistique-story, .has-compact-logistique-activity) {
   --sheet-font-scale: var(--logistique-compact-a5-scale, 1);
 }
 
@@ -294,6 +294,45 @@
 
 .logistique-timeline tbody tr:first-child td:first-child::before { top: 50%; }
 .logistique-timeline tbody tr:last-child td:first-child::before { bottom: 50%; }
+
+.logistique-process-flow {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: calc(13px * var(--app-font-scale, 1));
+  line-height: 1.35;
+}
+
+.logistique-process-flow li {
+  display: grid;
+  grid-template-columns: minmax(0, 33fr) minmax(0, 67fr);
+  gap: .65em;
+  padding: .4em .6em;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  position: relative;
+  overflow-wrap: anywhere;
+}
+
+.logistique-process-flow li + li { margin-top: 12px; }
+
+.logistique-process-flow li + li::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -11px;
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid var(--purple);
+  border-bottom: 1.5px solid var(--purple);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.logistique-process-action .logistique-table-blank { border-bottom: 1px solid var(--purple); }
+
+.a5-half .logistique-process-flow li { padding-block: .3em; }
+.a5-half .logistique-process-flow li + li { margin-top: 8px; }
+.a5-half .logistique-process-flow li + li::before { top: -7.5px; width: 5px; height: 5px; }
 
 .logistique-document-exercise .logistique-exercise-table caption {
   padding-bottom: 4px;

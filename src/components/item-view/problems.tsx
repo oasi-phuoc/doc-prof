@@ -687,7 +687,7 @@ export function StackedPrompt({ item, mode, showHelp = false }: { item: MathItem
         <LogistiqueIllustratedPrompt item={item} mode={mode}>
           <p className="prompt-stack-text">{prompt}</p>
         </LogistiqueIllustratedPrompt>
-        <LogistiqueTableView table={item.logistiqueTable} mode={mode} />
+        <LogistiqueTableView table={item.logistiqueTable} mode={mode} offset={offset} />
         {questions ? <ol type="a" start={offset + 1} className="logistique-document-questions">
           {questions.map((question, index) => {
             const part: MathItem = { layout: 'text', prompt: question.prompt, answer: question.answer,

@@ -16,6 +16,7 @@ export function LogistiqueTableEditor({ table, onChange }: {
   const value = draft?.basis === table ? draft.value : table
   const isDocument = Boolean(value.questions)
   const mixed = value.presentation === 'cas-mixte'
+  const process = value.presentation === 'processus-a-completer'
   const valid = validLogistiqueExerciseTable(value)
 
   function update(next: LogistiqueExerciseTable) {
@@ -41,12 +42,12 @@ export function LogistiqueTableEditor({ table, onChange }: {
 
   return (
     <details className="logistique-table-editor">
-      <summary>Modifier le tableau</summary>
+      <summary>{process ? 'Modifier le processus' : 'Modifier le tableau'}</summary>
       {value.questions && <label className="libre-field is-line">
         <span>Titre du document</span>
         <input className="libre-line-input" value={value.title ?? ''} onChange={(event) => update({ ...value, title: event.target.value })} />
       </label>}
-      <fieldset>
+      {!process && <fieldset>
         <legend>En-têtes</legend>
         {value.headers.map((header, column) => <div key={column}>
           <label className="libre-field is-line">
@@ -70,7 +71,7 @@ export function LogistiqueTableEditor({ table, onChange }: {
           headers: [...value.headers, `Colonne ${value.headers.length + 1}`],
           rows: value.rows.map((row) => [...row, '']),
         })}>Ajouter une colonne</button>
-      </fieldset>
+      </fieldset>}
       {value.rows.map((row, index) => (
         <fieldset key={index}>
           <legend>Ligne {index + 1}</legend>
@@ -82,12 +83,13 @@ export function LogistiqueTableEditor({ table, onChange }: {
                 <label className="libre-field is-line">
                   <span>{label}</span>
                   <input className="libre-line-input" aria-label={`${label}, ligne ${index + 1}`} value={given ? cell : cell.answer}
+                    maxLength={process ? column === 0 ? 58 : 120 : undefined}
                     onChange={(event) => {
                       const text = event.target.value
                       update({ ...value, rows: value.rows.with(index, row.with(column, given ? text : { answer: text })) })
                     }} />
                 </label>
-                {!value.questions && <label className="logistique-bank-question">
+                {!value.questions && (!process || column === 1) && <label className="logistique-bank-question">
                   <input type="checkbox" checked={!given}
                     aria-label={`Cellule à compléter, ligne ${index + 1}, colonne ${column + 1}`}
                     onChange={() => update({ ...value,
@@ -104,7 +106,7 @@ export function LogistiqueTableEditor({ table, onChange }: {
             <button type="button" className="button small secondary" disabled={index === value.rows.length - 1}
               aria-label={`Descendre la ligne ${index + 1}`}
               onClick={() => update({ ...value, rows: move(value.rows, index, index + 1) })}>Descendre</button>
-            <button type="button" className="button small secondary" disabled={value.rows.length === 1}
+            <button type="button" className="button small secondary" disabled={value.rows.length <= (process ? 3 : 1)}
               aria-label={`Supprimer la ligne ${index + 1}`} onClick={() => {
                 if (row.some((cell) => typeof cell !== 'string') &&
                   !window.confirm('Retirer cette ligne et les réponses qu’elle contient ?')) return
@@ -113,9 +115,9 @@ export function LogistiqueTableEditor({ table, onChange }: {
           </div>
         </fieldset>
       ))}
-      <button type="button" className="button small secondary" onClick={() => update({
+      {(!process || value.rows.length < 6) && <button type="button" className="button small secondary" onClick={() => update({
         ...value, rows: [...value.rows, value.headers.map(() => '')],
-      })}>Ajouter une ligne</button>
+      })}>Ajouter une ligne</button>}
       {value.questions?.map((question, index, all) => {
         const setQuestion = (next: LogistiqueDocumentQuestion) => update({ ...value, questions: all.with(index, next) })
         return <fieldset key={index}>
@@ -176,7 +178,9 @@ export function LogistiqueTableEditor({ table, onChange }: {
       })}
       {value.questions && value.questions.length < 8 && <button type="button" className="button small secondary"
         onClick={() => update({ ...value, questions: [...value.questions!, { prompt: '', answer: '', ...(mixed ? { points: 1 } : {}) }] })}>Ajouter une sous-question</button>}
-      {!valid && <small role="status" className="access-error">{isDocument
+      {!valid && <small role="status" className="access-error">{process
+        ? 'Renseignez chaque étape et laissez au moins une action à compléter. La fiche conserve le dernier processus valide.'
+        : isDocument
         ? 'Renseignez le titre, les en-têtes, les sous-questions et leurs réponses. La fiche conserve le dernier document valide.'
         : 'Remplissez les en-têtes et les réponses. La fiche conserve le dernier tableau valide.'}</small>}
     </details>
