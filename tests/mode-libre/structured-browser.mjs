@@ -583,6 +583,105 @@ async function alphaWordGrids(context) {
   await circle.close()
 }
 
+async function alphaEditableQuestions(context) {
+  async function openAlpha(topic, exerciseType, oldItems) {
+    const page = await context.newPage()
+    const data = theoryRecipe({
+      domain: 'alphabetisation', topic, exerciseType, count: oldItems?.length ?? 2, libreItems: oldItems,
+    })
+    data.printCorrections = true
+    await openFiche(page, data, false)
+    const panel = page.locator('#activity-editor')
+    const questions = panel.getByRole('list', { name: 'Questions d’alphabétisation' }).getByRole('listitem')
+    const correction = page.locator('.print-only-sheets .worksheet-sheet').last()
+    return { page, panel, questions, first: questions.first(), correction }
+  }
+
+  const order = await openAlpha('alpha-alphabet', 'alpha-alphabet-alphabet-ordre', [
+    { layout: 'order', sequence: ['D', 'B', 'A', 'C'], placeParts: ['A', 'B', 'C', 'D'], answer: 'A B C D' },
+    { layout: 'order', sequence: ['X', 'Y', 'Z', 'V'], placeParts: ['V', 'X', 'Y', 'Z'], answer: 'V X Y Z' },
+  ])
+  const letters = order.first.getByRole('textbox', { name: /^Lettres proposées/ })
+  const sorted = order.correction.locator('.order-block').first().locator('.order-blank')
+  await letters.fill('z, b, a')
+  assert.deepEqual(await sorted.allTextContents(), ['a', 'b', 'z'])
+  const given = await worksheet(order.page).locator('.order-block').first().locator('.order-given-term').allTextContents()
+  assert.deepEqual(given.map((term) => term.replace(/·$/, '')), ['z', 'b', 'a'])
+  await letters.fill('a, A, C')
+  assert.equal(await letters.getAttribute('aria-invalid'), 'true')
+  assert.deepEqual(await sorted.allTextContents(), ['a', 'b', 'z'])
+  await letters.fill('z, b, a')
+  await button(order.first, 'Verrou de la question 1').click()
+  const quantity = order.panel.getByRole('spinbutton', { name: 'Nombre de questions' })
+  await quantity.fill('3')
+  assert.equal(await order.questions.count(), 3)
+  const other = order.questions.nth(1).getByRole('textbox', { name: /^Lettres proposées/ })
+  const before = await other.inputValue()
+  await other.fill('M, M')
+  assert.equal(await other.getAttribute('aria-invalid'), 'true')
+  await button(order.questions.nth(1), 'Autre question').click()
+  assert.notEqual(await other.inputValue(), before)
+  assert.equal(await other.getAttribute('aria-invalid'), 'false')
+  assert.deepEqual(await sorted.allTextContents(), ['a', 'b', 'z'])
+  await order.page.evaluate(() => {
+    window.print = () => { document.documentElement.dataset.printCalled = 'true' }
+  })
+  await button(order.page, 'Imprimer la fiche et le corrigé').click()
+  await order.page.locator('html[data-print-called=true]').waitFor({ state: 'attached' })
+  await button(order.page, 'Annuler').click()
+  assert.equal(await other.inputValue(), before)
+  await button(order.page, 'Fermer le mode libre').click()
+  assert.deepEqual(await sorted.allTextContents(), ['a', 'b', 'z'])
+  await order.page.close()
+
+  const next = await openAlpha('alpha-alphabet', 'alpha-alphabet-alphabet-suivant')
+  await next.first.getByRole('combobox', { name: 'Lettre donnée', exact: true }).selectOption('B')
+  const choices = next.first.getByRole('textbox', { name: /^Choix proposés/ })
+  await choices.fill('X, C, Y, Z')
+  const pills = next.correction.locator('.select-pills-row').first()
+  assert.deepEqual(await pills.locator('.select-pill').allTextContents(), ['X', 'C', 'Y', 'Z'])
+  assert.equal(await pills.locator('.select-pill.selected').textContent(), 'C')
+  await choices.fill('C, B, Z')
+  assert.equal(await choices.getAttribute('aria-invalid'), 'true')
+  assert.deepEqual(await pills.locator('.select-pill').allTextContents(), ['X', 'C', 'Y', 'Z'])
+  await next.page.close()
+
+  const initial = await openAlpha('alpha-alphabet', 'alpha-alphabet-alphabet-initiale')
+  await initial.first.getByRole('combobox', { name: 'Lettre donnée', exact: true }).selectOption('E')
+  const example = initial.first.getByRole('textbox', { name: 'Exemple de réponse', exact: true })
+  await example.fill('écureuil')
+  assert.equal(await initial.correction.locator('.answer-line-field').first().textContent(), 'écureuil')
+  await example.fill('zèbre')
+  assert.equal(await example.getAttribute('aria-invalid'), 'true')
+  assert.equal(await initial.correction.locator('.answer-line-field').first().textContent(), 'écureuil')
+  await initial.page.close()
+
+  const form = await openAlpha('alpha-syllabes', 'alpha-syll-a-former', [
+    { layout: 'text', prompt: 'Associez ces deux morceaux.', answer: 'tata' },
+  ])
+  const firstPart = form.first.getByRole('textbox', { name: 'Première partie', exact: true })
+  await firstPart.fill('pa')
+  assert.equal(await firstPart.getAttribute('aria-invalid'), 'true')
+  assert.equal(await form.correction.locator('.answer-line-field').first().textContent(), 'tata')
+  await form.first.getByRole('textbox', { name: 'Deuxième partie', exact: true }).fill('pa')
+  assert.equal(await firstPart.getAttribute('aria-invalid'), 'false')
+  assert.equal(await form.correction.locator('.answer-line-field').first().textContent(), 'papa')
+  assert.match(await worksheet(form.page).locator('.prompt-stack-text').first().textContent(), /pa \+ pa/)
+  await form.page.close()
+
+  for (const [exerciseType, value, answer] of [
+    ['alpha-mots-outils-classer', 'elle', 'pronom'],
+    ['alpha-mots-multi-classer', 'chocolat', '3'],
+  ]) {
+    const classification = await openAlpha('alpha-mots', exerciseType)
+    await classification.first.getByRole('textbox', { name: 'Mot à classer', exact: true }).fill(value)
+    const selected = classification.correction.locator('.select-pills-row').first().locator('.select-pill.selected')
+    assert.equal(await selected.textContent(), answer)
+    assert.match(await worksheet(classification.page).locator('.select-pills-prompt').first().textContent(), new RegExp(value))
+    await classification.page.close()
+  }
+}
+
 try {
   await server?.listen()
   const baseURL = process.env.BASE_URL ?? 'http://127.0.0.1:' + server.httpServer.address().port
@@ -610,8 +709,9 @@ try {
   await alphaDictation(context)
   await alphaSentenceOrder(context)
   await alphaWordGrids(context)
+  await alphaEditableQuestions(context)
   await context.close()
-  console.log('Document partagé, QCM illustré, liaison audio, reconnaissance d’images, formulaire, oral, retrait en théorie, lecture, dictées, ordre des phrases et grilles vérifiés.')
+  console.log('Documents, audio, formulaires, théorie et activités d’alphabétisation vérifiés, dont Former, Classer et Alphabet.')
 } finally {
   await browser?.close()
   await server?.close()

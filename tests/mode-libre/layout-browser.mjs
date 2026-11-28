@@ -310,7 +310,7 @@ async function checkLegacyCoordinateLock(context) {
       },
     } }, ''), data)
     await page.goto('/generateur')
-    await page.locator('.a4-frame .coord-grid').first().waitFor()
+    await page.locator('.a4-frame .coord-grid:visible').first().waitFor()
     assert(await button(page, 'Mode libre').isDisabled())
     assert.equal(await page.locator(editor).count(), 0)
     assert.equal(await page.locator('.a4-frame .coord-hit').count(), 0)

@@ -3,7 +3,7 @@ import { isJeuxType } from '@/jeux/templates'
 import { isPhraseLibreEditable } from '@/francais/PhraseLibreEditor'
 import { isGrammarTheoryType } from '@/francais/grammar-theory'
 import { isTpfFamilyDomain, tcfSlotByTypeId } from '@/tcf/catalog'
-import { parseAlphaType } from '@/alphabetisation/kinds'
+import { isAlphaEditableQuestionKind, parseAlphaType } from '@/alphabetisation/kinds'
 import { parseSoutienType } from '@/francais/soutien/kinds'
 import { audioOrderKind } from '@/francais/soutien/audio-order'
 import { isGrammaireExerciseType, isGrammaireTheoryType } from '@/grammaire/types'
@@ -78,6 +78,7 @@ export function liveEditorProfile(domain: Domain, exerciseType: string, format: 
   if (wordKind === 'dictee' || wordKind === 'dictee-mots') return 'dictee-de-mots'
   if (wordKind === 'lire' || wordKind === 'lire-phrases') return 'lecture-de-phrases'
   if (wordKind === 'ordre' || wordKind === 'ordre-phrases') return 'mots-dans-l-ordre'
+  if (isAlphaEditableQuestionKind(wordKind)) return 'questions-alphabetisation'
   if (wordKind === 'compter') return 'sons-a-compter'
   if (wordKind === 'determinants') return 'determinants'
   if (wordKind === 'lettres-phrase') return 'lettres-dans-phrase'
@@ -133,7 +134,7 @@ export function isFigureMeasureProfile(profile: LiveEditorProfile): boolean {
 
 export function hasFlatRegeneration(profile: LiveEditorProfile): boolean {
   return isCalculationProfile(profile) || profile === 'logique-visuelle' || profile === 'question-simple' ||
-    profile === 'mots-dans-l-ordre' || isFigureMeasureProfile(profile)
+    profile === 'mots-dans-l-ordre' || profile === 'questions-alphabetisation' || isFigureMeasureProfile(profile)
 }
 
 export function usesIndependentHalves(profile: LiveEditorProfile): boolean {

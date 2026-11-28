@@ -55,18 +55,21 @@ export function CompareRow({ item, mode }: { item: MathItem; mode: PreviewMode }
   )
 }
 
-export function OrderRow({ item, mode, series }: { item: MathItem; mode: PreviewMode; series?: number }) {
+export function OrderRow({ item, mode, series, letterOrder = false }: {
+  item: MathItem; mode: PreviewMode; series?: number; letterOrder?: boolean
+}) {
   const show = mode === 'answers'
   const given = item.sequence ?? []
   const parts = item.placeParts ?? []
   const sep = item.orderOp === '>' ? '>' : '<'
-  const slots = Math.max(parts.length, given.length, 5)
+  const slots = Math.max(parts.length, given.length, letterOrder ? 0 : 5)
+  const givenLabel = letterOrder ? 'Lettres à ranger' : 'Nombres à ranger'
   const compact = Boolean(item.orderCompact)
   const content = (
     <div className={`order-block${compact ? ' order-compact' : ''}`}>
       {item.prompt && <p className="column-prompt">{item.prompt}</p>}
       {item.orderBoxed ? (
-        <div className="order-answer-row order-given-boxes" aria-label="Nombres à ranger">
+        <div className="order-answer-row order-given-boxes" aria-label={givenLabel}>
           {Array.from({ length: slots }, (_, i) => (
             <Fragment key={i}>
               {i > 0 && (
@@ -79,7 +82,7 @@ export function OrderRow({ item, mode, series }: { item: MathItem; mode: Preview
           ))}
         </div>
       ) : (
-        <div className="order-given" aria-label="Nombres à ranger">
+        <div className="order-given" aria-label={givenLabel}>
           {given.map((term, index) => (
             <span className="order-given-term" key={`${term}-${index}`}>
               {term}

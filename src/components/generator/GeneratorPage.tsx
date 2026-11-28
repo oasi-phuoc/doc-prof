@@ -1062,6 +1062,7 @@ export function GeneratorPage({
                 letterGrid={isWordListProfile(activeProfile) ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
                 logic={activeProfile === 'logique-visuelle' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
                 phraseOrder={activeProfile === 'mots-dans-l-ordre' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
+                alphaQuestions={activeProfile === 'questions-alphabetisation' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
                 syllableContent={activeProfile === 'syllabes-audio' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
                 listenContent={activeProfile === 'ecoute-de-mots' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}
                 syllableMatchContent={activeProfile === 'syllabes-a-relier' ? blockItemsForConfig(worksheets, pageIndex, safeBlockIndex) : null}

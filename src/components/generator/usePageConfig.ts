@@ -293,7 +293,8 @@ export function usePageConfig({
     }
     const glossaryBank = mathGlossaryBank(activeBlock.exerciseType)
     const resizesAppliedItems = glossaryBank || inlineArithmetic || editorProfile === 'question-simple' || isFigureMeasureProfile(editorProfile) ||
-      isAlphaWordGridProfile(editorProfile) || editorProfile === 'logique-visuelle' || editorProfile === 'mots-dans-l-ordre'
+      isAlphaWordGridProfile(editorProfile) || editorProfile === 'logique-visuelle' || editorProfile === 'mots-dans-l-ordre' ||
+      editorProfile === 'questions-alphabetisation'
     if (resizesAppliedItems && count != null && patch.libreItems === undefined) {
       const lists = [activeBlock.libreItems ?? [], (doubleA5 ? activeBlock.a5RightLibre?.items : undefined) ?? []]
       const locked = Math.max(...lists.map((items) => items.filter(({ libreLocked }) => libreLocked).length))

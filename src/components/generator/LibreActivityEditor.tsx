@@ -32,6 +32,7 @@ import { TheoryEditor } from '@/components/generator/libre/TheoryEditor'
 import { FigureMeasureEditor } from '@/components/generator/libre/FigureMeasureEditor'
 import { LetterGridEditor } from '@/components/generator/libre/LetterGridEditor'
 import { LogicEditor } from '@/components/generator/libre/LogicEditor'
+import { AlphaQuestionsEditor } from '@/components/generator/libre/AlphaQuestionsEditor'
 import { SyllableEditor } from '@/components/generator/libre/SyllableEditor'
 import { ListenCheckEditor } from '@/components/generator/libre/ListenCheckEditor'
 import { SyllableMatchEditor } from '@/components/generator/libre/SyllableMatchEditor'
@@ -62,6 +63,7 @@ type LibreActivityEditorProps = {
   letterGrid: SheetBlockItems | null
   logic: SheetBlockItems | null
   phraseOrder: SheetBlockItems | null
+  alphaQuestions: SheetBlockItems | null
   syllableContent: SheetBlockItems | null
   listenContent: SheetBlockItems | null
   syllableMatchContent: SheetBlockItems | null
@@ -123,6 +125,7 @@ export function LibreActivityEditor({
   letterGrid,
   logic,
   phraseOrder,
+  alphaQuestions,
   syllableContent,
   listenContent,
   syllableMatchContent,
@@ -287,6 +290,11 @@ export function LibreActivityEditor({
           items={identifyItems(orderedPhrases.items, editedActivityId)}
           onChangeItems={(items) => editActivityItems(items, orderedPhrases.instruction)}
           onChangeInstruction={(instruction) => editActivityItems(identifyItems(orderedPhrases.items, editedActivityId), instruction)} />
+      ) : null}
+      {alphaQuestions?.items.length ? (
+        <AlphaQuestionsEditor key={`${editedActivityId}:${activeBlock.exerciseType}`} type={activeBlock.exerciseType} instruction={alphaQuestions.instruction}
+          items={identifyItems(alphaQuestions.items, editedActivityId)} fields={transientFields} writeField={onTransientField}
+          onChange={editActivityItems} onRegenerate={(id) => onRegenerateBlock?.(safeBlockIndex, undefined, id)} />
       ) : null}
       {syllables && syllableBank && syllables.items.map((item, index) => (
         <SyllableEditor key={`${editedActivityId}:${index}`} item={item} bank={syllableBank}
@@ -551,6 +559,7 @@ export function LibreActivityEditor({
       !letterGrid &&
       !logic &&
       !phraseOrder &&
+      !alphaQuestions &&
       !syllableContent &&
       !listenContent &&
       !syllableMatchContent &&

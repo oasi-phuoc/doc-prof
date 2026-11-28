@@ -105,6 +105,7 @@ export function ItemView({
   seriesNumber,
   hideNumber: hideNumberOverride = false,
   grammarTheory = false,
+  letterOrder = false,
   algebraPadLeft = 0,
   draftGrid = true,
   problemHelp = false,
@@ -141,6 +142,7 @@ export function ItemView({
   seriesNumber?: number
   hideNumber?: boolean
   grammarTheory?: boolean
+  letterOrder?: boolean
   /** Cases vides à gauche pour aligner verticalement les atomes entre questions. */
   algebraPadLeft?: number
   /** Zone de brouillon avec grille 4×4 mm (problèmes). */
@@ -403,7 +405,7 @@ export function ItemView({
         ) : null}
         {item.layout === 'letter-grid' && <LetterGridRow item={item} mode={mode} />}
         {item.layout === 'syllable-table' && <SyllableTableBlock item={item} />}
-        {item.layout === 'order' && <OrderRow item={item} mode={mode} series={seriesNumber} />}
+        {item.layout === 'order' && <OrderRow item={item} mode={mode} series={seriesNumber} letterOrder={letterOrder} />}
         {item.layout === 'sequence' && <SequenceRow item={item} mode={mode} />}
         {item.layout === 'fraction-shape' && <FractionShapeBlock item={item} mode={mode} />}
         {item.layout === 'geo' && (seriesNumber !== undefined && item.geoNameCard ? (

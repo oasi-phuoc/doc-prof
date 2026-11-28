@@ -652,6 +652,7 @@ export function WorksheetSheet({
                   return (
                     <ItemView
                       grammarTheory={item.layout === 'theory' && isGrammaireTheoryType(block.exerciseType)}
+                      letterOrder={block.exerciseType === 'alpha-alphabet-alphabet-ordre'}
                       key={`${block.exerciseType}-${block.exerciseIndex}-${index}-${item.answer}-${tcfFormMode ?? ''}`}
                       item={printableItem}
                       assessmentPoints={isLogistiqueDomain(page.domain) && evalMode && !isTheoryBlock && !subquestionRange?.start && !item.noPoints && perQ > 0

@@ -30,7 +30,7 @@ Dans Chrome, la recette du site de production a vérifié la connexion administr
 | L1 — Générateur et contrats d’état | En cours | Panneau unique, géométrie, listes identifiées et verrous vérifiés sur l’Algèbre. Historique et reprise locale par compte et par fiche. Étendre les preuves aux autres profils et aux droits individuels. |
 | L2 — Pilotes | En cours | Calcul en ligne, CE avec support commun et CO 1 avec QCM illustrés. Édition et correction testées sur les trois pilotes. Étendre les preuves de reprise et de verrouillage par forme. |
 | L3 — Mathématiques et tests | En cours | Calculs en ligne, opérations posées, conversions, repérage, comparaison, tri, leçons et glossaires de mathématiques, choix dans la banque de Logique. Raccorder les autres familles mathématiques et les activités restantes des évaluations TPM / TCM. |
-| L4 — Autres profils imprimables | En cours | Calligraphie, cartes, variantes Gattegno équipées de leur éditeur et ensemble des contextes générables de Soutien FR raccordés en A4. Poursuivre les lectures et activités d’Alphabétisation. |
+| L4 — Autres profils imprimables | En cours | Les 707 contextes d’Alphabétisation et les contextes générables de Soutien FR sont raccordés en A4, ainsi que la calligraphie, les cartes et une partie de Gattegno. Dix contextes de Gattegno restent à raccorder. |
 | L5 — Grammaire et TCF/TPF | En cours | Théorie et édition de données des dix présentations graduées. CE, CO, PE et PO raccordées en A4. Poursuivre les profils historiques de grammaire, les médias et verrous des activités graduées et la preuve de chaque forme et barème TCF/TPF. |
 | L6 — Société et Logistique AFP/CFC | En cours | Édition des références structurées et questions simples en A4. Conservation des références modifiées au passage en double A5. Poursuivre les formats structurés, les activités mixtes et la mesure papier sur les autres modules. |
 | L7 — Cas d’échec et ergonomie avancée | En cours | Reprise, isolation, conflit entre onglets et quota vérifiés. Sélection et espacements par activité sur les calculs, préférences d’espacement pour les profils compatibles. Poursuivre les médias et les autres contrôles de présentation. |
@@ -83,6 +83,12 @@ Le parcours Chromium vérifie le tirage, la reprise d’une ancienne recette, le
 Les grilles de lecture permettent de modifier les cases, le titre, l’écriture script ou cursive, la casse et le nombre de colonnes. Les grilles à entourer proposent le choix de la cible et des autres cases. Le corrigé marque les occurrences de la cible. Le réglage de quantité conserve les grilles personnalisées.
 
 Le parcours Chromium couvre une grille de mots-outils, une ancienne grille de syllabes et une activité à entourer issue d’un récit. L’inventaire raccorde 18 contextes de lecture en grille et 24 contextes à entourer. Sur 4 430 contextes, 387 raccordements A4 restent en attente, dont 15 en Alphabétisation. Aucune erreur de génération n’est relevée.
+
+### Alphabet, mots à former et mots à classer en Alphabétisation
+
+Le panneau Libre recalcule l’ordre des lettres, la lettre suivante, le mot formé et le nombre de syllabes. Il permet de modifier l’exemple pour une initiale, les choix proposés et la catégorie de classement. Une saisie invalide conserve la dernière valeur imprimable. Les questions verrouillées sont conservées lors d’un nouveau tirage.
+
+Le scénario `tests/mode-libre/structured-browser.mjs` vérifie les cinq types, dont la reprise d’anciennes recettes, le corrigé imprimable, le changement de quantité, l’annulation et la régénération ciblée. L’inventaire raccorde les 15 derniers contextes d’Alphabétisation. Les tirages de référence des 707 contextes d’Alphabétisation gardent le même contenu. Il reste 607 raccordements A4 sur 4 836 contextes recensés dans tous les domaines, sans erreur de génération.
 
 ### Symétries axiales et centrales en A4
 

@@ -117,6 +117,13 @@ export function parseAlphaType(
   return null
 }
 
+export type AlphaEditableQuestionKind = 'alphabet-ordre' | 'alphabet-suivant' | 'alphabet-initiale' | 'former' | 'classer'
+
+export function isAlphaEditableQuestionKind(kind: string | undefined): kind is AlphaEditableQuestionKind {
+  return kind === 'alphabet-ordre' || kind === 'alphabet-suivant' || kind === 'alphabet-initiale' ||
+    kind === 'former' || kind === 'classer'
+}
+
 export function isAlphaSpecialKind(kind: string): kind is AlphaSpecialKindId {
   return ALPHA_SPECIAL_KINDS.some((k) => k.id === kind)
 }
