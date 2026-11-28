@@ -951,6 +951,15 @@ test('la relecture des calculs corrige les répétitions sans modifier le lot d�
   assert.match(wording.falc, /Il indique 13 écarts\.\nCalculez le taux d’écart en pourcentage/)
 })
 
+test('les vérifications des dossiers ont une version FALC qui garde la notion et les références', () => {
+  const publication = logistiquePublications.find(({ revision }) => revision === 'logistique-verification-formulations-v027')
+  const units = publication.units.filter(({ revision, kind }) => /^dossiers-\d{3}-v005$/.test(revision) && kind === 'verification')
+  assert(units.every(({ wording }) => wording))
+  assert.match(units.find(({ id }) => id === 'log-401-verification-v005-terme-1').wording.falc,
+    /^Que veut dire « Affinage » \?\nRépondez avec vos mots\.$/u)
+  assert.match(units.find(({ prompt }) => prompt.includes('$E$1')).wording.falc, /\$E\$1/u)
+})
+
 test('le choix Normal ou FALC garde le tirage, les deux moitiés et les changements locaux', () => {
   const page = { ...config('CFC', '301', 'maths'), count: 40 }
   const normal = generateLogistique(page, 17).items

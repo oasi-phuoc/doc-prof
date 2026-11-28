@@ -404,7 +404,14 @@ La révision `logistique-calculs-formulations-v026` ajoute 793 reformulations de
 | CFC | 80 | 1 393 | 2 547 | 1 239 | 5 179 |
 | AFP | 63 | 1 097 | 1 974 | 956 | 4 027 |
 
-La relecture des 3 429 autres exercices reste ouverte. Les deux formulations d’un exercice comptent pour une seule unité. Les trames d’histoire suivie et les formats encore ouverts figurent dans les lots L1c à L1f.
+La révision `logistique-verification-formulations-v027` termine la double formulation des questions de vérification des dossiers `v005`. Le lot reformule les 717 questions de définition et 148 applications, par exemple la lecture de la référence `$E$1` dans Excel ou la comparaison de deux taux en points de pourcentage. Les termes techniques et les réponses attendues sont conservés. Chromium a contrôlé 112 configurations des modules 401, 408, 506 et 602, dont 32 PDF, avec une réserve minimale de 71,63 px. [Formulations des vérifications](../../src/logistique/banks/verification-formulations-v027.ts).
+
+| Diplôme | Modules concernés | Problèmes de calcul reformulés | Vérifications reformulées | Situations reformulées | Total cumulé |
+|---|---:|---:|---:|---:|---:|
+| CFC | 80 | 1 393 | 3 412 | 1 239 | 6 044 |
+| AFP | 63 | 1 097 | 2 650 | 956 | 4 703 |
+
+La relecture des 2 564 autres exercices reste ouverte. Les deux formulations d’un exercice comptent pour une seule unité. Les trames d’histoire suivie et les formats encore ouverts figurent dans les lots L1c à L1f.
 
 ## Commandes
 
