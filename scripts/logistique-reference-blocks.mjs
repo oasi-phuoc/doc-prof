@@ -33,6 +33,26 @@ function figureImage({ file, sha256, alt, caption, description, path }, publicDi
   return { src: '/' + asset, alt, caption, ...(description?.trim() ? { description } : {}) }
 }
 
+export function replaceLogistiqueFigures(blocks, replacements, publicDirectory, directory, requireEveryFigure = true) {
+  if (!replacements.length) return blocks
+  const bySource = new Map(replacements.map((replacement) => [replacement.from, replacement]))
+  if (bySource.size !== replacements.length) throw new Error('Plusieurs remplacements visent la même figure.')
+  const replaced = new Set()
+  const replace = (image) => {
+    const source = image.src.split('/').at(-1)
+    const replacement = bySource.get(source)
+    if (!replacement) return image
+    replaced.add(source)
+    return { ...image, ...figureImage({ ...image, ...replacement }, publicDirectory, directory) }
+  }
+  const result = blocks.map((block) => block.kind === 'image' ? replace(block) :
+    block.kind === 'image-row' ? { ...block, cells: block.cells.map(replace) } : block)
+  if (requireEveryFigure && replaced.size !== replacements.length) {
+    throw new Error('Figures à remplacer introuvables : ' + [...bySource.keys()].filter((file) => !replaced.has(file)).join(', '))
+  }
+  return result
+}
+
 export function insertLogistiqueFigures(blocks, figures, publicDirectory, directory) {
   const inserted = [...blocks]
   for (const figure of figures) {

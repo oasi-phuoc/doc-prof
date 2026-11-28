@@ -1,6 +1,6 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { theoryBlocks } from './logistique-theory-blocks.mjs'
-import { insertLogistiqueFigures, moduleIntroduction, readLogistiqueGeneratedBank } from './logistique-reference-blocks.mjs'
+import { insertLogistiqueFigures, moduleIntroduction, readLogistiqueGeneratedBank, replaceLogistiqueFigures } from './logistique-reference-blocks.mjs'
 
 const root = new URL('../', import.meta.url)
 const revision = process.argv[2] ?? ''
@@ -44,24 +44,30 @@ const reference = baseTheory
   : legacyCombinedReference ? Object.values(pages).filter(Boolean).flatMap(theoryBlocks) : theoryBlocks(pages.theorie)
 if (!reference?.length) throw new Error('Cours de départ introuvable : ' + code)
 const declaredFigures = editorial.visuals ?? (editorial.visual ? [editorial.visual] : [])
+const figureReplacements = editorial.figureReplacements ?? []
+if (figureReplacements.length && (!baseUnit || !editorial.keepBaseFigures)) {
+  throw new Error('Les remplacements de figures requièrent un cours illustré de départ : ' + code)
+}
 // Les figures ajoutées juste après un titre se décalent vers le bas à chaque insertion.
 const insertionOrder = (figures) => editorial.keepBaseFigures ? [
   ...figures.filter(({ endOfSection }) => !endOfSection).reverse(),
   ...figures.filter(({ endOfSection }) => endOfSection),
 ] : figures
 const figures = insertionOrder(declaredFigures)
-if (!legacyCombinedReference && figures.length === 0) throw new Error('Illustrations de la théorie absentes : ' + code)
+if (!legacyCombinedReference && figures.length === 0 && figureReplacements.length === 0) throw new Error('Illustrations de la théorie absentes : ' + code)
 const scope = editorial.diplomas.length === 1 ? editorial.diplomas[0].toLowerCase() : 'commun'
 const publicDirectory = new URL('public/', root)
 const figureDirectory = `assets/logistique/${catalogEntry.theme}/${code}/${scope}`
-const course = insertLogistiqueFigures(reference, figures, publicDirectory, figureDirectory)
+const course = insertLogistiqueFigures(replaceLogistiqueFigures(reference, figureReplacements, publicDirectory, figureDirectory),
+  figures, publicDirectory, figureDirectory)
 const summarySource = editorial.summaryTheory ? theoryBlocks(editorial.summaryTheory)
   : editorial.keepBaseFigures ? baseUnit?.summaryBlocks : undefined
 const summaryFigures = editorial.summaryVisuals
   ? insertionOrder(editorial.summaryVisuals)
   : figures.map(({ summaryAnchor, ...figure }) => ({ ...figure, anchor: summaryAnchor ?? figure.anchor }))
 const summary = summarySource
-  ? insertLogistiqueFigures(summarySource, summaryFigures, publicDirectory, figureDirectory)
+  ? insertLogistiqueFigures(replaceLogistiqueFigures(summarySource, figureReplacements, publicDirectory, figureDirectory, false),
+    summaryFigures, publicDirectory, figureDirectory)
   : undefined
 const theory = { id: 'theorie-source', kind: 'theorie', blocks: course, ...(summary ? { summaryBlocks: summary } : {}) }
 const kinds = ['maths', 'verification', 'situation']

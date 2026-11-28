@@ -165,7 +165,7 @@ test('les résumés illustrés sont distincts du cours et figés dans la recette
           const plan = illustratedRevisions.get(code)
           const additions = code === '306' ? [palletPhoto] :
             (view.logistiqueTheoryView === 'resume' ? plan?.summaryVisuals : undefined) ?? plan?.visuals ?? []
-          for (const addition of additions) {
+          for (const addition of code === '306' ? [] : additions) {
             const position = version.findIndex((block) => block.kind === 'image' && block.src.endsWith(addition.file))
             assert(position > 0, `${diploma} ${code} ${addition.file}`)
             if (addition.prose) assert.equal(version[position + 1].text, addition.prose)
@@ -183,16 +183,20 @@ test('les résumés illustrés sont distincts du cours et figés dans la recette
   assert(!validLogistiquePages([{ ...config('AFP', '101', 'maths'), logistiqueTheoryView: 'resume' }]))
 })
 
-test('le 306 garde la photo encadrée des supports spéciaux dans les deux versions', () => {
+test('le 306 compare les palettes de formats différents et les supports spéciaux sur des photos individuelles', () => {
   for (const diploma of ['CFC', 'AFP']) {
     for (const logistiqueTheoryView of ['complet', 'resume']) {
       const page = { ...config(diploma, '306', 'theorie'), logistiqueTheoryView }
       const blocks = generateLogistique(page, 7).items.map(({ theoryBlock }) => theoryBlock)
-      const index = blocks.findIndex((block) => block.src?.endsWith(palletPhoto.file))
+      const index = blocks.findIndex((block) => block.kind === 'image-row' && block.label === 'Support plat ou caisse-palette')
       assert(index > 0)
+      assert.deepEqual(blocks[index].cells.map(({ caption }) => caption), ['Palette synthétique', 'Box-palette métallique'])
       const previousHeading = blocks.slice(0, index).findLast((block) => block.kind === 'heading')
       assert.equal(previousHeading?.text, logistiqueTheoryView === 'resume' ? palletPhoto.summaryAnchor : palletPhoto.anchor)
       assert.equal(blocks[index + 1].text, palletPhoto.prose)
+      const formats = blocks.find((block) => block.kind === 'image-row' && block.label === 'Deux dimensions de palettes')
+      assert.deepEqual(formats.cells.map(({ description }) => description), ['1 200 × 1 000 mm au sol.', '800 × 600 mm au sol.'])
+      assert.equal(new Set([...blocks[index].cells, ...formats.cells].map(({ src }) => src)).size, 4)
       const saved = { ...page, logistiqueBankRevision: 'logistique-exercices-approvisionnement-complet-v005' }
       assert(generateLogistique(saved, 7).items.every(({ theoryBlock }) => !theoryBlock.src?.endsWith(palletPhoto.file)))
     }
@@ -200,12 +204,12 @@ test('le 306 garde la photo encadrée des supports spéciaux dans les deux versi
 })
 
 test('les palettes spéciales et les formes de stockage ont des vues propres dans le cours, le résumé et le glossaire', () => {
-  const codes = [['306', 8, 'Varitainer', 'varitainer'], ['403', 13, 'Drive-through', 'drive-through'], ['404', 3, 'Entrepôt ouvert', 'a-ciel-ouvert']]
+  const codes = [['306', 14, 'Varitainer', 'varitainer'], ['403', 14, 'Drive-through', 'drive-through'], ['404', 4, 'Entrepôt ouvert', 'a-ciel-ouvert']]
   for (const [code, count, term, photo] of codes) for (const diploma of ['CFC', 'AFP']) {
-    const matches = (src) => src?.includes('-photo-v005.webp')
+    const matches = (src) => src?.includes('-photo-v011.webp')
     const glossary = generateLogistique(config(diploma, code, 'glossaire'), 7).items
     assert(glossary.some(({ theoryBlock, logistiqueGlossaryFigure }) =>
-      theoryBlock.text.startsWith(`{g}${term}{/g}`) && logistiqueGlossaryFigure?.src.includes(`-${photo}-photo-v005.webp`)))
+      theoryBlock.text.startsWith(`{g}${term}{/g}`) && logistiqueGlossaryFigure?.src.includes(`-${photo}-photo-v011.webp`)))
     for (const logistiqueTheoryView of ['complet', 'resume']) {
       const page = { ...config(diploma, code, 'theorie'), logistiqueTheoryView }
       const figures = (cfg) => generateLogistique(cfg, 7).items.flatMap(({ theoryBlock }) =>
@@ -222,7 +226,7 @@ test('les palettes spéciales et les formes de stockage ont des vues propres dan
 test('le râtelier vertical et le stockage en épis ont une illustration dans les deux cours et glossaires', () => {
   for (const diploma of ['CFC', 'AFP']) {
     for (const [module, word, file] of [
-      ['403', 'Râtelier vertical', 'log-403-ratelier-vertical-photo-v006.webp'],
+      ['403', 'Râtelier vertical', 'log-403-ratelier-vertical-photo-v011.webp'],
       ['408', 'Stockage en épis', 'log-408-epis-photo-v005.webp'],
     ]) {
       const glossary = generateLogistique(config(diploma, module, 'glossaire'), 7).items

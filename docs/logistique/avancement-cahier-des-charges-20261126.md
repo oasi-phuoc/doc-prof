@@ -200,6 +200,8 @@ La révision `logistique-production-illustree-v021` relie les nouvelles scènes 
 
 La révision `logistique-distribution-illustree-v022` complète la lecture d’une ligne de commande, le rôle du rembourrage et le choix du feuillard avec des exemples concrets. [Préparation du 601](preparation/601-v004.json), [du 602](preparation/602-v004.json) et [du 603](preparation/603-v004.json).
 
+La révision `logistique-supports-4-3-v024` remplace 32 vues dans les 306, 403 et 404 par des scènes indépendantes en couleur de 1 280 × 960 px. Le cours complet et le résumé du 306 comparent la demi-palette et la palette industrielle dans deux cellules illustrées séparément, avec les dimensions écrites sous chaque photo. Le Varitainer, le cadre grillagé, les palettes à fûts, le drive-through et la navette ont chacun leur propre scène. Les illustrations concernées des glossaires utilisent aussi ces nouvelles photos. Les 36 PDF CFC et AFP incluent les deux formats et gardent au moins 45,66 px de réserve. [Préparation du 306](preparation/306-v006.json), [du 403](preparation/403-v007.json) et [du 404](preparation/404-v006.json).
+
 Il reste 305 notions à illustrer. Le thème 600 en compte 131 à partir du module 604, le 700 en compte 50, le 800 en compte 96 et le 900 en compte 28. Les glossaires des thèmes 100 à 500 et des modules 601 à 603 sont entièrement en photos.
 
 La commande `node scripts/prepare-logistique-glossaire.mjs --audit` donne le détail par module et vérifie les chemins, les doublons et les textes alternatifs. Le [registre éditorial des photos](preparation/glossaires-photos-v006.txt) associe chaque nouvelle photo à sa notion exacte.
