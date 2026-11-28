@@ -70,6 +70,12 @@ Le panneau Libre permet de modifier les éléments dictés et leur consigne. Le 
 
 Le parcours Chromium couvre une dictée de syllabes et une dictée de mots issue d’un récit. Il vérifie le corrigé, la saisie vide, la quantité et l’annulation. L’inventaire raccorde 24 contextes et relève 444 contextes A4 en attente sur 4 420, sans erreur de génération.
 
+### Phrases à remettre en ordre en Alphabétisation
+
+Le panneau Libre permet de modifier et déplacer les mots proposés, d’ajuster la phrase attendue et de vérifier sa correspondance avec les mots. Le sujet affiche les mots et une ligne d’écriture. Le nombre de phrases suit la capacité du récit.
+
+Le parcours Chromium vérifie le tirage, la reprise d’une ancienne recette, le déplacement des mots et la confirmation du corrigé. L’inventaire raccorde 15 contextes et relève 429 contextes A4 en attente sur 4 430, sans erreur de génération.
+
 ### Symétries axiales et centrales en A4
 
 Les quatre exercices de symétrie sur repère donnent accès aux sommets, à l’axe ou au centre Ω, à la taille et à la graduation du repère dans le panneau Libre. L’édition au clavier et le placement sur le repère recalculent le sujet et le corrigé. Une valeur hors du repère conserve la dernière figure applicable. Les contrôles avancés restent dans le panneau Libre.

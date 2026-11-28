@@ -723,6 +723,8 @@ export type MathItem = {
   }>
   /** Mots étiquetés (grammaire en couleur). */
   tokens?: PhraseToken[]
+  /** Mots à ordonner présentés sans catégories grammaticales. */
+  plainPhraseOrder?: true
   phraseQuestion?: boolean
   /** Present when the interrogative words are already included in tokens. */
   phraseQuestionForm?: import('@/francais/phrase-interrogatives').PhraseQuestionForm

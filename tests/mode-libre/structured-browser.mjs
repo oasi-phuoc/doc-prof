@@ -488,6 +488,41 @@ async function alphaDictation(context) {
   }
 }
 
+async function alphaSentenceOrder(context) {
+  const config = { domain: 'alphabetisation', topic: 'alpha-phrases', exerciseType: 'alpha-phrase-le-chat-ordre-phrases' }
+  const generated = await context.newPage()
+  await openFiche(generated, theoryRecipe(config), false)
+  assert(await worksheet(generated).locator('.phrase-order-block .phrase-bubble').first().isVisible())
+  await generated.close()
+
+  const page = await context.newPage()
+  const data = theoryRecipe({
+    ...config, count: 1,
+    libreItems: [{ layout: 'order', sequence: ['dort', 'chat', 'Le'], placeParts: ['Le', 'chat', 'dort'], answer: 'Le chat dort' }],
+  })
+  data.printCorrections = true
+  await openFiche(page, data, false)
+  const panel = page.locator('#activity-editor')
+  const words = worksheet(page).locator('.phrase-bubble')
+  const correction = page.locator('.print-only-sheets .worksheet-sheet').last()
+  assert.deepEqual(await words.allTextContents(), ['dort', 'chat', 'Le'])
+  assert.equal(await panel.getByLabel(/^Catégorie du mot/).count(), 0)
+  await panel.getByRole('textbox', { name: 'Mot 1 de la phrase 1', exact: true }).fill('lit')
+  await button(panel, 'Monter le mot').nth(1).click()
+  assert.deepEqual(await words.allTextContents(), ['chat', 'lit', 'Le'])
+  assert(await button(panel, 'Corrigé vérifié').isDisabled())
+  await panel.getByRole('textbox', { name: 'Phrase correcte 1', exact: true }).fill('Le chat lit.')
+  await button(panel, 'Corrigé vérifié').click()
+  assert.equal(await correction.locator('.phrase-slot-answer').first().textContent(), 'Le chat lit.')
+  assert.equal(await worksheet(page).locator('.phrase-slot-answer').count(), 0)
+  await panel.getByRole('spinbutton', { name: 'Nombre de phrases', exact: true }).fill('2')
+  assert.equal(await worksheet(page).locator('.phrase-order-block').count(), 2)
+  assert.equal(await correction.locator('.phrase-slot-answer').first().textContent(), 'Le chat lit.')
+  await button(page, 'Annuler').click()
+  assert.equal(await worksheet(page).locator('.phrase-order-block').count(), 1)
+  await page.close()
+}
+
 try {
   await server?.listen()
   const baseURL = process.env.BASE_URL ?? 'http://127.0.0.1:' + server.httpServer.address().port
@@ -513,8 +548,9 @@ try {
   await removeTheoryParts(context)
   await alphaStoryReading(context)
   await alphaDictation(context)
+  await alphaSentenceOrder(context)
   await context.close()
-  console.log('Document partagé, QCM illustré, liaison audio, reconnaissance d’images, formulaire, oral, retrait en théorie, lecture de récits et dictées vérifiés.')
+  console.log('Document partagé, QCM illustré, liaison audio, reconnaissance d’images, formulaire, oral, retrait en théorie, lecture, dictées et ordre des phrases vérifiés.')
 } finally {
   await browser?.close()
   await server?.close()

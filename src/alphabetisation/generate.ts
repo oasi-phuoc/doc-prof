@@ -255,6 +255,16 @@ function genLirePhrases(bankId: string): AlphaBatch {
   }
 }
 
+export function alphaPhraseOrderItem(sentence: string, words: readonly string[]): MathItem {
+  return {
+    layout: 'phrase-order',
+    plainPhraseOrder: true,
+    tokens: words.map((text) => ({ text, category: 'nom' })),
+    answer: sentence,
+    responseAnswer: sentence,
+  }
+}
+
 function genOrdrePhrases(bankId: string, count: number, rng: Rng): AlphaBatch {
   const id = bankId.startsWith('phrase-') ? bankId.slice('phrase-'.length) : bankId
   const story = STORIES.find((s) => s.id === id) ?? STORIES[0]!
@@ -262,15 +272,10 @@ function genOrdrePhrases(bankId: string, count: number, rng: Rng): AlphaBatch {
   return {
     instruction: 'Mettez les mots dans l’ordre.',
     preferredColumns: 1,
+    bankQuestionCap: story.sentences.length,
     items: pool.map((sentence) => {
       const words = sentence.replace(/[.!?,;:]/g, '').split(/\s+/).filter(Boolean)
-      return {
-        layout: 'order',
-        prompt: 'Remettez la phrase en ordre.',
-        sequence: shuffle(rng, [...words]),
-        placeParts: words,
-        answer: words.join(' '),
-      }
+      return alphaPhraseOrderItem(sentence, shuffle(rng, words))
     }),
   }
 }

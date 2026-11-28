@@ -416,7 +416,7 @@ export function ItemView({
         {item.layout === 'place-value' && <PlaceValueRow item={item} mode={mode} />}
         {item.layout === 'phrase-svc' && <PhraseSvcBlock item={item} mode={mode} />}
         {item.layout === 'phrase-color' && <PhraseColorBlock item={item} mode={mode} />}
-        {item.layout === 'phrase-order' && <PhraseOrderBlock item={item} mode={mode} />}
+        {item.layout === 'phrase-order' && <PhraseOrderBlock item={item} mode={mode} colorTokens={!item.plainPhraseOrder} />}
         {item.layout === 'phrase-build' && <PhraseBuildBlock item={item} mode={mode} />}
         {item.layout === 'phrase-write' && <PhraseWriteBlock item={item} mode={mode} />}
         {item.layout === 'phrase-images' && <PhraseImagesBlock item={item} mode={mode} />}

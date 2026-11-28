@@ -81,6 +81,7 @@ export function PhraseOrderBlock({ item, mode, colorTokens=true }: { item: MathI
     item.answer
   return (
     <div className="phrase-order-block">
+      {item.plainPhraseOrder && item.prompt && <p className="column-prompt">{item.prompt}</p>}
       {item.phraseQuestion&&<p>{item.phraseQuestionForm?'Écrivez une phrase interrogative.':'Écrivez une question avec « Est-ce que ».'}</p>}
       <div className="phrase-bubble-row">
         {tokens.map((token, i) => {

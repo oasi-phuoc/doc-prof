@@ -268,7 +268,7 @@ const logisticsCap = logistics && !isLogistiqueReferenceType(logistics.id) ?
   : undefined
 const bankQuestionCap = logisticsCap ?? activeSheetBlock?.bankQuestionCap
 const syllablePairCap = isSoutienRelier && bankQuestionCap !== undefined ? Math.max(1, bankQuestionCap) : undefined
-const alphaDictationCap = soutienKind === 'dictee-mots' && bankQuestionCap !== undefined
+const alphaWordBankCap = (soutienKind === 'dictee-mots' || soutienKind === 'ordre-phrases') && bankQuestionCap !== undefined
   ? Math.max(1, Math.min(baseMaxQuestions, bankQuestionCap)) : undefined
 const audioSeriesCap = soutienBank && audioOrderKind(soutienKind) ? Math.max(1, defaultAudioOrderCapacity(soutienBank, soutienKind)) : undefined
 const maxQuestions = (logisticsCap === undefined ? undefined : Math.max(1, logisticsCap))
@@ -276,7 +276,7 @@ const maxQuestions = (logisticsCap === undefined ? undefined : Math.max(1, logis
   ?? cscQuestionLimit(activeBlock.exerciseType)
   ?? audioSeriesCap
   ?? syllablePairCap
-  ?? alphaDictationCap
+  ?? alphaWordBankCap
   ?? (isGrammaireDomain && activeBlock.grammarLevel
   ? Math.max(1,Math.min(50,grammarEligibleCount(activeBlock)))
   : activePage.domain === 'gattegno' && bankQuestionCap != null
