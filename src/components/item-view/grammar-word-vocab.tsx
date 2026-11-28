@@ -1,4 +1,5 @@
 import type { MathItem, PreviewMode } from '@/math/types'
+import { wordVocabImage } from '@/grammaire/exercises/word-vocab'
 
 const visuals = import.meta.glob<string>('../../grammaire/media/word-vocab/*.webp', {
   eager: true, import: 'default', query: '?url',
@@ -6,7 +7,7 @@ const visuals = import.meta.glob<string>('../../grammaire/media/word-vocab/*.web
 
 export function GrammarWordVocab({ card, mode }: { card: NonNullable<MathItem['grammarWordVocab']>; mode: PreviewMode }) {
   const reveal = !card.recall || mode === 'answers'
-  const image = card.image ?? visuals[`../../grammaire/media/word-vocab/${card.id}.webp`]
+  const image = card.image ?? wordVocabImage(card.id) ?? visuals[`../../grammaire/media/word-vocab/${card.id}.webp`]
   return (
     <figure className="grammar-word-vocab">
       {image && <img src={image} alt={reveal ? card.label : 'Image à nommer'} />}

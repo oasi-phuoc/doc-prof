@@ -22,6 +22,14 @@ export const wordVocabSubthemes = [
   { id: 'a-la-poste', label: 'À la poste', topic: 'gram-demander', theoryTypeIds: [] as string[] },
 ]
 
+const wordVocabImages = new Map(data.flatMap(({ entries }) =>
+  entries.flatMap(({ id, image }) => image ? [[id, image] as const] : []),
+))
+
+export function wordVocabImage(id: string): string | undefined {
+  return wordVocabImages.get(id)
+}
+
 type WordCard = Omit<NonNullable<MathItem['grammarWordVocab']>, 'recall'>
 
 export function grammarWordCards(entries: readonly WordCard[], recall: boolean): MathItem[] {
