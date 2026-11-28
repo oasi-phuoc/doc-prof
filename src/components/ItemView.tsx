@@ -98,6 +98,7 @@ export function ItemView({
   mode,
   index,
   settingsLabel = `Question ${index + 1}`,
+  assessmentPoints,
   itemLabel,
   seriesNumber,
   hideNumber: hideNumberOverride = false,
@@ -132,6 +133,7 @@ export function ItemView({
   mode: PreviewMode
   index: number
   settingsLabel?: string
+  assessmentPoints?: string
   itemLabel?: string
   /** Bandeau de série pour le rangement et la logique du TCM CSC. */
   seriesNumber?: number
@@ -365,6 +367,8 @@ export function ItemView({
       </WorksheetSettings>
       {item.coordScene || (hideNumber && itemLabel===undefined) || seriesNumber!==undefined ? null : <div className="item-number">{itemLabel ?? (grammarPart?.kind==='question'?grammarPart.number:index + 1)}.</div>}
       <div className="item-content">
+        {item.logistiqueNarrative && <p className="logistique-narrative-passage">{item.logistiqueNarrative}</p>}
+        {assessmentPoints && <p className="logistique-assessment-points">{assessmentPoints}</p>}
         {item.layout==='grammar' ? isGrammarQuestion(item.grammar) ? <GrammarQuestionView question={item.grammar} mode={mode}/> : <p>Question grammaticale à vérifier.</p> : null}
         {(item.layout === 'column' || item.layout === 'column-empty') && <ColumnOp item={item} mode={mode} />}
         {item.layout === 'division-column' && <DivisionColumn item={item} mode={mode} />}
@@ -522,6 +526,9 @@ export function ItemView({
             aria-label="Zone de brouillon"
           />
         ) : null}
+        {mode === 'answers' && assessmentPoints && item.logistiqueAssessment?.criteria && (
+          <p className="logistique-assessment-criteria">{item.logistiqueAssessment.criteria}</p>
+        )}
       </div>
     </div>
   )

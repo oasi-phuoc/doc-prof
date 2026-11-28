@@ -1,6 +1,7 @@
 import { Fragment, useState } from 'react'
 import type { MathItem } from '@/math/types'
 import { newLogistiqueQuestion, reviewableLogistiqueAnswer } from '@/logistique/libre'
+import { logistiqueBloomLevels, type LogistiqueAssessment } from '@/logistique/evaluation'
 import type { LogistiqueType } from '@/logistique/catalog'
 import { LogistiqueImageFields, type LogistiquePhotoChoice } from './LogistiqueImageFields'
 import { LogistiqueGapEditor } from './LogistiqueGapEditor'
@@ -29,6 +30,7 @@ export function GenericLibreEditor({
   editableCalculation?: boolean
   logistique?: {
     kind: LogistiqueType['kind']
+    evaluation: boolean
     defaultModule: string
     modules: readonly { code: string; label: string }[]
     original: (item: MathItem) => MathItem | undefined
@@ -63,6 +65,10 @@ export function GenericLibreEditor({
 
   function changeChoices(index: number, options: string[], answer = items[index]!.answer) {
     patchItem(index, { options, answer, libreCorrectionPending: true })
+  }
+
+  function patchAssessment(index: number, patch: Partial<LogistiqueAssessment>) {
+    patchItem(index, { logistiqueAssessment: { ...items[index]!.logistiqueAssessment, ...patch } })
   }
 
   return (
@@ -255,18 +261,66 @@ export function GenericLibreEditor({
                 photos={logistiquePhotos.byModule.get(item.logistiqueSource?.module ?? item.logistiqueLocalModule ?? logistiquePhotos.defaultModule) ?? []}
                 image={item.logistiqueImage}
                 onChange={(logistiqueImage) => patchItem(index, { logistiqueImage })} />}
-              {direct && item.libreId && onRegenerate ? (
+              {logistique?.evaluation && <details>
+                <summary>Barème et objectifs</summary>
+                <label className="libre-field is-line">
+                  <span>Points de la question</span>
+                  <input type="number" className="libre-line-input" min={0} max={1000} step={0.5}
+                    value={item.points ?? ''} placeholder="Barème de l’activité"
+                    onChange={(event) => {
+                      const points = event.target.valueAsNumber
+                      if (!event.target.value || points >= 0 && points <= 1000 && points * 2 % 1 === 0) {
+                        patchItem(index, { points: event.target.value ? points : undefined })
+                      }
+                    }} />
+                </label>
+                <SelectBox label="Niveau de Bloom" value={item.logistiqueAssessment?.bloom ?? ''} onChange={(bloom) =>
+                  patchAssessment(index, { bloom: bloom ? bloom as LogistiqueAssessment['bloom'] : undefined })}>
+                  <option value="">À renseigner</option>
+                  {Object.entries(logistiqueBloomLevels).map(([id, label]) => <option key={id} value={id}>{label}</option>)}
+                </SelectBox>
+                <SelectBox label="Difficulté de la question" value={item.logistiqueAssessment?.difficulty ?? ''} onChange={(difficulty) =>
+                  patchAssessment(index, { difficulty: difficulty ? difficulty as LogistiqueAssessment['difficulty'] : undefined })}>
+                  <option value="">À renseigner</option>
+                  <option value="facile">Facile</option>
+                  <option value="moyen">Moyenne</option>
+                  <option value="avance">Avancée</option>
+                </SelectBox>
+                <label className="libre-field is-line">
+                  <span>Durée indicative en minutes</span>
+                  <input type="number" className="libre-line-input" min={0.5} max={120} step={0.5}
+                    value={item.logistiqueAssessment?.minutes ?? ''}
+                    onChange={(event) => {
+                      const minutes = event.target.valueAsNumber
+                      if (!event.target.value || minutes >= 0.5 && minutes <= 120 && minutes * 2 % 1 === 0) {
+                        patchAssessment(index, { minutes: event.target.value ? minutes : undefined })
+                      }
+                    }} />
+                </label>
+                <label className="libre-field is-line">
+                  <span>Objectif de la question</span>
+                  <input className="libre-line-input" maxLength={100} value={item.logistiqueAssessment?.objective ?? ''}
+                    onChange={(event) => patchAssessment(index, { objective: event.target.value })} />
+                </label>
+                <label className="libre-field is-line">
+                  <span>Critères de correction</span>
+                  <textarea className="libre-line-input is-textarea" rows={2} maxLength={400}
+                    value={item.logistiqueAssessment?.criteria ?? ''}
+                    onChange={(event) => patchAssessment(index, { criteria: event.target.value })} />
+                </label>
+              </details>}
+              {direct && item.libreId && (onRegenerate || logistique) ? (
                 <div className="libre-unit-actions">
                   <button type="button" className="button" aria-pressed={Boolean(item.libreLocked)}
                     aria-label={`Verrou de la question ${index + 1}`}
                     onClick={() => patchItem(index, { libreLocked: !item.libreLocked })}>
                     {item.libreLocked ? 'Verrouillée' : 'Verrouiller'}
                   </button>
-                  <button type="button" className="button" disabled={item.libreLocked}
+                  {onRegenerate && <button type="button" className="button" disabled={item.libreLocked}
                     onClick={() => {
                       item.options?.forEach((_, position) => writeField?.(`${item.libreId}:choix:${position}`, null))
                       onRegenerate(item.libreId!)
-                    }}>Régénérer la question</button>
+                    }}>Régénérer la question</button>}
                 </div>
               ) : null}
             </div>

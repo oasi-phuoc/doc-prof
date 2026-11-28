@@ -51,6 +51,6 @@ export function retainLogistiqueQuestions(config: PageConfig, seed: number, eval
   const retained = config.libreItems?.filter((item) => item.logistiqueRetained || item.libreLocked)
   if (!retained?.length) return {}
   const excluded = new Set(retained.flatMap((item) => item.logistiqueSource ? [item.logistiqueSource.id] : []))
-  const draw = generateLogistique(evaluation ? config : { ...config, logistiqueSelection: undefined }, seed, undefined, excluded)
+  const draw = generateLogistique(evaluation ? config : { ...config, logistiqueSelection: undefined, logistiqueEvaluation: undefined }, seed, undefined, excluded)
   return { libreItems: [...draw.items, ...retained], libreInstruction: config.libreInstruction }
 }

@@ -201,8 +201,8 @@ export function buildFicheRecipe(input: {
   /** Remplacements de banque et images raster préparées pour la fiche. */
   imageOverrides?: Record<string, string>
 }): FicheRecipe {
-  return { version: 1, ...input, pages:freezeLogistiquePages(freezeGrammarPages(input.pages,input.seed)),
-    libreSnapshot:input.libreSnapshot ? freezeLogistiquePages(freezeGrammarPages(input.libreSnapshot,input.seed)) : null }
+  return { version: 1, ...input, pages:freezeLogistiquePages(freezeGrammarPages(input.pages,input.seed),input.evalMode),
+    libreSnapshot:input.libreSnapshot ? freezeLogistiquePages(freezeGrammarPages(input.libreSnapshot,input.seed),input.evalMode) : null }
 }
 
 export function domainsOfPages(pages: readonly { domain?: string }[]): Domain[] {
